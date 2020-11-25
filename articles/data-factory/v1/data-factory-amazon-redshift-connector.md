@@ -13,11 +13,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 290990e312a7f591539686ecce1eec1ac742dd60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89443030"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999303"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -87,7 +87,7 @@ ms.locfileid: "89443030"
 | Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | **запрос** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
-| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет |
+| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | нет |
 | **s3LinkedServiceName** | Используется Amazon S3 в качестве промежуточного хранилища. Связанная служба указывается с помощью имени типа фабрики данных Azure **AwsAccessKey**. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 | **bucketName** | Указывает контейнер Amazon S3 для хранения промежуточных данных. Если это свойство не указано, действие копирования автоматически создаст контейнер. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 
@@ -335,12 +335,12 @@ ms.locfileid: "89443030"
 | DECIMAL |Decimal |
 | ВЕЩЕСТВЕННОЕ ЧИСЛО |Один |
 | DOUBLE PRECISION |Double |
-| BOOLEAN |Строковый тип |
+| BOOLEAN |Строка |
 | CHAR |Строка |
 | VARCHAR |Строка |
 | DATE |Дата и время |
 | timestamp |DateTime |
-| TEXT |Строковый тип |
+| TEXT |Строка |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).
@@ -351,5 +351,5 @@ ms.locfileid: "89443030"
 ## <a name="performance-and-tuning"></a>Производительность и настройка
 Сведения о ключевых факторах, влияющих на производительность действия копирования, и различных способах оптимизации этого процесса см. в статье [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Пошаговые инструкции по созданию конвейера с действием копирования см. в руководстве [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).

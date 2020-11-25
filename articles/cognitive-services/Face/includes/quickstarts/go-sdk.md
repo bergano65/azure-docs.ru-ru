@@ -10,11 +10,11 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.openlocfilehash: 65f7af56e7f0042b8d4c312d17641a537f5fd908
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94816835"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999360"
 ---
 В этом руководстве показано, как начать работу с клиентской библиотекой API Распознавания лиц для Go. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 

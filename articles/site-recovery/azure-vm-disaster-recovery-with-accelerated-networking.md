@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: harshacs
 ms.openlocfilehash: 1d2d3b3aacc00428c96cde0f8230421a98151ae2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90068019"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000255"
 ---
 # <a name="accelerated-networking-with-azure-virtual-machine-disaster-recovery"></a>Ускорение работы в сети при аварийном восстановлении виртуальных машин Azure
 
@@ -85,7 +85,7 @@ Azure Site Recovery поддерживает включение функции �
 
 Описанный выше процесс также выполняется для имеющихся реплицированных виртуальных машин, в которых ускорение работы в сети раньше не включалось автоматически с помощью Site Recovery.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [преимуществах функции ускорения работы в сети](../virtual-network/create-vm-accelerated-networking-powershell.md#benefits).
 - Дополнительные сведения об ограничениях функции ускорения работы в сети для [виртуальных машин Windows](../virtual-network/create-vm-accelerated-networking-powershell.md#limitations-and-constraints) и [Linux](../virtual-network/create-vm-accelerated-networking-cli.md#limitations-and-constraints).
 - См. сведения в статье [Создание плана восстановления с помощью Site Recovery](site-recovery-create-recovery-plans.md).

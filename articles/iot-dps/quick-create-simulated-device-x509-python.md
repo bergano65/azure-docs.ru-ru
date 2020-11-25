@@ -10,11 +10,11 @@ services: iot-dps
 ms.devlang: python
 ms.custom: mvc, devx-track-python
 ms.openlocfilehash: 28a65e9e5f85d3c1102875a97ae122a00456c607
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323912"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001422"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-x509-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK службы устройства Python для службы подготовки устройств Центра Интернета вещей
 

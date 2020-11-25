@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 06/10/2019
 ms.custom: devx-track-js
 ms.openlocfilehash: f120e9d950cc349d0331a476dbfbfe9d7e599f0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91307574"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000646"
 ---
 # <a name="send-azure-service-health-alerts-with-servicenow-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в ServiceNow с помощью веб-перехватчиков
 
@@ -152,7 +152,7 @@ ms.locfileid: "91307574"
 
 1. В списке **Действия** определите следующие сведения.
 
-    a. **Тип действия: ** *Веб-перехватчик*.
+    a. **Тип действия:** *Веб-перехватчик*.
 
     b. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
 
@@ -169,7 +169,7 @@ ms.locfileid: "91307574"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    a. **Тип действия: ** *Веб-перехватчик*.
+    a. **Тип действия:** *Веб-перехватчик*.
 
     b. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
 
@@ -193,8 +193,8 @@ ms.locfileid: "91307574"
 
 1. Откройте [ServiceNow](https://www.servicenow.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-- Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
-- Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
+## <a name="next-steps"></a>Следующие шаги
+- Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
+- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](./service-notifications.md).
 - Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).

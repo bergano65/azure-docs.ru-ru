@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.custom: seoapr2020
 ms.date: 04/21/2020
 ms.openlocfilehash: ef9322c17a20ab5bfcf348649a1272dd4f301c5c
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284478"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000680"
 ---
 # <a name="troubleshoot-script-actions-in-azure-hdinsight"></a>Устранение неполадок в действиях скриптов в Azure HDInsight
 
@@ -45,13 +45,13 @@ ms.locfileid: "93284478"
 
     ![Журналы действий скриптов](./media/troubleshoot-script-action/script-action-logs-in-storage.png)
 
-    В этом каталоге журналы упорядочены по **головному узлу** , **рабочему узлу** и **узлу zookeeper**. См. следующие примеры.
+    В этом каталоге журналы упорядочены по **головному узлу**, **рабочему узлу** и **узлу zookeeper**. См. следующие примеры.
 
-    * **Головного узла** : `<ACTIVE-HEADNODE-NAME>.cloudapp.net`
+    * **Головного узла**: `<ACTIVE-HEADNODE-NAME>.cloudapp.net`
 
-    * **Рабочий узел** : `<ACTIVE-WORKERNODE-NAME>.cloudapp.net`
+    * **Рабочий узел**: `<ACTIVE-WORKERNODE-NAME>.cloudapp.net`
 
-    * **Zookeeper узел** : `<ACTIVE-ZOOKEEPERNODE-NAME>.cloudapp.net`
+    * **Zookeeper узел**: `<ACTIVE-ZOOKEEPERNODE-NAME>.cloudapp.net`
 
 * Все **stdout** и **stderr** соответствующего узла передаются в учетную запись хранения. Для каждого действия сценария создается файл **output-\*.txt** и файл **errors-\*.txt**. Файл **output-*.txt** содержит сведения об URI сценария, запущенном на узле. Ниже приведен пример таких сведений:
 
@@ -59,7 +59,7 @@ ms.locfileid: "93284478"
     'Start downloading script locally: ', u'https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh'
     ```
 
-* Возможно, повторно создан кластер действия сценария с тем же именем. В этом случае соответствующие журналы можно отличить по имени папки **DATE**. Например, структура папок для кластера **mycluster** , созданного в другие дни, будет похожа на следующие записи журнала:
+* Возможно, повторно создан кластер действия сценария с тем же именем. В этом случае соответствующие журналы можно отличить по имени папки **DATE**. Например, структура папок для кластера **mycluster**, созданного в другие дни, будет похожа на следующие записи журнала:
 
     `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\mycluster\2015-10-04` `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\mycluster\2015-10-05`
 
@@ -108,6 +108,6 @@ sudo pip install azure-storage==0.20.0
     No new script actions can be run on this cluster because of conflicting script names in existing scripts. Script names provided at cluster creation must be all unique. Existing scripts are run on resize.
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [troubleshooting next steps](../../includes/hdinsight-troubleshooting-next-steps.md)]

@@ -5,15 +5,15 @@ ms.date: 06/25/2019
 ms.service: cognitive-services
 ms.topic: include
 ms.openlocfilehash: 98a0ddd828c3d72fdead0ccc2fb1daabf7548de1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67712400"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001205"
 ---
 Параметр `Eula` указывает, что вы приняли условия лицензии для контейнера. Для этого параметра конфигурации необходимо указать значение `accept`.
 
-|Обязательно| name | Тип данных | Описание |
+|Обязательно| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Eula` | Строка | Принятие условий лицензионного соглашения<br><br>Пример.<br>`Eula=accept` |
 

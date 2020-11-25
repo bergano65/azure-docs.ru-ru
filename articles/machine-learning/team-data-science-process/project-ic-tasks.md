@@ -11,11 +11,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 4ecb5fef9c9b14bde72de29a45e29d7e16131bd1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321925"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001003"
 ---
 # <a name="tasks-for-an-individual-contributor-in-the-team-data-science-process"></a>Задачи отдельного участника в командном процессе обработки и анализа данных
 
@@ -55,7 +55,7 @@ ms.locfileid: "93321925"
 
 Чтобы работать с репозиториями локально и отправить изменения в общие репозитории группы и проекта, сначала необходимо скопировать или *клонировать* репозитории на локальный компьютер. 
 
-1. В Azure DevOps перейдите на страницу сводки проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name>* , например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam**.
+1. В Azure DevOps перейдите на страницу сводки проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name>*, например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam**.
    
 1. Выберите **репозиториев** в левой области навигации и в верхней части страницы выберите репозиторий, который необходимо клонировать.
    
@@ -96,7 +96,7 @@ ms.locfileid: "93321925"
 
 Если ваша команда или проект содержит общие ресурсы в хранилище файлов Azure, подключите хранилище файлов к локальному компьютеру или DSVM. Следуйте инструкциям в статье [Подключение хранилища файлов Azure на локальном компьютере или DSVM](team-lead-tasks.md#mount-azure-file-storage-on-your-local-machine-or-dsvm).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ниже приведены ссылки на подробные описания других ролей и задач, определенных в процессе обработки и анализа данных группы.
 

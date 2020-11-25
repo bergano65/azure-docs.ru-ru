@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 07/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: c1b0ce62905424032c2100a1a032fa43ba97578f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87084863"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999405"
 ---
 # <a name="restore-an-app-in-azure"></a>Восстановление приложения в Azure
 В этой статье описывается, как в [службе приложений Azure](../app-service/overview.md) восстановить приложение, для которого ранее была создана резервная копия (ознакомьтесь с [архивацией приложения в Azure](manage-backup.md)). Вы можете восстановить предыдущее состояние приложения и связанных с ним баз данных по запросу или создать новое приложение на основе одной из резервных копий исходного приложения. Служба приложений Azure поддерживает следующие базы данных для архивации и восстановления:

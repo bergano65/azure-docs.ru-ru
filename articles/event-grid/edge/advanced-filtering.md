@@ -8,11 +8,11 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 64b8956c47cbdbf31bb8253dac0c1e1f12833bf7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86171777"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001054"
 ---
 # <a name="advanced-filtering"></a>Расширенная фильтрация
 Сетка событий позволяет задавать фильтры для любого свойства в полезных данных JSON. Эти фильтры моделируются в виде набора `AND` условий, при этом каждое внешнее условие имеет необязательные внутренние `OR` условия. Для каждого `AND` условия задаются следующие значения:
@@ -77,7 +77,7 @@ ms.locfileid: "86171777"
 
 * ID
 * Раздел
-* Тема
+* Субъект
 * EventType
 * DataVersion;
 * Data. Prop1

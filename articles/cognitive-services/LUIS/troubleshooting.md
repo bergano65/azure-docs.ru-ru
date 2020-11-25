@@ -5,18 +5,18 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: troubleshooting
 ms.date: 05/06/2020
-ms.openlocfilehash: 17b070fea422268ec12e0ccd3357ae0549a78916
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: e803fa393d85f7f0b4849aed96356b7a4e77d83f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566271"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96000136"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
 В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 
-## <a name="whats-new"></a>Новое
+## <a name="whats-new"></a>Новые возможности
 
 [Узнайте больше](whats-new.md) о новых возможностях Language UNDERSTANDING (Luis).
 
@@ -37,7 +37,7 @@ ms.locfileid: "94566271"
 
 ### <a name="is-it-important-to-train-the-none-intent"></a>Важно ли обучать намерение None?
 
-Да, следует обучить намерение **None** с помощью дополнительных высказываний, добавляя дополнительные метки для других намерений. Хорошее соотношение — 1 или 2 метки, добавленные к **None** , на каждые 10 меток, добавленных к намерению. Это отношение повышает дискриминационный уровень LUIS.
+Да, следует обучить намерение **None** с помощью дополнительных высказываний, добавляя дополнительные метки для других намерений. Хорошее соотношение — 1 или 2 метки, добавленные к **None**, на каждые 10 меток, добавленных к намерению. Это отношение повышает дискриминационный уровень LUIS.
 
 ### <a name="how-can-i-correct-spelling-mistakes-in-utterances"></a>Каким образом можно исправить орфографические ошибки в высказываниях?
 
@@ -47,7 +47,7 @@ ms.locfileid: "94566271"
 Чтобы изменить приложение LUIS программным способом, используйте [API разработки](https://go.microsoft.com/fwlink/?linkid=2092087). Примеры вызова API разработки см. в статьях [Руководство по добавлению фраз в приложение с использованием Node.js](./get-started-get-model-rest-apis.md) и [Создание приложения LUIS программным способом с помощью Node.js](./luis-tutorial-node-import-utterances-csv.md). Для применения API разработки необходимо использовать [ключ разработки](luis-how-to-azure-subscription.md#azure-resources-for-luis), а не ключ конечной точки. Программный способ разработки позволяет осуществлять до 1 000 000 звонков в месяц и пять транзакций в секунду. Дополнительные сведения об используемых с LUIS ключах см. в статье [Keys in LUIS](./luis-how-to-azure-subscription.md) (Ключи в LUIS).
 
 ### <a name="where-is-the-pattern-feature-that-provided-regular-expression-matching"></a>Где находится компонент "Шаблон", который сопоставляется с предоставленным регулярным выражением?
-Сейчас не рекомендуется использовать предыдущий компонент **Шаблон** , замененный компонентом **[Шаблоны](luis-concept-patterns.md)**.
+Сейчас не рекомендуется использовать предыдущий компонент **Шаблон**, замененный компонентом **[Шаблоны](luis-concept-patterns.md)**.
 
 ### <a name="how-do-i-use-an-entity-to-pull-out-the-correct-data"></a>Как использовать сущность для отделения правильных данных?
 Ознакомьтесь со сведениями о [сущностях](luis-concept-entity-types.md) и [извлечении данных](luis-concept-data-extraction.md).
@@ -108,7 +108,7 @@ ms.locfileid: "94566271"
 
 * Вы можете [увеличить ценовую категорию](luis-how-to-azure-subscription.md#change-the-pricing-tier), если вы не на самом высшем уровне.
 * Если вы превысили максимальную ценовую категорию, добавьте дополнительные Language Understanding ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер Language Understanding](luis-container-howto.md) с Kubernetes или DOCKER Compose.
-* Вы можете настроить запрос клиентского приложения с помощью [политики повтора](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) , которая реализуется при получении этого кода состояния.
+* Вы можете настроить запрос клиентского приложения с помощью [политики повтора](/azure/architecture/best-practices/transient-faults#general-guidelines) , которая реализуется при получении этого кода состояния.
 
 ### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Запрос конечной точки вернул непредвиденные результаты.   Что следует делать?
 
@@ -132,7 +132,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 ### <a name="why-dont-i-see-my-endpoint-hits-in-my-apps-dashboard"></a>Почему для меня недоступны обращения конечной точки на панели мониторинга приложения?
 Общее количество обращений конечной точки на панели мониторинга приложения периодически обновляется, но более часто обновляются показатели, связанные с ключом конечной точки LUIS на портале Azure.
 
-Если вам недоступны обновленные данные обращения конечной точки на панели мониторинга, войдите на портал Azure, найдите ресурс, связанный с ключом конечной точки LUIS, и откройте **Метрики** , чтобы установить метрику **Всего вызовов**. При использовании ключа конечной точки для более чем одного приложения LUIS метрики на портале Azure отображается совокупное количество вызовов от всех приложений LUIS, использующих этот ключ.
+Если вам недоступны обновленные данные обращения конечной точки на панели мониторинга, войдите на портал Azure, найдите ресурс, связанный с ключом конечной точки LUIS, и откройте **Метрики**, чтобы установить метрику **Всего вызовов**. При использовании ключа конечной точки для более чем одного приложения LUIS метрики на портале Azure отображается совокупное количество вызовов от всех приложений LUIS, использующих этот ключ.
 
 ### <a name="is-there-a-powershell-command-get-to-the-endpoint-quota"></a>Существует ли команда получения PowerShell для запроса сведений о квоте конечной точки?
 
@@ -190,7 +190,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ## <a name="app-publishing"></a>Публикация приложений
 
 ### <a name="what-is-the-tenant-id-in-the-add-a-key-to-your-app-window"></a>Какой идентификатор клиента в окне Add a key to your app (Добавить ключ для приложения)?
-В Azure клиентом считается клиент или организация, связанные со службой. На портале Azure найдите идентификатор клиента в поле **Идентификатор каталога** , выбрав **Azure Active Directory** > **Управление** > **Свойства**.
+В Azure клиентом считается клиент или организация, связанные со службой. На портале Azure найдите идентификатор клиента в поле **Идентификатор каталога**, выбрав **Azure Active Directory** > **Управление** > **Свойства**.
 
 ![Идентификатор клиента на портале Azure](./media/luis-manage-keys/luis-assign-key-tenant-id.png)
 
@@ -278,7 +278,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 1. Откройте сетевой редактор кода.
 1. Выберите имя бота в верхней части синей панели навигации (второй элемент справа).
 1. В раскрывающемся итоговом списке выберите **Open Kudu Console** (Открыть консоль Kudu).
-1. Последовательно выберите **LogFiles** , а затем **Приложение**. Просмотр всех файлов журналов. Если в папке приложения не появляется ошибка, просмотрите файлы журнала в **LogFiles**.
+1. Последовательно выберите **LogFiles**, а затем **Приложение**. Просмотр всех файлов журналов. Если в папке приложения не появляется ошибка, просмотрите файлы журнала в **LogFiles**.
 1. Обязательно перестраивайте проект при использовании компилируемого языка, например C#.
 
 > [!Tip]
@@ -286,7 +286,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 #### <a name="resolve-issue-while-debugging-on-local-machine-with-bot-framework"></a>Во время отладки на локальной машине устраняйте проблему с помощью Bot Framework.
 
-Дополнительные сведения о локальной отладке бота см. в статье [Отладка бота](https://docs.microsoft.com/azure/bot-service/bot-service-debug-bot?view=azure-bot-service-4.0).
+Дополнительные сведения о локальной отладке бота см. в статье [Отладка бота](/azure/bot-service/bot-service-debug-bot?view=azure-bot-service-4.0).
 
 ## <a name="integrating-luis"></a>Интеграция LUIS
 
@@ -296,7 +296,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ![Регион шаблона LUIS бота веб-приложения](./media/luis-faq/web-app-bot-location.png)
 
 ### <a name="what-luis-regions-support-bot-framework-speech-priming"></a>Какие регионы LUIS поддерживают подготовку речи Bot Framework?
-[Подготовка речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming) поддерживается только для приложений LUIS в центральном регионе экземпляра (США).
+[Подготовка речи](/bot-framework/bot-service-manage-speech-priming) поддерживается только для приложений LUIS в центральном регионе экземпляра (США).
 
 ## <a name="api-programming-strategies"></a>Стратегии программирования API
 
@@ -330,8 +330,8 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 * [Как использовать службу Azure Conversational AI для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)
-* [Страница вопросов и ответов по Microsoft Q&для MSDN Language Understanding Intelligent Services (LUIS)](https://docs.microsoft.com/answers/topics/azure-language-understanding.html)
+* [Страница вопросов и ответов по Microsoft Q&для MSDN Language Understanding Intelligent Services (LUIS)](/answers/topics/azure-language-understanding.html)

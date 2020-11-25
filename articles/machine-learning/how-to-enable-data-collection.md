@@ -12,11 +12,11 @@ ms.date: 07/14/2020
 ms.topic: conceptual
 ms.custom: how-to, data4ml
 ms.openlocfilehash: c6b9dc95e1d50481ac5353460910032ca1711ab1
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94532823"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000459"
 ---
 # <a name="collect-data-from-models-in-production"></a>Получение данных из моделей в рабочей среде
 
@@ -173,7 +173,7 @@ ms.locfileid: "94532823"
 
     [![Power BI содержимое](./media/how-to-enable-data-collection/pbiContent.png)](././media/how-to-enable-data-collection/pbiContent.png#lightbox)
 
-1. Нажмите кнопку **ОК**. Предварительная загрузка данных.
+1. Щелкните **ОК**. Предварительная загрузка данных.
 
     [![Power BI объединение файлов](./media/how-to-enable-data-collection/pbiCombine.png)](././media/how-to-enable-data-collection/pbiCombine.png#lightbox)
 
@@ -208,6 +208,6 @@ ms.locfileid: "94532823"
 
 1. Выполните действия, описанные в шаблоне, чтобы просмотреть и проанализировать данные.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Обнаружение смещения данных](how-to-monitor-datasets.md) для собранных данных.

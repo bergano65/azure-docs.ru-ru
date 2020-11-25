@@ -13,11 +13,11 @@ ms.date: 07/16/2020
 ms.author: aahi
 keywords: локальная среда, Docker, контейнер, обнаружение
 ms.openlocfilehash: 0f6807f771510f85c5a20cfb2a160cfe1e8726a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91461518"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000558"
 ---
 # <a name="install-and-run-face-containers-preview"></a>Установка и запуск контейнеров лиц (Предварительная версия)
 
@@ -154,7 +154,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 > Cognitive Services контейнеры не лицензированы для запуска без подключения к Azure для измерения. Клиенты должны включить контейнеры для передачи сведений о выставлении счетов в службу контроля использования в любое время. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента, например анализируемые изображения или тексты.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Параметры конфигурации см. в разделе [Configure Containers](face-resource-container-config.md).
 * Дополнительные сведения об обнаружении и определении лиц см. в разделе [Обзор лиц](Overview.md).

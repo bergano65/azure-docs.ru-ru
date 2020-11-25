@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 26f0006ad2b26757e335ba1819c2b82ba519f8cc
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 95560801d4132735435e4d45e8a588476636ec38
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491449"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001241"
 ---
 # <a name="azure-queue-storage-trigger-for-azure-functions"></a>Триггер хранилища очередей Azure для функций Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "94491449"
 
 ## <a name="encoding"></a>Кодирование
 
-Функции ожидают строку в кодировке *base64*. Любая корректировка типа кодирования (для подготовки данных в виде строки в кодировке *base64* ) должна быть реализована в вызывающей службе.
+Функции ожидают строку в кодировке *base64*. Любая корректировка типа кодирования (для подготовки данных в виде строки в кодировке *base64*) должна быть реализована в вызывающей службе.
 
 ## <a name="example"></a>Пример
 
@@ -97,6 +97,22 @@ public static void Run(CloudQueueMessage myQueueItem,
 
 В этом [разделе](#usage) показано свойство `myQueueItem`, имя которому назначает свойство `name` в function.json.  В разделе [Метаданные сообщений](#message-metadata) показаны все остальные переменные.
 
+# <a name="java"></a>[Java](#tab/java)
+
+В следующем примере Java показана функция триггера очереди хранилища, которая записывает в журнал активируемое сообщение, помещенное в очередь `myqueuename` .
+
+ ```java
+ @FunctionName("queueprocessor")
+ public void run(
+    @QueueTrigger(name = "msg",
+                   queueName = "myqueuename",
+                   connection = "myconnvarname") String message,
+     final ExecutionContext context
+ ) {
+     context.getLogger().info(message);
+ }
+ ```
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера очереди в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку. Эта функция выполняет опрос очереди `myqueue-items`, а затем делает запись в журнал при каждой обработке элемента очереди.
@@ -141,6 +157,42 @@ module.exports = async function (context, message) {
 ```
 
 В этом [разделе](#usage) показано свойство `myQueueItem`, имя которому назначает свойство `name` в function.json.  В разделе [Метаданные сообщений](#message-metadata) показаны все остальные переменные.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показано, как прочитать сообщение очереди, переданное в функцию через триггер.
+
+Триггер очереди хранилища определяется в *function.jsв* файле `type` , где имеет значение `queueTrigger` .
+
+```json
+{
+  "bindings": [
+    {
+      "name": "QueueItem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "messages",
+      "connection": "MyStorageConnectionAppSetting"
+    }
+  ]
+}
+```
+
+Код в файле *Run.ps1* объявляет параметр как `$QueueItem` , который позволяет считывать сообщение очереди в функции.
+
+```powershell
+# Input bindings are passed in via param block.
+param([string] $QueueItem, $TriggerMetadata)
+
+# Write out the queue message and metadata to the information log.
+Write-Host "PowerShell queue trigger function processed work item: $QueueItem"
+Write-Host "Queue item expiration time: $($TriggerMetadata.ExpirationTime)"
+Write-Host "Queue item insertion time: $($TriggerMetadata.InsertionTime)"
+Write-Host "Queue item next visible time: $($TriggerMetadata.NextVisibleTime)"
+Write-Host "ID: $($TriggerMetadata.Id)"
+Write-Host "Pop receipt: $($TriggerMetadata.PopReceipt)"
+Write-Host "Dequeue count: $($TriggerMetadata.DequeueCount)"
+```
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -189,22 +241,6 @@ def main(msg: func.QueueMessage):
 
     logging.info(result)
 ```
-
-# <a name="java"></a>[Java](#tab/java)
-
-В следующем примере Java показана функция триггера очереди хранилища, которая записывает в журнал активируемое сообщение, помещенное в очередь `myqueuename` .
-
- ```java
- @FunctionName("queueprocessor")
- public void run(
-    @QueueTrigger(name = "msg",
-                   queueName = "myqueuename",
-                   connection = "myconnvarname") String message,
-     final ExecutionContext context
- ) {
-     context.getLogger().info(message);
- }
- ```
 
  ---
 
@@ -270,14 +306,6 @@ def main(msg: func.QueueMessage):
 
 В скрипте C# атрибуты не поддерживаются.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-В JavaScript атрибуты не поддерживаются.
-
-# <a name="python"></a>[Python](#tab/python)
-
-В Python атрибуты не поддерживаются.
-
 # <a name="java"></a>[Java](#tab/java)
 
 `QueueTrigger`Заметка предоставляет доступ к очереди, которая запускает функцию. В следующем примере сообщение очереди становится доступным для функции через `message` параметр.
@@ -305,6 +333,18 @@ public class QueueTriggerDemo {
 |`queueName`  | Объявляет имя очереди в учетной записи хранения. |
 |`connection` | Указывает строку подключения к учетной записи хранения. |
 
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В JavaScript атрибуты не поддерживаются.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
+# <a name="python"></a>[Python](#tab/python)
+
+В Python атрибуты не поддерживаются.
+
 ---
 
 ## <a name="configuration"></a>Конфигурация
@@ -317,7 +357,7 @@ public class QueueTriggerDemo {
 |**direction**| Недоступно | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
 |**name** | Недоступно |Имя переменной, содержащей полезные данные элемента очереди в коде функции.  |
 |**queueName** | **QueueName**| Имя очереди для опроса. |
-|**connection** ; | **Соединение** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**connection**; | **Соединение** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -327,7 +367,7 @@ public class QueueTriggerDemo {
 
 Получите доступ к данным сообщения с помощью параметра метода, например `string paramName` . Вы можете выполнить привязку к одному из следующих типов:
 
-* Объект. Среда выполнения службы "Функции" десериализует полезные данные JSON в экземпляр произвольного класса, определенного в коде. 
+* Объект. Среда выполнения службы "Функции" десериализует полезные данные JSON в экземпляр произвольного класса, определенного в коде.
 * `string`
 * `byte[]`
 * [CloudQueueMessage]
@@ -345,17 +385,21 @@ public class QueueTriggerDemo {
 
 Если при попытке привязать к `CloudQueueMessage` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](functions-bindings-storage-queue.md#azure-storage-sdk-version-in-functions-1x).
 
+# <a name="java"></a>[Java](#tab/java)
+
+Заметка [QueueTrigger](/java/api/com.microsoft.azure.functions.annotation.queuetrigger?view=azure-java-stable&preserve-view=true) предоставляет доступ к сообщению очереди, вызвавшему функцию.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Полезные данные элемента очереди доступны через `context.bindings.<NAME>` , где `<NAME>` совпадает с именем, определенным в *function.json*. Если полезная нагрузка — JSON, значение десериализуется в объект.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Доступ к сообщению очереди через параметр String, который соответствует имени, назначенному `name` параметром привязки в *function.js* в файле.
+
 # <a name="python"></a>[Python](#tab/python)
 
-Доступ к сообщению очереди с помощью параметра, типизированного как [куеуемессаже](/python/api/azure-functions/azure.functions.queuemessage?view=azure-python).
-
-# <a name="java"></a>[Java](#tab/java)
-
-Заметка [QueueTrigger](/java/api/com.microsoft.azure.functions.annotation.queuetrigger?view=azure-java-stable) предоставляет доступ к сообщению очереди, вызвавшему функцию.
+Доступ к сообщению очереди с помощью параметра, типизированного как [куеуемессаже](/python/api/azure-functions/azure.functions.queuemessage?view=azure-python&preserve-view=true).
 
 ---
 
@@ -394,7 +438,7 @@ public class QueueTriggerDemo {
 
 В отношении выставления счетов время, затраченное на опрос среды выполнения, является бесплатным и не учитывается в вашей учетной записи.
 
-## <a name="concurrency"></a>параллелизм
+## <a name="concurrency"></a>Параллелизм
 
 При наличии нескольких сообщений, ожидающих в очереди, триггер очереди извлекает пакет сообщений и в параллельном режиме вызывает экземпляры функций для обработки. По умолчанию в пакете содержится 16 сообщений. Когда число обрабатываемых сообщений снижается до 8, среда выполнения получает следующий пакет и начинает обработку содержащихся в нем сообщений. Поэтому максимальное количество сообщений, одновременно обрабатываемых каждой функцией на одной виртуальной машине, равно 24. Это ограничение применяется отдельно к каждой функции, активируемой с помощью очереди, на каждой виртуальной машине. Если приложение-функция масштабируется на несколько виртуальных машин, каждая машина будет ожидать триггеров и пытаться выполнить функции. Например, если приложение-функция масштабируется на 3 виртуальные машины, то максимальное количество параллельных экземпляров одной функции, активируемой с помощью очереди, равно 72.
 

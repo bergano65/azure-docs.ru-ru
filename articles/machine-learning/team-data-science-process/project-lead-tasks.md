@@ -11,11 +11,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 9d9b2546553e03d1555cf4c587d699d9a4ea7e51
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321928"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000986"
 ---
 # <a name="project-lead-tasks-in-the-team-data-science-process"></a>Задачи руководителя проекта в процессе обработки и анализа данных группы
 
@@ -57,7 +57,7 @@ ms.locfileid: "93321928"
 
 Чтобы создать репозиторий проекта в проекте **myTeam** вашей команды, выполните следующие действия.
 
-1. Перейдите на страницу **сводки** проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name>* , например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam** , и выберите **репозиториев** в левой области навигации. 
+1. Перейдите на страницу **сводки** проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name>*, например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam**, и выберите **репозиториев** в левой области навигации. 
    
 1. Выберите имя репозитория в верхней части страницы, а затем в раскрывающемся списке выберите пункт **создать репозиторий** .
    
@@ -91,7 +91,7 @@ ms.locfileid: "93321928"
 
 Если необходимо настроить содержимое репозитория проекта в соответствии с конкретными потребностями проекта, можно добавить, удалить или изменить файлы и папки репозитория. Вы можете работать непосредственно в Azure Repos или клонировать репозиторий на локальный компьютер или DSVM, вносить изменения, а также зафиксировать и отправлять обновления в репозиторий общего проекта. Следуйте инструкциям по [настройке содержимого репозиториев команды](team-lead-tasks.md#customize-the-contents-of-the-team-repositories).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ниже приведены ссылки на подробные описания других ролей и задач, определенных в процессе обработки и анализа данных группы.
 

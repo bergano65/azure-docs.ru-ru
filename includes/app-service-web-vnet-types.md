@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 10/01/2020
 ms.author: ccompy
-ms.openlocfilehash: 481bd4f50eb527bcad2ba79b5ba4b9df4b872bfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93b92da999c15255f543abca346fc2bf8840006c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91739920"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999462"
 ---
 * Многоклиентские системы, поддерживающие весь спектр планов ценообразования, за исключением изолированных.
 * Среда службы приложений, который развертывается в виртуальной сети и поддерживает приложения с планом расчета цен.
@@ -38,5 +38,5 @@ ms.locfileid: "91739920"
 Независимо от используемой версии, интеграция виртуальной сети предоставляет приложению доступ к ресурсам в виртуальной сети, но не предоставляет в виртуальной сети входящий частный доступ к приложению. Доступ к частному сайту означает, что приложение доступно только из частной сети, например из виртуальной сети Azure. Интеграция виртуальной сети предназначена только для исходящих вызовов из приложения в виртуальную сеть.
 
 <!--Links-->
-[ASEintro]: https://docs.microsoft.com/azure/app-service/environment/intro
-[Networkingfeatures]: https://docs.microsoft.com/azure/app-service/networking-features
+[ASEintro]: ../articles/app-service/environment/intro.md
+[Networkingfeatures]: ../articles/app-service/networking-features.md

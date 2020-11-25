@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 58bb87d5af785d3cffd96f3bd02477f97ed967a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935370"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001309"
 ---
 # <a name="how-to-map-ai-enriched-fields-to-a-searchable-index"></a>Как сопоставлять ИСКУССТВЕНные поля с индексом с возможностью поиска
 
@@ -145,7 +145,7 @@ Content-Type: application/json
   "diseases" : ["heart failure","morquio"]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После сопоставления обогащенных полей с полями, поддерживающими поиск, для каждого поля, поддерживающего поиск, можно задать атрибуты поля [в качестве части определения индекса](search-what-is-an-index.md).
 
 Дополнительные сведения о сопоставлении полей см. [в разделе сопоставления полей в Azure когнитивный Поиск индексаторы](search-indexer-field-mappings.md).

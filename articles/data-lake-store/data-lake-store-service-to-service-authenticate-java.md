@@ -8,11 +8,11 @@ ms.date: 05/29/2018
 ms.custom: devx-track-java
 ms.author: twooley
 ms.openlocfilehash: 0e320557a7372af6a41038d9b3196db23d2496c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87325055"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000391"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-java"></a>Проверка подлинности между службами в Azure Data Lake Storage 1-го поколения с использованием Java
 
@@ -84,7 +84,7 @@ ms.locfileid: "87325055"
 
 Пакет SDK для Data Lake Storage 1-го поколения предоставляет удобные методы управления маркерами безопасности, которые нужны для подключения к учетной записи Data Lake Storage 1-го поколения. Тем не менее пакет SDK не требует использования только этих методов. Можно использовать любые другие средства получения маркера, например [пакет SDK для Azure Active Directory](https://github.com/AzureAD/azure-activedirectory-library-for-java) или пользовательский код.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как использовать проверку подлинности пользователей, чтобы реализовать проверку подлинности в Data Lake Storage 1-го поколения с помощью пакета Java SDK. Дополнительные сведения об использовании пакета Java SDK для работы с Data Lake Storage 1-го поколения см. в следующих статьях.
 

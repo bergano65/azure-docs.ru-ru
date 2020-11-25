@@ -8,11 +8,11 @@ ms.date: 04/18/2020
 ms.author: lcozzens
 ms.custom: devx-track-java
 ms.openlocfilehash: 64ccc9c91d9ead567035b1f7f35e0a0088b6200b
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124192"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001490"
 ---
 # <a name="quickstart-add-feature-flags-to-a-spring-boot-app"></a>Краткое руководство. Добавление флагов функций в приложение Spring Boot
 
@@ -30,7 +30,7 @@ ms.locfileid: "93124192"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-7. Выберите **Диспетчер компонентов** >  **+Добавить** , чтобы добавить флаг функции `Beta`.
+7. Выберите **Диспетчер компонентов** >  **+Добавить**, чтобы добавить флаг функции `Beta`.
 
     > [!div class="mx-imgBorder"]
     > ![Включение флага функции с именем Beta](media/add-beta-feature-flag.png)

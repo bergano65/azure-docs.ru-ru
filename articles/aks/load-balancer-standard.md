@@ -8,11 +8,11 @@ ms.date: 11/14/2020
 ms.author: jpalma
 author: palma21
 ms.openlocfilehash: 5da7f2a11be7562313b709a8af72ccd709165cfa
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684208"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000867"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Использование общедоступной Load Balancer (цен. категория "Стандартный") в службе Kubernetes Azure (AKS)
 
@@ -27,7 +27,7 @@ Azure Load Balancer находится на уровне 4 модели соед
 
 В этом документе рассматривается интеграция с общедоступной подсистемой балансировки нагрузки. Сведения о внутренней интеграции Load Balancer см. в [документации по внутренней подсистеме балансировки нагрузки AKS](internal-lb.md).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Доступны два номера SKU Azure Load Balancer: ценовых категорий *Базовый* и *Стандартный*. По умолчанию при создании кластера AKS используется номер SKU " *стандартный* ". Используйте номер SKU " *стандартный* ", чтобы получить доступ к дополнительным функциям, таким как серверный пул большего размера, [**несколько пулов узлов**](use-multiple-node-pools.md)и [**зоны доступности**](availability-zones.md). Это рекомендуемый номер SKU Load Balancer AKS.
 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 08/30/2019
 ms.author: wolfma
 ms.openlocfilehash: c7332177795a45331749225e0f3dc3856e28a6a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "71327062"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001115"
 ---
 Чтобы создать проект Visual Studio для разработки Windows, необходимо создать проект, настроить Visual Studio для разработки рабочего стола .NET, установить пакет SDK для службы "Речь" и выбрать целевую архитектуру.
 
@@ -17,7 +17,7 @@ ms.locfileid: "71327062"
 
 Для начала создайте проект в Visual Studio и убедитесь, что Visual Studio настроена на разработку рабочего стола.NET :
 
-1. Запустите Visual Studio 2019.
+1. Откройте Visual Studio 2019.
 
 1. В окне Начало работы выберите **Создать проект**. 
 
@@ -61,7 +61,7 @@ ms.locfileid: "71327062"
 
 Теперь, чтобы создать и запустить консольное приложение, создайте конфигурацию платформы, соответствующую архитектуре компьютера.
 
-1. В строке меню выберите **Сборка**  >  **Configuration Manager**. Откроется диалоговое окно**ConfigurationManager** (Диспетчер конфигураций).
+1. В строке меню выберите **Сборка**  >  **Configuration Manager**. Откроется диалоговое окно **ConfigurationManager** (Диспетчер конфигураций).
 
    ![Диалоговое окно Configuration Manager (Диспетчер конфигураций)](../articles/cognitive-services/speech-service/media/sdk/vs-configuration-manager-dialog-box.png)
 

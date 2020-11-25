@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1138a970bf7c52182f13d0fd14d0178a2d0cfeba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 93a3adf00203e317be912e3e72de7a3f7ca666c6
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88918797"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001114"
 ---
 # <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Распознавание целей распознавания речи с помощью речевого пакета SDK для C #
 
@@ -55,7 +55,7 @@ ms.locfileid: "88918797"
 | Ключ для начала работы   | Позволяет тестировать приложение LUIS только с помощью текста   |
 | Конечная точка  | Разрешает доступ к определенному приложению LUIS.            |
 
-Для этого руководством требуется тип ключа конечной точки. В этом руководстве используется пример приложения LUIS для домашней службы автоматизации, который можно создать, следуя инструкциям в кратком руководстве по использованию предварительно [подготовленного приложения службы автоматизации](https://docs.microsoft.com/azure/cognitive-services/luis/luis-get-started-create-app) . Также вместо него можно использовать собственное приложение LUIS.
+Для этого руководством требуется тип ключа конечной точки. В этом руководстве используется пример приложения LUIS для домашней службы автоматизации, который можно создать, следуя инструкциям в кратком руководстве по использованию предварительно [подготовленного приложения службы автоматизации](../luis/luis-get-started-create-app.md) . Также вместо него можно использовать собственное приложение LUIS.
 
 Начальный ключ автоматически создается при создании приложения LUIS. Это позволяет проверять приложения с помощью текстовых запросов. Этот ключ не включает интеграцию со службой речи и не будет работать с этим руководством. На панели мониторинга Azure создайте ресурс LUIS и назначьте его приложению LUIS. Для этого руководством можно использовать бесплатный уровень подписки.
 
@@ -198,7 +198,7 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 [!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Код, используемый в данной статье, можно найти в папке **samples/csharp/sharedcontent/console**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. по распознаванию речи с микрофона](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore)
+> [Краткое руководство. по распознаванию речи с микрофона](./get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore)

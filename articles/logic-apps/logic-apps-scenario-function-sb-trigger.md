@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 11/08/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 25f761d85ebfd0ac16f182941c5b5c29636066bf
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629739"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000340"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "94629739"
 
    С помощью триггера запроса можно также ввести схему JSON, которая будет использоваться с сообщением очереди. Схемы JSON помогают конструктору приложений логики понять структуру входных данных и упростить их использование в рабочем процессе.
 
-1. Чтобы указать схему, введите ее в поле **Схема JSON текста запроса** , например:
+1. Чтобы указать схему, введите ее в поле **Схема JSON текста запроса**, например:
 
    ![Указание схемы JSON](./media/logic-apps-scenario-function-sb-trigger/when-http-request-received-trigger-schema.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "94629739"
 
    1. В триггере запросов выберите **Использовать пример полезной нагрузки, чтобы создать схему**.
 
-   1. В разделе **введите или вставьте пример полезных данных JSON** , введите Пример полезных данных и нажмите кнопку **Готово**.
+   1. В разделе **введите или вставьте пример полезных данных JSON**, введите Пример полезных данных и нажмите кнопку **Готово**.
 
       ![Ввод примера полезных данных](./media/logic-apps-scenario-function-sb-trigger/enter-sample-payload.png)
 
@@ -149,6 +149,6 @@ ms.locfileid: "94629739"
 
    Приложение логики должно активироваться сразу же, как только функция получит это сообщение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md)

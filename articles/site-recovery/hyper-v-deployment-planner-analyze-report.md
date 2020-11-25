@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 10/21/2019
 ms.author: mayg
 ms.openlocfilehash: f230445ecdb046c2b631e89567df71e1d09c3234
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369953"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999235"
 ---
 # <a name="analyze-the-azure-site-recovery-deployment-planner-report"></a>Анализ отчета Планировщика развертывания Azure Site Recovery
 В этой статье рассматриваются листы, которые содержатся в отчете Excel, созданном планировщиком развертывания Azure Site Recovery для сценария развертывания Hyper-V в Azure.
@@ -346,7 +346,7 @@ ms.locfileid: "92369953"
 ### <a name="network-utilization-details-for-each-batch"></a>Подробные сведения об использовании сети для каждого пакета 
 В каждой таблице пакета представлена сводка по использованию сети для пакета.
 
-**Пропускная способность для пакетной**службы: пропускная способность, доступная для пакета, после рассмотрения разностной пропускной способности репликации предыдущего пакета.
+**Пропускная способность для пакетной** службы: пропускная способность, доступная для пакета, после рассмотрения разностной пропускной способности репликации предыдущего пакета.
 
 **Approximate bandwidth available for initial replication of batch** (Приблизительная пропускная способность, доступная для начальной репликации пакета). Пропускная способность, доступная для начальной репликации виртуальных машин пакета. 
 
@@ -356,5 +356,5 @@ ms.locfileid: "92369953"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Подробнее об [оценке затрат](hyper-v-deployment-planner-cost-estimation.md).

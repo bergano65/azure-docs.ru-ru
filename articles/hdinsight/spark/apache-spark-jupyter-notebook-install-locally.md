@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-python
 ms.date: 04/23/2020
 ms.openlocfilehash: 96b2e7deff464f00ced4457a514ac833a90bd42d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87873897"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999898"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
 
@@ -67,14 +67,14 @@ ms.locfileid: "87873897"
 
 1. В новом рабочем каталоге введите одну или несколько приведенных ниже команд, чтобы установить требуемые ядра.
 
-    |Ядро | Get-Help |
+    |Ядро | Команда |
     |---|---|
     |Spark|`jupyter-kernelspec install sparkmagic/kernels/sparkkernel`|
     |SparkR|`jupyter-kernelspec install sparkmagic/kernels/sparkrkernel`|
     |PySpark|`jupyter-kernelspec install sparkmagic/kernels/pysparkkernel`|
     |PySpark3|`jupyter-kernelspec install sparkmagic/kernels/pyspark3kernel`|
 
-1. Необязательный параметр. Введите следующую команду, чтобы включить расширение сервера:
+1. Необязательный элемент. Введите следующую команду, чтобы включить расширение сервера:
 
     ```cmd
     jupyter serverextension enable --py sparkmagic
@@ -90,7 +90,7 @@ ms.locfileid: "87873897"
     python
     ```
 
-2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы указать домашний каталог, и создайте папку с именем ** \. sparkmagic**.  Будет выведен полный путь.
+2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы указать домашний каталог, и создайте папку с именем **\. sparkmagic**.  Будет выведен полный путь.
 
     ```python
     import os

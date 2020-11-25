@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 1d86009d593ef7e594ec2981132bcfb856569c31
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 087073437fe9d6159422799c04ce095c0aae5eca
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317231"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001258"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища очередей Azure для функций Azure
 
@@ -100,6 +100,24 @@ public static void Run(
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+ В следующем примере показана функция Java, которая создает сообщение очереди для события, вызванного HTTP-запросом.
+
+```java
+@FunctionName("httpToQueue")
+@QueueOutput(name = "item", queueName = "myqueue-items", connection = "MyStorageConnectionAppSetting")
+ public String pushToQueue(
+     @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+     final String message,
+     @HttpOutput(name = "response") final OutputBinding<String> result) {
+       result.setValue(message + " has been added.");
+       return message;
+ }
+```
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров, значения которых будут записываться в хранилище очередей.  Тип параметра должен быть `OutputBinding<T>` , где `T` — любой собственный тип Java для POJO.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера HTTP в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку. Эта функция создает элемент очереди для каждого полученного HTTP-запроса.
@@ -149,6 +167,79 @@ module.exports = function(context) {
     context.bindings.myQueueItem = ["message 1","message 2"];
     context.done();
 };
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующих примерах кода показано, как вывести сообщение очереди из функции, активируемой HTTP. Раздел конфигурации с параметром `type` класса `queue` определяет выходную привязку.
+
+```json
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "Msg",
+      "queueName": "outqueue",
+      "connection": "MyStorageConnectionAppSetting"
+    }
+  ]
+}
+```
+
+С помощью этой конфигурации привязки функция PowerShell может создать сообщение очереди с помощью `Push-OutputBinding` . В этом примере создается сообщение на основе строки запроса или параметра Body.
+
+```powershell
+using namespace System.Net
+
+# Input bindings are passed in via param block.
+param($Request, $TriggerMetadata)
+
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell HTTP trigger function processed a request."
+
+# Interact with query parameters or the body of the request.
+$message = $Request.Query.Message
+Push-OutputBinding -Name Msg -Value $message
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = 200
+    Body = "OK"
+})
+```
+
+Чтобы отправить несколько сообщений одновременно, определите массив сообщений и используйте `Push-OutputBinding` для отправки сообщений в выходную привязку очереди.
+
+```powershell
+using namespace System.Net
+
+# Input bindings are passed in via param block.
+param($Request, $TriggerMetadata)
+
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell HTTP trigger function processed a request."
+
+# Interact with query parameters or the body of the request.
+$message = @("message1", "message2")
+Push-OutputBinding -Name Msg -Value $message
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = 200
+    Body = "OK"
+})
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -214,24 +305,6 @@ def main(req: func.HttpRequest, msg: func.Out[typing.List[str]]) -> func.HttpRes
     return 'OK'
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
- В следующем примере показана функция Java, которая создает сообщение очереди для события, вызванного HTTP-запросом.
-
-```java
-@FunctionName("httpToQueue")
-@QueueOutput(name = "item", queueName = "myqueue-items", connection = "MyStorageConnectionAppSetting")
- public String pushToQueue(
-     @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
-     final String message,
-     @HttpOutput(name = "response") final OutputBinding<String> result) {
-       result.setValue(message + " has been added.");
-       return message;
- }
-```
-
-В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров, значения которых будут записываться в хранилище очередей.  Тип параметра должен быть `OutputBinding<T>` , где `T` — любой собственный тип Java для POJO.
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
@@ -270,14 +343,6 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 В скрипте C# атрибуты не поддерживаются.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-В JavaScript атрибуты не поддерживаются.
-
-# <a name="python"></a>[Python](#tab/python)
-
-В Python атрибуты не поддерживаются.
-
 # <a name="java"></a>[Java](#tab/java)
 
 `QueueOutput`Заметка позволяет записывать сообщение в качестве выходных данных функции. В следующем примере показана функция, активируемая по протоколу HTTP, которая создает сообщение очереди.
@@ -308,6 +373,18 @@ public class HttpTriggerQueueOutput {
 |`connection` | Указывает строку подключения к учетной записи хранения. |
 
 Параметр, связанный с `QueueOutput` заметкой, типизирован как [экземпляр \<T\> аутпутбиндинг](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/OutputBinding.java) .
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В JavaScript атрибуты не поддерживаются.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
+# <a name="python"></a>[Python](#tab/python)
+
+В Python атрибуты не поддерживаются.
 
 ---
 
@@ -359,25 +436,29 @@ public class HttpTriggerQueueOutput {
 * `ICollector<T>` или `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-Элемент очереди вывода доступен по адресу `context.bindings.<NAME>` , в котором `<NAME>` совпадает с именем, определенным в *function.json*. Строку или сериализуемый объект JSON можно использовать для полезных данных элемента очереди.
-
-# <a name="python"></a>[Python](#tab/python)
-
-Существует два варианта вывода сообщения очереди из функции:
-
-- **Возвращаемое значение**: установите `name` свойство в *function.jsна* `$return` . В этой конфигурации возвращаемое значение функции сохраняется как сообщение хранилища очереди.
-
-- **Императив**: передайте значение в метод [Set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set` , сохраняется как сообщение хранилища очереди.
-
 # <a name="java"></a>[Java](#tab/java)
 
 Существует два варианта вывода сообщения очереди из функции с помощью аннотации [куеуеаутпут](/java/api/com.microsoft.azure.functions.annotation.queueoutput) :
 
 - **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как сообщение очереди.
 
-- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) , где `T` — это POJO или любой собственный тип Java. При такой конфигурации передача значения `setValue` методу сохраняет значение в виде сообщения очереди.
+- **Императив** — чтобы явно задать значение сообщения, примените аннотацию к определенному параметру с типом [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding), где `T` — это POJO или любой собственный тип Java. При такой конфигурации передача значения `setValue` методу сохраняет значение в виде сообщения очереди.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Элемент очереди вывода доступен по адресу `context.bindings.<NAME>` , в котором `<NAME>` совпадает с именем, определенным в *function.json*. Строку или сериализуемый объект JSON можно использовать для полезных данных элемента очереди.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Выходные данные в сообщение очереди доступны через `Push-OutputBinding` место передачи аргументов, совпадающих с именем, назначенным `name` параметром binding в *function.js* в файле.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Существует два варианта вывода сообщения очереди из функции:
+
+- **Возвращаемое значение** — задайте для свойства `name` в файле *function.json* значение `$return`. В этой конфигурации возвращаемое значение функции сохраняется как сообщение хранилища очереди.
+
+- **Императив** — передайте значение методу [set](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true#set-val--t-----none) параметра, объявленного с типом [Out](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true). Значение, передаваемое в `set` , сохраняется как сообщение хранилища очереди.
 
 ---
 
@@ -421,7 +502,7 @@ public class HttpTriggerQueueOutput {
 |maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|
 |newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Выполнение функции как изменения данных хранилища очередей (триггер)](./functions-bindings-storage-queue-trigger.md)
 

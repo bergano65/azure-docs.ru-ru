@@ -8,12 +8,12 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 11/4/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 2c2b7de65e7ac22ebe648ce98633d5ae88818324
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 3728fdd07172f2402ddb1dc7434ddb1993b984b1
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628396"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95999881"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Сведения о партнере коммерческого рынка и использовании клиентов
 
@@ -100,7 +100,7 @@ ms.locfileid: "94628396"
 
 1. Откройте шаблон Resource Manager.
 
-1. Добавьте новый ресурс типа [Microsoft. Resources/deployments](/azure/templates/microsoft.resources/deployments) в основной файл шаблона. Этот ресурс можно указать только в файле **mainTemplate.json** или **azuredeploy.json** , но не во вложенных или связанных шаблонах.
+1. Добавьте новый ресурс типа [Microsoft. Resources/deployments](/azure/templates/microsoft.resources/deployments) в основной файл шаблона. Этот ресурс можно указать только в файле **mainTemplate.json** или **azuredeploy.json**, но не во вложенных или связанных шаблонах.
 
 1. Введите значение GUID после `pid-` префикса в качестве имени ресурса. Например, если GUID имеет значение eb7927c8-dd66-43e1-b0cf-c346a422063, имя ресурса будет иметь значение _PID-eb7927c8-dd66-43e1-b0cf-c346a422063_.
 
@@ -113,7 +113,7 @@ ms.locfileid: "94628396"
 ### <a name="sample-resource-manager-template-code"></a>Пример кода шаблона Resource Manager
 
 Чтобы включить отслеживание ресурсов для шаблона, необходимо добавить следующие дополнительные ресурсы в разделе ресурсов. Обязательно измените данные в примере кода ниже своими входными данными, когда будете добавлять его в основной файл шаблона.
-Этот ресурс должен быть добавлен только в файл **mainTemplate.json** или **azuredeploy.json** , но не во вложенные или связанные шаблоны.
+Этот ресурс должен быть добавлен только в файл **mainTemplate.json** или **azuredeploy.json**, но не во вложенные или связанные шаблоны.
 
 ```json
 // Make sure to modify this sample code with your own inputs where applicable
@@ -251,11 +251,7 @@ foreach ($deployment in $deployments){
 
 ## <a name="report"></a>Report
 
-Отчет об отслеживании потребления услуг клиентами можно найти в панели мониторинга Центра партнеров ([https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)). Для просмотра отчета необходимо войти с учетными данными Центра партнеров. Если при просмотре отчета или входе возникают проблемы, создайте запрос на поддержку с помощью инструкций, приведенных в разделе "Получение поддержки".
-
-Выберите отслеживаемый шаблон в раскрывающемся списке типа связи с партнером, чтобы просмотреть отчет.
-
-![Отчет по результатам отслеживания потребления услуг клиентами](media/marketplace-publishers-guide/customer-usage-attribution-report.png)
+Отчет об отслеживании потребления услуг клиентами можно найти в панели мониторинга Центра партнеров ([https://partner.microsoft.com/dashboard/partnerinsights/analytics/overview](https://partner.microsoft.com/dashboard/partnerinsights/analytics/overview)). Для просмотра отчета необходимо войти с учетными данными Центра партнеров. Если возникли проблемы с отчетом или входом, создайте [запрос в службу поддержки](#get-support).
 
 ## <a name="notify-your-customers"></a>Информирование клиентов
 
@@ -269,7 +265,7 @@ foreach ($deployment in $deployments){
 
 При развертывании \<PARTNER> программного обеспечения корпорация Майкрософт может опознать установку \<PARTNER> программного обеспечения с развернутыми ресурсами Azure. Корпорация Майкрософт может отслеживать ресурсы Azure, используемые для работы этого программного обеспечения. Корпорация Майкрософт собирает эти сведения, чтобы максимально повысить качество использования своих продуктов и делового сотрудничества. Данные собираются и управляются политиками конфиденциальности Майкрософт, которые можно найти по адресу [https://www.microsoft.com/trustcenter](https://www.microsoft.com/trustcenter) .
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Техническая поддержка
 
 Узнайте о вариантах поддержки в коммерческом магазине по [поддержке программы коммерческого рынка в центре партнеров](support.md).
 

@@ -9,11 +9,11 @@ ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.openlocfilehash: 191832ab227e854b40938183e335c1b6ea52199c
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347851"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000065"
 ---
 # <a name="create-and-manage-integration-accounts-for-b2b-enterprise-integrations-in-azure-logic-apps"></a>Создание корпоративных учетных записей интеграции и управление ими для корпоративных интеграций B2B в Azure Logic Apps.
 
@@ -33,7 +33,7 @@ ms.locfileid: "93347851"
 * перемещение учетной записи интеграции в другую подписку или группу ресурсов Azure;
 * удаление учетной записи интеграции.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -59,12 +59,12 @@ ms.locfileid: "93347851"
 
    | Свойство | Обязательно | Значение | Описание |
    |----------|----------|-------|-------------|
-   | **имя** ; | Да | <*Интеграция — имя учетной записи*> | Имя учетной записи интеграции, которое может содержать только буквы, цифры, дефисы ( `-` ), символы подчеркивания ( `_` ), круглые скобки ( `(` , `)` ) и точки ( `.` ). В этом примере используется "Fabrikam-Integration". |
+   | **Имя** | Да | <*Интеграция — имя учетной записи*> | Имя учетной записи интеграции, которое может содержать только буквы, цифры, дефисы ( `-` ), символы подчеркивания ( `_` ), круглые скобки ( `(` , `)` ) и точки ( `.` ). В этом примере используется "Fabrikam-Integration". |
    | **Подписка** | Да | <*Azure-subscription-name*> | Имя подписки Azure. |
    | **Группа ресурсов** | Да | <*имя_группы_ресурсов_Azure*> | Имя [группы ресурсов Azure](../azure-resource-manager/management/overview.md) , используемой для организации связанных ресурсов. В этом примере создайте новую группу ресурсов с именем "Фабрикаминтегратион-RG". |
-   | **Ценовая категория** | Да | <*уровень цен*> | Ценовая категория для учетной записи интеграции, которую можно изменить позже. В этом примере выберите **Free (бесплатный** ). Дополнительные сведения см. в следующих статьях: <p>- [Модель ценообразования Logic Apps](../logic-apps/logic-apps-pricing.md#integration-accounts) <p>- [Ограничения и конфигурация Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits) <p>- [Цены на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/) |
+   | **Ценовая категория** | Да | <*уровень цен*> | Ценовая категория для учетной записи интеграции, которую можно изменить позже. В этом примере выберите **Free (бесплатный**). Дополнительные сведения см. в следующих статьях: <p>- [Модель ценообразования Logic Apps](../logic-apps/logic-apps-pricing.md#integration-accounts) <p>- [Ограничения и конфигурация Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits) <p>- [Цены на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/) |
    | **Расположение** | Да | <*Azure-region*> | Регион, в котором хранятся метаданные учетной записи интеграции. Выберите то же расположение, что и приложение логики, или создайте приложения логики в том же расположении, что и учетная запись интеграции. В этом примере используйте "Западная часть США". <p>**Примечание**. чтобы создать учетную запись интеграции в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), выберите эту интегрированную среду сценариев в качестве расположения. Дополнительные сведения см. [в разделе Создание учетных записей интеграции в интегрированной среде сценариев](../logic-apps/add-artifacts-integration-service-environment-ise.md#create-integration-account-environment). |
-   | **Log Analytics** ; | Нет | Выкл., вкл. | Для этого примера не устанавливайте параметр **Off** . |
+   | **Служба Log Analytics** | нет | Выкл., вкл. | Для этого примера не устанавливайте параметр **Off** . |
    |||||
 
 1. По завершении нажмите кнопку **Создать**.
@@ -75,7 +75,7 @@ ms.locfileid: "93347851"
 
 1. Прежде чем приложение логики сможет использовать учетную запись интеграции, выполните следующие действия, чтобы связать учетную запись интеграции и приложение логики вместе.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Учетную запись интеграции можно создать с помощью команд Azure CLI в этом разделе.
 
@@ -203,11 +203,11 @@ az logic integration-account delete --name integration_account_01 --resource-gro
 
    ![В меню учетной записи интеграции выберите "Обзор".](./media/logic-apps-enterprise-integration-create-integration-account/integration-account-overview.png)
 
-1. В области Обзор выберите **Обновить ценовую категорию** , в которой перечислены все доступные более высокие уровни. При выборе уровня изменение вступает в силу немедленно.
+1. В области Обзор выберите **Обновить ценовую категорию**, в которой перечислены все доступные более высокие уровни. При выборе уровня изменение вступает в силу немедленно.
 
 <a name="upgrade-tier-azure-cli"></a>
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 1. [Установите Azure CLI необходимые компоненты](/cli/azure/get-started-with-azure-cli), если это еще не сделано.
 
@@ -355,7 +355,7 @@ az logic integration-account delete --name integration_account_01 --resource-gro
 
    ![Чтобы подтвердить удаление, выберите "Да".](./media/logic-apps-enterprise-integration-create-integration-account/confirm-delete.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание торговых партнеров в учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-partners.md)
 * [Создание соглашений между партнерами в учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-agreements.md)

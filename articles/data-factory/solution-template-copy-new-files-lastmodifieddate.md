@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 3/8/2019
 ms.openlocfilehash: 99d90e4d93f0e4a70350a5a33a65700c3e14acb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91398329"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000816"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Копирование новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "91398329"
 
     ![Просмотр результатов](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate7.png)
     
-7. Теперь можно добавить триггер Windows "переворачивающегося" для автоматизации этого конвейера, чтобы конвейер всегда мог периодически копировать новые и измененные файлы только LastModifiedDate.  Выберите **добавить триггер**и щелкните **создать или изменить**.
+7. Теперь можно добавить триггер Windows "переворачивающегося" для автоматизации этого конвейера, чтобы конвейер всегда мог периодически копировать новые и измененные файлы только LastModifiedDate.  Выберите **добавить триггер** и щелкните **создать или изменить**.
 
     ![Снимок экрана, посвященный пункту меню "создать/изменить", который отображается при выборе пункта "добавить триггер".](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate8.png)
     
@@ -88,8 +88,8 @@ ms.locfileid: "91398329"
     - **Directory_Source**  =  **вложенная папка**.  Вы можете заменить вложенной папкой в исходном хранилище данных.
     - **FolderPath_Destination**  =  **destinationfolder**.  Вы можете заменить папку в целевом хранилище данных.
     - **Directory_Destination**  =  **вложенная папка**.  Вы можете заменить вложенной папкой в целевом хранилище данных.
-    - **LastModified_From**  =   ** \@ триггер (). Outputs. windowStartTime**.  Это системная переменная из триггера, определяющая время, когда конвейер был активирован в последний раз.
-    - **LastModified_To**  =  ** \@ триггер (). Outputs. windowEndTime**.  Это системная переменная из триггера, определяющая время активации конвейера на данный момент.
+    - **LastModified_From**  =   **\@ триггер (). Outputs. windowStartTime**.  Это системная переменная из триггера, определяющая время, когда конвейер был активирован в последний раз.
+    - **LastModified_To**  =  **\@ триггер (). Outputs. windowEndTime**.  Это системная переменная из триггера, определяющая время активации конвейера на данный момент.
     
     ![Входные параметры](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate11.png)
     

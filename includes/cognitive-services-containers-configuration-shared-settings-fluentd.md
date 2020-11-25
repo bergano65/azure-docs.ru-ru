@@ -5,17 +5,17 @@ ms.date: 06/25/2019
 ms.service: cognitive-services
 ms.topic: include
 ms.openlocfilehash: b08516b35a864eae6d15c4c5c928f0550c64c239
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67712462"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001208"
 ---
 Fluentd — это сборщик данных с открытым кодом для унифицированного ведения журнала. Параметры `Fluentd` управляют подключением контейнера к серверу [Fluentd](https://www.fluentd.org). В состав контейнера входит поставщик ведения журнала Fluentd, который позволяет контейнеру записывать данные журналов и (необязательно) данные метрик на сервер Fluentd.
 
 В следующей таблице описаны параметры конфигурации, поддерживаемые в разделе `Fluentd`.
 
-| name | Тип данных | Описание |
+| Имя | Тип данных | Описание |
 |------|-----------|-------------|
 | `Host` | Строка | IP-адрес или имя узла DNS сервера Fluentd. |
 | `Port` | Целое число | Порт сервера Fluentd.<br/> Значение по умолчанию — 24224. |

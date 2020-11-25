@@ -6,11 +6,11 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.openlocfilehash: 3940f060209ea5ba55957a3673020656d45de9e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776550"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000102"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>Изменение пар QnA в базе знаний
 
@@ -60,7 +60,7 @@ QnA Maker позволяет управлять содержимым базы з
     |--|--|
     |Переключение между редактором Rich-Text и Markdown. `</>`|CTRL+M|
     |Делять. **Б**|Ctrl + фунтов|
-    |Курсив, обозначенный курсивом ** _I_**|CTRL+I|
+    |Курсив, обозначенный курсивом **_I_**|CTRL+I|
     |Неупорядоченный список||
     |Упорядоченный список||
     |Стиль абзаца||
@@ -130,7 +130,7 @@ QnA Maker позволяет управлять содержимым базы з
 
 [Markdown](../reference-markdown-format.md) — это лучшее средство, когда необходимо автоматически создавать содержимое для создания баз знаний, импортируемых в рамках конвейера CI/CD или для [пакетного тестирования](../Quickstarts/batch-testing.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Collaborate on a knowledge base](./collaborate-knowledge-base.md) (Совместная работа над базой знаний)

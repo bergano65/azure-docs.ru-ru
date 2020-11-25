@@ -8,11 +8,11 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/19/2018
 ms.openlocfilehash: 6fc0833f70e3e9cd98100f193b52e5a1bfa4d651
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75666675"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96000408"
 ---
 # <a name="exchange-edi-messages-as-batches-or-groups-between-trading-partners-in-azure-logic-apps"></a>Обмен сообщениями EDI как пакетами или группами между торговыми партнерами в Azure Logic Apps
 
@@ -191,6 +191,6 @@ ms.locfileid: "75666675"
 
 Чтобы проверить решение пакетной обработки, опубликуйте сообщения X12 в приложении логики для отправки пакета из приложения [Postman](https://www.getpostman.com/postman) или аналогичного инструмента. Через некоторое время вы начнете получать сообщения X12 в службе RequestBin — каждые 10 минут или в виде пакета из 10 элементов. Все они должны иметь одинаковый ключ раздела.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Пакетная обработка сообщений](../logic-apps/logic-apps-batch-process-send-receive-messages.md) 

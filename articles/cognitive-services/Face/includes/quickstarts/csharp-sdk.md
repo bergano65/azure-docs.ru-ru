@@ -10,11 +10,11 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.openlocfilehash: 1299cbf1b837315a1a95c8a2ec2e4ed0706d959c
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94816661"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999361"
 ---
 В этом руководстве описано, как приступить к работе с клиентской библиотекой API "Распознавание лиц" для .NET. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
