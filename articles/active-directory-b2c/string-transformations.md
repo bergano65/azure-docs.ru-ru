@@ -12,11 +12,11 @@ ms.date: 11/03/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 4e74c33a18baff3e1cb39328ce265f16975ef1b5
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322152"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994848"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 
@@ -80,10 +80,10 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputClaim1** : someone@contoso.com.
-  - **inputClaim2** : someone@outlook.com.
+  - **inputClaim1**: someone@contoso.com.
+  - **inputClaim2**: someone@outlook.com.
 - Входные параметры:
-  - **stringComparison** : ordinalIgnoreCase.
+  - **stringComparison**: ordinalIgnoreCase.
 - Результат: возникла ошибка.
 
 ## <a name="changecase"></a>ChangeCase
@@ -115,11 +115,11 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **email** : SomeOne@contoso.com.
+  - **email**: SomeOne@contoso.com.
 - Входные параметры:
-    - **toCase** : LOWER
+    - **toCase**: LOWER
 - Исходящие утверждения:
-  - **email** : someone@contoso.com.
+  - **email**: someone@contoso.com.
 
 ## <a name="createstringclaim"></a>CreateStringClaim
 
@@ -146,9 +146,9 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входной параметр:
-    - **value** : условия предоставления услуг компании Contoso...
+    - **value**: условия предоставления услуг компании Contoso...
 - Исходящие утверждения:
-    - **createdClaim** : параметр ClaimType TOS содержит значение "Условия предоставления услуг компании Contoso...".
+    - **createdClaim**: параметр ClaimType TOS содержит значение "Условия предоставления услуг компании Contoso...".
 
 ## <a name="compareclaims"></a>CompareClaims
 
@@ -183,13 +183,13 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputClaim1** : someone@contoso.com.
-  - **inputClaim2** : someone@outlook.com.
+  - **inputClaim1**: someone@contoso.com.
+  - **inputClaim2**: someone@outlook.com.
 - Входные параметры:
-    - **operator** :  NOT EQUAL.
-    - **ignoreCase** : true.
+    - **operator**:  NOT EQUAL.
+    - **ignoreCase**: true.
 - Исходящие утверждения:
-    - **outputClaim** : true.
+    - **outputClaim**: true.
 
 ## <a name="compareclaimtovalue"></a>CompareClaimToValue
 
@@ -223,13 +223,13 @@ ms.locfileid: "93322152"
 
 ### <a name="example"></a>Пример
 - Входящие утверждения:
-    - **inputClaim1** : v1.
+    - **inputClaim1**: v1.
 - Входные параметры:
-    - **compareTo** : V1
-    - **operator** : EQUAL
-    - **ignoreCase** : true.
+    - **compareTo**: V1
+    - **operator**: EQUAL
+    - **ignoreCase**: true.
 - Исходящие утверждения:
-    - **outputClaim** : true.
+    - **outputClaim**: true.
 
 ## <a name="createrandomstring"></a>CreateRandomString
 
@@ -259,9 +259,9 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входные параметры:
-    - **randomGeneratorType** : GUID
+    - **randomGeneratorType**: GUID
 - Исходящие утверждения:
-    - **outputClaim** : bc8bedd2-aaa3-411e-bdee-2f1810b73dfc.
+    - **outputClaim**: bc8bedd2-aaa3-411e-bdee-2f1810b73dfc.
 
 В следующем примере создается случайное целое число от 0 до 1000. Значение форматируется в формат OTP_{случайное значение}.
 
@@ -282,12 +282,12 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входные параметры:
-    - **randomGeneratorType** : INTEGER
-    - **maximumNumber** : 1000
-    - **stringFormat** : OTP_{0}.
-    - **Base64** : false.
+    - **randomGeneratorType**: INTEGER
+    - **maximumNumber**: 1000
+    - **stringFormat**: OTP_{0}.
+    - **Base64**: false.
 - Исходящие утверждения:
-    - **outputClaim** : OTP_853.
+    - **outputClaim**: OTP_853.
 
 
 ## <a name="formatstringclaim"></a>FormatStringClaim
@@ -319,11 +319,11 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim** : 5164db16-3eee-4629-bfda-dcc3326790e9.
+    - **inputClaim**: 5164db16-3eee-4629-bfda-dcc3326790e9.
 - Входные параметры:
-    - **stringFormat** : cpim_{0}@{ИД клиента проверяющей стороны}.
+    - **stringFormat**: cpim_{0}@{ИД клиента проверяющей стороны}.
 - Исходящие утверждения:
-  - **outputClaim** : cpim_5164db16-3eee-4629-bfda-dcc3326790e9@b2cdemo.onmicrosoft.com.
+  - **outputClaim**: cpim_5164db16-3eee-4629-bfda-dcc3326790e9@b2cdemo.onmicrosoft.com.
 
 ## <a name="formatstringmultipleclaims"></a>FormatStringMultipleClaims
 
@@ -356,12 +356,12 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim1** : Ivan
-    - **inputClaim2** : Voronkov.
+    - **inputClaim1**: Ivan
+    - **inputClaim2**: Voronkov.
 - Входные параметры:
-    - **stringFormat** : {0} {1}
+    - **stringFormat**: {0} {1}
 - Исходящие утверждения:
-    - **outputClaim** : Ivan Voronkov.
+    - **outputClaim**: Ivan Voronkov.
 
 ## <a name="getlocalizedstringstransformation"></a>GetLocalizedStringsTransformation
 
@@ -428,9 +428,9 @@ ms.locfileid: "93322152"
 
 - Исходящие утверждения:
   - **subject.** Код проверки учетной записи электронной почты Contoso
-  - **message** : Благодарим за подтверждение учетной записи!
-  - **codeIntro** : Ваш код:
-  - **signature** : С уважением,
+  - **message**: Благодарим за подтверждение учетной записи!
+  - **codeIntro**: Ваш код:
+  - **signature**: С уважением,
 
 
 ## <a name="getmappedvaluefromlocalizedcollection"></a>GetMappedValueFromLocalizedCollection
@@ -472,9 +472,9 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **mapFromClaim** : B2C_V1_90001.
+    - **mapFromClaim**: B2C_V1_90001.
 - Исходящие утверждения:
-    - **restrictionValueClaim** : Вы не можете войти, так как являетесь несовершеннолетним.
+    - **restrictionValueClaim**: Вы не можете войти, так как являетесь несовершеннолетним.
 
 ## <a name="lookupvalue"></a>LookupValue
 
@@ -509,14 +509,14 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputParameterId** : test.com.
+    - **inputParameterId**: test.com.
 - Входные параметры:
-    - **contoso.com** : 13c15f79-8fb1-4e29-a6c9-be0d36ff19f1.
-    - **microsoft.com** : 0213308f-17cb-4398-b97e-01da7bd4804e.
-    - **test.com** : c7026f88-4299-4cdb-965d-3f166464b8a9.
-    - **errorOnFailedLookup** : false.
+    - **contoso.com**: 13c15f79-8fb1-4e29-a6c9-be0d36ff19f1.
+    - **microsoft.com**: 0213308f-17cb-4398-b97e-01da7bd4804e.
+    - **test.com**: c7026f88-4299-4cdb-965d-3f166464b8a9.
+    - **errorOnFailedLookup**: false.
 - Исходящие утверждения:
-    - **outputClaim** :    c7026f88-4299-4cdb-965d-3f166464b8a9
+    - **outputClaim**:    c7026f88-4299-4cdb-965d-3f166464b8a9
 
 Если входной параметр `errorOnFailedLookup` имеет значение `true`, преобразование утверждений **LookupValue** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md) или [DisplayControl](display-controls.md). Метаданные `LookupNotFound` самоподтвержденного технического профиля позволяют управлять сообщением об ошибке, представленным пользователю.
 
@@ -544,12 +544,12 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputParameterId** : live.com
+    - **inputParameterId**: live.com
 - Входные параметры:
-    - **contoso.com** : 13c15f79-8fb1-4e29-a6c9-be0d36ff19f1.
-    - **microsoft.com** : 0213308f-17cb-4398-b97e-01da7bd4804e.
-    - **test.com** : c7026f88-4299-4cdb-965d-3f166464b8a9.
-    - **errorOnFailedLookup** : true
+    - **contoso.com**: 13c15f79-8fb1-4e29-a6c9-be0d36ff19f1.
+    - **microsoft.com**: 0213308f-17cb-4398-b97e-01da7bd4804e.
+    - **test.com**: c7026f88-4299-4cdb-965d-3f166464b8a9.
+    - **errorOnFailedLookup**: true
 - Ошибка:
     - Не найдено совпадений для значения входного утверждения в списке идентификаторов входных параметров, а errorOnFailedLookup имеет значение true.
 
@@ -573,9 +573,9 @@ ms.locfileid: "93322152"
 ```
 
 - Входящие утверждения:
-    - **outputClaim** : "Добро пожаловать в приложение Contoso". Если вы по-прежнему просматриваете и используете этот веб-сайт, вы соглашаетесь соблюдать следующие положения и условия...
+    - **outputClaim**: "Добро пожаловать в приложение Contoso". Если вы по-прежнему просматриваете и используете этот веб-сайт, вы соглашаетесь соблюдать следующие положения и условия...
 - Исходящие утверждения:
-    - **outputClaim** : NULL
+    - **outputClaim**: NULL
 
 ## <a name="parsedomain"></a>ParseDomain
 
@@ -602,9 +602,9 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **EmailAddress** : joe@outlook.com.
+  - **EmailAddress**: joe@outlook.com.
 - Исходящие утверждения:
-    - **domain** : outlook.com.
+    - **domain**: outlook.com.
 
 ## <a name="setclaimsifregexmatch"></a>SetClaimsIfRegexMatch
 
@@ -641,13 +641,13 @@ ms.locfileid: "93322152"
 ```
 
 - Входящие утверждения:
-    - **claimToMatch** : "64854114520"
+    - **claimToMatch**: "64854114520"
 - Входные параметры:
-    - **matchTo** : "^[0-9]{4,16}$"
-    - **outputClaimIfMatched** :  "isPhone"
+    - **matchTo**: "^[0-9]{4,16}$"
+    - **outputClaimIfMatched**:  "isPhone"
 - Исходящие утверждения:
-    - **outputClaim** : "isPhone"
-    - **regexCompareResultClaim** : true
+    - **outputClaim**: "isPhone"
+    - **regexCompareResultClaim**: true
 
 ### <a name="example-2"></a>Пример 2
 
@@ -672,15 +672,15 @@ ms.locfileid: "93322152"
 ```
 
 - Входящие утверждения:
-    - **claimToMatch** : "emily@contoso.com"
+    - **claimToMatch**: "emily@contoso.com"
 - Входные параметры:
-    - **matchTo** : `(?&lt;mailAlias&gt;.*)@(.*)$`
-    - **outputClaimIfMatched** :  "isEmail"
-    - **extractGroups** : true
+    - **matchTo**: `(?&lt;mailAlias&gt;.*)@(.*)$`
+    - **outputClaimIfMatched**:  "isEmail"
+    - **extractGroups**: true
 - Исходящие утверждения:
-    - **outputClaim** : "isEmail"
-    - **regexCompareResultClaim** : true
-    - **mailAlias** : emily
+    - **outputClaim**: "isEmail"
+    - **regexCompareResultClaim**: true
+    - **mailAlias**: emily
     
 ## <a name="setclaimsifstringsareequal"></a>SetClaimsIfStringsAreEqual
 
@@ -720,16 +720,16 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim** : v1.
+    - **inputClaim**: v1.
 - Входные параметры:
-    - **matchTo** : V1
-    - **stringComparison** : ordinalIgnoreCase.
-    - **stringMatchMsg** :  B2C_V1_90005.
-    - **stringMatchMsgCode** :  "TOS обновлено до версии 2".
+    - **matchTo**: V1
+    - **stringComparison**: ordinalIgnoreCase.
+    - **stringMatchMsg**:  B2C_V1_90005.
+    - **stringMatchMsgCode**:  "TOS обновлено до версии 2".
 - Исходящие утверждения:
-    - **outputClaim1** : B2C_V1_90005.
-    - **outputClaim2** : "TOS обновлено до версии 2".
-    - **stringCompareResultClaim** : true.
+    - **outputClaim1**: B2C_V1_90005.
+    - **outputClaim2**: "TOS обновлено до версии 2".
+    - **stringCompareResultClaim**: true.
 
 ## <a name="setclaimsifstringsmatch"></a>SetClaimsIfStringsMatch
 
@@ -766,14 +766,14 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **claimToMatch** : Minor.
+    - **claimToMatch**: Minor.
 - Входные параметры:
-    - **matchTo** : Minor.
-    - **stringComparison** : ordinalIgnoreCase.
-    - **outputClaimIfMatched** :  B2C_V1_90001.
+    - **matchTo**: Minor.
+    - **stringComparison**: ordinalIgnoreCase.
+    - **outputClaimIfMatched**:  B2C_V1_90001.
 - Исходящие утверждения:
-    - **isMinorResponseCode** : B2C_V1_90001.
-    - **isMinor** : true.
+    - **isMinorResponseCode**: B2C_V1_90001.
+    - **isMinor**: true.
 
 
 ## <a name="stringcontains"></a>StringContains;
@@ -807,12 +807,12 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim** : "Admin, Approver, Editor"
+    - **inputClaim**: "Admin, Approver, Editor"
 - Входные параметры:
-    - **contains** : "admin,"
-    - **ignoreCase** : true.
+    - **contains**: "admin,"
+    - **ignoreCase**: true.
 - Исходящие утверждения:
-    - **outputClaim** : true.
+    - **outputClaim**: true.
 
 ## <a name="stringsubstring"></a>StringSubstring
 
@@ -845,12 +845,12 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim** : "+1644114520"
+    - **inputClaim**: "+1644114520"
 - Входные параметры:
-    - **startIndex** : 0
-    - **length** :  2
+    - **startIndex**: 0
+    - **length**:  2
 - Исходящие утверждения:
-    - **outputClaim** : "+1"
+    - **outputClaim**: "+1"
 
 ## <a name="stringreplace"></a>StringReplace
 
@@ -883,12 +883,12 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim** : "+164-411-452-054"
+    - **inputClaim**: "+164-411-452-054"
 - Входные параметры:
-    - **oldValue** : "-"
-    - **newValue** : ""
+    - **oldValue**: "-"
+    - **newValue**: ""
 - Исходящие утверждения:
-    - **outputClaim** : "+164411452054"
+    - **outputClaim**: "+164411452054"
 
 ## <a name="stringjoin"></a>StringJoin
 
@@ -919,11 +919,11 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputClaim** : [ "Admin", "Author", "Reader" ]
+  - **inputClaim**: [ "Admin", "Author", "Reader" ]
 - Входные параметры:
-  - **delimiter** : ","
+  - **delimiter**: ","
 - Исходящие утверждения:
-  - **outputClaim** : "Admin,Author,Reader"
+  - **outputClaim**: "Admin,Author,Reader"
 
 
 ## <a name="stringsplit"></a>StringSplit
@@ -955,11 +955,11 @@ ms.locfileid: "93322152"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputClaim** : "Admin,Author,Reader"
+  - **inputClaim**: "Admin,Author,Reader"
 - Входные параметры:
-  - **delimiter** : ","
+  - **delimiter**: ","
 - Исходящие утверждения:
-  - **outputClaim** : [ "Admin", "Author", "Reader" ]
+  - **outputClaim**: [ "Admin", "Author", "Reader" ]
 
 ## <a name="string-claim-transformations-expressions"></a>Выражения преобразований строкового утверждения
 Выражения преобразования утверждений в пользовательских политиках Azure AD B2C предоставляют контекстные сведения об идентификаторе клиента и технического профиля.

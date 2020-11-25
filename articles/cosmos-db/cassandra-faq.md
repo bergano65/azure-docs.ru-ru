@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 08/12/2020
 ms.author: thvankra
 ms.openlocfilehash: 3436a0edf69efc71d3528bffaefd613668426fad
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339943"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995831"
 ---
 # <a name="frequently-asked-questions-about-the-cassandra-api-in-azure-cosmos-db"></a>Часто задаваемые вопросы о API Cassandra в Azure Cosmos DB
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -191,6 +191,6 @@ API Cassandra позаимствования из глобальной расп�
 [azure-portal]: https://portal.azure.com
 [query]: ./sql-query-getting-started.md
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Приступая к работе с [эластичным масштабированием учетной записи Azure Cosmos DB API Cassandra](manage-scale-cassandra.md).

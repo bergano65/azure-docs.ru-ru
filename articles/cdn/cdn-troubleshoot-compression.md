@@ -15,11 +15,11 @@ ms.topic: troubleshooting
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: f49af1488a0c044639a72fc2ea52ba0a47727a24
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89433676"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996157"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Устранение неполадок со сжатием файлов CDN
 Эта статья поможет вам устранить неполадки со [сжатием файлов CDN](cdn-improve-performance.md).
@@ -36,7 +36,7 @@ ms.locfileid: "89433676"
 > 
 > 
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 Возможно несколько причин, включая указанные ниже.
 
 * Запрошенное содержимое не подходит для сжатия.

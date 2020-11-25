@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
 ms.openlocfilehash: 05295efec3d7651c3a77dd5ad6e2c72b57a6c5a3
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146762"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994720"
 ---
 # <a name="import-an-openapi-specification"></a>Импорт спецификации OpenAPI
 
@@ -38,12 +38,12 @@ ms.locfileid: "93146762"
 
 ## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Импорт и публикация API серверной части
 
-1. На портале Azure перейдите к службе "Управление API" и в меню выберите **Интерфейсы API** .
-2. Выберите **Спецификация OpenAPI** из списка **Добавление нового API** .
+1. На портале Azure перейдите к службе "Управление API" и в меню выберите **Интерфейсы API**.
+2. Выберите **Спецификация OpenAPI** из списка **Добавление нового API**.
 
     ![Спецификация OpenAPI](./media/import-api-from-oas/oas-api.png)
-3. Введите параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры** . Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#import-and-publish-a-backend-api).
-4. Нажмите кнопку **создания** .
+3. Введите параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#import-and-publish-a-backend-api).
+4. Нажмите кнопку **создания**.
 
 > [!NOTE]
 > См. подробнее об [ограничении импорта API](api-management-api-import-restrictions.md).

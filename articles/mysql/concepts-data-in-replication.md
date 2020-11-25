@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 8/7/2020
 ms.openlocfilehash: 99beddba470f73d6eadb448dfe1b77453ce6426d
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541595"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996225"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -25,7 +25,7 @@ ms.locfileid: "94541595"
  
 Для сценариев миграции используйте [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/)(DMS).
 
-## <a name="limitations-and-considerations"></a>Рекомендации и ограничения
+## <a name="limitations-and-considerations"></a>Ограничения и рекомендации
 
 ### <a name="data-not-replicated"></a>Нереплицируемые данные
 [*Системная база данных MySQL*](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html) на исходном сервере не реплицирована. Изменения учетных записей и разрешений на исходном сервере не реплицируются. Если вы создаете учетную запись на исходном сервере и эта учетная запись должна иметь доступ к серверу реплики, вручную создайте ту же учетную запись на стороне сервера реплики. Чтобы узнать, какие таблицы хранятся в системной базе данных, ознакомьтесь с [руководством по MySQL](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html).
@@ -44,13 +44,13 @@ ms.locfileid: "94541595"
 - Если на исходном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](./howto-data-in-replication.md#link-source-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
 - Убедитесь, что IP-адрес исходного сервера добавлен в базу данных Azure для правил брандмауэра сервера реплики MySQL. Измените правила брандмауэра на [портале Azure](./howto-manage-firewall-using-portal.md) или с помощью [Azure CLI](./howto-manage-firewall-using-cli.md).
 - Убедитесь, что компьютер, на котором размещается исходный сервер, допускает входящий и исходящий трафик через порт 3306.
-- Убедитесь, что исходный сервер имеет **общедоступный IP-адрес** , DNS является общедоступным или имеет полное доменное имя (FQDN).
+- Убедитесь, что исходный сервер имеет **общедоступный IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
 
 ### <a name="other"></a>Другое
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте, как [настроить репликацию данных](howto-data-in-replication.md)
 - Дополнительные сведения см. в статье [Реплики чтения в базе данных Azure для MySQL](concepts-read-replicas.md).
 - Сведения о [переносе данных с минимальным временем простоя с помощью DMS](howto-migrate-online.md)

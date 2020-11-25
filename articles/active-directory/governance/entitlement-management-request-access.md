@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 726507fa6ea0651b23d46424bda669a2d8ad41e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979914"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996650"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 
@@ -51,7 +51,7 @@ ms.locfileid: "90979914"
 
 **Предварительная роль:** Запрашивающей стороны
 
-1. Найдите пакет Access в списке.  При необходимости можно выполнить поиск, введя строку поиска, а затем выбрав **имя**, **Каталог**или фильтр **ресурсов** .
+1. Найдите пакет Access в списке.  При необходимости можно выполнить поиск, введя строку поиска, а затем выбрав **имя**, **Каталог** или фильтр **ресурсов** .
 
     ![Мой портал доступа — Поиск ресурсов](./media/entitlement-management-request-access/my-access-resource-search.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "90979914"
 
 1. Щелкните **журнал запросов** , чтобы подтвердить отмену запроса.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Утверждение или отклонение запросов на доступ](entitlement-management-request-approve.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

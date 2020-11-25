@@ -12,11 +12,11 @@ ms.date: 09/24/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq2, devx-track-python, deploy
 ms.openlocfilehash: 9ec82dcd7578744dc7443d48dc28820413f14005
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491704"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996310"
 ---
 # <a name="deploy-ml-models-to-field-programmable-gate-arrays-fpgas-with-azure-machine-learning"></a>Развертывание моделей машинного обучения в программируемых массивах Gate (FPGA) с Машинное обучение Azure 
 
@@ -349,7 +349,7 @@ for top in sorted_results[:5]:
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы избежать ненужных затрат, очистите ресурсы **в следующем порядке** : веб-служба, затем изображение, а затем модель.
+Чтобы избежать ненужных затрат, очистите ресурсы **в следующем порядке**: веб-служба, затем изображение, а затем модель.
 
 ```python
 aks_service.delete()

@@ -10,12 +10,12 @@ ms.date: 07/15/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 07e306c6c428a0e3a3f64a29a2574cb0378bb81f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a74860b7adf4dade5aedc71a4960595cbe55eaf0
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89230234"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95995307"
 ---
 # <a name="enable-and-manage-soft-delete-for-blobs"></a>Включение и контроль обратимого удаления для BLOB-объектов
 
@@ -34,7 +34,7 @@ ms.locfileid: "89230234"
 1. Войдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com/).
 1. Выберите параметр **Защита данных** в разделе **Служба BLOB-объектов**.
 1. Задайте для свойства " **обратимое удаление больших двоичных объектов** " значение *включено*.
-1. В разделе **политики хранения**укажите, как долго удаляемые обратимо удаленные BLOB-объекты будут храниться в службе хранилища Azure.
+1. В разделе **политики хранения** укажите, как долго удаляемые обратимо удаленные BLOB-объекты будут храниться в службе хранилища Azure.
 1. Сохраните изменения.
 
 ![Снимок экрана портала Azure с выбранной службой BLOB-объектов защиты данных.](media/soft-delete-blob-enable/storage-blob-soft-delete-portal-configuration.png)
@@ -194,5 +194,5 @@ blockBlob.StartCopy(copySource);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обратимое удаление для хранилища BLOB-объектов](soft-delete-overview.md)
+- [Обратимое удаление для хранилища BLOB-объектов](./soft-delete-blob-overview.md)
 - [Управление версиями BLOB-объектов](versioning-overview.md)

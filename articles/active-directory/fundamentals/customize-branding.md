@@ -14,11 +14,11 @@ ms.reviewer: kexia
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bb138ade0f579a7545c0910646b6adfb7d5ac02a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650229"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996667"
 ---
 # <a name="add-branding-to-your-organizations-azure-active-directory-sign-in-page"></a>Добавление фирменной символики организации на страницу входа в Azure Active Directory
 Используйте логотип вашей организации и настраиваемые цветовые схемы для обеспечения единого оформления и поведения на страницах входа в Azure Active Directory (Azure AD). Страницы входа отображаются, когда пользователи входят в веб-приложения организации, например Microsoft 365, которая использует Azure AD в качестве поставщика удостоверений.
@@ -74,7 +74,7 @@ ms.locfileid: "94650229"
           
           > Начертан ``` ++text++ ``` 
 
-    - **Дополнительные параметры**
+    - **Дополнительные настройки**
             
         ![Страница настройки фирменной символики с заполненными дополнительными параметрами](media/customize-branding/configure-company-branding-advanced-settings.png)   
 
@@ -139,7 +139,7 @@ ms.locfileid: "94650229"
 ## <a name="add-your-custom-branding-to-pages"></a>Добавление пользовательской фирменной символики на страницы
 Добавить пользовательскую фирменную символику на страницы можно, добавив в конец URL-адреса текст `?whr=yourdomainname`. Это изменение работает на нескольких страницах, включая страницу настройки многофакторной проверки подлинности (MFA), страницу настройки самостоятельного сброса пароля (SSPR) и страницу входа.
 
-**Примеры**
+**Примеры:**
 
 **Исходный URL-адрес:** https://aka.ms/MFASetup<br>
 **Настраиваемый URL-адрес:**`https://account.activedirectory.windowsazure.com/proofup.aspx?whr=contoso.com`

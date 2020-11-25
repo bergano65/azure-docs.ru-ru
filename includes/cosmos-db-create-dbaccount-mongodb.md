@@ -4,11 +4,11 @@ description: включить файл
 services: cosmos-db
 ms.custom: include file
 ms.openlocfilehash: ad4445cbea6553a7a96299e1276dbe8f3816e166
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94503906"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994568"
 ---
 1. В новом окне браузера войдите на [портал Azure](https://portal.azure.com/).
 

@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/22/2020
 ms.author: apimpm
 ms.openlocfilehash: 41209233ec59f578db4ff7fd344bb96aefeb975e
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146779"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994746"
 ---
 # <a name="import-an-api-app-as-an-api"></a>импорт приложения API в качестве API;
 
@@ -43,7 +43,7 @@ ms.locfileid: "93146779"
 2. Выберите **Приложение API** в списке **Add a new API** (Добавление нового API).
 
     ![приложение API;](./media/import-api-app-as-api/api-app.png)
-3. Нажмите кнопку **Обзор** , чтобы просмотреть список приложений API в вашей подписке.
+3. Нажмите кнопку **Обзор**, чтобы просмотреть список приложений API в вашей подписке.
 4. Выберите приложение. Служба управления API найдет файл Swagger, связанный с выбранным приложением, извлечет и импортирует его. 
 
     Если службе управления API не удается найти файл Swagger, она предоставляет API в качестве сквозного. 

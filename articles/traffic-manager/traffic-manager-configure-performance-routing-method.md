@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: duau
 ms.openlocfilehash: 46d71a38b79f449084f7353527f2dfb05d5b92a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401033"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994916"
 ---
 # <a name="configure-the-performance-traffic-routing-method"></a>Настройка метода маршрутизации трафика по производительности
 
@@ -42,7 +42,7 @@ ms.locfileid: "89401033"
 
 ![Настройка метода маршрутизации трафика по производительности с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).

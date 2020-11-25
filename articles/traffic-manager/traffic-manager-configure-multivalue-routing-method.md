@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: duau
 ms.openlocfilehash: 85e088dda767a6f6c80ac0a9f6eed84e8802e5ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401050"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994933"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
 
@@ -37,7 +37,7 @@ ms.locfileid: "89401050"
 ## <a name="create-a-traffic-manager-profile"></a>Создание профиля диспетчера трафика
 Создайте профиль диспетчера трафика, который направляет трафик пользователя к конечной точке с минимальной задержкой.
 
-1. В верхней левой части экрана выберите **создать ресурс**  >  **Сетевые подключения**  >  **профиль диспетчера трафика**  >  **создать**.
+1. В верхней левой части экрана выберите **Создать ресурс** > **Сети** > **Профиль диспетчера трафика** > **Создать**.
 2. В разделе **Создание профиля диспетчера трафика** введите или выберите следующие сведения, примите значения по умолчанию для остальных параметров и нажмите кнопку **Создать**:
     
     | Параметр                 | Значение                                              |
@@ -71,7 +71,7 @@ ms.locfileid: "89401050"
 
    ![Добавление конечной точки диспетчера трафика](./media/traffic-manager-multivalue-routing-method/add-endpoint.png)
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).

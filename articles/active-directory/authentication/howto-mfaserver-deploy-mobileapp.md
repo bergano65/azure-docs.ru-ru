@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6d0ba2c381951f79ff998813040aaad3d2cd008c
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838660"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994423"
 ---
 # <a name="enable-mobile-app-authentication-with-azure-multi-factor-authentication-server"></a>Включение аутентификации мобильных приложений с помощью сервера Многофакторной идентификации Azure
 
@@ -47,6 +47,6 @@ ms.locfileid: "94838660"
 5. В поле **Имя учетной записи** введите название компании или организации, которое будет отображаться в мобильном приложений для этой учетной записи.
    ![Настройка сервера MFA, параметры для мобильного приложения](./media/howto-mfaserver-deploy-mobileapp/mobile.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Расширенные сценарии с многофакторной идентификацией Azure и VPN сторонних производителей](howto-mfaserver-nps-vpn.md).

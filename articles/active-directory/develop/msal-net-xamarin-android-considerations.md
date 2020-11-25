@@ -14,11 +14,11 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 320d48535c4792a4d610888c6a7030568ccf16bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89459850"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995188"
 ---
 # <a name="configuration-requirements-and-troubleshooting-tips-for-xamarin-android-with-msalnet"></a>Требования к конфигурации и советы по устранению неполадок для Xamarin Android с MSAL.NET
 
@@ -145,7 +145,7 @@ var authResult = AcquireTokenInteractive(scopes)
 
 ### <a name="error-the-name-authenticationcontinuationhelper-doesnt-exist-in-the-current-context"></a>Ошибка: имя Аусентикатионконтинуатионхелпер не существует в текущем контексте
 
-Если ошибка указывает, что `AuthenticationContinuationHelper` не существует в текущем контексте, возможно, Visual Studio неправильно обновил файл *Android. csproj \* * . Иногда путь к файлу в `<HintPath>` элементе неправильно содержит `netstandard13` вместо `monoandroid90` .
+Если ошибка указывает, что `AuthenticationContinuationHelper` не существует в текущем контексте, возможно, Visual Studio неправильно обновил файл *Android. csproj \** . Иногда путь к файлу в `<HintPath>` элементе неправильно содержит `netstandard13` вместо `monoandroid90` .
 
 Этот пример содержит правильный путь к файлу:
 
@@ -156,7 +156,7 @@ var authResult = AcquireTokenInteractive(scopes)
 </Reference>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в примере [мобильного приложения Xamarin, использующего платформу Microsoft Identity](https://github.com/azure-samples/active-directory-xamarin-native-v2#android-specific-considerations). В следующей таблице перечислены соответствующие сведения в файле сведений.
 

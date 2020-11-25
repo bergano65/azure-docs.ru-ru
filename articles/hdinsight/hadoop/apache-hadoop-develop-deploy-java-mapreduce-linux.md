@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017, devx-track-java
 ms.date: 01/16/2020
 ms.openlocfilehash: 8b80616806f846951ebbaffcb2bf31ad77b96266
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546608"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996038"
 ---
 # <a name="develop-java-mapreduce-programs-for-apache-hadoop-on-hdinsight"></a>Разработка программ MapReduce на Java для Apache Hadoop в HDInsight
 
@@ -38,13 +38,13 @@ cd C:\HDI
 
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
-1. Введите следующую команду, чтобы создать проект Maven с именем **Каталог wordcountjava** :
+1. Введите следующую команду, чтобы создать проект Maven с именем **Каталог wordcountjava**:
 
    ```bash
    mvn archetype:generate -DgroupId=org.apache.hadoop.examples -DartifactId=wordcountjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
    ```
 
-    Эта команда создает каталог с именем, указанным в `artifactID` параметре ( **Каталог wordcountjava** в этом примере). Этот каталог содержит следующие элементы:
+    Эта команда создает каталог с именем, указанным в `artifactID` параметре (**Каталог wordcountjava** в этом примере). Этот каталог содержит следующие элементы:
 
     * `pom.xml` — это [объектная модель проекта (POM)](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), которая содержит сведения и данные конфигурации, использующиеся при сборке проекта;
     * срк\маин\жава\орг\апаче\хадуп\ексамплес: содержит код приложения.
@@ -281,7 +281,7 @@ mvn clean package
     zenith  2
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе объясняется, как разработать задание MapReduce на Java. Чтобы узнать о других методах работы с HDInsight, см. следующие документы.
 

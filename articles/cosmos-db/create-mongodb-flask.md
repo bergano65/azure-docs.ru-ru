@@ -10,11 +10,11 @@ ms.topic: quickstart
 ms.date: 12/26/2018
 ms.custom: devx-track-python
 ms.openlocfilehash: 58f22a335f4c619a6348e9e127e60f5a79f658b2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099663"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994570"
 ---
 # <a name="quickstart-build-a-python-app-using-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Создание приложения Python с использованием API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -114,7 +114,7 @@ ms.locfileid: "93099663"
 
 Получите сведения о строке подключения, чтобы проверить код в работающей учетной записи Azure Cosmos DB. Затем скопируйте их в приложение.
 
-1. В учетной записи Azure Cosmos DB на портале Azure, на панели навигации слева выберите **Строка подключения** , а затем выберите **Ключи для чтения и записи**. В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать имя пользователя, строку подключения и пароль. 
+1. В учетной записи Azure Cosmos DB на портале Azure, на панели навигации слева выберите **Строка подключения**, а затем выберите **Ключи для чтения и записи**. В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать имя пользователя, строку подключения и пароль. 
 
 2. Откройте в корневом каталоге файл *app.py*.
 

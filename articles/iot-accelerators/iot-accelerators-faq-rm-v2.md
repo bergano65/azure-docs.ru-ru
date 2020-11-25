@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
 ms.openlocfilehash: 64391d7f5a7b1a295be7e404d27e5cbe8c691eb2
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079094"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995953"
 ---
 # <a name="frequently-asked-questions-for-remote-monitoring-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения для удаленного мониторинга
 
@@ -42,7 +42,7 @@ ms.locfileid: "92079094"
 
 Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Архивную документацию можно найти по адресу [https://docs.microsoft.com/previous-versions/azure/iot-suite/](/previous-versions/azure/iot-suite/) .
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Следующие шаги
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 

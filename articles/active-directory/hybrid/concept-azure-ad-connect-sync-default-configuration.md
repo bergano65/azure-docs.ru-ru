@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5e55526e0a63a0c603e2b62ccb3ac0efed911cff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91295232"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996633"
 ---
 # <a name="azure-ad-connect-sync-understanding-the-default-configuration"></a>Службы синхронизации Azure AD Connect: рекомендации по изменению конфигурации по умолчанию
 В этой статье описываются стандартные правила конфигурации и то, как они влияют на конфигурацию. Кроме того, в нем описана конфигурация по умолчанию Azure AD Connect Sync. Цель состоит в том, что читатель понимает, как модель конфигурации с именем "декларативная подготовка" работает в реальном примере. Для работы с этой статьей нужно установить и настроить службу Azure AD Connect Sync с помощью мастера установки.

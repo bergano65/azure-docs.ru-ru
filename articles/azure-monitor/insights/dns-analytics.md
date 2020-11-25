@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
 ms.openlocfilehash: 947b509468857b98b868881bdd48adf67a5d60db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86499007"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994641"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -36,9 +36,9 @@ ms.locfileid: "86499007"
 | **Подключенный источник** | **Поддержка** | **Описание** |
 | --- | --- | --- |
 | [Агенты Windows](../platform/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
-| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
+| [Агенты Linux](../learn/quick-collect-linux-computer.md) | нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
 | [Группа управления System Center Operations Manager](../platform/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
-| [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не использует службу хранилища Azure. |
+| [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | нет | Решение не использует службу хранилища Azure. |
 
 ### <a name="data-collection-details"></a>Сведения о сборе данных
 
@@ -183,6 +183,6 @@ ms.locfileid: "86499007"
 
 Чтобы отправить отзыв, посетите [страницу log Analytics UserVoice](https://aka.ms/dnsanalyticsuservoice) , чтобы опубликовать идеи для работы с аналитика DNS функциями. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы получить дополнительные сведения о записях журнала DNS, см. статью [Analyze log data in Azure Monitor](../log-query/log-query-overview.md) (Анализ данных журналов в Azure Monitor).

@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 10/29/2020
 ms.author: aahi
 ms.openlocfilehash: cedcf8a3fcd656c4af0ca7493c598791d35d20d9
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130567"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996137"
 ---
 # <a name="use-docker-compose-to-deploy-multiple-containers"></a>Развертывание нескольких контейнеров с помощью Docker Compose
 
@@ -39,7 +39,7 @@ ms.locfileid: "93130567"
 
 ## <a name="docker-compose-file"></a>Файл Docker Compose
 
-Файл YAML определяет все службы для развертывания. Эти службы зависят от либо `DockerFile` существующего образа контейнера. В этом случае мы будем использовать два изображения предварительной версии. Скопируйте и вставьте следующий файл YAML и сохраните его как *DOCKER-сформируйте. YAML* . Укажите соответствующие значения **apiKey** , **выставления счетов** и **EndpointUri** в файле.
+Файл YAML определяет все службы для развертывания. Эти службы зависят от либо `DockerFile` существующего образа контейнера. В этом случае мы будем использовать два изображения предварительной версии. Скопируйте и вставьте следующий файл YAML и сохраните его как *DOCKER-сформируйте. YAML*. Укажите соответствующие значения **apiKey**, **выставления счетов** и **EndpointUri** в файле.
 
 ```yaml
 version: '3.7'
@@ -169,7 +169,7 @@ IMAGE ID            REPOSITORY                                                  
 
 ![Контейнер распознавателя форм](media/form-recognizer-swagger-page.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

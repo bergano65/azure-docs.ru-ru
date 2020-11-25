@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7275d115210100bdd4a3a2eb683c867a6a4a4f4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85358707"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996616"
 ---
 # <a name="select-which-installation-type-to-use-for-azure-ad-connect"></a>Выбор типа установки для Azure AD Connect
 При новой установке Azure AD Connect есть два типа установки: экспресс и пользовательская. Этот раздел поможет вам выбрать оптимальный вариант установки.
@@ -74,5 +74,5 @@ ms.locfileid: "85358707"
 ## <a name="migrate-from-fim2010-or-mim2016"></a>Миграция с FIM2010 или MIM2016
 Если вы используете Forefront Identity Manager 2010 или Microsoft Identity Manager 2016 с соединителем Azure AD, то единственным вариантом является миграция. Выполните действия, описанные в разделе [Swing migration](how-to-upgrade-previous-version.md#swing-migration) (Обновление со сменой сервера). При выполнении этих действий замените все упоминания Azure AD Sync на FIM2010 или MIM2016.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В зависимости от выбранного варианта используйте оглавление слева, чтобы найти статью с необходимым вам описанием действий.

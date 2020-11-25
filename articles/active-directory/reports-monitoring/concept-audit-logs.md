@@ -18,11 +18,11 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5aa8f675e3fd36fbebfecf42db0f02b0f0f00115
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319736"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995987"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
 
@@ -44,7 +44,7 @@ ms.locfileid: "92319736"
  
 ## <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 
-* Пользователи в роли " **администратор безопасности**", " **читатель**отчета", " **читатель отчетов** ", " **глобальный читатель** " или " **глобальный администратор** "
+* Пользователи в роли " **администратор безопасности**", " **читатель** отчета", " **читатель отчетов** ", " **глобальный читатель** " или " **глобальный администратор** "
 
 ## <a name="audit-logs"></a>Журналы аудита
 
@@ -128,7 +128,7 @@ ms.locfileid: "92319736"
 - керберосдомаин
 - кэйманажемент
 - Метка
-- Другие
+- Другое
 - пермиссионгрантполици
 - Политика
 - ResourceManagement
@@ -217,7 +217,7 @@ ms.locfileid: "92319736"
 
 Можно также программно получить доступ к журналам действий Microsoft 365 с помощью [API-интерфейсов управления Office 365](/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Справочные материалы по действиям аудита в Azure AD](reference-audit-activities.md)
 - [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)
