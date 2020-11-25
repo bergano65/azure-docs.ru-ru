@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 31832c13ddee848864dcfe0d796deb7fcdcd8359
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: 7a0e15ac3c08f55e817eb6a6300d58ab4af6029c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90526550"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966664"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-java-device-sdk-for-azure-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства доверенного платформенного модуля с помощью пакета SDK Java для Службы подготовки устройств к добавлению в Центр Интернета вещей.
 
@@ -27,7 +27,7 @@ ms.locfileid: "90526550"
 - Ознакомьтесь с принципами [подготовки к работе](about-iot-dps.md#provisioning-process).
 - Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 - Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-- [Пакет SDK для Java SE 8](https://aka.ms/azure-jdks).
+- [Пакет SDK для Java SE 8](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 - [Maven](https://maven.apache.org/install.html).
 - [Git](https://git-scm.com/download/).
 
@@ -35,7 +35,7 @@ ms.locfileid: "90526550"
 
 ## <a name="prepare-the-environment"></a>Подготовка среды 
 
-1. Убедитесь, что на вашем компьютере установлен [пакет SDK 8 для Java SE](https://aka.ms/azure-jdks).
+1. Убедитесь, что на вашем компьютере установлен [пакет SDK 8 для Java SE](/azure/developer/java/fundamentals/java-jdk-long-term-support).
 
 1. Скачайте и установите [Maven](https://maven.apache.org/install.html).
 
@@ -47,7 +47,7 @@ ms.locfileid: "90526550"
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
     ```
 
-1. Запустите симулятор [TPM](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview), который будет выполнять роль модуля [HSM](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) для имитированного устройства. Нажмите кнопку **Разрешить доступ**, чтобы разрешить вносить изменения в параметры _брандмауэра Windows_. Он ожидает передачи данных через сокет на портах 2321 и 2322. Не закрывайте это окно. Симулятор должен работать, пока вы не выполните все инструкции из этого краткого руководства. 
+1. Запустите симулятор [TPM](/windows/device-security/tpm/trusted-platform-module-overview), который будет выполнять роль модуля [HSM](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/) для имитированного устройства. Нажмите кнопку **Разрешить доступ**, чтобы разрешить вносить изменения в параметры _брандмауэра Windows_. Он ожидает передачи данных через сокет на портах 2321 и 2322. Не закрывайте это окно. Симулятор должен работать, пока вы не выполните все инструкции из этого краткого руководства. 
 
     ```cmd/sh
     .\azure-iot-sdk-java\provisioning\provisioning-tools\tpm-simulator\Simulator.exe

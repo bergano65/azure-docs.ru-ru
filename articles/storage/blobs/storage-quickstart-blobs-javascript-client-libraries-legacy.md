@@ -9,12 +9,12 @@ ms.author: mhopkins
 ms.date: 07/24/2020
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 134408704d54479fbbe0dfb5094f2920fa2e74be
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d212029936bcd257ef5a78eeedc98c2d6e1df514
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91336196"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96012788"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -35,7 +35,7 @@ ms.locfileid: "91336196"
 
 ## <a name="setting-up-storage-account-cors-rules"></a>Настройка учетных записей хранения CORS
 
-Прежде чем веб-приложение сможет получить доступ к хранилищу BLOB-объектов из клиента, в своей учетной записи следует включить [предоставление общего доступа к ресурсам между разными источниками](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) или CORS.
+Прежде чем веб-приложение сможет получить доступ к хранилищу BLOB-объектов из клиента, в своей учетной записи следует включить [предоставление общего доступа к ресурсам между разными источниками](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) или CORS.
 
 Вернитесь на портал Azure и выберите вашу учетную запись хранения. Чтобы определить новое правило CORS, перейдите к разделу **Параметры** и выберите ссылку **CORS**. Далее нажмите кнопку **Добавить**, чтобы открыть окно **Добавление правила CORS**. В этом руководстве создается открытое правило CORS:
 
@@ -185,7 +185,7 @@ npx http-server
 
 Этот код добавляет ссылку на файл сценария и предоставляет место для вашего кода JavaScript. В рамках этого краткого руководства мы используем файл сценария *azure-storage.blob.js*, чтобы его можно было открыть в VS Code, прочесть его содержимое и задать точки останова. В рабочей среде следует использовать более компактный файл *azure-storage.blob.min.js*, который также предоставлен в ZIP-файле.
 
-Дополнительную информацию о каждой функции хранилища BLOB-объектов можно найти в [справочной документации](https://docs.microsoft.com/javascript/api/%40azure/storage-blob/index). Обратите внимание на то, что некоторые функции в пакете SDK доступны только в Node.js или только в браузере.
+Дополнительную информацию о каждой функции хранилища BLOB-объектов можно найти в [справочной документации](/javascript/api/%40azure/storage-blob/index). Обратите внимание на то, что некоторые функции в пакете SDK доступны только в Node.js или только в браузере.
 
 Код *azure-storage.blob.js* экспортирует глобальную переменную `azblob`, которая будет использоваться в вашем коде JavaScript для обращения к интерфейсам API хранилища BLOB-объектов.
 
@@ -226,7 +226,7 @@ const containerURL = new azblob.ContainerURL(
     azblob.StorageURL.newPipeline(new azblob.AnonymousCredential));
 ```
 
-Этот код использует данные учетной записи и подписанный URL-адрес для создания экземпляра [ContainerURL](https://docs.microsoft.com/javascript/api/@azure/storage-blob/ContainerURL), который удобно использовать для создания контейнера хранилища и управления им.
+Этот код использует данные учетной записи и подписанный URL-адрес для создания экземпляра [ContainerURL](/javascript/api/@azure/storage-blob/ContainerURL), который удобно использовать для создания контейнера хранилища и управления им.
 
 ### <a name="create-and-delete-a-storage-container"></a>Создание и удаление контейнера хранилища
 
@@ -257,7 +257,7 @@ createContainerButton.addEventListener("click", createContainer);
 deleteContainerButton.addEventListener("click", deleteContainer);
 ```
 
-Этот код вызывает функции [create](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-) и [delete](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#delete-containerdeletemethodoptions-) экземпляра ContainerURL без использования экземпляра [Aborter](https://docs.microsoft.com/javascript/api/@azure/storage-blob/aborter). Для упрощения кода в этом кратком руководстве предполагается, что ваша учетная запись хранения создана и включена. В рабочей среде следует использовать экземпляр Aborter, чтобы добавить функцию времени ожидания.
+Этот код вызывает функции [create](/javascript/api/@azure/storage-blob/containerclient#create-containercreateoptions-) и [delete](/javascript/api/@azure/storage-blob/containerclient#delete-containerdeletemethodoptions-) экземпляра ContainerURL без использования экземпляра [Aborter](/javascript/api/@azure/storage-blob/aborter). Для упрощения кода в этом кратком руководстве предполагается, что ваша учетная запись хранения создана и включена. В рабочей среде следует использовать экземпляр Aborter, чтобы добавить функцию времени ожидания.
 
 ### <a name="list-blobs"></a>Отображение списка больших двоичных объектов
 
@@ -293,7 +293,7 @@ const listFiles = async () => {
 listButton.addEventListener("click", listFiles);
 ```
 
-Этот код вызывает функцию [ContainerURL.listBlobFlatSegment](https://docs.microsoft.com/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-) в цикле, чтобы гарантировать получение всех сегментов. Для каждого сегмента код циклически проходит по списку содержащихся в этом сегменте элементов больших двоичных объектов и обновляет список **Files**.
+Этот код вызывает функцию [ContainerURL.listBlobFlatSegment](/javascript/api/@azure/storage-blob/containerclient#listblobsflat-containerlistblobsoptions-) в цикле, чтобы гарантировать получение всех сегментов. Для каждого сегмента код циклически проходит по списку содержащихся в этом сегменте элементов больших двоичных объектов и обновляет список **Files**.
 
 ### <a name="upload-blobs"></a>Отправка больших двоичных объектов
 
@@ -321,7 +321,7 @@ selectButton.addEventListener("click", () => fileInput.click());
 fileInput.addEventListener("change", uploadFiles);
 ```
 
-Этот код связывает кнопку **Select and upload files** (Выбрать и передать файлы) со скрытым элементом `file-input`. Таким образом событие кнопки `click` активирует событие ввода файла `click` и отображает средство выбора файлов. После выбора файлов и закрытия диалогового окна происходит событие `input` и вызывается функция `uploadFiles`. Эта функция вызывает браузерную функцию [uploadBrowserDataToBlockBlob](https://docs.microsoft.com/javascript/api/@azure/storage-blob/blockblobclient#uploadbrowserdata-blob---arraybuffer---arraybufferview--blockblobparalleluploadoptions-) для каждого файла, который вы выбрали. Каждый вызов возвращает обещание, которое добавляется в список, чтобы они могли ожидать передачи вместе, что позволяет передавать файлы в параллельном режиме.
+Этот код связывает кнопку **Select and upload files** (Выбрать и передать файлы) со скрытым элементом `file-input`. Таким образом событие кнопки `click` активирует событие ввода файла `click` и отображает средство выбора файлов. После выбора файлов и закрытия диалогового окна происходит событие `input` и вызывается функция `uploadFiles`. Эта функция вызывает браузерную функцию [uploadBrowserDataToBlockBlob](/javascript/api/@azure/storage-blob/blockblobclient#uploadbrowserdata-blob---arraybuffer---arraybufferview--blockblobparalleluploadoptions-) для каждого файла, который вы выбрали. Каждый вызов возвращает обещание, которое добавляется в список, чтобы они могли ожидать передачи вместе, что позволяет передавать файлы в параллельном режиме.
 
 ### <a name="delete-blobs"></a>Удаление blob-объектов
 
@@ -349,7 +349,7 @@ const deleteFiles = async () => {
 deleteButton.addEventListener("click", deleteFiles);
 ```
 
-Этот код вызывает функцию [BlobURL.delete](https://docs.microsoft.com/javascript/api/@azure/storage-blob/BlobURL#delete-aborter--iblobdeleteoptions-) для удаления каждого файла, выбранного из списка. Затем он вызывает функцию `listFiles`, показанную ранее, чтобы обновить содержимое списка **Files**.
+Этот код вызывает функцию [BlobURL.delete](/javascript/api/@azure/storage-blob/BlobURL#delete-aborter--iblobdeleteoptions-) для удаления каждого файла, выбранного из списка. Затем он вызывает функцию `listFiles`, показанную ранее, чтобы обновить содержимое списка **Files**.
 
 ### <a name="run-and-test-the-web-application"></a>Запуск и тестирование веб-приложения
 
@@ -364,4 +364,4 @@ deleteButton.addEventListener("click", deleteFiles);
 В этом кратком руководстве вы создали простой веб-сайт, который обращается к хранилищу BLOB-объектов из кода JavaScript в браузере. Чтобы узнать, как разместить сам веб-сайт в хранилище BLOB-объектов, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
-> [Руководство. Размещение статического веб-сайта в хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website-host)
+> [Руководство. Размещение статического веб-сайта в хранилище BLOB-объектов](./storage-blob-static-website-host.md)

@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 434093df3465e363d95fb79342d1854b99583d08
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: effb193e54be7331c9dc2874a4a34ef55442ed30
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091429"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96021747"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v11-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 11 для .NET
 
@@ -33,7 +33,7 @@ ms.locfileid: "92091429"
 
 Дополнительные ресурсы:
 
-* [Справочная документация по API](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
+* [Справочная документация по API](/dotnet/api/overview/azure/storage)
 * [Исходный код библиотеки](https://github.com/Azure/azure-storage-net/tree/master/Blob)
 * [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/)
 * [Примеры](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
@@ -43,7 +43,7 @@ ms.locfileid: "92091429"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* Учетная запись хранения Azure — [создайте такую учетную запись](../common/storage-account-create.md).
 * [Пакет SDK для .NET Core](https://dotnet.microsoft.com/download/dotnet-core) последней версии для вашей операционной системы. Обязательно получите пакет SDK, а не среду выполнения.
 
 ## <a name="setting-up"></a>Настройка
@@ -248,7 +248,7 @@ else
 В этом случае для создания контейнера код вызывает метод [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync). Чтобы сделать имя контейнера уникальным, к нему добавляется значение GUID. В рабочей среде для создания контейнера (если он не имеется) предпочтительнее использовать метод [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync).
 
 > [!IMPORTANT]
-> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
 ```csharp
 // Create the CloudBlobClient that represents the 

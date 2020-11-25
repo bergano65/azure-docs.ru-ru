@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: eebfa61632bc49d5df35c17ba2d2faca0382001c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 998d49e91d38a1f2fdc2503165ee99635e153027
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91336145"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001904"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -26,7 +26,7 @@ ms.locfileid: "91336145"
 * [Справочная документация по API](/javascript/api/@azure/storage-blob)
 * [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob)
 * [Пакет (npm)](https://www.npmjs.com/package/@azure/storage-blob)
-* [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
+* [Примеры](../common/storage-samples-javascript.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -66,7 +66,7 @@ ms.locfileid: "91336145"
 
 ### <a name="create-a-cors-rule"></a>Создание правила CORS
 
-Прежде чем веб-приложение сможет получить доступ к хранилищу BLOB-объектов из клиента, следует включить в учетной записи [предоставление общего доступа к ресурсам между разными источниками](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) (CORS).
+Прежде чем веб-приложение сможет получить доступ к хранилищу BLOB-объектов из клиента, следует включить в учетной записи [предоставление общего доступа к ресурсам между разными источниками](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) (CORS).
 
 На портале Azure выберите учетную запись хранения. Чтобы определить новое правило CORS, перейдите к разделу **Параметры** и выберите **CORS**. В этом руководстве создается открытое правило CORS:
 
@@ -76,10 +76,10 @@ ms.locfileid: "91336145"
 
 |Параметр  |Значение  | Описание |
 |---------|---------|---------|
-| **ALLOWED ORIGINS** | **\*** | Принимает список доменов, разделенных запятыми, как допустимые источники. При установке значения `*` разрешает всем доменам получать доступ к учетной записи хранения. |
+| **ALLOWED ORIGINS** | **\** _ | Принимает список доменов, разделенных запятыми, как допустимые источники. При установке значения `_` разрешает всем доменам получать доступ к учетной записи хранения. |
 | **ALLOWED METHODS** | **DELETE**, **GET**, **HEAD**, **MERGE**, **POST**, **OPTIONS** и **PUT** | Список HTTP-команд, которые можно выполнять в учетной записи хранения. В этом руководстве установите все доступные параметры. |
-| **ALLOWED HEADERS** | **\*** | Определяет список заголовков запросов (включая заголовки с префиксами), разрешенные учетной записью хранения. При установке значения `*` допустимы все заголовки. |
-| **EXPOSED HEADERS** | **\*** | Список допустимых заголовков в учетной записи. При установке значения `*` позволяет учетной записи отправлять любой заголовок. |
+| **ALLOWED HEADERS** | **\** _ | Определяет список заголовков запросов (включая заголовки с префиксами), разрешенные учетной записью хранения. При установке значения `_` допустимы все заголовки. |
+| **EXPOSED HEADERS** | **\** _ | Список допустимых заголовков в учетной записи. При установке значения `_` позволяет учетной записи отправлять любой заголовок. |
 | **MAX AGE** | **86400** | Максимальное количество времени, в течение которого обозреватель кэширует предварительный запрос OPTIONS (в секундах). Значение *86400* позволяет ему оставаться в кэше целый день. |
 
 Заполнив поля значениями из этой таблицы, нажмите кнопку **Сохранить**.

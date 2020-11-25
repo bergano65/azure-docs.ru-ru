@@ -9,16 +9,16 @@ ms.author: mikben
 ms.date: 05/19/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b8d74f86fc9c3d2cc020628f67c36d8d67973fff
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 25c7016f6639df46a9279ef9a9aab2736efd4f95
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92128598"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888663"
 ---
 # <a name="metrics-overview"></a>Общие сведения о метриках
 
-Службы коммуникации Azure в настоящее время предоставляют метрики для чата и SMS. [Обозреватель метрик Azure](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started) можно использовать для построения собственных графиков, выявления нестандартных значений метрик и анализа трафика API с помощью данных метрик, порождаемых запросами чатов и SMS.
+Службы коммуникации Azure в настоящее время предоставляют метрики для чата и SMS. [Обозреватель метрик Azure](../../azure-monitor/platform/metrics-getting-started.md) можно использовать для построения собственных графиков, выявления нестандартных значений метрик и анализа трафика API с помощью данных метрик, порождаемых запросами чатов и SMS.
 
 ## <a name="where-to-find-metrics"></a>Где найти метрики
 
@@ -26,15 +26,15 @@ ms.locfileid: "92128598"
 
 ## <a name="metric-definitions"></a>Определения метрик
 
-Существует два типа запросов в метриках Служб коммуникации: **Запросы API чата** и **запросы API SMS** .
+Существует два типа запросов в метриках Служб коммуникации: **Запросы API чата** и **запросы API SMS**.
 
 Метрики запросов API чата и SMS содержат три измерения, которые можно использовать для фильтрации данных метрик. Эти измерения можно объединить вместе, используя тип статистической обработки `Count` и поддерживать все стандартные временные ряды статистической обработки Azure, в том числе `Sum`, `Average`, `Min` и `Max`.
 
-Дополнительные сведения о поддерживаемых типах агрегирования и агрегированиях временных рядов можно найти в статье [Дополнительные функции обозревателя метрик Azure](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts#changing-aggregation)
+Дополнительные сведения о поддерживаемых типах агрегирования и агрегированиях временных рядов можно найти в статье [Дополнительные функции обозревателя метрик Azure](../../azure-monitor/platform/metrics-charts.md#changing-aggregation)
 
-- **Operation** . Все операции или маршруты, которые могут быть вызваны в шлюзе чата ACS.
-- **Status Code** . Ответ кода состояния, отправленный после запроса.
-- **StatusSubClass** . Серия кодов состояния, отправленная после ответа. 
+- **Operation**. Все операции или маршруты, которые могут быть вызваны в шлюзе чата ACS.
+- **Status Code**. Ответ кода состояния, отправленный после запроса.
+- **StatusSubClass**. Серия кодов состояния, отправленная после ответа. 
 
 
 ### <a name="chat-api-request-metric-operations"></a>Операции метрик запросов API чата
@@ -75,8 +75,8 @@ ms.locfileid: "92128598"
 | SMSMessagesReceived      | Получает SMS сообщения. |
 
 
-:::image type="content" source="./media/sms-metric.png" alt-text="Метрика запроса API чата.":::
+:::image type="content" source="./media/sms-metric.png" alt-text="Метрика запроса API SMS.":::
 
 ## <a name="next-steps"></a>Next Steps
 
-- Дополнительные сведения о [метриках платформы данных](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics)
+- Дополнительные сведения о [метриках платформы данных](../../azure-monitor/platform/data-platform-metrics.md)

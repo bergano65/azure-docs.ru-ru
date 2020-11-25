@@ -8,12 +8,12 @@ ms.author: mikben
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 1c79ffb02df4a64b2c506ef0863d9bb2da06db53
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d680df0ec5e18cca4d7a42edf45dbd6a50be1472
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91303375"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888612"
 ---
 # <a name="what-is-azure-communication-services"></a>Что такое Службы коммуникации Azure?
 
@@ -77,9 +77,9 @@ ms.locfileid: "91303375"
 
 В настоящее время доступны два других продукта коммуникации от Майкрософт, которые можно использовать во избежание прямого взаимодействия со Службами коммуникации:
 
- - [API-интерфейсы облачных коммуникаций Microsoft Graph](https://docs.microsoft.com/graph/cloud-communications-concept-overview) позволяют организациям создавать коммуникации, привязанные к пользователям Azure Active Directory с лицензиями M365. Это идеальный вариант для приложений, привязанных к Azure Active Directory, или если требуется расширить возможности работы в Microsoft Teams. Кроме того, существуют API-интерфейсы для создания и настройки приложений в рамках работы с [Teams](https://docs.microsoft.com/microsoftteams/platform/?view=msteams-client-js-latest&preserve-view=true).
+ - [API-интерфейсы облачных коммуникаций Microsoft Graph](/graph/cloud-communications-concept-overview) позволяют организациям создавать коммуникации, привязанные к пользователям Azure Active Directory с лицензиями M365. Это идеальный вариант для приложений, привязанных к Azure Active Directory, или если требуется расширить возможности работы в Microsoft Teams. Кроме того, существуют API-интерфейсы для создания и настройки приложений в рамках работы с [Teams](/microsoftteams/platform/?preserve-view=true&view=msteams-client-js-latest).
 
- - [Azure PlayFab Party](https://docs.microsoft.com/gaming/playfab/features/multiplayer/networking/) упрощает добавление чата с низкой задержкой и обмен данными в играх. Хотя вы можете улучшить игровой чат и сетевые системы и с помощью Служб коммуникации, PlayFab является специализированным вариантом и предоставляется бесплатно на Xbox.
+ - [Azure PlayFab Party](/gaming/playfab/features/multiplayer/networking/) упрощает добавление чата с низкой задержкой и обмен данными в играх. Хотя вы можете улучшить игровой чат и сетевые системы и с помощью Служб коммуникации, PlayFab является специализированным вариантом и предоставляется бесплатно на Xbox.
 
 
 ## <a name="next-steps"></a>Next Steps
