@@ -7,12 +7,12 @@ ms.topic: include
 author: mingshen-ms
 ms.author: krsh
 ms.date: 10/20/2020
-ms.openlocfilehash: ecbafe0d3f39b1bd6f7c494695ea17e067f0c79e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 6c7536e38a0d2cf7d4e906947aff645c74e459c0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129284"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026370"
 ---
 ## <a name="generalize-the-image"></a>Обобщение образа
 
@@ -41,13 +41,13 @@ ms.locfileid: "93129284"
 ### <a name="take-a-snapshot-of-the-vm-disk"></a>Создание моментального снимка диска виртуальной машины
 
 1. Войдите на [портал Azure](https://ms.portal.azure.com/).
-2. Начиная с верхнего левого угла, выберите **создать ресурс** , а затем найдите и выберите **снимок** .
-3. В колонке моментальный снимок выберите  **создать** .
+2. Начиная с верхнего левого угла, выберите **создать ресурс**, а затем найдите и выберите **снимок**.
+3. В колонке моментальный снимок выберите  **создать**.
 4. Заполните поле **Имя** для моментального снимка.
 5. Выберите существующую группу ресурсов или введите имя для новой.
 6. В поле **Исходный диск** выберите управляемый диск, моментальный снимок которого необходимо создать.
-7. Выберите **тип учетной записи** , которая будет использоваться для хранения моментального снимка. Используйте **диск HDD ценовой категории "Стандартный"** , если вам не нужно хранить моментальный снимок на высокопроизводительном диске SSD.
-8. Нажмите кнопку **Создать** .
+7. Выберите **тип учетной записи**, которая будет использоваться для хранения моментального снимка. Используйте **диск HDD ценовой категории "Стандартный"**, если вам не нужно хранить моментальный снимок на высокопроизводительном диске SSD.
+8. Выберите **Создать**.
 
 #### <a name="extract-the-vhd"></a>Извлечение виртуального жесткого диска
 
@@ -81,7 +81,7 @@ destinationVHDFileName=myvhdfilename.vhd
 
 az account set --subscription $subscriptionId
 
-sas=$(az snapshot grant-access --resource-group $resourceGroupName --name $ snapshotName --duration-in-seconds $sasExpiryDuration --query [accessSas] -o tsv)
+sas=$(az snapshot grant-access --resource-group $resourceGroupName --name $snapshotName --duration-in-seconds $sasExpiryDuration --query [accessSas] -o tsv)
 
 az storage blob copy start --destination-blob $destinationVHDFileName --destination-container $storageContainerName --account-name $storageAccountName --account-key $storageAccountKey --source-uri $sas
 ```

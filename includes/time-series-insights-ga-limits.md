@@ -9,12 +9,12 @@ author: deepakpalled
 ms.author: dpalled
 manager: diviso
 ms.custom: include file
-ms.openlocfilehash: 1aff5780aa5f4cf21d862a5cee3b140179dac03c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e584b6eff16636f0657c586f6c630dbf8bbb99b2
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88703595"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026230"
 ---
 Ниже приведено краткое описание ключевых ограничений в Gen1 временных рядов Azure.
 
@@ -37,16 +37,16 @@ ms.locfileid: "88703595"
 
 Среды SKU S2 поддерживают значительно больше событий в месяц и имеют значительно больший объем входящих данных.
 
-| номер SKU  | Число событий в месяц  | Число событий в минуту | Размер события в минуту  |
+| Номер SKU  | Число событий в месяц  | Число событий в минуту | Размер события в минуту  |
 |---------|---------|---------|---------|---------|
 | S1     |   30 млн   |  720    |  720 КБ   |
  |S2     |   300 млн   | 7200   | 7200 КБ  |
 
 ### <a name="property-limits"></a>Ограничения свойств
 
-Ограничения свойств Gen1 зависят от выбранной среды SKU. Предоставленные свойства событий имеют соответствующие столбцы JSON, CSV и диаграммы, которые могут просматриваться в обозревателе службы " [аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-quickstart)".
+Ограничения свойств Gen1 зависят от выбранной среды SKU. Предоставленные свойства событий имеют соответствующие столбцы JSON, CSV и диаграммы, которые могут просматриваться в обозревателе службы " [аналитика временных рядов Azure](../articles/time-series-insights/time-series-quickstart.md)".
 
-| номер SKU | Максимальное число свойств |
+| Номер SKU | Максимальное число свойств |
 | --- | --- |
 | S1 | 600 свойства (столбцы) |
 | S2 | 800 свойства (столбцы) |
@@ -55,9 +55,9 @@ ms.locfileid: "88703595"
 
 Поддерживается не более двух источников событий на один экземпляр.
 
-* Узнайте, как [Добавить источник концентратора событий](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub).
-* Настройка [источника центра Интернета вещей](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-iothub).
+* Узнайте, как [Добавить источник концентратора событий](../articles/time-series-insights/how-to-ingest-data-event-hub.md).
+* Настройка [источника центра Интернета вещей](../articles/time-series-insights/how-to-ingest-data-iot-hub.md).
 
 ### <a name="api-limits"></a>Ограничения API
 
-Ограничения REST API для Gen1 Azure Time Series Insights указаны в [справочной документации по REST API](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability).
+Ограничения REST API для Gen1 Azure Time Series Insights указаны в [справочной документации по REST API](/rest/api/time-series-insights/dataaccess(preview)/query/getavailability).
