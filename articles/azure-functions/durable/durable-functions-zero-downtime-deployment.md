@@ -7,11 +7,11 @@ ms.date: 10/10/2019
 ms.author: azfuncdf
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 2c96f2cc37c47c77b82ca86d5fd0295f0c66a896
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553698"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009489"
 ---
 # <a name="zero-downtime-deployment-for-durable-functions"></a>Развертывание без простоя для Устойчивые функции
 
@@ -171,7 +171,7 @@ Azure Pipelines проверяет приложение функции на вы
 
 ![Параметры хранилища отслеживания](media/durable-functions-zero-downtime-deployment/tracking-store-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Устойчивые функции управления версиями](durable-functions-versioning.md)

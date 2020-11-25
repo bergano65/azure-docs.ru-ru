@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: aahi
 ms.openlocfilehash: be43d04672dcefe368eb4052b4d1a929e25327ab
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366865"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009949"
 ---
 # <a name="deploy-a-text-analytics-container-to-azure-container-instances"></a>Развертывание контейнера Анализ текста в службе "экземпляры контейнеров Azure"
 
@@ -23,7 +23,7 @@ ms.locfileid: "94366865"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services), прежде чем начинать работу.
+* Используйте подписку Azure. Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services).
 
 [!INCLUDE [Create a Cognitive Services Text Analytics resource](../includes/create-text-analytics-resource.md)]
 
@@ -47,7 +47,7 @@ ms.locfileid: "94366865"
 
 ***
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Следующие шаги 
 
 * Воспользуйтесь [дополнительными контейнерами Cognitive Services](../../cognitive-services-container-support.md)
 * Использование [подключенной службы анализ текста](../index.yml)

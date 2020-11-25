@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 826e475eb71563b52d687903aeac4ec936e267f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87093006"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009506"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск Устойчивые функции как веб-заданий
 
@@ -224,7 +224,7 @@ while (true)
     * `Microsoft.Azure.WebJobs.Extensions.Storage`
     * `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`
 
-1. Задайте строку подключения к хранилищу и ключ инструментирования Application Insights в *appsettings.jsв* файле с помощью платформы конфигурации .NET Core. Ниже приведен пример:
+1. Задайте строку подключения к хранилищу и ключ инструментирования Application Insights в *appsettings.jsв* файле с помощью платформы конфигурации .NET Core. Пример:
 
     ```json
         {

@@ -10,15 +10,15 @@ services: azure-maps
 manager: cpendleton
 ms.custom: devx-track-js
 ms.openlocfilehash: 2e07b614e87ed5dad94cf9bc5994e78071187839
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895432"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008605"
 ---
 # <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 
-Веб-пакет SDK для Azure Maps предоставляет *Модуль служб* . Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование Azure Maps служб RESTFUL в веб-приложениях и Node.js приложений с помощью JavaScript или TypeScript.
+Веб-пакет SDK для Azure Maps предоставляет *Модуль служб*. Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование Azure Maps служб RESTFUL в веб-приложениях и Node.js приложений с помощью JavaScript или TypeScript.
 
 ## <a name="use-the-services-module-in-a-webpage"></a>Использование модуля "службы" на веб-странице
 
@@ -30,7 +30,7 @@ ms.locfileid: "92895432"
         <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
         ```
 
-    - Также можно загрузить модуль служб для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-](https://www.npmjs.com/package/azure-maps-rest) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте эту команду:
+    - Также можно загрузить модуль служб для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-](https://www.npmjs.com/package/azure-maps-rest) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
     
         > **npm install azure-maps-rest**
     

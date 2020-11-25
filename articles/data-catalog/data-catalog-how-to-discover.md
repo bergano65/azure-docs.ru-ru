@@ -7,11 +7,11 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 4eb689b17df8236a00b5914912d1927804944f25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081208"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009421"
 ---
 # <a name="how-to-discover-data-sources-in-azure-data-catalog"></a>Обнаружение источников данных в каталоге данных Azure
 
@@ -56,10 +56,10 @@ ms.locfileid: "87081208"
 
  ![Выделение совпадений и результатов поиска на портале каталога данных Azure](./media/data-catalog-how-to-discover/search-matches.png)
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Благодаря тому, что при регистрации в каталоге данных из источника данных копируются структурные и описательные метаданные, упрощается обнаружение и оценка такого источника. Зарегистрировав источник данных, вы можете обнаружить его на портале каталога данных Azure с помощью функций фильтрации и поиска.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Пошаговые инструкции по обнаружению источников данных см. в разделе [Начало работы с каталогом данных Azure](data-catalog-get-started.md).

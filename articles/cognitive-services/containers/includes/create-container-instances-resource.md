@@ -10,11 +10,11 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: 09957461fd92114d1181a570550ee1a189edd8ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80876463"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009872"
 ---
 ## <a name="create-an-azure-container-instance-resource"></a>Создание ресурса экземпляра контейнера Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "80876463"
     |Тип образа|Если образ контейнера хранится в реестре контейнеров, который не требует учетных данных, выберите `Public` . Если для доступа к образу контейнера требуются учетные данные, выберите `Private` . Сведения о [container repositories and images](../../cognitive-services-container-support.md#container-repositories-and-images) том, является ли образ контейнера `Public` или `Private` ("общедоступная Предварительная версия"), см. в разделе репозитории и образы контейнеров. |
     |Имя образа|Введите расположение контейнера Cognitive Services. Расположение — это то, что используется в качестве аргумента `docker pull` команды. Сведения о доступных именах образов и соответствующих репозиториях см. в разделе [репозитории и образы контейнеров](../../cognitive-services-container-support.md#container-repositories-and-images) .<br><br>Имя образа должно быть полным указанием трех частей. Сначала реестр контейнеров, затем репозиторий, а затем имя образа: `<container-registry>/<repository>/<image-name>` .<br><br>Ниже приведен пример, который `mcr.microsoft.com/azure-cognitive-services/keyphrase` представляет извлечение ключевых фраз образ в реестре контейнеров Майкрософт в репозитории Cognitive Services Azure. Другим примером является, `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` который представляет изображение преобразования речи в текст в репозитории Microsoft реестра контейнеров предварительной версии контейнера. |
     |Тип ОС|`Linux`|
-    |Размер|Измените размер на Рекомендуемые рекомендации для конкретного контейнера службы:<br>2 ядра ЦП<br>4 ГБ
+    |Размер|Измените размер на Рекомендуемые рекомендации для конкретного контейнера службы:<br>2 ядра ЦП<br>4 Гбайт
 
 3. На вкладке **сети** введите следующие сведения.
 
