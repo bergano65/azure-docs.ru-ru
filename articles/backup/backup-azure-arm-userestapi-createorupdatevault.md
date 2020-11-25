@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
 ms.openlocfilehash: a37808548ec58977b7d6af16c75b94b7b5efe446
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91271602"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002942"
 ---
 # <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища служб восстановления Azure с помощью REST API
 
@@ -40,8 +40,8 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 |Имя  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
-|eTag     |         |   Строковый тип      |  Необязательный eTag       |
-|location     |  Да       |Строковый тип         |   Расположение ресурса      |
+|eTag     |         |   Строка      |  Необязательный eTag       |
+|location     |  true       |Строка         |   Расположение ресурса      |
 |properties     |         | [VaultProperties](/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |sku     |         |  [SKU](/rest/api/recoveryservices/vaults/createorupdate#sku)       |    В этом столбце указан уникальный системный идентификатор для каждого ресурса Azure.     |
 |tags     |         | Объект        |     Теги ресурсов    |
@@ -92,7 +92,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Create Azure Recovery Services backup policies using REST API](backup-azure-arm-userestapi-createorupdatepolicy.md) (Создание политик резервного копирования Служб восстановления Azure с помощью REST API)
 

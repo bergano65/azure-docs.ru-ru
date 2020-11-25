@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.custom: seodec18
 ms.openlocfilehash: 949e408544e25cb55622cf2a1b1d2dddb92350a6
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150157"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001513"
 ---
 # <a name="operating-system-functionality-on-azure-app-service"></a>Функциональные возможности операционной системы для службы приложений Azure
 В этой статье описываются базовые функциональные возможности операционной системы, доступные для всех приложений в [Службе приложений Azure](./overview.md). Данные функциональные возможности включают в себя доступ к файлам, сети и реестру, а также диагностику и журналы событий. 

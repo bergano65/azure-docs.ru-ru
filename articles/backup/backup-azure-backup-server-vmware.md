@@ -4,11 +4,11 @@ description: Из этой статьи вы узнаете, как исполь
 ms.topic: conceptual
 ms.date: 05/24/2020
 ms.openlocfilehash: db5e5c4bdac64e2faf5babb107ecec61a02d6468
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90069838"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002959"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 
@@ -59,7 +59,7 @@ MABS предоставляет следующие возможности при
 
 По умолчанию Azure Backup Server взаимодействует с серверами VMware по протоколу HTTPS. Чтобы настроить соединение HTTPS, скачайте сертификат Центра сертификации (ЦС) VMware и импортируйте его в Azure Backup Server.
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 
 - Если вы не хотите использовать протокол HTTPS, можно [отключить проверку сертификата HTTPS для всех серверов VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
 - Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. В первый раз подключение не будет защищено и отобразится следующее.
@@ -100,7 +100,7 @@ MABS предоставляет следующие возможности при
 
 8. Щелкните правой кнопкой мыши этот корневой сертификат и во всплывающем меню выберите **Установить сертификат**.
 
-9. В **мастере импорта сертификатов**выберите **локальный компьютер** в качестве места назначения для сертификата, а затем нажмите кнопку **Далее**. Если отобразится запрос разрешения на внесение изменений на компьютер, разрешите внести изменения.
+9. В **мастере импорта сертификатов** выберите **локальный компьютер** в качестве места назначения для сертификата, а затем нажмите кнопку **Далее**. Если отобразится запрос разрешения на внесение изменений на компьютер, разрешите внести изменения.
 
     ![Страница приветствия мастера](./media/backup-azure-backup-server-vmware/certificate-import-wizard1.png)
 
@@ -108,11 +108,11 @@ MABS предоставляет следующие возможности при
 
     ![Хранилище сертификатов](./media/backup-azure-backup-server-vmware/cert-import-wizard-local-store.png)
 
-11. В области **Выбор хранилища сертификатов**выберите **Доверенные корневые центры сертификации** в качестве папки назначения для сертификатов, а затем нажмите кнопку **ОК**.
+11. В области **Выбор хранилища сертификатов** выберите **Доверенные корневые центры сертификации** в качестве папки назначения для сертификатов, а затем нажмите кнопку **ОК**.
 
     ![Папка назначения для сертификата](./media/backup-azure-backup-server-vmware/certificate-store-selected.png)
 
-12. На **странице Завершение работы мастера импорта сертификатов**проверьте папку и нажмите кнопку **Готово**.
+12. На **странице Завершение работы мастера импорта сертификатов** проверьте папку и нажмите кнопку **Готово**.
 
     ![Проверка наличия сертификата в нужной папке](./media/backup-azure-backup-server-vmware/cert-wizard-final-screen.png)
 
@@ -143,11 +143,11 @@ MABS предоставляет следующие возможности при
 
     ![Администрирование](./media/backup-azure-backup-server-vmware/vmware-navigator-panel.png)
 
-3. В области **административные**  >  **роли**щелкните значок Добавить роль (символ +).
+3. В области **административные**  >  **роли** щелкните значок Добавить роль (символ +).
 
     ![Добавление роли](./media/backup-azure-backup-server-vmware/vmware-define-new-role.png)
 
-4. В окне **Создание**  >  **имени роли**роли введите *BackupAdminRole*. Это может быть любое имя, описывающее назначение этой роли.
+4. В окне **Создание**  >  **имени роли** роли введите *BackupAdminRole*. Это может быть любое имя, описывающее назначение этой роли.
 
 5. Выберите привилегии, как описано в таблице ниже, а затем нажмите кнопку **ОК**.  В списке на панели **Роли** появится новая роль.
    - Щелкните значок рядом с родительской меткой, чтобы развернуть родительский элемент и просмотреть дочерние привилегии.
@@ -199,7 +199,7 @@ MABS предоставляет следующие возможности при
 | Virtual machine.Provisioning.Allow disk access                            | Virtual machine.Provisioning.Allow disk access                            |
 | Virtual machine.Provisioning.Allow file access                            | Virtual machine.Provisioning.Allow file access                            |
 | Virtual machine.Provisioning.Allow read-only disk access                  | Virtual machine.Provisioning.Allow read-only disk access                  |
-| Virtual machine.Provisioning.Allow virtual machine download               | Virtual machine.Provisioning.Allow virtual machine download               |
+| Virtual machine.Provisioning.Allow virtual machine download               | Virtual machine.Provisioning.Allow virtual machine download               |
 | Virtual machine.Snapshot management. Create snapshot                      | Virtual machine.Snapshot management. Create snapshot                      |
 | Virtual machine.Snapshot management.Remove Snapshot                       | Virtual machine.Snapshot management.Remove Snapshot                       |
 | Virtual machine.Snapshot management.Revert to snapshot                    | Virtual machine.Snapshot management.Revert to snapshot                    |
@@ -248,7 +248,7 @@ MABS предоставляет следующие возможности при
 
     ![Панель Global Permissions (Глобальные разрешения)](./media/backup-azure-backup-server-vmware/vmware-add-new-perms.png)
 
-5. В области **глобальные разрешения root — Добавление разрешения**нажмите кнопку **Добавить** , чтобы выбрать пользователя или группу.
+5. В области **глобальные разрешения root — Добавление разрешения** нажмите кнопку **Добавить** , чтобы выбрать пользователя или группу.
 
     ![Выбор пользователя или группы](./media/backup-azure-backup-server-vmware/vmware-add-new-global-perm.png)
 
@@ -276,7 +276,7 @@ MABS предоставляет следующие возможности при
 
     ![Диалоговое окно «Управление учетными данными»](./media/backup-azure-backup-server-vmware/mabs-manage-credentials-dialog.png)
 
-4. В поле **Добавить учетные данные**введите имя и описание для новых учетных данных и укажите имя пользователя и пароль, определенные на сервере VMware. Имя *Contoso Vcenter credential* используется для идентификации учетных данных в этой процедуре. Если сервер VMware и Azure Backup Server размещены в разных доменах, укажите домен в имени пользователя.
+4. В поле **Добавить учетные данные** введите имя и описание для новых учетных данных и укажите имя пользователя и пароль, определенные на сервере VMware. Имя *Contoso Vcenter credential* используется для идентификации учетных данных в этой процедуре. Если сервер VMware и Azure Backup Server размещены в разных доменах, укажите домен в имени пользователя.
 
     ![Диалоговое окно добавления учетных данных на сервере Azure Backup Server](./media/backup-azure-backup-server-vmware/mabs-add-credential-dialog2.png)
 
@@ -292,11 +292,11 @@ MABS предоставляет следующие возможности при
 
     ![Открытие мастера добавления рабочего сервера](./media/backup-azure-backup-server-vmware/add-vcenter-to-mabs.png)
 
-2. В **мастере добавления рабочего сервера**  >  **выберите страница Тип рабочего сервера** , выберите **серверы VMware**и нажмите кнопку **Далее**.
+2. В **мастере добавления рабочего сервера**  >  **выберите страница Тип рабочего сервера** , выберите **серверы VMware** и нажмите кнопку **Далее**.
 
     ![Мастер добавления рабочего сервера](./media/backup-azure-backup-server-vmware/production-server-add-wizard.png)
 
-3. На шаге **Выбрать компьютеры в строке **  **Server Name/IP Address Имя или IP-адрес сервера** (Имя или IP-адрес сервера) укажите полное доменное имя или IP-адрес сервера VMware. Если один и тот же сервер vCenter управляет всеми серверами ESXi, то укажите имя vCenter. В противном случае добавьте узел ESXi.
+3. На шаге **Выбрать компьютеры в строке**  **Server Name/IP Address Имя или IP-адрес сервера** (Имя или IP-адрес сервера) укажите полное доменное имя или IP-адрес сервера VMware. Если один и тот же сервер vCenter управляет всеми серверами ESXi, то укажите имя vCenter. В противном случае добавьте узел ESXi.
 
     ![Указывание сервера VMware](./media/backup-azure-backup-server-vmware/add-vmware-server-provide-server-name.png)
 
@@ -334,7 +334,7 @@ MABS предоставляет следующие возможности при
 
 1. На странице **Выбор типа группы защиты** выберите **серверы** , а затем нажмите кнопку **Далее**. Появится страница **Выбор элементов группы**.
 
-1. В окне **Выбор элементов группы**выберите виртуальные машины (или папки виртуальных машин), для которых требуется создать резервную копию. Выберите **Далее**.
+1. В окне **Выбор элементов группы** выберите виртуальные машины (или папки виртуальных машин), для которых требуется создать резервную копию. Выберите **Далее**.
 
     - Когда вы выберите папку, виртуальные машины или папки внутри этой папки также будут выбраны для резервного копирования. Можно отменить выбор папок или виртуальных машин, для которых вы не хотите создавать резервную копию.
 1. Это сделать невозможно, если уже выполняется резервное копирование виртуальной машины или папки. Это гарантирует, что дублирование точек восстановления для виртуальной машины не создается.
@@ -380,7 +380,7 @@ MABS предоставляет следующие возможности при
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-server-vmware/select-data-to-protect.png)
 
-1. На странице **Specify Online Backup Schedule ** (Укажите расписание архивации в сети) укажите частоту резервного копирования данных из локального хранилища в Azure.
+1. На странице **Specify Online Backup Schedule** (Укажите расписание архивации в сети) укажите частоту резервного копирования данных из локального хранилища в Azure.
 
     - Точки восстановления для данных в облаке будут созданы согласно с расписанием. Выберите **Далее**.
     - После создания точки восстановления она передается в хранилище служб восстановления в Azure.
@@ -564,6 +564,6 @@ Windows Registry Editor Version 5.00
 C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin> ./ExcludeDisk.ps1 -Datasource $vmDsInfo[2] -Remove "[datastore1] TestVM4/TestVM4\_1.vmdk"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Для решения проблем с устранением неполадок при настройке резервного копирования см. статью [Устранение неполадок Azure Backup Server](./backup-azure-mabs-troubleshoot.md).

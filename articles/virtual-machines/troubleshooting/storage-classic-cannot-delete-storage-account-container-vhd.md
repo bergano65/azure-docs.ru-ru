@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.date: 01/11/2019
 ms.author: annayak
 ms.openlocfilehash: c74f2ef9eed25719e722970671406c850b6a59b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361863"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002601"
 ---
 # <a name="troubleshoot-classic-storage-resource-deletion-errors"></a>Устранение ошибок при удалении классических ресурсов хранилища
 В этой статье содержатся рекомендации по устранению неполадок при возникновении одной из приведенных ниже ошибок во время попытки удаления классической учетной записи хранения Azure, контейнера или VHD-файла страничного BLOB-объекта. 

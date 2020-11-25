@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: aahi
 keywords: локальная среда, Docker, контейнер
-ms.openlocfilehash: c65a81d9daed85b5bf056d24949e36ec227c19c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 778fe388ae3db68d836384299a8a1c7c06e31f41
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460991"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001815"
 ---
 # <a name="install-and-run-docker-containers-for-luis"></a>Установка и запуск контейнеров DOCKER для LUIS
 
@@ -108,13 +108,13 @@ docker pull mcr.microsoft.com/azure-cognitive-services/language/luis:latest
 
 ### <a name="package-types"></a>Типы пакетов
 
-Входной каталог подключения может содержать **рабочие**, **промежуточные**и **версии** моделей приложения одновременно. Все пакеты являются подключенными.
+Входной каталог подключения может содержать **рабочие**, **промежуточные** и **версии** моделей приложения одновременно. Все пакеты являются подключенными.
 
 |Тип пакета|Запрос API конечной точки|Запрос доступности|Формат имени файла пакета|
 |--|--|--|--|
 |Версиями|GET, POST|Только контейнер|`{APP_ID}_v{APP_VERSION}.gz`|
 |Промежуточная|GET, POST|Azure и контейнер|`{APP_ID}_STAGING.gz`|
-|Рабочая среда|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
+|Производство|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовывайте, не изменяйте, перезаписывают или распаковывает файлы пакетов LUIS.
@@ -123,7 +123,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/language/luis:latest
 
 Перед упаковкой приложения LUIS потребуется следующее:
 
-|Требования к упаковке|Подробнее|
+|Требования к упаковке|Сведения|
 |--|--|
 |Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (`westus`)<br>Западная Европа (`westeurope`)<br>Восточная Австралия (`australiaeast`)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей][unsupported-dependencies]. |
@@ -281,7 +281,7 @@ ApiKey={API_KEY}
 |`staging`|Логическое|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
 |`log`|Логическое|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — true.|
 
-***
+**_
 
 ### <a name="query-the-luis-app"></a>Запрос к приложению LUIS
 
@@ -299,7 +299,7 @@ curl -G \
 "http://localhost:5000/luis/v3.0/apps/{APP_ID}/slots/production/predict"
 ```
 
-Чтобы выполнить запросы к **промежуточной** среде, замените `production` в маршруте на `staging` :
+Чтобы выполнить запросы к среде _ *промежуточного хранения**, замените `production` в маршруте на `staging` :
 
 `http://localhost:5000/luis/v3.0/apps/{APP_ID}/slots/staging/predict`
 
@@ -335,7 +335,7 @@ curl -X GET \
 ```
 Имя версии имеет максимальную длину 10 символов и содержит только символы, разрешенные в URL-адресе.
 
-***
+**_
 
 ## <a name="import-the-endpoint-logs-for-active-learning"></a>Импорт журналов конечной точки для активного обучения
 
@@ -346,11 +346,11 @@ curl -X GET \
 /output/luis/{INSTANCE_ID}/
 ```
 
-На портале LUIS выберите приложение, затем выберите **Import endpoint logs** (Импорт журналов конечной точки) для отправки этих журналов.
+На портале LUIS выберите свое приложение, а затем щелкните _ *Импорт журналов конечной точки**, чтобы отправить эти журналы.
 
 ![Импорт файлов журнала контейнера для активного обучения](./media/luis-container-how-to/upload-endpoint-log-files.png)
 
-После отправки журнала [просмотрите фразы конечной точки](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-review-endpoint-utterances) на портале LUIS.
+После отправки журнала [просмотрите фразы конечной точки](./luis-concept-review-endpoint-utterances.md) на портале LUIS.
 
 <!--  ## Validate container is running -->
 
@@ -390,7 +390,7 @@ curl -X GET \
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Проверьте настройки [контейнеров](luis-container-configuration.md) на наличие параметров конфигурации.
 * См. раздел [ограничения контейнера Luis](luis-container-limitations.md) для известных ограничений возможностей.

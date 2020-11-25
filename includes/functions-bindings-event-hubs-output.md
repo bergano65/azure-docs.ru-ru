@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 02/21/2020
 ms.author: cshoe
-ms.openlocfilehash: 78836ca4e51875be4237267b3bb9256cc4541fe2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11ad3bdcaa40c479c9358fd623edf0e6fdafa0d6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81791667"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002087"
 ---
 Используйте выходную привязку Центров событий для записи событий в поток событий. Чтобы записывать события в центр событий, необходимо иметь разрешение на отправку в него событий.
 
@@ -235,7 +235,7 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 # <a name="java"></a>[Java](#tab/java)
 
-В [библиотеке среды выполнения функций Java](https://docs.microsoft.com/java/api/overview/azure/functions/runtime) используйте аннотацию [EventHubOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) для параметров, значения которых будут опубликованы в концентраторе событий. Параметр должен быть типа `OutputBinding<T>`, где `T` — это POJO или любой собственный тип Java.
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте аннотацию [EventHubOutput](/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) для параметров, значения которых будут опубликованы в концентраторе событий. Параметр должен быть типа `OutputBinding<T>`, где `T` — это POJO или любой собственный тип Java.
 
 ---
 
@@ -274,15 +274,15 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 - **Возвращаемое значение** — задайте для свойства `name` в файле *function.json* значение `$return`. В этой конфигурации возвращаемое значение функции сохраняется как сообщение концентратора событий.
 
-- **Императив** — передайте значение методу [set](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного с типом [Out](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python). Значение, переданное `set`, сохраняется как сообщение концентратора событий.
+- **Императив** — передайте значение методу [set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного с типом [Out](/python/api/azure-functions/azure.functions.out?view=azure-python). Значение, переданное `set`, сохраняется как сообщение концентратора событий.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Существует два варианта для вывода сообщения концентратора событий из функции с помощью заметки [EventHubOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput):
+Существует два варианта для вывода сообщения концентратора событий из функции с помощью заметки [EventHubOutput](/java/api/com.microsoft.azure.functions.annotation.eventhuboutput):
 
 - **Возвращаемое значение** — вследствие применения аннотации к самой функции возвращаемое значение функции сохраняется как сообщение концентратора событий.
 
-- **Императив** — чтобы явно задать значение сообщения, примените аннотацию к определенному параметру с типом [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding), где `T` — это POJO или любой собственный тип Java. В такой конфигурации передача значения методу `setValue` приводит к сохранению значения как сообщения концентратора событий.
+- **Императив** — чтобы явно задать значение сообщения, примените аннотацию к определенному параметру с типом [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.OutputBinding), где `T` — это POJO или любой собственный тип Java. В такой конфигурации передача значения методу `setValue` приводит к сохранению значения как сообщения концентратора событий.
 
 ---
 
@@ -290,4 +290,4 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 | Привязка | Справочник |
 |---|---|
-| Концентратор событий | [Руководство по операциям](https://docs.microsoft.com/rest/api/eventhub/publisher-policy-operations) |
+| Концентратор событий | [Руководство по операциям](/rest/api/eventhub/publisher-policy-operations) |

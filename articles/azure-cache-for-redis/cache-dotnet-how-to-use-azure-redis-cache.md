@@ -9,11 +9,11 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp, mvc
 ms.date: 06/18/2020
 ms.openlocfilehash: 762fdf0aab0077cfbf8beceeb432dc85695e4176
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077070"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002476"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-net-framework"></a>Краткое руководство. Использование Кэша Azure для Redis с приложениями .NET Framework
 
@@ -49,7 +49,7 @@ ms.locfileid: "93077070"
 
 В Visual Studio выберите **Файл** > **Создать** > **Проект**.
 
-Выберите **Консольное приложение (.NET Framework)** , а затем нажмите кнопку **Далее**. Введите **имя проекта** и щелкните **Создать** , чтобы создать новое консольное приложение.
+Выберите **Консольное приложение (.NET Framework)** , а затем нажмите кнопку **Далее**. Введите **имя проекта** и щелкните **Создать**, чтобы создать новое консольное приложение.
 
 <a name="configure-the-cache-clients"></a>
 
@@ -81,9 +81,9 @@ Install-Package StackExchange.Redis
 </configuration>
 ```
 
-В обозревателе решений щелкните правой кнопкой мыши **Ссылки** , а затем выберите **Добавить ссылку**. Добавьте ссылку на сборку **System.Configuration**.
+В обозревателе решений щелкните правой кнопкой мыши **Ссылки**, а затем выберите **Добавить ссылку**. Добавьте ссылку на сборку **System.Configuration**.
 
-Добавьте следующие инструкции `using` в файл *Program.cs* :
+Добавьте следующие инструкции `using` в файл *Program.cs*:
 
 ```csharp
 using StackExchange.Redis;
@@ -173,7 +173,7 @@ static void Main(string[] args)
 
 Redis хранит большинство данных в строках Redis, но эти строки могут содержать данные многих типов, включая сериализованные двоичные данные, которые можно использовать при сохранении объектов .NET в кэше.
 
-Нажмите сочетание клавиш **CTRL+F5** , чтобы скомпилировать и запустить консольное приложение.
+Нажмите сочетание клавиш **CTRL+F5**, чтобы скомпилировать и запустить консольное приложение.
 
 В приведенном ниже примере видно, что ключ `Message` ранее содержал кэшированное значение, установленное через консоль Redis на портале Azure. Приложение обновило кэшированное значение. Кроме того, оно выполнило команды `PING` и `CLIENT LIST`.
 
@@ -192,13 +192,13 @@ Redis хранит большинство данных в строках Redis, 
 Install-Package Newtonsoft.Json
 ```
 
-Добавьте следующую инструкцию `using` в начало файла *Program.cs* :
+Добавьте следующую инструкцию `using` в начало файла *Program.cs*:
 
 ```csharp
 using Newtonsoft.Json;
 ```
 
-Добавьте следующее определение класса `Employee` в файл *Program.cs* :
+Добавьте следующее определение класса `Employee` в файл *Program.cs*:
 
 ```csharp
 class Employee
@@ -232,7 +232,7 @@ class Employee
     Console.WriteLine("\tEmployee.Age  : " + e007FromCache.Age + "\n");
 ```
 
-Нажмите сочетание клавиш **Ctrl+F5** , чтобы скомпилировать и запустить консольное приложение для проверки сериализации объектов .NET. 
+Нажмите сочетание клавиш **Ctrl+F5**, чтобы скомпилировать и запустить консольное приложение для проверки сериализации объектов .NET. 
 
 ![Готовое консольное приложение](./media/cache-dotnet-how-to-use-azure-redis-cache/cache-console-app-complete.png)
 

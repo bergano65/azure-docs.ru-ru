@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
 ms.openlocfilehash: 1ef52d74f7ae6e7e0d8c58e3b1972a0a1227c6b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85962209"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001935"
 ---
 # <a name="enable-heap-dumps-for-apache-hadoop-services-on-linux-based-hdinsight"></a>Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux
 
@@ -37,7 +37,7 @@ ms.locfileid: "85962209"
 
 Дампы кучи включаются путем передачи параметров в виртуальную машину Java при запуске службы. Чтобы передать эти параметры, для большинства служб [Apache Hadoop](https://hadoop.apache.org/) можно изменить скрипт оболочки, используемый для запуска службы.
 
-В каждом скрипте есть экспорт, который содержит ** \* \_ **параметры, передаваемые в виртуальной машины Java. Например, в сценарии **hadoop-env.sh** строка, начинающаяся с `export HADOOP_NAMENODE_OPTS=`, содержит параметры для службы NameNode.
+В каждом скрипте есть экспорт, который содержит **\* \_** параметры, передаваемые в виртуальной машины Java. Например, в сценарии **hadoop-env.sh** строка, начинающаяся с `export HADOOP_NAMENODE_OPTS=`, содержит параметры для службы NameNode.
 
 Процессы сопоставления и уменьшения немного отличаются друг от друга, поскольку эти операции являются дочерним процессом службы MapReduce. Каждый процесс сопоставления или уменьшения запускается в дочернем контейнере и существуют две записи, содержащие параметры виртуальной машины Java. Оба содержатся в файле **mapred-site.xml**:
 
@@ -91,7 +91,7 @@ ms.locfileid: "85962209"
 
     ![Отфильтрованный список настройки Apache Ambari](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hdinsight-filter-list.png)
 
-4. Найдите запись ** \* \_ для** службы, для которой нужно включить дампы кучи, и добавьте параметры, которые необходимо включить. На изображении ниже вы можете увидеть, что я добавил `-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/` в запись **HADOOP\_NAMENODE\_OPTS**:
+4. Найдите запись **\* \_ для** службы, для которой нужно включить дампы кучи, и добавьте параметры, которые необходимо включить. На изображении ниже вы можете увидеть, что я добавил `-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/` в запись **HADOOP\_NAMENODE\_OPTS**:
 
     ![Apache Ambari Hadoop-namenode-намерена](./media/hdinsight-hadoop-collect-debug-heap-dump-linux/hadoop-namenode-opts.png)
 

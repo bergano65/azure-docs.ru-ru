@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 50a1656fcb92d9777d4a9476ef2a4c1fd2f2efc6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329488"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002754"
 ---
 # <a name="full-text-search-in-azure-cognitive-search"></a>Полнотекстовый поиск в Azure Когнитивный поиск
 
@@ -287,7 +287,7 @@ Spacious,||air-condition*+"Ocean view"
 | spacious | 1
 | мыши | 1, 2
 | значение | 1
-| view | 1, 2, 3
+| представление | 1, 2, 3
 | walking | 1
 | на | 3
 
@@ -381,7 +381,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 В этой статье рассматривается полнотекстовый поиск в контексте Когнитивный поиск Azure. Мы надеемся, вы достаточно хорошо разобрались с этим вопросом и сможете применить полученные знания для разрешения распространенных проблем запросов. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 + Создайте пример индекса, попробуйте выполнить различные запросы и проанализируйте результаты. Дополнительные сведения см. в разделе о [запросе индекса](search-get-started-portal.md#query-index).
 
@@ -399,7 +399,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 [Простой синтаксис запросов](/rest/api/searchservice/simple-query-syntax-in-azure-search) 
 
-[Полный синтаксис запросов Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
+[Полный синтаксис запроса Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
 
 [Обработка результатов поиска](./search-pagination-page-layout.md)
 

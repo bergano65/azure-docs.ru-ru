@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: 5c76e45f09a0f432d2775eb19d3dcaa668294e6f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84672669"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002357"
 ---
 # <a name="language-understanding-luis-container-limitations"></a>Ограничения контейнеров Language Understanding (LUIS)
 
@@ -33,7 +33,7 @@ ms.locfileid: "84672669"
 
 Приложение LUIS можно использовать, если оно **не содержит** следующие зависимости:
 
-Неподдерживаемые конфигурации приложения|Подробнее|
+Неподдерживаемые конфигурации приложения|Сведения|
 |--|--|
 |Неподдерживаемые языки и региональные параметры контейнеров| Языки нидерландского языка ( `nl-NL` ), японского ( `ja-JP` ) и немецкого ( `de-DE` ) поддерживаются только с помощью подсчета [1.0.2](luis-language-support.md#custom-tokenizer-versions).|
 |Неподдерживаемые сущности для всех языков и региональных параметров|Предварительно созданная сущность [KeyPhrase](luis-reference-prebuilt-keyphrase.md) для всех языков и региональных параметров|
@@ -54,7 +54,7 @@ ms.locfileid: "84672669"
 | Французский (Франция) |`fr-FR` | ✔️ | ✔️ | ✔️ | ✔️ |
 | Французский (Канада) |`fr-CA` | ❌ | ❌ | ❌ | ✔️ |
 | Немецкий |`de-DE` | ✔️ | ✔️ | ✔️ | ✔️ |
-| Hindi | `hi-IN`| ❌ | ❌ | ❌ | ❌ |
+| Хинди | `hi-IN`| ❌ | ❌ | ❌ | ❌ |
 | Итальянский |`it-IT` | ✔️ | ✔️ | ✔️ | ✔️ |
 | Корейский |`ko-KR` | ✔️ | ❌ | ❌ | Только *ключевая фраза* |
 | Маратхи | `mr-IN`|❌|❌|❌|❌|

@@ -10,11 +10,11 @@ ms.author: rolyon
 ms.date: 11/18/2020
 ms.custom: generated
 ms.openlocfilehash: e18dc7e16eb0b114bd279d53b7dcc895bd62f338
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980868"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002737"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 

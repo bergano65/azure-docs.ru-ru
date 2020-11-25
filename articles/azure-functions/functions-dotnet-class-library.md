@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/24/2020
 ms.openlocfilehash: 3c363d13933e6554a6eefbeaf02d87dc6b382628
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578779"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002408"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -312,7 +312,7 @@ public static class CancellationTokenExample
 }
 ```
 
-## <a name="logging"></a>Ведение журнала
+## <a name="logging"></a>Logging
 
 В коде функции можно записывать выходные данные в журналы, которые отображаются как трассировки в Application Insights. Рекомендуемый способ записи в журналы — включить параметр типа [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger), который обычно называется `log` . Версия 1. x используемой среды выполнения функций `TraceWriter` , которая также выполняет запись в Application Insights, но не поддерживает структурированное ведение журнала. Не используйте `Console.Write` для записи журналов, так как эти данные не фиксируются Application Insights. 
 

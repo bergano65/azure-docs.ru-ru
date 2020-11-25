@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: duau
 ms.openlocfilehash: 997e2e97161e6db7cdca04c1b79f5149a2e4c409
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89392856"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003537"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Метрики и оповещения диспетчера трафика
 
@@ -63,6 +63,6 @@ ms.locfileid: "89392856"
 ## <a name="alerts-on-traffic-manager-metrics"></a>Оповещения о метриках диспетчера трафика
 Помимо обработки и отображения метрик из диспетчера трафика, Azure Monitor позволяет клиентам настроить и получать оповещения, связанные с этими метриками. Вы можете выбрать для метрик условия, при выполнении которых будет отправляться оповещение, частоту мониторинга этих условий и способ отправки оповещений. Дополнительные сведения см. в [документации по оповещениям Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте больше о службе [Azure Monitor](../azure-monitor/platform/metrics-supported.md).
 - См. [здесь](../azure-monitor/platform/metrics-getting-started.md#create-your-first-metric-chart), чтобы узнать, как создать диаграмму с помощью Azure Monitor.

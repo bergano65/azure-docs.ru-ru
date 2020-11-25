@@ -9,11 +9,11 @@ ms.date: 04/02/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: de0cf260207747f4acb02a377819a13de8b8ba22
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80628426"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002530"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
 
@@ -35,12 +35,12 @@ ms.locfileid: "80628426"
 1. Выберите группу ресурсов, которую вы хотите использовать, и введите имя.
 1. Выберите **добавочный** и выберите **Проверка + создать** .
 
-    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/incremental-snapshot-create-snapshot-blade.png" alt-text="Снимок экрана. Колонка диска с выделенным * * + созданием моментального снимка * *, как это необходимо выбрать.":::
+    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/incremental-snapshot-create-snapshot-blade.png" alt-text="Снимок экрана. Создайте колонку моментальный снимок, введите имя и выберите добавочный, а затем создайте моментальный снимок.":::
 
-1. Нажмите кнопку **Создать**
+1. Выберите **Создать**.
 
-    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/create-incremental-snapshot-validation.png" alt-text="Снимок экрана. Колонка диска с выделенным * * + созданием моментального снимка * *, как это необходимо выбрать.":::
+    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/create-incremental-snapshot-validation.png" alt-text="Снимок экрана. Страница проверки для моментального снимка, Подтвердите выборы и Создайте моментальный снимок.":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите просмотреть пример кода, демонстрирующий возможность создания добавочных моментальных снимков с помощью .NET, см. статью [копирование резервных копий управляемых дисков Azure в другой регион с помощью разностных моментальных снимков](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots).

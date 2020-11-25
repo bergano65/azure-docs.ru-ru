@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: 726cf362e62f0ef914dfaea090a08c224bd5d8d6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82192507"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001955"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux
 
@@ -163,7 +163,7 @@ YARN Timeline Server содержит следующие типы данных:
 
     Вы увидите список ссылок на журналы YARN.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Архитектура Apache Hadoop в HDInsight](hdinsight-hadoop-architecture.md)
 * [Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight](hdinsight-troubleshoot-yarn.md)
