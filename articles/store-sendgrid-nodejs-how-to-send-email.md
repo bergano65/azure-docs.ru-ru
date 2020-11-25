@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/05/2016
 ms.author: erikre
 ms.openlocfilehash: f2d653441598a47986913d525057672eed24b435
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "60931723"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015436"
 ---
 # <a name="how-to-send-email-using-sendgrid-from-nodejs"></a>Как отправлять электронную почту с помощью SendGrid из Node.js
 
@@ -36,7 +36,7 @@ SendGrid — это [облачная служба электронной по�
 * Пересылка запросов клиентов
 * Уведомления от приложения по электронной почте
 
-Дополнительные сведения см. в статье [https://sendgrid.com](https://sendgrid.com).
+Дополнительные сведения см. в разделе [https://sendgrid.com](https://sendgrid.com).
 
 ## <a name="create-a-sendgrid-account"></a>Создание учетной записи SendGrid
 

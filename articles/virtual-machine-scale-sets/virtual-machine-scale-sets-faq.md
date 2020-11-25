@@ -10,11 +10,11 @@ ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 8170cfcbbf200c6ba5030aff5716f46b537d8c97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87080477"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016715"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -227,7 +227,7 @@ az sf cluster create -h
 Имя элемента конфигурации Linux | Обязательно | Тип | Описание
 --- | --- | --- | ---
 ssh | нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
-path | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
+путь | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
 keyData | Да | Строка | Указывает открытый ключ SSH в кодировке Base64.
 
 Пример см. в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
@@ -346,7 +346,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 В Azure CLI есть возможность только удалить отдельный экземпляр. При попытке удалить один экземпляр с блокировкой, блокировка учитывается, и вы не сможете удалить этот экземпляр.
 
-## <a name="extensions"></a>Модули
+## <a name="extensions"></a>Расширения
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Как удалить расширение масштабируемого набора виртуальных машин?
 
@@ -568,7 +568,7 @@ IP-адреса выбираются из указанной подсети.
 
 Да. Вы можете добавить идентификаторы ресурсов для нескольких серверных пулов адресов шлюза приложений в список _аппликатионгатевайбаккендаддресспулс_ в разделе _ipConfigurations_ сетевого профиля масштабируемого набора.
 
-## <a name="scale"></a>Масштабирование
+## <a name="scale"></a>Масштаб
 
 ### <a name="in-what-case-would-i-create-a-virtual-machine-scale-set-with-fewer-than-two-vms"></a>В каких случаях следует создавать масштабируемый набор с одной виртуальной машиной или без них?
 
@@ -671,7 +671,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 }
 ```
 
-После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Ниже приведен пример:
+После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Пример:
 
 ```json
 "bootDiagnostics": {

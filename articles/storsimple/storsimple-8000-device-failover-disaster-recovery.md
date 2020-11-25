@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/03/2017
 ms.author: alkohli
 ms.openlocfilehash: dffa059b18e159d04b5e3bb8555dabf801ede692
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85511797"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017123"
 ---
 # <a name="failover-and-disaster-recovery-for-your-storsimple-8000-series-device"></a>Отработка отказа и аварийное восстановление для устройств StorSimple серии 8000
 
@@ -128,7 +128,7 @@ A.  В случае сбоя удаления контейнеры томов м
 
 Если есть устройства StorSimple, зарегистрированные непосредственно перед сбоем, этим устройствам может потребоваться восстановление заводских настроек. После аварии устройство StorSimple отображается на портале Azure как автономное. Такое устройство следует удалить с портала. Сбросьте настройки устройства до заводских и зарегистрируйте его в службе повторно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы готовы выполнить отработку отказа устройства, выберите один из следующих сценариев, чтобы получить подробные инструкции.
 

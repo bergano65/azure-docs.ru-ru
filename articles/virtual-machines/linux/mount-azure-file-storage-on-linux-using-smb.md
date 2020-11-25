@@ -8,11 +8,11 @@ ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
 ms.openlocfilehash: 6a5d4f388d9e5f47a13812687489525590c520c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87085492"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016103"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -106,7 +106,7 @@ sudo mount -t cifs //$STORAGEACCT.file.core.windows.net/myshare /mnt/MyAzureFile
 
 Для обеспечения безопасности в рабочих средах следует хранить учетные данные за пределами fstab.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка виртуальной машины Linux во время создания с помощью Cloud-init](using-cloud-init.md)
 - [Добавление диска к виртуальной машине Linux](add-disk.md)

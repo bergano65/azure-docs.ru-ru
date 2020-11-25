@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 07/23/2018
 ms.author: alkohli
 ms.openlocfilehash: 07d108306fdca9bfe8f793b61660550e43151d71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777821"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017191"
 ---
 # <a name="deactivate-and-delete-a-storsimple-device"></a>Отключение и удаление устройства StorSimple
 
@@ -116,7 +116,7 @@ ms.locfileid: "91777821"
 
 После отключения облачного устройства его можно удалить из списка устройств. Выберите отключенное устройство, щелкните правой кнопкой мыши и выберите **Удалить**. StorSimple уведомит вас об удалении устройства, и список устройств обновится.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о том, как восстановить на отключенном устройстве заводские параметры, см. в разделе [Восстановление на устройстве заводских настроек](storsimple-8000-manage-device-controller.md#reset-the-device-to-factory-default-settings).
 * Чтобы получить техническую поддержку, [обратитесь в службу поддержки Майкрософт](storsimple-8000-contact-microsoft-support.md).

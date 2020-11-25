@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 9210c54305427c82d5666d68573fd3af41e8cef7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e77b58f7741af42f00b2a1831157405b12fa24ff
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90972198"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017412"
 ---
 # <a name="create-and-manage-encryption-scopes-preview"></a>Создание и управление областями шифрования (Предварительная версия)
 
@@ -110,7 +110,7 @@ New-AzStorageEncryptionScope -ResourceGroupName $rgName `
     -KeyvaultEncryption
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli);
 
 Чтобы создать область шифрования с Azure CLI, сначала установите Azure CLI версии 2.4.0 или более поздней.
 
@@ -179,7 +179,7 @@ az storage account encryption-scope create \
 
 Чтобы просмотреть области шифрования для учетной записи хранения в портал Azure, перейдите к параметру **области шифрования** для учетной записи хранения. В этой области можно включить или отключить область шифрования или изменить ключ для области шифрования.
 
-:::image type="content" source="media/encryption-scope-manage/list-encryption-scopes-portal.png" alt-text="Снимок экрана, показывающий, как создать область шифрования в портал Azure":::
+:::image type="content" source="media/encryption-scope-manage/list-encryption-scopes-portal.png" alt-text="Снимок экрана, показывающий список областей шифрования в портал Azure":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -196,7 +196,7 @@ Get-AzStorageEncryptionScope -ResourceGroupName $rgName `
 Get-AzStorageAccount -ResourceGroupName $rgName | Get-AzStorageEncryptionScope
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli);
 
 Чтобы получить список областей шифрования, доступных для учетной записи хранения с Azure CLI, вызовите команду [AZ Storage Account Encryption-Scope List](/cli/azure/storage/account/encryption-scope#az-storage-account-encryption-scope-list) . Не забудьте заменить значения заполнителей в примере собственными значениями:
 
@@ -223,7 +223,7 @@ az storage account encryption-scope list \
 1. В раскрывающемся списке **область шифрования** выберите область шифрования по умолчанию для контейнера.
 1. Чтобы указать, что все большие двоичные объекты в контейнере используют область шифрования по умолчанию, установите флажок, чтобы **использовать эту область шифрования для всех больших двоичных объектов в контейнере**. Если этот флажок установлен, то отдельный большой двоичный объект в контейнере не может переопределить область шифрования по умолчанию.
 
-    :::image type="content" source="media/encryption-scope-manage/create-container-default-encryption-scope.png" alt-text="Снимок экрана, показывающий, как создать область шифрования в портал Azure":::
+    :::image type="content" source="media/encryption-scope-manage/create-container-default-encryption-scope.png" alt-text="Снимок экрана, показывающий контейнер с областью шифрования по умолчанию":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -243,11 +243,11 @@ New-AzRmStorageContainer -ResourceGroupName $rgName `
     -PreventEncryptionScopeOverride $true
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli);
 
 Чтобы создать контейнер с областью шифрования по умолчанию с Azure CLI, вызовите команду [AZ Storage Container Create](/cli/azure/storage/container#az-storage-container-create) , указав область для `--default-encryption-scope` параметра. Чтобы принудительно использовать область по умолчанию контейнера для всех больших двоичных объектов в контейнере, задайте `--prevent-encryption-scope-override` для параметра значение `true` .
 
-В следующем примере учетная запись Azure AD используется для авторизации операции создания контейнера. Вы также можете использовать ключ доступа к учетной записи. Дополнительные сведения см. в статье [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](../common/authorize-data-operations-cli.md).
+В следующем примере учетная запись Azure AD используется для авторизации операции создания контейнера. Вы также можете использовать ключ доступа к учетной записи. Дополнительные сведения см. в статье [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](./authorize-data-operations-cli.md).
 
 ```azurecli-interactive
 az storage container create \
@@ -277,7 +277,7 @@ az storage container create \
 1. Перейдите к раскрывающийся список **область шифрования** . По умолчанию большой двоичный объект создается с областью шифрования по умолчанию для контейнера, если он указан. Если контейнер требует, чтобы большие двоичные объекты использовали область шифрования по умолчанию, этот раздел будет отключен.
 1. Чтобы указать другую область для загружаемого большого двоичного объекта, выберите **выбрать существующую область**, а затем выберите нужную область из раскрывающегося списка.
 
-    :::image type="content" source="media/encryption-scope-manage/upload-blob-encryption-scope.png" alt-text="Снимок экрана, показывающий, как создать область шифрования в портал Azure":::
+    :::image type="content" source="media/encryption-scope-manage/upload-blob-encryption-scope.png" alt-text="Снимок экрана, показывающий, как передать большой двоичный объект с областью шифрования":::
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -294,7 +294,7 @@ New-AzStorageContainer -Name $containerName2 -Context $ctx
 Set-AzStorageBlobContent -Context $ctx -Container $containerName2 -File $localSrcFile -Blob "helloworld.txt" -BlobType Block -EncryptionScope $scopeName2
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli);
 
 Чтобы передать большой двоичный объект с областью шифрования, заданной с помощью Azure CLI, вызовите команду [AZ Storage BLOB upload](/cli/azure/storage/blob#az-storage-blob-upload) и укажите область шифрования для большого двоичного объекта.
 
@@ -345,7 +345,7 @@ Update-AzStorageEncryptionScope -ResourceGroupName $rgName `
     -KeyvaultEncryption
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli);
 
 Чтобы изменить ключ, защищающий область шифрования от ключа, управляемого клиентом, до ключа, управляемого корпорацией Майкрософт, с Azure CLI, вызовите команду [AZ Storage Account Encryption-Scope Update](/cli/azure/storage/account/encryption-scope#az-storage-account-encryption-scope-update) и передайте `--key-source` параметр со значением `Microsoft.Storage` :
 
@@ -389,7 +389,7 @@ Update-AzStorageEncryptionScope -ResourceGroupName $rgName `
     -State disabled
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli);
 
 Чтобы отключить область шифрования с помощью Azure CLI, вызовите команду [AZ Storage Account Encryption-Scope Update](/cli/azure/storage/account/encryption-scope#az-storage-account-encryption-scope-update) , включив `--state` параметр со значением `Disabled` , как показано в следующем примере. Чтобы повторно включить область шифрования, вызовите ту же команду с `--state` параметром, для которого задано значение `Enabled` . Не забудьте заменить значения заполнителей в примере собственными значениями:
 
@@ -403,7 +403,7 @@ az storage account encryption-scope update \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Шифрование службы хранилища Azure для неактивных данных](../common/storage-service-encryption.md)
 - [Области шифрования для хранилища BLOB-объектов (Предварительная версия)](encryption-scope-overview.md)

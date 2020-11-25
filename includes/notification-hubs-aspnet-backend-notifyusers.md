@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/11/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 3db9811322d27ab287fa568eeeffcb5f4d57bdf7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f490b6f25112ed8a10bbd865070bd07ea3ee84f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86530184"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016964"
 ---
 ## <a name="create-the-webapi-project"></a>Создание проекта веб-API
 
@@ -63,7 +63,7 @@ ms.locfileid: "86530184"
 
 ## <a name="authenticate-clients-to-the-webapi-backend"></a>Аутентификация клиентов в серверной части веб-API.
 
-В этом разделе вы создадите класс обработчика сообщений с именем **AuthenticationTestHandler** для новой серверной части. Этот класс является производным от [DelegatingHandler](https://msdn.microsoft.com/library/system.net.http.delegatinghandler.aspx). Он добавляется в качестве обработчика сообщений, чтобы обрабатывать все запросы, поступающие в серверную часть.
+В этом разделе вы создадите класс обработчика сообщений с именем **AuthenticationTestHandler** для новой серверной части. Этот класс является производным от [DelegatingHandler](/previous-versions/visualstudio/hh193679(v=vs.118)). Он добавляется в качестве обработчика сообщений, чтобы обрабатывать все запросы, поступающие в серверную часть.
 
 1. В обозревателе решений щелкните правой кнопкой мыши проект **AppBackend**, выберите **Добавить**, а затем щелкните **Класс**.
 2. Присвойте новому классу имя **AuthenticationTestHandler.cs** и нажмите кнопку **Добавить**, чтобы создать класс. Этот класс используется для аутентификации пользователей с помощью *обычной проверки подлинности* для простоты. Ваше приложение может использовать любую схему аутентификации.
@@ -88,7 +88,7 @@ ms.locfileid: "86530184"
 
    В противном случае запрос отклоняется. Этот способ аутентификации нельзя назвать настоящим методом аутентификации и авторизации. Это простой пример для этого руководства.
 
-   Если сообщение запроса аутентифицируется и авторизуется `AuthenticationTestHandler`, пользователь обычной проверки подлинности подключается к текущему запросу в [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.current.aspx). Позднее информацию о пользователе в HttpContext будет использовать другой контроллер (RegisterController), чтобы добавить [тег](https://msdn.microsoft.com/library/azure/dn530749.aspx) в запрос на регистрацию для получения уведомлений.
+   Если сообщение запроса аутентифицируется и авторизуется `AuthenticationTestHandler`, пользователь обычной проверки подлинности подключается к текущему запросу в [HttpContext](/dotnet/api/system.web.httpcontext.current). Позднее информацию о пользователе в HttpContext будет использовать другой контроллер (RegisterController), чтобы добавить [тег](/previous-versions/azure/azure-services/dn530749(v=azure.100)) в запрос на регистрацию для получения уведомлений.
 
     ```csharp
     public class AuthenticationTestHandler : DelegatingHandler
@@ -333,7 +333,7 @@ ms.locfileid: "86530184"
 
     Этот код отправляет тип уведомлений, основанный на параметре `pns` системы отправки уведомлений платформы (PNS). Значение `to_tag` используется для задания тега *имени пользователя* в сообщении. Этот тег должен соответствовать тегу имени пользователя активной регистрации центра уведомлений. Сообщение уведомления извлекается из текста запроса POST и форматируется для целевого PNS.
 
-    Поддержка форматов уведомлений зависит от того, какую систему PNS используют поддерживаемые устройства. Например, на устройствах Windows можно использовать [всплывающие уведомления с помощью WNS](https://msdn.microsoft.com/library/windows/apps/br230849.aspx), которые не поддерживает другая система PNS. В этом случае серверная часть решения конвертирует уведомление в формат, соответствующий PNS устройств, которые вы планируете поддерживать. Затем используйте соответствующий API отправки для [класса NotificationHubClient](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.notificationhubclient_methods.aspx).
+    Поддержка форматов уведомлений зависит от того, какую систему PNS используют поддерживаемые устройства. Например, на устройствах Windows можно использовать [всплывающие уведомления с помощью WNS](/uwp/schemas/tiles/toastschema/schema-root), которые не поддерживает другая система PNS. В этом случае серверная часть решения конвертирует уведомление в формат, соответствующий PNS устройств, которые вы планируете поддерживать. Затем используйте соответствующий API отправки для [класса NotificationHubClient](/dotnet/api/microsoft.azure.notificationhubs.notificationhubclient).
 
     ```csharp
     public async Task<HttpResponseMessage> Post(string pns, [FromBody]string message, string to_tag)

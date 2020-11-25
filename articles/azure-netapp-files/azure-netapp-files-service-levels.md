@@ -15,18 +15,18 @@ ms.topic: conceptual
 ms.date: 10/12/2020
 ms.author: b-juche
 ms.openlocfilehash: 7eac6a40476cffe875a03de49c9c9311ffbf4d39
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92016048"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017072"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Уровни обслуживания для Azure NetApp Files
 Уровни обслуживания являются атрибутами пула ресурсов. Уровни обслуживания определяются и отличаются максимально допустимой пропускной способностью для тома в пуле ресурсов на основе квоты, назначенной тому.
 
 ## <a name="supported-service-levels"></a>Поддерживаемые уровни обслуживания
 
-Azure NetApp Files поддерживает три уровня обслуживания: *Ultra*, *Premium*и *Standard*. 
+Azure NetApp Files поддерживает три уровня обслуживания: *Ultra*, *Premium* и *Standard*. 
 
 * <a name="Ultra"></a>Ultra Storage
 
@@ -72,7 +72,7 @@ Azure NetApp Files поддерживает три уровня обслужив
 
 ![Сценарии для корпоративных SAP HANA качества по](../media/azure-netapp-files/qos-sap-hana-volume-scenarios.png) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Страница цен Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
 - [Модель затрат для Azure NetApp Files](azure-netapp-files-cost-model.md) 

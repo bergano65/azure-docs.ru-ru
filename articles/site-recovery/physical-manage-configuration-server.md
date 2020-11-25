@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 02/28/2019
 ms.author: mayg
 ms.openlocfilehash: ff612b7c052ead5658ea4bbfafd7aace51ba3c02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86132494"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017446"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
@@ -303,7 +303,7 @@ ProxyPassword="Password"
 
 ### <a name="renew-the-certificate"></a>Обновление сертификата
 
-1. В хранилище откройте **Site Recovery**  >  **сервер конфигурации**инфраструктуры и щелкните нужный сервер конфигурации.
+1. В хранилище откройте **Site Recovery**  >  **сервер конфигурации** инфраструктуры и щелкните нужный сервер конфигурации.
 2. Дата окончания срока действия отображается в разделе **работоспособность сервера конфигурации** .
 3. Щелкните **Обновить сертификаты**. 
 
@@ -313,6 +313,6 @@ ProxyPassword="Password"
 ## <a name="common-issues"></a>Распространенные проблемы
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с руководствами по настройке аварийного восстановления [физических серверов](./physical-azure-disaster-recovery.md) в Azure.

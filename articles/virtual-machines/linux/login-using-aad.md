@@ -8,11 +8,11 @@ ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: sandeo
 ms.openlocfilehash: 882df9d0dcb01d6321455b845fed087a5e14ccc6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843083"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016171"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -212,6 +212,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: f2dd7cac8370c261f24f5587e801bd621fbdb0f0
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151377"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017004"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Аутентификация подчиненного устройства в Центре Интернета вещей
 
@@ -144,7 +144,7 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 
 2. Следуйте инструкциям в разделе [Регистрация сертификатов ЦС X.509 в центре Интернета вещей](../iot-hub/iot-hub-security-x509-get-started.md#register-x509-ca-certificates-to-your-iot-hub) в статье *Настройка безопасности с использованием сертификата X.509 в центре Интернета вещей Azure*. В этом разделе описывается выполнение следующих шагов.
 
-   1. Передача сертификата корневого ЦС. Если вы используете демонстрационные сертификаты, корневой ЦС является ** \<path> /цертс/Азуре-ИОТ-тест-Онли.Рут.ка.церт.пем**.
+   1. Передача сертификата корневого ЦС. Если вы используете демонстрационные сертификаты, корневой ЦС является **\<path> /цертс/Азуре-ИОТ-тест-Онли.Рут.ка.церт.пем**.
 
    2. Убедитесь, что вы владеете сертификатом корневого ЦС.
 
@@ -209,7 +209,7 @@ HostName=myGatewayDevice;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz
 
 Эта измененная строка подключения будет использоваться в следующей статье из серии прозрачных шлюзов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 На этом этапе у вас есть устройство IoT Edge, зарегистрированное в центре Интернета вещей и настроенное в качестве прозрачного шлюза. У вас также есть подчиненное устройство, зарегистрированное в центре Интернета вещей и указывающее на его устройство шлюза.
 

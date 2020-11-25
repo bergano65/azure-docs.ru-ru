@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 11/09/2018
 ms.author: edprice
 ms.openlocfilehash: 17ea965758150adb72d8e8f9fee9937bd5387a48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87371929"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016324"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "87371929"
 
 Чтобы выполнить шаги, используемые для миграции, воспользуйтесь скриптами установки в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Эти скрипты основаны на архитектуре для обычной рабочей нагрузки OLTP среднего размера.
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 Чтобы развернуть эту архитектуру, скачайте и запустите сценарий deploy.sh, который находится в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub.
 
@@ -133,7 +133,7 @@ ms.locfileid: "87371929"
 
 Дополнительные сведения об этих и других известных проблемах см. в файле kb.md в репозитории [DB2onAzure](https://aka.ms/DB2onAzure).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 -   [Создание необходимых пользователей для установки компонентов Пурескале DB2](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2)
 

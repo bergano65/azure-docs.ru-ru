@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 07/12/2018
 ms.author: rogarana
 ms.openlocfilehash: 2168b3e3c55eaf06b93358f4623b181f134b4f9e
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91974200"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017358"
 ---
 # <a name="convert-a-windows-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Переключение виртуальной машины Windows с неуправляемых дисков на управляемые диски
 
@@ -20,7 +20,7 @@ ms.locfileid: "91974200"
 
  
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 
 * Просмотрите раздел [Планирование миграции на управляемые диски](on-prem-to-azure.md#plan-for-the-migration-to-managed-disks).
@@ -103,7 +103,7 @@ ms.locfileid: "91974200"
 
 Виртуальная машина будет остановлена и перезапущена после завершения миграции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Преобразование управляемых дисков уровня "Стандартный" в диски уровня "Премиум"](convert-disk-storage.md)
 

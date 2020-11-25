@@ -11,11 +11,11 @@ ms.topic: how-to
 ms.date: 07/11/2018
 ms.author: cynthn
 ms.openlocfilehash: eee32dc7edd4256dd2bd120609504042d7ab78ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87836892"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016086"
 ---
 # <a name="install-mysql-on-a-virtual-machine-running-opensuse-linux-in-azure"></a>Установка MySQL на виртуальной машине под управлением OpenSUSE Linux в Azure
 
@@ -155,5 +155,5 @@ quit
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о MySQL см. в [этой документации](https://dev.mysql.com/doc).

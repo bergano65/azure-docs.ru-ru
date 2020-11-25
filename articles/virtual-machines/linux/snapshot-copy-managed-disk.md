@@ -10,11 +10,11 @@ ms.date: 07/11/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: 6374108247b9bfb950c42495b13b501ded8a02d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89318001"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015967"
 ---
 # <a name="create-a-snapshot-using-the-portal-or-azure-cli"></a>Создание моментального снимка с помощью портала или Azure CLI
 
@@ -68,7 +68,7 @@ az snapshot list \
 9. Нажмите кнопку **Создать**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
  Создайте виртуальную машину из моментального снимка, создав из него управляемый диск, а затем подключив этот диск как диск ОС. См. дополнительные сведения о скрипте для [создания виртуальной машины из моментального снимка](./../scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot.md?toc=%2fcli%2fmodule%2ftoc.json).
 

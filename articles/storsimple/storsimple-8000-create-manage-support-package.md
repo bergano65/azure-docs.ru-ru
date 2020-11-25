@@ -7,11 +7,11 @@ ms.topic: troubleshooting
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 4a847b273472ecc9d2aaa3993ec9d88aa46f2e7f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973875"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017174"
 ---
 # <a name="create-and-manage-a-support-package-for-storsimple-8000-series"></a>Создание пакета поддержки StorSimple для устройства StorSimple серии 8000 и управление им
 
@@ -43,7 +43,7 @@ ms.locfileid: "91973875"
    2. В открывшемся диалоговом окне введите пароль администратора устройства. Пароль по умолчанию — _Password1_.
      
       ![Диалоговое окно с учетными данными PowerShell](./media/storsimple-8000-create-manage-support-package/IC740962.png)
-   3. Нажмите кнопку **OK**.
+   3. Щелкните **ОК**.
    4. В командной строке введите:
      
       `Enter-PSSession $MS`
@@ -67,7 +67,7 @@ ms.locfileid: "91973875"
 | Параметр | Обязательный/необязательный | Описание |
 | --- | --- | --- |
 | `-Path` |Обязательно |Позволяет указать расположение общей сетевой папки, в которой будет расположен пакет поддержки. |
-| `-EncryptionPassphrase` |Обязательное |Позволяет указать парольную фразу для шифрования пакета поддержки. |
+| `-EncryptionPassphrase` |Обязательно |Позволяет указать парольную фразу для шифрования пакета поддержки. |
 | `-Credential` |Необязательно |Позволяет передать учетные данные для доступа к общей сетевой папке. |
 | `-Force` |Необязательно |Используется, чтобы пропустить шаг подтверждения парольной фразы шифрования. |
 | `-PackageTag` |Необязательно |Позволяет указать в поле *Путь* каталог, в котором будет размещен пакет поддержки. Значение по умолчанию — [имя устройства]-[текущая дата и время:гггг-ММ-дд-ЧЧ-мм-сс]. |
@@ -143,7 +143,7 @@ EncryptionPassphrase: ****
 PS C:\WINDOWS\system32>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [данных, собираемых в пакете поддержки](https://support.microsoft.com/help/3193606/storsimple-support-packages-and-device-logs).
 * Узнайте об [использовании пакетов поддержки и журналов устройства для устранения неполадок при его развертывании](storsimple-8000-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting).

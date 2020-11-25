@@ -9,12 +9,12 @@ ms.devlang: java
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.custom: devx-track-java
-ms.openlocfilehash: 2dc3df81a62e9a844db2d951b9146b08bdae5ed9
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 4753f7c0b8b5e515d33da3f9df48a2cdd9d921cc
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360808"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96017582"
 ---
 # <a name="troubleshoot-issues-when-you-use-azure-cosmos-db-java-sdk-v4-with-sql-api-accounts"></a>Устранение неполадок при использовании SDK Java версии 4 для Azure Cosmos DB с учетными записями API SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -120,9 +120,9 @@ GoneException{error=null, resourceAddress='https://cdb-ms-prod-westus-fd4.docume
 
     Во время проверки производительности следует увеличивать нагрузку до тех пор, пока регулирование не будет выполняться при небольшой частоте запросов. При регулировании клиентское приложение должно реализовать интервал частоты повтора для частоты повтора сервера. Это гарантирует, что время ожидания между повторными попытками будет минимальным.
 
-### <a name="failure-connecting-to-azure-cosmos-db-emulator"></a>Ошибка подключения к эмулятору Azure Cosmos DB
+### <a name="failure-connecting-to-azure-cosmos-db-emulator"></a>Сбой при подключении к эмулятору Azure Cosmos DB
 
-Сертификат HTTPS эмулятора для Azure Cosmos DB является самозаверяющим. Чтобы SDK работал с эмулятором, необходимо импортировать сертификат эмулятора в Java TrustStore. Дополнительные сведения см. в статье [Экспорт сертификатов эмулятора для Azure Cosmos DB](local-emulator-export-ssl-certificates.md).
+Сертификат HTTPS эмулятора Azure Cosmos DB является самозаверяющим. Чтобы SDK работал с эмулятором, необходимо импортировать сертификат эмулятора в Java TrustStore. Дополнительные сведения см. в статье [экспорт Azure Cosmos DB сертификатов эмулятора](local-emulator-export-ssl-certificates.md).
 
 ### <a name="dependency-conflict-issues"></a>Проблемы с конфликтом зависимостей
 
@@ -136,7 +136,7 @@ mvn dependency:tree
 ```
 Дополнительные сведения см. в [руководстве Maven по дереву зависимостей](https://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html).
 
-После того как вы узнаете, какая зависимость проекта зависит от более старой версии, вы можете изменить зависимость от этой библиотеки в файле POM и исключить транзитивную зависимость, следуя приведенному ниже примеру (предполагается, что устаревшей зависимостью является *reactor-core* ):
+После того как вы узнаете, какая зависимость проекта зависит от более старой версии, вы можете изменить зависимость от этой библиотеки в файле POM и исключить транзитивную зависимость, следуя приведенному ниже примеру (предполагается, что устаревшей зависимостью является *reactor-core*):
 
 ```xml
 <dependency>

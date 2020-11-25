@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 6fb3c9b6dbbab036ddb00edd7e1d5980bb425ebe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 881a7fc915ab986577599b85f8412fa8107f7902
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326122"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017395"
 ---
 # <a name="encryption-scopes-for-blob-storage-preview"></a>Области шифрования для хранилища BLOB-объектов (Предварительная версия)
 
@@ -52,13 +52,13 @@ ms.locfileid: "91326122"
 
 Если область шифрования защищена ключами, управляемыми клиентом, то можно также удалить соответствующий ключ в хранилище ключей, чтобы отключить область шифрования. Помните, что управляемые клиентом ключи защищаются с помощью обратимого удаления и очистки защиты в хранилище ключей, а удаленный ключ зависит от поведения, определенного для этих свойств. Дополнительные сведения см. в одном из следующих разделов документации по Azure Key Vault:
 
-- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../../key-vault/general/soft-delete-powershell.md)
-- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../../key-vault/general/soft-delete-cli.md)
+- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../../key-vault/general/key-vault-recovery.md)
+- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../../key-vault/general/key-vault-recovery.md)
 
 > [!NOTE]
 > Невозможно удалить область шифрования.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Шифрование службы хранилища Azure для неактивных данных](../common/storage-service-encryption.md)
 - [Создание и управление областями шифрования (Предварительная версия)](encryption-scope-manage.md)

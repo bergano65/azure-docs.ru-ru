@@ -8,12 +8,12 @@ ms.date: 07/13/2020
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 782abee06c5ab0f985e8bd90dbbecae18b1dfe02
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 2df401f7871d631ba317fb670783cad086b9a351
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442333"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "96017565"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-not-found-exceptions"></a>Диагностика и устранение неполадок Azure Cosmos DB не найденных исключений
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -25,6 +25,11 @@ ms.locfileid: "94442333"
 
 ## <a name="a-not-found-exception-was-returned-for-an-item-that-should-exist-or-does-exist"></a>Было возвращено исключение "не найдено" для элемента, который должен существовать или существовать
 Ниже приведены возможные причины, по которым код состояния 404 возвращается, если элемент должен существовать или существовать.
+
+### <a name="the-read-session-is-not-available-for-the-input-session-token"></a>The read session is not available for the input session token (Сеанс чтения для входного маркера сеанса недоступен)
+
+#### <a name="solution"></a>Решение.
+1. Обновите текущий пакет SDK до последней доступной версии. Наиболее частые причины этой ошибки исправлены в новых версиях пакета SDK.
 
 ### <a name="race-condition"></a>Состояние гонки
 Существует несколько экземпляров пакета SDK, и чтение произошло до записи.
@@ -106,7 +111,7 @@ while (invalidItemsIterator.HasMoreResults)
 #### <a name="solution"></a>Решение.
 Обязательно используйте точное имя при подключении к Cosmos DB.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Диагностика и устранение неполадок](troubleshoot-dot-net-sdk.md) при использовании пакета SDK для Azure Cosmos DB .NET.
 * Ознакомьтесь с рекомендациями по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md).
 * [Диагностика и устранение неполадок](troubleshoot-java-sdk-v4-sql.md) при использовании пакета SDK для Java версии 4 Azure Cosmos DB.

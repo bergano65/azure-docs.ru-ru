@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 67d6fb1f3cc359288ed942d915e186542a62b0fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803948"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017140"
 ---
 # <a name="fail-over-to-a-storsimple-8000-series-physical-device"></a>Отработка отказа на физическое устройство StorSimple серии 8000
 
@@ -82,7 +82,7 @@ ms.locfileid: "91803948"
        ![Просмотр целевых контейнеров томов](./media/storsimple-8000-device-failover-disaster-recovery/failover-phy-dev16.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * После отработки отказа, возможно, нужно будет [отключить или удалить устройство StorSimple](storsimple-8000-deactivate-and-delete-device.md).
 * Сведения об использовании службы диспетчера устройств StorSimple см. в статье [Use the StorSimple Device Manager service to administer your StorSimple device](storsimple-8000-manager-service-administration.md) (Администрирование устройства StorSimple с помощью службы диспетчера устройств StorSimple).

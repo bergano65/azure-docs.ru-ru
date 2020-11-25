@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 11/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 97209dca7d30de037dbd21f5cc145b2941060e70
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85512972"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015406"
 ---
 # <a name="use-storsimple-monitoring-indicators-to-manage-your-device"></a>Использование индикаторов мониторинга StorSimple для управления устройством
 
@@ -241,7 +241,7 @@ ms.locfileid: "85512972"
 | Диск удален |Предупреждение |None |Сбой модуля |
 | Недостаточно доступной мощности электропитания |Предупреждение |нет |Сбой модуля |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте больше о [компонентах и состоянии оборудования StorSimple](storsimple-8000-monitor-hardware-status.md).
 
 [1]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE01.png

@@ -8,11 +8,11 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/01/2019
 ms.openlocfilehash: bed73c3ccc7f514ffc9ff8f97534ae4b249834ce
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286990"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017021"
 ---
 # <a name="scenario-pegged-cpu-on-region-server-in-apache-hbase-cluster-in-azure-hdinsight"></a>Сценарий: фиксированный ЦП на сервере региона в кластере Apache HBase в Azure HDInsight
 
@@ -22,11 +22,11 @@ ms.locfileid: "93286990"
 
 Процесс сервера Apache HBase в регионе начинается с близкого к 200% ЦП, что приводит к срабатыванию предупреждений в HBase Master процессе и кластере для неполной работы.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Если вы используете кластер HBase версии 3.4, возможно, возникла потенциальная ошибка, вызванная обновлением JDK до Version 1.7.0 _151. Симптомом, который мы видим, это начало процесса сервера региона, который занимает около 200% ЦП (для проверки выполнения `top` команды; если существует процесс, который занимает около 200% ресурсов ЦП, получите идентификатор процесса и подтвердите, что он является процессом сервера региона, выполнив команду `ps -aux | grep` ).
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
 1. Установите JDK 1,8 на всех узлах кластера, как показано ниже.
 
@@ -50,6 +50,6 @@ ms.locfileid: "93286990"
 ps -aux | grep regionserver, and verify the version like '''/usr/lib/jvm/java-8-openjdk-amd64/bin/java
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

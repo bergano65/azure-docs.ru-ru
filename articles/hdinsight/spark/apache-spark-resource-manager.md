@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
 ms.openlocfilehash: 5427077a4b07917c8852d0a63c815195e776b9de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085197"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017038"
 ---
 # <a name="manage-resources-for-apache-spark-cluster-on-azure-hdinsight"></a>Управление ресурсами для кластера Apache Spark в Azure HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "86085197"
 
 1. Откройте кластер Spark на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в разделе [Отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters).
 
-2. На **панели мониторинга кластера**выберите **Yarn**. При появлении запроса введите учетные данные администратора для кластера Spark.
+2. На **панели мониторинга кластера** выберите **Yarn**. При появлении запроса введите учетные данные администратора для кластера Spark.
 
     ![Запуск пользовательского интерфейса YARN](./media/apache-spark-resource-manager/azure-portal-dashboard-yarn.png)
 
@@ -146,7 +146,7 @@ curl -k -v -H 'Content-Type: application/json' -X POST -d '{"file":"<location of
 
     ![Завершить работу](./media/apache-spark-resource-manager/apache-ambari-kill-app2.png "Завершить работу")
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Отслеживание и отладка заданий в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-job-debugging.md)
 

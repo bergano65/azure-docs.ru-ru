@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 03/14/2019
 ms.author: alkohli
 ms.openlocfilehash: 36ed87a75d590a8647e5347b3e90e6f5159dc6b5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961839"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016851"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-and-manage-storsimple-alerts"></a>Использование службы диспетчера устройств StorSimple для просмотра оповещений StorSimple и управления ими
 
@@ -226,6 +226,6 @@ ms.locfileid: "91961839"
 |:--- |:--- |:--- |
 | Датчик температуры внешнего аппаратного компонента сообщает состояние "сбой".  | Тип корпуса: основной корпус | Это оповещение активируется, когда окружающая температура в StorSimple выходит за пределы допустимого диапазона. Проверьте окружающую температуру или воздушный поток от вентиляционного отверстия в центре обработки данных. Когда температура возвращается в нормальный режим, предупреждение автоматически удаляется по истечении некоторого времени. Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт.   |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [Устранение неполадок в развертывании устройства StorSimple](storsimple-8000-troubleshoot-deployment.md).

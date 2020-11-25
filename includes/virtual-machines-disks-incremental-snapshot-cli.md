@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: cbd6f821326c86983ceb3ae5b90969e522c187fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4bdeef537556db94338ed50fcfa6e9d88431f25a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82204451"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96016269"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
 
@@ -29,9 +29,9 @@ ms.locfileid: "82204451"
 ```PowerShell
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
 ```
-В Linux Установка интерфейса командной строки будет зависеть от версии операционной системы.  См. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) для конкретной версии Linux.
+В Linux Установка интерфейса командной строки будет зависеть от версии операционной системы.  См. статью [установка Azure CLI](/cli/azure/install-azure-cli) для конкретной версии Linux.
 
-Чтобы создать добавочный моментальный снимок, используйте команду [AZ snapshot Create](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) с `--incremental` параметром.
+Чтобы создать добавочный моментальный снимок, используйте команду [AZ snapshot Create](/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) с `--incremental` параметром.
 
 В следующем примере создается добавочный моментальный снимок, заменяются `<yourDesiredSnapShotNameHere>` ,, `<yourResourceGroupNameHere>` `<exampleDiskName>` и `<exampleLocation>` с собственными значениями, а затем выполняется пример:
 
@@ -99,6 +99,6 @@ az snapshot list -g <yourResourceGroupNameHere> -o json \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите просмотреть пример кода, демонстрирующий возможность создания добавочных моментальных снимков с помощью .NET, см. статью [копирование резервных копий управляемых дисков Azure в другой регион с помощью разностных моментальных снимков](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots).

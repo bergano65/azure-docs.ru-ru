@@ -8,12 +8,12 @@ ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: d7718ebbbf4f9dec3519ce46e5d0d1cdbb5a7460
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: aa1c681d4b34199456f3447bcac5587005a044ce
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745959"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96016643"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "92745959"
 
 ### <a name="vms-using-availability-zones"></a>Виртуальные машины, использующие зоны доступности
 
-Чтобы использовать диски Ultra, необходимо определить, в какой зоне доступности вы используете. Не каждый регион поддерживает каждый размер виртуальной машины с Ultra Disks. Чтобы определить, поддерживает ли ваш регион, зону и размер виртуальной машины, выполните одну из следующих команд, обязательно замените значения **Region** , **vmSize** и **Subscription** .
+Чтобы использовать диски Ultra, необходимо определить, в какой зоне доступности вы используете. Не каждый регион поддерживает каждый размер виртуальной машины с Ultra Disks. Чтобы определить, поддерживает ли ваш регион, зону и размер виртуальной машины, выполните одну из следующих команд, обязательно замените значения **Region**, **vmSize** и **Subscription** .
 
 #### <a name="cli"></a>CLI
 
@@ -122,7 +122,7 @@ UltraSSDAvailable                            True
 
 Если вы планируете использовать собственный шаблон, убедитесь, что **apiVersion** для `Microsoft.Compute/virtualMachines` и `Microsoft.Compute/Disks` задан как `2018-06-01` (или более поздней версии).
 
-Задайте для номера SKU диска значение **UltraSSD_LRS** , а затем установите емкость диска, число операций ввода-вывода, зону доступности и пропускную способность в Мбит/с для создания диска Ultra.
+Задайте для номера SKU диска значение **UltraSSD_LRS**, а затем установите емкость диска, число операций ввода-вывода, зону доступности и пропускную способность в Мбит/с для создания диска Ultra.
 
 После подготовки виртуальной машины можно будет секционировать и отформатировать ее диски данных, а затем настроить их для рабочих нагрузок.
 
@@ -152,24 +152,27 @@ UltraSSDAvailable                            True
 
 
 - Измените **тип хранилища** на **Ultra Disk**.
-- Измените значения параметра **Пользовательский размер диска (гиб)** , **дисковые операции ввода-вывода** и **пропускную способность диска** на выбранные.
+- Измените значения параметра **Пользовательский размер диска (гиб)**, **дисковые операции ввода-вывода** и **пропускную способность диска** на выбранные.
 - Нажмите кнопку **ОК** в обоих колонках.
 
     :::image type="content" source="media/virtual-machines-disks-getting-started-ultra-ssd/ultra-disk-select-new-disk.png" alt-text="Снимок экрана: колонка &quot;Выбор размера диска&quot;, выбран параметр &quot;Ultra Disk&quot; для типа хранилища, другие выделенные значения.":::
 
 - Продолжайте развертывание виртуальной машины, оно будет таким же, как и при развертывании любой другой виртуальной машины.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Сначала определите размер виртуальной машины для развертывания. Список поддерживаемых размеров виртуальных машин см. в разделе общедоступная [область и ограничения](#ga-scope-and-limitations) .
 
 Для подключения Ultra Disk необходимо создать виртуальную машину, которая может использовать диски Ultra.
 
-Замените или установите **$vmname** , **$rgname** , **$diskname** , **$Location** , **$Password** , **$User** переменные собственными значениями. Задайте **$Zone**  в качестве значения вашей зоны доступности, полученной в [начале этой статьи](#determine-vm-size-and-region-availability). Затем выполните следующую команду CLI, чтобы создать виртуальную машину с Ultra Enabled.
+Замените или установите **$vmname**, **$rgname**, **$diskname**, **$Location**, **$Password**, **$User** переменные собственными значениями. Задайте **$Zone**  в качестве значения вашей зоны доступности, полученной в [начале этой статьи](#determine-vm-size-and-region-availability). Затем выполните следующую команду CLI, чтобы создать виртуальную машину с Ultra Enabled.
 
 ```azurecli-interactive
 az disk create --subscription $subscription -n $diskname -g $rgname --size-gb 1024 --location $location --sku UltraSSD_LRS --disk-iops-read-write 8192 --disk-mbps-read-write 400
 az vm create --subscription $subscription -n $vmname -g $rgname --image Win2016Datacenter --ultra-ssd-enabled true --zone $zone --authentication-type password --admin-password $password --admin-username $user --size Standard_D4s_v3 --location $location --attach-data-disks $diskname
+
+#create an ultra disk with 512 sector size
+az disk create --subscription $subscription -n $diskname -g $rgname --size-gb 1024 --location $location --sku UltraSSD_LRS --disk-iops-read-write 8192 --disk-mbps-read-write 400 --logical-sector-size 512
 ```
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -222,6 +225,18 @@ $vm = Get-AzVM -ResourceGroupName $resourceGroup -Name $vmName
 $disk = Get-AzDisk -ResourceGroupName $resourceGroup -Name $diskName
 $vm = Add-AzVMDataDisk -VM $vm -Name $diskName -CreateOption Attach -ManagedDiskId $disk.Id -Lun $lun
 Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
+
+# Example for creating a disk with 512 sector size
+$diskconfig = New-AzDiskConfig `
+-Location 'EastUS2' `
+-DiskSizeGB 8 `
+-DiskIOPSReadWrite 1000 `
+-DiskMBpsReadWrite 100 `
+-LogicalSectorSize 512 `
+-AccountType UltraSSD_LRS `
+-CreateOption Empty `
+-zone $zone;
+
 ```
 
 ---
@@ -233,7 +248,7 @@ Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
 
 - Перейдите к виртуальной машине и прервите ее, дождитесь ее освобождения.
 - После освобождения виртуальной машины выберите **диски**.
-- Выберите команду **Изменить**.
+- Выберите **Изменить**.
 
 ![Снимок экрана: колонка существующего диска виртуальной машины выделена для редактирования.](media/virtual-machines-disks-getting-started-ultra-ssd/options-selector-ultra-disks.png)
 
@@ -241,14 +256,14 @@ Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
 
 ![Снимок экрана: включение обеспечения совместимости с Ultra Disk.](media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png)
 
-- Щелкните **Сохранить**.
+- Нажмите кнопку **Сохранить**.
 - Выберите **Добавить диск данных** , а затем в раскрывающемся списке **имя** выберите **создать диск**.
 
 ![Снимок экрана: колонка диска с добавлением нового диска.](media/virtual-machines-disks-getting-started-ultra-ssd/create-and-attach-new-ultra-disk.png)
 
 - Введите имя нового диска, а затем выберите **изменить размер**.
 - Измените **тип учетной записи** на **Ultra Disk**.
-- Измените значения параметра **Пользовательский размер диска (гиб)** , **дисковые операции ввода-вывода** и **пропускную способность диска** на выбранные.
+- Измените значения параметра **Пользовательский размер диска (гиб)**, **дисковые операции ввода-вывода** и **пропускную способность диска** на выбранные.
 
     :::image type="content" source="media/virtual-machines-disks-getting-started-ultra-ssd/ultra-disk-select-new-disk.png" alt-text="Снимок экрана: колонка &quot;Выбор размера диска&quot;, выбран параметр &quot;Ultra Disk&quot; для типа хранилища, другие выделенные значения.":::
 
@@ -258,7 +273,7 @@ Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
 
 ![Снимок экрана: колонка "диски" на виртуальной машине.](media/virtual-machines-disks-getting-started-ultra-ssd/saving-and-attaching-new-ultra-disk.png)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Кроме того, если существующая виртуальная машина находится в зоне региона или доступности, которая поддерживает использование Ultra Disks, можно использовать Ultra Disks без необходимости создавать новую виртуальную машину.
 
@@ -378,11 +393,11 @@ Ultra Disks предлагает уникальную возможность, п
 ![Снимок экрана: колонка "диски" на виртуальной машине, выделена дискета.](media/virtual-machines-disks-getting-started-ultra-ssd/selecting-ultra-disk-to-modify.png)
 
 - Выберите **Конфигурация** и внесите необходимые изменения.
-- Щелкните **Сохранить**.
+- Нажмите кнопку **Сохранить**.
 
 ![Снимок экрана: колонка настройки на Ultra Disk, размер диска, число операций ввода-вывода в секунду и пропускная способность выделены, сохранение выделено.](media/virtual-machines-disks-getting-started-ultra-ssd/configuring-ultra-disk-performance-and-size.png)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Ultra Disks предлагает уникальную возможность, позволяющую настроить их производительность. в следующей команде показано, как использовать эту функцию:
 
@@ -407,7 +422,7 @@ Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate 
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Используйте Azure Ultra Disks в службе Kubernetes Azure (Предварительная версия)](../aks/use-ultra-disks.md).
 - [Перенесите диск журнала на диск Ultra](../azure-sql/virtual-machines/windows/storage-migrate-to-ultradisk.md).
