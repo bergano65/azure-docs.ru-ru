@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.custom: how-to
 ms.date: 11/16/2020
 ms.openlocfilehash: f8eb18b190b72381f1a93575eb39b3d19d8d431b
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701421"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010679"
 ---
 # <a name="manage-azure-machine-learning-resources-with-the-vs-code-extension-preview"></a>Управление ресурсами Машинное обучение Azure с помощью расширения VS Code (Предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "94701421"
 
 Дополнительные сведения см. в разделе [рабочие области](concept-workspace.md).
 
-### <a name="create-a-workspace"></a>Создать рабочую область
+### <a name="create-a-workspace"></a>Создание рабочей области
 
 1. В представлении Машинное обучение Azure щелкните правой кнопкой мыши узел подписки и выберите **создать рабочую область**.
 1. В командной строке:

@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 10de2a4a00b716656626082a24ecbd56d0fcc3a4
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 99e79e4d094fe6e93510d139d2f4d08f260102df
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127307"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010050"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-azure-powershell"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью Azure PowerShell
 
 В этой статье показано, как создать ресурс общедоступного IP-адреса с помощью Azure PowerShell. Дополнительные сведения о том, к каким ресурсам можно связываться, разница между SKU "базовый" и "Стандартный" и другими связанными сведениями см. в разделе [общедоступные IP-адреса](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses).  В этом примере мы рассмотрим только IPv4-адреса. Дополнительные сведения об IPv6-адресах см. в статье [IPv6 для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/ipv6-overview).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Локальная установка Azure PowerShell или Azure Cloud Shell
 
@@ -45,6 +45,8 @@ $loc = 'eastus2'
 
 New-AzResourceGroup -Name $rg -Location $loc
 ```
+## <a name="create-public-ip"></a>Создать общедоступный IP-адрес
+
 ---
 # <a name="standard-sku---using-zones"></a>[**SKU "Стандартный" — Использование зон**](#tab/option-create-public-ip-standard-zones)
 
@@ -104,7 +106,7 @@ New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -Alloca
 
 Этот выбор допустим во всех регионах и является выбором по умолчанию для стандартных общедоступных IP-адресов в регионах без [зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).
 
-# <a name="basic-sku"></a>[**SKU "Базовый"** ](#tab/option-create-public-ip-basic)
+# <a name="basic-sku"></a>[**SKU "Базовый"**](#tab/option-create-public-ip-basic)
 
 Используйте [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress) , чтобы создать базовый статический общедоступный IP-адрес с именем **мибасикпублиЦип** в **myResourceGroup**.  Основные общедоступные IP-адреса не имеют концепции зон доступности.
 
@@ -126,7 +128,7 @@ New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -Alloca
 
 Дополнительные сведения об отдельных переменных, перечисленных выше, см. в разделе [Управление общедоступными IP-адресами](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 - Связывание [общедоступного IP-адреса с виртуальной машиной](https://docs.microsoft.com/azure/virtual-network/associate-public-ip-address-vm#azure-portal)
 - См. дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 - См. сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).

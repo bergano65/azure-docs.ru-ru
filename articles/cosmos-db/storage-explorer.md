@@ -8,11 +8,11 @@ ms.date: 10/23/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
 ms.openlocfilehash: 61ae446d180a86b42bc52ac3244b96b7b347b68f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025401"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010577"
 ---
 # <a name="manage-azure-cosmos-db-resources-by-using-azure-storage-explorer"></a>Управление ресурсами Azure Cosmos DB с помощью Обозреватель службы хранилища Azure
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -355,7 +355,7 @@ ms.locfileid: "95025401"
 * Убедитесь, что Azure Cosmos DB учетная запись находится в состоянии готовности к работе. Повторите попытку, когда учетная запись будет успешно создана.
 * Если учетная запись находится под **быстрым доступом** или **локальными и подключенными** узлами, проверьте, не удалена ли учетная запись. В этом случае необходимо удалить узел вручную.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Просмотрите это видео, чтобы узнать, как использовать Azure Cosmos DB в Обозреватель службы хранилища Azure: [используйте Azure Cosmos DB в обозреватель службы хранилища Azure](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be).
 * Дополнительные сведения об Обозревателе службы хранилища и подключении дополнительных служб см. в статье о [начале работы с Обозревателем службы хранилища](../vs-azure-tools-storage-manage-with-storage-explorer.md).

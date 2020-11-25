@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
 ms.openlocfilehash: d465666ce5d631a234644d1adc85afcf6e3c1e27
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873716"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010611"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -95,7 +95,7 @@ availabilityResults
 
     ![Снимок экрана "Параметры приложения-функции Azure"](./media/automate-custom-reports/config.png)
 
-7. Создайте три параметра приложения с соответствующими значениями ``AI_APP_ID``, ``AI_APP_KEY`` и ``SendGridAPI``. Щелкните **Сохранить**.
+7. Создайте три параметра приложения с соответствующими значениями ``AI_APP_ID``, ``AI_APP_KEY`` и ``SendGridAPI``. Нажмите кнопку **Сохранить**.
 
      ![Снимок экрана "Интерфейс функции интеграции"](./media/automate-custom-reports/app-settings.png)
     

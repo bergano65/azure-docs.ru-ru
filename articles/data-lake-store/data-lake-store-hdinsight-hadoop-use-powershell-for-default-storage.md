@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 675f68a36963d19f42cb7c0c5d49ae8c4f0006f2
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92103430"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010543"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-as-default-storage-by-using-powershell"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию, с помощью PowerShell
 
@@ -77,7 +77,7 @@ ms.locfileid: "92103430"
     New-AzResourceGroup -Name $resourceGroupName -Location "East US 2"
     ```
 
-    Вы должны увидеть следующий результат:
+    Вы должны увидеть такие выходные данные:
 
     ```output
     ResourceGroupName : hdiadlgrp
@@ -127,7 +127,7 @@ ms.locfileid: "92103430"
 
 Чтобы настроить аутентификацию Active Directory для Data Lake Storage 1-го поколения, необходимо выполнить инструкции, приведенные в двух следующих разделах.
 
-### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 Прежде чем выполнять дальнейшие действия, описанные в этом разделе, убедитесь, что на вашем компьютере установлен [пакет SDK Windows](https://dev.windows.com/en-us/downloads). Вам также необходимо создать каталог, например *C:\mycertdir*, для создания сертификата.
 
 1. В окне PowerShell перейдите в расположение, где установлен пакет Windows SDK (обычно это *C:\Program Files (x86)\Windows Kits\10\bin\x86*), и с помощью служебной программы [MakeCert][makecert] создайте самозаверяющий сертификат и закрытый ключ. Используйте следующие команды:
@@ -236,7 +236,7 @@ ms.locfileid: "92103430"
     После успешного выполнения командлетов должны отобразиться сведения о кластере.
 
 ## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-data-lake-storage-gen1"></a>Выполнение тестовых заданий в кластере HDInsight для использования Data Lake Storage 1-го поколения
-После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Для этого выполните пример задания Hive, чтобы создать таблицу, которая использует демонстрационные данные, которые уже доступны в Data Lake Storage 1-го поколения по адресу * \<cluster root> /example/Data/Sample.log*.
+После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Для этого выполните пример задания Hive, чтобы создать таблицу, которая использует демонстрационные данные, которые уже доступны в Data Lake Storage 1-го поколения по адресу *\<cluster root> /example/Data/Sample.log*.
 
 Следуя инструкциям в этом разделе, вы подключитесь по протоколу Secure Shell (SSH) к созданному кластеру HDInsight на платформе Linux и выполните пример запроса Hive.
 
@@ -281,7 +281,7 @@ hdfs dfs -ls adl:///
 
 С помощью команды `hdfs dfs -put` вы можете передать несколько файлов в Data Lake Storage 1-го поколения, а затем с помощью команды `hdfs dfs -ls` проверить, успешно ли они передались.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen1.md)
 * [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 
