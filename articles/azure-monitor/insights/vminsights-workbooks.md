@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
 ms.openlocfilehash: 43cdb9de111bdea5486e49a56d58d38279b685c7
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996373"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95985549"
 ---
 # <a name="create-interactive-reports-azure-monitor-for-vms-with-workbooks"></a>Create interactive reports Azure Monitor for VMs with workbooks (Создание интерактивных отчетов Azure Monitor для виртуальных машин с книгами)
 
@@ -240,7 +240,7 @@ Perf
 2. Нажмите кнопку "..." рядом с книгой, которую требуется закрепить.
 3. Щелкните **Закрепить на панели мониторинга**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы определить ограничения и общую производительность виртуальной машины, см. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md).
 
