@@ -7,12 +7,12 @@ ms.date: 07/16/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
-ms.openlocfilehash: 332d6da35af0eaae9d9d15258a152734f0a9eba6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 64069292ea0059216d06bfc41316c2aed7484dd0
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88033637"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011104"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
 
@@ -51,7 +51,7 @@ ms.locfileid: "88033637"
 ```
 
 ## <a name="setup-an-azure-storage-connection-string"></a>Настройка строки подключения к службе хранилища Azure
-Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения к хранилищу в следующем формате, используя имя учетной записи хранения и ключ доступа к хранилищу для учетной записи хранения, указанной в [портал Azure](https://portal.azure.com) для значений *AccountName* и *AccountKey* . Сведения о учетных записях хранения и ключах доступа см. в статье [об учетных записях хранения Azure](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). В этом примере показано, как объявить статическое поле для размещения строки подключения:
+Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения к хранилищу в следующем формате, используя имя учетной записи хранения и ключ доступа к хранилищу для учетной записи хранения, указанной в [портал Azure](https://portal.azure.com) для значений *AccountName* и *AccountKey* . Сведения о учетных записях хранения и ключах доступа см. в статье [об учетных записях хранения Azure](../common/storage-account-create.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). В этом примере показано, как объявить статическое поле для размещения строки подключения:
 
 ```cpp
 // Define the connection-string with your values.
@@ -184,7 +184,7 @@ for (auto it = container.list_blobs(); it != end_of_results; ++it)
 }
 ```
 
-Дополнительные сведения об операциях перечисления см. в разделе [Перечисление ресурсов хранилища Azure в C++](../storage-c-plus-plus-enumeration.md).
+Дополнительные сведения об операциях перечисления см. в разделе [Перечисление ресурсов хранилища Azure в C++](../common/storage-c-plus-plus-enumeration.md).
 
 ## <a name="how-to-download-blobs"></a>Практическое руководство. Загрузка BLOB-объектов
 Чтобы скачать большие двоичные объекты, сначала извлеките ссылку на большой двоичный объект, а затем вызовите метод **download_to_stream** . В следующем примере используется метод **download_to_stream** для передачи содержимого большого двоичного объекта в объект потока, который затем можно сохранить в локальном файле.
@@ -254,13 +254,12 @@ azure::storage::cloud_block_blob blockBlob = container.get_block_blob_reference(
 blockBlob.delete_blob();
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы ознакомились с основными сведениями о хранилище BLOB-объектов, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.
 
-- [Использование хранилища очередей из C++](../storage-c-plus-plus-how-to-use-queues.md)
+- [Использование хранилища очередей из C++](../queues/storage-c-plus-plus-how-to-use-queues.md)
 - [Использование табличного хранилища из C++](../../cosmos-db/table-storage-how-to-use-c-plus.md)
-- [Список ресурсов службы хранилища Azure в C++](../storage-c-plus-plus-enumeration.md)
+- [Список ресурсов службы хранилища Azure в C++](../common/storage-c-plus-plus-enumeration.md)
 - [Справочник по клиентской библиотеке хранилища для C++](https://azure.github.io/azure-storage-cpp)
 - [Документация по хранилищу Azure](https://azure.microsoft.com/documentation/services/storage/)
-- [Перенос данных с помощью служебной программы командной строки AzCopy](../storage-use-azcopy.md)
-
+- [Перенос данных с помощью служебной программы командной строки AzCopy](../common/storage-use-azcopy-v10.md)

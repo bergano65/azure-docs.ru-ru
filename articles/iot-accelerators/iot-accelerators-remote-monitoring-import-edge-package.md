@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 10/10/2018
 ms.topic: conceptual
 ms.openlocfilehash: 34222f396ed3c43932371aa9f64a459bb2a5dd0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61443017"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012294"
 ---
 # <a name="import-an-iot-edge-package-into-your-remote-monitoring-solution-accelerator"></a>Импорт пакета IoT Edge в акселератор решения для удаленного мониторинга
 
@@ -51,6 +51,6 @@ ms.locfileid: "61443017"
 
 Вы передали манифест развертывания IoT Edge как пакет. На странице **Развертывания** можно развернуть этот пакет для своих подключенных устройств IoT Edge.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как развертывать модули на устройстве IoT Edge из решения для удаленного мониторинга, ознакомьтесь с дополнительными сведениями об [IoT Edge](../iot-edge/about-iot-edge.md).

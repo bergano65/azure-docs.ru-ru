@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: atsenthi
 ms.openlocfilehash: a25f16f08ab8ae9564363f179d19d4b30c5315fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75464283"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012533"
 ---
 # <a name="run-a-service-startup-script-as-a-local-user-or-system-account"></a>Выполнение скрипта при запуске службы от имени локального пользователя или системной учетной записи
 Перед запуском исполняемого файла службы Service Fabric могут потребоваться некоторые действия по настройке,  например для установки переменных среды. Вы можете указать в манифесте службы скрипт, который будет выполняться перед запуском исполняемого файла службы. Настроив политику запуска от имени для точки входа установки службы, вы можете изменить учетную запись, от имени которой выполняется исполняемый файл установки.  Отдельная точка входа установки позволяет на короткое время запускать конфигурацию с высоким уровнем привилегий, чтобы исполняемый узел службы не работал с высоким уровнем привилегий в течение продолжительного периода.
@@ -229,7 +229,7 @@ Echo "Test console redirection which writes to the application log folder on the
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Ознакомьтесь с информацией о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
 * [Сведения о модели приложения](service-fabric-application-model.md)
 * [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md)

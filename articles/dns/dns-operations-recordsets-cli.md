@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 05/15/2018
 ms.author: rohink
 ms.openlocfilehash: 2d3989b3c477a35d602f1ccf3e45d6f597f5d78d
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737394"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011577"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli"></a>Управление записями и наборами записей DNS в Azure DNS с помощью Azure CLI
 
@@ -40,13 +40,13 @@ ms.locfileid: "92737394"
 
 Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, SRV, txt и т. д.) Справочные сведения см `az network dns record-set --help` . в разделе.
 
-Создавая запись, вам нужно определить для нее имя группы ресурсов, имя зоны, имя набора записей, тип записей и сведения о создаваемой записи. Имя набора записей должно быть *относительным* , т. е. оно не должно содержать имя зоны.
+Создавая запись, вам нужно определить для нее имя группы ресурсов, имя зоны, имя набора записей, тип записей и сведения о создаваемой записи. Имя набора записей должно быть *относительным*, т. е. оно не должно содержать имя зоны.
 
 Если набора записей не существует, эта команда автоматически создаст его. Если набор записей существует, эта команда добавляет в него указанную запись.
 
 При создании набора записей используется срок жизни (TTL) по умолчанию — 3600. Инструкции по использованию различных сроков жизни см. в разделе [Создание набора записей DNS](#create-a-dns-record-set).
 
-В следующем примере будет создана запись A с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup* . IP-адрес записи A — *1.2.3.4* .
+В следующем примере будет создана запись A с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup*. IP-адрес записи A — *1.2.3.4*.
 
 ```azurecli
 az network dns record-set a add-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name www --ipv4-address 1.2.3.4
@@ -60,7 +60,7 @@ az network dns record-set a add-record --resource-group myresourcegroup --zone-n
 
 ## <a name="create-a-dns-record-set"></a>Создание набора записей DNS
 
-В приведенных выше примерах запись DNS добавлялась к существующему набору записей, или набор записей создавался *неявно* . Кроме того, можно *явно* создать набор записей, прежде чем добавлять в него записи. В Azure DNS поддерживаются пустые наборы записей, которые могут использоваться как заполнители для резервирования имен DNS перед созданием записей DNS. Пустые наборы записей отображаются на панели управления Azure DNS, но не отображаются на серверах имен Azure DNS.
+В приведенных выше примерах запись DNS добавлялась к существующему набору записей, или набор записей создавался *неявно*. Кроме того, можно *явно* создать набор записей, прежде чем добавлять в него записи. В Azure DNS поддерживаются пустые наборы записей, которые могут использоваться как заполнители для резервирования имен DNS перед созданием записей DNS. Пустые наборы записей отображаются на панели управления Azure DNS, но не отображаются на серверах имен Azure DNS.
 
 Наборы записей создаются с помощью команды `az network dns record-set <record-type> create`. Чтобы получить справку, см. `az network dns record-set <record-type> create --help`.
 
@@ -137,7 +137,7 @@ az network dns record-set ptr add-record --resource-group myresourcegroup --zone
 
 ### <a name="create-an-srv-record"></a>Создание записи типа SRV
 
-Создавая [набор записей SRV](dns-zones-records.md#srv-records), укажите в его имени *\_службу* и *\_протокол* . Если набор записей SRV создается на вершине зоны, добавлять "\@" в имя набора записей не нужно.
+Создавая [набор записей SRV](dns-zones-records.md#srv-records), укажите в его имени *\_службу* и *\_протокол*. Если набор записей SRV создается на вершине зоны, добавлять "\@" в имя набора записей не нужно.
 
 ```azurecli
 az network dns record-set srv add-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name _sip._tls --priority 10 --weight 5 --port 8080 --target sip.contoso.com
@@ -155,9 +155,9 @@ az network dns record-set txt add-record --resource-group myresourcegroup --zone
 
 Чтобы извлечь существующий набор записей, используйте команду `az network dns record-set <record-type> show`. Чтобы получить справку, см. `az network dns record-set <record-type> show --help`.
 
-Как и при создании записи или набора записей, имя набора должно быть *относительным* , т. е. оно не должно содержать имя зоны. Необходимо также указать тип записи, зону, содержащую набор записей, и группу ресурсов, содержащую зону.
+Как и при создании записи или набора записей, имя набора должно быть *относительным*, т. е. оно не должно содержать имя зоны. Необходимо также указать тип записи, зону, содержащую набор записей, и группу ресурсов, содержащую зону.
 
-В следующем примере показано получение записи *www* типа А из зоны *contoso.com* в группе ресурсов *MyResourceGroup* .
+В следующем примере показано получение записи *www* типа А из зоны *contoso.com* в группе ресурсов *MyResourceGroup*.
 
 ```azurecli
 az network dns record-set a show --resource-group myresourcegroup --zone-name contoso.com --name www
@@ -193,7 +193,7 @@ az network dns record-set a list --resource-group myresourcegroup --zone-name co
 
 Необходимо указать удаляемую запись и зону, из которой ее следует удалить, используя те же параметры, что и при создании записи с помощью команды `az network dns record-set <record-type> add-record`. Эти параметры описаны в предыдущих разделах [Создание записи DNS](#create-a-dns-record) и [Создание записей других типов](#create-records-of-other-types).
 
-В следующем примере показано удаление записи типа A со значением "1.2.3.4" из набора записей с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup* .
+В следующем примере показано удаление записи типа A со значением "1.2.3.4" из набора записей с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup*.
 
 ```azurecli
 az network dns record-set a remove-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name "www" --ipv4-address 1.2.3.4
@@ -234,7 +234,7 @@ az network dns record-set cname set-record --resource-group myresourcegroup --zo
 
 Вместо этого используйте `az network dns record-set soa update`, чтобы изменить запись типа SOA. Чтобы получить справку, см. `az network dns record-set soa update --help`.
 
-В примере ниже показано, как задать свойство email записи типа SOA для зоны *contoso.com* в группе ресурсов *MyResourceGroup* .
+В примере ниже показано, как задать свойство email записи типа SOA для зоны *contoso.com* в группе ресурсов *MyResourceGroup*.
 
 ```azurecli
 az network dns record-set soa update --resource-group myresourcegroup --zone-name contoso.com --email admin.contoso.com
@@ -281,7 +281,7 @@ az network dns record-set a update --resource-group myresourcegroup --zone-name 
 > [!NOTE]
 > Удалить наборы записей типа SOA и NS на вершине зоны (`--name "@"`) нельзя.  Эти записи создаются и удаляются автоматически вместе с зоной.
 
-В следующем примере показано удаление набора записей с именем *www* типа А из зоны *contoso.com* в группе ресурсов *MyResourceGroup* .
+В следующем примере показано удаление набора записей с именем *www* типа А из зоны *contoso.com* в группе ресурсов *MyResourceGroup*.
 
 ```azurecli
 az network dns record-set a delete --resource-group myresourcegroup --zone-name contoso.com --name www
@@ -289,7 +289,7 @@ az network dns record-set a delete --resource-group myresourcegroup --zone-name 
 
 Отобразится запрос на подтверждение операции удаления. Чтобы скрыть этот запрос, используйте параметр `--yes`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о [зонах и записях в Azure DNS](dns-zones-records.md).
 <br>

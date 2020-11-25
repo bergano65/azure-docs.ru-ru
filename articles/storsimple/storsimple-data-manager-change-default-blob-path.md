@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: 6af095c7abdb9aa61e57d543ff2ab2f9192dadc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743579"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011444"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>Изменение пути к большому двоичному объекту по умолчанию
 
@@ -54,7 +54,7 @@ ms.locfileid: "91743579"
 
     ![Щелкните + New function (+ Создать функцию)](./media/storsimple-data-manager-change-default-blob-path/create-new-function.png)
 
-6. В качестве языка выберите **C#**. В массиве элементов шаблонов выберите язык **C#** в элементе**QueueTrigger-CSharp**.
+6. В качестве языка выберите **C#**. В массиве элементов шаблонов выберите язык **C#** в элементе **QueueTrigger-CSharp**.
 
 7. В окне **Queue trigger** (Триггер очередей):
 
@@ -215,6 +215,6 @@ ms.locfileid: "91743579"
 
 Вы создали функцию Azure. Эта функция запускается каждый раз, когда задание преобразования данных создает большой двоичный объект.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Использование пользовательского интерфейса для службы диспетчера данных StorSimple (закрытая предварительная версия)](storsimple-data-manager-ui.md)

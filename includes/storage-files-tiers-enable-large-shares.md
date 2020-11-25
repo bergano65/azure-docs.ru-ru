@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/27/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: cd7b889560acbe484581f065b641375c222f7ca8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 327e86642041a607ada7c1173bb053b12a41832c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81536504"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011774"
 ---
 По умолчанию общие папки категории "Стандартный" могут охватывать только до 5 Тиб, хотя размер общей папки можно увеличить до 100 ТиБ. Для этого на уровне учетной записи хранения нужно включить функцию *больших общих папок*. Для учетных записей хранения категории "Премиум" (учетные записи *хранилища файлов*) флаг функции больших общих папок не устанавливается, так как для всех общих папок категории "Премиум" уже включена возможность подготовки до полной емкости в 100 ТиБ.
 
@@ -23,6 +23,6 @@ ms.locfileid: "81536504"
 
 ![Снимок экрана: переключатель для включения функции больших общих папок на портале Azure](media/storage-files-tiers-enable-large-shares/enable-lfs-0.png)
 
-Кроме того, вы можете включить общие папки размером 100 ТиБ с помощью командлета PowerShell [`Set-AzStorageAccount`](https://docs.microsoft.com/powershell/module/az.storage/set-azstorageaccount), а также команды Azure CLI [`az storage account update`](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-update). Подробные инструкции см. в статье [Включение функции больших общих папок и их создание](../articles/storage/files/storage-files-how-to-create-large-file-share.md).
+Кроме того, вы можете включить общие папки размером 100 ТиБ с помощью командлета PowerShell [`Set-AzStorageAccount`](/powershell/module/az.storage/set-azstorageaccount), а также команды Azure CLI [`az storage account update`](/cli/azure/storage/account#az-storage-account-update). Подробные инструкции см. в статье [Включение функции больших общих папок и их создание](../articles/storage/files/storage-files-how-to-create-large-file-share.md).
 
 Дополнительные сведения см. в статье о [создании общей папки Azure в новой учетной записи хранения](../articles/storage/files/storage-how-to-create-file-share.md).

@@ -6,11 +6,11 @@ author: bwren
 ms.author: bwren
 ms.date: 06/14/2019
 ms.openlocfilehash: 4d0ceacd37748e9761903d02fd7e052d70b10e15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91871904"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011886"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>Обслуживание агента Log Analytics для Windows и Linux и управление им
 
@@ -38,7 +38,7 @@ ms.locfileid: "91871904"
 
 3. В списке рабочих областей Log Analytics выберите рабочую область.
 
-4. В рабочей области Log Analytics выберите **Дополнительные параметры**, затем выберите **подключенные источники**и наконец **серверы Windows**.
+4. В рабочей области Log Analytics выберите **Дополнительные параметры**, затем выберите **подключенные источники** и наконец **серверы Windows**.
 
 5. На странице **серверы Windows** выберите подходящую версию **агента Windows** для скачивания в зависимости от архитектуры процессора операционной системы Windows.
 
@@ -275,7 +275,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 8. В поле **Порт сервера управления** введите номер порта TCP.
 
-9. На странице **Учетная запись действия агента**выберите учетную запись Local System или учетную запись локального домена.
+9. На странице **Учетная запись действия агента** выберите учетную запись Local System или учетную запись локального домена.
 
 10. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Добавление группы управления**, и еще раз нажмите **ОК**, чтобы закрыть диалоговое окно **Свойства Microsoft Monitoring Agent**.
 
@@ -290,7 +290,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 3. Перезапустите сервер OMI: `sudo /opt/omi/bin/service_control restart`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь [с разрешениями по устранению неполадок агента Linux в](agent-linux-troubleshoot.md) случае возникновения проблем при установке агента Linux или управлении им.
 

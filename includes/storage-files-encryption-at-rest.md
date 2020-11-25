@@ -9,11 +9,11 @@ ms.date: 12/27/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 814bf085ca910ef07a13df779eef25e0e6510e57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90563468"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011777"
 ---
 Все данные, хранимые в Файлах Azure, шифруются с использованием функции "Шифрование службы хранилища Azure" (SSE). SSE работает как BitLocker в Windows: данные шифруются ниже уровня файловой системы. Благодаря этому при шифровании данных на диске вам не требуется доступ к базовому ключу на клиенте для чтения и записи данных в общей папке Azure. Шифрование неактивных данных поддерживает протоколы SMB и NFS.
 

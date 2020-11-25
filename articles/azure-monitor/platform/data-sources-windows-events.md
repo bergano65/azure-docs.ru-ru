@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
 ms.openlocfilehash: 109e96f862ec2f3ddf879bccba114c44aecfe3c8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440609"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012601"
 ---
 # <a name="collect-windows-event-log-data-sources-with-log-analytics-agent"></a>Получение источников данных журнала событий Windows с помощью агента Log Analytics
 Журналы событий Windows — это один из наиболее распространенных [источников данных](agent-data-sources.md) для агентов log Analytics на виртуальных машинах Windows, так как многие приложения записывают в журнал событий Windows.  События можно собирать из стандартных журналов, таких как журналы системы и приложений, а также указывать пользовательские журналы приложений, которые необходимо отслеживать.
@@ -43,7 +43,7 @@ Azure Monitor собирает события только из журналов
 ## <a name="windows-event-records-properties"></a>Свойства записей о событиях Windows
 Записи о событиях Windows имеют тип **Событие** и свойства, описанные в приведенной ниже таблице.
 
-| Свойство. | Описание |
+| Свойство | Описание |
 |:--- |:--- |
 | Компьютер |Имя компьютера, с которого было получено событие. |
 | EventCategory |Категория события. |
@@ -71,7 +71,7 @@ Azure Monitor собирает события только из журналов
 | Event &#124; where EventLevelName == "error" &#124; summarize count() by Source |Число событий ошибок Windows по источникам. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Настройте службу Log Analytics для сбора других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 * Настройте [коллекцию счетчиков производительности](data-sources-performance-counters.md) из агентов Windows.

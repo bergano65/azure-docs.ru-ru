@@ -11,19 +11,19 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: ee4d3957403e169d41fb9e3befa0d62e4b0d9075
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 493750e69b1fdc935b04d6dc705cfd046b6b086e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91597866"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96011665"
 ---
 # <a name="create-azure-time-series-insights-gen-1-resources-using-azure-resource-manager-templates"></a>Создание ресурсов "аналитика временных рядов Azure" с помощью шаблонов Azure Resource Manager
 
 > [!CAUTION]
 > Эта статья посвящена службе "Аналитика временных рядов Azure" 1-го поколения.
 
-В этой статье описывается, как создать и развернуть ресурсы службы "аналитика временных рядов Azure" с помощью [шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/), PowerShell и поставщика ресурсов Azure Time Series Insights.
+В этой статье описывается, как создать и развернуть ресурсы службы "аналитика временных рядов Azure" с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/index.yml), PowerShell и поставщика ресурсов Azure Time Series Insights.
 
 Служба "аналитика временных рядов Azure" поддерживает следующие ресурсы:
 
@@ -32,7 +32,7 @@ ms.locfileid: "91597866"
    | Среда | Среда службы "аналитика временных рядов Azure" — это логическая группа событий, которые считываются из брокера событий, хранятся и становятся доступными для запроса. Дополнительные сведения см. в руководстве по [планированию среды "Аналитика временных рядов Azure"](time-series-insights-environment-planning.md). |
    | Источник события | Источник событий — это соединение с брокером событий, из которого Azure Time Series Insights считывает и принимает события в среде. Источники событий, поддерживаемые в настоящее время: Центр Интернета вещей и концентратор событий. |
    | Набор эталонных данных | Наборы эталонных данных предоставляют метаданные о событиях в среде. Метаданные в наборах эталонных данных во время приема будут соединены с событиями. Наборы эталонных данных определяются своими свойствами ключей событий как ресурсы. Фактические метаданные, составляющие набор эталонных данных, отправляются или изменяются через API плоскости данных. |
-   | Политика доступа | Политики доступа предоставляют разрешения для отправки запросов данных, обработки ссылочных данных в среде, а также предоставляют другим пользователям среды доступ к сохраненным запросам и перспективам. Дополнительные сведения см. [в статье предоставление доступа к данным в среде службы "аналитика временных рядов Azure" с помощью портал Azure](time-series-insights-data-access.md) |
+   | Политика доступа | Политики доступа предоставляют разрешения для отправки запросов данных, обработки ссылочных данных в среде, а также предоставляют другим пользователям среды доступ к сохраненным запросам и перспективам. Дополнительные сведения см. [в статье предоставление доступа к данным в среде службы "аналитика временных рядов Azure" с помощью портал Azure](./concepts-access-policies.md) |
 
 Шаблоны Resource Manager являются файлами в формате JSON, определяющими инфраструктуру и конфигурацию ресурсов в группе ресурсов. В следующих документах файлы шаблонов описываются более подробно:
 
@@ -48,7 +48,7 @@ ms.locfileid: "91597866"
 
 В следующей процедуре описывается, как использовать PowerShell для развертывания шаблона Azure Resource Manager, который создает среду службы "аналитика временных рядов Azure", дочернего источника событий, настроенного для использования событий из концентратора событий, и политик доступа, которые предоставляют доступ к данным среды. Если не указан имеющийся концентратор событий, он будет создан при развертывании.
 
-1. Установите Azure PowerShell, следуя указаниям в разделе [Getting started with Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps) (Приступая к работе с Azure PowerShell).
+1. Установите Azure PowerShell, следуя указаниям в разделе [Getting started with Azure PowerShell](/powershell/azure/get-started-azureps) (Приступая к работе с Azure PowerShell).
 
 1. Клонируйте или скопируйте шаблон [201-timeseriesinsights-environment-with-eventhub](https://github.com/Azure/azure-quickstart-templates/blob/master/201-timeseriesinsights-environment-with-eventhub/azuredeploy.json) из GitHub.
 
@@ -127,7 +127,7 @@ ms.locfileid: "91597866"
 ## <a name="deploy-the-quickstart-template-locally-using-powershell"></a>Развертывание шаблона быстрого запуска локально с помощью PowerShell
 
 > [!IMPORTANT]
-> Операции командной строки, показанные ниже, описывают [модуль PowerShell Az](https://docs.microsoft.com/powershell/azure/).
+> Операции командной строки, показанные ниже, описывают [модуль PowerShell Az](/powershell/azure/).
 
 1. В PowerShell войдите в свою учетную запись Azure.
 
@@ -255,4 +255,4 @@ ms.locfileid: "91597866"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о программном управлении ресурсами службы "аналитика временных рядов Azure" с помощью API-интерфейсов RESTFUL см. в статье [Управление аналитикой временных рядов Azure](https://docs.microsoft.com/rest/api/time-series-insights-management/).
+- Дополнительные сведения о программном управлении ресурсами службы "аналитика временных рядов Azure" с помощью API-интерфейсов RESTFUL см. в статье [Управление аналитикой временных рядов Azure](/rest/api/time-series-insights-management/).

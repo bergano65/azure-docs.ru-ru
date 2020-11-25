@@ -8,11 +8,11 @@ ms.date: 06/16/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-js, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
 ms.openlocfilehash: 9c204a07e3c5edff028342af1c88b15ebac0754b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743646"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012226"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство по Разработка приложения на основе Node.js и MongoDB в Azure
 
@@ -186,7 +186,7 @@ az cosmosdb list-keys --name <cosmosdb-name> --resource-group myResourceGroup
 <a name="devconfig"></a>
 ### <a name="configure-the-connection-string-in-your-nodejs-application"></a>Настройка строки подключения в приложении Node.js
 
-В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_ . Чтобы этот файл хранился вне репозитория, уже настроен _.gitignore_ . 
+В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_ . Чтобы этот файл хранился вне репозитория, уже настроен _.gitignore_. 
 
 Скопируйте в него следующий код: Также замените два заполнителя *\<cosmosdb-name>* именем базы данных Cosmos DB, а заполнитель *\<primary-master-key>* замените ключом, скопированным на предыдущем шаге.
 
@@ -210,7 +210,7 @@ module.exports = {
 gulp prod
 ```
 
-В окне терминала на локальном компьютере выполните команду ниже, чтобы использовать строку подключения, которая была настроена в _config/env/local-production.js_ . Игнорируйте сообщение об ошибке сертификата и предупреждение config.domain.
+В окне терминала на локальном компьютере выполните команду ниже, чтобы использовать строку подключения, которая была настроена в _config/env/local-production.js_. Игнорируйте сообщение об ошибке сертификата и предупреждение config.domain.
 
 ```bash
 # Bash
@@ -287,7 +287,7 @@ az webapp config appsettings set --name <app-name> --resource-group myResourceGr
 
 В коде Node.js для [доступа к этому параметру приложения](configure-language-nodejs.md#access-environment-variables), как и к любой переменной среды, используется `process.env.MONGODB_URI`. 
 
-В локальном репозитории MEAN.js откройте файл _config/env/production.js_ (не _config/env/local-production.js_ ), который содержит конфигурацию для конкретной рабочей среды. Приложение MEAN.js по умолчанию уже настроено для использования созданной переменной среды `MONGODB_URI`.
+В локальном репозитории MEAN.js откройте файл _config/env/production.js_ (не _config/env/local-production.js_), который содержит конфигурацию для конкретной рабочей среды. Приложение MEAN.js по умолчанию уже настроено для использования созданной переменной среды `MONGODB_URI`.
 
 ```javascript
 db: {
@@ -351,7 +351,7 @@ http://<app-name>.azurewebsites.net
 
 ### <a name="update-the-data-model"></a>Обновление модели данных
 
-В локальном репозитории MEAN.js откройте файл _modules/articles/server/models/article.server.model.js_ .
+В локальном репозитории MEAN.js откройте файл _modules/articles/server/models/article.server.model.js_.
 
 В `ArticleSchema` добавьте тип `String` с именем `comment`. Когда все будет готово, код схемы должен выглядеть следующим образом:
 
@@ -376,7 +376,7 @@ const ArticleSchema = new Schema({
 
 Вам потребуется изменить пять файлов: файл сервера контроллера и четыре файла представлений клиентов. 
 
-Откройте файл _modules/articles/server/controllers/articles.server.controller.js_ .
+Откройте файл _modules/articles/server/controllers/articles.server.controller.js_.
 
 Добавьте в функцию `update` присваивание для `article.comment`. В следующем коде приведена готовая функция `update`:
 
@@ -392,7 +392,7 @@ exports.update = function (req, res) {
 };
 ```
 
-Откройте файл _modules/articles/client/views/view-article.client.view.html_ .
+Откройте файл _modules/articles/client/views/view-article.client.view.html_.
 
 Прямо перед закрывающим тегом `</section>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
@@ -400,7 +400,7 @@ exports.update = function (req, res) {
 <p class="lead" ng-bind="vm.article.comment"></p>
 ```
 
-Откройте файл _modules/articles/client/views/list-articles.client.view.html_ .
+Откройте файл _modules/articles/client/views/list-articles.client.view.html_.
 
 Прямо перед закрывающим тегом `</a>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
@@ -408,7 +408,7 @@ exports.update = function (req, res) {
 <p class="list-group-item-text" ng-bind="article.comment"></p>
 ```
 
-Откройте файл _modules/articles/client/views/admin/list-articles.client.view.html_ .
+Откройте файл _modules/articles/client/views/admin/list-articles.client.view.html_.
 
 В элементе `<div class="list-group">` и прямо перед закрывающим тегом `</a>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
@@ -416,7 +416,7 @@ exports.update = function (req, res) {
 <p class="list-group-item-text" data-ng-bind="article.comment"></p>
 ```
 
-Откройте файл _modules/articles/client/views/admin/form-article.client.view.html_ .
+Откройте файл _modules/articles/client/views/admin/form-article.client.view.html_.
 
 Найдите элемент `<div class="form-group">`, который содержит кнопку "Отправить" и выглядит следующим образом:
 
@@ -505,7 +505,7 @@ az webapp log tail --name <app-name> --resource-group myResourceGroup
 
 Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
 
-В меню слева щелкните **Службы приложений** , а затем — имя своего приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/tutorial-nodejs-mongodb-app/access-portal.png)
 

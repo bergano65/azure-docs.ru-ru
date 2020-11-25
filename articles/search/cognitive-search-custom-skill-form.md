@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.openlocfilehash: 58f1c2621165a7074c04752832c6560b2fd3e423
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935438"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011971"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>Пример. Создание пользовательского навыка распознавателя форм
 
@@ -160,7 +160,7 @@ POST https://localhost:7071/api/analyze-form
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом пошаговом окне вы создали пользовательский навык из службы распознавателя форм Azure. Дополнительные сведения о пользовательских навыках см. в следующих ресурсах. 
 

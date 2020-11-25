@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 2/7/2019
 ms.author: rohink
 ms.openlocfilehash: add7674771fd19f6029a94c46624006f0cf30f1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84710887"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011546"
 ---
 # <a name="delegate-an-azure-dns-subdomain"></a>Делегирование поддомена Azure DNS
 
@@ -33,7 +33,7 @@ ms.locfileid: "84710887"
 
 1. В портал Azure выберите **создать ресурс**.
 2. В поле поиска введите **DNS** и выберите **зону DNS**.
-3. Нажмите кнопку **создания**.
+3. Выберите **Создать**.
 4. В области **Создание зоны DNS** введите **engineering.contoso.com** в текстовое поле **Имя**.
 5. Выберите группу ресурсов для своей зоны. Вам может потребоваться использовать ту же группу ресурсов, что и в родительской зоне, для размещения одинаковых ресурсов вместе.
 6. Нажмите кнопку **Создать**.
@@ -68,6 +68,6 @@ ms.locfileid: "84710887"
 2. В командной строке введите `nslookup www.engineering.contoso.com.`
 3. Вы должны получить ответ, исходящий не из полномочного источника и содержащий адрес **10.10.10.10**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [настроить обратный просмотр DNS для размещенных в Azure служб](dns-reverse-dns-for-azure-services.md).
