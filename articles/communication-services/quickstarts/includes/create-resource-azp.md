@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 11b9c553573d9e6188ba634b4cb966d6a9b850b4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 051f903c0b203045886b80f72d868adc1fa85f73
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945937"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886120"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,11 +23,11 @@ ms.locfileid: "90945937"
 
 Введите **коммуникации** в поле **Поиск в Marketplace** или в строке поиска в верхней части портала.
 
-:::image type="content" source="../media/create-a-communication-resource/searchbar-communication-portal.png" alt-text="Снимок экрана страницы портала Azure, на которой выделена кнопка &quot;Создать ресурс&quot;":::
+:::image type="content" source="../media/create-a-communication-resource/searchbar-communication-portal.png" alt-text="Снимок экрана, на котором показан поиск Служб коммуникации в строке поиска.":::
 
 В результатах выберите **Службы коммуникации**, а затем нажмите **Добавить**.
 
-:::image type="content" source="../media/create-a-communication-resource/add-communication-portal.png" alt-text="Снимок экрана страницы портала Azure, на которой выделена кнопка &quot;Создать ресурс&quot;":::
+:::image type="content" source="../media/create-a-communication-resource/add-communication-portal.png" alt-text="Снимок экрана, на котором показана панель Azure с выделенной кнопкой &quot;Добавить&quot;.":::
 
 Теперь можно настроить ресурс Служб коммуникации. На первой странице процесса создания вам будет предложено указать следующее:
 
@@ -36,7 +36,7 @@ ms.locfileid: "90945937"
 * Имя ресурса Служб коммуникации
 * Географический регион, с которым будет связан ресурс
 
-На следующем шаге можно назначить ресурсу теги. Теги можно использовать для упорядочения ресурсов в Azure. Дополнительные сведения о тегах см. в [документации по маркировке ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/management/tag-resources).
+На следующем шаге можно назначить ресурсу теги. Теги можно использовать для упорядочения ресурсов в Azure. Дополнительные сведения о тегах см. в [документации по маркировке ресурсов](../../../azure-resource-manager/management/tag-resources.md).
 
 Наконец, можно проверить конфигурацию и **создать** ресурс. Обратите внимание, что развертывание займет несколько минут.
 

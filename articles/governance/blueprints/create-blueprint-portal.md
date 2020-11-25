@@ -4,11 +4,11 @@ description: В рамках этого краткого руководства 
 ms.date: 08/27/2020
 ms.topic: quickstart
 ms.openlocfilehash: bb9aeb4d4b96227f7bf7296854c56df4058fbe69
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89648661"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022536"
 ---
 # <a name="quickstart-define-and-assign-a-blueprint-in-the-portal"></a>Определение и назначение схемы на портале
 
@@ -48,7 +48,7 @@ ms.locfileid: "89648661"
 
    1. Нажмите кнопку **Добавить**, чтобы добавить артефакт в схему.
 
-   :::image type="content" source="./media/create-blueprint-portal/add-role-assignment.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+   :::image type="content" source="./media/create-blueprint-portal/add-role-assignment.png" alt-text="Снимок экрана с параметрами артефакта &quot;Назначение роли&quot; для добавления в определение схемы." border="false":::
 
    > [!NOTE]
    > Большинство артефактов поддерживают параметры. Параметр, которому значение присваивается во время создания схемы, называется _статическим параметром_. Если значение параметра присваивается во время назначения схемы, это _динамический параметр_. Дополнительные сведения см. в описании [параметров схемы](./concepts/parameters.md).
@@ -143,11 +143,11 @@ ms.locfileid: "89648661"
 
    1. Нажмите кнопку **Добавить**, чтобы добавить артефакт в схему.
 
-   :::image type="content" source="./media/create-blueprint-portal/add-resource-manager-template.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+   :::image type="content" source="./media/create-blueprint-portal/add-resource-manager-template.png" alt-text="Снимок экрана с параметрами артефакта &quot;Шаблон Resource Manager&quot; для добавления в определение схемы." border="false":::
 
 1. Завершенная схема должны выглядеть следующим образом. Обратите внимание, что для каждого артефакта в столбце **Параметры** есть надпись **Указано параметров: _x_ из _y_**. Динамические параметры устанавливаются при каждом назначении схемы.
 
-   :::image type="content" source="./media/create-blueprint-portal/completed-blueprint.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+   :::image type="content" source="./media/create-blueprint-portal/completed-blueprint.png" alt-text="Снимок экрана с готовым определением схемы с каждым типом артефакта." border="false":::
 
 1. Теперь, когда добавлены все планируемые артефакты, нажмите кнопку **Сохранить черновик** в нижней части страницы.
 
@@ -175,11 +175,11 @@ ms.locfileid: "89648661"
 
    1. Нажмите кнопку **Добавить**, чтобы добавить артефакт в схему.
 
-   :::image type="content" source="./media/create-blueprint-portal/add-role-assignment-2.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+   :::image type="content" source="./media/create-blueprint-portal/add-role-assignment-2.png" alt-text="Снимок экрана с параметрами второго артефакта &quot;Назначение роли&quot; для добавления в определение схемы." border="false":::
 
 1. Завершенная схема должны выглядеть следующим образом. Обратите внимание, что для добавленного назначение роли отображается надпись **Указано параметров: 1 из 1**. Это означает, что параметр статический.
 
-   :::image type="content" source="./media/create-blueprint-portal/completed-blueprint-2.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+   :::image type="content" source="./media/create-blueprint-portal/completed-blueprint-2.png" alt-text="Снимок экрана со вторым готовым определением схемы с дополнительным артефактом &quot;Назначение роли&quot;." border="false":::
 
 1. Щелкните **Сохранить черновик** после обновления.
 
@@ -218,7 +218,7 @@ ms.locfileid: "89648661"
 
    1. В нижней части страницы выберите **Создать**.
 
-      :::image type="content" source="./media/create-blueprint-portal/assignment-create-subscription.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+      :::image type="content" source="./media/create-blueprint-portal/assignment-create-subscription.png" alt-text="Снимок экрана с окном &quot;Создать подписку&quot; и параметрами для новой подписки." border="false":::
 
       > [!IMPORTANT]
       > Новая подписка создается немедленно после нажатия кнопки **Создать**.
@@ -234,7 +234,7 @@ ms.locfileid: "89648661"
 
 1. Для **назначения блокировки** оставьте значение по умолчанию **Не блокировать**. Дополнительные сведения см. в статье о [блокировке ресурсов схем](./concepts/resource-locking.md).
 
-   :::image type="content" source="./media/create-blueprint-portal/assignment-locking-mi.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+   :::image type="content" source="./media/create-blueprint-portal/assignment-locking-mi.png" alt-text="Снимок экрана с окном назначения блокировки и параметрами управляемого удостоверения для назначения схемы." border="false":::
 
 1. В разделе **Управляемое удостоверение** оставьте значение по умолчанию **Назначено системой**.
 
@@ -265,7 +265,7 @@ ms.locfileid: "89648661"
 
 1. В списке схем щелкните правой кнопкой мыши созданную ранее схему и выберите **Просмотреть сведения о назначении**.
 
-   :::image type="content" source="./media/create-blueprint-portal/view-assignment-details.png" alt-text="Снимок экрана с кнопкой &quot;Создать схему&quot; на странице &quot;Определения схем&quot;." border="false":::
+   :::image type="content" source="./media/create-blueprint-portal/view-assignment-details.png" alt-text="Снимок экрана с контекстным меню назначения схемы, в котором выбран параметр &quot;Просмотреть сведения о назначении&quot;." border="false":::
 
 1. На странице **Назначение схемы** убедитесь, что все артефакты успешно развернуты и во время их развертывания не произошло ошибок. Если возникли ошибки, перейдите к статье об [устранение неполадок со схемами](./troubleshoot/general.md), чтобы узнать, как определить проблему.
 

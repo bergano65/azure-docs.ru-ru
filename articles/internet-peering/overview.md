@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: overview
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 576bc3e37711851acd7d6c7ac811a10e40080710
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 34d340881e4f612544f4b3d68d3c1f3da598cab3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "75908915"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023434"
 ---
 # <a name="internet-peering-overview"></a>Общие сведения о пиринге в Интернете
 
@@ -53,4 +53,4 @@ ms.locfileid: "75908915"
 
 * Чтобы узнать, как настроить прямой пиринг с Майкрософт следуйте инструкциям в [Direct peering walkthrough](walkthrough-direct-all.md) (Пошаговое руководство по прямому пирингу)
 * Чтобы узнать, как настроить пиринг через точку обмена с Майкрософт следуйте инструкциям в [Exchange peering walkthrough](walkthrough-exchange-all.md) (Пошаговое руководство по пирингу через точку обмена)
-* Ознакомьтесь с некоторыми другими ключевыми [сетевыми возможностями](https://docs.microsoft.com/azure/networking/networking-overview) Azure.
+* Ознакомьтесь с некоторыми другими ключевыми [сетевыми возможностями](../networking/networking-overview.md) Azure.

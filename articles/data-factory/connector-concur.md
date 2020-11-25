@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 11/25/2020
 ms.author: jingwang
-ms.openlocfilehash: 6699178e514f4d25666305f3251e8eaf9d28e6dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6d6c830eec8e711e700733a90611c353b68439d
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417457"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030804"
 ---
 # <a name="copy-data-from-concur-using-azure-data-factory-preview"></a>Копирование данных из Concur с помощью фабрики данных Azure (предварительная версия)
 
@@ -36,8 +36,6 @@ ms.locfileid: "81417457"
 
 Данные из Concur можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
-
 > [!NOTE]
 > Партнерская учетная запись в настоящее время не поддерживается.
 
@@ -54,14 +52,53 @@ ms.locfileid: "81417457"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Concur** | Да |
-| clientid | Свойство client_id приложения, предоставляемое средством управления приложением Concur.  | Да |
-| username | Имя пользователя, которое позволяет получить доступ к службе Concur.  | Да |
+| connectionProperties | Группа свойств, определяющих способ подключения к Concur. | Да |
+| **_В разделе `connectionProperties` :_* _ | | |
+| authenticationType | Допустимые значения: `OAuth_2.0_Bearer` и `OAuth_2.0` (прежние версии). Параметр аутентификации OAuth 2,0 работает с старым API Concur, который был признан устаревшим с февраля 2017. | Да |
+| host | Конечная точка сервера Concur, например `implementation.concursolutions.com` .  | Да |
+| BaseUrl | Базовый URL-адрес URL авторизации Concur. | Да для `OAuth_2.0_Bearer` проверки подлинности |
+| clientid | Идентификатор клиента приложения, предоставленный функцией управления приложениями Concur.  | Да |
+| clientSecret | Секрет клиента, соответствующий ИДЕНТИФИКАТОРу клиента. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да для `OAuth_2.0_Bearer` проверки подлинности |
+| username | Имя пользователя, которое используется для доступа к службе Concur. | Да |
 | password | Пароль, соответствующий имени пользователя, которое указано в поле имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
-| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
+| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
+| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
+| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
 
-**Пример**.
+_ *Пример:**
+
+```json
+{ 
+    "name": "ConcurLinkedService", 
+    "properties": {
+        "type": "Concur",
+        "typeProperties": {
+            "connectionProperties": {
+                "host":"<host e.g. implementation.concursolutions.com>",
+                "baseUrl": "<base URL for authorization e.g. us-impl.api.concursolutions.com>",
+                "authenticationType": "OAuth_2.0_Bearer",
+                "clientId": "<client id>",
+                "clientSecret": {
+                    "type": "SecureString",
+                    "value": "<client secret>"
+                },
+                "username": "fakeUserName",
+                "password": {
+                    "type": "SecureString",
+                    "value": "<password>"
+                },
+                "useEncryptedEndpoints": true,
+                "useHostVerification": true,
+                "usePeerVerification": true
+            }
+        }
+    }
+} 
+```
+
+**Пример (устаревший):**
+
+Обратите внимание, что ниже приведена устаревшая модель связанной службы без `connectionProperties` использования `OAuth_2.0` проверки подлинности.
 
 ```json
 {

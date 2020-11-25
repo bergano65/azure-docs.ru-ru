@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: overview
 ms.date: 5/22/2020
 ms.author: derekol
-ms.openlocfilehash: 3ffef24d459a2864ffd3f2271e6bca9e4bc638cc
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 717a8c87c6a1c22d3f75cd4e3054bfdf0c4b5f9a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "83849388"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023451"
 ---
 # <a name="internet-peering-vs-peering-service"></a>Сравнение: интернет-пиринг и Служба пиринга
 
@@ -53,5 +53,5 @@ ms.locfileid: "83849388"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте больше о преимуществах для клиентов с помощью [Службы пиринга](https://docs.microsoft.com/azure/peering-service/).
+* Узнайте больше о преимуществах для клиентов с помощью [Службы пиринга](../peering-service/index.yml).
 * Сведения о включении прямого пиринга для Службы пиринга см. [Peering Service partner walkthrough](walkthrough-peering-service-all.md) (Пошаговое руководство по Службе пиринга для партнеров).

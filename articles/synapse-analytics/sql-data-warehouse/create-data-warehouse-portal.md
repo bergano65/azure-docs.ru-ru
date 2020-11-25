@@ -8,15 +8,15 @@ ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: sql-dw
 ms.date: 05/28/2019
-ms.author: Kevin
+ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 878b272e2a1a0e1d5a00a9c2028a6803b6d95383
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 470892aa46d3f75ce8e17200f7d0549ae14b0e86
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91568971"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023792"
 ---
 # <a name="quickstart-create-and-query-a-synapse-sql-pool-using-the-azure-portal"></a>Краткое руководство. Создание пула SQL Synapse и отправка в него запросов, используя портал Azure
 
@@ -157,7 +157,7 @@ ms.locfileid: "91568971"
 
 В Azure Synapse Analytics в качестве языка запросов используется T-SQL. Чтобы открыть окно запросов и выполнить несколько запросов T-SQL, выполните следующие действия.
 
-1. Щелкните правой кнопкой мыши **mySampleDataWarehouse** и выберите команду**Создать запрос**. Откроется новое окно запроса.
+1. Щелкните правой кнопкой мыши **mySampleDataWarehouse** и выберите команду **Создать запрос**. Откроется новое окно запроса.
 
 2. В окне запросов введите приведенную ниже команду, чтобы просмотреть список баз данных.
 

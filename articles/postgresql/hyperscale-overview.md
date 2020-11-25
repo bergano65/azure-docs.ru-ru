@@ -8,12 +8,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: overview
 ms.date: 09/01/2020
-ms.openlocfilehash: 90d3cb106fa93649f7d6dda5ab5755061d118f66
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 1734128384d63749d3c777cf6315278fced9d140
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91268389"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025146"
 ---
 # <a name="what-is-azure-database-for-postgresql---hyperscale-citus"></a>Что собой представляет База данных Azure для PostgreSQL с Гипермасштабированием (Citus)?
 
@@ -33,4 +33,4 @@ ms.locfileid: "91268389"
 
 - Приступите к работе, [создав первую](./quickstart-create-hyperscale-portal.md) группу серверов Базы данных Azure для PostgreSQL с Гипермасштабированием (Citus).
 - Ознакомьтесь со [страницей цен](https://azure.microsoft.com/pricing/details/postgresql/) для сравнения цен и доступа к калькуляторам. Гипермасштабирование (Citus) также предлагает скидки на зарезервированные экземпляры — подробные сведения см. на странице [цен Гипермасштабирования (Citus)](concepts-hyperscale-reserved-pricing.md).
-- Определите оптимальный [первоначальный размер](howto-hyperscale-scaling.md#picking-initial-size) для своей группы серверов.
+- Определите оптимальный [первоначальный размер](howto-hyperscale-scale-initial.md) для своей группы серверов.
