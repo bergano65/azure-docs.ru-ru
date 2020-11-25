@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/22/2020
 ms.openlocfilehash: 0eb9afc179f1dd2559f0db7b212f6b3a1da15824
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790922"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998759"
 ---
 # <a name="cluster-creation-fails-with-invalidnetworkconfigurationerrorcode-in-azure-hdinsight"></a>Сбой создания кластера с InvalidNetworkConfigurationErrorCode в Azure HDInsight
 
@@ -26,11 +26,11 @@ ms.locfileid: "92790922"
 
 Описание ошибки содержит "сбой разрешения имени узла".
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка указывает на проблему с пользовательской конфигурацией DNS. DNS-серверы в виртуальной сети могут пересылать запросы DNS в рекурсивные арбитры конфликтов Azure для разрешения имен узлов в этой виртуальной сети (Дополнительные сведения см. [в разделе разрешение имен в виртуальных сетях](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) ). Доступ к рекурсивным разрешителям Azure предоставляется через виртуальный IP-адрес 168.63.129.16. Этот IP-адрес доступен только на виртуальных машинах Azure. Поэтому он не будет работать, если вы используете локальный DNS-сервер или если ваш DNS-сервер является виртуальной машиной Azure, которая не является частью виртуальной сети кластера.
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 1. Подключитесь по протоколу SSH к виртуальной машине, входящей в состав кластера, и выполните команду `hostname -f` . Это приведет к возврату полного доменного имени узла (которое называется `<host_fqdn>` приведенными ниже инструкциями).
 
@@ -52,11 +52,11 @@ ms.locfileid: "92790922"
 
 Описание ошибки содержит сообщение "не удалось подключиться к учетной записи хранения Azure" или "не удалось подключиться к Azure SQL".
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Служба хранилища Azure и SQL не имеют фиксированных IP-адресов, поэтому для доступа к этим службам необходимо разрешить исходящие подключения ко всем IP-адресам. Точные действия по устранению зависят от того, настроена ли группа безопасности сети (NSG) или правила User-Defined (UDR). Дополнительные сведения об этих конфигурациях см. в разделе [Управление сетевым трафиком с помощью HDInsight с группами безопасности сети и определяемыми пользователем маршрутами](../control-network-traffic.md) .
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 * Если кластер использует [группу безопасности сети (NSG)](../../virtual-network/virtual-network-vnet-plan-design-arm.md).
 
@@ -66,7 +66,7 @@ ms.locfileid: "92790922"
 
     Перейдите к портал Azure и найдите таблицу маршрутов, связанную с подсетью, в которой развертывается кластер. Найдя таблицу маршрутов для подсети, просмотрите раздел **Routes (маршруты** ).
 
-    Если определены маршруты, убедитесь, что существуют маршруты для IP-адресов для региона, в котором развернут кластер, а **NextHopType** для каждого маршрута — в **Интернете** . Для каждого обязательного IP-адреса, описанного в упомянутой выше статье, должен быть определен маршрут.
+    Если определены маршруты, убедитесь, что существуют маршруты для IP-адресов для региона, в котором развернут кластер, а **NextHopType** для каждого маршрута — в **Интернете**. Для каждого обязательного IP-адреса, описанного в упомянутой выше статье, должен быть определен маршрут.
 
 ## <a name="failed-to-establish-an-outbound-connection-from-the-cluster-for-the-communication-with-the-hdinsight-resource-provider-please-ensure-that-outbound-connectivity-is-allowed"></a>"Не удалось установить исходящее подключение из кластера для связи с поставщиком ресурсов HDInsight. Убедитесь, что исходящее подключение разрешено ".
 
@@ -74,11 +74,11 @@ ms.locfileid: "92790922"
 
 Описание ошибки "содержит" не удалось установить исходящее подключение из кластера для связи с поставщиком ресурсов HDInsight. Убедитесь, что исходящее подключение разрешено ".
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 При использовании частных связанных кластеров HDInsight исходящий доступ из кластера должен быть настроен на разрешение подключений к поставщику ресурсов HDInsight.
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 * Чтобы устранить эту проблему, ознакомьтесь с инструкциями по настройке закрытой ссылки HDInsight по [ссылке Настройка частной связи](../hdinsight-private-link.md) .
 ---
@@ -94,11 +94,11 @@ ErrorCode: InvalidNetworkConfigurationErrorCode
 ErrorDescription: Virtual Network configuration is not compatible with HDInsight Requirement. Error: 'Failed to connect to Azure Storage Account; Failed to connect to Azure SQL; HostName Resolution failed', Please follow https://go.microsoft.com/fwlink/?linkid=853974 to fix it.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Скорее всего, возникла ошибка в пользовательской установке DNS.
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 Проверьте, что 168.63.129.16 находится в пользовательской цепочке DNS. DNS-серверы в виртуальной сети могут перенаправлять запросы DNS рекурсивным разрешителям Azure для разрешения имен узлов в этой виртуальной сети. Дополнительные сведения см. [в разделе разрешение имен в виртуальных сетях](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server). Доступ к рекурсивным разрешителям Azure предоставляется через виртуальный IP-адрес 168.63.129.16.
 
@@ -158,4 +158,4 @@ dig @168.63.129.16 <headnode_fqdn> (e.g. dig @168.63.129.16 hn0-hditest.5h6lujo4
 
 * Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

@@ -17,11 +17,11 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9b2563b238bae310d662220d2c244e863249c9c4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651946"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997517"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory
 
@@ -189,7 +189,7 @@ ms.locfileid: "94651946"
 
 Если вы опубликовали несколько приложений для финансового отдела и используете проверенный домен `finance.adventure-works.com`, то можно опубликовать другое приложение с подстановочным знаком `*.finance.adventure-works.com`. Так как оно определено точнее, чем общее приложение `*.adventure-works.com`, оно имеет более высокий приоритет в случае, когда пользователь обращается к приложению в домене finance.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о **пользовательских доменах** см. [в статье работа с пользовательскими доменами в AD application proxy Azure](application-proxy-configure-custom-domain.md).
 - Дополнительные сведения о **публикации приложений** см. в статье [Публикация приложений с помощью Azure AD application proxy](application-proxy-add-on-premises-application.md)

@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/22/2020
 ms.openlocfilehash: d8b1f705eb08d1c58b32e0cbd7c57722a6de93cc
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285524"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998317"
 ---
 # <a name="scenario-apache-ambari-directory-alerts-in-azure-hdinsight"></a>Сценарий: оповещения каталога Apache Ambari в Azure HDInsight
 
@@ -27,11 +27,11 @@ ms.locfileid: "93285524"
 1/1 log-dirs have errors: [ /mnt/resource/hadoop/yarn/log : Cannot create directory: /mnt/resource/hadoop/yarn/log ]
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Указанные каталоги из предупреждения Ambari отсутствуют на затронутых рабочих узлах.
 
-## <a name="resolution"></a>Решение
+## <a name="resolution"></a>Разрешение
 
 Вручную создайте отсутствующие каталоги на затронутых рабочих узлах.
 
@@ -52,6 +52,6 @@ ms.locfileid: "93285524"
 
 1. В пользовательском интерфейсе Apache Ambari отключите, а затем включите оповещение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

@@ -16,11 +16,11 @@ ms.date: 04/20/2020
 ms.author: kenwith
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfa7530617830de99d752edcf4545300525ddbe8
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649217"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997466"
 ---
 # <a name="how-to-configure-self-service-application-assignment"></a>Настройка назначения самостоятельного доступа к приложениям
 
@@ -81,5 +81,5 @@ ms.locfileid: "94649217"
 
 После завершения настройки приложения самообслуживания пользователи могут перейти в раздел " [Мои приложения](https://myapps.microsoft.com/) " и нажать кнопку **добавить приложения самообслуживания** , чтобы найти приложения, которые включены с самостоятельным доступом. Бизнес-утверждающие также видят уведомление в своих [приложениях](https://myapps.microsoft.com/). Вы можете получать уведомления по электронной почте, когда пользователь запрашивает доступ к приложению, требующему утверждения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Настройка Azure Active Directory для самостоятельного управления группами](../enterprise-users/groups-self-service-management.md)

@@ -14,11 +14,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60f23efa4f46849e1fe8b0ebe05cdd83ec16f49e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294824"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997687"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -57,7 +57,7 @@ ms.locfileid: "91294824"
 
 Перейдите к **Azure Active Directory**  >  **входа** в [центр администрирования Azure Active Directory](https://aad.portal.azure.com/), а затем выберите действие входа конкретного пользователя. Найдите поле **КОД ОШИБКИ ВХОДА**. Сопоставьте значение этого поля c причиной сбоя и способом разрешения с помощью следующей таблицы.
 
-|Код ошибки входа|Причина ошибки входа|Решение
+|Код ошибки входа|Причина ошибки входа|Разрешение
 | --- | --- | ---
 | 81001 | Билет Kerberos пользователя слишком большой. | Сократите список членства пользователя в группах и повторите попытку.
 | 81002 | Не удалось проверить билет Kerberos пользователя. | Изучите [контрольный список по устранению неполадок](#troubleshooting-checklist).

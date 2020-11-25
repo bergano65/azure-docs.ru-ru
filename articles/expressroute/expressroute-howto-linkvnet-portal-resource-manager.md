@@ -9,11 +9,11 @@ ms.date: 10/15/2020
 ms.author: duau
 ms.custom: seodec18
 ms.openlocfilehash: 0ffc9c2ee17862497d3fd986da8e003f7a497056
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107289"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998776"
 ---
 # <a name="tutorial-connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Руководство по Подключение виртуальной сети к каналу ExpressRoute с помощью портала
 
@@ -65,25 +65,25 @@ ms.locfileid: "92107289"
 
 1. Теперь можно приступить к подготовке подключения для связи шлюза виртуальной сети с каналом ExpressRoute. Щелкните **Подключение** > **Добавить**, чтобы открыть страницу **Добавление подключения**.
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/add-connection.png" alt-text="Снимок экрана канала ExpressRoute":::
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/add-connection.png" alt-text="Снимок экрана добавления подключения":::
 
 1. Введите имя для подключения и нажмите кнопку **Next: Settings >** (Далее: параметры >).
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/create-connection-basic.png" alt-text="Снимок экрана канала ExpressRoute":::
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/create-connection-basic.png" alt-text="Основная страница создания подключения":::
 
 1. Выберите шлюз, принадлежащий к виртуальной сети, которую необходимо связать с каналом, и выберите **Просмотр и создание**. После завершения проверки щелкните **Создать**.
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/create-connection-settings.png" alt-text="Снимок экрана канала ExpressRoute":::
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/create-connection-settings.png" alt-text="Страница параметров &quot;Создание подключения&quot;":::
 
 1. После успешной настройки подключения в вашем объекте подключения будут показаны сведения о подключении.
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-object.png" alt-text="Снимок экрана канала ExpressRoute":::
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-object.png" alt-text="Снимок экрана объекта подключения":::
 
 ## <a name="connect-a-vnet-to-a-circuit---different-subscription"></a>Подключение виртуальной сети к каналу в разных подписках
 
 Канал ExpressRoute может совместно использоваться несколькими подписками. На рисунке ниже схематично показан способ совместного использования каналов ExpressRoute несколькими подписками.
 
-:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/cross-subscription.png" alt-text="Снимок экрана канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/cross-subscription.png" alt-text="Подключение между подписками":::
 
 Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации. Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, подразделения могут совместно использовать один канал ExpressRoute для подключения к локальной сети. Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации также могут использовать канал ExpressRoute.
 
@@ -109,21 +109,21 @@ ms.locfileid: "92107289"
 
 1. На странице ExpressRoute выберите элемент **Разрешения**, введите **имя** разрешения и щелкните команду **Сохранить**.
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png" alt-text="Снимок экрана канала ExpressRoute":::
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png" alt-text="Авторизации":::
 
 2. После сохранения конфигурации скопируйте **идентификатор ресурса** и **ключ авторизации**.
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/authorization-key.png" alt-text="Снимок экрана канала ExpressRoute":::
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/authorization-key.png" alt-text="Ключ авторизации":::
 
 **Удаление разрешения на подключение**
 
 Подключение можно удалить, щелкнув значок **Удалить** возле ключа авторизации подключения.
 
-:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/delete-authorization-key.png" alt-text="Снимок экрана канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/delete-authorization-key.png" alt-text="Удаление ключа авторизации":::
 
 Если вы хотите удалить подключение, но оставить ключ авторизации, можно удалить подключение на странице подключений канала.
 
-:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/delete-connection-owning-circuit.png" alt-text="Снимок экрана канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/delete-connection-owning-circuit.png" alt-text="Удаление подключения на странице соответствующего канала":::
 
 ### <a name="circuit-user-operations"></a>Действия пользователя канала
 
@@ -133,24 +133,31 @@ ms.locfileid: "92107289"
 
 1. Нажмите кнопку **+ Создать ресурс**. Выполните поиск по запросу **Подключение** и выберите **Создать.**
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/create-new-resources.png" alt-text="Снимок экрана канала ExpressRoute" выберите *группу ресурсов* и *расположение*, а затем щелкните **ОК**.
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/create-new-resources.png" alt-text="Создание новых ресурсов":::
+
+1. Убедитесь, что выбран *тип подключения* **ExpressRoute**. На странице "Основные сведения" выберите *группу ресурсов* и *расположение*, а затем щелкните **ОК**.
 
     > [!NOTE]
     > Расположение *должно* совпадать с расположением шлюза виртуальной сети, для которого создается подключение.
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-basics.png" alt-text="Снимок экрана канала ExpressRoute" канала ExpressRoute).
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-basics.png" alt-text="Страница &quot;Основные&quot;":::
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-settings.png" alt-text="Снимок экрана канала ExpressRoute":::
+1. На странице **Параметры** выберите *Шлюз виртуальной сети* и установите флажок **Активировать авторизацию**. Введите значения *Ключ авторизации* и *Peer circuit URI* (URI однорангового канала) и присвойте подключению имя. Щелкните **ОК**. 
+ 
+    > [!NOTE]
+    > *URI одноранговой цепи* — это идентификатор ресурса для канала ExpressRoute (который можно найти в области "Параметры свойств" канала ExpressRoute).
+
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-settings.png" alt-text="Страница &quot;Параметры&quot;":::
 
 1. Просмотрите сведения на странице **Сводка** и нажмите кнопку **ОК**.
 
-    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-summary.png" alt-text="Снимок экрана канала ExpressRoute":::
+    :::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/connection-summary.png" alt-text="Страница &quot;Сводка&quot;":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Можно удалить подключение и разорвать связь виртуальной сети с каналом ExpressRoute, выбрав значок **Удалить** на странице соответствующего подключения.
 
-:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/delete-connection.png" alt-text="Снимок экрана канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-linkvnet-portal-resource-manager/delete-connection.png" alt-text="Удаление подключения":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

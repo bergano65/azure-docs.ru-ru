@@ -9,12 +9,12 @@ ms.date: 01/23/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 5e6289fb4e3b5bb695b79589d544d0ae475f9774
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dcc6f3bca80cb5860679327226d3e034c3e9b14a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314654"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95996871"
 ---
 # <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "92314654"
 
 1. Войдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com).
 
-2. В области меню в разделе **Параметры**выберите пункт **свойства**.  
+2. В области меню в разделе **Параметры** выберите пункт **свойства**.  
 
 3. Скопируйте значение **основной конечной точки службы больших двоичных объектов** или **основной конечной точки веб-сайта** в текстовый файл. 
 
@@ -144,7 +144,7 @@ ms.locfileid: "92314654"
 
 1. Войдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com).
 
-2. В области меню в разделе **Параметры**выберите пункт **свойства**.  
+2. В области меню в разделе **Параметры** выберите пункт **свойства**.  
 
 3. Скопируйте значение **основной конечной точки службы больших двоичных объектов** или **основной конечной точки веб-сайта** в текстовый файл. 
 
@@ -177,7 +177,7 @@ ms.locfileid: "92314654"
        
    - Имя узла, полученное в разделе [Получение имени узла конечной точки хранилища](#endpoint) выше в этой статье. 
 
-     Добавьте поддомен `asverify` в имя узла. Например: `asverify.mystorageaccount.blob.core.windows.net`.
+     Добавьте поддомен `asverify` в имя узла. Например, так: `asverify.mystorageaccount.blob.core.windows.net`.
 
 4. Чтобы зарегистрировать личный домен, нажмите кнопку **сохранить** .
 
@@ -248,9 +248,9 @@ ms.locfileid: "92314654"
 
 После успешного удаления личного домена вы увидите уведомление на портале о том, что ваша учетная запись хранения успешно обновлена.
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
-Воспользуйтесь командой интерфейса командной строки [az storage account update](https://docs.microsoft.com/cli/azure/storage/account) и укажите пустую строку (`""`) в качестве значения аргумента `--custom-domain`, чтобы отменить регистрацию личного домена.
+Воспользуйтесь командой интерфейса командной строки [az storage account update](/cli/azure/storage/account) и укажите пустую строку (`""`) в качестве значения аргумента `--custom-domain`, чтобы отменить регистрацию личного домена.
 
 * Формат команды:
 
@@ -320,12 +320,12 @@ ms.locfileid: "92314654"
 
 4. Используемых Ознакомьтесь со следующими рекомендациями.
 
-   * [Токены подписанного URL-доступа (SAS) с Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#shared-access-signatures).
+   * [Токены подписанного URL-доступа (SAS) с Azure CDN](../../cdn/cdn-storage-custom-domain-https.md#shared-access-signatures).
 
-   * [Перенаправление HTTP-to-HTTPS с Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
+   * [Перенаправление HTTP-to-HTTPS с Azure CDN](../../cdn/cdn-storage-custom-domain-https.md#http-to-https-redirection).
 
-   * [Цены и выставление счетов при использовании хранилища BLOB-объектов с Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
+   * [Цены и выставление счетов при использовании хранилища BLOB-объектов с Azure CDN](../../cdn/cdn-storage-custom-domain-https.md#http-to-https-redirection).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения о размещении статических веб-сайтов в хранилище больших двоичных объектов Azure](storage-blob-static-website.md)

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 06/17/2019
 keywords: Prometheus, АТО, openshift, метрики, Red Hat
 ms.openlocfilehash: 42ed8c90b35eba57fdc3db1f0ed93d44cf9a5e41
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92218618"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996854"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift
 
@@ -36,7 +36,7 @@ ms.locfileid: "92218618"
 
 ## <a name="sign-in-to-the-cluster-by-using-the-oc-tool"></a>Вход в кластер с помощью средства OC
 
-1. Откройте веб-браузер и перейдите в веб-консоль кластера ( https://openshift .* случайный идентификатор*. *Region*. azmosa.IO).
+1. Откройте веб-браузер и перейдите в веб-консоль кластера ( https://openshift .*случайный идентификатор*. *Region*. azmosa.IO).
 2. Выполните вход с использованием учетных данных Azure.
 3. Выберите свое имя пользователя в правом верхнем углу и нажмите кнопку **Копировать имя входа**.
 4. Вставьте имя пользователя в терминал, который вы будете использовать.
@@ -188,7 +188,7 @@ oc process -f prometheus-sdrole.yml | oc apply -f - -n prometheus-project
 
 ## <a name="optional-deploy-example-application"></a>Необязательно: пример приложения для развертывания
 
-Все работает, но источники метрик отсутствуют. Перейдите по URL-адресу Prometheus ( https://prom-prometheus-project.apps .* случайный идентификатор*. *Region*. azmosa.IO/). Его можно найти с помощью следующей команды:
+Все работает, но источники метрик отсутствуют. Перейдите по URL-адресу Prometheus ( https://prom-prometheus-project.apps .*случайный идентификатор*. *Region*. azmosa.IO/). Его можно найти с помощью следующей команды:
 
 ```
 oc get route prom -n prometheus-project
@@ -211,7 +211,7 @@ oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=examp
 > [!NOTE]
 > Для всех успешно бракованных целевых объектов Prometheus добавляет точку данных в метрику вверх. Выберите **Prometheus** в левом верхнем углу **, введите в** качестве выражения и нажмите кнопку **выполнить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В приложения можно добавить настраиваемое инструментирование Prometheus. Клиентская библиотека Prometheus, которая упрощает подготовку метрик Prometheus, готова для разных языков программирования.
 

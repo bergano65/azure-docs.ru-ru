@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: dcf912f431d578a6e678801d3dc8f4e11484ea78
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678369"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997024"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
 
@@ -26,11 +26,11 @@ ms.locfileid: "92678369"
 
 ## <a name="view-suggested-questions"></a>Просмотреть предлагаемые вопросы
 
-1. Чтобы просмотреть предлагаемые вопросы, на странице « **изменение** базы знаний» выберите **Просмотр параметров** , а затем выберите **Показать активные предложения по обучению** .
+1. Чтобы просмотреть предлагаемые вопросы, на странице « **изменение** базы знаний» выберите **Просмотр параметров**, а затем выберите **Показать активные предложения по обучению**.
 
     [![В разделе "Правка" на портале выберите Показать предложения, чтобы просмотреть альтернативы нового вопроса активного обучения.](../media/improve-knowledge-base/show-suggestions-button.png)](../media/improve-knowledge-base/show-suggestions-button.png#lightbox)
 
-1. Отфильтруйте базу знаний с помощью пар вопросов и ответов, чтобы отображались только предложения, выбрав **Фильтр по предложениям** .
+1. Отфильтруйте базу знаний с помощью пар вопросов и ответов, чтобы отображались только предложения, выбрав **Фильтр по предложениям**.
 
     [![Используйте переключатель фильтровать по предложениям для просмотра только альтернативных вариантов вопроса, предлагаемых в активном обучении.](../media/improve-knowledge-base/filter-by-suggestions.png)](../media/improve-knowledge-base/filter-by-suggestions.png#lightbox)
 
@@ -134,8 +134,8 @@ Content-Type: application/json
 |--|--|--|--|
 |Параметр URL-маршрута|Идентификатор базы знаний|строка|Идентификатор GUID для базы знаний.|
 |Пользовательский поддомен|Имя ресурса QnAMaker|строка|Имя ресурса используется в качестве пользовательского поддомена для QnA Maker. Это можно найти на странице параметры после публикации базы знаний. Он указан как `host` .|
-|Header|Content-Type|строка|Тип носителя текста, отправляемого в API. Значение по умолчанию: `application/json`|
-|Header|Авторизация|строка|Ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
+|Заголовок|Content-Type|строка|Тип носителя текста, отправляемого в API. Значение по умолчанию: `application/json`|
+|Заголовок|Авторизация|строка|Ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
 |Текст запроса POST|Объект JSON|JSON|Отзыв по обучению|
 
 Тело JSON имеет несколько параметров:
@@ -341,7 +341,7 @@ async callTrain(stepContext){
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)

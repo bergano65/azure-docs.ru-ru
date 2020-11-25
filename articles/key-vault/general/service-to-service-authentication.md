@@ -9,11 +9,11 @@ ms.date: 09/04/2020
 ms.topic: how-to
 ms.service: key-vault
 ms.openlocfilehash: ac3ee108fc63441b2a9381b9e7624631bdca4e5b
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289825"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998112"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -26,7 +26,7 @@ ms.locfileid: "93289825"
 
 `Microsoft.Azure.Services.AppAuthentication`Библиотека управляет проверкой подлинности автоматически, что, в свою очередь, позволяет сосредоточиться на решении, а не на ваших учетных данных. Она поддерживает локальную разработку с использованием Microsoft Visual Studio, Azure CLI или встроенной проверки подлинности Azure AD. При развертывании в ресурс Azure, поддерживающий управляемое удостоверение, библиотека автоматически использует [управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). Изменение кода или конфигурации не требуется. Библиотека также поддерживает прямое использование [учетных данных клиента](../../active-directory/develop/howto-authenticate-service-principal-powershell.md) Azure AD, если управляемое удостоверение недоступно, или если контекст безопасности разработчика не может быть определен во время локальной разработки.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Visual studio 2019](https://www.visualstudio.com/downloads/) или [Visual Studio 2017 v 15.5](https://blogs.msdn.microsoft.com/visualstudio/2017/10/11/visual-studio-2017-version-15-5-preview/).
 
@@ -65,7 +65,7 @@ ms.locfileid: "93289825"
 
 Локальные компьютеры не поддерживают управляемые удостоверения для ресурсов Azure. В результате библиотека `Microsoft.Azure.Services.AppAuthentication` использует учетные данные разработчика для запуска в среде локальной разработки. При развертывании решения в Azure библиотека использует управляемое удостоверение для переключения на поток предоставления учетных данных клиента OAuth 2.0. Такой подход означает, что вы можете протестировать один и тот же код локально и удаленно, не беспокоясь.
 
-Для локальной разработки `AzureServiceTokenProvider` получает токены с помощью **Visual Studio** , **интерфейса командной строки Azure** (CLI) или **встроенной проверки подлинности Azure AD**. Каждый вариант применяется последовательно, и библиотека использует первый вариант, который завершается успешно. Если ни один вариант не работает, выводится исключение `AzureServiceTokenProviderException` с подробными сведениями.
+Для локальной разработки `AzureServiceTokenProvider` получает токены с помощью **Visual Studio**, **интерфейса командной строки Azure** (CLI) или **встроенной проверки подлинности Azure AD**. Каждый вариант применяется последовательно, и библиотека использует первый вариант, который завершается успешно. Если ни один вариант не работает, выводится исключение `AzureServiceTokenProviderException` с подробными сведениями.
 
 #### <a name="authenticating-with-visual-studio"></a>Проверка подлинности с помощью Visual Studio
 
@@ -73,7 +73,7 @@ ms.locfileid: "93289825"
 
 1. Войдите в Visual Studio и используйте **Сервис** &nbsp; > &nbsp; **Параметры** , чтобы открыть **Параметры**.
 
-1. Выберите **Проверка подлинности службы Azure** , выберите учетную запись для локальной разработки и нажмите кнопку **ОК**.
+1. Выберите **Проверка подлинности службы Azure**, выберите учетную запись для локальной разработки и нажмите кнопку **ОК**.
 
 Если при использовании Visual Studio возникают проблемы, например ошибки, связанные с файлом поставщика маркеров, внимательно проверьте предыдущие шаги.
 
@@ -91,7 +91,7 @@ ms.locfileid: "93289825"
 
 1. Проверьте доступ, введя команду *AZ Account Get-Access-Token--Resource HTTPS: \/ /Vault.Azure.NET*. Если появляется сообщение об ошибке, убедитесь, что правильно установлена правильная версия Azure CLI.
 
-   Если Azure CLI не установлен в каталог по умолчанию, может появиться сообщение об ошибке, не позволяющее `AzureServiceTokenProvider` найти путь для Azure CLI. Используйте переменную среды **азуреклипас** , чтобы определить папку установки Azure CLI. При необходимости `AzureServiceTokenProvider` добавляет каталог, указанный в переменной среды **AzureCLIPath** , в переменную среды **Path**.
+   Если Azure CLI не установлен в каталог по умолчанию, может появиться сообщение об ошибке, не позволяющее `AzureServiceTokenProvider` найти путь для Azure CLI. Используйте переменную среды **азуреклипас** , чтобы определить папку установки Azure CLI. При необходимости `AzureServiceTokenProvider` добавляет каталог, указанный в переменной среды **AzureCLIPath**, в переменную среды **Path**.
 
 1. Если вы вошли в Azure CLI с использованием нескольких учетных записей или ваша учетная запись имеет доступ к нескольким подпискам, необходимо указать подписку для использования. Введите команду *AZ Account Set--subscription <Subscription-id>*.
 
@@ -167,7 +167,7 @@ ms.locfileid: "93289825"
           CertificateStoreLocation={CertificateStore}
     ```
 
-    Замените *{AppId}* , *{TenantId}* и *{Thumbprint}* идентификатором приложения, идентификатором клиента и отпечатком, созданными на шаге 1. Замените *{CertificateStore}* на *LocalMachine* или *CurrentUser* в соответствии с планом развертывания.
+    Замените *{AppId}*, *{TenantId}* и *{Thumbprint}* идентификатором приложения, идентификатором клиента и отпечатком, созданными на шаге 1. Замените *{CertificateStore}* на *LocalMachine* или *CurrentUser* в соответствии с планом развертывания.
 
 1. Запустите приложение.
 
@@ -185,7 +185,7 @@ ms.locfileid: "93289825"
     RunAs=App;AppId={AppId};TenantId={TenantId};AppKey={ClientSecret}
     ```
 
-    Замените _{AppId}_ , _{TenantId}_ и _{ClientSecret}_ идентификатором приложения, идентификатором клиента и секретом клиента, созданными на шаге 1.
+    Замените _{AppId}_, _{TenantId}_ и _{ClientSecret}_ идентификатором приложения, идентификатором клиента и секретом клиента, созданными на шаге 1.
 
 1. Запустите приложение.
 
@@ -217,7 +217,7 @@ ms.locfileid: "93289825"
     RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier={KeyVaultCertificateSecretIdentifier}
     ```
 
-    Например, если хранилище ключей называлось *myKeyVault* и вы создали сертификат с именем *MyCert* , идентификатор сертификата будет выглядеть так:
+    Например, если хранилище ключей называлось *myKeyVault* и вы создали сертификат с именем *MyCert*, идентификатор сертификата будет выглядеть так:
 
     ```azurecli
     RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier=https://myKeyVault.vault.azure.net/secrets/myCert
@@ -262,7 +262,7 @@ ms.locfileid: "93289825"
 
 #### <a name="azure-cli-is-not-installed-youre-not-logged-in-or-you-dont-have-the-latest-version"></a>Azure CLI не установлен, вы не вошли в систему или у вас не установлена последняя версия
 
-Выполните команду *AZ Account Get-Access-Token* , чтобы узнать, покажет ли Azure CLI маркер. Если это не говорит о том, что эта **Программа найдена** , установите [последнюю версию Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Возможно, вам будет предложено войти в систему.
+Выполните команду *AZ Account Get-Access-Token* , чтобы узнать, покажет ли Azure CLI маркер. Если это не говорит о том, что эта **Программа найдена**, установите [последнюю версию Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Возможно, вам будет предложено войти в систему.
 
 #### <a name="azureservicetokenprovider-cant-find-the-path-for-azure-cli"></a>AzureServiceTokenProvider не удается найти путь для Azure CLI
 

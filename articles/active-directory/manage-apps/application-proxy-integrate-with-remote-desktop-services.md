@@ -12,11 +12,11 @@ ms.date: 07/22/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.openlocfilehash: 03e89b0da25a915a00c70a9a87bd0f675b8e12d6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658083"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997534"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -96,7 +96,7 @@ ms.locfileid: "94658083"
    Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s:<proxyfrontendurl>`nrequire pre-authentication:i:1"
    ```
 
-   **Например:**
+   **Пример:**
    ```
    Set-RDSessionCollectionConfiguration -CollectionName "QuickSessionCollection" -CustomRdpProperty "pre-authentication server address:s:https://remotedesktoptest-aadapdemo.msappproxy.net/`nrequire pre-authentication:i:1"
    ```
@@ -140,7 +140,7 @@ ms.locfileid: "94658083"
 1. В разделе [Публикация конечной точки узла удаленных рабочих столов](#publish-the-rd-host-endpoint) (шаг 1) в качестве метода предварительной аутентификации выберите **Сквозной режим**.
 2. В разделе [Направление трафика RDS в прокси приложения](#direct-rds-traffic-to-application-proxy) полностью пропустите шаг 8.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD](application-proxy-integrate-with-sharepoint-server.md)
 - [Вопросы безопасности при удаленном доступе к приложениям через прокси приложения Azure AD](application-proxy-security.md)
 - [Рекомендации по балансировке нагрузки нескольких серверов приложений](application-proxy-high-availability-load-balancing.md#best-practices-for-load-balancing-among-multiple-app-servers)

@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 544aa1a4a859a9c328eb1d36e72d0f9f9ddb55b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ad45d5f0e313c06619fa9c998515e434de957ea
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327907"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997568"
 ---
 # <a name="redirect-hard-coded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление жестко запрограммированных ссылок для приложений, опубликованных с помощью Azure AD Application Proxy
 
@@ -47,14 +47,14 @@ ms.locfileid: "91327907"
 > [!NOTE]
 > Последний вариант предназначен только для клиентов, которые по какой-либо причине не могут использовать личные домены, имеющие те же внутренние и внешние URL-адреса в своих приложениях. Прежде чем включать эту функцию, проверьте, можете ли вы использовать [личные домены в прокси приложения Azure AD](application-proxy-configure-custom-domain.md). 
 > 
-> А если преобразование ссылок необходимо настроить в приложении SharePoint, то см. статью [Настройка альтернативных сопоставлений доступа для SharePoint 2013](https://technet.microsoft.com/library/cc263208.aspx), где описан другой подход к сопоставлению ссылок. 
+> А если преобразование ссылок необходимо настроить в приложении SharePoint, то см. статью [Настройка альтернативных сопоставлений доступа для SharePoint 2013](/SharePoint/administration/configure-alternate-access-mappings), где описан другой подход к сопоставлению ссылок. 
 
  
 ### <a name="option-1-microsoft-edge-integration"></a>Вариант 1. интеграция Microsoft ребра 
 
 Для дальнейшей защиты приложения и содержимого можно использовать Microsoft ребро. Чтобы использовать это решение, необходимо потребовать от пользователей получить доступ к приложению через Microsoft ребро. Все внутренние URL-адреса, опубликованные с помощью прокси приложения, будут располагаться по границе и перенаправляться на соответствующий внешний URL-адрес. Это гарантирует работоспособность всех жестко заданных внутренних URL-адресов. Кроме того, если пользователь введет внутренний URL-адрес в браузере, этот адрес будет работать всегда, независимо от местонахождения пользователя.  
 
-Дополнительные сведения о том, как настроить этот параметр, см. в статье [Управление веб-доступом с помощью пограничных устройств для iOS и Android с Microsoft Intuneной](https://docs.microsoft.com/mem/intune/apps/manage-microsoft-edge) документацией.  
+Дополнительные сведения о том, как настроить этот параметр, см. в статье [Управление веб-доступом с помощью пограничных устройств для iOS и Android с Microsoft Intuneной](/mem/intune/apps/manage-microsoft-edge) документацией.  
 
 ### <a name="option-2-myapps-browser-extension"></a>Вариант 2. Расширение браузера MyApps 
 
@@ -62,7 +62,7 @@ ms.locfileid: "91327907"
 
 Чтобы использовать эту возможность, пользователю необходимо скачать расширение и выполнить вход. Выполнять другие настройки не требуется. 
 
-Дополнительные сведения, включая настройку этого параметра, см. в документации по [расширению обозревателя MyApps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) .
+Дополнительные сведения, включая настройку этого параметра, см. в документации по [расширению обозревателя MyApps](../user-help/my-apps-portal-end-user-access.md#download-and-install-the-my-apps-secure-sign-in-extension) .
 
 ### <a name="option-3-link-translation-setting"></a>Вариант 3. Параметр преобразования ссылок 
 
@@ -103,7 +103,7 @@ ms.locfileid: "91327907"
 * link
 * MenuItem
 * meta
-* object
+* объект
 * скрипт
 * source
 * track
@@ -149,7 +149,7 @@ ms.locfileid: "91327907"
 
 Нам нужна ваша помощь, чтобы обеспечить работу функции во всех ваших приложениях. Мы поддерживаем поиск более 30 тегов в HTML и CSS. Если у вас есть пример созданных ссылок, которые не были преобразованы, отправьте фрагмент кода [сюда](mailto:aadapfeedback@microsoft.com). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 [Использование личных доменов с AD application proxy Azure](application-proxy-configure-custom-domain.md) для того же внутреннего и внешнего URL-адреса
 
-[Настройка альтернативных сопоставлений доступа для SharePoint 2013](https://technet.microsoft.com/library/cc263208.aspx)
+[Настройка альтернативных сопоставлений доступа для SharePoint 2013](/SharePoint/administration/configure-alternate-access-mappings)

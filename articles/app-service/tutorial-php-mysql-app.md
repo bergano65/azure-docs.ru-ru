@@ -8,11 +8,11 @@ ms.date: 06/15/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
 ms.openlocfilehash: 1053eb9772650dce040570bda04addf93df49178
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743557"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998061"
 ---
 # <a name="tutorial-build-a-php-and-mysql-app-in-azure-app-service"></a>Руководство по Разработка приложения на основе PHP и MySQL в Службе приложений Azure
 
@@ -107,7 +107,7 @@ composer install
 
 ### <a name="configure-mysql-connection"></a>Настройка подключения к MySQL
 
-В корне репозитория создайте файл *.env* . Скопируйте в файл *.env* приведенные ниже переменные. Замените заполнитель _&lt;root_password >_ паролем привилегированного пользователя MySQL.
+В корне репозитория создайте файл *.env*. Скопируйте в файл *.env* приведенные ниже переменные. Замените заполнитель _&lt;root_password >_ паролем привилегированного пользователя MySQL.
 
 ```txt
 APP_ENV=local
@@ -121,7 +121,7 @@ DB_USERNAME=root
 DB_PASSWORD=<root_password>
 ```
 
-Сведения о том, как Laravel использует файл _.env_ , см. в разделе [Environment Configuration](https://laravel.com/docs/5.4/configuration#environment-configuration) (Конфигурация среды).
+Сведения о том, как Laravel использует файл _.env_, см. в разделе [Environment Configuration](https://laravel.com/docs/5.4/configuration#environment-configuration) (Конфигурация среды).
 
 ### <a name="run-the-sample-locally"></a>Локальный запуск примера
 
@@ -221,7 +221,7 @@ CREATE DATABASE sampledb;
 
 ### <a name="create-a-user-with-permissions"></a>Создание пользователя с разрешениями
 
-Создайте пользователя базы данных с именем _phpappuser_ и предоставьте ему все привилегии в базе данных `sampledb`. Для простоты в этом руководстве используется пароль _MySQLAzure2017_ .
+Создайте пользователя базы данных с именем _phpappuser_ и предоставьте ему все привилегии в базе данных `sampledb`. Для простоты в этом руководстве используется пароль _MySQLAzure2017_.
 
 ```sql
 CREATE USER 'phpappuser' IDENTIFIED BY 'MySQLAzure2017'; 
@@ -242,7 +242,7 @@ quit
 
 ### <a name="configure-the-database-connection"></a>Настройка подключения к базе данных
 
-В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель &lt;mysql-server-name> в *DB_HOST* и *DB_USERNAME* .
+В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель &lt;mysql-server-name> в *DB_HOST* и *DB_USERNAME*.
 
 ```
 APP_ENV=production
@@ -265,7 +265,7 @@ MYSQL_SSL=true
 
 ### <a name="configure-tlsssl-certificate"></a>Настройка TLS/SSL-сертификата
 
-По умолчанию База данных Azure для MySQL требует использования TLS для подключений из клиентов. Чтобы подключиться к базе данных MySQL в Azure, вам потребуется SSL-сертификат с расширением [_PEM_ , предоставляемый службой "База данных Azure для MySQL"](../mysql/howto-configure-ssl.md).
+По умолчанию База данных Azure для MySQL требует использования TLS для подключений из клиентов. Чтобы подключиться к базе данных MySQL в Azure, вам потребуется SSL-сертификат с расширением [_PEM_, предоставляемый службой "База данных Azure для MySQL"](../mysql/howto-configure-ssl.md).
 
 Откройте файл _config/database.php_ и добавьте в `connections.mysql` параметры `sslmode` и `options`, как показано в следующем коде.
 
@@ -301,7 +301,7 @@ MYSQL_SSL=true
 
 ### <a name="test-the-application-locally"></a>Локальное тестирование приложения
 
-Выполните перенос базы данных Laravel с помощью файла _.env.production_ , указав его как файл среды, чтобы создать таблицы в базе данных MySQL, размещенной в Базе данных Azure для MySQL. Помните, что файл _.env.production_ содержит сведения о подключении к базе данных MySQL в Azure.
+Выполните перенос базы данных Laravel с помощью файла _.env.production_, указав его как файл среды, чтобы создать таблицы в базе данных MySQL, размещенной в Базе данных Azure для MySQL. Помните, что файл _.env.production_ содержит сведения о подключении к базе данных MySQL в Azure.
 
 ```bash
 php artisan migrate --env=production --force
@@ -402,7 +402,7 @@ az webapp config appsettings set --name <app-name> --resource-group myResourceGr
 
 В среде Laravel требуется ключ приложения из службы приложений. Его можно настроить с помощью параметров приложения.
 
-В окне терминала на локальном компьютере используйте `php artisan` для создания ключа приложения без сохранения в файле _.env_ .
+В окне терминала на локальном компьютере используйте `php artisan` для создания ключа приложения без сохранения в файле _.env_.
 
 ```bash
 php artisan key:generate --show
@@ -428,7 +428,7 @@ az webapp config appsettings set --name <app-name> --resource-group myResourceGr
 az resource update --name web --resource-group myResourceGroup --namespace Microsoft.Web --resource-type config --parent sites/<app_name> --set properties.virtualApplications[0].physicalPath="site\wwwroot\public" --api-version 2015-06-01
 ```
 
-По умолчанию служба приложений Azure указывает корневой путь виртуального приложения ( _/_ ) к корневому каталогу файлов развернутого приложения ( _sites\wwwroot_ ).
+По умолчанию служба приложений Azure указывает корневой путь виртуального приложения ( _/_ ) к корневому каталогу файлов развернутого приложения (_sites\wwwroot_).
 
 ::: zone-end
 
@@ -498,7 +498,7 @@ remote: Running deployment command...
 
 Перейдите по адресу `http://<app-name>.azurewebsites.net` и добавьте несколько задач в список.
 
-:::image type="content" source="./media/tutorial-php-mysql-app/php-mysql-in-azure.png" alt-text="Снимок экрана: пример приложения PHP с названием Task List.":::
+:::image type="content" source="./media/tutorial-php-mysql-app/php-mysql-in-azure.png" alt-text="Снимок экрана: пример приложения Azure с названием Task List, в котором показаны добавленные новые задачи.":::
 
 Вы запустили управляемое данными приложение PHP в службе приложений Azure.
 
@@ -550,11 +550,11 @@ public function down()
 php artisan migrate
 ```
 
-В соответствии с условиями [соглашения об именовании Laravel](https://laravel.com/docs/5.4/eloquent#defining-models) модель `Task` (см. _app/Task.php_ ) сопоставляется с таблицей `tasks` по умолчанию.
+В соответствии с условиями [соглашения об именовании Laravel](https://laravel.com/docs/5.4/eloquent#defining-models) модель `Task` (см. _app/Task.php_) сопоставляется с таблицей `tasks` по умолчанию.
 
 ### <a name="update-application-logic"></a>Обновление логики приложения
 
-Откройте файл *routes/web.php* . В нем приложение определяет свои маршруты и бизнес-логику.
+Откройте файл *routes/web.php*. В нем приложение определяет свои маршруты и бизнес-логику.
 
 В конце файла добавьте маршрут с помощью следующего кода.
 
@@ -577,7 +577,7 @@ Route::post('/task/{id}', function ($id) {
 
 ### <a name="update-the-view"></a>Обновление представления
 
-Откройте файл *resources/views/tasks.blade.php* . Найдите открывающий тег `<tr>` и замените его приведенным ниже значением.
+Откройте файл *resources/views/tasks.blade.php*. Найдите открывающий тег `<tr>` и замените его приведенным ниже значением.
 
 ```html
 <tr class="{{ $task->complete ? 'success' : 'active' }}" >
@@ -669,7 +669,7 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 ::: zone-end
 
 > [!TIP]
-> Приложение PHP может использовать стандартный метод [error_log()](https://php.net/manual/function.error-log.php) для вывода в консоль. Пример приложения использует этот подход в файле конфигурации _app/Http/routes.php_ .
+> Приложение PHP может использовать стандартный метод [error_log()](https://php.net/manual/function.error-log.php) для вывода в консоль. Пример приложения использует этот подход в файле конфигурации _app/Http/routes.php_.
 >
 > Являясь веб-платформой, [Laravel использует Monolog](https://laravel.com/docs/5.4/errors) в качестве поставщика службы ведения журнала. Дополнительные сведения см. в статье [PHP: How to use monolog to log to console (php://out)?](https://stackoverflow.com/questions/25787258/php-how-to-use-monolog-to-log-to-console-php-out) (PHP: как выполнять запись в консоль с помощью Monolog (php://out)).
 >
@@ -679,7 +679,7 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 
 Перейдите на [портал Azure](https://portal.azure.com), чтобы управлять созданным приложением.
 
-В меню слева щелкните **Службы приложений** , а затем — имя своего приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/tutorial-php-mysql-app/access-portal.png)
 

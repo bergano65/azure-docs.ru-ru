@@ -7,11 +7,11 @@ ms.custom: devx-track-csharp
 ms.date: 02/20/2020
 ms.author: cshoe
 ms.openlocfilehash: 8bb07e650c99f18cfecbc7b7674e0ca0e5a01dae
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491466"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95998912"
 ---
 # <a name="signalr-service-output-binding-for-azure-functions"></a>Выходная привязка службы SignalR для функций Azure
 
@@ -47,7 +47,7 @@ public static Task SendMessage(
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 Пример файла function.json:
 
@@ -82,7 +82,7 @@ public static Task Run(
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 Пример файла function.json:
 
@@ -109,7 +109,7 @@ module.exports = async function (context, req) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 Пример файла function.json:
 
@@ -241,7 +241,7 @@ module.exports = async function (context, req) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 Пример файла function.json:
 
@@ -376,7 +376,7 @@ module.exports = async function (context, req) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 Пример файла function.json:
 
@@ -722,7 +722,7 @@ public SignalRGroupAction removeFromGroup(
 
 ---
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="signalrconnectioninfo"></a>SignalRConnectionInfo
 

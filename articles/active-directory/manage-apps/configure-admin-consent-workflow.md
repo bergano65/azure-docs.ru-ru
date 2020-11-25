@@ -13,11 +13,11 @@ ms.author: kenwith
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7fc688ca0981024e5e08c9fb20ecb6704efbd7f2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658780"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997500"
 ---
 # <a name="configure-the-admin-consent-workflow-preview"></a>Настройка рабочего процесса согласия администратора (Предварительная версия)
 
@@ -149,7 +149,7 @@ ms.locfileid: "94658780"
  
 Если вы собираетесь предоставить согласие администратора и разрешить всем пользователям в клиенте использовать приложение, рекомендуется отклонить запрос. Затем вручную предоставьте согласие администратора, запретив доступ к приложению, запросив назначение пользователей и назначив приложению пользователей или группы. Подробнее см. статью [Методы назначения пользователей и групп](./assign-user-or-group-access-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
