@@ -7,20 +7,20 @@ ms.date: 08/11/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 3b7c9b51bad45bb348f70c8b0e433404b49b5aac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e6c090c02798103a30cc68f2ca28e8c4f7f2f17
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761368"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96004268"
 ---
 # <a name="set-up-your-environment-for-the-iot-plug-and-play-quickstarts-and-tutorials"></a>Настройка среды для использования кратких руководств и учебников по Plug and Play IoT
 
 Перед началом работы с краткими руководствами и учебниками по Plug and Play Интернета вещей необходимо настроить центр Интернета вещей и службу подготовки устройств (DPS) в подписке Azure. Кроме того, вам понадобятся локальные копии файлов модели, используемых в примерах приложений, и средство Azure IoT Explorer.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-Чтобы избежать необходимости устанавливать Azure CLI локально, можно использовать Azure Cloud Shell для настройки облачных служб.
+Чтобы не устанавливать Azure CLI локально, можно использовать Azure Cloud Shell для настройки облачных служб.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -138,9 +138,9 @@ set IOTHUB_DEVICE_ID=my-pnp-device
 az group delete --name my-pnp-resourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы настроили среду, вы можете испытать одно из кратких руководств или учебников, таких как:
 
 > [!div class="nextstepaction"]
-> [Подключение примера приложения Plug and Play устройства IoT к центру Интернета вещей (Node.js)](quickstart-connect-device-node.md)
+> [Подключение примера приложения Plug and Play устройства IoT к центру Интернета вещей](quickstart-connect-device.md)

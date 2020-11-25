@@ -12,11 +12,11 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 03/25/2019
 ms.openlocfilehash: 759e35ba353f470ea3abc5f5d4182fa2b2ea0e73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "71212514"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003588"
 ---
 # <a name="deprecated-configure-baidu-cloud-push-settings-for-a-notification-hub-in-the-azure-portal"></a>Не рекомендуется: Настройте параметры push-уведомлений Baidu в облаке в портал Azure
 
@@ -38,5 +38,5 @@ ms.locfileid: "71212514"
 
     ![Снимок экрана Центров уведомлений, на котором показана настройка push-уведомлений в Baidu (Android China)](./media/notification-hubs-baidu-get-started/AzureNotificationServicesBaidu.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Пошаговые инструкции по отправке уведомлений в Baidu с помощью центров уведомлений Azure и Baidu Cloud Push см. в статье [Приступая к работе с центрами уведомлений с помощью Baidu](notification-hubs-baidu-china-android-notifications-get-started.md).

@@ -16,11 +16,11 @@ ms.date: 09/30/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9b25f2691646192faf4d4c133835b456038abd94
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91611934"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003741"
 ---
 # <a name="view-the-service-principal-of-a-managed-identity-in-the-azure-portal"></a>Просмотр субъекта-службы управляемого удостоверения на портале Azure
 
@@ -42,11 +42,11 @@ ms.locfileid: "91611934"
 Вы можете просмотреть субъект-службу виртуальной машины с включенным управляемым удостоверением, назначаемым системой (те же действия применяются для приложения).
 
 1. Щелкните **Azure Active Directory** и выберите **Корпоративные приложения**.
-2. В разделе **Тип приложения**выберите **все приложения** , а затем нажмите кнопку **Применить**.
+2. В разделе **Тип приложения** выберите **все приложения** , а затем нажмите кнопку **Применить**.
 3. В поле Фильтр поиска введите имя ресурса Azure с включенным управляемым удостоверением или выберите его из представленного списка.
 
    ![Просмотр субъектов-служб для управляемых удостоверений на портале](./media/how-to-view-managed-identity-service-principal-portal/view-managed-identity-service-principal-portal.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Управляемые удостоверения для ресурсов Azure](./overview.md)

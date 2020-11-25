@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: b31931af7b8d1442a66333622a23d017ab7fb5a9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 93aeb088f82cae6dde215792e399997b592a5c14
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658695"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96003979"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
@@ -636,6 +636,14 @@ ms.locfileid: "94658695"
 Просмотрите видеоролик с подробным руководством по устранению неполадок в средах. 
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4I7fi]
+
+## <a name="exposure-control-and-feature-flags"></a>Флаги управления экспозицией и функций
+
+При работе с командой существуют экземпляры, в которых вы можете объединить изменения, но не нужно, чтобы они выполнялись в таких средах, как "производство" и "вопросы и ответы". Для решения этой ситуации группа ADF рекомендует [DevOps концепцию использования флагов компонентов](https://docs.microsoft.com/azure/devops/migrate/phase-features-with-feature-flags?view=azure-devops). В ADF можно объединять [глобальные параметры](author-global-parameters.md) и [действие условия If](control-flow-if-condition-activity.md) , чтобы скрыть наборы логики на основе этих флагов среды.
+
+Сведения о настройке флага функции см. в следующем видеоучебнике:
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4IxdW]
 
 ## <a name="best-practices-for-cicd"></a>Рекомендации для CI/CD
 
