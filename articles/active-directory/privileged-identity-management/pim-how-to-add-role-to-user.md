@@ -14,11 +14,11 @@ ms.date: 09/16/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e0e230a975748fe2f737c4b8fe8491887351d387
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835379"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004676"
 ---
 # <a name="assign-azure-ad-roles-in-privileged-identity-management"></a>Назначение ролей Azure AD в управление привилегированными пользователями
 
@@ -233,7 +233,7 @@ ms.locfileid: "94835379"
 
  ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка параметров роли администратора Azure AD в управление привилегированными пользователями](pim-how-to-change-default-settings.md)
 - [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)

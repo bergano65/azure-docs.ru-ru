@@ -9,11 +9,11 @@ ms.custom: devx-track-csharp, mvc
 ms.topic: quickstart
 ms.date: 06/18/2020
 ms.openlocfilehash: 945d4a3d2bba84bf8f5973fd8dec092c66794c11
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077087"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004302"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-net-core"></a>Краткое руководство. Использование Кэша Azure для Redis с приложениями .NET Core
 
@@ -64,7 +64,7 @@ dotnet new console -o Redistest
 </Project>
 ```
 
-Выполните следующую команду, чтобы добавить в проект пакет *Microsoft.Extensions.Configuration.UserSecrets* :
+Выполните следующую команду, чтобы добавить в проект пакет *Microsoft.Extensions.Configuration.UserSecrets*:
 
 ```
 dotnet add package Microsoft.Extensions.Configuration.UserSecrets
@@ -107,7 +107,7 @@ private static void InitializeConfiguration()
 
 В этом разделе вы настроите в консольном приложении использование клиента [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) для .NET.
 
-В окне командной строки выполните следующую команду в каталоге проекта *Redistest* :
+В окне командной строки выполните следующую команду в каталоге проекта *Redistest*:
 
 ```
 dotnet add package StackExchange.Redis
@@ -222,19 +222,19 @@ dotnet run
 
 Простой способ сериализовать объекты — использовать методы сериализации `JsonConvert` из [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) и выполнять сериализацию в нотацию JSON и из нее. В этом разделе вы добавите в кэш объект .NET.
 
-Выполните следующую команду, чтобы добавить в приложение пакет *Newtonsoft.json* :
+Выполните следующую команду, чтобы добавить в приложение пакет *Newtonsoft.json*:
 
 ```
 dotnet add package Newtonsoft.json
 ```
 
-Добавьте следующую инструкцию `using` в начало файла *Program.cs* :
+Добавьте следующую инструкцию `using` в начало файла *Program.cs*:
 
 ```csharp
 using Newtonsoft.Json;
 ```
 
-Добавьте следующее определение класса `Employee` в файл *Program.cs* :
+Добавьте следующее определение класса `Employee` в файл *Program.cs*:
 
 ```csharp
 class Employee

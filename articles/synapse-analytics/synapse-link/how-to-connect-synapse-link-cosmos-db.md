@@ -10,11 +10,11 @@ ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
 ms.openlocfilehash: 3434953de3460d3eff066768474f03aa0e14165e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92668587"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004999"
 ---
 # <a name="connect-to-azure-synapse-link-preview-for-azure-cosmos-db"></a>Подключение к Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
@@ -36,7 +36,7 @@ ms.locfileid: "92668587"
 
 ## <a name="go-to-synapse-studio"></a>Перейдите в Synapse Studio
 
-В рабочей области Azure Synapse выберите **Запуск Synapse Studio**. На домашней странице Synapse Studio выберите **Данные** , чтобы перейти в обозреватель объектов данных.
+В рабочей области Azure Synapse выберите **Запуск Synapse Studio**. На домашней странице Synapse Studio выберите **Данные**, чтобы перейти в обозреватель объектов данных.
 
 ## <a name="connect-an-azure-cosmos-db-database-to-an-azure-synapse-workspace"></a>Подключение базы данных Azure Cosmos DB к рабочей области Azure Synapse
 
@@ -55,11 +55,11 @@ ms.locfileid: "92668587"
 
 Базы данных Azure Cosmos DB отображаются на вкладке **Связано** в разделе **Azure Cosmos DB**. Azure Cosmos DB позволяет отличить контейнер с поддержкой HTAP от контейнера, поддерживающего только OLTP, по указанным ниже значкам.
 
-**Контейнер, поддерживающий только OLTP** :
+**Контейнер, поддерживающий только OLTP**:
 
 ![Визуализация, отображающая значок контейнера OLTP.](../media/quickstart-connect-synapse-link-cosmosdb/oltp-container.png)
 
-**Контейнер с поддержкой HTAP** :
+**Контейнер с поддержкой HTAP**:
 
 ![Визуализация, отображающая значок контейнера HTAP.](../media/quickstart-connect-synapse-link-cosmosdb/htap-container.png)
 

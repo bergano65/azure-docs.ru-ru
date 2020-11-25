@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
 ms.openlocfilehash: f98021d1e94b3796b2aeb6ba2e883e4e1380b8ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504338"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004829"
 ---
 # <a name="apache-phoenix-in-azure-hdinsight"></a>Apache Phoenix в Azure HDInsight
 
@@ -134,7 +134,7 @@ CREATE TABLE Saltedweblogs (
 
     ![Раздел конфигурации Ambari Phoenix SQL](./media/hdinsight-phoenix-in-hdinsight/apache-ambari-phoenix.png)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Использование Apache Phoenix с кластерами HBase под управлением Linux в HDInsight](hbase/apache-hbase-query-with-phoenix.md)
 

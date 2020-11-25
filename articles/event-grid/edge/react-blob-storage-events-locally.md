@@ -8,11 +8,11 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 230e158a970f8c815b1575403c013e30749124c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87462026"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005067"
 ---
 # <a name="tutorial-react-to-blob-storage-events-on-iot-edge-preview"></a>Учебник. реагирование на события хранилища BLOB-объектов на IoT Edge (Предварительная версия)
 В этой статье показано, как развернуть хранилище BLOB-объектов Azure в модуле IoT, который будет служить издателем службы "Сетка событий" для отправки событий при создании большого двоичного объекта и удалении большого двоичного объекта в службе "Сетка событий".  
@@ -75,7 +75,7 @@ ms.locfileid: "87462026"
         }
     ```    
 
- 1. Щелкните **Сохранить**.
+ 1. Нажмите кнопку **Сохранить**
  1. Перейдите к следующему разделу, чтобы добавить модуль подписчика службы "Сетка событий Azure", прежде чем развертывать их вместе.
 
     >[!IMPORTANT]
@@ -95,7 +95,7 @@ ms.locfileid: "87462026"
    * **Имя**: подписчик
    * **URI изображения**: `mcr.microsoft.com/azure-event-grid/iotedge-samplesubscriber:latest`
    * **Параметры создания контейнера**: нет
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**
 1. Перейдите к следующему разделу, чтобы добавить модуль хранилища BLOB-объектов Azure.
 
 ## <a name="deploy-azure-blob-storage-module"></a>Развертывание модуля хранилища BLOB-объектов Azure
@@ -144,9 +144,9 @@ ms.locfileid: "87462026"
    - Замените на `<event grid module name>` имя модуля сетки событий.
    - Замените в `<storage mount>` соответствии с операционной системой контейнера.
      - Для контейнеров Linux **My-Volume:/блобрут**
-     - Для контейнеров Windows**My-Volume: C:/блобрут**
+     - Для контейнеров Windows **My-Volume: C:/блобрут**
 
-5. Щелкните **Сохранить**.
+5. Нажмите кнопку **Сохранить**
 6. Нажмите кнопку " **Далее** ", чтобы перейти к разделу "маршруты"
 
     > [!NOTE]
@@ -176,7 +176,7 @@ ms.locfileid: "87462026"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage?api-version=2019-01-01-preview
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
     ```json
         [
@@ -231,7 +231,7 @@ ms.locfileid: "87462026"
        curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage/eventSubscriptions/sampleSubscription5?api-version=2019-01-01-preview
        ```
 
-       Образец вывода:
+       Пример результатов выполнения:
 
        ```json
         {
@@ -324,7 +324,7 @@ ms.locfileid: "87462026"
 
 Ниже приведен список поддерживаемых свойств событий, их типов и описаний. 
 
-| Свойство | Type | Описание |
+| Свойство | Тип | Описание |
 | -------- | ---- | ----------- |
 | Раздел | строка | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
 | subject | строка | Определенный издателем путь к субъекту событий. |
@@ -337,7 +337,7 @@ ms.locfileid: "87462026"
 
 Объект данных имеет следующие свойства:
 
-| Свойство | Type | Описание |
+| Свойство | Тип | Описание |
 | -------- | ---- | ----------- |
 | api | строка | Операция, вызвавшая событие. Может иметь одно из следующих значений. <ul><li>BlobCreated — допустимые значения: `PutBlob` и `PutBlockList`</li><li>BlobDeleted — допустимые значения: `DeleteBlob` , `DeleteAfterUpload` и `AutoDelete` . <p>`DeleteAfterUpload`Событие создается при автоматическом удалении большого двоичного объекта, так как требуемое свойство делетеафтеруплоад имеет значение true. </p><p>`AutoDelete` событие создается при автоматическом удалении большого двоичного объекта из-за истечения срока действия требуемого значения свойства Делетеафтерминутес.</p></li></ul>|
 | clientRequestId | строка | предоставленный клиентом идентификатор запроса для операции API хранилища. Этот идентификатор можно использовать для сопоставления с журналами диагностики службы хранилища Azure с помощью поля "Client-Request-ID" в журналах и может быть предоставлено в запросах клиента с помощью заголовка "x-MS-Client-Request-ID". Дополнительные сведения см. в разделе [Формат журнала](/rest/api/storageservices/storage-analytics-log-format). |
@@ -346,7 +346,7 @@ ms.locfileid: "87462026"
 | сontentType | строка | Тип содержимого, указанный для BLOB-объекта. |
 | contentLength | Целое число | Размер большого двоичного объекта в байтах. |
 | blobType | строка | Тип большого двоичного объекта. Допустимые значения: BlockBlob или PageBlob. |
-| url | строка | Путь к BLOB-объекту. <br>Если клиент использует REST API больших двоичных объектов, URL-адрес имеет следующую структуру: * \<storage-account-name\> . \<container-name\> / \<file-name\> BLOB.Core.Windows.NET/*. <br>Если клиент использует Data Lake Storage REST API, URL-адрес имеет следующую структуру: * \<storage-account-name\> . DFS.Core.Windows.NET/ \<file-system-name\> / \<file-name\> *. |
+| url | строка | Путь к BLOB-объекту. <br>Если клиент использует REST API больших двоичных объектов, URL-адрес имеет следующую структуру: *\<storage-account-name\> . \<container-name\> / \<file-name\> BLOB.Core.Windows.NET/*. <br>Если клиент использует Data Lake Storage REST API, URL-адрес имеет следующую структуру: *\<storage-account-name\> . DFS.Core.Windows.NET/ \<file-system-name\> / \<file-name\>*. |
 
 
 ## <a name="next-steps"></a>Следующие шаги

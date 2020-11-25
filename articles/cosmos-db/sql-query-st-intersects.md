@@ -5,20 +5,20 @@ author: ginamr
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 11/23/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 8e440d9e1be8508908336a5e9f90394e310c8562
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 2fca6e94f61ff4d21886bf81a56afa032c8773c1
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93335183"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96004455"
 ---
 # <a name="st_intersects-azure-cosmos-db"></a>ST_INTERSECTS (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
- Возвращает логическое выражение, указывающее, пересекается ли объект GeoJSON (точка, многоугольник или LineString), указанный в первом аргументе, со вторым объектом GeoJSON (точка, многоугольник или LineString).  
+ Возвращает логическое выражение, указывающее, пересекаются ли геообъектные объекты (точки, многоугольник, многомногоугольниковые или LineString), указанные в первом аргументе, с геознаками JSON (точкой, многоугольник, многоугольный или LineString) во втором аргументе.  
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -58,7 +58,7 @@ WHERE ST_INTERSECTS(a.location, {
 
 Эта системная функция будет полезна из [геопространственных индексов](index-policy.md#spatial-indexes).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

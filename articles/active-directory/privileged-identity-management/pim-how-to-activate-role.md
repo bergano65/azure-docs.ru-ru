@@ -15,11 +15,11 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 38992c15c23216aa81cda566a333d8e45f90b17e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369851"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004693"
 ---
 # <a name="activate-my-azure-ad-roles-in-pim"></a>Активация ролей Azure AD в PIM
 
@@ -226,6 +226,6 @@ Azure Active Directory (Azure AD) управление привилегиров�
 
  ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Активировать роли Azure AD в управление привилегированными пользователями](pim-how-to-activate-role.md)
