@@ -17,11 +17,11 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ad03942a2200c57475cf8a81d0fb08d475ec6964
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92458038"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95973224"
 ---
 # <a name="risky-ip-report-public-preview"></a>Отчет о рискованных IP-адресах (Предварительная версия)
 AD FS клиенты могут предоставлять доступ к конечным точкам проверки пароля в Интернете для предоставления службам проверки подлинности пользователям доступа к приложениям SaaS, таким как Microsoft 365. В этом случае вредоносный субъект может попытаться выполнить вход в систему AD FS, чтобы угадать пароль пользователя и получить доступ к ресурсам приложения. AD FS предоставляют функцию блокировки учетной записи экстрасети для предотвращения этих типов атак, начиная с AD FS в Windows Server 2012 R2. Если используется более ранняя версия, настоятельно рекомендуется обновить систему AD FS до Windows Server 2016. <br />
@@ -116,6 +116,6 @@ IP-адреса клиента действия входа со сбоем, аг
 Для доступа требуются разрешения глобального администратора или [читателя сведений о безопасности](../../role-based-access-control/built-in-roles.md#security-reader). Для получения доступа обратитесь к администратору.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Azure AD Connect Health](./whatis-azure-ad-connect.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)

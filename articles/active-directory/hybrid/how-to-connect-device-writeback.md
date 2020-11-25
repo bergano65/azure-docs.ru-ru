@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d526394ac89e2d29b2002004736e8480bb15b954
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279267"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95973428"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect: включение обратной записи устройств
 > [!NOTE]
@@ -61,7 +61,7 @@ ms.locfileid: "89279267"
 
     a. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
 
-    b. **Загрузка сценария PowerShell **. Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Укажите скачанный скрипт PowerShell **CreateDeviceContainer.ps1** администратору предприятия леса, в который будут записаны устройства.
+    b. **Загрузка сценария PowerShell**. Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Укажите скачанный скрипт PowerShell **CreateDeviceContainer.ps1** администратору предприятия леса, в который будут записаны устройства.
     ![Подготовка леса Active Directory](./media/how-to-connect-device-writeback/devicecontainercreds.png)
     
     Для подготовки леса Active Directory выполняются следующие операции:
@@ -97,7 +97,7 @@ ms.locfileid: "89279267"
   * В меню "Пуск" щелкните **Служба синхронизации**.
   * Откройте вкладку **Соединители** .
   * Найдите соединитель с типом "Доменные службы Active Directory" и выберите его.
-  * В разделе **действия**выберите **свойства**.
+  * В разделе **действия** выберите **свойства**.
   * Выберите **Подключиться к лесу Active Directory**. Убедитесь, что домен и имя пользователя, указанные в этом окне, совпадают с учетной записью, указанной в сценарии.
     ![Учетная запись соединителя в диспетчере службы синхронизации](./media/how-to-connect-device-writeback/connectoraccount.png)
 
