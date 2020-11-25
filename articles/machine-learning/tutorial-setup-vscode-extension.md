@@ -1,20 +1,20 @@
 ---
 title: Руководство по настройке расширения Visual Studio Code (предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Сведения о настройке расширения Машинного обучения Azure для Visual Studio Code
+description: Узнайте, как установить расширение Машинного обучения Azure для Visual Studio Code и выполнять скрипты с его помощью.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 07/09/2020
-ms.openlocfilehash: 48fb2ce3672634af202500ccb256e7730933fff8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/16/2020
+ms.openlocfilehash: f485c12bf82dde798a77175a3fab4d76488150c3
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86199757"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701207"
 ---
 # <a name="set-up-azure-machine-learning-visual-studio-code-extension-preview"></a>Настройка расширения Машинного обучения Azure для Visual Studio Code (предварительная версия)
 

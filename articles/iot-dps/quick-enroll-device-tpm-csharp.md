@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 872d1f43f1e9dc180e41a2bf625ca18b74522b40
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.openlocfilehash: 14f17c6716fe98a11d03e8d1021bcdb1058fe671
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409516"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968117"
 ---
 # <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-c-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" пакета SDK для служб C#
 
@@ -47,7 +47,7 @@ ms.locfileid: "91409516"
 
 ## <a name="create-the-individual-enrollment-sample"></a>Создание примера для отдельной регистрации
 
-В этом разделе показано, как создать консольное приложение .NET Core, которое добавляет отдельные регистрации устройства TPM в службу подготовки. С некоторыми изменениями c помощью этих шагов можно также создать консольное приложение [Windows IoT Базовая](https://developer.microsoft.com/en-us/windows/iot), чтобы добавлять отдельную регистрацию. Дополнительные сведения о разработке с помощью основных служб IoT см. в [этой документации](https://docs.microsoft.com/windows/iot-core/).
+В этом разделе показано, как создать консольное приложение .NET Core, которое добавляет отдельные регистрации устройства TPM в службу подготовки. С некоторыми изменениями c помощью этих шагов можно также создать консольное приложение [Windows IoT Базовая](https://developer.microsoft.com/en-us/windows/iot), чтобы добавлять отдельную регистрацию. Дополнительные сведения о разработке с помощью основных служб IoT см. в [этой документации](/windows/iot-core/).
 
 1. Откройте Visual Studio и выберите **Создать проект**. В окне **Создание проекта** выберите шаблон проекта **Консольное приложение (.NET Core)** для C# и нажмите кнопку **Далее**.
 

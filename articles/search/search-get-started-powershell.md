@@ -8,20 +8,20 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 08/17/2020
+ms.date: 11/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8ad5c73fee93d935ad050cea8feca2754649a61f
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 9dd9de9dcb01e9be200e07e5925d8b856432b620
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92058511"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94742384"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-powershell-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в PowerShell с помощью REST API
 > [!div class="op_single_selector"]
 > * [PowerShell (REST)]()
 > * [C#](./search-get-started-dotnet.md)
-> * [Postman (REST)](search-get-started-postman.md)
+> * [REST](search-get-started-rest.md)
 > * [Python](search-get-started-python.md)
 > * [Портал](search-get-started-portal.md)
 > 
@@ -38,7 +38,7 @@ ms.locfileid: "92058511"
 
 + [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
-## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
+## <a name="copy-a-key-and-url"></a>Копирование ключа и URL-адреса
 
 Вызовам REST требуется URL-адрес службы и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
@@ -46,7 +46,7 @@ ms.locfileid: "92058511"
 
 2. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-![Получение конечной точки HTTP и ключа доступа](media/search-get-started-postman/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+![Получение конечной точки HTTP и ключа доступа](media/search-get-started-rest/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 

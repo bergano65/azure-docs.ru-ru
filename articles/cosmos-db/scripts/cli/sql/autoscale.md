@@ -7,19 +7,19 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 07/29/2020
-ms.openlocfilehash: 854433b260e99ca48d0e43e1da9d8ceb89ad0af4
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 80cbb31bb60c97965c701665de9e3fe174e1cc2b
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93102196"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566203"
 ---
 # <a name="create-an-azure-cosmos-core-sql-api-account-database-and-container-with-autoscale-using-azure-cli"></a>Создание учетной записи, базы данных и контейнера API Core (SQL) с автомасштабированием в Azure Cosmos с помощью Azure CLI
 [!INCLUDE[appliesto-sql-api](../../../includes/appliesto-sql-api.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.73 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется Azure CLI версии 2.0.73 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="sample-script"></a>Пример скрипта
 

@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: f8b7e55d95c08a31a20503e329e64b9e65e3b723
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6e7e986f658570553763001afdd58d7bb1880f94
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91323929"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968185"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-tpm-device-using-nodejs-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства TPM с помощью пакета SDK устройств для Node.js для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
 
@@ -50,7 +50,7 @@ ms.locfileid: "91323929"
     git clone https://github.com/Azure/azure-utpm-c.git --recursive
     ```
 
-1. Перейдите к корневой папке GitHub и запустите симулятор [доверенного платформенного модуля](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview), чтобы он выступал для имитированного устройства в качестве [HSM](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/). Он ожидает передачи данных через сокет на портах 2321 и 2322. Не закрывайте командное окно. Симулятор должен работать, пока вы не выполните все инструкции из этого руководства: 
+1. Перейдите к корневой папке GitHub и запустите симулятор [доверенного платформенного модуля](/windows/device-security/tpm/trusted-platform-module-overview), чтобы он выступал для имитированного устройства в качестве [HSM](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/). Он ожидает передачи данных через сокет на портах 2321 и 2322. Не закрывайте командное окно. Симулятор должен работать, пока вы не выполните все инструкции из этого руководства: 
 
     ```cmd/sh
     .\azure-utpm-c\tools\tpm_simulator\Simulator.exe

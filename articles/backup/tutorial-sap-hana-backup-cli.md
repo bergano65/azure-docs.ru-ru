@@ -1,15 +1,15 @@
 ---
-title: Учебник по резервному копированию базы данных SAP HANA в Azure с помощью интерфейса командной строки
+title: Руководство. Резервное копирование базы данных SAP HANA в Azure с Azure CLI
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup через интерфейс командной строки Azure.
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f11e01c6af18cac956d58b9c692d7b57c8fe653a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41869ac4dfc0d3964fb48463e5f142b8391e2d94
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324966"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579259"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Резервное копирование баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
@@ -26,9 +26,9 @@ Azure CLI используется для создания ресурсов Azur
 
 Изучите [поддерживаемые на текущий момент сценарии](./sap-hana-backup-support-matrix.md#scenario-support) работы с SAP HANA.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Чтобы установить и использовать интерфейс командной строки локально, необходимо запустить Azure CLI версии xx.xxx.x или более поздней. Чтобы получить необходимую версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
+ - Для работы с этим учебником требуется Azure CLI версии 2.0.30 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
 

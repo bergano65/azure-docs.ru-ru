@@ -6,18 +6,18 @@ author: ms-puneet-nagpal
 ms.service: healthcare-apis
 ms.subservice: iomt
 ms.topic: tutorial
-ms.date: 08/03/2020
+ms.date: 11/13/2020
 ms.author: punagpal
-ms.openlocfilehash: ee286540d4fd740c5e7c1f8bd693fddd625eeae2
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 6c364cf84bada2a951ef3f224ea836885f0e3c1e
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93398153"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636322"
 ---
 # <a name="tutorial-receive-device-data-through-azure-iot-hub"></a>Руководство по Получение данных устройства через Центр Интернета вещей Azure
 
-Соединитель "Azure IoT для FHIR*" позволяет принимать данные из Интернета медицинских вещей (Internet of Medical Things, сокращенно IoMT) в Azure API для FHIR. В кратком руководстве [Развертывание соединителя "Azure IoT для FHIR"(предварительная версия) с помощью портала Azure](iot-fhir-portal-quickstart.md) показан пример устройства под управлением Azure IoT Central, которое [отправляет данные телеметрии](iot-fhir-portal-quickstart.md#connect-your-devices-to-iot) в соединитель "Azure IoT для FHIR". Соединитель "Azure IoT для FHIR" также может работать с устройствами, подготовленными и управляемыми через Центр Интернета вещей Azure. В этом учебнике показано, как подключить Центр Интернета вещей Azure к соединителю "Azure IoT для FHIR" и настроить маршрутизацию данных устройства.
+Соединитель Azure IoT для Ресурсов быстрого взаимодействия в сфере здравоохранения (FHIR&#174;) позволяет принимать данные из Интернета медицинских вещей (Internet of Medical Things, IoMT) в Azure API для FHIR. В кратком руководстве [Развертывание соединителя "Azure IoT для FHIR"(предварительная версия) с помощью портала Azure](iot-fhir-portal-quickstart.md) показан пример устройства под управлением Azure IoT Central, которое [отправляет данные телеметрии](iot-fhir-portal-quickstart.md#connect-your-devices-to-iot) в соединитель "Azure IoT для FHIR". Соединитель "Azure IoT для FHIR" также может работать с устройствами, подготовленными и управляемыми через Центр Интернета вещей Azure. В этом учебнике показано, как подключить Центр Интернета вещей Azure к соединителю "Azure IoT для FHIR" и настроить маршрутизацию данных устройства.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -113,6 +113,4 @@ ms.locfileid: "93398153"
 >[!div class="nextstepaction"]
 >[Шаблоны сопоставления для соединителя "Azure IoT для FHIR"](iot-mapping-templates.md)
 
-*На портале Azure соединитель "Azure IoT для FHIR" называется соединителем IoT (предварительная версия).
-
-FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.
+*На портале Azure соединитель Azure IoT для FHIR называется соединителем IoT (предварительная версия). FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.

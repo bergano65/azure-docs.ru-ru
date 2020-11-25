@@ -1,15 +1,15 @@
 ---
 title: Сведения о соответствии требованиям стандарта HIPAA HITRUST 9.2
 description: Сведения о встроенной инициативе по соответствию требованиям стандарта HIPAA HITRUST 9.2. Каждый элемент управления сопоставляется с одним или несколькими определениями Политики Azure, которые помогают выполнять оценку.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 499ecccd6d9a98b69e9e36f72fbf87d65d242f6d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: c177abaea8dd6d38814e39aef7cdfd63981a6856
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310647"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94694265"
 ---
 # <a name="details-of-the-hipaa-hitrust-92-regulatory-compliance-built-in-initiative"></a>Сведения о встроенной инициативе по соответствию требованиям стандарта HIPAA HITRUST 9.2
 
@@ -86,7 +86,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-facilitates-information-sharing-by-enabling-authorized-users-to-determine-a-business-partners-access-when-discretion-is-allowed-as-defined-by-the-organization-and-by-employing-manual-processes-or-automated-mechanisms-to-assist-users-in-making-information-sharingcollaboration-decisions"></a>Организация упрощает обмен информацией, позволяя полномочным пользователям определять права доступа бизнес-партнера, если такая свобода действия допускается организацией, и применять процессы, выполняемые вручную, или автоматические механизмы, помогающие пользователям в принятии решений по обмену информацией и совместной работе.
 
-**Идентификатор**. 1149.01c2System.9 — 01.c **Ответственность**: Неприменимо
+**Идентификатор**. 1149.01c2System.9 — 01.c **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -94,7 +94,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-access-control-system-for-the-system-components-storing-processing-or-transmitting-covered-information-is-set-with-a-default-quotdeny-allquot-setting"></a>Система управления доступом для системных компонентов, хранящая, обрабатывающая или передающая соответствующие сведения, задается параметром по умолчанию &quot;Запрещено все&quot;.
 
-**Идентификатор**. 1150.01c2System.10 — 01.c **Ответственность**: Неприменимо
+**Идентификатор**. 1150.01c2System.10 — 01.c **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -144,7 +144,7 @@ ms.locfileid: "92310647"
 
 ### <a name="remote-access-by-vendors-and-business-partners-eg-for-remote-maintenance-is-disableddeactivated-when-not-in-use"></a>Если удаленный доступ не используется поставщиками и бизнес-партнерами (например, для удаленного обслуживания), он отключается или деактивируется.
 
-**Идентификатор**. 1117.01j1Organizational.23 — 01.j **Ответственность**: Неприменимо
+**Идентификатор**. 1117.01j1Organizational.23 — 01.j **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -160,7 +160,7 @@ ms.locfileid: "92310647"
 
 ### <a name="network-equipment-is-checked-for-unanticipated-dial-up-capabilities"></a>Сетевое оборудование проверяется на наличие непредвиденных возможностей коммутируемого подключения.
 
-**Идентификатор**. 1119.01j2Organizational.3 — 01.j **Ответственность**: Неприменимо
+**Идентификатор**. 1119.01j2Organizational.3 — 01.j **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -176,7 +176,7 @@ ms.locfileid: "92310647"
 
 ### <a name="if-encryption-is-not-used-for-dial-up-connections-the-cio-or-hisher-designated-representative-provides-specific-written-authorization"></a>Если для коммутируемых подключений не используется шифрование, директор по информационной безопасности или назначенный им представитель выдает явное письменное разрешение.
 
-**Идентификатор**. 1173.01j1Organizational.6 — 01.j **Ответственность**: Неприменимо
+**Идентификатор**. 1173.01j1Organizational.6 — 01.j **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -184,7 +184,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-protects-wireless-access-to-systems-containing-sensitive-information-by-authenticating-both-users-and-devices"></a>Организация защищает беспроводный доступ к системам, содержащим конфиденциальные данные, проверяя подлинность как пользователей, так и устройств.
 
-**Идентификатор**. 1174.01j1Organizational.7 — 01.j **Ответственность**: Неприменимо
+**Идентификатор**. 1174.01j1Organizational.7 — 01.j **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -200,7 +200,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-requires-a-callback-capability-with-re-authentication-to-verify-dial-up-connections-from-authorized-locations"></a>Организация требует наличия функции обратного вызова с повторной проверкой подлинности для проверки коммутируемых подключений из авторизованных расположений.
 
-**Идентификатор**. 1176.01j2Organizational.5 — 01.j **Ответственность**: Неприменимо
+**Идентификатор**. 1176.01j2Organizational.5 — 01.j **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -322,7 +322,7 @@ ms.locfileid: "92310647"
 
 ### <a name="networks-are-segregated-from-production-level-networks-when-migrating-physical-servers-applications-or-data-to-virtualized-servers"></a>Сети изолируются от сетей производственного уровня при переносе физических серверов, приложений или данных на виртуализированные серверы.
 
-**Идентификатор**. 0894.01m2Organizational.7 — 01.m **Ответственность**: Неприменимо
+**Идентификатор**. 0894.01m2Organizational.7 — 01.m **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -459,7 +459,7 @@ ms.locfileid: "92310647"
 
 ### <a name="non-organizational-users-all-information-system-users-other-than-organizational-users-such-as-patients-customers-contractors-or-foreign-nationals-or-processes-acting-on-behalf-of-non-organizational-users-determined-to-need-access-to-information-residing-on-the-organizations-information-systems-are-uniquely-identified-and-authenticated"></a>Если установлено, что пользователям, не являющимся организациями (к числу которых относятся все пользователи информационной системы, отличные от пользователей-организаций, например пациенты, клиенты, подрядчики или иностранные лица), либо процессам, выполняемым от их имени, необходим доступ к информации, размещенной в информационных системах организации, такие пользователи и процессы однозначно идентифицируются и проходят проверку подлинности.
 
-**Идентификатор**. 11110.01q1Organizational.6 — 01.q **Ответственность**: Неприменимо
+**Идентификатор**. 11110.01q1Organizational.6 — 01.q **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -483,7 +483,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-requires-that-electronic-signatures-unique-to-one-individual-cannot-be-reused-by-or-reassigned-to-anyone-else"></a>Организация требует, чтобы уникальные для одного лица электронные подписи не могли использоваться повторно или переназначаться другим пользователям.
 
-**Идентификатор**. 11208.01q1Organizational.8 — 01.q **Ответственность**: Неприменимо
+**Идентификатор**. 11208.01q1Organizational.8 — 01.q **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -491,7 +491,7 @@ ms.locfileid: "92310647"
 
 ### <a name="electronic-signatures-and-handwritten-signatures-executed-to-electronic-records-shall-be-linked-to-their-respective-electronic-records"></a>Электронные подписи и рукописные подписи, выполненные для электронных записей, должны быть связаны с соответствующими электронными записями.
 
-**Идентификатор**. 11210.01q2Organizational.10 — 01.q **Ответственность**: Неприменимо
+**Идентификатор**. 11210.01q2Organizational.10 — 01.q **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -499,7 +499,7 @@ ms.locfileid: "92310647"
 
 ### <a name="signed-electronic-records-shall-contain-information-associated-with-the-signing-in-human-readable-format"></a>Подписанные электронные записи должны содержать связанные с подписыванием сведения в понятном для человека формате.
 
-**Идентификатор**. 11211.01q2Organizational.11 — 01.q **Ответственность**: Неприменимо
+**Идентификатор**. 11211.01q2Organizational.11 — 01.q **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -541,7 +541,7 @@ ms.locfileid: "92310647"
 
 ### <a name="remote-access-connections-between-the-organization-and-external-parties-are-encrypted"></a>Подключения для обеспечения удаленного доступа между организацией и внешними сторонами шифруются.
 
-**Идентификатор**. 1402.05i1Organizational.45 — 05.i **Ответственность**: Неприменимо
+**Идентификатор**. 1402.05i1Organizational.45 — 05.i **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -591,7 +591,7 @@ ms.locfileid: "92310647"
 
 ### <a name="a-secure-audit-record-is-created-for-all-activities-on-the-system-create-read-update-delete-involving-covered-information"></a>Защищенная запись аудита создается для всех действий в системе (создание, чтение, обновление, удаление), связанных с соответствующей информацией.
 
-**Идентификатор**. 1202.09aa1System.1 — 09.aa **Ответственность**: Неприменимо
+**Идентификатор**. 1202.09aa1System.1 — 09.aa **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -658,7 +658,7 @@ ms.locfileid: "92310647"
 
 ### <a name="all-disclosures-of-covered-information-within-or-outside-of-the-organization-are-logged-including-type-of-disclosure-datetime-of-the-event-recipient-and-sender"></a>В журнал заносятся данные обо всех случаях раскрытия соответствующей информации в пределах или за пределами организации, в том числе сведения о типе разглашения, дате и времени события, получателе и отправителе.
 
-**Идентификатор**. 1210.09aa3System.3 — 09.aa **Ответственность**: Неприменимо
+**Идентификатор**. 1210.09aa3System.3 — 09.aa **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -667,7 +667,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-verifies-every-ninety-90-days-for-each-extract-of-covered-information-recorded-that-the-data-is-erased-or-its-use-is-still-required"></a>Каждые 90 (девяносто) дней организация проверяет, была ли удалена вся соответствующая извлеченная информация или же ее по-прежнему необходимо использовать.
 
-**Идентификатор**. 1211.09aa3System.4 — 09.aa **Ответственность**: Неприменимо
+**Идентификатор**. 1211.09aa3System.4 — 09.aa **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -891,7 +891,7 @@ ms.locfileid: "92310647"
 
 ### <a name="when-the-backup-service-is-delivered-by-the-third-party-the-service-level-agreement-includes-the-detailed-protections-to-control-confidentiality-integrity-and-availability-of-the-backup-information"></a>Если услуга резервного копирования предоставляется сторонним поставщиком, соглашение об уровне обслуживания включает в себя подробное описание средств защиты, позволяющих контролировать конфиденциальность, целостность и доступность данных резервных копий.
 
-**Идентификатор**. 1620.09l1Organizational.8 — 09.l **Ответственность**: Неприменимо
+**Идентификатор**. 1620.09l1Organizational.8 — 09.l **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -915,7 +915,7 @@ ms.locfileid: "92310647"
 
 ### <a name="covered-information-is-backed-up-in-an-encrypted-format-to-ensure-confidentiality"></a>Для обеспечения конфиденциальности для соответствующих сведений создаются резервные копии в зашифрованном формате.
 
-**Идентификатор**. 1623.09l2Organizational.4 — 09.l **Ответственность**: Неприменимо
+**Идентификатор**. 1623.09l2Organizational.4 — 09.l **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -939,7 +939,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-ensures-a-current-retrievable-copy-of-covered-information-is-available-before-movement-of-servers"></a>Организация гарантирует наличие доступной для извлечения копии соответствующей информации перед перемещением серверов.
 
-**Идентификатор**. 1626.09l3Organizational.5 — 09.l **Ответственность**: Неприменимо
+**Идентификатор**. 1626.09l3Organizational.5 — 09.l **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -955,7 +955,7 @@ ms.locfileid: "92310647"
 
 ### <a name="workforce-members-roles-and-responsibilities-in-the-data-backup-process-are-identified-and-communicated-to-the-workforce-in-particular-bring-your-own-device-byod-users-are-required-to-perform-backups-of-organizational-andor-client-data-on-their-devices"></a>Роли и обязанности сотрудников в процессе резервного копирования данных определены и известны сотрудникам. В частности, для создания резервных копий данных организации и (или) клиентов на своих устройствах сотрудники должны быть пользователями BYOD (участниками инициативы "Принеси свое устройство").
 
-**Идентификатор**. 1699.09l1Organizational.10 — 09.l **Ответственность**: Неприменимо
+**Идентификатор**. 1699.09l1Organizational.10 — 09.l **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1009,7 +1009,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-builds-a-firewall-configuration-that-restricts-connections-between-un-trusted-networks-and-any-system-components-in-the-covered-information-environment-and-any-changes-to-the-firewall-configuration-are-updated-in-the-network-diagram"></a>Организация создает конфигурацию брандмауэра, которая ограничивает подключения между ненадежными сетями и любыми компонентами системы в соответствующей информационной среде. Схема сети обновляется с учетом всех изменений в конфигурации брандмауэра.
 
-**Идентификатор**. 0863.09m2Organizational.910 — 09.m **Ответственность**: Неприменимо
+**Идентификатор**. 0863.09m2Organizational.910 — 09.m **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1017,7 +1017,7 @@ ms.locfileid: "92310647"
 
 ### <a name="usage-restrictions-and-implementation-guidance-are-formally-defined-for-voip-including-the-authorization-and-monitoring-of-the-service"></a>Для протокола VoIP формально определены ограничения на использование и рекомендации по реализации, в том числе для авторизации и мониторинга службы.
 
-**Идентификатор**. 0864.09m2Organizational.12 — 09.m **Ответственность**: Неприменимо
+**Идентификатор**. 0864.09m2Organizational.12 — 09.m **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1025,7 +1025,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-i-authorizes-connections-from-the-information-system-to-other-information-systems-outside-of-the-organization-through-the-use-of-interconnection-security-agreements-or-other-formal-agreement-ii-documents-each-connection-the-interface-characteristics-security-requirements-and-the-nature-of-the-information-communicated-iii-employs-a-deny-all-permit-by-exception-policy-for-allowing-connections-from-the-information-system-to-other-information-systems-outside-of-the-organization-and-iv-applies-a-default-deny-rule-that-drops-all-traffic-via-host-based-firewalls-or-port-filtering-tools-on-its-endpoints-workstations-servers-etc-except-those-services-and-ports-that-are-explicitly-allowed"></a>Организация 1) разрешает подключения из информационной системы к другим информационным системам за пределами организации, используя соглашения о безопасности при взаимном подключении или другое формальное соглашение; 2) документирует каждое подключение, характеристики интерфейса, требования безопасности и характер сведений, которыми обмениваются системы; 3) использует политику "Запрещено все, кроме разрешенного исключениями" для разрешения подключений из информационной системы к другим информационным системам за пределами организации; 4) применяет правило "Запрещено по умолчанию", которое удаляет весь трафик, проходящий через брандмауэры на узлах или средства фильтрации портов на ее конечных точках (рабочих станциях, серверах и т. д.), за исключением трафика тех служб и портов, которые разрешены явно.
 
-**Идентификатор**. 0865.09m2Organizational.13 — 09.m **Ответственность**: Неприменимо
+**Идентификатор**. 0865.09m2Organizational.13 — 09.m **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1041,7 +1041,7 @@ ms.locfileid: "92310647"
 
 ### <a name="wireless-access-points-are-placed-in-secure-areas-and-shut-down-when-not-in-use-eg-nights-weekends"></a>Точки беспроводного доступа размещаются в безопасных областях, а на время, когда они не используются (например, ночью или в выходные дни), их работа завершается.
 
-**Идентификатор**. 0867.09m3Organizational.17 — 09.m **Ответственность**: Неприменимо
+**Идентификатор**. 0867.09m3Organizational.17 — 09.m **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1049,7 +1049,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-builds-a-firewall-configuration-to-restrict-inbound-and-outbound-traffic-to-that-which-is-necessary-for-the-covered-data-environment"></a>Организация создает конфигурацию брандмауэра, ограничивающую входящий и исходящий трафик только тем, который необходим для соответствующей среды данных.
 
-**Идентификатор**. 0868.09m3Organizational.18 — 09.m **Ответственность**: Неприменимо
+**Идентификатор**. 0868.09m3Organizational.18 — 09.m **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1108,7 +1108,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-reviews-and-updates-the-interconnection-security-agreements-on-an-ongoing-basis-verifying-enforcement-of-security-requirements"></a>Организация проверяет и обновляет соглашения о безопасности взаимодействия на постоянной основе, а также проверяет соблюдение требований безопасности.
 
-**Идентификатор**. 0885.09n2Organizational.3 — 09.n **Ответственность**: Неприменимо
+**Идентификатор**. 0885.09n2Organizational.3 — 09.n **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1132,7 +1132,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-contract-with-the-externaloutsourced-service-provider-includes-the-specification-that-the-service-provider-is-responsible-for-the-protection-of-covered-information-shared"></a>Контракт с внешним поставщиком или аутсорсером услуг включает положение о том, что поставщик услуг несет ответственность за защиту соответствующей информации, к которой ему предоставлен общий доступ.
 
-**Идентификатор**. 0888.09n2Organizational.6 — 09.n **Ответственность**: Неприменимо
+**Идентификатор**. 0888.09n2Organizational.6 — 09.n **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1142,7 +1142,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-based-on-the-data-classification-level-registers-media-including-laptops-prior-to-use-places-reasonable-restrictions-on-how-such-media-be-used-and-provides-an-appropriate-level-of-physical-and-logical-protection-including-encryption-for-media-containing-covered-information-until-properly-destroyed-or-sanitized"></a>На основе требований к уровню классификации данных организация регистрирует носители (включая ноутбуки) перед использованием, налагает обоснованные ограничения на использование этих носителей и обеспечивает соответствующий уровень физической и логической защиты (включая шифрование) для носителей, которые содержат защищаемые сведения, вплоть до момента их правильного уничтожения или очистки.
 
-**Идентификатор**. 0301.09o1Organizational.123 — 09.o **Ответственность**: Неприменимо
+**Идентификатор**. 0301.09o1Organizational.123 — 09.o **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1150,7 +1150,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-protects-and-controls-media-containing-sensitive-information-during-transport-outside-of-controlled-areas"></a>Организация защищает и контролирует носители, содержащие конфиденциальные сведения, во время транспортировки за пределами контролируемых областей.
 
-**Идентификатор**. 0302.09o2Organizational.1 — 09.o **Ответственность**: Неприменимо
+**Идентификатор**. 0302.09o2Organizational.1 — 09.o **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1158,7 +1158,7 @@ ms.locfileid: "92310647"
 
 ### <a name="digital-and-non-digital-media-requiring-restricted-use-and-the-specific-safeguards-used-to-restrict-their-use-are-identified"></a>Идентифицируются цифровые и нецифровые носители, использование которых должно быть ограничено с помощью определенных средств защиты.
 
-**Идентификатор**. 0303.09o2Organizational.2 — 09.o **Ответственность**: Неприменимо
+**Идентификатор**. 0303.09o2Organizational.2 — 09.o **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1166,7 +1166,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-restricts-the-use-of-writable-removable-media-and-personally-owned-removable-media-in-organizational-systems"></a>Организация ограничивает использование съемных носителей с возможностью записи и персональных съемных носителей в системах организации.
 
-**Идентификатор**. 0304.09o3Organizational.1 — 09.o **Ответственность**: Неприменимо
+**Идентификатор**. 0304.09o3Organizational.1 — 09.o **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1234,7 +1234,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-limits-the-use-of-organization-controlled-portable-storage-media-by-authorized-individuals-on-external-information-systems"></a>Организация ограничивает использование переносимых запоминающих устройств, управляемых ею, уполномоченными пользователями из внешних информационных систем.
 
-**Идентификатор**. 0915.09s2Organizational.2 — 09.s **Ответственность**: Неприменимо
+**Идентификатор**. 0915.09s2Organizational.2 — 09.s **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1242,7 +1242,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-information-system-prohibits-remote-activation-of-collaborative-computing-devices-and-provides-an-explicit-indication-of-use-to-users-physically-present-at-the-devices"></a>Информационная система запрещает удаленную активацию для совместно используемых вычислительных устройств и явно оповещает об использовании пользователей с физическим доступом к устройствам.
 
-**Идентификатор**. 0916.09s2Organizational.4 — 09.s **Ответственность**: Неприменимо
+**Идентификатор**. 0916.09s2Organizational.4 — 09.s **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1268,7 +1268,7 @@ ms.locfileid: "92310647"
 
 ### <a name="data-involved-in-electronic-commerce-and-online-transactions-is-checked-to-determine-if-it-contains-covered-information"></a>Данные, используемые в электронной коммерции и интерактивных транзакциях, проверяются на наличие в них соответствующей информации.
 
-**Идентификатор**. 0943.09y1Organizational.1 — 09.y **Ответственность**: Неприменимо
+**Идентификатор**. 0943.09y1Organizational.1 — 09.y **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1276,7 +1276,7 @@ ms.locfileid: "92310647"
 
 ### <a name="protocols-used-to-communicate-between-all-involved-parties-are-secured-using-cryptographic-techniques-eg-ssl"></a>Протоколы, используемые для обмена данными между всеми участвующими сторонами, защищаются с помощью методов шифрования (например, SSL).
 
-**Идентификатор**. 0945.09y1Organizational.3 — 09.y **Ответственность**: Неприменимо
+**Идентификатор**. 0945.09y1Organizational.3 — 09.y **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1284,7 +1284,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-requires-the-use-of-encryption-between-and-the-use-of-electronic-signatures-by-each-of-the-parties-involved-in-the-transaction"></a>Организация требует использования шифрования при обмене данными между сторонами, вовлеченными в транзакцию, и использования электронных подписей каждой из них.
 
-**Идентификатор**. 0946.09y2Organizational.14 — 09.y **Ответственность**: Неприменимо
+**Идентификатор**. 0946.09y2Organizational.14 — 09.y **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1292,7 +1292,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-organization-ensures-the-storage-of-the-transaction-details-are-located-outside-of-any-publicly-accessible-environments-eg-on-a-storage-platform-existing-on-the-organizations-intranet-and-not-retained-and-exposed-on-a-storage-medium-directly-accessible-from-the-internet"></a>Организация гарантирует, что хранилище сведений о транзакциях находится за пределами общедоступных сред (например, на платформе хранения, существующей в интрасети организации) и что эти сведения не будут храниться и предоставляться на носителях для хранения данных, доступных через Интернет.
 
-**Идентификатор**. 0947.09y2Organizational.2 — 09.y **Ответственность**: Неприменимо
+**Идентификатор**. 0947.09y2Organizational.2 — 09.y **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1300,7 +1300,7 @@ ms.locfileid: "92310647"
 
 ### <a name="where-a-trusted-authority-is-used-eg-for-the-purposes-of-issuing-and-maintaining-digital-signatures-andor-digital-certificates-security-is-integrated-and-embedded-throughout-the-entire-end-to-end-certificatesignature-management-process"></a>Если используется доверенный центр (например, для выдачи и обслуживания цифровых подписей и (или) цифровых сертификатов), защита полностью интегрирована и встроена в комплексный процесс управления сертификатами и подписями.
 
-**Идентификатор**. 0948.09y2Organizational.3 — 09.y **Ответственность**: Неприменимо
+**Идентификатор**. 0948.09y2Organizational.3 — 09.y **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1308,7 +1308,7 @@ ms.locfileid: "92310647"
 
 ### <a name="the-protocols-used-for-communications-are-enhanced-to-address-any-new-vulnerability-and-the-updated-versions-of-the-protocols-are-adopted-as-soon-as-possible"></a>Протоколы, используемые для обмена данными, улучшаются для защиты от любой новой уязвимости. Новые версии протоколов будут внедряться как можно скорее.
 
-**Идентификатор**. 0949.09y2Organizational.5 — 09.y **Ответственность**: Неприменимо
+**Идентификатор**. 0949.09y2Organizational.5 — 09.y **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1392,7 +1392,7 @@ ms.locfileid: "92310647"
 
 ### <a name="where-development-is-outsourced-change-control-procedures-to-address-security-are-included-in-the-contracts-and-specifically-require-the-developer-to-track-security-flaws-and-flaw-resolution-within-the-system-component-or-service-and-report-findings-to-organization-defined-personnel-or-roles"></a>Если разработка передается на аутсорсинг, процедуры управления изменениями для обеспечения безопасности включены в контракты, а разработчик обязан отслеживать недостатки системы безопасности и контролировать их устранение в системе, компоненте или службе, а также сообщать о результатах определенному организацией персоналу или ролям.
 
-**Идентификатор**. 0640.10k2Organizational.1012 — 10.k **Ответственность**: Неприменимо
+**Идентификатор**. 0640.10k2Organizational.1012 — 10.k **Ответственность**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -1442,7 +1442,7 @@ ms.locfileid: "92310647"
 |[Необходимо устранить уязвимости в конфигурациях безопасности контейнера.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe8cbc669-f12d-49eb-93e7-9273119e9933) |Аудит уязвимостей в конфигурации безопасности на компьютерах с установленным Docker и отображение результатов в качестве рекомендаций в Центре безопасности Azure. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ContainerBenchmark_Audit.json) |
 |[Уязвимости конфигурации безопасности на ваших компьютерах должны быть устранены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe1e5fd5d-3e4c-4ce1-8661-7d1873ae6b15) |Серверы, не соответствующие заданным базовым показателям, будут отслеживаться центром безопасности Azure для предоставления рекомендаций. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_OSVulnerabilities_Audit.json) |
 |[Уязвимости в конфигурации безопасности в масштабируемом наборе виртуальных машин должны быть устранены.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3c735d8a-a4ba-4a3a-b7cf-db7754cf57f4) |Аудит наличия уязвимостей ОС в ваших масштабируемых наборах виртуальных машин для защиты их от атак. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssOSVulnerabilities_Audit.json) |
-|[Уязвимости в базах данных SQL должны быть устранены.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Мониторинг результатов оценки уязвимостей и рекомендации по исправлению уязвимостей баз данных. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
+|[Уязвимости в базах данных SQL должны быть устранены.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Мониторинг результатов оценки уязвимостей и рекомендации по исправлению уязвимостей баз данных. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
 |[Уязвимости должны быть устранены с помощью решения для оценки уязвимостей](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F760a85ff-6162-42b3-8d70-698e268f648c) |Отслеживает уязвимости, обнаруженные решением оценки уязвимости, и виртуальные машины без решения оценки уязвимости в центре безопасности Azure для предоставления рекомендаций. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VMVulnerabilities_Audit.json) |
 |[В Управляемых экземплярах SQL должна быть включена оценка уязвимостей](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1b7aa243-30e4-4c9e-bca8-d0d3022b634a) |Проверка каждого Управляемого экземпляра SQL с отключенной регулярной оценкой уязвимостей. Решение "Оценка уязвимостей" может обнаруживать, отслеживать и помогать исправлять потенциальные уязвимости баз данных. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnManagedInstance_Audit.json) |
 |[На серверах SQL Server должна быть включена оценка уязвимости](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fef2a8f2a-b3d9-49cd-a8a8-9a3aaaf647d9) |Аудит серверов Azure SQL, у которых отключена регулярная оценка уязвимостей. Решение "Оценка уязвимостей" может обнаруживать, отслеживать и помогать исправлять потенциальные уязвимости баз данных. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/VulnerabilityAssessmentOnServer_Audit.json) |
@@ -1502,7 +1502,7 @@ ms.locfileid: "92310647"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Уязвимости в базах данных SQL должны быть устранены.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Мониторинг результатов оценки уязвимостей и рекомендации по исправлению уязвимостей баз данных. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
+|[Уязвимости в базах данных SQL должны быть устранены.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffeedbf84-6b99-488c-acc2-71c829aa5ffc) |Мониторинг результатов оценки уязвимостей и рекомендации по исправлению уязвимостей баз данных. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_SQLDbVulnerabilities_Audit.json) |
 
 ### <a name="vulnerability-scanning-tools-include-the-capability-to-readily-update-the-information-system-vulnerabilities-scanned"></a>Инструменты проверки на уязвимости включают возможность быстрого обновления для защиты от выявленных уязвимостей информационной системы.
 
@@ -1544,7 +1544,7 @@ ms.locfileid: "92310647"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Объекты Key Vault должны быть восстанавливаемыми](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Эта политика позволяет проверить наличие невосстанавливаемых объектов Key Vault. Функция обратимого удаления позволяет в течение определенного периода (90 дней) эффективно сохранять ресурсы даже после операции удаления. Ресурсы при этом как будто удалены. Если защита от очистки включена, хранилище или удаленный из него объект нельзя удалить без возможности восстановления в течение 90 дней после первоначального удаления. Эти хранилища и объекты по-прежнему можно восстановить, гарантируя клиентам, что политика хранения будет соблюдена. |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
+|[В хранилище ключей должна быть включена защита от очистки](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Удаление хранилища ключей злоумышленником может привести к необратимой потере данных. Потенциальный злоумышленник в вашей организации может получить доступ к удалению и очистке хранилищ ключей. Защита от очистки позволяет оградить вас от атак злоумышленников. Для этого применяется обязательный период хранения данных для хранилищ ключей, которые были обратимо удалены. Ни корпорация Майкрософт, ни пользователи вашей организации не смогут очистить хранилища ключей во время периода хранения при обратимом удалении. |Audit, Deny, Disabled |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
 
 ### <a name="business-impact-analysis-are-used-to-evaluate-the-consequences-of-disasters-security-failures-loss-of-service-and-service-availability"></a>Для оценки последствий аварийной ситуации, сбоев системы безопасности, службы или ее доступности используется анализ влияния на бизнес-процессы.
 

@@ -1,7 +1,7 @@
 ---
 title: Руководство по прогнозированию цен на автомобили с помощью конструктора
 titleSuffix: Azure Machine Learning
-description: Узнайте, как обучить, оценить и развернуть модель машинного обучения с помощью интерфейса с поддержкой перетаскивания. Это первый учебник серии, посвященной прогнозированию цен на автомобили с использованием линейной регрессии.
+description: Обучение модели машинного обучения для прогнозирования цен на автомобили с помощью линейной регрессии. Это руководство представляет собой первую часть серии, состоящей из двух частей.
 author: peterclu
 ms.author: peterlu
 services: machine-learning
@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 09/28/2020
 ms.custom: designer
-ms.openlocfilehash: d9422cfb9bd8e5539f1a9b43d6fb7b137778f3d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0475e7a7b9bb40e77fe23362ff098350037bdd30
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91404924"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94555283"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer"></a>Руководство по прогнозированию цен на автомобили с помощью конструктора
 
@@ -130,7 +130,7 @@ ms.locfileid: "91404924"
 
 1. В области "Сведения о модуле" справа от холста щелкните **Изменить столбец**.
 
-1. Разверните раскрывающийся список **Имена столбцов** рядом с пунктом **Включить**и выберите **Все столбцы**.
+1. Разверните раскрывающийся список **Имена столбцов** рядом с пунктом **Включить** и выберите **Все столбцы**.
 
 1. Щелкните **+** , чтобы добавить новое правило.
 
@@ -221,7 +221,11 @@ ms.locfileid: "91404924"
     > [!IMPORTANT]
     > Убедитесь, что левый выходной порт модуля **разделения данных** подключается к модулю **обучения модели**. Левый порт содержит набор для обучения. Правый порт содержит набор для проверки.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Выбор столбца" справа от холста щелкните селектор **Изменить столбец**.
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Снимок экрана: правильная конфигурация модуля Train Model (Обучение модели). Модуль Linear Regression (Линейная регрессия) присоединяется к левому порту модуля Train Model (Обучение модели), а модуль Split Data (Разделение данных) — к правому порту модуля Train Model (Обучение модели)":::
+
+1. Выберите модуль **Train Model** (Обучение модели).
+
+1. В области "Сведения о модуле" справа от холста щелкните селектор **Изменить столбец**.
 
 1. В диалоговом окне **Label column** (Столбец метки) разверните раскрывающееся меню и выберите **Имена столбцов**. 
 
@@ -232,7 +236,7 @@ ms.locfileid: "91404924"
 
     Теперь конвейер будет выглядеть следующим образом:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Выбор столбца":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера после добавления модуля Обучение модели":::
 
 ### <a name="add-the-score-model-module"></a>Добавление модуля "Score Model" (Оценка модели)
 
@@ -252,7 +256,7 @@ ms.locfileid: "91404924"
 
     Готовый вариант конвейера должен выглядеть примерно так:
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Выбор столбца":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера":::
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
@@ -281,7 +285,7 @@ ms.locfileid: "91404924"
 
     Здесь можно просмотреть прогнозируемые цены и фактические цены из тестовых данных.
 
-    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Выбор столбца":::
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Снимок экрана: визуализация выходных данных с выделенным столбцом Scored Label (Метка с оценкой)":::
 
 ### <a name="evaluate-models"></a>Анализ моделей
 

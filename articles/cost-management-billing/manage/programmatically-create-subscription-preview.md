@@ -5,26 +5,34 @@ author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 10/29/2020
+ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3ffdeb0add8622e1b9f28f9603dc146b78f742cd
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 68d890386d53b4115c773b128f8678bac9579e53
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043289"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844342"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-preview-apis"></a>Программное создание подписок Azure с помощью предварительных версий API
 
-Эта статья поможет программно создавать подписки Azure с помощью уже устаревшей предварительной версии нашего API. Мы выпустили [более новую версию API](programmatically-create-subscription.md). Эта статья окажется полезна, если вы не хотите использовать последнюю версию. В этой статье Вы узнаете как создавать подписки программно с помощью Azure Resource Manager.
+Эта статья поможет программно создавать подписки Azure с помощью уже устаревшей предварительной версии нашего API. В этой статье Вы узнаете как создавать подписки программно с помощью Azure Resource Manager.
+
+Наши новые статьи о последних версиях API для использования с разными типами подписок для соглашений Azure:
+
+- [Создание подписок EA программными средствами с помощью API последней версии](programmatically-create-subscription-enterprise-agreement.md)
+- [Создание подписок MCA программными средствами с помощью API последней версии](programmatically-create-subscription-microsoft-customer-agreement.md)
+- [Создание подписок MPA программными средствами с помощью API последней версии](Programmatically-create-subscription-microsoft-customer-agreement.md)
+
+Но эта статья все равно будет полезна, если вы не хотите использовать последнюю версию API.
 
 Создавать подписки программным способом могут клиенты Azure с учетной записью выставления счетов для следующих типов соглашений:
 
-- [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/)
-- [Клиентское соглашение Майкрософт (MCA)](https://azure.microsoft.com/pricing/purchase-options/microsoft-customer-agreement/)
-- [Соглашение с партнером Майкрософт (ПСМ)](https://www.microsoft.com/licensing/news/introducing-microsoft-partner-agreement)
+- Соглашение Enterprise
+- Клиентское соглашение Майкрософт (MCA);
+- Соглашение с партнером Майкрософт (ПСМ)
 
 Когда вы создаете подписки Azure программными средствами, они регулируются соглашением, в соответствии с которым вы получили службы Azure от корпорации Майкрософт или уполномоченного торгового посредника. Дополнительные сведения можно найти на странице [Юридическая информация Службы Microsoft Azure](https://azure.microsoft.com/support/legal/).
 
@@ -324,7 +332,7 @@ POST https://management.azure.com/providers/Microsoft.Billing/billingAccounts/<b
 
 ### <a name="create-a-subscription-for-an-invoice-section"></a>Создание подписки для раздела счета
 
-В следующем примере создается подписка с именем *Dev Team subscription* типа *План Microsoft Azure* для раздела счета *Development*. Счет за подписку будет выставлен для профиля выставления счетов *Contoso finance's* , а сама подписка будет указана в разделе *Development* этого счета.
+В следующем примере создается подписка с именем *Dev Team subscription* типа *План Microsoft Azure* для раздела счета *Development*. Счет за подписку будет выставлен для профиля выставления счетов *Contoso finance's*, а сама подписка будет указана в разделе *Development* этого счета.
 
 Выполните следующий запрос, заменив идентификатор `<invoiceSectionId>` на `invoiceSectionId`, скопированный на втором шаге (```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_2019-05-31/billingProfiles/PBFV-XXXX-XXX-XXX/invoiceSections/GJGR-XXXX-XXX-XXX```). В параметрах запроса API необходимо передать `billingProfileId` и `skuId`, скопированные на втором шаге. Сведения об указании владельцев см. в разделе [Получение идентификаторов объектов пользователей](grant-access-to-create-subscription.md#userObjectId).
 
@@ -504,9 +512,9 @@ GET https://management.azure.com<customerId>?$expand=resellers&api-version=2019-
 
 ### <a name="create-a-subscription-for-a-customer"></a>Создание подписки для клиента
 
-В следующем примере создается подписка с именем *Dev Team subscription* для *Fabrikam toys* , которая затем связывается с торговым посредником *Wingtip*. 
+В следующем примере создается подписка с именем *Dev Team subscription* для *Fabrikam toys*, которая затем связывается с торговым посредником *Wingtip*. 
 
-Выполните следующий запрос, заменив идентификатор `<customerId>` на `id`, скопированный на втором шаге (```/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Передайте в параметрах запроса API необязательное значение *resellerId* , скопированное на втором шаге.
+Выполните следующий запрос, заменив идентификатор `<customerId>` на `id`, скопированный на втором шаге (```/providers/Microsoft.Billing/billingAccounts/99a13315-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_xxxx-xx-xx/customers/2281f543-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Передайте в параметрах запроса API необязательное значение *resellerId*, скопированное на втором шаге.
 
 ```json
 POST https://management.azure.com<customerId>/providers/Microsoft.Subscription/createSubscription?api-version=2018-11-01-preview

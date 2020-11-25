@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: vs-azure
 ms.date: 01/22/2018
-ms.openlocfilehash: 65309bbd70a6fda2bf725ce96cc5595cd9b55083
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db93262a0f5c6bd75f8c5611c7f33de085e05a82
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569060"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94564894"
 ---
 # <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Руководство: создание фабрики данных с помощью Visual Studio
 > [!div class="op_single_selector" title="Tools/SDKs"]
@@ -70,7 +70,7 @@ ms.locfileid: "91569060"
 Теперь давайте создадим фабрику данных Azure с помощью Visual Studio.
 
 ### <a name="create-visual-studio-project"></a>Создание проекта Visual Studio
-1. Запустите **Visual Studio 2013** или **Visual Studio 2015**. В меню **Файл**выберите **Создать**, а затем **Проект**. Откроется диалоговое окно **Новый проект** .  
+1. Запустите **Visual Studio 2013** или **Visual Studio 2015**. В меню **Файл** выберите **Создать**, а затем **Проект**. Откроется диалоговое окно **Новый проект** .  
 2. В диалоговом окне **Новый проект** выберите шаблон **DataFactory** и щелкните **Empty Data Factory Project** (Пустой проект фабрики данных).   
 
     ![Диалоговое окно "Новый проект"](./media/data-factory-build-your-first-pipeline-using-vs/new-project-dialog.png)
@@ -406,7 +406,7 @@ ms.locfileid: "91569060"
 
 ### <a name="additional-notes"></a>Дополнительные замечания
 - Фабрика данных может иметь один или несколько конвейеров. Конвейер может содержать одно или несколько действий. Это может быть, например, действие копирования данных из исходного хранилища в целевое или действие HDInsight Hive для выполнения скрипта Hive, преобразующего входные данные. См. список [поддерживаемых хранилищ данных](data-factory-data-movement-activities.md#supported-data-stores-and-formats) для всех источников и приемников, которые поддерживаются действием копирования. См. список [связанных служб вычислений](data-factory-compute-linked-services.md), поддерживаемых фабрикой данных.
-- Связанные службы связывают хранилища данных или службы вычислений с фабрикой данных Azure. См. список [поддерживаемых хранилищ данных](data-factory-data-movement-activities.md#supported-data-stores-and-formats) для всех источников и приемников, которые поддерживаются действием копирования. Ознакомьтесь со списком [связанных служб вычислений](data-factory-compute-linked-services.md), поддерживаемых фабрикой данных, и [действий по преобразованию данных](data-factory-data-transformation-activities.md), которые можно в этих службах выполнить.
+- Связанные службы связывают хранилища данных или службы вычислений с Фабрикой данных Azure. См. список [поддерживаемых хранилищ данных](data-factory-data-movement-activities.md#supported-data-stores-and-formats) для всех источников и приемников, которые поддерживаются действием копирования. Ознакомьтесь со списком [связанных служб вычислений](data-factory-compute-linked-services.md), поддерживаемых фабрикой данных, и [действий по преобразованию данных](data-factory-data-transformation-activities.md), которые можно в этих службах выполнить.
 - Дополнительные сведения о свойствах JSON, используемых в определении связанной службы хранения Azure, см. в разделе [Связанная служба SAS хранилища Azure](data-factory-azure-blob-connector.md#azure-storage-linked-service).
 - Вместо используемого по запросу кластера HDInsight можно использовать собственный кластер HDInsight. Дополнительные сведения см. в статье [Связанные службы вычислений](data-factory-compute-linked-services.md).
 -  С помощью приведенного выше JSON-файла фабрика данных создает кластер HDInsight **под управлением Linux**. Дополнительные сведения см. в разделе [Связанная служба Azure HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
@@ -546,7 +546,7 @@ ms.locfileid: "91569060"
 Фиксировать конфиденциальные данные, например строки подключения, в репозитории кода не рекомендуется и часто противоречит политике безопасности. См. пример [ADF Secure Publish](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ADFSecurePublish) на портале GitHub, чтобы узнать о хранении конфиденциальных сведений в Azure Key Vault и их использовании при публикации сущностей фабрики данных. Расширение Secure Publish для Visual Studio позволяет хранить секреты в службе Key Vault, определяя в конфигурациях связанных служб и развертываний только ссылки на них. Эти ссылки разрешаются при публикации сущностей фабрики данных в Azure. Эти файлы затем можно зафиксировать в репозитории, не раскрывая конфиденциальные сведения.
 
 ## <a name="summary"></a>Сводка
-Следуя инструкциям из этого руководства, вы создали фабрику данных Azure для обработки данных путем выполнения сценария Hive в кластере Hadoop HDInsight. Вы использовали редактор фабрики данных на портале Azure для выполнения следующих действий:  
+Следуя инструкциям из этого руководства, вы создали фабрику данных Azure для обработки данных путем выполнения скрипта Hive в кластере Hadoop HDInsight. Вы использовали редактор фабрики данных на портале Azure для выполнения следующих действий:  
 
 1. создание **фабрики данных Azure**;
 2. создание двух **связанных служб**.

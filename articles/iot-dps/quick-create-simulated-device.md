@@ -12,12 +12,12 @@ ms.custom:
 - mvc
 - amqp
 - mqtt
-ms.openlocfilehash: 5d594aeaee7b80bcac28f060a1d86e6c08d2cf05
-ms.sourcegitcommit: 03662d76a816e98cfc85462cbe9705f6890ed638
+ms.openlocfilehash: e2930a3ca2ecb9d8217fdfea1cbcb0e669f61775
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90524731"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960042"
 ---
 # <a name="quickstart-provision-a-simulated-tpm-device-using-the-azure-iot-c-sdk"></a>Краткое руководство по подготовке имитированного устройства доверенного платформенного модуля с помощью пакета SDK для устройства C Интернета вещей Azure
 
@@ -28,8 +28,8 @@ ms.locfileid: "90524731"
 Если вы не знакомы с процессом автоматической подготовки, см. раздел [Процесс подготовки](about-iot-dps.md#provisioning-process). Кроме того, прежде чем продолжить работу с этим кратким руководством, выполните шаги, описанные в статье [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md). 
 
 Служба подготовки устройств Интернета вещей Azure поддерживает два типа регистрации:
-- [группы регистрации](concepts-service.md#enrollment-group) — используются для регистрации нескольких связанных устройств;
-- [индивидуальная регистрация](concepts-service.md#individual-enrollment) — используется для регистрации одного устройства.
+- [Группы регистрации](concepts-service.md#enrollment-group). Используются для регистрации нескольких связанных устройств.
+- [Индивидуальные регистрации](concepts-service.md#individual-enrollment). Предназначены для регистрации одного устройства.
 
 В этой статье описана индивидуальная регистрация.
 
@@ -39,7 +39,7 @@ ms.locfileid: "90524731"
 
 Приведенные ниже предварительные требования касаются среды разработки Windows. При использовании Linux или macOS ознакомьтесь с соответствующим разделом в статье [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) из документации к пакету SDK.
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://docs.microsoft.com/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
 
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
@@ -47,7 +47,7 @@ ms.locfileid: "90524731"
 
 ## <a name="prepare-a-development-environment-for-the-azure-iot-c-sdk"></a>Подготовка среды разработки для пакета SDK для устройства C Интернета вещей Azure
 
-В этом разделе вы подготовите среду разработки, которая используется для создания [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c) и примера симулятора устройства [доверенного платформенного модуля](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview).
+В этом разделе вы подготовите среду разработки, которая используется для создания [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c) и примера симулятора устройства [доверенного платформенного модуля](/windows/device-security/tpm/trusted-platform-module-overview).
 
 1. Скачайте [систему сборки CMake](https://cmake.org/download/).
 
@@ -82,7 +82,7 @@ ms.locfileid: "90524731"
     cmake -Duse_prov_client:BOOL=ON -Duse_tpm_simulator:BOOL=ON ..
     ```
 
-    Если `cmake` не удастся найти компилятор C++, могут возникнуть ошибки сборки во время выполнения предыдущей команды. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs). 
+    Если `cmake` не удастся найти компилятор C++, могут возникнуть ошибки сборки во время выполнения предыдущей команды. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs). 
 
     После успешного создания последние несколько строк выходных данных будут выглядеть следующим образом:
 
@@ -100,7 +100,7 @@ ms.locfileid: "90524731"
     -- Build files have been written to: E:/IoT Testing/azure-iot-sdk-c/cmake
     ```
 
-2. Перейдите к корневой папке клонированного репозитория Git и запустите симулятор [доверенного платформенного модуля](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview), используя путь, приведенный ниже. Симулятор ожидает передачи данных через сокет на портах 2321 и 2322. Не закрывайте командное окно. Симулятор должен работать, пока вы не выполните все инструкции из этого краткого руководства. 
+2. Перейдите к корневой папке клонированного репозитория Git и запустите симулятор [доверенного платформенного модуля](/windows/device-security/tpm/trusted-platform-module-overview), используя путь, приведенный ниже. Симулятор ожидает передачи данных через сокет на портах 2321 и 2322. Не закрывайте командное окно. Симулятор должен работать, пока вы не выполните все инструкции из этого краткого руководства. 
 
    Если вы находитесь в папке *cmake*, выполните следующие команды:
 

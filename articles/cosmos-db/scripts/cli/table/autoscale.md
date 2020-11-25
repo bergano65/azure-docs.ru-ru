@@ -7,19 +7,19 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.topic: sample
 ms.date: 7/29/2020
-ms.openlocfilehash: 436fab1b0b0d5392bc7509e72676f0877ce2d83c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ed2c09476882d4a8db802b23cc06f5de987f7acc
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93089480"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566186"
 ---
 # <a name="create-an-azure-cosmos-table-api-account-and-table-with-autoscale-using-azure-cli"></a>Создание учетной записи и таблицы API таблиц с автомасштабированием в Azure Cosmos с помощью Azure CLI
 [!INCLUDE[appliesto-table-api](../../../includes/appliesto-table-api.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.9.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется Azure CLI версии 2.9.1 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="sample-script"></a>Пример скрипта
 

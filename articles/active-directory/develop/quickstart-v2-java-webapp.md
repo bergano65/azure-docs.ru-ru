@@ -12,18 +12,18 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: f00a935815b64f7c2c06dd33130c1a950582e5c3
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: e93c0c6bb689980cab1b41e529c491cdf3920260
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743494"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591722"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
-В этом кратком руководстве вы узнаете, как интегрировать веб-приложение Java с Платформой удостоверений Майкрософт. Ваше приложение сможет авторизовать пользователя, получить маркер доступа для вызова API Microsoft Graph и выполнить запрос к API Microsoft Graph.
+При работе с этим кратким руководством вы скачаете и выполните пример кода. Такой пример кода демонстрирует, как в веб-приложении Java реализовать вход пользователей и вызов Microsoft Graph. Входить в приложение могут пользователи из любой организации Azure Active Directory (Azure AD).
 
-Когда вы завершите работу с этим кратким руководством, ваше приложение сможет принимать операции входа с помощью личных учетных записей Майкрософт (включая outlook.com, live.com и другие), а также рабочих или учебных учетных записей из любой компании или организации, в которых используется Azure Active Directory. (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
+ Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -99,7 +99,7 @@ ms.locfileid: "91743494"
 >   ```
 >   Поместите созданный файл хранилища ключей в папку "resources".
 
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div renderon="portal" id="autoupdate" class="sxs-lookup nextstepaction"]
 > [Скачивание примера кода](https://github.com/Azure-Samples/ms-identity-java-webapp/archive/master.zip)
 
 > [!div class="sxs-lookup" renderon="portal"]
@@ -253,7 +253,7 @@ import com.microsoft.aad.msal4j.*;
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 Тема создания веб-приложений, которые выполняют вход пользователей с помощью платформы Microsoft Identity, подробно рассматривается в нашей серии сценариев:
 

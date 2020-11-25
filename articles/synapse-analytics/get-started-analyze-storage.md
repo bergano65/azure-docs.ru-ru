@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 2a22174fb23a4f0f7bebd58e276a6778e986ce9e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: fabfdce72202f79e2ac5bad08d124df7ce2de542
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322915"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592589"
 ---
 # <a name="analyze-data-in-a-storage-account"></a>Анализируйте данные в учетной записи хранения
 
@@ -36,16 +36,16 @@ ms.locfileid: "93322915"
 %%pyspark
 df = spark.sql("SELECT * FROM nyctaxi.passengercountstats")
 df = df.repartition(1) # This ensure we'll get a single file during write()
-df.write.mode("overwrite").csv("/NYCTaxi/PassengerCountStats.csv")
-df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats.parquet")
+df.write.mode("overwrite").csv("/NYCTaxi/PassengerCountStats_csvformat")
+df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats_parquetformat")
 ```
 
 ### <a name="analyze-data-in-a-storage-account"></a>Анализируйте данные в учетной записи хранения
 
 1. В Synapse Studio перейдите в центр **Данные**, а затем выберите команду **Связанный**.
 1. Перейдите в раздел **Учетные записи хранения** > **myworkspace (Primary — contosolake)** .
-1. Выберите **Пользователи (Основной)** . Вы увидите папку **NYCTaxi**. Внутри вы увидите две папки **PassengerCountStats.csv** и **PassengerCountStats.parquet**.
-1. Откройте папку **PassengerCountStats.parquet**. Внутри вы увидите PARQUET-файл следующего вида `part-00000-2638e00c-0790-496b-a523-578da9a15019-c000.snappy.parquet`.
+1. Выберите **Пользователи (Основной)** . Вы увидите папку **NYCTaxi**. Внутри вы увидите две папки: **PassengerCountStats_csvformat** и **PassengerCountStats_parquetformat**.
+1. Откройте папку **PassengerCountStats_parquetformat**. Внутри вы увидите PARQUET-файл следующего вида `part-00000-2638e00c-0790-496b-a523-578da9a15019-c000.snappy.parquet`.
 1. Щелкните правой кнопкой мыши **.parquet**, а затем выберите пункт **Создать записную книжку**. Он создает записную книжку с ячейкой следующего вида:
 
     ```py

@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: ae4281350efc96fab6c4e2898cbcddf83bf29cd8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ecf4229c95ff9103cd27fd161fdd19c9e7a0f76b
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93073118"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94636968"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -86,17 +86,24 @@ API Cassandra для Azure Cosmos DB поддерживает следующие
 | writetime | Да |
 | Приведение | Нет |
 
-\* API Cassandra поддерживает токен в качестве проекции или селектора и разрешает параметр token(pk) в левой части предложения WHERE. Например, `WHERE token(pk) > 1024` поддерживается, но `WHERE token(pk) > token(100)` не поддерживается.
+> [!NOTE]
+> \* API Cassandra поддерживает токен в качестве проекции или селектора и разрешает параметр token(pk) в левой части предложения WHERE. Например, `WHERE token(pk) > 1024` поддерживается, но `WHERE token(pk) > token(100)` — **нет**.
+
 
 
 Агрегатные функции:
 
 |Get-Help  |Поддерживаются: |
 |---------|---------|
-| Min | Да |
-| max | Да |
 | avg | Да |
 | count | Да |
+| Min | Да |
+| max | Да |
+| Sum | Да |
+
+> [!NOTE]
+> Агрегатная функция работает с обычными столбцами, но агрегирование для кластеризованных столбцов **не** поддерживается.
+
 
 Функции преобразования больших двоичных объектов
  
@@ -260,7 +267,7 @@ API Cassandra для Azure Cosmos DB предоставляет согласов
 
 ## <a name="permission-and-role-management"></a>Управление разрешениями и ролями
 
-Azure Cosmos DB поддерживает управление доступом на основе ролей (RBAC) для подготовки, смены ключей, просмотра метрик, а также пароли (ключи) для чтения и записи или только для чтения, которые можно получить с помощью [портала Azure](https://portal.azure.com). Azure Cosmos DB не поддерживает роли для действий CRUD.
+Azure Cosmos DB поддерживает управление доступом на основе ролей Azure (Azure RBAC) для подготовки, смены ключей, просмотра метрик, а также пароли (ключи) для чтения и записи или только для чтения, которые можно получить с помощью [портала Azure](https://portal.azure.com). Azure Cosmos DB не поддерживает роли для действий CRUD.
 
 ## <a name="keyspace-and-table-options"></a>Параметры пространства ключей и таблицы
 

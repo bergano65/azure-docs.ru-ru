@@ -4,12 +4,12 @@ description: Создайте приложение-функцию и разве�
 ms.date: 07/03/2018
 ms.topic: sample
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 7f7c272fa95d2697d41cb751e39ef72b0da86a12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 752d8a729c56fc2e0e110fcedc263eab4ba7a96b
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498531"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565319"
 ---
 # <a name="create-a-function-app-in-azure-that-is-deployed-from-github"></a>Создание в Azure приложения-функции, которое развертывается из GitHub
 
@@ -22,9 +22,9 @@ ms.locfileid: "87498531"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили использовать Azure CLI локально, установите версию 2.0 или более позднюю. Чтобы определить версию Azure CLI, выполните `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). 
+ - Для работы с этим руководством требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена. 
 
 ## <a name="sample-script"></a>Пример скрипта
 

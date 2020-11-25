@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: komammas
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: f4c71cffe00faa6dd8cc440c59f94b8c2d60f712
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c66c14d42c3d14fc4171f6fdfaf2e7f75a531507
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88185117"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886912"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Руководство по Выполнение скриптов Python с помощью Фабрики данных Azure в пакетной службе Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "88185117"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Установленный дистрибутив [Python](https://www.python.org/downloads/) для локального тестирования.
-* Пакет `pip` [Azure](https://pypi.org/project/azure/).
+* Пакет `pip` [azure-storage-blob](https://pypi.org/project/azure-storage-blob/).
 * [Набор данных iris.csv](https://www.kaggle.com/uciml/iris/version/2#Iris.csv)
 * учетная запись пакетной службы Azure и связанная учетная запись службы хранилища Azure. Дополнительные сведения о том, как создать учетные записи пакетной службы и связать их с учетными записями хранения, см. в статье [Создание учетной записи Пакетной службы](quick-create-portal.md#create-a-batch-account).
 * Учетная запись Фабрики данных Azure. В статье [Создание фабрики данных](../data-factory/quickstart-create-data-factory-portal.md#create-a-data-factory) представлены дополнительные сведения о том, как создать фабрику данных на портале Azure.
@@ -57,7 +57,7 @@ ms.locfileid: "88185117"
     1. Установите тип масштаба **Фиксированный размер** и задайте количество выделенных узлов равное 2.
     1. В разделе **Обработка и анализ данных** выберите операционную систему **Dsvm Windows**.
     1. Выберите размер виртуальной машины `Standard_f2s_v2`.
-    1. Включите задачу запуска и добавьте команду `cmd /c "pip install pandas"`. Вы можете сохранить указанное по умолчанию удостоверение пользователя **Пользователь пула**.
+    1. Включите задачу запуска и добавьте команду `cmd /c "pip install azure-storage-blob pandas"`. Вы можете сохранить указанное по умолчанию удостоверение пользователя **Пользователь пула**.
     1. Щелкните **ОК**.
 
 ## <a name="create-blob-containers"></a>Создание контейнеров больших двоичных объектов
@@ -75,17 +75,17 @@ ms.locfileid: "88185117"
 
 ``` python
 # Load libraries
-from azure.storage.blob import BlockBlobService
+from azure.storage.blob import BlobServiceClient
 import pandas as pd
 
 # Define parameters
-storageAccountName = "<storage-account-name>"
+storageAccountURL = "<storage-account-url>"
 storageKey         = "<storage-account-key>"
 containerName      = "output"
 
 # Establish connection with the blob storage account
-blobService = BlockBlobService(account_name=storageAccountName,
-                               account_key=storageKey
+blob_service_client = BlockBlobService(account_url=storageAccountURL,
+                               credential=storageKey
                                )
 
 # Load iris dataset from the task node
@@ -98,10 +98,12 @@ df = df[df['Species'] == "setosa"]
 df.to_csv("iris_setosa.csv", index = False)
 
 # Upload iris dataset
-blobService.create_blob_from_path(containerName, "iris_setosa.csv", "iris_setosa.csv")
+container_client = blob_service_client.get_container_client(containerName)
+with open("iris_setosa.csv", "rb") as data:
+    blob_client = container_client.upload_blob(name="iris_setosa.csv", data=data)
 ```
 
-Сохраните этот скрипт с именем `main.py` и отправьте его в контейнер **службы хранилища Azure**. Не забудьте проверить его функциональность локально, прежде чем передавать скрипт в контейнер больших двоичных объектов.
+Сохраните этот скрипт с именем `main.py` и отправьте его в контейнер **службы хранилища Azure** `input`. Не забудьте проверить его функциональность локально, прежде чем передавать скрипт в контейнер больших двоичных объектов.
 
 ``` bash
 python main.py

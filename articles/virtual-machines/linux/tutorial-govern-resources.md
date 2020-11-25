@@ -1,6 +1,6 @@
 ---
 title: Руководство. Управление виртуальными машинами с помощью CLI
-description: Из этого руководства вы узнаете, как управлять виртуальными машинами Azure с применением RBAC, политик, блокировок и тегов с помощью Azure CLI.
+description: Из этого руководства вы узнаете, как управлять виртуальными машинами Azure с применением Azure RBAC, политик, блокировок и тегов с помощью Azure CLI.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: tfitzmac
@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 09/30/2019
 ms.author: tomfitz
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 867349a321f2909d8e568be7e482a5517ddb50b9
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 565315ad78a2994f44973c4fdcd4519ab9e03ea8
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517960"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831792"
 ---
 # <a name="tutorial-learn-about-linux-virtual-machine-management-with-azure-cli"></a>Руководство по Управление виртуальными машинами Linux с помощью Azure CLI
 
@@ -41,7 +41,7 @@ az group create --name myResourceGroup --location "East US"
 
 Сейчас группа ресурсов пуста.
 
-## <a name="role-based-access-control"></a>Управление доступом на основе ролей
+## <a name="azure-role-based-access-control"></a>Управление доступом на основе ролей в Azure
 
 Вам нужно, чтобы у пользователей вашей организации был необходимый уровень доступа к этим ресурсам. Вы не хотите предоставлять пользователям неограниченный доступ, но при этом требуется обеспечить им возможность работать. [Управление доступом Azure на основе ролей (Azure RBAC)](../../role-based-access-control/overview.md) позволяет предоставлять пользователям разрешения на выполнение определенных действий в той или иной области.
 

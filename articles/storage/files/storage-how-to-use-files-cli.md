@@ -8,23 +8,23 @@ ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9c569e65546853c4e9c8c460d29041e4bb829c09
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
+ms.openlocfilehash: dd07c09c4ed5be311bf5a485b9bff938c976a2f5
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90564208"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659239"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Краткое руководство: создание файловых ресурсов Azure и управление ими с помощью Azure CLI
 В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Azure CLI. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие папки Azure поддерживают стандартный отраслевой протокол SMB и протокол NFS (предварительная версия), а также позволяют совместно использовать файлы на нескольких компьютерах, в нескольких приложениях и экземплярах. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы хотите установить и использовать Azure CLI локально, для выполнения всех действий из данной статьи требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, как версия Azure CLI установлена, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). 
+- Для работы с этой статьей требуется Azure CLI версии 2.0.4 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-По умолчанию команды Azure CLI возвращают ответ в формате JSON. Это стандартный способ отправки и получения сообщений из REST API. Для облегчения работы с ответами в формате JSON в некоторых примерах в этой статье с командами Azure CLI используется параметр *запроса*. Этот параметр использует [язык запросов JMESPath](http://jmespath.org/) для синтаксического анализа JSON. Дополнительные сведения о том, как обрабатывать результаты выполнения команд Azure CLI с применением языка запросов JMESPath, см. в [руководстве по JMESPath](http://jmespath.org/tutorial.html).
+- По умолчанию команды Azure CLI возвращают ответ в формате JSON. Это стандартный способ отправки и получения сообщений из REST API. Для облегчения работы с ответами в формате JSON в некоторых примерах в этой статье с командами Azure CLI используется параметр *запроса*. Этот параметр использует [язык запросов JMESPath](http://jmespath.org/) для синтаксического анализа JSON. Дополнительные сведения о том, как обрабатывать результаты выполнения команд Azure CLI с применением языка запросов JMESPath, см. в [руководстве по JMESPath](http://jmespath.org/tutorial.html).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Если у вас еще нет группы ресурсов Azure, ее можно создать с помощью команды [az group create](/cli/azure/group). 
@@ -87,10 +87,10 @@ az storage share create \
     --output none
 ```
 
-Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы, и они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Naming and Referencing Shares, Directories, Files, and Metadata](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata) (Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них).
+Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы, и они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Naming and Referencing Shares, Directories, Files, and Metadata](/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata) (Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них).
 
 ## <a name="use-your-azure-file-share"></a>Использование общего файлового ресурса Azure
-Служба файлов Azure обеспечивает два способа работы с файлами и папками в общем файловом ресурсе Azure: стандартный отраслевой [протокол Server Message Block (SMB)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) и [протокол File REST](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api). 
+Служба файлов Azure обеспечивает два способа работы с файлами и папками в общем файловом ресурсе Azure: стандартный отраслевой [протокол Server Message Block (SMB)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) и [протокол File REST](/rest/api/storageservices/file-service-rest-api). 
 
 Чтобы установить общий файловый ресурс с помощью SMB, ознакомьтесь со следующим документом (с учетом вашей ОС):
 - [Linux](storage-how-to-use-files-linux.md)
@@ -212,7 +212,7 @@ az storage file list \
 
 - [диспетчер логических томов (LVM)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)#Basic_functionality) для систем Linux;
 - [файловая система Apple (APFS)](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Features/Features.html) для macOS.
-- [служба теневого копирования томов (VSS)](https://docs.microsoft.com/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, таких как NTFS и ReFS.
+- [служба теневого копирования томов (VSS)](/windows/desktop/VSS/volume-shadow-copy-service-portal) для файловых систем Windows, таких как NTFS и ReFS.
  
 Вы можете создать моментальный снимок общих ресурсов с помощью команды [`az storage share snapshot`](/cli/azure/storage/share).
 

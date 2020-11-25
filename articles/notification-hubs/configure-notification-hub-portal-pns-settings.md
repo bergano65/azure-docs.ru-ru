@@ -12,12 +12,12 @@ ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 02/14/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 67e90667df2b62ec2c37d865fe431a2be6f81b9e
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 9c75ccaa05457f13697d1a26dbc8fd2f6720a751
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876572"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94517858"
 ---
 # <a name="quickstart-set-up-push-notifications-in-a-notification-hub"></a>Краткое руководство. Настройка push-уведомлений в центре уведомлений
 
@@ -67,11 +67,11 @@ ms.locfileid: "91876572"
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+Вам понадобится **ключ API** для проекта Google Firebase Cloud Messaging (FCM).
 
-- Для работы с концентраторами уведомлений требуется Azure CLI версии не ниже 2.0.67. Выполните команду [az version](/cli/azure/reference-index?#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index?#az_upgrade).
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-h3.md)]
 
-- Вам понадобится **ключ API** для проекта Google Firebase Cloud Messaging (FCM).
+- Для работы с этой статьей требуется Azure CLI версии 2.0.67 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ### <a name="set-up-push-notifications-for-google-fcm"></a>Настройка push-уведомлений для Google FCM
 

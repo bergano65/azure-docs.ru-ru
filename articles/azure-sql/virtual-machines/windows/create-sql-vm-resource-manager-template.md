@@ -7,12 +7,12 @@ ms.custom: subject-armqs
 ms.author: mathoma
 ms.date: 06/29/2020
 ms.service: virtual-machines-sql
-ms.openlocfilehash: b57303a1c9fdba2bea8637bef6c148622087a8d3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9d0dd8ee1b99ddd2abf4fad154c70315a3d33c83
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789783"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94556426"
 ---
 # <a name="quickstart-create-sql-server-vm-using-an-arm-template"></a>Краткое руководство. Создание виртуальной машины SQL Server с помощью шаблона ARM
 
@@ -20,7 +20,7 @@ ms.locfileid: "92789783"
 
 [!INCLUDE [About Azure Resource Manager](../../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-sql-vm-new-storage%2fazuredeploy.json)
 
@@ -45,31 +45,31 @@ ms.locfileid: "92789783"
 - [Microsoft.Network/networkSecurityGroups.](/azure/templates/microsoft.network/networksecuritygroups) Создает группу безопасности сети. 
 - [Microsoft.Network/networkInterfaces:](/azure/templates/microsoft.network/networkinterfaces) настраивает сетевой интерфейс. 
 - [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines): создает виртуальную машину в Azure. 
-- [Microsoft.SqlVirtualMachine/SqlVirtualMachines](/azure/templates/microsoft.sqlvirtualmachine/sqlvirtualmachines): регистрирует виртуальную машину в поставщике ресурсов виртуальной машины SQL. 
+- [Microsoft.SqlVirtualMachine/SqlVirtualMachines](/azure/templates/microsoft.sqlvirtualmachine/sqlvirtualmachines): регистрирует виртуальную машину в расширении агента IaaS для SQL. 
 
 Другие шаблоны для SQL Server на виртуальных машинах Azure можно найти в [коллекции шаблонов быстрого запуска](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Sqlvirtualmachine&pageNumber=1&sort=Popular).
 
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает виртуальную машину с нужной версией SQL Server и регистрирует ее в поставщике ресурсов виртуальной машины SQL. 
+1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает виртуальную машину с нужной версией SQL Server и регистрирует ее в расширении агента IaaS для SQL. 
 
    [![Развертывание в Azure](../../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-sql-vm-new-storage%2fazuredeploy.json)
 
 2. Введите или выберите следующие значения.
 
-    * **Подписка** : Выберите подписку Azure.
+    * **Подписка**: Выберите подписку Azure.
     * **Группа ресурсов.** Подготовленная группа ресурсов для виртуальной машины SQL Server. 
-    * **Регион** . Выберите регион.  Например, **центральная часть США** .
-    * **Имя виртуальной машины** . Введите имя виртуальной машины SQL Server. 
+    * **Регион**. Выберите регион.  Например, **центральная часть США**.
+    * **Имя виртуальной машины**. Введите имя виртуальной машины SQL Server. 
     * **Размер виртуальной машины.** Выберите нужный размер виртуальной машины из раскрывающегося списка.
     * **Имя существующей виртуальной сети.** Введите имя подготовленной виртуальной сети для виртуальной машины SQL Server. 
     * **Существующая группа ресурсов виртуальной сети.** Введите имя группы ресурсов, в которой была подготовлена виртуальная сеть. 
     * **Имя существующей подсети.** Имя подготовленной подсети. 
     * **Предложение образа.** Выберите образ SQL Server и Windows Server, соответствующий потребностям вашего бизнеса. 
     * **SKU SQL.** Выберите номер SKU SQL Server, соответствующий потребностям вашего бизнеса. 
-    * **Имя администратора** . Имя пользователя администратора виртуальной машины. 
-    * **Пароль администратора** . Пароль, используемый для учетной записи администратора виртуальной машины. 
+    * **Имя администратора**. Имя пользователя администратора виртуальной машины. 
+    * **Пароль администратора**. Пароль, используемый для учетной записи администратора виртуальной машины. 
     * **Тип рабочей нагрузки хранилища.**  Тип хранилища для рабочей нагрузки, соответствующий потребностям вашего бизнеса. 
     * **Количество дисков данных для SQL.**  Количество дисков, которые SQL Server использует для файлов данных.  
     * **Путь к данным.**  Путь к файлам данных SQL Server. 

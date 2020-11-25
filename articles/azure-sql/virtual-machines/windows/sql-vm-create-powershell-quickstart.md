@@ -13,12 +13,12 @@ ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: fcb6d4da3d9b044cf722c6333f61a0f8d38f1956
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a4c8f0c636e254c4afc2d6cd83a744939096233a
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91598011"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553630"
 ---
 # <a name="quickstart-create-sql-server-on-a-windows-virtual-machine-with-azure-powershell"></a>Краткое руководство. Создание виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell
 
@@ -150,9 +150,9 @@ ms.locfileid: "91598011"
 
 ## <a name="register-with-sql-vm-rp"></a>Регистрация через поставщика ресурсов виртуальной машины SQL 
 
-Для интеграции с порталом и получения компонентов виртуальной машины SQL необходимо зарегистрироваться через [поставщика ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md).
+Для интеграции с порталом и получения компонентов виртуальной машины SQL необходимо зарегистрироваться через [расширение агента IaaS для SQL](sql-agent-extension-manually-register-single-vm.md).
 
-Для получения всех функций необходимо выполнить регистрацию через поставщика ресурсов в полном режиме. Но при этом произойдет перезапуск службы SQL Server. Поэтому рекомендуется выполнить регистрацию в упрощенном режиме, а затем выполнить обновление до полного режима в течение периода обслуживания. 
+Для получения всех функций необходимо выполнить регистрацию через расширение в полном режиме. Но при этом произойдет перезапуск службы SQL Server. Поэтому рекомендуется выполнить регистрацию в упрощенном режиме, а затем выполнить обновление до полного режима в течение периода обслуживания. 
 
 Сначала зарегистрируйте виртуальную машину SQL Server в упрощенном режиме: 
 
@@ -171,7 +171,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 # Get the existing Compute VM
 $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
       
-# Register with SQL VM resource provider in full mode
+# Register with SQL IaaS Agent extension in full mode
 Update-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -SqlManagementType Full
 ```
 

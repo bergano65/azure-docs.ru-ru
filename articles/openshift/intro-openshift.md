@@ -5,14 +5,14 @@ author: jimzim
 ms.author: jzim
 ms.service: container-service
 ms.topic: overview
-ms.date: 04/24/2020
+ms.date: 11/13/2020
 ms.custom: mvc
-ms.openlocfilehash: a3bdc3673474b778aa7c1003e48e215bac6d05bf
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 1bf3141876ee56ee1361f19a67689ca3b2f4f89a
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82628526"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94685296"
 ---
 # <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
 
@@ -28,11 +28,15 @@ Azure Red Hat OpenShift расширяет платформу [Kubernetes](https
 
 ## <a name="access-security-and-monitoring"></a>Доступ, безопасность и мониторинг
 
-Для повышения безопасности и улучшения управления Azure Red Hat OpenShift позволяет выполнить интеграцию с Azure Active Directory и использовать управление доступом на основе ролей Kubernetes (RBAC). Также можно отслеживать работоспособность кластера и ресурсов.
+Для повышения безопасности и улучшения управления Azure Red Hat OpenShift позволяет выполнить интеграцию с Azure Active Directory и использовать управление доступом на основе ролей Kubernetes (Kubernetes RBAC). Также можно отслеживать работоспособность кластера и ресурсов.
 
 ## <a name="cluster-and-node"></a>Кластер и узел
 
 Узлы Azure Red Hat OpenShift выполняются на виртуальных машинах Azure. Можно подключить хранилище к узлам и pod и обновить компоненты кластера.
+
+## <a name="service-level-agreement"></a>Соглашение об уровне обслуживания
+
+Azure Red Hat OpenShift предлагает соглашение об уровне обслуживания с гарантией доступности службы на уровне 99,95 %. Дополнительные сведения о соглашении об уровне обслуживания для Azure Red Hat OpenShift см. на [этой странице](https://azure.microsoft.com/en-au/support/legal/sla/openshift/v1_0/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

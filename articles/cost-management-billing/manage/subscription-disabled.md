@@ -8,14 +8,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 08/20/2020
+ms.date: 11/17/2020
 ms.author: banders
-ms.openlocfilehash: 550be6c10402398b62af307281660b93981a0df3
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: cad3082981bcfc699bc230badf44e2ffc2e1bed3
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91308968"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94744431"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Повторная активация отключенной подписки Azure
 
@@ -54,6 +54,10 @@ ms.locfileid: "91308968"
     ![Снимок экрана, на котором показаны ссылки для повторной активации в области справа.](./media/subscription-disabled/reactivate-sub.png)
 
 Для повторной активации подписок других типов [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+
+## <a name="after-reactivation"></a>После повторной активации
+
+После повторной активации подписки может возникнуть задержка при создании ресурсов или управлении ими. Если задержка превышает 30 минут, обратитесь за помощью в [службу поддержки Azure по выставлению счетов](https://go.microsoft.com/fwlink/?linkid=2083458). Большинство ресурсов Azure автоматически возобновляют работу и не требуют каких-либо действий. Но мы рекомендуем вам проверить ресурсы служб Azure и перезапустить их, если они не возобновили работу автоматически.
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 

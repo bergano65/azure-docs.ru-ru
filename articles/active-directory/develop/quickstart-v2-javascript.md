@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 1f5281ead3c0487b6052859df3b33fa6ddaaf45a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f2a01c4e4d364494d271fa676bca5bfac2677395
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91613328"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592759"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
-В этом кратком руководстве описано, как с помощью примера кода можно узнать, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей. Одностраничное приложение JavaScript также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API. Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
+При работе с этим кратким руководством вы скачаете и выполните пример кода. Такой пример кода, демонстрирует, как в одностраничном приложении (SPA) JavaScript реализовать вход пользователей и вызов Microsoft Graph, а также как получить маркер доступа для вызова API Microsoft Graph или любого веб-API.
+
+Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -74,10 +76,10 @@ ms.locfileid: "91613328"
 > [!div renderon="docs"]
 > [Скачайте основные файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip), чтобы запустить проект с помощью веб-сервера, используя Node.js.
 
-> [!div renderon="portal"]
+> [!div renderon="portal" class="sxs-lookup"]
 > Запустите проект с помощью веб-сервера, используя Node.js.
 
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div renderon="portal" id="autoupdate" class="sxs-lookup nextstepaction"]
 > [Скачивание примера кода](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip)
 
 > [!div renderon="docs"]
@@ -102,7 +104,7 @@ ms.locfileid: "91613328"
 >
 >```
 
-> [!div renderon="portal"]
+> [!div class="sxs-lookup" renderon="portal"]
 > > [!NOTE]
 > > `Enter_the_Supported_Account_Info_Here`
 

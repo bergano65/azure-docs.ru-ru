@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: lcozzens
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: dd816ebcf2a40e6a0b7febcc3fe5c1006dac20bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e35c408d2e0ec2954ffdcbbce47f98ac49b16b8
+ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88209946"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94554705"
 ---
 # <a name="tutorial-manage-feature-flags-in-azure-app-configuration"></a>Руководство по Управление флагами компонентов в конфигурации приложений Azure
 
@@ -56,6 +56,7 @@ ms.locfileid: "88209946"
     |---|---|
     | Microsoft.Percentage | {"Value": 0–100 процентов} |
     | Microsoft.TimeWindow | {"Start": время в формате UTC, "End": время в формате UTC} |
+    | Microsoft.Targeting | { "Audience": Большой двоичный объект JSON, определяющий пользователей, группы и проценты выпусков. Пример приведен под элементом `EnabledFor` в [этом файле параметров](https://github.com/microsoft/FeatureManagement-Dotnet/blob/master/examples/FeatureFlagDemo/appsettings.json).}
 
     ![Фильтр флагов компонентов](./media/azure-app-configuration-feature-flag-filter.png)
 
@@ -65,7 +66,7 @@ ms.locfileid: "88209946"
 
 1. Выберите **Диспетчер функций**.
 
-1. Справа от флага компонента, который нужно изменить, щелкните значок многоточия ( **...** ) и выберите **Изменить**.
+1. Справа от флага компонента, который нужно изменить, щелкните значок многоточия (**...**) и выберите **Изменить**.
 
 1. Задайте новое состояние флага компонента.
 

@@ -7,13 +7,13 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 08/02/2020
-ms.openlocfilehash: 1745a2bf83cb704c8cc73e9d3bf0eba8245329b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/18/2020
+ms.openlocfilehash: 6af9b8f97d622ae10cfdbcaa8ca50abb42ec7332
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88924271"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889060"
 ---
 # <a name="create-a-knowledge-store-using-rest-and-postman"></a>Создание хранилища знаний с помощью REST и Postman
 
@@ -84,7 +84,7 @@ ms.locfileid: "88924271"
 | `index-name` | Сохраните значение **hotel-reviews-ix**. | 
 | `search-service-name` | Имя службы "Когнитивный поиск Azure". Введите URL-адрес `https://{{search-service-name}}.search.windows.net`. | 
 | `skillset-name` | Сохраните значение **hotel-reviews-ss**. | 
-| `storage-account-name` | имя учетной записи хранения. | 
+| `storage-account-name` | Имя учетной записи хранения Azure. | 
 | `storage-connection-string` | На вкладке **Ключи доступа** для учетной записи хранения выберите **key1** > **Строка подключения**. | 
 | `storage-container-name` | Сохраните значение **hotel-reviews**. | 
 

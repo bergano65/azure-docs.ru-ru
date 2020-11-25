@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 45a6843c5ce55dca7ff72731752f3c1f24a5db6b
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 40929a165e7a3afbbc92a472c352172723745040
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216663"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94533197"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript с помощью потока кода авторизации
 
-В этом кратком руководстве вы выполните пример кода, который демонстрирует, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей с помощью потока кода авторизации. Также в этом примере кода демонстрируется получение маркера доступа для вызова веб-API, в данном случае API Microsoft Graph. Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
+При работе с этим кратким руководством вы скачаете и выполните пример кода. Такой пример кода демонстрирует, как в одностраничном приложении (SPA) JavaScript реализовать вход пользователей и вызов Microsoft Graph с помощью потока кода авторизации. В этом примере кода демонстрируется получение маркера доступа для вызова API Microsoft Graph или любого веб-API. 
+
+Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
 В этом кратком руководстве используется MSAL.js версии 2.0 с потоком кода авторизации. Есть аналогичное руководство для MSAL.js версии 1.0 с неявным потоком: [Краткое руководство. Вход пользователей в одностраничных приложениях JavaScript](./quickstart-v2-javascript.md).
 
@@ -200,4 +202,4 @@ npm install @azure/msal-browser
 Более подробное пошаговое руководство по созданию приложения для этого краткого руководства см. в следующем учебнике:
 
 > [!div class="nextstepaction"]
-> [Руководство по входу и вызовам в Microsoft Graph >](./tutorial-v2-javascript-auth-code.md)
+> [Tutorial to sign in and call MS Graph](./tutorial-v2-javascript-auth-code.md) (Руководство по вызову API Microsoft Graph)

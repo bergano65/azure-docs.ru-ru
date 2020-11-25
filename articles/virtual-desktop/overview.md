@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 03566dccbb453aa06a2b5f86bd02b86d85d61b28
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0fe9b3ddaee41802ced30e1898b46cefa2566771
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322059"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023196"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows
 
@@ -71,7 +71,7 @@ ms.locfileid: "91322059"
 
 Требования к инфраструктуре для включения поддержки Виртуального рабочего стола Windows следующие:
 
-* Наличие [Azure Active Directory](/azure/active-directory/).
+* Наличие [Azure Active Directory](../active-directory/index.yml).
 * Windows Server Active Directory с синхронизацией с Azure Active Directory. Ее можно настроить с помощью Azure AD Connect (для гибридных организаций) или доменных служб Azure AD (для гибридных или облачных организаций).
   * Windows Server AD с синхронизацией с Azure Active Directory. Пользователь извлекается из Windows Server AD, а виртуальная машина из Виртуального рабочего стола Windows присоединяется к домену Windows Server AD.
   * Windows Server AD с синхронизацией с Azure Active Directory. Пользователь извлекается из Windows Server AD, а виртуальная машина из Виртуального рабочего стола Windows присоединяется к домену доменных служб Azure AD.
@@ -85,7 +85,7 @@ ms.locfileid: "91322059"
 
 Требования к виртуальным машинам Azure, созданным для Виртуального рабочего стола Windows, следующие:
 
-* [Стандартное присоединение к домену](../active-directory-domain-services/active-directory-ds-comparison.md) или [гибридное присоединение к AD](../active-directory/devices/hybrid-azuread-join-plan.md). Виртуальные машины не могут быть присоединены к Azure AD.
+* [Стандартное присоединение к домену](../active-directory-domain-services/compare-identity-solutions.md) или [гибридное присоединение к AD](../active-directory/devices/hybrid-azuread-join-plan.md). Виртуальные машины не могут быть присоединены к Azure AD.
 * Использование одного из следующих [поддерживаемых образов ОС](#supported-virtual-machine-os-images).
 
 >[!NOTE]
@@ -101,7 +101,7 @@ ms.locfileid: "91322059"
 * Сетевой трафик может передаваться за пределы страны или региона, когда виртуальные машины, на которых размещены рабочие столы и приложения, подключаются к службе управления.
 * Чтобы оптимизировать производительность сети, мы рекомендуем, чтобы виртуальные машины узла сеансов совместно размещались в том же регионе Azure, что и служба управления.
 
-Стандартные варианты реализации службы "Виртуальный рабочий стол Windows" для предприятий см. в статье [Виртуальный рабочий стол Windows для предприятий](https://docs.microsoft.com/azure/architecture/example-scenario/wvd/windows-virtual-desktop).
+Стандартные варианты реализации службы "Виртуальный рабочий стол Windows" для предприятий см. в статье [Виртуальный рабочий стол Windows для предприятий](/azure/architecture/example-scenario/wvd/windows-virtual-desktop).
 
 ## <a name="supported-remote-desktop-clients"></a>Поддерживаемые клиенты удаленного рабочего стола
 
@@ -138,12 +138,12 @@ ms.locfileid: "91322059"
 |--------------------------------------|:------:|:------:|:------:|:------:|
 |Windows 10 Корпоративная (с поддержкой нескольких сеансов), версия 2004|Да|Да|Да|Да|
 |Windows 10 Корпоративная (с поддержкой нескольких сеансов), версия 1909|Да|Да|Да|Да|
-|Windows 10 Корпоративная (с поддержкой нескольких сеансов), версия 1903|Да|Да|Нет|Нет|
-|Windows 10 Корпоративная (с поддержкой нескольких сеансов), версия 1809|Да|Да|Нет|Нет|
-|Windows 7 Корпоративная|Да|Да|Нет|Нет|
-|Windows Server 2019|Да|Да|Нет|Нет|
+|Windows 10 Корпоративная (с поддержкой нескольких сеансов), версия 1903|Да|Да|нет|Нет|
+|Windows 10 Корпоративная (с поддержкой нескольких сеансов), версия 1809|Да|Да|нет|нет|
+|Windows 7 Корпоративная|Да|Да|нет|нет|
+|Windows Server 2019|Да|Да|нет|нет|
 |Windows Server 2016|Да|Да|Да|Да|
-|Windows Server 2012 R2|Да|Да|Нет|Нет|
+|Windows Server 2012 R2|Да|Да|нет|нет|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -9,30 +9,22 @@ ms.subservice: general
 ms.topic: quickstart
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: f3b9758d52c4be8e4d85c398f5ef1d0b3fae7e86
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d84f500560031322cff32005b537037dc897919e
+ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87541810"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94516770"
 ---
 # <a name="quickstart-create-a-key-vault-using-the-azure-cli"></a>Краткое руководство. Создание хранилища ключей с помощью Azure CLI
 
 Azure Key Vault — это облачная служба, которая предоставляет защищенное хранилище для [ключей](../keys/index.yml), [секретов](../secrets/index.yml) и [сертификатов](../certificates/index.yml). Дополнительные сведения о Key Vault см. в [этой статье](overview.md), а сведения о том, что можно хранить в хранилище ключей, см. [здесь](about-keys-secrets-certificates.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Из этого краткого руководства вы узнаете, как создать хранилище ключей с помощью [Azure CLI](/cli/azure/). Azure CLI используется для создания ресурсов Azure и управления ими с помощью скриптов и команд.  Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Чтобы войти в Azure с помощью CLI, введите следующее:
-
-```azurecli
-az login
-```
-
-Дополнительные сведения о параметрах входа с помощью интерфейса командной строки см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+ - Для работы с этим кратким руководством требуется Azure CLI версии 2.0.4 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

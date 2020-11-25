@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: 5da31d45e068f414c8afa38bcb46cdf1f790a9e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a061cf493fba99c518448acd9c4bf4bd5949eb98
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843283"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94831824"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-with-two-sets-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с двумя наборами учетных данных для аутентификации
 
@@ -67,8 +67,6 @@ akvrotationstorage2    akvrotation      eastus      Microsoft.Storage/storageAcc
 ```
 
 ## <a name="create-and-deploy-storage-account-key-rotation-function"></a>Создание и развертывание функции смены ключей для учетной записи хранения
-> [!IMPORTANT]
-> Для показанного ниже шаблона требуется, чтобы Key Vault, учетная запись хранения Azure и функция Функций Azure находились в одной группе ресурсов.
 
 Теперь создайте приложение-функцию с управляемым системой удостоверением и другими обязательными компонентами, а затем разверните функции смены ключа для учетной записи хранения.
 
@@ -85,13 +83,15 @@ akvrotationstorage2    akvrotation      eastus      Microsoft.Storage/storageAcc
    [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json)
 
 1. В списке **Группа ресурсов** выберите **avkrotation**.
+1. В поле **Группа ресурсов учетной записи хранения** введите имя группы ресурсов, в которой существует ваша учетная запись хранения. Оставьте значение по умолчанию **[resourceGroup().name]** , если ваша учетная запись хранения уже существует в группе ресурсов, в которой развернута функция смены ключа.
 1. В поле **Имя учетной записи хранения** введите имя учетной записи хранения, в которой нужно сменить ключи доступа.
+1. В поле **Группа ресурсов Key Vault** введите имя группы ресурсов, в которой существует ваше хранилище ключей. Оставьте значение по умолчанию **[resourceGroup().name]** , если ваше хранилище ключей уже существует в группе ресурсов, в которой развернута функция смены ключа.
 1. В поле **Имя Key Vault** введите имя хранилища ключей.
 1. В поле **Имя приложения-функции** введите имя приложения-функции.
-1. В поле **Имя секрета** введите имя секрета, где будут храниться ключи доступа.
+1. В поле **Имя секрета** введите имя секрета, в котором будут храниться ключи доступа.
 1. В поле **URL-адрес репозитория** введите расположение кода для функции на сайте GitHub ( **https://github.com/jlichwa/KeyVault-Rotation-StorageAccountKey-PowerShell.git** ).
 1. Выберите **Просмотр и создание**.
-1. Нажмите кнопку **Создать**
+1. Выберите **Создать**.
 
    ![Проверка и создание первой учетной записи хранения](../media/secrets/rotation-dual/dual-rotation-2.png)
 

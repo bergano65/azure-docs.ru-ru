@@ -6,15 +6,15 @@ ms.reviewer: baolcsva
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.topic: conceptual
-ms.date: 10/05/2020
+ms.date: 11/11/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: 3222c934998febe79c36121ca816f949b78d374e
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: dc725839d018c281dc784f5f83b256e62d70884d
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411564"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635421"
 ---
 # <a name="azure-enterprise-transfers"></a>Операции переноса в рамках Azure Enterprise
 
@@ -98,9 +98,9 @@ ms.locfileid: "94411564"
 
 Чтобы перейти с подписки Enterprise на отдельную подписку с оплатой по мере использования, необходимо создать запрос на поддержку на EA Portal. Для этого щелкните **+ New support request** (+Новый запрос на поддержку) в разделе **Справка и поддержка**.
 
-## <a name="change-account-owner"></a>Изменение владельца учетной записи
+## <a name="change-azure-subscription-or-account-ownership"></a>Изменение владельца подписки или учетной записи Azure
 
-На портале Azure EA можно передавать подписки от одного владельца учетной записи другому. Дополнительные сведения см. в статье [об изменении владельца учетной записи](ea-portal-administration.md#change-account-owner).
+На портале Azure EA можно передавать подписки от одного владельца учетной записи другому. Дополнительные сведения см. в разделе [Изменение владельца подписки или учетной записи Azure](ea-portal-administration.md#change-azure-subscription-or-account-ownership).
 
 ## <a name="subscription-transfer-effects"></a>Последствия переноса подписки
 
@@ -123,7 +123,7 @@ ms.locfileid: "94411564"
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. В главном меню выберите **Все ресурсы**.
 3. Выберите ресурс.
-4. На странице ресурса щелкните **Параметры** , чтобы просмотреть и изменить существующие секреты.
+4. На странице ресурса щелкните **Параметры**, чтобы просмотреть и изменить существующие секреты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

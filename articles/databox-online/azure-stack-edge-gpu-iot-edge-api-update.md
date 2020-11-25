@@ -1,6 +1,6 @@
 ---
 title: Обновление Azure Stack Edge за январь 2021 года | Документация Майкрософт
-description: В статье описано влияние управления ролями IoT Edge на устройства Azure Stack Edge после установки обновления за январь 2021 года.
+description: В этой статье описано, как управление ролями IoT Edge повлияет на устройства Azure Stack Edge после установки обновления за январь 2021 года.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,38 +8,41 @@ ms.subservice: edge
 ms.topic: overview
 ms.date: 10/26/2020
 ms.author: alkohli
-ms.openlocfilehash: 4b54f75b7d90e4b3a0a11d2ecdc676bb48eeee99
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: f16f33e9aadcc01427602a1bd81f81cb0710e4dd
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335688"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94578745"
 ---
-# <a name="iot-edge-role-management-changes-for-your-azure-stack-edge"></a>Изменения в управлении ролями IoT Edge для Azure Stack Edge
+# <a name="iot-edge-role-management-changes-for-your-azure-stack-edge-device"></a>Изменения в управлении ролями IoT Edge для устройства Azure Stack Edge
 
-Чтобы управлять ролями IoT Edge на устройстве Azure Stack Edge, используйте последнюю версию API, пакет SDK и Azure PowerShell за январь 2021 года. В этой статье подробно описаны изменения, необходимые при использовании последней версии командлетов API, SDK и PowerShell для управления ролями IoT Edge в Azure Stack Edge.
+Для управления ролями Azure IoT Edge на устройстве Azure Stack Edge следует использовать обновленные версии API, пакета SDK и Azure PowerShell, которые будут включены в обновление за январь 2021 года. 
 
-Обновление за январь 2021 года доступно только для устройств Azure Stack Edge Pro — GPU, Azure Stack Edge Pro R и Azure Stack Edge Mini R (информация, приведенная в этой статье, относится только к этим устройствам). 
+В этой статье подробно описаны изменения, которые придется внести для использования этой последней версии.
+
+Обновление за январь 2021 года затрагивает только устройства Azure Stack Edge Pro: GPU, Azure Stack Edge Pro R и Azure Stack Edge Mini R. Сведения в этой статье применимы только к указанным устройствам.
+
+> [!NOTE]
+> Обновление до версии за январь 2021 года не является обязательным. Вы можете и далее использовать текущую версию. В таком случае управление ролями IoT Edge никак не изменится. Но мы рекомендуем установить новую версию, чтобы использовать новые возможности и снизить риски безопасности. 
 
 ## <a name="iot-edge-role-management-changes"></a>Изменения в управлении ролями IoT Edge
 
-После установки дополнительной версии программного обеспечения за январь 2021 года на устройстве Azure Stack Edge необходимо использовать последнюю версию командлетов API, SDK и PowerShell для управления ролями IoT Edge.
+После установки необязательного обновления за январь 2021 года на устройстве Azure Stack Edge для управления ролями IoT Edge потребуется использовать только последнюю версию API, пакета SDK и командлетов PowerShell.
 
-- Если вы используете API управления ролями с версией от 01 августа 2019 года, обновите версию до выпуска API за январь 2021 года. 
-- Если вы используете управление ролями с помощью пакета SDK версии 1.0.0, выполните обновление до выпуска версии за январь 2021 года.
-- Если вы используете управление ролями с помощью командлетов Azure PowerShell (предварительная версия), таких как `Get-AzStackEdgeRole`, `New-AzStackEdgeRole`, `Set-AzStackEdgeRole` или `Remove-AzStackEdgeRole`, придется дождаться новых командлетов, которые будут выпущены в феврале 2021 года.
+Следующие изменения станут обязательными только после применения обновления за январь 2021 года.
 
-Указанные выше изменения необходимы только в случае применения обновления за январь 2021 года. Если вы продолжили использовать имеющуюся версию программного обеспечения устройства, это не повлияет на управление ролями IoT Edge. Однако рекомендуется обновить устройство для получения новых функций и улучшения безопасности. 
-
+- Если вы используете API управления ролями версии&nbsp;2019-08-01, обновите API до версии, которая будет выпущена в январе 2021 года. 
+- Если вы используете для управления ролями пакет SDK версии&nbsp;1.0.0, обновите его до версии, которая будет выпущена в январе 2021 года.
+- Если вы используете для управления ролями командлеты Azure PowerShell (предварительная версия), такие как `Get-AzStackEdgeRole`, `New-AzStackEdgeRole`, `Set-AzStackEdgeRole` или `Remove-AzStackEdgeRole`, дождитесь выхода новых командлетов в феврале 2021 года.
 
 ## <a name="api-usage"></a>Использование API
 
-Если вы выполняли управления ролями IoT Edge через API, следует использовать новую версию API (от 01 декабря 2020 года), которая будет опубликована позже. Если вы используете текущий API ролей и установили следующую версию программного обеспечения устройства, необходимо перейти к ролям Kubernetes PUT, GET, DELETE, а затем добавить API надстройки IoT PUT.
+Если вы сейчас управляете ролями IoT Edge через API, следует использовать новую версию API 2020-12-01, которая будет опубликована позже. Если вы используете текущий API ролей, то после установки предстоящей версии программного обеспечения устройства необходимо перейти к ролям Kubernetes PUT, GET, DELETE, а затем добавить API надстройки IoT PUT.
 
+### <a name="for-the-put-method"></a>Для метода PUT
 
-### <a name="for-put-method"></a>Метод PUT
-
-#### <a name="current-http-request"></a>Текущий HTTP-запрос 
+#### <a name="the-current-http-request"></a>Как выглядит HTTP-запрос сейчас 
 
 - Вызовы API выполняются по следующему URI: https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/IoTRole1?api-version=2019-08-01
 
@@ -84,11 +87,13 @@ ms.locfileid: "94335688"
     }
     ```
 
-#### <a name="upcoming-http-request"></a>Предстоящий HTTP-запрос 
+#### <a name="the-upcoming-http-request"></a>Как будет выглядеть HTTP-запрос 
 
-- Вызовы API для роли Kubernetes выполняются по следующему URI: https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1?api-version=2020-12-01
+- Вызовы API для роли Kubernetes выполняются по следующему URI: 
 
-    Текст запроса выглядит следующим образом:
+  'https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1?api-version=2020-12-01'
+
+    Текст запроса будет выглядеть так:
 
     ```json
     {
@@ -110,10 +115,11 @@ ms.locfileid: "94335688"
     }
     ```
 
-- Вызовы API для надстройки IoT Edge выполняются по следующему URI: https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1/addons/iotaddon?api-version=2020-12-01
+- Вызовы API для надстройки IoT Edge выполняются по следующему URI: 
 
+   'https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1/addons/iotaddon?api-version=2020-12-01'
 
-    Текст запроса выглядит следующим образом:
+    Текст запроса будет выглядеть так:
 
     ```json
     {
@@ -152,12 +158,13 @@ ms.locfileid: "94335688"
     ```
 
 
-### <a name="for-get-method"></a>Метод GET
+### <a name="for-the-get-method"></a>Для метода GET
 
-#### <a name="current-http-response"></a>Текущий HTTP-ответ
+#### <a name="the-current-http-response"></a>Как выглядит HTTP-ответ сейчас
 
-- Вызовы API выполняются по следующему URI: https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/IoTRole1?api-version=2019-08-01
+- Вызовы API выполняются по этому URI: 
 
+   'https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/IoTRole1?api-version=2019-08-01'
 
 - Текст ответа выглядит следующим образом:
 
@@ -190,9 +197,12 @@ ms.locfileid: "94335688"
     }    
     ```
 
-#### <a name="upcoming-http-response"></a>Предстоящий ответ HTTP
+#### <a name="the-upcoming-http-response"></a>Как будет выглядеть HTTP-ответ
 
-- Вызовы API выполняются по следующему URI: https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1/addons/iotaddon?api-version=2020-12-01
+- Вызовы API выполняются по этому URI:  
+
+   'https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1/addons/iotaddon?api-version=2020-12-01'
+
 - Текст ответа выглядит следующим образом: 
 
     ```json
@@ -224,22 +234,25 @@ ms.locfileid: "94335688"
     }
     ```
 
-### <a name="for-delete-method"></a>Метод DELETE
+### <a name="for-the-delete-method"></a>Для метода DELETE
 
-### <a name="current"></a>Текущий
+### <a name="the-current-api-calls"></a>Как выглядят вызовы API сейчас
 
-Вызовы API выполняются по следующему URI: https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/IoTRole1?api-version=2019-08-01
+Вызовы API выполняются по этому URI:  
 
-### <a name="upcoming"></a>Предстоящие
+'https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/IoTRole1?api-version=2019-08-01'
 
-Вызовы API выполняются по следующему URI: https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1/addons/iotaddon?api-version=2020-12-01
+### <a name="the-upcoming-api-calls"></a>Как будут выглядеть вызовы API
 
+Вызовы API выполняются по этому URI:  
+
+'https://management.azure.com/subscriptions/4385cf00-2d3a-425a-832f-f4285b1c9dce/resourceGroups/GroupForEdgeAutomation/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/testedgedevice/roles/KubernetesRole1/addons/iotaddon?api-version=2020-12-01'
 
 ## <a name="sdk-usage"></a>Использование пакета SDK
 
-Если вы используете пакет SDK и установили обновление устройства за январь 2021 года, необходимо изменить способ настройки роли IoT Edge, как показано в следующей таблице. Затем необходимо скачать и установить следующий пакет NuGet, чтобы перейти к новому пакету SDK, как показано в следующем примере.
+Если вы используете пакет SDK, после установки обновления за январь 2021 года придется изменить способ настройки роли IoT Edge, как показано в следующем примере. После этого следует скачать и установить следующую версию пакета NuGet, чтобы перейти к использованию нового пакета SDK, как показано в следующем примере.
 
-### <a name="current-sdk-sample"></a>Пример текущей версии пакета SDK
+### <a name="the-current-sdk-sample"></a>Пример для текущей версии пакета SDK
 
 ```csharp
 var iotRoleStatus = "Enabled";
@@ -267,7 +280,7 @@ DataBoxEdgeManagementClient.Roles.CreateOrUpdate(deviceName, iotRoleName, role, 
 ```
 
 
-### <a name="new-sdk-sample"></a>Пример новой версии пакета SDK
+### <a name="the-new-sdk-sample"></a>Пример для новой версии пакета SDK
 
 ```csharp
 var k8sRoleStatus = "Enabled";
@@ -304,24 +317,24 @@ DataBoxEdgeManagementClient.AddOns.CreateOrUpdate(deviceName, k8sRoleName, addon
 
 ## <a name="cmdlet-usage"></a>Использование командлетов
 
-При использовании командлетов `Get-AzStackEdgeRole`, `New-AzStackEdgeRole`, `Set-AzStackEdgeRole` или `Remove-AzStackEdgeRole` необходимо подождать выпуска новой версии, запланированного на февраль 2021 года.
+Если вы используете командлеты `Get-AzStackEdgeRole`, `New-AzStackEdgeRole`, `Set-AzStackEdgeRole` или `Remove-AzStackEdgeRole`, вам придется дождаться новой версии, выпуск которой запланирован на февраль 2021 года.
 
-## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-#### <a name="i-am-using-azure-stack-edge-pro--fpga-does-the-january-2021-update-affect-the-fpga-model"></a>Я использую Azure Stack EDGE Pro — ППВМ. Влияет ли обновление за январь 2021 года на модель ППВМ?
+**Я использую Azure Stack EDGE Pro (ППВМ). Повлияет ли обновление за январь 2021 года на модель ППВМ?**
 
-Нет. Обновление за январь 2021 года затрагивает только устройства Azure Stack Edge — GPU, Azure Stack Edge Pro R и Azure Stack Edge Mini R Это обновление не затрагивает устройства Azure Stack EDGE Pro — ППВМ и не требует каких-либо изменений в управлении ролями IoT Edge.
+Нет. Обновление за январь 2021 года затрагивает только устройства Azure Stack Edge Pro (ППВМ), Azure Stack Edge Pro R и Azure Stack Edge Mini R. Это обновление не затрагивает устройства Azure Stack Edge Pro (ППВМ) и не требует каких-либо изменений в управлении ролями IoT Edge.
 
-#### <a name="after-i-update-my-azure-stack-edge-pro---gpu-to-the-new-device-software-in-january-2021-are-any-of-the-existing-services-affected"></a>После обновления Azure Stack Edge — GPU за январь 2021 года будут ли затронуты какие-либо из имеющихся служб?
+**Будут ли затронуты какие-либо из имеющихся служб после обновления Azure Stack Edge Pro (GPU) за январь 2021 года?**
 
-Нет. После установки обновления за январь 2021 года настроенные службы не будут затронуты. <!--check w/ Anoob, what existing services you are talking about in this question-->
+Нет. Установка обновления для устройств за январь 2021 года не затронет настроенные службы.
 
-#### <a name="what-are-the-high-level-changes-to-iot-edge-management-api-sdk-or-cmdlet"></a>Каковы общие изменения API управления IoT Edge, пакета SDK или командлета?
+**Каковы общие изменения в API, пакете SDK и командлетах для управления IoT Edge?**
 
-IoT Edge является надстройкой в роли Kubernetes. Это означает, что необходимо сначала настроить Kubernetes, а затем выполнить настройку IoT Edge.
+IoT Edge — это надстройка в роли Kubernetes, а значит вам придется сначала правильно настроить Kubernetes, а затем выполнить настройку IoT Edge.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Сведения о применении обновлений см. в [этой статье](azure-stack-edge-gpu-install-update.md).
+- [Узнайте, как применять обновления.](azure-stack-edge-gpu-install-update.md)
 

@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 10/22/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 2c280b8241819155f32942a399caa7f916db3827
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 6503955c69b8ca64678efbc0c01cea7f78509f8d
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91257747"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592725"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-python-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения Python с помощью удостоверения приложения
 
-В этом кратком руководстве вы напишете приложение Python, которое получит маркер доступа, используя удостоверение приложения, а затем вызовете API Microsoft Graph для отображения [списка пользователей](/graph/api/user-list) в каталоге. Этот сценарий полезен в ситуациях, где автономное, автоматическое задание или службу Windows необходимо запустить с использованием удостоверения приложения, а не удостоверения пользователя.
+При работе с этим кратким руководством вы скачаете и выполните пример кода. Такой пример кода демонстрирует, как приложение Python может получить маркер доступа с помощью удостоверения приложения для вызова API Microsoft Graph и отобразить [список пользователей](/graph/api/user-list) в каталоге, а также как автоматическое задание или служба Windows могут выполняться с удостоверением приложения, а не пользователя. 
 
 > [!div renderon="docs"]
 > ![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-netcore-daemon/netcore-daemon-intro.svg)
@@ -80,7 +80,7 @@ ms.locfileid: "91257747"
 > [!div renderon="docs"]
 > [Скачивание проекта управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip)
 
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div renderon="portal" id="autoupdate" class="sxs-lookup nextstepaction"]
 > [Скачивание примера кода](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip)
 
 > [!div class="sxs-lookup" renderon="portal"]

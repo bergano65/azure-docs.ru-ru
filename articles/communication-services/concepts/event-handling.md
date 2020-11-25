@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 67c701946eedf85176b3d14b09d3e723c4c74285
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: e661b99e3c5028f40ea69ddedc22c7ee2895acec
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072124"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888731"
 ---
 # <a name="event-handling-in-azure-communication-services"></a>Обработка событий в Службах коммуникации Azure
 
@@ -22,13 +22,13 @@ ms.locfileid: "92072124"
 
 Службы коммуникации Azure интегрируются со службой [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/), чтобы получать уведомления о событиях в реальном времени в надежном, безопасном режиме с возможностью масштабирования. Цель этой статьи — помочь вам настроить приложения для прослушивания событий Служб коммуникации. Например, может потребоваться обновить базу данных, создать рабочий элемент и доставить push-уведомление при получении SMS-сообщения на номер телефона, связанный с ресурсом Служб коммуникации.
 
-Сетка событий Azure — это полностью управляемая служба маршрутизации событий, использующая модель публикации и подписки. Сетка событий имеет встроенную поддержку служб Azure, таких как [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview) и [Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-overview). Она может передавать оповещения о событиях в службы, не относящиеся к Azure, с помощью веб-перехватчиков. Полный список обработчиков событий, которые поддерживает служба "Сетка событий", см. в статье [An introduction to Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) (Общие сведения о службе "Сетка событий Azure").
+Сетка событий Azure — это полностью управляемая служба маршрутизации событий, использующая модель публикации и подписки. Сетка событий имеет встроенную поддержку служб Azure, таких как [Функции Azure](../../azure-functions/functions-overview.md) и [Azure Logic Apps](../../azure-functions/functions-overview.md). Она может передавать оповещения о событиях в службы, не относящиеся к Azure, с помощью веб-перехватчиков. Полный список обработчиков событий, которые поддерживает служба "Сетка событий", см. в статье [An introduction to Azure Event Grid](../../event-grid/overview.md) (Общие сведения о службе "Сетка событий Azure").
 
 :::image type="content" source="https://docs.microsoft.com/azure/event-grid/media/overview/functional-model.png" alt-text="Схема, показывающая модель событий в Сетке событий Azure.":::
 
 ## <a name="events-types"></a>Типы событий
 
-Сетка событий использует [подписки на события](https://docs.microsoft.com/azure/event-grid/concepts#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. 
+Сетка событий использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. 
 
 Службы коммуникации Azure создают события следующих типов:
 
@@ -50,7 +50,7 @@ ms.locfileid: "92072124"
 
 ## <a name="event-subjects"></a>Темы событий
 
-Поле `subject` всех событий Служб коммуникации определяет пользователя, номер телефона или сущность, для которых предназначено событие. Стандартные префиксы используются для простой [фильтрации в Сетке событий](https://docs.microsoft.com/azure/event-grid/event-filtering).
+Поле `subject` всех событий Служб коммуникации определяет пользователя, номер телефона или сущность, для которых предназначено событие. Стандартные префиксы используются для простой [фильтрации в Сетке событий](../../event-grid/event-filtering.md).
 
 | Префикс темы                              | Сущность Службы коммуникации |
 | ------------------------------------------- | ---------------------------- |
@@ -351,6 +351,6 @@ ms.locfileid: "92072124"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* См. общие сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/overview).
-* Чтобы узнать больше о структуре Сетки событий Azure, см. статью [Основные понятия в Сетке событий](https://docs.microsoft.com/azure/event-grid/concepts).
-* Чтобы узнать больше о системных разделах Сетки событий Azure, см. статью [Системные разделы в Сетке событий Azure](https://docs.microsoft.com/azure/event-grid/system-topics).
+* См. общие сведения о [службе "Сетка событий Azure"](../../event-grid/overview.md).
+* Чтобы узнать больше о структуре Сетки событий Azure, см. статью [Основные понятия в Сетке событий](../../event-grid/concepts.md).
+* Чтобы узнать больше о системных разделах Сетки событий Azure, см. статью [Системные разделы в Сетке событий Azure](../../event-grid/system-topics.md).

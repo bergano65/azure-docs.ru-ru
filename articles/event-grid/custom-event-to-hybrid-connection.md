@@ -4,12 +4,12 @@ description: Руководство по Используйте службу "С
 ms.date: 07/07/2020
 ms.topic: tutorial
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 77633a717478ff143c3b084adc0b69019abb203f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c709d77827551860cc917c3c84c5a849d9fdc512
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87832133"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566832"
 ---
 # <a name="tutorial-route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Руководство по Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
 
@@ -17,12 +17,11 @@ ms.locfileid: "87832133"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас уже есть гибридное подключение и приложение-прослушиватель. Чтобы приступить к работе с гибридными подключениями, см. статью [Приступая к работе с гибридными подключениями к ретранслятору](../azure-relay/relay-hybrid-connections-dotnet-get-started.md) (.NET) или [Приступая к работе с гибридными подключениями к ретранслятору](../azure-relay/relay-hybrid-connections-node-get-started.md) (Node).
+- В этой статье предполагается, что у вас уже есть гибридное подключение и приложение-прослушиватель. Чтобы приступить к работе с гибридными подключениями, см. статью [Приступая к работе с гибридными подключениями к ретранслятору](../azure-relay/relay-hybrid-connections-dotnet-get-started.md) (.NET) или [Приступая к работе с гибридными подключениями к ретранслятору](../azure-relay/relay-hybrid-connections-node-get-started.md) (Node).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-> [!NOTE]
-> Если вы используете Azure CLI на локальном компьютере, используйте Azure CLI 2.0.56 или более поздней версии. Инструкции по установке последней версии Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется Azure CLI версии 2.0.56 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

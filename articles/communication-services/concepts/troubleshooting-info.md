@@ -8,12 +8,12 @@ ms.author: manoskow
 ms.date: 10/23/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: ff3e7fee87661fb89ba930b7368bd54e71ad57bf
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 775075765c8c8eaa94541c0f094c1f7743fe59d9
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357629"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886793"
 ---
 # <a name="troubleshooting-in-azure-communication-services"></a>Устранение неполадок в Службах коммуникации Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "93357629"
 
 Мы советуем разработчикам отправлять вопросы, предлагать функции и сообщать о проблемах, используя [репозиторий GitHub](https://github.com/Azure/communication) Служб коммуникации. Другие форумы:
 
-* [Майкрософт: вопросы и ответы](https://docs.microsoft.com/answers/questions/topics/single/101418.html)
+* [Майкрософт: вопросы и ответы](/answers/questions/topics/single/101418.html)
 * [Stackoverflow](https://stackoverflow.com/questions/tagged/azure+communication)
 
 В зависимости от [плана поддержки](https://azure.microsoft.com/support/plans/) для подписки Azure вы можете отправить запрос в службу поддержки напрямую через [портал Azure](https://azure.microsoft.com/support/create-ticket/).

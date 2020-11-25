@@ -6,14 +6,14 @@ ms.reviewer: dhgandhi
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 10/22/2020
+ms.date: 11/17/2020
 ms.author: banders
-ms.openlocfilehash: 69d6544485e356741634749dd91ba6485cfbb31c
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 7cbb628f6af286141fb1c7b330117ded33142c4f
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92460688"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94744244"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
@@ -25,7 +25,7 @@ ms.locfileid: "92460688"
 
 ## <a name="transfer-ea-subscriptions-to-a-csp-partner"></a>Передача подписок с Соглашением Enterprise партнерам по программе CSP
 
-Партнеры по прямым счетам CSP, сертифицированные как [Поставщик управляемых служб Azure Expert](https://partner.microsoft.com/membership/azure-expert-msp), могут запрашивать перенос подписок Azure для клиентов с прямым Соглашением Enterprise (EA). Перенос подписок разрешен только для клиентов, которые приняли Клиентское соглашение Майкрософт (MCA) и приобрели план Azure.
+Партнеры по прямым счетам CSP, сертифицированные как [Поставщик управляемых служб Azure Expert](https://partner.microsoft.com/membership/azure-expert-msp), могут запрашивать перенос подписок Azure для клиентов с прямым Соглашением Enterprise (EA). Перенос подписок разрешен только для клиентов, которые приняли Клиентское соглашение Майкрософт (MCA) и приобрели план Azure в рамках программы CSP.
 
 После утверждения запроса CSP может предоставить своим клиентам объединенный счет. Дополнительные сведения о передаче подписок с помощью CSP см. в разделе [Get billing ownership of Azure subscriptions to your MPA account](mpa-request-ownership.md) (Получение права владения на выставление счетов в подписках Azure).
 

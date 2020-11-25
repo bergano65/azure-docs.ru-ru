@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.author: sebansal
-ms.openlocfilehash: a85656909df5538f9f57e05d79ae768623d7eba6
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: c8f11f17c9e110509dcbcda291194f9b8d928c50
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289609"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94658967"
 ---
 # <a name="creating-and-merging-csr-in-key-vault"></a>Создание и слияние CSR в Key Vault
 
@@ -25,7 +25,15 @@ Azure Key Vault поддерживает хранение в хранилище 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="adding-certificate-in-key-vault-issued-by-a-non-trusted-ca"></a>Добавление в KeyVault сертификата, выданного недоверенным центром сертификации
+## <a name="adding-certificate-in-key-vault-issued-by-partnered-ca"></a>Добавление в KeyVault сертификата, выданного центром сертификации со статусом партнера
+Key Vault пользуется услугами следующих двух центров сертификации для упрощения процесса по созданию сертификатов. 
+
+|Поставщик|Тип сертификата|Настройка конфигурации  
+|--------------|----------------------|------------------|  
+|DigiCert;|Key Vault предоставляет OV или EV SSL-сертификаты в DigiCert| [Руководство по интеграции](./how-to-integrate-certificate-authority.md)
+|GlobalSign;|Key Vault предоставляет OV или EV SSL-сертификаты в GlobalSign| [Руководство по интеграции](https://support.globalsign.com/digital-certificates/digital-certificate-installation/generating-and-importing-certificate-microsoft-azure-key-vault)
+
+## <a name="adding-certificate-in-key-vault-issued-by-non-partnered-ca"></a>Добавление в KeyVault сертификата, выданного центром сертификации, который не имеет статус партнера
 
 Приведенные ниже инструкции помогут вам создать сертификат в центре сертификации, не имеющем партнерских отношений с Key Vault (например, GoDaddy не является доверенным ЦС хранилища ключей). 
 

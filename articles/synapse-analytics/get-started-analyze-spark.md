@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 89bc2723a0d7c99160c651fb433db6f8892ee676
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 07537e26b169414e3f8ec35cc32945c20f7eb7ce
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321076"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843287"
 ---
 # <a name="analyze-with-apache-spark"></a>Анализ с помощью Apache Spark
 
@@ -23,7 +23,10 @@ ms.locfileid: "93321076"
 
 В этом учебнике описываются основные шаги по загрузке и анализу данных с помощью Apache Spark для Azure Synapse.
 
-1. В центре **Данные** щелкните **Добавить новый ресурс** (кнопка со знаком плюса над пунктом **Связанный**) >> **Обзор**. Найдите и выберите **NYC Taxi & Limousine Commission - yellow taxi trip records**. В нижней части страницы щелкните **Продолжить** и выберите **Добавить набор данных**. Теперь в центре **Данные** в разделе **Связанный** щелкните правой кнопкой мыши **Хранилище BLOB-объектов Azure >> Примеры наборов данных >> nyc_tlc_yellow** и выберите **Новая записная книжка**.
+1. В центре **Данные** щелкните **Добавить новый ресурс** (кнопка со знаком плюса над пунктом **Связанный**) >> **Обзор**. 
+1. Найдите и выберите **NYC Taxi & Limousine Commission - yellow taxi trip records**. 
+1. В нижней части страницы щелкните **Продолжить** и выберите **Добавить набор данных**. 
+1. Теперь в центре **Данные** в разделе **Связанный** щелкните правой кнопкой мыши элементы **Хранилище BLOB-объектов Azure >> Sample Datasets (Примеры наборов данных) >> nyc_tlc_yellow** и выберите элемент **Новая записная книжка**.
 1. Будет создана записная книжка со следующим кодом:
     ```
     from azureml.opendatasets import NycTlcYellow
@@ -34,10 +37,14 @@ ms.locfileid: "93321076"
     ```
 1. В записной книжке в меню **Присоединить к** выберите бессерверный пул Spark.
 1. В ячейке выберите элемент **Выполнить**.
+1. Если вы просто хотите просмотреть схему кадра данных, выполните ячейку со следующим кодом:
+    ```
+    data_df.printSchema()
+    ```
 
 ## <a name="load-the-nyc-taxi-data-into-the-spark-nyctaxi-database"></a>Загрузка данных нью-йоркского такси в базу данных Spark "nyctaxi"
 
-В таблице есть данные, доступные в **SQLDB1**. Загрузите их в базу данных Spark с именем **nyctaxi**.
+В таблице есть данные, доступные в **SQLPOOL1**. Загрузите их в базу данных Spark с именем **nyctaxi**.
 
 1. В Synapse Studio перейдите в центр **Разработка**.
 1. Выберите **+**  > **Записная книжка**.
@@ -47,14 +54,14 @@ ms.locfileid: "93321076"
     ```scala
     %%spark
     spark.sql("CREATE DATABASE IF NOT EXISTS nyctaxi")
-    val df = spark.read.sqlanalytics("SQLDB1.dbo.Trip") 
+    val df = spark.read.sqlanalytics("SQLPOOL1.dbo.Trip") 
     df.write.mode("overwrite").saveAsTable("nyctaxi.trip")
     ```
 
 1. Перейдите в центр **Данные**, щелкните правой кнопкой мыши **Базы данных** и потом выберите **Обновить**. Вы должны видеть такие базы данных:
 
-    - **SQLDB1** (выделенный пул SQL);
-    - **nyctaxi** (бессерверный пул Apache Spark).
+    - **SQLPOOL1 (SQL)** ;
+    - **nyctaxi (Spark)** .
 
 ## <a name="analyze-the-nyc-taxi-data-using-spark-and-notebooks"></a>Анализ данных нью-йоркского такси с помощью Spark и записных книжек
 
@@ -67,7 +74,7 @@ ms.locfileid: "93321076"
    display(df)
    ```
 
-1. Выполните приведенный ниже код, чтобы провести тот же анализ, который был сделан ранее с помощью выделенного пула SQL **SQLDB1**. Этот код сохраняет результаты анализа в таблицу с именем **nyctaxi.passengercountstats** и визуализирует результаты.
+1. Выполните приведенный ниже код, чтобы провести тот же анализ, который был реализован ранее с помощью выделенного пула SQL **SQLPOOL1**. Этот код сохраняет результаты анализа в таблицу с именем **nyctaxi.passengercountstats** и визуализирует результаты.
 
    ```py
    %%pyspark
@@ -107,14 +114,14 @@ matplotlib.pyplot.show()
 
 ## <a name="load-data-from-a-spark-table-into-a-dedicated-sql-pool-table"></a>Загрузка данных из таблицы Spark в таблицу выделенного пула SQL
 
-Ранее мы скопировали данные из таблицы выделенного пула SQL **SQLDB1. dbo.Trip** в таблицу Spark **nyctaxi.trip**. Затем, используя Spark, данные были агрегированы в таблицу Spark **nyctaxi.passengercountstats**. Теперь скопируйте данные из **nyctaxi.passengercountstats** в таблицу выделенного пула SQL с именем **SQLDB1.dbo.PassengerCountStats**.
+Ранее мы скопировали данные из таблицы выделенного пула SQL **SQLPOOL1.dbo.Trip** в таблицу Spark **nyctaxi.trip**. Затем, используя Spark, данные были агрегированы в таблицу Spark **nyctaxi.passengercountstats**. Теперь скопируйте данные из **nyctaxi.passengercountstats** в таблицу выделенного пула SQL с именем **SQLPOOL1.dbo.PassengerCountStats**.
 
 Запустите следующую ячейку в записной книжке. Сводная таблица Spark копируется обратно в таблицу выделенного пула SQL.
 
 ```scala
 %%spark
 val df = spark.sql("SELECT * FROM nyctaxi.passengercountstats")
-df.write.sqlanalytics("SQLDB1.dbo.PassengerCountStats", Constants.INTERNAL )
+df.write.sqlanalytics("SQLPOOL1.dbo.PassengerCountStats", Constants.INTERNAL )
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

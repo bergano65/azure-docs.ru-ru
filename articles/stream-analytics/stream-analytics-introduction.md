@@ -1,23 +1,23 @@
 ---
-title: Общие сведения об Azure Stream Analytics
-description: Сведения о Stream Analytics, полностью управляемой облачной службе, предназначенной для аналитики потоковой передачи данных из Интернета вещей (IoT) в режиме реального времени.
+title: Введение в Azure Stream Analytics
+description: Сведения об Azure Stream Analytics, полностью управляемой облачной службе, предназначенной для аналитики потоковой передачи данных из Интернета вещей (IoT) в режиме реального времени.
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc, contperfq2
-ms.date: 11/03/2020
-ms.openlocfilehash: d81858db3f4d09b834a9199804a6f2631828496b
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 11/12/2020
+ms.openlocfilehash: 0022e19e23b7808cd78da988fd3fdef2d537acf5
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342238"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579442"
 ---
-# <a name="what-is-azure-stream-analytics"></a>Знакомство с Azure Stream Analytics
+# <a name="welcome-to-azure-stream-analytics"></a>Добро пожаловать в Azure Stream Analytics
 
-Azure Stream Analytics — это служба аналитики, работающая в режиме реального времени, которая представляет собой сложный механизм обработки событий. Она позволяет анализировать и обрабатывать большие объемы быстро передающихся потоковых данных из многочисленных источников одновременно. Она обеспечивает определение закономерностей и связей в данных, извлеченных из нескольких источников, таких как устройства, датчики, данные посещений сайта, каналы социальных сетей и приложения. На основе этих закономерностей можно активировать действия и инициировать рабочие процессы, например создавать оповещения, отправлять данные в средства составления отчетов или сохранять преобразованные данные для дальнейшего использования. Кроме того, служба Stream Analytics доступна в среде выполнения Azure IoT Edge, что позволяет обрабатывать данные на устройствах Интернета вещей. 
+Azure Stream Analytics — это служба аналитики, работающая в режиме реального времени, которая представляет собой сложный механизм обработки событий. Она позволяет анализировать и обрабатывать большие объемы быстро передающихся потоковых данных из многочисленных источников одновременно. Она обеспечивает определение закономерностей и связей в данных, извлеченных из нескольких источников, таких как устройства, датчики, данные посещений сайта, каналы социальных сетей и приложения. На основе этих закономерностей можно активировать действия и инициировать рабочие процессы, например создавать оповещения, отправлять данные в средства составления отчетов или сохранять преобразованные данные для дальнейшего использования. Кроме того, служба Stream Analytics доступна в среде выполнения Azure IoT Edge, что позволяет обрабатывать данные на устройствах Интернета вещей.
 
 Ниже описаны примеры сценариев, в которых удобно использовать Azure Stream Analytics:
 
@@ -26,6 +26,11 @@ Azure Stream Analytics — это служба аналитики, работа
 * геопространственная аналитика для управления транспортной системой и автономными транспортными средствами;
 * удаленный мониторинг и прогнозное обслуживание высокоценных ресурсов;
 * аналитика данных точки продаж в режиме реального времени для контроля запасов и обнаружения аномалий.
+
+Вы можете опробовать Azure Stream Analytics через бесплатную подписку на Azure.
+
+> [!div class="nextstepaction"]
+> [Опробовать Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
 
 ## <a name="how-does-stream-analytics-work"></a>Как работает Stream Analytics?
 
@@ -102,7 +107,7 @@ Stream Analytics может обрабатывать миллионы событ
 
 Теперь у вас есть общие сведения об Azure Stream Analytics. Теперь вы можете вникнуть в детали и создать свое первое задание Stream Analytics:
 
-* [Руководство по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
-* [Руководство по созданию задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
-* [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md).
-* [Краткое руководство. Создание облачного задания Azure Stream Analytics в Visual Studio Code (предварительная версия)](quick-create-visual-studio-code.md).
+* [Создание задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
+* [Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
+* [Создание задания Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)
+* [Создание задания Stream Analytics с помощью Visual Studio Code](quick-create-visual-studio-code.md)

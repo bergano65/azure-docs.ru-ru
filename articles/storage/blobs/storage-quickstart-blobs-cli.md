@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 08/17/2020
 ms.author: tamram
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 55cbf0a304bbf13d47fefad0981c0143c101bbb0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c9797024315a8fdc744d08863a42fba0b0b16420
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88520776"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94660344"
 ---
 # <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
@@ -27,19 +27,9 @@ Azure CLI — это интерфейс командной строки Azure д
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment-h3.md)]
 
-## <a name="install-the-azure-cli-locally"></a>Установка Azure CLI в локальной среде
-
-Если вы решили установить и использовать Azure CLI на локальном компьютере, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.46 или более поздней версии. Выполните команду `az --version`, чтобы определить версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Если вы используете Azure CLI на локальном компьютере, необходимо войти в систему и пройти проверку подлинности. В этом шаге нет необходимости, если вы используете Azure Cloud Shell. Чтобы войти в Azure CLI, запустите `az login` и пройдите проверку подлинности в окне браузера:
-
-```azurecli
-az login
-```
-
-Дополнительные сведения о проверке подлинности с помощью Azure CLI см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
+- Для работы с этой статьей требуется Azure CLI версии 2.0.46 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="authorize-access-to-blob-storage"></a>Авторизация доступа к хранилищу BLOB-объектов
 

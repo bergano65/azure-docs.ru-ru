@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 01/24/2020
 ms.author: lcozzens
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7b3221c55cef6207ea38ac1375202acd8b8ab4f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13b8e88d10d66f96db6b50e505d4e579cb1f2f2b
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88588353"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566917"
 ---
 # <a name="create-an-azure-app-configuration-store"></a>Создание хранилища конфигураций для приложения Azure
 
@@ -22,9 +22,9 @@ ms.locfileid: "88588353"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
+ - Для работы с этим руководством требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="sample-script"></a>Пример скрипта
 

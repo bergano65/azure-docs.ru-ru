@@ -15,24 +15,22 @@ ms.workload: infrastructure-services
 ms.date: 06/11/2020
 ms.author: allensu
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7d4467e557105100fc32940c05fa349722689867
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ec054d55432ad2680314b4ff91a067d37b629d4
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88054380"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734337"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-cli-and-test-the-nat-service"></a>Руководство по созданию шлюза NAT с помощью Azure CLI и проверке NAT
 
 Из этого учебника вы узнаете, как создать шлюз NAT для обеспечения исходящего подключения в виртуальных машинах в Azure. Чтобы протестировать шлюз NAT, необходимо развернуть виртуальные машины источника и назначения. Чтобы проверить шлюз NAT, установите исходящие подключения по общедоступному IP-адресу. Из исходной виртуальной машины будут выполняться подключения к виртуальной машине назначения. В этом учебнике развертываются исходная виртуальная машина и виртуальная машина назначения в двух разных виртуальных сетях, но для простоты — в одной и той же группе ресурсов.
 
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Инструкции из этого учебника можно выполнить, используя Azure Cloud Shell или запустив соответствующие команды локально.  Если вы никогда не использовали Azure Cloud Shell, необходимо [выполнить вход](https://shell.azure.com) сейчас.
-
-Если вы решили выполнить эти команды локально, необходимо установить CLI.  Для выполнения задач из этого учебника требуется Azure CLI 2.0.71 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
-
+- Для работы с этой статьей требуется Azure CLI версии 2.0.71 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

@@ -4,12 +4,12 @@ description: Краткое руководство. Используйте сл�
 ms.date: 07/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e2c017b95493000b3c206aa7b2398bbf7ef464ee
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4de7aa1c111b5b21a27b155474ae10f78feba083
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87497355"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566322"
 ---
 # <a name="quickstart-route-custom-events-to-azure-queue-storage-with-azure-cli-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в хранилище очередей Azure с помощью Azure CLI и службы "Сетка событий"
 
@@ -17,12 +17,11 @@ ms.locfileid: "87497355"
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы используете Azure CLI или Azure PowerShell на локальном компьютере вместо Cloud Shell на портале Azure, убедитесь, что у вас установлены следующие версии Azure CLI и Azure PowerShell: 
+- Для работы с этой статьей требуется Azure CLI версии 2.0.56 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-- Azure CLI 2.0.56 или более поздней версии. Инструкции по установке последней версии Azure CLI см. в [этой статье](/cli/azure/install-azure-cli). 
-- Azure PowerShell 1.1.0 или более поздней версии. Скачайте последнюю версию Azure PowerShell на компьютер Windows со [страницы загрузок Azure — программы командной строки](https://azure.microsoft.com/downloads/). 
+- Если вы используете Azure PowerShell на локальном компьютере вместо Cloud Shell на портале Azure, убедитесь, что у вас установлена версия Azure PowerShell 1.1.0 или более поздняя. Скачайте последнюю версию Azure PowerShell на компьютер Windows со [страницы загрузок Azure — программы командной строки](https://azure.microsoft.com/downloads/). 
 
 В этой статье приводятся команды для использования в Azure CLI. 
 

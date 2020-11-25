@@ -4,18 +4,18 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 258908ed1118b0463e8c824cd8c699fb460dfff2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9a9f8fdda1bc853057f3eb858e85b938357397cd
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945932"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886130"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/dotnet/) бесплатно.
 - Последняя версия [клиентской библиотеки NET Core](https://dotnet.microsoft.com/download/dotnet-core) для вашей операционной системы.
-- Получите последнюю версию [клиентской библиотеки идентификатора .NET](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet).
+- Получите последнюю версию [клиентской библиотеки идентификатора .NET](/dotnet/api/azure.identity?view=azure-dotnet).
 - Получите последнюю версию [клиентской библиотеки управления .NET](../../concepts/sdk-options.md).
 
 ## <a name="installing-the-client-library"></a>Установка клиентской библиотеки
@@ -44,13 +44,13 @@ using Azure.ResourceManager.Communication;
 
 ### <a name="option-1-managed-identity"></a>Вариант 1. Управляемое удостоверение
 
-Если код выполняется в качестве службы в Azure, самый простой способ пройти проверку подлинности — получить управляемое удостоверение Azure. Дополнительные сведения об [управляемых удостоверениях](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+Если код выполняется в качестве службы в Azure, самый простой способ пройти проверку подлинности — получить управляемое удостоверение Azure. Дополнительные сведения об [управляемых удостоверениях](../../../active-directory/managed-identities-azure-resources/overview.md).
 
-[Службы Azure с поддержкой управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)
+[Службы Azure с поддержкой управляемых удостоверений](../../../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)
 
-[Использование управляемых удостоверений в Службе приложений и Функциях Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet)
+[Использование управляемых удостоверений в Службе приложений и Функциях Azure](../../../app-service/overview-managed-identity.md?tabs=dotnet)
 
-#### <a name="system-assigned-managed-identity"></a>[Управляемое удостоверение, назначаемое системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity)
+#### <a name="system-assigned-managed-identity"></a>[Управляемое удостоверение, назначаемое системой](../../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity)
 
 ```csharp
 using Azure.Identity;
@@ -62,7 +62,7 @@ var subscriptionId = "AZURE_SUBSCRIPTION_ID";
 var acsClient = new CommunicationManagementClient(subscriptionId, new ManagedIdentityCredential());
 ```
 
-#### <a name="user-assigned-managed-identity"></a>[Управляемое удостоверение, назначаемое пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity)
+#### <a name="user-assigned-managed-identity"></a>[Управляемое удостоверение, назначаемое пользователем](../../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-user-assigned-identity)
 
 ClientId созданного управляемого удостоверения должен быть явно передан `ManagedIdentityCredential`.
 
@@ -79,7 +79,7 @@ var acsClient = new CommunicationManagementClient(subscriptionId, managedIdentit
 
 ### <a name="option-2-service-principal"></a>Вариант 2. Субъект-служба
 
-Вместо применения управляемого удостоверения проверку подлинности в Azure можно пройти, используя субъект-службу, которым вы самостоятельно управляете. Дополнительные сведения см. в документации по [созданию субъекта-службы в Azure Active Directory и управлении им](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+Вместо применения управляемого удостоверения проверку подлинности в Azure можно пройти, используя субъект-службу, которым вы самостоятельно управляете. Дополнительные сведения см. в документации по [созданию субъекта-службы в Azure Active Directory и управлении им](../../../active-directory/develop/howto-create-service-principal-portal.md).
 
 После создания субъекта-службы необходимо собрать следующие сведения о нем на портале Azure.
 
@@ -121,7 +121,7 @@ var communicationServiceClient = new CommunicationManagementClient(subscriptionI
 
 Для каждого из приведенных ниже примеров мы будем назначать ресурсы Служб коммуникации имеющейся группе ресурсов.
 
-Если вам необходимо создать группу ресурсов, можете использовать [портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal) или [клиентскую библиотеку Azure Resource Manager](https://github.com/Azure/azure-sdk-for-net/blob/master/doc/mgmt_preview_quickstart.md).
+Если вам необходимо создать группу ресурсов, можете использовать [портал Azure](../../../azure-resource-manager/management/manage-resource-groups-portal.md) или [клиентскую библиотеку Azure Resource Manager](https://github.com/Azure/azure-sdk-for-net/blob/master/doc/mgmt_preview_quickstart.md).
 
 ### <a name="create-and-manage-a-communication-services-resource"></a>Создание ресурсов Служб коммуникации Azure и управление ими
 

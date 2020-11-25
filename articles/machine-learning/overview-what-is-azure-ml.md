@@ -1,6 +1,6 @@
 ---
 title: Что такое служба "Машинное обучение Microsoft Azure"
-description: Общие сведения о машинном обучении Azure — полнофункциональном интегрированном решении для специалистов по обработке и анализу данных, которое позволяет разрабатывать, проверять и развертывать приложения расширенной аналитики в масштабах облака.
+description: Машинное обучение Azure — это интегрированное решение для специалистов по обработке и анализу данных и операций MLOps, позволяющее моделировать и развертывать приложения машинного обучения в масштабе облака.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 4dcc1d755f4fe11dda69f84466d3e958ca981ddf
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: af38f68a9709b21989ba787fb5b2c623e07dc440
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316296"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541289"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -111,10 +111,10 @@ ms.locfileid: "93316296"
 
 Машинное обучение Azure работает с другими службами на платформе Azure, а также интегрируется со средствами на основе открытого кода, такими как Git и MLFlow.
 
-+ Целевые объекты вычислений, такие как __Служба Azure Kubernetes__ , __Экземпляры контейнеров Azure__ , __Azure Databricks__ , __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
++ Целевые объекты вычислений, такие как __Служба Azure Kubernetes__, __Экземпляры контейнеров Azure__, __Azure Databricks__, __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
 + __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](./how-to-use-event-grid.md) (Использование событий Машинного обучения Azure (предварительная версия)).
 + __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
-+ Хранилища данных, такие как __учетные записи хранения Azure__ , __Azure Data Lake Storage__ , __База данных SQL Azure__ , __База данных Azure для PostgreSQL__ , а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md) (Создание наборов данных с помощью Открытых наборов данных Azure).
++ Хранилища данных, такие как __учетные записи хранения Azure__, __Azure Data Lake Storage__, __База данных SQL Azure__, __База данных Azure для PostgreSQL__, а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md) (Создание наборов данных с помощью Открытых наборов данных Azure).
 + __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Обзор изоляции и конфиденциальности в виртуальной сети](how-to-network-security-overview.md).
 + __Azure Pipelines__. Дополнительные сведения см. в статье [Train and deploy machine learning models](/azure/devops/pipelines/targets/azure-machine-learning) (Обучение и развертывание моделей машинного обучения).
 + __Журналы репозитория Git__. Дополнительные сведения см. в статье [Git integration for Azure Machine Learning](concept-train-model-git-integration.md) (Интеграция с Git для Машинного обучения Azure).

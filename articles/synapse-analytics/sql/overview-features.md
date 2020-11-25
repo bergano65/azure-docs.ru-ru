@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 03995166df5d40f7f8be7054aed0727be254ed73
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: cdb6fa5e1721d023edc93307ca146d1599bac219
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376899"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579051"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Функции T-SQL, которые поддерживаются в Azure Synapse SQL
 
@@ -32,7 +32,7 @@ Azure Synapse SQL — это служба аналитики больших д�
 | **Представления** | [Да.](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Представления могут использовать [элементы языка запросов](#query-language), доступные в выделенной модели. | [Да.](/sql/t-sql/statements/create-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Представления могут использовать [элементы языка запросов](#query-language), доступные в бессерверной модели. |
 | **Схемы** | [Да](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | [Да](/sql/t-sql/statements/create-schema-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) |
 | **Временные таблицы** | [Да](../sql-data-warehouse/sql-data-warehouse-tables-temporary.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Нет |
-| **Процедуры** | [Да](/sql/t-sql/statements/create-procedure-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Нет |
+| **Процедуры** | [Да](/sql/t-sql/statements/create-procedure-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Да |
 | **Функции** | [Да](/sql/t-sql/statements/create-function-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Да. Только встроенные функции с табличным значением. |
 | **Триггеры** | Нет | Нет |
 | **Внешние таблицы** | [Да.](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) См. поддерживаемые [форматы данных](#data-formats). | [Да.](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) См. поддерживаемые [форматы данных](#data-formats). |
@@ -43,6 +43,7 @@ Azure Synapse SQL — это служба аналитики больших д�
 | **[Разделы таблиц](../sql-data-warehouse/sql-data-warehouse-tables-partition.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)**                     | Да | Нет |
 | **[Статистика](develop-tables-statistics.md)**            | Да | Да |
 | **[Управление рабочими нагрузками, классы ресурсов и контроль параллелизма](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)** | Да    | Нет |
+| **[Управление рабочими нагрузками, классы ресурсов и контроль параллелизма](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)** | Да, при использовании действий по вертикальному масштабированию. | Да, при использовании [портала Azure или процедуры T-SQL](https://docs.microsoft.com/azure/synapse-analytics/sql/data-processed#cost-control). |
 
 ## <a name="query-language"></a>Язык запросов
 
@@ -77,7 +78,7 @@ Synapse SQL позволяет использовать встроенные ф�
 | --- | --- | --- |
 | **Имена входа** | Недоступно (в базах данных поддерживаются только автономные пользователи). | Да |
 | **Пользователи** |  Недоступно (в базах данных поддерживаются только автономные пользователи). | Да |
-| **[Автономные пользователи](/sql/relational-databases/security/contained-database-users-making-your-database-portable?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)** | Да. **Примечание.** Только один пользователь Azure AD может быть администратором с неограниченными правами. | Да |
+| **[Автономные пользователи](/sql/relational-databases/security/contained-database-users-making-your-database-portable?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)** | Да. **Примечание.** Только один пользователь Azure AD может быть администратором с неограниченными правами. | Нет |
 | **Аутентификация по имени пользователя и паролю в SQL**| Да | Да |
 | **Проверка подлинности через Azure Active Directory (Azure AD)**| Да (для пользователей Azure AD) | Да (для учетных данных и пользователей Azure AD) |
 | **Сквозная проверка подлинности в службе хранилища Azure Active Directory (Azure AD)** | Да | Да |
@@ -91,7 +92,7 @@ Synapse SQL позволяет использовать встроенные ф�
 | **Разрешения — [на уровне сервера](/sql/relational-databases/security/authentication-access/server-level-roles)** | Нет | Да, поддерживаются sysadmin и другие серверные роли |
 | **Разрешения — [защита на уровне столбцов](/azure/synapse-analytics/sql-data-warehouse/column-level-security?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)** | Да | Да |
 | **Роли и группы** | Да (в области базы данных) | Да (в области сервера и базы данных) |
-| **Безопасность и функции идентификации** | Некоторые функции и операторы безопасности Transact-SQL: `CURRENT_USER`, `HAS_DBACCESS`, `IS_MEMBER`, `IS_ROLEMEMBER`, `SESSION_USER`, `SUSER_NAME`, `SUSER_SNAME`, `SYSTEM_USER`, `USER`, `USER_NAME`, `EXECUTE AS`, `OPEN/CLOSE MASTER KEY`. | Некоторые функции и операторы безопасности Transact-SQL: `CURRENT_USER`, `HAS_DBACCESS`, `HAS_PERMS_BY_NAME`, `IS_MEMBER', 'IS_ROLEMEMBER`, `IS_SRVROLEMEMBER`, `SESSION_USER`, `SUSER_NAME`, `SUSER_SNAME`, `SYSTEM_USER`, `USER`, `USER_NAME`, `EXECUTE AS` и `REVERT`. Функции безопасности нельзя использовать для запроса по внешним данным (сначала сохраните результат в переменной, чтобы использовать ее в запросе).  |
+| **Безопасность и функции идентификации** | Некоторые функции и операторы безопасности Transact-SQL: `CURRENT_USER`, `HAS_DBACCESS`, `IS_MEMBER`, `IS_ROLEMEMBER`, `SESSION_USER`, `SUSER_NAME`, `SUSER_SNAME`, `SYSTEM_USER`, `USER`, `USER_NAME`, `EXECUTE AS`, `OPEN/CLOSE MASTER KEY`. | Некоторые функции и операторы безопасности Transact-SQL: `CURRENT_USER`, `HAS_DBACCESS`, `HAS_PERMS_BY_NAME`, `IS_MEMBER', 'IS_ROLEMEMBER`, `IS_SRVROLEMEMBER`, `SESSION_USER`, `SESSION_CONTEXT`, `SUSER_NAME`, `SUSER_SNAME`, `SYSTEM_USER`, `USER`, `USER_NAME`, `EXECUTE AS` и `REVERT`. Функции безопасности нельзя использовать для запроса по внешним данным (сначала сохраните результат в переменной, чтобы использовать ее в запросе).  |
 | **DATABASE SCOPED CREDENTIAL** | Да | Да |
 | **SERVER SCOPED CREDENTIAL** | Нет | Да |
 | **Безопасность на уровне строк** | [Да](https://docs.microsoft.com/sql/relational-databases/security/row-level-security?toc=%2Fazure%2Fsynapse-analytics%2Ftoc.json&bc=%2Fazure%2Fsynapse-analytics%2Fbreadcrumb%2Ftoc.json&view=sql-server-ver15) | Нет |
@@ -131,7 +132,12 @@ Synapse SQL позволяет использовать встроенные ф�
 | **Внутреннее хранилище** | Да | Нет |
 | **Azure Data Lake версии 2** | Да | Да |
 | **Хранилище BLOB-объектов Azure** | Да | Да |
-| **Аналитическое хранилище Azure Cosmos DB** | Нет | Да, при использовании [Synapse Link](/azure/cosmos-db/synapse-link?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) ([селективная предварительная версия](/azure/cosmos-db/synapse-link?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#limitations)) |
+| **Azure SQL (удаленный репозиторий)** | Нет | Нет |
+| **Транзакционное хранилище Azure CosmosDB** | Нет | Нет |
+| **Аналитическое хранилище Azure Cosmos DB** | Нет | Да, при использовании [Synapse Link (предварительная версия)](/azure/cosmos-db/synapse-link?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) (в [селективной предварительной версии](/azure/cosmos-db/synapse-link?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#limitations)) |
+| **Таблицы Apache Spark (в рабочей области)** | Нет | Таблицы PARQUET только при использовании [синхронизации метаданных](develop-storage-files-spark-tables.md) |
+| **Таблицы Apache Spark (удаленный репозиторий)** | Нет | Нет |
+| **Таблицы Databricks (удаленный репозиторий)** | Нет | Нет |
 
 ## <a name="data-formats"></a>Форматы данных
 

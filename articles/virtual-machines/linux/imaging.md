@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/22/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 61c21aed76cfaac5621b234b32c90877ef6faa9f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e364578cdec8696688cf19e14fd0529f1ca3fbb3
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966327"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94842623"
 ---
 # <a name="bringing-and-creating-linux-images-in-azure"></a>Применение и создание образов Linux в Azure
 
@@ -83,7 +83,7 @@ Azure предлагает два основных типа образов: ун
 - Глобальная репликация образов.
 - Контроль версий и группировка образов для более эффективного управления.
 - Высокодоступные образы с поддержкой хранилищ, избыточных между зонами, развернутые в регионах, где поддерживаются Зоны доступности. Служба ZRS повышает надежность на случай сбоев в зонах.
-- Совместное использование в разных подписках и даже разных клиентах Active Directory (AD) на базе RBAC.
+- Совместное использование в разных подписках и даже разных клиентах Active Directory (AD) на базе Azure RBAC.
 - Масштабирование развертывания с репликацией образов в каждом регионе.
 
 В общем случае создается общая коллекция образов, которая состоит из следующих элементов:

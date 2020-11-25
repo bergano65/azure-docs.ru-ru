@@ -18,22 +18,24 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: kumud
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 871c4fc69daac9d5f515fdf3e4ec0ca1de6fbe08
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 0a483bc6097c4dd76ed67e93e4313ad8c25cbc08
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91295980"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94542360"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-cli"></a>Краткое руководство. Диагностика проблемы с фильтром сетевого трафика на виртуальной машине с помощью Azure CLI
 
 При работе с этим кратким руководством вы развернете виртуальную машину и проверите доступ к IP- и URL-адресу и от IP-адреса. Затем вы определите причину проблемы с подключением и найдете способ ее устранения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать Azure CLI на локальном компьютере, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.28 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). После проверки версии CLI запустите `az login`, чтобы создать подключение к Azure. Команды Azure CLI в этом кратком руководстве отформатированы для выполнения в оболочке Bash.
+- Для работы с этим кратким руководством требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена. 
+
+- Команды Azure CLI в этом кратком руководстве отформатированы для выполнения в оболочке Bash.
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
@@ -134,7 +136,7 @@ az network nic list-effective-nsg \
 
 Возвращаемые данные содержат следующий текст для правила **AllowInternetOutbound**, которое разрешало исходящий доступ к www.bing.com в разделе [проверки IP-потока](#use-ip-flow-verify) выше:
 
-```
+```console
 {
  "access": "Allow",
  "additionalProperties": {},
@@ -175,7 +177,7 @@ az network nic list-effective-nsg \
 
 Когда вы выполняли команду `az network watcher test-ip-flow`, чтобы проверить исходящее подключение по адресу 172.131.0.100 в разделе [проверки IP-потока](#use-ip-flow-verify), выходные данные указывали на то, что правило **DefaultOutboundDenyAll** запрещает такую связь. Правило **DefaultOutboundDenyAll** аналогично правилу **DenyAllOutBound**, которое указано в следующих выходных данных команды `az network nic list-effective-nsg`:
 
-```
+```console
 {
  "access": "Deny",
  "additionalProperties": {},
@@ -208,7 +210,7 @@ az network nic list-effective-nsg \
 
 Когда вы выполняли команду `az network watcher test-ip-flow` в разделе [проверки IP-потока](#use-ip-flow-verify) для проверки входящей связи от адреса 172.131.0.100, выходные данные содержали сведения о том, что правило **DefaultInboundDenyAll** запрещает такую связь. Правило **DefaultInboundDenyAll** аналогично правилу **DenyAllInBound**, которое указано в следующих выходных данных команды `az network nic list-effective-nsg`:
 
-```
+```console
 {
  "access": "Deny",
  "additionalProperties": {},

@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/16/2020
 ms.author: sebansal
-ms.openlocfilehash: 2d981e902f829eb0fa8283b6a38ae376a780bcc9
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 591d71e8cd6af2801540f5a1a41ad88b1f538e81
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289753"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844494"
 ---
 # <a name="tutorial-configure-certificate-auto-rotation-in-key-vault"></a>Руководство по настройке автоматической смены сертификата в Key Vault
 
@@ -41,7 +41,7 @@ ms.locfileid: "93289753"
 
 ## <a name="create-a-vault"></a>Создание хранилища
 
-Создайте новое хранилище или выберите существующее для выполнения операций (см. статью [Создание хранилища ключей](../secrets/quick-create-portal.md)). В нашем примере используется хранилище ключей с именем **Example-Vault**.
+Создайте хранилище ключей Azure с помощью [портала Azure](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) или [Azure PowerShell](../general/quick-create-powershell.md). В нашем примере используется хранилище ключей с именем **Example-Vault**.
 
 ![Выходные данные после создания хранилища ключей](../media/certificates/tutorial-import-cert/vault-properties.png)
 

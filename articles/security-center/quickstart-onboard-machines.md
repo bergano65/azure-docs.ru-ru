@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
 zone_pivot_groups: non-azure-machines
-ms.openlocfilehash: 88c34be45a832f8944217630568927bc7d52fd88
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 572c657dd44db73b1401c72f0750fe8e000985ac
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660208"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94734360"
 ---
 # <a name="connect-your-non-azure-machines-to-security-center"></a>Подключение компьютеров, не связанных с Azure, к Центру безопасности
 
@@ -21,7 +21,7 @@ ms.locfileid: "94660208"
 
 Подключить компьютеры, не относящиеся к Azure, можно одним из следующих способов:
 
-- Использование [серверов с поддержкой Azure Arc (**рекомендуется**)
+- используя серверы с поддержкой Azure Arc (**рекомендуется**);
 - на страницах Центра безопасности на портале Azure (элементы **Начало работы** и **Учет**).
 
 Каждый из этих способов описан на этой странице.

@@ -8,12 +8,12 @@ ms.author: dademath
 ms.date: 07/28/2020
 ms.topic: include
 ms.service: azure-communication-services
-ms.openlocfilehash: d4ef8baa123f805d380b14fa24abff65903cb41d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: daf2d675bbbee324769b6e1e8d8d34587d37c72f
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945257"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886629"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,7 +37,7 @@ ms.locfileid: "90945257"
 
 ### <a name="azure-functions-set-up"></a>Настройка функций Azure
 
-Сначала создадим базовую структуру для нашей функции Azure. Пошаговые инструкции по настройке можно найти на следующей странице: [Краткое руководство. Создание функции в Azure с помощью Visual Studio Code](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript)
+Сначала создадим базовую структуру для нашей функции Azure. Пошаговые инструкции по настройке можно найти на следующей странице: [Краткое руководство. Создание функции в Azure с помощью Visual Studio Code](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript)
 
 Для функции Azure потребуется следующая конфигурация:
 
@@ -46,7 +46,7 @@ ms.locfileid: "90945257"
 - Уровень авторизации: Анонимный (можно изменить позже, если вы предпочитаете другую модель авторизации)
 - Имя функции: Определяется пользователем
 
-После выполнения [инструкций из этого краткого руководства](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript) с использованием приведенной выше конфигурации у вас должен быть проект в Visual Studio Code для функции Azure с файлом `index.js`, содержащим саму функцию. Код внутри этого файла должен быть следующим:
+После выполнения [инструкций из этого краткого руководства](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript) с использованием приведенной выше конфигурации у вас должен быть проект в Visual Studio Code для функции Azure с файлом `index.js`, содержащим саму функцию. Код внутри этого файла должен быть следующим:
 
 ```javascript
 
@@ -128,15 +128,15 @@ module.exports = async function (context, req) {
 
 ## <a name="test-the-azure-function"></a>Тестирование функции Azure
 
-Запустите функцию Azure локально, нажав клавишу `F5`. Это позволит локально инициализировать функцию Azure и сделать ее доступной через: `http://localhost:7071/api/FUNCTION_NAME`. Ознакомьтесь с дополнительной документацией по [локальному выполнению](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript#run-the-function-locally).
+Запустите функцию Azure локально, нажав клавишу `F5`. Это позволит локально инициализировать функцию Azure и сделать ее доступной через: `http://localhost:7071/api/FUNCTION_NAME`. Ознакомьтесь с дополнительной документацией по [локальному выполнению](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#run-the-function-locally).
 
 Откройте URL-адрес в браузере, и вы увидите текст ответа с идентификатором пользователя коммуникации, маркером и его сроком действия.
 
-:::image type="content" source="../media/trusted-service-sample-response.png" alt-text="Схема архитектуры доверенной службы":::
+:::image type="content" source="../media/trusted-service-sample-response.png" alt-text="Снимок экрана с примером ответа для созданной функции Azure.":::
 
 ## <a name="deploy-the-function-to-azure"></a>Развертывание функции в Azure
 
-Чтобы развернуть функцию Azure, выполните эти [пошаговые инструкции](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript#sign-in-to-azure).
+Чтобы развернуть функцию Azure, выполните эти [пошаговые инструкции](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#sign-in-to-azure).
 
 Как правило, вам необходимо будет сделать следующее:
 1. Войдите в Azure из Visual Studio.
@@ -151,4 +151,4 @@ module.exports = async function (context, req) {
 
 Чтобы найти URL-адрес, щелкните правой кнопкой мыши функцию в Visual Studio Code и скопируйте URL-адрес функции.
 
-Дополнительные сведения см. в разделе о [запуске функции в Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript#run-the-function-in-azure).
+Дополнительные сведения см. в разделе о [запуске функции в Azure](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#run-the-function-in-azure).

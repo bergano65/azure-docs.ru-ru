@@ -12,15 +12,18 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperfq1
-ms.openlocfilehash: e621d50280adcccb8dbd82f4ceb0de7956e98e4b
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: d356674819304897aef353d161ddf236e19db1f5
+ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91576971"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94592249"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Краткое руководство. Добавление функции входа платформы Microsoft Identity в веб-приложение ASP.NET
-В этом кратком руководстве вы на конкретном примере кода изучите, как веб-приложение ASP.NET позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD).  (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
+
+Из этого краткого руководства вы узнаете, как скачать и выполнить пример кода, в котором показана реализация входа в веб-приложение ASP.NET для пользователей из любой организации Azure Active Directory (Azure AD). 
+
+Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 > [!div renderon="docs"]
 > ## <a name="prerequisites"></a>Предварительные требования
 >
@@ -69,9 +72,9 @@ ms.locfileid: "91576971"
 > [!div renderon="docs"]
 > [Скачайте решение Visual Studio 2019](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-DotNet/archive/master.zip)
 
-> [!div renderon="portal"]
+> [!div renderon="portal" class="sxs-lookup"]
 > Запустите проект с помощью Visual Studio 2019.
-> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [!div renderon="portal" id="autoupdate" class="sxs-lookup nextstepaction"]
 > [Скачивание примера кода](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-DotNet/archive/master.zip)
 
 > [!div class="sxs-lookup" renderon="portal"]

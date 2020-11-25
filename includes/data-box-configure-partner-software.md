@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 11/20/2018
 ms.author: alkohli
-ms.openlocfilehash: cbf6d01925e1924bc5f3c7f1e99840d479fef296
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb1390a32abfe9ccf31002fc569936d39e4e5428
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185953"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553120"
 ---
 Настройте программное обеспечение партнера, чтобы подключиться к клиенту. Чтобы подключиться к программному обеспечению партнеров, вам, как правило, необходима информация (может отличаться), полученная из страницы локального пользовательского интерфейса **Подключиться и копировать** на предыдущем этапе.
 
@@ -23,8 +23,8 @@ ms.locfileid: "67185953"
 
 1. На панели команд сверху перейдите к **Изменить > Целевой объект Azure Stack**.
 
-    ![Панель мониторинга Data Box](media/data-box-configure-partner-software/data-box-connect-via-rest-6.png)
+    ![Снимок экрана: в меню "Правка" выбран элемент "Target Azure Stack" (Разработка для Azure Stack).](media/data-box-configure-partner-software/data-box-connect-via-rest-6.png)
 
 2. Перезапустите Обозреватель службы хранилища, чтобы изменения вступили в силу.
 
-    ![Панель мониторинга Data Box](media/data-box-configure-partner-software/data-box-connect-via-rest-7.png)
+    ![Снимок экрана: кнопка "Перезагрузить сейчас".](media/data-box-configure-partner-software/data-box-connect-via-rest-7.png)

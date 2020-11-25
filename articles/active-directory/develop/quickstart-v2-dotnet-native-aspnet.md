@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 786f566b121d5f0d5d64e7b8b269c7cdfab9e4a6
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 6874794dcf33d77d0b03f2a5713bdf42a40d6891
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91825061"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560916"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт
 
-Из этого краткого руководства вы узнаете, как предоставить веб-API и защитить его, чтобы доступ к нему могли получить только пользователи, прошедшие аутентификацию. В этой статье показано, как предоставить веб-API ASP.NET, чтобы он мог принимать маркеры, выданные личными учетными записями, например outlook.com, live.com либо рабочими или учебными учетными записями любой компании или организации, которая использует платформу удостоверений Майкрософт.
+При работе с этим кратким руководством вы скачаете и выполните пример кода. Такой пример кода демонстрирует, как защитить веб-API ASP.NET, разрешив доступ к его ресурсам только авторизованным учетным записям. Пример поддерживает авторизацию личных учетных записей Майкрософт и учетных записей в любой организации Azure Active Directory (Azure AD).
 
 В статье также описано использование приложения Windows Presentation Foundation (WPF) для демонстрации того, как можно запросить маркер доступа к веб-API.
 

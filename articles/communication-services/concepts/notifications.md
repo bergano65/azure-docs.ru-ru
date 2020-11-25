@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 3e68e65a5c2ed73a8fb6d8e5d01c645e05ca5157
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: b368048e5ea34ebfc073b1ae239cbb40724ae393
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320714"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94684378"
 ---
 # <a name="communication-services-notifications"></a>Уведомления в Службах коммуникации
 
@@ -53,7 +53,8 @@ Push-уведомления позволяют отправлять данные
 После настройки Центра уведомлений его можно связать с ресурсом Служб коммуникации, указав строку подключения для Центра с помощью клиента Azure Resource Manager или с помощью портала Azure. Строка подключения должна содержать разрешения на отправку. Рекомендуется создать другую политику доступа с разрешениями на отправку только для вашего центра. Дополнительные сведения о политиках безопасности и доступа к Центрам уведомлений см. [здесь](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-security).
 
 > [!IMPORTANT]
-> Чтобы включить Службу push-уведомлений Apple VOIP, необходимо задать имя Центра уведомлений в качестве идентификатора пакета приложения с суффиксом `.voip`. См. статью [Использование APNS VOIP с помощью Центров уведомлений](https://docs.microsoft.com/azure/notification-hubs/voip-apns).
+> Такой подход применим только для режима аутентификации по маркеру. Режим аутентификации по сертификату в настоящее время не поддерживается.  
+Чтобы включить уведомления APNS VOIP, сначала задайте значение идентификатора пакета при настройке центра уведомлений в качестве идентификатора пакета приложений с суффиксом `.voip`. Подробные сведения см. в статье [Использование APNS VOIP с помощью Центров уведомлений](https://docs.microsoft.com/azure/notification-hubs/voip-apns).
 
 #### <a name="using-the-azure-resource-manager-client-to-configure-the-notification-hub"></a>Настройка Центра уведомлений с помощью клиента Azure Resource Manager
 

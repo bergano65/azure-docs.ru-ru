@@ -7,12 +7,12 @@ ms.custom: subject-armqs
 ms.author: mathoma
 ms.date: 06/29/2020
 ms.service: dms
-ms.openlocfilehash: 24a0d16a6ff052df4b7a9bcdd078542987b4fd50
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a9c68bca4d50af734a0a2cd8a91c7e46d9b56ff1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88661186"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94963221"
 ---
 # <a name="quickstart-create-instance-of-azure-database-migration-service-using-arm-template"></a>Краткое руководство. Создание экземпляра Azure Database Migration Service с помощью шаблона ARM
 
@@ -109,7 +109,7 @@ Write-Host "Press [ENTER] to continue..."
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона ARM](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
 
 Другие способы развертывания Azure Database Migration Service описаны в следующих статьях: 
 - [Портал Azure](quickstart-create-data-migration-service-portal.md)

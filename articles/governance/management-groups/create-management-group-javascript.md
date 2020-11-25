@@ -1,15 +1,15 @@
 ---
 title: Краткое руководство. Создание группы управления с помощью JavaScript
 description: В этом кратком руководстве показано, как с помощью JavaScript создать группу управления для организации ресурсов в иерархию ресурсов.
-ms.date: 09/30/2020
+ms.date: 11/18/2020
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 965e4b8f81a26cab8f6e34cab3e51d6a97f5a6a6
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: c1b800f150cebacf8d17785feb1bded5189f1574
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676226"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886606"
 ---
 # <a name="quickstart-create-a-management-group-with-javascript"></a>Краткое руководство. Создание группы управления с помощью JavaScript
 
@@ -71,7 +71,7 @@ ms.locfileid: "92676226"
        const createMG = async () => {
           const credentials = await authenticator.interactiveLogin();
           const client = new managementGroups.ManagementGroupsAPI(credentials);
-          const result = await client.createOrUpdate(
+          const result = await client.managementGroups.createOrUpdate(
              groupId: argv.groupID,
              {
                  displayName: argv.displayName

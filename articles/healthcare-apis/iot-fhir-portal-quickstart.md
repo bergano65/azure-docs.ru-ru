@@ -6,18 +6,18 @@ author: ms-puneet-nagpal
 ms.service: healthcare-apis
 ms.subservice: iomt
 ms.topic: quickstart
-ms.date: 09/08/2020
+ms.date: 11/13/2020
 ms.author: punagpal
-ms.openlocfilehash: 1e3101c8abcaef52c0ae9aaafef36b23aa45b586
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: f36d842e14c91850bfeba47e9fef61d4747c33a9
+ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394515"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94630572"
 ---
 # <a name="quickstart-deploy-azure-iot-connector-for-fhir-preview-using-azure-portal"></a>Краткое руководство. Развертывание соединителя "Azure IoT для FHIR" (предварительная версия) на портале Azure
 
-Соединитель "Azure IoT для FHIR"* — это дополнительная функция Azure API для FHIR, которая позволяет принимать данные из Интернета медицинских вещей (Internet of Medical Things, IoMT). На этапе предварительной версии функция соединителя "Azure IoT для FHIR" доступна бесплатно. В этом кратком руководстве описано следующее:
+Соединитель Azure IoT для Ресурсов быстрого взаимодействия в сфере здравоохранения (FHIR&#174;)* — это дополнительная функция Azure API для FHIR, которая позволяет принимать данные из Интернета медицинских вещей (Internet of Medical Things, IoMT). На этапе предварительной версии функция соединителя "Azure IoT для FHIR" доступна бесплатно. В этом кратком руководстве описано следующее:
 - Развертывание и настройка соединителя "Azure IoT для FHIR" с помощью портала Azure.
 - Использование имитированного устройства для отправки данных в соединитель "Azure IoT для FHIR".
 - Просмотр ресурсов, созданных соединителем "Azure IoT для FHIR" в Azure API для FHIR.
@@ -29,17 +29,17 @@ ms.locfileid: "93394515"
 
 ## <a name="go-to-azure-api-for-fhir-resource"></a>Переход к ресурсу Azure API для FHIR.
 
-Откройте [портал Azure](https://portal.azure.com) и перейдите к ресурсу **Azure API для FHIR** , для которого вы хотите создать функцию соединителя "Azure IoT для FHIR".
+Откройте [портал Azure](https://portal.azure.com) и перейдите к ресурсу **Azure API для FHIR**, для которого вы хотите создать функцию соединителя "Azure IoT для FHIR".
 
 [![Ресурс Azure API для FHIR](media/quickstart-iot-fhir-portal/portal-azure-api-fhir.jpg)](media/quickstart-iot-fhir-portal/portal-azure-api-fhir.jpg#lightbox)
 
-В меню навигации слева щелкните **соединитель IoT (предварительная версия)** в разделе **Надстройки** , чтобы открыть страницу **Соединители IoT**.
+В меню навигации слева щелкните **соединитель IoT (предварительная версия)** в разделе **Надстройки**, чтобы открыть страницу **Соединители IoT**.
 
 [![Функция соединителя IoT](media/quickstart-iot-fhir-portal/portal-iot-connectors.jpg)](media/quickstart-iot-fhir-portal/portal-iot-connectors.jpg#lightbox)
 
 ## <a name="create-new-azure-iot-connector-for-fhir-preview"></a>Создание соединителя "Azure IoT для FHIR" (предварительная версия)
 
-Нажмите кнопку **Добавить** , чтобы открыть страницу **создания соединителя IoT**.
+Нажмите кнопку **Добавить**, чтобы открыть страницу **создания соединителя IoT**.
 
 [![Добавление соединителя IoT](media/quickstart-iot-fhir-portal/portal-iot-connectors-add.jpg)](media/quickstart-iot-fhir-portal/portal-iot-connectors-add.jpg#lightbox)
 
@@ -53,7 +53,7 @@ ms.locfileid: "93394515"
 |Параметр|Значение|Описание |
 |---|---|---|
 |Имя соединителя|Уникальное имя|Введите имя, чтобы определить соединитель "Azure IoT для FHIR". Это имя должно быть уникальным в пределах ресурса Azure API для FHIR. Имя может содержать только строчные буквы, цифры и знак дефиса (-). Оно должно начинаться и заканчиваться буквой или цифрой и содержать от 3 до 24 символов.|
-|Тип разрешения|Подстановка или создание|Выберите **Подстановка** , если вы используете отдельный процесс для создания ресурсов FHIR [Устройство](https://www.hl7.org/fhir/device.html) или [Пациент](https://www.hl7.org/fhir/patient.html) в Azure API для FHIR. Соединитель "Azure IoT для FHIR" будет использовать ссылки на эти ресурсы при создании ресурса FHIR [Наблюдение](https://www.hl7.org/fhir/observation.html) для представления данных устройства. Выберите **Создать** , если вы хотите, чтобы соединитель "Azure IoT для FHIR" создал простые ресурсы "Устройство" и "Пациент" в Azure API для FHIR, используя соответствующие значения идентификатора, имеющиеся в данных устройствах.|
+|Тип разрешения|Подстановка или создание|Выберите **Подстановка**, если вы используете отдельный процесс для создания ресурсов FHIR [Устройство](https://www.hl7.org/fhir/device.html) или [Пациент](https://www.hl7.org/fhir/patient.html) в Azure API для FHIR. Соединитель "Azure IoT для FHIR" будет использовать ссылки на эти ресурсы при создании ресурса FHIR [Наблюдение](https://www.hl7.org/fhir/observation.html) для представления данных устройства. Выберите **Создать**, если вы хотите, чтобы соединитель "Azure IoT для FHIR" создал простые ресурсы "Устройство" и "Пациент" в Azure API для FHIR, используя соответствующие значения идентификатора, имеющиеся в данных устройствах.|
 
 После завершения установки вновь созданный соединитель "Azure IoT для FHIR" будет отображаться на странице **Соединители IoT**.
 
@@ -145,7 +145,7 @@ ms.locfileid: "93394515"
 
 [![Выбор параметра управления клиентскими подключениями в соединителе IoT](media/quickstart-iot-fhir-portal/portal-iot-connector-click-client-connections.jpg)](media/quickstart-iot-fhir-portal/portal-iot-connector-click-client-connections.jpg#lightbox)
 
-На странице **Подключения** нажмите кнопку **Добавить** , чтобы создать соединение. 
+На странице **Подключения** нажмите кнопку **Добавить**, чтобы создать соединение. 
 
 [![Подключения соединителя IoT](media/quickstart-iot-fhir-portal/portal-iot-connections.jpg)](media/quickstart-iot-fhir-portal/portal-iot-connections.jpg#lightbox)
 
@@ -189,7 +189,7 @@ Azure предоставляет обширный набор продуктов 
 
 Если экземпляр соединителя "Azure IoT для FHIR" больше не нужен, его можно удалить, удалив связанную группу ресурсов, соответствующую службу Azure API для FHIR или сам экземпляр соединителя "Azure IoT для FHIR". 
 
-Чтобы напрямую удалить экземпляр соединителя "Azure IoT для FHIR", выберите экземпляр на странице **соединителей IoT** , чтобы перейти на страницу **соединителя IoT** , и нажмите кнопку **Удалить**. Нажмите кнопку **Да** при запросе на подтверждение. 
+Чтобы напрямую удалить экземпляр соединителя "Azure IoT для FHIR", выберите экземпляр на странице **соединителей IoT**, чтобы перейти на страницу **соединителя IoT**, и нажмите кнопку **Удалить**. Нажмите кнопку **Да** при запросе на подтверждение. 
 
 [![Удаление экземпляра соединителя IoT](media/quickstart-iot-fhir-portal/portal-iot-connector-delete.jpg)](media/quickstart-iot-fhir-portal/portal-iot-connector-delete.jpg#lightbox)
 
@@ -207,6 +207,4 @@ Azure предоставляет обширный набор продуктов 
 >[!div class="nextstepaction"]
 >[Шаблоны сопоставления для соединителя "Azure IoT для FHIR"](iot-mapping-templates.md)
 
-*На портале Azure соединитель "Azure IoT для FHIR" называется соединителем IoT (предварительная версия).
-
-FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.
+*На портале Azure соединитель Azure IoT для FHIR называется соединителем IoT (предварительная версия). FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.

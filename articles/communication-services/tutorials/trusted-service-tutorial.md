@@ -9,12 +9,12 @@ ms.author: dademath
 ms.date: 07/28/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: cffe2ef77f2b832c55ef17823163cd6580f31504
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d4fdef6406bfa2e64456f14778cc136735070656
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945289"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886636"
 ---
 # <a name="build-a-trusted-authentication-service-using-azure-functions"></a>Создание доверенной службы проверки подлинности с помощью Функций Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "90945289"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы хотите очистить и удалить подписку на Службы коммуникации, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней. См. дополнительные сведения об [очистке ресурсов Служб коммуникации Azure](../quickstarts/create-communication-resource.md#clean-up-resources) и [очистке ресурсов Функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?#clean-up-resources).
+Если вы хотите очистить и удалить подписку на Службы коммуникации, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней. См. дополнительные сведения об [очистке ресурсов Служб коммуникации Azure](../quickstarts/create-communication-resource.md#clean-up-resources) и [очистке ресурсов Функций Azure](../../azure-functions/create-first-function-vs-code-csharp.md#clean-up-resources).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

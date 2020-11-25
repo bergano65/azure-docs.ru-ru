@@ -15,33 +15,30 @@ ms.workload: infrastructure-services
 ms.date: 10/23/2020
 ms.author: allensu
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 75e37c91b9b3161d7396d94fb086c4dc567a18c1
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 834b5c3651a7fff085dc53096f66d5e3f4bf27b4
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546999"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94700417"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
 Начните работу с Azure Load Balancer, создав с помощью Azure CLI общедоступную подсистему балансировки нагрузки и три виртуальные машины.
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
-- Локальная установка Azure CLI или Azure Cloud Shell
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)] 
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
-
-Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI версии 2.0.28 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
+- Для работы с этим кратким руководством требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create):
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create):
 
-* с именем **CreateIntLBQS-rg** ; 
+* с именем **CreateIntLBQS-rg**; 
 * в расположении **eastus**.
 
 ```azurecli-interactive
@@ -62,13 +59,13 @@ ms.locfileid: "92546999"
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-createt):
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-createt):
 
-* с именем **myVNet** ;
-* с префиксом подсети **10.1.0.0/16** ;
-* с именем подсети **myBackendSubnet** ;
-* с префиксом подсети **10.1.0.0/24** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
+* с именем **myVNet**;
+* с префиксом подсети **10.1.0.0/16**;
+* с именем подсети **myBackendSubnet**;
+* с префиксом подсети **10.1.0.0/24**;
+* в группе ресурсов **CreateIntLBQS-rg**;
 * расположении **eastus**.
 
 ```azurecli-interactive
@@ -84,9 +81,9 @@ ms.locfileid: "92546999"
 
 Для подсистемы балансировки нагрузки уровня "Стандартный" у серверных виртуальных машин должны быть сетевые интерфейсы, связанные с группой безопасности сети. 
 
-Создайте группу безопасности сети с помощью команды [az network nsg create](https://docs.microsoft.com/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create):
+Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create):
 
-* с именем **myNSG** ;
+* с именем **myNSG**;
 * в группе ресурсов **CreateIntLBQS-rg**.
 
 ```azurecli-interactive
@@ -97,18 +94,18 @@ ms.locfileid: "92546999"
 
 ### <a name="create-a-network-security-group-rule"></a>Создание правила группы безопасности сети
 
-Создайте правило группы безопасности сети с помощью команды [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create), используя такие сведения:
+Создайте правило группы безопасности сети с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create), используя такие сведения:
 
-* имя **myNSGRuleHTTP** ;
-* группа безопасности сети, созданная на предыдущем шаге, **myNSG** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
+* имя **myNSGRuleHTTP**;
+* группа безопасности сети, созданная на предыдущем шаге, **myNSG**;
+* в группе ресурсов **CreateIntLBQS-rg**.
 * с протоколом **(*)** ;
-* направление **Входящий** ;
+* направление **Входящий**;
 * источник **(*)** ;
 * назначение **(*)** ;
-* порт назначения **порт 80** ;
-* доступ **Разрешить** ;
-* приоритет  **200**.
+* порт назначения **порт 80**;
+* доступ **Разрешить**;
+* приоритет **200**.
 
 ```azurecli-interactive
   az network nsg rule create \
@@ -125,17 +122,25 @@ ms.locfileid: "92546999"
     --priority 200
 ```
 
+## <a name="create-backend-servers"></a>Создание внутренних серверов
+
+В этом разделе показано, как создать:
+
+* сетевые интерфейсы для внутренних серверов;
+* файл конфигурации облака с именем **cloud-init.txt** для конфигурации сервера;
+* две виртуальные машины, которые будут использоваться в качестве внутренних серверов для подсистемы балансировки нагрузки.
+
 ### <a name="create-network-interfaces-for-the-virtual-machines"></a>Создание сетевых интерфейсов для виртуальных машин
 
-Создайте два сетевых интерфейса с помощью команды [az network nic create](https://docs.microsoft.com/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create).
+Создайте два сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create).
 
 #### <a name="vm1"></a>VM1
 
-* имя **myNicVM1** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* виртуальная сеть **myVNet** ;
-* подсеть **myBackendSubnet** ;
-* группа безопасности сети **myNSG** ;
+* имя **myNicVM1**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* виртуальная сеть **myVNet**;
+* подсеть **myBackendSubnet**;
+* группа безопасности сети **myNSG**;
 
 ```azurecli-interactive
   az network nic create \
@@ -147,11 +152,11 @@ ms.locfileid: "92546999"
 ```
 #### <a name="vm2"></a>VM2
 
-* имя **myNicVM2** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* виртуальная сеть **myVNet** ;
-* подсеть **myBackendSubnet** ;
-* группа безопасности сети **myNSG** ;
+* имя **myNicVM2**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* виртуальная сеть **myVNet**;
+* подсеть **myBackendSubnet**;
+* группа безопасности сети **myNSG**;
 
 ```azurecli-interactive
   az network nic create \
@@ -161,13 +166,6 @@ ms.locfileid: "92546999"
     --subnet myBackEndSubnet \
     --network-security-group myNSG
 ```
-
-## <a name="create-backend-servers"></a>Создание внутренних серверов
-
-В этом разделе показано, как создать:
-
-* файл конфигурации облака с именем **cloud-init.txt** для конфигурации сервера;
-* две виртуальные машины, которые будут использоваться в качестве внутренних серверов для подсистемы балансировки нагрузки.
 
 ### <a name="create-cloud-init-configuration-file"></a>Создание файла конфигурации cloud-init
 
@@ -218,14 +216,14 @@ runcmd:
 ```
 ### <a name="create-virtual-machines"></a>Создание виртуальных машин
 
-Создайте виртуальные машины с помощью команды [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create), используя следующие сведения:
+Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create), используя следующие сведения:
 
 #### <a name="vm1"></a>VM1
-* имя **myVM1** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* подключена к сетевому интерфейсу **myNicVM1** ;
-* образ виртуальной машины **UbuntuLTS** ;
-* файл конфигурации **cloud-init.txt** , созданный на шаге выше;
+* имя **myVM1**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* подключена к сетевому интерфейсу **myNicVM1**;
+* образ виртуальной машины **UbuntuLTS**;
+* файл конфигурации **cloud-init.txt**, созданный на шаге выше;
 * в **зоне 1**.
 
 ```azurecli-interactive
@@ -242,11 +240,11 @@ runcmd:
     
 ```
 #### <a name="vm2"></a>VM2
-* имя **myVM2** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* подключена к сетевому интерфейсу **myNicVM2** ;
-* образ виртуальной машины **UbuntuLTS** ;
-* файл конфигурации **cloud-init.txt** , созданный на шаге выше;
+* имя **myVM2**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* подключена к сетевому интерфейсу **myNicVM2**;
+* образ виртуальной машины **UbuntuLTS**;
+* файл конфигурации **cloud-init.txt**, созданный на шаге выше;
 * в **зоне 2**.
 
 ```azurecli-interactive
@@ -275,11 +273,11 @@ runcmd:
 
 ### <a name="create-the-load-balancer-resource"></a>Создание ресурса подсистемы балансировки нагрузки
 
-С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create) создайте общедоступную подсистему балансировки нагрузки:
+С помощью команды [az network lb create](/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create) создайте общедоступную подсистему балансировки нагрузки:
 
-* с именем **myLoadBalancer** ,
+* с именем **myLoadBalancer**,
 * пулом переднего плана **myFrontEnd**
-* и серверным пулом **myBackEndPool** ,
+* и серверным пулом **myBackEndPool**,
 * связанную с виртуальной сетью **myVNet**
 * и внутренней подсетью **myBackendSubnet**.
 
@@ -300,11 +298,11 @@ runcmd:
 
 Виртуальная машина с неудачной пробой удаляется из подсистемы балансировки нагрузки и снова добавляется в нее после устранения сбоя.
 
-Создайте пробу работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create), которая:
+Создайте пробу работоспособности с помощью команды [az network lb probe create](/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create), которая:
 
 * отслеживает работоспособность виртуальных машин;
-* имеет имя **myHealthProbe** ;
-* использует протокол **TCP** ;
+* имеет имя **myHealthProbe**;
+* использует протокол **TCP**;
 * отслеживает **порт 80**.
 
 ```azurecli-interactive
@@ -324,14 +322,14 @@ runcmd:
 * серверный пул IP-адресов для приема трафика;
 * требуемые порты источника и назначения. 
 
-С помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create) создайте правило подсистемы балансировки нагрузки, которое:
+С помощью команды [az network lb rule create](/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create) создайте правило подсистемы балансировки нагрузки, которое:
 
-* имеет имя **myHTTPRule** ;
-* ожидает передачи данных от **порта 80** , используемого интерфейсным пулом **myFrontEnd** ;
-* перенаправляет трафик, для которого настроена балансировка нагрузки, ко внутреннему пулу адресов **myBackEndPool** , который использует **порт 80** ; 
-* использует пробу работоспособности **myHealthProbe** ;
-* использует протокол **TCP** ;
-* с временем ожидания перед переходом в режим простоя **15 минут** ;
+* имеет имя **myHTTPRule**;
+* ожидает передачи данных от **порта 80**, используемого интерфейсным пулом **myFrontEnd**;
+* перенаправляет трафик, для которого настроена балансировка нагрузки, ко внутреннему пулу адресов **myBackEndPool**, который использует **порт 80**; 
+* использует пробу работоспособности **myHealthProbe**;
+* использует протокол **TCP**;
+* с временем ожидания перед переходом в режим простоя **15 минут**;
 * и включенной функцией сброса подключений TCP.
 
 ```azurecli-interactive
@@ -350,17 +348,17 @@ runcmd:
     --enable-tcp-reset true
 ```
 >[!NOTE]
->Виртуальные машины во внутреннем пуле не смогут создавать исходящие подключения к Интернету с такой конфигурацией. </br> Дополнительные сведения о включении исходящих подключений см. в следующих статьях: </br> **[Исходящие подключения в Azure](load-balancer-outbound-connections.md)**</br> Варианты обеспечения подключений: </br> **[Конфигурация подсистемы балансировки нагрузки только для исходящего трафика](egress-only.md)** </br> **[Что такое NAT виртуальной сети?](https://docs.microsoft.com/azure/virtual-network/nat-overview)**
+>Виртуальные машины во внутреннем пуле не смогут создавать исходящие подключения к Интернету с такой конфигурацией. </br> Дополнительные сведения о включении исходящих подключений см. в следующих статьях: </br> **[Исходящие подключения в Azure](load-balancer-outbound-connections.md)**</br> Варианты обеспечения подключений: </br> **[Конфигурация подсистемы балансировки нагрузки только для исходящего трафика](egress-only.md)** </br> **[Что такое NAT виртуальной сети?](../virtual-network/nat-overview.md)**
 
 ### <a name="add-virtual-machines-to-load-balancer-backend-pool"></a>Добавление виртуальных машин во внутренний пул подсистемы балансировки нагрузки
 
-Добавьте виртуальные машины во внутренний пул, используя команду [az network nic ip-config address-pool add](https://docs.microsoft.com/cli/azure/network/nic/ip-config/address-pool?view=azure-cli-latest#az-network-nic-ip-config-address-pool-add):
+Добавьте виртуальные машины во внутренний пул, используя команду [az network nic ip-config address-pool add](/cli/azure/network/nic/ip-config/address-pool?view=azure-cli-latest#az-network-nic-ip-config-address-pool-add):
 
 
 #### <a name="vm1"></a>VM1
-* в серверном пуле адресов **myBackEndPool** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* связь с сетевым интерфейсом **myNicVM1** и **ipconfig1** ;
+* в серверном пуле адресов **myBackEndPool**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* связь с сетевым интерфейсом **myNicVM1** и **ipconfig1**;
 * связанный с подсистемой балансировки нагрузки **myLoadBalancer**.
 
 ```azurecli-interactive
@@ -373,9 +371,9 @@ runcmd:
 ```
 
 #### <a name="vm2"></a>VM2
-* в серверном пуле адресов **myBackEndPool** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* связь с сетевым интерфейсом **myNicVM2** и **ipconfig1** ;
+* в серверном пуле адресов **myBackEndPool**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* связь с сетевым интерфейсом **myNicVM2** и **ipconfig1**;
 * связанный с подсистемой балансировки нагрузки **myLoadBalancer**.
 
 ```azurecli-interactive
@@ -398,13 +396,13 @@ runcmd:
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-createt):
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-createt):
 
-* с именем **myVNet** ;
-* с префиксом подсети **10.1.0.0/16** ;
-* с именем подсети **myBackendSubnet** ;
-* с префиксом подсети **10.1.0.0/24** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
+* с именем **myVNet**;
+* с префиксом подсети **10.1.0.0/16**;
+* с именем подсети **myBackendSubnet**;
+* с префиксом подсети **10.1.0.0/24**;
+* в группе ресурсов **CreateIntLBQS-rg**;
 * расположении **eastus**.
 
 ```azurecli-interactive
@@ -420,9 +418,9 @@ runcmd:
 
 Для подсистемы балансировки нагрузки уровня "Стандартный" у серверных виртуальных машин должны быть сетевые интерфейсы, связанные с группой безопасности сети. 
 
-Создайте группу безопасности сети с помощью команды [az network nsg create](https://docs.microsoft.com/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create):
+Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create):
 
-* с именем **myNSG** ;
+* с именем **myNSG**;
 * в группе ресурсов **CreateIntLBQS-rg**.
 
 ```azurecli-interactive
@@ -433,18 +431,18 @@ runcmd:
 
 ### <a name="create-a-network-security-group-rule"></a>Создание правила группы безопасности сети
 
-Создайте правило группы безопасности сети с помощью команды [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create), используя такие сведения:
+Создайте правило группы безопасности сети с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create), используя такие сведения:
 
-* имя **myNSGRuleHTTP** ;
-* группа безопасности сети, созданная на предыдущем шаге, **myNSG** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
+* имя **myNSGRuleHTTP**;
+* группа безопасности сети, созданная на предыдущем шаге, **myNSG**;
+* в группе ресурсов **CreateIntLBQS-rg**;
 * с протоколом **(*)** ;
-* направление **Входящий** ;
+* направление **Входящий**;
 * источник **(*)** ;
 * назначение **(*)** ;
-* порт назначения **порт 80** ;
-* доступ **Разрешить** ;
-* приоритет  **200**.
+* порт назначения **порт 80**;
+* доступ **Разрешить**;
+* приоритет **200**.
 
 ```azurecli-interactive
   az network nsg rule create \
@@ -463,15 +461,15 @@ runcmd:
 
 ### <a name="create-network-interfaces-for-the-virtual-machines"></a>Создание сетевых интерфейсов для виртуальных машин
 
-Создайте два сетевых интерфейса с помощью команды [az network nic create](https://docs.microsoft.com/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create).
+Создайте два сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create).
 
 #### <a name="vm1"></a>VM1
 
-* имя **myNicVM1** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* виртуальная сеть **myVNet** ;
-* подсеть **myBackendSubnet** ;
-* группа безопасности сети **myNSG** ;
+* имя **myNicVM1**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* виртуальная сеть **myVNet**;
+* подсеть **myBackendSubnet**;
+* группа безопасности сети **myNSG**;
 
 ```azurecli-interactive
 
@@ -484,10 +482,10 @@ runcmd:
 ```
 #### <a name="vm2"></a>VM2
 
-* имя **myNicVM2** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* виртуальная сеть **myVNet** ;
-* подсеть **myBackendSubnet** ;
+* имя **myNicVM2**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* виртуальная сеть **myVNet**;
+* подсеть **myBackendSubnet**;
 
 ```azurecli-interactive
   az network nic create \
@@ -558,10 +556,10 @@ runcmd:
 
 ### <a name="create-availability-set-for-virtual-machines"></a>Создание группы доступности для виртуальных машин
 
-Создайте группу доступности, используя команду [az vm availability-set create](https://docs.microsoft.com/cli/azure/vm/availability-set?view=azure-cli-latest#az-vm-availability-set-create) и следующие сведения:
+Создайте группу доступности, используя команду [az vm availability-set create](/cli/azure/vm/availability-set?view=azure-cli-latest#az-vm-availability-set-create) и следующие сведения:
 
-* имя **myAvSet** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
+* имя **myAvSet**;
+* в группе ресурсов **CreateIntLBQS-rg**;
 * расположение **eastus**.
 
 ```azurecli-interactive
@@ -574,14 +572,14 @@ runcmd:
 
 ### <a name="create-virtual-machines"></a>Создание виртуальных машин
 
-Создайте виртуальные машины с помощью команды [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create), используя следующие сведения:
+Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create), используя следующие сведения:
 
 #### <a name="vm1"></a>VM1
-* имя **myVM1** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* подключена к сетевому интерфейсу **myNicVM1** ;
-* образ виртуальной машины **UbuntuLTS** ;
-* файл конфигурации **cloud-init.txt** , созданный на шаге выше;
+* имя **myVM1**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* подключена к сетевому интерфейсу **myNicVM1**;
+* образ виртуальной машины **UbuntuLTS**;
+* файл конфигурации **cloud-init.txt**, созданный на шаге выше;
 * группа доступности **myAvSet**.
 
 ```azurecli-interactive
@@ -598,11 +596,11 @@ runcmd:
     
 ```
 #### <a name="vm2"></a>VM2
-* имя **myVM2** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* подключена к сетевому интерфейсу **myNicVM2** ;
-* образ виртуальной машины **UbuntuLTS** ;
-* файл конфигурации **cloud-init.txt** , созданный на шаге выше;
+* имя **myVM2**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* подключена к сетевому интерфейсу **myNicVM2**;
+* образ виртуальной машины **UbuntuLTS**;
+* файл конфигурации **cloud-init.txt**, созданный на шаге выше;
 * в **зоне 2**.
 
 ```azurecli-interactive
@@ -631,11 +629,11 @@ runcmd:
 
 ### <a name="create-the-load-balancer-resource"></a>Создание ресурса подсистемы балансировки нагрузки
 
-С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create) создайте общедоступную подсистему балансировки нагрузки:
+С помощью команды [az network lb create](/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create) создайте общедоступную подсистему балансировки нагрузки:
 
-* с именем **myLoadBalancer** ,
+* с именем **myLoadBalancer**,
 * пулом переднего плана **myFrontEnd**
-* и серверным пулом **myBackEndPool** ,
+* и серверным пулом **myBackEndPool**,
 * связанную с виртуальной сетью **myVNet**
 * и внутренней подсетью **myBackendSubnet**.
 
@@ -656,11 +654,11 @@ runcmd:
 
 Виртуальная машина с неудачной пробой удаляется из подсистемы балансировки нагрузки и снова добавляется в нее после устранения сбоя.
 
-Создайте пробу работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create), которая:
+Создайте пробу работоспособности с помощью команды [az network lb probe create](/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create), которая:
 
 * отслеживает работоспособность виртуальных машин;
-* имеет имя **myHealthProbe** ;
-* использует протокол **TCP** ;
+* имеет имя **myHealthProbe**;
+* использует протокол **TCP**;
 * отслеживает **порт 80**.
 
 ```azurecli-interactive
@@ -680,14 +678,14 @@ runcmd:
 * серверный пул IP-адресов для приема трафика;
 * требуемые порты источника и назначения. 
 
-С помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create) создайте правило подсистемы балансировки нагрузки, которое:
+С помощью команды [az network lb rule create](/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create) создайте правило подсистемы балансировки нагрузки, которое:
 
-* имеет имя **myHTTPRule** ;
-* ожидает передачи данных от **порта 80** , используемого интерфейсным пулом **myFrontEnd** ;
-* перенаправляет трафик, для которого настроена балансировка нагрузки, ко внутреннему пулу адресов **myBackEndPool** , который использует **порт 80** ; 
-* использует пробу работоспособности **myHealthProbe** ;
-* использует протокол **TCP** ;
-* с временем ожидания перед переходом в режим простоя **15 минут** ;
+* имеет имя **myHTTPRule**;
+* ожидает передачи данных от **порта 80**, используемого интерфейсным пулом **myFrontEnd**;
+* перенаправляет трафик, для которого настроена балансировка нагрузки, ко внутреннему пулу адресов **myBackEndPool**, который использует **порт 80**; 
+* использует пробу работоспособности **myHealthProbe**;
+* использует протокол **TCP**;
+* с временем ожидания перед переходом в режим простоя **15 минут**;
 
 ```azurecli-interactive
   az network lb rule create \
@@ -704,13 +702,13 @@ runcmd:
 ```
 ### <a name="add-virtual-machines-to-load-balancer-backend-pool"></a>Добавление виртуальных машин во внутренний пул подсистемы балансировки нагрузки
 
-Добавьте виртуальные машины во внутренний пул, используя команду [az network nic ip-config address-pool add](https://docs.microsoft.com/cli/azure/network/nic/ip-config/address-pool?view=azure-cli-latest#az-network-nic-ip-config-address-pool-add):
+Добавьте виртуальные машины во внутренний пул, используя команду [az network nic ip-config address-pool add](/cli/azure/network/nic/ip-config/address-pool?view=azure-cli-latest#az-network-nic-ip-config-address-pool-add):
 
 
 #### <a name="vm1"></a>VM1
-* в серверном пуле адресов **myBackEndPool** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* связь с сетевым интерфейсом **myNicVM1** и **ipconfig1** ;
+* в серверном пуле адресов **myBackEndPool**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* связь с сетевым интерфейсом **myNicVM1** и **ipconfig1**;
 * связанный с подсистемой балансировки нагрузки **myLoadBalancer**.
 
 ```azurecli-interactive
@@ -723,9 +721,9 @@ runcmd:
 ```
 
 #### <a name="vm2"></a>VM2
-* в серверном пуле адресов **myBackEndPool** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* связь с сетевым интерфейсом **myNicVM2** и **ipconfig1** ;
+* в серверном пуле адресов **myBackEndPool**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* связь с сетевым интерфейсом **myNicVM2** и **ipconfig1**;
 * связанный с подсистемой балансировки нагрузки **myLoadBalancer**.
 
 ```azurecli-interactive
@@ -743,9 +741,9 @@ runcmd:
 
 ### <a name="create-azure-bastion-public-ip"></a>Создание общедоступного IP-адреса Бастиона Azure
 
-Чтобы создать общедоступный IP-адрес узла-бастиона, воспользуйтесь командой [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create):
+Чтобы создать общедоступный IP-адрес узла-бастиона, воспользуйтесь командой [az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create):
 
-* создайте стандартный избыточный между зонами общедоступный IP-адрес с именем **myPublicIP** ;
+* создайте стандартный избыточный между зонами общедоступный IP-адрес с именем **myPublicIP**;
 * в группе ресурсов **CreateIntLBQS-rg**.
 
 ```azurecli-interactive
@@ -757,12 +755,12 @@ runcmd:
 
 ### <a name="create-azure-bastion-subnet"></a>Создание подсети Бастиона Azure
 
-Используйте команду [az network vnet subnet create](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-create), чтобы создать подсеть:
+Используйте команду [az network vnet subnet create](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-create), чтобы создать подсеть:
 
-* с именем **AzureBastionSubnet** ;
+* с именем **AzureBastionSubnet**;
 * с префиксом подсети **10.1.1.0/24**.
-* в виртуальной сети **myVNet** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
+* в виртуальной сети **myVNet**;
+* в группе ресурсов **CreateIntLBQS-rg**;
 
 ```azurecli-interactive
   az network vnet subnet create \
@@ -773,12 +771,12 @@ runcmd:
 ```
 
 ### <a name="create-azure-bastion-host"></a>Создание узла-бастиона Azure
-Используйте команду [az network bastion create](https://docs.microsoft.com/cli/azure/network/bastion?view=azure-cli-latest#az-network-bastion-create) для создания узла-бастиона:
+Используйте команду [az network bastion create](/cli/azure/network/bastion?view=azure-cli-latest#az-network-bastion-create) для создания узла-бастиона:
 
-* с именем **myBastionHost** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* связанного с общедоступным IP-адресом **myBastionIP** ;
-* связанного с виртуальной сетью **myVNet** ;
+* с именем **myBastionHost**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* связанного с общедоступным IP-адресом **myBastionIP**;
+* связанного с виртуальной сетью **myVNet**;
 * в расположении **eastus**.
 
 ```azurecli-interactive
@@ -793,13 +791,13 @@ runcmd:
 
 ### <a name="create-test-virtual-machine"></a>Создание тестовой виртуальной машины
 
-Создайте сетевой интерфейс с помощью команды [az network nic create](https://docs.microsoft.com/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create):
+Создайте сетевой интерфейс с помощью команды [az network nic create](/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create):
 
-* с именем **myNicTestVM** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* виртуальная сеть **myVNet** ;
-* подсеть **myBackendSubnet** ;
-* группа безопасности сети **myNSG** ;
+* с именем **myNicTestVM**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* виртуальная сеть **myVNet**;
+* подсеть **myBackendSubnet**;
+* группа безопасности сети **myNSG**;
 
 ```azurecli-interactive
   az network nic create \
@@ -809,12 +807,12 @@ runcmd:
     --subnet myBackEndSubnet \
     --network-security-group myNSG
 ```
-С помощью команды [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) создайте виртуальную машину:
+С помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create) создайте виртуальную машину:
 
-* с именем **myTestVM** ;
-* в группе ресурсов **CreateIntLBQS-rg** ;
-* с подключением к сетевому интерфейсу **myNicTestVM** ;
-* с образом виртуальной машины **Win2019Datacenter** ;
+* с именем **myTestVM**;
+* в группе ресурсов **CreateIntLBQS-rg**;
+* с подключением к сетевому интерфейсу **myNicTestVM**;
+* с образом виртуальной машины **Win2019Datacenter**;
 * с выбранными значениями для **\<adminpass>** и **\<adminuser>** .
   
 
@@ -834,11 +832,11 @@ runcmd:
 
 1. [Войдите](https://portal.azure.com) на портал Azure.
 
-1. Найдите частный IP-адрес для подсистемы балансировки нагрузки на экране **обзора**. В меню слева щелкните **Все службы** , выберите **Все ресурсы** , а затем — **myLoadBalancer**.
+1. Найдите частный IP-адрес для подсистемы балансировки нагрузки на экране **обзора**. В меню слева щелкните **Все службы**, выберите **Все ресурсы**, а затем — **myLoadBalancer**.
 
 2. Запишите или скопируйте адрес рядом с **частным IP-адресом** на экране **обзора** **myLoadBalancer**.
 
-3. В меню слева щелкните **Все службы** , выберите **Все ресурсы** , а затем в списке ресурсов выберите виртуальную машину **myTestVM** , расположенную в группе ресурсов **CreateIntLBQS-rg**.
+3. В меню слева щелкните **Все службы**, выберите **Все ресурсы**, а затем в списке ресурсов выберите виртуальную машину **myTestVM**, расположенную в группе ресурсов **CreateIntLBQS-rg**.
 
 4. На странице **Обзор** выберите **Подключиться** и **Бастион**.
 
@@ -854,7 +852,7 @@ runcmd:
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов, подсистему балансировки нагрузки и все связанные с ней ресурсы, выполнив команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete).
+Вы можете удалить ненужную группу ресурсов, подсистему балансировки нагрузки и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
 
 ```azurecli-interactive
   az group delete \

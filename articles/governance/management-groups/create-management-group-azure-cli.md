@@ -4,12 +4,12 @@ description: В этом кратком руководстве показано,
 ms.date: 08/31/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f07ae46c95f9ab9cc1ad973204ac5c50320fdf46
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 54d7afbaa4bfe2799ca0d68927394a38d9845c53
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89237135"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920667"
 ---
 # <a name="quickstart-create-a-management-group-with-the-azure-cli"></a>Краткое руководство. Создание группы управления с помощью Azure CLI
 
@@ -29,7 +29,7 @@ ms.locfileid: "89237135"
 
 ### <a name="create-in-the-azure-cli"></a>Создание с помощью Azure CLI
 
-Чтобы создать новую группу управления в Azure CLI, используйте команду [az account management-group create](/cli/azure/account/management-group#az-account-management-group-create). В нашем примере группа управления **name** — это _Contoso_.
+Чтобы создать новую группу управления в Azure CLI, используйте команду [az account management-group create](/cli/azure/account/management-group#az_account_management_group_create). В нашем примере группа управления **name** — это _Contoso_.
 
 ```azurecli-interactive
 az account management-group create --name 'Contoso'
@@ -51,7 +51,7 @@ az account management-group create --name 'ContosoSubGroup' --parent 'Contoso'
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы удалить созданную ранее группу управления, воспользуйтесь командой [az account management-group delete](/cli/azure/account/management-group#az-account-management-group-delete):
+Чтобы удалить созданную ранее группу управления, воспользуйтесь командой [az account management-group delete](/cli/azure/account/management-group#az_account_management_group_delete):
 
 ```azurecli-interactive
 az account management-group delete --name 'Contoso'

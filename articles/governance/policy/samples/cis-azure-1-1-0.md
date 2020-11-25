@@ -1,23 +1,23 @@
 ---
 title: Сведения о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 description: Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
-ms.date: 10/20/2020
+ms.date: 11/17/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 06b74daff584c9df35d4c762c3115b95e4ed3179
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 1f9379427be69ecf8a07000744f0410c9b34f13c
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320586"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94696937"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-regulatory-compliance-built-in-initiative"></a>Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 
 В следующей статье подробно описано, как определение встроенной инициативы о соответствии нормативным требованиям Политики Azure сопоставляется с **областями соответствия нормативным требованиям** и **элементами управления** в тестах CIS оценки безопасности для платформ Microsoft Azure.
 Дополнительные сведения об этом стандарте соответствия требованиям см. в статье [Тест производительности CIS для платформ Microsoft Azure](https://www.cisecurity.org/benchmark/azure/). Сведения о термине _Ответственный_ см. в статьях [Определение службы "Политика Azure"](../concepts/definition-structure.md#type) и [Разделение ответственности в облаке](../../../security/fundamentals/shared-responsibility.md).
 
-Ниже приведены сопоставления соответствующие элементам управления **Теста производительности CIS для платформ Microsoft Azure v1.1.0** . Используйте панель навигации справа для перехода непосредственно к конкретной **области соответствия нормативным требованиям** . Многие элементы управления реализуются с помощью определения инициативы [Политики Azure](../overview.md). Чтобы просмотреть полное определение инициативы, откройте раздел **Политика** на портале Azure и перейдите на страницу **Определения** .
-Затем найдите и выберите определение встроенной инициативы о соответствии требованиям **теста производительности CIS для платформ Microsoft Azure версии 1.1.0** .
+Ниже приведены сопоставления соответствующие элементам управления **Теста производительности CIS для платформ Microsoft Azure v1.1.0**. Используйте панель навигации справа для перехода непосредственно к конкретной **области соответствия нормативным требованиям**. Многие элементы управления реализуются с помощью определения инициативы [Политики Azure](../overview.md). Чтобы просмотреть полное определение инициативы, откройте раздел **Политика** на портале Azure и перейдите на страницу **Определения**.
+Затем найдите и выберите определение встроенной инициативы о соответствии требованиям **теста производительности CIS для платформ Microsoft Azure версии 1.1.0**.
 
 Эта встроенная инициатива развертывается в составе [примера схемы CIS для оценки безопасности для платформ Microsoft Azure](../../blueprints/samples/cis-azure-1-1-0.md).
 
@@ -29,7 +29,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-multi-factor-authentication-is-enabled-for-all-privileged-users"></a>Обеспечение того, что многофакторная проверка подлинности включена для всех привилегированных пользователей
 
-**Идентификатор** . CIS Azure 1.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 1.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -38,7 +38,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-multi-factor-authentication-is-enabled-for-all-non-privileged-users"></a>Обеспечение того, что многофакторная проверка подлинности включена для всех непривилегированных пользователей
 
-**Идентификатор** . CIS Azure 1.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 1.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -46,7 +46,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-there-are-no-guest-users"></a>Обеспечение того, что гостевых пользователей не существует
 
-**Идентификатор** . CIS Azure 1.3 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 1.3 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -56,7 +56,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-no-custom-subscription-owner-roles-are-created"></a>Обеспечение того, что роли владельца пользовательской подписки не созданы
 
-**Идентификатор** . CIS Azure 1.23 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 1.23 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -66,7 +66,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-automatic-provisioning-of-monitoring-agent-is-set-to-on"></a>Обеспечение того, что включен параметр "Автоматическая подготовка агента мониторинга"
 
-**Идентификатор** . CIS Azure 2.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -74,7 +74,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-system-updates-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг обновлений системы" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.3 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.3 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -82,7 +82,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-os-vulnerabilities-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг уязвимостей ОС" не имеет значение"Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.4 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.4 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -90,7 +90,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-endpoint-protection-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг Endpoint Protection" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.5 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.5 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -98,7 +98,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-disk-encryption-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг шифрования дисков" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.6 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.6 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -106,7 +106,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-network-security-groups-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг групп безопасности сети" не имеет значение"Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.7 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.7 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -114,7 +114,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-enable-next-generation-firewallngfw-monitoring-is-not-disabled"></a>Обеспечение того, что параметр "Включение мониторинга брандмауэра следующего поколения (NGFW)" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.9 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.9 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -123,7 +123,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-vulnerability-assessment-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг оценки уязвимостей" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.10 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.10 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -131,7 +131,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-jit-network-access-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг JIT-доступа к сети" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.12 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.12 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -139,7 +139,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-adaptive-application-whitelisting-is-not-disabled"></a>Обеспечение того, что параметр Monitor Adaptive Application Whitelisting (Мониторинг ведения адаптивного белого списка) не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.13 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.13 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -147,7 +147,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-sql-auditing-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг аудита SQL" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.14 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.14 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -155,7 +155,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-asc-default-policy-setting-monitor-sql-encryption-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг шифрования SQL" не имеет значение "Отключено" в политике ASC по умолчанию
 
-**Идентификатор** . CIS Azure 2.15 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.15 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -163,7 +163,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-security-contact-emails-is-set"></a>Обеспечение того, что установлен параметр "Адреса электронной почты контактных лиц по вопросам безопасности"
 
-**Идентификатор** . CIS Azure 2.16 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.16 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -171,7 +171,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-security-contact-phone-number-is-set"></a>Обеспечение того, что установлен параметр "Номер телефона" для контактного лица по вопросам безопасности
 
-**Идентификатор** . CIS Azure 2.17 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.17 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -179,7 +179,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-send-email-notification-for-high-severity-alerts-is-set-to-on"></a>Обеспечение того, что включен параметр "Отправлять оповещения высокой серьезности по электронной почте"
 
-**Идентификатор** . CIS Azure 2.18 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.18 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -187,7 +187,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-send-email-also-to-subscription-owners-is-set-to-on"></a>Обеспечение того, что включен параметр "Также отправлять оповещения владельцам подписки"
 
-**Идентификатор** . CIS Azure 2.19 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 2.19 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -197,7 +197,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-secure-transfer-required-is-set-to-enabled"></a>Обеспечение того, что для параметра "Требуется безопасное перемещение" задано значение "Включено"
 
-**Идентификатор** . CIS Azure 3.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 3.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -205,7 +205,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-default-network-access-rule-for-storage-accounts-is-set-to-deny"></a>Обеспечение того, что в правиле сетевого доступа по умолчанию для учетных записей хранения задано значение "Отклонить"
 
-**Идентификатор** . CIS Azure 3.7 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 3.7 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -213,7 +213,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-trusted-microsoft-services-is-enabled-for-storage-account-access"></a>Убедитесь что для доступа к учетной записи хранения включен параметр "Доверенные службы Майкрософт"
 
-**Идентификатор** . CIS Azure 3.8 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 3.8 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -223,7 +223,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-auditing-is-set-to-on"></a>Обеспечение того, что для параметра "Аудит" задано значение "Вкл."
 
-**Идентификатор** . CIS Azure 4.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -231,7 +231,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-auditactiongroups-in-auditing-policy-for-a-sql-server-is-set-properly"></a>Обеспечение того, что параметр AuditActionGroups в политике аудита для SQL-сервера установлен правильно
 
-**Идентификатор** . CIS Azure 4.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -239,7 +239,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-auditing-retention-is-greater-than-90-days"></a>Обеспечение того, что задан период хранения данных аудита более 90 дней
 
-**Идентификатор** . CIS Azure 4.3 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.3 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -247,7 +247,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-advanced-data-security-on-a-sql-server-is-set-to-on"></a>Обеспечение того, что для параметра "Расширенная защита данных" на сервере SQL задано значение "Вкл."
 
-**Идентификатор** . CIS Azure 4.4 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.4 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -256,7 +256,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-azure-active-directory-admin-is-configured"></a>Обеспечение того, что администратор Azure Active Directory настроен
 
-**Идентификатор** . CIS Azure 4.8 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.8 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -264,7 +264,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-data-encryption-is-set-to-on-on-a-sql-database"></a>Обеспечение того, что для параметра "Шифрование данных" в Базе данных SQL установлено значение "Вкл."
 
-**Идентификатор** . CIS Azure 4.9 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.9 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -272,7 +272,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-sql-servers-tde-protector-is-encrypted-with-byok-use-your-own-key"></a>Обеспечение того, что предохранитель TDE сервера SQL зашифрован с помощью BYOK (используйте собственный ключ)
 
-**Идентификатор** . CIS Azure 4.10 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.10 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -281,7 +281,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-enforce-ssl-connection-is-set-to-enabled-for-mysql-database-server"></a>Обеспечение того, что параметр "Принудительно использовать SSL-соединение" включен для сервера баз данных MySQL
 
-**Идентификатор** . CIS Azure 4.11 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.11 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -289,7 +289,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-server-parameter-log_checkpoints-is-set-to-on-for-postgresql-database-server"></a>Обеспечение того, что параметр log_checkpoints включен для сервера базы данных PostgreSQL
 
-**Идентификатор** . CIS Azure 4.12 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.12 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -297,7 +297,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-enforce-ssl-connection-is-set-to-enabled-for-postgresql-database-server"></a>Обеспечение того, что параметр "Принудительно использовать SSL-соединение" включен для сервера баз данных PostgreSQL
 
-**Идентификатор** . CIS Azure 4.13 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.13 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -305,7 +305,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-server-parameter-log_connections-is-set-to-on-for-postgresql-database-server"></a>Обеспечение того, что параметр log_connections включен для сервера базы данных PostgreSQL
 
-**Идентификатор** . CIS Azure 4.14 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.14 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -313,7 +313,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-server-parameter-log_disconnections-is-set-to-on-for-postgresql-database-server"></a>Обеспечение того, что параметр log_disconnections включен для сервера базы данных PostgreSQL
 
-**Идентификатор** . CIS Azure 4.15 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.15 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -321,7 +321,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-server-parameter-connection_throttling-is-set-to-on-for-postgresql-database-server"></a>Обеспечение того, что параметр connection_throttling включен для сервера базы данных PostgreSQL
 
-**Идентификатор** . CIS Azure 4.17 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 4.17 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -331,7 +331,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-a-log-profile-exists"></a>Обеспечение того, что существует профиль журнала
 
-**Идентификатор** . CIS Azure 5.1.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.1.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -339,7 +339,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-retention-is-set-365-days-or-greater"></a>Обеспечение того, что срок хранения журнала действий составляет 365 дней или больше
 
-**Идентификатор** . CIS Azure 5.1.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.1.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -347,7 +347,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-audit-profile-captures-all-the-activities"></a>Обеспечение того, что профиль аудита собирает сведения обо всех действиях
 
-**Идентификатор** . CIS Azure 5.1.3 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.1.3 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -355,7 +355,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-the-log-profile-captures-activity-logs-for-all-regions-including-global"></a>Обеспечение того, что профиль журнала собирает журналы действий по всем регионам, включая глобальный
 
-**Идентификатор** . CIS Azure 5.1.4 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.1.4 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -363,7 +363,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-the-storage-account-containing-the-container-with-activity-logs-is-encrypted-with-byok-use-your-own-key"></a>Обеспечение того, что учетная запись хранения, содержащая контейнер с журналами действий, зашифрована с помощью BYOK
 
-**Идентификатор** . CIS Azure 5.1.6 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.1.6 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -371,7 +371,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-logging-for-azure-keyvault-is-enabled"></a>Обеспечение того, что для параметр ведения журнала для Azure KeyVault включен
 
-**Идентификатор** . CIS Azure 5.1.7 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.1.7 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -379,15 +379,15 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-policy-assignment"></a>Обеспечение того, что для операции создания назначения политики существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Для определенных операций политики должно существовать оповещение журнала действий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |Эта политика выполняет аудит определенных операций политики без настроенных оповещений журнала действий. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
+|[Для определенных операций политики должно существовать оповещение журнала действий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc5447c04-a4d7-4ba8-a263-c9ee321a6858) |Эта политика выполняет аудит определенных операций политики без настроенных оповещений журнала действий. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_PolicyOperations_Audit.json) |
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-or-update-network-security-group"></a>Обеспечение того, что для операции создания или обновления группы безопасности сети существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -395,7 +395,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-delete-network-security-group"></a>Обеспечение того, что для операции удаления группы безопасности сети существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.3 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.3 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -403,7 +403,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-or-update-network-security-group-rule"></a>Обеспечение того, что для операции создания или обновления правила группы безопасности сети существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.4 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.4 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -411,7 +411,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-the-delete-network-security-group-rule"></a>Обеспечение того, что для операции удаления правила группы безопасности сети существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.5 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.5 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -419,7 +419,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-or-update-security-solution"></a>Обеспечение того, что для операции создания или обновления решения безопасности существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.6 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.6 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -427,7 +427,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-delete-security-solution"></a>Обеспечение того, что для операции удаления решения безопасности существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.7 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.7 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -435,7 +435,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-or-update-or-delete-sql-server-firewall-rule"></a>Обеспечение того, что для операции создания, обновления или удаления правила брандмауэра SQL Server существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.8 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.8 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -443,7 +443,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-activity-log-alert-exists-for-update-security-policy"></a>Обеспечение того, что для операции обновления политики безопасности существует оповещение журнала действий
 
-**Идентификатор** . CIS Azure 5.2.9 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 5.2.9 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -453,7 +453,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-rdp-access-is-restricted-from-the-internet"></a>Обеспечение того, что доступ по протоколу RDP через Интернет заблокирован
 
-**Идентификатор** . CIS Azure 6.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 6.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -461,7 +461,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-ssh-access-is-restricted-from-the-internet"></a>Обеспечение того, что доступ по протоколу SSH через Интернет заблокирован
 
-**Идентификатор** . CIS Azure 6.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 6.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -469,7 +469,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-network-watcher-is-enabled"></a>Обеспечение того, что служба "Наблюдатель за сетями" включена
 
-**Идентификатор** . CIS Azure 6.5 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 6.5 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -479,7 +479,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-os-disk-are-encrypted"></a>Обеспечение того, что диск ОС зашифрован
 
-**Идентификатор** . CIS Azure 7.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 7.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -487,7 +487,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-data-disks-are-encrypted"></a>Обеспечение того, что диски данных зашифрованы
 
-**Идентификатор** . CIS Azure 7.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 7.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -495,7 +495,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-unattached-disks-are-encrypted"></a>Обеспечение того, что неподключенные диски зашифрованы
 
-**Идентификатор** . CIS Azure 7.3 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 7.3 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -503,7 +503,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-only-approved-extensions-are-installed"></a>Обеспечение того, что установлены только утвержденные расширения
 
-**Идентификатор** . CIS Azure 7.4 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 7.4 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -511,7 +511,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-the-latest-os-patches-for-all-virtual-machines-are-applied"></a>Обеспечение того, что для всех виртуальных машин установлены последние исправления ОС
 
-**Идентификатор** . CIS Azure 7.5 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 7.5 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -519,7 +519,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-the-endpoint-protection-for-all-virtual-machines-is-installed"></a>Обеспечение того, что защита конечной точки установлена для всех виртуальных машин
 
-**Идентификатор** . CIS Azure 7.6 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 7.6 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -529,15 +529,15 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-the-key-vault-is-recoverable"></a>Обеспечение того, что хранилище ключей поддерживает восстановление
 
-**Идентификатор** . CIS Azure 8.4 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 8.4 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Объекты Key Vault должны быть восстанавливаемыми](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Эта политика позволяет проверить наличие невосстанавливаемых объектов Key Vault. Функция обратимого удаления позволяет в течение определенного периода (90 дней) эффективно сохранять ресурсы даже после операции удаления. Ресурсы при этом как будто удалены. Если защита от очистки включена, хранилище или удаленный из него объект нельзя удалить без возможности восстановления в течение 90 дней после первоначального удаления. Эти хранилища и объекты по-прежнему можно восстановить, гарантируя клиентам, что политика хранения будет соблюдена. |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
+|[В хранилище ключей должна быть включена защита от очистки](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Удаление хранилища ключей злоумышленником может привести к необратимой потере данных. Потенциальный злоумышленник в вашей организации может получить доступ к удалению и очистке хранилищ ключей. Защита от очистки позволяет оградить вас от атак злоумышленников. Для этого применяется обязательный период хранения данных для хранилищ ключей, которые были обратимо удалены. Ни корпорация Майкрософт, ни пользователи вашей организации не смогут очистить хранилища ключей во время периода хранения при обратимом удалении. |Audit, Deny, Disabled |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
 
 ### <a name="enable-role-based-access-control-rbac-within-azure-kubernetes-services"></a>Включение управления доступом на основе ролей (RBAC) в службе Azure Kubernetes
 
-**Идентификатор** . CIS Azure 8.5 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 8.5 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -547,7 +547,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-app-service-authentication-is-set-on-azure-app-service"></a>Обеспечение того, что для Службы приложений Azure задана проверка подлинности в Службе приложений Azure
 
-**Идентификатор** . CIS Azure 9.1 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.1 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -557,7 +557,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-web-app-redirects-all-http-traffic-to-https-in-azure-app-service"></a>Обеспечение того, что веб-приложение перенаправляет весь трафик HTTP на HTTPS в Службе приложений Azure
 
-**Идентификатор** . CIS Azure 9.2 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.2 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -565,7 +565,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-web-app-is-using-the-latest-version-of-tls-encryption"></a>Проверка использования последней версии шифрования TLS в веб-приложении
 
-**Идентификатор** . CIS Azure 9.3 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.3 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -575,7 +575,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-the-web-app-has-client-certificates-incoming-client-certificates-set-to-on"></a>Параметр "Сертификаты клиента (входящие сертификаты клиента)" для веб-приложения должен иметь значение "Вкл."
 
-**Идентификатор** . CIS Azure 9.4 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.4 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -585,7 +585,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-register-with-azure-active-directory-is-enabled-on-app-service"></a>В службе приложений должна быть включена регистрация в Azure Active Directory
 
-**Идентификатор** . CIS Azure 9.5 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.5 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -595,7 +595,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-php-version-is-the-latest-if-used-to-run-the-web-app"></a>В веб-приложении должна использоваться последняя версия PHP
 
-**Идентификатор** . CIS Azure 9.7 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.7 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -604,7 +604,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-python-version-is-the-latest-if-used-to-run-the-web-app"></a>В веб-приложении должна использоваться последняя версия Python
 
-**Идентификатор** . CIS Azure 9.8 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.8 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -614,7 +614,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-java-version-is-the-latest-if-used-to-run-the-web-app"></a>В веб-приложении должна использоваться последняя версия Java
 
-**Идентификатор** . CIS Azure 9.9 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.9 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -624,7 +624,7 @@ ms.locfileid: "92320586"
 
 ### <a name="ensure-that-http-version-is-the-latest-if-used-to-run-the-web-app"></a>В веб-приложении должна использоваться последняя версия HTTP
 
-**Идентификатор** . CIS Azure 9.10 **Ответственный** : Customer
+**Идентификатор**. CIS Azure 9.10 **Ответственный**: Customer
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|

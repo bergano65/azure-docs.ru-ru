@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 11/13/2018
 ms.author: zhshang
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: ab9183171230e1811f2d974917fc23ee53480996
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17b8df919c5059da3f3abd7a4f06aca1eadd0817
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87494984"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94563976"
 ---
 # <a name="create-a-signalr-service"></a>Создание службы SignalR 
 
@@ -21,9 +21,9 @@ ms.locfileid: "87494984"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). 
+ - Для работы с этим руководством требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена. 
 
 ## <a name="sample-script"></a>Пример скрипта
 

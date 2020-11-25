@@ -7,12 +7,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 006c995217ced91690798ae68f04e3b6c3148228
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 27594ff4d7673038e9de38c5969a615be60aeadf
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131961"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844699"
 ---
 # <a name="create-an-additional-azure-subscription"></a>Создание дополнительной подписки Azure
 
@@ -73,7 +73,11 @@ ms.locfileid: "92131961"
 
 ## <a name="create-an-additional-azure-subscription-programmatically"></a>Создание дополнительной подписки Azure программным способом
 
-Дополнительные подписки можно также создать программными средствами. См. дополнительные сведения в разделе [Создание подписок Azure программными средствами](programmatically-create-subscription.md).
+Дополнительные подписки можно также создать программными средствами. Дополнительные сведения см. в разделе:
+
+- [Создание подписок EA программными средствами с помощью API последней версии](programmatically-create-subscription-enterprise-agreement.md)
+- [Создание подписок MCA программными средствами с помощью API последней версии](programmatically-create-subscription-microsoft-customer-agreement.md)
+- [Создание подписок MPA программными средствами с помощью API последней версии](Programmatically-create-subscription-microsoft-customer-agreement.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

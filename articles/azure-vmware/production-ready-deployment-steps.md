@@ -3,12 +3,12 @@ title: Планирование развертывания Решения Azure 
 description: В этой статье описывается рабочий процесс развертывания Решения Azure VMware.  Его конечным результатом будет среда, готовая к созданию виртуальной машины и миграции.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 9b6d04e1e7a60bf812ca2b1e370c5075d306c432
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 08a15e6f8cad4068415cec3353544829f2218fb0
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287055"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888986"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>Планирование развертывания Решения Azure VMware
 
@@ -38,6 +38,9 @@ ms.locfileid: "93287055"
 ## <a name="resource-name"></a>Имя ресурса
 
 Определите имя ресурса, которое будет использоваться во время развертывания.  Имя ресурса представляет собой понятное описательное имя, обозначающее частное облако Решения Azure VMware.
+
+>[!IMPORTANT]
+>Длина имени не должна превышать 40 символов. Если имя превышает это ограничение, вы не сможете создавать общедоступные IP-адреса для использования с частным облаком. 
 
 ## <a name="size-hosts"></a>Размер узлов
 
@@ -89,14 +92,6 @@ ms.locfileid: "93287055"
 
 - Если вы планируете расширять сети из локальной среды, эти сети должны быть подключены к [распределенному коммутатору vSphere (vDS)](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-B15C6A13-797E-4BCB-B9D9-5CBC5A60C3A6.html) в локальной среде VMware.  
 - Если сети, которые вы хотите расширить, работают через [стандартный коммутатор vSphere](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-350344DE-483A-42ED-B0E2-C811EE927D59.html), их расширить нельзя.
-
-## <a name="expressroute-global-reach-peering-network"></a>Пиринг между сетями ExpressRoute Global Reach
-
-Определите блок сетевых адресов CIDR `/29`, необходимый для пиринга ExpressRoute Global Reach. Напомним, что все создаваемые IP-сегменты должны быть уникальными в масштабах Решения Azure VMware и локальной среды. IP-адреса в этом сегменте используются на каждом конце подключения ExpressRoute Global Reach для подключения канала ExpressRoute Решения Azure VMware к локальному каналу ExpressRoute. 
-
-**Пример**. 10.1.0.0/29
-
-:::image type="content" source="media/pre-deployment/expressroute-global-reach-ip-diagram.png" alt-text="Определение пиринга между сетями ExpressRoute Global Reach" border="false":::
 
 ## <a name="azure-virtual-network-to-attach-azure-vmware-solution"></a>Виртуальная сеть Azure для подключения Решения Azure VMware
 

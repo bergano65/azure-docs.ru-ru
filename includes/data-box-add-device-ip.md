@@ -4,31 +4,31 @@ ms.service: databox
 ms.topic: include
 ms.date: 12/07/2018
 ms.author: alkohli
-ms.openlocfilehash: e4b366075cb16f62a0e16b5b06da6fb19ffefdb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d01cf90c42efbe611748027d0ea47ff8af3e5621
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67185952"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94553213"
 ---
 1. Войдите на устройство Data Box. Убедитесь, что оно разблокировано.
 
-    ![Панель мониторинга Data Box](media/data-box-add-device-ip/data-box-connect-via-rest-1.png)
+    ![Снимок экрана: панель мониторинга, на которой для устройства отображается состояние "Разблокировано".](media/data-box-add-device-ip/data-box-connect-via-rest-1.png)
 
 2. Перейдите к **Задать сетевые интерфейсы**. Запишите IP-адрес устройства для сетевого интерфейса, используемого для подключения к клиенту.
 
-    ![Панель мониторинга Data Box](media/data-box-add-device-ip/data-box-connect-via-rest-2.png)
+    ![Снимок экрана: область "Параметры сети", в которой отображается IP-адрес.](media/data-box-add-device-ip/data-box-connect-via-rest-2.png)
 
 3. Перейдите в пункт меню **Подключиться и копировать** и щелкните **Rest**.
 
-    ![Панель мониторинга Data Box](media/data-box-add-device-ip/data-box-connect-via-rest-3.png)
+    ![Снимок экрана: область "Подключиться и копировать", где можно выбрать параметр доступа Rest.](media/data-box-add-device-ip/data-box-connect-via-rest-3.png)
 
 4. В диалоговом окне **Доступ к учетной записи хранения и отправка данных** скопируйте **конечную точку службы BLOB-объектов**.
 
-    ![Панель мониторинга Data Box](media/data-box-add-device-ip/data-box-connect-via-rest-4.png)
+    ![Снимок экрана: диалоговое окно "Доступ к учетной записи хранения и отправка данных", где можно скопировать конечную точку службы больших двоичных объектов.](media/data-box-add-device-ip/data-box-connect-via-rest-4.png)
 
 5. Откройте **Блокнот** от имени администратора, а затем откройте файл **hosts**, расположенный в `C:\Windows\System32\Drivers\etc`.
 6. Добавьте следующую запись в ваш файл **hosts**: `<device IP address> <Blob service endpoint>`
 7. Для ссылки используйте следующее изображение. Сохраните файл **hosts**.
 
-    ![Панель мониторинга Data Box](media/data-box-add-device-ip/data-box-connect-via-rest-5.png)
+    ![Снимок экрана: документ в Блокноте с добавленным IP-адресом и конечной точкой службы BLOB-объектов.](media/data-box-add-device-ip/data-box-connect-via-rest-5.png)

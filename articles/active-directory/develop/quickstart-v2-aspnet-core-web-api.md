@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 09/22/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: dc0cdca2355403bc8f5409d9a6ca7f4ae89caf25
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: aa0a001f9c35202939eeb4a7752803b998a3acf7
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945593"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562021"
 ---
 # <a name="quickstart-protect-an-aspnet-core-web-api-with-microsoft-identity-platform"></a>Краткое руководство. Защита веб-API ASP.NET Core с помощью платформы удостоверений Майкрософт
 
-В этом кратком руководстве описано, как использовать пример кода, чтобы защитить веб-API ASP.NET Core, чтобы доступ к нему получали только полномочные пользователи. Учетные записи могут быть личными (hotmail.com, outlook.com и т. д.), а также рабочими и учебными учетными записями в любом экземпляре Azure Active Directory (Azure AD).
+При работе с этим кратким руководством вы скачаете пример кода веб-API ASP.NET Core. Вы проанализируете код этого примера, который разрешает доступ к ресурсам только авторизованным учетным записям. Пример поддерживает авторизацию личных учетных записей Майкрософт и учетных записей в любой организации Azure Active Directory (Azure AD).
 
 > [!div renderon="docs"]
 > ## <a name="prerequisites"></a>Предварительные требования

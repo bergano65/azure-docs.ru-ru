@@ -5,17 +5,17 @@ ms.author: mikben
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 0559a9b763d273579373bb57922606f14ff6e6db
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: ab13e02c9154dbfc1bd28872f1bd6f993019a604
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94574071"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915236"
 ---
 ## <a name="prerequisites"></a>Обязательные условия
 
 - Рабочее приложение, [вызывающее Службы коммуникации Azure](../getting-started-with-calling.md).
-- [Развертывание Teams](https://docs.microsoft.com/deployoffice/teams-install).
+- [Развертывание Teams](/deployoffice/teams-install).
 
 ## <a name="enable-teams-interoperability"></a>Включение взаимодействия с Teams
 
@@ -98,7 +98,7 @@ meetingButton.addEventListener("click", () => {
 
 ## <a name="get-the-meeting-context"></a>Получение контекста собрания
 
-Контекст Teams можно получить с помощью API Graph. Это действие подробно описано в [документации по Graph](https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta&tabs=http).
+Контекст Teams можно получить с помощью API Graph. Это действие подробно описано в [документации по Graph](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta).
 
 Вы также можете получить необходимую информацию о собрании по URL-адресу **Присоединиться к собранию** в самом приглашении на собрание.
 
@@ -115,4 +115,3 @@ npx webpack-dev-server --entry ./client.js --output bundle.js --debug --devtool 
 :::image type="content" source="../media/javascript/calling-javascript-app.png" alt-text="Снимок экрана: готовое приложение JavaScript.":::
 
 Вставьте контекст Teams в текстовое поле и нажмите *Присоединиться к собранию Teams*, чтобы присоединиться к собранию Teams из приложения Служб коммуникации Azure.
-

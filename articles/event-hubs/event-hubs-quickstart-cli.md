@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: efb00d35d2b12e6b6a577483257debf4e797c0a0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9a47548fb1f94ac7fe9b561e798b010fa9176e9e
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88934044"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566305"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-cli"></a>Краткое руководство. Создание концентратора событий с помощью Azure CLI
 
@@ -18,22 +18,15 @@ ms.locfileid: "88934044"
 
 В этом кратком руководстве вы создадите концентратор событий с помощью Azure CLI.
 
-## <a name="prerequisites"></a>предварительные требования
-Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][], прежде чем начать работу.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать Azure CLI локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.4 или более поздней версии. Выполните команду `az --version`, чтобы узнать номер версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется Azure CLI версии 2.0.4 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="set-the-subscription-context"></a>Настройка контекста подписки
 
 Следующие действия не требуются, если вы выполняете команды в Cloud Shell. Если вы используете CLI локально, выполните следующие действия, чтобы войти в учетную запись Azure и выбрать текущую подписку:
-
-Выполните следующую команду, чтобы войти в Azure:
-
-```azurecli-interactive
-az login
-```
 
 Задайте контекст текущей подписки. Замените `MyAzureSub` идентификатором именем подписки Azure, которую вы хотите использовать:
 
@@ -79,7 +72,7 @@ az eventhubs eventhub create --name <event hub name> --resource-group <resource 
 - [C (только отправка)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (только получение)](event-hubs-storm-getstarted-receive.md)
 
-[создайте бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[create a free account]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Install the Azure CLI]: /cli/azure/install-azure-cli
 [az group create]: /cli/azure/group#az_group_create
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name

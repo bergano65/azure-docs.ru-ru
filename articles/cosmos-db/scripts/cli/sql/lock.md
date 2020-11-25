@@ -7,19 +7,19 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 07/29/2020
-ms.openlocfilehash: 21e20def0cf1e0890909fc86e361544a95791c18
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b14bc8f77c6f26fba36880762d12723888d845e3
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93102140"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565999"
 ---
 # <a name="create-resource-lock-for-a-azure-cosmos-db-core-sql-api-database-and-container-using-azure-cli"></a>Создание блокировки ресурсов для базы данных и контейнера API Core (SQL) с помощью Azure CLI
 [!INCLUDE[appliesto-sql-api](../../../includes/appliesto-sql-api.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.9.1 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+- Для работы с этой статьей требуется Azure CLI версии 2.9.1 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 > [!IMPORTANT]
 > Блокировки ресурсов не работают для изменений, внесенных пользователями, которые подключаются с помощью пакета Cosmos DB SDK и любых средств, которые используют ключи учетной записи, если только учетная запись Cosmos DB сначала не будет заблокирована с включенным свойством `disableKeyBasedMetadataWriteAccess`. Дополнительные сведения о том, как включить это свойство, см. в разделе [Предотвращение изменений в пакетах SDK](../../../role-based-access-control.md#prevent-sdk-changes).
@@ -41,8 +41,8 @@ ms.locfileid: "93102140"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
--[Блокировка ресурсов для предотвращения непредвиденных изменений](../../../../azure-resource-manager/management/lock-resources.md)
+- [Блокировка ресурсов для предотвращения непредвиденных изменений](../../../../azure-resource-manager/management/lock-resources.md)
 
--[Документация по Azure Cosmos DB CLI](/cli/azure/cosmosdb).
+- [Документация по Azure Cosmos DB CLI](/cli/azure/cosmosdb).
 
--[Репозиторий GitHub для Azure Cosmos DB CLI](https://github.com/Azure-Samples/azure-cli-samples/tree/master/cosmosdb).
+- [Репозиторий GitHub для Azure Cosmos DB CLI](https://github.com/Azure-Samples/azure-cli-samples/tree/master/cosmosdb).

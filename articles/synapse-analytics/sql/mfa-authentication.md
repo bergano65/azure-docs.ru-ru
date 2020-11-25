@@ -10,12 +10,12 @@ ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
 ms.custom: has-adal-ref
-ms.openlocfilehash: a430bb41f88bfec1299d52d8237c9534b28acc5d
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: fb8aad52eeaef2366afe28aa71059b7f8f780501
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093384"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94843304"
 ---
 # <a name="use-multi-factor-aad-authentication-with-synapse-sql-ssms-support-for-mfa"></a>Использование многофакторной проверки подлинности AAD с Synapse SQL (поддержка SSMS для MFA)
 
@@ -40,11 +40,11 @@ Synapse SQL поддерживает подключения из SQL Server Mana
 - `Active Directory - Password`
 - `Active Directory - Integrated`
 
-Интерактивный метод также поддерживает многофакторную проверку подлинности Azure (MFA).
+Интерактивный метод также поддерживает многофакторную проверку подлинности (MFA) Azure AD:
 
 - `Active Directory - Universal with MFA`
 
-Azure MFA помогает защитить доступ к данным и приложениям, а также удовлетворить потребность пользователей в простом процессе входа. Она обеспечивает надежную аутентификацию с использованием ряда простых вариантов подтверждения: телефонного звонка, текстового сообщения, смарт-карты с ПИН-кодом или уведомления в мобильном приложении. Пользователи сами выбирают предпочтительный способ подтверждения. Интерактивная MFA с использованием Azure AD может привести к появлению всплывающего диалогового окна для реализации проверки.
+Azure AD MFA помогает защитить доступ к данным и приложениям, а также удовлетворить потребность пользователей в простом процессе входа. Она обеспечивает надежную аутентификацию с использованием ряда простых вариантов подтверждения: телефонного звонка, текстового сообщения, смарт-карты с ПИН-кодом или уведомления в мобильном приложении. Пользователи сами выбирают предпочтительный способ подтверждения. Интерактивная MFA с использованием Azure AD может привести к появлению всплывающего диалогового окна для реализации проверки.
 
 Общие сведения о Многофакторной идентификации см. в [этой статье](../../active-directory/authentication//concept-mfa-howitworks.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 

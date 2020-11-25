@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: business-intelligence
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: c5c41b98d52a4b8182fb162c3bfa9a08c0df5e15
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: b72d083216b7cd0ae7a588bfd721d8981829bfc7
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171850"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94844375"
 ---
 # <a name="visualize-data-with-power-bi"></a>Визуализация данных с помощью Power BI
 
@@ -37,13 +37,9 @@ ms.locfileid: "92171850"
 ### <a name="link-your-azure-synapse-workspace-to-your-new-power-bi-workspace"></a>Связывание рабочей области Azure Synapse с новой рабочей областью Power BI
 
 1. В Synapse Studio последовательно выберите команду **Управление** > **Cвязанные службы**.
-1. Выберите команду **Создать** > **Подключиться к Power BI**, и задайте следующие поля:
-
-    |Параметр | Рекомендуемое значение | 
-    |---|---|
-    |**имя**;|**NYCTaxiWorkspace1**|
-    |**Имя рабочей области**|**NYCTaxiWorkspace1**|
-
+1. Выберите **Создать** > **Подключение к Power BI**.
+1. В поле **имя** укажите значение **NYCTaxiWorkspace1**.
+1. В поле **Имя рабочей области** укажите **NYCTaxiWorkspace1**.
 1. Нажмите кнопку **создания**.
 
 ### <a name="create-a-power-bi-dataset-that-uses-data-in-your-azure-synapse-workspace"></a>Создание набора данных Power BI, использующего данные в рабочей области Azure Synapse
@@ -86,11 +82,7 @@ ms.locfileid: "92171850"
     * В разделе **NYCTaxiWorkspace1** > **Отчеты Power BI**, новый отчет с именем **PassengerAnalysis**.
 1. Выберите отчет **PassengerAnalysis**. Отчет откроется, и его можно изменить непосредственно в Synapse Studio.
 
-## <a name="monitor-activities"></a>Действия Monitor
 
-1. В Synapse Studio перейдите в центр **монитор**.
-1. Здесь вы можете просмотреть журнал всех действий, выполняемых в рабочей области, и какие из них сейчас активны.
-1. Изучите разделы **Выполнения конвейеров**, **Приложения Apache Spark** и **Запросы SQL**, а также просмотрите, что вы уже сделали в рабочей области.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

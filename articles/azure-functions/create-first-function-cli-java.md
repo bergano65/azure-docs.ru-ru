@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: 449f0a59cc8428ce8e19535d5cf0417bf4cf7ad0
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 5c8993bdf892ceb7d9886d0d2b97063dedec720c
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424977"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635557"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Краткое руководство. Создание функции Java в Azure из командной строки
 
@@ -163,11 +163,23 @@ ms.locfileid: "93424977"
 > [!TIP]
 > Чтобы создать приложение-функцию, работающее в Linux вместо Windows, измените элемент `runtime.os` в файле pom.xml с `windows` на `linux`. Работа Linux в плане потребления поддерживается в [этих регионах](https://github.com/Azure/azure-functions-host/wiki/Linux-Consumption-Regions). Приложения, работающие в Linux, и приложения, работающие под управлением ОС Windows, не могут находиться в одной группе ресурсов.
 
-1. Перед развертыванием выполните команду [az login](/cli/azure/authenticate-azure-cli) в Azure CLI, чтобы войти в подписку Azure. 
+1. Прежде чем выполнять развертывание, войдите в подписку Azure с помощью Azure CLI или Azure PowerShell. 
 
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
     ```azurecli
     az login
     ```
+
+    Чтобы войти в учетную запись Azure, выполните команду [az login](/cli/azure/reference-index#az-login).
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell) 
+    ```azurepowershell
+    Connect-AzAccount
+    ```
+
+    Чтобы войти в учетную запись Azure, выполните командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).
+
+    ---
 
 1. Используйте следующую команду, чтобы развернуть проект в виде нового приложения-функции.
 

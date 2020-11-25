@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 74669036a40048ca21aae56856981197defe1c35
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: a41eb5b38b741f8bdde59f8a4f1e8de2b4767903
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286532"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94832778"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Интеграция Key Vault со службой "Приватный канал Azure"
 
@@ -44,7 +44,7 @@ ms.locfileid: "93286532"
 
 ### <a name="create-a-new-key-vault-and-establish-a-private-link-connection"></a>Создание хранилища ключей и установка подключения Приватного канала
 
-Вы можете создать хранилище ключей, выполнив действия, описанные в статье [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure](../secrets/quick-create-portal.md).
+Хранилище ключей Azure можно создать с помощью [портала Azure](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) или [Azure PowerShell](../general/quick-create-powershell.md).
 
 После настройки основных компонентов хранилища ключей перейдите на вкладку "Сеть" и выполните следующие шаги:
 
@@ -274,9 +274,9 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 **Ограничения**.  Частная конечная точка для Azure Key Vault поддерживается только в общедоступных регионах Azure.
 
-**Максимальное число частных конечных точек на Key Vault** : 64
+**Максимальное число частных конечных точек на Key Vault**: 64
 
-**Число хранилищ ключей с частными конечными точками на одну подписку по умолчанию** : 400.
+**Число хранилищ ключей с частными конечными точками на одну подписку по умолчанию**: 400.
 
 Дополнительные сведения см. в разделе [Azure Private Link service: Limitations](../../private-link/private-link-service-overview.md#limitations) (Служба "Приватный канал Azure". Ограничения)
 

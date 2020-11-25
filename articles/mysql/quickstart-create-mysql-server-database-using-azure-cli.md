@@ -1,46 +1,38 @@
 ---
 title: Краткое руководство. Создание сервера Базы данных Azure для MySQL с помощью Azure CLI
 description: В этом кратком руководстве описывается создание сервера базы данных Azure для MySQL в группе ресурсов Azure с помощью Azure CLI.
-author: ajlam
-ms.author: andrela
+author: savjani
+ms.author: pariks
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 07/15/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 0c43f1ea81bbc29817e6a2509c9967bf3b5782c9
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 63768581da07566ac59b525ca0aefbd7b616e20e
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337291"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94635574"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-using-azure-cli"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI
 
 > [!TIP]
 > Рассмотрите возможность использования более простой команды Azure CLI [az postgres up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) (сейчас в предварительной версии). Ознакомьтесь с [кратким руководством](./quickstart-create-server-up-azure-cli.md).
 
-В этом кратком руководстве описывается, как с помощью команд [Azure CLI](/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) создать сервер службы "База данных Azure для MySQL" за 5 минут. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+В этом кратком руководстве описывается, как с помощью команд [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) создать сервер службы "База данных Azure для MySQL" за 5 минут. 
 
-[!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-> [!NOTE]
-> Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
-Для этой статьи требуется запустить локально Azure CLI версии 2.0 или более поздней. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+ - Для работы с этим кратким руководством требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-Вам потребуется выполнить вход в учетную запись с помощью команды [az login](/cli/azure/reference-index#az-login). Обратите внимание на свойство **идентификатора** , которое ссылается на **идентификатор подписки** вашей учетной записи Azure. 
+ - Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login**, чтобы использовать его в команде в качестве значения аргумента **подписки**. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
 
-```azurecli-interactive
-az login
-```
-
-Выберите конкретную подписку вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Запишите значение **идентификатора** из выходных данных команды **az login** , чтобы использовать его в команде в качестве значения аргумента **подписки**. Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Чтобы отобразить все ваши подписки, выполните команду [az account list](/cli/azure/account#az-account-list).
-
-```azurecli
-az account set --subscription <subscription id>
-```
+   ```azurecli
+   az account set --subscription <subscription id>
+   ```
 
 ## <a name="create-an-azure-database-for-mysql-server"></a>Создайте сервер базы данных Azure для MySQL.
 Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [az group create](/cli/azure/group), а затем — сервер MySQL в этой группе ресурсов. Необходимо указать уникальное имя. В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `westus`.
@@ -62,7 +54,7 @@ az mysql server create --resource-group myresourcegroup --name mydemoserver --lo
 name | mydemoserver | Введите уникальное имя для сервера службы "База данных Azure для MySQL". Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Его длина должна составлять от 3 до 63 символов.
 resource-group | myresourcegroup | Укажите имя группы ресурсов Azure.
 location | westus | Расположение сервера в Azure.
-admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser** , **admin** , **administrator** , **root** , **guest** или **public**.
+admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
 admin-password | *Надежный пароль* | Пароль администратора. Пароль должен содержать от 8 до 128 символов. Пароль должен содержать символы из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.
 sku-name|GP_Gen5_2|Введите имя ценовой категории и конфигурацию вычислительных ресурсов. В сокращенной записи соответствует схеме {ценовая категория} _{поколение вычислительных ресурсов}_ {число виртуальных ядер}. Дополнительные сведения см. на странице с [ценовыми категориями](./concepts-pricing-tiers.md).
 

@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-csharp
 - devx-track-azurecli
-ms.openlocfilehash: 036629bd72f8219c2d7b1877dd1672291ed3d98a
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: b87408669dbb9268d6e3cd47b410b888ef1a19c2
+ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424982"
+ms.lasthandoff: 11/15/2020
+ms.locfileid: "94637155"
 ---
 # <a name="quickstart-create-a-c-function-in-azure-from-the-command-line"></a>Краткое руководство. Создание функции C# в Azure из командной строки
 
@@ -28,6 +28,8 @@ ms.locfileid: "93424982"
 Перед началом работы убедитесь, что у вас есть такие компоненты.
 
 + Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+
++ Пакет [SDK для .NET Core 3.1](https://www.microsoft.com/net/download).
 
 + [Azure Functions Core Tools](functions-run-local.md#v2) версии 3.x.
 
@@ -49,6 +51,8 @@ ms.locfileid: "93424982"
 
 + Выполните команду `az login`, чтобы войти в Azure и проверить активную подписку.
 
++ Выполните команду `dotnet --list-sdks`, чтобы проверить, установлен ли пакет SDK для .NET Core версии 3.1.x.
+
 # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
 + В окне терминала или командном окне запустите `func --version`, чтобы убедиться, что используется версия Azure Functions Core Tools 3.x.
@@ -56,6 +60,8 @@ ms.locfileid: "93424982"
 + Выполните команду `(Get-Module -ListAvailable Az).Version` и убедитесь, что используется версия 5.0 или более поздняя. 
 
 + Выполните команду `Connect-AzAccount`, чтобы войти в Azure и проверить активную подписку.
+
++ Выполните команду `dotnet --list-sdks`, чтобы проверить, установлен ли пакет SDK для .NET Core версии 3.1.x.
 
 ---
 

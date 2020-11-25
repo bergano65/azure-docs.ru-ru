@@ -5,12 +5,12 @@ services: container-service
 ms.topic: overview
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: ee709868cd7e78afbcc480913c4e4c8fd2acf832
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 75f4602be15ef2487272ed5790d92c4c884c551f
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167191"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94681556"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
 
@@ -26,11 +26,11 @@ ms.locfileid: "92167191"
 
 ## <a name="access-security-and-monitoring"></a>Доступ, безопасность и мониторинг
 
-Для повышения безопасности и управления AKS позволяет выполнить интеграцию с Azure Active Directory и использовать управление доступом Kubernetes на основе ролей (RBAC). Также можно отслеживать работоспособность кластера и ресурсов.
+Для повышения безопасности и управления AKS позволяет выполнить интеграцию с Azure Active Directory и использовать управление доступом на основе ролей Kubernetes (Kubernetes RBAC). Также можно отслеживать работоспособность кластера и ресурсов.
 
 ### <a name="identity-and-security-management"></a>Управление идентификаторами и безопасностью
 
-Чтобы ограничить доступ к ресурсам кластера, служба AKS поддерживает [Управление доступом на основе ролей (RBAC)][kubernetes-rbac]. RBAC позволяет управлять доступом к ресурсам и пространствам имен Kubernetes, а также разрешениями для доступа к этим ресурсам. Кластер AKS также может быть настроен для интеграции с Azure Active Directory. В интеграции Azure Active Directory на основе идентификатора и группового членства можно настроить доступ к Kubernetes. Доступ к ресурсам AKS, а также интегрированное взаимодействие единого входа можно предоставить существующим пользователям и группам Azure Active Directory.
+Чтобы ограничить доступ к ресурсам кластера, служба AKS поддерживает [управление доступом на основе ролей (Kubernetes RBAC)][kubernetes-rbac]. Kubernetes RBAC позволяет управлять доступом к ресурсам и пространствам имен Kubernetes, а также разрешениями для доступа к этим ресурсам. Кластер AKS также может быть настроен для интеграции с Azure Active Directory. В интеграции Azure Active Directory на основе идентификатора и группового членства можно настроить доступ к Kubernetes. Доступ к ресурсам AKS, а также интегрированное взаимодействие единого входа можно предоставить существующим пользователям и группам Azure Active Directory.
 
 Дополнительные сведения об идентификаторе см. в статье о [возможностях контроля доступа и идентификации в AKS][concepts-identity].
 
@@ -146,7 +146,7 @@ Azure Kubernetes Service (AKS) соответствуют требованиям
 [aks-master-logs]: view-master-logs.md
 [aks-supported versions]: supported-kubernetes-versions.md
 [concepts-clusters-workloads]: concepts-clusters-workloads.md
-[kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-control-rbac
+[kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-control-kubernetes-rbac
 [concepts-identity]: concepts-identity.md
 [concepts-storage]: concepts-storage.md
 [conf-com-node]: ../confidential-computing/confidential-nodes-aks-overview.md

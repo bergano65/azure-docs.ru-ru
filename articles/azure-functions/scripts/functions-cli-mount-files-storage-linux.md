@@ -4,12 +4,12 @@ description: Сведения о том, как создать бессерве�
 ms.topic: sample
 ms.date: 03/01/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 63ab9ba3219dc600187e73bbf124d62d3f51317a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bdcaeaca7c063f0532167077bba63f7e52a3d491
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498214"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565064"
 ---
 # <a name="mount-a-file-share-to-a-python-function-app-using-azure-cli"></a>Подключение общей папки к приложению-функции Python с помощью Azure CLI
 
@@ -20,9 +20,9 @@ ms.locfileid: "87498214"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). Примеры написаны для оболочки Bash и должны быть изменены для запуска в командной строке Windows. 
+ - Для работы с этим руководством требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена. 
 
 ## <a name="sample-script"></a>Пример скрипта
 

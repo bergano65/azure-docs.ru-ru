@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 10/07/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:UWP
-ms.openlocfilehash: 297b34fd9981308ece52545ac5878eaa144f4829
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 28d912153b52580727e0fb5086e0a7ae55e8b545
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91824404"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560933"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Краткое руководство. Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
-В этом кратком руководстве пример кода используется для демонстрации того, как приложение UWP может входить от имени личных учетных записей или рабочих и школьных учетных записей, получать маркер доступа и вызывать API Microsoft Graph. Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
+При работе с этим кратким руководством вы скачаете и выполните пример кода. Такой пример кода демонстрирует, как в приложении универсальной платформы Windows (UWP) реализовать вход пользователей и получение маркера доступа для вызова API Microsoft Graph. 
+
+Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
 > [!div renderon="docs"]
 > ## <a name="prerequisites"></a>Предварительные требования

@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f33d7efd1c136619767c3eadd93740442ae7239a
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: f0e69e3f62d3b9e4debb5761d877dcdfdd246f60
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762048"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886028"
 ---
 # <a name="chat-concepts"></a>Понятия, связанные с чатами
 
@@ -120,7 +120,7 @@ ms.locfileid: "91762048"
 
 ## <a name="using-cognitive-services-with-chat-client-library-to-enable-intelligent-features"></a>Использование Cognitive Services и клиентской библиотеки чатов для создания интеллектуальных возможностей
 
-Для добавления интеллектуальных возможностей в приложения можно объединить [API Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/) с клиентской библиотекой чатов. Например, администратор может сделать следующее:
+Для добавления интеллектуальных возможностей в приложения можно объединить [API Azure Cognitive Services](../../../cognitive-services/index.yml) с клиентской библиотекой чатов. Например, администратор может сделать следующее:
 
 - разрешить пользователям общаться на разных языках; 
 - помочь службе поддержки приоритизировать обращения, выявляя отрицательные тональности в сообщении клиента о проблеме;
@@ -128,9 +128,9 @@ ms.locfileid: "91762048"
 
 Одним из способов реализации этих возможностей является создание доверенной службы, которая выступает в качестве участника цепочки чата. Предположим, вы хотите включить перевод на несколько языков. Эта служба будет прослушивать сообщения, которыми обмениваются другие участники [1], вызывать API Cognitive Services для перевода содержимого на нужный язык [2, 3] и отправлять переведенный текст в виде сообщения в цепочку чата [4]. 
 
-Это означает, что в журнале сообщений будут содержаться как исходные, так и переведенные сообщения. В клиентском приложении можно добавить логику для отображения исходных или переведенных сообщений. В [этом кратком руководстве](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-translator) показано, как использовать API Cognitive Services для перевода текста на разные языки. 
+Это означает, что в журнале сообщений будут содержаться как исходные, так и переведенные сообщения. В клиентском приложении можно добавить логику для отображения исходных или переведенных сообщений. В [этом кратком руководстве](../../../cognitive-services/translator/quickstart-translator.md) показано, как использовать API Cognitive Services для перевода текста на разные языки. 
 
-:::image type="content" source="../media/chat/cognitive-services.png" alt-text="Схема архитектуры чата в Службах коммуникации.":::
+:::image type="content" source="../media/chat/cognitive-services.png" alt-text="Схема взаимодействия Cognitive Services со Службами коммуникации.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

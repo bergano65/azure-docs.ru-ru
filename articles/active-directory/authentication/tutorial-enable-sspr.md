@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbbf1a6aebf54c7928fe0636262055f37d7f93bd
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 59de3123dc991d0314cd9046d83712d17da53d9f
+ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966548"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94837827"
 ---
 # <a name="tutorial-enable-users-to-unlock-their-account-or-reset-passwords-using-azure-active-directory-self-service-password-reset"></a>Руководство по Включение самостоятельного сброса пароля для разблокировки учетных записей или сброса паролей пользователями в Azure Active Directory
 
@@ -149,4 +149,4 @@ AAD позволяет включить SSPR для *никого*, *выбра�
 > * Тестирование процесса SSPR в качестве пользователя.
 
 > [!div class="nextstepaction"]
-> [Включение многофакторной проверки подлинности в Azure](./tutorial-enable-azure-mfa.md)
+> [Включение многофакторной проверки подлинности Azure AD](./tutorial-enable-azure-mfa.md)

@@ -2,15 +2,15 @@
 title: Создание и развертывание спецификации шаблона
 description: Узнайте, как создать спецификацию шаблона на основе шаблона ARM. Затем разверните спецификацию шаблона в группе ресурсов в подписке.
 author: tfitzmac
-ms.date: 11/10/2020
+ms.date: 11/17/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: 96ef5796aac1d0ee02e6bbafc40b7d3bcdea4e2f
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 8439b1de5a69b3e5bfc22e10f089938da921c1cb
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506368"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94747508"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>Краткое руководство. Создание и развертывание спецификации шаблона (предварительная версия)
 
@@ -21,9 +21,7 @@ ms.locfileid: "94506368"
 Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
 > [!NOTE]
-> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать их, нужно [зарегистрироваться в списке ожидания](https://aka.ms/templateSpecOnboarding).
->
-> После получения одобрения вы получите инструкции по установке предварительной версии модулей PowerShell и CLI.
+> Сейчас спецификации шаблонов доступны в предварительной версии. Для их использования нужно установить последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте версию [5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте версию [2.14.2 или более позднюю](/cli/azure/install-azure-cli).
 
 ## <a name="create-template-spec"></a>Создание спецификации шаблона
 

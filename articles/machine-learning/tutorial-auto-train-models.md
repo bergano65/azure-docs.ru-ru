@@ -11,12 +11,12 @@ ms.author: anumamah
 ms.reviewer: nibaccam
 ms.date: 08/14/2020
 ms.custom: devx-track-python, automl
-ms.openlocfilehash: 811f1c27af660d388ecb875741c073591bd25f7f
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 4f6e194f04789fbcaf24d69965dfa8ac61b20a38
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358615"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886334"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство по Использованию автоматического машинного обучения для прогнозирования тарифов на такси
 
@@ -39,7 +39,9 @@ ms.locfileid: "93358615"
 * Выполните инструкции из [руководства по установке](tutorial-1st-experiment-sdk-setup.md), если у вас еще нет рабочей области Машинного обучения Azure или виртуальной машины записных книжек.
 * Завершив настройку, откройте записную книжку *tutorials/regression-automl-nyc-taxi-data/regression-automated-ml.ipynb*, используя тот же сервер записных книжек.
 
-Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите запустить его в собственной [локальной среде](how-to-configure-environment.md#local). Выполните команду `pip install azureml-sdk[automl] azureml-opendatasets azureml-widgets`, чтобы получить необходимые пакеты.
+Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите запустить его в собственной [локальной среде](how-to-configure-environment.md#local). Чтобы получить нужные пакеты, сделайте следующее: 
+* [Установите полную версию клиента `automl`](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md#setup-using-a-local-conda-environment).
+* Выполните команду `pip install azureml-opendatasets azureml-widgets`, чтобы получить необходимые пакеты.
 
 ## <a name="download-and-prepare-data"></a>Скачивание и подготовка данных
 

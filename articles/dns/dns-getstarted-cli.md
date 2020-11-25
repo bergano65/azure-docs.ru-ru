@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 10/20/2020
 ms.author: rohink
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7d02095bbe3326209cff6b4e99858b2598c7a914
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 1929cd512d18d7fd234aff1f55814c423455e63b
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92282238"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94561375"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-azure-cli"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью Azure CLI
 
@@ -24,14 +24,11 @@ ms.locfileid: "92282238"
 
 Azure DNS также поддерживает частные зоны DNS. Дополнительные сведения об использовании частных зон DNS см. в статье [Using Azure DNS for private domains](private-dns-overview.md) (Использование Azure DNS для частных доменов). Дополнительные сведения о создании частной зоны DNS см. в руководстве по [началу работы с частными зонами Azure DNS с использованием CLI](./private-dns-getstarted-cli.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
-- [Azure CLI версии 2.0.4 или более поздней](/cli/azure/install-azure-cli) (при локальном запуске Azure CLI).
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Для работы с этой статьей требуется Azure CLI версии 2.0.4 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-the-resource-group"></a>Создание группы ресурсов
 

@@ -5,12 +5,12 @@ ms.service: azure-functions
 ms.topic: sample
 ms.date: 11/23/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 70a5a29a251590580ac787efe8460caf07598898
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 714dd8d886f567bcdf07c93803662ef4b2c635f3
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498282"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94565201"
 ---
 # <a name="create-a-function-app-in-a-premium-plan---azure-cli"></a>Создание приложения-функции в плане "Премиум" с помощью Azure CLI
 
@@ -18,9 +18,9 @@ ms.locfileid: "87498282"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli). 
+ - Для работы с этим руководством требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="sample-script"></a>Пример скрипта
 

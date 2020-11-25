@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2230784eedd044acd95b3087793ba664b544f76a
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: b558e34d3f5d224515eee669dfa7b8f2c6bbb3cd
+ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505076"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94541017"
 ---
 # <a name="quickstart-create-a-dedicated-sql-pool-preview-using-the-azure-portal"></a>Краткое руководство. Создание выделенного пула SQL (предварительная версия) с помощью портала Azure
 
@@ -48,7 +48,7 @@ Azure Synapse Analytics предлагает различные механизм
 
     | Параметр | Рекомендуемое значение | Описание |
     | :------ | :-------------- | :---------- |
-    | **имя выделенного пула SQL** | Любое допустимое имя | Имя выделенного пула SQL. |
+    | **Имя выделенного пула SQL** | Любое допустимое имя | Имя выделенного пула SQL. |
     | **Уровень производительности** | DW100c | Задайте минимальный размер, чтобы сократить затраты по работе в рамках этого краткого руководства. |
 
   
@@ -73,7 +73,6 @@ Azure Synapse Analytics предлагает различные механизм
 
 8. После завершения подготовки в рабочей области будет показана новая запись для созданного выделенного пула SQL.
  ![Поток создания пула SQL: подготовка ресурсов](media/quickstart-create-sql-pool/create-sql-pool-studio-27.png)
-
 
 
 После создания выделенный пул SQL становится доступным в рабочей области для загрузки данных, обработки потоков, чтения из озера и т. д.

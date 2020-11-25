@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: b3505f8bf31c2e700ce1cc57e106c33a13e0aa9b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: fc44dd6cf91d687f47afadf1c3378956d838bc9d
+ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737170"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94579510"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-spring-cloud-app"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
 
@@ -77,6 +77,8 @@ export SERVICE_IDENTITY=$(az spring-cloud app show --name "springapp" -s "myspri
 ```azurecli
 az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENTITY} --secret-permissions set get list
 ```
+> [!NOTE]
+> Используйте `az keyvault delete-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENTITY}`, чтобы удалить доступ к приложению после отключения удостоверения, управляемого системой.
 
 ## <a name="build-a-sample-spring-boot-app-with-spring-boot-starter"></a>Создание примера приложения Spring Boot с помощью стартера Spring Boot
 Этому приложению будет предоставлен доступ на получение секретов из Azure Key Vault. См. сведения об использовании [стартера Spring Boot для секретов Azure Key Vault](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-keyvault-secrets).  Azure Key Vault добавляется в качестве экземпляра **PropertySource** Spring.  Секреты, хранимые в Azure Key Vault, можно легко получить и использовать как любое внешнее свойство конфигурации, например свойства в файлах. 
@@ -167,7 +169,7 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
 
 ## <a name="build-sample-spring-boot-app-with-java-sdk"></a>Создание примера приложения Spring Boot с помощью пакета SDK для Java
 
-Этот пример может определять и получать секреты из Azure Key Vault. [Клиентская библиотека секретов Azure Key Vault для Java](/java/api/overview/azure/security-keyvault-secrets-readme?preserve-view=true&view=azure-java-stablelibrary) поддерживает проверку подлинности Azure Active Directory на основе токенов в пакете SDK Azure. Она предоставляет набор реализаций **TokenCredential** , которые можно использовать для создания клиентов пакета SDK Azure и включения поддержки проверки подлинности AAD на основе токенов.
+Этот пример может определять и получать секреты из Azure Key Vault. [Клиентская библиотека секретов Azure Key Vault для Java](/java/api/overview/azure/security-keyvault-secrets-readme?preserve-view=true&view=azure-java-stablelibrary) поддерживает проверку подлинности Azure Active Directory на основе токенов в пакете SDK Azure. Она предоставляет набор реализаций **TokenCredential**, которые можно использовать для создания клиентов пакета SDK Azure и включения поддержки проверки подлинности AAD на основе токенов.
 
 Эта библиотека позволяет безопасно хранить токены, пароли, ключи API и другие секреты, а также контролировать доступ к этой информации. Библиотека предоставляет операции для создания, извлечения, обновления, удаления, очистки, резервного копирования, восстановления и перечисления секретов и их версий.
 
@@ -184,7 +186,7 @@ az keyvault set-policy --name "<your-keyvault-name>" --object-id ${SERVICE_IDENT
     vim src/main/resources/application.properties
     ```
 
-    Чтобы использовать управляемое удостоверение для приложений Azure Spring Cloud, добавьте свойства со следующим содержимым в *src/main/resources/application.properties* .
+    Чтобы использовать управляемое удостоверение для приложений Azure Spring Cloud, добавьте свойства со следующим содержимым в *src/main/resources/application.properties*.
 
     ```
     azure.keyvault.enabled=true

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 4751f3cf213098873b0c53b15df82f57d155787a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 766837cacb4ef2acf874c2872b347b6d35633faa
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313302"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701003"
 ---
 # <a name="source-control-integration-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Интеграция системы управления версиями для выделенного пула SQL в Azure Synapse Analytics
 
@@ -37,7 +37,7 @@ ms.locfileid: "93313302"
 
    ![Управление подключениями](./media/sql-data-warehouse-source-control-integration/2-manage-connections.png "Управление подключениями")
 
-3. Подключитесь к проекту, выбрав **Управление подключениями** , а затем **Подключиться к проекту**.
+3. Подключитесь к проекту, выбрав **Управление подключениями**, а затем **Подключиться к проекту**.
  ![Подключение 1](./media/sql-data-warehouse-source-control-integration/3-connect-project.png "Подключение")
 
 
@@ -85,7 +85,7 @@ ms.locfileid: "93313302"
 
    ![Проверка](./media/sql-data-warehouse-source-control-integration/10-verify-column-change-pushed.png "Проверка изменений")
 
-4. ( **Необязательно**.) Используйте расширение "Сравнение схем" и обновите изменения в целевом хранилище данных с помощью SSDT, чтобы определения объектов в репозитории в Azure Repos и локальном репозитории отражали изменения в хранилище данных.
+4. (**Необязательно**.) Используйте расширение "Сравнение схем" и обновите изменения в целевом хранилище данных с помощью SSDT, чтобы определения объектов в репозитории в Azure Repos и локальном репозитории отражали изменения в хранилище данных.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

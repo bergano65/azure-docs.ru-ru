@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 10/15/2019
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Android
-ms.openlocfilehash: e8f60a3f39e770c1b09668a6d76e025b07ebbd6d
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
+ms.openlocfilehash: e0f3cd034838d5a9ccb1a5ccdc2567933b2e1dd6
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91893515"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94562208"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
-В этом кратком руководстве содержится пример кода, который демонстрирует, как приложение Android может входить в личные или рабочие и учебные учетные записи с помощью платформы удостоверений Майкрософт, получать маркер доступа и вызывать API Microsoft Graph. (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
+Из этого краткого руководства вы узнаете, как скачать и выполнить пример кода. В примере кода показано, как в приложении Android реализовать вход пользователей и получение маркера доступа для вызова API Microsoft Graph. 
+
+Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
 Чтобы приложение получало маркеры от платформы удостоверений Майкрософт, оно должно быть представлено объектом приложения в Azure Active Directory.
 

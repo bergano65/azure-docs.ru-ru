@@ -11,12 +11,12 @@ ms.date: 01/08/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 338f957d3e881a76b39b0b7c00288ae2ebf2be59
-ms.sourcegitcommit: 43558caf1f3917f0c535ae0bf7ce7fe4723391f9
+ms.openlocfilehash: 74a6c816979732e21813a0f2024167c68ca1c5dc
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90018617"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874106"
 ---
 # <a name="what-is-azure-ad-connect"></a>Что такое Azure AD Connect?
 
@@ -59,7 +59,7 @@ Azure AD Connect Health для AD FS поддерживает AD FS 2.0 в Windo
 |-----|-----|
 |Повышенная безопасность|[Тенденции блокировки экстрасети](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).</br>[Отчет о неудачных попытках входа в систему](how-to-connect-health-adfs-risky-ip.md).</br>[Соответствие требованиям конфиденциальности](reference-connect-health-user-privacy.md).|
 |Оповещения обо [всех критических проблемах системы ADFS](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services).|Конфигурация и доступность сервера.</br>[Производительность и возможность подключения](how-to-connect-health-adfs.md#performance-monitoring-for-ad-fs).</br>Регулярное обслуживание.|
-|Простота развертывания и управления.|[Быстрая установка агента](how-to-connect-health-agent-install.md#installing-the-azure-ad-connect-health-agent-for-ad-fs).</br>Автообновление агента до последней версии.</br>Получение доступа к данным на портале за считаные минуты.|
+|Простота развертывания и управления.|[Быстрая установка агента](how-to-connect-health-agent-install.md#install-the-agent-for-ad-fs).</br>Автообновление агента до последней версии.</br>Получение доступа к данным на портале за считаные минуты.|
 Расширенные [метрики использования](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).|Основные приложения.</br>Расположение в сети и TCP-подключение.</br>Количество запросов маркера на каждый сервер.|
 |Удобство работы для пользователей|Панель мониторинга на портале Azure.</br>[Оповещения по электронной почте](how-to-connect-health-adfs.md#alerts-for-ad-fs).|
 

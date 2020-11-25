@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 57dfec33beef6a9b5a6a3cd8edc43cae32d62e33
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: df402064f2aa26e29ef72c0f73f8f5aa761506e2
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123017"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873565"
 ---
 # <a name="water-consumption-monitoring-reference-architecture"></a>Эталонная архитектура решения для мониторинга потребления воды 
 
@@ -41,10 +41,10 @@ Azure IoT Central — это платформа приложений Интер
 После подключения интеллектуальных устройств для мониторинга воды к IoT Central вы получаете возможность управления устройством с помощью команд, а также мониторинг, оповещения, пользовательский интерфейс со встроенными ролями RBAC, настраиваемые панели мониторинга аналитики и возможности расширяемости. 
 
 
-## <a name="extensibility-and-integrations"></a>Расширяемость и интеграция. 
+## <a name="extensibility-and-integrations"></a>Расширяемость и интеграция.
 Вы можете расширить приложение Интернета вещей в IoT Central и при необходимости:
 * преобразовать и интегрировать данные Интернета вещей для расширенного анализа, например для обучения моделей машинного обучения, с помощью непрерывного экспорта данных из приложения IoT Central;
-* автоматизировать рабочие процессы в других системах за счет активации действий с помощью Microsoft Flow или веб-перехватчиков из приложения IoT Central;
+* автоматизировать рабочие процессы в других системах за счет активации действий с помощью Power Automate или веб-перехватчиков из приложения IoT Central;
 * получить программный доступ к приложению Интернета вещей в IoT Central через API-интерфейсы IoT Central.
 
 ## <a name="business-applications"></a>Бизнес-приложения 

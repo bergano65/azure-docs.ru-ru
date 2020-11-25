@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: f501b9f4215b9eeb48aa8bc80d492d55cf940404
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c88aea6aff942cdcf5cbc022df8f07cfe0d4cce
+ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397391"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94701285"
 ---
 # <a name="tutorial-index-json-blobs-from-azure-storage-using-rest"></a>Руководство по индексированию больших двоичных объектов JSON из службы хранилища Azure с помощью REST
 
@@ -76,11 +76,11 @@ ms.locfileid: "91397391"
 
 1. Откройте контейнер после создания и на панели команд выберите **Загрузить**.
 
-   :::image type="content" source="media/search-semi-structured-data/upload-command-bar.png" alt-text="Создание учетной записи хранения" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/upload-command-bar.png" alt-text="Отправка на панели команд" border="false":::
 
 1. Перейдите к папке, содержащей примеры файлов. Выберите их, а затем щелкните **Загрузить**.
 
-   :::image type="content" source="media/search-semi-structured-data/clinicalupload.png" alt-text="Создание учетной записи хранения" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/clinicalupload.png" alt-text="Передача файлов" border="false":::
 
 После завершения отправки файлы должны появиться в собственной вложенной папке внутри контейнера данных.
 
@@ -98,19 +98,19 @@ ms.locfileid: "91397391"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-:::image type="content" source="media/search-get-started-postman/get-url-key.png" alt-text="Создание учетной записи хранения" border="false":::
+:::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="Получение конечной точки HTTP и ключа доступа" border="false":::
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
 ## <a name="2---set-up-postman"></a>2\. Настройка Postman
 
-Запустите Postman и настройте HTTP-запрос. Если вы не работали с этим инструментом, изучите статью о [работе с REST API службы "Когнитивный поиск Azure" с помощью Postman](search-get-started-postman.md).
+Запустите Postman и настройте HTTP-запрос. Если вы не работали с этим инструментом, изучите краткое руководство по [интерфейсам REST API службы "Когнитивный поиск Azure"](search-get-started-rest.md).
 
 Методы запроса для каждого вызова в этом учебнике — **POST** и **GET**. Вы сделаете три вызова API службы поиска для создания источника данных, индекса и индексатора. Источник данных содержит указатель к вашей учетной записи хранения и данным JSON. Служба поиска создает подключение при отправке данных.
 
 В разделе "Заголовки" присвойте параметру Content-type значение `application/json`, а в параметре `api-key` сохраните значение ключа администрирования для службы "Когнитивный поиск Azure". Единожды выполнив настройку заголовков, вы сможете применять их для всех запросов в этом руководстве.
 
-  :::image type="content" source="media/search-get-started-postman/postman-url.png" alt-text="Создание учетной записи хранения" border="false":::
+  :::image type="content" source="media/search-get-started-rest/postman-url.png" alt-text="URL-адрес и заголовок запроса Postman" border="false":::
 
 Универсальный код ресурса (URI) должен указывать версию API, и каждый вызов должен возвращать ответ **201 Created** (201 — Создан ресурс). Общедоступная версия API (api-version) для использования массивов JSON — `2020-06-30`.
 
@@ -315,11 +315,11 @@ ms.locfileid: "91397391"
 
 1. Добавьте параметр запроса `$select`, чтобы ограничить результаты меньшим числом полей: `https://[service name].search.windows.net/indexes/clinical-trials-json-index/docs?search=*&$select=Gender,metadata_storage_size&api-version=2020-06-30&$count=true`.  Для этого запроса 100 документов совпадают, но по умолчанию Когнитивный поиск Azure возвращает в результатах только 50.
 
-   :::image type="content" source="media/search-semi-structured-data/lastquery.png" alt-text="Создание учетной записи хранения" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/lastquery.png" alt-text="Параметризованный запрос" border="false":::
 
 1. Пример более сложного запроса включал бы в себя элемент `$filter=MinimumAge ge 30 and MaximumAge lt 75`, который возвращает только результаты, в которых значение параметра MinimumAge не меньше 30, а MaximumAge — не больше 75. Замените выражение `$select` выражением `$filter`.
 
-   :::image type="content" source="media/search-semi-structured-data/metadatashort.png" alt-text="Создание учетной записи хранения" border="false":::
+   :::image type="content" source="media/search-semi-structured-data/metadatashort.png" alt-text="Частично структурированный поиск" border="false":::
 
 Вы можете также использовать логические операторы (and, or, not) и операторы сравнения (eq, ne, gt, lt, ge, le). При сравнении строк учитывается регистр. Дополнительные сведения о создании простого запроса и примеры см. в [этой статье](search-query-simple-examples.md).
 

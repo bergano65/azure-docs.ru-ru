@@ -5,13 +5,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: tutorial
-ms.date: 08/28/2020
-ms.openlocfilehash: 232f50c05182799c93a636baa2aec8ed93419be8
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.date: 11/12/2020
+ms.openlocfilehash: 89c2a725b853b5a2a7578dccc1fd503917e12962
+ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489477"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94659630"
 ---
 # <a name="tutorial-share-data-using-azure-data-share"></a>Руководство по Совместное использование данных с помощью Azure Data Share  
 
@@ -31,21 +31,25 @@ ms.locfileid: "94489477"
 * Адрес электронной почты для входа получателей в Azure (псевдонимы электронной почты не поддерживаются).
 * Если исходное хранилище данных Azure находится в подписке Azure, отличной от той, которая будет использоваться для создания ресурса Data Share, зарегистрируйте [поставщик ресурсов Microsoft.DataShare](concepts-roles-permissions.md#resource-provider-registration) в подписке, в которой находится хранилище данных Azure. 
 
-### <a name="share-from-a-storage-account"></a>Совместное использование из учетной записи хранения
+### <a name="share-from-a-storage-account"></a>Предоставление общего доступа к данным из учетной записи хранения
 
 * Учетная запись хранения Azure. Если у вас ее еще нет, вы можете создать [Учетную запись службі хранилища Azure](../storage/common/storage-account-create.md)
-* Разрешение на запись в учетную запись хранения, которая имеется в *Microsoft.Storage/storageAccounts/write*. Это разрешение назначено роли участника.
-* Разрешение на добавление назначения ролей в учетную запись хранения, имеющуюся в *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца. 
+* Разрешение на запись в учетную запись хранения, которая имеется в *Microsoft.Storage/storageAccounts/write*. Это разрешение назначено роли **участника**.
+* Разрешение на добавление назначения ролей в учетную запись хранения, имеющуюся в *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли **владельца**. 
 
 
-### <a name="share-from-a-sql-based-source"></a>Совместное использование из источника на основе SQL
+### <a name="share-from-a-sql-based-source"></a>Предоставление общего доступа к данным из источника на основе SQL
+Ниже приведен список предварительных условий для предоставления общего доступа к данным из источника SQL. 
 
-* База данных SQL Azure или Azure Synapse Analytics (ранее — Хранилище данных SQL) с таблицами и представлениями, к которым нужно предоставить общий доступ.
-* Разрешение на запись в базы данных на сервере SQL, которое присутствует в *Microsoft.Sql/servers/databases/write*. Это разрешение назначено роли участника.
-* Разрешение на доступ к хранилищу данных для общего ресурса данных. Это можно обеспечить следующим образом. 
-    1. Укажите себя в качестве администратора Azure Active Directory для сервера SQL.
-    1. Подключитесь к хранилищу данных SQL Azure или базе данных SQL Azure с использованием Azure Active Directory.
-    1. Используйте редактор запросов (предварительная версия) для выполнения следующего сценария, чтобы добавить управляемое удостоверение для ресурса Data Share в качестве db_datareader. Необходимо подключиться с помощью Active Directory, а не аутентификации SQL Server. 
+#### <a name="prerequisites-for-sharing-from-azure-sql-database-or-azure-synapse-analytics-formerly-azure-sql-dw"></a>Предварительные требования для предоставления общего доступа к данным Базы данных SQL Azure или Azure Synapse Analytics (ранее — хранилище данных SQL Azure)
+Для настройки необходимых компонентов cм. [ролик с пошаговыми инструкциями](https://youtu.be/hIE-TjJD8Dc).
+
+* База данных SQL Azure или Azure Synapse Analytics (ранее — хранилище данных SQL Azure) с таблицами и представлениями, к которым вы хотите предоставить общий доступ.
+* Разрешение на запись в базы данных на сервере SQL, которое присутствует в *Microsoft.Sql/servers/databases/write*. Это разрешение назначено роли **участника**.
+* Разрешение на доступ управляемого удостоверения Data Share к базе данных. Это можно обеспечить следующим образом. 
+    1. На портале Azure перейдите к SQL Server и назначьте себе роль **администратора Azure Active Directory**.
+    1. Подключитесь к Базе данных или Хранилищу данных SQL Azure с помощью [редактора запросов](../azure-sql/database/connect-query-portal.md#connect-using-azure-active-directory) или SQL Server Management Studio, выполнив проверку подлинности в Azure Active Directory. 
+    1. Выполните указанный ниже сценарий, чтобы добавить управляемое удостоверение для ресурса Data Share в качестве db_datareader. Необходимо подключиться с помощью Active Directory, а не аутентификации SQL Server. 
     
         ```sql
         create user "<share_acct_name>" from external provider;     
@@ -53,23 +57,48 @@ ms.locfileid: "94489477"
         ```                   
        Обратите внимание на то, что *<share_acc_name>* — это имя вашего ресурса Data Share. Если вы еще не создали ресурс Data Share, вы можете вернуться к этому требованию позже.  
 
-* Пользователь Базы данных SQL Azure с доступом "db_datareader" для навигации и выбора таблиц и представлений, к которым необходимо предоставить общий доступ. 
+* Пользователь Базы данных SQL Azure с доступом **db_datareader** для навигации и выбора таблиц и/или представлений, к которым необходимо предоставить общий доступ. 
 
-* Доступ к брандмауэру для IP-адреса клиента SQL Server. Это можно обеспечить следующим образом. 
-    1. В SQL Server на портале Azure перейдите к разделу *Брандмауэры и виртуальные сети*
-    1. Чтобы разрешить доступ к службам Azure, щелкните переключатель **Вкл.**
-    1. Щелкните **+Добавить IP-адрес клиента** , а затем **Сохранить**. IP-адрес клиента можно изменить. При следующем совместном использовании данных SQL из портала Azure может потребоваться повторение этого процесса. Вы можете также добавить диапазон IP-адресов. 
+* Доступ к брандмауэру SQL Server. Это можно обеспечить следующим образом. 
+    1. На портале Azure перейдите к SQL Server. Выберите *Брандмауэры и виртуальные сети* в левой области навигации.
+    1. Выберите значение **Да** для параметра *Разрешить доступ к серверу службам и ресурсам Azure*.
+    1. Щелкните **+Добавить IP-адрес клиента**. IP-адрес клиента можно изменить. При следующем совместном использовании данных SQL из портала Azure может потребоваться повторение этого процесса. Вы можете также добавить диапазон IP-адресов.
+    1. Выберите команду **Сохранить**. 
+
+#### <a name="prerequisites-for-sharing-from-azure-synapse-analytics-workspace-sql-pool"></a>Необходимые условия для предоставления общего доступа к данным из пула SQL Azure Synapse Analytics (рабочая область)
+
+* * Выделенный пул SQL Azure Synapse Analytics (рабочая область) с таблицами, к которым вы хотите предоставить общий доступ. Предоставление общего доступа к данным представления в настоящее время не поддерживается. Предоставление общего доступа к данным из бессерверного пула SQL в настоящее время не поддерживается.
+* Разрешение на запись в пул SQL в рабочей области Synapse, которое предоставляется через *Microsoft.Synapse/workspaces/sqlPools/write*. Это разрешение назначено роли **участника**.
+* Разрешение на доступ управляемого удостоверения Data Share к пулу SQL рабочей области Synapse. Это можно обеспечить следующим образом. 
+    1. На портале Azure перейдите в рабочую область Synapse. Выберите на панели навигации слева "Администратор Active Directory для SQL" и назначьте себе роль **администратора Azure Active Directory**.
+    1. Откройте Synapse Studio, затем выберите *Управление* в области навигации слева. Выберите *Управление доступом* в разделе "Безопасность". Назначьте себе роль **Администратор SQL** или **Администратор рабочей области**.
+    1. В Synapse Studio в области навигации слева выберите *Разработка*. Выполните указанный ниже сценарий в пуле SQL, чтобы добавить управляемое удостоверение для ресурса Data Share в качестве db_datareader. 
+    
+        ```sql
+        create user "<share_acct_name>" from external provider;     
+        exec sp_addrolemember db_datareader, "<share_acct_name>"; 
+        ```                   
+       Обратите внимание на то, что *<share_acc_name>* — это имя вашего ресурса Data Share. Если вы еще не создали ресурс Data Share, вы можете вернуться к этому требованию позже.  
+
+* Доступ к брандмауэру рабочей области Synapse. Это можно обеспечить следующим образом. 
+    1. На портале Azure перейдите в рабочую область Synapse. В области навигации слева выберите *Брандмауэры*.
+    1. Выберите значение **ВКЛ.** для параметра *Разрешить службам и ресурсам Azure доступ к этой рабочей области*.
+    1. Щелкните **+Добавить IP-адрес клиента**. IP-адрес клиента можно изменить. При следующем совместном использовании данных SQL из портала Azure может потребоваться повторение этого процесса. Вы можете также добавить диапазон IP-адресов.
+    1. Выберите команду **Сохранить**. 
+
 
 ### <a name="share-from-azure-data-explorer"></a>Предоставление общего доступа к данным из Azure Data Explorer
 * Кластер Azure Data Explorer с базами данных, к которым вы хотите предоставить общий доступ.
-* Разрешение на запись в кластер Azure Data Explorer, имеющийся в *Microsoft.Kusto/clusters/write*. Это разрешение назначено роли участника.
-* Разрешение на добавление назначения ролей в кластер Azure Data Explorer *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца.
+* Разрешение на запись в кластер Azure Data Explorer, имеющийся в *Microsoft.Kusto/clusters/write*. Это разрешение назначено роли **участника**.
+* Разрешение на добавление назначения ролей в кластер Azure Data Explorer *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли **владельца**.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-a-data-share-account"></a>Создание учетной записи для общего доступа к данным
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Создайте ресурс Azure Data Share в группе ресурсов Azure.
 
@@ -84,16 +113,60 @@ ms.locfileid: "94489477"
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
     | Подписка | Ваша подписка | Выберите подписку Azure, которую нужно использовать для своей учетной записи Data Share.|
-    | Группа ресурсов | *test-resource-group* | Воспользуйтесь существующей группой ресурсов или создайте новую. |
+    | Группа ресурсов | *testresourcegroup* | Воспользуйтесь существующей группой ресурсов или создайте новую. |
     | Расположение | *Восточная часть США 2* | Выберите регион для учетной записи Data Share.
     | Имя | *datashareaccount* | Укажите имя вашей учетной записи Data Share. |
     | | |
 
-1. Выберите **Проверить и создать** , а затем **Создать** , чтобы подготовить учетную запись для общего ресурса данных. Подготовка новой учетной записи для общего доступа к данным обычно занимает около 2 минут или меньше. 
+1. Выберите **Проверить и создать**, а затем **Создать**, чтобы подготовить учетную запись для общего ресурса данных. Подготовка новой учетной записи для общего доступа к данным обычно занимает около 2 минут или меньше. 
 
 1. Когда развертывание будет завершено, выберите **Перейти ресурсу**.
 
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Создайте ресурс Azure Data Share в группе ресурсов Azure.
+
+Чтобы подготовить среду для Azure CLI, выполните указанные ниже действия.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Чтобы создать ресурс, выполните следующие команды:
+
+1. Выполните команду [az account set](/cli/azure/account#az_account_set), чтобы установить свою подписку в качестве текущей подписки по умолчанию:
+
+   ```azurecli
+   az account set --subscription 00000000-0000-0000-0000-000000000000
+   ```
+
+1. Выполните команду [az provider register](/cli/azure/provider#az_provider_register), чтобы зарегистрировать поставщик ресурсов:
+
+   ```azurecli
+   az provider register --name "Microsoft.DataShare"
+   ```
+
+1. Выполните команду [az group create](/cli/azure/group#az_group_create), чтобы создать группу ресурсов или использовать существующую группу ресурсов:
+
+   ```azurecli
+   az group create --name testresourcegroup --location "East US 2"
+   ```
+
+1. Выполните команду [az datashare account create](/cli/azure/ext/datashare/datashare/account#ext_datashare_az_datashare_account_create), чтобы создать учетную запись Data Share:
+
+   ```azurecli
+   az datashare account create --resource-group testresourcegroup --name datashareaccount --location "East US 2" 
+   ```
+
+   Выполните команду [az datashare account list](/cli/azure/ext/datashare/datashare/account#ext_datashare_az_datashare_account_list), чтобы просмотреть учетные записи Data Share:
+
+   ```azurecli
+   az datashare account list --resource-group testresourcegroup
+   ```
+
+---
+
 ## <a name="create-a-share"></a>Создание общей папки
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Перейдите на страницу "Обзор Data Share".
 
@@ -113,7 +186,7 @@ ms.locfileid: "94489477"
 
     ![Добавление наборов данных в общий ресурс](./media/datasets.png "Наборы данных")
 
-1. Выберите тип набора данных, который хотите добавить. Вы увидите другой список типов наборов данных в зависимости от типа ресурса (моментальный снимок или на странице), который вы выбрали на предыдущем этапе. При предоставлении общего доступа из Базы данных SQL Azure или Azure Synapse Analytics вам будет предложено ввести учетные данные SQL. Выполните проверку подлинности с помощью пользователя, созданного в рамках предварительных требований.
+1. Выберите тип набора данных, который хотите добавить. Вы увидите другой список типов наборов данных в зависимости от типа ресурса (моментальный снимок или на странице), который вы выбрали на предыдущем этапе. При предоставлении общего доступа к данным из Базы данных SQL Azure (ранее — хранилище данных SQL Azure) или Azure Synapse Analytics вам будет предложено ввести учетные данные SQL, чтобы отобразить таблицы.
 
     ![AddDatasets](./media/add-datasets.png "Добавление наборов данных")    
 
@@ -137,11 +210,43 @@ ms.locfileid: "94489477"
 
 1. На вкладке "Просмотр и создание" просмотрите содержимое пакета, параметры, получателей и параметры синхронизации. Нажмите кнопку **Создать**.
 
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+1. Выполните команду [az storage account create](/cli/azure/storage/account#az_storage_account_create), чтобы создать Data Share:
+
+   ```azurecli
+   az storage account create --resource-group testresourcegroup --name ContosoMarketplaceAccount
+   ```
+
+1. Выполните команду [az storage container create](/cli/azure/storage/container#az_storage_container_create), чтобы создать контейнер для общей папки из предыдущей команды:
+
+   ```azurecli
+   az storage container create --name ContosoMarketplaceContainer --account-name ContosoMarketplaceAccount
+   ```
+
+1. Выполните команду [az datashare create](/cli/azure/ext/datashare/datashare#ext_datashare_az_datashare_create), чтобы создать Data Share:
+
+   ```azurecli
+   az datashare create --resource-group testresourcegroup \
+     --name ContosoMarketplaceDataShare --account-name ContosoMarketplaceAccount \
+     --description "Data Share" --share-kind "CopyBased" --terms "Confidential"
+   ```
+
+1. Выполните команду [az datashare invitation create](/cli/azure/ext/datashare/datashare/invitation#ext_datashare_az_datashare_invitation_create), чтобы создать приглашение для указанного адреса:
+
+   ```azurecli
+   az datashare invitation create --resource-group testresourcegroup \
+     --name DataShareInvite --share-name ContosoMarketplaceDataShare \
+     --account-name ContosoMarketplaceAccount --target-email "jacob@fabrikam"
+   ```
+
+---
+
 Azure Data Share создан, и получатель Data Share готов принять ваше приглашение.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурс больше не нужен, перейдите на страницу **Общие сведения об общем ресурсе данных** и нажмите **Удалить** , чтобы удалить его.
+Если ресурс больше не нужен, перейдите на страницу **Общие сведения об общем ресурсе данных** и нажмите **Удалить**, чтобы удалить его.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.reviewer: dsindona
 ms.service: marketplace
 ms.topic: overview
 ms.date: 10/15/2020
-ms.openlocfilehash: 0b0f290a5f560fa8f6db109422c8790ecef9698e
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: a559c8613af97251ea6e85ef2a16121a89ffb6ad
+ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107051"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94739774"
 ---
 # <a name="what-is-the-microsoft-commercial-marketplace"></a>Что такое коммерческая платформа Майкрософт?
 
@@ -24,7 +24,7 @@ ms.locfileid: "92107051"
 
 В состав коммерческой платформы Майкрософт входят два интернет-магазина: [Microsoft AppSource](https://appsource.microsoft.com/) и [Azure Marketplace](https://azuremarketplace.microsoft.com/). Microsoft AppSource содержит бизнес-решения, а Azure Marketplace — ИТ-решения. Программное обеспечение и службы коммерческой платформы можно также найти в таких продуктах Майкрософт, как Microsoft 365, Dynamics 365, Microsoft Power Platform и Azure. Наши интернет-магазины и встроенные в продукты возможности ежемесячно привлекают миллионы потенциальных клиентов. Каждый интернет-магазин предлагает различные сценарии, которые позволяют предоставить ваше решение или услугу нужным клиентам.
 
-Когда вы создаете предложение на коммерческой платформе в Центре партнеров, оно может быть опубликовано в одном или обоих интернет-магазинах в зависимости от его типа, категорий и других выбранных параметров. В редких случаях, если предложение относится к пользователям обоих интернет-магазинов, оно будет отображаться и там и там. Дополнительные сведения см. в разделе [Выбор интернет-магазина](determine-your-listing-type.md#selecting-an-online-store) и [Пособие покупателя Microsoft AppSource и Azure Marketplace](https://aka.ms/MarketplaceBuyerGuide).
+Когда вы создаете предложение на коммерческой платформе в Центре партнеров, оно может быть опубликовано в одном или обоих интернет-магазинах в зависимости от его типа, категорий и других выбранных параметров. В редких случаях, если предложение относится к пользователям обоих интернет-магазинов, оно будет отображаться и там и там. Дополнительные сведения см. в разделе [Варианты выставления на продажу и ценообразования по интернет-магазинам](determine-your-listing-type.md#listing-and-pricing-options-by-online-store) и в документе [Пособие покупателя по Microsoft AppSource и Azure Marketplace](https://aka.ms/MarketplaceBuyerGuide).
 
 ### <a name="microsoft-appsource"></a>Microsoft AppSource
 

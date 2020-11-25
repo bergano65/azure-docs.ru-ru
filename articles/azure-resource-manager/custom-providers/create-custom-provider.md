@@ -5,12 +5,12 @@ author: MSEvanhi
 ms.topic: tutorial
 ms.date: 06/24/2020
 ms.author: evanhi
-ms.openlocfilehash: 541d140716e52b4fe1db4bc999682914a380a5f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23ae69f49d37a210dd9fa1bfeedeca6c1b461e20
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85368113"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888867"
 ---
 # <a name="quickstart-create-a-custom-provider-and-deploy-custom-resources"></a>Краткое руководство. Создание настраиваемого поставщика и развертывание настраиваемых ресурсов
 
@@ -23,8 +23,11 @@ ms.locfileid: "85368113"
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-- Для команд [custom-providers](/cli/azure/ext/custom-providers/custom-providers/resource-provider) требуется расширение. Дополнительные сведения см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
-- В примерах Azure CLI используется `az rest` для запросов `REST`. Дополнительные сведения см. в документации по команде [az rest](/cli/azure/reference-index#az-rest).
+Подготовьте среду к работе с Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+В примерах Azure CLI используется `az rest` для запросов `REST`. Дополнительные сведения см. в документации по команде [az rest](/cli/azure/reference-index#az-rest).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -33,8 +36,6 @@ ms.locfileid: "85368113"
 - После установки **ARMClient** вы сможете отобразить сведения об использовании из командной строки PowerShell, введя команду `armclient.exe`. Также можно открыть [вики-сайт ARMClient](https://github.com/projectkudu/ARMClient/wiki).
 
 ---
-
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="deploy-custom-provider"></a>Развертывание настраиваемого поставщика
 

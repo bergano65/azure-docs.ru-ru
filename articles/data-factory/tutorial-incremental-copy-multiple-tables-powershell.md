@@ -1,6 +1,6 @@
 ---
 title: Добавочное копирование нескольких таблиц с помощью PowerShell
-description: С помощью этого руководства вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в Базу данных SQL Azure.
+description: В этом кратком руководстве показано, как создать фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в Базу данных SQL Azure.
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: be98ff2a31e3216088fb9197fab477d9b1088f26
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 54dea3ba7bbc3339b7b044b476c321fd95138ac2
+ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92634102"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94566424"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-azure-sql-database-using-powershell"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в Базу данных SQL Azure с использованием PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-С помощью этого руководства вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в Базу данных SQL Azure.    
+В этом кратком руководстве показано, как создать фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в Базу данных SQL Azure.    
 
 В этом руководстве вы выполните следующие шаги:
 
@@ -50,7 +50,7 @@ ms.locfileid: "92634102"
 
     В этом руководстве вы сохраните значение предела в базе данных SQL.
 
-3. **Создайте конвейер, следуя инструкциям ниже** .
+3. **Создайте конвейер, следуя инструкциям ниже**.
     
     а. Создайте действие ForEach, которое выполняет итерацию по списку имен исходной таблицы. Этот список передается в конвейер в качестве параметра. В каждой исходной таблице этот параметр вызывает следующие действия для загрузки разностных данных для этой таблицы.
 
@@ -70,13 +70,13 @@ ms.locfileid: "92634102"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **SQL Server.** В этом учебнике используйте базу данных SQL Server в качестве исходного хранилища данных. 
-* **База данных SQL Azure** . Базу данных в службе "База данных SQL Azure" следует использовать в качестве принимающего хранилища данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям из руководства [Создание отдельной базы данных в Базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md). 
+* **База данных SQL Azure**. Базу данных в службе "База данных SQL Azure" следует использовать в качестве принимающего хранилища данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям из руководства [Создание отдельной базы данных в Базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md). 
 
 ### <a name="create-source-tables-in-your-sql-server-database"></a>Создание исходных таблиц в базе данных SQL Server
 
 1. Откройте [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) и подключитесь к базе данных SQL Server.
 
-2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос** .
+2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
 
 3. Выполните следующую команду SQL в базе данных, чтобы создать таблицы с именами `customer_table` и `project_table`.
 
@@ -115,7 +115,7 @@ ms.locfileid: "92634102"
 
 1. Откройте [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) и подключитесь к базе данных SQL Server.
 
-2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос** .
+2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
 
 3. Выполните следующую команду SQL в базе данных, чтобы создать таблицы с именами `customer_table` и `project_table`.  
 
@@ -265,7 +265,7 @@ END
     ```powershell
     $dataFactoryName = "ADFIncMultiCopyTutorialFactory";
     ```
-5. Чтобы создать фабрику данных, выполните командлет **Set-AzDataFactoryV2** . 
+5. Чтобы создать фабрику данных, выполните командлет **Set-AzDataFactoryV2**. 
     
     ```powershell
     Set-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Location $location -Name $dataFactoryName 
@@ -283,7 +283,7 @@ END
 
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль участника, владельца либо администратора подписки Azure.
 
-* Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика** , чтобы найти пункт **Фабрика данных** : [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, База данных SQL, Управляемый экземпляр SQL и т. д.) и вычислительные ресурсы (Azure HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+* Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, База данных SQL, Управляемый экземпляр SQL и т. д.) и вычислительные ресурсы (Azure HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 [!INCLUDE [data-factory-create-install-integration-runtime](../../includes/data-factory-create-install-integration-runtime.md)]
 
@@ -357,7 +357,7 @@ END
     Set-Location 'C:\ADFTutorials\IncCopyMultiTableTutorial'
     ```
 
-3. Выполните командлет **Set-AzDataFactoryV2LinkedService** , чтобы создать связанную службу AzureStorageLinkedService. В указанном ниже примере вы передадите значения для параметров *ResourceGroupName* и *DataFactoryName* . 
+3. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу AzureStorageLinkedService. В указанном ниже примере вы передадите значения для параметров *ResourceGroupName* и *DataFactoryName*. 
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SqlServerLinkedService" -File ".\SqlServerLinkedService.json"
@@ -390,7 +390,7 @@ END
         }
     }
     ```
-2. В PowerShell выполните командлет **Set-AzDataFactoryV2LinkedService** , чтобы создать связанную службу AzureSQLDatabaseLinkedService. 
+2. В PowerShell выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу AzureSQLDatabaseLinkedService. 
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSQLDatabaseLinkedService" -File ".\AzureSQLDatabaseLinkedService.json"
@@ -435,7 +435,7 @@ END
 
     Действие копирования в конвейере использует SQL-запрос для загрузки данных, вместо того чтобы загружать всю таблицу.
 
-2. Выполните командлет **Set-AzDataFactoryV2Dataset** , чтобы создать набор данных SourceDataset.
+2. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных SourceDataset.
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SourceDataset" -File ".\SourceDataset.json"
@@ -482,7 +482,7 @@ END
     }
     ```
 
-2. Выполните командлет **Set-AzDataFactoryV2Dataset** , чтобы создать набор данных SinkDataset.
+2. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных SinkDataset.
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SinkDataset" -File ".\SinkDataset.json"
@@ -519,7 +519,7 @@ END
         }
     }    
     ```
-2. Выполните командлет **Set-AzDataFactoryV2Dataset** , чтобы создать набор данных WatermarkDataset.
+2. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных WatermarkDataset.
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "WatermarkDataset" -File ".\WatermarkDataset.json"
@@ -539,13 +539,13 @@ END
 
 Этот конвейер принимает список имен таблиц в качестве параметра. Действие **ForEach** выполняет итерацию по списку имен таблиц, а затем выполняет следующие операции: 
 
-1. Использует **действие поиска** , чтобы получить старое значение предела (начальное значение или значение, используемое в последней итерации).
+1. Использует **действие поиска**, чтобы получить старое значение предела (начальное значение или значение, используемое в последней итерации).
 
-2. Использует **действие поиска** , чтобы получить новое значение предела (максимальное значение в столбце предела в исходной таблице).
+2. Использует **действие поиска**, чтобы получить новое значение предела (максимальное значение в столбце предела в исходной таблице).
 
-3. Использует **действие копирования** , чтобы скопировать данные между двумя значениями пределов из исходной в целевую базу данных.
+3. Использует **действие копирования**, чтобы скопировать данные между двумя значениями пределов из исходной в целевую базу данных.
 
-4. Использует **действие хранимой процедуры** , чтобы обновить старое значение предела для использования на первом шаге следующей итерации. 
+4. Использует **действие хранимой процедуры**, чтобы обновить старое значение предела для использования на первом шаге следующей итерации. 
 
 ### <a name="create-the-pipeline"></a>Создание конвейера
 
@@ -765,7 +765,7 @@ END
         }
     }
     ```
-2. Выполните командлет **Set-AzDataFactoryV2Pipeline** , чтобы создать конвейер IncrementalCopyPipeline.
+2. Выполните командлет **Set-AzDataFactoryV2Pipeline**, чтобы создать конвейер IncrementalCopyPipeline.
     
    ```powershell
    Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "IncrementalCopyPipeline" -File ".\IncrementalCopyPipeline.json"
@@ -804,7 +804,7 @@ END
         ]
     }
     ```
-2. Запустите конвейер IncrementalCopyPipeline, выполнив командлет **Invoke-AzDataFactoryV2Pipeline** . Замените заполнители собственными именами группы ресурсов и фабрики данных.
+2. Запустите конвейер IncrementalCopyPipeline, выполнив командлет **Invoke-AzDataFactoryV2Pipeline**. Замените заполнители собственными именами группы ресурсов и фабрики данных.
 
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroup $resourceGroupName -dataFactoryName $dataFactoryName -ParameterFile ".\Parameters.json"        
@@ -814,19 +814,19 @@ END
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. Выберите **Все службы** , выполните поиск по фразе *Фабрики данных* и выберите **Фабрики данных** . 
+2. Выберите **Все службы**, выполните поиск по фразе *Фабрики данных* и выберите **Фабрики данных**. 
 
-3. Найдите и выберите в списке свою фабрику данных, чтобы открыть страницу **Фабрика данных** . 
+3. Найдите и выберите в списке свою фабрику данных, чтобы открыть страницу **Фабрика данных**. 
 
-4. На странице **Фабрика данных** выберите **Создание и мониторинг** , чтобы запустить Фабрику данных Azure на отдельной вкладке.
+4. На странице **Фабрика данных** выберите **Создание и мониторинг**, чтобы запустить Фабрику данных Azure на отдельной вкладке.
 
 5. На странице **Начало работы** выберите **Мониторинг** слева. 
 ![Снимок экрана: страница "Начало работы" Фабрики данных Azure](media/doc-common-process/get-started-page-monitor-button.png)    
 
-6. Вы можете увидеть все запуски конвейеров и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно** . Чтобы проверить параметры, переданные в конвейер, щелкните ссылку в столбце **Параметры** . Если произошла ошибка, вы увидите ссылку в столбце **Ошибка** .
+6. Вы можете увидеть все запуски конвейеров и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно**. Чтобы проверить параметры, переданные в конвейер, щелкните ссылку в столбце **Параметры**. Если произошла ошибка, вы увидите ссылку в столбце **Ошибка**.
 
     ![Снимок экрана: выполнение конвейеров для фабрики данных, включая ваш конвейер.](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-4.png)    
-7. Если щелкнуть ссылку в столбце **Действия** , вы увидите все выполняемые действия в конвейере. 
+7. Если щелкнуть ссылку в столбце **Действия**, вы увидите все выполняемые действия в конвейере. 
 
 8. Выберите **All Pipeline Runs** (Все запуски конвейера), чтобы вернуться к представлению **Pipeline Runs** (Запуски конвейера). 
 
@@ -907,11 +907,11 @@ VALUES
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroup $resourceGroupname -dataFactoryName $dataFactoryName -ParameterFile ".\Parameters.json"
     ```
-2. Чтобы отслеживать выполнение конвейера, следуйте инструкциям из раздела [Мониторинг конвейера](#monitor-the-pipeline). Когда конвейер находится в состоянии **Выполняется** , отображается ссылка на другое действие в столбце **Действия** , с помощью которой можно отменить выполнение конвейера. 
+2. Чтобы отслеживать выполнение конвейера, следуйте инструкциям из раздела [Мониторинг конвейера](#monitor-the-pipeline). Когда конвейер находится в состоянии **Выполняется**, отображается ссылка на другое действие в столбце **Действия**, с помощью которой можно отменить выполнение конвейера. 
 
-3. Выберите **Обновить** , чтобы обновить список, пока конвейер не будет выполнен. 
+3. Выберите **Обновить**, чтобы обновить список, пока конвейер не будет выполнен. 
 
-4. (Необязательно.) Щелкните ссылку **View Activity Runs** (Просмотреть выполнения действий) в области **Действия** , чтобы просмотреть все выполнения действий, связанные с этим запуском конвейера. 
+4. (Необязательно.) Щелкните ссылку **View Activity Runs** (Просмотреть выполнения действий) в области **Действия**, чтобы просмотреть все выполнения действий, связанные с этим запуском конвейера. 
 
 ## <a name="review-the-final-results"></a>Просмотр окончательных результатов
 
@@ -934,7 +934,7 @@ PersonID    Name    LastModifytime
 5           Anny    2017-09-05 08:06:00.000
 ```
 
-Обратите внимание на новые значения в столбцах **Name** и **LastModifytime** для строки под номером 3 в столбце **PersonID** . 
+Обратите внимание на новые значения в столбцах **Name** и **LastModifytime** для строки под номером 3 в столбце **PersonID**. 
 
 **Запрос**
 
