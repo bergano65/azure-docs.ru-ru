@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 8/25/2017
 ms.author: alkohli
 ms.openlocfilehash: a5a7a31c174271f963bb005f10b8376a59133d36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85513133"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014879"
 ---
 # <a name="replace-a-disk-drive-on-your-storsimple-8000-series-device"></a>Замена диска на устройстве StorSimple серии 8000
 
@@ -109,6 +109,6 @@ ms.locfileid: "85513133"
    > [!NOTE]
    > После замены диска на изменение состояния диска в портале управления может потребоваться несколько часов.
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте подробнее о [замене компонентов оборудования StorSimple](storsimple-8000-hardware-component-replacement.md).
 

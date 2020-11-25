@@ -8,11 +8,11 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 08/30/2019
 ms.openlocfilehash: 7310c67ef20a4134d4f613ea969c96802958bf62
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219213"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015236"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Тестирование кода Azure Data Lake Analytics
 
@@ -34,7 +34,7 @@ Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-
 
 ### <a name="manage-the-test-data-source"></a>Управление источником тестовых данных
 
-При тестировании сценариев U-SQL требуются файлы с тестовыми входными данными. Чтобы управлять тестовыми данными, в **Обозреватель решений**щелкните правой кнопкой мыши проект U-SQL и выберите пункт **свойства**. Источник можно указать в **источнике тестовых данных**.
+При тестировании сценариев U-SQL требуются файлы с тестовыми входными данными. Чтобы управлять тестовыми данными, в **Обозреватель решений** щелкните правой кнопкой мыши проект U-SQL и выберите пункт **свойства**. Источник можно указать в **источнике тестовых данных**.
 
 ![Data Lake Tools для Visual Studio — настройка источника тестовых данных проекта](./media/data-lake-analytics-cicd-test/data-lake-tools-configure-project-test-data-source.png)
 
@@ -145,7 +145,7 @@ CPPSDK — это пакет, включающий Microsoft Visual C++ 14 и Wi
 
 Если вы ссылаетесь на них с помощью [Microsoft.Azure.DataLake.USQL.Interfaces пакета Nuget ](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.Interfaces/), добавьте задачу восстановления NuGet в конвейер сборки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 - [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md)

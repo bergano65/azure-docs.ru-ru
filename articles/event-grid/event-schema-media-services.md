@@ -4,11 +4,11 @@ description: В этой статье приведены свойства соб
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: c1c5953cae7364131eefcec97d3375404c85e963
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86105937"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015219"
 ---
 # <a name="azure-media-services-as-an-event-grid-source"></a>Службы мультимедиа Azure в качестве источника "Сетка событий"
 
@@ -656,7 +656,7 @@ ms.locfileid: "86105937"
 | dataVersion | строка | Версия схемы для объекта данных. Версию схемы определяет издатель. |
 | metadataVersion | строка | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Зарегистрируйтесь на получение событий изменения состояния задания](../media-services/latest/job-state-events-cli-how-to.md).
 

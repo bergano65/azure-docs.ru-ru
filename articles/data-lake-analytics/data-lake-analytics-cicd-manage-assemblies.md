@@ -7,11 +7,11 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 10/30/2018
 ms.openlocfilehash: e88616f45c69d33234aa35333e0d82ad8cc59bb6
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219366"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015287"
 ---
 # <a name="best-practices-for-managing-u-sql-assemblies-in-a-cicd-pipeline"></a>Рекомендации по управлению сборками U-SQL в конвейере CI/CD
 
@@ -37,7 +37,7 @@ ms.locfileid: "92219366"
 
 1. Добавьте свой код C#, определяемый пользователем, в проект библиотеки классов (для приложения U-SQL).
 
-1. Создайте проект U-SQL, выбрав **файл**  >  **создать**  >  **проект**. Проект находится в **Azure Data Lake**  >  узле**U-SQL** .
+1. Создайте проект U-SQL, выбрав **файл**  >  **создать**  >  **проект**. Проект находится в **Azure Data Lake**  >  узле **U-SQL** .
 
    ![Создание проекта базы данных U-SQL с помощью средств Azure Data Lake для Visual Studio](media/data-lake-analytics-cicd-manage-assemblies/create-u-sql-database-project.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "92219366"
 
 1. При необходимости добавьте **Управляемые зависимости** и **Дополнительные файлы**. При добавлении дополнительных файлов средство будет использовать относительный путь, чтобы позже обеспечить возможность определения сборок на локальном компьютере и компьютере сборки.
 
-** \@ _DeployTempDirectory** в окне редактора внизу представляет собой стандартную переменную, которая указывает инструменту на выходную папку построения. В выходной папке сборки каждая сборка имеет вложенную папку с именем сборки. Все библиотеки DLL, а также дополнительные файлы, находятся в этой вложенной папке.
+**\@ _DeployTempDirectory** в окне редактора внизу представляет собой стандартную переменную, которая указывает инструменту на выходную папку построения. В выходной папке сборки каждая сборка имеет вложенную папку с именем сборки. Все библиотеки DLL, а также дополнительные файлы, находятся в этой вложенной папке.
 
 ## <a name="build-a-u-sql-database-project"></a>Создание проекта базы данных U-SQL
 
@@ -93,7 +93,7 @@ ms.locfileid: "92219366"
 
 В Azure DevOps вы можете использовать задачу командной строки и этот пакет SDK, чтобы настроить конвейер автоматизации для обновления базы данных U-SQL. См. дополнительные сведения об [использовании пакета SDK и настройке конвейера CI/CD для развертывания базы данных U-SQL](data-lake-analytics-cicd-overview.md#deploy-u-sql-database-through-azure-pipelines).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 - [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md)

@@ -16,11 +16,11 @@ ms.date: 06/02/2017
 ms.author: alkohli
 ms.custom: ''
 ms.openlocfilehash: 12ab5a9598cc0222f5a3e64985be2e2ea9e7e2fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85564285"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014862"
 ---
 # <a name="replace-a-hardware-component-on-your-storsimple-8000-series-device"></a>Замена аппаратного компонента на устройстве StorSimple серии 8000
 
@@ -46,7 +46,7 @@ ms.locfileid: "85564285"
 | ![Значок "Обязательно прочтите инструкции"](./media/storsimple-hardware-component-replacement/ReadInstructions.png) |**Сначала ознакомьтесь с инструкциями** | |
 | ![Значок "Опасность опрокидывания"](./media/storsimple-hardware-component-replacement/TipHazard.png) |**Опасность опрокидывания** | |
 
-### <a name="before-you-begin"></a>Перед началом
+### <a name="before-you-begin"></a>Подготовка к работе
 
 Ознакомьтесь со сведениями безопасности для вашего устройства и условными обозначениями сведений о безопасности, используемыми в данном руководстве. Подробные сведения см. в разделе [Безопасная установка и эксплуатация устройства StorSimple](storsimple-8000-safety.md). Перед обращением с устройством StorSimple ознакомьтесь с [мерами предосторожности](storsimple-8000-safety.md#handling-precautions).
 
@@ -137,6 +137,6 @@ ms.locfileid: "85564285"
 
 [Обратитесь в службу технической поддержки Майкрософт](storsimple-8000-contact-microsoft-support.md), чтобы заказать любые из этих запасных частей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перед заменой компонентов оборудования StorSimple ознакомьтесь со всеми [мерами предосторожности](storsimple-8000-safety.md) .
