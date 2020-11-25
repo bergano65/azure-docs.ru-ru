@@ -9,12 +9,12 @@ ms.date: 11/06/2020
 ms.service: storage
 ms.custom: references_regions
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 9da6ea7abf57ffecc900a6dbef065a8c6b123e61
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: db95f22a17c3776d84f12249693fb23b3d2d94e6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94811061"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95914445"
 ---
 # <a name="meet-demanding-migration-requirements-with-wandisco-livedata-platform-for-azure-preview"></a>Соблюдение требований к миграции на платформе Вандиско Ливедата для Azure (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "94811061"
 
 Вы можете управлять обеими службами с помощью портал Azure и Azure CLI, и обе эти службы следуют той же модели выставления счетов с оплатой по мере использования, как и все остальные службы Azure. Ливедата платформа для использования Azure будет отображаться на одном ежемесячном счете Azure и обеспечит единообразный и удобный способ отслеживания и мониторинга использования.
 
-В отличие от перевода данных в _автономный режим_ путем [копирования статических сведений в Azure Data Box](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-migrate-on-premises-hdfs-cluster)или с помощью средств Hadoop, таких как [DistCp](https://hadoop.apache.org/docs/current/hadoop-distcp/DistCp.html), можно поддерживать полную работу бизнес-систем во время _оперативной_ миграции с помощью вандиско ливедата для Azure. Обеспечьте работу сред обработки больших данных даже при переносе их данных в Azure.
+В отличие от перевода данных в _автономный режим_ путем [копирования статических сведений в Azure Data Box](./data-lake-storage-migrate-on-premises-hdfs-cluster.md)или с помощью средств Hadoop, таких как [DistCp](https://hadoop.apache.org/docs/current/hadoop-distcp/DistCp.html), можно поддерживать полную работу бизнес-систем во время _оперативной_ миграции с помощью вандиско ливедата для Azure. Обеспечьте работу сред обработки больших данных даже при переносе их данных в Azure.
 
 ## <a name="key-features-of-wandisco-livedata-platform-for-azure"></a>Основные возможности платформы Вандиско Ливедата для Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "94811061"
 
 - Испытайте Ливедата Migrator без необходимости иметь локальный кластер Hadoop с помощью [песочницы HDFS](https://docs.wandisco.com/live-data-platform/docs/create-sandbox-intro/).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Ливедата Migrator for Azure в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/wandisco.ldm?tab=Overview)
 

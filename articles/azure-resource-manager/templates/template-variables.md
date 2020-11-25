@@ -2,19 +2,21 @@
 title: Переменные в шаблонах
 description: Описывает определение переменных в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/05/2019
-ms.openlocfilehash: cf135959d30702ea58b7a1d4fdd82625a39245d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/24/2020
+ms.openlocfilehash: 7758451747503cb8c42566dc081a91f84bafa375
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75483821"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95916009"
 ---
 # <a name="variables-in-azure-resource-manager-template"></a>Переменные в шаблоне Azure Resource Manager
 
 В этой статье описывается определение и использование переменных в шаблоне Azure Resource Manager. Для упрощения шаблона используются переменные. Вместо повторения сложных выражений во всем шаблоне определяется переменная, которая содержит сложное выражение. Затем вы ссылаетесь на эту переменную по мере необходимости во всем шаблоне.
 
 Диспетчер ресурсов разрешает переменные перед началом операций развертывания. Когда в шаблоне используется переменная, Resource Manager заменяет ее разрешенным значением.
+
+Формат каждой переменной должен соответствовать одному из [типов данных](template-syntax.md#data-types).
 
 ## <a name="define-variable"></a>Определение переменной
 

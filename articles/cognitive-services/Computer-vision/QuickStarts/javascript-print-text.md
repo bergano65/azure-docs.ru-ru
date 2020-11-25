@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-js
-ms.openlocfilehash: d3b16101cec242ad2cc470f90b37ab0f19848918
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: e98db4ce9884918e63bc87b68f9ab6c0fdf99b93
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542768"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95746138"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-computer-vision-rest-api-and-javascript"></a>Краткое руководство. Извлечение печатного текста (OCR) с помощью REST API "Компьютерное зрение" и JavaScript
 
 > [!NOTE]
-> При извлечении текста на английском языке попробуйте применить новую [операцию чтения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text). Доступно [краткое руководство для JavaScript](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/javascript-hand-text).
+> При извлечении текста на английском языке попробуйте применить новую [операцию чтения](../concept-recognizing-text.md). Доступно [краткое руководство для JavaScript](./javascript-hand-text.md).
 
 Из этого краткого руководства вы узнаете, как извлекать печатный текст из изображения путем оптического распознавания текста (OCR) с помощью REST API Компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f20d) можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
 
@@ -248,6 +248,6 @@ Image to read:
 Ознакомьтесь с приложением JavaScript, которое использует API Компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения. 
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию API компьютерного зрения для JavaScript](../Tutorials/javascript-tutorial.md)
+> [Руководство по использованию API компьютерного зрения для JavaScript](https://github.com/Azure-Samples/cognitive-services-javascript-computer-vision-tutorial)
 
 * Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b/console).
