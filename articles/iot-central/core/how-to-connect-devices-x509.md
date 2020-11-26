@@ -8,22 +8,22 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 33d837f63fca2062ec930fcf0d64ee01ea822c99
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: d36cf2344891bb70ab5499e77699b111429a936b
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989536"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96121823"
 ---
 # <a name="how-to-connect-devices-with-x509-certificates-using-nodejs-device-sdk-for-iot-central-application"></a>Как подключить устройства с сертификатами X. 509 с помощью пакета SDK для Node.js устройств для IoT Central приложения
 
-IoT Central поддерживает подписанные URL-адрес (SAS) и сертификаты X. 509 для защиты обмена данными между устройством и приложением. В руководстве по [созданию и подключению клиентского приложения к IOT Centralному приложению Azure](./tutorial-connect-device-nodejs.md) используется SAS. Из этой статьи вы узнаете, как изменить пример кода для использования X. 509.  Сертификаты X. 509 рекомендуется использовать в рабочих средах. Дополнительные сведения см. [в статье подключение к Azure IOT Central](./concepts-get-connected.md).
+IoT Central поддерживает подписанные URL-адрес (SAS) и сертификаты X. 509 для защиты обмена данными между устройством и приложением. В руководстве по [созданию и подключению клиентского приложения к IOT Centralному приложению Azure](./tutorial-connect-device.md) используется SAS. Из этой статьи вы узнаете, как изменить пример кода для использования X. 509.  Сертификаты X. 509 рекомендуется использовать в рабочих средах. Дополнительные сведения см. [в статье подключение к Azure IOT Central](./concepts-get-connected.md).
 
 В этой статье описаны два способа использования [регистраций](how-to-connect-devices-x509.md#use-a-group-enrollment) X. 509-Group, обычно используемых в рабочей среде, и [индивидуальных регистраций](how-to-connect-devices-x509.md#use-an-individual-enrollment) , которые можно использовать для тестирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Завершение [создания и подключения клиентского приложения к учебнику по IOT Central приложения Azure (Node.js)](./tutorial-connect-device-nodejs.md) .
+- Завершение [создания и подключения клиентского приложения к руководству по использованию приложения IOT Central Azure (JavaScript)](./tutorial-connect-device.md) .
 - [Git](https://git-scm.com/download/).
 - Скачайте и установите [OpenSSL](https://www.openssl.org/). Если вы используете Windows, вы можете использовать двоичные файлы на [странице OpenSSL в SourceForge](https://sourceforge.net/projects/openssl/).
 
@@ -97,7 +97,7 @@ filename | содержимое
 
 ## <a name="run-sample-device-code"></a>Запуск примера кода устройства
 
-1. Скопируйте файлы **sampleDevice01_key. pem** и **sampleDevice01_cert. pem** в папку _Azure-IOT-SDK-node/Device/Samples/pnp_ , которая содержит приложение **simple_thermostat.js** . Это приложение использовалось при завершении [учебника подключение устройства (Node.js)](./tutorial-connect-device-nodejs.md).
+1. Скопируйте файлы **sampleDevice01_key. pem** и **sampleDevice01_cert. pem** в папку _Azure-IOT-SDK-node/Device/Samples/pnp_ , которая содержит приложение **simple_thermostat.js** . Это приложение использовалось при завершении [учебника подключение устройства (JavaScript)](./tutorial-connect-device.md).
 
 1. Перейдите в папку _Azure-IOT-SDK-node/Device/Samples/PnP_ , содержащую приложение **simple_thermostat.js** , и выполните следующую команду, чтобы установить пакет X. 509:
 
@@ -149,7 +149,7 @@ filename | содержимое
     ```
 
     > [!TIP]
-    > Другие необходимые переменные среды задаются при выполнении учебника [Создание и подключение клиентского приложения к IOT Centralному приложению Azure](./tutorial-connect-device-nodejs.md) .
+    > Другие необходимые переменные среды задаются при выполнении учебника [Создание и подключение клиентского приложения к IOT Centralному приложению Azure](./tutorial-connect-device.md) .
 
 1. Выполните сценарий и убедитесь, что устройство успешно подготовлено:
 
@@ -197,7 +197,7 @@ filename | содержимое
 
 ## <a name="run-a-sample-individual-enrollment-device"></a>Запуск примера отдельного устройства регистрации
 
-1. Скопируйте файлы _mytestselfcertprimary_key. pem_ и _mytestselfcertprimary_cert. pem_ в папку _Azure-IOT-SDK-node/Device/Samples/pnp_ , которая содержит приложение **simple_thermostat.js** . Это приложение использовалось при завершении [учебника подключение устройства (Node.js)](./tutorial-connect-device-nodejs.md).
+1. Скопируйте файлы _mytestselfcertprimary_key. pem_ и _mytestselfcertprimary_cert. pem_ в папку _Azure-IOT-SDK-node/Device/Samples/pnp_ , которая содержит приложение **simple_thermostat.js** . Это приложение использовалось при завершении [учебника подключение устройства (JavaScript)](./tutorial-connect-device.md).
 
 1. Измените переменные среды, используемые в, следующим образом:
 
