@@ -3,17 +3,17 @@ title: Интеграция со службой "Приватный канал A
 description: Узнайте, как интегрировать Azure Key Vault со службой "Приватный канал Azure"
 author: ShaneBala-keyvault
 ms.author: sudbalas
-ms.date: 03/08/2020
+ms.date: 11/17/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a41eb5b38b741f8bdde59f8a4f1e8de2b4767903
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: ec619681f1eebc51da85d31ad15f1db25cfd3cbc
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832778"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917925"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Интеграция Key Vault со службой "Приватный канал Azure"
 
@@ -36,6 +36,8 @@ ms.locfileid: "94832778"
 
 Частная конечная точка использует частный IP-адрес в виртуальной сети.
 
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
 ## <a name="establish-a-private-link-connection-to-key-vault-using-the-azure-portal"></a>Установка подключения Приватного канала к хранилищу ключей с помощью портала Azure 
 
 Сначала создайте виртуальную сеть, выполнив действия, описанные в статье [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../../virtual-network/quick-create-portal.md).
@@ -44,14 +46,14 @@ ms.locfileid: "94832778"
 
 ### <a name="create-a-new-key-vault-and-establish-a-private-link-connection"></a>Создание хранилища ключей и установка подключения Приватного канала
 
-Хранилище ключей Azure можно создать с помощью [портала Azure](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) или [Azure PowerShell](../general/quick-create-powershell.md).
+Вы можете создать хранилище ключей с помощью [портала Azure](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) или [Azure PowerShell](../general/quick-create-powershell.md).
 
 После настройки основных компонентов хранилища ключей перейдите на вкладку "Сеть" и выполните следующие шаги:
 
 1. Выберите переключатель "Частная конечная точка" на вкладке "Сеть".
 1. Нажмите кнопку "+ Добавить", чтобы добавить частную конечную точку.
 
-    ![Снимок экрана: первый экран, отображающийся при создании хранилища ключей.](../media/private-link-service-1.png)
+    ![Образ —](../media/private-link-service-1.png)
  
 1. В колонке "Создание частной конечной точки" в поле "Расположение" выберите регион, в котором расположена ваша виртуальная сеть. 
 1. В поле "Имя" введите описательное имя. По нему вы сможете найти эту частную конечную точку. 
@@ -59,7 +61,7 @@ ms.locfileid: "94832778"
 1. Оставьте без изменений переключатель Integrate with the private zone DNS (Интегрировать с частной зоной DNS).  
 1. Нажмите «ОК».
 
-    ![Снимок экрана: поля, важные для настройки частной конечной точки.](../media/private-link-service-8.png)
+    ![Образ —](../media/private-link-service-8.png)
  
 После этого вы сможете увидеть настроенную частную конечную точку. Теперь у вас есть возможность удалить и изменить эту частную конечную точку. Нажмите кнопку "Просмотр и создание" и создайте хранилище ключей. Развертывание может занять 5–10 минут. 
 
@@ -74,81 +76,12 @@ ms.locfileid: "94832778"
 1. Выберите вкладку "Подключения к частным конечным точкам" в верхней части страницы.
 1. Нажмите кнопку "+ Private Endpoint" (+ Частная конечная точка) в верхней части страницы.
 
-    ![Снимок экрана: кнопка добавления частной конечной точки.](../media/private-link-service-3.png)
-    ![Снимок экрана: экран для создания частной конечной точки.](../media/private-link-service-4.png)
+    ![Изображение](../media/private-link-service-3.png) ![Изображение](../media/private-link-service-4.png)
 
 Вы можете создать частную конечную точку для любого ресурса Azure, используя эту колонку. Можно использовать раскрывающиеся меню, чтобы выбрать тип ресурса и ресурс в каталоге, или подключиться к любому ресурсу Azure, используя идентификатор ресурса. Оставьте без изменений переключатель Integrate with the private zone DNS (Интегрировать с частной зоной DNS).  
 
-## <a name="establish-a-private-link-connection-to-key-vault-using-cli"></a>Установка подключения Приватного канала к Key Vault с помощью интерфейса командой строки
-
-### <a name="login-to-azure-cli"></a>Вход в Azure CLI
-```console
-az login 
-```
-### <a name="select-your-azure-subscription"></a>Выбор подписки Azure 
-```console
-az account set --subscription {AZURE SUBSCRIPTION ID}
-```
-### <a name="create-a-new-resource-group"></a>Создание новой группы ресурсов 
-```console
-az group create -n {RG} -l {AZURE REGION}
-```
-### <a name="register-microsoftkeyvault-as-a-provider"></a>Регистрация Microsoft.KeyVault в качестве поставщика 
-```console
-az provider register -n Microsoft.KeyVault
-```
-### <a name="create-a-new-key-vault"></a>Создание Key Vault
-```console
-az keyvault create --name {KEY VAULT NAME} --resource-group {RG} --location {AZURE REGION}
-```
-### <a name="turn-on-key-vault-firewall"></a>Включение брандмауэра Key Vault
-```console
-az keyvault update --name {KEY VAULT NAME} --resource-group {RG} --default-action deny
-```
-### <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-```console
-az network vnet create --resource-group {RG} --name {vNet NAME} --location {AZURE REGION}
-```
-### <a name="add-a-subnet"></a>Добавление подсети
-```console
-az network vnet subnet create --resource-group {RG} --vnet-name {vNet NAME} --name {subnet NAME} --address-prefixes {addressPrefix}
-```
-### <a name="disable-virtual-network-policies"></a>Отключение политик виртуальной сети 
-```console
-az network vnet subnet update --name {subnet NAME} --resource-group {RG} --vnet-name {vNet NAME} --disable-private-endpoint-network-policies true
-```
-### <a name="add-a-private-dns-zone"></a>Добавление частной зоны DNS 
-```console
-az network private-dns zone create --resource-group {RG} --name privatelink.vaultcore.azure.net
-```
-### <a name="link-private-dns-zone-to-virtual-network"></a>Связывание частной зоны DNS с виртуальной сетью 
-```console
-az network private-dns link vnet create --resource-group {RG} --virtual-network {vNet NAME} --zone-name privatelink.vaultcore.azure.net --name {dnsZoneLinkName} --registration-enabled true
-```
-### <a name="add-private-dns-records"></a>Добавление записей Частной зоны DNS
-```console
-# https://docs.microsoft.com/en-us/azure/dns/private-dns-getstarted-cli#create-an-additional-dns-record
-az network private-dns zone list -g $rg_name
-az network private-dns record-set a add-record -g $rg_name -z "privatelink.vaultcore.azure.net" -n $vault_name -a $kv_network_interface_private_ip
-az network private-dns record-set list -g $rg_name -z "privatelink.vaultcore.azure.net"
-
-# From home/public network, you wil get a public IP. If inside a vnet with private zone, nslookup will resolve to the private ip.
-nslookup $vault_name.vault.azure.net
-nslookup $vault_name.privatelink.vaultcore.azure.net
-```
-### <a name="create-a-private-endpoint-automatically-approve"></a>Создание частной конечной точки (автоматическое утверждение) 
-```console
-az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.KeyVault/vaults/ {KEY VAULT NAME}" --group-ids vault --connection-name {Private Link Connection Name} --location {AZURE REGION}
-```
-### <a name="create-a-private-endpoint-manually-request-approval"></a>Создание частной конечной точки (запрос утверждения вручную) 
-```console
-az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.KeyVault/vaults/ {KEY VAULT NAME}" --group-ids vault --connection-name {Private Link Connection Name} --location {AZURE REGION} --manual-request
-```
-### <a name="show-connection-status"></a>Отображение строк подключения 
-```console
-az network private-endpoint show --resource-group {RG} --name {Private Endpoint Name}
-```
-## <a name="manage-private-link-connection"></a>Управление подключением Приватного канала
+![Изображение](../media/private-link-service-3.png)
+![Изображение](../media/private-link-service-4.png)
 
 При создании частной конечной точки подключение должно быть утверждено. Если ресурс, для которого создается частная конечная точка, расположен в вашем каталоге, вы сможете одобрить запрос на подключение при наличии необходимых разрешений. При подключении к ресурсу Azure из другого каталога необходимо дождаться, пока владелец этого ресурса не одобрит запрос на подключение.
 
@@ -160,8 +93,8 @@ az network private-endpoint show --resource-group {RG} --name {Private Endpoint 
 | Утверждение | Approved | Подключение утверждено автоматически или вручную и готово к использованию. |
 | Reject | Отклонено | Подключение отклонил владелец ресурса Приватного канала. |
 | Удалить | Отключено | Подключение удалил владелец ресурса Приватного канала. Частная конечная точка станет информативной и подлежит удалению для очистки. |
- 
-###  <a name="how-to-manage-a-private-endpoint-connection-to-key-vault-using-the-azure-portal"></a>Управление подключением частной конечной точки к Key Vault с помощью портала Azure 
+
+### <a name="how-to-manage-a-private-endpoint-connection-to-key-vault-using-the-azure-portal"></a>Управление подключением частной конечной точки к Key Vault с помощью портала Azure 
 
 1. Войдите на портал Azure.
 1. В строке поиска введите "хранилища ключей".
@@ -174,22 +107,72 @@ az network private-endpoint show --resource-group {RG} --name {Private Endpoint 
 
     ![Образ —](../media/private-link-service-7.png)
 
-##  <a name="how-to-manage-a-private-endpoint-connection-to-key-vault-using-azure-cli"></a>Управление подключением частной конечной точки к Key Vault с помощью Azure CLI
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
 
-### <a name="approve-a-private-link-connection-request"></a>Утверждение запроса на подключение к Приватному каналу
+## <a name="establish-a-private-link-connection-to-key-vault-using-cli-initial-setup"></a>Установка подключения приватного канала к Key Vault с помощью интерфейса командой строки (начальная настройка)
+
 ```console
+az login                                                         # Login to Azure CLI
+az account set --subscription {SUBSCRIPTION ID}                  # Select your Azure Subscription
+az group create -n {RESOURCE GROUP} -l {REGION}                  # Create a new Resource Group
+az provider register -n Microsoft.KeyVault                       # Register KeyVault as a provider
+az keyvault create -n {VAULT NAME} -g {RG} -l {REGION}           # Create a Key Vault
+az keyvault update -n {VAULT NAME} -g {RG} --default-action deny # Turn on Key Vault Firewall
+az network vnet create -g {RG} -n {vNet NAME} -location {REGION} # Create a Virtual Network
+
+    # Create a Subnet
+az network vnet subnet create -g {RG} --vnet-name {vNet NAME} --name {subnet NAME} --address-prefixes {addressPrefix}
+
+    # Disable Virtual Network Policies
+az network vnet subnet update --name {subnet NAME} --resource-group {RG} --vnet-name {vNet NAME} --disable-private-endpoint-network-policies true
+
+    # Create a Private DNS Zone
+az network private-dns zone create --resource-group {RG} --name privatelink.vaultcore.azure.net
+
+    # Link the Private DNS Zone to the Virtual Network
+az network private-dns link vnet create --resource-group {RG} --virtual-network {vNet NAME} --zone-name privatelink.vaultcore.azure.net --name {dnsZoneLinkName} --registration-enabled true
+
+```
+
+### <a name="add-private-dns-records"></a>Добавление записей Частной зоны DNS
+```console
+# https://docs.microsoft.com/en-us/azure/dns/private-dns-getstarted-cli#create-an-additional-dns-record
+az network private-dns zone list -g $rg_name
+az network private-dns record-set a add-record -g $rg_name -z "privatelink.vaultcore.azure.net" -n $vault_name -a $kv_network_interface_private_ip
+az network private-dns record-set list -g $rg_name -z "privatelink.vaultcore.azure.net"
+
+# From home/public network, you wil get a public IP. If inside a vnet with private zone, nslookup will resolve to the private ip.
+nslookup $vault_name.vault.azure.net
+nslookup $vault_name.privatelink.vaultcore.azure.net
+```
+
+### <a name="create-a-private-endpoint-automatically-approve"></a>Создание частной конечной точки (автоматическое утверждение) 
+```console
+az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.KeyVault/vaults/ {KEY VAULT NAME}" --group-ids vault --connection-name {Private Link Connection Name} --location {AZURE REGION}
+```
+
+### <a name="create-a-private-endpoint-manually-request-approval"></a>Создание частной конечной точки (запрос утверждения вручную) 
+```console
+az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.KeyVault/vaults/ {KEY VAULT NAME}" --group-ids vault --connection-name {Private Link Connection Name} --location {AZURE REGION} --manual-request
+```
+
+### <a name="manage-private-link-connections"></a>Управление подключениями приватного канала
+
+```console
+# Show Connection Status
+az network private-endpoint show --resource-group {RG} --name {Private Endpoint Name}
+
+# Approve a Private Link Connection Request
 az keyvault private-endpoint-connection approve --approval-description {"OPTIONAL DESCRIPTION"} --resource-group {RG} --vault-name {KEY VAULT NAME} –name {PRIVATE LINK CONNECTION NAME}
-```
 
-### <a name="deny-a-private-link-connection-request"></a>Отклонение запроса на подключение к Приватному каналу
-```console
+# Deny a Private Link Connection Request
 az keyvault private-endpoint-connection reject --rejection-description {"OPTIONAL DESCRIPTION"} --resource-group {RG} --vault-name {KEY VAULT NAME} –name {PRIVATE LINK CONNECTION NAME}
-```
 
-### <a name="delete-a-private-link-connection-request"></a>Удаление запроса на подключение к Приватному каналу
-```console
+# Delete a Private Link Connection Request
 az keyvault private-endpoint-connection delete --resource-group {RG} --vault-name {KEY VAULT NAME} --name {PRIVATE LINK CONNECTION NAME}
 ```
+
+---
 
 ## <a name="validate-that-the-private-link-connection-works"></a>Проверка работоспособности подключения Приватного канала
 
@@ -243,14 +226,14 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 * Убедитесь, что у вас есть ресурс Частной зоны DNS. 
     1. Необходимо иметь ресурс Частной зоны DNS с точным именем: privatelink.vaultcore.azure.net. 
-    2. Чтобы узнать, как это сделать, перейдите по следующей ссылке. [Частные зоны DNS](../../dns/private-dns-privatednszone.md)
+    2. Чтобы узнать, как это сделать, перейдите по следующей ссылке. [Частные зоны DNS](https://docs.microsoft.com/azure/dns/private-dns-privatednszone)
     
 * Убедитесь, что Частная зона DNS не связана с виртуальной сетью. Эта проблема может быть вызвана тем, что вы по-прежнему получаете общедоступный IP-адрес. 
     1. Если Частная зона DNS не связана с виртуальной сетью, запрос DNS, исходящий из виртуальной сети, возвратит общедоступный IP-адрес хранилища ключей. 
     2. Перейдите к ресурсу Частной зоны DNS на портале Azure и щелкните параметр связей виртуальных сетей. 
     4. Должна быть указана виртуальная сеть, которая будет выполнять вызовы к хранилищу ключей. 
     5. Если она отсутствует, добавьте ее. 
-    6. Подробные инструкции см. в разделе о[связывании виртуальной сети с Частной зоной DNS](../../dns/private-dns-getstarted-portal.md#link-the-virtual-network).
+    6. Подробные инструкции см. в разделе о[связывании виртуальной сети с Частной зоной DNS](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network).
 
 * Убедитесь, что в Частной зоне DNS указана запись А для хранилища ключей. 
     1. Перейдите на страницу Частной зоны DNS. 
@@ -259,7 +242,7 @@ Aliases:  <your-key-vault-name>.vault.azure.net
     4. Необходимо указать правильный Частный IP-адрес. 
     
 * Убедитесь, что запись A имеет правильный IP-адрес. 
-    1. Вы можете проверить IP-адрес, открыв ресурс частной конечной точки на портале Azure. 
+    1. Вы можете проверить IP-адрес, открыв ресурс частной конечной точки на портале Azure.
     2. Перейдите к ресурсу Microsoft.Network/privateEndpoints на портале Azure (а не в ресурсе Key Vault).
     3. На странице обзора найдите сетевой интерфейс и щелкните соответствующую ссылку. 
     4. Отобразится обзор ресурса сетевой карты, который содержит частный IP-адрес свойства. 

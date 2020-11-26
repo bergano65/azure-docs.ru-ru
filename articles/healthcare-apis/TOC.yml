@@ -90,12 +90,13 @@
           href: de-identified-export.md
     - name: Поиск идентификаторов объектов удостоверений
       href: find-identity-object-ids.md
-    - name: Включение ведения журнала диагностики в Azure API для FHIR®
-      href: enable-diagnostic-logging.md
-    - name: Экспорт метрик соединителя Интернета вещей Azure для FHIR (предварительная версия) с помощью параметров диагностики
-      href: iot-metrics-diagnostics-export.md
-    - name: Отображение и настройка метрик соединителя Интернета вещей Azure для метрик FHIR (предварительная версия)
-      href: iot-metrics-display.md
+    - name: Ведение журналов диагностики и метрики
+      expanded: false
+      items:
+        - name: Включение ведения журнала диагностики в Azure API для FHIR
+          href: enable-diagnostic-logging.md
+        - name: Отображение и настройка метрик соединителя Интернета вещей Azure для метрик FHIR (предварительная версия)
+          href: iot-metrics-display.md
     - name: "Получение маркера для Azure API для FHIR\_— CLI"
       href: get-healthcare-apis-access-token-cli.md
     - name: Устранение неполадок с соединителем "Azure IoT для FHIR" (предварительная версия)

@@ -22,6 +22,12 @@
           href: howto-create-private-cluster-4x.md
         - name: Настройка перенаправления DNS
           href: dns-forwarding.md
+    - name: Память
+      items:
+        - name: Создание StorageClass службы "Файлы Azure"
+          href: howto-create-a-storageclass.md
+        - name: Использование встроенного реестра контейнеров
+          href: built-in-container-registry.md
     - name: Безопасность и проверка подлинности
       items:
         - name: Настройка аутентификации Azure Active Directory (CLI)

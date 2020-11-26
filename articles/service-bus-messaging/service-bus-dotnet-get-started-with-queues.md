@@ -1,400 +1,275 @@
 ---
-title: Начало работы с очередями служебной шины Azure | Документация Майкрософт
-description: В этом руководстве вы создадите консольные приложения .NET Core для отправки сообщений в очередь служебной шины и получения сообщений из нее.
-ms.topic: conceptual
+title: Начало работы с очередями Служебной шины Azure (Azure.Messaging.ServiceBus)
+description: В рамках этого руководства вы создадите приложение .NET Core на C# для отправки и получения сообщений через очередь Служебной шины.
+ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
-ms.date: 06/23/2020
+ms.date: 11/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cff2b8a8a0f6aefad43737aeb6fe63d40facac05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 59dd1dadc7d037ff253812e4d3e1a1955d98e944
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021669"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95809150"
 ---
-# <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
-[!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
-В этом руководстве вы создадите консольные приложения .NET Core для отправки сообщений в очередь служебной шины и получения сообщений из нее.
+# <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-net"></a>Отправка сообщений в очереди Служебной шины и получение сообщений из них (.NET)
+В рамках этого руководства вы создадите консольное приложение .NET Core для отправки и получения сообщений через очередь Служебной шины с помощью пакета **Azure.Messaging.ServiceBus**. 
+
+> [!Important]
+> Для работы с этим кратким руководством используется новый пакет Azure.Messaging.ServiceBus. Краткое руководство, при работе с которым используется старый пакет Microsoft.Azure.ServiceBus, можно найти в статье об [отправке и получении событий с помощью пакета Microsoft.Azure.ServiceBus](service-bus-dotnet-get-started-with-queues-legacy.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs).
-- [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
+- [Visual Studio 2019](https://www.visualstudio.com/vs)
 - Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-- Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md).
+- Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md). Запишите **строку подключения** к пространству имен Служебной шины и имя созданной **очереди**.
 
-  - Ознакомьтесь с общими сведениями об очередях Служебной шины.
-  - Создайте пространство имен служебной шины.
-  - Получите строку подключения.
-  - Создается очередь служебной шины.
-
-## <a name="send-messages-to-the-queue"></a>Отправка сообщений в очередь
-
-Для отправки сообщений в очередь создайте консольное приложение C# с помощью Visual Studio.
+## <a name="send-messages-to-a-queue"></a>Отправка сообщений в очередь
+В рамках этого краткого руководства вы создадите консольное приложение .NET Core на C# для отправки сообщений в очередь.
 
 ### <a name="create-a-console-application"></a>Создание консольного приложение
-
-Запустите Visual Studio и создайте проект **консольного приложения (.NET Core)** для C#. В этом примере имя приложения *коресендерапп*.
+Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)** для C#. 
 
 ### <a name="add-the-service-bus-nuget-package"></a>Получение пакета NuGet для служебной шины
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-1. Нажмите кнопку **Обзор**. Найдите и выберите **[Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)**.
-1. Нажмите кнопку **установить** , чтобы завершить установку, а затем закройте диспетчер пакетов NuGet.
+1. Нажмите кнопку **Обзор**. Найдите и выберите элемент **[Azure.Messaging.ServiceBus](https://www.nuget.org/packages/Azure.Messaging.ServiceBus/)** .
+1. Выберите элемент **Установить**, чтобы завершить установку, и закройте диспетчер пакетов NuGet.
 
-    ![Установка пакета NuGet][nuget-pkg]
+### <a name="add-code-to-send-messages-to-the-queue"></a>Добавление кода для отправки сообщений в очередь
 
-### <a name="write-code-to-send-messages-to-the-queue"></a>Написание кода для отправки сообщений в очередь
-
-1. В *Program.CS*добавьте следующие инструкции в `using` начале определения пространства имен перед объявлением класса:
+1. В файле *Program.cs* добавьте следующие инструкции `using` в начале определения пространства имен перед объявлением класса:
 
     ```csharp
-    using System.Text;
-    using System.Threading;
+    using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
+    
+    using Azure.Messaging.ServiceBus;
     ```
 
-1. В `Program` классе объявите следующие переменные:
+1. В классе `Program` объявите следующие переменные:
 
     ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string QueueName = "<your_queue_name>";
-    static IQueueClient queueClient;
+        static string connectionString = "<NAMESPACE CONNECTION STRING>";
+        static string queueName = "<QUEUE NAME>";
     ```
 
-    Введите строку подключения для пространства имен в качестве `ServiceBusConnectionString` переменной. Введите имя очереди.
-
-1. Замените `Main()` метод следующим **асинхронным** `Main` методом. Он вызывает `SendMessagesAsync()` метод, который будет добавлен на следующем шаге для отправки сообщений в очередь. 
-
-    ```csharp
-    public static async Task Main(string[] args)
-    {    
-        const int numberOfMessages = 10;
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Send messages.
-        await SendMessagesAsync(numberOfMessages);
-
-        Console.ReadKey();
-
-        await queueClient.CloseAsync();
-    }
-    ```
-1. Сразу после `MainAsync()` метода добавьте следующий `SendMessagesAsync()` метод, который выполняет отправку числа сообщений, указанных в `numberOfMessagesToSend` (в данный момент установлено равным 10):
+    Замените `<NAMESPACE CONNECTION STRING>` строкой подключения к пространству имен Служебной шины. Затем замените `<QUEUE NAME>` именем очереди.     
+2. Добавьте метод с именем `SendMessageAsync`, с помощью которого в очередь отправляется одно сообщение. 
 
     ```csharp
-    static async Task SendMessagesAsync(int numberOfMessagesToSend)
-    {
-        try
+        static async Task SendMessageAsync()
         {
-            for (var i = 0; i < numberOfMessagesToSend; i++)
+            // create a Service Bus client 
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
             {
-                // Create a new message to send to the queue.
-                string messageBody = $"Message {i}";
-                var message = new Message(Encoding.UTF8.GetBytes(messageBody));
+                // create a sender for the queue 
+                ServiceBusSender sender = client.CreateSender(queueName);
 
-                // Write the body of the message to the console.
-                Console.WriteLine($"Sending message: {messageBody}");
+                // create a message that we can send
+                ServiceBusMessage message = new ServiceBusMessage("Hello world!");
 
-                // Send the message to the queue.
-                await queueClient.SendAsync(message);
+                // send the message
+                await sender.SendMessageAsync(message);
+                Console.WriteLine($"Sent a single message to the queue: {queueName}");
             }
         }
-        catch (Exception exception)
-        {
-            Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-        }
-    }
     ```
+1. Добавьте метод с именем `CreateMessages`, чтобы создать очередь сообщений (очередь .NET) для класса `Program`. Как правило, эти сообщения поступают из различных частей приложения. Здесь мы создадим очередь примеров сообщений.
 
-Вот как должен выглядеть файл *Program.CS* .
-
-```csharp
-namespace CoreSenderApp
-{
-    using System;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
-
-    class Program
-    {
-        // Connection String for the namespace can be obtained from the Azure portal under the 
-        // 'Shared Access policies' section.
-        const string ServiceBusConnectionString = "<your_connection_string>";
-        const string QueueName = "<your_queue_name>";
-        static IQueueClient queueClient;
-
-        public static async Task Main(string[] args)
-        {    
-            const int numberOfMessages = 10;
-            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-    
-            Console.WriteLine("======================================================");
-            Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-            Console.WriteLine("======================================================");
-    
-            // Send messages.
-            await SendMessagesAsync(numberOfMessages);
-    
-            Console.ReadKey();
-    
-            await queueClient.CloseAsync();
-        }
-
-        static async Task SendMessagesAsync(int numberOfMessagesToSend)
+    ```csharp
+        static Queue<ServiceBusMessage> CreateMessages()
         {
-            try
+            // create a queue containing the messages and return it to the caller
+            Queue<ServiceBusMessage> messages = new Queue<ServiceBusMessage>();
+            messages.Enqueue(new ServiceBusMessage("First message"));
+            messages.Enqueue(new ServiceBusMessage("Second message"));
+            messages.Enqueue(new ServiceBusMessage("Third message"));
+            return messages;
+        }
+    ```
+1. Добавьте метод с именем `SendMessageBatchAsync` в класс `Program` и добавьте приведенный ниже код. Этот метод позволяет принять очередь сообщений и подготовить один или несколько пакетов для отправки в очередь Служебной шины. 
+
+    ```csharp
+        static async Task SendMessageBatchAsync()
+        {
+            // create a Service Bus client 
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
             {
-                for (var i = 0; i < numberOfMessagesToSend; i++)
+                // create a sender for the queue 
+                ServiceBusSender sender = client.CreateSender(queueName);
+
+                // get the messages to be sent to the Service Bus queue
+                Queue<ServiceBusMessage> messages = CreateMessages();
+
+                // total number of messages to be sent to the Service Bus queue
+                int messageCount = messages.Count;
+
+                // while all messages are not sent to the Service Bus queue
+                while (messages.Count > 0)
                 {
-                    // Create a new message to send to the queue
-                    string messageBody = $"Message {i}";
-                    var message = new Message(Encoding.UTF8.GetBytes(messageBody));
+                    // start a new batch 
+                    using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
 
-                    // Write the body of the message to the console
-                    Console.WriteLine($"Sending message: {messageBody}");
+                    // add the first message to the batch
+                    if (messageBatch.TryAddMessage(messages.Peek()))
+                    {
+                        // dequeue the message from the .NET queue once the message is added to the batch
+                        messages.Dequeue();
+                    }
+                    else
+                    {
+                        // if the first message can't fit, then it is too large for the batch
+                        throw new Exception($"Message {messageCount - messages.Count} is too large and cannot be sent.");
+                    }
 
-                    // Send the message to the queue
-                    await queueClient.SendAsync(message);
+                    // add as many messages as possible to the current batch
+                    while (messages.Count > 0 && messageBatch.TryAddMessage(messages.Peek()))
+                    {
+                        // dequeue the message from the .NET queue as it has been added to the batch
+                        messages.Dequeue();
+                    }
+        
+                    // now, send the batch
+                    await sender.SendMessagesAsync(messageBatch);
+        
+                    // if there are any remaining messages in the .NET queue, the while loop repeats 
                 }
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
+
+                Console.WriteLine($"Sent a batch of {messageCount} messages to the topic: {queueName}");
             }
         }
-    }
-}
-```
-
-Запустите программу и проверьте портал Azure.
-
-Выберите имя очереди в окне **Обзор** пространства имен, чтобы отобразить список **основных**компонентов очереди.
-
-![Получено сообщений с количеством и размером][queue-message]
-
-Значение **счетчика активных сообщений** для очереди теперь равно **10**. Каждый раз, когда вы запускаете это приложение отправителя без получения сообщений, это значение увеличивается на 10.
-
-Текущий размер очереди увеличивает **Текущее** значение в **Essentials**  каждый раз, когда приложение добавляет сообщения в очередь.
-
-В следующем разделе описано, как получить эти сообщения.
-
-## <a name="receive-messages-from-the-queue"></a>Получение сообщений из очереди
-
-Чтобы получить отправленные сообщения, создайте другое приложение **консольного приложения (.NET Core)** . Установите пакет NuGet **Microsoft. Azure. servicebus** , как и для приложения отправителя.
-
-### <a name="write-code-to-receive-messages-from-the-queue"></a>Написание кода для получения сообщений из очереди
-
-1. В *Program.CS*добавьте следующие инструкции в `using` начале определения пространства имен перед объявлением класса:
-
-    ```csharp
-    using System;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
     ```
-
-1. В `Program` классе объявите следующие переменные:
-
-    ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string QueueName = "<your_queue_name>";
-    static IQueueClient queueClient;
-    ```
-
-    Введите строку подключения для пространства имен в качестве `ServiceBusConnectionString` переменной. Введите имя очереди.
-
-1. Замените метод `Main()` следующим кодом:
+1. Замените метод `Main()` приведенным ниже **асинхронным** методом `Main`. Он вызывает оба метода для отправки в очередь одного сообщения и пакета сообщений. 
 
     ```csharp
-    static void Main(string[] args)
-    {
-        MainAsync().GetAwaiter().GetResult();
-    }
-
-    static async Task MainAsync()
-    {
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Register QueueClient's MessageHandler and receive messages in a loop
-        RegisterOnMessageHandlerAndReceiveMessages();
-
-        Console.ReadKey();
-
-        await queueClient.CloseAsync();
-    }
-    ```
-
-1. Сразу после `MainAsync()` метода добавьте следующий метод, который регистрирует обработчик сообщений и получает сообщения, отправленные приложением отправителя:
-
-    ```csharp
-    static void RegisterOnMessageHandlerAndReceiveMessages()
-    {
-        // Configure the message handler options in terms of exception handling, number of concurrent messages to deliver, etc.
-        var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
+        static async Task Main()
         {
-            // Maximum number of concurrent calls to the callback ProcessMessagesAsync(), set to 1 for simplicity.
-            // Set it according to how many messages the application wants to process in parallel.
-            MaxConcurrentCalls = 1,
+            // send a message to the queue
+            await SendMessageAsync();
 
-            // Indicates whether the message pump should automatically complete the messages after returning from user callback.
-            // False below indicates the complete operation is handled by the user callback as in ProcessMessagesAsync().
-            AutoComplete = false
-        };
-
-        // Register the function that processes messages.
-        queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-    }
+            // send a batch of messages to the queue
+            await SendMessageBatchAsync();
+        }
     ```
+5. Запустите приложение. Отобразятся примерно такие сообщения, как указано ниже. 
 
-1. Сразу после предыдущего метода добавьте следующий метод `ProcessMessagesAsync()` для обработки полученных сообщений:
+    ```console
+    Sent a single message to the queue: myqueue
+    Sent a batch of messages to the queue: myqueue
+    ```       
+1. На портале Azure выполните следующие действия:
+    1. Перейдите к пространству имен Служебной шины. 
+    1. На странице **Обзор** выберите очередь в центральной области снизу. 
+    1. Обратите внимание на значения в разделе **Основное**.
+
+    :::image type="content" source="./media/service-bus-dotnet-get-started-with-queues/sent-messages-essentials.png" alt-text="Полученные сообщения с указанием количества и размера" lightbox="./media/service-bus-dotnet-get-started-with-queues/sent-messages-essentials.png":::
+
+    Обратите внимание на следующие значения:
+    - Значение параметра **Количество активных сообщений** для очереди теперь равно **4**. Каждый раз при запуске этого приложения-отправителя без получения сообщений это значение увеличивается на 4.
+    - При каждом добавлении сообщений в очередь ее текущий размер увеличивается, как и значение параметра **Текущий** в колонке **Основное**.
+    - На диаграмме **Сообщения** в разделе **Метрики** в нижней части страницы можно увидеть, что в очередь поступило четыре входящих сообщения. 
+
+## <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
+В рамках этого раздела вы добавите код для получения сообщений из очереди.
+
+1. Добавьте следующие методы в класс `Program` для обработки сообщений и любых ошибок: 
 
     ```csharp
-    static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-    {
-        // Process the message.
-        Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-        // Complete the message so that it is not received again.
-        // This can be done only if the queue Client is created in ReceiveMode.PeekLock mode (which is the default).
-        await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-
-        // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
-        // If queueClient has already been closed, you can choose to not call CompleteAsync() or AbandonAsync() etc.
-        // to avoid unnecessary exceptions.
-    }
-    ```
-
-1. Наконец, добавьте следующий метод для обработки исключений, которые могут возникнуть:
-
-    ```csharp
-    // Use this handler to examine the exceptions received on the message pump.
-    static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-    {
-        Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-        var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-        Console.WriteLine("Exception context for troubleshooting:");
-        Console.WriteLine($"- Endpoint: {context.Endpoint}");
-        Console.WriteLine($"- Entity Path: {context.EntityPath}");
-        Console.WriteLine($"- Executing Action: {context.Action}");
-        return Task.CompletedTask;
-    }
-    ```
-
-Вот как должен выглядеть файл *Program.CS* :
-
-```csharp
-namespace CoreReceiverApp
-{
-    using System;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
-
-    class Program
-    {
-        // Connection String for the namespace can be obtained from the Azure portal under the 
-        // 'Shared Access policies' section.
-        const string ServiceBusConnectionString = "<your_connection_string>";
-        const string QueueName = "<your_queue_name>";
-        static IQueueClient queueClient;
-
-        static void Main(string[] args)
+        // handle received messages
+        static async Task MessageHandler(ProcessMessageEventArgs args)
         {
-            MainAsync().GetAwaiter().GetResult();
+            string body = args.Message.Body.ToString();
+            Console.WriteLine($"Received: {body}");
+
+            // complete the message. messages is deleted from the queue. 
+            await args.CompleteMessageAsync(args.Message);
         }
 
-        static async Task MainAsync()
+        // handle any errors when receiving messages
+        static Task ErrorHandler(ProcessErrorEventArgs args)
         {
-            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-            Console.WriteLine("======================================================");
-            Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-            Console.WriteLine("======================================================");
-
-            // Register QueueClient's MessageHandler and receive messages in a loop
-            RegisterOnMessageHandlerAndReceiveMessages();
- 
-            Console.ReadKey();
-
-            await queueClient.CloseAsync();
-        }
-
-        static void RegisterOnMessageHandlerAndReceiveMessages()
-        {
-            // Configure the MessageHandler Options in terms of exception handling, number of concurrent messages to deliver etc.
-            var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
-            {
-                // Maximum number of Concurrent calls to the callback `ProcessMessagesAsync`, set to 1 for simplicity.
-                // Set it according to how many messages the application wants to process in parallel.
-                MaxConcurrentCalls = 1,
-
-                // Indicates whether MessagePump should automatically complete the messages after returning from User Callback.
-                // False below indicates the Complete will be handled by the User Callback as in `ProcessMessagesAsync` below.
-                AutoComplete = false
-            };
-
-            // Register the function that will process messages
-            queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-        }
-
-        static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-        {
-            // Process the message
-            Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-            // Complete the message so that it is not received again.
-            // This can be done only if the queueClient is created in ReceiveMode.PeekLock mode (which is default).
-            await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-
-            // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
-            // If queueClient has already been Closed, you may chose to not call CompleteAsync() or AbandonAsync() etc. calls 
-            // to avoid unnecessary exceptions.
-        }
-
-        static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-        {
-            Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-            var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-            Console.WriteLine("Exception context for troubleshooting:");
-            Console.WriteLine($"- Endpoint: {context.Endpoint}");
-            Console.WriteLine($"- Entity Path: {context.EntityPath}");
-            Console.WriteLine($"- Executing Action: {context.Action}");
+            Console.WriteLine(args.Exception.ToString());
             return Task.CompletedTask;
         }
-    }
-}
+    ```
+1. Добавьте метод с именем `ReceiveMessagesAsync` в класс `Program` и добавьте приведенный ниже код для получения сообщений. 
+
+    ```csharp
+        static async Task ReceiveMessagesAsync()
+        {
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
+            {
+                // create a processor that we can use to process the messages
+                ServiceBusProcessor processor = client.CreateProcessor(queueName, new ServiceBusProcessorOptions());
+
+                // add handler to process messages
+                processor.ProcessMessageAsync += MessageHandler;
+
+                // add handler to process any errors
+                processor.ProcessErrorAsync += ErrorHandler;
+
+                // start processing 
+                await processor.StartProcessingAsync();
+
+                Console.WriteLine("Wait for a minute and then press any key to end the processing");
+                Console.ReadKey();
+
+                // stop processing 
+                Console.WriteLine("\nStopping the receiver...");
+                await processor.StopProcessingAsync();
+                Console.WriteLine("Stopped receiving messages");
+            }
+        }
+    ```
+1. Добавьте вызов метода `ReceiveMessagesAsync` из метода `Main`. Закомментируйте метод `SendMessagesAsync`, если нужно проверить только получение сообщений. В противном случае в очередь будут отправлены еще четыре сообщения. 
+
+    ```csharp
+        static async Task Main()
+        {
+            // send a message to the queue
+            await SendMessageAsync();
+
+            // send a batch of messages to the queue
+            await SendMessageBatchAsync();
+
+            // receive message from the queue
+            await ReceiveMessagesAsync();
+        }
+    ```
+
+## <a name="run-the-app"></a>Запустите приложение
+Запустите приложение. Подождите минуту, а затем нажмите любую клавишу, чтобы остановить получение сообщений. В окне консоли должны отобразиться следующие выходные данные (клавиша ПРОБЕЛ на клавиатуре). 
+
+```console
+Sent a single message to the queue: myqueue
+Sent a batch of messages to the queue: myqueue
+Wait for a minute and then press any key to end the processing
+Received: Hello world!
+Received: First message in the batch
+Received: Second message in the batch
+Received: Third message in the batch
+Received: Hello world!
+Received: First message in the batch
+Received: Second message in the batch
+Received: Third message in the batch
+
+Stopping the receiver...
+Stopped receiving messages
 ```
 
-Запустите программу и перейдите на портал еще раз. **Число активных сообщений** и **текущие** значения теперь равны **0**.
+Снова просмотрите сведения на портале. 
 
-![Очередь после получения сообщений][queue-message-receive]
+- Значения параметров **Количество активных сообщений** и **Текущий** теперь равны **0**.
+- На диаграмме **Сообщения** в разделе **Метрики** в нижней части страницы можно увидеть, что в очередь поступило восемь входящих и восемь исходящих сообщений. 
 
-Поздравляем! Теперь вы создали очередь, отправили в нее набор сообщений и получили эти сообщения из одной очереди.
-
-> [!NOTE]
-> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет пользователям легко подключаться к пространству имен служебной шины и администрировать сущности обмена сообщениями. Это средство предоставляет расширенные возможности, такие как функции импорта и экспорта, а также возможность тестирования разделов, очередей, подписок, служб ретранслятора, центров уведомлений и концентраторов событий.
+    :::image type="content" source="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png" alt-text="Активные сообщения и их размер после получения" lightbox="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
+Ознакомьтесь со следующими примерами и документацией:
 
-Ознакомьтесь с [примерами в репозитории GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples), демонстрирующими расширенные возможности обмена сообщениями служебной шины.
-
-<!--Image references-->
-
-[nuget-pkg]: ./media/service-bus-dotnet-get-started-with-queues/nuget-package.png
-[queue-message]: ./media/service-bus-dotnet-get-started-with-queues/messages-sent-to-essentials.png
-[queue-message-receive]: ./media/service-bus-dotnet-get-started-with-queues/queue-message-receive-in-essentials.png
+- [Клиентская библиотека Служебной шины Azure для .NET: файл сведений](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus)
+- [Примеры на GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
+- [Справочник по API .NET](https://docs.microsoft.com/dotnet/api/azure.messaging.servicebus?view=azure-dotnet-preview&preserve-view=true)
 

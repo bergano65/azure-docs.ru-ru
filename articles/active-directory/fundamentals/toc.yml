@@ -79,6 +79,46 @@
               href: sync-ldap.md
             - name: Синхронизация SCIM
               href: sync-scim.md
+        - name: Создание устойчивых систем
+          items:
+            - name: Обзор
+              href: resilience-overview.md
+            - name: Руководство по инфраструктуре
+              items:
+                - name: Общие сведения об инфраструктуре
+                  href: resilience-in-infrastructure.md
+                - name: Управление учетными данными
+                  href: resilience-in-credentials.md
+                - name: Состояния устройств
+                  href: resilience-with-device-states.md
+                - name: Непрерывная оценка доступа
+                  href: resilience-with-continuous-access-evaluation.md
+                - name: Проверка подлинности внешнего пользователя
+                  href: resilience-b2b-authentication.md
+                - name: Гибридная проверка подлинности
+                  href: resilience-in-hybrid.md
+                - name: Прокси приложения
+                  href: resilience-on-premises-access.md
+            - name: Руководство по Azure AD B2C
+              items:
+                - name: Общие сведения об использовании Azure AD B2C для обеспечения устойчивости
+                  href: resilience-b2c.md
+                - name: Взаимодействие с конечным пользователем
+                  href: resilient-end-user-experience.md
+                - name: Интерфейсы с внешними процессами
+                  href: resilient-external-processes.md
+                - name: Рекомендации разработчикам по работе с Azure AD B2C
+                  href: resilience-b2c-developer-best-practices.md
+                - name: Мониторинг и аналитика
+                  href: resilience-with-monitoring-alerting.md
+            - name: Руководство по разработке приложения
+              items:
+                - name: Общие сведения о разработке
+                  href: resilience-app-development-overview.md
+                - name: Клиентские приложения
+                  href: resilience-client-app.md
+                - name: Управляющие программы
+                  href: resilience-daemon-app.md
         - name: 'Центры сертификации, используемые в Azure'
           href: certificate-authorities.md
     - name: Руководство по развертыванию

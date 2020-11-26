@@ -1,381 +1,274 @@
 ---
-title: Начало работы с разделами и подписками служебной шины Azure | Документация Майкрософт
-description: Написание консольного приложения C# .NET Core, которое использует обмен сообщениями служебной шины для разделов и подписок.
-ms.topic: conceptual
+title: Отправка сообщений в разделы Служебной шины Azure с помощью azure-messaging-servicebus
+description: В этом кратком руководстве показано, как отправлять сообщения в разделы Служебной шины Azure с помощью пакета azure-messaging-servicebus.
+ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
-ms.date: 06/23/2020
+ms.date: 11/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bc7435fb46d5783cb487038a10709a9e40b0d136
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 5ddfca1186025f4118013815af7bbf7f500951ce
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021652"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95809327"
 ---
-# <a name="get-started-with-service-bus-topics"></a>Начало работы с разделами служебной шины
+# <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-net"></a>Отправка сообщений в раздел Служебной шины Azure и прием сообщений из подписок в разделе (.NET)
+В этом руководстве показано, как создать консольное приложение .NET Core, которое отправляет сообщения в раздел Служебной шины и получает сообщения из подписки на раздел. 
 
-[!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
-
-В этом руководстве рассматриваются следующие действия:
-
-1. Написание консольного приложения .NET Core для отправки набора сообщений в раздел.
-2. Написание консольного приложения .NET Core для получения этих сообщений из подписки.
+> [!Important]
+> Для работы с этим кратким руководством используется новый пакет **Azure.Messaging.ServiceBus**. Краткое руководство, в рамках которого используется старый пакет Microsoft.Azure.ServiceBus, можно найти в статье об [отправке и получении сообщений с помощью пакета Microsoft.Azure.ServiceBus](service-bus-dotnet-how-to-use-topics-subscriptions-legacy.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните действия, описанные в [кратком руководстве: использование портал Azure для создания раздела служебной шины и подписок на раздел](service-bus-quickstart-topics-subscriptions-portal.md) для выполнения следующих задач.
-    1. Создайте **пространство имен** Служебной шины.
-    2. Получите **строку подключения**.
-    3. Создайте **раздел** в пространстве имен.
-    4. Создайте **одну подписку** на раздел в пространстве имен.
-3. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
-4. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
- 
-## <a name="send-messages-to-the-topic"></a>Отправка сообщений в раздел
+- [Visual Studio 2019](https://www.visualstudio.com/vs)
+- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Выполните шаги из [краткого руководства по созданию раздела Служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Запишите строку подключения, имя раздела и имя подписки. При работе с этим кратким руководством вы будете использовать только одну подписку. 
 
-Для отправки сообщений в раздел создайте консольное приложение C# с помощью Visual Studio.
+## <a name="send-messages-to-a-topic"></a>Отправка сообщений в раздел
+В рамках этого раздела вы создадите консольное приложение .NET Core в Visual Studio и добавите код для отправки сообщений в созданный вами раздел. 
 
 ### <a name="create-a-console-application"></a>Создание консольного приложение
-
-Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)**.
+Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)** для C#. 
 
 ### <a name="add-the-service-bus-nuget-package"></a>Получение пакета NuGet для служебной шины
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-2. Откройте вкладку **Обзор**, выполните поиск по фразе **[Microsoft.Azure.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)** и выберите элемент **Microsoft.Azure.ServiceBus**. Щелкните **Установить** , чтобы выполнить установку, а затем закройте это диалоговое окно.
-   
-    ![Установка пакета NuGet][nuget-pkg]
+1. Нажмите кнопку **Обзор**. Найдите и выберите элемент **[Azure.Messaging.ServiceBus](https://www.nuget.org/packages/Azure.Messaging.ServiceBus/)** .
+1. Выберите элемент **Установить**, чтобы завершить установку, и закройте диспетчер пакетов NuGet.
 
-### <a name="write-code-to-send-messages-to-the-topic"></a>Написание кода для отправки сообщений в раздел
+### <a name="add-code-to-send-messages-to-the-topic"></a>Добавление кода для отправки сообщений в раздел 
 
 1. В файл Program.cs добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса.
    
     ```csharp
-    using System.Text;
-    using System.Threading;
+    using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
+    using Azure.Messaging.ServiceBus;
+    ```
+1. В классе `Program` объявите следующие переменные:
+
+    ```csharp
+        static string connectionString = "<NAMESPACE CONNECTION STRING>";
+        static string topicName = "<TOPIC NAME>";
+        static string subscriptionName = "<SUBSCRIPTION NAME>";
     ```
 
-2. В классе `Program` объявите приведенные ниже переменные. Укажите для переменной `ServiceBusConnectionString` строку подключения, полученную при создании пространства имен, и задайте для `TopicName` имя раздела, которое использовалось при его создании.
-   
-    ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string TopicName = "<your_topic_name>";
-    static ITopicClient topicClient;
-    ``` 
-
-3. Замените `Main()` метод следующим **асинхронным** `Main` методом, который асинхронно отправляет сообщения с помощью метода сендмессажесасинк, который будет добавлен на следующем шаге. 
+    Измените следующие значения:
+    - `<NAMESPACE CONNECTION STRING>` на строку подключения к пространству имен Служебной шины;
+    - `<TOPIC NAME>` на имя раздела;
+    - `<SUBSCRIPTION NAME>` на имя подписки.
+2. Добавьте метод с именем `SendMessageToTopicAsync`, с помощью которого в раздел отправляется одно сообщение. 
 
     ```csharp
-    public static async Task Main(string[] args)
-    {
-        const int numberOfMessages = 10;
-        topicClient = new TopicClient(ServiceBusConnectionString, TopicName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Send messages.
-        await SendMessagesAsync(numberOfMessages);
-
-        Console.ReadKey();
-
-        await topicClient.CloseAsync();
-    }
-    ```
-5. Сразу после метода `Main` добавьте следующий метод `SendMessagesAsync()`, который позволяет отправлять такое число сообщений, как задано для параметра `numberOfMessagesToSend` (текущее значение — 10):
-
-    ```csharp
-    static async Task SendMessagesAsync(int numberOfMessagesToSend)
-    {
-        try
+        static async Task SendMessageToTopicAsync()
         {
-            for (var i = 0; i < numberOfMessagesToSend; i++)
+            // create a Service Bus client 
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
             {
-                // Create a new message to send to the topic.
-                string messageBody = $"Message {i}";
-                var message = new Message(Encoding.UTF8.GetBytes(messageBody));
-
-                // Write the body of the message to the console.
-                Console.WriteLine($"Sending message: {messageBody}");
-
-                // Send the message to the topic.
-                await topicClient.SendAsync(message);
+                // create a sender for the topic
+                ServiceBusSender sender = client.CreateSender(topicName);
+                await sender.SendMessageAsync(new ServiceBusMessage("Hello, World!"));
+                Console.WriteLine($"Sent a single message to the topic: {topicName}");
             }
         }
-        catch (Exception exception)
-        {
-            Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-        }
-    }
     ```
-  
-6. Вот как будет выглядеть файл Program.cs отправителя:
-   
+1. Добавьте метод с именем `CreateMessages`, чтобы создать очередь сообщений (очередь .NET) для класса `Program`. Как правило, эти сообщения поступают из различных частей приложения. Здесь мы создадим очередь примеров сообщений.
+
     ```csharp
-    namespace CoreSenderApp
-    {
-        using System;
-        using System.Text;
-        using System.Threading;
-        using System.Threading.Tasks;
-        using Microsoft.Azure.ServiceBus;
-
-        class Program
+        static Queue<ServiceBusMessage> CreateMessages()
         {
-            const string ServiceBusConnectionString = "<your_connection_string>";
-            const string TopicName = "<your_topic_name>";
-            static ITopicClient topicClient;
+            // create a queue containing the messages and return it to the caller
+            Queue<ServiceBusMessage> messages = new Queue<ServiceBusMessage>();
+            messages.Enqueue(new ServiceBusMessage("First message"));
+            messages.Enqueue(new ServiceBusMessage("Second message"));
+            messages.Enqueue(new ServiceBusMessage("Third message"));
+            return messages;
+        }
+    ```
+1. Добавьте метод с именем `SendMessageBatchAsync` в класс `Program` и добавьте приведенный ниже код. Этот метод позволяет принять очередь сообщений и подготовить один или несколько пакетов для отправки в раздел Служебной шины. 
 
-            public static async Task Main(string[] args)
+    ```csharp
+        static async Task SendMessageBatchToTopicAsync()
+        {
+            // create a Service Bus client 
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
             {
-                const int numberOfMessages = 10;
-                topicClient = new TopicClient(ServiceBusConnectionString, TopicName);
-    
-                Console.WriteLine("======================================================");
-                Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-                Console.WriteLine("======================================================");
-    
-                // Send messages.
-                await SendMessagesAsync(numberOfMessages);
-    
-                Console.ReadKey();
-    
-                await topicClient.CloseAsync();
-            }
 
-            static async Task SendMessagesAsync(int numberOfMessagesToSend)
-            {
-                try
+                // create a sender for the topic 
+                ServiceBusSender sender = client.CreateSender(topicName);
+
+                // get the messages to be sent to the Service Bus topic
+                Queue<ServiceBusMessage> messages = CreateMessages();
+
+                // total number of messages to be sent to the Service Bus topic
+                int messageCount = messages.Count;
+
+                // while all messages are not sent to the Service Bus topic
+                while (messages.Count > 0)
                 {
-                    for (var i = 0; i < numberOfMessagesToSend; i++)
+                    // start a new batch 
+                    using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
+
+                    // add the first message to the batch
+                    if (messageBatch.TryAddMessage(messages.Peek()))
                     {
-                        // Create a new message to send to the topic
-                        string messageBody = $"Message {i}";
-                        var message = new Message(Encoding.UTF8.GetBytes(messageBody));
-
-                        // Write the body of the message to the console
-                        Console.WriteLine($"Sending message: {messageBody}");
-
-                        // Send the message to the topic
-                        await topicClient.SendAsync(message);
+                        // dequeue the message from the .NET queue once the message is added to the batch
+                        messages.Dequeue();
                     }
+                    else
+                    {
+                        // if the first message can't fit, then it is too large for the batch
+                        throw new Exception($"Message {messageCount - messages.Count} is too large and cannot be sent.");
+                    }
+
+                    // add as many messages as possible to the current batch
+                    while (messages.Count > 0 && messageBatch.TryAddMessage(messages.Peek()))
+                    {
+                        // dequeue the message from the .NET queue as it has been added to the batch
+                        messages.Dequeue();
+                    }
+
+                    // now, send the batch
+                    await sender.SendMessagesAsync(messageBatch);
+
+                    // if there are any remaining messages in the .NET queue, the while loop repeats 
                 }
-                catch (Exception exception)
-                {
-                    Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-                }
+
+                Console.WriteLine($"Sent a batch of {messageCount} messages to the topic: {topicName}");
             }
         }
-    }
     ```
-
-3. Запустите программу и перейдите на портал Azure. В окне **Обзор** пространства имен щелкните имя раздела. Отобразится экран раздела **Основное**. Обратите внимание, что теперь для подписки внизу окна параметр **Число сообщений** должен иметь значение **10**. Каждый раз при запуске приложения отправителя без получения сообщений (как указано в следующем разделе) это значение увеличивается на 10. А при каждом добавлении сообщения в раздел текущий размер раздела увеличивается, как и значение параметра **Текущий** в колонке **Основное**.
-   
-      ![Размер сообщения][topic-message]
-
-## <a name="receive-messages-from-the-subscription"></a>Получение сообщений из подписки
-
-Чтобы получить отправленные сообщения, создайте другое консольное приложение .NET Core и установите пакет NuGet **Microsoft. Azure. servicebus** , аналогичный предыдущему приложению отправителя.
-
-### <a name="write-code-to-receive-messages-from-the-subscription"></a>Написание кода для получения сообщений из подписки
-
-1. В файл Program.cs добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса.
-   
-    ```csharp
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
-    ```
-
-2. В классе `Program` объявите приведенные ниже переменные. Укажите для переменной `ServiceBusConnectionString` строку подключения, полученную при создании пространства имен, и задайте для `TopicName` имя раздела, которое использовалось при его создании, а для `SubscriptionName` задайте имя подписки на раздел, которое использовалось при ее создании.
-   
-    ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string TopicName = "<your_topic_name>";
-    const string SubscriptionName = "<your_subscription_name>";
-    static ISubscriptionClient subscriptionClient;
-    ```
-
-3. Замените `Main()` метод следующим **асинхронным** `Main` методом. Он вызывает `RegisterOnMessageHandlerAndReceiveMessages()` метод, который будет добавлен на следующем шаге. 
+1. Замените метод `Main()` приведенным ниже **асинхронным** методом `Main`. Он вызывает оба метода для отправки в раздел одного сообщения и пакета сообщений.  
 
     ```csharp
-    public static async Task Main(string[] args)
-    {    
-        subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Register subscription message handler and receive messages in a loop
-        RegisterOnMessageHandlerAndReceiveMessages();
-
-        Console.ReadKey();
-
-        await subscriptionClient.CloseAsync();    
-    }
-   ```
-5. Сразу после метода `Main()` добавьте следующий метод, который позволяет зарегистрировать обработчик сообщений и получать сообщения, отправленные приложением-отправителем:
-
-    ```csharp
-    static void RegisterOnMessageHandlerAndReceiveMessages()
-    {
-        // Configure the message handler options in terms of exception handling, number of concurrent messages to deliver, etc.
-        var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
+        static async Task Main()
         {
-            // Maximum number of concurrent calls to the callback ProcessMessagesAsync(), set to 1 for simplicity.
-            // Set it according to how many messages the application wants to process in parallel.
-            MaxConcurrentCalls = 1,
+            // send a message to the topic
+            await SendMessageToTopicAsync();
 
-            // Indicates whether the message pump should automatically complete the messages after returning from user callback.
-            // False below indicates the complete operation is handled by the user callback as in ProcessMessagesAsync().
-            AutoComplete = false
-        };
-
-        // Register the function that processes messages.
-        subscriptionClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-    }
-    ```    
-
-6. Сразу после предыдущего метода добавьте следующий метод `ProcessMessagesAsync()` для обработки полученных сообщений:
- 
-    ```csharp
-    static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-    {
-        // Process the message.
-        Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-        // Complete the message so that it is not received again.
-        // This can be done only if the subscriptionClient is created in ReceiveMode.PeekLock mode (which is the default).
-        await subscriptionClient.CompleteAsync(message.SystemProperties.LockToken);
-
-        // Note: Use the cancellationToken passed as necessary to determine if the subscriptionClient has already been closed.
-        // If subscriptionClient has already been closed, you can choose to not call CompleteAsync() or AbandonAsync() etc.
-        // to avoid unnecessary exceptions.
-    }
+            // send a batch of messages to the topic
+            await SendMessageBatchToTopicAsync();
+        }
     ```
+5. Запустите приложение. Вы должны увидеть следующий результат:
 
-7. Наконец, добавьте следующий метод для обработки исключений, которые могут возникнуть:
- 
+    ```console
+    Sent a single message to the topic: mytopic
+    Sent a batch of 3 messages to the topic: mytopic
+    ```
+1. На портале Azure выполните следующие действия:
+    1. Перейдите к пространству имен Служебной шины. 
+    1. В центральной области в нижней части страницы **Обзор** перейдите на вкладку **Разделы** и выберите раздел Служебной шины. В приведенном ниже примере это `mytopic`.
+    
+        :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/select-topic.png" alt-text="Выбор раздела":::
+    1. В нижней части страницы **раздела Служебной шины** на диаграмме **Сообщения** в разделе **Метрики** можно увидеть, что в раздел поступило четыре входящих сообщения. Если значение не отображается, подождите несколько минут и обновите страницу, чтобы просмотреть обновленную диаграмму. 
+
+        :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/sent-messages-essentials.png" alt-text="Сообщения, отправленные в раздел" lightbox="./media/service-bus-dotnet-how-to-use-topics-subscriptions/sent-messages-essentials.png":::
+    4. Выберите подписку в области снизу. В приведенном ниже примере это **S1**. На странице **подписки на Служебную шину** для параметра **Количество активных сообщений** отображается значение **4**. В подписку поступили четыре сообщения, которые вы отправили в раздел, но получатель их еще не открыл. 
+    
+        :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/subscription-page.png" alt-text="Сообщения, поступившие в подписку" lightbox="./media/service-bus-dotnet-how-to-use-topics-subscriptions/subscription-page.png":::
+    
+
+## <a name="receive-messages-from-a-subscription"></a>Получение сообщений из подписки
+
+1. Добавьте следующие методы в класс `Program` для обработки сообщений и любых ошибок: 
+
     ```csharp
-    // Use this handler to examine the exceptions received on the message pump.
-    static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-    {
-        Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-        var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-        Console.WriteLine("Exception context for troubleshooting:");
-        Console.WriteLine($"- Endpoint: {context.Endpoint}");
-        Console.WriteLine($"- Entity Path: {context.EntityPath}");
-        Console.WriteLine($"- Executing Action: {context.Action}");
-        return Task.CompletedTask;
-    }    
-    ```    
-
-8. Вот как будет выглядеть файл Program.cs получателя:
-   
-    ```csharp
-    namespace CoreReceiverApp
-    {
-        using System;
-        using System.Text;
-        using System.Threading;
-        using System.Threading.Tasks;
-        using Microsoft.Azure.ServiceBus;
-
-        class Program
+        static async Task MessageHandler(ProcessMessageEventArgs args)
         {
-            const string ServiceBusConnectionString = "<your_connection_string>";
-            const string TopicName = "<your_topic_name>";
-            const string SubscriptionName = "<your_subscription_name>";
-            static ISubscriptionClient subscriptionClient;
+            string body = args.Message.Body.ToString();
+            Console.WriteLine($"Received: {body} from subscription: {subscriptionName}");
 
-            public static async Task Main(string[] args)
-            {    
-                subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
-        
-                Console.WriteLine("======================================================");
-                Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-                Console.WriteLine("======================================================");
-        
-                // Register subscription message handler and receive messages in a loop
-                RegisterOnMessageHandlerAndReceiveMessages();
-        
+            // complete the message. messages is deleted from the queue. 
+            await args.CompleteMessageAsync(args.Message);
+        }
+
+        static Task ErrorHandler(ProcessErrorEventArgs args)
+        {
+            Console.WriteLine(args.Exception.ToString());
+            return Task.CompletedTask;
+        }
+    ```
+1. Добавьте в класс `Program` следующий метод `ReceiveMessagesFromSubscriptionAsync`:
+
+    ```csharp
+        static async Task ReceiveMessagesFromSubscriptionAsync()
+        {
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
+            {
+                // create a processor that we can use to process the messages
+                ServiceBusProcessor processor = client.CreateProcessor(topicName, subscriptionName, new ServiceBusProcessorOptions());
+
+                // add handler to process messages
+                processor.ProcessMessageAsync += MessageHandler;
+
+                // add handler to process any errors
+                processor.ProcessErrorAsync += ErrorHandler;
+
+                // start processing 
+                await processor.StartProcessingAsync();
+
+                Console.WriteLine("Wait for a minute and then press any key to end the processing");
                 Console.ReadKey();
-        
-                await subscriptionClient.CloseAsync();    
-            }
 
-            static void RegisterOnMessageHandlerAndReceiveMessages()
-            {
-                // Configure the message handler options in terms of exception handling, number of concurrent messages to deliver, etc.
-                var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
-                {
-                    // Maximum number of concurrent calls to the callback ProcessMessagesAsync(), set to 1 for simplicity.
-                    // Set it according to how many messages the application wants to process in parallel.
-                    MaxConcurrentCalls = 1,
-
-                    // Indicates whether MessagePump should automatically complete the messages after returning from User Callback.
-                    // False below indicates the Complete will be handled by the User Callback as in `ProcessMessagesAsync` below.
-                    AutoComplete = false
-                };
-
-                // Register the function that processes messages.
-                subscriptionClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-            }
-
-            static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-            {
-                // Process the message.
-                Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-                // Complete the message so that it is not received again.
-                // This can be done only if the subscriptionClient is created in ReceiveMode.PeekLock mode (which is the default).
-                await subscriptionClient.CompleteAsync(message.SystemProperties.LockToken);
-
-                // Note: Use the cancellationToken passed as necessary to determine if the subscriptionClient has already been closed.
-                // If subscriptionClient has already been closed, you can choose to not call CompleteAsync() or AbandonAsync() etc.
-                // to avoid unnecessary exceptions.
-            }
-
-            static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-            {
-                Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-                var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-                Console.WriteLine("Exception context for troubleshooting:");
-                Console.WriteLine($"- Endpoint: {context.Endpoint}");
-                Console.WriteLine($"- Entity Path: {context.EntityPath}");
-                Console.WriteLine($"- Executing Action: {context.Action}");
-                return Task.CompletedTask;
+                // stop processing 
+                Console.WriteLine("\nStopping the receiver...");
+                await processor.StopProcessingAsync();
+                Console.WriteLine("Stopped receiving messages");
             }
         }
-    }
     ```
-9. Запустите программу и перейдите на портал еще раз. Обратите внимание, что параметры **Число сообщений** и **Текущий** имеют значение **0**.
-   
-    ![Длина раздела][topic-message-receive]
+1. Добавьте в метод `Main` вызов метода `ReceiveMessagesFromSubscriptionAsync`. Закомментируйте метод `SendMessagesToTopicAsync`, если нужно проверить только получение сообщений. В противном случае в раздел будут отправлены еще четыре сообщения. 
 
-Поздравляем! С помощью библиотеки .NET Standard вы только что создали раздел и подписку, отправили 10 сообщений и получили их.
+    ```csharp
+        static async Task Main()
+        {
+            // send a message to the topic
+            await SendMessageToTopicAsync();
 
-> [!NOTE]
-> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
+            // send a batch of messages to the topic
+            await SendMessageBatchToTopicAsync();
+
+            // receive messages from the subscription
+            await ReceiveMessagesFromSubscriptionAsync();
+        }
+    ```
+## <a name="run-the-app"></a>Запустите приложение
+Запустите приложение. Подождите минуту, а затем нажмите любую клавишу, чтобы остановить получение сообщений. В окне консоли должны отобразиться следующие выходные данные (клавиша ПРОБЕЛ на клавиатуре). 
+
+```console
+Sent a single message to the topic: mytopic
+Sent a batch of 3 messages to the topic: mytopic
+Wait for a minute and then press any key to end the processing
+Received: Hello, World! from subscription: mysub
+Received: First message from subscription: mysub
+Received: Second message from subscription: mysub
+Received: Third message from subscription: mysub
+Received: Hello, World! from subscription: mysub
+Received: First message from subscription: mysub
+Received: Second message from subscription: mysub
+Received: Third message from subscription: mysub
+
+Stopping the receiver...
+Stopped receiving messages
+```
+
+Снова просмотрите сведения на портале. 
+
+- На странице **раздела Служебной шины** на диаграмме **Сообщения** можно увидеть, что в раздел поступило восемь входящих и восемь исходящих сообщений. Если эти числа не отображаются, подождите несколько минут и обновите страницу, чтобы просмотреть обновленную диаграмму. 
+
+    :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/messages-size-final.png" alt-text="Отправленные и полученные сообщения" lightbox="./media/service-bus-dotnet-how-to-use-topics-subscriptions/messages-size-final.png":::
+- На странице **подписки на Служебную шину** для параметра **Количество активных сообщений** отображается нулевое значение. Это означает, что получатель получил сообщения из этой подписки и обработал их. 
+
+    :::image type="content" source="./media/service-bus-dotnet-how-to-use-topics-subscriptions/subscription-page-final.png" alt-text="Финальное число активных сообщений в подписке" lightbox="./media/service-bus-dotnet-how-to-use-topics-subscriptions/subscription-page-final.png":::
+    
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
+Ознакомьтесь со следующими примерами и документацией:
 
-Ознакомьтесь с [примерами в репозитории GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples) для служебной шины, демонстрирующими расширенные возможности обмена сообщениями служебной шины.
+- [Клиентская библиотека Служебной шины Azure для .NET: файл сведений](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus)
+- [Примеры на GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
+- [Справочник по API .NET](https://docs.microsoft.com/dotnet/api/azure.messaging.servicebus?view=azure-dotnet-preview&preserve-view=true)
 
-<!--Image references-->
-
-[nuget-pkg]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/nuget-package.png
-[topic-message]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/topic-message.png
-[topic-message-receive]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/topic-message-receive.png
-[createtopic1]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/create-topic1.png
-[createtopic2]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/create-topic2.png
-[createtopic3]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/create-topic3.png
-[createtopic4]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/create-topic4.png
-[github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
-[azure-portal]: https://portal.azure.com
