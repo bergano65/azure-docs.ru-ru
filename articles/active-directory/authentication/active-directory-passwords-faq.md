@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c154952d41db742c4d33899094a49a65fae72f26
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 7caeefb741e6916d69894ede3a7c64eb2e8f623f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840106"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174502"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>Часто задаваемые вопросы о самостоятельном сбросе пароля
 
@@ -289,4 +289,4 @@ ms.locfileid: "94840106"
 * [Что такое обратная запись паролей и каково ее назначение](./tutorial-enable-sspr-writeback.md)
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+* [Как устранить неполадки самостоятельного сброса пароля](./troubleshoot-sspr.md)

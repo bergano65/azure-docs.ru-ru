@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 695d47c839a9436f4fad9399f7995b3197e1c0eb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b1583307771dd58053128d71cb0ae5dd7e709f68
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965001"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174387"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Политики паролей и ограничения учетных записей в Azure Active Directory
 
@@ -180,4 +180,4 @@ ms.locfileid: "91965001"
 
 Чтобы приступить к работе с SSPR, см. раздел [учебник. предоставление пользователям возможности разблокировать учетную запись или сбросить пароли с помощью Azure Active Directory самостоятельного сброса пароля](tutorial-enable-sspr.md).
 
-Если у вас или у пользователей возникли проблемы с SSPR, см. раздел [Устранение неполадок самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+Если у вас или у пользователей возникли проблемы с SSPR, см. раздел [Устранение неполадок самостоятельного сброса пароля](./troubleshoot-sspr.md)

@@ -4,12 +4,12 @@ description: Узнайте, как подключить приложение ф
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperfq2, devx-track-azurecli
-ms.openlocfilehash: f5b1b00c534abf1e7f82d2aca69dd4763b40d5ad
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0b8aae707f0fb055677af111f1e88c0a2e19b227
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833084"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175752"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Настройка мониторинга для функций Azure
 
@@ -230,7 +230,7 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 
 Для отправки данных в Application Insights приложению-функции требуется ключ инструментирования для ресурса Application Insights. В параметре приложения должен быть ключ с именем **APPINSIGHTS_INSTRUMENTATIONKEY**.
 
-При создании приложения-функции на [портале Azure](functions-create-first-azure-function.md) из командной строки с помощью [Azure Functions Core Tools](functions-create-first-azure-function-azure-cli.md) или в [Visual Studio Code](functions-create-first-function-vs-code.md) интеграция с Application Insights включена по умолчанию. Ресурс Application Insights имеет то же имя, что и приложение-функция, и создается в том же или ближайшем регионе.
+При создании приложения-функции на [портале Azure](functions-create-first-azure-function.md) из командной строки с помощью [Azure Functions Core Tools](./create-first-function-cli-csharp.md) или в [Visual Studio Code](./create-first-function-vs-code-csharp.md) интеграция с Application Insights включена по умолчанию. Ресурс Application Insights имеет то же имя, что и приложение-функция, и создается в том же или ближайшем регионе.
 
 ### <a name="new-function-app-in-the-portal"></a>Создание приложения-функции на портале Azure
 

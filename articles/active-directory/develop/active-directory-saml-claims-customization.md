@@ -13,12 +13,12 @@ ms.date: 10/22/2019
 ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 90efdd560735a112c2a4c5eb5740f211b587a241
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: f462a78790e73f3e0f67f55b6417589c7826a75d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275754"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173674"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство по настройке утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -178,5 +178,5 @@ ms.locfileid: "92275754"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md)
-* [Настройка федеративного единого входа для приложения не из коллекции](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
-* [Устранение неполадок единого входа на основе SAML](../azuread-dev/howto-v1-debug-saml-sso-issues.md)
+* [Настройка федеративного единого входа для приложения не из коллекции](../manage-apps/configure-saml-single-sign-on.md)
+* [Устранение неполадок единого входа на основе SAML](../manage-apps/debug-saml-sso-issues.md)

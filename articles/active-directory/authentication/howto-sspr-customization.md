@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4bef201cbd14a4de0c785b5f86d534f27bfedb31
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: e121a6a45ab20055591a3670152114b8d03529cf
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363714"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174000"
 ---
 # <a name="customize-the-user-experience-for-azure-active-directory-self-service-password-reset"></a>Настройка интерфейса пользователя для Azure Active Directory самостоятельного сброса пароля
 
@@ -56,7 +56,7 @@ ms.locfileid: "92363714"
 
 Если организации не нужно уведомлять администраторов о запросах на сброс пароля, можно использовать следующие параметры конфигурации:
 
-* Настройте ссылку на службу технической поддержки для предоставления URL-адреса или адреса mailto, который пользователи могут использовать для получения помощи. Этот параметр находится в **Password Reset**папке  >  **Customization**  >  **настраиваемой службы технической поддержки или URL-адресе**настройки сброса пароля.
+* Настройте ссылку на службу технической поддержки для предоставления URL-адреса или адреса mailto, который пользователи могут использовать для получения помощи. Этот параметр находится в **Password Reset** папке  >  **Customization**  >  **настраиваемой службы технической поддержки или URL-адресе** настройки сброса пароля.
 * Включите самостоятельный сброс пароля для всех пользователей. Этот параметр находится в разделе Свойства **сброса пароля**  >  **Properties**. Если вы не хотите, чтобы пользователи могли сбрасывать пароли, можно ограничить доступ, назначив пустую группу. *Этот вариант не рекомендуется.*
 
 ## <a name="customize-the-sign-in-page-and-access-panel"></a>Настройка страницы входа и панели доступа
@@ -87,8 +87,8 @@ ms.locfileid: "92363714"
 Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><a href='https://passwordreset.microsoftonline.com' target='_blank'>Can't access your account?</a></p>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об использовании SSPR в вашей среде см. в статье [Параметры отчетов для управления паролями в Azure AD](howto-sspr-reporting.md).
 
-Если у вас или у пользователей возникли проблемы с SSPR, см. раздел [Устранение неполадок самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+Если у вас или у пользователей возникли проблемы с SSPR, см. раздел [Устранение неполадок самостоятельного сброса пароля](./troubleshoot-sspr.md)

@@ -13,19 +13,19 @@ ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
 ROBOTS: NOINDEX
-ms.openlocfilehash: 378dab95d8fb3519bb2fc5c934a760e051a18d29
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: b08b07ebcd6e45e95e23dff8686148889e9d4b39
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94575889"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173925"
 ---
 # <a name="developer-guidance-for-the-azure-active-directory-conditional-access-feature"></a>Руководство разработчика для функции условного доступа Azure Active Directory
 
 [!INCLUDE [active-directory-azuread-dev](../../../includes/active-directory-azuread-dev.md)]
 
 > [!NOTE]
-> Версию этой статьи о платформе Microsoft Identity Platform см. в статье [Руководство разработчика по Azure Active Directory условному доступу](/azure/active-directory/develop/v2-conditional-access-dev-guide).
+> Версию этой статьи о платформе Microsoft Identity Platform см. в статье [Руководство разработчика по Azure Active Directory условному доступу](../develop/v2-conditional-access-dev-guide.md).
 
 Функция условного доступа в Azure Active Directory (Azure AD) предлагает один из нескольких способов, с помощью которых можно защитить приложение и службу. Условный доступ позволяет разработчикам и корпоративным клиентам защищать службы разными способами, включая:
 

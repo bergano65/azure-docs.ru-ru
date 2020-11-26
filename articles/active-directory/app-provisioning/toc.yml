@@ -51,7 +51,7 @@
         - name: Отчеты о подготовке к работе
           href: ../reports-monitoring/concept-provisioning-logs.md?context=%2fazure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: Автоматизация настройки с помощью MS Graph
-      href: 'https://docs.microsoft.com/graph/application-provisioning-configure-api'
+      href: /graph/application-provisioning-configure-api
     - name: Устранение неполадок при подготовке приложений
       items:
         - name: Известные проблемы

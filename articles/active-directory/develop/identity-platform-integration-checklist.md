@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 036c40395e5da5ebc09a87e420893d7dbd2ec668
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94da22fbb2940bddaad1324bedc8759706eca37b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88116807"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173572"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и советы по платформе удостоверений Майкрософт
 
@@ -30,15 +30,15 @@ ms.locfileid: "88116807"
 > [!TIP]
 > *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую из [регистраций приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **Помощник по интеграции (Предварительная версия)** , чтобы начать работу с помощником.
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
-![CheckBox ](./media/active-directory-integration-checklist/checkbox-two.svg) Прочтите и изучите [политики платформы Майкрософт](https://go.microsoft.com/fwlink/?linkid=2090497&clcid=0x409). Убедитесь, что ваше приложение соответствует условиям, которые были разработаны для защиты пользователей и платформы.
+![CheckBox ](./media/active-directory-integration-checklist/checkbox-two.svg) Прочтите и изучите [политики платформы Майкрософт](/legal/microsoft-identity-platform/terms-of-use). Убедитесь, что ваше приложение соответствует условиям, которые были разработаны для защиты пользователей и платформы.
 
 ## <a name="ownership"></a>владельца;
 
 ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Убедитесь, что сведения, связанные с учетной записью, используемой для регистрации и управления приложениями, обновлены.
 
-## <a name="branding"></a>Фирменная символика
+## <a name="branding"></a>Торговая марка
 
 ![](./media/active-directory-integration-checklist/checkbox-two.svg)должен соответствовать [рекомендациям по фирменной символике для приложений](howto-add-branding-in-azure-ad-apps.md).
 

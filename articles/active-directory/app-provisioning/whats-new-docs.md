@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 21307deb509d0735e4367f2b41603086f301bdeb
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 51a2facfdaccc6cb29264873e9ffd60fc48735da
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533537"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174668"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory подготовка приложений: новые возможности
 
@@ -59,7 +59,7 @@ ms.locfileid: "94533537"
 
 
 ### <a name="updated-articles"></a>Обновленные статьи
-- [Настройка подготовки с помощью API-интерфейсов Microsoft Graph](application-provisioning-configure-api.md)
+- [Настройка подготовки с помощью API-интерфейсов Microsoft Graph](/graph/application-provisioning-configure-api)
 - [Известные проблемы соответствия требованиям протокола SCIM 2.0 службы подготовки пользователей Azure AD и способы их устранения](application-provisioning-config-problem-scim-compatibility.md)
 
 ## <a name="july-2020"></a>Июль 2020 г.

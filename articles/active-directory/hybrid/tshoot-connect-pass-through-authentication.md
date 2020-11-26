@@ -16,12 +16,12 @@ ms.date: 07/27/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 224ccaeace91288171db42d2b8b8cf8c21a352e0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 99da9b787bfe06bece8b8dafdafc257336dddf63
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94652524"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176194"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -72,7 +72,7 @@ ms.locfileid: "94652524"
  ``` 
 4. При появлении запроса на ввод учетных данных введите те же имя пользователя и пароль, которые используются для входа в ( https://login.microsoftonline.com) .
 
-Если вы получаете одно и то же сообщение об ошибке имени пользователя и пароля, это означает, что агент сквозной проверки подлинности работает правильно, и проблема может быть в том, что локальный UPN не поддерживает маршрутизацию. Дополнительные сведения см. в разделе [Настройка альтернативного имени пользователя]( /windows-server/identity/ad-fs/operations/configuring-alternate-login-id#:~:text=%20Configuring%20Alternate%20Login%20ID,See%20Also.%20%20More).
+Если вы получаете одно и то же сообщение об ошибке имени пользователя и пароля, это означает, что агент сквозной проверки подлинности работает правильно, и проблема может быть в том, что локальный UPN не поддерживает маршрутизацию. Дополнительные сведения см. в разделе [Настройка альтернативного имени пользователя](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id).
 
 > [!IMPORTANT]
 > Если Azure AD Connect сервер не присоединен к домену, то необходимо выполнить требования, указанные в [Azure AD Connect: предварительные требования](./how-to-connect-install-prerequisites.md#installation-prerequisites), при возникновении неправильной проблемы с именем пользователя или паролем.

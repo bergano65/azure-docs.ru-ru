@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: kenwith
-ms.openlocfilehash: 9736e1b71f5e129989aba9a045581bae8a1c5f93
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9815237617566eda4759ecc31718786b6cb2cac8
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997551"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176058"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Планирование развертывания Azure AD Application Proxy
 
@@ -323,7 +323,7 @@ Azure AD предоставляет дополнительные сведени�
 * [Настройка единого входа в приложение](application-proxy-config-sso-how-to.md)
 * [Проблема при создании приложения на портале администрирования](application-proxy-config-problem.md)
 * [Настройка ограниченного делегирования Kerberos](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
-* [Настройка для использования PingAccess](/azure/active-directory/manage-apps/application-proxy-ping-access-publishing-guide)
+* [Настройка для использования PingAccess](./application-proxy-ping-access-publishing-guide.md)
 * [Ошибка "Can't Access this Corporate Application" (Нет доступа к этому корпоративному приложению)](application-proxy-sign-in-bad-gateway-timeout-error.md)
 * [Проблема при установке соединителя агента прокси приложения](application-proxy-connector-installation-problem.md)
 * [Проблемы со входом](application-sign-in-problem-on-premises-application-proxy.md)

@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06c37eaf63b79b171e5a21d807262cfb359d416c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 765bfe0f805ae4219110d689e8f7f8fd54a26cf3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994168"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173942"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Планирование развертывания самостоятельного сброса пароля Azure Active Directory
 
@@ -123,7 +123,7 @@ Azure Active Directory лицензируется отдельно для каж
 
 ### <a name="engage-the-right-stakeholders"></a>Привлечение соответствующих заинтересованных лиц
 
-Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](https://aka.ms/deploymentplans) и их роли в проекте очевидны. Задокументируйте заинтересованных лиц и их вклад в проект для подотчетности.
+Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [убедитесь, что вы привлекаете соответствующих заинтересованных лиц](../fundamentals/active-directory-deployment-plans.md) и их роли в проекте очевидны. Задокументируйте заинтересованных лиц и их вклад в проект для подотчетности.
 
 #### <a name="required-administrator-roles"></a>Требуемые роли администратора
 
@@ -325,7 +325,7 @@ Azure AD может предоставить дополнительные све
 
 ### <a name="troubleshoot"></a>Диагностика
 
-* См. статью [Устранение неполадок самостоятельного сброса пароля](./active-directory-passwords-troubleshoot.md) 
+* См. статью [Устранение неполадок самостоятельного сброса пароля](./troubleshoot-sspr.md) 
 
 * См. [вопросы и ответы об управлении паролями](./active-directory-passwords-faq.md) 
 

@@ -13,12 +13,12 @@ ms.date: 10/09/2020
 ms.author: jmprieur
 ms.reviewer: marsma
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 77cb3b0c13a6bfe41c6f7a1a5a0f9d7278aea1db
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: b82e300128a41f8315132e1ff93af33c853edb15
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930158"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173521"
 ---
 # <a name="microsoft-identity-web-authentication-library"></a>Библиотека веб-аутентификации Microsoft Identity
 
@@ -58,14 +58,14 @@ dotnet new --install Microsoft.Identity.Web.ProjectTemplates::1.0.0
 
 На следующей схеме показано высокоуровневое представление поддерживаемых типов приложений и соответствующих им аргументов.
 
-:::image type="content" source="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" lightbox="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" alt-text="Схема доступных шаблонов проектов CLI с точкой NET для Microsoft Identity Web&quot;:::
-<br /><sup><b>*</b></sup>`MultiOrg`не поддерживается `webapi2` в, но его можно включить в *appsettings.js* , установив для параметра &quot;клиент&quot; значение `common` или`organizations`
+:::image type="content" source="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" lightbox="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" alt-text="Схема доступных шаблонов проектов CLI с точкой NET для Microsoft Identity Web":::
+<br /><sup><b>*</b></sup>`MultiOrg`не поддерживается `webapi2` в, но его можно включить в *appsettings.js* , установив для параметра "клиент" значение `common` или`organizations`
 <br /><sup><b>**</b></sup>`--calls-graph`не поддерживается для Azure AD B2C
 
 В этом примере команды .NET CLI, взятые из [учебника по серверу блазор](tutorial-blazor-server.md), создается новый проект сервера блазор, включающий правильные пакеты и начальный код (показаны значения заполнителей):
 
 ```dotnetcli
-dotnet new blazorserver2 --auth SingleOrg --calls-graph --client-id &quot;00000000-0000-0000-0000-000000000000&quot; --tenant-id &quot;11111111-1111-1111-1111-111111111111" --output my-blazor-app
+dotnet new blazorserver2 --auth SingleOrg --calls-graph --client-id "00000000-0000-0000-0000-000000000000" --tenant-id "11111111-1111-1111-1111-111111111111" --output my-blazor-app
 ```
 
 #### <a name="github"></a>GitHub
@@ -82,7 +82,7 @@ Microsoft Identity Web — это проект с открытым кодом, �
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [Вход пользователей](scenario-web-app-sign-user-app-configuration.md) в веб-приложениях             | <li>Рабочие или учебные учетные записи<li>Удостоверения социальных сетей (с Azure AD B2C) | <li>Рабочие или учебные учетные записи<li>Personal Microsoft accounts (Личные учетные записи Майкрософт)<li>Удостоверения социальных сетей (с Azure AD B2C)     |
 | [Защита веб-API](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) | <li>Рабочие или учебные учетные записи<li>Удостоверения социальных сетей (с Azure AD B2C) | <li>Рабочие или учебные учетные записи<li>Personal Microsoft accounts (Личные учетные записи Майкрософт)<li>Удостоверения социальных сетей (с Azure AD B2C)     |
-| Проверка издателя в приложениях с несколькими клиентами                                                   | Нет                                                                   | Да, для [всех облаков](authentication-national-cloud.md) и [Azure AD B2C](/azure/active-directory-b2c) |
+| Проверка издателя в приложениях с несколькими клиентами                                                   | Нет                                                                   | Да, для [всех облаков](authentication-national-cloud.md) и [Azure AD B2C](../../active-directory-b2c/index.yml) |
 | Веб-приложение или API [вызовы Microsoft Graph] [сценарий-API-Call-Graph]                             | Нет                                                                   | Да                                                                                                     |
 | Веб-приложение или API [вызовы веб-API] [сценарий-API-Call-API]                                       | Нет                                                                   | Да                                                                                                     |
 | Поддержка учетных данных сертификата                                                         | Нет                                                                   | Да, включая Azure Key Vault                                                                          |
@@ -91,7 +91,7 @@ Microsoft Identity Web — это проект с открытым кодом, �
 | [Область действия/проверка роли приложения] [сценарий — API-проверка] в веб-API                        | Нет                                                                   | Да                                                                                                     |
 | `WWW-Authenticate` Создание заголовков в веб-API                                         | Нет                                                                   | Да                                                                                                     |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы просмотреть Microsoft Identity Web в действии, воспользуйтесь нашим руководством по Блазор Server.
 

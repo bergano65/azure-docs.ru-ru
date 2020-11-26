@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 68e47fe3cc674542a807ecbabd37cc6b624d5c03
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 167ed7e5c00452db4ee77e10236fec3ff86f0439
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145579"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175106"
 ---
 # <a name="understand-how-provisioning-integrates-with-azure-monitor-logs"></a>Сведения о том, как подготовка интегрируется с журналами Azure Monitor
 
@@ -30,13 +30,13 @@ ms.locfileid: "92145579"
 
 :::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
 
-:::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Включить журналы подготовки приложений" lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
 
 > [!NOTE]
 > Если Рабочая область недавно была подготовлена, может потребоваться некоторое время, прежде чем можно будет отправить в нее журналы. Если вы получаете сообщение о том, что подписка не зарегистрирована для использования *Microsoft. Insights* , проверяйте ее через несколько минут.
  
 ## <a name="understanding-the-data"></a>Основные сведения о данных
-Базовый поток данных, который подготовка отправляет средства просмотра журналов, практически идентичны. Azure Monitor журналы получают практически тот же поток, что и пользовательский интерфейс портал Azure и API Azure. Существует лишь несколько **отличий** в полях журнала, как описано в следующей таблице. Дополнительные сведения об этих полях см. в разделе [List провисионингобжектсуммари](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http&preserve-view=true).
+Базовый поток данных, который подготовка отправляет средства просмотра журналов, практически идентичны. Azure Monitor журналы получают практически тот же поток, что и пользовательский интерфейс портал Azure и API Azure. Существует лишь несколько **отличий** в полях журнала, как описано в следующей таблице. Дополнительные сведения об этих полях см. в разделе [List провисионингобжектсуммари](/graph/api/provisioningobjectsummary-list?preserve-view=true&tabs=http&view=graph-rest-beta).
 
 |Журналы Azure Monitor   |Пользовательский интерфейс портала Azure   |API Azure |
 |----------|-----------|------------|
@@ -45,15 +45,15 @@ ms.locfileid: "92145579"
 |активитидатетиме |TimeGenerated |TimeGenerated |
 
 
-## <a name="azure-monitor-workbooks"></a>Azure Monitor книги
+## <a name="azure-monitor-workbooks"></a>книги Azure Monitor;
 
 Azure Monitor книги предоставляют гибкий холст для анализа данных. Они также обеспечивают создание визуальных отчетов с широкими возможностями в портал Azure. Дополнительные сведения см. в разделе [Общие сведения о Azure Monitor книгах](../../azure-monitor/platform/workbooks-overview.md).
 
 Подготовка приложений поставляется с набором готовых книг. Их можно найти на странице книги. Для просмотра данных необходимо убедиться, что все фильтры (timeRange, jobID, appName) заполнены. Кроме того, необходимо убедиться, что приложение подготовлено, в противном случае данные в журналах отсутствуют.
 
-:::image type="content" source="media/application-provisioning-log-analytics/workbooks.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/workbooks.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/workbooks.png" alt-text="Книги подготовки приложений" lightbox="media/application-provisioning-log-analytics/workbooks.png":::
 
-:::image type="content" source="media/application-provisioning-log-analytics/report.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/report.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/report.png" alt-text="Панель мониторинга подготовки приложений" lightbox="media/application-provisioning-log-analytics/report.png":::
 
 ## <a name="custom-queries"></a>Пользовательские запросы
 
@@ -100,15 +100,15 @@ Azure Monitor позволяет настроить пользовательск
 
 Оповещать при возникновении сбоев. Замените идентификатор jobID для приложения.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert1.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/alert1.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert1.png" alt-text="Оповещать при возникновении сбоев." lightbox="media/application-provisioning-log-analytics/alert1.png":::
 
 Возможно, возникла ошибка, из – за которой служба подготовки может перестать работать. Используйте следующее предупреждение, чтобы определить, когда в течение заданного интервала времени нет событий подготовки.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert2.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/alert2.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert2.png" alt-text="Возможно, возникла ошибка, из – за которой служба подготовки может перестать работать." lightbox="media/application-provisioning-log-analytics/alert2.png":::
 
 Оповещать при появлении пика в отключении или удалении.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert3.png" alt-text="Доступ к параметрам диагностики" lightbox="media/application-provisioning-log-analytics/alert3.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert3.png" alt-text="Оповещать при появлении пика в отключении или удалении." lightbox="media/application-provisioning-log-analytics/alert3.png":::
 
 
 ## <a name="community-contributions"></a>Материалы сообщества
@@ -121,4 +121,4 @@ Azure Monitor позволяет настроить пользовательск
 - [Начало работы с запросами журналов Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
 - [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md)
 - [Установка и использование представлений Log Analytics для Azure Active Directory](../reports-monitoring/howto-install-use-log-analytics-views.md)
-- [API подготовки журналов](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta.md&preserve-view=true)
+- [API подготовки журналов](/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta.md)

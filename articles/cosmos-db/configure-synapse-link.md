@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: rosouz
 ms.custom: references_regions
-ms.openlocfilehash: a487d984fe4b8f5d6313e181863872c4ea150059
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 3355b502033451f58ac2289a81414e62823e459b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334545"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175956"
 ---
 # <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db-preview"></a>Настройка и использование Azure Synapse Link для Azure Cosmos DB (предварительная версия)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -63,7 +63,7 @@ ms.locfileid: "93334545"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Откройте [портал Azure](https://portal.azure.com/) или [обозреватель Azure Cosmos](https://cosmos.azure.com/).
+1. Войдите в [портал Azure](https://portal.azure.com/) или [Обозреватель Azure Cosmos DB](https://cosmos.azure.com/).
 
 1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
 
@@ -73,9 +73,9 @@ ms.locfileid: "93334545"
 
 1. Если вы ранее не включили Synapse Link в этой учетной записи, вам будет предложено сделать это, так как создание контейнера с включенным аналитическим хранилищем является необходимым условием. При появлении запроса выберите **Включить Synapse Link**. Выполнение этого процесса может занять от 1 до 5 минут.
 
-1. Нажмите кнопку **OK** , чтобы создать контейнер Azure Cosmos с включенным аналитическим хранилищем.
+1. Нажмите кнопку **OK**, чтобы создать контейнер Azure Cosmos с включенным аналитическим хранилищем.
 
-1. После создания контейнера убедитесь, что аналитическое хранилище включено, щелкнув **Параметры** , расположенные ниже документы в обозреватель данных и убедитесь, что параметр **аналитический период времени жизни** включен.
+1. После создания контейнера убедитесь, что аналитическое хранилище включено, щелкнув **Параметры**, расположенные ниже документы в обозреватель данных и убедитесь, что параметр **аналитический период времени жизни** включен.
 
 ### <a name="net-sdk"></a>Пакет SDK для .NET
 
@@ -171,7 +171,7 @@ except exceptions.CosmosResourceExistsError:
 
 Если контейнер с включенным аналитическим хранилищем был создан на портале Azure, он содержит стандартное значение аналитического срока жизни, которое равно -1. Чтобы обновить это значение, выполните следующие действия:
 
-1. Откройте [портал Azure](https://portal.azure.com/) или [обозреватель Azure Cosmos](https://cosmos.azure.com/).
+1. Войдите в [портал Azure](https://portal.azure.com/) или [Обозреватель Azure Cosmos DB](https://cosmos.azure.com/).
 
 1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
 

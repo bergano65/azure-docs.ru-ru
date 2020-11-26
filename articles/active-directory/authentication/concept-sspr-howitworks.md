@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fa1c2627917bfe386c488470f6a78db4c51f2ec
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fae9872593b48355d4ad3711e8e5092481b16213
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994270"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174536"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Как это работает: самостоятельный сброс пароля в Azure AD
 
@@ -106,7 +106,7 @@ ms.locfileid: "95994270"
 
 * Уведомление от мобильного приложения
 * Код мобильного приложения
-* Адрес электронной почты
+* Email
 * Мобильный телефон
 * Рабочий телефон
 * Контрольные вопросы
@@ -195,9 +195,9 @@ Azure AD проверяет текущее гибридное подключен
 * Локальный клиент обратной записи работает.
 * "Служба Azure AD Connect работает и подключена к локальному клиенту обратной записи. Похоже, однако, что установленная версия Azure AD Connect устарела. [Обновите Azure AD Connect](../hybrid/how-to-upgrade-previous-version.md), чтобы использовать новые функции подключения и получить важные исправления ошибок".
 * К сожалению, не удается проверить состояние локального клиента обратной записи, так как установленная версия Azure AD Connect устарела. [Обновите Azure AD Connect](../hybrid/how-to-upgrade-previous-version.md), чтобы проверить состояние подключения".
-* "Сейчас не удается подключиться к локальному клиенту обратной записи. [Устраните неполадки с Azure AD Connect](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity), чтобы восстановить подключение".
+* "Сейчас не удается подключиться к локальному клиенту обратной записи. [Устраните неполадки с Azure AD Connect](./troubleshoot-sspr-writeback.md), чтобы восстановить подключение".
 * "Не удается подключиться к локальному клиенту обратной записи, так как обратная запись пароля не настроена. [Настройте обратную запись пароля](./tutorial-enable-sspr-writeback.md), чтобы восстановить подключение".
-* "Сейчас не удается подключиться к локальному клиенту обратной записи. Возможно, дело во временных проблемах с нашей стороны. Если ошибка сохраняется, [устраните неполадки с Azure AD Connect](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity), чтобы восстановить подключение".
+* "Сейчас не удается подключиться к локальному клиенту обратной записи. Возможно, дело во временных проблемах с нашей стороны. Если ошибка сохраняется, [устраните неполадки с Azure AD Connect](./troubleshoot-sspr-writeback.md), чтобы восстановить подключение".
 
 Чтобы приступить к работе с обратной записью SSPR, ознакомьтесь со следующим руководством.
 
@@ -235,7 +235,7 @@ SSPR выполняет эквивалент сброса пароля, иниц
 > [!NOTE]
 > Учетные записи Майкрософт, которым предоставлен гостевой доступ к вашему клиенту Azure AD, такие как Hotmail.com, Outlook.com или другие личные адреса электронной почты, не могут использовать Azure AD SSPR. Им потребуется сбросить свой пароль, как описано в статье [Не удается войти в учетную запись Майкрософт](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с SSPR, выполните инструкции из следующего руководства.
 

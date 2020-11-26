@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f6c5985c16875e263f2494f56636abb4d4e980d
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 8eb8de2424012d12f216f154eb077028a8f82d76
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95237261"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173708"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Предварительные требования для облачной подготовки Azure AD Connect
 В этой статье описано, как выбрать и применить облачную подготовку Azure Active Directory (Azure AD) Connect в качестве решения для идентификации.
@@ -30,11 +30,11 @@ ms.locfileid: "95237261"
 - Конфигурации для локального брандмауэра.
 
 ## <a name="group-managed-service-accounts"></a>Групповые управляемые учетные записи служб
-Групповая управляемая учетная запись службы — это управляемая Доменная учетная запись, которая обеспечивает автоматическое управление паролями, упрощенное управление именами участников-служб, возможность делегировать управление другим администраторам, а также расширяет эту функциональность на нескольких серверах.  Azure AD Connect Cloud Sync поддерживает и использует gMSA для запуска агента.  Для создания этой учетной записи вам будет предложено ввести учетные данные администратора во время установки.  Учетная запись будет отображаться как (Домаин\проважентгмса $).  Дополнительные сведения о gMSA см. в разделе [групповые управляемые учетные записи служб](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) . 
+Групповая управляемая учетная запись службы — это управляемая Доменная учетная запись, которая обеспечивает автоматическое управление паролями, упрощенное управление именами участников-служб, возможность делегировать управление другим администраторам, а также расширяет эту функциональность на нескольких серверах.  Azure AD Connect Cloud Sync поддерживает и использует gMSA для запуска агента.  Для создания этой учетной записи вам будет предложено ввести учетные данные администратора во время установки.  Учетная запись будет отображаться как (Домаин\проважентгмса $).  Дополнительные сведения о gMSA см. в разделе [групповые управляемые учетные записи служб](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) . 
 
 ### <a name="prerequisites-for-gmsa"></a>Необходимые компоненты для gMSA:
 1.  Схема Active Directory в лесу домена gMSA должна быть обновлена до Windows Server 2012
-2.  [Модули POWERSHELL RSAT](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools) на контроллере домена
+2.  [Модули POWERSHELL RSAT](/windows-server/remote/remote-server-administration-tools) на контроллере домена
 3.  По крайней мере один контроллер домена в домене должен работать под Windows Server 2012.
 4.  Сервер, присоединенный к домену, на котором устанавливается агент, должен быть либо Windows Server 2012, либо более поздней версии.
 

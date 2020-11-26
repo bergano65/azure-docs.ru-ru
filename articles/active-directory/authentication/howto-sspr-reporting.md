@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6aa31d0b8c68f38d2b4fc41a6bbaaeab8a3ffac
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 3f2c5b37c713b69df56e938fdaa2a9134402d765
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363612"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173908"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -53,7 +53,7 @@ ms.locfileid: "92363612"
 
 ### <a name="combined-registration"></a>Объединенная регистрация
 
-Если включена [Объединенная регистрация](./concept-registration-mfa-sspr-combined.md), сведения о действиях пользователей в журналах аудита будут найдены в разделе **Security**  >  **методы проверки подлинности**безопасности.
+Если включена [Объединенная регистрация](./concept-registration-mfa-sspr-combined.md), сведения о действиях пользователей в журналах аудита будут найдены в разделе **Security**  >  **методы проверки подлинности** безопасности.
 
 ## <a name="description-of-the-report-columns-in-the-azure-portal"></a>Описание столбцов отчета на портале Azure
 
@@ -169,7 +169,7 @@ ms.locfileid: "92363612"
      >[!NOTE]
      >Сбой не означает, что пользователь не может сбросить свой пароль. Он означает, что пользователь не завершил процесс регистрации. Если в учетной записи содержатся непроверенные, но правильные данные (например, непроверенный телефонный номер), их по-прежнему можно использовать для сброса пароля.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отчеты об использовании и аналитике SSPR и MFA](howto-authentication-methods-usage-insights.md)
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
@@ -181,7 +181,7 @@ ms.locfileid: "92363612"
 * [Параметры политики для SSPR](concept-sspr-policy.md)
 * [Что такое обратная запись паролей и каково ее назначение](./tutorial-enable-sspr-writeback.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
+* [Как устранить неполадки самостоятельного сброса пароля](./troubleshoot-sspr.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
 
 [Reporting]: ./media/howto-sspr-reporting/sspr-reporting.png "Пример журналов аудита действий SSPR в Azure AD"

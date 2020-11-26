@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: baselden, librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0143da9c1961b4123467120210135f7db2c582c8
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b4c06e53d3ddfb5f344a759e31d83cb22ce6d4d3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839579"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174142"
 ---
 # <a name="plan-a-passwordless-authentication-deployment-in-azure-active-directory"></a>Планирование развертывания проверки подлинности с незащищенным паролем в Azure Active Directory
 
@@ -78,7 +78,7 @@ ms.locfileid: "94839579"
 
 Необходимые условия для Windows Hello сильно зависят от того, выполняется ли развертывание в локальной, гибридной или облачной конфигурации. Дополнительные сведения см. в [полном списке предварительных требований для Windows Hello для бизнеса](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
-### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
+### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
 
 Пользователи регистрируют свой метод работы с паролями как часть потока регистрации многофакторной идентификации Azure AD. Многофакторная идентификация с именем пользователя и паролем, а также другим зарегистрированным методом может использоваться в качестве резервной, если они не могут использовать телефон или ключ безопасности в некоторых сценариях.
 
@@ -126,7 +126,7 @@ ms.locfileid: "94839579"
 
 Группы можно синхронизировать из локального каталога или из Azure AD. Когда вы довольны результатами вашего пилотного развертывания, вы можете переключиться на проверку подлинности без пароля для всех пользователей.
 
-Ознакомьтесь с рекомендациями [по пилотной](https://aka.ms/deploymentplans) программе на странице планы развертывания.
+Ознакомьтесь с рекомендациями [по пилотной](../fundamentals/active-directory-deployment-plans.md) программе на странице планы развертывания.
 
 ## <a name="plan-passwordless-authentication-with-the-microsoft-authenticator-app"></a>Планирование проверки подлинности без пароля с помощью приложения Microsoft Authenticator
 

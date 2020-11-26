@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 09/24/2020
 ms.author: joflore
-ms.openlocfilehash: a66268c0cd0c2382b412873ec7f78b87d3491594
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: aae665b5982ab2b5c1163bb9297eda5f2e5d344a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968180"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175378"
 ---
 # <a name="migrate-azure-active-directory-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>Перенос доменных служб Azure Active Directory из классической модели виртуальной сети в диспетчер ресурсов
 
@@ -302,7 +302,7 @@ AD DS Azure предоставляет журналы аудита для пом
 
 1. [Настройка политики паролей][password-policy] для уменьшения количества ограничений в управляемом домене и отслеживания событий в журналах аудита.
 1. Если какие либо учетные записи служб используют пароли с истекшим сроком, как указано в журналах аудита, обновите эти учетные записи с использованием правильного пароля.
-1. Если виртуальная машина доступна в Интернете, проверьте наличие универсальных имен учетных записей, таких как *Администратор*, *пользователь*или *гость* , с высокими попытками входа. Там, где это возможно, обновите эти виртуальные машины, чтобы они использовали менее обычные именованные учетные записи.
+1. Если виртуальная машина доступна в Интернете, проверьте наличие универсальных имен учетных записей, таких как *Администратор*, *пользователь* или *гость* , с высокими попытками входа. Там, где это возможно, обновите эти виртуальные машины, чтобы они использовали менее обычные именованные учетные записи.
 1. Используйте трассировку сети на виртуальной машине, чтобы узнать источник атак, и блокировать попытки входа с этих IP-адресов.
 1. При наличии минимальных проблем с блокировкой при необходимости обновите политику детальных паролей, чтобы она была максимально строгей.
 
@@ -360,7 +360,7 @@ Migrate-Aadds `
 [notifications]: notifications.md
 [password-policy]: password-policy.md
 [secure-ldap]: tutorial-configure-ldaps.md
-[migrate-iaas]: ../virtual-machines/windows/migration-classic-resource-manager-overview.md
+[migrate-iaas]: ../virtual-machines/migration-classic-resource-manager-overview.md
 [join-windows]: join-windows-vm.md
 [tutorial-create-management-vm]: tutorial-create-management-vm.md
 [troubleshoot-domain-join]: troubleshoot-domain-join.md
