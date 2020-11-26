@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbf23a32fdf5515402e18f70fe032a1a589dbcbe
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 32526a31a9d52fbfac57f1d384b25e0939b5e297
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424464"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172879"
 ---
 # <a name="how-to-find-your-azure-active-directory-tenant-id"></a>Как найти идентификатор клиента Azure Active Directory
 
@@ -51,7 +51,7 @@ Get-AzTenant
 ## <a name="find-tenant-id-with-cli"></a>Поиск идентификатора клиента с помощью интерфейса командной строки
 Если вы хотите использовать интерфейс командной строки для поиска идентификатора клиента, это можно сделать с помощью [Azure CLI](/cli/azure/install-azure-cli) или [Microsoft 365 CLI](https://pnp.github.io/cli-microsoft365/). 
 
-Для Azure CLI используйте одну из команд **AZ login** , **AZ Account List** или **AZ Account List** , как показано в следующем примере. Обратите внимание на свойство **tenantId** для каждой из подписок в выходных данных каждой команды.
+Для Azure CLI используйте одну из команд **AZ login**, **AZ Account List** или **AZ Account List** , как показано в следующем примере. Обратите внимание на свойство **tenantId** для каждой из подписок в выходных данных каждой команды.
 
 ```azurecli-interactive
 az login
@@ -71,10 +71,10 @@ m365 tenant id get
 Дополнительные сведения см. в справочнике по [идентификатору клиента Microsoft 365 Get](https://pnp.github.io/cli-microsoft365/cmd/tenant/id/id-get/) .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о создании нового клиента Azure AD см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 
 - Сведения о том, как связать или добавить подписку на клиент, см. в статье [связывание или Добавление подписки Azure в клиент Azure Active Directory](active-directory-how-subscriptions-associated-directory.md).
 
-- Сведения о том, как найти идентификатор объекта, см. в разделе [Поиск идентификатора объекта пользователя](https://docs.microsoft.com/partner-center/find-ids-and-domain-names#find-the-user-object-id).
+- Сведения о том, как найти идентификатор объекта, см. в разделе [Поиск идентификатора объекта пользователя](/partner-center/find-ids-and-domain-names#find-the-user-object-id).

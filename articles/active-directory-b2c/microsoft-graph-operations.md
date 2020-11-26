@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9db46d13c9a798204958a7c295df9cca169fc08f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: cd4c70354920655507f987f43a542e4b474803e1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94954041"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96170945"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph операции, доступные для Azure AD B2C
 
@@ -36,12 +36,12 @@ ms.locfileid: "94954041"
 
 ## <a name="user-phone-number-management"></a>Управление номером телефона пользователя
 
-- [Добавить](https://docs.microsoft.com/graph/api/authentication-post-phonemethods)
-- [Получить](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get)
-- [Обновление](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update)
-- [Удаление](https://docs.microsoft.com/graph/api/phoneauthenticationmethod-delete)
+- [Добавление](/graph/api/authentication-post-phonemethods)
+- [Получить](/graph/api/b2cauthenticationmethodspolicy-get)
+- [Обновление](/graph/api/b2cauthenticationmethodspolicy-update)
+- [Удаление](/graph/api/phoneauthenticationmethod-delete)
 
-Дополнительные сведения об управлении номером телефона для входа пользователя с помощью Microsoft Graph API см. в разделе [методы проверки подлинности B2C](https://docs.microsoft.com/graph/api/resources/b2cauthenticationmethodspolicy).
+Дополнительные сведения об управлении номером телефона для входа пользователя с помощью Microsoft Graph API см. в разделе [методы проверки подлинности B2C](/graph/api/resources/b2cauthenticationmethodspolicy).
 
 ## <a name="identity-providers-user-flow"></a>Поставщики удостоверений (поток пользователя)
 

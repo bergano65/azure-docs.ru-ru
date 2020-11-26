@@ -13,16 +13,16 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57466cccb71444d5711a9221c324a107757c5e82
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 4baaf2de6fbe4a56f64d449644b8594217dc432c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576801"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172743"
 ---
 # <a name="remote-desktop-gateway-services"></a>Службы шлюза удаленный рабочий стол
 
-Развертывание Standard службы удаленных рабочих столов (RDS) включает различные [службы ролей удаленный рабочий стол](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/desktop-hosting-logical-architecture) , работающие под Windows Server. В развертывании RDS с помощью прокси приложения Azure Active Directory (Azure AD) имеется постоянное исходящее подключение с сервера, на котором запущена служба соединителя. Другие развертывания оставляют открытыми входящие подключения через подсистему балансировки нагрузки. Этот шаблон проверки подлинности позволяет предлагать больше типов приложений, публикуя локальные приложения с помощью службы удаленных рабочих столов. Это также сокращает область атаки развертывания с помощью AD Application Proxy Azure.
+Развертывание Standard службы удаленных рабочих столов (RDS) включает различные [службы ролей удаленный рабочий стол](/windows-server/remote/remote-desktop-services/Desktop-hosting-logical-architecture) , работающие под Windows Server. В развертывании RDS с помощью прокси приложения Azure Active Directory (Azure AD) имеется постоянное исходящее подключение с сервера, на котором запущена служба соединителя. Другие развертывания оставляют открытыми входящие подключения через подсистему балансировки нагрузки. Этот шаблон проверки подлинности позволяет предлагать больше типов приложений, публикуя локальные приложения с помощью службы удаленных рабочих столов. Это также сокращает область атаки развертывания с помощью AD Application Proxy Azure.
 
 ## <a name="use-when"></a>Используется, если
 
@@ -32,11 +32,11 @@ ms.locfileid: "94576801"
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь** : доступ к RDS, обслуживаемой прокси приложения.
+* **Пользователь**: доступ к RDS, обслуживаемой прокси приложения.
 
 * **Веб-браузер**. компонент, с которым взаимодействует пользователь, чтобы получить доступ к внешнему URL-адресу приложения.
 
-* **Azure AD** : проверяет подлинность пользователя. 
+* **Azure AD**: проверяет подлинность пользователя. 
 
 * **Служба прокси приложения**. действует как обратный прокси-сервер для пересылки запроса от пользователя к RDS. Прокси приложения также может применять любые политики условного доступа. 
 
@@ -44,8 +44,7 @@ ms.locfileid: "94576801"
 
 ## <a name="implement-remote-desktop-gateway-services-with-azure-ad"></a>Реализация служб шлюза удаленный рабочий стол с помощью Azure AD
 
-* [Публикация удаленного рабочего стола с помощью Azure AD Application Proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-integrate-with-remote-desktop-services) 
+* [Публикация удаленного рабочего стола с помощью Azure AD Application Proxy](../manage-apps/application-proxy-integrate-with-remote-desktop-services.md) 
 
-* [Добавление локального приложения для удаленного доступа через прокси приложения в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)
+* [Добавление локального приложения для удаленного доступа через прокси приложения в Azure AD](../manage-apps/application-proxy-add-on-premises-application.md)
 
- 

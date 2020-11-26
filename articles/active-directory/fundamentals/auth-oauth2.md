@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: daf40a2ced3f753619e9c4723dbe78cd7e51ff21
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: c1604d79ce5eb9949028cd677b340bf3d4b09f6c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577912"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172845"
 ---
 # <a name="oauth-20-authentication-with-azure-active-directory"></a>Аутентификация OAuth 2,0 с помощью Azure Active Directory
 
@@ -34,20 +34,19 @@ OAuth 2,0 напрямую связан с OpenID Connect Connect (OIDC). Так
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь** : запрашивает службу из веб-приложения (приложение). Пользователь обычно является владельцем ресурса, которому принадлежат данные, и обладает возможностями, позволяющими клиентам получать доступ к данным или ресурсам. 
+* **Пользователь**: запрашивает службу из веб-приложения (приложение). Пользователь обычно является владельцем ресурса, которому принадлежат данные, и обладает возможностями, позволяющими клиентам получать доступ к данным или ресурсам. 
 
 * **Веб-браузер**. веб-браузер, с которым взаимодействует пользователь, является клиентом OAuth. 
 
 * **Веб-приложение**. это веб-приложение или сервер ресурсов, где находится ресурс или данные. Он доверяет серверу авторизации безопасную проверку подлинности и авторизацию клиента OAuth. 
 
-* **Azure AD** : Azure AD — это сервер авторизации, также известный как поставщик удостоверений (IDP). Он обеспечивает безопасную обработку любых данных, связанных с данными пользователя, их доступом и отношениями доверия. Он отвечает за выдачу маркеров, которые предоставляют и отменяют доступ к ресурсам.
+* **Azure AD**: Azure AD — это сервер авторизации, также известный как поставщик удостоверений (IDP). Он обеспечивает безопасную обработку любых данных, связанных с данными пользователя, их доступом и отношениями доверия. Он отвечает за выдачу маркеров, которые предоставляют и отменяют доступ к ресурсам.
 
 ## <a name="implement-oauth-20-with-azure-ad"></a>Реализация OAuth 2,0 с помощью Azure AD
 
-* [Интеграция приложений с Azure AD](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) 
+* [Интеграция приложений с Azure AD](../saas-apps/tutorial-list.md) 
 
-* [Протоколы OAuth 2,0 и OpenID Connect Connect на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols) 
+* [Протоколы OAuth 2,0 и OpenID Connect Connect на платформе Microsoft Identity](../develop/active-directory-v2-protocols.md) 
 
-* [Типы приложений и OAuth2](https://docs.microsoft.com/azure/active-directory/develop/v2-app-types) 
+* [Типы приложений и OAuth2](../develop/v2-app-types.md) 
 
- 

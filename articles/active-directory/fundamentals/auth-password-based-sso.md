@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74815976036abafc56f97e622351a1018fe30504
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 5bd6a5c8af117bf6cb39969a5f1b1f17ff08681c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576938"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172828"
 ---
 # <a name="password-based-authentication-with-azure-active-directory"></a>Проверка подлинности на основе пароля с помощью Azure Active Directory
 
@@ -35,20 +35,19 @@ ms.locfileid: "94576938"
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь** : доступ к созданному на основе приложения приложению из моих приложений или путем непосредственного посещения сайта. 
+* **Пользователь**: доступ к созданному на основе приложения приложению из моих приложений или путем непосредственного посещения сайта. 
 
 * **Веб-браузер**. компонент, с которым взаимодействует пользователь, чтобы получить доступ к внешнему URL-адресу приложения. Пользователь обращается к приложению на основе форм через расширение MyApps. 
 
-* **Расширение MyApps** : определяет настроенное приложение единого входа на основе пароля и предоставляет учетные данные для входа в форму. Расширение MyApps устанавливается в веб-браузере. 
+* **Расширение MyApps**: определяет настроенное приложение единого входа на основе пароля и предоставляет учетные данные для входа в форму. Расширение MyApps устанавливается в веб-браузере. 
 
-* **Azure AD** : проверяет подлинность пользователя.
+* **Azure AD**: проверяет подлинность пользователя.
 
 ## <a name="implement-password-based-sso-with-azure-ad"></a>Реализация единого входа на основе пароля с помощью Azure AD
 
-* [Что такое единый вход на основе пароля](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on) 
+* [Что такое единый вход на основе пароля](../manage-apps/what-is-single-sign-on.md) 
 
-* [Настройка единого входа на основе пароля для облачных приложений ](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-password-single-sign-on-non-gallery-applications)
+* [Настройка единого входа на основе пароля для облачных приложений ](../manage-apps/configure-password-single-sign-on-non-gallery-applications.md)
 
-* [Настройка единого входа на основе пароля для локальных приложений с помощью прокси приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-password-vaulting)
+* [Настройка единого входа на основе пароля для локальных приложений с помощью прокси приложения](../manage-apps/application-proxy-configure-single-sign-on-password-vaulting.md)
 
- 

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de91ffe721cbaf2061c0ded70a150fbc410af955
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 1b24989c32c0c385f8ad41d73dacba41bb7eef79
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95503093"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173249"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -172,13 +172,13 @@ Microsoft Workplace Analytics является надстройкой. Она с
 
 К примеру, устранив для пользователя проблему продублированного адреса прокси-сервера, необходимо активировать обработку пользователя. Для повторной обработки пользователя перейдите в область пользователя, откройте **Лицензии**, а потом нажмите кнопку **Повторная обработка** на панели инструментов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить дополнительные сведения о сценариях управления лицензиями с помощью групп, см. ссылки ниже.
 
 * [Group-based licensing basics in Azure Active Directory](../fundamentals/active-directory-licensing-whatis-azure-portal.md) (Основы группового лицензирования в Azure Active Directory)
-* [Назначение лицензий группе в Azure Active Directory](../users-groups-roles/licensing-groups-assign.md)
+* [Назначение лицензий группе в Azure Active Directory](./licensing-groups-assign.md)
 * [Как перевести отдельных лицензированных пользователей на групповое лицензирование в Azure Active Directory](licensing-groups-migrate-users.md)
 * [Как безопасно перевести пользователей с отдельных лицензий продуктов с использованием группового лицензирования](licensing-groups-change-licenses.md)
-* [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](../users-groups-roles/licensing-group-advanced.md)
+* [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](./licensing-group-advanced.md)
 * [Примеры PowerShell для группового лицензирования в Azure AD](licensing-ps-examples.md)

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 11/12/2020
-ms.openlocfilehash: b41f5e9a3bd4d3cbe52cf2e1c567d24de8a661f4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6d40eab12c9726459543d0b69e27b73178eba99f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95992837"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96170622"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
@@ -100,7 +100,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
    | Поле   | Определение |
    |---------|------------|
    | Подписка |  Выберите каталог, содержащий подписку Azure, в которой была создана группа ресурсов *Azure-AD-B2C-Monitor* . |
-   | Region| Выберите регион, в котором будет развернут ресурс.  | 
+   | Регион| Выберите регион, в котором будет развернут ресурс.  | 
    | Имя предложения MSP| Имя, описывающее это определение. Например, *Azure AD B2C мониторинг*.  |
    | Описание предложения MSP| Краткое описание предложения. Например, *включает Azure Monitor в Azure AD B2C*.|
    | Управляется по идентификатору клиента| **Идентификатор клиента** Azure AD B2C клиента (также известный как идентификатор каталога). |
@@ -140,9 +140,9 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 
 Параметры диагностики определяют, где должны отправляться журналы и метрики для ресурса. Возможные места назначения
 
-- [Учетная запись хранения Azure](../azure-monitor/platform/resource-logs-collect-storage.md)
-- Решения [концентраторов событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md)
-- [Рабочая область Log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md)
+- [Учетная запись хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- Решения [концентраторов событий](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)
+- [Рабочая область Log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)
 
 В этом примере мы используем рабочую область Log Analytics для создания панели мониторинга.
 
@@ -164,7 +164,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 1. Установите флажок для каждого назначения, чтобы отправить журналы. Выберите **настроить** , чтобы указать их параметры **, как описано в следующей таблице**.
 1. Выберите **отправить log Analytics**, а затем выберите имя созданной ранее **рабочей области** ( `AzureAdB2C` ).
 1. Выберите **AuditLogs** и **сигнинлогс**.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 > [!NOTE]
 > После выпуска события для [отображения в log Analytics рабочей области](../azure-monitor/platform/data-ingestion-time.md)может пройти до 15 минут. Кроме того, Узнайте больше о [Active Directoryх задержки отчетов](../active-directory/reports-monitoring/reference-reports-latencies.md), которые могут повлиять на устаревшие данные и играют важную роль в отчетности.
@@ -180,7 +180,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 Запросы по журналам позволяют с пользой применить все данные, собранные в журналах Azure Monitor. Мощный язык запросов позволяет объединять данные из нескольких таблиц, объединять большие наборы данных и выполнять сложные операции с минимальным кодом. Практически любой вопрос можно ответить и выполнить анализ до тех пор, пока собираются вспомогательные данные, и вы понимаете, как создать правильный запрос. Дополнительные сведения см. [в разделе Приступая к работе с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md).
 
 1. В **log Analytics рабочей области** выберите **журналы** .
-1. В редакторе запросов вставьте следующий запрос [языка запросов Kusto](https://docs.microsoft.com/azure/data-explorer/kusto/query/) . Этот запрос показывает использование политики по операциям за последние x дней. Длительность по умолчанию — 90 дней (90d). Обратите внимание, что запрос связан только с операцией, в которой маркер или код выдается политикой.
+1. В редакторе запросов вставьте следующий запрос [языка запросов Kusto](/azure/data-explorer/kusto/query/) . Этот запрос показывает использование политики по операциям за последние x дней. Длительность по умолчанию — 90 дней (90d). Обратите внимание, что запрос связан только с операцией, в которой маркер или код выдается политикой.
 
     ```kusto
     AuditLogs
@@ -203,9 +203,9 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
     - **Сохранить как** -выбрать `query` .
     - **Категория** — выберите `Log` .
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
-Можно также изменить запрос для визуализации данных с помощью оператора [Render](https://docs.microsoft.com/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) .
+Можно также изменить запрос для визуализации данных с помощью оператора [Render](/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) .
 
 ```kusto
 AuditLogs
@@ -240,7 +240,7 @@ AuditLogs
 1. Нажмите кнопку **done Edit (готово к редактированию** ) на панели инструментов, чтобы завершить редактирование книги.
 1. Наконец, сохраните книгу с помощью кнопки **сохранить** на панели инструментов.
 1. Укажите **заголовок**, например *панель мониторинга Azure AD B2C*.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
     ![Сохранение книги](./media/azure-monitor/wrkb-title.png)
 
@@ -314,7 +314,7 @@ workspace("AD-B2C-TENANT1").AuditLogs
 
 Журналы Azure Monitor предназначены для масштабирования и поддержки сбора, индексирования и хранения больших объемов данных в день из любого источника в вашей организации или развертывания в Azure. По умолчанию журналы хранятся в течение 30 дней, но длительность хранения может быть увеличена до двух лет. Узнайте, как [управлять использованием и затратами с помощью журналов Azure Monitor](../azure-monitor/platform/manage-cost-storage.md). После выбора ценовой категории можно [изменить срок хранения данных](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные примеры находятся в коллекции Azure AD B2C [SIEM](https://aka.ms/b2csiem). 
 

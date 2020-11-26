@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7cde23372f6a3af0320e2d48c78a0d7fe69a2600
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 3916855a62e506b12f72de713ccb56e89f846938
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045709"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171812"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
@@ -48,7 +48,7 @@ ms.locfileid: "92045709"
    curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
    ```
 
-* **Raspbian Stretch**:
+* **Растяжение ОС Raspberry Pi**:
 
    ```bash
    curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
@@ -108,7 +108,7 @@ curl -L <iotedge link> -o iotedge.deb && sudo dpkg -i ./iotedge.deb
 
 При выполнении команды Update-IoTEdge удаляет и обновляет управляющую программу безопасности с устройства, а также два образа контейнеров среды выполнения. Файл config. YAML хранится на устройстве, а также данные из подсистемы контейнеров значок Кита (если вы используете контейнеры Windows). Хранение сведений о конфигурации означает, что в процессе обновления не требуется повторно указывать строку подключения или сведения о службе подготовки устройств для устройства.
 
-Если вы хотите выполнить обновление до определенной версии управляющей программы безопасности, найдите версию, которую вы хотите использовать, из [IOT Edge выпусков](https://github.com/Azure/azure-iotedge/releases). В этой версии Скачайте файл **Microsoft-Azure-IoTEdge.cab** . Затем используйте параметр, `-OfflineInstallationPath` чтобы указать расположение локального файла. Например.
+Если вы хотите выполнить обновление до определенной версии управляющей программы безопасности, найдите версию, которую вы хотите использовать, из [IOT Edge выпусков](https://github.com/Azure/azure-iotedge/releases). В этой версии Скачайте файл **Microsoft-Azure-IoTEdge.cab** . Затем используйте параметр, `-OfflineInstallationPath` чтобы указать расположение локального файла. Пример:
 
 ```powershell
 . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Update-IoTEdge -ContainerOs <Windows or Linux> -OfflineInstallationPath <absolute path to directory>
@@ -160,7 +160,7 @@ docker rmi mcr.microsoft.com/azureiotedge-agent:1.0
 
    ![Настройка параметров среды выполнения](./media/how-to-update-iot-edge/configure-runtime.png)
 
-1. В **параметрах среды выполнения**обновите значение **образа** для **концентратора ребра** , указав требуемую версию. Не выбирайте **сохранить** еще.
+1. В **параметрах среды выполнения** обновите значение **образа** для **концентратора ребра** , указав требуемую версию. Не выбирайте **сохранить** еще.
 
    ![Обновить версию образа концентратора ребра](./media/how-to-update-iot-edge/runtime-settings-edgehub.png)
 
@@ -194,7 +194,7 @@ docker rmi mcr.microsoft.com/azureiotedge-agent:1.0
 
 3. Если загруженный CAB-файл имеет суффикс архитектуры, переименуйте файл в **Microsoft-Azure-IoTEdge.cab**.
 
-4. Чтобы выполнить обновление с помощью автономных компонентов, [источник точки](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7#script-scope-and-dot-sourcing) является локальной копией сценария PowerShell. Затем используйте параметр в `-OfflineInstallationPath` составе `Update-IoTEdge` команды и укажите абсолютный путь к каталогу файла. Например:
+4. Чтобы выполнить обновление с помощью автономных компонентов, [источник точки](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7#script-scope-and-dot-sourcing) является локальной копией сценария PowerShell. Затем используйте параметр в `-OfflineInstallationPath` составе `Update-IoTEdge` команды и укажите абсолютный путь к каталогу файла. Например,
 
    ```powershell
    . <path>\IoTEdgeSecurityDaemon.ps1

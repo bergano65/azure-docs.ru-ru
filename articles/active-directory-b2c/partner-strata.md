@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 6276bd0db9bfb93897f7350b87d208ac2951c859
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: bddc4c64feb31f78bed482bbd729ab1c4b8e676e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94330331"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171421"
 ---
 # <a name="tutorial-for-extending-azure-ad-b2c-to-protect-on-premises-applications-using-strata"></a>Руководство по расширению Azure AD B2C для защиты локальных приложений с помощью Strata
 
@@ -25,17 +25,17 @@ ms.locfileid: "94330331"
 
 - **Единый Sign-On клиента (SSO) в локальные гибридные приложения**. Azure AD B2C поддерживает единый вход пользователей с помощью Маверикс Identity Orchestrator. Пользователи входят с учетными записями, размещенными в Azure AD B2C или в поставщике удостоверений социальных сетей (IdP). Маверикс расширяет единый вход для приложений, которые были исторически защищены устаревшими системами идентификации, такими как Symantec SiteMinder.
 
-- **Расширение единого входа на основе стандартов в приложения без их перезаписи** : используйте Azure AD B2C для управления доступом пользователей и включения единого входа с соединителями SAML или OIDC для Маверикс Identity Orchestrator.
+- **Расширение единого входа на основе стандартов в приложения без их перезаписи**: используйте Azure AD B2C для управления доступом пользователей и включения единого входа с соединителями SAML или OIDC для Маверикс Identity Orchestrator.
 
 - **Простая настройка**. Azure AD B2C предоставляет простой пошаговый пользовательский интерфейс для подключения соединителей SAML Маверикс Identity ORCHESTRATOR или OIDC к Azure AD B2C.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы приступить к работе, вам потребуется:
 
-- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Azure AD B2C клиент](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с подпиской Azure.
+- [Azure AD B2C клиент](./tutorial-create-tenant.md) , связанный с подпиской Azure.
 
 - Экземпляр [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) для хранения секретов, используемых Маверикс Identity Orchestrator. Он используется для подключения к Azure AD B2C или другим поставщикам атрибутов, например к каталогу или базе данных LDAP.
 
@@ -47,9 +47,9 @@ ms.locfileid: "94330331"
 
 Интеграция Маверикс Strata включает следующие компоненты:
 
-- **Azure AD B2C** : сервер авторизации, отвечающий за проверку учетных данных пользователя. Пользователи, прошедшие проверку подлинности, могут получить доступ к локальным приложениям с помощью локальной учетной записи, хранящейся в каталоге Azure AD B2C.
+- **Azure AD B2C**: сервер авторизации, отвечающий за проверку учетных данных пользователя. Пользователи, прошедшие проверку подлинности, могут получить доступ к локальным приложениям с помощью локальной учетной записи, хранящейся в каталоге Azure AD B2C.
 
-- **Внешний социальные или корпоративные IDP** : может быть любым поставщиком OpenID Connect Connect, Facebook, Google или GitHub. См. сведения об использовании [внешних поставщиков удостоверений](https://docs.microsoft.com/azure/active-directory-b2c/technical-overview#external-identity-providers) с Azure AD B2C.  
+- **Внешний социальные или корпоративные IDP**: может быть любым поставщиком OpenID Connect Connect, Facebook, Google или GitHub. См. сведения об использовании [внешних поставщиков удостоверений](./technical-overview.md#external-identity-providers) с Azure AD B2C.  
 
 - **Strata Маверикс Identity Orchestrator**. служба, которая управляет входом пользователя и прозрачно передает удостоверение приложениям через заголовки HTTP.
 
@@ -57,7 +57,7 @@ ms.locfileid: "94330331"
 
 ![На рисунке показана архитектура интеграции Azure AD B2C с Strata Маверикс для обеспечения доступа к гибридным приложениям.](./media/partner-strata/strata-architecture-diagram.png)
 
-| Шаги | Описание: |
+| Шаги | Описание |
 |:-------|:---------------|
 | 1. | Пользователь выполняет запрос на доступ к локальному размещенному приложению. Маверикс Identity Orchestrator передает запрос, сделанный пользователем, в приложение.|
 | 2. | Orchestrator проверяет состояние проверки подлинности пользователя. Если он не получает маркер сеанса или указанный токен сеанса является недопустимым, он отправляет пользователю Azure AD B2C для проверки подлинности.|
@@ -75,7 +75,7 @@ ms.locfileid: "94330331"
 
 1. **Регистрация приложения**
 
-   a. [Зарегистрируйте Orchestrator как приложение](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga) в Azure AD B2C клиенте.
+   а. [Зарегистрируйте Orchestrator как приложение](./tutorial-register-applications.md?tabs=app-reg-ga) в Azure AD B2C клиенте.
    >[!Note]
    >Вам потребуется имя клиента и идентификатор, идентификатор клиента, секрет клиента, настроенные утверждения и URI перенаправления позже при настройке экземпляра Orchestrator.
 
@@ -83,13 +83,13 @@ ms.locfileid: "94330331"
 
    c. Добавьте URI перенаправления для приложения. Этот URI будет соответствовать `oauthRedirectURL` параметру конфигурации соединителя Azure AD B2C Orchestrator, например `https://example.com/oidc-endpoint` .
 
-2. **Создание потока пользователя** : создание [входа и вход в поток пользователя](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows).
+2. **Создание потока пользователя**: создание [входа и вход в поток пользователя](./tutorial-create-user-flows.md).
 
-3. **Добавление IDP** : выберите для входа пользователя с локальной учетной записью или социальным или корпоративным [IDP](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-add-identity-providers).
+3. **Добавление IDP**: выберите для входа пользователя с локальной учетной записью или социальным или корпоративным [IDP](./tutorial-add-identity-providers.md).
 
-4. **Определение атрибутов пользователя** : определите атрибуты, которые будут собираться во время регистрации.
+4. **Определение атрибутов пользователя**: определите атрибуты, которые будут собираться во время регистрации.
 
-5. **Укажите утверждения приложения** : укажите атрибуты, которые будут возвращены приложению через экземпляр Orchestrator. Orchestrator использует атрибуты из утверждений, возвращенных Azure AD B2C, и может получать дополнительные атрибуты из других подключенных систем идентификации, таких как каталоги LDAP и базы данных. Эти атрибуты задаются в заголовках HTTP и отправляются в вышестоящее локальное приложение.
+5. **Укажите утверждения приложения**: укажите атрибуты, которые будут возвращены приложению через экземпляр Orchestrator. Orchestrator использует атрибуты из утверждений, возвращенных Azure AD B2C, и может получать дополнительные атрибуты из других подключенных систем идентификации, таких как каталоги LDAP и базы данных. Эти атрибуты задаются в заголовках HTTP и отправляются в вышестоящее локальное приложение.
 
 ## <a name="configure-maverics-identity-orchestrator"></a>Настройка Маверикс Identity Orchestrator
 
@@ -259,7 +259,7 @@ appgateways:
 
 Важно защитить секреты, используемые Orchestrator для подключения к Azure AD B2C и любой другой системе идентификации. Однако Маверикс будет по умолчанию загружать секреты в виде обычного текста из `maverics.yaml` , но в этом руководстве вы будете использовать Azure Key Vault в качестве поставщика секретов.
 
-Следуйте инструкциям, чтобы [создать новый Key Vault](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-portal#create-a-vault) , который будет использоваться экземпляром Orchestrator в качестве поставщика секретов. Добавьте секреты в хранилище и запишите их в `SECRET NAME` каждый секретный код. Например, `AzureADB2CClientSecret`.
+Следуйте инструкциям, чтобы [создать новый Key Vault](../key-vault/secrets/quick-create-portal.md) , который будет использоваться экземпляром Orchestrator в качестве поставщика секретов. Добавьте секреты в хранилище и запишите их в `SECRET NAME` каждый секретный код. Например, `AzureADB2CClientSecret`.
 
 Чтобы объявить значение как секрет в файле конфигурации `maverics.yaml`, заключите секрет в угловые скобки:
 
@@ -342,6 +342,6 @@ appgateways:
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

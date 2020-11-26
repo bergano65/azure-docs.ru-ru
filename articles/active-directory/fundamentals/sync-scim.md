@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f957070ec94fc4c61089f31fe91261a2f52c4ee4
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: b95aac504bc6ee72c353faecad25384e2dc90840
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578864"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172424"
 ---
 # <a name="scim-synchronization-with-azure-active-directory"></a>SCIM синхронизация с Azure Active Directory
 
@@ -35,21 +35,20 @@ SCIM — это стандартизированное определение д
 
 ## <a name="components-of-system"></a>Компоненты системы 
 
-* **HCM System** : приложения и технологии, обеспечивающие процесс управления человеческим капиталом и методики, которые поддерживают и автоматизируют процессы отдела кадров на протяжении всего жизненного цикла сотрудников. 
+* **HCM System**: приложения и технологии, обеспечивающие процесс управления человеческим капиталом и методики, которые поддерживают и автоматизируют процессы отдела кадров на протяжении всего жизненного цикла сотрудников. 
 
-* **Служба подготовки Azure AD** : использует протокол scim 2,0 для автоматической подготовки. Служба подключается к конечной точке SCIM для приложения и использует схему объектов пользователей SCIM и интерфейсы API-интерфейса, чтобы автоматизировать подготовку и отмену подготовки пользователей и групп.  
+* **Служба подготовки Azure AD**: использует протокол scim 2,0 для автоматической подготовки. Служба подключается к конечной точке SCIM для приложения и использует схему объектов пользователей SCIM и интерфейсы API-интерфейса, чтобы автоматизировать подготовку и отмену подготовки пользователей и групп.  
 
-* **Azure AD** : репозиторий пользователей, используемый для управления жизненным циклом удостоверений и их назначениями. 
+* **Azure AD**: репозиторий пользователей, используемый для управления жизненным циклом удостоверений и их назначениями. 
 
-* **Целевая система** : приложение или система с КОНЕЧНОЙ точкой scim и работает с подготовкой Azure AD, чтобы включить автоматическую подготовку пользователей и групп.  
+* **Целевая система**: приложение или система с КОНЕЧНОЙ точкой scim и работает с подготовкой Azure AD, чтобы включить автоматическую подготовку пользователей и групп.  
 
 ## <a name="implement-scim-with-azure-ad"></a>Реализация SCIM с помощью Azure AD 
 
-* [Как работает подготовка в Azure AD ](https://docs.microsoft.com/azure/active-directory/app-provisioning/how-provisioning-works)
+* [Как работает подготовка в Azure AD ](../app-provisioning/how-provisioning-works.md)
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений в портал Azure ](https://docs.microsoft.com/azure/active-directory/app-provisioning/configure-automatic-user-provisioning-portal)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений в портал Azure ](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 
-* [Создание конечной точки SCIM и Настройка подготовки пользователей с помощью Azure AD  ](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
+* [Создание конечной точки SCIM и Настройка подготовки пользователей с помощью Azure AD  ](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 
-* [Соответствие протокола SCIM 2,0 службе подготовки Azure AD](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-config-problem-scim-compatibility)
-
+* [Соответствие протокола SCIM 2,0 службе подготовки Azure AD](../app-provisioning/application-provisioning-config-problem-scim-compatibility.md)

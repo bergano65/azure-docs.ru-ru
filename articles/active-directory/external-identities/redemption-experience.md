@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2427d974f96c0905ea2eb33daea7c89de277ec9
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 8520afdd05ecce8604ce72596bdf06053217cc2e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441816"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173096"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Активация приглашения службы совместной работы Azure Active Directory B2B
 
@@ -33,7 +33,7 @@ ms.locfileid: "92441816"
 
 1. Гость получает [приглашение](./invitation-email-elements.md), отправленное **Microsoft Invitations**.
 2. Он выбирает пункт **Принять приглашение** в сообщении электронной почты.
-3. Гость будет использовать свои собственные учетные данные для входа в ваш каталог. Если у гостя нет учетной записи, которая может быть объединена с вашим каталогом, и функция отправки [одноразового пароля электронной почты (OTP)](./one-time-passcode.md) не включена, ему будет предложено создать личную учетную запись [MSA](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create) или [учетную запись самообслуживания Azure AD](../users-groups-roles/directory-self-service-signup.md). Дополнительные сведения см. в разделе о [потоке активации приглашения](#invitation-redemption-flow).
+3. Гость будет использовать свои собственные учетные данные для входа в ваш каталог. Если у гостя нет учетной записи, которая может быть объединена с вашим каталогом, и функция отправки [одноразового пароля электронной почты (OTP)](./one-time-passcode.md) не включена, ему будет предложено создать личную учетную запись [MSA](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create) или [учетную запись самообслуживания Azure AD](../enterprise-users/directory-self-service-signup.md). Дополнительные сведения см. в разделе о [потоке активации приглашения](#invitation-redemption-flow).
 4. Для работы с гостевыми системами используется [процедура согласия](#consent-experience-for-the-guest), описанная ниже.
 
 ## <a name="redemption-through-a-direct-link"></a>Активация с помощью прямой ссылки
@@ -74,9 +74,9 @@ ms.locfileid: "92441816"
 
 7. Если для гостей [включен одноразовый секретный код](./one-time-passcode.md#when-does-a-guest-user-get-a-one-time-passcode), он отправляется пользователю через адрес электронной почты приглашенного лица. Пользователь получит и введет этот секретный код на странице входа в Azure AD.
 
-8. Если секретный код одноразового пароля для гостей отключен, Azure AD проверяет суффикс домена, чтобы определить, принадлежит ли он учетной записи потребителя. В этом случае пользователю предлагается создать личную [учетную запись Майкрософт](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). В противном случае пользователю будет предложено создать [учетную запись самообслуживания Azure AD](../users-groups-roles/directory-self-service-signup.md).
+8. Если секретный код одноразового пароля для гостей отключен, Azure AD проверяет суффикс домена, чтобы определить, принадлежит ли он учетной записи потребителя. В этом случае пользователю предлагается создать личную [учетную запись Майкрософт](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). В противном случае пользователю будет предложено создать [учетную запись самообслуживания Azure AD](../enterprise-users/directory-self-service-signup.md).
 
-9. Azure AD попытается создать [учетную запись самообслуживания Azure AD](../users-groups-roles/directory-self-service-signup.md), проверив доступ к электронной почте. Проверка учетной записи выполняется путем отправки кода с помощью сообщения электронной почты, когда пользователь получает и отправляет его в Azure AD. Однако если клиент приглашенного пользователя является федеративным или в поле AllowEmailVerifiedUsers клиента приглашенного пользователя установлено значение false, то пользователь не сможет завершить процедуру активации и поток активации приглашения приведет к ошибке. Дополнительные сведения см. в разделе [Пользователь, которого я пригласил, в процессе активации получает сообщение об ошибке](./troubleshoot.md#the-user-that-i-invited-is-receiving-an-error-during-redemption).
+9. Azure AD попытается создать [учетную запись самообслуживания Azure AD](../enterprise-users/directory-self-service-signup.md), проверив доступ к электронной почте. Проверка учетной записи выполняется путем отправки кода с помощью сообщения электронной почты, когда пользователь получает и отправляет его в Azure AD. Однако если клиент приглашенного пользователя является федеративным или в поле AllowEmailVerifiedUsers клиента приглашенного пользователя установлено значение false, то пользователь не сможет завершить процедуру активации и поток активации приглашения приведет к ошибке. Дополнительные сведения см. в разделе [Пользователь, которого я пригласил, в процессе активации получает сообщение об ошибке](./troubleshoot.md#the-user-that-i-invited-is-receiving-an-error-during-redemption).
 
 10. В этом случае пользователю предлагается создать личную [учетную запись Майкрософт (MSA)](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create).
 

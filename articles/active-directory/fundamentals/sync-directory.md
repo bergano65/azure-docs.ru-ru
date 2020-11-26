@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c340f973193f9c46735423c86112816003fecfcd
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 748f91b2fe77667969e9736f8084a9dd24018425
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578915"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172475"
 ---
 # <a name="directory-synchronization"></a>Синхронизация каталогов
 
@@ -40,22 +40,22 @@ ms.locfileid: "94578915"
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь** : доступ к приложению с помощью Azure AD.
+* **Пользователь**: доступ к приложению с помощью Azure AD.
 
 * **Веб-браузер**. компонент, с которым взаимодействует пользователь, чтобы получить доступ к внешнему URL-адресу приложения.
 
-* **Приложение** : веб-приложение, использующее Azure AD для проверки подлинности и авторизации.
+* **Приложение**: веб-приложение, использующее Azure AD для проверки подлинности и авторизации.
 
-* **Azure AD** : синхронизирует сведения об удостоверениях из локального каталога организации с помощью Azure AD Connect. 
+* **Azure AD**: синхронизирует сведения об удостоверениях из локального каталога организации с помощью Azure AD Connect. 
 
-* **Azure AD Connect** : средство для подключения локальных инфраструктур удостоверений к Microsoft Azure AD. Мастер и интерактивные возможности помогут вам развернуть и настроить необходимые компоненты, требуемые для подключения, включая синхронизацию и вход из Active Directory в Azure AD. 
+* **Azure AD Connect**: средство для подключения локальных инфраструктур удостоверений к Microsoft Azure AD. Мастер и интерактивные возможности помогут вам развернуть и настроить необходимые компоненты, требуемые для подключения, включая синхронизацию и вход из Active Directory в Azure AD. 
 
 * **Active Directory**. Active Directory — это служба каталогов, входящая в большинство операционных систем Windows Server. Серверы, на которых выполняются службы домен Active Directory Services (AD DS), называются контроллерами домена. Они выполняют проверку подлинности и авторизацию всех пользователей и компьютеров в домене.
 
 ## <a name="implement-directory-synchronization-with-azure-ad"></a>Реализация синхронизации службы каталогов с Azure AD
 
-* [Что такое подготовка удостоверений?](https://docs.microsoft.com/azure/active-directory/cloud-provisioning/what-is-provisioning) 
+* [Что такое подготовка удостоверений?](../cloud-provisioning/what-is-provisioning.md) 
 
-* [Средства интеграции каталогов гибридных удостоверений](https://docs.microsoft.com/azure/active-directory/hybrid/plan-hybrid-identity-design-considerations-tools-comparison) 
+* [Средства интеграции каталогов гибридных удостоверений](../hybrid/plan-hybrid-identity-design-considerations-tools-comparison.md) 
 
-* [План установки Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-roadmap)
+* [План установки Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md)

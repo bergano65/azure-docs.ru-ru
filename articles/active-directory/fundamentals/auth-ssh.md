@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb766150339820f9356fe94311cd1ff33dda5480
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 3b77ab0832fa19149c270d6ba5a6641069548cbe
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92462977"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172726"
 ---
 # <a name="ssh"></a>SSH  
 
@@ -52,10 +52,9 @@ SSH с Azure AD
 
 ## <a name="implement-ssh-with-azure-ad"></a>Реализация SSH с помощью Azure AD 
 
-* [Вход в виртуальную машину Linux® с учетными данными Azure Active Directory — виртуальные машины Azure ](https://docs.microsoft.com/azure/virtual-machines/linux/login-using-aad) 
+* [Вход в виртуальную машину Linux® с учетными данными Azure Active Directory — виртуальные машины Azure ](../../virtual-machines/linux/login-using-aad.md) 
 
-* [Поток кода устройства OAuth 2,0 — платформа Microsoft Identity ](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-device-code)
+* [Поток кода устройства OAuth 2,0 — платформа Microsoft Identity ](../develop/v2-oauth2-device-code.md)
 
 * [Интеграция с Azure Active Directory (akamai.com)](https://learn.akamai.com/webhelp/enterprise-application-access/enterprise-application-access/GUID-6B16172C-86CC-48E8-B30D-8E678BF3325F.html)
 
- 

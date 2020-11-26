@@ -16,12 +16,12 @@ ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a0765f5279eb41324691c431c5973bb55a8b52d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74bc659c11c4f43ab3cf85cdc53f704cd07a1cde
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89662483"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172373"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
 Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты можно использовать с помощью [расширений](/graph/extensibility-overview
@@ -60,7 +60,7 @@ ms.locfileid: "89662483"
 
 Убедитесь, что выбраны **все приложения** для просмотра этого приложения.
 
-Атрибуты имеют префикс с **расширением \_ {applicationId} \_ **. ApplicationId имеет одинаковое значение для всех атрибутов в клиенте Azure AD. Это значение потребуется для всех других сценариев в этом разделе.
+Атрибуты имеют префикс с **расширением \_ {applicationId} \_**. ApplicationId имеет одинаковое значение для всех атрибутов в клиенте Azure AD. Это значение потребуется для всех других сценариев в этом разделе.
 
 ## <a name="viewing-attributes-using-the-microsoft-graph-api"></a>Просмотр атрибутов с помощью API Microsoft Graph
 
@@ -70,6 +70,9 @@ ms.locfileid: "89662483"
 > В Microsoft Graph API необходимо запросить возвращаемые атрибуты. Явно выберите атрибуты следующим образом: `https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division` .
 >
 > Дополнительные сведения см. в разделе [Параметр select](/graph/query-parameters#select-parameter).
+
+>[!NOTE]
+> Не поддерживается синхронизация значений атрибутов из AADConnect с атрибутами расширения, которые не создаются AADConnect. Это может привести к проблемам с производительностью и непредвиденным результатам. Для синхронизации поддерживаются только те атрибуты расширения, которые были созданы, как показано выше.
 
 ## <a name="use-the-attributes-in-dynamic-groups"></a>Использование атрибутов в динамических группах
 
@@ -93,7 +96,7 @@ ms.locfileid: "89662483"
 
    ![Снимок экрана с элементами в динамической группе](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 846c47017ba2887c287dd080c44c46b372660d0e
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 016a2917c02deaecf35c526426cb2a6dbc89e338
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443608"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173198"
 ---
 # <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Веб-приложение, вызывающее веб-API: вызов веб-API
 
@@ -152,7 +152,7 @@ public async Task<IActionResult> Profile()
 > [!NOTE]
 > Вы можете использовать тот же принцип для вызова любого веб-API.
 >
-> Большинство веб-API Azure предоставляют пакет SDK, который упрощает вызов API, как в случае Microsoft Graph. См., например, [Создание веб-приложения, которое разрешает доступ к хранилищу BLOB-объектов с помощью Azure AD](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=dotnet) , например, с помощью Microsoft. Identity. Web и пакета SDK службы хранилища Azure.
+> Большинство веб-API Azure предоставляют пакет SDK, который упрощает вызов API, как в случае Microsoft Graph. См., например, [Создание веб-приложения, которое разрешает доступ к хранилищу BLOB-объектов с помощью Azure AD](../../storage/common/storage-auth-aad-app.md?tabs=dotnet&toc=%2fazure%2fstorage%2fblobs%2ftoc.json) , например, с помощью Microsoft. Identity. Web и пакета SDK службы хранилища Azure.
 
 # <a name="java"></a>[Java](#tab/java)
 

@@ -13,16 +13,16 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: ed3e9da628ab779ab47673fa2ce728c5c25539be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b683eaaf4c93ef0dcf74680e1e174e0f867a7041
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88166439"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173402"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
-MSAL.NET можно использовать для входа пользователей с удостоверениями социальных сетей с помощью [Azure Active Directory B2C (Azure AD B2C)](https://aka.ms/aadb2c). Azure AD B2C построены на основе понятия политик. В MSAL.NET указание политики преобразуется в предоставление центра.
+MSAL.NET можно использовать для входа пользователей с удостоверениями социальных сетей с помощью [Azure Active Directory B2C (Azure AD B2C)](../../active-directory-b2c/overview.md). Azure AD B2C построены на основе понятия политик. В MSAL.NET указание политики преобразуется в предоставление центра.
 
 - При создании экземпляра общедоступного клиентского приложения необходимо указать политику в качестве части центра.
 - Если необходимо применить политику, вызовите переопределение метода `AcquireTokenInteractive` , принимающего `authority` параметр.
@@ -176,7 +176,7 @@ MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Симптомом такого сценария является то, что MSAL.NET возвращается `Missing from the token response` при доступе к `preferred_username` значению утверждения в маркерах, выдаваемых Azure AD B2C. MSAL использует `Missing from the token response` значение для `preferred_username` для поддержки кросс-совместимости кэша между библиотеками.
 
-### <a name="workarounds"></a>Методы обхода проблемы
+### <a name="workarounds"></a>Обходные пути
 
 #### <a name="mitigation-for-missing-tenant-id"></a>Устранение рисков для отсутствующего идентификатора клиента
 
@@ -190,7 +190,7 @@ MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Дополнительные сведения об указании утверждений, возвращаемых потоками пользователей, см. [в разделе Учебник. Создание пользовательских потоков в Azure AD B2C](../../active-directory-b2c/tutorial-create-user-flows.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для Azure AD B2C приложений приведены в следующем примере.
 

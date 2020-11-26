@@ -40,6 +40,10 @@
       href: threat-intelligence-settings.md
     - name: Полное доменное имя в правилах сети
       href: fqdn-filtering-network-rules.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Развертывание поставщиков партнера по безопасности

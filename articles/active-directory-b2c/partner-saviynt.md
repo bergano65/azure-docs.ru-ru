@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 184616058cb2a86025eb75b4923e374ab42ebf05
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 99741a412ae02a2d30293e1aa254245f5ca7b662
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953565"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171438"
 ---
 # <a name="tutorial-for-configuring-saviynt-with-azure-active-directory-b2c"></a>Руководство по настройке Савийнт с помощью Azure Active Directory B2C
 
@@ -34,7 +34,7 @@ ms.locfileid: "94953565"
 
 Чтобы приступить к работе, вам потребуется:
 
-- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 - [Клиент Azure AD B2C](./tutorial-create-tenant.md). Клиент связан с вашей подпиской Azure.
 
@@ -69,7 +69,7 @@ ms.locfileid: "94953565"
 
 1. Чтобы создать учетную запись Савийнт, обратитесь в [савийнт](https://saviynt.com/contact-us/)
 
-2. Создание политик делегированного администрирования и назначение пользователей в качестве [полномочных администраторов](../active-directory/users-groups-roles/roles-concept-delegation.md) с помощью различных ролей.
+2. Создание политик делегированного администрирования и назначение пользователей в качестве [полномочных администраторов](../active-directory/roles/concept-delegation.md) с помощью различных ролей.
 
 ## <a name="configure-azure-ad-b2c-with-saviynt"></a>Настройка Azure AD B2C с помощью Савийнт
 
@@ -129,7 +129,7 @@ Add-MsolRoleMember -RoleName "Company Administrator" -RoleMemberType ServicePrin
 
 Перейдите к своему клиенту приложения Савийнт и протестируйте управление жизненным циклом пользователей, а для управления доступом — вариант использования.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 
