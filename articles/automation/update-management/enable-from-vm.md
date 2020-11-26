@@ -5,12 +5,12 @@ services: automation
 ms.date: 11/04/2020
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 1ed4ad3e1bae34b5007d13c7d092f46e972ac8a8
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 35feb136ca1fd7ea0be16a906f7d5193cf8570c7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347086"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183555"
 ---
 # <a name="enable-update-management-from-an-azure-vm"></a>Включение Управления обновлениями на виртуальных машинах Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "93347086"
 
     ![Выбор обновлений для гостей и узлов на левой панели](media/enable-from-vm/select-guest-and-os-updates.png)
 
-4. Чтобы определить, включена ли виртуальная машина для рабочей области, необходимо иметь разрешение `Microsoft.OperationalInsights/workspaces/read`. Сведения о других необходимых разрешениях для включения компьютеров см. в [этой статье](../automation-role-based-access-control.md#feature-setup-permissions). Сведения о том, как включить управление обновлениями в учетной записи службы автоматизации, см. [здесь](update-mgmt-enable-automation-account.md).
+4. Чтобы определить, включена ли виртуальная машина для рабочей области, необходимо иметь разрешение `Microsoft.OperationalInsights/workspaces/read`. Сведения о других необходимых разрешениях для включения компьютеров см. в [этой статье](../automation-role-based-access-control.md#feature-setup-permissions). Сведения о том, как включить управление обновлениями в учетной записи службы автоматизации, см. [здесь](./enable-from-automation-account.md).
 
 5. На странице Включение Управление обновлениями выберите рабочую область Log Analytics и учетную запись автоматизации и щелкните **включить** , чтобы включить управление обновлениями. После включения Управление обновлениями для просмотра оценки обновлений на виртуальной машине может потребоваться около 15 минут.
 

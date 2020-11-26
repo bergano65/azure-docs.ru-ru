@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/08/2020
-ms.openlocfilehash: 048230bb85d2ac599efc6bd3fb326f98038cce57
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 2aa83a861697882127c75eb696807f604c3061f0
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687167"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184558"
 ---
 # <a name="troubleshoot-azure-monitor-for-vms-guest-health-preview"></a>Устранение неполадок Azure Monitor для виртуальных машин гостевой работоспособности (Предварительная версия)
 В этой статье описаны действия по устранению неполадок, которые можно выполнить при возникновении проблем с Azure Monitor для виртуальных машин работоспособностью.
@@ -42,7 +42,7 @@ ms.locfileid: "94687167"
 Убедитесь, что правило сбора данных, задающее расширение работоспособности в качестве источника данных, связано с виртуальной машиной.
 
 ## <a name="error-message-for-bad-request-due-to-insufficient-permissions"></a>Сообщение об ошибке для неправильного запроса из-за недостаточных разрешений
-Эта ошибка означает, что поставщик ресурсов **Microsoft. WorkloadMonitor** не был зарегистрирован в подписке. Дополнительные сведения о регистрации этого поставщика ресурсов см. в статье [поставщики и типы ресурсов Azure](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider) . 
+Эта ошибка означает, что поставщик ресурсов **Microsoft. WorkloadMonitor** не был зарегистрирован в подписке. Дополнительные сведения о регистрации этого поставщика ресурсов см. в статье [поставщики и типы ресурсов Azure](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider) . 
 
 ![Недопустимый запрос](media/vminsights-health-troubleshoot/bad-request.png)
 

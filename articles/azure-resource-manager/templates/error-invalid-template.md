@@ -3,12 +3,12 @@ title: Ошибки, связанные с недопустимым шаблон
 description: Статья о том, как устранять ошибки, связанные с недопустимым шаблоном, при развертывании шаблонов Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 05/22/2020
-ms.openlocfilehash: 3e68d4634d0092d05222348ca0db0116422faec3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba19d3c4e72a765e2aaff7393915b77a80daf2ba
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373816"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185799"
 ---
 # <a name="resolve-errors-for-invalid-template"></a>Устранение ошибок, связанных с недопустимым шаблоном
 
@@ -130,7 +130,7 @@ part of the allowed values
 
 ## <a name="solution-4---too-many-target-resource-groups"></a>Решение 4 — слишком много целевых групп ресурсов
 
-Эта ошибка могла возникать у вас в предыдущих развертываниях, так как для одного развертывания существовало ограничение в пять целевых групп ресурсов. В мае 2020 г. это ограничение было увеличено до 800 групп ресурсов. Дополнительные сведения см. в разделе [Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](cross-scope-deployment.md).
+Эта ошибка могла возникать у вас в предыдущих развертываниях, так как для одного развертывания существовало ограничение в пять целевых групп ресурсов. В мае 2020 г. это ограничение было увеличено до 800 групп ресурсов. Дополнительные сведения см. в разделе [Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](./deploy-to-resource-group.md).
 
 <a id="circular-dependency"></a>
 

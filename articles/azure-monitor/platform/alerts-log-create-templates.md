@@ -6,16 +6,16 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.subservice: alerts
-ms.openlocfilehash: b23f1d455610222ffa5713773a0bfb947f23ce34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fb0288d592af8bd23415b31ecf6a6e3448b92ba
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91346073"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186037"
 ---
 # <a name="create-a-log-alert-with-a-resource-manager-template"></a>Создание оповещения журнала с помощью шаблона Resource Manager
 
-Оповещения журнала позволяют пользователям использовать [log Analytics](../log-query/get-started-portal.md) запрос для проверки журнала ресурсов каждые заданные частоты и запуска предупреждения на основе результатов. Правила могут активировать выполнение одного или нескольких действий с помощью [групп действий](./action-groups.md). [Дополнительные сведения о функциональности и терминологии оповещений журнала](alerts-unified-log.md).
+Оповещения журнала позволяют пользователям использовать [log Analytics](../log-query/log-analytics-tutorial.md) запрос для проверки журнала ресурсов каждые заданные частоты и запуска предупреждения на основе результатов. Правила могут активировать выполнение одного или нескольких действий с помощью [групп действий](./action-groups.md). [Дополнительные сведения о функциональности и терминологии оповещений журнала](alerts-unified-log.md).
 
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для настройки [оповещений журнала](alerts-unified-log.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Оповещения журнала создаются в `Microsoft.Insights/scheduledQueryRules` поставщике ресурсов. См. Справочник по API для [запланированных правил запросов](/rest/api/monitor/scheduledqueryrules/).
 
@@ -26,7 +26,7 @@ ms.locfileid: "91346073"
 4. Разверните шаблон с помощью любого метода развертывания.
 
 > [!NOTE]
-> Данные журнала из [log Analytics рабочей области](../log-query/get-started-portal.md) можно отправить в хранилище метрик Azure Monitor. Поведение оповещений метрик [отличается от поведения](alerts-metric-overview.md), которое может быть более желательным в зависимости от данных, с которыми вы работаете. Сведения о том, что и как можно направить журналы в метрики, см. в разделе [метрики оповещений для журналов](alerts-metric-logs.md).
+> Данные журнала из [log Analytics рабочей области](../log-query/log-analytics-tutorial.md) можно отправить в хранилище метрик Azure Monitor. Поведение оповещений метрик [отличается от поведения](alerts-metric-overview.md), которое может быть более желательным в зависимости от данных, с которыми вы работаете. Сведения о том, что и как можно направить журналы в метрики, см. в разделе [метрики оповещений для журналов](alerts-metric-logs.md).
 
 > [!NOTE]
 > Оповещения журнала для Log Analytics, которыми можно управлять с помощью [API предупреждений](api-alerts.md) устаревших log Analytics и устаревших шаблонов [log Analytics сохраненных поисков и предупреждений](../insights/solutions.md). Дополнительные [сведения о переключении на текущий API счедуледкуерирулес](alerts-log-api-switch.md).
@@ -432,7 +432,7 @@ ms.locfileid: "91346073"
 
 Этот JSON можно сохранить и развернуть с помощью [Azure Resource Manager в портал Azure](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об [оповещениях журнала](./alerts-unified-log.md)
 * Дополнительные сведения об [управлении оповещениями журнала](./alerts-log.md)

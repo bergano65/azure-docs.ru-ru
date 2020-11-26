@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: 7a7a3669c5462adba3828bb1fd6c2fc9c4b3213c
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 9d1aa54ba1e3f3a589df8f694e340909c4e24ecc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566169"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183691"
 ---
 # <a name="tutorial-enable-application-gateway-ingress-controller-add-on-for-an-existing-aks-cluster-with-an-existing-application-gateway-through-azure-cli-preview"></a>Руководство по включению надстройки контроллера объекта ingress для имеющегося кластера AKS со Шлюзом приложений с помощью Azure CLI (предварительная версия)
 
@@ -35,16 +35,16 @@ ms.locfileid: "94566169"
 
  - Для работы с этим учебником требуется Azure CLI версии 2.0.4 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
- - Зарегистрируйте флаг функции *AKS-IngressApplicationGatewayAddon* с помощью команды [az feature register](https://docs.microsoft.com/cli/azure/feature#az-feature-register), как показано в указанном ниже примере. Это необходимо сделать только один раз для каждой подписки, пока надстройка еще находится на этапе предварительной версии.
+ - Зарегистрируйте флаг функции *AKS-IngressApplicationGatewayAddon* с помощью команды [az feature register](/cli/azure/feature#az-feature-register), как показано в указанном ниже примере. Это необходимо сделать только один раз для каждой подписки, пока надстройка еще находится на этапе предварительной версии.
      ```azurecli-interactive
      az feature register --name AKS-IngressApplicationGatewayAddon --namespace microsoft.containerservice
      ```
-    Через несколько минут отобразится состояние "Зарегистрировано". Состояние регистрации можно проверить с помощью команды [az feature list](https://docs.microsoft.com/cli/azure/feature#az-feature-register).
+    Через несколько минут отобразится состояние "Зарегистрировано". Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature#az-feature-register).
      ```azurecli-interactive
      az feature list -o table --query "[?contains(name, 'microsoft.containerservice/AKS-IngressApplicationGatewayAddon')].{Name:name,State:properties.state}"
      ```
 
- - Когда все будет готово, обновите регистрацию поставщика ресурсов Microsoft.ContainerService с помощью команды [az provider register](https://docs.microsoft.com/cli/azure/provider#az-provider-register).
+ - Когда все будет готово, обновите регистрацию поставщика ресурсов Microsoft.ContainerService с помощью команды [az provider register](/cli/azure/provider#az-provider-register).
     ```azurecli-interactive
     az provider register --namespace Microsoft.ContainerService
     ```

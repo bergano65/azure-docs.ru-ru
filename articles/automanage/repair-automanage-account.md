@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 11/05/2020
 ms.author: alsin
-ms.openlocfilehash: 226a23bfdacb0f7423c7dafb8cae36af7333699d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 4694fa679c7bbff309a0452219ff39bacf2488c4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681845"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183708"
 ---
 # <a name="repair-an-automanage-account"></a>Восстановление учетной записи управления
 [Учетная запись автоматического управления Azure](./automanage-virtual-machines.md#automanage-account) — это контекст безопасности или удостоверение, под которым выполняются автоматические операции. Если вы недавно переместили подписку, содержащую учетную запись для управления, в новый клиент, необходимо перенастроить учетную запись. Чтобы перенастроить его, необходимо сбросить тип удостоверения и назначить соответствующие роли для учетной записи.
@@ -22,8 +22,8 @@ ms.locfileid: "94681845"
 Сбросьте тип удостоверения учетной записи управления, используя следующий шаблон Azure Resource Manager (ARM). Сохраните файл локально в armdeploy.jsили с аналогичным именем. Запишите имя и расположение учетной записи, так как они являются обязательными параметрами в шаблоне ARM.
 
 1. Создайте диспетчер ресурсов развертывание с помощью следующего шаблона. Используйте ключевое слово `identityType = None`.
-    * Развертывание можно создать в Azure CLI с помощью `az deployment sub create` . Дополнительные сведения см. в разделе [AZ Deployment подсистема](https://docs.microsoft.com/cli/azure/deployment/sub).
-    * Вы можете создать развертывание в PowerShell с помощью `New-AzDeployment` модуля. Дополнительные сведения см. в разделе [New-аздеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azdeployment).
+    * Развертывание можно создать в Azure CLI с помощью `az deployment sub create` . Дополнительные сведения см. в разделе [AZ Deployment подсистема](/cli/azure/deployment/sub).
+    * Вы можете создать развертывание в PowerShell с помощью `New-AzDeployment` модуля. Дополнительные сведения см. в разделе [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment).
 
 1. Снова запустите один и тот же шаблон ARM с помощью `identityType = SystemAssigned` .
 
@@ -63,7 +63,7 @@ ms.locfileid: "94681845"
 
 Если вы используете шаблон ARM или Azure CLI, вам потребуется идентификатор участника (также известный как идентификатор объекта) учетной записи управления. (Идентификатор вам не нужен, если вы используете портал Azure.) Этот идентификатор можно найти с помощью следующих методов:
 
-- [Azure CLI](https://docs.microsoft.com/cli/azure/ad/sp): используйте команду `az ad sp list --display-name <name of your Automanage Account>` .
+- [Azure CLI](/cli/azure/ad/sp): используйте команду `az ad sp list --display-name <name of your Automanage Account>` .
 
 - Портал Azure. Перейдите в **Azure Active Directory** и найдите учетную запись для управления ими по имени. В разделе **корпоративные приложения** выберите имя учетной записи для управления, когда она появится.
 
@@ -72,7 +72,7 @@ ms.locfileid: "94681845"
 1. Перейдите в раздел **Управление доступом (IAM)**.
 1. Выберите **добавить назначения ролей**.
 1. Выберите роль **участник** и введите имя учетной записи управления.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Повторите шаги с 3 по 5, на этот раз с ролью **участник политики ресурсов** .
 
 ### <a name="arm-template"></a>Шаблон ARM

@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: kgremban
-ms.openlocfilehash: 7ab62b04f8bea76c7efb587665f87ccaf123da24
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: a7794bcdfa4f82698fdc5875bc94dcf52b70166e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109006"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185102"
 ---
 # <a name="install-or-uninstall-the-azure-iot-edge-runtime"></a>Установка или удаление среды выполнения Azure IoT Edge
 
@@ -51,7 +51,7 @@ ms.locfileid: "92109006"
      curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
      ```
 
-   * **Raspbian Stretch**:
+   * **Растяжение ОС Raspberry Pi**:
 
      ```bash
      curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
@@ -100,7 +100,7 @@ Azure IoT Edge пакеты программного обеспечения по
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
-Обновление списков пакетов на устройстве.
+Обновите списки пакетов на устройстве.
 
    ```bash
    sudo apt-get update
@@ -138,7 +138,7 @@ Azure IoT Edge пакеты программного обеспечения по
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
-Обновление списков пакетов на устройстве.
+Обновите списки пакетов на устройстве.
 
    ```bash
    sudo apt-get update
@@ -278,7 +278,7 @@ Azure IoT Edge пакеты программного обеспечения по
 
 5. Чтобы установить с автономными компонентами, [источником точки](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing) является локальная копия сценария PowerShell. 
 
-6. Выполните команду [deploy-IoTEdge](reference-windows-scripts.md#deploy-iotedge) с `-OfflineInstallationPath` параметром. Укажите абсолютный путь к каталогу файлов. Например:
+6. Выполните команду [deploy-IoTEdge](reference-windows-scripts.md#deploy-iotedge) с `-OfflineInstallationPath` параметром. Укажите абсолютный путь к каталогу файлов. Например,
 
    ```powershell
    . <path>\IoTEdgeSecurityDaemon.ps1

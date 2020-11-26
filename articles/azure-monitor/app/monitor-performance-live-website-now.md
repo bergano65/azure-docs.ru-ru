@@ -4,12 +4,12 @@ description: Мониторинг производительности веб-с
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 6c27c78bf8e3f3b8af342a14a38c9be3821d781a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 53dbcc341fdd4bc194d34d40cdd2a975df496376
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020931"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186309"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
@@ -44,10 +44,10 @@ ms.locfileid: "96020931"
 | **[Более подробные исключения](./asp-net-exceptions.md)** | |Да |
 | **[Диагностика зависимостей](./asp-net-dependencies.md)** |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
 | **[Счетчики производительности системы](./performance-counters.md)** |Да |Да |
-| **[API для пользовательской телеметрии][api]** |Да |нет |
-| **[Интеграция журнала трассировки](./asp-net-trace-logs.md)** |Да |нет |
-| **[Просмотр страницы & данных пользователя](./javascript.md)** |Да |нет |
-| **Требуется повторная сборка кода** |Да | нет |
+| **[API для пользовательской телеметрии][api]** |Да |Нет |
+| **[Интеграция журнала трассировки](./asp-net-trace-logs.md)** |Да |Нет |
+| **[Просмотр страницы & данных пользователя](./javascript.md)** |Да |Нет |
+| **Требуется повторная сборка кода** |Да | Нет |
 
 
 
@@ -93,7 +93,7 @@ ms.locfileid: "96020931"
 
 - Убедитесь, что файл applicationinsights.config находится в целевом каталоге приложения и содержит ikey.
 
-- Если вы считаете, что данные отсутствуют, можно выполнить запрос в [аналитике](../log-query/get-started-portal.md) , чтобы получить список всех облачных ролей, отправляющих данные телеметрии.
+- Если вы считаете, что данные отсутствуют, можно выполнить запрос в [аналитике](../log-query/log-analytics-tutorial.md) , чтобы получить список всех облачных ролей, отправляющих данные телеметрии.
   ```Kusto
   union * | summarize count() by cloud_RoleName, cloud_RoleInstance
   ```
@@ -340,4 +340,3 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 [qna]: ../faq.md
 [roles]: ./resources-roles-access-control.md
 [usage]: ./javascript.md
-

@@ -7,12 +7,12 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: conceptual
 ms.date: 08/07/2019
-ms.openlocfilehash: cf25ef59bc1ea5db61dcfb3c76c0d978cb1f95d0
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: b41575208d0793a33864556ec4313ae1a71f2db5
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931842"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184473"
 ---
 # <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Рекомендации по тестам производительности для Azure NetApp Files
 
@@ -24,7 +24,7 @@ ms.locfileid: "91931842"
 
 ### <a name="vm-instance-sizing"></a>Размер экземпляра виртуальной машины
 
-Для получения наилучших результатов убедитесь, что для выполнения тестов используется экземпляр виртуальной машины, соответствующий размеру. В следующих примерах используется экземпляр Standard_D32s_v3. Дополнительные сведения о размерах экземпляров виртуальных машин см. в статьях [размеры виртуальных машин Windows в Azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-network%252ftoc.json) для виртуальных машин под управлением Windows и [размеры виртуальной машины Linux в Azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) для ВМ под управлением Linux.
+Для получения наилучших результатов убедитесь, что для выполнения тестов используется экземпляр виртуальной машины, соответствующий размеру. В следующих примерах используется экземпляр Standard_D32s_v3. Дополнительные сведения о размерах экземпляров виртуальных машин см. в статьях [размеры виртуальных машин Windows в Azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для виртуальных машин под управлением Windows и [размеры виртуальной машины Linux в Azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) для ВМ под управлением Linux.
 
 ### <a name="azure-netapp-files-volume-sizing"></a>Изменение размера тома Azure NetApp Files
 
@@ -121,7 +121,7 @@ FIO доступен в двоичном формате как для Linux, т�
 `curl -X GET -H "Authorization: Bearer TOKENGOESHERE" -H "Content-Type: application/json" https://management.azure.com/subscriptions/SUBIDGOESHERE/resourceGroups/RESOURCEGROUPGOESHERE/providers/Microsoft.NetApp/netAppAccounts/ANFACCOUNTGOESHERE/capacityPools/ANFPOOLGOESHERE/Volumes/ANFVOLUMEGOESHERE/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=VolumeLogicalSize`
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 - [Тесты производительности для Linux](performance-benchmarks-linux.md)

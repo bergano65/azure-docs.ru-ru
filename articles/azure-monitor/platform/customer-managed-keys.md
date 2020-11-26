@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/18/2020
-ms.openlocfilehash: 7bfd951d7cec27e0b8264aaabf9bc3a17875256a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9715724fc0fbd25198dd3244215ac2c12638d2b8
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000731"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185969"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -72,7 +72,7 @@ Azure Monitor использует назначаемое системой уп�
 1. Предоставление разрешений для вашего Key Vault.
 1. Связывание рабочих областей Log Analytics
 
-Customer-Managed конфигурация ключа не поддерживается в портал Azure и подготовка выполняется с помощью [PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/), [CLI](https://docs.microsoft.com/cli/azure/monitor/log-analytics) или запросов [RESTful](https://docs.microsoft.com/rest/api/loganalytics/) .
+Customer-Managed конфигурация ключа не поддерживается в портал Azure и подготовка выполняется с помощью [PowerShell](/powershell/module/az.operationalinsights/), [CLI](/cli/azure/monitor/log-analytics) или запросов [RESTful](/rest/api/loganalytics/) .
 
 ### <a name="asynchronous-operations-and-status-check"></a>Асинхронные операции и проверка состояния
 
@@ -107,7 +107,7 @@ Authorization: Bearer <token>
 
 ### <a name="create-cluster"></a>Создание кластера
 
-Выполните процедуру, показанную в [статье выделенные кластеры](https://docs.microsoft.com/azure/azure-monitor/log-query/logs-dedicated-clusters#creating-a-cluster). 
+Выполните процедуру, показанную в [статье выделенные кластеры](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
 
 > [!IMPORTANT]
 > Скопируйте и сохраните ответ, так как эти сведения понадобятся вам в дальнейших действиях.
@@ -212,7 +212,7 @@ Content-type: application/json
 
 Эта операция является асинхронной, и ее выполнение может быть завершено.
 
-Выполните процедуру, показанную в [статье выделенные кластеры](https://docs.microsoft.com/azure/azure-monitor/log-query/logs-dedicated-clusters#link-a-workspace-to-the-cluster).
+Выполните процедуру, показанную в [статье выделенные кластеры](../log-query/logs-dedicated-clusters.md#link-a-workspace-to-the-cluster).
 
 ## <a name="key-revocation"></a>Отзыв ключа
 

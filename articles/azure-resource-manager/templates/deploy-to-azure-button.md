@@ -3,18 +3,18 @@ title: Кнопка "Развертывание в Azure"
 description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: 25ec5fd7a0c5b356097412ab6f1765cb0886522a
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 65891cace1cb17614abbfe091e1592d6f13feff4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555272"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185731"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
 В этой статье описывается, как использовать кнопку **развертывание в Azure** для развертывания шаблонов из репозитория GitHub. Вы можете добавить кнопку непосредственно в файл README.md в репозитории GitHub. Или можно добавить кнопку на веб-страницу, которая ссылается на репозиторий.
 
-Область развертывания определяется схемой шаблона. Дополнительные сведения можно найти в разделе
+Область развертывания определяется схемой шаблона. Дополнительные сведения см. в разделе:
 
 * [группы ресурсов](deploy-to-resource-group.md)
 * [оформления](deploy-to-subscription.md)
@@ -107,7 +107,7 @@ https://dev.azure.com/{organization-name}/{project-name}/_apis/git/repositories/
 Для Git с репозиторием Azure кнопка имеет формат:
 
 ```markdown
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fdev.azure.com%2Forgname%2Fprojectname%2F_apis%2Fgit%2Frepositories%2Freponame%2Fitems%3FscopePath%3D%252Freponame%252Fazuredeploy.json%26api-version%3D6.0)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fdev.azure.com%2Forgname%2Fprojectname%2F_apis%2Fgit%2Frepositories%2Freponame%2Fitems%3FscopePath%3D%2freponame%2fazuredeploy.json%26api-version%3D6.0)
 ```
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона

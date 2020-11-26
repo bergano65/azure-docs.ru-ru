@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2020
-ms.openlocfilehash: 30521e85feda0fc19329364dcb710d322ae8cfc1
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: c6db5a856b127d4549de9597f8157f524a38af79
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95323229"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186666"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -35,7 +35,7 @@ ms.locfileid: "95323229"
 | | Агент Azure Monitor (Предварительная версия) | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure<br>Другое облако (Дуга Azure)<br>Локально (Дуга Azure)  | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда | 
-| **Требования к агентам**  | None | None | None | Требуется агент Log Analytics |
+| **Требования к агентам**  | Нет | Нет | Нет | Требуется агент Log Analytics |
 | **Собираемые данные** | журналы событий;<br>Производительность | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Полезные сведения и решения<br>Другие службы | зависимости процессов.<br>Метрики сетевого подключения |
 | **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
@@ -45,7 +45,7 @@ ms.locfileid: "95323229"
 | | Агент Azure Monitor (Предварительная версия) | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure<br>Другое облако (Дуга Azure)<br>Локально (Дуга ARC) | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда |
-| **Требования к агентам**  | None | None | None | None | Требуется агент Log Analytics |
+| **Требования к агентам**  | Нет | Нет | Нет | Нет | Требуется агент Log Analytics |
 | **Собираемые данные** | Системный журнал<br>Производительность | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| зависимости процессов.<br>Метрики сетевого подключения |
 | **Отправленные данные** | Журналы Azure Monitor<br>Метрики Azure Monitor | Хранилище Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor<br>(с помощью агента Log Analytics) |
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
@@ -81,8 +81,8 @@ ms.locfileid: "95323229"
 * Собирайте журналы и данные о производительности виртуальных или физических компьютеров внутри или за пределами Azure. 
 * Отправляйте данные в рабочую область Log Analytics, чтобы воспользоваться преимуществами функций, поддерживаемых [Azure Monitor журналами](data-platform-logs.md) , такими как [запросы журналов](../log-query/log-query-overview.md).
 * Используйте [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) , которая позволяет отслеживать масштаб виртуальных машин и отслеживает их процессы и зависимости от других ресурсов и внешних процессов.  
-* Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-intro.md)  или [Sentinel Azure](../../sentinel/overview.md).
-* Использование [управления обновлениями службы автоматизации](../../automation/update-management/update-mgmt-overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking/overview.md) для предоставления комплексного управления виртуальными машинами Azure
+* Управляйте безопасностью виртуальных машин с помощью [центра безопасности Azure](../../security-center/security-center-introduction.md)  или [Sentinel Azure](../../sentinel/overview.md).
+* Использование [управления обновлениями службы автоматизации](../../automation/update-management/overview.md)Azure, [настройки состояния службы автоматизации](../../automation/automation-dsc-overview.md)Azure или [Отслеживание изменений и инвентаризации Azure Automation](../../automation/change-tracking/overview.md) для предоставления комплексного управления виртуальными машинами Azure
 * Используйте различные [решения](../monitor-reference.md#insights-and-core-solutions) для мониторинга определенной службы или приложения.
 
 К ограничениям агента Log Analytics относятся:

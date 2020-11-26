@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: f7980ca7bc6f23c383ea013c2b017b3bd61e2d25
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 410281ce67faf345539701389d4b03351d403b99
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842300"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186071"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -46,7 +46,7 @@ ms.locfileid: "94842300"
 > [!NOTE]
 > 
 > - Соединитель ITSM позволяет подключаться только к облачным экземплярам ServiceNow. Локальные экземпляры ServiceNow сейчас не поддерживаются.
-> - Чтобы использовать пользовательские [шаблоны](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#template-definitions) в составе действий, параметр "прожектионтипе" в шаблоне SCSM должен быть сопоставлен с "IncidentManagement! System. WorkItem. инцидент. Прожектионтипе "
+> - Чтобы использовать пользовательские [шаблоны](./itsmc-overview.md#template-definitions) в составе действий, параметр "прожектионтипе" в шаблоне SCSM должен быть сопоставлен с "IncidentManagement! System. WorkItem. инцидент. Прожектионтипе "
 
 ### <a name="connection-procedure"></a>Процедура подключения
 
@@ -432,4 +432,3 @@ ms.locfileid: "94842300"
 
 ## <a name="next-steps"></a>Дальнейшие действия
  - [Создание рабочих элементов ITSM из оповещений Azure](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts)
-

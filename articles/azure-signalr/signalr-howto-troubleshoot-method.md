@@ -6,18 +6,18 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: yajin1
-ms.openlocfilehash: 4b0b85b08c3f813440d556c61ba5e290ac200049
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 413bb88deac96c1ca12e8a9d25fc9cd16edf4616
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686913"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183963"
 ---
 # <a name="how-to-troubleshoot-connectivity-and-message-delivery-issues"></a>Устранение проблем с подключением и доставкой сообщений
 
 В этом руководстве представлено несколько способов самостоятельной диагностики, чтобы найти основную причину ошибки или устранить ее. Результат самодиагностики также полезен при отправке отчета нам для дальнейшего изучения.
 
-Во-первых, необходимо проверить портал Azure, для которой [сервицемоде](https://docs.microsoft.com/azure/azure-signalr/concept-service-mode) — служба SignalR Azure (также известная как **АСРС**), настроенная для.
+Во-первых, необходимо проверить портал Azure, для которой [сервицемоде](./concept-service-mode.md) — служба SignalR Azure (также известная как **АСРС**), настроенная для.
 
 :::image type="content" source="./media/signalr-howto-troubleshoot-method/service-mode.png" alt-text="сервицемоде":::
 
@@ -49,13 +49,13 @@ ms.locfileid: "94686913"
 
 ### <a name="how-to-view-the-traffic-and-narrow-down-the-issue"></a>Просмотр трафика и ограничение проблемы
 
-Захват трафика в ходе выполнения является самым прямым способом для устранения проблемы. [Трассировку сети](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#network-traces) можно записать с помощью описанных ниже параметров.
+Захват трафика в ходе выполнения является самым прямым способом для устранения проблемы. [Трассировку сети](/aspnet/core/signalr/diagnostics#network-traces) можно записать с помощью описанных ниже параметров.
 
-* [Получение трассировки сети с помощью Fiddler](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#network-traces)
+* [Получение трассировки сети с помощью Fiddler](/aspnet/core/signalr/diagnostics#network-traces)
 
-* [Получение трассировки сети с помощью tcpdump](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#collect-a-network-trace-with-tcpdump-macos-and-linux-only)
+* [Получение трассировки сети с помощью tcpdump](/aspnet/core/signalr/diagnostics#collect-a-network-trace-with-tcpdump-macos-and-linux-only)
 
-* [Получение трассировки сети в браузере](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#collect-a-network-trace-in-the-browser)
+* [Получение трассировки сети в браузере](/aspnet/core/signalr/diagnostics#collect-a-network-trace-in-the-browser)
 
 <a name="view_traffic_client"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "94686913"
 
 Чтобы получить постоянное подключение SignalR, сначала `/negotiate` на сервере размещенного приложения, а затем перенаправляется в службу Azure SignalR, а затем устанавливается реальное постоянное подключение к службе Azure SignalR. Подробные инструкции см. в разделе [внутренние компоненты службы Azure SignalR](https://github.com/Azure/azure-signalr/blob/dev/docs/internal.md) .
 
-С пропускной трассировкой сети на стороне клиента проверьте, какой запрос завершается ошибкой с кодом состояния и ответом, и найдите решения в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/azure-signalr/signalr-howto-troubleshoot-guide).
+С пропускной трассировкой сети на стороне клиента проверьте, какой запрос завершается ошибкой с кодом состояния и ответом, и найдите решения в разделе [руководство по устранению неполадок](./signalr-howto-troubleshoot-guide.md).
 
 #### <a name="server-requests"></a>Запросы сервера
 
@@ -71,7 +71,7 @@ ms.locfileid: "94686913"
 
 *Соединение с сервером* может быть удалено из-за нестабильной работы сети или регулярного обслуживания службы Azure SignalR или обновления или обслуживания размещенного сервера приложений. При условии, что на стороне клиента есть механизм отключения и повторного подключения, влияние будет минимально, как и на стороне клиента, что вызвало отключение-повторное подключение.
 
-Просмотрите трассировку сети на стороне сервера, чтобы узнать код состояния и сведения об ошибке, почему *Подключение к серверу* отклоняется или отклонено *службой*, и найдите основную причину в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/azure-signalr/signalr-howto-troubleshoot-guide).
+Просмотрите трассировку сети на стороне сервера, чтобы узнать код состояния и сведения об ошибке, почему *Подключение к серверу* отклоняется или отклонено *службой*, и найдите основную причину в разделе [руководство по устранению неполадок](./signalr-howto-troubleshoot-guide.md).
 
 
 ### <a name="how-to-add-logs"></a>Добавление журналов
@@ -86,18 +86,18 @@ ms.locfileid: "94686913"
 
 ##### <a name="enable-client-side-logging-for-aspnet-core-signalr"></a>Включить ведение журнала на стороне клиента для `ASP.NET Core SignalR`
 
-* [Ведение журнала клиента JavaScript](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#javascript-client-logging)
+* [Ведение журнала клиента JavaScript](/aspnet/core/signalr/diagnostics#javascript-client-logging)
 
-* [Ведение журнала клиента .NET](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#net-client-logging)
+* [Ведение журнала клиента .NET](/aspnet/core/signalr/diagnostics#net-client-logging)
 
 
 ##### <a name="enable-client-side-logging-for-aspnet-signalr"></a>Включить ведение журнала на стороне клиента для `ASP.NET SignalR`
 
-* [Клиент .NET](https://docs.microsoft.com/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-net-client-windows-desktop-apps)
+* [Клиент .NET](/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-net-client-windows-desktop-apps)
 
-* [Включение трассировки в клиентах Windows Phone 8](https://docs.microsoft.com/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-windows-phone-8-clients)
+* [Включение трассировки в клиентах Windows Phone 8](/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-windows-phone-8-clients)
 
-* [Включение трассировки в клиенте JavaScript](https://docs.microsoft.com/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-javascript-client)
+* [Включение трассировки в клиенте JavaScript](/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-javascript-client)
 
 <a name="add_logs_server"></a>
 
@@ -105,7 +105,7 @@ ms.locfileid: "94686913"
 
 ##### <a name="enable-server-side-logging-for-aspnet-core-signalr"></a>Включить ведение журнала на стороне сервера для `ASP.NET Core SignalR`
 
-Ведение журнала на стороне сервера для `ASP.NET Core SignalR` интеграции с `ILogger` [журналом](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1&tabs=aspnetcore2x) на основе, предоставленным в `ASP.NET Core` платформе. Вы можете включить ведение журнала на стороне сервера с помощью `ConfigureLogging` , выбрав пример использования следующим образом:
+Ведение журнала на стороне сервера для `ASP.NET Core SignalR` интеграции с `ILogger` [журналом](/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x&view=aspnetcore-2.1) на основе, предоставленным в `ASP.NET Core` платформе. Вы можете включить ведение журнала на стороне сервера с помощью `ConfigureLogging` , выбрав пример использования следующим образом:
 
 ```cs
 .ConfigureLogging((hostingContext, logging) =>
@@ -162,7 +162,7 @@ ms.locfileid: "94686913"
 
 #### <a name="how-to-enable-logs-inside-azure-signalr-service"></a>Как включить журналы в службе SignalR Azure
 
-Вы также можете [включить журналы диагностики](https://docs.microsoft.com/azure/azure-signalr/signalr-tutorial-diagnostic-logs) для службы Azure SignalR. Эти журналы содержат подробные сведения о каждом подключении, подключенном к службе Azure SignalR.
+Вы также можете [включить журналы диагностики](./signalr-howto-diagnostic-logs.md) для службы Azure SignalR. Эти журналы содержат подробные сведения о каждом подключении, подключенном к службе Azure SignalR.
 
 <a name="serverless_mode_tsg"></a>
 
@@ -194,7 +194,7 @@ ms.locfileid: "94686913"
     * Или перезапустите экземпляр.
     * Если все приведенные выше параметры не работают, свяжитесь с нами, добавив новый запрос в службу поддержки в портал Azure.
 
-Дополнительные сведения об [аварийном восстановлении](https://docs.microsoft.com/azure/azure-signalr/signalr-concept-disaster-recovery).
+Дополнительные сведения об [аварийном восстановлении](./signalr-concept-disaster-recovery.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

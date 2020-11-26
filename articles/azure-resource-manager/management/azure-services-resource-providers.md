@@ -3,12 +3,12 @@ title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: c447a08b4422929f042315370b5888f3db0626e4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 7c8e535978bff38146caee1a3b5177d5befaa6a1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697736"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185867"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -22,8 +22,8 @@ ms.locfileid: "94697736"
 | Microsoft.Addons | core |
 | Microsoft. Адхибридхеалссервице<sup>1</sup> | [Azure Active Directory](../../active-directory/index.yml) |
 | Microsoft.Advisor | [Помощник по Azure](../../advisor/index.yml) |
-| Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
-| Microsoft.AnalysisServices | [Службы Azure Analysis Services](../../analysis-services/index.yml) |
+| Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.AnalysisServices | [Azure Analysis Services](../../analysis-services/index.yml) |
 | Microsoft.ApiManagement | [Управление API](../../api-management/index.yml) |
 | Microsoft.AppConfiguration | [Конфигурация приложений Azure](../../azure-app-configuration/index.yml) |
 | Microsoft.AppPlatform | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
@@ -47,7 +47,7 @@ ms.locfileid: "94697736"
 | Microsoft.Capacity | core |
 | Microsoft.Cdn | [Сеть доставки содержимого](../../cdn/index.yml) |
 | Microsoft.CertificateRegistration | [Сертификаты службы приложений](../../app-service/configure-ssl-certificate.md#import-an-app-service-certificate) |
-| Microsoft.ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.ClassicCompute | Виртуальная машина классической модели развертывания |
 | Microsoft.ClassicInfrastructureMigrate | Миграция классической модели развертывания |
 | Microsoft.ClassicNetwork | Виртуальная сеть классической модели развертывания |
@@ -100,10 +100,10 @@ ms.locfileid: "94697736"
 | Microsoft.HybridData | [StorSimple](../../storsimple/index.yml) |
 | Microsoft. Хибриднетворк  | [Зоны частного периметра](../../networking/edge-zones-overview.md) |
 | Microsoft.ImportExport | [Импорт и экспорт Microsoft Azure](../../storage/common/storage-import-export-service.md) |
-| microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml) |
+| microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.IoTCentral | [Azure IoT Central](../../iot-central/index.yml) |
 | Microsoft.IoTSpaces | [Azure Digital Twins](../../digital-twins/index.yml) |
-| Microsoft.Intune | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.Intune | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.KeyVault | [хранилище ключей;](../../key-vault/index.yml) |
 | Microsoft.Kubernetes | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
 | Microsoft.KubernetesConfiguration | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
@@ -126,13 +126,13 @@ ms.locfileid: "94697736"
 | Microsoft.Migrate | [Миграция Azure](../../migrate/migrate-services-overview.md) |
 | Microsoft.MixedReality | [Пространственные привязки Azure.](../../spatial-anchors/index.yml) |
 | Microsoft.NetApp | [Azure NetApp Files](../../azure-netapp-files/index.yml) |
-| Microsoft.Network. | [Шлюз приложений](../../application-gateway/index.yml)<br />[Бастион Azure](../../bastion/index.yml)<br />[Защита от атак DDoS Azure](../../virtual-network/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Брандмауэр Azure](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Приватный канал Azure](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Наблюдатель за сетями](../../network-watcher/index.yml)<br />[Диспетчер трафика](../../traffic-manager/index.yml)<br />[Виртуальная сеть](../../virtual-network/index.yml)<br />[Виртуальная глобальная сеть](../../virtual-wan/index.yml)<br />[VPN-шлюз](../../vpn-gateway/index.yml)<br /> |
+| Microsoft.Network. | [Шлюз приложений](../../application-gateway/index.yml)<br />[Бастион Azure](../../bastion/index.yml)<br />[Защита от атак DDoS Azure](../../ddos-protection/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Брандмауэр Azure](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Приватный канал Azure](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Наблюдатель за сетями](../../network-watcher/index.yml)<br />[Диспетчер трафика](../../traffic-manager/index.yml)<br />[Виртуальная сеть](../../virtual-network/index.yml)<br />[Виртуальная глобальная сеть](../../virtual-wan/index.yml)<br />[VPN-шлюз](../../vpn-gateway/index.yml)<br /> |
 | Microsoft. Notebooks | [Записные книжки Azure](https://notebooks.azure.com/help/introduction) |
 | Microsoft.NotificationHubs | [Центры уведомлений](../../notification-hubs/index.yml) |
 | Microsoft.ObjectStore | Хранилище объектов |
 | Microsoft.OffAzure | [Миграция Azure](../../migrate/migrate-services-overview.md) |
-| Microsoft.OperationalInsights | [Azure Monitor](../../azure-monitor/index.yml) |
-| Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.OperationalInsights | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.Peering | [Служба пиринга Azure](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Политика Azure](../../governance/policy/index.yml) |
 | Microsoft. Portal<sup>1</sup> | [Портал Azure](../../azure-portal/index.yml) |
@@ -181,10 +181,10 @@ ms.locfileid: "94697736"
 | Microsoft.WindowsDefenderATP | [Advanced Threat Protection в Microsoft Defender](../../security-center/security-center-wdatp.md) |
 | Microsoft.WindowsESU | Расширенные обновления для системы безопасности |
 | Microsoft.WindowsIoT | [Основные службы Windows 10 IoT](/windows-hardware/manufacture/iot/iotcoreservicesoverview) |
-| Microsoft. WorkloadMonitor<sup>1</sup> | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft. WorkloadMonitor<sup>1</sup> | [Azure Monitor](../../azure-monitor/index.yml); |
 
 <sup>1</sup> зарегистрировано по умолчанию
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о поставщиках ресурсов, включая регистрацию поставщика ресурсов, см. в статье [поставщики и типы ресурсов Azure](resource-providers-and-types.md).

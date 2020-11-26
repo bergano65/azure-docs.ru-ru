@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 425a7ff0553ddeac502c59e240f5ab152d6e0d79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f66c710901b129cb6b138fff126e67615c790714
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87015159"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183674"
 ---
 # <a name="integrate-with-azure-monitor-logs"></a>Интеграция с журналами Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "87015159"
 
 - Выпуск за ноябрь 2016 года или более поздний выпуск [Azure PowerShell](/powershell/azure/) (вер. 2.3.0).
 - Учетная запись службы автоматизации Azure. Дополнительные сведения см. в статье [Общие сведения о службе автоматизации Azure](automation-intro.md).
-- Рабочая область Log Analytics с предложением службы "Автоматизация и управление". Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
+- Рабочая область Log Analytics с предложением службы "Автоматизация и управление". Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md).
 - Как минимум один узел службы "Настройка состояния службы автоматизации Azure". Дополнительные сведения см. в статье [Подключение компьютеров для управления с помощью State Configuration службы автоматизации Azure](automation-dsc-onboarding.md).
 - Модуль [xDscDiagnostics](https://www.powershellgallery.com/packages/xDscDiagnostics/2.7.0.0), версия 2.7.0.0 или более поздняя. Инструкции по установке см. в разделе [Устранение неполадок с Desired State Configuration службы автоматизации Azure](./troubleshoot/desired-state-configuration.md).
 

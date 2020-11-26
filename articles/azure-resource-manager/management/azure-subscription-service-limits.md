@@ -3,12 +3,12 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 54eb25e302d49be9e3ab1febeb5c636d267d7e4f
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 810d503f1abdc14ad2d255a89aebe7c10954a889
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577844"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186207"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -96,7 +96,7 @@ ms.locfileid: "94577844"
 
 * **Бесплатная** служба с несколькими клиентами, совместно используемая с другими подписчиками Azure, предназначена для оценки и небольших проектов разработки.
 * **Базовый** предоставляет выделенные вычислительные ресурсы для небольших рабочих нагрузок в рабочей среде, поддерживая до трех реплик для обработки запросов с высоким уровнем доступности.
-* **Стандартная** , включающая высокую плотность S1, S2, S3 и S3, предназначена для больших рабочих нагрузок. На уровне Standard существует несколько уровней, чтобы можно было выбрать конфигурацию ресурсов, которая лучше соответствует профилю рабочей нагрузки.
+* **Стандартная**, включающая высокую плотность S1, S2, S3 и S3, предназначена для больших рабочих нагрузок. На уровне Standard существует несколько уровней, чтобы можно было выбрать конфигурацию ресурсов, которая лучше соответствует профилю рабочей нагрузки.
 
 **Ограничения на одну подписку**
 
@@ -398,7 +398,7 @@ ms.locfileid: "94577844"
 
 #### <a name="disk-encryption-sets"></a>Наборы шифрования дисков
 
-Существует ограничение в 50 наборов шифрования дисков на регион для каждой подписки. Дополнительные сведения см. в документации по шифрованию виртуальных машин [Linux](../../virtual-machines/linux/disk-encryption.md#restrictions) или [Windows](../../virtual-machines/windows/disk-encryption.md#restrictions) . Если вам нужно увеличить квоту, обратитесь в службу поддержки Azure.
+Существует ограничение в 50 наборов шифрования дисков на регион для каждой подписки. Дополнительные сведения см. в документации по шифрованию виртуальных машин [Linux](../../virtual-machines/disk-encryption.md#restrictions) или [Windows](../../virtual-machines/disk-encryption.md#restrictions) . Если вам нужно увеличить квоту, обратитесь в службу поддержки Azure.
 
 ### <a name="managed-virtual-machine-disks"></a>Управляемые диски виртуальной машины
 
@@ -442,7 +442,7 @@ ms.locfileid: "94577844"
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

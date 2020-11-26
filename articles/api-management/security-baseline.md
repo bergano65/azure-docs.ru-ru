@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 6ac568e56d201ef43e40428085b226608e83973a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 62b4629d258f8779dc53b4b8e00684d3b793291d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024574"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183759"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Базовый план безопасности Azure для Управления API
 
@@ -98,7 +98,7 @@ ms.locfileid: "95024574"
 
 * [Общие сведения о Шлюзе приложений Azure](../application-gateway/index.yml)
 
-* [Настройка службы Защита от атак DDoS Azure уровня "Стандартный"](../virtual-network/manage-ddos-protection.md)
+* [Настройка службы Защита от атак DDoS Azure уровня "Стандартный"](../ddos-protection/manage-ddos-protection.md)
 
 * [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
@@ -301,7 +301,7 @@ ms.locfileid: "95024574"
 
 * [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Интеграция с Azure Application Insights](./api-management-howto-app-insights.md)
 
@@ -490,7 +490,7 @@ ms.locfileid: "95024574"
 
 * [Защита API с помощью протокола OAuth 2.0 и службы Управления API в Azure Active Directory](./api-management-howto-protect-backend-with-aad.md)
 
-* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -614,7 +614,7 @@ ms.locfileid: "95024574"
 
 **Руководство**. Вызовы плоскости управления выполняются через Azure Resource Manager по протоколу TLS. Требуется допустимый веб-маркер JSON (JWT). Вызовы плоскости данных можно защищать с помощью TLS и одного из поддерживаемых механизмов проверки подлинности (например, сертификата клиента или JWT).
 
-* [Общие сведения о защите данных в службе Управления API Azure](./api-management-security-controls.md#data-protection)
+* [Общие сведения о защите данных в службе Управления API Azure](#data-protection)
 
 * [Управление параметрами TLS в службе Управления API Azure](./api-management-howto-manage-protocols-ciphers.md)
 
@@ -664,7 +664,7 @@ ms.locfileid: "95024574"
 
 **Руководство**. Конфиденциальные данные, такие как сертификаты, ключи и именованные значения секретов, шифруются с помощью ключей экземпляров службы, управляемых службой. Все ключи шифрования предназначены для конкретного экземпляра службы и управляются службой.
 
-* [Общие сведения о защите и шифровании хранимых данных с помощью службы Управления API Azure](./api-management-security-controls.md#data-protection)
+* [Общие сведения о защите и шифровании хранимых данных с помощью службы Управления API Azure](#data-protection)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -692,7 +692,7 @@ ms.locfileid: "95024574"
 
 Проверка базовой платформы и внесение исправлений в нее осуществляется корпорацией Майкрософт. Проверяйте доступные элементы управления безопасностью для сокращения количества уязвимостей, связанных с конфигурацией службы.
 
-* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure](./api-management-security-controls.md)
+* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure]()
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -728,7 +728,7 @@ ms.locfileid: "95024574"
 
 Проверка базовой платформы и внесение исправлений в нее осуществляется корпорацией Майкрософт. Клиенту следует проверять доступные элементы управления безопасностью для сокращения количества уязвимостей, связанных с конфигурацией службы.
 
-* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure](./api-management-security-controls.md)
+* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure]()
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -932,9 +932,7 @@ ms.locfileid: "95024574"
 
 * [Документация по Azure Repos](/azure/devops/repos/index)
 
-* [Общие сведения о наборе ресурсов DevOps для Управления API Azure](./api-management-security-controls.md#configuration-management)
-
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -971,8 +969,6 @@ ms.locfileid: "95024574"
 **Руководство**. Используйте набор ресурсов DevOps для Управления API Azure с целью управления конфигурацией для службы Управления API Azure.
 
 Кроме того, определите и реализуйте стандартные конфигурации безопасности для служб Управления API Azure с помощью Политики Azure. Используйте псевдонимы Политик Azure в пространстве имен Microsoft.ApiManagement для создания настраиваемых политик, предназначенных для аудита или принудительного применения конфигурации для экземпляров Управления API Azure. Используйте политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
-
-* [Общие сведения о наборе ресурсов DevOps для Управления API Azure](./api-management-security-controls.md#configuration-management)
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 

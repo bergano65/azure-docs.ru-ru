@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: c7f0e98b5ea2fdd13b1daa9fd9737998eb6cfaf1
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 466af29a3f073f73d4a0fc62d74709cd59f82425
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "96010220"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183793"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
 
@@ -80,11 +80,11 @@ ms.locfileid: "96010220"
 При масштабировании от или до уровня разработчика будет просто. В противном случае время простоя отсутствует. 
 
 ## <a name="compute-isolation"></a>Изоляция вычислений
-Если требования к безопасности включают [изоляцию вычислений](https://docs.microsoft.com/azure/azure-government/azure-secure-isolation-guidance#compute-isolation), можно использовать ценовую категорию " **изолированная** ". Этот уровень гарантирует, что вычислительные ресурсы экземпляра службы управления API потребляют весь физический узел и обеспечивают необходимый уровень изоляции, необходимый для поддержки, например, для рабочих нагрузок уровня защиты (IL5) в США. Чтобы получить доступ к изолированному уровню, [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). 
+Если требования к безопасности включают [изоляцию вычислений](../azure-government/azure-secure-isolation-guidance.md#compute-isolation), можно использовать ценовую категорию " **изолированная** ". Этот уровень гарантирует, что вычислительные ресурсы экземпляра службы управления API потребляют весь физический узел и обеспечивают необходимый уровень изоляции, необходимый для поддержки, например, для рабочих нагрузок уровня защиты (IL5) в США. Чтобы получить доступ к изолированному уровню, [Создайте запрос в службу поддержки](../azure-portal/supportability/how-to-create-azure-support-request.md). 
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание экземпляра службы управления Azure API в различных регионах Azure](api-management-howto-deploy-multi-region.md)
 - [Автоматическое масштабирование экземпляра службы управления API Azure](api-management-howto-autoscale.md)

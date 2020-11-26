@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: ramakk
-ms.openlocfilehash: 50669dcce044988f2e45acc2a17ae43c140d1ab5
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 96d8ba058a33d408ec2ee2a1adfba9011f393da9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930311"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184490"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Рекомендации по планированию сети Azure NetApp Files
 
@@ -116,7 +116,7 @@ ms.locfileid: "91930311"
 
 ![Собственная сетевая среда](../media/azure-netapp-files/azure-netapp-files-network-hybrid-environment.png)
 
-В гибридном сценарии приложениям из локальных центров обработки данных требуется доступ к ресурсам в Azure.  Это происходит, если вы хотите расширить центр обработки данных в Azure или использовать облачных служб Azure для аварийного восстановления. Сведения о подключении нескольких локальных ресурсов к ресурсам в Azure с помощью VPN-подключения типа "сеть — сеть" или ExpressRoute см. в [описании вариантов планирования VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%252fazure%252fvirtual-network%252ftoc.json#planningtable).
+В гибридном сценарии приложениям из локальных центров обработки данных требуется доступ к ресурсам в Azure.  Это происходит, если вы хотите расширить центр обработки данных в Azure или использовать облачных служб Azure для аварийного восстановления. Сведения о подключении нескольких локальных ресурсов к ресурсам в Azure с помощью VPN-подключения типа "сеть — сеть" или ExpressRoute см. в [описании вариантов планирования VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json#planningtable).
 
 В звездообразной гибридной топологии центральная виртуальная сеть, размещенная в Azure, выполняет роль центральной точки подключения к локальной сети. Периферийными называются виртуальные сети, для которых настроен пиринг с центральной сетью. Они могут использоваться для изоляции рабочих нагрузок.
 

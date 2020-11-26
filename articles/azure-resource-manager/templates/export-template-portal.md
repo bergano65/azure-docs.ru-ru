@@ -3,12 +3,12 @@ title: Экспорт шаблона в портал Azure
 description: Используйте портал Azure, чтобы экспортировать шаблон Azure Resource Manager из ресурсов в подписке.
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.openlocfilehash: 6d0c9adb121372047336d2753df047f54f1e0fa2
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: ee97953a337bbb7cc9a8d1f042a3beae7bccdcae
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951763"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185697"
 ---
 # <a name="single-and-multi-resource-export-to-a-template-in-azure-portal"></a>Экспорт одного и нескольких ресурсов в шаблон в портал Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "91951763"
 
 Функция экспорта шаблона не поддерживает экспорт ресурсов фабрики данных Azure. Дополнительные сведения о том, как можно экспортировать ресурсы фабрики данных, см. в статье [копирование или клонирование фабрики данных в фабрике данных Azure](../../data-factory/copy-clone-data-factory.md).
 
-Чтобы экспортировать ресурсы, созданные с помощью классической модели развертывания, необходимо [перенести их в модель развертывания Диспетчер ресурсов](../../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+Чтобы экспортировать ресурсы, созданные с помощью классической модели развертывания, необходимо [перенести их в модель развертывания Диспетчер ресурсов](../../virtual-machines/migration-classic-resource-manager-overview.md).
 
 При получении предупреждения при экспорте шаблона, указывающего на то, что тип ресурса не был экспортирован, можно по-прежнему обнаружить свойства этого ресурса. Дополнительные сведения о различных параметрах просмотра свойств ресурсов см. в разделе [Обнаружение свойств ресурсов](view-resources.md). Вы также можете просмотреть [REST API Azure](/rest/api/azure/) для типа ресурса.
 

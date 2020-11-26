@@ -6,12 +6,12 @@ author: yunjchoi
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: yunjchoi
-ms.openlocfilehash: 9d06ad2f740394a4959f3665c5d6311e71841241
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: e8921152177d3e4534ca9fb48cf209aed6e1b27c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94960841"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183368"
 ---
 # <a name="azure-kubernetes-service-diagnostics-preview-overview"></a>Обзор диагностики службы Kubernetes Azure (Предварительная версия)
 
@@ -79,10 +79,10 @@ ms.locfileid: "94960841"
 - ошибки 401
 - Ошибки 403
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Собирайте журналы, чтобы упростить устранение неполадок кластера с помощью [AKS Periscope](https://aka.ms/aksperiscope).
 
-Ознакомьтесь с [разделом рекомендации по рассмотрению](https://docs.microsoft.com/azure/architecture/operator-guides/aks/aks-triage-practices) в руководстве по операциям AKS Day-2.
+Ознакомьтесь с [разделом рекомендации по рассмотрению](/azure/architecture/operator-guides/aks/aks-triage-practices) в руководстве по операциям AKS Day-2.
 
 Опубликуйте свои вопросы или отзывы в [UserVoice](https://feedback.azure.com/forums/914020-azure-kubernetes-service-aks) , добавив "[DIAG]" в заголовке.

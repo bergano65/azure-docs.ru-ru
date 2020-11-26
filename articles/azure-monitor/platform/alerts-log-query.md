@@ -6,19 +6,19 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.subservice: alerts
-ms.openlocfilehash: 7f03858b2427b2a2069ebe2c9d06425e7a741e2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7c9c76816b5d1ee2eedfb7e54645e056906feef
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294365"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186632"
 ---
 # <a name="optimizing-log-alert-queries"></a>Оптимизация запросов предупреждений журнала
 В этой статье описывается написание и преобразование запросов [предупреждений журнала](alerts-unified-log.md) для достижения оптимальной производительности. Оптимизированные запросы уменьшают задержку и нагрузку на предупреждения, которые выполняются часто.
 
 ## <a name="how-to-start-writing-an-alert-log-query"></a>Начало записи запроса в журнал предупреждений
 
-Запросы предупреждений начинаются с [запроса данных журнала в log Analytics](alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) , указывающих на ошибку. Вы можете ознакомиться с [разделом примеры запросов предупреждений](../log-query/saved-queries.md) , чтобы понять, что можно обнаружить. Вы также можете приступить [к написанию собственного запроса](../log-query/get-started-portal.md). 
+Запросы предупреждений начинаются с [запроса данных журнала в log Analytics](alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) , указывающих на ошибку. Вы можете ознакомиться с [разделом примеры запросов предупреждений](../log-query/example-queries.md) , чтобы понять, что можно обнаружить. Вы также можете приступить [к написанию собственного запроса](../log-query/log-analytics-tutorial.md). 
 
 ### <a name="queries-that-indicate-the-issue-and-not-the-alert"></a>Запросы, указывающие на ошибку, а не на предупреждение
 
@@ -215,6 +215,6 @@ SecurityEvent
 ) on Hour
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об [оповещениях журналов](alerts-log.md) в Azure Monitor.
 - Дополнительные сведения о [запросах журналов](../log-query/log-query-overview.md).

@@ -3,12 +3,12 @@ title: Автоматизация Azure Application Insights с помощью P
 description: Автоматизация создания ресурсов, оповещений и тестов доступности и управления ими с помощью PowerShell и шаблона Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 05/02/2020
-ms.openlocfilehash: 58ed537a8fa6622756e7bcddceb6e9321cfbd82e
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: c380880845c162a1e8fb38e699a439ac04fb3b5a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94741093"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186292"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
@@ -469,7 +469,6 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 Другие статьи об автоматизации:
 
 * [Создание ресурса Application Insights](./create-new-resource.md#creating-a-resource-automatically) — быстрый метод без использования шаблона.
-* [Creating an Application Insights Web Test and Alert Programmatically](https://docs.microsoft.com/azure/azure-monitor/samples/resource-manager-alerts-metric#availability-test-with-metric-alert)
+* [Creating an Application Insights Web Test and Alert Programmatically](../samples/resource-manager-alerts-metric.md#availability-test-with-metric-alert)
 * [Отправка данных системы диагностики Azure в Application Insights](powershell-azure-diagnostics.md)
 * [Создание заметок выпуска](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
-

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9111a16a4264c4b225eaf0888fc09bd1bba07ef4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6672fd41dbd199940d663c4f7e1cb7f3b1936ce9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372125"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185782"
 ---
 # <a name="manage-azure-resources-by-using-azure-cli"></a>Управление ресурсами Azure с помощью Azure CLI
 
@@ -61,7 +61,7 @@ az group deployment create --resource-group $resourceGroupName --template-uri "h
 
 ## <a name="deploy-resources-to-multiple-subscriptions-or-resource-groups"></a>Развертывание ресурсов в нескольких подписках или группах ресурсов
 
-Обычно развертывание всех ресурсов в шаблоне выполняется в отдельную группу ресурсов. Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Дополнительные сведения см. [в статье Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](../templates/cross-scope-deployment.md).
+Обычно развертывание всех ресурсов в шаблоне выполняется в отдельную группу ресурсов. Тем не менее возможны ситуации, когда необходимо развернуть набор ресурсов одновременно, но при этом разместить их в отдельных подписках или группах ресурсов. Дополнительные сведения см. [в статье Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](../templates/deploy-to-resource-group.md).
 
 ## <a name="delete-resources"></a>Удаление ресурсов
 
@@ -139,7 +139,7 @@ az lock delete --ids $lockId
 
 Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../templates/template-syntax.md).

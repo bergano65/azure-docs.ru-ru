@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 11ea348a80bc226b6a96bea1e7c023ee9c06b13a
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: cc17dcef7a554bee2715c79ba7d0c2356db2c6b3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684123"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185663"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Руководство по устранению неполадок службы Azure SignalR
 
@@ -148,7 +148,7 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 Для **свободных** экземпляров ограничение числа **одновременных** подключений равно 20 для **стандартных** экземпляров, ограничение числа **одновременных** подключений **на единицу** равно 1 K, что означает, что Unit100 допускает одновременные подключения 100-K.
 
-Подключения включают как клиентские, так и серверные соединения. Проверьте [,](https://docs.microsoft.com/azure/azure-signalr/signalr-concept-messages-and-connections#how-connections-are-counted) как подсчитываются подключения.
+Подключения включают как клиентские, так и серверные соединения. Проверьте [,](./signalr-concept-messages-and-connections.md#how-connections-are-counted) как подсчитываются подключения.
 
 ## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500 ошибка при согласовании: служба Azure SignalR еще не подключена, повторите попытку позже.
 
@@ -162,7 +162,7 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 #### <a name="enable-server-side-logging-for-aspnet-core-signalr"></a>Включение ведения журнала на стороне сервера для ASP.NET Core SignalR
 
-Ведение журнала на стороне сервера для ASP.NET Core SignalR интегрируется с `ILogger` [журналом](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1&tabs=aspnetcore2x) на основе ASP.NET Core Framework. Вы можете включить ведение журнала на стороне сервера с помощью `ConfigureLogging` , выбрав пример использования следующим образом:
+Ведение журнала на стороне сервера для ASP.NET Core SignalR интегрируется с `ILogger` [журналом](/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x&view=aspnetcore-2.1) на основе ASP.NET Core Framework. Вы можете включить ведение журнала на стороне сервера с помощью `ConfigureLogging` , выбрав пример использования следующим образом:
 ```cs
 .ConfigureLogging((hostingContext, logging) =>
         {

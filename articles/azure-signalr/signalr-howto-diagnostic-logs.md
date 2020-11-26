@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: wanl
-ms.openlocfilehash: b0c1a91df30ee6a88f055dc47cfdef339e2ee2b2
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 5ad40ca051677ced0c6d8b5c35e8563272ff598f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151053"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183980"
 ---
 # <a name="resource-logs-for-azure-signalr-service"></a>Журналы ресурсов для службы SignalR Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "92151053"
 
 Журналы ресурсов по умолчанию отключены. Чтобы включить журналы ресурсов, выполните следующие действия.
 
-1. В [портал Azure](https://portal.azure.com)в разделе **мониторинг**щелкните **параметры диагностики**.
+1. В [портал Azure](https://portal.azure.com)в разделе **мониторинг** щелкните **параметры диагностики**.
 
     ![Переход к панели с параметрами диагностики](./media/signalr-tutorial-diagnostic-logs/diagnostic-settings-menu-item.png)
 
@@ -89,7 +89,7 @@ connectionId | Удостоверение подключения
 transportType | Тип транспорта соединения. Допустимые значения: `Websockets` \| `ServerSentEvents` \|`LongPolling`
 connectionType | Тип подключения. Допустимые значения: `Server` \| `Client`. `Server`: соединение со стороны сервера; `Client`: подключение со стороны клиента
 userId | Удостоверение пользователя
-сообщение | Подробное сообщение о событии журнала
+message | Подробное сообщение о событии журнала
 
 Ниже приведен пример строки JSON журнала архивирования.
 
@@ -122,7 +122,7 @@ userId | Удостоверение пользователя
 
     ![Пункт меню Log Analytics](./media/signalr-tutorial-diagnostic-logs/log-analytics-menu-item.png)
 
-2. Введите `SignalRServiceDiagnosticLogs` и выберите диапазон времени для запроса журналов ресурсов. Дополнительные сведения см. в статье Начало [работы с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md)
+2. Введите `SignalRServiceDiagnosticLogs` и выберите диапазон времени для запроса журналов ресурсов. Дополнительные сведения см. в статье Начало [работы с log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md)
 
     ![Журнал запросов в Log Analytics](./media/signalr-tutorial-diagnostic-logs/query-log-in-log-analytics.png)
 
@@ -182,9 +182,9 @@ TransportType | Тип транспорта соединения. Допусти
 
 #### <a name="throttling"></a>Регулирование
 
-Если вы обнаружите, что вы не можете установить клиентские подключения SignalR в службу Azure SignalR, проверьте журналы ресурсов. При возникновении проблем `Connection count reaches limit` в журнале ресурсов устанавливается слишком много подключений к службе SignalR, что достигает предельного числа подключений. Рассмотрите возможность масштабирования службы SignalR. Если вы сталкиваетесь `Message count reaches limit` с журналом ресурсов, это означает, что вы используете бесплатный уровень и используете квоту сообщений. Если вы хотите отправить больше сообщений, рассмотрите возможность изменения службы SignalR на уровень Standard для отправки дополнительных сообщений. Дополнительные сведения см. на странице [цен на службу Azure SignalR](https://azure.microsoft.com/pricing/details/signalr-service/).
+Если вы обнаружите, что вы не можете установить клиентские подключения SignalR в службу Azure SignalR, проверьте журналы ресурсов. При возникновении проблем `Connection count reaches limit` в журнале ресурсов устанавливается слишком много подключений к службе SignalR, что достигает предельного числа подключений. Рассмотрите возможность масштабирования службы SignalR. Если вы сталкиваетесь `Message count reaches limit` с журналом ресурсов, это означает, что вы используете бесплатный уровень и используете квоту сообщений. Если вы хотите отправить больше сообщений, рассмотрите возможность изменения службы SignalR на уровень Standard для отправки дополнительных сообщений. Дополнительные сведения см. на странице [цен на службу Azure SignalR](https://azure.microsoft.com/pricing/details/signalr-service/).
 
-### <a name="get-help"></a>Получить справку
+### <a name="get-help"></a>Получить помощь
 
 Мы рекомендуем сначала устранить неполадки. Большинство проблем вызваны неполадками сервера приложений или сети. Выполните инструкции по [устранению неполадок с журналом ресурсов](#troubleshooting-with-resource-logs) и [базовым руководством по решению проблем](https://github.com/Azure/azure-signalr/blob/dev/docs/tsg.md) , чтобы найти основную причину.
 Если проблему по-прежнему не удается устранить, попробуйте открыть проблему в GitHub или создать билет на портале Azure.

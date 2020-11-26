@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 4cc345eda8a8d51fb61cbbbd5cf0bf84633ccf0b
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: ec40e209d522daf882b8c704c7de6a1fb6aa29f9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676087"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183946"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-connect-and-query-articles"></a>Статьи о подключении и создании запросов к Базам данных SQL Azure и Управляемым экземплярам SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "92676087"
 | Краткое руководство | Описание |
 |---|---|
 |[Среда SQL Server Management Studio](connect-query-ssms.md)|В этом кратком руководстве показано, как использовать SSMS для подключения к базе данных, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
-|[Azure Data Studio](/sql/azure-data-studio/quickstart-sql-database?toc=%252fazure%252fsql-database%252ftoc.json)|В этом кратком руководстве показано, как использовать Azure Data Studio для подключения к базе данных, а затем с помощью инструкций Transact-SQL (T-SQL) создать базу данных TutorialDB, которая используется в руководствах по Azure Data Studio.|
+|[Azure Data Studio](/sql/azure-data-studio/quickstart-sql-database?toc=%2fazure%2fsql-database%2ftoc.json)|В этом кратком руководстве показано, как использовать Azure Data Studio для подключения к базе данных, а затем с помощью инструкций Transact-SQL (T-SQL) создать базу данных TutorialDB, которая используется в руководствах по Azure Data Studio.|
 |[Портал Azure](connect-query-portal.md)|В этом кратком руководстве показано, как использовать редактор запросов для подключения к базе данных (только к Базе данных SQL Azure), а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в ней.|
 |[Visual Studio Code](connect-query-vscode.md)|В этом кратком руководстве показано, как, используя Visual Studio Code, подключиться к базе данных, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в ней.|
 |[.NET с Visual Studio](connect-query-dotnet-visual-studio.md)|В этом кратком руководстве показано, как использовать .NET .NET Framework для создания программы C# с помощью Visual Studio, которая подключается к базе данных, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
@@ -47,8 +47,8 @@ ms.locfileid: "92676087"
 
 Протокол TLS (Transport Layer Security) использует все драйверы, предоставляемые или поддерживаемые корпорацией Майкрософт, для подключения к базе данных в службе "База данных SQL Azure" или в Управляемом экземпляре SQL Azure. Специальная настройка не требуется. Чтобы выполнить подключение к экземпляру SQL Server, базе данных в службе "База данных SQL Azure" или экземпляру Управляемого экземпляра SQL Azure, мы рекомендуем задать во всех приложениях следующие или подобные конфигурации:
 
-- **Encrypt = On** ;
-- **TrustServerCertificate = Off** .
+- **Encrypt = On**;
+- **TrustServerCertificate = Off**.
 
 В некоторых системах используются другие, но подобные ключевые слова для конфигурации. Эти конфигурации гарантируют, что драйвер клиента проверяет подлинность сертификата TLS, полученного от сервера.
 
@@ -60,7 +60,7 @@ ms.locfileid: "92676087"
 
 Для подключения к Базе данных SQL Azure или Управляемому экземпляру SQL Azure можно использовать различные библиотеки и платформы. Ознакомьтесь с нашими [руководствами по началу работы](https://aka.ms/sqldev), чтобы быстро приступить к программированию на таких языках, как C#, Java, Node.js, PHP и Python. Затем создайте приложение с помощью SQL Server в Linux или Windows либо Docker в macOS.
 
-В следующей таблице перечислены библиотеки подключений или *драйверы* , которые клиентские приложения могут применять с помощью различных языков для подключения и использования сервера SQL Server, работающего локально или в облаке. Эти библиотеки и драйверы можно использовать в среде Linux, Windows или Docker, а также при подключении к Базе данных SQL Azure, Управляемому экземпляру SQL Azure и Azure Synapse Analytics (прежнее название — Хранилище данных SQL).
+В следующей таблице перечислены библиотеки подключений или *драйверы*, которые клиентские приложения могут применять с помощью различных языков для подключения и использования сервера SQL Server, работающего локально или в облаке. Эти библиотеки и драйверы можно использовать в среде Linux, Windows или Docker, а также при подключении к Базе данных SQL Azure, Управляемому экземпляру SQL Azure и Azure Synapse Analytics (прежнее название — Хранилище данных SQL).
 
 | Язык | Платформа | Дополнительные ресурсы | Скачивание | Начало работы |
 | :-- | :-- | :-- | :-- | :-- |

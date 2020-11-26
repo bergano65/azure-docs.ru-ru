@@ -3,14 +3,14 @@ title: Записи DNS центра обработки данных Azure, ис
 description: В этой статье содержатся записи DNS, необходимые для функций службы автоматизации Azure при ограничении взаимодействия с определенным регионом Azure, на котором размещена эта учетная запись службы автоматизации.
 services: automation
 ms.subservice: process-automation
-ms.date: 07/23/2020
+ms.date: 11/25/2020
 ms.topic: conceptual
-ms.openlocfilehash: 17d0857a8979cfcc632ab8951fb255f97229a665
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4b8f48afc75c0a96937575bdad5bb884d0cb4d8
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87117183"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183725"
 ---
 # <a name="dns-records-for-azure-regions-used-by-azure-automation"></a>Записи DNS для регионов Azure, используемых службой автоматизации Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "87117183"
 | южная часть Соединенного Королевства |`https://<accountId>.webhook.uks.azure-automation.net`<br>`https://<accountId>.agentsvc.uks.azure-automation.net`<br>`https://<accountId>.jrds.uks.azure-automation.net` |
 | Центральная Франция |`https://<accountId>.webhook.fc.azure-automation.net`<br>`https://<accountId>.agentsvc.fc.azure-automation.net`<br>`https://<accountId>.jrds.fc.azure-automation.net` |
 | Северная часть ЮАР; |`https://<accountId>.webhook.san.azure-automation.net`<br>`https://<accountId>.agentsvc.san.azure-automation.net`<br>`https://<accountId>.jrds.san.azure-automation.net` |
-| Южная Бразилия |`https://<accountId>.webhook.brs.azure-automation.net`<br>`https://<accountId>.agentsvc.brs.azure-automation.net`<br>`https://<accountId>.jrds.brs.azure-automation.net` |
+| Brazil South |`https://<accountId>.webhook.brs.azure-automation.net`<br>`https://<accountId>.agentsvc.brs.azure-automation.net`<br>`https://<accountId>.jrds.brs.azure-automation.net` |
 | Северный Китай |`https://<accountId>.webhook.bjb.azure-automation.cn`<br>`https://<accountId>.agentsvc.bjb.azure-automation.cn`<br>`https://<accountId>.jrds.bjb.azure-automation.cn` |
 | Северный Китай 2 |`https://<accountId>.webhook.bjs2.azure-automation.cn`<br>`https://<accountId>.agentsvc.bjs2.azure-automation.cn`<br>`https://<accountId>.jrds.bjs2.azure-automation.cn` |
 | Восточный Китай 2 |`https://<accountId>.webhook.sha2.azure-automation.cn`<br>`https://<accountId>.agentsvc.sha2.azure-automation.cn`<br>`https://<accountId>.jrds.sha2.azure-automation.cn` |
@@ -84,11 +84,14 @@ ms.locfileid: "87117183"
 | US Gov (Техас) |`https://<accountId>.webhook.ussc.azure-automation.us`<br>`https://<accountId>.agentsvc.ussc.azure-automation.us`<br>`https://<accountId>.jrds.ussc.azure-automation.us` |
 | US Gov (Аризона) |`https://<accountId>.webhook.phx.azure-automation.us`<br>`https://<accountId>.agentsvc.phx.azure-automation.us`<br>`https://<accountId>.jrds.phx.azure-automation.us` |
 
-Замените `<accountId>` в записи DNS на GUID, представляющий идентификатор учетной записи службы автоматизации, по **URL-адресу**значения. Идентификатор, необходимый для **ключей** , можно получить в разделе **Параметры учетной записи** в портал Azure.
+Замените `<accountId>` в записи DNS на GUID, представляющий идентификатор учетной записи службы автоматизации, по **URL-адресу** значения. Идентификатор, необходимый для **ключей** , можно получить в разделе **Параметры учетной записи** в портал Azure.
 
 ![Страница первичного ключа учетной записи автоматизации](./media/automation-region-dns-records/automation-account-keys.png)
 
 Скопируйте значение после *Accounts/* из поля **URL-адрес** . `https://<GUID>.agentsvc.<region>.azure-automation.net/accounts/<GUID>`
+
+> [!NOTE]
+> Все записи веб-перехватчиков и agentservice DNS были обновлены до новых записей DNS стиля для поддержки частной ссылки. Для записей DNS ЖРДС поддерживаются как старые, так и новые записи DNS в стиле. Если вы не используете частную ссылку, вы увидите записи DNS старого стиля, в то время как те, кто использует частную ссылку, увидят новый стиль записей DNS.
 
 При определении [исключений](../automation-runbook-execution.md#exceptions) рекомендуем использовать адреса из списка. Чтобы получить список IP-адресов регионов вместо имен регионов, скачайте файл JSON из центра загрузки Майкрософт для следующих облачных сред:
 

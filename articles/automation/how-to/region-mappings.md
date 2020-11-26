@@ -5,12 +5,12 @@ ms.date: 10/19/2020
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: bffd1cc0ce2a6a827c0bc708321a6bd2839aae2d
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 23e5293301a2fc311565d0c1c8ec5fd92bebe9b2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207331"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183572"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Регионы, в которых поддерживается связанная рабочая область Log Analytics
 
@@ -87,6 +87,6 @@ ms.locfileid: "92207331"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об управлении обновлениями см. в статье [Обзор решения для управления обновлениями](../update-management/update-mgmt-overview.md).
+* Сведения об управлении обновлениями см. в статье [Обзор решения для управления обновлениями](../update-management/overview.md).
 * Сведения о функции отслеживания и инвентаризации изменений см. в статье [Обзор функции отслеживания и инвентаризации изменений](../change-tracking/overview.md).
 * Сведения о функции запуска и остановки виртуальных машин в нерабочее время см. в статье [Обзор функции запуска и остановки виртуальных машин в нерабочее время](../automation-solution-vm-management.md).

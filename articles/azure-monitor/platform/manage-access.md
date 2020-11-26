@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: 79e5b1ddde0ff5f0d09dc1c20e3b20ec4de3d925
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 234ef58920a9f896d3e8ebcc561562ea7ceb2708
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536682"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186428"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Управление доступом к данным журнала и рабочим областям в Azure Monitor
 
@@ -48,7 +48,7 @@ Azure Monitor хранят данные [журнала](data-platform-logs.md) 
 
 ![Изменение режима доступа к рабочей области](media/manage-access/change-access-control-mode.png)
 
-### <a name="using-powershell"></a>Использование PowerShell
+### <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 Чтобы проверить режим управления доступом для всех рабочих областей в подписке, используйте следующую команду:
 
@@ -285,7 +285,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 ### <a name="custom-logs"></a>Пользовательские журналы
 
- Пользовательские журналы создаются из источников данных, таких как пользовательские журналы и API сборщика данных HTTP. Самый простой способ узнать тип журнала — проверить таблицы, перечисленные в разделе [пользовательские журналы в схеме журнала](../log-query/get-started-portal.md#understand-the-schema).
+ Пользовательские журналы создаются из источников данных, таких как пользовательские журналы и API сборщика данных HTTP. Самый простой способ узнать тип журнала — проверить таблицы, перечисленные в разделе [пользовательские журналы в схеме журнала](../log-query/log-analytics-tutorial.md#table-schema).
 
  Вы не можете предоставить доступ к отдельным пользовательским журналам, но можете предоставить доступ ко всем настраиваемым журналам. Чтобы создать роль с доступом ко всем настраиваемым журналам, создайте настраиваемую роль, выполнив следующие действия.
 
@@ -308,7 +308,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 * Владельцы рабочих областей рассматриваются как другие пользователи для управления доступом на основе таблиц.
 * Рекомендуется назначать роли группам безопасности, а не отдельным пользователям, чтобы сократить количество назначений. Это также позволит использовать существующие средства управления группами для настройки и проверки доступа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о сборе данных с компьютеров в центре обработки данных или в другой облачной среде см в статье об [агенте Log Analytics](./log-analytics-agent.md).
 

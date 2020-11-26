@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: 7cb427c83345a4603c6fe7727c1cc42c1943c456
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f424a2c3102f7b270a64c612a91d645ab71461fc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95908257"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184099"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Использование управляемых клиентом учетных записей хранения в Azure Monitor Log Analytics
 
@@ -64,7 +64,7 @@ Log Analytics полагается на хранилище Azure в различ
 Учетная запись хранения и Key Vault должны быть расположены в одном регионе, но могут находиться в разных подписках. Дополнительные сведения о шифровании службы хранилища Azure и управлении ключами см. [в статье шифрование службы хранилища Azure для неактивных данных](../../storage/common/storage-service-encryption.md).
 
 ##### <a name="apply-cmk-to-your-storage-accounts"></a>Применение CMK к учетным записям хранения
-Чтобы настроить учетную запись хранения Azure для использования управляемых клиентом ключей с Azure Key Vault, используйте [портал Azure](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json), [PowerShell](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json) или [CLI](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). 
+Чтобы настроить учетную запись хранения Azure для использования управляемых клиентом ключей с Azure Key Vault, используйте [портал Azure](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [PowerShell](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или [CLI](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
 
 ## <a name="managing-linked-storage-accounts"></a>Управление связанными учетными записями хранения
 

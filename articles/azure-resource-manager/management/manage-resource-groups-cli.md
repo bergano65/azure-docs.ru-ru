@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9b5addd9d275e9367988dc10689c27fa035e97dd
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 4a9a4ed4ebba7f6f2470bb9e7000a899ebc26323
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951780"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185816"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-cli"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure CLI
 
@@ -135,7 +135,7 @@ az group export --name $resourceGroupName
 
 Функция экспорта шаблона не поддерживает экспорт ресурсов фабрики данных Azure. Дополнительные сведения о том, как можно экспортировать ресурсы фабрики данных, см. в статье [копирование или клонирование фабрики данных в фабрике данных Azure](../../data-factory/copy-clone-data-factory.md).
 
-Чтобы экспортировать ресурсы, созданные с помощью классической модели развертывания, необходимо [перенести их в модель развертывания Диспетчер ресурсов](../../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+Чтобы экспортировать ресурсы, созданные с помощью классической модели развертывания, необходимо [перенести их в модель развертывания Диспетчер ресурсов](../../virtual-machines/migration-classic-resource-manager-overview.md).
 
 Дополнительные сведения см. [в разделе один и несколько ресурсов экспорт в шаблон в портал Azure](../templates/export-template-portal.md).
 

@@ -6,14 +6,14 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 21a43a005b78c8916d06e97ca9d2ba21d5a585a3
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 56416009395ebf8270ad0fa8d141277424dd6d9a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424528"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183470"
 ---
-# <a name="authentication"></a>Аутентификация
+# <a name="authentication"></a>Проверка подлинности
 
 Все HTTP-запросы должны пройти проверку подлинности. Поддерживаются следующие схемы проверки подлинности.
 
@@ -23,4 +23,4 @@ ms.locfileid: "93424528"
 
 ## <a name="azure-active-directory"></a>Azure Active Directory
 
-[Проверка подлинности Azure Active Directory (Azure AD)](/azure/active-directory/authentication/overview-authentication) использует токен носителя, полученный от Azure Active Directory для проверки подлинности запросов. Сведения о том, как разрешены запросы, использующие этот метод проверки подлинности, можно найти в разделе [авторизация Azure AD](./rest-api-authorization-azure-ad.md) .
+[Проверка подлинности Azure Active Directory (Azure AD)](../active-directory/authentication/overview-authentication.md) использует токен носителя, полученный от Azure Active Directory для проверки подлинности запросов. Сведения о том, как разрешены запросы, использующие этот метод проверки подлинности, можно найти в разделе [авторизация Azure AD](./rest-api-authorization-azure-ad.md) .

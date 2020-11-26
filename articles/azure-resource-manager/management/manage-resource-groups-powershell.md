@@ -5,12 +5,12 @@ author: mumian
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: jgao
-ms.openlocfilehash: 1e9d44561d79c411bdff167acad4f37c21251e23
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: e5449dc26197a0aa2e2b0da49ad9e5ca4fb19e82
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951746"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185765"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure PowerShell
 
@@ -206,7 +206,7 @@ Export-AzResourceGroup `
 
 Функция экспорта шаблона не поддерживает экспорт ресурсов фабрики данных Azure. Дополнительные сведения о том, как можно экспортировать ресурсы фабрики данных, см. в статье [копирование или клонирование фабрики данных в фабрике данных Azure](../../data-factory/copy-clone-data-factory.md).
 
-Чтобы экспортировать ресурсы, созданные с помощью классической модели развертывания, необходимо [перенести их в модель развертывания Диспетчер ресурсов](../../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+Чтобы экспортировать ресурсы, созданные с помощью классической модели развертывания, необходимо [перенести их в модель развертывания Диспетчер ресурсов](../../virtual-machines/migration-classic-resource-manager-overview.md).
 
 Дополнительные сведения см. [в разделе один и несколько ресурсов экспорт в шаблон в портал Azure](../templates/export-template-portal.md).
 

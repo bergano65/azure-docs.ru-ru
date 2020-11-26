@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 7f4238035a6fccb0addb9a481287b31732bd2662
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: af6a46e16cd888e3ff6a382be2b1a4264fcc2941
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94744541"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184014"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Часто задаваемые вопросы о шаблонах ARM
 
@@ -68,7 +68,7 @@ ms.locfileid: "94744541"
 
 * **Можно ли создать подписку в шаблоне ARM?**
 
-  Да, дополнительные сведения см. [в разделе программное создание подписок Azure с помощью последних API-интерфейсов](../../cost-management-billing/manage/programmatically-create-subscription.md).
+  Да, дополнительные сведения см. [в разделе программное создание подписок Azure с помощью последних API-интерфейсов](../../cost-management-billing/manage/programmatically-create-subscription-enterprise-agreement.md).
 
 * **Как можно протестировать шаблон перед развертыванием?**
 
@@ -106,7 +106,7 @@ ms.locfileid: "94744541"
 
 * **Как начать работу с предварительной версией спецификации шаблонов?**
 
-  Установите последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте [версию 5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте [версию 2.14.2 или более позднюю](/cli/azure/install-azure-cli).
+  Установите последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте версию [5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте версию [2.14.2 или более позднюю](/cli/azure/install-azure-cli).
 
 * **Как связаны спецификации шаблонов и проекты Azure?**
 

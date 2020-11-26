@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 2e183ad8a6e25c12f073f51e9416b4fc0ed9365f
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 33672e90406b94a1b5788803911c072cdc2577f7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95530409"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186394"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "95530409"
 
 ## <a name="availability-set"></a>группа доступности
 Коллекция виртуальных машин, которые находятся под общим управлением для обеспечения избыточности и надежности приложений. Во время планового или внепланового обслуживания группы доступности обеспечивают доступность как минимум одной виртуальной машины.  
-См. статьи [Управление доступностью виртуальных машин Windows в Azure](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) и [Управление доступностью виртуальных машин Linux](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json).
+См. статьи [Управление доступностью виртуальных машин Windows в Azure](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) и [Управление доступностью виртуальных машин Linux](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="azure-classic-deployment-model"></a><a name="classic-model"></a>классическая модель развертывания Azure
 Одна из двух [моделей развертывания](./azure-resource-manager/management/deployment-models.md) , которые используются для развертывания ресурсов в Azure (новой моделью является модель Azure Resource Manager). Некоторые службы Azure поддерживают только модель развертывания с помощью Resource Manager, некоторые — только классическую модель развертывания, а другие — обе модели. Поддерживаемые модели указаны в документации по соответствующей службе Azure.
@@ -58,7 +58,7 @@ ms.locfileid: "95530409"
 
 ## <a name="fault-domain"></a>домен сбоя
 Коллекция виртуальных машин в группе доступности, которые могут отказать в одно и то же время. Примером может послужить группа установленных в стойку машин с общим источником питания и сетевым коммутатором. В Azure виртуальные машины в группе доступности автоматически распределяются между несколькими доменами сбоя.  
-См. статьи [Управление доступностью виртуальных машин Windows в Azure](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) и [Управление доступностью виртуальных машин Linux](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json).  
+См. статьи [Управление доступностью виртуальных машин Windows в Azure](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) и [Управление доступностью виртуальных машин Linux](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
 
 ## <a name="geo"></a>геообъект
 Определенная граница для резидентства данных, которое обычно включает два или несколько регионов. Границы могут проходить внутри государств или выходить за их пределы и подчиняются налоговому законодательству. Каждый геообъект включает как минимум один регион. Примеры геообъектов: Азиатско-Тихоокеанский регион и Япония. Еще одно название — *география*.  
@@ -102,7 +102,7 @@ ms.locfileid: "95530409"
 Контейнер в диспетчере ресурсов, содержащий связанные ресурсы для приложения. Группа ресурсов может содержать все ресурсы для приложения или только те ресурсы, которые логически сгруппированы вместе. Можно выбрать способ распределения ресурсов для групп ресурсов, который наиболее оптимален для вашей организации.  
 См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/management/overview.md).
 
-## <a name="resource-manager-template"></a><a name="arm-template"></a>Шаблон Resource Manager
+## <a name="resource-manager-template"></a><a name="arm-template"></a>Шаблон диспетчер ресурсов
 JSON-файл, который декларативно определяет один или несколько ресурсов Azure и устанавливает зависимости между развернутыми ресурсами. Шаблон можно использовать для согласованного и многократного развертывания ресурсов.  
 См. статью [Создание шаблонов диспетчера ресурсов Azure](./azure-resource-manager/templates/template-syntax.md).
 
@@ -129,13 +129,13 @@ JSON-файл, который декларативно определяет од
 Соглашение клиента с корпорацией Майкрософт, которое позволяет им получать доступ к службам Azure. Цены на подписку и связанные условия регулируются предложением, выбранным для подписки.
 См. [Соглашение о подписке Microsoft Online](https://azure.microsoft.com/support/legal/subscription-agreement/) и статью [Связь между подписками Azure и службой Azure Active Directory](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
-## <a name="tag"></a>тег
+## <a name="tag"></a>tag
 Условие индексирования, которое позволяет классифицировать ресурсы в соответствии с вашими требованиями к управлению или выставлению счетов. Если имеется сложная коллекция ресурсов, вы можете использовать теги, чтобы визуализировать эти активы наиболее оптимальным способом. Например, можно снабдить тегами ресурсы, которые выполняют в организации одну и ту же роль или относятся к одному отделу.  
 См. статью [Использование тегов для организации ресурсов в Azure](./azure-resource-manager/management/tag-resources.md).
 
 ## <a name="update-domain"></a>домен обновления
 Коллекция виртуальных машин в группе доступности, которые обновляются в одно и то же время. Во время планового обслуживания виртуальные машины в одном домене обновления перезапускаются вместе. Azure не перезапускает больше одного домена обновления за один раз. Он также называется доменом обновления.   
-См. статьи [Управление доступностью виртуальных машин Windows в Azure](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) и [Управление доступностью виртуальных машин Linux](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json).
+См. статьи [Управление доступностью виртуальных машин Windows в Azure](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) и [Управление доступностью виртуальных машин Linux](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="virtual-machine"></a><a name="vm"></a>Виртуальная машина
 Программная реализация физического компьютера, на котором работает операционная система. Несколько виртуальных машин могут одновременно работать на одном физическом компьютере. В Azure виртуальные машины могут быть разных размеров.  
@@ -144,7 +144,7 @@ JSON-файл, который декларативно определяет од
 ## <a name="virtual-machine-extension"></a><a name="vm-extension"></a>расширение виртуальной машины
 Ресурс, реализующий поведение или функции, которые либо помогают другим программам работать, либо предоставляют возможность для взаимодействия с работающим компьютером. Например, расширение доступа к виртуальным машинам можно использовать для сброса или изменения значений удаленного доступа на виртуальной машине Azure.
 <!-- This definition seems obscure to me; maybe a list of examples would work better than a conceptual definition? -->
-См. статью [Обзор расширений и компонентов виртуальной машины под управлением Windows](./virtual-machines/extensions/features-windows.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) или [Обзор расширений и компонентов виртуальных машин под управлением Linux](./virtual-machines/extensions/features-linux.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)
+См. статью [Обзор расширений и компонентов виртуальной машины под управлением Windows](./virtual-machines/extensions/features-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) или [Обзор расширений и компонентов виртуальных машин под управлением Linux](./virtual-machines/extensions/features-linux.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="virtual-network"></a><a name="vnet"></a>Виртуальная сеть
 Сеть, обеспечивающая соединение между ресурсами Azure и изолированная от всех клиентов Azure. [VPN-шлюз Azure](vpn-gateway/vpn-gateway-about-vpngateways.md) позволяет устанавливать подключения между виртуальными сетями и между виртуальной сетью и локальной сетью. Вы можете полностью контролировать блоки IP-адресов, параметры DNS, политики безопасности и таблицы маршрутизации в виртуальной сети.  
@@ -153,7 +153,7 @@ JSON-файл, который декларативно определяет од
 ## <a name="web-app"></a>Веб-приложение
 Другое название [приложения службы приложений](#app-service-app).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Начало работы с Azure](https://azure.microsoft.com/get-started/)
 * [Центр облачных ресурсов](https://azure.microsoft.com/resources/)  

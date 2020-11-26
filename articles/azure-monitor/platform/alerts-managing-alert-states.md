@@ -5,16 +5,16 @@ ms.subservice: alerts
 ms.topic: conceptual
 author: anantr
 ms.date: 09/24/2018
-ms.openlocfilehash: b91c3d59a5a37457d67fdfbc646334fccb331df5
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: fa1701c59f099f5222ab6454cc67b9dc20d1e7e7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104807"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186683"
 ---
 # <a name="manage-alert-and-smart-group-states"></a>Управление состоянием оповещений и смарт-групп
 
-У оповещений в Azure Monitor теперь есть [состояние предупреждения и условие мониторинга](./alerts-overview.md), и аналогично у смарт-групп есть [состояние смарт-группы](./alerts-smartgroups-overview.md?toc=%252fazure%252fazure-monitor%252ftoc.json). Изменения в состоянии теперь записываются в журнал, связанный с соответствующим оповещением или смарт-группой. В этой статье описывается процесс изменения состояния как для оповещения, так и для смарт-группы.
+У оповещений в Azure Monitor теперь есть [состояние предупреждения и условие мониторинга](./alerts-overview.md), и аналогично у смарт-групп есть [состояние смарт-группы](./alerts-smartgroups-overview.md?toc=%2fazure%2fazure-monitor%2ftoc.json). Изменения в состоянии теперь записываются в журнал, связанный с соответствующим оповещением или смарт-группой. В этой статье описывается процесс изменения состояния как для оповещения, так и для смарт-группы.
 
 ## <a name="change-the-state-of-an-alert"></a>Изменение состояния оповещения
 

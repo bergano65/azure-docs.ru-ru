@@ -7,12 +7,12 @@ ms.author: bwren
 ms.reviewer: bwren
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 18ece47187e3f83277d7d925ad958d2ede7cb337
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 2735aec0f95f5e282bb1dffba6e4f42f966cf117
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030022"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186547"
 ---
 # <a name="query-exported-data-from-azure-monitor-using-azure-data-explorer-preview"></a>Запрос экспортированных данных из Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)
 Экспорт данных из Azure Monitor в учетную запись хранения Azure обеспечивает недорогое хранение и возможность перераспределения журналов в разные регионы. Используйте обозреватель данных Azure для запроса данных, экспортированных из рабочих областей Log Analytics. После настройки поддерживаемые таблицы, отправленные из рабочих областей в учетную запись хранения Azure, будут доступны в качестве источника данных для Azure обозреватель данных.
@@ -134,6 +134,6 @@ external_table("HBTest","map") | take 10000
 
 [![Запрос Log Analytics экспортированных данных](media/azure-data-explorer-query-storage/external-table-query.png)](media/azure-data-explorer-query-storage/external-table-query.png#lightbox)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о [написании запросов в Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/write-queries)
+- Сведения о [написании запросов в Azure обозреватель данных](/azure/data-explorer/write-queries)

@@ -6,12 +6,12 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 78344bd3896ca7d00c9f761c586b6f5142dc1e58
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 73d951b3e85c170cf068693bb9b374349516ca8f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95253411"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183487"
 ---
 # <a name="azure-active-directory-authentication"></a>Проверка подлинности Azure Active Directory
 
@@ -54,7 +54,7 @@ Authorization: Bearer {{AadToken}}
 
 ### <a name="authentication-libraries"></a>Библиотеки проверки подлинности
 
-Azure предоставляет набор библиотек, именуемых Azure Active Directory библиотеками проверки подлинности, чтобы упростить процесс получения маркера Azure AD. Azure создает эти библиотеки для нескольких языков. Дополнительные сведения см. в этой [документации](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries).
+Azure предоставляет набор библиотек, именуемых Azure Active Directory библиотеками проверки подлинности, чтобы упростить процесс получения маркера Azure AD. Azure создает эти библиотеки для нескольких языков. Дополнительные сведения см. в этой [документации](../active-directory/azuread-dev/active-directory-authentication-libraries.md).
 
 ## <a name="errors"></a>ошибки
 

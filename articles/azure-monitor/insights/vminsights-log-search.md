@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 6b3fdf052ce7f0d6a5c3497aa1ac971d9249546a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 118bdcb6929abfc162ff05e91f1621f087b6c50c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015598"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186734"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Как запрашивать журналы из Azure Monitor для виртуальных машин
 
@@ -444,14 +444,14 @@ let remoteMachines = remote | summarize by RemoteMachine;
 |Пространство имен | Категория счетчика производительности | 
 |Имя | Имя счетчика производительности. |
 |Val | Собранное значение | 
-|Tags | Связанные сведения о записи. Для тегов, используемых с различными типами записей, см. таблицу ниже.  |
+|Теги | Связанные сведения о записи. Для тегов, используемых с различными типами записей, см. таблицу ниже.  |
 |AgentId | Уникальный идентификатор для агента каждого компьютера |
-|Type | *InsightsMetrics* |
+|Тип | *InsightsMetrics* |
 |_ResourceId_ | Идентификатор ресурса виртуальной машины |
 
 Счетчики производительности, собранные в таблице *инсигхтсметрикс* , перечислены в следующей таблице.
 
-| Пространство имен | Имя | Описание | Единицы | Tags |
+| Пространство имен | Имя | Описание | Единицы | Теги |
 |:---|:---|:---|:---|:---|
 | Компьютер    | Пульс             | Пульс компьютера                        | | |
 | Память      | аваилаблемб           | Объем доступной памяти, байт                    | Мегабайты      | Меморисиземб — общий объем памяти|
@@ -473,7 +473,6 @@ let remoteMachines = remote | summarize by RemoteMachine;
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Если вы не знакомы с написанием запросов журналов в Azure Monitor, см. статью [использование log Analytics](../log-query/get-started-portal.md) в портал Azure для записи запросов к журналу.
+* Если вы не знакомы с написанием запросов журналов в Azure Monitor, см. статью [использование log Analytics](../log-query/log-analytics-tutorial.md) в портал Azure для записи запросов к журналу.
 
-* Дополнительные сведения о [написании поисковых запросов](/azure/azure-monitor/log-query/get-started-queries).
-
+* Дополнительные сведения о [написании поисковых запросов](../log-query/get-started-queries.md).

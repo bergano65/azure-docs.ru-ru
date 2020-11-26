@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: lcozzens
-ms.openlocfilehash: b2b903f259fdd2564fbcaed5eb0a750edf9c06e2
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 936be917d5b494c9d71386440c711ef6c29ffb45
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075881"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183504"
 ---
 # <a name="push-settings-to-app-configuration-with-azure-pipelines"></a>Отправка параметров в конфигурацию приложения с помощью Azure Pipelines
 
@@ -23,7 +23,7 @@ ms.locfileid: "92075881"
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - Ресурс конфигурации приложения. Создайте его бесплатно в [портал Azure](https://portal.azure.com).
 - Проект Azure DevOps. [создайте его бесплатно](https://go.microsoft.com/fwlink/?LinkId=2014881)
-- Задача принудительной настройки приложения Azure — Скачайте бесплатно из [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task-push#:~:text=Navigate%20to%20the%20Tasks%20tab,the%20Azure%20App%20Configuration%20instance.).
+- Задача принудительной настройки приложения Azure — Скачайте бесплатно из [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task-push).
 
 ## <a name="create-a-service-connection"></a>Создание подключения к службе
 
@@ -49,7 +49,7 @@ ms.locfileid: "92075881"
 1. Перейдите к целевому хранилищу конфигураций приложений. 
 1. Слева выберите **Управление доступом (IAM)**.
 1. В верхней части щелкните **+ Добавить** и выберите **добавить назначение ролей**.
-1. В разделе **роль**выберите **владелец данных конфигурации приложения**. Эта роль позволяет задаче читать и записывать в хранилище конфигураций приложений. 
+1. В разделе **роль** выберите **владелец данных конфигурации приложения**. Эта роль позволяет задаче читать и записывать в хранилище конфигураций приложений. 
 1. Выберите субъект-службу, связанный с подключением службы, созданным в предыдущем разделе.
   
 ## <a name="use-in-builds"></a>Использование в сборках
@@ -93,7 +93,7 @@ ms.locfileid: "92075881"
 
 После заполнения необходимых параметров запустите конвейер. Все значения ключа в указанном файле конфигурации будут переданы в конфигурацию приложения.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 При возникновении непредвиденной ошибки можно включить журналы отладки, задав для переменной конвейера `system.debug` значение `true` .
 

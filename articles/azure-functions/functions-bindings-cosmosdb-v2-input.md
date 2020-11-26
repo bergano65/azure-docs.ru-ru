@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 42932d712d6c4a94cad28aec924b88fbc126662b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dec41a5e05d22891aae9d16280ebb6b0c8da3f20
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212792"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185119"
 ---
 # <a name="azure-cosmos-db-input-binding-for-azure-functions-2x-and-higher"></a>Azure Cosmos DB входную привязку для функций Azure 2. x и более поздних версий
 
@@ -20,7 +20,7 @@ ms.locfileid: "88212792"
 Сведения об установке и настройке см. в [этой обзорной статье](./functions-bindings-cosmosdb-v2.md).
 
 > [!NOTE]
-> Если коллекция [секционирована](../cosmos-db/partition-data.md#logical-partitions), операции уточняющего запроса необходимо также указать значение ключа секции.
+> Если коллекция [секционирована](../cosmos-db/partitioning-overview.md#logical-partitions), операции уточняющего запроса необходимо также указать значение ключа секции.
 >
 
 <a id="example" name="example"></a>
@@ -212,7 +212,7 @@ namespace CosmosDBSamplesV2
 В примере показано, как использовать выражение привязки в параметре `SqlQuery`. Вы можете передать данные маршрута в параметр `SqlQuery`, как показано здесь, но сейчас [невозможно передать значения строки запроса](https://github.com/Azure/azure-functions-host/issues/2554#issuecomment-392084583).
 
 > [!NOTE]
-> Если необходимо выполнить запрос только по ИДЕНТИФИКАТОРу, рекомендуется использовать поиск, как в [предыдущих примерах](#http-trigger-look-up-id-from-query-string-c), так как он будет потреблять меньше [единиц запросов](../cosmos-db/request-units.md). Операции чтения точки (GET) [более эффективны](../cosmos-db/optimize-cost-queries.md) , чем запросы по идентификатору.
+> Если необходимо выполнить запрос только по ИДЕНТИФИКАТОРу, рекомендуется использовать поиск, как в [предыдущих примерах](#http-trigger-look-up-id-from-query-string-c), так как он будет потреблять меньше [единиц запросов](../cosmos-db/request-units.md). Операции чтения точки (GET) [более эффективны](../cosmos-db/optimize-cost-reads-writes.md) , чем запросы по идентификатору.
 >
 
 ```cs
@@ -1315,7 +1315,7 @@ public class DocByIdFromRoute {
 В следующем примере показана функция Java, которая получает один документ. Функция активируется HTTP-запросом, использующим параметр маршрута, чтобы указать идентификатор для поиска. Этот идентификатор используется для получения документа из указанной базы данных и коллекции. При этом результирующий набор преобразуется в ```ToDoItem[]```, так как может быть возвращено несколько документов в зависимости от критериев запроса.
 
 > [!NOTE]
-> Если необходимо выполнить запрос только по ИДЕНТИФИКАТОРу, рекомендуется использовать поиск, как в [предыдущих примерах](#http-trigger-look-up-id-from-query-string---pojo-parameter-java), так как он будет потреблять меньше [единиц запросов](../cosmos-db/request-units.md). Операции чтения точки (GET) [более эффективны](../cosmos-db/optimize-cost-queries.md) , чем запросы по идентификатору.
+> Если необходимо выполнить запрос только по ИДЕНТИФИКАТОРу, рекомендуется использовать поиск, как в [предыдущих примерах](#http-trigger-look-up-id-from-query-string---pojo-parameter-java), так как он будет потреблять меньше [единиц запросов](../cosmos-db/request-units.md). Операции чтения точки (GET) [более эффективны](../cosmos-db/optimize-cost-reads-writes.md) , чем запросы по идентификатору.
 >
 
 ```java
@@ -1439,10 +1439,10 @@ public class DocsFromRouteSqlQuery {
 |**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
-|**id**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте `id` Свойства и **sqlQuery** . Если не задать ни одного из них, извлекается вся коллекция. |
+|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте `id` Свойства и **sqlQuery** . Если не задать ни одного из них, извлекается вся коллекция. |
 |**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не устанавливайте `id` и свойства, и `sqlQuery` . Если не задать ни одного из них, извлекается вся коллекция.|
 |**коннектионстрингсеттинг**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB. |
-|**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки. Он необходим для уточняющих запросов в [секционированных](../cosmos-db/partition-data.md#logical-partitions) коллекциях.|
+|**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки. Он необходим для уточняющих запросов в [секционированных](../cosmos-db/partitioning-overview.md#logical-partitions) коллекциях.|
 |**preferredLocations**| **PreferredLocations**| Используемых Определяет предпочтительные расположения (регионы) для геореплицированных учетных записей базы данных в службе Azure Cosmos DB. Значения должны быть разделены запятыми. Например, "Восточная часть США, Юго-Центральный регион США, Северная Европа". |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -1471,7 +1471,7 @@ public class DocsFromRouteSqlQuery {
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции при создании или изменении документа Azure Cosmos DB (триггер)](./functions-bindings-cosmosdb-v2-trigger.md)
 - [Сохранение изменений в документе Azure Cosmos DB (Выходная привязка)](./functions-bindings-cosmosdb-v2-output.md)

@@ -4,12 +4,12 @@ description: Служба Application Insights выполняет интелле
 ms.topic: conceptual
 ms.date: 05/04/2017
 ms.reviewer: antonfr
-ms.openlocfilehash: c817e2c7f609bbbec52eff1b898a8d7c53209a28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28a32c714618a3b6b0c3126d8060295f134ddc7c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87321315"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186241"
 ---
 # <a name="smart-detection---performance-anomalies"></a>Интеллектуальное обнаружение. Аномалии производительности
 
@@ -175,11 +175,10 @@ Application Insights определяет проблемы производит�
 
 * [Profiler](profiler.md) 
 * [отладчик моментальных снимков](./snapshot-debugger.md)
-* [Analytics](../log-query/get-started-portal.md)
+* [Analytics](../log-query/log-analytics-tutorial.md)
 * [Интеллектуальная диагностика и анализ](../log-query/log-query-overview.md)
 
 Интеллектуальное обнаружение — это полностью автоматическая функция, но, возможно, вам потребуется настроить некоторые дополнительные оповещения.
 
 * [Настройка оповещений в Application Insights](../platform/alerts-log.md)
 * [Доступность веб-тестов](./monitor-web-app-availability.md)
-

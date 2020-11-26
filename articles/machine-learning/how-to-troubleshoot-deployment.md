@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок развертывания веб-службы
+title: Устранение неполадок развертывания удаленной веб-службы
 titleSuffix: Azure Machine Learning
 description: Узнайте, как обойти и устранить распространенные ошибки развертывания DOCKER с помощью службы Kubernetes Azure и экземпляров контейнеров Azure.
 services: machine-learning
@@ -8,19 +8,19 @@ ms.subservice: core
 author: gvashishtha
 ms.author: gopalv
 ms.reviewer: jmartens
-ms.date: 11/02/2020
+ms.date: 11/25/2020
 ms.topic: troubleshooting
-ms.custom: contperfq4, devx-track-python, deploy
-ms.openlocfilehash: dfbfea22738e6aeb0df31ad941b2ff10e53795a4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: contperfq4, devx-track-python, deploy, contperfq2
+ms.openlocfilehash: 0b8da0be16adc79b606b59f394b223b001453607
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311294"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185068"
 ---
 # <a name="troubleshoot-model-deployment"></a>Устранение неполадок при развертывании моделей
 
-Узнайте, как устранить и устранить распространенные ошибки развертывания DOCKER в службе "экземпляры контейнеров Azure" (ACI) и службу Kubernetes Azure (AKS) с помощью Машинное обучение Azure.
+Узнайте, как устранять неполадки и устранять распространенные ошибки развертывания DOCKER с помощью экземпляров контейнеров Azure (ACI) и службы Kubernetes Azure (AKS), используя Машинное обучение Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -28,9 +28,6 @@ ms.locfileid: "93311294"
 * [Пакет SDK для Машинного обучения Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
 * [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 * [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
-* Для локальной отладки вам необходима рабочая установка Docker в локальной системе.
-
-    Чтобы проверить установку Docker, выполните команду `docker run hello-world` в терминале или командной строке. Сведения об установке Docker или устранении ошибок Docker см. в [документации Docker](https://docs.docker.com/).
 
 ## <a name="steps-for-docker-deployment-of-machine-learning-models"></a>Шаги для развертывания DOCKER в моделях машинного обучения
 
@@ -79,94 +76,8 @@ print(service.get_logs())
 
 ## <a name="debug-locally"></a>Отладка в локальной среде
 
-Если при развертывании модели в ACI или AKS возникли проблемы, разверните ее как локальную веб-службу. Использование локальной веб-службы упрощает устранение неполадок.
+Если при развертывании модели в ACI или AKS возникли проблемы, разверните ее как локальную веб-службу. Использование локальной веб-службы упрощает устранение неполадок. Чтобы устранить неполадки развертывания локально, см. [статью об устранении неполадок в локальной](./how-to-troubleshoot-deployment-local.md)среде.
 
-Пример [локального развертывания](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb) можно найти в репозитории  [мачинелеарнингнотебукс](https://github.com/Azure/MachineLearningNotebooks) , чтобы просмотреть пример готового к запуску примера.
-
-> [!WARNING]
-> Развертывания локальных веб-служб не поддерживаются для рабочих сред.
-
-Для развертывания в локальной среде измените код, чтобы использовать `LocalWebservice.deploy_configuration()` для создания конфигурации развертывания. Затем используйте `Model.deploy()` для развертывания службы. В следующем примере модель (содержащаяся в переменной моделей) развертывается как локальная веб-служба:
-
-```python
-from azureml.core.environment import Environment
-from azureml.core.model import InferenceConfig, Model
-from azureml.core.webservice import LocalWebservice
-
-
-# Create inference configuration based on the environment definition and the entry script
-myenv = Environment.from_conda_specification(name="env", file_path="myenv.yml")
-inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
-# Create a local deployment, using port 8890 for the web service endpoint
-deployment_config = LocalWebservice.deploy_configuration(port=8890)
-# Deploy the service
-service = Model.deploy(
-    ws, "mymodel", [model], inference_config, deployment_config)
-# Wait for the deployment to complete
-service.wait_for_deployment(True)
-# Display the port that the web service is available on
-print(service.port)
-```
-
-Если вы определяете собственную спецификацию conda YAML, то List azureml-Defaults версии >= 1.0.45 в качестве зависимости PIP. Этот пакет необходим для размещения модели в качестве веб-службы.
-
-На этом этапе вы можете использовать службу обычным образом. В следующем примере кода демонстрируется отправка данных в службу:
-
-```python
-import json
-
-test_sample = json.dumps({'data': [
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-]})
-
-test_sample = bytes(test_sample, encoding='utf8')
-
-prediction = service.run(input_data=test_sample)
-print(prediction)
-```
-
-Дополнительные сведения о настройке среды Python см. на [этой странице](how-to-use-environments.md). 
-
-### <a name="update-the-service"></a>Обновление службы
-
-Во время локального тестирования, возможно, нужно будет обновить файл `score.py`, чтобы добавить ведение журнала или попытаться решить любые обнаруженные проблемы. Чтобы перезагрузить изменения в файл `score.py`, используйте `reload()`. Например, следующий код перезагружает сценарий для службы, а затем отправляет в нее данные. Данные оцениваются с помощью обновленного файла `score.py`:
-
-> [!IMPORTANT]
-> Метод `reload` доступен лишь для локальных развертываний. Сведения об обновлении развертывания на другом целевом объекте вычислений см. [в разделе Обновление веб-службы](how-to-deploy-update-web-service.md).
-
-```python
-service.reload()
-print(service.run(input_data=test_sample))
-```
-
-> [!NOTE]
-> Сценарий перезагружается из расположения, указанного объектом `InferenceConfig`, используемым службой.
-
-Чтобы изменить модель, зависимости Conda или конфигурацию развертывания, используйте метод [update()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueupdate--args-). В следующем примере обновляется модель, используемая службой:
-
-```python
-service.update([different_model], inference_config, deployment_config)
-```
-
-### <a name="delete-the-service"></a>Удаление службы
-
-Чтобы удалить службу, воспользуйтесь методом [delete()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete--).
-
-### <a name="inspect-the-docker-log"></a><a id="dockerlog"></a> Проверка журнала Docker
-
-Можно распечатать подробные сообщения журнала ядра Docker из объекта службы. Вы можете просмотреть журнал для ACI, AKS и локальных развертываний. В следующем примере показано, как вывести данные журналов.
-
-```python
-# if you already have the service object handy
-print(service.get_logs())
-
-# if you only know the name of the service (note there might be multiple services with the same name but different version number)
-print(ws.webservices['mysvc'].get_logs())
-```
-Если строка `Booting worker with pid: <pid>` в журналах встречается несколько раз, это означает, что недостаточно памяти для запуска рабочей роли.
-Эту ошибку можно устранить, увеличив значение `memory_gb` в `deployment_config`
- 
 ## <a name="container-cannot-be-scheduled"></a>Контейнер невозможно запланировать
 
 При развертывании службы в целевой объект вычислений Службы Azure Kubernetes Машинное обучение Azure попытается запланировать службу с запрошенным количеством ресурсов. Если в кластере нет доступных узлов с соответствующим объемом ресурсов через 5 минут, развертывание завершится сбоем. Сообщение об ошибке: `Couldn't Schedule because the kubernetes cluster didn't have available resources after trying for 00:05:00` . Эту ошибку можно решить, добавив дополнительные узлы, изменив номера SKU узлов или изменив требования к ресурсам службы. 
@@ -177,7 +88,7 @@ print(ws.webservices['mysvc'].get_logs())
 
 После успешной сборки образа система пытается запустить контейнер с использованием конфигурации развертывания. В ходе процесса запуска контейнера системой вызывается функция `init()` в скрипте оценки. При наличии неперехваченных исключений в функции `init()` в сообщении об ошибке может появиться ошибка **CrashLoopBackOff**.
 
-Используя сведения из [этого раздела](#dockerlog), проверьте журналы.
+Используйте сведения в статье [Проверка журнала DOCKER](how-to-troubleshoot-deployment-local.md#dockerlog) .
 
 ## <a name="function-fails-get_model_path"></a>Ошибка выполнения функции: get_model_path()
 
@@ -281,3 +192,4 @@ def run(input_data):
 
 * [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
 * [Руководство. Обучение и развертывание моделей](tutorial-train-models-with-aml.md)
+* [Локальное выполнение экспериментов и их отладка](./how-to-debug-visual-studio-code.md)

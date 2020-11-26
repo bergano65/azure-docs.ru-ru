@@ -5,16 +5,16 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: tomfitz
-ms.openlocfilehash: 9d41e41f110e927f436b38d6291719c138defa53
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 2fdbbad467d8c762db485fc7935e9cef78313fd0
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94745820"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184456"
 ---
 # <a name="microsoftcommonserviceprincipalselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft. Common. СервицепринЦипалселектор
 
-Элемент управления, позволяющий пользователям выбрать существующий [субъект-службу](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) или зарегистрировать новое приложение. При выборе **создать новый** необходимо выполнить действия по регистрации нового приложения. При выборе существующего приложения элемент управления предоставляет текстовое поле для ввода пароля или отпечатка сертификата.
+Элемент управления, позволяющий пользователям выбрать существующий [субъект-службу](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) или зарегистрировать новое приложение. При выборе **создать новый** необходимо выполнить действия по регистрации нового приложения. При выборе существующего приложения элемент управления предоставляет текстовое поле для ввода пароля или отпечатка сертификата.
 
 ## <a name="ui-samples"></a>Примеры пользовательского интерфейса
 

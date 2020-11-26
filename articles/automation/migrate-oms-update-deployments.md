@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: dabe914ffd4e84e8ded5c0e3b519036479fe33ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a2226f55c829afa4316a92888d16f6dc68e1f931
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987607"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183606"
 ---
 # <a name="migrate-azure-monitor-logs-update-deployments-to-azure-portal"></a>Перенос развертываний обновлений журналов Azure Monitor на портал Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "90987607"
 ## <a name="key-information"></a>Основные сведения
 
 * Это не повлияет на работоспособность имеющихся развертываний. После воссоздания развертывания в Azure старое развертывание можно удалить.
-* Все возможности, которые существовали в OMS, доступны и в Azure. Дополнительные сведения об управлении обновлениями см. в статье [Управление обновлениями в службе автоматизации Azure](update-management/update-mgmt-overview.md).
+* Все возможности, которые существовали в OMS, доступны и в Azure. Дополнительные сведения об управлении обновлениями см. в статье [Управление обновлениями в службе автоматизации Azure](./update-management/overview.md).
 
 ## <a name="access-the-azure-portal"></a>Доступ к порталу Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "90987607"
 
 У всех развертываний обновлений, созданных на портале OMS есть [сохраненный поиск](../azure-monitor/platform/computer-groups.md), известный как группа компьютеров, с тем же именем что и существующее развертывание обновлений. Сохраненный поиск содержит список компьютеров, запланированных в развертывании обновлений.
 
-:::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Снимок экрана со страницей управления обновлениями.":::
+:::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Снимок экрана страницы &quot;развертывания обновлений&quot; с выделенными полями &quot;имя&quot; и &quot;серверы&quot;.":::
 
 Для использования существующего сохраненного поиска, выполните перечисленные ниже действия.
 
@@ -74,4 +74,4 @@ ms.locfileid: "90987607"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об Управлении обновлениями в службе автоматизации Azure см. в статье [Управление обновлениями](update-management/update-mgmt-overview.md).
+Сведения об Управлении обновлениями в службе автоматизации Azure см. в статье [Управление обновлениями](./update-management/overview.md).

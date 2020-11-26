@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2019
-ms.openlocfilehash: 8b9624313716081a039b12c73e54b9f7afc2a323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53277f64c3d1b03572732157756da1fececbcd43
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86505318"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184575"
 ---
 # <a name="import-azure-monitor-log-data-into-power-bi"></a>Импорт Azure Monitor данных журнала в Power BI
 
@@ -28,7 +28,7 @@ ms.locfileid: "86505318"
 ## <a name="export-query"></a>Экспорт запроса
 Начните с создания [запроса к журналу](../log-query/log-query-overview.md) , возвращающего данные, которые необходимо заполнить Power BI наборе данных.  Затем экспортируйте этот запрос в [язык Power Query (M)](/powerquery-m/power-query-m-language-specification), который может использоваться в Power BI Desktop.
 
-1. [Создайте запрос журнала в log Analytics](../log-query/get-started-portal.md) , чтобы извлечь данные для набора данных.
+1. [Создайте запрос журнала в log Analytics](../log-query/log-analytics-tutorial.md) , чтобы извлечь данные для набора данных.
 2. Выберите **Экспорт**  >  **Power BI запрос (M)**.  При этом запрос экспортируется в текстовый файл с именем **PowerBIQuery.txt**. 
 
     ![Экспорт поиска по журналам](media/powerbi/export-analytics.png)
@@ -39,7 +39,7 @@ ms.locfileid: "86505318"
 Power BI Desktop — это классическое приложение, позволяющее создавать наборы данных и отчеты, которые можно опубликовать в Power BI.  Его также можно использовать для создания запроса с использованием языка Power Query, экспортированного из Azure Monitor. 
 
 1. Установите приложение [Power BI Desktop](https://powerbi.microsoft.com/desktop/), если у вас его еще нет, а затем откройте его.
-2. Выберите **получить данные**  >  **пустой запрос** , чтобы открыть новый запрос.  Затем выберите **Расширенный редактор** и вставьте содержимое экспортированного файла в запрос. Нажмите кнопку **Готово**.
+2. Выберите **получить данные**  >  **пустой запрос** , чтобы открыть новый запрос.  Затем выберите **Расширенный редактор** и вставьте содержимое экспортированного файла в запрос. Нажмите кнопку **Done**(Готово).
 
     ![Запрос Power BI Desktop](media/powerbi/desktop-new-query.png)
 

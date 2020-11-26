@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: KumudD
 ms.author: kumud
 ms.date: 11/25/2020
-ms.openlocfilehash: 52ca879d5a680d0e62cc469e768236eac11f3719
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 2f262b328efcc341c93f1e5c31cab8cbd3ecbf6b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030224"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184643"
 ---
 # <a name="azure-monitor-for-networks"></a>Azure Monitor для сетей
 Azure Monitor для сетей предоставляет исчерпывающее представление о [работоспособности](../../service-health/resource-health-checks-resource-types.md) и [метриках](../platform/metrics-supported.md) для всех развернутых сетевых ресурсов, не требуя настройки. Он также предоставляет доступ к возможностям мониторинга сети, таким как [монитор подключения](../../network-watcher/connection-monitor-preview.md), [ведение журнала потоков для групп безопасности сети (группы безопасности сети)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md)и [аналитика трафика](../../network-watcher/traffic-analytics.md). И предоставляет другие функции [диагностики](../../network-watcher/network-watcher-monitoring-overview.md#diagnostics) сети.
@@ -119,11 +119,11 @@ Azure Monitor для сетей организованы вокруг следу
 Дополнительные сведения об устранении неполадок, связанных с сетью, которые можно определить с помощью Azure Monitor для сетей, см. в документации по устранению неполадок для неисправного ресурса. 
 
 Ниже приведены ссылки на статьи по устранению неполадок для часто используемых служб. Дополнительные статьи по устранению неполадок с этими службами см. в других статьях раздела Устранение неполадок в содержании службы.
-* [Виртуальная сеть Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-peering-issues)
-* [Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/create-gateway-internal-load-balancer-app-service-environment)
-* [VPN-шлюз Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-troubleshoot)
-* [Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-expressroute-overview) 
-* [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-troubleshoot) 
+* [Виртуальная сеть Azure](../../virtual-network/virtual-network-troubleshoot-peering-issues.md)
+* [Шлюз приложений Azure](../../application-gateway/create-gateway-internal-load-balancer-app-service-environment.md)
+* [VPN-шлюз Azure](../../vpn-gateway/vpn-gateway-troubleshoot.md)
+* [Azure ExpressRoute](../../expressroute/expressroute-troubleshooting-expressroute-overview.md) 
+* [Azure Load Balancer](../../load-balancer/load-balancer-troubleshoot.md) 
 
 ### <a name="why-dont-i-see-the-resources-for-all-the-subscriptions-ive-selected"></a>Почему я не вижу ресурсы для всех выбранных мной подписок?
 
@@ -145,7 +145,7 @@ Network Insights может отображать ресурсы только д�
 
 Книгу, отображаемую на боковой панели или в подробном представлении метрики, можно изменить с помощью режима редактирования. Затем можно сохранить изменения в виде новой книги.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о мониторинге сети: [что такое наблюдатель за сетями Azure?](../../network-watcher/network-watcher-monitoring-overview.md)
 - Ознакомьтесь с книгами сценариев, предназначенными для поддержки, создания отчетов и настройки существующих отчетов и т. д. [Создание интерактивных отчетов с помощью Azure Monitor книг](../platform/workbooks-overview.md)

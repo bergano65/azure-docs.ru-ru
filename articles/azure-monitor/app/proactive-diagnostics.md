@@ -3,12 +3,12 @@ title: Интеллектуальное обнаружение в Azure Applicat
 description: Служба Application Insights автоматически выполняет углубленный анализ телеметрии вашего приложения и предупреждает о потенциальных проблемах.
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.openlocfilehash: 24ed8eefb7e07930cbd123fbe4081d555f0c27c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b6e9370387bf3bb87555261b3949db2917e9911
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87305879"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186258"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Функция интеллектуального обнаружения автоматически предупреждает о потенциальных проблемах с производительностью и аномальных сбоях в веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](./app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -55,10 +55,9 @@ ms.locfileid: "87305879"
 
 * [Обозреватель метрик](../platform/metrics-charts.md)
 * [Обозреватель поиска](./diagnostic-search.md)
-* [Аналитика, мощный язык запросов](../log-query/get-started-portal.md)
+* [Аналитика, мощный язык запросов](../log-query/log-analytics-tutorial.md)
 
 Интеллектуальное обнаружение — это полностью автоматическая функция. но, возможно, вам потребуется настроить некоторые дополнительные оповещения.
 
 * [Настройка оповещений в Application Insights](../platform/alerts-log.md)
-* [Доступность веб-тестов](./monitor-web-app-availability.md) 
-
+* [Доступность веб-тестов](./monitor-web-app-availability.md)
