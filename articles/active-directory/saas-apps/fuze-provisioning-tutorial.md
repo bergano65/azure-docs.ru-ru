@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 130bb108af5e44ddf61b639c666cb0dba64d69cb
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 2fcb85b2c16bc2dd418c2260420733dd8663382a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94356898"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96179264"
 ---
 # <a name="tutorial-configure-fuze-for-automatic-user-provisioning"></a>Руководство по настройке Fuze для автоматической подготовки пользователей
 
@@ -38,7 +38,7 @@ ms.locfileid: "94356898"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md)
-* Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
+* Учетная запись пользователя в Azure AD с [разрешением](../roles/permissions-reference.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор).
 * [Клиент Fuze](https://www.fuze.com/).
 * Учетная запись пользователя Fuze с разрешениями администратора.
 

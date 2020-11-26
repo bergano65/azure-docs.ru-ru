@@ -15,16 +15,16 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: Zhchia
-ms.openlocfilehash: 9335869797509171c71caffb0062aeccca207803
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 1658e6adf0c9de0cbd7412b963fb9a134f633430
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358921"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96179708"
 ---
 # <a name="tutorial-configure-clarizen-one-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Clarizen One
 
-В этом руководстве описаны действия, которые нужно выполнить в Clarizen One и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически осуществляет и отменяет подготовку пользователей и групп для [Clarizen One](https://www.clarizen.com/) с помощью службы подготовки Azure AD. Сведения о возможностях и принципе работы этой службы, а также часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и их отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
+В этом руководстве описаны действия, которые нужно выполнить в Clarizen One и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. После настройки Azure AD автоматически осуществляет и отменяет подготовку пользователей и групп для [Clarizen One](https://www.clarizen.com/) с помощью службы подготовки Azure AD. Сведения о возможностях и принципе работы этой службы, а также часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и их отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 
@@ -33,21 +33,21 @@ ms.locfileid: "94358921"
 > * Удаление из Clarizen One пользователей, которым уже не нужен доступ.
 > * Синхронизация атрибутов пользователей между Azure AD и Clarizen One.
 > * Подготовка групп и членства в группах в Clarizen One.
-> * Мы также рекомендуем [настроить единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/clarizen-tutorial) для Clarizen One.
+> * Мы также рекомендуем [настроить единый вход](./clarizen-tutorial.md) для Clarizen One.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)
-* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки. Подходят следующие роли: администратор приложений, администратор облачных приложений, владелец приложений или глобальный администратор.
+* [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md)
+* Учетная запись пользователя в Azure AD с [разрешением](../roles/permissions-reference.md) на настройку подготовки. Подходят следующие роли: администратор приложений, администратор облачных приложений, владелец приложений или глобальный администратор.
 * Учетная запись пользователя Clarizen One с [разрешениями](https://success.clarizen.com/hc/articles/360011833079-API-Keys-Support) **Integration User** (Пользователь интеграции) и **Lite Admin** (Администратор Lite).
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
 
-1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
-1. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
-1. Определите, какие данные следует [сопоставлять между Azure AD и Clarizen One](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).
+1. Узнайте, [как работает служба подготовки](../app-provisioning/user-provisioning.md).
+1. Определите, кто будет находиться в [области подготовки](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Определите, какие данные следует [сопоставлять между Azure AD и Clarizen One](../app-provisioning/customize-application-attributes.md).
 
 ## <a name="step-2-configure-clarizen-one-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка Clarizen One для поддержки подготовки с помощью Azure AD
 
@@ -61,14 +61,14 @@ ms.locfileid: "94358921"
 
 ## <a name="step-3-add-clarizen-one-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Clarizen One из коллекции приложений Azure AD
 
-Добавьте Clarizen One из коллекции приложений Azure AD, чтобы начать управление подготовкой в Clarizen One. Если вы уже настроили единый вход в Clarizen One, можете использовать то же приложение. При начальном тестировании интеграции создайте отдельное приложение. Дополнительные сведения о добавлении приложения в клиент Azure AD из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app).
+Добавьте Clarizen One из коллекции приложений Azure AD, чтобы начать управление подготовкой в Clarizen One. Если вы уже настроили единый вход в Clarizen One, можете использовать то же приложение. При начальном тестировании интеграции создайте отдельное приложение. Дополнительные сведения о добавлении приложения в клиент Azure AD из коллекции см. [здесь](../manage-apps/add-application-portal.md).
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки
 
-Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, назначая их приложению и (или) присваивая атрибуты пользователям или группам. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, выполните процедуру из статьи [Управление назначением пользователей для приложения в Azure Active Directory](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр области, как описано в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, назначая их приложению и (или) присваивая атрибуты пользователям или группам. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, выполните процедуру из статьи [Управление назначением пользователей для приложения в Azure Active Directory](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр области, как описано в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-* При назначении пользователей и групп для Clarizen One необходимо выбрать роль, отличную от роли **Доступ по умолчанию**. Пользователи с такой ролью исключаются из подготовки и будут помечены в журналах подготовки как не имеющие разрешений. Если в приложении доступна только эта роль, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить другие роли.
-* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, для сохранения контроля назначьте приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
+* При назначении пользователей и групп для Clarizen One необходимо выбрать роль, отличную от роли **Доступ по умолчанию**. Пользователи с такой ролью исключаются из подготовки и будут помечены в журналах подготовки как не имеющие разрешений. Если в приложении доступна только эта роль, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить другие роли.
+* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, для сохранения контроля назначьте приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-clarizen-one"></a>Шаг 5. Настройка автоматической подготовки пользователей в Clarizen One
 
@@ -104,7 +104,7 @@ ms.locfileid: "94358921"
 
 1. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Clarizen One**.
 
-1. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые синхронизируются из Azure AD в Clarizen One. Атрибуты, выбранные как свойства **Сопоставление**, используются для сопоставления учетных записей пользователей в Clarizen One при операциях обновления. Если вы измените [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), обязательно убедитесь, что API Clarizen One поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+1. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые синхронизируются из Azure AD в Clarizen One. Атрибуты, выбранные как свойства **Сопоставление**, используются для сопоставления учетных записей пользователей в Clarizen One при операциях обновления. Если вы измените [соответствующий целевой атрибут](../app-provisioning/customize-application-attributes.md), обязательно убедитесь, что API Clarizen One поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
    |attribute|Тип|
    |---|---|
@@ -158,7 +158,7 @@ ms.locfileid: "94358921"
       |externalId|Строка|
       |members|Справочник|
 
-1. Чтобы настроить фильтры области, ознакомьтесь с инструкциями в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Чтобы настроить фильтры области, ознакомьтесь с инструкциями в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Чтобы включить службу подготовки Azure AD для Clarizen One, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
@@ -178,9 +178,9 @@ ms.locfileid: "94358921"
 
 Завершив настройку подготовки, используйте следующие ресурсы для мониторинга развертывания.
 
-1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-1. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и близость его завершения.
-1. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о состояниях карантина см. в статье [Состояние подготовки приложений в карантине](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+1. Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+1. Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и близость его завершения.
+1. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о состояниях карантина см. в статье [Состояние подготовки приложений в карантине](../app-provisioning/application-provisioning-quarantine-status.md).
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
@@ -196,9 +196,9 @@ ms.locfileid: "94358921"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

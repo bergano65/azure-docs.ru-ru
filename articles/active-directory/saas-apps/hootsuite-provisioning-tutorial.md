@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 011071c9aa1722b8f1cf81ec8d9ef88e8d91ea03
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: b371baec663ffc7ff5909e04965353e79acb9708
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359057"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96177078"
 ---
 # <a name="tutorial-configure-hootsuite-for-automatic-user-provisioning"></a>Руководство по Настройка Hootsuite для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "94359057"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md) 
-* Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
+* Учетная запись пользователя в Azure AD с [разрешением](../roles/permissions-reference.md) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
 * Учетная запись пользователя в [Hootsuite](http://www.hootsuite.com/) с разрешениями на **управление участниками** в организации.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
@@ -121,7 +121,7 @@ ms.locfileid: "94359057"
       |externalId|Строка|
       |members|Справочник|
 
-12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. Чтобы включить службу подготовки Azure AD для Hootsuite, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 

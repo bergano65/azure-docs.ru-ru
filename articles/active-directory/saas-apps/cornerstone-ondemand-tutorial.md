@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 2837f8c5b098b0502bd293ec2414ad7401cc4f95
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 33c7b9b91067c39ea047242d207a4834c08b7e40
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996174"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96179356"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cornerstone-ondemand"></a>Руководство по Интеграции и настройке единого входа Azure Active Directory с Cornerstone OnDemand
 
@@ -82,9 +82,9 @@ ms.locfileid: "95996174"
 
 1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company>.csod.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company>.csod.com/samldefault.aspx?ouid=2`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<company>.csod.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<company>.csod.com/samldefault.aspx?ouid=2`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Cornerstone OnDemand](mailto:moreinfo@csod.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

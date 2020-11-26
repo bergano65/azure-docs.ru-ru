@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/11/2020
 ms.author: Zhchia
-ms.openlocfilehash: b12a595c9b59b40ee6982f123baddaa818dd87ef
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 56b75d34bed65dae53c88eab6a16d848083ccc73
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94836297"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96179155"
 ---
 # <a name="tutorial-configure-cofense-recipient-sync-for-automatic-user-provisioning"></a>Руководство по Настройка Cofense Recipient Sync для автоматической подготовки пользователей
 
@@ -38,7 +38,7 @@ ms.locfileid: "94836297"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md) 
-* Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
+* Учетная запись пользователя в Azure AD с [разрешением](../roles/permissions-reference.md) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
 * Стандартная учетная запись оператора в Cofense PhishMe.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
