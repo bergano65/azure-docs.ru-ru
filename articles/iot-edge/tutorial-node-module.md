@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, devx-track-python, devx-track-js
-ms.openlocfilehash: a4496ba46b486f183136381a51c6a523dd9e1b87
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 5c8918995675cae8e70ca9fc1efb0cf4c7cb233b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047987"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959413"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Node.js и его развертыванию на устройствах Linux
 
@@ -33,7 +33,7 @@ ms.locfileid: "92047987"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Область действия решения
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом учебнике показана разработка модуля на языке **Node.js** с помощью **Visual Studio Code** и его развертывание на **устройстве Linux**. IoT Edge не поддерживает модули Node.js для устройств с Windows.
 
@@ -43,8 +43,6 @@ ms.locfileid: "92047987"
 | - | ------------------ | ------------------ |
 | **Linux AMD64** | ![Использование VS Code для модулей Node.js в Linux AMD64](./media/tutorial-c-module/green-check.png) |  |
 | **Linux ARM32** | ![Использование VS Code для модулей Node.js в Linux AMD32](./media/tutorial-c-module/green-check.png) |  |
-
-## <a name="prerequisites"></a>Предварительные требования
 
 Предполагается, что перед началом работы с этим руководством вы прошли предыдущее, в рамках которого настроили окружение для разработки контейнеров Linux: [Tutorial: Develop IoT Edge modules for Linux devices](tutorial-develop-for-linux.md) (Руководство. Разработка модулей IoT Edge для устройств с Linux). После работы с любым из учебников у вас должны быть готовы все необходимые компоненты:
 

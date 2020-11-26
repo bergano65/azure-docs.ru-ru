@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.service: storage
 ms.subservice: blobs
 ms.topic: sample
-ms.openlocfilehash: 05f02fe5bd6d106e7187eea7600ffe0c7fc7e955
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d343c952f01185d2360d6cf238dd3a7512849fb
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87828172"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912133"
 ---
 # <a name="azure-powershell-samples-for-azure-blob-storage"></a>Примеры Azure PowerShell для хранилища BLOB-объектов Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "87828172"
 |---|---|
 |**Учетные записи хранения**||
 | [Create a storage account and rotate its account access keys](../scripts/storage-common-rotate-account-keys-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Создание учетной записи хранения и получение или смена ее ключей доступа)| Создает учетную запись хранения Azure и получает и меняет один из ее ключей доступа. |
-| [Перенос больших двоичных объектов между различными учетными записями хранения с помощью AzCopy в ОС Windows](../scripts/storage-common-transfer-between-storage-accounts.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Перенос больших двоичных объектов между различными учетными записями хранения Azure с помощью AzCopy в ОС Windows. |
+| [Перенос больших двоичных объектов между различными учетными записями хранения с помощью AzCopy в ОС Windows](/previous-versions/azure/storage/storage-common-transfer-between-storage-accounts?toc=%2fpowershell%2fmodule%2ftoc.json)| Перенос больших двоичных объектов между различными учетными записями хранения Azure с помощью AzCopy в ОС Windows. |
 |**Хранилище BLOB-объектов**||
 | [Calculate the size of a Blob storage container](../scripts/storage-blobs-container-calculate-size-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Вычисление размера контейнера хранилища BLOB-объектов) | Вычисление общего размера всех больших двоичных объектов в контейнере. |
 | [Вычисление размера контейнера в хранилище BLOB-объектов для выставления счетов](../scripts/storage-blobs-container-calculate-billing-size-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Вычисление размера контейнера в хранилище BLOB-объектов для оценки затрат при выставлении счетов. |

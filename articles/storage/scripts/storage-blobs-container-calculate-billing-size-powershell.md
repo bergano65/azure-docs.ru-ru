@@ -9,12 +9,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 11/07/2017
 ms.author: fryu
-ms.openlocfilehash: f8bd47a8fde700382f9789ab1c77ff35e9b1f4f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d921a968f50f64788ccbd7637bc04c8492a3f90
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999536"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96010900"
 ---
 # <a name="calculate-the-total-billing-size-of-a-blob-container"></a>Вычисление общего указываемого в счете размера контейнера больших двоичных объектов
 
@@ -31,7 +31,7 @@ ms.locfileid: "86999536"
 
 Общий размер контейнера больших двоичных объектов включает размер самого контейнера и размер всех больших двоичных объектов в контейнере.
 
-В следующем разделе описывается, как вычисляется емкость хранилища для контейнеров больших двоичных объектов и больших двоичных объектов. В следующем разделе Len(X) означает число знаков в строке.
+В следующем разделе описывается, как вычисляется емкость хранилища для контейнеров больших двоичных объектов и больших двоичных объектов.  В следующем разделе Len(X) означает число знаков в строке.
 
 ### <a name="blob-containers"></a>Контейнеры больших двоичных объектов
 
@@ -120,6 +120,6 @@ For-Each Signed Identifier[512 bytes]
 
 - Дополнительные сведения о выставлении счетов в службе хранилища Azure см. в статье [Understanding Windows Azure Storage Billing – Bandwidth, Transactions, and Capacity](https://blogs.msdn.microsoft.com/windowsazurestorage/2010/07/08/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity/) (Общие сведения о выставлении счетов в службе хранилища Azure. Пропускная способность, транзакции и емкость).
 
-- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
+- Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/).
 
 - Дополнительные примеры сценариев PowerShell хранилища см. в статье [Примеры Azure PowerShell для хранилища BLOB-объектов Azure](../blobs/storage-samples-blobs-powershell.md).

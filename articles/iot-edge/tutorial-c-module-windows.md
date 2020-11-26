@@ -9,12 +9,12 @@ ms.date: 05/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 59656db2bbb8a6898ae08a168dbbc7e0a6a82aec
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: d9cffcadcb95b6c8c61205d458610f402fa7286d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044723"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964598"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C для устройств с Windows
 
@@ -33,7 +33,7 @@ ms.locfileid: "92044723"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Область действия решения
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве показано, как выполнить разработку модуля на языке **C** с помощью **Visual Studio 2019** и его развертывание на **устройстве Windows**. Если вы разрабатываете модули для устройств Linux, вам нужно другое руководство [по разработке модуля IoT Edge на языке C для устройств с Linux](tutorial-c-module.md).
 
@@ -42,8 +42,6 @@ ms.locfileid: "92044723"
 | C | Visual Studio Code | Visual Studio 2017 или 2019 |
 | -- | ------------------ | ------------------ |
 | **Windows AMD64** |  | ![Разработка модулей C для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
-
-## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим учебником вы должны были пройти предыдущий учебник, в котором настроили среду разработки для разработки контейнеров Windows: [Tutorial: Develop IoT Edge modules for Windows devices](tutorial-develop-for-windows.md) (Учебник: разработка модулей IoT Edge для устройств с Windows) После работы с ним у вас должны быть готовы все необходимые компоненты:
 

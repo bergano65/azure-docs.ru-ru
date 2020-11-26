@@ -8,12 +8,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: 4392086146642e18b1fdef28a9e602bdbb5b0b18
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: b138b3eb52a0bfb6dca2ec6fdf0b855223bab698
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542190"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984453"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Теги для изображений в проекте маркировки 
 
@@ -133,7 +133,7 @@ Azure включает кнопку **Отправить** только посл
 
 1. Выберите тег для прямоугольника, который вы хотите создать.
 1. Выберите средство **Нарисовать многоугольную область** ![Средство "Нарисовать многоугольную область"](./media/how-to-label-images/polygon-tool.png) или нажмите клавишу P.
-3. Щелкните каждую точку многоугольника.  Когда фигура будет закончена, дважды щелкните для завершения.
+1. Щелкните каждую точку многоугольника.  Когда фигура будет закончена, дважды щелкните для завершения.
 
     :::image type="content" source="media/how-to-label-images/polygon.gif" alt-text="Создание многоугольников для кошки и собаки":::
 
@@ -158,3 +158,5 @@ Azure включает кнопку **Отправить** только посл
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. статью [Обучение модели классификации изображений](./tutorial-train-models-with-aml.md).
+
+

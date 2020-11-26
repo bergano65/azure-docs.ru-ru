@@ -11,12 +11,12 @@ ms.custom: devx-track-csharp, mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 5957ccb7bd7ff7e7acc0ed76899850bbca09ad6c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c3c63b6116e02e8a742b69e90c11e182d72ab2e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91664806"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953038"
 ---
 # <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство по Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -45,7 +45,7 @@ ms.locfileid: "91664806"
 
 ### <a name="add-a-redirect-uri-reply-url"></a>Добавление URI перенаправления (URL-адреса ответа)
 
-Чтобы обновить приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрация приложений** или устаревший интерфейс **Приложения (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregtraining).
+Чтобы обновить приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрация приложений** или устаревший интерфейс **Приложения (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[Регистрация приложений](#tab/app-reg-ga/)
 
@@ -77,7 +77,7 @@ ms.locfileid: "91664806"
 
 ## <a name="configure-the-sample"></a>Настройка примера
 
-С помощью этого руководства вы настроите пример, который можно скачать из репозитория GitHub. В примере применяется ASP.NET для предоставления простого списка задач и используются [компоненты ПО промежуточного слоя OWIN](https://docs.microsoft.com/aspnet/aspnet/overview/owin-and-katana/). [Скачайте ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi/archive/master.zip) или клонируйте пример с GitHub. Убедитесь, что вы извлекаете пример файла в папку, общая длина пути к которой меньше 260 символов.
+С помощью этого руководства вы настроите пример, который можно скачать из репозитория GitHub. В примере применяется ASP.NET для предоставления простого списка задач и используются [компоненты ПО промежуточного слоя OWIN](/aspnet/aspnet/overview/owin-and-katana/). [Скачайте ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi/archive/master.zip) или клонируйте пример с GitHub. Убедитесь, что вы извлекаете пример файла в папку, общая длина пути к которой меньше 260 символов.
 
 ```
 git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi.git
@@ -130,7 +130,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 > * настройка примера для использования приложения;
 > * регистрация с помощью потока пользователя.
 
-Теперь перейдите к следующему руководству, чтобы включить компонент**Список задач** в веб-приложении. В нем вы зарегистрируете приложение веб-API в собственном клиенте Azure AD B2C, а затем измените пример кода, чтобы использовать клиент для проверки подлинности API.
+Теперь перейдите к следующему руководству, чтобы включить компонент **Список задач** в веб-приложении. В нем вы зарегистрируете приложение веб-API в собственном клиенте Azure AD B2C, а затем измените пример кода, чтобы использовать клиент для проверки подлинности API.
 
 > [!div class="nextstepaction"]
 > [Руководство. Использование Azure Directory B2C для защиты веб-API ASP.NET >](tutorial-web-api-dotnet.md)

@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
 ms.custom: devx-track-python
-ms.openlocfilehash: 6a113b3a3df475853f3690a0e932378bc0e2ab02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4455f21ae7243ab7a15e8d746d6674289f9fdb5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87844632"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953027"
 ---
 # <a name="tutorial-enable-authentication-in-a-python-web-application-with-azure-ad-b2c"></a>Руководство по включению проверки подлинности в веб-приложении Python с помощью Azure AD B2C
 
@@ -49,7 +49,7 @@ ms.locfileid: "87844632"
 
 При прохождении второго учебника для выполнения предварительных условий вы зарегистрировали веб-приложение в Azure AD B2C. Для обеспечения взаимодействия с примером из этого руководства необходимо добавить URL ответа (также называется URI перенаправления) в регистрацию приложения.
 
-Чтобы обновить приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрация приложений** или устаревший интерфейс **Приложения (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregtraining).
+Чтобы обновить приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрация приложений** или устаревший интерфейс **Приложения (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[Регистрация приложений](#tab/app-reg-ga/)
 
@@ -162,13 +162,13 @@ CLIENT_SECRET = "22222222-2222-2222-2222-222222222222" # Placeholder - for use O
 
     Используйте действительный адрес электронной почты и подтвердите его с помощью кода проверки. Задайте пароль. Введите значения запрашиваемых атрибутов.
 
-    :::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-02.png" alt-text="Окно веб-браузера, где отображается локально выполняющееся веб-приложение Python Flask":::
+    :::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-02.png" alt-text="Страница регистрации, отображаемая потоком пользователя Azure AD B2C":::
 
 1. Щелкните **Создать**, чтобы создать локальную учетную запись в каталоге Azure AD B2C.
 
 При нажатии кнопки **Создать** приложение покажет имя выполнившего вход пользователя.
 
-:::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-03.png" alt-text="Окно веб-браузера, где отображается локально выполняющееся веб-приложение Python Flask":::
+:::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-03.png" alt-text="Окно веб-браузера, где отображается веб-приложение Python Flask после входа пользователя":::
 
 Если вы хотите протестировать возможность входа, щелкните ссылку **Logout** (Выйти), а затем **Sign In** (Войти) и введите адрес электронной почты и пароль, которые вы указали при регистрации.
 

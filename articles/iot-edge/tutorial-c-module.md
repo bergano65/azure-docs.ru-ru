@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 4c2505f210b1a2b52b64c25b4ffa0c26bb30d7ee
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 470f82026cc27431555336570ef6f41063442c1e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044689"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964547"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge на C для устройств Linux
 
@@ -33,7 +33,7 @@ ms.locfileid: "92044689"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Область действия решения
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве описана разработка модуля на **C** с помощью **Visual Studio Code** и его развертывание на **устройстве Linux**. Если вы разрабатываете модули IoT Edge на C для устройств Windows, перейдите к [этому руководству](tutorial-c-module-windows.md).
 
@@ -43,8 +43,6 @@ ms.locfileid: "92044689"
 | - | ------------------ | ------------- |
 | **Linux AMD64** | ![Использование VS Code для модулей C в Linux AMD64](./media/tutorial-c-module/green-check.png) | ![Использование VS для модулей C в Linux AMD64](./media/tutorial-c-module/green-check.png) |
 | **Linux ARM32** | ![Использование VS Code для модулей C в Linux ARM32](./media/tutorial-c-module/green-check.png) | ![Использование VS для модулей C в Linux ARM32](./media/tutorial-c-module/green-check.png) |
-
-## <a name="prerequisites"></a>Предварительные требования
 
 Предполагается, что перед началом работы с этим руководством вы прошли предыдущее, в рамках которого настроили окружение для разработки контейнеров Linux: [Tutorial: Develop IoT Edge modules for Linux devices](tutorial-develop-for-linux.md) (Руководство. Разработка модулей IoT Edge для устройств с Linux). После работы с ним у вас должны быть готовы все необходимые компоненты:
 

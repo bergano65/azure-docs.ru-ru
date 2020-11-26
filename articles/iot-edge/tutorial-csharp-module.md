@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: b46ce20b868f8756f6ad91795a27328abcb2fbdf
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 71bfc84eb50521aef72f78b482bddda112c00c6c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044213"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964377"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Linux
 
@@ -33,7 +33,7 @@ ms.locfileid: "92044213"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Область действия решения
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве описана разработка модуля на **C#** с помощью **Visual Studio Code** и его развертывание на **устройстве Linux**. Если вы разрабатываете модули для устройств Windows, вам нужен другой учебник [по разработке модуля IoT Edge на C# для устройств с Windows](tutorial-csharp-module-windows.md).
 
@@ -46,8 +46,6 @@ ms.locfileid: "92044213"
 
 >[!NOTE]
 >Поддержка устройств Linux ARM64 предоставляется в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Подробные сведения см. в статье [Develop and debug ARM64 IoT Edge modules in Visual Studio Code (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) (Разработка и отладка модулей IoT Edge для устройств ARM64 в Visual Studio Code (предварительная версия)).
-
-## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим учебником вы должны были настроить среду разработки, выполнив инструкции, приведенные [в этой статье](tutorial-develop-for-linux.md). После работы с этим руководством у вас должны быть готовы все необходимые компоненты:
 

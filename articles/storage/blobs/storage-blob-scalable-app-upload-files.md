@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 10/08/2019
 ms.author: rogarana
 ms.subservice: blobs
-ms.openlocfilehash: dd87e1a9bcff55813dff420976df58351386fb34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5dc1f8b8a7c46a3d6ad6f62d93bc91753e42c3ae
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75371944"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545046"
 ---
 # <a name="upload-large-amounts-of-random-data-in-parallel-to-azure-storage"></a>Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure
 
@@ -62,7 +62,7 @@ setx storageconnectionstring "<storageConnectionString>" /m
 dotnet run
 ```
 
-Приложение создаст пять контейнеров со случайными именами и начнет отправлять файлы из промежуточного каталога в учетную запись хранения. Минимальное количество потоков, которое задает приложение, равно 100. Для параметра ограничения [DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(v=vs.110).aspx) также установлено значение 100. Это требуется, чтобы разрешить выполнение большого количества одновременных подключений при запуске приложения.
+Приложение создаст пять контейнеров со случайными именами и начнет отправлять файлы из промежуточного каталога в учетную запись хранения. Минимальное количество потоков, которое задает приложение, равно 100. Для параметра ограничения [DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit) также установлено значение 100. Это требуется, чтобы разрешить выполнение большого количества одновременных подключений при запуске приложения.
 
 Помимо параметров ограничения для количества подключений и потоков настраиваются также параметры [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions) метода [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync) для использования параллелизма и отключения проверки хэша MD5. Файлы передаются в блоки размером 100 МБ. Такая конфигурация обеспечивает лучшую производительность, но может быть дорогостоящей при использовании медленной сети. Это объясняется тем, что в случае сбоя будет выполнена повторная передача всего блока.
 

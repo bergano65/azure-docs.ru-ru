@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cef5c60b8b06a7bedbf65312c3210d5eb746880d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 546d5462c890e73994f04dfe1921b6365a112b7f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649811"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95237329"
 ---
 # <a name="integrate-an-existing-forest-and-a-new-forest-with-a-single-azure-ad-tenant"></a>Интеграция существующего и нового лесов с одним клиентом Azure AD
 
@@ -65,7 +65,7 @@ ms.locfileid: "94649811"
 
 7. После завершения этой операции откроется мастер настройки.  Войдите с учетной записью глобального администратора Azure AD.  Обратите внимание, что если он включен повышенный уровень безопасности IE, вход будет заблокирован.  В этом случае закройте окно установки, отключите повышенный уровень безопасности IE в диспетчере сервера и щелкните значок **мастера агента подготовки AAD Connect**, чтобы снова запустить установку.
 8. На экране **Connect Active Directory** (Подключение Active Directory) щелкните **Добавить каталог** и выполните вход с учетной записью администратора домена Active Directory. Учетная запись администратора домена не должна иметь требований к изменению пароля. Если пароль изменится или истечет срок его действия, вам придется повторно настроить новые учетные данные в агенте. Эта операция добавляет локальный каталог.  Щелкните **Далее**.</br>
-![Снимок экрана: экран "Connect Active Directory" (Подключение Active Directory)](media/how-to-install/install-3.png)</br>
+![Снимок экрана: экран "Connect Active Directory" (Подключение Active Directory)](media/how-to-install/install-3a.png)</br>
 
 9. На странице **Конфигурация завершена** щелкните **Подтвердить**.  Эта операция регистрирует и перезапускает агент.</br>
 ![Снимок экрана: экран "Конфигурация завершена"](media/how-to-install/install-4a.png)</br>

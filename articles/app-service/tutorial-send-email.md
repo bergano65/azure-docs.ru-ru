@@ -4,12 +4,12 @@ description: Узнайте о том, как вызывать бизнес-пр
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 5aa563e55c64893d57522dd1154a64c7e90a1690
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8072a941cd89290af3e25cc63c4fccccce705df9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397442"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014668"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Руководство по Отправка сообщений электронной почты и вызов других бизнес-процессов из Службы приложений
 
@@ -296,7 +296,7 @@ async with aiohttp.post('http://httpbin.org/post', data=json.dump(payload)) as r
 
 ### <a name="ruby"></a>[Ruby](#tab/ruby)
 
-В Ruby можно легко отправлять HTTP-сообщения с помощью [JSONClient](https://www.rubydoc.info/gems/httpclient/JSONClient). Пример:
+В Ruby можно легко отправлять HTTP-сообщения с помощью JSONClient. Пример:
 
 ```ruby
 clnt = JSONClient.new

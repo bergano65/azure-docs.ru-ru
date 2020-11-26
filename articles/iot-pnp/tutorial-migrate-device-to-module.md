@@ -7,18 +7,18 @@ ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: dc86340026ec7b85afc9e5208ea8ef8c32d8bac6
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 9ac616ddf1c3475f2ca3b3e8097bb74da72faa77
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421470"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95500277"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-module-c"></a>Руководство по подключению модуля IoT Plug and Play (C#)
 
 В этом руководстве показано, как подключить универсальный [модуль](../iot-hub/iot-hub-devguide-module-twins.md) IoT Plug and Play.
 
-Устройство — это устройство IoT Plug and Play, если оно публикует свой идентификатор модели при подключении к центру Интернета вещей и реализует свойства и методы, описанные в модели DTDL, определяемой идентификатором модели. Дополнительные сведения о том, как устройства используют DTDL и идентификатор модели, см. в статье [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device-csharp.md). Модули используют идентификаторы моделей и модели DTDL одинаковым образом.
+Устройство — это устройство IoT Plug and Play, если оно публикует свой идентификатор модели при подключении к центру Интернета вещей и реализует свойства и методы, описанные в модели DTDL, определяемой идентификатором модели. Дополнительные сведения о том, как устройства используют DTDL и идентификатор модели, см. в статье [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device.md). Модули используют идентификаторы моделей и модели DTDL одинаковым образом.
 
 Чтобы продемонстрировать реализацию модуля Plug and Play IoT, в этом руководстве показано, как преобразовать пример (C#) устройства термостата в универсальный модуль.
 
@@ -238,4 +238,4 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 Из этого учебника вы узнали, как подключить устройство IoT Plug and Play с модулями к центру Интернета вещей. Дополнительные сведения о моделях устройства IoT Plug and Play см. в статье
 
 > [!div class="nextstepaction"]
-> [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device-csharp.md)
+> [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device.md)

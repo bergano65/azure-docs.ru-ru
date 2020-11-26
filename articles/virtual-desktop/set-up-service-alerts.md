@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 06/11/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0391102683ebafba63c429072c8afa9f24223955
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 66617afee11b02eae0ba5e36d9ff91cbdf21911f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88009432"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023111"
 ---
 # <a name="tutorial-set-up-service-alerts"></a>Руководство по Настройка оповещений служб
 
@@ -25,7 +25,7 @@ ms.locfileid: "88009432"
 > [!div class="checklist"]
 > * Создание и настройка оповещений служб.
 
-Подробные сведения о службе "Работоспособность служб Azure" см. [здесь](https://docs.microsoft.com/azure/service-health/).
+Подробные сведения о службе "Работоспособность служб Azure" см. [здесь](../service-health/index.yml).
 
 ## <a name="create-service-alerts"></a>Создание оповещений служб
 
@@ -46,7 +46,7 @@ ms.locfileid: "88009432"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Выберите **Работоспособность служб**.
-3. Выполните инструкции в разделе [Создание оповещения журнала действий по уведомлениям службы](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log-service-notifications?toc=%2Fazure%2Fservice-health%2Ftoc.json#alert-and-new-action-group-using-azure-portal) для настройки оповещений и уведомлений.
+3. Выполните инструкции в разделе [Создание оповещения журнала действий по уведомлениям службы](../service-health/alerts-activity-log-service-notifications-portal.md?toc=%2fazure%2fservice-health%2ftoc.json) для настройки оповещений и уведомлений.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

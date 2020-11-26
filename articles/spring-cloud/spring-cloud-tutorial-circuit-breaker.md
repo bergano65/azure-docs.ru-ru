@@ -7,18 +7,17 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 04/06/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 0edcdbfec07c032f095cc03eb91be8cf0785b58a
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 53884c2f6d9f2e8cbb5676e9ac10e8fb15ed919e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844852"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024285"
 ---
 # <a name="use-circuit-breaker-dashboard-with-azure-spring-cloud"></a>использованию панели мониторинга размыкателя цепи в Azure Spring Cloud
 
 **Эта статья применима к:** ✔️ Java
 
-::: zone pivot="programming-language-java"
 Spring [Cloud Netflix Turbine](https://github.com/Netflix/Turbine) часто используется для объединения нескольких потоков метрик [Hystrix](https://github.com/Netflix/Hystrix), чтобы потоки можно было отслеживать в одном представлении с помощью панели мониторинга Hystrix. В этом учебнике показано, как использовать их в Azure Spring Cloud.
 > [!NOTE]
 > Netflix Hystrix широко используется во многих имеющихся приложениях Spring Cloud, но больше не находится в активной разработке. Если вы разрабатываете новый проект, используйте вместо размыкателя цепи Spring Cloud реализации, такие как [resilience4j](https://github.com/resilience4j/resilience4j). В отличие от Turbine, показанного в этом учебнике, новая платформа размыкателя цепи Spring Cloud объединяет все реализации своего конвейера данных метрик в Micrometer. Мы все еще работаем над поддержкой Micrometer в Azure Spring Cloud, поэтому он не рассматривается в этом учебнике.
@@ -84,4 +83,4 @@ az spring-cloud app deploy -n hystrix-turbine --jar-path hystrix-turbine/target/
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Подготовка экземпляра службы к работе в Azure CLI](./spring-cloud-quickstart.md#provision-an-instance-of-azure-spring-cloud)
 * [Подготовка приложения Java Spring для развертывания в Azure Spring Cloud](./spring-cloud-tutorial-prepare-app-deployment.md)
-::: zone-end
+

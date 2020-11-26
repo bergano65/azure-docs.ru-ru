@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием Политики Azure для Реестра контейнеров Azure
 description: Содержит список элементов управления соответствием Политики Azure, доступных для Реестра контейнеров Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: sample
 author: dlepow
 ms.author: danlep
 ms.service: container-registry
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 940bc0115d86963d6346d56aed1cefed805ac641
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 046cd11c52d3d9f2cd37ce398a812c1d5026ba6c
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701351"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988769"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-container-registry"></a>Элементы управления соответствием Политики Azure для Реестра контейнеров Azure
 

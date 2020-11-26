@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: e20183356655668750cb1450338d4c8af1ee2d8c
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 4cab1765a387bbae61c9c242a8e7a1ca881ea1f5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951712"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966672"
 ---
 # <a name="tutorial-use-custom-allocation-policies-with-device-provisioning-service-dps"></a>Руководство по использованию пользовательских политик выделения со Службой подготовки устройств к добавлению в Центр Интернета вещей Azure (DPS)
 
@@ -46,7 +46,7 @@ ms.locfileid: "91951712"
 
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
-* Для среды разработки Windows требуется [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://docs.microsoft.com/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
+* Для среды разработки Windows требуется [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 с включенной рабочей нагрузкой [Разработка классических приложений на C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
 
 * При использовании Linux или macOS ознакомьтесь с соответствующим разделом статье [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) из документации к [пакету SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c).
 
@@ -207,7 +207,7 @@ ms.locfileid: "91951712"
 * **contoso-toaster-007**
 * **contoso-heatpump-088**
 
-Замените значение переменной**KEY** **первичным ключом**, который вы записали ранее после создания группы регистрации. Значение ключа и выходные данные для кода ниже приведены только для примера.
+Замените значение переменной **KEY** **первичным ключом**, который вы записали ранее после создания группы регистрации. Значение ключа и выходные данные для кода ниже приведены только для примера.
 
 #### <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -296,7 +296,7 @@ contoso-heatpump-088 : 6uejA9PfkQgmYylj8Zerp3kcbeVrGZ172YLa7VSnJzg=
     cmake -Dhsm_type_symm_key:BOOL=ON -Duse_prov_client:BOOL=ON  ..
     ```
 
-    Если `cmake` не удается найти компилятор C++, во время выполнения команды могут возникнуть ошибки сборки. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs).
+    Если `cmake` не удается найти компилятор C++, во время выполнения команды могут возникнуть ошибки сборки. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs).
 
     После успешного создания последние несколько строк выходных данных будут выглядеть следующим образом:
 
@@ -347,7 +347,7 @@ contoso-heatpump-088 : 6uejA9PfkQgmYylj8Zerp3kcbeVrGZ172YLa7VSnJzg=
     hsm_type = SECURE_DEVICE_TYPE_SYMMETRIC_KEY;
     ```
 
-6. В функции `main()` найдите вызов `Prov_Device_Register_Device()`. Непосредственно перед этим вызовом добавьте следующие строки кода, которые используются в [`Prov_Device_Set_Provisioning_Payload()`](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/prov-device-client-h/prov-device-set-provisioning-payload) для передачи пользовательских полезных данных JSON во время подготовки. Их можно использовать для предоставления дополнительной информации вашим пользовательским функциям распределения. Их также можно использовать для передачи типа устройства вместо проверки идентификатора регистрации.
+6. В функции `main()` найдите вызов `Prov_Device_Register_Device()`. Непосредственно перед этим вызовом добавьте следующие строки кода, которые используются в [`Prov_Device_Set_Provisioning_Payload()`](/azure/iot-hub/iot-c-sdk-ref/prov-device-client-h/prov-device-set-provisioning-payload) для передачи пользовательских полезных данных JSON во время подготовки. Их можно использовать для предоставления дополнительной информации вашим пользовательским функциям распределения. Их также можно использовать для передачи типа устройства вместо проверки идентификатора регистрации.
 
     ```c
     // An example custom payload
@@ -473,7 +473,7 @@ contoso-heatpump-088 : 6uejA9PfkQgmYylj8Zerp3kcbeVrGZ172YLa7VSnJzg=
 
 Удаление группы ресурсов по имени.
 
-1. Войдите в портал [Azure](https://portal.azure.com) и выберите**Группы ресурсов**.
+1. Войдите в портал [Azure](https://portal.azure.com) и выберите **Группы ресурсов**.
 
 2. Введите в текстовое поле **Фильтровать по имени...** имя вашей группы ресурсов: **contoso-us-resource-group**. 
 

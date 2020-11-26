@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 8ebfbeeb4533f21bc0fa10a5fee7b88ef069c262
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8eca6297a704e1ef478c09baf227cf622d6890bb
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84298859"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953157"
 ---
 # <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
 
@@ -51,7 +51,7 @@ ms.locfileid: "84298859"
 
 Выполняя предварительные требования, вы зарегистрировали собственное клиентское приложение с именем *nativeapp1*. Ниже приведены шаги по настройке регистрации собственного приложения с областями API, предоставленными для *webapi1* в предыдущем разделе. Это позволит классическому приложению получить маркер доступа от Azure AD B2C, на основе которого веб-API будет выполнять проверку и предоставлять доступ к своим ресурсам в заданной области. Далее в этом учебнике вы настроите и запустите примеры кода классического приложения и веб-API.
 
-Чтобы зарегистрировать приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрации приложений** или устаревший интерфейс **Приложения (прежние версии)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregtraining).
+Чтобы зарегистрировать приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрации приложений** или устаревший интерфейс **Приложения (прежние версии)** . [См. дополнительные сведения о новом интерфейсе](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[Регистрация приложений](#tab/app-reg-ga/)
 

@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием Политики Azure для службы сообщений Служебной шины Azure
 description: Содержит список элементов управления соответствием Политики Azure, доступных для службы сообщений Служебной шины Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: sample
 author: spelluru
 ms.author: spelluru
 ms.service: service-bus-messaging
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: d25db199386304758f534235f8cd564d4914ba1f
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 8564177868682561066f7728460d0cf89f582aae
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695320"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94985420"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-service-bus-messaging"></a>Элементы управления соответствием Политики Azure для службы сообщений Служебной шины Azure
 

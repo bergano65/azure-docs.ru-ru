@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: 89258b05831170ff502cde80577f3a6851659bf2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 385d43e46cd3f9465c0fbf9a02eeae356f48fac4
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90986321"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966536"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство по Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
 
@@ -111,7 +111,7 @@ ms.locfileid: "90986321"
 
 9. Выберите учетную запись хранения, созданную во время выполнения шага 3.
    > [!NOTE]
-   > Журналы потоков NSG не работают с учетными записями хранения, в которых включено [иерархическое пространство имен](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+   > Журналы потоков NSG не работают с учетными записями хранения, в которых включено [иерархическое пространство имен](../storage/blobs/data-lake-storage-namespace.md).
 1. В верхнем левом углу портала выберите **Все службы**. В текстовом поле **Фильтр** введите *Наблюдатель за сетями*. Когда в результатах поиска появится **Наблюдатель за сетями**, выберите его.
 10. Задайте в разделе **Хранение (дни)** значение 5, а затем выберите **Save** (Сохранить).
 

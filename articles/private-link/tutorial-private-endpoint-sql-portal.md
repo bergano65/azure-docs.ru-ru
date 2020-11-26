@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: tutorial
 ms.date: 10/20/2020
 ms.author: allensu
-ms.openlocfilehash: def14cec9d010104876acaf9588560722dd98884
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: a7eca29dc9390306ac6ad4e66eec75a25c2d33ff
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145673"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522164"
 ---
 # <a name="tutorial---connect-to-an-azure-sql-server-using-an-azure-private-endpoint---azure-portal"></a>Учебник. Подключение к серверу SQL Azure с использованием частной конечной точки Azure на портале Azure
 
@@ -224,7 +224,7 @@ ms.locfileid: "93145673"
     Для имени сервера SQL возвращен частный IP-адрес **10.1.0.5**.  Этот адрес находится в подсети виртуальной сети, созданной ранее.
 
 
-9. Установите [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017&preserve-view=true) в **myVM**.
+9. Установите [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?preserve-view=true&view=sql-server-2017) в **myVM**.
 
 10. Откройте **SQL Server Management Studio**.
 

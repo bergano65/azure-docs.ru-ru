@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 93cccb1455f7a228cf40d4948cd8579610230db5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 876fd8260b64fba4d3d34a766b4259323c660b76
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526448"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968083"
 ---
 # <a name="tutorial-provision-the-device-to-an-iot-hub-using-the-azure-iot-hub-device-provisioning-service"></a>Руководство по Подготовка устройства в Центре Интернета вещей с помощью службы подготовки устройств для Центра Интернета вещей Azure
 
@@ -36,13 +36,13 @@ ms.locfileid: "90526448"
 Этот шаг подразумевает добавление уникальных артефактов безопасности устройства в службу подготовки устройств. Эти артефакты безопасности основаны на [механизме аттестации](concepts-service.md#attestation-mechanism) устройства, который описан ниже.
 
 - Для устройств на основе доверенного платформенного модуля (TPM) требуется следующее:
-    - Уникальный для каждой микросхемы или моделирования доверенного платформенного модуля *ключ подтверждения*, полученный у производителя микросхемы доверенного платформенного модуля.  Дополнительные сведения см. в статье [Общие сведения о ключе подтверждения доверенного платформенного модуля](https://technet.microsoft.com/library/cc770443.aspx).
+    - Уникальный для каждой микросхемы или моделирования доверенного платформенного модуля *ключ подтверждения*, полученный у производителя микросхемы доверенного платформенного модуля.  Дополнительные сведения см. в статье [Общие сведения о ключе подтверждения доверенного платформенного модуля](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770443(v=ws.11)).
     - *Registration ID* (ИД регистрации), который позволяет уникально идентифицировать устройство в пространстве имен и (или) области. Этот идентификатор может как совпадать, так и не совпадать с идентификатором устройства. Идентификатор — обязателен для каждого устройства. Для устройств на основе доверенного платформенного модуля идентификатор регистрации может быть производным от самого TPM, например хэш SHA-256 ключа подтверждения доверенного платформенного модуля.
 
       [![Сведения о регистрации для доверенного платформенного модуля на портале](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png)](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png#lightbox)  
 
 - Для устройств на основе X.509 требуется следующее:
-    - [Сертификат выдается микросхеме или имитации X.509](https://msdn.microsoft.com/library/windows/desktop/bb540819.aspx) в файле формата *PERM* или *CER*. Для отдельной регистрации необходимо использовать *сертификат подписчика*, выдаваемый на устройство, для системы X.509, а для групп регистраций — *корневой сертификат*. 
+    - [Сертификат выдается микросхеме или имитации X.509](/windows/win32/seccertenroll/about-x-509-public-key-certificates) в файле формата *PERM* или *CER*. Для отдельной регистрации необходимо использовать *сертификат подписчика*, выдаваемый на устройство, для системы X.509, а для групп регистраций — *корневой сертификат*. 
 
       [![Добавление индивидуальной регистрации для аттестации X.509 на портале](./media/tutorial-provision-device-to-hub/individual-enrollment.png)](./media/tutorial-provision-device-to-hub/individual-enrollment.png#lightbox)
 
@@ -88,7 +88,7 @@ ms.locfileid: "90526448"
 
     ![Успешное подключение к центру на портале](./media/tutorial-provision-device-to-hub/hub-connect-success.png)
 
-Дополнительные сведения см. в примере клиента подготовки устройства [prov_dev_client_sample.c](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/samples/prov_dev_client_sample/prov_dev_client_sample.c). В примере демонстрируется подготовка имитированного устройства с помощью TPM, сертификатов X.509 и симметричных ключей. Пошаговые инструкции по использованию примера см. в руководствах по аттестации [TPM](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device), [X.509](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-x509), и [симметричного ключа](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-symm-key).
+Дополнительные сведения см. в примере клиента подготовки устройства [prov_dev_client_sample.c](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/samples/prov_dev_client_sample/prov_dev_client_sample.c). В примере демонстрируется подготовка имитированного устройства с помощью TPM, сертификатов X.509 и симметричных ключей. Пошаговые инструкции по использованию примера см. в руководствах по аттестации [TPM](./quick-create-simulated-device.md), [X.509](./quick-create-simulated-device-x509.md), и [симметричного ключа](./quick-create-simulated-device-symm-key.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы узнали, как выполнять следующие задачи:

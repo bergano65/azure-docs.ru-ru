@@ -11,12 +11,12 @@ ms.date: 05/19/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77a8e6948b9912061801fefaa63d2f49611014aa
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6b510464145f434f761cc28ba4e1c1361f983f8b
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651708"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95237397"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -126,7 +126,7 @@ ms.locfileid: "94651708"
 
 4. После завершения этой операции откроется мастер настройки.  Войдите с учетной записью глобального администратора Azure AD.
 5. На экране **Connect Active Directory** (Подключение Active Directory) щелкните **Добавить каталог** и выполните вход с учетной записью администратора Active Directory.  Эта операция добавляет локальный каталог.  Щелкните **Далее**.</br>
-![Снимок экрана: экран Connect Active Directory (Подключение Active Directory) с введенным значением каталога.](media/how-to-install/install-3.png)</br>
+![Снимок экрана: экран Connect Active Directory (Подключение Active Directory) с введенным значением каталога.](media/how-to-install/install-3a.png)</br>
 
 6. На странице **Конфигурация завершена** щелкните **Подтвердить**.  Эта операция регистрирует и перезапускает агент.</br>
 ![Снимок экрана: экран "Конфигурация завершена" с выбранной кнопкой "Подтвердить".](media/how-to-install/install-4a.png)</br>

@@ -9,12 +9,12 @@ ms.date: 08/03/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, amqp, devx-track-csharp
-ms.openlocfilehash: e1e34bacb905bf48fc5f7cd44e66cf4a4326de91
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: d6bc11f4f468b784b957ded954dc9a1720e89bfd
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044655"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964445"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
@@ -33,7 +33,7 @@ ms.locfileid: "92044655"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Область действия решения
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве показано, как выполнить разработку модуля на языке **C#** с помощью **Visual Studio 2019** и его развертывание на **устройстве Windows**. Если вы разрабатываете модули для устройств Linux, обратитесь к этому руководству [по разработке модуля IoT Edge на языке C# для устройств Linux](tutorial-csharp-module.md).
 
@@ -43,8 +43,6 @@ ms.locfileid: "92044655"
 | -- | ------------------ | ------------------ |
 | **Разработка Windows AMD64** | ![Разработка модулей C# для WinAMD64 в VS Code](./media/tutorial-c-module/green-check.png) | ![Разработка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
 | **Отладка Windows AMD64** |   | ![Отладка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
-
-## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством вам нужно настроить среду разработки, выполнив инструкции, приведенные в статье о [разработке модуля IoT Edge для устройств Windows](tutorial-develop-for-windows.md). После работы с этим руководством у вас должны быть готовы все необходимые компоненты:
 

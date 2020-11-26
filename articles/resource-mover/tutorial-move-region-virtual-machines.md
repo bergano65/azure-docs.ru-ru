@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 3a5489241aa15ce105dbe4d89086aff00373ca55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f21db00ecc9ff2668698f53a4d20f5bae525721
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90603974"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95520447"
 ---
 # <a name="tutorial-move-azure-vms-across-regions"></a>Руководство по перемещению виртуальных машин Azure между регионами
 
@@ -44,7 +44,7 @@ ms.locfileid: "90603974"
 -  Убедитесь, что у вас есть доступ *владельца* в подписке, содержащей ресурсы, которые вы хотите переместить.
     - При первом добавлении ресурса для определенной пары источника и назначения в подписке Azure Resource Mover создает [управляемое удостоверение, назначаемое системой](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (ранее известное как управляемая службой идентификация (MSI)), которая является доверенной для подписки.
     - Чтобы создать удостоверение и назначить ему требуемую роль (участника или администратора доступа пользователя в исходной подписке), учетной записи, используемой для добавления ресурсов, требуются разрешения *владельца* в подписке. [Дополнительные сведения](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) о ролях Azure.
-- Подписке требуется достаточный объем квот, чтобы создать ресурсы, перемещаемые в целевой регион. Если квота отсутствует, [запросите дополнительные ресурсы](/azure/azure-resource-manager/management/azure-subscription-service-limits).
+- Подписке требуется достаточный объем квот, чтобы создать ресурсы, перемещаемые в целевой регион. Если квота отсутствует, [запросите дополнительные ресурсы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Проверьте цены в целевом регионе, в который вы перемещаете виртуальные машины. Оцените затраты с помощью [калькулятора цен](https://azure.microsoft.com/pricing/calculator/).
     
 

@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 09/28/2020
 ms.author: apimpm
 ms.openlocfilehash: 979bdaa1e0dac4f45a321abda2a208f46983f9cd
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108139"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010237"
 ---
 # <a name="tutorial-transform-and-protect-your-api"></a>Руководство по Преобразование и защита API
 
@@ -44,7 +44,7 @@ ms.locfileid: "92108139"
 
 В этом разделе показано, как скрыть заголовки HTTP, которые вы не хотите показывать пользователям. В этом примере показано, как удалить следующие заголовки в HTTP-ответе:
 
--   **X-Powered-By** ,
+-   **X-Powered-By**,
 -   **X-AspNet-Version**.
 
 ### <a name="test-the-original-response"></a>Проверка исходного ответа
@@ -54,7 +54,7 @@ ms.locfileid: "92108139"
 1. В своем экземпляре службы управления API выберите **API**.
 1. В списке API выберите **Demo Conference API**.
 1. Выберите вкладку **Тест** в верхней части экрана.
-1. Выберите операцию **GetSpeakers** , а затем выберите **Отправить**.
+1. Выберите операцию **GetSpeakers**, а затем выберите **Отправить**.
 
 Исходный ответ должен выглядеть так:
 
@@ -94,7 +94,7 @@ ms.locfileid: "92108139"
 Чтобы увидеть исходный ответ, сделайте следующее.
 
 1. Выберите **Demo Conference API** > **Тест**.
-1. Выберите операцию **GetSpeakers** , а затем выберите **Отправить**.
+1. Выберите операцию **GetSpeakers**, а затем выберите **Отправить**.
 
     Как видите, ответ включает исходные URL-адреса серверной части:
 
@@ -156,7 +156,7 @@ ms.locfileid: "92108139"
 ### <a name="test-the-stripped-response-headers"></a>Проверка очистки заголовков в ответе
 
 1. Выберите **Demo Conference API** > **Тест**.
-1. Выберите операцию **GetSpeakers** , а затем выберите **Отправить**.
+1. Выберите операцию **GetSpeakers**, а затем выберите **Отправить**.
 
     Здесь вы увидите, что заголовки удалены из ответа:
 
@@ -165,7 +165,7 @@ ms.locfileid: "92108139"
 ### <a name="test-the-replaced-url"></a>Проверка замены URL-адреса
 
 1. Выберите **Demo Conference API** > **Тест**.
-1. Выберите операцию **GetSpeakers** , а затем выберите **Отправить**.
+1. Выберите операцию **GetSpeakers**, а затем выберите **Отправить**.
 
     Здесь видно, что URL-адрес успешно заменен.
 

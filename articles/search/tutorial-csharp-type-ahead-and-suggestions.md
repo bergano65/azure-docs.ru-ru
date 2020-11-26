@@ -10,11 +10,11 @@ ms.topic: tutorial
 ms.date: 10/05/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 202a7f6b01423045fe7c72db5b42c29ae58f648d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91739669"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013842"
 ---
 # <a name="tutorial-add-autocomplete-and-suggestions-using-the-net-sdk"></a>Руководство по Добавление автозаполнения и предложений с помощью пакета SDK для .NET
 
@@ -151,7 +151,7 @@ ms.locfileid: "91739669"
 
 4. В скрипте представления задайте для параметра **&fuzzy** значение true и снова запустите приложение. Теперь введите "po". Обратите внимание: при поиске предполагается, что одна буква неправильная.
  
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png" alt-text="Ввод &quot;pa&quot;, когда для fuzzy задано значение true" border="false":::
 
     Подробные сведения о логике, используемой в поиске по нечетким соответствиям, приведены в статье о [синтаксисе запросов Lucene в службе "Когнитивный поиск Azure"](./query-lucene-syntax.md).
 
@@ -196,7 +196,7 @@ ms.locfileid: "91739669"
 
 1. Снова запустите приложение. В предложениях отобразится введенный текст, выделенный полужирным. Попробуйте ввести "pa".
  
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-highlight.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-highlight.png" alt-text="Ввод &quot;pa&quot; с выделением" border="false":::
 
    Логика, используемая в приведенном выше скрипте выделения, не защищена от случайных ошибок. Если ввести термин, который отображается дважды в одном и том же имени, выделенные полужирным шрифтом результаты будут не совсем такими, как хотелось бы. Попробуйте ввести "mo".
 
@@ -255,7 +255,7 @@ ms.locfileid: "91739669"
 
 1. Запустите приложение. Обратите внимание на то, что варианты, которые отображаются в раскрывающемся списке, являются отдельными словами. Введите слова, начинающиеся с "re". Обратите внимание на то, что количество предлагаемых вариантов уменьшается по мере набора букв.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocompletebasic.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocompletebasic.png" alt-text="Ввод при базовых настройках автозаполнения" border="false":::
 
     В сущности, скрипт предложений, который вы выполняли ранее, вероятно, более полезен, чем этот скрипт автозаполнения. Чтобы сделать автозаполнение более понятным для пользователей, рекомендуется использовать его с предложенными результатами.
 
@@ -451,7 +451,7 @@ ms.locfileid: "91739669"
 
 1. Теперь запустите приложение. Введите "pa" в поле поиска. Происходит ли автозаполнение словом "palace" вместе с предложением двух отелей, в названии которых содержится "pa"?
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocomplete.png" alt-text="При вводе &quot;po&quot; отображаются два предложения" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocomplete.png" alt-text="Ввод со встроенным автозаполнением и предложениями" border="false":::
 
 1. Попробуйте выполнить переход, чтобы принять предложение автозаполнения, а также попробуйте выбрать предложения, используя клавиши со стрелками и клавишу Tab, и повторите попытку с помощью одного щелчка мышью. Убедитесь, что скрипт работает должным образом во всех этих ситуациях.
 

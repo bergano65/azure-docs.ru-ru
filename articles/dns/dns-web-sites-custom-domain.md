@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 10/20/2020
 ms.author: rohink
-ms.openlocfilehash: 151d5f083fe0e945b330d65095c908be93e3330f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 369c7dab174f0269797b10635882a6821ade8311
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316393"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952953"
 ---
 # <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
 
@@ -38,7 +38,7 @@ ms.locfileid: "92316393"
 > * Добавление пользовательских имен узлов для веб-приложения
 > * Проверка пользовательских имен узлов
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -49,7 +49,7 @@ ms.locfileid: "92316393"
 
 * Создайте зону DNS в Azure DNS и делегируйте ее в регистраторе Azure DNS.
 
-   1. Чтобы создать зону DNS, выполните действия, описанные в разделе [Создание зоны DNS](dns-getstarted-create-dnszone.md).
+   1. Чтобы создать зону DNS, выполните действия, описанные в разделе [Создание зоны DNS](./dns-getstarted-powershell.md).
    2. Для делегирования зоны в Azure DNS выполните действия, описанные в статье [Делегирование зон DNS с помощью Azure DNS](dns-delegate-domain-azure-dns.md).
 
 После создания зоны и ее делегирования в Azure DNS можно создать записи для личного домена.
