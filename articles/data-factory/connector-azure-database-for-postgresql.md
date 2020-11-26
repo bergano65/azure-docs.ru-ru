@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 09/16/2019
-ms.openlocfilehash: b85e72ae6698cd9fa018c940e158bfcf25279ed5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/26/2020
+ms.openlocfilehash: 11e0d3336f085ccae9a7fb83ed050d69a15ce42b
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81410466"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296511"
 ---
 # <a name="copy-data-to-and-from-azure-database-for-postgresql-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure для PostgreSQL и обратно с помощью фабрики данных Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "81410466"
 
 Для связанной службы базы данных Azure для PostgreSQL поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно |
+| Свойство. | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства Type необходимо задать значение **азурепостгрескл**. | Да |
 | connectionString | Строка подключения к базе данных Azure для PostgreSQL через интерфейс ODBC.<br/>Можно также добавить пароль в Azure Key Vault и извлечь `password` конфигурацию из строки подключения. Для получения дополнительных сведений см. следующие примеры и [Сохраните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md) . | Да |
@@ -55,7 +55,7 @@ ms.locfileid: "81410466"
 
 Типичная строка подключения — `Server=<server>.postgres.database.azure.com;Database=<database>;Port=<port>;UID=<username>;Password=<Password>`. Ниже приведены дополнительные свойства, которые можно задать в любом случае.
 
-| Свойство | Описание | Параметры | Обязательно |
+| Свойство. | Описание | Параметры | Обязательно |
 |:--- |:--- |:--- |:--- |
 | EncryptionMethod (EM)| Метод, используемый драйвером для шифрования данных, отправленных между драйвером и сервером базы данных. Например,  `EncryptionMethod=<0/1/6>;`| 0 (без шифрования) **(по умолчанию)** -1 (SSL) или 6 (RequestSSL) | Нет |
 | ValidateServerCertificate (VSC) | Определяет, проверяет ли драйвер сертификат, отправленный сервером базы данных при включенном шифровании SSL (метод шифрования = 1). Например,  `ValidateServerCertificate=<0/1>;`| 0 (отключено) **(по умолчанию)** -1 (включено) | Нет |
@@ -76,7 +76,7 @@ ms.locfileid: "81410466"
 
 **Пример**:
 
-***Хранение пароля в Azure Key Vault***
+**_Хранить пароль в Azure Key Vault_* _
 
 ```json
 {
@@ -85,13 +85,13 @@ ms.locfileid: "81410466"
         "type": "AzurePostgreSql",
         "typeProperties": {
             "connectionString": "Server=<server>.postgres.database.azure.com;Database=<database>;Port=<port>;UID=<username>;",
-            "password": { 
-                "type": "AzureKeyVaultSecret", 
-                "store": { 
-                    "referenceName": "<Azure Key Vault linked service name>", 
-                    "type": "LinkedServiceReference" 
-                }, 
-                "secretName": "<secretName>" 
+            "password": { 
+                "type": "AzureKeyVaultSecret", 
+                "store": { 
+                    "referenceName": "<Azure Key Vault linked service name>", 
+                    "type": "LinkedServiceReference" 
+                }, 
+                "secretName": "<secretName>" 
             }
         }
     }
@@ -102,7 +102,7 @@ ms.locfileid: "81410466"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. [в статье DataSets in Azure Data фабрика](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, которые служба "база данных Azure для PostgreSQL" поддерживает в DataSets.
 
-Чтобы скопировать данные из базы данных Azure для PostgreSQL, задайте для свойства type набора данных значение **AzurePostgreSqlTable**. Поддерживаются следующие свойства:
+Чтобы скопировать данные из базы данных Azure для PostgreSQL, задайте для свойства Type набора данных значение _ * Азурепостгресклтабле * *. Поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
@@ -136,7 +136,7 @@ ms.locfileid: "81410466"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение **AzurePostgreSqlSource** . | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM MyTable"` | Нет (если указано свойство tableName в наборе данных) |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Пример: `SELECT * FROM mytable` или `SELECT * FROM "MyTable"`. Примечание. в PostgreSQL имя сущности считается нечувствительным к регистру, если оно не заключено в кавычки. | Нет (если указано свойство tableName в наборе данных) |
 
 **Пример**:
 
@@ -160,7 +160,7 @@ ms.locfileid: "81410466"
         "typeProperties": {
             "source": {
                 "type": "AzurePostgreSqlSource",
-                "query": "<custom query e.g. SELECT * FROM MyTable>"
+                "query": "<custom query e.g. SELECT * FROM mytable>"
             },
             "sink": {
                 "type": "<sink type>"
@@ -174,7 +174,7 @@ ms.locfileid: "81410466"
 
 Чтобы скопировать данные в базу данных Azure для PostgreSQL, в разделе **приемника** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно |
+| Свойство. | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type приемника действия копирования должно иметь значение **азурепостгресклсинк**. | Да |
 | preCopyScript | Укажите SQL-запрос для действия копирования, который необходимо выполнить, прежде чем записывать данные в базу данных Azure для PostgreSQL в каждом запуске. Это свойство можно использовать для очистки предварительно загруженных данных. | Нет |
@@ -218,5 +218,5 @@ ms.locfileid: "81410466"
 
 Дополнительные сведения о свойствах см. [в разделе действие поиска в фабрике данных Azure](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Список хранилищ данных, поддерживаемых действием копирования в фабрике данных Azure в качестве источников и приемников, см. в разделе [Supported Data Stores (поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats)).
