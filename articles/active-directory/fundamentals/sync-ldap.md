@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e617d7ccc14e65c18eb86877b1c7fb1aeef74cd0
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 1f34e734b315c7c05ce77f5e168a452fc1c1c547
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578898"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168684"
 ---
 # <a name="ldap-synchronization-with-azure-active-directory"></a>Синхронизация LDAP с Azure Active Directory
 
@@ -34,31 +34,30 @@ Azure Active Directory (Azure AD) может заменить синхрониз
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь** : обращается к приложению, использующему каталог LDAP V3 для сортировки пользователей и паролей.
+* **Пользователь**: обращается к приложению, использующему каталог LDAP V3 для сортировки пользователей и паролей.
 
-* **Веб-браузер** : компонент, с которым взаимодействует пользователь для доступа к внешнему URL-адресу приложения.
+* **Веб-браузер**: компонент, с которым взаимодействует пользователь для доступа к внешнему URL-адресу приложения.
 
-* **Веб-приложение** : приложение с зависимостями от каталогов LDAP V3.
+* **Веб-приложение**: приложение с зависимостями от каталогов LDAP V3.
 
 * **Azure AD**. Azure AD синхронизирует сведения об удостоверении (пользователи, группы, пароли) из ЛОКАЛЬНЫХ каталогов LDAP организации с помощью Azure AD Connect. 
 
-* **Azure AD Connect** : — это инструмент для подключения локальных инфраструктур удостоверений к Microsoft Azure AD. Мастер и интерактивные возможности помогут развернуть и настроить предварительные требования и компоненты, необходимые для подключения. 
+* **Azure AD Connect**: — это инструмент для подключения локальных инфраструктур удостоверений к Microsoft Azure AD. Мастер и интерактивные возможности помогут развернуть и настроить предварительные требования и компоненты, необходимые для подключения. 
 
 * **Настраиваемый соединитель**. универсальный соединитель LDAP позволяет интегрировать службу синхронизации Azure AD Connect с сервером LDAP V3. Он располагается на Azure AD Connect.
 
 * **Active Directory**. Active Directory — это служба каталогов, входящая в большинство операционных систем Windows Server. Серверы, на которых работают службы Active Directory Directory, называются контроллерами домена, они проходят проверку подлинности и авторизацию всех пользователей и компьютеров в домене Windows.
 
-* **Сервер LDAP V3** : Каталог, совместимый с протоколом LDAP, в котором хранятся корпоративные пользователи и пароли, используемые для проверки подлинности служб каталогов.
+* **Сервер LDAP V3**: Каталог, совместимый с протоколом LDAP, в котором хранятся корпоративные пользователи и пароли, используемые для проверки подлинности служб каталогов.
 
 ## <a name="implement-ldap-synchronization-with-azure-ad"></a>Реализация синхронизации LDAP с Azure AD
 
-* [Средства интеграции каталогов гибридных удостоверений](https://docs.microsoft.com/azure/active-directory/hybrid/plan-hybrid-identity-design-considerations-tools-comparison) 
+* [Средства интеграции каталогов гибридных удостоверений](../hybrid/plan-hybrid-identity-design-considerations-tools-comparison.md) 
 
-* [План установки Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-roadmap) 
+* [План установки Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md) 
 
-* [Обзор и создание соединителя LDAP](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap) 
+* [Обзор и создание соединителя LDAP](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap) 
 
    > [!NOTE]
    > Соединители LDAP — это расширенная конфигурация, которая требует некоторого опыта работы с Forefront Identity Manager и (или) Microsoft Identity Manager. Если используется в рабочей среде, мы рекомендуем ознакомиться с вопросами об этой конфигурации с помощью [Поддержка Premier](https://support.microsoft.com/premier) или Microsoft Partner Network.
 
- 

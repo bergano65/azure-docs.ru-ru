@@ -13,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: 4810de772e44be22ee5bd4a9fb6ef0ef756e62f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8a176fff0da932d0fafd40b9ab895b635acc5f6
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77085208"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169449"
 ---
 # <a name="how-to-configure-msal-for-ios-and-macos-to-use-different-identity-providers"></a>Как настроить MSAL для iOS и macOS для использования разных поставщиков удостоверений
 
@@ -29,7 +29,7 @@ ms.locfileid: "77085208"
 `MSALPublicClientApplication` настроен с URL-адресом центра по умолчанию `https://login.microsoftonline.com/common` , который подходит для большинства сценариев Azure Active Directory (AAD). Если вы не реализуете сложные сценарии, такие как национальные облака или работа с B2C, вам не нужно изменять их.
 
 > [!NOTE]
-> Современная проверка подлинности с службы федерации Active Directory (AD FS) в качестве поставщика удостоверений (ADFS) не поддерживается (Дополнительные сведения см. в разделе [ADFS для разработчиков](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios) ). Службы ADFS поддерживаются через Федерацию.
+> Современная проверка подлинности с службы федерации Active Directory (AD FS) в качестве поставщика удостоверений (ADFS) не поддерживается (Дополнительные сведения см. в разделе [ADFS для разработчиков](/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios) ). Службы ADFS поддерживаются через Федерацию.
 
 ## <a name="change-the-default-authority"></a>Изменение центра по умолчанию
 

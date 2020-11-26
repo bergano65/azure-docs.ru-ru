@@ -1,6 +1,6 @@
 ---
 title: Создание фабрики данных Azure с помощью пакета SDK для .NET
-description: Создайте экземпляр и конвейер Фабрики данных Azure с помощью пакета SDK для .NET для копирования данных между расположениями в Хранилище BLOB-объектов Azure.
+description: Создайте фабрику данных Azure и конвейер с помощью пакета SDK для .NET, чтобы копировать данные между расположениями в Хранилище BLOB-объектов Azure.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/24/2019
 ms.author: jingwang
-ms.openlocfilehash: e8da3dff39f94d6639471a2d1d96691c9cde614d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d564b96807574dd7a275d6959aea085ad16e9e2e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322892"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013417"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET
 
@@ -28,7 +28,7 @@ ms.locfileid: "91322892"
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом кратком руководстве описано создание фабрики данных Azure с помощью пакета SDK .NET. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью Фабрики данных Azure см. в статье [Преобразование данных с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-portal.md).
+В этом кратком руководстве показано, как создать фабрику данных Azure с помощью пакета SDK для .NET. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью Фабрики данных Azure см. в статье [Преобразование данных с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-portal.md).
 
 > [!NOTE]
 > Эта статья не содержит подробный обзор службы фабрики данных. Общие сведения о службе фабрики данных Azure см. в статье [Введение в фабрику данных Azure](introduction.md).

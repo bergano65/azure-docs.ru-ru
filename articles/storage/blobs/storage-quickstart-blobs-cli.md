@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 08/17/2020
 ms.author: tamram
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c9797024315a8fdc744d08863a42fba0b0b16420
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: fa502f5ca95b1726da7f00f987b35be362ae865a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660344"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021764"
 ---
 # <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
@@ -35,7 +35,7 @@ Azure CLI — это интерфейс командной строки Azure д
 
 Вы можете предоставить доступ к хранилищу BLOB-объектов из Azure CLI либо с использованием учетных данных Azure AD или ключа доступа к учетной записи хранения. Рекомендуется использовать учетные данные Azure AD. В этой статье показано, как авторизовать операции в хранилище BLOB-объектов с помощью Azure AD.
 
-Команды Azure CLI для операций с данными в хранилище BLOB-объектов поддерживают параметр `--auth-mode`, что позволяет указать, как авторизовать определенную операцию. Задайте для параметра `--auth-mode` значение `login`, чтобы выполнять авторизацию с использованием учетных данных Azure AD. Дополнительные сведения см. в статье [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](../common/authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+Команды Azure CLI для операций с данными в хранилище BLOB-объектов поддерживают параметр `--auth-mode`, что позволяет указать, как авторизовать определенную операцию. Задайте для параметра `--auth-mode` значение `login`, чтобы выполнять авторизацию с использованием учетных данных Azure AD. Дополнительные сведения см. в статье [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](./authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 Только операции с данными хранилища BLOB-объектов поддерживают параметр `--auth-mode`. Для авторизации операций управления, таких как создание группы ресурсов или учетной записи хранения, автоматически используются учетные данные Azure AD.
 
@@ -89,7 +89,7 @@ az storage container create \
 > [!IMPORTANT]
 > Назначение ролей Azure может занимать несколько минут.
 
-Вы также можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](../common/authorize-data-operations-cli.md?toc=/azure/storage/blobs/toc.json).
+Вы также можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](./authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ## <a name="upload-a-blob"></a>Передача больших двоичных объектов
 
@@ -169,4 +169,4 @@ az group delete \
 В этом кратком руководстве вы узнали, как передавать файлы между локальной файловой системой и контейнером в хранилище BLOB-объектов Azure. Чтобы узнать больше о работе с хранилищем BLOB-объектов с использованием Azure CLI, изучите примеры Azure CLI для хранилища BLOB-объектов.
 
 > [!div class="nextstepaction"]
-> [Примеры Azure CLI для хранилища BLOB-объектов](/azure/storage/blobs/storage-samples-blobs-cli?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+> [Примеры Azure CLI для хранилища BLOB-объектов](./storage-samples-blobs-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

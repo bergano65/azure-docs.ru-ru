@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71726724e7c018f34b1175f323d0c8e55b604931
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b763cea18cec42eed2aac3318fc1510de7a017b1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973646"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168420"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Новые возможности Azure Active Directory
 
@@ -65,7 +65,7 @@ Azure AD усовершенствуется на постоянной основ
 Мы предоставим обновление после завершения даты. Это прекращение не планируется в течение календарного года 2020. 
 
 > [!NOTE]
-> Это не влияет на события в журналах аудита за пределами событий синхронизации, генерируемых службой подготовки. Такие события, как создание приложения, политика условного доступа, пользователь в каталоге и т. п., будут по-прежнему выдаваться в журналах аудита. [Подробнее](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/app-provisioning/context/app-provisioning-context).
+> Это не влияет на события в журналах аудита за пределами событий синхронизации, генерируемых службой подготовки. Такие события, как создание приложения, политика условного доступа, пользователь в каталоге и т. п., будут по-прежнему выдаваться в журналах аудита. [Подробнее.](../reports-monitoring/concept-provisioning-logs.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context)
  
 
 ---
@@ -102,7 +102,7 @@ Azure Active Directory будет использовать устаревшие 
 
 Затронутые среды:
 - US Gov Azure
-- [Office 365 GCC High & DoD](https://docs.microsoft.com/microsoft-365/compliance/tls-1-2-in-office-365-gcc?view=o365-worldwide)
+- [Office 365 GCC High & DoD](/microsoft-365/compliance/tls-1-2-in-office-365-gcc?view=o365-worldwide)
  
 ---
 
@@ -177,7 +177,7 @@ Azure Active Directory будет использовать устаревшие 
 
 Теперь можно просмотреть идентификатор шаблона каждой роли Azure AD в портал Azure. В Azure AD выберите  **Описание** выбранной роли. 
 
-Пользователям рекомендуется использовать идентификаторы шаблонов ролей в сценариях и коде PowerShell вместо отображаемого имени. Идентификатор шаблона роли поддерживается для объектов [directoryRoles](https://docs.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0) и [определения роли](https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) . Дополнительные сведения об идентификаторах шаблонов ролей см. в разделе [идентификаторы шаблонов ролей](../roles/permissions-reference.md#role-template-ids).
+Пользователям рекомендуется использовать идентификаторы шаблонов ролей в сценариях и коде PowerShell вместо отображаемого имени. Идентификатор шаблона роли поддерживается для объектов [directoryRoles](/graph/api/resources/directoryrole?view=graph-rest-1.0) и [определения роли](/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) . Дополнительные сведения об идентификаторах шаблонов ролей см. в разделе [идентификаторы шаблонов ролей](../roles/permissions-reference.md#role-template-ids).
 
 ---
 
@@ -207,7 +207,7 @@ Azure Active Directory будет использовать устаревшие 
 
  Все подключенные Организации теперь будут иметь дополнительное свойство с именем State. Состояние управляет тем, как подключенная Организация будет использоваться в политиках, ссылающихся на "все настроенные подключенные организации". Значение будет "настроено" (это означает, что Организация находится в области политик, использующих предложение "все") или "предложено" (это означает, что Организация не находится в области).  
 
-У созданных вручную подключенных организаций будет значение по умолчанию "настроено". В то же время, автоматически созданные (созданные с помощью политик, которые позволяют любому пользователю в Интернете запрашивать доступ) будут по умолчанию предлагаться.  Все подключенные Организации, созданные до сентября 9 2020, будут иметь значение "настроено". При необходимости администраторы могут обновлять это свойство. [Подробнее](../governance/entitlement-management-organization.md#managing-a-connected-organization-programmatically).
+У созданных вручную подключенных организаций будет значение по умолчанию "настроено". В то же время, автоматически созданные (созданные с помощью политик, которые позволяют любому пользователю в Интернете запрашивать доступ) будут по умолчанию предлагаться.  Все подключенные Организации, созданные до сентября 9 2020, будут иметь значение "настроено". При необходимости администраторы могут обновлять это свойство. [Подробнее.](../governance/entitlement-management-organization.md#managing-a-connected-organization-programmatically)
  
 
 ---
@@ -233,7 +233,7 @@ Azure Active Directory будет использовать устаревшие 
  
 В октябре 2020 мы добавили в галерею приложений следующие 27 новых приложений с поддержкой федерации:
 
-[Sentry](../saas-apps/sentry-tutorial.md), [бумблеби-Суперапп](https://app.yellowmessenger.com/user/login), [ABBYY FlexiCapture Cloud](../saas-apps/abbyy-flexicapture-cloud-tutorial.md), [Еакомпосер](../saas-apps/eacomposer-tutorial.md), [женесис облачная интеграция для Azure](https://apps.mypurecloud.com/msteams-integration/), [портал технологий зоны](https://portail.zonetechnologie.com/signin), [Beautiful.AI](../saas-apps/beautiful.ai-tutorial.md), [датавиза Access Broker](https://console.datawiza.com/), [зокри](https://app.zokri.com/), [чеккпруф](../saas-apps/checkproof-tutorial.md), [Ecochallenge.org](https://events.ecochallenge.org/users/login), [атспоке](http://atspoke.com/login), [напоминание о встрече](https://app.appointmentreminder.co.nz/account/login), [Cloud. DataMarket](https://cloud.market/), [травелперк](../saas-apps/travelperk-tutorial.md) [, гритли](https://app.greetly.com/), [OrgVitality SSO} (.. /Саас-АППС/оргвиталити-ССО-туториал.МД), [автомобильный веб-](../saas-apps/web-cargo-air-tutorial.md)канал, [поток циклов CRM](../saas-apps/loop-flow-crm-tutorial.md), [старминд](../saas-apps/starmind-tutorial.md), [воркстем](https://hrm.workstem.com/login), [Retail зиплине](../saas-apps/retail-zipline-tutorial.md), [Хоксхунт](../saas-apps/hoxhunt-tutorial.md), [мевисио](../saas-apps/mevisio-tutorial.md), [Samsara](../saas-apps/samsara-tutorial.md), [Nimbus](../saas-apps/nimbus-tutorial.md), [Pulse Secure Virtual трафик Manager](https://docs.microsoft.com/azure/active-directory/saas-apps/pulse-secure-virtual-traffic-manager-tutorial)
+[Sentry](../saas-apps/sentry-tutorial.md), [бумблеби-Суперапп](https://app.yellowmessenger.com/user/login), [ABBYY FlexiCapture Cloud](../saas-apps/abbyy-flexicapture-cloud-tutorial.md), [Еакомпосер](../saas-apps/eacomposer-tutorial.md), [женесис облачная интеграция для Azure](https://apps.mypurecloud.com/msteams-integration/), [портал технологий зоны](https://portail.zonetechnologie.com/signin), [Beautiful.AI](../saas-apps/beautiful.ai-tutorial.md), [датавиза Access Broker](https://console.datawiza.com/), [зокри](https://app.zokri.com/), [чеккпруф](../saas-apps/checkproof-tutorial.md), [Ecochallenge.org](https://events.ecochallenge.org/users/login), [атспоке](http://atspoke.com/login), [напоминание о встрече](https://app.appointmentreminder.co.nz/account/login), [Cloud. DataMarket](https://cloud.market/), [травелперк](../saas-apps/travelperk-tutorial.md) [, гритли](https://app.greetly.com/), [OrgVitality SSO} (.. /Саас-АППС/оргвиталити-ССО-туториал.МД), [автомобильный веб-](../saas-apps/web-cargo-air-tutorial.md)канал, [поток циклов CRM](../saas-apps/loop-flow-crm-tutorial.md), [старминд](../saas-apps/starmind-tutorial.md), [воркстем](https://hrm.workstem.com/login), [Retail зиплине](../saas-apps/retail-zipline-tutorial.md), [Хоксхунт](../saas-apps/hoxhunt-tutorial.md), [мевисио](../saas-apps/mevisio-tutorial.md), [Samsara](../saas-apps/samsara-tutorial.md), [Nimbus](../saas-apps/nimbus-tutorial.md), [Pulse Secure Virtual трафик Manager](../saas-apps/pulse-secure-virtual-traffic-manager-tutorial.md)
 
 Документацию по всем приложениям можно также найти здесь. https://aka.ms/AppsTutorial
 
@@ -264,7 +264,7 @@ Azure Active Directory будет использовать устаревшие 
 **Категория службы.** Отчеты.  
 **Возможности продукта.** Мониторинг и отчетность.
  
-Теперь вы можете разрешить владельцам приложений отслеживать действия службы подготовки и устранять проблемы, не предоставляя привилегированной роли и не делая их узким местом. [Подробнее](../reports-monitoring/concept-provisioning-logs.md).
+Теперь вы можете разрешить владельцам приложений отслеживать действия службы подготовки и устранять проблемы, не предоставляя привилегированной роли и не делая их узким местом. [Подробнее.](../reports-monitoring/concept-provisioning-logs.md)
  
 ---
 
@@ -676,7 +676,7 @@ Azure AD My Sign-Ins — это новая функция, которая поз
  
 В общедоступном выпуске условия "клиентские приложения" в условном доступа новые политики будут применяться по умолчанию ко всем клиентским приложениям. К ним относятся клиенты проверки подлинности прежних версий. Существующие политики останутся без изменений, но переключатель *Настройка да/нет* будет удален из существующих политик, чтобы легко увидеть, какие клиентские приложения применяются политикой. 
 
-При создании новой политики обязательно Исключите пользователей и учетные записи служб, которые по-прежнему используют устаревшую проверку подлинности. в противном случае они будут заблокированы. [Подробнее](../conditional-access/concept-conditional-access-conditions.md).
+При создании новой политики обязательно Исключите пользователей и учетные записи служб, которые по-прежнему используют устаревшую проверку подлинности. в противном случае они будут заблокированы. [Подробнее.](../conditional-access/concept-conditional-access-conditions.md)
  
 ---
 
@@ -686,7 +686,7 @@ Azure AD My Sign-Ins — это новая функция, которая поз
 **Категория службы.** Подготовка приложений.  
 **Возможности продукта:** Управление жизненным циклом удостоверений
  
-Служба подготовки Azure AD использует стандарт SCIM для интеграции с приложениями. Наша реализация стандарта SCIM развивается, и мы планируем внести изменения в поведение, связанное с выполнением операций исправления, а также установить свойство "Active" для ресурса. [Подробнее](../app-provisioning/application-provisioning-config-problem-scim-compatibility.md).
+Служба подготовки Azure AD использует стандарт SCIM для интеграции с приложениями. Наша реализация стандарта SCIM развивается, и мы планируем внести изменения в поведение, связанное с выполнением операций исправления, а также установить свойство "Active" для ресурса. [Подробнее.](../app-provisioning/application-provisioning-config-problem-scim-compatibility.md)
  
 ---
 
@@ -734,7 +734,7 @@ Windows Hello для бизнеса позволяет конечным поль
 **Категория службы.** Подготовка приложений.  
 **Возможности продукта:** Управление жизненным циклом удостоверений
  
-Ранее, когда группа изменилась с "в области" на "вне области", а администратор щелкнул перезапустить до завершения изменения, объект группы не был удален. Теперь объект группы будет удален из целевого приложения, если он выходит за пределы области (отключен, удален, не назначен или не прошел фильтр области). [Подробнее](../app-provisioning/how-provisioning-works.md#incremental-cycles).
+Ранее, когда группа изменилась с "в области" на "вне области", а администратор щелкнул перезапустить до завершения изменения, объект группы не был удален. Теперь объект группы будет удален из целевого приложения, если он выходит за пределы области (отключен, удален, не назначен или не прошел фильтр области). [Подробнее.](../app-provisioning/how-provisioning-works.md#incremental-cycles)
  
 ---
 
@@ -780,7 +780,7 @@ Azure AD Application Proxy теперь поддерживает веб-клие
  
 Упрощенный пользовательский интерфейс предлагает функции предварительной версии и является домашним для всех новых функций. Пользователи смогут включать новые функции в рамках одного потока пользователей, уменьшая необходимость создавать несколько версий с каждым новым выпуском компонента. Наконец, новый удобный интерфейс пользователя упрощает выбор и создание потоков пользователей. Попробуйте сейчас, [создав пользовательский поток](../../active-directory-b2c/tutorial-create-user-flows.md). 
 
-Дополнительные сведения о потоках пользователей см. [в разделе версии потока пользователей в Azure Active Directory B2C](../../active-directory-b2c/user-flow-versions.md#:~:text=    User flow  ,account. Usi ...  1 more rows ).
+Дополнительные сведения о потоках пользователей см. [в разделе версии потока пользователей в Azure Active Directory B2C](../../active-directory-b2c/user-flow-versions.md).
 
 ---
 
@@ -1117,7 +1117,7 @@ Azure AD Application Proxy теперь поддерживает веб-клие
 **Категория службы:** Подготовка облака Azure AD  
 **Возможности продукта:** Управление жизненным циклом удостоверений
  
-ИТ – администраторы могут начать использовать новую роль гибридного администратора в качестве наименее привилегированной роли для настройки подготовки облака Azure Адконнект. С этой новой ролью вам больше не нужно использовать роль глобального администратора для настройки и настройки подготовки облака. [Подробнее](../roles/delegate-by-task.md#connect).
+ИТ – администраторы могут начать использовать новую роль гибридного администратора в качестве наименее привилегированной роли для настройки подготовки облака Azure Адконнект. С этой новой ролью вам больше не нужно использовать роль глобального администратора для настройки и настройки подготовки облака. [Подробнее.](../roles/delegate-by-task.md#connect)
  
 ---
 

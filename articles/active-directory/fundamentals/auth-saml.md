@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ab14413de1f999747e5b3fb58b505e0a9258a55
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 7cd2aa5e9ff8cbaeead69f11d2e3de7f760b53ec
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441221"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168650"
 ---
 # <a name="saml-authentication-with-azure-active-directory"></a>Проверка подлинности SAML с Azure Active Directory
 
@@ -53,8 +53,8 @@ ms.locfileid: "92441221"
 
 ## <a name="implement-saml-authentication-with-azure-ad"></a>Реализация проверки подлинности SAML с помощью Azure AD
 
-* [Руководства по интеграции приложений SaaS с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) 
+* [Руководства по интеграции приложений SaaS с помощью Azure Active Directory](../saas-apps/tutorial-list.md) 
 
-* [Настройка единого входа на основе SAML для приложений не из коллекции](https://docs.microsoft.com/azure/active-directory/manage-apps/add-non-gallery-app) 
+* [Настройка единого входа на основе SAML для приложений не из коллекции](../manage-apps/add-application-portal.md) 
 
-* [Как в Azure AD используется протокол SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-protocol-reference)
+* [Как в Azure AD используется протокол SAML](../develop/active-directory-saml-protocol-reference.md)

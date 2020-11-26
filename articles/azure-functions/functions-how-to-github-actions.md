@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: a2d5234b3c80456a98fde4547b9665ca1b0a83dd
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 651c1913491952c53af42abec5ce5d5009da06a0
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913551"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168072"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -34,7 +34,7 @@ ms.locfileid: "92913551"
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 - Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join).  
 - Рабочее приложение-функция, размещенное в Azure с репозиторием GitHub.   
-    - [Краткое руководство. Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md)
+    - [Краткое руководство. Создание функции в Azure с помощью Visual Studio Code](./create-first-function-vs-code-csharp.md)
 
 ## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
@@ -46,7 +46,7 @@ ms.locfileid: "92913551"
 
 Чтобы скачать профиль публикации приложения функции, выполните следующие действия.
 
-1. Выберите страницу **Обзор** приложения-функции и щелкните **получить профиль публикации** .
+1. Выберите страницу **Обзор** приложения-функции и щелкните **получить профиль публикации**.
 
    :::image type="content" source="media/functions-how-to-github-actions/get-publish-profile.png" alt-text="Загрузить профиль публикации":::
 
@@ -55,11 +55,11 @@ ms.locfileid: "92913551"
 
 ### <a name="add-the-github-secret"></a>Добавление секрета GitHub
 
-1. В [GitHub](https://github.com)перейдите к репозиторию, выберите **Параметры**  >  **секреты**  >  **Добавить новый секрет** .
+1. В [GitHub](https://github.com)перейдите к репозиторию, выберите **Параметры**  >  **секреты**  >  **Добавить новый секрет**.
 
-   :::image type="content" source="media/functions-how-to-github-actions/add-secret.png" alt-text="Загрузить профиль публикации":::
+   :::image type="content" source="media/functions-how-to-github-actions/add-secret.png" alt-text="Добавить секрет":::
 
-1. Добавьте новый секрет, используя `AZURE_FUNCTIONAPP_PUBLISH_PROFILE` для **параметра имя** , содержимое файла профиля публикации в поле **значение** и нажмите кнопку **Добавить секрет** .
+1. Добавьте новый секрет, используя `AZURE_FUNCTIONAPP_PUBLISH_PROFILE` для **параметра имя**, содержимое файла профиля публикации в поле **значение** и нажмите кнопку **Добавить секрет**.
 
 Теперь GitHub может проходить проверку подлинности в приложении функции в Azure.
 

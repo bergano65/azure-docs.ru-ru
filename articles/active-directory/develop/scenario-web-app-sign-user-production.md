@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: f438567851204a1a284955bede1525505712f4b7
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: fd9890cb94bf6bb4b82ebbb585ab8bbb9d5ba46a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442384"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169296"
 ---
 # <a name="web-app-that-signs-in-users-move-to-production"></a>Веб-приложение, которое входит в систему пользователей: перейти в рабочую среду
 
@@ -50,7 +50,7 @@ ms.locfileid: "94442384"
 - Ваша организация
 - Несколько организаций
 - Рабочие или учебные учетные записи или личные учетные записи Майкрософт
-- [Azure AD B2C](https://aka.ms/aadb2c)
+- [Azure AD B2C](../../active-directory-b2c/overview.md)
 - Национальные облака
 
 ## <a name="sample-code-java-web-app"></a>Пример кода: веб-приложение Java

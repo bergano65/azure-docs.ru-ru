@@ -14,26 +14,26 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: hahamil
 ms.reviewer: marsma
-ms.openlocfilehash: 7e53e21b6d929e2f0ba9a2e23e4e8e1b2278f828
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 3f5791bfcf6547b7fc4e84bee3d4c1c49453af9c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92209899"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169500"
 ---
 # <a name="how-to-enable-cross-app-sso-on-android-using-msal"></a>Как включить единый вход между приложениями в Android с помощью MSAL
 
 Единый вход (SSO) позволяет пользователям вводить учетные данные только один раз, и эти учетные данные автоматически работают в разных приложениях.
 
-[Платформа удостоверений Майкрософт](/azure/active-directory/develop/) и библиотека проверки подлинности Майкрософт (MSAL) помогают включить единый вход в своем наборе приложений. Используя возможности брокера и приложения проверки подлинности, вы можете расширить единый вход на всем устройстве.
+[Платформа удостоверений Майкрософт](./index.yml) и библиотека проверки подлинности Майкрософт (MSAL) помогают включить единый вход в своем наборе приложений. Используя возможности брокера и приложения проверки подлинности, вы можете расширить единый вход на всем устройстве.
 
 В этом пошаговом окне вы узнаете, как настроить пакеты SDK, используемые приложением для предоставления единого входа клиентам.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом способе предполагается, что вы умеете:
 
-- Подготавливаете приложение с помощью портал Azure. Дополнительные сведения по этой теме см. в руководстве по созданию приложения в [учебнике по Android](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android#create-a-project) .
+- Подготавливаете приложение с помощью портал Azure. Дополнительные сведения по этой теме см. в руководстве по созданию приложения в [учебнике по Android](./tutorial-v2-android.md#create-a-project) .
 - Интегрируйте приложение с помощью [библиотеки проверки подлинности Майкрософт для Android](https://github.com/AzureAD/microsoft-authentication-library-for-android).
 
 ## <a name="methods-for-single-sign-on"></a>Методы единого входа
@@ -117,7 +117,7 @@ Windows:
 keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
 ```
 
-После создания хэша подписи с помощью *keytool*используйте портал Azure, чтобы создать URI перенаправления:
+После создания хэша подписи с помощью *keytool* используйте портал Azure, чтобы создать URI перенаправления:
 
 1. Войдите в [портал Azure](https://portal.azure.com) и выберите приложение Android в **Регистрация приложений**.
 1. Выберите **Проверка подлинности**  >  **Добавить платформу**  >  **Android**.

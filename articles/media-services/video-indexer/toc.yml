@@ -54,6 +54,7 @@
     - name: Анализ выходных данных Индексатора видео
       href: video-indexer-output-json-v2.md
     - name: Поиск конкретных кадров на видео
+      displayName: search
       href: video-indexer-search.md
     - name: 'Обнаружение сцен, снимков и опорных кадров'
       href: scenes-shots-keyframes.md

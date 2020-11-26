@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb54410fb314376b68d7297a3452f0990762343d
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 69e87fc919893a544f5d0b1b615a110f25486e57
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577164"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168752"
 ---
 # <a name="header-based-authentication-with-azure-active-directory"></a>Проверка подлинности на основе заголовка с помощью Azure Active Directory
 
@@ -34,22 +34,22 @@ ms.locfileid: "94577164"
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь** : обращается к устаревшим приложениям, обслуживаемым прокси приложения.
+* **Пользователь**: обращается к устаревшим приложениям, обслуживаемым прокси приложения.
 
 * **Веб-браузер**. компонент, с которым взаимодействует пользователь, чтобы получить доступ к внешнему URL-адресу приложения.
 
-* **Azure AD** : проверяет подлинность пользователя. 
+* **Azure AD**: проверяет подлинность пользователя. 
 
 * **Служба прокси приложения**. действует как обратный прокси-сервер для отправки запроса от пользователя к локальному приложению. Он находится в Azure AD и может также применять политики условного доступа.
 
 * **Соединитель прокси приложения**. установлен локально на серверах Windows для обеспечения подключения к приложениям. Он использует только исходящие подключения. Возвращает ответ на Azure AD.
 
-* **Устаревшие приложения** : приложения, которые получают запросы пользователей от прокси приложения. Устаревшее приложение получает необходимые заголовки HTTP для настройки сеанса и возврата ответа. 
+* **Устаревшие приложения**: приложения, которые получают запросы пользователей от прокси приложения. Устаревшее приложение получает необходимые заголовки HTTP для настройки сеанса и возврата ответа. 
 
 ## <a name="implement-header-based-authentication-with-azure-ad"></a>Реализация аутентификации на основе заголовка с помощью Azure AD
 
-* [Добавление локального приложения для удаленного доступа через прокси приложения в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)  
+* [Добавление локального приложения для удаленного доступа через прокси приложения в Azure AD](../manage-apps/application-proxy-add-on-premises-application.md)  
 
-* [Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-ping-access) 
+* [Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess](../manage-apps/application-proxy-configure-single-sign-on-with-headers.md) 
 
-* [Защита устаревших приложений с помощью контроллеров и сетей доставки приложений](https://docs.microsoft.com/azure/active-directory/manage-apps/secure-hybrid-access)
+* [Защита устаревших приложений с помощью контроллеров и сетей доставки приложений](../manage-apps/secure-hybrid-access.md)

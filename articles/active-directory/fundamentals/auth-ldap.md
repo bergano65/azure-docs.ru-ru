@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5314758acecae2a9d68f2405fc1c3d2196950b4
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: f209d394e1a0c2c4ddde9cbf8df2704647e2822a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577062"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168718"
 ---
 # <a name="ldap-authentication-with-azure-active-directory"></a>Проверка подлинности LDAP с Azure Active Directory
 
@@ -40,32 +40,31 @@ Azure Active Directory (Azure AD) поддерживает этот шаблон
 
 ## <a name="components-of-system"></a>Компоненты системы
 
-* **Пользователь** : обращается к приложениям, зависящим от LDAP, через браузер.
+* **Пользователь**: обращается к приложениям, зависящим от LDAP, через браузер.
 
-* **Веб-браузер** : интерфейс, с которым пользователь взаимодействует для доступа к внешнему URL-адресу приложения.
+* **Веб-браузер**: интерфейс, с которым пользователь взаимодействует для доступа к внешнему URL-адресу приложения.
 
 * **Виртуальная сеть**. Частная сеть в Azure, с помощью которой устаревшее приложение может использовать службы LDAP. 
 
 * **Устаревшие приложения**. рабочие нагрузки приложений или серверов, для которых требуется LDAP, развернутые в виртуальной сети в Azure или имеющие видимость IP-адресов AD DS через сетевые маршруты. 
 
-* **Azure AD** : синхронизирует сведения об удостоверениях из локального каталога организации с помощью Azure AD Connect.
+* **Azure AD**: синхронизирует сведения об удостоверениях из локального каталога организации с помощью Azure AD Connect.
 
-* **Доменные службы Azure AD (AD DS)** : выполняет одностороннюю синхронизацию из Azure AD для предоставления доступа к центральному набору пользователей, групп и учетных данных. Экземпляр AD DS назначен виртуальной сети. Приложения, службы и виртуальные машины в Azure, подключающиеся к виртуальной сети, назначенной AD DS, могут использовать общие функции AD DS, такие как LDAP, присоединение к домену, групповая политика, Kerberos и проверка подлинности NTLM.
+* **Доменные службы Azure AD (AD DS)**: выполняет одностороннюю синхронизацию из Azure AD для предоставления доступа к центральному набору пользователей, групп и учетных данных. Экземпляр AD DS назначен виртуальной сети. Приложения, службы и виртуальные машины в Azure, подключающиеся к виртуальной сети, назначенной AD DS, могут использовать общие функции AD DS, такие как LDAP, присоединение к домену, групповая политика, Kerberos и проверка подлинности NTLM.
    > [!NOTE]
    >  В средах, где Организация не может синхронизировать хэши паролей или пользователи выполняют вход с использованием смарт-карт, рекомендуется использовать лес ресурсов в AD DS. 
 
-* **Azure AD Connect** : средство для синхронизации сведений о локальных удостоверениях для Microsoft Azure AD. Мастер развертывания и интерактивные возможности помогут вам настроить необходимые компоненты для подключения, включая синхронизацию и вход из Active Directory в Azure AD. 
+* **Azure AD Connect**: средство для синхронизации сведений о локальных удостоверениях для Microsoft Azure AD. Мастер развертывания и интерактивные возможности помогут вам настроить необходимые компоненты для подключения, включая синхронизацию и вход из Active Directory в Azure AD. 
 
-* **Active Directory** : Служба каталогов, в которой хранятся [Локальные сведения об удостоверениях, такие как сведения о пользователе и учетной записи](https://www.dnsstuff.com/active-directory-service-accounts), а также сведения о безопасности, такие как пароли.
+* **Active Directory**: Служба каталогов, в которой хранятся [Локальные сведения об удостоверениях, такие как сведения о пользователе и учетной записи](https://www.dnsstuff.com/active-directory-service-accounts), а также сведения о безопасности, такие как пароли.
 
 ## <a name="implement-ldap-authentication-with-azure-ad"></a>Реализация аутентификации LDAP с помощью Azure AD
 
-* [Создание и настройка экземпляра AD DS Azure](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance) 
+* [Создание и настройка экземпляра AD DS Azure](../../active-directory-domain-services/tutorial-create-instance.md) 
 
-* [Настройка виртуальных сетей для экземпляра AD DS Azure](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-configure-networking) 
+* [Настройка виртуальных сетей для экземпляра AD DS Azure](../../active-directory-domain-services/tutorial-configure-networking.md) 
 
-* [Настройка защищенный протокол LDAP для управляемого домена AD DS Azure](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-configure-ldaps) 
+* [Настройка защищенный протокол LDAP для управляемого домена AD DS Azure](../../active-directory-domain-services/tutorial-configure-ldaps.md) 
 
-* [Создание исходящего доверия лесов для локального домена в Azure AD DS](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-forest-trust)
+* [Создание исходящего доверия лесов для локального домена в Azure AD DS](../../active-directory-domain-services/tutorial-create-forest-trust.md)
 
- 

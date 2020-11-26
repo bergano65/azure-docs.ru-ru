@@ -4,12 +4,12 @@ description: Узнайте о концепциях и методах Функц
 ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
-ms.openlocfilehash: 9a3c0643f4fc965ff64106758320aeb445aaf9ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 54bfd770fba9a1766396d66c0c263111c233c9c2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85921739"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96167885"
 ---
 # <a name="azure-functions-developer-guide"></a>Руководство разработчиков Функций Azure
 Некоторые из Функций Azure имеют ряд общих технических особенностей и компонентов вне зависимости от используемого языка или привязки. Прежде чем приступать к детальному изучению особенностей, характерных для определенного языка или привязки, ознакомьтесь с этими общими сведениями.
@@ -61,7 +61,7 @@ ms.locfileid: "85921739"
 > Если вы развертываете пакет вручную, убедитесь, что развертываете файл _host.json_ и папки функций непосредственно в папку `wwwroot`. Не включайте папку `wwwroot` в развертывания. В противном случае вы получите папки `wwwroot\wwwroot`.
 
 #### <a name="use-local-tools-and-publishing"></a>Использование локальных инструментов и публикация
-Приложения-функции можно разрабатывать и публиковать с помощью различных средств, включая [Visual Studio](./functions-develop-vs.md), [Visual Studio Code](functions-create-first-function-vs-code.md), [IntelliJ](./functions-create-maven-intellij.md), [Eclipse](./functions-create-maven-eclipse.md) и [Azure Functions Core Tools](./functions-develop-local.md). Дополнительные сведения см. в статье [Как программировать и тестировать Функции Azure в локальной среде](./functions-develop-local.md).
+Приложения-функции можно разрабатывать и публиковать с помощью различных средств, включая [Visual Studio](./functions-develop-vs.md), [Visual Studio Code](./create-first-function-vs-code-csharp.md), [IntelliJ](./functions-create-maven-intellij.md), [Eclipse](./functions-create-maven-eclipse.md) и [Azure Functions Core Tools](./functions-develop-local.md). Дополнительные сведения см. в статье [Как программировать и тестировать Функции Azure в локальной среде](./functions-develop-local.md).
 
 <!--NOTE: I've removed documentation on FTP, because it does not sync triggers on the consumption plan --glenga -->
 

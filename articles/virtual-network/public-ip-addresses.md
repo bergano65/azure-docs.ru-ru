@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: 3f2dfb113f4c82dfea422a7c2be1c5fb07ffd60e
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: ef79844cf2f90ce97ea30a1948a441f909255f98
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358173"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169942"
 ---
 # <a name="public-ip-addresses"></a>Общедоступные IP-адреса
 
@@ -37,7 +37,7 @@ ms.locfileid: "94358173"
 
 Общедоступные IP-адреса создаются с адресами IPv4 или IPv6. 
 
-## <a name="sku"></a>номер SKU
+## <a name="sku"></a>Номер SKU
 
 Дополнительные сведения об обновлении SKU см. в статье [Обновление общедоступного IP-адреса](../virtual-network/virtual-network-public-ip-address-upgrade.md).
 
@@ -54,7 +54,7 @@ ms.locfileid: "94358173"
 - Имеют настраиваемое время ожидания в случае простоя входящего потока 4–30 минут (значение по умолчанию — 4 минуты) и фиксированное время ожидания в случае простоя входящего потока 4 минуты.
 - Обеспечение безопасности по умолчанию и закрытие входящего трафика. Разрешить вывод списка входящего трафика с помощью [группы безопасности сети](security-overview.md#network-security-groups).
 - Назначено сетевым интерфейсам, стандартным подсистемам балансировки нагрузки или шлюзам приложений. Дополнительные сведения о подсистеме балансировки нагрузки "Стандартный" см. в статье [Load Balancer (цен. Категория "Стандартный") Azure](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-- Может быть избыточным в виде зоны или зональные (можно создать зональные и гарантировать в определенной зоне доступности). Дополнительные сведения о зонах доступности см. в статьях [с обзорной информацией о зонах доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [об использовании Load Balancer уровня "Стандартный" с зонами доступности](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- Может быть избыточным в виде зоны (из всех трех зон) или зональные (можно создать зональные и гарантировать в определенной зоне доступности). Дополнительные сведения о зонах доступности см. в статьях [с обзорной информацией о зонах доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [об использовании Load Balancer уровня "Стандартный" с зонами доступности](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json). **IP-адреса, избыточные в зоне, можно создавать только в [регионах, где включены 3 зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-region) .** IP-адреса, созданные до создания зон, не будут избыточными в зоне.
  
 > [!NOTE]
 > Внутренний обмен данными с ресурсом номера SKU "Стандартный" будет невозможен, пока вы не создадите и не свяжете [группу безопасности сети](security-overview.md#network-security-groups) и явно не разрешите нужный трафик.
@@ -196,7 +196,7 @@ IP-адрес освобождается, когда метод распреде
 
 За общедоступные IP-адреса взимается номинальная плата. Дополнительные сведения о ценах на IP-адреса в Azure см. на [соответствующей](https://azure.microsoft.com/pricing/details/ip-addresses) странице.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о [частных IP-адресах в Azure](private-ip-addresses.md)
 * [Развертывание виртуальной машины со статическим общедоступным IP-адресом с использованием портала Azure](virtual-network-deploy-static-pip-arm-portal.md)
 

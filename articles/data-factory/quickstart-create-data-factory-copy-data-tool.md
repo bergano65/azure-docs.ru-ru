@@ -1,6 +1,6 @@
 ---
 title: Копирование данных с помощью средства копирования данных Azure
-description: Создание фабрики данных Azure и применение средства копирования данных для копирования данных из одного расположения в хранилище BLOB-объектов Azure в другое.
+description: Создание фабрики данных Azure и применение средства копирования данных для копирования данных из одного расположения в Хранилище BLOB-объектов Azure в другое.
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
@@ -10,13 +10,13 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
-ms.date: 06/10/2020
-ms.openlocfilehash: 756c62aa070f05c4b66de0cde6c7df59d9b1d09a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 11/09/2020
+ms.openlocfilehash: 282917a6bbf7edb962a87ad87810adde56206d97
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "84735203"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013519"
 ---
 # <a name="quickstart-use-the-copy-data-tool-to-copy-data"></a>Краткое руководство. Копирование данных с помощью средства копирования данных
 
@@ -37,7 +37,7 @@ ms.locfileid: "84735203"
 
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
 1. Перейдите на [портал Azure](https://portal.azure.com). 
-1. На портале Azure в меню выберите **Создать ресурс** > **Аналитика** > **Фабрика данных**.
+1. На портале Azure в меню выберите **Создать ресурс** > **Интеграция** > **Фабрика данных**.
 
     ![Создание фабрики данных](./media/doc-common-process/new-azure-data-factory-menu.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "84735203"
 1. Для **группы ресурсов** выполните одно из следующих действий:
      
    - Выберите **Use existing** (Использовать имеющуюся) и выберите имеющуюся группу ресурсов в списке. 
-   - Выберите **Создать новую**и укажите имя группы ресурсов.   
+   - Выберите **Создать новую** и укажите имя группы ресурсов.   
          
    Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/management/overview.md).  
 1. Укажите **V2** при выборе **версии**.

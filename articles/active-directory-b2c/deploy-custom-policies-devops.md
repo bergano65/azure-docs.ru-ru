@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4dd9f98f174144cef455157162694a470aa1065f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2652bd8ed33eb68e228f059fba9daa3c6e7c22da
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94951769"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96170163"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Развертывание настраиваемых политик с помощью Azure Pipelines
 
@@ -29,7 +29,7 @@ ms.locfileid: "94951769"
 1. Настройка конвейера Azure
 
 > [!IMPORTANT]
-> Управление Azure AD B2C пользовательскими политиками с помощью конвейера Azure в настоящее время использует операции **предварительной версии** , доступные в `/beta` конечной точке API Microsoft Graph. Использование этих API для приложений в рабочей среде не поддерживается. Дополнительные сведения см. в [справочнике по конечной точке бета-версии Microsoft Graph REST API](/graph/api/overview?toc=.%252fref%252ftoc.json&view=graph-rest-beta).
+> Управление Azure AD B2C пользовательскими политиками с помощью конвейера Azure в настоящее время использует операции **предварительной версии** , доступные в `/beta` конечной точке API Microsoft Graph. Использование этих API для приложений в рабочей среде не поддерживается. Дополнительные сведения см. в [справочнике по конечной точке бета-версии Microsoft Graph REST API](/graph/api/overview?toc=.%2fref%2ftoc.json&view=graph-rest-beta).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -212,7 +212,7 @@ PublicPolicyUri="http://contoso.onmicrosoft.com/B2C_1A_TrustFrameworkBase">
 См. также:
 
 * [Вызовы между службами с использованием учетных данных клиента](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md)
-* [Azure DevOps Services](/azure/devops/user-guide/?view=azure-devops)
+* [Azure DevOps Services](/azure/devops/user-guide/?view=azure-devops)
 
 <!-- LINKS - External -->
 [devops]: /azure/devops/?view=azure-devops

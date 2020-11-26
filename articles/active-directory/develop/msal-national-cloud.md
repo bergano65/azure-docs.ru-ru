@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 0b54a8227594a81c17dcaaaaa6c599d70217c498
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d899fe7f84a8708bb8ee32cc008567b272a885c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90705866"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169381"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Использование MSAL в национальной облачной среде
 
@@ -49,7 +49,7 @@ ms.locfileid: "90705866"
 
 ### <a name="get-an-azure-government-subscription"></a>Получение подписки Azure для государственных организаций
 
-Чтобы получить подписку Azure для государственных организаций, см. статью [Управление подпиской и подключение к ней в Azure](../../azure-government/documentation-government-manage-subscriptions.md)для государственных организаций.
+Чтобы получить подписку Azure для государственных организаций, см. статью [Управление подпиской и подключение к ней в Azure](../../azure-government/compare-azure-government-global-azure.md)для государственных организаций.
 
 Если у вас нет подписки Azure для государственных организаций, создайте [бесплатную учетную запись](https://azure.microsoft.com/global-infrastructure/government/request/) , прежде чем начинать работу.
 
@@ -89,7 +89,7 @@ ms.locfileid: "90705866"
 
 - [Скачайте файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip) для локального веб-сервера, например node.
 
-  или
+  или диспетчер конфигурации служб
 
 - [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip).
 
