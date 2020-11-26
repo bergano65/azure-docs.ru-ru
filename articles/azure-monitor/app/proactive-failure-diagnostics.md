@@ -4,12 +4,12 @@ description: Оповещает о необычных изменениях в ч
 ms.topic: conceptual
 ms.date: 12/18/2018
 ms.reviewer: yalavi
-ms.openlocfilehash: 0f93c7b185b292f8d9792a11807b7c99ad846d37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 329f5bc6f5c3523bc76876f946474eaeb897cfe9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565843"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186972"
 ---
 # <a name="smart-detection---failure-anomalies"></a>Интеллектуальное обнаружение аномальных сбоев
 [Application Insights](./app-insights-overview.md) автоматически уведомляет вас (почти в реальном времени), если работа веб-приложения сопровождается чрезмерно частыми неудачными запросами. Эта служба обнаруживает необычное увеличение числа невыполненных HTTP-запросов или вызовов зависимостей. Невыполненными обычно считаются запросы с кодом ответа 400 или больше. Чтобы вам было проще рассмотреть и диагностировать проблему, в подробностях оповещения приводится анализ характеристик сбоев и важные данные приложения. Кроме того, даются ссылки на портал Application Insights для дальнейшей диагностики. Эта функция не требует настройки, так как использует алгоритмы машинного обучения для прогнозирования нормальной частоты невыполненных запросов.
@@ -73,11 +73,11 @@ ms.locfileid: "89565843"
 
 Откройте страницу "Оповещения". Правила генерации оповещений по аномальным сбоям включаются в общий список оповещений, которые вы настроили вручную. Здесь можно увидеть его текущее состояние.
 
-:::image type="content" source="./media/proactive-failure-diagnostics/021.png" alt-text="Пример предупреждения интеллектуального обнаружения, показывающего анализ кластера в случае сбоя." lightbox="./media/proactive-failure-diagnostics/021.png":::
+:::image type="content" source="./media/proactive-failure-diagnostics/021.png" alt-text="На странице ресурсов Application Insights щелкните элемент оповещения, а затем — Управление правилами оповещений." lightbox="./media/proactive-failure-diagnostics/021.png":::
 
 Щелкните оповещение, чтобы его настроить.
 
-:::image type="content" source="./media/proactive-failure-diagnostics/032.png" alt-text="Пример предупреждения интеллектуального обнаружения, показывающего анализ кластера в случае сбоя." lightbox="./media/proactive-failure-diagnostics/032.png":::
+:::image type="content" source="./media/proactive-failure-diagnostics/032.png" alt-text="Экран настройки правила." lightbox="./media/proactive-failure-diagnostics/032.png":::
 
 Обратите внимание, что вы можете отключить или удалить правило генерации оповещений по аномальным сбоям, но не можете создать другое для того же ресурса Application Insights.
 
@@ -299,7 +299,7 @@ ms.locfileid: "89565843"
 
 Щелкнув "Диагностика сбоев", вы увидите дополнительные сведения, которые помогут вам устранить проблему.
 
-:::image type="content" source="./media/proactive-failure-diagnostics/051.png" alt-text="Пример предупреждения интеллектуального обнаружения, показывающего анализ кластера в случае сбоя." lightbox="./media/proactive-failure-diagnostics/051.png#lightbox":::
+:::image type="content" source="./media/proactive-failure-diagnostics/051.png" alt-text="Поиск по журналу диагностики." lightbox="./media/proactive-failure-diagnostics/051.png#lightbox":::
 
 В зависимости от процента запросов и числа вовлеченных пользователей вы можете решить, насколько срочно необходимо решить проблему. В приведенном выше примере доля невыполненных запросов (78,5 %) сравнивается с нормальным показателем (2,2 %), что явно указывает на наличие проблемы. С другой стороны, она затронула только 46 пользователей. Для своего приложения вы сможете быстро понять, насколько это серьезно.
 
@@ -307,13 +307,13 @@ ms.locfileid: "89565843"
 
 В этом примере произошло исключение из базы данных SQL из-за достижения лимита запросов.
 
-:::image type="content" source="./media/proactive-failure-diagnostics/052.png" alt-text="Пример предупреждения интеллектуального обнаружения, показывающего анализ кластера в случае сбоя." lightbox="./media/proactive-failure-diagnostics/052.png":::
+:::image type="content" source="./media/proactive-failure-diagnostics/052.png" alt-text="Сведения о неудачном запросе." lightbox="./media/proactive-failure-diagnostics/052.png":::
 
 ## <a name="review-recent-alerts"></a>Просмотр последних оповещений
 
 Щелкните **Оповещения** на странице ресурсов Application Insights, чтобы получить последние сработавшие оповещения.
 
-:::image type="content" source="./media/proactive-failure-diagnostics/070.png" alt-text="Пример предупреждения интеллектуального обнаружения, показывающего анализ кластера в случае сбоя." lightbox="./media/proactive-failure-diagnostics/070.png":::
+:::image type="content" source="./media/proactive-failure-diagnostics/070.png" alt-text="Сводка оповещений." lightbox="./media/proactive-failure-diagnostics/070.png":::
 
 ## <a name="whats-the-difference-"></a>В чем разница?
 Интеллектуальное обнаружение аномальных сбоев дополняет другие похожие компоненты Application Insights.
@@ -356,10 +356,9 @@ ms.locfileid: "89565843"
 
 * [Обозреватель метрик](../platform/metrics-charts.md)
 * [Обозреватель поиска](./diagnostic-search.md)
-* [Аналитика, мощный язык запросов](../log-query/get-started-portal.md)
+* [Аналитика, мощный язык запросов](../log-query/log-analytics-tutorial.md)
 
 Интеллектуальное обнаружение действует автоматически. но, возможно, вам потребуется настроить некоторые дополнительные оповещения.
 
 * [Настройка оповещений в Application Insights](../platform/alerts-log.md)
 * [Доступность веб-тестов](./monitor-web-app-availability.md)
-

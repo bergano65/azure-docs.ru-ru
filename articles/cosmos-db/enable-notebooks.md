@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 09/22/2019
 ms.author: dech
-ms.openlocfilehash: c869069e40780b1fd399758e84b0ffba311398e3
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 7b52a066f80b686a0e424d8f63d520d46691a72a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334197"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187822"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Включение записных книжек для учетных записей Azure Cosmos DB (Предварительная версия)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "93334197"
 
    :::image type="content" source="media/enable-notebooks/create-new-account-with-notebooks-complete.png" alt-text="Область Уведомления на портале Azure":::
 
-1. Выберите **Перейти к ресурсу** , чтобы перейти на страницу учетной записи Azure Cosmos DB.
+1. Выберите **Перейти к ресурсу**, чтобы перейти на страницу учетной записи Azure Cosmos DB.
 
    :::image type="content" source="../../includes/media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created-3.png" alt-text="Страница учетной записи Azure Cosmos DB":::
 
@@ -76,4 +76,4 @@ ms.locfileid: "93334197"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о преимуществах использования [записных книжек Jupyter в Azure Cosmos DB](cosmosdb-jupyter-notebooks.md).
+- Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)

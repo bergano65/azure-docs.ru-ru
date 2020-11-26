@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: b309ce01595e2e62bea7f78ae728d83bc7d9b9be
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 803c9a98f0dc10ff8218ac7b7c20dcb117700034
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992171"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187108"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "94992171"
 
 Мы планируем продолжить обновление рекомендаций и рекомендаций, перечисленных здесь. Укажите входные данные или любые исправления для этого документа, используя ссылку **отзыва** в нижней части этой статьи.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Аутентификацией называют процесс подтверждения личности пользователя. База данных SQL Azure и SQL Управляемый экземпляр поддерживают два типа проверки подлинности:
 
@@ -112,7 +112,7 @@ ms.locfileid: "94992171"
 > - Маркер доступа Azure AD кэшируется на стороне клиента, и его время существования зависит от конфигурации токена. См. статью Настройка [времени жизни маркеров в Azure Active Directory](../../active-directory/develop/active-directory-configurable-token-lifetimes.md)
 > - Рекомендации по устранению неполадок аутентификация Azure AD см. в следующем блоге: [Устранение неполадок Azure AD](https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991).
 
-### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
+### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
 
 > Упоминалось в: упражнения #2, контроль доступа ISO (AC)
 
@@ -614,7 +614,7 @@ ms.locfileid: "94992171"
 
 Защита от атак DDoS автоматически включается в составе платформы Azure. Он включает мониторинг трафика в реальном времени и устранение атак на уровне сети в общедоступных конечных точках.
 
-- Используйте [Azure от атак DDoS Protection](../../virtual-network/ddos-protection-overview.md) для мониторинга общедоступных IP-адресов, связанных с ресурсами, развернутыми в виртуальных сетях.
+- Используйте [Azure от атак DDoS Protection](../../ddos-protection/ddos-protection-overview.md) для мониторинга общедоступных IP-адресов, связанных с ресурсами, развернутыми в виртуальных сетях.
 
 - Используйте [расширенную защиту от угроз для базы данных SQL Azure](threat-detection-overview.md) , чтобы обнаружить атаки типа "отказ в обслуживании" (DOS) для баз данных.
 

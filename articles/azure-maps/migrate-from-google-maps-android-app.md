@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: d7ec1edb779ddaf53cef02dd6e83bb3e719d0b4e
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: b096b24acd5cf65f6ad3e9eabb1d536b3aae0168
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503561"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187074"
 ---
 # <a name="tutorial---migrate-an-android-app-from-google-maps"></a>Руководство по переносу приложения Android из Google Карт
 
@@ -65,7 +65,7 @@ ms.locfileid: "92503561"
 
     `implementation 'com.google.android.gms:play-services-maps:17.0.0'`
 
-3. Добавьте ключ API Google Карт в раздел приложения файла **google\_maps\_api.xml** :
+3. Добавьте ключ API Google Карт в раздел приложения файла **google\_maps\_api.xml**:
 
     ```xml
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_GOOGLE_MAPS_KEY"/>
@@ -218,7 +218,7 @@ ms.locfileid: "92503561"
 
     * импортировать пакет SDK Azure Maps;
     * настроить сведения об аутентификации Azure Maps;
-    * получить экземпляр элемента управления картой в методе **onCreate** ;
+    * получить экземпляр элемента управления картой в методе **onCreate**;
 
      задать сведения для аутентификации в классе `AzureMaps` с помощью метода `setSubscriptionKey` или `setAadProperties`. Это глобальное обновление. Убедитесь, что данные аутентификации добавляются в каждое представление.
 
@@ -322,7 +322,7 @@ ms.locfileid: "92503561"
 Обратите внимание, что элемент управления Azure Maps поддерживает более масштабное отображение и предоставляет большее представление целого мира.
 
 > [!TIP]
-> При использовании эмулятора Android на компьютере с Windows карта может не отображаться из-за конфликтов с OpenGL и отрисовкой графики с программным ускорением. Ниже описано, как устранить эту проблему. Откройте диспетчер AVD и выберите виртуальное устройство, которое необходимо изменить. Прокрутите страницу вниз до панели **Проверить конфигурацию** . В разделе **Emulated Performance** (Эмулированная производительность) для параметра **Графика** задайте значение **Оборудование** .
+> При использовании эмулятора Android на компьютере с Windows карта может не отображаться из-за конфликтов с OpenGL и отрисовкой графики с программным ускорением. Ниже описано, как устранить эту проблему. Откройте диспетчер AVD и выберите виртуальное устройство, которое необходимо изменить. Прокрутите страницу вниз до панели **Проверить конфигурацию**. В разделе **Emulated Performance** (Эмулированная производительность) для параметра **Графика** задайте значение **Оборудование**.
 
 ## <a name="localizing-the-map"></a>Локализация карты
 
@@ -769,7 +769,7 @@ mapControl.onReady(map -> {
 > [Добавление слоя символов на карту Android](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
-> [Добавление фигур на карту Android](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)
+> [Добавление фигур на карту Android](./how-to-add-shapes-to-android-map.md)
 
 > [!div class="nextstepaction"]
-> [Изменение стилей карт Android](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
+> [Изменение стилей карт Android](./set-android-map-styles.md)

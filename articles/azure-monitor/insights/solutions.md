@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: c38fa77951aaeb5559dc2030f1401a896d7c238d
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: f9ced3dfeccdbac5f0eb220cf0e104679f263aac
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841926"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186870"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
@@ -29,7 +29,7 @@ ms.locfileid: "94841926"
 
 [![На снимке экрана показано меню портал Azure с выбранными решениями и решениями, отображаемыми в области решения.](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
 
-Решения мониторинга могут содержать несколько типов ресурсов Azure, и все ресурсы в составе решения можно просмотреть точно так же, как любой другой ресурс. Например, все включенные в решение запросы по журналам представлены в списке **Запросы решения** в [обозревателе запросов](../log-query/get-started-portal.md#load-queries). Эти запросы вы можете использовать при выполнении динамического анализа с помощью [запросов по журналам](../log-query/log-query-overview.md).
+Решения мониторинга могут содержать несколько типов ресурсов Azure, и все ресурсы в составе решения можно просмотреть точно так же, как любой другой ресурс. Например, любые запросы журнала, включенные в решение, отображаются в разделе **запросы решения** в [обозревателе запросов](../log-query/log-analytics-tutorial.md). Эти запросы можно использовать при выполнении нерегламентированного анализа с [запросами журналов](../log-query/log-query-overview.md).
 
 ## <a name="list-installed-monitoring-solutions"></a>Список установленных решений мониторинга
 
@@ -47,7 +47,7 @@ ms.locfileid: "94841926"
 
 ![Свойства решения](media/solutions/solution-properties.png)
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы получить список решений для мониторинга, установленных в вашей подписке, используйте команду [AZ Monitor log-Analytics Solution List](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-list) .   Перед выполнением `list` команды следуйте предварительным требованиям, приведенным в [статье Установка решения для мониторинга](#install-a-monitoring-solution).
 
@@ -240,7 +240,7 @@ New-AzMonitorLogAnalyticsSolution -Type Containers -ResourceGroupName MyResource
 
 Чтобы удалить установленное решение с помощью портала, выберите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы удалить установленное решение с помощью Azure CLI, используйте команду [AZ Monitor log-Analytics решение Delete](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-delete) .
 

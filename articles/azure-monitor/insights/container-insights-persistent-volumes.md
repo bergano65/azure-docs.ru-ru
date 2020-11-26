@@ -3,12 +3,12 @@ title: Настройка мониторинга PV с помощью Azure Moni
 description: В этой статье описывается, как можно настроить мониторинг кластеров Kubernetes с постоянными томами с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 10/20/2020
-ms.openlocfilehash: 30e99c2abbc66de257f9623dedc901fca51976c1
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: e7c547c137fc84e6e6dfb2807b871ef0329a3c13
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92492178"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186853"
 ---
 # <a name="configure-pv-monitoring-with-azure-monitor-for-containers"></a>Настройка мониторинга ПС с помощью Azure Monitor для контейнеров
 
@@ -30,4 +30,4 @@ Azure Monitor для контейнеров содержит предварит�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о собранных метриках ПС см. [здесь](https://aka.ms/ci/pvconfig).
+- Дополнительные сведения о собранных метриках ПС см. [здесь](./container-insights-agent-config.md).

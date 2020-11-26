@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/29/2020
-ms.openlocfilehash: 2a19183f5ba5b1ea4d50cd5cfba6115f7dede6cd
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 1d3a7be429f730dd4dbd71bade1e3e51ea73c10f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540052"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188655"
 ---
 # <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые объекты вычислений в Машинном обучении Azure?
 
@@ -119,6 +119,12 @@ ms.locfileid: "94540052"
 
 
 Хотя Машинное обучение Azure поддерживает эти серии виртуальных машин, они могут быть недоступны во всех регионах Azure. Чтобы проверить, доступна ли серия виртуальных машин, ознакомьтесь со статьей [доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines).
+
+> [!NOTE]
+> Машинное обучение Azure не поддерживает все размеры виртуальных машин, поддерживаемые в Azure COMPUTE. Чтобы получить список доступных размеров виртуальных машин, используйте один из следующих методов.
+> * [REST API](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable/2020-08-01/examples/ListVMSizesResult.json)
+> * [Пакет SDK для Python](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py.md#supported-vmsizes-workspace--location-none-)
+>
 
 ### <a name="compute-isolation"></a>Изоляция вычислений
 

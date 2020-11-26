@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 68daec6bb6682d2b488abacb2f79bdfadc4ae628
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: bedf4dd2a955a8ffe648b47c1691e77ac1fdb8f5
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076578"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187805"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Устранение неполадок, если роли облачной службы не запускаются
 Ниже приведены некоторые распространенные проблемы и решения на случай, если роли облачной службы Azure не запускаются.
@@ -77,12 +77,12 @@ ms.locfileid: "92076578"
 * Описание: произошло необработанное исключение во время выполнения текущего веб-запроса. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
 * Сведения об исключении: System.IO.FIleNotFoundException: не удалось загрузить файл, сборку Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35 или какую-то их зависимость. Системе не удается найти указанный файл.
 
-Например.
+Пример:
 
 ![Явная ошибка сервера в приложении «/».](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503389.png)
 
 ## <a name="diagnose-issues-by-using-the-compute-emulator"></a>Диагностика неполадок с помощью эмулятора вычислений
-Вы можете использовать эмулятор вычислений Microsoft Azure, чтобы диагностировать и устранять неполадки, связанные с отсутствующими зависимостями, а также ошибки web.config.
+Можно использовать эмулятор вычислений Microsoft Azure для диагностики и устранения проблем с отсутствующими зависимостями и web.config ошибками.
 
 Чтобы улучшить результаты использования этого метода диагностики, следует использовать компьютер или виртуальную машину, на которой выполнена чистая установка Windows. Чтобы лучше имитировать среду Azure, следует использовать 64-разрядную версию Windows Server 2008 R2.
 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/25/2020
 ms.author: dapine
 ms.openlocfilehash: 68a06bcb96e201efba5e8b394486e62702f9199e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86035740"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187680"
 ---
 > [!IMPORTANT]
 > Скачивая любой пакет SDK для службы "Речь" в Azure Cognitive Services, вы соглашаетесь на использование лицензии. Дополнительные сведения см. в разделе:

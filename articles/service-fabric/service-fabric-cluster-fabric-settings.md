@@ -4,11 +4,11 @@ description: В этой статье описываются параметры 
 ms.topic: reference
 ms.date: 08/30/2019
 ms.openlocfilehash: 1f16e89dd1131f6aea64e5e72a342b3b737f3728
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95542649"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187227"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Настройка параметров кластера Service Fabric
 В этой статье описываются различные параметры структуры для кластера Service Fabric, которые вы можете настроить. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager. Дополнительные сведения см. в статье об [обновлении конфигурации кластера в Azure](service-fabric-cluster-config-upgrade-azure.md). Чтобы настроить параметры для автономных кластеров, обновите файл *ClusterConfig.json* и обновите конфигурацию в своем кластере. Дополнительные сведения см. в статье об [обновлении конфигурации автономного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
