@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: b0bc23d515bebdd0d943bbad33c5ebba35a35605
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fdb3b2b23d07b79a8e9979450bee653d646196c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987211"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182807"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>Настройка запуска и остановки виртуальных машин в нерабочее время
 
@@ -63,7 +63,7 @@ ms.locfileid: "90987211"
 
 ### <a name="target-the-start-and-stop-actions-against-a-subscription-and-resource-group"></a>Нацеливание действий Start и Stop на подписку и группу ресурсов
 
-1. Добавьте `sequencestart` и тег `sequencestop` с положительными целочисленными значениями в виртуальные машины, на которые нацелены переменные `External_Start_ResourceGroupNames` и `External_Stop_ResourceGroupNames`. Действия запуска и остановки будут выполняться в порядке возрастания. Чтобы узнать, как добавить тег к виртуальной машине, ознакомьтесь с разделами [Пометка виртуальной машины Windows в Azure](../virtual-machines/windows/tag.md) и [Пометка виртуальной машины Linux в Azure](../virtual-machines/linux/tag.md).
+1. Добавьте `sequencestart` и тег `sequencestop` с положительными целочисленными значениями в виртуальные машины, на которые нацелены переменные `External_Start_ResourceGroupNames` и `External_Stop_ResourceGroupNames`. Действия запуска и остановки будут выполняться в порядке возрастания. Чтобы узнать, как добавить тег к виртуальной машине, ознакомьтесь с разделами [Пометка виртуальной машины Windows в Azure](../virtual-machines/tag-portal.md) и [Пометка виртуальной машины Linux в Azure](../virtual-machines/tag-cli.md).
 
 2. Измените расписания **Sequenced-StartVM** и **Sequenced-StopVM**, указав даты и время в соответствии со своими требованиями, после чего включите эти расписания.
 
@@ -143,13 +143,13 @@ ms.locfileid: "90987211"
 
 2. На странице StartStop_VM_Notification в разделе **Сведения** щелкните **Изменить сведения**. Откроется страница "Электронная почта, SMS, push-уведомление, голосовой вызов". Измените адрес электронной почты и нажмите кнопку **ОК**, чтобы сохранить изменения.
 
-    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Снимок экрана со страницей &quot;монитор — группы действий&quot;.":::
+    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Снимок экрана: страница электронной почты, SMS/Push/Voice с примером обновленного адреса электронной почты.":::
 
     Кроме того, можно добавить дополнительные действия в группу действий. Дополнительные сведения о группах действий см. в статье [Группы действий](../azure-monitor/platform/action-groups.md)
 
 Ниже приведен пример сообщения электронной почты, которое отправляется, когда функция завершает работу виртуальных машин.
 
-:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Снимок экрана со страницей &quot;монитор — группы действий&quot;.":::
+:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Снимок экрана примера сообщения электронной почты, отправленного при завершении работы компонента виртуальными машинами.":::
 
 ## <a name="add-or-exclude-vms"></a><a name="add-exclude-vms"></a>Добавление и исключение виртуальных машин
 

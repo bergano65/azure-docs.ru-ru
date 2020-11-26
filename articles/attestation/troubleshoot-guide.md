@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: fe347983e2143c7a4bdf00ca0207356c881c66ac
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 72d7a40c38f3629a70260f223074b456dff9ce38
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95891288"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182841"
 ---
 # <a name="microsoft-azure-attestation-troubleshooting-guide"></a>Руководство по устранению неполадок аттестации Microsoft Azure
 
@@ -62,7 +62,7 @@ At line:1 char:1
 
 Чтобы проверить роли в PowerShell, выполните следующую команду:
 
-a. Запустите PowerShell и войдите в Azure с помощью командлета Connect-Азаккаунт.
+а. Запустите PowerShell и войдите в Azure с помощью командлета Connect-Азаккаунт.
 
 b. Проверка параметров назначения ролей Azure
 
@@ -95,7 +95,7 @@ b. Проверка параметров назначения ролей Azure
  
   ```
 
-c. Если в списке нет нужного назначения роли, следуйте инструкциям в этой [статье](/azure/role-based-access-control/role-assignments-powershell) .
+c. Если в списке нет нужного назначения роли, следуйте инструкциям в этой [статье](../role-based-access-control/role-assignments-powershell.md) .
 
 ## <a name="2-http--400-errors"></a>2. HTTP — ошибки 400
 
@@ -123,7 +123,7 @@ G:\Az\security\Attestation\src\AttestationServices\Instance\Enclave\api.cpp(840)
 
 Отправьте запрос в API аттестации, указав текст политики в параметре "Драфтполицифораттестатион". API Аттестсгксенклаве будет использовать этот документ политики во время вызова аттестации, и это можно использовать для проверки политик аттестации перед их использованием. Токен аттестации, созданный при наличии этого поля, будет незащищенным.
 
-См. [примеры политики аттестации](/azure/attestation/policy-examples)
+См. [примеры политики аттестации](./policy-examples.md)
 
 ### <a name="22-attestation-failure-due-to-invalid-input"></a>2.2. Сбой аттестации из-за недопустимых входных данных
 
@@ -163,7 +163,7 @@ At line:1 char:1
 
 В противном случае цепочка сертификатов считается недопустимой.
 
-См. примеры [политик](/azure/attestation/policy-examples) и [подписания политики](/azure/attestation/policy-signer-examples) 
+См. примеры [политик](./policy-examples.md) и [подписания политики](./policy-signer-examples.md) 
 
 ### <a name="24-adddelete-policy-signer-failure"></a>2.4. Ошибка при добавлении или удалении политики
 
@@ -209,7 +209,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : Microsoft.Azure.Commands.Attestation.AddAzureAttestationPolicySigner
 ```
 
-**Действия по устранению неполадок** Чтобы добавить или удалить новый сертификат подписи политики, используйте RFC7519 JSON Web Token (JWT) с утверждением "x-MS-Полицицертификате". Значением утверждения является веб-ключ JSON RFC7517, который содержит добавляемый сертификат. JWT должен быть подписан закрытым ключом любого из допустимых сертификатов подписавшего политику, связанных с поставщиком. См. [примеры подписывания политики](/azure/attestation/policy-signer-examples).
+**Действия по устранению неполадок** Чтобы добавить или удалить новый сертификат подписи политики, используйте RFC7519 JSON Web Token (JWT) с утверждением "x-MS-Полицицертификате". Значением утверждения является веб-ключ JSON RFC7517, который содержит добавляемый сертификат. JWT должен быть подписан закрытым ключом любого из допустимых сертификатов подписавшего политику, связанных с поставщиком. См. [примеры подписывания политики](./policy-signer-examples.md).
 
 ### <a name="25-attestation-policy-configuration-failure"></a>2.5. Сбой конфигурации политики аттестации
 
@@ -255,7 +255,7 @@ At line:1 char:1
 
 В PowerShell укажите Полициформат как JWT, чтобы настроить политику в формате JWT. Формат политики по умолчанию — Text.
 
-См. [примеры политики](/azure/attestation/policy-examples) аттестации и [Создание политики аттестации](/azure/attestation/author-sign-policy) . 
+См. [примеры политики](./policy-examples.md) аттестации и [Создание политики аттестации](./author-sign-policy.md) . 
 
 ## <a name="3-azattestation-installation-issues-in-powershell"></a>3. az. Аттестация — проблемы с установкой в PowerShell
 
@@ -301,4 +301,3 @@ Get-InstalledModule
 Если версии не совпадают с минимальным требованием, выполните Update-Module команды.
 
 Например,-Update-Module-Name AZ. Аттестация
-

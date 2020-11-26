@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/31/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: bc3352dd57a76cbb0b38455adfa11987ec93781a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d73cf3336afad83fadf6f56606161f523e202280
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003027"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180546"
 ---
 # <a name="using-azure-ad-application-proxy-to-publish-on-premises-apps-for-remote-users"></a>Использование Azure AD Application Proxy для публикации локальных приложений для удаленных пользователей
 
@@ -95,7 +95,7 @@ Application Proxy работает с приложениями, использу
 
 Application Proxy также поддерживает приведенные ниже протоколы аутентификации с помощью интеграции сторонних продуктов или в специальных сценариях конфигурации.
 
-* [**Аутентификация на основе заголовка**](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-headers). Этот метод входа использует стороннюю службу аутентификации, именуемую PingAccess. Он применяется, если приложение использует для аутентификации заголовки. В этом случае аутентификацию осуществляет PingAccess.
+* [**Аутентификация на основе заголовка**](./application-proxy-configure-single-sign-on-with-headers.md). Этот метод входа использует стороннюю службу аутентификации, именуемую PingAccess. Он применяется, если приложение использует для аутентификации заголовки. В этом случае аутентификацию осуществляет PingAccess.
 * [**Аутентификация на основе форм или пароля**](application-proxy-configure-single-sign-on-password-vaulting.md). При таком методе проверки подлинности пользователям, чтобы войти в приложение, необходимо ввести имя пользователя и пароль при первом обращении к нему. После первого входа Azure AD предоставляет приложению имя пользователя и пароль. В этом случае аутентификацию осуществляет Azure AD.
 * [**Аутентификация SAML**](application-proxy-configure-single-sign-on-on-premises-apps.md). Единый вход на основе SAML поддерживается для приложений, использующих протокол SAML 2.0 или WS-Federation. При использовании единого входа на основе SAML служба Azure AD выполняет аутентификацию в приложении, используя учетную запись Azure AD пользователя.
 

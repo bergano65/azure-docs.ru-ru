@@ -6,12 +6,12 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 4171155f5a9f72ef0c021bd0e37fe4ec2f206646
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: bd1667f6c17922b6c0b0bfba7a7329a3fc96b62e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95253361"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182637"
 ---
 # <a name="hmac-authentication---rest-api-reference"></a>Проверка подлинности HMAC — Справочник по REST API
 
@@ -22,7 +22,7 @@ ms.locfileid: "95253361"
 - **Записям** - \<Access Key ID\>
 - **Secret** — значение ключа доступа для декодирования Base64. ``base64_decode(<Access Key Value>)``
 
-Значения учетных данных (также называемые `id` ) и секрет (также называемые `value` ) должны быть получены из экземпляра конфигурации приложения Azure. Это можно сделать с помощью [портал Azure](https://portal.azure.com) или [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&preserve-view=true).
+Значения учетных данных (также называемые `id` ) и секрет (также называемые `value` ) должны быть получены из экземпляра конфигурации приложения Azure. Это можно сделать с помощью [портал Azure](https://portal.azure.com) или [Azure CLI](/cli/azure/?preserve-view=true&view=azure-cli-latest).
 
 Предоставьте каждому запросу все заголовки HTTP, необходимые для проверки подлинности. Минимальное число необходимых значений:
 
@@ -545,7 +545,7 @@ Invoke-RestMethod -Uri $uri -Method $method -Headers $headers -Body $body
 
 *Предварительные требования*:
 
-| Предварительное требование | Команда | Протестированные версии |
+| Предварительное требование | Get-Help | Протестированные версии |
 | ------------ | ------- | --------------- |
 | [Bash](https://www.gnu.org/software/bash/) | bash | 3.5.27, 4.4.23 |
 | [кореутилс](https://www.gnu.org/software/coreutils/) | tr | 8,28 |

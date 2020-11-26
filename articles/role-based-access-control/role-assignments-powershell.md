@@ -2,24 +2,19 @@
 title: Добавление или удаление назначений ролей Azure с помощью Azure PowerShell — Azure RBAC
 description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью Azure PowerShell и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: mtillman
-ms.assetid: 9e225dba-9044-4b13-b573-2f30d77925a9
 ms.service: role-based-access-control
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/25/2019
+ms.date: 11/25/2020
 ms.author: rolyon
-ms.reviewer: bagovind
-ms.openlocfilehash: f3fc54829be301c063440bd3508472287b6db265
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c4082f7fc535807ec996034ba695549a51969a99
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648333"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182416"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Добавление и удаление назначений ролей Azure с помощью Azure PowerShell
 
@@ -34,122 +29,225 @@ ms.locfileid: "94648333"
 - `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
 - [PowerShell в Azure Cloud Shell](../cloud-shell/overview.md) или [Azure PowerShell](/powershell/azure/install-az-ps)
 
-## <a name="get-object-ids"></a>Получение идентификаторов объектов
+## <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
 
-Для добавления или удаления назначений ролей может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет следующий формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure PowerShell.
+Чтобы предоставить доступ в Azure RBAC, нужно добавить назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Чтобы добавить назначение ролей, выполните следующие действия.
 
-### <a name="user"></a>Пользователь
+### <a name="step-1-determine-who-needs-access"></a>Шаг 1. Определение пользователей, которым требуется доступ
 
-Чтобы получить идентификатор объекта для пользователя Azure AD, можно использовать [Get-азадусер](/powershell/module/az.resources/get-azaduser).
+Роль можно назначить пользователю, группе, субъекту-службе или управляемому удостоверению. Чтобы добавить назначение ролей, может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет следующий формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure PowerShell.
 
-```azurepowershell
-Get-AzADUser -StartsWith <string_in_quotes>
-(Get-AzADUser -DisplayName <name_in_quotes>).id
-```
+**Пользователь**
 
-### <a name="group"></a>Группа
-
-Чтобы получить идентификатор объекта для группы Azure AD, можно использовать [Get-азадграуп](/powershell/module/az.resources/get-azadgroup).
+Для пользователя Azure AD получите имя участника-пользователя, например *патлонг \@ contoso.com* или идентификатор объекта пользователя. Чтобы получить идентификатор объекта, можно использовать [Get-азадусер](/powershell/module/az.resources/get-azaduser).
 
 ```azurepowershell
-Get-AzADGroup -SearchString <group_name_in_quotes>
-(Get-AzADGroup -DisplayName <group_name_in_quotes>).id
+Get-AzADUser -StartsWith <userName>
+(Get-AzADUser -DisplayName <userName>).id
 ```
 
-### <a name="application"></a>Приложение
+**Группа**
 
-Чтобы получить идентификатор объекта для субъекта-службы Azure AD (удостоверения, используемого приложением), можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal). Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
+Для группы Azure AD требуется идентификатор объекта группы. Чтобы получить идентификатор объекта, можно использовать [Get-азадграуп](/powershell/module/az.resources/get-azadgroup).
 
 ```azurepowershell
-Get-AzADServicePrincipal -SearchString <service_name_in_quotes>
-(Get-AzADServicePrincipal -DisplayName <service_name_in_quotes>).id
+Get-AzADGroup -SearchString <groupName>
+(Get-AzADGroup -DisplayName <groupName>).id
 ```
 
-## <a name="add-a-role-assignment"></a>Добавление назначения роли
+**Субъект-служба**
 
-Чтобы предоставить доступ в Azure RBAC, нужно добавить назначение ролей.
-
-### <a name="user-at-a-resource-group-scope"></a>Пользователь в области группы ресурсов
-
-Чтобы добавить назначение роли для пользователя в области группы ресурсов, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment).
+Для субъекта-службы Azure AD (удостоверения, используемого приложением) необходим идентификатор объекта субъекта-службы. Чтобы получить идентификатор объекта, можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal). Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
 
 ```azurepowershell
-New-AzRoleAssignment -SignInName <email_or_userprincipalname> -RoleDefinitionName <role_name> -ResourceGroupName <resource_group_name>
+Get-AzADServicePrincipal -SearchString <principalName>
+(Get-AzADServicePrincipal -DisplayName <principalName>).id
 ```
 
-```Example
-PS C:\> New-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName pharma-sales
+**Управляемое удостоверение**
 
+Для назначенного системой или управляемого пользователем удостоверения требуется идентификатор объекта. Чтобы получить идентификатор объекта, можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal).
 
-RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales/pr
-                     oviders/Microsoft.Authorization/roleAssignments/55555555-5555-5555-5555-555555555555
-Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
-DisplayName        : Alain Charon
-SignInName         : alain@example.com
-RoleDefinitionName : Virtual Machine Contributor
-RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
-ObjectId           : 44444444-4444-4444-4444-444444444444
-ObjectType         : User
+```azurepowershell
+Get-AzADServicePrincipal -SearchString <principalName>
+(Get-AzADServicePrincipal -DisplayName <principalName>).id
+```
+    
+### <a name="step-2-find-the-appropriate-role"></a>Шаг 2. поиск соответствующей роли
+
+Разрешения объединяются в роли. Вы можете выбрать из списка несколько [встроенных ролей Azure](built-in-roles.md) или использовать собственные пользовательские роли. Рекомендуется предоставлять доступ с минимальными необходимыми привилегиями, поэтому не следует назначать более широкие роли.
+
+Чтобы вывести список ролей и получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition).
+
+```azurepowershell
+Get-AzRoleDefinition | FT Name, IsCustom, Id
+```
+
+Вот как можно вывести сведения о конкретной роли.
+
+```azurepowershell
+Get-AzRoleDefinition <roleName>
+```
+
+Дополнительные сведения см. в разделе [список определений ролей Azure](role-definitions-list.md#azure-powershell).
+ 
+### <a name="step-3-identify-the-needed-scope"></a>Шаг 3. Определение требуемой области
+
+Azure предоставляет четыре уровня области: ресурс, [Группа ресурсов](../azure-resource-manager/management/overview.md#resource-groups), подписка и [Группа управления](../governance/management-groups/overview.md). Рекомендуется предоставлять доступ с минимальными необходимыми привилегиями, поэтому не следует назначать роль в более широкой области. Дополнительные сведения об областях см. в статье [Общие сведения об областях для Azure RBAC](scope-overview.md).
+
+**Область ресурса**
+
+Для области ресурсов требуется идентификатор ресурса. Идентификатор ресурса можно найти, просмотрев свойства ресурса в портал Azure. Идентификатор ресурса имеет следующий формат.
+
+```
+/subscriptions/<subscriptionId>/resourcegroups/<resourceGroupName>/providers/<providerName>/<resourceType>/<resourceSubType>/<resourceName>
+```
+
+**Область группы ресурсов**
+
+Для области группы ресурсов требуется имя группы ресурсов. Имя можно найти на странице " **группы ресурсов** " в портал Azure или можно использовать [Get-азресаурцеграуп](/powershell/module/az.resources/get-azresourcegroup).
+
+```azurepowershell
+Get-AzResourceGroup
+```
+
+**Область действия подписки** 
+
+Для области подписки необходим идентификатор подписки. Идентификатор можно найти на странице " **подписки** " в портал Azure или можно использовать [Get-азсубскриптион](/powershell/module/az.accounts/get-azsubscription).
+
+```azurepowershell
+Get-AzSubscription
+```
+
+**Область группы управления** 
+
+Для области группы управления требуется имя группы управления. Имя можно найти на странице " **группы управления** " в портал Azure или можно использовать [Get-азманажементграуп](/powershell/module/az.resources/get-azmanagementgroup).
+
+```azurepowershell
+Get-AzManagementGroup
+```
+    
+### <a name="step-4-add-role-assignment"></a>Шаг 4. Добавление назначения ролей
+
+Чтобы добавить назначение роли, используйте команду [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) . В зависимости от области команда обычно имеет один из следующих форматов.
+
+**Область ресурса**
+
+```azurepowershell
+New-AzRoleAssignment -ObjectId <objectId> `
+-RoleDefinitionName <roleName> `
+-Scope /subscriptions/<subscriptionId>/resourcegroups/<resourceGroupName>/providers/<providerName>/<resourceType>/<resourceSubType>/<resourceName>
+```
+
+```azurepowershell
+New-AzRoleAssignment -ObjectId <objectId> `
+-RoleDefinitionId <roleId> `
+-ResourceName <resourceName> `
+-ResourceType <resourceType> `
+-ResourceGroupName <resourceGroupName>
+```
+
+**Область группы ресурсов**
+
+```azurepowershell
+New-AzRoleAssignment -SignInName <emailOrUserprincipalname> `
+-RoleDefinitionName <roleName> `
+-ResourceGroupName <resourceGroupName>
+```
+
+```azurepowershell
+New-AzRoleAssignment -ObjectId <objectId> `
+-RoleDefinitionName <roleName> `
+-ResourceGroupName <resourceGroupName>
+```
+
+**Область действия подписки** 
+
+```azurepowershell
+New-AzRoleAssignment -SignInName <emailOrUserprincipalname> `
+-RoleDefinitionName <roleName> `
+-Scope /subscriptions/<subscriptionId>
+```
+
+```azurepowershell
+New-AzRoleAssignment -ObjectId <objectId> `
+-RoleDefinitionName <roleName> `
+-Scope /subscriptions/<subscriptionId>
+```
+
+**Область группы управления** 
+
+```azurepowershell
+New-AzRoleAssignment -SignInName <emailOrUserprincipalname> `
+-RoleDefinitionName <roleName> `
+-Scope /providers/Microsoft.Management/managementGroups/<groupName>
+``` 
+
+```azurepowershell
+New-AzRoleAssignment -ObjectId <objectId> `
+-RoleDefinitionName <roleName> `
+-Scope /providers/Microsoft.Management/managementGroups/<groupName>
+``` 
+    
+## <a name="add-role-assignment-examples"></a>Добавление примеров назначения ролей
+
+#### <a name="add-role-assignment-for-all-blob-containers-in-a-storage-account-resource-scope"></a>Добавление назначения ролей для всех контейнеров больших двоичных объектов в области ресурсов учетной записи хранения
+
+Назначает роль [участника данных большого двоичного объекта хранилища](built-in-roles.md#storage-blob-data-contributor) субъекту-службе с идентификатором объекта *55555555-5555-5555-5555-555555555555* в области действия ресурса для учетной записи хранения с именем *storage12345*.
+
+```azurepowershell
+PS C:\> New-AzRoleAssignment -ObjectId 55555555-5555-5555-5555-555555555555 `
+-RoleDefinitionName "Storage Blob Data Contributor" `
+-Scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345"
+
+RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345/providers/Microsoft.Authorization/roleAssignments/cccccccc-cccc-cccc-cccc-cccccccccccc
+Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345
+DisplayName        : example-identity
+SignInName         :
+RoleDefinitionName : Storage Blob Data Contributor
+RoleDefinitionId   : ba92f5b4-2d11-453d-a403-e96b0029c9fe
+ObjectId           : 55555555-5555-5555-5555-555555555555
+ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-### <a name="using-the-unique-role-id"></a>Использование уникального идентификатора роли
+#### <a name="add-role-assignment-for-a-specific-blob-container-resource-scope"></a>Добавление назначения ролей для определенной области ресурсов контейнера больших двоичных объектов
 
-Существует несколько случаев, когда имя роли может измениться, например:
-
-- Вы используете собственную пользовательскую роль и решили изменить ее имя.
-- Вы используете роль предварительного просмотра с именем **(Предварительная версия)** . При освобождении роли роль переименовывается.
-
-> [!IMPORTANT]
-> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
-Даже если роль переименована, идентификатор роли не изменяется. Если вы используете скрипты или автоматизацию для создания назначений ролей, рекомендуется использовать уникальный идентификатор роли вместо имени роли. Таким образом, если роль переименована, скорее всего, сценарии будут работать.
-
-Чтобы добавить назначение ролей с помощью уникального идентификатора роли вместо имени роли, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment).
+Назначает роль [участника данных большого двоичного объекта хранилища](built-in-roles.md#storage-blob-data-contributor) субъекту-службе с идентификатором объекта *55555555-5555-5555-5555-555555555555* в области действия ресурса для контейнера больших двоичных объектов с именем *BLOB-Container-01*.
 
 ```azurepowershell
-New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionId <role_id> -Scope <resource_group_name/resource/management groups>
-```
+PS C:\> New-AzRoleAssignment -ObjectId 55555555-5555-5555-5555-555555555555 `
+-RoleDefinitionName "Storage Blob Data Contributor" `
+-Scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345/blobServices/default/containers/blob-container-01"
 
-В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *(Alain \@ example.com* в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями Azure](built-in-roles.md).
-
-```Example
-PS C:\> New-AzRoleAssignment -ObjectId 44444444-4444-4444-4444-444444444444 -RoleDefinitionId 9980e02c-c2be-4d73-94e8-173b1dc7cf3c -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
-
-RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales/providers/Microsoft.Authorization/roleAssignments/55555555-5555-5555-5555-555555555555
-Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
-DisplayName        : Alain Charon
-SignInName         : alain@example.com
-RoleDefinitionName : Virtual Machine Contributor
-RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
-ObjectId           : 44444444-4444-4444-4444-444444444444
-ObjectType         : User
+RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345/blobServices/default/containers/blob-container-01/providers/Microsoft.Authorization/roleAssignm
+                     ents/dddddddd-dddd-dddd-dddd-dddddddddddd
+Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345/blobServices/default/containers/blob-container-01
+DisplayName        : example-identity
+SignInName         :
+RoleDefinitionName : Storage Blob Data Contributor
+RoleDefinitionId   : ba92f5b4-2d11-453d-a403-e96b0029c9fe
+ObjectId           : 55555555-5555-5555-5555-555555555555
+ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-### <a name="group-at-a-resource-scope"></a>Группировать в области действия ресурса
+#### <a name="add-role-assignment-for-a-group-in-a-specific-virtual-network-resource-scope"></a>Добавление назначения ролей для группы в определенной области ресурсов виртуальной сети
 
-Чтобы добавить назначение роли для группы в области действия ресурса, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment). Сведения о том, как получить идентификатор объекта группы, см. в разделе [получение идентификаторов объектов](#get-object-ids).
+Назначает роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) группе *"Администраторы продаж Pharma"* с идентификатором аааааааа-АААА-АААА-АААА-аааааааааааа в области ресурсов для виртуальной сети с именем *Pharma-Sales-Project-Network*.
 
 ```azurepowershell
-New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -ResourceName <resource_name> -ResourceType <resource_type> -ParentResource <parent resource> -ResourceGroupName <resource_group_name>
-```
-
-```Example
-PS C:\> Get-AzADGroup -SearchString "Pharma"
-
-SecurityEnabled DisplayName         Id                                   Type
---------------- -----------         --                                   ----
-           True Pharma Sales Admins aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa Group
-
-PS C:\> New-AzRoleAssignment -ObjectId aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa -RoleDefinitionName "Virtual Machine Contributor" -ResourceName RobertVirtualNetwork -ResourceType Microsoft.Network/virtualNetworks -ResourceGroupName RobertVirtualNetworkResourceGroup
+PS C:\> New-AzRoleAssignment -ObjectId aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa `
+-RoleDefinitionName "Virtual Machine Contributor" `
+-ResourceName pharma-sales-project-network `
+-ResourceType Microsoft.Network/virtualNetworks `
+-ResourceGroupName MyVirtualNetworkResourceGroup
 
 RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyVirtualNetworkResourceGroup
-                     /providers/Microsoft.Network/virtualNetworks/RobertVirtualNetwork/providers/Microsoft.Authorizat
+                     /providers/Microsoft.Network/virtualNetworks/pharma-sales-project-network/providers/Microsoft.Authorizat
                      ion/roleAssignments/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb
 Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyVirtualNetworkResourceGroup
-                     /providers/Microsoft.Network/virtualNetworks/RobertVirtualNetwork
+                     /providers/Microsoft.Network/virtualNetworks/pharma-sales-project-network
 DisplayName        : Pharma Sales Admins
 SignInName         :
 RoleDefinitionName : Virtual Machine Contributor
@@ -159,21 +257,105 @@ ObjectType         : Group
 CanDelegate        : False
 ```
 
-### <a name="application-at-a-subscription-scope"></a>Приложение в области действия подписки
+#### <a name="add-a-role-assignment-for-a-user-at-a-resource-group-scope"></a>Добавление назначения роли для пользователя в области группы ресурсов
 
-Чтобы добавить назначение роли для приложения в области действия подписки, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment). Сведения о том, как получить идентификатор объекта приложения, см. в разделе [получение идентификаторов объектов](#get-object-ids).
+Назначает роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) пользователю *патлонг \@ contoso.com* в области группы ресурсов *Pharma-Sales* .
 
 ```azurepowershell
-New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -Scope /subscriptions/<subscription_id>
+PS C:\> New-AzRoleAssignment -SignInName patlong@contoso.com `
+-RoleDefinitionName "Virtual Machine Contributor" `
+-ResourceGroupName pharma-sales
+
+RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales/pr
+                     oviders/Microsoft.Authorization/roleAssignments/55555555-5555-5555-5555-555555555555
+Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
+DisplayName        : Pat Long
+SignInName         : patlong@contoso.com
+RoleDefinitionName : Virtual Machine Contributor
+RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
+ObjectId           : 44444444-4444-4444-4444-444444444444
+ObjectType         : User
+CanDelegate        : False
 ```
 
-```Example
-PS C:\> New-AzRoleAssignment -ObjectId 77777777-7777-7777-7777-777777777777 -RoleDefinitionName "Reader" -Scope /subscriptions/00000000-0000-0000-0000-000000000000
+Кроме того, можно указать полное имя группы ресурсов с помощью `-Scope` параметра:
+
+```azurepowershell
+PS C:\> New-AzRoleAssignment -SignInName patlong@contoso.com `
+-RoleDefinitionName "Virtual Machine Contributor" `
+-Scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales"
+
+RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales/providers/Microsoft.Authorization/roleAssignments/55555555-5555-5555-5555-555555555555
+Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
+DisplayName        : Pat Long
+SignInName         : patlong@contoso.com
+RoleDefinitionName : Virtual Machine Contributor
+RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
+ObjectId           : 44444444-4444-4444-4444-444444444444
+ObjectType         : User
+CanDelegate        : False
+```
+
+#### <a name="add-role-assignment-for-a-user-using-the-unique-role-id-at-a-resource-group-scope"></a>Добавление назначения ролей для пользователя с помощью уникального идентификатора роли в области группы ресурсов
+
+Существует несколько случаев, когда имя роли может измениться, например:
+
+- Вы используете собственную пользовательскую роль и решили изменить ее имя.
+- Вы используете роль предварительного просмотра с именем **(Предварительная версия)** . При освобождении роли роль переименовывается.
+
+Даже если роль переименована, идентификатор роли не изменяется. Если вы используете скрипты или автоматизацию для создания назначений ролей, рекомендуется использовать уникальный идентификатор роли вместо имени роли. Таким образом, если роль переименована, скорее всего, сценарии будут работать.
+
+В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *патлонг \@ contoso.com* в области группы ресурсов *Pharma-Sales* .
+
+```azurepowershell
+PS C:\> New-AzRoleAssignment -ObjectId 44444444-4444-4444-4444-444444444444 `
+-RoleDefinitionId 9980e02c-c2be-4d73-94e8-173b1dc7cf3c `
+-Scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales"
+
+RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales/providers/Microsoft.Authorization/roleAssignments/55555555-5555-5555-5555-555555555555
+Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
+DisplayName        : Pat Long
+SignInName         : patlong@contoso.com
+RoleDefinitionName : Virtual Machine Contributor
+RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
+ObjectId           : 44444444-4444-4444-4444-444444444444
+ObjectType         : User
+CanDelegate        : False
+```
+
+#### <a name="add-role-assignment-for-an-application-at-a-resource-group-scope"></a>Добавление назначения ролей для приложения в области группы ресурсов
+
+Назначает роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) приложению с идентификатором объекта субъекта-службы 77777777-7777-7777-7777-777777777777 в области группы ресурсов *Pharma — Sales* .
+
+```azurepowershell
+PS C:\> New-AzRoleAssignment -ObjectId 77777777-7777-7777-7777-777777777777 `
+-RoleDefinitionName "Virtual Machine Contributor" `
+-ResourceGroupName pharma-sales
+
+RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleAssignments/66666666-6666-6666-6666-666666666666
+Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
+DisplayName        : MyApp1
+SignInName         :
+RoleDefinitionName : Virtual Machine Contributor
+RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
+ObjectId           : 77777777-7777-7777-7777-777777777777
+ObjectType         : ServicePrincipal
+CanDelegate        : False
+```
+
+#### <a name="add-role-assignment-for-a-user-at-a-subscription-scope"></a>Добавление назначения ролей для пользователя в области подписки
+
+Назначает роль [читателя](built-in-roles.md#reader) пользователю *аннм \@ example.com* в области действия подписки.
+
+```azurepowershell
+PS C:\> New-AzRoleAssignment -SignInName annm@example.com `
+-RoleDefinitionName "Reader" `
+-Scope "/subscriptions/00000000-0000-0000-0000-000000000000"
 
 RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleAssignments/66666666-6666-6666-6666-666666666666
 Scope              : /subscriptions/00000000-0000-0000-0000-000000000000
-DisplayName        : MyApp1
-SignInName         :
+DisplayName        : Ann M
+SignInName         : annm@example.com
 RoleDefinitionName : Reader
 RoleDefinitionId   : acdd72a7-3385-48ef-bd42-f606fba81ae7
 ObjectId           : 77777777-7777-7777-7777-777777777777
@@ -181,16 +363,14 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-### <a name="user-at-a-management-group-scope"></a>Пользователь в области группы управления
+#### <a name="add-role-assignment-for-a-user-at-a-management-group-scope"></a>Добавление назначения ролей для пользователя в области группы управления
 
-Чтобы добавить назначение роли для пользователя в области группы управления, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment). Чтобы получить идентификатор группы управления, его можно найти в колонке " **группы управления** " в портал Azure или можно использовать [Get-азманажементграуп](/powershell/module/az.resources/get-azmanagementgroup).
+Назначает роль [читателя выставления счетов](built-in-roles.md#billing-reader) пользователю *(Alain \@ example.com* в области группы управления.
 
 ```azurepowershell
-New-AzRoleAssignment -SignInName <email_or_userprincipalname> -RoleDefinitionName <role_name> -Scope /providers/Microsoft.Management/managementGroups/<group_id>
-```
-
-```Example
-PS C:\> New-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionName "Billing Reader" -Scope /providers/Microsoft.Management/managementGroups/marketing-group
+PS C:\> New-AzRoleAssignment -SignInName alain@example.com `
+-RoleDefinitionName "Billing Reader" `
+-Scope "/providers/Microsoft.Management/managementGroups/marketing-group"
 
 RoleAssignmentId   : /providers/Microsoft.Management/managementGroups/marketing-group/providers/Microsoft.Authorization/roleAssignments/22222222-2222-2222-2222-222222222222
 Scope              : /providers/Microsoft.Management/managementGroups/marketing-group
@@ -207,22 +387,28 @@ CanDelegate        : False
 
 Чтобы удалить доступ в Azure RBAC, необходимо удалить назначение роли с помощью [Remove-азролеассигнмент](/powershell/module/az.resources/remove-azroleassignment).
 
-В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *(Alain \@ example.com* в группе ресурсов *Pharma-Sales* .
-
-```Example
-PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName pharma-sales
-```
-
-В следующем примере удаляется роль <role_name> из <object_id> в области действия подписки.
+В следующем примере удаляется назначение роли [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) из пользователя *патлонг \@ contoso.com* в группе ресурсов *Pharma-Sales* .
 
 ```azurepowershell
-Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -Scope /subscriptions/<subscription_id>
+PS C:\> Remove-AzRoleAssignment -SignInName patlong@contoso.com `
+-RoleDefinitionName "Virtual Machine Contributor" `
+-ResourceGroupName pharma-sales
 ```
 
-В следующем примере удаляется роль <role_name> из <object_id> в области группы управления.
+Удаляет роль [читателя](built-in-roles.md#reader) из группы группы *Анна Mack* с идентификатором 22222222-2222-2222-2222-222222222222 в области действия подписки.
 
 ```azurepowershell
-Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -Scope /providers/Microsoft.Management/managementGroups/<group_id>
+PS C:\> Remove-AzRoleAssignment -ObjectId 22222222-2222-2222-2222-222222222222 `
+-RoleDefinitionName "Reader" `
+-Scope "/subscriptions/00000000-0000-0000-0000-000000000000"
+```
+
+Удаляет роль [читателя выставления счетов](built-in-roles.md#billing-reader) из пользователя *(Alain \@ example.com* в области группы управления.
+
+```azurepowershell
+PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com `
+-RoleDefinitionName "Billing Reader" `
+-Scope "/providers/Microsoft.Management/managementGroups/marketing-group"
 ```
 
 При появление сообщения об ошибке "предоставленные сведения не сопоставляются с назначением ролей" убедитесь, что также указаны `-Scope` `-ResourceGroupName` Параметры или. Дополнительные сведения см. в разделе [Устранение неполадок в Azure RBAC](troubleshooting.md#role-assignments-with-identity-not-found).
@@ -231,5 +417,4 @@ Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -S
 
 - [Вывод списка назначений ролей Azure с помощью Azure PowerShell](role-assignments-list-powershell.md)
 - [Руководство по Предоставление доступа группам к ресурсам Azure с помощью Azure PowerShell](tutorial-role-assignments-group-powershell.md)
-- [Руководство по Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/management/manage-resources-powershell.md)

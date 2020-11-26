@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 920cc5142d14308fce412ad44543ddc46dc1663e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 24c2fe9b6bbb0b5a40edd395bfe669abfc8c9adc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324378"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183181"
 ---
 # <a name="azure-analysis-services-samples"></a>Примеры для служб Azure Analysis Services
 
@@ -28,7 +28,7 @@ ms.locfileid: "93324378"
 
 ## <a name="sample-database-on-azure"></a>Образец базы данных в Azure
 
-Azure синапсе Analytics (ранее хранилище данных SQL) содержит образец базы данных AdventureWorksDW, который можно добавить в подготовленный ресурс. Дополнительные сведения см. в разделе [Краткое руководство. Создание и запрос выделенного пула SQL в Azure синапсе Analytics ](/azure/sql-data-warehouse/create-data-warehouse-portal).
+Azure синапсе Analytics (ранее хранилище данных SQL) содержит образец базы данных AdventureWorksDW, который можно добавить в подготовленный ресурс. Дополнительные сведения см. в разделе [Краткое руководство. Создание и запрос выделенного пула SQL в Azure синапсе Analytics ](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
 
 ## <a name="sample-databases-on-github"></a>Примеры баз данных на GitHub
 
@@ -40,7 +40,7 @@ Azure синапсе Analytics (ранее хранилище данных SQL) 
 
 ## <a name="adventure-works-internet-sales-sample-model-in-azure-portal"></a>Пример модели Adventure Works Internet Sales на портале Azure
 
-Если у вас есть сервер служб Analysis Services на портале Azure, вы можете быстро создавать примеры моделей. На странице общих сведений на портале Azure щелкните **Новая модель** , а затем в поле **Выбор источника данных** выберите **Пример данных**.
+Если у вас есть сервер служб Analysis Services на портале Azure, вы можете быстро создавать примеры моделей. На странице общих сведений на портале Azure щелкните **Новая модель**, а затем в поле **Выбор источника данных** выберите **Пример данных**.
 
 
 

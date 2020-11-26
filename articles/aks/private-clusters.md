@@ -4,12 +4,12 @@ description: Узнайте, как создать частный кластер
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 5c45c01e34c4663657dbeee803fe0bb5cdae6a3c
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 450d68e26c5a3fc1ecfbaf6a3be6b5f698ee65e3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380578"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183266"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Создание частного кластера Службы Azure Kubernetes
 
@@ -85,8 +85,8 @@ az aks create \
 5. В портал Azure перейдите к группе ресурсов, содержащей виртуальную сеть кластера.  
 6. В области справа выберите виртуальную сеть. Имя виртуальной сети указано в формате *aks-vnet-\** .  
 7. В левой области выберите **Пиринг**.  
-8. Нажмите **Добавить** , добавьте виртуальную сеть виртуальной машины, а затем создайте пиринг.  
-9. Перейдите в виртуальную сеть с виртуальной машиной, выберите **Пиринг** , выберите виртуальную сеть AKS и затем создайте пиринг. Если диапазоны адресов виртуальной сети AKS конфликтуют с виртуальной сетью виртуальной машины, пиринг завершится сбоем. Дополнительные сведения см. в статье [Пиринг между виртуальными сетями][virtual-network-peering].
+8. Нажмите **Добавить**, добавьте виртуальную сеть виртуальной машины, а затем создайте пиринг.  
+9. Перейдите в виртуальную сеть с виртуальной машиной, выберите **Пиринг**, выберите виртуальную сеть AKS и затем создайте пиринг. Если диапазоны адресов виртуальной сети AKS конфликтуют с виртуальной сетью виртуальной машины, пиринг завершится сбоем. Дополнительные сведения см. в статье [Пиринг между виртуальными сетями][virtual-network-peering].
 
 ## <a name="hub-and-spoke-with-custom-dns"></a>Звездообразная архитектура с настраиваемым DNS
 
@@ -125,7 +125,7 @@ az aks create \
 [az-extension-update]: /cli/azure/extension#az-extension-update
 [private-link-service]: ../private-link/private-link-service-overview.md#limitations
 [virtual-network-peering]: ../virtual-network/virtual-network-peering-overview.md
-[azure-bastion]: ../bastion/bastion-create-host-portal.md
+[azure-bastion]: ../bastion/tutorial-create-host-portal.md
 [express-route-or-vpn]: ../expressroute/expressroute-about-virtual-network-gateways.md
 [devops-agents]: /azure/devops/pipelines/agents/agents?view=azure-devops
 [availability-zones]: availability-zones.md

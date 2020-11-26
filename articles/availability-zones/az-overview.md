@@ -1,5 +1,5 @@
 ---
-title: Регионы и зоны доступности в Azure
+title: Регионы и Зоны доступности в Azure
 description: Сведения о регионах и Зоны доступности в Azure в соответствии с вашими техническими и нормативными требованиями.
 author: cynthn
 ms.service: azure
@@ -7,14 +7,14 @@ ms.topic: article
 ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 771635baa3c49c07d0d796cf6ef3be7b870de3e1
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 32cd6c23e1fe465a801e56fad5dd3461df860503
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425442"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182739"
 ---
-# <a name="regions-and-availability-zones-in-azure"></a>Регионы и зоны доступности в Azure
+# <a name="regions-and-availability-zones-in-azure"></a>Регионы и Зоны доступности в Azure
 
 Службы Microsoft Azure доступны глобально, чтобы обеспечить оптимальный уровень обслуживания облачных операций. Вы можете выбрать оптимальный регион в соответствии с техническими и нормативными соображениями: возможностями служб, местонахождение данных, требованиями к соответствию и задержкой.
 
@@ -79,7 +79,7 @@ ms.locfileid: "92425442"
 | Тип области | Не региональный | Основное | Основной | Специализированный | Зоны доступности | Местонахождение данных |
 | --- | --- | --- | --- | --- | --- | --- |
 | Рекомендуется | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
-| Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Н/Д | :heavy_check_mark: |
+| Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Недоступно | :heavy_check_mark: |
 
 ### <a name="services-by-category"></a>Службы по категориям
 
@@ -92,9 +92,9 @@ ms.locfileid: "92425442"
 > | Основное | Основной | Специализированный |
 > | --- | --- | --- |
 > | Хранилище учетных записей | Управление API | Azure API для FHIR |
-> | Шлюз приложений | Конфигурация приложений | Службы Azure Analysis Services |
+> | Шлюз приложений | Конфигурация приложений | Azure Analysis Services |
 > | Azure Backup | Служба приложений | Служба Блокчейн Azure |
-> | Azure Cosmos DB | Автоматизация | Azure Blueprints |
+> | Azure Cosmos DB | Служба автоматизации | Azure Blueprints |
 > | Azure Data Lake Storage 2-го поколения | Доменные службы Azure Active Directory | База данных Azure для MariaDB |
 > | Azure ExpressRoute | Бастион Azure | Выделенное устройство HSM Azure |
 > | База данных SQL Azure | Кэш Redis для Azure | Azure Dev Spaces |
@@ -109,9 +109,9 @@ ms.locfileid: "92425442"
 > | Центры событий | Azure DevTest Labs | Облачные службы: Серия H |
 > | Key Vault | Брандмауэр Azure | Cognitive Services: Пользовательское визуальное распознавание |
 > | Подсистема балансировки нагрузки | Диспетчер брандмауэра Azure | Cognitive Services: Распознавание говорящего |
-> | Служебная шина | Функции Azure | Data Box Heavy |
+> | Cлужебная шина | Функции Azure | Data Box Heavy |
 > | Service Fabric | Azure HPC Cache | Каталог данных |
-> | Масштабируемые наборы виртуальных машин | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
+> | Масштабируемые наборы виртуальных машин Microsoft Azure | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
 > | Виртуальные машины | Служба Azure Kubernetes (AKS) | Data Lake Analytics |
 > | Виртуальные машины: Av2-Series | Машинное обучение Azure | Машинное обучение Azure Studio (классическая модель)|
 > | Виртуальные машины: Bs-Series | Приватный канал Azure | Microsoft Genomics |
@@ -170,9 +170,9 @@ ms.locfileid: "92425442"
 - [Создание виртуальной машины](../virtual-machines/windows/create-portal-availability-zone.md)
 - [Добавление управляемого диска с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
 - [Создание избыточного между зонами масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
-- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/load-balancer-standard-public-zone-redundant-cli.md).
-- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/load-balancer-standard-public-zonal-cli.md).
-- [Хранилище, избыточное между зонами](../storage/common/storage-redundancy-zrs.md)
+- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
+- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
+- [Хранилище, избыточное между зонами](../storage/common/storage-redundancy.md)
 - [Уровень общего назначения базы данных SQL](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
 - [Географическое аварийное восстановление в Центрах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones)
 - [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)

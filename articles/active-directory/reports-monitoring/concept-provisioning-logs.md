@@ -17,12 +17,12 @@ ms.date: 10/07/2020
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 675c98e00b7458f326c95741529f7ce41a91dc18
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 2408db2d91740350405f11e2a1250ab9b3a4fe31
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319726"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181209"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Подготовка отчетов на портале Azure Active Directory (Предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "92319726"
 
 В этом разделе содержится обзор отчета о подготовке.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 * Владельцы приложений могут просматривать журналы для приложений, которыми они владеют
@@ -61,7 +61,7 @@ ms.locfileid: "92319726"
 
 Чтобы получить доступ к журналам подготовки, выберите **журналы подготовки** в разделе **мониторинг** колонки **Azure Active Directory** в [портал Azure](https://portal.azure.com). Для отображения некоторых записей подготовки на портале может потребоваться до двух часов.
 
-![Подготовка журналов](./media/concept-provisioning-logs/access-provisioning-logs.png "Подготовка журналов")
+![Журналы подготовки](./media/concept-provisioning-logs/access-provisioning-logs.png "Подготовка журналов")
 
 
 Журнал подготовки имеет представление списка по умолчанию, которое показывает:
@@ -129,10 +129,10 @@ ms.locfileid: "92319726"
 Фильтр **действий** позволяет фильтровать:
 
 - Создание 
-- Обновление
-- Удаление
+- Update
+- DELETE
 - Отключить
-- Другие
+- Другое
 
 Кроме того, в фильтры представления по умолчанию можно также задать следующие фильтры:
 
@@ -209,9 +209,9 @@ ms.locfileid: "92319726"
 
 На вкладке **Сводка** представлен обзор того, что случилось и идентификаторы для объекта в исходной и целевой системе. 
 
-## <a name="what-you-should-know"></a>Учитываемые аспекты
+## <a name="what-you-should-know"></a>Необходимая информация
 
-- Портал Azure сохраняет данные о подготовке в течение 30 дней, если у вас выпуск Premium и 7 дней, если у вас есть бесплатный выпуск. Журналы подготовки можно опубликовать в [log Analytics](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-log-analytics) для хранения за пределами 30 дней. 
+- Портал Azure сохраняет данные о подготовке в течение 30 дней, если у вас выпуск Premium и 7 дней, если у вас есть бесплатный выпуск. Журналы подготовки можно опубликовать в [log Analytics](../app-provisioning/application-provisioning-log-analytics.md) для хранения за пределами 30 дней. 
 
 - Атрибут идентификатора изменения можно использовать в качестве уникального идентификатора. Это, например, полезно при взаимодействии со службой поддержки продукта.
 

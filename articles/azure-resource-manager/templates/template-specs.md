@@ -2,15 +2,15 @@
 title: Обзор спецификаций шаблонов
 description: Описание способов создания спецификаций шаблонов и предоставления к ним общего доступа другим пользователям в Организации.
 ms.topic: conceptual
-ms.date: 11/17/2020
+ms.date: 11/25/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 83d5a210a5af538173ad0ca5e4c718363639c40a
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: e919db24a70b0ed69aca6977865cc76c0c9c5845
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94747406"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182467"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Спецификации шаблонов Azure Resource Manager (Предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "94747406"
 Для развертывания спецификации шаблона используются стандартные инструменты Azure, такие как PowerShell, Azure CLI, портал Azure, остальные и другие поддерживаемые пакеты SDK и клиенты. Вы используете те же команды, что и для шаблона.
 
 > [!NOTE]
-> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его, необходимо установить последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте [версию 5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте [версию 2.14.2 или более позднюю](/cli/azure/install-azure-cli).
+> Сейчас спецификации шаблонов доступны в предварительной версии. Для их использования нужно установить последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте версию [5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте версию [2.14.2 или более позднюю](/cli/azure/install-azure-cli).
 
 ## <a name="why-use-template-specs"></a>Зачем использовать спецификации шаблонов?
 
@@ -73,7 +73,7 @@ ms.locfileid: "94747406"
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
-New-AzTemplateSpec -Name storageSpec -Version 1.0 -ResourceGroupName templateSpecsRg -Location westus2 -TemplateFile ./mainTemplate.json
+New-AzTemplateSpec -Name storageSpec -Version 1.0a -ResourceGroupName templateSpecsRg -Location westus2 -TemplateFile ./mainTemplate.json
 ```
 
 # <a name="cli"></a>[CLI](#tab/azure-cli)
@@ -81,7 +81,7 @@ New-AzTemplateSpec -Name storageSpec -Version 1.0 -ResourceGroupName templateSpe
 ```azurecli
 az ts create \
   --name storageSpec \
-  --version "1.0" \
+  --version "1.0a" \
   --resource-group templateSpecRG \
   --location "westus2" \
   --template-file "./mainTemplate.json"
@@ -119,7 +119,7 @@ Get-AzTemplateSpec -ResourceGroupName templateSpecsRG -Name storageSpec
 az ts show \
     --name storageSpec \
     --resource-group templateSpecRG \
-    --version "1.0"
+    --version "1.0a"
 ```
 
 ---
@@ -134,14 +134,14 @@ az ts show \
 
 **/субскриптионс/{субскриптион-ид}/ресаурцеграупс/{ресаурце-грауп}/провидерс/микрософт.ресаурцес/темплатеспекс/{темплате-спек-наме}/версионс/{темплате-спек-версион}**
 
-Обратите внимание, что идентификатор ресурса включает номер версии для спецификации шаблона.
+Обратите внимание, что идентификатор ресурса включает имя версии для спецификации шаблона.
 
 Например, вы развертываете спецификацию шаблона с помощью следующей команды.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
-$id = "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/templateSpecsRG/providers/Microsoft.Resources/templateSpecs/storageSpec/versions/1.0"
+$id = "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/templateSpecsRG/providers/Microsoft.Resources/templateSpecs/storageSpec/versions/1.0a"
 
 New-AzResourceGroupDeployment `
   -TemplateSpecId $id `
@@ -151,7 +151,7 @@ New-AzResourceGroupDeployment `
 # <a name="cli"></a>[CLI](#tab/azure-cli)
 
 ```azurecli
-id = "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/templateSpecsRG/providers/Microsoft.Resources/templateSpecs/storageSpec/versions/1.0"
+id = "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/templateSpecsRG/providers/Microsoft.Resources/templateSpecs/storageSpec/versions/1.0a"
 
 az deployment group create \
   --resource-group demoRG \
@@ -160,12 +160,12 @@ az deployment group create \
 
 ---
 
-На практике обычно выполняется `Get-AzTemplateSpec` , чтобы получить идентификатор спецификации шаблона, которую требуется развернуть.
+На практике обычно выполняется `Get-AzTemplateSpec` или используется `az ts show` для получения идентификатора спецификации шаблона, которую требуется развернуть.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
-$id = (Get-AzTemplateSpec -Name storageSpec -ResourceGroupName templateSpecsRg -Version 1.0).Versions.Id
+$id = (Get-AzTemplateSpec -Name storageSpec -ResourceGroupName templateSpecsRg -Version 1.0a).Versions.Id
 
 New-AzResourceGroupDeployment `
   -ResourceGroupName demoRG `
@@ -175,7 +175,7 @@ New-AzResourceGroupDeployment `
 # <a name="cli"></a>[CLI](#tab/azure-cli)
 
 ```azurecli
-id = $(az ts show --name storageSpec --resource-group templateSpecRG --version "1.0" --query "id")
+id = $(az ts show --name storageSpec --resource-group templateSpecRG --version "1.0a" --query "id")
 
 az deployment group create \
   --resource-group demoRG \
@@ -309,7 +309,7 @@ az deployment group create \
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'networkingSpec', '1.0')]"
+          "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'networkingSpec', '1.0a')]"
         }
       }
     },
@@ -321,7 +321,7 @@ az deployment group create \
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'storageSpec', '1.0')]"
+          "id": "[resourceId('templateSpecsRG', 'Microsoft.Resources/templateSpecs/versions', 'storageSpec', '1.0a')]"
         }
       }
     }
@@ -334,7 +334,7 @@ az deployment group create \
 
 ## <a name="versioning"></a>Управление версиями
 
-При создании спецификации шаблона вы предоставляете для него номер версии. По мере выполнения итерации по коду шаблона можно либо обновить существующую версию (для исправлений), либо опубликовать новую версию. Версия является текстовой строкой. Можно выбрать любую систему управления версиями, включая семантическую версию. Пользователи спецификации шаблона могут предоставить номер версии, который они хотят использовать при развертывании.
+При создании спецификации шаблона необходимо указать для нее имя версии. По мере выполнения итерации по коду шаблона можно либо обновить существующую версию (для исправлений), либо опубликовать новую версию. Версия является текстовой строкой. Можно выбрать любую систему управления версиями, включая семантическую версию. Пользователи спецификации шаблона могут предоставить имя версии, которое они хотят использовать при развертывании.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

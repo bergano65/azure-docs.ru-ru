@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0da8755199645b12e9c6ed75a42881fe86e70b5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f10d8a94be53780f732112c012600a7fb840642b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023043"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180648"
 ---
 # <a name="what-is-risk"></a>Что такое риск?
 
@@ -74,7 +74,7 @@ ms.locfileid: "95023043"
 
 ### <a name="risk-levels"></a>Уровни риска
 
-Защита идентификации разделяет риски на три уровня: низкий, средний и высокий. При настройке [настраиваемых политик защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-policies#custom-conditional-access-policy)можно также настроить ее для активации без уровня **риска** . Отсутствие риска означает отсутствие активного свидетельства о том, что удостоверение пользователя было скомпрометировано.
+Защита идентификации разделяет риски на три уровня: низкий, средний и высокий. При настройке [настраиваемых политик защиты идентификации](./concept-identity-protection-policies.md#custom-conditional-access-policy)можно также настроить ее для активации без уровня **риска** . Отсутствие риска означает отсутствие активного свидетельства о том, что удостоверение пользователя было скомпрометировано.
 
 Хотя корпорация Майкрософт не предоставляет конкретные сведения о том, как вычисляется риск, мы будем считать, что каждый уровень обуславливает большую уверенность в том, что пользователь или вход скомпрометированы. Например, один экземпляр незнакомых свойств входа пользователя может не нести такую же угрозу, как утечка учетных данных другого пользователя.
 

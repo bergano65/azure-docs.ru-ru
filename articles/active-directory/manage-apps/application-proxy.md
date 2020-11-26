@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 668976e9777b35e514746070f0f4039a12b4e02b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 9d620342d53bdae0b3a520000f6d240eb0e28d15
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651725"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180598"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-ad-application-proxy"></a>Удаленный доступ к локальным приложениям с помощью Azure AD Application Proxy
 
@@ -36,7 +36,7 @@ Azure Active Directory Application Proxy позволяет пользовате
 Application Proxy поддерживает:
 
 * веб-приложения, использующие [встроенную проверку подлинности Windows](application-proxy-configure-single-sign-on-with-kcd.md);
-* веб-приложения, использующие доступ на основе форм или [заголовков](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-headers);
+* веб-приложения, использующие доступ на основе форм или [заголовков](./application-proxy-configure-single-sign-on-with-headers.md);
 * веб-API, предоставляемые для полнофункциональных приложений на различных устройствах;
 * Приложения, размещенные за [шлюзом удаленный рабочий стол](application-proxy-integrate-with-remote-desktop-services.md)
 * полнофункциональные клиентские приложения, интегрированные с библиотекой проверки подлинности Майкрософт (MSAL).

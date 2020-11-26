@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: jeedes
-ms.openlocfilehash: 185b61f77b275ed78050f5d8efb820c5333f6e1f
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: d813757d5adb8cee9b83e0486baed80ae1bac874
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358581"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180937"
 ---
 # <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство по настройке DocuSign для автоматической подготовки пользователей
 
@@ -95,7 +95,7 @@ ms.locfileid: "94358581"
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
-* Подготовку роли или профиля разрешений для пользователя в DocuSign можно выполнить с помощью выражения в сопоставлениях атрибутов с помощью функций [switch](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#switch) и [singleAppRoleAssignment](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#singleapproleassignment). Например, приведенное ниже выражение подготавливает идентификатор 8032066, когда пользователь имеет роль "Администратор DS", назначенную в Azure AD. Если пользователю не назначена роль на стороне Azure AD, профиль разрешений не будет подготавливаться. Идентификатор можно получить на [портале DocuSign](https://support.docusign.com/articles/Default-settings-for-out-of-the-box-DocuSign-Permission-Profiles).
+* Подготовку роли или профиля разрешений для пользователя в DocuSign можно выполнить с помощью выражения в сопоставлениях атрибутов с помощью функций [switch](../app-provisioning/functions-for-customizing-application-data.md#switch) и [singleAppRoleAssignment](../app-provisioning/functions-for-customizing-application-data.md#singleapproleassignment). Например, приведенное ниже выражение подготавливает идентификатор 8032066, когда пользователь имеет роль "Администратор DS", назначенную в Azure AD. Если пользователю не назначена роль на стороне Azure AD, профиль разрешений не будет подготавливаться. Идентификатор можно получить на [портале DocuSign](https://support.docusign.com/articles/Default-settings-for-out-of-the-box-DocuSign-Permission-Profiles).
 
 Switch(SingleAppRoleAssignment([appRoleAssignments])," ", "8032066", "DS Admin")
 

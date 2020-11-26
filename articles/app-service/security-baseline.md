@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 640d51de6dac1d175f9b46f327b72f293cf025cb
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5b9c41209902e384988064207bb3e1ded1c47477
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94849194"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182960"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Базовый план безопасности Azure для службы приложений
 
@@ -47,7 +47,7 @@ ms.locfileid: "94849194"
 
 - [Открытие проекта безопасности веб-приложений (OWASP) первые 10 уязвимостей защиты](https://owasp.org/www-project-top-ten/)
 
-- [Группы безопасности сети](/azure/virtual-network/security-overview)
+- [Группы безопасности сети](../virtual-network/network-security-groups-overview.md)
 
 - [Интеграция приложения с виртуальной сетью Azure](web-sites-integrate-with-vnet.md)
 
@@ -71,7 +71,7 @@ ms.locfileid: "94849194"
 
 - [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](../security-center/security-center-network-recommendations.md)
 
-- [Включение мониторинга и защиты службы приложений](/azure/security-center/security-center-app-services)
+- [Включение мониторинга и защиты службы приложений](/azure/security-center/defender-for-app-service-intro)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -219,7 +219,7 @@ ms.locfileid: "94849194"
 
 Примените все встроенные определения политик Azure, связанные с эффектами тегов, например "требовать тег и его значение", чтобы убедиться, что все ресурсы созданы с помощью тегов и уведомлять вас о существующих ресурсах без тегов. Используйте Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 - [Ограничения доступа для службы приложений Azure](/azure/app-service/app-service-ip-restriction)
 
@@ -241,7 +241,7 @@ ms.locfileid: "94849194"
 
 Рекомендуется создать процесс с автоматизированными инструментами для мониторинга конфигураций сетевых ресурсов и быстрого обнаружения изменений.
 
-- [Как просматривать и извлекать события журнала действий Azure](/azure/azure-monitor/platform/activity-log-view)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 - [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
@@ -280,7 +280,7 @@ ms.locfileid: "94849194"
 
 Кроме того, Azure Key Vault обеспечивает централизованное управление секретами с помощью политик доступа и журнала аудита. 
 
-- [Как включить параметры диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
 - [Включение параметров диагностики для службы приложений Azure](troubleshoot-diagnostic-logs.md)
 
@@ -309,7 +309,7 @@ ms.locfileid: "94849194"
 
 Используйте Azure Sentinel, масштабируемое и собственное облачное управление событиями безопасности (SIEM) для интеграции с различными источниками данных и соединителями в соответствии с требованиями. При необходимости включите и подключите данные к сторонним решениям для управления событиями безопасности в Azure Marketplace.
 
-- [Как включить параметры диагностики для журнала действий Azure](/azure/azure-monitor/platform/diagnostic-settings-legacy)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
 - [Включение Application Insights](../azure-monitor/app/app-insights-overview.md)
 
@@ -343,7 +343,7 @@ ms.locfileid: "94849194"
 
 **Руководство**. Azure Active Directory (Azure AD) содержит встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&amp;preserve-view=true)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?amp;preserve-view=true&view=azureadps-2.0)
 
 - [Использование управляемых удостоверений в Службе приложений и Функциях Azure](overview-managed-identity.md?context=azure%2Factive-directory%2Fmanaged-identities-azure-resources%2Fcontext%2Fmsi-context&amp;tabs=dotnet)
 
@@ -422,7 +422,7 @@ ms.locfileid: "94849194"
 
 Реализуйте многофакторную проверку подлинности для Azure AD. Администраторам необходимо обеспечить защиту учетных записей подписки на портале. Подписка уязвима для атак, так как она управляет созданными ресурсами. 
 
-- [Azure Security MFA](/azure/security/develop/secure-aad-app)
+- [Azure Security MFA](/previous-versions/azure/security/develop/secure-aad-app)
 
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -454,9 +454,9 @@ ms.locfileid: "94849194"
 
 - [Развертывание Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Общие сведения об обнаружении рисков в Azure AD](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Общие сведения об обнаружении рисков в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Защита от угроз для ресурсов вычислений Azure](/azure/security-center/threat-protection)
+- [Защита от угроз для ресурсов вычислений Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -478,7 +478,7 @@ ms.locfileid: "94849194"
 
 - [Настройка приложений службы приложений Azure для использования имени для входа Azure AD](configure-authentication-provider-aad.md)
 
-- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -488,7 +488,7 @@ ms.locfileid: "94849194"
 
 **Руководство**. Обнаружение устаревших учетных записей с помощью журналов, предоставленных Azure Active Directory (Azure AD). Используйте проверки доступа удостоверений Azure для эффективного управления членством в группах и доступом к корпоративным приложениям, а также назначения ролей. Периодически просматривайте доступ пользователей, чтобы убедиться, что доступ к ним имеют только предполагаемые пользователи. 
 
-- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
 - [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
@@ -504,7 +504,7 @@ ms.locfileid: "94849194"
 
 - [Настройка приложений службы приложений Azure для использования имени для входа Azure AD](configure-authentication-provider-aad.md)
 
-- [Как интегрировать журналы действий Azure в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -520,7 +520,7 @@ ms.locfileid: "94849194"
 
 - [Настройка приложения службы приложений Azure для использования имени входа Azure AD](configure-authentication-provider-aad.md)
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -546,7 +546,7 @@ ms.locfileid: "94849194"
 
 **Руководство**. Использование тегов для отслеживания ресурсов службы приложений, в которых хранятся или обрабатываются конфиденциальные данные.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -628,7 +628,7 @@ ms.locfileid: "94849194"
 
 Обратите внимание, что хотя локально подключенные диски могут использоваться веб-сайтами как временное хранилище (например, Д:\локал и% TMP%), они не шифруются.
 
-- [Общие сведения об элементах управления защитой данных для службы приложений Azure](app-service-security-controls.md)
+- [Общие сведения об элементах управления защитой данных для службы приложений Azure]()
 
 - [Общие сведения о шифровании службы хранилища Azure](../storage/common/storage-service-encryption.md)
 
@@ -656,9 +656,9 @@ ms.locfileid: "94849194"
 
 Проверьте и следуйте рекомендациям в центре безопасности для защиты приложений службы приложений.
 
-- [Как добавить постоянную проверку безопасности в конвейер CI/CD](https://docs.microsoft.com/azure/devops/migrate/security-validation-cicd-pipeline?view=azure-devops&amp;preserve-view=true)
+- [Как добавить постоянную проверку безопасности в конвейер CI/CD](/azure/devops/migrate/security-validation-cicd-pipeline?amp;preserve-view=true&view=azure-devops)
 
-- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](/azure/security-center/security-center-vulnerability-assessment-recommendations)
+- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/deploy-vulnerability-assessment-vm.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -686,7 +686,7 @@ ms.locfileid: "94849194"
 
 - [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?amp;preserve-view=true&view=azps-4.8.0)
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -698,7 +698,7 @@ ms.locfileid: "94849194"
 
 **Руководство**. применение тегов к ресурсам Azure с помощью метаданных для логической организации их в таксономию.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -715,11 +715,11 @@ ms.locfileid: "94849194"
 
 Дополнительные сведения см. в ссылках на ссылки.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -891,7 +891,7 @@ ms.locfileid: "94849194"
 
 Рекомендуется документировать процесс применения встроенных определений политик для стандартизованного использования.   
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -917,9 +917,9 @@ ms.locfileid: "94849194"
 
 Используйте существующий конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) для развертывания известной защищенной конфигурации.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&amp;preserve-view=true)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
 
-- [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/?view=azure-devops&amp;preserve-view=true)
+- [Документация по Azure Repos](/azure/devops/repos/?amp;preserve-view=true&view=azure-devops)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -951,11 +951,11 @@ ms.locfileid: "94849194"
 
 **Руководство**. Использование управляемых удостоверений для предоставления приложениям службы приложений с автоматически управляемым удостоверением в Azure Active Directory (Azure AD). Управляемые удостоверения позволяют приложениям проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Key Vault без каких бы то ни было учетных данных в коде. Убедитесь, что в Azure Key Vault включено обратимое удаление.
 
-- [Включение обратимого удаления в Azure Key Vault](/azure/key-vault/key-vault-soft-delete-powershell)
+- [Включение обратимого удаления в Azure Key Vault](../key-vault/general/key-vault-recovery.md)
 
 - [Использование управляемых удостоверений для службы приложений](overview-managed-identity.md)
 
-- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](/azure/key-vault/managed-identity)
+- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/general/assign-access-policy-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -967,7 +967,7 @@ ms.locfileid: "94849194"
 
 - [Использование управляемых удостоверений для службы приложений](overview-managed-identity.md)
 
-- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](/azure/key-vault/managed-identity)
+- [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/general/assign-access-policy-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1000,7 +1000,7 @@ ms.locfileid: "94849194"
 
 - [Общие сведения о возможности резервного копирования службы приложений Azure](manage-backup.md)
 
-- [Управляемые клиентом ключи для шифрования службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/customer-managed-keys-overview?toc=/azure/storage/blobs/toc.json)
+- [Управляемые клиентом ключи для шифрования службы хранилища Azure](../storage/common/customer-managed-keys-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1021,7 +1021,7 @@ ms.locfileid: "94849194"
 
 - [Восстановление приложения, работающего в службе приложений Azure](web-sites-restore.md)
 
-- [Общие сведения о шифровании неактивных в Azure](../security/fundamentals/encryption-atrest.md#encryption-at-rest-in-microsoft-cloud-services) 
+- [Общие сведения о шифровании неактивных данных в Azure](../security/fundamentals/encryption-atrest.md#encryption-at-rest-in-microsoft-cloud-services) 
 
 - [Модель шифрования и таблица управления ключами](../security/fundamentals/encryption-atrest.md)
 
@@ -1053,7 +1053,7 @@ ms.locfileid: "94849194"
 
 - [Общие сведения о шифровании службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md)
 
-- [Включение обратимого удаления в Azure Key Vault](/azure/key-vault/key-vault-soft-delete-powershell)
+- [Включение обратимого удаления в Azure Key Vault](../key-vault/general/key-vault-recovery.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1141,7 +1141,7 @@ ms.locfileid: "94849194"
 
 Вы можете найти дополнительные сведения о стратегии и выполнении Red Teaming, а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений, управляемых корпорацией Майкрософт.
 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Red Teaming в Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1149,5 +1149,5 @@ ms.locfileid: "94849194"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

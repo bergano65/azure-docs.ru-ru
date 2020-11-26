@@ -11,15 +11,14 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: e041b69d8fc256ff5fe759be9716db032540f2cb
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: d314c285057950ebaecb2e3f75a83948c8bf3cc2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873800"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182450"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
-
 
 Узнайте, как использовать Машинное обучение Azure для развертывания модели в качестве веб-службы в службе Azure Kubernetes Service (AKS). Служба Azure Kubernetes подходит для крупномасштабных производственных развертываний. Используйте службу Kubernetes Azure, если требуется одна или несколько из следующих возможностей:
 
@@ -34,7 +33,7 @@ ms.locfileid: "94873800"
 При развертывании в службе Kubernetes Azure развертывание выполняется в кластере AKS, __подключенном к рабочей области__. Сведения о подключении кластера AKS к рабочей области см. в статье [Создание и подключение кластера службы Kubernetes Azure](how-to-create-attach-kubernetes.md).
 
 > [!IMPORTANT]
-> Рекомендуется выполнять отладку локально перед развертыванием в веб-службе. Дополнительные сведения см. в разделе [Локальная отладка](./how-to-troubleshoot-deployment.md#debug-locally) .
+> Рекомендуется выполнять отладку локально перед развертыванием в веб-службе. Дополнительные сведения см. в разделе [Локальная отладка](./how-to-troubleshoot-deployment-local.md) .
 >
 > Вы также можете ознакомиться со статьей о Машинном обучении Azure: [Развертывание в локальный Notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local)
 
@@ -331,7 +330,7 @@ print(token)
 
 Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Вы должны разрешить центру безопасности Azure проверять ресурсы и следовать рекомендациям. Дополнительные сведения см. в статье [Интеграция Azure Kubernetes Services с центром безопасности](../security-center/defender-for-kubernetes-introduction.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md)
 * [Безопасная организация в среде с виртуальной сетью Azure](how-to-secure-inferencing-vnet.md)

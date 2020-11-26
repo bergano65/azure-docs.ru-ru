@@ -4,12 +4,12 @@ description: Узнайте, как создать функцию Azure в по�
 Customer intent: As a student, I want to be able to create an HTTP triggered Function App within the Student Starter plan so that I can easily add APIs to any project.
 ms.topic: how-to
 ms.date: 04/29/2020
-ms.openlocfilehash: ecb2cc20bec602101d683dbfdd3f82a2e199aa16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f40405c9325743da5d1963e3baea781606d2d8d9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87386968"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182535"
 ---
 # <a name="create-a-function-using-azure-for-students-starter"></a>Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся"
 
@@ -100,7 +100,7 @@ ms.locfileid: "87386968"
 Вы завершили создание приложения-функции с простой функцией для триггеров HTTP. Теперь вы можете изучить локальные средства, дополнительные языки, мониторинг и интеграции.
 
  * [Создание первой функции с помощью Visual Studio](./functions-create-your-first-function-visual-studio.md)
- * [Создание функции в Azure с помощью Visual Studio Code](./functions-create-first-function-vs-code.md)
+ * [Создание функции в Azure с помощью Visual Studio Code](./create-first-function-vs-code-csharp.md)
  * [Руководство разработчика JavaScript для Функций Azure](./functions-reference-node.md)
  * [Подключение к базе данных SQL Azure с помощью Функций Azure](./functions-scenario-database-table-cleanup.md)
  * [Дополнительные сведения о привязках HTTP в Функциях Azure см. здесь](./functions-bindings-http-webhook.md).

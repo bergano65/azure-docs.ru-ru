@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 507ef55a6fa3976475dbf08f88ee36cd1977464d
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 4436385b07dd4f1da81f17eb19b38e922e21a1ef
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421028"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180427"
 ---
 # <a name="create-and-assign-a-custom-role-in-azure-active-directory"></a>Создание и назначение пользовательской роли в Azure Active Directory
 
@@ -177,10 +177,10 @@ $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -Rol
 1. При регистрации приложения выберите **Роли и администраторы**. Если вы еще не создали ее, выполните инструкции приведенные в [разделе выше](#create-a-new-custom-role-to-grant-access-to-manage-app-registrations).
 
 1. Затем выберите роль, чтобы открыть страницу **Назначения**.
-1. Выберите **Добавить назначение** , чтобы добавить пользователя. Пользователю будут предоставлены разрешения только для выбранной регистрации приложения.
+1. Выберите **Добавить назначение**, чтобы добавить пользователя. Пользователю будут предоставлены разрешения только для выбранной регистрации приложения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 - Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](permissions-reference.md).
-- Сведения о разрешениях пользователей по умолчанию см. в разделе [сравнение разрешений гостевых пользователей и пользователей-участников](/azure/active-directory/fundamentals/users-default-permissions?context=azure%2factive-directory%2froles%2fcontext%2fugr-context).
+- Сведения о разрешениях пользователей по умолчанию см. в разделе [сравнение разрешений гостевых пользователей и пользователей-участников](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2froles%2fcontext%2fugr-context).

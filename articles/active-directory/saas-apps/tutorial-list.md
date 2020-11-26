@@ -12,12 +12,12 @@ ms.date: 10/10/2019
 ms.author: jeedes
 ms.custom: it-pro
 ms.reviewer: celested
-ms.openlocfilehash: 19889c05447db05cc20c8f46e97bd8d16ff43bdf
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: f74cdb700013dc9b124c6a2df195456f08e4b60a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445665"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182144"
 ---
 # <a name="tutorials-for-integrating-saas-applications-with-azure-active-directory"></a>Руководства по интеграции приложений SaaS с Azure Active Directory
 
@@ -25,7 +25,7 @@ ms.locfileid: "94445665"
 
 Список предварительно интегрированных с Azure AD приложений SaaS доступен в разделе [Active Directory Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/azure-active-directory-apps).
 
-Используйте [портал сети приложений ](../azuread-dev/howto-app-gallery-listing.md), чтобы запросить добавление приложения с поддержкой [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) в коллекцию для автоматической подготовки или добавление приложения с поддержкой SAML либо OIDC в коллекцию для единого входа.
+Используйте [портал сети приложений ](../develop/v2-howto-app-gallery-listing.md), чтобы запросить добавление приложения с поддержкой [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) в коллекцию для автоматической подготовки или добавление приложения с поддержкой SAML либо OIDC в коллекцию для единого входа.
 
 ## <a name="quick-links"></a>Быстрые ссылки
 

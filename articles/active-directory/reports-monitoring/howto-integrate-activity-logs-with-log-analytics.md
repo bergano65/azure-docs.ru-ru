@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01f762ef1fa3a997c01873df02abf87362b8c06f
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 85e6a66f4520f12278266203211e1d1ae224c97f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92055959"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180461"
 ---
 # <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Интеграция журналов Azure AD с Azure Monitor журналами
 
@@ -46,7 +46,7 @@ ms.locfileid: "92055959"
 
 * **Журналы аудита**. [Отчет о действиях журналов аудита](concept-audit-logs.md) предоставляет доступ к истории каждой задачи, выполняемой в клиенте.
 * **Журналы входов в систему**. [Отчет о действиях входов в систему](concept-sign-ins.md) позволяет определить, кто выполнил задачи, указанные в отчете журналов аудита.
-* **Журналы подготовки**. с помощью [журналов подготовки](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-log-analytics)можно отслеживать, какие пользователи были созданы, обновлены и удалены во всех приложениях сторонних разработчиков. 
+* **Журналы подготовки**. с помощью [журналов подготовки](../app-provisioning/application-provisioning-log-analytics.md)можно отслеживать, какие пользователи были созданы, обновлены и удалены во всех приложениях сторонних разработчиков. 
 
 > [!NOTE]
 > В настоящее время журналы действий аудита и входов в систему в клиенте B2C не поддерживаются.
