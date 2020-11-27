@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/18/2020
-ms.openlocfilehash: 9715724fc0fbd25198dd3244215ac2c12638d2b8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ac785b3ad534e80d4dd240d1a29ba5f6aa75e10a
+ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185969"
+ms.locfileid: "96299045"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -538,7 +538,9 @@ Content-type: application/json
   1. При использовании функции "ОСТАВШАЯся" скопируйте значение Azure-AsyncOperation URL-адрес из ответа и выполните [проверку состояния асинхронных операций](#asynchronous-operations-and-status-check).
   2. Отправьте запрос GET в кластер или рабочую область и просмотрите ответ. Например, несвязанная Рабочая область не будет иметь *клустерресаурцеид* в разделе " *компоненты*".
 
-- [Двойное шифрование](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) настраивается автоматически для кластеров, созданных с 2020 октября при двойном шифровании в регионе. При создании кластера и получении ошибки "<имя региона> не поддерживает двойное шифрование для кластеров". Вы по-прежнему можете создать кластер, но с отключенным двойным шифрованием. После создания кластера его нельзя включить или отключить. Чтобы создать кластер, если двойное шифрование не поддерживается в регионе, добавьте `"properties": {"isDoubleEncryptionEnabled": false}` в текст запроса на оставшуюся часть.
+- [Двойное шифрование](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) настраивается автоматически для кластеров, созданных с 2020 октября в поддерживаемых регионах. Вы можете проверить, настроено ли для кластера двойное шифрование с помощью запроса GET в кластере, и наблюдать за `"isDoubleEncryptionEnabled"` значением свойства — `true` для кластеров с включенным двойным шифрованием. 
+  - При создании кластера и получении сообщения об ошибке "<имя региона> не поддерживает двойное шифрование для кластеров", вы по-прежнему можете создать кластер без двойного шифрования. Добавьте `"properties": {"isDoubleEncryptionEnabled": false}` в текст запроса на оставшуюся часть.
+  - Параметр двойного шифрования нельзя изменить после создания кластера.
 
 - Сообщения об ошибках
   
