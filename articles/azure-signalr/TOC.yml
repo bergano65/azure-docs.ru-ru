@@ -66,6 +66,10 @@
       href: signalr-concept-authenticate-oauth.md
     - name: Обработка событий
       href: signalr-concept-event-grid-integration.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Масштабирование
