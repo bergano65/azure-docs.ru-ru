@@ -75,10 +75,14 @@
       href: ../../backup/security-baseline.md
     - name: Базовые показатели безопасности Бастиона Azure
       href: ../../bastion/security-baseline.md
+    - name: Базовые показатели безопасности сети Azure Bot
+      href: /azure/bot-service/security-baseline?view=azure-bot-service-4.0
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
     - name: Базовые средства безопасности службы "Когнитивный поиск Azure"
       href: ../../search/security-baseline.md
+    - name: "Базовые показатели безопасности Azure Cosmos\_DB"
+      href: ../../cosmos-db/security-baseline.md
     - name: Базовые средства безопасности Azure Data Box
       href: ../../databox/security-baseline.md
     - name: Базовые средства безопасности Azure Data Explorer
@@ -91,18 +95,20 @@
       href: ../../mysql/security-baseline.md
     - name: Базовые средства безопасности Базы данных Azure для MariaDB
       href: ../../mariadb/security-baseline.md
-    - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для отдельного сервера'
-      href: ../../postgresql/security-baseline.md
     - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для гипермасштабирования'
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
+    - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для отдельного сервера'
+      href: ../../postgresql/security-baseline.md
     - name: Базовые средства безопасности Azure Databricks
       href: /azure/databricks/scenarios/security-baseline
+    - name: Базовые показатели безопасности службы "Защита от атак DDoS Azure" (цен. категория "Стандартный")
+      href: ../fundamentals/ddos-protection-security-baseline.md
     - name: Базовые средства безопасности Azure Defender для Интернета вещей
       href: ../../defender-for-iot/security-baseline.md
-    - name: Базовая защита Azure DNS
-      href: ../../dns/security-baseline.md
     - name: Базовые показатели безопасности Azure DevTest Labs
       href: ../../devtest-labs/security-baseline.md
+    - name: Базовая защита Azure DNS
+      href: ../../dns/security-baseline.md
     - name: Базовые средства безопасности Брандмауэра Azure
       href: ../../firewall/security-baseline.md
     - name: Базовые средства безопасности Диспетчера брандмауэра Azure
@@ -115,18 +121,16 @@
       href: ../../hpc-cache/security-baseline.md
     - name: Базовые показатели безопасности Azure Information Protection
       href: /azure/information-protection/security-baseline
-    - name: Базовые средства безопасности Центра Интернета вещей Azure
-      href: ../../iot-hub/security-baseline.md
     - name: Базовые средства безопасности Службы Azure Kubernetes
       href: ../../aks/security-baseline.md
     - name: Базовые средства безопасности Azure Lighthouse
       href: ../../lighthouse/security-baseline.md
     - name: Базовые средства безопасности Azure Load Balancer
       href: ../../load-balancer/security-baseline.md
-    - name: Базовые показатели безопасности Azure Monitor
-      href: ../../azure-monitor/security-baseline.md
     - name: Базовые средства безопасности Машинного обучения Azure
       href: ../../machine-learning/security-baseline.md
+    - name: Базовые показатели безопасности Azure Monitor
+      href: ../../azure-monitor/security-baseline.md
     - name: Базовые средства безопасности Миграции Azure
       href: ../../migrate/security-baseline.md
     - name: Базовые показатели безопасности Политики Azure
@@ -141,12 +145,12 @@
       href: ../../azure-resource-manager/management/security-baseline.md
     - name: Базовые показатели безопасности Azure Sentinel
       href: ../../sentinel/security-baseline.md
+    - name: Базовые показатели безопасности Службы Azure SignalR
+      href: ../../azure-signalr/security-baseline.md
     - name: Базовые средства безопасности Базы данных SQL Azure
       href: ../../azure-sql/database/security-baseline.md
     - name: Базовые средства безопасности службы хранилища Azure
       href: ../../storage/common/security-baseline.md
-    - name: Базовые средства безопасности Диспетчера трафика Azure
-      href: ../../traffic-manager/security-baseline.md
     - name: Базовые средства безопасности Брандмауэра веб-приложений Azure
       href: ../../web-application-firewall/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
@@ -163,16 +167,12 @@
       href: ../../container-registry/security-baseline.md
     - name: Базовые средства безопасности сети доставки содержимого
       href: ../../cdn/security-baseline.md
-    - name: "Базовая конфигурация безопасности для Cosmos\_DB"
-      href: ../../cosmos-db/security-baseline.md
     - name: Базовые средства безопасности Управления затратами
       href: ../../cost-management-billing/security-baseline.md
     - name: Базовые уровень безопасности защищенного хранилища
       href: ../fundamentals/customer-lockbox-security-baseline.md
     - name: Базовые средства безопасности Synapse Analytics
       href: ../../data-lake-analytics/security-baseline.md
-    - name: Базовые средства безопасности Защиты от атак DDoS
-      href: ../fundamentals/ddos-protection-security-baseline.md
     - name: Базовая защита Сетки событий
       href: ../../event-grid/security-baseline.md
     - name: Базовые показатели безопасности Центров событий
@@ -181,6 +181,8 @@
       href: ../../expressroute/security-baseline.md
     - name: Базовый уровень безопасности HDInsight
       href: ../../hdinsight/security-baseline.md
+    - name: Базовые показатели безопасности Центра Интернета вещей
+      href: ../../iot-hub/security-baseline.md
     - name: Базовый уровень безопасности Key Vault
       href: ../../key-vault/general/security-baseline.md
     - name: Базовые показатели безопасности Logic Apps
@@ -201,6 +203,8 @@
       href: ../../stream-analytics/security-baseline.md
     - name: Базовые показатели безопасности Synapse Analytics
       href: ../../synapse-analytics/security-baseline.md
+    - name: Базовые показатели безопасности Диспетчера трафика
+      href: ../../traffic-manager/security-baseline.md
     - name: Базовые средства безопасности Масштабируемых наборов виртуальных машин
       href: ../../virtual-machine-scale-sets/security-baseline.md
     - name: Базовые средства безопасности виртуальных машин Linux
