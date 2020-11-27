@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
-ms.openlocfilehash: 247abafd7abec38e43794b76268ee52538aee508
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 63b9d74fbbb1a79dd4f3d3e7c5fb094a372282e0
+ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655686"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299638"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Использование Logstash для подключения источников данных к Azure Sentinel
 
@@ -57,7 +57,7 @@ ms.locfileid: "94655686"
 
 Подключаемый модуль выходных данных Azure-Sentinel доступен в коллекции Logstash.
 
-- Чтобы установить подключаемый модуль **_Microsoft-Logstash-Output-Azure-loganalytics_* _, следуйте инструкциям в документе Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) .
+- Чтобы установить подключаемый модуль **_[Microsoft-Logstash-Output-Azure-loganalytics](https://github.com/Azure/Azure-Sentinel/tree/master/DataConnectors/microsoft-logstash-output-azure-loganalytics)_* _, следуйте инструкциям в документе Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) .
    
 - Если у вашей системы Logstash нет доступа к Интернету, следуйте инструкциям в документе по [управлению подключаемым модулем Logstash offline](https://www.elastic.co/guide/en/logstash/current/offline-plugins.html) , чтобы подготовить и использовать автономный пакет подключаемого модуля. (Для этого потребуется создать другую систему Logstash с доступом к Интернету.)
 
@@ -170,7 +170,7 @@ ms.locfileid: "94655686"
 
 Если вы не видите данные в этом файле журнала, создайте и отправьте некоторые события локально (через подключаемые модули ввода и фильтрации), чтобы убедиться, что подключаемый модуль вывода получает данные. Sentinel Azure будет поддерживать только проблемы, связанные с подключаемым модулем вывода.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали, как использовать Logstash для подключения внешних источников данных к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

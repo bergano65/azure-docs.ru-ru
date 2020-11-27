@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 11/05/2020
+ms.date: 11/26/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4f104accad2b23b907d888ce3d0da083f1fa019a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 05b2747dc21e2aedf16c6ca6e6c31af03b38c81f
+ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964836"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299519"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -80,6 +80,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 11/26/2020. Адаптация [SAP HANA конфигураций хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) и [типов хранилища Azure для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide-storage) для изменения [соглашения об уровне обслуживания одной виртуальной машины](https://azure.microsoft.com/support/legal/sla/virtual-machines)
 - 11/05/2020: изменение ссылки на новое примечание SAP о поддерживаемых типах файловой системы HANA в [SAP HANA конфигурациях хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) 
 - 10/26/2020: изменение некоторых таблиц для конфигурации хранилища Azure уровня "Премиум" для уточнения подготовленной и ускоренной пропускной способности в [SAP HANA конфигурациях хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage)
 - 10/22/2020: смените высокий уровень [доступности SAP NW на виртуальных машинах Azure в SLES для приложений SAP](./high-availability-guide-suse.md), [HA для SAP NW на виртуальных машинах Azure в SLES с использовании](./high-availability-guide-suse-netapp-files.md), [HA для SAP NW на ВИРТУАЛЬНЫХ машинах Azure в RHEL для приложений SAP](./high-availability-guide-rhel.md) и [HA для SAP NW на ВИРТУАЛЬНЫХ машинах Azure в RHEL с использовании](./high-availability-guide-rhel-netapp-files.md) для настройки рекомендации для NET.IPv4.tcp_keepalive_time  
