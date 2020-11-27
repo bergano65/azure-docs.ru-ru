@@ -7,16 +7,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: overview
-ms.date: 9/17/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: Распознавание лиц, программное обеспечение для распознавания лиц, анализ лиц, сопоставление лиц, приложение распознавания лиц, поиск лиц по изображениям, поиск распознавания лиц
-ms.openlocfilehash: ccc9ee3107d287844430be0ae089e4b7ac3a2f44
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 600ca48cc19ee8723b423e484ec96736a55ae7fc
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911449"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95532262"
 ---
 # <a name="what-is-the-azure-face-service"></a>Что такое служба "Распознавание лиц" Azure?
 
@@ -76,9 +76,9 @@ API Идентификации можно использовать для опр
 
 Дополнительные сведения об идентификации людей см. в руководстве по [распознаванию лиц](concepts/face-recognition.md) или справочной документации по [API Идентификации](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
 
-## <a name="containers"></a>Контейнеры
+## <a name="deploy-on-premises-using-docker-containers"></a>Развертывание в локальной среде с помощью контейнеров Docker
 
-[Контейнер API Распознавания лиц](face-how-to-install-containers.md) можно использовать для обнаружения, распознавания и идентификации лиц, установив стандартные контейнеры Docker в непосредственной близости к своим данным.
+Для развертывания функций API в локальной среде [используйте контейнер API "Распознавание лиц" (предварительная версия)](face-how-to-install-containers.md). Этот контейнер Docker позволяет разместить службу ближе к данным для обеспечения безопасности, соответствия требованиям и других эксплуатационных преимуществ.
 
 ## <a name="sample-apps"></a>Примеры приложений
 

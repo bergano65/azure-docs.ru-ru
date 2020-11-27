@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: ee9f49463e8e6749d29c810afaf7337cc99a98e8
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: a47475ad55c5e6262dc8ba1a384d89b9721fd2e9
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616048"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95736431"
 ---
 # <a name="tutorial-run-tensorflow-model-in-python"></a>Руководство по запуску модели TensorFlow в среде Python
 
@@ -34,7 +34,7 @@ ms.locfileid: "94616048"
 
 Затем понадобится установить следующие пакеты.
 
-```
+```bash
 pip install tensorflow
 pip install pillow
 pip install numpy
@@ -43,7 +43,7 @@ pip install opencv-python
 
 ## <a name="load-your-model-and-tags"></a>Загрузка модели и тегов
 
-Скачанный ZIP-файл содержит файлы model.pb и labels.txt. Эти файлы представляют обученную модель и метки классификации. Первым шагом является загрузка модели в проект.
+Скачанный ZIP-файл содержит файлы _model.pb_ и _labels.txt_. Эти файлы представляют обученную модель и метки классификации. Первым шагом является загрузка модели в проект. Добавьте приведенный ниже код в новый скрипт Python.
 
 ```Python
 import tensorflow as tf
@@ -126,6 +126,8 @@ augmented_image = crop_center(augmented_image, network_input_size, network_input
 
 ```
 
+### <a name="add-helper-functions"></a>Добавление вспомогательных функций
+
 В описанных выше действиях используются следующие вспомогательные функции.
 
 ```Python
@@ -191,7 +193,7 @@ with tf.compat.v1.Session() as sess:
         exit(-1)
 ```
 
-## <a name="view-the-results"></a>Просмотр результатов
+## <a name="display-the-results"></a>Отображение результатов
 
 Затем результаты обработки тензорного изображения с помощью модели потребуется сопоставить с метками.
 

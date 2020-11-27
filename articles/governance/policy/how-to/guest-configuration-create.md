@@ -3,12 +3,12 @@ title: Создание политик гостевой конфигурации
 description: Узнайте, как создать политику гостевой конфигурации в службе "Политика Azure" для Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: ea9b40006deefbac2c253082eda4ef2da12149a4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 124f747a1e7c7925efc2519ee826d62034e69cc5
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700686"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302689"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Создание политик гостевой конфигурации для Windows
 
@@ -160,7 +160,7 @@ class ResourceName : OMI_BaseResource
 
 В создании пакета вам помогут командлеты PowerShell.
 Папка корневого уровня или папка версии не требуются.
-Пакета должен иметь формат ZIP-файла.
+Формат пакета должен быть ZIP-файлом и не может превышать общий размер 100 МБ при несжатом виде.
 
 ### <a name="storing-guest-configuration-artifacts"></a>Хранение артефактов гостевой конфигурации
 

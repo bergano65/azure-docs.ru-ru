@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: 9a2bda0a526c307ae17d8415f6f24423ddf51b63
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 8a4f9a5df8def928c06fe95a53c7be0d93ec76c4
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917772"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302683"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (ХИБ)
 
@@ -52,7 +52,7 @@ ms.locfileid: "94917772"
 
 Чтобы создать кластер Корпоративный пакет безопасности с включенным компонентом "брокер ИДЕНТИФИКАТОРов HDInsight", выполните следующие действия.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
 1. Выполните базовые действия по созданию кластера Корпоративный пакет безопасности. Дополнительные сведения см. в статье [Создание кластера HDInsight с корпоративный пакет безопасности](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp).
 1. Выберите **включить брокер идентификаторов HDInsight**.
 
@@ -138,9 +138,9 @@ curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application
 
 Для использования Beeline и Livy можно также воспользоваться приведенными [здесь](https://github.com/Azure-Samples/hdinsight-enterprise-security/tree/main/HIB/HIBSamples) кодами примеров, чтобы настроить клиент для использования OAuth и подключения к кластеру.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 ### <a name="what-app-is-created-by-hdinsight-in-aad"></a>Какое приложение создано в HDInsight в AAD?
-Для каждого кластера стороннее приложение будет зарегистрировано в AAD с универсальным кодом ресурса (URI) кластера в качестве identifierUri (например, https://clustername.azurehdinsight.net ).
+Для каждого кластера стороннее приложение будет зарегистрировано в AAD с универсальным кодом ресурса (URI) кластера в качестве identifierUri (например, `https://clustername.azurehdinsight.net` ).
 
 ### <a name="why-are-users-prompted-for-consent-before-using-hib-enabled-clusters"></a>Почему пользователям предлагается согласие перед использованием кластеров с поддержкой ХИБ?
 В AAD согласие требуется для всех сторонних приложений, прежде чем оно сможет проходить проверку подлинности пользователей или доступа к данным.
@@ -157,7 +157,7 @@ Microsoft Graph API позволяет автоматизировать согл
  
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка кластера HDInsight с Корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure-using-azure-adds.md)
 * [Синхронизация пользователей Azure Active Directory с кластером HDInsight](../hdinsight-sync-aad-users-to-cluster.md)

@@ -7,21 +7,21 @@ ms.reviewer: susabat
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: troubleshooting
-ms.date: 11/26/2020
-ms.openlocfilehash: f07cc8e3d5e9d6f59671a3c8c2efd9f5fb9f27b7
-ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
+ms.date: 11/27/2020
+ms.openlocfilehash: e0b4b31a1d732cbd5cbfaa9b6e5e021caa3adf01
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96299062"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301956"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Устранение неполадок непрерывной интеграции — CD, Azure DevOps и GitHub в ADF 
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-В этой статье рассматриваются распространенные способы устранения проблем с CI-CD, Azure DevOps и GitHub в фабрике данных Azure.
+В этой статье рассматриваются распространенные методы устранения неполадок непрерывного развертывания Integration-Continuous (CI-CD), Azure DevOps и GitHub в фабрике данных Azure.
 
-Если у вас возникли вопросы или проблемы с использованием средств управления версиями или DevOps, вот несколько статей, которые могут оказаться полезными.
+Если у вас возникли вопросы или проблемы при использовании методов управления версиями или DevOps, вот несколько статей, которые могут оказаться полезными:
 
 - Сведения об использовании системы управления версиями в ADF см. в статье [Управление версиями в ADF](source-control.md) . 
 - Дополнительные сведения о том, как DevOps CI-CD в ADF, см. в разделе  [CI-CD в ADF](continuous-integration-deployment.md) .
@@ -151,16 +151,12 @@ ms.locfileid: "96299062"
 
 Чтобы устранить эту проблему, необходимо добавить в роль следующее разрешение: *Microsoft. куерифеатуресвалуе, фабрики,/Action*. Это разрешение должно включаться по умолчанию в роли "участник фабрики данных".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 
 *  [Блог о Фабрике данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Запросы на добавление функции в Фабрику данных](https://feedback.azure.com/forums/270578-data-factory)
 *  [Видео по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-*  [Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)](/answers/topics/azure-data-factory.html)
 *  [Форум о переполнении стека для фабрики данных](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Сведения о Фабрике данных в Twitter](https://twitter.com/hashtag/DataFactory)
-
-
- 

@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 02/12/2020
-  ms.openlocfilehash: a05f168b18f32e2b4730e5ef50624d41fb48e147
-  ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+  ms.openlocfilehash: bcba2b48fdecda311ce349f90ba43023b906bd44
+  ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/30/2020
-  ms.locfileid: "93099102"
+  ms.lasthandoff: 11/26/2020
+  ms.locfileid: "96186411"
 landingContent:
 - title: Сведения об Azure Digital Twins
   linkLists:
@@ -71,20 +71,24 @@ landingContent:
     links:
     - text: Написание кода проверки подлинности приложения
       url: how-to-authenticate-client.md
-- title: Просмотр справочных материалов по API
+- title: Знакомство с интерфейсами API
   linkLists:
+  - linkListType: reference
+    links:
+    - text: Интерфейсы REST API
+      url: /rest/api/azure-digitaltwins/
   - linkListType: how-to-guide
     links:
     - text: Использование интерфейсов API и пакетов SDK для Azure Digital Twins
       url: how-to-use-apis-sdks.md
   - linkListType: how-to-guide
     links:
+    - text: Отправка запросов с помощью Postman
+      url: how-to-use-postman.md
+  - linkListType: how-to-guide
+    links:
     - text: Создание пользовательских пакетов SDK с помощью AutoRest
       url: how-to-create-custom-sdks.md
-  - linkListType: reference
-    links:
-    - text: Интерфейсы REST API
-      url: /rest/api/azure-digitaltwins/
 - title: Изучение примеров кода
   linkLists:
   - linkListType: sample

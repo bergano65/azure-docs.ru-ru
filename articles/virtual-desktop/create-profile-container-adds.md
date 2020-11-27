@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ea834ed874f3011d95f8b924df860576f72bc4ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70a56b7efc34ba2fd3c06521c6e4cac6ea28778f
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88825619"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302477"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-azure-ad-ds"></a>Создание контейнера профиля с помощью службы файлов Azure и Azure AD DS
 
@@ -67,7 +67,7 @@ ms.locfileid: "88825619"
 
 4. На вкладке **Добавление назначения ролей** выберите соответствующую встроенную роль из списка роль. Чтобы учетная запись имела необходимые разрешения, необходимо по крайней мере выбрать **файл хранилища хранилище данных для ресурса SMB** .
 
-5. Для **назначения доступа**выберите **Azure Active Directory пользователя, группы или субъекта-службы**.
+5. Для **назначения доступа** выберите **Azure Active Directory пользователя, группы или субъекта-службы**.
 
 6. Выберите имя или адрес электронной почты для удостоверения целевой Azure Active Directory.
 
@@ -83,7 +83,7 @@ ms.locfileid: "88825619"
 
 2. В списке учетных записей хранения выберите учетную запись, для которой вы включили Azure AD DS и создали пользовательские роли, как описано выше.
 
-3. В разделе **Параметры**выберите **ключи доступа** и скопируйте ключ из **Key1**.
+3. В разделе **Параметры** выберите **ключи доступа** и скопируйте ключ из **Key1**.
 
 4. Перейдите на вкладку **виртуальные машины** и найдите любую виртуальную машину, которая станет частью пула узлов.
 
@@ -99,7 +99,7 @@ ms.locfileid: "88825619"
 7. Выполните следующую команду:
 
      ```cmd
-     net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> <storage-account-key> /user:Azure\<storage-account-name>
+     net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /user:Azure\<storage-account-name> <storage-account-key>
      ```
 
     - Замените на `<desired-drive-letter>` нужное имя диска (например, `y:` ).
@@ -142,7 +142,7 @@ ms.locfileid: "88825619"
 
 1. Войдите на виртуальную машину узла сеансов, настроенную в начале этой статьи, а затем [скачайте и установите агент фслогикс](/fslogix/install-ht/).
 
-2. Распакуйте скачанный файл агента фслогикс и перейдите к **x64**  >  **выпускам**x64, а затем откройте **FSLogixAppsSetup.exe**.
+2. Распакуйте скачанный файл агента фслогикс и перейдите к **x64**  >  **выпускам** x64, а затем откройте **FSLogixAppsSetup.exe**.
 
 3. После запуска программы установки установите флажок **я принимаю условия лицензии.** Если применимо, укажите новый ключ.
 

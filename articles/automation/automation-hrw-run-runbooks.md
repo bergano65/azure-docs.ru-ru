@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 10/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2f1c703f2bd2e90e15c566b7e04e8a878c16f6de
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b73fa80085cc0491c8b4d0856d0baacfef1b51c0
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001275"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301544"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей Runbook в гибридной рабочей роли Runbook
 
@@ -22,7 +22,7 @@ Runbook, которые выполняются в [гибридной рабоч
 
 Служба автоматизации Azure обрабатывает задания в гибридных рабочих ролях Runbook по-разному из заданий, выполняемых в изолированных средах Azure. Если ваш runbook будет выполняться долго, обеспечьте ему устойчивость к возможному перезапуску. Дополнительные сведения о поведении задания см. в разделе [Задания гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#hybrid-runbook-worker-jobs).
 
-Задания для гибридных рабочих ролей Runbook выполняются под локальной **системной** учетной записью Windows или учетной записью **нксаутоматион** в Linux. Для Linux убедитесь, что учетная запись **нксаутоматион** имеет доступ к расположению, в котором хранятся модули Runbook. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) обязательно укажите значение AllUsers для параметра `Scope`, чтобы предоставить необходимый доступ для учетной записи **nxautomation**. Дополнительные сведения об использовании PowerShell в среде Linux см. в разделе [Известные проблемы с PowerShell на платформах, отличных от Windows](/powershell/scripting/whats-new/known-issues-ps6#known-issues-for-powershell-on-non-windows-platforms).
+Задания для гибридных рабочих ролей Runbook выполняются под локальной **системной** учетной записью Windows или учетной записью **нксаутоматион** в Linux. Для Linux убедитесь, что учетная запись **нксаутоматион** имеет доступ к расположению, в котором хранятся модули Runbook. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) обязательно укажите значение AllUsers для параметра `Scope`, чтобы предоставить необходимый доступ для учетной записи **nxautomation**. Дополнительные сведения об использовании PowerShell в среде Linux см. в разделе [Известные проблемы с PowerShell на платформах, отличных от Windows](/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-7.1).
 
 ## <a name="configure-runbook-permissions"></a>Настройка разрешений Runbook
 
@@ -315,7 +315,7 @@ gpg –-clear-sign <runbook name>
 Start-AzAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
 ```
 
-## <a name="logging"></a>Logging
+## <a name="logging"></a>Ведение журнала
 
 Чтобы помочь в устранении проблем с модулями Runbook, работающими в гибридной рабочей роли Runbook, журналы хранятся локально в следующем расположении:
 

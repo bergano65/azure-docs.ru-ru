@@ -45,6 +45,10 @@
           href: manage-assets-quickstart.md
         - name: Шифрование содержимого с помощью портала
           href: encrypt-content-quickstart.md
+    - name: Использование шаблона ARM
+      items:
+        - name: Создание учетной записи с помощью ARM
+          href: quickstart-arm-template-account.md
 - name: Учебники
   items:
     - name: .NET

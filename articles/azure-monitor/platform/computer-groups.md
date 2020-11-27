@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/05/2019
-ms.openlocfilehash: 217be627f81406f671118d5290cd5f67f52c01d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 92603165ac399415ec4fb6daeea1641065671a83
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86112118"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302923"
 ---
 # <a name="computer-groups-in-azure-monitor-log-queries"></a>Группы компьютеров в Azure Monitor запросы журналов
 Группы компьютеров в Azure Monitor позволяют выносить [запросы журналов](../log-query/log-query-overview.md) для определенного набора компьютеров.  Каждая группа заполняется компьютерами с помощью определяемого запроса или при импорте групп из разных источников.  Если в запрос к журналам включена группа, в результатах возвращаются только те записи, которые относятся к компьютерам в этой группе.
@@ -26,7 +26,7 @@ ms.locfileid: "86112118"
 | Запрос журнала |Создание запроса к журналам, который возвращает список компьютеров. |
 | API поиска по журналам |Использование API поиска по журналам для создания группы компьютеров программными средствами на основе результатов запроса к журналам. |
 | Active Directory |Автоматическая проверка членства в группе на компьютерах агента, которые являются членами домена Active Directory, и создание группы в Azure Monitor для каждой группы безопасности. (Только для компьютеров Windows.)|
-| диспетчер конфигураций | Импортируйте коллекции из Configuration Manager конечных точек Майкрософт и создайте группу в Azure Monitor для каждой из них. |
+| Configuration Manager | Импортируйте коллекции из Configuration Manager конечных точек Майкрософт и создайте группу в Azure Monitor для каждой из них. |
 | Службы WSUS |Автоматическая проверка целевых групп на клиентах или серверах WSUS и создание для каждой из них группы в Azure Monitor. |
 
 ### <a name="log-query"></a>Запрос журнала
@@ -76,7 +76,7 @@ Heartbeat | where Computer contains "srv" | distinct Computer
 
 При импорте групп в меню отображаются число компьютеров с обнаруженным членством в группах и число импортированных групп.  Можно щелкнуть любую из этих ссылок для возврата записей **ComputerGroup** с этой информацией.
 
-### <a name="configuration-manager"></a>диспетчер конфигураций
+### <a name="configuration-manager"></a>Configuration Manager
 Если вы настроите в Azure Monitor импорт данных о членстве в коллекциях Configuration Manager, служба создаст отдельную группу компьютеров для каждой коллекции.  Данные о членстве в коллекциях извлекаются каждые три часа, чтобы поддерживать актуальность групп компьютеров. 
 
 Перед импортом коллекций Configuration Manager следует [подключить Configuration Manager к Azure Monitor](collect-sccm.md).  
@@ -97,13 +97,13 @@ Heartbeat | where Computer contains "srv" | distinct Computer
 Группу компьютеров, созданную с помощью запроса к журналам, можно использовать в запросах, применяя ее псевдоним как функцию. Вот типичный синтаксис для этого:
 
 ```kusto
-Table | where Computer in (ComputerGroup)`
+Table | where Computer in (ComputerGroup)
 ```
 
 Например, следующий запрос возвращает записи UpdateSummary только для тех компьютеров, которые входят в группу компьютеров mycomputergroup.
 
 ```kusto
-UpdateSummary | where Computer in (mycomputergroup)`
+UpdateSummary | where Computer in (mycomputergroup)
 ```
 
 Импортированные группы компьютеров и их включенные компьютеры хранятся в таблице **ComputerGroup**.  Например, следующий запрос вернет список компьютеров в группе компьютеров домена из Active Directory. 

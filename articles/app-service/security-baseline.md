@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5b9c41209902e384988064207bb3e1ded1c47477
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 691bb538ea0f46e26c318a68e9f66a9a986eb5d4
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182960"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301847"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Базовый план безопасности Azure для службы приложений
 
@@ -168,7 +168,7 @@ ms.locfileid: "96182960"
 
 - [Настройка сквозного протокола TLS с помощью шлюза приложений на портале](../application-gateway/end-to-end-ssl-portal.md)
 
-- [Защитите ASE, как описано в разделе Блокировка службы приложений.](https://review.docs.microsoft.com/azure/app-service/environment/firewall-integrationEnvironment:)
+- [Защитите ASE, как описано в разделе Блокировка службы приложений.](/azure/app-service/environment/firewall-integration)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -205,7 +205,7 @@ ms.locfileid: "96182960"
 
 - [Настройка сквозного протокола TLS с помощью шлюза приложений на портале](../application-gateway/end-to-end-ssl-portal.md)
 
-- [Защитите ASE, как описано в разделе Блокировка службы приложений.](https://review.docs.microsoft.com/azure/app-service/environment/firewall-integrationEnvironment:)
+- [Защитите ASE, как описано в разделе Блокировка службы приложений.](/azure/app-service/environment/firewall-integration)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -221,7 +221,7 @@ ms.locfileid: "96182960"
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-- [Ограничения доступа для службы приложений Azure](/azure/app-service/app-service-ip-restriction)
+- [Ограничения доступа для службы приложений Azure](/azure/app-service/app-service-ip-restrictions)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

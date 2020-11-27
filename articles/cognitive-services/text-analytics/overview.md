@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 11/02/2020
+ms.date: 11/17/2020
 ms.author: aahi
 keywords: интеллектуальный анализ текста, анализ тональности, анализ текста
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 6d10161609abda321ed1be9dfda0acabf2030c9e
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 14dfa6111bbda8750b175c8c9b2a96321e1af2c5
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94365301"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519410"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
@@ -47,9 +47,18 @@ API — это компонент [Microsoft Cognitive Services](../index.yml),
 
 Функция Распознавания именованных сущностей (NER) может [идентифицировать и классифицировать сущности](how-tos/text-analytics-how-to-entity-linking.md) в тексте: людей, места, организации и количества. Также можно определить известные сущности и связать их с дополнительной информацией в Интернете.
 
-## <a name="use-containers"></a>Использование контейнеров
+## <a name="deploy-on-premises-using-docker-containers"></a>Развертывание в локальной среде с помощью контейнеров Docker
 
-[Контейнеры Анализа текста можно использовать](how-tos/text-analytics-how-to-install-containers.md) как локальное решение для интеллектуального анализа текста и использования API. Эти контейнеры DOCKER позволяют извлекать ключевые фразы, определять язык и анализировать тональности как можно ближе к вашим данным.
+Для развертывания функций API в локальной среде [используйте контейнеры API "Анализ текста"](how-tos/text-analytics-how-to-install-containers.md). Эти контейнеры Docker позволяют разместить службу ближе к данным для обеспечения безопасности, соответствия требованиям и других эксплуатационных преимуществ. Для API "Анализ текста" предлагаются такие контейнеры:
+
+* анализ тональности
+* извлечение ключевых фраз (предварительная версия);
+* распознавание языка (предварительная версия);
+* Анализ текста для здравоохранения (предварительная версия).
+
+## <a name="asynchronous-operations"></a>Асинхронные операции
+
+Конечная точка `/analyze` позволяет [асинхронно](how-tos/text-analytics-how-to-call-api.md) использовать выбранные функции API "Анализ текста", такие как NER и извлечение ключевых фраз.
 
 ## <a name="typical-workflow"></a>Стандартный рабочий процесс
 

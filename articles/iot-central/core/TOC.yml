@@ -47,12 +47,8 @@
   items:
     - name: Подключение и разработка устройств
       items:
-        - name: Подключение устройства (Node.js)
-          href: tutorial-connect-device-nodejs.md
-        - name: Подключение устройства (Python)
-          href: tutorial-connect-device-python.md
-        - name: Подключение устройства (Java)
-          href: tutorial-connect-device-java.md
+        - name: Создание устройства и подключение к нему
+          href: tutorial-connect-device.md
         - name: Создание шаблона для устройства шлюза
           href: tutorial-define-gateway-device-type.md
         - name: "Подключение устройства IoT\_Edge"

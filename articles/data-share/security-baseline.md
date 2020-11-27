@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 7bf78194b50e2e2335d807504ebca5f8a0e9f0eb
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 88feb08851e0b69e31218a42fe877112561bddba
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94849232"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301649"
 ---
 # <a name="azure-security-baseline-for-azure-data-share"></a>Базовый план безопасности Azure для общей папки данных Azure
 
@@ -108,7 +108,7 @@ ms.locfileid: "94849232"
 
 **Руководство**. общий ресурс данных Azure поддерживает проверку подлинности SSO с Azure Active Directory. Сократите количество удостоверений и учетных данных, которыми должен управлять пользователь, включив единый вход для службы с существующими удостоверениями вашей организации.
 
-- [Общие сведения об использовании единого входа в Azure AD](/azure/active-directory/manage-apps/what-is-single-sign-o)
+- [Общие сведения об использовании единого входа в Azure AD](/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -143,7 +143,7 @@ ms.locfileid: "94849232"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) 
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) 
 
 - [Общий ресурс Azure Data Share работает с общими встроенными ролями Azure. ](../role-based-access-control/built-in-roles.md#general)
 
@@ -157,7 +157,7 @@ ms.locfileid: "94849232"
 
 - [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/) 
 
-- [Как использовать проверки подлинности и доступа Azure AD](../active-directory/governance/access-reviews-overview.md) 
+- [Использование проверок доступа для идентификации Azure AD](../active-directory/governance/access-reviews-overview.md) 
 
 - [Общий ресурс Azure Data Share работает с общими встроенными ролями Azure. ](../role-based-access-control/built-in-roles.md#general)
 

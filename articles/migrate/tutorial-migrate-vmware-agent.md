@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: ffdbdba0aeae33b04195c5a6bf6aeaff5658424b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 437dbce1c577b5d837ad0c70e8e8865ba59cf9e6
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012243"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302755"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -134,35 +134,6 @@ ms.locfileid: "96012243"
 > [!NOTE]
 > Миграция на основе агентов с помощью средства "Миграция сервера" службы "Миграция Azure" основана на функциях службы Azure Site Recovery. Некоторые требования могут ссылаться на документацию Site Recovery.
 
-
-
-## <a name="add-the-azure-migrateserver-migration-tool"></a>Добавление средства "Миграция сервера" службы "Миграция Azure"
-
-Если у вас еще нет проекта службы "Миграция Azure", [настройте его](how-to-add-tool-first-time.md) и добавьте в него средство "Миграция сервера".
-
-Если проект у вас уже есть, добавьте это средство следующим образом:
-
-1. На портал Azure выберите **Все службы** и найдите службу **Миграция Azure**.
-2. В разделе **Службы** выберите **Миграция Azure**.
-
-    ![Настройка Миграции Azure](./media/tutorial-migrate-vmware-agent/azure-migrate-search.png)
-
-3. В разделе **Обзор** щелкните **Оценка и миграция серверов**.
-4. В области **Обнаружение, оценка и перенос серверов** щелкните **Оценка и миграция серверов**.
-
-    ![Обнаружение и оценка серверов](./media/tutorial-migrate-vmware-agent/assess-migrate.png)
-
-1. В разделе **Обнаружение, оценка и перенос серверов** щелкните **Add tools** (Добавить инструменты).
-2. В разделе **Проект миграции** выберите подписку Azure и создайте группу ресурсов, если у вас ее нет.
-3. В разделе **Сведения о проекте** укажите имя проекта и регион для создания проекта, а затем щелкните **Далее**. Просмотрите список поддерживаемых регионов для [общедоступного](migrate-support-matrix.md#supported-geographies-public-cloud) облака и облака для [государственных организаций](migrate-support-matrix.md#supported-geographies-azure-government).
-
-    ![Создание проекта службы "Миграция Azure"](./media/tutorial-migrate-vmware-agent/migrate-project.png)
-
-
-4. В разделе **Выберите инструмент оценки** щелкните **Пропустить добавление инструмента оценки** > **Далее**.
-5. В области **Выберите инструмент миграции** выберите **Azure Migrate: Server Migration** (Миграция Azure: миграция сервера) > **Далее**.
-6. В области **Review + add tools** (Проверка и добавление инструментов) проверьте параметры и щелкните **Add tools** (Добавить инструменты).
-7. После добавления инструмента он появится в проекте Миграции Azure в разделе **Серверы** > **Средства миграции**.
 
 ## <a name="set-up-the-replication-appliance"></a>Настройка устройства репликации
 

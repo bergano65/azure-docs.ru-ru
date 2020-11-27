@@ -454,7 +454,9 @@
               href: ../iot-edge/tutorial-deploy-machine-learning.md?context=%2fazure%2fmachine-learning%2fservice%2fcontext%2fml-context
             - name: Вывод ППВМ
               href: how-to-deploy-fpga-web-service.md
-        - name: Устранение неполадок и отладка
+        - name: Устранение неполадок и отладка (локально)
+          href: how-to-troubleshoot-deployment-local.md
+        - name: Устранение неполадок и отладка (удаленно)
           href: how-to-troubleshoot-deployment.md
         - name: Использование веб-службы
           displayName: create client consume request response synchronous

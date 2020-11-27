@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1648bd9a073bca696299e9ed703536db745e7edb
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: ad689c746a0f4d7232e7f61982fb8c4f735cbe34
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912843"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95737808"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
@@ -35,7 +35,7 @@ ms.locfileid: "92912843"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Зарегистрируйтесь на сайте Средства проверки [Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и создайте пользовательские теги. Если на этом этапе вам нужна помощь, ознакомьтесь со статьей [Создание и использование тегов для модерации](./review-tool-user-guide/configure.md#tags).
+- Зарегистрируйтесь на сайте Средства проверки [Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и создайте пользовательские теги для функций, которые нужно идентифицировать. Если на этом этапе вам нужна помощь, ознакомьтесь со статьей [Создание и использование тегов для модерации](./review-tool-user-guide/configure.md#tags).
 
     ![Снимок экрана пользовательских тегов для модерации видео](images/video-tutorial-custom-tags.png)
 - Для запуска примера приложения необходимы учетная запись Azure, ресурс Служб мультимедиа Azure, ресурс Azure Content Moderator и учетные данные Azure Active Directory. Инструкции по получению этих ресурсов см. в руководстве по [API модерации видео](video-moderation-api.md).
@@ -57,7 +57,7 @@ ms.locfileid: "92912843"
 
 ## <a name="examine-the-main-code"></a>Просмотр основного кода
 
-Класс `Program` в `Program.cs` — главная точка входа в приложение модерации видео.
+Класс **Program** в _Program.cs_ — главная точка входа в приложение модерации видео.
 
 ### <a name="methods-of-program-class"></a>Методы класса Program
 
@@ -116,7 +116,7 @@ ms.locfileid: "92912843"
 Чтобы свести к минимуму трафик, приложение преобразовывает видеофайлы в формат H.264 (AVC MPEG-4) и масштабирует их до максимальной ширины в 640 пикселей. Кодек H.264 рекомендуется в связи с его высокой производительностью (степенью сжатия). Сжатие выполняется с помощью бесплатной программы командной строки `ffmpeg`, находящейся в папке `Lib` решения Visual Studio. Входные файлы могут быть любого формата, поддерживаемого `ffmpeg`, включая наиболее часто используемые форматы видеофайлов и кодеки.
 
 > [!NOTE]
-> При запуске программы с помощью параметров командной строки вы указываете каталог, содержащий видеофайлы, которые необходимо отправить на модерацию. Обрабатываются все файлы в этом каталоге с расширением имени файла `.mp4`. Чтобы обработать другие расширения имени файла, добавьте в метод `Main()` в `Program.cs` необходимые расширения.
+> При запуске программы с помощью параметров командной строки вы указываете каталог, содержащий видеофайлы, которые необходимо отправить на модерацию. Обрабатываются все файлы в этом каталоге с расширением имени файла `.mp4`. Чтобы обработать другие расширения имени файла, добавьте в метод `Main()` в _Program.cs_ необходимые расширения.
 
 Код, который сжимает один видеофайл, — это класс `AmsComponent` в `AMSComponent.cs`. Метод, который выполняет эту функцию, — `CompressVideo()`, показан ниже.
 
@@ -138,7 +138,7 @@ ms.locfileid: "92912843"
 
 ## <a name="upload-and-moderate-the-video"></a>Отправка и модерация видео
 
-Видео должно храниться в Службах мультимедиа Azure, прежде чем их можно будет обрабатывать с помощью службы модерации контента. В классе `Program` файла `Program.cs` есть краткий метод `CreateVideoStreamingRequest()`, который возвращает объект, представляющий собой запрос потоковой передачи, используемый для отправки видео.
+Видео должно храниться в Службах мультимедиа Azure, прежде чем их можно будет обрабатывать с помощью службы модерации контента. В классе **Program** файла _Program.cs_ есть краткий метод `CreateVideoStreamingRequest()`, который возвращает объект, представляющий собой запрос потоковой передачи, используемый для отправки видео.
 
 [!code-csharp[CreateVideoStreamingRequest](~/VideoReviewConsoleApp/Microsoft.ContentModerator.AMSComponent/AMSComponentClient/Program.cs?range=120-133)]
 
@@ -228,7 +228,7 @@ ms.locfileid: "92912843"
 
 ## <a name="create-a-human-review"></a>Создание пользовательской проверки
 
-Процесс модерации возвращает список ключевых кадров из видео вместе с расшифровкой его звуковых дорожек. Следующим шагом является создание проверки в средстве проверки Content Moderator для модераторов. Возвращаясь к методу `ProcessVideo()` в `Program.cs`, вы видите вызов к методу `CreateVideoReviewInContentModerator()`. Этот метод находится в классе `videoReviewApi`, который находится в `VideoReviewAPI.cs` и приведен ниже.
+Процесс модерации возвращает список ключевых кадров из видео вместе с расшифровкой его звуковых дорожек. Следующим шагом является создание проверки в средстве проверки Content Moderator для модераторов. Возвращаясь к методу `ProcessVideo()` в _Program.cs_, вы видите вызов к методу `CreateVideoReviewInContentModerator()`. Этот метод находится в классе `videoReviewApi`, который находится в `VideoReviewAPI.cs` и приведен ниже.
 
 [!code-csharp[CreateVideoReviewInContentModerator](~/VideoReviewConsoleApp/Microsoft.ContentModerator.AMSComponent/AMSComponentClient/VideoReviewAPI.cs?range=42-69)]
 

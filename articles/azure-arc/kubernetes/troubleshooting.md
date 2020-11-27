@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Устранение распространенных проблем с кластерами Kubernetes с поддержкой Arc.
 keywords: Kubernetes, Arc, Azure, контейнеры
-ms.openlocfilehash: 4a8f4c652f1ab73e0b9979f77d7de5014c8d31a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e05701b92d2d96074a07e0e61ce65145a1d9dfd
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540614"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302410"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Устранение неполадок Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -69,7 +69,7 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-Для всех объектов pod значение параметра `STATUS` должно отображаться как `Running`, а значение параметра `READY` — либо `3/3`, либо `2/2`. Получите журналы и описания объектов pod, которые возвращают `Error` или `CrashLoopBackOff`. Если какая-либо из этих модулей повреждена, `Pending` это может быть вызвано нехваткой ресурсов на узлах кластера. При увеличении [масштаба кластера](https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/#resizing-a-cluster) эти модули могут переходить в `Running` состояние.
+Для всех объектов pod значение параметра `STATUS` должно отображаться как `Running`, а значение параметра `READY` — либо `3/3`, либо `2/2`. Получите журналы и описания объектов pod, которые возвращают `Error` или `CrashLoopBackOff`. Если какая-либо из этих модулей повреждена, `Pending` это может быть вызвано нехваткой ресурсов на узлах кластера. При увеличении [масштаба кластера](https://kubernetes.io/docs/tasks/administer-cluster/) эти модули могут переходить в `Running` состояние.
 
 ## <a name="connecting-kubernetes-clusters-to-azure-arc"></a>Подключение кластеров Kubernetes к службе "Дуга Azure"
 

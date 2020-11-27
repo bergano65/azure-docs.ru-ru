@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/19/2020
 ms.author: alkohli
 ms.subservice: pod
-ms.openlocfilehash: cd9f4ad6b6831b2b15c09b37edc569b3f2d247f7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f75907dc1fa079cebb3b80874090c658fd7b8174
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94958207"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302821"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-azure-data-box"></a>Использование управляемых клиентом ключей в Azure Key Vault для Azure Data Box
 
@@ -103,7 +103,7 @@ Azure Data Box защищает ключ разблокировки устрой
 
     ![Выберите удостоверение для использования](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-14.png)
 
-    Здесь нельзя создать новый идентификатор пользователя. Сведения о том, как ее создать, см. в разделе [Создание, перечисление, удаление или назначение роли назначенному пользователем управляемому удостоверению с помощью портал Azure](/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal).
+    Здесь нельзя создать новый идентификатор пользователя. Сведения о том, как ее создать, см. в разделе [Создание, перечисление, удаление или назначение роли назначенному пользователем управляемому удостоверению с помощью портал Azure](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal).
 
     Выбранное удостоверение пользователя отображается в параметрах **типа шифрования** .
 
@@ -199,7 +199,7 @@ Azure Data Box защищает ключ разблокировки устрой
 | ссемусерерроркэйваултбадрекуестексцептион | Применен ключ, управляемый клиентом, но доступ к ключу не был предоставлен или отменен, или не удается получить доступ к хранилищу ключей из-за включения брандмауэра. | Добавьте удостоверение, выбранное в хранилище ключей, чтобы разрешить доступ к ключу, управляемому клиентом. Если в хранилище ключей включен брандмауэр, переключитесь на назначенное системой удостоверение, а затем добавьте ключ, управляемый клиентом. Дополнительные сведения см. в разделе [Включение ключа](#enable-key). |
 | Общая ошибка  | Не удалось получить ключ доступа.| Это общая ошибка. Обратитесь в служба поддержки Майкрософт, чтобы устранить ошибку и определить дальнейшие действия.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое хранилище ключей Azure?](../key-vault/general/overview.md)
 - [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure](../key-vault/secrets/quick-create-portal.md)

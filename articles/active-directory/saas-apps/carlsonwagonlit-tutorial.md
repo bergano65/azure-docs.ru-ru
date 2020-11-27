@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 04399dc82a3bd2d70b8b472b121e95a73ca43136
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9c27139e2dca37c1ff8d963e1e8cdb5de682d39d
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009625"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302947"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-carlson-wagonlit-travel"></a>Руководство. Интеграция Azure Active Directory с Carlson Wagonlit Travel
 
@@ -119,7 +119,7 @@ ms.locfileid: "96009625"
 
 ### <a name="configure-carlson-wagonlit-travel-single-sign-on"></a>Настройка единого входа в Carlson Wagonlit Travel
 
-Чтобы настроить единый вход на стороне **Carlson Wagonlit Travel**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в [службу технической поддержки Carlson Wagonlit Travel](http://www.carlsonwagonlit.in/content/cwt/in/en/technical-assistance.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Carlson Wagonlit Travel**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в [службу технической поддержки Carlson Wagonlit Travel](https://www.mycwt.com/traveler-help/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -174,7 +174,7 @@ ms.locfileid: "96009625"
 
 ### <a name="create-carlson-wagonlit-travel-test-user"></a>Создание тестового пользователя Carlson Wagonlit Travel
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Carlson Wagonlit Travel. Обратитесь в [службу поддержки Carlson Wagonlit Travel](http://www.carlsonwagonlit.in/content/cwt/in/en/technical-assistance.html), чтобы добавить пользователей на платформу Carlson Wagonlit Travel. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Carlson Wagonlit Travel. Обратитесь в [службу поддержки Carlson Wagonlit Travel](https://www.mycwt.com/traveler-help/), чтобы добавить пользователей на платформу Carlson Wagonlit Travel. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

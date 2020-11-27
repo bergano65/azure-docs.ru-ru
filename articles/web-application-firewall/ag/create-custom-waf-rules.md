@@ -8,12 +8,12 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 11/20/2020
 ms.author: victorh
-ms.openlocfilehash: f164418c29e9838928f3d03519342ebef40e16e7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b14bd60ab744be5a1735abc073f32f8ebc3e1ab1
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015703"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301712"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules-on-application-gateway"></a>Создание и использование настраиваемых правил брандмауэра веб-приложения V2 на шлюзе приложений
 
@@ -21,7 +21,7 @@ ms.locfileid: "95015703"
 
 В этой статье приведены некоторые примеры настраиваемых правил, которые можно создать и использовать с WAF v2. Сведения о развертывании WAF с настраиваемым правилом с помощью Azure PowerShell см. в статье [Настройка пользовательских правил брандмауэра веб-приложения с помощью Azure PowerShell](configure-waf-custom-rules.md).
 
-Фрагменты кода JSON, приведенные в этой статье, являются производными от ресурса [аппликатионгатевайвебаппликатионфиреваллполиЦиес](/templates/microsoft.network/applicationgatewaywebapplicationfirewallpolicies) .
+Фрагменты кода JSON, приведенные в этой статье, являются производными от ресурса [аппликатионгатевайвебаппликатионфиреваллполиЦиес](/azure/templates/microsoft.network/applicationgatewaywebapplicationfirewallpolicies) .
 
 >[!NOTE]
 > Если шлюз приложений не использует уровень WAF, на правой панели будет предоставлена возможность обновить шлюз приложений до уровня WAF.

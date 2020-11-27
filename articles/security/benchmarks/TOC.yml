@@ -105,6 +105,8 @@
       href: ../../devtest-labs/security-baseline.md
     - name: Базовые средства безопасности Брандмауэра Azure
       href: ../../firewall/security-baseline.md
+    - name: Базовые средства безопасности Диспетчера брандмауэра Azure
+      href: ../../firewall-manager/security-baseline.md
     - name: Базовые средства безопасности Azure Front Door
       href: ../../frontdoor/security-baseline.md
     - name: Базовые средства безопасности Функций Azure
@@ -185,6 +187,8 @@
       href: ../../logic-apps/security-baseline.md
     - name: Базовые показатели безопасности Наблюдателя за сетями
       href: ../../network-watcher/security-baseline.md
+    - name: "Базовые средства безопасности Power\_BI"
+      href: /power-bi/fundamentals/security-baseline
     - name: Базовые средства безопасности Центра безопасности
       href: ../../security-center/security-baseline.md
     - name: Базовые средства Служебной шины
@@ -207,5 +211,7 @@
       href: ../../virtual-network/security-baseline.md
     - name: Базовые средства безопасности NAT виртуальных сетей
       href: ../../virtual-network/nat-security-baseline.md
+    - name: Базовые показатели безопасности Виртуальной глобальной сети
+      href: ../../virtual-wan/security-baseline.md
     - name: Базовые средства безопасности VPN-шлюза
       href: ../../vpn-gateway/security-baseline.md

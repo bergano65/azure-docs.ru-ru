@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure
 ms.date: 07/17/2020
 ms.author: cynthn
-ms.openlocfilehash: 36ac0058f8f2cf3ca106b30c86207e46d0712193
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dfa0efaa49fbca0b927bfd32511348f3ded7e6c7
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87830552"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302811"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "87830552"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Puppet Enterprise lets you automate the entire lifecycle of your Azure infrastructure](https://azuremarketplace.microsoft.com/marketplace/apps/Puppet.puppet-agent-windows-asm?tab=Overview) (Автоматизация жизненного цикла инфраструктуры Azure с помощью Puppet Enterprise)
+- [Разверните Puppet](https://puppet.com/docs/puppet/5.5/install_windows.html).
 
 
 ## <a name="cloud-init"></a>Cloud-init
@@ -124,7 +124,7 @@ ms.locfileid: "87830552"
 ## <a name="azure-devops-services"></a>Azure DevOps Services
 [Azure DevOps Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки (CI/CD). Azure DevOps Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать код на них.
 
-См. также:
+Дополнительные сведения
 
 - [Azure DevOps Services](/azure/devops/user-guide/index?view=vsts).
 
@@ -147,5 +147,5 @@ ms.locfileid: "87830552"
 - [Скачайте шаблон для виртуальной машины](./windows/download-template.md).
 - [Создайте шаблон Azure Image Builder](./linux/image-builder-json.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](./linux/tutorial-automate-vm-deployment.md) или [Windows](./windows/tutorial-automate-vm-deployment.md).
