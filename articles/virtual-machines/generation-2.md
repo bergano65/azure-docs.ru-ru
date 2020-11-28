@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: jushiman
-ms.openlocfilehash: 0aedcc3be4cb319dc24990507d85756bd77777e4
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 56a360f461c89d7c60e973bf2d6258d63113ab47
+ms.sourcegitcommit: 6b16e7cc62b29968ad9f3a58f1ea5f0baa568f02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94963833"
+ms.lasthandoff: 11/28/2020
+ms.locfileid: "96303769"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин 2-го поколения в Azure
 
@@ -49,6 +49,8 @@ ms.locfileid: "94963833"
 * [Серия NCv3](ncv3-series.md)
 * [серия ND](nd-series.md);
 * [серия NVv3](nvv3-series.md).
+* [Серия NVv4](nvv4-series.md)
+* [Серия NCasT4_v3](nct4-v3-series.md)
 
 <sup>1</sup> Серия Mv2 не поддерживает образы виртуальных машин 1-го поколения и поддерживает только часть образов 2-го поколения. Дополнительные сведения см. в [документации по серии Mv2](mv2-series.md).
 
