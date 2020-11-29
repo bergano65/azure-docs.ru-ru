@@ -12,12 +12,12 @@ ms.date: 11/16/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4426a305d72fdd86ee58b3f4a05153593515d4b5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7c6ba79a82fe3d291008f3317ddce7df4adcda0a
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949655"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309653"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Регистрация приложения SAML в Azure AD B2C
 
@@ -453,7 +453,7 @@ https://tenant-name.b2clogin.com/tenant-name.onmicrosoft.com/policy-name/generic
 |`<Response>` `<Assertion>` `<Subject>` `<NameID>`     |         |Участник, для которого маркер утверждает сведения, например идентификатор объекта пользователя. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Это значение можно использовать для безопасных проверок авторизации, например, когда маркер используется для доступа к ресурсу. По умолчанию утверждение субъекта заполняется идентификатором объекта пользователя в каталоге.|
 |`<Response>` `<Assertion>` `<Subject>` `<NameID>`     | `Format` | Ссылка URI, представляющая классификацию сведений об идентификаторе на основе строк. По умолчанию это свойство опущено. [Субжектнамингинфо](relyingparty.md#subjectnaminginfo) проверяющей стороны можно задать `NameID` Формат, например `urn:oasis:names:tc:SAML:2.0:nameid-format:transient` . |
 |`<Response>` `<Assertion>` `<Subject>` `<Conditions>` |`NotBefore` |Время, когда токен становится действительным. Значение времени кодируется в формате UTC. Приложение должно использовать это утверждение для проверки действительности срока действия маркера. Чтобы изменить параметры времени существования маркера, установите `TokenNotBeforeSkewInSeconds` [метаданные](saml-issuer-technical-profile.md#metadata) технического профиля для выпуска ошибки маркера SAML. |
-|`<Response>` `<Assertion>` `<Subject>` `<Conditions>` | `NotOnOrAfter` | Время, когда маркер станет недействительным. Приложение должно использовать это утверждение для проверки действительности срока действия маркера. Значение составляет 15 минут после `NotBefore` и не может быть изменено.|
+|`<Response>` `<Assertion>` `<Subject>` `<Conditions>` | `NotOnOrAfter` | Время, когда маркер станет недействительным. Приложение должно использовать это утверждение для проверки действительности срока действия маркера. Значение по умолчанию — 5 минут после `NotBefore` и может быть обновлено путем добавления `TokenLifeTimeInSeconds` [метаданных](saml-issuer-technical-profile.md#metadata) технического профиля проблемы с маркером SAML.|
 |`<Response>` `<Assertion>` `<Conditions>` `<AudienceRestriction>` `<Audience>` | |Ссылка URI, которая определяет предполагаемую аудиторию. Он определяет предполагаемого получателя маркера. Значение идентично запросу SAML `AssertionConsumerServiceURL` .|
 |`<Response>``<Assertion>` `<AttributeStatement>` коллекция`<Attribute>` | | Коллекция утверждений (утверждения), настроенная в заявках на вывод [технического профиля проверяющей](relyingparty.md#technicalprofile) стороны. Имя утверждения можно настроить, задав `PartnerClaimType` для выходного утверждения. |
 

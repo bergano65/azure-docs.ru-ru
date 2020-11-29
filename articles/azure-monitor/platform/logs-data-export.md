@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: bd929d06bca370ffab53ce2023188bc12a1d8bd1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d2e93ccfaf3ff2c5b74ceef1f6a274f71ee52c4e
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186445"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309840"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
@@ -58,7 +58,7 @@ Log Analytics экспорт данных рабочей области непр
 ## <a name="data-completeness"></a>Полнота данных
 Экспорт данных продолжит попытки отправки данных в течение 30 минут, когда назначение недоступно. Если он по-прежнему недоступен через 30 минут, данные будут удалены до тех пор, пока назначение не станет доступным.
 
-## <a name="cost"></a>Стоимость
+## <a name="cost"></a>Cost
 В настоящее время дополнительная плата за функцию экспорта данных не взимается. Цены на экспорт данных будут объявлены в будущем и появится уведомление, предоставленное до начала выставления счетов. Если вы решили продолжить использование экспорта данных после периода уведомления, плата будет взиматься по соответствующей ставке.
 
 ## <a name="export-destinations"></a>Экспорт назначений
@@ -117,6 +117,10 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.insights
 ### <a name="create-or-update-data-export-rule"></a>Создать или обновить правило экспорта данных
 Правило экспорта данных определяет экспортируемые данные для набора таблиц в одном месте назначения. Для каждого назначения можно создать правило.
 
+
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -203,6 +207,10 @@ PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 ## <a name="view-data-export-configuration"></a>Просмотр конфигурации экспорта данных
 
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду, чтобы просмотреть конфигурацию правила экспорта данных с помощью интерфейса командной строки.
@@ -221,6 +229,10 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 ---
 
 ## <a name="disable-an-export-rule"></a>Отключение правила экспорта
+
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -256,6 +268,10 @@ Content-type: application/json
 
 ## <a name="delete-an-export-rule"></a>Удаление правила экспорта
 
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду, чтобы удалить правило экспорта данных с помощью интерфейса командной строки.
@@ -274,6 +290,10 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 ---
 
 ## <a name="view-all-data-export-rules-in-a-workspace"></a>Просмотр всех правил экспорта данных в рабочей области
+
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 

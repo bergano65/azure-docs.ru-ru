@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/18/2020
-ms.openlocfilehash: ac785b3ad534e80d4dd240d1a29ba5f6aa75e10a
-ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
+ms.openlocfilehash: 6264ea50f128764a5213a7a1fd9b8c47ddae8961
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96299045"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309687"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -76,7 +76,23 @@ Customer-Managed конфигурация ключа не поддерживае
 
 ### <a name="asynchronous-operations-and-status-check"></a>Асинхронные операции и проверка состояния
 
-Некоторые этапы настройки выполняются асинхронно, так как они не могут быть завершены быстро. При использовании функции остальное ответ сначала возвращает код состояния HTTP 200 (ОК) и заголовок с помощью свойства *Azure-AsyncOperation* , если оно принято:
+Некоторые этапы настройки выполняются асинхронно, так как они не могут быть завершены быстро. `status`В ответе может быть одно из следующих: "выполняется", "обновление", "удаление", "успешно" или "сбой", включая код ошибки.
+
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Недоступно
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Недоступно
+
+# <a name="rest"></a>[REST](#tab/rest)
+
+При использовании функции остальное ответ сначала возвращает код состояния HTTP 200 (ОК) и заголовок с помощью свойства *Azure-AsyncOperation* , если оно принято:
 ```json
 "Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
 ```
@@ -87,7 +103,7 @@ GET https://management.azure.com/subscriptions/subscription-id/providers/microso
 Authorization: Bearer <token>
 ```
 
-`status`В ответе может быть одно из следующих: "выполняется", "обновление", "удаление", "успешно" или "сбой", включая код ошибки.
+---
 
 ### <a name="allowing-subscription"></a>Разрешение подписки
 
@@ -137,16 +153,25 @@ Authorization: Bearer <token>
 
 Операция является асинхронной и может занять некоторое время.
 
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 ```azurecli
 az monitor log-analytics cluster update --name "cluster-name" --resource-group "resource-group-name" --key-name "key-name" --key-vault-uri "key-uri" --key-version "key-version"
 ```
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -ClusterName "cluster-name" -KeyVaultUri "key-uri" -KeyName "key-name" -KeyVersion "key-version"
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 ```rst
-PATCH https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/cluster-name"?api-version=2020-08-01
+PATCH https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/cluster-name?api-version=2020-08-01
 Authorization: Bearer <token> 
 Content-type: application/json
  
@@ -200,6 +225,8 @@ Content-type: application/json
 }
 ```
 
+---
+
 ### <a name="link-workspace-to-cluster"></a>Связывание рабочей области с кластером
 
 Для выполнения этой операции необходимы разрешения "запись" для рабочей области и кластера, в том числе следующие действия:
@@ -250,15 +277,25 @@ Content-type: application/json
 
 Связывание учетной записи хранения для *запроса* к рабочей области — запросы, *сохраненные для поиска* , сохраняются в учетной записи хранения. 
 
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
 az monitor log-analytics workspace linked-storage create --type Query --resource-group "resource-group-name" --workspace-name "workspace-name" --storage-accounts $storageAccountId
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
 ```powershell
 $storageAccount.Id = Get-AzStorageAccount -ResourceGroupName "resource-group-name" -Name "storage-account-name"
 New-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "resource-group-name" -WorkspaceName "workspace-name" -DataSourceType Query -StorageAccountIds $storageAccount.Id
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Query?api-version=2020-08-01
@@ -276,21 +313,33 @@ Content-type: application/json
 }
 ```
 
+---
+
 После настройки любой новый *сохраненный поисковый* запрос будет сохранен в хранилище.
 
 **Настройка BYOS для запросов оповещений журнала**
 
 Свяжите учетную запись хранения с *оповещениями* в рабочей области — запросы на *оповещения журнала* сохраняются в учетной записи хранения. 
 
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
 az monitor log-analytics workspace linked-storage create --type ALerts --resource-group "resource-group-name" --workspace-name "workspace-name" --storage-accounts $storageAccountId
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
 ```powershell
 $storageAccount.Id = Get-AzStorageAccount -ResourceGroupName "resource-group-name" -Name "storage-account-name"
 New-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "resource-group-name" -WorkspaceName "workspace-name" -DataSourceType Alerts -StorageAccountIds $storageAccount.Id
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Alerts?api-version=2020-08-01
@@ -308,9 +357,12 @@ Content-type: application/json
 }
 ```
 
+---
+
 После настройки любой новый запрос на оповещение будет сохранен в хранилище.
 
 ## <a name="customer-lockbox-preview"></a>Защищенное хранилище (Предварительная версия)
+
 Защищенное хранилище предоставляет элементу управления возможность утверждать или отклонять запросы инженера Майкрософт на доступ к данным во время запроса на поддержку.
 
 В Azure Monitor Вы можете управлять данными в рабочих областях, связанных с выделенным кластером Log Analytics. Элемент управления защищенного хранилища применяется к данным, хранящимся в Log Analytics выделенном кластере, где он хранится в учетных записях хранения кластера в защищенной подписке вашего абонента.  
@@ -321,13 +373,23 @@ Content-type: application/json
 
 - **Получение всех кластеров в группе ресурсов**
   
+  # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+  Недоступно
+
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
   ```azurecli
   az monitor log-analytics cluster list --resource-group "resource-group-name"
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Get-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name"
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -369,15 +431,27 @@ Content-type: application/json
   }
   ```
 
+  ---
+
 - **Получение всех кластеров в подписке**
+
+  # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+  Недоступно
+
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster list
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Get-AzOperationalInsightsCluster
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   GET https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -388,17 +462,29 @@ Content-type: application/json
     
   Тот же ответ, что и для "кластера в группе ресурсов", но в области подписки.
 
+  ---
+
 - **Обновление *резервирования емкости* в кластере**
 
   Когда объем данных в связанных рабочих областях изменяется с течением времени и необходимо соответствующим образом обновить уровень резервирования емкости. Выполните [Обновление кластера](#update-cluster-with-key-identifier-details) и укажите новое значение емкости. Это значение может находиться в диапазоне от 1000 до 3000 Гб в день и в шагах 100. Чтобы включить уровень выше 3000 Гб в день, обратитесь к своему контакту Майкрософт. Обратите внимание, что вам не нужно указывать полный текст запроса на оставшуюся часть, но должен быть указан номер SKU:
+
+  # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+  Недоступно
+
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster update --name "cluster-name" --resource-group "resource-group-name" --sku-capacity daily-ingestion-gigabyte
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -ClusterName "cluster-name" -SkuCapacity daily-ingestion-gigabyte
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
@@ -413,6 +499,8 @@ Content-type: application/json
   }
   ```
 
+  ---
+
 - **Обновление *биллингтипе* в кластере**
 
   Свойство *биллингтипе* определяет атрибуты выставления счетов для кластера и его данных:
@@ -420,6 +508,20 @@ Content-type: application/json
   - *рабочие области* — выставление счетов относится к подпискам, в которых пропорционально размещаются ваши рабочие области.
   
   Выполните [Обновление кластера](#update-cluster-with-key-identifier-details) и укажите новое значение биллингтипе. Обратите внимание, что вы не обязаны предоставлять полный текст REST-запроса и должны включить в него *billingType*:
+
+  # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+  Недоступно
+
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+  Недоступно
+
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+  Недоступно
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
@@ -433,36 +535,67 @@ Content-type: application/json
   }
   ``` 
 
+  ---
+
 - **Удаление связи с рабочей областью**
 
   Для выполнения этой операции требуются разрешения на запись в рабочую область и кластер. Удалить связь рабочей области из кластера можно в любое время. Новые полученные данные после операции unlink сохраняются в хранилище Log Analytics и шифруются с помощью ключа Microsoft Key. Вы можете запросить данные, которые были переданы в рабочую область, до и после нелегкого разрыва связи при условии, что кластер подготовлен и настроен с допустимым ключом Key Vault.
 
   Эта операция является асинхронной, и ее выполнение может быть завершено.
 
+  # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+  Недоступно
+
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
   ```azurecli
   az monitor log-analytics workspace linked-service delete --resource-group "resource-group-name" --name "cluster-name" --workspace-name "workspace-name"
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Remove-AzOperationalInsightsLinkedService -ResourceGroupName "resource-group-name" -Name "workspace-name" -LinkedServiceName cluster
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rest
   DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>/linkedservices/cluster?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
 
+  ---
+
   - **Проверить состояние ссылки на рабочую область**
   
   Выполните операцию Get в рабочей области и проверьте, есть ли в ответе свойство *клустерресаурцеид* в разделе *Features*. Связанная Рабочая область будет иметь свойство *клустерресаурцеид* .
+
+  # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+  Недоступно
+
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster show --resource-group "resource-group-name" --name "cluster-name"
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Get-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name"
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
+
+   ```rest
+  GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>?api-version=2020-08-01
+  Authorization: Bearer <token>
+  ```
+
+  ---
 
 - **Удаление кластера**
 
@@ -470,18 +603,30 @@ Content-type: application/json
   
   Операция unlink является асинхронной и может занять до 90 минут.
 
+  # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+  Недоступно
+
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
   ```azurecli
   az monitor log-analytics cluster delete --resource-group "resource-group-name" --name "cluster-name"
   ```
- 
+
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Remove-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -ClusterName "cluster-name"
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   DELETE https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
+
+  ---
   
 - **Восстановление кластера и данных** 
   

@@ -3,37 +3,69 @@ title: Обновление образов узлов Azure Kubernetes Service (
 description: Узнайте, как обновить образы на узлах кластера AKS и пулах узлов.
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 11/17/2020
-ms.openlocfilehash: 211190228c1ea9c98004b55da96ad38808821d67
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.date: 11/25/2020
+ms.author: jpalma
+ms.openlocfilehash: e8214345bd1c328f0996f8aa8a2a8bb402a76e8d
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682389"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309602"
 ---
 # <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>Обновление образа узла службы Azure Kubernetes Service (AKS)
 
-AKS поддерживает обновление образов на узле, так что вы будете в курсе последних обновлений операционной системы и среды выполнения. AKS предоставляет один новый образ в неделю с последними обновлениями, поэтому рекомендуется регулярно обновлять образы узла для получения последних компонентов, включая обновления Linux или Windows. В этой статье показано, как обновить образы узлов кластера AKS, а также как обновить образы пула узлов без обновления версии Kubernetes.
+AKS поддерживает обновление образов на узле, так что вы будете в курсе последних обновлений операционной системы и среды выполнения. AKS предоставляет один новый образ в неделю с последними обновлениями, поэтому рекомендуется регулярно обновлять образы узла для получения последних компонентов, включая обновления Linux или Windows. В этой статье показано, как обновить образы узлов кластера AKS и как обновить образы пула узлов без обновления версии Kubernetes.
 
-Если вы заинтересованы в изучении последних образов, предоставляемых AKS, см. Дополнительные сведения в [заметках о выпуске AKS](https://github.com/Azure/AKS/releases) .
+Дополнительные сведения о последних образах, предоставляемых AKS, см. в [заметках о выпуске AKS](https://github.com/Azure/AKS/releases).
 
 Сведения об обновлении версии Kubernetes для кластера см. в статье [Обновление кластера AKS][upgrade-cluster].
 
-## <a name="limitations"></a>Ограничения
+> [!NOTE]
+> Кластер AKS должен использовать масштабируемые наборы виртуальных машин для узлов.
 
-* Кластер AKS должен использовать масштабируемые наборы виртуальных машин для узлов.
+## <a name="check-if-your-node-pool-is-on-the-latest-node-image"></a>Проверьте, находится ли пул узлов на последнем образе узла
 
-## <a name="install-the-aks-cli-extension"></a>Установка расширения CLI AKS
-
-Перед выпуском следующей основной версии интерфейса командной строки требуется расширение CLI *AKS-Preview* , чтобы использовать обновление образа узла. Используйте команду [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
+Чтобы увидеть последнюю версию образа узла, доступную для пула узлов, выполните следующую команду: 
 
 ```azurecli
-# Install the aks-preview extension
-az extension add --name aks-preview
-
-# Update the extension to make sure you have the latest version installed
-az extension update --name aks-preview
+az aks nodepool get-upgrades \
+    --nodepool-name mynodepool \
+    --cluster-name myAKSCluster \
+    --resource-group myResourceGroup
 ```
+
+В выходных данных можно увидеть, как показано в `latestNodeImageVersion` следующем примере:
+
+```output
+{
+  "id": "/subscriptions/XXXX-XXX-XXX-XXX-XXXXX/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster/agentPools/nodepool1/upgradeProfiles/default",
+  "kubernetesVersion": "1.17.11",
+  "latestNodeImageVersion": "AKSUbuntu-1604-2020.10.28",
+  "name": "default",
+  "osType": "Linux",
+  "resourceGroup": "myResourceGroup",
+  "type": "Microsoft.ContainerService/managedClusters/agentPools/upgradeProfiles",
+  "upgrades": null
+}
+```
+
+Итак `nodepool1` , для последнего доступного образа узла это `AKSUbuntu-1604-2020.10.28` . Теперь его можно сравнить с текущей версией образа узла, используемой пулом узлов, выполнив:
+
+```azurecli
+az aks nodepool show \
+    --resource-group myResourceGroup \
+    --cluster-name myAKSCluster \
+    --name mynodepool \
+    --query nodeImageVersion
+```
+
+Пример выходных данных:
+
+```output
+"AKSUbuntu-1604-2020.10.08"
+```
+
+Поэтому в этом примере можно обновить текущую `AKSUbuntu-1604-2020.10.08` версию образа до последней версии `AKSUbuntu-1604-2020.10.28` . 
 
 ## <a name="upgrade-all-nodes-in-all-node-pools"></a>Обновление всех узлов во всех пулах узлов
 
