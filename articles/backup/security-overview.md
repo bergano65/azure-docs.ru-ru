@@ -3,12 +3,12 @@ title: Обзор средств безопасности
 description: Узнайте о средствах безопасности в Azure Backup, которые помогут защитить данные резервных копий и соблюсти корпоративные требования к безопасности.
 ms.topic: conceptual
 ms.date: 03/12/2020
-ms.openlocfilehash: 8c4d3af9205df43c3596da64d7fcad2a9eb82500
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 9aa1909f1590b477d9a7f7a09ad0c2b1936e3e29
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093350"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325661"
 ---
 # <a name="overview-of-security-features-in-azure-backup"></a>Общие сведения о средствах безопасности в Azure Backup
 
@@ -26,7 +26,7 @@ Azure Backup предоставляет три [встроенные роли](.
 
 Дополнительные сведения об управлении [доступом на основе ролей в Azure для управления Azure Backup](./backup-rbac-rs-vault.md).
 
-Azure Backup предоставляет несколько встроенных средств управления безопасностью, которые позволяют предотвращать и обнаруживать уязвимости системы безопасности, а также реагировать на них. См. сведения об [элементах управления безопасностью для Azure Backup](./backup-security-controls.md).
+Azure Backup предоставляет несколько встроенных средств управления безопасностью, которые позволяют предотвращать и обнаруживать уязвимости системы безопасности, а также реагировать на них. См. сведения об [элементах управления безопасностью для Azure Backup](./security-baseline.md).
 
 ## <a name="separation-between-guest-and-azure-storage"></a>Разделение между гостевой ОС и хранилищем Azure
 

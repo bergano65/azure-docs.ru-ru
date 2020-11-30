@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 8881dc3f67ac1c9f699bd2bf7bcf1dbbcd5e9c0c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 40572d50f7653539758ff892019e7e65b0ffa6dd
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95905333"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324896"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и Azure CLI: включение прозрачное шифрование данных с управляемым клиентом ключом из Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "95905333"
 
 Инструкции по установке модуля Az см. в статье об [установке Azure PowerShell](/powershell/azure/install-az-ps). Конкретные командлеты см. в разделе [AzureRM. SQL](/powershell/module/AzureRM.Sql/).
 
-Дополнительные сведения о Key Vault см. в [инструкциях по PowerShell из Key Vault](../../key-vault/secrets/quick-create-powershell.md) и [об использовании Key Vault обратимого удаления с помощью PowerShell](../../key-vault/general/soft-delete-powershell.md).
+Дополнительные сведения о Key Vault см. в [инструкциях по PowerShell из Key Vault](../../key-vault/secrets/quick-create-powershell.md) и [об использовании Key Vault обратимого удаления с помощью PowerShell](../../key-vault/general/key-vault-recovery.md).
 
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается, но вся будущая разработка сосредоточена на модуле Az.Sql. Исправления ошибок для модуля AzureRM будут продолжать выпускаться как минимум до декабря 2020 г.  Аргументы команд в модулях Az и AzureRm практически идентичны. Дополнительные сведения о совместимости см. в статье [Знакомство с новым модулем Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
@@ -136,7 +136,7 @@ Get-AzSqlDatabaseTransparentDataEncryptionActivity -ResourceGroupName <SQLDataba
 
 Чтобы установить требуемую версию Azure CLI (версии 2,0 или более поздней) и подключиться к подписке Azure, см. статью [Установка и настройка Межплатформенного Command-Lineного интерфейса azure 2,0](/cli/azure/install-azure-cli).
 
-Дополнительные сведения о Key Vault см. в статьях [управление Key Vault с помощью интерфейса командной строки 2,0](../../key-vault/general/manage-with-cli2.md) и [Использование Key Vault обратимого удаления с помощью интерфейса командной строки](../../key-vault/general/soft-delete-cli.md).
+Дополнительные сведения о Key Vault см. в статьях [управление Key Vault с помощью интерфейса командной строки 2,0](../../key-vault/general/manage-with-cli2.md) и [Использование Key Vault обратимого удаления с помощью интерфейса командной строки](../../key-vault/general/key-vault-recovery.md).
 
 ## <a name="assign-an-azure-ad-identity-to-your-server"></a>Назначение серверу удостоверения Azure AD
 

@@ -12,12 +12,12 @@ ms.author: garye
 ms.reviewer: sstein, davidph
 manager: cgronlun
 ms.date: 10/26/2020
-ms.openlocfilehash: adf454ac697f8cabf4256ebfc5baa5d0d1c76264
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c806c0a13f9f5f13588b780054d1f285beb44802
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782473"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324539"
 ---
 # <a name="key-differences-between-machine-learning-services-in-azure-sql-managed-instance-and-sql-server"></a>Основные различия между Службами машинного обучения в Управляемом экземпляре SQL Azure и SQL Server
 
@@ -50,12 +50,12 @@ ms.locfileid: "92782473"
 
 - Нет необходимости настраивать `external scripts enabled` через `sp_configure`. После [регистрации](machine-learning-services-overview.md#signup) в предварительной версии машинное обучение включено для управляемый экземпляр Azure SQL.
 
-## <a name="packages"></a>пакеты,
+## <a name="packages"></a>Пакеты
 
 Управление пакетами Python и R работает по-разному между SQL Управляемый экземпляр и SQL Server. в частности:
 
 - Пакеты, которые зависят от внешних сред выполнения (например, Java) или которым требуется доступ к API операционной системы для установки или использования, не поддерживаются.
-- Пакеты могут выполнять исходящие сетевые вызовы (от предыдущего в предварительной версии). Вы можете задать правильные правила безопасности для исходящего трафика на уровне [группы безопасности сети](/azure/virtual-network/network-security-groups-overview) , чтобы включить исходящие сетевые вызовы.
+- Пакеты могут выполнять исходящие сетевые вызовы (от предыдущего в предварительной версии). Вы можете задать правильные правила безопасности для исходящего трафика на уровне [группы безопасности сети](../../virtual-network/network-security-groups-overview.md) , чтобы включить исходящие сетевые вызовы.
 
 Дополнительные сведения об управлении пакетами Python и R см. в следующих статьях:
 

@@ -5,12 +5,12 @@ ms.assetid: 96cf87b9-8db6-41a8-863a-abb828e3d06d
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: 8a6f154dc3c7a2984c687d55af2cf51a60169d6b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 746ec7aa3ee41204e051e843ff94ed0771a9d244
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182569"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326188"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Создание первой функции на портале Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "96182569"
 
 | Visual Studio Code | Терминал/Командная строка | Visual Studio |
 | --- | --- | --- |
-|  &bull;&nbsp;[Начало работы с C #](./create-first-function-vs-code-csharp.md?pivots=programming-language-csharp)<br/>&bull;&nbsp;[Начало работы с Java](./create-first-function-vs-code-csharp.md?pivots=programming-language-java)<br/>&bull;&nbsp;[Приступая к работе с JavaScript](./create-first-function-vs-code-csharp.md?pivots=programming-language-javascript)<br/>&bull;&nbsp;[Начало работы с PowerShell](./create-first-function-vs-code-csharp.md?pivots=programming-language-powershell)<br/>&bull;&nbsp;[Начало работы с Python](./create-first-function-vs-code-csharp.md?pivots=programming-language-python) |&bull;&nbsp;[Начало работы с C #](./create-first-function-cli-csharp.md?pivots=programming-language-csharp)<br/>&bull;&nbsp;[Начало работы с Java](./create-first-function-cli-csharp.md?pivots=programming-language-java)<br/>&bull;&nbsp;[Приступая к работе с JavaScript](./create-first-function-cli-csharp.md?pivots=programming-language-javascript)<br/>&bull;&nbsp;[Начало работы с PowerShell](./create-first-function-cli-csharp.md?pivots=programming-language-powershell)<br/>&bull;&nbsp;[Начало работы с Python](./create-first-function-cli-csharp.md?pivots=programming-language-python) | [Приступая к работе с C#](functions-create-your-first-function-visual-studio.md) |
+|  &bull;&nbsp;[Начало работы с C #](./create-first-function-vs-code-csharp.md)<br/>&bull;&nbsp;[Начало работы с Java](./create-first-function-vs-code-java.md)<br/>&bull;&nbsp;[Приступая к работе с JavaScript](./create-first-function-vs-code-node.md)<br/>&bull;&nbsp;[Начало работы с PowerShell](./create-first-function-vs-code-powershell.md)<br/>&bull;&nbsp;[Начало работы с Python](./create-first-function-vs-code-python.md) |&bull;&nbsp;[Начало работы с C #](./create-first-function-cli-csharp.md)<br/>&bull;&nbsp;[Начало работы с Java](./create-first-function-cli-java.md)<br/>&bull;&nbsp;[Приступая к работе с JavaScript](./create-first-function-cli-node.md)<br/>&bull;&nbsp;[Начало работы с PowerShell](./create-first-function-cli-powershell.md)<br/>&bull;&nbsp;[Начало работы с Python](./create-first-function-cli-python.md) | [Приступая к работе с C#](functions-create-your-first-function-visual-studio.md) |
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 

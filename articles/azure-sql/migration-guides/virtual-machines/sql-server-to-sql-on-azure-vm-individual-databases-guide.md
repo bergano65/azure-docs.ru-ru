@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 1558c396566b2fcfc098a749407d5e7a28316b6f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 3b0fdccd3eaf6e6bd94b595107022f738bdd8382
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019455"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325929"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Руководство по миграции: SQL Server для SQL Server на виртуальных машинах Azure 
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -38,8 +38,8 @@ ms.locfileid: "95019455"
 Миграция на SQL Server на виртуальных машинах Azure требует следующих действий. 
 
 - [Помощник по миграции базы данных (DMA)](https://www.microsoft.com/download/details.aspx?id=53595).
-- Проект службы " [Миграция Azure](/azure/migrate/create-manage-projects)".
-- Подготовленная Целевая [SQL Server на виртуальной машине Azure](/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal) , которая имеет ту же или более позднюю версию, что и исходная SQL Server.
+- Проект службы " [Миграция Azure](../../../migrate/create-manage-projects.md)".
+- Подготовленная Целевая [SQL Server на виртуальной машине Azure](../../virtual-machines/windows/create-sql-vm-portal.md) , которая имеет ту же или более позднюю версию, что и исходная SQL Server.
 - [Подключение между Azure и локальной](/azure/architecture/reference-architectures/hybrid-networking)средой.
 - [Выбор соответствующей стратегии миграции](sql-server-to-sql-on-azure-vm-migration-overview.md#migrate).
 
@@ -157,8 +157,8 @@ ms.locfileid: "95019455"
 || Пользовательские базы данных с FILESTREAM |  Используйте методы [резервного копирования и восстановления](../../virtual-machines/windows/migrate-to-vm-from-sql-server.md#back-up-and-restore) для миграции. DMA не поддерживает базы данных с FILESTREAM. |
 | **Безопасность** | Имена входа SQL Server и Windows | Используйте DMA для [переноса имен входа пользователей](/sql/dma/dma-migrateserverlogins). |
 || Роли SQL Server | Скрипт с SQL Server Management Studio |
-|| Поставщики служб шифрования | Рекомендуемое [преобразование для использования службы Azure Key Vault](../../virtual-machines/windows/azure-key-vault-integration-configure.md). В этой процедуре используется [поставщик ресурсов виртуальной машины SQL](../../virtual-machines/windows/sql-vm-resource-provider-register.md). |
-| **Объекты сервера** | Устройства резервного копирования | Замените на резервную копию базы данных с помощью [службы Azure Backup](../../../backup/backup-sql-server-database-azure-vms.md) или создайте резервные копии в службе [хранилища Azure](../../virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md) (SQL Server 2012 SP1 CU2 +). В этой процедуре используется [поставщик ресурсов виртуальной машины SQL](../../virtual-machines/windows/sql-vm-resource-provider-register.md).|
+|| Поставщики служб шифрования | Рекомендуемое [преобразование для использования службы Azure Key Vault](../../virtual-machines/windows/azure-key-vault-integration-configure.md). В этой процедуре используется [поставщик ресурсов виртуальной машины SQL](../../virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md). |
+| **Объекты сервера** | Устройства резервного копирования | Замените на резервную копию базы данных с помощью [службы Azure Backup](../../../backup/backup-sql-server-database-azure-vms.md) или создайте резервные копии в службе [хранилища Azure](../../virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md) (SQL Server 2012 SP1 CU2 +). В этой процедуре используется [поставщик ресурсов виртуальной машины SQL](../../virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md).|
 || Связанные серверы | Скрипт с SQL Server Management Studio. |
 || Триггеры сервера | Скрипт с SQL Server Management Studio. |
 | **Репликация** | Локальные публикации | Скрипт с SQL Server Management Studio. |

@@ -4,18 +4,18 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: e6e14209a8df7160d103cb036d38c9fee29b34dd
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 0f4f990654cc23fde7cf1ad2e37ba1ada76d94e3
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296069"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324794"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure со службой [Azure Backup](./backup-overview.md) .
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>Резервное копирование
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных машин можно включить для резервного копирования при их создании?
 
@@ -83,7 +83,7 @@ Azure Backup создает отдельную группу ресурсов в 
 
 ### <a name="does-azure-backup-support-standard-ssd-managed-disks"></a>Поддерживает ли Azure Backup стандартные диски, управляемые SSD?
 
-Да, Azure Backup поддерживает [стандартные управляемые диски SSD](https://docs.microsoft.com/azure/virtual-machines/disks-types#standard-ssd).
+Да, Azure Backup поддерживает [стандартные управляемые диски SSD](../virtual-machines/disks-types.md#standard-ssd).
 
 ### <a name="can-we-back-up-a-vm-with-a-write-accelerator-wa-enabled-disk"></a>Можно ли создавать резервную копию виртуальной машины с диском с поддержкой ускорителя записи?
 

@@ -10,16 +10,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 05/14/2018
+ms.date: 11/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5f8b87684847089a05341a5a68f6ad3e2ac86b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c29087ee1f74e2abed8c9fb2449a222469c82848
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85355868"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325133"
 ---
 # <a name="troubleshoot-sql-connectivity-issues-with-azure-ad-connect"></a>Устранение неполадок подключения SQL в Azure AD Connect
 В этой статье рассказывается, как устранять неполадки подключения между Azure AD Connect и SQL Server. 
@@ -29,10 +29,12 @@ ms.locfileid: "85355868"
 ![Ошибка SQL](./media/tshoot-connect-tshoot-sql-connectivity/sql1.png)
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
-Откройте окно PowerShell и импортируйте модуль Powershell ADSyncTools.
+Откройте окно PowerShell и импортируйте модуль PowerShell Адсинктулс.
 
 ``` powershell
-Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools.psm1" 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Install-PackageProvider -Name NuGet -MinimumVersion2.8.5.201 -Force
+Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
 ```
 
 >[!NOTE]
@@ -43,10 +45,10 @@ Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\A
 - **Выполните функцию PowerShell**: `Connect-ADSyncDatabase` со следующими параметрами
     - Сервер. Имя сервера SQL Server.
     - Экземпляр. (Необязательно.) Имя экземпляра SQL Server и, при необходимости, номер порта, которые вы хотите использовать. Не указывайте этот параметр, чтобы использовать экземпляр по умолчанию.
-    - Имя пользователя. (Необязательно.) Учетная запись пользователя для подключения. Если оставить поле пустым, будет использоваться текущий пользователь, выполнивший вход. В случае подключения к удаленному серверу SQL Server это должна быть настраиваемая учетная запись службы, которую вы создали для подключения Azure AD Connect к SQL. Azure AD Connect использует учетную запись службы синхронизации Azure AD Connect для аутентификации на удаленном сервере SQL Server.
+    - Имя пользователя. (Необязательно.) Учетная запись пользователя для подключения. Если оставить поле пустым, будет использоваться текущий пользователь, выполнивший вход. При подключении к удаленному SQL Server это должна быть Настраиваемая учетная запись службы, созданная для Azure AD Connectного подключения к SQL. Azure AD Connect использует учетную запись службы синхронизации Azure AD Connect для аутентификации на удаленном сервере SQL Server.
     - Пароль. (Необязательно.) Пароль для указанного имени пользователя.
 
-Эта функция PowerShell попытается выполнить привязку к указанному серверу SQL Server и экземпляру, используя переданные учетные данные ИЛИ учетные данные текущего пользователя. Если сервер SQL Server не удастся найти, сценарий попытается подключиться к службе обозревателя SQL, чтобы определить включенные протоколы и порты.
+Эта функция PowerShell попытается выполнить привязку к указанному SQL Server и экземпляру, используя учетные данные, переданные в, или использовать учетные данные текущего пользователя. Если сервер SQL Server не удастся найти, сценарий попытается подключиться к службе обозревателя SQL, чтобы определить включенные протоколы и порты.
 
 Пример с использованием только имени сервера.
 ```

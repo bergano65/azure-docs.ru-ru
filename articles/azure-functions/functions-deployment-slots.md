@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.openlocfilehash: 0361ba7bc67948c25b842a3fb7406d2999fdd725
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87d7d4676c604ca7219b7580eb3ce585282a7f11
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91530618"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327246"
 ---
 # <a name="azure-functions-deployment-slots"></a>Слоты развертывания функций Azure
 
@@ -29,8 +29,8 @@ ms.locfileid: "91530618"
 Использование слотов развертывания имеет ряд преимуществ. В следующих сценариях описываются распространенные способы использования слотов.
 
 - **Разные среды для разных целей**. Использование разных слотов позволяет различать экземпляры приложений перед переключением на рабочую или промежуточный слот.
-- Предварительная **Подготовка: развертывание**в слот, а не непосредственно в рабочую среду, позволяет подготовить приложение перед началом работы. Кроме того, использование слотов сокращает задержку для рабочих нагрузок, активируемых HTTP. Экземпляры загружаются перед развертыванием, что сокращает холодный запуск для вновь развернутых функций.
-- **Простые резервные**варианты. После переключения в рабочее состояние слот с ранее подготовленным приложением теперь имеет предыдущее рабочее приложение. Если изменения, переставляемые в рабочий слот, не так, как вы планируете, можно немедленно отменить переключение, чтобы получить «последний удачный экземпляр» назад.
+- Предварительная **Подготовка: развертывание** в слот, а не непосредственно в рабочую среду, позволяет подготовить приложение перед началом работы. Кроме того, использование слотов сокращает задержку для рабочих нагрузок, активируемых HTTP. Экземпляры загружаются перед развертыванием, что сокращает холодный запуск для вновь развернутых функций.
+- **Простые резервные** варианты. После переключения в рабочее состояние слот с ранее подготовленным приложением теперь имеет предыдущее рабочее приложение. Если изменения, переставляемые в рабочий слот, не так, как вы планируете, можно немедленно отменить переключение, чтобы получить «последний удачный экземпляр» назад.
 
 ## <a name="swap-operations"></a>Операции переключения
 
@@ -57,7 +57,38 @@ ms.locfileid: "91530618"
 
 ## <a name="manage-settings"></a>Управление параметрами
 
-[!INCLUDE [app-service-deployment-slots-settings](../../includes/app-service-deployment-slots-settings.md)]
+Некоторые параметры конфигурации зависят от гнезда. Ниже перечислены параметры, которые изменяются при переключении слотов и остаются неизменными.
+
+**Параметры для каждого слота**:
+
+* Конечные точки публикации
+* Имена личных доменов
+* Не являющиеся общедоступными сертификаты и параметры TLS/SSL
+* Настройки масштабирования
+* Планировщики веб-заданий
+* Ограничения IP-адресов
+* Всегда включено
+* Параметры диагностики
+* Общий доступ к ресурсам независимо от источника (CORS)
+
+**Параметры, не относящиеся к слоту**:
+
+* Общие параметры, такие как версия платформы, 32/64-разрядная, веб-сокеты
+* Параметры приложения (их также можно привязать к слоту)
+* Строки подключения (их также можно привязать к слоту)
+* Сопоставления обработчиков
+* Открытые сертификаты
+* Содержимое веб-заданий
+* Гибридные подключения *
+* Интеграция виртуальной сети *
+* Конечные точки службы *
+* Сеть доставки содержимого Azure *
+
+Функции, отмеченные звездочкой (*), планируется отменять. 
+
+> [!NOTE]
+> Некоторые параметры приложения, применяемые к неизменяемым параметрам, также не меняются местами. Например, поскольку параметры диагностики не меняются, связанные параметры приложения, такие как `WEBSITE_HTTPLOGGING_RETENTION_DAYS` и, `DIAGNOSTICS_AZUREBLOBRETENTIONDAYS` также не меняются, даже если они не отображаются как параметры слота.
+>
 
 ### <a name="create-a-deployment-setting"></a>Создание параметра развертывания
 
@@ -73,15 +104,15 @@ ms.locfileid: "91530618"
 
 1. Выберите **Конфигурация**, а затем выберите имя параметра, которое нужно прикрепить к текущему слоту.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Настройте параметр приложения для слота в портал Azure." border="true":::
 
-1. Выберите **параметр слот развертывания**и нажмите кнопку **ОК**.
+1. Выберите **параметр слот развертывания** и нажмите кнопку **ОК**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Настройте параметр слота развертывания." border="true":::
 
 1. После того, как раздел настройки исчезнет, нажмите кнопку **сохранить** , чтобы сохранить изменения.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Сохраните параметр слота развертывания." border="true":::
 
 ## <a name="deployment"></a>Развертывание
 
@@ -100,13 +131,13 @@ ms.locfileid: "91530618"
 
 1. Перейдите к приложению функции.
 
-1. Выберите **слоты развертывания**и щелкните **+ Добавить слот**.
+1. Выберите **слоты развертывания** и щелкните **+ Добавить слот**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Добавление слота развертывания функций Azure." border="true":::
 
 1. Введите имя слота и нажмите кнопку **Добавить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Назовите слот развертывания функций Azure." border="true":::
 
 ## <a name="swap-slots"></a>Поменять местами слоты
 
@@ -115,11 +146,11 @@ ms.locfileid: "91530618"
 1. Перейдите к приложению-функции.
 1. Выберите **слоты развертывания**, а затем щелкните **заменить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Снимок экрана, на котором показана страница &quot;слот развертывания&quot; с выбранным действием &quot;добавить слот&quot;." border="true":::
 
 1. Проверьте параметры конфигурации для переключения и выберите **Переключение** .
     
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="Переключить слот развертывания." border="true":::
 
 Операция может занять некоторое время, пока выполняется операция переключения.
 
@@ -135,17 +166,17 @@ ms.locfileid: "91530618"
 
     :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
-1. Выберите команду **Удалить**.
+1. Выберите **Удалить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Снимок экрана, на котором показана страница &quot;Обзор&quot; с выбранным действием &quot;Удалить&quot;." border="true":::
 
 1. Введите имя слота развертывания, который необходимо удалить, и нажмите кнопку **Удалить**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Удалите слот развертывания в портал Azure." border="true":::
 
 1. Закройте панель подтверждение удаления.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Подтверждение удаления слота развертывания." border="true":::
 
 ## <a name="automate-slot-management"></a>Автоматизация управления слотами
 
@@ -170,11 +201,11 @@ ms.locfileid: "91530618"
 
     :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
-1. В разделе **план службы приложений**выберите **изменить план службы приложений**.
+1. В разделе **план службы приложений** выберите **изменить план службы приложений**.
 
 1. Выберите план, до которого требуется выполнить обновление, или создайте новый план.
 
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Поиск слотов в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Измените план службы приложений в портал Azure." border="true":::
 
 1. Щелкните **ОК**.
 
@@ -202,6 +233,6 @@ ms.locfileid: "91530618"
 | Linux Premium             | Общедоступная версия  |
 | Выделенные Linux           | Общедоступная версия |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Технологии развертывания в функциях Azure](./functions-deployment-technologies.md)

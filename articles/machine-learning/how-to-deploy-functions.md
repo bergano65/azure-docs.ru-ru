@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 03/06/2020
 ms.topic: conceptual
 ms.custom: how-to, racking-python, devx-track-azurecli
-ms.openlocfilehash: d17967c24fbbb127c1d3eaee5acd5b78c3e3b902
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 901e4d458cc2d77d4e7f13c1782b86c8532ca499
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630351"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327174"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
 
@@ -58,7 +58,7 @@ ms.locfileid: "94630351"
 
 Дополнительные сведения о скрипте входа см. в разделе [Определение кода оценки](./how-to-deploy-and-where.md#define-an-entry-script) .
 
-* **Зависимости** , такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
+* **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
 
 Эти сущности инкапсулированы в __конфигурацию вывода__. В конфигурации зависимостей указываются скрипт входа и другие зависимости.
 
@@ -277,7 +277,7 @@ print(blob.location)
     }
     ```
 
-3. Чтобы просмотреть выходные данные, созданные функцией, используйте следующую команду, чтобы получить список выходных файлов. Замените на `<triggerConnectionString>` строку подключения, возвращенную ранее. В этом примере `output` — это имя выходного контейнера, созданного ранее. Если вы использовали другое имя, замените это значение::
+3. Чтобы просмотреть выходные данные, созданные функцией, используйте следующую команду, чтобы получить список выходных файлов. Замените на `<triggerConnectionString>` строку подключения, возвращенную ранее. В этом примере `output` — это имя выходного контейнера, созданного ранее. Если вы использовали другое имя, замените это значение:
 
     ```azurecli-interactive
     az storage blob list --container-name output --connection-string <triggerConnectionString> --query '[].name' --output tsv

@@ -4,12 +4,12 @@ description: В этой статье описывается, как устра�
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
-ms.openlocfilehash: 343ad80a6b68de352424fa8f16686fcece921954
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: cb25d9263648fbd92bc075751c1a8e627d03bd44
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840922"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325219"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Устранение ошибок резервного копирования на виртуальных машинах Azure
 
@@ -246,7 +246,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 
 **Шаг 2**. Попробуйте изменить расписание архивации на время, когда виртуальная машина меньше нагрузки (например, меньше ЦП или операций ввода-вывода в секунду).
 
-**Шаг 3**. Попробуйте [увеличить размер виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/resize-vm) и повторите операцию
+**Шаг 3**. Попробуйте [увеличить размер виртуальной машины](../virtual-machines/windows/resize-vm.md) и повторите операцию
 
 ### <a name="320001-resourcenotfound---could-not-perform-the-operation-as-vm-no-longer-exists--400094-bcmv2vmnotfound---the-virtual-machine-doesnt-exist--an-azure-virtual-machine-wasnt-found"></a>320001, ResourceNotFound — не удалось выполнить операцию, так как виртуальная машина больше не существует или 400094, BCMV2VMNotFound — виртуальная машина не существует или виртуальная машина Azure не найдена.
 

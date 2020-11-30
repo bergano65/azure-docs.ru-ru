@@ -11,12 +11,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: be063105db2384f566e7c94d9f2e7a2bd808b15f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c394fe2aa7639d32e5d79bcb22a01151f7666f5b
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790140"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324624"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Обзор SQL Server на виртуальных машинах Azure (Linux)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -75,7 +75,7 @@ SQL Server в Виртуальных машинах Azure позволяет и�
 
 * [Обзор виртуальной сети](../../../virtual-network/virtual-networks-overview.md)
 * [IP-адреса в Azure](../../../virtual-network/public-ip-addresses.md)
-* [Создание полного доменного имени на портале Azure](../../../virtual-machines/windows/portal-create-fqdn.md)
+* [Создание полного доменного имени на портале Azure](../../../virtual-machines/create-fqdn.md)
 
 ### <a name="sql"></a>SQL
 

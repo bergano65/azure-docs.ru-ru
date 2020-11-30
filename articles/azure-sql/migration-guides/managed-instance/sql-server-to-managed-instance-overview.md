@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 2c143c299cec1d48dd5438d5350c818d5cc93800
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2241049e5c3cb5039a73c0f7637f7e3553d2e227
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023724"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326885"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Общие сведения о миграции: SQL Server в SQL Управляемый экземпляр
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "95023724"
 
 Другие сценарии см. в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/). 
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 [Управляемый экземпляр Azure SQL](../../managed-instance/sql-managed-instance-paas-overview.md) является рекомендуемым вариантом для рабочих нагрузок SQL Server, которым требуется полностью управляемая служба без необходимости управлять виртуальными машинами или их операционными системами. SQL Управляемый экземпляр позволяет преносить локальные приложения в Azure с минимальными изменениями приложений или баз данных, при этом обеспечивая полную изоляцию экземпляров с помощью встроенной поддержки виртуальной сети (VNet). 
 
@@ -63,7 +63,7 @@ ms.locfileid: "95023724"
 Вы можете выбрать ресурсы для вычислений и хранения во время развертывания, а затем изменить их после использования [портал Azure](../../database/scale-resources.md) без простоя приложения. 
 
 > [!IMPORTANT]
-> Любое расхождение в [требованиях к виртуальной сети для управляемого экземпляра](/azure/azure-sql/managed-instance/connectivity-architecture-overview#network-requirements) может препятствовать созданию новых экземпляров или использованию существующих. Узнайте больше о [создании новых](/azure/azure-sql/managed-instance/virtual-network-subnet-create-arm-template?branch=release-ignite-arc-data)   и [настройке существующих](/azure/azure-sql/managed-instance/vnet-existing-add-subnet?branch=release-ignite-arc-data)   сетей. 
+> Любое расхождение в [требованиях к виртуальной сети для управляемого экземпляра](../../managed-instance/connectivity-architecture-overview.md#network-requirements) может препятствовать созданию новых экземпляров или использованию существующих. Узнайте больше о [создании новых](../../managed-instance/virtual-network-subnet-create-arm-template.md?branch=release-ignite-arc-data)   и [настройке существующих](../../managed-instance/vnet-existing-add-subnet.md?branch=release-ignite-arc-data)   сетей. 
 
 ### <a name="sql-server-vm-alternative"></a>Альтернативная SQL Server ВМ
 
@@ -88,7 +88,7 @@ ms.locfileid: "95023724"
 
 |Технология | Описание|
 |---------|---------|
-|[Azure Database Migration Service (DMA)](/azure/dms/tutorial-sql-server-to-managed-instance)  | Служба первой стороны Azure, которая поддерживает миграцию в автономном режиме для приложений, которые могут обеспечить простой в процессе миграции. В отличие от непрерывной миграции в режиме «в сети», миграция в автономном режиме выполняется однократным восстановлением полной резервной копии базы данных из источника в целевой объект. | 
+|[Azure Database Migration Service (DMA)](../../../dms/tutorial-sql-server-to-managed-instance.md)  | Служба первой стороны Azure, которая поддерживает миграцию в автономном режиме для приложений, которые могут обеспечить простой в процессе миграции. В отличие от непрерывной миграции в режиме «в сети», миграция в автономном режиме выполняется однократным восстановлением полной резервной копии базы данных из источника в целевой объект. | 
 |[Встроенное резервное копирование и восстановление](../../managed-instance/restore-sample-database-quickstart.md) | SQL Управляемый экземпляр поддерживает восстановление резервных копий собственных SQL Server баз данных (BAK-файлов), делая ее самым простым вариантом миграции для клиентов, которые могут предоставлять полные резервные копии баз данных в службе хранилища Azure. Полные и разностные резервные копии также поддерживаются и описаны в [разделе "материалы о миграции](#migration-assets) " Далее в этой статье.| 
 | | |
 
@@ -100,8 +100,8 @@ ms.locfileid: "95023724"
 |---------|---------|
 |[Репликация транзакций](../../managed-instance/replication-transactional-overview.md) | Репликация данных из таблиц базы данных-источника SQL Server в Управляемый экземпляр SQL, предоставляя тип подписчика издателя, при этом сохраняя согласованность транзакций. |  |
 |[Массовое копирование](/sql/relational-databases/import-export/import-and-export-bulk-data-by-using-the-bcp-utility-sql-server)| Программа [пакетного копирования (BCP)](/sql/tools/bcp-utility) копирует данные из экземпляра SQL Server в файл данных. Используйте программу BCP для экспорта данных из источника и импорта файла данных в Целевой Управляемый экземпляр SQL.</br></br> Для высокоскоростных операций копирования в базу данных SQL Azure можно использовать [интеллектуальное средство](/samples/azure-samples/smartbulkcopy/smart-bulk-copy/) для повышения скорости передачи данных, используя параллельные задачи копирования. | 
-|[Мастер импорта экспорта/BACPAC-файл](/azure/azure-sql/database/database-import?tabs=azure-powershell)| [BACPAC](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) — это файл Windows с `.bacpac` расширением, которое инкапсулирует схему и данные базы данных. BACPAC можно использовать как для экспорта данных из исходного SQL Server, так и для импорта файла обратно в Управляемый экземпляр SQL Azure.  |  
-|[Фабрика данных Azure (ADF)](/azure/data-factory/connector-azure-sql-managed-instance)| [Действие копирования](/azure/data-factory/copy-activity-overview) в фабрике данных Azure переносит данные из баз данных-источников SQL Server в SQL управляемый экземпляр с помощью встроенных соединителей и [Integration Runtime](/azure/data-factory/concepts-integration-runtime).</br> </br> ADF поддерживает широкий спектр [соединителей](/azure/data-factory/connector-overview) для перемещения данных из SQL Server источников в управляемый экземпляр SQL. |
+|[Мастер импорта экспорта/BACPAC-файл](../../database/database-import.md?tabs=azure-powershell)| [BACPAC](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) — это файл Windows с `.bacpac` расширением, которое инкапсулирует схему и данные базы данных. BACPAC можно использовать как для экспорта данных из исходного SQL Server, так и для импорта файла обратно в Управляемый экземпляр SQL Azure.  |  
+|[Фабрика данных Azure (ADF)](../../../data-factory/connector-azure-sql-managed-instance.md)| [Действие копирования](../../../data-factory/copy-activity-overview.md) в фабрике данных Azure переносит данные из баз данных-источников SQL Server в SQL управляемый экземпляр с помощью встроенных соединителей и [Integration Runtime](../../../data-factory/concepts-integration-runtime.md).</br> </br> ADF поддерживает широкий спектр [соединителей](../../../data-factory/connector-overview.md) для перемещения данных из SQL Server источников в управляемый экземпляр SQL. |
 | | |
 
 ## <a name="compare-migration-options"></a>Сравнение параметров миграции
@@ -114,7 +114,7 @@ ms.locfileid: "95023724"
 
 |Вариант миграции  |Назначение  |Рекомендации  |
 |---------|---------|---------|
-|[Azure Database Migration Service (DMA)](/azure/dms/tutorial-sql-server-to-managed-instance) | — Миграция отдельных баз данных или нескольких баз данных в масштабе. </br> — Может обеспечить время простоя процесса миграции. </br> </br> Поддерживаемые источники: </br> -SQL Server (2005-2019) локальная или виртуальная машина Azure </br> -AWS EC2 </br> — AWS RDS </br> -ОБЕСПЕЧИТЬ вычислений SQL Server VM |  -Миграция с масштабированием может быть автоматизирована с помощью [PowerShell](/azure/dms/howto-sql-server-to-azure-sql-mi-powershell). </br> Время для завершения миграции зависит от размера базы данных и влияет на время резервного копирования и восстановления. </br> — Может потребоваться достаточно простоя. |
+|[Azure Database Migration Service (DMA)](../../../dms/tutorial-sql-server-to-managed-instance.md) | — Миграция отдельных баз данных или нескольких баз данных в масштабе. </br> — Может обеспечить время простоя процесса миграции. </br> </br> Поддерживаемые источники: </br> -SQL Server (2005-2019) локальная или виртуальная машина Azure </br> -AWS EC2 </br> — AWS RDS </br> -ОБЕСПЕЧИТЬ вычислений SQL Server VM |  -Миграция с масштабированием может быть автоматизирована с помощью [PowerShell](../../../dms/howto-sql-server-to-azure-sql-mi-powershell.md). </br> Время для завершения миграции зависит от размера базы данных и влияет на время резервного копирования и восстановления. </br> — Может потребоваться достаточно простоя. |
 |[Встроенное резервное копирование и восстановление](../../managed-instance/restore-sample-database-quickstart.md) | — Перенос отдельных баз данных бизнес-приложений.  </br> — Быстрая и простая миграция без отдельной службы или средства миграции.  </br> </br> Поддерживаемые источники: </br> -SQL Server (2005-2019) локальная или виртуальная машина Azure </br> -AWS EC2 </br> — AWS RDS </br> -ОБЕСПЕЧИТЬ вычислений SQL Server VM | Резервное копирование базы данных использует несколько потоков для оптимизации передачи данных в хранилище BLOB-объектов Azure, а пропускная способность ISV и размер базы данных могут повлиять на скорость передачи. </br> — Время простоя должно соответствовать времени, требуемому для выполнения полного резервного копирования и восстановления (что является размером операции с данными).| 
 | | | |
 
@@ -126,8 +126,8 @@ ms.locfileid: "95023724"
 |---------|---------|---------|
 |[Репликация транзакций](../../managed-instance/replication-transactional-overview.md) | — Перенос путем непрерывной публикации изменений из таблиц базы данных-источника в целевые таблицы базы данных SQL Управляемый экземпляр. </br> — Полная или частичная миграция базы данных для выбранных таблиц (подмножество базы данных).  </br> </br> Поддерживаемые источники: </br> -SQL Server (2012-2019) с некоторыми ограничениями </br> -AWS EC2  </br> -ОБЕСПЕЧИТЬ вычислений SQL Server VM | </br> — Программа установки относительно сложнее по сравнению с другими вариантами миграции.   </br> — Предоставляет параметр непрерывной репликации для переноса данных (без перевода базы данных в автономный режим).</br> — Репликация транзакций имеет ряд ограничений, которые следует учитывать при настройке издателя на исходном SQL Server. Дополнительные сведения см. в разделе [ограничения на публикацию объектов](/sql/relational-databases/replication/publish/publish-data-and-database-objects#limitations-on-publishing-objects) .  </br> — Доступна возможность [наблюдения за действиями репликации](/sql/relational-databases/replication/monitor/monitoring-replication) .    |
 |[Массовое копирование](/sql/relational-databases/import-export/import-and-export-bulk-data-by-using-the-bcp-utility-sql-server)| — Миграция полной или частичной миграции данных. </br> — Может обеспечить время простоя. </br> </br> Поддерживаемые источники: </br> -SQL Server (2005-2019) локальная или виртуальная машина Azure </br> -AWS EC2 </br> — AWS RDS </br> -ОБЕСПЕЧИТЬ вычислений SQL Server VM   | — Требует простоя для экспорта данных из источника и импорта в целевой объект. </br> — Форматы файлов и типы данных, используемые в экспорте и импорте, должны соответствовать схемам таблиц. |
-|[Мастер импорта экспорта/BACPAC-файл](/azure/azure-sql/database/database-import)| — Перенос отдельных баз данных бизнес-приложений. </br>— Подходит для небольших баз данных.  </br>  Не требуется отдельная служба или средство миграции. </br> </br> Поддерживаемые источники: </br> -SQL Server (2005-2019) локальная или виртуальная машина Azure </br> -AWS EC2 </br> — AWS RDS </br> -ОБЕСПЕЧИТЬ вычислений SQL Server VM  |   </br> — Требует простоя, так как данные необходимо экспортировать в источник и импортировать в место назначения.   </br> — Форматы файлов и типы данных, используемые в экспорте и импорте, должны быть согласованы со схемами таблиц, чтобы избежать ошибок усечения или несоответствия типов данных. </br> Время, затраченное на экспорт базы данных с большим количеством объектов, может быть значительно выше. |
-|[Фабрика данных Azure (ADF)](/azure/data-factory/connector-azure-sql-managed-instance)| — Миграция и (или) преобразование данных из базы данных-источника SQL Server.</br> — Объединение данных из нескольких источников данных в Azure SQL Управляемый экземпляр, как правило, для рабочих нагрузок бизнес-аналитики (BI).   </br> — Требует создания конвейеров перемещения данных в ADF для перемещения данных из источника в место назначения.   </br> - [Стоимость](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/) является важным фактором и основана на триггерах конвейера, выполнении действий, длительности перемещения данных и т. д. |
+|[Мастер импорта экспорта/BACPAC-файл](../../database/database-import.md)| — Перенос отдельных баз данных бизнес-приложений. </br>— Подходит для небольших баз данных.  </br>  Не требуется отдельная служба или средство миграции. </br> </br> Поддерживаемые источники: </br> -SQL Server (2005-2019) локальная или виртуальная машина Azure </br> -AWS EC2 </br> — AWS RDS </br> -ОБЕСПЕЧИТЬ вычислений SQL Server VM  |   </br> — Требует простоя, так как данные необходимо экспортировать в источник и импортировать в место назначения.   </br> — Форматы файлов и типы данных, используемые в экспорте и импорте, должны быть согласованы со схемами таблиц, чтобы избежать ошибок усечения или несоответствия типов данных. </br> Время, затраченное на экспорт базы данных с большим количеством объектов, может быть значительно выше. |
+|[Фабрика данных Azure (ADF)](../../../data-factory/connector-azure-sql-managed-instance.md)| — Миграция и (или) преобразование данных из базы данных-источника SQL Server.</br> — Объединение данных из нескольких источников данных в Azure SQL Управляемый экземпляр, как правило, для рабочих нагрузок бизнес-аналитики (BI).   </br> — Требует создания конвейеров перемещения данных в ADF для перемещения данных из источника в место назначения.   </br> - [Стоимость](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/) является важным фактором и основана на триггерах конвейера, выполнении действий, длительности перемещения данных и т. д. |
 | | | |
 
 ## <a name="feature-interoperability"></a>Взаимодействие компонентов 
@@ -136,7 +136,7 @@ ms.locfileid: "95023724"
 
 #### <a name="sql-server-integration-services"></a>SQL Server Integration Services
 
-Перенос пакетов и проектов SQL Server Integration Services (SSIS) в SSISDB в Azure SQL Управляемый экземпляр с помощью [Azure Database Migration Service (DMS)](/azure/dms/how-to-migrate-ssis-packages-managed-instance). 
+Перенос пакетов и проектов SQL Server Integration Services (SSIS) в SSISDB в Azure SQL Управляемый экземпляр с помощью [Azure Database Migration Service (DMS)](../../../dms/how-to-migrate-ssis-packages-managed-instance.md). 
 
 Для миграции поддерживаются только пакеты служб SSIS в SSISDB, начинающиеся с SQL Server 2012. Преобразуйте устаревшие пакеты служб SSIS перед миграцией. Дополнительные сведения см. в [руководстве по преобразованию проектов](/sql/integration-services/lesson-6-2-converting-the-project-to-the-project-deployment-model) . 
 
@@ -145,11 +145,11 @@ ms.locfileid: "95023724"
 
 Отчеты SQL Server Reporting Services (SSRS) можно перенести в отчеты с разбивкой на страницы в Power BI. Используйте [средство миграции языка определения отчетов](https://github.com/microsoft/RdlMigration) для подготовки и переноса отчетов. Это средство было разработано корпорацией Майкрософт, чтобы помочь клиентам перенести RDL-отчеты с серверов SSRS на платформу Power BI. Он доступен на сайте GitHub, и он документирует полное пошаговое руководство по сценарию миграции. 
 
-#### <a name="sql-server-analysis-services"></a>службы SQL Server Analysis Services
+#### <a name="sql-server-analysis-services"></a>Службы SQL Server Analysis Services
 
 SQL Server Analysis Services табличные модели из SQL Server 2012 и более поздних версий можно перенести в Azure Analysis Services, который является моделью развертывания PaaS для Analysis Services табличной модели в Azure. Дополнительные сведения о переносе локальных моделей в Azure Analysis Services см. в этом [видеоруководстве](https://azure.microsoft.com/resources/videos/azure-analysis-services-moving-models/).
 
-Кроме того, можно также рассмотреть возможность переноса локальных Analysis Services табличных моделей в [Power BI Premium с помощью новых конечных точек чтения и записи XMLA](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools). 
+Кроме того, можно также рассмотреть возможность переноса локальных Analysis Services табличных моделей в [Power BI Premium с помощью новых конечных точек чтения и записи XMLA](/power-bi/admin/service-premium-connect-tools). 
 > [!NOTE]
 > Power BI функции конечных точек чтения и записи XMLA в настоящее время доступны в общедоступной предварительной версии. ее не следует рассматривать для рабочих нагрузок, пока они не станут общедоступными.
 
@@ -161,7 +161,7 @@ SQL Server функции высокого уровня доступности A
 
 #### <a name="sql-agent-jobs"></a>Задания агента SQL Server
 
-Используйте параметр offline Azure Database Migration Service (DMS) для переноса [заданий агента SQL Server](/azure/dms/howto-sql-server-to-azure-sql-mi-powershell#offline-migrations). В противном случае создайте скрипты для заданий в Transact-SQL (T-SQL), используя SQL Server Management Studio а затем вручную воссоздать их на целевом Управляемый экземпляр SQL. 
+Используйте параметр offline Azure Database Migration Service (DMS) для переноса [заданий агента SQL Server](../../../dms/howto-sql-server-to-azure-sql-mi-powershell.md#offline-migrations). В противном случае создайте скрипты для заданий в Transact-SQL (T-SQL), используя SQL Server Management Studio а затем вручную воссоздать их на целевом Управляемый экземпляр SQL. 
 
 > [!IMPORTANT]
 > В настоящее время Azure DMS поддерживает задания только с шагами подсистемы T-SQL. Задания с шагами пакета служб SSIS необходимо перенести вручную. 
@@ -193,7 +193,7 @@ SQL Server функции высокого уровня доступности A
 
 Не забудьте воспользоваться преимуществами расширенных облачных функций, предлагаемых SQL Управляемый экземпляр. Например, больше не нужно беспокоиться об управлении резервными копиями, так как служба делает это самостоятельно. Можно выполнить восстановление в любой [момент времени в течение срока хранения](../../database/recovery-using-backups.md#point-in-time-restore). Кроме того, не нужно беспокоиться о настройке высокого уровня доступности, так как [в ней встроена высокая доступность](../../database/high-availability-sla.md). 
 
-Для усиления безопасности рекомендуется использовать [проверку Подлинности Azure Active Directory](../../database/authentication-aad-overview.md), [Аудит](../../managed-instance/auditing-configure.md), [обнаружение угроз](../../database/advanced-data-security.md), [безопасность на уровне строк](/sql/relational-databases/security/row-level-security)и [Динамическое маскирование данных](/sql/relational-databases/security/dynamic-data-masking).
+Для усиления безопасности рекомендуется использовать [проверку Подлинности Azure Active Directory](../../database/authentication-aad-overview.md), [Аудит](../../managed-instance/auditing-configure.md), [обнаружение угроз](../../database/azure-defender-for-sql.md), [безопасность на уровне строк](/sql/relational-databases/security/row-level-security)и [Динамическое маскирование данных](/sql/relational-databases/security/dynamic-data-masking).
 
 Помимо функций расширенного управления и безопасности, SQL Управляемый экземпляр предоставляет набор дополнительных средств, которые могут помочь [в мониторинге и настройке рабочей нагрузки](../../database/monitor-tune-overview.md). [Аналитика SQL Azure](../../../azure-monitor/insights/azure-sql.md) позволяет централизованно отслеживать большой набор управляемых экземпляров.  [Автоматическая настройка](/sql/relational-databases/automatic-tuning/automatic-tuning#automatic-plan-correction)   в управляемых экземплярах постоянно отслеживает производительность статистики выполнения плана SQL и автоматически устраняет выявленные проблемы с производительностью. 
 

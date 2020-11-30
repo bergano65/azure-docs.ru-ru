@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: bc7db167ed1d1d8823e90bf422f17428a7ed4e48
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 369f17a39b9d7b2f85fffb8b72a293558d16416e
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497133"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325168"
 ---
 # <a name="migration-guide-db2-to-sql-database"></a>Руководство по миграции: DB2 в базу данных SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "94497133"
 Чтобы создать оценку, выполните следующие действия.
 
 1. Откройте Помощник по миграции Microsoft SQL Server (SSMA) для DB2. 
-1. Выберите **Файл** , а затем пункт **Новый проект**. 
+1. Выберите **Файл**, а затем пункт **Новый проект**. 
 1. Укажите имя проекта, расположение для сохранения проекта, а затем выберите База данных SQL Azure в качестве целевого объекта миграции из раскрывающегося списка. Щелкните **ОК**.  
 
    :::image type="content" source="media/db2-to-sql-database-guide/new-project.png" alt-text="Укажите сведения о проекте и нажмите кнопку ОК для сохранения.":::
@@ -149,7 +149,7 @@ ms.locfileid: "94497133"
 
 ## <a name="leverage-advanced-features"></a>Использование дополнительных функций 
 
-Воспользуйтесь преимуществами расширенных облачных функций, предлагаемых базой данных SQL, таких как [Встроенная Высокая доступность](../../database/high-availability-sla.md), [обнаружение угроз](../../database/advanced-data-security.md), [мониторинг и Настройка рабочей нагрузки](../../database/monitor-tune-overview.md). 
+Воспользуйтесь преимуществами расширенных облачных функций, предлагаемых базой данных SQL, таких как [Встроенная Высокая доступность](../../database/high-availability-sla.md), [обнаружение угроз](../../database/azure-defender-for-sql.md), [мониторинг и Настройка рабочей нагрузки](../../database/monitor-tune-overview.md). 
 
 
 Некоторые SQL Server функции доступны только после изменения [уровня совместимости базы данных](/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) на последний уровень совместимости (150). 
@@ -169,7 +169,7 @@ ms.locfileid: "94497133"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о службах и средствах Майкрософт и сторонних поставщиков, которые помогут вам в использовании различных сценариев переноса баз данных и данных, а также специальных задач см. в разделе [служба и средства для переноса данных](../../../dms/dms-tools-matrix.md).
 

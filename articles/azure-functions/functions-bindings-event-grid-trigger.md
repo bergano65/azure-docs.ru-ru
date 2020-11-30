@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, fasttrack-edit, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 3bbe704e6223bb04a17af7109c61875ca3b21bf9
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 0e2e09bc72991330ccdec7a35400460cbeba26fc
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748184"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327038"
 ---
 # <a name="azure-event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий Azure" для Функций Azure
 
@@ -80,7 +80,7 @@ namespace Company.Function
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -132,7 +132,7 @@ public static void Run(JObject eventGridEvent, TraceWriter log)
 
 В следующем примере показана привязка триггера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -163,7 +163,7 @@ module.exports = function (context, eventGridEvent) {
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -305,7 +305,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 ## <a name="configuration"></a>Конфигурация
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* . В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
 |свойство function.json |Описание|
 |---------|---------|
@@ -345,11 +345,11 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` файла *function.json* .
+Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` файла *function.json*.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` с типом `func.EventGridEvent` в файле *function.json* .
+Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` с типом `func.EventGridEvent` в файле *function.json*.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -401,19 +401,19 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 ### <a name="azure-portal"></a>Портал Azure
 
-Для функций, разрабатываемых на портале Azure с использованием триггера Сетки событий, выберите **Интеграция** , **Триггер Сетки событий** и **Создание подписки для Сетки событий** .
+Для функций, разрабатываемых на портале Azure с использованием триггера Сетки событий, выберите **Интеграция**, **Триггер Сетки событий** и **Создание подписки для Сетки событий**.
 
 :::image type="content" source="media/functions-bindings-event-grid/portal-sub-create.png" alt-text="Подключите новую подписку на событие к триггеру с помощью портала.":::
 
-Когда вы щелкните эту ссылку, на портале откроется страница **Создать подписку на события** , где автоматически определена конечная точка текущего триггера.
+Когда вы щелкните эту ссылку, на портале откроется страница **Создать подписку на события**, где автоматически определена конечная точка текущего триггера.
 
-:::image type="content" source="media/functions-bindings-event-grid/endpoint-url.png" alt-text="Подключите новую подписку на событие к триггеру с помощью портала." :::
+:::image type="content" source="media/functions-bindings-event-grid/endpoint-url.png" alt-text="Страница Создать подписку на события, где определена конечная точка функции" :::
 
 Дополнительные сведения о создании подписок с помощью портала Azure см. в разделе [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](../event-grid/custom-event-quickstart-portal.md) документации по службе "Сетка событий".
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Чтобы создать подписку с помощью [Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), используйте команду [az eventgrid event-subscription create](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-create).
+Чтобы создать подписку с помощью [Azure CLI](/cli/azure/get-started-with-azure-cli), используйте команду [az eventgrid event-subscription create](/cli/azure/eventgrid/event-subscription#az-eventgrid-event-subscription-create).
 
 Для команды нужен URL-адрес конечной точки, который вызывает функцию. В следующем примере показан шаблон URL-адреса в зависимости от версии:
 
@@ -435,25 +435,55 @@ https://{functionappname}.azurewebsites.net/admin/extensions/EventGridExtensionC
 
 #### <a name="version-2x-and-higher-runtime"></a>Среда выполнения версии 2.x и более поздних
 
+# <a name="bash"></a>[Bash](#tab/bash)
+
 ```azurecli
 az eventgrid resource event-subscription create -g myResourceGroup \
---provider-namespace Microsoft.Storage --resource-type storageAccounts \
---resource-name myblobstorage12345 --name myFuncSub  \
---included-event-types Microsoft.Storage.BlobCreated \
---subject-begins-with /blobServices/default/containers/images/blobs/ \
---endpoint https://mystoragetriggeredfunction.azurewebsites.net/runtime/webhooks/eventgrid?functionName=imageresizefunc&code=<key>
+    --provider-namespace Microsoft.Storage --resource-type storageAccounts \
+    --resource-name myblobstorage12345 --name myFuncSub \
+    --included-event-types Microsoft.Storage.BlobCreated \
+    --subject-begins-with /blobServices/default/containers/images/blobs/ \
+    --endpoint https://mystoragetriggeredfunction.azurewebsites.net/runtime/webhooks/eventgrid?functionName=imageresizefunc&code=<key>
 ```
+
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```azurecli
+az eventgrid resource event-subscription create -g myResourceGroup ^
+    --provider-namespace Microsoft.Storage --resource-type storageAccounts ^
+    --resource-name myblobstorage12345 --name myFuncSub ^
+    --included-event-types Microsoft.Storage.BlobCreated ^
+    --subject-begins-with /blobServices/default/containers/images/blobs/ ^
+    --endpoint https://mystoragetriggeredfunction.azurewebsites.net/runtime/webhooks/eventgrid?functionName=imageresizefunc&code=<key>
+```
+
+---
 
 #### <a name="version-1x-runtime"></a>Среда выполнения версии 1.x
 
+# <a name="bash"></a>[Bash](#tab/bash)
+
 ```azurecli
 az eventgrid resource event-subscription create -g myResourceGroup \
---provider-namespace Microsoft.Storage --resource-type storageAccounts \
---resource-name myblobstorage12345 --name myFuncSub  \
---included-event-types Microsoft.Storage.BlobCreated \
---subject-begins-with /blobServices/default/containers/images/blobs/ \
---endpoint https://mystoragetriggeredfunction.azurewebsites.net/admin/extensions/EventGridExtensionConfig?functionName=imageresizefunc&code=<key>
+    --provider-namespace Microsoft.Storage --resource-type storageAccounts \
+    --resource-name myblobstorage12345 --name myFuncSub \
+    --included-event-types Microsoft.Storage.BlobCreated \
+    --subject-begins-with /blobServices/default/containers/images/blobs/ \
+    --endpoint https://mystoragetriggeredfunction.azurewebsites.net/admin/extensions/EventGridExtensionConfig?functionName=imageresizefunc&code=<key>
 ```
+
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```azurecli
+az eventgrid resource event-subscription create -g myResourceGroup ^
+    --provider-namespace Microsoft.Storage --resource-type storageAccounts ^
+    --resource-name myblobstorage12345 --name myFuncSub ^
+    --included-event-types Microsoft.Storage.BlobCreated ^
+    --subject-begins-with /blobServices/default/containers/images/blobs/ ^
+    --endpoint https://mystoragetriggeredfunction.azurewebsites.net/admin/extensions/EventGridExtensionConfig?functionName=imageresizefunc&code=<key>
+```
+
+---
 
 Дополнительные сведения о создании подписки см. в разделе [Примеры использования хранилища больших двоичных объектов](../storage/blobs/storage-blob-event-quickstart.md#subscribe-to-your-storage-account) или других коротких руководствах по использованию службы "Сетка событий".
 
@@ -508,13 +538,13 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 1. [Создайте запрос](#generate-a-request) и скопируйте текст запроса из приложения средства просмотра.
 1. [Вручную вставьте запрос](#manually-post-the-request) в URL-адрес localhost функции триггера службы "Сетка событий".
 
-Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-update).
+Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](/cli/azure/eventgrid/event-subscription#az-eventgrid-event-subscription-update).
 
 ### <a name="create-a-viewer-web-app"></a>Создание веб-приложения средства просмотра
 
 Чтобы упростить запись сообщений о событиях, разверните [готовое веб-приложение](https://github.com/Azure-Samples/azure-event-grid-viewer), которое отображает сообщения о событиях. Развернутое решение содержит план службы приложений, веб-приложение службы приложений и исходный код из GitHub.
 
-Выберите **Развернуть в Azure** , чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
+Выберите **Развернуть в Azure**, чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png" alt="Button to Deploy to Azure." /></a>
 

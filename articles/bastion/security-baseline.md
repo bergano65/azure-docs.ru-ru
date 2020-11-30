@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 461d3800491dbe382beecbcdfe1f2a93bd6b2e5c
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 85638d2ef3499ca71057879852eb582b950b7e2c
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96301571"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325692"
 ---
 # <a name="azure-security-baseline-for-azure-bastion"></a>Базовый план безопасности Azure для Azure бастиона
 
@@ -22,7 +22,7 @@ ms.locfileid: "96301571"
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность сети](../security/benchmarks/security-controls-v2-network-security.md).*
 
 ### <a name="ns-1-implement-security-for-internal-traffic"></a>NS-1: реализация безопасности для внутреннего трафика
 
@@ -63,7 +63,7 @@ ms.locfileid: "96301571"
 
 ## <a name="identity-management"></a>Управление удостоверениями
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление удостоверениями](../security/benchmarks/security-controls-v2-identity-management.md).*
 
 ### <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>IM-1. Стандартизация Azure Active Directory как центральной системы идентификации и проверки подлинности
 
@@ -149,7 +149,7 @@ ms.locfileid: "96301571"
 
 ## <a name="privileged-access"></a>Привилегированный доступ
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Привилегированный доступ](../security/benchmarks/security-controls-v2-privileged-access.md).*
 
 ### <a name="pa-2-restrict-administrative-access-to-business-critical-systems"></a>PA-2: ограничение административного доступа к системам, критически важным для бизнеса
 
@@ -193,7 +193,7 @@ ms.locfileid: "96301571"
 
 Следует убедиться, что учетные данные (например, пароль, сертификат или смарт-карта) для учетных записей аварийного доступа защищены и известны только тем лицам, которые имеют право использовать их только в экстренной ситуации.
 
-- [Управление учетными записями для аварийного доступа в Azure AD](/azure/active-directory/users-groups-roles/directory-emergency-access)
+- [Управление учетными записями для аварийного доступа в Azure AD](../active-directory/roles/security-emergency-access.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -246,7 +246,7 @@ ms.locfileid: "96301571"
 
 ## <a name="asset-management"></a>управление ресурсами.
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md).*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1. Предоставление группе безопасности возможности просматривать угрозы безопасности для ресурсов
 
@@ -274,7 +274,7 @@ ms.locfileid: "96301571"
 
 - [Управление инвентаризацией активов в центре безопасности Azure](../security-center/asset-inventory.md)
 
-- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -300,7 +300,7 @@ ms.locfileid: "96301571"
 
 - [Удаление принудительного отключения удаленного сеанса](session-monitoring.md#view)
 
-- [CLI сети Azure](https://docs.microsoft.com/powershell/module/az.network/?view=azps-5.1.0#networking&amp;preserve-view=true)
+- [CLI сети Azure](/powershell/module/az.network/?amp;preserve-view=true&view=azps-5.1.0#networking)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -341,7 +341,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Включение Защиты идентификации Azure](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Защита от угроз с помощью Центра безопасности Azure](/azure/security-center/threat-protection)
+- [Защита от угроз с помощью Центра безопасности Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -407,7 +407,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](/azure/azure-monitor/platform/resource-logs-collect-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
 
 - [Включение и работа с журналами бастионами Azure](diagnostic-logs.md)
 
@@ -417,7 +417,7 @@ Azure AD предоставляет следующие журналы польз
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. реагирование на инциденты](../security/benchmarks/security-controls-v2-incident-response.md).*
 
 ### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1. Подготовка. Реагирование на обновление инцидента для Azure
 
@@ -499,7 +499,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -527,7 +527,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для Azure бастиона с политикой Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения конфигурации сети Azure бастиона. Клиенты также могут устанавливать безопасные конфигурации, используя схемы Azure или шаблоны ARM для безопасного и согласованного развертывания ресурсов бастиона.
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -543,7 +543,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для Azure бастиона с политикой Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения сетевой конфигурации ресурсов бастиона.
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -569,7 +569,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="governance-and-strategy"></a>Система управления и стратегия
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Система управления и стратегия](/azure/security/benchmarks/security-controls-v2-governance-strategy).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Система управления и стратегия](../security/benchmarks/security-controls-v2-governance-strategy.md).*
 
 ### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1. Определение стратегии управления ресурсом и защиты данных 
 
@@ -594,11 +594,11 @@ Azure Sentinel предоставляет широкие возможности 
 -   Соответствующие стандарты шифрования.
 
 Дополнительные сведения см. в следующих ресурсах.
-- [Рекомендации по архитектуре безопасности Azure. Хранилище, данные и шифрование](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
+- [Рекомендации по архитектуре безопасности Azure. Хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json)
 
 - [Основы обеспечения безопасности Azure. Защита, шифрование и хранение данных в Azure](../security/fundamentals/encryption-overview.md)
 
-- [Cloud Adoption Framework. Рекомендации по защите и шифрованию данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
+- [Cloud Adoption Framework. Рекомендации по защите и шифрованию данных в Azure](../security/fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
 - [Azure Security Benchmark. Управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
 
@@ -749,5 +749,5 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- См. статью [Обзор тестов производительности системы безопасности Azure версии 2](/azure/security/benchmarks/overview)
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- См. статью [Обзор тестов производительности системы безопасности Azure версии 2](../security/benchmarks/overview.md)
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

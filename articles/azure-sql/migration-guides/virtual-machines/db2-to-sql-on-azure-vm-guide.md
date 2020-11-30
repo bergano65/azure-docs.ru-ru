@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 0522f677c731aa1cd218a14429791db14179686a
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 5312ee08bad9d0b84e13c53fe4b1de59fad896f1
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497068"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326052"
 ---
 # <a name="migration-guide-db2-to-sql-server-on-azure-vms"></a>Руководство по миграции: DB2 для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "94497068"
 Чтобы создать оценку, выполните следующие действия.
 
 1. Откройте Помощник по миграции Microsoft SQL Server (SSMA) для DB2. 
-1. Выберите **Файл** , а затем пункт **Новый проект**. 
+1. Выберите **Файл**, а затем пункт **Новый проект**. 
 1. Укажите имя проекта, расположение для сохранения проекта, а затем выберите из раскрывающегося списка целевой объект миграции SQL Server. Щелкните **ОК**. 
 
    :::image type="content" source="media/db2-to-sql-on-azure-vm-guide/new-project.png" alt-text="Укажите сведения о проекте и нажмите кнопку ОК для сохранения.":::
@@ -164,7 +164,7 @@ ms.locfileid: "94497068"
 
 После миграции ознакомьтесь с [руководством по проверке и оптимизации после миграции](/sql/relational-databases/post-migration-validation-and-optimization-guide). 
 
-Матрица Майкрософт, а также сторонние службы и средства, доступные для помощи в различных сценариях перемещения баз данных и данных, а также специальных задачах см. в разделе [Службы и инструменты для переноса данных](/azure/dms/dms-tools-matrix).
+Матрица Майкрософт, а также сторонние службы и средства, доступные для помощи в различных сценариях перемещения баз данных и данных, а также специальных задачах см. в разделе [Службы и инструменты для переноса данных](../../../dms/dms-tools-matrix.md).
 
 Другие руководства по миграции см. в разделе [Перенос базы данных](https://datamigration.microsoft.com/). 
 

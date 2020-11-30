@@ -4,12 +4,12 @@ description: Информация о разработке функций на я
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 9679f6030ac889ac442a40cd852f5cc17f505756
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 1ffbd760ae75605d75652b29d379420d6946aa8f
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422524"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326460"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -45,15 +45,27 @@ ms.locfileid: "93422524"
 
 ### <a name="project-scaffolding"></a>Формирование шаблонов для проекта
 
-Если вы предпочитаете выполнять разработку из командной строки терминала, сформировать шаблоны для проектов функций на основе Java вам проще всего будет с использованием архетипов `Apache Maven`. Архетип Maven для Функций Azure на Java опубликован со следующими идентификаторами _groupId_ : _artifactId_ : [com.microsoft.azure:azure-functions-archetype](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/). 
+Если вы предпочитаете выполнять разработку из командной строки терминала, сформировать шаблоны для проектов функций на основе Java вам проще всего будет с использованием архетипов `Apache Maven`. Архетип Maven для Функций Azure на Java опубликован со следующими идентификаторами _groupId_:_artifactId_: [com.microsoft.azure:azure-functions-archetype](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/). 
 
 Следующая команда создает новый проект функции Java на основе этого архетипа:
+
+# <a name="bash"></a>[Bash](#tab/bash)
 
 ```bash
 mvn archetype:generate \
     -DarchetypeGroupId=com.microsoft.azure \
-    -DarchetypeArtifactId=azure-functions-archetype 
+    -DarchetypeArtifactId=azure-functions-archetype
 ```
+
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```cmd
+mvn archetype:generate ^
+    -DarchetypeGroupId=com.microsoft.azure ^
+    -DarchetypeArtifactId=azure-functions-archetype
+```
+
+---
 
 Чтобы приступить к использованию архетипа, воспользуйтесь [кратким руководством по Java](./create-first-function-cli-java.md).
 
@@ -143,7 +155,7 @@ public class Function {
 | Версия службы "Функции" | Версии Java (Windows) | Версии Java (Linux) |
 | ----- | ----- | --- |
 | 3.x | 11 <br/>8 | 11 <br/>8 |
-| 2.x | 8 | н/д |
+| 2.x | 8 | Недоступно |
 
 Если для развертывания не указана версия Java, Maven архетипа по умолчанию имеет значение Java 8 во время развертывания в Azure.
 
@@ -210,19 +222,40 @@ Maven также позволяет указать операционную си
 
 Используйте команду [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings), чтобы задать значение `JAVA_OPTS`, как показано далее.
 
-#### <a name="consumption-plan"></a>[План потребления](#tab/consumption)
+# <a name="consumption-plan"></a>[План потребления](#tab/consumption/bash)
+
 ```azurecli-interactive
 az functionapp config appsettings set \
---settings "JAVA_OPTS=-Djava.awt.headless=true" \
-"WEBSITE_USE_PLACEHOLDER=0" \
---name <APP_NAME> --resource-group <RESOURCE_GROUP>
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" \
+    "WEBSITE_USE_PLACEHOLDER=0" \
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
 ```
-#### <a name="dedicated-plan--premium-plan"></a>[Выделенный план или план "Премиум"](#tab/dedicated+premium)
+
+# <a name="consumption-plan"></a>[План потребления](#tab/consumption/cmd)
+
+```azurecli-interactive
+az functionapp config appsettings set ^
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" ^
+    "WEBSITE_USE_PLACEHOLDER=0" ^
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
+```
+
+# <a name="dedicated-plan--premium-plan"></a>[Выделенный план или план "Премиум"](#tab/dedicated+premium/bash)
+
 ```azurecli-interactive
 az functionapp config appsettings set \
---settings "JAVA_OPTS=-Djava.awt.headless=true" \
---name <APP_NAME> --resource-group <RESOURCE_GROUP>
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" \
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
 ```
+
+# <a name="dedicated-plan--premium-plan"></a>[Выделенный план или план "Премиум"](#tab/dedicated+premium/cmd)
+
+```azurecli-interactive
+az functionapp config appsettings set ^
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" ^
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
+```
+
 ---
 
 В этом примере показано, как включить режим без монитора. Замените в нем заполнитель `<APP_NAME>` именем приложения-функции, а `<RESOURCE_GROUP>` — именем группы ресурсов. 
@@ -460,15 +493,36 @@ public class Function {
 
 Ниже показано, как настроить для приложения-функции запись журнала приложения с использованием Azure CLI.
 
+# <a name="bash"></a>[Bash](#tab/bash)
+
 ```azurecli-interactive
 az webapp log config --name functionname --resource-group myResourceGroup --application-logging true
 ```
 
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```azurecli-interactive
+az webapp log config --name functionname --resource-group myResourceGroup --application-logging true
+```
+
+---
+
 Чтобы выполнять потоковую передачу выходных данных журналов для приложения-функции через Azure CLI, откройте новое окно командной строки, сеанс Bash или терминала и введите следующую команду:
+
+# <a name="bash"></a>[Bash](#tab/bash)
 
 ```azurecli-interactive
 az webapp log tail --name webappname --resource-group myResourceGroup
 ```
+
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```azurecli-interactive
+az webapp log tail --name webappname --resource-group myResourceGroup
+```
+
+---
+
 Команда [az webapp log tail](/cli/azure/webapp/log) позволяет фильтровать выходные данные с помощью параметра `--provider`. 
 
 Чтобы скачать файлы журналов как единый ZIP-файл с помощью Azure CLI, откройте командную строку, Bash или сеанс терминала и введите следующую команду:

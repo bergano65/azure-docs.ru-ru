@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 5c20fbbe25b51160f42f233d30c39ccaec0f5cac
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 5d5404537ad107a54bd32110727e5a7d0f74ebea
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026067"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326902"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Руководство по миграции: SQL Server в SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -99,7 +99,7 @@ ms.locfileid: "95026067"
 
 ### <a name="create-sql-managed-instance"></a>Создание Управляемого экземпляра 
 
-На основе информации на этапе обнаружения и оценки создайте соответствующий Целевой Управляемый экземпляр SQL. Это можно сделать с помощью шаблона [портал Azure](../../managed-instance/instance-create-quickstart.md), [PowerShell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)или [Azure Resource Manager (ARM)](/azure/azure-sql/managed-instance/create-template-quickstart). 
+На основе информации на этапе обнаружения и оценки создайте соответствующий Целевой Управляемый экземпляр SQL. Это можно сделать с помощью шаблона [портал Azure](../../managed-instance/instance-create-quickstart.md), [PowerShell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)или [Azure Resource Manager (ARM)](../../managed-instance/create-template-quickstart.md). 
 
 
 ## <a name="migrate"></a>Миграция
@@ -124,7 +124,7 @@ ms.locfileid: "95026067"
 1. После восстановления базы данных нажмите кнопку **Start прямую миграцию (запустить**). Процесс миграции копирует резервную копию заключительного фрагмента журнала после того, как она стала доступной в сетевой общей папке SMB, и восстанавливает ее на целевом объекте. 
 1. Завершите весь входящий трафик к базе данных источника и обновите строку подключения до новой базы данных SQL Azure Управляемый экземпляр. 
 
-Подробное пошаговое руководство по этому варианту миграции см. в статье [перенос SQL Server в Azure SQL управляемый экземпляр Online с помощью DMS](/azure/dms/tutorial-sql-server-managed-instance-online). 
+Подробное пошаговое руководство по этому варианту миграции см. в статье [перенос SQL Server в Azure SQL управляемый экземпляр Online с помощью DMS](../../../dms/tutorial-sql-server-managed-instance-online.md). 
    
 
 
@@ -144,14 +144,14 @@ ms.locfileid: "95026067"
 
 1. Создайте резервную копию базы данных в хранилище BLOB-объектов Azure. Например, используйте [резервное копирование в URL-адрес](/sql/relational-databases/backup-restore/sql-server-backup-to-url) в [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms). Используйте [средство Microsoft Azure](https://go.microsoft.com/fwlink/?LinkID=324399) для поддержки баз данных, предшествующих SQL Server 2012 с пакетом обновления 1 (SP1) Cu2. 
 1. Подключитесь к Управляемый экземпляр Azure SQL с помощью SQL Server Management Studio. 
-1. Создайте учетные данные, используя подписанный URL-доступ для доступа к учетной записи хранилища BLOB-объектов Azure с резервными копиями базы данных. Пример:
+1. Создайте учетные данные, используя подписанный URL-доступ для доступа к учетной записи хранилища BLOB-объектов Azure с резервными копиями базы данных. Например:
 
    ```sql
    CREATE CREDENTIAL [https://mitutorials.blob.core.windows.net/databases]
    WITH IDENTITY = 'SHARED ACCESS SIGNATURE'
    , SECRET = 'sv=2017-11-09&ss=bfqt&srt=sco&sp=rwdlacup&se=2028-09-06T02:52:55Z&st=2018-09-04T18:52:55Z&spr=https&sig=WOTiM%2FS4GVF%2FEEs9DGQR9Im0W%2BwndxW2CQ7%2B5fHd7Is%3D'
    ```
-1. Восстановите резервную копию из контейнера больших двоичных объектов службы хранилища Azure. Пример: 
+1. Восстановите резервную копию из контейнера больших двоичных объектов службы хранилища Azure. Например: 
 
     ```sql
    RESTORE DATABASE [TargetDatabaseName] FROM URL =
@@ -160,7 +160,7 @@ ms.locfileid: "95026067"
 
 1. После завершения восстановления просмотрите базу данных в **обозревателе объектов** в SQL Server Management Studio. 
 
-Дополнительные сведения об этом варианте миграции см. в статье [Восстановление базы данных в Azure SQL управляемый экземпляр с помощью SSMS](https://docs.microsoft.com/azure/azure-sql/managed-instance/restore-sample-database-quickstart).
+Дополнительные сведения об этом варианте миграции см. в статье [Восстановление базы данных в Azure SQL управляемый экземпляр с помощью SSMS](../../managed-instance/restore-sample-database-quickstart.md).
 
 > [!NOTE]
 > Операция восстановления базы данных является асинхронной и повторяемой. В случае разрыва подключения или истечения времени ожидания в SQL Server Management Studio может возникнуть ошибка. База данных SQL Azure будет пытаться восстановить базу данных в фоновом режиме, и вы сможете отслеживать ход восстановления с помощью представлений [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) и [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
@@ -203,7 +203,7 @@ ms.locfileid: "95026067"
 
 ## <a name="leverage-advanced-features"></a>Использование дополнительных функций 
 
-Не забудьте воспользоваться преимуществами расширенных облачных функций, предлагаемых Управляемый экземпляр SQL, таких как [Встроенная Высокая доступность](../../database/high-availability-sla.md), [обнаружение угроз](../../database/advanced-data-security.md), [мониторинг и Настройка рабочей нагрузки](../../database/monitor-tune-overview.md). 
+Не забудьте воспользоваться преимуществами расширенных облачных функций, предлагаемых Управляемый экземпляр SQL, таких как [Встроенная Высокая доступность](../../database/high-availability-sla.md), [обнаружение угроз](../../database/azure-defender-for-sql.md), [мониторинг и Настройка рабочей нагрузки](../../database/monitor-tune-overview.md). 
 
 [Аналитика SQL Azure](../../../azure-monitor/insights/azure-sql.md) позволяет централизованно отслеживать большой набор управляемых экземпляров.
 

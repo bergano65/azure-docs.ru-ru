@@ -3,12 +3,12 @@ title: Управление жизненным циклом виртуальны
 description: Узнайте, как управлять всеми аспектами жизненного цикла виртуальных машин решения Azure VMware с помощью Microsoft Azure собственных средств.
 ms.topic: conceptual
 ms.date: 09/11/2020
-ms.openlocfilehash: 5280d362c1e7b1bf33579d051c4cc11adb1b7e59
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: ff1032900fa936895f3adfcb0d8a872f24948aca
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545771"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326817"
 ---
 # <a name="lifecycle-management-of-azure-vmware-solution-vms"></a>Управление жизненным циклом виртуальных машин Azure VMware
 
@@ -61,7 +61,7 @@ Azure Управление обновлениями в службе автома
 
 2. **Log Analytics Рабочая область** включает сбор журналов и коллекцию счетчиков производительности с помощью агента log Analytics или расширений. Сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/learn/quick-create-workspace.md). При желании рабочую область можно также создать с помощью [интерфейса командной строки](../azure-monitor/learn/quick-create-workspace-cli.md), [PowerShell](../azure-monitor/platform/powershell-workspace-configuration.md)или [шаблона Azure Resource Manager](../azure-monitor/samples/resource-manager-workspace.md).
 
-3. Сведения о включении Управление обновлениями Azure для виртуальных машин см. в статье [включение Управление обновлениями из учетной записи службы автоматизации](../automation/update-management/update-mgmt-enable-automation-account.md). В процессе вы свяжете рабочую область Log Analytics с учетной записью службы автоматизации. 
+3. Сведения о включении Управление обновлениями Azure для виртуальных машин см. в статье [включение Управление обновлениями из учетной записи службы автоматизации](../automation/update-management/enable-from-automation-account.md). В процессе вы свяжете рабочую область Log Analytics с учетной записью службы автоматизации. 
  
 4. После добавления виртуальных машин в Azure Управление обновлениями можно [Развернуть обновления на виртуальных машинах и проверить результаты](../automation/update-management/deploy-updates.md). 
 

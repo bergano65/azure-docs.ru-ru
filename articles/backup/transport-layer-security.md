@@ -3,12 +3,12 @@ title: Безопасность транспортного уровня в Azure
 description: Узнайте, как разрешить Azure Backup использовать протокол шифрования TLS для обеспечения безопасности данных при передаче по сети.
 ms.topic: conceptual
 ms.date: 11/01/2020
-ms.openlocfilehash: 9881fd3532cbc7d67c7d5adbce75e02fc62e0bcf
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: ba9c9d91f562f54695a0739908c8a409d14d5852
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280697"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327123"
 ---
 # <a name="transport-layer-security-in-azure-backup"></a>Безопасность транспортного уровня в Azure Backup
 
@@ -45,7 +45,7 @@ TLS — это протокол шифрования, который обесп�
 
 ### <a name="configuring-net-framework"></a>Настройка .NET Framework
 
-Следующие разделы реестра настраивают .NET Framework для поддержки надежного шифрования. Дополнительные сведения о [настройке .NET Framework](https://docs.microsoft.com/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry)можно узнать здесь.
+Следующие разделы реестра настраивают .NET Framework для поддержки надежного шифрования. Дополнительные сведения о [настройке .NET Framework](/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry)можно узнать здесь.
 
 ```reg
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
@@ -65,7 +65,7 @@ TLS 1,2 более безопасен по сравнению с предыду�
 
 ### <a name="what-determines-the-encryption-protocol-used"></a>Что определяет используемый протокол шифрования?
 
-Самая высокая версия протокола, поддерживаемая клиентом и сервером, согласовывается для установления зашифрованного диалога. Дополнительные сведения о протоколе подтверждения TLS см. в статье [Установка безопасного сеанса с помощью протокола TLS](https://docs.microsoft.com/windows/win32/secauthn/tls-handshake-protocol#establishing-a-secure-session-by-using-tls).
+Самая высокая версия протокола, поддерживаемая клиентом и сервером, согласовывается для установления зашифрованного диалога. Дополнительные сведения о протоколе подтверждения TLS см. в статье [Установка безопасного сеанса с помощью протокола TLS](/windows/win32/secauthn/tls-handshake-protocol#establishing-a-secure-session-by-using-tls).
 
 ### <a name="what-is-the-impact-of-not-enabling-tls-12"></a>Каково влияние включения TLS 1,2?
 
@@ -77,6 +77,6 @@ TLS 1,2 более безопасен по сравнению с предыду�
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Протокол безопасности транспортного уровня](https://docs.microsoft.com/windows/win32/secauthn/transport-layer-security-protocol)
-- [Обеспечение поддержки TLS 1,2 в развернутых операционных системах](https://docs.microsoft.com/security/engineering/solving-tls1-problem#ensuring-support-for-tls-12-across-deployed-operating-systems)
-- [Рекомендации по использованию протокола TLS с .NET Framework](https://docs.microsoft.com/dotnet/framework/network-programming/tls)
+- [Протокол безопасности транспортного уровня](/windows/win32/secauthn/transport-layer-security-protocol)
+- [Обеспечение поддержки TLS 1,2 в развернутых операционных системах](/security/engineering/solving-tls1-problem#ensuring-support-for-tls-12-across-deployed-operating-systems)
+- [Рекомендации по использованию протокола TLS с .NET Framework](/dotnet/framework/network-programming/tls)

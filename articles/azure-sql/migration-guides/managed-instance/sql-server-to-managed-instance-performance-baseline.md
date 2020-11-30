@@ -10,12 +10,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: mokabiru
 ms.date: 11/06/2020
-ms.openlocfilehash: e9fb004df5fdf8a955312ebcf16b8b60fd7c9b6a
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: c47e4c1278f222feac35a2c6ab0b067c916c0217
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592198"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326851"
 ---
 # <a name="migration-performance-sql-server-to-sql-managed-instance-performance-analysis"></a>Производительность миграции: SQL Server в анализ производительности SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -86,4 +86,4 @@ SQL Управляемый экземпляр предоставляет рас�
 - [Как узнать, почему производительность рабочей нагрузки Управляемый экземпляр Azure SQL отличается от SQL Server?](https://medium.com/azure-sqldb-managed-instance/what-to-do-when-azure-sql-managed-instance-is-slower-than-sql-server-dd39942aaadd)
 - [Основные причины различий в производительности между SQL Управляемый экземпляр и SQL Server](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/)
 - [Рекомендации по повышению производительности хранилища для Управляемый экземпляр Azure SQL (общего назначения)](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525)
-- [Наблюдение за производительностью в режиме реального времени для Управляемый экземпляр Azure SQL (Это архивная цель?)](https://docs.microsoft.com/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance)
+- [Наблюдение за производительностью в режиме реального времени для Управляемый экземпляр Azure SQL (Это архивная цель?)](/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance)

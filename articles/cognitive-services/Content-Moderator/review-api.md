@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
-ms.openlocfilehash: d98f2390be3b3f4b3770125185cb33daa5ff6371
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: e2d87d4322ac6b91a19a4775c23ceec75d528030
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93143645"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325338"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Обзоры, рабочие процессы и задания для контроля содержимого
 
@@ -26,7 +26,7 @@ Content Moderator сочетает ролевую поддержку с возм
 В ходе проверки содержимое отправляется в средство проверки. Его можно просмотреть, щелкнув его тип содержимого в разделе " **Просмотр** " на панели мониторинга. На экране проверки можно изменить примененные Теги и применить собственные пользовательские теги. При отправке проверки результаты отправляются в указанную конечную точку обратного вызова, а содержимое удаляется с сайта.
 
 > [!div class="mx-imgBorder"]
-> ![Сайт средства проверки с выбранной вкладкой "Проверка"](./Review-Tool-user-Guide/images/review-tab.png)
+> ![Раскрывающееся меню "Проверка" выделено. В нем отображаются следующие типы содержимого: изображение, текст и видео.](./Review-Tool-user-Guide/images/review-tab.png)
 
 ### <a name="manage-reviews"></a>Управление проверками
 
@@ -40,7 +40,7 @@ Content Moderator сочетает ролевую поддержку с возм
 Используйте панель инструментов **поиска** для сортировки проверок по различным категориям, таким как состояние проверки, теги, тип содержимого, подгруппы, назначенные пользователи и Дата создания/изменения.
 
 > [!div class="mx-imgBorder"]
-> ![Сайт средства проверки с выбранной вкладкой "Проверка"](./Review-Tool-user-Guide/images/review-search.png)
+> ![Отображается панель инструментов поиска. В нем есть различные поля со списком для ввода условий поиска, например состояние проверки и теги.](./Review-Tool-user-Guide/images/review-search.png)
 
 Дополнительные сведения о том, как это сделать, см. в разделе [руководство по ознакомлению с руководством](./review-tool-user-guide/review-moderated-images.md) по [REST API](./try-review-api-review.md) .
 

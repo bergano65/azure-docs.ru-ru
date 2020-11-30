@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: f691ec2d6ba873ba8052c5fab35162932668f185
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: c31187e87f18f0ec84cd5b80ccab997d0ba381c3
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497020"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324760"
 ---
 # <a name="migration-guide-db2-to-sql-managed-instance"></a>Руководство по миграции: DB2 в SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "94497020"
 Чтобы создать оценку, выполните следующие действия.
 
 1. Откройте Помощник по миграции Microsoft SQL Server (SSMA) для DB2. 
-1. Выберите **Файл** , а затем пункт **Новый проект**. 
+1. Выберите **Файл**, а затем пункт **Новый проект**. 
 1. Укажите имя проекта, расположение для сохранения проекта, а затем выберите Azure SQL Управляемый экземпляр в качестве цели миграции из раскрывающегося списка. Щелкните **ОК**. 
 
    :::image type="content" source="media/db2-to-managed-instance-guide/new-project.png" alt-text="Укажите сведения о проекте и нажмите кнопку ОК для сохранения.":::
@@ -149,7 +149,7 @@ ms.locfileid: "94497020"
 
 ## <a name="leverage-advanced-features"></a>Использование дополнительных функций 
 
-Не забудьте воспользоваться преимуществами расширенных облачных функций, предлагаемых Управляемый экземпляр Azure SQL, таких как [Встроенная Высокая доступность](../../database/high-availability-sla.md), [обнаружение угроз](../../database/advanced-data-security.md), [мониторинг и Настройка рабочей нагрузки](../../database/monitor-tune-overview.md). 
+Не забудьте воспользоваться преимуществами расширенных облачных функций, предлагаемых Управляемый экземпляр Azure SQL, таких как [Встроенная Высокая доступность](../../database/high-availability-sla.md), [обнаружение угроз](../../database/azure-defender-for-sql.md), [мониторинг и Настройка рабочей нагрузки](../../database/monitor-tune-overview.md). 
 
 
 Некоторые SQL Server функции доступны только после изменения [уровня совместимости базы данных](/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) на последний уровень совместимости (150). 
@@ -168,7 +168,7 @@ ms.locfileid: "94497020"
 Эти ресурсы были разработаны в рамках программы Data SQL Ninja, которая спонсируется группой разработчиков Azure Data Group. Основная часть программы Data SQL Ninja заключается в разрешении и ускорении сложной модернизации и реализация перехода на платформу данных Microsoft Azure. Если вы считаете, что ваша организация заинтересована в участии в программе Data SQL Ninja, обратитесь в службу поддержки своей учетной записи и попросите отправить заявку.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о службах и средствах Майкрософт и сторонних поставщиков, которые помогут вам в использовании различных сценариев переноса баз данных и данных, а также специальных задач см. в разделе [служба и средства для переноса данных](../../../dms/dms-tools-matrix.md).
 

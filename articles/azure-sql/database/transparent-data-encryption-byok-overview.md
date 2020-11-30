@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/18/2020
-ms.openlocfilehash: 76ecd811ab0bffe20b4bddcc4dc2eacaffaed588
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2a7d77579eaebd3ee951d0184e25937783420806
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308339"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325202"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -78,7 +78,7 @@ ms.locfileid: "93308339"
 
 - Хранилище ключей и база данных SQL или управляемый экземпляр должны принадлежать к одному и тому же клиенту Azure Active Directory. Взаимодействия ключа хранилища для нескольких клиентов и сервера не поддерживаются. Чтобы переместить ресурсы позже, необходимо будет перенастроить TDE с AKV. Дополнительные сведения о [перемещении ресурсов](../../azure-resource-manager/management/move-resource-group-and-subscription.md).
 
-- Функция [обратимого удаления](../../key-vault/general/soft-delete-overview.md) должна быть включена в хранилище ключей для защиты от случайного удаления ключа (или хранилища ключей) с потерей данных. Обратимо удаленные ресурсы хранятся в течение 90 дней, если только они не будут восстановлены или очищены клиентом. С действиями *Восстановить* и *Удалить* связаны отдельные разрешения в политике доступа хранилища ключей. Функция обратимого удаления отключена по умолчанию и может быть включена с помощью [PowerShell](../../key-vault/general/soft-delete-powershell.md#enabling-soft-delete) или [интерфейса командной строки](../../key-vault/general/soft-delete-cli.md#enabling-soft-delete). Его нельзя включить с помощью портал Azure.  
+- Функция [обратимого удаления](../../key-vault/general/soft-delete-overview.md) должна быть включена в хранилище ключей для защиты от случайного удаления ключа (или хранилища ключей) с потерей данных. Обратимо удаленные ресурсы хранятся в течение 90 дней, если только они не будут восстановлены или очищены клиентом. С действиями *Восстановить* и *Удалить* связаны отдельные разрешения в политике доступа хранилища ключей. Функция обратимого удаления отключена по умолчанию и может быть включена с помощью [PowerShell](../../key-vault/general/key-vault-recovery.md?tabs=azure-powershell) или [интерфейса командной строки](../../key-vault/general/key-vault-recovery.md?tabs=azure-cli). Его нельзя включить с помощью портал Azure.  
 
 - Предоставьте серверу или управляемому экземпляру доступ к хранилищу ключей (Get, wrapKey, unwrapKey), используя удостоверение Azure Active Directory. При использовании портал Azure удостоверение Azure AD автоматически создается. При использовании PowerShell или интерфейса командной строки удостоверение Azure AD должно быть создано явным образом, и его выполнение должно быть проверено. Подробные пошаговые инструкции по использованию PowerShell см. в статьях [Настройка TDE с помощью BYOK](transparent-data-encryption-byok-configure.md) и [Настройка TDE с BYOK for SQL управляемый экземпляр](../managed-instance/scripts/transparent-data-encryption-byok-powershell.md) .
 
@@ -146,7 +146,7 @@ ms.locfileid: "93308339"
 
 Возможно, кто-то, имеющий достаточные права доступа к хранилищу ключей, случайно отключил доступ к этому разделу на сервере:
 
-- Отмена разрешений *Get* , *wrapKey* , *unwrapKey* хранилища ключей с сервера
+- Отмена разрешений *Get*, *wrapKey*, *unwrapKey* хранилища ключей с сервера
 
 - Удаление ключа
 

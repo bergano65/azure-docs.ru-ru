@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 10/29/2020
 ms.author: alkohli
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 859325bffe1db9cd6a7afc7e5013681c88209eff
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 9d1d0f4b615bbf4cc7faf82d70a4de0b0157ed82
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491789"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326358"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -49,16 +49,16 @@ ms.locfileid: "94491789"
 
 1. Подключите наши диски к системе Windows через соединители SATA.
 2. Создайте один том NTFS на каждом диске. Присвойте ему букву диска. Не используйте точки подключения.
-3. Измените файл *dataset.csv* в корневой папке, в которой находится средство. В зависимости от того, что импортируется, — файл, папка или и то и другое, добавьте записи в файл *dataset.csv* , как показано в следующем примере.
+3. Измените файл *dataset.csv* в корневой папке, в которой находится средство. В зависимости от того, что импортируется, — файл, папка или и то и другое, добавьте записи в файл *dataset.csv*, как показано в следующем примере.
 
-   - **Чтобы импортировать файл** : в следующем примере данные для копирования находятся на диске F:. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1*. Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
+   - **Чтобы импортировать файл**: в следующем примере данные для копирования находятся на диске F:. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1*. Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
 
        ```
            BasePath,DstItemPathOrPrefix,ItemType,Disposition,MetadataFile,PropertiesFile
            "F:\MyFolder1\MyFile1.txt","MyAzureFileshare1/MyFile1.txt",file,rename,"None",None
 
        ```
-   - **Чтобы импортировать папку**. Все файлы и папки, расположенные в *MyFolder2_original* , будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
+   - **Чтобы импортировать папку**. Все файлы и папки, расположенные в *MyFolder2_original*, будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
 
        ```
            "F:\MyFolder2\","MyAzureFileshare1/",file,rename,"None",None
@@ -74,11 +74,11 @@ ms.locfileid: "94491789"
      Дополнительные сведения о подготовке CSV-файла набора данных см. в [этом разделе](/previous-versions/azure/storage/common/storage-import-export-tool-preparing-hard-drives-import).
 
 
-4. Измените файл *driveset.csv* в корневой папке, где находится средство. Добавьте записи в файл *driveset.csv* , как показано в следующих примерах. Файл с набором дисков содержит список дисков и соответствующих букв дисков, чтобы средство могло правильно выбрать список дисков, которые будут подготовлены.
+4. Измените файл *driveset.csv* в корневой папке, где находится средство. Добавьте записи в файл *driveset.csv*, как показано в следующих примерах. Файл с набором дисков содержит список дисков и соответствующих букв дисков, чтобы средство могло правильно выбрать список дисков, которые будут подготовлены.
 
     В этом примере предполагается, что подключено два диска, а базовые тома NTFS G:\ и H:\ уже созданы. H:\ не зашифрован, а G: уже зашифрован. Средство форматирует и шифрует диск, который содержит только H:\ (а не G:\).
 
-   - **Для диска, который не зашифрован:** укажите *Encrypt* , чтобы включить шифрование BitLocker на диске.
+   - **Для диска, который не зашифрован:** укажите *Encrypt*, чтобы включить шифрование BitLocker на диске.
 
        ```
        DriveLetter,FormatOption,SilentOrPromptOnFormat,Encryption,ExistingBitLockerKey
@@ -127,7 +127,7 @@ ms.locfileid: "94491789"
 
     ![Щелкните "Задание импорта и экспорта"](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
 
-4. В разделе **Основные сведения** :
+4. В разделе **Основные сведения**:
 
     - Выберите **Импорт в Azure**.
     - Введите описательное имя для задания импорта. Это имя будет использоваться для отслеживания выполняемых заданий, а также после их завершения.
@@ -355,9 +355,9 @@ Install-Module -Name Az.ImportExport
 
 ## <a name="samples-for-journal-files"></a>Примеры файлов журнала
 
-Чтобы **добавить дополнительные диски** , создайте файл с набором дисков и выполните приведенную ниже команду.
+Чтобы **добавить дополнительные диски**, создайте файл с набором дисков и выполните приведенную ниже команду.
 
-Для последующих сеансов копирования на диски, указанные в файле *InitialDriveset.csv* , создайте еще один *CSV-файл* с набором дисков и укажите его в качестве значения параметра `AdditionalDriveSet`. Используйте **то же имя файла журнала** и укажите **новый идентификатор сеанса**. Формат CSV-файлов AdditionalDriveset и InitialDriveSet совпадает.
+Для последующих сеансов копирования на диски, указанные в файле *InitialDriveset.csv*, создайте еще один *CSV-файл* с набором дисков и укажите его в качестве значения параметра `AdditionalDriveSet`. Используйте **то же имя файла журнала** и укажите **новый идентификатор сеанса**. Формат CSV-файлов AdditionalDriveset и InitialDriveSet совпадает.
 
 ```cmd
 WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> /AdditionalDriveSet:<driveset.csv>
@@ -372,7 +372,7 @@ WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#3  /AdditionalDrive
 
 Чтобы добавить дополнительные данные в тот же файл с набором дисков, используйте команду PrepImport для последующих сеансов копирования и скопируйте дополнительные файлы или папки.
 
-Для последующих сеансов копирования на те же жесткие диски, указанные в файле *InitialDriveset.csv* , укажите имя **того же файла журнала** и **новый идентификатор сеанса**. Указывать ключ учетной записи хранения не требуется.
+Для последующих сеансов копирования на те же жесткие диски, указанные в файле *InitialDriveset.csv*, укажите имя **того же файла журнала** и **новый идентификатор сеанса**. Указывать ключ учетной записи хранения не требуется.
 
 ```cmd
 WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] DataSet:<dataset.csv>
@@ -384,7 +384,7 @@ WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /j:<JournalFile> /id:
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset-2.csv
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)
