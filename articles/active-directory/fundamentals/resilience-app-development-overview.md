@@ -11,12 +11,12 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: c2c2f9d0ad7bfa50f543b57326b9fc8dab0069c6
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: d06e851390537bf94b59e656f84bf58fe7216410
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029308"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317358"
 ---
 # <a name="increase-resilience-of-authentication-and-authorization-applications-you-develop"></a>Повышение устойчивости разрабатываемых приложений проверки подлинности и авторизации
 
@@ -29,4 +29,4 @@ Microsoft Identity использует современные проверки 
 - [Создание устойчивости для приложений, которые входят в систему пользователей](resilience-client-app.md)
 - [Создание устойчивости для приложений без пользователей](resilience-daemon-app.md)
 - [Отказоустойчивость сборок в инфраструктуре управления удостоверениями и доступом](resilience-in-infrastructure.md)
-- [Отказоустойчивость сборок в управлении удостоверениями и доступом клиентов с помощью Azure Active Directory B2C](resilience-b2c.md)
+- [Устойчивость сборок в CIAM Systems](resilience-b2c.md)

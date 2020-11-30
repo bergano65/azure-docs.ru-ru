@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 7b77a47acba6180df4a067887b79d8cdc0f56df6
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5dbd49312b58dc656e2239e8a0a4acea614023de
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185085"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317142"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Непрерывная интеграция и доставка для рабочей области Azure синапсе
 
@@ -91,11 +91,21 @@ ms.locfileid: "96185085"
 
 ## <a name="set-up-a-stage-task-for-artifacts-deployment"></a>Настройка задачи этапа для развертывания артефактов 
 
-Для развертывания других элементов в рабочей области синапсе, таких как DataSet, скрипт SQL, записная книжка, определение задания Spark, поток данных, конвейер, связанная служба, учетные данные и IR (Integration Runtime), используйте [рабочую область синапсе Build & Release](https://marketplace.visualstudio.com/items?itemName=PraveenMathamsetty.synapsecicd-deploy) Task.  
+Расширение [развертывания рабочей области синапсе](https://marketplace.visualstudio.com/items?itemName=AzureSynapseWorkspace.synapsecicd-deploy) используется для развертывания других элементов в рабочей области синапсе, таких как набор данных, скрипт SQL, записная книжка, определение задания Spark, поток данных, конвейер, связанная служба, учетные данные и IR (Integration Runtime).  
+
+1. Поиск и получение расширения из **Azure DevOps Marketplace**(https://marketplace.visualstudio.com/azuredevops) 
+
+     ![Получить расширение](media/get-extension-from-market.png)
+
+1. Выберите организацию для установки расширения. 
+
+     ![Установка расширения](media/install-extension.png)
 
 1. Убедитесь, что участнику службы "конвейер Azure DevOps" предоставлено разрешение подписки, а также назначено как администратор рабочей области для целевой рабочей области. 
 
-1. Создайте задачу. Выполните поиск по запросу **рабочие области синапсе Build & Release**, а затем нажмите кнопку **Добавить**.
+1. Создайте задачу. Найдите **Развертывание рабочей области синапсе** и нажмите кнопку **Добавить**.
+
+     ![Добавить расширение](media/add-extension-task.png)
 
 1.  В задаче укажите связанные сведения о репозитории Git **workspace_publish** и выберите группу ресурсов, регион, имя и облачную среду для целевой рабочей области. При необходимости укажите параметры и значения.
 
