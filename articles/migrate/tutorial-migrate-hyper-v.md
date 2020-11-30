@@ -6,12 +6,12 @@ ms.date: 06/08/2020
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 84f04d2f1f8c9b54a1f2a2a13cc97954ac5add90
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 038d0ec817d4f81371546e8d7aa4b48b299c8d98
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995324"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302553"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Перенос виртуальных машин Hyper-V в Azure 
 
@@ -43,23 +43,9 @@ ms.locfileid: "95995324"
 2. [Проверьте](migrate-support-matrix-hyper-v-migration.md#hyper-v-host-requirements) требования к узлу Hyper-V для миграции и URL-адреса Azure, к которым узлам и кластерам Hyper-V необходим доступ для миграции виртуальных машин.
 3. [Просмотрите требования](migrate-support-matrix-hyper-v-migration.md#hyper-v-vms) для виртуальных машин Hyper-V, которые вы хотите перенести в Azure.
 4. Рекомендуется [оценить виртуальные машины Hyper-V](tutorial-assess-hyper-v.md) перед их переносом в Azure, но это необязательно.
+5. Перейдите к созданному проекту или [создайте новый проект](https://docs.microsoft.com/azure/migrate/create-manage-projects).
+6. Проверьте разрешения своей учетной записи. Учетная запись Azure должна иметь разрешения на создание виртуальной машины и на запись на управляемый диск Azure.
 
-   
-## <a name="add-the-azure-migrateserver-migration-tool"></a>Добавление средства "Миграция сервера" службы "Миграция Azure"
-
-Добавьте средство "Миграция сервера" службы "Миграция Azure". Если у вас еще нет проекта службы "Миграция Azure", [создайте такой проект](how-to-add-tool-first-time.md), чтобы подготовить его. При создании проекта вы добавите средство "Миграция сервера" службы "Миграция Azure".
-
-Если вы уже настроили проект, добавьте это средство следующим образом:
-
-1. В проекте службы "Миграция Azure" щелкните **Обзор**. 
-2. В разделе **Discover, assess, and migration servers** (Обнаружение, оценка и миграция серверов) щелкните **Оценка и миграция серверов**.
-3. В области **Migration tools** (Средства миграции) выберите **Click here to add a migration tool when you are ready to migrate** (Щелкните здесь, чтобы добавить средство миграции, когда будете готовы к миграции).
-
-    ![Выбор средства](./media/tutorial-migrate-hyper-v/select-migration-tool.png)
-
-4. В списке средств выберите **Azure Migrate: Server Migration** > **Add tool** (Миграция Azure: миграция сервера > Добавить средство)
-
-    ![Средство миграции сервера](./media/tutorial-migrate-hyper-v/server-migration-tool.png)
 
 ## <a name="download-and-install-the-provider"></a>Скачивание и установка поставщика
 
