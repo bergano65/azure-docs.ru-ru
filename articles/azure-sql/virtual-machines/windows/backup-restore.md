@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: db270224a753f815a2d94e6a1fa79ebbedf49278
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: f3723c792dfe962f2cbf16e3b167faf66c50a92e
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94991576"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327463"
 ---
 # <a name="backup-and-restore-for-sql-server-on-azure-vms"></a>Резервное копирование и восстановление SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -93,7 +93,7 @@ ms.locfileid: "94991576"
 
 ### <a name="backup-to-attached-disks"></a>Резервное копирование на подключенные диски
 
-Для SQL Server на виртуальных машинах Azure вы можете применить встроенные функции резервного копирования и восстановления, используя подключенные диски в качестве целевого хранилища для файлов резервных копий. При этом существует ограничение на количество дисков, которые можно присоединить к виртуальной машине Azure, связанное с [размером виртуальной машины](../../../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json). Также необходимо учитывать накладные расходы на управление дисками.
+Для SQL Server на виртуальных машинах Azure вы можете применить встроенные функции резервного копирования и восстановления, используя подключенные диски в качестве целевого хранилища для файлов резервных копий. При этом существует ограничение на количество дисков, которые можно присоединить к виртуальной машине Azure, связанное с [размером виртуальной машины](../../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Также необходимо учитывать накладные расходы на управление дисками.
 
 В статье [Создание полной резервной копии базы данных (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) описано, как вручную создать полную резервную копию базы данных с помощью SQL Server Management Studio (SSMS) или Transact-SQL.
 
