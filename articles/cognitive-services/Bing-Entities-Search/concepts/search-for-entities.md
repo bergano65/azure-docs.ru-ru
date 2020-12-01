@@ -10,25 +10,25 @@ ms.subservice: bing-entity-search
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 489a158c49bc6695a460fdef5b92606335a07ef6
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 9dabceda17defb24f2a916cd641f625feb551c6a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94365998"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353295"
 ---
 # <a name="searching-for-entities-with-the-bing-entity-api"></a>Поиск сущностей с помощью API Bing для сущностей
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 ## <a name="suggest-search-terms-with-the-bing-autosuggest-api"></a>Предложение условий поиска с помощью API автозаполнения Bing
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#query). Например, если пользователь вводит *Marcus Appel* , задайте `q` как *Marcus+Appel* или *Marcus%20Appel*.
+После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#query). Например, если пользователь вводит *Marcus Appel*, задайте `q` как *Marcus+Appel* или *Marcus%20Appel*.
 
 Если условие поиска содержит орфографические ошибки, ответ поиска включает объект [QueryContext](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext). Объект показывает исходное написание и исправленное написание, которое Bing использует для поиска.
 
@@ -194,7 +194,7 @@ ms.locfileid: "94365998"
 > [!NOTE]
 > Ответы сущности поддерживают разные рынки, но ответ Places поддерживает только расположения организаций в США. 
 
-Локальные запросы на объекты, такие как *ресторан рядом со мной* , требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation`[QueryContext](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext) значение **true**. 
+Локальные запросы на объекты, такие как *ресторан рядом со мной*, требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation`[QueryContext](/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext) значение **true**. 
 
 ```json
 {
@@ -301,7 +301,7 @@ ms.locfileid: "94365998"
 
 ![Определение принадлежности лицензии](../media/cognitive-services-bing-entities-api/licenseattribution.png)
 
-Уведомление о лицензии должно содержать гиперссылку на сайт со сведениями о лицензии. Как правило, имя лицензии делают гиперссылкой. Например, если уведомление содержит описание **Текст лицензии CC-BY-SA** , а CC-BY-SA — это имя лицензии, то CC-BY-SA нужно сделать гиперссылкой.
+Уведомление о лицензии должно содержать гиперссылку на сайт со сведениями о лицензии. Как правило, имя лицензии делают гиперссылкой. Например, если уведомление содержит описание **Текст лицензии CC-BY-SA**, а CC-BY-SA — это имя лицензии, то CC-BY-SA нужно сделать гиперссылкой.
 
 ### <a name="link-and-text-attribution"></a>Определение принадлежности текста или ссылки
 
@@ -336,6 +336,6 @@ ms.locfileid: "94365998"
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы приступить к поиску сущностей с помощью API Поиска сущностей Bing, ознакомьтесь с [этим кратким руководством](../quickstarts/csharp.md).

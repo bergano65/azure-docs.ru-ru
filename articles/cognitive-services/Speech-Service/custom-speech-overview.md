@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: 6dbe97d615753f0a90c8ba80aa7afa6dafa15eb2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 7f8fb0488c863868b1076ad5b3fa7868d1880a6b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658474"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353788"
 ---
 # <a name="what-is-custom-speech"></a>Что такое Пользовательское распознавание речи?
 
@@ -31,7 +31,7 @@ ms.locfileid: "94658474"
 
 1. [Подпишитесь и создайте проект](#set-up-your-azure-account) . Создайте учетную запись Azure и подпишитесь на службу распознавания речи. Эта единая подписка предоставляет доступ к преобразованию речи в текст, преобразования текста в речь, перевода речи и [пользовательское распознавание речи портале](https://speech.microsoft.com/customspeech). Затем с помощью подписки на службу речи создайте первый проект Пользовательское распознавание речи.
 
-1. [Отправка тестовых данных](how-to-custom-speech-test-data.md) . Отправка тестовых данных (звуковых файлов) для ознакомления с голосовыми функциями Майкрософт для приложений, средств и продуктов.
+1. [Отправка тестовых данных](./how-to-custom-speech-test-and-train.md) . Отправка тестовых данных (звуковых файлов) для ознакомления с голосовыми функциями Майкрософт для приложений, средств и продуктов.
 
 1. [Проверка качества распознавания](how-to-custom-speech-inspect-data.md) . используйте [портал пользовательское распознавание речи](https://speech.microsoft.com/customspeech) для воспроизведения отправленного звука и проверки качества распознавания речи для тестовых данных. Сведения о количественных измерениях см. в разделе [Проверка данных](how-to-custom-speech-inspect-data.md).
 
@@ -101,7 +101,7 @@ ms.locfileid: "94658474"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Подготовка и тестирование данных](how-to-custom-speech-test-data.md)
+* [Подготовка и тестирование данных](./how-to-custom-speech-test-and-train.md)
 * [Проверка данных](how-to-custom-speech-inspect-data.md)
 * [Оценка и улучшение точности модели](how-to-custom-speech-evaluate-data.md)
 * [Обучение и развертывание модели](how-to-custom-speech-train-model.md)

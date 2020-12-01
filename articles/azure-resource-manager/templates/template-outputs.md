@@ -1,18 +1,18 @@
 ---
 title: Выходные данные в шаблонах
-description: Описывает, как определить выходные значения в шаблоне Azure Resource Manager.
+description: Описывает, как определить выходные значения в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 8f782a78e523ebc55faac98344643982172476fa
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6a375dfbc767bcbbfd8ec6b7f8cb9e942e275582
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95911436"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353533"
 ---
-# <a name="outputs-in-azure-resource-manager-template"></a>Выходные данные в шаблоне Azure Resource Manager
+# <a name="outputs-in-arm-templates"></a>Выходные данные в шаблонах ARM
 
-В этой статье описывается, как определить выходные значения в шаблоне Azure Resource Manager. Выходные данные используются при необходимости возврата значений из развернутых ресурсов.
+В этой статье описывается, как определить выходные значения в шаблоне Azure Resource Manager (шаблон ARM). Выходные данные используются при необходимости возврата значений из развернутых ресурсов.
 
 Формат каждого выходного значения должен соответствовать одному из [типов данных](template-syntax.md#data-types).
 
@@ -120,4 +120,4 @@ az deployment group show \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о доступных свойствах выходных данных см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
+* Дополнительные сведения о доступных свойствах выходных данных см. в разделе Общие сведения о [структуре и синтаксисе шаблонов ARM](template-syntax.md).

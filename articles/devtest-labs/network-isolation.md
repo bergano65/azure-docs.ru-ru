@@ -3,12 +3,12 @@ title: Сетевая изоляция в Azure DevTest Labs
 description: Сведения об изоляции сети в Azure DevTest Labs.
 ms.topic: article
 ms.date: 08/25/2020
-ms.openlocfilehash: aafa6bf94c7963d69bfb67a28a520b811c4fbacf
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 28bfa048a8a6666deb58a8ecfff38779c91d95b8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149165"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352938"
 ---
 # <a name="network-isolation-in-devtest-labs"></a>Сетевая изоляция в DevTest Labs
 
@@ -74,7 +74,7 @@ ms.locfileid: "92149165"
 
 Вы также можете автоматизировать эти действия, чтобы настроить этот параметр для нескольких лабораторий. 
 
-[Дополнительные сведения об управлении правилами сетевого доступа по умолчанию для службы хранилища Azure с помощью PowerShell и интерфейса командной строки](../storage/common/storage-network-security.md?toc=%252fazure%252fvirtual-network%252ftoc.json#powershell)
+[Дополнительные сведения об управлении правилами сетевого доступа по умолчанию для службы хранилища Azure с помощью PowerShell и интерфейса командной строки](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#powershell)
 
 ## <a name="things-to-remember-while-using-a-lab-in-a-network-isolated-mode"></a>Что следует помнить при использовании лаборатории в изолированном от сети режиме
 

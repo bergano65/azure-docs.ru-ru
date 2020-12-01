@@ -1,20 +1,20 @@
 ---
 title: Определяемые пользователем функции в шаблонах
-description: Описывает, как определять и использовать определяемые пользователем функции в шаблоне Azure Resource Manager.
+description: Описывает, как определять и использовать определяемые пользователем функции в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: 69f4e98d389cc8dbe5cd3f4b628189676c501106
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0d62abb5362d51a77db872c11416b04dcfb3f97
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84672941"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353482"
 ---
-# <a name="user-defined-functions-in-azure-resource-manager-template"></a>Определяемые пользователем функции в шаблоне Azure Resource Manager
+# <a name="user-defined-functions-in-arm-template"></a>Определяемые пользователем функции в шаблоне ARM
 
 В шаблоне можно создать свои собственные функции. Эти функции доступны для использования в шаблоне. Определяемые пользователем функции отделены от [стандартных функций шаблонов](template-functions.md) , которые автоматически доступны в шаблоне. Создавайте собственные функции при наличии сложных выражений, которые многократно используются в шаблоне.
 
-В этой статье описывается добавление определяемых пользователем функций в шаблон Azure Resource Manager.
+В этой статье описывается добавление определяемых пользователем функций в шаблон Azure Resource Manager (шаблон ARM).
 
 ## <a name="define-the-function"></a>Определение функции
 

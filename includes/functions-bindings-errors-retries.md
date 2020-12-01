@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 10/01/2020
 ms.author: glenga
-ms.openlocfilehash: 39c0556350482e171234a3ff9dce0c16ed88d110
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 2ccff72be66a88b9bf0a5e9eb9c29ade8397804b
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93406674"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356199"
 ---
 Ошибки, возникающие в функциях Azure, могут поступать из любого из следующих источников:
 
@@ -149,6 +149,27 @@ public static async Task Run([EventHubTrigger("myHub", Connection = "EventHubCon
     }
 }
 ```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Ниже приведена Политика повтора в *function.jsдля* файла:
+
+
+```json
+{
+    "disabled": false,
+    "bindings": [
+        {
+            ....
+        }
+    ],
+    "retry": {
+        "strategy": "fixedDelay",
+        "maxRetryCount": 4,
+        "delayInterval": "00:00:10"
+    }
+}
+```
 ---
 
 #### <a name="exponential-backoff-retry"></a>Экспоненциальная повторная попытка
@@ -249,15 +270,36 @@ public static async Task Run([EventHubTrigger("myHub", Connection = "EventHubCon
     }
 }
 ```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Ниже приведена Политика повтора в *function.jsдля* файла:
+
+```json
+{
+    "disabled": false,
+    "bindings": [
+        {
+            ....
+        }
+    ],
+    "retry": {
+        "strategy": "exponentialBackoff",
+        "maxRetryCount": 5,
+        "minimumInterval": "00:00:10",
+        "maximumInterval": "00:15:00"
+    }
+}
+```
 ---
 
 |свойство function.json  |Свойство атрибута | Описание |
 |---------|---------|---------| 
-|модель|н/д|Обязательный элемент. Используемая стратегия повторных попыток. Допустимые значения: `fixedDelay` или `exponentialBackoff`.|
-|maxRetryCount|н/д|Обязательный элемент. Максимальное количество попыток выполнения каждой функции. `-1` Указывает на неограниченное время повтора.|
-|делайинтервал|н/д|Задержка, которая будет использоваться между повторными попытками при использовании `fixedDelay` стратегии.|
-|minimumInterval|н/д|Минимальная задержка повторных попыток при использовании `exponentialBackoff` стратегии.|
-|maximumInterval|н/д|Максимальная задержка повтора при использовании `exponentialBackoff` стратегии.| 
+|модель|Недоступно|Обязательный. Используемая стратегия повторных попыток. Допустимые значения: `fixedDelay` или `exponentialBackoff`.|
+|maxRetryCount|Недоступно|Обязательный. Максимальное количество попыток выполнения каждой функции. `-1` Указывает на неограниченное время повтора.|
+|делайинтервал|Недоступно|Задержка, которая будет использоваться между повторными попытками при использовании `fixedDelay` стратегии.|
+|minimumInterval|Недоступно|Минимальная задержка повторных попыток при использовании `exponentialBackoff` стратегии.|
+|maximumInterval|Недоступно|Максимальная задержка повтора при использовании `exponentialBackoff` стратегии.| 
 
 ### <a name="retry-limitations-during-preview"></a>Ограничения повторных попыток во время предварительной версии
 

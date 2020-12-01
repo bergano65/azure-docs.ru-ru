@@ -1,5 +1,5 @@
 ---
-title: Интеграция моделей, стандартных для отрасли
+title: Интеграция стандартных отраслевых моделей
 titleSuffix: Azure Digital Twins
 description: Узнайте, как интегрировать стандартные отраслевые модели в ДТДЛ для Azure Digital двойников, используя специальное ДТДЛ онтологиес или преобразуя существующие онтологиес
 author: baanders
@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1866e9b233a1379474c061779ada09fd6d119107
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: f5bfe128ddc04e8048bb89a8e39035434dfd2b92
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94338403"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352887"
 ---
 # <a name="integrate-industry-standard-models-with-dtdl-for-azure-digital-twins"></a>Интегрируйте отраслевые модели с ДТДЛ для Azure Digital двойников
 
@@ -35,7 +35,7 @@ ms.locfileid: "94338403"
 
 ## <a name="convert-existing-models-to-dtdl"></a>Преобразование существующих моделей в ДТДЛ
 
-Большинство отраслевых моделей (также называемых **онтологиес** ) основаны на семантических веб-стандартах, таких как [OWL](https://www.w3.org/OWL/), [RDF](https://www.w3.org/2001/sw/wiki/RDF)и [рдфс](https://www.w3.org/2001/sw/wiki/RDFS). 
+Большинство отраслевых моделей (также называемых **онтологиес**) основаны на семантических веб-стандартах, таких как [OWL](https://www.w3.org/OWL/), [RDF](https://www.w3.org/2001/sw/wiki/RDF)и [рдфс](https://www.w3.org/2001/sw/wiki/RDFS). 
 
 Чтобы использовать модель с цифровым двойников Azure, она должна быть в формате ДТДЛ. В этом разделе описаны общие рекомендации по проектированию в форме **шаблона преобразования** для преобразования моделей на основе RDF в дтдл, чтобы их можно было использовать с цифровым двойников Azure. 
 
@@ -111,9 +111,9 @@ var json = JsonConvert.SerializeObject(_interfaceList);
 
 Пример — это приложение командной строки .NET Core с именем **рдфтодтдлконвертер**.
 
-Пример можно получить здесь: [**рдфтодтдлконвертер**](https://docs.microsoft.com/samples/azure-samples/rdftodtdlconverter/digital-twins-model-conversion-samples/). 
+Пример можно получить здесь: [**рдфтодтдлконвертер**](/samples/azure-samples/rdftodtdlconverter/digital-twins-model-conversion-samples/). 
 
-Чтобы загрузить код на компьютер, нажмите кнопку *скачать ZIP-файл* под заголовком на целевой странице примера. Будет загружен *ZIP* -файл с именем *RdfToDtdlConverter_sample_application_to_convert_RDF_to_DTDL.zip* , который затем можно распаковать и исследовать.
+Чтобы загрузить код на компьютер, нажмите кнопку *скачать ZIP-файл* под заголовком на целевой странице примера. Будет загружен *ZIP* -файл с именем *RdfToDtdlConverter_sample_application_to_convert_RDF_to_DTDL.zip*, который затем можно распаковать и исследовать.
 
 Этот пример можно использовать для просмотра шаблонов преобразования в контексте и для использования в качестве стандартного блока для собственных приложений, выполняющих преобразования модели в соответствии с конкретными потребностями.
 
@@ -123,7 +123,7 @@ var json = JsonConvert.SerializeObject(_interfaceList);
 
 После преобразования и проверки модели **ее можно передать в свой экземпляр Digital двойников для Azure**. Дополнительные сведения об этом процессе см. в разделе " [*Передача моделей*](how-to-manage-model.md#upload-models) " *руководства по управлению пользовательскими моделями*.
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 Узнайте больше о проектировании моделей цифровых двойника и управлении ими:
  

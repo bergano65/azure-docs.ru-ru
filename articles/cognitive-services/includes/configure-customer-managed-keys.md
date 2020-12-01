@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 17dff6056564b421f0741f55ce8171f3251c94c9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c79846b0a5b675c34e4e7919e9ecd9d591bfefe5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027529"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356364"
 ---
 ## <a name="customer-managed-keys-with-azure-key-vault"></a>Управляемые клиентом ключи с использованием Azure Key Vault
 
@@ -38,8 +38,8 @@ ms.locfileid: "96027529"
 
 Чтобы узнать, как включить эти свойства в имеющемся хранилище ключей, см. разделы **Включение обратимого удаления** и **Включение защиты от очистки** в одной из следующих статей:
 
-- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../../key-vault/general/soft-delete-powershell.md).
-- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../../key-vault/general/soft-delete-cli.md).
+- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../../key-vault/general/key-vault-recovery.md).
+- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../../key-vault/general/key-vault-recovery.md).
 
 С шифрованием службы хранилища Azure поддерживаются только ключи RSA размером 2048. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/general/about-keys-secrets-certificates.md).
 
@@ -87,7 +87,7 @@ ms.locfileid: "96027529"
 
 ## <a name="update-the-key-version"></a>Обновление версии ключа
 
-При создании новой версии ключа обновите ресурс Cognitive Services для использования новой версии. Выполните следующие действия:
+При создании новой версии ключа обновите ресурс Cognitive Services для использования новой версии. Выполните следующие действия.
 
 1. Перейдите к ресурсу Cognitive Services и отобразите параметры **шифрования** .
 1. Введите универсальный код ресурса (URI) для новой версии ключа. Кроме того, можно выбрать хранилище ключей и ключ еще раз, чтобы обновить версию.

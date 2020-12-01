@@ -5,12 +5,12 @@ services: container-service
 ms.custom: fasttrack-edit, references_regions, devx-track-azurecli
 ms.topic: article
 ms.date: 09/04/2020
-ms.openlocfilehash: 43b57d0b58c9268482ca27fd51040c7152ecdc25
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 15f66e836a2900349007fb5068a172b89f39d4de
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026057"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352802"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Службы Azure Kubernetes (AKS), который использует зоны доступности
 
@@ -34,11 +34,8 @@ ms.locfileid: "95026057"
 * Восточная часть США 
 * восточная часть США 2
 * Центральная Франция
-* Центрально-Западная Германия
 * Восточная Япония
 * Северная Европа
-* Северная часть ЮАР;
-* Центрально-южная часть США
 * Юго-Восточная Азия
 * южная часть Соединенного Королевства
 * Западная Европа

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2c088bce3bc763bf813298ef91b4e07f0b20c50c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 7deee88210acf700916961be7c4ccaf9477accf8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93328746"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353448"
 ---
 # <a name="azure-security-baseline-for-azure-cloud-services"></a>Базовые показатели безопасности Azure для облачных служб Azure
 
@@ -36,11 +36,11 @@ ms.locfileid: "93328746"
 
 - [Обзор группы безопасности сети](../virtual-network/network-security-groups-overview.md)
 
-- [Пиринг виртуальных сетей](https://docs.microsoft.com/azure/cloud-services/cloud-services-connectivity-and-networking-faq?&amp;preserve-view=true#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
+- [Пиринг между виртуальными сетями](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
@@ -58,11 +58,11 @@ ms.locfileid: "93328746"
 
 - [Файл конфигурации облачных служб](schema-cscfg-file.md)
 
-- [Список служб, поддерживаемых политикой Azure](https://docs.microsoft.com/cli/azure/azure-services-the-azure-cli-can-manage?&amp;preserve-view=true)
+- [Список служб, поддерживаемых политикой Azure](/cli/azure/azure-services-the-azure-cli-can-manage?amp;preserve-view=)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
@@ -72,9 +72,9 @@ ms.locfileid: "93328746"
 
 - [Настройка сертификатов TLS/SSL](cloud-services-configure-ssl-certificate-portal.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
 
@@ -89,15 +89,15 @@ ms.locfileid: "93328746"
 
 Настройка правила "запретить применение" для назначений администраторам классической подписки. По умолчанию после определения внутренней конечной точки данные могут передаваться из одной роли во внутреннюю конечную точку другой роли без каких-либо ограничений. Чтобы ограничить взаимодействие, необходимо добавить элемент NetworkTrafficRules к элементу ServiceDefinition в файле определения службы.
 
-- [Как заблокировать или отключить входящий трафик к URL-адресу по умолчанию облачной службы](https://docs.microsoft.com/azure/cloud-services/cloud-services-connectivity-and-networking-faq?&amp;preserve-view=true#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
+- [Как заблокировать или отключить входящий трафик к URL-адресу по умолчанию облачной службы](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
 
-- [Защита от атак DDoS в Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-connectivity-and-networking-faq?&amp;preserve-view=true#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
+- [Защита от атак DDoS в Azure](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
 
 - [Блокирование определенного IP-адреса](cloud-services-startup-tasks-common.md#block-a-specific-ip-address)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="15-record-network-packets"></a>1,5: запись сетевых пакетов
 
@@ -107,11 +107,11 @@ ms.locfileid: "93328746"
 
 - [Настройка ведения журнала потоков в группе безопасности сети](../virtual-machines/extensions/network-watcher-linux.md)
 
-- [Дополнительные сведения о настройке журналов потоков см. в статье](https://docs.microsoft.com/cli/azure/azure-services-the-azure-cli-can-manage?&amp;preserve-view=true)
+- [Дополнительные сведения о настройке журналов потоков см. в статье](/cli/azure/azure-services-the-azure-cli-can-manage?amp;preserve-view=)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: развертывание системы обнаружения вторжений на основе сети и предотвращения вторжения (ИДЕНТИФИКАТОРы и IP-адреса)
 
@@ -121,7 +121,7 @@ ms.locfileid: "93328746"
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
 
@@ -139,9 +139,9 @@ ms.locfileid: "93328746"
 
 - [Развертывание шлюза приложений](../application-gateway/quick-create-portal.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
 
@@ -151,9 +151,9 @@ ms.locfileid: "93328746"
 
 Обратите внимание, что политика Azure не поддерживается в облачных службах Azure для принудительного применения конфигурации.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
@@ -163,9 +163,9 @@ ms.locfileid: "93328746"
 
 - [Фильтрация сетевого трафика с помощью правил группы безопасности сети](../virtual-network/tutorial-filter-network-traffic.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
@@ -181,9 +181,9 @@ ms.locfileid: "93328746"
 
 - [Мониторинг диспетчера трафика](../traffic-manager/traffic-manager-monitoring.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
@@ -195,9 +195,9 @@ ms.locfileid: "93328746"
 
 - [Доступ к NTP-серверу](../firewall/protect-windows-virtual-desktop.md#additional-considerations)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
@@ -218,9 +218,9 @@ ms.locfileid: "93328746"
 
 - [Настройка интеграции SIEM через концентраторы событий Azure](../security-center/continuous-export.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
@@ -231,15 +231,15 @@ ms.locfileid: "93328746"
 
 Облачные службы Azure можно отслеживать с помощью Application Insights для обеспечения доступности, производительности, сбоев и использования. Также в Application Insights можно добавлять пользовательские диаграммы, чтобы контролировать по ним самые важные данные. Данные экземпляра роли можно собирать с помощью пакета SDK Application Insights в проекте облачных служб Azure. 
 
-- [Включение диагностики в Visual Studio перед развертыванием](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?&amp;preserve-view=true#to-turn-on-diagnostics-in-visual-studio-before-deployment)
+- [Включение диагностики в Visual Studio перед развертыванием](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?amp;preserve-view=#to-turn-on-diagnostics-in-visual-studio-before-deployment)
 
 - [Просмотр журнала изменений](../azure-monitor/platform/activity-log.md#view-change-history)
 
 - [Application Insights для облачной службы Azure (классическая модель)](../azure-monitor/app/cloudservices.md)
 
-- [Настройка диагностики для облачной службы Azure (классическая модель) и виртуальных машин](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?toc=%2Fazure%2Fcloud-services%2Ftoc.json&amp;preserve-view=true)
+- [Настройка диагностики для облачной службы Azure (классическая модель) и виртуальных машин](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?amp;preserve-view=true&toc=%2fazure%2fcloud-services%2ftoc.json)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
 **Ответственность**. Customer
 
@@ -251,9 +251,9 @@ ms.locfileid: "93328746"
 
 - [Введение в мониторинг облачных служб](cloud-services-how-to-monitor.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
@@ -271,9 +271,9 @@ ms.locfileid: "93328746"
 
 - [Хранение и просмотр диагностических данных в службе хранилища Azure](diagnostics-extension-to-storage.md?&amp;preserve-view=true)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
@@ -281,19 +281,19 @@ ms.locfileid: "93328746"
 
 - [Интеграция с SIEM](../security-center/continuous-export.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
 
 **Руководство**. антивредоносное по Майкрософт для Azure защищает облачные службы и виртуальные машины Azure. Кроме того, вы можете развертывать сторонние решения безопасности, такие как веб-приложения, брандмауэры, Антивредоносные программы, системы обнаружения вторжений и предотвращения (ИДЕНТИФИКАТОРы или IP-адреса) и многое другое.
 
-- [Функции и возможности, предоставляемые основными IP-адресами и ИДЕНТИФИКАТОРами Azure Basic и от атак DDoS](https://docs.microsoft.com/azure/cloud-services/cloud-services-configuration-and-management-faq?&amp;preserve-view=true#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
+- [Функции и возможности, предоставляемые основными IP-адресами и ИДЕНТИФИКАТОРами Azure Basic и от атак DDoS](./cloud-services-configuration-and-management-faq.md?amp;preserve-view=#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
@@ -317,9 +317,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Различия между тремя административными ролями подписки](../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
@@ -327,9 +327,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Различия между административными ролями классической подписки](../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
 
@@ -337,9 +337,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Что такое единый вход (SSO)](../active-directory/manage-apps/what-is-single-sign-on.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
 
@@ -349,9 +349,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Как включить Azure AD MFA](../active-directory/authentication/howto-mfa-getstarted.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -375,9 +375,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Получение пакета](/rest/api/compute/cloudservices/rest-get-package)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
@@ -385,15 +385,15 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Вы также можете изменить "Пермиссионлевел" в элементе сертификата облачной службы Azure, чтобы указать разрешения на доступ, предоставленные процессам роли. Если требуется, чтобы только процессы с повышенными правами могли получить доступ к закрытому ключу, укажите разрешение с повышенными правами. разрешение Лимитедорелеватед позволяет всем процессам роли получить доступ к закрытому ключу. Возможными значениями являются Лимитедорелеватед или повышенные. Значение по умолчанию — Лимитедорелеватед.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
 - [Схема WebRole](schema-csdef-webrole.md#Certificate)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
 
@@ -401,9 +401,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4: Шифрование любой конфиденциальной информации при передаче
 
@@ -419,9 +419,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Использование управления службами из Python](cloud-services-python-how-to-use-service-management.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
 
@@ -429,13 +429,13 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
-**Руководство** : неприменимо к облачной службе (классическая модель). Защита от потери данных не обеспечивается.
+**Руководство**: неприменимо к облачной службе (классическая модель). Защита от потери данных не обеспечивается.
 
 Рекомендуется реализовать сторонние средства, такие как автоматизированное решение для защиты от потери данных на основе размещения, чтобы принудительно применять элементы управления доступом к данным, даже если данные копируются из системы.
 
@@ -443,9 +443,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
 
@@ -453,11 +453,11 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Данные приложения, хранящиеся во временных дисках, не шифруются. Клиент несет ответственность за управление и шифрование этих данных по мере необходимости.  
 
-- [Общие сведения о шифровании неактивных в Azure](../security/fundamentals/encryption-atrest.md)
+- [Общие сведения о шифровании неактивных данных в Azure](../security/fundamentals/encryption-atrest.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
@@ -471,9 +471,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Application Insights для облачной службы Azure (классическая модель)](../azure-monitor/app/cloudservices.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
@@ -495,9 +495,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Управление версией гостевой ОС](cloud-services-how-to-configure-portal.md#manage-guest-os-version)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ### <a name="53-deploy-an-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: Развертывание автоматизированного решения по управлению исправлениями для программ сторонних разработчиков
 
@@ -505,9 +505,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Это позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5. Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
 
@@ -525,9 +525,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Оценка риска ресурсов Azure](../security/fundamentals/ddos-best-practices.md#risk-evaluation-of-your-azure-resources)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
@@ -535,27 +535,27 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
-**Руководство** : неприменимо к облачным службам Azure. Эта рекомендация применима к ресурсам для вычислений IaaS.
+**Руководство**: неприменимо к облачным службам Azure. Эта рекомендация применима к ресурсам для вычислений IaaS.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
 **Рекомендации**. рекомендуется регулярно выверять запасы и своевременное удаление неавторизованных ресурсов из подписки.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="64-define-and-maintain-an-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
 
 **Руководство**. Клиент должен определить утвержденные ресурсы Azure и утвержденное программное обеспечение для ресурсов вычислений.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
@@ -576,9 +576,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Адаптивные элементы управления приложениями](../security-center/security-center-adaptive-application.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6. Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
 
@@ -604,9 +604,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Адаптивные элементы управления приложениями](../security-center/security-center-adaptive-application.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7. Удаление неутвержденных ресурсов Azure и программных приложений
 
@@ -632,9 +632,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Адаптивные элементы управления приложениями](../security-center/security-center-adaptive-application.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="68-use-only-approved-applications"></a>6.8. Использование только утвержденных приложений
 
@@ -660,9 +660,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Адаптивные элементы управления приложениями](../security-center/security-center-adaptive-application.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: ведение инвентаризации утвержденных наименований программного обеспечения
 
@@ -683,9 +683,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Адаптивные элементы управления приложениями](../security-center/security-center-adaptive-application.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="612-limit-users-ability-to-execute-scripts-in-compute-resources"></a>6,12: ограничьте возможность пользователей выполнять сценарии в ресурсах вычислений
 
@@ -711,13 +711,13 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Адаптивные элементы управления приложениями](../security-center/security-center-adaptive-application.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
-**Рекомендации** : для конфиденциальных или приложений с высоким уровнем риска и облачных служб Azure реализуйте отдельные подписки или группы управления для обеспечения изоляции.
+**Рекомендации**: для конфиденциальных или приложений с высоким уровнем риска и облачных служб Azure реализуйте отдельные подписки или группы управления для обеспечения изоляции.
 
 Использование группы безопасности сети, создание правила безопасности для входящего трафика, выбор службы, например HTTP, выбор пользовательского порта и присвоение ему приоритета и имени. Приоритет влияет на порядок, в котором применяются правила, чем меньше числовое значение, тем раньше применяется правило. Необходимо связать группу безопасности сети с подсетью или конкретным сетевым интерфейсом, чтобы изолировать или сегментировать сетевой трафик в соответствии с потребностями бизнеса.
 
@@ -725,9 +725,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Руководство. Фильтрация сетевого трафика с помощью группы безопасности сети с использованием портал Azure](../virtual-network/tutorial-filter-network-traffic.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
@@ -741,41 +741,41 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Рекомендации по безопасности — справочное руководство](../security-center/recommendations-reference.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
 
-**Руководство** : неприменимо к облачным службам Azure. Он основан на классической модели развертывания. Рекомендуется использовать стороннее решение для поддержки безопасных конфигураций ресурсов Azure.
+**Руководство**: неприменимо к облачным службам Azure. Он основан на классической модели развертывания. Рекомендуется использовать стороннее решение для поддержки безопасных конфигураций ресурсов Azure.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 
 **Руководство**. файл конфигурации облачной службы Azure хранит рабочие атрибуты для ресурса. Копию файлов конфигурации можно сохранить в учетную запись защищенного хранения.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 
-**Руководство** : неприменимо к облачным службам Azure. Он основан на классической модели развертывания и не может управляться средствами настройки на основе развертывания Azure Resource Manager.
+**Руководство**: неприменимо к облачным службам Azure. Он основан на классической модели развертывания и не может управляться средствами настройки на основе развертывания Azure Resource Manager.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: развертывание средств управления конфигурацией для операционных систем
 
-**Руководство** : неприменимо к облачным службам Azure. Эта рекомендация применима к ресурсам вычислений на основе инфраструктуры как услуги (IaaS).
+**Руководство**: неприменимо к облачным службам Azure. Эта рекомендация применима к ресурсам вычислений на основе инфраструктуры как услуги (IaaS).
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
 
@@ -783,19 +783,19 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Как исправить рекомендации в центре безопасности Azure](../security-center/security-center-remediate-recommendations.md)
 
-**Мониторинг Центра безопасности Azure** : Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
 
 **Руководство**. в центре безопасности Azure выберите пункт "приложения для вычислений" &amp; и следуйте рекомендациям по работе с виртуальными машинами, серверами и контейнерами.
 
-- [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](/azure/security-center/security-center-container-recommendations)
+- [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](../security-center/container-security.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="711-manage-azure-secrets-securely"></a>7.11. Безопасное управление секретами Azure
 
@@ -807,9 +807,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Настройка удаленного рабочего стола с помощью PowerShell](cloud-services-role-enable-remote-desktop-powershell.md#configure-remote-desktop-from-powershell)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
@@ -822,9 +822,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Настройка удаленного рабочего стола с помощью PowerShell](cloud-services-role-enable-remote-desktop-powershell.md#configure-remote-desktop-from-powershell)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
@@ -840,15 +840,15 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Выберите функцию адаптивного управления приложениями в центре безопасности Azure — интеллектуальное, автоматизированное комплексное решение. Она помогает защитить компьютеры от вредоносных программ и позволяет блокировать или предупреждать попытки запуска вредоносных приложений, включая те, которые могут быть пропущены решениями для защиты от вредоносных программ.
 
-- [Как автоматически добавить расширение антивредоносной программы для моих облачных служб Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-configuration-and-management-faq?&amp;preserve-view=true#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
+- [Как автоматически добавить расширение антивредоносной программы для моих облачных служб Azure](./cloud-services-configuration-and-management-faq.md?amp;preserve-view=#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
 
 - [Сценарии развертывания антивредоносного ПО](../security/fundamentals/antimalware.md#antimalware-deployment-scenarios)
 
 - [Адаптивные элементы управления приложениями](../security-center/security-center-adaptive-application.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
@@ -866,9 +866,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Клиент также может воспользоваться руководством по обработке инцидентов безопасности компьютера NIST, чтобы помочь в создании собственного плана реагирования на инциденты.](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
@@ -876,9 +876,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Четко Пометьте подписки (например, Рабочий, нерабочий) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
@@ -886,9 +886,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
@@ -896,9 +896,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
@@ -908,9 +908,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
@@ -918,9 +918,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
-**Мониторинг Центра безопасности Azure** : Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
@@ -934,9 +934,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

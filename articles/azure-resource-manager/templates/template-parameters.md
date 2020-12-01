@@ -1,18 +1,18 @@
 ---
 title: Параметры в шаблонах
-description: Описывает, как определить параметры в шаблоне Azure Resource Manager.
+description: Описывает, как определить параметры в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 8cdc95037967a32c2d8464f4dc39b1e7369102bb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4ac1aeb579040b35b2a9b4cb90fb5687f91ebd3b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95911419"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353516"
 ---
-# <a name="parameters-in-azure-resource-manager-templates"></a>Параметры в шаблонах Azure Resource Manager
+# <a name="parameters-in-arm-templates"></a>Параметры в шаблонах ARM
 
-В этой статье описывается определение и использование параметров в шаблоне Azure Resource Manager. Предоставляя различные значения параметров, можно повторно использовать шаблон для разных сред.
+В этой статье описывается определение и использование параметров в шаблоне Azure Resource Manager (шаблон ARM). Предоставляя различные значения параметров, можно повторно использовать шаблон для разных сред.
 
 Диспетчер ресурсов разрешает значения параметров перед началом операций развертывания. Везде, где в шаблоне используется параметр, диспетчер ресурсов заменяет его разрешенным значением.
 
@@ -159,9 +159,8 @@ ms.locfileid: "95911419"
 |[Использование параметров с функциями для определения значений по умолчанию](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterswithfunctions.json) | Демонстрирует, как можно применить функции шаблонов при определении значений по умолчанию для параметров. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
 |[Объект Parameter](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterobject.json) | Демонстрирует использование объекта в качестве параметра. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о доступных свойствах параметров см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
+* Дополнительные сведения о доступных свойствах параметров см. в разделе Общие сведения о [структуре и синтаксисе шаблонов ARM](template-syntax.md).
 * Дополнительные сведения о передаче значений параметров в виде файла см. в разделе [Create диспетчер ресурсов Parameter File](parameter-files.md).
 * Рекомендации по созданию параметров см. в разделе рекомендации [— Параметры](template-best-practices.md#parameters).

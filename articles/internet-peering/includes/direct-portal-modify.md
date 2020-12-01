@@ -8,19 +8,19 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 3894bf046ed4ee3f068e43dbc5bc5b7f2a1002b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3212acd5015edbb639b8904b885c718d654e5b4
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81681076"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356267"
 ---
 В этом разделе описывается выполнение следующих операций изменения для прямого пиринга.
 
 ### <a name="add-direct-peering-connections"></a>Добавление соединений с прямыми пиринга
 1. Нажмите кнопку **+ добавить подключения** и настройте новое соединение пиринга.
     > [!div class="mx-imgBorder"]
-    > ![Представление ресурсов пиринга](../media/setup-direct-modify-addconnection.png)
+    > ![На странице Ашбурнпиринг-Connections перечисляются подключения. Кнопка + Добавить соединения выделяется.](../media/setup-direct-modify-addconnection.png)
 
 1. Заполните форму **подключения прямого пиринга** и нажмите кнопку **сохранить**. Чтобы получить справку по настройке подключения пиринга, ознакомьтесь с инструкциями в разделе "Создание и инициализация прямого пиринга".
     > [!div class="mx-imgBorder"]

@@ -4,21 +4,21 @@ description: Сведения о подключении к серверу Azure 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 03/30/2020
+ms.date: 11/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 4658a4c05aac7932d8a99c3511f21024f19fbe47
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: c91cfe24aa7a5dd224fd1aed31b6b0dee44e687f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92013735"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352819"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
 
 После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными. 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Дополнительные сведения см. в разделе [Проверка подлинности и разрешения пользователей](analysis-services-manage-users.md). 
 
@@ -26,7 +26,7 @@ ms.locfileid: "92013735"
 
 Подключиться к серверу из Excel можно с помощью функции "Получить данные" в Excel 2016 и более поздних версий. Подключение с помощью мастера импорта таблиц в Power Pivot не поддерживается. 
 
-1. В Excel на ленте **Данные** щелкните **Получить внешние данные** > **Из других источников** > **Из служб Analysis Services**.
+1. В Excel на ленте **данные** щелкните **получить данные**  >  **из базы данных**  >  **Analysis Services**.
 
 2. В мастере подключения к данным введите имя сервера, включая протокол и универсальный код ресурса (URI), в поле **Имя сервера**. Например, asazure://westcentralus.asazure.windows.net/advworks. Затем для параметра **Учетные данные** выберите значение **Использовать следующие имя пользователя и пароль**, введите имя пользователя, например nancy@adventureworks.com, и пароль для него.
 

@@ -8,12 +8,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/22/2020
 ms.author: makromer
-ms.openlocfilehash: 49d11dfe3d42d99c610fae9fa64079a5fd87501f
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: c8b0ae7058aecc1813d720a3fbb2a1a1f967cf40
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96006799"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352613"
 ---
 # <a name="handle-sql-truncation-error-rows-in-data-factory-mapping-data-flows"></a>Обработку строк ошибок усечения SQL в потоках данных сопоставления фабрики данных
 
@@ -23,7 +23,7 @@ ms.locfileid: "96006799"
 
 Существует два основных способа корректной обработке ошибок при записи данных в приемник базы данных в потоках данных ADF:
 
-* При обработке данных базы данных установите для [обработки строк ошибок](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#error-row-handling) приемника значение "продолжить при ошибке". Это автоматический метод Catch-All, который не требует пользовательской логики в потоке данных.
+* При обработке данных базы данных установите для [обработки строк ошибок](./connector-azure-sql-database.md#error-row-handling) приемника значение "продолжить при ошибке". Это автоматический метод Catch-All, который не требует пользовательской логики в потоке данных.
 * Кроме того, выполните приведенные ниже действия, чтобы вести журнал столбцов, которые не помещаются в целевой столбец строки, что позволяет потоку данных продолжить работу.
 
 > [!NOTE]
@@ -62,6 +62,6 @@ ms.locfileid: "96006799"
 
     ![завершение потока данных с строками ошибок](media/data-flow/error-row-3.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте оставшуюся часть логики потока данных с помощью [преобразования потоков данных](concepts-data-flow-overview.md)сопоставления.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/20/2020
 ms.author: encorona
-ms.openlocfilehash: a24f1337a68f38db273688e9a91c65ac2f4736b4
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 737b6e0534111924a31204d4548dfa59805c2fe5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94963612"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352581"
 ---
 # <a name="update-a-command-from-a-web-endpoint"></a>Обновление команды из конечной точки в Интернете
 
@@ -29,7 +29,7 @@ ms.locfileid: "94963612"
 
 ## <a name="create-an-azure-function"></a>Создание функции Azure 
 
-В этом примере вам потребуется [функция Azure](https://docs.microsoft.com/azure/azure-functions/) , активируемая по HTTP, которая поддерживает следующие входные данные (или подмножество этих входных данных):
+В этом примере вам потребуется [функция Azure](../../azure-functions/index.yml) , активируемая по HTTP, которая поддерживает следующие входные данные (или подмножество этих входных данных):
 
 ```JSON
 {
@@ -50,7 +50,7 @@ ms.locfileid: "94963612"
 
 Давайте рассмотрим ключевые атрибуты этого входа:
 
-| attribute | Объяснение |
+| Атрибут | Объяснение |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **conversationId** | Уникальный идентификатор диалога. Обратите внимание, что этот идентификатор может быть создан из клиентского приложения. |
 | **курренткомманд** | Команда, которая в данный момент активна в диалоге. |

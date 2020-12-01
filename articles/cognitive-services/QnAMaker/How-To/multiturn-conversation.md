@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.openlocfilehash: 57e878f11f5857f4c5b629a8069f64de259e8e7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26fc976983fc08857e7771d58f15d0abcd9a1d3c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777805"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353227"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Использование дальнейших подсказок для создания диалога с несколькими шагами
 
@@ -82,7 +82,7 @@ ms.locfileid: "91777805"
 
 ## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Создание базы знаний с помощью многофункциональных запросов с помощью API создания
 
-Можно создать вариант базы знаний с несколькими инструкциями с помощью [API QnA Maker Create](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Запросы добавляются в `context` `prompts` массив свойств.
+Можно создать вариант базы знаний с несколькими инструкциями с помощью [API QnA Maker Create](/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Запросы добавляются в `context` `prompts` массив свойств.
 
 ## <a name="show-questions-and-answers-with-context"></a>Отображение вопросов и ответов с контекстом
 
@@ -94,20 +94,20 @@ ms.locfileid: "91777805"
 
 Контекст множественной переворачивания отображается в первом столбце.
 
-:::image type="content" source="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png" alt-text="На снимке экрана показан пример структуры в руководстве пользователя." lightbox="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png":::
+:::image type="content" source="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png" alt-text="На снимке экрана показан выделенный раздел контекста." lightbox="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png":::
 
 На предыдущем рисунке **#1** обозначает полужирный текст в столбце, который обозначает текущий вопрос. Родительский вопрос — это верхний элемент в строке. Все приведенные ниже вопросы являются связанными парами вопросов и ответов. Эти элементы доступны для выбора, поэтому можно сразу же переходить к другим элементам контекста.
 
 ## <a name="add-an-existing-question-and-answer-pair-as-a-follow-up-prompt"></a>Добавление существующей пары вопросов и ответов в качестве дальнейших запросов
 
-Исходный вопрос, **Моя учетная запись**, содержит дальнейшие подсказки, такие как **учетные записи и вход в**систему.
+Исходный вопрос, **Моя учетная запись**, содержит дальнейшие подсказки, такие как **учетные записи и вход в** систему.
 
 ![«Учетные записи и вход в систему» — ответы и дальнейшие подсказки](../media/conversational-context/detected-and-linked-follow-up-prompts.png)
 
 Добавление дальнейших запросов к существующей паре вопросов и ответов, которая не связана. Так как вопрос не связан с какой-либо парой вопросов и ответов, необходимо изменить параметр текущего представления.
 
 1. Чтобы связать существующую пару "вопрос-ответ" как дальнейшие действия, выберите строку для пары "вопрос-ответ". Для руководства по рабочей области выполните поиск по слову **выход** , чтобы сократить список.
-1. В строке для **выхода**в столбце **ответ** выберите команду **Добавить дальнейшие действия**.
+1. В строке для **выхода** в столбце **ответ** выберите команду **Добавить дальнейшие действия**.
 1. В полях во всплывающем окне **запроса к исполнению** введите следующие значения:
 
     |Поле|Значение|
@@ -125,7 +125,7 @@ ms.locfileid: "91777805"
 
 ### <a name="edit-the-display-text"></a>Изменение отображаемого текста
 
-При создании запроса на выдачу и вводе существующей пары "вопрос-ответ" в качестве **ссылки на ответ**можно ввести новый **отображаемый текст**. Этот текст не заменяет существующий вопрос и не добавляет новый альтернативный вопрос. Он отделен от этих значений.
+При создании запроса на выдачу и вводе существующей пары "вопрос-ответ" в качестве **ссылки на ответ** можно ввести новый **отображаемый текст**. Этот текст не заменяет существующий вопрос и не добавляет новый альтернативный вопрос. Он отделен от этих значений.
 
 1. Чтобы изменить отображаемый текст, найдите и выберите вопрос в поле **контекст** .
 1. В строке для этого вопроса выберите в столбце ответ дальнейшие действия.
@@ -151,13 +151,13 @@ ms.locfileid: "91777805"
     |--|--|
     |Отображаемый текст|*Создайте учетную запись Windows*. Настраиваемый текст, отображаемый в запросе к исполнению.|
     |Только контекст|Установите этот флажок. Этот ответ возвращается только в том случае, если вопрос указывает на контекст.|
-    |Ссылка на ответ|Введите следующий текст в качестве ответа:<br>* [Создайте](https://account.microsoft.com/) учетную запись Windows с новой или существующей учетной записью электронной почты*.<br>При сохранении и обучении базы данных этот текст будет преобразован. |
+    |Ссылка на ответ|Введите следующий текст в качестве ответа:<br>*[Создайте](https://account.microsoft.com/) учетную запись Windows с новой или существующей учетной записью электронной почты*.<br>При сохранении и обучении базы данных этот текст будет преобразован. |
     |||
 
     ![Создание нового вопроса и ответа на запрос](../media/conversational-context/create-child-prompt-from-parent.png)
 
 
-1. Выберите **создать**и нажмите кнопку **сохранить**.
+1. Выберите **создать** и нажмите кнопку **сохранить**.
 
     Это действие создает новую пару вопросов и ответов и связывает выбранный вопрос в качестве дальнейших запросов. В столбце **контекст** для обоих вопросов указывается связь с запросом к исполнению.
 
@@ -169,7 +169,7 @@ ms.locfileid: "91777805"
 
     Родительский вопрос отображает новый вопрос в качестве одного из вариантов.
 
-    :::image type="content" source="../media/conversational-context/child-prompt-created.png" alt-text="На снимке экрана показан пример структуры в руководстве пользователя." lightbox="../media/conversational-context/child-prompt-created.png":::
+    :::image type="content" source="../media/conversational-context/child-prompt-created.png" alt-text="На снимке экрана показан контекстный столбец для обоих вопросов." lightbox="../media/conversational-context/child-prompt-created.png":::
 
 1. После добавления дальнейших действий выберите **сохранить и обучить** на верхней панели навигации.
 
@@ -357,19 +357,19 @@ The `promptsToDelete` array provides the ...
 
 ## <a name="display-order-is-supported-in-the-update-api"></a>Порядок просмотра поддерживается в API обновления
 
-[Отображаемый текст и порядок показа](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update#promptdto), возвращаемые в ответе JSON, поддерживаются для редактирования [API обновления](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).
+[Отображаемый текст и порядок показа](/rest/api/cognitiveservices/qnamaker/knowledgebase/update#promptdto), возвращаемые в ответе JSON, поддерживаются для редактирования [API обновления](/rest/api/cognitiveservices/qnamaker/knowledgebase/update).
 
 ## <a name="add-or-delete-multi-turn-prompts-with-the-update-api"></a>Добавление и удаление многофункциональных запросов с помощью API обновления
 
-Вы можете добавлять или удалять многострочные запросы с помощью [API обновления QnA Maker](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  Запросы добавляются в `context` `promptsToAdd` массив свойств и `promptsToDelete` массив.
+Вы можете добавлять или удалять многострочные запросы с помощью [API обновления QnA Maker](/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  Запросы добавляются в `context` `promptsToAdd` массив свойств и `promptsToDelete` массив.
 
 ## <a name="export-knowledge-base-for-version-control"></a>Экспорт базы знаний для системы управления версиями
 
 QnA Maker поддерживает управление версиями, включая шаги множественного включения диалога в экспортированный файл.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об контекстных диалогах см. в этом [образце диалогового окна](https://github.com/microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/adaptive-dialog/07.qnamaker/QnAMaker.csproj) или дополнительные сведения о [концептуальном проектировании для нескольких диалогов](https://docs.microsoft.com/azure/bot-service/bot-builder-conversations?view=azure-bot-service-4.0).
+Дополнительные сведения об контекстных диалогах см. в этом [образце диалогового окна](https://github.com/microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/adaptive-dialog/07.qnamaker/QnAMaker.csproj) или дополнительные сведения о [концептуальном проектировании для нескольких диалогов](/azure/bot-service/bot-builder-conversations?view=azure-bot-service-4.0).
 
 > [!div class="nextstepaction"]
 > [Перенос базы знаний](../Tutorials/migrate-knowledge-base.md)

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 5185e7d0bd60eec239f1233db7f9789cbefc2c10
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 83917214705546b21553e997ccab11a7511f77fd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006172"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353312"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -81,7 +81,7 @@ ms.locfileid: "96006172"
 
  Если ваша база знаний должна обслуживать больше запросов из клиентского приложения, обновите ценовую категорию службы приложений.
 
-Вы можете [увеличить](https://docs.microsoft.com/azure/app-service/manage-scale-up) или уменьшить масштаб службы приложений.
+Вы можете [увеличить](../../../app-service/manage-scale-up.md) или уменьшить масштаб службы приложений.
 
 Перейдите к ресурсу службы приложений в портал Azure и выберите вариант **увеличения** **или уменьшения масштаба,** как требуется.
 
@@ -154,13 +154,13 @@ ms.locfileid: "96006172"
 
 В общих чертах для воплощения представленной выше концепции нужно сделать следующее:
 
-1. Настройте две параллельные [службы QnA Maker](set-up-qnamaker-service-azure.md) в [сопряженных регионах Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+1. Настройте две параллельные [службы QnA Maker](set-up-qnamaker-service-azure.md) в [сопряженных регионах Azure](../../../best-practices-availability-paired-regions.md).
 
 1. [Создайте резервную копию](../../../app-service/manage-backup.md) основной службы приложений QnA Maker и [восстановите](../../../app-service/web-sites-restore.md) ее во вторичной установке. Это обеспечит работу обеих настроек с одним и тем же именем узла и ключами.
 
 1. Обеспечьте синхронизацию основного и дополнительного индексов поиска Azure. Используйте образец GitHub [здесь](https://github.com/pchoudhari/QnAMakerBackupRestore) , чтобы узнать, как выполнить резервное копирование для восстановления индексов Azure.
 
-1. Создайте резервную копию Application Insights с помощью [непрерывного экспорта](../../../application-insights/app-insights-export-telemetry.md).
+1. Создайте резервную копию Application Insights с помощью [непрерывного экспорта](../../../azure-monitor/app/export-telemetry.md).
 
 1. После настройки первичного и вторичного стеков воспользуйтесь [диспетчером трафика](../../../traffic-manager/traffic-manager-overview.md) для настройки двух конечных точек и метода маршрутизации.
 
@@ -365,7 +365,7 @@ ms.locfileid: "96006172"
 
     ![Снимок экрана: страница настройки управляемого (Предварительная версия) QnA Maker](../media/qnamaker-how-to-upgrade-qnamaker/change-search-service-configuration.png)
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 > [!NOTE]
 > Если вы измените службу поиска Azure, связанную с QnA Maker, вы потеряли доступ ко всем уже имеющимся в ней базам знаний. Перед изменением службы поиска Azure обязательно экспортируйте существующие базы знаний.
@@ -381,9 +381,9 @@ ms.locfileid: "96006172"
 
 Если удалить любой из ресурсов Azure, используемых для ваших баз знаний QnA Maker, базы знаний перестанут работать. Перед удалением любых ресурсов на странице **Настройки** убедитесь, что вы экспортируете свои базы знаний.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [службе приложений](../../../app-service/index.yml) и службе [поиска](../../../search/index.yml).
 
 > [!div class="nextstepaction"]
-> [Узнайте, как создавать другие](../how-to/collaborate-knowledge-base.md)
+> [Узнайте, как создавать другие](../index.yml)
