@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: d587c4dbdd8f46d6e098ff96f464d456fffc9ccf
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: ad880b7c23c687530a79ca1123474e94c923e150
+ms.sourcegitcommit: b849ecdc8aa97337299b0f09970b7810c59cd044
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95529994"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310397"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Общие сведения об Azure Defender для реестров контейнеров
 
@@ -85,6 +85,8 @@ ms.locfileid: "95529994"
 
 См. сведения о [создании правил для отключения результатов из встроенного средства оценки уязвимостей](defender-for-container-registries-usage.md#disable-specific-findings-preview).
 
+### <a name="why-is-security-center-alerting-me-to-vulnerabilities-about-an-image-that-isnt-in-my-registry"></a>Почему Центр безопасности предупреждает об уязвимостях образа, которого нет в моем реестре?
+Центр безопасности выполняет оценку уязвимостей для каждого образа, отправляемого в реестр или извлекаемого из него. В некоторых образах могут повторно использоваться теги из уже проверенного образа. Например, тег Latest (Последний) можно повторно назначать каждый раз при добавлении образа в хэш. В таких случаях "старый" образ по-прежнему существует в реестре и по-прежнему может быть извлечен его хэшем. Если образ содержит проблемы безопасности, при извлечении он представляет собой уязвимость для системы безопасности.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

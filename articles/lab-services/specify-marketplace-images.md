@@ -3,12 +3,12 @@ title: Указание образов Marketplace для лаборатории
 description: В этой статье показано, как указать образы Marketplace, которые создатель лаборатории может использовать для создания лабораторий в учетной записи лаборатории в службах лаборатории Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 5a353394fec3dadf0f808a25ec66f6e9028820a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c81c8d7a15d67055729a29e98f5b7e30f3d0764
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85445616"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434742"
 ---
 # <a name="specify-marketplace-images-available-to-lab-creators"></a>Выбор образов Marketplace, доступных для создателей лаборатории
 Являясь владельцем учетной записи лаборатории, вы можете указать образы Marketplace, которые можно использовать при создании лабораторий в учетной записи лаборатории. 
@@ -60,4 +60,4 @@ ms.locfileid: "85445616"
 - [Создание и администрирование учетных записей лаборатории (для владельцев лаборатории)](how-to-manage-classroom-labs.md)
 - [Настройка и публикация шаблонов (для владельцев лаборатории)](how-to-create-manage-template.md)
 - [Настройка, администрирование и контроль использования лаборатории (для владельцев лаборатории)](how-to-configure-student-usage.md)
-- [Доступ к лабораториям для аудитории (для пользователей лаборатории)](how-to-use-classroom-lab.md)
+- [Доступ к лабораториям в качестве пользователя лаборатории](how-to-use-classroom-lab.md)

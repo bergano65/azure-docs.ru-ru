@@ -1,5 +1,5 @@
 ---
-title: Управление библиотеками для Apache Spark в Azure синапсе Analytics
+title: Управление библиотеками для Apache Spark
 description: Узнайте, как добавлять библиотеки, используемые Apache Spark, в Azure синапсе Analytics и управлять ими.
 services: synapse-analytics
 author: euangMS
@@ -9,18 +9,18 @@ ms.date: 10/16/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 8d478b35b702e02f303358972526c091ceb3657e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 27881b048a738d4de2acb57dcc4c2dad1f4d5b24
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95917131"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435371"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Управление библиотеками для Apache Spark в Azure синапсе Analytics
 
 Библиотеки предоставляют многократно используемый код, который может потребоваться включить в программы или проекты. Чтобы предоставить приложениям сторонний или локально созданный код, можно установить библиотеку на одном из бессерверных пулов Apache Spark (Предварительная версия). После установки библиотеки для пула Spark она будет доступна для всех сеансов, использующих тот же пул. 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 - Чтобы установить и обновить библиотеки, необходимо иметь разрешения на доступ к **данным большого двоичного объекта хранилища** или **владельца BLOB-объектов** хранилища в основной учетной записи хранения Gen2, связанной с рабочей областью Azure синапсе Analytics.
   
 ## <a name="default-installation"></a>Установка по умолчанию

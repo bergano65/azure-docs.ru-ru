@@ -47,6 +47,8 @@
           href: how-to-legacy-device-symm-key.md
         - name: Использование пользовательских политик распределения
           href: tutorial-custom-allocation-policies.md
+        - name: Подготовка нескольких устройств X.509
+          href: tutorial-custom-hsm-enrollment-group-x509.md
     - name: 2. Подготовка устройств для нескольких центров
       items:
         - name: Связывание нескольких центров с DP

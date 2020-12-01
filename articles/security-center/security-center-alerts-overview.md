@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: memildin
-ms.openlocfilehash: 033f06aa61baf04b5c74fbbe9cc8f925d5d4e3d3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c1406e6a1f2f36c5d42544c52ade3f991fe2ba0a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182314"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433025"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Оповещения безопасности в Центре безопасности Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "96182314"
 
 - **Скачать отчет в формате CSV** на панели мониторинга "оповещения" обеспечивает Однократный экспорт в CSV.
 - **Непрерывный экспорт** из настроек цен & позволяет настраивать потоки оповещений и рекомендаций по безопасности для log Analytics рабочих областей и концентраторов событий. [Дополнительные сведения о непрерывном экспорте](continuous-export.md)
-- **Соединитель Sentinel Azure** отправляет оповещения Azure Defender из центра безопасности Azure в Azure Sentinel. [Дополнительные сведения о подключении к центру безопасности Azure с помощью Sentinel](../sentinel/connect-azure-security-center.md)
+- **Соединитель Sentinel Azure** отправляет оповещения безопасности из центра безопасности Azure в метку Azure. [Дополнительные сведения о подключении к центру безопасности Azure с помощью Sentinel](../sentinel/connect-azure-security-center.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

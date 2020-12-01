@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
-ms.openlocfilehash: d2db8eb5b93d84a5ece182fffbca5870762ee89e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e4f002d038820edf128e3fefb229a0918a8ac55
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84703933"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433509"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Добавление или удаление делегирования подсети
 
@@ -72,9 +72,11 @@ ms.locfileid: "84703933"
 
 ## <a name="azure-cli"></a>Azure CLI
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Подготовьте среду к работе с Azure CLI.
 
-Если вы решили установить и использовать Azure CLI локально, для работы с этой статьей необходимо использовать Azure CLI версии 2.0.28 или более поздней. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- Для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
@@ -234,7 +236,7 @@ ms.locfileid: "84703933"
 ```
 ### <a name="remove-subnet-delegation-from-an-azure-service"></a>Удаление делегирования подсети из службы Azure
 
-Удалите делегирование из подсети с именем **mySubnet**с помощью [Remove-азделегатион](https://docs.microsoft.com/powershell/module/az.network/remove-azdelegation?view=latest) :
+Удалите делегирование из подсети с именем **mySubnet** с помощью [Remove-азделегатион](https://docs.microsoft.com/powershell/module/az.network/remove-azdelegation?view=latest) :
 
 ```azurepowershell-interactive
   $vnet = Get-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myResourceGroup"

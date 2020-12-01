@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: 3cbca82ba88baf5ddda2a6d7a6cdd35b62f28b8e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 264d103cd5f1459a6d29a35a1ecefc595285587a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647942"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433994"
 ---
 # <a name="set-up-a-lab-with-gpu-virtual-machines"></a>Настройка лаборатории с помощью виртуальных машин GPU
 
@@ -64,8 +64,8 @@ ms.locfileid: "94647942"
 
    ![Снимок экрана со страницей загрузки драйвера NVIDIA](./media/how-to-setup-gpu/nvidia-driver-download.png) 
 
-   А. В браузере перейдите на [страницу загрузки драйвера NVIDIA](https://www.nvidia.com/Download/index.aspx).  
-   Б. Задайте **Тип продукта** **Tesla**.  
+   a. В браузере перейдите на [страницу загрузки драйвера NVIDIA](https://www.nvidia.com/Download/index.aspx).  
+   b. Задайте **Тип продукта** **Tesla**.  
    c. Присвойте **серии продуктов** **серии K**.  
    d. Укажите **операционную систему** в соответствии с типом базового образа, выбранного при создании лаборатории.  
    д) Задайте для набора **средств CUDA** версию драйвера CUDA, которая вам нужна.  
@@ -115,6 +115,6 @@ ms.locfileid: "94647942"
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:
 
-- [Создание и администрирование лабораторий для аудитории](how-to-manage-classroom-labs.md)
+- [Создание лабораторий и управление ими](how-to-manage-classroom-labs.md)
 - [Тип класса СОЛИДВОРКС Computer-автоматизированного проектирования (CAD)](class-type-solidworks.md)
 - [Тип класса MATLAB (матричная лаборатория)](class-type-matlab.md)

@@ -1,6 +1,6 @@
 ---
 title: Введение в служебные программы Microsoft Spark
-description: Руководство по использованию Мсспаркутилс в записных книжках Azure синапсе Analytics.
+description: Учебник. Мсспаркутилс в записных книжках Azure синапсе Analytics
 author: ruxu
 services: synapse-analytics
 ms.service: synapse-analytics
@@ -10,18 +10,18 @@ ms.date: 09/10/2020
 ms.author: ruxu
 ms.reviewer: ''
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: 3c4e062393f9d75d478720041436c2e0f54485a3
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: ff294c0227bb6a830a5aef2379248714a7f2f64a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95795073"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435201"
 ---
-# <a name="introduction-of-microsoft-spark-utilities"></a>Введение в служебные программы Microsoft Spark
+# <a name="introduction-to-microsoft-spark-utilities"></a>Введение в служебные программы Microsoft Spark
 
 Microsoft Spark Utilities (Мсспаркутилс) — это встроенный пакет, который упрощает выполнение стандартных задач. Мсспаркутилс можно использовать для работы с файловыми системами, для получения переменных среды и для работы с секретами. Мсспаркутилс доступны в `PySpark (Python)` `Scala` `.NET Spark (C#)` записных книжках,, и в конвейерах синапсе.
 
-## <a name="pre-requisites"></a>Предварительные условия
+## <a name="pre-requisites"></a>Предварительные требования
 
 ### <a name="configure-access-to-azure-data-lake-storage-gen2"></a>Настройка доступа к Azure Data Lake Storage 2-го поколения 
 
@@ -33,7 +33,7 @@ Microsoft Spark Utilities (Мсспаркутилс) — это встроенн
 1. Откройте [портал Azure](https://portal.azure.com/) и учетную запись хранения, к которой требуется получить доступ. Можно перейти к конкретному контейнеру, к которому требуется получить доступ.
 2. На левой панели выберите **элемент управления доступом (IAM)** .
 3. Назначьте **учетной записи Azure AD** и **удостоверению рабочей области** (то же, что и имя рабочей области) роль **участника данных BLOB-объекта хранилища** в учетной записи хранения, если она еще не назначена. 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 Вы можете получить доступ к данным в ADLS 2-го поколения с помощью синапсе Spark по следующему URL-адресу:
 

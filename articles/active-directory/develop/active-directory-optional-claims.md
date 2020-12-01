@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 10/30/2020
+ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 7eedb9ce30be236e8d47152f0e114b7bc5ae2304
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: e71ab0293dade56c14dce7318fc96021a040b102
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348098"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433305"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Как предоставить приложению необязательные утверждения
 
@@ -58,7 +58,7 @@ ms.locfileid: "96348098"
 | `verified_secondary_email` | Источник: SecondaryAuthoritativeEmail пользователя   | JWT        |           |        |
 | `vnet`                     | Сведения об описателе виртуальной сети. | JWT        |           |      |
 | `fwd`                      | IP-адрес.| JWT    |   | Добавляет исходный IPv4-адрес запрашивающего клиента (при использовании внутри виртуальной сети) |
-| `ctry`                     | Страна/регион пользователя | JWT, SAML |  | Azure AD возвращает `ctry` необязательное утверждение, если оно имеется, а значение этого поля — Стандартный двухбуквенный код страны или региона, например fr, JP, SZ и т. д. |
+| `ctry`                     | Страна/регион пользователя | JWT |  | Azure AD возвращает `ctry` необязательное утверждение, если оно имеется, а значение этого поля — Стандартный двухбуквенный код страны или региона, например fr, JP, SZ и т. д. |
 | `tenant_ctry`              | Страна клиента ресурса | JWT | | То же, что и `ctry` , кроме SET на уровне клиента администратором.  Также должно быть стандартным значением из двух букв. |
 | `xms_pdl`             | Предпочтительное расположение данных   | JWT | | Для клиентов с несколькими регионами предпочтительным расположением данных является трехбуквенный код, показывающий, в каком географическом регионе находится пользователь. Дополнительные сведения см. в [документации по Azure AD Connect, посвященной предпочтительному расположению данных](../hybrid/how-to-connect-sync-feature-preferreddatalocation.md).<br/>Например: `APC` для Азиатско-Тихоокеанского региона. |
 | `xms_pl`                   | Предпочитаемый язык пользователя  | JWT ||Предпочитаемый язык пользователя, если задан. Источник: домашний клиент пользователя в сценариях гостевого доступа. Формат: ЯЯ-СС ("en-us"). |

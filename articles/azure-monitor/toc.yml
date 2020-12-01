@@ -676,6 +676,8 @@
                       href: app/java-standalone-telemetry-processors.md
                     - name: Настройка аргументов виртуальной машины Java
                       href: app/java-standalone-arguments.md
+                    - name: "Обновление с версии\_2.x"
+                      href: app/java-standalone-upgrade-from-2x.md
             - name: Локальные серверы
               items:
                 - name: ASP.NET

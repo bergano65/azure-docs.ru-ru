@@ -189,10 +189,13 @@
             - name: Хранилище BLOB-объектов
               href: blob-output-managed-identity.md
               displayName: 'managed identity, identities, authenticate'
+            - name: Центры событий
+              href: event-hubs-managed-identity.md
+              displayName: 'managed identity, identities, authenticate'
             - name: Power BI
               href: powerbi-output-managed-identity.md
               displayName: 'managed identity, identities, authenticate'
-            - name: БД SQL Azure
+            - name: "Azure\_SQL и Azure Synapse"
               href: sql-database-output-managed-identity.md
               displayName: 'managed identity, identities, authenticate'
         - name: Шифрование данных

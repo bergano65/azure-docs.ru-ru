@@ -453,7 +453,7 @@
                       href: ../image-version-vm-powershell.md
                     - name: На основе управляемого диска или моментального снимка
                       href: ../image-version-snapshot-powershell.md
-                    - name: Перенос из управляемого образа
+                    - name: Клонирование управляемого образа
                       href: ../image-version-managed-image-powershell.md
                     - name: Копирование из другой коллекции
                       href: ../image-version-another-gallery-powershell.md
@@ -475,7 +475,7 @@
                       href: ../image-version-vm-cli.md
                     - name: На основе управляемого диска или моментального снимка
                       href: ../image-version-snapshot-cli.md
-                    - name: Перенос из управляемого образа
+                    - name: Клонирование управляемого образа
                       href: ../image-version-managed-image-cli.md
                     - name: Копирование из другой коллекции
                       href: ../image-version-another-gallery-cli.md

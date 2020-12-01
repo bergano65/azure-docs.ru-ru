@@ -124,6 +124,8 @@
           href: concepts-supported-versions.md
         - name: Ограничения
           href: concepts-limits.md
+        - name: Рекомендации по использованию
+          href: concept-operation-excellence-best-practices.md
         - name: Ценовые категории
           items:
             - name: Ценовые категории
@@ -195,6 +197,10 @@
             - name: Рекомендации по производительности
               href: concepts-performance-recommendations.md
               displayName: recommendation
+            - name: Рекомендации по мониторингу
+              href: concept-monitoring-best-practices.md
+            - name: Оптимальные методы повышения производительности
+              href: concept-performance-best-practices.md
         - name: Разработка приложений
           items:
             - name: Общие сведения о разработке приложений
