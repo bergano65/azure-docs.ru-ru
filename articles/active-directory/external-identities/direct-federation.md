@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cb0223b338457ad5eeea0b0bb40593f57a0d3aa
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: a23056445331c82aded878a77d1e0e730e4e2ceb
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442088"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339478"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Прямая федерация с AD FS и сторонними поставщиками для гостевых пользователей (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "92442088"
 ## <a name="limitations"></a>Ограничения
 
 ### <a name="dns-verified-domains-in-azure-ad"></a>Проверенные DNS домены в Azure AD
-Домен, с которым вы хотите создать федерацию, должен проверяться в Azure AD в качестве ***Not**_. Вы можете настроить прямую федерацию с неуправляемыми клиентами Azure AD (проверяемыми по электронной почте или "вирусами"), так как они не проверяются DNS.
+Домен, с которым вы хотите создать федерацию, должен проверяться в Azure AD в качестве ***Not** _. Вы можете настроить прямую федерацию с неуправляемыми клиентами Azure AD (проверяемыми по электронной почте или "вирусами"), так как они не проверяются DNS.
 
 ### <a name="authentication-url"></a>URL-адрес проверки подлинности
 Прямая федерация разрешена только для политик, в которых домен URL-адреса проверки подлинности совпадает с целевым доменом или URL-адрес проверки подлинности принадлежит одному из таких разрешенных поставщиков удостоверений (этот список может быть изменен):
@@ -146,7 +146,7 @@ B2B в Azure AD можно настроить для федерации с по
 
 1. Перейдите на [портал Azure](https://portal.azure.com/). В области слева выберите **Azure Active Directory**. 
 2. Выберите **Внешние удостоверения** > **Все поставщики удостоверений**.
-3. Затем выберите **Новый поставщик удостоверений (IdP) SAML/WS-Fed**.
+3. Выберите, а затем выберите **создать SAML/WS-IDP**.
 
     ![Снимок экрана, на котором показана кнопка добавления нового поставщика удостоверений SAML или WS-Fed](media/direct-federation/new-saml-wsfed-idp.png)
 

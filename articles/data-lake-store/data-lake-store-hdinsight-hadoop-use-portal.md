@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: e901009063afa81c98dd86268ac8c9c6de725e5d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 666b39e2a600fe6ca004798ed4f8371cdd1dfe5f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92521022"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340260"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "92521022"
 
 Узнайте, как использовать портал Azure для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию или дополнительного хранилища. Несмотря на то, что дополнительное хранилище является необязательным для кластера HDInsight, рекомендуется хранить бизнес-данные в дополнительных учетных записях хранения.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что выполнены следующие требования:
 
@@ -85,7 +85,7 @@ ms.locfileid: "92521022"
 На портале Azure можно использовать существующий субъект-службу или создать новый.
 
 Чтобы создать субъект-службу из портал Azure:
-1. См. раздел [Создание субъекта-службы и сертификатов](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) с помощью Azure Active Directory.
+1. См. раздел [Создание субъекта-службы и сертификатов](../active-directory/develop/howto-create-service-principal-portal.md) с помощью Azure Active Directory.
 
 Чтобы использовать существующий субъект-службу из портал Azure:
 
@@ -123,7 +123,7 @@ ms.locfileid: "92521022"
 
     ![Выбор разрешений для файла](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png)
 
-   По умолчанию выбраны значения __Чтение__, __запись__и __выполнение__ .
+   По умолчанию выбраны значения __Чтение__, __запись__ и __выполнение__ .
 
 1. В нижней части страницы щелкните **Выбрать**.
 1. Выберите **выполнить** , чтобы назначить разрешение.
@@ -194,10 +194,10 @@ CREATE EXTERNAL TABLE websitelog (str string) LOCATION 'adl://hdiadlsg1storage.a
 
 Учетную запись хранения можно использовать с Data Lake Storage 1-го поколения для записи данных из топологии с повышенными топологиями. Инструкции по реализации этого сценария см. в статье [Использование Azure Data Lake Storage 1-го поколения с Apache Storm в HDInsight](../hdinsight/storm/apache-storm-write-data-lake-store.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen1.md)
 * [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 [makecert]: /windows-hardware/drivers/devtest/makecert
-[pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx
+[pvk2pfx]: /windows-hardware/drivers/devtest/pvk2pfx

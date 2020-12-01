@@ -5,12 +5,12 @@ author: batrived
 ms.topic: article
 ms.date: 06/21/2020
 ms.author: batrived
-ms.openlocfilehash: 7b93d7a110889192bb5be6fffa56a73758d6faa2
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: fa119784715b8c88ef3c9f2700b2cac1cc467234
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892321"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339751"
 ---
 # <a name="troubleshoot-connectivity-issues---azure-event-grid"></a>Устранение неполадок подключения — служба "Сетка событий Azure"
 
@@ -50,7 +50,7 @@ telnet {sampletopicname}.{region}-{suffix}.eventgrid.azure.net 443
 
 При работе с Azure иногда необходимо разрешить определенные диапазоны IP-адресов или URL-адреса в корпоративном брандмауэре или прокси, чтобы получить доступ ко всем используемым службам Azure или по мере использования. Убедитесь, что трафик разрешен для IP-адресов, используемых службой "Сетка событий". IP-адреса, используемые службой "Сетка событий Azure": см. в разделе [диапазоны IP-адресов Azure и теги службы — общедоступное облако](https://www.microsoft.com/download/details.aspx?id=56519) и [тег службы — азуривентгрид](network-security.md#service-tags).
 
-[Диапазоны IP-адресов и теги службы Azure — общедоступный облачный](https://www.microsoft.com/download/details.aspx?id=56519) документ также перечисляет IP-адреса **по регионам** . Вы можете разрешить диапазоны адресов для **региона раздела** и **парного региона** в корпоративном брандмауэре или прокси-сервере. Сведения о постоянном регионе для региона см. в разделе [непрерывность бизнес-процессов и аварийное восстановление (BCDR): Парные регионы Azure](/azure/best-practices-availability-paired-regions). 
+[Диапазоны IP-адресов и теги службы Azure — общедоступный облачный](https://www.microsoft.com/download/details.aspx?id=56519) документ также перечисляет IP-адреса **по регионам**. Вы можете разрешить диапазоны адресов для **региона раздела** и **парного региона** в корпоративном брандмауэре или прокси-сервере. Сведения о постоянном регионе для региона см. в разделе [непрерывность бизнес-процессов и аварийное восстановление (BCDR): Парные регионы Azure](../best-practices-availability-paired-regions.md). 
 
 > [!NOTE]
 > Новые IP-адреса можно добавить в тег службы Азуривентгрид, хотя обычно это не так. Поэтому рекомендуется выполнять еженедельную проверку тегов службы.

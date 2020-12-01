@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 55a27dbb6c2ec3569bae9d6fb96fcd8087f08daf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d2d6ee8357698e4af59f44579ce7f2c3aa82991c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001683"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340328"
 ---
 # <a name="azure-data-factory-copy-wizard"></a>Мастер копирования фабрики данных Azure
 
@@ -94,7 +94,7 @@ ms.locfileid: "96001683"
 В этом разделе рассматриваются распространенные методы устранения неполадок в мастере копирования в фабрике данных Azure.
 
 > [!NOTE] 
-> Эти советы по устранению неполадок относятся к мастеру копирования в версии 1 фабрики данных. Сведения о фабрике данных версии 2 см. в статье Руководство по устранению неполадок в [фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/data-factory-ux-troubleshoot-guide).
+> Эти советы по устранению неполадок относятся к мастеру копирования в версии 1 фабрики данных. Сведения о фабрике данных версии 2 см. в статье Руководство по устранению неполадок в [фабрике данных Azure](../data-factory-ux-troubleshoot-guide.md).
 
 ### <a name="error-code-unable-to-validate-in-copy-wizard"></a>Код ошибки: не удалось проверить в мастере копирования
 
@@ -132,5 +132,5 @@ ms.locfileid: "96001683"
     3.  Попробуйте использовать другой браузер. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Краткое пошаговое руководство по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных см. в [этой статье](data-factory-copy-data-wizard-tutorial.md).

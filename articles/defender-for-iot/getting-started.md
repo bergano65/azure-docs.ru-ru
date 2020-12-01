@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: e3de253ee6f45f9296d6b09189fe4bc488be36ad
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 6aa525fd7f2d82194baa2e2a0c910cb71509c2d5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090069"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340022"
 ---
 # <a name="getting-started-with-azure-defender-for-iot"></a>Приступая к работе с защитником Azure для IoT
 
@@ -30,9 +30,9 @@ ms.locfileid: "92090069"
 
 ## <a name="1-set-up-azure"></a>1. Настройка Azure
 
-- Настройте учетную запись Azure. Дополнительные сведения см. в статье [Создание учетной записи Azure](https://docs.microsoft.com/learn/modules/create-an-azure-account/).
+- Настройте учетную запись Azure. Дополнительные сведения см. в статье [Создание учетной записи Azure](/learn/modules/create-an-azure-account/).
 
-- Брандмауэр или прокси-сервер. Если у вас есть брандмауэр или аналогичное промежуточное сетевое устройство, которое настроено для разрешения конкретных подключений, проверьте, что в брандмауэре или прокси-сервере открыт параметр *. azure-devices.net:443. Если подстановочные знаки не поддерживаются или требуется более полный контроль, необходимо открыть конкретное полное доменное имя центра Интернета вещей в вашем FW или прокси-сервере. Дополнительные сведения см. в разделе [Reference-Endpoints центра Интернета вещей](/azure/iot-hub/iot-hub-devguide-endpoints).
+- Брандмауэр или прокси-сервер. Если у вас есть брандмауэр или аналогичное промежуточное сетевое устройство, которое настроено для разрешения конкретных подключений, проверьте, что в брандмауэре или прокси-сервере открыт параметр *. azure-devices.net:443. Если подстановочные знаки не поддерживаются или требуется более полный контроль, необходимо открыть конкретное полное доменное имя центра Интернета вещей в вашем FW или прокси-сервере. Дополнительные сведения см. в разделе [Reference-Endpoints центра Интернета вещей](../iot-hub/iot-hub-devguide-endpoints.md).
 
 ## <a name="2-deploy-hardware-software-and-onboard-to-sensor"></a>2. развертывание оборудования, программного обеспечения и подключения к датчику
 

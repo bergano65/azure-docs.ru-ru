@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 11/04/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: cdda14bb579fc94414f9da89b8b1f1aa04ec3bf5
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: fd341a4f6e2402ce934bdffd4f024e0ef569eec1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628107"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340923"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -417,7 +417,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 
 ### <a name="constraints"></a>Ограничения
 
-- Встроенная проверка подлинности Windows может использоваться только для *федеративных* пользователей, то есть пользователей, созданных в Active Directory и поддерживаемых Azure AD. Пользователи, созданные непосредственно в Azure AD без поддержки Active Directory ( *управляемые* пользователи), не могут использовать этот поток проверки подлинности. Это ограничение не влияет на поток имени пользователя и пароля.
+- Встроенная проверка подлинности Windows может использоваться только для *федеративных* пользователей, то есть пользователей, созданных в Active Directory и поддерживаемых Azure AD. Пользователи, созданные непосредственно в Azure AD без поддержки Active Directory (*управляемые* пользователи), не могут использовать этот поток проверки подлинности. Это ограничение не влияет на поток имени пользователя и пароля.
 - IWA предназначена для приложений, написанных для платформ .NET Framework, .NET Core и универсальной платформы Windows.
 - IWA не обходит [многофакторную проверку подлинности](../authentication/concept-mfa-howitworks.md). Если настроена MFA, IWA может завершиться ошибкой, если требуется запрос MFA, так как для MFA требуется вмешательство пользователя.
   > [!NOTE]
@@ -602,7 +602,7 @@ private static IAuthenticationResult acquireTokenIwa() throws Exception {
 
 ### <a name="this-flow-isnt-recommended"></a>Этот поток не рекомендуется.
 
-Этот поток *не рекомендуется* , так как ситуация, когда приложение запрашивает у пользователя пароль, не является безопасной. Дополнительные сведения см. в разделе [Как решить насущную проблему паролей?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/). Предпочтительным потоком для автоматического получения маркера на компьютерах, присоединенных к домену Windows, является [встроенная проверка подлинности Windows](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Integrated-Windows-Authentication). Также можно также использовать [поток кода устройства](https://aka.ms/msal-net-device-code-flow).
+Этот поток *не рекомендуется*, так как ситуация, когда приложение запрашивает у пользователя пароль, не является безопасной. Дополнительные сведения см. в разделе [Как решить насущную проблему паролей?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/). Предпочтительным потоком для автоматического получения маркера на компьютерах, присоединенных к домену Windows, является [встроенная проверка подлинности Windows](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Integrated-Windows-Authentication). Также можно также использовать [поток кода устройства](https://aka.ms/msal-net-device-code-flow).
 
 > [!NOTE]
 > Использование имени пользователя и пароля полезно в некоторых случаях, например в сценариях DevOps. Но если вы хотите использовать имя пользователя и пароль в интерактивных сценариях, где вы предоставляете свой собственный пользовательский интерфейс, подумайте о том, как отказаться от этого варианта. Используя имя пользователя и пароль, вы отказываетесь от ряда преимуществ:

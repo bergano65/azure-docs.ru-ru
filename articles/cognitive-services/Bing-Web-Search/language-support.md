@@ -10,19 +10,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: b3ce1fdc0b52db2706f81950fff735cf7f95e52b
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 6de01d2c12454f43a2802b4a7a979b5f74b46f0e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94379686"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340277"
 ---
 # <a name="language-and-region-support-for-the-bing-web-search-api"></a>Поддержка языков и регионов в API Bing для поиска в Интернете
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 API Bing для поиска в Интернете поддерживает более трех десятков стран и регионов, причем во многих из них используется несколько языков. Указание страны или региона в запросе служит в основном для уточнения результатов поиска на основании интересующей информации в данной стране или регионе. Результаты могут содержать ссылки на Bing, позволяющие локализовать пользовательский интерфейс Bing в соответствии с указанной страной или регионом.
 

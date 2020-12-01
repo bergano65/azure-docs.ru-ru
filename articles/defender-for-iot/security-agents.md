@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 888fdbb2352c4ac972eac8b24c29d22ce973e04d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3fe3e910134080f6620023f539913454670d093
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90939743"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339920"
 ---
 # <a name="get-started-with-azure-defender-for-iot-device-security-agents"></a>Приступая к работе с защитником Azure для агентов безопасности устройств IoT
 
@@ -31,15 +31,15 @@ ms.locfileid: "90939743"
 Используйте следующий рабочий процесс, чтобы развернуть и проверить защитник для агентов безопасности IoT:
 
 1. [Включение защитника для службы IoT в центре Интернета вещей](quickstart-onboard-iot-hub.md)
-1. Если в центре Интернета вещей нет зарегистрированных устройств, [Зарегистрируйте новое устройство](https://docs.microsoft.com/azure/iot-accelerators/quickstart-device-simulation-deploy).
+1. Если в центре Интернета вещей нет зарегистрированных устройств, [Зарегистрируйте новое устройство](../iot-accelerators/quickstart-device-simulation-deploy.md).
 1. [Создайте модуль безопасности азуреиотсекурити](quickstart-create-security-twin.md) для устройств.
-1. Чтобы установить агент на виртуальном устройстве Azure, а не при установке на реальном устройстве, следует выполнить [Запуск новой виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal) в доступной зоне.
+1. Чтобы установить агент на виртуальном устройстве Azure, а не при установке на реальном устройстве, следует выполнить [Запуск новой виртуальной машины Azure](../virtual-machines/linux/quick-create-portal.md) в доступной зоне.
 1. [Разверните защитник для агента безопасности IOT](how-to-deploy-linux-cs.md) на устройстве IOT или на новой виртуальной машине.
 1. Следуйте инструкциям по [trigger_events](https://aka.ms/iot-security-github-trigger-events) , чтобы запустить безвредную имитацию атаки.
 1. Проверьте защитник для оповещений IoT в ответ на имитацию атаки на предыдущем шаге. Начните проверку через пять минут после выполнения скрипта.
 1. Ознакомьтесь с [оповещениями](concept-security-alerts.md), [рекомендациями](concept-recommendations.md)и [подробным обзором с помощью log Analytics](how-to-security-data-access.md) с помощью центра Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка [решения](quickstart-configure-your-solution.md)
 - [Quickstart: Create an azureiotsecurity module twin](quickstart-create-security-twin.md) (Краткое руководство по созданию модуля двойника устройства azureiotsecurity)

@@ -7,22 +7,22 @@ ms.date: 12/16/2019
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: how-to
-ms.openlocfilehash: 6b64c29e6a26f2f9585e7f2c737f98e4646b1332
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e31345c3b83e1ff5e01952d69dde9353b8234757
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777715"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96338118"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-c-with-rest"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью C# и функции "ОСТАВШАЯся"
 
-В этом кратком руководстве описано, как программным способом создать и опубликовать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/knowledge-base.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
+В этом кратком руководстве описано, как программным способом создать и опубликовать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../index.yml). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
 
 В этом кратком руководстве вызываются API службы QnA Maker:
-* [Создание базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create)
-* [Получение сведений об операции](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails)
+* [Создание базы знаний](/rest/api/cognitiveservices/qnamaker/knowledgebase/create)
+* [Получение сведений об операции](/rest/api/cognitiveservices/qnamaker/operations/getdetails)
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase)  |  [Пример на C#](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/create-knowledge-base/QnaQuickstartCreateKnowledgebase/Program.cs)
+[Справочная документация](/rest/api/cognitiveservices/qnamaker/knowledgebase)  |  [Пример на C#](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/create-knowledge-base/QnaQuickstartCreateKnowledgebase/Program.cs)
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -140,7 +140,7 @@ Build succeeded.
 
 ## <a name="add-createkb-method"></a>Добавление метода CreateKB
 
-Следующий метод создает базу знаний и повторяет проверки состояния.  **Идентификатор операции** _создания_ возвращается в **расположении**поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. Так как создание базы знаний может занять некоторое время, необходимо повторять вызовы, чтобы проверить состояние, пока не вернется успешный или неудачный ответ. Когда операция завершается успешно, идентификатор базы знаний возвращается в **resourceLocation**.
+Следующий метод создает базу знаний и повторяет проверки состояния.  **Идентификатор операции** _создания_ возвращается в **расположении** поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. Так как создание базы знаний может занять некоторое время, необходимо повторять вызовы, чтобы проверить состояние, пока не вернется успешный или неудачный ответ. Когда операция завершается успешно, идентификатор базы знаний возвращается в **resourceLocation**.
 
 :::code language="csharp" source="~/cognitive-services-quickstart-code/dotnet/QnAMaker/rest/create-kb.cs" id="create_kb":::
 
@@ -162,4 +162,4 @@ Build succeeded.
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))
+> [QnA Maker (V4) REST API Reference](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase) (Справочник по API REST QnA Maker (V4))

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: a39b6973767b72e69a82750ab8d0d487c733eda0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e525fc0705dffcd4765e6a1f6c5235bdef260fcd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657114"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339682"
 ---
 # <a name="set-up-the-aggregated-namespace"></a>Настройка агрегированного пространства имен
 
@@ -83,7 +83,7 @@ ms.locfileid: "94657114"
   * 6 ТБ кэш-пространства имен — 10
   * 23 ТБ кэша-20 путей к пространству имен
 
-* Пропускная способность до 5 ГБ/с:
+* Пропускная способность до 4 ГБ/с:
 
   * 6 ТБ кэш-пространства имен — 10
   * 12 ТБ кэша — 10 путей к пространству имен

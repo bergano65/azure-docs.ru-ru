@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 8e18b79cc14fe98879ec97361f6e275d8fd918bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2634ed819b8818632c58b9e471b0f26190e5f16b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90940930"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339971"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Выбор и развертывание агента безопасности на устройстве IoT
 
@@ -45,7 +45,7 @@ ms.locfileid: "90940930"
 | **Открытый исходный код** | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-c) | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-cs) |
 | **Язык разработки**    | C | C# |
 | **Поддерживаемые платформы Windows** | Нет | Да |
-| **Предварительные требования для Windows** | --- | [WMI](https://docs.microsoft.com/windows/desktop/wmisdk/) |
+| **Предварительные требования для Windows** | --- | [WMI](/windows/desktop/wmisdk/) |
 | **Поддерживаемые платформы Linux?** | Да, x64 и x86 | Да, только x64 |
 | **Предварительные требования для Linux** | libunwind8, libcurl3, UUID — среда выполнения, аудит, аудиспд — подключаемые модули | libunwind8, libcurl3, UUID-Runtime, audited, аудиспд-plugins, sudo, netstat, iptables |
 | **Место на диске** | 10,5 МБ | 90 МБ |
@@ -89,15 +89,15 @@ ms.locfileid: "90940930"
 |--------------|------------|--------------|
 |C|Ubuntu 16.04 |    X64|
 |C|Ubuntu 18.04 |    x64, ARMv7|
-|C|Debian 9 |    x64, x86|
+|C|Debian 9 |    x64, x86|
 |C#|Ubuntu 16.04     |X64|
 |C#|Ubuntu 18.04    |x64, ARMv7|
-|C#|Debian 9    |X64|
+|C#|Debian 9    |X64|
 |C#|Windows Server 2016|    X64|
 |C#|Windows 10 IoT Базовая, сборка 17763    |X64|
 |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о параметрах конфигурации, перейдите к руководству по настройке агента.
 > [!div class="nextstepaction"]

@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 007409d755da2d879297b4b898663dcbd9fd6d7f
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 9386b154148cf5b5b6b7cd0b43f5a4b4aa741059
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92329633"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339699"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый уровень безопасности Azure для концентраторов событий
 
 Базовый план безопасности Azure для концентраторов событий содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
@@ -72,7 +72,7 @@ ms.locfileid: "92329633"
 
 **Рекомендации**. Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с концентраторами событий, чтобы защититься от атак типа "отказ в обслуживании" (от атак DDoS). Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-Настройка защиты от атак DDoS: [https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection](../virtual-network/manage-ddos-protection.md)
+Настройка защиты от атак DDoS: [https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection](../ddos-protection/manage-ddos-protection.md)
 
 Дополнительные сведения о центре безопасности Azure, интегрированной с системой аналитики угроз: https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
@@ -926,7 +926,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, служба приложений Azure), но не выполняется в содержимом клиента.
 
@@ -946,7 +946,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
-**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

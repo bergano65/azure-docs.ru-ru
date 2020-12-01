@@ -3,12 +3,12 @@ title: Обзор функций Центров событий Azure | Доку
 description: В этой статье приводится терминология и сведения о функциях Центров событий Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: db7c0244fd4e9e04f9cfbcbba8748ec8190fc5c5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: a38cf4ba6a06dc6e977f9ea168fcf67ce83ff5de
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96007445"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339988"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Функции и терминология в Центрах событий Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "96007445"
 
 ### <a name="publishing-an-event"></a>Публикация события
 
-Вы можете опубликовать событие через протокол AMQP 1.0, Kafka 1.0 (или более поздние) или HTTPS. Служба концентраторов событий предоставляет клиентские библиотеки для публикации событий в концентраторе событий [REST API](https://docs.microsoft.com/rest/api/eventhub/) и [.NET](event-hubs-dotnet-standard-getstarted-send.md), [Java](event-hubs-java-get-started-send.md), [Python](event-hubs-python-get-started-send.md), [JavaScript](event-hubs-node-get-started-send.md)и [Go](event-hubs-go-get-started-send.md) . Для других сред выполнения и платформ можно использовать любой клиент AMQP 1.0, например [Apache Qpid](https://qpid.apache.org/). 
+Вы можете опубликовать событие через протокол AMQP 1.0, Kafka 1.0 (или более поздние) или HTTPS. Служба концентраторов событий предоставляет клиентские библиотеки для публикации событий в концентраторе событий [REST API](/rest/api/eventhub/) и [.NET](event-hubs-dotnet-standard-getstarted-send.md), [Java](event-hubs-java-get-started-send.md), [Python](event-hubs-python-get-started-send.md), [JavaScript](event-hubs-node-get-started-send.md)и [Go](event-hubs-go-get-started-send.md) . Для других сред выполнения и платформ можно использовать любой клиент AMQP 1.0, например [Apache Qpid](https://qpid.apache.org/). 
 
 Можно публиковать события по отдельности или в пакетном режиме. Для одной публикации (экземпляра данных события) установлено ограничение в 1 МБ, независимо от того, одиночное это событие или пакет. Публикация событий, размер которых превышает это пороговое значение, приводит к ошибке. Рекомендуется, чтобы издатели не знают о секциях в концентраторе событий и указали *ключ секции* (представленный в следующем разделе) или их удостоверение через маркер SAS.
 
@@ -135,7 +135,7 @@ ms.locfileid: "96007445"
 
 Пользователь управляет смещением самостоятельно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 

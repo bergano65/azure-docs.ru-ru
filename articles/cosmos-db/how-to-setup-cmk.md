@@ -6,17 +6,17 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 08/05/2020
 ms.author: thweiss
-ms.openlocfilehash: 21bb594f4e374d41cfc4184f3a72aea1717c85d8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: e87f6f158265fd8ac210a0a071e35b0bb77df4d9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93086148"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96338288"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Настройка управляемых клиентом ключей для учетной записи Azure Cosmos с Azure Key Vault
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Данные, хранимые в учетной записи Azure Cosmos, автоматически шифруются с помощью ключей, управляемых корпорацией Майкрософт ( **ключи, управляемые службой** ). При необходимости можно добавить второй уровень шифрования с ключами, которыми вы управляете ( **управляемыми клиентом ключами** ).
+Данные, хранимые в учетной записи Azure Cosmos, автоматически шифруются с помощью ключей, управляемых корпорацией Майкрософт (**ключи, управляемые службой**). При необходимости можно добавить второй уровень шифрования с ключами, которыми вы управляете (**управляемыми клиентом ключами**).
 
 :::image type="content" source="./media/how-to-setup-cmk/cmk-intro.png" alt-text="Уровни шифрования данных клиента":::
 
@@ -27,74 +27,76 @@ ms.locfileid: "93086148"
 
 ## <a name="register-the-azure-cosmos-db-resource-provider-for-your-azure-subscription"></a><a id="register-resource-provider"></a> Регистрация поставщика ресурсов Azure Cosmos DB в своей подписке Azure
 
-1. Войдите на [портал Azure](https://portal.azure.com/), перейдите к своей подписке Azure и на вкладке **Параметры** выберите **Поставщики ресурсов** .
+1. Войдите на [портал Azure](https://portal.azure.com/), перейдите к своей подписке Azure и на вкладке **Параметры** выберите **Поставщики ресурсов**.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-rp.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-rp.png" alt-text="Элемент поставщиков ресурсов в меню слева":::
 
-1. Найдите поставщик ресурсов **Microsoft.DocumentDB** . Убедитесь, что поставщик ресурсов уже помечен как зарегистрированный. В противном случае выберите выделите его и выберите **Зарегистрировать** .
+1. Найдите поставщик ресурсов **Microsoft.DocumentDB**. Убедитесь, что поставщик ресурсов уже помечен как зарегистрированный. В противном случае выберите выделите его и выберите **Зарегистрировать**.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-rp-register.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-rp-register.png" alt-text="Регистрация поставщика ресурсов Microsoft.DocumentDB":::
 
 ## <a name="configure-your-azure-key-vault-instance"></a>Настройка экземпляра Azure Key Vault
 
-Для использования управляемых клиентом ключей с Azure Cosmos DB требуется установка двух свойств в экземпляре Azure Key Vault, который планируется использовать для размещения ключей шифрования: **Обратимое удаление** и **Защита от очистки** .
+Для использования управляемых клиентом ключей с Azure Cosmos DB требуется установка двух свойств в экземпляре Azure Key Vault, который планируется использовать для размещения ключей шифрования: **Обратимое удаление** и **Защита от очистки**.
 
 Если вы создаете новый экземпляр Azure Key Vault, включите эти свойства во время создания:
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-akv-prop.png" alt-text="Уровни шифрования данных клиента" в одной из следующих статей:
+:::image type="content" source="./media/how-to-setup-cmk/portal-akv-prop.png" alt-text="Включение обратимого удаления и защиты от очистки для нового экземпляра Azure Key Vault":::
 
-- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../key-vault/general/soft-delete-powershell.md)
-- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../key-vault/general/soft-delete-cli.md)
+Если вы используете имеющийся экземпляр Azure Key Vault, проверьте, включены ли эти свойства, на портале Azure в разделе **Свойства**. Если какое-либо из этих свойств не включено, см. разделы "Включение обратимого удаления" и "Включение защиты от очистки" в одной из следующих статей:
+
+- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../key-vault/general/key-vault-recovery.md)
+- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../key-vault/general/key-vault-recovery.md)
 
 ## <a name="add-an-access-policy-to-your-azure-key-vault-instance"></a>Добавление политики доступа к экземпляру Azure Key Vault
 
-1. На портале Azure перейдите к экземпляру Azure Key Vault, который планируется использовать для размещения ключей шифрования. В меню слева выберите **Политики доступа** .
+1. На портале Azure перейдите к экземпляру Azure Key Vault, который планируется использовать для размещения ключей шифрования. В меню слева выберите **Политики доступа**.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-ap.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-ap.png" alt-text="Политики доступа из меню слева":::
 
-1. Нажмите **+ Добавить политику доступа** .
+1. Нажмите **+ Добавить политику доступа**.
 
-1. В раскрывающемся меню **Разрешения ключей** щелкните **Получить** , **Распаковка ключа** и выберите разрешения **Упаковка ключа** .
+1. В раскрывающемся меню **Разрешения ключей** щелкните **Получить**, **Распаковка ключа** и выберите разрешения **Упаковка ключа**.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap-perm2.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap-perm2.png" alt-text="Выбор нужных разрешений":::
 
-1. В разделе **Выбор субъекта** выберите пункт **Не выбрано** . Затем выполните поиск субъекта **Azure Cosmos DB** и выберите его (для удобства поиск можно выполнить по идентификатору субъекта: `57506a73-e302-42a9-b869-6f12d9ec29e9` регионах Azure для государственных организаций и `a232010e-820c-4083-83bb-3ace5fc29d0b` во всех остальных регионах Azure). Наконец, в нижней части нажмите кнопку **Выбрать** . Если субъект **Azure Cosmos DB** отсутствует в списке, может потребоваться повторная регистрация поставщика ресурсов **Microsoft.DocumentDB** , как описано в разделе [Регистрация поставщика ресурсов](#register-resource-provider) в этой статье.
+1. В разделе **Выбор субъекта** выберите пункт **Не выбрано**. Затем выполните поиск субъекта **Azure Cosmos DB** и выберите его (для удобства поиск можно выполнить по идентификатору субъекта: `57506a73-e302-42a9-b869-6f12d9ec29e9` регионах Azure для государственных организаций и `a232010e-820c-4083-83bb-3ace5fc29d0b` во всех остальных регионах Azure). Наконец, в нижней части нажмите кнопку **Выбрать**. Если субъект **Azure Cosmos DB** отсутствует в списке, может потребоваться повторная регистрация поставщика ресурсов **Microsoft.DocumentDB**, как описано в разделе [Регистрация поставщика ресурсов](#register-resource-provider) в этой статье.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap.png" alt-text="Выбор субъекта Azure Cosmos DB":::
 
-1. Выберите **Добавить** , чтобы добавить новую политику доступа.
+1. Выберите **Добавить**, чтобы добавить новую политику доступа.
 
 1. Выберите **сохранить** на экземпляре Key Vault, чтобы сохранить все изменения.
 
 ## <a name="generate-a-key-in-azure-key-vault"></a>Создание нового ключа в Azure Key Vault
 
-1. На портале Azure перейдите к экземпляру Azure Key Vault, который планируется использовать для размещения ключей шифрования. Затем в меню слева выберите **Ключи** .
+1. На портале Azure перейдите к экземпляру Azure Key Vault, который планируется использовать для размещения ключей шифрования. Затем в меню слева выберите **Ключи**.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keys.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keys.png" alt-text="Элемент Keys в меню слева":::
 
-1. Выберите **Создать или импортировать** , введите имя нового ключа и выберите размер ключа RSA. Для максимальной безопасности рекомендуется использовать как минимум 3072. Щелкните **Создать** .
+1. Выберите **Создать или импортировать**, введите имя нового ключа и выберите размер ключа RSA. Для максимальной безопасности рекомендуется использовать как минимум 3072. Щелкните **Создать**.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-gen.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-gen.png" alt-text="Создание ключа":::
 
 1. После создания ключа выберите только что созданный ключ, а затем его текущую версию.
 
-1. Скопируйте **идентификатор ключа** , кроме части после последней косой черты:
+1. Скопируйте **идентификатор ключа**, кроме части после последней косой черты:
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keyid.png" alt-text="Уровни шифрования данных клиента":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keyid.png" alt-text="Копирование идентификатора ключа":::
 
 ## <a name="create-a-new-azure-cosmos-account"></a>Создание учетной записи Azure Cosmos
 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
-При создании учетной записи Azure Cosmos DB на портале Azure на шаге **Шифрование** выберите **Управляемый клиентом ключ** . В поле **URI ключа** вставьте URI или идентификатор ключа Azure Key Vault, скопированный на предыдущем шаге.
+При создании учетной записи Azure Cosmos DB на портале Azure на шаге **Шифрование** выберите **Управляемый клиентом ключ**. В поле **URI ключа** вставьте URI или идентификатор ключа Azure Key Vault, скопированный на предыдущем шаге.
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-cosmos-enc.png" alt-text="Уровни шифрования данных клиента":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-cosmos-enc.png" alt-text="Настройка параметров CMK на портале Azure":::
 
 ### <a name="using-azure-powershell"></a><a id="using-powershell"></a> Использование Azure PowerShell
 
 При создании учетной записи Azure Cosmos DB с помощью PowerShell придерживайтесь следующих рекомендаций.
 
-- Передайте скопированный ранее универсальный код ресурса (URI) ключа Azure Key Vault в свойство **keyVaultKeyUri** в **PropertyObject** .
+- Передайте скопированный ранее универсальный код ресурса (URI) ключа Azure Key Vault в свойство **keyVaultKeyUri** в **PropertyObject**.
 
 - В качестве версии API используйте **2019-12-12** или более новую.
 
@@ -134,7 +136,7 @@ Get-AzResource -ResourceGroupName $resourceGroupName -Name $accountName `
 
 При создании новой учетной записи Azure Cosmos с помощью шаблона Azure Resource Manager придерживайтесь следующих рекомендаций.
 
-- Передайте скопированный ранее универсальный код ресурса (URI) ключа Azure Key Vault в свойство **keyVaultKeyUri** в объекте **properties** .
+- Передайте скопированный ранее универсальный код ресурса (URI) ключа Azure Key Vault в свойство **keyVaultKeyUri** в объекте **properties**.
 
 - В качестве версии API используйте **2019-12-12** или более новую.
 
@@ -227,15 +229,15 @@ az cosmosdb show \
 
 - Создайте новую версию ключа, которая сейчас используется из Azure Key Vault:
 
-  :::image type="content" source="./media/how-to-setup-cmk/portal-akv-rot.png" alt-text="Уровни шифрования данных клиента":::
+  :::image type="content" source="./media/how-to-setup-cmk/portal-akv-rot.png" alt-text="Создание новой версии ключа":::
 
 - Замените ключ, используемый в настоящий момент, на совершенно другой, изменив URI ключа в своей учетной записи. В портал Azure перейдите к учетной записи Azure Cosmos и выберите **Шифрование данных** в меню слева:
 
-    :::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="Уровни шифрования данных клиента":::
+    :::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="Запись меню шифрования данных":::
 
-    Затем замените **универсальный код ресурса (URI) ключа** новым ключом, который вы хотите использовать, и выберите **сохранить** :
+    Затем замените **универсальный код ресурса (URI) ключа** новым ключом, который вы хотите использовать, и выберите **сохранить**:
 
-    :::image type="content" source="./media/how-to-setup-cmk/portal-key-swap.png" alt-text="Уровни шифрования данных клиента":::
+    :::image type="content" source="./media/how-to-setup-cmk/portal-key-swap.png" alt-text="Обновление URI ключа":::
 
     Вот как добиться того же результата в PowerShell:
 
@@ -298,7 +300,7 @@ az cosmosdb show \
 
 В портал Azure перейдите к учетной записи Azure Cosmos и просмотрите запись **шифрования данных** в меню слева. Если эта запись существует, в вашей учетной записи будут включены ключи, управляемые клиентом.
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="Уровни шифрования данных клиента":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="Запись меню шифрования данных":::
 
 Можно также программно получить сведения об учетной записи Azure Cosmos и найти `keyVaultKeyUri` свойство. Сведения о том, как это можно сделать [в PowerShell](#using-powershell) и [с помощью Azure CLI](#using-azure-cli), см. выше.
 
@@ -310,11 +312,11 @@ Azure Cosmos DB [регулярно выполняет автоматическ
 
 Отзыв ключа выполняется путем отключения его последней версии.
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev2.png" alt-text="Уровни шифрования данных клиента":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev2.png" alt-text="Отключение версии ключа":::
 
 Кроме того, чтобы отозвать все ключи из экземпляра Azure Key Vault, можно удалить политику доступа, предоставленную субъекту Azure Cosmos DB.
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev.png" alt-text="Уровни шифрования данных клиента":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev.png" alt-text="Удаление политики доступа для субъекта-Azure Cosmos DB":::
 
 ### <a name="what-operations-are-available-after-a-customer-managed-key-is-revoked"></a>Какие операции доступны после отзыва управляемого клиентом ключа?
 
