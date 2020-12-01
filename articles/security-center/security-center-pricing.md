@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 11/24/2020
 ms.author: memildin
-ms.openlocfilehash: bc17b63ef8f83e4086262d52334a518ec85f4fc6
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: ee2582d25477d9b9f4fe0bac6b230132a797fd0f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95792599"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95896600"
 ---
 # <a name="pricing-of-azure-security-center"></a>Цены на Центр безопасности Azure
 Центр безопасности Azure предоставляет возможности унифицированного управления безопасностью и расширенной защиты от угроз для рабочих нагрузок в Azure, в локальной среде и в других облаках. Он повышает вашу информированность о гибридных облачных рабочих нагрузках, обеспечивает управление ими, а также предоставляет активные средства защиты, снижающие уровень риска угроз, и интеллектуальные средства обнаружения, которые позволяют быть в курсе быстро развивающихся рисков для кибербезопасности.
