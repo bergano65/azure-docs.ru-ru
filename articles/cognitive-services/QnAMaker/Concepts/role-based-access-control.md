@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: c3d6e21b45bccbdaeeee350bac79be680783eb24
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ecf81152605d77e1036c9fbf5d3308af2b1fb988
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147521"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346161"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Совместная работа с другими авторами и редакторами
 
@@ -42,11 +42,11 @@ ms.locfileid: "92147521"
 |3|API службы QnA Maker проверяет маркер.|
 |4 |API службы QnA Maker вызывает службу QnAMaker.|
 
-Если вы планируете вызывать [API-интерфейсы создания](../How-To/collaborate-knowledge-base.md), см. Дополнительные сведения о настройке проверки подлинности.
+Если вы планируете вызывать [API-интерфейсы создания](../index.yml), см. Дополнительные сведения о настройке проверки подлинности.
 
 ## <a name="authenticate-by-qna-maker-portal"></a>Проверка подлинности с помощью портала QnA Maker
 
-При создании и совместной работе с помощью QnA Maker портала после [добавления соответствующей роли в ресурс для совместной работы](../How-To/collaborate-knowledge-base.md)портал QnA Maker управляет всеми разрешениями на доступ.
+При создании и совместной работе с помощью QnA Maker портала после [добавления соответствующей роли в ресурс для совместной работы](../index.yml)портал QnA Maker управляет всеми разрешениями на доступ.
 
 ## <a name="authenticate-by-qna-maker-apis-and-sdks"></a>Проверка подлинности с помощью QnA Maker API и пакетов SDK
 
@@ -54,4 +54,4 @@ ms.locfileid: "92147521"
 
 ## <a name="next-step"></a>Следующий шаг
 
-* Разработка базы знаний для [языков](design-language-culture.md) и [клиентских приложений](integration-with-other-applications.md)
+* Разработка базы знаний для [языков](../index.yml) и [клиентских приложений](../index.yml)

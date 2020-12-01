@@ -10,19 +10,19 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: aahi
-ms.openlocfilehash: a0e9ca1baced84836a9294d948d24baa77ecbc73
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: ac214f158703fdfeaddfa4052a83481adebda060
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364910"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348234"
 ---
 # <a name="sending-queries-to-the-bing-news-search-api"></a>Отправка запросов в API Bing для поиска новостей
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 API Bing для поиска новостей позволяет искать в Интернете новостей на соответствующие темы. Из этой статьи вы узнаете больше об отправке поисковых запросов к API.
 
@@ -287,7 +287,7 @@ BingAPIs-Market: en-US
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое Поиск новостей Bing?](../search-the-web.md). 
 * [Получение главных новостей за сегодня](search-for-news.md#get-todays-top-news)

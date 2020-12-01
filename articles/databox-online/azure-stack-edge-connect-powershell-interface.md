@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: alkohli
-ms.openlocfilehash: 93678735237c25b19d04b7d901583ba785d7f594
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9c6247f021b7af4cfdd899ffd4b6bd178f2256c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613549"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345599"
 ---
 # <a name="manage-an-azure-stack-edge-pro-fpga-device-via-windows-powershell"></a>Управление устройством с Azure Stack пограничными устройствами FPGA с помощью Windows PowerShell
 
@@ -43,7 +43,7 @@ Azure Stack пограничных решений Pro позволяет обр�
 
 [!INCLUDE [Upload certificate](../../includes/data-box-edge-gateway-upload-certificate.md)]
 
-Можно также отправить сертификаты IoT Edge, чтобы обеспечить безопасное подключение между устройством IoT Edge и подчиненными устройствами, которые могут к нему подключаться. Необходимо установить три файла (формат*PEM* ):
+Можно также отправить сертификаты IoT Edge, чтобы обеспечить безопасное подключение между устройством IoT Edge и подчиненными устройствами, которые могут к нему подключаться. Необходимо установить три файла (формат *PEM* ):
 
 - Сертификат корневого ЦС или ЦС владельца
 - Сертификат ЦС устройства
@@ -56,7 +56,7 @@ Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cer
 ```
 При запуске этого командлета вам будет предложено ввести пароль для сетевой папки.
 
-Дополнительные сведения о сертификатах см. в [подAzure IoT Edge сертификаты](https://docs.microsoft.com/azure/iot-edge/iot-edge-certs) или [Установка сертификатов на шлюзе](https://docs.microsoft.com/azure/iot-edge/how-to-create-transparent-gateway).
+Дополнительные сведения о сертификатах см. в [подAzure IoT Edge сертификаты](../iot-edge/iot-edge-certs.md) или [Установка сертификатов на шлюзе](../iot-edge/how-to-create-transparent-gateway.md).
 
 ## <a name="view-device-information"></a>Просмотр сведений об устройстве
  
@@ -92,6 +92,6 @@ Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cer
 
 Чтобы выйти из удаленного сеанса PowerShell, закройте окно PowerShell.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Разверните [Azure Stack Edge Pro](azure-stack-edge-deploy-prep.md) на портале Azure.

@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d8ec8eec28d66cf93608393ddca45f78460d831
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c6c8be064ade8182355c320e948b3b60b846033d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279777"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348064"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Синхронизация Azure AD Connect: справочник по функциям
 В службе Azure AD Connect функции используются для обработки значения атрибута во время синхронизации.  
@@ -114,7 +114,7 @@ ms.locfileid: "89279777"
   * [RandomNum](#randomnum)
 * **Несколько * значений**
   * [Содержит](#contains)
-  * [Count](#count)
+  * [Количество](#count)
   * [Элемент](#item)
   * [ItemOrNull](#itemornull)
   * [Присоединение](#join)
@@ -141,9 +141,9 @@ ms.locfileid: "89279777"
   * [PCase](#pcase)
   * [Заменить](#replace)
   * [ReplaceChars](#replacechars)
-  * [Правильно](#right)
+  * [Right](#right)
   * [RTrim](#rtrim)
-  * [Возмож](#trim)
+  * [Trim](#trim) (Усечь)
   * [укасе](#ucase)
   * [Word](#word)
 
@@ -478,7 +478,7 @@ Azure Active Directory использует этот формат в качес�
 
 **Пример**.  
 `ConvertFromUTF8Hex("48656C6C6F20776F726C6421")`  
-Возвращает сообщение*Hello world!*.
+Возвращает сообщение *Hello world!*.
 
 ---
 ### <a name="converttobase64"></a>ConvertToBase64
@@ -509,7 +509,7 @@ Azure Active Directory использует этот формат в качес�
  Возвращает 48656C6C6F20776F726C6421.
 
 ---
-### <a name="count"></a>Count
+### <a name="count"></a>Счетчик
 **Описание.**  
  Функция Count возвращает количество элементов в атрибуте с несколькими значениями.
 
@@ -703,7 +703,7 @@ Azure Active Directory использует этот формат в качес�
 
 `num InStr(str stringcheck, str stringmatch)`  
 `num InStr(str stringcheck, str stringmatch, num start)`  
-`num InStr(str stringcheck, str stringmatch, num start , enum compare)`
+`num InStr(str stringcheck, str stringmatch, num start, enum compare)`
 
 * stringcheck: строка для поиска
 * stringmatch: строка, которая должна быть найдена
@@ -1275,7 +1275,7 @@ Azure Active Directory использует этот формат в качес�
 `str StringFromSid(bin ObjectSID)`  
 
 ---
-### <a name="switch"></a>Переключатель
+### <a name="switch"></a>Параметр
 **Описание.**  
  Функция Switch используется для возвращения одного значения на основе вычисленных условий.
 

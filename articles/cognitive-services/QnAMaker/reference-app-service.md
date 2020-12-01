@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 11/9/2020
-ms.openlocfilehash: 1dfe14d96efd37e3dec7faeae1dfff21122958bc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e7dfc6db50432b19d515671fabe26edf9cfb45ef
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95894207"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345674"
 ---
 # <a name="service-configuration"></a>Конфигурация службы
 
@@ -20,7 +20,7 @@ ms.locfileid: "95894207"
 
 # <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
-QnA Maker использует службу приложений для предоставления среды выполнения запросов, используемой [API женератеансвер](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/runtime/generateanswer).
+QnA Maker использует службу приложений для предоставления среды выполнения запросов, используемой [API женератеансвер](/rest/api/cognitiveservices/qnamaker4.0/runtime/generateanswer).
 
 Эти параметры доступны в портал Azure для службы приложений. Параметры доступны, выбрав **Параметры**, а затем — **Конфигурация**.
 

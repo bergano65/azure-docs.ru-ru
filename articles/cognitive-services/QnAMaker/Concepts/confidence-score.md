@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: abae83cee106feb553e8ced404d23ba5619ba416
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 489592fcbc779685728b120f18e5e923ee34d655
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327159"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346381"
 ---
 # <a name="the-confidence-score-of-an-answer"></a>Оценка достоверности ответа
 Когда пользовательский запрос сопоставляется с базой знаний, API службы QnA Maker возвращает соответствующие ответы вместе с оценкой достоверности. Эта оценка означает степень достоверности того, что ответ соответствует этому запросу пользователя.
@@ -62,7 +62,7 @@ ms.locfileid: "91327159"
 В среде Bot установите оценку как часть объекта Options с помощью [C#](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-c) или [Node.js](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-nodejs).
 
 ## <a name="improve-confidence-scores"></a>Улучшение оценок достоверности
-Чтобы улучшить оценку достоверности конкретного ответа на запрос пользователя, можно добавить запрос пользователя в базу знаний в качестве альтернативного вопроса для этого ответа. Вы можете также использовать [исправление слов](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) без учета регистра, чтобы добавить синонимы к ключевым словам в базе знаний.
+Чтобы улучшить оценку достоверности конкретного ответа на запрос пользователя, можно добавить запрос пользователя в базу знаний в качестве альтернативного вопроса для этого ответа. Вы можете также использовать [исправление слов](/rest/api/cognitiveservices/qnamaker/alterations/replace) без учета регистра, чтобы добавить синонимы к ключевым словам в базе знаний.
 
 
 ## <a name="similar-confidence-scores"></a>Аналогичные оценки достоверности
@@ -86,7 +86,6 @@ ms.locfileid: "91327159"
 ## <a name="no-match-found"></a>Совпадения не найдены
 Если ни одно из подходящих совпадений не найдено ранжировщиком, возвращается оценка достоверности 0.0 или "Нет", а ответ по умолчанию – "Нет хорошего соответствия в базе знаний". Этот [ответ по умолчанию](../How-To/metadata-generateanswer-usage.md) можно переопределить в коде программы-робота или приложения, вызывающего конечную точку. В качестве альтернативы вы также можете установить переопределение ответа в Azure, и это изменит значение по умолчанию для всех баз знаний, развернутых в определенной службе QnA Maker.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Рекомендации](./best-practices.md)
-

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/06/2020
 ms.author: nichola
 ms.reviewer: ''
-ms.openlocfilehash: 975c92256ea0993badde0faf840a939f42901059
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: cf5a7a5902484536d0cf2a1844be469f29e15f4b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95753703"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348472"
 ---
 # <a name="how-to-use-continuous-access-evaluation-enabled-apis-in-your-applications"></a>Использование интерфейсов API с поддержкой оценки непрерывного доступа в приложениях
 
@@ -35,7 +35,7 @@ ms.locfileid: "95753703"
 
 Первым шагом является добавление кода, обрабатывающего ответ от API ресурсов, который отклоняет вызов из-за автоматизированного конструирования. При использовании автоматизированного конструирования API возвращает состояние 401 и заголовок WWW-Authenticate, когда маркер доступа был отозван, или API обнаруживает изменение в используемом IP-адресе. Заголовок WWW-Authenticate содержит запрос на утверждения, который приложение может использовать для получения нового маркера доступа.
 
-Пример:
+Например:
 
 ```console
 HTTP 401; Unauthorized
@@ -57,7 +57,7 @@ WWW-Authenticate=Bearer
 ```csharp
 if (APIresponse.IsSuccessStatusCode)
 {
-    // . . .
+    // ...
 }
 else
 {
@@ -99,7 +99,7 @@ catch (MsalUiRequiredException)
             .ExecuteAsync()
             .ConfigureAwait(false);
     }
-    // . . .
+    // ...
 ```
 
 Когда ваше приложение будет готово к обработке запроса на утверждение, возвращенного ресурсом с включенным автоматизированного конструирования, вы можете сообщить Microsoft Identity, что приложение автоматизированного конструирования готово. Чтобы сделать это в приложении MSAL, создайте общедоступный клиент, используя возможности клиента "CP1".
@@ -114,6 +114,6 @@ _clientApp = PublicClientApplicationBuilder.Create(App.ClientId)
 
 Вы можете протестировать приложение, войдя пользователя в приложение, а затем используя портал Azure для отзыва сеансов пользователя. При следующем вызове приложением API с поддержкой автоматизированного конструирования пользователю будет предложено повторно пройти проверку подлинности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [Оценка непрерывного доступа](/conditional-access/concept-continuous-access-evaluation.md).

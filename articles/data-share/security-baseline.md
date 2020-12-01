@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 88feb08851e0b69e31218a42fe877112561bddba
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: ef516e021b33c465139ecab621369223f61608f4
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96301649"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348557"
 ---
 # <a name="azure-security-baseline-for-azure-data-share"></a>Базовый план безопасности Azure для общей папки данных Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "96301649"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
-- [Приступая к работе с Log Analytics запросами](/azure/azure-monitor/log-query/get-started-portal) 
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md) 
 
 - [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md) 
 
@@ -155,7 +155,7 @@ ms.locfileid: "96301649"
 
 **Руководство**. Azure AD предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверки подлинности и доступа Azure AD для эффективного управления членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
 
-- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/) 
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml) 
 
 - [Использование проверок доступа для идентификации Azure AD](../active-directory/governance/access-reviews-overview.md) 
 
@@ -171,7 +171,7 @@ ms.locfileid: "96301649"
 
 Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure AD и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить нужные оповещения в Log Analytics рабочей области.
 
-- [Как интегрировать журналы действий Azure с Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics) 
+- [Как интегрировать журналы действий Azure с Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -181,7 +181,7 @@ ms.locfileid: "96301649"
 
 **Руководство**. использование функций защита идентификации Azure AD для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения.
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins) 
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md) 
 
 - [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md) 
 
@@ -227,7 +227,7 @@ ms.locfileid: "96301649"
 
 Используйте стороннее решение для проведения оценки уязвимостей на сетевых устройствах и веб-приложениях. При проведении удаленной проверки не используйте одну, бессрочную учетную запись администратора. Рассмотрите возможность реализации методологии JIT-подготовки для учетной записи проверки. Учетные данные для учетной записи проверки должны быть защищены, отслеживаться и использоваться только для поиска уязвимостей.
 
-- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](/azure/security-center/security-center-vulnerability-assessment-recommendations) 
+- [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/deploy-vulnerability-assessment-vm.md) 
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -257,11 +257,11 @@ ms.locfileid: "96301649"
 
 **Рекомендации**. Используйте теги, группы управления и отдельные подписки, если это необходимо, для Организации и мониторинга ресурсов. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription) 
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md) 
 
-- [Создание групп управления](/azure/governance/management-groups/create) 
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md) 
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -292,7 +292,7 @@ ms.locfileid: "96301649"
 
 **Руководство**. Удаление ресурсов Azure, если они больше не нужны, это можно сделать с помощью портал Azure, POWERSHELL или CLI.
 
-- [Удаление группы ресурсов и ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/delete-resource-group?tabs=azure-powershell)
+- [Удаление группы ресурсов и ресурсов Azure](../azure-resource-manager/management/delete-resource-group.md?tabs=azure-powershell)
 
 Общая папка данных Azure не предоставляет ОС или не позволяет устанавливать сторонние программные приложения для своих ресурсов.
 
@@ -330,7 +330,7 @@ ms.locfileid: "96301649"
 
 **Руководство**. Использование Azure DevOps для безопасного хранения и управления кодом, например пользовательскими определениями политик Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&amp;preserve-view=true)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
 
 - [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions) 
 
@@ -362,5 +362,5 @@ ms.locfileid: "96301649"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

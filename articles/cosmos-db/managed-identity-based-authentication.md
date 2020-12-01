@@ -9,12 +9,12 @@ ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b3bd6a71898576ac23cdd10c1eb52e1ef3a39b95
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: cfef6ce0fb38f074f854d5ceb77677843e44b91b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93336594"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345735"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Использование управляемых системой удостоверений для доступа к данным Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -68,9 +68,9 @@ ms.locfileid: "93336594"
 
    :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png" alt-text="Снимок экрана, показывающий панель &quot;Добавление назначения ролей&quot;.":::
 
-   * **Роль** : выбор **участника учетной записи DocumentDB**
-   * **Назначение доступа к** : в подразделе **Выбор управляемого системой удостоверения** выберите **приложение-функция**.
-   * **SELECT** : область будет заполнена всеми приложениями-функциями в подписке, которые имеют **управляемое удостоверение системы**. В этом случае выберите приложение функции **фиштанктемпературесервице** : 
+   * **Роль**: выбор **участника учетной записи DocumentDB**
+   * **Назначение доступа к**: в подразделе **Выбор управляемого системой удостоверения** выберите **приложение-функция**.
+   * **SELECT**: область будет заполнена всеми приложениями-функциями в подписке, которые имеют **управляемое удостоверение системы**. В этом случае выберите приложение функции **фиштанктемпературесервице** : 
 
       :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Снимок экрана, на котором отображается панель &quot;Добавление назначения ролей&quot;, заполненная примерами.":::
 
@@ -214,9 +214,9 @@ namespace Monitor
 }
 ```
 
-Теперь вы готовы к [развертыванию приложения функции](../azure-functions/functions-create-first-function-vs-code.md).
+Теперь вы готовы к [развертыванию приложения функции](../azure-functions/create-first-function-vs-code-csharp.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Проверка подлинности на основе сертификатов с помощью Azure Cosmos DB и Azure Active Directory](certificate-based-authentication.md)
 * [Защита ключей Azure Cosmos DB с помощью Azure Key Vault](access-secrets-from-keyvault.md)

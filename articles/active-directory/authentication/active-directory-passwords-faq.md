@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7caeefb741e6916d69894ede3a7c64eb2e8f623f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: b79eb842105734f0f6c145884d73f886a02dbbbc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174502"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348164"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>Часто задаваемые вопросы о самостоятельном сбросе пароля
 
@@ -263,7 +263,7 @@ ms.locfileid: "96174502"
   >
 * **Вопрос.  Для каких типов учетных записей работает обратная запись паролей?**
 
-  > **Ответ.** Для учетных записей пользователей, которые синхронизируются из локальной службы Active Directory с Azure AD, в том числе федеративных пользователей, пользователей с синхронизацией хэша паролей и пользователей со сквозной проверкой пользователей, работает обратная запись паролей.
+  > Ответ **.** Компонент обратной записи паролей работает с учетными записями пользователей, которые синхронизируются из локальной Active Directory с Azure AD, включая Федеративные, синхронизированные хэшированные пароли и пользователей Pass-Through проверки подлинности.
   >
   >
 * **Вопрос.  Соблюдает ли компонент обратной записи паролей политики, применяемые к паролям в моем домене?**

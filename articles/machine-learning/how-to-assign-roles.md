@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 11/09/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 90abd46e73ecb50b5e6de40218571d0ec899752e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 8af3da5d04f9aaafc18299f4837660694ee34b51
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95012961"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345275"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
@@ -175,7 +175,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 | Создать новый кластер вычислений | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
 | Создание нового вычислительного экземпляра | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `/workspaces/computes/write` |
 | Отправка любого типа запуска | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/*/read", "/workspaces/environments/write", "/workspaces/experiments/runs/write", "/workspaces/metadata/artifacts/write", "/workspaces/metadata/snapshots/write", "/workspaces/environments/build/action", "/workspaces/experiments/runs/submit/action", "/workspaces/environments/readSecrets/action"` |
-| Публикация конечной точки конвейера | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/pipelines/write", "/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
+| Публикация конвейеров и конечных точек | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
 | Развертывание зарегистрированной модели в ресурсе AKS/ACI | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/services/aks/write", "/workspaces/services/aci/write"` |
 | Оценка по развернутой конечной точке AKS | Не требуется | Не требуется | Владелец, участник или настраиваемая роль: `"/workspaces/services/aks/score/action", "/workspaces/services/aks/listkeys/action"` (если не используется Azure Active Directory auth) или `"/workspaces/read"` (при использовании токена проверки подлинности) |
 | Доступ к хранилищу с помощью интерактивных записных книжек | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет: `"/workspaces/computes/read", "/workspaces/notebooks/samples/read", "/workspaces/notebooks/storage/*", "/workspaces/listKeys/action"` |
@@ -207,7 +207,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 
 ## <a name="example-custom-roles"></a>Примеры пользовательских ролей
 
-### <a name="data-scientist"></a>Специалист по обработке и анализу данных
+### <a name="data-scientist"></a>специалист по анализу и обработке данных;
 
 Позволяет анализу данных выполнять все операции внутри рабочей области, **за исключением**:
 

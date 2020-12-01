@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 4d899fe7f84a8708bb8ee32cc008567b272a885c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 566c429fc70ae3f0fc18f024b745d8142535932c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169381"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348413"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Использование MSAL в национальной облачной среде
 
@@ -55,7 +55,7 @@ ms.locfileid: "96169381"
 
 Для получения сведений об использовании национального облака с определенным языком программирования выберите вкладку, соответствующую вашему языку:
 
-## <a name="net"></a>[.NET](#tab/donet)
+## <a name="net"></a>[.NET](#tab/dotnet)
 
 Вы можете использовать MSAL.NET для входа пользователей, получения маркеров и вызова API Microsoft Graph в национальных облаках.
 
@@ -89,7 +89,7 @@ ms.locfileid: "96169381"
 
 - [Скачайте файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip) для локального веб-сервера, например node.
 
-  или диспетчер конфигурации служб
+  или
 
 - [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip).
 

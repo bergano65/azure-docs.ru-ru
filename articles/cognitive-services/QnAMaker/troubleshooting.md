@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: troubleshooting
 ms.date: 11/09/2020
-ms.openlocfilehash: 6bf9eb5fbb8604bca67279f5f41c8aed19a510c0
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: e8b1d985fcb2852df52382e005ec0f0266e23d9d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376882"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345650"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Устранение неполадок для QnA Maker
 
@@ -20,7 +20,7 @@ ms.locfileid: "94376882"
 
 ## <a name="manage-predictions"></a>Управление прогнозами
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 <details>
 <summary><b>Как повысить пропускную способность для прогнозов запросов?</b></summary>
@@ -49,7 +49,7 @@ ms.locfileid: "94376882"
 
 </details>
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 <details>
 <summary><b>Как повысить пропускную способность для прогнозов запросов?</b></summary>
@@ -63,14 +63,14 @@ ms.locfileid: "94376882"
 
 ## <a name="manage-the-knowledge-base"></a>Управление базой знаний
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 <details>
 <summary><b>Была случайно удалена часть службы QnA Maker. Что теперь делать?</b></summary>
 
 **Ответ**. не удаляйте ни одну из служб Azure, созданных вместе с QnA Makerным ресурсом, таким как поиск или веб-приложение. Они необходимы для работы QnA Maker. Если удалить ее, QnA Maker перестанет работать правильно.
 
-Все операции удаления являются безвозвратными, включая удаление пар вопросов и ответов, файлов, URL-адресов, пользовательских вопросов и ответов, баз знаний или ресурсов Azure. Убедитесь, что база знаний была экспортирована на странице **Параметры** , прежде чем удалять часть базы знаний.
+Все операции удаления являются безвозвратными, включая удаление пар вопросов и ответов, файлов, URL-адресов, пользовательских вопросов и ответов, баз знаний или ресурсов Azure. Убедитесь, что база знаний была экспортирована на странице **Параметры**, прежде чем удалять часть базы знаний.
 
 </details>
 
@@ -84,7 +84,7 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Базу данных какого размера можно создать?</b></summary>
 
-**Ответ**. размер базы знаний зависит от номера SKU поиска Azure, выбранного при создании службы QnA Maker. Дополнительные сведения см. [здесь](./Tutorials/choosing-capacity-qnamaker-deployment.md).
+**Ответ**. размер базы знаний зависит от номера SKU поиска Azure, выбранного при создании службы QnA Maker. Дополнительные сведения см. [здесь](./concepts/azure-resources.md).
 
 </details>
 
@@ -98,7 +98,7 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Как поделиться базой знаний с другими пользователями?</b></summary>
 
-**Ответ**. Общий доступ работает на уровне службы QnA Maker, то есть все базы знаний в службе будут совместно использоваться. [Здесь](./How-To/collaborate-knowledge-base.md) подробно описана совместная работа над базой знаний.
+**Ответ**. Общий доступ работает на уровне службы QnA Maker, то есть все базы знаний в службе будут совместно использоваться. [Здесь](./index.yml) подробно описана совместная работа над базой знаний.
 
 </details>
 
@@ -137,7 +137,7 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Почему ничего не извлекается по ссылке на SharePoint?</b></summary>
 
-**Ответ**. Дополнительные сведения см. в разделе [расположения источников данных](./Concepts/knowledge-base.md#data-source-locations) .
+**Ответ**. Дополнительные сведения см. в разделе [расположения источников данных](./concepts/data-sources-and-content.md#data-source-locations) .
 
 </details>
 
@@ -167,13 +167,13 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Поддерживает ли QnA Maker языки, отличные от английского?</b></summary>
 
-**Ответ**. см. Дополнительные сведения о [поддерживаемых языках](./Overview/languages-supported.md).
+**Ответ**. см. Дополнительные сведения о [поддерживаемых языках](./overview/language-support.md).
 
 Если у вас есть содержимое на нескольких языках, обязательно создайте отдельную службу для каждого языка.
 
 </details>
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 <details>
 <summary><b>Почему для указанных мной URL-адресов или файлов не извлекаются пары "вопрос — ответ"?</b></summary>
@@ -185,7 +185,7 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Базу данных какого размера можно создать?</b></summary>
 
-**Ответ**. размер базы знаний зависит от номера SKU поиска Azure, выбранного при создании службы QnA Maker. Дополнительные сведения см. [здесь](./Tutorials/choosing-capacity-qnamaker-deployment.md).
+**Ответ**. размер базы знаний зависит от номера SKU поиска Azure, выбранного при создании службы QnA Maker. Дополнительные сведения см. [здесь](./concepts/azure-resources.md).
 
 </details>
 
@@ -199,7 +199,7 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Как поделиться базой знаний с другими пользователями?</b></summary>
 
-**Ответ**. Общий доступ работает на уровне службы QnA Maker, то есть все базы знаний в службе будут совместно использоваться. [Здесь](./How-To/collaborate-knowledge-base.md) подробно описана совместная работа над базой знаний.
+**Ответ**. Общий доступ работает на уровне службы QnA Maker, то есть все базы знаний в службе будут совместно использоваться. [Здесь](./index.yml) подробно описана совместная работа над базой знаний.
 
 </details>
 
@@ -220,7 +220,7 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Почему ничего не извлекается по ссылке на SharePoint?</b></summary>
 
-**Ответ**. Дополнительные сведения см. в разделе [расположения источников данных](./Concepts/knowledge-base.md#data-source-locations) .
+**Ответ**. Дополнительные сведения см. в разделе [расположения источников данных](./concepts/data-sources-and-content.md#data-source-locations) .
 
 </details>
 
@@ -250,7 +250,7 @@ ms.locfileid: "94376882"
 <details>
 <summary><b>Поддерживает ли QnA Maker языки, отличные от английского?</b></summary>
 
-**Ответ**. см. Дополнительные сведения о [поддерживаемых языках](./Overview/languages-supported.md).
+**Ответ**. см. Дополнительные сведения о [поддерживаемых языках](./overview/language-support.md).
 
 Если у вас есть содержимое на нескольких языках, обязательно создайте отдельную службу для каждого языка.
 
@@ -260,7 +260,7 @@ ms.locfileid: "94376882"
 
 ## <a name="manage-service"></a>Управление службой
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 <details>
 <summary><b>Когда следует перезапустить службу приложений?</b></summary>
@@ -310,8 +310,8 @@ ms.locfileid: "94376882"
 **Ответ**. место на диске для службы приложений может быть заполнено. Действия по исправлению дискового пространства:
 
 1. В [портал Azure](https://portal.azure.com)выберите службу приложений QnA Maker, а затем закройте службу.
-1. Находясь в службе приложений, выберите **средства разработки** , затем **Дополнительные инструменты** , а затем **перейдите**. Откроется новое окно браузера.
-1. Выберите **консоль отладки** , а затем **cmd** , чтобы открыть программу командной строки.
+1. Находясь в службе приложений, выберите **средства разработки**, затем **Дополнительные инструменты**, а затем **перейдите**. Откроется новое окно браузера.
+1. Выберите **консоль отладки**, а затем **cmd** , чтобы открыть программу командной строки.
 1. Перейдите в каталог _site/wwwroot/Data/QnAMaker/_ Directory.
 1. Удалите все папки, имена которых начинаются с `rd` .
 
@@ -326,7 +326,7 @@ ms.locfileid: "94376882"
 
 </details>
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 
 <details>
@@ -361,12 +361,12 @@ ms.locfileid: "94376882"
 
 ## <a name="integrate-with-other-services-including-bots"></a>Интеграция с другими службами, в том числе ботами
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 <details>
 <summary><b>Нужна ли платформа Bot Framework для использования QnA Maker?</b></summary>
 
-**Ответ**. нет, не нужно использовать [платформу Bot](https://github.com/Microsoft/botbuilder-dotnet) с QnA Maker. Однако QnA Maker предлагается как один из нескольких шаблонов в [службе Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0&preserve-view=true). Служба Azure Bot позволяет быстро разрабатывать интеллектуальные боты на платформе Microsoft Bot Framework, которые выполняются в бессерверной среде.
+**Ответ**. нет, не нужно использовать [платформу Bot](https://github.com/Microsoft/botbuilder-dotnet) с QnA Maker. Однако QnA Maker предлагается как один из нескольких шаблонов в [службе Azure Bot](/azure/bot-service/?preserve-view=true&view=azure-bot-service-4.0). Служба Azure Bot позволяет быстро разрабатывать интеллектуальные боты на платформе Microsoft Bot Framework, которые выполняются в бессерверной среде.
 
 </details>
 
@@ -405,17 +405,17 @@ ms.locfileid: "94376882"
 **Ответ**. выполните следующие действия, чтобы внедрить QnA Makerную службу в качестве элемента управления веб-разговора на веб-сайте:
 
 1. Создайте бота вопросов и ответов, следуя [этим](./Quickstarts/create-publish-knowledge-base.md) инструкциям.
-2. Включите веб-чат, выполнив шаги из [этой статьи](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat).
+2. Включите веб-чат, выполнив шаги из [этой статьи](/azure/bot-service/bot-service-channel-connect-webchat).
 
 </details>
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 
 <details>
 <summary><b>Нужна ли платформа Bot Framework для использования QnA Maker?</b></summary>
 
-**Ответ**. нет, не нужно использовать [платформу Bot](https://github.com/Microsoft/botbuilder-dotnet) с QnA Maker. Однако QnA Maker предлагается как один из нескольких шаблонов в [службе Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0&preserve-view=true). Служба Azure Bot позволяет быстро разрабатывать интеллектуальные боты на платформе Microsoft Bot Framework, которые выполняются в бессерверной среде.
+**Ответ**. нет, не нужно использовать [платформу Bot](https://github.com/Microsoft/botbuilder-dotnet) с QnA Maker. Однако QnA Maker предлагается как один из нескольких шаблонов в [службе Azure Bot](/azure/bot-service/?preserve-view=true&view=azure-bot-service-4.0). Служба Azure Bot позволяет быстро разрабатывать интеллектуальные боты на платформе Microsoft Bot Framework, которые выполняются в бессерверной среде.
 
 </details>
 
@@ -454,13 +454,13 @@ ms.locfileid: "94376882"
 **Ответ**. выполните следующие действия, чтобы внедрить QnA Makerную службу в качестве элемента управления веб-разговора на веб-сайте:
 
 1. Создайте бота вопросов и ответов, следуя [этим](./Quickstarts/create-publish-knowledge-base.md) инструкциям.
-2. Включите веб-чат, выполнив шаги из [этой статьи](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat).
+2. Включите веб-чат, выполнив шаги из [этой статьи](/azure/bot-service/bot-service-channel-connect-webchat).
 
 ---
 
 ## <a name="data-storage"></a>Хранилище данных
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 <details>
 <summary><b>Какие данные сохраняются и где они хранятся?</b></summary>
@@ -471,7 +471,7 @@ ms.locfileid: "94376882"
 
 </details>
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
 <details>
 <summary><b>Какие данные сохраняются и где они хранятся?</b></summary>

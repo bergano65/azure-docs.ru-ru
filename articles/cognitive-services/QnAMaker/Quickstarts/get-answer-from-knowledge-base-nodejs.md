@@ -7,18 +7,18 @@ ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: how-to
-ms.openlocfilehash: 262fb29ca380a9f22fc972de2b4f7d1060f7bdbe
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f7923e4b49ae9f047a314880607d1d9923abf0db
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023673"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345902"
 ---
 # <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-nodejs"></a>Краткое руководство. получение ответов на вопрос из базы знаний с помощью Node.js
 
-В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/knowledge-base.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
+В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../index.yml), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/Runtime) | [Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/blob/master/documentation-samples/quickstarts/get-answer/get-answer.js)
+[Справочная документация](/rest/api/cognitiveservices/qnamaker4.0/Runtime) | [Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/blob/master/documentation-samples/quickstarts/get-answer/get-answer.js)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -72,4 +72,4 @@ node get-answer.js
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))
+> [QnA Maker (V4) REST API Reference](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase) (Справочник по API REST QnA Maker (V4))

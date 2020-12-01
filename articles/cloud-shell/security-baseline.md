@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 463bbe637eee26ab098d1531976a18999497d12f
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 24856e458858ad86d953b50709669823b35794fc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92210244"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348268"
 ---
 # <a name="azure-security-baseline-for-cloud-shell"></a>Базовый план безопасности Azure для Cloud Shell
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure версии 1,0](../security/benchmarks/overview-v1.md) к Cloud Shell. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure.
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure версии 1,0](../security/benchmarks/overview-v1.md) к Cloud Shell. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure.
 Содержимое группируются по **элементам управления безопасностью** , определенным в производительности системы безопасности Azure, и связанным рекомендациям, применимым к Cloud Shell. **Элементы управления** , неприменимые к Cloud Shell, были исключены.
 
  
@@ -298,9 +298,9 @@ Azure Cloud Shell позволяет клиентам устанавливать
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
-**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
-- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e) 
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегии корпорации Майкрософт и реализации "красной команды", а также методы тестирования сайтов на проникновение для облачной инфраструктуры, служб и приложений Майкрософт.
+- [Правила взаимодействия для выполнения тестов на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
+- [Red Teaming в Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -308,5 +308,5 @@ Azure Cloud Shell позволяет клиентам устанавливать
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

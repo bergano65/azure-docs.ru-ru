@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 900021e258bb96c0d0c83ef182262515449ad5df
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 982f4a9cdf3984bae79cd11dad2bd637a1772f05
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912592"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348506"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -44,9 +44,11 @@ ms.locfileid: "95912592"
 |Статические веб-сайты|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)|
 |Неизменяемое хранилище|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
 |Обратимое удаление контейнера|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Обратимое удаление для контейнеров (Предварительная версия)](soft-delete-container-overview.md)|
+|Инвентаризация службы хранилища Azure|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Использование инвентаризации хранилища Azure для управления данными большого двоичного объекта (Предварительная версия)](blob-inventory.md)|
+|Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)|
 |Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](./soft-delete-blob-overview.md)|
 |Blobfuse|Общедоступная версия|Общедоступная версия|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
-|Отработка отказа учетной записи|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Отработка отказа учетной записи, управляемой клиентом|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Список управления доступом для контейнера больших двоичных объектов|Не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>1</sup></div>|Не поддерживается<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|См. Примечание ниже этой таблицы.|
 |Ключи, предоставляемые клиентом|Еще не поддерживается|Еще не поддерживается|[Укажите ключ шифрования для запроса к хранилищу BLOB-объектов](encryption-customer-provided-keys.md)|
 |Личные домены|Еще не поддерживается|Еще не поддерживается|[Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)|

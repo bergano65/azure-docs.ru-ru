@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 90b107b2335bd5f08eeb0b9aa66c7a9db9b74eb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5a22655dca5af86729d5a906093a389b2bdc2d0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388567"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345292"
 ---
 # <a name="set-up-sign-in-with-an-amazon-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon
 
@@ -35,8 +35,8 @@ ms.locfileid: "85388567"
 
 > [!NOTE]  
 > Используйте следующие URL-адреса на **шаге 8** ниже, заменив `your-tenant-name` именем своего клиента. При вводе имени клиента используйте все строчные буквы, даже если клиент определен с прописными буквами в Azure AD B2C.
-> - Для **разрешенных источников**введите `https://your-tenant-name.b2clogin.com` 
-> - Для **разрешенных URL-адресов возврата**введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`
+> - Для **разрешенных источников** введите `https://your-tenant-name.b2clogin.com` 
+> - Для **разрешенных URL-адресов возврата** введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`
 
 [!INCLUDE [identity-provider-amazon-idp-register.md](../../includes/identity-provider-amazon-idp-register.md)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "85388567"
           <Item Key="ClaimsEndpoint">https://api.amazon.com/user/profile</Item>
           <Item Key="scope">profile</Item>
           <Item Key="HttpBinding">POST</Item>
-          <Item Key="UsePolicyInRedirectUri">0</Item>
+          <Item Key="UsePolicyInRedirectUri">false</Item>
           <Item Key="client_id">Your Amazon application client ID</Item>
         </Metadata>
         <CryptographicKeys>

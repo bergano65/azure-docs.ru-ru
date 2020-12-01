@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 08/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ed1c183281aea830e9cd61c1d95c6c092adbe05c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 6ad91b7cf8cd8a79654774b1b5463bc661a981d5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94960688"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348183"
 ---
 # <a name="azure-security-baseline-for-azure-dns"></a>Базовый план безопасности Azure для Azure DNS
 
-Базовый план безопасности Azure для Microsoft Azure DNS содержит рекомендации, которые помогут повысить уровень безопасности развертывания. Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций. Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
+Базовый план безопасности Azure для Microsoft Azure DNS содержит рекомендации, которые помогут повысить уровень безопасности развертывания. Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций. Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
@@ -64,7 +64,7 @@ ms.locfileid: "94960688"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/get-started-portal.md)
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 - [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -200,7 +200,7 @@ ms.locfileid: "94960688"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -212,7 +212,7 @@ ms.locfileid: "94960688"
 
 - [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-- [Как использовать проверки подлинности и доступа Azure AD](../active-directory/governance/access-reviews-overview.md)
+- [Использование проверок доступа для идентификации Azure AD](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -308,7 +308,7 @@ ms.locfileid: "94960688"
 
 **Руководство**. Использование имени политики, описания и категории для логической организации активов в соответствии с классификацией.
 
-- [Дополнительные сведения о разметке ресурсов см. в разделе Определение решения для именования и добавления тегов.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%252fazure%252fazure-resource-manager%252fmanagement%252ftoc.json)
+- [Дополнительные сведения о разметке ресурсов см. в разделе Определение решения для именования и добавления тегов.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -514,7 +514,7 @@ ms.locfileid: "94960688"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-- [Как задать контакт безопасности центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
+- [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -548,11 +548,11 @@ ms.locfileid: "94960688"
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
-**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегии корпорации Майкрософт и реализации "красной команды", а также методы тестирования сайтов на проникновение для облачной инфраструктуры, служб и приложений Майкрософт.
 
-- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+- [Правила взаимодействия для выполнения тестов на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Red Teaming в Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

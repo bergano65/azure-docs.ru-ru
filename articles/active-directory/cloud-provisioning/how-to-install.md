@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3960b8afeb9d7ecc80aa49fc13eee4977fa5494
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4c4ba11dabc8e805f3604afc2fc4388840ac67cf
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173976"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348540"
 ---
 # <a name="install-the-azure-ad-connect-cloud-provisioning-agent"></a>Установка агента подготовки облака Azure AD Connect
 В этом документе описывается процесс установки агента подготовки Azure Active Directory (Azure AD) Connect и его первоначальной настройки на портале Azure.
@@ -58,11 +58,11 @@ ms.locfileid: "96173976"
    ![Создание gMSA](media/how-to-install/install-12.png)</br>
  11. На экране **Connect Active Directory** (Подключить Active Directory) щелкните **Добавить каталог**. Войдите в учетную запись администратора Active Directory. Эта операция добавляет локальный каталог. 
  12. При необходимости можно управлять предпочтениями контроллеров домена, которые будет использовать агент, выбрав **пункт выбрать приоритет контроллера домена** и заказать список контроллеров домена.   Нажмите кнопку **ОК**.
-  ![Order контролллерс домена](media/how-to-install/install-2a.png)</br>
+  ![Упорядочение контроллеров домена](media/how-to-install/install-2a.png)</br>
  13. Выберите **Далее**.
   ![Экран подключения Active Directory](media/how-to-install/install-3a.png)</br>
  14.  На экране **установки агента** подтвердите параметры и учетную запись, которая будет создана, и нажмите кнопку **подтвердить**.
-  ![Подтверждение сеттнгс](media/how-to-install/install-11.png)</br>
+  ![Подтверждение параметров](media/how-to-install/install-11.png)</br>
  15. После завершения этой операции вы увидите, что **Установка агента завершена.** Щелкните **Выход**.
   ![Экран завершения настройки](media/how-to-install/install-4a.png)</br>
 1. Если экран **пакета агента подготовки Microsoft Azure AD Connect** еще открыт, нажмите **Закрыть**.

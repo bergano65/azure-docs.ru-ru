@@ -11,19 +11,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: scottwhi
-ms.openlocfilehash: a4c8aff8694c9d1dde0ab8d34e65f89a7ab4efbd
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 9dffc16a1d1171343fa10fce10fddba2a12c2167
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592113"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348251"
 ---
 # <a name="get-image-insights-with-the-bing-image-search-api"></a>Получение аналитических сведений об изображениях с помощью API Bing для поиска изображений
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 > [!IMPORTANT]
 > В случае использования конечной точки /images/details для получения аналитических сведений об изображении вы должны использовать [Визуальный поиск](../bing-visual-search/overview.md), так как он предоставляет более подробные аналитические сведения.

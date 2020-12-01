@@ -7,22 +7,22 @@ ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27, devx-track-java
 ms.topic: how-to
-ms.openlocfilehash: 09123b46b259ec4ad512c6a57d926bbc70102fe7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 8075371bddfc92d7477b3b036575836aa65f1cd0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023690"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346037"
 ---
 # <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-java"></a>Краткое руководство. получение ответов на вопрос из базы знаний с помощью Java
 
-В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/knowledge-base.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
+В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../index.yml), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/Runtime) | [Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/blob/master/documentation-samples/quickstarts/get-answer/GetAnswer.java)
+[Справочная документация](/rest/api/cognitiveservices/qnamaker4.0/Runtime) | [Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/blob/master/documentation-samples/quickstarts/get-answer/GetAnswer.java)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
+* [JDK SE](/azure/developer/java/fundamentals/java-jdk-long-term-support) (комплект разработчика Java, выпуск "Стандартный");
 * В этом примере используется [HTTP-клиент](https://hc.apache.org/httpcomponents-client-ga/) Apache от HTTP Components. Вам нужно добавить в проект следующие библиотеки для HTTP-клиента Apache:
     * httpclient-4.5.3.jar;
     * httpcore-4.4.6.jar;
@@ -95,4 +95,4 @@ public class GetAnswer {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))
+> [QnA Maker (V4) REST API Reference](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase) (Справочник по API REST QnA Maker (V4))

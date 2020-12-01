@@ -3,12 +3,12 @@ title: Запрос базы знаний — QnA Maker
 description: База знаний должна быть опубликована. После публикации база знаний запрашивается на конечной точке прогнозирования времени выполнения с помощью API Женератеансвер.
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: e8dd056a7b6357b8342d3059e17baa88db92b404
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: d8f986299edee46bf5cace7a9f4c805c29b3ce0c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376732"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346211"
 ---
 # <a name="query-the-knowledge-base-for-answers"></a>Запрос ответов в базе знаний
 
@@ -16,9 +16,9 @@ ms.locfileid: "94376732"
 
 ## <a name="how-qna-maker-processes-a-user-query-to-select-the-best-answer"></a>Как QnA Maker обрабатывает запрос пользователя для выбора лучшего ответа
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker (стабильный выпуск)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
-База знаний с обученным и [опубликованным](/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base#publish-the-knowledge-base) QnA Maker получает пользовательский запрос от робота или другого клиентского приложения на [API женератеансвер](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage). На следующей схеме показан процесс получения запроса пользователя.
+База знаний с обученным и [опубликованным](../quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) QnA Maker получает пользовательский запрос от робота или другого клиентского приложения на [API женератеансвер](../how-to/metadata-generateanswer-usage.md). На следующей схеме показан процесс получения запроса пользователя.
 
 ![Процесс ранжирования модели для пользовательского запроса](../media/qnamaker-concepts-knowledgebase/ranker-v1.png)
 
@@ -28,7 +28,7 @@ ms.locfileid: "94376732"
 
 |Шаг|Назначение|
 |--|--|
-|1|Клиентское приложение отправляет пользовательский запрос в [API женератеансвер](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage).|
+|1|Клиентское приложение отправляет пользовательский запрос в [API женератеансвер](../how-to/metadata-generateanswer-usage.md).|
 |2|QnA Maker предварительно обрабатывает пользовательский запрос с помощью распознавания языка, средств проверки орфографии и средств разбиения по словам.|
 |3|Эта предварительная обработка используется для изменения пользовательского запроса для получения лучших результатов поиска.|
 |4|Этот измененный запрос отправляется в индекс Azure Когнитивный поиск, который получает `top` Количество результатов. Если нужный ответ не указан в этих результатах, увеличьте значение `top` немного. Как правило, значение 10 для `top` Works в 90% запросов.|
@@ -39,9 +39,9 @@ ms.locfileid: "94376732"
 
 Используемые функции включают в себя, но не ограниченную семантику на уровне слов, важность на уровне терминов в совокупности и семантические изученные модели для определения сходства и релевантности между двумя текстовыми строками.
 
-# <a name="qna-maker-managed-preview-release"></a>[Управляемый QnA Maker (предварительный выпуск)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
 
-База знаний с обученным и [опубликованным](/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base#publish-the-knowledge-base) QnA Maker получает пользовательский запрос от робота или другого клиентского приложения на [API женератеансвер](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage). На следующей схеме показан процесс получения запроса пользователя.
+База знаний с обученным и [опубликованным](../quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) QnA Maker получает пользовательский запрос от робота или другого клиентского приложения на [API женератеансвер](../how-to/metadata-generateanswer-usage.md). На следующей схеме показан процесс получения запроса пользователя.
 
 ![Процесс ранжирования модели для предварительного просмотра пользовательского запроса](../media/qnamaker-concepts-knowledgebase/ranker-v2.png)
 
@@ -51,7 +51,7 @@ ms.locfileid: "94376732"
 
 |Шаг|Назначение|
 |--|--|
-|1|Клиентское приложение отправляет пользовательский запрос в [API женератеансвер](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage).|
+|1|Клиентское приложение отправляет пользовательский запрос в [API женератеансвер](../how-to/metadata-generateanswer-usage.md).|
 |2|QnA Maker предварительно обрабатывает пользовательский запрос с помощью распознавания языка, средств проверки орфографии и средств разбиения по словам.|
 |3|Эта предварительная обработка используется для изменения пользовательского запроса для получения лучших результатов поиска.|
 |4|Этот измененный запрос отправляется в индекс Azure Когнитивный поиск, который получает `top` Количество результатов. Если нужный ответ не указан в этих результатах, увеличьте значение `top` немного. Как правило, значение 10 для `top` Works в 90% запросов.|
