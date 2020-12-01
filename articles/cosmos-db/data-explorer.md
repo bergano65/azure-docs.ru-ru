@@ -1,22 +1,22 @@
 ---
-title: Использование обозревателя Azure Cosmos DB для управления данными
-description: Обозреватель Azure Cosmos DB — это автономный веб-интерфейс, который позволяет просматривать и управлять данными, которые хранятся в базе данных Azure Cosmos DB.
+title: Использование проводника Azure Cosmos DB для управления данными
+description: Azure Cosmos DB Explorer — это автономный веб-интерфейс, позволяющий просматривать данные, хранящиеся в Azure Cosmos DB, и управлять ими.
 author: deborahc
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/23/2020
 ms.author: dech
-ms.openlocfilehash: 691a2e56230d312416aed3d68bffd361f1d63558
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d4baa92fe4aa2ed402c394198684c4deec2bf9f1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008588"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348608"
 ---
-# <a name="work-with-data-using-azure-cosmos-explorer"></a>Работа с данными с помощью обозревателя Azure Cosmos 
+# <a name="work-with-data-using-azure-cosmos-db-explorer"></a>Работа с данными с помощью обозревателя Azure Cosmos DB 
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Обозреватель Azure Cosmos DB — это автономный веб-интерфейс, который позволяет просматривать и управлять данными, которые хранятся в базе данных Azure Cosmos DB. Обозреватель Azure Cosmos DB эквивалентен существующей вкладке **Обозреватель данных**, которая доступна на портале Azure при создании учетной записи Azure Cosmos DB. Основные преимущества обозревателя Azure Cosmos DB над существующим обозревателем данных перечислены ниже.
+Azure Cosmos DB Explorer — это автономный веб-интерфейс, позволяющий просматривать данные, хранящиеся в Azure Cosmos DB, и управлять ими. Azure Cosmos DB Explorer эквивалентен существующей вкладке **Обозреватель данных** , доступной в портал Azure при создании учетной записи Azure Cosmos DB. Основные преимущества Azure Cosmos DB Explorer по сравнению с существующим обозревателем данных:
 
 * У вас есть возможность полноэкранного просмотра данных, запуска запросов, хранимых процедур, триггеров и просмотра их результатов.  
 
@@ -30,7 +30,7 @@ ms.locfileid: "96008588"
 
 2. Из **Всех ресурсов** найдите и перейдите к своей учетной записи Azure Cosmos DB, выберите "Ключи" и скопируйте **Первичную строку подключения**.  
 
-3. Перейдите к https://cosmos.azure.com/, вставьте строку подключения и выберите **Подключить**. Используя строку подключения, можно получить доступ к обозревателю Azure Cosmos DB без каких-либо ограничений по времени.  
+3. Перейдите к https://cosmos.azure.com/, вставьте строку подключения и выберите **Подключить**. С помощью строки подключения можно получить доступ к Azure Cosmos DB Explorer без ограничений по времени.  
 
    Если нужно предоставить другим пользователям временный доступ к учетной записи Azure Cosmos DB, вы можете сделать это, используя URL-адреса для чтения или чтения и записи. 
 
@@ -42,7 +42,7 @@ ms.locfileid: "96008588"
 
    Выберите тип доступа, с которым вы хотите открыть учетную запись, и нажмите **Открыть**. После того, как вы откроете обозреватель, возможности будут такими же, как и на вкладке "Обозреватель данных" на портале Azure.
 
-   :::image type="content" source="./media/data-explorer/open-data-explorer-with-access-url.png" alt-text="Открыть обозреватель Azure Cosmos DB":::
+   :::image type="content" source="./media/data-explorer/open-data-explorer-with-access-url.png" alt-text="открывать Azure Cosmos DB Explorer;":::
 
 ## <a name="known-issues"></a>Известные проблемы
 
@@ -52,8 +52,8 @@ ms.locfileid: "96008588"
 
 Клиенты, получающие ошибки HTTP-401, могут быть вызваны недостаточными разрешениями Azure RBAC для учетной записи Azure клиента, особенно если у учетной записи есть настраиваемая роль. Любые пользовательские роли должны иметь `Microsoft.DocumentDB/databaseAccounts/listKeys/*` действие для использования обозреватель данных при входе с использованием учетных данных Azure Active Directory.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как начать работу с обозревателем Azure Cosmos DB для управления данными, вы можете:
+Теперь, когда вы узнали, как начать работу с Azure Cosmos DB Explorer для управления данными, можно сделать следующее:
 
 * Начать определение [запросов](./sql-query-getting-started.md) с помощью синтаксиса языка SQL и выполнить [программирование на стороне сервера](stored-procedures-triggers-udfs.md) с помощью хранимых процедур, UDF, триггеров.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 7865562a8161e6fc7bed52791b42b867a3dac6f8
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 6f9f0a78fa8fbe892c40ecfd9e7881bb6346d794
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302424"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352377"
 ---
 # <a name="azure-security-baseline-for-content-delivery-network"></a>Базовый уровень безопасности Azure для сети доставки содержимого
 
@@ -22,7 +22,7 @@ ms.locfileid: "96302424"
 
 ## <a name="identity-management"></a>Управление удостоверениями
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление удостоверениями](../security/benchmarks/security-controls-v2-identity-management.md).*
 
 ### <a name="im-6-restrict-azure-resource-access-based-on-conditions"></a>IM-6: ограничение доступа к ресурсам Azure на основе условий
 
@@ -36,7 +36,7 @@ ms.locfileid: "96302424"
 
 ## <a name="privileged-access"></a>Привилегированный доступ
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Привилегированный доступ](../security/benchmarks/security-controls-v2-privileged-access.md).*
 
 ### <a name="pa-2-restrict-administrative-access-to-business-critical-systems"></a>PA-2: ограничение административного доступа к системам, критически важным для бизнеса
 
@@ -88,7 +88,7 @@ ms.locfileid: "96302424"
 
 ## <a name="asset-management"></a>управление ресурсами.
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md).*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1. Предоставление группе безопасности возможности просматривать угрозы безопасности для ресурсов
 
@@ -116,7 +116,7 @@ ms.locfileid: "96302424"
 
 - [Управление инвентаризацией активов в центре безопасности Azure](../security-center/asset-inventory.md) 
 
-- [Руководство по именованию ресурсов и присвоению тегов](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Руководство по именованию ресурсов и присвоению тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -194,7 +194,7 @@ ms.locfileid: "96302424"
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. реагирование на инциденты](../security/benchmarks/security-controls-v2-incident-response.md).*
 
 ### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1. Подготовка. Реагирование на обновление инцидента для Azure
 
@@ -276,7 +276,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -335,7 +335,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="governance-and-strategy"></a>Система управления и стратегия
 
-*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Система управления и стратегия](/azure/security/benchmarks/security-controls-v2-governance-strategy).*
+*Дополнительные сведения см. в статье [Тесты производительности системы безопасности Azure. Система управления и стратегия](../security/benchmarks/security-controls-v2-governance-strategy.md).*
 
 ### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1. Определение стратегии управления ресурсом и защиты данных 
 
@@ -361,11 +361,11 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения можно найти по ссылкам, на которые имеются ссылки.
 
-- [Рекомендации по архитектуре безопасности Azure. Хранилище, данные и шифрование](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
+- [Рекомендации по архитектуре безопасности Azure. Хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json)
 
 - [Основы обеспечения безопасности Azure. Защита, шифрование и хранение данных в Azure](../security/fundamentals/encryption-overview.md)
 
-- [Cloud Adoption Framework. Рекомендации по защите и шифрованию данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
+- [Cloud Adoption Framework. Рекомендации по защите и шифрованию данных в Azure](../security/fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
 - [Azure Security Benchmark. Управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
 
@@ -516,5 +516,5 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- См. статью [Обзор тестов производительности системы безопасности Azure версии 2](/azure/security/benchmarks/overview)
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- См. статью [Обзор тестов производительности системы безопасности Azure версии 2](../security/benchmarks/overview.md)
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

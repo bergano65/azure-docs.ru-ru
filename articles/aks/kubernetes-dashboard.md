@@ -6,12 +6,12 @@ author: mlearned
 ms.topic: article
 ms.date: 06/03/2020
 ms.author: mlearned
-ms.openlocfilehash: a80082ac524a4777b3b5ee32d946e9db8ec6e7f5
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 85f0a42cdfcbea2223d202a9dc35f58746580e85
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681624"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350132"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -26,7 +26,7 @@ ms.locfileid: "94681624"
  > * Начиная с Kubernetes 1,19 в предварительной версии AKS больше не будет поддерживать установку управляемой надстройки KUBE-Dashboard. 
  > * Существующие кластеры с включенной надстройкой не будут затронуты. Пользователи будут по-прежнему иметь возможность вручную устанавливать панель мониторинга с открытым исходным кодом как программное обеспечение, установленное пользователем.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В шагах, описанных в этом документе, предполагается, что вы создали кластер AKS и установили `kubectl` Подключение к кластеру. Если вам нужно создать кластер AKS, см. раздел [Краткое руководство. Развертывание кластера службы Kubernetes Azure с помощью Azure CLI][aks-quickstart].
 
@@ -41,6 +41,10 @@ az aks disable-addons -g myRG -n myAKScluster -a kube-dashboard
 ```
 
 ## <a name="start-the-kubernetes-dashboard"></a>Запуск панели мониторинга Kubernetes
+
+> [!WARNING]
+> Надстройка панели мониторинга AKS устарела для версий 1.19 +. Вместо этого используйте [представление ресурсов Kubernetes в портал Azure (Предварительная версия)][kubernetes-portal] . 
+> * Следующая команда теперь открывает представление ресурсов портала Azure вместо панели мониторинга kubernetes для версий 1,19 и выше.
 
 Чтобы запустить панель мониторинга Kubernetes в кластере, используйте команду [AZ AKS Browse][az-aks-browse] . Для этой команды требуется установка надстройки KUBE-Dashboard в кластере, которая включена по умолчанию в кластерах, где запущена любая версия, отличная от Kubernetes 1,18.
 

@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: 55a7e117ebd49f268d4b075d58791df4e9223fdf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a61e87c660bf2d2f0f4c8d02bd1699c58f8da667
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849268"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350676"
 ---
 # <a name="create-a-pool-with-disk-encryption-enabled"></a>Создание пула с включенным шифрованием дисков
 
@@ -25,8 +25,8 @@ ms.locfileid: "91849268"
 
 Пакетная обработка применяет одну из этих технологий шифрования дисков на расчетных узлах на основе конфигурации пула и региональной поддержки.
 
-- [Управляемое шифрование диска неактивных с ключами, управляемыми платформой](../virtual-machines/windows/disk-encryption.md#platform-managed-keys)
-- [Шифрование на узле с помощью управляемого платформой ключа](../virtual-machines/windows/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
+- [Управляемое шифрование диска неактивных с ключами, управляемыми платформой](../virtual-machines/disk-encryption.md#platform-managed-keys)
+- [Шифрование на узле с помощью управляемого платформой ключа](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
 - [Дисковое шифрование Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md)
 
 > [!IMPORTANT]
@@ -44,7 +44,7 @@ ms.locfileid: "91849268"
 
 После создания пула можно увидеть целевые объекты конфигурации шифрования дисков в разделе **Свойства** пула.
 
-:::image type="content" source="media/disk-encryption/configuration-target.png" alt-text="Снимок экрана с параметром конфигурации шифрования диска в портал Azure.":::
+:::image type="content" source="media/disk-encryption/configuration-target.png" alt-text="Снимок экрана, показывающий целевые объекты конфигурации шифрования дисков в портал Azure.":::
 
 ## <a name="examples"></a>Примеры
 
@@ -107,5 +107,5 @@ az batch pool create \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [шифровании хранилище дисков Azure на стороне сервера](../virtual-machines/windows/disk-encryption.md).
+- Дополнительные сведения о [шифровании хранилище дисков Azure на стороне сервера](../virtual-machines/disk-encryption.md).
 - Подробные сведения о пакетной службе см. в статье [Рабочий процесс и ресурсы пакетной службы](batch-service-workflow-features.md).

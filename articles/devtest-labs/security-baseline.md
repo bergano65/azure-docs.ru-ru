@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 64e5ac46fbeb71706f7b1ae2d3682260e3cbc651
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4ae3886e1c47b1d6835dc348b474e3d9e82a8f41
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993658"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348829"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -212,7 +212,7 @@ _ *Обязанность:** клиент
 ### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 **Руководство.** Используйте Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)  
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)  
 
 **Мониторинг центра безопасности Azure:** Сейчас недоступно
 
@@ -379,7 +379,7 @@ _ *Обязанность:** клиент
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
 **Руководство.** Используйте Управление обновлениями Azure, чтобы убедиться, что последние обновления безопасности установлены на виртуальных машинах Windows и Linux, размещенных в DevTest Labs. Для виртуальных машин Windows убедитесь, что Центр обновления Windows включен и настроен на автоматическое обновление. Этот параметр сейчас недоступен для настройки через DevTest Labs, однако администратор лаборатории или администратор подписки может настроить этот параметр на базовых виртуальных машинах, используемых в подписке. 
 
-- [Настройка Управление обновлениями для виртуальных машин в Azure](../automation/update-management/update-mgmt-overview.md)
+- [Настройка Управление обновлениями для виртуальных машин в Azure](../automation/update-management/overview.md)
 - [Общие сведения о политиках безопасности Azure, отслеживаемых центром безопасности](../security-center/policy-reference.md)
 
 **Мониторинг центра безопасности Azure:** Неприменимо
@@ -393,8 +393,8 @@ _ *Обязанность:** клиент
 
 Администратор подписки также может использовать решение Azure Управление обновлениями для управления обновлениями и исправлениями для виртуальных машин DevTest Labs. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-- [Решение для управления обновлениями в Azure](../automation/update-management/update-mgmt-overview.md)
-- [Управление обновлениями и исправлениями для виртуальных машин](../automation/update-management/update-mgmt-overview.md)
+- [Решение для управления обновлениями в Azure](../automation/update-management/overview.md)
+- [Управление обновлениями и исправлениями для виртуальных машин](../automation/update-management/overview.md)
 
 _ *Мониторинг центра безопасности Azure:** не применимо
 
@@ -877,7 +877,7 @@ _ *Мониторинг центра безопасности Azure:** не пр
 
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11.1. Регулярное тестирование на проникновение ресурсов Azure и отслеживание исправлений всех критических точек безопасности в течение 60 дней
-**Руководство.** Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
+**Руководство.** Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегии корпорации Майкрософт и реализации "красной команды", а также методы тестирования сайтов на проникновение для облачной инфраструктуры, служб и приложений Майкрософт.
 
 - [Правила тестирования уязвимости задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 - [Красное объединение Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
@@ -886,7 +886,7 @@ _ *Мониторинг центра безопасности Azure:** не пр
 
 **Ответственность:** Используемый
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующую статью:
 
 - [Оповещения системы безопасности для сред в Azure DevTest Labs](environment-security-alerts.md)

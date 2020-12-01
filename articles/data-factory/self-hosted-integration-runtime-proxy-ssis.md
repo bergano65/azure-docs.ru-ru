@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 11/19/2020
-ms.openlocfilehash: a79055a77ec73ce2b267bb4f16fa91f37e22ea75
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 82cc58d46061ec7b623d062ab0b0e5a1fdae7ddd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916786"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352224"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в фабрике данных Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "94916786"
 - В качестве **метода проверки подлинности** выберите **ключ учетной записи**, **URI SAS**, **субъект-служба** или **управляемое удостоверение**.  
 
 >[!TIP]
->Если выбран метод **субъекта-службы** , предоставьте субъекту-службе по крайней мере роль *участника данных большого двоичного объекта хранилища* . Дополнительные сведения см. в статье [соединитель хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties). Если вы выбрали **управляемый метод идентификации** , предоставьте управляемому удостоверению ADF необходимые роли для доступа к хранилищу BLOB-объектов Azure. Дополнительные сведения см. в статье [доступ к хранилищу BLOB-объектов Azure с помощью Azure Active Directory аутентификации с помощью управляемого удостоверения ADF](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication).
+>Если выбран метод **субъекта-службы** , предоставьте субъекту-службе по крайней мере роль *участника данных большого двоичного объекта хранилища* . Дополнительные сведения см. в статье [соединитель хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties). Если вы выбрали **управляемый метод идентификации** , предоставьте управляемому удостоверению ADF необходимые роли для доступа к хранилищу BLOB-объектов Azure. Дополнительные сведения см. в статье [доступ к хранилищу BLOB-объектов Azure с помощью Azure Active Directory аутентификации с помощью управляемого удостоверения ADF](/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication).
 
 ![Подготовка связанной службы хранилища BLOB-объектов Azure для промежуточного хранения](media/self-hosted-integration-runtime-proxy-ssis/shir-azure-blob-storage-linked-service.png)
 
@@ -157,7 +157,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 ## <a name="debug-the-on-premises-and-cloud-staging-tasks"></a>Отладка локальных и облачных задач промежуточного хранения
 
-В локальной среде IR журналы среды выполнения можно найти в папке *к:\програмдата\ссистелеметри* и в журналах выполнения локальных задач промежуточного хранения в папке *к:\програмдата\ссистелеметри\ексекутионлог* .  Журналы выполнения промежуточных задач в облаке можно найти в SSISDB, заданных путях к файлам журнала или Azure Monitor в зависимости от того, хранятся ли пакеты в SSISDB, включить [интеграцию Azure Monitor](https://docs.microsoft.com/azure/data-factory/monitor-using-azure-monitor#monitor-ssis-operations-with-azure-monitor)и т. д. Вы также можете найти уникальные идентификаторы локальных промежуточных задач в журналах выполнения промежуточных задач облачного развертывания. 
+В локальной среде IR журналы среды выполнения можно найти в папке *к:\програмдата\ссистелеметри* и в журналах выполнения локальных задач промежуточного хранения в папке *к:\програмдата\ссистелеметри\ексекутионлог* .  Журналы выполнения промежуточных задач в облаке можно найти в SSISDB, заданных путях к файлам журнала или Azure Monitor в зависимости от того, хранятся ли пакеты в SSISDB, включить [интеграцию Azure Monitor](./monitor-using-azure-monitor.md#monitor-ssis-operations-with-azure-monitor)и т. д. Вы также можете найти уникальные идентификаторы локальных промежуточных задач в журналах выполнения промежуточных задач облачного развертывания. 
 
 ![Уникальный идентификатор первой промежуточной задачи](media/self-hosted-integration-runtime-proxy-ssis/shir-first-staging-task-guid.png)
 
@@ -173,7 +173,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 Чтобы предоставить пользовательским или сторонним компонентам доступ к данным в локальной среде с помощью самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR, выполните следующие действия:
 
-1. Установите пользовательские или сторонние компоненты, предназначенные для SQL Server 2017, на Azure-SSIS IR с помощью [стандартных или Экспресс-настраиваемых настроек](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup).
+1. Установите пользовательские или сторонние компоненты, предназначенные для SQL Server 2017, на Azure-SSIS IR с помощью [стандартных или Экспресс-настраиваемых настроек](./how-to-configure-azure-ssis-ir-custom-setup.md).
 
 1. Создайте следующие разделы реестра Дтспас на самостоятельно размещенном IR, если они еще не существуют:
    1. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` имеет значение `C:\Program Files\Microsoft SQL Server\140\DTS\`
@@ -197,7 +197,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-- В настоящее время поддерживаются только компоненты потока данных, встроенные или предварительно установленные в Azure-SSIS IR Standard Edition, за исключением компонентов Hadoop/HDFS/DQS, а [все встроенные и предварительно установленные компоненты см. в Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/built-in-preinstalled-components-ssis-integration-runtime).
+- В настоящее время поддерживаются только компоненты потока данных, встроенные или предварительно установленные в Azure-SSIS IR Standard Edition, за исключением компонентов Hadoop/HDFS/DQS, а [все встроенные и предварительно установленные компоненты см. в Azure-SSIS IR](./built-in-preinstalled-components-ssis-integration-runtime.md).
 - В настоящее время поддерживаются только пользовательские или сторонние компоненты потока данных, написанные в управляемом коде (.NET Framework). в настоящее время они не поддерживаются в машинном коде (C++).
 - Изменение значений переменных в локальных и облачных задачах промежуточного хранения в настоящее время не поддерживается.
 - Изменение значений переменных типа Object в локальных промежуточных задачах не будет отражено в других задачах.

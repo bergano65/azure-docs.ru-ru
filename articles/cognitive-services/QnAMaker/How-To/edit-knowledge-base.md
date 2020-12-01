@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.openlocfilehash: 3940f060209ea5ba55957a3673020656d45de9e4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9541320f65060a0b1f2b5c84a131c08e92554e9e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000102"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351713"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>Изменение пар QnA в базе знаний
 
@@ -59,7 +59,7 @@ QnA Maker позволяет управлять содержимым базы з
     |Возможности расширенного текстового редактора|Сочетание клавиш|
     |--|--|
     |Переключение между редактором Rich-Text и Markdown. `</>`|CTRL+M|
-    |Делять. **Б**|Ctrl + фунтов|
+    |Делять. **B**|Ctrl + фунтов|
     |Курсив, обозначенный курсивом **_I_**|CTRL+I|
     |Неупорядоченный список||
     |Упорядоченный список||
@@ -128,11 +128,11 @@ QnA Maker позволяет управлять содержимым базы з
 
 Редактирование ответов с помощью [расширенного текста](#add-an-editorial-qna-set) позволяет разработчику использовать панель инструментов форматирования для быстрого выбора и форматирования текста.
 
-[Markdown](../reference-markdown-format.md) — это лучшее средство, когда необходимо автоматически создавать содержимое для создания баз знаний, импортируемых в рамках конвейера CI/CD или для [пакетного тестирования](../Quickstarts/batch-testing.md).
+[Markdown](../reference-markdown-format.md) — это лучшее средство, когда необходимо автоматически создавать содержимое для создания баз знаний, импортируемых в рамках конвейера CI/CD или для [пакетного тестирования](../index.yml).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Collaborate on a knowledge base](./collaborate-knowledge-base.md) (Совместная работа над базой знаний)
+> [Collaborate on a knowledge base](../index.yml) (Совместная работа над базой знаний)
 
 * [Управление ресурсами Azure, используемыми QnA Maker](set-up-qnamaker-service-azure.md)

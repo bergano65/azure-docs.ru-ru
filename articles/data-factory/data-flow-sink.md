@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/17/2020
-ms.openlocfilehash: fa048473f0f285b793dad88c7defdb6189ca1ccd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 63be912986542741359cd5e88227f06905d42647
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023012"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350880"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
 
@@ -100,7 +100,7 @@ ms.locfileid: "96023012"
 ![Снимок экрана, показывающий пользовательский порядок приемников.](media/data-flow/custom-sink-ordering.png "Снимок экрана, показывающий пользовательский порядок приемников.")
 
 > [!NOTE]
-> При использовании [кэшированных поисков](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-expression-builder#cached-lookup)убедитесь, что в упорядочении приемников задано значение 1, самый низкий (или первый) в порядке сортировки.
+> При использовании [кэшированных поисков](./concepts-data-flow-expression-builder.md#cached-lookup)убедитесь, что в упорядочении приемников задано значение 1, самый низкий (или первый) в порядке сортировки.
 
 ![Заказ настраиваемых приемников](media/data-flow/cache-2.png "Заказ настраиваемых приемников")
 
@@ -116,6 +116,6 @@ ms.locfileid: "96023012"
 
 При выборке предварительной версии данных в отладочном кластере данные в приемник не записываются. Будет возвращен моментальный снимок данных, которые выглядят, но в назначение ничего не будет записано. Чтобы проверить запись данных в приемник, запустите отладку конвейера из холста конвейера.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы создали поток данных, добавьте [в конвейер действие потока данных](concepts-data-flow-overview.md).

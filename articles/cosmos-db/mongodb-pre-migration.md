@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: chrande
-ms.openlocfilehash: 8ad164f79f150e0cd6ab4a083f21b22c59f7c729
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 337341daf0e092def639a4e8f6fc8ee0a9b57c75
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93361591"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349424"
 ---
 # <a name="pre-migration-steps-for-data-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>Подготовка к переносу данных из MongoDB в API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "93361591"
 
 ```{  "_t": "GetRequestStatisticsResponse",  "ok": 1,  "CommandName": "find",  "RequestCharge": 10.1,  "RequestDurationInMilliSeconds": 7.2}```
 
-Можно также использовать [параметры диагностики](cosmosdb-monitor-resource-logs.md), чтобы понять частоту и закономерности запросов, выполняемых в Azure Cosmos DB. Результаты из журналов диагностики можно отправить в учетную запись хранения, экземпляр EventHub или [Azure Log Analytics](../azure-monitor/log-query/get-started-portal.md).  
+Можно также использовать [параметры диагностики](cosmosdb-monitor-resource-logs.md), чтобы понять частоту и закономерности запросов, выполняемых в Azure Cosmos DB. Результаты из журналов диагностики можно отправить в учетную запись хранения, экземпляр EventHub или [Azure Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).  
 
 ## <a name="choose-your-partition-key"></a><a id="partitioning"></a>Выбор ключа секции
 Секционирование, также называемое сегментированием, является ключевой точкой, которую необходимо рассмотреть перед переносом данных. Azure Cosmos DB использует полностью управляемое секционирование для увеличения емкости базы данных в соответствии с требованиями к хранилищу и пропускной способности. Для этого компонента не требуется размещение или настройка серверов маршрутизации.   

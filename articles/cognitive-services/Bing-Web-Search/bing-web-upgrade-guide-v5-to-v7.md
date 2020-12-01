@@ -11,19 +11,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: scottwhi
-ms.openlocfilehash: 39848bcaded1669c6a6efd5b649ecf8e8343a596
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: d930543671a5328d76a38aa7e1b421c111e89e39
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381122"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349526"
 ---
 # <a name="upgrade-from-bing-web-search-api-v5-to-v7"></a>Обновление API Bing для поиска в Интернете с версии 5 до версии 7
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска в Интернете. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 
@@ -31,7 +31,7 @@ ms.locfileid: "94381122"
 
 ### <a name="endpoints"></a>Конечные точки
 
-- Номер версии конечной точки изменен с 5-го на 7-й. Например, https:\/\/api.cognitive.microsoft.com/bing/ **v7.0** /search.
+- Номер версии конечной точки изменен с 5-го на 7-й. Например, https:\/\/api.cognitive.microsoft.com/bing/**v7.0**/search.
 
 ### <a name="error-response-objects-and-error-codes"></a>Объекты ответов на ошибки и коды ошибок
 
@@ -86,7 +86,7 @@ InsufficientScope|InsufficientAuthorization
 
 - Добавлен параметр запроса [answerCount](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#answercount). С помощью этого параметра можно указать число ответов, которое должен включать ответ. Ответы выбираются на основе ранжирования. Например, если задать этот параметр равным трем (3), ответ будет включать три ответа с самым высоким приоритетом.  
 
-- Добавлен параметр запроса [promote](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, чтобы распространить видео и изображения в ответ, вы можете задать для параметра повысить уровень значение *видео, изображения*. Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если `answerCount` параметр имеет значение 2 и `promote` для него заданы *видео, изображения* , ответ может включать веб-страницы, Новости, видео и изображения.
+- Добавлен параметр запроса [promote](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, чтобы распространить видео и изображения в ответ, вы можете задать для параметра повысить уровень значение *видео, изображения*. Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если `answerCount` параметр имеет значение 2 и `promote` для него заданы *видео, изображения*, ответ может включать веб-страницы, Новости, видео и изображения.
 
 ### <a name="object-changes"></a>Изменения объектов
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/27/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f3248085a0719628bcf7fe42253156d9652b86cd
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: e0cf0f30d1110a58ff8087fd348c4916c34e4603
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148633"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351816"
 ---
 # <a name="azure-security-baseline-for-container-instances"></a>Базовые показатели безопасности Azure для экземпляров контейнеров
 
@@ -263,7 +263,7 @@ ms.locfileid: "92148633"
 
 * [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](./container-instances-log-analytics.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -419,7 +419,7 @@ ms.locfileid: "92148633"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -582,7 +582,7 @@ ms.locfileid: "92148633"
 
 **Руководство**. по умолчанию все данные развертывания в службе "экземпляры контейнеров Azure" шифруются с помощью ключей, управляемых корпорацией Майкрософт. При необходимости можно управлять шифрованием с помощью собственного ключа (ключа, управляемого клиентом).
 
-* [Общие сведения о шифровании неактивных в Azure](../security/fundamentals/encryption-atrest.md)
+* [Общие сведения о шифровании неактивных данных в Azure](../security/fundamentals/encryption-atrest.md)
 
 * [Шифрование данных развертывания с помощью службы "экземпляры контейнеров Azure"](./container-instances-encrypt-data.md)
 
@@ -750,7 +750,7 @@ ms.locfileid: "92148633"
 
 * [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](./container-instances-log-analytics.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -1158,7 +1158,7 @@ ms.locfileid: "92148633"
 
 **Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены.
 
-* [Как задать контакт безопасности центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
+* [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1194,9 +1194,9 @@ ms.locfileid: "92148633"
 
 **Руководство**. соблюдение правил корпорации Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-* [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+* [Правила взаимодействия для выполнения тестов на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Red Teaming в Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо

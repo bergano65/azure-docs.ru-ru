@@ -10,19 +10,19 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: aahi
-ms.openlocfilehash: 2fab4a57a939f9516140562cb8b8508b2ba69dc0
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 10277efe1f06de3633b2d614e2ee5ec0cc351c76
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94379894"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351935"
 ---
 # <a name="search-for-videos-with-the-bing-video-search-api"></a>Поиск видео с помощью API Поиска видео Bing
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 API Поиска видео Bing позволяет легко интегрировать возможности когнитивного поиска новостей Bing в приложениях. API в основном находит и возвращает соответствующие видео из Интернета, а также предоставляет несколько функций для интеллектуального и тематического поиска видео в Интернете.
 
@@ -149,7 +149,7 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="expanding-the-query"></a>Расширение запроса
 
-Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Videos](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) будет содержать поле `queryExpansions`. Например, если запрос был *очистка водостоков* , расширенные запросы могут быть такими: **средства** для очистки водостоков, очистка водостоков **с земли** , **машина** для очистки водостоков и **легкая** очистка водостока.
+Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Videos](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) будет содержать поле `queryExpansions`. Например, если запрос был *очистка водостоков*, расширенные запросы могут быть такими: **средства** для очистки водостоков, очистка водостоков **с земли**, **машина** для очистки водостоков и **легкая** очистка водостока.
 
 В следующем примере показаны расширенные запросы для *очистки водостоков*.
 
@@ -180,7 +180,7 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="pivoting-the-query"></a>Сведение запроса
 
-Если Bing может сегментировать исходный поисковый запрос, объект [Videos](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) содержит поле `pivotSuggestions`. Например, если исходный запрос был *очистка водостоков* , Bing может сегментировать запрос на *очистка* и *водостоки*.
+Если Bing может сегментировать исходный поисковый запрос, объект [Videos](/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) содержит поле `pivotSuggestions`. Например, если исходный запрос был *очистка водостоков*, Bing может сегментировать запрос на *очистка* и *водостоки*.
 
 В следующем примере показаны сводные предложения для *очистки водостоков*.
 

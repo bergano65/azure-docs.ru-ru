@@ -12,12 +12,12 @@ ms.date: 5/4/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 0c5abf345fda9db4cc5123360245e42ea0ef40e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94c34e6f7cb24ff749e5de95f1c28a496700af80
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88115039"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348727"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности.
 
@@ -59,7 +59,7 @@ ms.locfileid: "88115039"
 
 ### <a name="user-passwords-will-be-restricted-to-256-characters"></a>Пароли пользователей будут ограничены 256 символами.
 
-**Дата вступления в силу**13 марта 2020 г.
+**Дата вступления в силу** 13 марта 2020 г.
 
 **Затронутые конечные точки**: все
 
@@ -81,7 +81,7 @@ ms.locfileid: "88115039"
 
 ### <a name="empty-fragments-will-be-appended-to-every-http-redirect-from-the-login-endpoint"></a>К каждому перенаправлению HTTP из конечной точки входа будут добавлены пустые фрагменты.
 
-**Дата вступления в силу**8 февраля 2020 г.
+**Дата вступления в силу** 8 февраля 2020 г.
 
 **Затронутые конечные точки**: версии 1.0 и 2.0.
 
@@ -94,7 +94,7 @@ ms.locfileid: "88115039"
 
 ### <a name="post-form-semantics-will-be-enforced-more-strictly---spaces-and-quotes-will-be-ignored"></a>Семантика отправки формы будет требовать более строгого пробела, а кавычки будут пропущены.
 
-**Дата вступления в силу**2 сентября 2019 г.
+**Дата вступления в силу** 2 сентября 2019 г.
 
 **Затронутые конечные точки**: версии 1.0 и 2.0.
 
@@ -111,7 +111,7 @@ ms.locfileid: "88115039"
 
 ### <a name="app-only-tokens-for-single-tenant-applications-are-only-issued-if-the-client-app-exists-in-the-resource-tenant"></a>Маркеры только для приложения для приложений с одним клиентом выдаются только в том случае, если клиентское приложение существует в клиенте ресурса.
 
-**Дата вступления в силу**26 июля 2019 г.
+**Дата вступления в силу** 26 июля 2019 г.
 
 **Затронутые конечные точки**: [v 1.0](../azuread-dev/v1-oauth2-client-creds-grant-flow.md) и [v 2.0](./v2-oauth2-client-creds-grant-flow.md)
 
@@ -133,7 +133,7 @@ ms.locfileid: "88115039"
 
 ### <a name="redirect-uris-can-now-contain-query-string-parameters"></a>URI перенаправления теперь могут содержать параметры строки запроса
 
-**Дата вступления в силу**22 июля 2019 г.
+**Дата вступления в силу** 22 июля 2019 г.
 
 **Затронутые конечные точки**: версии 1.0 и 2.0.
 
@@ -150,7 +150,7 @@ ms.locfileid: "88115039"
 
 ### <a name="looping-clients-will-be-interrupted"></a>Циклическое выполнение клиентов будет прервано
 
-**Дата вступления в силу**25 марта 2019 г.
+**Дата вступления в силу** 25 марта 2019 г.
 
 **Затронутые конечные точки**: версии 1.0 и 2.0.
 

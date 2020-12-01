@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: jodowns
-ms.openlocfilehash: 58efeaebcc9f643c725cde54fcbda6f65c4bd700
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 24a8a559d72eae4dab0b6e740b34890f1d7ff114
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94415170"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350789"
 ---
 # <a name="ddos-protection-on-front-door"></a>От атак DDoS защита на передней дверце
 
@@ -36,7 +36,7 @@ ms.locfileid: "94415170"
 
 ## <a name="caching"></a>Кэширование
 
-[Возможности кэширования передней дверцы](./front-door-caching.md) можно использовать для защиты серверных систем от больших объемов трафика, созданных атакой. Кэшированные ресурсы будут возвращены с пограничных узлов переднего плана, чтобы они не перенаправлялись на серверную часть. Даже короткое время истечения срока действия кэша (в секундах или минутах) для динамических ответов может значительно снизить нагрузку на серверные службы. Дополнительные сведения о принципах кэширования и шаблонах см. в разделе [вопросы кэширования](https://docs.microsoft.com/azure/architecture/best-practices/caching) и шаблоны, [зависящие от кэша](https://docs.microsoft.com/azure/architecture/patterns/cache-aside).
+[Возможности кэширования передней дверцы](./front-door-caching.md) можно использовать для защиты серверных систем от больших объемов трафика, созданных атакой. Кэшированные ресурсы будут возвращены с пограничных узлов переднего плана, чтобы они не перенаправлялись на серверную часть. Даже короткое время истечения срока действия кэша (в секундах или минутах) для динамических ответов может значительно снизить нагрузку на серверные службы. Дополнительные сведения о принципах кэширования и шаблонах см. в разделе [вопросы кэширования](/azure/architecture/best-practices/caching) и шаблоны, [зависящие от кэша](/azure/architecture/patterns/cache-aside).
 
 ## <a name="web-application-firewall-waf"></a>Брандмауэр веб-приложения (WAF)
 

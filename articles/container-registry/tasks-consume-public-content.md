@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: stevelas
 ms.date: 10/29/2020
 ms.custom: ''
-ms.openlocfilehash: 261604b66d393723b35b472415b8840b047bc36e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 4fba6290b4973e797c13943fc9be4fadb19f3274
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133789"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349288"
 ---
 # <a name="how-to-consume-and-maintain-public-content-with-azure-container-registry-tasks"></a>Как использовать и поддерживать общедоступное содержимое с помощью задач реестра контейнеров Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "93133789"
 
 В этом пошаговом руководстве настраивается следующее:
 
-1. Три **реестра контейнеров** , представляющие:
+1. Три **реестра контейнеров**, представляющие:
    * Имитируемый [центр DOCKER][docker-hub] ( `publicregistry` ) для поддержки изменения базового образа
    * Реестр команды ( `contoso` ) для совместного использования частных образов
    * Общий реестр компании или команды `baseartifacts` для импортированного общедоступного содержимого
@@ -48,11 +48,11 @@ ms.locfileid: "93133789"
    1. Импорт и проверка `node` образа в общем реестре компании или команды
    1. Сборка и развертывание `hello-world` образа
 1. **Определения задач записи контроля** доступа, включая конфигурации для:
-1. Коллекция **учетных данных реестра** , которые являются указателями на хранилище ключей.
-1. Коллекция **секретов** , доступных в `acr-task.yaml` , которые являются указателями на хранилище ключей
+1. Коллекция **учетных данных реестра**, которые являются указателями на хранилище ключей.
+1. Коллекция **секретов**, доступных в `acr-task.yaml` , которые являются указателями на хранилище ключей
 1. Коллекция **настроенных значений** , используемых в элементе `acr-task.yaml`
 1. **Хранилище ключей Azure** для защиты всех секретов
-1. **Экземпляр контейнера Azure** , в котором размещается `hello-world` приложение сборки.
+1. **Экземпляр контейнера Azure**, в котором размещается `hello-world` приложение сборки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -751,11 +751,11 @@ az group delete -n $ACI_RG --no-wait -y
 
 [install-cli]:                  /cli/azure/install-azure-cli
 [acr]:                          https://aka.ms/acr
-[acr-repo-permissions]:         https://aka.ms/acr/repo-permissions
-[acr-task]:                     https://aka.ms/acr/tasks
+[acr-repo-permissions]:         ./container-registry-repository-scoped-permissions.md
+[acr-task]:                     ./container-registry-tasks-overview.md
 [acr-task-triggers]:            container-registry-tasks-overview.md#task-scenarios
 [acr-task-credentials]:       container-registry-tasks-authentication-managed-identity.md#4-optional-add-credentials-to-the-task
-[acr-tokens]:                   https://aka.ms/acr/tokens
+[acr-tokens]:                   ./container-registry-repository-scoped-permissions.md
 [aci]:                          https://aka.ms/aci
 [alpine-public-image]:          https://hub.docker.com/_/alpine
 [docker-hub]:                   https://hub.docker.com
@@ -766,11 +766,7 @@ az group delete -n $ACI_RG --no-wait -y
 [helm-charts]:                  https://helm.sh
 [mcr]:                          https://aka.ms/mcr
 [nginx-public-image]:           https://hub.docker.com/_/nginx
-[oci-artifacts]:                https://aka.ms/acr/artifacts
+[oci-artifacts]:                ./container-registry-oci-artifacts.md
 [oci-consuming-public-content]: https://opencontainers.org/posts/blog/2020-10-30-consuming-public-content/
 [opa]:                          https://www.openpolicyagent.org/
 [quay]:                         https://quay.io
-
-
-
-

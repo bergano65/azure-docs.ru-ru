@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: de74d7e3cf854f36d122be6a32c7fb4d449c5fe5
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f591a9781cb81ec735d22f4f687f8d413923dc93
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175922"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349135"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты для службы Azure Cosmos DB
 
@@ -78,8 +78,8 @@ ms.locfileid: "96175922"
 
 | Ресурс | Ограничение по умолчанию |
 | --- | --- |
-| Минимальное число записей на контейнер ([выделенный режим подготовки пропускной способности](databases-containers-items.md#azure-cosmos-containers)) | 400 |
-| Минимальное число получателей на базу данных ([подготовленный режим с общей пропускной способностью](databases-containers-items.md#azure-cosmos-containers)) | 400 единиц запросов в секунду для первых 25 контейнеров. Дополнительные 100 единиц запросов/с для каждого контейнера. |
+| Минимальное число записей на контейнер ([выделенный режим подготовки пропускной способности](./account-databases-containers-items.md#azure-cosmos-containers)) | 400 |
+| Минимальное число получателей на базу данных ([подготовленный режим с общей пропускной способностью](./account-databases-containers-items.md#azure-cosmos-containers)) | 400 единиц запросов в секунду для первых 25 контейнеров. Дополнительные 100 единиц запросов/с для каждого контейнера. |
 
 Cosmos DB поддерживает программное масштабирование пропускной способности (единиц запросов в секунду) на контейнер или базу данных с помощью пакетов SDK или портала.    
 

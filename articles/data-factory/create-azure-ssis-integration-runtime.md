@@ -11,12 +11,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: effa0d3ba9f7098b691605bfbd76bff9ea3d5e66
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7936699832a09f535729c42b12fec2d5c49a11a0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023437"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350948"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "96023437"
 
 В следующей таблице сравниваются некоторые возможности сервера базы данных SQL Azure и Управляемый экземпляр SQL, так как они связаны с Azure-ССИР IR.
 
-| Функция | База данных SQL| Управляемый экземпляр SQL |
+| Компонент | База данных SQL| Управляемый экземпляр SQL |
 |---------|--------------|------------------|
 | **Планирование** | Агент SQL Server недоступна.<br/><br/>См. раздел [Планирование выполнения пакета в конвейере фабрики данных](/sql/integration-services/lift-shift/ssis-azure-schedule-packages?view=sql-server-2017#activity).| Доступен агент Управляемый экземпляр. |
 | **Аутентификация** | Экземпляр SSISDB можно создать с пользователем автономной базы данных, который представляет любую группу Azure AD с управляемым удостоверением фабрики данных в качестве члена роли **db_owner** .<br/><br/>См. раздел [Включение аутентификации Azure AD для создания SSISDB на сервере базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database). | Экземпляр SSISDB можно создать с пользователь автономной базы данных, который представляет управляемое удостоверение фабрики данных. <br/><br/>См. раздел [Включение аутентификации Azure AD для создания SSISDB в Azure SQL управляемый экземпляр](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-sql-managed-instance). |
@@ -167,7 +167,7 @@ ms.locfileid: "96023437"
 Если применимо, выберите **Тестировать подключение**, и если результат будет успешным, выберите **Далее**.
 
 > [!NOTE]
-   > При использовании сервера базы данных SQL Azure для размещения SSISDB данные по умолчанию будут храниться в геоизбыточном хранилище для резервных копий. Если вы не хотите, чтобы данные были реплицированы в другие регионы, следуйте инструкциям по [настройке избыточности хранилища резервных копий с помощью PowerShell](https://docs.microsoft.com/azure/azure-sql/database/automated-backups-overview?tabs=single-database#configure-backup-storage-redundancy-by-using-powershell).
+   > При использовании сервера базы данных SQL Azure для размещения SSISDB данные по умолчанию будут храниться в геоизбыточном хранилище для резервных копий. Если вы не хотите, чтобы данные были реплицированы в другие регионы, следуйте инструкциям по [настройке избыточности хранилища резервных копий с помощью PowerShell](../azure-sql/database/automated-backups-overview.md?tabs=single-database#configure-backup-storage-redundancy-by-using-powershell).
    
 ##### <a name="creating-azure-ssis-ir-package-stores"></a>Создание хранилищ пакетов Azure-SSIS IR
 
@@ -1010,7 +1010,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 
 В обоих случаях вы также можете запустить развернутые пакеты в Azure-SSIS IR, используя действие "Выполнить пакеты служб SSIS" в конвейерах Фабрики данных Azure. См. сведения о [запуске выполнения пакета SSIS с использованием действия Фабрики данных](./how-to-invoke-ssis-package-ssis-activity.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. другие разделы Azure-SSIS IR в этой документации:
 

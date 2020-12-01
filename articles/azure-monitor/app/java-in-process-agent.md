@@ -3,12 +3,12 @@ title: Azure Monitor Application Insights Java
 description: Наблюдение за производительностью приложений Java, выполняющихся в любой среде, без необходимости изменения кода. Распределенная трассировка и схема приложения.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 8423443abac90b87349a4a80fce0ec33a8b686da
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 36e2b419da2bccdf2f5f13227457172cf644994c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444747"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351543"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Application Insights Azure Monitor отслеживания приложений Java с некодированным кодом
 
@@ -143,7 +143,7 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 | **Пользовательские метрики**  |  Да       |                     |  Да    |
 | **Зависимости**    |            |                     |  Да    |
 | **Исключения**      |            |  Да                |  Да    |
-| **Просмотры страницы**      |            |                     |  Да    |
+| **Просмотры страниц**      |            |                     |  Да    |
 | **Запросы**        |            |                     |  Да    |
 | **Трассировки**          |            |  Да                |  Да    |
 
@@ -228,17 +228,3 @@ telemetryClient.trackEvent("WinGame");
       telemetryClient.trackException(e);
   }
 ```
-
-## <a name="upgrading-from-application-insights-java-sdk-2x"></a>Обновление с Application Insights пакета SDK для Java 2. x
-
-Если вы уже используете Application Insights Java SDK 2. x в своем приложении, нет необходимости удалять его.
-Агент Java 3,0 определит его, а затем запишет и сопоставьте любые пользовательские данные телеметрии, отправляемые через пакет SDK для Java 2. x, и подавление автоматической сбора данных, выполненных пакетом SDK для Java 2. x, для предотвращения дублирования данных телеметрии.
-
-Если используется агент Application Insights 2. x, необходимо удалить `-javaagent:` аргумент виртуальной машины Java, указывающий на агент 2. x.
-
-> [!NOTE]
-> Пакет SDK для Java 2. x Telemetryinitializer и TelemetryProcessors не будет выполняться при использовании агента 3,0.
-> Многие из вариантов использования, которые ранее были необходимы, можно разрешить в 3,0, настроив [пользовательские измерения](./java-standalone-config.md#custom-dimensions) или настроив [обработчики данных телеметрии](./java-standalone-telemetry-processors.md).
-
-> [!NOTE]
-> 3,0 еще не поддерживает несколько ключей инструментирования в одном ВИРТУАЛЬНОЙ машины Java.

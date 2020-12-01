@@ -11,14 +11,14 @@ ms.date: 09/22/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58b7aa0bf8c82990a00b4e41041145a67ee2f02b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e272c402cac803d10d9998298ce6d3370d0e000
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91637364"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348809"
 ---
-# <a name="azure-ad-connect-cloud-provisioning-attibute-mapping"></a>Azure AD Connectное сопоставление атрибут облачной подготовки
+# <a name="azure-ad-connect-cloud-provisioning-attribute-mapping"></a>Azure AD Connect сопоставление атрибута подготовки облака
 
 В Azure AD Connect подготовки облачной среды появилась новая функция, позволяющая легко сопоставлять атрибуты локальных объектов User/Group и объектов в Azure AD.  Эта функция добавлена в конфигурацию подготовки облака.
 
@@ -54,13 +54,13 @@ ms.locfileid: "91637364"
 ## <a name="using-attribute-mapping"></a>Использование сопоставления атрибутов
 Чтобы использовать новую функцию, выполните следующие действия.
 
- 1.  В портал Azure выберите **Azure Active Directory**.
+ 1.  На портале Azure выберите **Azure Active Directory**.
  2.  Выберите **Azure AD Connect**.
  3.  Выберите **Управление инициализацией**.
 
    ![Управление подготовкой](media/how-to-configure/manage1.png)
  
- 4. В разделе **Конфигурация**выберите свою конфигурацию.
+ 4. В разделе **Конфигурация** выберите свою конфигурацию.
  5. Выберите **щелкните, чтобы изменить сопоставления**.  Откроется экран сопоставление атрибутов.
 
  ![Добавление атрибутов](media/how-to-attribute-mapping/mapping6.png)
@@ -82,10 +82,10 @@ ms.locfileid: "91637364"
 ## <a name="test-your-attribute-mapping"></a>Тестирование сопоставления атрибутов
 Чтобы проверить сопоставление атрибутов, можно использовать [подготовку по требованию](how-to-on-demand-provision.md).  Из 
 
-1.  В портал Azure выберите **Azure Active Directory**.
+1.  На портале Azure выберите **Azure Active Directory**.
 2.  Выберите **Azure AD Connect**.
 3.  Выберите **Управление инициализацией**.
-4. В разделе **Конфигурация**выберите свою конфигурацию.
+4. В разделе **Конфигурация** выберите свою конфигурацию.
 5. В разделе **Проверка** нажмите кнопку **подготавливать пользователя** . 
 6. На экране подготовки по требованию.  Введите **различающееся имя** пользователя или группы и нажмите кнопку " **подготавливать** ".  
 7. После завершения работы вы увидите экран Success (успешно) и 4 зеленые флажки, указывающие, что оно было успешно подготовлено.  

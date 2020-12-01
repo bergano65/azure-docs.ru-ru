@@ -6,12 +6,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: dcf912f431d578a6e678801d3dc8f4e11484ea78
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a77083c721328a8df9facd2f4b320b863aa03c68
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997024"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352411"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
 
@@ -22,7 +22,7 @@ ms.locfileid: "95997024"
 
 ## <a name="turn-on-active-learning"></a>Включение активного обучения
 
-Чтобы увидеть предлагаемые вопросы, необходимо [включить активное обучение](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/active-learning-suggestions) для ресурса QnA Maker.
+Чтобы увидеть предлагаемые вопросы, необходимо [включить активное обучение](../concepts/active-learning-suggestions.md) для ресурса QnA Maker.
 
 ## <a name="view-suggested-questions"></a>Просмотреть предлагаемые вопросы
 
@@ -341,7 +341,7 @@ async callTrain(stepContext){
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)

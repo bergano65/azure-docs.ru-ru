@@ -10,19 +10,19 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: scottwhi
-ms.openlocfilehash: fbe8f9f4c5354d5a1b68909fcb65597e8c03dfb8
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: ecf01720126a9bf5da4aabb08653e62b42265d36
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94367172"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351356"
 ---
 # <a name="search-for-news-with-the-bing-news-search-api"></a>Поиск новостей с помощью API Bing для поиска новостей
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 API Bing для поиска изображений позволяет легко интегрировать возможности когнитивного поиска новости Bing в приложения.
 
@@ -32,7 +32,7 @@ API Bing для поиска новостей в основном находит
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки* , установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
 
 ## <a name="get-general-news"></a>Получение общих новостей
 
@@ -266,7 +266,7 @@ Host: api.cognitive.microsoft.com
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Разбивка на страницы результатов, возвращаемых Поиском новостей Bing](../../bing-web-search/paging-search-results.md)

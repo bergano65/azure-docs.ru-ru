@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 03/19/2020
-ms.openlocfilehash: f5f640f8895cd6defe31a68b790ce841c4679a6f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f49e05578f55a38845acbd4010f928fb17c51606
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777362"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352275"
 ---
 # <a name="markdown-format-supported-in-qna-maker-answer-text"></a>Формат Markdown, поддерживаемый в тексте ответа QnA Maker
 
@@ -22,7 +22,7 @@ QnA Maker сохраняет текст ответа как Markdown. Сущес
 
 Редактирование ответов с помощью [расширенного текста](How-To/edit-knowledge-base.md#add-an-editorial-qna-set) позволяет разработчику использовать панель инструментов форматирования для быстрого выбора и форматирования текста.
 
-Markdown — это лучшее средство, когда необходимо автоматически создавать содержимое для создания баз знаний, импортируемых в рамках конвейера CI/CD или для [пакетного тестирования](Quickstarts/batch-testing.md).
+Markdown — это лучшее средство, когда необходимо автоматически создавать содержимое для создания баз знаний, импортируемых в рамках конвейера CI/CD или для [пакетного тестирования](./index.yml).
 
 ## <a name="supported-markdown-format"></a>Поддерживаемый формат Markdown
 
@@ -37,8 +37,8 @@ Markdown — это лучшее средство, когда необходим
 |URL-адрес для ссылки|`[text](https://www.my.com)`|`How do I create a bot with [QnA Maker](https://www.qnamaker.ai)?`|![формат URL-адреса (гиперссылка)](./media/qnamaker-concepts-datasources/format-url.png)|
 |* URL-адрес для общедоступного образа|`![text](https://www.my.com/image.png)`|`How can I create a bot with ![QnAMaker](https://review.docs.microsoft.com/azure/cognitive-services/qnamaker/media/qnamaker-how-to-key-management/qnamaker-resource-list.png)`|![формат URL-адреса общедоступного образа ](./media/qnamaker-concepts-datasources/format-image-url.png)|
 |Зачеркнутый|`~~text~~`|`some ~~questoins~~ questions need to be asked`|![формат для зачеркивания](./media/qnamaker-concepts-datasources/format-strikethrough.png)|
-|Полужирный и курсив|`***text***`|`How can I create a ***QnA Maker*** bot?`|![формат для полужирного шрифта и курсива](./media/qnamaker-concepts-datasources/format-bold-italics.png)|
-|Полужирный URL-адрес для ссылки|`[**text**](https://www.my.com)`|`How do I create a bot with [**QnA Maker**](https://www.qnamaker.ai)?`|![формат для URL-адреса полужирного шрифта](./media/qnamaker-concepts-datasources/format-bold-url.png)|
+|Полужирный и курсив|`***text**_`|`How can I create a _*_QnA Maker_*_ bot?`|![формат для полужирного шрифта и курсива](./media/qnamaker-concepts-datasources/format-bold-italics.png)|
+|Полужирный URL-адрес для ссылки|`[_*text**](https://www.my.com)`|`How do I create a bot with [**QnA Maker**](https://www.qnamaker.ai)?`|![формат для URL-адреса полужирного шрифта](./media/qnamaker-concepts-datasources/format-bold-url.png)|
 |URL-адрес курсивов для ссылки|`[*text*](https://www.my.com)`|`How do I create a bot with [*QnA Maker*](https://www.qnamaker.ai)?`|![формат URL-адреса курсивов](./media/qnamaker-concepts-datasources/format-url-italics.png)|
 |Escape-символы Markdown|`\*text\*`|`How do I create a bot with \*QnA Maker\*?`|![Формат для символов escape-Markdown.](./media/qnamaker-concepts-datasources/format-escape-markdown-symbols.png)|
 |Упорядоченный список|`\n 1. item1 \n 1. item2`|`This is an ordered list: \n 1. List item 1 \n 1. List item 2`<br>В предыдущем примере используется автоматическая нумерация, встроенная в Markdown.<br>`This is an ordered list: \n 1. List item 1 \n 2. List item 2`<br>В предыдущем примере используется явная нумерация.|![формат упорядоченного списка](./media/qnamaker-concepts-datasources/format-ordered-list.png)|
@@ -56,6 +56,6 @@ Markdown — это лучшее средство, когда необходим
 
 Кроме того, CR LF (\r\n) преобразуется в значение \n в КИЛОБАЙТах. LF (\n) сохраняется как есть. Если вы хотите экранировать любую escape-последовательность, например \t или \n, можно использовать обратную косую черту, например " \\ \\ r \\ \\ n" и " \\ \\ t".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите [форматы файлов](reference-tsv-format-batch-testing.md)пакетного тестирования.

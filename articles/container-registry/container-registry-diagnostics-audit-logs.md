@@ -3,12 +3,12 @@ title: Собирайте & анализа журналов ресурсов
 description: Записывайте и анализируйте события журнала ресурсов для реестра контейнеров Azure, такие как проверка подлинности, отправка образа и извлечение образа.
 ms.topic: article
 ms.date: 06/01/2020
-ms.openlocfilehash: 63ccb944b9c3de9941acf55ca5ea85fda70a7008
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b05d34e6c50fea3760e30d28f59e55d8c5f211a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87553382"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348591"
 ---
 # <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>Журналы реестра контейнеров Azure для диагностической оценки и аудита
 
@@ -70,7 +70,7 @@ ms.locfileid: "87553382"
 
 После включения сбора журналов диагностики в Log Analytics для отображения данных в Azure Monitor может потребоваться несколько минут. Чтобы просмотреть данные на портале, выберите реестр и выберите **мониторинг > журналы**. Выберите одну из таблиц, содержащих данные для реестра. 
 
-Выполнение запросов для просмотра данных. Предоставляется несколько примеров запросов или выполняется собственное. Например, следующий запрос получает последние 24 часа данных из таблицы **контаинеррегистрирепоситоревентс** :
+Выполните запросы, чтобы просмотреть данные. Вы можете воспользоваться предоставленными примерами запросов или выполнить собственный запрос. Например, следующий запрос получает последние 24 часа данных из таблицы **контаинеррегистрирепоситоревентс** :
 
 ```Kusto
 ContainerRegistryRepositoryEvents
@@ -81,7 +81,7 @@ ContainerRegistryRepositoryEvents
 
 ![Запрашивание данных журнала](media/container-registry-diagnostics-audit-logs/azure-monitor-query.png)
 
-Руководство по использованию Log Analytics в портал Azure см. в статье Начало [работы с Azure Monitor log Analytics](../azure-monitor/log-query/get-started-portal.md)или использование [демонстрационной среды](https://portal.loganalytics.io/demo)log Analytics. 
+Руководство по использованию Log Analytics в портал Azure см. в статье Начало [работы с Azure Monitor log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)или использование [демонстрационной среды](https://portal.loganalytics.io/demo)log Analytics. 
 
 Дополнительные сведения о запросах журналов см. [в разделе Общие сведения о запросах журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
@@ -144,7 +144,7 @@ ContainerRegistryLoginEvents
 
 Вы также можете выполнять потоковую передачу событий журнала диагностики в [концентратор событий Azure](../event-hubs/event-hubs-about.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения об использовании [log Analytics](../azure-monitor/log-query/get-started-portal.md) и создании [запросов журналов](../azure-monitor/log-query/get-started-queries.md).
+* Дополнительные сведения об использовании [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md) и создании [запросов журналов](../azure-monitor/log-query/get-started-queries.md).
 * Сведения о журналах платформы, доступных на разных уровнях Azure, см. в статье [Обзор журналов платформы Azure](../azure-monitor/platform/platform-logs-overview.md) .

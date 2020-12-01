@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: how-to
 ms.date: 11/09/2020
-ms.openlocfilehash: 4378a648b8b7a545c9e4b638d08592aa32fff3aa
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: c89ab375cb02824a08ff57e6b5278dd9299126ff
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427672"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350931"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
@@ -34,7 +34,7 @@ ms.locfileid: "94427672"
 1. Войдите на [портал QnA Maker](https://qnamaker.ai).
 1. Выберите базу знаний источника, которую необходимо перенести.
 
-1. На странице **Параметры** выберите **Экспорт базы знаний** , чтобы скачать TSV-файл, содержащий содержимое базы знаний источника — вопросы, ответы, метаданные, приглашения к исполнению, и имена источников данных, из которых они были извлечены. Идентификаторы QnA, экспортированные с вопросами и ответами, могут использоваться для обновления определенной пары QnA с помощью [API обновления](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update). Идентификатор QnA для определенной пары QnA остается неизменным в ходе нескольких операций экспорта.
+1. На странице **Параметры** выберите **Экспорт базы знаний** , чтобы скачать TSV-файл, содержащий содержимое базы знаний источника — вопросы, ответы, метаданные, приглашения к исполнению, и имена источников данных, из которых они были извлечены. Идентификаторы QnA, экспортированные с вопросами и ответами, могут использоваться для обновления определенной пары QnA с помощью [API обновления](/rest/api/cognitiveservices/qnamaker/knowledgebase/update). Идентификатор QnA для определенной пары QnA остается неизменным в ходе нескольких операций экспорта.
 
 1. Выберите **создать базу знаний** в верхнем меню, а затем создайте _пустую_ базу знаний. Он пуст, так как при создании он не добавляется никаких URL-адресов или файлов. Они добавляются на этапе импорта после создания.
 
@@ -59,16 +59,16 @@ ms.locfileid: "94427672"
 
 **Экспорт**
 
-* [Скачать API базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/download)
+* [Скачать API базы знаний](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/download)
 
 **Импорт**
 
-* [Reload API (перезагрузка с тем же ИДЕНТИФИКАТОРом базы знаний)](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/replace)
-* [Создать API (загрузить с новым ИДЕНТИФИКАТОРом базы знаний)](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/create)
+* [Reload API (перезагрузка с тем же ИДЕНТИФИКАТОРом базы знаний)](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/replace)
+* [Создать API (загрузить с новым ИДЕНТИФИКАТОРом базы знаний)](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/create)
 
 
 ## <a name="chat-logs-and-alterations"></a>Журналы чатов и варианты
-Преобразования (синонимы) без учета регистра не импортируются автоматически. Используйте [API v4](https://go.microsoft.com/fwlink/?linkid=2092179) для перемещения изменений в новой базе знаний.
+Преобразования (синонимы) без учета регистра не импортируются автоматически. Используйте [API v4](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase) для перемещения изменений в новой базе знаний.
 
 Возможность переноса журналов чатов не предусмотрена, так как новая база знаний использует для хранения журналов чатов Application Insights.
 

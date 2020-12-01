@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: c7db48a1df61472de8676192f267493232139b6e
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 3632c098f865b1e5c4e76709a83176035be7abc2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030821"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351833"
 ---
 # <a name="plan-and-manage-costs-for-azure-cosmos-db"></a>Планирование и управление затратами для Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -29,7 +29,7 @@ Azure Cosmos DB поддерживает два типа режимов емко
 
 ### <a name="cost-analysis"></a>Анализ затрат
 
-Анализ затрат в службе "Управление затратами" поддерживает большинство типов учетных записей Azure, но не все из них. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](https://docs.microsoft.com/azure/cost-management-billing/costs/understand-cost-mgt-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) (Интерпретация данных службы "Управление затратами"). Для просмотра данных о затратах требуется по крайней мере доступ на чтение для учетной записи Azure. Дополнительные сведения о назначении доступа к данным службы "Управление затратами" Azure см. в [этой статье](https://docs.microsoft.com/azure/cost-management/assign-access-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+Анализ затрат в службе "Управление затратами" поддерживает большинство типов учетных записей Azure, но не все из них. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](../cost-management-billing/costs/understand-cost-mgt-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) (Интерпретация данных службы "Управление затратами"). Для просмотра данных о затратах требуется по крайней мере доступ на чтение для учетной записи Azure. Дополнительные сведения о назначении доступа к данным службы "Управление затратами" Azure см. в [этой статье](../cost-management-billing/costs/assign-access-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 ## <a name="estimating-provisioned-throughput-costs-before-using-azure-cosmos-db"></a>Оценка подготовленных затрат пропускной способности перед использованием Azure Cosmos DB
 
@@ -71,13 +71,13 @@ Azure Cosmos DB поддерживает два типа режимов емко
 
    :::image type="content" source="./media/plan-manage-costs/cost-estimate-portal.png" alt-text="Оценка затрат в портал Azure":::
 
-Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](https://docs.microsoft.com/azure/billing/billing-spending-limit).
+Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../cost-management-billing/manage/spending-limit.md).
 
 Вы можете платить за Azure Cosmos DB оплаты с помощью Azure Соглашение Enterprise денежных обязательств по кредиту. Однако вы не можете использовать денежные обязательства кредита для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
 
 ## <a name="monitor-costs"></a>Мониторинг затрат
 
-При использовании ресурсов с Azure Cosmos DB взимается плата. Затраты на единицы использования ресурсов зависят от временных интервалов (секунды, минуты, часы и дни) или использования единиц запросов. После начала использования Azure Cosmos DB затраты изменяются, и их можно увидеть на панели [анализ затрат](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в портал Azure.
+При использовании ресурсов с Azure Cosmos DB взимается плата. Затраты на единицы использования ресурсов зависят от временных интервалов (секунды, минуты, часы и дни) или использования единиц запросов. После начала использования Azure Cosmos DB затраты изменяются, и их можно увидеть на панели [анализ затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в портал Azure.
 
 При использовании анализа затрат можно просматривать Azure Cosmos DBные затраты в диаграммах и таблицах для различных временных интервалов. Некоторые примеры относятся к дню, текущему, предыдущему месяцу и году. Вы также можете просматривать затраты по бюджету и прогнозируемым затратам. Переключение на более длительные представления с течением времени может помочь определить тенденции расходов и узнать, где могла произойти чрезмерное расходование. Если вы создали бюджеты, вы также сможете легко увидеть, где они превышаются. 
 
@@ -97,15 +97,15 @@ Azure Cosmos DB поддерживает два типа режимов емко
 
 ## <a name="create-budgets"></a>Создание бюджетов
 
-Вы можете создавать [бюджеты](https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](https://docs.microsoft.com/azure/cost-management/cost-mgt-alerts-monitor-usage-spending?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
+Вы можете создавать [бюджеты](../cost-management-billing/costs/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
 
-Бюджеты можно создавать с помощью фильтров для конкретных ресурсов или служб в Azure, если требуется дополнительная детализация в мониторинге. Фильтры помогают предотвратить случайное создание новых ресурсов, которые избавляет вас от дополнительных денег. Дополнительные сведения о параметрах фильтра при создании бюджета см. в разделе [Параметры группы и фильтра](https://docs.microsoft.com/azure/cost-management-billing/costs/group-filter?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+Бюджеты можно создавать с помощью фильтров для конкретных ресурсов или служб в Azure, если требуется дополнительная детализация в мониторинге. Фильтры помогают предотвратить случайное создание новых ресурсов, которые избавляет вас от дополнительных денег. Дополнительные сведения о параметрах фильтра при создании бюджета см. в разделе [Параметры группы и фильтра](../cost-management-billing/costs/group-filter.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 ## <a name="export-cost-data"></a>Экспорт данных о затратах
 
-Вы также можете [экспортировать данные о затратах](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
+Вы также можете [экспортировать данные о затратах](../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как работают цены в Azure Cosmos DB, см. в следующих статьях:
 
@@ -113,7 +113,7 @@ Azure Cosmos DB поддерживает два типа режимов емко
 * [Optimize provisioned throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация стоимости подготовленной пропускной способности в Azure Cosmos DB)
 * [Optimize query cost in Azure Cosmos DB](./optimize-cost-reads-writes.md) (Оптимизация затрат на отправку запросов в Azure Cosmos DB)
 * [Оптимизация затрат на хранение в Azure Cosmos DB](optimize-cost-storage.md)
-* Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](https://docs.microsoft.com/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
-* Дополнительные сведения об управлении затратами с помощью [анализа затрат](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-* Узнайте, как [предотвратить непредвиденные затраты](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-* Пройдите курс обучения по [управлению затратами](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .
+* Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
+* Дополнительные сведения об управлении затратами с помощью [анализа затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+* Узнайте, как [предотвратить непредвиденные затраты](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+* Пройдите курс обучения по [управлению затратами](/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .

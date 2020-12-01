@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 08/04/2020
-ms.openlocfilehash: 3674c6a0579eb901cc490d08bb8a4893296884c4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0041779abcd97901fb9315125a287a1d45cff133
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020659"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350115"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Руководство по Миграция из SQL Server в Управляемый экземпляр SQL Azure по сети с помощью DMS
 
@@ -220,7 +220,7 @@ Azure Database Migration Service позволяет переносить баз�
     ![Настройка параметров миграции](media/tutorial-sql-server-to-managed-instance-online/dms-configure-migration-settings4.png)
 
     > [!NOTE]
-    > Возможной причиной появления в Azure Database Migration Service ошибок "системная ошибка 53" или "системная ошибка 57" может быть отсутствие у Azure Database Migration Service доступа к общей папке Azure. При возникновении таких ошибок [предоставьте доступ к хранилищу учетной записи из виртуальной сети](../storage/common/storage-network-security.md?toc=%252fazure%252fvirtual-network%252ftoc.json#grant-access-from-a-virtual-network).
+    > Возможной причиной появления в Azure Database Migration Service ошибок "системная ошибка 53" или "системная ошибка 57" может быть отсутствие у Azure Database Migration Service доступа к общей папке Azure. При возникновении таких ошибок [предоставьте доступ к хранилищу учетной записи из виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network).
 
     > [!IMPORTANT]
     > Если функция проверки замыкания на себя включена, а исходный экземпляр SQL Server и общая папка находятся на одном компьютере, такой источник не сможет получить доступ к общей папке по полному доменному имени. Чтобы устранить эту проблему, отключите функцию проверки замыкания на себя, как описано [здесь](https://support.microsoft.com/help/926642/error-message-when-you-try-to-access-a-server-locally-by-using-its-fqd).

@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 1933e60892430b907e070ea04f39d8acc86ddac2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f6d9f670a1b85e55ccc8f6cb18645b92927221a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90937841"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351645"
 ---
 # <a name="azure-defender-for-iot-edge-security-module"></a>Модуль безопасности защитника Azure для IoT Edge
 
-[Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/) предоставляет мощные возможности для управления и выполнения бизнес-процессов на границе.
+[Azure IOT Edge](../iot-edge/index.yml) предоставляет мощные возможности для управления и выполнения бизнес-процессов на границе.
 Ключевая часть, которую IoT Edge играет в средах IoT, делает ее особенно привлекательной для вредоносных субъектов.
 
 Модуль безопасности "защитник для Интернета вещей" предоставляет комплексное решение для обеспечения безопасности устройств IoT Edge.
@@ -39,7 +39,7 @@ ms.locfileid: "90937841"
 
 - Анализ манифестов развертывания IoT Edge.
 
-- Выполняет статистическую обработку необработанных событий безопасности в сообщениях, отправляемых через [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).
+- Выполняет статистическую обработку необработанных событий безопасности в сообщениях, отправляемых через [центр IOT Edge](../iot-edge/iot-edge-runtime.md#iot-edge-hub).
 
 - Удалите конфигурацию с помощью модуля безопасности двойника.
 
@@ -52,7 +52,7 @@ ms.locfileid: "90937841"
 
 Модуль безопасности "защитник для Интернета вещей" для IoT Edge в настоящее время доступен только для Linux.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали об архитектуре и возможностях модуля безопасности "защитник для Интернета вещей" для IoT Edge.
 

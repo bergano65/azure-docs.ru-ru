@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 728dda7c702d7fc52c9285c7cb15fc4b6dc3003c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: aef85b263a142c001d47bac4aed7a71066e26dae
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182068"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350455"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
@@ -639,7 +639,7 @@ ms.locfileid: "96182068"
 
 ## <a name="exposure-control-and-feature-flags"></a>Флаги управления экспозицией и функций
 
-При работе с командой существуют экземпляры, в которых вы можете объединить изменения, но не нужно, чтобы они выполнялись в таких средах, как "производство" и "вопросы и ответы". Для решения этой ситуации группа ADF рекомендует [DevOps концепцию использования флагов компонентов](https://docs.microsoft.com/azure/devops/migrate/phase-features-with-feature-flags?view=azure-devops). В ADF можно объединять [глобальные параметры](author-global-parameters.md) и [действие условия If](control-flow-if-condition-activity.md) , чтобы скрыть наборы логики на основе этих флагов среды.
+При работе с командой существуют экземпляры, в которых вы можете объединить изменения, но не нужно, чтобы они выполнялись в таких средах, как "производство" и "вопросы и ответы". Для решения этой ситуации группа ADF рекомендует [DevOps концепцию использования флагов компонентов](/azure/devops/migrate/phase-features-with-feature-flags?view=azure-devops). В ADF можно объединять [глобальные параметры](author-global-parameters.md) и [действие условия If](control-flow-if-condition-activity.md) , чтобы скрыть наборы логики на основе этих флагов среды.
 
 Сведения о настройке флага функции см. в следующем видеоучебнике:
 

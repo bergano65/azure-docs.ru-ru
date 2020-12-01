@@ -11,19 +11,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: scottwhi
-ms.openlocfilehash: f4f001cdeb37ff760a01ac48d7efb41c0437fe5f
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 571314009b6f58e5c2ab6aac02cfebc82c53f42f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380257"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351867"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>Фильтрация результатов, возвращаемых в ответе на запрос поиска  
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 Когда вы делаете запрос в Интернете, Bing возвращает все релевантное содержимое для поиска. Например, если поисковый запрос содержит условие "кораблевождение+шлюпки", то ответ может содержать приведенные ниже результаты.
 
@@ -58,7 +58,7 @@ ms.locfileid: "94380257"
 
 Можно отфильтровать типы ответов, включаемых Bing в ответ (например, изображения, видео и новости), с помощью параметра запроса [респонсефилтер](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter) , который представляет собой список ответов с разделителями-запятыми. Ответ будет добавлен в ответ, если Bing найдет соответствующее для него содержимое. 
 
-Чтобы исключить конкретные ответы из ответа, например изображения, добавьте `-` символ к типу ответа. Пример:
+Чтобы исключить конкретные ответы из ответа, например изображения, добавьте `-` символ к типу ответа. Например:
 
 ```
 &responseFilter=-images,-videos

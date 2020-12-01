@@ -4,12 +4,12 @@ description: Сведения о программном доступе к уче
 ms.topic: how-to
 ms.date: 10/28/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 25cb05374fc0667306e2b1004b3cd237413b4409
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: b8b3d2655e79862c068aa48c29c7e89b7df85482
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337497"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350693"
 ---
 # <a name="securely-access-key-vault-with-batch"></a>Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
 
@@ -67,7 +67,7 @@ URL-адреса для приложения не важны, так как он
 
 ## <a name="grant-rights-to-key-vault"></a>Предоставление доступа к Key Vault
 
-Субъекту-службе, созданному на предыдущем шаге, нужны разрешения на получение секретов из Key Vault. Разрешение можно предоставить либо с помощью [портал Azure](/azure/key-vault/general/assign-access-policy-portal) , либо с помощью команды PowerShell ниже.
+Субъекту-службе, созданному на предыдущем шаге, нужны разрешения на получение секретов из Key Vault. Разрешение можно предоставить либо с помощью [портал Azure](../key-vault/general/assign-access-policy-portal.md) , либо с помощью команды PowerShell ниже.
 
 ```powershell
 Set-AzureRmKeyVaultAccessPolicy -VaultName 'BatchVault' -ServicePrincipalName '"https://batch.mydomain.com' -PermissionsToSecrets 'Get'
@@ -94,7 +94,7 @@ if($psModuleCheck.count -eq 0) {
 
 ## <a name="access-key-vault"></a>Получите доступ к Key Vault.
 
-Теперь вы можете получить доступ к Key Vault в скриптах, выполняющихся на узлах пакетной службы. Чтобы обратиться к Key Vault из скрипта, нужно лишь пройти проверку подлинности в Azure AD с использованием сертификата. Для этого выполните приведенные ниже команды PowerShell. Укажите правильный GUID для параметра **отпечатка** , а также **идентификатор приложения** и **идентификатор клиента** (клиент, в котором размещается этот субъект-служба).
+Теперь вы можете получить доступ к Key Vault в скриптах, выполняющихся на узлах пакетной службы. Чтобы обратиться к Key Vault из скрипта, нужно лишь пройти проверку подлинности в Azure AD с использованием сертификата. Для этого выполните приведенные ниже команды PowerShell. Укажите правильный GUID для параметра **отпечатка**, а также **идентификатор приложения** и **идентификатор клиента** (клиент, в котором размещается этот субъект-служба).
 
 ```powershell
 Add-AzureRmAccount -ServicePrincipal -CertificateThumbprint -ApplicationId
@@ -108,7 +108,7 @@ $adminPassword=Get-AzureKeyVaultSecret -VaultName BatchVault -Name batchAdminPas
 
 Это учетные данные для использования в скрипте.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Azure Key Vault](../key-vault/general/overview.md).
 - Ознакомьтесь с [базовым планом безопасности Azure для пакетной](security-baseline.md)службы.

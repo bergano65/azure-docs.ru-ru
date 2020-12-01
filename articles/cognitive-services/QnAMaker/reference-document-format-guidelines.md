@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 04/06/2020
-ms.openlocfilehash: d35ea57a68e500deffa99033b83114ec518dd5e3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1bf6eebcfc43452dd9a62e4a49f9aacbcd517ffc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993811"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352241"
 ---
 # <a name="format-guidelines-for-imported-documents-and-urls"></a>Формат рекомендаций для импортированных документов и URL-адресов
 
@@ -22,7 +22,7 @@ ms.locfileid: "95993811"
 
 Если вы добавляете или изменяете содержимое непосредственно в своей базе знаний, используйте **Форматирование Markdown** для создания форматированного текста или изменения содержимого формата Markdown, которое уже находится в ответе. QnA Maker поддерживает большую часть формата Markdown, чтобы обеспечить широкие возможности работы с текстом в содержимом. Однако клиентское приложение, например Bot чата, может не поддерживать одинаковый набор форматов Markdown. Важно протестировать отображение ответов клиентского приложения.
 
-Полный список [типов содержимого и примеры](./Concepts/content-types.md#file-and-url-data-types)см. здесь.
+Полный список [типов содержимого и примеры](./concepts/data-sources-and-content.md#content-types-of-documents-you-can-add-to-a-knowledge-base)см. здесь.
 
 ## <a name="basic-document-formatting"></a>Базовое форматирование документов
 
@@ -116,6 +116,6 @@ Answer2
 
 **Образцы документов**:<br>[Surface Pro (DOCX)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/multi-turn.docx)<br>[Преимущества Contoso (DOCX)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.docx)<br>[Преимущества Contoso (PDF)](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Multiturn-ContosoBenefits.pdf)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. полный список [типов содержимого и примеры](./Concepts/content-types.md#file-and-url-data-types)
+См. полный список [типов содержимого и примеры](./concepts/data-sources-and-content.md#content-types-of-documents-you-can-add-to-a-knowledge-base)

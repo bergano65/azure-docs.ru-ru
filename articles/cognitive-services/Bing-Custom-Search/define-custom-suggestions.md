@@ -10,19 +10,19 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: maheshb
-ms.openlocfilehash: aba990914ea193a7246a24b1502522f6144a0a9c
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 986a7c8f1282b76c2ae94eebcc2c31dc3b3e7cad
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94367596"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352020"
 ---
 # <a name="configure-your-custom-autosuggest-experience"></a>Настройка пользовательского автозаполнения
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 Функция пользовательского автозаполнения возвращает список предлагаемых строк поисковых запросов, которые могут быть связаны с операцией поиска. Предлагаемые строки запросов основаны на частичной строке запроса пользователя, введенной в поле поиска. Список будет содержать не более 10 предложений. 
 
@@ -91,7 +91,7 @@ GET https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/Suggestions
 Если пользователь выберет предложенную строку запроса из раскрывающегося списка, то при вызове [API пользовательского поиска Bing](overview.md) будет использована строка запроса из поля `query`.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Get custom suggestion]() (Получение пользовательских предложений)
 - [Search your custom instance](./search-your-custom-view.md) (Поиск в пользовательском экземпляре)

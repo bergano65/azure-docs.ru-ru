@@ -3,12 +3,12 @@ title: Подключение в качестве партнера по служ
 description: Используйте портал Azure для подключения к партнеру службы "Сетка событий Azure".
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 36fab35923b8a536a9054e5dc4bfa4c5b82172a7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 8344fcd822bfcdc67e2c27b200d97fa70dfefdf2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93103047"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349392"
 ---
 # <a name="onboard-as-an-azure-event-grid-partner-using-the-azure-portal"></a>Подключитесь как партнер службы "Сетка событий Azure", используя портал Azure
 В этой статье описывается, как сторонние поставщики SaaS, также известные как издатели событий или партнеры, подключены к службе "Сетка событий", чтобы иметь возможность публиковать события из своих служб и как эти события используются конечными пользователями.
@@ -135,7 +135,7 @@ ms.locfileid: "93103047"
 1. На странице **Проверка и создание** проверьте параметры и выберите **создать** , чтобы создать канал событий. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Общие сведения о партнерских разделах](partner-topics-overview.md)
+- [Общие сведения о партнерских разделах](./partner-events-overview.md)
 - [Форма адаптации разделов партнеров](https://aka.ms/gridpartnerform)
 - [Auth0 Партнерский раздел](auth0-overview.md)
 - [Использование Auth0 Partner](auth0-how-to.md)

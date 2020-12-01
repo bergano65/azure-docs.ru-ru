@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: pafarley
-ms.openlocfilehash: bd2032d565f5bd1fb430449be8b8c08e222f531d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 085dd18214f795566669fb862bba63b67eb9115d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025788"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350370"
 ---
 # <a name="build-an-enrollment-app-for-android-with-react"></a>Создание приложения регистрации для Android с реагированием
 
@@ -74,7 +74,7 @@ ms.locfileid: "95025788"
 
 ### <a name="android"></a>Android
 
-Во-первых, убедитесь, что приложение готово к развертыванию в рабочей среде. Удалите все ключи или секреты из кода приложения и убедитесь, что выполнены рекомендации по [обеспечению безопасности](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp).
+Во-первых, убедитесь, что приложение готово к развертыванию в рабочей среде. Удалите все ключи или секреты из кода приложения и убедитесь, что выполнены рекомендации по [обеспечению безопасности](../cognitive-services-security.md?tabs=command-line%2ccsharp).
 
 Когда вы будете готовы выпустить приложение для рабочей среды, вы создадите файл APK, готовый к выпуску, который является форматом файла пакета для приложений Android. Этот файл APK должен быть подписан закрытым ключом. С помощью этой сборки выпуска можно приступить к распространению приложения на устройства напрямую. 
 
