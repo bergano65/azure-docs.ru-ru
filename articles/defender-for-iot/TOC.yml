@@ -122,11 +122,11 @@
 - name: Ресурсы
   items:
     - name: Развитие навыков обеспечения безопасности с помощью Microsoft Learn
-      href: 'https://docs.microsoft.com/learn/browse/?term=securityS&terms=securityS'
+      href: /learn/browse/?term=securityS&terms=securityS
     - name: Документация по Центру безопасности Azure
-      href: 'https://docs.microsoft.com/azure/security-center/'
+      href: ../security-center/index.yml
     - name: Документация по системе безопасности Azure
-      href: 'https://docs.microsoft.com/azure/security/'
+      href: ../security/index.yml
     - name: Модуль безопасности ОСРВ Azure на Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-rtos+azure-iot-security-module'
     - name: 'Блог по вопросам безопасности, конфиденциальности и соответствию нормам Интернета вещей Azure'
@@ -135,5 +135,5 @@
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/security-center/'
-    - name: Видео
+    - name: Видеоролики
       href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'

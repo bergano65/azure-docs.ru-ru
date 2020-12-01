@@ -120,15 +120,15 @@
     - name: Справочник по REST API
       items:
         - name: QnA Maker 4.0
-          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/alterations'
+          href: /rest/api/cognitiveservices/qnamaker4.0/alterations
         - name: "QnA Maker 5.0 (предварительная версия\_1)"
-          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerv5.0-preview.1/alterations'
+          href: /rest/api/cognitiveservices/qnamakerv5.0-preview.1/alterations
     - name: Пакеты SDK
       items:
         - name: C#
           items:
             - name: Справочная документация
-              href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet'
+              href: /dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet
             - name: Пакет NuGet
               href: 'https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker/'
             - name: Примеры
@@ -144,7 +144,7 @@
         - name: JavaScript
           items:
             - name: Справочная документация
-              href: 'https://docs.microsoft.com/javascript/api/%40azure/cognitiveservices-qnamaker/index?view=azure-node-latest'
+              href: /javascript/api/%40azure/cognitiveservices-qnamaker/index?view=azure-node-latest
             - name: "npm\_— разработка"
               href: 'https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker'
             - name: "npm\_— среда выполнения запросов"
@@ -154,7 +154,7 @@
         - name: Python
           items:
             - name: Справочная документация
-              href: 'https://docs.microsoft.com/python/api/azure-cognitiveservices-knowledge-qnamaker/azure.cognitiveservices.knowledge.qnamaker?view=azure-python'
+              href: /python/api/azure-cognitiveservices-knowledge-qnamaker/azure.cognitiveservices.knowledge.qnamaker?view=azure-python
             - name: PIP
               href: 'https://pypi.org/project/azure-cognitiveservices-knowledge-qnamaker/'
             - name: Примеры
@@ -176,7 +176,7 @@
     - name: Цены и ограничения
       href: 'https://aka.ms/qnamaker-pricing'
     - name: Поиск
-      href: 'https://docs.microsoft.com/search/index?search=QnAMaker'
+      href: /search/index?search=QnAMaker
     - name: Блог
       href: 'https://blog.botframework.com/category/QnAMaker/'
 - name: Портал QnA Maker

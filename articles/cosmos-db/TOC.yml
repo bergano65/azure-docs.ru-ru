@@ -1329,7 +1329,7 @@
         - name: Настройка доступа из частных конечных точек
           href: how-to-configure-private-endpoints.md
         - name: "Частное подключение к учетной записи Cosmos\_DB"
-          href: ../private-link/create-private-endpoint-cosmosdb-portal.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+          href: ../private-link/tutorial-private-endpoint-cosmosdb-portal.md?bc=%2fazure%2fcosmos-db%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fcosmos-db%2ftoc.json
         - name: Использование Azure Key Vault для получения доступа к данным
           href: access-secrets-from-keyvault.md
         - name: Ограничение доступа пользователей только операциями с данными
