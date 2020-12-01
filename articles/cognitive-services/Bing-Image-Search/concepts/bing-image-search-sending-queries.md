@@ -11,19 +11,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: 6fb1bdbad4455b55c3f6cc3b395526f637339847
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 2566b2cf950df915f8ea843c34ea1fb6f8e7ea21
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592164"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342011"
 ---
 # <a name="customize-and-suggest-image-search-queries"></a>Настройка и предложение запросов поиска изображений
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 Используйте эту статью, чтобы узнать, как настроить запросы и предложить условия поиска для отправки в API Bing для поиска изображений.
 
@@ -33,9 +33,9 @@ ms.locfileid: "94592164"
 
 ## <a name="pivot-the-query"></a>Сведение запросов
 
-Если Bing может сегментировать исходный поисковый запрос, возвращаемый объект [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) содержит поле `pivotSuggestions`. Сводка предложений может отображаться в виде необязательных поисковых запросов для пользователя. Например, если исходный запрос был *Microsoft Surface* , Bing может разделить запрос на *Microsoft* и *Surface* и предложить сведения для каждого из них. Эти предложения могут отображаться в виде необязательных поисковых запросов для пользователя.
+Если Bing может сегментировать исходный поисковый запрос, возвращаемый объект [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) содержит поле `pivotSuggestions`. Сводка предложений может отображаться в виде необязательных поисковых запросов для пользователя. Например, если исходный запрос был *Microsoft Surface*, Bing может разделить запрос на *Microsoft* и *Surface* и предложить сведения для каждого из них. Эти предложения могут отображаться в виде необязательных поисковых запросов для пользователя.
 
-В следующем примере показаны предложения сведения для *Microsoft Surface* :  
+В следующем примере показаны предложения сведения для *Microsoft Surface*:  
 
 ```json
 {
@@ -106,7 +106,7 @@ The following shows an example of the pivot queries.
 
 ## <a name="expand-the-query"></a>Расширение запроса
 
-Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) будет содержать поле `queryExpansions`. Например, если запрос был *Microsoft Surface* , расширенные запросы могут иметь вид:
+Если Bing может расширить запрос, чтобы сузить исходный поисковый запрос, объект [Images](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) будет содержать поле `queryExpansions`. Например, если запрос был *Microsoft Surface*, расширенные запросы могут иметь вид:
 - Microsoft Surface **Pro 3**.
 - Microsoft Surface **RT**.
 - Microsoft Surface **Phone**.

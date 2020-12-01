@@ -10,14 +10,14 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.custom: mvc
 ms.date: 09/06/2020
-ms.openlocfilehash: ded332813a840892f640aa6f6e48debbfe381b4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5d182276cd77493be5184503a1afc47934bf8ea
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90889337"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344199"
 ---
-# <a name="use-jupyter-notebooks-to-hunt-for-security-threats"></a>Использование записных книжек Jupyter для охоты на угрозы безопасности
+# <a name="use-jupyter-notebook-to-hunt-for-security-threats"></a>Использование Jupyter Notebook для поиска угроз безопасности
 
 Основой Azure Sentinel является хранилище данных. Он сочетает высокопроизводительные запросы, динамическую схему и масштабируется до больших объемов данных. Портал Azure и все средства Azure Sentinel используют общий интерфейс API для доступа к этому хранилищу данных. Этот же интерфейс API доступен для внешних средств, таких как записные книжки [Jupyter](https://jupyter.org/) и Python. Хотя многие распространенные задачи можно выполнять на портале, среда Jupyter расширяет возможности работы с данными. Она сочетает в себе полную программируемость с огромной коллекцией библиотек для машинного обучения, визуализации и анализа данных. Эти особенности делают Jupyter привлекательным инструментом для анализа безопасности и охоты на угрозы.
 
@@ -54,7 +54,7 @@ ms.locfileid: "90889337"
     > [!div class="mx-imgBorder"]
     > ![Запуск записной книжки для запуска рабочей области машинного обучения Azure](./media/notebooks/sentinel-notebooks-launch.png)
 
-1. В разделе **Рабочая область AzureML**выберите **создать**.
+1. В разделе **Рабочая область AzureML** выберите **создать**.
 
     > [!div class="mx-imgBorder"]
     > ![Создание рабочей области](./media/notebooks/sentinel-notebooks-azureml-create.png)
@@ -140,7 +140,7 @@ ms.locfileid: "90889337"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статьи вы узнали, как приступить к использованию записных книжек Jupyter в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
+В этой статье вы узнали, как приступить к работе с Jupyter Notebook в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 
 - [Упреждающая охота за угрозами](hunting.md)
 - [Использование закладок для сохранения интересных сведений во время охоты](bookmarks.md)

@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/24/2020
+ms.date: 11/30/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 935c0bf76e298ab1e2e4d25fab8685ac4ce617db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4c758dca9f6020fd948ad8c3a8cdf014306e8ae7
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95916171"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344027"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Классические администраторы подписок Azure
 
@@ -105,7 +105,7 @@ ms.locfileid: "95916171"
 
 1. Войдите на [портал Azure](https://portal.azure.com) в качестве администратора учетной записи.
 
-1. Откройте раздел [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) и выберите нужную подписку.
+1. Откройте **Управление затратами + выставление счетов** и выберите подписку.
 
 1. В левой области навигации щелкните **Свойства**.
 
@@ -125,8 +125,8 @@ ms.locfileid: "95916171"
 
 | Учетная запись администратора учетной записи | Может ли администратор службы изменить другой учетная запись Майкрософт? | Может ли администратор службы изменить учетную запись Azure AD в том же каталоге? | Может ли администратор службы изменить учетную запись Azure AD в другом каталоге? |
 | --- | --- | --- | --- |
-| Учетная запись Майкрософт | Да | нет | нет |
-| Учетная запись Azure AD | Да | Да | нет |
+| Учетная запись Майкрософт | Да | Нет | Нет |
+| Учетная запись Azure AD | Да | Да | Нет |
 
 Если администратор учетной записи является учетной записью Azure AD, можно изменить ее администратора на учетную запись Azure AD в том же каталоге, но не в другом каталоге. Например, abby@contoso.com может изменить администратора службы на bob@contoso.com , но не сможет изменить администратора службы до john@notcontoso.com тех пор, пока john@notcontoso.com в каталоге contoso.com не будет присутствия.
 
@@ -140,7 +140,7 @@ ms.locfileid: "95916171"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-1. Откройте раздел [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) и выберите нужную подписку.
+1. Откройте **Управление затратами + выставление счетов** и выберите подписку.
 
 1. В левой области навигации щелкните **Свойства**.
 

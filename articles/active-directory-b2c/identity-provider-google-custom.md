@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/20/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 91a55782492c1b2612652b147e0aca37941bf4db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 635e33223b054aafb1d91c217a44fdd6d9b369b9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388210"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345173"
 ---
 # <a name="set-up-sign-in-with-a-google-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Google с использованием пользовательских политик
 
@@ -84,7 +84,7 @@ ms.locfileid: "85388210"
             <Item Key="ClaimsEndpoint">https://www.googleapis.com/oauth2/v1/userinfo</Item>
             <Item Key="scope">email profile</Item>
             <Item Key="HttpBinding">POST</Item>
-            <Item Key="UsePolicyInRedirectUri">0</Item>
+            <Item Key="UsePolicyInRedirectUri">false</Item>
             <Item Key="client_id">Your Google application ID</Item>
           </Metadata>
           <CryptographicKeys>

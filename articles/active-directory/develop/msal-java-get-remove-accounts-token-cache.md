@@ -13,12 +13,12 @@ ms.date: 11/07/2019
 ms.author: sagonzal
 ms.reviewer: navyasri.canumalla
 ms.custom: aaddev, devx-track-java
-ms.openlocfilehash: 6267c2118b7bac9befb42102d1118faac639bf49
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fc039e06c8c9d75608b60c2f48e86bc5503e5aec
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87312560"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344867"
 ---
 # <a name="get-and-remove-accounts-from-the-token-cache-using-msal-for-java"></a>Получение и удаление учетных записей из кэша маркеров с помощью MSAL для Java
 
@@ -39,7 +39,7 @@ Set<IAccount> accounts = pca.getAccounts().join();
 
 ## <a name="remove-accounts-from-the-cache"></a>Удаление учетных записей из кэша
 
-Чтобы удалить учетную запись из кэша, найдите учетную запись, которую необходимо удалить, а затем вызовите ее, `PublicClientApplicatoin.removeAccount()` как показано в следующем примере:
+Чтобы удалить учетную запись из кэша, найдите учетную запись, которую необходимо удалить, а затем вызовите ее, `PublicClientApplication.removeAccount()` как показано в следующем примере:
 
 ```java
 Set<IAccount> accounts = pca.getAccounts().join();
@@ -51,6 +51,6 @@ IAccount accountToBeRemoved = accounts.stream().filter(
 pca.removeAccount(accountToBeRemoved).join();
 ```
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
 Если вы используете MSAL для Java, ознакомьтесь с [сериализацией кэша пользовательской лексемы в MSAL для Java](msal-java-token-cache-serialization.md).

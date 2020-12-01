@@ -13,12 +13,12 @@ ms.date: 9/18/2019
 ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
-ms.openlocfilehash: 0ad5fab685757d2efd91cd1df0e48a5f1258d17e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1c4f47fd771cfb92b3896963c96b39d9eb7d97b8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88119884"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344884"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
 
@@ -129,7 +129,7 @@ AcquireTokenSilentParameters parameters = new AcquireTokenSilentParameters.Build
 
         @Override
         public void onError(MsalException exception) {
-            // Token request was unsuccesful, inspect the exception
+            // Token request was unsuccessful, inspect the exception
         }
     })
     .build();
@@ -139,7 +139,7 @@ pca.acquireTokenSilentAsync(parameters);
 
 ## <a name="specify-a-policy"></a>Укажите политику
 
-Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания `fromAuthority` предложения при создании `acquireToken` или настройке `acquireTokenSilent` параметров.  Пример:
+Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания `fromAuthority` предложения при создании `acquireToken` или настройке `acquireTokenSilent` параметров.  Например:
 
 ```java
 AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
@@ -237,6 +237,6 @@ B2C рассматривает каждую политику как отдель
 
 При обновлении маркеров для политики с помощью `acquireTokenSilent` Укажите то же значение `IAccount` , которое было возвращено предыдущими вызовами политики в  `AcquireTokenSilentParameters` . Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure Active Directory B2C (Azure AD B2C) о том [, что Azure Active Directory B2C?](../../active-directory-b2c/overview.md)

@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 11/17/2020
 ms.author: lle
-ms.openlocfilehash: 8195c4d072acce5345fa9752f97713aed22d962f
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 635178999398287649d8630fc5262a385afc48b2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296960"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96341790"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
@@ -167,7 +167,7 @@ ms.locfileid: "96296960"
 
 `Could not load file or assembly 'XXXXXXXXXXXXXXXX, Version=4.0.2.0, Culture=neutral, PublicKeyToken=XXXXXXXXX' or one of its dependencies. The system cannot find the file specified. Activity ID: 92693b45-b4bf-4fc8-89da-2d3dc56f27c3`
  
-Пример: 
+Например: 
 
 `Could not load file or assembly 'System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=XXXXXXXXX' or one of its dependencies. The system cannot find the file specified. Activity ID: 92693b45-b4bf-4fc8-89da-2d3dc56f27c3`
 
@@ -752,7 +752,7 @@ OpenSSL PKCS12-Export-in. \ xxxx_new. pem-out xxxx_new. pfx
 - В качестве причины 1 Убедитесь, что сертификат сервера ADF и его цепочка сертификатов являются доверенными для компьютера, на котором установлена шир.
 - В качестве причины 2 следует либо доверять замененному корневому центру сертификации на компьютере Шир, либо настроить прокси-сервер не заменять сертификат сервера ADF.
 
-Сведения о доверии сертификата в Windows см. в [этой статье](https://docs.microsoft.com/skype-sdk/sdn/articles/installing-the-trusted-root-certificate) .
+Сведения о доверии сертификата в Windows см. в [этой статье](/skype-sdk/sdn/articles/installing-the-trusted-root-certificate) .
 
 #### <a name="additional-info"></a>Дополнительная информация
 Мы выпустим новый SSL-сертификат, который подписывается из DigiCert. Проверьте, находится ли глобальный корневой каталог G2 DigiCert в доверенном корневом ЦС.
@@ -776,7 +776,7 @@ OpenSSL PKCS12-Export-in. \ xxxx_new. pem-out xxxx_new. pfx
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

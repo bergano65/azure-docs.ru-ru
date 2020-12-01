@@ -10,19 +10,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: dbed826757e397b036a6a54ae5ee8ac493c1cc25
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: e8502b1d01e0f3fbf5d42e924511cc978690bce4
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93084523"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342198"
 ---
 # <a name="frequently-asked-questions-faq-about-the-bing-image-search-api"></a>Часто задаваемые вопросы об API Bing для поиска изображений
 
 > [!WARNING]
-> API-интерфейсы поиска Bing перемещаются из Cognitive Services в Поиск Bing службы. Начиная с **30 октября 2020** , все новые экземпляры Поиск Bing должны быть подготовлены, следуя описанному [здесь](https://aka.ms/cogsvcs/bingmove)процессу.
-> API-интерфейсы поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до конца Соглашение Enterprise, в зависимости от того, что происходит раньше.
-> Инструкции по миграции см. в разделе [Поиск Bing Services](https://aka.ms/cogsvcs/bingmigration).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
+> API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 Найдите ответы на часто задаваемые вопросы о понятиях, коде и сценариях, связанных с API Bing для поиска изображений для служб Microsoft Cognitive Services в Azure.
 
@@ -30,7 +30,7 @@ ms.locfileid: "93084523"
 
 В ответах от API Bing для поиска изображений могут появляться следующие заголовки:
 
-| attribute           | Описание   |
+| Атрибут           | Описание   |
 | ------------------- | ------------- |
 | `X-MSEdge-ClientID` |Уникальный идентификатор, назначенный пользователю службой Bing. |
 | `BingAPIs-Market`   |Рынок, использованный для выполнения запроса. |

@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 10/13/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: fda57ae152efbb04a793c6acf63465fe8d406a1a
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 5b89126b837f9c197a8babf81abb17bfd98002e4
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91998656"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345003"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -172,7 +172,7 @@ ms.locfileid: "91998656"
 
 | Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| дисплайоптион| Нет | Управляет поведением случая, когда доступен один из вариантов выбора поставщика утверждений. Возможные значения:  `DoNotShowSingleProvider`   (по умолчанию) пользователь сразу же перенаправляется в федеративный поставщик удостоверений. Или  `ShowSingleProvider`   Azure AD B2C представляет страницу входа с выбором поставщика удостоверений. Чтобы использовать этот атрибут, [версия определения содержимого](page-layout.md) должна быть  `urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.0.0` и выше.|
+| дисплайоптион| Нет | Управляет поведением случая, когда доступен один из вариантов выбора поставщика утверждений. Возможные значения: `DoNotShowSingleProvider` (по умолчанию) пользователь сразу же перенаправляется в федеративный поставщик удостоверений. Или `ShowSingleProvider` Azure AD B2C представляет страницу входа с выбором поставщика удостоверений. Чтобы использовать этот атрибут, [версия определения содержимого](page-layout.md) должна быть `urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.0.0` и выше.|
 
 Элемент **ClaimsProviderSelection** содержит следующие атрибуты.
 

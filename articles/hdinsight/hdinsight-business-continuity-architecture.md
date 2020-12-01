@@ -8,12 +8,12 @@ keywords: Высокая доступность Hadoop
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: c322380d6a41e69baa8f753b84c0bc074f334647
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 0275fa4cc46dff8781d73563fd250b1ec62ddd56
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547033"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344119"
 ---
 # <a name="azure-hdinsight-business-continuity-architectures"></a>Архитектура обеспечения непрерывности бизнес-процессов Azure HDInsight
 
@@ -50,13 +50,13 @@ ms.locfileid: "92547033"
 
 В *активном первичном экземпляре с вторичной* архитектурой по запросу приложения записываются в активный основной регион, а кластер не подготавливается в дополнительном регионе во время нормальной работы. SQL хранилище метаданных и хранилище в дополнительном регионе сохраняются, а кластер HDInsight создается и развертывается по требованию только до запуска запланированной репликации Hive.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary.png" alt-text="Активный первичный сервер с вторичным сервером по запросу":::
 
 #### <a name="hive-active-primary-with-standby-secondary"></a>Активный первичный куст Hive с резервной базой данных-получателем
 
 В *активном первичном экземпляре с резервной базой данных-получателем* приложения записываются в активный основной регион, в то время как в режиме только для чтения во время нормальной работы будет запущен резервный кластер, масштабируемый до. Во время нормальной работы можно выбрать отправку отдельных операций чтения для дополнительного региона.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary.png" alt-text="Активный первичный сервер с резервной базой данных-получателем":::
 
 Дополнительные сведения о репликации Hive и примерах кода см. [в статье Apache Hive репликация в кластерах Azure HDInsight](./interactive-query/apache-hive-replication.md) .
 
@@ -85,13 +85,13 @@ ms.locfileid: "92547033"
 
 Приложения считывают и записывают в кластеры Spark и Hive в основном регионе, в то время как при нормальных операциях кластеры не подготавливаются в дополнительном регионе. SQL хранилище метаданных, хранилище Hive и хранилище Spark являются постоянными в дополнительном регионе. Кластеры Spark и Hive записываются в скрипт и развертываются по требованию. Репликация Hive используется для репликации хранилища Hive и метахранилища Hive, в то время как фабрика данных Azure `DistCP` может использоваться для копирования автономного хранилища Spark. Кластеры Hive необходимо развернуть перед каждым запуском репликации Hive из-за `DistCp` вычислений зависимостей.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary-spark.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary-spark.png" alt-text="Активный первичный сервер с архитектурой вторичного Apache Spark по запросу":::
 
 #### <a name="spark-active-primary-with-standby-secondary"></a>Основной первичный сервер Spark с резервной базой данных-получателем
 
 Приложения считывают и выполняют запись в кластерах Spark и Hive в основном регионе, в то время как кластеры Hive и Spark в режиме только для чтения выполняются в дополнительном регионе во время нормальной работы. Во время нормальной работы можно выбрать отправку отдельных кустов Hive и операций чтения Spark на сервер-получатель.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary-spark.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary-spark.png" alt-text="Активная первичная вторичная резервная Apache Spark ":::
 
 ## <a name="apache-hbase"></a>Apache HBase
 
@@ -131,19 +131,19 @@ ms.locfileid: "92547033"
 
 Дополнительный кластер работает как стандартный кластер HBase, который может размещать собственные таблицы и может обслуживать операции чтения и записи из региональных приложений. Однако операции записи в реплицированные таблицы или таблицы, которые являются собственными для базы данных-получателя, не реплицируются обратно в базу данных-источник.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-follower.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-follower.png" alt-text="Модель следов по лидерам HBase":::
 
 #### <a name="hbase-replication--leader--leader-model"></a>Репликация HBase: лидер — модель лидера
 
 Эта настройка между регионами очень похожа на установленную однонаправленную установку, за исключением того, что репликация между основным регионом и дополнительным регионом выполняется в двунаправленном состоянии. Приложения могут использовать оба кластера в режиме Read-Write, а обновления — асинхронный обмен между ними.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-leader.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-leader.png" alt-text="Модель лидера лидера HBase":::
 
 #### <a name="hbase-replication-multi-region-or-cyclic"></a>Репликация HBase: несколько регионов или циклическая
 
 Модель многоязыковой или циклической репликации является расширением репликации HBase и может использоваться для создания глобально избыточной архитектуры HBase с несколькими приложениями, которые считывают и записывают в отдельные кластеры HBase. Кластеры можно настроить в различных сочетаниях лидера/лидера или лидера/следов в зависимости от бизнес-требований.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-cyclic.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-cyclic.png" alt-text="Циклическая модель HBase":::
 
 ## <a name="apache-kafka"></a>Apache Kafka
 
@@ -151,7 +151,7 @@ ms.locfileid: "92547033"
 
 В зависимости от раздела время существования репликации MirrorMaker раздел Репликация может привести к различным смещениям между разделами источника и реплики. Кластеры HDInsight Kafka также поддерживают репликацию секций разделов, которая является функцией высокого уровня доступности на уровне отдельного кластера.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-replication.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-replication.png" alt-text="Репликация Apache Kafka":::
 
 ### <a name="apache-kafka-architectures"></a>Архитектуры Apache Kafka
 
@@ -172,7 +172,7 @@ ms.locfileid: "92547033"
 * Окончательная согласованность между разделами между активными и пассивными кластерами.
 * Тестовое to PRIMARY может привести к несогласованности сообщений в разделах.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-passive.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-passive.png" alt-text="Активная пассивная модель Apache Kafka":::
 
 #### <a name="kafka-replication-active--active"></a>Репликация Kafka: активная — активна
 
@@ -188,7 +188,7 @@ Active-Active Настройка включает два разделенных 
 * Проблема, связанная с циклической репликацией, должна быть решена.  
 * Двунаправленная репликация ведет к более высокому региону для исходящего трафика данных.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-active.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-active.png" alt-text="Активная активная модель Apache Kafka":::
 
 ## <a name="hdinsight-enterprise-security-package"></a>Корпоративный пакет безопасности HDInsight
 
@@ -198,11 +198,11 @@ Active-Active Настройка включает два разделенных 
 
 Ranger хранилище метаданных используется для постоянного хранения и обслуживания политик Ranger для управления авторизацией данных. Рекомендуется поддерживать независимые политики Ranger в первичной и вторичной репликах, а также поддерживать базу данных-получатель в качестве репликации для чтения.
   
-Если требуется, чтобы политики Ranger были синхронизированы между первичной и вторичной репликой, используйте [Ranger Import/Export](https://cwiki.apache.org/confluence/display/RANGER/User+Guide+For+Import-Export#:~:text=Ranger%20has%20introduced%20a%20new,can%20import%20and%20export%20policies.&text=Also%20can%20export%2Fimport%20a,repositories\)%20via%20Ranger%20Admin%20UI) для периодической архивации и импорта политик Ranger из базы данных-источника в базу данных-получателя.
+Если требуется, чтобы политики Ranger были синхронизированы между первичной и вторичной репликой, используйте [Ranger Import/Export](https://cwiki.apache.org/confluence/display/RANGER/User+Guide+For+Import-Export) для периодической архивации и импорта политик Ranger из базы данных-источника в базу данных-получателя.
 
 Репликация политик Ranger между первичной и вторичной репликой может привести к тому, что база данных-получатель станет доступной для записи, что может привести к непреднамеренному выполнению операций записи во вторичной базе данных.  
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hdinsight-enterprise-security-package.png" alt-text="Архитектура Hive и интерактивных запросов":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hdinsight-enterprise-security-package.png" alt-text="Архитектура HDInsight Корпоративный пакет безопасности":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

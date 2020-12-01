@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/25/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5cbedad360e5270238225503e7802d571820c871
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 084a8e247ab8bb3e6e6c75cf8cfe8e204384f549
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388159"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345156"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
 
@@ -52,7 +52,7 @@ ms.locfileid: "85388159"
 1. Перейдите на вкладку **Проверка подлинности** .
 1. Запишите **идентификатор клиента**.
 1. Показать и записать **секрет клиента**.
-1. В разделе **параметры OAuth 2,0**добавьте следующий **URL-адрес перенаправления**. Замените `your-tenant` именем вашего клиента. Используйте **все строчные буквы** для имени клиента, даже если оно определено с прописными буквами в Azure AD B2C.
+1. В разделе **параметры OAuth 2,0** добавьте следующий **URL-адрес перенаправления**. Замените `your-tenant` именем вашего клиента. Используйте **все строчные буквы** для имени клиента, даже если оно определено с прописными буквами в Azure AD B2C.
 
     `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/oauth2/authresp`
 
@@ -67,7 +67,7 @@ ms.locfileid: "85388159"
 5. Выберите **ключи политики** и нажмите кнопку **Добавить**.
 6. Для пункта **Параметры** выберите `Manual`.
 7. Введите **имя** ключа политики. Например, `LinkedInSecret`. Префикс *B2C_1A_* автоматически добавляется к имени ключа.
-8. В поле **секрет**введите секрет клиента, который вы записали ранее.
+8. В поле **секрет** введите секрет клиента, который вы записали ранее.
 9. Для параметра **Использование ключа** выберите `Signature`.
 10. Нажмите кнопку **Создать**.
 
@@ -77,8 +77,8 @@ ms.locfileid: "85388159"
 
 Определите учетную запись LinkedIn в качестве поставщика утверждений, добавив ее в элемент **клаимспровидерс** в файле расширения политики.
 
-1. Откройте файл *SocialAndLocalAccounts/* * TrustFrameworkExtensions.xml** * в редакторе. Этот файл находится в [начальном пакете пользовательской политики][starter-pack] , скачанном в рамках одного из необходимых компонентов.
-1. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
+1. Откройте файл * SocialAndLocalAccounts/**TrustFrameworkExtensions.xml** _ в редакторе. Этот файл находится в [начальном пакете пользовательской политики][starter-pack] , скачанном в рамках одного из необходимых компонентов.
+1. Найдите элемент _ *клаимспровидерс**. Если он не существует, добавьте его в корневой элемент.
 1. Добавьте новый элемент **ClaimsProvider** следующим образом.
 
     ```xml
@@ -99,7 +99,7 @@ ms.locfileid: "85388159"
             <Item Key="external_user_identity_claim_id">id</Item>
             <Item Key="BearerTokenTransmissionMethod">AuthorizationHeader</Item>
             <Item Key="ResolveJsonPathsInJsonTokens">true</Item>
-            <Item Key="UsePolicyInRedirectUri">0</Item>
+            <Item Key="UsePolicyInRedirectUri">false</Item>
             <Item Key="client_id">Your LinkedIn application client ID</Item>
           </Metadata>
           <CryptographicKeys>
@@ -239,14 +239,14 @@ ms.locfileid: "85388159"
 
 ### <a name="replace-items-in-the-metadata"></a>Замена элементов в метаданных
 
-В существующем элементе **Metadata** элемента **техническом профиле**обновите следующие элементы **элементов** из:
+В существующем элементе **Metadata** элемента **техническом профиле** обновите следующие элементы **элементов** из:
 
 ```xml
 <Item Key="ClaimsEndpoint">https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,headline)</Item>
 <Item Key="scope">r_emailaddress r_basicprofile</Item>
 ```
 
-на:
+В:
 
 ```xml
 <Item Key="ClaimsEndpoint">https://api.linkedin.com/v2/me</Item>
@@ -255,7 +255,7 @@ ms.locfileid: "85388159"
 
 ### <a name="add-items-to-the-metadata"></a>Добавление элементов в метаданные
 
-В **метаданных** **техническом профиле**добавьте следующие элементы **Item** :
+В **метаданных** **техническом профиле** добавьте следующие элементы **Item** :
 
 ```xml
 <Item Key="external_user_identity_claim_id">id</Item>
@@ -265,14 +265,14 @@ ms.locfileid: "85388159"
 
 ### <a name="update-the-outputclaims"></a>Обновление OutputClaims
 
-В существующей **OutputClaims** **техническом профиле**обновите следующие элементы **OutputClaim** из:
+В существующей **OutputClaims** **техническом профиле** обновите следующие элементы **OutputClaim** из:
 
 ```xml
 <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName" />
 <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName" />
 ```
 
-на:
+В:
 
 ```xml
 <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName.localized" />
@@ -281,7 +281,7 @@ ms.locfileid: "85388159"
 
 ### <a name="add-new-outputclaimstransformation-elements"></a>Добавление новых элементов Аутпутклаимстрансформатион
 
-В **Аутпутклаимстрансформатионс** **техническом профиле**добавьте следующие элементы **аутпутклаимстрансформатион** :
+В **Аутпутклаимстрансформатионс** **техническом профиле** добавьте следующие элементы **аутпутклаимстрансформатион** :
 
 ```xml
 <OutputClaimsTransformation ReferenceId="ExtractGivenNameFromLinkedInResponse" />

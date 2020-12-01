@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 99594ad5fe07f18f639b4870f4e0faa59a697afc
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: a92802f0b121a332afccf7f6c12e876b3263bd82
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843185"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96343949"
 ---
 # <a name="azure-security-baseline-for-expressroute"></a>Базовый план безопасности Azure для ExpressRoute
 
@@ -56,9 +56,9 @@ ms.locfileid: "94843185"
 
 **Руководство**: неприменимо; Которыми каждого клиента содержатся в собственных доменах маршрутизации и туннели в своей виртуальной сети. Хотя которыми изолированы, для дополнительной защиты других ресурсов, совместно использующих одну и ту же виртуальную сеть, вы можете включить стандарт защиты от атак DDoS, чтобы защититься от атак от атак DDoS.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute]()
 
-* [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
+* [Настройка защиты от атак DDoS](../ddos-protection/manage-ddos-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -76,7 +76,7 @@ ms.locfileid: "94843185"
 
 **Руководство**: неприменимо; Которыми каждого клиента содержатся в собственных доменах маршрутизации и туннели в своей виртуальной сети.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute]()
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -337,7 +337,7 @@ ms.locfileid: "94843185"
 
 **Руководство**. Использование Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации для экземпляров Sentinel Azure. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -447,7 +447,7 @@ ms.locfileid: "94843185"
 
 **Руководство**: неприменимо; Azure ExpressRoute не хранит данные клиента.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute]()
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -861,7 +861,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**: неприменимо; Azure ExpressRoute не хранит данные клиента.
 
-* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute](./expressroute-security-controls.md)
+* [Общие сведения об элементах управления безопасностью для Azure ExpressRoute]()
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
