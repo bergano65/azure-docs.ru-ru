@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 02/24/2020
-ms.openlocfilehash: a879ac81859c855bb7b7bc2eddb1e3c9b62adb34
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 31298be4d50c7f562e2e2b9adbf889b165b197e5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321415"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461863"
 ---
 # <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>Удаление предохранителя TDE с помощью PowerShell
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -35,13 +35,13 @@ ms.locfileid: "93321415"
 В этом пошаговом руководство рассматриваются два подхода в зависимости от желаемого результата после скомпрометированного реагирования на инцидент:
 
 - Для внесения баз данных в базу данных SQL Azure или Azure синапсе Analytics в **недоступном** виде.
-- Для создания баз данных в базе данных SQL Azure или Azure Azure синапсе Analytics (ранее — хранилище данных **SQL).**
+- Для внесения баз данных в базу данных SQL Azure или Azure Azure синапсе Analytics **недоступна**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure и права администратора для нее.
 - Необходимо установить и запустить Azure PowerShell.
-- В этом пошаговом руководство предполагается, что вы уже используете ключ из Azure Key Vault как средство защиты TDE для базы данных SQL Azure или Azure синапсе (ранее — хранилище данных SQL). См. дополнительные сведения о [прозрачном шифровании данных с поддержкой создания собственных ключей](transparent-data-encryption-byok-overview.md).
+- В этом пошаговом руководство предполагается, что вы уже используете ключ из Azure Key Vault в качестве предохранителя TDE для базы данных SQL Azure или Azure синапсе. См. дополнительные сведения о [прозрачном шифровании данных с поддержкой создания собственных ключей](transparent-data-encryption-byok-overview.md).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

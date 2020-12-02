@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: kgremban
-ms.openlocfilehash: eb53e7052db6d4de365864184b9bd2e6585b7e2d
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: dfd819d82f5e35183802e33e5d423cad4de36c38
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412128"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461594"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-azure-monitor-resource-logs"></a>Перенос центра Интернета вещей из мониторинга операций в Azure Monitor журналы ресурсов
 
@@ -29,7 +29,7 @@ ms.locfileid: "94412128"
 
 1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему Центру Интернета вещей.
 
-1. В области слева в разделе **мониторинг** выберите **параметры диагностики**. Затем выберите **Добавить параметр диагностики**.
+1. В области слева в разделе **мониторинг** выберите **параметры диагностики**. Щелкните команду **Добавить параметр диагностики**.
 
    :::image type="content" source="media/iot-hub-migrate-to-diagnostics-settings/open-diagnostic-settings.png" alt-text="Снимок экрана: раздел &quot;Мониторинг&quot; с выбранным элементом &quot;Параметры диагностики&quot;.":::
 
@@ -47,11 +47,11 @@ ms.locfileid: "94412128"
 
    :::image type="content" source="media/iot-hub-migrate-to-diagnostics-settings/add-diagnostic-setting.png" alt-text="Снимок экрана, показывающий завершенный параметр диагностики.":::
 
-1. Нажмите кнопку **Сохранить** , чтобы сохранить параметры.
+1. Нажмите кнопку **Сохранить**, чтобы сохранить параметры.
 
-Новые параметры вступят в силу в течение 10 минут. После этого журналы отобразятся в настроенном месте назначения. Дополнительные сведения о настройке диагностики см. в статье [Получение и использование данных журнала из ресурсов Azure](/azure/azure-monitor/platform/platform-logs-overview).
+Новые параметры вступят в силу в течение 10 минут. После этого журналы отобразятся в настроенном месте назначения. Дополнительные сведения о настройке диагностики см. в статье [Получение и использование данных журнала из ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md).
 
-Более подробные сведения о создании параметров диагностики, включая PowerShell и Azure CLI, см. в разделе [параметры диагностики](/azure/azure-monitor/platform/diagnostic-settings) в документации по Azure Monitor.
+Более подробные сведения о создании параметров диагностики, включая PowerShell и Azure CLI, см. в разделе [параметры диагностики](../azure-monitor/platform/diagnostic-settings.md) в документации по Azure Monitor.
 
 ### <a name="turn-off-operations-monitoring"></a>Отключение мониторинга операций
 

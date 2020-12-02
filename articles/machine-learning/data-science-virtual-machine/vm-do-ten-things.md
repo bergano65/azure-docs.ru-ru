@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 766da55f2589e2a8eb09e0f1b1c9a0a5027c8c3c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1e263886d0cc199bb30fd28877be32209ab32a22
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002771"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462390"
 ---
 # <a name="data-science-with-a-windows-data-science-virtual-machine"></a>Обработка и анализ данных с помощью виртуальной машины Windows для обработки и анализа данных
 
@@ -252,8 +252,8 @@ print 'the size of the data is: %d rows and  %d columns' % df1.shape
 ![Снимок экрана первых 10 строк данных](./media/vm-do-ten-things/IPNB_data_readin.png)
 
 
-### <a name="azure-synapse-analytics-formerly-sql-dw-and-databases"></a>Azure синапсе Analytics (ранее SQL DW) и базы данных
-Azure синапсе Analytics (ранее SQL DW) — это хранилище эластичных данных как услуга с SQL Server корпоративного класса.
+### <a name="azure-synapse-analytics-and-databases"></a>Azure синапсе Analytics и базы данных
+Azure синапсе Analytics — это хранилище эластичных данных как услуга с SQL Server корпоративного класса.
 
 Вы можете подготавливать Azure синапсе Analytics, выполнив инструкции, приведенные в [этой статье](../../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md). После того как вы подготавливаете Azure синапсе Analytics, вы можете использовать [это пошаговое руководство](../team-data-science-process/sqldw-walkthrough.md) для отправки, просмотра и моделирования данных с помощью данных в Azure синапсе Analytics.
 

@@ -5,12 +5,12 @@ author: emaher
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
-ms.openlocfilehash: bed43e586beff890f0aa8947140ae7d8e50439f3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 32079d6dc31cf3fcad66976737630472129b4271
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659834"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462419"
 ---
 # <a name="set-up-a-lab-to-teach-database-management-for-relational-databases"></a>Настройка лаборатории для обучения управления базой данных для реляционных баз данных
 
@@ -20,7 +20,7 @@ ms.locfileid: "94659834"
 
 ## <a name="lab-configuration"></a>Настройка лаборатории
 
-Для настройки этой лабораторной работы требуется подписка Azure и учетная запись лаборатории. Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). После получения подписки Azure можно создать новую учетную запись лаборатории в службах лаборатории Azure. Дополнительные сведения о создании учетной записи лаборатории см. в разделе [учебник по настройке учетной записи лаборатории](tutorial-setup-lab-account.md).  Можно также использовать существующую учетную запись лаборатории.
+Для настройки этой лабораторной работы требуется подписка Azure и учетная запись лаборатории. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. После получения подписки Azure можно создать новую учетную запись лаборатории в службах лаборатории Azure. Дополнительные сведения о создании учетной записи лаборатории см. в разделе [учебник по настройке учетной записи лаборатории](tutorial-setup-lab-account.md).  Можно также использовать существующую учетную запись лаборатории.
 
 ### <a name="lab-account-settings"></a>Параметры учетной записи лаборатории
 
@@ -41,7 +41,7 @@ ms.locfileid: "94659834"
 
 ## <a name="template-machine-configuration"></a>Конфигурация компьютера шаблона
 
-Чтобы установить MySQL на Windows Server 2019, выполните действия, описанные в [статье Установка и запуск сервера MySQL Community Server на виртуальной машине](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%252fazure%252fvirtual-machines%252fwindows%252fclassic%252ftoc.json#install-and-run-mysql-community-server-on-the-virtual-machine).
+Чтобы установить MySQL на Windows Server 2019, выполните действия, описанные в [статье Установка и запуск сервера MySQL Community Server на виртуальной машине](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json#install-and-run-mysql-community-server-on-the-virtual-machine).
 
 SQL Server 2019 предварительно установлен в образ виртуальной машины, который мы выбрали при создании лабораторной работы.
 

@@ -13,12 +13,12 @@ ms.custom:
 - amqp
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
-ms.openlocfilehash: 3968f19329536169c3fb3eb1fbbaff99e99c293d
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: ae8b01522a248b8b1dbdd255a9fcd55f16cf2369
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079666"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461705"
 ---
 # <a name="develop-without-using-an-azure-iot-hub-sdk"></a>Разработка без использования пакета SDK для центра Интернета вещей Azure
 
@@ -44,14 +44,14 @@ ms.locfileid: "92079666"
 
 Для получения справки по использованию следующих протоколов без пакета SDK для Azure IoT:
 
-* Устройства или серверные приложения на **AMQP**см. в разделе [Поддержка AMQP](iot-hub-amqp-support.md).
+* Устройства или серверные приложения на **AMQP** см. в разделе [Поддержка AMQP](iot-hub-amqp-support.md).
 
-* Приложениях для устройств на **MQTT**см. в разделе [Поддержка MQTT](iot-hub-mqtt-support.md). В большей части этого раздела непосредственно используется протокол MQTT. Он также содержит сведения об использовании [примера репозитория IOT MQTT](https://github.com/Azure-Samples/IoTMQTTSample). Этот репозиторий содержит примеры C, использующие библиотеку Eclipse Москуитто для отправки сообщений в центр Интернета вещей.
+* Приложениях для устройств на **MQTT** см. в разделе [Поддержка MQTT](iot-hub-mqtt-support.md). В большей части этого раздела непосредственно используется протокол MQTT. Он также содержит сведения об использовании [примера репозитория IOT MQTT](https://github.com/Azure-Samples/IoTMQTTSample). Этот репозиторий содержит примеры C, использующие библиотеку Eclipse Москуитто для отправки сообщений в центр Интернета вещей.
 
-* Устройства или серверные приложения на основе **протокола HTTPS**см. в [API-интерфейсах Azure для центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/). Имейте в виду, что, как указано в [предварительных требованиях для разработки](#development-prerequisites), вы не можете использовать проверку подлинности X. 509 для центра сертификации (CA) с HTTPS.
+* Устройства или серверные приложения на основе **протокола HTTPS** см. в [API-интерфейсах Azure для центра Интернета вещей](/rest/api/iothub/). Имейте в виду, что, как указано в [предварительных требованиях для разработки](#development-prerequisites), вы не можете использовать проверку подлинности X. 509 для центра сертификации (CA) с HTTPS.
 
 Для устройств настоятельно рекомендуется использовать MQTT, если устройство поддерживает его.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Поддержка MQTT в центре IoT](iot-hub-mqtt-support.md)
+* [Поддержка MQTT](iot-hub-mqtt-support.md)

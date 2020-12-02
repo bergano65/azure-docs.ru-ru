@@ -12,17 +12,17 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 40572d50f7653539758ff892019e7e65b0ffa6dd
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: b4480f3d28cb89165a6ba3c5b26b10b1aba9765c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324896"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461848"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и Azure CLI: включение прозрачное шифрование данных с управляемым клиентом ключом из Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-В этой статье объясняется, как использовать ключ из Azure Key Vault для прозрачное шифрование данных (TDE) в базе данных SQL Azure или Azure синапсе Analytics (ранее — хранилище данных SQL). Чтобы получить дополнительные сведения об интеграции Azure Key Vault и поддержке при создании собственных ключей для TDE, см. статью [Прозрачное шифрование данных в Azure SQL. Поддержка создания собственных ключей](transparent-data-encryption-byok-overview.md).
+В этой статье объясняется, как использовать ключ из Azure Key Vault для прозрачное шифрование данных (TDE) в базе данных SQL Azure или Azure синапсе Analytics. Чтобы получить дополнительные сведения об интеграции Azure Key Vault и поддержке при создании собственных ключей для TDE, см. статью [Прозрачное шифрование данных в Azure SQL. Поддержка создания собственных ключей](transparent-data-encryption-byok-overview.md).
 
 > [!NOTE] 
 > Теперь SQL Azure поддерживает использование ключа RSA, хранящегося в управляемом HSM, как средство защиты TDE. Эта функция доступна в **общедоступной предварительной версии**. Azure Key Vault управляемым HSM — это полностью управляемая высокодоступная облачная служба с одним клиентом, которая позволяет защищать криптографические ключи для облачных приложений, используя проверенный HSM уровня 2 FIPS 140-2. Дополнительные сведения об [управляемых HSM](../../key-vault/managed-hsm/index.yml).

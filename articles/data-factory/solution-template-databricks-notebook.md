@@ -11,24 +11,24 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/27/2020
-ms.openlocfilehash: f9dc11bd046bdc3a8913b4b05f1b68b84c9736c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1c20508d27d03c00a6842979731fb905bbaa9def
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89438455"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461251"
 ---
 # <a name="transformation-with-azure-databricks"></a>Преобразование с помощью Azure Databricks
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом руководстве вы создадите сквозной конвейер, содержащий **проверку**, **копирование данных**и действия **записной книжки** в фабрике данных Azure.
+В этом руководстве вы создадите сквозной конвейер, содержащий **проверку**, **копирование данных** и действия **записной книжки** в фабрике данных Azure.
 
 - **Проверка** гарантирует готовность исходного набора данных к выпуску перед запуском задания копирования и аналитики.
 
 - **Копирование данных** дублирует исходный набор данных в хранилище приемников, которое монтируется как DBFS в записной книжке Azure Databricks. Таким образом, набор данных может быть напрямую использован Spark.
 
-- **Записная книжка** активирует Блокнот, который преобразует набор данных. Он также добавляет набор данных в обработанную папку или Azure Azure синапсе Analytics (ранее — хранилище данных SQL).
+- **Записная книжка** активирует Блокнот, который преобразует набор данных. Он также добавляет набор данных в обработанную папку или Azure Azure синапсе Analytics.
 
 Для простоты шаблон в этом учебнике не создает запланированный триггер. При необходимости его можно добавить.
 
@@ -56,29 +56,29 @@ ms.locfileid: "89438455"
 
    В импортированной записной книжке перейдите к **команде 5** , как показано в следующем фрагменте кода.
 
-   - Замените `<storage name>` и `<access key>` собственными сведениями о подключении к хранилищу.
+   - Замените `<storage name>` и `<access key>` собственными сведениями о подключении к хранилищу.
    - Используйте учетную запись хранения с `sinkdata` контейнером.
 
     ```python
-    # Supply storageName and accessKey values  
-    storageName = "<storage name>"  
-    accessKey = "<access key>"  
+    # Supply storageName and accessKey values  
+    storageName = "<storage name>"  
+    accessKey = "<access key>"  
 
-    try:  
-      dbutils.fs.mount(  
-        source = "wasbs://sinkdata\@"+storageName+".blob.core.windows.net/",  
-        mount_point = "/mnt/Data Factorydata",  
-        extra_configs = {"fs.azure.account.key."+storageName+".blob.core.windows.net": accessKey})  
+    try:  
+      dbutils.fs.mount(  
+        source = "wasbs://sinkdata\@"+storageName+".blob.core.windows.net/",  
+        mount_point = "/mnt/Data Factorydata",  
+        extra_configs = {"fs.azure.account.key."+storageName+".blob.core.windows.net": accessKey})  
 
-    except Exception as e:  
-      # The error message has a long stack track. This code tries to print just the relevant line indicating what failed.
+    except Exception as e:  
+      # The error message has a long stack track. This code tries to print just the relevant line indicating what failed.
 
-    import re
-    result = re.findall(r"\^\s\*Caused by:\s*\S+:\s\*(.*)\$", e.message, flags=re.MULTILINE)
-    if result:
-      print result[-1] \# Print only the relevant error message
-    else:  
-      print e \# Otherwise print the whole stack trace.  
+    import re
+    result = re.findall(r"\^\s\*Caused by:\s*\S+:\s\*(.*)\$", e.message, flags=re.MULTILINE)
+    if result:
+      print result[-1] \# Print only the relevant error message
+    else:  
+      print e \# Otherwise print the whole stack trace.  
     ```
 
 1. Создайте **маркер доступа Databricks**, чтобы Фабрика данных могла получать доступ к Databricks.
@@ -126,11 +126,11 @@ ms.locfileid: "89438455"
 
 В новом конвейере большинство параметров настраиваются автоматически со значениями по умолчанию. Проверьте конфигурации конвейера и внесите необходимые изменения.
 
-1. В **флаге доступности**действия **проверки** убедитесь, что для параметра исходный **набор данных** задано значение `SourceAvailabilityDataset` , созданное ранее.
+1. В **флаге доступности** действия **проверки** убедитесь, что для параметра исходный **набор данных** задано значение `SourceAvailabilityDataset` , созданное ранее.
 
    ![Значение исходного набора данных](media/solution-template-Databricks-notebook/validation-settings.png)
 
-1. В файле действия **копирование данных** в **BLOB-объект**проверьте вкладки **источник** и **приемник** . При необходимости измените параметры.
+1. В файле действия **копирование данных** в **BLOB-объект** проверьте вкладки **источник** и **приемник** . При необходимости измените параметры.
 
    - Вкладка источника на вкладке « **источник** » ![](media/solution-template-Databricks-notebook/copy-source-settings.png)
 
@@ -142,7 +142,7 @@ ms.locfileid: "89438455"
 
    Чтобы проверить параметры **записной книжки** , сделайте следующее:
   
-    1. Перейдите на вкладку **Параметры** . В поле **путь к записной книжке**Проверьте правильность пути по умолчанию. Возможно, потребуется просмотреть и выбрать правильный путь к записной книжке.
+    1. Перейдите на вкладку **Параметры** . В поле **путь к записной книжке** Проверьте правильность пути по умолчанию. Возможно, потребуется просмотреть и выбрать правильный путь к записной книжке.
 
        ![Путь к записной книжке](media/solution-template-Databricks-notebook/notebook-settings.png)
 

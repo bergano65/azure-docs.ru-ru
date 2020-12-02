@@ -11,19 +11,19 @@ ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
-ms.openlocfilehash: 0b2c03c5c7ea8c65cb1cde3cbdb73b6bb838dc06
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 59fa68d12f1d8be598810399fc5623c2af983979
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324453"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462258"
 ---
 # <a name="use-query-labels-in-synapse-sql"></a>Использование меток запросов в синапсе SQL
 
 В эту статью включены ключевые советы по использованию меток запросов в синапсе SQL.
 
 > [!NOTE]
-> Бессерверный пул SQL (Предварительная версия) не поддерживает запросы лабеллинг.
+> Несерверный пул SQL не поддерживает запросы лабеллинг.
 
 ## <a name="what-are-query-labels"></a>Что такое метки запросов
 

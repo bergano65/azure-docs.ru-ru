@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: 803c9a98f0dc10ff8218ac7b7c20dcb117700034
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1217d3af855e96b6d6a0f403c2ff351a6b957d9a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187108"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459666"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "96187108"
 
 ### <a name="deployment-offers-not-covered-in-this-guide"></a>Предложения по развертыванию, не описанные в этом разделе
 
-- Azure Synapse Analytics (прежнее название — Хранилище данных SQL)
+- Azure Synapse Analytics
 - Виртуальные машины SQL Azure (IaaS)
 - SQL Server
 
@@ -62,7 +62,7 @@ ms.locfileid: "96187108"
 
 Мы планируем продолжить обновление рекомендаций и рекомендаций, перечисленных здесь. Укажите входные данные или любые исправления для этого документа, используя ссылку **отзыва** в нижней части этой статьи.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Аутентификацией называют процесс подтверждения личности пользователя. База данных SQL Azure и SQL Управляемый экземпляр поддерживают два типа проверки подлинности:
 
@@ -112,7 +112,7 @@ ms.locfileid: "96187108"
 > - Маркер доступа Azure AD кэшируется на стороне клиента, и его время существования зависит от конфигурации токена. См. статью Настройка [времени жизни маркеров в Azure Active Directory](../../active-directory/develop/active-directory-configurable-token-lifetimes.md)
 > - Рекомендации по устранению неполадок аутентификация Azure AD см. в следующем блоге: [Устранение неполадок Azure AD](https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991).
 
-### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
+### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
 
 > Упоминалось в: упражнения #2, контроль доступа ISO (AC)
 
@@ -283,7 +283,7 @@ ms.locfileid: "96187108"
 
 **Как реализовать**:
 
-- Определяет требуемый уровень разделения обязанностей. Примеры:
+- Определяет требуемый уровень разделения обязанностей. Примеры
   - Между средой разработки и тестирования и рабочими средами
   - Задачи на уровне управления, ориентированные на безопасность и администраторы баз данных (DBA), и задачи разработчика.
     - Примеры: аудитория, создание политики безопасности для безопасности на уровне ролей (RLS), реализация объектов базы данных SQL с помощью DDL-разрешений.

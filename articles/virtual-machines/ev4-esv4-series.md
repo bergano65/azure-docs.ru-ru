@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 01e9787d9b812334d959ce6ae9b929ec8734ffb5
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 6d8ec3633fec79fc4fdc04986c8b94c671ae9d1a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030481"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460309"
 ---
 # <a name="ev4-and-esv4-series"></a>Серии Ev4 и Esv4
 
@@ -71,8 +71,11 @@ ms.locfileid: "96030481"
 | Standard_E32s_v4 | 32 | 256 | Только удаленное хранилище | 32 | 51200/768  | 8|16000 |
 | Standard_E48s_v4 | 48 | 384 | Только удаленное хранилище | 32 | 76800/1152 | 8|24 000 |
 | Standard_E64s_v4 <sup>1</sup> | 64 | 504| Только удаленное хранилище | 32 | 80000/1200 | 8|30 000 |
+| Standard_E80is_v4 <sup>1, 2</sup> | 80 | 504 | Только удаленное хранилище | 32 | 80000/1200 | 8|30 000 |
 
-<sup>1</sup> [доступные базовые размеры ограничены](./constrained-vcpu.md).
+<sup>1</sup> [Список доступных размеров ядер ограничен)](./constrained-vcpu.md).
+
+<sup>2</sup> Экземпляр изолирован на оборудовании, выделенном единственному заказчику.
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 

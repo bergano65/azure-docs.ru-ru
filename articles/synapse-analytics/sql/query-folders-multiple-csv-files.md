@@ -1,6 +1,6 @@
 ---
-title: Папки запросов и несколько файлов с использованием бессерверного пула SQL (Предварительная версия)
-description: Бессерверный пул SQL (Предварительная версия) поддерживает чтение нескольких файлов и папок с помощью подстановочных знаков, которые похожи на подстановочные знаки, используемые в ОС Windows.
+title: Папки запросов и несколько файлов с помощью несерверного пула SQL
+description: Бессерверный пул SQL поддерживает чтение нескольких файлов и папок с помощью подстановочных знаков, которые похожи на подстановочные знаки, используемые в ОС Windows.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9d15d681a114b0f364e8e33adc786b4d0ba7df0e
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 83c4d88e1a87f6b546e26dd55da338a36f16ebe4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684565"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462632"
 ---
 # <a name="query-folders-and-multiple-files"></a>Запрашивание папок и нескольких файлов  
 
-В этой статье вы узнаете, как написать запрос с использованием бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics.
+В этой статье вы узнаете, как написать запрос с помощью бессерверного пула SQL в Azure синапсе Analytics.
 
 Бессерверный пул SQL поддерживает чтение нескольких файлов и папок с помощью подстановочных знаков, которые похожи на подстановочные знаки, используемые в ОС Windows. Однако большая гибкость имеется, так как разрешено использование нескольких подстановочных знаков.
 

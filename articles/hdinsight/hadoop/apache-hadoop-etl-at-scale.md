@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: bb978f30104b1e38bd8930ccb058c4057d394e51
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: d6c3dbc28da7bee0bc24a6dc24608c78e480c20e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899665"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462164"
 ---
 # <a name="extract-transform-and-load-etl-at-scale"></a>Извлечение, преобразование и загрузка (ETL) в масштабе
 
@@ -86,7 +86,7 @@ Azure Data Lake Storage — это управляемый и гипермасш
 
 ### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 
-Azure синапсе Analytics (ранее — хранилище данных SQL) — это подходящий вариант для хранения подготовленных результатов. Azure HDInsight можно использовать для выполнения этих служб в Azure синапсе Analytics.
+Azure синапсе Analytics — это подходящий вариант для хранения подготовленных результатов. Azure HDInsight можно использовать для выполнения этих служб в Azure синапсе Analytics.
 
 Azure синапсе Analytics — это хранилище реляционных баз данных, оптимизированное для аналитических рабочих нагрузок. Масштабирование этого хранилища выполняется на основе секционированных таблиц. Таблицы можно секционировать на нескольких узлах. Узлы выбираются во время создания. Затем их можно масштабировать, но для такого активного процесса может потребоваться перемещение данных. Дополнительные сведения см. [в статье управление расчетами в Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-manage-compute-overview.md).
 

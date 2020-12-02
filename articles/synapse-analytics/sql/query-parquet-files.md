@@ -1,6 +1,6 @@
 ---
-title: Запрос файлов Parquet с помощью бессерверного пула SQL (Предварительная версия)
-description: В этой статье вы узнаете, как запрашивать файлы Parquet с помощью бессерверного пула SQL (Предварительная версия).
+title: Запрос файлов Parquet с помощью бессерверного пула SQL
+description: В этой статье вы узнаете, как выполнять запросы к файлам Parquet с помощью бессерверного пула SQL.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 97b34d85e4628c0ef01dd02d3a9be85da7f8291e
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 20bfbaeea48711a680877e4d5d8f618e84eb12d7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685619"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462571"
 ---
-# <a name="query-parquet-files-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics
+# <a name="query-parquet-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью бессерверного пула SQL в Azure синапсе Analytics
 
-В этой статье вы узнаете, как написать запрос с использованием бессерверного пула SQL (Предварительная версия), который будет считывать файлы Parquet.
+В этой статье вы узнаете, как написать запрос с помощью бессерверного пула SQL, который будет считывать файлы Parquet.
 
 ## <a name="quickstart-example"></a>Пример краткого руководства
 
@@ -38,7 +38,7 @@ from openrowset(
 Убедитесь, что у вас есть доступ к этому файлу. Если файл защищен с помощью ключа SAS или настраиваемого удостоверения Azure, необходимо настроить [учетные данные уровня сервера для входа SQL](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#server-scoped-credential).
 
 > [!IMPORTANT]
-> Убедитесь, что используются параметры сортировки базы данных UTF-8 (например,), `Latin1_General_100_CI_AS_SC_UTF8` так как строковые значения в файлах Parquet кодируются с использованием кодировки UTF-8.
+> Убедитесь, что используются параметры сортировки базы данных UTF-8 (например, `Latin1_General_100_CI_AS_SC_UTF8` ), так как строковые значения в файлах Parquet кодируются с использованием кодировки UTF-8.
 > Несоответствие текстовых кодировок в файле PARQUET и параметров сортировки может привести к непредвиденным ошибкам преобразования.
 > Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью следующей инструкции T-SQL: `alter database current collate Latin1_General_100_CI_AI_SC_UTF8`
 

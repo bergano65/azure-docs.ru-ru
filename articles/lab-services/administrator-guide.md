@@ -3,12 +3,12 @@ title: Службы лабораторий Azure: руководство для
 description: Это руководства поможет администраторам, которые создают учетные записи лаборатории и управляют ими с помощью служб лаборатории Azure.
 ms.topic: article
 ms.date: 10/20/2020
-ms.openlocfilehash: 08d2fea719ad67f666ea9da09721dc3f7ab54768
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3ad3ee38a6c08a6af85822d76012cc6dfc34ff4e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999286"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462474"
 ---
 # <a name="azure-lab-services---administrator-guide"></a>Службы лабораторий Azure: руководство для администратора
 ИТ-администраторы, управляющие облачными ресурсами университета, обычно отвечают за настройку учетной записи лаборатории для своего учебного заведения. После настройки учетной записи лаборатории Администраторы или преподаватели создают лаборатории, содержащиеся в учетной записи. В этой статье представлен общий обзор ресурсов Azure, которые участвуют в работе, и рекомендации по их созданию.
@@ -167,14 +167,14 @@ ms.locfileid: "95999286"
 
 | Размер | Спецификации | Series | Предлагаемое использование |
 | ---- | ----- | ------ | ------------- |
-| Малый| <ul><li>2 &nbsp; ядра</li><li>3,5 ГБ ОЗУ (ГБ)</li> | [Standard_A2_v2](../virtual-machines/av2-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Лучше всего подходит для командной строки, открытия веб-браузера, веб-серверов с низким трафиком, небольших и средних баз данных. |
-| Средний | <ul><li>4 &nbsp; ядра</li><li>7 &nbsp; ГБ &nbsp; ОЗУ</li> | [Standard_A4_v2](../virtual-machines/av2-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики. |
-| Средний (вложенная виртуализация) | <ul><li>4 &nbsp; ядра</li><li>16 &nbsp; ГБ &nbsp; ОЗУ</li></ul> | [Standard_D4s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#dsv3-series) | Лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики.
-| большой | <ul><li>8 &nbsp; ядер</li><li>16 &nbsp; ГБ &nbsp; ОЗУ</li></ul>  | [Standard_A8_v2](../virtual-machines/av2-series.md) | Лучше всего подходит для приложений, которым требуются более быстрые процессоры, повышенная производительность локальных дисков, большие базы данных, большие кэши памяти.  Кроме того, этот размер поддерживает вложенную виртуализацию. |
-| Крупный (вложенная виртуализация) | <ul><li>8 &nbsp; ядер</li><li>32 &nbsp; ГБ &nbsp; ОЗУ</li></ul>  | [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#dsv3-series) | Лучше всего подходит для приложений, которым требуются более быстрые процессоры, повышенная производительность локальных дисков, большие базы данных, большие кэши памяти. |
+| Малый| <ul><li>2 &nbsp; ядра</li><li>3,5 ГБ ОЗУ (ГБ)</li> | [Standard_A2_v2](../virtual-machines/av2-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Лучше всего подходит для командной строки, открытия веб-браузера, веб-серверов с низким трафиком, небольших и средних баз данных. |
+| Средний | <ul><li>4 &nbsp; ядра</li><li>7 &nbsp; ГБ &nbsp; ОЗУ</li> | [Standard_A4_v2](../virtual-machines/av2-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики. |
+| Средний (вложенная виртуализация) | <ul><li>4 &nbsp; ядра</li><li>16 &nbsp; ГБ &nbsp; ОЗУ</li></ul> | [Standard_D4s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#dsv3-series) | Лучше всего подходит для реляционных баз данных, кэширования в памяти и аналитики.
+| Большой | <ul><li>8 &nbsp; ядер</li><li>16 &nbsp; ГБ &nbsp; ОЗУ</li></ul>  | [Standard_A8_v2](../virtual-machines/av2-series.md) | Лучше всего подходит для приложений, которым требуются более быстрые процессоры, повышенная производительность локальных дисков, большие базы данных, большие кэши памяти.  Кроме того, этот размер поддерживает вложенную виртуализацию. |
+| Крупный (вложенная виртуализация) | <ul><li>8 &nbsp; ядер</li><li>32 &nbsp; ГБ &nbsp; ОЗУ</li></ul>  | [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#dsv3-series) | Лучше всего подходит для приложений, которым требуются более быстрые процессоры, повышенная производительность локальных дисков, большие базы данных, большие кэши памяти. |
 | Малый GPU (визуализация) | <ul><li>6 &nbsp; ядер</li><li>56 &nbsp; ГБ &nbsp; ОЗУ</li>  | [Standard_NV6](../virtual-machines/nv-series.md) | Лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования с помощью таких платформ, как OpenGL и DirectX. |
 | Малый GPU (вычисления) | <ul><li>6 &nbsp; ядер</li><li>56 &nbsp; ГБ &nbsp; ОЗУ</li></ul>  | [Standard_NC6](../virtual-machines/nc-series.md) |Лучше всего подходит для ресурсоемких компьютерных приложений, таких как AI и глубокое обучение. |
-| Средний GPU (визуализация) | <ul><li>12 &nbsp; ядер</li><li>112 &nbsp; ГБ &nbsp; ОЗУ</li></ul>  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования с помощью таких платформ, как OpenGL и DirectX. |
+| Средний GPU (визуализация) | <ul><li>12 &nbsp; ядер</li><li>112 &nbsp; ГБ &nbsp; ОЗУ</li></ul>  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования с помощью таких платформ, как OpenGL и DirectX. |
 
 ## <a name="manage-identity"></a>Управление удостоверениями
 
@@ -271,7 +271,7 @@ ms.locfileid: "95999286"
 
 Не удаляйте репликацию в определенные регионы, чтобы снизить затраты, хотя этот параметр существует в коллекции общих образов. Изменения репликации могут оказать негативное влияние на способность служб лаборатории Azure публиковать виртуальные машины из образов, сохраненных в общей коллекции образов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке лабораторий и управлении ими см. в следующих статьях:
 

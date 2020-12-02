@@ -1,6 +1,6 @@
 ---
-title: Запрос Parquet вложенных типов с помощью бессерверного пула SQL (Предварительная версия)
-description: В этой статье вы узнаете, как запросить вложенные типы Parquet с помощью бессерверного пула SQL (Предварительная версия).
+title: Запрос Parquet вложенных типов с помощью бессерверного пула SQL
+description: Из этой статьи вы узнаете, как выполнять запросы к вложенным типам Parquet с помощью бессерверного пула SQL.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 426c95638422fa4260508aa81bb47a7c9565e6eb
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 91f612ba7f19deb739dbb6004e275ea044a5a3d3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685721"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462551"
 ---
-# <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics
+# <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью бессерверного пула SQL в Azure синапсе Analytics
 
-В этой статье вы узнаете, как написать запрос с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics. Запрос будет считывать вложенные типы Parquet.
+В этой статье вы узнаете, как написать запрос с помощью бессерверного пула SQL в Azure синапсе Analytics. Запрос будет считывать вложенные типы Parquet.
 Вложенные типы являются сложными структурами, представляющими объекты или массивы. Вложенные типы могут храниться в: 
 - [Parquet](query-parquet-files.md), где можно иметь несколько сложных столбцов, содержащих массивы и объекты.
 - Иерархические [JSON-файлы](query-json-files.md), в которых можно читать СЛОЖНЫЕ документы JSON в виде одного столбца.

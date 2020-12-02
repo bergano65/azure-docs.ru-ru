@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/24/2018
-ms.openlocfilehash: 255e4085e24ee7520c603f8a00b3e46c23367a77
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e7b7acb7e67d809229825b3d393fe49af12b3642
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000833"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461219"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностное копирование из базы данных с помощью управляющей таблицы
 
@@ -140,11 +140,11 @@ ms.locfileid: "96000833"
 
     Вы увидите, что в назначение были скопированы только новые строки.
 
-15. Используемых При выборе Azure синапсе Analytics (прежнее название — SQL DW) в качестве назначения данных необходимо также предоставить подключение к хранилищу BLOB-объектов Azure для промежуточного хранения, которое требуется для Azure синапсе Analytics (ранее — хранилище данных SQL) polybase. Шаблон создаст путь к контейнеру. После выполнения конвейера проверьте, создан ли контейнер в хранилище BLOB-объектов.
+15. Используемых Если вы выбрали Azure синапсе Analytics в качестве назначения данных, необходимо также предоставить подключение к хранилищу BLOB-объектов Azure для промежуточного хранения, которое требуется polybase Azure синапсе Analytics. Шаблон создаст путь к контейнеру. После выполнения конвейера проверьте, создан ли контейнер в хранилище BLOB-объектов.
     
     ![Настройка PolyBase](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable15.png)
     
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Полное копирование из базы данных с помощью таблицы элементов управления и фабрики данных Azure](solution-template-bulk-copy-with-control-table.md)
 - [Копирование файлов из нескольких контейнеров с помощью Фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

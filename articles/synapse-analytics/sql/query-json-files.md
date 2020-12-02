@@ -1,5 +1,5 @@
 ---
-title: Запрос JSON-файлов с помощью бессерверного пула SQL (Предварительная версия)
+title: Запрос файлов JSON с помощью бессерверного пула SQL
 description: В этом разделе объясняется, как читать файлы JSON с помощью бессерверного пула SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: azaricstefan
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: d071bbabf630dd326ae46f4c840f8e60f957f9fe
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 5703e4ac3d4a545041c7d258f0b1f0e7c79a33b5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685636"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462614"
 ---
-# <a name="query-json-files-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Запрос JSON-файлов с помощью бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics
+# <a name="query-json-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Запрос файлов JSON с помощью бессерверного пула SQL в Azure синапсе Analytics
 
-В этой статье вы узнаете, как написать запрос с использованием бессерверного пула SQL (Предварительная версия) в Azure синапсе Analytics. Цель запроса — чтение JSON-файлов с помощью [OPENROWSET](develop-openrowset.md). 
+В этой статье вы узнаете, как написать запрос с помощью бессерверного пула SQL в Azure синапсе Analytics. Цель запроса — чтение JSON-файлов с помощью [OPENROWSET](develop-openrowset.md). 
 - Стандартные JSON-файлы, в которых хранятся несколько документов JSON в виде массива JSON.
 - Разделенные строками JSON-файлы, в которых документы JSON разделяются символом новой строки. К общим расширениям для этих типов файлов относятся `jsonl` , `ldjson` и `ndjson` .
 

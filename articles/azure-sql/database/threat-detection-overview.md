@@ -11,14 +11,14 @@ ms.topic: conceptual
 author: monhaber
 ms.author: ronmat
 ms.reviewer: vanto, sstein
-ms.date: 09/21/2020
+ms.date: 12/01/2020
 tags: azure-synapse
-ms.openlocfilehash: f83b9515e16fcf2c2158586297545206d57e1a6e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 931e914cd3c184136395a9bb9a7e148a90e9fb91
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785125"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461940"
 ---
 # <a name="advanced-threat-protection-for-azure-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Расширенная защита от угроз для базы данных SQL Azure, SQL Управляемый экземпляр и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "92785125"
 
 ## <a name="alerts"></a>видны узлы
 
-Служба "Расширенная защита от угроз" для Базы данных SQL Azure позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими. Список предупреждений для базы данных SQL Azure см. в статье [оповещения для базы данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL) в центре безопасности Azure](../../security-center/alerts-reference.md#alerts-sql-db-and-warehouse).
+Служба "Расширенная защита от угроз" для Базы данных SQL Azure позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими. Список предупреждений для базы данных SQL Azure см. в статье [оповещения для базы данных SQL и Azure синапсе Analytics в центре безопасности Azure](../../security-center/alerts-reference.md#alerts-sql-db-and-warehouse).
 
 ## <a name="explore-detection-of-a-suspicious-event"></a>Изучение обнаружения подозрительных событий
 
@@ -58,6 +58,10 @@ ms.locfileid: "92785125"
 Расширенная защита от угроз интегрирует свои оповещения с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Интерактивные плитки с расширенной защитой угроз SQL в базе данных и SQL Azure в колонках защитника в портал Azure отслеживание состояния активных угроз.
 
 Щелкните **оповещение Advanced Threat protection** , чтобы открыть страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
+
+:::image type="content" source="media/azure-defender-for-sql/advanced-threat-protection-alerts.png" alt-text="Общие сведения об оповещениях Advanced Threat Protection в базе данных":::
+
+:::image type="content" source="media/azure-defender-for-sql/advanced-threat-protection.png" alt-text="Расширенная защита от угроз в центре безопасности":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

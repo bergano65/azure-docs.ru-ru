@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: e491b89ec5e6488228dd8befed669a13842f9d15
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: a1159da782a8cb822bf726173ad0d0bcd9da844a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288551"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460893"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -59,7 +59,7 @@ ms.locfileid: "93288551"
 
 ## <a name="trusted-services"></a>Доверенные службы
 
-Ниже приведен список **доверенных служб** , которые получают доступ к хранилищу ключей, если включен соответствующий параметр.
+Ниже приведен список **доверенных служб**, которые получают доступ к хранилищу ключей, если включен соответствующий параметр.
 
 |Доверенная служба|Поддерживаемые сценарии использования|
 | --- | --- |
@@ -71,11 +71,11 @@ ms.locfileid: "93288551"
 |Exchange Online и SharePoint Online|Разрешение доступа к ключу клиента для функции шифрования службы хранилища Azure с использованием [ключа пользователя](/microsoft-365/compliance/customer-key-overview).|
 |Azure Information Protection|Разрешение доступа к ключу клиента для [Azure Information Protection.](/azure/information-protection/what-is-information-protection)|
 |Служба приложений Azure|[Развертывание сертификата веб-приложения Azure через Key Vault](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html)|
-|База данных SQL Azure|[Прозрачное шифрование данных с поддержкой создание собственных ключей для базы данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL)](../../azure-sql/database/transparent-data-encryption-byok-overview.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current).|
+|База данных SQL Azure|[Прозрачное шифрование данных с поддержкой создание собственных ключей для базы данных SQL Azure и Azure синапсе Analytics](../../azure-sql/database/transparent-data-encryption-byok-overview.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current).|
 |Хранилище Azure|[Шифрование службы хранилища использование ключей, управляемых клиентом, в Azure Key Vault](../../storage/common/customer-managed-keys-configure-key-vault.md).|
 |Хранилище озера данных Azure|[Шифрование данных в Azure Data Lake Storage](../../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
 |Azure Databricks|[Быстрая и простая служба аналитики на основе Apache Spark для совместной работы](/azure/databricks/scenarios/what-is-azure-databricks).|
-|Cлужба управления Azure API|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../../api-management/api-management-howto-use-managed-service-identity.md#use-ssl-tls-certificate-from-azure-key-vault)|
+|Служба управления Azure API|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../../api-management/api-management-howto-use-managed-service-identity.md#use-ssl-tls-certificate-from-azure-key-vault)|
 |Фабрика данных Azure|[Выбор учетных данных хранилища данных в Key Vault из фабрики данных](https://go.microsoft.com/fwlink/?linkid=2109491)|
 |Центры событий Azure|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](../../event-hubs/configure-customer-managed-key.md)|
 |Служебная шина Azure|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](../../service-bus-messaging/configure-customer-managed-key.md)|

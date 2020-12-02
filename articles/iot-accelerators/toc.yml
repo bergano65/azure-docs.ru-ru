@@ -254,8 +254,8 @@
     - name: Эталонная архитектура
       href: /azure/architecture/reference-architectures/iot
       items:
-        - name: Скачивание
-          href: 'https://aka.ms/iotrefarchitecture'
+        - name: Скачать
+          href: /azure/architecture/reference-architectures/iot
         - name: Варианты партнерских реализаций
           items:
             - name: Intel Connected Logistics Platform

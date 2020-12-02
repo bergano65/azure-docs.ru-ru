@@ -1,5 +1,5 @@
 ---
-title: Настройка уровня важности рабочей нагрузки
+title: Настройка важности рабочей нагрузки для выделенного пула SQL
 description: Узнайте, как задать уровень важности запроса в Azure Synapse Analytics.
 services: synapse-analytics
 author: ronortloff
@@ -11,20 +11,20 @@ ms.date: 05/15/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 83170f4090909e3edcc163312383773d088d8c57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 067551d198f717dd40995cb8bc3e1345e82f078f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85212128"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461920"
 ---
-# <a name="configure-workload-importance-in-azure-synapse-analytics"></a>Настройка важности рабочей нагрузки в Azure Synapse Analytics
+# <a name="configure-workload-importance-in-dedicated-sql-pool-for-azure-synapse-analytics"></a>Настройка важности рабочей нагрузки в выделенном пуле SQL для Azure синапсе Analytics
 
-Настройка важности в Synapse SQL для Azure Synapse позволяет повлиять на планирование запросов. Запросы с более высоким уровнем важности будут выполняться перед запросами с более низким уровнем важности. Чтобы назначить важность запросам, необходимо создать классификатор рабочей нагрузки.
+Настройка важности в выделенном пуле SQL для Azure синапсе позволяет повлиять на планирование запросов. Запросы с более высоким уровнем важности будут выполняться перед запросами с более низким уровнем важности. Чтобы назначить важность запросам, необходимо создать классификатор рабочей нагрузки.
 
 ## <a name="create-a-workload-classifier-with-importance"></a>Создание классификатора рабочих нагрузок с уровнем важности
 
-Часто в сценариях хранилища данных в занятой системе имеются пользователи, которым необходимо быстро выполнить запросы.  Таким пользователем может быть руководитель компании, которому требуется создать отчет, или аналитик, выполняющий нерегламентированный запрос. Чтобы присвоить уровень важности, необходимо создать классификатор рабочей нагрузки и задать уровень важности для запроса.  В примерах ниже для создания двух классификаторов используется синтаксис [create workload classifier](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). `Membername` может быть одним пользователем или группой.  Чтобы найти существующих пользователей хранилища данных, выполните следующую команду:
+Часто в сценариях хранилища данных в занятой системе имеются пользователи, которым необходимо быстро выполнить запросы.  Таким пользователем может быть руководитель компании, которому требуется создать отчет, или аналитик, выполняющий нерегламентированный запрос. Чтобы присвоить уровень важности, необходимо создать классификатор рабочей нагрузки и задать уровень важности для запроса.  В примерах ниже для создания двух классификаторов используется синтаксис [create workload classifier](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). `Membername` может быть одним пользователем или группой.  Чтобы найти существующих выделенных пользователей пула SQL, выполните:
 
 ```sql
 Select name from sys.sysusers

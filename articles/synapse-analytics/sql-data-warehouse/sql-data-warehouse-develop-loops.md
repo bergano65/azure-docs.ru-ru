@@ -1,34 +1,34 @@
 ---
 title: Использование циклов T-SQL
-description: Советы по разработке решений с использованием циклов T-SQL и замене курсоров в синапсе SQL pool.
+description: Советы по разработке решений с использованием циклов T-SQL и замене курсоров для выделенных пулов SQL в Azure синапсе Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 25dad01a54b6ffe08656379340f58e0fe70ec666
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 3477b3095414248afa9fbc7417ab707c94f35546
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213420"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462729"
 ---
-# <a name="using-t-sql-loops-in-synapse-sql-pool"></a>Использование циклов T-SQL в пуле SQL синапсе
+# <a name="using-t-sql-loops-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Использование циклов T-SQL для выделенных пулов SQL в Azure синапсе Analytics
 
-В эту статью включены советы по разработке решений пула SQL с помощью циклов T-SQL и замены курсоров.
+В эту статью включены советы по разработке выделенного решения пула SQL с помощью циклов T-SQL и замены курсоров.
 
 ## <a name="purpose-of-while-loops"></a>Назначение циклов WHILE
 
-Пул SQL синапсе поддерживает цикл [while](/sql/t-sql/language-elements/while-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для многократного выполнения блоков инструкций. Цикл WHILE продолжается, пока не будут выполнены указанные условия или пока код не прервет цикл с помощью ключевого слова BREAK.
+Выделенные пулы SQL в Azure синапсе поддерживают цикл [while](/sql/t-sql/language-elements/while-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для многократного выполнения блоков инструкций. Цикл WHILE продолжается, пока не будут выполнены указанные условия или пока код не прервет цикл с помощью ключевого слова BREAK.
 
 Циклы полезны для замены курсоров, определенных в коде SQL. К счастью, почти все курсоры, записанные в коде SQL, относятся к разряду перемотки и доступности только для чтения. Таким образом, циклы WHILE — отличная альтернатива замене курсоров.
 
-## <a name="replacing-cursors-in-synapse-sql-pool"></a>Замена курсоров в пуле SQL синапсе
+## <a name="replacing-cursors-in-dedicated-sql-pool"></a>Замена курсоров в выделенном пуле SQL
 
 Однако прежде чем углубляться в голову, следует задать себе следующий вопрос: "можно ли переписывать этот курсор для использования операций на основе наборов?"
 

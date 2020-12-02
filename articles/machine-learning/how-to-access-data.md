@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 11/03/2020
 ms.custom: how-to, contperfq1, devx-track-python, data4ml
-ms.openlocfilehash: 3c8e18a3a216240a624b3b14f5e2e397d6c06012
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c85989dc02bddd136c56a81993df7a507a84d3b4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961334"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460282"
 ---
 # <a name="connect-to-storage-services-on-azure"></a>Подключение к службам хранилища в Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "94961334"
 
 Рекомендуется создать хранилище данных для [контейнера BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md). Для BLOB-объектов доступны хранилища класса Standard и Premium. Хотя хранилище класса Premium является более дорогим, за счет его высокой пропускной способности можно повысить скорость выполнения обучения, особенно при обучении на основе большого набора данных. О стоимости учетных записей хранения можно узнать на странице [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/?service=machine-learning-service).
 
-[Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json) создано на основе хранилища BLOB-объектов Azure и предназначено для анализа больших данных в организации. Основная часть Data Lake Storage 2-го поколения — это добавление [иерархического пространства имен](../storage/blobs/data-lake-storage-namespace.md) в хранилище BLOB-объектов. Иерархическое пространство имен позволяет упорядочивать объекты и файлы в иерархии каталогов для эффективного доступа к данным.
+[Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) создано на основе хранилища BLOB-объектов Azure и предназначено для анализа больших данных в организации. Основная часть Data Lake Storage 2-го поколения — это добавление [иерархического пространства имен](../storage/blobs/data-lake-storage-namespace.md) в хранилище BLOB-объектов. Иерархическое пространство имен позволяет упорядочивать объекты и файлы в иерархии каталогов для эффективного доступа к данным.
 
 ## <a name="storage-access-and-permissions"></a>Доступ к хранилищу и разрешения
 
@@ -112,7 +112,7 @@ ms.locfileid: "94961334"
 > * Если вам нужно изменить ключи доступа для учетной записи хранения Azure (ключ учетной записи или маркер SAS), не забудьте синхронизировать новые учетные данные с рабочей областью и хранилищами данных, подключенными к ней. Узнайте, как [синхронизировать обновленные учетные данные](how-to-change-storage-access-key.md). 
 ### <a name="permissions"></a>Разрешения
 
-Для контейнера больших двоичных объектов Azure и Azure Data Lake хранилища Gen 2 Убедитесь, что учетные данные для проверки подлинности имеют доступ для **чтения BLOB-объектов хранилища** . См. Дополнительные сведения о [модуле чтения BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader). По умолчанию маркер SAS учетной записи не имеет разрешений. 
+Для контейнера больших двоичных объектов Azure и Azure Data Lake хранилища Gen 2 Убедитесь, что учетные данные для проверки подлинности имеют доступ для **чтения BLOB-объектов хранилища** . См. Дополнительные сведения о [модуле чтения BLOB-объектов хранилища](../role-based-access-control/built-in-roles.md#storage-blob-data-reader). По умолчанию маркер SAS учетной записи не имеет разрешений. 
 * Для **доступа на чтение** данных учетные данные проверки подлинности должны иметь минимум из списка и разрешений на чтение для контейнеров и объектов. 
 
 * Для **доступа на запись** данных также требуются разрешения на запись и добавление.

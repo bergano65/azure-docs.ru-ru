@@ -1,32 +1,30 @@
 ---
 title: Использование меток для инструментирования запросов
-description: Советы по использованию меток для инструментирования запросов в пуле синапсе SQL для разработки решений.
+description: Советы по использованию меток для инструментирования запросов для выделенных пулов SQL в Azure синапсе Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 91b6dac5fba4bb8dfd8cf4a3bb4e5952f8388bb5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 7958caf71658dcdcbf31bac84697931e9049452f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89459153"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462751"
 ---
-# <a name="using-labels-to-instrument-queries-in-synapse-sql-pool"></a>Использование меток для инструментирования запросов в пуле SQL синапсе
+# <a name="using-labels-to-instrument-queries-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Использование меток для инструментирования запросов для выделенных пулов SQL в Azure синапсе Analytics
 
-В эту статью включены советы по разработке решений с помощью меток для инструментирования запросов в пуле SQL.
-
-Советы по использованию меток для инструментирования запросов в Azure синапсе Analytics для разработки решений.
+В эту статью включены советы по разработке решений с помощью меток для инструментирования запросов в выделенных пулах SQL.
 
 ## <a name="what-are-labels"></a>Что такое метки
 
-Пул SQL поддерживает концепцию, называемую метками запросов. Прежде чем углубляться в это понятие, рассмотрим пример.
+Выделенный пул SQL поддерживает концепцию, называемую метками запросов. Прежде чем углубляться в это понятие, рассмотрим пример.
 
 ```sql
 SELECT *

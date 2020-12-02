@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: reference
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7155e1517ba5ff203f11ee834af3c0d1dd1fa065
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 8806ff41edabcd3c0875d3c02360dc9a275e3878
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289478"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460819"
 ---
 # <a name="azure-key-vault-customer-data-features"></a>Функции данных клиентов в Azure Key Vault
 
@@ -54,7 +54,7 @@ Azure Key Vault получает данные клиента во время с�
 
 - [Ведение журнала хранилища ключей Azure](logging.md)
 
-- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](soft-delete-cli.md)
+- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](./key-vault-recovery.md)
 
 - [Операции с ключами в Azure Key Vault](/rest/api/keyvault/key-operations)
 

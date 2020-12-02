@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ec619681f1eebc51da85d31ad15f1db25cfd3cbc
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 570281e31c70b2f5f85a858f9dd424f93ee86029
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917925"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460056"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Интеграция Key Vault со службой "Приватный канал Azure"
 
@@ -226,14 +226,14 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 * Убедитесь, что у вас есть ресурс Частной зоны DNS. 
     1. Необходимо иметь ресурс Частной зоны DNS с точным именем: privatelink.vaultcore.azure.net. 
-    2. Чтобы узнать, как это сделать, перейдите по следующей ссылке. [Частные зоны DNS](https://docs.microsoft.com/azure/dns/private-dns-privatednszone)
+    2. Чтобы узнать, как это сделать, перейдите по следующей ссылке. [Частные зоны DNS](../../dns/private-dns-privatednszone.md)
     
 * Убедитесь, что Частная зона DNS не связана с виртуальной сетью. Эта проблема может быть вызвана тем, что вы по-прежнему получаете общедоступный IP-адрес. 
     1. Если Частная зона DNS не связана с виртуальной сетью, запрос DNS, исходящий из виртуальной сети, возвратит общедоступный IP-адрес хранилища ключей. 
     2. Перейдите к ресурсу Частной зоны DNS на портале Azure и щелкните параметр связей виртуальных сетей. 
     4. Должна быть указана виртуальная сеть, которая будет выполнять вызовы к хранилищу ключей. 
     5. Если она отсутствует, добавьте ее. 
-    6. Подробные инструкции см. в разделе о[связывании виртуальной сети с Частной зоной DNS](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network).
+    6. Подробные инструкции см. в разделе о[связывании виртуальной сети с Частной зоной DNS](../../dns/private-dns-getstarted-portal.md#link-the-virtual-network).
 
 * Убедитесь, что в Частной зоне DNS указана запись А для хранилища ключей. 
     1. Перейдите на страницу Частной зоны DNS. 

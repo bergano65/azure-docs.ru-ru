@@ -10,12 +10,12 @@ manager: jroth
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 01/16/2018
-ms.openlocfilehash: 6df400e7ce4b66a1589a0c44089148b33ab88638
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20ee36989acbc36f86478d8205dd61097362eea3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89439067"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461538"
 ---
 # <a name="azure-powershell-samples-for-azure-data-factory"></a>Примеры Azure PowerShell для фабрики данных Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "89439067"
 |**Копирование данных**||
 |[Копирование больших двоичных объектов из одной папки в другую в хранилище BLOB-объектов Azure](scripts/copy-azure-blob-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Скрипт PowerShell копирует большие двоичные объекты из папки в хранилище BLOB-объектов Azure в другую папку в том же хранилище. |
 |[Копирование данных из SQL Server в хранилище BLOB-объектов Azure](scripts/hybrid-copy-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот сценарий PowerShell копирует данные из базы данных SQL Server в хранилище BLOB-объектов Azure. |
-|[Массовое копирование](scripts/bulk-copy-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот пример сценария PowerShell копирует данные из нескольких таблиц в базе данных SQL Azure в Azure синапсе Analytics (ранее — хранилище данных SQL). |
+|[Массовое копирование](scripts/bulk-copy-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот пример сценария PowerShell копирует данные из нескольких таблиц в базе данных SQL Azure в Azure синапсе Analytics. |
 |[Добавочное копирование](scripts/incremental-copy-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот пример сценария PowerShell загружает в приемник только новые или обновленные записи из исходного хранилища данных после первоначального полного копирования данных из источника в приемник. |
 |**Преобразование данных**||
 |[Преобразование данных с помощью кластера Spark](scripts/transform-data-spark-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот скрипт PowerShell преобразовывает данные путем запуска программы на кластере Spark. |

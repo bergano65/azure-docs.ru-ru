@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 11/03/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: 44d17bafe534fea2d408c92a3a01efb699250a78
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: afebb6a67b4c8a33e812c0e51ff225f16cd35356
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95974431"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461473"
 ---
 # <a name="ingest-data-into-a-dedicated-sql-pool"></a>Прием данных в выделенный пул SQL
 
@@ -24,7 +24,7 @@ ms.locfileid: "95974431"
 
 * **Подписка Azure**: Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * **Учетная запись хранения Azure**. в качестве *исходного* хранилища данных используется Azure Data Lake Storage Gen 2. Если у вас нет учетной записи хранения Azure, создайте ее по инструкциям из статьи [Создание учетной записи хранения Azure](../../storage/blobs/data-lake-storage-quickstart-create-account.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
-* **Azure синапсе Analytics**. вы используете выделенный пул SQL в качестве *приемника* хранилища данных. Если у вас нет экземпляра Azure синапсе Analytics, см. инструкции по созданию [выделенного пула SQL](../../azure-sql/database/single-database-create-quickstart.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) .
+* **Azure синапсе Analytics**. вы используете выделенный пул SQL в качестве *приемника* хранилища данных. Если у вас нет экземпляра Azure Synapse Analytics, выполните действия, приведенные в статье [Краткое руководство. Создание выделенного пула SQL (предварительная версия) с помощью портала Azure](../../azure-sql/database/single-database-create-quickstart.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), чтобы создать его.
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
@@ -68,9 +68,9 @@ ms.locfileid: "95974431"
 1. Выберите **Добавить триггер** на панели инструментов, а затем **Trigger Now** (Запустить сейчас). На странице **Pipeline Run** (Запуск конвейера) нажмите кнопку **Готово**.  
 1. Перейдите на вкладку **Монитор** на левой боковой панели. Вы увидите выполнение конвейера, которое вы только что активировали вручную. Ссылки в столбце **действий** позволят вам просмотреть подробные сведения о действиях и (или) повторно выполнить конвейер.
 1. Чтобы просмотреть запуски действий, связанные с этим запуском конвейера, щелкните ссылку **View Activity Runs** (Просмотр запусков действий) в столбце **Действия**. В нашем примере определено только одно действие, поэтому в списке вы увидите только одну запись. Чтобы увидеть сведения об операции копирования, щелкните ссылку **Сведения** (значок очков) в столбце **Действия**. Выберите **Конвейеры Runs** (Запуски конвейера) в верхней части окна, чтобы вернуться к представлению Pipeline Runs (Запуски конвейера). Чтобы обновить список, нажмите кнопку **Обновить**.
-1. Убедитесь, что данные правильно написаны в выделенном пуле SQL.
+1. Убедитесь, что данные правильно записаны в выделенный пул SQL.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об интеграции данных для синапсе Analytics см. в статье прием [данных в Azure Data Lake Storage 2-го поколения ](data-integration-data-lake.md) .
+Дополнительные сведения об интеграции данных для Azure синапсе Analytics см. в статье прием [данных в Azure Data Lake Storage 2-го поколения ](data-integration-data-lake.md) .

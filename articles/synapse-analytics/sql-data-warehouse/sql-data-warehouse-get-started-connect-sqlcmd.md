@@ -10,15 +10,15 @@ ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 2e76f48466d084d448cceea0490e44041e7d062e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: f61f2932ad9c6342a81ec05df335e9ea4d659fce
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85212145"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461972"
 ---
-# <a name="connect-to-synapse-sql-pool-with-sqlcmd"></a>Подключение к пулу SQL синапсе с помощью sqlcmd
+# <a name="connect-to-sql-pool-in-azure-synapse-analytics-with-sqlcmd"></a>Подключение к пулу SQL в Azure синапсе Analytics с помощью sqlcmd
 
 > [!div class="op_single_selector"]
 >
@@ -32,10 +32,10 @@ ms.locfileid: "85212145"
 
 ## <a name="1-connect"></a>1. Подключение
 
-Чтобы начать работу с [sqlcmd] [sqlcmd], откройте командную строку и введите **sqlcmd** , а затем строку подключения для базы данных пула SQL. В строке подключения обязательно укажите следующие параметры.
+Чтобы начать работу с [sqlcmd] [sqlcmd], откройте командную строку и введите **sqlcmd** , а затем строку подключения для пула SQL. В строке подключения обязательно укажите следующие параметры.
 
 * **Server (-S):** сервер в формате `<`имя_сервера`>`.database.windows.net
-* **База данных (-d):** Имя базы данных.
+* **База данных (-d):** Имя пула SQL.
 * **Включить заключенные в кавычки идентификаторы (-I):** Для подключения к экземпляру пула SQL необходимо включить заключенные в кавычки идентификаторы.
 
 Чтобы использовать проверку подлинности SQL Server, необходимо добавить параметры имени пользователя и пароля.

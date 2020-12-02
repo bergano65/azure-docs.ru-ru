@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 robots: noindex
 ms.date: 01/22/2018
-ms.openlocfilehash: 24e468007e0e5ea849ac4d7f945b0aaf6377e580
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: b7f0a352afeb4a2e58d97bd5278115673f6b6df6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92633813"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461685"
 ---
 # <a name="azure-data-factory---net-api-change-log"></a>Фабрика данных Azure — журнал изменений в .NET API
 > [!NOTE]
@@ -75,7 +75,7 @@ ms.locfileid: "92633813"
 ### <a name="feature-additions"></a>Добавление функций
 * Добавлен новый тип StorageFormat — [OrcFormat](/dotnet/api/microsoft.azure.management.datafactories.models.orcformat) — для копирования файлов в формате столбцов с оптимизацией по строкам (ORC).
 * Свойства [AllowPolyBase](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsink) и PolyBaseSettings добавлены в SqlDWSink.
-  * Позволяет использовать Polybase для копирования данных в Azure синапсе Analytics (ранее — хранилище данных SQL).
+  * Позволяет использовать Polybase для копирования данных в Azure синапсе Analytics.
 
 ## <a name="version-461"></a>Версия 4.6.1
 ### <a name="bug-fixes"></a>Исправления ошибок
@@ -181,5 +181,5 @@ ms.locfileid: "92633813"
 * **List** возвращает только сводную информацию о конвейере, а не полную информацию. Например, действия в сводной информации о конвейере содержат только имя и тип.
 
 ### <a name="feature-additions"></a>Добавление функций
-* Класс [SqlDWSink](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsink) поддерживает два новых свойства, **SliceIdentifierColumnName** и **SqlWriterCleanupScript** , для поддержки идемпотентными копирования в Azure Azure синапсе Analytics. Дополнительные сведения об этих свойствах см. в статье [Azure синапсе Analytics](data-factory-azure-sql-data-warehouse-connector.md) .
-* Теперь мы поддерживаем выполнение хранимой процедуры в базе данных SQL Azure и источниках аналитики Azure синапсе в рамках действия копирования. Классы [SqlSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqlsource) и [SqlDWSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsource) имеют следующие свойства: **SqlReaderStoredProcedureName** и **StoredProcedureParameters** . Дополнительные сведения об этих свойствах см. в статьях [база данных SQL Azure](data-factory-azure-sql-connector.md#sqlsource) и [Azure синапсе Analytics](data-factory-azure-sql-data-warehouse-connector.md#sqldwsource) в Azure.com.
+* Класс [SqlDWSink](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsink) поддерживает два новых свойства, **SliceIdentifierColumnName** и **SqlWriterCleanupScript**, для поддержки идемпотентными копирования в Azure Azure синапсе Analytics. Дополнительные сведения об этих свойствах см. в статье [Azure синапсе Analytics](data-factory-azure-sql-data-warehouse-connector.md) .
+* Теперь мы поддерживаем выполнение хранимой процедуры в базе данных SQL Azure и источниках аналитики Azure синапсе в рамках действия копирования. Классы [SqlSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqlsource) и [SqlDWSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsource) имеют следующие свойства: **SqlReaderStoredProcedureName** и **StoredProcedureParameters**. Дополнительные сведения об этих свойствах см. в статьях [база данных SQL Azure](data-factory-azure-sql-connector.md#sqlsource) и [Azure синапсе Analytics](data-factory-azure-sql-data-warehouse-connector.md#sqldwsource) в Azure.com.
