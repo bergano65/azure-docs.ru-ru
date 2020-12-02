@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 0bbb18a82de508f79cd2fd5dde58c1cf33520950
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 57b54fbe20df4eb74ee17c7b5ac83d773114463b
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887405"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437377"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
 
@@ -146,6 +146,7 @@ ForecastTCN (предварительная версия)| ForecastTCN — эт
 |`forecast_horizon`|Определяет, сколько периодов пересылается для прогнозирования. Горизонт находится в единицах измерения частоты временных рядов. Единицы измерения определяются на основе интервала времени данных для обучения, например месяц или неделя, на который следует составить прогноз.|✓|
 |`enable_dnn`|[Включить прогнозирование DNN]().||
 |`time_series_id_column_names`|Имена столбцов, используемые для уникальной идентификации временных рядов в данных, имеющих несколько строк с одинаковой отметкой времени. Если идентификаторы временных рядов не определены, предполагается, что набор данных является одним временным набором. Дополнительные сведения об одиночном временном ряде см. на странице [energy_demand_notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand).||
+|`freq`| Частота набора данных временных рядов. Этот параметр представляет период времени, в течение которого события должны выполняться, например ежедневно, еженедельно, ежегодно и т. д. Частота должна быть [псевдонимом смещения Pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects).||
 |`target_lags`|Число строк для запаздывания целевых значений на основе периодичности данных. Запаздывание представляется в виде списка или одного целого числа. Запаздывание следует использовать, когда связь между независимыми и зависимыми переменными не согласованна или не коррелирует по умолчанию. ||
 |`feature_lags`| Функции, которые следует задержать, будут автоматически приняты при установке автоматического ML, если задано значение `target_lags` `feature_lags` `auto` . Включение функции "задержка" может помочь повысить точность. Функция отключения по умолчанию отключена. ||
 |`target_rolling_window_size`|Число *n* предыдущих периодов, которые следует использовать для получения прогнозируемых значений (меньше или равно размеру набора для обучения). Если этот параметр не задан, *n* принимается равным полному размеру набора для обучения. Этот параметр следует задавать в том случае, если при обучении модели нужно учитывать только определенный объем данных за предыдущие периоды. Дополнительные сведения о [целевом агрегате для последовательного окна](#target-rolling-window-aggregation).||
@@ -297,7 +298,7 @@ from azureml.automl.core.forecasting_parameters import ForecastingParameters
 forecast_parameters = ForecastingParameters(time_column_name='day_datetime', 
                                             forecast_horizon=50,
                                             short_series_handling_config='auto',
-                                            freq = 50
+                                            freq = '7',
                                             target_lags='auto')
 ```
 В следующей таблице перечислены доступные параметры для `short_series_handling_config` .

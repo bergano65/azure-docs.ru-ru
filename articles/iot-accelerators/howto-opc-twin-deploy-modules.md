@@ -9,12 +9,12 @@ ms.service: industrial-iot
 ms.custom: devx-track-azurecli
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 075f6f83e5af43cde3886f637a8ee326309e4218
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1c12b1c7fd393227cb22d011f8b88f914cfded59
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015049"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445483"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Развертывание модуля и зависимостей OPC двойника с нуля
 
@@ -117,7 +117,7 @@ ms.locfileid: "96015049"
 
 1. Развернуть [зависимости](howto-opc-twin-deploy-dependencies.md) OPC двойника и получить получившийся `.env` файл. Обратите внимание на развернутую `hub name` `PCS_IOTHUBREACT_HUB_NAME` переменную в результирующем `.env` файле.
 
-2. Зарегистрируйте и запустите шлюз [Linux](../iot-edge/how-to-install-iot-edge-linux.md) или [Windows](../iot-edge/how-to-install-iot-edge-windows.md) IOT EDGE и запишите его `device id` .
+2. Зарегистрируйте и запустите шлюз [Linux](../iot-edge/how-to-install-iot-edge.md) или [Windows](../iot-edge/how-to-install-iot-edge.md) IOT EDGE и запишите его `device id` .
 
 ### <a name="deploy-to-an-edge-device"></a>Развертывание на пограничном устройстве
 

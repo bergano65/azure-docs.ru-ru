@@ -8,12 +8,12 @@ ms.date: 08/26/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1866f3360b90a96b5e3f215eb7669a1451262bd8
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: b9b842b94d66cf91ad836b8ae61df1b3d3f34293
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046015"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435949"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices-classic-editor"></a>Непрерывная интеграция и непрерывное развертывание на Azure IoT Edge устройствах (классический редактор)
 
@@ -32,15 +32,15 @@ ms.locfileid: "92046015"
 
 Если не указано иное, процедуры, описанные в этой статье, не анализируют все функциональные возможности, доступные через параметры задачи. Дополнительные сведения см. в следующих разделах:
 
-* [Версия задачи](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-versions)
+* [Версия задачи](/azure/devops/pipelines/process/tasks?tabs=classic#task-versions)
 * **Дополнительно** — если применимо, укажите модули, которые не должны создаваться.
-* [Параметры управления](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-control-options)
-* [Переменные среды](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#environment-variables)
-* [Выходные переменные](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#use-output-variables-from-tasks)
+* [Параметры управления](/azure/devops/pipelines/process/tasks?tabs=classic#task-control-options)
+* [Переменные среды](/azure/devops/pipelines/process/variables?tabs=classic#environment-variables)
+* [Выходные переменные](/azure/devops/pipelines/process/variables?tabs=classic#use-output-variables-from-tasks)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](/azure/devops/repos/git/create-new-repo?tabs=new-nav&view=vsts). В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**.
+* Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](/azure/devops/repos/git/create-new-repo). В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**.
 * Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](./how-to-visual-studio-develop-module.md). В этой статье мы создали решение в нашем репозитории с именем **иотеджесолутион**, которое содержит код для модуля с именем **filtermodule**.
 
    Все, что требуется в этой статье, — это папка решения, созданная по шаблону IoT Edge в Visual Studio Code или Visual Studio. Вам не требуется создавать, отправлять, развертывать или отлаживать этот код, чтобы продолжить. Эти процессы настраиваются в Azure Pipelines.
@@ -84,7 +84,7 @@ ms.locfileid: "92046015"
 
    * Если вы хотите создать модули на платформе amd64 для контейнеров Linux, выберите **Ubuntu-16,04** .
 
-   * Если вы хотите создавать модули на платформе amd64 для контейнеров Windows 1809, вам необходимо [настроить агента в Windows в локальной среде](/azure/devops/pipelines/agents/v2-windows?view=vsts).
+   * Если вы хотите создавать модули на платформе amd64 для контейнеров Windows 1809, вам необходимо [настроить агента в Windows в локальной среде](/azure/devops/pipelines/agents/v2-windows).
 
    * Если вы хотите создать модули на платформе platform arm32v7 или arm64 для контейнеров Linux, необходимо [настроить самостоятельный агент в Linux](https://devblogs.microsoft.com/iotdev/setup-azure-iot-edge-ci-cd-pipeline-with-arm-agent).
 
@@ -136,14 +136,14 @@ ms.locfileid: "92046015"
     | Отображаемое имя | Используйте имя по умолчанию или настройте |
     | Исходная папка | Папка с копируемыми файлами. |
     | Содержимое | Добавьте две строки: `deployment.template.json` и `**/module.json` . Эти два файла служат входными данными для создания манифеста развертывания IoT Edge. |
-    | Целевая папка | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) . |
+    | Целевая папка | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения о описании см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables#build-variables) . |
 
 10. Выберите задачу **Publish Build Artifacts** (Публикация артефактов сборки), чтобы изменить его. Укажите путь к промежуточному каталогу артефакта для задачи, чтобы путь можно было опубликовать в конвейере выпуска.
 
     | Параметр | Описание |
     | --- | --- |
     | Отображаемое имя | Используйте имя по умолчанию или настройте. |
-    | Путь для публикации | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) . |
+    | Путь для публикации | Укажите переменную `$(Build.ArtifactStagingDirectory)` . Дополнительные сведения см. в разделе [переменные сборки](/azure/devops/pipelines/build/variables#build-variables) . |
     | Имя артефакта | Использовать имя по умолчанию: **Drop** |
     | Расположение публикации артефакта | Использовать расположение по умолчанию: **Azure pipelines** |
 

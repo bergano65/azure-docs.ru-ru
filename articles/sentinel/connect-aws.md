@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2020
 ms.author: yelevin
-ms.openlocfilehash: e80f7d26fb7ab598651d08b4c1b6478b2ae75e3b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7405824d2477d2d39c45a56ae545e58a090c321
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87563064"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436612"
 ---
 # <a name="connect-azure-sentinel-to-aws-cloudtrail"></a>Подключение Sentinel Azure к AWS Клаудтраил
 
@@ -42,7 +42,7 @@ ms.locfileid: "87563064"
 
 1. Следуйте инструкциям в разделе **Конфигурация** , выполнив следующие действия.
  
-1.  В консоли Amazon Web Services в разделе **безопасность, удостоверение & соответствие требованиям**выберите **IAM**.
+1.  В консоли Amazon Web Services в разделе **безопасность, удостоверение & соответствие требованиям** выберите **IAM**.
 
     ![AWS1](./media/connect-aws/aws-1.png)
 
@@ -80,11 +80,11 @@ ms.locfileid: "87563064"
 
 1. Чтобы использовать соответствующую схему в Log Analytics для событий AWS, выполните поиск по запросу **авсклаудтраил**.
 
+    > [!IMPORTANT]
+    > По состоянию на 1 декабря 2020 поле **авсрекуестид** было заменено полем **AwsRequestId_** (Обратите внимание на добавленную подчеркивание). Данные в старом поле **авсрекуестид** будут сохранены в конце указанного пользователем срока хранения данных.
 
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить AWS Клаудтраил к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 - [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
-

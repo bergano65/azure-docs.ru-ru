@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/28/2019
 ms.author: negoe
-ms.reviewer: negoe,celested
+ms.reviewer: marsma, negoe,celested
 ms.custom: aaddev,references_regions
-ms.openlocfilehash: d27498748f03fb101d165351ec80c77d57f78f1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da1ea6462d22242d23629bcec192d7760314dfed
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88141505"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444818"
 ---
 # <a name="national-clouds"></a>Национальные облака
 
@@ -60,8 +60,8 @@ ms.locfileid: "88141505"
 
 Запросы к конечным точкам Azure AD для авторизации или получения маркеров проверки подлинности можно составлять, используя базовый URL-адрес соответствующего региона. Например, для Azure для Германии:
 
-  - стандартная конечная точка авторизации — `https://login.microsoftonline.de/common/oauth2/v2.0/authorize`;
-  - стандартная конечная точка токена — `https://login.microsoftonline.de/common/oauth2/v2.0/token`.
+- стандартная конечная точка авторизации — `https://login.microsoftonline.de/common/oauth2/v2.0/authorize`;
+- стандартная конечная точка токена — `https://login.microsoftonline.de/common/oauth2/v2.0/token`.
 
 В приложениях с одним клиентом замените общее в указанных выше URL-адресах идентификатором или именем клиента. Например, `https://login.microsoftonline.de/contoso.com`.
 
@@ -76,9 +76,10 @@ ms.locfileid: "88141505"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. также:
+Узнайте, как использовать [библиотеку проверки подлинности Майкрософт (MSAL) в национальной облачной среде](msal-national-cloud.md).
+
+Документация по национальной облаку:
 
 - [Azure для государственных организаций](../../azure-government/index.yml)
 - [Azure China 21Vianet](/azure/china/)
 - [Azure для Германии](../../germany/index.yml)
-- [Проверка подлинности Azure AD — основы](./authentication-vs-authorization.md)

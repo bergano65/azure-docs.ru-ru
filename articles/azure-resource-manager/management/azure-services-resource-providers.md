@@ -2,13 +2,13 @@
 title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
-ms.date: 11/17/2020
-ms.openlocfilehash: 7c8e535978bff38146caee1a3b5177d5befaa6a1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 11/30/2020
+ms.openlocfilehash: fffac8fef8742cf1f151de06ba6b528035a6668d
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185867"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436833"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -20,15 +20,15 @@ ms.locfileid: "96185867"
 | --------------------------- | ------------- |
 | Microsoft.AAD | [Доменные службы Azure Active Directory](../../active-directory-domain-services/index.yml) |
 | Microsoft.Addons | core |
-| Microsoft. Адхибридхеалссервице<sup>1</sup> | [Azure Active Directory](../../active-directory/index.yml) |
+| Microsoft. Адхибридхеалссервице — [зарегистрировано](#registration) | [Azure Active Directory](../../active-directory/index.yml) |
 | Microsoft.Advisor | [Помощник по Azure](../../advisor/index.yml) |
-| Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.AnalysisServices | [Azure Analysis Services](../../analysis-services/index.yml) |
 | Microsoft.ApiManagement | [Управление API](../../api-management/index.yml) |
 | Microsoft.AppConfiguration | [Конфигурация приложений Azure](../../azure-app-configuration/index.yml) |
 | Microsoft.AppPlatform | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
 | Microsoft.Attestation | Служба аттестации Azure |
-| Microsoft. Authorization<sup>1</sup> | [Azure Resource Manager](../index.yml) |
+| Microsoft. Authorization- [Registered](#registration) | [Azure Resource Manager](../index.yml) |
 | Microsoft.Automation | [Служба автоматизации](../../automation/index.yml) |
 | Microsoft. Аутономауссистемс | [Автономные системы](https://www.microsoft.com/ai/autonomous-systems) |
 | Microsoft.AVS | [Решение Azure VMware](../../azure-vmware/index.yml) |
@@ -37,7 +37,7 @@ ms.locfileid: "96185867"
 | Microsoft.AzureStack | core |
 | Microsoft.AzureStackHCI | [Azure Stack HCI](/azure-stack/hci/overview) |
 | Microsoft.Batch | [Пакетная служба](../../batch/index.yml) |
-| Microsoft. выставление счетов<sup>1</sup> | [Управление затратами и выставление счетов](/azure/billing/) |
+| Microsoft. выставление счетов — [зарегистрировано](#registration) | [Управление затратами и выставление счетов](/azure/billing/) |
 | Microsoft.BingMaps | [Карты Bing](/BingMaps/#pivot=main&panel=BingMapsAPI) |
 | Microsoft.Blockchain | [Служба Блокчейн Azure](../../blockchain/workbench/index.yml) |
 | Microsoft.BlockchainTokens | [Служба блокчейн-токенов Azure](https://azure.microsoft.com/services/blockchain-tokens/) |
@@ -47,20 +47,20 @@ ms.locfileid: "96185867"
 | Microsoft.Capacity | core |
 | Microsoft.Cdn | [Сеть доставки содержимого](../../cdn/index.yml) |
 | Microsoft.CertificateRegistration | [Сертификаты службы приложений](../../app-service/configure-ssl-certificate.md#import-an-app-service-certificate) |
-| Microsoft.ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.ClassicCompute | Виртуальная машина классической модели развертывания |
 | Microsoft.ClassicInfrastructureMigrate | Миграция классической модели развертывания |
 | Microsoft.ClassicNetwork | Виртуальная сеть классической модели развертывания |
 | Microsoft.ClassicStorage | Хранилище классической модели развертывания |
-| Microsoft. Классиксубскриптион<sup>1</sup> | Классическая модель развертывания |
+| Microsoft. Классиксубскриптион — [зарегистрировано](#registration) | Классическая модель развертывания |
 | Microsoft.CognitiveServices | [Cognitive Services](../../cognitive-services/index.yml) |
-| Microsoft. Commerce<sup>1</sup> | core |
+| Microsoft. Commerce — [зарегистрировано](#registration) | core |
 | Microsoft.Compute; | [Виртуальные машины](../../virtual-machines/index.yml)<br />[Наборы для масштабирования виртуальных машин](../../virtual-machine-scale-sets/index.yml) |
-| Microsoft. потребление<sup>1</sup> | [Управление затратами](/azure/cost-management/) |
+| Microsoft. потребление — [зарегистрировано](#registration) | [Управление затратами](/azure/cost-management/) |
 | Microsoft.ContainerInstance | [Экземпляры контейнеров](../../container-instances/index.yml) |
 | Microsoft.ContainerRegistry | [Реестр контейнеров](../../container-registry/index.yml) |
 | Microsoft.ContainerService | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
-| Microsoft. Костманажемент<sup>1</sup> | [Управление затратами](/azure/cost-management/) |
+| Microsoft. Костманажемент — [зарегистрировано](#registration) | [Управление затратами](/azure/cost-management/) |
 | Microsoft.CostManagementExports | [Управление затратами](/azure/cost-management/) |
 | Microsoft.CustomerLockbox | [Защищенное хранилище для Microsoft Azure](../../security/fundamentals/customer-lockbox-overview.md) |
 | Microsoft.CustomProviders | [Настраиваемые поставщики Azure](../custom-providers/overview.md) |
@@ -90,7 +90,7 @@ ms.locfileid: "96185867"
 | Microsoft.EnterpriseKnowledgeGraph | График базы знаний предприятия |
 | Microsoft.EventGrid | [Сетка событий](../../event-grid/index.yml) |
 | Microsoft.EventHub | [Центры событий](../../event-hubs/index.yml) |
-| Microsoft. Features<sup>1</sup> | [Azure Resource Manager](../index.yml) |
+| Microsoft. Features- [зарегистрировано](#registration) | [Azure Resource Manager](../index.yml) |
 | Microsoft.GuestConfiguration | [Политика Azure](../../governance/policy/index.yml) |
 | Microsoft.HanaOnAzure | [SAP HANA на крупных экземплярах Azure](../../virtual-machines/workloads/sap/hana-overview-architecture.md) |
 | Microsoft.HardwareSecurityModules | [Выделенный модуль HSM Azure](../../dedicated-hsm/index.yml) |
@@ -100,10 +100,10 @@ ms.locfileid: "96185867"
 | Microsoft.HybridData | [StorSimple](../../storsimple/index.yml) |
 | Microsoft. Хибриднетворк  | [Зоны частного периметра](../../networking/edge-zones-overview.md) |
 | Microsoft.ImportExport | [Импорт и экспорт Microsoft Azure](../../storage/common/storage-import-export-service.md) |
-| microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml); |
+| microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.IoTCentral | [Azure IoT Central](../../iot-central/index.yml) |
 | Microsoft.IoTSpaces | [Azure Digital Twins](../../digital-twins/index.yml) |
-| Microsoft.Intune | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.Intune | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.KeyVault | [хранилище ключей;](../../key-vault/index.yml) |
 | Microsoft.Kubernetes | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
 | Microsoft.KubernetesConfiguration | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
@@ -120,22 +120,22 @@ ms.locfileid: "96185867"
 | Microsoft.Maps | [Azure Maps](../../azure-maps/index.yml) |
 | Microsoft.Marketplace | core |
 | Microsoft.MarketplaceApps | core |
-| Microsoft. Маркетплацеордеринг<sup>1</sup> | core |
+| Microsoft. Маркетплацеордеринг — [зарегистрировано](#registration) | core |
 | Microsoft.Media | [Службы мультимедиа](../../media-services/index.yml) |
 | Microsoft.Microservices4Spring | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
 | Microsoft.Migrate | [Миграция Azure](../../migrate/migrate-services-overview.md) |
-| Microsoft.MixedReality | [Пространственные привязки Azure.](../../spatial-anchors/index.yml) |
+| Microsoft.MixedReality | [Пространственные привязки Azure](../../spatial-anchors/index.yml) |
 | Microsoft.NetApp | [Azure NetApp Files](../../azure-netapp-files/index.yml) |
 | Microsoft.Network. | [Шлюз приложений](../../application-gateway/index.yml)<br />[Бастион Azure](../../bastion/index.yml)<br />[Защита от атак DDoS Azure](../../ddos-protection/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Брандмауэр Azure](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Приватный канал Azure](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Наблюдатель за сетями](../../network-watcher/index.yml)<br />[Диспетчер трафика](../../traffic-manager/index.yml)<br />[Виртуальная сеть](../../virtual-network/index.yml)<br />[Виртуальная глобальная сеть](../../virtual-wan/index.yml)<br />[VPN-шлюз](../../vpn-gateway/index.yml)<br /> |
 | Microsoft. Notebooks | [Записные книжки Azure](https://notebooks.azure.com/help/introduction) |
 | Microsoft.NotificationHubs | [Центры уведомлений](../../notification-hubs/index.yml) |
 | Microsoft.ObjectStore | Хранилище объектов |
 | Microsoft.OffAzure | [Миграция Azure](../../migrate/migrate-services-overview.md) |
-| Microsoft.OperationalInsights | [Azure Monitor](../../azure-monitor/index.yml); |
-| Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.OperationalInsights | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.Peering | [Служба пиринга Azure](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Политика Azure](../../governance/policy/index.yml) |
-| Microsoft. Portal<sup>1</sup> | [Портал Azure](../../azure-portal/index.yml) |
+| Microsoft. Portal — [зарегистрировано](#registration) | [Портал Azure](../../azure-portal/index.yml) |
 | Microsoft.PowerBI | [Power BI](/power-bi/power-bi-overview) |
 | Microsoft.PowerBIDedicated | [Что такое Power BI Embedded в Azure?](/azure/power-bi-embedded/) |
 | Microsoft. Поверплатформ | [Power Platform](/power-platform/) |
@@ -144,15 +144,15 @@ ms.locfileid: "96185867"
 | Microsoft.RecoveryServices | [Azure Site Recovery](../../site-recovery/index.yml) |
 | Microsoft.RedHatOpenShift | [Azure Red Hat OpenShift](../../virtual-machines/linux/openshift-get-started.md) |
 | Microsoft.Relay | [Azure Relay](../../azure-relay/relay-what-is-it.md) |
-| Microsoft. Ресаурцеграф<sup>1</sup> | [Azure Resource Graph](../../governance/resource-graph/index.yml) |
-| Microsoft.ResourceHealth | [Работоспособность служб Azure](../../service-health/index.yml) |
-| Microsoft. Resources<sup>1</sup> | [Azure Resource Manager](../index.yml) |
+| Microsoft. Ресаурцеграф — [зарегистрировано](#registration) | [Azure Resource Graph](../../governance/resource-graph/index.yml) |
+| Microsoft.ResourceHealth | [Служба "Работоспособность служб Azure"](../../service-health/index.yml) |
+| Microsoft. Resources — [зарегистрировано](#registration) | [Azure Resource Manager](../index.yml) |
 | Microsoft.SaaS | core |
 | Microsoft.Scheduler | [Планировщик](../../scheduler/index.yml) |
 | Microsoft.Search | [Когнитивный поиск Azure](../../search/index.yml) |
 | Microsoft.Security | [Центр безопасности](../../security-center/index.yml) |
 | Microsoft.SecurityInsights | [Azure Sentinel](../../sentinel/index.yml) |
-| Microsoft. Сериалконсоле<sup>1</sup> | [Серийная консоль Azure для Windows](../../virtual-machines/troubleshooting/serial-console-windows.md) |
+| Microsoft. Сериалконсоле — [зарегистрировано](#registration) | [Серийная консоль Azure для Windows](../../virtual-machines/troubleshooting/serial-console-windows.md) |
 | Microsoft.ServiceBus | [Служебная шина](/azure/service-bus/) |
 | Microsoft.ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |
 | Microsoft.ServiceFabricMesh | [Служба Microsoft Azure Service Fabric](../../service-fabric-mesh/index.yml) |
@@ -162,13 +162,13 @@ ms.locfileid: "96185867"
 | Microsoft.Solutions | [Управляемые приложения Azure](../managed-applications/index.yml) |
 | Microsoft.Sql | [База данных SQL Azure](../../azure-sql/database/index.yml)<br /> [Управляемый экземпляр SQL Azure](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |
 | Microsoft.SqlVirtualMachine | [SQL Server в виртуальных машинах Azure](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
-| Microsoft.Storage; | [Хранилище](../../storage/index.yml) |
+| Microsoft.Storage; | [Память](../../storage/index.yml) |
 | Microsoft.StorageCache | [Azure HPC Cache](../../hpc-cache/index.yml) |
-| Microsoft.StorageSync | [Хранилище](../../storage/index.yml) |
+| Microsoft.StorageSync | [Память](../../storage/index.yml) |
 | Microsoft.StorSimple | [StorSimple](../../storsimple/index.yml) |
 | Microsoft.StreamAnalytics | [Azure Stream Analytics](../../stream-analytics/index.yml) |
 | Microsoft.Subscription | core |
-| Microsoft. support<sup>1</sup> | core |
+| Microsoft. support — [зарегистрировано](#registration) | core |
 | Microsoft.Synapse | [Azure Synapse Analytics](/azure/sql-data-warehouse/) |
 | Microsoft.TimeSeriesInsights | [Аналитика временных рядов Azure](../../time-series-insights/index.yml) |
 | Microsoft.Token | Токен |
@@ -181,9 +181,14 @@ ms.locfileid: "96185867"
 | Microsoft.WindowsDefenderATP | [Advanced Threat Protection в Microsoft Defender](../../security-center/security-center-wdatp.md) |
 | Microsoft.WindowsESU | Расширенные обновления для системы безопасности |
 | Microsoft.WindowsIoT | [Основные службы Windows 10 IoT](/windows-hardware/manufacture/iot/iotcoreservicesoverview) |
-| Microsoft. WorkloadMonitor<sup>1</sup> | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.WorkloadMonitor | [Azure Monitor](../../azure-monitor/index.yml) |
 
-<sup>1</sup> зарегистрировано по умолчанию
+## <a name="registration"></a>Регистрация
+
+Поставщики ресурсов, помеченные как " **-зарегистрированные** ", регистрируются по умолчанию для вашей подписки. Чтобы использовать другие поставщики ресурсов, [их необходимо зарегистрировать](resource-providers-and-types.md). Однако многие поставщики ресурсов регистрируются при выполнении определенных действий. Например, при создании ресурса на портале портал автоматически регистрирует все необходимые незарегистрированные поставщики ресурсов. При развертывании ресурсов с помощью [шаблона Azure Resource Manager](../templates/overview.md)также регистрируются все необходимые поставщики ресурсов.
+
+> [!IMPORTANT]
+> Зарегистрируйте поставщик ресурсов только тогда, когда будете готовы использовать его. Этап регистрации позволяет поддерживать минимальные привилегии в рамках подписки. Пользователь-злоумышленник не может использовать незарегистрированные поставщики ресурсов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

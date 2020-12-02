@@ -8,12 +8,12 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 11/4/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 3728fdd07172f2402ddb1dc7434ddb1993b984b1
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e9e630f4199e0bfb67509f008f403c0a7a490887
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95999881"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436697"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Сведения о партнере коммерческого рынка и использовании клиентов
 
@@ -32,7 +32,7 @@ ms.locfileid: "95999881"
 >
 >- Механизм отслеживания потребления услуг клиентами применяется при развертывании новых служб и НЕ распространяется на существующие ресурсы, которые уже развернуты.
 >
->- Отслеживание потребления услуг клиентами — обязательное условие при публикации [приложений Azure](./partner-center-portal/create-new-azure-apps-offer.md) в Microsoft Azure Marketplace.
+>- Отслеживание потребления услуг клиентами — обязательное условие при публикации [приложений Azure](./create-new-azure-apps-offer.md) в Microsoft Azure Marketplace.
 >
 >- Не все службы Azure совместимы с атрибутами использования клиентов. В настоящее время в службах Azure Kubernetes Services (AKS) и масштабируемых наборах виртуальных машин есть известные проблемы, которые приводят к появлению отчетов об использовании.
 
@@ -64,7 +64,7 @@ ms.locfileid: "95999881"
 После того как вы добавите GUID в шаблон или агент пользователя и зарегистрируете GUID в Центре партнеров, все развертывания с ним будут отслеживаться.
 
 > [!NOTE]
-> Если вы публикуете предложение [приложения Azure](./partner-center-portal/create-new-azure-apps-offer.md) в Azure Marketplace с помощью центра партнеров, все новые идентификаторы GUID, используемые в шаблоне, будут автоматически зарегистрированы в вашем профиле центра партнеров при передаче шаблона.  
+> Если вы публикуете предложение [приложения Azure](./create-new-azure-apps-offer.md) в Azure Marketplace с помощью центра партнеров, все новые идентификаторы GUID, используемые в шаблоне, будут автоматически зарегистрированы в вашем профиле центра партнеров при передаче шаблона.  
 
 1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard).
 
@@ -90,7 +90,7 @@ ms.locfileid: "95999881"
 > [!NOTE]
 > Дополнительные сведения о создании и публикации шаблонов решений см. в статье
 > * [Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
->* [Предложение приложения Azure](./partner-center-portal/create-new-azure-apps-offer.md).
+>* [Предложение приложения Azure](./create-new-azure-apps-offer.md).
 >* Видео. [Создание шаблонов решений и управляемых приложений для Azure Marketplace](https://channel9.msdn.com/Events/Build/2018/BRK3603).
 
 
@@ -265,7 +265,7 @@ foreach ($deployment in $deployments){
 
 При развертывании \<PARTNER> программного обеспечения корпорация Майкрософт может опознать установку \<PARTNER> программного обеспечения с развернутыми ресурсами Azure. Корпорация Майкрософт может отслеживать ресурсы Azure, используемые для работы этого программного обеспечения. Корпорация Майкрософт собирает эти сведения, чтобы максимально повысить качество использования своих продуктов и делового сотрудничества. Данные собираются и управляются политиками конфиденциальности Майкрософт, которые можно найти по адресу [https://www.microsoft.com/trustcenter](https://www.microsoft.com/trustcenter) .
 
-## <a name="get-support"></a>Техническая поддержка
+## <a name="get-support"></a>Получение поддержки
 
 Узнайте о вариантах поддержки в коммерческом магазине по [поддержке программы коммерческого рынка в центре партнеров](support.md).
 

@@ -1,22 +1,22 @@
 ---
-title: Устранение неполадок подключения между синапсе Studio и хранилищем
-description: Устранение неполадок подключения между синапсе Studio и хранилищем
+title: Устранение неполадок с подключением между Synapse Studio и хранилищем
+description: Устранение неполадок с подключением между Synapse Studio и хранилищем
 author: saveenr
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0b8a64d24242e6fb34c963b14429fdfee2398f62
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: cee6d030a9639a7203a32a3c0957733cecb1f8b6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557873"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445304"
 ---
-# <a name="troubleshoot-connectivity-between-azure-synapse-analytics-synapse-studio-and-storage"></a>Устранение неполадок подключения между Azure синапсе Analytics синапсе Studio и хранилищем
+# <a name="troubleshoot-connectivity-between-azure-synapse-analytics-synapse-studio-and-storage"></a>Устранение неполадок с подключением между Azure Synapse Analytics Synapse Studio и хранилищем
 
-В синапсе Studio (Предварительная версия) можно просматривать ресурсы данных, расположенные в связанном хранилище. Это пошаговое руководством поможет решить проблемы с подключением при попытке доступа к ресурсам данных. 
+В синапсе Studio можно просматривать ресурсы данных, расположенные в связанном хранилище. Это пошаговое руководством поможет решить проблемы с подключением при попытке доступа к ресурсам данных. 
 
 ## <a name="case-1-storage-account-lacks-proper-permissions"></a>#1 регистра: учетная запись хранения не имеет необходимых разрешений
 

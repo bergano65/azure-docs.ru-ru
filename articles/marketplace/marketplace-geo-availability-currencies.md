@@ -7,12 +7,12 @@ ms.topic: reference
 author: keferna
 ms.author: keferna
 ms.date: 07/29/2020
-ms.openlocfilehash: c277525927f7f74f281220bf5e593e98509d8237
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 40bae584e673e8885416bd1ae08dd808071034e7
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93126691"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436136"
 ---
 # <a name="geographic-availability-and-currency-support-for-commercial-marketplace"></a>Поддержка географической доступности и валюты для коммерческой платформы
 
@@ -194,7 +194,7 @@ ms.locfileid: "93126691"
 
 Дополнительные сведения о вводе цен для конкретных типов предложений см. в следующих статьях:
 
-- [Создание предложения приложения Azure](partner-center-portal/create-new-azure-apps-offer.md)
+- [Создание предложения приложения Azure](create-new-azure-apps-offer.md)
 - [Создание предложения для контейнера Azure](partner-center-portal/create-azure-container-offer.md)
 - [Создание предложения виртуальной машины Azure](azure-vm-create.md)
 - [Создание предложения консультационных услуг](partner-center-portal/create-consulting-service-offer.md)

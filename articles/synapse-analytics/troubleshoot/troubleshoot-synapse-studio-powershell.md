@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с подключением синапсе Studio
+title: Устранение проблем с подключением к Synapse Studio
 description: Устранение неполадок с подключением Azure синапсе Studio с помощью PowerShell
 author: saveenr
 ms.service: synapse-analytics
@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: e5e433fd857f638c1c13e4545c19e0b6314ee62e
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 5f0dc73877d7742d4fc6a0c5b9bcf0529d475e0a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146512"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445272"
 ---
 # <a name="troubleshoot-synapse-studio-connectivity-with-powershell"></a>Устранение неполадок с подключением синапсе Studio к PowerShell
 
-Azure синапсе Studio (Предварительная версия) зависит от набора конечных точек веб-API для правильной работы. Это руководство поможет определить причины проблем с подключением:
+Azure синапсе Studio зависит от набора конечных точек веб-API для правильной работы. Это руководство поможет определить причины проблем с подключением:
 - Настройка локальной сети (например, сети за корпоративным брандмауэром) для доступа к Azure синапсе Studio.
 - возникли проблемы с подключением с помощью Azure синапсе Studio.
 

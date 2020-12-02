@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
-ms.openlocfilehash: 647256949d1f8f13439a0a5db87f3b02d697d32b
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: 20d38e5caee67ca8bb13877d3162401fa245dc2d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95318139"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444774"
 ---
 # <a name="enable-azure-monitor-for-vms-guest-health-preview"></a>Включить работоспособность гостевых Azure Monitor для виртуальных машин (Предварительная версия)
 Azure Monitor для виртуальных машин работоспособности гостевых систем позволяет просматривать работоспособность виртуальной машины в соответствии с набором измерений производительности, которые вычисляются с регулярным интервалом. В этой статье описывается, как включить эту функцию в подписке и как включить гостевой мониторинг для каждой виртуальной машины.
@@ -87,7 +87,7 @@ POST https://management.azure.com/subscriptions/[subscriptionId]/providers/Micro
 > [!NOTE]
 > Если вы включите виртуальную машину с помощью портал Azure, то описанное здесь правило сбора данных будет создано. В этом случае вам не нужно выполнять этот шаг.
 
-Конфигурация мониторов в Azure Monitor для виртуальных машин гостевой работоспособности хранится в [правилах сбора данных (ДКР)](../platform/data-collection-rule-overview.md). Установите правило сбора данных, определенное в шаблоне диспетчер ресурсов ниже, чтобы включить все мониторы для виртуальных машин с расширением работоспособности гостевой системы. Каждая виртуальная машина с расширением работоспособности гостевой системы потребует связи с этим правилом.
+Конфигурация мониторов в Azure Monitor для виртуальных машин гостевой работоспособности хранится в [правилах сбора данных (ДКР)](../platform/data-collection-rule-overview.md). Каждая виртуальная машина с расширением работоспособности гостевой системы потребует связи с этим правилом.
 
 > [!NOTE]
 > Можно создать дополнительные правила сбора данных, чтобы изменить конфигурацию мониторов по умолчанию, как описано в разделе [Настройка мониторинга в Azure Monitor для виртуальных машин гостевой работоспособности (Предварительная версия)](vminsights-health-configure.md).
@@ -115,7 +115,7 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
 
 ---
 
-
+Правило сбора данных, определенное в приведенном ниже шаблоне диспетчер ресурсов, включает все мониторы для виртуальных машин с расширением работоспособности гостевой системы. Он должен включать источники данных для каждого счетчика производительности, используемого мониторами.
 
 ```json
 {
@@ -138,7 +138,7 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
     "dataCollectionRuleLocation": {
       "type": "string",
       "metadata": {
-        "description": "The location code in which the data colleciton rule should be deployed. Examples: eastus, westeurope, etc"
+        "description": "The location code in which the data collection rule should be deployed. Examples: eastus, westeurope, etc"
       }
     }
   },
@@ -151,6 +151,19 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
       "properties": {
         "description": "Data collection rule for VM Insights health.",
         "dataSources": {
+          "performanceCounters": [
+              {
+                  "name": "VMHealthPerfCounters",
+                  "streams": [ "Microsoft-Perf" ],
+                  "scheduledTransferPeriod": "PT1M",
+                  "samplingFrequencyInSeconds": 60,
+                  "counterSpecifiers": [
+                      "\\LogicalDisk(*)\\% Free Space",
+                      "\\Memory\\Available Bytes",
+                      "\\Processor(_Total)\\% Processor Time"
+                  ]
+              }
+          ],
           "extensions": [
             {
               "name": "Microsoft-VMInsights-Health",
@@ -170,7 +183,11 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
                     }
                   }
                 ]
-              }
+              },
+              "inputDataSources": [
+                  "VMHealthPerfCounters"
+              ]
+
             }
           ]
         },
@@ -181,7 +198,7 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
               "name": "Microsoft-HealthStateChange-Dest"
             }
           ]
-        },
+        },                  
         "dataFlows": [
           {
             "streams": [
@@ -205,7 +222,7 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-      "healthDataCollectionRuleResourceId": {
+      "destinationWorkspaceResourceId": {
         "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/my-resource-group/providers/microsoft.operationalinsights/workspaces/my-workspace"
       },
       "dataCollectionRuleLocation": {
@@ -217,7 +234,7 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
 
 
 
-## <a name="install-guest-health-extension-and-associate-with-data-collection-rule"></a>Установка расширения работоспособности гостевой системы и связывание с правилом сбора данных
+### <a name="install-guest-health-extension-and-associate-with-data-collection-rule"></a>Установка расширения работоспособности гостевой системы и связывание с правилом сбора данных
 Используйте следующий шаблон диспетчер ресурсов, чтобы включить виртуальную машину для работоспособности гостевых систем. Это приведет к установке расширения работоспособности гостевой системы и созданию связи с правилом сбора данных. Этот шаблон можно развернуть с помощью любого [метода развертывания для шаблонов диспетчер ресурсов](../../azure-resource-manager/templates/deploy-powershell.md).
 
 
@@ -370,9 +387,6 @@ az deployment group create --name GuestHealthDeployment --resource-group my-reso
       },
       "healthDataCollectionRuleResourceId": {
         "value": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/my-resource-group/providers/Microsoft.Insights/dataCollectionRules/Microsoft-VMInsights-Health"
-      },
-      "healthExtensionVersion": {
-        "value": "private-preview"
       }
   }
 }

@@ -10,12 +10,12 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: ad990f10c611c5ca5bb8a8d053ee4d59b6f05c83
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: dccb734ef4eaa9f22b70488918f14ad94f723453
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327004"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437139"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Получение журналов из IoT Edge развертываний
 
@@ -33,7 +33,7 @@ ms.locfileid: "96327004"
 <{Log Level}> {Timestamp} {Message Text}
 ```
 
-`{Log Level}` должен соответствовать [формату уровня серьезности системного журнала](https://wikipedia.org/wiki/Syslog#Severity_lnevel) и `{Timestamp}` должен быть отформатирован в формате `yyyy-mm-dd hh:mm:ss.fff zzz` .
+`{Log Level}` должен соответствовать [формату уровня серьезности системного журнала](https://wikipedia.org/wiki/Syslog#Severity_level) и `{Timestamp}` должен быть отформатирован в формате `yyyy-mm-dd hh:mm:ss.fff zzz` .
 
 [Класс Logger в IOT Edge](https://github.com/Azure/iotedge/blob/master/edge-util/src/Microsoft.Azure.Devices.Edge.Util/Logger.cs) выступает в качестве канонической реализации.
 
@@ -82,7 +82,7 @@ ms.locfileid: "96327004"
 
 Успешный выбор журналов возвращает **"Status": 200** , за которыми следуют полезные данные, содержащие журналы, полученные из модуля, отфильтрованные по параметрам, указанным в запросе.
 
-Например:
+Пример:
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
@@ -123,7 +123,7 @@ az iot hub invoke-module-method --method-name 'GetModuleLogs' -n <hub name> -d <
 
 ![Вызов прямого метода "Жетмодулелогс" в портал Azure](./media/how-to-retrieve-iot-edge-logs/invoke-get-module-logs.png)
 
-Вы также можете передать выходные данные CLI в служебные программы Linux, например [gzip](https://en.wikipedia.org/wiki/Gzip), для обработки сжатого ответа. Например:
+Вы также можете передать выходные данные CLI в служебные программы Linux, например [gzip](https://en.wikipedia.org/wiki/Gzip), для обработки сжатого ответа. Пример:
 
 ```azurecli
 az iot hub invoke-module-method \
@@ -192,7 +192,7 @@ az iot hub invoke-module-method \
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Например:
+Пример:
 
 Следующий вызов передает последние строки журнала 100 из всех модулей в сжатом формате JSON:
 
@@ -316,7 +316,7 @@ az iot hub invoke-module-method --method-name UploadModuleLogs -n <hub name> -d 
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Например:
+Пример:
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \
@@ -374,7 +374,7 @@ az iot hub invoke-module-method --method-name 'UploadSupportBundle' -n <hub name
 | message | строка | Сообщение, если ошибка, пустая строка в противном случае. |
 | correlationId | строка   | Идентификатор для запроса состояния запроса на отправку. |
 
-Например:
+Пример:
 
 ```azurecli
 az iot hub invoke-module-method --method-name 'GetTaskStatus' -n <hub name> -d <device id> -m '$edgeAgent' --method-payload \

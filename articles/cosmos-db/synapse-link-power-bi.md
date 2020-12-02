@@ -1,26 +1,29 @@
 ---
 title: Power BI и бессерверный пул SQL для анализа данных Azure Cosmos DB с помощью ссылки синапсе
-description: Узнайте, как создать синапсе базу данных без SQL Server и представления по каналу синапсе для Azure Cosmos DB, выполнить запрос к контейнерам Azure Cosmos DB, а затем построить модель с Power BI в этих представлениях.
+description: Узнайте, как создать бессерверную базу данных пула SQL и представления по ссылке синапсе для Azure Cosmos DB, запросите контейнеры Azure Cosmos DB, а затем создайте модель с Power BI для этих представлений.
 author: ArnoMicrosoft
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: 55a73ada39f4f48aeb22c5482bd85d1092d54c35
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 959070ca431c3397779a2a22c16f03b3adebbb35
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342255"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444499"
 ---
-# <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Использование Power BI и бессерверного пула SQL синапсе для анализа данных Azure Cosmos DB с помощью ссылки синапсе (Предварительная версия) 
+# <a name="use-power-bi-and-serverless-synapse-sql-pool-preview-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Использование Power BI и бессерверного пула SQL синапсе (Предварительная версия) для анализа данных Azure Cosmos DB с помощью ссылки синапсе 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 Из этой статьи вы узнаете, как создать бессерверную базу данных пула SQL и представления по ссылке синапсе для Azure Cosmos DB. Вы запрашиваете Azure Cosmos DB контейнеры, а затем создаете модель с Power BI в этих представлениях для отражения этого запроса.
 
 В этом сценарии вы будете использовать фиктивные данные о продажах продуктов в розничном магазине партнера. Вы проанализируете доход на каждый магазин, основываясь на большом семейе и влиянии рекламы на конкретную неделю. В этой статье вы создадите два представления с именами **ретаилсалес** и **сторедемографикс** и запрос между ними. Образец данных по продукту можно получить из репозитория [GitHub](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) .
 
-## <a name="prerequisites"></a>Предварительные условия
+> [!IMPORTANT]
+> В настоящее время доступна предварительная версия синапсе в бессерверном пуле SQL для ссылки Azure синапсе для Azure Cosmos DB. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, обязательно создайте следующие ресурсы:
 
@@ -55,7 +58,7 @@ Create database RetailCosmosDB
 
 Затем создайте несколько представлений в разных контейнерах Azure Cosmos с поддержкой канала синапсе. Представления позволяют использовать T-SQL для объединения и запроса Azure Cosmos DB данных, размещенных в разных контейнерах.  При создании представлений обязательно выберите базу данных **ретаилкосмосдб** .
 
-В следующих скриптах показано, как создавать представления для каждого контейнера. Для простоты давайте воспользуемся функцией [автоматического вывода схемы](analytical-store-introduction.md#analytical-schema) в синапсе контейнерах с поддержкой ссылок СИНАПСЕ в SQL Server.
+В следующих скриптах показано, как создавать представления для каждого контейнера. Для простоты давайте будем использовать функцию [автоматического вывода схемы](analytical-store-introduction.md#analytical-schema) в бессерверном пуле SQL через контейнеры с включенной ссылкой синапсе:
 
 
 ### <a name="retailsales-view"></a>Ретаилсалес представление:
@@ -118,7 +121,7 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 
 1. Выберите предпочтительный метод проверки подлинности, например Azure AD.
 
-1. Выберите базу данных **ретаилкосмосдб** и представления **ретаилсалес** , **сторедемографикс** .
+1. Выберите базу данных **ретаилкосмосдб** и представления **ретаилсалес**, **сторедемографикс** .
 
 1. Выберите **загрузить** , чтобы загрузить два представления в режиме прямого запроса.
 
@@ -141,7 +144,7 @@ GROUP BY p.[advertising], p.[storeId], p.[weekStarting], q.[largeHH]
 
 :::image type="content" source="./media/synapse-link-power-bi/household-size-average-revenue-report.png" alt-text="Отчет, сравнивающий относительную важность размера семьи с средним доходом по магазину":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование T-SQL для запроса Azure Cosmos DB данных с помощью ссылки Azure синапсе](../synapse-analytics/sql/query-cosmos-db-analytical-store.md)
 

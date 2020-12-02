@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: KumudD
 ms.author: kumud
 ms.date: 11/25/2020
-ms.openlocfilehash: 2f262b328efcc341c93f1e5c31cab8cbd3ecbf6b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5a2238f5c1561abb1e11d69aa6d0bfe761097c64
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184643"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437309"
 ---
 # <a name="azure-monitor-for-networks"></a>Azure Monitor для сетей
 Azure Monitor для сетей предоставляет исчерпывающее представление о [работоспособности](../../service-health/resource-health-checks-resource-types.md) и [метриках](../platform/metrics-supported.md) для всех развернутых сетевых ресурсов, не требуя настройки. Он также предоставляет доступ к возможностям мониторинга сети, таким как [монитор подключения](../../network-watcher/connection-monitor-preview.md), [ведение журнала потоков для групп безопасности сети (группы безопасности сети)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md)и [аналитика трафика](../../network-watcher/traffic-analytics.md). И предоставляет другие функции [диагностики](../../network-watcher/network-watcher-monitoring-overview.md#diagnostics) сети.
@@ -26,7 +26,7 @@ Azure Monitor для сетей организованы вокруг следу
 
 На странице Обзор Azure Monitor for Networks ( **Общие сведения о** сетях) представлен простой способ визуализации инвентаризации сетевых ресурсов вместе с работоспособностью и оповещениями ресурсов. Он делится на четыре ключевых функциональных области: Поиск и фильтрация, работоспособность ресурсов и метрики, оповещения и представление зависимостей.
 
-[ ![ Снимок экрана, на котором показана страница обзора](media/network-insights-overview/overview.png)](media/network-insights-overview/overview.png)#lightbox)
+[![Снимок экрана: страница "Обзор"](media/network-insights-overview/overview.png)](media/network-insights-overview/overview.png#lightbox)
 
 ### <a name="search-and-filtering"></a>Поиск и фильтрация
 Вы можете настроить представление "работоспособность ресурсов" и "оповещения" с помощью фильтров, таких как **Подписка**, **Группа ресурсов** и **тип**.

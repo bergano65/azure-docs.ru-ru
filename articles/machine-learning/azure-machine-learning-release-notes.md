@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 09/10/2020
-ms.openlocfilehash: 53a30f92adaf25d87897e98834cda2d5f92b874c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 03825e0f091df01b98355dd6789eb5c9cb2897b0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012277"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444536"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "96012277"
     + Улучшена документация по `OutputDatasetConfig.register_on_complete` для включения поведения того, что произойдет, если имя уже существует.
     + Указание входных и выходных имен набора данных, которые могут конфликтовать с общими переменными среды, теперь приведет к появлению предупреждения
     + Переназначенный `grant_workspace_access` параметр при регистрации хранилищ данных. Задайте для него `True` доступ к данным из виртуальной сети из машинное обучение Studio.
-      [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-enable-studio-virtual-network)
+      [Дополнительные сведения](./how-to-enable-studio-virtual-network.md)
     + API связанной службы уточнен. Вместо предоставления идентификатора ресурса у нас есть 3 отдельных параметра sub_id, RG и Name, определенных в конфигурации.
     + Чтобы клиенты могли самостоятельно устранять проблемы с повреждением маркеров, включите синхронизацию маркеров рабочей области в качестве общедоступного метода.
     + Это изменение позволяет использовать пустую строку в качестве значения для script_param
@@ -109,8 +109,8 @@ ms.locfileid: "96012277"
 
 ### <a name="azure-machine-learning-studio-notebooks-experience-october-update"></a>Опыт работы с записными книжками Машинное обучение Azure Studio (Октябрьское обновление)
 + **Новые функции**
-  + [Полная поддержка виртуальной сети](https://docs.microsoft.com/azure/machine-learning/how-to-enable-studio-virtual-network)
-  + [Режим фокусировки](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#focus-mode)
+  + [Полная поддержка виртуальной сети](./how-to-enable-studio-virtual-network.md)
+  + [Режим фокусировки](./how-to-run-jupyter-notebooks.md#focus-mode)
   + Сохранить записные книжки CTRL-S
   + Номера строк
 
@@ -2180,6 +2180,6 @@ ms.locfileid: "96012277"
   + Средство просмотра файлов журналов
   + Ссылки на запуск, вычисление, модели, изображения и развертывания экспериментов на вкладке "действия"
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с общими сведениями о службе [Машинное обучение Azure](overview-what-is-azure-ml.md).

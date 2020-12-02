@@ -8,12 +8,12 @@ ms.author: kgremban
 ms.date: 3/27/2020
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 1883ffdff20bbbef8efec1440854f01a21a281dc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2ae6d46198d979f91de5bf31d389f75961b4ab88
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994525"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437173"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
 
@@ -32,7 +32,7 @@ ms.locfileid: "95994525"
 
 В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install).
 
-Поскольку в этой статье в качестве основного средства разработки используется Visual Studio 2019, установите Visual Studio. Убедитесь, что вы включили рабочие нагрузки разработки и разработки **классических приложений** **Azure** на C++ в установке Visual Studio 2019. Вы можете [изменить Visual Studio 2019](/visualstudio/install/modify-visual-studio?view=vs-2019) , добавив необходимые рабочие нагрузки.
+Поскольку в этой статье в качестве основного средства разработки используется Visual Studio 2019, установите Visual Studio. Убедитесь, что вы включили рабочие нагрузки разработки и разработки **классических приложений** **Azure** на C++ в установке Visual Studio 2019. Вы можете [изменить Visual Studio 2019](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true) , добавив необходимые рабочие нагрузки.
 
 После того как Visual Studio 2019 будет готова, вам понадобятся следующие средства и компоненты:
 
@@ -236,6 +236,6 @@ ms.locfileid: "95994525"
 
 1. Чтобы отключить мониторинг данных, в окне **действия** выберите пункт **закончить мониторинг встроенной конечной точки события** .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о разработке пользовательских модулей для устройств IoT Edge см. в статье [Понимание и использование пакетов SDK для Центра Интернета вещей Azure](../iot-hub/iot-hub-devguide-sdks.md).

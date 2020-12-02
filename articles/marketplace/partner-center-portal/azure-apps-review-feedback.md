@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: 351a9742e9d839a8e217fdea35cad922acc3339f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ede4e5dd781851c781407a8acea640e3e501f259
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095678"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436391"
 ---
 # <a name="handling-review-feedback-for-azure-application-offers"></a>Работа с отзывами о предложениях для приложений Azure после проверки
 
@@ -57,4 +57,4 @@ ms.locfileid: "93095678"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Завершив исправление всех критических проблем, описанных в запросе на вытягивание по результатам проверки, необходимо [повторно опубликовать предложение приложения Azure](./create-new-azure-apps-offer.md#publish).
+Завершив исправление всех критических проблем, описанных в запросе на вытягивание по результатам проверки, необходимо [повторно опубликовать предложение приложения Azure](../create-new-azure-apps-offer.md).

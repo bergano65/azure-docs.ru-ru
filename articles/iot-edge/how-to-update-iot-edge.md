@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3916855a62e506b12f72de713ccb56e89f846938
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 797b5f569f081065eb950f7c10bf6449002f733b
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96171812"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436986"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
@@ -194,7 +194,7 @@ docker rmi mcr.microsoft.com/azureiotedge-agent:1.0
 
 3. Если загруженный CAB-файл имеет суффикс архитектуры, переименуйте файл в **Microsoft-Azure-IoTEdge.cab**.
 
-4. Чтобы выполнить обновление с помощью автономных компонентов, [источник точки](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7#script-scope-and-dot-sourcing) является локальной копией сценария PowerShell. Затем используйте параметр в `-OfflineInstallationPath` составе `Update-IoTEdge` команды и укажите абсолютный путь к каталогу файла. Например,
+4. Чтобы выполнить обновление с помощью автономных компонентов, [источник точки](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing) является локальной копией сценария PowerShell. Затем используйте параметр в `-OfflineInstallationPath` составе `Update-IoTEdge` команды и укажите абсолютный путь к каталогу файла. Например,
 
    ```powershell
    . <path>\IoTEdgeSecurityDaemon.ps1

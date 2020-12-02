@@ -12,12 +12,12 @@ ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e4fa4b64c6519df90d5883e8c5760b3ed2ce0337
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a079cfe155119a6afe8575767dd3e7c09a564f9a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90004465"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445618"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Настройка входа для определенной организации Azure Active Directory в Azure Active Directory B2C
 
@@ -42,15 +42,15 @@ ms.locfileid: "90004465"
 
 1. В поле **Идентификатор клиента** введите ранее записанное значение идентификатора приложения.
 1. В поле **Секрет клиента** введите ранее записанное значение секрета клиента.
-1. Для **области**введите `openid profile` .
-1. Оставьте значения по умолчанию для **типа ответа**и **режим ответа**.
-1. Используемых В качестве **подсказки для домена**введите `contoso.com` . Дополнительные сведения см. в статье [Настройка прямого входа в систему с помощью Azure Active Directory B2C](direct-signin.md#redirect-sign-in-to-a-social-provider).
-1. В разделе **сопоставление утверждений поставщика удостоверений**выберите следующие утверждения:
+1. Для **области** введите `openid profile` .
+1. Оставьте значения по умолчанию для **типа ответа** и **режим ответа**.
+1. Используемых В качестве **подсказки для домена** введите `contoso.com` . Дополнительные сведения см. в статье [Настройка прямого входа в систему с помощью Azure Active Directory B2C](direct-signin.md#redirect-sign-in-to-a-social-provider).
+1. В разделе **сопоставление утверждений поставщика удостоверений** выберите следующие утверждения:
 
     * **User ID**: *oid*;
     * **Display name**: *name*;
     * **Given name**: *given_name*;
     * **Surname**: *family_name*;
-    * **Email**: *unique_name*.
+    * **Адрес электронной почты**: *preferred_username*
 
 1. Щелкните **Сохранить**.

@@ -3,12 +3,12 @@ title: Azure Monitor Application Insights Java
 description: Наблюдение за производительностью приложений Java, выполняющихся в любой среде, без необходимости изменения кода. Распределенная трассировка и схема приложения.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 36e2b419da2bccdf2f5f13227457172cf644994c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 7046e4a1aeeda5e537208c79858c95c79e188348
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351543"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437207"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Application Insights Azure Monitor отслеживания приложений Java с некодированным кодом
 
@@ -127,15 +127,16 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 * Микрометер (включая метрики огнетушителя пружинной загрузки)
 * Метрики JMX
 
-## <a name="sending-custom-telemetry-from-your-application"></a>Отправка пользовательских данных телеметрии из приложения
+## <a name="send-custom-telemetry-from-your-application"></a>Отправка пользовательских данных телеметрии из приложения
 
 Наша цель в версии 3.0 + позволяет отправить пользовательскую телеметрию с помощью стандартных API.
 
-Мы поддерживаем Микрометер, Опентелеметри API и популярные платформы ведения журналов. Application Insights Java 3,0 автоматически захватывает данные телеметрии и сопоставляет их вместе со всеми автоматически собираемыми данными телеметрии.
+Мы поддерживаем Микрометер, популярные платформы ведения журналов и Application Insights пакет SDK для Java 2. x до настоящего момента.
+Application Insights Java 3,0 автоматически захватывает данные телеметрии, отправляемые через эти API, и сопоставляет их с автоматически собираемой телеметрией.
 
 ### <a name="supported-custom-telemetry"></a>Поддерживаемые пользовательские данные телеметрии
 
-Приведенная ниже таблица представляет сейчас поддерживаемые пользовательские типы телеметрии, которые можно включить в дополнение к агенту Java 3,0. Чтобы суммировать, пользовательские метрики поддерживаются через микрометер, пользовательские исключения и трассировки можно включить с помощью платформ ведения журналов, а любой тип пользовательской телеметрии поддерживается с помощью [пакета SDK для Java 2. x Application Insights](#sending-custom-telemetry-using-application-insights-java-sdk-2x). 
+Приведенная ниже таблица представляет сейчас поддерживаемые пользовательские типы телеметрии, которые можно включить в дополнение к агенту Java 3,0. Чтобы суммировать, пользовательские метрики поддерживаются через микрометер, пользовательские исключения и трассировки можно включить с помощью платформ ведения журналов, а любой тип пользовательской телеметрии поддерживается с помощью [пакета SDK для Java 2. x Application Insights](#send-custom-telemetry-using-application-insights-java-2x-sdk).
 
 |                     | Micrometer | Log4j, logback, Июл | пакет SDK для 2. x |
 |---------------------|------------|---------------------|---------|
@@ -149,82 +150,101 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 
 В настоящее время мы не планируем выпустить пакет SDK с Application Insights 3,0.
 
-Application Insights Java 3,0 уже прослушивает данные телеметрии, отправляемые в пакет SDK для Java Application Insights 2. x. Эта функция является важной частью истории обновления для существующих пользователей версии 2. x, и она заполняет важный зазор в нашей пользовательской поддержке телеметрии, пока интерфейс API Опентелеметри не будет общедоступен.
+Application Insights Java 3,0 уже прослушивает данные телеметрии, отправляемые в пакет SDK для Application Insights Java 2. x. Эта функция является важной частью истории обновления для существующих пользователей версии 2. x, и она заполняет важный зазор в нашей пользовательской поддержке телеметрии, пока интерфейс API Опентелеметри не будет общедоступен.
 
-## <a name="sending-custom-telemetry-using-application-insights-java-sdk-2x"></a>Отправка пользовательской телеметрии с помощью Application Insights пакета SDK для Java 2. x
+### <a name="send-custom-metrics-using-micrometer"></a>Отправка пользовательских метрик с помощью Микрометер
+
+Добавьте Микрометер в приложение:
+
+```xml
+<dependency>
+  <groupId>io.micrometer</groupId>
+  <artifactId>micrometer-core</artifactId>
+  <version>1.6.1</version>
+</dependency>
+```
+
+Используйте [глобальный реестр](https://micrometer.io/docs/concepts#_global_registry) микрометер для создания счетчика:
+
+```java
+static final Counter counter = Metrics.counter("test_counter");
+```
+
+и используйте его для записи метрик.
+
+```java
+counter.increment();
+```
+
+### <a name="send-custom-traces-and-exceptions-using-your-favorite-logging-framework"></a>Отправка пользовательских трассировок и исключений с помощью избранной инфраструктуры ведения журналов
+
+Log4j, Logback и Java. util. Logging устанавливаются в автоматическом инструментировании, а ведение журнала с помощью этих платформ ведения журналов выполняется в автоматическом виде в виде трассировки и телеметрии исключений.
+
+По умолчанию ведение журнала выполняется только в том случае, если ведение журнала выполняется на уровне INFO или выше.
+Сведения о том, как изменить этот уровень, см. в разделе [Параметры конфигурации](./java-standalone-config.md#auto-collected-logging) .
+
+Если вы хотите присоединить пользовательские измерения к журналам, вы можете использовать [log4j 1 MDC](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html), [log4j 2 MDC](https://logging.apache.org/log4j/2.x/manual/thread-context.html)или [Logback MDC](http://logback.qos.ch/manual/mdc.html), а Application Insights Java 3,0 автоматически захватывает эти свойства MDC как пользовательские измерения в телеметрии трассировки и исключений.
+
+### <a name="send-custom-telemetry-using-application-insights-java-2x-sdk"></a>Отправка пользовательской телеметрии с помощью пакета SDK для Java 2. x Application Insights
 
 Добавьте `applicationinsights-core-2.6.0.jar` в приложение (все версии 2. x поддерживаются Application Insights Java 3,0, но следует использовать последнюю версию, если у вас есть вариант):
 
 ```xml
-  <dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>applicationinsights-core</artifactId>
-    <version>2.6.0</version>
-  </dependency>
+<dependency>
+  <groupId>com.microsoft.azure</groupId>
+  <artifactId>applicationinsights-core</artifactId>
+  <version>2.6.0</version>
+</dependency>
 ```
 
 Создайте TelemetryClient:
 
   ```java
-private static final TelemetryClient telemetryClient = new TelemetryClient();
+static final TelemetryClient telemetryClient = new TelemetryClient();
 ```
 
-и используют его для отправки пользовательской телеметрии.
+и используют его для отправки пользовательских данных телеметрии:
 
-### <a name="events"></a>События
+##### <a name="events"></a>События
 
-  ```java
+```java
 telemetryClient.trackEvent("WinGame");
 ```
-### <a name="metrics"></a>Метрики
 
-Данные телеметрии метрик можно отправить через [микрометер](https://micrometer.io):
+##### <a name="metrics"></a>Метрики
 
 ```java
-  Counter counter = Metrics.counter("test_counter");
-  counter.increment();
+telemetryClient.trackMetric("queueLength", 42.0);
 ```
 
-Также можно использовать Application Insights пакет SDK для Java 2. x:
+##### <a name="dependencies"></a>Зависимости
 
 ```java
-  telemetryClient.trackMetric("queueLength", 42.0);
+boolean success = false;
+long startTime = System.currentTimeMillis();
+try {
+    success = dependency.call();
+} finally {
+    long endTime = System.currentTimeMillis();
+    RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
+    telemetry.setTimestamp(new Date(startTime));
+    telemetry.setDuration(new Duration(endTime - startTime));
+    telemetryClient.trackDependency(telemetry);
+}
 ```
 
-### <a name="dependencies"></a>Зависимости
+##### <a name="logs"></a>Журналы
 
 ```java
-  boolean success = false;
-  long startTime = System.currentTimeMillis();
-  try {
-      success = dependency.call();
-  } finally {
-      long endTime = System.currentTimeMillis();
-      RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
-      telemetry.setTimestamp(new Date(startTime));
-      telemetry.setDuration(new Duration(endTime - startTime));
-      telemetryClient.trackDependency(telemetry);
-  }
+telemetryClient.trackTrace(message, SeverityLevel.Warning, properties);
 ```
 
-### <a name="logs"></a>Журналы
-Вы можете отправить пользовательские данные телеметрии журналов с помощью избранной платформы ведения журналов.
-
-Также можно использовать Application Insights пакет SDK для Java 2. x:
+##### <a name="exceptions"></a>Исключения
 
 ```java
-  telemetryClient.trackTrace(message, SeverityLevel.Warning, properties);
-```
-
-### <a name="exceptions"></a>Исключения
-Вы можете отправить пользовательскую телеметрию исключений с помощью избранной платформы ведения журналов.
-
-Также можно использовать Application Insights пакет SDK для Java 2. x:
-
-```java
-  try {
-      ...
-  } catch (Exception e) {
-      telemetryClient.trackException(e);
-  }
+try {
+    ...
+} catch (Exception e) {
+    telemetryClient.trackException(e);
+}
 ```

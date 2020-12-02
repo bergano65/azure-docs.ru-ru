@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: f07efcc18f3eff7e40232941befb563cd236266b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: bd9199bc73e56ec36343b30d9b24f0b48799835e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95013024"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445187"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -41,7 +41,7 @@ ms.locfileid: "95013024"
 
 ## <a name="limitations"></a>Ограничения
 
-* При создании рабочей области можно либо разрешить этой рабочей области создавать службы Azure, которые требуются автоматически, либо предоставить существующие службы. При предоставлении существующих служб все эти службы должны находиться в той же подписке Azure, что и Рабочая область.
+[!INCLUDE [register-namespace](../../includes/machine-learning-register-namespace.md)]
 
 ## <a name="workspace-resource-manager-template"></a>Шаблон диспетчер ресурсов рабочей области
 
