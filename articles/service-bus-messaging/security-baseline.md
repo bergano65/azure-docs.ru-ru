@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a6d4e7f4ca7288b36f6801b9ddb362b7e936862d
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 9dda02e483f3437237837a9b3b8bdcbcf84fcd1d
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843627"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489604"
 ---
 # <a name="azure-security-baseline-for-service-bus"></a>Базовый план безопасности Azure для служебной шины
 
-Базовый план безопасности Azure для служебной шины содержит рекомендации, которые помогут повысить уровень безопасности развертывания. Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview-v1.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций. Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
+Базовый план безопасности Azure для служебной шины содержит рекомендации, которые помогут повысить уровень безопасности развертывания. Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview-v1.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций. Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
 Сведения о том, как полностью сопоставить служебную шину с тестовым показателем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines)служебной шины.
 
@@ -60,7 +60,7 @@ ms.locfileid: "94843627"
 
 **Рекомендации**. Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с пространствами имен служебной шины, чтобы защититься от атак типа "отказ в обслуживании" (от атак DDoS). Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-- [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
+- [Настройка защиты от атак DDoS](../ddos-protection/manage-ddos-protection.md)
 
 - [Интегрированная аналитика угроз центра безопасности Azure](../security-center/azure-defender.md)
 
@@ -197,7 +197,7 @@ ms.locfileid: "94843627"
 
 **Руководство**. анализ и мониторинг журналов для аномального поведения и регулярная проверка результатов, относящихся к сущностям служебной шины. Используйте Azure Monitor для просмотра журналов и выполнения запросов к данным журнала, относящимся к служебной шине.
 
-- [Дополнительные сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
+- [Дополнительные сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 - [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -333,7 +333,7 @@ ms.locfileid: "94843627"
 
 **Руководство**. Использование Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как служебная шина. Это обеспечивает управление доступом на основе ролей Azure (Azure RBAC) для административных ресурсов.
 
-- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 - [Авторизация доступа к ресурсам служебной шины с помощью Azure Active Directory](authenticate-application.md)
 
@@ -586,7 +586,7 @@ ms.locfileid: "94843627"
 
 - [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -795,7 +795,7 @@ ms.locfileid: "94843627"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены. 
 
-- [Как задать контакт безопасности центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
+- [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -831,11 +831,11 @@ ms.locfileid: "94843627"
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
-**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений. 
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию Майкрософт и рекомендации "красных команд", а затем выполните тест на проникновение в режиме реального времени для управляемых корпорацией Майкрософт облачной инфраструктуры, служб и приложений. 
 
-- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
+- [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

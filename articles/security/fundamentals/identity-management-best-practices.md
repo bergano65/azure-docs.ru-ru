@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 94cb40522a9e463fea2efae329daf910b5386cdd
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: bf593eab54233ab65435585485dd8e3940f5addb
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832608"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489825"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Рекомендации по обеспечению безопасности за счет управления удостоверениями и контроля доступа Azure
 
@@ -229,12 +229,12 @@ ms.locfileid: "94832608"
 
 Привилегированные учетные записи — это учетные записи, которые администрируют ИТ-системы и управляют ими. Злоумышленники в Интернете обычно используют эти учетные записи для доступа к данным и системам организации. Чтобы защитить привилегированный доступ, необходимо исключить риск доступа пользователей-злоумышленников к учетным записям и системам.
 
-Рекомендуется разработать и следовать стратегии для обеспечения защиты привилегированного доступа от кибератак. Сведения о создании подробной стратегии защиты удостоверений и доступа, управляемых или сообщаемых в Azure AD, Microsoft Azure, Microsoft 365 и других облачных службах, см. [в статье Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md).
+Рекомендуется разработать и следовать стратегии для обеспечения защиты привилегированного доступа от кибератак. Сведения о создании подробной стратегии защиты удостоверений и доступа, управляемых или сообщаемых в Azure AD, Microsoft Azure, Microsoft 365 и других облачных службах, см. [в статье Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/roles/security-planning.md).
 
-Далее приводится сводка рекомендаций из статьи [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md).
+Далее приводится сводка рекомендаций из статьи [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/roles/security-planning.md).
 
 **Рекомендация**. Администрируйте, контролируйте и отслеживайте доступ к привилегированным учетным записям.   
-**Сведения**. Включение [Управление привилегированными пользователями Azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md). После включения этой функции вы получите уведомления по электронной почте об изменении ролей привилегированного доступа. Эти уведомления предоставляют раннее предупреждение, когда дополнительные пользователи добавляются к высокопривилегированным ролям в вашем каталоге.
+**Сведения**. Включение [Управление привилегированными пользователями Azure AD](../../active-directory/roles/security-planning.md). После включения этой функции вы получите уведомления по электронной почте об изменении ролей привилегированного доступа. Эти уведомления предоставляют раннее предупреждение, когда дополнительные пользователи добавляются к высокопривилегированным ролям в вашем каталоге.
 
 **Рекомендация**. Убедитесь в том, что все критически важные учетные записи администратора являются управляемыми учетными записями Azure AD.
 **Сведения**. Удалите все учетные записи потребителей из критически важных ролей администратора (например, учетные записи Майкрософт, такие как hotmail.com, live.com и outlook.com).
@@ -261,10 +261,10 @@ ms.locfileid: "94832608"
 **Рекомендация**. Определите по крайней мере две учетные записи аварийного доступа.   
 **Сведения**. Учетные записи аварийного доступа помогают организациям ограничить привилегированный доступ в имеющейся среде Azure Active Directory. Такие учетные записи имеют высокий уровень привилегий и не присвоены конкретным лицам. Учетные записи для аварийного доступа ограничены ситуациями, в которых невозможно использовать обычные учетные записи администратора. Организации должны ограничивать использование учетной записи для аварийного доступа только при необходимости.
 
-Оцените учетные записи, которые назначены или могут получить роль глобального администратора. Если вы не видите облачные учетные записи, использующие домен `*.onmicrosoft.com`(предназначенный для аварийного доступа), создайте их. Дополнительные сведения см. в статье [Управление учетными записями администратора для аварийного доступа в Azure AD](../../active-directory/users-groups-roles/directory-emergency-access.md).
+Оцените учетные записи, которые назначены или могут получить роль глобального администратора. Если вы не видите облачные учетные записи, использующие домен `*.onmicrosoft.com`(предназначенный для аварийного доступа), создайте их. Дополнительные сведения см. в статье [Управление учетными записями администратора для аварийного доступа в Azure AD](../../active-directory/roles/security-emergency-access.md).
 
 **Рекомендация**. Реализуйте аварийный процесс на случай экстренной ситуации.
-**Сведения**. Выполните инструкции, приведенные в статье [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md).
+**Сведения**. Выполните инструкции, приведенные в статье [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/roles/security-planning.md).
 
 **Рекомендация**. Сделайте так, чтобы для всех критически важных учетных записей администраторов не требовался пароль (предпочтительно) или требовалась многофакторная проверка подлинности.
 **Сведения**. Используйте [приложение Microsoft Authenticator](../../active-directory/authentication/howto-authentication-passwordless-phone.md) для входа в любую учетную запись Azure AD без пароля. Как и [Windows Hello для бизнеса](/windows/security/identity-protection/hello-for-business/hello-identity-verification), Microsoft Authenticator использует проверку подлинности на основе ключей, привязывает учетные данные пользователя к определенному устройству и применяет биометрические данные или ПИН-код.
@@ -284,25 +284,25 @@ ms.locfileid: "94832608"
 **Сведения**: используйте Microsoft 365 симулятор атаки или стороннее предложение для выполнения реалистичных сценариев атак в Организации. Это поможет выявить уязвимых пользователей до того, как произойдет реальная атака.
 
 **Рекомендация**. Устраните риски, связанные с наиболее часто используемыми методами атак.  
-**Сведения**. [Определение учетных записей Майкрософт в административных ролях, которые необходимо переключить на использование рабочих или учебных учетных записей](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#identify-microsoft-accounts-in-administrative-roles-that-need-to-be-switched-to-work-or-school-accounts).  
+**Сведения**. [Определение учетных записей Майкрософт в административных ролях, которые необходимо переключить на использование рабочих или учебных учетных записей](../../active-directory/roles/security-planning.md#identify-microsoft-accounts-in-administrative-roles-that-need-to-be-switched-to-work-or-school-accounts).  
 
-[Обеспечение отдельных учетных записей пользователей и перенаправление почты для глобальных учетных записей администратора](../../active-directory/users-groups-roles/directory-admin-roles-secure.md)  
+[Обеспечение отдельных учетных записей пользователей и перенаправление почты для глобальных учетных записей администратора](../../active-directory/roles/security-planning.md)  
 
-[Проверка того, что пароли административных учетных записей недавно изменялись](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
+[Проверка того, что пароли административных учетных записей недавно изменялись](../../active-directory/roles/security-planning.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
 
-[Включение синхронизации хэша паролей](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)  
+[Включение синхронизации хэша паролей](../../active-directory/roles/security-planning.md#turn-on-password-hash-synchronization)  
 
-[Настройка принудительного прохождения многофакторной идентификации для пользователей во всех привилегированных ролях, а также пользователей важных учетных записей](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#require-multi-factor-authentication-mfa-for-users-in-all-privileged-roles-as-well-as-exposed-users)  
+[Настройка принудительного прохождения многофакторной идентификации для пользователей во всех привилегированных ролях, а также пользователей важных учетных записей](../../active-directory/roles/security-planning.md#require-multi-factor-authentication-for-users-in-privileged-roles-and-exposed-users)  
 
-[Получение оценки безопасности Microsoft 365 (при использовании Microsoft 365)](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#obtain-your-office-365-secure-score-if-using-office-365)  
+[Получение оценки безопасности Microsoft 365 (при использовании Microsoft 365)](../../active-directory/roles/security-planning.md#obtain-your-microsoft-365-secure-score-if-using-microsoft-365)  
 
-[Ознакомьтесь с руководством по безопасности Microsoft 365 (если используется Microsoft 365)](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#review-the-office-365-security-and-compliance-guidance-if-using-office-365)  
+[Ознакомьтесь с руководством по безопасности Microsoft 365 (если используется Microsoft 365)](../../active-directory/roles/security-planning.md#review-the-microsoft-365-security-and-compliance-guidance-if-using-microsoft-365)  
 
-[Настройка мониторинга действий Microsoft 365 (при использовании Microsoft 365)](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#configure-office-365-activity-monitoring-if-using-office-365)  
+[Настройка мониторинга действий Microsoft 365 (при использовании Microsoft 365)](../../active-directory/roles/security-planning.md#configure-microsoft-365-activity-monitoring-if-using-microsoft-365)  
 
-[Определение владельцев плана реагирования на инциденты или чрезвычайные ситуации](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#establish-incidentemergency-response-plan-owners)  
+[Определение владельцев плана реагирования на инциденты или чрезвычайные ситуации](../../active-directory/roles/security-planning.md#establish-incidentemergency-response-plan-owners)  
 
-[Защита локальных привилегированных учетных записей](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)
+[Защита локальных привилегированных учетных записей](../../active-directory/roles/security-planning.md#turn-on-password-hash-synchronization)
 
 Если не уделять должное внимание защите привилегированного доступа, может оказаться, что привилегированные роли назначаются слишком большому количеству пользователей, которые становятся все более уязвимыми для атак. Злоумышленники, в том числе киберпреступники, часто совершают атаки на учетные записи администраторов и другие объекты привилегированного доступа, чтобы получить доступ к конфиденциальным данным и системам путем кражи учетных данных.
 

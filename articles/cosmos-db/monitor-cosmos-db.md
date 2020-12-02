@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: 550418761e91a8292761d7595ff32d939c0d542e
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9410a38f7bc7a787fc439b5ad51f4a49f76771f8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350404"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488788"
 ---
 # <a name="monitor-azure-cosmos-db"></a>Мониторинг Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -83,7 +83,7 @@ Azure Cosmos DB собирает данные мониторинга тех же
 
 Azure Cosmos DB предоставляет пользовательский интерфейс для работы с метриками. Вы можете анализировать метрики Azure Cosmos DB вместе с метриками из других служб Azure с помощью обозревателя метрик. Для этого выберите пункт **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. в статье [Начало работы с обозревателем метрик Azure](../azure-monitor/platform/metrics-getting-started.md). Вы также можете извлекать сведения о мониторинге [задержки на стороне сервера](monitor-server-side-latency.md), [использовании единиц запросов](monitor-request-unit-usage.md)и [нормализованного использования единиц запросов](monitor-normalized-request-units.md) для ресурсов Azure Cosmos DB.
 
-Список метрик платформы, собранных для Azure Cosmos DB, см. в статье [мониторинг Azure Cosmos DB метрики ссылок на данные] Monitor-Cosmos-DB-Reference. md # метрики.
+Список метрик платформы, собранных для Azure Cosmos DB, см. в статье [мониторинг метрик Azure Cosmos DB ссылок на данные](monitor-cosmos-db-reference.md#metrics) .
 
 Все метрики Azure Cosmos DB находятся в пространстве имен **Стандартные метрики Cosmos DB**. При добавлении фильтра к диаграмме можно использовать следующие измерения с метриками.
 

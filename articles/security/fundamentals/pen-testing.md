@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/24/2020
 ms.author: terrylan
-ms.openlocfilehash: dfacf124f8db0e5323c9abff56c4a78f85f6f014
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af61b6ee1e69d175f47170df30f75832033d61d5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816139"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489723"
 ---
-# <a name="penetration-testing"></a>тестирование уязвимости;
+# <a name="penetration-testing"></a>тест на проникновение;
 
 Одно из преимуществ использования Azure для развертывания и тестирования приложений — возможность быстро создавать среды. Вам не нужно беспокоиться о подаче заявок, приобретении и настройке собственного локального оборудования.
 
@@ -46,7 +46,7 @@ ms.locfileid: "88816139"
 Один из видов проверки пера, который нельзя выполнить, — это любая атака типа ["отказ в обслуживании" (DOS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) . Этот тест включает в себя инициацию атаки с помощью DoS или выполнение связанных тестов, которые могут определить, продемонстрировать или смоделировать любой тип атаки DoS.
 
 >[!Note]
->Корпорация Майкрософт совместно с BreakingPoint Cloud разработала интерфейс, в котором клиенты Azure могут создавать трафик для общедоступных IP-адресов, защищенных от атак DDoS, в целях имитации. Дополнительные сведения о моделировании облака в точке останова см. в разделе [Validate от атак DDoS Detection](../../virtual-network/manage-ddos-protection.md#validate-ddos-detection).
+>Корпорация Майкрософт совместно с BreakingPoint Cloud разработала интерфейс, в котором клиенты Azure могут создавать трафик для общедоступных IP-адресов, защищенных от атак DDoS, в целях имитации. Дополнительные сведения о моделировании облака в точке останова см. в разделе [Validate от атак DDoS Detection](../../ddos-protection/manage-ddos-protection.md#validate-and-test).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

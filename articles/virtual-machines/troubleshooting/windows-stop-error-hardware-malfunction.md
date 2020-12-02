@@ -1,5 +1,5 @@
 ---
-title: Windows-ошибка завершения — оборудование неисправно
+title: 'Ошибка, вызывающая остановку Windows: оборудование неисправно'
 description: В этой статье приведены инструкции по устранению проблем, возникающих при сбое виртуальных машин Windows Server 2008 с сообщением об ошибке, сообщающим о неисправности оборудования.
 services: virtual-machines-windows
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/13/2020
 ms.author: v-mibufo
-ms.openlocfilehash: eb4e0a246d6a33c3fad5f44b99a37997e4462f05
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 18622d60f3a33658fadfd28c53c93a07b4b438a9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663862"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488652"
 ---
-# <a name="windows-stop-error---hardware-malfunction"></a>Windows-ошибка завершения — оборудование неисправно
+# <a name="windows-stop-error---hardware-malfunction"></a>Ошибка, вызывающая остановку Windows: оборудование неисправно
 
 В этой статье приведены инструкции по устранению проблем, возникающих при сбое виртуальных машин Windows Server 2008 с сообщением об ошибке, сообщающим о неисправности оборудования.
 
@@ -41,7 +41,7 @@ ms.locfileid: "94663862"
 
 ![На снимке экрана отображается сообщение "сбой оборудования" в функции последовательной консоли, если включена последовательная консоль.](media/windows-stop-error-hardware-malfunction/windows-stop-error-hardware-malfunction-2.png)
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Этот экран появится, когда гостевая ОС была настроена неправильно и было отправлено немаскированное прерывание (NMI). Сообщение об ошибке указывает, что программа режима ядра создала исключение, которое обработчик не перехватывает. Чтобы узнать, какое исключение было создано, можно собрать дамп памяти.
 
@@ -63,7 +63,7 @@ ms.locfileid: "94663862"
     ```
     REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
     ```
-    [Просмотр дополнительных сведений о команде REG ADD](https://docs.microsoft.com/windows-server/administration/windows-commands/reg-add)
+    [Просмотр дополнительных сведений о команде REG ADD](/windows-server/administration/windows-commands/reg-add)
 4. *(Необязательно)* Настройка сбора дампа памяти:
 
     ```
@@ -77,13 +77,13 @@ ms.locfileid: "94663862"
     BCDEDIT /ems {current} on, or bcdedit /ems '{current}' on if you are using PowerShell
     BCDEDIT /emssettings EMSPORT:1 EMSBAUDRATE:115200 
     ```
-    [Просмотр дополнительных сведений о команде BCDEDIT](https://docs.microsoft.com/windows-server/administration/windows-commands/bcdedit)
+    [Просмотр дополнительных сведений о команде BCDEDIT](/windows-server/administration/windows-commands/bcdedit)
 6. Перезапустите виртуальную машину с помощью следующей команды:
 
     ```
     SHUTDOWN /r /t 0 /f 
     ```
-    [Просмотр дополнительных сведений о команде SHUTDOWN](https://docs.microsoft.com/windows-server/administration/windows-commands/shutdown)
+    [Просмотр дополнительных сведений о команде SHUTDOWN](/windows-server/administration/windows-commands/shutdown)
 
 > [!IMPORTANT]
 > Теперь проблема должна быть исправлена!

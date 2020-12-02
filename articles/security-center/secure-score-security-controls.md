@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/10/2020
 ms.author: memildin
-ms.openlocfilehash: 0e853a4ce1e3891ddffd2f9fb1315da49a896933
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 3cd536d051f3e227ba86429ae3f1633bf6c2e82f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433228"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490539"
 ---
 # <a name="secure-score-in-azure-security-center"></a>Оценка безопасности в Центре безопасности Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "96433228"
 
 ### <a name="get-your-secure-score-from-azure-resource-graph-arg"></a>Получение оценки безопасности из графа ресурсов Azure (ARG)
 
-Граф ресурсов Azure обеспечивает мгновенный доступ к сведениям о ресурсах в облачных средах с помощью надежных возможностей фильтрации, группировки и сортировки. Это быстрый и эффективный способ запросить сведения по подпискам Azure программно или с помощью портала Azure. Дополнительные [сведения о графе ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/).
+Граф ресурсов Azure обеспечивает мгновенный доступ к сведениям о ресурсах в облачных средах с помощью надежных возможностей фильтрации, группировки и сортировки. Это быстрый и эффективный способ запросить сведения по подпискам Azure программно или с помощью портала Azure. Дополнительные [сведения о графе ресурсов Azure](../governance/resource-graph/index.yml).
 
 Для получения доступа к показателю безопасности нескольких подписок с аргументом ARG:
 

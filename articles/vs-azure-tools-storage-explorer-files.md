@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/09/2017
 ms.author: cawa
-ms.openlocfilehash: f9a828b78dc5ba6bdbc77e22daa75be4182015f0
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 84f6473c25a5be11eeda7cd2b311d93a7226a78c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95805697"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488397"
 ---
 # <a name="using-storage-explorer-with-azure-file-storage"></a>Использование обозревателя хранилищ с хранилищем файлов Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "95805697"
 
 - [Скачайте и установите Обозреватель службы хранилища](https://www.storageexplorer.com/).
 
-- [Подключение к учетной записи хранения Azure или службе](/azure/vs-azure-tools-storage-manage-with-storage-explorer#connect-to-a-storage-account-or-service)
+- [Подключение к учетной записи хранения Azure или службе](./vs-azure-tools-storage-manage-with-storage-explorer.md#connect-to-a-storage-account-or-service)
 
 ## <a name="create-a-file-share"></a>Создание файлового ресурса
 
@@ -47,7 +47,7 @@ ms.locfileid: "95805697"
 
     ![Создание общей папки](media/vs-azure-tools-storage-explorer-files/image1.png)
 
-1. Под папкой **Общие папки** отобразится текстовое поле. Введите имя вашей общей папки. Список правил и ограничений, действующих при присвоении имен общим папкам, см. в [этом разделе](/azure/storage/storage-dotnet-how-to-use-blobs).
+1. Под папкой **Общие папки** отобразится текстовое поле. Введите имя вашей общей папки. Список правил и ограничений, действующих при присвоении имен общим папкам, см. в [этом разделе](./storage/blobs/storage-quickstart-blobs-dotnet.md).
 
     ![Присвоение имени общей папке](media/vs-azure-tools-storage-explorer-files/image2.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "95805697"
 
 ## <a name="delete-a-file-share"></a>Удаление общей папки
 
-Общие папки можно легко создавать и удалять по мере необходимости. (Сведения о том, как удалять отдельные файлы, см. в разделе об [управлении файлами в общей папке](/azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container).)
+Общие папки можно легко создавать и удалять по мере необходимости. (Сведения о том, как удалять отдельные файлы, см. в разделе об [управлении файлами в общей папке](./vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).)
 
 Чтобы удалить общую папку в Обозревателе службы хранилища, сделайте следующее:
 
@@ -89,7 +89,7 @@ ms.locfileid: "95805697"
 
 1. Щелкните правой кнопкой мыши общую папку, которую необходимо удалить, и выберите в контекстном меню команду **Удалить**. Также можно нажать кнопку **Удалить**, чтобы удалить выбранную общую папку.
 
-    ![DELETE](media/vs-azure-tools-storage-explorer-files/image6.png)
+    ![Удаление](media/vs-azure-tools-storage-explorer-files/image6.png)
 
 1. Щелкните **Да** в диалоговом окне подтверждения.
     
@@ -97,7 +97,7 @@ ms.locfileid: "95805697"
 
 ## <a name="copy-a-file-share"></a>Копирование общей папки
 
-Обозреватель службы хранилища позволяет скопировать общую папку в буфер обмена и вставить ее в другую учетную запись хранения. (Сведения о том, как копировать отдельные файлы, см. в разделе об [управлении файлами в общей папке](/azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container).)
+Обозреватель службы хранилища позволяет скопировать общую папку в буфер обмена и вставить ее в другую учетную запись хранения. (Сведения о том, как копировать отдельные файлы, см. в разделе об [управлении файлами в общей папке](./vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).)
 
 Чтобы скопировать общую папку из одной учетной записи хранения в другую, сделайте следующее:
 
@@ -117,7 +117,7 @@ ms.locfileid: "95805697"
 
 ## <a name="get-the-sas-for-a-file-share"></a>Получение SAS для общей папки
 
-[Подпись общего доступа (SAS)](/azure/storage/storage-dotnet-shared-access-signature-part-1) предоставляет делегированный доступ к ресурсам в вашей учетной записи хранения. Это означает, что клиенту можно предоставить ограниченное право на работу с объектами в вашей учетной записи хранения на определенный период времени и с определенным набором разрешений, не сообщая ему ключи доступа к своей учетной записи.
+[Подпись общего доступа (SAS)](./storage/common/storage-sas-overview.md) предоставляет делегированный доступ к ресурсам в вашей учетной записи хранения. Это означает, что клиенту можно предоставить ограниченное право на работу с объектами в вашей учетной записи хранения на определенный период времени и с определенным набором разрешений, не сообщая ему ключи доступа к своей учетной записи.
 
 Чтобы создать SAS для общей папки, сделайте следующее:
 

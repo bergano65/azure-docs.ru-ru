@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: terrylan
 manager: rkarlin
 ms.date: 09/15/2020
-ms.openlocfilehash: 52cb5ac5423aac0599ba2827667ee670dde286a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01232aa101e2964354acfbeb6cea341a0da33ca6
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331664"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489897"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>Защищенное хранилище для Microsoft Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "91331664"
 - Масштабируемый набор виртуальных машин — Windows и Linux.
 
 > [!NOTE]
-> Классические экземпляры IaaS не поддерживаются защищенное хранилище. Если у вас есть рабочие нагрузки, работающие на классических экземплярах IaaS, рекомендуется перенести их из классической модели в модель развертывания диспетчер ресурсов. Инструкции см. в статье [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](../../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+> Классические экземпляры IaaS не поддерживаются защищенное хранилище. Если у вас есть рабочие нагрузки, работающие на классических экземплярах IaaS, рекомендуется перенести их из классической модели в модель развертывания диспетчер ресурсов. Инструкции см. в статье [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](../../virtual-machines/migration-classic-resource-manager-overview.md).
 
 #### <a name="detailed-audit-logs"></a>Подробные журналы аудита
 
@@ -147,7 +147,7 @@ ms.locfileid: "91331664"
 
 - Специалист Майкрософт получает доступ к платформе Azure в рамках устранения неполадок и непроизвольно получает доступ к данным клиента. Например, команда по работе с сетями Azure выполняет устранение неполадок, что приводит к записи пакетов на сетевом устройстве. Однако если клиент зашифровал данные во время передачи, специалист не сможет их считать.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Защищенное хранилище автоматически доступны для всех клиентов, имеющих [план поддержки Azure](https://azure.microsoft.com/support/plans/) с минимальным уровнем **разработчика**.
 

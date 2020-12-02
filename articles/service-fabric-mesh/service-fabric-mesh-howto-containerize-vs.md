@@ -5,12 +5,12 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 11/08/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0f236292fff0d0e806e6eec32e1e058cbf67545c
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 2fb6aa7d7c655a1ba4b44dabc33e32ce04ae458f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93144483"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489281"
 ---
 # <a name="containerize-an-existing-net-app-for-service-fabric-mesh"></a>Контейнеризация существующего приложения .NET для сетки Service Fabric
 
@@ -33,33 +33,33 @@ ms.locfileid: "93144483"
 
 Если вы хотите попробовать, можно использовать пример кода [eShop](https://github.com/MikkelHegn/ContainersSFLab). Дальше в этой статье предполагается, что мы используем этот проект, но вы можете применить эти действия к своему собственному проекту.
 
-Получите копию проекта **eShop** .
+Получите копию проекта **eShop**.
 
 ```git
 git clone https://github.com/MikkelHegn/ContainersSFLab.git
 ```
 
-После загрузки в Visual Studio 2017 откройте **ContainersSFLab\eShopLegacyWebFormsSolution\eShopLegacyWebForms.sln** .
+После загрузки в Visual Studio 2017 откройте **ContainersSFLab\eShopLegacyWebFormsSolution\eShopLegacyWebForms.sln**.
 
 ## <a name="add-container-support"></a>Добавление поддержки контейнеров
  
 Добавьте поддержку оркестрации контейнеров в существующий консольный или ASP.NET проект с помощью средств сетки Service Fabric, как описано ниже.
 
-В обозревателе решений Visual Studio щелкните правой кнопкой мыши имя проекта (в примере это **eShopLegacyWebForms** ), а затем выберите **Добавить** > **Container Orchestrator Support** (Поддержка оркестратора контейнеров).
+В обозревателе решений Visual Studio щелкните правой кнопкой мыши имя проекта (в примере это **eShopLegacyWebForms**), а затем выберите **Добавить** > **Container Orchestrator Support** (Поддержка оркестратора контейнеров).
 Откроется диалоговое окно **Add Container Orchestrator Support** (Добавление поддержки оркестратора контейнеров).
 
 ![Диалоговое окно добавления оркестратора контейнеров Visual Studio](./media/service-fabric-mesh-howto-containerize-vs/add-container-orchestration-support.png)
 
-Из раскрывающегося списка выберите **Сетка Service Fabric** , а затем щелкните **ОК** .
+Из раскрывающегося списка выберите **Сетка Service Fabric**, а затем щелкните **ОК**.
 
 
 >[!NOTE]
-> Начиная с 2 ноября 2020 г. [ограничения скорости загрузки применяются](https://docs.docker.com/docker-hub/download-rate-limit/) к анонимным и прошедшим проверку подлинности запросам к концентратору DOCKER из учетных записей бесплатных планов DOCKER и применяются по IP-адресу. Дополнительные сведения см. в разделе [Проверка подлинности с помощью DOCKER Hub](https://docs.microsoft.com/azure/container-registry/buffer-gate-public-content#authenticate-with-docker-hub).
+> Начиная с 2 ноября 2020 года [ограничения скорости скачивания](https://docs.docker.com/docker-hub/download-rate-limit/) применяются к анонимным и прошедшим проверку подлинности запросам к Docker Hub из учетных записей бесплатных планов Docker по IP-адресу. Дополнительные сведения см. в разделе [Проверка подлинности с помощью Docker Hub](../container-registry/buffer-gate-public-content.md#authenticate-with-docker-hub).
 >
 > Чтобы избежать ограничения скорости, убедитесь, что значение по умолчанию `FROM microsoft/aspnet:4.7.2-windowsservercore-1803 AS base` в Dockerfile заменяется на `FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1803 AS base`
 
 Затем средство проверяет, установлен ли Docker, добавляет в проект файл Dockerfile и извлекает образ Docker для проекта.  
-В решение добавляется проект приложения сетки Service Fabric. Он содержит профили публикации сетки и файлы конфигурации. Имя этого проекта совпадает с именем вашего проекта, но в конце добавляется Application, например, **eShopLegacyWebFormsApplication** . 
+В решение добавляется проект приложения сетки Service Fabric. Он содержит профили публикации сетки и файлы конфигурации. Имя этого проекта совпадает с именем вашего проекта, но в конце добавляется Application, например, **eShopLegacyWebFormsApplication**. 
 
 В новом проекте сетки появятся две папки, на которые следует обратить внимание.
 - **Ресурсы приложений** содержит файлы YAML, которые описывают дополнительные ресурсы сетки, например, сеть.

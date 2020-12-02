@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
-ms.openlocfilehash: 526947c4d2db9fd87727fdd60c33bcaa9e75c6ff
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 8a82fd6e6dc1bea0804c429f3af46884f004de69
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699871"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489774"
 ---
 # <a name="azure-network-security-overview"></a>Обзор сетевой безопасности Azure
 
@@ -332,7 +332,7 @@ Azure предоставляет высокодоступное и высоко�
 
 Дополнительные сведения:
 
-* [Azure DDoS Protection Standard overview](../../virtual-network/ddos-protection-overview.md) (Обзор защиты от атак DDoS уровня "Стандартный")
+* [Azure DDoS Protection Standard overview](../../ddos-protection/ddos-protection-overview.md) (Обзор защиты от атак DDoS уровня "Стандартный")
 
 ## <a name="azure-front-door"></a>Azure Front Door
 
