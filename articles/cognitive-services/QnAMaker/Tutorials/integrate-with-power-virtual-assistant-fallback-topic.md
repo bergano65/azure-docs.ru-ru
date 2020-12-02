@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 11/09/2020
-ms.openlocfilehash: 322db4e1535e763f4c3e7c87afaa370471ba0b66
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 3801bb44fed6bf24788957c41de77c89b3025ae8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376304"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351118"
 ---
 # <a name="tutorial-add-your-knowledge-base-to-power-virtual-agents"></a>Руководство по добавлению базы знаний в Power Virtual Agents
 Создайте бот [Power Virtual Agents](https://powervirtualagents.microsoft.com/) и дополните его для предоставления ответов из базы знаний.
@@ -53,7 +53,7 @@ ms.locfileid: "94376304"
     * Вызовите действие (для потока Power Automate).
 * На портале [Power Automate](https://us.flow.microsoft.com/) сделайте следующее:
     * Найдите шаблон _Создание ответа с помощью QnA Maker_
-    * Используйте шаблон, чтобы настроить поток для использования [GenerateAnswer в QnA Maker](https://docs.microsoft.com/connectors/cognitiveservicesqnamaker/).
+    * Используйте шаблон, чтобы настроить поток для использования [GenerateAnswer в QnA Maker](/connectors/cognitiveservicesqnamaker/).
         * Информация о базе знаний, опубликованной в QnA Maker:
             * Идентификатор базы знаний
             * Узел конечной точки ресурса QnA Maker
@@ -258,6 +258,6 @@ ms.locfileid: "94376304"
 [Анализ базы знаний](../How-To/get-analytics-knowledge-base.md)
 
 См. также:
-* [Power Virtual Agents](https://docs.microsoft.com/power-virtual-agents/)
-* [Power Automate](https://docs.microsoft.com/power-automate/)
-* [Соединитель QnA Maker](https://us.flow.microsoft.com/connectors/shared_cognitiveservicesqnamaker/qna-maker/) и [настройки соединителя](https://docs.microsoft.com/connectors/cognitiveservicesqnamaker/)
+* [Power Virtual Agents](/power-virtual-agents/)
+* [Power Automate](/power-automate/)
+* [Соединитель QnA Maker](https://us.flow.microsoft.com/connectors/shared_cognitiveservicesqnamaker/qna-maker/) и [настройки соединителя](/connectors/cognitiveservicesqnamaker/)

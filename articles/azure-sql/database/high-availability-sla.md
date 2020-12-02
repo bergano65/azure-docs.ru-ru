@@ -12,12 +12,12 @@ author: sashan
 ms.author: sashan
 ms.reviewer: sstein, sashan
 ms.date: 10/28/2020
-ms.openlocfilehash: 6b6ae2ffca420dc126d56c0f1cfed9188dec0e47
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e5e58f8592fcf8627870c3a574335bbe34394064
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185612"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452461"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Высокий уровень доступности для базы данных SQL Azure и Управляемый экземпляр SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -112,7 +112,7 @@ ms.locfileid: "96185612"
 
 ## <a name="accelerated-database-recovery-adr"></a>Ускоренное восстановление базы данных (ADR)
 
-Технология [ускоренного восстановления базы данных (ADR)](../accelerated-database-recovery.md) — это новая функция ядра СУБД, которая значительно улучшает доступность базы данных, особенно при наличии длительных транзакций. В настоящее время ADR доступен для базы данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе Analytics (ранее — хранилище данных SQL).
+Технология [ускоренного восстановления базы данных (ADR)](../accelerated-database-recovery.md) — это новая функция ядра СУБД, которая значительно улучшает доступность базы данных, особенно при наличии длительных транзакций. В настоящее время ADR доступен для базы данных SQL Azure, Управляемый экземпляр Azure SQL и Azure синапсе Analytics.
 
 ## <a name="testing-application-fault-resiliency"></a>Тестирование отказоустойчивости приложения
 

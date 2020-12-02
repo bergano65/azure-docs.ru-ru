@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: fe911ac8985f9997125eb5149348b50a7fa83222
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 702a59f768bfe978e1a7708d91c6b6b1bb9c92fe
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109261"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452238"
 ---
 # <a name="using-azure-data-lake-storage-gen1-for-big-data-requirements"></a>Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных
 
@@ -38,7 +38,7 @@ ms.locfileid: "92109261"
 ### <a name="ad-hoc-data"></a>Специальные данные
 Это небольшие наборы данных, которые используются для создания прототипов приложений для работы с большими данными. В зависимости от источника данных применяются разные способы приема специальных данных.
 
-| источника данных | Средство для приема |
+| Источник данных | Средство для приема |
 | --- | --- |
 | Локальный компьютер |<ul> <li>[Портал Azure](data-lake-store-get-started-portal.md)</li> <li>[Azure PowerShell](data-lake-store-get-started-powershell.md)</li> <li>[Azure CLI](data-lake-store-get-started-cli-2.0.md)</li> <li>[Data Lake Tools для Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md) </li></ul> |
 | Большой двоичный объект хранилища Azure |<ul> <li>[Фабрика данных Azure](../data-factory/connector-azure-data-lake-store.md).</li> <li>[Средство AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp, запущенный на кластере HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |
@@ -78,7 +78,7 @@ ms.locfileid: "92109261"
 ### <a name="data-stored-in-on-premises-or-iaas-hadoop-clusters"></a>Данные, хранящиеся в локальных кластерах Hadoop или кластерах Hadoop в IaaS
 Большие объемы данных могут храниться в кластерах Hadoop, размещенных локально на компьютерах, использующих HDFS. Кластеры Hadoop могут быть развернуты локально или работать в кластере IaaS в Azure. К копированию таких данных в Azure Data Lake Storage 1-го поколения могут предъявляться требования, в зависимости от того, является ли эта операция одноразовой или повторяющейся. Существуют различные возможности выполнить их. Ниже приведен список альтернативных вариантов и связанные с ними компромиссы.
 
-| Подход | Подробнее | Преимущества | Рекомендации |
+| Метод | Сведения | Преимущества | Рекомендации |
 | --- | --- | --- | --- |
 | Использование Фабрики данных Azure (ADF) для копирования данных напрямую из кластеров Hadoop в Azure Data Lake Storage 1-го поколения |[ADF поддерживает HDFS в качестве источника данных.](../data-factory/connector-hdfs.md) |ADF реализована готовая поддержка HDFS, а также первоклассные инструменты комплексного управления и мониторинга. |Требуется развернуть шлюз управления данными в локальном кластере или кластере IaaS. |
 | Экспорт данных из Hadoop в виде файлов. Затем — копирование этих файлов в Azure Data Lake Storage 1-го поколения с помощью соответствующего механизма. |Вы можете скопировать файлы в Azure Data Lake Storage 1-го поколения с помощью: <ul><li>[Azure PowerShell только для Windows](data-lake-store-get-started-powershell.md)</li><li>[Azure CLI](data-lake-store-get-started-cli-2.0.md)</li><li>Пользовательское приложение, использующее любой пакет SDK для Azure Data Lake Storage 1-го поколения</li></ul> |Можно быстро приступить к работе. Возможны настраиваемые передачи данных. |Многоэтапный процесс с использованием нескольких технологий. Учитывая настраиваемый характер инструментов, со временем будет все сложнее осуществлять управление и мониторинг. |
@@ -130,5 +130,5 @@ ms.locfileid: "92109261"
 
 ![Визуализация данных в Data Lake Storage 1-го поколения](./media/data-lake-store-data-scenarios/visualize-data.png "Визуализация данных в Data Lake Storage 1-го поколения")
 
-* Вы можете начать с использования [фабрики данных Azure для перемещения данных из Data Lake Storage 1-го поколения в Azure синапсе Analytics (ранее — хранилище данных SQL)](../data-factory/copy-activity-overview.md) .
+* Вы можете начать с использования [фабрики данных Azure для перемещения данных из Data Lake Storage 1-го поколения в Azure синапсе Analytics](../data-factory/copy-activity-overview.md) .
 * После этого можно [интегрировать Power BI с Azure синапсе Analytics](/power-bi/connect-data/service-azure-sql-data-warehouse-with-direct-connect) для создания визуального представления данных.

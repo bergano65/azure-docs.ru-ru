@@ -11,19 +11,19 @@ ms.topic: tutorial
 ms.date: 02/03/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: b6d9ec0760cc8d95f712cfc7a5478de1a99465ef
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 76d7f4e31934480be57cd5ac133c1c7e6a9dd364
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94379877"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349611"
 ---
 # <a name="tutorial-single-page-video-search-app"></a>Руководство по Одностраничное приложение для поиска видео
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 API Bing для поиска видео позволяет выполнять поиск в Интернете и получать результаты видео, относящиеся к поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска в Интернете для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript.
 
 <!-- Remove until it can be replaced with a sanitized version.
@@ -325,7 +325,7 @@ API Bing для поиска новостей возвращает до четы
 
 ## <a name="rendering-result-items"></a>Отображение элементов результата
 
-В коде JavaScript есть объект `searchItemRenderers`, который содержит *обработчики* : функции, создающие HTML-код для каждого типа результатов поиска. На странице поиска видео используется только `videos`. См. другие руководства о различных типах рендеринга.
+В коде JavaScript есть объект `searchItemRenderers`, который содержит *обработчики*: функции, создающие HTML-код для каждого типа результатов поиска. На странице поиска видео используется только `videos`. См. другие руководства о различных типах рендеринга.
 
 ```javascript
 searchItemRenderers = {

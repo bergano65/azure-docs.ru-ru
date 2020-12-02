@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: jingwang
-ms.openlocfilehash: 117b0db4f04c3fd631f6692d288945019507f5c6
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 819f84eeb7540050fb001111690fb6d2ba484b2a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632810"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452304"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -32,7 +32,7 @@ ms.locfileid: "92632810"
 Управляемое удостоверение для фабрики данных предоставляет следующие возможности:
 
 - [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). в этом случае для Azure Key Vault проверки подлинности используется управляемое удостоверение фабрики данных.
-- Соединители, включая [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [базу данных SQL Azure](connector-azure-sql-database.md)и [Azure синапсе Analytics (ранее — хранилище данных SQL)](connector-azure-sql-data-warehouse.md).
+- Соединители, включая [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [базу данных SQL Azure](connector-azure-sql-database.md)и [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md).
 - [Веб-действие](control-flow-web-activity.md).
 
 ## <a name="generate-managed-identity"></a>Создать управляемое удостоверение
@@ -79,7 +79,7 @@ ProvisioningState : Succeeded
 PATCH https://management.azure.com/subscriptions/<subsID>/resourceGroups/<resourceGroupName>/providers/Microsoft.DataFactory/factories/<data factory name>?api-version=2018-06-01
 ```
 
-**Текст запроса** : add "identity": { "type": "SystemAssigned" }.
+**Текст запроса**: add "identity": { "type": "SystemAssigned" }.
 
 ```json
 {
@@ -92,7 +92,7 @@ PATCH https://management.azure.com/subscriptions/<subsID>/resourceGroups/<resour
 }
 ```
 
-**Ответ** . управляемое удостоверение создается автоматически, а раздел "Identity" заполняется соответствующим образом.
+**Ответ**. управляемое удостоверение создается автоматически, а раздел "Identity" заполняется соответствующим образом.
 
 ```json
 {
@@ -201,7 +201,7 @@ Type                  : ServicePrincipal
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}?api-version=2018-06-01
 ```
 
-**Ответ** . в следующем примере вы получите ответ, как показано ниже. Раздел "Identity" заполняется соответствующим образом.
+**Ответ**. в следующем примере вы получите ответ, как показано ниже. Раздел "Identity" заполняется соответствующим образом.
 
 ```json
 {

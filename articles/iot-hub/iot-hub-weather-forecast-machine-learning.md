@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 09/16/2020
 ms.author: robinsh
-ms.openlocfilehash: c53f78702aeb5404bd353274ddb29b9356229fae
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ab9e122ba0b2b50203a2d66ae14f03f3b6300f96
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145776"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452347"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning-studio-classic"></a>Прогноз погоды с использованием данных датчика из центра Интернета вещей в Машинное обучение Azure Studio (классическая модель)
 
@@ -46,7 +46,7 @@ ms.locfileid: "92145776"
   - Центр Интернета вещей Azure в подписке;
   - клиентское приложение, которое отправляет сообщения в Центр Интернета вещей Azure.
 - Учетная запись [Студии машинного обучения Azure (классической)](https://studio.azureml.net/).
-- Учетная запись [хранения Azure](../storage/common/storage-account-overview.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#types-of-storage-accounts)является **General-purpose v2** предпочтительной, но все учетные записи хранения Azure, поддерживающие хранилище BLOB-объектов Azure, также будут работать.
+- Учетная запись [хранения Azure](../storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#types-of-storage-accounts)является **General-purpose v2** предпочтительной, но все учетные записи хранения Azure, поддерживающие хранилище BLOB-объектов Azure, также будут работать.
 
 > [!Note]
 > В этой статье используется Azure Stream Analytics и несколько других платных услуг. Дополнительная плата взимается Azure Stream Analytics, когда данные должны передаваться в регионах Azure. По этой причине было бы полезно убедиться, что группа ресурсов, центр Интернета вещей и учетная запись хранения Azure, а также Машинное обучение Studio (классическая модель) и Azure Stream Analytics задание, добавленные далее в этом руководстве, находятся в одном регионе Azure. Вы можете проверить региональную поддержку для Машинное обучение Azure Studio (классическая модель) и других служб Azure на [странице доступность продуктов Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-studio&regions=all).
@@ -193,7 +193,7 @@ ms.locfileid: "92145776"
 
 ### <a name="add-a-function-to-the-stream-analytics-job-to-call-the-web-service-you-deployed"></a>Добавление в задание Stream Analytics функции для вызова развернутой веб-службы
 
-1. В разделе **топология задания**выберите **функции**.
+1. В разделе **топология задания** выберите **функции**.
 1. В области **функции** выберите **Добавить**, а затем выберите **Azure ML Studio** в раскрывающемся списке. (Убедитесь, что вы выбрали **Azure ML Studio**, а не **службу машинного обучения Azure**.) В области **Новая функция** выберите **параметр указать машинное обучение Azureную функцию вручную** и введите следующие сведения:
 
    **Псевдоним функции.** Введите `machinelearning`.
@@ -215,7 +215,7 @@ ms.locfileid: "92145776"
    WITH machinelearning AS (
       SELECT EventEnqueuedUtcTime, temperature, humidity, machinelearning(temperature, humidity) as result from [YourInputAlias]
    )
-   Select System.Timestamp time, CAST (result.[temperature] AS FLOAT) AS temperature, CAST (result.[humidity] AS FLOAT) AS humidity, CAST (result.[scored probabilities] AS FLOAT ) AS 'probabalities of rain'
+   Select System.Timestamp time, CAST (result.[temperature] AS FLOAT) AS temperature, CAST (result.[humidity] AS FLOAT) AS humidity, CAST (result.[scored probabilities] AS FLOAT ) AS 'probabalities of rain'
    Into [YourOutputAlias]
    From machinelearning
    ```
@@ -248,7 +248,7 @@ ms.locfileid: "92145776"
 
    ![Получение результатов прогноза погоды с помощью Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/weather-forecast-result.png)
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Вы успешно использовали Машинное обучение Azure Studio (классическая модель) для создания шанса дождя на основе данных о температуре и влажности, получаемых Центром Интернета вещей.
 

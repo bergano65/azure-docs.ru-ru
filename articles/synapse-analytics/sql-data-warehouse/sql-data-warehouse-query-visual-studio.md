@@ -1,6 +1,6 @@
 ---
-title: Подключение к VSTS
-description: Запросите Azure синапсе Analytics с помощью Visual Studio.
+title: Подключение к выделенному пулу SQL (ранее — хранилище данных SQL) с помощью VSTS
+description: Запросите выделенный пул SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics с помощью Visual Studio.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 08/15/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 59e0aed3ceda369909c6a4aecd03637a82a2dd1b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c55f8483ba54ecf9778693b364603d642ddb3deb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305384"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452327"
 ---
-# <a name="connect-to-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Подключение к Azure синапсе Analytics с помощью Visual Studio и SSDT
+# <a name="connect-to-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Подключение к выделенному пулу SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics с помощью Visual Studio и SSDT
 
 > [!div class="op_single_selector"]
 > * [Azure Data Studio](../sql/get-started-azure-data-studio.md)
@@ -29,16 +29,16 @@ ms.locfileid: "93305384"
 > 
 > 
 
-Используйте Visual Studio для запроса выделенного пула SQL в Azure синапсе всего за несколько минут. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
+Используйте Visual Studio для запроса выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе всего за несколько минут. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Существующий выделенный пул SQL. Чтобы создать его, см. раздел [Создание выделенного пула SQL](create-data-warehouse-portal.md).
+* Существующий выделенный пул SQL (ранее — хранилище данных SQL). Чтобы создать его, см. раздел [Создание выделенного пула SQL (ранее — хранилище данных SQL)](create-data-warehouse-portal.md).
 * Расширение SSDT для Visual Studio. Если у вас есть Visual Studio, возможно, у вас уже есть SSDT для Visual Studio. Инструкции по установке и доступные варианты установки приведены в статье [Начало работы с Visual Studio 2019](sql-data-warehouse-install-visual-studio.md).
-* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к выделенному пулу SQL](../sql/connect-overview.md).
+* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к выделенному пулу SQL (ранее — хранилище данных SQL)](sql-data-warehouse-connect-overview.md).
 
-## <a name="1-connect-to-your-dedicated-sql-pool"></a>1. подключение к выделенному пулу SQL
+## <a name="1-connect-to-your-dedicated-sql-pool-formerly-sql-dw"></a>1. подключение к выделенному пулу SQL (ранее — хранилище данных SQL)
 1. Откройте Visual Studio 2019.
 2. Откройте обозреватель объектов SQL Server, выбрав **представление**  >  **Обозреватель объектов SQL Server**.
    
@@ -80,4 +80,4 @@ ms.locfileid: "93305384"
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md).
 
-Сведения о настройке среды для проверки подлинности Azure Active Directory см. [в разделе аутентификация в выделенном пуле SQL](sql-data-warehouse-authentication.md).
+Сведения о настройке среды для проверки подлинности Azure Active Directory см. в разделе [Аутентификация в выделенном пуле SQL (ранее — хранилище данных SQL)](sql-data-warehouse-authentication.md).

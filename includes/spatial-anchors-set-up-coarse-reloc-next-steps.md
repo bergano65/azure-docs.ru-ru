@@ -1,19 +1,19 @@
 ---
-author: bucurb
-ms.author: bobuc
-ms.date: 09/18/2019
+author: msftradford
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.service: azure-spatial-anchors
 ms.topic: include
-ms.openlocfilehash: 5c34325e41a2020d7eb918a172ee2226e26d2f90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3c651a684f61396841038ff4329b76a16e6e9c4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74093010"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999770"
 ---
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнаете о том, как создавать и находить привязки с использованием датчиков устройств. Чтобы узнать больше о простом уточнении расположения, перейдите к руководству ниже.
 
 > [!div class="nextstepaction"]
-> [Coarse relocalization](/azure/spatial-anchors/concepts/coarse-reloc/) (Простое уточнение расположения)
+> [Coarse relocalization](../articles/spatial-anchors/concepts/coarse-reloc.md) (Простое уточнение расположения)

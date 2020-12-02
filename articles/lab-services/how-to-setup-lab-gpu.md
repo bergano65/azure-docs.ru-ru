@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: 264d103cd5f1459a6d29a35a1ecefc595285587a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8293ed1bfb53895b9631d9730fb75a2364457180
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433994"
+ms.locfileid: "96452370"
 ---
 # <a name="set-up-a-lab-with-gpu-virtual-machines"></a>Настройка лаборатории с помощью виртуальных машин GPU
 
@@ -37,7 +37,7 @@ ms.locfileid: "96433994"
 | Размер | Ядра | ОЗУ | Описание | 
 | ---- | ----- | --- | ----------- | 
 | Малый GPU (визуализация) | -&nbsp;6 &nbsp; ядер<br>-&nbsp;56 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NV6](../virtual-machines/nv-series.md) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования, в которых используются такие платформы, как OpenGL и DirectX. |
-| Средний GPU (визуализация) | -&nbsp;12 &nbsp; ядер<br>-&nbsp;112 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования, в которых используются такие платформы, как OpenGL и DirectX. |
+| Средний GPU (визуализация) | -&nbsp;12 &nbsp; ядер<br>-&nbsp;112 &nbsp; ГБ &nbsp; ОЗУ  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Этот размер лучше всего подходит для удаленной визуализации, потоковой передачи, игр и кодирования, в которых используются такие платформы, как OpenGL и DirectX. |
 
 > [!NOTE]
 > Некоторые из этих размеров виртуальных машин могут не отображаться в списке при создании лаборатории для аудитории. Этот список заполняется с учетом текущей емкости в расположении лаборатории. Если создатель учетной записи лаборатории [разрешил авторам лабораторий выбрать расположение для лабораторий](allow-lab-creator-pick-lab-location.md), вы можете попробовать другое расположение для лаборатории и узнать, доступен ли там нужный размер виртуальной машины. Сведения о доступности виртуальных машин см. [в разделе продукты, доступные по регионам](https://azure.microsoft.com/regions/services/?products=virtual-machines).
@@ -76,7 +76,7 @@ ms.locfileid: "96433994"
 1. После установки драйверов и другого программного обеспечения, необходимого для вашего класса, выберите **опубликовать** , чтобы создать виртуальные машины учащихся.
 
 > [!NOTE]
-> Если вы используете образ Linux, после загрузки установщика установите драйверы, следуя инструкциям в [статье Установка драйверов CUDA в Linux](../virtual-machines/linux/n-series-driver-setup.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#install-cuda-drivers-on-n-series-vms).
+> Если вы используете образ Linux, после загрузки установщика установите драйверы, следуя инструкциям в [статье Установка драйверов CUDA в Linux](../virtual-machines/linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#install-cuda-drivers-on-n-series-vms).
 
 #### <a name="install-the-visualization-gpu-drivers"></a>Установка драйверов графического процессора визуализации
 
@@ -86,7 +86,7 @@ ms.locfileid: "96433994"
 1. После создания лаборатории подключитесь к виртуальной машине шаблона, чтобы установить соответствующие драйверы.
 1. Установите драйверы сетки, предоставляемые корпорацией Майкрософт, на виртуальную машину шаблона, следуя инструкциям для вашей операционной системы:
    -  [Драйверы Windows NVIDIA GRID](../virtual-machines/windows/n-series-driver-setup.md#nvidia-grid-drivers)
-   -  [Драйверы сетки для Linux NVIDIA](../virtual-machines/linux/n-series-driver-setup.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#nvidia-grid-drivers)
+   -  [Драйверы сетки для Linux NVIDIA](../virtual-machines/linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#nvidia-grid-drivers)
   
 1. Перезапустите виртуальную машину шаблона.
 1. Проверьте правильность установки драйверов, следуя инструкциям в разделе [Проверка установленных драйверов](how-to-setup-lab-gpu.md#validate-the-installed-drivers) .

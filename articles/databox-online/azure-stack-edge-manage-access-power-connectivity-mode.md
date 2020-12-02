@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 9636c76caf2302b872a2ecbb8e2e4bacfc1408a6
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 6455e4c9fa9460e47e3be7c860f89be540a514b0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952137"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453068"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge-pro"></a>Управление доступом, питанием и режимом подключения для Azure Stack пограничных Pro
 
@@ -68,7 +68,7 @@ ms.locfileid: "91952137"
 
 У вас должен `User` быть доступ к Active Directory клиенту, как вам нужно `Read all directory objects` . Вы не можете быть гостевым пользователем, так как у него нет разрешений на доступ к `Read all directory objects` . Если вы являетесь гостевым компьютером, то операции, такие как создание ключа активации, создание общей папки на устройстве Azure Stack пограничной Pro, создание пользователя, Настройка роли вычислений ребра, сброс пароля устройства будут завершаться сбоем.
 
-Дополнительные сведения о том, как предоставить пользователям доступ к Microsoft Graph API, см. в разделе [Справочник по разрешениям Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference).
+Дополнительные сведения о том, как предоставить пользователям доступ к Microsoft Graph API, см. в разделе [Справочник по разрешениям Microsoft Graph](/graph/permissions-reference).
 
 ### <a name="register-resource-providers"></a>Регистрация поставщиков ресурсов
 
@@ -114,7 +114,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 Чтобы изменить режим устройства, выполните следующие действия:
 
 1. В локальном пользовательском веб-интерфейсе устройства перейдите к **Конфигурация > Параметры облака**.
-2. В раскрывающемся списке выберите режим, в котором будет использоваться устройство. Можно выбрать вариант от **полностью подключенных**, **частично подключенных**и **полностью отключенных**. Чтобы запустить устройство в частично автономном режиме, включите **управление порталом Azure**.
+2. В раскрывающемся списке выберите режим, в котором будет использоваться устройство. Можно выбрать вариант от **полностью подключенных**, **частично подключенных** и **полностью отключенных**. Чтобы запустить устройство в частично автономном режиме, включите **управление порталом Azure**.
 
     ![Режим подключения](media/azure-stack-edge-manage-access-power-connectivity-mode/connectivity-mode.png)
  

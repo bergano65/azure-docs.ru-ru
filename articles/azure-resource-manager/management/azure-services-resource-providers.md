@@ -2,19 +2,21 @@
 title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
-ms.date: 11/30/2020
-ms.openlocfilehash: fffac8fef8742cf1f151de06ba6b528035a6668d
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.date: 12/01/2020
+ms.openlocfilehash: faea6badc24d0152e94fc507cafdb15932d1ea3e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436833"
+ms.locfileid: "96452628"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
 В этой статье показано, как пространства имен поставщиков ресурсов сопоставляются со службами Azure.
 
 ## <a name="match-resource-provider-to-service"></a>Сопоставление поставщика ресурсов со службой
+
+Поставщики ресурсов, помеченные как **зарегистрированные** , регистрируются по умолчанию для вашей подписки. Дополнительные сведения см. в разделе [Регистрация](#registration).
 
 | Пространство имен поставщика ресурсов | Служба Azure |
 | --------------------------- | ------------- |

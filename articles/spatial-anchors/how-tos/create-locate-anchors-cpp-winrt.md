@@ -1,19 +1,19 @@
 ---
 title: Создание и поиск привязок в C++ (WinRT)
 description: В этой статье подробно рассказывается о том, как создавать и находить привязки с помощью Пространственных привязок Azure в C++ (WinRT).
-author: ramonarguelles
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: rgarcia
-ms.date: 02/24/2019
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 0c11e87934ee3ba2af97ee8d885b87d087a1c531
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: a6b51da695037fd84053ac0bf1b9be091781fbbf
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096425"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96018874"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-cwinrt"></a>Создание и поиск привязок с помощью Пространственных привязок Azure в C++ (WinRT)
 

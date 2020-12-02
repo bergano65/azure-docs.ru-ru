@@ -11,19 +11,19 @@ ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 7abd67ef072303b7f8156a18c2e3ac34758c03dd
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: bd01eaefa457c5ade10a5f1f4b8389d90ed60adf
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364740"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351952"
 ---
 # <a name="tutorial-build-a-web-page-spell-check-client"></a>Руководство по Создание веб-страницы клиента для проверки орфографии
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 В рамках работы с этим руководством мы создадим веб-страницу, с помощью которой пользователи смогут запрашивать API Bing для проверки орфографии. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/BingSpellCheckApp.html).
 
@@ -128,7 +128,7 @@ getSubscriptionKey = function() {
     }
 ```
 
-Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true** , функция getSubscriptionKey удаляет файл cookie, который содержит ключ API Bing для проверки орфографии. Если **invalidate** имеет значение **false** , функция getSubscriptionKey возвращает значение ключа API Bing для проверки орфографии.
+Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true**, функция getSubscriptionKey удаляет файл cookie, который содержит ключ API Bing для проверки орфографии. Если **invalidate** имеет значение **false**, функция getSubscriptionKey возвращает значение ключа API Bing для проверки орфографии.
 
 ```html
     function getSubscriptionKey(invalidate) {
@@ -276,7 +276,7 @@ function bingSpellCheck(query, key) {
 </form>
 ```
 
-Добавьте HTML-тег **div** , который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
+Добавьте HTML-тег **div**, который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
 
 ```html
 <h2>Results</h2>

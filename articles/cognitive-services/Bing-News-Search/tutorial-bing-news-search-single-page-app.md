@@ -11,19 +11,19 @@ ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: aahi
 ms.custom: seodec2018, devx-track-js
-ms.openlocfilehash: 0eef6f424c0360ba1378bafa738cbec7dbf05776
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c3d486a32f4a926ed42f3d67a1fa96d3da397beb
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098371"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351220"
 ---
 # <a name="tutorial-create-a-single-page-web-app"></a>Руководство по Создание одностраничного веб-приложения
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 API Bing для поиска новостей позволяет выполнять поиск новостей и получать результаты различных типов, релевантных поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска новостей для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/BingNewsSearchApp.html).
 
@@ -339,7 +339,7 @@ API Bing для поиска новостей возвращает до четы
 
 ## <a name="rendering-result-items"></a>Отображение элементов результата
 
-В коде JavaScript есть объект `searchItemRenderers`, который содержит функции- *обработчики* , создающие HTML-код для каждого типа результатов поиска.
+В коде JavaScript есть объект `searchItemRenderers`, который содержит функции-*обработчики*, создающие HTML-код для каждого типа результатов поиска.
 
 ```javascript
 searchItemRenderers = {

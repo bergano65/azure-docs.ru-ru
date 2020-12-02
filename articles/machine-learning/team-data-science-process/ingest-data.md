@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: f8eab59d810fb825dbebf80d01d8efd2dd0a9841
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46e911ad6bdf5a478d46e425f8700740ece56c6e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76720543"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452668"
 ---
 # <a name="load-data-into-storage-environments-for-analytics"></a>Загрузка данных в среды хранения для аналитики
 
-Процесс обработки и анализа данных группы требует, чтобы данные были приняты или загружены наиболее подходящим образом на каждом этапе. Назначения данных могут включать хранилище BLOB-объектов Azure, базы данных SQL Azure, SQL Server на виртуальной машине Azure, HDInsight (Hadoop), синапсе Analytics и Машинное обучение Azure. 
+Процесс обработки и анализа данных группы требует, чтобы данные были приняты или загружены наиболее подходящим образом на каждом этапе. Назначения данных могут включать хранилище BLOB-объектов Azure, базы данных SQL Azure, SQL Server на виртуальной машине Azure, HDInsight (Hadoop), Azure синапсе Analytics и Машинное обучение Azure. 
 
 В следующих статьях описывается, как выполняется прием данных в различных целевых средах, где данные могут храниться и обрабатываться:
 

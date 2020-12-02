@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: ceb8b8b31963317ccbbd1aee9f1b2606afc5a5db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5631cbdd0b1eae343899be2147720d980e605dbb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010255"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452717"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Как развернуть Windows 10 в Azure с правами на мультитенантное размещение 
 Клиентам, использующим Windows 10 Корпоративная E3 или Windows 10 Корпоративная E5 для каждого пользователя, либо Windows VDA для каждого пользователя (лицензии на подписку пользователя или дополнительные лицензии на подписку пользователя), права на мультитенантное размещение для Windows 10 позволяют перенести лицензии Windows 10 в облако и запустить виртуальные машины Windows 10 в Azure без необходимости платить за другую лицензию. Дополнительные сведения см. в [этом разделе](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
@@ -24,7 +24,7 @@ ms.locfileid: "96010255"
 >
 
 ## <a name="deploying-windows-10-image-from-azure-marketplace"></a>Развертывание образа Windows 10 из Azure Marketplace 
-Для развертывания с помощью PowerShell, CLI или шаблонов Azure Resource Manager образ Windows 10 можно найти со следующими именем издателя, предложением и номером SKU.
+Для развертывания шаблонов PowerShell, CLI и Azure Resource Manager можно найти образ Windows 10 со следующими PublisherName, предложением, SKU.
 
 | OS  |      PublisherName      |  ПРЕДЛОЖЕНИЕ | Sku |
 |:----------|:-------------:|:------|:------|
@@ -33,6 +33,15 @@ ms.locfileid: "96010255"
 | Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS3-Pro   |
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS3-ProN  |
 
+## <a name="qualify-for-multi-tenant-hosting-rights"></a>Квалификация прав на размещение нескольких клиентов 
+Чтобы получить права на размещение нескольких клиентов и запускать образы Windows 10 на пользователей Azure, необходимо иметь одну из следующих подписок: 
+
+-   Microsoft 365 E3/е/F3/a3/A5
+-   Windows 10 Корпоративная E3/с 
+-   Windows 10 для образовательных учреждений a3/A5
+-   Windows VDA E3/в.
+
+
 ## <a name="uploading-windows-10-vhd-to-azure"></a>Загрузка виртуального жесткого диска Windows 10 в Azure
 Если вы отправляете обобщенный виртуальный жесткий диск (VHD) Windows 10, учтите, что в Windows 10 встроенная учетная запись администратора не включена по умолчанию. Чтобы включить ее, добавьте следующую команду в качестве элемента расширения пользовательского скрипта.
 
@@ -40,7 +49,7 @@ ms.locfileid: "96010255"
 Net user <username> /active:yes
 ```
 
-Следующий фрагмент PowerShell предназначен для того, чтобы пометить все учетные записи администратора как активные, включая встроенную учетную запись администратора. Вам подойдет этот пример, если имя пользователя встроенной учетной записи администратора неизвестно.
+Следующий фрагмент кода PowerShell позволяет пометить все учетные записи администраторов как активные, включая встроенного администратора. Вам подойдет этот пример, если имя пользователя встроенной учетной записи администратора неизвестно.
 ```powershell
 $adminAccount = Get-WmiObject Win32_UserAccount -filter "LocalAccount=True" | ? {$_.SID -Like "S-1-5-21-*-500"}
 if($adminAccount.Disabled)

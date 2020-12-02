@@ -1,17 +1,17 @@
 ---
-author: ramonarguelles
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.date: 06/22/2020
+ms.date: 11/20/2020
 ms.topic: include
-ms.author: rgarcia
+ms.author: parkerra
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 4d20b7dee533dae17cfb1c6138e336b91c7e2b0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d57167a9a4713e268c6864f3f1b3f2b1498b4ddb
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85296191"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95998399"
 ---
 ## <a name="putting-everything-together"></a>Итоговое объединение
 
@@ -248,4 +248,4 @@ public class MainActivity extends AppCompatActivity {
 В этом руководстве вы научились создавать приложение Android, в котором функции ARCore интегрируются с Пространственными привязками Azure. Чтобы узнать больше о библиотеке Пространственных привязок Azure, перейдите к руководству по созданию и поиску привязок.
 
 > [!div class="nextstepaction"]
-> [Создание и поиск привязок с помощью Пространственных привязок Azure](/azure/spatial-anchors/create-locate-anchors-overview)
+> [Создание и поиск привязок с помощью Пространственных привязок Azure](../articles/spatial-anchors/create-locate-anchors-overview.md)

@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: feabfe505601276269c2774e3b39dd5cbaa32087
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fb3c7dd7b3d7e8e42e230eedcd0d1b43af104327
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022927"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452532"
 ---
 # <a name="secure-a-linked-service-with-private-links"></a>Защита связанной службы с помощью частных ссылок
 
@@ -66,10 +66,10 @@ ms.locfileid: "96022927"
 
 Теперь вы установили безопасное и частное подключение между синапсе и связанной службой.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
-Дополнительные сведения об управляемой частной конечной точке в синапсе Analytics см. в разделе [управляемые частные конечные точки](../security/synapse-workspace-managed-private-endpoints.md).
+Дополнительные сведения об управляемой частной конечной точке в Azure синапсе Analytics см. в разделе [управляемые частные конечные точки](../security/synapse-workspace-managed-private-endpoints.md).
 
 
-Дополнительные сведения об интеграции данных для синапсе Analytics см. в статье прием [данных в Data Lake](data-integration-data-lake.md) .
+Дополнительные сведения об интеграции данных для Azure синапсе Analytics см. в статье прием [данных в Data Lake](data-integration-data-lake.md) .

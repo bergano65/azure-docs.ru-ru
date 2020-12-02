@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 742c69709eee19a37abdb3e5330cd7fb8ce315b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65584b2a6a3bdfbb863c26dac688b20279c4b54d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89436397"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452287"
 ---
 # <a name="add-fault-tolerance-in-copy-activity-by-skipping-incompatible-rows"></a>Обеспечение отказоустойчивости для действия копирования с помощью пропуска несовместимых строк
 
@@ -48,7 +48,7 @@ ms.locfileid: "89436397"
     Пример: выполняется копирование данных из SQL Server в базу данных SQL. Определен первичный ключ в базе данных SQL приемников, но такой первичный ключ не определен на исходном сервере SQL Server. Повторяющиеся строки, которые существуют в источнике, не удается скопировать в приемник. Действие копирования копирует только первую строку из источника данных в приемник. Последующие строки в источнике, которые содержат повторяющиеся значения первичного ключа, определяются как несовместимые и пропускаются.
 
 >[!NOTE]
->Эта функция не применяется, если действие копирования настроено для вызова механизма загрузки внешних данных, включая [Azure синапсе Analytics (ранее — хранилище данных SQL) polybase](data-factory-azure-sql-data-warehouse-connector.md#use-polybase-to-load-data-into-azure-synapse-analytics) или [Amazon RedShift Unload](data-factory-amazon-redshift-connector.md#use-unload-to-copy-data-from-amazon-redshift). Для загрузки данных в Azure синапсе Analytics с помощью Polybase используйте собственную поддержку отказоустойчивости Polybase, указав "[polyBaseSettings](data-factory-azure-sql-data-warehouse-connector.md#sqldwsink)" в действии копирования.
+>Эта функция не применяется, если действие копирования настроено для вызова механизма загрузки внешних данных, включая [Azure синапсе Analytics polybase](data-factory-azure-sql-data-warehouse-connector.md#use-polybase-to-load-data-into-azure-synapse-analytics) или [Amazon RedShift Unload](data-factory-amazon-redshift-connector.md#use-unload-to-copy-data-from-amazon-redshift). Для загрузки данных в Azure синапсе Analytics с помощью Polybase используйте собственную поддержку отказоустойчивости Polybase, указав "[polyBaseSettings](data-factory-azure-sql-data-warehouse-connector.md#sqldwsink)" в действии копирования.
 
 ## <a name="configuration"></a>Конфигурация
 В следующем примере приводится определение JSON для настройки пропуска несовместимых строк в действии копирования:
@@ -74,7 +74,7 @@ ms.locfileid: "89436397"
 | **enableSkipIncompatibleRow** | Включить или отключить пропуск несовместимых строк во время копирования. | True<br/>False (по умолчанию) | Нет |
 | **redirectIncompatibleRowSettings** | Группа свойств, которые можно указать, если вы хотите записать несовместимые строки в журнал. | &nbsp; | нет |
 | **linkedServiceName** | Связанная служба хранилища Azure, в которой будет храниться журнал, содержащий пропущенные строки. | Имя связанной службы [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service) или [AzureStorageSas](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service), которая будет ссылаться на экземпляр хранилища, используемый для хранения файла журнала. | Нет |
-| **path** | Путь к файлу журнала, который содержит пропущенные строки. | Укажите путь к хранилищу BLOB-объектов, в котором будут храниться несовместимые данные. Если путь не указан, служба создаст контейнер самостоятельно. | нет |
+| **путь** | Путь к файлу журнала, который содержит пропущенные строки. | Укажите путь к хранилищу BLOB-объектов, в котором будут храниться несовместимые данные. Если путь не указан, служба создаст контейнер самостоятельно. | нет |
 
 ## <a name="monitoring"></a>Наблюдение
 Когда действие копирования будет завершено, вы увидите число пропущенных строк в разделе мониторинга:

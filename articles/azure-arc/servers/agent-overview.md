@@ -1,14 +1,14 @@
 ---
 title: Общие сведения об агенте Connected Machine для Windows
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
-ms.date: 09/30/2020
+ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8a66f99f535013b8aac52fdee43b91a8c734b10a
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 1bc9546e6db35153424ba670f8157adb86d19b71
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577589"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452958"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "94577589"
     * Назначение гостя хранится локально в течение 14 дней. В течение 14-дневного периода, если агент подключенного компьютера повторно подключается к службе, назначения политик применяются заново.
     * Назначения удаляются через 14 дней и не переназначаются компьютеру после 14-дневного периода.
 
-* Агент расширений управляет расширениями виртуальной машины, включая установку, удаление и обновление. Расширения загружаются из Azure и копируются в `%SystemDrive%\AzureConnectedMachineAgent\ExtensionService\downloads` папку в Windows, а для Linux — `/opt/GC_Ext/downloads` . В Windows расширение устанавливается по следующему пути `%SystemDrive%\Packages\Plugins\<extension>` , а в Linux расширение устанавливается в `/var/lib/waagent/<extension>` .
+* Агент расширений управляет расширениями виртуальной машины, включая установку, удаление и обновление. Расширения загружаются из Azure и копируются в `%SystemDrive%\%ProgramFiles%\AzureConnectedMachineAgent\ExtensionService\downloads` папку в Windows, а для Linux — `/opt/GC_Ext/downloads` . В Windows расширение устанавливается по следующему пути `%SystemDrive%\Packages\Plugins\<extension>` , а в Linux расширение устанавливается в `/var/lib/waagent/<extension>` .
 
 ## <a name="download-agents"></a>Скачивание агентов
 
@@ -170,9 +170,9 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     |%ProgramData%\AzureConnectedMachineAgent |Содержит файлы конфигурации агента.|
     |%ProgramData%\AzureConnectedMachineAgent\Tokens |Содержит полученные маркеры.|
     |%ProgramData%\AzureConnectedMachineAgent\Config |Содержит файл конфигурации агента `agentconfig.json` с записями сведений о регистрации в службе.|
-    |%SystemDrive%\Program Филес\аркконнектедмачинеажент\екстенсионсервице\гк | Путь установки, содержащий файлы гостевого агента конфигурации. |
+    |%програмфилес%\аркконнектедмачинеажент\екстенсионсервице\гк | Путь установки, содержащий файлы гостевого агента конфигурации. |
     |%ProgramData%\GuestConfig |Содержит политики (примененные) из Azure.|
-    |%системдриве%\азуреконнектедмачинеажент\екстенсионсервице\довнлоадс | Расширения загружаются из Azure и копируются здесь.|
+    |%програмфилес%\азуреконнектедмачинеажент\екстенсионсервице\довнлоадс | Расширения загружаются из Azure и копируются здесь.|
 
 * Во время установки агента на целевом компьютере создаются указанные ниже службы Windows.
 
@@ -196,14 +196,14 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     |%ProgramData%\AzureConnectedMachineAgent\Log\azcmagent.log |Содержит выходные данные команд инструмента azcmagent при использовании аргумента подробного протоколирования (-v).|
     |%ProgramData%\GuestConfig\gc_agent_logs\gc_agent.log |Записывает сведения о действиях службы DSC,<br> в частности, подключение между службой ХИМДС и политикой Azure.|
     |%ProgramData%\GuestConfig\gc_agent_logs\gc_agent_telemetry.txt |Записывает сведения о телеметрии службы DSC и подробном протоколировании.|
-    |%Системдриве%\програмдата\гуестконфиг\ ext_mgr_logs|Записывает сведения о компоненте агента расширения.|
-    |%Системдриве%\програмдата\гуестконфиг\ extension_logs\<Extension>|Записывает сведения об установленном расширении.|
+    |%Програмдата%\гуестконфиг\ ext_mgr_logs|Записывает сведения о компоненте агента расширения.|
+    |%Програмдата%\гуестконфиг\ extension_logs\<Extension>|Записывает сведения об установленном расширении.|
 
 * Создается локальная группа безопасности **приложений расширения гибридного агента**.
 
 * Во время удаления агента указанные ниже артефакты не удаляются.
 
-    * *%Програмдата%\азуреконнектедмачинеажент\лог
+    * %програмдата%\азуреконнектедмачинеажент\лог
     * %ProgramData%\AzureConnectedMachineAgent и подкаталоги
     * %ProgramData%\GuestConfig
 

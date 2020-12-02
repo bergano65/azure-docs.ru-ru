@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 zone_pivot_groups: programming-languages-set-twenty-six
-ms.openlocfilehash: 8d8da39f038f465030a2dced092ab1b008e30e5e
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 3aa236570e518b142adb8382387a8cdea4fc08a0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511514"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453273"
 ---
 # <a name="iot-plug-and-play-device-developer-guide"></a>Справочное руководством для разработчиков IoT Plug and Play
 
@@ -62,13 +62,13 @@ Plug and Play IoT позволяет создавать интеллектуал
 
 :::zone-end
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о разработке Plug and Play для устройств IoT, ниже приведены некоторые дополнительные ресурсы.
 
 - [Язык определения цифровых двойников (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl)
-- [Пакет SDK для устройств для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
-- [REST API IoT](https://docs.microsoft.com/rest/api/iothub/device)
+- [Пакет SDK для устройств для C](/azure/iot-hub/iot-c-sdk-ref/)
+- [REST API IoT](/rest/api/iothub/device)
 - [Компоненты модели](concepts-components.md)
 - [Установка и использование средств разработки ДТДЛ](howto-use-dtdl-authoring-tools.md)
 - [Руководством для разработчиков служб IoT Plug and Play](concepts-developer-guide-service.md)

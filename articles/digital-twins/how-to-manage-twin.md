@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 9e00e0e5a34eecd6974e8919ce0d0e16f48757f3
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ba444a497fa4fccab6b8dec1fadb3383420e4d49
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540975"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452970"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
@@ -23,7 +23,7 @@ ms.locfileid: "94540975"
 > [!TIP]
 > Все функции пакета SDK имеют синхронные и асинхронные версии.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
@@ -99,7 +99,7 @@ Console.WriteLine("The twin is created successfully");
 ```csharp
 object result = await client.GetDigitalTwin(id);
 ```
-Этот вызов возвращает двойника данные в виде строго типизированного типа объекта, такого как `BasicDigitalTwin` . Ниже приведен пример использования этого параметра для просмотра сведений о двойника:
+Этот вызов возвращает двойника данные в виде строго типизированного типа объекта, такого как `BasicDigitalTwin` . `BasicDigitalTwin` — Это вспомогательный класс сериализации, входящий в состав пакета SDK, который будет возвращать основные метаданные и свойства двойника в предварительно проанализированной форме. Ниже приведен пример использования этого параметра для просмотра сведений о двойника:
 
 ```csharp
 Response<BasicDigitalTwin> twin = client.GetDigitalTwin("myRoomId");
@@ -117,7 +117,7 @@ foreach (string prop in twin.Contents.Keys)
 
 Чтобы получить несколько двойников с помощью одного вызова API, ознакомьтесь с примерами API запросов в разделе [*инструкции. запрос к графу двойника*](how-to-query-graph.md).
 
-Рассмотрим следующую модель (написанную на [языке определения цифровых двойников (дтдл)](https://github.com/Azure/opendigitaltwins-dtdl/tree/master/DTDL)), которая определяет *Луна* :
+Рассмотрим следующую модель (написанную на [языке определения цифровых двойников (дтдл)](https://github.com/Azure/opendigitaltwins-dtdl/tree/master/DTDL)), которая определяет *Луна*:
 
 ```json
 {
@@ -176,21 +176,7 @@ foreach (string prop in twin.Contents.Keys)
     - Состояние синхронизации для каждого записываемого свойства. Это наиболее полезно для устройств, где служба и устройство могут иметь состояние рассогласования (например, если устройство находится в автономном режиме). В настоящее время это свойство применяется только к физическим устройствам, подключенным к центру Интернета вещей. С данными в разделе метаданных можно понять полное состояние свойства, а также отметку времени последнего изменения. Дополнительные сведения о состоянии синхронизации см. в [этом руководстве центра Интернета вещей](../iot-hub/tutorial-device-twins.md) по синхронизации состояния устройства.
     - Зависящие от службы метаданные, например из центра Интернета вещей или Azure Digital двойников. 
 
-Вы можете проанализировать возвращенный JSON для двойника, используя библиотеку анализа JSON по своему усмотрению, например `System.Text.Json` .
-
-Можно также использовать вспомогательный класс сериализации `BasicDigitalTwin` , включенный в пакет SDK, который возвращает основные метаданные и свойства двойника в предварительно проанализированной форме. Например:
-
-```csharp
-Response<BasicDigitalTwin> twin = client.GetDigitalTwin(twin_Id);
-Console.WriteLine($"Model id: {twin.Metadata.ModelId}");
-foreach (string prop in twin.Contents.Keys)
-{
-    if (twin.Contents.TryGetValue(prop, out object value))
-        Console.WriteLine($"Property '{prop}': {value}");
-}
-```
-
-Дополнительные сведения о вспомогательных классах сериализации см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
+Дополнительные сведения о вспомогательных классах сериализации `BasicDigitalTwin` см. в статье [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
 
 ## <a name="view-all-digital-twins"></a>Просмотреть все цифровые двойников
 

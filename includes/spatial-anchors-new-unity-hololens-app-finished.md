@@ -1,17 +1,17 @@
 ---
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.date: 06/22/2020
+ms.date: 11/20/2020
 ms.topic: include
-ms.author: crtreasu
+ms.author: parkerra
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: aed5b18a1241aa914f49e7613bd8a6f4a03eff2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1986764a44a98208ee79819fa200034ec34370bf
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87375466"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95996273"
 ---
 ## <a name="putting-everything-together"></a>Итоговое объединение
 
@@ -405,4 +405,4 @@ public class AzureSpatialAnchorsScript : MonoBehaviour
 В этом учебнике вы узнаете больше об использовании службы "Пространственные привязки Azure" в новом приложении Unity HoloLens. Чтобы узнать больше об использовании Пространственных привязок Azure в новом приложении Android, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Руководство по Пошаговые инструкции по созданию нового приложения Android с использованием Пространственных привязок Azure](/azure/spatial-anchors/tutorials/tutorial-new-android-app)
+> [Руководство по Пошаговые инструкции по созданию нового приложения Android с использованием Пространственных привязок Azure](../articles/spatial-anchors/tutorials/tutorial-new-android-app.md)

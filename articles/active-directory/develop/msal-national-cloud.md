@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 11/22/2019
 ms.author: negoe
-ms.reviewer: nacanuma
+ms.reviewer: marsma, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 566c429fc70ae3f0fc18f024b745d8142535932c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 2f631ad650b20110084ff902043447f26c2d4ab3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348413"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453601"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Использование MSAL в национальной облачной среде
 
@@ -150,9 +150,9 @@ const myMSALObj = new UserAgentApplication(msalConfig);
     "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
     ```
 
-- Для вызова Microsoft Graph требуется конкретный URL-адрес конечной точки графа, зависящий от используемого облака. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+- Для вызова API Microsoft Graph требуется URL-адрес конечной точки, относящийся к используемому облаку. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
 
-    Ниже приведен пример конечной точки графа с областью действия:
+    Ниже приведен пример конечной точки Microsoft Graph с областью действия:
 
     ```json
     "endpoint" : "https://graph.microsoft.us/v1.0/me"
@@ -173,7 +173,7 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
 ```
 
-- Для вызова Microsoft Graph требуется конкретный URL-адрес конечной точки графа, зависящий от используемого облака. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+- Для вызова API Microsoft Graph требуется URL-адрес конечной точки, относящийся к используемому облаку. Чтобы найти Microsoft Graph конечных точек для всех национальных облаков, см. статью [Microsoft Graph и корневые конечные точки службы Graph Explorer](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
 
 Ниже приведен пример конечной точки графа с областью действия:
 
@@ -222,9 +222,10 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. также:
+Список URL-адресов портал Azure и конечных точек токенов для каждого облака см. в разделе [местные облачные конечные точки аутентификации](authentication-national-cloud.md) .
 
-- [Проверка подлинности в национальных облаках](authentication-national-cloud.md)
+Документация по национальной облаку:
+
 - [Azure для государственных организаций](../../azure-government/index.yml)
 - [Azure China 21Vianet](/azure/china/)
 - [Azure для Германии](../../germany/index.yml)

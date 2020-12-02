@@ -1,19 +1,19 @@
 ---
 title: Руководство по созданию приложения HoloLens Unity
 description: Из этого учебника вы узнаете, как создать приложение HoloLens Unity с использованием Пространственных привязок Azure.
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: crtreasu
-ms.date: 08/17/2020
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: e94ced70ad17286612328884d03d4d1253b7818b
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: ee0bf9b4ce009f37dd1931d4ed030defa24e7d38
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096544"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95996272"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство по созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "92096544"
 
 **Создание шаблона сферы**
 1. Последовательно выберите **GameObject** -> **3D Object** -> **Sphere** (GameObject -> Трехмерный объект -> Сфера).
-2. В разделе **Inspector** (Инспектор) установите масштаб**0.25, 0.25, 0.25**.
+2. В разделе **Inspector** (Инспектор) установите масштаб **0.25, 0.25, 0.25**.
 3. Найдите объект **Sphere** (Сфера) на панели **Hierarchy** (Иерархия). Щелкните его и перетащите в папку **Assets** (Ресурсы) на панели **Project** (Проект).
 4. Щелкните правой кнопкой мыши созданную ранее сферу на панели **Hierarchy** (Иерархия) и выберите **Delete** (Удалить).
 

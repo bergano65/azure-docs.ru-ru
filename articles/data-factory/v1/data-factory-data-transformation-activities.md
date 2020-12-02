@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 91755dd1b5eea9f72978e09a605fc47d41ff3dee
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: dfe8863f38da0aeb701b063f051a199e27745eeb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371721"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453361"
 ---
 # <a name="transform-data-in-azure-data-factory-version-1"></a>Преобразование данных в фабрике данных Azure версии 1
 > [!div class="op_single_selector"]
@@ -65,7 +65,7 @@ ms.locfileid: "92371721"
 Дополнительные сведения об этих действиях Studio (классическая модель) см. в статье [Использование действий машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md) . 
 
 ## <a name="stored-procedure-activity"></a>Действие хранимой процедуры
-Вы можете использовать действие SQL Server хранимой процедуры в конвейере фабрики данных для вызова хранимой процедуры в одном из следующих хранилищ данных: база данных SQL Azure, Azure синапсе Analytics (ранее — хранилище данных SQL), SQL Server базу данных на предприятии или виртуальную машину Azure. Дополнительные сведения см. в статье о [действии хранимой процедуры](data-factory-stored-proc-activity.md) .  
+Вы можете использовать действие SQL Server хранимой процедуры в конвейере фабрики данных для вызова хранимой процедуры в одном из следующих хранилищ данных: база данных SQL Azure, Azure синапсе Analytics, SQL Server базу данных на предприятии или на виртуальной машине Azure. Дополнительные сведения см. в статье о [действии хранимой процедуры](data-factory-stored-proc-activity.md) .  
 
 ## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL Data Lake Analytics
 Действие U-SQL Data Lake Analytics запускает сценарий U-SQL для кластера Azure Data Lake Analytics. Дополнительные сведения см. в статье о [действиях U-SQL в аналитике данных](data-factory-usql-activity.md) . 
@@ -92,7 +92,7 @@ ms.locfileid: "92371721"
 | [Pig](data-factory-pig-activity.md) |HDInsight [Hadoop] |
 | [MapReduce](data-factory-map-reduce.md) |HDInsight [Hadoop] |
 | [Потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |HDInsight [Hadoop] |
-| [Действия Машинное обучение Azure Studio (классическая модель): выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |Azure |
+| [Действия Машинного обучения Azure Studio (классическая модель): машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |Azure |
 | [Хранимая процедура](data-factory-stored-proc-activity.md) |Azure SQL, Azure Synapse Analytics или SQL Server |
 | [Аналитика озера данных U-SQL](data-factory-usql-activity.md) |Аналитика озера данных Azure |
 | [DotNet](data-factory-use-custom-activities.md) |HDInsight [Hadoop] или пакетная служба Azure |

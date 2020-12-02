@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 1c9ae694fefcede599331d5d57a298bda4739f53
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: c290236dfe7e88999847f8cb0d66b2d3c868c1ab
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920531"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453295"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mariadb"></a>Уведомление о плановом обслуживании в базе данных Azure для MariaDB
 
@@ -61,7 +61,7 @@ ms.locfileid: "94920531"
 7. Убедитесь, что для параметра Включить правило при создании задано значение Да.
 8. Выберите **создать правило генерации оповещений** , чтобы завершить оповещение.
 
-Подробные инструкции по созданию **оповещений о работоспособности службы** см. в статье [Создание оповещений журнала действий для уведомлений службы](../service-health/alerts-activity-log-service-notifications.md).
+Подробные инструкции по созданию **оповещений о работоспособности службы** см. в статье [Создание оповещений журнала действий для уведомлений службы](../service-health/alerts-activity-log-service-notifications-portal.md).
 
 ## <a name="can-i-cancel-or-postpone-planned-maintenance"></a>Можно ли отменить или отложить плановое обслуживание?
 
@@ -76,7 +76,7 @@ ms.locfileid: "94920531"
 Временная ошибка, также известная как временный сбой, является ошибкой, которая устраняется автоматически. Во время обслуживания могут возникать [временные ошибки](./concepts-connectivity.md#transient-errors) . Большинство из этих событий автоматически устраняются системой менее чем за 60 секунд. Временные ошибки следует обрабатывать с помощью [логики повторных попыток](./concepts-connectivity.md#handling-transient-errors).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если у вас есть вопросы и предложения по работе с базой данных Azure для MariaDB, отправьте сообщение электронной почты для команды "база данных Azure для MariaDB" по адресу AskAzureDBforMariaDB@service.microsoft.com
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-metric.md).

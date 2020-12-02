@@ -11,19 +11,19 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 8d5352a79d2920701c96289f6162c1466f0f9f75
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 6a2c69735c36c06cdf72efc812aa1ac4020ff00a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94367579"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342232"
 ---
 # <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Руководство по Получение результатов поиска на веб-странице
 
 > [!WARNING]
-> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](https://aka.ms/cogsvcs/bingmove).
+> API Поиска Bing будут перенесены из Cognitive Services в службы Поиска Bing. С **30 октября 2020 г.** подготовку всех новых экземпляров Поиска Bing необходимо будет выполнять в соответствии с процедурой, описанной [здесь](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 > API-интерфейсы Поиска Bing, подготовленные с помощью Cognitive Services, будут поддерживаться в течение следующих трех лет или до завершения срока действия вашего Соглашения Enterprise (в зависимости от того, какой период окончится раньше).
-> Инструкции по миграции см. в статье о [службах Поиска Bing](https://aka.ms/cogsvcs/bingmigration).
+> Инструкции по миграции см. в статье о [службах Поиска Bing](/bing/search-apis/bing-web-search/create-bing-search-service-resource).
 
 В рамках работы с этим руководством мы создадим веб-страницу, которая позволит пользователям запрашивать API автозаполнения Bing.
 
@@ -124,7 +124,7 @@ getSubscriptionKey = function() {
     }
 ```
 
-Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true** , функция getSubscriptionKey удаляет файл cookie, который содержит ключ API автозаполнения Bing. Если **invalidate** имеет значение **false** , функция getSubscriptionKey возвращает значение ключа API автозаполнения Bing.
+Вспомогательная функция getSubscriptionKey принимает один параметр — **invalidate**. Если **invalidate** имеет значение **true**, функция getSubscriptionKey удаляет файл cookie, который содержит ключ API автозаполнения Bing. Если **invalidate** имеет значение **false**, функция getSubscriptionKey возвращает значение ключа API автозаполнения Bing.
 
 ```html
     function getSubscriptionKey(invalidate) {
@@ -272,7 +272,7 @@ function bingAutosuggest(query, key) {
 </form>
 ```
 
-Добавьте HTML-тег **div** , который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
+Добавьте HTML-тег **div**, который мы используем для отображения результатов. Определенный ранее код JavaScript обращается к этому тегу **div**.
 
 ```html
 <h2>Results</h2>

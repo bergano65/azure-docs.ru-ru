@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 7/17/2020
-ms.openlocfilehash: 0863ccda9f292f3da9f7064a78ba700ab5962eb2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bd7d08e4f65612b9a76b63e8153603d043209ad3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014641"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453373"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mariadb"></a>Сведения об использовании конечных точек служб и правил виртуальной сети с Базой данных Azure для MariaDB
 
@@ -112,7 +112,7 @@ ms.locfileid: "96014641"
 
 - Правила виртуальной сети применяются только к виртуальным сетям Azure Resource Manager, но не к сетям на основе [классической модели развертывания][resource-manager-deployment-model-568f].
 
-- Включение конечных точек службы виртуальной сети в базу данных Azure для MariaDB с помощью тега службы **Microsoft. SQL** также позволяет использовать конечные точки для всех служб базы данных Azure: база данных Azure для MariaDB, база данных Azure для MySQL, база данных Azure для PostgreSQL, база данных SQL Azure и аналитика Azure синапсе (ранее — хранилище данных SQL).
+- Включение конечных точек службы виртуальной сети в базу данных Azure для MariaDB с помощью тега службы **Microsoft. SQL** также позволяет использовать конечные точки для всех служб базы данных Azure: база данных Azure для MariaDB, база данных Azure для MySQL, база данных Azure для PostgreSQL, база данных SQL Azure и аналитика Azure синапсе.
 
 - Поддержка конечных точек службы виртуальной сети предназначена только для серверов общего назначения и серверов, оптимизированных для операций в памяти.
 
@@ -138,7 +138,7 @@ ms.locfileid: "96014641"
 - [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
 - [Создание правил виртуальной сети базы данных Azure для MariaDB и управление ими на портале Azure](howto-manage-vnet-portal.md)
  

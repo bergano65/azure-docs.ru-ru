@@ -1,6 +1,6 @@
 ---
-title: Мониторинг рабочей нагрузки пула SQL с помощью динамических административных представлений
-description: Узнайте, как отслеживать рабочую нагрузку пула SQL Azure синапсе Analytics и выполнение запросов с помощью динамических административных представлений.
+title: Мониторинг выделенной рабочей нагрузки пула SQL с помощью динамических административных представлений
+description: Узнайте, как отслеживать выделенную рабочую нагрузку пула SQL Azure синапсе Analytics и выполнение запросов с помощью динамических административных представлений.
 services: synapse-analytics
 author: ronortloff
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 03/24/2020
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: synapse-analytics
-ms.openlocfilehash: 70ce0d6aada2b03646500720b0eba980a1f2d8f8
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 1992c3d525fc1f5a098e1969887a752233d47990
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515735"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453805"
 ---
-# <a name="monitor-your-azure-synapse-analytics-sql-pool-workload-using-dmvs"></a>Мониторинг рабочей нагрузки пула SQL Azure синапсе Analytics с помощью динамических административных представлений
+# <a name="monitor-your-azure-synapse-analytics-dedicated-sql-pool-workload-using-dmvs"></a>Мониторинг выделенной рабочей нагрузки пула SQL Azure синапсе Analytics с помощью динамических административных представлений
 
 В этой статье описывается, как использовать динамические административные представления (DMV) для наблюдения за рабочей нагрузкой, включая анализ выполнения запросов в пуле SQL.
 

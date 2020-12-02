@@ -12,17 +12,17 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 06/17/2020
-ms.openlocfilehash: 72af066cbff809521c34bb8db88ab0b3e5092fc4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: ce528e268e0ed1e34f53e32196bceef5ad8a2fcb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841144"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452500"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Правила брандмауэра для базы данных SQL Azure и IP-адреса Azure синапсе
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-Например, при создании нового сервера в базе данных SQL Azure или Azure синапсе Analytics с именем *MySQLServer*, к примеру, брандмауэр уровня сервера блокирует доступ к общедоступной конечной точке сервера (который доступен по адресу *MySQLServer.Database.Windows.NET*). Для простоты *база данных SQL* используется для ссылки на базу данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL).
+Например, при создании нового сервера в базе данных SQL Azure или Azure синапсе Analytics с именем *MySQLServer*, к примеру, брандмауэр уровня сервера блокирует доступ к общедоступной конечной точке сервера (который доступен по адресу *MySQLServer.Database.Windows.NET*). Для простоты *база данных SQL* используется для ссылки на базу данных SQL и Azure синапсе Analytics.
 
 > [!IMPORTANT]
 > Эта статья *не* относится к *управляемому экземпляру базы данных SQL Azure*. Сведения о конфигурации сети см. [в статье подключение приложения к Azure SQL управляемый экземпляр](../managed-instance/connect-application-instance.md).

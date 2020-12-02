@@ -10,18 +10,18 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1c12727e08c6ec9075aa6c1e256279ab7596417b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 33eb5977ecb373a0dba87c26cacea247f541be8f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324531"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452733"
 ---
 # <a name="design-tables-using-synapse-sql-in-azure-synapse-analytics"></a>Разработка таблиц с помощью синапсе SQL в Azure синапсе Analytics
 
-Этот документ содержит основные понятия для проектирования таблиц с выделенным пулом SQL и бессерверным пулом SQL Server (Предварительная версия).  
+Этот документ содержит основные понятия для проектирования таблиц с выделенным пулом SQL и бессерверным пулом SQL Server.  
 
-[Бессерверный пул SQL (Предварительная версия)](on-demand-workspace-overview.md) — это служба запросов к данным в Data Lake. Он не имеет локального хранилища для приема данных. [Выделенный пул SQL](best-practices-sql-pool.md) представляет коллекцию аналитических ресурсов, которые подготавливаются при использовании синапсе SQL. Размер выделенного пула SQL определяется единицами хранения данных (DWU).
+[Бессерверный пул SQL](on-demand-workspace-overview.md) — это служба запросов к данным в Data Lake. Он не имеет локального хранилища для приема данных. [Выделенный пул SQL](best-practices-sql-pool.md) представляет коллекцию аналитических ресурсов, которые подготавливаются при использовании синапсе SQL. Размер выделенного пула SQL определяется единицами использования хранилища данных (DWU).
 
 В следующей таблице перечислены разделы, относящиеся к выделенному пулу SQL и бессерверному пулу SQL:
 
@@ -227,7 +227,7 @@ ORDER BY
 Выделенный пул SQL поддерживает многие, но не все функции таблиц, предлагаемые другими базами данных.  В следующем списке показаны некоторые функции таблиц, которые не поддерживаются в выделенном пуле SQL.
 
 - Внешний ключ, проверка [ограничений таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
-- [Вычисленные столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [Вычисляемые столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
