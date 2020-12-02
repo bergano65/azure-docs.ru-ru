@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 5a35d939c12639770e25c3096c77f13d31310f85
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 90942e4deebdc65fe26ce94f04a15fe2b8c0684c
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492018"
+ms.locfileid: "96512075"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Устранение проблем с производительностью файловых ресурсов Azure
 
@@ -74,11 +74,12 @@ ms.locfileid: "96492018"
 
 ### <a name="cause"></a>Причина:
 
-Виртуальная машина клиента может находиться в другом регионе, чем общая папка.
+Виртуальная машина клиента может находиться в другом регионе, чем общая папка. Другая причина для высокой задержки может быть вызвана задержкой клиента или сети.
 
 ### <a name="solution"></a>Решение
 
 - Запустите приложение из виртуальной машины, расположенной в том же регионе, что и файловый ресурс.
+- Для учетной записи хранения проверьте метрики транзакций **SuccessE2ELatency** и  **сукцесссерверлатенци** с помощью **Azure Monitor** в портал Azure. Высокая разница между значениями метрик SuccessE2ELatency и Сукцесссерверлатенци — это указание задержки, которая может быть вызвана сетью или клиентом. См. раздел [метрики транзакций](storage-files-monitoring-reference.md#transaction-metrics) в справочнике по данным мониторинга службы файлов Azure.
 
 ## <a name="client-unable-to-achieve-maximum-throughput-supported-by-the-network"></a>Клиенту не удалось достичь максимальной пропускной способности, поддерживаемой сетью
 

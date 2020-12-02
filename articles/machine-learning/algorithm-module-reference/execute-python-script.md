@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
-ms.date: 10/21/2020
-ms.openlocfilehash: e0da478e221fe392135362cd74cbdd8baca101ef
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.date: 12/02/2020
+ms.openlocfilehash: 360f0ce60a35bc96c6dd8e46d636f07124d01255
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421368"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511922"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -37,7 +37,7 @@ ms.locfileid: "93421368"
 
 Полный список см. в разделе с [предварительно установленными пакетами Python](#preinstalled-python-packages).
 
-Чтобы установить пакеты, отсутствующие в предварительно установленном списке (например, *scikit-Разное* ), добавьте в сценарий следующий код: 
+Чтобы установить пакеты, отсутствующие в предварительно установленном списке (например, *scikit-Разное*), добавьте в сценарий следующий код: 
 
 ```python
 import os
@@ -59,6 +59,36 @@ if spec is None:
 
 > [!WARNING]
 > Модуль скрипта Python екскуте не поддерживает установку пакетов, зависящих от дополнительных собственных библиотек, с помощью команды вроде "apt-get", например Java, PyODBC и т. д. Это происходит потому, что этот модуль выполняется в простой среде с предварительно установленным Python и с разрешениями, не являющимися администраторами.  
+
+## <a name="access-to-registered-datasets"></a>Доступ к зарегистрированным наборам данных
+
+Чтобы получить доступ к [зарегистрированным наборам данных](../how-to-create-register-datasets.md) в рабочей области, можно обратиться к следующему примеру кода:
+
+```Python
+def azureml_main(dataframe1 = None, dataframe2 = None):
+
+    # Execution logic goes here
+    print(f'Input pandas.DataFrame #1: {dataframe1}')
+    from azureml.core import Run
+    run = Run.get_context(allow_offline=True)
+    ws = run.experiment.workspace
+
+    from azureml.core import Dataset
+    dataset = Dataset.get_by_name(ws, name='test-register-tabular-in-designer')
+    dataframe1 = dataset.to_pandas_dataframe()
+     
+    # If a zip file is connected to the third input port,
+    # it is unzipped under "./Script Bundle". This directory is added
+    # to sys.path. Therefore, if your zip file contains a Python file
+    # mymodule.py you can import it using:
+    # import mymodule
+
+    # Return value must be of a sequence of pandas.DataFrame
+    # E.g.
+    #   -  Single return value: return dataframe1,
+    #   -  Two return values: return dataframe1, dataframe2
+    return dataframe1,
+```
 
 ## <a name="upload-files"></a>Отправка файлов
 Модуль выполнение скрипта Python поддерживает отправку файлов с помощью [пакета SDK для машинное обучение Azure Python](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#upload-file-name--path-or-stream-).
@@ -197,9 +227,9 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 Модуль возвращает два набора данных:  
   
-+ **Набор данных Results 1** , определяемый первым возвращенным кадром данных Pandas в скрипте Python.
++ **Набор данных Results 1**, определяемый первым возвращенным кадром данных Pandas в скрипте Python.
 
-+ **Результирующий набор данных 2** , определяемый вторым возвращенным кадром данных Pandas в скрипте Python.
++ **Результирующий набор данных 2**, определяемый вторым возвращенным кадром данных Pandas в скрипте Python.
 
 ## <a name="preinstalled-python-packages"></a>Предварительно установленные пакеты Python
 Предварительно установленные пакеты:

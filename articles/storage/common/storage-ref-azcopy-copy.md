@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: a5c0d8bb47b337b0415565a0b6dad5c6822d0b94
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: fd71f4eb56974b93637c23eddc81e5f33ce788b8
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781742"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512160"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -90,7 +90,7 @@ cat "/path/to/file.txt" | azcopy cp "https://[account].blob.core.windows.net/[co
 azcopy cp "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive
 ```
 
-or
+или
 
 ```azcopy
 azcopy cp "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive --put-md5
@@ -107,6 +107,14 @@ azcopy cp "/path/*foo/*bar/*.pdf" "https://[account].blob.core.windows.net/[cont
 ```azcopy
 azcopy cp "/path/*foo/*bar*" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive
 ```
+
+Отправьте файлы и каталоги в учетную запись хранения Azure и задайте теги в кодировке строки запроса для большого двоичного объекта. 
+
+- Чтобы задать теги {Key = "бла бла", Val = "foo"} и {Key = "бла бла 2", Val = "Bar"}, используйте следующий синтаксис: `azcopy cp "/path/*foo/*bar*" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --blob-tags="bla%20bla=foo&bla%20bla%202=bar"`
+    
+- Ключи и значения кодируются в URL-адресе, а пары "ключ-значение" разделяются амперсандом ("&").
+
+- При задании тегов для больших двоичных объектов существуют дополнительные разрешения (t "для тегов) в SAS, без которых служба будет выдавать ошибку авторизации.
 
 Скачайте один файл с помощью проверки подлинности OAuth. Если вы еще не выполнили вход в AzCopy, выполните `azcopy login` команду перед выполнением следующей команды.
 
@@ -214,9 +222,19 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 - azcopy cp "https://s3.amazonaws.com/[bucket*name]/" "https://[destaccount].blob.core.windows.net?[SAS]" --recursive
 ```
 
-## <a name="options"></a>Варианты
+Перенесите файлы и каталоги в учетную запись хранения Azure и задайте указанные теги в кодировке запросов в большом двоичном объекте. 
+
+- Чтобы задать теги {Key = "бла бла", Val = "foo"} и {Key = "бла бла 2", Val = "Bar"}, используйте следующий синтаксис: `azcopy cp "https://[account].blob.core.windows.net/[source_container]/[path/to/directory]?[SAS]" "https://[account].blob.core.windows.net/[destination_container]/[path/to/directory]?[SAS]" --blob-tags="bla%20bla=foo&bla%20bla%202=bar"`
+        
+- Ключи и значения кодируются в URL-адресе, а пары "ключ-значение" разделяются амперсандом ("&").
+    
+- При задании тегов для больших двоичных объектов существуют дополнительные разрешения (t "для тегов) в SAS, без которых служба будет выдавать ошибку авторизации.
+
+## <a name="options"></a>Параметры
 
 **--BACKUP** Активирует Windows "Себаккуппривилеже для отправки" или "Сересторепривилеже для скачивания", чтобы разрешить AzCopy просматривать и читать все файлы независимо от разрешений файловой системы и восстанавливать все разрешения. Требует, чтобы учетная запись, в которой запущен AzCopy, уже имеет эти разрешения (например, имеет права администратора или является членом `Backup Operators` группы). Этот флаг активирует привилегии, которые у учетной записи уже есть.
+
+**--BLOB-Теги** . строки, заданные в виде тегов в больших двоичных объектах для категоризации данных в учетной записи хранения.
 
 **--BLOB-тип** строка определяет тип большого двоичного объекта в месте назначения. Используется для отправки больших двоичных объектов и при копировании между учетными записями (по умолчанию `Detect` ). Допустимые значения включают `Detect`, `BlockBlob`, `PageBlob`и `AppendBlob`. При копировании между учетными записями значение приводит к тому, что `Detect` AzCopy использует тип исходного большого двоичного объекта для определения типа целевого большого двоичного объекта. При отправке файла `Detect` определяет, является ли файл VHD или VHDX-файлом, основанным на расширении файла. Если файл является Ether VHD или VHDX-файлом, AzCopy обрабатывает файл как страничный BLOB-объект. (по умолчанию "Обнаружение")
 
@@ -304,6 +322,6 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 
 **--Trusted-Microsoft-суффиксы** указывает дополнительные суффиксы домена, в которых могут отправляться Azure Active Directory токены входа.  Значение по умолчанию — `*.core.windows.net;*.core.chinacloudapi.cn;*.core.cloudapi.de;*.core.usgovcloudapi.net`. Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

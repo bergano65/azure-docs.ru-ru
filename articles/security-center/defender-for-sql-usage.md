@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 11/30/2020
 ms.author: memildin
-ms.openlocfilehash: a80747a88087e1ad3a70f198a260e41a6848e34f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 07a94685fb3655aa5aa21a8658b9d975c764daff
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445663"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512284"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -30,7 +30,7 @@ ms.locfileid: "96445663"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Предварительный просмотр<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
+|Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Счета **за использование защитника Azure для серверов SQL Server на компьютерах** выставляются, как показано на [странице с ценами](security-center-pricing.md) .|
 |Защищаемые версии SQL|SQL Server Azure (все версии, охваченные службой поддержки Майкрософт)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) China Gov и другие правительственные облака|
@@ -68,7 +68,7 @@ ms.locfileid: "96445663"
 
         ![Поиск рабочей области, отличной от используемой по умолчанию, по названию](./media/security-center-advanced-iaas-data/pricing-and-settings-workspaces.png)
 
-1. Установите параметр для **защитника Azure для серверов SQL Server на компьютерах (Предварительная версия)** в значение **вкл**. 
+1. Установите параметр для **защитника Azure для серверов SQL Server на компьютерах** с планом **на**. 
 
     ![Страница цен на центр безопасности с необязательными планами](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png)
 
@@ -79,7 +79,7 @@ ms.locfileid: "96445663"
 
 
 1. При необходимости настройте уведомления по электронной почте для оповещений системы безопасности. 
-    Вы можете задать список получателей уведомлений по электронной почте при создании оповещений центра безопасности. Сообщение электронной почты содержит прямую ссылку на оповещение в центре безопасности Azure со всеми релевантными сведениями. Дополнительные сведения см. в разделе [Настройка уведомлений по электронной почте для оповещений системы безопасности](security-center-provide-security-contact-details.md).
+    Вы можете задать список получателей уведомлений по электронной почте при создании оповещений центра безопасности. Сообщение электронной почты содержит прямой SK для оповещения в центре безопасности Azure со всеми релевантными сведениями. Дополнительные сведения см. в разделе [Настройка уведомлений по электронной почте для оповещений системы безопасности](security-center-provide-security-contact-details.md).
 
 
 
@@ -124,7 +124,7 @@ ms.locfileid: "96445663"
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Связанные материалы см. в следующей статье:
 

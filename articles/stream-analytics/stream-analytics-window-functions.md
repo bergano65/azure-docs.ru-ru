@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/16/2020
-ms.openlocfilehash: c4ddffa5f9e9ff4b313f05c9cedb3cb207695225
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 4765c0c43cfd9760eb5b4392604bfaeedc69c388
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129709"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511446"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Общие сведения о функциях управления окнами Stream Analytics
 
@@ -36,7 +36,7 @@ ms.locfileid: "93129709"
 
 ## <a name="sliding-window"></a>"Скользящее" окно
 
-Скользящие окна, в отличие от окон "переворачивающегося" или прыгающее», выводят события только для точек во времени при фактическом изменении содержимого окна. Иными словами, когда событие входит в окно или выходит из него. Каждое окно имеет по крайней мере одно событие, как в случае прыгающее» окон, события могут принадлежать к более чем одному скользящему окну.
+Скользящие окна, в отличие от окон "переворачивающегося" или прыгающее», выводят события только для точек во времени при фактическом изменении содержимого окна. Иными словами, когда событие входит в окно или выходит из него. Таким образом, каждое окно имеет по крайней мере одно событие. Как и в прыгающее» окнах, события могут принадлежать к более чем одному скользящему окну.
 
 !["Скользящее" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
 

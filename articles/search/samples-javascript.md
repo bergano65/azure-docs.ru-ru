@@ -8,24 +8,24 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: 234c70fffb6f353c670d23624cc446fdaf6bd886
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 09a9ca2ad1b1f1e5578ecc5d35a85c81b32a5b1a
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498971"
+ms.locfileid: "96511752"
 ---
 # <a name="javascript-code-samples-for-azure-cognitive-search"></a>Примеры кода JavaScript для Azure Когнитивный поиск
 
 Узнайте о примерах кода JavaScript, демонстрирующих функции и функциональные возможности Azure Когнитивный поиск. Ниже приведены основные репозитории.
 
-| Хранилище | Описание |
+| Хранилище | Описание: |
 |------------|-------------|
 | [Azure-SDK-for-JS/дерево, главный/пакет SDK, Поиск и поиск — документы](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents) | Примеры, созданные командой пакета SDK для Azure, поставляемой с клиентской библиотекой Azure.Search.Docументс в пакете SDK. Вы также можете просмотреть [модульные тесты](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/search/search-documents/test) для клиентской библиотеки, чтобы увидеть, как вызываются различные API-интерфейсы. |
 | [Примеры Azure-Samples/Azure-Search-JavaScript-Samples](https://github.com/Azure-Samples/azure-search-javascript-samples) | Примеры кода, сопровождающие статьи с инструкциями, включая краткое руководство. [Создание индекса поиска в JavaScript](search-get-started-javascript.md).|
 
 > [!Tip]
-> Воспользуйтесь [браузером примеров](/samples/browse/?languages=csharp&products=azure-cognitive-search) для поиска примеров кода Майкрософт в GitHub, отфильтрованных по продуктам, службам и языкам.
+> Воспользуйтесь [браузером примеров](/samples/browse/?languages=javascript&products=azure-cognitive-search) для поиска примеров кода Майкрософт в GitHub, отфильтрованных по продуктам, службам и языкам.
 
 ## <a name="javascript-sdk-samples"></a>Примеры SDK для JavaScript
 
