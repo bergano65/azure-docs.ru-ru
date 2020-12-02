@@ -3,12 +3,12 @@ title: Создание и администрирование проектов �
 description: Поиск, создание, управление и удаление проектов в службе "миграция Azure".
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 95f123188f7906cbd5c7a209c9fd01be006e9a7e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: c352c06a5e5b798563b4543122f66a302017bc8a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95534929"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500841"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
@@ -56,8 +56,7 @@ ms.locfileid: "95534929"
 
 ```rest
 PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/MigrateProjects/<mymigrateprojectname>?api-version=2018-09-01-preview "{location: 'centralus', properties: {}}"
-``````
-
+```
 
 ## <a name="create-additional-projects"></a>Создание дополнительных проектов
 
@@ -125,6 +124,6 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
        
 2. [Следуйте инструкциям](../azure-monitor/platform/delete-workspace.md) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

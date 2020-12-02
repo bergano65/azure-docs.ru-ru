@@ -7,12 +7,12 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: 1dcefefe02d91506c494cdf91e75ca951ccf43bb
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 408ba76c44d1161a4b91ccc037721796c7b94661
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94365476"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500756"
 ---
 # <a name="azure-boot-diagnostics"></a>Диагностика загрузки Azure
 
@@ -41,10 +41,10 @@ ms.locfileid: "94365476"
 :::image type="content" source="./media/boot-diagnostics/boot-diagnostics-enable-portal.png" alt-text="Снимок экрана, позволяющий включить диагностику управляемой загрузки во время создания виртуальной машины.":::
 
 ### <a name="enable-managed-boot-diagnostics-using-cli"></a>Включение управляемой диагностики загрузки с помощью интерфейса командной строки
-Диагностика загрузки с управляемой учетной записью хранения поддерживается в Azure CLI 2.12.0 и более поздних версий. Если не ввести имя или универсальный код ресурса (URI) для учетной записи хранения, будет использоваться управляемая учетная запись. Дополнительные сведения и примеры кода см. в [документации по CLI для диагностики загрузки](https://docs.microsoft.com/cli/azure/vm/boot-diagnostics?view=azure-cli-latest&preserve-view=true).
+Диагностика загрузки с управляемой учетной записью хранения поддерживается в Azure CLI 2.12.0 и более поздних версий. Если не ввести имя или универсальный код ресурса (URI) для учетной записи хранения, будет использоваться управляемая учетная запись. Дополнительные сведения и примеры кода см. в [документации по CLI для диагностики загрузки](/cli/azure/vm/boot-diagnostics?preserve-view=true&view=azure-cli-latest).
 
 ### <a name="enable-managed-boot-diagnostics-using-azure-resource-manager-arm-templates"></a>Включение диагностики управляемой загрузки с помощью шаблонов Azure Resource Manager (ARM)
-Все компоненты API версии 2020-06-01 поддерживают управляемую диагностику загрузки. Дополнительные сведения см. в разделе [представление экземпляра диагностики загрузки](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#bootdiagnostics).
+Все компоненты API версии 2020-06-01 поддерживают управляемую диагностику загрузки. Дополнительные сведения см. в разделе [представление экземпляра диагностики загрузки](/rest/api/compute/virtualmachines/createorupdate#bootdiagnostics).
 
 ```ARM Template
             "name": "[parameters('virtualMachineName')]",
@@ -105,6 +105,6 @@ ms.locfileid: "94365476"
 - Последовательная консоль Azure в настоящее время несовместима с управляемой учетной записью хранения для диагностики загрузки. Дополнительные сведения о [последовательной консоли Azure](./troubleshooting/serial-console-overview.md).
 - Портал поддерживает использование диагностики загрузки только с управляемой учетной записью хранения для виртуальных машин с одним экземпляром.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [последовательной консоли Azure](./troubleshooting/serial-console-overview.md) и об использовании диагностики загрузки для [устранения неполадок виртуальных машин в Azure](./troubleshooting/boot-diagnostics.md).

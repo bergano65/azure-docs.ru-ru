@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/10/2020
 ms.author: curtand
 ms.custom: include file
-ms.openlocfilehash: 42dfa499e0a44d0b468d3a234e9dc88904c361b0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 47d994a572d2fb0a76e1b6a713b61b70cccbd659
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027638"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509135"
 ---
 Ниже перечислены ограничения на использование и другие ограничения для службы Azure Active Directory (Azure AD).
 
@@ -30,4 +30,4 @@ ms.locfileid: "96027638"
 | Панель доступа |Число приложений, которые могут отображаться на Панели доступа для каждого пользователя, не ограничено независимо от назначенных лицензий.  |
 | Отчеты | В любом отчете можно просматривать и загружать не более 1000 строк. Любые дополнительные данные будут усечены. |
 | Административные единицы | Ресурс Azure AD может входить не более чем в 30 административных единиц. |
-| Роли и разрешения Azure AD | <ul><li>В организации Azure AD можно создать не более 30 [пользовательских ролей Azure AD](/azure/active-directory//users-groups-roles/roles-custom-overview?context=azure%252factive-directory%252fusers-groups-roles%252fcontext%252fugr-context).</li><li>Группу нельзя добавить в качестве [владельца группы](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%252factive-directory%252fusers-groups-roles%252fcontext%252fugr-context#object-ownership).</li><li>Возможность чтения сведений о клиентах других пользователей можно ограничить только параметром, который отключает во всей организации Azure AD доступ ко всем сведениям о клиентах для всех пользователей без прав администратора (не рекомендуется). См. раздел [Ограничение разрешений по умолчанию для пользователей-участников](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%252factive-directory%252fusers-groups-roles%252fcontext%252fugr-context#restrict-member-users-default-permissions).</li><li>Добавление и отмена членства в роли администратора может занимать до 15 минут и требовать выполнения выхода и входа.</li></ul> |
+| Роли и разрешения Azure AD | <ul><li>В организации Azure AD можно создать не более 30 [пользовательских ролей Azure AD](/azure/active-directory//users-groups-roles/roles-custom-overview?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context).</li><li>Группу нельзя добавить в качестве [владельца группы](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context#object-ownership).</li><li>Возможность чтения сведений о клиентах других пользователей можно ограничить только параметром, который отключает во всей организации Azure AD доступ ко всем сведениям о клиентах для всех пользователей без прав администратора (не рекомендуется). См. раздел [Ограничение разрешений по умолчанию для пользователей-участников](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context#restrict-member-users-default-permissions).</li><li>Добавление и отмена членства в роли администратора может занимать до 15 минут и требовать выполнения выхода и входа.</li></ul> |

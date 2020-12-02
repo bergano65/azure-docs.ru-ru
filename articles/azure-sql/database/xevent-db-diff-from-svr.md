@@ -7,16 +7,16 @@ ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: ''
 ms.topic: reference
-author: MightyPen
-ms.author: genemi
-ms.reviewer: jrasnik
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sstein
 ms.date: 12/19/2018
-ms.openlocfilehash: 0c89dc28a330e319e18a6289e5f6759c56e46ae8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 139673e46421aa0dc19298697872fbff5fe587af
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791279"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501215"
 ---
 # <a name="extended-events-in-azure-sql-database"></a>Расширенные события в базе данных SQL Azure 
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -66,7 +66,7 @@ ms.locfileid: "92791279"
 - При выполнении команды [CREATE EVENT SESSION](/sql/t-sql/statements/create-event-session-transact-sql) на сервере SQL Server используется предложение **ON SERVER** . Но в базе данных SQL Azure вместо этого используется предложение **On Database** .
 - Предложение **ON DATABASE** применяется также в командах Transact-SQL [ALTER EVENT SESSION](/sql/t-sql/statements/alter-event-session-transact-sql) и [DROP EVENT SESSION](/sql/t-sql/statements/drop-event-session-transact-sql).
 
-- Мы рекомендуем включать параметр сеанса событий **STARTUP_STATE = ON** в операторы **CREATE EVENT SESSION** и **ALTER EVENT SESSION** .
+- Мы рекомендуем включать параметр сеанса событий **STARTUP_STATE = ON** в операторы **CREATE EVENT SESSION** и **ALTER EVENT SESSION**.
   - Значение **= ON** поддерживает автоматический перезапуск после перенастройки логической базы данных из-за сбоя.
 
 ## <a name="new-catalog-views"></a>Новые представления каталога
@@ -81,7 +81,7 @@ ms.locfileid: "92791279"
 | **sys.database_event_session_targets** |Возвращает строку для каждой цели события для сеанса событий. |
 | **sys.database_event_sessions** |Возвращает строку для каждого сеанса событий в базе данных. |
 
-В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_* . Шаблон имени выглядит как **sys.server_event_%** .
+В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_*. Шаблон имени выглядит как **sys.server_event_%**.
 
 ## <a name="new-dynamic-management-views-dmvs"></a>Новые динамические административные представления [(DMV)](/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views)
 
@@ -97,7 +97,7 @@ ms.locfileid: "92791279"
 
 В Microsoft SQL Server аналогичные представления каталога именуются без части имени *\_ базы данных* , например:
 
-- **sys.dm_xe_sessions** вместо имени<br/>**sys.dm_xe_database_sessions** .
+- **sys.dm_xe_sessions** вместо имени<br/>**sys.dm_xe_database_sessions**.
 
 ### <a name="dmvs-common-to-both"></a>Общие DMV
 
@@ -155,7 +155,7 @@ API [трассировки событий для Windows (ETW)](/dotnet/framewo
 
 ## <a name="permission-model"></a>Модель разрешений
 
-Чтобы вызвать оператор **CREATE EVENT SESSION** , требуется разрешение на **управление** . Владелец базы данных (dbo) имеет разрешение на **управление** .
+Чтобы вызвать оператор **CREATE EVENT SESSION**, требуется разрешение на **управление**. Владелец базы данных (dbo) имеет разрешение на **управление** .
 
 ### <a name="storage-container-authorizations"></a>Авторизации контейнера хранилища
 
@@ -172,9 +172,9 @@ API [трассировки событий для Windows (ETW)](/dotnet/framewo
 При появлении сообщения о превышении максимального объема памяти можно предпринять следующие коррекционные меры:
 
 - уменьшить количество одновременно запущенных сеансов событий;
-- уменьшить объем памяти, заданный в предложении **MAX\_MEMORY** , с помощью операторов **CREATE** и **ALTER** .
+- уменьшить объем памяти, заданный в предложении **MAX\_MEMORY**, с помощью операторов **CREATE** и **ALTER**.
 
-### <a name="network-latency"></a>Задержки сети
+### <a name="network-latency"></a>Задержка в сети
 
 Целевой объект **Файл событий** может столкнуться с медленной работой или отказами сети при сохранении данных в большие двоичные объекты хранилища Azure. Другие события в базе данных SQL Azure могут быть отложены, пока они ожидают завершения сетевого подключения. Такая задержка может замедлить вашу работу.
 

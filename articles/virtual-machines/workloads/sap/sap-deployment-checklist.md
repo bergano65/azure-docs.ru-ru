@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ac75ab31f8c9cdd9405115db4f5c35d28707e29f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 06d20dd47ceb71b51e226d662892eab06b072685
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950369"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500943"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -243,8 +243,8 @@ ms.locfileid: "94950369"
     - Хранилище Azure класса Premium используется для дисков с учетом задержек или для которых требуется [соглашение об уровне обслуживания для одной виртуальной машины 99,9%](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) .
     - Ускоритель записи Azure развернут правильно.
         - Убедитесь, что в виртуальных машинах, дисковых пространствах или чередующихся наборах правильно построены на дисках, которым требуется Ускоритель записи.
-        - Проверьте [конфигурацию программного RAID-массива в Linux](../../linux/configure-raid.md).
-        - Проверьте [конфигурацию LVM на виртуальных машинах Linux в Azure](../../linux/configure-lvm.md).
+        - Проверьте [конфигурацию программного RAID-массива в Linux](/previous-versions/azure/virtual-machines/linux/configure-raid).
+        - Проверьте [конфигурацию LVM на виртуальных машинах Linux в Azure](/previous-versions/azure/virtual-machines/linux/configure-lvm).
     - [Управляемые диски Azure](https://azure.microsoft.com/services/managed-disks/) используются исключительно.
     - Виртуальные машины развернуты в правильных группах доступности и Зоны доступности.
     - Технология [ускоренной](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/) работы в Azure включена на виртуальных машинах, используемых на уровне приложений SAP, и на уровне СУБД SAP.
@@ -299,7 +299,7 @@ ms.locfileid: "94950369"
 3. Оптимизируйте время, когда можно завершить работу систем.  
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:
 
 - [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](./planning-guide.md)

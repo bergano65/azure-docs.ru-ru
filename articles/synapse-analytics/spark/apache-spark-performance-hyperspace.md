@@ -10,12 +10,12 @@ ms.date: 08/12/2020
 ms.author: euang
 ms.reviewer: euang
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: e3baa9782cac6c410e83eec63e801d6bf5e6f822
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 6795828f4fd3a77a7bc6d8de208848d5f4ee3bee
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030719"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501045"
 ---
 # <a name="hyperspace-an-indexing-subsystem-for-apache-spark"></a>Гиперпространства: подсистема индексирования для Apache Spark
 
@@ -32,7 +32,7 @@ ms.locfileid: "96030719"
 
 Этот документ также доступен в форме записной книжки для [Python](https://github.com/microsoft/hyperspace/blob/master/notebooks/python/Hitchhikers%20Guide%20to%20Hyperspace.ipynb), [C#](https://github.com/microsoft/hyperspace/blob/master/notebooks/csharp/Hitchhikers%20Guide%20to%20Hyperspace.ipynb)и [Scala](https://github.com/microsoft/hyperspace/blob/master/notebooks/scala/Hitchhikers%20Guide%20to%20Hyperspace.ipynb).
 
-## <a name="setup"></a>Установка
+## <a name="setup"></a>Настройка
 
 Чтобы начать работу, запустите новый сеанс Spark. Поскольку этот документ является учебником только для демонстрации того, что может предложить гиперпространства, вы вносите изменения в конфигурацию, позволяющие выделять, что делает гиперпространства в небольших наборах данных. 
 
@@ -1296,7 +1296,7 @@ Project [empName#528, deptName#534]
 
 ```scala
 spark.conf.set("spark.hyperspace.explain.displayMode", "html")
-hyperspace.explain(eqJoin) { displayHTML }
+hyperspace.explain(eqJoin)(displayHTML(_))
 ```
 
 ::: zone-end
@@ -2227,7 +2227,7 @@ Indexes used:
 productIndex2:abfss://datasets@hyperspacebenchmark.dfs.core.windows.net/hyperspace/indexes-777519/productIndex2/v__=4
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Проект гиперпространства](https://microsoft.github.io/hyperspace/)
 * [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)

@@ -13,16 +13,19 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 24f1332e940929cff6aeb6a0d5d3c43e28d36f22
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 9b870e21ffd5c6a8261b6731b939b5dff558256d
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149181"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501198"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
 **Пакет SDK для устройств Azure IoT** — это набор библиотек, предназначенных для упрощения процесса отправки сообщений и их получения из службы **Центра Интернета вещей Azure**. Существуют различные варианты пакетов SDK, предназначенные для разных платформ. В этой статье описывается **пакет SDK для устройств Azure IoT для C**.
+
+> [!NOTE]
+> Встроенный пакет C SDK — это альтернатива ограниченным устройствам, поддерживающим подход "использовать собственную сеть" (БЙОН). Разработчики Интернета вещей имеют свободу выбора клиента MQTT, TLS и сокетов для создания решения устройства. Дополнительные [сведения о встроенном пакете C SDK](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot).
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 

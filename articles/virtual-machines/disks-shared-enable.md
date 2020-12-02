@@ -8,12 +8,12 @@ ms.date: 09/30/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 661d4ba575eafa4e261a1c92c1112a259b95eac7
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: e8bb97196fcceea0c86f58fe4a63146e681c427e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683598"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500739"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
 
@@ -27,7 +27,7 @@ ms.locfileid: "94683598"
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-Общие диски поддерживают несколько операционных систем. Поддерживаемые операционные системы см. в разделах, посвященных [ОС Windows](windows/disks-shared.md#windows) и [Linux](linux/disks-shared.md#linux) .
+Общие диски поддерживают несколько операционных систем. Поддерживаемые операционные системы см. в разделах, посвященных [ОС Windows](./disks-shared.md#windows) и [Linux](./disks-shared.md#linux) .
 
 ## <a name="disk-sizes"></a>Размеры диска
 
@@ -42,7 +42,7 @@ ms.locfileid: "94683598"
 > [!IMPORTANT]
 > Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az disk create -g myResourceGroup -n mySharedDisk --size-gb 1024 -l westcentralus --sku Premium_LRS --max-shares 2
@@ -72,7 +72,7 @@ New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $
 > Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ##### <a name="regional-disk-example"></a>Пример для регионального диска
 

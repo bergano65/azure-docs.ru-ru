@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3932a1dee0eee16e7d64ff4c6085919d85b431ab
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5c00d08fcaeed8eba5b9732c9196b9abddc32b36
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843270"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500722"
 ---
 # <a name="azure-security-baseline-for-virtual-machine-scale-sets"></a>Базовый уровень безопасности Azure для масштабируемых наборов виртуальных машин
 
 Базовый план безопасности Azure для масштабируемых наборов виртуальных машин содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
@@ -76,7 +76,7 @@ ms.locfileid: "94843270"
 
 Вы можете использовать безопасный сетевой доступ центра безопасности Azure, чтобы ограничить раскрытие Виртуальные машины Windows с утвержденными IP-адресами в течение ограниченного периода времени. Кроме того, используйте адаптивную защиту сети в центре безопасности Azure, чтобы рекомендовать NSG конфигурации, ограничивающие порты и исходные IP-адреса на основе фактического трафика и аналитики угроз.
 
-* [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
+* [Настройка защиты от атак DDoS](../ddos-protection/manage-ddos-protection.md)
 
 * [Развертывание брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
@@ -284,7 +284,7 @@ ms.locfileid: "94843270"
 
 * [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -318,7 +318,7 @@ ms.locfileid: "94843270"
 
 * [Инструкции для адаптации серверов Linux к центру безопасности Azure](../security-center/quickstart-onboard-machines.md)
 
-* [Ниже приведены рекомендуемые рекомендации корпорации Майкрософт по обеспечению безопасности, которые могут служить списком критериев для выбранного программного обеспечения уязвимости.](../virtual-machines/linux/security-recommendations.md)
+* [Ниже приведены рекомендуемые рекомендации корпорации Майкрософт по обеспечению безопасности, которые могут служить списком критериев для выбранного программного обеспечения уязвимости.](../virtual-machines/security-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -450,7 +450,7 @@ ms.locfileid: "94843270"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей. Управляемые удостоверения можно использовать для проверки подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Key Vault без каких бы то ни было учетных данных в коде. Ваш код, выполняемый на виртуальной машине, может использовать управляемое удостоверение для запроса маркеров доступа для служб, поддерживающих проверку подлинности Azure AD.
 
-* [Создание и настройка экземпляра Azure AD](../active-directory-domain-services/tutorial-create-instance.md)
+* [Создание и настройка экземпляра Azure AD](../active-directory-domain-services/tutorial-create-instance.md)
 
 * [Обзор управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
@@ -472,7 +472,7 @@ ms.locfileid: "94843270"
 
 **Руководство**. Настройка параметров диагностики для Azure Active Directory, чтобы отправить журналы аудита и журналы входа в рабочую область log Analytics. Кроме того, используйте Azure Monitor для просмотра журналов и выполнения запросов к данным журналов из виртуальных машин Azure.
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
@@ -756,7 +756,7 @@ ms.locfileid: "94843270"
 
 * [Общие сведения о службе автоматизации Azure](../automation/automation-intro.md)
 
-* [Отслеживание изменений в среде с помощью решения для отслеживания изменений](../automation/change-tracking.md)
+* [Отслеживание изменений в среде с помощью решения для отслеживания изменений](../automation/change-tracking/overview.md)
 
 * [Обзор настройки состояния службы автоматизации Azure](../automation/automation-dsc-overview.md)
 
@@ -1036,7 +1036,7 @@ ms.locfileid: "94843270"
 
 * [Advanced Threat Protection в Microsoft Defender](/windows/security/threat-protection/microsoft-defender-atp/onboard-configure)
 
-* [Настройка антивредоносного по Майкрософт для облачных служб и виртуальных машин](../virtual-machines/linux/security-recommendations.md)
+* [Настройка антивредоносного по Майкрософт для облачных служб и виртуальных машин](../virtual-machines/security-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1188,9 +1188,9 @@ ms.locfileid: "94843270"
 
 **Руководство**. соблюдение правил корпорации Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-* [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+* [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

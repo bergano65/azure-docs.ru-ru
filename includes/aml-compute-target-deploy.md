@@ -9,12 +9,12 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 11/02/2020
-ms.openlocfilehash: 31d00222da540751a1f95120bea00535b099403d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1f7abcdd1439fe5e6eeb2f718862f4875c61230c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026961"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509175"
 ---
 Целевой объект вычислений, который вы используете для размещения модели, повлияет на стоимость и доступность развернутой конечной точки. Для выбора подходящего целевого объекта вычислений используйте приведенную таблицу.
 
@@ -23,7 +23,7 @@ ms.locfileid: "96026961"
 | [Локальная&nbsp;веб&nbsp;служба](../articles/machine-learning/how-to-deploy-local-container-notebook-vm.md) | Тестирование и отладка | &nbsp; | &nbsp; | Используется для ограниченного тестирования и устранения неполадок. Аппаратное ускорение зависит от использования библиотек в локальной системе.
 | [Служба Azure Kubernetes (AKS)](../articles/machine-learning/how-to-deploy-azure-kubernetes-service.md) | Вывод в реальном времени |  [Да](../articles/machine-learning/how-to-deploy-inferencing-gpus.md) (развертывание веб-службы) | [Да](../articles/machine-learning/how-to-deploy-fpga-web-service.md)   |Используется для крупномасштабных рабочих развертываний. Обеспечивает быстрое время отклика и автомасштабирование развернутой службы. Автомасштабирование кластера с использованием пакета SDK для Машинного обучения Azure не поддерживается. Изменить узлы в кластере AKS можно с помощью пользовательского интерфейса для кластера AKS на портале Azure. <br/><br/> Поддерживается в конструкторе. |
 | [Экземпляры контейнеров Azure](../articles/machine-learning/how-to-deploy-azure-container-instance.md); | Тестирование или разработка | &nbsp;  | &nbsp; | Используйте для небольших рабочих нагрузок на основе ЦП, которым требуется менее 48 ГБ ОЗУ. <br/><br/> Поддерживается в конструкторе. |
-| [Вычислительные кластеры Машинного обучения Azure](../articles/machine-learning/how-to-use-parallel-run-step.md) | Пакетный&nbsp;вывод | [Да](../articles/machine-learning/how-to-use-parallel-run-step.md) (конвейер машинного обучения) | &nbsp;  | Выполнение пакетной оценки на основе бессерверных вычислений. Поддерживает виртуальные машины с обычным и низким приоритетом. |
+| [Вычислительные кластеры Машинного обучения Azure](../articles/machine-learning/tutorial-pipeline-batch-scoring-classification.md) | Пакетный&nbsp;вывод | [Да](../articles/machine-learning/tutorial-pipeline-batch-scoring-classification.md) (конвейер машинного обучения) | &nbsp;  | Выполнение пакетной оценки на основе бессерверных вычислений. Поддерживает виртуальные машины с обычным и низким приоритетом. |
 
 > [!NOTE]
 > Хотя такие целевые объекты вычислений, как локальная среда, Вычислительная среда Машинного обучения Azure и вычислительные кластеры Машинного обучения Azure, поддерживают GPU для обучения и экспериментирования, _при развертывании этих объектов в качестве веб-служб_ использование GPU для вывода поддерживается только в AKS.

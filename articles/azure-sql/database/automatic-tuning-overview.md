@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 03/30/2020
-ms.openlocfilehash: 180f6e8902dc881c99a74a6491eeb3012bc03d0f
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 4204254754307f8310d5ccfda19400de57381075
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675224"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500875"
 ---
 # <a name="automatic-tuning-in-azure-sql-database-and-azure-sql-managed-instance"></a>Автоматическая настройка в базе данных SQL Azure и Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -69,7 +69,7 @@ ms.locfileid: "92675224"
 
 ### <a name="automatic-tuning-for-sql-database"></a>Автоматическая настройка базы данных SQL
 
-Автоматическая настройка базы данных SQL Azure использует для оптимизации производительности базы данных **Создание индекса** , **DROP INDEX** и **принудительного выполнения последнего хорошего плана** рекомендаций помощника по базам. Дополнительные сведения см. [в разделе рекомендации помощника по базам данных в портал Azure](database-advisor-find-recommendations-portal.md), в [PowerShell](/powershell/module/az.sql/get-azsqldatabaserecommendedaction)и в [REST API](/rest/api/sql/serverautomatictuning).
+Автоматическая настройка базы данных SQL Azure использует для оптимизации производительности базы данных **Создание индекса**, **DROP INDEX** и **принудительного выполнения последнего хорошего плана** рекомендаций помощника по базам. Дополнительные сведения см. [в разделе рекомендации помощника по базам данных в портал Azure](database-advisor-find-recommendations-portal.md), в [PowerShell](/powershell/module/az.sql/get-azsqldatabaserecommendedaction)и в [REST API](/rest/api/sql/serverautomatictuning).
 
 Можно либо вручную применить рекомендации по настройке с помощью портал Azure, либо включить автоматическую настройку для автономного применения рекомендаций по настройке. Преимущество автономного системного применения рекомендаций по настройке заключается в том, что система автоматически проверяет возможность увеличить производительность рабочей нагрузки. Если значительное повышение производительности не обнаружено, система автоматически вернется к рекомендации по настройке. Обратите внимание, что в случае запросов, на которые могут повлиять рекомендации по настройке, выполняемые нечасто, этап проверки может занять до 72 часов.
 
@@ -90,7 +90,7 @@ ms.locfileid: "92675224"
 
 ### <a name="automatic-tuning-for-azure-sql-managed-instance"></a>Автоматическая настройка Управляемый экземпляр Azure SQL
 
-Автоматическая настройка SQL Управляемый экземпляр поддерживает только **последний хороший план** . Дополнительные сведения о настройке параметров автоматической настройки с помощью T-SQL см. в разделе [Автоматическая настройка содержит автоматическое исправление плана](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [Автоматическое исправление плана](/sql/relational-databases/automatic-tuning/automatic-tuning?view=sql-server-ver15#automatic-plan-correction).
+Автоматическая настройка SQL Управляемый экземпляр поддерживает только **последний хороший план**. Дополнительные сведения о настройке параметров автоматической настройки с помощью T-SQL см. в разделе [Автоматическая настройка содержит автоматическое исправление плана](https://azure.microsoft.com/blog/automatic-tuning-introduces-automatic-plan-correction-and-t-sql-management/) и [Автоматическое исправление плана](/sql/relational-databases/automatic-tuning/automatic-tuning?view=sql-server-ver15#automatic-plan-correction).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

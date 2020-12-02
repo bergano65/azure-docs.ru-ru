@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/12/2019
 ms.author: cynthn;kareni
 ms.custom: include file
-ms.openlocfilehash: 8594ce713a8675505e0ee3051018b05992b160a9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a9146099951aba223a7b201c1613e1ec0ba617d4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027831"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509244"
 ---
 **Последнее обновление документа**: 12 ноября 2019 10:00 по тихоокеанскому времени.
 
@@ -21,7 +21,7 @@ ms.locfileid: "96027831"
 
 Корпорация Майкрософт развернула по всем облачным службам средства устранения уязвимостей. Инфраструктура с изолированными друг от друга нагрузками, которая работает в Azure, является защищенной. Это означает, что потенциальному злоумышленнику с помощью той же инфраструктуры, используя эти уязвимости, не удастся осуществить атаку на ваше приложение.
 
-Чтобы свести к минимуму последствия для пользователей и устранить необходимость перезагрузки, Azure всякий раз при возможности использует [обслуживание с сохранением памяти](../articles/virtual-machines/maintenance-and-updates.md?bc=%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json%252c%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json%253ftoc%253d%252fazure%252fvirtual-machines%252fwindows%252ftoc.json#maintenance-that-doesnt-require-a-reboot). Azure продолжит использовать эти методы при выполнении системных обновлений на узле и для защиты своих клиентов.
+Чтобы свести к минимуму последствия для пользователей и устранить необходимость перезагрузки, Azure всякий раз при возможности использует [обслуживание с сохранением памяти](../articles/virtual-machines/maintenance-and-updates.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json%252c%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json%253ftoc%253d%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#maintenance-that-doesnt-require-a-reboot). Azure продолжит использовать эти методы при выполнении системных обновлений на узле и для защиты своих клиентов.
 
 Дополнительные сведения о том, как вопросы безопасности учитываются в каждом аспекте создания Azure, доступны на веб-сайте [Документация по системе безопасности Azure](../articles/security/index.yml). 
 

@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 07/15/2019
 ms.author: raynew
-ms.openlocfilehash: c4132ca675af136d7fd50b8ddd02277919a5ed28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 534619ace09b4e11934062a591adf8d9ab6f77ad
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361098"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500807"
 ---
 # <a name="create-an-azure-vm-assessment"></a>Создание оценки для виртуальных машин Azure
 
@@ -21,9 +21,9 @@ ms.locfileid: "91361098"
 
 ## <a name="before-you-start"></a>Перед началом работы
 
-- Убедитесь, что вы [создали](how-to-add-tool-first-time.md) проект "миграция Azure".
+- Убедитесь, что вы [создали](./create-manage-projects.md) проект "миграция Azure".
 - Если вы уже создали проект, убедитесь, что вы [добавили](how-to-assess.md) средство Azure Migrate: Server для оценки серверов.
-- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md) или [Hyper-V](how-to-set-up-appliance-hyper-v.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее.](migrate-appliance.md)
+- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md) или [Hyper-V](how-to-set-up-appliance-hyper-v.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее](migrate-appliance.md).
 
 
 ## <a name="azure-vm-assessment-overview"></a>Обзор оценки виртуальных машин Azure
@@ -130,7 +130,7 @@ ms.locfileid: "91361098"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как использовать [сопоставление зависимостей](how-to-create-group-machine-dependencies.md) для создания групп с высокой степенью достоверности.
 - [Узнайте больше](concepts-assessment-calculation.md) о вычислении оценок.

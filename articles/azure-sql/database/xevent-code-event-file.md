@@ -7,16 +7,16 @@ ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: PowerShell
 ms.topic: sample
-author: MightyPen
-ms.author: genemi
-ms.reviewer: jrasnik
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sstein
 ms.date: 06/06/2020
-ms.openlocfilehash: 9674b7188251312056812ac8e1dcae5885579e2a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: d7a57f98551cf91ed87858caba0907471bcf6b12
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791313"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501232"
 ---
 # <a name="event-file-target-code-for-extended-events-in-azure-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "92791313"
 
 - Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
 
-  - Модули предоставляют такие команды, как **New-AzStorageAccount** .
+  - Модули предоставляют такие команды, как **New-AzStorageAccount**.
 
 ## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера хранилища Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "92791313"
 
 Сценарий начинается с команд, предназначенных для очистки данных после его предыдущего выполнения, и является многоразовым.
 
-1. Вставьте сценарий PowerShell в простой текстовый редактор, например Notepad.exe, и сохраните его в виде файла с расширением **PS1** .
+1. Вставьте сценарий PowerShell в простой текстовый редактор, например Notepad.exe, и сохраните его в виде файла с расширением **PS1**.
 2. Запустите PowerShell ISE от имени администратора.
 3. В командной строке введите<br/>`Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`<br/>и нажмите клавишу ВВОД.
 4. В PowerShell ISE откройте свой файл **PS1** . Выполните скрипт.
@@ -258,7 +258,7 @@ Related to   https://github.com/MicrosoftDocs/azure-docs/issues/56520
 6. Сохраните и выполните сценарий.
 
 > [!WARNING]
-> Значение ключа SAS, созданное предыдущим сценарием PowerShell, может начинаться с вопросительного знака ("?"). При использовании ключа SAS в приведенном ниже сценарии T-SQL *этот вопросительный знак нужно удалить* . В противном случае система безопасности может заблокировать ваши действия.
+> Значение ключа SAS, созданное предыдущим сценарием PowerShell, может начинаться с вопросительного знака ("?"). При использовании ключа SAS в приведенном ниже сценарии T-SQL *этот вопросительный знак нужно удалить*. В противном случае система безопасности может заблокировать ваши действия.
 
 ### <a name="transact-sql-code"></a>Код Transact-SQL
 
@@ -451,7 +451,7 @@ GO
 
 ## <a name="output"></a>Выходные данные
 
-После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML** . Один из отображенных элементов **\<event>** содержит инструкцию UPDATE.
+После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Один из отображенных элементов **\<event>** содержит инструкцию UPDATE.
 
 Ниже приведен один из элементов **\<event>** , сформированных в процессе тестирования.
 
@@ -506,9 +506,9 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 
 Предположим, что приведенный выше пример сценария Transact-SQL нужно выполнить на Microsoft SQL Server.
 
-- Проще всего будет полностью заменить контейнер службы хранилища Azure простым файлом, например *C:\myeventdata.xel* . Этот файл будет записан на локальный жесткий диск компьютера, где находится SQL Server.
+- Проще всего будет полностью заменить контейнер службы хранилища Azure простым файлом, например *C:\myeventdata.xel*. Этот файл будет записан на локальный жесткий диск компьютера, где находится SQL Server.
 - Инструкции Transact-SQL **CREATE MASTER KEY** и **CREATE CREDENTIAL** в этом случае не понадобятся.
-- В предложении **ADD TARGET** оператора **CREATE EVENT SESSION** измените значение Http, заменив **filename=** на полную строку пути, например *C:\myfile.xel* .
+- В предложении **ADD TARGET** оператора **CREATE EVENT SESSION** измените значение Http, заменив **filename=** на полную строку пути, например *C:\myfile.xel*.
   
   - Учетная запись хранения Azure при этом не нужна.
 
