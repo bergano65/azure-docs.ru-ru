@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: alkohli
-ms.openlocfilehash: d9e0da9e24a0bd32047d029879c4f0e110dc0c16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef840b3d9db4e82eeecea37079a08ccb0858a77b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320801"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448534"
 ---
 # <a name="kubernetes-workload-management-on-your-azure-stack-edge-pro-device"></a>Управление рабочей нагрузкой Kubernetes на устройстве Pro Azure Stack
 
@@ -51,9 +51,9 @@ ms.locfileid: "91320801"
 
 - **Развертывание IOT Edge**. это осуществляется с помощью IOT EDGE, который подключается к центру Интернета вещей Azure. Вы подключаетесь к кластеру Kubernetes на устройстве Azure Stack пограничной Pro через `iotedge` пространство имен. Агенты IoT Edge, развернутые в этом пространстве имен, отвечают за подключение к Azure. Вы применяете `IoT Edge deployment.json` конфигурацию с помощью Azure DEVOPS CI/CD. Управление пространствами имен и IoT Edge осуществляется с помощью оператора облака.
 
-- **Kubernetes развертывание Azure с включенной**службой ARC. Kubernetes — это гибридное средство управления, которое позволит развертывать приложения в кластерах Kubernetes. Вы подключаетесь к кластеру Kubernetes на устройстве Azure Stack пограничной Pro через `azure-arc namespace` . Агенты, развернутые в этом пространстве имен, отвечают за подключение к Azure. Конфигурация развертывания применяется с помощью управления конфигурацией на основе Гитопс. 
+- **Kubernetes развертывание Azure с включенной** службой ARC. Kubernetes — это гибридное средство управления, которое позволит развертывать приложения в кластерах Kubernetes. Вы подключаетесь к кластеру Kubernetes на устройстве Azure Stack пограничной Pro через `azure-arc namespace` . Агенты, развернутые в этом пространстве имен, отвечают за подключение к Azure. Конфигурация развертывания применяется с помощью управления конфигурацией на основе Гитопс. 
     
-    Kubernetes с поддержкой дуги Azure также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластера. Дополнительные сведения см. в разделе [что такое служба "Azure Arc Enabled Kubernetes?](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview)".
+    Kubernetes с поддержкой дуги Azure также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластера. Дополнительные сведения см. в разделе [что такое служба "Azure Arc Enabled Kubernetes?](../azure-arc/kubernetes/overview.md)".
 
 ## <a name="choose-the-deployment-type"></a>Выбор типа развертывания
 
@@ -66,7 +66,7 @@ ms.locfileid: "91320801"
 - **Центр Интернета вещей и дуга Azure**. Выбор развертывания также зависит от цели вашего сценария продукта. Если вы развертываете приложения или контейнеры, которые имеют более глубокую интеграцию с IoT или экосистемой IoT, выберите IoT Edge, чтобы развернуть приложения. Если у вас есть развертывания Kubernetes, предпочтительнее выбрать Azure ARC.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о локальном развертывании приложения с помощью kubectl см. в следующих статьях:
 

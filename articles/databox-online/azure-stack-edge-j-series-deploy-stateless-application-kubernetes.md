@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 91a2d08bf9eea2f5af0f6893712515cb2feeab8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6356089daed02270a14903639afee8001153b195
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890737"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447375"
 ---
 # <a name="deploy-a-kubernetes-stateless-application-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Развертывание Kubernetes приложения без отслеживания состояния с помощью kubectl на устройстве Azure Stack ребра Pro GPU
 
@@ -25,7 +25,7 @@ ms.locfileid: "90890737"
 
 - У вас есть учетные данные для входа на 1 узел Azure Stack пограничным устройством Pro.
 
-- Windows PowerShell 5,0 или более поздней версии устанавливается в клиентской системе Windows для доступа к устройству Azure Stack погранично Pro. Также можно использовать любой другой клиент с поддерживаемой операционной системой. В этой статье описывается процедура использования клиента Windows. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+- Windows PowerShell 5,0 или более поздней версии устанавливается в клиентской системе Windows для доступа к устройству Azure Stack погранично Pro. Также можно использовать любой другой клиент с поддерживаемой операционной системой. В этой статье описывается процедура использования клиента Windows. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
 
 - На устройстве Azure Stack ребра Pro включено вычисление. Чтобы включить вычисление, перейдите на страницу " **Вычисление** " в локальном пользовательском интерфейсе устройства. Затем выберите сетевой интерфейс, который требуется включить для вычислений. Нажмите кнопку **Включить**. Включение вычислений приведет к созданию виртуального коммутатора на устройстве в этом сетевом интерфейсе. Дополнительные сведения см. [в статье Включение вычислений в сети на Azure Stack пограничных Pro](azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md).
 
@@ -361,6 +361,6 @@ PS C:\Users\user> kubectl delete deployment nginx-deployment -n "test1"
 deployment.extensions "nginx-deployment" deleted
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор Kubernetes](azure-stack-edge-gpu-kubernetes-overview.md)

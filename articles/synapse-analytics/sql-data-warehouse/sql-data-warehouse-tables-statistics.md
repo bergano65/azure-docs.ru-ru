@@ -10,13 +10,13 @@ ms.subservice: sql-dw
 ms.date: 05/09/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: d9349c5d1c4e6255dc0854537bb7e93e3e636ce8
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: e7fc89dcc0e7938ea2958d5c804abe82e20f186d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321073"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447930"
 ---
 # <a name="table-statistics-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Статистика таблиц для выделенного пула SQL в Azure синапсе Analytics
 
@@ -72,7 +72,7 @@ SET AUTO_CREATE_STATISTICS ON
 > [!NOTE]
 > Создание статистики будет зарегистрировано в [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) в другом контексте пользователя.
 
-При автоматическом создании статистики используется следующий формат: _WA_Sys_ <8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Вы можете просмотреть статистику, которая уже была создана, выполнив команду [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) :
+При автоматическом создании статистики используется следующий формат: _WA_Sys_<8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Вы можете просмотреть статистику, которая уже была создана, выполнив команду [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) :
 
 ```sql
 DBCC SHOW_STATISTICS (<table_name>, <target>)
@@ -101,7 +101,7 @@ Table_name — это имя таблицы, содержащей статист
 
 Динамическое административное представление не позволяет определить, изменились ли данные в таблице с момента последнего обновления статистики.  Следующие два запроса могут помочь определить, устарела ли статистика.
 
-**Запрос 1:**  Найдите разницу между числом строк из статистики ( **stats_row_count** ) и фактическим числом строк ( **actual_row_count** ). 
+**Запрос 1:**  Найдите разницу между числом строк из статистики (**stats_row_count**) и фактическим числом строк (**actual_row_count**). 
 
 ```sql
 select 
@@ -312,11 +312,11 @@ CREATE STATISTICS stats_col2 on dbo.table2 (col2);
 CREATE STATISTICS stats_col3 on dbo.table3 (col3);
 ```
 
-### <a name="use-a-stored-procedure-to-create-statistics-on-all-columns-in-a-database"></a>Использование хранимой процедуры для создания статистики для всех столбцов в базе данных
+### <a name="use-a-stored-procedure-to-create-statistics-on-all-columns-in-a-sql-pool"></a>Использование хранимой процедуры для создания статистики по всем столбцам в пуле SQL
 
-Выделенный пул SQL не имеет системных хранимых процедур, эквивалентного sp_create_stats в SQL Server. Эта хранимая процедура создает объект одностолбцовой статистики для каждого столбца базы данных, для которого статистики еще нет.
+Выделенный пул SQL не имеет системных хранимых процедур, эквивалентного sp_create_stats в SQL Server. Эта хранимая процедура создает объект статистики по одному столбцу для каждого столбца в пуле SQL, который еще не имеет статистики.
 
-Следующий пример поможет приступить к проектированию базы данных. Вы можете адаптировать код в соответствии со своими нуждами.
+Следующий пример поможет приступить к проектированию пула SQL. Вы можете адаптировать код в соответствии со своими нуждами.
 
 ```sql
 CREATE PROCEDURE    [dbo].[prc_sqldw_create_stats]

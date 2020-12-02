@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 9a01dabbd0a3e9d76caaead544be655b9505030d
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 55e9d2d1af863084b080c2de7833712413221050
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289209"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445649"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Защита портов управления с помощью JIT-доступа
 
@@ -89,9 +89,9 @@ ms.locfileid: "93289209"
 
     Для каждого порта (настраиваемое и по умолчанию) на панели **Добавление конфигурации порта** доступны следующие параметры.
 
-    - **Протокол** — протокол, разрешенный на этом порту при утверждении запроса.
+    - **Протокол**— протокол, разрешенный на этом порту при утверждении запроса.
     - **Разрешенные исходные** IP-адреса — диапазоны, разрешенные на этом порте при утверждении запроса.
-    - **Максимальное время запроса** — максимальное время, в течение которого может быть открыт конкретный порт
+    - **Максимальное время запроса**— максимальное время, в течение которого может быть открыт конкретный порт
 
      1. Настройте Безопасность порта в отношении ваших потребностей.
 
@@ -300,7 +300,7 @@ ms.locfileid: "93289209"
 
     ```azurepowershell
     $JitPolicyVm1 = (@{
-        id="/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VMNAME";
+        id="/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VMNAME";
         ports=(@{
            number=22;
            endTimeUtc="2020-07-15T17:00:00.3658798Z";

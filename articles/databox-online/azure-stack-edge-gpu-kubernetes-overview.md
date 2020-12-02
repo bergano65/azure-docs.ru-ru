@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 0f67a36ac4ccb27d7b955158b7e4a9cf4f5185d0
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 5b96e568b57c34fec1c93727aabe8e739a2a45cd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636924"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448647"
 ---
 # <a name="kubernetes-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes на устройстве GPU Pro на Azure Stack
 
@@ -106,7 +106,7 @@ Kubernetes также можно интегрировать с рабочими 
 
 ### <a name="kubernetes-and-azure-arc"></a>Kubernetes и дуга Azure
 
-Служба "Дуга Azure" — это гибридное средство управления, которое позволяет развертывать приложения в кластерах Kubernetes. Служба "Дуга Azure" также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластеров. Дополнительные сведения см. в [разделе что такое Azure-Arc Enabled Kubernetes?](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview). Сведения о ценах на ARC Azure см. на странице [цен на дугу Azure](https://azure.microsoft.com/services/azure-arc/#pricing).
+Служба "Дуга Azure" — это гибридное средство управления, которое позволяет развертывать приложения в кластерах Kubernetes. Служба "Дуга Azure" также позволяет использовать Azure Monitor для контейнеров для просмотра и мониторинга кластеров. Дополнительные сведения см. в [разделе что такое Azure-Arc Enabled Kubernetes?](../azure-arc/kubernetes/overview.md). Сведения о ценах на ARC Azure см. на странице [цен на дугу Azure](https://azure.microsoft.com/services/azure-arc/#pricing).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

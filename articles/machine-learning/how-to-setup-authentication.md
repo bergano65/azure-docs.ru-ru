@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: how-to, has-adal-ref, devx-track-js, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 7fa6beacf4456145e312494a72dad321dfef3754
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: ca8a36584c09d850ed1daab8cba301b244f76526
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843933"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447027"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Настройка проверки подлинности для ресурсов и рабочих процессов Машинного обучения Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "94843933"
 
     Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. Или откройте браузер и выполните инструкции из командной строки. В инструкции входит переход к [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и ввод кода авторизации.
 
-    Если у вас несколько подписок Azure, можно использовать `az account set -s <subscription name or ID>` команду, чтобы задать подписку. См. дополнительные сведения в статье [Use multiple Azure subscriptions](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest) (Использование нескольких подписок Azure).
+    Если у вас несколько подписок Azure, можно использовать `az account set -s <subscription name or ID>` команду, чтобы задать подписку. См. дополнительные сведения в статье [Use multiple Azure subscriptions](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest) (Использование нескольких подписок Azure).
 
     Другие методы аутентификации см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?preserve-view=true&view=azure-cli-latest).
 
@@ -184,7 +184,7 @@ ms.locfileid: "94843933"
 > interactive_auth = InteractiveLoginAuthentication(tenant_id="your-tenant-id")
 > ```
 
-При использовании Azure CLI `az login` команда используется для проверки подлинности сеанса CLI. Дополнительные сведения см. в статье [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
+При использовании Azure CLI `az login` команда используется для проверки подлинности сеанса CLI. Дополнительные сведения см. в статье [Приступая к работе с Azure CLI](/cli/azure/get-started-with-azure-cli).
 
 > [!TIP]
 > Если вы используете пакет SDK из среды, в которой ранее выполнялась проверка подлинности в интерактивном режиме с помощью Azure CLI, можно использовать `AzureCliAuthentication` класс для проверки подлинности в рабочей области с помощью учетных данных, кэшированных CLI:

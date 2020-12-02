@@ -1,6 +1,6 @@
 ---
-title: Интерфейсы API-интерфейсов & для PowerShell
-description: Найдите самые популярные командлеты PowerShell для пула SQL Azure синапсе Analytics, включая приостановку и возобновление работы базы данных.
+title: PowerShell & интерфейсы API для выделенного пула SQL (ранее — хранилище данных SQL)
+description: Основные командлеты PowerShell для выделенного пула SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics, в том числе как приостановить и возобновить работу.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, devx-track-azurepowershell
-ms.openlocfilehash: aaf290fac71fec0ff4106e3f8a1895dd65b94e09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb26ac0071a50095f8e93ce0cc25da0055bdbac8
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89072899"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448222"
 ---
-# <a name="powershell--rest-apis-for-azure-synapse-analytics-sql-pool"></a>PowerShell & интерфейсы API-интерфейсов для службы Azure синапсе Analytics для пула SQL
+# <a name="powershell--rest-apis-for-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>PowerShell & интерфейсы API для для выделенного пула SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics. 
 
-Многие задачи администрирования пула SQL Azure синапсе Analytics можно управлять с помощью Azure PowerShell командлетов или интерфейсов API.  Ниже приведены некоторые примеры использования команд PowerShell для автоматизации распространенных задач в пуле SQL.  Хорошие примеры использования REST приведены в статье [Управление вычислительными ресурсами в хранилище данных SQL Azure (REST)](sql-data-warehouse-manage-compute-rest-api.md).
+Многие выделенные административные задачи пула SQL можно управлять с помощью Azure PowerShell командлетов или интерфейсов API.  Ниже приведены некоторые примеры использования команд PowerShell для автоматизации распространенных задач в выделенном пуле SQL (ранее — в хранилище данных SQL).  Хорошие примеры использования REST приведены в статье [Управление вычислительными ресурсами в хранилище данных SQL Azure (REST)](sql-data-warehouse-manage-compute-rest-api.md).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -83,7 +83,7 @@ $resultDatabase = $database | Resume-AzSqlDatabase
 * [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 * [Suspend-Азсклдатабасе](/powershell/module/az.sql/suspend-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры PowerShell см. в указанных далее документах.
 

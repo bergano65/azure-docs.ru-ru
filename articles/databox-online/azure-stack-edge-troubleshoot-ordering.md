@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 08/11/2020
 ms.author: alkohli
-ms.openlocfilehash: 3087c209b844d691173edbbd8a993c1d0aae319b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be7d477d08b025fd450bfa859e8eb677ba680143
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903635"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446372"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-pro-ordering-issues"></a>Устранение неполадок, связанных с порядком Azure Stack пограничных заказов Pro
 
@@ -33,7 +33,7 @@ ms.locfileid: "90903635"
 
 ![Неподдерживаемая подписка или регион](media/azure-stack-edge-troubleshoot-ordering/azure-stack-edge-troubleshoot-ordering-01.png)
 
-**Предлагаемое решение:**  Убедитесь, что вы использовали поддерживаемую подписку, например [Microsoft Соглашение Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), [поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp)или [спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются. Дополнительные сведения см. в разделе [требования к ресурсам Azure Stack ребра](azure-stack-edge-deploy-prep.md#prerequisites).
+**Предлагаемое решение:**  Убедитесь, что вы использовали поддерживаемую подписку, например [Microsoft Соглашение Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), [поставщик облачных решений (CSP)](/partner-center/azure-plan-lp)или [спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются. Дополнительные сведения см. в разделе [требования к ресурсам Azure Stack ребра](azure-stack-edge-deploy-prep.md#prerequisites).
 
 Существует вероятность того, что корпорация Майкрософт может разрешить обновление типа подписки для каждого случая. Обратитесь в [службу поддержки Майкрософт](https://azure.microsoft.com/support/options/) , чтобы они могли понять ваши потребности и соответствующим образом настроить эти ограничения.
 
@@ -53,7 +53,7 @@ ms.locfileid: "90903635"
 
     ![Регистрация поставщика ресурсов](media/azure-stack-edge-troubleshoot-ordering/azure-stack-edge-troubleshoot-ordering-02.png)
 
-Если у вас нет прав владельца или участника для регистрации поставщика ресурсов, вы увидите следующую ошибку: * &lt; имя подписки подписки &gt; не имеет разрешений на регистрацию поставщиков ресурсов: Microsoft. датабокседже.*
+Если у вас нет прав владельца или участника для регистрации поставщика ресурсов, вы увидите следующую ошибку: *&lt; имя подписки подписки &gt; не имеет разрешений на регистрацию поставщиков ресурсов: Microsoft. датабокседже.*
 
 Дополнительные сведения см. в статье [Регистрация поставщиков ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
 
@@ -61,7 +61,7 @@ ms.locfileid: "90903635"
 
 **Ошибка:** В портал Azure выберите подписку, которая будет использоваться для Azure Stack ребра Pro или Шлюз Data Box, и получите следующую ошибку:
 
-*Поставщики ресурсов: Microsoft. датабокседже не зарегистрировано для подписки на подписку &lt; &gt; , и у вас нет разрешений на регистрацию поставщика ресурсов для &lt; &gt; *подписки на имя подписки.
+*Поставщики ресурсов: Microsoft. датабокседже не зарегистрировано для подписки на подписку &lt; &gt; , и у вас нет разрешений на регистрацию поставщика ресурсов для &lt; &gt;* подписки на имя подписки.
 
 **Предлагаемое решение:** Повысьте уровень доступа к подписке или найдите пользователя с правами владельца или участника для регистрации поставщика ресурсов.
 
@@ -73,6 +73,6 @@ ms.locfileid: "90903635"
 
 **Предлагаемое решение:** Эта ошибка возникает из-за существующей политики Azure, блокирующей создание ресурсов. Политики Azure задаются системным администратором организации для обеспечения соответствия при использовании или создании ресурсов Azure. Если любая такая политика блокирует Azure Stack создания ресурса ребра, обратитесь к системному администратору, чтобы изменить политику Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о том, как [устранять неполадки Azure Stack пограничных Pro](azure-stack-edge-troubleshoot.md).

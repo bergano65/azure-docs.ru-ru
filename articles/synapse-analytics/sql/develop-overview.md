@@ -10,17 +10,17 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2a24a61e26bdfaba0619e3965e95b1828380a1c8
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d47b4847a12b63532e44a8a1a47101dd065f811b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322113"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446593"
 ---
 # <a name="design-decisions-and-coding-techniques-for-synapse-sql-features-in-azure-synapse-analytics"></a>Разработка решений и методов программирования для функций синапсе SQL в Azure синапсе Analytics
-В этой статье вы найдете список ресурсов для выделенного пула SQL и функций синапсе SQL, бессерверных пулов SQL. Рекомендуемые статьи делятся на два раздела: основные решения по проектированию и методики разработки и программирования.
+В этой статье вы найдете список ресурсов для выделенного пула SQL и функций пула SQL, бессерверных синапсе SQL. Рекомендуемые статьи делятся на два раздела: основные решения по проектированию и методики разработки и программирования.
 
-Цель этих статей — помочь вам разработать оптимальный технический подход к синапсе компонентам SQL в синапсе Analytics.
+Цель этих статей — помочь вам разработать оптимальный технический подход к синапсе компонентам SQL в Azure синапсе Analytics.
 
 ## <a name="key-design-decisions"></a>Основные проектные решения
 Приведенные ниже статьи выделяют основные понятия и архитектурные решения для синапсе разработки SQL.

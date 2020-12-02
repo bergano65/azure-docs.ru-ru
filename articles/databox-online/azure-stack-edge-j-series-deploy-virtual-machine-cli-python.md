@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: alkohli
-ms.openlocfilehash: c27f6ef47b8e4db83ceb63e308e318803800f8a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c12935a4b0b9cbbf088ba7b9c5ea804be0ce85a1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890720"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447368"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>Развертывание виртуальных машин на устройстве GPU Azure Stack Edge Pro с помощью Azure CLI и Python
 
@@ -117,7 +117,7 @@ ms.locfileid: "90890720"
 
 ### <a name="verify-profile-and-install-azure-cli"></a>Проверка профиля и установка Azure CLI
 
-<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
+<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
 
 1. Установите Azure CLI на клиенте. В этом примере используется Azure CLI 2.0.80. Чтобы проверить версию Azure CLI, выполните команду `az --version`.
 
@@ -147,7 +147,7 @@ ms.locfileid: "90890720"
     PS C:\windows\system32>
     ```
 
-    Если у вас нет Azure CLI, скачайте и [установите Azure CLI в Windows](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest). Azure CLI можно запускать с помощью командной строки Windows или Windows PowerShell.
+    Если у вас нет Azure CLI, скачайте и [установите Azure CLI в Windows](/cli/azure/install-azure-cli-windows?view=azure-cli-latest). Azure CLI можно запускать с помощью командной строки Windows или Windows PowerShell.
 
 2. Запишите расположение Python в интерфейсе командной строки. Оно потребуется для определения расположения хранилища доверенных корневых сертификатов для Azure CLI.
 
@@ -308,7 +308,7 @@ ms.locfileid: "90890720"
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
     ```
 
-4. Войдите в среду Azure Stack Edge Pro с помощью команды `az login`. Вы можете войти в среду Azure Stack Edge Pro от имени пользователя или [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals).
+4. Войдите в среду Azure Stack Edge Pro с помощью команды `az login`. Вы можете войти в среду Azure Stack Edge Pro от имени пользователя или [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md).
 
    Чтобы войти от имени *пользователя*, сделайте следующее.
 

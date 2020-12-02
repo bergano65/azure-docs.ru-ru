@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 9a6b0910fcfd2a632f2520a2fe683b15592017cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15e2d7a144b54f443b8298b20dbfacf78a50f9e1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891184"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447548"
 ---
 # <a name="configure-tls-12-on-windows-clients-accessing-azure-stack-edge-pro-device"></a>Настройка TLS 1,2 на клиентах Windows, обращающихся к Azure Stack пограничному устройству Pro
 
@@ -38,11 +38,11 @@ ms.locfileid: "90891184"
 
 Если вы хотите установить TLS 1,2 для своей среды, следуйте указаниям в следующих документах:
 
-- [Общие сведения о включении TLS 1,2](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#tls-12)
-- [Включение TLS 1.2 на клиентах](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-client)
-- [Включение TLS 1.2 на серверах сайта и удаленных системах сайта](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-server)
-- [Протоколы в TLS/SSL (поставщик общих служб Schannel)](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-ecc-curve-order)
-- Комплекты [шифров](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#tls-12). в частности, [для настройки порядка](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order) комплектов шифров TLS убедитесь в том, что вы перечислите текущие комплекты шифров и не могли бы быть в следующем списке:
+- [Общие сведения о включении TLS 1,2](/windows-server/security/tls/tls-registry-settings#tls-12)
+- [Включение TLS 1.2 на клиентах](/configmgr/core/plan-design/security/enable-tls-1-2-client)
+- [Включение TLS 1.2 на серверах сайта и удаленных системах сайта](/configmgr/core/plan-design/security/enable-tls-1-2-server)
+- [Протоколы в TLS/SSL (поставщик общих служб Schannel)](/windows-server/security/tls/manage-tls#configuring-tls-ecc-curve-order)
+- Комплекты [шифров](/windows-server/security/tls/tls-registry-settings#tls-12). в частности, [для настройки порядка](/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order) комплектов шифров TLS убедитесь в том, что вы перечислите текущие комплекты шифров и не могли бы быть в следующем списке:
 
     - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
     - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
@@ -68,10 +68,10 @@ ms.locfileid: "90891184"
     New-ItemProperty -Path "$HklmSoftwarePath\Policies\Microsoft\Cryptography\Configuration\SSL\00010002" -Name "EccCurves" -PropertyType MultiString -Value @("NistP256", "NistP384")
     ```
     
-    - [Установите минимальный размер обмена ключами RSA равным 2048](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#keyexchangealgorithm---client-rsa-key-sizes).
+    - [Установите минимальный размер обмена ключами RSA равным 2048](/windows-server/security/tls/tls-registry-settings#keyexchangealgorithm---client-rsa-key-sizes).
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подключение к Azure Resource Manager.](azure-stack-edge-j-series-connect-resource-manager.md)

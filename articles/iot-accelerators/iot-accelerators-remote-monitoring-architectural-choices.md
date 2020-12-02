@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1bd08596a30db7322a72b4269fddfe0b9df19119
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27a65d8a499f6eba130dc9537de3cb2b3dc3abe8
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61447189"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446758"
 ---
 # <a name="remote-monitoring-architectural-choices"></a>Сведения об архитектуре решения для удаленного мониторинга
 
@@ -23,7 +23,7 @@ ms.locfileid: "61447189"
 - Управление устройствами
 - Потоковая обработка
 
-В решении для удаленного мониторинга применяется рекомендованная [эталонная архитектура Центра Интернета вещей Azure](https://aka.ms/iotrefarchitecture).
+В решении для удаленного мониторинга применяется рекомендованная [эталонная архитектура Центра Интернета вещей Azure](/azure/architecture/reference-architectures/iot).
 
 В этой статье приведены сведения об основных архитектурных и технических компонентах, используемых для каждой подсистемы решения удаленного мониторинга. Но не забывайте, что примененная корпорацией Майкрософт техническая структура для решения удаленного мониторинга, — это не единственная возможность реализовать решение Интернета вещей для удаленного мониторинга. Техническую реализацию следует рассматривать как основу для создания успешного приложения, и внести в нее корректировки с учетом следующего:
 
@@ -86,4 +86,4 @@ Azure Cosmos DB — это рекомендуемое решение тепло
 
 * Разверните свое решение для удаленного мониторинга [здесь](https://www.azureiotsolutions.com/).
 * Изучите код в GitHub на [C#](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/) и [Java](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java/).  
-* Дополнительные сведения об эталонной архитектуре Интернета вещей см. в этой [статье](https://aka.ms/iotrefarchitecture).
+* Дополнительные сведения об эталонной архитектуре Интернета вещей см. в этой [статье](/azure/architecture/reference-architectures/iot).

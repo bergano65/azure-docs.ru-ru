@@ -12,12 +12,12 @@ author: joesackmsft
 ms.author: josack
 ms.reviewer: sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: fe49dce276a15d9d7bc8ddaa5618c0e43dec62e9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b34ac24cb26bf5db4a49a5ad5b531deb252f4695
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841229"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446111"
 ---
 # <a name="new-dba-in-the-cloud--managing-azure-sql-database-after-migration"></a>Создание баз данных администраторов в облаке
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -65,8 +65,8 @@ ms.locfileid: "94841229"
 
 |Уровень служб|Срок хранения в днях|
 |---|:---:|
-|Basic|7|
-|Стандартный|35|
+|Основные|7|
+|Standard|35|
 |Premium|35|
 |||
 
@@ -101,12 +101,12 @@ ms.locfileid: "94841229"
 
 В службе "База данных SQL" доступны два метода проверки подлинности:
 
-- [Проверка подлинности Azure Active Directory](authentication-aad-overview.md)
+- [Аутентификация Azure Active Directory](authentication-aad-overview.md)
 - [Проверка подлинности SQL](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication).
 
 Традиционная проверка подлинности Windows не поддерживается. Azure Active Directory (Azure AD) — это централизованная служба управления удостоверениями и доступом. Благодаря ей вы можете очень легко предоставлять возможности единого входа (SSO) всем сотрудникам организации. Это значит, что одни учетные данные используются во всех службах Azure, что упрощает проверку подлинности. 
 
-Azure AD поддерживает [многофакторную идентификацию Azure AD](authentication-mfa-ssms-overview.md) и [несколько щелчков](../../active-directory/hybrid/how-to-connect-install-express.md) Azure AD можно интегрировать с Windows Server Active Directory. Принципы работы проверки подлинности SQL не изменились. Вы предоставляете имя пользователя и пароль, а также можете выполнять проверку подлинности пользователей в любой базе данных на заданном сервере. Это также позволяет базе данных SQL и Azure синапсе Analytics (ранее — хранилище данных SQL) предлагать многофакторную проверку подлинности и гостевые учетные записи пользователей в домене Azure AD. При наличии Active Directory в локальной среде вы можете создать федерацию каталога с Azure Active Directory, чтобы расширить свой каталог до Azure.
+Azure AD поддерживает [многофакторную идентификацию Azure AD](authentication-mfa-ssms-overview.md) и [несколько щелчков](../../active-directory/hybrid/how-to-connect-install-express.md) Azure AD можно интегрировать с Windows Server Active Directory. Принципы работы проверки подлинности SQL не изменились. Вы предоставляете имя пользователя и пароль, а также можете выполнять проверку подлинности пользователей в любой базе данных на заданном сервере. Это также позволяет базе данных SQL и Azure синапсе Analytics предлагать многофакторную проверку подлинности и учетные записи гостевых пользователей в домене Azure AD. При наличии Active Directory в локальной среде вы можете создать федерацию каталога с Azure Active Directory, чтобы расширить свой каталог до Azure.
 
 |**Если вы...**|**База данных SQL или Azure синапсе Analytics**|
 |---|---|
@@ -174,7 +174,7 @@ Azure AD поддерживает [многофакторную идентифи
 |**Диапазон шифрования**|Законченное решение|Неактивные данные|
 |**Сервер может получать доступ к конфиденциальным данным**|Нет|Да, так как шифруются неактивные данные|
 |**Разрешенные операции T-SQL**|Сравнение на равенство|Доступна вся контактная зона T-SQL|
-|**Степень изменения приложения для использования этой функции**|Минимальный|Минимальные|
+|**Степень изменения приложения для использования этой функции**|Небольшие|Минимальные|
 |**Гранулярность шифрования**|На уровне столбцов|На уровне базы данных|
 ||||
 

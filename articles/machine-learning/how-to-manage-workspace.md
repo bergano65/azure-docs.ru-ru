@@ -10,12 +10,12 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 9524577d40c3b6b65bb3c3c8ff9e257b015ed90d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 4425fdf488665ad555c73c59682041cb23a9ca66
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95012950"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447321"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Создание рабочих областей Машинное обучение Azure и управление ими 
 
@@ -30,7 +30,7 @@ ms.locfileid: "95012950"
 
 ## <a name="limitations"></a>Ограничения
 
-* При создании рабочей области можно либо разрешить этой рабочей области создавать службы Azure, которые требуются автоматически, либо предоставить существующие службы. При предоставлении существующих служб все эти службы должны находиться в той же подписке Azure, что и Рабочая область.
+[!INCLUDE [register-namespace](../../includes/machine-learning-register-namespace.md)]
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
 
@@ -197,7 +197,7 @@ ms.locfileid: "95012950"
 
 Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Вы должны разрешить центру безопасности Azure проверять ресурсы и следовать рекомендациям. Дополнительные сведения см. в статье  [сканирование образа реестра контейнеров Azure с помощью центра безопасности](../security-center/defender-for-container-registries-introduction.md) и [интеграции Azure Kubernetes Services с центром безопасности](../security-center/defender-for-kubernetes-introduction.md).
 
-### <a name="advanced"></a>Дополнительно
+### <a name="advanced"></a>Продвинутый уровень
 
 По умолчанию метаданные для рабочей области хранятся в экземпляре Azure Cosmos DB, который обслуживает Корпорация Майкрософт. Эти данные шифруются с помощью ключей, управляемых корпорацией Майкрософт.
 

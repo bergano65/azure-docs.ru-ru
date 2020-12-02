@@ -10,12 +10,12 @@ ms.custom: how-to
 ms.author: jmartens
 author: j-martens
 ms.date: 11/16/2020
-ms.openlocfilehash: 2abad31173992a891e908bdbb61c37e905907d69
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 0afbf32f80a3d19f6db457f398a213a634cfa3d4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697584"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447056"
 ---
 # <a name="connect-to-an-azure-machine-learning-compute-instance-in-visual-studio-code-preview"></a>Подключение к вычислительному экземпляру Машинное обучение Azure в Visual Studio Code (Предварительная версия)
 
@@ -41,7 +41,7 @@ ms.locfileid: "94697584"
 1. При загрузке интегрированной записной книжки выберите **Jupyter Server**.
 
     > [!div class="mx-imgBorder"]
-    > ![Раскрывающийся список запуска Машинное обучение Azure удаленных серверов Jupyter Notebook](media/how-to-set-up-vs-code-remote/launch-server-selection-dropdown.png)
+    > ![Раскрывающийся список Машинное обучение Azure запуска сервера удаленного Jupyter Notebook](media/how-to-set-up-vs-code-remote/launch-server-selection-dropdown.png)
 
     Кроме того, можно использовать палитру команд:
 
@@ -58,7 +58,7 @@ ms.locfileid: "94697584"
 > [!IMPORTANT]
 > Чтобы установить соединение, **необходимо** запустить ячейку.
 
-На этом этапе можно продолжить выполнение ячеек в записной книжке Jupyter.
+На этом этапе можно продолжить выполнение ячеек в Jupyter Notebook.
 
 > [!TIP]
 > Вы также можете работать с файлами скриптов Python (. Копировать), содержащими ячейки кода Jupyter. Дополнительные сведения см. в [интерактивной документации по Visual Studio Code Python](https://code.visualstudio.com/docs/python/jupyter-support-py).
@@ -134,7 +134,7 @@ Host azmlci1
 |----|---------|
 |Узел|Использование любой краткой формы для вычислительного экземпляра |
 |HostName|Это IP-адрес вычислительного экземпляра |
-|Port|Это порт, показанный в диалоговом окне SSH выше |
+|Порт|Это порт, показанный в диалоговом окне SSH выше |
 |Пользователь|Это должно быть `azureuser` |
 |идентитифиле|Должен указывать на файл, в который был сохранен закрытый ключ |
 
@@ -150,7 +150,7 @@ Host azmlci1
 
 С этого момента вы полностью работаете с вычислительным экземпляром, и теперь можете редактировать, отлаживать, использовать Git, использовать расширения и т. д., как и в случае с локальными Visual Studio Code.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили Visual Studio Code удаленно, вы можете использовать вычислительный экземпляр в качестве удаленного вычислений от Visual Studio Code для [интерактивной отладки кода](how-to-debug-visual-studio-code.md).
 

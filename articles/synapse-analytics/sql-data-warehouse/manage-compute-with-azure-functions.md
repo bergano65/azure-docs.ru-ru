@@ -1,6 +1,6 @@
 ---
 title: Руководство. Управление средами вычислений с помощью функций Azure
-description: Как использовать функции Azure для управления вычислением пула SQL в Azure синапсе Analytics.
+description: Использование функций Azure для управления вычислением выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics.
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -11,26 +11,26 @@ ms.date: 04/27/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: bc615322c11a456699d2364cf44cad40e086e851
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f0731f0deaf46ec419cfe43037804e10f2b73fd4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022485"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448387"
 ---
-# <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Использование функций Azure для управления ресурсами вычислений в пуле SQL Azure синапсе Analytics
+# <a name="use-azure-functions-to-manage-compute-resources-for-your-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Использование функций Azure для управления ресурсами вычислений для выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics
 
-В этом руководстве используются функции Azure для управления ресурсами вычислений для пула SQL в Azure синапсе Analytics.
+В этом руководстве используются функции Azure для управления ресурсами вычислений для выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics.
 
-Чтобы использовать Azure приложение-функция с пулом SQL, необходимо создать [учетную запись субъекта-службы](../../active-directory/develop/howto-create-service-principal-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) с доступом участника в той же подписке, что и экземпляр пула SQL.
+Чтобы использовать приложение-функция Azure с выделенным пулом SQL (ранее — ХРАНИЛИЩЕм данных SQL), необходимо создать [учетную запись субъекта-службы](../../active-directory/develop/howto-create-service-principal-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Учетной записи субъекта-службы требуется доступ участника в той же подписке, что и выделенный экземпляр пула SQL (ранее SQL DW).
 
 ## <a name="deploy-timer-based-scaling-with-an-azure-resource-manager-template"></a>Развертывание масштабирования по таймеру с помощью шаблона Azure Resource Manager
 
 Чтобы развернуть шаблон, понадобится следующая информация:
 
-- Имя группы ресурсов, в которой находится экземпляр пула SQL
-- Имя сервера, на котором находится экземпляр пула SQL
-- Имя экземпляра пула SQL
+- Имя группы ресурсов, в которой находится выделенный экземпляр пула SQL (прежнее название — SQL DW)
+- Имя сервера, в котором находится выделенный экземпляр пула SQL (прежнее название — SQL DW)
+- Имя выделенного экземпляра пула SQL (прежнее название — SQL DW)
 - идентификатор клиента (идентификатор каталога) Azure Active Directory;
 - Идентификатор подписки
 - идентификатор приложения субъекта-службы;
@@ -48,13 +48,13 @@ ms.locfileid: "96022485"
 
    ![Функции, развернутые с помощью шаблона](./media/manage-compute-with-azure-functions/five-functions.png)
 
-2. Выберите *DWScaleDownTrigger* или *DWScaleUpTrigger* в зависимости от того, что нужно изменить: время увеличения или уменьшения масштаба. В раскрывающемся меню выберите пункт "Интегрировать".
+2. Выберите *DWScaleDownTrigger* или *DWScaleUpTrigger* , чтобы увеличить или уменьшить масштаб. В раскрывающемся меню выберите пункт "Интегрировать".
 
    ![Выбор пункта "Интегрировать" для функции](./media/manage-compute-with-azure-functions/select-integrate.png)
 
 3. В текущий момент должно отображаться значение *%ScaleDownTime%* или *%ScaleUpTime%*. Эти значения указывают на то, что расписание основано на значениях, определенных в [параметрах приложения](../../azure-functions/functions-how-to-use-azure-function-app-settings.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Пока что это значение можно проигнорировать и изменить время в расписании по своему усмотрению, основываясь на следующих шагах.
 
-4. В области расписание добавьте время для выражения CRON, которое будет показывать, как часто требуется масштабировать аналитику Azure синапсе Analytics.
+4. В области расписание добавьте выражение CRON, которое будет показывать, как часто требуется масштабировать службу аналитики Azure синапсе Analytics.
 
    ![Изменение расписания функции](./media/manage-compute-with-azure-functions/change-schedule.png)
 
@@ -70,11 +70,11 @@ ms.locfileid: "96022485"
 
 1. Перейдите к службе приложения-функции. Если вы развернули шаблон со значениями по умолчанию, эта служба должна называться *DWOperations*. Когда приложение-функция откроется, вы увидите пять развернутых функций в службе приложения-функции.
 
-2. Выберите *DWScaleDownTrigger* или *DWScaleUpTrigger* в зависимости от того, что нужно изменить: значение увеличения или уменьшения масштаба вычислений. После выбора функций в области должен отобразиться файл *index.js*.
+2. Выберите *DWScaleDownTrigger* или *DWScaleUpTrigger* , чтобы увеличить или уменьшить масштаб значения вычислений. После выбора функций в области должен отобразиться файл *index.js*.
 
    ![Изменение уровня вычислений триггера функции](././media/manage-compute-with-azure-functions/index-js.png)
 
-3. Замените значение параметра *ServiceLevelObjective* на значение необходимого уровня и нажмите кнопку "Сохранить". Это значение задает уровень вычислений, на основе которого будет масштабироваться ваш экземпляр хранилища данных в соответствии с расписанием, определенным в разделе «Интеграция».
+3. Измените значение *ServiceLevelObjective* на нужный уровень и нажмите кнопку Сохранить. *ServiceLevelObjective* — это уровень вычислений, по которому будет масштабироваться экземпляр хранилища данных в соответствии с расписанием, определенным в разделе Интеграция.
 
 ## <a name="use-pause-or-resume-instead-of-scale"></a>Использование приостановки или возобновления работы вместо масштабирования
 
@@ -84,7 +84,7 @@ ms.locfileid: "96022485"
 
    ![Панель "Функции"](./media/manage-compute-with-azure-functions/functions-pane.png)
 
-2. Передвиньте переключатели для соответствующих триггеров, которые нужно включить.
+2. Выберите переключатель с скользящим для соответствующих триггеров, которые вы хотите включить.
 
 3. Перейдите на вкладки *интеграции* для соответствующих триггеров, чтобы изменить их расписание.
 
@@ -114,17 +114,17 @@ ms.locfileid: "96022485"
 5. Установите для переменной операции требуемое поведение следующим образом:
 
    ```JavaScript
-   // Resume the SQL pool instance
+   // Resume the dedicated SQL pool (formerly SQL DW) instance
    var operation = {
        "operationType": "ResumeDw"
    }
 
-   // Pause the SQL pool instance
+   // Pause the dedicated SQL pool (formerly SQL DW) instance
    var operation = {
        "operationType": "PauseDw"
    }
 
-   // Scale the SQL pool instance to DW600c
+   // Scale the dedicated SQL pool (formerly SQL DW)l instance to DW600c
    var operation = {
        "operationType": "ScaleDw",
        "ServiceLevelObjective": "DW600c"
@@ -165,8 +165,8 @@ ms.locfileid: "96022485"
 | Функция 3 | 0 0 23 * * 5   | `var operation = {"operationType": "PauseDw"}` |
 | Функция 4 | 0 0 7 * * 1    | `var operation = {"operationType": "ResumeDw"}` |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функциях [таймера](../../azure-functions/functions-create-scheduled-function.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) Azure.
 
-Извлеките [репозиторий образцов](https://github.com/Microsoft/sql-data-warehouse-samples)пула SQL.
+См. раздел [хранилище примеров](https://github.com/Microsoft/sql-data-warehouse-samples)выделенного пула SQL (ранее — SQL DW).

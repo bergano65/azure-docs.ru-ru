@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: 91efdac9d17e679226f10012bbff9b5b6676ff0e
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: bf4d0a845b7f26c82ba3940d6613a33bcacf9187
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205584"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448337"
 ---
 # <a name="recover-from-a-failed-azure-stack-edge-pro-gpu-device"></a>Восстановление после неудачного Azure Stack устройства GPU с пограничным Pro 
 
@@ -81,7 +81,7 @@ ms.locfileid: "92205584"
 
 | Решения для архивации        | Поддерживаемая ОС   | Справочник                                                                |
 |-------------------------|----------------|--------------------------------------------------------------------------|
-| Агент Службы восстановления Microsoft Azure (MARS) для Azure Backup | Windows        | [Сведения об агенте MARS](/azure/backup/backup-azure-about-mars)    |
+| Агент Службы восстановления Microsoft Azure (MARS) для Azure Backup | Windows        | [Сведения об агенте MARS](../backup/backup-azure-about-mars.md)    |
 | Cohesity                | Windows, Linux | [Краткое описание решения Microsoft Azure интеграции, резервного копирования и восстановления](https://www.cohesity.com/solution/cloud/azure) <br>Для получения дополнительных сведений обратитесь к Cohesity.                          |
 | Commvault               | Windows, Linux | https://www.commvault.com/azure <br> Для получения дополнительных сведений обратитесь к Commvault.
 | Компанию                 | Windows, Linux | http://veritas.com/azure <br> Для получения дополнительных сведений обратитесь в компанию Veritas.                    |

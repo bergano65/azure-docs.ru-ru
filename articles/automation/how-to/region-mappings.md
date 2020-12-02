@@ -1,16 +1,16 @@
 ---
 title: Регионы, в которых поддерживается связанная рабочая область Log Analytics
 description: В этой статье описываются поддерживаемые сопоставления регионов между учетной записью службы автоматизации и рабочей областью Log Analytics, так как она относится к определенным функциям службы автоматизации Azure.
-ms.date: 10/19/2020
+ms.date: 12/01/2020
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 23e5293301a2fc311565d0c1c8ec5fd92bebe9b2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 25ddf562f92ca96a505432a58f137657a2bbc4bd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183572"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446977"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Регионы, в которых поддерживается связанная рабочая область Log Analytics
 
@@ -31,6 +31,7 @@ ms.locfileid: "96183572"
 |---|---|
 |**США**||
 |EastUS <sup>1</sup>|EastUS2|
+|EastUS2<sup>2</sup>|EastUS|
 |WestUS2|WestUS2|
 |SouthCentralUS|SouthCentralUS|
 |WestCentralUS|WestCentralUS|
@@ -40,7 +41,7 @@ ms.locfileid: "96183572"
 |AustraliaSoutheast|AustraliaSoutheast|
 |SoutheastAsia|SoutheastAsia|
 |CentralIndia|CentralIndia|
-|ChinaEast2<sup>2</sup>|ChinaEast2|
+|ChinaEast2<sup>3</sup>|ChinaEast2|
 |JapanEast|JapanEast|
 |**Европа**||
 |UKSouth|UKSouth|
@@ -48,11 +49,13 @@ ms.locfileid: "96183572"
 |свитзерланднорс|свитзерланднорс|
 |**US Gov**||
 |USGovVirginia|USGovVirginia|
-|Усговаризона<sup>2</sup>|USGov (Аризона)|
+|Усговаризона<sup>3</sup>|USGov (Аризона)|
 
 <sup>1</sup> Сопоставление EastUS рабочих областей Log Analytics с учетными записями службы автоматизации не является точным сопоставлением региона с регионом, однако оно корректно.
 
-<sup>2</sup> в этом регионе поддерживается только управление обновлениями, а другие функции, такие как отслеживание изменений и Инвентаризация, в настоящее время недоступны.
+<sup>2</sup> сопоставление EastUS2 log Analytics для рабочих областей с учетными записями службы автоматизации не является точным сопоставлением региона и региона, но является правильным сопоставлением.
+
+<sup>3</sup> в этом регионе поддерживается только управление обновлениями, а другие функции, такие как отслеживание изменений и Инвентаризация, в настоящее время недоступны.
 
 ## <a name="unlink-a-workspace"></a>Отмена связи для рабочей области
 

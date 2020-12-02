@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 5cf406dc0577f477858dd8a6570f7975747112e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 048f2585d8e9ac1b10293083bda0900e7ce468bb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891264"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447604"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stack ребра Pro
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-Azure Resource Manager предоставляет слой управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Устройство Azure Stack пограничной Pro поддерживает те же интерфейсы API Azure Resource Manager для создания, обновления и удаления виртуальных машин в локальной подписке. Эта поддержка позволяет управлять устройством способом, согласованным с облаком. 
+Azure Resource Manager обеспечивает уровень управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Устройство Azure Stack пограничной Pro поддерживает те же интерфейсы API Azure Resource Manager для создания, обновления и удаления виртуальных машин в локальной подписке. Эта поддержка позволяет управлять устройством способом, согласованным с облаком. 
 
 В этом руководстве описывается, как подключиться к локальным API на устройстве Azure Stack ребра Pro с помощью Azure Resource Manager Azure PowerShell.
 
@@ -138,9 +138,9 @@ Azure Resource Manager предоставляет последовательны
 
     Сравните **основную** версию и убедитесь, что она 5,0 или более поздней версии.
 
-    Если у вас более старая версия, см. раздел [Обновление существующей версии Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+    Если у вас более старая версия, см. раздел [Обновление существующей версии Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
-    Если у вас \' нет PowerShell 5,0, следуйте инструкциям по [установке Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6).
+    Если у вас \' нет PowerShell 5,0, следуйте инструкциям по [установке Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6).
 
     Результат выполнения команды показан ниже.
 
@@ -175,11 +175,11 @@ Azure Resource Manager предоставляет последовательны
     PSGallery                 Trusted              https://www.powershellgallery.com/api/v2
     ```
     
-Если репозиторий не является доверенным или требуются дополнительные сведения, см. [статью Проверка специальных возможностей коллекция PowerShell](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?view=azs-1908#2-validate-the-powershell-gallery-accessibility).
+Если репозиторий не является доверенным или требуются дополнительные сведения, см. [статью Проверка специальных возможностей коллекция PowerShell](/azure-stack/operator/azure-stack-powershell-install?view=azs-1908#2-validate-the-powershell-gallery-accessibility).
 
 ## <a name="step-4-set-up-azure-powershell-on-the-client"></a>Шаг 4. Настройка Azure PowerShell на клиенте 
 
-<!--1. Verify the API profile of the client and identify which version of the Azure PowerShell modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
+<!--1. Verify the API profile of the client and identify which version of the Azure PowerShell modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
 
 1. На клиенте будут установлены модули Azure PowerShell, которые будут работать с устройством.
 
@@ -297,9 +297,9 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
 Задайте среду Azure Resource Manager и убедитесь, что устройство может обмениваться данными с помощью Azure Resource Manager работает нормально. Для этой проверки выполните следующие действия.
 
 
-1. Используйте `Add-AzureRmEnvironment` командлет, чтобы убедиться, что связь с помощью Azure Resource Manager работает правильно и вызовы API проходят через порт, выделенный для Azure Resource Manager-443.
+1. Используйте командлет `Add-AzureRmEnvironment` для проверки того, что передача данных через Azure Resource Manager работает правильно и вызовы API проходят через порт, выделенный для Azure Resource Manager — 443.
 
-    `Add-AzureRmEnvironment`Командлет добавляет конечные точки и метаданные, чтобы включить командлеты Azure Resource Manager для подключения к новому экземпляру Azure Resource Manager. 
+    Командлет `Add-AzureRmEnvironment` добавляет конечные точки и метаданные, чтобы разрешить командлетам Azure Resource Manager подключаться к новому экземпляру Azure Resource Manager. 
 
 
     > [!IMPORTANT]
@@ -319,7 +319,7 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
     AzDBE https://management.dbe-n6hugc2ra.microsoftdatabox.com https://login.dbe-n6hugc2ra.microsoftdatabox.com/adfs/
     ```
 
-2. Задайте окружение в качестве Azure Stack пограничной Pro и порт, который будет использоваться для Azure Resource Manager вызовов как 443. Среду можно определить двумя способами:
+2. Задайте Azure Stack Edge Pro в качестве среды и порт 443, который будет использоваться для вызовов Azure Resource Manager. Среду можно определить двумя способами:
 
     - Настройте среду. Введите следующую команду:
 
@@ -327,13 +327,13 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
     Set-AzureRMEnvironment -Name <Environment Name>
     ```
     
-    Дополнительные сведения см. в подразделе [Set-AzureRMEnvironment](https://docs.microsoft.com/powershell/module/azurerm.profile/set-azurermenvironment?view=azurermps-6.13.0).
+    Дополнительные сведения см. в подразделе [Set-AzureRMEnvironment](/powershell/module/azurerm.profile/set-azurermenvironment?view=azurermps-6.13.0).
 
     - Определите встроенную среду для каждого выполняемого командлета. Это гарантирует, что все вызовы API будут проходить через правильную среду. По умолчанию вызовы будут проходить через общедоступную версию Azure, но вы хотите, чтобы они перейдут в среду, настроенную для Azure Stack устройства Pro.
 
     - См. Дополнительные сведения о [том, как переключить среды AzureRM](#switch-environments).
 
-2. Вызов интерфейсов API локальных устройств для проверки подлинности подключений к Azure Resource Manager. 
+2. Вызовите API локальных устройств для проверки подлинности подключений к Azure Resource Manager. 
 
     1. Эти учетные данные предназначены для учетной записи локального компьютера и используются только для доступа к API.
 

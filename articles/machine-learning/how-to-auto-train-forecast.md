@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 57b54fbe20df4eb74ee17c7b5ac83d773114463b
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8c6a27f0cfaafe7e6c1181651e672d0e828af855
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437377"
+ms.locfileid: "96444484"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
 
@@ -154,7 +154,7 @@ ForecastTCN (предварительная версия)| ForecastTCN — эт
 
 
 Приведенный ниже код 
-* Использует [`ForecastingParameters`](https://docs.microsoft.com/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) класс для определения параметров прогнозирования для обучения экспериментов.
+* Использует [`ForecastingParameters`](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) класс для определения параметров прогнозирования для обучения экспериментов.
 * Задает `time_column_name` для `day_datetime` поля в наборе данных. 
 * Определяет `time_series_id_column_names` параметр для `"store"` . Это гарантирует, что для данных будут созданы **две отдельные группы временных рядов** . один для хранилищ A и B.
 * Задает значение `forecast_horizon` 50 для прогнозирования всего набора тестов. 

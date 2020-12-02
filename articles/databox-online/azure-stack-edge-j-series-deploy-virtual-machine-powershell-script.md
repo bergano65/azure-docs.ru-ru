@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: cd877a91c7c082ce7845394f2636857f33b7940f
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 957274e6080ab4b77e6528386fe0b24b2d877219
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578762"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447315"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell-script"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью скрипта Azure PowerShell
 
@@ -50,11 +50,11 @@ ms.locfileid: "94578762"
     > [!IMPORTANT]
     > Рекомендуется изменить конфигурацию DNS-сервера для разрешения имен конечных точек.
 
-    1. Откройте **Блокнот** от имени администратора (для сохранения файла требуются привилегии администратора), а затем откройте файл **hosts** , расположенный в `C:\Windows\System32\Drivers\etc`.
+    1. Откройте **Блокнот** от имени администратора (для сохранения файла требуются привилегии администратора), а затем откройте файл **hosts**, расположенный в `C:\Windows\System32\Drivers\etc`.
     
         ![Файл hosts в проводнике](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file.png)
     
-    2. Добавьте следующие записи в файл **hosts** , указав соответствующие значения для вашего устройства:
+    2. Добавьте следующие записи в файл **hosts**, указав соответствующие значения для вашего устройства:
     
         ```
         <Azure consistent services VIP> login.<appliance name>.<DNS domain>
@@ -83,7 +83,7 @@ ms.locfileid: "94578762"
 
     `Uninstall-Module -Name Azure.Storage`
 
-5. [Скачайте AzCopy 10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10#download-azcopy) в клиент Windows. Запишите это расположение, так как оно будет передано в качестве параметра при выполнении скрипта.
+5. [Скачайте AzCopy 10](../storage/common/storage-use-azcopy-v10.md#download-azcopy) в клиент Windows. Запишите это расположение, так как оно будет передано в качестве параметра при выполнении скрипта.
 
 6. Убедитесь, что клиент Windows работает под управлением TLS 1,2 или более поздней версии.
 

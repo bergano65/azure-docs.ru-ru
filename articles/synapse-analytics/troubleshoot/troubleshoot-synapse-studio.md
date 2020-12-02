@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок синапсе Studio (Предварительная версия)
+title: Устранение неполадок с Synapse Studio
 description: Устранение неполадок Azure синапсе Studio
 author: julieMSFT
 ms.service: synapse-analytics
@@ -8,18 +8,18 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3fe31f83ccc0dcbd2d61a7c70d40a64da08d13a1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a96709c7538bda6d6b338c29dc512902e9ca2c87
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321032"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445853"
 ---
-# <a name="azure-synapse-studio-preview-troubleshooting"></a>Устранение неполадок в Azure синапсе Studio (Предварительная версия)
+# <a name="azure-synapse-studio-troubleshooting"></a>Устранение неполадок в Azure синапсе Studio
 
 Это руководство по устранению неполадок содержит инструкции по предоставлению информации при открытии запроса в службу поддержки по вопросам сетевого подключения. С соответствующей информацией мы можем быстрее устранить проблему.
 
-## <a name="serverless-sql-pool-preview-service-connectivity-issue"></a>Несерверный пул SQL (Предварительная версия) — ошибка подключения к службе
+## <a name="serverless-sql-pool-service-connectivity-issue"></a>Проблемы с подключением к службе пула SQL, не связанным с сервером
 
 ### <a name="symptom-1"></a>Симптом 1
 
@@ -61,7 +61,7 @@ ms.locfileid: "93321032"
 
 `https://[*A*]-ondemand.database.windows.net:1443/databases/[*B*]/query?api-version=2018-08-01-preview&application=ArcadiaSqlOnDemandExplorer`
 
-Где [ *A* ] — имя рабочей области, а "-OnDemand" может быть "-склод", а [ *B* ] — именем базы данных, например "Master". Должно быть не более двух элементов с одинаковым значением URL-адреса, но разными значениями методов. ПАРАМЕТРЫ и POST. Проверьте, содержат ли эти два элемента "200" или "10x" в столбце status, где "x" может быть любой одной цифрой.
+Где [*A*] — имя рабочей области, а "-OnDemand" может быть "-склод", а [*B*] — именем базы данных, например "Master". Должно быть не более двух элементов с одинаковым значением URL-адреса, но разными значениями методов. ПАРАМЕТРЫ и POST. Проверьте, содержат ли эти два элемента "200" или "10x" в столбце status, где "x" может быть любой одной цифрой.
 
 Если один из них имеет что-либо, отличное от "10x", и:
 
