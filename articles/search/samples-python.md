@@ -8,24 +8,24 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: 244408cc512a51683ecb3c062113170b1c7f4781
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6e0f3d318cc462b03151d5a4935ae318df46e2c5
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499566"
+ms.locfileid: "96510562"
 ---
 # <a name="python-code-samples-for-azure-cognitive-search"></a>Примеры кода Python для Azure Когнитивный поиск
 
 Узнайте о примерах кода Python, демонстрирующих функции и функциональные возможности Azure Когнитивный поиск. Ниже приведены основные репозитории.
 
-| Хранилище | Описание |
+| Хранилище | Описание: |
 |------------|-------------|
 | [Azure-SDK-for-Python/дерево/главный/SDK/Поиск/Azure-Search-документы/примеры/](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/samples) | Примеры, созданные командой пакета SDK для Azure, поставляемой с клиентской библиотекой Azure.Search.Docументс в пакете SDK. Вы также можете просмотреть [модульные тесты](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/tests) для клиентской библиотеки, чтобы увидеть, как вызываются различные API-интерфейсы. |
 | [Примеры Azure-Samples/Azure-Search-Python](https://github.com/Azure-Samples/azure-search-python-samples) | Примеры кода, сопровождающие статьи с инструкциями, включая краткое руководство. [Создание индекса поиска в Python](search-get-started-python.md).|
 
 > [!Tip]
-> Воспользуйтесь [браузером примеров](/samples/browse/?languages=csharp&products=azure-cognitive-search) для поиска примеров кода Майкрософт в GitHub, отфильтрованных по продуктам, службам и языкам.
+> Воспользуйтесь [браузером примеров](/samples/browse/?languages=python&products=azure-cognitive-search) для поиска примеров кода Майкрософт в GitHub, отфильтрованных по продуктам, службам и языкам.
 
 ## <a name="python-sdk-samples"></a>Примеры пакета SDK для Python
 

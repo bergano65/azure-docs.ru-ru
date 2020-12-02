@@ -11,16 +11,16 @@ ms.date: 07/21/2020
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 7b35997e763434d7ae4d849c33d358d1593d7e33
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: ce77a169e28e21aa37be2a49997a58ee42c93807
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460534"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96510834"
 ---
 # <a name="score-machine-learning-models-with-predict"></a>Оценка моделей машинного обучения с помощью ПРОГНОЗа
 
-Выделенный пул SQL предоставляет возможность оценки моделей машинного обучения с помощью знакомого языка T-SQL. С помощью [прогноза](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest)T-SQL можно перенести имеющиеся модели машинного обучения, обученные историческими данными, и оценить их в пределах защищенных границ хранилища данных. Функция PREDICT принимает в качестве входных данных модель [ONNX (открытый обмен нейронными сетями)](https://onnx.ai/) и данные. Эта функция исключает шаг перемещения ценных данных за пределы хранилища данных для оценки. Он предназначен для того, чтобы предоставить специалистам по обработке данных возможность легко развертывать модели машинного обучения с помощью знакомого интерфейса T-SQL, а также легко сотрудничать с помощью специалистов по обработке и анализу данных, работающих с правильной платформой для выполнения своих задач.
+Выделенный пул SQL предоставляет возможность оценки моделей машинного обучения с помощью знакомого языка T-SQL. С помощью [прогноза](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true)T-SQL можно перенести имеющиеся модели машинного обучения, обученные историческими данными, и оценить их в пределах защищенных границ хранилища данных. Функция PREDICT принимает в качестве входных данных модель [ONNX (открытый обмен нейронными сетями)](https://onnx.ai/) и данные. Эта функция исключает шаг перемещения ценных данных за пределы хранилища данных для оценки. Он предназначен для того, чтобы предоставить специалистам по обработке данных возможность легко развертывать модели машинного обучения с помощью знакомого интерфейса T-SQL, а также легко сотрудничать с помощью специалистов по обработке и анализу данных, работающих с правильной платформой для выполнения своих задач.
 
 > [!NOTE]
 > В настоящее время эта функция не поддерживается в пуле SQL без сервера.
@@ -66,7 +66,7 @@ GO
 
 ```
 
-После преобразования модели в шестнадцатеричную строку и указанную определение таблицы используйте [команду Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) или polybase для загрузки модели в выделенную таблицу пула SQL. В следующем примере кода для загрузки модели используется команда Copy.
+После преобразования модели в шестнадцатеричную строку и указанную определение таблицы используйте [команду Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) или polybase для загрузки модели в выделенную таблицу пула SQL. В следующем примере кода для загрузки модели используется команда Copy.
 
 ```sql
 -- Copy command to load hexadecimal string of the model from Azure Data Lake storage location
@@ -80,17 +80,17 @@ WITH (
 
 ## <a name="scoring-the-model"></a>Оценка модели
 
-После загрузки модели и данных в хранилище данных используйте функцию **Predict T-SQL** для оценки модели. Убедитесь, что новые входные данные имеют тот же формат, что и обучающие данные, используемые для создания модели. Прогноз T-SQL выполняет два входа: модель и новые входные данные оценки, а также создает новые столбцы для выходных данных. Модель может быть задана в виде переменной, литерала или скалярного sub_query. Используйте [WITH common_table_expression](https://docs.microsoft.com/sql/t-sql/queries/with-common-table-expression-transact-sql?view=sql-server-ver15) , чтобы указать именованный результирующий набор для параметра данных.
+После загрузки модели и данных в хранилище данных используйте функцию **Predict T-SQL** для оценки модели. Убедитесь, что новые входные данные имеют тот же формат, что и обучающие данные, используемые для создания модели. Прогноз T-SQL выполняет два входа: модель и новые входные данные оценки, а также создает новые столбцы для выходных данных. Модель может быть задана в виде переменной, литерала или скалярного sub_query. Используйте [WITH common_table_expression](https://docs.microsoft.com/sql/t-sql/queries/with-common-table-expression-transact-sql?view=azure-sqldw-latest&preserve-view=true) , чтобы указать именованный результирующий набор для параметра данных.
 
-В примере ниже показан пример запроса с использованием функции прогнозирования. Создается дополнительный столбец с *показателем* имени и типом данных *float* , содержащий результаты прогноза. Все столбцы входных данных и столбцы прогнозирования вывода доступны для вывода с помощью инструкции SELECT. Дополнительные сведения см. в разделе [Predict (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest).
+В примере ниже показан пример запроса с использованием функции прогнозирования. Создается дополнительный столбец с *показателем* имени и типом данных *float* , содержащий результаты прогноза. Все столбцы входных данных и столбцы прогнозирования вывода доступны для вывода с помощью инструкции SELECT. Дополнительные сведения см. в разделе [Predict (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true).
 
 ```sql
 -- Query for ML predictions
 SELECT d.*, p.Score
 FROM PREDICT(MODEL = (SELECT Model FROM Models WHERE Id = 1),
-DATA = dbo.mytable AS d) WITH (Score float) AS p;
+DATA = dbo.mytable AS d, RUNTIME = ONNX) WITH (Score float) AS p;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о функции PREDICT см. в разделе [Predict (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest).
+Дополнительные сведения о функции PREDICT см. в разделе [Predict (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true).

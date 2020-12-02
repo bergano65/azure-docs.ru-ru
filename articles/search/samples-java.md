@@ -8,24 +8,24 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: c1d21d88ed49cb14aa9f964791154f001a40fbe2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 10dff18f7b9db7273fcd6ec92bcca5970bb83b08
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499583"
+ms.locfileid: "96510375"
 ---
 # <a name="java-code-samples-for-azure-cognitive-search"></a>Примеры кода Java для Azure Когнитивный поиск
 
 Узнайте о примерах кода Java, демонстрирующих функции и функциональные возможности Azure Когнитивный поиск. Ниже приведены основные репозитории.
 
-| Хранилище | Описание |
+| Хранилище | Описание: |
 |------------|-------------|
 | [Azure-SDK-for-Java/дерево/Master/SDK/Поиск/Azure-Search-Documents/src/Samples](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/search/azure-search-documents/src/samples) | Примеры, созданные командой пакета SDK для Azure, поставляемой с клиентской библиотекой Azure.Search.Docументс в пакете SDK. Вы также можете просмотреть [модульные тесты](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/search/azure-search-documents/src/test) для клиентской библиотеки, чтобы увидеть, как вызываются различные API-интерфейсы. |
 | [Примеры Azure-Samples/Azure-Search-Java-Samples](https://github.com/Azure-Samples/azure-search-java-samples) | Примеры кода, сопровождающие статьи с инструкциями. **Примеры в этом репозитории еще не обновлены для использования пакета Azure SDK для Java**. В настоящее время эти примеры вызывают интерфейсы API RESTFUL в коде Java.|
 
 > [!Tip]
-> Воспользуйтесь [браузером примеров](/samples/browse/?languages=csharp&products=azure-cognitive-search) для поиска примеров кода Майкрософт в GitHub, отфильтрованных по продуктам, службам и языкам.
+> Воспользуйтесь [браузером примеров](/samples/browse/?languages=java&products=azure-cognitive-search) для поиска примеров кода Майкрософт в GitHub, отфильтрованных по продуктам, службам и языкам.
 
 ## <a name="java-sdk-samples"></a>Примеры пакета SDK для Java
 

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 10/21/2020
-ms.openlocfilehash: 1e71d3883b8dacefa9b501ee3a9a0533d5c7d515
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.date: 12/02/2020
+ms.openlocfilehash: 57b4b6f3f49e9b82ada4b37c8e2de0697781e063
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592674"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96510596"
 ---
 # <a name="execute-r-script-module"></a>Выполнить модуль R Script
 
@@ -78,25 +78,27 @@ azureml_main <- function(dataframe1, dataframe2){
  > [!NOTE]
  > Перед установкой пакета проверьте, существует ли он уже, чтобы не повторять установку. Повторные установки могут привести к истечению времени ожидания запросов веб-службы.     
 
+## <a name="access-to-registered-dataset"></a>Доступ к зарегистрированному набору данных
+
+Чтобы получить доступ к [зарегистрированным наборам данных](../how-to-create-register-datasets.md) в рабочей области, можно обратиться к следующему примеру кода:
+
+```R
+azureml_main <- function(dataframe1, dataframe2){
+  print("R script run.")
+  run = get_current_run()
+  ws = run$experiment$workspace
+  dataset = azureml$core$dataset$Dataset$get_by_name(ws, "YOUR DATASET NAME")
+  dataframe2 <- dataset$to_pandas_dataframe()
+  # Return datasets as a Named List
+  return(list(dataset1=dataframe1, dataset2=dataframe2))
+}
+```
+
 ## <a name="uploading-files"></a>Отправка файлов
 Модуль выполнить сценарий R поддерживает передачу файлов с помощью пакета SDK для Машинное обучение Azure R.
 
 В следующем примере показано, как передать файл изображения в инструкцию EXECUTE R Script:
 ```R
-
-# R version: 3.5.1
-# The script MUST contain a function named azureml_main,
-# which is the entry point for this module.
-
-# Note that functions dependent on the X11 library,
-# such as "View," are not supported because the X11 library
-# is not preinstalled.
-
-# The entry point function MUST have two input arguments.
-# If the input port is not connected, the corresponding
-# dataframe argument will be null.
-#   Param<dataframe1>: a R DataFrame
-#   Param<dataframe2>: a R DataFrame
 azureml_main <- function(dataframe1, dataframe2){
   print("R script run.")
 
@@ -119,22 +121,6 @@ azureml_main <- function(dataframe1, dataframe2){
 > [!div class="mx-imgBorder"]
 > ![Предварительный просмотр отправленного изображения](media/module/upload-image-in-r-script.png)
 
-## <a name="access-to-registered-dataset"></a>Доступ к зарегистрированному набору данных
-
-Чтобы получить доступ к [зарегистрированным наборам данных](../how-to-create-register-datasets.md) в рабочей области, можно обратиться к следующему примеру кода:
-
-```R
-    azureml_main <- function(dataframe1, dataframe2){
-  print("R script run.")
-  run = get_current_run()
-  ws = run$experiment$workspace
-  dataset = azureml$core$dataset$Dataset$get_by_name(ws, "YOUR DATASET NAME")
-  dataframe2 <- dataset$to_pandas_dataframe()
-  # Return datasets as a Named List
-  return(list(dataset1=dataframe1, dataset2=dataframe2))
-}
-```
-
 ## <a name="how-to-configure-execute-r-script"></a>Настройка выполнения сценария R
 
 Модуль выполнить сценарий R содержит пример кода в качестве отправной точки.
@@ -147,9 +133,9 @@ azureml_main <- function(dataframe1, dataframe2){
 
 1. Подключите все входные данные, необходимые для сценария. Входные значения необязательны и могут включать данные и дополнительный код R.
 
-    * **DataSet1** : ссылка на первый вход в качестве `dataframe1` . Входной набор данных должен быть отформатирован в виде файла CSV, TSV или ARFF. Или можно подключить набор данных Машинное обучение Azure.
+    * **DataSet1**: ссылка на первый вход в качестве `dataframe1` . Входной набор данных должен быть отформатирован в виде файла CSV, TSV или ARFF. Или можно подключить набор данных Машинное обучение Azure.
 
-    * **DataSet2** : ссылка на второй вход в качестве `dataframe2` . Этот набор данных также должен быть отформатирован в формате CSV, TSV или ARFF или в виде набора данных Машинное обучение Azure.
+    * **DataSet2**: ссылка на второй вход в качестве `dataframe2` . Этот набор данных также должен быть отформатирован в формате CSV, TSV или ARFF или в виде набора данных Машинное обучение Azure.
 
     * **Пакет скриптов**. третий вход принимает ZIP-файлы. ZIP-файл может содержать несколько файлов и несколько типов файлов.
 
@@ -237,7 +223,7 @@ azureml_main <- function(dataframe1, dataframe2){
 
 Модуль выполнить сценарий R поддерживает произвольные файлы R script в качестве входных данных. Чтобы использовать их, необходимо передать их в рабочую область как часть ZIP-файла.
 
-1. Чтобы отправить zip-файл, содержащий код R, в рабочую область, перейдите на страницу ресурсов **наборы данных** . Выберите **создать набор данных** , а затем выберите **из локального файла** и тип **файлового** набора данных.  
+1. Чтобы отправить zip-файл, содержащий код R, в рабочую область, перейдите на страницу ресурсов **наборы данных** . Выберите **создать набор данных**, а затем выберите **из локального файла** и тип **файлового** набора данных.  
 
 1. Убедитесь, что сжатый файл отображается в разделе **Мои наборы** данных в категории **наборы данных** в левом дереве модулей.
 
