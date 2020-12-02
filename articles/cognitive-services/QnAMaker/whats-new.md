@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
 ms.date: 07/16/2020
-ms.openlocfilehash: 2016d6dfedef68c334758660e9affa0ad9b9d4a3
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 2c159e25195c5f144187268b4355c1078695e809
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505246"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345531"
 ---
 # <a name="whats-new-in-qna-maker"></a>Новые возможности QnA Maker
 
@@ -56,17 +56,17 @@ ms.locfileid: "94505246"
 
 ### <a name="november-2019"></a>Ноябрь 2019 г.
 
-* [Поддержка облака для государственных организаций США](https://docs.microsoft.com/azure/azure-government/documentation-government-services-aiandcognitiveservices#qna-maker) для QnA Maker
-* [Многоэтапные](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/multiturn-conversation) функции в общедоступной версии
-* [Поддержка беседы](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base#language-support) доступна на языках уровня 1
+* [Поддержка облака для государственных организаций США](../../azure-government/compare-azure-government-global-azure.md#guidance-for-developers) для QnA Maker
+* [Многоэтапные](./how-to/multiturn-conversation.md) функции в общедоступной версии
+* [Поддержка беседы](./how-to/chit-chat-knowledge-base.md#language-support) доступна на языках уровня 1
 
 ### <a name="october-2019"></a>Октябрь 2019 г.
 
-* [Возможность явно задать язык](./how-to/language-knowledge-base.md#select-language-when-creating-first-knowledge-base) для всех баз знаний в службе QnA Maker.
+* [Возможность явно задать язык](./index.yml) для всех баз знаний в службе QnA Maker.
 
 ### <a name="september-2019"></a>Сентябрь 2019 г.
 
-* Импорт и экспорт с использованием [формата файлов XLS](concepts/content-types.md)
+* Импорт и экспорт с использованием [формата файлов XLS](./index.yml)
 
 ### <a name="june-2019"></a>Июнь 2019 г.
 

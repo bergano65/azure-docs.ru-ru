@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: автоматическая обработка данных, обработка документов, автоматическая запись данных, обработка форм
-ms.openlocfilehash: 05024b8d7f4cf76024d71a79cb1fce489d58ee70
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 39243f4428d055ee5d4491c3e87b4b91213f63f1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519529"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353686"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -76,7 +76,7 @@ ms.locfileid: "95519529"
 
 Распознаватель документов использует [API макета](#layout-api) для изучения ожидаемых размеров и положений печатных и рукописных элементов текста. Затем он использует заданные пользователем метки для изучения связей "ключ — значение" в предоставленных документах. Мы рекомендуем использовать не менее пяти форм одного типа (одной структуры) с проставленными вручную метками, чтобы начать обучение новой модели, и постепенно добавлять данные с метками для повышения ее точности.
 
-[Начало работы с функцией обучения с использованием меток](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/label-tool)
+[Начало работы с функцией обучения с использованием меток](./quickstarts/label-tool.md)
 
 
 > [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Azure-Form-Recognizer/player]

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 06/18/2020
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
 zone_pivot_groups: programming-languages-set-sixteen
-ms.openlocfilehash: 36a38c69c68613e912e7c598495b9370044f13a6
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: d9e984d4384b59fa13bc59e09e29939457dad37c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91777452"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351052"
 ---
 # <a name="quickstart-qna-maker-client-library"></a>Краткое руководство. Клиентская библиотека QnA Maker
 
@@ -52,9 +52,8 @@ ms.locfileid: "91777452"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Руководство. Тестирование базы знаний с использованием пакетного файла](./batch-testing.md)
+>[Руководство. Тестирование базы знаний с использованием пакетного файла](../index.yml)
 
 * [Что такое QnA Maker?](../Overview/overview.md)
 * [Редактирование базы знаний](../how-to/edit-knowledge-base.md)
 * [Get analytics on your knowledge base](../how-to/get-analytics-knowledge-base.md) (Получение аналитики по своей базе знаний)
-

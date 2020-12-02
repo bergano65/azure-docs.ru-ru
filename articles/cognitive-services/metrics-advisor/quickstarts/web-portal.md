@@ -10,12 +10,12 @@ ms.subservice: metrics-advisor
 ms.topic: quickstart
 ms.date: 09/30/2020
 ms.author: mbullwin
-ms.openlocfilehash: 0afd8fab6072e1563d2b2f277e8a53b56a8161c2
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 5dbf98d363429e6d22a0b7719cdc669deebd21a0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048242"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348642"
 ---
 # <a name="quickstart-monitor-your-first-metric-using-the-web-portal"></a>Краткое руководство. Мониторинг метрик на веб-портале
 
@@ -155,5 +155,5 @@ ms.locfileid: "92048242"
 - [Подключение веб-каналов данных](../how-tos/onboard-your-data.md)
     - [Управление веб-каналами данных](../how-tos/manage-data-feeds.md)
     - [Конфигурации для разных источников данных](../data-feeds-from-different-sources.md)
-- [Использование REST API или клиентских библиотек](rest-api.md)
+- [Использование REST API или клиентских библиотек](./rest-api-and-client-library.md)
 - [Настройка метрик и детальная настройка конфигурации обнаружения](../how-tos/configure-metrics.md)

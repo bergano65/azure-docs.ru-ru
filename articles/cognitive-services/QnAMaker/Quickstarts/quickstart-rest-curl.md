@@ -7,16 +7,16 @@ ms.date: 11/09/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: quickstart
-ms.openlocfilehash: 021628b92f1068743b097a455306df742f308f86
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 7592b9fb509f39504ad2399d0e939ceca1156221
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427689"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351101"
 ---
 # <a name="quickstart-use-curl-and-rest-to-manage-knowledge-base"></a>Краткое руководство. Использование cURL и REST для управления базой знаний
 
-В этом кратком руководстве показано, как создавать, публиковать и запрашивать базу знаний. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/knowledge-base.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
+В этом кратком руководстве показано, как создавать, публиковать и запрашивать базу знаний. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../index.yml). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -54,7 +54,7 @@ ms.locfileid: "94427689"
 |--|--|--|
 |Имя ресурса QnA Maker|URL-адрес|Используется для создания URL-адреса|
 |Ключ ресурса QnA Maker|Параметр `-h` для заголовка `Ocp-Apim-Subscription-Key`|Проверка подлинности в службе QnA Maker|
-|Формат JSON, описывающий базу знаний|Параметр `-d`|[Примеры](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) JSON|
+|Формат JSON, описывающий базу знаний|Параметр `-d`|[Примеры](/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) JSON|
 |Размер JSON-файла в байтах|Параметр `-h` для заголовка `Content-Size`||
 
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав собственные имя ресурса, ключ ресурса, значения и размер JSON-файла.
@@ -89,7 +89,7 @@ curl https://REPLACE-WITH-YOUR-RESOURCE-NAME.cognitiveservices.azure.com/qnamake
 |--|--|--|
 |Имя ресурса QnA Maker|URL-адрес|Используется для создания URL-адреса|
 |Ключ ресурса QnA Maker|Параметр `-h` для заголовка `Ocp-Apim-Subscription-Key`|Проверка подлинности в службе QnA Maker|
-|Формат JSON, описывающий базу знаний|Параметр `-d`|[Примеры](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) JSON|
+|Формат JSON, описывающий базу знаний|Параметр `-d`|[Примеры](/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) JSON|
 |Размер JSON-файла в байтах|Параметр `-h` для заголовка `Content-Size`||
 
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав собственные имя ресурса, ключ ресурса, значения и размер JSON-файла.
@@ -322,7 +322,7 @@ curl https://REPLACE-WITH-YOUR-RESOURCE-NAME.cognitiveservices.azure.com/qnamake
 |Имя ресурса QnA Maker|URL-адрес|Используется для создания URL-адреса|
 |Ключ среды выполнения QnA Maker|Параметр `-h` для заголовка `Authorization`|Ключ является частью строки, содержащей слово `Endpointkey `. Проверка подлинности в службе QnA Maker|
 |Идентификатор базы знаний|Маршрут URL-адреса|`/knowledgebases/REPLACE-WITH-YOUR-KNOWLEDGE-BASE-ID`|
-|Запрос описания JSON|Параметр `-d`|[Параметры текста запроса](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) и [примеры](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) JSON|
+|Запрос описания JSON|Параметр `-d`|[Параметры текста запроса](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) и [примеры](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) JSON|
 |Размер JSON-файла в байтах|Параметр `-h` для заголовка `Content-Size`||
 
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав имя ресурса, ключ ресурса и идентификатор базы знаний.
@@ -347,7 +347,7 @@ curl https://REPLACE-WITH-YOUR-RESOURCE-NAME.azurewebsites.net/qnamaker/knowledg
 |Имя ресурса QnA Maker|URL-адрес|Используется для создания URL-адреса|
 |Ключ ресурса QnA Maker|Параметр `-h` для заголовка `Ocp-Apim-Subscription-Key`|Проверка подлинности в службе QnA Maker|
 |Идентификатор базы знаний|Маршрут URL-адреса|`/knowledgebases/REPLACE-WITH-YOUR-KNOWLEDGE-BASE-ID`|
-|Запрос описания JSON|Параметр `-d`|[Параметры текста запроса](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) и [примеры](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) JSON|
+|Запрос описания JSON|Параметр `-d`|[Параметры текста запроса](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) и [примеры](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) JSON|
 |Размер JSON-файла в байтах|Параметр `-h` для заголовка `Content-Size`||
 
 Команда cURL выполняется из оболочки BASH. Измените эту команду, указав имя ресурса, ключ ресурса и идентификатор базы знаний.
@@ -414,11 +414,11 @@ curl https://REPLACE-WITH-YOUR-RESOURCE-NAME.cognitiveservices.azure.com/qnamake
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* Справочная документация по [разработке](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase).
-* Справочная документация по [среде выполнения](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/runtime).
+* Справочная документация по [разработке](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase).
+* Справочная документация по [среде выполнения](/rest/api/cognitiveservices/qnamaker4.0/runtime).
 * [Примеры скриптов BASH с использованием cURL](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/curl/QnAMaker).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))
+> [QnA Maker (V4) REST API Reference](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase) (Справочник по API REST QnA Maker (V4))
