@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: twooley
 ms.custom: include file
-ms.openlocfilehash: 297641bbaccb44739d67fdd26f0c1f64062bba46
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 7098f23e9b5b6f56fbbe761335afc65375aea680
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95556112"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509304"
 ---
 **Azure Data Lake Storage 2-го поколения** не является выделенной службой или типом учетной записи хранения. Это последний выпуск со специализированными возможностями для аналитики больших данных.  Такие возможности доступны в учетных записях общего назначения версии 2 или BlockBlobStorage. Чтобы воспользоваться ими, включите функцию **Иерархическое пространство имен** в учетной записи. Сведения о целевых показателях масштабируемости см. в следующих статьях: 
 
 - [Целевые показатели масштабируемости хранилища BLOB-объектов](../articles/storage/blobs/scalability-targets.md#scale-targets-for-blob-storage).
-- [Целевые показатели масштабируемости для стандартных учетных записей хранения](../articles/storage/common/scalability-targets-standard-account.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#scale-targets-for-standard-storage-accounts).
+- [Целевые показатели масштабируемости для стандартных учетных записей хранения](../articles/storage/common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#scale-targets-for-standard-storage-accounts).
 
 **Azure Data Lake Storage 1-го поколения** является выделенной службой. Это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Вы можете использовать Data Lake Storage 1-го поколения для хранения данных любого размера и типа, а также с любой скоростью приема в одном месте для эксплуатационной и исследовательской аналитики. Объем данных, которые можно хранить в учетной записи Data Lake Storage 1-го поколения, не ограничен.
 
