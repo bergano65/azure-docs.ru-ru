@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/05/2020
 ms.author: sttsinar
 ms.custom: include file
-ms.openlocfilehash: 3d65b574fc1479d000d347020823166a4d4b968b
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: bd31152c6742271658cf4fd7ac2a5e2957651c84
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410586"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96476662"
 ---
 Служба вычислений Azure предлагает размеры виртуальных машин, которые используют оборудование определенного типа и выделяются отдельному клиенту. Изолированные размеры находятся в режиме реального времени и работают с конкретным созданием оборудования и будут считаться устаревшими после снятия оборудования с учета.
 
@@ -25,10 +25,13 @@ ms.locfileid: "94410586"
 Ниже перечислены текущие предложения изолированных виртуальных машин:
 * Standard_E64is_v3
 * Standard_E64i_v3
+* Standard_E80ids_v4
+* Standard_E80is_v4
 * Standard_M128ms
 * Standard_GS5
 * Standard_G5
 * Standard_F72s_v2
+
 
 > [!NOTE]
 > Размеры изолированных виртуальных машин имеют ограниченный срок существования оборудования. Дополнительные сведения см. ниже.
@@ -62,9 +65,9 @@ ms.locfileid: "94410586"
 Ответ **. нет**. Гарантии, предоставляемые [уровнями устойчивости](../articles/service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) Service Fabric, продолжат функционировать даже после этого изменения. Если требуется физическая изоляция оборудования по другим причинам, может потребоваться выполнить одно из описанных выше действий. 
  
 ### <a name="q-what-are-the-milestones-for-d15_v2-or-ds15_v2-isolation-retirement"></a>Вопрос. Каковы вехи для D15_v2 или DS15_v2 выбытие изоляции? 
-**A** : 
+**A**: 
  
-| Date | Действие |
+| Дата | Действие |
 |---|---| 
 | 18 ноября 2019 г. | Доступность D/DS15i_v2 (PAYG, 1 год, RI) | 
 | 14 мая 2020 г. | Последний день для покупки D/DS15i_v2 1-year RI | 

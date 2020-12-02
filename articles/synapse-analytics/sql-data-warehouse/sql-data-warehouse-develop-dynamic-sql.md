@@ -1,30 +1,30 @@
 ---
 title: Использование динамического SQL
-description: Советы по разработке решений с использованием динамического SQL в пуле синапсе SQL.
+description: Советы по разработке решений с использованием динамического SQL для выделенных пулов SQL в Azure синапсе Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: bce79b8e18b3ec6f1fd139af280086281bbdda98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 52bc7bdc63f754d52bf4a69097c1dd309a6dc3ec
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213471"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462781"
 ---
-# <a name="dynamic-sql-in-synapse-sql-pool"></a>Динамический SQL в пуле синапсе SQL
+# <a name="dynamic-sql-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Динамический SQL для выделенных пулов SQL в Azure синапсе Analytics
 
-В эту статью включены советы по разработке решений с использованием динамического SQL в пуле SQL.
+В эту статью включены советы по разработке решений с использованием динамического SQL в выделенных пулах SQL.
 
 ## <a name="dynamic-sql-example"></a>Пример динамического SQL
 
-При разработке кода приложения для пула SQL может потребоваться использовать динамический SQL, чтобы обеспечить гибкие, универсальные и модульные решения. В настоящее время пул SQL не поддерживает типы данных большого двоичного объекта.
+При разработке кода приложения для выделенных пулов SQL может потребоваться использовать динамический SQL, чтобы обеспечить гибкие, универсальные и модульные решения. В настоящее время выделенные пулы SQL не поддерживают типы данных большого двоичного объекта.
 
 Это может ограничивать размер строк, так как к двоичным относятся типы данных nvarchar(max) и varchar(max).
 

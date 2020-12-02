@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 6b59da408ae7c88aaf8b9e7423fe955a861edf0f
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: c02ba12c790d745904d241f121e269aac3ed12f6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565523"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462982"
 ---
 # <a name="summary-dashboard-in-commercial-marketplace-analytics"></a>Сводная панель мониторинга в аналитике коммерческой платформы
 
@@ -21,7 +21,7 @@ ms.locfileid: "94565523"
 Чтобы получить доступ к информационной панели сводки в центре партнеров, в разделе **коммерческий Marketplace** выберите **[анализ](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **Сводка**.
 
 >[!NOTE]
-> Подробное описание терминологии аналитики см. в статье [терминология анализа коммерческих рынков и распространенные вопросы](./partner-center-portal/faq-terminology.md).
+> Подробное описание терминологии аналитики см. в статье [терминология анализа коммерческих рынков и распространенные вопросы](./analytics-faq.md).
 
 ## <a name="summary-dashboard"></a>Панель мониторинга "Сводка"
 
@@ -109,4 +109,4 @@ ms.locfileid: "94565523"
 - Подробные сведения о клиентах, в том числе тренды роста, см. в статье [Панель мониторинга клиентов в аналитике коммерческой платформы](customer-dashboard.md).
 - Список запросов на загрузку за последние 30 дней см. в статье [Панель мониторинга загрузок в аналитике коммерческой платформы](./partner-center-portal/downloads-dashboard.md).
 - Чтобы просмотреть объединенное представление отзывов клиентов о предложениях в Azure Marketplace и AppSource, см. статью [оценки & рецензий анализ панели мониторинга в центре партнеров](./partner-center-portal/ratings-reviews.md).
-- Часто задаваемые вопросы о коммерческой аналитике и подробном словаре терминов данных см. в разделе [терминология и общие вопросы по анализу коммерческих рынков](./partner-center-portal/faq-terminology.md).
+- Часто задаваемые вопросы о коммерческой аналитике и подробном словаре терминов данных см. в разделе [терминология и общие вопросы по анализу коммерческих рынков](./analytics-faq.md).

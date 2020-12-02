@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/13/2019
 author: trkeya
 ms.author: trkeya
-ms.openlocfilehash: de85e4eb553f623790b472e79f8f97487ba96b48
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 553eba3898a5ea42e5d478603e35e82c68abcab1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95751119"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462900"
 ---
 # <a name="test-drive-technical-configuration"></a>Техническая конфигурация тестового выпуска
 
@@ -38,9 +38,9 @@ ms.locfileid: "95751119"
 
 - **Имя роли** (обязательно) — укажите имя роли безопасности, которую вы определили в пользовательском тестовом выпуске Dynamics 365 и которая будет назначаться пользователю во время работы с тестовым выпуском (например, test-drive-role).
 
-Чтобы получить справку по настройке среды Dynamics 365 для тестового диска и предоставлении разрешения AppSource для подготовки и отмены подготовки пользователей тестовых дисков в клиенте, следуйте [этим инструкциям](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup).
+Чтобы получить справку по настройке среды Dynamics 365 для тестового диска и предоставлении разрешения AppSource для подготовки и отмены подготовки пользователей тестовых дисков в клиенте, следуйте [этим инструкциям](./test-drive-azure-subscription-setup.md).
 
-Пошаговые инструкции по переписи и настройке размещенного тестового диска см. на странице [подробное описание конфигурации для размещенного](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) тестового диска.
+Пошаговые инструкции по переписи и настройке размещенного тестового диска см. на странице [подробное описание конфигурации для размещенного](./test-drive-hosted-detailed-config.md) тестового диска.
 
 ## <a name="logic-app-test-drive"></a>Тестовый накопитель приложения логики
 
@@ -95,11 +95,11 @@ ms.locfileid: "95751119"
 
 Если в данный момент вы создаете тестовый диск в центре партнеров, выберите **Сохранить черновик** , прежде чем продолжить.
 
-Пошаговые инструкции по переписи и настройке размещенного тестового диска см. на странице [подробное описание конфигурации для размещенного](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) тестового диска.
+Пошаговые инструкции по переписи и настройке размещенного тестового диска см. на странице [подробное описание конфигурации для размещенного](./test-drive-hosted-detailed-config.md) тестового диска.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Рекомендации по тестированию](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
 - [Обзор](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf) (PDF; убедитесь, что блокирование всплывающих окон отключено)

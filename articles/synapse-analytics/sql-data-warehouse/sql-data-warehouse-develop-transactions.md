@@ -1,5 +1,5 @@
 ---
-title: Использование транзакций в пуле SQL синапсе
+title: Использование транзакций в пуле SQL Azure синапсе Analytics
 description: Эта статья содержит советы по реализации транзакций и разработке решений в пуле синапсе SQL.
 services: synapse-analytics
 author: XiaoyuMSFT
@@ -9,15 +9,16 @@ ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 03/22/2019
 ms.author: xiaoyul
+ms.custom: azure-synapse
 ms.reviewer: igorstan
-ms.openlocfilehash: 40a9e5268b7fccc5c01775c10e55eee47f1aaf3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5a3c0863bb35f0988d7928bb9a2857f6aceded6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213386"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463202"
 ---
-# <a name="use-transactions-in-synapse-sql-pool"></a>Использование транзакций в пуле SQL синапсе
+# <a name="use-transactions-in-a-sql-pool-in-azure-synapse"></a>Использование транзакций в пуле SQL в Azure синапсе 
 
 Эта статья содержит советы по реализации транзакций и разработке решений в пуле SQL.
 
@@ -27,7 +28,7 @@ ms.locfileid: "85213386"
 
 ## <a name="transaction-isolation-levels"></a>Уровни изоляции транзакций
 
-Пул SQL реализует транзакции ACID. Уровень изоляции транзакционной поддержки по умолчанию — READ UNCOMMITTED.  Его можно изменить на READ COMMITTED SNAPSHOT ISOLATION, включив параметр базы данных READ_COMMITTED_SNAPSHOT для пользовательской базы данных при подключении к базе данных master.  
+Пул SQL реализует транзакции ACID. Уровень изоляции транзакционной поддержки по умолчанию — READ UNCOMMITTED.  Его можно изменить на режим изоляции МОМЕНТАЛЬного СНИМКа COMMITTED, включив параметр READ_COMMITTED_SNAPSHOT базы данных для пользовательского пула SQL при подключении к базе данных master.  
 
 После его включения все транзакции в этой базе данных выполняются в режиме READ COMMITTED SNAPSHOT ISOLATION, и параметр READ UNCOMMITTED на уровне сеанса учитываться не будет. Дополнительные сведения см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 

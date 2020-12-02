@@ -1,5 +1,5 @@
 ---
-title: Рекомендации Synapse SQL
+title: Рекомендации помощника по Azure для выделенного пула SQL
 description: Познакомьтесь с рекомендациями Synapse SQL и тем, как они создаются.
 services: synapse-analytics
 author: kevinvngo
@@ -11,18 +11,18 @@ ms.date: 06/26/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: e4564005e3b9cc9673cc20596d4114d102174b9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 667629b7f613b11f40528b039c7525339b7a62d0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85482859"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462870"
 ---
-# <a name="synapse-sql-recommendations"></a>Рекомендации Synapse SQL
+# <a name="azure-advisor-recommendations-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Рекомендации помощника по Azure для выделенного пула SQL в Azure синапсе Analytics
 
-В этой статье описываются рекомендации, которые отображаются в Synapse SQL посредством Помощника по Azure.  
+В этой статье описываются специальные рекомендации пула SQL, доступные в помощнике по Azure.  
 
-Synapse SQL предоставляет рекомендации, которые помогают непрерывно оптимизировать рабочую нагрузку хранилища данных для повышения производительности. Рекомендации тесно интегрированы с [Помощником по Azure](../../advisor/advisor-performance-recommendations.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), что позволяет получать рекомендации непосредственно на [портале Azure](https://aka.ms/Azureadvisor). Synapse SQL собирает данные телеметрии и рекомендации поверхностей для активной рабочей нагрузки в ежедневном ритме. Ниже описаны поддерживаемые сценарии рекомендаций, а также инструкции по применению рекомендуемых действий.
+Выделенный пул SQL предоставляет рекомендации по обеспечению согласованности рабочей нагрузки хранилища данных для повышения производительности. Рекомендации тесно интегрированы с [Помощником по Azure](../../advisor/advisor-performance-recommendations.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), что позволяет получать рекомендации непосредственно на [портале Azure](https://aka.ms/Azureadvisor). Выделенный пул SQL собирает данные телеметрии и поверхностей для активной рабочей нагрузки в течение ежедневного ритма. Ниже описаны поддерживаемые сценарии рекомендаций, а также инструкции по применению рекомендуемых действий.
 
 [Проверить свои рекомендации](https://aka.ms/Azureadvisor) можно уже сегодня! 
 
@@ -73,4 +73,4 @@ Synapse SQL предоставляет рекомендации, которые 
 
 ## <a name="data-loading-misconfiguration"></a>Неудачная настройка загрузки данных
 
-Необходимо всегда загружать данные из учетной записи хранения в том же регионе, что и пул SQL, чтобы максимально сокращать задержку. Используйте [инструкцию Copy для приема данных с высокой пропускной способностью](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) и разделите промежуточные файлы в учетной записи хранения, чтобы повысить пропускную способность. Если вы не можете использовать инструкцию COPY, можно использовать API SqlBulkCopy или bcp с большим размером пакета для повышения пропускной способности. Дополнительные рекомендации по загрузке данных см. в следующей [документации](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data). 
+Необходимо всегда загружать данные из учетной записи хранения в том же регионе, что и выделенный пул SQL, чтобы максимально сокращать задержку. Используйте [инструкцию Copy для приема данных с высокой пропускной способностью](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) и разделите промежуточные файлы в учетной записи хранения, чтобы повысить пропускную способность. Если вы не можете использовать инструкцию COPY, можно использовать API SqlBulkCopy или bcp с большим размером пакета для повышения пропускной способности. Дополнительные рекомендации по загрузке данных см. в следующей [документации](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data). 

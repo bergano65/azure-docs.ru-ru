@@ -1,6 +1,6 @@
 ---
-title: Непрерывная интеграция и развертывание
-description: DevOps базы данных корпоративного класса для хранения данных благодаря встроенной поддержке непрерывной интеграции и развертывания с помощью Azure Pipelines.
+title: Непрерывная интеграция и развертывание для выделенного пула SQL
+description: DevOps в базе данных корпоративного класса для выделенного пула SQL в Azure синапсе Analytics со встроенной поддержкой непрерывной интеграции и развертывания с помощью Azure Pipelines.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,18 +11,18 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 061be5addd0c236db5d982e6103e3cf455b9c361
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 35f503e7214fa91962c91c35611fc9447302f9fc
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480536"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462808"
 ---
-# <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание хранилищ данных
+# <a name="continuous-integration-and-deployment-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Непрерывная интеграция и развертывание для выделенного пула SQL в Azure синапсе Analytics
 
 В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Это руководство является вторым шагом в создании конвейера непрерывной интеграции и развертывания для хранения данных.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 - Изучите [учебник по интеграции системы управления версиями](sql-data-warehouse-source-control-integration.md).
 
@@ -60,7 +60,7 @@ ms.locfileid: "92480536"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Изучение [архитектуры пула SQL синапсе](massively-parallel-processing-mpp-architecture.md)
-- Быстрое создание [пула SQL](create-data-warehouse-portal.md)
+- Изучение [архитектуры выделенного пула SQL (прежнее название — хранилище данных SQL)](massively-parallel-processing-mpp-architecture.md)
+- Быстрое [Создание выделенного пула SQL (прежнее название — хранилище данных SQL)](create-data-warehouse-portal.md)
 - [Отправка примера данных](load-data-from-azure-blob-storage-using-polybase.md)
 - Просмотрите [видео](sql-data-warehouse-videos.md).

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 290990e312a7f591539686ecce1eec1ac742dd60
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c0dcaec9c8e9a310af1fd6fc319e0784694610e2
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999303"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463080"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -87,7 +87,7 @@ ms.locfileid: "95999303"
 | Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | **запрос** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
-| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | нет |
+| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет |
 | **s3LinkedServiceName** | Используется Amazon S3 в качестве промежуточного хранилища. Связанная служба указывается с помощью имени типа фабрики данных Azure **AwsAccessKey**. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 | **bucketName** | Указывает контейнер Amazon S3 для хранения промежуточных данных. Если это свойство не указано, действие копирования автоматически создаст контейнер. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 
@@ -101,7 +101,7 @@ ms.locfileid: "95999303"
 
 Команда Amazon Redshift [**UNLOAD**](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) выгружает результаты запроса для одного или нескольких файлов в Amazon S3. Эта команда рекомендуется Amazon для копирования больших наборов данных из Redshift.
 
-**Пример. копирование данных из Amazon RedShift в Azure синапсе Analytics (ранее — хранилище данных SQL)**
+**Пример. копирование данных из Amazon RedShift в Azure синапсе Analytics**
 
 В этом примере данные из Amazon RedShift копируются в Azure синапсе Analytics. В этом примере используется команда Redshift **UNLOAD**, промежуточные данные копирования и Microsoft PolyBase.
 
@@ -351,5 +351,5 @@ ms.locfileid: "95999303"
 ## <a name="performance-and-tuning"></a>Производительность и настройка
 Сведения о ключевых факторах, влияющих на производительность действия копирования, и различных способах оптимизации этого процесса см. в статье [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Пошаговые инструкции по созданию конвейера с действием копирования см. в руководстве [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).

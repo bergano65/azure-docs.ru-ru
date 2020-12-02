@@ -7,12 +7,12 @@ ms.topic: article
 author: trkeya
 ms.author: trkeya
 ms.date: 11/06/2020
-ms.openlocfilehash: 9e8aecfe8b16d8af755d3f4c3c71b875d4e8ec40
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 88779f67a2fa9b18f0177a1459b32c672343bb57
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95751255"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462946"
 ---
 # <a name="detailed-configuration-for-hosted-test-drives"></a>Подробная конфигурация для размещенных тестовых дисков
 
@@ -29,7 +29,7 @@ ms.locfileid: "95751255"
 
     - **Тип тестового диска** — выберите **Microsoft Hosted (Dynamics 365 для участия клиентов & PowerApps)**. Это означает, что корпорация Майкрософт будет размещать и обслуживать службу, которая выполняет подготовку и отмену подготовки пользователей тестового диска.
 
-5. Предоставьте Microsoft AppSource разрешение на предоставление и отмену подготовки пользователей тестовых дисков в клиенте с помощью [этих инструкций](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup). На этом шаге вы создадите **идентификатор Azure AD App** и **Azure AD App ключевые** значения, указанные ниже.
+5. Предоставьте Microsoft AppSource разрешение на предоставление и отмену подготовки пользователей тестовых дисков в клиенте с помощью [этих инструкций](./test-drive-azure-subscription-setup.md). На этом шаге вы создадите **идентификатор Azure AD App** и **Azure AD App ключевые** значения, указанные ниже.
 6. Заполните эти поля на странице **технической конфигурации тестового диска** .
 
     [![Страница Техническая конфигурация тестового диска.](media/test-drive/technical-config-details.png)](media/test-drive/technical-config-details.png#lightbox)
@@ -81,7 +81,7 @@ ms.locfileid: "95751255"
     - **Azure Active Directory имя клиента** — имя клиента Azure для экземпляра Dynamics 365. Используйте следующий формат: `<tenantname>.onmicrosoft.com`. Пример значения: `testdrive.onmicrosoft.com` .
     - **Azure Active Directory Application ID** — идентификатор приложения Azure Active Directory (AD), созданного на шаге 5. Пример значения: `53852862-a2ae-4e43-9461-faa49650a096` .
     - **Секрет клиента приложения Azure Active Directory** — секрет для приложения Azure AD, созданного на шаге 5. Пример значения: `IJUgaIOfq9b9LbUjeQmzNBW4VGn6grr1l/n3aMrnfdk=` .
-    - **Пробная версия юридического лица** — предоставление юридического лица для назначения пробной версии. Вы можете создать новый объект при [создании или изменении юридического лица](https://technet.microsoft.com/library/hh242184.aspx).
+    - **Пробная версия юридического лица** — предоставление юридического лица для назначения пробной версии. Вы можете создать новый объект при [создании или изменении юридического лица](/dynamicsax-2012/appuser-itpro/create-or-modify-a-legal-entity).
     - **Имя роли** — имя AOT (дерево объектов приложения) пользовательской роли безопасности Dynamics 365, созданной для тестового диска. Это роль, которая будет назначена пользователям во время тестового диска.
 
         :::image type="content" source="./media/test-drive/security-config.png" alt-text="Страница настройки безопасности.":::

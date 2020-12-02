@@ -1,30 +1,30 @@
 ---
 title: Использование параметров Group By
-description: Советы по реализации параметров Group By в синапсе SQL pool.
+description: Советы по реализации параметров Group By для выделенных пулов SQL в Azure синапсе Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 260bd7cc6402a7cb4ed17d004d0f61b7462c51d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: cdac3b1e502a203c272db75eb4345446b0f7c0c8
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213454"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462767"
 ---
-# <a name="group-by-options-in-synapse-sql-pool"></a>Группирование по параметрам в пуле синапсе SQL
+# <a name="group-by-options-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Параметры группировки для выделенных пулов SQL в Azure синапсе Analytics
 
-В этой статье вы найдете советы по реализации параметров Group By в пуле SQL.
+В этой статье вы найдете советы по реализации параметров Group By в выделенных пулах SQL.
 
 ## <a name="what-does-group-by-do"></a>Предназначение предложения GROUP BY
 
-Предложение T-SQL [GROUP BY](/sql/t-sql/queries/select-group-by-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) используется для объединения данных в сводный набор строк. GROUP BY имеет некоторые параметры, которые не поддерживаются пулом SQL. Эти параметры имеют следующие обходные пути:
+Предложение T-SQL [GROUP BY](/sql/t-sql/queries/select-group-by-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) используется для объединения данных в сводный набор строк. GROUP BY имеет несколько параметров, которые не поддерживаются выделенным пулом SQL. Эти параметры имеют следующие обходные пути:
 
 * GROUP BY с ROLLUP;
 * GROUPING SETS

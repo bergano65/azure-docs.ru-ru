@@ -3,17 +3,17 @@ title: Управляйте своим счетом и преобразуйте 
 description: Как администратор, вы узнаете, как управлять счетом и переходить от плана бесплатного ценообразования к стандартному тарифному плану в приложении Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 12/09/2019
+ms.date: 11/23/2019
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 515f5f665e947ff9594cce6dbbaea9b5e0c50ebf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8f46c402c8c25a144cd4c12137aeabfdfa31e096
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995749"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463145"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Управление счетами в IoT Central приложении
 
@@ -59,7 +59,7 @@ ms.locfileid: "95995749"
 
 1. Выберите **план** и нажмите кнопку **сохранить** для обновления или перехода на более раннюю версию.
 
-## <a name="view-your-bill"></a>Просмотреть счета
+## <a name="view-your-bill"></a>Просмотр счетов
 
 1. Выберите подходящую Azure Active Directory, а затем подписку Azure, которая будет использоваться для приложения, которое использует платный план.
 
@@ -68,6 +68,6 @@ ms.locfileid: "95995749"
 > [!Note]
 > По умолчанию вы преобразуетесь в *стандартный 2* -план ценообразования.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как управлять счетами в IoT Central приложении Azure, рекомендуем следующий шаг — узнать о [настройке пользовательского интерфейса приложения](howto-customize-ui.md) в Azure IOT Central.

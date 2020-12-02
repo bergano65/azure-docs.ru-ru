@@ -1,26 +1,23 @@
 ---
-title: Настройка и использование Azure Synapse Link для Azure Cosmos DB (предварительная версия)
+title: Настройка и использование Azure Synapse Link для Azure Cosmos DB
 description: Узнайте, как включить ссылку синапсе для учетных записей Azure Cosmos DB, создать контейнер с включенным аналитическим хранилищем, подключить базу данных Cosmos для Azure к рабочей области синапсе и выполнить запросы.
 author: Rodrigossz
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 11/30/2020
 ms.author: rosouz
 ms.custom: references_regions
-ms.openlocfilehash: 3355b502033451f58ac2289a81414e62823e459b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 32b64cd0d83c51a77b7bc58bde80e00e1980c233
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175956"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463328"
 ---
-# <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db-preview"></a>Настройка и использование Azure Synapse Link для Azure Cosmos DB (предварительная версия)
+# <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db"></a>Настройка и использование Azure Synapse Link для Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 [Ссылка Azure синапсе для Azure Cosmos DB](synapse-link.md) — это собственная Гибридная функция для работы с транзакциями и аналитической обработки (HTAP), которая позволяет запускать аналитические данные практически в реальном времени по рабочим данным в Azure Cosmos DB. Synapse Link обеспечивает тесную эффективную интеграцию между Azure Cosmos DB и Azure Synapse Analytics.
-
-> [!IMPORTANT]
-> Чтобы использовать ссылку Azure синапсе, убедитесь, что вы подготавливаете учетную запись Azure Cosmos DB & рабочей области Azure синапсе Analytics в одном из поддерживаемых регионов. Ссылка Azure синапсе сейчас доступна в следующих регионах Azure: Западная часть США, Восточная часть США, Западная США 2, Северная Европа, Западная Европа, Юго-Центральная часть США, Юго-Восточная Азия, Восточная Австралия, Восток U2, южная часть Соединенного Королевства.
 
 Ссылка Azure синапсе доступна для Azure Cosmos DB контейнеров API SQL или для Azure Cosmos DB API для коллекций Mongo DB. Выполните следующие действия, чтобы выполнить аналитические запросы с помощью ссылки Azure синапсе для Azure Cosmos DB:
 
@@ -28,8 +25,8 @@ ms.locfileid: "96175956"
 * [Создание контейнера Azure Cosmos DB с включенным аналитическим хранилищем](#create-analytical-ttl)
 * [Подключение базы данных Azure Cosmos DB к рабочей области синапсе](#connect-to-cosmos-database)
 * [выполните запрос к аналитическому хранилищу с помощью Synapse Spark](#query-analytical-store-spark).
-* [Запрос к аналитическому хранилищу с помощью синапсе SQL Server](#query-analytical-store-sql-on-demand)
-* [Использование синапсе SQL Server для анализа и визуализации данных в Power BI](#analyze-with-powerbi)
+* [Запрос к аналитическому хранилищу с помощью бессерверного пула SQL](#query-analytical-store-sql-on-demand)
+* [Использование несерверного пула SQL для анализа и визуализации данных в Power BI](#analyze-with-powerbi)
 
 ## <a name="enable-azure-synapse-link-for-azure-cosmos-db-accounts"></a><a id="enable-synapse-link"></a>Включение ссылки Azure синапсе для учетных записей Azure Cosmos DB
 
@@ -43,7 +40,7 @@ ms.locfileid: "96175956"
 
 1. Выберите **Synapse Link** из списка функций.
 
-   :::image type="content" source="./media/configure-synapse-link/find-synapse-link-feature.png" alt-text="Поиск предварительной версии функции Synapse Link":::
+   :::image type="content" source="./media/configure-synapse-link/find-synapse-link-feature.png" alt-text="Функция поиска ссылок синапсе":::
 
 1. Далее вам будет предложено включить Synapse Link в вашей учетной записи. Нажмите кнопку **Включить**. Выполнение этого процесса может занять от 1 до 5 минут.
 
@@ -218,11 +215,11 @@ container.replace(containerProperties).block();
 
 ## <a name="query-the-analytical-store-using-serverless-sql-pool-in-azure-synapse-analytics"></a><a id="query-analytical-store-sql-on-demand"></a> Запрос к аналитическому хранилищу с помощью бессерверного пула SQL в Azure синапсе Analytics
 
-Бессерверный пул SQL позволяет запрашивать и анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью ссылки Azure синапсе. Данные можно анализировать практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из аналитического хранилища и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL. Дополнительные сведения см. в статье [запрос аналитического хранилища с использованием СИНАПСЕ SQL Server](../synapse-analytics/sql/query-cosmos-db-analytical-store.md) .
+Бессерверный пул SQL позволяет запрашивать и анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью ссылки Azure синапсе. Данные можно анализировать практически в реальном времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из аналитического хранилища и интегрированного подключения к широкому спектру средств BI и специальных запросов через интерфейс T-SQL. Дополнительные сведения см. в статье [запрос аналитического хранилища с использованием несерверного пула SQL](../synapse-analytics/sql/query-cosmos-db-analytical-store.md) .
 
-## <a name="use-synapse-sql-serverless-to-analyze-and-visualize-data-in-power-bi"></a><a id="analyze-with-powerbi"></a>Использование синапсе SQL Server для анализа и визуализации данных в Power BI
+## <a name="use-serverless-sql-pool-to-analyze-and-visualize-data-in-power-bi"></a><a id="analyze-with-powerbi"></a>Использование несерверного пула SQL для анализа и визуализации данных в Power BI
 
-Вы можете создать синапсе базу данных SQL Server и представления по ссылке синапсе для Azure Cosmos DB. Позже можно будет выполнить запрос к контейнерам Azure Cosmos, а затем создать модель с Power BI для этих представлений, чтобы отразить этот запрос. Дополнительные сведения см. в статье Использование [СИНАПСЕ SQL Server для анализа Azure Cosmos DB данных с помощью ссылки синапсе](synapse-link-power-bi.md) .
+Для Azure Cosmos DB можно создать бессерверную базу данных пула SQL и представления по ссылке синапсе. Позже можно будет выполнить запрос к контейнерам Azure Cosmos, а затем создать модель с Power BI для этих представлений, чтобы отразить этот запрос. Дополнительные сведения см. в статье Использование [Бессерверного пула SQL для анализа Azure Cosmos DB данных с помощью ссылки на синапсе](synapse-link-power-bi.md) .
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 
@@ -244,4 +241,4 @@ container.replace(containerProperties).block();
 
 * [Ключевые концепции Apache Spark в Azure Synapse Analytics](../synapse-analytics/spark/apache-spark-concepts.md).
 
-* [Поддержка среды выполнения SQL Server в Azure синапсе Analytics](../synapse-analytics/sql/on-demand-workspace-overview.md).
+* [Поддержка среды выполнения пула SQL на сервере в Azure синапсе Analytics](../synapse-analytics/sql/on-demand-workspace-overview.md).
