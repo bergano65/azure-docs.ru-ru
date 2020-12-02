@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: dc66de09a5918b19c60aaa0d3e9ab662876dc31a
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 9eab908d2767bcdc9305daa625c70be9b63b9756
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684327"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485552"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
 Базовый план безопасности Azure для Service Fabric содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
@@ -76,7 +76,7 @@ ms.locfileid: "94684327"
 
 **Рекомендации**. для защиты от атак от атак DDoS включите стандартную защиту Azure от атак DDoS в виртуальной сети, в которой развернут кластер Azure Service Fabric. Используйте интегрированную аналитику угроз центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-* [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
+* [Настройка защиты от атак DDoS](../ddos-protection/manage-ddos-protection.md)
 
 * [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
@@ -570,7 +570,7 @@ ms.locfileid: "94684327"
 
 **Руководство**. используйте шифрование неактивных ресурсов Azure. Корпорация Майкрософт рекомендует разрешить Azure управлять ключами шифрования, однако существует возможность управлять собственными ключами в некоторых экземплярах.
 
-* [Общие сведения о шифровании неактивных в Azure](../security/fundamentals/encryption-atrest.md)
+* [Общие сведения о шифровании неактивных данных в Azure](../security/fundamentals/encryption-atrest.md)
 
 * [Настройка ключей шифрования, управляемых клиентом](../storage/common/customer-managed-keys-configure-key-vault.md)
 
@@ -626,7 +626,7 @@ ms.locfileid: "94684327"
 
 * [Как обновить виртуальные машины в соответствии с последней моделью масштабируемого набора](../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model)
 
-* [Обзор функции "Управление обновлениями" в службе автоматизации Azure](../automation/update-management/update-mgmt-overview.md)
+* [Обзор функции "Управление обновлениями" в службе автоматизации Azure](../automation/update-management/overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1094,7 +1094,7 @@ ms.locfileid: "94684327"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-* [Как задать контакт безопасности центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
+* [Настройка контакта по безопасности в Центре безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1128,11 +1128,11 @@ ms.locfileid: "94684327"
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
-**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию Майкрософт и рекомендации "красных команд", а затем выполните тест на проникновение в режиме реального времени для управляемых корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-* [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+* [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг центра безопасности Azure**: Сейчас это недоступно
 

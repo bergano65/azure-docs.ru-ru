@@ -3,20 +3,20 @@ title: Веб-действие в фабрике данных Azure
 description: Сведения об использовании веб-действия, одного из действий потока управления, поддерживаемых в фабрике данных, для вызова конечной точки REST из конвейера.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/19/2018
-ms.openlocfilehash: e74361d6fb3eb1f9708f39f198506d16c7c046c4
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8ee23adf569a6afafc57dac786cd907a3481abde
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635105"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485813"
 ---
 # <a name="web-activity-in-azure-data-factory"></a>Веб-действие в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "92635105"
 Свойство | Описание | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
 name | Имя веб-действия | Строка | Да
-type | Необходимо задать значение **WebActivity** . | Строка | Да
+type | Необходимо задать значение **WebActivity**. | Строка | Да
 method | Метод REST API для целевой конечной точки. | Строка. <br/><br/>Поддерживаемые типы: GET, POST и PUT | Да
 url | Целевая конечная точка и путь | Строка (или выражение с типом результата "строка"). Действие завершится ошибкой времени ожидания через 1 минуту, если не получит ответ от конечной точки. | Да
 Заголовки | Заголовки, которые отправляются в запрос. Например, чтобы задать язык и тип запроса: `"headers" : { "Accept-Language": "en-us", "Content-Type": "application/json" }`. | Строка (или выражение с типом результата "строка") | Да, требуется заголовок Content-type. `"headers":{ "Content-Type":"application/json"}`
@@ -100,11 +100,11 @@ connectVia | [Среда выполнения интеграции](./concepts-i
 
 Ниже приведены поддерживаемые типы проверки подлинности в веб-действии.
 
-### <a name="none"></a>None
+### <a name="none"></a>Нет
 
 Если проверка подлинности не требуется, не включайте свойство authentication.
 
-### <a name="basic"></a>Basic
+### <a name="basic"></a>Основные
 
 Укажите имя пользователя и пароль для использования с обычной проверкой подлинности.
 
@@ -165,7 +165,7 @@ connectVia | [Среда выполнения интеграции](./concepts-i
 }
 ```
 
-## <a name="example"></a>Например, .
+## <a name="example"></a>Пример
 В этом примере веб-действие в конвейере вызывает конечную точку REST. Оно передает связанную службу SQL Azure и набор данных SQL Azure в конечную точку. Конечная точка остальное использует строку подключения SQL Azure для подключения к логическому серверу SQL Server и возвращает имя экземпляра SQL Server.
 
 ### <a name="pipeline-definition"></a>Определение конвейера
