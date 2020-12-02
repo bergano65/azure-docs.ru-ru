@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: e446ec08d63c44566b2f45c1427999536d0be703
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: aef332e54fa650e1abbebe671560238d7eb318de
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188723"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492052"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Устранение неполадок службы файлов Azure в Windows (SMB)
 
@@ -147,7 +147,7 @@ TcpTestSucceeded : True
 
 ### <a name="solution"></a>Решение
 
-Сократите количество одновременно открытых дескрипторов, закрыв некоторые из них, и повторите попытку. Дополнительные сведения см. в разделе [Служба хранилища Microsoft Azure производительность и контрольный список масштабируемости](../blobs/storage-performance-checklist.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json).
+Сократите количество одновременно открытых дескрипторов, закрыв некоторые из них, и повторите попытку. Дополнительные сведения см. в разделе [Служба хранилища Microsoft Azure производительность и контрольный список масштабируемости](../blobs/storage-performance-checklist.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 Чтобы просмотреть открытые дескрипторы для общей папки, каталога или файла, используйте командлет PowerShell [Get-азсторажефилехандле](/powershell/module/az.storage/get-azstoragefilehandle) .  
 
@@ -262,7 +262,7 @@ $leaseClient.Break() | Out-Null
 - Если определенные требования к минимальному размеру операций ввода-вывода отсутствуют, для оптимальной производительности мы рекомендуем использовать 1 МиБ.
 -   Если окончательный размер файла, в который выполняются операции записи, известен, а у программного обеспечения нет проблем совместимости, и если еще не записанный заключительный фрагмент файла содержит нули, укажите размер файла заранее вместо того, чтобы расширять его для каждой операции записи.
 -   Используйте правильный метод копирования:
-    -   Используйте [AZCopy](../common/storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) для передачи данных между двумя файловыми ресурсами.
+    -   Используйте [AZCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) для передачи данных между двумя файловыми ресурсами.
     -   Используйте [Robocopy](./storage-files-deployment-guide.md#robocopy) для передачи данных между файловыми ресурсами и локальным компьютером.
 
 ### <a name="considerations-for-windows-81-or-windows-server-2012-r2"></a>Рекомендации для Windows 8.1 или Windows Server 2012 R2
@@ -401,7 +401,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 Командлет выполняет следующие проверки по порядку и предоставляет рекомендации по сбоям:
 1. Чеккадобжектпассвордискоррект: Убедитесь, что пароль, настроенный для удостоверения AD, представляющего учетную запись хранения, совпадает с ключом kerb1 или kerb2 учетной записи хранения. Если пароль неверный, можно выполнить команду [Update-азсторажеаккаунтадобжектпассворд](./storage-files-identity-ad-ds-update-password.md) , чтобы сбросить пароль. 
 2. Чеккадобжект: Убедитесь, что в Active Directory есть объект, который представляет учетную запись хранения и имеет правильное имя участника-службы (SPN). Если имя субъекта-службы не настроено правильно, выполните командлет Set AD, возвращенный в командлете Debug, чтобы настроить имя SPN.
-3. Чеккдомаинжоинед: Проверка того, что компьютер клиента присоединен к домену AD. Если компьютер не присоединен к домену AD, обратитесь к этой [статье](/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain#:~:text=To%20join%20a%20computer%20to%20a%20domain&text=Navigate%20to%20System%20and%20Security,join%2C%20and%20then%20click%20OK) для участия в инструкции по присоединению к домену.
+3. Чеккдомаинжоинед: Проверка того, что компьютер клиента присоединен к домену AD. Если компьютер не присоединен к домену AD, обратитесь к этой [статье](/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain) для участия в инструкции по присоединению к домену.
 4. CheckPort445Connectivity: Убедитесь, что для подключения SMB открыт порт 445. Если требуемый порт не открыт, обратитесь к средству устранения неполадок [AzFileDiagnostics.ps1](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Windows) для устранения проблем с подключением к службе файлов Azure.
 5. Чекксидхасаадусер: Убедитесь, что вошедший в систему пользователь AD синхронизирован с Azure AD. Если вы хотите узнать, синхронизирован ли конкретный пользователь AD с Azure AD, можно указать параметры-UserName и-domain во входных параметрах. 
 6. Чеккжеткерберостиккет: попытка получить билет Kerberos для подключения к учетной записи хранения. Если нет допустимого маркера Kerberos, выполните командлет klist Get CIFS/Storage-Account-Name. File. Core. Windows. NET и изучите код ошибки, чтобы вызвать ошибку получения билета.

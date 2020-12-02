@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: 437dbce1c577b5d837ad0c70e8e8865ba59cf9e6
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 46f23953e6572b752f8773bc9db86be946ccf212
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302755"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493003"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -133,7 +133,6 @@ ms.locfileid: "96302755"
 
 > [!NOTE]
 > Миграция на основе агентов с помощью средства "Миграция сервера" службы "Миграция Azure" основана на функциях службы Azure Site Recovery. Некоторые требования могут ссылаться на документацию Site Recovery.
-
 
 ## <a name="set-up-the-replication-appliance"></a>Настройка устройства репликации
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: cd0d4c2dc550beef1b5fceb373a4cb96ed75a172
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 688786fd60d7945340e0a027cf6ee28e6dc2bb32
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544502"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492477"
 ---
 # <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Миграция в монитор подключения из Монитор производительности сети
 
@@ -39,7 +39,7 @@ ms.locfileid: "95544502"
    * **Данные в log Analytics**. перед миграцией данные остаются в рабочей области, в которой NPM настроена в таблице нетворкмониторинг. После миграции данные переходят в таблицу Нетворкмониторинг и ConnectionMonitor_CL таблицу в той же рабочей области. После отключения тестов в NPM данные сохраняются только в таблице ConnectionMonitor_CL.
    * **Оповещения на основе журналов, панели мониторинга и интеграции**: необходимо вручную изменить запросы на основе новой таблицы ConnectionMonitor_CL. Сведения о повторном создании оповещений в метриках см. в разделе [мониторинг сетевых подключений с помощью монитора подключений](./connection-monitor-overview.md#metrics-in-azure-monitor).
     
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Убедитесь, что наблюдатель за сетями включен в вашей подписке и регионе рабочей области Log Analytics.
 * Виртуальные машины Azure с установленными агентами Log Analytics должны быть включены с расширением наблюдателя за сетями.
@@ -71,8 +71,8 @@ ms.locfileid: "95544502"
 * Перенесите все внешние интеграции в таблицу ConnectionMonitor_CL. Примерами внешних интеграций являются панели мониторинга в Power BI и Grafana, а также интеграция с системами управления сведениями о безопасности и событиями (SIEM).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о мониторе подключений см. в следующих статьях:
-* [Миграция из монитора подключения в монитор подключений](/azure/network-watcher/migrate-to-connection-monitor-from-connection-monitor-classic)
+* [Миграция из монитора подключения в монитор подключений](./migrate-to-connection-monitor-from-connection-monitor-classic.md)
 * [Создание монитора подключения с помощью портал Azure](./connection-monitor-create-using-portal.md)

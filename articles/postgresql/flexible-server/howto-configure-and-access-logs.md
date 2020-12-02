@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 319b7a40a87d29454b22a26088df313ef524dc56
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 3b54fe1ffd49c12db82a038ad449190a0049133f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545826"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492358"
 ---
 # <a name="configure-and-access-logs-in-azure-database-for-postgresql---flexible-server"></a>Настройка журналов и доступ к ним в базе данных Azure для PostgreSQL-гибкого сервера
 
@@ -22,21 +22,21 @@ ms.locfileid: "92545826"
 
 ## <a name="configure-diagnostic-settings"></a>Настройка параметров диагностики
 
-Вы можете включить параметры диагностики для сервера Postgres с помощью портал Azure, CLI, REST API и PowerShell. Категория журнала для выбора — **постгрескллогс** .
+Вы можете включить параметры диагностики для сервера Postgres с помощью портал Azure, CLI, REST API и PowerShell. Категория журнала для выбора — **постгрескллогс**.
 
 Чтобы включить журналы ресурсов с помощью портал Azure:
 
 1. На портале выберите *параметры диагностики* в меню навигации сервера postgres.
    
-2. Выберите *Добавить параметр диагностики* .
+2. Выберите *Добавить параметр диагностики*.
    :::image type="content" source="media/howto-logging/diagnostic-settings.png" alt-text="Кнопка добавления параметров диагностики":::
 
 3. Назовите этот параметр. 
 
 4. Выберите предпочитаемую конечную точку (учетную запись хранения, концентратор событий, log Analytics). 
 
-5. Выберите тип журнала **постгрескллогс** .
-   :::image type="content" source="media/howto-logging/diagnostic-create-setting.png" alt-text="Кнопка добавления параметров диагностики":::
+5. Выберите тип журнала **постгрескллогс**.
+   :::image type="content" source="media/howto-logging/diagnostic-create-setting.png" alt-text="Выбор журналов PostgreSQL":::
 
 7. Сохраните вашу настройку.
 
@@ -71,5 +71,5 @@ AzureDiagnostics
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Приступая к работе с запросами log Analytics](../../azure-monitor/log-query/get-started-portal.md)
+- [Приступая к работе с запросами log Analytics](../../azure-monitor/log-query/log-analytics-tutorial.md)
 - Сведения о [концентраторах событий Azure](../../event-hubs/event-hubs-about.md)

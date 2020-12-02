@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c57ad181f35d3c0498804f65390792d0e600f1ff
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1c1a5a96742d380ce42c0aea8c77a199083df47f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843423"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492256"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Базовый план безопасности Azure для Azure от атак DDoS Protection Standard
 
@@ -38,7 +38,7 @@ ms.locfileid: "94843423"
 
 Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, в концентратор событий Azure или в учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, которые выполнялись в кэше Azure для экземпляров Redis на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для экземпляров защиты Azure от атак DDoS.
 
-- [Настройка оповещений для метрик защиты от атак DDoS](../../virtual-network/manage-ddos-protection.md#configure-alerts-for-ddos-protection-metrics)
+- [Настройка оповещений для метрик защиты от атак DDoS](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
 
 - [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
 
@@ -60,7 +60,7 @@ ms.locfileid: "94843423"
 
 **Руководство**. Включение параметров диагностики журнала действий Azure и отправка журналов в рабочую область log Analytics. Выполнение запросов в Log Analytics для поиска терминов, выявления тенденций, анализа закономерностей и предоставления многих других аналитических сведений на основе данных журнала действий, которые могли быть собраны для хранилищ служб восстановления.
 
-- [Сведения о том, как получить доступ к телеметрии, журналам и службе анализа атак для стандартной службы защиты от атак DDoS](../../virtual-network/manage-ddos-protection.md#configure-alerts-for-ddos-protection-metrics)
+- [Сведения о том, как получить доступ к телеметрии, журналам и службе анализа атак для стандартной службы защиты от атак DDoS](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
 
 - [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
 
@@ -96,7 +96,7 @@ ms.locfileid: "94843423"
 
 Кроме того, Azure Active Directory (AD) имеет встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
-- [Общие сведения о разрешениях в службе защиты Azure от атак DDoS](../../virtual-network/manage-ddos-protection.md#permissions-and-restrictions)
+- [Общие сведения о разрешениях в службе защиты Azure от атак DDoS](../../ddos-protection/manage-permissions.md)
 
 - [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
 
@@ -200,7 +200,7 @@ ms.locfileid: "94843423"
 
 **Рекомендации**. Используйте Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации, где это возможно. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-- [Создание и настройка экземпляра Azure AD](../../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+- [Создание и настройка экземпляра Azure AD](../../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -266,7 +266,7 @@ ms.locfileid: "94843423"
 
 **Руководство**. для работы с планами защиты Azure от атак DDoS ваша учетная запись должна быть назначена роли "участник сети" или настраиваемой роли, которой назначены определенные действия.
 
-- [Управление доступом на основе ролей Azure (Azure RBAC) в Azure от атак DDoS Protection](../../virtual-network/manage-ddos-protection.md)
+- [Управление доступом на основе ролей Azure (Azure RBAC) в Azure от атак DDoS Protection](../../ddos-protection/manage-ddos-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -342,7 +342,7 @@ ms.locfileid: "94843423"
 
 **Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в подписках.
 
-Используйте граф ресурсов Azure для запроса и обнаружения ресурсов в своих подписках.  Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
+Используйте Azure Resource Graph для запроса и обнаружения ресурсов в своих подписках.  Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
 - [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
@@ -512,7 +512,7 @@ ms.locfileid: "94843423"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-- [Как задать контакт безопасности центра безопасности Azure](../../security-center/security-center-provide-security-contact-details.md)
+- [Как задать контакт безопасности Центра безопасности Azure](../../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -524,7 +524,7 @@ ms.locfileid: "94843423"
 
 Выберите любую из доступных метрик защиты от атак DDoS, чтобы предупредить вас об активном устранении рисков во время атаки, используя конфигурацию оповещений Azure Monitor. При соблюдении условий указанный адрес получает электронное сообщение с оповещением.
 
-- [Настройка оповещений о метриках защиты от атак DDoS](../../virtual-network/manage-ddos-protection.md#configure-alerts-for-ddos-protection-metrics)
+- [Настройка оповещений о метриках защиты от атак DDoS](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
 
 - [Настройка непрерывного экспорта данных](../../security-center/continuous-export.md)
 
@@ -552,9 +552,9 @@ ms.locfileid: "94843423"
 
 **Рекомендации**. Следуйте правилам проверки поправности корпорации Майкрософт в отношении тестирования на проникновение, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+- [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

@@ -3,12 +3,12 @@ title: Матрица поддержки для VMware или физическо
 description: Содержит сводку по поддержке аварийного восстановления виртуальных машин VMware и физического сервера в Azure с помощью Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: dead1d29392f203f5617c9caf430ff952f02f9bc
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: 6cc67a6af9e11e5667479eadfe277d400c2d4947
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317509"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492222"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
@@ -258,7 +258,7 @@ ReFS | Отказоустойчивая файловая система подд
 Blob-блоки | Нет
 Шифрование неактивных (SSE)| Да
 Шифрование неактивных (CMK)| Да (с помощью PowerShell AZ 3.3.0 Module)
-Двойное шифрование при хранении | Да (с помощью PowerShell AZ 3.3.0 Module). Дополнительные сведения см. в статье Поддерживаемые регионы для [Windows](../virtual-machines/windows/disk-encryption.md) и [Linux](../virtual-machines/linux/disk-encryption.md).
+Двойное шифрование при хранении | Да (с помощью PowerShell AZ 3.3.0 Module). Дополнительные сведения см. в статье Поддерживаемые регионы для [Windows](../virtual-machines/disk-encryption.md) и [Linux](../virtual-machines/disk-encryption.md).
 Хранилище уровня "Премиум" | Да
 Параметр безопасной пересылки | Да
 Служба импорта и экспорта | Нет

@@ -4,16 +4,16 @@ description: Узнайте, как включить обратимое удал
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 05/28/2020
+ms.date: 12/01/2020
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: 7defa8611080027a67a0d1db1daa4c4a9d44edfe
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: ea98b2d9812fb5c848c7e13b94d46a4142595cd4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93126147"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492171"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Включение обратимого удаления — общие папки Azure
 
@@ -26,18 +26,36 @@ ms.locfileid: "93126147"
 ## <a name="getting-started"></a>Начало работы
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-1. Перейдите к своей учетной записи хранения и выберите **Обратимое удаление** в разделе **Служба файлов** .
-1. Выберите **включено** для параметра **обратимое удаление общих папок** .
+1. Перейдите к своей учетной записи хранения и выберите **Обратимое удаление** в разделе **Служба файлов**.
+1. Выберите **включено** для параметра **обратимое удаление общих папок**.
 1. Выберите **Срок хранения общей папки в днях** и введите число, которое вы выбрали.
-1. Выберите **Сохранить** , чтобы подтвердить параметры хранения данных.
+1. Выберите **Сохранить**, чтобы подтвердить параметры хранения данных.
 
 :::image type="content" source="media/storage-how-to-recover-deleted-account/enable-soft-delete-files.png" alt-text="Снимок экрана: область параметров обратимого удаления учетной записи хранения. Выделите раздел общих папок, включите переключатель, задайте срок хранения и сохраните. Это приведет к включению обратимого удаления для всех общих папок в вашей учетной записи хранения.":::
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Командлеты обратимого удаления доступны в версии 2.1.3 и более новой версии [модуля Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+## <a name="getting-started-with-cli"></a>Начало работы с интерфейсом командной строки
+
+Чтобы включить обратимое удаление, нужно обновить свойства службы клиента файлов. В следующем примере включено обратимое удаление для всех общих папок в учетной записи хранения:
+
+```azurecli
+az storage account file-service-properties update --enable-delete-retention true -n yourStorageaccount -g yourResourceGroup
+```
+
+Проверить, включено ли обратимое удаление, и просмотреть его политику хранения можно с помощью следующей команды:
+
+```azurecli
+az storage account file-service-properties show -n yourStorageaccount -g yourResourceGroup
+```
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ## <a name="prerequisite"></a>Предварительное требование
 
-Командлеты обратимого удаления доступны в [3.0.0](https://www.powershellgallery.com/packages/Az.Storage/3.0.0) версии модуля AZ. Storage. 
+Командлеты обратимого удаления доступны в 4.8.0 и более новых версиях модуля AZ. Storage. 
 
 ## <a name="getting-started-with-powershell"></a>Начало работы с PowerShell
 
@@ -63,22 +81,42 @@ Get-AzStorageFileServiceProperty -ResourceGroupName $rgName -StorageAccountName 
 
 Для восстановление обратимо удаленной общей папки:
 
-1. Перейдите к своей учетной записи хранения и выберите **Общие папки** .
-1. В колонке общих папок включите **Показать удаленные общие папки** , чтобы отобразить все общие папки, которые были обратимо удалены.
+1. Перейдите к своей учетной записи хранения и выберите **Общие папки**.
+1. В колонке общих папок включите **Показать удаленные общие папки**, чтобы отобразить все общие папки, которые были обратимо удалены.
 
     В результате будут отображены все общие папки, находящиеся в **удаленном** состоянии.
 
-    :::image type="content" source="media/storage-how-to-recover-deleted-account/undelete-file-share.png" alt-text="Снимок экрана: область параметров обратимого удаления учетной записи хранения. Выделите раздел общих папок, включите переключатель, задайте срок хранения и сохраните. Это приведет к включению обратимого удаления для всех общих папок в вашей учетной записи хранения.":::
+    :::image type="content" source="media/storage-how-to-recover-deleted-account/undelete-file-share.png" alt-text="Если в столбце состояния рядом со столбцом имени установлено значение Удалено, то общая папка находится в обратимо удаленном состоянии. Такие папки будут окончательно удалены по истечении указанного срока хранения.":::
 
-1. Выберите папку и щелкните **отменить удаление** . Это приведет к восстановлению общей папки.
+1. Выберите папку и щелкните **отменить удаление**. Это приведет к восстановлению общей папки.
 
-    Вы можете подтвердить, что общая папка восстановлена, так как ее состояние меняется на **Активна** .
+    Вы можете подтвердить, что общая папка восстановлена, так как ее состояние меняется на **Активна**.
 
-    :::image type="content" source="media/storage-how-to-recover-deleted-account/restored-file-share.png" alt-text="Снимок экрана: область параметров обратимого удаления учетной записи хранения. Выделите раздел общих папок, включите переключатель, задайте срок хранения и сохраните. Это приведет к включению обратимого удаления для всех общих папок в вашей учетной записи хранения.":::
+    :::image type="content" source="media/storage-how-to-recover-deleted-account/restored-file-share.png" alt-text="Если в столбце Состояние рядом со столбцом имени установлено значение Активна, то общая папка была восстановлена.":::
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Командлеты обратимого удаления доступны в 2.1.3 версии Azure CLI. Чтобы восстановить обратимо удаленную общую папку, необходимо сначала получить `--deleted-version` значение общего ресурса. Чтобы получить это значение, используйте следующую команду, чтобы вывести список всех удаленных общих ресурсов для вашей учетной записи хранения.
+
+```azurecli
+az storage share-rm list --storage-account yourStorageaccount --include-deleted
+```
+
+Определив общую папку, которую вы хотите восстановить, вы можете использовать ее с помощью следующей команды для ее восстановления:
+
+```azurecli
+az storage share-rm restore -n deletedshare --deleted-version 01D64EB9886F00C4 -g yourResourceGroup --storage-account yourStorageaccount
+```
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Командлеты обратимого удаления доступны в 3.0.0 версии модуля AZ. Storage. Чтобы восстановить обратимо удаленную общую папку, используйте следующую команду:
+Командлеты обратимого удаления доступны в 4.8.0 и более новых версиях модуля AZ. Storage. Чтобы восстановить обратимо удаленную общую папку, необходимо сначала получить `-DeletedShareVersion` значение общего ресурса. Чтобы получить это значение, используйте следующую команду, чтобы вывести список всех удаленных общих ресурсов для вашей учетной записи хранения.
+
+```azurepowershell-interactive
+Get-AzRmStorageShare -ResourceGroupName $rgname -StorageAccountName $accountName -IncludeDeleted
+```
+
+Определив общую папку, которую вы хотите восстановить, вы можете использовать ее с помощью следующей команды для ее восстановления:
 
 ```azurepowershell-interactive
 Restore-AzRmStorageShare -ResourceGroupName $rgname -StorageAccountName $accountName -DeletedShareVersion 01D5E2783BDCDA97
@@ -91,15 +129,22 @@ Restore-AzRmStorageShare -ResourceGroupName $rgname -StorageAccountName $account
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. Перейдите к своей учетной записи хранения и выберите **Обратимое удаление** в разделе **Параметры** .
-1. В разделе **Общие папки** выберите **Отключено** для параметра **Обратимое удаление файловых ресурсов** .
-1. Выберите **Сохранить** , чтобы подтвердить параметры хранения данных.
+1. Перейдите к своей учетной записи хранения и выберите **Обратимое удаление** в разделе **Параметры**.
+1. В разделе **Общие папки** выберите **Отключено** для параметра **Обратимое удаление файловых ресурсов**.
+1. Выберите **Сохранить**, чтобы подтвердить параметры хранения данных.
 
-    :::image type="content" source="media/storage-how-to-recover-deleted-account/disable-soft-delete-files.png" alt-text="Снимок экрана: область параметров обратимого удаления учетной записи хранения. Выделите раздел общих папок, включите переключатель, задайте срок хранения и сохраните. Это приведет к включению обратимого удаления для всех общих папок в вашей учетной записи хранения.":::
+    :::image type="content" source="media/storage-how-to-recover-deleted-account/disable-soft-delete-files.png" alt-text="Отключение обратимого удаления позволит немедленно и окончательно удалить все общие папки в вашей учетной записи хранения, когда вам заблагорассудится.":::
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Командлеты обратимого удаления доступны в 2.1.3 версии Azure CLI. Чтобы отключить обратимое удаление в учетной записи хранения, можно использовать следующую команду:
+
+```azurecli
+az storage account file-service-properties update --enable-delete-retention false -n yourStorageaccount -g yourResourceGroup
+```
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Командлеты обратимого удаления доступны в 3.0.0 версии модуля AZ. Storage. Чтобы отключить обратимое удаление в учетной записи хранения, можно использовать следующую команду:
+Командлеты обратимого удаления доступны в 4.8.0 и более новых версиях модуля AZ. Storage. Чтобы отключить обратимое удаление в учетной записи хранения, можно использовать следующую команду:
 
 ```azurepowershell-interactive
 Update-AzStorageFileServiceProperty -ResourceGroupName $rgName -StorageAccountName $accountName -EnableShareDeleteRetentionPolicy $false

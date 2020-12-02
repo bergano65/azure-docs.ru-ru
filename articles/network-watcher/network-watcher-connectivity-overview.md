@@ -11,19 +11,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: damendo
-ms.openlocfilehash: 6411e019d77b219e40bd91da973e00afda0ff18b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 047da0224cdbdb534ad9080faee4fd48da3840c5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965491"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492460"
 ---
 # <a name="introduction-to-connection-troubleshoot-in-azure-network-watcher"></a>Общие сведения об устранении неполадок подключения в службе "Наблюдатель за сетями Azure"
 
 Функция устранения неполадок подключения службы "Наблюдатель за сетями" предоставляет возможность проверять прямое подключение TCP от виртуальной машины к виртуальной машине, полное доменное имя, универсальный код ресурса или адрес IPv4. Сетевые сценарии сложные. Они реализуются с помощью групп безопасности сети, брандмауэров, определяемых пользователем маршрутов и ресурсов, предоставляемых Azure. Сложные конфигурации делают устранение неполадок, связанных с подключением, непростой задачей. Наблюдатель за сетями помогает сократить время поиска и обнаружения проблем с подключением. Полученные результаты могут дать представление о том, с чем связана проблема подключения: с платформой или конфигурацией пользователя. Подключение можно проверить с помощью [PowerShell](network-watcher-connectivity-powershell.md), [Azure CLI](network-watcher-connectivity-cli.md) и [REST API](network-watcher-connectivity-rest.md).
 
 > [!IMPORTANT]
-> Чтобы устранить неполадки подключения на виртуальной машине, установите на ней расширение `AzureNetworkWatcherExtension`. Информацию об установке расширения для виртуальной машины Windows см. в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Windows](../virtual-machines/extensions/network-watcher-windows.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json), а для виртуальной машины Linux — в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Linux](../virtual-machines/extensions/network-watcher-linux.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json). Эта расширение не нужно устанавливать на целевой конечной точке.
+> Чтобы устранить неполадки подключения на виртуальной машине, установите на ней расширение `AzureNetworkWatcherExtension`. Информацию об установке расширения для виртуальной машины Windows см. в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Windows](../virtual-machines/extensions/network-watcher-windows.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json), а для виртуальной машины Linux — в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Linux](../virtual-machines/extensions/network-watcher-linux.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). Эта расширение не нужно устанавливать на целевой конечной точке.
 
 ## <a name="response"></a>Ответ
 
@@ -72,7 +72,7 @@ ms.locfileid: "94965491"
 
 Устранение неполадок подключения возвращает типы ошибок подключения. Следующая таблица предоставляет список возвращаемых типов текущих ошибок.
 
-|Type  |Описание  |
+|Тип  |Описание  |
 |---------|---------|
 |ЦП     | Высокая загрузка ЦП.       |
 |Память     | Высокий уровень использования памяти.       |
@@ -81,6 +81,6 @@ ms.locfileid: "94965491"
 |NetworkSecurityRule    | Трафик блокируется правилом группы безопасности сети (возвращается правило).        |
 |UserDefinedRoute|Трафик сбрасывается из-за определенного пользователем или системой маршрута. |
 
-### <a name="next-steps"></a>Следующие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как устранить неполадки подключения с помощью [портала Azure](network-watcher-connectivity-portal.md), [PowerShell](network-watcher-connectivity-powershell.md), [Azure CLI](network-watcher-connectivity-cli.md) или [REST API](network-watcher-connectivity-rest.md).

@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2020
 ms.author: mnayak
-ms.openlocfilehash: 7d41893d734037e466ad786641fed98c461adcfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 21d9f318ef18b7ffb49a95ce495c09f1fa46ec1a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86231817"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491321"
 ---
 # <a name="configure-routing-preference-for-a-public-ip-address-using-the-azure-portal"></a>Настройка предпочтительного варианта маршрутизации для общедоступного IP-адреса с помощью портала Azure
 
-В этой статье показано, как настроить [параметры маршрутизации](https://docs.microsoft.com/azure/virtual-network/routing-preference-overview) через сеть ISP (параметр**Интернета** ) для общедоступного IP-адреса. Созданный общедоступный IP-адрес можно связать со следующими ресурсами Azure для входящего и исходящего Интернет-трафика.
+В этой статье показано, как настроить [параметры маршрутизации](https://docs.microsoft.com/azure/virtual-network/routing-preference-overview) через сеть ISP (параметр **Интернета** ) для общедоступного IP-адреса. Созданный общедоступный IP-адрес можно связать со следующими ресурсами Azure для входящего и исходящего Интернет-трафика.
 
 * Виртуальная машина
 * Набор масштабирования виртуальных машин
@@ -37,12 +37,6 @@ ms.locfileid: "86231817"
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-
-## <a name="register-the-feature-for-your-subscription"></a>Регистрация функции для подписки
-Функция выбора предпочтительного варианта маршрутизации в настоящее время доступна в предварительной версии. Зарегистрируйте функцию для подписки с помощью Azure PowerShell следующим образом.
-```azurepowershell
-Register-AzProviderFeature -FeatureName AllowRoutingPreferenceFeature -ProviderNamespace Microsoft.Network
-```
 
 ## <a name="create-a-public-ip-address-with-a-routing-preference"></a>Создание общедоступного IP-адреса с выбором предпочтительного варианта маршрутизации
 1. Войдите на [портал Azure](https://preview.portal.azure.com/).

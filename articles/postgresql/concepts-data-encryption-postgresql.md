@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 078b0fe63cf89f2736a8707ad561c798c4818317
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 23961a03d1da1137d92ecd3b8003241120b11d80
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242421"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493789"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Шифрование данных с помощью управляемых клиентом ключей для отдельного сервера базы данных Azure для PostgreSQL
 
@@ -93,9 +93,9 @@ Key Vault — это облачная внешняя система управ
 
 * Если для отдельного сервера базы данных Azure для PostgreSQL с включенным шифрованием данных создается сервер восстановления на определенный момент времени, этот новый сервер будет находиться в состоянии *Недоступен*. Состояние сервера можно исправить на [портале Azure](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) или с помощью [CLI](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
 * Если для отдельного сервера базы данных Azure для PostgreSQL с включенным шифрованием данных создается реплика чтения, сервер реплики будет находиться в состоянии *Недоступен*. Состояние сервера можно исправить на [портале Azure](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) или с помощью [CLI](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
-* При удалении KeyVault отдельный сервер базы данных Azure для PostgreSQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен* , следует восстановить [Key Vault](../key-vault/general/soft-delete-cli.md#deleting-and-purging-key-vault-objects) и повторно проверить шифрование данных.
-* При удалении ключа из KeyVault отдельный сервер базы данных Azure для PostgreSQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен* , следует восстановить [ключ](../key-vault/general/soft-delete-cli.md#deleting-and-purging-key-vault-objects) и повторно проверить шифрование данных.
-* Если срок действия ключа, хранящегося в Azure KeyVault, истекает, ключ становится недействительным, а отдельный сервер базы данных Azure для PostgreSQL перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен* , продлите срок действия ключа с помощью [CLI](/cli/azure/keyvault/key#az-keyvault-key-set-attributes), а затем повторно проверьте шифрование данных.
+* При удалении KeyVault отдельный сервер базы данных Azure для PostgreSQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, следует восстановить [Key Vault](../key-vault/general/key-vault-recovery.md) и повторно проверить шифрование данных.
+* При удалении ключа из KeyVault отдельный сервер базы данных Azure для PostgreSQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, следует восстановить [ключ](../key-vault/general/key-vault-recovery.md) и повторно проверить шифрование данных.
+* Если срок действия ключа, хранящегося в Azure KeyVault, истекает, ключ становится недействительным, а отдельный сервер базы данных Azure для PostgreSQL перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, продлите срок действия ключа с помощью [CLI](/cli/azure/keyvault/key#az-keyvault-key-set-attributes), а затем повторно проверьте шифрование данных.
 
 ### <a name="accidental-key-access-revocation-from-key-vault"></a>Непреднамеренный отзыв доступа к ключу из Key Vault
 

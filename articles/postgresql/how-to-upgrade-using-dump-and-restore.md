@@ -6,18 +6,18 @@ ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: e756e033c8e5b2508dca9bde76ad16be26a940fa
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 42bbe1c9f4056ae0dae0ccd59b452db90a7c63c5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505790"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493667"
 ---
 # <a name="upgrade-your-postgresql-database-using-dump-and-restore"></a>Обновление базы данных PostgreSQL с помощью дампа и восстановления
 
 Сервер PostgreSQL, развернутый в базе данных Azure для PostgreSQL-Single Server, можно обновить, переполнив базы данных на более высокий сервер основной версии, используя следующие методы.
 * **Автономный** метод с использованием [pg_dump](https://www.postgresql.org/docs/current/static/app-pgdump.html) PostgreSQL и [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) , который вызывает время простоя для переноса данных. В этом документе рассматривается этот метод обновления и миграции.
-* Метод **Online** с использованием [Database Migration Service](https://docs.microsoft.com/azure/dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal) (DMS). Этот метод обеспечивает сокращение времени простоя и поддерживает синхронизацию целевой базы данных с источником, после чего вы можете выбрать время отсечения. Однако существует несколько предварительных условий и ограничений для использования DMS. Дополнительные сведения см. в [документации по DMS](https://docs.microsoft.com/azure/dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal). 
+* Метод **Online** с использованием [Database Migration Service](../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md) (DMS). Этот метод обеспечивает сокращение времени простоя и поддерживает синхронизацию целевой базы данных с источником, после чего вы можете выбрать время отсечения. Однако существует несколько предварительных условий и ограничений для использования DMS. Дополнительные сведения см. в [документации по DMS](../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md). 
 
  В следующей таблице приведены некоторые рекомендации, основанные на размерах и сценариях баз данных.
 
@@ -28,7 +28,7 @@ ms.locfileid: "94505790"
 | Малый средний баз данных (10 ГБ – 100 ГБ) | X | X |
 | Большие базы данных (> 100 ГБ) |  | X |
 | Может позволить себе просто выполнить обновление (независимо от размера базы данных) | X |  |
-| Можно ли обращаться к [необходимым компонентам](https://docs.microsoft.com/azure/dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal#prerequisites)DMS, включая перезагрузку? |  | X |
+| Можно ли обращаться к [необходимым компонентам](../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md#prerequisites)DMS, включая перезагрузку? |  | X |
 | Можно ли избежать означающего и незанесенных в журнал таблиц во время процесса обновления? | |  X |
 
 Это руководство содержит несколько методов автономной миграции и примеры, демонстрирующие, как можно выполнить миграцию с исходного сервера на целевой сервер, на котором работает более поздняя версия PostgreSQL.
@@ -66,7 +66,7 @@ ms.locfileid: "94505790"
  | ------- | ------- |
  | Исходный сервер (v 9,5) | pg-95.postgres.database.azure.com |
  | База данных-источник | bench5gb |
- | Размер базы данных источника | 5 ГБ |
+ | Размер базы данных источника | 5 ГБ |
  | Имя пользователя источника | pg@pg-95 |
  | Целевой сервер (версии 11) | pg-11.postgres.database.azure.com |
  | Целевая база данных | bench5gb |
@@ -116,9 +116,9 @@ ms.locfileid: "94505790"
 | **Размер баз данных** | **Затраченное время** | 
 | ----- | ------ |
 | 1 ГБ  | 1-2 минут |
-| 5 ГБ | 8-10 минут |
-| 10 ГБ | 15-20 минут |
-| 50 ГБ | 1 – 1,5 часа |
+| 5 ГБ | 8-10 минут |
+| 10 ГБ | 15-20 минут |
+| 50 Гб | 1 – 1,5 часа |
 | 100 ГБ | 2,5 – 3 часа|
    
 ### <a name="method-3-migrate-using-parallel-dump-and-restore"></a>Способ 3. Миграция с помощью параллельного дампа и восстановления 

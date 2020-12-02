@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 554b3ad1dbe1e736300387aefde195b9054ab326
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 87dff3bbb4a7ff5e40a06d1b63bdc38987d727fe
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437105"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492698"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Шифрование данных в Базе данных Azure для MySQL с помощью управляемого клиентом ключа
 
@@ -97,8 +97,8 @@ Key Vault — это облачная внешняя система управ
 
 * Если для Базы данных Azure для MySQL с включенным шифрованием данных создается сервер восстановления на определенный момент времени, этот новый сервер будет находиться в состоянии *Недоступен*. Это можно исправить на [портале Azure](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) или с помощью [интерфейса командной строки](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
 * Если для Базы данных Azure для MySQL с включенным шифрованием данных создается реплика чтения, сервер реплики будет находиться в состоянии *Недоступен*. Это можно исправить на [портале Azure](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) или с помощью [интерфейса командной строки](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
-* При удалении KeyVault База данных Azure для MySQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, следует восстановить [Key Vault](../key-vault/general/soft-delete-cli.md#deleting-and-purging-key-vault-objects) и повторно проверить шифрование данных.
-* При удалении ключа из KeyVault База данных Azure для MySQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, следует восстановить [ключ](../key-vault/general/soft-delete-cli.md#deleting-and-purging-key-vault-objects) и повторно проверить шифрование данных.
+* При удалении KeyVault База данных Azure для MySQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, следует восстановить [Key Vault](../key-vault/general/key-vault-recovery.md) и повторно проверить шифрование данных.
+* При удалении ключа из KeyVault База данных Azure для MySQL не сможет получать доступ к ключу и перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, следует восстановить [ключ](../key-vault/general/key-vault-recovery.md) и повторно проверить шифрование данных.
 * Если срок действия ключа, хранящегося в Azure KeyVault, истечет, ключ станет недействительным, а База данных Azure для MySQL перейдет в состояние *Недоступен*. Чтобы перевести сервер в состояние *Доступен*, продлите срок действия ключа с помощью [интерфейса командной строки](/cli/azure/keyvault/key#az-keyvault-key-set-attributes), а затем повторно проверьте шифрование данных.
 
 ### <a name="accidental-key-access-revocation-from-key-vault"></a>Непреднамеренный отзыв доступа к ключу из Key Vault

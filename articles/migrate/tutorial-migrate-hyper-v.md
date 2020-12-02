@@ -6,12 +6,12 @@ ms.date: 06/08/2020
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 038d0ec817d4f81371546e8d7aa4b48b299c8d98
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 2d31c5b90f37f336b48118e4f4adde4777f8cf4a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302553"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493140"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Перенос виртуальных машин Hyper-V в Azure 
 
@@ -45,7 +45,6 @@ ms.locfileid: "96302553"
 4. Рекомендуется [оценить виртуальные машины Hyper-V](tutorial-assess-hyper-v.md) перед их переносом в Azure, но это необязательно.
 5. Перейдите к созданному проекту или [создайте новый проект](https://docs.microsoft.com/azure/migrate/create-manage-projects).
 6. Проверьте разрешения своей учетной записи. Учетная запись Azure должна иметь разрешения на создание виртуальной машины и на запись на управляемый диск Azure.
-
 
 ## <a name="download-and-install-the-provider"></a>Скачивание и установка поставщика
 

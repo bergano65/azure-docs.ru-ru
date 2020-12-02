@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 06341f8630684519a456d5ef89144ae3c0934b23
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 278f8f816909a7e365d7e45d04c5169950e79a65
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93423153"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493684"
 ---
 # <a name="manage-an-azure-database-for-postgresql---flexible-server-by-using-the-azure-cli"></a>Управление базой данных Azure для PostgreSQL-гибкого сервера с помощью Azure CLI
 
@@ -43,7 +43,7 @@ az account set --subscription <subscription id>
 
 ## <a name="scale-compute-and-storage"></a>Масштабирование вычислений и хранилища
 
-Вы можете легко масштабировать свой уровень вычислений, виртуальных ядер и хранилище с помощью следующей команды. Список всех операций сервера, которые можно запустить, см. в обзоре команды [AZ postgres гибкого сервера](https://docs.microsoft.com/cli/azure/postgres/flexible-server) .
+Вы можете легко масштабировать свой уровень вычислений, виртуальных ядер и хранилище с помощью следующей команды. Список всех операций сервера, которые можно запустить, см. в обзоре команды [AZ postgres гибкого сервера](/cli/azure/postgres/flexible-server) .
 
 ```azurecli-interactive
 az postgres flexible-server update --resource-group myresourcegroup --name mydemoserver --sku-name Standard_D4ds_v3 --storage-size 6144
@@ -104,7 +104,7 @@ storage-size | 6144 | Введите емкость хранилища серв�
     CREATE DATABASE postgresdb;
     ```
 
-3. В командной строке выполните следующую команду, чтобы переключить подключения к только что созданной базе данных **постгресдб** :
+3. В командной строке выполните следующую команду, чтобы переключить подключения к только что созданной базе данных **постгресдб**:
 
     ```bash
     \c postgresdb
@@ -131,13 +131,13 @@ az postgres flexible-server update --resource-group myresourcegroup --name mydem
 
 ## <a name="delete-a-server"></a>Удаление сервера
 
-Чтобы удалить гибкий сервер базы данных Azure для PostgreSQL, выполните команду [AZ postgres гибкий-Server DELETE](https://docs.microsoft.com/cli/azure/postgres/flexible-server#az-PostgreSQL-flexible-server-delete) .
+Чтобы удалить гибкий сервер базы данных Azure для PostgreSQL, выполните команду [AZ postgres гибкий-Server DELETE](/cli/azure/postgres/flexible-server#az-PostgreSQL-flexible-server-delete) .
 
 ```azurecli-interactive
 az postgres flexible-server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о резервном копировании и восстановлении](concepts-backup-restore.md)
 - [Настройка и мониторинг сервера](concepts-monitoring.md)

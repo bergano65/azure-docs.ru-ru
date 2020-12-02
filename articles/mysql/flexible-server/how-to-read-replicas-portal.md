@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: how-to
 ms.date: 10/26/2020
-ms.openlocfilehash: cd2d3363b9c035987280eb27632c470c012b8bbb
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: d33734dc7404e49aed94dffae8644b2bc4386925
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92795449"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492834"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-flexible-server-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для гибкого сервера MySQL с помощью портал Azure
 
@@ -36,26 +36,26 @@ ms.locfileid: "92795449"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-2. Выберите имеющийся гибкий сервер базы данных Azure для MySQL, который вы хотите использовать в качестве источника. Откроется страница **Обзор** .
+2. Выберите имеющийся гибкий сервер базы данных Azure для MySQL, который вы хотите использовать в качестве источника. Откроется страница **Обзор**.
 
-3. В меню в разделе **Параметры** выберите **Репликация** .
+3. В меню в разделе **Параметры** выберите **Репликация**.
 
-4. Выберите **Добавить реплику** .
+4. Выберите **Добавить реплику**.
 
    :::image type="content" source="./media/how-to-read-replica-portal/add-replica.png" alt-text="База данных Azure для MySQL — репликация":::
 
 5. Введите имя сервера реплики.
 
-    :::image type="content" source="./media/how-to-read-replica-portal/replica-name.png" alt-text="База данных Azure для MySQL — репликация":::
+    :::image type="content" source="./media/how-to-read-replica-portal/replica-name.png" alt-text="База данных Azure для MySQL — имя реплики":::
 
-6. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
+6. Нажмите кнопку **ОК**, чтобы подтвердить создание реплики.
 
 > [!NOTE]
-> Реплики чтения создаются с той же конфигурацией сервера, что и источник. Вы можете изменить созданную конфигурацию сервера-реплики. Сервер реплики всегда создается в той же группе ресурсов, что и исходный сервер, и ту же самую подписку. Если вы хотите создать сервер реплики в другой группе ресурсов или другой подписке, можно [переместить сервер реплики](https://docs.microsoft.com/azure/azure-resource-manager/management/move-resource-group-and-subscription) после его создания. Рекомендуется, чтобы конфигурация сервера реплики хранилась в значениях, равных или превышающих источник, чтобы гарантировать, что реплика сможет справиться с источником.
+> Реплики чтения создаются с той же конфигурацией сервера, что и источник. Вы можете изменить созданную конфигурацию сервера-реплики. Сервер реплики всегда создается в той же группе ресурсов, что и исходный сервер, и ту же самую подписку. Если вы хотите создать сервер реплики в другой группе ресурсов или другой подписке, можно [переместить сервер реплики](../../azure-resource-manager/management/move-resource-group-and-subscription.md) после его создания. Рекомендуется, чтобы конфигурация сервера реплики хранилась в значениях, равных или превышающих источник, чтобы гарантировать, что реплика сможет справиться с источником.
 
-Созданный сервер-реплику можно просмотреть в колонке **Репликация** .
+Созданный сервер-реплику можно просмотреть в колонке **Репликация**.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/list-replica.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/list-replica.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/list-replica.png" alt-text="База данных Azure для MySQL — список реплик":::](./media/how-to-read-replica-portal/list-replica.png#lightbox)
 
 ## <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
 
@@ -66,19 +66,19 @@ ms.locfileid: "92795449"
 
 1. В портал Azure выберите исходную базу данных Azure для гибкого сервера MySQL. 
 
-2. В меню в разделе **Параметры** выберите **Репликация** .
+2. В меню в разделе **Параметры** выберите **Репликация**.
 
 3. Выберите сервер-реплику, для которого нужно остановить репликацию.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/stop-replication-select.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/stop-replication-select.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/stop-replication-select.png" alt-text="База данных Azure для MySQL — выбор сервера, для которого нужно остановить репликацию":::](./media/how-to-read-replica-portal/stop-replication-select.png#lightbox)
 
-4. Щелкните **Остановить репликацию** .
+4. Щелкните **Остановить репликацию**.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/stop-replication.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/stop-replication.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/stop-replication.png" alt-text="База данных Azure для MySQL — остановка репликации":::](./media/how-to-read-replica-portal/stop-replication.png#lightbox)
 
-5. Подтвердите остановку репликации, нажав кнопку **ОК** .
+5. Подтвердите остановку репликации, нажав кнопку **ОК**.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/stop-replication-confirm.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/stop-replication-confirm.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/stop-replication-confirm.png" alt-text="База данных Azure для MySQL — подтверждение остановки репликации":::](./media/how-to-read-replica-portal/stop-replication-confirm.png#lightbox)
 
 ## <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
@@ -86,19 +86,19 @@ ms.locfileid: "92795449"
 
 1. В портал Azure выберите исходную базу данных Azure для гибкого сервера MySQL.
 
-2. В меню в разделе **Параметры** выберите **Репликация** .
+2. В меню в разделе **Параметры** выберите **Репликация**.
 
 3. Выберите сервер-реплику, который нужно удалить.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/delete-replica-select.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/delete-replica-select.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/delete-replica-select.png" alt-text="База данных Azure для MySQL — выбор удаляемого сервера-реплики":::](./media/how-to-read-replica-portal/delete-replica-select.png#lightbox)
 
-4. Щелкните **Удалить реплику** .
+4. Щелкните **Удалить реплику**.
 
-   :::image type="content" source="./media/how-to-read-replica-portal/delete-replica.png" alt-text="База данных Azure для MySQL — репликация":::
+   :::image type="content" source="./media/how-to-read-replica-portal/delete-replica.png" alt-text="База данных Azure для MySQL — удаление реплики":::
 
-5. Введите имя реплики и нажмите кнопку **Удалить** , чтобы подтвердить удаление реплики.  
+5. Введите имя реплики и нажмите кнопку **Удалить**, чтобы подтвердить удаление реплики.  
 
-   :::image type="content" source="./media/how-to-read-replica-portal/delete-replica-confirm.png" alt-text="База данных Azure для MySQL — репликация":::
+   :::image type="content" source="./media/how-to-read-replica-portal/delete-replica-confirm.png" alt-text="База данных Azure для MySQL — подтверждение удаления реплики":::
 
 ## <a name="delete-a-source-server"></a>Удаление исходного сервера
 
@@ -109,31 +109,31 @@ ms.locfileid: "92795449"
 
 1. В портал Azure выберите исходную базу данных Azure для гибкого сервера MySQL.
 
-2. На странице **Обзор** выберите **Удалить** .
+2. На странице **Обзор** выберите **Удалить**.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/delete-master-overview.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/delete-master-overview.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/delete-master-overview.png" alt-text="База данных Azure для MySQL — удаление источника":::](./media/how-to-read-replica-portal/delete-master-overview.png#lightbox)
 
 3. Введите имя исходного сервера и нажмите кнопку **Удалить** , чтобы подтвердить удаление исходного сервера.  
 
-   :::image type="content" source="./media/how-to-read-replica-portal/delete-master-confirm.png" alt-text="База данных Azure для MySQL — репликация":::
+   :::image type="content" source="./media/how-to-read-replica-portal/delete-master-confirm.png" alt-text="База данных Azure для MySQL — подтверждение удаления источника":::
 
 ## <a name="monitor-replication"></a>Мониторинг репликации
 
 1. В [портал Azure](https://portal.azure.com/)выберите реплику базы данных Azure для гибкого сервера MySQL, которую требуется отслеживать.
 
-2. В разделе боковой панели **Мониторинг** выберите **Метрики** .
+2. В разделе боковой панели **Мониторинг** выберите **Метрики**.
 
 3. В раскрывающемся списке доступных метрик выберите **Replication lag in seconds** (Задержка репликации в секундах).
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/monitor-select-replication-lag.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/monitor-select-replication-lag.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/monitor-select-replication-lag.png" alt-text="Выбор задержки репликации":::](./media/how-to-read-replica-portal/monitor-select-replication-lag.png#lightbox)
 
 4. Выберите нужный диапазон времени. На рисунке ниже выбран диапазон в 30 минут.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/monitor-replication-lag-time-range.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/monitor-replication-lag-time-range.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/monitor-replication-lag-time-range.png" alt-text="Выбор диапазона времени":::](./media/how-to-read-replica-portal/monitor-replication-lag-time-range.png#lightbox)
 
 5. Просмотрите задержку репликации для выбранного диапазона времени. На рисунке ниже отображаются последние 30 минут.
 
-   [:::image type="content" source="./media/how-to-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png" alt-text="База данных Azure для MySQL — репликация":::](./media/how-to-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png#lightbox)
+   [:::image type="content" source="./media/how-to-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png" alt-text="Выберите диапазон времени 30 минут":::](./media/how-to-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
