@@ -12,11 +12,11 @@ ms.date: 10/15/2020
 ms.author: erhopf
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: f63c97fd23d56ff508de8d5953eefac6b15ae1aa
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097071"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188455"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для .NET Framework (Windows). Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `Install-Package Microsoft.CognitiveServices.Speech` в консоли NuGet.
 
@@ -76,7 +76,7 @@ ms.locfileid: "92097071"
 
 Чтобы создать и запустить консольное приложение, создайте конфигурацию платформы, соответствующую архитектуре компьютера.
 
-1. В строке меню выберите **Сборка** > **Configuration Manager** (Диспетчер конфигураций). Откроется диалоговое окно**ConfigurationManager** (Диспетчер конфигураций).
+1. В строке меню выберите **Сборка** > **Configuration Manager** (Диспетчер конфигураций). Откроется диалоговое окно **ConfigurationManager** (Диспетчер конфигураций).
 
    ![Диалоговое окно Configuration Manager (Диспетчер конфигураций)](~/articles/cognitive-services/speech-service/media/sdk/vs-configuration-manager-dialog-box.png)
 

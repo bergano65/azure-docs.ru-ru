@@ -7,15 +7,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 08/17/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 5e27aaebc015f47e0fcdb5da81770d49b86ad000
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 67a21dd86059f6cf1f017ce3eada285d2faab1e6
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88934333"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96012430"
 ---
 # <a name="quickstart-extract-business-card-data-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение данных визитной карточки с помощью REST API Распознавателя документов и Python
 
@@ -30,7 +30,7 @@ ms.locfileid: "88934333"
 - Изображение визитной карточки. Вы можете использовать [пример изображения](../media/business-card-english.jpg) при изучении этого краткого руководства.
 
 > [!NOTE]
-> В этом кратком руководстве предполагается использование локального файла. Сведения о получении удаленного изображения визитной карточки по URL-адресу см. в [справочной документации](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync).
+> В этом кратком руководстве предполагается использование локального файла. Сведения о получении удаленного изображения визитной карточки по URL-адресу см. в [справочной документации](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync).
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
@@ -38,7 +38,7 @@ ms.locfileid: "88934333"
 
 ## <a name="analyze-a-business-card"></a>Анализ визитной карточки
 
-Для начала анализа визитной карточки запустите API **[анализа визитных карточек](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)** , используя приведенный ниже скрипт Python. Перед выполнением сценария внесите следующие изменения:
+Для начала анализа визитной карточки запустите API **[анализа визитных карточек](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync)** , используя приведенный ниже скрипт Python. Перед выполнением сценария внесите следующие изменения:
 
 1. Замените `<endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
 1. Измените `<path to your business card>` на локальный путь к изображению визитной карточки или PDF-файлу.
@@ -55,7 +55,7 @@ ms.locfileid: "88934333"
     # Endpoint URL
     endpoint = r"<endpoint>"
     apim_key = "<subscription key>"
-    post_url = endpoint + "/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyze"
+    post_url = endpoint + "/formrecognizer/v2.1-preview.2/prebuilt/businessCard/analyze"
     source = r"<path to your business card>"
     content_type = "<file type>"
     
@@ -91,12 +91,12 @@ ms.locfileid: "88934333"
 Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location**, который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор результата, который можно использовать для запрашивания состояния длительной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором результата.
 
 ```console
-https://cognitiveservice/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyzeResults/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+https://cognitiveservice/formrecognizer/v2.1-preview.2/prebuilt/businessCard/analyzeResults/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```
 
 ## <a name="get-the-business-card-results"></a>Получение результатов анализа визитной карточки
 
-После вызова API **анализа визитных карточек** вызовите API **[получения результатов анализа визитных карточек](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/GetAnalyzeBusinessCardResult)** , чтобы узнать о состоянии операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API используется значение идентификатора результата. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
+После вызова API **анализа визитных карточек** вызовите API **[получения результатов анализа визитных карточек](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/GetAnalyzeBusinessCardResult)** , чтобы узнать о состоянии операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API используется значение идентификатора результата. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
 
 ```python
 n_tries = 10
@@ -253,4 +253,4 @@ while n_try < n_tries:
 Из этого краткого руководства вы узнали, как использовать REST API Распознавателя документов и Python для извлечения содержимого из визитной карточки. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/AnalyzeBusinessCardAsync)
+> [Справочная документация по REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync)

@@ -12,11 +12,11 @@ ms.date: 10/15/2020
 ms.custom: devx-track-java
 ms.author: erhopf
 ms.openlocfilehash: 142d4504ab12e7df5cc1e009038554a5b90dff0c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135500"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188423"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для 64-разрядной версии среды JRE Java 8. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, учитывайте, что пакет SDK для Java недоступен в центральном репозитории Maven. Независимо от того, что вы используете: Gradle или файл зависимостей `pom.xml`, нужно добавить пользовательский репозиторий с указанием на `https://csspeechstorage.blob.core.windows.net/maven/` (имя пакета см. ниже).
 

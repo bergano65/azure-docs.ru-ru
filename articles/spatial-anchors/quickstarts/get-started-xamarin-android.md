@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание приложения Xamarin.Android
 description: В этом кратком руководстве вы узнаете, как создать приложение Android с Xamarin с помощью Пространственных привязок.
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: crtreasu
-ms.date: 07/22/2019
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: ab414b877bd2d098c6e340267ff579fb58aec9d9
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 1626dfa739df6b7cf971aa570f14d36ac6c532e7
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097326"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96022621"
 ---
 # <a name="quickstart-create-a-xamarin-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android в Xamarin с помощью Пространственных привязок Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "92097326"
 
 Включите устройство с Android, войдите и подключите его к ПК с помощью USB-кабеля.
 
-Задайте для запускаемого проекта значение **SampleXamarin.Android**, измените **Конфигурацию решения** на **Запустить**и выберите устройство, на котором вы хотите выполнить развертывание из раскрывающегося списка селектора устройства.
+Задайте для запускаемого проекта значение **SampleXamarin.Android**, измените **Конфигурацию решения** на **Запустить** и выберите устройство, на котором вы хотите выполнить развертывание из раскрывающегося списка селектора устройства.
 
 # <a name="windows"></a>[Windows](#tab/deploy-windows)
 

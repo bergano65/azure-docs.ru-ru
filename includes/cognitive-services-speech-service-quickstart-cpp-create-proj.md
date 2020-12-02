@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: erhopf
 ms.openlocfilehash: 967861363d5056a5a466aa88840cda2aafbeb86b
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097173"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188487"
 ---
 Чтобы создать проект Visual Studio для разработки рабочего стола C++ необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру и установить пакет SDK службы "Речь".
 
