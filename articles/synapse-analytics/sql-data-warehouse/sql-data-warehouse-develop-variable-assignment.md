@@ -1,30 +1,30 @@
 ---
 title: Назначение переменных
-description: В этой статье вы найдете полезные советы по назначению переменных T-SQL в пуле SQL.
+description: В этой статье вы найдете советы по назначению переменных T-SQL для выделенных пулов SQL в Azure синапсе Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 0cbadc10fb817c70bd259397c840aae68abc2d54
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 87448ea737c11af13a52632e5bf4f67dc54d9ae3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213335"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459222"
 ---
-# <a name="assign-variables-in-synapse-sql-pool"></a>Назначение переменных в пуле синапсе SQL
+# <a name="assign-variables-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Назначение переменных для выделенных пулов SQL в Azure синапсе Analytics
 
-В этой статье вы найдете полезные советы по назначению переменных T-SQL в пуле SQL.
+В этой статье вы найдете полезные советы по назначению переменных T-SQL в выделенном пуле SQL.
 
 ## <a name="set-variables-with-declare"></a>Задание переменных с помощью DECLARE
 
-Переменные в пуле SQL устанавливаются с помощью `DECLARE` инструкции или `SET` инструкции. Инициализация переменных с помощью DECLARE является одним из наиболее гибких способов задания значения переменной в пуле SQL.
+Переменные в выделенном пуле SQL устанавливаются с помощью `DECLARE` инструкции или `SET` инструкции. Инициализация переменных с помощью DECLARE является одним из наиболее гибких способов задания значения переменной в пуле SQL.
 
 ```sql
 DECLARE @v  int = 0

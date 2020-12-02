@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 11/09/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 8af3da5d04f9aaafc18299f4837660694ee34b51
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 0719f2d9200741798c798aca4b4196812f1229c9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345275"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458450"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "96345275"
 >
 > * [Управление доступом к ресурсам кластера Azure Kubernetes](../aks/azure-ad-rbac.md)
 > * [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md)
-> * [Использование Azure RBAC для доступа к данным BLOB-объектов](/azure/storage/common/storage-auth-aad-rbac-portal)
+> * [Использование Azure RBAC для доступа к данным BLOB-объектов](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!WARNING]
 > Применение некоторых ролей может ограничить функциональность пользовательского интерфейса в Машинное обучение Azure Studio для других пользователей. Например, если роль пользователя не может создать вычислительный экземпляр, параметр создания вычислительного экземпляра будет недоступен в студии. Это ожидаемое поведение, которое предотвращает попытки пользователя выполнить операции, возвращающие ошибку отказа в доступе.

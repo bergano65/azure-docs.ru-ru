@@ -9,14 +9,14 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: fa05f8a8b05a0acddae906a93c90c42424466969
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3d12e60e2aeee667b89d56589870d53366772014
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322600"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459041"
 ---
-# <a name="azure-synapse-link-preview-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link (предварительная версия) для Azure Cosmos DB
+# <a name="azure-synapse-link-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link для Azure Cosmos DB
 
 В этой статье описаны функциональные возможности, которые в данный момент поддерживаются Azure Synapse Link для Azure Cosmos DB.
 
@@ -31,9 +31,9 @@ ms.locfileid: "93322600"
 
 Вы можете подключиться к контейнеру Azure Cosmos DB, не включив ссылку синапсе. В этом сценарии можно только считывать и записывать в хранилище транзакций. Ниже приведен список поддерживаемых в настоящее время функций в ссылке синапсе для Azure Cosmos DB. 
 
-| Категория              | Описание |[Spark](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) | [Бессерверная среда SQL](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) |
+| Категория              | Описание |[Пул Apache Spark](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) | [Бессерверный пул SQL](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- | ----------------------------------------------------------- |
-| **Поддержка среды выполнения** |Поддержка среды выполнения Azure синапсе для доступа к Azure Cosmos DB| ✓ | ✓ |
+| **Поддержка среды выполнения** |Поддержка среды выполнения Azure синапсе для доступа к Azure Cosmos DB| ✓ | Предварительный просмотр |
 | **Поддержка API Azure Cosmos DB** | Поддерживаемый тип API Azure Cosmos DB | SQL/MongoDB | SQL/MongoDB |
 | **Объект**  |Такие объекты, как таблица, которую можно создать, указав непосредственно на контейнер Azure Cosmos DB| Кадр данных, представление, таблица | Представление |
 | **Чтение**    | Тип контейнера Azure Cosmos DB, который можно считать | OLTP/HTAP | HTAP  |
@@ -53,12 +53,12 @@ ms.locfileid: "93322600"
 | **Запись DataFrame для потоковой передачи в контейнер** |Потоковая передача данных с помощью канала изменений Azure Cosmos DB|✓| ✓ |
 
 
-## <a name="supported-code-generated-actions-for-sql-serverless"></a>Поддерживаемые действия, создаваемые кодом, для бессерверной среды SQL
+## <a name="supported-code-generated-actions-for-serverless-sql-pool"></a>Поддерживаемые действия, созданные кодом, для независящего от сервера пула SQL
 
 | Жест              | Описание |OLTP |HTAP |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- |----------------------------------------------------------- |
 | **Анализ данных** |Просмотр данных из контейнера с помощью привычного синтаксиса T-SQL и автоматического вывода схемы|X| ✓ |
-| **Создание представлений и создание отчетов бизнес-аналитики** |Создание представления SQL для прямого доступа к контейнеру для бизнес-аналитики с помощью синапсе SQL Server |X| ✓ |
+| **Создание представлений и создание отчетов бизнес-аналитики** |Создание представления SQL для прямого доступа к контейнеру для бизнес-аналитики с помощью бессерверного пула SQL |X| ✓ |
 | **Объединение разрозненных источников данных вместе с данными Cosmos DB** | Сохранение результатов запроса, считывающего данные из Cosmos DB контейнеров вместе с данными в хранилище BLOB-объектов Azure или Azure Data Lake Storage с помощью CETAS |X| ✓ |
 
 ## <a name="next-steps"></a>Дальнейшие действия

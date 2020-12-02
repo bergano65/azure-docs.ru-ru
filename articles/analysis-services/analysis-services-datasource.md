@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 174ad4692d043390e6773a98e31f0985d75c8e2e
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 61efc7719b071ff4e8e5c0e07534b72a2883aff1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018820"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458861"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -120,7 +120,7 @@ ms.locfileid: "92018820"
 
 ## <a name="oauth-credentials"></a>Учетные данные OAuth
 
-Для табличных моделей на уровне совместимости 1400 и выше с использованием режима в памяти база данных SQL Azure, Azure синапсе (ранее — хранилище данных SQL), Dynamics 365 и список SharePoint поддерживают учетные данные OAuth. Azure Analysis Services управляет обновлением токена для источников данных OAuth во избежание истечения времени ожидания для длительных операций обновления. Чтобы создать допустимые токены, задайте учетные данные с помощью Power Query.
+Для табличных моделей на уровне совместимости 1400 и выше с использованием режима в памяти, базы данных SQL Azure, Azure синапсе, Dynamics 365 и списка SharePoint поддерживаются учетные данные OAuth. Azure Analysis Services управляет обновлением токена для источников данных OAuth во избежание истечения времени ожидания для длительных операций обновления. Чтобы создать допустимые токены, задайте учетные данные с помощью Power Query.
 
 Режим прямого запроса не поддерживается с учетными данными OAuth.
 

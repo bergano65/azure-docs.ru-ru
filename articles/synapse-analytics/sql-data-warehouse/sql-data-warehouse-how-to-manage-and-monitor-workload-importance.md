@@ -1,6 +1,6 @@
 ---
-title: Администрирование и мониторинг уровня важности рабочей нагрузки
-description: Узнайте, как управлять и отслеживать важность уровня запросов в Azure синапсе Analytics.
+title: Управление важностью рабочих нагрузок и их мониторинг в выделенном пуле SQL
+description: Узнайте, как управлять и отслеживать важность уровня запросов выделенного пула SQL для Azure синапсе Analytics.
 services: synapse-analytics
 author: ronortloff
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 43006456142728287ddf4adba1fbb9b45f5ccc89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb0a5fbf33b48521882646bf8fb5eb3fe5dacca6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85211975"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459211"
 ---
-# <a name="manage-and-monitor-workload-importance-in-azure-synapse-analytics"></a>Управление и мониторинг важности рабочей нагрузки в Azure синапсе Analytics
+# <a name="manage-and-monitor-workload-importance-in-dedicated-sql-pool-for-azure-synapse-analytics"></a>Управление и мониторинг важности рабочей нагрузки в выделенном пуле SQL для Azure синапсе Analytics
 
-Управление и отслеживание важности синапсе SQL на уровне запросов в синапсе Azure с помощью динамических административных представлений и представления каталога.
+Управляйте и контролируйте выделенную важность уровня запросов пула SQL в Azure синапсе с помощью динамических административных представлений и представления каталога.
 
 ## <a name="monitor-importance"></a>Мониторинг важности
 

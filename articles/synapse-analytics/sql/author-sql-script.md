@@ -1,6 +1,6 @@
 ---
-title: Скрипты SQL в Azure синапсе Studio (Предварительная версия)
-description: Введение в скрипты SQL для Azure синапсе Studio (Предварительная версия)
+title: Скрипты SQL в синапсе Studio
+description: Общие сведения о сценариях SQL синапсе Studio в Azure синапсе Analytics.
 services: synapse-analytics
 author: pimorano
 ms.service: synapse-analytics
@@ -9,22 +9,22 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: pimorano
 ms.reviewer: omafnan
-ms.openlocfilehash: 3f3009799889bd6b118f586676e22338d821d37c
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 077815d117af0328a3466346727e135caaf8ff21
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635295"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458010"
 ---
-# <a name="using-sql-scripts-in-azure-synapse-studio-preview"></a>Использование скриптов SQL в Azure синапсе Studio (Предварительная версия)
+# <a name="synapse-studio-sql-scripts-in-azure-synapse-analytics"></a>Скрипты SQL синапсе Studio в Azure синапсе Analytics 
 
-Azure синапсе Studio (Предварительная версия) предоставляет веб-интерфейс скрипта SQL для создания запросов SQL. Вы можете подключиться к пулу SQL (Предварительная версия). 
+Синапсе Studio предоставляет веб-интерфейс SQL Script для создания запросов SQL. 
 
 ## <a name="begin-authoring-in-sql-script"></a>Начало разработки в скрипте SQL 
 
 Существует несколько способов запуска процесса разработки в скрипте SQL. Создать новый скрипт SQL можно одним из следующих способов.
 
-1. В меню «Разработка» выберите значок **«+»** и щелкните « **скрипт SQL** ».
+1. В меню «Разработка» выберите значок **«+»** и щелкните « **скрипт SQL**».
 
 2. В меню **действия** выберите команду **создать скрипт SQL**.
 

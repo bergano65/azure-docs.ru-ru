@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 10476544e513b52567eb0ca0182039f2c5f482c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd0f389615c95ef9b9bc8280b6486740ddba4fb4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441635"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456830"
 ---
 # <a name="repeatable-copy-in-azure-data-factory"></a>Повторяющаяся операция копирования в фабрике данных Azure
 
@@ -104,7 +104,7 @@ ID    Product        Quantity    ModifiedDate
 
 ### <a name="mechanism-2-using-sliceidentifiercolumnname"></a>Механизм 2: использование sliceIdentifierColumnName
 > [!IMPORTANT]
-> В настоящее время sliceIdentifierColumnName не поддерживается для Azure синапсе Analytics (ранее — хранилища данных SQL). 
+> В настоящее время sliceIdentifierColumnName не поддерживается для Azure синапсе Analytics. 
 
 Другой способ достижения повторяемости — выделение в целевой таблице специального столбца sliceIdentifierColumnName. Этот столбец будет использовать фабрика данных Azure, чтобы синхронизировать источник и назначение. Такой подход работает при наличии гибкости в изменении или определении целевой схемы таблицы SQL. 
 
@@ -147,7 +147,7 @@ ID    Product        Quantity    ModifiedDate
 
 Как и при использовании первого механизма, действие копирования сначала автоматически удаляет из целевой таблицы SQL данные для заданного среза. После этого данные из источника вставляются в целевую таблицу. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
 - [База данных SQL Azure](data-factory-azure-sql-connector.md)

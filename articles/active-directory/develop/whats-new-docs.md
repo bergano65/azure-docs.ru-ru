@@ -5,22 +5,36 @@ description: Новая и обновленная документация по 
 services: active-directory
 author: mmacy
 manager: CelesteDG
-ms.date: 11/03/2020
+ms.date: 12/01/2020
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: d5865810dafef9ce2bb525a8f1b6cdbdb1a86566
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 108cd5f74b7b560534baf8f55f7d07ebb6557e7f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322572"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457158"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Документация по платформе Microsoft Identity: новые возможности
 
 Добро пожаловать в документацию по платформе удостоверений Майкрософт. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца.
+
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Использование интерфейсов API с поддержкой оценки непрерывного доступа в приложениях](app-resilience-continuous-access-evaluation.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Маркеры доступа платформы удостоверений Майкрософт](access-tokens.md)
+- [Параметры конфигурации приложения (MSAL)](msal-client-application-configuration.md)
+- [Как предоставить приложению необязательные утверждения](active-directory-optional-claims.md)
+- [Публикация приложения в коллекции приложений Azure AD](v2-howto-app-gallery-listing.md)
+- [Как добавить роли приложения в приложение и получить их в токене](howto-add-app-roles-in-azure-ad-apps.md)
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 
@@ -67,23 +81,3 @@ ms.locfileid: "93322572"
 - [Краткое руководство. Настройка клиентского приложения для доступа к веб-API](quickstart-configure-app-access-web-apis.md)
 - [Краткое руководство. Настройка приложения для предоставления веб-API](quickstart-configure-app-expose-web-apis.md)
 - [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](quickstart-register-app.md)
-
-## <a name="august-2020"></a>Август 2020 г.
-
-### <a name="new-articles"></a>Новые статьи
-
-- [Перенос приложений Android, использующих брокер из ADAL.NET, в MSAL.NET](msal-net-migration-android-broker.md)
-- [Обработку исключений и ошибок в MSAL для Android](msal-android-handling-exceptions.md)
-
-### <a name="updated-articles"></a>Обновленные статьи
-
-- [Перенос приложений iOS, использующих Microsoft Authenticator из ADAL.NET в MSAL.NET](msal-net-migration-ios-broker.md)
-- [Использование Microsoft Authenticator или Корпоративный портал Intune в приложениях Xamarin](msal-net-use-brokers-with-xamarin-apps.md)
-- [Требования к конфигурации и советы по устранению неполадок для Xamarin Android с MSAL.NET](msal-net-xamarin-android-considerations.md)
-- [Настройка мобильного приложения, вызывающего веб-API](scenario-mobile-app-configuration.md)
-- [Руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)](active-directory-claims-mapping.md)
-- [Учетные данные сертификата проверки подлинности приложения платформы удостоверений Майкрософт](active-directory-certificate-credentials.md)
-- [Ограничения URI перенаправления (URL-адрес ответа)](reply-url.md)
-- [Краткое руководство. Настройка приложения для предоставления веб-API](quickstart-configure-app-expose-web-apis.md)
-- [Видео по платформе удостоверений Майкрософт](identity-videos.md)
-- [Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт](quickstart-v2-dotnet-native-aspnet.md)

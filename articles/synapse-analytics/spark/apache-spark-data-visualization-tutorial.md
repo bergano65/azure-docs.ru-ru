@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 10/20/2020
 ms.author: midesa
-ms.openlocfilehash: 820dd8b607f5ec2fdc44d25063e0a941f76237ad
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8735514b639cb0322a83ffb19d661027327c0f73
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95920168"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458769"
 ---
 # <a name="analyze-data-with-apache-spark"></a>Анализ данных с помощью Apache Spark
 
@@ -21,7 +21,7 @@ ms.locfileid: "95920168"
 
 В частности, мы проанализируем набор данных о [такси городе Нью-Йорк (Нью)](https://azure.microsoft.com/en-us/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) . Данные доступны через открытые наборы данных Azure. Это подмножество набора данных содержит сведения о желтых поездках в такси, включая сведения о каждом путешествии, начальное и конечное время и местоположения, стоимость и другие интересные атрибуты.
   
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 - Создайте пул Apache Spark, следуя [учебнику создание пула Apache Spark](../articles/../quickstart-create-apache-spark-pool-studio.md) . 
 
 ## <a name="download-and-prepare-the-data"></a>Скачивание и подготовка данных
@@ -99,7 +99,7 @@ ORDER BY day_of_month ASC
 
 > [!Note]
 > 
-> По умолчанию каждый пул Apache Spark аналитики Azure синапсе содержит набор часто используемых и стандартных библиотек. Полный список библиотек можно просмотреть в [среде выполнения Azure синапсе](../spark/apache-spark-version-support.md). документации. Кроме того, чтобы предоставить приложениям сторонний или локально созданный код, можно [установить библиотеку](../spark/apache-spark-azure-portal-add-libraries.md) на одном из пулов Spark (Предварительная версия).
+> По умолчанию каждый пул Apache Spark аналитики Azure синапсе содержит набор часто используемых и стандартных библиотек. Полный список библиотек можно просмотреть в [среде выполнения Azure синапсе](../spark/apache-spark-version-support.md). документации. Кроме того, чтобы предоставить приложениям сторонний или локально разработанный код, можно [установить библиотеку](../spark/apache-spark-azure-portal-add-libraries.md) на одном из пулов Spark.
 >
 
 1. Для упрощения и уменьшения затрат на разработку мы будем использовать образец набора данных. Мы будем использовать встроенную возможность выборки Apache Spark. Кроме того, для Сеаборн и Matplotlib требуется кадр данных Pandas или массив NumPy. Чтобы получить кадр данных Pandas, мы будем использовать команду, ```toPandas()``` чтобы преобразовать наш кадр данных.

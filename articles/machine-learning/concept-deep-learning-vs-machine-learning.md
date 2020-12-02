@@ -10,18 +10,18 @@ ms.author: lazzeri
 author: FrancescaLazzeri
 ms.date: 09/22/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 1a6708214eadb2f5d0d66d72f5db5cb4a195d206
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 43b03abb2aac13358a2187a0a5dc570c1e45934e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324875"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458499"
 ---
 # <a name="deep-learning-vs-machine-learning-in-azure-machine-learning"></a>Глубокое обучение и машинное обучение в Машинное обучение Azure
 
 В этой статье объясняется глубокое изучение и машинное обучение, а также их соответствие в более широкой категории искусственного интеллекта. Узнайте о решениях для глубокого обучения, которые можно создавать на Машинное обучение Azure, таких как обнаружение мошенничества, распознавание речи и лиц, анализ тональностиности и прогнозирование временных рядов.
 
-Рекомендации по выбору алгоритмов для решений см. на [странице машинное обучение Algorithm Памятка по](https://docs.microsoft.com/azure/machine-learning/algorithm-cheat-sheet?WT.mc_id=docs-article-lazzeri).
+Рекомендации по выбору алгоритмов для решений см. на [странице машинное обучение Algorithm Памятка по](./algorithm-cheat-sheet.md?WT.mc_id=docs-article-lazzeri).
 
 ## <a name="deep-learning-machine-learning-and-ai"></a>Глубокое обучение, машинное обучение и AI
 

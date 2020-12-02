@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 24c2fe9b6bbb0b5a40edd395bfe669abfc8c9adc
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 0ab0e64d9a088a332ba037dccf01dc445998ebfb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183181"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457559"
 ---
 # <a name="azure-analysis-services-samples"></a>Примеры для служб Azure Analysis Services
 
@@ -28,7 +28,7 @@ ms.locfileid: "96183181"
 
 ## <a name="sample-database-on-azure"></a>Образец базы данных в Azure
 
-Azure синапсе Analytics (ранее хранилище данных SQL) содержит образец базы данных AdventureWorksDW, который можно добавить в подготовленный ресурс. Дополнительные сведения см. в разделе [Краткое руководство. Создание и запрос выделенного пула SQL в Azure синапсе Analytics ](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
+Azure синапсе Analytics предоставляет образец базы данных AdventureWorksDW, который можно добавить в подготовленный ресурс. Дополнительные сведения см. в разделе [Краткое руководство. Создание и запрос выделенного пула SQL в Azure синапсе Analytics ](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
 
 ## <a name="sample-databases-on-github"></a>Примеры баз данных на GitHub
 

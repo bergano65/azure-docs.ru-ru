@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 59f68909e2f3704fea5c38e3f1535f5996b284ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2620b52c426871b0ec85e3db237be2d373d42f1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87100287"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458692"
 ---
 # <a name="add-tags-to-digital-twins"></a>Добавление тегов в цифровые двойников 
 
@@ -69,13 +69,13 @@ entity-03: "tags": { "red": true, "large": true }
 Ниже приведен запрос для получения всех двойников, помеченных как "Red": 
 
 ```sql
-select * from digitaltwins where is_defined(tags.red) 
+SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
 ```
 
 Можно также комбинировать теги для более сложных запросов. Ниже приведен запрос для получения всех двойников, которые округляются, а не красного цвета. 
 
 ```sql
-select * from digitaltwins where not is_defined(tags.red) and is_defined(tags.round) 
+SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND is_defined(tags.round) 
 ```
 
 ## <a name="value-tags"></a>Теги значений 
@@ -127,13 +127,13 @@ entity-03: "tags": { "red": "", "size": "small" }
 В приведенном выше примере используется `red` как тег маркера. Ниже приведен запрос для получения всех двойников, помеченных как "Red": 
 
 ```sql
-select * from digitaltwins where is_defined(tags.red) 
+SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
 ```
 
 Ниже приведен запрос для получения всех мелких сущностей (тег значения), а не красного: 
 
 ```sql
-select * from digitaltwins where not is_defined(tags.red) and tags.size = 'small' 
+SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND tags.size = 'small' 
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

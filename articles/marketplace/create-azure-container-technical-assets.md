@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 11/30/2020
-ms.openlocfilehash: 30f9eac0a0e88092a243b4d9421d2a4f33b07841
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 014bcd6fc519c267cdf17e9e98b850425c25ead6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95759037"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459321"
 ---
 # <a name="prepare-your-azure-container-technical-assets"></a>Подготовка технических ресурсов контейнера Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "95759037"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Ознакомьтесь с [документацией по службе "Экземпляры контейнеров Azure"](/azure/container-instances/). Там вы найдете краткие инструкции, руководства и примеры для начала работы.
+Ознакомьтесь с [документацией по службе "Экземпляры контейнеров Azure"](../container-instances/index.yml). Там вы найдете краткие инструкции, руководства и примеры для начала работы.
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
@@ -43,7 +43,7 @@ ms.locfileid: "95759037"
 
 Кроме того, рекомендуем добавить в среду разработки следующие инструменты:
 
-- [Обозреватель службы хранилища Azure](/azure/vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)
+- [Обозреватель службы хранилища Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)
 - [Visual Studio Code](https://code.visualstudio.com/)
   - Расширение: [Средства Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
   - Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
@@ -55,10 +55,10 @@ ms.locfileid: "95759037"
 
 Вы не можете развернуть образ в службе "экземпляры контейнеров Azure" из локального реестра.
 
-- Если у вас уже есть рабочий контейнер в локальном реестре, создайте реестр Azure и отправьте образ контейнера в реестр контейнеров Azure. Дополнительные сведения см. в разделе [учебник. Создание и развертывание образов контейнеров в облаке с помощью задач реестра контейнеров Azure](/azure/container-registry/container-registry-tutorial-quick-task.md).
+- Если у вас уже есть рабочий контейнер в локальном реестре, создайте реестр Azure и отправьте образ контейнера в реестр контейнеров Azure. Дополнительные сведения см. в разделе [учебник. Создание и развертывание образов контейнеров в облаке с помощью задач реестра контейнеров Azure](../container-registry/container-registry-tutorial-quick-task.md).
 
-- Если у вас еще нет образа контейнера и вам нужно контейнеризовать существующее приложение или создать новое приложение на основе контейнера, клонировать исходный код приложения из GitHub, создать образ контейнера из источника приложения и протестировать образ в локальной среде DOCKER. Дополнительные сведения см. в разделе [учебник. Создание образа контейнера для развертывания в службе "экземпляры контейнеров Azure"](/azure/container-instances/container-instances-tutorial-prepare-app.md).
+- Если у вас еще нет образа контейнера и вам нужно контейнеризовать существующее приложение или создать новое приложение на основе контейнера, клонировать исходный код приложения из GitHub, создать образ контейнера из источника приложения и протестировать образ в локальной среде DOCKER. Дополнительные сведения см. в разделе [учебник. Создание образа контейнера для развертывания в службе "экземпляры контейнеров Azure"](../container-instances/container-instances-tutorial-prepare-app.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание предложения контейнера](create-azure-container-offer.md)

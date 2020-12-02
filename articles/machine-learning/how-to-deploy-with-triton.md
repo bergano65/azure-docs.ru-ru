@@ -11,12 +11,12 @@ ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy, devx-track-azurecli
-ms.openlocfilehash: 8e479367a04e105ae2111ce66707999aff7ef960
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: b47b8f9d9429f38fb8b5da6d8f9083736f230fcb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302459"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458270"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Высокопроизводительный обслуживание с помощью сервера вывода Тритон (Предварительная версия) 
 
@@ -53,7 +53,7 @@ ms.locfileid: "96302459"
 
 ### <a name="setting-the-number-of-workers"></a>Задание количества рабочих ролей
 
-Чтобы задать число рабочих ролей в развертывании, задайте переменную среды `WORKER_COUNT` . При наличии объекта [среды](/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true) с именем `env` можно выполнить следующие действия.
+Чтобы задать число рабочих ролей в развертывании, задайте переменную среды `WORKER_COUNT` . При наличии объекта [среды](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) с именем `env` можно выполнить следующие действия.
 
 ```{py}
 env.environment_variables["WORKER_COUNT"] = "1"

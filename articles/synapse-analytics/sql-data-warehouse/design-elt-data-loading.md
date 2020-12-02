@@ -1,37 +1,37 @@
 ---
 title: Создание пакетов ELT вместо ETL
-description: Реализация гибкой стратегии загрузки данных для пула Synapse SQL в Azure Synapse Analytics
+description: Реализуйте гибкие стратегии загрузки данных для выделенных пулов SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 05/13/2020
+ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 0533e76863d01675cee7aaca79e32821e5efc749
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 8b75345743bb398458752d03f853738df713b4f9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92507809"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456437"
 ---
-# <a name="data-loading-strategies-for-synapse-sql-pool"></a>Стратегии загрузки данных для пула Synapse SQL
+# <a name="data-loading-strategies-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Стратегии загрузки данных для выделенного пула SQL в Azure синапсе Analytics
 
-Традиционные пулы SQL SMP используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Синапсе SQL, в Azure синапсе Analytics, использует архитектуру обработки распределенных запросов, использующую преимущества масштабируемости и гибкости ресурсов вычислений и хранилища.
+Традиционные пулы SQL, выделенные для SMP, используют процесс извлечения, преобразования и загрузки (ETL) для загрузки данных. Синапсе SQL, в Azure синапсе Analytics, использует архитектуру обработки распределенных запросов, использующую преимущества масштабируемости и гибкости ресурсов вычислений и хранилища.
 
 Использование процесса извлечения, загрузки и преобразования (ELT) использует встроенные возможности обработки распределенных запросов и устраняет ресурсы, необходимые для преобразования данных до загрузки.
 
-Хотя пул SQL поддерживает множество методов загрузки, включая популярные параметры SQL Server, такие как [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [API SqlBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), самый быстрый и наиболее масштабируемый способ загрузки данных — с помощью внешних таблиц polybase и [инструкции Copy](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Выделенные пулы SQL поддерживают множество методов загрузки, включая популярные параметры SQL Server, такие как [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [API SqlBulkCopy](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), самый быстрый и наиболее масштабируемый способ загрузки данных — с помощью внешних таблиц polybase и [инструкции Copy](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 С помощью PolyBase и инструкции COPY можно обращаться к внешним хранимым данным в хранилище BLOB-объектов Azure или Azure Data Lake Storage, используя язык T-SQL. Для наибольшей гибкости при загрузке рекомендуем использовать инструкцию COPY.
 
 
 ## <a name="what-is-elt"></a>Что такое ELT?
 
-Извлечение, загрузка и преобразование (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в пул SQL, а затем преобразовываются.
+Извлечение, Загрузка и преобразование (ELT) — это процесс, с помощью которого данные извлекаются из исходной системы, загружаются в выделенный пул SQL, а затем преобразуются.
 
 Основные шаги по реализации ELT:
 
@@ -62,7 +62,7 @@ ms.locfileid: "92507809"
 
 - Служба [Azure ExpressRoute](../../expressroute/expressroute-introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) повышает пропускную способность сети, производительность, а также предсказуемое поведение. ExpressRoute — это служба, которая направляет данные с помощью выделенного частного подключения в Azure. Подключения ExpressRoute не направляют данные через общедоступный Интернет. Они отличаются повышенной надежностью, более высокой скоростью, меньшей задержкой и дополнительной безопасностью по сравнению с обычными подключениями через общедоступный Интернет.
 - [Служебная программа AZCopy](../../storage/common/storage-choose-data-transfer-solution.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) перемещает данные в службу хранилища Azure через общедоступный Интернет. Этот способ оптимален, если размер данных не превышает 10 ТБ. Для выполнения загрузок на регулярной основе с помощью AZCopy проверьте скорость сети, чтобы просмотреть, подходит ли она.
-- [Фабрика данных Azure (ADF)](../../data-factory/introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) включает шлюз, который можно установить на локальном сервере. Затем можно создать конвейер для перемещения данных из локального сервера в службу хранилища Azure. Сведения об использовании Фабрики данных с пулом SQL см. на странице [Загрузка данных для пула SQL](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+- [Фабрика данных Azure (ADF)](../../data-factory/introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) включает шлюз, который можно установить на локальном сервере. Затем можно создать конвейер для перемещения данных из локального сервера в службу хранилища Azure. Сведения об использовании фабрики данных с выделенными пулами SQL см. в разделе [Загрузка данных для выделенных ПУЛОВ SQL](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 ## <a name="3-prepare-the-data-for-loading"></a>3. Подготовка данных для загрузки
 
@@ -70,9 +70,9 @@ ms.locfileid: "92507809"
 
 ### <a name="define-the-tables"></a>Определение таблиц
 
-При использовании инструкции COPY необходимо сначала определить таблицы, которые вы загружаете в пул SQL.
+При использовании инструкции COPY необходимо сначала определить таблицы, которые вы загружаете в выделенный пул SQL.
 
-Если вы используете PolyBase, перед загрузкой данных необходимо определить внешние таблицы в пуле SQL. PolyBase использует внешние таблицы для определения данных и доступа к ним в службе хранилища Azure. Внешняя таблица аналогична представлению базы данных. Внешняя таблица содержит схему таблицы и указывает на данные, хранящиеся за пределами пула SQL.
+Если вы используете Polybase, перед загрузкой необходимо определить внешние таблицы в выделенном пуле SQL. PolyBase использует внешние таблицы для определения данных и доступа к ним в службе хранилища Azure. Внешняя таблица аналогична представлению базы данных. Внешняя таблица содержит схему таблицы и указывает на данные, хранящиеся за пределами выделенного пула SQL.
 
 Определение внешних таблиц включает указание источника данных, формата текстовых файлов и определений таблицы. Ниже приведены справочные статьи о синтаксисе T-SQL, которые вам понадобятся:
 
@@ -113,7 +113,7 @@ ms.locfileid: "92507809"
 |                            INT64                             |            INT(64, true)            |      BIGINT      |
 |                            INT64                             |           INT(64, false)            |  decimal(20,0)   |
 |                            INT64                             |                DECIMAL                |     Decimal      |
-|                            INT64                             |         время ()                 |       time       |
+|                            INT64                             |         TIME (MILLIS)                 |       time       |
 |                            INT64                             | МЕТКА ВРЕМЕНИ ()                  |    datetime2     |
 | [Сложный тип](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fapache%2Fparquet-format%2Fblob%2Fmaster%2FLogicalTypes.md%23lists&data=02\|01\|kevin%40microsoft.com\|19f74d93f5ca45a6b73c08d7d7f5f111\|72f988bf86f141af91ab2d7cd011db47\|1\|0\|637215323617803168&sdata=6Luk047sK26ijTzfvKMYc%2FNu%2Fz0AlLCX8lKKTI%2F8B5o%3D&reserved=0) |                 Список                  |   varchar(max)   |
 | [Сложный тип](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fapache%2Fparquet-format%2Fblob%2Fmaster%2FLogicalTypes.md%23maps&data=02\|01\|kevin%40microsoft.com\|19f74d93f5ca45a6b73c08d7d7f5f111\|72f988bf86f141af91ab2d7cd011db47\|1\|0\|637215323617803168&sdata=FiThqXxjgmZBVRyigHzfh5V7Z%2BPZHjud2IkUUM43I7o%3D&reserved=0) |                  MAP                  |   varchar(max)   |
@@ -130,12 +130,12 @@ ms.locfileid: "92507809"
 Для форматирования текстовых файлов сделайте следующее:
 
 - Если данные поступают из нереляционного источника, необходимо преобразовать их в строки и столбцы. Независимо от того, поступают ли данные из реляционного или нереляционного источника, их необходимо преобразовать для соответствия определениям столбцов таблицы, в которую вы планируете загрузить данные.
-- Форматируйте данные в текстовом файле для соответствия определениям столбцов и типам данных в целевой таблице. Неполное соответствие между типами данных во внешних текстовых файлах и таблице пула SQL вызовет отклонение строк во время загрузки.
+- Форматируйте данные в текстовом файле для соответствия определениям столбцов и типам данных в целевой таблице. Неправильное выравнивание типов данных во внешних текстовых файлах и выделенной таблице пула SQL приводит к тому, что строки будут отклонены во время загрузки.
 - Отделите поля в текстовом файле символом завершения.  Обязательно используйте уникальный символ или последовательность символов. Используйте указанный символ завершения для [создания формата внешнего файла](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ## <a name="4-load-the-data-using-polybase-or-the-copy-statement"></a>4. Загрузка данных с помощью PolyBase или инструкции COPY
 
-Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. Промежуточная таблица также дает возможность использовать архитектуру параллельной обработки пула SQL для преобразований данных перед вставкой данных в рабочие таблицы.
+Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. Промежуточная таблица также дает возможность использовать выделенную архитектуру параллельной обработки пула SQL для преобразований данных перед вставкой данных в рабочие таблицы.
 
 ### <a name="options-for-loading"></a>Параметры загрузки
 
