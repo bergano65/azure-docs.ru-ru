@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/27/2020
 ms.author: olayemio
 ms.reviewer: cynthn
-ms.openlocfilehash: d15f58a2d87483e8e2fd6711481bfe8866ca1548
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 74e1dc12be9bfec57d76357a335b46a55912f6df
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920616"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500280"
 ---
 # <a name="troubleshoot-shared-image-galleries-in-azure"></a>Устранение неполадок с общими галереями образов в Azure
 
@@ -137,7 +137,7 @@ ms.locfileid: "94920616"
 
 *Тип учетной записи хранения ZRS не поддерживается в этом регионе.*  
 **Причина**: вы выбрали стандартное хранилище, избыточное в пределах зоны (ZRS), в регионе, который еще не поддерживает его.  
-**Решение**. Измените тип учетной записи хранения на **Premium \_ LRS** или **Standard \_ LRS**. Ознакомьтесь с документацией по последнему [списку регионов](/azure/storage/common/storage-redundancy#zone-redundant-storage) с включенной предварительной версией ZRS.
+**Решение**. Измените тип учетной записи хранения на **Premium \_ LRS** или **Standard \_ LRS**. Ознакомьтесь с документацией по последнему [списку регионов](../storage/common/storage-redundancy.md#zone-redundant-storage) с включенной предварительной версией ZRS.
 
 ## <a name="creating-or-updating-image-versions"></a>Создание или обновление версий изображений ##
 

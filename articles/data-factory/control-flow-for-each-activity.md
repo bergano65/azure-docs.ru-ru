@@ -3,20 +3,20 @@ title: Действие ForEach в фабрике данных Azure
 description: Действие ForEach определяет повторяющийся поток управления в конвейере. Оно используется для выполнения итерации коллекции и выполнения заданных действий.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/23/2019
-ms.openlocfilehash: 35d61e896a395c3044a51780fef72d54c211a31f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 71e96e6245d4cf922b82162e01a972264699f3ac
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417181"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499515"
 ---
 # <a name="foreach-activity-in-azure-data-factory"></a>Действие ForEach в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -76,7 +76,7 @@ name | Имя действия ForEach. | Строка | Да
 type | Должно быть задано значение **ForEach**. | Строка | Да
 isSequential | Определяет, как следует выполнять цикл: последовательно или параллельно.  В параллельном режиме может выполняться одновременно не более 20 итераций цикла. Например, если действие ForEach выполняет итерацию действия копирования с 10 разными наборами данных источника и приемника и **isSequential** имеет значение false, все копии будут выполняться одновременно. Значение по умолчанию — False. <br/><br/> Если isSequential имеет значение false, убедитесь в наличии правильной конфигурации для запуска нескольких исполняемых файлов. В противном случае это свойство следует использовать с осторожностью, чтобы исключить конфликты записи. Дополнительные сведения см. в разделе [Параллельное выполнение](#parallel-execution). | Логическое | Нет. Значение по умолчанию — False.
 batchCount | Число пакетов, которое должно использоваться для управления количеством параллельного выполнения (в случае, если isSequential имеет значение false). Это верхний предел параллелизма, но действие for-each не всегда будет выполняться по этому номеру | Целое число (максимум 50) | Нет. Значение по умолчанию — 20.
-Items | Выражение, возвращающее массив JSON для итерации. | Выражение (возвращающее массив JSON) | Да
+Элементы | Выражение, возвращающее массив JSON для итерации. | Выражение (возвращающее массив JSON) | Да
 Действия | Действия для выполнения. | Список действий | Да
 
 ## <a name="parallel-execution"></a>Параллельное выполнение

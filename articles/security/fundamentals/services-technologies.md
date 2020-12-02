@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: a4cc6e31e49243af8fa52ac568bcbba660bcde7e
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8a33e9d462f3105bfee295ac82384a38325f7c7c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842742"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498801"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "94842742"
 |Служба|Описание|
 |--------|--------|
 |[Центр&nbsp;безопасности&nbsp;Azure](../../security-center/security-center-introduction.md)| Облачное решение защиты рабочих нагрузок обеспечивает управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок.|
-|[Azure Key Vault](../../key-vault/general/overview.md)| Защищенное хранилище секретов для паролей, строк подключения и другой информации, необходимой для работы приложения. |
+|[Azure Key Vault](../../key-vault/general/overview.md);| Защищенное хранилище секретов для паролей, строк подключения и другой информации, необходимой для работы приложения. |
 |[Журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md)|Служба мониторинга собирает телеметрию и другие данные, а также предоставляет язык запросов и модуль аналитики для доставки оперативных аналитических сведений для приложений и ресурсов. Решение можно использовать отдельно или совместно с другими службами, например центром обеспечения безопасности. |
 |[Лаборатории для разработки и тестирования Azure](../../devtest-labs/devtest-lab-overview.md)|Это служба, помогающая разработчикам и тест-инженерам быстро создавать среды в Azure при минимальных потерях и контроле издержек.  |
 
@@ -64,7 +64,7 @@ ms.locfileid: "94842742"
 | [Аудит базы данных SQL Azure](../../azure-sql/database/auditing-overview.md)|Возможность аудита базы данных SQL, позволяющая отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure.  |
 
 
-## <a name="identity-and-access-management"></a>управление удостоверениями и доступом;
+## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
 |Служба|Описание|
 |------|--------|
 | [&nbsp;Управление доступом на основе ролей в Azure &nbsp;](../../role-based-access-control/role-assignments-portal.md)|Функция контроля доступа, которая позволяет предоставлять пользователям доступ только к ресурсам, доступ к которым основан на их ролях в рамках организации.  |
@@ -88,8 +88,8 @@ ms.locfileid: "94842742"
 |[Брандмауэр веб-приложения](../../web-application-firewall/afds/afds-overview.md) (WAF)|Компонент шлюза приложений для централизованной защиты веб-приложений от распространенных эксплойтов и уязвимостей.|
 | [Azure Load Balancer](../../load-balancer/load-balancer-overview.md)|Подсистема балансировки нагрузки сети приложения TCP/UDP. |
 | [Azure ExpressRoute](../../expressroute/expressroute-introduction.md)| Выделенная ссылка WAN между локальными сетями и виртуальными сетями Azure. |
-| [Диспетчер трафика Azure](../../traffic-manager/traffic-manager-overview.md)| Балансировщик нагрузки глобальной DNS.|
+| [Azure Traffic Manager](../../traffic-manager/traffic-manager-overview.md)| Балансировщик нагрузки глобальной DNS.|
 | [Прокси приложения Azure](../../active-directory/manage-apps/application-proxy.md)| Внешний интерфейс аутентификации, используемый для защиты удаленного доступа к веб-приложениям, размещенным локально. |
 |[Брандмауэр Azure](../../firewall/overview.md)|Управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure.|
-|[Защита от атак DDoS Azure](../../virtual-network/ddos-protection-overview.md)|Эта служба обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.|
+|[Защита от атак DDoS Azure](../../ddos-protection/ddos-protection-overview.md)|Эта служба обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.|
 |[Конечные точки службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)|Расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению.|

@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 88bbd83d7ac5b834255c9b4d46d7cef4394f15d3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: a3016900b6265bfd56ad1a5a71f70efc01181af5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968673"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499260"
 ---
 # <a name="azure-image-builder-service-devops-task"></a>Задача DevOps службы Azure Image Builder
 
@@ -139,7 +139,7 @@ ms.locfileid: "91968673"
 
 В следующем примере показано, как это работает:
 
-:::image type="content" source="./media/image-builder-devops-task/build-artifacts.png" alt-text="Выберите Добавить артефакт в конвейер выпуска.":::
+:::image type="content" source="./media/image-builder-devops-task/build-artifacts.png" alt-text="Структура каталогов, показывающая иерархию.":::
 
 
 * Windows — файлы существуют в `C:\` . Создается каталог с именем, `buildArtifacts` включающий `webapp` каталог.
@@ -194,7 +194,7 @@ ms.locfileid: "91968673"
     
 #### <a name="total-length-of-image-build"></a>Общая длина сборки образа
 
-Общая длина еще не может быть изменена в задаче конвейера DevOps. По умолчанию используется значение 240 минут. Если вы хотите увеличить [буилдтимеаутинминутес](./image-builder-json.md?bc=%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json#properties-buildtimeoutinminutes), то можете использовать задачу AZ CLI в конвейере выпуска. Настройте задачу, чтобы скопировать шаблон и отправить его. Пример см. в описании этого [решения](https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/4_Using_ENV_Variables#using-environment-variables-and-parameters-with-image-builder)или с помощью команды AZ PowerShell.
+Общая длина еще не может быть изменена в задаче конвейера DevOps. По умолчанию используется значение 240 минут. Если вы хотите увеличить [буилдтимеаутинминутес](./image-builder-json.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#properties-buildtimeoutinminutes), то можете использовать задачу AZ CLI в конвейере выпуска. Настройте задачу, чтобы скопировать шаблон и отправить его. Пример см. в описании этого [решения](https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/4_Using_ENV_Variables#using-environment-variables-and-parameters-with-image-builder)или с помощью команды AZ PowerShell.
 
 
 #### <a name="storage-account"></a>Учетная запись хранения
@@ -314,7 +314,7 @@ URI изображения — ResourceID распределенного обр�
 
 Вы увидите сообщение об ошибке в журнале DevOps для задачи "Построитель образов виртуальных машин" и просмотрите расположение настройки. log. Пример:
 
-:::image type="content" source="./media/image-builder-devops-task/devops-task-error.png" alt-text="Выберите Добавить артефакт в конвейер выпуска.":::
+:::image type="content" source="./media/image-builder-devops-task/devops-task-error.png" alt-text="Пример ошибки задачи DevOps, которая показывает сбой.":::
 
 Дополнительные сведения об устранении неполадок см. в статье [Устранение неполадок службы Azure Image Builder](image-builder-troubleshoot.md). 
 

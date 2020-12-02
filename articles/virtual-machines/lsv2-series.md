@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: dd755e1bc220d61aa540a0e7da9e3f174bde9d76
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba971919037230cb6c09e627fde448647063b5b9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652930"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498427"
 ---
 # <a name="lsv2-series"></a>Серия Lsv2
 
@@ -51,7 +51,7 @@ ms.locfileid: "91652930"
 
 <sup>4</sup> Виртуальные машины серии Lsv2 не предоставляют кэш узла для диска данных, так как он не повышает производительность рабочих нагрузок Lsv2.
 
-<sup>пять</sup> виртуальных машин серии [Lsv2 могут](linux/disk-bursting.md) занимать свою производительность диска в течение 30 минут за один раз. 
+<sup>пять</sup> виртуальных машин серии [Lsv2 могут](./disk-bursting.md) занимать свою производительность диска в течение 30 минут за один раз. 
 
 <sup>6</sup> виртуальных машин с более чем 64 виртуальных ЦП требуется одна из поддерживаемых гостевых операционных систем:
 

@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: c02b6bcb6587313f84c4b900fba49df540d12c07
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0418c11d84fb82ac4a4b181289f032407a29f92e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966366"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500671"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -36,9 +36,9 @@ ms.locfileid: "94966366"
 - PEM
 
 ## <a name="prerequisities"></a>Предварительные требования
-  - Key Vault экземпляр с сертификатом. См. раздел [создание Key Vault](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal)
-  - Виртуальная машина или VMSS должна иметь назначенное [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) .
-  - Политика доступа Key Vault должна быть установлена с секретами `get` и `list` разрешениями на управляемое удостоверение VM/VMSS для получения части сертификата, относящейся к секрету. См. статью [Проверка подлинности в Key Vault](/azure/key-vault/general/authentication) и [назначение политики доступа Key Vault](/azure/key-vault/general/assign-access-policy-cli).
+  - Key Vault экземпляр с сертификатом. См. раздел [создание Key Vault](../../key-vault/general/quick-create-portal.md)
+  - Виртуальная машина или VMSS должна иметь назначенное [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md) .
+  - Политика доступа Key Vault должна быть установлена с секретами `get` и `list` разрешениями на управляемое удостоверение VM/VMSS для получения части сертификата, относящейся к секрету. См. статью [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md) и [назначение политики доступа Key Vault](../../key-vault/general/assign-access-policy-cli.md).
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -111,7 +111,7 @@ ms.locfileid: "94966366"
 Файл конфигурации JSON для расширения виртуальной машины должен быть вложен во фрагмент ресурса виртуальной машины в шаблоне, в частности в объект `"resources": []` для шаблона виртуальной машины или в объект `"virtualMachineProfile":"extensionProfile":{"extensions" :[]`, если используется масштабируемый набор виртуальных машин.
 
  > [!NOTE]
-> Расширение виртуальной машины требует назначения управляемого удостоверения системы или пользователя для проверки подлинности в хранилище ключей.  См [. статью Проверка подлинности в Key Vault и назначение политики доступа Key Vault.](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+> Расширение виртуальной машины требует назначения управляемого удостоверения системы или пользователя для проверки подлинности в хранилище ключей.  См [. статью Проверка подлинности в Key Vault и назначение политики доступа Key Vault.](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 > 
 
 ```json

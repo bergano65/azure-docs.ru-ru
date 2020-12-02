@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: nitinme
-ms.openlocfilehash: 4b7950759914724234ec89e6eaee13b48e735ec9
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: d0ffd786d3fb6bb5f0d70095d947c81caa070518
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024319"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499141"
 ---
 # <a name="migrate-from-bing-speech-to-the-speech-service"></a>Миграция с Распознавание речи Bing в службу речи
 
@@ -26,7 +26,7 @@ ms.locfileid: "95024319"
 Один ключ подписки на службу речи предоставляет доступ к следующим функциям. Каждый тарифицируется отдельно, поэтому плата взимается только за функции, которые вы используете.
 
 * [Преобразование речи в текст](speech-to-text.md)
-* [Настраиваемое преобразование речи в текст](https://cris.ai)
+* [Пользовательское преобразование речи в текст](https://cris.ai)
 * [Преобразование текста в речь](text-to-speech.md)
 * [Настраиваемое преобразование текста в речь](./how-to-custom-voice-create-voice.md)
 * [Перевод речи](speech-translation.md) (не включает [перевод текста](../translator/translator-info-overview.md))
@@ -37,7 +37,7 @@ ms.locfileid: "95024319"
 
 Служба распознавания речи во многом схожа с Распознавание речи Bing, со следующими отличиями.
 
-| Компонент | API распознавания речи Bing | Служба "Речь" | Сведения |
+| Признак | API распознавания речи Bing | Служба "Речь" | Сведения |
 |--|--|--|--|
 | Пакет SDK для C# | :heavy_check_mark: | :heavy_check_mark: | Служба речи поддерживает Windows 10, универсальная платформа Windows (UWP) и .NET Standard 2,0. |
 | SDK C++ | :heavy_minus_sign: | :heavy_check_mark: | Служба речи поддерживает Windows и Linux. |
@@ -79,7 +79,7 @@ ms.locfileid: "95024319"
 
 Клиенты службы "Распознавание речи Bing" должны связаться со службой поддержки клиентов, воспользовавшись [запросом в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest). Кроме того, свяжитесь с нами, если для поддержки вам требуется [план технической поддержки](https://azure.microsoft.com/support/plans/).
 
-Сведения о службе поддержки речи, SDK и API см. на [странице поддержки](../cognitive-services-support-options.md?context=%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext%253fcontext%253d%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext)речевых услуг.
+Сведения о службе поддержки речи, SDK и API см. на [странице поддержки](../cognitive-services-support-options.md?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext%253fcontext%253d%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext)речевых услуг.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -87,7 +87,7 @@ ms.locfileid: "95024319"
 * [Начало работы с преобразованием речи в текст](get-started-speech-to-text.md)
 * [Начало работы с преобразованием текста в речь](get-started-text-to-speech.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Заметки о выпуске речевых служб](releasenotes.md)
 * [Что такое служба распознавания речи](overview.md)

@@ -3,20 +3,20 @@ title: Действие функции Azure в фабрике данных Azur
 description: Узнайте, как с помощью действия функции Azure запускать функцию Azure в конвейере Фабрики данных
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: ee2e59e794cf34a8fd5043a56867a81c2537f1ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7c8f1e5ae0da9e7c404a942fcb4f554281486a7
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81415310"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500054"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -42,15 +42,15 @@ ms.locfileid: "81415310"
 | **Свойство**  | **Описание** | **Допустимые значения** | **Обязательное** |
 | --- | --- | --- | --- |
 | name  | Имя действия в конвейере.  | Строка | да |
-| type  | Тип действия – "AzureFunctionActivity" | Строка | да |
+| тип  | Тип действия – "AzureFunctionActivity" | Строка | да |
 | linked service | Связанная служба функции Azure для соответствующего приложения-функции Azure  | Ссылка на связанную службу | да |
 | имя функции  | Имя функции, которую вызывает это действие в приложении-функции Azure | Строка | да |
 | method  | Метод REST API для вызова функции | Поддерживаемые строковые типы: "GET", "POST", "постановка"   | да |
 | заголовок  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | Нет |
-| текст  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка") или объект.   | Необходимо для методов PUT или POST |
+| текст  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка") или объект.   | Необходимо для методов PUT или POST |
 |   |   |   | |
 
-См. схему полезные данные запроса в разделе [схема полезных данных запроса](control-flow-web-activity.md#request-payload-schema)   .
+Просмотрите схему полезных данных запроса в разделе [Схема полезных данных запроса](control-flow-web-activity.md#request-payload-schema).
 
 ## <a name="routing-and-queries"></a>Маршрутизация и запросы
 
@@ -65,7 +65,7 @@ ms.locfileid: "81415310"
 Дополнительные сведения о Устойчивые функции см. в [этой статье](../azure-functions/durable/durable-functions-overview.md). Вы можете настроить действие функции Azure для вызова устойчивой функции, которая вернет ответ с другим URI, например в [этом примере](../azure-functions/durable/durable-functions-http-features.md#http-api-url-discovery). Так как `statusQueryGetUri` функция возвращает состояние HTTP 202 во время выполнения функции, можно опросить состояние функции с помощью веб-действия. Просто настройте веб-действие с полем, `url` для которого задано значение `@activity('<AzureFunctionActivityName>').output.statusQueryGetUri` . После завершения устойчивой функции выходные данные функции будут выходом веб-действия.
 
 
-## <a name="sample"></a>Пример
+## <a name="sample"></a>Образец
 
 Образец фабрики данных, который использует функцию Azure для извлечения содержимого tar-файла, можно найти [здесь](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction).
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 357f44149cb17976556c1e4609f6f2af531b80ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f36502eb464f051cd50b51245db69fa76daa915
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935778"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499549"
 ---
 # <a name="partial-term-search-and-patterns-with-special-characters-wildcard-regex-patterns"></a>Частичный Поиск терминов и шаблоны со специальными символами (шаблон, регулярное выражение, шаблоны)
 
@@ -160,7 +160,7 @@ ms.locfileid: "88935778"
 
 Встроенные или стандартные анализаторы могут быть заданы по имени в `analyzer` свойстве определения поля, при этом в индексе не требуется дополнительная настройка. В следующем примере показано, как задать `whitespace` анализатор для поля. 
 
-Другие сценарии и дополнительные сведения о других встроенных анализаторах см. в разделе [стандартный список анализаторов](/azure/search/index-add-custom-analyzers#predefined-analyzers-reference). 
+Другие сценарии и дополнительные сведения о других встроенных анализаторах см. в разделе [стандартный список анализаторов](./index-add-custom-analyzers.md#predefined-analyzers-reference). 
 
 ```json
     {

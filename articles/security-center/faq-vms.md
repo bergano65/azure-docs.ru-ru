@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: ff8d726203c5ddfae63a74a7a364c6f2b9ca783e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 32023fca15de9d3f9258bc05166c3cff4184ea15
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085145"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499855"
 ---
 # <a name="faq---questions-about-virtual-machines"></a>Часто задаваемые вопросы о виртуальных машинах
 
 
 ## <a name="what-types-of-virtual-machines-are-supported"></a>Какие типы виртуальных машин поддерживаются?
 
-Наблюдение и рекомендации поддерживаются для виртуальных машин, созданных посредством [классической модели развертывания и модели развертывания с помощью Resource Manager](/azure/azure-resource-manager/management/deployment-models).
+Наблюдение и рекомендации поддерживаются для виртуальных машин, созданных посредством [классической модели развертывания и модели развертывания с помощью Resource Manager](../azure-resource-manager/management/deployment-models.md).
 
 Список поддерживаемых платформ см. в статье [Поддерживаемые платформы в центре безопасности Azure](security-center-os-coverage.md).
 

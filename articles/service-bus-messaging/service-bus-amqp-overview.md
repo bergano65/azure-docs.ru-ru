@@ -3,12 +3,12 @@ title: Обзор AMQP 1,0 в служебной шине Azure
 description: Узнайте, как служебная шина Azure поддерживает Расширенный протокол управления очередью сообщений (AMQP) — открытый стандартный протокол.
 ms.topic: article
 ms.date: 11/20/2020
-ms.openlocfilehash: 85943344fd8f20cf3a73af5d637b65676584f93f
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: e585fcc905d1651d49008b623b01a6c2f8a04fcc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96022186"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498784"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Поддержка AMQP 1.0 в служебной шине
 Облачная служба служебной шины Azure использует [протокол расширенных очередей сообщений (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) в качестве основного средства связи. Корпорация Майкрософт сотрудничает с партнерами по отрасли, а также клиентам и поставщикам конкурирующих брокеров обмена сообщениями, чтобы разрабатывать и развивать AMQP за последние десять лет. новые расширения разрабатываются в [техническом комитете Oasis AMQP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 — это стандарт ISO и IEC ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
@@ -64,11 +64,11 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 
 Все поддерживаемые клиентские библиотеки служебной шины, доступные через пакет Azure SDK, используют AMQP 1,0.
 
-- [Служебная шина Azure для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/service-bus?view=azure-dotnet&preserve-view=true)
-- [Библиотеки служебной шины Azure для Java](https://docs.microsoft.com/java/api/overview/azure/servicebus?view=azure-java-stable&preserve-view=true)
+- [Служебная шина Azure для .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true&view=azure-dotnet)
+- [Библиотеки служебной шины Azure для Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
 - [Поставщик служебной шины Azure для Java JMS 2,0](how-to-use-java-message-service-20.md)
-- [Модули служебной шины Azure для JavaScript и TypeScript](https://docs.microsoft.com/javascript/api/overview/azure/service-bus?view=azure-node-latest&preserve-view=true)
-- [Библиотеки служебной шины Azure для Python](https://docs.microsoft.com/python/api/overview/azure/servicebus?view=azure-python&preserve-view=true)
+- [Модули служебной шины Azure для JavaScript и TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
+- [Библиотеки служебной шины Azure для Python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
 
 [!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 
@@ -79,7 +79,7 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 ## <a name="summary"></a>Итоги
 * AMQP 1.0 — это открытый и надежный протокол обмена сообщениями, который можно использовать для создания кроссплатформенных гибридных приложений. AMQP 1.0 является стандартом OASIS.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Хотите узнать больше? Перейдите по следующим ссылкам:
 
 * [Использование служебной шины на платформе .NET с протоколом AMQP]
@@ -89,4 +89,4 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 [0]: ./media/service-bus-amqp-overview/service-bus-amqp-1.png
 [Использование служебной шины на платформе .NET с протоколом AMQP]: service-bus-amqp-dotnet.md
 [Использование служебной шины на платформе Java с протоколом AMQP]: ./service-bus-java-how-to-use-jms-api-amqp.md
-[Установка Apache Qpid Proton-C на виртуальной машине Linux в Azure]:: 
+[Установка Apache Qpid Proton-C на виртуальной машине Linux в Azure]::

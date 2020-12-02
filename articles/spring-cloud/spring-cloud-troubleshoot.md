@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 91ef218abc51cbdf079fd9e1baa8eb2b907087df
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 09415c47432f71310b10c86390c10e55f1ccc4b2
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94954211"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498614"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Устранение распространенных проблем с пружинным облаком Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "94954211"
 
 
 
-Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
+Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md).
 
 ### <a name="my-application-experiences-high-cpu-usage-or-high-memory-usage"></a>В приложении наблюдается высокая загрузка ЦП или интенсивное потребление памяти
 
@@ -88,7 +88,7 @@ ms.locfileid: "94954211"
 
 Если все экземпляры работают и работают, перейдите в Azure Log Analytics, чтобы запросить журналы приложений и проверить логику кода. Это поможет понять, может ли любой из них повлиять на секционирование масштабирования. Дополнительные сведения см. [в разделе анализ журналов и метрик с помощью параметров диагностики](diagnostic-services.md).
 
-Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Запросите журналы с помощью [языка запросов Kusto](/azure/kusto/query/).
+Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md). Запросите журналы с помощью [языка запросов Kusto](/azure/kusto/query/).
 
 ### <a name="checklist-for-deploying-your-spring-application-to-azure-spring-cloud"></a>Контрольный список для развертывания пружинного приложения в Azure Веснного облака
 
@@ -163,7 +163,7 @@ ms.locfileid: "94954211"
 
 Вы также можете проверить журналы клиента _реестра службы_ в log Analytics Azure. Дополнительные сведения см. в разделе [Анализ журналов и метрик с помощью параметров диагностики](diagnostic-services.md) .
 
-Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Запросите журналы с помощью [языка запросов Kusto](/azure/kusto/query/).
+Дополнительные сведения об Azure Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md). Запросите журналы с помощью [языка запросов Kusto](/azure/kusto/query/).
 
 ### <a name="i-want-to-inspect-my-applications-environment-variables"></a>Я хочу проверить переменные среды моего приложения
 
@@ -225,6 +225,6 @@ ms.locfileid: "94954211"
 
 Если журналы приложения можно архивировать в учетную запись хранения, но не отправляются в Azure Log Analytics, проверьте, правильно ли [настроена Рабочая область](../azure-monitor/learn/quick-create-workspace.md). Если вы используете бесплатный уровень Log Analytics Azure, обратите внимание, что [уровень Free не обеспечивает соглашения об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Самостоятельное устранение неполадок и решение проблем в Azure Веснного облака](spring-cloud-howto-self-diagnose-solve.md)

@@ -7,19 +7,19 @@ ms.topic: how-to
 ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 1b40eef0a4cae8fa68631426ff72003db43d7530
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5452b1e2ffc3ca8a11f3acb591c6288806445e1b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88817876"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499396"
 ---
 # <a name="use-the-azure-portal-to-enable-server-side-encryption-with-customer-managed-keys-for-managed-disks"></a>Использование портал Azure для включения шифрования на стороне сервера с помощью управляемых клиентом ключей для управляемых дисков
 
 Хранилище дисков Azure позволяет управлять собственными ключами при использовании шифрования на стороне сервера (SSE) для управляемых дисков, если вы решили. Основные сведения о SSE с управляемыми клиентами ключами, а также о других типах шифрования дисков см. в разделе " **ключи, управляемые клиентом** " статьи о шифровании дисков.
 
-- Для Linux: [ключи, управляемые клиентом](./linux/disk-encryption.md#customer-managed-keys)
-- Для Windows: [ключи, управляемые клиентом](./windows/disk-encryption.md#customer-managed-keys)
+- Для Linux: [ключи, управляемые клиентом](./disk-encryption.md#customer-managed-keys)
+- Для Windows: [ключи, управляемые клиентом](./disk-encryption.md#customer-managed-keys)
 
 ## <a name="restrictions"></a>Ограничения
 

@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 730a29ff579ce6a1970ceafad5891611b52c059d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7ed2a672f0f7149240e799b5529a7a3a6836a702
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972294"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499311"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Перенос ресурсов IaaS в Azure Resource Manager с 1 марта 2023 г. 
 
@@ -45,12 +45,12 @@ ms.locfileid: "91972294"
    - Вы также можете запросить граф ресурсов Azure с помощью [портала](https://portal.azure.com/#blade/HubsExtension/ArgQueryBlade/query/resources%0A%7C%20where%20type%20%3D%3D%20%22microsoft.classiccompute%2Fvirtualmachines%22) или [PowerShell](../governance/resource-graph/concepts/work-with-data.md) , чтобы просмотреть список всех отмеченных виртуальных машин (классическая модель) и связанные сведения для выбранных подписок. 
    - 8 февраля и 2 сентября 2020 г. Мы отправили сообщения электронной почты владельцам подписки со списком всех подписок, содержащих эти виртуальные машины (классическая модель). Используйте их для создания этого списка. 
 
-1. Дополнительные [сведения](./windows/migration-classic-resource-manager-overview.md) о миграции виртуальных машин [Linux](./linux/migration-classic-resource-manager-plan.md) и [Windows](./windows/migration-classic-resource-manager-plan.md) (классическая модель) в Azure Resource Manager. Дополнительные сведения см. [в разделе часто задаваемые вопросы о классической модели для Azure Resource Manager миграции](./migration-classic-resource-manager-faq.md).
+1. Дополнительные [сведения](./migration-classic-resource-manager-overview.md) о миграции виртуальных машин [Linux](./migration-classic-resource-manager-plan.md) и [Windows](./migration-classic-resource-manager-plan.md) (классическая модель) в Azure Resource Manager. Дополнительные сведения см. [в разделе часто задаваемые вопросы о классической модели для Azure Resource Manager миграции](./migration-classic-resource-manager-faq.md).
 
-1. Мы рекомендуем начать планирование с помощью [средства миграции платформы поддержка платформ](./windows/migration-classic-resource-manager-overview.md) , чтобы перенести существующие виртуальные машины с помощью трех простых шагов: Проверка, подготовка и фиксация. Это средство предназначено для переноса виртуальных машин в минимальной степени без простоев. 
+1. Мы рекомендуем начать планирование с помощью [средства миграции платформы поддержка платформ](./migration-classic-resource-manager-overview.md) , чтобы перенести существующие виртуальные машины с помощью трех простых шагов: Проверка, подготовка и фиксация. Это средство предназначено для переноса виртуальных машин в минимальной степени без простоев. 
 
    1. Первый шаг, проверка, не влияет на существующее развертывание и предоставляет список всех неподдерживаемых сценариев для миграции. 
-   1. Просмотрите [список обходных путей](./windows/migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) , чтобы исправить развертывание и подготовить его к миграции. 
+   1. Просмотрите [список обходных путей](./migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) , чтобы исправить развертывание и подготовить его к миграции. 
    1. В идеале после устранения всех ошибок проверки не следует столкнуться с проблемами во время подготовки и фиксации. После успешной фиксации развертывание динамически переносится в Azure Resource Manager и затем может управляться через новые интерфейсы API, предоставляемые Azure Resource Manager. 
 
    Если средство миграции не подходит для миграции, можно изучить [другие предложения вычислений](/azure/architecture/guide/technology-choices/compute-decision-tree) для миграции. Так как существует много предложений вычислений Azure и они отличаются друг от друга, мы не можем предоставить поддерживаемый платформой путь к миграции.  

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: d068365cc8197a579c0b043d3fff2da3d54eb803
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: ab6408621616a4be62631391456f73e90fced752
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687209"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499005"
 ---
 # <a name="net-c-code-samples-for-azure-cognitive-search"></a>Примеры кода .NET (C#) для Azure Когнитивный поиск
 
@@ -44,7 +44,7 @@ ms.locfileid: "94687209"
 
 ## <a name="documentation-samples"></a>Примеры документации
 
-Следующие примеры содержат связанную статью в [документации по Azure когнитивный Поиск](https://docs.microsoft.com/azure/search/).
+Следующие примеры содержат связанную статью в [документации по Azure когнитивный Поиск](./index.yml).
 
 | Примеры | Описание |
 |---------|-------------|
@@ -63,6 +63,6 @@ ms.locfileid: "94687209"
 | Примеры | Описание |
 |---------|-------------|
 | [Azure-Search-Power-Skills](https://github.com/Azure-Samples/azure-search-power-skills)  | Исходный код для использования настраиваемых навыков, которые можно включить в выигранные решения.  |
-| [Акселератор решений для интеллектуального анализа знаний](https://docs.microsoft.com/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/) | Включает шаблоны, файлы поддержки и аналитические отчеты для создания прототипа комплексного решения по интеллектуальному анализу знаний.  |
+| [Акселератор решений для интеллектуального анализа знаний](/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/) | Включает шаблоны, файлы поддержки и аналитические отчеты для создания прототипа комплексного решения по интеллектуальному анализу знаний.  |
 | [Репозиторий приложений для поиска ковид-19](https://github.com/liamca/covid19search) | Репозиторий исходного кода для [приложения поиска ковид-19](https://covid19search.azurewebsites.net/) на основе когнитивный Поиск |
 | [JFK](https://github.com/Microsoft/AzureSearch_JFK_Files) | Дополнительные сведения о [решении ЖФК](https://www.microsoft.com/ai/ai-lab-jfk-files). |

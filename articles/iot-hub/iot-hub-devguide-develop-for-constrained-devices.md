@@ -10,12 +10,12 @@ ms.author: robinsh
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 9010ff582f05e81e17e280e20f180ceccf0e746f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a43eb2537ebc09ffcb524a4426d7a8c9bec560b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81733208"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500008"
 ---
 # <a name="develop-for-constrained-devices-using-azure-iot-c-sdk"></a>Разработка устройств с ограниченными ресурсами с помощью пакета SDK Azure IoT для C
 
@@ -29,6 +29,9 @@ SDK для C доступен в форме пакета от apt-get, NuGet и 
 ## <a name="building-the-c-sdk-for-constrained-devices"></a>Сборка пакета SDK для C для устройств с ограниченными ресурсами
 
 Создайте пакет SDK для C для устройств с ограниченными ресурсами.
+
+> [!NOTE]
+> Встроенный пакет C SDK — это альтернатива ограниченным устройствам, поддерживающим подход "использовать собственную сеть" (БЙОН). Разработчики Интернета вещей имеют свободу выбора клиента MQTT, TLS и сокетов для создания решения устройства. Дополнительные [сведения о встроенном пакете C SDK](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot).
 
 ### <a name="prerequisites"></a>Предварительные требования
 

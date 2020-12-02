@@ -7,12 +7,12 @@ ms.subservice: security
 ms.topic: article
 ms.author: jofrance
 ms.date: 09/21/2020
-ms.openlocfilehash: ddd6097fffbc02c9b7b027bcb712e20cc47f2f96
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 732a2ef3c6c33d0b17deaf3b9bdc5d1ac5e5934c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487965"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498920"
 ---
 # <a name="how-to-resize-logical-volume-management-devices-that-use-azure-disk-encryption"></a>Изменение размера устройств управления логическими томами, использующих шифрование дисков Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "92487965"
 
 В этой статье предполагается, что вы:
 
-- Существующая конфигурация LVM. Дополнительные сведения см. [в статье Настройка LVM на виртуальной машине Linux](configure-lvm.md).
+- Существующая конфигурация LVM. Дополнительные сведения см. [в статье Настройка LVM на виртуальной машине Linux](/previous-versions/azure/virtual-machines/linux/configure-lvm).
 
 - Диски, которые уже зашифрованы с помощью шифрования дисков Azure. Дополнительные сведения см. [в статье configure LVM and RAID On encrypted Devices](how-to-configure-lvm-raid-on-crypt.md).
 
@@ -318,7 +318,7 @@ lvdisplay lvname
 
 #### <a name="extend-a-traditional-lvm-volume-by-resizing-an-existing-pv"></a>Расширьте традиционный том LVM, изменив размер существующего PV
 
-Обмен мгновенными сообщениями. в некоторых сценариях ограничения могут потребовать изменения размера существующего диска. Вот как это сделать.
+Обмен мгновенными сообщениями. в некоторых сценариях ограничения могут потребовать изменения размера существующего диска. Это делается так.
 
 1. Найдите зашифрованные диски:
 

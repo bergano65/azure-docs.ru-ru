@@ -4,21 +4,21 @@ description: Сведения о подключении к серверу Azure 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: c91cfe24aa7a5dd224fd1aed31b6b0dee44e687f
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: fccb919a7eac79080fefeac70326b8aa7a967622
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352819"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499476"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
 
 После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными. 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Дополнительные сведения см. в разделе [Проверка подлинности и разрешения пользователей](analysis-services-manage-users.md). 
 
@@ -42,5 +42,5 @@ ms.locfileid: "96352819"
 
 ## <a name="see-also"></a>См. также раздел
 
-[Клиентские библиотеки](/analysis-services/client-libraries?view=azure-analysis-services-current)   
+[Клиентские библиотеки](/analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true)   
 [Управление службами Analysis Services](analysis-services-manage.md)

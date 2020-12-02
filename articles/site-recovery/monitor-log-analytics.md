@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: 7d11fa8605d9cd5f335b6be56097caf7a5222bbd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3d3ce8218030bc8ba6c59b26b7360bf2299e02a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89006947"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499821"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "89006947"
 
 - По крайней мере один компьютер, защищенный в хранилище служб восстановления.
 - Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/learn/quick-create-workspace.md) настройке рабочей области.
-- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее.](../azure-monitor/log-query/get-started-portal.md)
+- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее](../azure-monitor/log-query/log-analytics-tutorial.md).
 
 Перед началом работы рекомендуется ознакомиться с [общими вопросами мониторинга](monitoring-common-questions.md) .
 
@@ -46,7 +46,7 @@ ms.locfileid: "89006947"
 
     ![Снимок экрана, показывающий параметр "добавить параметр диагностики".](./media/monitoring-log-analytics/add-diagnostic.png)
 
-2. В окне **параметры диагностики**укажите имя и установите флажок **отправить на log Analytics**.
+2. В окне **параметры диагностики** укажите имя и установите флажок **отправить на log Analytics**.
 3. Выберите подписку на Azure Monitor журналы и рабочую область Log Analytics.
 4. Выберите **система диагностики Azure** в переключателе.
 5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Нажмите кнопку **ОК**.
@@ -65,7 +65,7 @@ ms.locfileid: "89006947"
 4. [Получение идентификатора и ключа рабочей области](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key)
 5. [Настройка агента для использования TLS 1,2](../azure-monitor/platform/agent-windows.md#configure-agent-to-use-tls-12)
 6. [Завершите установку агента](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard) , указав полученный идентификатор и ключ рабочей области.
-7. После завершения установки перейдите в Log Analytics рабочую область и щелкните **Дополнительные параметры**. Перейдите на страницу **данные** и щелкните **счетчики производительности Windows**еще больше. 
+7. После завершения установки перейдите в Log Analytics рабочую область и щелкните **Дополнительные параметры**. Перейдите на страницу **данные** и щелкните **счетчики производительности Windows** еще больше. 
 8. Щелкните **"+"** , чтобы добавить следующие два счетчика с интервалом выборки в 300 секунд:
 
     - Асраналитикс (*) \Саурцевмчурнрате

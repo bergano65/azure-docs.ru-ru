@@ -3,16 +3,16 @@ title: Синтаксис фильтра SQL для правила подпис�
 description: В этой статье содержатся сведения о грамматике фильтра SQL. Фильтр SQL поддерживает подмножество стандарта SQL-92.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: bd263e8177652165376d4f6fe9e231af71ebdcbe
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 9bff18b2161e419d728c360c9ed950ac2867fea8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95805635"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498682"
 ---
 # <a name="subscription-rule-sql-filter-syntax"></a>Синтаксис фильтра SQL правила подписки
 
-*Фильтр SQL* — это один из доступных типов фильтров для подписок на разделы служебной шины. Это текстовое выражение, которое используется в качестве основы для подмножества стандарта SQL-92. Выражения фильтра используются с `sqlExpression` элементом свойства "sqlFilter" служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--filter-sql-expression`](https://docs.microsoft.com/cli/azure/servicebus/topic/subscription/rule?view=azure-cli-latest&preserve-view=true#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
+*Фильтр SQL* — это один из доступных типов фильтров для подписок на разделы служебной шины. Это текстовое выражение, которое используется в качестве основы для подмножества стандарта SQL-92. Выражения фильтра используются с `sqlExpression` элементом свойства "sqlFilter" служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--filter-sql-expression`](/cli/azure/servicebus/topic/subscription/rule?preserve-view=true&view=azure-cli-latest#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
 
 Служебная шина уровня "Премиум" также поддерживает [синтаксис селектора сообщений SQL JMS](https://docs.oracle.com/javaee/7/api/javax/jms/Message.html) через API JMS 2,0.
 

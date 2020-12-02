@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: aec8448cb82480397f561e095420bbd49982d4b2
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 11f5fcd74b228fa2d57658f5c268e3bebc3c7e93
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093044"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499532"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Анализ журналов и метрик с помощью параметров диагностики
 
@@ -40,7 +40,7 @@ ms.locfileid: "92093044"
 
 Полный список метрик см. в разделе [метрики пружинного облака](./spring-cloud-concept-metrics.md#user-metrics-options).
 
-Чтобы начать работу, включите одну из этих служб для получения данных. Дополнительные сведения о настройке Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
+Чтобы начать работу, включите одну из этих служб для получения данных. Дополнительные сведения о настройке Log Analytics см. [в статье Приступая к работе с log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md).
 
 ## <a name="configure-diagnostics-settings"></a>Настройка параметров диагностики
 
@@ -135,7 +135,7 @@ ms.locfileid: "92093044"
 
 ## <a name="analyze-the-logs"></a>Анализ журналов
 
-Azure Log Analytics работает с ядром Kusto, чтобы вы могли запрашивать анализ журналов. Краткие сведения о запросах журналов с помощью Kusto см. в [руководстве по log Analytics](../azure-monitor/log-query/get-started-portal.md).
+Azure Log Analytics работает с ядром Kusto, чтобы вы могли запрашивать анализ журналов. Краткие сведения о запросах журналов с помощью Kusto см. в [руководстве по log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).
 
 Журналы приложений содержат важную информацию и подробные журналы, относящиеся к работоспособности, производительности и многому приложению. В следующих разделах приведены некоторые простые запросы, помогающие понять текущее и предыдущее состояния приложения.
 
@@ -178,7 +178,7 @@ AppPlatformLogsforSpring
 
 Azure Monitor предоставляет обширную поддержку для запросов журналов приложений с помощью Log Analytics. Дополнительные сведения об этой службе см. в разделе Начало [работы с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md). Дополнительные сведения о создании запросов для анализа журналов приложений см. в разделе [Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
+## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
 ### <a name="how-to-convert-multi-line-java-stack-traces-into-a-single-line"></a>Как преобразовать многострочные трассировки стека Java в одну строку?
 

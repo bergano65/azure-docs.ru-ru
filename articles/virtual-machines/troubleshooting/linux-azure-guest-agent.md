@@ -11,16 +11,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/17/2020
 ms.author: axelg
-ms.openlocfilehash: 9e3b376cfaf5379acaf92713c42509471200d066
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: fc609b60c9d5d4d4734c3d73cbda87935b533caf
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95550004"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500263"
 ---
 # <a name="troubleshooting-azure-linux-guest-agent"></a>Устранение неполадок гостевого агента Linux в Azure
 
-[Гостевой агент Azure Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) — это агент виртуальной машины (ВМ). Она позволяет виртуальной машине взаимодействовать с контроллером структуры (базовым физическим сервером, на котором размещена виртуальная машина) на IP-адресе 168.63.129.16. Этот IP-адрес является виртуальным общедоступным IP-адресом, который упрощает обмен данными. Дополнительные сведения см. в разделе [что такое IP-адрес 168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md).
+[Гостевой агент Azure Linux](../extensions/agent-linux.md) — это агент виртуальной машины (ВМ). Она позволяет виртуальной машине взаимодействовать с контроллером структуры (базовым физическим сервером, на котором размещена виртуальная машина) на IP-адресе 168.63.129.16. Этот IP-адрес является виртуальным общедоступным IP-адресом, который упрощает обмен данными. Дополнительные сведения см. в разделе [что такое IP-адрес 168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md).
 
 ## <a name="checking-agent-status-and-version"></a>Проверка состояния и версии агента
 
@@ -101,6 +101,6 @@ AutoUpdate.Enabled=y
 1. Проверьте, блокирует ли IPTables Linux или брандмауэр стороннего производителя доступ к портам 80, 443 и 32526. Дополнительные сведения о том, почему этот адрес не должен блокироваться, см. в разделе [что такое IP Address 168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для дальнейшей диагностики проблемы "Гостевой агент Windows Azure не работает" [обратитесь в службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

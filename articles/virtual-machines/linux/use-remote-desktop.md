@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 09/12/2019
 ms.author: cynthn
-ms.openlocfilehash: 05241715663ac2cbb90e16f345398f863541e6ed
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: efcfb2fd431dd9626ddcf918127964672b0e5ce0
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972209"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500484"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure
 Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](http://xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
@@ -84,7 +84,7 @@ sudo passwd azureuser
 
 
 ## <a name="create-a-network-security-group-rule-for-remote-desktop-traffic"></a>Создание правила группы безопасности сети, разрешающего трафик с удаленного рабочего стола
-Чтобы трафик с удаленного рабочего стола мог поступать на виртуальную машину Linux, необходимо создать правило группы безопасности сети, разрешающее использовать протокол TCP на порту 3389 для доступа к виртуальной машине. Дополнительные сведения о правилах групп безопасности сети см. в статье [Безопасность сети](../../virtual-network/network-security-groups-overview.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json). Вы также можете [создать правило группы безопасности сети с помощью портала Azure](../windows/nsg-quickstart-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Чтобы трафик с удаленного рабочего стола мог поступать на виртуальную машину Linux, необходимо создать правило группы безопасности сети, разрешающее использовать протокол TCP на порту 3389 для доступа к виртуальной машине. Дополнительные сведения о правилах групп безопасности сети см. в статье [Безопасность сети](../../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Вы также можете [создать правило группы безопасности сети с помощью портала Azure](../windows/nsg-quickstart-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 В следующем примере создается правило группы безопасности сети с именем [az vm open-port](/cli/azure/vm#az-vm-open-port) на порту *3389*. Из Azure CLI, а не сеанса SSH с виртуальной машиной, откройте следующее правило группы безопасности сети:
 

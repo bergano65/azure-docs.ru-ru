@@ -12,12 +12,12 @@ ms.date: 09/01/2020
 ms.author: trbye
 ms.custom: cog-serv-seo-aug-2020
 keywords: преобразование речи в текст, программа для преобразования речи в текст
-ms.openlocfilehash: f26d896397a950bc2c5f5d1f66dca6a01da045d7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 102289fd233a744952f37568abf77a753953637e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015228"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499651"
 ---
 # <a name="what-is-speech-to-text"></a>Что такое преобразование речи в текст?
 
@@ -34,7 +34,7 @@ ms.locfileid: "95015228"
 
 [!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 Ознакомьтесь с [кратким](get-started-speech-to-text.md) руководством, чтобы приступить к работе с речью-текстом. Эта служба доступна через [речевой пакет SDK](speech-sdk.md), [REST API](rest-speech-to-text.md#pronunciation-assessment-parameters)и [речевой интерфейс командной строки](spx-overview.md).
 
@@ -48,7 +48,7 @@ ms.locfileid: "95015228"
 
 ## <a name="customization"></a>Настройка
 
-Помимо стандартной модели речевой службы, можно создавать пользовательские модели. Настройка помогает преодолеть барьеры распознавания речи, такие как стиль речи, словарь и фоновый шум, см. [пользовательское распознавание речи](how-to-custom-speech.md). Параметры настройки зависят от языка и языкового стандарта. см. раздел [Поддерживаемые языки](./language-support.md) для проверки поддержки.
+Помимо стандартной модели речевой службы, можно создавать пользовательские модели. Настройка помогает преодолеть барьеры распознавания речи, такие как стиль речи, словарь и фоновый шум, см. [пользовательское распознавание речи](./custom-speech-overview.md). Параметры настройки зависят от языка и языкового стандарта. см. раздел [Поддерживаемые языки](./language-support.md) для проверки поддержки.
 
 ## <a name="batch-transcription"></a>Пакетное транскрибирование
 

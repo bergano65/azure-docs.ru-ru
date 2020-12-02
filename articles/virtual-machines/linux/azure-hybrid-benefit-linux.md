@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: 35bed58f95deebb78d8e787c8bc3f522ce7004df
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: f4dce87533927eebef792987b87d148e6a5268b4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326975"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500620"
 ---
 # <a name="azure-hybrid-benefit--how-it-applies-for-linux-virtual-machines"></a>Преимущество гибридного использования Azure — как это применяется для Виртуальные машины Linux
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Преимущество гибридного использования Azure позволяет упростить перенос локальных Red Hat Enterprise Linux (RHEL) и SUSE Linux Enterprise Server (SLES) виртуальных машин в Azure с помощью собственной предварительно существующей подписки на программное обеспечение Red Hat или SUSE. С этим преимуществом вы платите только за стоимость инфраструктуры виртуальной машины, так как плата за программное обеспечение охватывается подпиской RHEL или SLES. Преимущество распространяется на все образы RHEL и SLES Marketplace с оплатой по мере использования (PAYG).
 
@@ -183,9 +183,9 @@ az vm get-instance-view -g MyResourceGroup -n MyVm
 ## <a name="common-issues"></a>Распространенные проблемы
 В этом разделе содержится список распространенных проблем, которые могут возникнуть, а также приведены меры по их устранению.
 
-| Ошибка | Меры по снижению риска |
+| Error | Меры по снижению риска |
 | ----- | ---------- |
 | "Не удалось выполнить действие, так как наши записи показывают, что вы не включили облачный доступ Red Hat к вашей подписке Azure..." | Чтобы использовать преимущество с виртуальными машинами RHEL, необходимо сначала зарегистрировать ваши подписки Azure с помощью облачного доступа Red Hat. Перейдите по этой ссылке, чтобы узнать больше о том, как зарегистрировать подписки Azure для облачного доступа к Red Hat.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте, как создавать и обновлять виртуальные машины и добавлять типы лицензий (RHEL_BYOS, SLES_BYOS) для Преимущество гибридного использования Azure с помощью [Azure CLI.](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest&preserve-view=true)
+* Узнайте, как создавать и обновлять виртуальные машины и добавлять типы лицензий (RHEL_BYOS, SLES_BYOS) для Преимущество гибридного использования Azure с помощью [Azure CLI.](/cli/azure/vm?preserve-view=true&view=azure-cli-latest)

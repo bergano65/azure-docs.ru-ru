@@ -8,20 +8,20 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 4498e78b408f64ab5bc00b9f8730559b90c95d57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd74872bc1c46f3dddda1b6d15f14f26dc2187cb
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88817908"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499379"
 ---
 # <a name="use-the-azure-portal-to-enable-end-to-end-encryption-using-encryption-at-host"></a>Использование портал Azure для включения сквозного шифрования с помощью шифрования на узле
 
 При включении шифрования на узле данные, хранящиеся на узле виртуальной машины, шифруются в неактивных потоках и передаются в зашифрованном виде в службу хранилища. Основные сведения о шифровании на узле, а также о других типах шифрования управляемых дисков см. в следующих статьях:
 
-* Linux: [Шифрование на уровне узла — сквозное шифрование данных виртуальной машины](./linux/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data).
+* Linux: [Шифрование на уровне узла — сквозное шифрование данных виртуальной машины](./disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data).
 
-* Windows: [Шифрование на уровне узла — сквозное шифрование данных виртуальной машины](./windows/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data).
+* Windows: [Шифрование на уровне узла — сквозное шифрование данных виртуальной машины](./disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data).
 
 ## <a name="restrictions"></a>Ограничения
 
@@ -63,7 +63,7 @@ ms.locfileid: "88817908"
 1. В колонке **диски** выберите **Да** для **шифрования на узле**.
 1. Сделайте оставшиеся варианты выбора нужным образом.
 
-    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-disk-blade.png" alt-text="Снимок экрана: колонка &quot;основы создания виртуальной машины&quot;, &quot;регион&quot; и &quot;размер V M&quot; выделены.":::
+    :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-disk-blade.png" alt-text="Снимок экрана: колонка &quot;диски создания виртуальной машины&quot;, &quot;шифрование на узле&quot; выделена.":::
 
 1. Завершите процесс развертывания виртуальной машины, чтобы выбрать параметры, соответствующие вашей среде.
 
