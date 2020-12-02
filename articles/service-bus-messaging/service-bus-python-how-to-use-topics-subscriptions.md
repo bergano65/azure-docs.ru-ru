@@ -1,195 +1,220 @@
 ---
-title: Краткое руководство. Использование разделов и подписок Служебной шины Azure с Python
-description: В этой статье вы узнаете, как создать раздел Служебной шины Azure, подписку, как отправить сообщения в раздел и получить сообщения из подписки.
+title: Использование разделов и подписок Служебной шины Azure с помощью пакета azure-servicebus версии 7.0.0 для Python
+description: Из этой статьи вы узнаете, как с помощью Python отправлять сообщения в раздел и получать сообщения из подписки.
 documentationcenter: python
 author: spelluru
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 06/23/2020
+ms.date: 11/18/2020
 ms.author: spelluru
 ms.custom: devx-track-python
-ms.openlocfilehash: f6d1b25cb502b8cb208ba5b59c91667e03c77778
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4035eaabb727d0db07553804b6fe94c60ddea64c
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88064389"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95804759"
 ---
-# <a name="quickstart-use-service-bus-topics-and-subscriptions-with-python"></a>Краткое руководство. Использование разделов и подписок Служебной шины с Python
-
-[!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
-
-В этой статье описывается использование разделов и подписок Служебной шины Azure с Python. Пакет [SDK для Python][Azure Python package] используется в примерах в следующих целях: 
-
-- Создание разделов и подписок на них
-- Создание фильтров и правил подписки
-- Отправка сообщений в разделы 
-- Получение сообщений из подписок
-- Удаление разделов и подписок
+# <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-python"></a>Отправка сообщений в раздел Служебной шины Azure и прием сообщений из подписок в разделе (Python)
+Из этой статьи вы узнаете, как с помощью Python отправлять сообщения в раздел служебной шины и получать сообщения из подписки в разделе. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Подписка Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-- Пространство имен Служебной шины Azure, созданное с помощью инструкций в [руководстве по созданию раздела и подписок Служебной шины с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Скопируйте имя пространства имен, имя ключа общего доступа и значение первичного ключа из экрана **Политики общего доступа**. Эти данные понадобятся далее в этой статье. 
-- Python 3.4x или более поздней версии с установленным пакетом [Azure SDK для Python][Azure Python package]. Дополнительные сведения см. в [руководстве по установке Python](/azure/developer/python/azure-sdk-install).
-
-## <a name="create-a-servicebusservice-object"></a>Создание объекта ServiceBusService
-
-Объект **ServiceBusService** позволяет работать с разделами и подписками на них. Чтобы программным образом получить доступ к Служебной шине, добавьте в начало файла Python следующую строку:
-
-```python
-from azure.servicebus.control_client import ServiceBusService, Message, Topic, Rule, DEFAULT_RULE_NAME
-```
-
-Чтобы создать объект **ServiceBusService**, добавьте приведенный ниже код. Замените `<namespace>`, `<sharedaccesskeyname>` и `<sharedaccesskeyvalue>` именем пространства имен Службы шины, именем ключа подписанного URL-адреса (SAS) и значением первичного ключа. Эти значения можно найти на [портале Azure][Azure portal] в разделе **Политики общего доступа** в пространстве имен Служебной шины.
-
-```python
-bus_service = ServiceBusService(
-    service_namespace='<namespace>',
-    shared_access_key_name='<sharedaccesskeyname>',
-    shared_access_key_value='<sharedaccesskeyvalue>')
-```
-
-## <a name="create-a-topic"></a>Создание раздела
-
-Метод `create_topic` в следующем коде позволяет создать раздел Служебной шины с именем `mytopic` и с параметрами по умолчанию:
-
-```python
-bus_service.create_topic('mytopic')
-```
-
-С помощью параметров можно переопределить настройки раздела по умолчанию, например срок жизни сообщения или максимальный размер раздела. Следующий код создает раздел с именем `mytopic` с максимальным размером 5 ГБ и сроком жизни сообщения, равным одной минуте:
-
-```python
-topic_options = Topic()
-topic_options.max_size_in_megabytes = '5120'
-topic_options.default_message_time_to_live = 'PT1M'
-
-bus_service.create_topic('mytopic', topic_options)
-```
-
-## <a name="create-subscriptions"></a>Создание подписок
-
-Для создания подписок на разделы также используется объект **ServiceBusService**. Подписка может иметь фильтр, который ограничивает набор сообщений, доставляемых в виртуальную очередь. Если не указать фильтр, новые подписки будут использовать фильтр **MatchAll** по умолчанию, который помещает все опубликованные в разделе сообщения в виртуальную очередь подписки. В следующем примере создается подписка на `mytopic` с именем `AllMessages` и используется фильтр по умолчанию **MatchAll**:
-
-```python
-bus_service.create_subscription('mytopic', 'AllMessages')
-```
-
-### <a name="use-filters-with-subscriptions"></a>Использование фильтров с подписками
-
-Метод `create_rule` объекта **ServiceBusService** позволяет фильтровать сообщения, отображаемые в подписке. При создании подписки можно указать правила. Кроме того, правила можно добавлять в имеющиеся подписки.
-
-Наиболее гибкий тип фильтра — это **SqlFilter**. Он использует подмножество SQL-92. Фильтры SQL работают на основе свойств сообщений, которые опубликованы в разделе. Дополнительные сведения о выражениях, которые можно использовать с SQL-фильтром, см. в описании синтаксиса [SqlFilter.SqlExpression][SqlFilter.SqlExpression].
-
-Поскольку фильтр **MatchAll** по умолчанию применяется автоматически ко всем новым подпискам, необходимо удалить его из подписок, которые нужно отфильтровать. В противном случае фильтр **MatchAll** переопределит любые другие указанные фильтры. Вы можете удалить правило по умолчанию с помощью метода `delete_rule` объекта **ServiceBusService**.
-
-В приведенном ниже примере создается подписка на `mytopic` с именем `HighMessages` с правилом **SqlFilter** с именем `HighMessageFilter`. Правило `HighMessageFilter` выбирает только сообщения с настраиваемым свойством `messageposition` больше 3:
-
-```python
-bus_service.create_subscription('mytopic', 'HighMessages')
-
-rule = Rule()
-rule.filter_type = 'SqlFilter'
-rule.filter_expression = 'messageposition > 3'
-
-bus_service.create_rule('mytopic', 'HighMessages', 'HighMessageFilter', rule)
-bus_service.delete_rule('mytopic', 'HighMessages', DEFAULT_RULE_NAME)
-```
-
-В приведенном ниже примере создается подписка на `mytopic` с именем `LowMessages` с правилом **SqlFilter** с именем `LowMessageFilter`. Правило `LowMessageFilter` выбирает только сообщения со свойством `messageposition` меньшим или равным 3:
-
-```python
-bus_service.create_subscription('mytopic', 'LowMessages')
-
-rule = Rule()
-rule.filter_type = 'SqlFilter'
-rule.filter_expression = 'messageposition <= 3'
-
-bus_service.create_rule('mytopic', 'LowMessages', 'LowMessageFilter', rule)
-bus_service.delete_rule('mytopic', 'LowMessages', DEFAULT_RULE_NAME)
-```
-
-Если указаны правила `AllMessages`, `HighMessages` и `LowMessages`, сообщения, отправленные в `mytopic`, всегда доставляются в приемники подписки `AllMessages`. Сообщения также выборочно доставляются в подписку `HighMessages` или `LowMessages` (в зависимости от значения свойства `messageposition` сообщения). 
+- Выполните шаги из [краткого руководства по созданию раздела Служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Запишите строку подключения, имя раздела и имя подписки. При работе с этим кратким руководством вы будете использовать только одну подписку. 
+- Python 2.7 или более поздней версии с установленным пакетом [Azure SDK для Python] [пакет Azure для Python]. Дополнительные сведения см. в [руководстве по установке Python](/azure/developer/python/azure-sdk-install).
 
 ## <a name="send-messages-to-a-topic"></a>Отправка сообщений в раздел
 
-Приложения используют метод `send_topic_message` объекта **ServiceBusService** для отправки сообщений в раздел Служебной шины.
+1. Добавьте в файл следующие операторы импорта. 
 
-В приведенном ниже примере пять тестовых сообщений отправляются в раздел `mytopic`. Значение настраиваемого свойства `messageposition` зависит от итерации цикла и определяет подписки, которые получат это сообщение. 
+    ```python
+    from azure.servicebus import ServiceBusClient, ServiceBusMessage
+    ```
+2. Добавьте следующие константы. 
 
-```python
-for i in range(5):
-    msg = Message('Msg {0}'.format(i).encode('utf-8'),
-                  custom_properties={'messageposition': i})
-    bus_service.send_topic_message('mytopic', msg)
-```
+    ```python
+    CONNECTION_STR = "<NAMESPACE CONNECTION STRING>"
+    TOPIC_NAME = "<TOPIC NAME>"
+    SUBSCRIPTION_NAME = "<SUBSCRIPTION NAME>"
+    ```
+    
+    > [!IMPORTANT]
+    > - Замените `<NAMESPACE CONNECTION STRING>` строками подключения для вашего пространства имен.
+    > - Затем замените `<TOPIC NAME>` именем раздела.
+    > - Замените `<SUBSCRIPTION NAME>` именем подписки на раздел. 
+3. Добавьте метод для отправки одного сообщения.
 
-### <a name="message-size-limits-and-quotas"></a>Квоты и ограничения на размер сообщений
+    ```python
+    def send_single_message(sender):
+        # create a Service Bus message
+        message = ServiceBusMessage("Single Message")
+        # send the message to the topic
+        sender.send_messages(message)
+        print("Sent a single message")
+    ```
 
-Разделы служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Максимальный размер заголовка, который содержит стандартные и настраиваемые свойства приложения, — 64 КБ. Число сообщений в разделе может быть любым, но действует ограничение на общий размер сообщений в разделе. Этот размер раздела, определяемый в момент ее создания, не должен превышать 5 ГБ. 
+    Отправитель — это объект, который выступает в качестве клиента для созданного раздела. Вы создадите его позже и отправите в качестве аргумента этой функции. 
+4. Добавьте метод для отправки списка сообщений.
 
-Дополнительные сведения о квотах см. в статье [Квоты на служебную шину][Service Bus quotas].
+    ```python
+    def send_a_list_of_messages(sender):
+        # create a list of messages
+        messages = [ServiceBusMessage("Message in list") for _ in range(5)]
+        # send the list of messages to the topic
+        sender.send_messages(messages)
+        print("Sent a list of 5 messages")
+    ```
+5. Добавьте метод для отправки пакета сообщений.
 
+    ```python
+    def send_batch_message(sender):
+        # create a batch of messages
+        batch_message = sender.create_message_batch()
+        for _ in range(10):
+            try:
+                # add a message to the batch
+                batch_message.add_message(ServiceBusMessage("Message inside a ServiceBusMessageBatch"))
+            except ValueError:
+                # ServiceBusMessageBatch object reaches max_size.
+                # New ServiceBusMessageBatch object can be created here to send more data.
+                break
+        # send the batch of messages to the topic
+        sender.send_messages(batch_message)
+        print("Sent a batch of 10 messages")
+    ```
+6. Создайте клиента служебной шины, а затем объект отправителя раздела для отправки сообщений.
+
+    ```python
+    # create a Service Bus client using the connection string
+    servicebus_client = ServiceBusClient.from_connection_string(conn_str=CONNECTION_STR, logging_enable=True)
+    with servicebus_client:
+        # get a Topic Sender object to send messages to the topic
+        sender = servicebus_client.get_topic_sender(topic_name=TOPIC_NAME)
+        with sender:
+            # send one message        
+            send_single_message(sender)
+            # send a list of messages
+            send_a_list_of_messages(sender)
+            # send a batch of messages
+            send_batch_message(sender)
+    
+    print("Done sending messages")
+    print("-----------------------")
+    ```
+ 
 ## <a name="receive-messages-from-a-subscription"></a>Получение сообщений из подписки
-
-Приложения используют метод `receive_subscription_message` объекта **ServiceBusService** для получения сообщений из подписки. Следующий пример получает сообщения из подписки `LowMessages` и удаляет их по мере их чтения:
-
-```python
-msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=False)
-print(msg.body)
-```
-
-Необязательный параметр `peek_lock` метода `receive_subscription_message` определяет, удаляет ли Служебная шина сообщения из подписки по мере их чтения. *PeekLock* — это режим получения сообщений по умолчанию (параметр `peek_lock` имеет значение **True**). В этом режиме сообщения читаются (просматриваются) и блокируются без удаления из подписки. После этого каждое сообщение необходимо явно завершить, чтобы удалить его из подписки.
-
-Чтобы удалять сообщения из подписки по мере их чтения, для параметра `peek_lock` необходимо задать значение **False**, как показано в предыдущем примере. Удаление сообщений в ходе операции получения является самой простой моделью, которая работает только в том случае, если приложение допускает пропуск сообщений в случае сбоя. Чтобы понять это поведение, рассмотрим сценарий, в котором приложение выдает запрос на получение и выходит из строя до его обработки. Если сообщение было удалено при получении, то когда после своего перезапуска приложение снова начнет обрабатывать сообщения, оно пропустит сообщение, полученное до сбоя.
-
-Если приложение не допускает пропуска сообщений, процесс получения становится двухэтапной операцией. PeekLock находит следующее сообщение, блокирует его, чтобы другие получатели не могли его принять, а затем возвращает его приложению. После обработки или сохранения сообщения приложение завершает второй этап процесса получения, вызывая метод `complete` объекта **Message**.  Метод `complete` помечает сообщение как использованное и удаляет его из подписки.
-
-В следующем примере демонстрируется сценарий блокировки:
+Добавьте приведенный ниже код инструкции print. Этот код будет непрерывно получать новые сообщения, пока в течение 5 (`max_wait_time`) секунд не будет получено ни одного нового сообщения. 
 
 ```python
-msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=True)
-if msg.body is not None:
-    print(msg.body)
-    msg.complete()
+with servicebus_client:
+    # get the Subscription Receiver object for the subscription    
+    receiver = servicebus_client.get_subscription_receiver(topic_name=TOPIC_NAME, subscription_name=SUBSCRIPTION_NAME, max_wait_time=5)
+    with receiver:
+        for msg in receiver:
+            print("Received: " + str(msg))
+            # complete the message so that the message is removed from the subscription
+            receiver.complete_message(msg)
 ```
 
-## <a name="handle-application-crashes-and-unreadable-messages"></a>Обработка сбоев приложения и нечитаемых сообщений
-
-служебная шина предоставляет функции, помогающие корректно выполнить восстановление после ошибок в приложении или трудностей, возникших при обработке сообщения. Если по какой-либо причине приложению-получателю не удается обработать сообщение, оно вызывает метод `unlock` для объекта **Message**. Служебная шина разблокирует сообщение в подписке и снова делает его доступным для получения в том же или другом приложении.
-
-Кроме того, существует время ожидания сообщений, заблокированных в подписке. Если приложение не сможет обработать сообщение в течение времени ожидания (например, при сбое приложения), Служебная шина автоматически разблокирует сообщение и снова сделает его доступным для получения.
-
-Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `complete`, сообщение будет повторно доставлено в приложение после его перезапуска. Такая реакция на событие часто называется *по крайней мере одна обработка*. Каждое приложение обрабатывается по крайней мере один раз, но в некоторых случаях одно и то же сообщение может быть доставлено повторно. Если сценарий не допускает обработки дубликатов, вы можете использовать свойство **MessageId** сообщения, которое остается постоянным при всех попытках доставки. Это позволяет обрабатывать повторную доставку сообщения. 
-
-## <a name="delete-topics-and-subscriptions"></a>Удаление разделов и подписок
-
-Удалить разделы и подписки можно на [портале Azure][Azure portal] или с помощью метода `delete_topic`. Следующий код удаляет раздел с именем `mytopic`:
+## <a name="full-code"></a>Полный код
 
 ```python
-bus_service.delete_topic('mytopic')
+from azure.servicebus import ServiceBusClient, ServiceBusMessage
+
+CONNECTION_STR = "<NAMESPACE CONNECTION STRING>"
+TOPIC_NAME = "<TOPIC NAME>"
+SUBSCRIPTION_NAME = "<SUBSCRIPTION NAME>"
+
+def send_single_message(sender):
+    message = ServiceBusMessage("Single Message")
+    sender.send_messages(message)
+    print("Sent a single message")
+
+def send_a_list_of_messages(sender):
+    messages = [ServiceBusMessage("Message in list") for _ in range(5)]
+    sender.send_messages(messages)
+    print("Sent a list of 5 messages")
+
+def send_batch_message(sender):
+    batch_message = sender.create_message_batch()
+    for _ in range(10):
+        try:
+            batch_message.add_message(ServiceBusMessage("Message inside a ServiceBusMessageBatch"))
+        except ValueError:
+            # ServiceBusMessageBatch object reaches max_size.
+            # New ServiceBusMessageBatch object can be created here to send more data.
+            break
+    sender.send_messages(batch_message)
+    print("Sent a batch of 10 messages")
+
+servicebus_client = ServiceBusClient.from_connection_string(conn_str=CONNECTION_STR, logging_enable=True)
+
+with servicebus_client:
+    sender = servicebus_client.get_topic_sender(topic_name=TOPIC_NAME)
+    with sender:
+        send_single_message(sender)
+        send_a_list_of_messages(sender)
+        send_batch_message(sender)
+
+print("Done sending messages")
+print("-----------------------")
+
+with servicebus_client:
+    receiver = servicebus_client.get_subscription_receiver(topic_name=TOPIC_NAME, subscription_name=SUBSCRIPTION_NAME, max_wait_time=5)
+    with receiver:
+        for msg in receiver:
+            print("Received: " + str(msg))
+            receiver.complete_message(msg)
 ```
 
-При удалении раздела удаляются все подписки на него. Подписки также можно удалять независимо друг от друга. Следующий код удаляет подписку с именем `HighMessages` из раздела `mytopic`:
+## <a name="run-the-app"></a>Запустите приложение
+При запуске приложения должны отобразиться следующие выходные данные: 
 
-```python
-bus_service.delete_subscription('mytopic', 'HighMessages')
+```console
+Sent a single message
+Sent a list of 5 messages
+Sent a batch of 10 messages
+Done sending messages
+-----------------------
+Received: Single Message
+Received: Message in list
+Received: Message in list
+Received: Message in list
+Received: Message in list
+Received: Message in list
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
 ```
 
-По умолчанию разделы и подписки сохраняются до тех пор, пока вы не удалите их. Для автоматического удаления подписок по истечении определенного периода времени в подписке можно задать параметр [auto_delete_on_idle](/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python). 
+Перейдите к пространству имен служебной шины на портале Azure. На странице **Обзор** убедитесь, что количество **входящих** и **исходящих** сообщений равно 16. Если количество не отображается, обновите страницу, подождав несколько минут. 
 
-> [!TIP]
-> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель Служебной шины позволяет без труда подключаться к пространству имен Служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта и возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
+:::image type="content" source="./media/service-bus-python-how-to-use-queues/overview-incoming-outgoing-messages.png" alt-text="Количество входящих и исходящих сообщений":::
+
+Выберите раздел в нижней области, чтобы просмотреть страницу **Раздел служебной шины** своего раздела. На этой странице вы увидите три входящих и три исходящих сообщения в диаграмме **Сообщения**. 
+
+:::image type="content" source="./media/service-bus-python-how-to-use-topics-subscriptions/topic-page-portal.png" alt-text="Экран &quot;Входящие и исходящие сообщения&quot;":::
+
+При выборе подписки на этой странице вы будете перенаправлены на страницу **Service Bus Subscription** (Подписка служебной шины). Также на этой странице можно увидеть количество активных и недоставленных сообщений и многое другое. В этом примере получены все сообщения, поэтому количество активных сообщений равно нулю. 
+
+:::image type="content" source="./media/service-bus-python-how-to-use-topics-subscriptions/active-message-count.png" alt-text="Экран &quot;Количество активных сообщений&quot;":::
+
+Если закомментировать код получения, вы увидите, что количество активных сообщений будет равно 16. 
+
+:::image type="content" source="./media/service-bus-python-how-to-use-topics-subscriptions/active-message-count-2.png" alt-text="Экран &quot;Количество не полученных активных сообщений&quot;":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
+Ознакомьтесь со следующими примерами и документацией: 
 
-Вы узнали основные сведения о разделах Служебной шины. Для получения дополнительных сведений используйте следующие ссылки:
-
-* [Очереди, разделы и подписки][Queues, topics, and subscriptions]
-* Справочник по [SqlFilter.SqlExpression][SqlFilter.SqlExpression]
-
-[Azure portal]: https://portal.azure.com
-[Azure Python package]: https://pypi.python.org/pypi/azure
-[Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-[SqlFilter.SqlExpression]: service-bus-messaging-sql-filter.md
-[Service Bus quotas]: service-bus-quotas.md
+- [Клиентская библиотека Служебной шины Azure для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus)
+- [Примеры.](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus/samples) 
+    - В папке **sync_samples** приведены примеры, демонстрирующие взаимодействие со служебной шиной в синхронном режиме. Проходя краткое руководство, вы использовали этот метод. 
+    - В папке **async_samples** приведены примеры, демонстрирующие взаимодействие со служебной шиной в асинхронном режиме. 
+- [Справочная документация по использованию пакета azure-servicebus](https://docs.microsoft.com/python/api/azure-servicebus/azure.servicebus?view=azure-python-preview&preserve-view=true)

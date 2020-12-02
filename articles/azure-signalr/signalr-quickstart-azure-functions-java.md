@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 03/04/2019
 ms.author: zhshang
 ms.custom: devx-track-java
-ms.openlocfilehash: fac992ba0d6be945fcb3184d27394ff58d98c44c
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: aa300122ab6c448862d46579d6e9ce1e5fc06a79
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151033"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874412"
 ---
 # <a name="quickstart-use-java-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с использованием Java
 
@@ -37,21 +37,21 @@ ms.locfileid: "92151033"
 > [!NOTE]
 > Это краткое руководство предназначено для macOS, Windows или Linux.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsjava).
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу <https://portal.azure.com/> с помощью своей учетной записи Azure.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsjava).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsjava).
 
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsjava).
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Настройка и запуск приложения-функции Azure
 
@@ -87,15 +87,16 @@ ms.locfileid: "92151033"
     ```bash
     mvn azure-functions:run
     ```
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)
+    
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsjava).
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsjava).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsjava).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -103,5 +104,3 @@ ms.locfileid: "92151033"
 
 > [!div class="nextstepaction"]
 > [Создание первой функции с помощью Java и Maven](../azure-functions/functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java%252cprogramming-language-java)
-
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsjava)

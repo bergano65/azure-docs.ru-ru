@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.date: 09/28/2020
 ms.author: zhshang
-ms.openlocfilehash: da91a5a7c077eb14d12a711b8b308d7045c88f4a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: c39ef505b0cea0ad0c03b81683db8441077cd0d2
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151000"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874548"
 ---
 # <a name="quickstart-create-a-chat-room-with-aspnet-and-signalr-service"></a>Краткое руководство. Создание комнаты чата с помощью ASP.NET и Службы SignalR
 
@@ -32,13 +32,13 @@ ms.locfileid: "92151000"
 * [.NET 4.6.1](https://www.microsoft.com/net/download/windows)
 * [ASP.NET SignalR 2.4.1](https://www.nuget.org/packages/Microsoft.AspNet.SignalR/)
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsnet).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на [портал Azure](https://portal.azure.com/) с помощью своей учетной записи Azure.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsnet).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
@@ -46,7 +46,7 @@ ms.locfileid: "92151000"
 
 Вы также можете создать ресурсы Azure, используемые в этом кратком руководстве, с помощью [сценария создания Службы SignalR](scripts/signalr-cli-create-service.md).
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsnet).
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
@@ -60,7 +60,7 @@ ms.locfileid: "92151000"
     git clone https://github.com/aspnet/AzureSignalR-samples.git
     ```
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsnet).
 
 ## <a name="configure-and-run-chat-room-web-app"></a>Настройка и запуск веб-приложения комнаты чата
 
@@ -106,7 +106,7 @@ ms.locfileid: "92151000"
 
 1. Нажмите клавишу <kbd>F5</kbd>, чтобы запустить проект в режиме отладки. Вы увидите, что приложение запущено локально. Вместо размещения среды выполнения SignalR самим приложением, оно теперь подключается к Службе Azure SignalR.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsnet).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
@@ -121,7 +121,7 @@ ms.locfileid: "92151000"
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsnet).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -129,5 +129,3 @@ ms.locfileid: "92151000"
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Создание чата с помощью Службы SignalR](./signalr-quickstart-dotnet-core.md)
-
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsnet)

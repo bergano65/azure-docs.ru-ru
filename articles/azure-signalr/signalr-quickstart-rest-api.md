@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: quickstart
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 85cda8458dca4ce24fed9433af1527f49a2393ad
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 2613f91e8c7f1ad3a05792a9a165f4560c09a637
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150981"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874531"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 
@@ -28,17 +28,17 @@ ms.locfileid: "92150981"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу <https://portal.azure.com/> с помощью своей учетной записи Azure.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
@@ -51,7 +51,7 @@ ms.locfileid: "92150981"
     ```bash
     git clone https://github.com/aspnet/AzureSignalR-samples.git
     ```
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 ## <a name="build-and-run-the-sample"></a>Сборка и запуск примера
 
@@ -88,7 +88,7 @@ cd bin/Release/netcoreapp2.1/osx.10.13-x64/
 Serverless server -c "<ConnectionString>" -h <HubName>
 ```
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 ## <a name="run-the-sample-without-publishing"></a>Запуск примера без публикации
 
@@ -106,7 +106,7 @@ dotnet run -- client <ClientName> -c "<ConnectionString>" -h <HubName>
 
 Вы можете выполнить `dotnet user-secrets set Azure:SignalR:ConnectionString "<ConnectionString>"` в корневом каталоге примера. После этого вам больше не нужен параметр `-c "<ConnectionString>"`.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 ## <a name="usage"></a>Использование
 
@@ -122,7 +122,7 @@ broadcast
 
 Можно запустить несколько клиентов с разными именами.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 ## <a name="integration-with-third-party-services"></a><a name="usage"> </a> Интеграция со сторонними службами
 
@@ -257,11 +257,11 @@ API | 1.0-preview | 1.0
 `200` | Служба работает
 `5xx` | Ошибка службы
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qsapi).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -269,5 +269,3 @@ API | 1.0-preview | 1.0
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с помощью C#](signalr-quickstart-azure-functions-csharp.md)
-
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsapi)

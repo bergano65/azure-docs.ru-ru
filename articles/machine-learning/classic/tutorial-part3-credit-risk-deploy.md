@@ -9,17 +9,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: 2d723a18bfe764b4e1459f72b00fa81db716dcdb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3afcf87c360651ac314450910fbf5ab72afd289a
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325655"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503916"
 ---
 # <a name="tutorial-3-deploy-credit-risk-model---azure-machine-learning-studio-classic"></a>Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure (классической)
 
-**ПРИМЕНИМО К:** ![да](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая) ![нет ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
-
+**ПРИМЕНИМО К:**  ![Флажок, который обозначает, что эта статья применима к Студии машинного обучения (классическая версия). ](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая версия) ![Значок X, который обозначает, что эта статься применима к решению "Машинное обучение Azure". ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 В этом руководстве подробно описывается процесс разработки решения прогнозной аналитики. Мы создадим в Студии машинного обучения (классической) простую модель,  а затем развернем ее в качестве веб-службы машинного обучения Azure.  Развернутая модель позволяет создавать прогнозы на основе новых данных. Это руководство представляет собой **третью, заключительную часть серии руководств**.
 

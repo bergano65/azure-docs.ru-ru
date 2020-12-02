@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: go
 ms.topic: quickstart
 ms.date: 04/24/2020
-ms.openlocfilehash: a11ea9cee69e5aa7b275012176084530f4a209e6
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 548deeec456537c64dc5d8ebe95ed1e4802e91c5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93076303"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349220"
 ---
 # <a name="quickstart-connect-a-go-application-to-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Подключение приложения Go к API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -259,7 +259,7 @@ az login
 
 В следующем примере показано создание группы ресурсов в регионе "Западная Европа". Выберите уникальное имя для группы ресурсов.
 
-Если вы используете Azure Cloud Shell, щелкните **Попробовать** , войдите в систему, следуя указаниям на экране, а затем скопируйте команду в командную строку.
+Если вы используете Azure Cloud Shell, щелкните **Попробовать**, войдите в систему, следуя указаниям на экране, а затем скопируйте команду в командную строку.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "West Europe"
@@ -458,4 +458,4 @@ added todo ObjectID("5e9fd6befd2f076d1f03bd8a")
 В этом кратком руководстве вы узнали, как создать учетную запись API MongoDB для Azure Cosmos DB с помощью Azure Cloud Shell, а также, как создать и запустить программу командной строки Go для управления элементами `todo`. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Перенос данных MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json)
+> [Перенос данных MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json)

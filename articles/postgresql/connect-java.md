@@ -9,11 +9,11 @@ ms.topic: quickstart
 ms.devlang: java
 ms.date: 08/17/2020
 ms.openlocfilehash: 42547338c0f5f2f3105833b12e499d40b6209b05
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341422"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184711"
 ---
 # <a name="quickstart-use-java-and-jdbc-with-azure-database-for-postgresql"></a>Краткое руководство. Использование Java и JDBC с Базой данных Azure для PostgreSQL
 
@@ -228,7 +228,7 @@ public class DemoApplication {
 }
 ```
 
-Этот код Java, используя ранее созданные файлы *application.properties* и *schema.sql* , подключится к серверу PostgreSQL и создаст схему для хранения данных.
+Этот код Java, используя ранее созданные файлы *application.properties* и *schema.sql*, подключится к серверу PostgreSQL и создаст схему для хранения данных.
 
 Как видите, в этом файле мы закомментировали методы вставки, чтения, обновления и удаления данных. Эти методы мы создадим позже, и вы просто последовательно раскомментируете их.
 

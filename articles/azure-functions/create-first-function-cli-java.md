@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: 5c8993bdf892ceb7d9886d0d2b97063dedec720c
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: db24fa4721e2e502c5098b415c4cf06da80f697d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635557"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175684"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Краткое руководство. Создание функции Java в Azure из командной строки
 
@@ -34,7 +34,7 @@ ms.locfileid: "94635557"
 
 + [Azure CLI](/cli/azure/install-azure-cli) 2.4 или более поздней версии.
 
-+ [Java Developer Kit](https://aka.ms/azure-jdks) версии 8 или 11. Переменной среды `JAVA_HOME` необходимо присвоить расположение установки правильной версии JDK.     
++ [Java Developer Kit](/azure/developer/java/fundamentals/java-jdk-long-term-support) версии 8 или 11. Переменной среды `JAVA_HOME` необходимо присвоить расположение установки правильной версии JDK.     
 
 + [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 

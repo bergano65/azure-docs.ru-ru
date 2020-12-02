@@ -4,15 +4,15 @@ description: Сведения об Azure HPC Cache, решения для быс
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: overview
-ms.date: 09/03/2020
+ms.date: 11/23/2020
 ms.author: v-erkel
 ms.custom: references_regions
-ms.openlocfilehash: b51cd938747c1cfa82b397160f077474e176b2f5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0568d9b7fea2e4e048c0c1d1b2d6f81d64a9b114
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91612971"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519342"
 ---
 # <a name="what-is-azure-hpc-cache"></a>Что такое Azure HPC Cache?
 
@@ -64,6 +64,8 @@ Azure HPC Cache также можно использовать для повыш
 * Западная Европа
 * US Gov (Аризона)
 * US Gov (Вирджиния)
+
+Служба Azure HPC Cache находится в одном регионе. Она может получить доступ к данным, хранящимся в других регионах, если подключить ее к контейнерам BLOB-объектов, расположенным в этих регионах. Кэш временно хранит данные клиента.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

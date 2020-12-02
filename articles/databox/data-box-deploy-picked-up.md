@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 11/19/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 72575725c0924b8ec5f9466f4ffbba86bf071db4
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 28637f35294e9c70cbf0e96fb2cdcb1853d2ba39
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91631547"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992732"
 ---
 ::: zone target="docs"
 
@@ -84,7 +84,7 @@ ms.locfileid: "91631547"
 
 1. Убедитесь, что устройство отключено и кабели отсоединены. 
 2. Смотайте и аккуратно разместите шнур питания, входящий в комплект устройства, на задней панели устройства.
-3. Убедитесь, что транспортная этикетка отображается на дисплее E-ink и запланируйте отправку со своим курьером. Если метка повреждена, утеряна или не отображается на дисплее E-ink, обратитесь в службу поддержки Майкрософт. На портале Azure выберите **Обзор > Скачать транспортную этикетку** , если это посоветует специалист службы поддержки. Скачайте транспортную этикетку и прикрепите ее на устройство. 
+3. Убедитесь, что транспортная этикетка отображается на дисплее E-ink и запланируйте отправку со своим курьером. Если метка повреждена, утеряна или не отображается на дисплее E-ink, обратитесь в службу поддержки Майкрософт. На портале Azure выберите **Обзор > Скачать транспортную этикетку**, если это посоветует специалист службы поддержки. Скачайте транспортную этикетку и прикрепите ее на устройство. 
 4. Запланируйте визит курьера UPS для отправки посылки, если возвращаете устройство. Чтобы запланировать отправку с курьером:
 
     * Позвоните в местное отделение UPS (бесплатный номер конкретной страны/региона).
@@ -92,7 +92,7 @@ ms.locfileid: "91631547"
     * Если номер для отслеживания не указан, UPS потребует дополнительную плату во время приема посылки.
 
     Вместо планирования отправки с курьером вы также можете оставить Data Box в ближайшем отделении этой курьерской службы.
-4. После того как курьер примет и проверит Data Box, состояние заказа на портале обновится до **Принято курьером** . Также отображается идентификатор отслеживания.
+4. После того как курьер примет и проверит Data Box, состояние заказа на портале обновится до **Принято курьером**. Также отображается идентификатор отслеживания.
 
 ::: zone target="chromeless"
 
@@ -103,12 +103,6 @@ ms.locfileid: "91631547"
 ## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
 
 Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -131,12 +125,6 @@ ms.locfileid: "91631547"
 ## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
 
 Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -182,12 +170,6 @@ ms.locfileid: "91631547"
 
 ::: zone-end
 
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
-
-::: zone-end
-
 ## <a name="singapore"></a>[Сингапур](#tab/in-singapore)
 
 1. Сохраните оригинальную коробку, использованную для доставки устройства, для обратной отправки.
@@ -223,33 +205,33 @@ ms.locfileid: "91631547"
 
 ::: zone-end
 
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
-
-::: zone-end
-
 ## <a name="south-africa"></a>[ЮАР](#tab/in-sa)
 
 1. Для обратной отправки упакуйте устройство в оригинальную упаковку.
 2. Смотайте и аккуратно разместите шнур питания, входящий в комплект устройства, на задней панели устройства.
-3. Чтобы заказать отправку с помощью DHL, выполните следующие действия:
+3. Запишите номер отслеживания (отображается в виде справочного номера на странице **Подготовка к отправке** локального пользовательского веб-интерфейса Data Box). Этот номер будет доступен после успешного выполнения подготовки к отправке. Скачайте этикетку отгрузки на этой странице и прикрепите ее к упаковочной коробке.
+4. Запросите код возврата у специалистов Azure Data Box. Этот код требуется для доставки посылки обратно в центр обработки данных. Отправьте сообщение электронной почты с запросом кода на адрес [adbops@microsoft.com](mailto:adbops@microsoft.com). Разборчиво запишите этот код на этикетке отгрузки рядом с адресом возврата.
+5. Закажите отправку с помощью DHL, выбрав один из следующих вариантов:
+ 
+   * Закажите отправку через Интернет на сайте [DHL Express (ЮАР), выбрав **Schedule a Pickup** (Запланировать вывоз)](https://mydhl.express.dhl/za/en/schedule-pickup.html#/schedule-pickup#label-reference).
+   * Отправьте сообщение электронной почты на [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com), используя следующий шаблон:
 
-    * Обратитесь в службу поддержки клиентов по телефону +27(0) 11 9213600, выберите вариант 1, а затем укажите номер накладной.
-    * Чтобы запланировать доставку, следует звонить до 14:00.
-    * Отправьте сообщение электронной почты на [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com), используя следующий шаблон:
+     ```output
+     To: Priority.Support@dhl.com
+     Subject: Pickup request for Microsoft Azure
+     Body: Need pick up for the below shipment
+       *  DHL tracking number: (reference number/waybill number)
+       *  Requested pickup date: yyyy/mm/dd;time:HH MM
+       *  Shipper contact: (company name)
+       *  Contact person: 
+       *  Phone number: 
+       *  Full physical address: 
+       *  Item to be collected: Azure Dt
+     ```
 
-    ```output
-    To: Priority.Support@dhl.com
-    Subject: Pickup request for Microsoft Azure
-    Body: Need pick up for the below shipment
-      *  DHL tracking number (reference number/waybill number)
-      *  Requested pickup date: yyyy/mm/dd;time:HH MM
-    ```
+    * Вы также можете отправить посылку в ближайшей точке обслуживания DHL.
 
-    * Кроме того, вы можете запланировать доставку пакета в ближайшую точку обслуживания DHL.
-
-4. При возникновении проблем отправьте на адрес [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) сообщение электронной почты с их описанием, указав номер накладной в строке "Тема:". Вы можете также позвонить по телефону +27(0)119213902.
+6. При возникновении проблем отправьте на адрес [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) сообщение электронной почты с их описанием, указав номер накладной в строке "Тема:". Вы можете также позвонить по телефону +27(0)119213902.
 
 ::: zone target="chromeless"
 
@@ -260,12 +242,6 @@ ms.locfileid: "91631547"
 ## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
 
 Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -301,12 +277,6 @@ ms.locfileid: "91631547"
 ## <a name="erasure-of-data-from-data-box"></a>Стирание данных из Data Box
  
 Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -369,8 +339,6 @@ Once the upload to Azure is complete, the Data Box erases the data on its disks 
 
 ::: zone target="chromeless"
 
----
-
 ## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
 
 [!INCLUDE [data-box-verify-upload](../../includes/data-box-verify-upload.md)]
@@ -381,7 +349,11 @@ Once the upload to Azure is complete, the Data Box erases the data on its disks 
 
 ::: zone-end
 
+---
+
 ::: zone target="docs"
+
+## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
 
 [!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 

@@ -7,7 +7,6 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.topic: overview
 ms.workload: identity
 ms.date: 11/15/2020
@@ -15,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0edd85ea4478ac95ea854b73717056d52a9098b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 846059c5c20255f9bddba59673458e12e1f354d3
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647568"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503570"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Что такое самостоятельная регистрация для Azure Active Directory?
 
@@ -76,6 +75,12 @@ ms.locfileid: "94647568"
 На блок-схеме ниже показаны разные сочетания этих параметров и результирующие условия для каталога и самостоятельной регистрации.
 
 ![Блок-схема элементов управления самостоятельной регистрации](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
+
+Сведения об этом параметре можно получить с помощью командлета Get-MsolCompanyInformation в PowerShell. Дополнительные сведения об этом см. в статье [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation?view=azureadps-1.0).
+
+```powershell
+    Get-MsolCompanyInformation | Select AllowEmailVerifiedUsers, AllowAdHocSubscriptions
+```
 
 Дополнительные сведения об этих параметрах и примеры их использования см. в статье [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
 

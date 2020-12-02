@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 11/16/2020
-ms.openlocfilehash: 57213e228359fd6c201d501d3bb75f7267054277
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 0314f5e55a476cd1cd1f8a31bd918e0ebb64c75f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685432"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95254244"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Общие сведения о Центре знаний Synapse
 
@@ -33,8 +33,8 @@ ms.locfileid: "94685432"
 ## <a name="overview"></a>Обзор
 
 **Центр знаний** позволяет выполнить три действия:
-* **Use samples immediately** (Использовать примеры немедленно). Этот параметр оптимизирован для анализа в действии как можно быстрее. Если вам нужен краткий пример того, как работает Synapse, выберите этот параметр.
-* **Browser available sample** (Просмотреть доступный пример). Этот параметр позволяет связать примеры наборов данных и добавить пример кода в виде скриптов SQL, записных книжек и конвейеров.
+* **Use samples immediately** (Использовать примеры немедленно). Если вам нужен краткий пример того, как работает Synapse, выберите этот параметр.
+* **Обзор коллекции.** Этот параметр позволяет связать примеры наборов данных и добавить пример кода в виде скриптов SQL, записных книжек и конвейеров.
 * **Tour Synapse studio** (Обзор Synapse Studio). С помощью этого параметра можно перейти к краткому обзору основных частей Synapse Studio. Этот параметр будет для вас полезным, если ранее вы никогда не использовали Synapse Studio.
 
 ## <a name="exploring-blob-storage-with-serverless-sql-pool"></a>Изучение хранилища BLOB-объектов с помощью бессерверного пула SQL
@@ -47,7 +47,7 @@ ms.locfileid: "94685432"
 1. Щелкните "Выполнить". Выбранный текст будет выполнен.
 
 ## <a name="loading-more-nyc-taxi-data"></a>Загрузка дополнительных данных NYC Taxi
-1. Перейдите в **Центр знаний** и щелкните **Browse available samples** (Посмотреть доступные примеры). 
+1. Перейдите в **Центр знаний** и щелкните **Обзор коллекции**. 
 1. Выберите вкладку **Скрипты SQL** в верхней части экрана
 1. Выберите **Load the New York Taxicab dataset** (Загрузить набор данных New York Taxicab).
 1. В разделе **Входные данные** выберите **Выбрать существующий пул**, а затем — **SQLDB1**.

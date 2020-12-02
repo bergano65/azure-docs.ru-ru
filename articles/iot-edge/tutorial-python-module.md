@@ -1,5 +1,5 @@
 ---
-title: Руководство по созданию пользовательского модуля Python — Azure IoT Edge | Документация Майкрософт
+title: Руководство. Создание пользовательского модуля Python с помощью Azure IoT Edge
 description: В этом руководстве показано, как создать модуль IoT Edge с кодом Python и его развертывание на пограничном устройстве.
 services: iot-edge
 author: kgremban
@@ -10,12 +10,12 @@ ms.date: 08/04/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 1cc3db32650891c5f95be05267541f93ca49218e
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 402b61bb0845532d601e9f5dcaaf55eacce685d1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047970"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959379"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Python и его развертыванию на устройствах Linux
 
@@ -34,7 +34,7 @@ ms.locfileid: "92047970"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Область действия решения
+## <a name="prerequisites"></a>Предварительные требования
 
 Это руководстве показано разработку модуля на языке **Python** с помощью **Visual Studio Code** и его развертывание на **устройстве Linux**. IoT Edge не поддерживает модули Python для устройств Windows.
 
@@ -44,8 +44,6 @@ ms.locfileid: "92047970"
 | - | ------------------ | ------------------ |
 | **Linux AMD64** | ![Использование VS Code для модулей Python в Linux AMD64](./media/tutorial-c-module/green-check.png) |  |
 | **Linux ARM32** | ![Использование VS Code для модулей Python в Linux ARM32](./media/tutorial-c-module/green-check.png) |  |
-
-## <a name="prerequisites"></a>Предварительные требования
 
 Предполагается, что перед началом работы с этим руководством вы прошли предыдущее, в рамках которого настроили окружение для разработки контейнеров Linux: [Tutorial: Develop IoT Edge modules for Linux devices](tutorial-develop-for-linux.md) (Руководство. Разработка модулей IoT Edge для устройств с Linux). После работы с ним у вас должны быть готовы все необходимые компоненты:
 

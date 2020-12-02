@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: 43aadee627c7dc12a37a8f3895ba4dfed472808c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 627d5b15a861c3d564cb4db33b366d3227092d37
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182909"
+ms.locfileid: "96296273"
 ---
 # <a name="tutorial-enable-the-ingress-controller-add-on-preview-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Руководство по включению надстройки контроллера объекта ingress (предварительная версия) для нового кластера AKS с новым экземпляром Шлюза приложений
 
@@ -34,7 +34,10 @@ ms.locfileid: "96182909"
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
- - Для работы с этим учебником требуется Azure CLI версии 2.0.4 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+ - Для работы с этим учебником требуется Azure CLI версии 2.0.4 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена. При использовании Azure CLI необходимо установить расширение предварительной версии в CLI с помощью следующей команды (если оно еще не установлено):
+    ```azurecli-interactive
+    az extension add --name aks-preview
+    ```
 
  - Зарегистрируйте флаг компонента *AKS-IngressApplicationGatewayAddon*, используя команду [az feature register](/cli/azure/feature#az-feature-register), как показано в указанном ниже примере. Это необходимо сделать только один раз для подписки, пока надстройка находится на стадии предварительной версии.
     ```azurecli-interactive

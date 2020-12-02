@@ -117,7 +117,7 @@ endpoint = "<paste-your-text-analytics-endpoint-here>"
 
 * [аутентификация клиента](#authenticate-the-client);
 * [Анализ тональности](#sentiment-analysis).
-* [Интеллектуальный анализ данных](#opinion-mining)
+* [Интеллектуальный анализ мнений](#opinion-mining)
 * [Пример. Как определить язык с помощью Анализа текста](#language-detection)
 * [Распознавание именованных сущностей](#named-entity-recognition-ner) 
 * [Распознавание личных сведений](#personally-identifiable-information-recognition) 

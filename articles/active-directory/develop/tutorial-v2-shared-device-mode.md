@@ -13,16 +13,16 @@ ms.date: 1/15/2020
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 2aa786f78d3e730bb351d1fa84b0c7fbb32d6786
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 981d3a0c5d01d70625fc0d022318c5bc866f23a0
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91611237"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95756406"
 ---
 # <a name="tutorial-use-shared-device-mode-in-your-android-application"></a>Руководство по Использование режима общего устройства в приложении Android
 
-В этом руководстве содержатся рекомендации для разработчиков и администраторов клиентов по настройке и поддержке режима общего устройства в приложении Android.
+В этом руководстве для разработчиков Android и администраторов клиента Azure Active Directory (Azure AD) приводится код, приложение для проверки подлинности и параметры клиента, необходимые для включения режима общего устройства для приложения Android.
 
 В этом руководстве рассматриваются следующие темы:
 
@@ -226,7 +226,7 @@ private void onSignOutClicked()
 
 Выберите действие **Make this change for me** (Внести это изменение для меня) и укажите на портале Azure значения, которые приведены в кратком руководстве. Когда это будет сделано, мы автоматически создадим для вас все необходимые файлы конфигурации.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Краткое руководство по настройке страницы проекта на портале Azure":::
 
 ## <a name="set-up-a-tenant"></a>Настройка клиента
 
@@ -242,25 +242,25 @@ private void onSignOutClicked()
 
 Запустите приложение Authenticator и перейдите на главную страницу учетной записи. На странице **Добавление учетной записи** вы можете сразу перевести устройство в режим общего доступа.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Экран добавления учетной записи в Authenticator":::
 
 Перейдите на панель **Параметры**, используя панель меню справа. Щелкните **Регистрации устройства** в разделе **Work & School accounts** (Рабочие и учебные учетные записи).
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Экран параметров приложения Authenticator":::
 
 При нажатии этой кнопки вам будет предложено авторизовать доступ к контактам устройства. Это требования к интеграции учетных записей на устройстве Android. Выберите **разрешить**.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Экран подтверждения разрешения доступа приложению Authenticator":::
 
 Администратору облачных устройств следует ввести адрес электронной почты своей организации в разделе **Также возможна регистрация как общего устройства**. После этого нажмите кнопку **Зарегистрировать как общее устройство** и введите учетные данные.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Экран регистрации устройства в приложении":::
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="Снимок экрана приложения: страница входа (Майкрософт)":::
 
 Теперь устройство находится в режиме общего доступа.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="Экран приложения: режим общего устройства включен":::
 
  Все операции входа и выхода на этом устройстве будут глобальными. Это означает, что они будут применяться ко всем приложениям, интегрированным с MSAL и Microsoft Authenticator на этом устройстве. Теперь вы можете развертывать на устройстве приложения, которые используют возможности режима общего устройства.
 
@@ -268,13 +268,13 @@ private void onSignOutClicked()
 
 Когда вы переводите устройство в режим общего доступа, оно регистрируется для вашей организации и отслеживается в ее арендаторе. Чтобы просмотреть сведения о своих общих устройствах, найдите раздел **Тип соединение** в колонке Azure Active Directory на портале Azure.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/registered-device-screen.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/registered-device-screen.png" alt-text="Панель &quot;Все устройства&quot; на портале Azure":::
 
 ## <a name="running-the-sample-app"></a>Выполнение примера приложения
 
 Это простой пример приложения, которое обращается к API Graph вашей организации. При первом запуске вам будет предложено подтвердить согласие, так как приложение является новым для вашей учетной записи сотрудника.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png" alt-text="Краткое руководство по настройке страницы приложения Android на портале Azure":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png" alt-text="Экран сведений о конфигурации приложения":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

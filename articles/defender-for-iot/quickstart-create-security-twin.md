@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/08/2019
 ms.author: mlottner
-ms.openlocfilehash: 822e9dc237dd6f4d73e1860c6a0b240fb94c3105
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 74e0e8daa662f4dd49f1886972236b5b0a3b100a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945609"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348863"
 ---
 # <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>Краткое руководство. Создание двойника модуля azureiotsecurity
 
@@ -31,7 +31,7 @@ ms.locfileid: "90945609"
 Решение "Defender для Интернета вещей" обеспечивает полную интеграцию с платформой управления устройствами Интернета вещей, позволяя управлять состоянием защиты устройства и использовать существующие возможности управления устройствами.
 Интеграцию с этим решением обеспечивает механизм двойников Центра Интернета вещей.
 
-См. дополнительные сведения об [общих принципах работы двойников модуля в Центре Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-module-twins).
+См. дополнительные сведения об [общих принципах работы двойников модуля в Центре Интернета вещей](../iot-hub/iot-hub-devguide-module-twins.md).
 
 Решение "Defender для Интернета вещей" использует механизм двойника модуля и хранит двойник модуля _azureiotsecurity_ для каждого устройства.
 

@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 11/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 59dd1dadc7d037ff253812e4d3e1a1955d98e944
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 4335c1e81ead36d14ee1794fffbdd4cc1ff72a0a
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95809150"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029614"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-net"></a>Отправка сообщений в очереди Служебной шины и получение сообщений из них (.NET)
 В рамках этого руководства вы создадите консольное приложение .NET Core для отправки и получения сообщений через очередь Служебной шины с помощью пакета **Azure.Messaging.ServiceBus**. 
@@ -55,8 +55,29 @@ ms.locfileid: "95809150"
         static string queueName = "<QUEUE NAME>";
     ```
 
-    Замените `<NAMESPACE CONNECTION STRING>` строкой подключения к пространству имен Служебной шины. Затем замените `<QUEUE NAME>` именем очереди.     
-2. Добавьте метод с именем `SendMessageAsync`, с помощью которого в очередь отправляется одно сообщение. 
+    Введите строку подключения для пространства имен в виде переменной `ServiceBusConnectionString`. Введите имя очереди.
+
+1. Замените метод `Main()` приведенным ниже **асинхронным** методом `Main`. Он вызывает метод `SendMessagesAsync()`, который вы добавите на следующем шаге для отправки сообщений в очередь. 
+
+    ```csharp
+    public static async Task Main(string[] args)
+    {    
+        const int numberOfMessages = 10;
+        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+
+        Console.WriteLine("======================================================");
+        Console.WriteLine("Press ENTER key to exit after sending all the messages.");
+        Console.WriteLine("======================================================");
+
+        // Send messages.
+        await SendMessagesAsync(numberOfMessages);
+
+        Console.ReadKey();
+
+        await queueClient.CloseAsync();
+    }
+    ```
+1. Сразу после метода `Main()` добавьте следующий метод `SendMessagesAsync()`, который позволяет отправлять такое число сообщений, как задано для параметра `numberOfMessagesToSend` (текущее значение — 10):
 
     ```csharp
         static async Task SendMessageAsync()
@@ -266,7 +287,7 @@ Stopped receiving messages
 
     :::image type="content" source="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png" alt-text="Активные сообщения и их размер после получения" lightbox="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими примерами и документацией:
 
 - [Клиентская библиотека Служебной шины Azure для .NET: файл сведений](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus)

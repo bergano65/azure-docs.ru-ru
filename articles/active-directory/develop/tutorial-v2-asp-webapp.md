@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 9ff43202bdace577024413c9cc177de2997a0ad5
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 0dad7add63102d462a2111f1ecf12ae43dae123c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91627964"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996191"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Руководство по Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
-В этом руководстве описано, как реализовать вход в решение ASP.NET MVC с использованием учетной записи Майкрософт, традиционного браузерного приложения и OpenID Connect.
+В этом руководстве показано, как создать веб-приложение ASP.NET MVC, которое использует платформу удостоверений Майкрософт и ПО промежуточного слоя OWIN для поддержки входа пользователя.
 
 Завершив работу, вы получите приложение, которое поддерживает вход с использованием личных учетных записей служб outlook.com, live.com и т. п. Для входа в это приложение можно также использовать рабочие и учебные учетные записи любой компании или организации, интегрированной с платформой удостоверений Майкрософт.
 

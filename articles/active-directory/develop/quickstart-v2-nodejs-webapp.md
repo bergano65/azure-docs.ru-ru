@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, devx-track-js
-ms.openlocfilehash: 5cde4b539262c9e20bbcf2e7dd8c8e9de38035c3
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 643305057490cc550a5a8e39a892297b000cbc8e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594255"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169415"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Node.js с помощью OpenID Connect
 
@@ -51,7 +51,7 @@ ms.locfileid: "94594255"
 1. В списке страниц приложения выберите **Проверка подлинности**.
     - В разделе **URI-коды перенаправления** выберите **Интернет** в поле со списком и введите следующий URI-перенаправления: `http://localhost:3000/auth/openid/return`
     - В разделе **Дополнительные параметры** задайте для параметра **URL-адрес выхода** значение `https://localhost:3000`.
-    - В разделе **Дополнительные параметры > Неявное предоставление** установите флажок **Маркеры идентификаторов**, так как в этом примере требуется включить [поток "Неявное предоставление"](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-implicit-grant-flow), чтобы предоставить пользователю вход в систему.
+    - В разделе **Дополнительные параметры > Неявное предоставление** установите флажок **Маркеры идентификаторов**, так как в этом примере требуется включить [поток "Неявное предоставление"](./v2-oauth2-implicit-grant-flow.md), чтобы предоставить пользователю вход в систему.
 
 1. Щелкните **Сохранить**.
 

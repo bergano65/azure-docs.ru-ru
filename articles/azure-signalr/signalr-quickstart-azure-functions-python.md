@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/14/2019
 ms.author: antchu
 ms.custom: devx-track-python
-ms.openlocfilehash: 24985a006390977c89c4eedc23084a9856272eba
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: aaaf9011d38e7ec02e83db63757c434329b835e0
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91355654"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94960297"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-python"></a>Краткое руководство. Создание комнаты чата с помощью Функций Azure и SignalR с помощью Python
 
@@ -31,21 +31,21 @@ ms.locfileid: "91355654"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qspython).
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу <https://portal.azure.com/> с помощью своей учетной записи Azure.
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qspython).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qspython).
 
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qspython).
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Настройка и запуск приложения-функции Azure
 
@@ -100,15 +100,15 @@ ms.locfileid: "91355654"
 
     ![Запуск приложения-функции](media/signalr-quickstart-azure-functions-python/signalr-quickstart-run-application.png)
     
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qspython).
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qspython).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)
+Возникли проблемы? См. [руководство по устранению неполадок](signalr-howto-troubleshoot-guide.md) или [сообщите о проблеме нам](https://aka.ms/asrs/qspython).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -117,4 +117,3 @@ ms.locfileid: "91355654"
 > [!div class="nextstepaction"]
 > [Развертывание Функций Azure с помощью VS Code](/azure/developer/javascript/tutorial-vscode-serverless-node-01)
 
-[Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qspython)

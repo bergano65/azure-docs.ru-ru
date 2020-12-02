@@ -13,12 +13,12 @@ ms.custom:
 - 'role: System Architecture'
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: aaf803d463e03f2de7814fed4b20a0b4312fa1ef
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7f1acc44a80d5ef70145997698a928e6f9ce0d48
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148830"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888884"
 ---
 # <a name="what-is-azure-iot-hub"></a>Что такое Центр Интернета вещей в Azure?
 
@@ -120,11 +120,17 @@ ms.locfileid: "92148830"
 
 * [IoT Hub throttling and you](https://azure.microsoft.com/blog/iot-hub-throttling-and-you/) (Регулирование Центра Интернета вещей и вы)
 
+## <a name="iot-hub-on-azure-stack-hub-preview"></a>Центр Интернета вещей в Azure Stack Hub (предварительная версия)
+
+Центр Интернета вещей в Azure Stack Hub (предварительная версия) позволяет создавать гибридные решения Интернета вещей. Центр Интернета вещей — управляемая служба, которая действует в качестве центра сообщений для двусторонней связи между приложением Интернета вещей и устройствами, которыми оно управляет. Центр Интернета вещей в Azure Stack Hub можно использовать для создания решения Интернета вещей с надежными и безопасными связями между устройствами Интернета вещей и вашими локальными решениями.
+
+Центр Интернета вещей в Azure Stack Hub предоставляется бесплатно в период действия общедоступной предварительной версии. Дополнительную информацию см. в статье [Общие сведения о Центре Интернета вещей в Azure Stack Hub](/azure-stack/operator/iot-hub-rp-overview).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы проверить готовые решения Интернета вещей, ознакомьтесь с краткими руководствами по быстрому началу работы с Центром Интернета вещей:
 
-* [Краткое руководство. по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-node.md)
+* [Send telemetry from a device to an IoT hub (Swift)](quickstart-send-telemetry-node.md) (Отправка данных телеметрии с устройства в Центр Интернета вещей (Swift))
 
 Дополнительные сведения о способах создания и развертывания решений Интернета вещей с помощью Azure IoT см. по адресу:
 

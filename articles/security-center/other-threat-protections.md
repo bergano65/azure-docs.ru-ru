@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: overview
 ms.date: 09/15/2020
 ms.author: memildin
-ms.openlocfilehash: 0b80db15e4fafd5e5c63a4194039fbeca21d429b
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: d03416f390abb8656ac1aed81419864443122ce6
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900402"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122428"
 ---
 # <a name="additional-threat-protections-in-azure-security-center"></a>Дополнительные средства защиты от угроз в Центре безопасности Azure
 Кроме встроенных [средств защиты Azure Defender](azure-defender.md), Центр безопасности Azure предоставляет описанные ниже возможности защиты от угроз.

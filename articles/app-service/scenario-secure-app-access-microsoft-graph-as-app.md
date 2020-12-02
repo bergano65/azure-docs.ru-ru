@@ -1,6 +1,6 @@
 ---
-title: Учебник. Доступ веб-приложения к Microsoft Graph от имени приложения | Azure
-description: В этом учебнике вы узнаете, как получить доступ к данным в Microsoft Graph с помощью управляемых удостоверений.
+title: Учебник. Доступ веб-приложения к Microsoft Graph от имени приложения | Azure
+description: Из этого учебника вы узнаете, как получить доступ к данным в Microsoft Graph с помощью управляемых удостоверений.
 services: microsoft-graph, app-service-web
 author: rwike77
 manager: CelesteDG
@@ -10,20 +10,20 @@ ms.workload: identity
 ms.date: 11/09/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: 70b180efa35d6310735f045a85103719b17c8555
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: a7b8ca309bf5710ddbd88413935bef5e97a1ed9f
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94428382"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95999677"
 ---
-# <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-app"></a>Учебник. Доступ к Microsoft Graph из защищенного приложения от имени приложения
+# <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-app"></a>Руководство по доступу к Microsoft Graph из защищенного приложения от имени приложения
 
 Узнайте, как получить доступ к Microsoft Graph из веб-приложения, работающего в Службе приложений Azure.
 
-:::image type="content" alt-text="Доступ к Microsoft Graph" source="./media/scenario-secure-app-access-microsoft-graph/web-app-access-graph.svg" border="false":::
+:::image type="content" alt-text="Диаграмма, в которой показан доступ к Microsoft Graph." source="./media/scenario-secure-app-access-microsoft-graph/web-app-access-graph.svg" border="false":::
 
-Необходимо вызвать Microsoft Graph от имени веб-приложения.  Чтобы предоставить веб-приложению доступ к данным, можно использовать [управляемое удостоверение, назначаемое системой](/azure/active-directory/managed-identities-azure-resources/overview). Управляемое удостоверение из Azure AD позволяет службам приложений получать доступ к ресурсам через управление доступом на основе ролей (RBAC) без учетных данных приложения. Когда вы назначаете веб-приложению управляемое удостоверение, Azure создает и распространяет сертификат.  Вам не придется беспокоиться об управлении секретами или учетными данными приложения.
+Необходимо вызвать Microsoft Graph для веб-приложения. Чтобы предоставить веб-приложению доступ к данным, можно использовать [управляемое удостоверение, назначаемое системой](/azure/active-directory/managed-identities-azure-resources/overview). Управляемое удостоверение из Azure Active Directory позволяет Службе приложений получать доступ к ресурсам через управление доступом на основе ролей (RBAC) без учетных данных приложения. Когда вы назначаете веб-приложению управляемое удостоверение, Azure создает и распространяет сертификат. Вам не придется беспокоиться об управлении секретами или учетными данными приложения.
 
 В этом руководстве вы узнаете, как:
 
@@ -41,11 +41,11 @@ ms.locfileid: "94428382"
 
 ## <a name="enable-managed-identity-on-app"></a>Включение управляемого удостоверения в приложении
 
-Если вы создавали и публиковали веб-приложение с помощью Visual Studio, управляемое удостоверение уже включено для этого приложения. В службе приложений в области навигации слева выберите **Удостоверение**, а затем — **Назначаемое системой**.  Убедитесь, что для параметра **Состояние** задано значение **Вкл**.  В противном случае щелкните **Сохранить**, а затем — **Да**, чтобы включить управляемое удостоверение, назначаемое системой.  Если управляемое удостоверение включено, для состояния устанавливается значение *Вкл.* и будет доступен идентификатор объекта.
+Если вы создавали и публиковали веб-приложение с помощью Visual Studio, управляемое удостоверение уже включено для этого приложения. В Службе приложений в области слева выберите **Удостоверение**, а затем — **Назначаемое системой**. Убедитесь, что для параметра **Состояние** задано значение **Вкл**. В противном случае выберите **Сохранить**, а затем — **Да**, чтобы включить управляемое удостоверение, назначаемое системой. Если управляемое удостоверение включено, для состояния устанавливается значение **Вкл.** и будет доступен идентификатор объекта.
 
-Запишите **идентификатор объекта**, который потребуется на следующем шаге.
+Запишите значение **идентификатора объекта**, которое потребуется на следующем шаге.
 
-:::image type="content" alt-text="Системное удостоверение" source="./media/scenario-secure-app-access-microsoft-graph/create-system-assigned-identity.png":::
+:::image type="content" alt-text="Снимок экрана: удостоверение, назначенное системой." source="./media/scenario-secure-app-access-microsoft-graph/create-system-assigned-identity.png":::
 
 ## <a name="grant-access-to-microsoft-graph"></a>Предоставление доступа к Microsoft Graph
 
@@ -54,26 +54,26 @@ ms.locfileid: "94428382"
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```powershell
-# Install the module (You need admin on the machine)
-#Install-Module AzureAD 
+# Install the module. (You need admin on the machine.)
+# Install-Module AzureAD.
 
-# Your tenant id (in Azure Portal, under Azure Active Directory -> Overview )
+# Your tenant ID (in the Azure portal, under Azure Active Directory > Overview).
 $TenantID="<tenant-id>"
 $resourceGroup = "securewebappresourcegroup"
 $webAppName="SecureWebApp-20201102125811"
 
-# Get ID of the managed identity for the web app
+# Get the ID of the managed identity for the web app.
 $spID = (Get-AzWebApp -ResourceGroupName $resourceGroup -Name $webAppName).identity.principalid
 
-# Check the Microsoft Graph documentation for the permission you need for the operation
+# Check the Microsoft Graph documentation for the permission you need for the operation.
 $PermissionName = "User.Read.All"
 
 Connect-AzureAD -TenantId $TenantID
 
-# Get the service principal for Microsoft Graph
+# Get the service principal for Microsoft Graph.
 $GraphServicePrincipal = Get-AzureADServicePrincipal -SearchString "Microsoft Graph"
 
-# Assign permissions to managed identity service principal
+# Assign permissions to the managed identity service principal.
 $AppRole = $GraphServicePrincipal.AppRoles | `
 Where-Object {$_.Value -eq $PermissionName -and $_.AllowedMemberTypes -contains "Application"}
 
@@ -103,29 +103,33 @@ az rest --method post --uri $uri --body $body --headers "Content-Type=applicatio
 
 ---
 
-После выполнения скрипта на [портале Azure](https://portal.azure.com) можно проверить, что запрашиваемые разрешения API назначены управляемому удостоверению.  Перейдите в раздел **Azure Active Directory**, а затем выберите **Корпоративные приложения**.  В этой колонке отображаются все субъекты-службы в клиенте.  В разделе **Все приложения** выберите субъект-службу для управляемого удостоверения.  При работе с этим учебником используются два субъекта-службы с одинаковым отображаемым именем (например, SecureWebApp2020094113531).  Субъект-служба с *URL-адресом домашней страницы* представляет собой веб-приложение в клиенте.  Субъект-служба без *URL-адреса домашней страницы* представляет собой управляемое удостоверение, назначаемое системой, для веб-приложения. Идентификатор объекта для управляемого удостоверения совпадает с идентификатором объекта созданного ранее управляемого удостоверения.  
+После выполнения скрипта на [портале Azure](https://portal.azure.com) можно проверить, что запрашиваемые разрешения API назначены управляемому удостоверению.
+
+Перейдите в раздел **Azure Active Directory**, а затем выберите **Корпоративные приложения**. В этой области отображаются все субъект-службы клиента. В разделе **Все приложения** выберите субъект-службу для управляемого удостоверения. 
+
+При работе с этим учебником используются два субъекта-службы с одинаковым отображаемым именем (например, SecureWebApp2020094113531). Субъект-служба с **URL-адресом домашней страницы** представляет собой веб-приложение в клиенте. Субъект-служба без **URL-адреса домашней страницы** представляет собой управляемое удостоверение, назначаемое системой, для веб-приложения. Значение **идентификатора объекта** для управляемого удостоверения совпадает с идентификатором объекта созданного ранее управляемого удостоверения.
 
 Выберите субъект-службу для управляемого удостоверения.
 
-:::image type="content" alt-text="Все приложения" source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-all-applications.png":::
+:::image type="content" alt-text="Снимок экрана: параметр &quot;Все приложения&quot;." source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-all-applications.png":::
 
 В разделе **Обзор** выберите **Разрешения** и вы увидите добавленные разрешения для Microsoft Graph.
 
-:::image type="content" alt-text="Разрешения" source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-permissions.png":::
+:::image type="content" alt-text="Снимок экрана: панель &quot;Разрешения&quot;." source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-permissions.png":::
 
 ## <a name="call-microsoft-graph-net"></a>Вызов Microsoft Graph (.NET)
 
-Класс [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) используется для получения учетных данных токена для кода, чтобы авторизовать запросы в службу хранилища Azure.  Создайте экземпляр класса [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), который использует управляемое удостоверение для получения токенов и их подключения к клиенту службы. Приведенный ниже пример кода получает учетные данные токена с пройденной проверкой подлинности и использует их для создания объекта клиента службы, который получает список пользователей в группе.  
+Класс [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) используется для получения учетных данных токена для кода, чтобы авторизовать запросы в Microsoft Graph. Создайте экземпляр класса [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), который использует управляемое удостоверение для получения токенов и их подключения к клиенту службы. Приведенный ниже пример кода получает учетные данные токена с пройденной проверкой подлинности и использует их для создания объекта клиента службы, который получает список пользователей в группе.
 
-### <a name="install-microsoftgraph-client-library-package"></a>Установка пакета клиентской библиотеки Microsoft.Graph
+### <a name="install-the-microsoftgraph-client-library-package"></a>Установка пакета клиентской библиотеки Microsoft.Graph
 
 Установите в проект [пакет NuGet Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph) с помощью интерфейса командной строки .NET Core или консоли диспетчера пакетов в Visual Studio.
 
 # <a name="command-line"></a>[Командная строка](#tab/command-line)
 
-Откройте командную строку и перейдите в каталог, в котором находится файл проекта.
+Откройте командную строку и перейдите в каталог с файлом проекта.
 
-Выполните команды установки:
+Выполните команды установки.
 
 ```dotnetcli
 dotnet add package Microsoft.Graph
@@ -135,7 +139,7 @@ dotnet add package Microsoft.Graph
 
 Откройте проект или решение в Visual Studio, а затем — консоль, выбрав **Средства** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
 
-Выполните команды установки:
+Выполните команды установки.
 ```powershell
 Install-Package Microsoft.Graph
 ```
@@ -159,7 +163,7 @@ public IList<MSGraphUser> Users { get; set; }
 
 public async Task OnGetAsync()
 {
-    // Create the Graph service client with a DefaultAzureCredential which gets an access token using the available Managed Identity
+    // Create the Microsoft Graph service client with a DefaultAzureCredential class, which gets an access token by using the available Managed Identity.
     var credential = new DefaultAzureCredential();
     var token = credential.GetToken(
         new Azure.Core.TokenRequestContext(
@@ -202,7 +206,7 @@ public async Task OnGetAsync()
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы завершили работу с этим руководством и вам больше не требуется веб-приложение или связанные с ним ресурсы, необходимо [очистить созданные ресурсы](scenario-secure-app-clean-up-resources.md).
+Если вы завершили работу с этим учебником и вам больше не требуется веб-приложение или связанные с ним ресурсы, необходимо [очистить созданные ресурсы](scenario-secure-app-clean-up-resources.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

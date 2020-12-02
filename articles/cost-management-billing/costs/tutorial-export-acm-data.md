@@ -3,18 +3,18 @@ title: Руководство. Создание экспортированных
 description: В этой статье показано, как создавать экспортированные данные в службе "Управление затратами Azure" и управлять ими, чтобы использовать эти данные во внешних системах.
 author: bandersmsft
 ms.author: banders
-ms.date: 08/05/2020
+ms.date: 11/20/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: 6ef5a457bac7b384dc1b4349b1782a752c41ea26
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: dcf9b925e7f0ce691a5a50850a30f723d48ec50b
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91447609"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "96007228"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Руководство. Создание задачи для экспорта данных и управление экспортированными данными
 
@@ -50,6 +50,8 @@ ms.locfileid: "91447609"
 
 ## <a name="create-a-daily-export"></a>Создание ежедневного экспорта
 
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
 Чтобы создать или запланировать операцию экспорта либо же просмотреть сведения о ней, откройте требуемую область на портале Azure и выберите в меню **Анализ затрат**. Например, перейдите к разделу **Подписки**, выберите подписку из списка и щелкните в меню **Анализ затрат**. В верхней части страницы анализа затрат выберите **Параметры**, а затем — **Экспорт**.
 
 > [!NOTE]
@@ -62,7 +64,7 @@ ms.locfileid: "91447609"
     - Выберите **Amortized cost (Usage and Purchases)** (Амортизированная стоимость (использование и покупки)), чтобы экспортировать амортизированную стоимость покупок, например резервирований Azure.
 1. Для параметра **Тип экспорта** выберите одно из следующих значений:
     - **Ежедневный экспорт расходов за текущий месяц** — ежедневное предоставление нового файла экспорта для расходов за текущий месяц. Последние данные агрегируются из предыдущего ежедневного экспорта.
-    - **Weekly export of cost for the last 7 days** (Еженедельный экспорт расходов за последние 7 дней) — создание еженедельного экспорта расходов за последние семь дней с выбранной даты начала экспорта.  
+    - **Weekly export of cost for the last seven days** (Еженедельный экспорт расходов за последние семь дней) — создание еженедельного экспорта расходов за последние семь дней с выбранной даты начала экспорта.  
     - **Monthly export of last month's costs** (Ежемесячный экспорт расходов за прошлый месяц) — предоставление экспорта расходов за прошлый месяц по сравнению с текущим месяцем создания экспорта. Далее экспорт будет выполняться по расписанию на пятый день каждого нового месяца с расходами за предыдущие месяцы.  
     - **One-time export** (Однократный экспорт) — позволяет выбрать диапазон дат для экспорта исторических данных в хранилище BLOB-объектов Azure. Вы можете экспортировать историю затрат максимум за 90 дней со дня, который вы выберете. Этот экспорт выполняется немедленно и будет доступен в вашей учетной записи хранения в течение двух часов.  
         В зависимости от типа экспорта выберите дату начала или дату **С** и **До**.
@@ -76,6 +78,76 @@ ms.locfileid: "91447609"
 Новый экспорт отобразится в списке экспорта. По умолчанию новые задачи экспорта включены. Если требуется отключить или удалить запланированный экспорт, выберите любой пункт в списке, а затем **Выключить** или **Удалить**.
 
 Изначально до начала экспорта может потребоваться от 12 до 24 часов. Однако для отображения данных в экспортированных файлах может понадобиться больше времени.
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы подготовить среду для Azure CLI, выполните указанные ниже действия.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+1. Чтобы просмотреть свои текущие экспорты после входа в систему, используйте команду [az costmanagement export list](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_list):
+
+   ```azurecli
+   az costmanagement export list --scope "subscriptions/00000000-0000-0000-0000-000000000000"
+   ```
+
+   >[!NOTE]
+   >
+   >* Помимо подписок можно экспортировать группы ресурсов и группы управления. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+   >* Войдя в систему как партнер в области учетной записи выставления счетов или в клиентском арендаторе, вы можете экспортировать данные в учетную запись хранения Azure, связанную с учетной записью хранения партнера. При этом в арендаторе CSP должна быть активная подписка.
+
+1. Создайте группу ресурсов или используйте существующую. Чтобы создать группу ресурсов, используйте команду [az group create](/cli/azure/group#az_group_create):
+
+   ```azurecli
+   az group create --name TreyNetwork --location "East US"
+   ```
+
+1. Создайте учетную запись хранения, чтобы получать экспортируемые данные, или используйте уже существующую. Для создания учетной записи хранения используйте команду [az storage account create](/cli/azure/storage/account#az_storage_account_create):
+
+   ```azurecli
+   az storage account create --resource-group TreyNetwork --name cmdemo
+   ```
+
+1. Выполните команду [az costmanagement export create](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_create), чтобы создать экспорт:
+
+   ```azurecli
+   az costmanagement export create --name DemoExport --type ActualCost \
+   --scope "subscriptions/00000000-0000-0000-0000-000000000000" --storage-account-id cmdemo \
+   --storage-container democontainer --timeframe MonthToDate --recurrence Daily \
+   --recurrence-period from="2020-06-01T00:00:00Z" to="2020-10-31T00:00:00Z" \
+   --schedule-status Active --storage-directory demodirectory
+   ```
+
+   Для параметра **--type** можно выбирать между `ActualCost`, `AmortizedCost` или `Usage`.
+
+   В этом примере используется `MonthToDate`. Экспорт ежедневно создает файл экспорта для дневных расходов за текущий месяц. Последние данные агрегируются из предыдущего ежедневного экспорта текущего месяца.
+
+1. Для просмотра подробных сведений об операции экспорта используйте команду [az costmanagement export show](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_show):
+
+   ```azurecli
+   az costmanagement export show --name DemoExport \
+      --scope "subscriptions/00000000-0000-0000-0000-000000000000"
+   ```
+
+1. Экспорт можно обновить с помощью команды [az costmanagement export update](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_update):
+
+   ```azurecli
+   az costmanagement export update --name DemoExport 
+      --scope "subscriptions/00000000-0000-0000-0000-000000000000" --storage-directory demodirectory02
+   ```
+
+   В этом примере изменяется выходной каталог.
+
+>[!NOTE]
+>Изначально до начала экспорта может потребоваться от 12 до 24 часов. Однако для отображения данных в экспортированных файлах может понадобиться больше времени.
+
+Вы можете удалить экспорт, используя команду [az costmanagement export delete](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_delete):
+
+```azurecli
+az costmanagement export delete --name DemoExport --scope "subscriptions/00000000-0000-0000-0000-000000000000"
+```
+
+---
 
 ### <a name="export-schedule"></a>Экспорт расписания
 
@@ -91,9 +163,9 @@ ms.locfileid: "91447609"
 
 1. Если группа управления еще не создана, создайте одну группу и назначьте ей подписки.
 1. В поле анализа затрат задайте область для группы управления и щелкните **Select this management group** (Выбрать эту группу управления).  
-    :::image type="content" source="./media/tutorial-export-acm-data/management-group-scope.png" alt-text="Пример нового экспорта" lightbox="./media/tutorial-export-acm-data/management-group-scope.png":::
+    :::image type="content" source="./media/tutorial-export-acm-data/management-group-scope.png" alt-text="Пример параметра выбора группы управления" lightbox="./media/tutorial-export-acm-data/management-group-scope.png":::
 1. Создайте операцию экспорта в этой области, чтобы получить данные по управлению затратами для подписок в этой группе управления.  
-    :::image type="content" source="./media/tutorial-export-acm-data/new-export-management-group-scope.png" alt-text="Пример нового экспорта":::
+    :::image type="content" source="./media/tutorial-export-acm-data/new-export-management-group-scope.png" alt-text="Пример параметра создания нового экспорта с областью группы управления":::
 
 ## <a name="verify-that-data-is-collected"></a>Проверка сбора данных
 
@@ -117,7 +189,7 @@ ms.locfileid: "91447609"
 
 1. В разделе "Анализ затрат" выберите **Параметры**, а затем выберите **Экспортируемые элементы**.
 1. В списке экспортируемых элементов выберите учетную запись хранения для элемента.
-1. В учетной записи хранения нажмите **Контейнеры**.
+1. В учетной записи хранения выберите **Контейнеры**.
 1. В списке контейнеров выберите нужный контейнер.
 1. Перейдите к нужной дате в каталоге и списке больших двоичных объектов хранилища.
 1. Выберите CSV-файл и нажмите **Загрузить**.
@@ -128,15 +200,15 @@ ms.locfileid: "91447609"
 
 Чтобы просмотреть журнал выполнения запланированного экспорта, выберите отдельный экспорт на странице со списком экспортов. На этой же странице вы можете быстро просмотреть время выполнения предыдущих операций экспорта, а также запустить следующий экспорт. Ниже приведен пример журнала выполнения.
 
-:::image type="content" source="./media/tutorial-export-acm-data/run-history.png" alt-text="Пример нового экспорта":::
+:::image type="content" source="./media/tutorial-export-acm-data/run-history.png" alt-text="Снимок экрана: панель &quot;Экспортируемые элементы&quot;":::
 
 Выберите экспорт, чтобы просмотреть его журнал выполнения.
 
-:::image type="content" source="./media/tutorial-export-acm-data/single-export-run-history.png" alt-text="Пример нового экспорта":::
+:::image type="content" source="./media/tutorial-export-acm-data/single-export-run-history.png" alt-text="Снимок экрана: журнал выполнения экспорта.":::
 
 ## <a name="access-exported-data-from-other-systems"></a>Доступ к экспортированным данным из других систем
 
-Одной из целей экспорта данных системы управления затратами является возможность доступа к данным из внешних систем. Можно использовать систему панелей мониторинга или другую финансовую систему. Такие системы значительно варьируются, поэтому приводить примеры нецелесообразно.  Однако для начала можно осуществлять доступ к данным из ваших приложений, следуя инструкциям в разделе [Вводные сведения о службе хранилища Azure](../../storage/common/storage-introduction.md).
+Одной из целей экспорта данных системы управления затратами является возможность доступа к данным из внешних систем. Можно использовать систему панелей мониторинга или другую финансовую систему. Такие системы значительно варьируются, поэтому приводить примеры нецелесообразно.  Однако для начала можно осуществлять доступ к данным из ваших приложений, следуя инструкциям в разделе [Общие сведения о службе хранилища Azure](../../storage/common/storage-introduction.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: 0aea0425123cab4da1939e85a2cfd6071f772737
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 5f8bf6fb6f464bcb74d34e2d99fac16c24b12615
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95795755"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175718"
 ---
 # <a name="quickstart-create-a-python-function-in-azure-from-the-command-line"></a>Краткое руководство. Создание функции Python в Azure из командной строки
 
@@ -29,7 +29,7 @@ ms.locfileid: "95795755"
 
 + Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 
-+ [Azure Functions Core Tools](functions-run-local.md#v2) версии 3.x.
++ [Azure Functions Core Tools](functions-run-local.md#v2) версии 3.x.
   
 + Один из следующих инструментов для создания ресурсов Azure:
 
@@ -203,7 +203,7 @@ py -m venv .venv
     New-AzResourceGroup -Name AzureFunctionsQuickstart-rg -Location westeurope
     ```
 
-    Команда [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) создает группу ресурсов. Группу ресурсов и ресурсы целесообразно создавать в ближайшем к вам регионе. Для этого используйте командлет [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation).
+    Команда [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) создает группу ресурсов. Группу ресурсов и ресурсы целесообразно создавать в ближайшем к вам регионе. Для этого используйте командлет [Get-AzLocation](/powershell/module/az.resources/get-azlocation).
 
     ---
 

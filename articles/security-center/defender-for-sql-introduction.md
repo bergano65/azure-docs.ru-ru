@@ -3,17 +3,17 @@ title: Преимущества и функции Azure Defender для SQL
 description: Сведения о преимуществах и функциях Azure Defender для SQL.
 author: memildin
 ms.author: memildin
-ms.date: 11/17/2020
+ms.date: 11/22/2020
 ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: b4f046339c027a5ae66f7f7510d8d2b311abd6df
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: bb24c04681b142aaa1c80738090afe2a13949495
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693466"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96014552"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Общие сведения об Azure Defender для SQL
 
@@ -25,7 +25,7 @@ Azure Defender для SQL содержит два плана Azure Defender, к�
 |----|:----|
 |Состояние выпуска:|**Azure Defender для серверов баз данных SQL Azure** — общедоступная версия<br>**Azure Defender для серверов SQL на компьютерах** — предварительная версия<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
 |Цены|Для двух планов, которые входят в предложение **Azure Defender для SQL**, плата взимается по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
-|Защищаемые версии SQL|База данных SQL Azure <br>Управляемый экземпляр SQL Azure<br>Выделенный пул SQL в Azure Synapse (ранее — Хранилище данных SQL)<br>SQL Server (все поддерживаемые версии)|
+|Защищаемые версии SQL|SQL на виртуальных машинах Azure ([Windows](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) и [Linux](../azure-sql/virtual-machines/linux/sql-server-on-linux-vm-what-is-iaas-overview.md))<br>[Серверы SQL с поддержкой Arc](https://docs.microsoft.com/sql/sql-server/azure-arc/overview) (включая локальные серверы SQL)<br>[Отдельные базы данных](../azure-sql/database/single-database-overview.md) и [эластичные пулы](../azure-sql/database/elastic-pool-overview.md) Azure SQL<br>[Управляемый экземпляр SQL Azure](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md)<br>[Выделенный пул SQL в Azure Synapse Analytics (ранее — Хранилище данных SQL)](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md#dedicated-sql-pool-in-azure-synapse)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) China Gov и другие правительственные облака|
 |||
 

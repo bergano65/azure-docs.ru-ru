@@ -14,12 +14,12 @@ ms.reviewer: davidph, sstein
 manager: cgronlun
 ms.date: 05/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 62f1015bc945b5c01f719d7e96e6446c49ac8b8a
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 2e32a4abeae78aa7105f21ecffbb18c2eae841a4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675154"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185629"
 ---
 # <a name="quickstart-use-r-with-azure-sql-database-machine-learning-services-preview-to-query-a-database"></a>Краткое руководство. Использование языка R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия) для выполнения запросов к базе данных 
 
@@ -37,7 +37,7 @@ ms.locfileid: "92675154"
 - [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS).
 
 > [!IMPORTANT]
-> Скрипты в этой статье предназначены для использования базы данных **Adventure Works** .
+> Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
 
 Службы машинного обучения с поддержкой R — это функция Базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. [The R Project for Statistical Computing](https://www.r-project.org/) (Проект R для статических вычислений)
 
@@ -47,9 +47,9 @@ ms.locfileid: "92675154"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL** .
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
 
-3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера рядом с полем **Узел** для управляемого экземпляра в Управляемом экземпляре SQL Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования** .
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера рядом с полем **Узел** для управляемого экземпляра в Управляемом экземпляре SQL Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
 
 ## <a name="create-code-to-query-your-database"></a>Создание кода для запроса к базе данных
 
@@ -84,4 +84,4 @@ ms.locfileid: "92675154"
 
 - [Учебник. Проектирование реляционной базы данных в службе "База данных SQL Azure" с помощью SSMS](design-first-database-tutorial.md)
 - [Machine Learning Services (with R) in Azure SQL Database (preview)](../managed-instance/machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))
-- [Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context)
+- [Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%2fazure%2fazure-sql%2fmanaged-instance%2fcontext%2fml-context)

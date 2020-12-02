@@ -9,12 +9,12 @@ ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 4beb1c31f34ec4e8d26228cfe4f30f5109a1b60c
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 85665dbda2ed11ffa04b71e4317f2b34b83d317f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394549"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349373"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство. Запуск рабочего процесса в службе Microsoft Genomics
 
@@ -40,7 +40,7 @@ ms.locfileid: "93394549"
  |Имя учетной записи         | MyGenomicsAccount     |Выберите уникальный идентификатор учетной записи. Допустимые имена см. в статье [Соглашения об именовании](/azure/architecture/best-practices/resource-naming). |
  |Расположение                   | западная часть США 2                    |    Служба доступна в таких регионах: западная часть США 2, Западная Европа и Юго-Восточная Азия. |
 
-В строке меню вверху выберите пункт **Уведомления** , чтобы отслеживать процесс развертывания.
+В строке меню вверху выберите пункт **Уведомления**, чтобы отслеживать процесс развертывания.
 
 ![Уведомления](./media/quickstart-run-genomics-workflow-portal/genomics-notifications-box1.png "Уведомления")
 
@@ -112,12 +112,12 @@ msgen list -f "<full path where you saved the config file>"
 [https://msgensampledata.blob.core.windows.net/small/chr21_1.fq.gz](https://msgensampledata.blob.core.windows.net/small/chr21_1.fq.gz)
 [https://msgensampledata.blob.core.windows.net/small/chr21_2.fq.gz](https://msgensampledata.blob.core.windows.net/small/chr21_2.fq.gz)
 
-Создайте в своей учетной записи хранения один контейнер больших двоичных объектов для входных данных и еще один — для выходных данных.  Передайте входные данные в контейнер больших двоичных объектов. Для этого можно использовать различные инструменты, например [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/), [BlobPorter](https://github.com/Azure/blobporter) или [AzCopy](../storage/common/storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). 
+Создайте в своей учетной записи хранения один контейнер больших двоичных объектов для входных данных и еще один — для выходных данных.  Передайте входные данные в контейнер больших двоичных объектов. Для этого можно использовать различные инструменты, например [Обозреватель службы хранилища Microsoft Azure](https://azure.microsoft.com/features/storage-explorer/), [BlobPorter](https://github.com/Azure/blobporter) или [AzCopy](../storage/common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
 
 ## <a name="run-a-workflow-through-the-microsoft-genomics-service-using-the-msgen-python-client"></a>Запуск рабочего процесса в службе Microsoft Genomics с помощью клиента Python `msgen`
 
-Для запуска рабочего процесса в службе Microsoft Genomics измените файл *config.txt* , указав в нем контейнер хранилища входных и выходных данных.
-Откройте файл *config.txt* , скачанный из учетной записи Genomics. Разделы, которые необходимо указать: ключ подписки и шесть элементов в конце файла (имя учетной записи хранения, ключ и имя контейнера для входных данных, имя учетной записи хранения, ключ и имя контейнера для выходных данных). Чтобы найти эти сведения, перейдите на портале в раздел **Ключи доступа** вашей учетной записи хранения или непосредственно в Обозреватель службы хранилища Azure.  
+Для запуска рабочего процесса в службе Microsoft Genomics измените файл *config.txt*, указав в нем контейнер хранилища входных и выходных данных.
+Откройте файл *config.txt*, скачанный из учетной записи Genomics. Разделы, которые необходимо указать: ключ подписки и шесть элементов в конце файла (имя учетной записи хранения, ключ и имя контейнера для входных данных, имя учетной записи хранения, ключ и имя контейнера для выходных данных). Чтобы найти эти сведения, перейдите на портале в раздел **Ключи доступа** вашей учетной записи хранения или непосредственно в Обозреватель службы хранилища Azure.  
 
 ![Конфигурация Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-config.PNG "Конфигурация Genomics")
 
@@ -125,7 +125,7 @@ msgen list -f "<full path where you saved the config file>"
 
 Служба Genomics записывает файлы VCF по умолчанию. Если необходимо получить выходные данные в формате gVCF, а не VCF (эквивалентные `-emitRefConfidence` в GATK 3.x и `emit-ref-confidence` в GATK 4.x), добавьте параметр `emit_ref_confidence` в ваш *config.txt* и установите для него `gvcf`, как показано на рисунке, приведенном выше.  Чтобы изменить выходные данные VCF, удалите их из файла *config.txt* или установите для параметра `emit_ref_confidence` значение `none`. 
 
-`bgzip` — это средство, которое сжимает файл VCF или GVCF. `tabix` создает индекс для сжатого файла. По умолчанию служба Genomics выполняет `bgzip`, а затем — `tabix` для выходных данных .g.vcf, но не запускает эти средства по умолчанию для выходных данных .vcf. При запуске служба создает файлы GZ (выходные данные bgzip) и TBI (выходные данные tabix). Аргумент является логическим значением, которое по умолчанию имеет значение false для выходных данных VCF и значение true для выходных данных .g.vcf. Для использования в командной строке укажите для `-bz` или `--bgzip-output` значение `true` (запустите bgzip и tabix) или `false`. Чтобы использовать этот аргумент в файле *config.txt* , добавьте в файл значение `bgzip_output: true` или `bgzip_output: false`.
+`bgzip` — это средство, которое сжимает файл VCF или GVCF. `tabix` создает индекс для сжатого файла. По умолчанию служба Genomics выполняет `bgzip`, а затем — `tabix` для выходных данных .g.vcf, но не запускает эти средства по умолчанию для выходных данных .vcf. При запуске служба создает файлы GZ (выходные данные bgzip) и TBI (выходные данные tabix). Аргумент является логическим значением, которое по умолчанию имеет значение false для выходных данных VCF и значение true для выходных данных .g.vcf. Для использования в командной строке укажите для `-bz` или `--bgzip-output` значение `true` (запустите bgzip и tabix) или `false`. Чтобы использовать этот аргумент в файле *config.txt*, добавьте в файл значение `bgzip_output: true` или `bgzip_output: false`.
 
 ### <a name="submit-your-workflow-to-the-microsoft-genomics-service-using-the-msgen-python-client"></a>Отправка рабочего процесса в службу Microsoft Genomics с помощью клиента Python `msgen`
 

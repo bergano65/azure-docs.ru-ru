@@ -7,12 +7,12 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 09/30/2020
 ms.custom: mvc, contperfq1
-ms.openlocfilehash: 1a83385c7f384f7727a0fd10e238c6511950abfe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31dd33bd8805ffcc677d5f0e98e81f2fa9e91ee2
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612720"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95537056"
 ---
 # <a name="create-custom-kpi-dashboards-using-azure-application-insights"></a>Создание настраиваемых панелей мониторинга ключевых показателей эффективности с помощью Azure Application Insights
 

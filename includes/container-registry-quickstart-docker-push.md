@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/04/2020
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 16c1dec9e52be98e5b4e0103a583bdc219bc2417
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6a16106495e584c9acbc02d380242df665f35ce5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88031823"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020022"
 ---
 ## <a name="push-image-to-registry"></a>Отправка образа в реестр
 
@@ -23,7 +23,7 @@ ms.locfileid: "88031823"
 docker pull hello-world
 ```
 
-Прежде чем отправить образ в реестр, нужно добавить в него тег с полным именем сервера входа для реестра. Имя сервера входа имеет формат *\<registry-name\>.azurecr.io* (в нижнем регистре), например *mycontainerregistry.azurecr.io*.
+Прежде чем отправить образ в реестр, нужно добавить в него тег с полным именем сервера входа для реестра. Имя сервера для входа имеет формат *\<registry-name\>.azurecr.io* (должно быть в нижнем регистре), например *mycontainerregistry.azurecr.io*.
 
 Присвойте образу тег с помощью команды [docker tag][docker-tag]. Замените значение `<login-server>` именем сервера входа для экземпляра ACR.
 

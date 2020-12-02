@@ -9,11 +9,11 @@ ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
 ms.openlocfilehash: ffa562a734e0e6f898aaff89622362080bf1a053
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318200"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001360"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs-version-204"></a>Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure (версия 2.0.4)
 
@@ -43,21 +43,40 @@ ms.locfileid: "91318200"
 
 ## <a name="connect-your-ios-app-to-notification-hubs"></a>Подключение приложения iOS к центрам уведомлений
 
-1. В Xcode создайте новый проект iOS и выберите шаблон  **Single View Application** (Приложение с одним представлением).
+1. В XCode создайте новый проект iOS и выберите шаблон **Single View Application** (Приложение с одним представлением).
 
    :::image type="content" source="media/ios-sdk/image1.png" alt-text="Выбор шаблона":::
 
-2. При настройке параметров нового проекта используйте те же  **имя продукта** и **идентификатор организации** , которые вы использовали при указании идентификатора пакета на портале разработчиков Apple.
+2. При настройке параметров нового проекта используйте те же **имя продукта** и **идентификатор организации**, которые вы использовали при указании идентификатора пакета на портале разработчиков Apple.
 
-3. В навигаторе проектов выберите имя проекта в разделе  **Targets** (Цели), а затем перейдите на вкладку  **Signing & Capabilities** (Подписывание и возможности). Обязательно выберите правильное значение  **Team** (Команда) для учетной записи разработчика Apple. Среда XCode должна автоматически извлечь профиль подготовки, который вы создали ранее, используя ваш идентификатор пакета.
+3. В навигаторе проекта выберите имя проекта в разделе **Цели**, а затем вкладку **Signing & Capabilities** (Подписывание и возможности). Обязательно выберите соответствующую **команду** для учетной записи разработчика Apple. Среда XCode должна автоматически извлечь профиль подготовки, который вы создали ранее, используя ваш идентификатор пакета.
 
-   Если новый профиль подготовки, созданный в Xcode, не отображается, обновите профили для идентификатора подписи. В строке меню щелкните **Xcode**, выберите **Preferences** (Настройки), откройте вкладку **Account** (Учетная запись), нажмите кнопку **View Details** (Просмотреть сведения), затем щелкните свой идентификатор подписи и нажмите кнопку обновления в нижнем правом углу.
+   Если новый профиль подготовки, созданный в Xcode, не отображается, обновите профили для идентификатора подписи. В строке меню щелкните **Xcode** выберите **Preferences** (Настройки), откройте вкладку **Account** (Учетная запись), нажмите кнопку **View Details** (Просмотреть сведения), щелкните свой идентификатор подписи, а затем нажмите кнопку Refresh (Обновить) в нижнем правом углу.
 
-   :::image type="content" source="media/ios-sdk/image2.png" alt-text="Выбор шаблона":::
+   :::image type="content" source="media/ios-sdk/image2.png" alt-text="Подробнее":::
 
-4. На вкладке **Signing & Capabilities** (Подписывание и возможности) выберите **+ Capability** (Добавить возможность). Дважды щелкните **Push Notifications** (Push-уведомления), чтобы включить их.
+4. На вкладке **Signing & Capabilities** (Подписывание и возможности) выберите **+ Capability** (+ Возможность). Дважды щелкните **Push-уведомления**, чтобы включить их.
 
-   :::image type="content" source="media/ios-sdk/image3.png" alt-text="Выбор шаблона"
+   :::image type="content" source="media/ios-sdk/image3.png" alt-text="Возможность":::
+
+5. Добавьте модули пакета SDK для Центров уведомлений Azure.
+
+   Вы можете интегрировать пакет SDK для Центров уведомлений Azure в свое приложение с помощью [Cocoapods](https://cocoapods.org/) или вручную, добавив двоичные файлы в свой проект.
+
+   - Интеграция с помощью Cocoapods. Добавьте следующие зависимости в файл pod, чтобы включить пакет средств разработки Центров уведомлений Azure в приложение.
+
+      ```ruby
+      pod 'AzureNotificationHubs-iOS'
+      ```
+
+      - Запустите "pod install", чтобы установить только что определенный объект pod, затем откройте файл с расширением .xcworkspace.
+
+         Если при выполнении pod install возникла ошибка типа **Unable to find a specification for AzureNotificationHubs-iOS** (Не удается найти спецификацию для AzureNotificationHubs-iOS), выполните `pod repo update`, чтобы получить последние объекты pod из репозитория Cocoapods, и еще раз выполните pod install.
+
+   - Интеграция с помощью Carthage. Добавьте в Cartfile следующие зависимости, чтобы включить пакет средств разработки Центров уведомлений Azure в свое приложение:
+
+      ```ruby
+      github "Azure/azure-notificationhubs-ios"
       ```
 
       - Затем обновите зависимости сборки:
@@ -66,17 +85,17 @@ ms.locfileid: "91318200"
       $ carthage update
       ```
 
-      Дополнительные сведения об использовании Carthage см. в  [репозитории Carthage на GitHub](https://github.com/Carthage/Carthage).
+      Дополнительные сведения об использовании Carthage см. в [репозитории GitHub](https://github.com/Carthage/Carthage).
 
    - Интеграция путем копирования двоичных файлов в проект. Для интеграции вы можете просто скопировать двоичные файлы в проект, как описано ниже.
 
-        - Скачайте и распакуйте платформу  [пакета средств разработки Центров уведомлений Azure](https://github.com/Azure/azure-notificationhubs-android/releases), которая предоставляется в виде ZIP-файла.
+        - Скачайте и распакуйте платформу для [пакета средств разработки Центров уведомлений Azure](https://github.com/Azure/azure-notificationhubs-android/releases), которая предоставляется в виде ZIP-файла.
 
-        - В Xcode щелкните проект правой кнопкой мыши и выберите параметр **Add Files to** (Добавить файлы в), чтобы добавить папку **WindowsAzureMessaging.framework** в проект Xcode. Выберите  **Options** (Параметры) и убедитесь, что флажок  **Copy items if needed** (Копировать элементы при необходимости) установлен, а затем щелкните **Add** (Добавить).
+        - В XCode щелкните проект правой кнопкой мыши и выберите параметр **Add Files to** (Добавить файлы в), чтобы добавить папку **WindowsAzureMessaging.framework** в проект XCode. Нажмите кнопку **Options** (Параметры), установите флажок **Copy items if needed** (Копировать элементы при необходимости) и нажмите кнопку **Add** (Добавить).
 
-          :::image type="content" source="media/ios-sdk/image4.png" alt-text="Выбор шаблона":::
+          :::image type="content" source="media/ios-sdk/image4.png" alt-text="Добавление платформы":::
 
-6. Добавьте в проект новый файл заголовка с именем  **Constants.h**. Для этого щелкните имя проекта правой кнопкой мыши и выберите  **New File…** (Создать файл…). Затем выберите вариант **Header File** (Файл заголовка). Этот файл содержит константы для центра уведомлений. Щелкните **Далее**. Присвойте файлу имя **Constants.h**.
+6. Добавьте новый файл заголовка в проект с именем **Constants.h**. Для этого щелкните имя проекта правой кнопкой мыши и выберите **New File...** (Создать файл...). Затем выберите **Файл заголовка**. Этот файл содержит константы для центра уведомлений. Выберите **Далее**. Назовите файл **Constants.h**.
 
 7. Добавьте в него указанный ниже код:
 
@@ -89,15 +108,21 @@ ms.locfileid: "91318200"
    #endif /* Constants_h */
    ```
 
-8. Добавьте файл реализации для Constants.h. Для этого щелкните имя проекта правой кнопкой мыши и выберите  **New File…** (Создать файл…). Выберите **Objective-C File** (Файл Objective-C), а затем щелкните **Далее**. Присвойте файлу имя **Constants.m**.
+8. Добавьте файл реализации для Constants.h. Для этого щелкните имя проекта правой кнопкой мыши и выберите **New File...** (Создать файл...). Выберите **Objective-C File** (Файл Objective-C), а затем нажмите кнопку **Далее**. Назовите файл **Constants.m**.
 
-   :::image type="content" source="media/ios-sdk/image5.png" alt-text="Выбор шаблона"
+   :::image type="content" source="media/ios-sdk/image5.png" alt-text="Добавление файла реализации":::
+
+9. Откройте файл **Constants.m** и замените его содержимое следующим кодом. Замените строковые литералы`NotificationHubConnectionString` и `NotificationHubConnectionString`, выполняющие роль заполнителей, именем центра и значением **DefaultListenSharedAccessSignature**, которые вы получили ранее на портале:
+
+   ```objc
+   #import <Foundation/Foundation.h>
+   #import "Constants.h"
 
    NSString* const NHInfoConnectionString = @"NotificationHubConnectionString";
    NSString* const NHInfoHubName = @"NotificationHubName";NSString* const NHUserDefaultTags = @"notification_tags";
    ```
 
-10. Откройте файл проекта **AppDelegate.h** и замените его содержимое следующим кодом:
+10. Откройте файл проекта **AppDelegate.h** и замените его содержимое следующим кодом:
 
     ```objc
     #import <UIKit/UIKit.h>
@@ -114,20 +139,20 @@ ms.locfileid: "91318200"
     @end
     ```
 
-11. В файле проекта **AppDelegate.m** добавьте следующие инструкции `import` :
+11. В файле проекта **AppDelegate.m** добавьте следующие операторы `import`:
 
     ```objc
     #import "Constants.h"
     #import "NotificationDetailViewController.h"
     ```
 
-12. В том же файле  **AppDelegate.m** добавьте в метод `didFinishLaunchingWithOptions` следующую строку кода с учетом используемой версии iOS. Этот код регистрирует маркер вашего устройства в APNs.
+12. Кроме того, добавьте в файле **AppDelegate.m** следующую строку кода в метод `didFinishLaunchingWithOptions` с учетом вашей версии iOS. Этот код регистрирует маркер вашего устройства в APNs.
 
     ```objc
     [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
     ```
 
-13. В том же файле **AppDelegate.m** замените весь код после `didFinishLaunchingWithOptions` следующим фрагментом:
+13. В том же файле **AppDelegate.m** замените весь код после `didFinishLaunchingWithOptions` следующим:
 
     ```objc
     // Tells the app that a remote notification arrived that indicates there is data to be fetched.
@@ -271,11 +296,11 @@ ms.locfileid: "91318200"
     @end
     ```
 
-    Этот код подключается к центру уведомлений, используя сведения о подключении, указанные в файле **Constants.h**. Затем он передает маркер устройства в центр уведомлений, чтобы тот мог отправлять уведомления.
+    Этот код подключается к центру уведомлений, используя сведения о соединении, указанные в проекте **Constants.h**. Затем он передает маркер устройства в центр уведомлений, чтобы тот мог отправлять уведомления.
 
 ### <a name="create-notificationdetailviewcontroller-header-file"></a>Создание файла заголовка NotificationDetailViewController
 
-1. Снова выполните предыдущие инструкции, чтобы добавить еще один файл заголовка  **NotificationDetailViewController.h**. Замените содержимое нового файла приведенным ниже кодом:
+1. Аналогично предыдущим инструкциям добавьте другой файл заголовка **NotificationDetailViewController.h**. Замените содержимое нового файла приведенным ниже кодом:
 
    ```objc
    #import <UIKit/UIKit.h>
@@ -297,7 +322,7 @@ ms.locfileid: "91318200"
    NS_ASSUME_NONNULL_END
    ```
 
-2. Добавьте файл реализации **NotificationDetailViewController.m**. Замените содержимое этого файла следующим кодом, который реализует методы UIViewController:
+2. Добавьте файл реализации **NotificationDetailViewController.m**. Замените содержимое этого файла следующим кодом, который реализует методы UIViewController:
 
    ```objc
    #import "NotificationDetailViewController.h"
@@ -362,14 +387,14 @@ ms.locfileid: "91318200"
 
 ### <a name="viewcontroller"></a>ViewController
 
-1. В файле проекта **ViewController.h** добавьте следующие инструкции `import` :
+1. В файле проекта **ViewController.h** добавьте следующие инструкции `import`:
 
    ```objc
    #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
    #import <UserNotifications/UserNotifications.h>
    ```
 
-2. В том же файле **ViewController.h** добавьте следующие объявления свойств после объявления `@interface` :
+2. Кроме того, в **ViewController.h** добавьте следующие объявления свойств после объявления `@interface`:
 
    ```objc
    @property (strong, nonatomic) IBOutlet UITextField *tagsTextField;
@@ -377,7 +402,7 @@ ms.locfileid: "91318200"
    @property (strong, nonatomic) IBOutlet UIButton *unregisterButton;
    ```
 
-3. Замените содержимое файла реализации проекта **ViewController.m** следующим кодом:
+3. Замените содержимое файла реализации проекта **ViewController.m** следующим кодом:
 
    ```objc
    #import "ViewController.h"
@@ -423,32 +448,32 @@ ms.locfileid: "91318200"
 
 ## <a name="send-test-push-notifications"></a>Отправка тестовых push-уведомлений
 
-Получение уведомлений в приложении можно проверить с помощью действия **Тестовая отправка** на [портале Azure](https://portal.azure.com/). Этот параметр позволяет отправить на устройство тестовое push-уведомление.
+Можно проверить, поступают ли в приложение уведомления, с помощью параметра **Тестовая отправка** на [Портал Azure](https://portal.azure.com/). Этот параметр позволяет отправить на устройство тестовое push-уведомление.
 
-:::image type="content" source="media/ios-sdk/image6.png" alt-text="Выбор шаблона":::
+:::image type="content" source="media/ios-sdk/image6.png" alt-text="Тестовая отправка":::
 
 Push-уведомления обычно отправляются во внутренней службе, например мобильных приложениях или службе ASP.NET, с помощью совместимой библиотеки. Если для серверной части библиотека недоступна, для отправки уведомлений также можно напрямую использовать REST API.
 
 Ниже приведен список других учебников, касающихся отправки уведомлений:
 
-- Мобильные приложения Azure. Пример отправки уведомлений с сервера мобильных приложений, интегрированного с Центрами уведомлений, см. в статье  [Добавление push-уведомлений в приложение iOS](/previous-versions/azure/app-service-mobile/app-service-mobile-ios-get-started-push).
-- ASP.NET.  [Отправка push-уведомлений конкретным пользователям с помощью центров уведомлений Azure](notification-hubs-aspnet-backend-ios-apple-apns-notification.md).
-- Пакет SDK для Java Центров уведомлений Azure. Сведения об отправке уведомлений Java см. в статье  [How to use Notification Hubs from Java](notification-hubs-java-push-notification-tutorial.md)  (Использование концентраторов уведомлений из Java). Было протестировано в Eclipse для разработки для Android.
-- PHP.  [Использование центров уведомлений из PHP](notification-hubs-php-push-notification-tutorial.md).
+- Мобильные приложения Azure. Пример отправки уведомлений с сервера мобильных приложений, интегрированного с Центрами уведомлений, см. в статье [Add Push Notifications to your iOS App](/previous-versions/azure/app-service-mobile/app-service-mobile-ios-get-started-push) (Добавление push-уведомлений в приложение iOS).
+- ASP.NET: [Отправка push-уведомлений определенным пользователям с помощью Центров уведомлений](notification-hubs-aspnet-backend-ios-apple-apns-notification.md).
+- Пакет SDK для Центров уведомлений Azure для Java: сведения об отправке уведомлений Java см. в статье [Использование концентраторов уведомлений из Java](notification-hubs-java-push-notification-tutorial.md). Было протестировано в Eclipse для разработки для Android.
+- PHP: [Использование Центров уведомлений из PHP](notification-hubs-php-push-notification-tutorial.md).
 
 ## <a name="verify-that-your-app-receives-push-notifications"></a>Проверка получения push-уведомлений приложением
 
 Для тестирования push-уведомлений в iOS необходимо развернуть приложение на физическом устройстве под управлением iOS. Отправка push-уведомлений Apple через эмулятор iOS невозможна.
 
-1. Запустите приложение и убедитесь, что оно успешно зарегистрировано, а затем нажмите кнопку **ОК**.
+1. Запустите приложение и убедитесь, что оно успешно зарегистрировано, а затем нажмите кнопку **ОК**.
 
-   :::image type="content" source="media/ios-sdk/image7.png" alt-text="Выбор шаблона":::
+   :::image type="content" source="media/ios-sdk/image7.png" alt-text="Зарегистрировать":::
 
-2. Теперь отправьте тестовое push-уведомление с [портала Azure](https://portal.azure.com/), как описано в предыдущем разделе.
+2. Теперь отправьте тестовое push-уведомление с [портала Azure](https://portal.azure.com/), как описано в предыдущем разделе.
 
 3. Push-уведомление отправляется на все устройства, зарегистрированные для получения уведомлений от используемого центра уведомлений.
 
-   :::image type="content" source="media/ios-sdk/image8.png" alt-text="Выбор шаблона":::
+   :::image type="content" source="media/ios-sdk/image8.png" alt-text="Тестовая отправка":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

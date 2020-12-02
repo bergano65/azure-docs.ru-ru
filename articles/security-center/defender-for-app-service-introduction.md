@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 2ac4f41a36a2a18a65816be5ea74e88d0b364294
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: bb0e073d5ccf73434d05c801b9a8727c1d19fa47
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789069"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122236"
 ---
 # <a name="introduction-to-azure-defender-for-app-service"></a>Общие сведения об Azure Defender для Службы приложений
 
@@ -45,7 +45,7 @@ ms.locfileid: "92789069"
 
 - Убедитесь, что используется поддерживаемый план Службы приложений, связанный с выделенными компьютерами. Поддерживаемые планы перечислены выше в разделе [Доступность](#availability).
 
-- Включите **Azure Defender** в своей подписке (при необходимости можно включить только план **Azure Defender для Службы приложений** ), как описано в статье [Цены на Центр безопасности Azure](security-center-pricing.md).
+- Включите **Azure Defender** в своей подписке (при необходимости можно включить только план **Azure Defender для Службы приложений**), как описано в статье [Цены на Центр безопасности Azure](security-center-pricing.md).
 
 Центр безопасности изначально интегрирован со Службой приложений, что устраняет необходимость развертывания и адаптации. Интеграция прозрачна.
 

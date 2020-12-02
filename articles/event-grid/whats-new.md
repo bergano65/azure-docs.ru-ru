@@ -3,12 +3,12 @@ title: Новые возможности Сетка событий Azure — з
 description: Узнайте о новых возможностях Сетки событий Azure, ознакомившись с последними заметками о выпуске, известными проблемами, исправлениями ошибок, нерекомендуемыми функциями и предстоящими изменениями.
 ms.topic: overview
 ms.date: 07/23/2020
-ms.openlocfilehash: 1edfa3e2bc4c8adae113b2215b7fb0483fba4c02
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7528cef7007704bbf434f16622707da8920eec2b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87172697"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350013"
 ---
 # <a name="whats-new-in-azure-event-grid"></a>Новые возможности в Сетке событий Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "87172697"
 - Этот выпуск содержит дополнительные исправления ошибок для повышения качества.
 - Как и версия 5.3.1-preview, этот выпуск соответствует API версии 2020-04-01-preview, которая включает следующие новые возможности: 
     - [Поддержка фильтрации по IP-адресам при публикации событий в доменах и темах](configure-firewall.md)
-    - [Партнерские разделы](partner-topics-overview.md)
+    - [Партнерские разделы](./partner-events-overview.md)
     - [Системные разделы как отслеживаемые ресурсы на портале Azure](system-topics.md)
     - [Доставка событий с использованием управляемого удостоверения службы](managed-service-identity.md) 
     - [Поддержка Приватного канала](configure-private-endpoints.md)
@@ -49,7 +49,7 @@ ms.locfileid: "87172697"
 - Этот выпуск содержит разные исправления ошибок для повышения качества.
 - Как и версия 5.3.0-preview, этот выпуск соответствует API версии 2020-04-01-preview, которая включает следующие новые возможности: 
     - [Поддержка фильтрации по IP-адресам при публикации событий в доменах и темах](configure-firewall.md)
-    - [Партнерские разделы](partner-topics-overview.md)
+    - [Партнерские разделы](./partner-events-overview.md)
     - [Системные разделы как отслеживаемые ресурсы на портале Azure](system-topics.md)
     - [Доставка событий с использованием управляемого удостоверения службы](managed-service-identity.md) 
     - [Поддержка Приватного канала](configure-private-endpoints.md)
@@ -59,7 +59,7 @@ ms.locfileid: "87172697"
 - Как и версия 5.2.0-preview, этот выпуск соответствует версии API 2020-04-01-preview.
 - Включена поддержка следующих новых возможностей: 
     - [Поддержка фильтрации по IP-адресам при публикации событий в доменах и темах](configure-firewall.md)
-    - [Партнерские разделы](partner-topics-overview.md)
+    - [Партнерские разделы](./partner-events-overview.md)
     - [Системные разделы как отслеживаемые ресурсы на портале Azure](system-topics.md)
     - [Доставка событий с использованием управляемого удостоверения службы](managed-service-identity.md) 
     - [Поддержка Приватного канала](configure-private-endpoints.md)

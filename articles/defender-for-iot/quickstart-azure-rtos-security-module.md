@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2020
 ms.author: rkarlin
-ms.openlocfilehash: 38e78b80fd14aec7557b563b2b33faf7d51bd114
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 321c8d2b9e58aba943c5bf19adf54d6359c5be96
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91759738"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351782"
 ---
 # <a name="quickstart-security-module-for-azure-rtos-preview"></a>Краткое руководство. Модуль безопасности для ОСРВ Azure (предварительная версия)
 
-В этой статье описаны предварительные требования для начала работы и объясняется, как включить модуль безопасности для службы ОСРВ Azure в Центре Интернета вещей. Если у вас сейчас нет Центра Интернета вещей, ознакомьтесь со статьей [Создание Центра Интернета вещей с помощью портала Azure](https://docs.microsoft.com/azure/iot-hub/iot-hub-create-through-portal), чтобы приступить к работе.
+В этой статье описаны предварительные требования для начала работы и объясняется, как включить модуль безопасности для службы ОСРВ Azure в Центре Интернета вещей. Если у вас сейчас нет Центра Интернета вещей, ознакомьтесь со статьей [Создание Центра Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-create-through-portal.md), чтобы приступить к работе.
 
 > [!NOTE]
 > Модуль безопасности для ОСРВ Azure поддерживается только в Центрах Интернета вещей уровня "Стандартный".
@@ -63,10 +63,10 @@ ms.locfileid: "91759738"
 1. Выберите **Сбор данных**. 
 1. В разделе **Конфигурация рабочей области** установите переключатель в положение **Вкл.** 
 1. Создайте рабочую область Log Analytics или выберите существующую. Убедитесь, что установлен флажок **Access to raw security data** (Доступ к необработанным данным безопасности). 
- :::image type="content" source="media/quickstart/azure-rtos-data-collection-on.png" alt-text="Доступ к параметру сбора данных для ОСРВ Azure":::
+ :::image type="content" source="media/quickstart/azure-rtos-data-collection-on.png" alt-text="Конфигурация ОСРВ Azure с выбранными параметрами сбора данных и доступа к необработанным данным безопасности":::
 1. Нажмите кнопку **Сохранить**.
 1. Вернитесь к списку ресурсов Azure и убедитесь, что рабочая область Log Analytics (созданная или выбранная) включена для Центра Интернета вещей.
-    :::image type="content" source="media/quickstart/verify-azure-resource-list.png" alt-text="Доступ к параметру сбора данных для ОСРВ Azure"::: 
+    :::image type="content" source="media/quickstart/verify-azure-resource-list.png" alt-text="Проверка списка ресурсов Azure на предмет наличия нужной рабочей области Log Analytics, добавленной для Центра Интернета вещей"::: 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

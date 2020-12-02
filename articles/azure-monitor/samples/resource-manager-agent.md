@@ -1,17 +1,17 @@
 ---
 title: Примеры шаблонов Resource Manager для агентов
-description: Примеры шаблонов Azure Resource Manager для развертывания и настройки агента Log Analytics и расширения системы диагностики в Azure Monitor.
+description: Примеры шаблонов Azure Resource Manager для развертывания и настройки агентов виртуальных машин в Azure Monitor.
 ms.subservice: logs
 ms.topic: sample
 author: bwren
 ms.author: bwren
-ms.date: 05/18/2020
-ms.openlocfilehash: 8b0673e534826acb5ff2d3747053f58fb39ff285
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/17/2020
+ms.openlocfilehash: 00d6635b7bb322d28f0fe3df509ce0cb03e19f3d
+ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83853120"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95308670"
 ---
 # <a name="resource-manager-template-samples-for-agents-in-azure-monitor"></a>Примеры шаблонов Azure Resource Manager для агентов в Azure Monitor
 Эта статья содержит примеры [шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для развертывания и настройки [агента Log Analytics](../platform/log-analytics-agent.md) и [расширения системы диагностики](../platform/diagnostics-extension-overview.md) для виртуальных машин в Azure Monitor. Каждый пример включает файл шаблона и файл параметров с примерами значений для предоставления шаблона.
@@ -19,10 +19,218 @@ ms.locfileid: "83853120"
 [!INCLUDE [azure-monitor-samples](../../../includes/azure-monitor-resource-manager-samples.md)]
 
 
-## <a name="windows-log-analytics-agent"></a>Агент Windows для Log Analytics
+## <a name="azure-monitor-agent-preview"></a>Агент Azure Monitor (предварительная версия)
+Примеры в этом разделе в агенте Azure Monitor (предварительная версия) на агентах Windows и Linux. Сюда входит установка агента на виртуальных машинах в Azure, а также серверы с поддержкой Arc Azure. 
+
+### <a name="windows-azure-virtual-machine"></a>Виртуальная машина Windows Azure
+В приведенном ниже примере на виртуальной машине Windows Azure устанавливается агент Azure Monitor.
+
+#### <a name="template-file"></a>Файл шаблона
+
+```json
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+          "type": "string"
+      },
+      "location": {
+          "type": "string"
+      }
+  },
+  "resources": [
+      {
+          "name": "[concat(parameters('vmName'),'/AzureMonitorWindowsAgent')]",
+          "type": "Microsoft.Compute/virtualMachines/extensions",
+          "location": "[parameters('location')]",
+          "apiVersion": "2020-06-01",
+          "properties": {
+              "publisher": "Microsoft.Azure.Monitor",
+              "type": "AzureMonitorWindowsAgent",
+              "typeHandlerVersion": "1.0",
+              "autoUpgradeMinorVersion": true
+          }
+      }
+  ]
+}
+```
+
+#### <a name="parameter-file"></a>Файл параметров
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+        "value": "my-windows-vm"
+      },
+      "location": {
+        "value": "eastus"
+      }
+  }
+}
+```
+
+### <a name="linux-azure-virtual-machine"></a>Виртуальная машина Azure Linux
+В следующем примере выполняется установка агента Log Analytics на виртуальной машине Linux Azure.
+
+#### <a name="template-file"></a>Файл шаблона
+
+```json
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+          "type": "string"
+      },
+      "location": {
+          "type": "string"
+      }
+  },
+  "resources": [
+      {
+          "name": "[concat(parameters('vmName'),'/AzureMonitorLinuxAgent')]",
+          "type": "Microsoft.Compute/virtualMachines/extensions",
+          "location": "[parameters('location')]",
+          "apiVersion": "2020-06-01",
+          "properties": {
+              "publisher": "Microsoft.Azure.Monitor",
+              "type": "AzureMonitorLinuxAgent",
+              "typeHandlerVersion": "1.5",
+              "autoUpgradeMinorVersion": true
+          }
+      }
+  ]
+}
+```
+
+#### <a name="parameter-file"></a>Файл параметров
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+        "value": "my-linux-vm"
+      },
+      "location": {
+        "value": "eastus"
+      }
+  }
+}
+```
+
+### <a name="windows-azure-arc-enabled-server"></a>Сервер с поддержкой Windows Azure Arc
+В следующем примере выполняется установка агента Azure Monitor на сервере с поддержкой Windows Azure Arc.
+
+#### <a name="template-file"></a>Файл шаблона
+
+```json
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+          "type": "string"
+      },
+      "location": {
+          "type": "string"
+      }
+  },
+  "resources": [
+      {
+          "name": "[concat(parameters('vmName'),'/AzureMonitorWindowsAgent')]",
+          "type": "Microsoft.HybridCompute/machines/extensions",
+          "location": "[parameters('location')]",
+          "apiVersion": "2019-08-02-preview",
+          "properties": {
+              "publisher": "Microsoft.Azure.Monitor",
+              "type": "AzureMonitorWindowsAgent",
+              "autoUpgradeMinorVersion": true
+          }
+      }
+  ]
+}
+```
+
+#### <a name="parameter-file"></a>Файл параметров
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+        "value": "my-windows-vm"
+      },
+      "location": {
+        "value": "eastus"
+      }
+  }
+}
+```
+
+### <a name="linux-azure-arc-enabled-server"></a>Сервер Linux с поддержкой Azure Arc
+В следующем примере выполняется установка агента Azure Monitor на сервере с поддержкой Linux Azure Arc.
+
+#### <a name="template-file"></a>Файл шаблона
+
+```json
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+          "type": "string"
+      },
+      "location": {
+          "type": "string"
+      }
+  },
+  "resources": [
+      {
+          "name": "[concat(parameters('vmName'),'/AzureMonitorLinuxAgent')]",
+          "type": "Microsoft.HybridCompute/machines/extensions",
+          "location": "[parameters('location')]",
+          "apiVersion": "2019-08-02-preview",
+          "properties": {
+              "publisher": "Microsoft.Azure.Monitor",
+              "type": "AzureMonitorLinuxAgent",
+              "autoUpgradeMinorVersion": true
+          }
+      }
+  ]
+}
+```
+
+#### <a name="parameter-file"></a>Файл параметров
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+        "value": "my-linux-vm"
+      },
+      "location": {
+        "value": "eastus"
+      }
+  }
+}
+```
+
+## <a name="log-analytics-agent"></a>Агент Log Analytics
+В примерах в этом разделе устанавливается агент Log Analytics на виртуальных машинах Windows и Linux в Azure и подключается к рабочей области Log Analytics.
+
+###  <a name="windows"></a>Windows
 В следующем примере выполняется установка агента Log Analytics на виртуальной машине Windows Azure. Это делается путем включения [расширения виртуальной машины Log Analytics для Windows](../../virtual-machines/extensions/oms-windows.md).
 
-### <a name="template-file"></a>Файл шаблона
+#### <a name="template-file"></a>Файл шаблона
 
 ```json
 {
@@ -90,7 +298,7 @@ ms.locfileid: "83853120"
 
 ```
 
-### <a name="parameter-file"></a>Файл параметров
+#### <a name="parameter-file"></a>Файл параметров
 
 ```json
 {
@@ -114,10 +322,10 @@ ms.locfileid: "83853120"
 ```
 
 
-## <a name="linux-log-analytics-agent"></a>Агент Linux для Log Analytics
+### <a name="linux"></a>Linux
 В следующем примере выполняется установка агента Log Analytics на виртуальной машине Linux Azure. Это делается путем включения [расширения виртуальной машины Log Analytics для Windows](../../virtual-machines/extensions/oms-linux.md).
 
-### <a name="template-file"></a>Файл шаблона
+#### <a name="template-file"></a>Файл шаблона
 
 ```json
 {
@@ -184,7 +392,7 @@ ms.locfileid: "83853120"
 }
 ```
 
-### <a name="parameter-file"></a>Файл параметров
+#### <a name="parameter-file"></a>Файл параметров
 
 ```json
 {
@@ -209,10 +417,13 @@ ms.locfileid: "83853120"
 
 
 
-## <a name="windows-diagnostic-extension"></a>Расширение системы диагностики Windows
+## <a name="diagnostic-extension"></a>Расширение системы диагностики
+В примерах в этом разделе устанавливается диагностическое расширение на виртуальных машинах Windows и Linux в Azure и настраивается для сбора данных.
+
+### <a name="windows"></a>Windows
 В следующем примере выполняется включение и настройка расширения системы диагностики на виртуальной машине Azure под управлением Windows. Дополнительные сведения о конфигурации см. в статье [Схема расширения диагностики Windows](../platform/diagnostics-extension-schema-windows.md).
 
-### <a name="template-file"></a>Файл шаблона
+#### <a name="template-file"></a>Файл шаблона
 
 ```json
 {
@@ -345,7 +556,7 @@ ms.locfileid: "83853120"
 }
 ```
 
-### <a name="parameter-file"></a>Файл параметров
+#### <a name="parameter-file"></a>Файл параметров
 
 ```json
 {
@@ -374,10 +585,10 @@ ms.locfileid: "83853120"
 }
 ```
 
-## <a name="linux-diagnostic-setting"></a>Параметры диагностики Linux
+### <a name="linux"></a>Linux
 В следующем примере выполняется включение и настройка расширения системы диагностики на виртуальной машине Azure под управлением Linux. Дополнительные сведения о конфигурации см. в статье [Схема расширения диагностики Windows](../../virtual-machines/extensions/diagnostics-linux.md).
 
-### <a name="template-file"></a>Файл шаблона
+#### <a name="template-file"></a>Файл шаблона
 
 ```json
 {
@@ -565,7 +776,7 @@ ms.locfileid: "83853120"
 }
 ```
 
-### <a name="parameter-file"></a>Файл параметров
+#### <a name="parameter-file"></a>Файл параметров
 
 ```json
 {

@@ -2,19 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 10/20/2020
+ms.date: 11/20/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 30e599fa274bac8b8700d366c7102dcf64a5ad09
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: ec1bb2b21e1ac4d24f4643ae85a790b3bc2a147a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311931"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001034"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Рабочие области Машинного обучения Azure должны быть зашифрованы с использованием ключа, управляемого клиентом (CMK)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fba769a63-b8cc-4b2d-abf6-ac33c7204be8) |Проверка рабочих областей Машинного обучения Azure, для которых не включено шифрование с помощью ключей, управляемых клиентом (CMK). Ключи, управляемые клиентом, обеспечивают дополнительный уровень безопасности для рабочих областей. Дополнительные сведения см. по адресу [https://aka.ms/azureml-workspaces-cmk](https://aka.ms/azureml-workspaces-cmk). |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/Workspace_CMKEnabled_Audit.json) |
+|[Рабочие области Машинного обучения Azure должны быть зашифрованы с использованием ключа, управляемого клиентом (CMK)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fba769a63-b8cc-4b2d-abf6-ac33c7204be8) |Проверка рабочих областей Машинного обучения Azure, для которых не включено шифрование с помощью ключей, управляемых клиентом (CMK). Ключи, управляемые клиентом, обеспечивают дополнительный уровень безопасности для рабочих областей. Дополнительные сведения см. по адресу [https://aka.ms/azureml-workspaces-cmk](https://aka.ms/azureml-workspaces-cmk). |Audit, Deny, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/Workspace_CMKEnabled_Audit.json) |
 |[Рабочие области Машинного обучения Azure должны использовать Приватный канал](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F40cec1dd-a100-4920-b15b-3024fe8901ab) |Проверка рабочих областей Машинного обучения Azure, у которых нет хотя бы одного утвержденного подключения к частной конечной точке. Клиенты в виртуальной сети могут безопасно обращаться к ресурсам, которые подключаются к частным конечным точкам через приватные каналы. Дополнительные сведения см. по адресу [https://aka.ms/azureml-workspaces-privatelink](https://aka.ms/azureml-workspaces-privatelink). |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/Workspace_PrivateLinkEnabled_Audit.json) |
 |[Настройка разрешенных авторов модуля для указанных вычислений Машинного обучения Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F53c70b02-63dd-11ea-bc55-0242ac130003) |Эта политика позволяет задать разрешенных авторов модуля для указанных вычислений Машинного обучения Azure, и ее можно назначить в рабочей области. Дополнительные сведения см. по адресу [https://aka.ms/amlpolicydoc](https://aka.ms/amlpolicydoc). |enforceSetting, disabled |[1.0.1 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/AllowedModuleAuthors_EnforceSetting.json) |
 |[Настройка разрешенных пакетов Python для указанных вычислений Машинного обучения Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F77eeea86-7e81-4a7d-9067-de844d096752) | Эта политика позволяет задать разрешенные пакеты Python для указанных вычислений Машинного обучения Azure, и ее можно назначить в рабочей области. Дополнительные сведения см. по адресу [https://aka.ms/amlpolicydoc](https://aka.ms/amlpolicydoc). |enforceSetting, disabled |[1.0.0 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/AllowedPythonPackageChannels_EnforceSetting.json) |

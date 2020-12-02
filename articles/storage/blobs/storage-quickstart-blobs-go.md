@@ -7,12 +7,12 @@ ms.date: 11/14/2018
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: f4016349e354c84e9e096ac6d5072a4870e9ef29
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bf0e868e9ee746da1dfe1b03403d21f7edb3bd5e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "68726458"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544655"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Go
 
@@ -108,7 +108,7 @@ Press the enter key to delete the sample files, example container, and exit the 
 Получив объект ContainerURL, вы можете создать объект **BlobURL**, который указывает на большой двоичный объект и выполняет такие операции, как отправка, скачивание и копирование.
 
 > [!IMPORTANT]
-> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
+> Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
 В этом разделе показано, как создать контейнер. Контейнер называется **quickstartblobs-[произвольная_строка]** . 
 
@@ -149,9 +149,9 @@ handleErrors(err)
 
 Чтобы отправить файл в большой двоичный объект, откройте файл с помощью **os.Open**. Затем вы можете отправить файл по указанному пути, используя один из REST API: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
 
-Кроме того, пакет SDK предоставляет [API высокого уровня](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go), которые созданы на основе низкоуровневых интерфейсов REST API. Например, с помощью операций StageBlock (PutBlock) функция ***UploadFileToBlockBlob*** одновременно передает файлы блоками, оптимизируя тем самым пропускную способность. Если размер файла менее 256 МБ, передача осуществляется одной транзакцией с помощью операции Upload (PutBlob).
+Кроме того, пакет SDK предоставляет [API высокого уровня](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go), которые созданы на основе низкоуровневых интерфейсов REST API. Например, с помощью операций StageBlock (PutBlock) функция **_UploadFileToBlockBlob_* _ одновременно передает файлы блоками, оптимизируя тем самым пропускную способность. Если размер файла менее 256 МБ, передача осуществляется одной транзакцией с помощью операции Upload (PutBlob).
 
-В приведенном ниже примере файл отправляется в контейнер с именем **quickstartblobs-[произвольная_строка]** .
+В приведенном ниже примере файл отправляется в контейнер с именем _*quickstartblobs-[randomstring]**.
 
 ```go
 // Create a file to test the upload and download.

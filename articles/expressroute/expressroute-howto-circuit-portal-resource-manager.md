@@ -8,11 +8,11 @@ ms.topic: quickstart
 ms.date: 10/21/2020
 ms.author: duau
 ms.openlocfilehash: b0fd844021e7398e061072d7939b782616580c1c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368695"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185204"
 ---
 # <a name="quickstart-create-and-modify-an-expressroute-circuit"></a>Краткое руководство. Создание и изменение канала ExpressRoute
 
@@ -43,9 +43,21 @@ ms.locfileid: "92368695"
 
 2. После выбора **ExpressRoute** отобразится страница **Create ExpressRoute** (Создание ExpressRoute). Укажите значения для параметров **Группа ресурсов**, **Регион** и **Имя** для канала. Затем щелкните **Next: Конфигурация >** .
 
-    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-basic.png" alt-text="Создание канала ExpressRoute" или "Не ограничено").
+    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-basic.png" alt-text="Настройка группы ресурсов и региона":::
 
-    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-configuration.png" alt-text="Создание канала ExpressRoute" или **Премиум**, чтобы получить надстройку "Премиум". Вы можете изменить номер SKU, чтобы включить надстройку "Премиум".
+3. При заполнении значений на этой странице вам нужно указать правильный уровень SKU ("Локальный", "Стандартный" или "Премиум") и модель выставления счетов на основе измерения данных ("С учетом трафика" или "Не ограничено").
+
+    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-configuration.png" alt-text="Настройка цепи":::
+    
+    * Параметр **Тип порта** определяет, подключаетесь ли вы к поставщику услуг или непосредственно в глобальную сеть Майкрософт в расположении пиринга.
+    * **Create new or import from classic** (Создать или импортировать из классической версии) определяет, создается ли новый канал или выполняется перенос классического канала в Azure Resource Manager.
+    * **Поставщик** — это поставщик услуг Интернета, через которого запрашивается служба.
+    * **Расположение пиринга** — физическое расположение пиринга в Майкрософт.
+
+    > [!IMPORTANT]
+    > Параметр "Расположение пиринга" определяет [физическое расположение](expressroute-locations.md) пиринга с корпорацией Майкрософт. Оно **не** связано со свойством Location, которое ссылается на географический регион, в котором находится поставщик сетевых ресурсов Azure. Хотя они не связаны, рекомендуется выбрать поставщик сетевых ресурсов, находящийся недалеко от расположения пиринга канала.
+
+    * **Инвентаризационный номер (SKU)** определяет, какая надстройка включена — ExpressRoute уровня "Локальный", ExpressRoute уровня "Стандартный" или ExpressRoute уровня "Премиум". Укажите **Локальный**, чтобы получить SKU "Локальный", **Стандартный** для получения SKU "Стандартный" или **Премиум**, чтобы получить надстройку "Премиум". Вы можете изменить номер SKU, чтобы включить надстройку "Премиум".
     > [!IMPORTANT]
     > Изменить номер SKU **Стандартный или Премиум** на **Локальный** нельзя.
     
@@ -62,17 +74,17 @@ ms.locfileid: "92368695"
 
 Вы можете просмотреть все созданные вами каналы, последовательно выбрав в меню слева пункты **Все службы > Сетевые подключения > Цепи ExpressRoute**.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-menu.png" alt-text="Создание канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-menu.png" alt-text="Меню цепи Expressroute":::
 
 Здесь будут отображаться все каналы Expressroute, созданные в подписке.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-list.png" alt-text="Создание канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-list.png" alt-text="Список цепей Expressroute":::
 
 **Просмотр свойств**
 
 Чтобы просмотреть свойства канала, выберите его. На странице **Обзор** канала отобразится ключ службы в соответствующем поле. Просмотрите ключ службы своей цепи и предоставьте его поставщику услуг для завершения подготовки. Ключ службы соответствует каналу.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview.png" alt-text="Создание канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview.png" alt-text="Просмотр свойств":::
 
 ### <a name="send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>Отправка ключа службы поставщику услуг подключения для подготовки
 
@@ -83,7 +95,7 @@ ms.locfileid: "92368695"
 Состояние поставщика: **Не подготовлено**<BR>
 Состояние канала: **Enabled**
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview-provisioning-state.png" alt-text="Создание канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview-provisioning-state.png" alt-text="Начинает процесс подготовки":::
 
 Когда поставщик услуг подключения находится в процессе включения, канал переходит в следующее состояние:
 
@@ -99,7 +111,7 @@ ms.locfileid: "92368695"
 
 Чтобы просмотреть свойства интересующего вас канала, выберите его. Проверьте **Состояние поставщика**. Чтобы вы могли продолжить работу, оно должно измениться на **Подготовлено**.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/provisioned.png" alt-text="Создание канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/provisioned.png" alt-text="Состояние канала и поставщика":::
 
 ### <a name="create-your-routing-configuration"></a>Создание конфигурации маршрутизации
 
@@ -147,7 +159,7 @@ ms.locfileid: "92368695"
 
 Чтобы изменить канал ExpressRoute, щелкните **Конфигурация**.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-configuration.png" alt-text="Создание канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-configuration.png" alt-text="Изменение канала":::
 
 ## <a name="deprovisioning-an-expressroute-circuit"></a><a name="delete"></a>Отзыв канала ExpressRoute
 
@@ -162,7 +174,7 @@ ms.locfileid: "92368695"
 
 Цепь ExpressRoute можно удалить, щелкнув **соответствующий** значок. Сначала убедитесь, что для поставщика услуг состояние подготовки указано как *Не подготовлено*.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-delete.png" alt-text="Создание канала ExpressRoute":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-delete.png" alt-text="Удаление цепи":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,18 +3,21 @@ title: Учебник по развертыванию и настройке VMwa
 description: Узнайте, как развернуть и настроить решение VMware HCX для частного облака Решения Azure VMware.
 ms.topic: tutorial
 ms.date: 11/18/2020
-ms.openlocfilehash: 57bcf1bd3023e56f6a64b5d82d8f1fc90be9dd47
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: afb5c653ce7c4b4a453a4031c5664042357de6c0
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888748"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95999639"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>Развертывание и настройка VMware HCX
 
 В этой статье показано, как развернуть и настроить локальный соединитель VMware HCX для частного облака Решения Azure VMware. С помощью VMware HCX вы можете перенести рабочие нагрузки VMware в Решение Azure VMware и на другие подключенные сайты, используя разные типы миграции. Решение Azure VMware развертывает и настраивает HCX Cloud Manager, поэтому вам нужно скачать, активировать и настроить соединитель HCX в локальном центре обработки данных VMware.
 
 Расширенный соединитель VMware HCX уже развернут в Решении Azure VMware. Он поддерживает до трех подключений к сайтам (из локальной среды в облако или из облака в облако). Если вам нужно более трех подключений к сайтам, создайте [запрос в службу поддержки](https://portal.azure.com/#create/Microsoft.Support), чтобы включить надстройку [VMware HCX Enterprise](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/). Сейчас надстройка доступна в предварительной версии. 
+
+>[!Note]
+>Хотя в средстве VMware Configuration Manager максимальное число пар сайтов между локальным соединителем и диспетчером облачных сред равно 25, лицензии ограничивают это число до 3 для выпуска Advanced и до 10 для выпуска Enterprise Edition.
 
 >[!NOTE]
 >VMware HCX Enterprise предоставляется в составе Решения Azure VMware в предварительной версии службы. Эту службу можно использовать бесплатно на условиях предварительной версии. Когда служба VMware HCX Enterprise станет общедоступной, вы получите уведомление о том, что через 30 дней начнут выставляться счета. Вы сможете отключить эту службу или отказаться от ее использования. Простого способа перейти с версии VMware HCX Enterprise к версии VMware HCX Advanced нет. Если вы решите перейти на использование более ранней версии, потребуется выполнить повторное развертывание, что предполагает простой.

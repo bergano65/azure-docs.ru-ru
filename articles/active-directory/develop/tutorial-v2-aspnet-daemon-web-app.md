@@ -12,16 +12,18 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 72b72959f7b5c89bfad4495c8534de5dfaaefe8b
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 031ee9a6d945d923279fd3025c32212c3ead98ed
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91611101"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95406605"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Руководство по Создание мультитенантной управляющей программы, которая использует конечную платформу удостоверений Майкрософт
 
-В этом учебнике вы узнаете, как использовать платформу удостоверений Майкрософт для доступа к данным бизнес-клиентов Майкрософт с использованием продолжительного неинтерактивного процесса. Пример управляющей программы использует [предоставление учетных данных клиента OAuth2](v2-oauth2-client-creds-grant-flow.md) для получения маркера доступа. Затем управляющая программа использует этот маркер для вызова [Microsoft Graph](https://graph.microsoft.io) и доступа к данным организации.
+При работе с этим руководством вы скачаете и запустите веб-приложение управляющей программы ASP.NET, на примере которого показано предоставление учетных данных клиента OAuth 2.0 для получения маркера доступа для вызова API Microsoft Graph.
+
+В этом руководстве рассматриваются следующие темы:
 
 > [!div class="checklist"]
 > * Интеграция управляющей программы с платформой удостоверений Майкрософт.

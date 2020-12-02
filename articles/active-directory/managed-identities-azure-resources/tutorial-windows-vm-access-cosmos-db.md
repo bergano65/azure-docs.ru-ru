@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/29/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b571b2b8e0d334a02631e3f443ec54398117ee9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4cd1fb7f33c56aefe76bc55181ae92ca3d149754
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91532675"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006982"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к Azure Cosmos DB
 
@@ -82,7 +82,7 @@ New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Read
 ```
 
 >[!NOTE]
-> Помните, что, если вы не можете выполнить операцию, возможно, у вас нет нужных разрешений. Если требуется доступ на запись к ключам, необходимо использовать роль RBAC (например, участника учетной записи DocumentDB) или создать настраиваемую роль. Дополнительные сведения см. в статье [Управление доступом на основе ролей в Azure Cosmos DB](../../cosmos-db/role-based-access-control.md).
+> Помните, что, если вы не можете выполнить операцию, возможно, у вас нет нужных разрешений. Если требуется доступ на запись к ключам, необходимо использовать роль Azure (например, участника учетной записи DocumentDB) или создать настраиваемую роль. Дополнительные сведения см. в статье [Управление доступом на основе ролей Azure в Azure Cosmos DB](../../cosmos-db/role-based-access-control.md).
 
 ## <a name="access-data"></a>Доступ к данным
 

@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 09/28/2020
 ms.author: lcozzens
-ms.openlocfilehash: 88481346f22176b8e307b53774b42d753838f90b
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 5179a619b1adba432910605c75fae0789efd3397
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554829"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182722"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
@@ -106,7 +106,7 @@ dotnet new mvc --no-https --output TestFeatureFlags
 
     ---
 
-    При предыдущем изменении [поставщик конфигурации для Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664) зарегистрирован в API конфигурации .NET Core.
+    При предыдущем изменении [поставщик конфигурации для Конфигурации приложений](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration) зарегистрирован в API конфигурации .NET Core.
 
 1. В файл *Startup.cs* добавьте ссылку на диспетчер функций .NET Core.
 
@@ -235,7 +235,7 @@ dotnet new mvc --no-https --output TestFeatureFlags
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его для управления функциями веб-приложения ASP.NET Core с помощью [библиотек управления функциями](https://go.microsoft.com/fwlink/?linkid=2074664).
+В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его для управления функциями веб-приложения ASP.NET Core с помощью [библиотек управления функциями](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration).
 
 * Узнайте больше об [управлении функциями](./concept-feature-management.md).
 * [Управляйте флагами функций](./manage-feature-flags.md).

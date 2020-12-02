@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/16/2020
 ms.custom: subject-armqs, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: c8542bfe3d1393917a63e4a1feae7d6dfc223031
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 5be4cea7d8ddb00a4c8a22a696dbdce1c062765c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746191"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183028"
 ---
 # <a name="quickstart-create-app-service-app-using-an-arm-template"></a>Краткое руководство. Создание приложения Службы приложений с помощью шаблона Resource Manager
 
@@ -21,13 +21,13 @@ ms.locfileid: "92746191"
 
  [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
-Нажмите следующую кнопку, чтобы выполнить развертывание в **Linux** :
+Нажмите следующую кнопку, чтобы выполнить развертывание в **Linux**:
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-app-service-docs-linux%2Fazuredeploy.json)
 
-Нажмите следующую кнопку, чтобы выполнить развертывание в **Windows** :
+Нажмите следующую кнопку, чтобы выполнить развертывание в **Windows**:
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-app-service-docs-windows%2Fazuredeploy.json)
 
@@ -145,7 +145,7 @@ az deployment group create --resource-group myResourceGroup --parameters webAppN
 > [Использование PHP и MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
-> [Подключение к Базе данных SQL Azure на Java](../azure-sql/database/connect-query-java.md?toc=%252fazure%252fjava%252ftoc.json)
+> [Подключение к Базе данных SQL Azure на Java](../azure-sql/database/connect-query-java.md?toc=%2fazure%2fjava%2ftoc.json)
 
 > [!div class="nextstepaction"]
 > [Сопоставление пользовательского домена](app-service-web-tutorial-custom-domain.md)

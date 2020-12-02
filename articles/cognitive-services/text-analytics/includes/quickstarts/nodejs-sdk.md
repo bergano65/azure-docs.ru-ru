@@ -149,7 +149,7 @@ const endpoint = '<paste-your-text-analytics-endpoint-here>';
 
 * [Аутентификация клиента](#client-authentication)
 * [Анализ тональности](#sentiment-analysis). 
-* [Интеллектуальный анализ данных](#opinion-mining)
+* [Интеллектуальный анализ мнений](#opinion-mining)
 * [Пример. Как определить язык с помощью Анализа текста](#language-detection)
 * [Распознавание именованных сущностей](#named-entity-recognition-ner)
 * [Связывание сущностей](#entity-linking)

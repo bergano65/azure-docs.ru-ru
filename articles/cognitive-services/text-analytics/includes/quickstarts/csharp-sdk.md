@@ -175,7 +175,7 @@ private static readonly string endpoint = "<replace-with-your-text-analytics-end
 ## <a name="code-examples"></a>Примеры кода
 
 * [Пример. Как определить тональность с помощью Анализа текста](#sentiment-analysis)
-* [Интеллектуальный анализ данных](#opinion-mining)
+* [Интеллектуальный анализ мнений](#opinion-mining)
 * [Пример. Как определить язык с помощью Анализа текста](#language-detection)
 * [Распознавание именованных сущностей](#named-entity-recognition-ner)
 * [Связывание сущностей](#entity-linking)

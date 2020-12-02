@@ -4,12 +4,12 @@ description: Быстрый способ изучить создание час�
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.custom: seodec18, H1Hack27Feb2017, mvc, devx-track-azurecli
-ms.openlocfilehash: f4e69616d30c6a7b853c5cc854adee147ebde206
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 226e50aec8f7c76a1b4c81d1a07d57583059ef0e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87486550"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020081"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-cli"></a>Краткое руководство. Создание закрытого реестра контейнеров с помощью Azure CLI
 
@@ -69,10 +69,16 @@ az acr create --resource-group myResourceGroup \
 
 ## <a name="log-in-to-registry"></a>Вход в раздел реестра
 
-Перед отправкой и извлечением образов контейнеров необходимо войти в реестр. Чтобы сделать это, используйте команду [az acr login][az-acr-login].
+Перед отправкой и извлечением образов контейнеров необходимо войти в реестр. Чтобы сделать это, используйте команду [az acr login][az-acr-login]. При входе с помощью Azure CLI укажите только имя реестра. Не используйте имя сервера для входа, которое содержит суффикс домена, например `azurecr.io`. 
 
 ```azurecli
 az acr login --name <registry-name>
+```
+
+Пример.
+
+```azurecli
+az acr login --name mycontainerregistry
 ```
 
 По завершении команда возвращает сообщение `Login Succeeded`.

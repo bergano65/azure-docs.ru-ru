@@ -12,17 +12,18 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 01169f3e73fb1d6ddf0ecaf4958c6121cb21c295
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 6b8a9cbfd3e7057f0d85d5f4e19fea3aa4fbe90b
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216136"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94980224"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-app-spa-using-auth-code-flow"></a>Руководство по входу пользователей и вызову API Microsoft Graph из одностраничного приложения JavaScript с помощью потока кода авторизации
 
-В этом учебнике показано, как создать одностраничное приложение JavaScript (SPA), которое использует библиотеку проверки подлинности Майкрософт (MSAL) для JavaScript версии 2.0, для перечисленных ниже задач.
+В этом руководстве показано, как создать одностраничное приложение (SPA) JavaScript, которое поддерживает вход пользователей и вызовы Microsoft Graph с использованием потока кода авторизации с PKCE. Создаваемое одностраничное приложение использует библиотеку проверки подлинности Майкрософт (MSAL) для JavaScript версии 2.0.
 
+В этом руководстве рассматриваются следующие темы:
 > [!div class="checklist"]
 > * Выполнение потока кода авторизации OAuth 2.0 с PKCE
 > * Вход в личные, рабочие и учебные учетные записи Майкрософт
@@ -619,23 +620,23 @@ function callMSGraph(endpoint, token, callback) {
 
 После загрузки файла *index.html* в браузер нажмите кнопку **Sign In** (Войти). Вам будет предложено войти с помощью конечной точки платформы удостоверений Майкрософт.
 
-:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-01-signin-dialog.png" alt-text="Схема потока кода авторизации в одностраничном приложении":::
+:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-01-signin-dialog.png" alt-text="Веб-браузер, в котором отображается диалоговое окно входа":::
 
 ### <a name="provide-consent-for-application-access"></a>Предоставление разрешения на доступ к приложению
 
 При первом входе в приложение вам будет предложено предоставить ему доступ к профилю, а также выполнить вход:
 
-:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-02-consent-dialog.png" alt-text="Схема потока кода авторизации в одностраничном приложении":::
+:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-02-consent-dialog.png" alt-text="Диалоговое окно содержимого, отображаемое в веб-браузере":::
 
 Если вы согласны предоставить запрошенные разрешения, веб-приложения выводят имя пользователя, что означает успешный вход.
 
-:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-03-signed-in.png" alt-text="Схема потока кода авторизации в одностраничном приложении":::
+:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-03-signed-in.png" alt-text="Результаты успешного входа в веб-браузере":::
 
 ### <a name="call-the-graph-api"></a>Вызов API Graph
 
 После входа выберите **See Profile** (Просмотреть профиль), чтобы просмотреть сведения о профиле пользователя, возвращенные в ответе на вызов API Microsoft Graph.
 
-:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-04-see-profile.png" alt-text="Схема потока кода авторизации в одностраничном приложении":::
+:::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-04-see-profile.png" alt-text="Сведения о профиле из Microsoft Graph, отображаемые в браузере":::
 
 ### <a name="more-information-about-scopes-and-delegated-permissions"></a>Дополнительные сведения об областях и делегированных разрешениях
 

@@ -9,14 +9,17 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/10/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 50fbaf5092e793369daaa71fc7364dfd406e03b3
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 3bced101516e91259ea9018fe3c4aa44f867cbe6
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444900"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96023114"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-azure-powershell"></a>Управление ключами учетной записи хранения с помощью Key Vault и Azure PowerShell
+> [!IMPORTANT]
+> Мы рекомендуем использовать интеграцию службы хранилища Azure с Azure Active Directory (Azure AD), облачной службой корпорации Майкрософт для управления удостоверениями и доступом. Интеграция с Azure AD доступна для [BLOB-объектов и очередей Azure](../../storage/common/storage-auth-aad.md). Она обеспечивает доступ к службе хранилища Azure на основе токенов OAuth2 (точно так же, как Azure Key Vault).
+> Azure AD позволяет проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. Вы можете использовать [управляемое удостоверение Azure AD](../../active-directory/managed-identities-azure-resources/index.yml) при запуске в Azure. Управляемые удостоверения устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним. Используйте приведенное ниже решение только в том случае, если аутентификация Azure AD невозможна.
 
 Учетная запись хранения Azure использует учетные данные, состоящие из имени учетной записи и ключа. Ключ генерируется автоматически и служит скорее паролем, чем криптографическим ключом. Key Vault управляет ключами учетной записи хранения, периодически создавая их заново в учетной записи хранения, и предоставляет маркеры подписанного URL-адреса в случае делегированного доступа к ресурсам в учетной записи хранения.
 
@@ -28,12 +31,6 @@ ms.locfileid: "94444900"
 - Управлять ключами учетной записи хранения должно только решение Key Vault. Не управляйте ключами самостоятельно и избегайте конфликтов с процессами Key Vault.
 - Управлять ключами учетной записи хранения должен только один объект Key Vault. Не разрешайте управление ключами из нескольких объектов.
 - Создавайте ключи повторно только с помощью Key Vault. Не создавайте повторно ключи своей учетной записи хранения вручную.
-
-Мы рекомендуем использовать интеграцию службы хранилища Azure с Azure Active Directory (Azure AD), облачной службой корпорации Майкрософт для управления удостоверениями и доступом. Интеграция с Azure AD доступна для [BLOB-объектов и очередей Azure](../../storage/common/storage-auth-aad.md). Она обеспечивает доступ к службе хранилища Azure на основе токенов OAuth2 (точно так же, как Azure Key Vault).
-
-Azure AD позволяет проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. Вы можете использовать [управляемое удостоверение Azure AD](../../active-directory/managed-identities-azure-resources/index.yml) при запуске в Azure. Управляемые удостоверения устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
-
-Для управления авторизацией, которая также поддерживается Key Vault, Azure AD использует управление доступом на основе ролей Azure (Azure RBAC).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -256,14 +253,20 @@ Content Type : application/vnd.ms-sastoken-storage
 Tags         :
 ```
 
-Теперь можно воспользоваться командлетом [Get-AzKeyVaultSecret](/powershell/module/az.keyvault/get-azkeyvaultsecret) и свойством `Name` секрета для просмотра содержимого этого секрета.
+Теперь можно воспользоваться командлетом [Get-AzKeyVaultSecret](/powershell/module/az.keyvault/get-azkeyvaultsecret) с параметром `VaultName` и `Name` для просмотра содержимого этого секрета.
 
 ```azurepowershell-interactive
-Write-Host (Get-AzKeyVaultSecret -VaultName <YourKeyVaultName> -Name <SecretName>).SecretValue | ConvertFrom-SecureString -AsPlainText
+$secret = Get-AzKeyVaultSecret -VaultName <YourKeyVaultName> -Name <SecretName>
+$ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)
+try {
+   $secretValueText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+} finally {
+   [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+}
+Write-Output $secretValueText
 ```
 
 В выходных данных этой команды будет отображаться строка определения SAS.
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

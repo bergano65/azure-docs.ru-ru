@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 4fa00bffc35c4ed67ce70751c8882b74ad6b01a1
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: bf15e380eb1a88acc39ca63165d18d04a260b35d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95534506"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185901"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
@@ -230,7 +230,7 @@ ms.locfileid: "95534506"
 - [Ключ Azure Monitor, управляемый клиентом](platform/customer-managed-keys.md) — добавлено сообщение об ошибке и раздел с конфигурацией CMK для запросов.
 - [API сборщика данных HTTP в Azure Monitor](platform/data-collector-api.md) — добавлен пример на языке Python 3.
 - [Оптимизация запросов журналов в Azure Monitor](log-query/query-optimization.md) — добавлен раздел о том, как избежать множественных проверок данных при использовании вложенных запросов.
-- [Руководство. Начало работы с запросами Log Analytics](log-query/get-started-portal.md) — добавлено видео.
+- [Руководство. Начало работы с запросами Log Analytics](./log-query/log-analytics-tutorial.md) — добавлено видео.
 
 ### <a name="platform-logs"></a>Журналы платформы
 - [Создание параметров диагностики для отправки журналов платформы и метрик в различные места назначения](platform/diagnostic-settings.md) — добавлено видео.

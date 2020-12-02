@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 02/03/2020
 ms.author: allensu
-ms.openlocfilehash: 0d873401d377a03581a319769604f3d976f365be
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5b7bc8be89068f0d3cf6722c36ae7fd5cc560736
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87927244"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96012124"
 ---
 # <a name="quickstart-create-a-private-link-service-by-using-the-azure-portal"></a>Краткое руководство. Создание службы "Приватный канал" с помощью портала Azure
 
@@ -182,4 +182,4 @@ ms.locfileid: "87927244"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-При работе с этим кратким руководством вы создали внутреннюю подсистему балансировки нагрузки Azure и службу "Приватный канал". Можете также просмотреть [сведения о создании частной конечной точки с помощью портала Azure](https://docs.microsoft.com/azure/private-link/create-private-endpoint-portal).
+При работе с этим кратким руководством вы создали внутреннюю подсистему балансировки нагрузки Azure и службу "Приватный канал". Можете также просмотреть [сведения о создании частной конечной точки с помощью портала Azure](./create-private-endpoint-portal.md).

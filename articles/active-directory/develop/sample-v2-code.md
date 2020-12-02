@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b3ea370a686e272a1d8ea201dd953fc09c1098ee
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: de25aafcfefee195e8d674c60ebdbaf79cb1ae10
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628192"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95406900"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода для платформы удостоверений Майкрософт (конечная точка версии 2.0)
 
@@ -59,10 +59,12 @@ ms.locfileid: "94628192"
 | ![На этом изображении показан логотип ASP.NET Framework](media/sample-v2-code/logo_NETframework.png)</p>ASP.NET Core | [Сборник схем для разработчиков, посвященный миграции приложений из AD FS в Azure AD](https://github.com/Azure-Samples/ms-identity-dotnet-adfs-to-aad). Узнайте, как безопасно переносить приложения, интегрированные со службами федерации Active Directory (AD FS), в Azure Active Directory (Azure AD). | |
 | ![На этом изображении показан логотип ASP.NET Framework](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [Краткое руководство по ASP.NET](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
 | ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png)  |                   | [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp) |
+| ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png)  | [ms-identity-b2c-java-servlet-webapp-authentication](https://github.com/Azure-Samples/ms-identity-b2c-java-servlet-webapp-authentication)|  |
 | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png)  | [ms-identity-python-flask-webapp-authentication](https://github.com/Azure-Samples/ms-identity-python-flask-webapp-authentication) | [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp) |
 | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png)  | Руководство по реализации входа пользователей в [веб-приложении Python Flask](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md)                   | Руководство по реализации входа пользователей и вызовов Graph в [веб-приложении Python Flask](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) |
 | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png)  | Реализация входа пользователей в [веб-приложении Python Flask](https://github.com/Azure-Samples/ms-identity-b2c-python-flask-webapp-authentication/blob/main/README.md) с помощью B2C                    |  |
 | ![На этом изображении показан логотип Ruby](media/sample-v2-code/logo_ruby.png) |                   | [msgraph-training-rubyrailsapp](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) |
+
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Общедоступные клиентские приложения — классические и мобильные
 

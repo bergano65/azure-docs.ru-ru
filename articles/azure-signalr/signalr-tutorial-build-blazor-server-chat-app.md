@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: jixin
-ms.openlocfilehash: 16fd15a5939cc6c268a80e88401f05042a206075
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: ea55762aa40360d8eea94223a030f08aad504206
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94516821"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95485398"
 ---
 # <a name="tutorial-build-a-blazor-server-chat-app"></a>Руководство по Создание приложения чата Blazor Server
 
@@ -39,7 +39,7 @@ ms.locfileid: "94516821"
    
    В Visual Studio выберите "Создать проект" > "Приложение Blazor Server" > (введите имя приложения и выберите папку) > "Приложение Blazor Server". Убедитесь, что вы уже установили пакет SDK для .NET Core 3.0 (или более новой версии), чтобы позволить Visual Studio правильно распознавать требуемую версию .NET Framework.
 
-   [ ![blazor-chat-create](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-create.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-create.png#lightbox)
+   [ ![Выбранное окно шаблонов приложений Blazor в разделе "Создать проект".](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-create.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-create.png#lightbox)
    
    Или выполните команду cmd.
    ```dotnetcli
@@ -355,7 +355,7 @@ ms.locfileid: "94516821"
 
 1. Нажмите клавишу <kbd>F5</kbd>, чтобы запустить приложение. Вы сможете общаться, как показано ниже.
 
-   [ ![blazor-chat](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat.gif) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat.gif#lightbox)
+   [ ![Анимированный чат между Бобом и Элис. Элис говорит "Здравствуй", Боб отвечает "Привет".](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat.gif) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat.gif#lightbox)
    
 [Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsblazor)
 
@@ -375,13 +375,13 @@ ms.locfileid: "94516821"
    * Указанный целевой объект: поддерживаются все типы **Службы приложений Azure**.
    * Служба приложений: выберите существующий план службы приложений или создайте новый.
 
-   [ ![blazor-chat-profile](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-profile.gif) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-profile.gif#lightbox)
+   [ ![Анимация: выбор Azure в качестве целевого объекта и Службы приложений Azure в качестве конкретизированного целевого объекта.](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-profile.gif) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-profile.gif#lightbox)
 
 1. Добавление зависимости Службы Azure SignalR
 
    После создания профиля публикации можно просмотреть рекомендуемое сообщение в разделе **Зависимости служб**. Щелкните **Настроить**, чтобы создать новую или выбрать существующую Службу Azure SignalR на панели.
 
-   [ ![blazor-chat-dependency](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency.png#lightbox)
+   [ ![Ссылка для настройки, выделенная в окне публикации.](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency.png#lightbox)
 
    Зависимость службы выполнит приведенные ниже действия, чтобы ваше приложение автоматически переключалось на Службу Azure SignalR при запуске в Azure.
 
@@ -391,7 +391,7 @@ ms.locfileid: "94516821"
    * Настройте хранилище секретов на свой выбор.
    * Добавьте конфигурацию `appsettings`, чтобы ваше приложение было нацелено на Службу Azure SignalR.
 
-   [ ![blazor-chat-dependency-summary](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency-summary.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency-summary.png#lightbox)
+   [ ![Установленные флажки для выбора всех зависимостей в окне сводки изменений.](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency-summary.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-dependency-summary.png#lightbox)
 
 1. Публикация приложения
 
@@ -400,7 +400,7 @@ ms.locfileid: "94516821"
    > Возможно, в первый раз вы не сможете тут же перейти на эту страницу из-за задержки при развертывании Службы приложений Azure. Попробуйте обновить страницу, немного подождав.
    > Кроме того, можно использовать режим отладчика браузера, нажав клавишу <kbd>F12</kbd>, чтобы убедиться, что трафик уже перенаправляется в Службу Azure SignalR.
 
-   [ ![blazor-chat-azure](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-azure.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-azure.png#lightbox)
+   [ ![Пример чата SignalR на платформе Blazor содержит текстовое поле для ввода имени и кнопку для начала чата.](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-azure.png) ](media/signalr-tutorial-build-blazor-server-chat-app/blazor-chat-azure.png#lightbox)
    
 [Возникли проблемы? Сообщите нам!](https://aka.ms/asrs/qsblazor)
 

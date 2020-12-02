@@ -11,12 +11,12 @@ ms.date: 10/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cbca2d00d10b6595b8a1d13251dd88c65667541
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: df199afd85c788299334087321c3edac8482698d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135004"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168514"
 ---
 # <a name="what-is-inter-directory-provisioning"></a>Что такое подготовка между каталогами?
 
@@ -35,7 +35,7 @@ ms.locfileid: "93135004"
 
 - [Облачная подготовка Azure AD Connect](../cloud-provisioning/what-is-cloud-provisioning.md). Новый агент Майкрософт, разработанный для достижения ваших целей гибридной идентификации.  Он обеспечивает облегченный процесс межкаталоговой подготовки между Active Directory и Azure AD.
 
-- [Microsoft Identity Manager](https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016). Локальное решение Майкрософт по управлению удостоверениями и доступом, которое помогает управлять пользователями, учетными данными, политиками и доступом в организации. Кроме того, Microsoft Identity Manager обеспечивает расширенную подготовку между каталогами для предоставления гибридных сред удостоверений для Active Directory, Azure AD и других каталогов.
+- [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016). Локальное решение Майкрософт по управлению удостоверениями и доступом, которое помогает управлять пользователями, учетными данными, политиками и доступом в организации. Кроме того, Microsoft Identity Manager обеспечивает расширенную подготовку между каталогами для предоставления гибридных сред удостоверений для Active Directory, Azure AD и других каталогов.
 
 ### <a name="key-benefits"></a>Основные преимущества
 
@@ -45,7 +45,7 @@ ms.locfileid: "93135004"
 - [Сквозная аутентификация](../hybrid/how-to-connect-pta.md). Метод входа, который позволяет использовать один и тот же пароль в локальной среде и облаке, но не требует дополнительной инфраструктуры федеративной среды.
 - [Интеграция федерации](../hybrid/how-to-connect-fed-whatis.md). Позволяет настроить гибридную среду с помощью локальной инфраструктуры AD FS. Федерация также предоставляет возможности управления AD FS, такие как обновление сертификата и дополнительные развертывания сервера AD FS.
 - [Синхронизация](../hybrid/how-to-connect-sync-whatis.md). Отвечает за создание пользователей, групп и других объектов.  Она также отвечает за согласованность сведений о пользователях и группах в локальной среде и в облаке.  Эта синхронизация также включает хэши паролей.
-- [Мониторинг работоспособности](../hybrid/whatis-hybrid-identity-health.md). Реализует надежный мониторинг и предоставляет центральное расположение на портале Azure для просмотра связанных действий. 
+- [Мониторинг работоспособности](../hybrid/whatis-azure-ad-connect.md). Реализует надежный мониторинг и предоставляет центральное расположение на портале Azure для просмотра связанных действий. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия 

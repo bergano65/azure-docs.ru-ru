@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: chez
 ms.reviewer: mariozi
-ms.openlocfilehash: c7d3dae2b7da2fcc14e86eb4965ebd99fd7bf681
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f1a7bffc05d83b30fe9e5bcd6e17bf6bc0192e1d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88650589"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348948"
 ---
 # <a name="encrypt-azure-data-factory-with-customer-managed-keys"></a>Шифрование в Фабрике данных Azure с помощью управляемых клиентом ключей
 
@@ -47,8 +47,8 @@ ms.locfileid: "88650589"
 
 Для использования управляемых клиентом ключей с Фабрикой данных необходимо задать для хранилища ключей два свойства: __Обратимое удаление__ и __Do Not Purge__ (Не очищать). Эти свойства можно включить с помощью PowerShell или Azure CLI в новом или имеющемся хранилище ключей. Чтобы узнать, как включить эти свойства в имеющемся хранилище ключей, см. разделы _Включение обратимого удаления_ и _Включение защиты от очистки_ в одной из следующих статей:
 
-- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../key-vault/general/soft-delete-powershell.md)
-- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../key-vault/general/soft-delete-cli.md)
+- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../key-vault/general/key-vault-recovery.md)
+- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../key-vault/general/key-vault-recovery.md)
 
 Если вы создаете новый Azure Key Vault с помощью портала Azure, свойства __Обратимое удаление__ и __Do Not Purge__ (Не очищать) можно задать следующим образом.
 

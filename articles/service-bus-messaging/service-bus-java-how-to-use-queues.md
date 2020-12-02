@@ -1,190 +1,228 @@
 ---
-title: Использование очередей Служебной шины Azure с Java
-description: В этом руководстве показано, как создавать приложения Java для отправки и получения сообщений через очередь Служебной шины Azure.
+title: Использование очередей служебной шины Azure с Java (azure-messaging-servicebus)
+description: В этом руководстве показано, как использовать Java для отправки и получения сообщений через очередь Служебной шины Azure. Вы используете новый пакет azure-messaging-servicebus.
 ms.devlang: Java
 ms.topic: quickstart
-ms.date: 06/23/2020
+ms.date: 11/09/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 8883b5959cc4c67d34efc3c9da7788f03fc6c9af
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: a91ed2a358a9595a4d22dd629b8d470423b786d6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91825204"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95909532"
 ---
-# <a name="quickstart-use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Краткое руководство. Использование очередей Служебной шины Azure с Java для отправки и получения сообщений
+# <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-java"></a>Отправка сообщений в очереди Служебной шины и получение сообщений из них (Java)
+В этом кратком руководстве описывается создание приложения Java для отправки сообщений в очередь служебной шины Azure и получения сообщений из нее. 
 
-[!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
-В этом руководстве показано, как создавать приложения Java для отправки и получения сообщений через очередь Служебной шины Azure. 
-
-> [!NOTE]
-> Примеры Java можно найти на сайте GitHub в [репозитории azure-service-bus](https://github.com/Azure/azure-service-bus/tree/master/samples/Java).
+> [!IMPORTANT]
+> Для работы с этим кратким руководством используется новый пакет azure-messaging-servicebus (**предварительная версия**). Краткое руководство, в котором используется общедоступный пакет azure-servicebus, см. в статье [Отправка и получение сообщений с помощью azure-servicebus](service-bus-java-how-to-use-queues-legacy.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md).
-    1. Ознакомьтесь с **общими сведениями** об **очередях** Служебной шины. 
-    2. Создайте **пространство имен** Служебной шины. 
-    3. Получите **строку подключения**.
-    4. Создайте **очередь** Служебной шины.
-3. Установите [пакет Azure SDK для][Azure SDK for Java]Java. 
+- Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md). Запишите **строку подключения** к пространству имен Служебной шины и имя созданной **очереди**.
+- Установите [пакет Azure SDK для][Azure SDK for Java]Java. При использовании Eclipse можно установить [набор средств Azure для Eclipse][Azure Toolkit for Eclipse], включающий в себя пакет Azure SDK для Java. Затем можно добавить **библиотеки Microsoft Azure для Java** в проект. Если вы используете IntelliJ, см. статью [Установка набора средств Azure для IntelliJ](/azure/developer/java/toolkit-for-intellij/installation). 
 
-
-## <a name="configure-your-application-to-use-service-bus"></a>Настройка приложения для использования служебной шины
-Перед созданием этого образца убедитесь, что вы установили [пакет Azure SDK для Java][Azure SDK for Java]. 
-
-При использовании Eclipse можно установить [набор средств Azure для Eclipse][Azure Toolkit for Eclipse], включающий в себя пакет Azure SDK для Java. Затем можно добавить **библиотеки Microsoft Azure для Java** в проект. Если вы используете IntelliJ, см. статью [Установка набора средств Azure для IntelliJ](/azure/developer/java/toolkit-for-intellij/installation). 
-
-![Добавление библиотек Microsoft Azure для Java в проект Eclipse](./media/service-bus-java-how-to-use-queues/eclipse-azure-libraries-java.png)
-
-
-Добавьте в начало Java-файла следующие инструкции `import`:
-
-```java
-// Include the following imports to use Service Bus APIs
-import com.google.gson.reflect.TypeToken;
-import com.microsoft.azure.servicebus.*;
-import com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder;
-import com.google.gson.Gson;
-
-import static java.nio.charset.StandardCharsets.*;
-
-import java.time.Duration;
-import java.util.*;
-import java.util.concurrent.*;
-
-import org.apache.commons.cli.*;
-
-```
 
 ## <a name="send-messages-to-a-queue"></a>Отправка сообщений в очередь
-Для отправки сообщений в очередь служебной шины приложение создает объект **QueueClient** и асинхронно отправляет сообщения. Ниже показан код по отправке сообщения в очередь, созданную на портале.
+В рамках этого раздела вы создадите консольный проект Java и добавите код для отправки сообщений в созданную вами ранее очередь. 
 
-```java
-public void run() throws Exception {
-    // Create a QueueClient instance and then asynchronously send messages.
-    // Close the sender once the send operation is complete.
-    QueueClient sendClient = new QueueClient(new ConnectionStringBuilder(ConnectionString, QueueName), ReceiveMode.PEEKLOCK);
-    this.sendMessagesAsync(sendClient).thenRunAsync(() -> sendClient.closeAsync());
+### <a name="create-a-java-console-project"></a>Создание консольного проекта Java
+Создайте проект Java с помощью Eclipse или инструмента по своему усмотрению. 
 
-    sendClient.close();
-}
+### <a name="configure-your-application-to-use-service-bus"></a>Настройка приложения для использования служебной шины
+Добавьте ссылку на библиотеку служебной шины Azure. Клиентская библиотека Java для служебной шины доступна в [Центральном репозитории Maven](https://search.maven.org/search?q=a:azure-messaging-servicebus). Чтобы сослаться на эту библиотеку, используйте следующее объявление зависимостей в файле проекта Maven:
 
-    CompletableFuture<Void> sendMessagesAsync(QueueClient sendClient) {
-        List<HashMap<String, String>> data =
-                GSON.fromJson(
-                        "[" +
-                                "{'name' = 'Einstein', 'firstName' = 'Albert'}," +
-                                "{'name' = 'Heisenberg', 'firstName' = 'Werner'}," +
-                                "{'name' = 'Curie', 'firstName' = 'Marie'}," +
-                                "{'name' = 'Hawking', 'firstName' = 'Steven'}," +
-                                "{'name' = 'Newton', 'firstName' = 'Isaac'}," +
-                                "{'name' = 'Bohr', 'firstName' = 'Niels'}," +
-                                "{'name' = 'Faraday', 'firstName' = 'Michael'}," +
-                                "{'name' = 'Galilei', 'firstName' = 'Galileo'}," +
-                                "{'name' = 'Kepler', 'firstName' = 'Johannes'}," +
-                                "{'name' = 'Kopernikus', 'firstName' = 'Nikolaus'}" +
-                                "]",
-                        new TypeToken<List<HashMap<String, String>>>() {}.getType());
-
-        List<CompletableFuture> tasks = new ArrayList<>();
-        for (int i = 0; i < data.size(); i++) {
-            final String messageId = Integer.toString(i);
-            Message message = new Message(GSON.toJson(data.get(i), Map.class).getBytes(UTF_8));
-            message.setContentType("application/json");
-            message.setLabel("Scientist");
-            message.setMessageId(messageId);
-            message.setTimeToLive(Duration.ofMinutes(2));
-            System.out.printf("\nMessage sending: Id = %s", message.getMessageId());
-            tasks.add(
-                    sendClient.sendAsync(message).thenRunAsync(() -> {
-                        System.out.printf("\n\tMessage acknowledged: Id = %s", message.getMessageId());
-                    }));
-        }
-        return CompletableFuture.allOf(tasks.toArray(new CompletableFuture<?>[tasks.size()]));
-    }
-
+```xml
+<dependency>
+    <groupId>com.azure</groupId>
+    <artifactId>azure-messaging-servicebus</artifactId>
+    <version>7.0.0-beta.7</version>
+</dependency>
 ```
 
-Сообщения, отправляемые в очереди служебной шины и получаемые из них, представляют собой экземпляры класса [Message](/java/api/com.microsoft.azure.servicebus.message?view=azure-java-stable). Объекты Message обладают набором стандартных свойств (таких как Label и TimeToLive), словарем, в котором хранятся зависящие от приложения пользовательские свойства, и основным набором произвольных данных приложения. Приложение может задать текст сообщения, передав любой сериализуемый объект конструктору объекта Message, после чего для сериализации объекта будет использоваться соответствующий сериализатор. Вы также можете указать объект **java.IO.InputStream**.
+### <a name="add-code-to-send-messages-to-the-queue"></a>Добавление кода для отправки сообщений в очередь
+1. Добавьте в раздел Java-файла следующие инструкции `import`. 
 
+    ```java
+    import com.azure.messaging.servicebus.*;
+    import com.azure.messaging.servicebus.models.*;
+    import java.util.concurrent.TimeUnit;
+    import java.util.function.Consumer;
+    import java.util.Arrays;
+    import java.util.List;
+    ```    
+5. В классе, определите переменные для хранения строки подключения и имени очереди, как показано ниже. 
 
-Очереди служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Максимальный размер заголовка, который содержит стандартные и настраиваемые свойства приложения, — 64 КБ. Ограничения на количество сообщений в очереди нет, но есть максимальный общий размер сообщений, содержащихся в очереди. Этот размер очереди, определяемый в момент ее создания, не должен превышать 5 ГБ.
+    ```java
+    static String connectionString = "<NAMESPACE CONNECTION STRING>";
+    static String queueName = "<QUEUE NAME>";    
+    ```
+
+    Замените `<NAMESPACE CONNECTION STRING>` строкой подключения к пространству имен Служебной шины. Затем замените `<QUEUE NAME>` именем очереди.
+3. Добавьте метод с именем `sendMessage`, в класс для отправки одного сообщения в очередь. 
+
+    ```java
+    static void sendMessage()
+    {
+        // create a Service Bus Sender client for the queue 
+        ServiceBusSenderClient senderClient = new ServiceBusClientBuilder()
+                .connectionString(connectionString)
+                .sender()
+                .queueName(queueName)
+                .buildClient();
+        
+        // send one message to the queue
+        senderClient.sendMessage(new ServiceBusMessage("Hello, World!"));
+        System.out.println("Sent a single message to the queue: " + queueName);        
+    }
+    ```
+1. Добавьте метод с именем `createMessages` в класс, чтобы создать список сообщений. Как правило, эти сообщения поступают из различных частей приложения. Здесь мы создадим список примеров сообщений.
+
+    ```java
+    static List<ServiceBusMessage> createMessages()
+    {
+        // create a list of messages and return it to the caller
+        ServiceBusMessage[] messages = {
+                new ServiceBusMessage("First message"),
+                new ServiceBusMessage("Second message"),
+                new ServiceBusMessage("Third message")
+        };
+        return Arrays.asList(messages);
+    }
+    ```
+1. Добавьте метод с именем `sendMessageBatch` для отправки сообщений в созданную вами очередь. Этот метод создает `ServiceBusSenderClient` для очереди, вызывает метод `createMessages` для получения списка сообщений, подготавливает один или несколько пакетов и отправляет пакеты в очередь. 
+
+```java
+    static void sendMessageBatch()
+    {
+        // create a Service Bus Sender client for the queue 
+        ServiceBusSenderClient senderClient = new ServiceBusClientBuilder()
+                .connectionString(connectionString)
+                .sender()
+                .queueName(queueName)
+                .buildClient();
+
+        // Creates an ServiceBusMessageBatch where the ServiceBus.
+        ServiceBusMessageBatch messageBatch = senderClient.createMessageBatch();        
+        
+        // create a list of messages
+        List<ServiceBusMessage> listOfMessages = createMessages();
+        
+        // We try to add as many messages as a batch can fit based on the maximum size and send to Service Bus when
+        // the batch can hold no more messages. Create a new batch for next set of messages and repeat until all
+        // messages are sent.        
+        for (ServiceBusMessage message : listOfMessages) {
+            if (messageBatch.tryAddMessage(message)) {
+                continue;
+            }
+
+            // The batch is full, so we create a new batch and send the batch.
+            senderClient.sendMessages(messageBatch);
+            System.out.println("Sent a batch of messages to the queue: " + queueName);
+            
+            // create a new batch
+            messageBatch = senderClient.createMessageBatch();
+
+            // Add that message that we couldn't before.
+            if (!messageBatch.tryAddMessage(message)) {
+                System.err.printf("Message is too large for an empty batch. Skipping. Max size: %s.", messageBatch.getMaxSizeInBytes());
+            }
+        }
+        
+        if (messageBatch.getCount() > 0) {
+            senderClient.sendMessages(messageBatch);
+            System.out.println("Sent a batch of messages to the queue: " + queueName);
+        }
+
+        //close the client
+        senderClient.close();
+    }
+```
 
 ## <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
-Самым простым способом получения сообщений из очереди является использование объекта **ServiceBusContract**. Полученные сообщения могут работать в двух различных режимах: **ReceiveAndDelete** и **PeekLock**.
+В рамках этого раздела вы добавите код для получения сообщений из очереди. 
 
-В режиме **ReceiveAndDelete** получение является одиночной операцией, т. е. когда служебная шина получает запрос на чтение для сообщения в очереди, сообщение помечается как использованное и возвращается в приложение. Режим **ReceiveAndDelete** (режим по умолчанию) представляет собой самую простую модель, которая лучше всего работает для сценариев, в которых приложение может не обрабатывать сообщение в случае сбоя. Чтобы это понять, рассмотрим сценарий, в котором объект-получатель выдает запрос на получение и выходит из строя до его обработки.
-Так как служебная шина отмечает сообщение как использованное, перезапущенное приложение, начав снова использовать сообщения, пропустит сообщение, использованное до аварийного завершения работы.
+1. Добавьте метод с именем `receiveMessages` для получения сообщений из очереди. Этот метод создает `ServiceBusProcessorClient` для очереди, указывая один обработчик для обработки сообщений и другой — для обработки ошибок. Затем он запускает процессор, ждет несколько секунд, выводит полученные сообщения, а затем останавливает и закрывает процессор.
 
-В режиме **PeekLock** процесс получения становится двухэтапной операцией, что позволяет поддерживать приложения, неустойчивые к пропуску сообщений. Получив запрос, служебная шина находит следующее сообщение, блокирует его, чтобы предотвратить его получение другими получателями, и возвращает его приложению. Когда приложение завершает обработку сообщения (или надежно сохраняет его для последующей обработки), оно завершает второй этап процесса получения, вызывая метод **complete()** для полученного сообщения. Когда служебная шина обнаруживает вызов метода **complete()** , она помечает сообщение как использованное и удаляет его из очереди. 
+    ```java
+    // handles received messages
+    static void receiveMessages() throws InterruptedException
+    {
+        // consumer that processes a single message received from Service Bus
+        Consumer<ServiceBusReceivedMessageContext> messageProcessor = context -> {
+            ServiceBusReceivedMessage message = context.getMessage();
+            System.out.println("Received message: " + message.getBody().toString());
+        };
 
-В следующем примере показано, как получать и обрабатывать сообщения с помощью режима **PeekLock** (не используется по умолчанию). В приведенном ниже примере используется модель обратного вызова с зарегистрированным обработчиком сообщений и показан процесс обработки сообщений по мере их поступления в `TestQueue`. Этот режим автоматически вызывает метод **complete()** , если обратный вызов возвращается без ошибок, или метод **abandon()** , если обратный вызов возвращает исключение. 
+        // handles any errors that occur when receiving messages
+        Consumer<Throwable> errorHandler = throwable -> {
+            System.out.println("Error when receiving messages: " + throwable.getMessage());
+            if (throwable instanceof ServiceBusReceiverException) {
+                ServiceBusReceiverException serviceBusReceiverException = (ServiceBusReceiverException) throwable;
+                System.out.println("Error source: " + serviceBusReceiverException.getErrorSource());
+            }
+        };
 
-```java
-    public void run() throws Exception {
-        // Create a QueueClient instance for receiving using the connection string builder
-        // We set the receive mode to "PeekLock", meaning the message is delivered
-        // under a lock and must be acknowledged ("completed") to be removed from the queue
-        QueueClient receiveClient = new QueueClient(new ConnectionStringBuilder(ConnectionString, QueueName), ReceiveMode.PEEKLOCK);
-        this.registerReceiver(receiveClient);
+        // create an instance of the processor through the ServiceBusClientBuilder
+        ServiceBusProcessorClient processorClient = new ServiceBusClientBuilder()
+            .connectionString(connectionString)
+            .processor()
+            .queueName(queueName)
+            .processMessage(messageProcessor)
+            .processError(errorHandler)
+            .buildProcessorClient();
 
-        // shut down receiver to close the receive loop
-        receiveClient.close();
-    }
-    void registerReceiver(QueueClient queueClient) throws Exception {
-        // register the RegisterMessageHandler callback
-        queueClient.registerMessageHandler(new IMessageHandler() {
-        // callback invoked when the message handler loop has obtained a message
-            public CompletableFuture<Void> onMessageAsync(IMessage message) {
-            // receives message is passed to callback
-                if (message.getLabel() != null &&
-                    message.getContentType() != null &&
-                    message.getLabel().contentEquals("Scientist") &&
-                    message.getContentType().contentEquals("application/json")) {
+        System.out.println("Starting the processor");
+        processorClient.start();
 
-                        byte[] body = message.getBody();
-                        Map scientist = GSON.fromJson(new String(body, UTF_8), Map.class);
+        TimeUnit.SECONDS.sleep(10);
+        System.out.println("Stopping and closing the processor");
+        processorClient.close();        
+    }    
+    ```
+2. Обновите метод `main`, чтобы вызвать методы `sendMessage`, `sendMessageBatch` и `receiveMessages` и вызвать `InterruptedException`.     
 
-                        System.out.printf(
-                            "\n\t\t\t\tMessage received: \n\t\t\t\t\t\tMessageId = %s, \n\t\t\t\t\t\tSequenceNumber = %s, \n\t\t\t\t\t\tEnqueuedTimeUtc = %s," +
-                            "\n\t\t\t\t\t\tExpiresAtUtc = %s, \n\t\t\t\t\t\tContentType = \"%s\",  \n\t\t\t\t\t\tContent: [ firstName = %s, name = %s ]\n",
-                            message.getMessageId(),
-                            message.getSequenceNumber(),
-                            message.getEnqueuedTimeUtc(),
-                            message.getExpiresAtUtc(),
-                            message.getContentType(),
-                            scientist != null ? scientist.get("firstName") : "",
-                            scientist != null ? scientist.get("name") : "");
-                    }
-                    return CompletableFuture.completedFuture(null);
-                }
+    ```java
+    public static void main(String[] args) throws InterruptedException {        
+        sendMessage();
+        sendMessageBatch();
+        receiveMessages();
+    }   
+    ```
 
-                // callback invoked when the message handler has an exception to report
-                public void notifyException(Throwable throwable, ExceptionPhase exceptionPhase) {
-                    System.out.printf(exceptionPhase + "-" + throwable.getMessage());
-                }
-        },
-        // 1 concurrent call, messages are auto-completed, auto-renew duration
-        new MessageHandlerOptions(1, true, Duration.ofMinutes(1)));
-    }
+## <a name="run-the-app"></a>Запустите приложение
+При запуске приложения в окне консоли отображаются следующие сообщения. 
 
+```console
+Sent a single message to the queue: myqueue
+Sent a batch of messages to the queue: myqueue
+Starting the processor
+Received message: Hello, World!
+Received message: First message in the batch
+Received message: Second message in the batch
+Received message: Three message in the batch
+Stopping and closing the processor
 ```
 
-## <a name="how-to-handle-application-crashes-and-unreadable-messages"></a>Как обрабатывать сбои приложения и нечитаемые сообщения
-служебная шина предоставляет функции, помогающие корректно выполнить восстановление после ошибок в приложении или трудностей, возникших при обработке сообщения. Если приложение получателя не может обработать сообщение по какой-либо причине, оно может вызвать метод **abandon()** в объекте клиента с маркером блокировки сообщения, полученным с помощью **getLockToken()** . После этого служебная шина разблокирует сообщение в очереди и сделает его доступным для приема тем же или другим приложением-пользователем.
+На странице **Обзор** для пространства имен служебной шины в портале Azure можно видеть количество **входящих** и **исходящих** сообщений. Чтобы просмотреть последние значения, возможно, потребуется подождать около минуты, а затем обновить страницу. 
 
-Кроме того, с сообщением, блокированным в очереди, связано время ожидания. Если приложение не сможет обработать сообщение в течение времени ожидания (например, при сбое приложения), служебная шина автоматически разблокирует сообщение и снова сделает его доступным для получения.
+:::image type="content" source="./media/service-bus-java-how-to-use-queues/overview-incoming-outgoing-messages.png" alt-text="Количество входящих и исходящих сообщений" lightbox="./media/service-bus-java-how-to-use-queues/overview-incoming-outgoing-messages.png":::
 
-Если сбой приложения происходит после обработки сообщения, но перед отправкой запроса **complete()** , такое сообщение будет повторно доставлено в приложение после перезапуска. Часто такой подход называют *Обработать хотя бы один раз*, т. е. каждое сообщение будет обрабатываться по крайней мере один раз, но в некоторых случаях это же сообщение может быть доставлено повторно. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Часто это достигается с помощью метода **getMessageId** сообщения, которое остается постоянным для различных попыток доставки.
+Выберите очередь на этой странице **Обзор**, чтобы перейти на страницу **Очередь служебной шины**. На этой странице отображаются количество **входящих** и **исходящих** сообщений. Вы также можете увидеть другие сведения, например **текущий размер** очереди, **максимальный размер**, **количество активных сообщений** и т. д. 
 
-> [!NOTE]
-> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
+:::image type="content" source="./media/service-bus-java-how-to-use-queues/queue-details.png" alt-text="Сведения об очереди" lightbox="./media/service-bus-java-how-to-use-queues/queue-details.png":::
+
+
 
 ## <a name="next-steps"></a>Next Steps
-Вы ознакомились с основами использования очередей служебной шины. Дополнительные сведения см. в статье [Очереди, разделы и подписки служебной шины][Queues, topics, and subscriptions].
+Ознакомьтесь со следующими примерами и документацией:
 
-Дополнительную информацию см. в [Центре разработчиков Java](https://azure.microsoft.com/develop/java/).
+- [Клиентская библиотека Служебной шины Azure для Java: файл сведений](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/README.md)
+- [Примеры на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/servicebus/azure-messaging-servicebus/src/samples)
+- [Справочник по API Java](https://docs.microsoft.com/java/api/overview/azure/servicebus?view=azure-java-preview&preserve-view=true)
+
+См. [другие примеры на сайте GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/servicebus/azure-messaging-servicebus). 
 
 [Azure SDK for Java]: /azure/developer/java/sdk/java-sdk-azure-get-started
 [Azure Toolkit for Eclipse]: /azure/developer/java/toolkit-for-eclipse/installation

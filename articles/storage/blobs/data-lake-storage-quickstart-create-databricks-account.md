@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.reviewer: jeking
-ms.openlocfilehash: 908bf21d2fe101731b11e3a8ad783f17728c8ed3
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: e289bea6b1a23f1622ced62656164d9865303298
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677336"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912830"
 ---
 # <a name="quickstart-analyze-data-with-databricks"></a>Краткое руководство. Анализ данных с помощью Databricks
 
@@ -23,7 +23,7 @@ ms.locfileid: "92677336"
 
 * Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 
-* Имя учетной записи хранения Azure Data Lake Storage 2-го поколения. [Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
+* Учетная запись хранения с включенным иерархическим пространством имен. Инструкции по созданию см. в статье [Создание учетной записи хранения для использования с Azure Data Lake Storage 2-го поколения](create-data-lake-storage-account.md).
 
 * Идентификатор клиента, идентификатор приложения и пароль субъекта-службы Azure с назначенной ролью **участника для данных большого двоичного объекта хранилища**. [Создайте субъект-службу](../../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -109,7 +109,7 @@ ms.locfileid: "92677336"
    ```
 5. В этом блоке кода замените значения заполнителя `storage-account-name`, `appID`, `password` и `tenant-id` значениями, полученными в ходе создания субъекта-службы. Задайте значение заполнителя `container-name` для имени контейнера.
 
-6. Нажмите клавиши **SHIFT + ВВОД** , чтобы запустить код в этом блоке.
+6. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
 ## <a name="ingest-sample-data"></a>Принятие демонстрационных данных
 
@@ -121,7 +121,7 @@ ms.locfileid: "92677336"
 %sh wget -P /tmp https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json
 ```
 
-В ячейке нажмите клавиши **SHIFT+ВВОД** , чтобы выполнить код.
+В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
 Теперь в новую ячейку под этой введите следующий код и замените значения, которые отображаются в скобках, использованными ранее.
 
@@ -129,7 +129,7 @@ ms.locfileid: "92677336"
 dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/")
 ```
 
-В ячейке нажмите клавиши **SHIFT+ВВОД** , чтобы выполнить код.
+В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
 ## <a name="run-a-spark-sql-job"></a>Выполнение задания SQL Spark
 
@@ -162,9 +162,9 @@ dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<st
 
     ![Пример данных JSON](./media/data-lake-storage-quickstart-create-databricks-account/databricks-sample-csv-data.png "Пример данных JSON")
 
-    Среди прочего пример данных демонстрирует пол аудитории радиоканала (имя столбца **gender** ), а также категорию подписки (бесплатная или платная) (имя столбца **level** ).
+    Среди прочего пример данных демонстрирует пол аудитории радиоканала (имя столбца **gender**), а также категорию подписки (бесплатная или платная) (имя столбца **level**).
 
-4. Теперь можно создать визуальное представление данных по каждому полу, а также по числу пользователей с бесплатными и платными учетными записями. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы** , а затем — **параметры построения**.
+4. Теперь можно создать визуальное представление данных по каждому полу, а также по числу пользователей с бесплатными и платными учетными записями. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы**, а затем — **параметры построения**.
 
     ![Создание линейчатой диаграммы](./media/data-lake-storage-quickstart-create-databricks-account/create-plots-databricks-notebook.png "Создание линейчатой диаграммы")
 
@@ -198,7 +198,7 @@ dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<st
 Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
 
 > [!div class="nextstepaction"]
->[Извлечение, преобразование и загрузка данных с помощью Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md)
+>[Извлечение, преобразование и загрузка данных с помощью Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse)
 
 - Чтобы узнать, как импортировать данные из других источников данных в Azure Databricks, см. статью об [источниках данных Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html).
 

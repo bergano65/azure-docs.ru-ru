@@ -4,12 +4,12 @@ description: Сведения о том, как с помощью серверо
 keywords: служба автоматизации Azure, DSC, PowerShell, настройка требуемого состояния, управление обновлениями, отслеживание изменений, инвентаризация, модули runbook, Python, графический, гибридный
 ms.date: 11/12/2020
 ms.topic: overview
-ms.openlocfilehash: 2df970f7c94f1e306243aba1480ee7023b8f76c1
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 8368f89b8e471698ede3e9e8eb691e69f494b6e2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578728"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183402"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Что такое серверы с поддержкой Azure Arc?
 
@@ -29,7 +29,7 @@ ms.locfileid: "94578728"
 
 - Упрощение развертывания с помощью других служб Azure, таких как служба [State Configuration](../../automation/automation-dsc-overview.md) Службы автоматизации Azure и рабочая область Log Analytics Azure Monitor, с использованием поддерживаемых [расширений виртуальных машин Azure](manage-vm-extensions.md) для компьютеров под управлением Windows или Linux, не имеющих отношения к платформе Azure. Сюда входит выполнение конфигурации пост-развертывания или установки программного обеспечения с помощью Расширения пользовательских сценариев.
 
-- Используйте [Управление обновлениями](../../automation/update-management/update-mgmt-overview.md) в Службе автоматизации Azure для управления обновлениями операционной системы на серверах Windows и Linux.
+- Используйте [Управление обновлениями](../../automation/update-management/overview.md) в Службе автоматизации Azure для управления обновлениями операционной системы на серверах Windows и Linux.
 
     > [!NOTE]
     > Сейчас включить Управление обновлениями непосредственно с сервера с поддержкой Arc нельзя. Дополнительные сведения см. в статье [Включение Управления обновлениями из учетной записи службы автоматизации](../../automation/update-management/enable-from-automation-account.md).

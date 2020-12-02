@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: b6eb571c7c37a628d11f07b4e1b207e38830250b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5b593add9c9d7be446798eecdd03b396c3fe513a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88235406"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174736"
 ---
 # <a name="what-is-automated-saas-app-user-provisioning-in-azure-ad"></a>Что представляет собой автоматическая подготовка пользователей для приложений SaaS в Azure AD?
 
@@ -59,7 +59,7 @@ Azure AD предлагает предварительно интегриров
 
    ![Логотип Salesforce](./media/user-provisioning/gallery-app-logos.png)
 
-   Если вы хотите запросить новое приложение для подготовки, можно [запросить интеграцию вашего приложения с нашей коллекцией приложений](../azuread-dev/howto-app-gallery-listing.md). Для запроса на подготовку пользователя требуется, чтобы приложение имело конечную точку, совместимую с SCIM. Обратитесь к поставщику приложения с просьбой следовать стандарту SCIM, чтобы мы могли быстро встроить приложение в нашу платформу.
+   Если вы хотите запросить новое приложение для подготовки, можно [запросить интеграцию вашего приложения с нашей коллекцией приложений](../develop/v2-howto-app-gallery-listing.md). Для запроса на подготовку пользователя требуется, чтобы приложение имело конечную точку, совместимую с SCIM. Обратитесь к поставщику приложения с просьбой следовать стандарту SCIM, чтобы мы могли быстро встроить приложение в нашу платформу.
 
 * **Подключение приложений с поддержкой SCIM 2.0** Сведения об универсальных способах подключения приложений, реализующих API-интерфейсы управления пользователями на основе SCIM 2.0, см. в статье [Создание конечной точки SCIM и настройка подготовки пользователей](use-scim-to-provision-users-and-groups.md).
 

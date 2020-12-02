@@ -8,19 +8,20 @@ ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 99a0805239ee2437ad6ec9ceb40cf45496a07850
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 3a3518ba68c9474fc4a34390e6fd9a7d1e88f6c6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047664"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959600"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство по настройке среды для машинного обучения в IoT Edge
 
-> [!NOTE]
-> Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
-
 Эта статья поможет вам подготовить среду для разработки и развертывания. Сначала настройте все необходимые инструменты на компьютере для разработки. Затем создайте необходимые облачные ресурсы в Azure.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Каждая статья в серии основана на инструкциях, выполненных при работе с предыдущей статьей. Если вы приступили сразу к этой статье, перейдите на [первую статью](tutorial-machine-learning-edge-01-intro.md) серии.
 
 ## <a name="set-up-the-development-vm"></a>Настройка виртуальной машины разработки
 
@@ -31,7 +32,7 @@ ms.locfileid: "92047664"
 На виртуальной машине для разработки будут настроены следующие инструменты:
 
 * Windows 10
-* [Chocolatey](https://chocolatey.org/);
+* [Chocolatey](https://chocolatey.org/)
 * [Docker Desktop для Windows](https://www.docker.com/products/docker-desktop);
 * [Git для Windows](https://gitforwindows.org/)
 * [диспетчер учетных данных Git для Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows);
@@ -116,7 +117,7 @@ ms.locfileid: "92047664"
 
 1. Вам будет предложено принять сертификат для виртуальной машины. Выберите **Да**.
 
-## <a name="install-visual-studio-code-extensions"></a>Установка расширений Visual Studio Code
+## <a name="install-visual-studio-code-extensions"></a>Установка расширений Visual Studio Code
 
 Теперь, когда вы подключились к компьютеру для разработки, добавьте несколько полезных расширений в Visual Studio Code, чтобы упростить разработку.
 
@@ -173,7 +174,7 @@ ms.locfileid: "92047664"
     * Вам будет предложено войти в Azure.
     * Скрипт подтверждает сведения для создания Центра и учетной записи хранения. Нажмите клавишу **Y** или **ВВОД**, чтобы продолжить.
 
-Выполнение скрипта занимает около двух минут. По завершении скрипт выводит имя центра Интернета вещей и учетную запись хранения.
+Выполнение сценария занимает около двух минут. По завершении скрипт выводит имя центра Интернета вещей и учетную запись хранения.
 
 ## <a name="review-route-to-storage-in-iot-hub"></a>Просмотр маршрута для хранения в Центре Интернета вещей
 

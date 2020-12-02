@@ -9,21 +9,21 @@ ms.topic: overview
 ms.date: 11/15/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: f1ea8d16a441230323b4f0213229d223a0b035bc
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8dbf3b5de4b908eb831158b73b2b17472bc4895e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778644"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020969"
 ---
 # <a name="what-are-the-comparisons-between-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
 
 Сеть доставки содержимого Microsoft Azure (CDN) включает в себя четыре продукта: 
 
-* **Azure CDN уровня "Стандартный" от Майкрософт** ;
-* **Azure CDN уровня "Стандартный" от Akamai** ;
-* **Azure CDN уровня "Стандартный" от Verizon** ;
-* **Azure CDN уровня "Премиум" от Verizon** . 
+* **Azure CDN уровня "Стандартный" от Майкрософт**;
+* **Azure CDN уровня "Стандартный" от Akamai**;
+* **Azure CDN уровня "Стандартный" от Verizon**;
+* **Azure CDN уровня "Премиум" от Verizon**. 
 
 В следующей таблице перечислены функции, доступные в каждом из продуктов.
 
@@ -72,7 +72,7 @@ ms.locfileid: "92778644"
 | Простая интеграция со службами Azure, такими как [служба хранилища](cdn-create-a-storage-account-with-cdn.md), [веб-приложения](cdn-add-to-web-app.md) и [Службы мультимедиа](../media-services/previous/media-services-portal-manage-streaming-endpoints.md).  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Управление с помощью [REST API](/rest/api/cdn/), [.NET](cdn-app-dev-net.md), [Node.js](cdn-app-dev-node.md) или [PowerShell](cdn-manage-powershell.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Типы сжатия MIME](./cdn-improve-performance.md)  |Только по умолчанию |Настраивается |Возможность настройки  |Настраивается  |
-| Кодирование сжатия  |gzip, brotli |gzip |gzip, deflate, bzip2, brotili  |gzip, deflate, bzip2, brotili  |
+| Кодирование сжатия  |gzip, brotli |gzip |GZIP, DEFLATE, BZIP2, BROTLI  |GZIP, DEFLATE, BZIP2, BROTLI  |
 
 ## <a name="migration"></a>Миграция
 

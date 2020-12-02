@@ -8,20 +8,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: f967b10d729c9c5486bbca9b643f48aaf558687c
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 5489feeeec64c7b3d4b5fc28eddfe8b780308796
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628073"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94979884"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Руководство. Выполнение входа от имени пользователя и вызов защищенного API из приложения Blazor WebAssembly
 
-Blazor WebAssembly (WASM) — это платформа для одностраничных приложений, которая позволяет создавать с помощью .NET интерактивные веб-приложения, выполняемые на стороне клиента. Из этого руководства вы узнаете, как реализовать проверку подлинности и извлечь данные из Microsoft Graph в приложении Blazor WASM, используя платформу удостоверений Майкрософт и зарегистрировав приложение в Azure Active Directory (Azure AD).
+Из этого руководства вы узнаете, как создать приложение Blazor WebAssembly с поддержкой входа пользователей и получения данных из Microsoft Graph, используя платформу удостоверений Майкрософт и зарегистрировав приложение в Azure Active Directory (Azure AD).
 
 Кроме того, у нас есть руководство по [Blazor Server](tutorial-blazor-server.md). 
 
-Выполняя данное руководство, вы сделаете следующее:
+В этом руководстве рассматриваются следующие темы:
 
 > [!div class="checklist"]
 >

@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 10/30/2020
-ms.openlocfilehash: fef949e9285264ef46fbaed05a4385a15b27e65e
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 70acc696f1cb366d25299f616744e52491a54471
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94354551"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024183"
 ---
 # <a name="tutorial-analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Руководство по Анализа данных телефонных звонков с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI
 
@@ -129,7 +129,7 @@ ms.locfileid: "94354551"
 
 1. Чтобы создать задание Stream Analytics, перейдите на [портал Azure](https://portal.azure.com/).
 
-2. Выберите **Создать ресурс** и выполните поиск по фразе **Задание Stream Analytics**. Выберите плитку **Задание Stream Analytics**, а затем — *Создать**.
+2. Выберите **Создать ресурс** и выполните поиск по фразе **Задание Stream Analytics**. Выберите плитку **Задание Stream Analytics** и щелкните **Создать**.
 
 3. Заполните форму **Новое задание Stream Analytics** такими значениями:
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 10/09/2020
 ms.author: masoucou
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 94cf54e689f845f77c54d1d3c7710e079594f556
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 339c6177de6e83f463efbc97e88a36ed4c52d97b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098949"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349101"
 ---
 # <a name="quickstart-build-a-xamarinforms-app-with-net-sdk-and-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Создание приложения Xamarin.Forms с помощью пакета SDK для .NET и API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -164,7 +164,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения** , а затем выберите **Ключи записи-чтения**. В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать основную строку подключения.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать основную строку подключения.
 
 2. Откройте файл **APIKeys.cs** в каталоге **Helpers** проекта **TaskList.Core**.
 
@@ -207,4 +207,4 @@ Azure Cosmos DB — это глобально распределенная мн
 Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB и запустить приложение Xamarin.Forms, используя API MongoDB. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Руководство по переносу данных в учетную запись API MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json)
+> [Руководство по переносу данных в учетную запись API MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json)

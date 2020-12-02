@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 11/16/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3b32e7a1df0dbbf4d43a73f1e3e409a904ab88a3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 8d70a45b89142f6f9c6990fdbb4b79751c82275f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660089"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95237482"
 ---
 # <a name="quickstart-bulk-loading-with-synapse-sql"></a>Краткое руководство. Массовая загрузка в Synapse SQL
 
@@ -39,7 +39,8 @@ ms.locfileid: "94660089"
 
 ### <a name="steps"></a>Шаги
 
-1. Выберите учетную запись хранения и файл или папку, из которых вы загружаете данные, на панели в месте хранения исходных данных. Мастер будет автоматически пытаться обнаружить файлы Parquet. Если файл Parquet не будет определен, по умолчанию будет использоваться текст с разделителями (CSV). 
+1. Выберите учетную запись хранения и файл или папку, из которых вы загружаете данные, на панели в месте хранения исходных данных. Мастер будет автоматически пытаться обнаружить файлы Parquet. Если файл Parquet не будет определен, по умолчанию будет использоваться текст с разделителями (CSV).
+
    ![Выбор расположения исходных данных](./sql/media/bulk-load/bulk-load-source-location.png)
 
 2. Выберите параметры формата файла, включая учетную запись хранения для записи отклоненных строк (файл ошибок). Сейчас поддерживаются только CSV-файлы и файлы Parquet.

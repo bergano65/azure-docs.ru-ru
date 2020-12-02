@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperfq1
-ms.openlocfilehash: edcc94050880544a6c2de54ff27f833f1c60f99f
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: f18f1184f921aca4f2c1e33ac00dcf14c63b24eb
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683651"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95893364"
 ---
 # <a name="azure-ea-portal-administration"></a>Администрирование на портале Azure EA
 
@@ -146,7 +146,7 @@ ms.locfileid: "94683651"
 - Если передача подписки или прав владения учетной записью выполняется между двумя идентификаторами организации, относящимися к одному клиенту, в ней сохраняются политики Azure RBAC, имеющиеся назначения ролей администратора службы и соадминистратора.
 - Перемещения межклиентских подписок или передача владения учетной записью приводят к утрате политик Azure RBAC и назначений ролей.
 - Политики и роли администратора не передаются между каталогами. Администратором службы автоматически назначается владелец целевой учетной записи.
-- Чтобы избежать потери политик RBAC и назначений ролей при передаче подписок между клиентами, убедитесь, что **снят флажок** **Move the subscriptions to the recipient’s Azure AD tenant** (Перемещение подписок в клиент Azure AD получателя). При этом будут сохранены службы, роли RBAC и политики в текущем клиенте Azure AD. Будут переданы только права на выставление счетов для учетной записи.  
+- Чтобы избежать потери политик Azure RBAC и назначений ролей при передаче подписок между клиентами, **снимите флажок** **Move the subscriptions to the recipient’s Azure AD tenant** (Перемещение подписок в клиент Azure AD получателя). При этом будут сохранены службы, роли Azure и политики в текущем клиенте Azure AD. Будут переданы только права на выставление счетов для учетной записи.  
     :::image type="content" source="./media/ea-portal-administration/unselected-checkbox-move-subscriptions-to-recipients-tenant.png" alt-text="Изображение, показывающее, что флажок для перемещения подписок в клиент Azure AD снят" lightbox="./media/ea-portal-administration/unselected-checkbox-move-subscriptions-to-recipients-tenant.png" :::
 
 
@@ -282,7 +282,7 @@ ms.locfileid: "94683651"
 
 Каждая роль имеет разный уровень доступа и полномочий.
 
-Дополнительные сведения о ролях пользователей см. в разделе [Роли корпоративных пользователей](https://docs.microsoft.com/azure/manage/understand-ea-roles#enterprise-user-roles).
+Дополнительные сведения о ролях пользователей см. в разделе [Роли корпоративных пользователей](/azure/cost-management-billing/manage/understand-ea-roles#enterprise-user-roles).
 
 ## <a name="add-an-azure-ea-account"></a>Добавление учетной записи Azure EA
 
