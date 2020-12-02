@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: 5631cbdd0b1eae343899be2147720d980e605dbb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5bd41396cf075f83fd37a4276f7a30223ec8c1f3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452717"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96482949"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Как развернуть Windows 10 в Azure с правами на мультитенантное размещение 
 Клиентам, использующим Windows 10 Корпоративная E3 или Windows 10 Корпоративная E5 для каждого пользователя, либо Windows VDA для каждого пользователя (лицензии на подписку пользователя или дополнительные лицензии на подписку пользователя), права на мультитенантное размещение для Windows 10 позволяют перенести лицензии Windows 10 в облако и запустить виртуальные машины Windows 10 в Azure без необходимости платить за другую лицензию. Дополнительные сведения см. в [этом разделе](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
@@ -36,9 +36,11 @@ ms.locfileid: "96452717"
 ## <a name="qualify-for-multi-tenant-hosting-rights"></a>Квалификация прав на размещение нескольких клиентов 
 Чтобы получить права на размещение нескольких клиентов и запускать образы Windows 10 на пользователей Azure, необходимо иметь одну из следующих подписок: 
 
--   Microsoft 365 E3/е/F3/a3/A5
--   Windows 10 Корпоративная E3/с 
--   Windows 10 для образовательных учреждений a3/A5
+-   Microsoft 365 E3/с 
+-   Microsoft 365 F3 
+-   Microsoft 365 a3/A5 
+-   Windows 10 Корпоративная E3/с
+-   Windows 10 для образовательных учреждений a3/A5 
 -   Windows VDA E3/в.
 
 

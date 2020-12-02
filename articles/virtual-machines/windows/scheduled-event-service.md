@@ -7,12 +7,12 @@ ms.subservice: monitoring
 ms.date: 08/20/2019
 ms.author: sarn
 ms.topic: how-to
-ms.openlocfilehash: 0806c6e0ed89c2c0f4712ec985599810119fcf89
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0d1edde5ac1b83feab458eb5d12d524163d3ffb1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015525"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483306"
 ---
 # <a name="monitoring-scheduled-events"></a>Мониторинг запланированных событий
 
@@ -132,7 +132,7 @@ New-AzVm `
 ## <a name="creating-an-alert-rule-with-azure-monitor"></a>Создание правила генерации оповещений с помощью Azure Monitor 
 
 
-После отправки событий в Log Analytics можно выполнить следующий [запрос](../../azure-monitor/log-query/get-started-portal.md), чтобы найти запланированные события.
+После отправки событий в Log Analytics можно выполнить следующий [запрос](../../azure-monitor/log-query/log-analytics-tutorial.md), чтобы найти запланированные события.
 
 1. В верхней части страницы выберите **Журналы** и вставьте в текстовое поле следующий текст:
 

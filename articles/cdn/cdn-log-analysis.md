@@ -9,14 +9,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 7/22/2020
+ms.date: 11/30/2020
 ms.author: allensu
-ms.openlocfilehash: 169889dbb87d00fdde44ff72c0d2004c331604ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2c593cda7761ce1defa6bdb31e0dbb528b9e5eca
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87073040"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483994"
 ---
 # <a name="analyze-azure-cdn-usage-patterns"></a>Анализ вариантов использования CDN Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "87073040"
 
 С помощью Azure Log Analytics можно просматривать метрики мониторинга и настраивать оповещения. 
 
-Дополнительные сведения см. в разделе [Azure CDN необработанных журналов HTTP](enable-raw-logs.md).
+Дополнительные сведения см. в разделе [Azure CDN необработанных журналов HTTP](monitoring-and-access-log.md).
 
 
 ## <a name="core-analytics-via-azure-diagnostic-logs"></a>Базовая аналитика с использованием журналов диагностики Azure
@@ -61,6 +61,4 @@ ms.locfileid: "87073040"
 Дополнительные сведения о Azure CDN и других службах Azure, упомянутых в этой статье, см. в следующих статьях:
 
 * [Что такое Azure CDN?](cdn-overview.md)
-* [Необработанные журналы HTTP (Azure CDN)](enable-raw-logs.md)
-
-
+* [Необработанные журналы HTTP (Azure CDN)](monitoring-and-access-log.md)

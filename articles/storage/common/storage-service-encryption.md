@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: bc0a556841c3c6ee91ae472087aaaf7c74009b67
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: da1acc6316d7af87ffe35b9560919c324373591a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785788"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484606"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Шифрование службы хранилища Azure для неактивных данных
 
@@ -32,7 +32,7 @@ ms.locfileid: "92785788"
 
 Дополнительные сведения о криптографических модулях, лежащих в основе шифрования службы хранилища Azure, см. в разделе [API шифрования: следующее поколение](/windows/desktop/seccng/cng-portal).
 
-Сведения о шифровании и управлении ключами для управляемых дисков Azure см. в статье [Шифрование управляемых дисков Azure на стороне сервера](../../virtual-machines/windows/disk-encryption.md) для виртуальных машин Windows или [Шифрование управляемых дисков Azure на стороне сервера](../../virtual-machines/linux/disk-encryption.md) для виртуальных машин Linux.
+Сведения о шифровании и управлении ключами для управляемых дисков Azure см. в статье [Шифрование управляемых дисков Azure на стороне сервера](../../virtual-machines/disk-encryption.md) для виртуальных машин Windows или [Шифрование управляемых дисков Azure на стороне сервера](../../virtual-machines/disk-encryption.md) для виртуальных машин Linux.
 
 ## <a name="about-encryption-key-management"></a>Об управлении ключами шифрования
 
@@ -46,10 +46,10 @@ ms.locfileid: "92785788"
 | Параметр управления ключами | Ключи, управляемые Майкрософт | Ключи, управляемые клиентом | Ключи, предоставляемые клиентом |
 |--|--|--|--|
 | Операции шифрования и расшифровки | Azure | Azure | Azure |
-| Поддерживаемые службы хранилища Azure | Все | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
+| Поддерживаемые службы хранилища Azure | All | Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup> | Хранилище BLOB-объектов |
 | Хранилище ключей | Хранилище ключей (Майкрософт) | Azure Key Vault или Key Vault HSM | Собственное хранилище ключей клиента |
 | Ответственность за смену ключей | Microsoft | Customer | Customer |
-| Управление ключами | Майкрософт | Customer | Customer |
+| Управление ключами | Microsoft | Customer | Customer |
 
 <sup>1</sup> сведения о создании учетной записи, поддерживающей использование управляемых клиентом ключей с хранилищем очередей, см. в разделе [Создание учетной записи, которая поддерживает управляемые клиентом ключи для очередей](account-encryption-key-create.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).<br />
 <sup>2</sup> дополнительные сведения о создании учетной записи, поддерживающей использование управляемых клиентом ключей с хранилищем таблиц, см. в разделе [Создание учетной записи, которая поддерживает управляемые клиентом ключи для таблиц](account-encryption-key-create.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json).

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 89e5fa180b011cbedebc25a5e5d555a2190805f8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: dff7ff0afd6c236645731dc7edd936b0b808716b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015364"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483926"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API преобразования речи в текст;
 
@@ -58,7 +58,7 @@ https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversa
 | `language` | Определяет распознаваемую устную речь. См. раздел [Поддерживаемые языки](language-support.md#speech-to-text). | Обязательно |
 | `format` | Указывает формат результатов. Допустимые значения: `simple` и `detailed`. К простым результатам относятся `RecognitionStatus`, `DisplayText`, `Offset` и `Duration`. Подробные ответы включают четыре различных представления отображаемого текста. Значение по умолчанию — `simple`. | Необязательно |
 | `profanity` | Указывает, как обрабатывать ненормативную лексику в результатах распознавания. Допустимые значения: `masked` , что заменяет ненормативную лексику на звездочки, `removed` которая удаляет всю ненормативную лексику из результата или `raw` , в том числе ненормативную лексику, в результате. Значение по умолчанию — `masked`. | Необязательно |
-| `cid` | При использовании [портала пользовательское распознавание речи](how-to-custom-speech.md) для создания пользовательских моделей можно использовать пользовательские модели с помощью **идентификатора конечной точки** , найденного на странице **развертывания** . Используйте **идентификатор конечной точки** в качестве аргумента для `cid` параметра строки запроса. | Необязательно |
+| `cid` | При использовании [портала пользовательское распознавание речи](./custom-speech-overview.md) для создания пользовательских моделей можно использовать пользовательские модели с помощью **идентификатора конечной точки** , найденного на странице **развертывания** . Используйте **идентификатор конечной точки** в качестве аргумента для `cid` параметра строки запроса. | Необязательно |
 
 ## <a name="request-headers"></a>Заголовки запроса
 
@@ -306,6 +306,6 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
+- [Создание бесплатной учетной записи Azure](https://azure.microsoft.com/free/cognitive-services/)
 - [Настройка акустических моделей](./how-to-custom-speech-train-model.md)
 - [Настройка языковых моделей](./how-to-custom-speech-train-model.md)

@@ -300,7 +300,7 @@
         - name: Зарезервированные экземпляры
           items:
             - name: Предоплата за виртуальные машины
-              href: prepay-reserved-vm-instances.md
+              href: ../prepay-reserved-vm-instances.md
             - name: Основные сведения о резервировании в Azure
               href: ../../cost-management-billing/reservations/save-compute-costs-reservations.md
             - name: Гибкость размера экземпляра виртуальной машины
@@ -570,7 +570,7 @@
             - name: Создание узла-бастиона
               items:
                 - name: Портал
-                  href: ../../bastion/bastion-create-host-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                  href: ../../bastion/tutorial-create-host-portal.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
                 - name: PowerShell
                   href: ../../bastion/bastion-create-host-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
                 - name: CLI
@@ -650,6 +650,7 @@
         - name: Замена диска ОС
           href: os-disk-swap.md
         - name: Добавление тега для виртуальной машины
+          href: time-sync.md
           items:
             - name: Портал
               href: ../tag-portal.md
@@ -660,7 +661,6 @@
             - name: Шаблон
               href: ../tag-template.md
             - name: Синхронизация времени
-          href: time-sync.md
         - name: Выполнение скриптов на виртуальной машине
           href: run-scripts-in-vm.md
           items:
@@ -863,8 +863,6 @@
           href: install-mongodb.md
         - name: SAP в Azure
           href: ../workloads/sap/get-started.md
-        - name: Кластер MATLAB
-          href: matlab-mdcs-cluster.md
         - name: Visual Studio
           href: using-visual-studio-vm.md
         - name: Высокопроизводительные вычисления (HPC)

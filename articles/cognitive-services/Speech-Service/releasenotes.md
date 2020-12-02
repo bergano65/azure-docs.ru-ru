@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: e786c4caae13ffaa541697d083158e17d42383fb
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: c6cc033e4814553020957310224a8ed4cdacbc8e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122564"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483960"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
@@ -40,14 +40,13 @@ ms.locfileid: "96122564"
 
 **Новые функции**
 - **Linux**: добавлена поддержка Debian 10 и Ubuntu 20,04 LTS.
-- **Python/объектив-C**: добавлена поддержка `KeywordRecognizer` API. Документация будет [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/custom-keyword-basics).
+- **Python/объектив-C**: добавлена поддержка `KeywordRecognizer` API. Документация будет [здесь](./custom-keyword-basics.md).
 - **C++/Жава/к #**: добавлена поддержка для установки любых `HttpHeader` ключей и значений через `ServicePropertyChannel::HttpHeader` .
-- **JavaScript**: добавлена поддержка `ConversationTranscriber` API. Ознакомьтесь с документацией [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-conversation-transcription?pivots=programming-language-javascript). 
-- **C++/c #**: добавлен новый `AudioDataStream FromWavFileInput` метод (для чтения. Файлы WAV) [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/audiodatastream) и [здесь (C#)](
-https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
--  **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), здесь ( [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech)), здесь (на языке [Python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python)и [здесь (цель-C/SWIFT)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
-- **C#, C++, Java**: в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [здесь (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection)и [здесь (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection).
-- **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлена поддержка оценки произношения, которая оценивает произношение речи и дает отзыв о точности и владениее речевого звука. Ознакомьтесь с документацией [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment).
+- **JavaScript**: добавлена поддержка `ConversationTranscriber` API. Ознакомьтесь с документацией [здесь](./how-to-use-conversation-transcription.md?pivots=programming-language-javascript). 
+- **C++/c #**: добавлен новый `AudioDataStream FromWavFileInput` метод (для чтения. Файлы WAV) [здесь (C++)](/cpp/cognitive-services/speech/audiodatastream) и [здесь (C#)](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
+-  **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), здесь ( [Java](/java/api/com.microsoft.cognitiveservices.speech)), здесь (на языке [Python)](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python)и [здесь (цель-C/SWIFT)](/objectivec/cognitive-services/speech/).
+- **C#, C++, Java**: в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [здесь (C++)](/cpp/cognitive-services/speech/connection)и [здесь (Java)](/java/api/com.microsoft.cognitiveservices.speech.connection).
+- **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлена поддержка оценки произношения, которая оценивает произношение речи и дает отзыв о точности и владениее речевого звука. Ознакомьтесь с документацией [здесь](how-to-pronunciation-assessment.md).
 
 **Критическое изменение**
 - **JavaScript**: пуллаудиуутпутстреам. Read () имеет тип возврата из внутреннего обещания в собственное обещание JavaScript.
@@ -83,7 +82,7 @@ https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audioda
 Оставайтесь в курсе событий!
 
 ## <a name="speech-cli-also-known-as-spx-2020-october-release"></a>Речевой интерфейс командной строки (также известный как SPX): 2020 — выпуск от октября
-SPX — это интерфейс командной строки для использования службы распознавания речи Azure без написания кода. Скачайте последнюю версию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-basics). <br>
+SPX — это интерфейс командной строки для использования службы распознавания речи Azure без написания кода. Скачайте последнюю версию [здесь](./spx-basics.md). <br>
 
 **Новые функции**
 - `spx csr dataset upload --kind audio|language|acoustic` — Создание наборов данных из локальных, а не только URL-адресов.
@@ -144,7 +143,7 @@ SPX — это интерфейс командной строки для исп�
     | `ja-JP` | нанами |
     | `ko-KR` | Sun-Hi |
 
-### <a name="bug-fixes"></a>Исправления ошибок
+### <a name="bug-fixes"></a>Исправленные ошибки
 
 * Исправлен ряд ошибок с помощью средства создания звукового содержимого. 
     * Исправлена проблема с автоматическое обновлением. 
@@ -257,7 +256,7 @@ SPX — это интерфейс командной строки для исп�
     | `pt-PT` | 77 % |
     | `id-ID` | 46 % |
 
-### <a name="bug-fixes"></a>Исправления ошибок
+### <a name="bug-fixes"></a>Исправленные ошибки
 
 * Чтение валюты
     * Исправлена проблема с чтением валюты для `es-ES` и `es-MX`

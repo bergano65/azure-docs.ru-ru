@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: a0efc6f6f6d4ae6355fbb42fbc7e13ad7c078cf3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 19a4645e2bde4cf6b9f9a78123b334c290581ac4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792894"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484538"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Решения для периодической передачи данных
  
@@ -52,7 +52,7 @@ ms.locfileid: "92792894"
 
 ### <a name="continuous-data-ingestion-over-network"></a>Непрерывный прием данных по сети
 
-| Компонент                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
+| Признак                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
 |----------------------------------|-----------------------------------------|--------------------------|---------------------------|
 | Форм-фактор                                   | Виртуальное устройство             | Физическое устройство          | Служба размещена на портале Azure, агент размещен локально                                                            |
 | Оборудование                                      | Ваша низкоуровневая оболочка            | Предоставляет Майкрософт    | Н/Д                                                            |
@@ -65,9 +65,9 @@ ms.locfileid: "92792894"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Перенесите данные с помощью AzCopy](./storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ftables%252ftoc.json).
+- [Перенесите данные с помощью AzCopy](./storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json).
 - [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](/dotnet/api/overview/azure/storage)
 - Практические руководства по:
     - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](../../databox-online/data-box-gateway-deploy-add-shares.md).
-    - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](../../databox-online/azure-stack-edge-deploy-configure-compute.md).
+    - [Преобразуйте данные в Data Box Edge перед отправкой в Azure](../../databox-online/azure-stack-edge-deploy-configure-compute.md).
 - [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](../../data-factory/tutorial-bulk-copy-portal.md).

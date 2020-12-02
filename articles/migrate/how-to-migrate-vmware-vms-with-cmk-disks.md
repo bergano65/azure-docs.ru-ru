@@ -7,12 +7,12 @@ ms.manager: carmonm
 ms.topic: article
 ms.date: 03/12/2020
 ms.author: raynew
-ms.openlocfilehash: 01f30305529e7f142be0ca6ddffa0f5a12a235bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89b795011460ee2803d07d14b9c2abe9c8ffca55
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260022"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483357"
 ---
 # <a name="migrate-vmware-vms-to-azure-vms-enabled-with-server-side-encryption-and-customer-managed-keys"></a>Перенос виртуальных машин VMware на виртуальные машины Azure, поддерживающие шифрование на стороне сервера и управляемые клиентом ключи
 
@@ -22,12 +22,12 @@ ms.locfileid: "86260022"
 
 В примерах, приведенных в этой статье, используется [Azure PowerShell](/powershell/azure/new-azureps-module-az) для выполнения задач, необходимых для создания и развертывания шаблона диспетчер ресурсов.
 
-Дополнительные [сведения](../virtual-machines/windows/disk-encryption.md) о шифровании на стороне сервера (SSE) с помощью управляемых пользователем ключей (CMK) для управляемых дисков.
+Дополнительные [сведения](../virtual-machines/disk-encryption.md) о шифровании на стороне сервера (SSE) с помощью управляемых пользователем ключей (CMK) для управляемых дисков.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Ознакомьтесь с руководством](tutorial-migrate-vmware.md) по переносу виртуальных машин VMware в Azure с помощью безагентной репликации, чтобы понять требования к инструментам.
-- [Выполните эти инструкции](how-to-add-tool-first-time.md) , чтобы создать проект службы "миграция Azure" и добавить в проект средство **миграции для Azure Migration: Server** .
+- [Выполните эти инструкции](./create-manage-projects.md) , чтобы создать проект службы "миграция Azure" и добавить в проект средство **миграции для Azure Migration: Server** .
 - [Выполните эти инструкции](how-to-set-up-appliance-vmware.md) , чтобы настроить устройство "миграция Azure" для VMware в локальной среде и завершить обнаружение.
 
 ## <a name="prepare-for-replication"></a>Подготовка к репликации

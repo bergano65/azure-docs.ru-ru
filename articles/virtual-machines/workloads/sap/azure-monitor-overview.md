@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.reviewer: cynthn
-ms.openlocfilehash: 5bb40ec930731b58d457500d83b66c7a187b44d8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bcb912a24dfb2a5e78719cf9010fd23afe0df185
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957441"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484402"
 ---
 # <a name="azure-monitor-for-sap-solutions-preview"></a>Azure Monitor для решений SAP (Предварительная версия)
 
@@ -35,7 +35,7 @@ Azure Monitor для решений SAP предлагается в Azure Market
 - База данных SAP HANA
 - Microsoft SQL Server
 
-Azure Monitor для решений SAP использует возможности существующих [Azure Monitor](../../../azure-monitor/overview.md) возможностей, таких как log Analytics и [книги](../../../azure-monitor/platform/workbooks-overview.md) , для предоставления дополнительных возможностей мониторинга. Клиенты могут создавать [пользовательские визуализации](../../../azure-monitor/platform/workbooks-overview.md#getting-started) , изменяя книги по умолчанию, предоставляемые Azure Monitor для решений SAP, создавать [пользовательские запросы](../../../azure-monitor/log-query/get-started-portal.md) и создавать [настраиваемые оповещения](../../../azure-monitor/learn/tutorial-response.md) с помощью log Analytics рабочей области Azure, использовать [гибкий срок хранения](../../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) и подключать данные мониторинга к своей системе билетов.
+Azure Monitor для решений SAP использует возможности существующих [Azure Monitor](../../../azure-monitor/overview.md) возможностей, таких как log Analytics и [книги](../../../azure-monitor/platform/workbooks-overview.md) , для предоставления дополнительных возможностей мониторинга. Клиенты могут создавать [пользовательские визуализации](../../../azure-monitor/platform/workbooks-overview.md#getting-started) , изменяя книги по умолчанию, предоставляемые Azure Monitor для решений SAP, создавать [пользовательские запросы](../../../azure-monitor/log-query/log-analytics-tutorial.md) и создавать [настраиваемые оповещения](../../../azure-monitor/learn/tutorial-response.md) с помощью log Analytics рабочей области Azure, использовать [гибкий срок хранения](../../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) и подключать данные мониторинга к своей системе билетов.
 
 ## <a name="what-data-does-azure-monitor-for-sap-solutions-collect"></a>Какие данные собираются Azure Monitor для решений SAP?
 
@@ -103,7 +103,7 @@ Azure Monitor для решений SAP собирает системные ме
 ## <a name="pricing"></a>Цены
 Azure Monitor для решений SAP — это бесплатный продукт (без оплаты лицензии). Клиенты несут ответственность за оплату расходов на базовые компоненты в управляемой группе ресурсов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о поставщиках и создайте свои первые Azure Monitor для ресурса по решениям SAP.
  - Дополнительные сведения о [поставщиках](./azure-monitor-providers.md)

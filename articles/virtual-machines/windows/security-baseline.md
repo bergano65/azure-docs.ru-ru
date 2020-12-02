@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 385f747999bbdb408dd1c5d2f5f12717834e94da
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: af7cc9d83b87c8a772a190c431d6946eec4dda86
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844222"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483136"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Windows
 
 Базовый план безопасности Azure для Виртуальные машины Windows содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../../security/benchmarks/security-baselines-overview.md).
 
@@ -76,7 +76,7 @@ ms.locfileid: "94844222"
 
 Вы можете использовать безопасный сетевой доступ центра безопасности Azure, чтобы ограничить раскрытие Виртуальные машины Windows с утвержденными IP-адресами в течение ограниченного периода времени. Кроме того, используйте адаптивную защиту сети в центре безопасности Azure, чтобы рекомендовать NSG конфигурации, ограничивающие порты и исходные IP-адреса на основе фактического трафика и аналитики угроз.
 
-* [Настройка защиты от атак DDoS](../../virtual-network/manage-ddos-protection.md)
+* [Настройка защиты от атак DDoS](../../ddos-protection/manage-ddos-protection.md)
 
 * [Развертывание брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
@@ -274,7 +274,7 @@ ms.locfileid: "94844222"
 
 * [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/log-query/get-started-portal.md)
+* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
 
@@ -430,7 +430,7 @@ ms.locfileid: "94844222"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей. Управляемые удостоверения можно использовать для проверки подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Key Vault без каких бы то ни было учетных данных в коде. Код, выполняемый на виртуальной машине, может использовать управляемое удостоверение для запроса маркеров доступа для служб, поддерживающих проверку подлинности Azure AD.
 
-* [Создание и настройка экземпляра Azure AD](../../active-directory-domain-services/tutorial-create-instance.md)
+* [Создание и настройка экземпляра Azure AD](../../active-directory-domain-services/tutorial-create-instance.md)
 
 * [Обзор управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
@@ -452,7 +452,7 @@ ms.locfileid: "94844222"
 
 **Руководство**. Настройка параметров диагностики для Azure Active Directory, чтобы отправить журналы аудита и журналы входа в рабочую область log Analytics. Кроме того, используйте Azure Monitor для просмотра журналов и выполнения запросов к данным журналов из виртуальных машин Azure.
 
-* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/log-query/get-started-portal.md)
+* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Как интегрировать журналы действий Azure в Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
@@ -580,7 +580,7 @@ ms.locfileid: "94844222"
 
 **Рекомендации**. виртуальные диски на виртуальные машины Windows (ВМ) шифруются при хранении на стороне сервера или с помощью шифрования дисков Azure (ADE). Шифрование дисков Azure использует функцию Windows BitLocker для шифрования управляемых дисков с помощью управляемых клиентом ключей в гостевой виртуальной машине. Шифрование на стороне сервера с использованием управляемых клиентом ключей улучшает работу шифрования дисков Azure, позволяя использовать любые типы ОС и образы для виртуальных машин путем шифрования данных в службе хранилища.
 
-* [Шифрование дисков, управляемых Azure, на стороне сервера](./disk-encryption.md)
+* [Шифрование дисков, управляемых Azure, на стороне сервера](../disk-encryption.md)
 
 * [Шифрование дисков Azure для виртуальных машин Windows](./disk-encryption-overview.md)
 
@@ -620,9 +620,9 @@ ms.locfileid: "94844222"
 
 **Руководство**. Использование решения Azure Управление обновлениями для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-* [Решение для управления обновлениями в Azure](../../automation/update-management/update-mgmt-overview.md)
+* [Решение для управления обновлениями в Azure](../../automation/update-management/overview.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/update-mgmt-manage-updates-for-vm.md)
+* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/manage-updates-for-vm.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -632,9 +632,9 @@ ms.locfileid: "94844222"
 
 **Руководство**. Вы можете использовать стороннее решение для управления исправлениями. Решение Azure Управление обновлениями можно использовать для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-* [Решение для управления обновлениями в Azure](../../automation/update-management/update-mgmt-overview.md)
+* [Решение для управления обновлениями в Azure](../../automation/update-management/overview.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/update-mgmt-manage-updates-for-vm.md)
+* [Управление обновлениями и исправлениями для виртуальных машин](../../automation/update-management/manage-updates-for-vm.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -1181,9 +1181,9 @@ ms.locfileid: "94844222"
 
 **Руководство**. соблюдение правил корпорации Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-* [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+* [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 

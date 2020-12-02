@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 11/26/2019
+ms.date: 12/01/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: bccdb830fba4d55266dc9eff8f06c5ac4e3f2a34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e37065e6fa61f3784d1a6165bd88c515bdfc29f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90706189"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484113"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -104,7 +104,7 @@ ms.locfileid: "90706189"
   * утверждает правила преобразования.
   * Сопоставление атрибутов (подготовка пользователей)
 * Более подробные сведения о субъекте-службе и объектах приложения см. в справочной документации по Microsoft Graph API:
-  * [Приложение](/graph/api/resources/application?view=graph-rest-1.0)
+  * [Приложения](/graph/api/resources/application?view=graph-rest-1.0)
   * [Субъект-служба](/graph/api/resources/serviceprincipal?view=graph-rest-beta)
 
 ## <a name="why-do-applications-integrate-with-azure-ad"></a>Зачем интегрировать приложения с Azure AD?
@@ -118,6 +118,7 @@ ms.locfileid: "90706189"
 * управление доступом на основе ролей (использование каталога для определения ролей приложения с целью выполнения проверок авторизации в приложении на основе ролей);
 * Службы авторизации OAuth — используются Microsoft 365 и другими приложениями Майкрософт для авторизации доступа к API-интерфейсам и ресурсам.
 * публикация приложений и прокси-сервер (публикация приложения из частной сети в Интернете).
+* Атрибуты расширения схемы каталога — [расширение схемы субъекта-службы и объектов-пользователей](active-directory-schema-extensions.md) для хранения дополнительных данных в Azure AD 
 
 ## <a name="who-has-permission-to-add-applications-to-my-azure-ad-instance"></a>Кто имеет право добавлять приложения в мой экземпляр Azure AD?
 

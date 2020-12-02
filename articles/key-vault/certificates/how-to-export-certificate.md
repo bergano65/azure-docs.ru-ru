@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.date: 08/11/2020
 ms.author: sebansal
-ms.openlocfilehash: e7ea3ef16b60e53450436bda66ce3dde091c81c2
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4339e8217702e9f25877bc8c250b5363e2c59a42
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289556"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483701"
 ---
 # <a name="export-certificates-from-azure-key-vault"></a>Экспорт сертификатов из Azure Key Vault
 
@@ -79,11 +79,11 @@ az keyvault secret download -–file {nameofcert.pfx}
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-С помощью этой команды в Azure PowerShell получите сертификат с именем **TestCert01** из хранилища ключей с именем **ContosoKV01**. Чтобы скачать сертификат в виде PFX-файла, выполните следующую команду. Эти команды обращаются к параметру **SecretId** , а затем сохраняют его содержимое в виде PFX-файла.
+С помощью этой команды в Azure PowerShell получите сертификат с именем **TestCert01** из хранилища ключей с именем **ContosoKV01**. Чтобы скачать сертификат в виде PFX-файла, выполните следующую команду. Эти команды обращаются к параметру **SecretId**, а затем сохраняют его содержимое в виде PFX-файла.
 
 ```azurepowershell
 $cert = Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
-$secret = Get-AzKeyVaultSecret -VaultName $vaultName -Name $cert.Name
+$secret = Get-AzKeyVaultSecret -VaultName "ContosoKV01" -Name $cert.Name
 $secretValueText = '';
 $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)
 try {

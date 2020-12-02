@@ -7,12 +7,12 @@ ms.workload: infrastructure
 ms.topic: how-to
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: 0a2a386264be0ec13e29b7a7546926819c5d931a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 228814db76ea14fa8b74c0c5d634e5afd6d54ac6
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012737"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483051"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -282,7 +282,7 @@ Resource Manager параллельно развертывает все ресу
 
 ## <a name="disks-and-images"></a>Диски и образы
    
-В Azure файлы VHD могут представлять [диски или образы](../managed-disks-overview.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json). Если операционная система в файле VHD предназначена для конкретной виртуальной машины, она называется диском. Если операционная система в файле VHD обобщена для создания нескольких виртуальных машин, она называется образом.   
+В Azure файлы VHD могут представлять [диски или образы](../managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Если операционная система в файле VHD предназначена для конкретной виртуальной машины, она называется диском. Если операционная система в файле VHD обобщена для создания нескольких виртуальных машин, она называется образом.   
     
 ### <a name="create-new-virtual-machines-and-new-disks-from-a-platform-image"></a>Создание новых виртуальных машин и новых дисков с помощью образа платформы
 
@@ -367,7 +367,7 @@ Resource Manager параллельно развертывает все ресу
 ],
 ```
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>Модули
 
 Хотя функции [расширения](../extensions/features-windows.md) являются отдельным ресурсом, они тесно связаны с виртуальными машинами. Расширения можно добавить как дочерний ресурс виртуальной машины или как отдельный ресурс. В примере показано добавление [расширения системы диагностики](../extensions/diagnostics-template.md) к виртуальным машинам.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/20/2020
 ms.author: juergent
 ms.reviewer: cynthn
-ms.openlocfilehash: 38f6cf039de2404c7b3eeecc74ee33233f4a2058
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5638b60b60f3952ab40fa000e457082f4748ac35
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965295"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484351"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
@@ -160,8 +160,8 @@ Azure применяет квоту операций ввода-вывода н�
 >
 > Для создания программного RAID-массива в Linux поддерживаются только MDADM и LVM (диспетчер логических томов). Дополнительные сведения см. в разделе:
 >
-> - [Настройка программного RAID-массива в Linux](../../linux/configure-raid.md) с помощью MDADM
-> - [Настройка диспетчера логических томов на виртуальной машине Linux в Azure](../../linux/configure-lvm.md) с помощью диспетчера логических томов
+> - [Настройка программного RAID-массива в Linux](/previous-versions/azure/virtual-machines/linux/configure-raid) с помощью MDADM
+> - [Настройка диспетчера логических томов на виртуальной машине Linux в Azure](/previous-versions/azure/virtual-machines/linux/configure-lvm) с помощью диспетчера логических томов
 >
 >
 

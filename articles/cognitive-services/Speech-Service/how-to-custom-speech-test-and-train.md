@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: cd9b85f22866c529b66fa6df07bd524516726086
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: a5457dc94082f089d3adf02c9614d05d2c5db244
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165338"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484011"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Подготовка данных для службы пользовательского распознавания речи
 
@@ -46,7 +46,7 @@ ms.locfileid: "92165338"
 
 | Тип данных | Используется для тестирования | Рекомендуемое количество | Используется для обучения | Рекомендуемое количество |
 |-----------|-----------------|----------|-------------------|----------|
-| [Аудио](#audio-data-for-testing) | Да<br>Используется для визуальной проверки | более 5 звуковых файлов | Нет | Недоступно |
+| [Аудио](#audio-data-for-testing) | Да<br>Используется для визуальной проверки | более 5 звуковых файлов | Нет | Н/Д |
 | [Звуковые и пользовательские записи с метками](#audio--human-labeled-transcript-data-for-testingtraining) | Да<br>Используется для вычисления точности | 0,5 – 5 часов звука | Да | 1 – 1000 часов звука |
 | [Связанный текст](#related-text-data-for-training) | Нет | Недоступно | Да | 1-200 МБ связанного текста |
 
@@ -204,4 +204,4 @@ ms.locfileid: "92165338"
 * [Проверка данных](how-to-custom-speech-inspect-data.md)
 * [Оценка данных](how-to-custom-speech-evaluate-data.md)
 * [Обучение модели](how-to-custom-speech-train-model.md)
-* [Развертывание модели](how-to-custom-speech-deploy-model.md)
+* [Развертывание модели](./how-to-custom-speech-train-model.md)

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: 53967ab0bec9488691ff60cdabb8fedbb6b9730e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7466f037f0a39b67023b9ebcc27c2e19b27f42ab
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87386713"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485269"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -30,7 +30,7 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 ## <a name="on-premises-servers"></a>Локальные серверы
 
-**Server** | **Requirements** | **Сведения**
+**Сервер** | **Требования** | **Сведения**
 --- | --- | ---
 Hyper-V (без Virtual Machine Manager) |  Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 с последними обновлениями <br/><br/> **Примечание.** Также поддерживаются установки основных серверных компонентов этих операционных систем. | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md)
 Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 <br/><br/> **Примечание.** Также поддерживаются установки основных серверных компонентов этих операционных систем.  | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.
@@ -71,7 +71,7 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Mac
 Сеть гостевой виртуальной машины: статический IP-адрес (Linux) | Нет | Нет
 Сеть гостевой виртуальной машины: несколько сетевых карт | Да | Да
 Прокси-сервер HTTPS | Нет | Нет
-Доступ к службе Site Recovery с закрытыми ссылками | Да. [Подробнее.](hybrid-how-to-enable-replication-private-endpoints.md) | Да. [Подробнее.](hybrid-how-to-enable-replication-private-endpoints.md)
+Доступ к службе Site Recovery с закрытыми ссылками | Да. [Подробнее](hybrid-how-to-enable-replication-private-endpoints.md). | Да. [Подробнее](hybrid-how-to-enable-replication-private-endpoints.md).
 
 
 
@@ -83,7 +83,7 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Mac
 Azure ExpressRoute | Да | Да
 Внутренний балансировщик нагрузки | Да | Да
 Внешний балансировщик нагрузки | Да | Да
-Диспетчер трафика Azure | Да | Да
+Azure Traffic Manager | Да | Да
 Несколько сетевых адаптеров | Да | Да
 Зарезервированный IP-адрес | Да | Да
 IPv4 | Да | Да
@@ -136,7 +136,7 @@ RDM | Н/Д | Н/Д
 Blob-блоки | Нет | Нет
 Шифрование неактивных данных (SSE)| Да | Да
 Шифрование неактивных данных (CMK) <br></br> (Только для отработки отказа на управляемые диски)| Да (с помощью PowerShell AZ 3.3.0 Module) | Да (с помощью PowerShell AZ 3.3.0 Module)
-Двойное шифрование при хранении <br></br> (Только для отработки отказа на управляемые диски) <br></br> Дополнительные сведения о поддерживаемых регионах для [Windows](../virtual-machines/windows/disk-encryption.md) и [Linux](../virtual-machines/linux/disk-encryption.md) | Да (с помощью PowerShell AZ 3.3.0 Module) | Да (с помощью PowerShell AZ 3.3.0 Module)
+Двойное шифрование при хранении <br></br> (Только для отработки отказа на управляемые диски) <br></br> Дополнительные сведения о поддерживаемых регионах для [Windows](../virtual-machines/disk-encryption.md) и [Linux](../virtual-machines/disk-encryption.md) | Да (с помощью PowerShell AZ 3.3.0 Module) | Да (с помощью PowerShell AZ 3.3.0 Module)
 Хранилище уровня "Премиум" | Да | Да
 Хранилище уровня "Стандартный" | Да | Да
 Служба импорта и экспорта | Нет | Нет
@@ -147,7 +147,7 @@ Blob-блоки | Нет | Нет
 
 ## <a name="azure-compute-features"></a>Вычислительные компоненты Azure
 
-**Компонент** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
+**Возможность** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | ---
 Группы доступности | Да | Да
 Концентратор | Да | Да  
@@ -157,7 +157,7 @@ Blob-блоки | Нет | Нет
 
 Локальные виртуальные машины, которые вы реплицируете в Azure, должны соответствовать требованиям Azure, приведенным в этой таблице.
 
-**Компонент** | **Requirements** | **Сведения**
+**Компонент** | **Требования** | **Сведения**
 --- | --- | ---
 Операционная система на виртуальной машине | Служба Site Recovery поддерживает все операционные системы, [поддерживаемые Azure](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10)).  | Если не поддерживается, проверка на соответствие обязательным требованиям завершается ошибкой.
 Архитектура операционной системы на виртуальной машине | 32-разрядная версия (Windows Server 2008)/64-bit | Если не поддерживается, проверка на соответствие обязательным требованиям завершается ошибкой.
@@ -171,7 +171,7 @@ Blob-блоки | Нет | Нет
 Формат жесткого диска | VHD  <br/><br/>  VHDX | Служба Site Recovery автоматически преобразует формат VHDX в VHD при отработке отказа в Azure. При восстановлении до локальной системы виртуальные машины продолжают использовать формат VHDX.
 BitLocker | Не поддерживается | Прежде чем включать репликацию для виртуальной машины, необходимо отключить BitLocker.
 имя виртуальной машины; | От 1 до 63 символов, при этом допустимы только буквы, цифры и дефисы Имя виртуальной машины должно начинаться и заканчиваться буквой или цифрой. | Обновите значение в свойствах виртуальной машины в службе Site Recovery.
-Тип виртуальной машины | Поколение 1<br/><br/> Поколение 2 — Windows | Поддерживаются виртуальные машины второго поколения с диском ОС типа "Базовый" (включая один или два тома данных в формате VHDX) и объемом менее 300 ГБ.<br></br>Виртуальные машины Linux второго поколения не поддерживаются. [Подробнее.](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)|
+Тип виртуальной машины | Поколение 1<br/><br/> Поколение 2 — Windows | Поддерживаются виртуальные машины второго поколения с диском ОС типа "Базовый" (включая один или два тома данных в формате VHDX) и объемом менее 300 ГБ.<br></br>Виртуальные машины Linux второго поколения не поддерживаются. [Подробнее](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/).|
 
 ## <a name="recovery-services-vault-actions"></a>Действия хранилища служб восстановления
 

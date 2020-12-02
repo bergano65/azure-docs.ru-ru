@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 2b474ae184374a2c91dcba15517048556686ec35
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8eaadc031039b22e209db1023c65da39e1e096b1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782235"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483289"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Управляемые клиентом ключи для шифрования службы хранилища Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "92782235"
 
 ## <a name="customer-managed-keys-for-azure-managed-disks"></a>Управляемые клиентом ключи для управляемых дисков Azure
 
-Ключи, управляемые клиентом, также доступны для управления шифрованием управляемых дисков Azure. Управляемые клиентом ключи ведут себя иначе для управляемых дисков, чем для ресурсов службы хранилища Azure. Дополнительные сведения см. в статье [Шифрование управляемых дисков Azure](../../virtual-machines/windows/disk-encryption.md) на стороне сервера для Windows или [Шифрование на стороне сервера для управляемых дисков Azure](../../virtual-machines/linux/disk-encryption.md) для Linux.
+Ключи, управляемые клиентом, также доступны для управления шифрованием управляемых дисков Azure. Управляемые клиентом ключи ведут себя иначе для управляемых дисков, чем для ресурсов службы хранилища Azure. Дополнительные сведения см. в статье [Шифрование управляемых дисков Azure](../../virtual-machines/disk-encryption.md) на стороне сервера для Windows или [Шифрование на стороне сервера для управляемых дисков Azure](../../virtual-machines/disk-encryption.md) для Linux.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

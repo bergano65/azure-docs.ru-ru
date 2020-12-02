@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: 0de8d8d5ff0f14d0268dbcca743f4d06ed877903
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 331ceb6124463604989116ce84bc73acd8cfb22f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544400"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483255"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -30,7 +30,7 @@ ms.locfileid: "95544400"
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
 Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
 
-Blobfuse поддерживает установку на Ubuntu 14,04, 16,04 и 18,04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
+Blobfuse поддерживает установку на Ubuntu 14,04, 16,04, 18,04 и 20,04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
 ```
 lsb_release -a
 ```
@@ -141,7 +141,7 @@ mkdir test
 echo "hello world" > test/blob.txt
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Домашняя страница blobfuse](https://github.com/Azure/azure-storage-fuse#blobfuse)
 * [Сообщить о проблемах с blobfuse](https://github.com/Azure/azure-storage-fuse/issues)

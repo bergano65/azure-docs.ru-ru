@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: 6b7c280d9ff5f4d8a3c35eb11e080bf2f9f287c0
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5e9ddecd694a9051e746d07cbc1bee4d98bf5829
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959175"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484436"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "94959175"
 | **Плановое техническое обслуживание** |Установка исправлений и обновлений|[Группы доступности](/previous-versions/azure/virtual-machines/windows/infrastructure-example) (установка исправлений и обновлений, управляемая Azure) |
 | **Ресурс** |Выделенные  |Совместное использование с другими клиентами|
 | **Регионы** |Центры обработки данных |[Пары регионов](../../regions.md#region-pairs)|
-| **Хранилище** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
+| **Память** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
 | **Масштабирование** |Вертикальное масштабирование |Горизонтальное масштабирование|
 
 
@@ -138,7 +138,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - Задержка в сети выше, чем в локальном развертывании. Сокращение круговых путей по сети существенно влияет на производительность.
 - Консолидируйте приложения с высоким числом транзакций или активные приложения в пределах одной виртуальной машины, чтобы снизить число круговых путей.
 - Используйте виртуальные машины с [ускоренной сетью](../../../virtual-network/create-vm-accelerated-networking-cli.md) для повышения производительности сети.
-- Для некоторых дистрибутивов Linux рассмотрите возможность включения [поддержки TRIM/](../../linux/configure-lvm.md#trimunmap-support)unотмена.
+- Для некоторых дистрибутивов Linux рассмотрите возможность включения [поддержки TRIM/](/previous-versions/azure/virtual-machines/linux/configure-lvm#trimunmap-support)unотмена.
 - Установите [Oracle Enterprise Manager](https://www.oracle.com/technetwork/oem/enterprise-manager/overview/index.html) на отдельной виртуальной машине.
 - По умолчанию огромные страницы не включены в Linux. Рассмотрите возможность включения огромных страниц и установки `use_large_pages = ONLY` на Oracle DB. Это может повысить производительность. Дополнительные сведения см. [здесь](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/USE_LARGE_PAGES.html#GUID-1B0F4D27-8222-439E-A01D-E50758C88390).
 
@@ -226,7 +226,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - [Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](configure-oracle-golden-gate.md)
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](./oracle-overview.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

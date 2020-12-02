@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: juergent
-ms.openlocfilehash: be455de2a1f8aebc7327af4741e0652a4be76665
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: fcc247e9e3122515ebe9230f58860df8c6dd3948
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94956438"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484334"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Обеспечение высокого уровня доступности IBM DB2 LUW на виртуальных машинах Azure в Red Hat Enterprise Linux Server
 
@@ -405,7 +405,7 @@ Online: [AZ-idb01 AZ-idb02]
 > Номер SKU Load Balancer (цен. категория "Стандартный") имеет ограничения на доступ к общедоступным IP-адресам с узлов, расположенных под Load Balancer. Сведения о том, как разрешить этим узлам доступ к общедоступным IP-адресам, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. Категория "Стандартный") в сценариях с высоким уровнем доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md) .
 
 > [!IMPORTANT]
-> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
+> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](../../../load-balancer/load-balancer-multivip-overview.md#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
 
 
 1. Создайте интерфейсный пул IP-адресов:
@@ -818,7 +818,7 @@ rsc_st_azure    (stonith:fence_azure_arm):      Started az-idb02
      vip_db2id2_ID2     (ocf::heartbeat:IPaddr2):       Started az-idb02
      nc_db2id2_ID2      (ocf::heartbeat:azure-lb):      Started az-idb02</code></pre>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Высокодоступная архитектура и сценарии для SAP NetWeaver](./sap-high-availability-architecture-scenarios.md)
 - [Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure][rhel-pcs-azr]
 
