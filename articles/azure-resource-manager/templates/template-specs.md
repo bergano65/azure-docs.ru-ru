@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: e919db24a70b0ed69aca6977865cc76c0c9c5845
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: dd7616bdc07aee86ac56a2f2fe0ac282838c58b4
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182467"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518861"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Спецификации шаблонов Azure Resource Manager (Предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "96182467"
 Для развертывания спецификации шаблона используются стандартные инструменты Azure, такие как PowerShell, Azure CLI, портал Azure, остальные и другие поддерживаемые пакеты SDK и клиенты. Вы используете те же команды, что и для шаблона.
 
 > [!NOTE]
-> Сейчас спецификации шаблонов доступны в предварительной версии. Для их использования нужно установить последнюю версию PowerShell или Azure CLI. Для Azure PowerShell используйте версию [5.0.0 или более позднюю](/powershell/azure/install-az-ps). Для Azure CLI используйте версию [2.14.2 или более позднюю](/cli/azure/install-azure-cli).
+> Сейчас спецификации шаблонов доступны в предварительной версии. Чтобы использовать его с Azure PowerShell, необходимо установить [версию 5.0.0 или более позднюю](/powershell/azure/install-az-ps). Чтобы использовать его с Azure CLI, используйте [версию 2.14.2 или более позднюю](/cli/azure/install-azure-cli).
 
 ## <a name="why-use-template-specs"></a>Зачем использовать спецификации шаблонов?
 

@@ -1,6 +1,6 @@
 ---
 title: Установка записной книжки Jupyter в локальной среде и ее подключение к Spark в Azure HDInsight
-description: Сведения о том, как установить записную книжку Jupyter на компьютере локально и как подключить ее к кластеру Apache Spark.
+description: Узнайте, как установить Jupyter Notebook локально на компьютере и подключить его к кластеру Apache Spark.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,21 +8,21 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-python
 ms.date: 04/23/2020
-ms.openlocfilehash: 96b2e7deff464f00ced4457a514ac833a90bd42d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 16cb8a9c2a951c9f60640248ef74757d1e5ee200
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999898"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518929"
 ---
-# <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
+# <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка Jupyter Notebook на компьютере и подключение к Apache Spark в HDInsight
 
-Из этой статьи вы узнаете, как установить Jupyter Notebook с пользовательскими PySpark (для Python) и Apache Spark (для Scala) с помощью программы Spark Magic. Затем вы подключаете записную книжку к кластеру HDInsight.
+Из этой статьи вы узнаете, как установить Jupyter Notebook с ядром PySpark (для Python) и Apache Spark (для Scala) с помощью программы Spark Magic. Затем вы подключаете записную книжку к кластеру HDInsight.
 
 При установке Jupyter и подключении к Apache Spark в HDInsight необходимо выполнить четыре основных шага.
 
 * Настройка кластера Spark.
-* Установите записную книжку Jupyter.
+* Установите Jupyter Notebook.
 * Установите ядра PySpark и Spark с помощью волшебной команды Spark.
 * Настройте волшебную команду Spark для доступа к кластеру Spark в HDInsight.
 
@@ -34,7 +34,7 @@ ms.locfileid: "95999898"
 
 * Опыт работы с записными книжками Jupyter с Spark в HDInsight.
 
-## <a name="install-jupyter-notebook-on-your-computer"></a>Установка записной книжки Jupyter на компьютер
+## <a name="install-jupyter-notebook-on-your-computer"></a>Установка Jupyter Notebook на компьютере
 
 Установите Python перед установкой записных книжек Jupyter. В [дистрибутиве Anaconda](https://www.anaconda.com/download/) будут установлены оба, Python и Jupyter Notebook.
 
@@ -148,9 +148,9 @@ ms.locfileid: "95999898"
 
 6. Убедитесь, что вы можете использовать магическую платформу Spark, доступную в ядрах. Выполните следующие шаги.
 
-    a. Создайте новую записную книжку. В правом углу выберите **создать**. Вы должны увидеть ядро по умолчанию **Python 2** или **Python 3** и установленные ядра. Фактические значения могут различаться в зависимости от выбранных вариантов установки.  Выберите **PySpark**.
+    а. Создайте новую записную книжку. В правом углу выберите **создать**. Вы должны увидеть ядро по умолчанию **Python 2** или **Python 3** и установленные ядра. Фактические значения могут различаться в зависимости от выбранных вариантов установки.  Выберите **PySpark**.
 
-    ![Доступные ядра в записной книжке Jupyter](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels-notebook.png "Ядра в записной книжке Jupyter")
+    ![Доступные ядра в Jupyter Notebook](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels-notebook.png "Ядра в Jupyter Notebook")
 
     > [!IMPORTANT]  
     > После выбора **нового** проверьте оболочку на наличие ошибок.  Если отображается сообщение об ошибке, `TypeError: __init__() got an unexpected keyword argument 'io_loop'` возможно, возникла известная проблема с определенными версиями Торнадо.  Если это так, завершите работу ядра, а затем понизить установку торнадо, выполнив следующую команду: `pip install tornado==4.5.3` .
@@ -170,7 +170,7 @@ ms.locfileid: "95999898"
 
 Причины для установки Jupyter на компьютере и последующего подключения к кластеру Apache Spark в HDInsight:
 
-* Предоставляет возможность создавать записные книжки локально, тестировать приложение в работающем кластере, а затем отправлять в кластер записные книжки. Чтобы отправить записные книжки в кластер, можно отправить их с помощью записной книжки Jupyter, которая работает под управлением или в кластере, или сохранить в `/HdiNotebooks` папке в учетной записи хранения, связанной с кластером. Дополнительные сведения о хранении записных книжек в кластере см. в разделе [Где хранятся записные книжки](apache-spark-jupyter-notebook-kernels.md#where-are-the-notebooks-stored).
+* Предоставляет возможность создавать записные книжки локально, тестировать приложение в работающем кластере, а затем отправлять в кластер записные книжки. Чтобы отправить записные книжки в кластер, можно отправить их с помощью Jupyter Notebook, выполняющегося или в кластере, или сохранить их в `/HdiNotebooks` папке в учетной записи хранения, связанной с кластером. Дополнительные сведения о хранении записных книжек в кластере см. в разделе где хранятся записные [книжки Jupyter](apache-spark-jupyter-notebook-kernels.md#where-are-the-notebooks-stored)?
 * С помощью локально доступных записных книжек вы сможете подключиться к различным кластерам Spark в зависимости от потребностей вашего приложения.
 * Можно использовать GitHub для реализации системы управления версиями, чтобы контролировать версии записных книжек. Вы также можете создать среду совместной работы, в которой несколько пользователей будут работать с одной записной книжкой.
 * Вы можете работать с записными книжками локально даже без кластера. Кластер нужен только для тестирования записных книжек, но не обязателен для ручного управления записными книжками или средой разработки.
@@ -182,5 +182,5 @@ ms.locfileid: "95999898"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
-* [Ядра для записной книжки Jupyter на Apache Spark](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра для Jupyter Notebook на Apache Spark](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter в Apache Spark](apache-spark-jupyter-notebook-use-external-packages.md)

@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 11/04/2020
-ms.openlocfilehash: 4282294ff54fd3da3f764f53efc8b040b9522191
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: f71bcc1fd3b92a32a3e6d9fa056bae7131a663bd
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542258"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492613"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-by-using-the-azure-portal"></a>Краткое руководство. Создание базы данных Azure для сервера MySQL с помощью портала Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "94542258"
    Имя сервера | **mydemoserver** | Укажите уникальное имя. Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Длина должна составлять от 3 до 63 символов.
    Источник данных |**None** | Чтобы создать сервер с нуля, выберите **Нет**. Выберите **Резервная копия**, только если восстановление выполняется из геоизбыточной резервной копии существующего сервера.
    Расположение |Нужное расположение | Выберите расположение из списка.
-   Версия | Последний основной номер версии| Используйте последний основной номер версии. См. [все поддерживаемые версии](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions).
+   Версия | Последний основной номер версии| Используйте последний основной номер версии. См. [все поддерживаемые версии](../postgresql/concepts-supported-versions.md).
    Вычисления и хранилище | Используются значения по умолчанию| Ценовая категория по умолчанию — **Общего назначения** с **4 виртуальными ядрами** и хранилищем объемом **100 ГБ**. Для срока хранения резервных копий задано значение **7 дней** с **геоизбыточным** резервным копированием.<br/>Просмотрите страницу [цен](https://azure.microsoft.com/pricing/details/mysql/) и при необходимости обновите значения по умолчанию.
    Имя администратора | **mydemoadmin** | Укажите имя администратора сервера. Не используйте для имени учетной записи администратора такие варианты: **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
    Пароль | Пароль. | Новый пароль для администратора сервера. Длина пароля должна составлять 8–128 символов с комбинацией прописных или строчных букв, цифр и символов, отличных от буквенно-цифровых (!, $, #, % и т. д.).
@@ -67,7 +67,7 @@ ms.locfileid: "94542258"
 
 По умолчанию новый сервер защищен брандмауэром. Чтобы выполнить подключение, необходимо предоставить доступ к IP-адресу, выполнив следующие действия:
 
-1. Перейдите в раздел **Безопасность подключения** в левой области ресурса сервера. Если вы не знаете, как найти ресурс, см. раздел об [открытии ресурса](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resources-portal#open-resources).
+1. Перейдите в раздел **Безопасность подключения** в левой области ресурса сервера. Если вы не знаете, как найти ресурс, см. раздел об [открытии ресурса](../azure-resource-manager/management/manage-resources-portal.md#open-resources).
 
    >[!div class="mx-imgBorder"]
    > :::image type="content" source="./media/quickstart-create-mysql-server-database-using-azure-portal/add-current-ip-firewall.png" alt-text="Снимок экрана: раздел &quot;Безопасность подключения&quot; на странице &quot;Правила брандмауэра&quot;.":::
@@ -151,9 +151,9 @@ ms.locfileid: "94542258"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
->[Создание приложения PHP с подключением к MySQL (Windows)](../app-service/app-service-web-tutorial-php-mysql.md) <br/>
+>[Создание приложения PHP с подключением к MySQL (Windows)](../app-service/tutorial-php-mysql-app.md) <br/>
 
 > [!div class="nextstepaction"]
->[Создание приложение PHP в Linux с MySQL](../app-service/containers/tutorial-php-mysql-app.md)<br/><br/>
+>[Создание приложение PHP в Linux с MySQL](../app-service/tutorial-php-mysql-app.md?pivots=platform-linux%3fpivots%3dplatform-linux)<br/><br/>
 
 [Не можете найти нужную информацию? Сообщите нам!](https://aka.ms/mysql-doc-feedback)

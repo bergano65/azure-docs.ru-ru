@@ -5,12 +5,12 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 11/27/2018
 ms.topic: quickstart
-ms.openlocfilehash: 0c6bb8ba680612acbd497598b3e56efa5c28244a
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: c81b53b68c689f4b890d2ff628f38b734aea63dc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146251"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499889"
 ---
 # <a name="quickstart-deploy-hello-world-to-service-fabric-mesh"></a>Краткое руководство. Развертывание приложения Hello World в Сетке Service Fabric
 
@@ -45,7 +45,7 @@ az group create --name myResourceGroup --location eastus
 >[!NOTE]
 > Начиная с 2 ноября 2020 года [ограничения скорости скачивания](https://docs.docker.com/docker-hub/download-rate-limit/) применяются к анонимным и прошедшим проверку подлинности запросам к Docker Hub из учетных записей бесплатных планов Docker по IP-адресу. 
 > 
-> Эти шаблоны используют общедоступные образы из Docker Hub. Обратите внимание, что скорость может быть ограничена. Дополнительные сведения см. в разделе [Проверка подлинности с помощью Docker Hub](https://docs.microsoft.com/azure/container-registry/buffer-gate-public-content#authenticate-with-docker-hub).
+> Эти шаблоны используют общедоступные образы из Docker Hub. Обратите внимание, что скорость может быть ограничена. Дополнительные сведения см. в разделе [Проверка подлинности с помощью Docker Hub](../container-registry/buffer-gate-public-content.md#authenticate-with-docker-hub).
 
 Создайте приложение в группе ресурсов с помощью команды `az mesh deployment create`.  Выполните следующую команду:
 

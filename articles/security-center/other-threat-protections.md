@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: overview
 ms.date: 09/15/2020
 ms.author: memildin
-ms.openlocfilehash: d03416f390abb8656ac1aed81419864443122ce6
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 7d59c0e751054522f4c54fe059f19aa0a941464e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122428"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490010"
 ---
 # <a name="additional-threat-protections-in-azure-security-center"></a>Дополнительные средства защиты от угроз в Центре безопасности Azure
 Кроме встроенных [средств защиты Azure Defender](azure-defender.md), Центр безопасности Azure предоставляет описанные ниже возможности защиты от угроз.
@@ -89,7 +89,7 @@ ms.locfileid: "96122428"
 
 Целью DDoS-атаки является исчерпание ресурсов приложения, чтобы оно стало недоступным для обычных пользователей. Атаки DDoS могут быть нацелены на любые конечные точки, доступные через Интернет.
 
-Чтобы защититься от атак DDoS, приобретите лицензию на службу "Защита от атак DDoS" и обязательно следуйте приведенным ниже рекомендациям по проектированию приложений. Защита от атак DDoS предоставляет различные уровни служб. Дополнительные сведения см. в [обзоре Защиты от атак DDoS Azure](../virtual-network/ddos-protection-overview.md).
+Чтобы защититься от атак DDoS, приобретите лицензию на службу "Защита от атак DDoS" и обязательно следуйте приведенным ниже рекомендациям по проектированию приложений. Защита от атак DDoS предоставляет различные уровни служб. Дополнительные сведения см. в [обзоре Защиты от атак DDoS Azure](../ddos-protection/ddos-protection-overview.md).
 
 Список оповещений службы "Защита от атак DDoS Azure" см. в [справочной таблице оповещений](alerts-reference.md#alerts-azureddos).
 

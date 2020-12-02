@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 9ff05f2cf9f29ef86a6db9955e7d28c9035e1bf4
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 26905b746efb0bfcc877e0fa8fad797672bb6447
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376967"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483222"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
 
@@ -69,7 +69,7 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 Для подписки Azure предусмотрена [квота](../../azure-resource-manager/management/azure-subscription-service-limits.md) по умолчанию, от которой зависит возможность развертывания большого количества виртуальных машин для проекта. Текущее ограничение для каждой подписки составляет 20 виртуальных машин на регион. Чтобы увеличить квоту, следует отправить [соответствующий запрос в службу поддержки](../../azure-portal/supportability/resource-manager-core-quotas-request.md).
 
 ### <a name="operating-system-disks-and-images"></a>Диски и образы операционной системы
-Для хранения операционной системы и данных виртуальные машины используют [виртуальные жесткие диски](../managed-disks-overview.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json). Они также используются для образов, которые доступны для установки операционной системы. 
+Для хранения операционной системы и данных виртуальные машины используют [виртуальные жесткие диски](../managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Они также используются для образов, которые доступны для установки операционной системы. 
 
 Azure предоставляет множество [образов из Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?filters=virtual-machine-images%3Bwindows&page=1) для различных версий и типов операционных систем Windows Server. Образы из Marketplace определяются по издателю, предложению, SKU и версии (обычно указывается последняя версия). Поддерживаются только 64-разрядные операционные системы. Дополнительные сведения о поддерживаемых гостевых операционных системах, ролях и возможностях см. в статье [Поддержка серверного ПО Майкрософт для виртуальных машин Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).
 

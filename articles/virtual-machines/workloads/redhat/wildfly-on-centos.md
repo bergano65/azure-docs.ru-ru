@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.assetid: 7aa21ef8-9cfb-43e0-bfda-3f10a2a2f3ef
 ms.date: 10/23/2020
-ms.openlocfilehash: 842913b8e9f83ff3b188976da55aef7c909518ca
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: ddd6f277bc71467060aa2279d93f9410a1327dde
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359924"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486612"
 ---
 # <a name="quickstart-wildfly-on-centos-8"></a>Краткое руководство. Использование WildFly в CentOS 8
 
@@ -63,7 +63,7 @@ WildFly можно загрузить в режиме **отдельного с�
 
 Вы можете развернуть шаблон следующими тремя способами.
 
-- Чтобы развернуть этот шаблон с помощью PowerShell, выполните следующие команды. (Сведения об установке и настройке Azure PowerShell см. в [соответствующей документации](https://docs.microsoft.com/powershell/azure/).)
+- Чтобы развернуть этот шаблон с помощью PowerShell, выполните следующие команды. (Сведения об установке и настройке Azure PowerShell см. в [соответствующей документации](/powershell/azure/).)
 
     ```
     New-AzResourceGroup -Name <resource-group-name> -Location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment
@@ -73,7 +73,7 @@ WildFly можно загрузить в режиме **отдельного с�
     New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/wildfly-standalone-centos8/azuredeploy.json
     ```
     
-- Чтобы развернуть этот шаблон с помощью Azure CLI, выполните следующие команды. (Дополнительные сведения об установке и настройке межплатформенного интерфейса командной строки Azure см. в [этой статье](https://docs.microsoft.com/cli/azure/install-azure-cli).)
+- Чтобы развернуть этот шаблон с помощью Azure CLI, выполните следующие команды. (Дополнительные сведения об установке и настройке межплатформенного интерфейса командной строки Azure см. в [этой статье](/cli/azure/install-azure-cli).)
 
     ```
     az group create --name <resource-group-name> --location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment
@@ -92,7 +92,7 @@ WildFly можно загрузить в режиме **отдельного с�
 ## <a name="resource-links"></a>Ссылки на ресурсы
 
 * [WildFly 18](https://docs.wildfly.org/18/)
-* [Рекомендуемые дистрибутивы Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros)
+* [Рекомендуемые дистрибутивы Linux в Azure](../../linux/endorsed-distros.md)
 * [Документация для разработчика Java в Azure](https://github.com/JasonFreeberg/jboss-on-app-service)
 
 ## <a name="next-steps"></a>Дальнейшие действия

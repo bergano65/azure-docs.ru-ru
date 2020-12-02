@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 11/18/2020
 ms.author: spelluru
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: 2b54b167413b0fcbe7022eab4bbbf34b37225be5
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 7275e33e44c20ece6eb7d620e2c1e8032be41a7b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95810580"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498665"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-python"></a>Отправка сообщений в очереди Служебной шины Azure и получение сообщений из них (Python)
 Из этой статьи вы узнаете, как с помощью Python отправлять сообщения в очереди Служебной шины Azure и получать сообщения из них. 
@@ -208,5 +208,4 @@ Received: Message inside a ServiceBusMessageBatch
 - [Примеры.](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus/samples) 
     - В папке **sync_samples** приведены примеры, демонстрирующие взаимодействие со служебной шиной в синхронном режиме. Проходя краткое руководство, вы использовали этот метод. 
     - В папке **async_samples** приведены примеры, демонстрирующие взаимодействие со служебной шиной в асинхронном режиме. 
-- [Справочная документация по использованию пакета azure-servicebus](https://docs.microsoft.com/python/api/azure-servicebus/azure.servicebus?view=azure-python-preview&preserve-view=true)
-
+- [Справочная документация по использованию пакета azure-servicebus](/python/api/azure-servicebus/azure.servicebus?preserve-view=true&view=azure-python-preview)

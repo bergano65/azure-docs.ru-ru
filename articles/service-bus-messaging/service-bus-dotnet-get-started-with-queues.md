@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 11/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4335c1e81ead36d14ee1794fffbdd4cc1ff72a0a
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 15e5d257259bb4dfc98528cb726dbd2cc1f9a903
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029614"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498733"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-net"></a>Отправка сообщений в очереди Служебной шины и получение сообщений из них (.NET)
 В рамках этого руководства вы создадите консольное приложение .NET Core для отправки и получения сообщений через очередь Служебной шины с помощью пакета **Azure.Messaging.ServiceBus**. 
@@ -63,8 +63,7 @@ ms.locfileid: "96029614"
     public static async Task Main(string[] args)
     {    
         const int numberOfMessages = 10;
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
+        
         Console.WriteLine("======================================================");
         Console.WriteLine("Press ENTER key to exit after sending all the messages.");
         Console.WriteLine("======================================================");
@@ -73,8 +72,6 @@ ms.locfileid: "96029614"
         await SendMessagesAsync(numberOfMessages);
 
         Console.ReadKey();
-
-        await queueClient.CloseAsync();
     }
     ```
 1. Сразу после метода `Main()` добавьте следующий метод `SendMessagesAsync()`, который позволяет отправлять такое число сообщений, как задано для параметра `numberOfMessagesToSend` (текущее значение — 10):
@@ -287,10 +284,9 @@ Stopped receiving messages
 
     :::image type="content" source="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png" alt-text="Активные сообщения и их размер после получения" lightbox="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими примерами и документацией:
 
 - [Клиентская библиотека Служебной шины Azure для .NET: файл сведений](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus)
 - [Примеры на GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
-- [Справочник по API .NET](https://docs.microsoft.com/dotnet/api/azure.messaging.servicebus?view=azure-dotnet-preview&preserve-view=true)
-
+- [Справочник по API .NET](/dotnet/api/azure.messaging.servicebus?preserve-view=true&view=azure-dotnet-preview)

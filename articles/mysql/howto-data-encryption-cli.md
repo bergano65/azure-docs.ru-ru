@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ac87e8394eaa609f7c57eaf9d83fe11a2bdb04f6
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 6d9abc67035b4581a028d8e59ef080b4f1ffa5b9
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435830"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519048"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-cli"></a>Шифрование данных для базы данных Azure для MySQL с помощью Azure CLI
 
@@ -24,7 +24,7 @@ ms.locfileid: "96435830"
 * Создайте хранилище ключей и ключ, который будет использоваться для ключа, управляемого клиентом. Также включите защиту от очистки и обратимое удаление в хранилище ключей.
 
   ```azurecli-interactive
-  az keyvault create -g <resource_group> -n <vault_name> --enable-soft-delete true -enable-purge-protection true
+  az keyvault create -g <resource_group> -n <vault_name> --enable-soft-delete true --enable-purge-protection true
   ```
 
 * В созданном Azure Key Vault создайте ключ, который будет использоваться для шифрования данных базы данных Azure для MySQL.
@@ -55,7 +55,8 @@ ms.locfileid: "96435830"
   * без даты окончания срока действия;
   * не отключено;
   * Выполнение операций **получения**, **переноса** и **распаковки**
-  * для атрибута рековерилевел задано значение " **восстанавливаемый**".
+  * для атрибута рековерилевел задано значение " **восстанавливаемый** " (для этого требуется включить обратимое удаление с периодом хранения, равным 90 дням)
+  * Защита от очистки включена
 
 Проверить указанные выше атрибуты ключа можно с помощью следующей команды:
 

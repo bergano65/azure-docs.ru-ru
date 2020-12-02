@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/28/2018
 ms.author: wgries
 ms.custom: include file
-ms.openlocfilehash: ad9f3a115ed226b492a08dae29db61029d9098eb
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 03cf20e5c796a7092dc16c466934f377c945ad48
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95563874"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509515"
 ---
 Учетная запись хранения — это общий пул для хранения, в котором можно развернуть файловые ресурсы Azure или другие ресурсы хранения, например большие двоичные объекты или очереди. Учетная запись хранения может содержать неограниченное число файловых ресурсов. В общем ресурсе может храниться любое число файлов, насколько это позволяет емкость учетной записи хранения.
 
@@ -30,7 +30,7 @@ ms.locfileid: "95563874"
     > [!NOTE]
     > В этом кратком руководстве описано, как создать стандартную общую папку. Если же вы хотите использовать общие папки уровня "Премиум", выберите **Премиум**.
 
-1. В поле **Тип учетной записи** выберите **StorageV2**. См. дополнительные сведения о [разных типах учетных записей хранения Azure](../articles/storage/common/storage-account-overview.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json).
+1. В поле **Тип учетной записи** выберите **StorageV2**. См. дополнительные сведения о [разных типах учетных записей хранения Azure](../articles/storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
     > [!NOTE]
     > В этом кратком руководстве описано, как создать учетную запись общего назначения версии 2. Если вы хотите использовать общие папки уровня "Премиум", выберите **FileStorage**.

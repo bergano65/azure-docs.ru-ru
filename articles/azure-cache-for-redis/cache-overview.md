@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: overview
 ms.date: 05/12/2020
-ms.openlocfilehash: 1b8b95ea318dd7a82d9512908838209bc5cc2995
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 225df0dc53a0386bb53576970a1b6330351f4545
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349109"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184133"
 ---
 # <a name="azure-cache-for-redis"></a>Кэш Redis для Azure
 Кэш Azure для Redis предоставляет хранилище данных в памяти на основе программного обеспечения [Redis](https://redis.io/). Redis повышает производительность и масштабируемость приложения, которое в значительной степени использует внутренние хранилища данных. Он может обрабатывать большие объемы запросов приложений, сохраняя часто используемые данные в памяти сервера, которые можно быстро записать и считать. Redis предоставляет критически важное решение для хранения данных с низкой задержкой и высокой пропускной способностью для современных приложений.
@@ -85,7 +85,7 @@ ms.locfileid: "93349109"
 Уровни "Корпоративный" используют Redis Enterprise, коммерческую версию Redis из Redis Labs. Клиенты будут получать и оплачивать лицензию на это программное обеспечение с помощью предложения Azure Marketplace. Кэш Azure для Redis будет способствовать приобретению лицензий, и вам не придется делать это дополнительно. Чтобы делать покупки в Azure Marketplace, необходимо выполнить следующие предварительные требования:
 * У вашей подписки Azure должно быть допустимое платежное средство. Деньги на счете в Azure или бесплатные подписки MSDN не поддерживаются.
 * У вас должна быть роль "Владелец" или "Участник подписки".
-* Ваша организация должна разрешать [покупки в Azure Marketplace](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases).
+* Ваша организация должна разрешать [покупки в Azure Marketplace](../cost-management-billing/manage/ea-azure-marketplace.md#enabling-azure-marketplace-purchases).
 * Если вы используете частный Marketplace, он должен содержать корпоративное предложение Redis Labs.
 
 ## <a name="next-steps"></a>Дальнейшие действия

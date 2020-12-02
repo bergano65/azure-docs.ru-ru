@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 159851f5b1ca38cc34da785b39229a6a91e1e4dd
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 74ebdafb835aff75f282b9d6ac02d8ccf672a2be
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090698"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501096"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Что представляет собой Azure Spring Cloud?
 
@@ -48,7 +48,7 @@ Azure Spring Cloud обеспечивает интеграцию с Azure DevOps
 
 ## <a name="application-monitoring"></a>Мониторинг приложений
 
-Средства распределенной трассировки Spring Cloud позволяют разработчикам выполнять отладку и мониторинг сложных взаимодействий между микрослужбами в приложении.  Интегрировав [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с [Azure Application Insights](../azure-monitor/insights/insights-overview.md) вы получите мощную возможность распределенной трассировки с портала Azure.  Дополнительные сведения см. в [этом учебнике](spring-cloud-tutorial-distributed-tracing.md).
+Средства распределенной трассировки Spring Cloud позволяют разработчикам выполнять отладку и мониторинг сложных взаимодействий между микрослужбами в приложении.  Интегрировав [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с [Azure Application Insights](../azure-monitor/monitor-reference.md) вы получите мощную возможность распределенной трассировки с портала Azure.  Дополнительные сведения см. в [этом учебнике](spring-cloud-tutorial-distributed-tracing.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

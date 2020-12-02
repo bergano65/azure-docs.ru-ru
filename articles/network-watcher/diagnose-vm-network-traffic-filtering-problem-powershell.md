@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: damendo
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 51ad2654b285138dbdff211d5dc497a4beb48449
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 8483c0d3b112408091e10bd9b57451cf2378c859
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957866"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494500"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-powershell"></a>Краткое руководство. Диагностика проблемы с фильтром трафика на виртуальной машине с помощью Azure PowerShell
 
@@ -247,6 +247,6 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этого краткого руководства вы создали виртуальную машину и проверили работу фильтров входящего и исходящего трафика. Вы узнали, что правила групп безопасности сети могут разрешать или запрещать исходящий и входящий трафик виртуальной машины. Изучите дополнительные сведения о [правилах безопасности](../virtual-network/network-security-groups-overview.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json) и [создании правил безопасности](../virtual-network/manage-network-security-group.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#create-a-security-rule).
+С помощью этого краткого руководства вы создали виртуальную машину и проверили работу фильтров входящего и исходящего трафика. Вы узнали, что правила групп безопасности сети могут разрешать или запрещать исходящий и входящий трафик виртуальной машины. Изучите дополнительные сведения о [правилах безопасности](../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) и [создании правил безопасности](../virtual-network/manage-network-security-group.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#create-a-security-rule).
 
 Даже если фильтры трафика правильно настроены, обмен данными с виртуальной машиной может завершиться сбоем из-за настроек маршрутизации. Сведения о том, как диагностировать проблемы с маршрутизацией в сети виртуальных машин, см. в [этом кратком руководстве](diagnose-vm-network-routing-problem-powershell.md). Единое средство для диагностики проблем с исходящей маршрутизацией, задержками и фильтрацией описано в статье [об устранении неполадок с подключением](network-watcher-connectivity-powershell.md).

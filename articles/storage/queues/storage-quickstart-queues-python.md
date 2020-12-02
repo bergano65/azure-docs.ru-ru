@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: 50f15d041f9bcea66400eda0877e9d7914335d74
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: a19b7bc448e9a03afd122dab749352dfa21eaa5b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93345727"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491899"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-python"></a>Краткое руководство. Клиентская библиотека Хранилища очередей Azure версии 12 для Python
 
@@ -34,7 +34,7 @@ ms.locfileid: "93345727"
 - [Справочная документация по API](/python/api/azure-storage-queue/index)
 - [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue)
 - [Пакет (индекс пакета Python)](https://pypi.org/project/azure-storage-queue/)
-- [Примеры](../common/storage-samples-python.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
+- [Примеры](../common/storage-samples-python.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -268,7 +268,7 @@ pip install azure-storage-queue
 
 Это приложение создает три сообщения и добавляет их в очередь Azure. Затем код получает список сообщений, извлекает и удаляет их, и наконец удаляет саму очередь.
 
-В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.py* , а затем запустите приложение, выполнив следующую команду `python`.
+В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.py*, а затем запустите приложение, выполнив следующую команду `python`.
 
 ```console
 python queues-quickstart-v12.py
@@ -305,7 +305,7 @@ Done
 
 Когда приложение приостановится перед получением сообщений, проверьте учетную запись хранения на [портале Azure](https://portal.azure.com). Убедитесь, что сообщения находятся в очереди.
 
-Нажмите клавишу **ВВОД** , чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД** , чтобы удалить очередь и завершить демонстрацию.
+Нажмите клавишу **ВВОД**, чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД**, чтобы удалить очередь и завершить демонстрацию.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

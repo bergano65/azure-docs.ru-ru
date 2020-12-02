@@ -13,12 +13,12 @@ ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019, devx-track-azurecli
-ms.openlocfilehash: 9ecac482c138447a3a9dc99193fb131b688993e4
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 28bacb923578fa0c631aa7b5092e0d11f98b1dcf
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556613"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518419"
 ---
 # <a name="use-azure-portal-to-configure-an-availability-group-preview-for-sql-server-on-azure-vm"></a>Использование портал Azure для настройки группы доступности (Предварительная версия) для SQL Server на виртуальной машине Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "94556613"
 Хотя в этой статье для настройки среды группы доступности используется портал Azure, это можно сделать с помощью [PowerShell или Azure CLI](availability-group-az-commandline-configure.md), шаблонов быстрого запуска [Azure](availability-group-quickstart-template-configure.md)или [вручную](availability-group-manually-configure-tutorial.md) . 
 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить Always On группы доступности с помощью портал Azure, необходимо выполнить следующие предварительные требования. 
 
@@ -100,9 +100,6 @@ ms.locfileid: "94556613"
 1. Проверьте параметры кластера. 
 1. Выберите **Применить** , чтобы подключить кластер, а затем выберите **Да** в командной строке для продолжения.
 
-
-
-
 ## <a name="create-availability-group"></a>Создание группы доступности
 
 После того как кластер был создан или подключен, создайте группу доступности с помощью портал Azure. Для этого выполните следующие действия.
@@ -146,7 +143,7 @@ ms.locfileid: "94556613"
 1. Откройте SQL Server Management Studio (SSMS).
 1. Подключитесь к экземпляру SQL Server. 
 1. Разверните **Always on высокий уровень доступности** в **обозревателе объектов**.
-1. Разверните узел **группы доступности** , щелкните правой кнопкой мыши группу доступности и выберите **Добавить базу данных...**.
+1. Разверните узел **группы доступности**, щелкните правой кнопкой мыши группу доступности и выберите **Добавить базу данных...**.
 
    :::image type="content" source="media/availability-group-az-portal-configure/add-database.png" alt-text="Щелкните правой кнопкой мыши группу доступности в обозревателе объектов и выберите Добавить базу данных.":::
 
@@ -207,7 +204,7 @@ az sql vm remove-from-group --name <VM2 name>  --resource-group <resource group 
 # Remove the cluster from the SQL VM RP metadata
 # example: az sql vm group delete --name Cluster --resource-group SQLVM-RG
 
-az sql vm group delete --name <cluster name> Cluster --resource-group <resource group name>
+az sql vm group delete --name <cluster name> --resource-group <resource group name>
 ```
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -235,7 +232,7 @@ $sqlvm = Get-AzSqlVM -Name <VM Name> -ResourceGroupName <Resource Group Name>
 # Remove the cluster metadata
 # example: Remove-AzSqlVMGroup -ResourceGroupName "SQLVM-RG" -Name "Cluster"
 
-Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster name> "
+Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster name>"
 ```
 
 ---

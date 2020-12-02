@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 8c6a27f0cfaafe7e6c1181651e672d0e828af855
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 605e8cd57ab5863c1011082f0f2dbd93d078980b
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444484"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518946"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
 
@@ -286,19 +286,19 @@ automl_config = AutoMLConfig(task='forecasting',
 
 ### <a name="short-series-handling"></a>Обработка коротких циклов
 
-Автоматический ML рассматривает временный ряд в виде **короткого ряда** , если нет достаточных точек данных для проведения этапов обучения и проверки разработки модели. Количество точек данных различается для каждого эксперимента и зависит от max_horizon, количества разбиений между проверками и длины модели лукбакк, которая является максимальным объемом журнала, необходимого для создания функций временных рядов. Точные вычисления см. в [справочной документации по short_series_handling_config](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py#short-series-handling-configuration).
+Автоматический ML рассматривает временный ряд в виде **короткого ряда** , если нет достаточных точек данных для проведения этапов обучения и проверки разработки модели. Количество точек данных различается для каждого эксперимента и зависит от max_horizon, количества разбиений между проверками и длины модели лукбакк, которая является максимальным объемом журнала, необходимого для создания функций временных рядов. Точные вычисления см. в [справочной документации по short_series_handling_configuration](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py#short-series-handling-configuration).
 
-Автоматический ML предлагает обработку коротких циклов по умолчанию с `short_series_handling_config` параметром в `ForecastingParameters` объекте. 
+Автоматический ML предлагает обработку коротких циклов по умолчанию с `short_series_handling_configuration` параметром в `ForecastingParameters` объекте. 
 
-Чтобы включить обработку коротких циклов, `freq` необходимо также определить параметр. Чтобы изменить поведение по умолчанию, `short_series_handling_config = auto` обновите `short_series_handling_config` параметр в `ForecastingParameter` объекте.  
+Чтобы включить обработку коротких циклов, `freq` необходимо также определить параметр. Чтобы определить почасовую частоту, мы настроили `freq='H'` . Просмотрите [Параметры частоты](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)строк. Чтобы изменить поведение по умолчанию, `short_series_handling_configuration = 'auto'` обновите `short_series_handling_configuration` параметр в `ForecastingParameter` объекте.  
 
 ```python
 from azureml.automl.core.forecasting_parameters import ForecastingParameters
 
 forecast_parameters = ForecastingParameters(time_column_name='day_datetime', 
                                             forecast_horizon=50,
-                                            short_series_handling_config='auto',
-                                            freq = '7',
+                                            short_series_handling_configuration='auto',
+                                            freq = 'H',
                                             target_lags='auto')
 ```
 В следующей таблице перечислены доступные параметры для `short_series_handling_config` .
@@ -306,7 +306,7 @@ forecast_parameters = ForecastingParameters(time_column_name='day_datetime',
 |Параметр|Описание
 |---|---
 |`auto`| Ниже приведено поведение по умолчанию для обработки коротких рядов. <li> *Если все ряды являются короткими*, раскладка данных. <br> <li> *Если не все ряды являются короткими*, удалите короткий ряд. 
-|`pad`| Если `short_series_handling_config = pad` , то автоматически ML добавляет фиктивные значения в каждый короткий ряд. Ниже перечислены типы столбцов и их поля. <li>Столбцы объекта с значений NaN <li> Числовые столбцы с 0 <li> Логические и логические столбцы с false <li> Целевой столбец дополняется случайными значениями с средним нулем и стандартным отклонением 1. 
+|`pad`| Если `short_series_handling_config = pad` , то автоматически ML добавляет случайные значения в каждый обнаруженный короткий ряд. Ниже перечислены типы столбцов и их поля. <li>Столбцы объекта с значений NaN <li> Числовые столбцы с 0 <li> Логические и логические столбцы с false <li> Целевой столбец дополняется случайными значениями с средним нулем и стандартным отклонением 1. 
 |`drop`| Если `short_series_handling_config = drop` , то автоматический ML удаляет короткий ряд и не будет использоваться для обучения или прогнозирования. Прогнозы для этих рядов будут возвращать значение NaN.
 |`None`| Ряды не добавляются или не удаляются
 

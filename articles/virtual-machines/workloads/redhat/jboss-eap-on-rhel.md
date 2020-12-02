@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.assetid: 8a4df7bf-be49-4198-800e-db381cda98f5
 ms.date: 10/30/2020
-ms.openlocfilehash: ce07a0667b1fd4b439f061966e4ee0b1112578c4
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: bab84b12c871c621b5a317ba8b47f9b18c91bff3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413213"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500195"
 ---
 # <a name="deploy-enterprise-java-applications-to-azure-with-jboss-eap-on-red-hat-enterprise-linux"></a>Развертывание корпоративных приложений Java в Azure с помощью JBoss EAP на Red Hat Enterprise Linux
 
@@ -31,7 +31,7 @@ JBoss EAP и RHEL содержат все компоненты, которые 
 
   Если у вас нет права на EAP, перед началом работы необходимо получить [подписку на ознакомительную версию JBoss EAP](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/evaluation). Чтобы создать новую подписку Red Hat, перейдите на [Клиентский портал Red Hat](https://access.redhat.com/) и настройте учетную запись.
 
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/overview).
+* [Интерфейс командной строки Azure](/cli/azure/overview).
 
 * Параметры RHEL. Выберите между Оплатой по мере использования (PAYG) и использованием собственной подписки (BYOS). При использовании BYOS необходимо активировать образы RHEL Gold [Red Hat Cloud Access](https://access.redhat.com/), прежде чем развертывать шаблон быстрого запуска.
 
@@ -164,9 +164,9 @@ JBoss EAP также может работать в режиме кластер
 
    1. Подождите, пока в подписке Azure будут доступны образы Red Hat Gold. Эти образы обычно стают доступными в течение трех часов после отправки.
     
-3. Примите условия Azure Marketplace для образов RHEL BYOS. Этот процесс можно выполнить, запустив следующие команды Azure CLI. Дополнительные сведения см. в документации по [образам RHEL Gold BYOS в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/redhat/byos). Важно, чтобы вы запустили последнюю версию Azure CLI.
+3. Примите условия Azure Marketplace для образов RHEL BYOS. Этот процесс можно выполнить, запустив следующие команды Azure CLI. Дополнительные сведения см. в документации по [образам RHEL Gold BYOS в Azure](./byos.md). Важно, чтобы вы запустили последнюю версию Azure CLI.
 
-   1. Откройте сеанс Azure CLI и пройдите проверку подлинности с помощью учетной записи Azure. Дополнительные сведения см. в статье о [входе с помощью Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli).
+   1. Откройте сеанс Azure CLI и пройдите проверку подлинности с помощью учетной записи Azure. Дополнительные сведения см. в статье о [входе с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
 
    1. Убедитесь, что в подписке доступны образы RHEL BYOS, выполнив следующую команду CLI. Если вы не получите результатов, убедитесь, что подписка Azure активирована для образов RHEL BYOS.
    
@@ -203,7 +203,7 @@ JBoss EAP также может работать в режиме кластер
   New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri <raw link to the template which can be obtained from github>
   ```
  
-  Сведения об установке и настройке Azure PowerShell см. в [соответствующей документации](https://docs.microsoft.com/powershell/azure/).  
+  Сведения об установке и настройке Azure PowerShell см. в [соответствующей документации](/powershell/azure/).  
 
 - **Azure CLI**. Чтобы развернуть этот шаблон, выполните следующие команды:
 
@@ -215,7 +215,7 @@ JBoss EAP также может работать в режиме кластер
   az group deployment create --resource-group <my-resource-group> --template-uri <raw link to the template which can be obtained from github>
   ```
 
-  Сведения об установке и настройке Azure CLI см. в [этой статье](https://docs.microsoft.com/cli/azure/install-azure-cli).
+  Сведения об установке и настройке Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
 - **Портал Azure**. Вы можете выполнить развертывание на портале Azure, перейдя к шаблонам быстрого запуска Azure, как указано в следующем разделе. После завершения работы с кратким руководством нажмите кнопку **Развертывание в Azure** или **Обзор в GitHub**.
 
@@ -231,10 +231,10 @@ JBoss EAP также может работать в режиме кластер
 
 ## <a name="resource-links"></a>Ссылки на ресурсы
 
-* [Преимущество гибридного использования Azure](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
-* [Настройка приложения Java для Службы приложений Azure](https://docs.microsoft.com/azure/app-service/configure-language-java)
+* [Преимущество гибридного использования Azure](../../windows/hybrid-use-benefit-licensing.md)
+* [Настройка приложения Java для Службы приложений Azure](../../../app-service/configure-language-java.md)
 * [Azure Red Hat OpenShift](https://azure.microsoft.com/services/openshift/)
-* [Создание приложения Java в Службе приложений Azure](https://docs.microsoft.com/azure/app-service/quickstart-java)
+* [Создание приложения Java в Службе приложений Azure](../../../app-service/quickstart-java.md)
 * [Развертывание JBoss EAP в Службе приложений Azure](https://github.com/JasonFreeberg/jboss-on-app-service)
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -242,6 +242,6 @@ JBoss EAP также может работать в режиме кластер
 * Дополнительные сведения о [JBoss EAP 7.2](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.2/).
 * Дополнительные сведения о [JBoss EAP 7.3](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.3/).
 * Дополнительные сведения об [управлении подписками Red Hat](https://access.redhat.com/products/red-hat-subscription-management).
-* Дополнительные сведения о [рабочей нагрузке Red Hat в Azure](https://aka.ms/rhel-docs).
+* Дополнительные сведения о [рабочей нагрузке Red Hat в Azure](./overview.md).
 * Развертывание [JBoss EAP на виртуальной машине RHEL или масштабируемом наборе виртуальных машин из Azure Marketplace](https://aka.ms/AMP-JBoss-EAP).
 * Развертывание [JBoss EAP на виртуальной машине RHEL или масштабируемом наборе виртуальных машин с помощью шаблонов быстрого запуска Azure](https://aka.ms/Quickstart-JBoss-EAP).

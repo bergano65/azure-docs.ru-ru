@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 11/09/2020
 ms.author: spelluru
 ms.custom: devx-track-js
-ms.openlocfilehash: ec5bb299bed5545c3935b2f0ae28a50de9d79c45
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 3f37fcc6d58eb1c206aef6db15c7826cfdcda274
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95808875"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489434"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-javascript"></a>Отправка сообщений в очереди Служебной шины и получение сообщений из них (JavaScript)
 Из этого учебника вы узнаете, как использовать пакет [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) в программе JavaScript для отправки и получения сообщений для очереди Служебной шины.
@@ -207,4 +207,4 @@ npm install @azure/service-bus
 
 - [Клиентская библиотека Служебной шины Azure для Python](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/README.md)
 - [Примеры.](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples) В папке **javascript** можно найти примеры для JavaScript, а в папке **typescript** — для TypeScript. 
-- [Справочная документация по использованию пакета azure-servicebus](https://docs.microsoft.com/javascript/api/overview/azure/service-bus)
+- [Справочная документация по использованию пакета azure-servicebus](/javascript/api/overview/azure/service-bus)

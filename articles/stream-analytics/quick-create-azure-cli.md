@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: 4e50560d2f090c99d1f354ebbc11ab2357dd61e8
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 48ef9cc48f48cec92ae57774e5d89e300ee43385
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874735"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485388"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Краткое руководство. Создание задания Azure Stream Analytics с помощью Azure CLI
 
@@ -94,7 +94,7 @@ ms.locfileid: "94874735"
    az storage account keys list -g streamanalyticsrg -n <storage-account>
    ```
 
-3. Создайте контейнер для хранения больших двоичных объектов с помощью команды [az storage container create](/cli/azure/storage/container). Вы можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](../storage/common/authorize-data-operations-cli.md).
+3. Создайте контейнер для хранения больших двоичных объектов с помощью команды [az storage container create](/cli/azure/storage/container). Вы можете использовать ключ учетной записи хранения, чтобы авторизовать операцию создания контейнера. Дополнительные сведения об авторизации операций с данными с помощью Azure CLI см. в статье [Авторизация доступа к данным большого двоичного объекта или очереди с помощью Azure CLI](../storage/blobs/authorize-data-operations-cli.md).
 
    ```azurecli
    az storage container create \

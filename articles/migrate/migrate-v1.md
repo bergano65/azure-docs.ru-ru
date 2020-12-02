@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 53a10123bf3304ab9c949146d7cad6b904c8323d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: c87290b36ec77e834a0d0fcd99e9a8bdb05675b5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92317207"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494704"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Работа с предыдущей версией службы "Миграция Azure"
 
@@ -31,7 +31,7 @@ ms.locfileid: "92317207"
 
 ## <a name="upgrade-between-versions"></a>Обновление при смене версий
 
-Нельзя обновить проекты или компоненты из предыдущей версии на новую. Вам необходимо [создать проект Миграции Azure](create-manage-projects.md) и добавить в него [средства оценки и миграции](how-to-add-tool-first-time.md). Воспользуйтесь учебниками, чтобы понять, как использовать доступные средства оценки и миграции. Если к классическому проекту подключена рабочая область Log Analytics, ее можно будет подключить к проекту текущей версии после удаления классического проекта.
+Нельзя обновить проекты или компоненты из предыдущей версии на новую. Вам необходимо [создать проект Миграции Azure](create-manage-projects.md) и добавить в него [средства оценки и миграции](./create-manage-projects.md). Воспользуйтесь учебниками, чтобы понять, как использовать доступные средства оценки и миграции. Если к классическому проекту подключена рабочая область Log Analytics, ее можно будет подключить к проекту текущей версии после удаления классического проекта.
 
 ## <a name="find-projects-from-previous-version"></a>Поиск проектов из предыдущей версии
 
@@ -308,7 +308,7 @@ Linux | Azure рекомендует эти [операционные систе
 4. Составьте запрос для сбора данных о зависимости с помощью журналов Azure Monitor. Примеры запросов приведены в следующем разделе.
 5. Выполните запрос, нажав кнопку "Запуск". 
 
-[Дополнительные сведения](../azure-monitor/log-query/get-started-portal.md) о написании запросов Kusto. 
+[Дополнительные сведения](../azure-monitor/log-query/log-analytics-tutorial.md) о написании запросов Kusto. 
 
 ### <a name="sample-azure-monitor-logs-queries"></a>Примеры запросов с журналами Azure Monitor
 

@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: f72d8b332f00b3d298f4d5a1a04937f562647f9e
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 5f50e42bc33adb8f40520f3f98bf1dcfba190a41
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347171"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491916"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для JavaScript
 
@@ -34,7 +34,7 @@ ms.locfileid: "93347171"
 - [Справочная документация по API](/javascript/api/@azure/storage-queue/)
 - [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue)
 - [Пакет (диспетчер пакетов узла)](https://www.npmjs.com/package/@azure/storage-queue)
-- [Примеры](../common/storage-samples-javascript.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
+- [Примеры](../common/storage-samples-javascript.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -87,7 +87,7 @@ ms.locfileid: "93347171"
 
 ### <a name="install-the-package"></a>Установка пакета
 
-Оставаясь в каталоге *queues-quickstart-v12* , установите пакет клиентской библиотеки Хранилища очередей Azure для JavaScript с помощью команды `npm install`.
+Оставаясь в каталоге *queues-quickstart-v12*, установите пакет клиентской библиотеки Хранилища очередей Azure для JavaScript с помощью команды `npm install`.
 
 ```console
 npm install
@@ -304,7 +304,7 @@ console.log("Queue deleted, requestId:", deleteQueueResponse.requestId);
 
 Это приложение создает три сообщения и добавляет их в очередь Azure. Затем код получает список сообщений, извлекает и удаляет их, и наконец удаляет саму очередь.
 
-В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.js* , а затем запустите приложение, выполнив следующую команду `node`.
+В окне консоли перейдите в каталог, который содержит файл *queues-quickstart-v12.js*, а затем запустите приложение, выполнив следующую команду `node`.
 
 ```console
 node queues-quickstart-v12.js

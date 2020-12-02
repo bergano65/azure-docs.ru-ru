@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 11/09/2020
 ms.author: spelluru
 ms.custom: devx-track-js
-ms.openlocfilehash: 56bed63a9030135966a208dd1ad9b4c45cde328d
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: aac3b6339c318c76e9b0c9abd0bc3778f2563a6f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95811698"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498699"
 ---
 # <a name="quickstart-service-bus-topics-and-subscriptions-with-nodejs-and-the-preview-azureservice-bus-package"></a>Краткое руководство. Использование для разделов и подписок служебной шины Node.js и предварительной версией пакета azure/service-bus
 Из этого учебника вы узнаете, как использовать пакет [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) в программе JavaScript для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины в этом разделе.
@@ -208,4 +208,4 @@ npm install @azure/service-bus
 
 - [Клиентская библиотека Служебной шины Azure для Python](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/README.md)
 - [Примеры.](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples) В папке **javascript** можно найти примеры для JavaScript, а в папке **typescript** — для TypeScript. 
-- [Справочная документация по использованию пакета azure-servicebus](https://docs.microsoft.com/javascript/api/overview/azure/service-bus)
+- [Справочная документация по использованию пакета azure-servicebus](/javascript/api/overview/azure/service-bus)

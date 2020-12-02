@@ -11,19 +11,19 @@ ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 219893859d05eb419bc862484a9083abf8c26db7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bbb4298d0d9a9d7589c4a2055b4d55a0b852f951
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997721"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518215"
 ---
 # <a name="hybrid-identity-considerations-for-the-azure-government-cloud"></a>Рекомендации по гибридной идентификации в облаке Azure для государственных организаций
 
 В этой статье приведены рекомендации по интеграции гибридной среды с облаком Microsoft Azure для государственных организаций. Эти сведения предоставляются как справочные материалы для администраторов и архитекторов, работающих с облаком Azure для государственных организаций.
 
 > [!NOTE]
-> Чтобы интегрировать локальную среду Microsoft Azure Active Directory (Azure AD) с облаком Azure для государственных организаций, необходимо выполнить обновление до актуальной версии [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
+> Чтобы интегрировать среду Microsoft Active Directory (локальную или размещенную в IaaS, которая является частью того же облачного экземпляра) с облаком Azure для государственных организаций, необходимо выполнить обновление до последней версии [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
 Полный список оконечных точек в Министерстве обороны США см. в [документации](/office365/enterprise/office-365-u-s-government-dod-endpoints).
 

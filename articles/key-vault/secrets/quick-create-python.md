@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 7fe5b8da0b6dfa69d04a5ad152aa34a8686d854f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 68c58769302bbefd29b483a8fda225201d242dd9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92786111"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483650"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки секретов Azure Key Vault для Python
 
@@ -54,7 +54,7 @@ ms.locfileid: "92786111"
 1. Установите библиотеку удостоверений Azure Active Directory:
 
     ```terminal
-    pip install azure.identity
+    pip install azure-identity
     ```
 
 
@@ -98,7 +98,7 @@ export KEY_VAULT_NAME=<your-key-vault-name>
 
 Клиентская библиотека секретов Azure Key Vault для Python позволяет управлять секретами. В приведенном примере кода показано, как создать клиент, а также как задать, извлечь и удалить секрет.
 
-Создайте файл с именем *kv_secrets.py* , который содержит этот код.
+Создайте файл с именем *kv_secrets.py*, который содержит этот код.
 
 ```python
 import os
@@ -136,7 +136,7 @@ print(" done.")
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-Убедитесь, что код из предыдущего раздела находится в файле с именем *kv_secrets.py* . Затем выполните следующую команду, чтобы запустить код:
+Убедитесь, что код из предыдущего раздела находится в файле с именем *kv_secrets.py*. Затем выполните следующую команду, чтобы запустить код:
 
 ```terminal
 python kv_secrets.py

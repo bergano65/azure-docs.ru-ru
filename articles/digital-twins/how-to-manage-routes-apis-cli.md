@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3db475b5eb0c584f86c8810e9c993e4d5d7b497e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7016abc9d52aa12b497d29f605fe351ee3f6a2dd
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452898"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519119"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Управление конечными точками и маршрутами в Azure Digital двойников (API и CLI)
 
@@ -90,47 +90,59 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 Если конечная точка не может доставить событие в течение определенного периода времени или после попытки доставить событие определенное количество раз, оно может отправить недоставленное событие в учетную запись хранения. Этот процесс называется **недоставленным**.
 
-Дополнительные сведения о недоставленных сообщениях см. в разделе [*Основные понятия: маршруты событий*](concepts-route-events.md#dead-letter-events).
+Дополнительные сведения о недоставленных сообщениях см. в разделе [*Основные понятия: маршруты событий*](concepts-route-events.md#dead-letter-events). Инструкции по настройке конечной точки с недоставленными сообщениями см. в оставшейся части этого раздела.
 
 #### <a name="set-up-storage-resources"></a>Настройка ресурсов хранилища
 
-Перед настройкой расположения недоставленных сообщений необходимо иметь [учетную запись хранения](../storage/common/storage-account-create.md?tabs=azure-portal) с [контейнером](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) , настроенным в учетной записи Azure. URL-адрес для этого контейнера будет предоставлен при создании конечной точки позже.
-Недоставленная буква предоставляется как URL-адрес контейнера с [маркером SAS](../storage/common/storage-sas-overview.md). Этот маркер должен иметь только `write` разрешение для целевого контейнера в пределах учетной записи хранения. Полностью сформированный URL-адрес будет иметь формат: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`
+Перед настройкой расположения недоставленных сообщений необходимо иметь [учетную запись хранения](../storage/common/storage-account-create.md?tabs=azure-portal) с [контейнером](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) , настроенным в учетной записи Azure. 
+
+URL-адрес для этого контейнера будет предоставлен при создании конечной точки позже. Расположение недоставленной буквы будет предоставлено конечной точке в качестве URL-адреса контейнера с [маркером SAS](../storage/common/storage-sas-overview.md). Этому маркеру требуется `write` разрешение для целевого контейнера в учетной записи хранения. Полностью сформированный URL-адрес будет иметь формат: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>` .
 
 Выполните следующие действия, чтобы настроить эти ресурсы хранилища в учетной записи Azure, чтобы подготовиться к настройке подключения к конечной точке в следующем разделе.
 
-1. В [этой статье](../storage/common/storage-account-create.md?tabs=azure-portal) вы создадите учетную запись хранения и сохраните ее имя, чтобы использовать ее позже.
-2. Создайте контейнер с помощью [этой статьи](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) и сохраните имя контейнера, чтобы использовать его позже при настройке соединения между контейнером и конечной точкой.
-3. Затем создайте маркер SAS для своей учетной записи хранения. Начните с перехода к своей учетной записи хранения в [портал Azure](https://ms.portal.azure.com/#home) (ее можно найти по имени с помощью панели поиска портала).
-4. На странице Учетная запись хранения щелкните ссылку _подписанный_ URL-адрес на левой панели навигации, чтобы выбрать нужные разрешения для создания маркера SAS.
-5. Для параметра _Разрешенные службы_ и _Разрешенные типы ресурсов_ выберите нужные параметры. Необходимо выбрать по крайней мере одно поле в каждой категории. Для разрешенных разрешений выберите **запись** (при необходимости можно также выбрать другие разрешения).
-Задайте остальные параметры, но вы хотите.
-6. Затем нажмите кнопку _создать SAS и строку подключения_ , чтобы создать маркер SAS. При этом в нижней части той же страницы будут созданы несколько значений SAS и строк подключения, расположенных под выбранным параметром. Прокрутите вниз, чтобы просмотреть значения и скопировать значение **маркера SAS** с помощью значка "Копировать в буфер обмена". Сохраните его для последующего использования.
+1. Выполните действия, описанные в разделе [*Создание учетной записи хранения*](../storage/common/storage-account-create.md?tabs=azure-portal) , чтобы создать **учетную запись хранения** в подписке Azure. Запишите имя учетной записи хранения, чтобы использовать ее позже.
+2. Выполните действия, описанные в разделе [*Создание контейнера*](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) , чтобы создать **контейнер** в новой учетной записи хранения. Запишите имя контейнера, чтобы использовать его позже.
+3. Затем создайте **маркер SAS** для учетной записи хранения, которую конечная точка может использовать для доступа к ней. Начните с перехода к своей учетной записи хранения в [портал Azure](https://ms.portal.azure.com/#home) (ее можно найти по имени с помощью панели поиска портала).
+4. На странице Учетная запись хранения щелкните ссылку _подписанный_ URL-адрес на левой панели навигации, чтобы начать настройку маркера SAS.
 
-:::image type="content" source="./media/how-to-manage-routes-apis-cli/generate-sas-token.png" alt-text="На странице учетной записи хранения в портал Azure отображаются все параметры, выбранные для создания маркера SAS." lightbox="./media/how-to-manage-routes-apis-cli/generate-sas-token.png":::
+    :::image type="content" source="./media/how-to-manage-routes-apis-cli/generate-sas-token-1.png" alt-text="Страница учетной записи хранения в портал Azure" lightbox="./media/how-to-manage-routes-apis-cli/generate-sas-token-1.png":::
 
-:::image type="content" source="./media/how-to-manage-routes-apis-cli/copy-sas-token.png" alt-text="Скопируйте маркер SAS для использования в секрете недоставленной буквы." lightbox="./media/how-to-manage-routes-apis-cli/copy-sas-token.png":::
+1. На *странице подписанный URL-* адрес в разделе *Разрешенные службы* и *Разрешенные типы ресурсов* выберите необходимые параметры. Необходимо выбрать по крайней мере одно поле в каждой категории. В разделе *Разрешенные разрешения* выберите **запись** (при необходимости можно также выбрать другие разрешения).
+1. Задайте необходимые значения для остальных параметров.
+1. По завершении нажмите кнопку _создать SAS и строку подключения_ , чтобы создать маркер SAS. 
 
+    :::image type="content" source="./media/how-to-manage-routes-apis-cli/generate-sas-token-2.png" alt-text="На странице учетной записи хранения в портал Azure отображаются все параметры, выбранные для создания маркера SAS, и выделяется кнопка &quot;создать SAS и строку подключения&quot;." lightbox="./media/how-to-manage-routes-apis-cli/generate-sas-token-2.png"::: 
+
+1. При этом в нижней части той же страницы будут созданы несколько значений SAS и строк подключения, расположенных под выбранным параметром. Прокрутите вниз, чтобы просмотреть значения, и используйте значок *Копировать в буфер обмена* , чтобы скопировать значение **маркера SAS** . Сохраните его для последующего использования.
+
+    :::image type="content" source="./media/how-to-manage-routes-apis-cli/copy-sas-token.png" alt-text="Скопируйте маркер SAS для использования в секрете недоставленной буквы." lightbox="./media/how-to-manage-routes-apis-cli/copy-sas-token.png":::
+    
 #### <a name="configure-the-endpoint"></a>Настройка конечной точки
 
-Конечные точки недоставленных сообщений создаются с помощью Azure Resource Manager API. При создании конечной точки используйте [документацию по Azure Resource Manager API](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) для заполнения необходимых параметров запроса. Кроме того, добавьте в `deadLetterSecret` объект Properties в **тексте** запроса, который содержит URL-адрес контейнера и маркер SAS для вашей учетной записи хранения.
+Чтобы создать конечную точку с включенной недоставленным письмом, необходимо создать конечную точку с помощью API-интерфейсов Azure Resource Manager. 
+
+1. Во-первых, используйте [документацию по api Azure Resource Manager](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) , чтобы настроить запрос на создание конечной точки, и заполните необходимые параметры запроса. 
+
+1. Затем добавьте `deadLetterSecret` поле в объект Properties в **тексте** запроса. Задайте это значение в соответствии с шаблоном ниже, который ремесла URL-адрес из имени учетной записи хранения, имени контейнера и значения маркера SAS, собранного в [предыдущем разделе](#set-up-storage-resources).
       
-```json
-{
-  "properties": {
-    "endpointType": "EventGrid",
-    "TopicEndpoint": "https://contosoGrid.westus2-1.eventgrid.azure.net/api/events",
-    "accessKey1": "xxxxxxxxxxx",
-    "accessKey2": "xxxxxxxxxxx",
-    "deadLetterSecret":"https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>"
-  }
-}
-```
+    ```json
+    {
+      "properties": {
+        "endpointType": "EventGrid",
+        "TopicEndpoint": "https://contosoGrid.westus2-1.eventgrid.azure.net/api/events",
+        "accessKey1": "xxxxxxxxxxx",
+        "accessKey2": "xxxxxxxxxxx",
+        "deadLetterSecret":"https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>"
+      }
+    }
+    ```
+1. Отправьте запрос на создание конечной точки.
+
 Дополнительные сведения о структурировании этого запроса см. в документации по цифровым двойников REST API Azure: [Endpoints-Дигиталтвинсендпоинт CreateOrUpdate](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate).
 
 ### <a name="message-storage-schema"></a>Схема хранилища сообщений
 
-Недоставленные сообщения будут храниться в следующем формате в учетной записи хранения:
+После настройки конечной точки с недоставленными сообщениями они будут храниться в следующем формате в учетной записи хранения:
 
 `{container}/{endpointName}/{year}/{month}/{day}/{hour}/{eventId}.json`
 

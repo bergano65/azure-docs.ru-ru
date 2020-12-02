@@ -8,19 +8,19 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 07/15/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 63768581da07566ac59b525ca0aefbd7b616e20e
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 4f774351fc0eaaf32069687a1943c72b74b6308a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635574"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494330"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-using-azure-cli"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI
 
 > [!TIP]
 > Рассмотрите возможность использования более простой команды Azure CLI [az postgres up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) (сейчас в предварительной версии). Ознакомьтесь с [кратким руководством](./quickstart-create-server-up-azure-cli.md).
 
-В этом кратком руководстве описывается, как с помощью команд [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) создать сервер службы "База данных Azure для MySQL" за 5 минут. 
+В этом кратком руководстве описывается, как с помощью команд [Azure CLI](/cli/azure/get-started-with-azure-cli) в [Azure Cloud Shell](https://shell.azure.com) создать сервер службы "База данных Azure для MySQL" за 5 минут. 
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 

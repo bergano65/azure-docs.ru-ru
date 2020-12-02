@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: damendo
-ms.openlocfilehash: 25f4ae0dbfd7827a36dede6a889c342ea490e273
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f27f2a6319bf2648546a62c2566d938db657738f
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948482"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518470"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -401,3 +401,6 @@ destIPs = iif(isempty(DestIP_s), split(DestPublicIPs_s," ") , pack_array(DestIP_
 - Чтобы перейти к другим выделенным узлам в представлении топологии, используйте клавиши `Shift+Right arrow` для перемещения вперед. 
 - На выделенных узлах фокус перемещается на **панель элементов "Информация"** для этого узла. По умолчанию фокус перемещается на кнопку **Дополнительные сведения****панели элементов "Информация"**. Для дальнейшего перемещения в представлении **панели** используйте клавиши `Right arrow` и `Left arrow`, чтобы переходить вперед и назад соответственно. Нажатие клавиши `Enter` действует так же, как кнопка с фокусом на **панели элементов "Информация"**.
 - При выборе любых подобных узлов можно просмотреть все их подключения, одно за одним, нажимая клавиши `Shift+Left arrow`. Фокус перемещается на **панель элементов "Информация"** этого подключения. В любой момент фокус можно сдвинуть обратно на узел, нажав клавиши `Shift+Right arrow` еще раз.
+
+## <a name="are-classic-nsgs-supported"></a>Поддерживаются ли классические группы безопасности сети?
+Нет, Аналитика трафика не поддерживает классическую NSG. Рекомендуется перенести ресурсы IaaS из классической модели в Azure Resource Manager как классические ресурсы будут считаться [устаревшими](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation). Сведения [о миграции](https://docs.microsoft.com/azure/virtual-machines/migration-classic-resource-manager-overview)см. в этой статье.

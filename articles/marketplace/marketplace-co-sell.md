@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
-ms.date: 11/20/2020
-ms.openlocfilehash: 9d6970331024ea0cd08e890cc62507d9eb230678
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 12/2/2020
+ms.openlocfilehash: 99b5e7bee93ffee14585f048506104ec313b9bff
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016339"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518541"
 ---
 # <a name="co-sell-partner-engagement"></a>Участие партнеров в совместных продажах
 
@@ -24,7 +24,7 @@ ms.locfileid: "95016339"
 
     ![Диаграмма, показывающая, как продается совместная работа, когда интересы становятся общими, принятыми и выигранными для клиентов, управляемых корпорацией Майкрософт.](./media/marketplace-publishers-guide/marketplace-co-sell-v2.png)
 
-- **Совместная продажа выгодно** Решения для IP-адресов могут получить стимулы для Microsoft Field продавцов, если они продаются совместно с группами продаж Майкрософт, а также с преимуществами Marketplace, перечисленными ниже.</li></ul>
+- **Совместная продажа выгодно** Предложения IP-адресов могут получать поощрения для продавцов Майкрософт, когда они продаются совместно с группами продаж Майкрософт, а также с преимуществами Marketplace, перечисленными ниже.</li></ul>
 
 ## <a name="marketplace-benefits-for-incentivized-offers"></a>Преимущества Marketplace для предложений выгодно
 
@@ -67,7 +67,7 @@ ms.locfileid: "95016339"
 
     :::image type="content" source="media/co-sell/co-sell-listing-section.png" alt-text="На этом рисунке показан раздел &quot;листинг&quot; на вкладке &quot;Совместная продажа&quot;.":::  
 
-1. Укажите сведения о предложении и отправке материалов в разделе " **документы** ". Microsoft продавцов будет использовать эти сведения, чтобы рекомендовать и продать предложение. (*Обязательно: покупатель с одним пейджером и с представлением клиента.*)
+1. Укажите сведения о предложении и отправке материалов в разделе " **документы** ". Microsoft продавцов будет использовать эти сведения, чтобы рекомендовать и продать предложение. *(Обязательно: Solution/предложение One-пейджер, а решение/шаг с шагом предложения. Требуется для получения сведений о состоянии совместной продажи Azure IP выгодно: эталонная схема архитектуры.)*
 
     :::image type="content" source="media/co-sell/co-sell-documents-section.png" alt-text="На этом рисунке показан раздел документы на вкладке Совместная продажа.":::
 
