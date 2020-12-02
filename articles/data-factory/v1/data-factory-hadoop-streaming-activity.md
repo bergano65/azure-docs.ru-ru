@@ -3,8 +3,8 @@ title: Преобразование данных с помощью действ�
 description: Узнайте, как с помощью действия потоковой передачи Hadoop в фабрике данных Azure преобразовывать данные, выполняя программы потоковой передачи Hadoop в собственном кластере HDInsight или кластере по требованию.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.assetid: 4c3ff8f2-2c00-434e-a416-06dfca2c41ec
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 9c6661a762886140997b9305f88f5c4e25476e57
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 80f78e3d2e7fdcd8fef53ca0412676a37c6486c2
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371704"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495605"
 ---
 # <a name="transform-data-using-hadoop-streaming-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия потоковой передачи Hadoop в фабрике данных Azure
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -26,8 +26,8 @@ ms.locfileid: "92371704"
 > * [Действие MapReduce](data-factory-map-reduce.md)
 > * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие "обновить ресурс" Машинное обучение Azure Studio (классическая модель)](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие обновления ресурса в Студии машинного обучения Azure (классическая)](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -222,7 +222,7 @@ ms.locfileid: "92371704"
     }
 }
 ```
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Действие Hive](data-factory-hive-activity.md)
 * [Действие Pig](data-factory-pig-activity.md)
 * [Действие MapReduce](data-factory-map-reduce.md)

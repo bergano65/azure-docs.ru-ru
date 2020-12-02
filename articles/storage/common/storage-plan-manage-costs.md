@@ -9,12 +9,12 @@ ms.date: 11/13/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: subject-cost-optimization
-ms.openlocfilehash: a30fe70943c5329b36cbe10b75d47cc0ee3827fc
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 6942c3ecd631a141f1df741ff827a6889605e536
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630419"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498206"
 ---
 # <a name="plan-and-manage-costs-for-azure-blob-storage"></a>Планирование и управление затратами для хранилища BLOB-объектов Azure
 
@@ -104,13 +104,13 @@ ms.locfileid: "94630419"
 
 ## <a name="export-cost-data"></a>Экспорт данных о затратах
 
-Вы также можете [экспортировать данные о затратах](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
+Вы также можете [экспортировать данные о затратах](../../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о том, как цены работают со службой хранилища Azure. См. [Общие сведения о ценах на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/).
 - [Оптимизируйте затраты на хранилище BLOB-объектов с зарезервированной емкостью](../blobs/storage-blob-reserved-capacity.md).
-- Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](https://docs.microsoft.com/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
-- Дополнительные сведения об управлении затратами с помощью [анализа затрат](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Узнайте, как [предотвратить непредвиденные затраты](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Пройдите курс обучения по [управлению затратами](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .
+- Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
+- Дополнительные сведения об управлении затратами с помощью [анализа затрат](../../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Узнайте, как [предотвратить непредвиденные затраты](../../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Пройдите курс обучения по [управлению затратами](/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .

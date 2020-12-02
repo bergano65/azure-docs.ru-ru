@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 7bb4cca6f58cb4ad0722c1407d2ef3062c3747e2
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: b49e780714bd5e0662c6cb7ef208c473a8b45ccc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781963"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498155"
 ---
 # <a name="introduction-to-the-core-azure-storage-services"></a>Общие сведения о базовых службах хранилища Azure
 
@@ -131,7 +131,7 @@ ms.locfileid: "92781963"
 
 ## <a name="redundancy"></a>Избыточность
 
-Чтобы обеспечить устойчивую работу с данными, служба хранилища Azure хранит несколько копий данных. При настройке учетной записи хранения вы выбираете опцию репликации. Дополнительные сведения см. в статье [Репликация службы хранилища Azure](./storage-redundancy.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json).
+Чтобы обеспечить устойчивую работу с данными, служба хранилища Azure хранит несколько копий данных. При настройке учетной записи хранения вы выбираете опцию репликации. Дополнительные сведения см. в статье [Репликация службы хранилища Azure](./storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ## <a name="transfer-data-to-and-from-azure-storage"></a>Перенос данных в службу хранилища Azure и из нее
 

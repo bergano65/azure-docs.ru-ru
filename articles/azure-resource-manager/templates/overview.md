@@ -2,13 +2,13 @@
 title: Обзор шаблонов
 description: Описание преимуществ использования шаблонов Azure Resource Manager (шаблоны ARM) для развертывания ресурсов.
 ms.topic: conceptual
-ms.date: 06/22/2020
-ms.openlocfilehash: e25404fc74456f99a4d41c25786b34b6e1f3edda
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.date: 12/01/2020
+ms.openlocfilehash: da091d09f6d242d4b98903a8dcd76fe305e578b8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96342334"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498002"
 ---
 # <a name="what-are-arm-templates"></a>Что такое шаблоны ARM?
 
@@ -80,13 +80,13 @@ ms.locfileid: "96342334"
 "resources": [
   {
     "type": "Microsoft.Storage/storageAccounts",
-    "apiVersion": "2016-01-01",
+    "apiVersion": "2019-04-01",
     "name": "mystorageaccount",
     "location": "westus",
     "sku": {
       "name": "Standard_LRS"
     },
-    "kind": "Storage",
+    "kind": "StorageV2",
     "properties": {}
   }
 ]
@@ -96,17 +96,19 @@ ms.locfileid: "96342334"
 
 ```HTTP
 PUT
-https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/mystorageaccount?api-version=2016-01-01
+https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/mystorageaccount?api-version=2019-04-01
 REQUEST BODY
 {
   "location": "westus",
   "sku": {
     "name": "Standard_LRS"
   },
-  "kind": "Storage",
+  "kind": "StorageV2",
   "properties": {}
 }
 ```
+
+Обратите внимание, что **apiVersion** , заданный в шаблоне для ресурса, используется в качестве версии API для операции RESTful. Вы можете многократно развернуть шаблон и убедиться, что он будет продолжать работать. Используя ту же версию API, вам не нужно беспокоиться о критических изменениях, которые могут быть представлены в более поздних версиях.
 
 ## <a name="template-design"></a>Разработка шаблона
 
@@ -114,7 +116,7 @@ REQUEST BODY
 
 ![трехуровневый шаблон](./media/overview/3-tier-template.png)
 
-Но определять всю инфраструктуру в одном шаблоне не нужно. Во многих случаях целесообразно разделять требования к развертыванию между несколькими наборами шаблонов, предназначенными для определенных задач. Эти шаблоны можно многократно использовать для различных решений. Чтобы развернуть конкретное решение, создайте главный шаблон, связывающий все необходимые шаблоны. Ниже показано, как развернуть трехуровневое решение из родительского шаблона, в который входят три вложенных шаблона.
+Но определять всю инфраструктуру в одном шаблоне не нужно. Во многих случаях целесообразно разделять требования к развертыванию между несколькими наборами шаблонов, предназначенными для определенных задач. Эти шаблоны можно многократно использовать для различных решений. Чтобы развернуть конкретное решение, создайте основной шаблон, который связывает все необходимые шаблоны. Ниже показано, как развернуть трехуровневое решение из родительского шаблона, в который входят три вложенных шаблона.
 
 ![вложенный шаблон](./media/overview/nested-tiers-template.png)
 

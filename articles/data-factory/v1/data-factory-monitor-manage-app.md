@@ -3,8 +3,8 @@ title: Мониторинг конвейеров данных и управле�
 description: Узнайте, как отслеживать фабрики данных и конвейеры Azure и управлять ими с помощью приложения для мониторинга и управления.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.assetid: f3f07bc4-6dc3-4d4d-ac22-0be62189d578
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: e378c1e25fb434e689eadd91e9e8562ffe7e61fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: afab2b03d31045b9f49f357b49d15368cde898da
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570079"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495707"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
 > [!div class="op_single_selector"]
@@ -162,7 +162,7 @@ ms.locfileid: "91570079"
     <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
-    <td rowspan="8">Ожидание</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
+    <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
 </tr>
 <tr>
 <td>DatasetDependencies</td><td>Восходящие зависимости не готовы.</td>
@@ -193,7 +193,7 @@ ms.locfileid: "91570079"
 <td>Выполняется обработка окна действия.</td>
 </tr>
 <tr>
-<td rowspan="4">Failed</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
 <td>Отменено</td><td>Окно действий отменено пользователем.</td>
@@ -266,7 +266,7 @@ ms.locfileid: "91570079"
 >
 >
 
-В **списке окон действий**щелкните имя столбца (например, "Состояние").
+В **списке окон действий** щелкните имя столбца (например, "Состояние").
 
 ![Меню столбца списка "Activity Windows" (Окна действий)](./media/data-factory-monitor-manage-app/ActivityWindowsListColumnMenu.png)
 

@@ -3,8 +3,8 @@ title: Вызов программы MapReduce из фабрики данных 
 description: Узнайте, как обрабатывать данные путем выполнения программ MapReduce в кластере Azure HDInsight из фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.assetid: c34db93f-570a-44f1-a7d6-00390f4dc0fa
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 089a2e6a0b90c1682e2ebdd146626c93cec35f77
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8bdcaf20330a3700681fd96f858370dd7dcdf4c7
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636856"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495435"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>Вызов программы MapReduce из фабрики данных
 > [!div class="op_single_selector" title1="Действия преобразования"]
@@ -49,11 +49,11 @@ ms.locfileid: "92636856"
 ## <a name="json-for-hdinsight-mapreduce-activity"></a>JSON для действия MapReduce в HDInsight
 В определении JSON для действия HDInsight: 
 
-1. В поле **тип** для **действия** задайте значение **HDInsight** .
-2. Укажите имя класса для свойства **className** .
-3. Укажите путь к JAR-файлу, включающий имя файла для свойства **jarFilePath** .
-4. Укажите связанную службу, которая ссылается на хранилище BLOB-объектов Azure, содержащее JAR-файл для свойства **jarLinkedService** .   
-5. Задайте аргументы для программы MapReduce в разделе **аргументов** . Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
+1. В поле **тип** для **действия** задайте значение **HDInsight**.
+2. Укажите имя класса для свойства **className**.
+3. Укажите путь к JAR-файлу, включающий имя файла для свойства **jarFilePath**.
+4. Укажите связанную службу, которая ссылается на хранилище BLOB-объектов Azure, содержащее JAR-файл для свойства **jarLinkedService**.   
+5. Задайте аргументы для программы MapReduce в разделе **аргументов**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
 
     ```JSON   
     {
@@ -183,7 +183,7 @@ ms.locfileid: "92636856"
 
 | Свойство | Примечания |
 |:--- |:--- |
-| type |Должен быть задан тип **HDInsightMapReduce** . |
+| тип |Должен быть задан тип **HDInsightMapReduce**. |
 | className |Имя класса: **wordcount** |
 | jarFilePath |Путь к JAR-файлу, содержащему этот класс. Если вы копируете и вставляете приведенный код, не забудьте изменить имя кластера. |
 | jarLinkedService |Служба, связанная со службой хранилища Azure, содержащая JAR-файл. Эта связанная служба ссылается на хранилище, связанное с кластером HDInsight. |

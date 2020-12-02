@@ -2,20 +2,20 @@
 title: Получение сведений о ценах на фабрику данных Azure с помощью примеров
 description: В этой статье описывается и демонстрируется модель ценообразования Фабрики данных Azure с подробными примерами
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/14/2020
-ms.openlocfilehash: 13a05089ae6365bb5d279105f8c010278bd0adb8
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: cea8ae07585f09c644f0ef6e1e6142998ddc7f08
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93396011"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497509"
 ---
 # <a name="understanding-data-factory-pricing-through-examples"></a>Изучение ценообразования Фабрики данных Azure посредством примеров
 
@@ -211,7 +211,7 @@ ms.locfileid: "93396011"
 
 Ответ. будет разрешено не более 50 параллельных действий конвейера.  Действие конвейера 51th будет поставлено в очередь, пока не будет открыта Свободная ячейка. То же самое для внешних действий. Допускается не более 800 одновременных внешних действий.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с ценами на Фабрику данных Azure, можно начинать работу.
 

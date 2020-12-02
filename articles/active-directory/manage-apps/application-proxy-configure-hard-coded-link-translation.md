@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ad45d5f0e313c06619fa9c998515e434de957ea
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 08c4020fc03f89b2c583a2458c70e18ecbbe0ba1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997568"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498070"
 ---
 # <a name="redirect-hard-coded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление жестко запрограммированных ссылок для приложений, опубликованных с помощью Azure AD Application Proxy
 
@@ -86,28 +86,28 @@ ms.locfileid: "95997568"
 - **Относительные внутренние ссылки**, которые указывают на общедоступный ресурс в локальной структуре файлов, такой как `/claims/claims.html`. Эти ссылки автоматически работают в приложениях, которые опубликованы через прокси приложения, и продолжают работать с преобразованием или без него. 
 - **Жестко запрограммированные внутренние ссылки** на другие локальные приложения, такие как `http://expenses` или опубликованные файлы, например `http://expenses/logo.jpg` . Функция преобразования ссылок работает на жестко запрограммированных внутренних ссылках и изменяет их так, чтобы они указывали на внешние URL-адреса, которые должны пройти удаленные пользователи.
 
-Полный список тегов кода HTML, которые прокси приложения поддерживает для включения преобразования ссылок:
-* а
-* звук
-* base
-* .
-* div
-* embed
-* форма
-* frame
-* head
-* html
-* iframe
-* img
-* input
-* link
-* MenuItem
-* meta
-* объект
-* скрипт
-* source
-* track
-* видео
+Полный список атрибутов в тегах кода HTML, которые прокси приложения поддерживает для включения преобразования ссылок:
+* a (href)
+* звук (src)
+* Базовый (href)
+* Кнопка (формактион)
+* Div (данные — фон, стиль, Data-src)
+* внедрить (src)
+* форма (действие)
+* рамка (src)
+* головной (профиль)
+* HTML (манифест)
+* IFRAME (лонгдеск, src)
+* IMG (лонгдеск, src)
+* входные данные (формактион, src, Value)
+* ссылка (href)
+* MenuItem (значок)
+* Meta (содержимое)
+* объект (Архив, данные, база кода)
+* Скрипт (src)
+* Источник (src)
+* Трассировка (src)
+* видео (src, афиша)
 
 Кроме того, в CSS переводится атрибут URL-адреса.
 
@@ -149,7 +149,7 @@ ms.locfileid: "95997568"
 
 Нам нужна ваша помощь, чтобы обеспечить работу функции во всех ваших приложениях. Мы поддерживаем поиск более 30 тегов в HTML и CSS. Если у вас есть пример созданных ссылок, которые не были преобразованы, отправьте фрагмент кода [сюда](mailto:aadapfeedback@microsoft.com). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Использование личных доменов с AD application proxy Azure](application-proxy-configure-custom-domain.md) для того же внутреннего и внешнего URL-адреса
 
 [Настройка альтернативных сопоставлений доступа для SharePoint 2013](/SharePoint/administration/configure-alternate-access-mappings)

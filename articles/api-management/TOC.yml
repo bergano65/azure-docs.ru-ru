@@ -80,6 +80,8 @@
       href: observability.md
     - name: Реализация CI/CD с помощью шаблонов ARM
       href: devops-api-development-templates.md
+    - name: Обратимое удаление
+      href: soft-delete.md
 - name: Практические руководства
   items:
     - name: Определение интерфейсов API

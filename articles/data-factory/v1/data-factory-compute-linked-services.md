@@ -3,20 +3,20 @@ title: Вычислительные среды, поддерживаемые ф�
 description: Сведения о вычислительных средах, которые можно использовать в конвейерах фабрики данных Azure (например, Azure HDInsight) для преобразования или обработки данных.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 27210dad3e32d4a308310ff114499ca468c4deac
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9f970b66bd30ef2faf705d2fb41825bb81bbb8c9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452268"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96496098"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory-version-1"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure версии 1
 > [!NOTE]

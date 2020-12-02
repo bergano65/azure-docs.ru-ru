@@ -7,16 +7,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/16/2018
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: anandsub
 ms.custom: devx-track-python
-ms.openlocfilehash: 8c13e0e3f1cb8809a126b11409becd2211864c32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7b435080fda48e1df0bb31d16dafed30ac3d3db
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87876552"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497866"
 ---
 # <a name="programmatically-monitor-an-azure-data-factory"></a>Отслеживание фабрики данных Azure с помощью программных средств
 
@@ -155,6 +155,6 @@ print_activity_run_details(activity_runs_paged[0])
 
 Полная документация по командлетам PowerShell приведена в [справочнике по командлетам PowerShell для фабрики данных](/powershell/module/az.datafactory).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об использовании Azure Monitor для отслеживания конвейеров фабрики данных см. в статье [Monitor data factories using Azure Monitor](monitor-using-azure-monitor.md) (Отслеживание фабрик данных с помощью Azure Monitor). 
 
