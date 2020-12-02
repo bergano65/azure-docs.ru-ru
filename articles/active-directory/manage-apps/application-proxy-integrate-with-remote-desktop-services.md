@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: bfa9367e06c099e21a54ad8c03f8d5ab853aaafb
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: bfe8af8c30bbc2bc66c363fbd85f6764a48c28a1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348081"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488074"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -96,7 +96,7 @@ ms.locfileid: "96348081"
    Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s:<proxyfrontendurl>`nrequire pre-authentication:i:1"
    ```
 
-   **Например:**
+   **Пример:**
    ```
    Set-RDSessionCollectionConfiguration -CollectionName "QuickSessionCollection" -CustomRdpProperty "pre-authentication server address:s:https://remotedesktoptest-aadapdemo.msappproxy.net/`nrequire pre-authentication:i:1"
    ```
@@ -130,9 +130,11 @@ ms.locfileid: "96348081"
 
 | Метод проверки подлинности | Поддерживаемая конфигурация клиента |
 | --------------------- | ------------------------------ |
-| Предварительная аутентификация    | RD Web — Windows 7/10 с использованием Internet Explorer или [пограничной Chromium в режиме IE](/deployedge/edge-ie-mode) и надстройки RDS ActiveX <br /> *Обратите внимание, что портал "Мои приложения" поддерживает только ребро.* |
+| Предварительная аутентификация    | RD Web — Windows 7/10 с использованием Internet Explorer * или [пограничного Chromium в режиме IE](/deployedge/edge-ie-mode) и надстройки RDS ActiveX |
 | Предварительная аутентификация    | Веб-клиент RD — совместимый с HTML5 веб-браузер, такой как Microsoft ребр, Internet Explorer 11, Google Chrome, Safari или Mozilla Firefox (v 55.0 и более поздние версии) |
 | Сквозной режим | Любая другая операционная система, поддерживающая приложение "Удаленный рабочий стол (Майкрософт)" |
+
+* При использовании портала "Мои приложения" для доступа к удаленный рабочий стол приложению требуется режим Chromium IE.  
 
 Поток предварительной аутентификации предлагает больше преимуществ с точки зрения безопасности, чем сквозной режим. Предварительная проверка подлинности позволяет использовать функции аутентификации Azure AD, такие как единый вход, условный доступ и двухфакторная проверка подлинности для локальных ресурсов. Также гарантируется, что сети достигает только прошедший аутентификацию трафик.
 

@@ -4,15 +4,15 @@ description: В этой статье описывается то, как слу
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b40be802f30bac8438f10c4ab60e1c196c9f7164
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 551bae56565140da3754e74a23b1cc18087f1171
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833798"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487445"
 ---
 # <a name="authentication-and-user-permissions"></a>Аутентификация и разрешения пользователей
 
@@ -24,7 +24,7 @@ Azure Analysis Services поддерживает [службу совместн�
 
 ## <a name="authentication"></a>Аутентификация
 
-Все клиентские приложения и средства используют одну или несколько [клиентских библиотек](/analysis-services/client-libraries?view=azure-analysis-services-current) Analysis Services (AMO, MSOLAP, ADOMD) для подключения к серверу. 
+Все клиентские приложения и средства используют одну или несколько [клиентских библиотек](/analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true) Analysis Services (AMO, MSOLAP, ADOMD) для подключения к серверу. 
 
 Все три клиентские библиотеки поддерживают интерактивный поток Azure AD и неинтерактивные методы проверки подлинности. Два неинтерактивных метода (проверку подлинности Active Directory и встроенную аутентификацию Active Directory) можно использовать в приложениях с применением AMOMD и MSOLAP. При использовании этих двух методов никогда не отображаются всплывающие диалоговые окна.
 

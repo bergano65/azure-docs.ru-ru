@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: bd69f239a1c65040c44da776186ab8d955f5e333
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 3a232f8e8c35e265a8243ac79e465c03f6b9650e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693195"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487870"
 ---
 # <a name="security-control-network-security"></a>Управление безопасностью: Сетевая безопасность
 
@@ -76,7 +76,7 @@ ms.locfileid: "94693195"
 
 Используйте адаптивную защиту сети в центре безопасности Azure, чтобы рекомендовать NSG конфигурации, ограничивающие порты и исходные IP-адреса на основе фактического трафика и аналитики угроз.
 
-- [Настройка защиты от атак DDoS](../../virtual-network/manage-ddos-protection.md)
+- [Настройка защиты от атак DDoS](../../ddos-protection/manage-ddos-protection.md)
 
 - [Развертывание брандмауэра Azure](../../firewall/tutorial-firewall-deploy-portal.md)
 
@@ -186,6 +186,6 @@ ms.locfileid: "94693195"
 
 - [Как создать оповещения в службе Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. следующий контроль безопасности: [ведение журнала и мониторинг](security-control-logging-monitoring.md)

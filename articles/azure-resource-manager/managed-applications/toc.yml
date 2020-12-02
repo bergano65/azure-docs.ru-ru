@@ -31,6 +31,10 @@
       href: concepts-built-in-policy.md
     - name: Артефакты определения роли
       href: concepts-custom-role-definition.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Практические руководства
   items:
     - name: Издатели
@@ -40,7 +44,7 @@
         - name: Тестирование интерфейса портала
           href: test-createuidefinition.md
         - name: Создание предложения приложения Azure
-          href: ../../marketplace/partner-center-portal/create-new-azure-apps-offer.md?toc=/azure/azure-resource-manager/managed-applications/toc.json
+          href: ../../marketplace/create-new-azure-apps-offer.md?toc=/azure/azure-resource-manager/managed-applications/toc.json
         - name: Запрос JIT-доступа
           href: request-just-in-time-access.md
         - name: Использование имеющейся виртуальной сети

@@ -6,24 +6,23 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: d261640dfdb59b2b06cfe3066fca26640a0bed54
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: a68501bd1189993b4dd0c2acdecaa7434fa51dcc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874650"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488040"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor журналов выделенных кластеров
 
-Azure Monitor журналов выделенных кластеров — это вариант развертывания, который позволяет более эффективно обслуживать большое количество клиентов. Клиенты, принимающие данные объемом более 4 ТБ в день, будут использовать выделенные кластеры. Клиенты с выделенными кластерами могут выбрать рабочие области, которые будут размещены в этих кластерах.
+Azure Monitor журналов выделенные кластеры — это вариант развертывания, обеспечивающий расширенную возможность для Azure Monitor журналов клиентов. Клиенты с выделенными кластерами могут выбрать рабочие области, которые будут размещены в этих кластерах.
 
-Помимо поддержки большого объема данных, существуют и другие преимущества использования выделенных кластеров:
+Ниже перечислены возможности, для которых требуются выделенные кластеры.
 
-- **Ограничение скорости** — клиент может иметь более высокие [ограничения скорости приема](../service-limits.md#data-ingestion-volume-rate) только для выделенного кластера.
-- **Функции** . Некоторые корпоративные функции доступны только в выделенных кластерах, в частности на ключах, управляемых клиентом (CMK) и в поддержке защищенного хранилища. 
-- **Согласованность** — клиенты имеют собственные выделенные ресурсы, поэтому они не влияют на другие клиенты, работающие в одной и той же общей инфраструктуре.
-- **Экономичность** . Использование выделенного кластера может оказаться более экономичным, так как назначенные уровни резервирования емкости принимают во внимание все приемы кластера и применяются ко всем его рабочим областям, даже если некоторые из них невелики и не имеют скидки на резервирование емкости.
-- Запросы **между рабочими областями** выполняются быстрее, если все рабочие области находятся в одном кластере.
+- **[Ключи, управляемые клиентом](../platform/customer-managed-keys.md)** — шифруют данные кластера с помощью ключей, предоставляемых и контролируемых клиентом.
+- **[Защищенное хранилище](../platform/customer-managed-keys.md#customer-lockbox-preview)** — клиенты могут контролировать запросы на доступ к данным в службе поддержки Майкрософт.
+- **[Двойное шифрование](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption)** защищает от ситуации, когда один из алгоритмов или ключей шифрования может быть скомпрометирован. В этом случае дополнительный уровень шифрования продолжит защищать ваши данные.
+- **[Несколько рабочих областей](../log-query/cross-workspace-query.md)** . Если клиент использует более одной рабочей области для рабочей среды, может быть целесообразно использовать выделенный кластер. Запросы между рабочими областями будут выполняться быстрее, если все рабочие области находятся в одном кластере. Кроме того, использование выделенного кластера может быть более экономичным, так как назначенные уровни резервирования емкости принимают во внимание все приемы кластера и применяются ко всем его рабочим областям, даже если некоторые из них невелики и не имеют скидки на резервирование емкости.
 
 Для выделенных кластеров клиенты должны использовать емкость не менее 1 ТБ приема данных в день. Миграция в выделенный кластер проста. Нет потерь данных или прерываний службы. 
 
@@ -89,7 +88,7 @@ Get-Job -Command "New-AzOperationalInsightsCluster*" | Format-List -Property *
 
 **REST**
 
-*Call* 
+*Вызов* 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
 Authorization: Bearer <token>
@@ -186,7 +185,7 @@ Update-AzOperationalInsightsCluster -ResourceGroupName {resource-group-name} -Cl
 
 Пример: 
 
-*Call*
+*Вызов*
 
 ```rst
 PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-03-01-preview
@@ -222,7 +221,7 @@ Content-type: application/json
 
 - Скопируйте значение URL-адреса Azure-AsyncOperation из ответа и выполните проверку состояния асинхронных операций. 
 
-   ИЛИ
+   OR
 
 - Отправьте запрос GET на ресурс *Кластер* и просмотрите свойства *KeyVaultProperties*. В ответе должны возвращаться недавно обновленные сведения об идентификаторе ключа.
 
@@ -297,7 +296,7 @@ Get-Job -Command "Set-AzOperationalInsightsLinkedService" | Format-List -Propert
 
 Используйте следующий вызов функции RESTFUL, чтобы связать с кластером:
 
-*Отправить*
+*Send*
 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>/linkedservices/cluster?api-version=2020-03-01-preview 
@@ -327,7 +326,7 @@ Content-type: application/json
 
 Запрос на отправку выглядит следующим образом:
 
-*Отправить*
+*Send*
 
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalInsights/workspaces/<workspace-name>?api-version=2020-03-01-preview
@@ -406,7 +405,7 @@ Authorization: Bearer <token>
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [log Analytics выставлении счетов за выделенный кластер](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters)
 - Сведения о [правильном проектировании рабочих областей log Analytics](../platform/design-logs-deployment.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 6ddce9bd8eaa57571cd3c3eac660806340db4b74
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: b6aaad9cce330d755fb69f8be48737f9a8f6c4a7
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408674"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487751"
 ---
 # <a name="security-control-v2-network-security"></a>Управление безопасностью версии 2: Сетевая безопасность
 
@@ -40,7 +40,7 @@ ms.locfileid: "94408674"
 
 - [Книга незащищенных протоколов Azure Sentinel](../../sentinel/quickstart-get-visibility.md#use-built-in-workbooks)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -68,7 +68,7 @@ ms.locfileid: "94408674"
 
 - [Приватный канал Azure](../../private-link/private-link-service-overview.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -78,7 +78,7 @@ ms.locfileid: "94408674"
 
 - [Безопасность приложений и DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
 
-## <a name="ns-3-establish-private-network-access-to-azure-services"></a>NS-3. Установите частный сетевой доступ к службам Azure.
+## <a name="ns-3-establish-private-network-access-to-azure-services"></a>NS-3: установка доступа к частной сети для служб Azure
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
@@ -92,7 +92,7 @@ ms.locfileid: "94408674"
 
 - [Общие сведения о конечных точках службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -120,9 +120,9 @@ ms.locfileid: "94408674"
 
 - [Развертывание WAF Azure](../../web-application-firewall/overview.md)
 
-- [Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure](../../virtual-network/manage-ddos-protection.md)
+- [Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure](../../ddos-protection/manage-ddos-protection.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -144,7 +144,7 @@ ms.locfileid: "94408674"
 
 - [Функция ЕДР ATP в защитнике Майкрософт](/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -170,7 +170,7 @@ ms.locfileid: "94408674"
 
 - [Общие сведения и использование групп безопасности приложений](../../virtual-network/network-security-groups-overview.md#application-security-groups)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -196,7 +196,7 @@ ms.locfileid: "94408674"
 
 - [Предотвращение висячих записей DNS и избежание поддоменного перенаправление](../fundamentals/subdomain-takeover.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 

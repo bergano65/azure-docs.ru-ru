@@ -13,14 +13,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 09/29/2020
+ms.date: 12/01/2020
 ms.author: radeltch
-ms.openlocfilehash: 6e906e6c86d615852191e2fd65a2b1a58695ed34
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b111dae035e7a055628642fe7c460734199ff608
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968559"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486348"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -69,6 +69,7 @@ ms.locfileid: "94968559"
   * [Установка и настройка кластера высокой доступности Red Hat Enterprise Linux 7.4 (и более поздних версий) в Microsoft Azure](https://access.redhat.com/articles/3252491)
   * [Рекомендации по внедрению RHEL 8 — высокой доступности и кластеров](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/considerations_in_adopting_rhel_8/high-availability-and-clusters_considerations-in-adopting-rhel-8)
   * [Настройте SAP S/4HANA ASCS/ERS с помощью Standalone Enqueue Server 2 (ENSA2) в Pacemaker на RHEL 7.6](https://access.redhat.com/articles/3974941)
+  * [RHEL для предложений SAP в Azure](https://access.redhat.com/articles/5456301)
 
 ## <a name="cluster-installation"></a>Установка кластера
 
@@ -80,7 +81,7 @@ ms.locfileid: "94968559"
 
 Ниже приведены элементы с префиксами: **[A]**  — применяется ко всем узлам, **[1**] — применяется только к узлу 1, **[2]**  — применяется только к узлу 2.
 
-1. **[A]** зарегистрируйтесь. Этот шаг не является обязательным, если используются образы с поддержкой RHEL 8. x с высоким уровнем доступности.  
+1. **[A]** зарегистрируйтесь. Этот шаг не является обязательным, если используются образы RHEL SAP с поддержкой высокого уровня доступности.  
 
    Зарегистрируйте виртуальные машины и подключите их к пулу, содержащему репозитории для RHEL 7.
 
@@ -90,9 +91,9 @@ ms.locfileid: "94968559"
    sudo subscription-manager attach --pool=&lt;pool id&gt;
    </code></pre>
 
-   Присоединив пул к образу PAYG RHEL для Azure Marketplace, вы будете эффективно выставлять счет за использование RHEL: один раз для образа PAYG и один раз для назначения RHEL в присоединенном пуле. Чтобы устранить эту проблему, Azure теперь предоставляет образы BYOS RHEL. Дополнительные сведения можно найти [здесь](../redhat/byos.md).
+   Присоединив пул к образу PAYG RHEL для Azure Marketplace, вы будете эффективно выставлять счет за использование RHEL: один раз для образа PAYG и один раз для назначения RHEL в присоединенном пуле. Чтобы устранить эту проблему, Azure теперь предоставляет образы BYOS RHEL. Дополнительные сведения можно найти [здесь](../redhat/byos.md).  
 
-1. **[A]** включите RHEL для SAP репозиториев. Этот шаг не является обязательным, если используются образы с поддержкой RHEL 8. x с высоким уровнем доступности.  
+1. **[A]** включите RHEL для SAP репозиториев. Этот шаг не является обязательным, если используются образы RHEL SAP с поддержкой высокого уровня доступности.  
 
    Чтобы установить необходимые пакеты, включите приведенные ниже репозитории.
 
