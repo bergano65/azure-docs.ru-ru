@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: banders
-ms.openlocfilehash: 3b936cb15114d81d1dff1eb052a9bafe01adeff7
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: 2c17b2f9dc12fa7bff2dae8603bcf95a3a8ddfa0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681691"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350846"
 ---
 # <a name="azure-software-plan-discount"></a>Скидка на план программного обеспечения Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "88681691"
 
 - [Основные сведения о резервировании в Azure](save-compute-costs-reservations.md)
 - [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../../virtual-machines/linux/prepay-suse-software-charges.md)
-- [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
+- [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../../virtual-machines/prepay-reserved-vm-instances.md)
 - [Управление Azure Reserved VM Instances](manage-reserved-vm-instance.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)

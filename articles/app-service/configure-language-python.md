@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 11/16/2020
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 149f8deb8839b3adce3555300c94b8ebdf587100
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: f12ed42755af64f024fdcb0452173134f7b58482
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183742"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Настройка приложения Python в Linux для Службы приложений Azure
 
@@ -126,10 +126,10 @@ ms.locfileid: "94873851"
 
 | Настройка Django | Инструкции для Azure |
 | --- | --- |
-| `SECRET_KEY` | Сохраните значение в настройках Службы приложений, как описано в разделе [Доступ к параметрам приложения в виде переменных среды](#access-app-settings-as-environment-variables). Можно также [сохранить значение в качестве секрета в Azure Key Vault](/azure/key-vault/secrets/quick-create-python). |
+| `SECRET_KEY` | Сохраните значение в настройках Службы приложений, как описано в разделе [Доступ к параметрам приложения в виде переменных среды](#access-app-settings-as-environment-variables). Можно также [сохранить значение в качестве секрета в Azure Key Vault](../key-vault/secrets/quick-create-python.md). |
 | `DEBUG` | Создайте параметр `DEBUG` в Службе приложений со значением 0 (false), а затем загрузите значение как переменную среды. В среде разработки создайте переменную среды `DEBUG` со значением 1 (true). |
 | `ALLOWED_HOSTS` | В рабочей среде для Django требуется включить URL-адрес приложения в массив `ALLOWED_HOSTS` в *settings.py*. Этот URL-адрес можно получить во время выполнения с помощью кода `os.environ['WEBSITE_HOSTNAME']`. Служба приложений автоматически задает в качестве значения переменной среды `WEBSITE_HOSTNAME` URL-адрес приложения. |
-| `DATABASES` | Определите параметры в Службе приложений для подключения к базе данных и загрузите их в виде переменных среды, чтобы заполнить словарь [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES). Можно также сохранить значения (особенно имя пользователя и пароль) в виде [секретов Azure Key Vault](/azure/key-vault/secrets/quick-create-python). |
+| `DATABASES` | Определите параметры в Службе приложений для подключения к базе данных и загрузите их в виде переменных среды, чтобы заполнить словарь [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES). Можно также сохранить значения (особенно имя пользователя и пароль) в виде [секретов Azure Key Vault](../key-vault/secrets/quick-create-python.md). |
 
 ## <a name="container-characteristics"></a>Характеристики контейнера
 

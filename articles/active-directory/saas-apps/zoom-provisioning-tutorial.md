@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: 280083ccbd732e95796013bf2b2c08e96564c24c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c87c3692d7e1106e0952b85791da663e03c6001d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020489"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182484"
 ---
 # <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>Руководство по настройке Zoom для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "96020489"
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
 * [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md)
-* Учетная запись пользователя в Azure AD с [разрешением](../users-groups-roles/directory-assign-admin-roles.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
+* Учетная запись пользователя в Azure AD с [разрешением](../roles/permissions-reference.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
 * [Клиент Zoom](https://zoom.us/pricing).
 * Учетная запись пользователя в Zoom с разрешениями администратора.
 

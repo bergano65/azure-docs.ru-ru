@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperfq1
-ms.openlocfilehash: f18f1184f921aca4f2c1e33ac00dcf14c63b24eb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bb8a52a2258143e1c68ca46ac31a8c986b1bcfe7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95893364"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457138"
 ---
 # <a name="azure-ea-portal-administration"></a>Администрирование на портале Azure EA
 
@@ -282,13 +282,13 @@ ms.locfileid: "95893364"
 
 Каждая роль имеет разный уровень доступа и полномочий.
 
-Дополнительные сведения о ролях пользователей см. в разделе [Роли корпоративных пользователей](/azure/cost-management-billing/manage/understand-ea-roles#enterprise-user-roles).
+Дополнительные сведения о ролях пользователей см. в разделе [Роли корпоративных пользователей](./understand-ea-roles.md#enterprise-user-roles).
 
 ## <a name="add-an-azure-ea-account"></a>Добавление учетной записи Azure EA
 
 Учетная запись Azure EA считается организационной единицей подразделения на Azure EA Portal. Она используется для администрирования подписок и для отчетов. Чтобы получить доступ к службам Azure и использовать их, вам нужно создать учетную запись самостоятельно или попросить создать ее для вас.
 
-Дополнительные сведения см. в статье о [добавлении учетных записей](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-administration#add-an-account).
+Дополнительные сведения см. в статье о [добавлении учетных записей](#add-an-account).
 
 ## <a name="enterprise-devtest-offer"></a>Предложение "Enterprise — разработка и тестирование"
 
@@ -361,7 +361,7 @@ ms.locfileid: "95893364"
 
 Только администраторы учетных записей могут отменять подписки.
 
-Подробнее см. статью [Что происходит после отмены подписки?](cancel-azure-subscription.md#what-happens-after-i-cancel-my-subscription)
+Подробнее см. статью [Что происходит после отмены подписки?](cancel-azure-subscription.md#what-happens-after-subscription-cancellation)
 
 ## <a name="delete-an-account"></a>Удаление учетной записи
 

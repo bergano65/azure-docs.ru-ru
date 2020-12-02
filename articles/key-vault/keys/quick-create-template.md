@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc,subject-armqs
 ms.date: 10/14/2020
 ms.author: sebansal
-ms.openlocfilehash: c16fc475e4982724ebc9f4f55301b6fc56dfb7c7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 73c52963df65dc4037f087a93108ccfacb3fb5d4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95017015"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461561"
 ---
 # <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template-preview"></a>Краткое руководство. Создание хранилища ключей Azure и ключа с помощью шаблона Resource Manager (предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "95017015"
 Для работы с этой статьей необходимо сделать следующее:
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-- Пользователю должна быть назначена встроенная роль RBAC, например роль участника. [Дополнительные сведения см. здесь](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- Пользователю должна быть назначена встроенная роль RBAC, например роль участника. [Дополнительные сведения см. здесь](../../role-based-access-control/role-assignments-portal.md)
 - Шаблону для настройки разрешений требуется идентификатор объекта пользователя Azure AD. Следующая процедура возвращает идентификатор объекта (GUID).
 
     1. Выполните следующую команду Azure PowerShell или Azure CLI, выбрав **Попробовать**, а затем вставьте сценарий в панель оболочки. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить**.

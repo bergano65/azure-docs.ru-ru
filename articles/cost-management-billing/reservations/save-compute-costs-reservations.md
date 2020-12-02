@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: overview
 ms.date: 11/18/2020
 ms.author: banders
-ms.openlocfilehash: eef19a6c421a64c3951d35eea78ea84f7e7d97b2
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 0ef3f833d1bac4f26f49ace2b366cdfcf5ef3e35
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887218"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352989"
 ---
 # <a name="what-are-azure-reservations"></a>Общие сведения о резервированиях в Azure
 
@@ -125,7 +125,7 @@ Azure Reserved Virtual Machine Instances обеспечивают гибкост
     - [Приобретение зарезервированных экземпляров Azure](/partner-center/azure-reservations)
 
 - Дополнительные сведения о резервировании для планов обслуживания:
-    - [Виртуальные машины с Azure Reserved Virtual Machine Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
+    - [Виртуальные машины с Azure Reserved Virtual Machine Instances](../../virtual-machines/prepay-reserved-vm-instances.md)
     - [Ресурсы Azure Cosmos DB с резервной мощностью Azure Cosmos DB](../../cosmos-db/cosmos-db-reserved-capacity.md)
     - [Вычислительные ресурсы Базы данных SQL Azure с резервной мощностью](../../azure-sql/database/reserved-capacity-overview.md)
     - [Ресурсы Кэша Azure для Redis с резервной мощностью](../../azure-cache-for-redis/cache-reserved-pricing.md). Дополнительные сведения о резервировании для планов программного обеспечения:

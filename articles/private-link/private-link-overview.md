@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: ce3903bad4f7e4675406956ddedbc9011a6d2be8
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: f4803cc9871b71e65e4d94ed37d3f9771be1cae0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522266"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454958"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -47,7 +47,7 @@ ms.locfileid: "95522266"
 | Хранилище очередей Azure       |  Все общедоступные регионы<br/> Регионы для государственных организаций       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Создание частной конечной точки для хранилища очередей](tutorial-private-endpoint-storage-portal.md). |
 | табличное хранилище Azure;       |  Все общедоступные регионы<br/> Регионы для государственных организаций       |  Поддерживается в типе учетной записи общего назначения версии 2 | GA <br/> [Создание частной конечной точки для хранилища таблиц](tutorial-private-endpoint-storage-portal.md).  |
 |  База данных SQL Azure         | Все общедоступные регионы <br/> Регионы для государственных организаций<br/>Все регионы Китая      |  Поддерживается для [политики подключения](../azure-sql/database/connectivity-architecture.md#connection-policy) прокси-сервера | GA <br/> [Создание частной конечной точки для Azure SQL](create-private-endpoint-portal.md).      |
-|Azure Synapse Analytics (прежнее название — Хранилище данных SQL)| Все общедоступные регионы <br/> Регионы для государственных организаций |  Поддерживается для [политики подключения](../azure-sql/database/connectivity-architecture.md#connection-policy) прокси-сервера |GA <br/> [Создание частной конечной точки для Azure Synapse Analytics](../azure-sql/database/private-endpoint-overview.md).|
+|Azure Synapse Analytics| Все общедоступные регионы <br/> Регионы для государственных организаций |  Поддерживается для [политики подключения](../azure-sql/database/connectivity-architecture.md#connection-policy) прокси-сервера |GA <br/> [Создание частной конечной точки для Azure Synapse Analytics](../azure-sql/database/private-endpoint-overview.md).|
 |Azure Cosmos DB|  Все общедоступные регионы<br/> Регионы для государственных организаций</br> Все регионы Китая | |GA <br/> [Создание частной конечной точки для Cosmos DB](./tutorial-private-endpoint-cosmosdb-portal.md).|
 |  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы <br/> Регионы для государственных организаций<br/>Все регионы Китая     | Поддерживается для ценовых уровней общего назначения и c оптимизацией для операций в памяти. | GA <br/> [Создание частной конечной точки для Базы данных Azure для PostgreSQL](../postgresql/concepts-data-access-and-security-private-link.md).      |
 |  База данных Azure для MySQL         | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая      |  | GA <br/> [Создание частной конечной точки для Базы данных Azure для MySQL](../mysql/concepts-data-access-security-private-link.md).     |

@@ -7,12 +7,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 32db8396a687428c668a9b8a4213b50986614083
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 89b01205c08216b3ce1ec2d36cce48335b49eb47
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150129"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344289"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Самостоятельный обмен и возмещение средств для резервирований Azure
 
@@ -30,7 +30,7 @@ Azure Reserved Virtual Machine Instances обеспечивают гибкост
 
 1. Выберите резервирования, за которые нужно вернуть деньги, и щелкните **Обмен**.  
     [![Пример изображения, на котором показаны резервирования для возврата](./media/exchange-and-refund-azure-reservations/exchange-refund-return.png)](./media/exchange-and-refund-azure-reservations/exchange-refund-return.png#lightbox)
-1. Выберите продукт в категории виртуальных машин, который вы хотите приобрести, и введите количество. Убедитесь, что сумма нового приобретения больше суммы возврата. [Определите правильный размер перед покупкой](../../virtual-machines/windows/prepay-reserved-vm-instances.md#determine-the-right-vm-size-before-you-buy).  
+1. Выберите продукт в категории виртуальных машин, который вы хотите приобрести, и введите количество. Убедитесь, что сумма нового приобретения больше суммы возврата. [Определите правильный размер перед покупкой](../../virtual-machines/prepay-reserved-vm-instances.md#determine-the-right-vm-size-before-you-buy).  
     [![Пример изображения, на котором показан продукт виртуальной машины для приобретения при обмене](./media/exchange-and-refund-azure-reservations/exchange-refund-select-purchase.png)](./media/exchange-and-refund-azure-reservations/exchange-refund-select-purchase.png#lightbox)
 1. Проверьте и завершите транзакцию.  
     [![Пример изображения, на котором показан продукт виртуальной машины для приобретения при обмене после завершения возврата](./media/exchange-and-refund-azure-reservations/exchange-refund-confirm-exchange.png)](./media/exchange-and-refund-azure-reservations/exchange-refund-confirm-exchange.png#lightbox)

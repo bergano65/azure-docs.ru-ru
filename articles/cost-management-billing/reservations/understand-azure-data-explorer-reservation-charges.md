@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/12/2020
-ms.openlocfilehash: af2dc8378d1f1fe952a568ecb4bd89d088e3e3d3
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: b222e4ff519fbe2fbb4fa58b39555ac9fead0917
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147243"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352921"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-data-explorer"></a>Общие сведения о применении скидки на резервирование в Azure Data Explorer
 
@@ -29,7 +29,7 @@ ms.locfileid: "92147243"
 Скидка на резервирование применяется к потреблению наценки Azure Data Explorer на почасовой основе. В ресурсах Azure Data Explorer, которые используются не полный час, скидка на резервирование автоматически применяется к другим ресурсам Data Explorer с соответствующими атрибутами резервирования. Эта скидка может применяться к одновременно работающим ресурсам Azure Data Explorer. Если у вас нет ресурсов Azure Data Explorer, работающих в течение целого часа и соответствующих атрибутам резервирования, вы не получите полную скидку на резервирование за этот час.
 
 > [!NOTE]
-> * **Настоятельно рекомендуется** покупать [емкость резервирования](../../virtual-machines/windows/prepay-reserved-vm-instances.md) для виртуальных машин, используемых для кластера Azure Data Explorer, чтобы максимально сэкономить зарезервированную емкость.
+> * **Настоятельно рекомендуется** покупать [емкость резервирования](../../virtual-machines/prepay-reserved-vm-instances.md) для виртуальных машин, используемых для кластера Azure Data Explorer, чтобы максимально сэкономить зарезервированную емкость.
 > * При покупке резервирования скидки будут применяться ко всем регионам.
 
 ## <a name="examples"></a>Примеры

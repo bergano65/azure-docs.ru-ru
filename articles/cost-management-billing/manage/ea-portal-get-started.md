@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/28/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: 15e45143d1da5ac405b3e408df197ab04b4dea39
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 0f4f4d934361f1e59eceaaccca680f0cf155bb04
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412278"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348965"
 ---
 # <a name="get-started-with-the-azure-enterprise-portal"></a>Начало работы с порталом Azure Enterprise Portal
 
@@ -44,33 +44,33 @@ ms.locfileid: "94412278"
 - Администратор отдела (только для чтения)
 - Владелец учетной записи
 
-Каждая роль имеет различную степень ограничений и разрешений пользователя. Дополнительные сведения см. в разделе [Организационная структура и разрешения для каждой роли](https://docs.microsoft.com/azure/cost-management-billing/manage/understand-ea-roles#organization-structure-and-permissions-by-role).
+Каждая роль имеет различную степень ограничений и разрешений пользователя. Дополнительные сведения см. в разделе [Организационная структура и разрешения для каждой роли](./understand-ea-roles.md#organization-structure-and-permissions-by-role).
 
 ## <a name="activate-your-enrollment-create-a-subscription-and-other-administrative-tasks"></a>Активация соглашения о регистрации, создание подписки и другие задачи администрирования
 
-Дополнительные сведения об активации соглашения о регистрации, создании отдела или подписки, добавлении администраторов и владельцев учетных записей, а также о других административных задачах см. в статье [Администрирование на портале Azure EA](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-administration).
+Дополнительные сведения об активации соглашения о регистрации, создании отдела или подписки, добавлении администраторов и владельцев учетных записей, а также о других административных задачах см. в статье [Администрирование на портале Azure EA](./ea-portal-administration.md).
 
-Чтобы получить дополнительные сведения о переходе с подписки Enterprise на подписку с оплатой по мере использования, ознакомьтесь со статьей [Операции переноса в рамках Azure Enterprise](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-transfers).
+Чтобы получить дополнительные сведения о переходе с подписки Enterprise на подписку с оплатой по мере использования, ознакомьтесь со статьей [Операции переноса в рамках Azure Enterprise](./ea-transfers.md).
 
 ## <a name="view-usage-summary-and-download-reports"></a>Просмотр сводки по использованию и скачивание отчетов
 
 Вы можете управлять счетом по соглашению Azure EA и работать с ним. Счет отображает данные о фактическом использовании ресурсов, но точность этих данных следует проверять.
 
-Сведения о том, как просмотреть сводку использования, скачать отчеты и управлять счетами по соглашению о регистрации, см. в статье [Счета по Соглашению о регистрации Azure Enterprise](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-enrollment-invoices).
+Сведения о том, как просмотреть сводку использования, скачать отчеты и управлять счетами по соглашению о регистрации, см. в статье [Счета по Соглашению о регистрации Azure Enterprise](./ea-portal-enrollment-invoices.md).
 
 ## <a name="now-that-youre-familiar-with-the-basics-here-are-some-additional-links-to-help-you-get-onboarded"></a>Теперь, когда вы знакомы с основами, перейдите по указанным ниже дополнительным ссылкам, которые помогут вам приступить к работе
 
-На странице [Цены в рамках Azure EA](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-pricing-overview) приведены сведения о том, как рассчитывается использование и выставляется плата за различные службы Azure в Соглашении Enterprise, где расчеты более сложные.
+На странице [Цены в рамках Azure EA](./ea-pricing-overview.md) приведены сведения о том, как рассчитывается использование и выставляется плата за различные службы Azure в Соглашении Enterprise, где расчеты более сложные.
 
-Сведения о том, как резервирование Azure для зарезервированных экземпляров виртуальных машин поможет сэкономить деньги при регистрации вашей компании, см. [здесь](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-vm-reservations).
+Сведения о том, как резервирование Azure для зарезервированных экземпляров виртуальных машин поможет сэкономить деньги при регистрации вашей компании, см. [здесь](./ea-portal-vm-reservations.md).
 
-Сведения о том, какие интерфейсы API использовать с Соглашением о регистрации Azure Enterprise, а также инструкции по устранению распространенных проблем с интерфейсами REST API, см. в статье [REST API Azure Enterprise](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-rest-apis).
+Сведения о том, какие интерфейсы API использовать с Соглашением о регистрации Azure Enterprise, а также инструкции по устранению распространенных проблем с интерфейсами REST API, см. в статье [REST API Azure Enterprise](./ea-portal-rest-apis.md).
 
-В [этой статье](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-agreements) описывается, как соглашения и изменения Azure EA могут повлиять на использование и оплату служб Azure, а также доступ к ним.
+В [этой статье](./ea-portal-agreements.md) описывается, как соглашения и изменения Azure EA могут повлиять на использование и оплату служб Azure, а также доступ к ним.
 
-В статье [Azure Marketplace](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-azure-marketplace) объясняется, как клиенты и партнеры EA могут просматривать расходы на Marketplace и (или) разрешать покупки в Azure Marketplace.
+В статье [Azure Marketplace](./ea-azure-marketplace.md) объясняется, как клиенты и партнеры EA могут просматривать расходы на Marketplace и (или) разрешать покупки в Azure Marketplace.
 
-В статье [Администрирование на Azure EA Portal для партнеров](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-partner-portal-administration) объясняются распространенные задачи, которые администратор партнера EA выполняет на портале Azure EA.
+В статье [Администрирование на Azure EA Portal для партнеров](./ea-partner-portal-administration.md) объясняются распространенные задачи, которые администратор партнера EA выполняет на портале Azure EA.
 
 ## <a name="get-started-on-azure-ea---faq"></a>Вопросы и ответы по началу работы в Azure EA
 
@@ -132,7 +132,7 @@ ms.locfileid: "94412278"
 
 После создания подразделений и подписки можно просмотреть сведения в отчете о потреблении. Эти сведения помогут отслеживать потребление и управлять затратами и расходами на уровне подразделения.
 
-Вы также можете получить доступ к данным о потреблении с помощью API отчетности. Подробные сведения и примеры кода см. в статье об [интерфейсах REST API Azure Enterprise](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-rest-apis).
+Вы также можете получить доступ к данным о потреблении с помощью API отчетности. Подробные сведения и примеры кода см. в статье об [интерфейсах REST API Azure Enterprise](./ea-portal-rest-apis.md).
 
 ### <a name="can-i-set-a-spending-quota-and-get-alerts-as-i-approach-my-limit"></a>Можно ли задать квоту расходов и получать оповещения о достижении ограничения?
 
@@ -144,7 +144,7 @@ ms.locfileid: "94412278"
 
 Такие сведения, как _группы ресурсов_ и _тег_, если они используются, отслеживаются на уровне службы. Сведения доступны в файле (в формате CSV) с подробными сведениями о потреблении. [Скачайте отчет об использовании](https://ea.azure.com/report/downloadusage) на EA Portal.
 
-Вы также можете получить доступ к использованию через API. Подробные сведения и примеры кода см. в статье об [интерфейсах REST API Azure Enterprise](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-rest-apis).
+Вы также можете получить доступ к использованию через API. Подробные сведения и примеры кода см. в статье об [интерфейсах REST API Azure Enterprise](./ea-portal-rest-apis.md).
 
 > [!NOTE]
 > Теги можно применять только к ресурсам, которые поддерживают операции Azure Resource Manager. Если вы создали виртуальную машину, виртуальную сеть или хранилище при помощи модели классического развертывания (например, через классический портал), то к таким ресурсам нельзя применить теги. Эти ресурсы необходимо развернуть повторно с помощью Resource Manager для поддержки тегов. Все остальные ресурсы поддерживают теги.

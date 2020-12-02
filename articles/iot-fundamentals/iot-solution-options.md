@@ -7,12 +7,12 @@ services: iot-fundamentals
 ms.topic: overview
 ms.date: 02/05/2020
 ms.author: dobett
-ms.openlocfilehash: 1afb24a0e3e78acb1d44185843538bd55c491edf
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7ff8193e87d138878d95e783d144d445436e7a08
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976782"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453005"
 ---
 # <a name="what-is-the-right-iot-solution-for-your-business"></a>Как выбрать оптимальную схему для решения Интернета вещей
 
@@ -75,4 +75,4 @@ ms.locfileid: "91976782"
 
 Дополнительные сведения об основных характеристиках успешных решений Интернета вещей см. в [этом техническом документе](https://aka.ms/8attributes).
 
-Подробное рассмотрение архитектуры Интернета вещей см. в документе [Microsoft Azure IoT Reference Architecture](https://aka.ms/iotrefarchitecture) (Эталонная архитектура Microsoft Azure IoT).
+Подробное рассмотрение архитектуры Интернета вещей см. в документе [Microsoft Azure IoT Reference Architecture](/azure/architecture/reference-architectures/iot) (Эталонная архитектура Microsoft Azure IoT).

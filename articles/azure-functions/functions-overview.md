@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/20/2020
 ms.author: cshoe
 ms.custom: contperfq2
-ms.openlocfilehash: 6713c0d45a8b5363122c726d1d31e5c479ba8fff
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 514f2e9a82a50f95f9c054c6a54e7b5af3c0af15
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95504634"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96167783"
 ---
 # <a name="introduction-to-azure-functions"></a>Введение в функции Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "95504634"
 | --- | --- |
 | **Создание веб-API** | Реализуйте конечную точку для веб-приложений с помощью [триггера HTTP](./functions-bindings-http-webhook.md) |
 | **Обработка передаваемых файлов** | Выполните код при передаче или изменении файла в [хранилище BLOB-объектов](./functions-bindings-storage-blob.md) |
-| **Создание бессерверного рабочего процесса** | Объедините набор функций с помощью [устойчивых функций](./durable-functions-overview.md) |
+| **Создание бессерверного рабочего процесса** | Объедините набор функций с помощью [устойчивых функций](./durable/durable-functions-overview.md) |
 | **Реагирование на изменения базы данных** | Запустите настраиваемую логику при создании или обновлении документа в [Cosmos DB](./functions-bindings-cosmosdb-v2.md) |
 | **Выполнение запланированных задач** | Выполните код во [время установки](./functions-bindings-timer.md) |
 | **Создание надежных систем очереди сообщений** | Обработайте очереди сообщений с помощью [Хранилища очередей](./functions-bindings-storage-queue.md), [служебной шины](./functions-bindings-service-bus.md) или [Центров событий](./functions-bindings-event-hubs.md) |

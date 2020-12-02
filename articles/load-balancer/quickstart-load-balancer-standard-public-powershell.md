@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 11/22/2020
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: b9bcdbdf8bdad0d1ad96fc043f29a84b962318c2
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: 9081ba0aae14c39d70e62818dc13aa4d92c91986
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95324024"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445952"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-powershell"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell для распределения нагрузки между виртуальными машинами
 
@@ -239,7 +239,7 @@ New-AzNetworkSecurityGroup @nsg
 
 * Создайте три сетевых интерфейса с помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface).
 
-* Укажите имя и пароль администратора для виртуальной машины с помощью командлета [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential).
+* Укажите имя и пароль администратора для виртуальной машины с помощью командлета [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential).
 
 * Создайте виртуальные машины с помощью следующих командлетов:
     * [New-AzVM](/powershell/module/az.compute/new-azvm)
@@ -618,7 +618,7 @@ New-AzNetworkSecurityGroup @nsg
 
 * Создайте три сетевых интерфейса с помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface).
 
-* Укажите имя и пароль администратора для виртуальной машины с помощью командлета [Get-Credential](/powershell/reference/5.1/microsoft.powershell.security/Get-Credential).
+* Укажите имя и пароль администратора для виртуальной машины с помощью командлета [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential).
 
 * Создайте группу доступности для виртуальных машин с помощью командлета [New-AzAvailabilitySet](/powershell/module/az.compute/new-azvm):
 

@@ -8,14 +8,14 @@ ms.subservice: security
 ms.date: 10/16/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4100640fd619d9d971ac1c7083eedef8e2125fc3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 5506a54193efc813927663533ddfd89be3ddf40a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738273"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461297"
 ---
-# <a name="azure-synapse-workspace-managed-identity-preview"></a>Управляемое удостоверение рабочей области Azure Synapse (предварительная версия)
+# <a name="azure-synapse-workspace-managed-identity"></a>Управляемое удостоверение рабочей области Azure Synapse
 
 В этой статье вы узнаете об управляемом удостоверении в рабочей области Azure Synapse.
 
@@ -44,7 +44,7 @@ Azure Synapse использует управляемое удостоверен
 
 Сведения об управляемых удостоверениях также будут отображаться при создании связанной службы, поддерживающей проверку подлинности с использованием управляемых удостоверений в среде Azure Synapse Studio.
 
-Запустите **Azure Synapse Studio** и выберите вкладку **Управление** в области навигации слева. Затем выберите раздел **Связанные службы** и нажмите кнопку **+ Создать** , чтобы создать связанную службу.
+Запустите **Azure Synapse Studio** и выберите вкладку **Управление** в области навигации слева. Затем выберите раздел **Связанные службы** и нажмите кнопку **+ Создать**, чтобы создать связанную службу.
 
 ![Создание связанной службы 1](./media/synapse-workspace-managed-identity/workspace-managed-identity-2.png)
 

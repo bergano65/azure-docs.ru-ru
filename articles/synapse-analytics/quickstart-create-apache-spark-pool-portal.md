@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: e84afc949a84da90a4799d7db3b3e7ad3e0057a3
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3fc7a7f137701590e4bddd791a3fdd2d1eaeca4a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323559"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461606"
 ---
 # <a name="quickstart-create-a-new-serverless-apache-spark-pool-using-the-azure-portal"></a>Краткое руководство. Создание нового бессерверного пула Apache Spark с помощью портала Azure
 
@@ -47,7 +47,7 @@ Azure Synapse Analytics предлагает различные механизм
 
 1. В рабочей области Synapse, в которой необходимо создать пул Apache Spark, выберите **Новый пул Apache Spark**.
     ![Обзор рабочей области Synapse с красным прямоугольником вокруг команды создания пула Apache Spark](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-01.png)
-2. Введите следующие сведения на вкладке **Основные сведения** :
+2. Введите следующие сведения на вкладке **Основные сведения**:
 
     |Параметр | Рекомендуемое значение | Описание |
     | :------ | :-------------- | :---------- |
@@ -89,7 +89,7 @@ Azure Synapse Analytics предлагает различные механизм
 Если вы хотите удалить пул Apache Spark, выполните следующие действия:
 
 1. Перейдите в колонку "Пулы Apache Spark" в рабочей области.
-2. Выберите пул Apache Spark для удаления (в нашем примере это **contosospark** ).
+2. Выберите пул Apache Spark для удаления (в нашем примере это **contosospark**).
 3. Нажмите кнопку **Удалить**
  ![Список пулов Apache Spark с выбранным недавно созданным пулом](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-08.png)
 4. Подтвердите удаление и нажмите кнопку **Удалить**.
@@ -99,4 +99,4 @@ Azure Synapse Analytics предлагает различные механизм
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [Краткое руководство. Создание записной книжки Apache Spark](quickstart-apache-spark-notebook.md).
-- См. [Краткое руководство. Создание выделенного пула SQL Synapse с помощью портала Azure](quickstart-create-sql-pool-portal.md).
+- См. [Краткое руководство. Создание выделенного пула SQL с помощью портала Azure](quickstart-create-sql-pool-portal.md).
