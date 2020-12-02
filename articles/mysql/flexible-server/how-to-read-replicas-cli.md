@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 10/23/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 151b72eb11600713b115d45e5927d8170a519ad1
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: a7d63fd76a88430495c9f55200308f63b11c89d4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635778"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494313"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-flexible-server-using-the-azure-cli"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для гибкого сервера MySQL с помощью Azure CLI
 
@@ -44,7 +44,7 @@ az mysql flexible-server replica create --replica-name mydemoreplicaserver --sou
 ``` 
 
 > [!NOTE]
-> Реплики чтения создаются с той же конфигурацией сервера, что и источник. Вы можете изменить созданную конфигурацию сервера-реплики. Сервер реплики всегда создается в той же группе ресурсов, что и исходный сервер, и ту же самую подписку. Если вы хотите создать сервер реплики в другой группе ресурсов или другой подписке, можно [переместить сервер реплики](https://docs.microsoft.com/azure/azure-resource-manager/management/move-resource-group-and-subscription) после его создания. Рекомендуется, чтобы конфигурация сервера реплики хранилась в значениях, равных или превышающих источник, чтобы гарантировать, что реплика сможет справиться с источником.
+> Реплики чтения создаются с той же конфигурацией сервера, что и источник. Вы можете изменить созданную конфигурацию сервера-реплики. Сервер реплики всегда создается в той же группе ресурсов, что и исходный сервер, и ту же самую подписку. Если вы хотите создать сервер реплики в другой группе ресурсов или другой подписке, можно [переместить сервер реплики](../../azure-resource-manager/management/move-resource-group-and-subscription.md) после его создания. Рекомендуется, чтобы конфигурация сервера реплики хранилась в значениях, равных или превышающих источник, чтобы гарантировать, что реплика сможет справиться с источником.
 
 
 ### <a name="list-replicas-for-a-source-server"></a>Вывод списка реплик для исходного сервера

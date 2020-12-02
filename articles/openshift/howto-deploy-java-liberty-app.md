@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/30/2020
 keywords: Java, жакартаи, Java, Микропрофиль, Open-Liberty, WebSphere-Liberty, АТО, openshift, Red Hat
-ms.openlocfilehash: 41891b58942efbfd705747cc16219185f2a2daa2
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 0c17c911d1eefe646785314a26b6a9b1e964ca67
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018398"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493957"
 ---
 # <a name="deploy-a-java-application-with-open-libertywebsphere-liberty-on-an-azure-red-hat-openshift-4-cluster"></a>Развертывание приложения Java с помощью Open Liberty/WebSphere Liberty в кластере Azure Red Hat OpenShift 4
 
@@ -25,26 +25,26 @@ ms.locfileid: "95018398"
 Чтобы успешно пройти это руководство, выполните следующие предварительные требования.
 
 > [!NOTE]
-> Для создания и запуска кластера OpenShift в Azure Red Hat OpenShift требуется не менее 40 ядер. Стандартная квота ресурсов Azure для новой подписки Azure не соответствует этому требованию. Чтобы запросить увеличение ограничений ресурсов, см. статью об [ увеличении ограничений для различных серий виртуальных машин](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests). Обратите внимание, что бесплатная пробная подписка не подходит для увеличения квоты, [обновления до подписки с оплатой по мере](https://docs.microsoft.com/azure/cost-management-billing/manage/upgrade-azure-subscription) использования перед запросом на увеличение квоты.
+> Для создания и запуска кластера OpenShift в Azure Red Hat OpenShift требуется не менее 40 ядер. Стандартная квота ресурсов Azure для новой подписки Azure не соответствует этому требованию. Чтобы запросить увеличение ограничений ресурсов, см. статью об [ увеличении ограничений для различных серий виртуальных машин](../azure-portal/supportability/per-vm-quota-requests.md). Обратите внимание, что бесплатная пробная подписка не подходит для увеличения квоты, [обновления до подписки с оплатой по мере](../cost-management-billing/manage/upgrade-azure-subscription.md) использования перед запросом на увеличение квоты.
 
 1. Подготовка локального компьютера с установленной операционной системой, похожей на UNIX (например, Ubuntu, macOS).
 1. Установите реализацию Java SE (например, [Адоптопенждк OpenJDK 8 LTS/OpenJ9](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9)).
 1. Установите [Maven](https://maven.apache.org/download.cgi) 3.5.0 или более поздней версии.
 1. Установите [DOCKER](https://docs.docker.com/get-docker/) для вашей ОС.
-1. Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) 2.0.75 или более поздней версии.
+1. Установите [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) 2.0.75 или более поздней версии.
 1. Проверьте и установите флажок, [`envsubst`](https://command-not-found.com/envsubst) если он не был предварительно установлен в вашей операционной системе.
 1. Клонировать код для этого примера в локальную систему. Пример находится на [GitHub](https://github.com/Azure-Samples/open-liberty-on-aro).
-1. Следуйте инструкциям в разделе [Создание кластера Azure Red Hat OpenShift 4](/azure/openshift/tutorial-create-cluster).
+1. Следуйте инструкциям в разделе [Создание кластера Azure Red Hat OpenShift 4](./tutorial-create-cluster.md).
 
    Хотя шаг «получение секрета по запросу Red Hat» помечен как необязательный, **он необходим для работы с этой статьей**.  Секрет опрашивающего запроса позволяет кластеру Azure Red Hat OpenShift найти оператор Open Liberty.
 
    Если вы планируете запускать приложения, интенсивно использующие память, в кластере, укажите соответствующий размер виртуальной машины для рабочих узлов с помощью `--worker-vm-size` параметра. Например, `Standard_E4s_v3` — это минимальный размер виртуальной машины для установки оператора Elasticsearch в кластере. Дополнительные сведения см. в разделе:
 
-   * [Azure CLI для создания кластера](https://docs.microsoft.com/cli/azure/aro?view=azure-cli-latest&preserve-view=true#az-aro-create)
-   * [Поддерживаемые размеры виртуальных машин для оптимизированной для памяти](/azure/openshift/support-policies-v4#memory-optimized)
+   * [Azure CLI для создания кластера](/cli/azure/aro?preserve-view=true&view=azure-cli-latest#az-aro-create)
+   * [Поддерживаемые размеры виртуальных машин для оптимизированной для памяти](./support-policies-v4.md#memory-optimized)
    * [Необходимые условия для установки оператора Elasticsearch](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging-deploying.html#cluster-logging-deploy-eo-cli_cluster-logging-deploying)
 
-1. Подключитесь к кластеру, выполнив действия, описанные в подразделе [Подключение к кластеру Azure Red Hat OpenShift 4](/azure/openshift/tutorial-connect-cluster).
+1. Подключитесь к кластеру, выполнив действия, описанные в подразделе [Подключение к кластеру Azure Red Hat OpenShift 4](./tutorial-connect-cluster.md).
    * Обязательно выполните действия, описанные в разделе "Установка OpenShift CLI", так как мы будем использовать эту `oc` команду Далее в этой статье.
    * Запишите URL-адрес консоли кластера, который выглядит как `https://console-openshift-console.apps.<random>.<region>.aroapp.io/` .
    * Запишите `kubeadmin` учетные данные.
@@ -314,7 +314,7 @@ oc delete -f openlibertyapplication.yaml
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите кластер АТО, выполнив действия, описанные в [руководстве по удалению кластера Azure Red Hat OpenShift 4.](/azure/openshift/tutorial-delete-cluster)
+Удалите кластер АТО, выполнив действия, описанные в [руководстве по удалению кластера Azure Red Hat OpenShift 4.](./tutorial-delete-cluster.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

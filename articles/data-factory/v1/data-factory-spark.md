@@ -3,20 +3,20 @@ title: Вызов программ Spark из фабрики данных Azure
 description: Узнайте, как вызывать программы Spark из фабрики данных Azure с помощью действия MapReduce.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 97e2be64818888040b7e6ac3bc8861da24ebdbbd
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 6c9e5b6466d3da675975dbf2c532602561e820c9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359957"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495078"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "92359957"
 * Создайте набор данных, который ссылается на связанную службу хранилища. Затем определите выходной набор данных для действия, даже если выходные данные не выдаются.
 * Создайте конвейер с действием Spark, который ссылается на созданную связанную службу HDInsight. Конфигурация действия выполняется на основе набора данных, созданного на предыдущем шаге в качестве выходного набора данных. На основе этого набора настраивается расписание (ежечасно, ежедневно). Исходя из сказанного выше, вы должны определить выходной набор данных, даже если действие не выдает выходные данные.
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 1. Создайте учетную запись хранения общего назначения, следуя указаниям в [этом разделе](../../storage/common/storage-account-create.md).
 
 1. Создайте кластер Spark в HDInsight, следуя инструкциям в [этом руководстве](../../hdinsight/spark/apache-spark-jupyter-spark-sql.md). Свяжите учетную запись хранения, созданную на шаге 1, с этим кластером.
@@ -118,7 +118,7 @@ ms.locfileid: "92359957"
 
 1. Вставьте следующий фрагмент в окно Draft-1. В редакторе JSON выполните следующие действия.
 
-    а. Укажите URI для кластера HDInsight Spark. Например: `https://<sparkclustername>.azurehdinsight.net/`.
+    a. Укажите URI для кластера HDInsight Spark. Например, `https://<sparkclustername>.azurehdinsight.net/`.
 
     b. Укажите имя пользователя, имеющего доступ к кластеру Spark.
 
@@ -344,7 +344,7 @@ ms.locfileid: "92359957"
 
 Создайте следующую структуру папок в хранилище BLOB-объектов, на которое ссылается связанная служба HDInsight. Затем передайте зависимые файлы в соответствующие вложенные папки в корневой папке, определенной значением **entryFilePath**. Например, передайте файлы Python во вложенную папку pyFiles, а JAR-файлы — во вложенную папку jars, расположенную в корневой папке. Во время выполнения служба фабрики данных ожидает в хранилище BLOB-объектов следующую структуру папок.
 
-| путь | Описание | Обязательно | Тип |
+| Путь | Описание | Обязательно | Тип |
 | ---- | ----------- | -------- | ---- |
 | . | Путь к корневому каталогу задания Spark в хранилище связанной службы. | Да | Папка |
 | &lt;Определяется пользователем&gt; | Путь к файлу записи задания Spark. | Да | Файл |

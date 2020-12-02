@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: eed68ff7e6b002e7a5985b336686b646a1a9acee
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a97f3bf3a479d956747755a421d7946f7aafd4f1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522962"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494245"
 ---
 # <a name="migrate-to-connection-monitor-from-connection-monitor-classic"></a>Миграция в монитор подключений из монитора подключений (классическая модель)
 
@@ -34,7 +34,7 @@ ms.locfileid: "95522962"
    * **Оповещения**. автоматически переносится в новые метрики.
    * **Панели мониторинга и интеграции**. необходимо вручную изменить набор метрик. 
     
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы используете настраиваемую рабочую область, убедитесь, что наблюдатель за сетями включен в подписке и в регионе рабочей области Log Analytics. 
 
@@ -61,8 +61,8 @@ ms.locfileid: "95522962"
 * Перенесенные мониторы соединений больше не отображаются в качестве старого решения монитора подключений. Теперь они доступны только для использования в мониторе подключения.
 * Любые внешние интеграции, такие как панели мониторинга в Power BI и Grafana, а также интеграции с системами управления сведениями о безопасности и событиями (SIEM), должны быть перенесены вручную. Это единственный шаг вручную, который необходимо выполнить для переноса установки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о мониторе подключений см. в следующих статьях:
-* [Миграция из Монитор производительности сети в монитор подключения](/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor)
+* [Миграция из Монитор производительности сети в монитор подключения](./migrate-to-connection-monitor-from-network-performance-monitor.md)
 * [Создание монитора подключения с помощью портал Azure](./connection-monitor-create-using-portal.md)

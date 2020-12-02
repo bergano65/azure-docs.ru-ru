@@ -1,18 +1,18 @@
 ---
 title: Функции преобразования потока данных структурирование в фабрике данных Azure
 description: Общие сведения о доступных функциях потока данных структурирование в фабрике данных Azure
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: c56c52193f433571f16e4acf7bd6e7b89641b26f
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
+ms.openlocfilehash: 28c6228d4401db0fd1301137167a86cb6f18cbeb
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93233956"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494925"
 ---
 # <a name="transformation-functions-in-wrangling-data-flow"></a>Функции преобразования в потоке данных структурирование
 
@@ -88,7 +88,7 @@ ms.locfileid: "93233956"
 
 ## <a name="known-unsupported-functions"></a>Известные неподдерживаемые функции
 
-| Компонент | Состояние |
+| Функция | Состояние |
 | -- | -- |
 | Table.PromoteHeaders | Не поддерживается. Тот же результат можно получить, установив в наборе данных "первая строка как заголовок". |
 | Table.CombineColumns | Это распространенный сценарий, который не поддерживается напрямую, но может быть достигнут путем добавления нового столбца, объединяющего два заданных столбца.  Например, Table. AddColumn (Ремовимаилколумн, "Name", each [FirstName] & "" & [LastName]) |
