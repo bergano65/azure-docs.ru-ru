@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: banders
-ms.openlocfilehash: 0b3cf0c705048d37d422d62b77dc7d94c5ae13bd
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7bec455b804d1f4b13ab7e13677092077214a121
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149388"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965856"
 ---
 # <a name="get-started-with-your-updated-azure-billing-account"></a>Начало работы с обновленной учетной записью выставления счетов Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "92149388"
 
 Роли в профилях выставления счетов имеют разрешения на просмотр счетов и методов оплаты и управление ими. Назначьте эти роли пользователям, которые оплачивают счета, например сотрудникам из отдела бухгалтерского учета в организации. Дополнительные сведения см. в разделе о [ролях и задачах профиля выставления счетов](../manage/understand-mca-roles.md#billing-profile-roles-and-tasks). 
 
-При обновлении учетной записи каждой подписки, для которой предоставлены другие разрешения на [просмотр счетов](download-azure-invoice.md#allow-others-to-download-the-your-subscription-invoice), пользователям, у которых есть роли владельца, участника, читателя или роль читателя счетов Azure RBAC, предоставляется роль читателя в соответствующем профиле выставления счетов.
+При обновлении учетной записи каждой подписки, для которой предоставлены другие разрешения на [просмотр счетов](download-azure-invoice.md#allow-others-to-download-the-your-subscription-invoice), пользователям, у которых есть роли владельца, участника, читателя или роль читателя счетов Azure, предоставляется роль читателя в соответствующем профиле выставления счетов.
 
 ## <a name="invoice-sections"></a>Разделы счетов
 

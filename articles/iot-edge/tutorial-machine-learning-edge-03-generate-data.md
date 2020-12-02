@@ -8,17 +8,14 @@ ms.date: 1/20/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c40f7d988f2b5f206f42eae787efcdce786948a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef6e86bbb55a2c51779f2dcf60f802ce549516cb
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91857084"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959685"
 ---
 # <a name="tutorial-generate-simulated-device-data"></a>Руководство по Создание данных имитированного устройства
-
-> [!NOTE]
-> Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
 
 В этой статье мы используем данные машинного обучения для имитации устройства, отправляющего данные телеметрии в Центр Интернета вещей Azure. Как уже указано во введении, в этом руководстве используется [набор данных для моделирования ухудшения состояния турбореактивного двигателя](https://c3.nasa.gov/dashlink/resources/139/), на основе которого имитируются данные от нескольких авиационных двигателей для обучения и тестирования.
 
@@ -45,6 +42,10 @@ ms.locfileid: "91857084"
 Выполнение задач, описанных в этой статье, занимает около 20 минут.
 
 В реальной системе задачи этого этапа обычно выполняются разработчиками устройств и облачных систем.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Каждая статья в серии основана на инструкциях, выполненных при работе с предыдущей статьей. Если вы приступили сразу к этой статье, перейдите на [первую статью](tutorial-machine-learning-edge-01-intro.md) серии.
 
 ## <a name="configure-visual-studio-code-and-build-deviceharness-project"></a>Настройка Visual Studio Code и сборка проекта DeviceHarness
 

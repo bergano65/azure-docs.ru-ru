@@ -8,17 +8,14 @@ ms.date: 3/24/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cfb778a1a632dc17a9f50c7ea05debed0edb4fb6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9a29e890553d15d19853ec836f8c4296869e143
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88660253"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959634"
 ---
 # <a name="tutorial-train-and-deploy-an-azure-machine-learning-model"></a>Руководство по Обучение и развертывание модели машинного обучения Azure
-
-> [!NOTE]
-> Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
 
 В этой статье описаны следующие задачи:
 
@@ -29,6 +26,10 @@ ms.locfileid: "88660253"
 В Записных книжках Azure используется рабочая область машинного обучения Azure, которая является основой для выполнения экспериментов, обучения и развертывания моделей машинного обучения.
 
 Описанные в этой статье действия обычно выполняются специалистами по обработке и анализу данных.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Каждая статья в серии основана на инструкциях, выполненных при работе с предыдущей статьей. Если вы приступили сразу к этой статье, перейдите на [первую статью](tutorial-machine-learning-edge-01-intro.md) серии.
 
 ## <a name="set-up-azure-notebooks"></a>Настройка Записных книжек Azure
 

@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: fabfdce72202f79e2ac5bad08d124df7ce2de542
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 5e3fbd1868cc1216cb7b9d02b2aa8e690af33952
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592589"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917687"
 ---
 # <a name="analyze-data-in-a-storage-account"></a>Анализируйте данные в учетной записи хранения
 
@@ -41,6 +41,8 @@ df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats_parquetformat")
 ```
 
 ### <a name="analyze-data-in-a-storage-account"></a>Анализируйте данные в учетной записи хранения
+
+Вы можете проанализировать данные в стандартной учетной записи ADLS 2-го поколения для рабочей области или связать учетную запись ADLS 2-го поколения или хранилища BLOB-объектов с рабочей областью, выбрав **Управление** > **Связанные службы** > **Создать** (приведенные ниже действия относятся к основной учетной записи ADLS 2-го поколения).
 
 1. В Synapse Studio перейдите в центр **Данные**, а затем выберите команду **Связанный**.
 1. Перейдите в раздел **Учетные записи хранения** > **myworkspace (Primary — contosolake)** .

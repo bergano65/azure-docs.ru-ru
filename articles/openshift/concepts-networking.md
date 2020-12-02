@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 06/22/2020
-ms.openlocfilehash: fb81405e85d6e2653e0cf6c007c363493992161a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3417b59d0be9e285f8793ef598abb7f98bda7549
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87419977"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95527995"
 ---
 # <a name="networking-in-azure-red-hat-on-openshift-4"></a>Сеть в Azure Red Hat на OpenShift 4
 
@@ -98,7 +98,7 @@ ms.locfileid: "87419977"
     * "Public" обозначает, что сервер API доступен для внешних сетей;
     * "Private" обозначает, что серверу API назначается частный IP-адрес из подсети главных узлов, который доступен только из подключенных сетей (одноранговые виртуальные сети, другие подсети в том же кластере). От имени клиента создается частная зона DNS.
 * **Видимость входящего трафика** — задается при выполнении команды [az aro create](tutorial-create-cluster.md#create-the-cluster).
-    * Маршруты Public (Общедоступные) по умолчанию обозначают общедоступный Azure Load Balancer (цен. категория "Стандартный"), но это можно изменить;
+    * Маршруты Public (Общедоступные) по умолчанию используют общедоступную подсистему Load Balancer (цен. категория "Стандартный"), но это можно изменить;
     * Маршруты Private (Частные) по умолчанию обозначают внутренние подсистемы балансировки нагрузки, но это можно изменить.
 
 ## <a name="network-security-groups"></a>Группы безопасности сети

@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b82193fda64f2cf265c879c5cda9141be1b576f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0408d43fe897882fe09f6dd61a22d46349f2978e
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627896"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95974397"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Руководство по Вызов API Microsoft Graph из классического приложения для Windows
 
-В этом руководстве показано, как в классическом приложении .NET для Windows (XAML) используется маркер доступа для вызова API Microsoft Graph. Приложению также доступны другие API, которым требуются маркеры доступа от платформы удостоверений Майкрософт.
+В этом руководстве показано, как создать нативное классическое приложение Windows .NET (XAML), которое поддерживает вход пользователей и может получить маркер доступа для вызова API Microsoft Graph. 
 
 Когда вы завершите работу с руководством, ваше приложение сможет вызывать защищенный API, использующий личные учетные записи (в том числе outlook.com, live.com и другие). Приложение будет также использовать рабочие и учебные учетные записи из любой компании или организации, использующей Azure Active Directory.
 

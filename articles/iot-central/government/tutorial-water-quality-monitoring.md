@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: a80fe998c1ab241e35bee195b927846e264dec59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07f0e66888eaa909dfce14924e9186bcb9b876b4
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90972371"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014498"
 ---
 # <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>Руководство по Создание приложения для мониторинга качества воды в Azure IoT Central
 
@@ -188,7 +188,7 @@ ms.locfileid: "90972371"
 
 ## <a name="explore-and-configure-rules"></a>Изучение и настройка правил
 
-В Azure IoT Central можно создавать правила, которые автоматически отслеживают данные телеметрии устройства. При выполнении условий какого-либо правила активируется действие. Одно из возможных действий — отправка уведомлений по электронной почте. Это также может быть действие Microsoft Flow или веб-перехватчика для отправки данных в другие службы.
+В Azure IoT Central можно создавать правила, которые автоматически отслеживают данные телеметрии устройства. При выполнении условий какого-либо правила активируется действие. Одно из возможных действий — отправка уведомлений по электронной почте. Это также может быть действие Power Automate или веб-перехватчика для отправки данных в другие службы.
 
 Созданное приложение для мониторинга качества воды содержит два предварительно настроенных правила.
 

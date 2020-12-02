@@ -7,20 +7,20 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: sql-dw
-ms.date: 06/18/2020
+ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: f82bedc6ef638714b2641003e8274c2024a86c2e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 83b5804888379316b855c36f803f646cec102d9e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85213012"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024591"
 ---
 # <a name="quickstart-bulk-load-data-using-the-copy-statement"></a>Краткое руководство. Массовая загрузка данных с помощью инструкции COPY
 
-В этом кратком руководстве вы выполните массовую загрузку данных в пул SQL с помощью простой и гибкой [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для приема данных с высокой пропускной способностью. Инструкция COPY является рекомендуемой служебной программой загрузки, поскольку она позволяет легко и гибко загружать данные, предоставляя им функциональные возможности, которые позволяют:
+В этом кратком руководстве вы выполните массовую загрузку данных в выделенный пул SQL с помощью простой и гибкой [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для приема данных с высокой пропускной способностью. Инструкция COPY является рекомендуемой служебной программой загрузки, поскольку она позволяет легко и гибко загружать данные, предоставляя им функциональные возможности, которые позволяют:
 
 - Выполнять загрузку пользователям с более низкими привилегиями, без ограничения разрешений на управление хранилищем данных
 - Использовать только одну инструкцию T-SQL без необходимости создавать дополнительные объекты базы данных.
@@ -34,7 +34,7 @@ ms.locfileid: "85213012"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом кратком руководстве предполагается, что у вас уже есть пул SQL. Если пул SQL не создан, используйте краткое руководство [Создание пула SQL Synapse и отправка в него запросов, используя портал Azure](create-data-warehouse-portal.md).
+В этом кратком руководстве предполагается, что у вас уже есть выделенный пул SQL. Если выделенный пул SQL не создан, используйте краткое руководство [Создание пула SQL Synapse и отправка в него запросов, используя портал Azure](create-data-warehouse-portal.md).
 
 ## <a name="set-up-the-required-permissions"></a>Настройка необходимых разрешений
 

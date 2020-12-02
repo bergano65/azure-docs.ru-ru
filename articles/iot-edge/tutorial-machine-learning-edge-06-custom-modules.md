@@ -9,17 +9,14 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3a2087c83ec48b0b732ce1cb954f78fad9b46fef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 199da0586a061bccdf8a6ff8a1f53df2f703512f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91857441"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959447"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Руководство. Создание и развертывание пользовательских модулей IoT Edge
-
-> [!NOTE]
-> Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
 
 В этой статье описано, как создать три модуля IoT Edge, которые получают сообщения от конечных устройств Интернета вещей, обрабатывают данные с помощью модели машинного обучения и передают аналитические сведения в Центр Интернета вещей.
 
@@ -54,6 +51,10 @@ ms.locfileid: "91857441"
 ![Архитектура трех модулей IoT Edge](media/tutorial-machine-learning-edge-06-custom-modules/modules-diagram.png)
 
 Описанные в этой статье действия обычно выполняются разработчиком облачной системы.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Каждая статья в серии основана на инструкциях, выполненных при работе с предыдущей статьей. Если вы приступили сразу к этой статье, перейдите на [первую статью](tutorial-machine-learning-edge-01-intro.md) серии.
 
 ## <a name="create-a-new-iot-edge-solution"></a>Создание решения IoT Edge
 
@@ -719,7 +720,7 @@ ms.locfileid: "91857441"
 
 1. В Visual Studio Code откройте новый сеанс терминала в командной строке и выполните вход в реестр контейнеров Azure.
 
-  Необходимые значения имени пользователя, пароля и сервера входа можно найти на портале Azure. Реестр контейнеров имеет имя в формате "turbofandemo\<unique id\>". В меню слева в разделе **Параметры**выберите **Ключи доступа**, чтобы просмотреть их.
+  Необходимые значения имени пользователя, пароля и сервера входа можно найти на портале Azure. Реестр контейнеров имеет имя в формате "turbofandemo\<unique id\>". В меню слева в разделе **Параметры** выберите **Ключи доступа**, чтобы просмотреть их.
 
    ```cmd
    docker login -u <ACR username> -p <ACR password> <ACR login server>

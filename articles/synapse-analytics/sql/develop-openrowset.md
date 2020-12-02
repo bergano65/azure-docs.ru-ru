@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 20003a91726e5ccee7f73d85b7c9a9389801e0ad
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 2458b5f3f0c0091bb6ec24e62a1d5614e4e1ecd8
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701761"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888595"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Использование OPENROWSET с бессерверным пулом SQL (предварительная версия) в Azure Synapse Analytics
 
@@ -225,6 +225,9 @@ PARSER_VERSION = "версия_средства_синтаксического_�
 - Размер строки не может превышать 8 МБ.
 - Приведенные ниже параметры не поддерживаются. DATA_COMPRESSION.
 - Пустая строка в кавычках ("") интерпретируется как пустая строка.
+- Поддерживаемый формат для типа данных DATE: ГГГГ-ММ-ДД
+- Поддерживаемый формат для типа данных TIME: ЧЧ:ММ:СС[.доли секунды].
+- Поддерживаемый формат для типа данных DATETIME2: ГГГГ-ММ-ДД ЧЧ:ММ:СС[.доли секунды]
 
 HEADER_ROW = { TRUE | FALSE }
 

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 11/03/2020
+ms.date: 11/20/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 0aace1041eba771a26bed4c85361ea2551c71ba6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f1d667f55a8be1b701fda6240895dd8f96315cff
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659426"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94986323"
 ---
 ::: zone target="docs"
 
@@ -164,23 +164,28 @@ ms.locfileid: "94659426"
 
 2. Запечатайте коробку для транспортировки и убедитесь, что этикетка обратной доставки отображается.
 
-3. Чтобы заказать отправку с помощью DHL, выполните следующие действия:
+3. Запросите код возврата у специалистов Azure Data Box. Этот код требуется для доставки посылки обратно в центр обработки данных. Отправьте сообщение электронной почты с запросом кода на адрес [adbops@microsoft.com](mailto:adbops@microsoft.com). Разборчиво запишите этот код на этикетке отгрузки рядом с адресом возврата.
 
-    * Обратитесь в службу поддержки клиентов по телефону +27(0) 11 9213600, выберите вариант 1, а затем укажите номер накладной.
-    * Чтобы запланировать отправку, звонок необходимо совершить до 14:00 по южноафриканскому времени (ZA).  
-    * Отправьте электронное письмо по адресу [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com), чтобы организовать отправку, используя следующий шаблон:
+4. Закажите отправку с помощью DHL, выбрав один из следующих вариантов:
+   * Закажите отправку через Интернет на сайте [DHL Express (ЮАР), выбрав **Schedule a Pickup** (Запланировать вывоз)](https://mydhl.express.dhl/za/en/schedule-pickup.html#/schedule-pickup#label-reference).
+   * Отправьте сообщение электронной почты на [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com), используя следующий шаблон:
 
-    ```output
-    To: Priority.Support@dhl.com
-    Subject:Pickup request for Microsoft Azure
-    Body:  Need pick up for the below shipment
-    *  DHL tracking number (reference number/waybill number)
-    *  Requested pickup date：yyyy/mm/dd; time: HH MM
-    ```
+     ```output
+     To: Priority.Support@dhl.com
+     Subject: Pickup request for Microsoft Azure
+     Body: Need pick up for the below shipment
+       *  DHL tracking number: (reference number/waybill number)
+       *  Requested pickup date: yyyy/mm/dd;time:HH MM
+       *  Shipper contact: (company name)
+       *  Contact person: 
+       *  Phone number: 
+       *  Full physical address: 
+       *  Item to be collected: Azure Dt
+     ```
 
-    * Кроме того, вы можете запланировать доставку пакета в ближайшую точку обслуживания DHL.
+    * Вы также можете отправить посылку в ближайшей точке обслуживания DHL.
 
-4. При возникновении проблем отправьте на адрес [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) сообщение электронной почты с их описанием, указав номер накладной в строке "Тема:". Вы можете также позвонить по телефону +27(0)119213902.
+5. При возникновении проблем отправьте на адрес [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) сообщение электронной почты с их описанием, указав номер накладной в строке "Тема:". Вы можете также позвонить по телефону +27(0)119213902.
 
 ### <a name="china"></a>[Китай](#tab/in-china)
 

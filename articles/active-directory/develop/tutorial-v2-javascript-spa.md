@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 027305d953a24de17e62aa74b33b72494b03e652
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: ded54628a307f3cf4441e804f7f1025a0e943b51
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91825911"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94979952"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Руководство по Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
-В этом руководстве вы создадите одностраничное приложение (SPA) в JavaScript, которое сможет выполнять вход пользователей с личными учетными записями Майкрософт или рабочими и учебными учетными записями, а затем получать маркер доступа для вызова API Microsoft Graph.
+В этом руководстве показано, как создать одностраничное приложение (SPA) JavaScript, которое поддерживает вход пользователей и вызовы Microsoft Graph с помощью неявного потока. Создаваемое одностраничное приложение использует библиотеку проверки подлинности Майкрософт (MSAL) для JavaScript версии 1.0.
 
 В этом руководстве рассматриваются следующие темы:
 
@@ -513,4 +513,3 @@ ms.locfileid: "91825911"
 
 > [!div class="nextstepaction"]
 > [Scenario: одностраничное приложение](scenario-spa-overview.md)
-

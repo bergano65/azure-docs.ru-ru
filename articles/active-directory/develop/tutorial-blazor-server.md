@@ -8,20 +8,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 09/15/2020
-ms.openlocfilehash: aaf716b4ac4c49f1d852e917ba818a10ecb541c4
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: d499a0e7d3ca7933632b52d5edbd8094a29dbcaa
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628039"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94979901"
 ---
 # <a name="tutorial-create-a-blazor-server-app-that-uses-the-microsoft-identity-platform-for-authentication"></a>Руководство по Создание приложения Blazor Server, которое использует платформу удостоверений Майкрософт для аутентификации
 
-Blazor Server предоставляет поддержку размещения компонентов Razor на сервере в приложении ASP.NET Core. Из этого руководства вы узнаете, как реализовать проверку подлинности и извлечь данные из Microsoft Graph в приложении Blazor Server, используя платформу удостоверений Майкрософт и зарегистрировав приложение в Azure Active Directory (Azure AD).
+Из этого руководства вы узнаете, как создать приложение Blazor Server с поддержкой входа пользователей и получения данных из Microsoft Graph, используя платформу удостоверений Майкрософт и зарегистрировав приложение в Azure Active Directory (Azure AD).
 
 У нас также есть руководство по [Blazor WASM](tutorial-blazor-webassembly.md).
 
-В этом руководстве описано следующее:
+В этом руководстве рассматриваются следующие темы:
 
 > [!div class="checklist"]
 > * Создание нового приложения Blazor Server, настроенного для использования Azure Active Directory (Azure AD) для проверки подлинности

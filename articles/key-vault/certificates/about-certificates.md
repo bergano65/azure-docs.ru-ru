@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 45c0108ed87dd5264b9192f5dd69e0198bd59fc1
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 66f077028b9f9f7a7644a318d4447eeaaab19e98
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289772"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94919936"
 ---
 # <a name="about-azure-key-vault-certificates"></a>Сведения о сертификатах Azure Key Vault
 
@@ -44,8 +44,17 @@ ms.locfileid: "93289772"
 
 Адресуемый ключ становится более релевантным с недоступными для экспорта сертификатами Key Vault. Операции с адресуемыми ключами Key Vault сопоставляются из поля *keyusage* политики сертификата Key Vault, используемой для его создания.  
 
+Типы пар ключей, поддерживаемые для сертификатов
+
  - Поддерживаемые типы ключей: RSA, RSA-HSM, EC, EC-HSM и т. д. (см. [здесь](/rest/api/keyvault/createcertificate/createcertificate#jsonwebkeytype)) Для экспорта доступны только RSA и EC. Ключи HSM нельзя экспортировать.
 
+|Тип ключа|Сведения|Безопасность|
+|--|--|--|
+|**RSA**| Ключ RSA, защищенный программным обеспечением.|FIPS 140-2 уровня 1|
+|**RSA-HSM**| Ключ RSA, защищенный модулем HSM (только SKU "Премиум")|HSM FIPS 140-2 уровня 2|
+|**EC**| Ключ на основе эллиптической кривой, защищенный программным обеспечением|FIPS 140-2 уровня 1|
+|**EC-HSM**| Ключ с эллиптической кривой, защищенный модулем HSM (только SKU "Премиум")|HSM FIPS 140-2 уровня 2|
+|||
 
 ## <a name="certificate-attributes-and-tags"></a>Атрибуты и теги сертификата
 

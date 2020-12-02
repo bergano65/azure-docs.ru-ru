@@ -1,18 +1,18 @@
 ---
-title: Выполнение скриптов Python с помощью Фабрики данных
-description: Учебник по выполнению скриптов Python в составе конвейера с помощью Фабрики данных Azure в пакетной службе Azure.
-author: mammask
+title: Руководство. Выполнение скриптов Python с помощью Фабрики данных
+description: Сведения о том, как выполнять скрипты Python в составе конвейера с помощью Фабрики данных Azure и пакетной службы Azure.
+author: pkshultz
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 08/12/2020
-ms.author: komammas
+ms.author: peshultz
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: c66c14d42c3d14fc4171f6fdfaf2e7f75a531507
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 7752bc3f768aec7a3e98fb1813c4194f81fb9dfb
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886912"
+ms.locfileid: "94917636"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Руководство по Выполнение скриптов Python с помощью Фабрики данных Azure в пакетной службе Azure
 
@@ -155,6 +155,5 @@ python main.py
 Подробное описание Фабрики данных Azure см. здесь:
 
 > [!div class="nextstepaction"]
-> [Фабрика данных Azure](../data-factory/introduction.md)
-> [Конвейеры и действия](../data-factory/concepts-pipelines-activities.md)
-> [Пользовательские действия](../data-factory/transform-data-using-dotnet-custom-activity.md).
+> [Общие сведения о Фабрике данных Azure](../data-factory/introduction.md)
+

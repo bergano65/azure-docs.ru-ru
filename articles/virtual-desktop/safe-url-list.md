@@ -1,21 +1,21 @@
 ---
-title: Список надежных URL-адресов виртуальных рабочих столов Windows — Azure
-description: Список URL-адресов, которые следует разблокировать, чтобы убедиться, что развертывание виртуальных рабочих столов Windows работает правильно.
+title: Список требуемых URL-адресов виртуальных рабочих столов Windows — Azure
+description: Список URL-адресов, которые необходимо разблокировать, чтобы убедиться, что развертывание виртуальных рабочих столов Windows работает правильно.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 08/12/2020
+ms.date: 12/02/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3d19a60fd6a22eb9245722c6ff69d3b39c05d29e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 6b3fdc18a04dadf4bf1cf380c7bb51d21f826633
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023179"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512347"
 ---
-# <a name="safe-url-list"></a>Список надежных URL-адресов
+# <a name="required-url-list"></a>Список требуемых URL-адресов
 
-Вам потребуется разблокировать определенные URL-адреса, чтобы развертывание виртуальных рабочих столов Windows работало правильно. В этой статье перечислены эти URL-адреса, чтобы вы могли выяснить, какие из них являются надежными.
+Чтобы развернуть и использовать виртуальный рабочий стол Windows, необходимо разблокировать определенные URL-адреса, чтобы ваши виртуальные машины могли обращаться к ним в любое время. В этой статье перечислены необходимые URL-адреса, которые необходимо разблокировать.
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 
@@ -33,8 +33,8 @@ ms.locfileid: "95023179"
 |kms.core.windows.net|1688;|Активация Windows|Интернет|
 |mrsglobalsteus2prod.blob.core.windows.net|443|Обновления агента и стека SxS|AzureCloud;|
 |wvdportalstorageblob.blob.core.windows.net|443|Поддержка портала Azure|AzureCloud;|
-| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Н/Д |
-| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Н/Д |
+| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Недоступно |
+| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Недоступно |
 
 >[!IMPORTANT]
 >Виртуальный рабочий стол Windows теперь поддерживает тег полного доменного имени. Дополнительные сведения см. в статье [Использование Брандмауэра Azure для защиты развертываний виртуального рабочего стола Windows](../firewall/protect-windows-virtual-desktop.md).
@@ -53,10 +53,10 @@ ms.locfileid: "95023179"
 |*.servicebus.usgovcloudapi.net|443|Агент трафика|AzureCloud;|
 |* xt.table.core.usgovcloudapi.net|443|Агент трафика|AzureCloud;|
 |Kms.core.usgovcloudapi.net|1688;|Активация Windows|Интернет|
-|mrsglobalstugviffx.core.usgovcloudapi.net|443|Обновления агента и стека SxS|AzureCloud;|
+|mrsglobalstugviffx.blob.core.usgovcloudapi.net|443|Обновления агента и стека SxS|AzureCloud;|
 |wvdportalstorageblob.blob.core.usgovcloudapi.net|443|Поддержка портала Azure|AzureCloud;|
-| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Н/Д |
-| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Н/Д |
+| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Недоступно |
+| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Недоступно |
 
 В следующей таблице перечислены дополнительные URL-адреса, к которым виртуальные машины Azure могут иметь доступ:
 
@@ -69,9 +69,13 @@ ms.locfileid: "95023179"
 |login.windows.net|443|Вход в Microsoft Online Services, Microsoft 365|login.microsoftonline.us|
 |*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|oneclient.sfx.ms|
 |*.digicert.com|443|Проверка отзыва сертификата|None|
+|*. azure-dns.com|443|Разрешение Azure DNS|Нет|
+|*. azure-dns.net|443|Разрешение Azure DNS|Нет|
 
 >[!NOTE]
 >В настоящее время виртуальный рабочий стол Windows не содержит список диапазонов IP-адресов, которые можно разблокировать, чтобы разрешить сетевой трафик. В настоящее время поддерживается только разблокирование конкретных URL-адресов.
+>
+>Если вы используете брандмауэр следующего поколения (NGFW), вам потребуется использовать динамический список, специально созданный для IP-адресов Azure, чтобы обеспечить возможность подключения.
 >
 >Список защищенных URL-адресов, связанных с Office, включая необходимые Azure Active Directory URL-адреса, см. в разделе [URL-адреса и диапазоны IP-адресов office 365](/office365/enterprise/urls-and-ip-address-ranges).
 >
@@ -89,11 +93,11 @@ ms.locfileid: "95023179"
 |---|---|---|---|---|
 |*.wvd.microsoft.com|443|Служба трафика|All|*. wvd.microsoft.us|
 |*.servicebus.windows.net|443|Данные диагностики|All|*.servicebus.usgovcloudapi.net|
-|сайт go.microsoft.com;|443|Microsoft FWLinks|All|None|
-|aka.ms|443|Средство сокращения URL-адресов Майкрософт|All|None|
-|docs.microsoft.com|443|Документация|All|None|
-|privacy.microsoft.com|443|Заявление о конфиденциальности|All|None|
-|query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|None|
+|сайт go.microsoft.com;|443|Microsoft FWLinks|All|Отсутствуют|
+|aka.ms|443|Средство сокращения URL-адресов Майкрософт|All|Отсутствуют|
+|docs.microsoft.com|443|Документация|All|Отсутствуют|
+|privacy.microsoft.com|443|Заявление о конфиденциальности|All|Отсутствуют|
+|query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|Нет|
 
 >[!IMPORTANT]
 >Открытие этих URL-адресов является обязательным для надежной работы клиента. Блокировка доступа к этим URL-адресам не поддерживается и повлияет на функциональность службы.

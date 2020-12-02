@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 18222573956f5ff3e9c617602902374b114328da
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 4fa00bffc35c4ed67ce70751c8882b74ad6b01a1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555623"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95534506"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
@@ -296,7 +296,7 @@ ms.locfileid: "94555623"
 
 ### <a name="logs"></a>Журналы
 - [Удаление и восстановление рабочей области Azure Log Analytics](platform/delete-workspace.md) — добавлена команда PowerShell. Обновлены сведения об устранении неполадок.
-- [Управление рабочими областями Log Analytics в Azure Monitor, добавленном](platform/manage-access.md) — добавлен пример для недопустимых таблиц в разделе о RBAC.
+- [Управление рабочими областями Log Analytics в Azure Monitor, добавленном](platform/manage-access.md) — добавлен пример для недопустимых таблиц в разделе об Azure RBAC.
 - [Управление использованием и затратами для журналов Azure Monitor](platform/manage-cost-storage.md) — дополнительные сведения о вычислении размера данных. Обновлены сведения о настройке оповещений о томе данных. Сведения о данных безопасности, собранных с помощью Azure Sentinel. Добавлено пояснение об ограничении объема данных.
 - [Использование журналов Azure Monitor с Azure Logic Apps и Power Automate](platform/logicapp-flow-connector.md) — добавлены сведения об ограничениях соединителя.
 
@@ -571,7 +571,7 @@ ms.locfileid: "94555623"
 
 #### <a name="azure-monitor-for-containers"></a>Azure Monitor для контейнеров
 
-- [Интеграция Azure Active Directory со Службой контейнеров Azure](../aks/azure-ad-integration-cli.md) — добавлено примечание о создании клиентского приложения для поддержки кластера с поддержкой RBAC, обеспечивающего поддержку Azure Monitor для контейнеров.
+- [Интеграция Azure Active Directory со Службой Azure Kubernetes](../aks/azure-ad-integration-cli.md) — добавлено примечание о создании клиентского приложения для поддержки кластера с включенной функцией Kubernetes RBAC, обеспечивающего поддержку Azure Monitor для контейнеров.
 
 #### <a name="azure-monitor-for-vms"></a>Azure Monitor для виртуальных машин
 
