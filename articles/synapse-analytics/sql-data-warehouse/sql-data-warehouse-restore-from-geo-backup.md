@@ -7,33 +7,33 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 07/12/2019
-ms.author: anjangsh
+ms.date: 11/13/2020
+ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 7496cedd127182482bccf97909cc0a0a4a78253f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 4683bd84873506483209f4a0eb3751a1b163ed48
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313419"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449895"
 ---
 # <a name="geo-restore-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Геовосстановление выделенного пула SQL в Azure синапсе Analytics
 
-Из этой статьи вы узнаете, как восстановить выделенный пул SQL из географической резервной копии с помощью портал Azure и PowerShell.
+Из этой статьи вы узнаете, как восстановить выделенный пул SQL (ранее — хранилище данных SQL) из географической резервной копии с помощью портал Azure и PowerShell.
 
 ## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-**Проверьте ресурсы DTU.** Каждый выделенный пул SQL размещается на [логическом сервере SQL Server](../../azure-sql/database/logical-servers.md) (например, MyServer.Database.Windows.NET), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
+**Проверьте ресурсы DTU.** Каждый выделенный пул SQL (ранее — хранилище данных SQL) размещается на [логическом сервере SQL Server](../../azure-sql/database/logical-servers.md) (например, MyServer.Database.Windows.NET), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
 ## <a name="restore-from-an-azure-geographical-region-through-powershell"></a>Восстановление из географического региона Azure с помощью PowerShell
 
 Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп](/powershell/module/az.sql/get-azsqldatabasegeobackup?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
 > [!NOTE]
-> Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000 **c** ).
+> Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000 **c**).
 >
 
 1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
@@ -74,28 +74,24 @@ $GeoRestoredDatabase.status
 
 ## <a name="restore-from-an-azure-geographical-region-through-azure-portal"></a>Восстановление из географического региона Azure с помощью портал Azure
 
-Выполните действия, описанные ниже, чтобы восстановить выделенный пул SQL из географической резервной копии.
+Выполните действия, описанные ниже, чтобы восстановить выделенный пул SQL (ранее — хранилище данных SQL) из географической резервной копии.
 
 1. Войдите в учетную запись [портал Azure](https://portal.azure.com/) .
-2. Щелкните **Создать ресурс**.
+1. Поиск **выделенных ПУЛОВ SQL (ранее — хранилище данных SQL)**.
 
-   ![Создать хранилище данных](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
+   ![Новый DW 2](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
 
-3. Щелкните **базы данных** , а затем **Azure синапсе Analytics (ранее — SQL DW)**.
-
-   ![Новый DW 2](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new-02.png)
-
-4. Заполните сведения, запрошенные на вкладке " **основы** ", и нажмите кнопку " **Далее": дополнительные параметры**.
+1. Нажмите кнопку Добавить и введите сведения, запрошенные на вкладке " **основы** ", и нажмите кнопку **Далее: дополнительные параметры**.
 
    ![Основные сведения](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
 
-5. Для параметра **использовать существующий параметр данных** выберите **резервное копирование** и выберите соответствующую резервную копию в параметрах прокрутки вниз. Щелкните **Просмотр и создание**.
+1. Для параметра **использовать существующий параметр данных** выберите **резервное копирование** и выберите соответствующую резервную копию в параметрах прокрутки вниз. Щелкните **Просмотр и создание**.
 
    ![резервная копия](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
 
-6. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
+1. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
 
 ## <a name="next-steps"></a>Next Steps
 
-- [Восстановление существующего выделенного пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
-- [Восстановление удаленного выделенного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
+- [Восстановление существующего выделенного пула SQL (ранее — хранилища данных SQL)](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление удаленного выделенного пула SQL (ранее — хранилища данных SQL)](sql-data-warehouse-restore-deleted-dw.md)

@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: spark
 ms.date: 09/13/2020
-ms.openlocfilehash: 523356947d6d5f93fa8ef2202ad6e7d235c6afdd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 73b18d15ad054f1c485d6f61cdefe54993148bc4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919784"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450543"
 ---
 # <a name="visualize-data"></a>Визуализируйте данные
 Azure синапсе — это интегрированная служба аналитики, которая ускоряет анализ данных в разных хранилищах и системах анализа больших данных. Визуализация данных — ключевой компонент, позволяющий получить представление о данных. Это упрощает понимание больших и небольших данных. Это также упрощает обнаружение шаблонов, тенденций и выбросов в группах данных. 
@@ -227,7 +227,7 @@ plt.show()
 ## <a name="connect-to-power-bi-using-apache-spark--sql-on-demand"></a>Подключение к Power BI с помощью Apache Spark & SQL по запросу
 Azure синапсе Analytics тесно интегрируется с Power BI, позволяя инженерам по анализу данных создавать решения аналитики.
 
-Azure Synapse Analytics позволяет разным вычислительным системам рабочей области совместно использовать базы данных и таблицы в пулах Spark (предварительная версия) и ядре SQL по запросу (предварительная версия). С помощью [общей модели метаданных](https://docs.microsoft.com/azure/synapse-analytics/metadata/overview)можно выполнять запросы к Apache Sparkным таблицам с помощью SQL по запросу. После этого можно подключить конечную точку SQL по запросу, чтобы Power BI, чтобы легко выполнять запросы к синхронизированным таблицам Spark.
+Azure синапсе Analytics позволяет различным вычислительным системам рабочей области совместно использовать базы данных и таблицы между своими пулами Spark и независимым от сервера пулом SQL. С помощью [общей модели метаданных](https://docs.microsoft.com/azure/synapse-analytics/metadata/overview)можно выполнять запросы к Apache Sparkным таблицам с помощью SQL по запросу. После этого можно подключить конечную точку SQL по запросу, чтобы Power BI, чтобы легко выполнять запросы к синхронизированным таблицам Spark.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

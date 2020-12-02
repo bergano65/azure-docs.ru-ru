@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 37b2414252a7011444617ecc08c9dd7d081b7441
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: d45ab771f90c0174f24d5f0d39921f93f72be850
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425509"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451073"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для PostgreSQL — один сервер
 
@@ -106,7 +106,7 @@ ms.locfileid: "92425509"
 
 - Правила виртуальной сети применяются только к виртуальным сетям Azure Resource Manager, но не к сетям на основе [классической модели развертывания][arm-deployment-model-568f].
 
-- Включение конечных точек службы виртуальной сети в базу данных Azure для PostgreSQL с помощью тега службы **Microsoft. SQL** также позволяет использовать конечные точки для всех служб базы данных Azure: база данных Azure для MySQL, база данных Azure для PostgreSQL, база данных SQL Azure и аналитика синапсе Azure (ранее — хранилище данных SQL).
+- Включение конечных точек службы виртуальной сети в базу данных Azure для PostgreSQL с помощью тега службы **Microsoft. SQL** также позволяет использовать конечные точки для всех служб базы данных Azure: база данных Azure для MySQL, база данных Azure для PostgreSQL, база данных SQL Azure и аналитика синапсе Azure.
 
 - Поддержка конечных точек службы виртуальной сети предназначена только для серверов общего назначения и серверов, оптимизированных для операций в памяти.
 

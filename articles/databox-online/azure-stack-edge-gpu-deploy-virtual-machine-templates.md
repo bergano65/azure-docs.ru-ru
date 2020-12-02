@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/04/2020
+ms.date: 11/16/2020
 ms.author: alkohli
-ms.openlocfilehash: d0d02532f39d676772e5ee5d6414b802faffba7c
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 93df80cd6fcd6f5553ea509a4778a155299bb057
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505943"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449053"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-templates"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью шаблонов
 
@@ -76,7 +76,7 @@ ms.locfileid: "94505943"
     
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в который развертываются и управляются ресурсы Azure, такие как учетная запись хранения, диск, управляемый диск.
+Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в который развертываются и управляются ресурсы Azure, такие как учетная запись хранения, диск, управляемый диск.
 
 > [!IMPORTANT]
 > Все ресурсы создаются в том же расположении, что и устройство, а для расположения задано значение **дбелокал**.
@@ -149,7 +149,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 ### <a name="optional-install-certificates"></a>Используемых Установка сертификатов
 
-Пропустите этот шаг, если подключение будет осуществляться через Обозреватель службы хранилища по *протоколу HTTP*. Если используется *протокол HTTPS* , необходимо установить соответствующие сертификаты в обозреватель службы хранилища. В этом случае установите сертификат конечной точки большого двоичного объекта. Дополнительные сведения см. в статье Создание и передача сертификатов в оснастке [Управление сертификатами](azure-stack-edge-j-series-manage-certificates.md). 
+Пропустите этот шаг, если подключение будет осуществляться через Обозреватель службы хранилища по *протоколу HTTP*. Если используется *протокол HTTPS*, необходимо установить соответствующие сертификаты в обозреватель службы хранилища. В этом случае установите сертификат конечной точки большого двоичного объекта. Дополнительные сведения см. в статье Создание и передача сертификатов в оснастке [Управление сертификатами](azure-stack-edge-j-series-manage-certificates.md). 
 
 ### <a name="create-and-upload-a-vhd"></a>Создание и передача виртуального жесткого диска
 
@@ -159,7 +159,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 ### <a name="use-storage-explorer-for-upload"></a>Использовать Обозреватель службы хранилища для отправки
 
-1. Откройте Обозреватель службы хранилища. Перейдите в раздел **Edit (изменить** ) и убедитесь, что для приложения задано значение **Target Azure Stack API**.
+1. Откройте обозреватель хранилищ. Перейдите в раздел **Edit (изменить** ) и убедитесь, что для приложения задано значение **Target Azure Stack API**.
 
     ![Задайте для параметра target значение Azure Stack API](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/set-target-apis-1.png)
 
@@ -189,19 +189,19 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
     ![Подключение к службе хранилища Azure 2](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-azure-storage-2.png)
 
-6. В поле **подключение с именем и ключом** укажите **Отображаемое имя** , **имя учетной записи хранения** , **ключ учетной записи** хранения Azure. Выберите **другой** домен хранилища и укажите `<device name>.<DNS domain>` строку подключения. Если сертификат не был установлен в Обозреватель службы хранилища, установите флажок **использовать HTTP** . Выберите **Далее**.
+6. В поле **подключение с именем и ключом** укажите **Отображаемое имя**, **имя учетной записи хранения**, **ключ учетной записи** хранения Azure. Выберите **другой** домен хранилища и укажите `<device name>.<DNS domain>` строку подключения. Если сертификат не был установлен в Обозреватель службы хранилища, установите флажок **использовать HTTP** . Выберите **Далее**.
 
     ![Подключение с помощью имени и ключа](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-name-key-1.png)
 
 7. Проверьте **сводку подключения** и нажмите кнопку **подключить**.
 
-8. Учетная запись хранения появится на левой панели. Выберите и разверните учетную запись хранения. Выберите **контейнеры больших двоичных объектов** , щелкните правой кнопкой мыши и выберите **создать контейнер BLOB-объектов**. Укажите имя для контейнера больших двоичных объектов.
+8. Учетная запись хранения появится на левой панели. Выберите и разверните учетную запись хранения. Выберите **контейнеры больших двоичных объектов**, щелкните правой кнопкой мыши и выберите **создать контейнер BLOB-объектов**. Укажите имя для контейнера больших двоичных объектов.
 
 9. Выберите только что созданный контейнер и в правой области выберите **отправить > отправить файлы**. 
 
     ![Отправить VHD-файл 1](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/upload-vhd-file-1.png)
 
-10. Перейдите к виртуальному жесткому диску, который необходимо отправить в **выбранных файлах** , и укажите его. Выберите **Тип большого двоичного** объекта **страничный BLOB-объект** и щелкните **Отправить**.
+10. Перейдите к виртуальному жесткому диску, который необходимо отправить в **выбранных файлах**, и укажите его. Выберите **Тип большого двоичного** объекта **страничный BLOB-объект** и щелкните **Отправить**.
 
     ![Отправить VHD-файл 2](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/upload-vhd-file-2.png)
 
@@ -249,7 +249,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
               "value": "<Operating system corresponding to the VHD you upload can be Windows or Linux>"
         },
         "imageName": {
-            "value": "<Name for the VM iamge>"
+            "value": "<Name for the VM image>"
         },
         "imageUri": {
               "value": "<Path to the VHD that you uploaded in the Storage account>"
@@ -441,7 +441,7 @@ AzCopy /Source:\\hcsfs\scratch\vm_vhds\linux\ /Dest:http://sa191113014333.blob.d
 
 1. Укажите уникальное имя, имя сетевого интерфейса и имя ipconfig. 
 1. Введите имя пользователя, пароль и поддерживаемый размер виртуальной машины.
-1. Задайте одно и то же имя для **VnetName** , **subnetName** и **imageName** , как указано в параметрах для `CreateImageAndVnet.parameters.json` . Например, если вы задаете VnetName, subnetName и ImageName как **vnet1** , **subnet1** и **Image1** , не задерживайте эти значения для параметров в этом шаблоне.
+1. Задайте одно и то же имя для **VnetName**, **subnetName** и **imageName** , как указано в параметрах для `CreateImageAndVnet.parameters.json` . Например, если вы задаете VnetName, subnetName и ImageName как **vnet1**, **subnet1** и **Image1**, не задерживайте эти значения для параметров в этом шаблоне.
 1. Теперь вам потребуется статический IP-адрес для назначения виртуальной машине, которая находится в сети подсети, определенной выше. Замените **PrivateIPAddress** на этот адрес в файле параметров. Чтобы виртуальная машина получила IP-адрес от локального сервера DCHP, оставьте `privateIPAddress` значение пустым.  
     
     ```json
@@ -629,4 +629,4 @@ To verify if the environment variable for AzCopy was set correctly, take the fol
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Командлеты Azure Resource Manager](https://docs.microsoft.com/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)

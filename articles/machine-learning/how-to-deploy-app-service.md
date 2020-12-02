@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 06/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: 491fa39bed9e73a41f5a29a9040df052b6945552
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 5f3861d43715ed68116d25206efe4347ea96805c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578031"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452136"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Развертывание модели машинного обучения в службе приложений Azure (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "94578031"
 С помощью Машинное обучение Azure можно создавать образы DOCKER из обученных моделей машинного обучения. Этот образ содержит веб-службу, которая получает данные, отправляет ее в модель, а затем возвращает ответ. Службу приложений Azure можно использовать для развертывания образа и предоставляет следующие возможности.
 
 * Расширенная [Проверка подлинности](../app-service/configure-authentication-provider-aad.md) для усиления безопасности. Методы проверки подлинности включают как Azure Active Directory, так и многофакторную проверку подлинности.
-* Автоматическое [масштабирование](../azure-monitor/platform/autoscale-get-started.md?toc=%252fazure%252fapp-service%252ftoc.json) без необходимости повторного развертывания.
+* Автоматическое [масштабирование](../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json) без необходимости повторного развертывания.
 * [Поддержка TLS](../app-service/configure-ssl-certificate-in-code.md) для безопасной связи между клиентами и службой.
 
 Дополнительные сведения о функциях, предоставляемых службой приложений Azure, см. в статье [Обзор службы приложений](../app-service/overview.md).
@@ -70,7 +70,7 @@ ms.locfileid: "94578031"
 
     Дополнительные сведения о начальных сценариях см. в статье [Развертывание моделей в Машинном обучении Azure](how-to-deploy-and-where.md).
 
-* **Зависимости** , такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
+* **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
 
 Эти сущности инкапсулированы в __конфигурацию вывода__. В конфигурации зависимостей указываются скрипт входа и другие зависимости.
 
@@ -271,7 +271,7 @@ print(response.json())
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как настроить веб-приложение в [службе приложений](/azure/app-service/containers/) в документации по Linux.
-* Дополнительные сведения о масштабировании см. в статье [Приступая к работе с автомасштабированием в Azure](../azure-monitor/platform/autoscale-get-started.md?toc=%252fazure%252fapp-service%252ftoc.json).
+* Дополнительные сведения о масштабировании см. в статье [Приступая к работе с автомасштабированием в Azure](../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json).
 * [Используйте сертификат TLS/SSL в службе приложений Azure](../app-service/configure-ssl-certificate-in-code.md).
 * [Настройте приложение службы приложений для использования Azure Active Directory входа](../app-service/configure-authentication-provider-aad.md).
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)

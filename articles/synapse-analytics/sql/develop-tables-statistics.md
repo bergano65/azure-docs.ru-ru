@@ -11,16 +11,16 @@ ms.date: 04/19/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
-ms.openlocfilehash: b3e1c4b8dec0e62bb2a77939a36e38b61837033a
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: 52e3ea3e07a81495f64f70f72686154a02a654af
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94638858"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451798"
 ---
 # <a name="statistics-in-synapse-sql"></a>Статистика в Synapse SQL
 
-В этой статье приведены рекомендации и примеры создания и обновления статистики оптимизации запросов с помощью ресурсов синапсе SQL: выделенного пула SQL и бессерверного пула SQL (Предварительная версия).
+В этой статье приведены рекомендации и примеры создания и обновления статистики оптимизации запросов с помощью ресурсов синапсе SQL: выделенного пула SQL и бессерверного пула SQL.
 
 ## <a name="statistics-in-dedicated-sql-pool"></a>Статистика в выделенном пуле SQL
 
@@ -74,7 +74,7 @@ SET AUTO_CREATE_STATISTICS ON
 > [!NOTE]
 > Создание статистики регистрируется в журнале [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в контексте другого пользователя.
 
-При автоматическом создании статистики используется следующий формат: _WA_Sys_ <8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Созданную статистику можно просмотреть, выполнив команду [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+При автоматическом создании статистики используется следующий формат: _WA_Sys_<8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Созданную статистику можно просмотреть, выполнив команду [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ```sql
 DBCC SHOW_STATISTICS (<table_name>, <target>)
@@ -557,7 +557,7 @@ DBCC SHOW_STATISTICS (dbo.table1, stats_col1)
 - Пользовательская ошибка 2767 не поддерживается.
 
 
-## <a name="statistics-in-serverless-sql-pool-preview"></a>Статистика в бессерверном пуле SQL (Предварительная версия)
+## <a name="statistics-in-serverless-sql-pool"></a>Статистика в бессерверном пуле SQL
 
 Статистика создается по каждому отдельному столбцу в наборе данных (пути к хранилищу).
 
@@ -566,7 +566,7 @@ DBCC SHOW_STATISTICS (dbo.table1, stats_col1)
 
 ### <a name="why-use-statistics"></a>Для чего используется статистика?
 
-Более чем серверный пул SQL (Предварительная версия) знает о ваших данных, тем быстрее она может выполнять запросы к ней. Сбор статистики данных — один из самых важных факторов, позволяющих оптимизировать запросы. 
+Более чем серверный пул SQL знает о ваших данных, тем быстрее он может выполнять запросы к ней. Сбор статистики данных — один из самых важных факторов, позволяющих оптимизировать запросы. 
 
 Оптимизатор запросов пула SQL, который не зависит от сервера, является оптимизатором на основе стоимости. Он сравнивает стоимость разных планов запроса, а затем выбирает план с наименьшей стоимостью. В большинстве случаев он выбирает план, который выполняется быстрее всего. 
 

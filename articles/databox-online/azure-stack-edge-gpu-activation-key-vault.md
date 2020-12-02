@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 10/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 8957d8982a3bfe1da2811dc10d0c3e77a72fc288
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: ec7a32739940d53d976e73a7e170df96a0acc245
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367607"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449521"
 ---
 # <a name="azure-key-vault-integration-with-azure-stack-edge"></a>Интеграция Azure Key Vault с Azure Stackным ребром 
 
@@ -49,7 +49,7 @@ Azure Key Vault облачная служба используется для б
 
 - Во избежание случайного удаления блокировка ресурса включается в хранилище ключей. Обратимое удаление также включено в хранилище ключей, которое позволяет восстановить хранилище ключей в течение 90 дней при случайном удалении. Дополнительные сведения см. в статье [обзор Azure Key Vault обратимого удаления](../key-vault/general/soft-delete-overview.md) .
 
-    Если хранилище ключей случайно удалено, а срок действия защиты от очистки в 90 дней не истек, выполните следующие действия для [восстановления хранилища ключей](../key-vault/general/soft-delete-powershell.md#recovering-a-key-vault). 
+    Если хранилище ключей случайно удалено, а срок действия защиты от очистки в 90 дней не истек, выполните следующие действия для [восстановления хранилища ключей](../key-vault/general/key-vault-recovery.md#list-recover-or-purge-soft-deleted-secrets-keys-and-certificates). 
 
 - Если у вас уже есть ресурс Azure Stack ребра до того, как Azure Key Vault был интегрирован с Azure Stackным ресурсом, это не повлияет. Вы можете продолжить использовать существующий ресурс Azure Stack ребра. 
 
@@ -70,7 +70,6 @@ When you generate an activation key, the following events occur:
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [создании ключа активации](azure-stack-edge-gpu-deploy-prep.md#get-the-activation-key).
-

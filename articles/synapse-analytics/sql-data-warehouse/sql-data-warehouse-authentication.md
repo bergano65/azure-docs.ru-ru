@@ -1,6 +1,6 @@
 ---
-title: Аутентификация
-description: Узнайте, как пройти проверку подлинности в Azure Synapse Analytics, используя проверку подлинности Azure Active Directory или SQL Server.
+title: Проверка подлинности выделенного пула SQL (ранее — хранилище данных SQL)
+description: Узнайте, как выполнить аутентификацию в выделенном пуле SQL (ранее — в хранилище данных SQL) в Azure синапсе Analytics с помощью Azure Active Directory (Azure AD) или проверки подлинности SQL Server.
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -12,24 +12,24 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tag: azure-synapse
-ms.openlocfilehash: 29709dc03ee3a06bdf2aec2587909a08ee13504e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b2b5ca024046c5bc46fff756c55688d3ff0cfea1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85206736"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451973"
 ---
-# <a name="authenticate-to-azure-synapse-analytics"></a>Проверка подлинности в Azure Synapse Analytics
+# <a name="authenticate-to-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Проверка подлинности в выделенном пуле SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics
 
-Узнайте, как пройти аутентификацию в хранилище данных SQL Azure с помощью проверки подлинности Azure Active Directory (AAD) или SQL Server.
+Узнайте, как выполнить аутентификацию в выделенном пуле SQL (ранее — в хранилище данных SQL) в Azure синапсе с помощью Azure Active Directory (Azure AD) или SQL Server проверки подлинности.
 
-Для подключения к пулу SQL необходимо передать учетные данные безопасности для проверки подлинности. После установки подключения некоторые его параметры настраиваются при установке сеанса запроса.  
+Для подключения к выделенному пулу SQL (ранее — ХРАНИЛИЩу данных SQL) необходимо передать учетные данные безопасности для проверки подлинности. После установки подключения некоторые его параметры настраиваются при установке сеанса запроса.  
 
-Дополнительные сведения о безопасности и о том, как разрешить подключения к хранилищу данных, см. в статье [Защита базы данных в базе данных](sql-data-warehouse-overview-manage-security.md).
+Дополнительные сведения о безопасности и о том, как включить подключения к выделенному пулу SQL (ранее — SQL DW), см. [в документации по защите базы данных](sql-data-warehouse-overview-manage-security.md).
 
 ## <a name="sql-authentication"></a>Проверка подлинности SQL
 
-Для подключения к пулу SQL необходимо предоставить следующие сведения.
+Для подключения к выделенному пулу SQL (ранее — хранилище данных SQL) необходимо предоставить следующие сведения:
 
 * Полное имя сервера
 * Тип проверки подлинности SQL
@@ -45,9 +45,9 @@ ms.locfileid: "85206736"
 > [!NOTE]
 > Использование инструкции Transact-SQL **USE MyDatabase;** для изменения базы данных, к которой осуществляется подключение, не поддерживается. Инструкции по подключению к пулу SQL с помощью Visual Studio и SSDT см. в [этой статье](sql-data-warehouse-query-visual-studio.md).
 
-## <a name="azure-active-directory-aad-authentication"></a>Аутентификация Azure Active Directory (AAD)
+## <a name="azure-active-directory-authentication"></a>Проверка подлинности Azure Active Directory
 
-Проверка подлинности [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) — это механизм подключения к пулу SQL с помощью удостоверений в Azure Active Directory (Azure AD). С помощью аутентификации Azure Active Directory можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Централизованное управление удостоверениями позволяет использовать единое расположение для управления пользователями Azure Synapse и упрощает управление разрешениями.
+Проверка подлинности [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) — это механизм подключения к пулу SQL с помощью удостоверений в Azure Active Directory (Azure AD). С помощью аутентификации Azure Active Directory можно централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Централизованное управление ИДЕНТИФИКАТОРами предоставляет единое место для управления выделенными пользователями пула SQL (ранее — SQL DW) и упрощает управление разрешениями.
 
 ### <a name="benefits"></a>Преимущества
 
@@ -57,7 +57,7 @@ ms.locfileid: "85206736"
 * возможность остановить увеличение количества пользователей на серверах;
 * изменение паролей в одном расположении;
 * управление разрешениями базы данных с помощью внешних групп Azure AD;
-* Исключает хранение паролей путем включения встроенной проверки подлинности Windows и данные об видов проверки подлинности, поддерживаемых Azure Active Directory.
+* возможность исключить хранение паролей с помощью встроенной проверки подлинности Windows и других видов аутентификации, поддерживаемых Azure Active Directory;
 * для проверки подлинности удостоверений на уровне базы данных используются данные пользователей автономной базы данных;
 * поддержка аутентификации на основе маркеров для приложений, подключающихся к пулу SQL;
 * поддержка Многофакторной идентификации с помощью универсальной аутентификации Active Directory для различных инструментов, включая [SQL Server Management Studio](../../azure-sql/database/authentication-mfa-ssms-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [SQL Server Data Tools](/sql/ssdt/azure-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).

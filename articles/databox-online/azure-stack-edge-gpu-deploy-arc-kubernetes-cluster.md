@@ -6,20 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 09/01/2020
+ms.date: 11/12/2020
 ms.author: alkohli
-ms.openlocfilehash: c38b0b1d3a2e71502ac86bf46771ecfb637ba15d
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 342f6a2c4761104823694f2181b3ffa8726a441e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952222"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449414"
 ---
 # <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-pro-gpu-device"></a>Включение службы "Дуга Azure" в кластере Kubernetes на устройстве с Azure Stack ребра Pro GPU
 
 В этой статье показано, как включить дугу Azure в существующем кластере Kubernetes на устройстве с Azure Stack погранично Pro. 
 
-Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на устройстве на Azure Stack пограничной Pro](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба "Дуга Azure Kubernetes (Предварительная версия)"](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
+Эта процедура предназначена для тех, кто ознакомился с [Kubernetes рабочими нагрузками на устройстве на Azure Stack пограничной Pro](azure-stack-edge-gpu-kubernetes-workload-management.md) и знаком с концепциями того, [что такое служба "Дуга Azure Kubernetes (Предварительная версия)"](../azure-arc/kubernetes/overview.md).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -39,14 +39,13 @@ ms.locfileid: "91952222"
 
 1. У вас есть клиентская система Windows, которая будет использоваться для доступа к устройству Azure Stack погранично Pro.
   
-    - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+    - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows).
     
     - Также можно использовать любой другой клиент с [поддерживаемой операционной системой](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) . В этой статье описывается процедура использования клиента Windows. 
     
 1. Вы выполнили процедуру, описанную в статье [доступ к кластеру Kubernetes на устройстве с Azure Stack ребр Pro](azure-stack-edge-gpu-create-kubernetes-cluster.md). Вы выполнили следующие задачи:
     
-    - Установлено `kubectl` на клиенте  <!--and saved the `kubeconfig` file with the user configuration to C:\\Users\\&lt;username&gt;\\.kube. -->
-    
+    - Установлен `kubectl` на клиенте.    
     - Убедитесь, что `kubectl` версия клиента отклонена, но не имеет более одной версии из главной версии Kubernetes, работающей на устройстве Azure Stack погранично Pro. 
       - Используйте `kubectl version` для проверки версии kubectl, работающей на клиенте. Запишите полную версию.
       - В локальном пользовательском интерфейсе устройства Azure Stack ребра Pro перейдите в раздел **Обновление программного обеспечения** и запишите номер версии сервера Kubernetes. 
@@ -55,7 +54,6 @@ ms.locfileid: "91952222"
       
       - Убедитесь, что эти две версии совместимы. 
 
-<!-- az cli version requirements-->
 
 ## <a name="register-kubernetes-resource-providers"></a>Регистрация поставщиков ресурсов Kubernetes
 
@@ -90,7 +88,7 @@ ms.locfileid: "91952222"
 
     `az ad sp create-for-rbac --skip assignment --name "<Informative name for service principal>"`  
 
-    Сведения о том, как войти в `az cli` , [запустите Cloud Shell в портал Azure](../cloud-shell/quickstart-powershell.md?view=azure-cli-latest#start-cloud-shell)
+    Сведения о том, как войти в `az cli` , [запустите Cloud Shell в портал Azure](../cloud-shell/quickstart-powershell.md#start-cloud-shell)
 
     Ниже приведен пример. 
     
@@ -129,7 +127,7 @@ ms.locfileid: "91952222"
     }
     PS /home/user>
     ```
-    Дополнительные сведения о создании субъекта-службы и выполнении назначения ролей см. в статье [Создание субъекта-службы адаптации с поддержкой ARC в Azure](https://docs.microsoft.com/azure/azure-arc/kubernetes/create-onboarding-service-principal).
+    Дополнительные сведения о создании субъекта-службы и выполнении назначения ролей см. в статье [Создание субъекта-службы адаптации с поддержкой ARC в Azure](../azure-arc/kubernetes/create-onboarding-service-principal.md).
 
 
 ## <a name="enable-arc-on-kubernetes-cluster"></a>Включение Arc в кластере Kubernetes
@@ -142,7 +140,10 @@ ms.locfileid: "91952222"
 
     `Set-HcsKubernetesAzureArcAgent -SubscriptionId "<Your Azure Subscription Id>" -ResourceGroupName "<Resource Group Name>" -ResourceName "<Azure Arc resource name (shouldn't exist already)>" -Location "<Region associated with resource group>" -TenantId "<Tenant Id of service principal>" -ClientId "<App id of service principal>" -ClientSecret "<Password of service principal>"`
 
-    Чтобы развернуть дугу Azure на устройстве Azure Stack пограничной Pro, убедитесь, что вы используете [поддерживаемый регион для дуги Azure](../azure-arc/kubernetes/overview.md#supported-regions). В настоящее время доступна предварительная версия Azure ARC. Кроме того, можно определить точное имя региона для передачи в командлет с помощью `az account list-locations` команды.
+
+    > [!NOTE]
+    > - Чтобы развернуть дугу Azure на устройстве, убедитесь, что вы используете [поддерживаемый регион для дуги Azure](../azure-arc/kubernetes/overview.md#supported-regions). 
+    > - Используйте `az account list-locations` команду, чтобы выяснить точное имя расположения для передачи в `Set-HcsKubernetesAzureArcAgent` командлет. Имена расположений обычно форматируются без пробелов.
     
     Например:
    
@@ -221,6 +222,9 @@ ms.locfileid: "91952222"
 
     `Remove-HcsKubernetesAzureArcAgent` 
 
+
+> [!NOTE]
+> По умолчанию, когда ресурс `yamls` удаляется из репозитория Git, соответствующие ресурсы не удаляются из кластера Kubernetes. Необходимо задать `--sync-garbage-collection`  в Arc операторпарамс, чтобы разрешить удаление ресурсов при удалении из репозитория Git. Дополнительные сведения см. [в разделе Удаление конфигурации](../azure-arc/kubernetes/use-gitops-connected-cluster.md#additional-parameters) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

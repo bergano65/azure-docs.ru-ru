@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 11/18/2020
 ms.custom: generated
-ms.openlocfilehash: ceb1aea1edcc4916fdd802673c3145b12de01801
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 8225d50e9991ff632fb831c63e194551dbe02b31
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980921"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451874"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -22,9 +22,9 @@ ms.locfileid: "94980921"
 
 Щелкните имя поставщика ресурсов в следующей таблице, чтобы просмотреть список операций.
 
-## <a name="all"></a>Все
+## <a name="all"></a>All
 
-| Общее |
+| Общие сведения |
 | --- |
 | [Microsoft.Addons](#microsoftaddons) |
 | [Microsoft.Marketplace](#microsoftmarketplace) |
@@ -40,7 +40,7 @@ ms.locfileid: "94980921"
 | [Microsoft.Cdn](#microsoftcdn) |
 | [Microsoft.ClassicNetwork](#microsoftclassicnetwork) |
 | [Microsoft.Network](#microsoftnetwork) |
-| **Хранилище** |
+| **Память** |
 | [Microsoft.ClassicStorage](#microsoftclassicstorage) |
 | [Microsoft.DataBox](#microsoftdatabox) |
 | [Microsoft.ImportExport](#microsoftimportexport) |
@@ -88,7 +88,7 @@ ms.locfileid: "94980921"
 | [Microsoft.CognitiveServices](#microsoftcognitiveservices) |
 | [Microsoft.MachineLearning](#microsoftmachinelearning) |
 | [Microsoft.MachineLearningServices](#microsoftmachinelearningservices) |
-| **Интернет вещей** |
+| **"Интернет вещей"** |
 | [Microsoft.Devices](#microsoftdevices) |
 | [Microsoft.IoTCentral](#microsoftiotcentral) |
 | [Microsoft.NotificationHubs](#microsoftnotificationhubs) |
@@ -161,7 +161,7 @@ ms.locfileid: "94980921"
 | [Microsoft.DigitalTwins](#microsoftdigitaltwins) |
 
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 ### <a name="microsoftaddons"></a>Microsoft.Addons
 
@@ -271,7 +271,7 @@ ms.locfileid: "94980921"
 > | Microsoft. support/Суппорттиккетс/связь/чтение | Перечисление одного или всех сообщений в службу поддержки |
 > | Microsoft. support/Суппорттиккетс/связь/запись | Добавляет новый обмен информацией в службу поддержки |
 
-## <a name="compute"></a>Службы вычислений
+## <a name="compute"></a>Вычисления
 
 ### <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 
@@ -1349,7 +1349,7 @@ ms.locfileid: "94980921"
 > | Microsoft.Network/vpnsites/delete | Удаление ресурса сети VPN. |
 > | Microsoft. Network/Впнситес/Впнсителинкс/чтение | Возвращает ссылку на VPN-сайт |
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 ### <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
@@ -3862,7 +3862,7 @@ ms.locfileid: "94980921"
 
 ### <a name="microsoftsql"></a>Microsoft.Sql
 
-Служба Azure: [база данных SQL Azure](../azure-sql/database/index.yml), [Azure SQL управляемый экземпляр](../azure-sql/managed-instance/index.yml), [Azure синапсе Analytics (ранее — хранилище данных SQL)](../synapse-analytics/sql-data-warehouse/index.yml) .
+Служба Azure: [база данных SQL Azure](../azure-sql/database/index.yml), [Azure SQL управляемый экземпляр](../azure-sql/managed-instance/index.yml), [Azure синапсе Analytics](../synapse-analytics/index.yml)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |
@@ -9734,7 +9734,7 @@ ms.locfileid: "94980921"
 > | Microsoft.Intune/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | Microsoft.Intune/diagnosticsettingscategories/read | Чтение категорий параметра диагностики. |
 
-## <a name="other"></a>Другое
+## <a name="other"></a>Другие
 
 ### <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 

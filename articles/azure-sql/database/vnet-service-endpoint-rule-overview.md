@@ -11,17 +11,17 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 97be3bf0ecec20c4bf2e1633f893c9aa0d9ba49d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2ff8f6134f74e0eda355342a7282e8be81a3d8df
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020288"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450242"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая определяет, принимает ли сервер для баз данных и эластичных пулов в [базе данных SQL Azure](sql-database-paas-overview.md) или для баз данных в [Azure синапсе](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) связь, отправляемую из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему функция правила виртуальной сети иногда является лучшим вариантом для безопасного подключения к базе данных в базе данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL).
+*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая определяет, принимает ли сервер для баз данных и эластичных пулов в [базе данных SQL Azure](sql-database-paas-overview.md) или для баз данных в [Azure синапсе](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) связь, отправляемую из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему функция правила виртуальной сети иногда является лучшим вариантом для безопасного подключения к базе данных в базе данных SQL Azure и Azure синапсе Analytics.
 
 > [!NOTE]
 > Эта статья относится как к базе данных SQL Azure, так и к Azure синапсе Analytics. Для простоты термин "база данных" применяется к обеим из них. Аналогичным образом, "сервером" называется [логический сервер SQL Server](logical-servers.md), на котором размещены База данных SQL Azure и Azure Synapse Analytics.

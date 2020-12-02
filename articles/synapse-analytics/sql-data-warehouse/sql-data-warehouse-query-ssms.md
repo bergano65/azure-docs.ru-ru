@@ -1,6 +1,6 @@
 ---
-title: Подключение к SSMS
-description: Используйте SQL Server Management Studio (SSMS) для подключения к выделенному пулу SQL и выполнения запросов к нему в Azure синапсе Analytics.
+title: Подключение к выделенному пулу SQL (ранее — хранилище данных SQL) с помощью SSMS
+description: Используйте SQL Server Management Studio (SSMS) для подключения и запроса выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c2fab8f02f31897a2e3d38094b9bd365f8e921e9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 950cb4c40a534f252ec8b0daa5a57eb87c098450
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325323"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450471"
 ---
-# <a name="connect-to-a-dedicated-sql-pool-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Подключение к выделенному пулу SQL в Azure синапсе Analytics с помощью SQL Server Management Studio (SSMS)
+# <a name="connect-to-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Подключение к выделенному пулу SQL (ранее SQL DW) в Azure синапсе Analytics с помощью SQL Server Management Studio (SSMS)
 
 > [!div class="op_single_selector"]
 >
@@ -28,17 +28,17 @@ ms.locfileid: "93325323"
 > * [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md)
 > * [SSMS](sql-data-warehouse-query-ssms.md)
 
-Используйте SQL Server Management Studio (SSMS) для подключения к хранилищу данных в Azure синапсе и выполнения запросов к нему.
+Используйте SQL Server Management Studio (SSMS) для подключения и запроса выделенного пула SQL (ранее — хранилища данных SQL).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Существующий выделенный пул SQL. Чтобы создать его, см. раздел [Создание выделенного пула SQL](create-data-warehouse-portal.md).
+* Существующий выделенный пул SQL. Чтобы создать его, см. раздел [Создание выделенного пула SQL (ранее — хранилище данных SQL)](create-data-warehouse-portal.md).
 * Установленный SQL Server Management Studio (SSMS). [Скачайте SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) бесплатно, если у вас его еще нет.
-* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к выделенному пулу SQL](sql-data-warehouse-connect-overview.md).
+* Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [выделенный пул SQL (ранее — хранилище данных SQL)](sql-data-warehouse-connect-overview.md).
 
-## <a name="1-connect-to-your-dedicated-sql-pool"></a>1. подключение к выделенному пулу SQL
+## <a name="1-connect-to-your-dedicated-sql-pool-formerly-sql-dw"></a>1. подключение к выделенному пулу SQL (ранее — хранилище данных SQL)
 
 1. Откройте SSMS.
 2. Откройте обозреватель объектов, выбрав **файл**  >  **подключить обозреватель объектов**.
