@@ -7,12 +7,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: f0546a76974e429b625ba03fdf4598da7d32c990
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8346edd0f6016f1751a392213e5d6321f875baf2
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433355"
+ms.locfileid: "96455649"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Часто задаваемые вопросы о переходе от Портал Cloud Partner в центр партнеров
 
@@ -85,8 +85,8 @@ ms.locfileid: "96433355"
 | Dynamics 365 for Operations | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание Dynamics 365 для операций с предложениями](partner-center-portal/create-new-operations-offer.md). |
 | Приложение Power BI | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [создание Power BI приложения для AppSource](partner-center-portal/create-power-bi-app-offer.md). |
 | Модуль IoT Edge | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание, Настройка и публикация предложения модуля IOT EDGE в Azure Marketplace](partner-center-portal/azure-iot-edge-module-creation.md). |
-| Контейнер | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения контейнера Azure](partner-center-portal/create-azure-container-offer.md). |
-| Консультационная услуга | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения службы консультационных услуг](partner-center-portal/create-consulting-service-offer.md). |
+| Контейнер | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения контейнера Azure](./create-azure-container-offer.md). |
+| Консультационная услуга | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения службы консультационных услуг](./create-consulting-service-offer.md). |
 | Управляемая служба | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения управляемой службы](partner-center-portal/create-new-managed-service-offer.md). |
 | Управляемая служба Dynamics NAV | Нет | Корпорация Майкрософт изменила управляемую службу Dynamics NAV на [dynamics 365 Business Central](/dynamics365/business-central/), поэтому мы не перечисленными предложениями динамической службы Dynamics NAV из AppSource. Эти предложения больше не обнаруживаются клиентами и не были перемещены в центр партнеров. Чтобы сделать ваши предложения доступными в AppSource, адаптируйте их к предложениям Dynamics 365 Business Central и отправьте их в [Центр партнеров](https://partner.microsoft.com/). Дополнительные сведения см. в статье [Создание предложения Dynamics 365 Business Central](partner-center-portal/create-new-business-central-offer.md). |
 | Cortana Intelligence | Нет | Корпорация Майкрософт изменила карту «Road» для Cortana Intelligence, так что мы не перечисленными Cortana Intelligence прямых предложений из AppSource. Эти предложения больше не обнаруживаются клиентами и не были перемещены в центр партнеров. Чтобы сделать ваши предложения доступными в коммерческом магазине, адаптируйте предложения к программному обеспечению как услуга (SaaS) и отправьте их в [Центр партнеров](https://partner.microsoft.com/). Дополнительные сведения см. [в контрольном списке создания предложений SaaS в центре партнеров](./plan-saas-offer.md). |

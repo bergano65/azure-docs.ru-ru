@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/18/2020
-ms.openlocfilehash: c2a9dbb5fa821d408835cd1bcbf3e6afdade36e1
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: 17648b9bc973285764bb0bd6242506122a043780
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317492"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454258"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -80,11 +80,11 @@ Customer-Managed конфигурация ключа не поддерживае
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Недоступно
+Н/Д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -155,7 +155,7 @@ Authorization: Bearer <token>
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -279,7 +279,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -323,7 +323,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -375,7 +375,7 @@ Content-type: application/json
   
   # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-  Недоступно
+  Н/Д
 
   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -437,7 +437,7 @@ Content-type: application/json
 
   # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-  Недоступно
+  Н/Д
 
   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -470,7 +470,7 @@ Content-type: application/json
 
   # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-  Недоступно
+  Н/Д
 
   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -511,11 +511,11 @@ Content-type: application/json
 
   # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-  Недоступно
+  Н/Д
 
   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-  Недоступно
+  Н/Д
 
   # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -545,7 +545,7 @@ Content-type: application/json
 
   # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-  Недоступно
+  Н/Д
 
   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -574,7 +574,7 @@ Content-type: application/json
 
   # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-  Недоступно
+  Н/Д
 
   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -605,7 +605,7 @@ Content-type: application/json
 
   # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-  Недоступно
+  Н/Д
 
   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -656,6 +656,12 @@ Content-type: application/json
 
 - Ссылка на рабочую область кластера завершится ошибкой, если она связана с другим кластером.
 
+- В настоящее время защищенное хранилище недоступно в Китае. 
+
+- [Двойное шифрование](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) настраивается автоматически для кластеров, созданных с 2020 октября в поддерживаемых регионах. Вы можете проверить, настроено ли для кластера двойное шифрование с помощью запроса GET в кластере, и наблюдать за `"isDoubleEncryptionEnabled"` значением свойства — `true` для кластеров с включенным двойным шифрованием. 
+  - При создании кластера и получении сообщения об ошибке "<имя региона> не поддерживает двойное шифрование для кластеров", вы по-прежнему можете создать кластер без двойного шифрования. Добавьте `"properties": {"isDoubleEncryptionEnabled": false}` свойство в текст запроса остальной части.
+  - Параметр двойного шифрования нельзя изменить после создания кластера.
+
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 - Поведение при доступности Key Vault:
@@ -682,10 +688,6 @@ Content-type: application/json
 - Некоторые операции являются длительными и могут занять некоторое время — это создание кластера, обновление ключа кластера и удаление кластера. Проверить состояние операции можно двумя способами.
   1. При использовании функции "ОСТАВШАЯся" скопируйте значение Azure-AsyncOperation URL-адрес из ответа и выполните [проверку состояния асинхронных операций](#asynchronous-operations-and-status-check).
   2. Отправьте запрос GET в кластер или рабочую область и просмотрите ответ. Например, несвязанная Рабочая область не будет иметь *клустерресаурцеид* в разделе " *компоненты*".
-
-- [Двойное шифрование](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) настраивается автоматически для кластеров, созданных с 2020 октября в поддерживаемых регионах. Вы можете проверить, настроено ли для кластера двойное шифрование с помощью запроса GET в кластере, и наблюдать за `"isDoubleEncryptionEnabled"` значением свойства — `true` для кластеров с включенным двойным шифрованием. 
-  - При создании кластера и получении сообщения об ошибке "<имя региона> не поддерживает двойное шифрование для кластеров", вы по-прежнему можете создать кластер без двойного шифрования. Добавьте `"properties": {"isDoubleEncryptionEnabled": false}` в текст запроса на оставшуюся часть.
-  - Параметр двойного шифрования нельзя изменить после создания кластера.
 
 - Сообщения об ошибках
   

@@ -12,20 +12,20 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/27/2019
-ms.openlocfilehash: 094e40fe55e1ba51b0539d740ecb449a8327d6a6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4f90299daed46d06dad9ab37103e3b8f53763ed4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841246"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454387"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Настройка Многофакторной идентификации для SQL Server Management Studio и Azure AD
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-В этой статье показано, как использовать многофакторную идентификацию (MFA) Azure Active Directory (Azure AD) с SQL Server Management Studio (SSMS). Azure AD MFA можно использовать при подключении SSMS или SqlPackage.exe к [базе данных SQL Azure](sql-database-paas-overview.md), [управляемый экземпляр SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md) и [Azure синапсе Analytics (ранее — хранилище данных SQL)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Общие сведения о многофакторной проверке подлинности см. [в статье универсальная проверка подлинности с использованием базы данных SQL, sql управляемый экземпляр и Azure синапсе (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md).
+В этой статье показано, как использовать многофакторную идентификацию (MFA) Azure Active Directory (Azure AD) с SQL Server Management Studio (SSMS). Azure AD MFA можно использовать при подключении SSMS или SqlPackage.exe к [базе данных SQL Azure](sql-database-paas-overview.md), [управляемый экземпляр SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md) и [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Общие сведения о многофакторной проверке подлинности см. [в статье универсальная проверка подлинности с использованием базы данных SQL, sql управляемый экземпляр и Azure синапсе (поддержка SSMS для MFA)](../database/authentication-mfa-ssms-overview.md).
 
 > [!IMPORTANT]
-> В оставшейся части этой статьи в качестве баз данных в базе данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе (прежнее хранилище данных SQL) упоминается общедоступный [сервер, на](logical-servers.md) котором размещены базы данных SQL Azure и Azure синапсе.
+> В оставшейся части этой статьи в качестве баз данных используются базы данных SQL Azure, Azure SQL Управляемый экземпляр и Azure синапсе, и сервер ссылается на [сервер](logical-servers.md) , на котором размещены базы данных SQL Azure и Azure синапсе.
 
 ## <a name="configuration-steps"></a>Этапы настройки
 

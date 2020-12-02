@@ -12,18 +12,18 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: c5caf48dd4e2860ec5f4815eb38629ad66391a2c
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 5558480f568e802637deb30c9f1b41c00826c9b5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990114"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454505"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-В этой статье показано, как создать и заполнить экземпляр Azure Active Directory (Azure AD), а затем использовать Azure AD с [базой данных SQL Azure](sql-database-paas-overview.md), [управляемый экземпляр SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md)и [Azure синапсе Analytics (ранее — хранилище данных SQL)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Общие сведения см. в разделе [Azure Active Directoryная проверка подлинности](authentication-aad-overview.md).
+В этой статье показано, как создать и заполнить экземпляр Azure Active Directory (Azure AD), а затем использовать Azure AD с [базой данных SQL Azure](sql-database-paas-overview.md), [управляемый экземпляр SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md)и [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Общие сведения см. в разделе [Azure Active Directoryная проверка подлинности](authentication-aad-overview.md).
 
 ## <a name="azure-ad-authentication-methods"></a>Методы проверки подлинности Azure AD
 

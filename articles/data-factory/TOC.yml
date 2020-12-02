@@ -257,9 +257,9 @@
           href: connector-azure-file-storage.md
         - name: База данных SQL Azure
           href: connector-azure-sql-database.md
-        - name: Управляемый экземпляр SQL Azure
+        - name: "Управляемый экземпляр SQL\_Azure"
           href: connector-azure-sql-managed-instance.md
-        - name: "Azure Synapse Analytics (прежнее название\_— Хранилище данных SQL)"
+        - name: Azure Synapse Analytics
           href: connector-azure-sql-data-warehouse.md
         - name: Хранилище таблиц Azure
           href: connector-azure-table-storage.md

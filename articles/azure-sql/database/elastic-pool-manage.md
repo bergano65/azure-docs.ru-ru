@@ -10,12 +10,12 @@ ms.author: moslake
 ms.reviewer: sstein
 ms.date: 03/12/2019
 ms.custom: seoapril2019 sqldbrb=1, devx-track-azurecli
-ms.openlocfilehash: 5916a687c4eff4c6c8890b14a8c204cbabc145ea
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9c9af6e3bc3dfd798f4b3f0cad9319aa573c425d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792197"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455996"
 ---
 # <a name="manage-elastic-pools-in-azure-sql-database"></a>Управление эластичными пулами в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "92792197"
 
 ## <a name="azure-portal"></a>Портал Azure
 
-Все параметры пула можно найти в колонке **Настройка пула** . Чтобы получить здесь, найдите эластичный пул в портал Azure и щелкните **Настройка пула** в верхней части колонки или в меню ресурсов слева.
+Все параметры пула можно найти в колонке **Настройка пула**. Чтобы получить здесь, найдите эластичный пул в портал Azure и щелкните **Настройка пула** в верхней части колонки или в меню ресурсов слева.
 
 Здесь можно внести любое сочетание следующих изменений и сохранить их массово:
 
@@ -88,19 +88,19 @@ ms.locfileid: "92792197"
 > С помощью Transact-SQL невозможно создать, обновить или удалить пул эластичных баз данных SQL Azure. Вы можете добавить или удалить базы данных из эластичного пула, а также вернуть сведения о существующих эластичных пулах, используя динамические административные представления.
 >
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/create-database-azure-sql-database)|Создает новую базу данных в существующем пуле или отдельную базу данных. Для создания новой базы данных необходимо подключение к базе данных master.|
 | [CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/alter-database-azure-sql-database) |Перемещает базы данных из, в или между эластичными пулами.|
 |[DROP DATABASE (Transact-SQL)](/sql/t-sql/statements/drop-database-transact-sql)|Удаляет базу данных.|
 |[sys.elastic_pool_resource_stats (база данных SQL Azure)](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database)|Возвращает статистику использования ресурсов для всех эластичных пулов на сервере. Для каждого эластичного пула имеется одна строка на каждые 15 секунд окна отчета (четыре строки в минуту). Сюда входят сведения об использовании ЦП, хранилища, операциях ввода-вывода, журнал, а также использование параллельных запросов и сеансов всеми базами данных в пуле.|
-|[sys.database_service_objectives (база данных SQL Azure)](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Возвращает выпуск (уровень служб), Цель обслуживания (ценовая категория) и имя эластичного пула (если таковые имеются) для базы данных в базе данных SQL или Azure синапсе Analytics (ранее — хранилище данных SQL). При входе в базу данных master на сервере возвращает сведения обо всех базах данных. Для Azure синапсе Analytics необходимо подключиться к базе данных master.|
+|[sys.database_service_objectives (база данных SQL Azure)](/sql/relational-databases/system-catalog-views/sys-database-service-objectives-azure-sql-database)|Возвращает выпуск (уровень служб), Цель обслуживания (ценовая категория) и имя эластичного пула (если таковые имеются) для базы данных в базе данных SQL или Azure синапсе Analytics. При входе в базу данных master на сервере возвращает сведения обо всех базах данных. Для Azure синапсе Analytics необходимо подключиться к базе данных master.|
 
 ## <a name="rest-api"></a>REST API
 
 Для создания эластичных пулов и баз данных в пуле для базы данных SQL и управления ими используйте эти запросы REST API.
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 |[Создание или обновление эластичных пулов](/rest/api/sql/elasticpools/createorupdate)|Создает эластичный пул или обновляет имеющийся.|
 |[Пулы эластичных БД — удаление](/rest/api/sql/elasticpools/delete)|Удаляет эластичный пул.|

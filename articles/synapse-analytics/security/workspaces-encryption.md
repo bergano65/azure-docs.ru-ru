@@ -8,17 +8,17 @@ ms.subservice: security
 ms.date: 11/19/2020
 ms.author: nanditav
 ms.reviewer: jrasnick
-ms.openlocfilehash: 17dbdbbef45e0068601835197a1177ee20d98ca3
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: a6ea3925f3b6bc786be6a4855b2f3bfb6b402d70
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296798"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455172"
 ---
-# <a name="encryption-for-azure-synapse-analytics-workspaces-preview"></a>Шифрование для Azure синапсе Analytics (Предварительная версия рабочих областей)
+# <a name="encryption-for-azure-synapse-analytics-workspaces"></a>Шифрование для рабочих областей Azure синапсе Analytics
 
 В этой статье описываются:
-* Шифрование неактивных данных в рабочих областях Azure синапсе Analytics.
+* Шифрование неактивных данных в рабочих областях синапсе Analytics.
 * Настройка рабочих областей синапсе для включения шифрования с помощью управляемого клиентом ключа.
 * Управление ключами, используемыми для шифрования данных в рабочих областях.
 
@@ -86,7 +86,7 @@ ms.locfileid: "96296798"
 
 SQL прозрачное шифрование данных (TDE) доступен для выделенных пулов SQL в рабочих областях, для которых *не* включено двойное шифрование. В рабочей области этого типа ключ, управляемый службой, используется для обеспечения двойного шифрования данных в выделенных пулах SQL. TDE с ключом, управляемым службой, можно включить или отключить для отдельных выделенных пулов SQL.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование встроенных политик Azure для реализации защиты шифрования для рабочих областей синапсе](../policy-reference.md)
 

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperfq1, automl
-ms.openlocfilehash: f4546433f5bd20e2f001d6d868d8adfb4b9bf8c0
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: b03eb8015d318471cf8bf11fc5a3cd94044d2cfe
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920378"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455586"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -46,7 +46,7 @@ ms.locfileid: "94920378"
     Для установки пакета SDK можно либо 
     * Создайте вычислительный экземпляр, который автоматически устанавливает пакет SDK и предварительно настроен для рабочих процессов машинного обучения. Дополнительные сведения см. [в разделе создание машинное обучение Azure вычислительных экземпляров и управление ими](how-to-create-manage-compute-instance.md) . 
 
-    * [Установите `automl` пакет самостоятельно](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md#setup-using-a-local-conda-environment), который включает установку пакета SDK [по умолчанию](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py#default-install&preserve-view=true) .
+    * [Установите `automl` пакет самостоятельно](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md#setup-using-a-local-conda-environment), который включает установку пакета SDK [по умолчанию](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py#default-install) .
 
 ## <a name="select-your-experiment-type"></a>Выбор типа эксперимента
 
@@ -305,7 +305,7 @@ automl_classifier = AutoMLConfig(
 
 Существует несколько параметров, которые можно определить в Аутомлконфиг, чтобы завершить эксперимент.
 
-|Критерии| description;
+|Критерии| description
 |----|----
 Без &nbsp; критериев | Если вы не определили никаких параметров выхода, эксперимент будет продолжен до тех пор, пока не будет выполнен дальнейший переход к основной метрике.
 После &nbsp; &nbsp; длительного &nbsp; &nbsp; времени| Используйте `experiment_timeout_minutes` в параметрах, чтобы определить время, в течение которого ваш эксперимент должен продолжать выполняться. <br><br> Чтобы избежать сбоев при экспериментах, не менее 15 минут или 60 минут, если строка по размеру столбца превышает 10 000 000.

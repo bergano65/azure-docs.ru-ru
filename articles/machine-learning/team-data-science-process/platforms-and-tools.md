@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d3f6a48815519499ddc39dcc12cafe0fe95e70e0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4ba7b8af9b50b9173f5e2040bb8b623eeafdd538
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023811"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453861"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Платформы и средства для проектов обработки и анализа данных
 
@@ -25,7 +25,7 @@ ms.locfileid: "96023811"
 
 - виртуальные машины для обработки и анализа данных (Windows и Linux CentOS);
 - кластеры Spark в HDInsight;
-- Synapse Analytics
+- Azure Synapse Analytics
 - Azure Data Lake;
 - кластеры Hive в HDInsight;
 - Хранилище файлов Azure

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: 87f27f316914f3efce5a750f50471c65dceca84e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9863ed24da9e427f885a4794bda7e103b0c1cc8e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127847"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455457"
 ---
 # <a name="partner-center-submission-api-to-onboard-azure-apps-in-partner-center"></a>API отправки Центра партнеров для подключения приложений Azure в Центре партнеров
 
@@ -41,9 +41,9 @@ ms.locfileid: "93127847"
 >Это действие выполняется только один раз. После получения идентификатора арендатора, идентификатора и ключа клиента их можно повторно использовать в любой момент, когда потребуется создать новый маркер доступа Azure AD.
 
 1. В Центре партнеров [свяжите учетную запись Центра партнеров своей организации с каталогом Azure AD организации](/windows/uwp/publish/associate-azure-ad-with-partner-center).
-1. Затем на странице **Пользователи** в разделе **Параметры учетной записи** в Центре партнеров [добавьте приложение Azure AD](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account), представляющее приложение или службу, которые будут использоваться для доступа к отправкам для учетной записи Центра партнеров. Убедитесь, что этому приложению назначена роль **Менеджер** . Если приложение еще не существует в каталоге Azure AD, можно [создать новое приложение Azure AD в Центре партнеров](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
-1. Вернитесь на страницу **Пользователи** , щелкните имя приложения Azure AD, чтобы перейти к параметрам приложения, и скопируйте **идентификатор арендатора** и **идентификатор клиента** .
-1. Щелкните **Добавить новый ключ** . На следующем экране скопируйте значение в поле **Ключ** . Покинув эту страницу, вы больше не сможете получить доступ к этим сведениям. Дополнительные сведения см. в разделе [Управление ключами для приложения Azure AD](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys).
+1. Затем на странице **Пользователи** в разделе **Параметры учетной записи** в Центре партнеров [добавьте приложение Azure AD](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account), представляющее приложение или службу, которые будут использоваться для доступа к отправкам для учетной записи Центра партнеров. Убедитесь, что этому приложению назначена роль **Менеджер**. Если приложение еще не существует в каталоге Azure AD, можно [создать новое приложение Azure AD в Центре партнеров](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
+1. Вернитесь на страницу **Пользователи**, щелкните имя приложения Azure AD, чтобы перейти к параметрам приложения, и скопируйте **идентификатор арендатора** и **идентификатор клиента**.
+1. Щелкните **Добавить новый ключ**. На следующем экране скопируйте значение в поле **Ключ**. Покинув эту страницу, вы больше не сможете получить доступ к этим сведениям. Дополнительные сведения см. в разделе [Управление ключами для приложения Azure AD](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys).
 
 ### <a name="step-2-obtain-an-azure-ad-access-token"></a>Шаг 2. Получение маркера доступа Azure AD
 
@@ -73,5 +73,5 @@ https://apidocs.microsoft.com/services/partneringestion/
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте подробнее о [создании технического ресурса виртуальной машины Azure](create-azure-container-technical-assets.md)
-* Узнайте подробнее о [создании предложения контейнера Azure](create-azure-container-offer.md)
+* Узнайте подробнее о [создании технического ресурса виртуальной машины Azure](../create-azure-container-technical-assets.md)
+* Узнайте подробнее о [создании предложения контейнера Azure](../create-azure-container-offer.md)

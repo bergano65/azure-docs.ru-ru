@@ -1,6 +1,6 @@
 ---
 title: Проверка подлинности Azure Active Directory
-description: Узнайте, как использовать Azure Active Directory для проверки подлинности с помощью базы данных SQL Azure, Управляемый экземпляр SQL Azure и Azure синапсе Analytics.
+description: Узнайте, как использовать Azure Active Directory для проверки подлинности с помощью базы данных SQL Azure, Управляемый экземпляр SQL Azure и синапсе SQL в Azure синапсе Analytics.
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: security
@@ -11,18 +11,18 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 04/23/2020
-ms.openlocfilehash: a57de3d6beda5336f480f20137a9ccaa014b012d
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: a636c0e2a41b636f30ada14d4f16a022f2890b71
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675089"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454301"
 ---
 # <a name="use-azure-active-directory-authentication"></a>Использовать проверку подлинности Azure Active Directory
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Проверка подлинности Azure Active Directory (Azure AD) — это механизм подключения к [базе данных SQL Azure](sql-database-paas-overview.md), [Azure SQL управляемый экземпляр](../managed-instance/sql-managed-instance-paas-overview.md)и [Azure синапсе Analytics (ранее — хранилище данных SQL)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure AD.
+Проверка подлинности Azure Active Directory (Azure AD) — это механизм подключения к [базе данных SQL](sql-database-paas-overview.md)Azure, [Azure SQL управляемый экземпляр](../managed-instance/sql-managed-instance-paas-overview.md)и [синапсе SQL в Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure AD.
 
 > [!NOTE]
 > Эта статья относится к базе данных SQL Azure, Управляемый экземпляр SQL и Azure синапсе Analytics.
@@ -61,7 +61,7 @@ ms.locfileid: "92675089"
 6. Подключитесь к базе данных с помощью удостоверений Azure AD.
 
 > [!NOTE]
-> Чтобы узнать, как создать и заполнить Azure AD, а затем настроить Azure AD с помощью базы данных SQL Azure, SQL Управляемый экземпляр и Azure синапсе, см. статью [Настройка Azure AD с базой данных SQL Azure](authentication-aad-configure.md).
+> Сведения о том, как создать и заполнить Azure AD, а затем настроить Azure AD с помощью базы данных SQL Azure, SQL Управляемый экземпляр и синапсе SQL в Azure синапсе Analytics, см. в статье [Настройка Azure AD с базой данных SQL Azure](authentication-aad-configure.md).
 
 ## <a name="trust-architecture"></a>Архитектура доверия
 
@@ -108,7 +108,7 @@ ms.locfileid: "92675089"
 
     `SQL Error [2760] [S0001]: The specified schema name 'user@mydomain.com' either does not exist or you do not have permission to use it.`
 
-    Предоставляйте роль `db_owner` напрямую отдельным пользователям Azure AD во избежание проблем с синтаксисом **CREATE DATABASE SCOPED CREDENTIAL** .
+    Предоставляйте роль `db_owner` напрямую отдельным пользователям Azure AD во избежание проблем с синтаксисом **CREATE DATABASE SCOPED CREDENTIAL**.
 
 - Эти системные функции возвращают значения NULL при выполнении с помощью субъектов Azure AD:
 
@@ -153,7 +153,7 @@ ms.locfileid: "92675089"
   - Добавление участников сервера Azure AD (имен входа) для SQL Управляемый экземпляр позволяет создавать несколько участников сервера Azure AD (имен входа), которые могут быть добавлены к `sysadmin` роли.
 - Только администратор Azure AD для сервера может сначала подключиться к серверу или управляемому экземпляру с помощью учетной записи Azure Active Directory. Затем администратор Active Directory может настроить других пользователей базы данных Azure AD.
 - Мы рекомендуем установить время ожидания подключения в 30 секунд.
-- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server** , требуется версия .NET Framework не ниже 4.6.) Поэтому новейшие версии этих средств и приложений уровня данных (DAC и BACPAC) могут использовать проверку подлинности Azure AD.
+- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server**, требуется версия .NET Framework не ниже 4.6.) Поэтому новейшие версии этих средств и приложений уровня данных (DAC и BACPAC) могут использовать проверку подлинности Azure AD.
 - Начиная с версии 15.0.1, [программа sqlcmd](/sql/tools/sqlcmd-utility) и [программа bcp](/sql/tools/bcp-utility) поддерживают Active Directory интерактивную проверку подлинности с помощью многофакторной проверки подлинности.
 - Для SQL Server Data Tools для Visual Studio 2015 требуется версия Data Tools, выпущенная в апреле 2016 г. (14.0.60311.1), или более поздняя. Сейчас пользователи Azure AD не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql).
 - [Драйвер Microsoft JDBC 6.0 для SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) поддерживает проверку подлинности Azure AD. Вы можете также ознакомиться с [настройкой свойств подключения](/sql/connect/jdbc/setting-the-connection-properties).

@@ -12,12 +12,12 @@ metadata:
   author: alkohli
   ms.author: alkohli
   ms.date: 09/08/2020
-  ms.openlocfilehash: 2995a94f1b56144afd191bc3e8eb97c2da4593ef
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 03072f5a30cdf73e1bdde695d3c034ac201aea3e
+  ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "90902986"
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96451089"
 landingContent:
 - title: Сведения об Azure Stack Edge и Шлюзе Data Box
   linkLists:
@@ -36,9 +36,9 @@ landingContent:
   - linkListType: architecture
     links:
     - text: Выбор вариантов передачи данных в Azure
-      url: /azure/storage/common/storage-choose-data-transfer-solution
+      url: ../storage/common/storage-choose-data-transfer-solution.md
     - text: Использование передачи данных по сети или вне сети
-      url: /azure/storage/common/storage-solution-large-dataset-low-network#offline-transfer-or-network-transfer
+      url: ../storage/common/storage-solution-large-dataset-low-network.md#offline-transfer-or-network-transfer
   - linkListType: whats-new
     links:
     - text: Заметки о выпуске для 2009
@@ -80,7 +80,7 @@ landingContent:
   - linkListType: download
     links:
     - text: Примеры C# для GPU Azure Stack Edge Pro
-      url: https://docs.microsoft.com/samples/azure-samples/data-box-edge-csharp-modules/data-box-edge-csharp-modules/
+      url: /samples/azure-samples/data-box-edge-csharp-modules/data-box-edge-csharp-modules/
 - title: Управление
   linkLists:
   - linkListType: how-to-guide

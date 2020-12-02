@@ -1143,6 +1143,8 @@
               href: platform/workbooks-tree-visualizations.md
             - name: График
               href: platform/workbooks-graph-visualizations.md
+            - name: Карта
+              href: platform/workbooks-map-visualizations.md
             - name: Сотовая конструкция
               href: platform/workbooks-honey-comb.md
             - name: Составная панель

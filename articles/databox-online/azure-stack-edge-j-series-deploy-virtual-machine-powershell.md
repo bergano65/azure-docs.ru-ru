@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: aa492acdedc2d131d28c894031de2181e87a2f3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed6b77f77c9df0bb69edeb7451022605f1633aa3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890697"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454305"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью Azure PowerShell
 
@@ -103,7 +103,7 @@ ms.locfileid: "90890697"
     
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в который развертываются и управляются ресурсы Azure, такие как учетная запись хранения, диск, управляемый диск.
+Создайте группу ресурсов Azure с помощью командлета [New-AzureRmResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в который развертываются и управляются ресурсы Azure, такие как учетная запись хранения, диск, управляемый диск.
 
 > [!IMPORTANT]
 > Все ресурсы создаются в том же расположении, что и устройство, а для расположения задано значение **дбелокал**.
@@ -227,7 +227,7 @@ $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import –S
 New-AzureRMDisk -ResourceGroupName <Resource group name> -DiskName <Disk name> -Disk $DiskConfig
 ```
 
-Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmDisk](https://docs.microsoft.com/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0).
+Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0).
 
 ```powershell
 Tags               :
@@ -267,7 +267,7 @@ Set-AzureRmImageOsDisk -Image $imageConfig -OsType 'Linux' -OsState 'Generalized
 New-AzureRmImage -Image $imageConfig -ImageName <Image name>  -ResourceGroupName <Resource group name>
 ```
 
-Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmImage](https://docs.microsoft.com/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0).
+Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0).
 
 ```powershell
 New-AzureRmImage -Image Microsoft.Azure.Commands.Compute.Automation.Models.PSImage -ImageName ig191113014333  -ResourceGroupName rg191113014333
@@ -463,11 +463,11 @@ The public IP in this case will be the same as the private IP that you passed du
 `Start-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>`
 
 
-Дополнительные сведения об этом командлете см. в подразделе [Start-AzureRmVM](https://docs.microsoft.com/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
+Дополнительные сведения об этом командлете см. в подразделе [Start-AzureRmVM](/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
 
 ### <a name="suspend-or-shut-down-the-vm"></a>Приостановка или завершение работы виртуальной машины
 
-Выполните следующий командлет, чтобы остановить или завершить работу виртуальной машины, запущенной на устройстве:
+Выполните следующий командлет, чтобы остановить виртуальную машину, запущенную на устройстве, или завершить ее работу:
 
 
 ```powershell
@@ -475,7 +475,7 @@ Stop-AzureRmVM [-Name] <String> [-StayProvisioned] [-ResourceGroupName] <String>
 ```
 
 
-Дополнительные сведения об этом командлете см. в подразделе [командлета AzureRmVM](https://docs.microsoft.com/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0).
+Дополнительные сведения об этом командлете см. в подразделе [командлета AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0).
 
 ### <a name="add-a-data-disk"></a>Добавление диска данных
 
@@ -495,7 +495,7 @@ Update-AzureRmVM -ResourceGroupName "<Resource Group Name string>" -VM $VirtualM
 Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 ```
 
-Чтобы получить дополнительные сведения об этом командлете, перейдите к [командлету Remove-AzureRmVm](https://docs.microsoft.com/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0).
+Чтобы получить дополнительные сведения об этом командлете, перейдите к [командлету Remove-AzureRmVm](/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0).
 
 
 ## <a name="supported-vm-sizes"></a>Поддерживаемые размеры виртуальных машин
@@ -507,7 +507,7 @@ Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 ### <a name="dv2-series"></a>Серия Dv2
 |Размер     |vCPU     |Память, ГиБ | Временное хранилище, Гиб  | Максимальная пропускная способность дисков ОС, операций ввода-вывода в секунду | Максимальная пропускная способность временного хранилища, операций ввода-вывода в секунду | Максимальное число дисков данных/пропускная способность: операций ввода-вывода в секунду | Максимальное число сетевых адаптеров |
 |-------------------|----|----|-----|----|------|------------|---------|
-|**Standard_D1_v2** |1   |3,5 |50   |500 |3000  |4 / 4x500   |2 |
+|**Standard_D1_v2** |1   |3.5 |50   |500 |3000  |4 / 4x500   |2 |
 |**Standard_D2_v2** |2   |7   |100  |500 |6000  |8 / 8x500   |2 |
 |**Standard_D3_v2** |4   |14  |200  |500 |12000 |16 / 16x500 |4 |
 |**Standard_D4_v2** |8   |28  |400  |500 |24 000 |32 / 32x500 |8 |
@@ -516,7 +516,7 @@ Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 ### <a name="dsv2-series"></a>Серия DSv2
 |Размер     |vCPU     |Память, ГиБ | Временное хранилище, Гиб  | Максимальная пропускная способность дисков ОС, операций ввода-вывода в секунду | Максимальная пропускная способность временного хранилища, операций ввода-вывода в секунду | Максимальное число дисков данных/пропускная способность: операций ввода-вывода в секунду | Максимальное число сетевых адаптеров |
 |--------------------|----|----|----|-----|------|-------------|---------|
-|**Standard_DS1_v2** |1   |3,5 |7   |1000 |4000  |4/4 x 2300   |2 |
+|**Standard_DS1_v2** |1   |3.5 |7   |1000 |4000  |4/4 x 2300   |2 |
 |**Standard_DS2_v2** |2   |7   |14  |1000 |8000  |8/8 x 2300   |2 |
 |**Standard_DS3_v2** |4   |14  |28  |1000 |16000 |16/16 x 2300 |4 |
 |**Standard_DS4_v2** |8   |28  |56  |1000 |32000 |32/32 x 2300 |8 |
@@ -553,7 +553,7 @@ Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 
 ### <a name="on-windows-client"></a>В клиенте Windows 
 
-`$Env:AZCOPY_DEFAULT_SERVICE_API_VERSION = "2017-11-09"`
+`$Env:AZCOPY_DEFAULT_SERVICE_API_VERSION = "2017-11-09"`
 
 ### <a name="on-linux-client"></a>В клиенте Linux
 
@@ -565,6 +565,6 @@ Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 2. Найти `AZCOPY_DEFAULT_SERVICE_API_VERSION` параметр. Оно должно иметь значение, заданное на предыдущих шагах.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Командлеты Azure Resource Manager](https://docs.microsoft.com/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
