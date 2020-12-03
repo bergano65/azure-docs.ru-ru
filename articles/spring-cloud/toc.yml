@@ -25,10 +25,6 @@
           href: spring-cloud-quickstart-logs-metrics-tracing.md
 - name: Учебники
   items:
-    - name: Масштабирование приложения вручную
-      href: spring-cloud-tutorial-scale-manual.md
-    - name: Автомасштабирование приложения
-      href: spring-cloud-tutorial-setup-autoscale.md
     - name: Оповещения и группы действий
       href: spring-cloud-tutorial-alerts-action-groups.md
     - name: Панель мониторинга автоматического выключения
@@ -83,6 +79,12 @@
           href: spring-cloud-howto-start-stop-delete.md
         - name: Использование постоянного хранилища
           href: spring-cloud-howto-persistent-storage.md
+    - name: Масштабирование
+      items:
+        - name: Масштабирование приложения вручную
+          href: spring-cloud-tutorial-scale-manual.md
+        - name: Автомасштабирование приложения
+          href: spring-cloud-tutorial-setup-autoscale.md
         - name: Определение исходящих общедоступных IP-адресов
           href: spring-cloud-howto-outbound-public-ip.md
     - name: Монитор
@@ -132,7 +134,19 @@
         - name: Spring Boot
           href: /azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud
         - name: Tomcat
-          href: /azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud
+          href: 'https://docs.microsoft.com/azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud'
+- name: Развертывание DevOps
+  items:
+    - name: CI/CD и Azure DevOps
+      href: spring-cloud-howto-cicd.md
+    - name: CI/CD и GitHub Actions
+      href: spring-cloud-howto-github-actions.md
+    - name: Аутентификация с помощью Key Vault в GitHub Actions
+      href: spring-cloud-github-actions-key-vault.md
+- name: Диагностика
+  items:
+    - name: Руководство по устранению неполадок
+      href: spring-cloud-troubleshoot.md
 - name: Справочник
   items:
     - name: "Подключаемый модуль Azure\_CLI"
