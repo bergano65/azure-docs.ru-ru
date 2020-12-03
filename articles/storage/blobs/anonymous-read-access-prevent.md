@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/09/2020
+ms.date: 12/02/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: 01a5c696a41b9361c35e7af90f68088acea2944b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f12a899d3b6daa3b233e6a799871afca1e24d046
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913782"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533759"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Запретить анонимный общий доступ на чтение к контейнерам и BLOB-объектам
 
@@ -166,6 +166,8 @@ New-AzStorageContainer -Name $containerName -Permission Blob -Context $ctx
 
 Чтобы проверить настройку общего доступа в наборе учетных записей хранения с оптимальной производительностью, можно использовать обозреватель графа ресурсов Azure в портал Azure. Дополнительные сведения об использовании обозревателя графа ресурсов см. в статье [Краткое руководство. выполнение первого запроса Graph в Azure с помощью обозревателя Graph](../../governance/resource-graph/first-query-portal.md).
 
+Свойство **алловблобпубликакцесс** не задано для учетной записи хранения по умолчанию и не возвращает значение, пока оно не будет явно задано. Учетная запись хранения разрешает общий доступ, если свойство имеет значение **null** или **true**.
+
 Выполнение следующего запроса в обозревателе графа ресурсов возвращает список учетных записей хранения и отображает параметр общего доступа для каждой учетной записи:
 
 ```kusto
@@ -174,6 +176,10 @@ resources
 | extend allowBlobPublicAccess = parse_json(properties).allowBlobPublicAccess
 | project subscriptionId, resourceGroup, name, allowBlobPublicAccess
 ```
+
+На следующем рисунке показаны результаты запроса в подписке. Обратите внимание, что для учетных записей хранения, в которых свойство **алловблобпубликакцесс** было явно задано, оно отображается в результатах как **true** или **false**. Если для учетной записи хранения не было задано свойство **алловблобпубликакцесс** , оно отображается в результатах запроса как пустое (или null).
+
+:::image type="content" source="media/anonymous-read-access-prevent/check-public-access-setting-accounts.png" alt-text="Снимок экрана с результатами запроса для параметра общего доступа между учетными записями хранения":::
 
 ## <a name="use-azure-policy-to-audit-for-compliance"></a>Использование политики Azure для аудита соответствия
 

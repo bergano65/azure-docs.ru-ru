@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f6d17b007fcccd87aed17a9ec3ca039b9559ab6d
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 860bc9440547a4c62336ccc573859ec56b3400b5
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492239"
+ms.locfileid: "96533865"
 ---
 # <a name="azure-security-baseline-for-site-recovery"></a>Базовый план безопасности Azure для Site Recovery
 
@@ -112,7 +112,7 @@ Azure PowerShell или Azure CLI можно использовать для п�
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -164,9 +164,9 @@ Azure PowerShell или Azure CLI можно использовать для п�
 
 **Руководство**. роли по умолчанию не назначены. Они должны быть явно назначены в соответствии с бизнес-нуждами. Все назначения ролей можно проверить с помощью PowerShell CLI или Azure Active Directory (Azure AD) для обнаружения учетных записей, входящих в группы администраторов.
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?amp;preserve-view=true&view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?preserve-view=true&view=azureadps-2.0)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?amp;preserve-view=true&view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -224,7 +224,7 @@ Azure PowerShell или Azure CLI можно использовать для п�
 
 - [Рабочие станции c привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-- [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных служб](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Планирование развертывания облачной службы Многофакторной идентификации Azure AD](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -431,7 +431,7 @@ Site Recovery поддерживает шифрование неактивных
 
 - [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?amp;preserve-view=true&view=azps-4.8.0)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -530,7 +530,7 @@ Site Recovery поддерживает шифрование неактивных
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для хранилища служб восстановления с помощью политики Azure. 
 
 Используйте псевдонимы политик Azure в пространстве имен Microsoft. RecoveryServices, чтобы создать настраиваемые политики для аудита, или примените конфигурацию ресурсов хранилища служб восстановления службы Site Recovery Service.
-- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -553,9 +553,9 @@ Site Recovery поддерживает шифрование неактивных
 
 **Руководство**. Выберите Azure Repos для безопасного хранения кода и управления им, если вы используете пользовательские определения политики Azure для хранилищ служб восстановления и связанных ресурсов.
 
-- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
-- [Документация по Azure Repos](/azure/devops/repos/?amp;preserve-view=true&view=azure-devops)
+- [Документация по Azure Repos](/azure/devops/repos/?preserve-view=true&view=azure-devops)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -656,7 +656,7 @@ Site Recovery поддерживает шифрование неактивных
 
 Это выходит за пределы области клиента, и Site Recovery команда выполняет ее внутренним образом. Клиент может создавать резервные копии ключей Key Vault в Azure.
 
-- [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/az.keyvault/backup-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/az.keyvault/backup-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -666,7 +666,7 @@ Site Recovery поддерживает шифрование неактивных
 
 **Рекомендации**. периодически проверяйте резервные копии ключей, управляемых клиентом.
 
-- [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 

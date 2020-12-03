@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e7f6cf905613866041e72433328ea742706a8c49
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 036cab033e5b70a8940a488c07374e9092d52b33
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453864"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533661"
 ---
 # <a name="azure-security-baseline-for-azure-hpc-cache"></a>Базовый уровень безопасности Azure для кэша HPC Azure
 
@@ -814,7 +814,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Шифрование данных резервных копий с помощью управляемых клиентом ключей](../backup/encryption-at-rest-with-cmk.md)  
 
-- [Как создавать резервные копии ключей Key Vault в Azure](/powershell/module/az.keyvault/backup-azkeyvaultkey?amp;preserve-view=true&view=azps-5.1.0)
+- [Как создавать резервные копии ключей Key Vault в Azure](/powershell/module/az.keyvault/backup-azkeyvaultkey?preserve-view=true&view=azps-5.1.0)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -824,7 +824,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Рекомендации**. периодически гарантируется, что можно восстановить резервные копии ключей, управляемых клиентом.
 
-- [Восстановление ключей Key Vault в Azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?amp;preserve-view=true&view=azps-5.1.0)
+- [Восстановление ключей Key Vault в Azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?preserve-view=true&view=azps-5.1.0)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -867,11 +867,11 @@ Azure Sentinel предоставляет широкие возможности 
 -   Соответствующие криптографические стандарты
 
 Дополнительные сведения см. в следующих ресурсах.
-- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json)
+- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json)
 
 - [Основы безопасности Azure — безопасность, шифрование и хранение данных в Azure](../security/fundamentals/encryption-overview.md)
 
-- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](../security/fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
+- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](../security/fundamentals/data-encryption-best-practices.md?bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
 - [Azure Security Benchmark — управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
 

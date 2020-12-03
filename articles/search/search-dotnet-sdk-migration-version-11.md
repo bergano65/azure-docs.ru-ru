@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 11/10/2020
+ms.date: 12/02/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 90fc356929a9ea5713a8d359dfaa83286017b8f8
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 260df85f3e380e40d153fc17ce77bd56ca068982
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445444"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532828"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Обновление до Azure Когнитивный поиск .NET SDK версии 11
 
-Если вы используете версию 10,0 или более раннюю версию [пакета SDK для .NET](/dotnet/api/overview/azure/search), эта статья поможет вам выполнить обновление до версии 11.
+Если вы используете [пакет SDK для .NET](/dotnet/api/overview/azure/search)версии 10,0 или более ранней, эта статья поможет вам выполнить обновление до версии 11 и клиентской библиотеки **Azure.Search.Docументс** .
 
 Версия 11 — это полностью переработанная клиентская библиотека, выпущенная группой разработки пакета SDK для Azure (предыдущие версии были созданы командой разработчиков Когнитивный поиск Azure). Библиотека была переработана для обеспечения большей согласованности с другими клиентскими библиотеками Azure, учитывая зависимость от [Azure. Core](/dotnet/api/azure.core) и [System.Text.Js](/dotnet/api/system.text.json)и реализуя привычные подходы к распространенным задачам.
 
@@ -49,7 +49,7 @@ ms.locfileid: "94445444"
 |---------------------|------------------------------|------------------------------|
 | Клиент, используемый для запросов и заполнения индекса. | [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) | [сеарчклиент](/dotnet/api/azure.search.documents.searchclient) |
 | Клиент, используемый для индексов, анализаторов, сопоставлений синонимов | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) |
-| Клиент, используемый для индексаторов, источников данных, навыков | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [Сеарчиндексерклиент ( **новое** )](/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
+| Клиент, используемый для индексаторов, источников данных, навыков | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [Сеарчиндексерклиент (**новое**)](/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
 
 > [!Important]
 > `SearchIndexClient` существует в обеих версиях, но поддерживает различные вещи. В версии 10 `SearchIndexClient` Создайте индексы и другие объекты. В версии 11 `SearchIndexClient` работает с существующими индексами. Чтобы избежать путаницы при обновлении кода, учитывать порядок обновления клиентских ссылок. После выполнения последовательности [действий по обновлению](#UpgradeSteps) необходимо устранить любые проблемы замены строк.
@@ -91,7 +91,7 @@ ms.locfileid: "94445444"
 |------------|-----------------------|
 | [Индексатор](/dotnet/api/microsoft.azure.search.models.indexer) | [сеарчиндексер](/dotnet/api/azure.search.documents.indexes.models.searchindexer) |
 | [DataSource](/dotnet/api/microsoft.azure.search.models.datasource) | [сеарчиндексердатасаурцеконнектион](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) |
-| [Навыков](/dotnet/api/microsoft.azure.search.models.skill) | [сеарчиндексерскилл](/dotnet/api/azure.search.documents.indexes.models.searchindexerskill) |
+| [Навык](/dotnet/api/microsoft.azure.search.models.skill) | [сеарчиндексерскилл](/dotnet/api/azure.search.documents.indexes.models.searchindexerskill) |
 | [Набор навыков](/dotnet/api/microsoft.azure.search.models.skillset) | [сеарчиндексерскиллсет](/dotnet/api/azure.search.documents.indexes.models.searchindexerskill) |
 | [DataSourceType](/dotnet/api/microsoft.azure.search.models.datasourcetype) | [сеарчиндексердатасаурцетипе](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourcetype) |
 
@@ -141,7 +141,7 @@ ms.locfileid: "94445444"
 
 ## <a name="steps-to-upgrade"></a>Действия по обновлению
 
-Следующие шаги помогут приступить к переносу кода с помощью прохода по первому набору необходимых задач, особенно в отношении клиентских ссылок.
+Следующие шаги помогут приступить к переносу кода с помощью прохода по первому набору обязательных задач, особенно в отношении клиентских ссылок.
 
 1. Установите [Azure.Search.Docпакет ументс](https://www.nuget.org/packages/Azure.Search.Documents/) , щелкнув правой кнопкой мыши ссылку на проект и выбрав пункт "Управление пакетами NuGet...". в Visual Studio.
 
@@ -170,7 +170,7 @@ ms.locfileid: "94445444"
 
 1. Добавление новых клиентских ссылок для объектов, связанных с индексатором. Если используются индексаторы, источники данных или навыков, измените ссылки клиента на [сеарчиндексерклиент](/dotnet/api/azure.search.documents.indexes.searchindexerclient). Этот клиент впервые помещается в версии 11 и не имеет предшествующей задачи.
 
-1. Повторное посещение коллекций. В новом пакете SDK все списки доступны только для чтения, чтобы избежать возникновения проблем, если список содержит значения NULL. Изменение кода заключается в добавлении элементов в список. Например, вместо того, чтобы назначать строки свойству Select, необходимо добавить их следующим образом:
+1. Пересмотреть коллекции и списки. В новом пакете SDK все списки доступны только для чтения, чтобы избежать возникновения проблем, если список содержит значения NULL. Изменение кода заключается в добавлении элементов в список. Например, вместо того, чтобы назначать строки свойству Select, необходимо добавить их следующим образом:
 
    ```csharp
    var options = new SearchOptions
@@ -188,11 +188,13 @@ ms.locfileid: "94445444"
     options.Select.Add("LastRenovationDate");
    ```
 
+   SELECT, аспекты, SearchFields, Саурцефиелдс, Скорингпараметерс и OrderBy — это все списки, которые теперь необходимо перестроить.
+
 1. Обновление клиентских ссылок для запросов и импорта данных. Экземпляры [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient) должны быть изменены на [сеарчклиент](/dotnet/api/azure.search.documents.searchclient). Чтобы избежать путаницы с именами, убедитесь, что все экземпляры перехватываются перед переходом к следующему шагу.
 
-1. Обновление клиентских ссылок для объектов index, индексатора, преобразования синонимов и анализатора. Экземпляры [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) должны быть изменены на [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient). 
+1. Обновление клиентских ссылок для объектов индексов, сопоставлений синонимов и анализаторов. Экземпляры [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) должны быть изменены на [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient). 
 
-1. Как можно скорее, обновите классы, методы и свойства, чтобы использовать API новой библиотеки. Раздел [различия имен](#naming-differences) можно запустить, но вы также можете ознакомиться с [журналом изменений](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md).
+1. В оставшейся части кода обновите классы, методы и свойства, чтобы использовать API новой библиотеки. Раздел [различия имен](#naming-differences) можно запустить, но вы также можете ознакомиться с [журналом изменений](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md).
 
    Если у вас возникли проблемы с поиском эквивалентных API-интерфейсов, мы рекомендуем регистрировать проблему, [https://github.com/MicrosoftDocs/azure-docs/issues](https://github.com/MicrosoftDocs/azure-docs/issues) чтобы мы могли улучшить документацию или исследовать проблему.
 

@@ -4,12 +4,12 @@ description: Создание первого приложения-контейн
 ms.topic: conceptual
 ms.date: 1/4/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: d085f8704850cdbb03e21b15b3cca7c8998b96fb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0481cc2d36f7882bbd8eea9b984c3dc388de5dee
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004234"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96534086"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -87,10 +87,17 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ```
 
-## <a name="build-the-image"></a>Создание образа
-Выполните команду `docker build`, чтобы создать образ, который запускает веб-приложение. Откройте окно PowerShell и перейдите в каталог *c:\temp\helloworldapp*. Выполните следующую команду:
+## <a name="login-to-docker-and-build-the-image"></a>Войдите в DOCKER и создайте образ.
 
-```bash
+Далее мы создадим образ, который запускает веб-приложение. При получении общедоступных образов из DOCKER (например `python:2.7-slim` , в нашей Dockerfile) рекомендуется выполнять проверку подлинности в учетной записи центра DOCKER вместо анонимного запроса на включение внесенных изменений.
+
+> [!NOTE]
+> При частом анонимных запросах на включение внесенных изменений могут возникнуть ошибки DOCKER, аналогичные `ERROR: toomanyrequests: Too Many Requests.` или `You have reached your pull rate limit.` прошедшие проверку подлинности в концентраторе DOCKER, чтобы предотвратить эти ошибки. Дополнительные сведения см. [в статье Управление общедоступным содержимым с помощью реестра контейнеров Azure](../container-registry/buffer-gate-public-content.md) .
+
+Откройте окно PowerShell и перейдите в каталог, содержащий Dockerfile. Затем выполните следующие команды:
+
+```
+docker login
 docker build -t helloworldapp .
 ```
 
@@ -468,7 +475,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

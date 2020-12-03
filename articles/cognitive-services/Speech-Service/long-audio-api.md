@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: trbye
-ms.openlocfilehash: 0a538deb3b7da19261e1bc2b7c0d29f35315f786
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 255cfe11f8601abc89a1d96f702f453c2af1ccbd
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015419"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533066"
 ---
 # <a name="long-audio-api-preview"></a>Длинный аудио API (Предварительная версия)
 
@@ -278,7 +278,7 @@ ID : xxx , Name : xxx : Succeeded
 |        | 404 | Не удается найти модель, объявленную в определении синтеза голоса: {modelID}. | Проверьте правильность {modelID}. |
 |        | 429 | Превышает ограничение активного синтеза речи. Дождитесь завершения некоторых запросов. | Сервер может запуститься и поставить в очередь до 120 запросов для каждой учетной записи Azure. Подождите и не отправляйте новые запросы, пока не будут завершены некоторые запросы. |
 | Все       | 429 | Слишком много запросов. | Клиент может отправлять до 5 запросов на сервер в секунду для каждой учетной записи Azure. Сократите количество запросов в секунду. |
-| Удалить    | 400 | Задача синтеза голоса по-прежнему используется. | Можно удалить только **Завершенные** или **Невыполненные** запросы. |
+| DELETE    | 400 | Задача синтеза голоса по-прежнему используется. | Можно удалить только **Завершенные** или **Невыполненные** запросы. |
 | жетбид   | 404 | Не удается найти указанную сущность. | Убедитесь, что идентификатор синтеза правильный. |
 
 ## <a name="regions-and-endpoints"></a>Регионы и конечные точки
@@ -287,15 +287,11 @@ ID : xxx , Name : xxx : Succeeded
 
 | Регион | Конечная точка |
 |--------|----------|
-| Восточная Австралия | `https://australiaeast.customvoice.api.speech.microsoft.com` |
-| Центральная Канада | `https://canadacentral.customvoice.api.speech.microsoft.com` |
 | Восточная часть США | `https://eastus.customvoice.api.speech.microsoft.com` |
 | Центральная Индия | `https://centralindia.customvoice.api.speech.microsoft.com` |
-| Центрально-южная часть США | `https://southcentralus.customvoice.api.speech.microsoft.com` |
 | Юго-Восточная Азия | `https://southeastasia.customvoice.api.speech.microsoft.com` |
 | южная часть Соединенного Королевства | `https://uksouth.customvoice.api.speech.microsoft.com` |
 | Западная Европа | `https://westeurope.customvoice.api.speech.microsoft.com` |
-| западная часть США 2 | `https://westus2.customvoice.api.speech.microsoft.com` |
 
 ## <a name="audio-output-formats"></a>Форматы вывода звука
 
