@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/10/2020
 ms.author: sethm
 ms.custom: include file
-ms.openlocfilehash: 1cb7753f54e9c1334e35635c227f776041631f1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b5034f2163e8478d7ddb7b9271402b094a809d7
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88864813"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564020"
 ---
 ## <a name="generate-the-certificate-signing-request-file"></a>Создание файла запроса на подписывание сертификата
 
@@ -78,9 +78,9 @@ ms.locfileid: "88864813"
 Сертификат нужен для того, чтобы центр уведомлений мог работать с **APNs**. Создать его можно двумя способами:
 
 1. Создайте сертификат **.p12**, который можно отправить прямо в концентратор уведомлений.  
-2. Создайте сертификат **.p8**, который можно использовать для [проверки подлинности на основе токена](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification) (*новый подход*).
+2. Создайте сертификат **.p8**, который можно использовать для [проверки подлинности на основе токена](../articles/notification-hubs/notification-hubs-push-notification-http2-token-authentication.md) (*новый подход*).
 
-Новый подход имеет ряд преимуществ по сравнению с подходом на основе сертификатов (см. сведения о [проверке подлинности на основе токена (HTTP/2) для APNs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification)). В этой статье приводятся инструкции, применимые в рамках обоих подходов. 
+Новый подход имеет ряд преимуществ по сравнению с подходом на основе сертификатов (см. сведения о [проверке подлинности на основе токена (HTTP/2) для APNs](../articles/notification-hubs/notification-hubs-push-notification-http2-token-authentication.md)). В этой статье приводятся инструкции, применимые в рамках обоих подходов. 
 
 ### <a name="option-1-creating-a-p12-push-certificate-that-can-be-uploaded-directly-to-notification-hub"></a>Вариант 1. Создание сертификата .p12 службы push-уведомлений, который можно отправить прямо в концентратор уведомлений
 
