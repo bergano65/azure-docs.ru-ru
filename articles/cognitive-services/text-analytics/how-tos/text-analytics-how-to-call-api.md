@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 90a4da2aadbbdf07d851e4407d2d417fc76d32af
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 5985c30973f703b897fa2eedc2be3b939d97900b
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512330"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559003"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -31,7 +31,7 @@ ms.locfileid: "96512330"
 
 См. таблицу ниже, чтобы узнать, какие функции можно использовать асинхронно. Обратите внимание, что из конечной точки можно вызывать только несколько функций `/analyze` . 
 
-| Признак | Синхронная | Асинхронный |
+| Компонент | Синхронная | Асинхронный |
 |--|--|--|
 | Определение языка | ✔ |  |
 | Анализ мнений | ✔ |  |
@@ -48,13 +48,13 @@ ms.locfileid: "96512330"
 
 [!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 
 > [!NOTE]
-> Если вы хотите использовать [pricing tier](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) `/analyze` `/health` конечные точки или, вам потребуется ресурс анализ текста с помощью ценовой категории Standard (S).
+> * Если вы хотите использовать [pricing tier](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) `/analyze` `/health` конечные точки или, вам потребуется ресурс анализ текста с помощью ценовой категории Standard (S).
 
-1.  Во-первых, перейдите к [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) и создайте новый ресурс анализ текста, если у вас еще нет такого ресурса. Если вы хотите использовать конечные точки или, выберите **ценовую категорию Standard (S)** `/analyze` `/health` .
+1.  Во-первых, перейдите к [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) и создайте новый ресурс анализ текста, если у вас еще нет такого ресурса. Если вы хотите использовать конечные точки или, выберите **ценовую категорию Standard (S)** `/analyze` `/health` . `/analyze`Конечная точка включена в [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/).
 
 2.  Выберите регион, который вы хотите использовать для конечной точки.  Обратите внимание, что `/analyze` `/health` конечные точки и доступны только в следующих регионах: Западная часть США 2, Восточная часть США 2, Центральная часть США, Северная Европа и Западная Европа.
 
@@ -104,16 +104,16 @@ ms.locfileid: "96512330"
 
 | Элемент | Допустимые значения | Необходим? | Использование |
 |---------|--------------|-----------|-------|
-|`displayName` | Строковый | Необязательно | Используется в качестве отображаемого имени для уникального идентификатора задания.|
+|`displayName` | Строка | Необязательно | Используется в качестве отображаемого имени для уникального идентификатора задания.|
 |`analysisInput` | Включает `documents` поле ниже | Обязательно | Содержит сведения о документах, которые необходимо отправить. |
 |`documents` | Включает `id` поля и `text` ниже | Обязательно | Содержит сведения для каждого отправляемого документа и необработанный текст документа. |
-|`id` | Строковый | Обязательно | Предоставленные идентификаторы используются для структурирования выходных данных. |
+|`id` | Строка | Обязательно | Предоставленные идентификаторы используются для структурирования выходных данных. |
 |`text` | Неструктурированный необработанный текст, не более 125 000 символов. | Обязательно | Язык должен быть на английском языке, который в настоящее время поддерживается. |
 |`tasks` | Включает следующие функции Анализ текста: `entityRecognitionTasks` `keyPhraseExtractionTasks` или `entityRecognitionPiiTasks` . | Обязательно | Одна или несколько Анализ текста функций, которые вы хотите использовать. Обратите внимание, что `entityRecognitionPiiTasks` имеет необязательный `domain` параметр, для которого можно задать значение `pii` или `phi` . Если значение не указано, по умолчанию система принимает значение `pii` . |
 |`parameters` | Включает `model-version` поля и `stringIndexType` ниже | Обязательно | Это поле включено в указанные выше задачи функции. Они содержат сведения о версии модели, которую необходимо использовать, и типе индекса. |
-|`model-version` | Строковый | Обязательно | Укажите версию вызываемой модели, которую необходимо использовать.  |
-|`stringIndexType` | Строковый | Обязательно | Укажите текстовый декодер, соответствующий используемой среде программирования.  Поддерживаются типы `textElement_v8` (по умолчанию), `unicodeCodePoint` , `utf16CodeUnit` . Дополнительные сведения см. в [статье о смещениях текста](../concepts/text-offsets.md#offsets-in-api-version-31-preview) .  |
-|`domain` | Строковый | Необязательно | Применяется только в качестве параметра к `entityRecognitionPiiTasks` задаче и может иметь значение `pii` или `phi` . Значение по умолчанию —, `pii` если не указано.  |
+|`model-version` | Строка | Обязательно | Укажите версию вызываемой модели, которую необходимо использовать.  |
+|`stringIndexType` | Строка | Обязательно | Укажите текстовый декодер, соответствующий используемой среде программирования.  Поддерживаются типы `textElement_v8` (по умолчанию), `unicodeCodePoint` , `utf16CodeUnit` . Дополнительные сведения см. в [статье о смещениях текста](../concepts/text-offsets.md#offsets-in-api-version-31-preview) .  |
+|`domain` | Строка | Необязательно | Применяется только в качестве параметра к `entityRecognitionPiiTasks` задаче и может иметь значение `pii` или `phi` . Значение по умолчанию —, `pii` если не указано.  |
 
 ```json
 {
@@ -194,7 +194,7 @@ example.json
 
 #### <a name="synchronous"></a>[Синхронная](#tab/synchronous)
 
-| Признак | Тип запроса | Конечные точки ресурсов |
+| Компонент | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Определение языка | POST | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
 | Анализ мнений | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
@@ -206,14 +206,14 @@ example.json
 
 #### <a name="analyze"></a>[Анализ](#tab/analyze)
 
-| Признак | Тип запроса | Конечные точки ресурсов |
+| Компонент | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Отправить задание анализа | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze` |
 | Получение состояния и результатов анализа | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>` |
 
 #### <a name="text-analytics-for-health"></a>[Анализ текста для сферы здравоохранения](#tab/health)
 
-| Признак | Тип запроса | Конечные точки ресурсов |
+| Компонент | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Отправка Анализ текста для задания работоспособности  | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs` |
 | Получение состояния задания и результатов | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |

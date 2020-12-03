@@ -2,14 +2,14 @@
 title: Разметка ресурсов, групп ресурсов и подписок для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
 ms.topic: conceptual
-ms.date: 11/20/2020
+ms.date: 12/03/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9e9ef96a712e5ac2ba483170fb8ef9c89115b4f8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e47d3acf15ce5e4f5cb70444419b76beb21ae98b
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95972574"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558153"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Использование тегов для Организации ресурсов Azure и иерархии управления
 
@@ -26,9 +26,11 @@ ms.locfileid: "95972574"
 
 ## <a name="required-access"></a>Требуемый доступ
 
-Чтобы применить теги к ресурсу, необходимо иметь доступ на запись к типу ресурса **Microsoft. Resources/Tags** . Роль « [участник тегов](../../role-based-access-control/built-in-roles.md#tag-contributor) » позволяет применять теги к сущности без доступа к самой сущности. В настоящее время роль участника тега не может применять теги к ресурсам или группам ресурсов на портале. Он может применять теги к подпискам на портале. Она поддерживает все операции с тегами с помощью PowerShell и REST API.  
+Есть два способа получить необходимый доступ к ресурсам тегов.
 
-Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) также предоставляет необходимый доступ для применения тегов к любой сущности. Чтобы применить теги только к одному типу ресурсов, используйте роль участника для этого ресурса. Например, чтобы применить теги к виртуальным машинам, используйте [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor).
+- Вы можете иметь доступ на запись к типу ресурса **Microsoft. Resources/Tags** . Этот доступ позволяет пометить любой ресурс, даже если у вас нет доступа к самому ресурсу. Роль [участника тега](../../role-based-access-control/built-in-roles.md#tag-contributor) предоставляет этот доступ. В настоящее время роль участника тега не может применять теги к ресурсам или группам ресурсов на портале. Он может применять теги к подпискам на портале. Она поддерживает все операции с тегами с помощью PowerShell и REST API.  
+
+- Вы можете иметь доступ на запись к самому ресурсу. Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) предоставляет необходимый доступ для применения тегов к любой сущности. Чтобы применить теги только к одному типу ресурсов, используйте роль участника для этого ресурса. Например, чтобы применить теги к виртуальным машинам, используйте [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor).
 
 ## <a name="powershell"></a>PowerShell
 
@@ -277,7 +279,7 @@ az tag create --resource-id $resource --tags Team=Compliance Environment=Product
 },
 ```
 
-Чтобы добавить теги к ресурсу, который уже содержит теги, используйте команду **AZ Tag Update**. Задайте для параметра **--Operation** значение **Merge**.
+Чтобы добавить теги к ресурсу, который уже содержит теги, используйте `az tag update` . Установите для параметра `--operation` значение `Merge`.
 
 ```azurecli-interactive
 az tag update --resource-id $resource --operation Merge --tags Dept=Finance Status=Normal
@@ -313,7 +315,7 @@ az tag update --resource-id $resource --operation Merge --tags Status=Green
 },
 ```
 
-Если задается параметр **--Operation** для **замены**, существующие теги заменяются новым набором тегов.
+Если `--operation` для параметра задано значение `Replace` , существующие теги заменяются новым набором тегов.
 
 ```azurecli-interactive
 az tag update --resource-id $resource --operation Replace --tags Project=ECommerce CostCenter=00123 Team=Web
@@ -406,7 +408,7 @@ az group list --tag Dept=Finance
 
 ### <a name="remove-tags"></a>Удалить теги
 
-Чтобы удалить определенные теги, используйте команду **AZ Tag Update** и Set **--Operation** для **удаления**. Передайте теги, которые нужно удалить.
+Чтобы удалить определенные теги, используйте `az tag update` и задайте `--operation` для значение `Delete` . Передайте теги, которые нужно удалить.
 
 ```azurecli-interactive
 az tag update --resource-id $resource --operation Delete --tags Project=ECommerce Team=Web
@@ -436,7 +438,7 @@ az tag delete --resource-id $resource
 az tag update --resource-id $group --operation Merge --tags "Cost Center"=Finance-1222 Location="West US"
 ```
 
-## <a name="templates"></a>Шаблоны
+## <a name="templates"></a>шаблоны;
 
 Вы можете помечать ресурсы, группы ресурсов и подписки во время развертывания с помощью шаблона диспетчер ресурсов.
 
@@ -713,7 +715,7 @@ az deployment sub create --name tagresourcegroup --location westus2 --template-u
    >
    > Служба автоматизации Azure и Azure CDN поддерживают только 15 тегов для ресурсов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
 * Рекомендации по реализации стратегии тегов см. в разделе [руководство по именованию ресурсов и созданию тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json).

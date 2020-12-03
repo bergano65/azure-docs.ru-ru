@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbe22a1af8fbf61629fa9df1267416ca3822884b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 2cef20f38c751bb81194559aaad7994c270d1e8c
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840089"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558187"
 ---
 # <a name="passwordless-authentication-options-for-azure-active-directory"></a>Параметры проверки подлинности с паролем для Azure Active Directory
 
@@ -135,7 +135,11 @@ FIDO (быстрое идентификация в сети) позволяет 
 | аусентренд | [https://authentrend.com/about-us/#pg-35-3](https://authentrend.com/about-us/#pg-35-3) |
 | Gemalto (Группа Thales) | [https://safenet.gemalto.com/multi-factor-authentication/authenticators/passwordless-authentication/](https://safenet.gemalto.com/multi-factor-authentication/authenticators/passwordless-authentication/) |
 | Онеспан Inc. | [https://www.onespan.com/products/fido](https://www.onespan.com/products/fido) |
-| Технологии Идмелон Inc. | [https://www.idmelon.com/#idmelon](https://www.idmelon.com/#idmelon) | 
+| Технологии Идмелон Inc. | [https://www.idmelon.com/#idmelon](https://www.idmelon.com/#idmelon) |
+| хиперсеку | [https://www.hypersecu.com/hyperfido](https://www.hypersecu.com/hyperfido) |
+| винксс | [https://passwordless.vincss.net](https://passwordless.vincss.net) |
+| KONA I | [https://konai.com/business/security/fido](https://konai.com/business/security/fido) |
+| ексцелсеку | [https://www.excelsecu.com/productdetail/esecufido2secu.html](https://www.excelsecu.com/productdetail/esecufido2secu.html) |
 
 > [!NOTE]
 > Если вы приобретаете и планируете использовать ключи безопасности на основе NFC, вам потребуется поддерживаемый модуль чтения NFC для ключа безопасности. Модуль чтения NFC не является требованием или ограничением Azure. Чтобы получить список поддерживаемых NFC-сканеров, обратитесь к поставщику Вашего ключа безопасности на основе NFC.

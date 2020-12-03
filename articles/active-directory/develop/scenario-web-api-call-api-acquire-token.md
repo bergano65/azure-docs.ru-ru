@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 465544f1d861fc09d4b843270c6f3527036ee6a8
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: e8301a1961479f57528802e6d8c0f10ceb0569d5
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628012"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558272"
 ---
 # <a name="a-web-api-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API: получение маркера для приложения
 
@@ -86,8 +86,37 @@ public class ApiController {
 ```
 
 ### <a name="python"></a>[Python](#tab/python)
-
-Веб-API Python требует использования по промежуточного слоя для проверки токена носителя, полученного от клиента. Затем веб-API может получить маркер доступа для нисходящих API с помощью библиотеки MSAL Python, вызвав [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) метод. Пример, демонстрирующий этот поток с помощью MSAL Python, пока недоступен.
+ 
+Веб-API Python требует использования по промежуточного слоя для проверки токена носителя, полученного от клиента. Затем веб-API может получить маркер доступа для нисходящих API с помощью библиотеки MSAL Python, вызвав [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) метод.
+ 
+Ниже приведен пример кода, который получает маркер доступа с помощью `acquire_token_on_behalf_of` метода и платформы Flask. Он вызывает нисходящий API — конечную точку подписок управления Azure.
+ 
+```python
+def get(self):
+ 
+        _scopes = ["https://management.azure.com/user_impersonation"]
+        _azure_management_subscriptions_uri = "https://management.azure.com/subscriptions?api-version=2020-01-01"
+ 
+        current_access_token = request.headers.get("Authorization", None)
+        
+        #This example only uses the default memory token cache and should not be used for production
+        msal_client = msal.ConfidentialClientApplication(
+                client_id=os.environ.get("CLIENT_ID"),
+                authority=os.environ.get("AUTHORITY"),
+                client_credential=os.environ.get("CLIENT_SECRET"))
+ 
+        #acquire token on behalf of the user that called this API
+        arm_resource_access_token = msal_client.acquire_token_on_behalf_of(
+            user_assertion=current_access_token.split(' ')[1],
+            scopes=_scopes
+        )
+ 
+        headers = {'Authorization': arm_resource_access_token['token_type'] + ' ' + arm_resource_access_token['access_token']}
+ 
+        subscriptions_list = req.get(_azure_management_subscriptions_uri), headers=headers).json()
+ 
+        return jsonify(subscriptions_list)
+```
 
 ## <a name="advanced-accessing-the-signed-in-users-token-cache-from-background-apps-apis-and-services"></a>Продвинут Доступ к кэшу маркера пользователя, выполнившего вход, из фоновых приложений, интерфейсов API и служб
 

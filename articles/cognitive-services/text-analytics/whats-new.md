@@ -8,19 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 8743e765a050bfc4a2ba93a1b3e0344a960edb76
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 157bef31b375db54f294284ca0a5d97cd7035b17
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966893"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558969"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+* [Обновлены](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) сведения о ценах на API анализа текста
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 
@@ -195,10 +199,10 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * Организация
+    * План
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
-    * Электронная почта 
+    * Адрес электронной почты 
     * Номер телефона (только США)
     * URL-адрес
     * IP-адрес
@@ -233,9 +237,9 @@ API анализа текста v3 теперь общедоступен со с
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое API "Анализ текста"?](overview.md)  
+* [Что такое API анализа текста?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)
 * [Пример. Как определить тональность с помощью Анализа текста](how-tos/text-analytics-how-to-sentiment-analysis.md)
 * [Пример. Как определить язык с помощью Анализа текста](how-tos/text-analytics-how-to-language-detection.md)

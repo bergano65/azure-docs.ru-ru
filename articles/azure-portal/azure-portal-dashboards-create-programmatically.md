@@ -3,21 +3,21 @@ title: Создание панелей мониторинга Azure програ
 description: Используйте панель мониторинга в портал Azure в качестве шаблона для программного создания панелей мониторинга Azure. Включает Справочник по JSON.
 services: azure-portal
 documentationcenter: ''
-author: adamabmsft
+author: mgblythe
 manager: mtillman
 ms.service: azure-portal
 ms.devlang: NA
 ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: na
-ms.date: 03/23/2020
+ms.date: 12/4/2020
 ms.author: mblythe
-ms.openlocfilehash: 7f52bd94a0286ea50d09ab7c77dce339e8a3ebf3
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 7e6819b01af3fc9357417a838fefce7f2c73dcce
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089372"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558222"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Создание панелей мониторинга Azure программными средствами
 
@@ -658,3 +658,49 @@ id: "[resourceId(parameters('virtualMachineResourceGroup'), 'Microsoft.Compute/v
 ```
 
 Теперь, когда вы увидели пример использования параметризованного шаблона для развертывания панели мониторинга, можно попытаться развернуть шаблон с помощью [Azure Resource Manager интерфейсов API](/rest/api/), [Azure CLI](/cli/azure)или [команд Azure PowerShell](/powershell/azure/get-started-azureps).
+
+## <a name="programmatically-create-a-dashboard-by-using-azure-cli"></a>Программное создание панели мониторинга с помощью Azure CLI
+
+Подготовьте среду к работе с Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- В этих примерах используется следующая панель мониторинга: [portal-dashboard-template-testvm.jsв](https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/azure-portal/portal-dashboard-template-testvm.json). Замените содержимое в угловых скобках вашими значениями.
+
+Выполните команду [AZ Portal Dashboard](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_create) , чтобы создать панель мониторинга:
+
+```azurecli
+az portal dashboard create --resource-group myResourceGroup --name 'Simple VM Dashboard' \
+   --input-path portal-dashboard-template-testvm.json --location centralus
+```
+
+Обновить панель мониторинга можно с помощью команды [AZ Portal панель обновления](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_update) .
+
+```azurecli
+az portal dashboard update --resource-group myResourceGroup --name 'Simple VM Dashboard' \
+--input-path portal-dashboard-template-testvm.json --location centralus
+```
+
+Просмотрите сведения о панели мониторинга, выполнив команду [AZ Portal панель мониторинга Показать](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_show) :
+
+```azurecli
+az portal dashboard show --resource-group myResourceGroup --name 'Simple VM Dashboard'
+```
+
+Чтобы просмотреть все панели мониторинга для текущей подписки, используйте команду [AZ Portal Dashboard List](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_list):
+
+```azurecli
+az portal dashboard list
+```
+
+Вы также можете просмотреть все панели мониторинга для группы ресурсов:
+
+```azurecli
+az portal dashboard list --resource-group myResourceGroup
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения о настольных компьютерах см. в разделе [Управление параметрами и](set-preferences.md)настройками портал Azure.
+
+Дополнительные сведения о поддержке Azure CLI для панелей мониторинга см. в статье [AZ Portal панель мониторинга](/cli/azure/ext/portal/portal/dashboard).

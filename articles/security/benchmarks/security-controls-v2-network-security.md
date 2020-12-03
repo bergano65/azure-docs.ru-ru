@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: b6aaad9cce330d755fb69f8be48737f9a8f6c4a7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 38ab16fbadee245810a4486170dd54922c0c38f9
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487751"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558918"
 ---
 # <a name="security-control-v2-network-security"></a>Управление безопасностью версии 2: Сетевая безопасность
 
@@ -54,7 +54,7 @@ ms.locfileid: "96487751"
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| NS-2 | Н/Д | ЦС-3, AC-17, MA-4 |
+| NS-2 | Недоступно | ЦС-3, AC-17, MA-4 |
 
 Используйте Azure ExpressRoute или виртуальную частную сеть Azure (VPN) для создания частных подключений между центрами обработки данных Azure и локальной инфраструктурой в среде совместного размещения. Подключения ExpressRoute не проходят через общедоступный Интернет и обеспечивают повышенную надежность, скорость и задержку, чем обычные подключения к Интернету. Для VPN-подключения типа "точка — сеть" и VPN-подключения типа "сеть — сеть" можно подключить локальные устройства или сети к виртуальной сети, используя любое сочетание параметров VPN и Azure ExpressRoute.
 
@@ -126,7 +126,11 @@ ms.locfileid: "96487751"
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
-Нет
+- [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
+
+- [Управление состоянием](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
+
+- [Безопасность приложений и DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
 ## <a name="ns-5-deploy-intrusion-detectionintrusion-prevention-systems-idsips"></a>NS-5: развертывание систем обнаружения вторжений и предотвращения вторжений (ИДЕНТИФИКАТОРы и IP-адреса)
 
@@ -184,7 +188,7 @@ ms.locfileid: "96487751"
 
 | Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
 |--|--|--|--|
-| NS-7 | Н/Д | SC-20, SC-21 |
+| NS-7 | Недоступно | SC-20, SC-21 |
 
 Следуйте рекомендациям по обеспечению безопасности DNS, чтобы устранить распространенные атаки, такие как висячие DNS, атаки несанкционированного доступа к DNS, неустранение и подмена DNS и т. д. 
 

@@ -3,18 +3,18 @@ title: Управление учетными данными в службе ав
 description: В этой статье рассказывается, как создать ресурсы-контейнеры учетных данных и использовать их в модуле Runbook или конфигурации DSC.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 09/10/2020
+ms.date: 12/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4fbcf74c2c70d3dffd86728132d58430472271b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec35653f67c46a7032e834020d8e2ca4ab3125c8
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90004670"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558847"
 ---
 # <a name="manage-credentials-in-azure-automation"></a>Управление учетными данными в службе автоматизации Azure
 
-В ресурсе-контейнере учетных данных службы автоматизации хранится объект, содержащий учетные данные безопасности, например имя пользователя и пароль. Модули Runbook и конфигурации DSC используют командлеты, которые принимают объект [PSCredential](/dotnet/api/system.management.automation.pscredential) для проверки подлинности. Кроме того, они могут извлекать имя пользователя и пароль объекта `PSCredential`, чтобы предоставить их приложению или службе, для доступа к которым требуется проверка подлинности. 
+В ресурсе-контейнере учетных данных службы автоматизации хранится объект, содержащий учетные данные безопасности, например имя пользователя и пароль. Модули Runbook и конфигурации DSC используют командлеты, которые принимают объект [PSCredential](/dotnet/api/system.management.automation.pscredential) для проверки подлинности. Кроме того, они могут извлекать имя пользователя и пароль объекта `PSCredential`, чтобы предоставить их приложению или службе, для доступа к которым требуется проверка подлинности.
 
 >[!NOTE]
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Служба автоматизации Azure хранит ключ в управляемом системой хранилище ключей Azure Key Vault. Перед сохранением защищенного ресурса служба автоматизации Azure загружает ключ из Key Vault, а затем использует его для шифрования ресурса. 
@@ -44,7 +44,7 @@ ms.locfileid: "90004670"
 
 Чтобы получить объекты `PSCredential` в коде, необходимо импортировать модуль `Orchestrator.AssetManagement.Cmdlets`. Дополнительные сведения см. в статье [Администрирование модулей в службе автоматизации Azure](modules.md).
 
-```azurepowershell
+```powershell
 Import-Module Orchestrator.AssetManagement.Cmdlets -ErrorAction SilentlyContinue
 ```
 
@@ -69,15 +69,15 @@ Import-Module Orchestrator.AssetManagement.Cmdlets -ErrorAction SilentlyContinue
 ### <a name="create-a-new-credential-asset-with-the-azure-portal"></a>Создание нового ресурса-контейнера учетных данных на портале Azure
 
 1. В учетной записи службы автоматизации на панели слева выберите **учетные данные** в разделе **Общие ресурсы**.
-1. На странице **учетные данные** выберите **Добавить учетные данные**.
-2. В области "Новые учетные данные" введите соответствующее имя учетных данных, следуя стандартам именования.
-3. Введите идентификатор доступа в поле **Имя пользователя**.
-4. В полях пароля введите секретный ключ доступа.
+2. На странице **учетные данные** выберите **Добавить учетные данные**.
+3. В области "Новые учетные данные" введите соответствующее имя учетных данных, следуя стандартам именования.
+4. Введите идентификатор доступа в поле **Имя пользователя**.
+5. В полях пароля введите секретный ключ доступа.
 
     ![Создание новых учетных данных](../media/credentials/credential-create.png)
 
-5. Если установлен флажок многофакторной проверки подлинности, снимите его.
-6. Нажмите **Создать**, чтобы создать новый ресурс-контейнер учетных данных.
+6. Если установлен флажок многофакторной проверки подлинности, снимите его.
+7. Нажмите **Создать**, чтобы создать новый ресурс-контейнер учетных данных.
 
 > [!NOTE]
 > Служба автоматизации Azure не поддерживает учетные записи пользователей, которые используют многофакторную проверку подлинности.
@@ -106,8 +106,7 @@ New-AzureAutomationCredential -AutomationAccountName "MyAutomationAccount" -Name
 
 Команды в приведенном ниже примере демонстрируют использование учетных данных PowerShell в модуле Runbook. Он получает учетные данные и присваивает переменным имя пользователя и пароль.
 
-
-```azurepowershell
+```powershell
 $myCredential = Get-AutomationPSCredential -Name 'MyCredential'
 $userName = $myCredential.UserName
 $securePassword = $myCredential.Password
@@ -116,14 +115,13 @@ $password = $myCredential.GetNetworkCredential().Password
 
 Вы также можете использовать учетные данные для проверки подлинности в Azure с помощью [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). В большинстве случаев следует использовать параметр [Учетная запись запуска от имени](../manage-runas-account.md) и получить подключение с помощью [Get-AzAutomationConnection](../automation-connections.md).
 
-
-```azurepowershell
+```powershell
 $myCred = Get-AutomationPSCredential -Name 'MyCredential'
 $userName = $myCred.UserName
 $securePassword = $myCred.Password
 $password = $myCred.GetNetworkCredential().Password
 
-$myPsCred = New-Object System.Management.Automation.PSCredential ($userName,$password)
+$myPsCred = New-Object System.Management.Automation.PSCredential ($userName,$securePassword)
 
 Connect-AzAccount -Credential $myPsCred
 ```
@@ -145,7 +143,6 @@ Connect-AzAccount -Credential $myPsCred
 ## <a name="use-credentials-in-a-python-2-runbook"></a>Использование учетных данных в модуле Runbook Python 2
 
 Ниже приведен пример доступа к учетным данным в модулях Runbook Python 2.
-
 
 ```python
 import automationassets
