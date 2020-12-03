@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 6da80ec4c9c3c4e6c95eb1c9001596ffe3dd5711
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c69df88828a179cf1dce7bd35ac19c518b07903d
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447851"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530720"
 ---
 # <a name="troubleshooting-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Устранение неполадок выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics
 
@@ -45,6 +45,7 @@ ms.locfileid: "96447851"
 | Проблема                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Экспорт пустых строк с помощью CETAS приведет к значениям NULL в файлах Parquet и ORC. Примечание. при экспорте пустых строк из столбцов с ограничениями NOT NULL CETAS приведет к отклонению записей, и экспорт может завершиться неудачей. | Удалите пустые строки или столбец, вызывающий ошибку, в инструкции SELECT CETAS. |
+| Загрузка значения за пределами диапазона 0-127 в столбец tinyint для формата файлов Parquet и ORC не поддерживается. | Укажите больший тип данных для целевого столбца.           |
 
 ## <a name="performance"></a>Производительность
 

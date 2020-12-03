@@ -1,19 +1,19 @@
 ---
-title: Добавление слоя символов в карты Android | Карты Microsoft Azure
-description: Узнайте, как добавить маркер к карте. См. пример, использующий Azure Maps пакет SDK для Android для добавления слоя символов, который содержит данные на основе точек из источника данных.
+title: Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
+description: Узнайте, как добавить маркер к карте. См. пример, использующий Microsoft Azure Maps пакет SDK для Android для добавления слоя символов, который содержит данные на основе точек из источника данных.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 04/26/2019
+ms.date: 11/24/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: acd5f06a5383308ce736f2860810ebee7e5bce28
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 300a7968b2072459d6d7709e4d89388e1bcf59f3
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897115"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531213"
 ---
 # <a name="add-a-symbol-layer-to-a-map-using-azure-maps-android-sdk"></a>Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
 
@@ -21,13 +21,15 @@ ms.locfileid: "92897115"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы полностью выполнить действия, описанные в этой статье, необходимо установить [Azure Maps пакет SDK для Android](./how-to-use-android-map-control-library.md) , чтобы загрузить карту.
+1. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account)
+2. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки.
+3. Скачайте и установите [пакет SDK для Android Azure Maps](./how-to-use-android-map-control-library.md).
 
 ## <a name="add-a-symbol-layer"></a>Добавление слоя символов
 
 Чтобы добавить маркер на карту с помощью слоя символов, выполните следующие действия:
 
-1. Измените макет " **RES**  >  **layout**  >  " **activity_main.xml** так, чтобы он выглядел как следующий XML:
+1. Измените макет " **RES**  >  **layout**  >  "**activity_main.xml** так, чтобы он выглядел как следующий XML:
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -62,7 +64,7 @@ ms.locfileid: "92897115"
         //Create a point feature and add it to the data source.
         dataSource.add(Feature.fromGeometry(Point.fromLngLat(-122.33, 47.64)));
     
-        //Add a custom image icon to the map resources.
+        //Add a red custom image icon to the map resources.
         map.images.add("my-icon", R.drawable.mapcontrol_marker_red);
     
         //Create a symbol layer and add it to the map.
@@ -71,8 +73,6 @@ ms.locfileid: "92897115"
         });
     
     ```
-    
-    Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова **Onreading ()** . Затем он создает объект источника данных с помощью класса **DataSource** и добавляет его к сопоставлению. Затем он добавляет в него **компонент** , содержащий геометрию точки. Затем изображение Красного маркера устанавливается в качестве значка для символа. **Слой символов** использует текст или значки для отрисовки данных на основе точек, инкапсулированных в источнике данных, в виде символа на карте. Затем создается слой символов, и источник данных передается ему для подготовки к просмотру, а затем добавляется к слоям на карте.
     
     После добавления приведенного выше фрагмента кода он `MainActivity.java` должен выглядеть следующим образом:
     
@@ -165,19 +165,17 @@ ms.locfileid: "92897115"
         }
     }
     ```
-    
-На этом этапе при запуске приложения на карте должен отобразиться маркер, как показано ниже:
 
-<center>
+При запуске приложения на карте должен отобразиться маркер, как показано ниже:
 
-![Метка на карте Android](./media/how-to-add-symbol-to-android-map/android-map-pin.png)</center>
+![Метка на карте Android](./media/how-to-add-symbol-to-android-map/android-map-pin.png)
 
 > [!TIP]
 > По умолчанию слои символов оптимизируют отрисовку символов путем скрытия перекрывающихся символов. При изменении масштаба скрытые символы становятся видимыми. Чтобы отключить эту функцию и вывести все символы в любое время, установите `iconAllowOverlap` параметр в значение `true` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о добавлении дополнительных материалов на карту см. в следующих статьях:
+Дополнительные сведения о добавлении данных в карту см. в следующих статьях:
 
 > [!div class="nextstepaction"]
 > [Добавление фигур на карту Android](./how-to-add-shapes-to-android-map.md)

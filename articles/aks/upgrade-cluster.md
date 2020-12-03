@@ -4,12 +4,12 @@ description: Узнайте, как обновить кластер Azure Kubern
 services: container-service
 ms.topic: article
 ms.date: 11/17/2020
-ms.openlocfilehash: 262905c9f840850795ba9555912e81eca61369d1
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 30ad80727c238ae7e415039adf3e4eb75dbbc1b5
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683239"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531349"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -121,6 +121,64 @@ Name          Location    ResourceGroup    KubernetesVersion    ProvisioningStat
 myAKSCluster  eastus      myResourceGroup  1.13.10               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
 ```
 
+## <a name="set-auto-upgrade-channel-preview"></a>Задать канал автоматического обновления (Предварительная версия)
+
+В дополнение к ручному обновлению кластера можно задать канал автоматического обновления в кластере. Доступны следующие каналы обновления:
+
+* *нет*, что отключает автоматическое обновление и сохраняет кластер в текущей версии Kubernetes. Это значение по умолчанию, которое используется, если параметр не указан.
+* *исправление*, которое автоматически обновит кластер до последней поддерживаемой версии исправления, когда она станет доступной, сохраняя при этом дополнительный номер версии. Например, если кластер работает под управлением версии *1.17.7* , а версии *1.17.9*, *1.18.4*, *1.18.6* и *1.19.1* доступны, то кластер обновляется до *1.17.9*.
+* *стабильный*, который автоматически обновит кластер до последней поддерживаемой версии исправления на дополнительный номер версии *n-1*, где *n* — последняя поддерживаемая дополнительная версия. Например, если кластер работает под управлением версии *1.17.7* , а версии *1.17.9*, *1.18.4*, *1.18.6* и *1.19.1* доступны, то кластер обновляется до *1.18.6*.
+* *быстрое* обновление, которое автоматически обновит кластер до последней поддерживаемой версии исправления с последней поддерживаемой дополнительной версией. В случаях, когда кластер находится в версии Kubernetes, которая находится на *n-2* дополнительной версии, где *n* — последняя поддерживаемая дополнительная версия, кластер сначала обновляет последнюю поддерживаемую версию исправления на *N-1* дополнительный номер версии. Например, если кластер работает под управлением версии *1.17.7* , а версии *1.17.9*, *1.18.4*, *1.18.6* и *1.19.1* доступны, то кластер сначала обновляется до *1.18.6*, а затем обновляется до *1.19.1*.
+
+> [!NOTE]
+> Кластер с автообновлением обновляет только общедоступные версии Kubernetes и не будет обновлен до предварительной версии.
+
+Автоматическое обновление кластера выполняется так же, как и обновление кластера вручную. Дополнительные сведения см. [в разделе Обновление кластера AKS][upgrade-cluster].
+
+Автоматическое обновление кластера для кластеров AKS является функцией предварительной версии.
+
+[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
+
+Зарегистрируйте `AutoUpgradePreview` флаг компонента с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
+
+```azurecli-interactive
+az feature register --namespace Microsoft.ContainerService -n AutoUpgradePreview
+```
+
+Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Проверьте состояние регистрации с помощью команды [AZ Feature List][az-feature-list] .
+
+```azurecli-interactive
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AutoUpgradePreview')].{Name:name,State:properties.state}"
+```
+
+Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
+
+```azurecli-interactive
+az provider register --namespace Microsoft.ContainerService
+```
+
+Используйте команду [AZ Extension Add][az-extension-add] , чтобы установить расширение *AKS-Preview* , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
+
+```azurecli-interactive
+# Install the aks-preview extension
+az extension add --name aks-preview
+
+# Update the extension to make sure you have the latest version installed
+az extension update --name aks-preview
+```
+
+Чтобы задать канал автоматического обновления при создании кластера, используйте параметр *автоматического обновления канала* , как показано в следующем примере.
+
+```azurecli-interactive
+az aks create --resource-group myResourceGroup --name myAKSCluster --auto-upgrade-channel stable --generate-ssh-keys
+```
+
+Чтобы задать канал автоматического обновления в существующем кластере, обновите параметр *автоматического обновления канала* , как показано в следующем примере.
+
+```azurecli-interactive
+az aks update --resource-group myResourceGroup --name myAKSCluster --auto-upgrade-channel stable
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье было показано, как выполнить обновление существующего кластера AKS. Дополнительные сведения о развертывании AKS и управлении ею см. в следующей статье.
@@ -137,6 +195,10 @@ myAKSCluster  eastus      myResourceGroup  1.13.10               Succeeded      
 [az-aks-get-upgrades]: /cli/azure/aks#az-aks-get-upgrades
 [az-aks-upgrade]: /cli/azure/aks#az-aks-upgrade
 [az-aks-show]: /cli/azure/aks#az-aks-show
-[nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
+[az-feature-list]: /cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true
+[az-feature-register]: /cli/azure/feature#az-feature-register
+[az-provider-register]: /cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true
+[nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool
+[upgrade-cluster]:  #upgrade-an-aks-cluster

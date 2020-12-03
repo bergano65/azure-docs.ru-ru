@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 2241049e5c3cb5039a73c0f7637f7e3553d2e227
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 878d59445dde839ca9e702ac0c49af676e48a42f
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326885"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531196"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Общие сведения о миграции: SQL Server в SQL Управляемый экземпляр
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "96326885"
 
 Другие сценарии см. в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/). 
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 [Управляемый экземпляр Azure SQL](../../managed-instance/sql-managed-instance-paas-overview.md) является рекомендуемым вариантом для рабочих нагрузок SQL Server, которым требуется полностью управляемая служба без необходимости управлять виртуальными машинами или их операционными системами. SQL Управляемый экземпляр позволяет преносить локальные приложения в Azure с минимальными изменениями приложений или баз данных, при этом обеспечивая полную изоляцию экземпляров с помощью встроенной поддержки виртуальной сети (VNet). 
 
@@ -63,7 +63,7 @@ ms.locfileid: "96326885"
 Вы можете выбрать ресурсы для вычислений и хранения во время развертывания, а затем изменить их после использования [портал Azure](../../database/scale-resources.md) без простоя приложения. 
 
 > [!IMPORTANT]
-> Любое расхождение в [требованиях к виртуальной сети для управляемого экземпляра](../../managed-instance/connectivity-architecture-overview.md#network-requirements) может препятствовать созданию новых экземпляров или использованию существующих. Узнайте больше о [создании новых](../../managed-instance/virtual-network-subnet-create-arm-template.md?branch=release-ignite-arc-data)   и [настройке существующих](../../managed-instance/vnet-existing-add-subnet.md?branch=release-ignite-arc-data)   сетей. 
+> Любое расхождение в [требованиях к виртуальной сети для управляемого экземпляра](../../managed-instance/connectivity-architecture-overview.md#network-requirements) может препятствовать созданию новых экземпляров или использованию существующих. Узнайте больше о [создании новых](../../managed-instance/virtual-network-subnet-create-arm-template.md)   и [настройке существующих](../../managed-instance/vnet-existing-add-subnet.md?branch=release-ignite-arc-data)   сетей. 
 
 ### <a name="sql-server-vm-alternative"></a>Альтернативная SQL Server ВМ
 

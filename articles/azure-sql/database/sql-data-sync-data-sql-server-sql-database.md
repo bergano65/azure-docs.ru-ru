@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/20/2019
-ms.openlocfilehash: c77001707eda7c208ad19a014a1f0cff2b85b25d
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: b23b5a81fdff8a05742092f517128e08723103fc
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736482"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531145"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Что такое синхронизация данных SQL для Azure?
 
@@ -63,12 +63,10 @@ ms.locfileid: "95736482"
 | Аварийное восстановление | [Геоизбыточные резервные копии Azure](automated-backups-overview.md) |
 | масштаб чтения; | [Использование реплик только для чтения для распределения рабочих нагрузок запросов только для чтения (предварительная версия)](read-scale-out.md) |
 | ETL (OLTP в OLAP); | [Фабрика данных Azure](https://azure.microsoft.com/services/data-factory/) или [SQL Server Integration Services](/sql/integration-services/sql-server-integration-services) |
-| Миграция с SQL Server в базу данных SQL Azure | [Миграция баз данных Azure](https://azure.microsoft.com/services/database-migration/) |
+| Миграция с SQL Server в базу данных SQL Azure. Однако синхронизация данных SQL можно использовать после завершения миграции, чтобы гарантировать синхронизацию исходного и целевого объектов.  | [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/) |
 |||
 
-
-
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 - **Отслеживание изменения данных**. Служба синхронизации данных отслеживают изменения при помощи триггеров вставки, обновления и удаления. Изменения записываются во вспомогательную таблицу в пользовательской базе данных. Обратите внимание, что BULK INSERT не запускает триггеры по умолчанию. Если FIRE_TRIGGERS не указан, триггеры INSERT не выполняются. Добавьте параметр FIRE_TRIGGERS, чтобы служба синхронизации данных могла отслеживать эти вставки. 
 - **Синхронизация данных:** Синхронизация данных разработана в центрально-лучевой модели. Концентратор синхронизируется с каждым членом по отдельности. Изменения из центра загружаются в член, а затем изменения из участника передаются в центр.
@@ -241,7 +239,7 @@ ms.locfileid: "95736482"
 
 Функция Dynamics 365 "внедрить собственную базу данных" позволяет администраторам экспортировать сущности данных из приложения в собственную базу данных SQL Microsoft Azure. Синхронизацию данных можно использовать для синхронизации этих данных в других базах данных, если данные экспортируются с помощью **добавочной push-уведомления** (полная отправка не поддерживается) и для параметра **включить триггеры в целевой базе данных** задано значение **Да**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="update-the-schema-of-a-synced-database"></a>Обновление схемы синхронизированной базы данных
 

@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 8b75345743bb398458752d03f853738df713b4f9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 64ba24eb0eab581310122908fc05d1d671ac1d40
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456437"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531579"
 ---
 # <a name="data-loading-strategies-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Стратегии загрузки данных для выделенного пула SQL в Azure синапсе Analytics
 
@@ -119,8 +119,9 @@ ms.locfileid: "96456437"
 | [Сложный тип](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fapache%2Fparquet-format%2Fblob%2Fmaster%2FLogicalTypes.md%23maps&data=02\|01\|kevin%40microsoft.com\|19f74d93f5ca45a6b73c08d7d7f5f111\|72f988bf86f141af91ab2d7cd011db47\|1\|0\|637215323617803168&sdata=FiThqXxjgmZBVRyigHzfh5V7Z%2BPZHjud2IkUUM43I7o%3D&reserved=0) |                  MAP                  |   varchar(max)   |
 
 >[!IMPORTANT] 
-> - Выделенные пулы SQL в настоящее время не поддерживают типы данных Parquet с точностью до "MICROs" и "NANOs". 
-> - При несовпадении типов между Parquet и SQL или с неподдерживаемыми типами данных Parquet может возникнуть следующая ошибка:  **"хдфсбридже:: рекордреадерфиллбуффер-непредвиденная ошибка при заполнении буфера чтения записи: класскастексцептион:..."**
+>- Выделенные пулы SQL в настоящее время не поддерживают типы данных Parquet с точностью до "MICROs" и "NANOs". 
+>- При несовпадении типов между Parquet и SQL или с неподдерживаемыми типами данных Parquet может возникнуть следующая ошибка: **"хдфсбридже:: рекордреадерфиллбуффер-непредвиденная ошибка при заполнении буфера чтения записи: класскастексцептион:..."**
+>- Загрузка значения за пределами диапазона 0-127 в столбец tinyint для формата файлов Parquet и ORC не поддерживается.
 
 Пример создания внешних объектов см. в разделе [Создание внешних таблиц](https://docs.microsoft.com/azure/synapse-analytics/sql/develop-tables-external-tables?tabs=sql-pool).
 
