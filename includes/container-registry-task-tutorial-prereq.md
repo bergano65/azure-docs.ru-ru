@@ -4,12 +4,12 @@ ms.service: container-registry
 ms.topic: include
 ms.date: 05/02/2019
 ms.author: danlep
-ms.openlocfilehash: 40cc1856a5e943ca5596e7d11712febadd30e3ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 79e2ca71d6b8178be63c3429edba89cf3bb523e2
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67133873"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030001"
 ---
 ## <a name="prerequisites"></a>предварительные требования
 
@@ -21,7 +21,7 @@ ms.locfileid: "67133873"
 
 Для выполнения заданий данного руководства необходимо иметь реестр контейнеров Azure в подписке Azure. Если вам нужен реестр, см. сведения в [предыдущем руководстве](../articles/container-registry/container-registry-tutorial-quick-task.md) или в статье [Краткое руководство. Создание реестра контейнеров с использованием Azure CLI](../articles/container-registry/container-registry-get-started-azure-cli.md).
 
-## <a name="create-a-github-personal-access-token"></a>Создание личного маркера доступа GitHub
+### <a name="create-a-github-personal-access-token"></a>Создание личного маркера доступа GitHub
 
 Чтобы инициировать задачу при фиксации кода в репозитории Git, решению "Задачи ACR" требуется личный маркер доступа для доступа к репозиторию. Если у вас еще нет личного маркера доступа, выполните следующие действия, чтобы создать его на GitHub.
 

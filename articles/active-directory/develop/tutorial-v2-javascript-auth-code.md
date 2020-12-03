@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 6b8a9cbfd3e7057f0d85d5f4e19fea3aa4fbe90b
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 79fe821e2da494ab8c9e4cb407e2c2b025f75568
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980224"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169109"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-app-spa-using-auth-code-flow"></a>Руководство по входу пользователей и вызову API Microsoft Graph из одностраничного приложения JavaScript с помощью потока кода авторизации
 
@@ -351,7 +351,7 @@ const graphConfig = {
 
 - `Enter_the_Graph_Endpoint_Here` экземпляр API Microsoft Graph, с которым должно взаимодействовать приложение.
   - Для **глобальной** конечной точки API Microsoft Graph замените оба экземпляра этой строки на `https://graph.microsoft.com`.
-  - Дополнительные сведения о конечных точках в **национальных** облачных развертываниях см. в статье [Национальные облачные развертывания](https://docs.microsoft.com/graph/deployments) в документации по Microsoft Graph.
+  - Дополнительные сведения о конечных точках в **национальных** облачных развертываниях см. в статье [Национальные облачные развертывания](/graph/deployments) в документации по Microsoft Graph.
 
 Если вы используете глобальную конечную точку, значения `graphMeEndpoint` и `graphMailEndpoint` в файле *authConfig.js* должно выглядеть примерно так:
 

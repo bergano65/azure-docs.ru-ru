@@ -11,18 +11,18 @@ ms.custom: mvc, seo-javascript-september2019, devx-track-js
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 705df6ddc6b665ac3d0d62ec3dad93e38f5e513e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 6a9f3b864bd8aba2140c7d32d4b5474ff7b95f88
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953106"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171234"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-with-azure-ad-b2c"></a>Руководство по Включение аутентификации в одностраничном приложении с помощью Azure AD B2C
 
 В этом учебнике показано, как использовать Azure Active Directory B2C (Azure AD B2C) для регистрации и выполнения входа пользователей в одностраничном приложении (SPA) с помощью одного из потоков:
-* [Поток кода авторизации OAuth 2.0](https://docs.microsoft.com/azure/active-directory-b2c/authorization-code-flow) (с использованием [MSAL.js 2.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)).
-* [Поток неявного предоставления разрешения OAuth 2.0](https://docs.microsoft.com/azure/active-directory-b2c/implicit-flow-single-page-application) (с использованием [MSAL.js 1.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core)).
+* [Поток кода авторизации OAuth 2.0](./authorization-code-flow.md) (с использованием [MSAL.js 2.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)).
+* [Поток неявного предоставления разрешения OAuth 2.0](./implicit-flow-single-page-application.md) (с использованием [MSAL.js 1.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core)).
 
 В этом руководстве, который представляет собой первую часть серии, состоящей из двух частей, рассматриваются следующие темы:
 
@@ -51,7 +51,7 @@ ms.locfileid: "94953106"
 
 ## <a name="update-the-application"></a>Обновление приложения
 
-При прохождении [второго учебника](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-register-spa) для выполнения предварительных условий вы зарегистрировали одностраничное приложение в Azure AD B2C. Для обеспечения взаимодействия с примером из этого руководства необходимо добавить URL ответа (также называется URI перенаправления) в регистрацию приложения.
+При прохождении [второго учебника](./tutorial-register-spa.md) для выполнения предварительных условий вы зарегистрировали одностраничное приложение в Azure AD B2C. Для обеспечения взаимодействия с примером из этого руководства необходимо добавить URL ответа (также называется URI перенаправления) в регистрацию приложения.
 
 Чтобы обновить приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрация приложений** или устаревший интерфейс **Приложения (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](./app-registrations-training-guide.md).
 
