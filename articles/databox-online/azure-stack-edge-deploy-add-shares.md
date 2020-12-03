@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to add and connect to shares on Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: aeb5bceca11f595c1582596aeea401fe5f9b239f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 64fe65019a66013323b1c6d27055051badb47cee
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883481"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350319"
 ---
 # <a name="tutorial-transfer-data-with-azure-stack-edge-pro"></a>Руководство по Передача данных с помощью Azure Stack Edge Pro
 
@@ -62,7 +62,7 @@ ms.locfileid: "90883481"
     c. Предоставьте учетную запись хранения, где будет размещена общая папка. 
 
     > [!IMPORTANT]
-    > Убедитесь, что требуемая учетная запись хранения Azure не имеет определенных политик неизменяемости, если она используется с устройством Azure Stack Edge Pro или Шлюза Data Box. См. сведения об [определении и администрировании политик неизменяемости для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage).
+    > Убедитесь, что требуемая учетная запись хранения Azure не имеет определенных политик неизменяемости, если она используется с устройством Azure Stack Edge Pro или Шлюза Data Box. См. сведения об [определении и администрировании политик неизменяемости для хранилища BLOB-объектов](../storage/blobs/storage-blob-immutability-policies-manage.md).
     
     d. В раскрывающемся списке **службы хранилища** выберите **Блочный BLOB-объект**, **Страничный BLOB-объект** или **Файлы**.  
     Тип выбранной службы зависит от формата данных, который вы хотите использовать в Azure. Так как мы хотим хранить данные в блочных BLOB-объектах, в этом примере мы выбрали **Блочный BLOB-объект**. Если вы выбрали **Страничный BLOB-объект**, убедитесь, что данные выровнены по размеру 512 байт. Например, VHDX всегда выравнивается по размеру 512 байт.
@@ -162,5 +162,3 @@ ms.locfileid: "90883481"
 
 > [!div class="nextstepaction"]
 > [Преобразование данных с помощью Azure Stack Edge Pro](./azure-stack-edge-deploy-configure-compute.md)
-
-

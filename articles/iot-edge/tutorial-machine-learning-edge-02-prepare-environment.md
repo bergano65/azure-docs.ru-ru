@@ -8,12 +8,12 @@ ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3a3518ba68c9474fc4a34390e6fd9a7d1e88f6c6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f261db8d40e1a1cc1737ff6a3f5c50da661b73e6
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959600"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433486"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство по настройке среды для машинного обучения в IoT Edge
 
@@ -39,7 +39,7 @@ ms.locfileid: "94959600"
 * [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/)
 * [Python 3](https://www.python.org/);
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Azure PowerShell](/powershell/azure/?view=azps-1.1.0)
+* [Azure PowerShell](/powershell/azure/)
 * [расширения VS Code](https://marketplace.visualstudio.com/search?target=VSCode):
   * [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
   * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
@@ -83,7 +83,7 @@ ms.locfileid: "94959600"
 
    Скрипт будет выполнять следующие действия в течение нескольких минут:
 
-    1. Установка [модуля Az для Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-1.1.0).
+    1. Установка [модуля Az для Azure PowerShell](/powershell/azure/new-azureps-module-az).
     1. Отображение запроса на вход в Azure.
     1. Подтверждение сведений для создания виртуальной машины. Нажмите клавишу **Y** или **ВВОД**, чтобы продолжить.
     1. Создание группы ресурсов, если она не существует.

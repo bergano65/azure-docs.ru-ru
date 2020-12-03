@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 - devx-track-csharp
-ms.openlocfilehash: d59e37cdcb6f530b08e980cf75d8834aed332252
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a16dbeedc2362f4a263d59a673dbb4358f7ba034
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315327"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436493"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-logs-with-an-iot-hub"></a>Руководство по настройке и использованию метрик и журналов с Центром Интернета вещей
 
@@ -42,9 +42,9 @@ Azure Monitor можно использовать для сбора метрик
 
 ## <a name="prerequisites"></a>Обязательные условия
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-* На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1 или более поздней. Пакет SDK для .NET Core, предназначенный для нескольких платформ, можно загрузить из [.NET](https://www.microsoft.com/net/download/all).
+- На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1 или более поздней. Пакет SDK для .NET Core, предназначенный для нескольких платформ, можно загрузить из [.NET](https://www.microsoft.com/net/download/all).
 
   Текущую версию C# на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
@@ -52,11 +52,11 @@ Azure Monitor можно использовать для сбора метрик
   dotnet --version
   ```
 
-* Рабочая учетная запись электронной почты.
+- Рабочая учетная запись электронной почты.
 
-* Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+- Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="set-up-resources"></a>Настройка ресурсов
 

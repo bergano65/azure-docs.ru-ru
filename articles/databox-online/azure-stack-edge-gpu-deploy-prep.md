@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 46c5271c8ded970442d1ae4022573473997d98af
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: cdfd012d5015e156439a1afa89e818bf82b64dc6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427009"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449337"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-with-gpu"></a>Руководство по подготовке к развертыванию Azure Stack Edge Pro с GPU 
 
@@ -66,7 +66,7 @@ ms.locfileid: "92427009"
 
 Перед тем как начать, убедитесь в следующем.
 
-- Для ресурса Azure Stack Edge включена подписка Microsoft Azure. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются. Сведения о том, как определить тип своей подписки Azure, см. в разделе [Что такое предложение Azure](../cost-management-billing/manage/switch-azure-offer.md#what-is-an-azure-offer).
+- Для ресурса Azure Stack Edge включена подписка Microsoft Azure. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются. Сведения о том, как определить тип своей подписки Azure, см. в разделе [Что такое предложение Azure](../cost-management-billing/manage/switch-azure-offer.md#what-is-an-azure-offer).
 - У вас должен быть доступ с правами владельца или участника на уровне группы ресурсов к Azure Stack Edge Pro или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
 
     - Для создания ресурсов Azure Stack Edge или Шлюза Azure Data Box необходимы разрешения с правами не ниже участника, действующие на уровне группы ресурсов. 
@@ -74,7 +74,7 @@ ms.locfileid: "92427009"
         - Чтобы зарегистрировать поставщик ресурсов, на портале Azure выберите **Главная > Подписки > ваша_подписка > Поставщики ресурсов**. 
         - Найдите конкретный поставщик ресурсов, например `Microsoft.DataBoxEdge`, и зарегистрируйте его. 
     - Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
-- У вас должны быть права администратора или пользователя на доступ к API Graph Azure Active Directory для создания ключей активации или операций с учетными данными, таких как создание общих ресурсов, в которых используется учетная запись хранения. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
+- У вас должны быть права администратора или пользователя на доступ к API Graph Azure Active Directory для создания ключей активации или операций с учетными данными, таких как создание общих ресурсов, в которых используется учетная запись хранения. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 
 
 ### <a name="for-the-azure-stack-edge-pro-device"></a>Для устройства Azure Stack Edge Pro
@@ -126,7 +126,7 @@ ms.locfileid: "92427009"
     |Параметр  |Значение  |
     |---------|---------|
     |Подписка    |Это поле заполняется автоматически на основе ранее выбранного значения. Подписка привязана к учетной записи выставления счетов. |
-    |Группа ресурсов  |Создайте группу или выберите имеющуюся.<br>Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/resource-group-overview.md).     |
+    |Группа ресурсов  |Создайте группу или выберите имеющуюся.<br>Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/management/overview.md).     |
 
 7. Введите или выберите следующие **сведения об экземпляре**.
 
@@ -207,6 +207,3 @@ ms.locfileid: "92427009"
 
 > [!div class="nextstepaction"]
 > [Установка Azure Stack Edge Pro](./azure-stack-edge-gpu-deploy-install.md)
-
-
-

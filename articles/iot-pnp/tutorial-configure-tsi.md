@@ -7,16 +7,16 @@ ms.date: 10/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ca2319a78fb4c0c720a21e97944d5b75ada9d008
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ad5c6f205fc832eb125e52b4135990fc58742e62
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015034"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453241"
 ---
 # <a name="preview-tutorial-create-and-connect-to-time-series-insights-gen2-to-store-visualize-and-analyze-iot-plug-and-play-device-telemetry"></a>Руководство по работе с предварительной версией. Создание службы "Аналитика временных рядов" 2-го поколения и подключению к ней для хранения, визуализации и анализа данных телеметрии устройств IoT Plug and Play
 
-Из этого руководства вы узнаете, как создать и правильно настроить среду службы ["Аналитика временных рядов Azure" 2-го поколения](https://docs.microsoft.com/azure/time-series-insights/overview-what-is-tsi) (TSI) для интеграции с решением IoT Plug and Play. С помощью TSI вы можете собирать, обрабатывать, хранить, запрашивать и визуализировать данные временного ряда в масштабе Интернета вещей.
+Из этого руководства вы узнаете, как создать и правильно настроить среду службы ["Аналитика временных рядов Azure" 2-го поколения](../time-series-insights/overview-what-is-tsi.md) (TSI) для интеграции с решением IoT Plug and Play. С помощью TSI вы можете собирать, обрабатывать, хранить, запрашивать и визуализировать данные временного ряда в масштабе Интернета вещей.
 
 Сначала вы подготовите среду TSI и подключите центр Интернета вещей в качестве источника событий с потоковой передачей данных. Затем вы выполните синхронизацию модели, чтобы создать [модель временных рядов](../time-series-insights/concepts-model-overview.md), основанную на файлах примера модели [языка определения цифровых двойников (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl), которые вы использовали для контроллера температуры и термостатов.
 
@@ -39,7 +39,7 @@ ms.locfileid: "96015034"
 
 ## <a name="prepare-your-event-source"></a>Подготовка источника событий
 
-Центр Интернета вещей, который вы создали ранее, будет выполнять роль [источника событий](https://docs.microsoft.com/azure/time-series-insights/concepts-streaming-ingestion-event-sources) в вашей среде TSI.
+Центр Интернета вещей, который вы создали ранее, будет выполнять роль [источника событий](../time-series-insights/concepts-streaming-ingestion-event-sources.md) в вашей среде TSI.
 
 > [!IMPORTANT]
 > Отключите все существующие маршруты Центра Интернета вещей. Существует известная проблема, связанная с использованием центра Интернета вещей в качестве источника событий TSI с настроенной [маршрутизацией](../iot-hub/iot-hub-devguide-messages-d2c.md#routing-endpoints). Временно отключите все конечные точки маршрутизации, а затем повторно активируйте их, когда ваш центр Интернета вещей подключится к TSI.
@@ -67,7 +67,7 @@ az iot hub consumer-group create --hub-name my-pnp-hub --name tsi-consumer-group
 
 Приведенная ниже команда:
 
-* Создает учетную запись хранения Azure для [холодного хранилища](https://docs.microsoft.com/azure/time-series-insights/concepts-storage#cold-store) вашей среды, которое предназначено для долгосрочного хранения и анализа данных журнала.
+* Создает учетную запись хранения Azure для [холодного хранилища](../time-series-insights/concepts-storage.md#cold-store) вашей среды, которое предназначено для долгосрочного хранения и анализа данных журнала.
   * Замените `mytsicoldstore` уникальным именем учетной записи для холодного хранения.
 * Создает среду службы "Аналитика временных рядов Azure" 2-го поколения, включая теплое хранилище с периодом хранения 7 дней, а также холодное хранилище для бессрочного хранения.
   * Замените значение `my-tsi-env` уникальным именем для среды TSI.

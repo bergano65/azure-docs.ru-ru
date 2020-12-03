@@ -6,12 +6,12 @@ ms.author: bwren
 ms.subservice: metrics
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 26b155484dafac4a63fe2a6c7ff292ee8bbacbc0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ce9183fad50c43ea7070f5fa09e0d445caf89df
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317214"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451260"
 ---
 # <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Руководство по Создание диаграммы метрик в Azure Monitor
 Обозреватель метрик является компонентом Azure Monitor и доступен на портале Microsoft Azure. Он позволяет создавать диаграммы, визуально сопоставлять тенденции и изучать пики и спады в значениях метрик. Используйте обозреватель метрик для анализа работоспособности и использования ресурсов Azure или для построения диаграмм по пользовательским метрикам. 
@@ -85,5 +85,5 @@ ms.locfileid: "91317214"
 Итак, вы изучили работу с метриками в Azure Monitor. Переходите к статье о том, как на основе метрик отправлять упреждающие оповещения.
 
 > [!div class="nextstepaction"]
-> [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../platform/alerts-metric.md)
+> [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../platform/metrics-charts.md#create-alert-rules)
 

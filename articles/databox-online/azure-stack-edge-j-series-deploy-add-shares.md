@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/28/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to add and connect to shares on Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: cd288926e6f7a3f454be2788479b5c9d414b167a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68cac756a3c84d0360d475a4bf88a392e3961f1d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91440277"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447561"
 ---
 # <a name="tutorial-transfer-data-via-shares-with-azure-stack-edge-pro-gpu"></a>Руководство по Передача данных через общие папки с помощью Azure Stack Edge Pro с GPU
 
@@ -66,7 +66,7 @@ ms.locfileid: "91440277"
     Тип выбранной службы зависит от формата данных, который вы хотите использовать в Azure. Так как мы хотим хранить данные в блочных BLOB-объектах, в этом примере мы выбрали **Блочный BLOB-объект**. Если вы выбрали **Страничный BLOB-объект**, убедитесь, что данные выровнены по размеру 512 байт. Например, VHDX всегда выравнивается по размеру 512 байт.
 
    > [!IMPORTANT]
-   > Убедитесь, что требуемая учетная запись хранения Azure не имеет определенных политик неизменяемости, если она используется с устройством Azure Stack Edge Pro или Шлюза Data Box. См. сведения об [определении и администрировании политик неизменяемости для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage).
+   > Убедитесь, что требуемая учетная запись хранения Azure не имеет определенных политик неизменяемости, если она используется с устройством Azure Stack Edge Pro или Шлюза Data Box. См. сведения об [определении и администрировании политик неизменяемости для хранилища BLOB-объектов](../storage/blobs/storage-blob-immutability-policies-manage.md).
 
     д) Создайте контейнер BLOB-объектов или выберите существующий из раскрывающегося списка. Если вы создаете контейнер, укажите его имя. В случает отсутствия контейнера он создается в учетной записи хранения с уже только что созданным именем общей папки.
    
@@ -198,5 +198,3 @@ ms.locfileid: "91440277"
 
 > [!div class="nextstepaction"]
 > [Преобразование данных с помощью Azure Stack Edge Pro](./azure-stack-edge-j-series-deploy-configure-compute.md)
-
-

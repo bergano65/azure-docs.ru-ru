@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 10/02/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 5fe8bf70374a2eec639a0a9365f7d227cf259d06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a55a330f6f4fefb86f2c056cd0ca3b2ba5f4b29
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667254"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499600"
 ---
 # <a name="tutorial-order-search-results-using-the-net-sdk"></a>Руководство по Упорядочивание результатов поиска с помощью пакета SDK для .NET
 
@@ -965,7 +965,7 @@ ms.locfileid: "91667254"
 
 ### <a name="resources"></a>Ресурсы
 
-Подробные сведения см. в статье [Add scoring profiles to an Azure Search index](/azure/search/index-add-scoring-profiles) (Добавление профилей повышения в индекс Когнитивного поиска Azure).
+Подробные сведения см. в статье [Add scoring profiles to an Azure Search index](./index-add-scoring-profiles.md) (Добавление профилей повышения в индекс Когнитивного поиска Azure).
 
 ## <a name="takeaways"></a>Общие выводы
 

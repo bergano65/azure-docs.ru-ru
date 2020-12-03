@@ -4,12 +4,12 @@ description: Создание бессерверной функции PowerShell
 ms.topic: tutorial
 ms.date: 06/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ec4b2273f6be6ea4aabed2b660e0b7553f861d0d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b94d583ca26b88d093810528d3193f20d765f1d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89072049"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349254"
 ---
 # <a name="tutorial-use-an-http-triggered-azure-function-to-create-a-container-group"></a>Руководство по применению функции Azure, активируемой HTTP-запросами, для создания группы контейнеров
 
@@ -27,13 +27,13 @@ ms.locfileid: "89072049"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Предварительные требования к установке Visual Studio Code с расширением Функций Azure в своей ОС см. в статье о [создании первой функции Azure с использованием Visual Studio Code](../azure-functions/functions-create-first-function-vs-code.md?pivots=programming-language-powershell#configure-your-environment).
+Предварительные требования к установке Visual Studio Code с расширением Функций Azure в своей ОС см. в статье о [создании первой функции Azure с использованием Visual Studio Code](../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-powershell#configure-your-environment).
 
 Для выполнения дополнительных инструкций, приведенных в этой статье, используется Azure PowerShell. Если вам необходимо выполнить установку или обновление, см. сведения в статье [Установка Azure PowerShell][azure-powershell-install] и разделе [Вход в Azure](/powershell/azure/get-started-azureps#sign-in-to-azure).
 
 ## <a name="create-a-basic-powershell-function"></a>Создание базовой функции PowerShell
 
-Выполните инструкции из статьи [Создание первой функции PowerShell в Azure](../azure-functions/functions-create-first-function-vs-code.md?pivots=programming-language-powershell), чтобы создать функцию PowerShell из шаблона Триггер HTTP. Присвойте этой функции Azure имя **HttpTrigger**, предложенное по умолчанию. Протестируйте эту функцию локально и опубликуйте проект в виде приложения-функции Azure, как описано в этом кратком руководстве. В этом примере создается простая функция, которая активируется HTTP-запросом и возвращает текстовую строку. Далее вы измените функцию, чтобы она создавала группу контейнеров.
+Выполните инструкции из статьи [Создание первой функции PowerShell в Azure](../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-powershell), чтобы создать функцию PowerShell из шаблона Триггер HTTP. Присвойте этой функции Azure имя **HttpTrigger**, предложенное по умолчанию. Протестируйте эту функцию локально и опубликуйте проект в виде приложения-функции Azure, как описано в этом кратком руководстве. В этом примере создается простая функция, которая активируется HTTP-запросом и возвращает текстовую строку. Далее вы измените функцию, чтобы она создавала группу контейнеров.
 
 В этой статье предполагается, что вы публикуете проект с именем *myfunctionapp* в группе ресурсов Azure, которой автоматически присваивается имя, совпадающее с именем приложения-функции (также *myfunctionapp*). При выполнении последующих инструкций замените их фактическими именами приложения-функции и группы ресурсов.
 

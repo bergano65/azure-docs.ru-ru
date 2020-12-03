@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
 ms.custom: devx-track-js
-ms.openlocfilehash: bc11dd6113bbf5b07e19b83735c83e4895e4a796
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 919688a05081c6f0b717fa4a524da769f2a281fd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91323602"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351628"
 ---
 # <a name="deploy-server-rendered-nuxtjs-websites-on-azure-static-web-apps-preview"></a>Развертывание веб-сайтов Nuxt.js с рендерингом на стороне сервера в Статических веб-приложениях Azure (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "91323602"
 Вы можете настроить новый проект Nuxt.js с помощью `create-nuxt-app`. Вместо создания проекта в этом учебнике вы начнете с клонирования существующего репозитория. Этот репозиторий настроен для демонстрации развертывания динамического приложения Nuxt.js в качестве статического сайта.
 
 1. Создайте репозиторий в учетной записи GitHub из репозитория шаблонов.
-1. Перейдите на страницу <http://github.com/staticwebdev/nuxtjs-starter/generate>.
+1. Перейдите на страницу [http://github.com/staticwebdev/nuxtjs-starter/generate](https://github.com/login?return_to=/staticwebdev/nuxtjs-starter/generate)
 1. Присвойте репозиторию имя **nuxtjs-starter**
 1. Затем клонируйте новый репозиторий на компьютер. Обязательно замените <YOUR_GITHUB_ACCOUNT_NAME> именем своей учетной записи.
 
@@ -62,7 +62,7 @@ ms.locfileid: "91323602"
 
 Щелкнув платформу или библиотеку, вы увидите страницу со сведениями о выбранном элементе:
 
-:::image type="content" source="media/deploy-nuxtjs/start-nuxtjs-details.png" alt-text="Запуск приложения Nuxt.js":::
+:::image type="content" source="media/deploy-nuxtjs/start-nuxtjs-details.png" alt-text="Страница сведений":::
 
 ## <a name="generate-a-static-website-from-nuxtjs-build"></a>Создание статического веб-сайта из сборки Nuxt.js
 
@@ -130,7 +130,7 @@ ms.locfileid: "91323602"
 1. В раскрывающемся списке *Регион* выберите ближайший к вам регион.
 1. Из раскрывающегося списка номеров SKU выберите **Бесплатный**.
 
-   :::image type="content" source="media/deploy-nuxtjs/create-static-web-app.png" alt-text="Запуск приложения Nuxt.js":::
+   :::image type="content" source="media/deploy-nuxtjs/create-static-web-app.png" alt-text="Создание Статического веб-приложения":::
 
 ### <a name="add-a-github-repository"></a>Добавление репозитория GitHub
 
@@ -141,7 +141,7 @@ ms.locfileid: "91323602"
 1. Найдите и выберите имя созданного ранее репозитория.
 1. Выберите **master** в качестве ветви в раскрывающемся списке *Ветвь*.
 
-   :::image type="content" source="media/deploy-nuxtjs/connect-github.png" alt-text="Запуск приложения Nuxt.js":::
+   :::image type="content" source="media/deploy-nuxtjs/connect-github.png" alt-text="Подключение GitHub":::
 
 ### <a name="configure-the-build-process"></a>Настройка процесса сборки
 
@@ -149,7 +149,7 @@ ms.locfileid: "91323602"
 
 1. Щелкните вкладку **Сборка**, чтобы настроить статическую выходную папку.
 
-      :::image type="content" source="media/deploy-nuxtjs/build-tab.png" alt-text="Запуск приложения Nuxt.js":::
+      :::image type="content" source="media/deploy-nuxtjs/build-tab.png" alt-text="Вкладка &quot;Сборка&quot;":::
 
 1. Введите **dist** в текстовом поле *расположения артефакта приложения*.
 
@@ -178,7 +178,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nuxtjs-starter/actions
 
 Перейдите к только что развернутому сайту и щелкните один из логотипов платформы или библиотеки. Вместо страницы сведений вы получаете страницу с ошибкой 404.
 
-:::image type="content" source="media/deploy-nuxtjs/404-in-production.png" alt-text="Запуск приложения Nuxt.js":::
+:::image type="content" source="media/deploy-nuxtjs/404-in-production.png" alt-text="Ошибка 404 для динамических маршрутов":::
 
 Причина в том, что приложение Nuxt.js создало статический сайт только для домашней страницы. Nuxt.js может создавать эквивалентные статические файлы `.html` для каждого файла страниц `.vue`, но существует исключение. 
 
@@ -215,7 +215,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nuxtjs-starter/actions
 
 2. Отправьте новые изменения в репозиторий GitHub и подождите несколько минут, пока GitHub Actions еще раз выполнит сборку сайта. По завершении сборки ошибка 404 исчезнет.
 
-   :::image type="content" source="media/deploy-nuxtjs/404-in-production-fixed.png" alt-text="Запуск приложения Nuxt.js":::
+   :::image type="content" source="media/deploy-nuxtjs/404-in-production-fixed.png" alt-text="Ошибка 404 для динамических маршрутов устранена":::
 
 > [!div class="nextstepaction"]
 > [Настройка личного домена](custom-domain.md)

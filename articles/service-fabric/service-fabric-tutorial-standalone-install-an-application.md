@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 0b35bd02af5e1c90cac2e94d31dfca2344f3cc85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae946321b34f12c816a717db4a3d07f57feefe52
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840631"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485366"
 ---
 # <a name="tutorial-deploy-an-application-on-your-service-fabric-standalone-cluster"></a>Руководство по развертыванию приложения в изолированном кластере Service Fabric
 
@@ -50,7 +50,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 4. Щелкните правой кнопкой мыши проект приложения `Voting` в обозревателе решений, а затем выберите **Опубликовать**.
 
-5. Щелкните раскрывающийся список **Конечная точка подключения** и введите общедоступное DNS-имя одного из узлов в кластере.  Например, `ec2-34-215-183-77.us-west-2.compute.amazonaws.com:19000`. В Azure полное доменное имя (FQDN) не присваивается автоматически, но его можно легко [задать на странице обзора виртуальной машины](../virtual-machines/linux/portal-create-fqdn.md).
+5. Щелкните раскрывающийся список **Конечная точка подключения** и введите общедоступное DNS-имя одного из узлов в кластере.  Например, `ec2-34-215-183-77.us-west-2.compute.amazonaws.com:19000`. В Azure полное доменное имя (FQDN) не присваивается автоматически, но его можно легко [задать на странице обзора виртуальной машины](../virtual-machines/create-fqdn.md).
 
 6. Откройте любой браузер и введите адрес кластера — конечную точку подключения и порт, на котором развертывается приложение (в нашем случае это порт 8080), например: ec2-34-215-183-77.us-west-2.compute.amazonaws.com:8080.
 

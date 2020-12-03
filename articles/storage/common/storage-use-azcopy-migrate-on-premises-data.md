@@ -8,12 +8,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 154a7b17fc09c55e83b65eef8d479904c36e87eb
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: eddee58d70cf621bd6c82d54fe75434f4e596d9e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791194"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498172"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-with-azcopy"></a>Руководство по Перенос локальных данных в облачное хранилище с помощью AzCopy
 
@@ -44,7 +44,7 @@ ms.locfileid: "92791194"
 Чтобы создать контейнер, сделайте следующее.
 
 1. Нажмите кнопку **Учетные записи хранения** на главной странице и выберите созданную учетную запись хранилища.
-2. Выберите **Большие двоичные объекты** в разделе **Службы** , а затем выберите **Контейнер**.
+2. Выберите **Большие двоичные объекты** в разделе **Службы**, а затем выберите **Контейнер**.
 
    ![Снимок экрана, на котором показано создание контейнера](media/storage-azcopy-migrate-on-premises-data/CreateContainer.png)
  
@@ -176,7 +176,7 @@ schtasks /CREATE /SC minute /MO 5 /TN "AzCopy Script" /TR C:\script.bat
 
 Дополнительные сведения о способах перемещения данных из локальной среды в службу хранилища Azure и обратно см. по этой ссылке:
 
-* [Перемещение данных в службу хранилища Azure и обратно](./storage-choose-data-transfer-solution.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json)  
+* [Перемещение данных в службу хранилища Azure и обратно](./storage-choose-data-transfer-solution.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)  
 
 См. подробнее об AzCopy:
 

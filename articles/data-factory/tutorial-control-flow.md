@@ -2,8 +2,8 @@
 title: Ветвление в конвейере службы "Фабрика данных Azure"
 description: Узнайте, как контролировать поток данных в фабрике данных Azure с помощью ветвления и создания цепочки действий.
 services: data-factory
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: anandsub
 ms.reviewer: maghan
 ms.service: data-factory
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
-ms.openlocfilehash: 0a6fc68ddcb86c7ba768f59519cfb4273d381fab
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: ab7d17ee61d733483b6d3573e9bd69b1628c7940
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637706"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96496965"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -54,7 +54,7 @@ ms.locfileid: "92637706"
 
 Список регионов Azure, в которых в настоящее время доступна Фабрика Данных, см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных и вычислительные мощности могут находиться в других регионах. Это могут быть как хранилища Azure, так базы данных SQL Azure. В качестве средства вычислений может быть HDInsight, используемый Фабрикой Данных.
 
-Создайте приложение, как описано в разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Назначьте приложению роль **Участник** , следуя указаниям в той же статье. Вам потребуются несколько значений для последующих частей этого руководства, такие как **Application (client) ID** (Идентификатор приложения (клиента)) и **Directory (tenant) ID** (Идентификатор каталога (клиента)).
+Создайте приложение, как описано в разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Назначьте приложению роль **Участник**, следуя указаниям в той же статье. Вам потребуются несколько значений для последующих частей этого руководства, такие как **Application (client) ID** (Идентификатор приложения (клиента)) и **Directory (tenant) ID** (Идентификатор каталога (клиента)).
 
 ### <a name="create-a-blob-table"></a>Создание таблицы больших двоичных объектов
 
@@ -66,7 +66,7 @@ ms.locfileid: "92637706"
    ```
 
 1. Откройте обозреватель службы хранилища Azure. Разверните учетную запись хранения. Щелкните правой кнопкой мыши элемент **Blob Containers** (Контейнеры больших двоичных объектов) и выберите **Create Blob Container** (Создать контейнер BLOB-объектов).
-1. Присвойте новому контейнеру имя *adfv2branch* и выберите **Передать** , чтобы добавить файл *input. txt* в контейнер.
+1. Присвойте новому контейнеру имя *adfv2branch* и выберите **Передать**, чтобы добавить файл *input. txt* в контейнер.
 
 ## <a name="create-visual-studio-project"></a>Создание проекта Visual Studio<a name="create-visual-studio-project"></a>
 
@@ -148,7 +148,7 @@ ms.locfileid: "92637706"
 
 ### <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. Добавьте метод `CreateOrUpdateDataFactory` в файл *Program.cs* :
+1. Добавьте метод `CreateOrUpdateDataFactory` в файл *Program.cs*:
 
    ```csharp
    static Factory CreateOrUpdateDataFactory(DataFactoryManagementClient client)
@@ -181,7 +181,7 @@ ms.locfileid: "92637706"
 
 ## <a name="create-an-azure-storage-linked-service"></a>Создание связанной службы хранилища Azure
 
-1. Добавьте метод `StorageLinkedServiceDefinition` в файл *Program.cs* :
+1. Добавьте метод `StorageLinkedServiceDefinition` в файл *Program.cs*:
 
    ```csharp
    static LinkedServiceResource StorageLinkedServiceDefinition(DataFactoryManagementClient client)
@@ -213,7 +213,7 @@ ms.locfileid: "92637706"
 
 Добавьте метод, создающий *набор данных BLOB-объекта Azure*. Дополнительные сведения о поддерживаемых свойствах и сведениях см. в разделе [Свойства набора данных BLOB-объектов Azure](connector-azure-blob-storage.md#dataset-properties).
 
-Добавьте метод `SourceBlobDatasetDefinition` в файл *Program.cs* :
+Добавьте метод `SourceBlobDatasetDefinition` в файл *Program.cs*:
 
 ```csharp
 static DatasetResource SourceBlobDatasetDefinition(DataFactoryManagementClient client)
@@ -240,7 +240,7 @@ static DatasetResource SourceBlobDatasetDefinition(DataFactoryManagementClient c
 
 ### <a name="create-a-dataset-for-a-sink-azure-blob"></a>Создание набора данных для большого двоичного объекта Azure приемника
 
-1. Добавьте метод `SourceBlobDatasetDefinition` в файл *Program.cs* :
+1. Добавьте метод `SourceBlobDatasetDefinition` в файл *Program.cs*:
 
    ```csharp
    static DatasetResource SinkBlobDatasetDefinition(DataFactoryManagementClient client)
@@ -597,7 +597,7 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 
 Создайте и запустите приложение, а затем проверьте выполнение конвейера.
 
-Приложение выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем воспользуйтесь такими средствами, как обозреватель службы хранилища Azure, чтобы проверить, скопирован ли большой двоичный объект в *outputBlobPath* из *inputBlobPath* , как указано в переменных.
+Приложение выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем воспользуйтесь такими средствами, как обозреватель службы хранилища Azure, чтобы проверить, скопирован ли большой двоичный объект в *outputBlobPath* из *inputBlobPath*, как указано в переменных.
 
 Результат должен выглядеть так:
 

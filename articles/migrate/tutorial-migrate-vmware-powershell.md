@@ -7,12 +7,12 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 10/1/2020
 ms.author: rahugup
-ms.openlocfilehash: 185979fcc0eeaebbe1c3b09d74050e05899737af
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 3cd8d29a498a6a00fa8fff679afc969b339934b1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376805"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494347"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless---powershell"></a>Миграция виртуальных машин VMware в Azure (без агента) — PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "93376805"
 Для работы с этим руководством вам потребуется:
 
 1. [Выполнить задачи из учебника по обнаружению](tutorial-discover-vmware.md), чтобы подготовить Azure и VMware к миграции.
-2. Мы рекомендуем изучить и второй учебник, чтобы [оценить виртуальные машины VMware](tutorial-assess-vmware.md) перед переносом в Azure.
+2. Мы рекомендуем изучить и второй учебник, чтобы [оценить виртуальные машины VMware](./tutorial-assess-vmware-azure-vm.md) перед переносом в Azure.
 3. Установить модуль `Az` Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="install-azure-migrate-powershell-module"></a>Установка модуля PowerShell для Миграции Azure
@@ -480,11 +480,8 @@ Write-Output $StopReplicationJob.State
     - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Подробнее](../site-recovery/azure-to-azure-tutorial-enable-replication.md).
 - Для повышения уровня безопасности:
     - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования](../security-center/security-center-just-in-time.md) центра безопасности Azure.
-    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/security-overview.md).
+    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/network-security-groups-overview.md).
     - Разверните [шифрование дисков Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
     - Ознакомьтесь с дополнительными сведениями о [защите ресурсов IaaS](https://azure.microsoft.com/services/virtual-machines/secure-well-managed-iaas/) и посетите [центр безопасности Azure](https://azure.microsoft.com/services/security-center/).
 - Для мониторинга и управления:
 -  Рассмотрите возможность развертывания [службы "Управление затратами Azure"](../cost-management-billing/cloudyn/overview.md) для мониторинга использования ресурсов и затрат.
-
-
-

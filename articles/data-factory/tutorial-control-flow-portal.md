@@ -2,8 +2,8 @@
 title: Ветвление и создание цепочки действий в конвейере с помощью портала Azure
 description: Сведения о том, как управлять потоком данных в конвейере Фабрики данных Azure с помощью портала Azure.
 services: data-factory
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: anandsub
 ms.reviewer: maghan
 ms.service: data-factory
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/11/2018
-ms.openlocfilehash: b1b766e3cb337151c5ca9b35e2040a2a47124151
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc82cfdc4e5a063e7c5cb833b617da58023d1ba6
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568533"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497458"
 ---
 # <a name="branching-and-chaining-activities-in-an-azure-data-factory-pipeline-using-the-azure-portal"></a>Ветвление и создание цепочки действий в конвейере Фабрики данных Azure с помощью портала Azure
 
@@ -144,8 +144,8 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 3. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных.
 4. Для **группы ресурсов** выполните одно из следующих действий.
 
-      - Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке.
-      - Выберите **Создать новую**и укажите имя группы ресурсов.   
+      - Выберите **Использовать существующую** и укажите существующую группу ресурсов в раскрывающемся списке.
+      - Выберите **Создать новую** и укажите имя группы ресурсов.   
          
         Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/management/overview.md).  
 4. Укажите **V2** при выборе **версии**.

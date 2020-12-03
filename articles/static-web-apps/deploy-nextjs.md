@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
 ms.custom: devx-track-js
-ms.openlocfilehash: 20a3337ab054ca1feefc2f5f08f8e6398417fb9e
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 6f96b74726684d37795c94be74e48611b4145402
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441619"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350217"
 ---
 # <a name="deploy-static-rendered-nextjs-websites-on-azure-static-web-apps-preview"></a>Развертывание статических веб-сайтов Next.js в Статических веб-приложениях Azure (предварительная версия)
 
@@ -29,9 +29,9 @@ ms.locfileid: "94441619"
 
 Вместо использования интерфейса командной строки Next.js для создания приложения можно воспользоваться начальным репозиторием, который включает в себя имеющееся приложение Next.js. В этом репозитории реализовано приложение Next.js с динамическими маршрутами, которые выявляют общую проблему развертывания. Для динамических маршрутов требуется дополнительная настройка развертывания, о которой вы узнаете позже.
 
-Для начала создайте репозиторий в учетной записи GitHub из репозитория шаблонов. 
+Для начала создайте репозиторий в учетной записи GitHub из репозитория шаблонов.
 
-1. Перейдите на страницу <http://github.com/staticwebdev/nextjs-starter/generate>.
+1. Перейдите на страницу [https://github.com/staticwebdev/nextjs-starter/generate](https://github.com/login?return_to=/staticwebdev/nextjs-starter/generate)
 1. Присвойте репозиторию имя **nextjs-starter**
 1. Затем клонируйте новый репозиторий на компьютер. Обязательно замените `<YOUR_GITHUB_ACCOUNT_NAME>` именем своей учетной записи.
 

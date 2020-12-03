@@ -3,12 +3,12 @@ title: Развертывание приложения-контейнера .NET
 description: Узнайте, как поместить имеющееся приложение .NET в контейнер с помощью Visual Studio и выполнять отладку контейнеров в Service Fabric локально. Помещенное в контейнер приложение отправляется в реестр контейнеров Azure и развертывается в кластере Service Fabric. При развертывании в Azure приложение использует базу данных SQL Azure для хранения данных.
 ms.topic: tutorial
 ms.date: 07/08/2019
-ms.openlocfilehash: b7c841c1185cb2e289a230eb1078a13d4ccd48f8
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 8be9de495fa6bc5689a2dba5384f5df3112cbb38
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889941"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485558"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по Развертывание приложения .NET в контейнере Windows в Azure Service Fabric
 
@@ -35,7 +35,7 @@ ms.locfileid: "92889941"
 
 ## <a name="download-and-run-fabrikam-fiber-callcenter"></a>Загрузка и запуск Fabrikam Fiber CallCenter
 
-1. Скачайте пример приложения [Fabrikam Fiber CallCenter][link-fabrikam-github].  Щелкните ссылку **скачивания архива**.  Из каталога *sourceCode* в файле *fabrikam.zip* извлеките файл *sourceCode.zip* , а затем извлеките каталог *VS2015* на компьютер.
+1. Скачайте пример приложения [Fabrikam Fiber CallCenter][link-fabrikam-github].  Щелкните ссылку **скачивания архива**.  Из каталога *sourceCode* в файле *fabrikam.zip* извлеките файл *sourceCode.zip*, а затем извлеките каталог *VS2015* на компьютер.
 
 2. Убедитесь, что приложение Fabrikam Fiber CallCenter создается и выполняется без ошибок.  Запустите Visual Studio с правами **администратора** и откройте файл [FabrikamFiber.CallCenter.sln][link-fabrikam-github].  Нажмите клавишу F5, чтобы отладить и запустить приложение.
 
@@ -47,7 +47,7 @@ ms.locfileid: "92889941"
 
 2. При появлении запроса нажмите кнопку **Да** для перехода из Docker к контейнерам Windows.
 
-   В решении создается новый проект приложения Service Fabric **FabrikamFiber.CallCenterApplication**.  Dockerfile добавляется в имеющийся проект **FabrikamFiber.Web**.  Каталог **PackageRoot** также добавляется в проект **FabrikamFiber.Web** , который содержит манифест служб и параметры для новой службы FabrikamFiber.Web.
+   В решении создается новый проект приложения Service Fabric **FabrikamFiber.CallCenterApplication**.  Dockerfile добавляется в имеющийся проект **FabrikamFiber.Web**.  Каталог **PackageRoot** также добавляется в проект **FabrikamFiber.Web**, который содержит манифест служб и параметры для новой службы FabrikamFiber.Web.
 
    Контейнер готов к сборке и упаковке в приложение Service Fabric. После создания образа контейнера на компьютере можно отправить его в любой реестр контейнеров и развернуть на любом узле, чтобы запустить.
 
@@ -55,7 +55,7 @@ ms.locfileid: "92889941"
 
 При выполнении приложения Fabrikam Fiber CallCenter в рабочей среде данные должны сохраняться в базе данных. Пока нет способа гарантировать сохранение данных в контейнере, поэтому хранить рабочие данные в SQL Server в контейнере нельзя.
 
-Мы рекомендуем [Базу данных SQL Azure](../azure-sql/database/powershell-script-content-guide.md). Для установки и запуска управляемой базы данных SQL Server в Azure выполните следующий скрипт.  При необходимости измените переменные скрипта. *clientIP*  — это IP-адрес компьютера разработчика. Запишите имя сервера, выводимое скриптом.
+Мы рекомендуем [Базу данных SQL Azure](../azure-sql/database/powershell-script-content-guide.md). Для установки и запуска управляемой базы данных SQL Server в Azure выполните следующий скрипт.  При необходимости измените переменные скрипта. *clientIP* — это IP-адрес компьютера разработчика. Запишите имя сервера, выводимое скриптом.
 
 ```powershell
 $subscriptionID="<subscription ID>"
@@ -109,7 +109,7 @@ Write-Host "Server name is $servername"
 
 ## <a name="update-the-web-config"></a>Обновление веб-конфигурации
 
-Вернитесь в проект **FabrikamFiber.Web** , обновите строку подключения в файле **web.config** , чтобы она указывала на SQL Server в контейнере.  Обновите часть строки подключения, содержащую данные о *сервере* , включив имя сервера, созданное предыдущим скриптом. Строка должна выглядеть примерно так: fab-fiber-751718376.database.windows.net. В следующем XML необходимо обновить только атрибут `connectionString`. Атрибуты `providerName` и `name` изменять не нужно.
+Вернитесь в проект **FabrikamFiber.Web**, обновите строку подключения в файле **web.config**, чтобы она указывала на SQL Server в контейнере.  Обновите часть строки подключения, содержащую данные о *сервере*, включив имя сервера, созданное предыдущим скриптом. Строка должна выглядеть примерно так: fab-fiber-751718376.database.windows.net. В следующем XML необходимо обновить только атрибут `connectionString`. Атрибуты `providerName` и `name` изменять не нужно.
 
 ```xml
 <add name="FabrikamFiber-Express" connectionString="Server=<server name>,1433;Initial Catalog=call-center-db;Persist Security Info=False;User ID=ServerAdmin;Password=Password@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" providerName="System.Data.SqlClient" />
@@ -122,7 +122,7 @@ Write-Host "Server name is $servername"
 
 ## <a name="run-the-containerized-application-locally"></a>Выполнение контейнеризованного приложения локально
 
-Нажмите клавишу **F5** , чтобы запустить и отладить приложение в контейнере в локальном кластере разработки Service Fabric. Нажмите кнопку **Да** , если появится окно сообщения с запросом на предоставление группе ServiceFabricAllowedUsers разрешений на чтение и выполнение в каталоге проекта Visual Studio.
+Нажмите клавишу **F5**, чтобы запустить и отладить приложение в контейнере в локальном кластере разработки Service Fabric. Нажмите кнопку **Да**, если появится окно сообщения с запросом на предоставление группе ServiceFabricAllowedUsers разрешений на чтение и выполнение в каталоге проекта Visual Studio.
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
@@ -160,7 +160,7 @@ $registry = New-AzContainerRegistry -ResourceGroupName $acrresourcegroupname -Na
 3. Под раскрывающимся списком для **конечной точки подключения** выберите вариант **Создать новый кластер...**
 4. В диалоговом окне **Создание кластера** измените следующие параметры:
 
-    а. Укажите имя кластера в поле **Имя кластера** , а также подписку и расположение, которые нужно использовать. Запишите имя группы ресурсов кластера.
+    а. Укажите имя кластера в поле **Имя кластера**, а также подписку и расположение, которые нужно использовать. Запишите имя группы ресурсов кластера.
 
     b. Необязательно: можно изменить количество узлов. По умолчанию у вас есть три узла — минимальное количество, необходимое для тестирования сценариев Service Fabric.
 
@@ -169,7 +169,7 @@ $registry = New-AzContainerRegistry -ResourceGroupName $acrresourcegroupname -Na
     d. Перейдите на вкладку **Сведения о виртуальной машине**. Укажите пароль, который вы хотите использовать для виртуальных машин, входящих в состав кластера. Имя пользователя и пароль можно использовать для удаленного подключения к виртуальным машинам. Также необходимо выбрать размер виртуальной машины и при необходимости изменить ее образ.
 
     > [!IMPORTANT]
-    > Выберите номер SKU, который поддерживает работающие контейнеры. ОС Windows Server на узлах вашего кластера должна быть совместима с ОС Windows Server вашего контейнера. Дополнительные сведения см. в разделе [ОС контейнера Windows Server и совместимость ОС узлов](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). По умолчанию в данном руководстве создается образ Docker на основе Windows Server 2016 LTSC. Контейнеры на основе этого образа будут запускаться в кластерах, созданных с помощью Windows Server Datacenter 2016 с Контейнерами. Тем не менее при создании кластера или при использовании существующего кластера на основе разных версий Windows Server необходимо изменить образ ОС, на котором основан контейнер. Откройте файл **dockerfile** в проекте **FabrikamFiber.Web** , раскомментируйте имеющиеся инструкции `FROM`, основанные на предыдущей версии Windows Server, а затем добавьте инструкцию `FROM` на основе тега нужной версии на [странице DockerHub Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore). Дополнительные сведения о выпусках Windows Server Core, сроках поддержки и управлении версиями см. на странице со [сведениями о выпусках Windows Server Core](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info). 
+    > Выберите номер SKU, который поддерживает работающие контейнеры. ОС Windows Server на узлах вашего кластера должна быть совместима с ОС Windows Server вашего контейнера. Дополнительные сведения см. в разделе [ОС контейнера Windows Server и совместимость ОС узлов](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). По умолчанию в данном руководстве создается образ Docker на основе Windows Server 2016 LTSC. Контейнеры на основе этого образа будут запускаться в кластерах, созданных с помощью Windows Server Datacenter 2016 с Контейнерами. Тем не менее при создании кластера или при использовании существующего кластера на основе разных версий Windows Server необходимо изменить образ ОС, на котором основан контейнер. Откройте файл **dockerfile** в проекте **FabrikamFiber.Web**, раскомментируйте имеющиеся инструкции `FROM`, основанные на предыдущей версии Windows Server, а затем добавьте инструкцию `FROM` на основе тега нужной версии на [странице DockerHub Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore). Дополнительные сведения о выпусках Windows Server Core, сроках поддержки и управлении версиями см. на странице со [сведениями о выпусках Windows Server Core](/windows-server/get-started/windows-server-release-info). 
 
     д) На вкладке **Дополнительно** укажите порты приложения, которые нужно открыть в подсистеме балансировки нагрузки при развертывании кластера. Это порт, номер которого вы записали перед созданием кластера. Вы также можете добавить имеющийся ключ Application Insights, который будет использоваться для направления файлов журнала приложений.
 
@@ -229,7 +229,7 @@ $vnetRuleObject1 = New-AzSqlServerVirtualNetworkRule `
 
 ## <a name="deploy-the-application-to-azure"></a>Развертывание приложения в Azure
 
-Теперь, когда приложение готово, можно развернуть его в кластер в Azure напрямую из Visual Studio.  В обозревателе решений щелкните правой кнопкой мыши проект приложения **FabrikamFiber.CallCenterApplication** , а затем выберите **Опубликовать**.  В разделе **конечной точки подключения** выберите конечную точку кластера, которая была создана ранее.  В **реестре контейнеров Azure** выберите реестр контейнеров, который был создан ранее.  Щелкните **Опубликовать** , чтобы развернуть приложение в кластере Azure.
+Теперь, когда приложение готово, можно развернуть его в кластер в Azure напрямую из Visual Studio.  В обозревателе решений щелкните правой кнопкой мыши проект приложения **FabrikamFiber.CallCenterApplication**, а затем выберите **Опубликовать**.  В разделе **конечной точки подключения** выберите конечную точку кластера, которая была создана ранее.  В **реестре контейнеров Azure** выберите реестр контейнеров, который был создан ранее.  Щелкните **Опубликовать**, чтобы развернуть приложение в кластере Azure.
 
 ![публикации приложения][publish-app]
 

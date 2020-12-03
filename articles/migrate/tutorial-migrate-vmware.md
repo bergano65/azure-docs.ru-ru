@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: 3e263306cf18dfebe4b73f8d940b8eb5c99ed16f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 202886bc0a7738f8211cfea6d90a380c7bac82b8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310636"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492953"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -38,24 +38,8 @@ ms.locfileid: "92310636"
 
 1. [Выполните задачи из первого руководства](./tutorial-discover-vmware.md), чтобы подготовить Azure и VMware к миграции.
 2. Мы рекомендуем изучить и второе руководство, чтобы [оценить виртуальные машины VMware](./tutorial-assess-vmware-azure-vm.md) перед переносом в Azure. Но это не обязательно. 
-
-
-## <a name="add-the-azure-migrate-server-migration-tool"></a>Добавление средства "Миграция сервера" службы "Миграция Azure"
-
-Если вы еще не настроили проект Миграции Azure, [сделайте это](how-to-add-tool-first-time.md) перед добавлением средства. Если вы уже настроили проект, добавьте это средство следующим образом:
-
-1. В проекте службы "Миграция Azure" щелкните **Обзор**. 
-2. В разделе **Discover, assess, and migration servers** (Обнаружение, оценка и миграция серверов) щелкните **Оценка и миграция серверов**.
-
-     ![Оценка и перенос серверов](./media/tutorial-migrate-vmware/assess-migrate.png)
-
-3. В области **Migration tools** (Средства миграции) выберите **Click here to add a migration tool when you are ready to migrate** (Щелкните здесь, чтобы добавить средство миграции, когда будете готовы к миграции).
-
-    ![Выбор средства](./media/tutorial-migrate-vmware/select-migration-tool.png)
-
-4. В списке средств выберите **Azure Migrate: Server Migration** > **Add tool** (Миграция Azure: миграция сервера > Добавить средство)
-
-    ![Средство миграции сервера](./media/tutorial-migrate-vmware/server-migration-tool.png)
+3. Перейдите к созданному проекту или [создайте новый проект](./create-manage-projects.md).
+4. Проверьте разрешения своей учетной записи. Учетная запись Azure должна иметь разрешения на создание виртуальной машины и на запись на управляемый диск Azure.
 
 ## <a name="set-up-the-azure-migrate-appliance"></a>Настройка устройства службы "Миграция Azure"
 
