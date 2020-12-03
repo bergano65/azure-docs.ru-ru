@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 57e01683cb8027c2a1f79e58bce03b3bb7dedadb
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4e7774d2cd100931f92ff80066ebea4463c6f65c
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94538390"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532658"
 ---
 # <a name="detect-color-schemes-in-images"></a>Обнаружение цветовых схем на изображениях
 
@@ -75,12 +75,11 @@ ms.locfileid: "94538390"
 
 | Образ — | Черно-белое |
 |-------|----------------|
-|![Черно-белая фотография здания на Манхэттене](./Images/bw_buildings.png) | Да |
+|![Черно-белая фотография здания на Манхэттене](./Images/bw_buildings.png) | true |
 |![Синий дом и передний двор](./Images/house_yard.png) | false |
 
 ## <a name="use-the-api"></a>Использование API
 
 Функция обнаружения цветовых схем является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Color` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"color"` раздела.
 
-* [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-* [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)
+* [Краткое руководство. Компьютерное зрение REST API или клиентских библиотек](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)

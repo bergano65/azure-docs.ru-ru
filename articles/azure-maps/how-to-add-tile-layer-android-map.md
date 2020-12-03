@@ -1,6 +1,6 @@
 ---
-title: Добавление мозаичного слоя в карты Android | Карты Microsoft Azure
-description: Узнайте, как добавить мозаичный слой на карту. См. пример, использующий Azure Maps пакет SDK для Android для добавления лепестковой диаграммы погоды на карту.
+title: Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
+description: Узнайте, как добавить мозаичный слой на карту. См. пример, в котором для добавления лепестковой диаграммы погоды в карту используется Microsoft Azure карты пакет SDK для Android.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 04/26/2019
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: faa5e3e3177e18787a73c6b4c43aa04b6bc760b7
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 22618a28f1a87e68c19467aedf639e96ec2fb91e
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897098"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532682"
 ---
 # <a name="add-a-tile-layer-to-a-map-using-the-azure-maps-android-sdk"></a>Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
 

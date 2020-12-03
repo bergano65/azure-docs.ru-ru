@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: a0e0f61da52ce00fb2eb4b4a7d95ab74082f9472
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 3eb9df0a0fde5d99bbeb3c2da182b5957fdea1e3
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541714"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532930"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Планирование и управление затратами для Машинное обучение Azure
 
@@ -35,13 +35,13 @@ ms.locfileid: "94541714"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Анализ стоимости поддерживает различные типы учетных записей Azure. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](../cost-management-billing/costs/understand-cost-mgt-data.md) (Интерпретация данных службы "Управление затратами"). Чтобы просмотреть данные о затратах, нужен как минимум доступ на чтение для учетной записи Azure. 
+Анализ стоимости поддерживает различные типы учетных записей Azure. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](../cost-management-billing/costs/understand-cost-mgt-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) (Интерпретация данных службы "Управление затратами"). Чтобы просмотреть данные о затратах, нужен как минимум доступ на чтение для учетной записи Azure. 
 
-Дополнительные сведения о назначении доступа к данным службы "Управление затратами" Azure см. в [этой статье](../cost-management-billing/costs/assign-access-acm-data.md).
+Дополнительные сведения о назначении доступа к данным службы "Управление затратами" Azure см. в [этой статье](../cost-management-billing/costs/assign-access-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
-## <a name="estimate-costs"></a>Оценка затрат
+## <a name="estimate-costs-before-using-azure-machine-learning"></a>Оценка затрат перед использованием Машинное обучение Azure
 
-Используйте [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/) , чтобы оценить затраты перед созданием ресурсов в учетной записи машинное обучение Azure. Слева выберите **AI + машинное обучение** , а затем выберите **машинное обучение Azure** , чтобы начать.  
+Используйте [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , чтобы оценить затраты перед созданием ресурсов в учетной записи машинное обучение Azure. Слева выберите **AI + машинное обучение**, а затем выберите **машинное обучение Azure** , чтобы начать.  
 
 На следующем снимке экрана показана оценка затрат с помощью калькулятора:
 
@@ -49,23 +49,58 @@ ms.locfileid: "94541714"
 
 Когда вы добавляете новые ресурсы в рабочую область, вернитесь к этому калькулятору и добавьте в него тот же ресурс, чтобы обновить оценки затрат.
 
-Дополнительные сведения см. в разделе [цены на машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning/).
+Дополнительные сведения см. в разделе [цены на машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
-## <a name="get-cost-alerts"></a>Получение оповещений о затратах
+## <a name="understand-the-full-billing-model-for-azure-machine-learning"></a>Сведения о модели полного выставления счетов для Машинное обучение Azure
 
-Создавайте [бюджеты](../cost-management-billing/costs/tutorial-acm-create-budgets.md) для управления затратами и создавайте [оповещения](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. Однако бюджеты и оповещения могут иметь ограниченную функциональность для управления отдельными затратами на обслуживание Azure, так как они предназначены для мониторинга затрат на более высоком уровне.
+Машинное обучение Azure работает в инфраструктуре Azure, которая выполняет накопление затрат вместе с Машинное обучение Azure при развертывании нового ресурса. Важно понимать, что дополнительная инфраструктура может начислять затраты. Необходимо управлять этими затратами при внесении изменений в развернутые ресурсы. 
 
-## <a name="monitor-costs"></a>Мониторинг затрат
+### <a name="costs-that-typically-accrue-with-azure-machine-learning"></a>Затраты, которые обычно начисляются с помощью Машинное обучение Azure
 
-При использовании ресурсов с Машинное обучение Azure взимается плата. Затраты на единицу использования ресурсов Azure зависят от временных интервалов (секунды, минуты, часы и дни) или использования единиц запросов. После начала использования Машинное обучение Azure затраты изменяются. Просмотрите эти затраты на панели [анализ затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md) в портал Azure.
+При создании ресурсов для Машинное обучение Azure рабочей области также создаются ресурсы для других служб Azure. К ним относятся:
 
-Вы можете просматривать затраты в диаграммах и таблицах для различных временных интервалов. Вы также можете просматривать затраты по бюджету и прогнозируемым затратам. Переключение на более длинные представления с течением времени помогает определить тенденции расходов и узнать, где могла произойти чрезмерное расходование. Если вы создали бюджеты, Узнайте, где они превышены.  
+* [Реестр контейнеров Azure](https://azure.microsoft.com/pricing/details/container-registry?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) Обычная учетная запись
+* [Хранилище блочных BLOB-объектов Azure](https://azure.microsoft.com/pricing/details/storage/blobs?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) (общего назначения v1)
+* [хранилище ключей;](https://azure.microsoft.com/pricing/details/key-vault?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+* [Application Insights](https://azure.microsoft.com/en-us/pricing/details/monitor?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+ 
+### <a name="costs-might-accrue-after-resource-deletion"></a>Затраты могут начисляться после удаления ресурса
 
-Для Машинное обучение не будет отображаться отдельная область службы.  Вместо этого вы увидите различные ресурсы, добавленные в рабочие области Машинное обучение. 
+При удалении рабочей области Машинное обучение Azure в портал Azure или с помощью Azure CLI по прежнему существуют следующие ресурсы. Они продолжают начислять затраты до тех пор, пока вы не удалите их.
 
-Обратите внимание, что в то время как сама Рабочая область Машинное обучение не имеет прямой оплаты, плата взимается за управляемые ресурсы вычислений. Поэтому, если вы добавили теги в рабочие области, так как на них нет прямой оплаты, в области анализ затрат будет отражено это для рабочей области. Для точного управления затратами через Теги необходимо пометить связанные ресурсы вычислений.  
+* Реестр контейнеров Azure
+* Хранилище блочных BLOB-объектов Azure
+* Key Vault
+* Application Insights
 
-## <a name="use-azure-machine-learning-compute-cluster-amlcompute"></a>Использование кластера Машинное обучение Azure Compute (Амлкомпуте)
+Чтобы удалить рабочую область вместе с этими зависимыми ресурсами, используйте пакет SDK:
+
+```python
+ws.delete(delete_dependent_resources=True)
+```
+
+Если вы создаете службу Azure Kubernetes Service (AKS) в рабочей области или подключаете какие-либо ресурсы вычислений к рабочей области, их необходимо удалить отдельно в [портал Azure](https://portal.azure.com).
+
+### <a name="using-monetary-credit-with-azure-machine-learning"></a>Использование денежного кредита с Машинное обучение Azure
+
+Вы можете платить за Машинное обучение Azure оплаты с кредитом по денежным обязательствам EA. Однако вы не можете использовать соглашение о денежных обязательствах EA для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
+
+
+## <a name="create-budgets"></a>Создание бюджетов
+
+Вы можете создавать [бюджеты](https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](https://docs.microsoft.com/azure/cost-management/cost-mgt-alerts-monitor-usage-spending?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
+
+Бюджеты можно создавать с помощью фильтров для конкретных ресурсов или служб в Azure, если требуется дополнительная детализация в мониторинге. Фильтры помогают предотвратить случайное создание новых ресурсов, которые избавляет вас от дополнительных денег. Дополнительные сведения о параметрах фильтра при создании бюджета см. в разделе [Параметры группы и фильтра](https://docs.microsoft.com/azure/cost-management-billing/costs/group-filter?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+
+## <a name="export-cost-data"></a>Экспорт данных о затратах
+
+Вы также можете [экспортировать данные о затратах](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
+
+## <a name="other-ways-to-manage-and-reduce-costs-for-azure-machine-learning"></a>Другие способы управления и снижения затрат на Машинное обучение Azure
+
+Используйте эти советы, чтобы узнать о затратах на ресурсы для вычислений машинного обучения.
+
+### <a name="use-azure-machine-learning-compute-cluster-amlcompute"></a>Использование кластера Машинное обучение Azure Compute (Амлкомпуте)
 
 С постоянно изменяющимися данными вам потребуются быстрый и оптимизированный процесс обучения и переобучение модели для поддержания точных моделей. Однако непрерывное обучение происходит по затратам, особенно для моделей глубокого обучения на графических процессорах. 
 
@@ -73,7 +108,7 @@ ms.locfileid: "94541714"
 
 Поскольку эти кластеры вычислений находятся в инфраструктуре IaaS Azure, вы можете развертывать, масштабировать и управлять обучением, используя те же требования безопасности и соответствия требованиям, что и остальная часть инфраструктуры.  Эти развертывания выполняются в вашей подписке и подчиняются правилам управления. Дополнительные сведения о [машинное обучение Azure COMPUTE](how-to-create-attach-compute-cluster.md).
 
-## <a name="configure-training-clusters-for-autoscaling"></a>Настройка кластеров обучения для автоматического масштабирования
+### <a name="configure-training-clusters-for-autoscaling"></a>Настройка кластеров обучения для автоматического масштабирования
 
 Автоматическое масштабирование кластеров в зависимости от требований вашей рабочей нагрузки помогает сократить затраты, чтобы использовать только необходимые компоненты.
 
@@ -92,7 +127,7 @@ ms.locfileid: "94541714"
 az ml computetarget create amlcompute --name testcluster --vm-size Standard_NC6 --min-nodes 0 --max-nodes 5 --idle-seconds-before-scaledown 300
 ```
 
-## <a name="set-quotas-on-resources"></a>Установка квот для ресурсов
+### <a name="set-quotas-on-resources"></a>Установка квот для ресурсов
 
 Амлкомпуте поставляется с [квотой (или лимитом) конфигурации](how-to-manage-quotas.md#azure-machine-learning-compute). Эта квота связана с семейством виртуальных машин (например, сериями Dv2, сериями NCv3) и зависит от региона для каждой подписки. Подписки начинаются с небольших значений по умолчанию, но с помощью этого параметра можно управлять объемом ресурсов Амлкомпуте, доступных для всплывающих подписке. 
 
@@ -100,7 +135,7 @@ az ml computetarget create amlcompute --name testcluster --vm-size Standard_NC6 
 
 Чтобы задать квоты на уровне рабочей области, начните с [портал Azure](https://portal.azure.com).  Выберите любую рабочую область в подписке и выберите **использование + квоты** на левой панели. Затем перейдите на вкладку **Настройка квот** , чтобы просмотреть квоты. Для задания квоты требуются привилегии в области действия подписки, так как это параметр влияет на несколько рабочих областей.
 
-## <a name="set-run-autotermination-policies"></a>Задание политик автозавершения запуска 
+### <a name="set-run-autotermination-policies"></a>Задание политик автозавершения запуска 
 
 В некоторых случаях следует настроить запуски обучения, чтобы ограничить их длительность или завершить их на раннем этапе. Например, при использовании встроенной настройки параметров или автоматизированного машинного обучения Машинное обучение Azure.
 
@@ -109,7 +144,7 @@ az ml computetarget create amlcompute --name testcluster --vm-size Standard_NC6 
 * Для [настройки параметров помощника](how-to-tune-hyperparameters.md#early-termination)Определите политику раннего завершения из политики бандит, политики остановки медианы или политики выбора усечения. Для дальнейшего управления очисткой параметров используйте такие параметры, как `max_total_runs` или `max_duration_minutes` .
 * Для [автоматического машинного обучения](how-to-configure-auto-train.md#exit)настройте аналогичные политики завершения с помощью  `enable_early_stopping` флага. Кроме того, используйте такие свойства, как `iteration_timeout_minutes` и, `experiment_timeout_minutes` чтобы управлять максимальной длительностью выполнения или для всего эксперимента.
 
-## <a name="use-low-priority-vms"></a><a id="low-pri-vm"></a> Использование виртуальных машин с низким приоритетом
+### <a name="use-low-priority-vms"></a><a id="low-pri-vm"></a> Использование виртуальных машин с низким приоритетом
 
 Azure позволяет использовать избыточную емкость в качестве Low-Priority виртуальных машин в масштабируемых наборах виртуальных машин, пакетных служб и Машинное обучение. Эти выделения предварительно емптибле, но имеют уменьшенную стоимость по сравнению с выделенными виртуальными машинами. Как правило, для пакетных рабочих нагрузок рекомендуется использовать Low-Priority виртуальные машины. Их также следует использовать там, где прерывания можно восстановить либо с помощью повторной отправки (для пакетной обработки), либо с помощью перезагрузки (для обучения глубокого обучения с помощью контрольных точек).
 
@@ -117,7 +152,7 @@ Low-Priority ВМ имеют отдельную квоту, отделенную
 
  Low-Priority виртуальные машины не работают для экземпляров вычислений, так как они должны поддерживать интерактивные возможности записной книжки.
 
-## <a name="use-reserved-instances"></a>Использование зарезервированных экземпляров
+### <a name="use-reserved-instances"></a>Использование зарезервированных экземпляров
 
 Другим способом экономии денег на вычислительных ресурсах является зарезервированный экземпляр виртуальной машины Azure. С этим предложением вы зафиксируете условия на один год или три года. Эти скидки находятся в диапазоне до 72% цен с оплатой по мере использования и применяются непосредственно к месячному счету за использование Azure.
 
@@ -126,7 +161,7 @@ Low-Priority ВМ имеют отдельную квоту, отделенную
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. также:
-* [Управление квотами ресурсов и их увеличение](how-to-manage-quotas.md)
-* [Управление затратами с помощью анализа затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md).
-* Создание Машинное обучение Azure вычислений с помощью [пакета SDK](how-to-create-attach-compute-cluster.md) или в [студии](how-to-create-attach-compute-studio.md#amlcompute).
+- Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](https://docs.microsoft.com/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
+- Дополнительные сведения об управлении затратами с помощью [анализа затрат](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Узнайте, как [предотвратить непредвиденные затраты](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Пройдите курс обучения по [управлению затратами](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .

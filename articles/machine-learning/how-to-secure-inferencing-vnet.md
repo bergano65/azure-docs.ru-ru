@@ -11,14 +11,14 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/23/2020
 ms.custom: contperfq4, tracking-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 3bd4d328c6b0b73a51f325adde988c8f0988ea8a
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: fcaf8f62dcdc43a48ff2ae7ff790ac14ab42e8b6
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873817"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532896"
 ---
-# <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности среды вывода службы "Машинное обучение Azure" с помощью виртуальных сетей
+# <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Обеспечение безопасности Машинное обучение Azure окружения с помощью виртуальных сетей
 
 Из этой статьи вы узнаете, как защитить окружения с помощью виртуальной сети в Машинное обучение Azure.
 
@@ -252,7 +252,9 @@ aks_target.wait_for_completion(show_output = True)
 Экземпляры контейнеров Azure динамически создаются при развертывании модели. Чтобы Машинное обучение Azure могло создать ACI в виртуальной сети, необходимо включить __делегирование подсети__ для подсети, используемой в развертывании.
 
 > [!WARNING]
-> При использовании экземпляров контейнеров Azure в виртуальной сети виртуальная сеть должна находиться в той же группе ресурсов, что и Рабочая область Машинное обучение Azure.
+> При использовании экземпляров контейнеров Azure в виртуальной сети виртуальная сеть должна быть:
+> * В той же группе ресурсов, что и Рабочая область Машинное обучение Azure.
+> * Если в рабочей области есть __Частная конечная точка__, то виртуальная сеть, используемая для экземпляров контейнеров Azure, должна совпадать с той, которая используется в частной конечной точке рабочей области.
 >
 > При использовании экземпляров контейнеров Azure в виртуальной сети реестр контейнеров Azure (запись контроля доступа) для рабочей области также не может находиться в виртуальной сети.
 
@@ -265,11 +267,11 @@ aks_target.wait_for_completion(show_output = True)
 
 2. Разверните модель с помощью [AciWebservice.deploy_configuration()](/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?preserve-view=true&view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), используйте параметры `vnet_name` и `subnet_name`. Задайте для этих параметров имя виртуальной сети и подсеть, в которой включено делегирование.
 
-## <a name="limit-outbound-connectivity-from-the-virtual-network"></a> Ограничение исходящих подключений из виртуальной сети
+## <a name="limit-outbound-connectivity-from-the-virtual-network"></a>Ограничение исходящих подключений из виртуальной сети
 
 Если вы не хотите использовать правила исходящего трафика по умолчанию и вы хотите ограничить исходящий доступ к виртуальной сети, необходимо разрешить доступ к реестру контейнеров Azure. Например, убедитесь, что группы безопасности сети (NSG) содержат правило, которое разрешает доступ к тегу службы __азуреконтаинеррегистри. RegionName__ , где "{RegionName}" — это имя региона Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья является третьей частью серии виртуальных сетей из четырех частей. Ознакомьтесь с остальными статьями, чтобы узнать, как защитить виртуальную сеть.
 

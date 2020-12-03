@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 7deee88210acf700916961be7c4ccaf9477accf8
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 100871ab2188aa638c4c9f2b058021706c7741bb
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353448"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531910"
 ---
 # <a name="azure-security-baseline-for-azure-cloud-services"></a>Базовые показатели безопасности Azure для облачных служб Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "96353448"
 
 - [Обзор группы безопасности сети](../virtual-network/network-security-groups-overview.md)
 
-- [Пиринг между виртуальными сетями](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
+- [Пиринг между виртуальными сетями](./cloud-services-connectivity-and-networking-faq.md?preserve-view=true#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -58,7 +58,7 @@ ms.locfileid: "96353448"
 
 - [Файл конфигурации облачных служб](schema-cscfg-file.md)
 
-- [Список служб, поддерживаемых политикой Azure](/cli/azure/azure-services-the-azure-cli-can-manage?amp;preserve-view=)
+- [Список служб, поддерживаемых политикой Azure](/cli/azure/azure-services-the-azure-cli-can-manage?preserve-view=)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -80,7 +80,7 @@ ms.locfileid: "96353448"
 
 **Руководство**. в Azure Cloud реализована многоуровневая Сетевая безопасность для защиты служб платформы от атак типа "отказ в обслуживании" (от атак DDoS). Защита Azure от атак DDoS является частью процесса непрерывного мониторинга облака Azure, который постоянно повышается за счет тестирования на проникновение. Эта защита от атак DDoS предназначена для того, чтобы выдерживать не только атаки извне, но и других клиентов Azure. 
 
-Существует несколько различных способов блокировки или запрета обмена данными, помимо защиты на уровне платформы в облачных службах Azure. Эти особые значения приведены ниже. 
+Существует несколько различных способов блокировки или запрета обмена данными, помимо защиты на уровне платформы в облачных службах Azure. А именно: 
 
 -  Создание задачи запуска для выборочного блокирования определенных IP-адресов
 -  Ограничение доступа веб-роли Azure к набору указанных IP-адресов путем изменения файла web.config IIS
@@ -89,9 +89,9 @@ ms.locfileid: "96353448"
 
 Настройка правила "запретить применение" для назначений администраторам классической подписки. По умолчанию после определения внутренней конечной точки данные могут передаваться из одной роли во внутреннюю конечную точку другой роли без каких-либо ограничений. Чтобы ограничить взаимодействие, необходимо добавить элемент NetworkTrafficRules к элементу ServiceDefinition в файле определения службы.
 
-- [Как заблокировать или отключить входящий трафик к URL-адресу по умолчанию облачной службы](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
+- [Как заблокировать или отключить входящий трафик к URL-адресу по умолчанию облачной службы](./cloud-services-connectivity-and-networking-faq.md?preserve-view=true#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
 
-- [Защита от атак DDoS в Azure](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
+- [Защита от атак DDoS в Azure](./cloud-services-connectivity-and-networking-faq.md?preserve-view=true#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
 
 - [Блокирование определенного IP-адреса](cloud-services-startup-tasks-common.md#block-a-specific-ip-address)
 
@@ -107,7 +107,7 @@ ms.locfileid: "96353448"
 
 - [Настройка ведения журнала потоков в группе безопасности сети](../virtual-machines/extensions/network-watcher-linux.md)
 
-- [Дополнительные сведения о настройке журналов потоков см. в статье](/cli/azure/azure-services-the-azure-cli-can-manage?amp;preserve-view=)
+- [Дополнительные сведения о настройке журналов потоков см. в статье](/cli/azure/azure-services-the-azure-cli-can-manage?preserve-view=)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -231,13 +231,13 @@ ms.locfileid: "96353448"
 
 Облачные службы Azure можно отслеживать с помощью Application Insights для обеспечения доступности, производительности, сбоев и использования. Также в Application Insights можно добавлять пользовательские диаграммы, чтобы контролировать по ним самые важные данные. Данные экземпляра роли можно собирать с помощью пакета SDK Application Insights в проекте облачных служб Azure. 
 
-- [Включение диагностики в Visual Studio перед развертыванием](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?amp;preserve-view=#to-turn-on-diagnostics-in-visual-studio-before-deployment)
+- [Включение диагностики в Visual Studio перед развертыванием](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?preserve-view=true#to-turn-on-diagnostics-in-visual-studio-before-deployment)
 
 - [Просмотр журнала изменений](../azure-monitor/platform/activity-log.md#view-change-history)
 
 - [Application Insights для облачной службы Azure (классическая модель)](../azure-monitor/app/cloudservices.md)
 
-- [Настройка диагностики для облачной службы Azure (классическая модель) и виртуальных машин](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?amp;preserve-view=true&toc=%2fazure%2fcloud-services%2ftoc.json)
+- [Настройка диагностики для облачной службы Azure (классическая модель) и виртуальных машин](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?preserve-view=true&toc=%2fazure%2fcloud-services%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -289,7 +289,7 @@ ms.locfileid: "96353448"
 
 **Руководство**. антивредоносное по Майкрософт для Azure защищает облачные службы и виртуальные машины Azure. Кроме того, вы можете развертывать сторонние решения безопасности, такие как веб-приложения, брандмауэры, Антивредоносные программы, системы обнаружения вторжений и предотвращения (ИДЕНТИФИКАТОРы или IP-адреса) и многое другое.
 
-- [Функции и возможности, предоставляемые основными IP-адресами и ИДЕНТИФИКАТОРами Azure Basic и от атак DDoS](./cloud-services-configuration-and-management-faq.md?amp;preserve-view=#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
+- [Функции и возможности, предоставляемые основными IP-адресами и ИДЕНТИФИКАТОРами Azure Basic и от атак DDoS](./cloud-services-configuration-and-management-faq.md?preserve-view=true#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -840,7 +840,7 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Выберите функцию адаптивного управления приложениями в центре безопасности Azure — интеллектуальное, автоматизированное комплексное решение. Она помогает защитить компьютеры от вредоносных программ и позволяет блокировать или предупреждать попытки запуска вредоносных приложений, включая те, которые могут быть пропущены решениями для защиты от вредоносных программ.
 
-- [Как автоматически добавить расширение антивредоносной программы для моих облачных служб Azure](./cloud-services-configuration-and-management-faq.md?amp;preserve-view=#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
+- [Как автоматически добавить расширение антивредоносной программы для моих облачных служб Azure](./cloud-services-configuration-and-management-faq.md?preserve-view=true#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
 
 - [Сценарии развертывания антивредоносного ПО](../security/fundamentals/antimalware.md#antimalware-deployment-scenarios)
 
@@ -886,7 +886,7 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 

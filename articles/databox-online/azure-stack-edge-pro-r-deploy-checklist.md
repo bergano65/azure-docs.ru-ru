@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 10/19/2020
 ms.author: alkohli
-ms.openlocfilehash: e5eb008d40b7617272d7d39b71cb4850cb5becfc
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3a4428b2e6f42facd8230fa4d9f6f637f6fe4659
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96467663"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531744"
 ---
 # <a name="deployment-checklist-for-your-azure-stack-edge-pro-r-device"></a>Контрольный список развертывания для устройства R Azure Stack ребра Pro  
 
@@ -25,7 +25,7 @@ ms.locfileid: "96467663"
 
 | Этап                             | Параметр                                                                                                                                                                                                                           | Сведения                                                                                                           |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| Управление устройствами               | <li>Подписка Azure.</li><li>Поставщики ресурсов зарегистрированы</li><li>Учетная запись хранения Azure</li>|<li>Включено для Azure Stack ребра Pro/Шлюз Data Box, доступ владельца или участника.</li><li>В портал Azure перейдите на **страницу домашние > подписки > поставщикам ресурсов > подписки**. Выполните поиск `Microsoft.DataBoxEdge` и зарегистрируйтесь. Повторите эти действия для `Microsoft.Devices` развертывания рабочих нагрузок IOT.</li><li>Требуются учетные данные для доступа</li> |
+| Управление устройствами               | <li>Подписка Azure</li><li>Поставщики ресурсов зарегистрированы</li><li>Учетная запись хранения Azure</li>|<li>Включено для Azure Stack ребра Pro/Шлюз Data Box, доступ владельца или участника.</li><li>В портал Azure перейдите на **страницу домашние > подписки > поставщикам ресурсов > подписки**. Выполните поиск `Microsoft.DataBoxEdge` и зарегистрируйтесь. Повторите эти действия для `Microsoft.Devices` развертывания рабочих нагрузок IOT.</li><li>Требуются учетные данные для доступа</li> |
 | Установка устройств               | Кабели питания в пакете. <br>Для нас SVE 18/3ный кабель с 125 V и 15 ампер с Нема 5-15P на C13 (вход в выход). | Дополнительные сведения см. в списке [поддерживаемых кабелей питания по странам](azure-stack-edge-technical-specifications-power-cords-regional.md) .  |
 |                                   | <li>По крайней мере один сетевой кабель RJ-45 с частотой 1 X 1-GbE для порта 1  </li><li> По крайней мере 1 X 25-GbE SFP + медный кабель для порта 3, порт 4</li>| Клиенту необходимо приобрести эти кабели.<br>Полный список поддерживаемых сетевых кабелей, коммутаторов и приемопередатчиков для сетевых карт устройств см. в статье [матрица взаимодействия Кавиум фастлинк 41000](https://www.marvell.com/documents/xalflardzafh32cfvi0z/) и [два порта Mellanox, совместимые с сетевыми адаптерами](https://docs.mellanox.com/display/ConnectX4LxFirmwarev14271016/Firmware+Compatible+Products).| 
 | Подключение устройства в первый раз      | <li>Портативный компьютер, параметры IPv4 которого можно изменить. Этот портативный компьютер подключается к порту 1 через коммутатор или адаптер USB-Ethernet.  </li><!--<li> A minimum of 1 GbE switch must be used for the device once the initial setup is complete. The local web UI will not be accessible if the connected switch is not at least 1 Gbe.</li>-->|   |
@@ -43,7 +43,7 @@ ms.locfileid: "96467663"
 | Активация  | Требовать ключ активации из ресурса Azure Stack ребра Pro/Шлюз Data Box.    | После создания ключ истекает через 3 дня. |
 
 <!--
-| (Optional) MAC Address            | If MAC address needs to be whitelisted, get the address of the connected port from local UI of the device. |                                                                                                                   |
+| (Optional) MAC Address            | If MAC address needs to be approved, get the address of the connected port from local UI of the device. |                                                                                                                   |
 | (Optional) Network switch port    | Device hosts Hyper-V VMs for compute. Some network switch port configurations don’t accommodate these setups by default.                                                                                                        |                                                                                                                   |-->
 
 
