@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 09/08/2020
-ms.openlocfilehash: 4d12a7ec76f3390aabc7b45aeb0cd8cedcc6febd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3f6342fcb658611c754a16399ec05f5fa76c79b8
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186479"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546120"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-secure-export"></a>Подключение Azure к средствам ITSM с помощью безопасного экспорта
 
@@ -108,7 +108,7 @@ ITSMC использует учетные данные пользователя 
 
 В следующих разделах приводятся сведения о подключении продукта ServiceNow и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Убедитесь, что выполнены следующие предварительные требования:
 
@@ -122,12 +122,13 @@ ITSMC использует учетные данные пользователя 
 2. Следуйте инструкциям в соответствии с версией:
    * [Париж](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/concept/azure-integration.html)
    * [Орландо](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/concept/azure-integration.html)
+   * [Нью-Йорк](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/concept/azure-integration.html)
 
 ### <a name="connect-bmc-helix-to-azure-monitor"></a>Подключение BMC Хеликс к Azure Monitor
 
 В следующих разделах содержатся сведения о подключении продукта Хеликс BMC и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Убедитесь, что выполнены следующие предварительные требования:
 

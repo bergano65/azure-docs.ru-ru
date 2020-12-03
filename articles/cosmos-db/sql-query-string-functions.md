@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 4516bb9c426355de1fa2ce19befddef896a2de3e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 5e84a679f0bc26b701dc1d51db3605c452675ea3
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93338107"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545287"
 ---
 # <a name="string-functions-azure-cosmos-db"></a>Строковые функции (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -54,4 +54,4 @@ ms.locfileid: "93338107"
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
 - [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
 - [Определенные пользователем функции](sql-query-udfs.md)
-- [Статистические функции](sql-query-aggregates.md)
+- [Статистические выражения](sql-query-aggregate-functions.md)

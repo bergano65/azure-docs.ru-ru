@@ -1,30 +1,26 @@
 - name: Документация по платформе удостоверений Майкрософт
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
-    - name: Сведения о платформе удостоверений Майкрософт
+    - name: Что такое платформа удостоверений Майкрософт?
       href: v2-overview.md
     - name: Новые возможности в Документации Майкрософт
       href: whats-new-docs.md
 - name: Краткие руководства
-  expanded: true
   items:
-    - name: Настройка клиента
-      href: quickstart-create-new-tenant.md
-    - name: Настройка приложения
+    - name: Подготовка к разработке
       items:
-        - name: Регистрация приложения
+        - name: Получить клиент Azure AD
+          href: quickstart-create-new-tenant.md
+        - name: Регистрация приложения или веб-API
           href: quickstart-register-app.md
-        - name: Настройка приложения для предоставления веб-API
+        - name: Предоставление областей при регистрации веб-API
           href: quickstart-configure-app-expose-web-apis.md
-        - name: Настройка приложения для доступа к веб-API
+        - name: Предоставление ограниченного разрешения для веб-API
+          displayName: 'permissions, scp, scp claims'
           href: quickstart-configure-app-access-web-apis.md
-        - name: 'Изменение учетных записей, поддерживаемых приложением'
-          href: quickstart-modify-supported-accounts.md
-        - name: Удаление приложения
-          href: quickstart-remove-app.md
-    - name: Одностраничные приложения
-      displayName: SPA
+    - name: Одностраничное приложение (SPA)
       items:
         - name: Angular
           href: quickstart-v2-angular.md
@@ -32,7 +28,7 @@
           href: quickstart-v2-javascript-auth-code.md
         - name: Поток неявного предоставления разрешения (JavaScript)
           href: quickstart-v2-javascript.md
-    - name: Веб-приложения
+    - name: Веб-приложение
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
@@ -41,7 +37,6 @@
         - name: "Node.js\_— MSAL (предварительная версия)"
           href: quickstart-v2-nodejs-webapp-msal.md
         - name: "Node.js\_— Passport.js."
-          href: quickstart-v2-nodejs-webapp.md
           displayName: OIDC
         - name: Java
           href: quickstart-v2-java-webapp.md
@@ -64,7 +59,7 @@
           href: quickstart-v2-uwp.md
         - name: Платформа .NET для классических приложений Windows
           href: quickstart-v2-windows-desktop.md
-    - name: Управляющие программы
+    - name: Серверная служба управляющей программы
       items:
         - name: "Консоль .NET\_Core (управляющая программа)"
           href: quickstart-v2-netcore-daemon.md
@@ -72,8 +67,7 @@
           href: quickstart-v2-python-daemon.md
 - name: Учебники
   items:
-    - name: Одностраничные приложения
-      displayName: SPA
+    - name: Одностраничное приложение (SPA)
       items:
         - name: Angular
           href: tutorial-v2-angular.md
@@ -83,7 +77,7 @@
           href: tutorial-v2-javascript-auth-code.md
         - name: Поток неявного предоставления разрешения (JavaScript)
           href: tutorial-v2-javascript-spa.md
-    - name: Веб-приложения
+    - name: Веб-приложение
       items:
         - name: ASP.NET
           href: tutorial-v2-asp-webapp.md
@@ -102,7 +96,7 @@
           href: tutorial-v2-windows-desktop.md
         - name: Использование режима совместной работы с устройством в приложении Android
           href: tutorial-v2-shared-device-mode.md
-    - name: Управляющие программы
+    - name: Серверная служба управляющей программы
       items:
         - name: Веб-приложение управляющей программы ASP.NET
           href: tutorial-v2-aspnet-daemon-web-app.md
@@ -120,21 +114,37 @@
           href: security-tokens.md
         - name: Модель приложения
           href: application-model.md
-        - name: Поток для входа в приложение
-          href: app-sign-in-flow.md
-    - name: Потоки аутентификации и сценарии приложений
+    - name: Библиотеки проверки подлинности
+      displayName: 'msal, microsoft.identity.web'
+      items:
+        - name: Библиотека проверки подлинности Майкрософт (MSAL)
+          href: msal-overview.md
+        - name: Библиотека Microsoft Identity Web
+          href: microsoft-identity-web.md
+          displayName: 'auth, library, .NET Core, msal'
+    - name: Сценарии приложений и потоки аутентификации
       displayName: Auth flows
       href: authentication-flows-app-scenarios.md
+    - name: Приложения и субъекты-службы
+      href: app-objects-and-service-principals.md
     - name: Рекомендации по использованию платформы удостоверений
       href: identity-platform-integration-checklist.md
-    - name: Единый вход в мобильные приложения
-      href: mobile-sso-support-overview.md
-      displayName: 'android, ios'
-    - name: Сценарии приложений
+    - name: Разрешения и согласие
+      displayName: Scopes
+      href: v2-permissions-and-consent.md
+    - name: Условный доступ
+      href: v2-conditional-access-dev-guide.md
+    - name: Автоматическая подготовка пользователей (SCIM)
+      href: ../app-provisioning/user-provisioning.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+- name: Практическое руководство
+  items:
+    - name: Интеграция сценария приложения
       displayName: App scenarios
       items:
         - name: Аудитория для входа
           href: v2-supported-account-types.md
+        - name: Поток для входа в приложение
+          href: app-sign-in-flow.md
         - name: Одностраничное приложение
           displayName: SPA
           items:
@@ -267,11 +277,33 @@
               href: scenario-mobile-call-api.md
             - name: Перенос в рабочую среду
               href: scenario-mobile-production.md
-    - name: Библиотека проверки подлинности Майкрософт (MSAL)
+    - name: Использование библиотеки аутентификации Майкрософт
+      displayName: MSAL
       items:
-        - name: Обзор
-          href: msal-overview.md
-        - name: .NET
+        - Name: Все платформы
+          items:
+            - name: Поддерживаемые потоки аутентификации
+              href: msal-authentication-flows.md
+            - name: Получение и кэширование маркеров
+              href: msal-acquire-cache-tokens.md
+            - name: Общедоступные и конфиденциальные клиентские приложения
+              href: msal-client-applications.md
+            - name: Конфигурация приложений
+              href: msal-client-application-configuration.md
+            - name: Общие устройства
+              href: msal-shared-devices.md
+              displayName: 'shared device mode, firstline worker, frontline worker, flw'
+            - name: Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
+              href: howto-handle-samesite-cookie-changes-chrome-browser.md
+            - name: "Области для веб-API, которые принимают маркеры версии\_1.0"
+              href: msal-v1-app-scopes.md
+            - name: Перенос приложений из ADAL в MSAL
+              href: msal-migration.md
+              displayName: migration
+            - name: Национальные облака и MSAL
+              href: msal-national-cloud.md
+              displayName: 'china, germany, gov, 21vianet'
+        - name: MSAL.NET
           displayName: 'xamarin, ASP.NET Core'
           items:
             - name: Инициализация приложений
@@ -294,7 +326,103 @@
               href: msal-handling-exceptions.md?tabs=dotnet
             - name: Logging
               href: msal-logging.md?tabs=dotnet
-        - name: Android
+            - name: Получение маркера из кэша
+              href: msal-net-acquire-token-silently.md
+            - name: Сериализация кэша маркеров
+              href: msal-net-token-cache-serialization.md
+            - name: Очистка кэша маркеров
+              href: msal-net-clear-token-cache.md
+            - name: Создание экземпляра общедоступного клиентского приложения
+              href: msal-net-instantiate-public-client-config-options.md
+            - name: Создание экземпляра конфиденциального клиента с параметрами
+              href: msal-net-instantiate-confidential-client-config-options.md
+            - name: Получение согласия для нескольких ресурсов
+              href: msal-net-user-gets-consent-for-multiple-resources.md
+            - name: Предоставление собственного клиента HttpClient
+              href: msal-net-provide-httpclient.md
+        - name: MSAL.js (JavaScript и Node.js)
+          items:
+            - name: Предотвращение перезагрузок страницы
+              href: msal-js-avoid-page-reloads.md
+            - name: Передача пользовательского состояния в запросах на аутентификацию
+              href: msal-js-pass-custom-state-authentication-request.md
+            - name: Поведения запроса
+              href: msal-js-prompt-behavior.md
+            - name: Перенос SPA из неявного потока в поток с кодом авторизации
+              href: migrate-spa-implicit-to-auth-code.md
+              displayName: 'authorization, single-page app, 2.0'
+            - name: Инициализация приложений (JavaScript)
+              href: msal-js-initializing-client-applications.md
+            - name: "Интеграция с Azure\_AD\_B2C"
+              href: msal-b2c-overview.md
+            - name: Миграция в MSAL.js
+              href: msal-compare-msal-js-and-adal-js.md
+            - name: Единый вход с использованием MSAL.js
+              href: msal-js-sso.md
+            - name: Рекомендации (IE)
+              href: msal-js-use-ie-browser.md
+            - name: Известные проблемы c Internet Explorer и Microsoft Edge
+              href: msal-js-known-issues-ie-edge-browsers.md
+            - name: Обработка ошибок и исключений
+              href: msal-handling-exceptions.md?tabs=javascript
+            - name: Logging
+              href: msal-logging.md?tabs=javascript
+        - name: MSAL для iOS и MacOS
+          items:
+            - name: Разница между MSAL для iOS и для macOS
+              href: msal-differences-ios-macos.md
+            - name: Настройка цепочки ключей
+              href: howto-v2-keychain-objc.md
+            - name: Настройка браузеров и веб-представлений
+              href: customize-webviews.md
+            - name: Запрашивание пользовательских утверждений
+              href: request-custom-claims.md
+            - name: Настройка URI перенаправления
+              href: redirect-uris-ios.md
+            - name: "Интеграция с Azure\_AD\_B2C"
+              href: config-authority.md#b2c
+            - name: Миграция в MSAL.iOS или MSAL.macOS
+              href: migrate-objc-adal-msal.md
+            - name: Режим совместной работы с устройством iOS
+              href: msal-ios-shared-devices.md
+              displayName: 'firstline worker, frontline worker, flw'
+            - name: Единый вход между приложениями MSAL
+              href: single-sign-on-macos-ios.md
+            - name: Единый вход между приложениями ADAL и MSAL
+              href: sso-between-adal-msal-apps-macos-ios.md
+            - name: Устранение неполадок с протоколом SSL (MSAL для iOS и macOS)
+              href: ssl-issues.md
+            - name: Обработка ошибок и исключений
+              href: msal-handling-exceptions.md?tabs=iosmacos
+            - name: Logging
+              href: msal-logging.md?tabs=swift
+        - name: MSAL для Python
+          items:
+            - name: Пользовательская сериализация кэша маркеров
+              href: msal-python-token-cache-serialization.md
+            - name: Переход на MSAL для Python
+              href: migrate-python-adal-msal.md
+            - name: Поддержка ADFS в MSAL для Python
+              href: msal-python-adfs-support.md
+            - name: Обработка ошибок и исключений
+              href: msal-handling-exceptions.md?tabs=python
+            - name: Logging
+              href: msal-logging.md?tabs=python
+        - name: MSAL для Java
+          items:
+            - name: Пользовательская сериализация кэша маркеров
+              href: msal-java-token-cache-serialization.md
+            - name: Получение и удаление учетных записей из кэша маркеров
+              href: msal-java-get-remove-accounts-token-cache.md
+            - name: Переход на MSAL для Java
+              href: migrate-adal-msal-java.md
+            - name: Поддержка ADFS в MSAL для Java
+              href: msal-java-adfs-support.md
+            - name: Обработка ошибок и исключений
+              href: msal-handling-exceptions.md?tabs=java
+            - name: Logging
+              href: msal-logging.md?tabs=java
+        - name: MSAL для Android
           items:
             - name: Учетные записи и профили клиентов
               href: accounts-overview.md
@@ -314,92 +442,107 @@
               displayName: 'android, mobile'
             - name: Logging
               href: msal-logging.md?tabs=android
-        - name: iOS и macOS
+    - name: Настройка маркеров и утверждений
+      items:
+        - name: Настройка утверждения роли
+          href: active-directory-enterprise-app-role-management.md
+        - name: Настройка утверждений с помощью портал Azure
+          href: active-directory-saml-claims-customization.md
+        - name: Настройка утверждений с помощью PowerShell
+          href: active-directory-claims-mapping.md
+        - name: Настройка необязательных утверждений
+          href: active-directory-optional-claims.md
+        - name: Использование атрибутов расширения схемы каталога в утверждениях
+          href: active-directory-schema-extensions.md
+        - name: Настройка времени существования маркеров
+          href: configure-token-lifetimes.md
+        - name: Использование интерфейсов API непрерывной оценки доступа
+          href: app-resilience-continuous-access-evaluation.md
+          displayName: cae
+    - name: Обработка ограничений для файлов cookie браузера
+      items:
+        - name: Работа с ITP в Safari
+          href: reference-third-party-cookies-spas.md
+        - name: Обработка изменений свойства SameSite в файлах cookie в Chrome
+          href: howto-handle-samesite-cookie-changes-chrome-browser.md
+    - name: Аутентификация приложений и служб
+      items:
+        - name: Создание субъекта-службы с помощью Azure PowerShell
+          href: howto-authenticate-service-principal-powershell.md
+        - name: Создание субъекта-службы с помощью портала Azure
+          href: howto-create-service-principal-portal.md
+    - name: Принятие операций входа для нескольких клиентов
+      items:
+        - name: 'Изменение учетных записей, поддерживаемых приложением'
+          href: quickstart-modify-supported-accounts.md
+        - name: Включение мультитенантных операций входа
+          href: howto-convert-app-to-be-multi-tenant.md
+        - name: Настройка домена издателя
+          displayName: 'verified domain, verified publisher domain'
+          href: howto-configure-publisher-domain.md
+    - name: Авторизация доступа к приложениям и ресурсам
+      items:
+        - name: Ограничение набора пользователей приложения
+          href: howto-restrict-your-app-to-a-set-of-users.md
+        - name: Добавление ролей приложения
+          href: howto-add-app-roles-in-azure-ad-apps.md
+    - name: Использование API Microsoft Graph
+      href: microsoft-graph-intro.md
+    - name: Вывод приложения на рынок
+      items:
+        - name: Рекомендации по фирменной символике
+          displayName: Add branding
+          href: howto-add-branding-in-azure-ad-apps.md
+        - name: Определение условия предоставления услуг и заявления о конфиденциальности
+          href: howto-add-terms-of-service-privacy-statement.md
+        - name: Настройка проверки издателя для приложения
           items:
-            - name: "Интеграция с Azure\_AD\_B2C"
-              href: config-authority.md#b2c
-            - name: Миграция в MSAL.iOS или MSAL.macOS
-              href: migrate-objc-adal-msal.md
-            - name: Режим совместной работы с устройством iOS
-              href: msal-ios-shared-devices.md
-              displayName: 'firstline worker, frontline worker, flw'
-            - name: Единый вход между приложениями MSAL
-              href: single-sign-on-macos-ios.md
-            - name: Единый вход между приложениями ADAL и MSAL
-              href: sso-between-adal-msal-apps-macos-ios.md
-            - name: Устранение неполадок с протоколом SSL (MSAL для iOS и macOS)
-              href: ssl-issues.md
-            - name: Обработка ошибок и исключений
-              href: msal-handling-exceptions.md?tabs=iosmacos
-            - name: Logging
-              href: msal-logging.md?tabs=swift
-        - name: Java
-          items:
-            - name: Переход на MSAL для Java
-              href: migrate-adal-msal-java.md
-            - name: Поддержка ADFS в MSAL для Java
-              href: msal-java-adfs-support.md
-            - name: Обработка ошибок и исключений
-              href: msal-handling-exceptions.md?tabs=java
-            - name: Logging
-              href: msal-logging.md?tabs=java
-        - name: JavaScript и Node.js
-          items:
-            - name: Инициализация приложений (JavaScript)
-              href: msal-js-initializing-client-applications.md
-            - name: "Интеграция с Azure\_AD\_B2C"
-              href: msal-b2c-overview.md
-            - name: Миграция в MSAL.js
-              href: msal-compare-msal-js-and-adal-js.md
-            - name: Единый вход с использованием MSAL.js
-              href: msal-js-sso.md
-            - name: Рекомендации (IE)
-              href: msal-js-use-ie-browser.md
-            - name: Известные проблемы c Internet Explorer и Microsoft Edge
-              href: msal-js-known-issues-ie-edge-browsers.md
-            - name: Обработка ошибок и исключений
-              href: msal-handling-exceptions.md?tabs=javascript
-            - name: Logging
-              href: msal-logging.md?tabs=javascript
-        - name: Python
-          items:
-            - name: Переход на MSAL для Python
-              href: migrate-python-adal-msal.md
-            - name: Поддержка ADFS в MSAL для Python
-              href: msal-python-adfs-support.md
-            - name: Обработка ошибок и исключений
-              href: msal-handling-exceptions.md?tabs=python
-            - name: Logging
-              href: msal-logging.md?tabs=python
-        - Name: Все платформы
-          items:
-            - name: Поддерживаемые потоки аутентификации
-              href: msal-authentication-flows.md
-            - name: Получение и кэширование маркеров
-              href: msal-acquire-cache-tokens.md
-            - name: Общедоступные и конфиденциальные клиентские приложения
-              href: msal-client-applications.md
-            - name: Конфигурация приложений
-              href: msal-client-application-configuration.md
-            - name: Общие устройства
-              href: msal-shared-devices.md
-              displayName: 'shared device mode, firstline worker, frontline worker, flw'
-            - name: Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
-              href: howto-handle-samesite-cookie-changes-chrome-browser.md
-            - name: "Области для веб-API, которые принимают маркеры версии\_1.0"
-              href: msal-v1-app-scopes.md
-            - name: Перенос приложений из ADAL в MSAL
-              href: msal-migration.md
-              displayName: migration
-    - name: Библиотека Microsoft Identity Web
-      href: microsoft-identity-web.md
-      displayName: 'auth, library, .NET Core'
+            - name: Добавление для приложения метки "Проверенный издатель"
+              href: mark-app-as-publisher-verified.md
+            - name: Устранение неполадок с проверкой издателя
+              href: troubleshoot-publisher-verification.md
+        - name: Публикация в AppSource
+          href: v2-howto-get-appsource-certified.md
+        - name: "Публикация в коллекции приложений Azure\_AD"
+          href: v2-howto-app-gallery-listing.md
+        - name: "Публикация в службе \"Панель мониторинга продаж\" для Office\_365"
+          href: /office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store
+    - name: Работа с Visual Studio
+      items:
+        - name: Использование подключенной службы Active Directory
+          href: vs-active-directory-add-connected-service.md
+        - name: Начало работы с проектами .NET MVC
+          href: vs-active-directory-dotnet-getting-started.md
+        - name: Что произошло с моим проектом .NET MVC?
+          href: vs-active-directory-dotnet-what-happened.md
+        - name: Начало работы с проектами веб-API
+          href: vs-active-directory-webapi-getting-started.md
+        - name: Что произошло с моим проектом веб-API?
+          href: vs-active-directory-webapi-what-happened.md
+        - name: Диагностика ошибок при проверки подлинности
+          href: vs-active-directory-error.md
+    - name: Удаление регистрации приложения
+      href: quickstart-remove-app.md
+- name: Справочник
+  items:
+    - name: Глоссарий
+      href: developer-glossary.md
+    - name: Конфигурация приложений
+      displayName: App configuration
+      items:
+        - name: "Добавление приложений в Azure\_AD"
+          href: active-directory-how-applications-are-added.md
+        - name: Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа
+          href: reply-url.md
+        - name: Различия при проверке по поддерживаемым типам учетных записей
+          href: supported-accounts-validation.md
+        - name: Одно- и мультитенантные приложения
+          href: single-and-multi-tenant-apps.md
+        - name: Проверка издателя
+          href: publisher-verification-overview.md
     - name: Протоколы проверки подлинности
       displayName: Auth protocol
       items:
-        - name: "Типы приложений и OAuth\_2.2"
-          displayName: 'App types, OAuth'
-          href: v2-app-types.md
         - name: Протоколы OAuth 2.0 и OpenID Connect
           items:
             - name: OAuth 2.0 и OpenID Connect
@@ -445,27 +588,30 @@
               href: active-directory-saml-protocol-reference.md
             - name: Токены SAML
               href: reference-saml-tokens.md
-    - name: Конфигурация приложений
-      displayName: App configuration
-      items:
-        - name: Приложения и субъекты-службы
-          displayName: 'Apps, service principals'
-          href: app-objects-and-service-principals.md
-        - name: "Добавление приложений в Azure\_AD"
-          href: active-directory-how-applications-are-added.md
-        - name: Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа
-          href: reply-url.md
-        - name: Различия при проверке по поддерживаемым типам учетных записей
-          href: supported-accounts-validation.md
-        - name: Одно- и мультитенантные приложения
-          href: single-and-multi-tenant-apps.md
-        - name: Проверка издателя
-          href: publisher-verification-overview.md
+    - name: "Типы приложений и OAuth\_2.2"
+      displayName: 'App types, OAuth'
+      href: v2-app-types.md
+    - name: Манифест приложения
+      href: reference-app-manifest.md
+      displayName: app manifest
+    - name: Файл конфигурации MSAL для Android
+      href: msal-configuration.md
+    - name: Библиотеки проверки подлинности
+      displayName: 'MSAL, auth library, SDK'
+      href: reference-v2-libraries.md
+    - name: Идентификация и доступ к API-интерфейсам в Microsoft Graph
+      href: /graph/api/resources/azure-ad-overview
+    - name: Коды ошибок проверки подлинности и авторизации
+      displayName: AADSTS
+      href: reference-aadsts-error-codes.md
+    - name: Критические изменения
+      href: reference-breaking-changes.md
+    - name: Единый вход в мобильные приложения
+      href: mobile-sso-support-overview.md
+      displayName: 'android, ios'
     - name: Разрешения и согласие
       displayName: Scopes
       items:
-        - name: Типы разрешений и согласие
-          href: v2-permissions-and-consent.md
         - name: Платформа предоставления согласия
           href: consent-framework.md
         - name: Согласие администратора
@@ -473,24 +619,23 @@
         - name: Предоставление согласия для приложений
           displayName: App consent experiences
           href: application-consent-experience.md
-    - name: Условный доступ
-      href: v2-conditional-access-dev-guide.md
-    - name: Национальные облака
-      items:
-        - name: Обзор
-          href: authentication-national-cloud.md
-        - name: Проверка подлинности
-          href: msal-national-cloud.md
+    - name: Конечные точки национального облака для аутентификации
+      href: authentication-national-cloud.md
+      displayName: 'china, germany, gov, 21vianet'
     - name: Автоматическая подготовка пользователей (SCIM)
       items:
-        - name: Что собой представляет автоматическая подготовка пользователей?
-          href: ../app-provisioning/user-provisioning.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Разработка и интеграция конечной точки SCIM
           href: ../app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Распространенные сценарии подготовки
           href: ../app-provisioning/scim-graph-scenarios.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Автоматизация настройки с помощью MS Graph
-          href: /graph/application-provisioning-configure-api?bc=%2fazure%2factive-directory%2fdevelop%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fdevelop%2ftoc.json
+          href: ../app-provisioning/application-provisioning-configure-api.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+- name: Ресурсы
+  items:
+    - name: Видео
+      href: identity-videos.md
+    - name: 'Платформа удостоверений Майкрософт: блог для разработчиков'
+      href: 'https://developer.microsoft.com/en-us/identity/blogs/'
     - name: Статьи справки на портале Azure
       items:
         - name: Время существования токена по умолчанию для специально разработанного приложения
@@ -519,158 +664,6 @@
           href: active-directory-how-to-integrate.md
         - name: Настройка единого входа для приложения
           href: registration-config-sso-how-to.md
-- name: Практические руководства
-  items:
-    - name: Аутентификация
-      items:
-        - name: Настройка утверждения роли
-          href: active-directory-enterprise-app-role-management.md
-        - name: Настройка утверждений с помощью портала
-          href: active-directory-saml-claims-customization.md
-        - name: Настройка утверждений с помощью PowerShell
-          href: active-directory-claims-mapping.md
-        - name: Настройка необязательных утверждений
-          href: active-directory-optional-claims.md
-        - name: Использование атрибутов расширения схемы каталога в утверждениях
-          href: active-directory-schema-extensions.md
-        - name: Настройка времени существования маркеров
-          href: configure-token-lifetimes.md
-        - name: Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
-          href: howto-handle-samesite-cookie-changes-chrome-browser.md
-        - name: Работа с ITP в Safari
-          href: reference-third-party-cookies-spas.md
-        - name: Использование интерфейсов API непрерывной оценки доступа
-          href: app-resilience-continuous-access-evaluation.md
-    - name: Конфигурация приложений
-      displayName: App configuration
-      items:
-        - name: Преобразование однотенантного приложения в мультитенантное
-          href: howto-convert-app-to-be-multi-tenant.md
-        - name: Создание субъекта-службы
-          items:
-            - name: Использование Azure PowerShell
-              href: howto-authenticate-service-principal-powershell.md
-            - name: Использование портала Azure
-              href: howto-create-service-principal-portal.md
-        - name: Ограничение набора пользователей приложения
-          href: howto-restrict-your-app-to-a-set-of-users.md
-        - name: Добавление ролей приложения
-          href: howto-add-app-roles-in-azure-ad-apps.md
-        - name: Рекомендации по фирменной символике
-          displayName: Add branding
-          href: howto-add-branding-in-azure-ad-apps.md
-        - name: Настройка домена издателя
-          href: howto-configure-publisher-domain.md
-          displayName: 'verified domain, verified publisher domain'
-        - name: Определение условия предоставления услуг и заявления о конфиденциальности
-          href: howto-add-terms-of-service-privacy-statement.md
-        - name: Настройка проверки издателя для приложения
-          items:
-            - name: Добавление для приложения метки "Проверенный издатель"
-              href: mark-app-as-publisher-verified.md
-            - name: Устранение неполадок с проверкой издателя
-              href: troubleshoot-publisher-verification.md
-    - name: Использование библиотеки аутентификации Майкрософт
-      displayName: MSAL
-      items:
-        - name: MSAL.NET
-          items:
-            - name: Получение маркера из кэша
-              href: msal-net-acquire-token-silently.md
-            - name: Сериализация кэша маркеров
-              href: msal-net-token-cache-serialization.md
-            - name: Очистка кэша маркеров
-              href: msal-net-clear-token-cache.md
-            - name: Создание экземпляра общедоступного клиентского приложения
-              href: msal-net-instantiate-public-client-config-options.md
-            - name: Создание экземпляра конфиденциального клиента с параметрами
-              href: msal-net-instantiate-confidential-client-config-options.md
-            - name: Получение согласия для нескольких ресурсов
-              href: msal-net-user-gets-consent-for-multiple-resources.md
-            - name: Предоставление собственного клиента HttpClient
-              href: msal-net-provide-httpclient.md
-        - name: MSAL.js
-          items:
-            - name: Предотвращение перезагрузок страницы
-              href: msal-js-avoid-page-reloads.md
-            - name: Передача пользовательского состояния в запросах на аутентификацию
-              href: msal-js-pass-custom-state-authentication-request.md
-            - name: Поведения запроса
-              href: msal-js-prompt-behavior.md
-            - name: Перенос SPA из неявного потока в поток с кодом авторизации
-              href: migrate-spa-implicit-to-auth-code.md
-              displayName: 'authorization, single-page app, 2.0'
-        - name: MSAL для iOS и MacOS
-          items:
-            - name: Разница между MSAL для iOS и для macOS
-              href: msal-differences-ios-macos.md
-            - name: Настройка цепочки ключей
-              href: howto-v2-keychain-objc.md
-            - name: Настройка браузеров и веб-представлений
-              href: customize-webviews.md
-            - name: Запрашивание пользовательских утверждений
-              href: request-custom-claims.md
-            - name: Настройка URI перенаправления
-              href: redirect-uris-ios.md
-        - name: MSAL для Python
-          items:
-            - name: Пользовательская сериализация кэша маркеров
-              href: msal-python-token-cache-serialization.md
-        - name: MSAL для Java
-          items:
-            - name: Пользовательская сериализация кэша маркеров
-              href: msal-java-token-cache-serialization.md
-            - name: Получение и удаление учетных записей из кэша маркеров
-              href: msal-java-get-remove-accounts-token-cache.md
-    - name: Использование API Microsoft Graph
-      href: microsoft-graph-intro.md
-    - name: Работа с Visual Studio
-      items:
-        - name: Использование подключенной службы Active Directory
-          href: vs-active-directory-add-connected-service.md
-        - name: Начало работы с проектами .NET MVC
-          href: vs-active-directory-dotnet-getting-started.md
-        - name: Что произошло с моим проектом .NET MVC?
-          href: vs-active-directory-dotnet-what-happened.md
-        - name: Начало работы с проектами веб-API
-          href: vs-active-directory-webapi-getting-started.md
-        - name: Что произошло с моим проектом веб-API?
-          href: vs-active-directory-webapi-what-happened.md
-        - name: Диагностика ошибок при проверки подлинности
-          href: vs-active-directory-error.md
-    - name: Вывод приложения на рынок
-      items:
-        - name: Публикация в AppSource
-          href: v2-howto-get-appsource-certified.md
-        - name: "Публикация в коллекции приложений Azure\_AD"
-          href: v2-howto-app-gallery-listing.md
-        - name: "Публикация в службе \"Панель мониторинга продаж\" для Office\_365"
-          href: /office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store
-- name: Справочник
-  items:
-    - name: Манифест приложения
-      href: reference-app-manifest.md
-      displayName: app manifest
-    - name: Файл конфигурации MSAL для Android
-      href: msal-configuration.md
-    - name: Библиотеки проверки подлинности
-      displayName: 'MSAL, auth library, SDK'
-      href: reference-v2-libraries.md
-    - name: Идентификация и доступ к API-интерфейсам в Microsoft Graph
-      href: /graph/api/resources/azure-ad-overview
-    - name: Коды ошибок проверки подлинности и авторизации
-      displayName: AADSTS
-      href: reference-aadsts-error-codes.md
-    - name: Критические изменения
-      href: reference-breaking-changes.md
-- name: Ресурсы
-  items:
-    - name: Глоссарий
-      href: developer-glossary.md
-    - name: Видео
-      href: identity-videos.md
-    - name: 'Платформа удостоверений Майкрософт: блог для разработчиков'
-      href: 'https://developer.microsoft.com/en-us/identity/blogs/'
     - name: Блог по Azure AD
       href: 'https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory'
     - name: Стратегия развития Azure

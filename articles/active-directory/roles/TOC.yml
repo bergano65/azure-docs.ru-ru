@@ -2,8 +2,10 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Роли Azure AD
+    - name: "Что собой представляет RBAC в Azure\_AD?"
       href: custom-overview.md
+    - name: "Основные сведения о ролях в Azure\_AD"
+      href: concept-understand-roles.md
 - name: Краткие руководства
   items:
     - name: Создание неограниченного количества регистраций приложений
@@ -50,8 +52,6 @@
     - name: Пользовательские роли
       expanded: true
       items:
-        - name: Обзор настраиваемых ролей
-          href: custom-overview.md
         - name: Создание настраиваемой роли
           href: custom-create.md
         - name: Просмотр назначений пользовательских ролей

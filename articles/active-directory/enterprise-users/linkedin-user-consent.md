@@ -5,19 +5,20 @@ services: active-directory
 author: curtand
 manager: daveba
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffbbc78f185138f39da6a32c42e1db2910735092
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 8d13ae1e5198666e115507fd91bb0fedb1c5fa64
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95974070"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545916"
 ---
 # <a name="linkedin-account-connections-data-sharing-and-consent"></a>Подключение учетной записи LinkedIn общий доступ к данным и согласие
 
@@ -79,6 +80,6 @@ ms.locfileid: "95974070"
 
 Дополнительные сведения об использовании в LinkedIn персональных данных см. в [политике конфиденциальности LinkedIn](https://www.linkedin.com/legal/privacy-policy). Для служб LinkedIn, передачи данных и хранения данных данные могут передаваться из Европейского союза в США и обратно, а конфиденциальность защищена, как описано в статье [Передача данных Европейского союза](https://www.linkedin.com/help/linkedin/answer/62533).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [LinkedIn in Microsoft Applications with Your Work or School Account](https://www.linkedin.com/help/linkedin/answer/84077) (LinkedIn в приложениях Майкрософт с вашей рабочей или учебной учетной записью)

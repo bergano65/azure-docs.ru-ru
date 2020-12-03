@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.openlocfilehash: 8219611ac2334594dc826db3c8191102d7383835
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: c49fee169b7bd01ee7cf8a6d539c2125cf6568b3
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93338278"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545321"
 ---
 # <a name="pagination-in-azure-cosmos-db"></a>Разбиение на страницы в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "93338278"
 
 Можно указать максимальное число элементов, возвращаемых запросом, задав `MaxItemCount` . `MaxItemCount`Задается для каждого запроса и сообщает обработчику запросов, что это число элементов будет возвращено или меньше. Можно задать значение `MaxItemCount` , `-1` если не нужно устанавливать ограничение на количество результатов для каждого выполнения запроса.
 
-Кроме того, существуют и другие причины, по которым механизму запросов может потребоваться разделить результаты запроса на несколько страниц. Сюда входит следующее.
+Кроме того, существуют и другие причины, по которым механизму запросов может потребоваться разделить результаты запроса на несколько страниц. приведенные ниже.
 
 - Контейнер был отрегулирован и еще не был доступен для получения дополнительных результатов запроса.
 - Отклик на выполнение запроса слишком большой
@@ -41,7 +41,7 @@ ms.locfileid: "93338278"
 Ниже приведены некоторые примеры обработки результатов из запросов с несколькими страницами.
 
 - [Пакет SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/Queries/Program.cs#L280)
-- [пакет SDK для Java](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/src/main/java/com/azure/cosmos/examples/documentcrud/sync/DocumentCRUDQuickstart.java#L162-L176)
+- [пакет SDK для Java](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/src/main/java/com/azure/cosmos/examples/documentcrud/sync/DocumentCRUDQuickstart.java#L162-L176)
 - [Пакет SDK для Node.js](https://github.com/Azure/azure-sdk-for-js/blob/83fcc44a23ad771128d6e0f49043656b3d1df990/sdk/cosmosdb/cosmos/samples/IndexManagement.ts#L128-L140)
 - [Пакет SDK для Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/cosmos/azure-cosmos/samples/examples.py#L89)
 
@@ -52,7 +52,7 @@ ms.locfileid: "93338278"
 Ниже приведен пример использования маркеров продолжения.
 
 - [Пакет SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/samples/code-samples/Queries/Program.cs#L699-L734)
-- [пакет SDK для Java](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/src/main/java/com/azure/cosmos/examples/queries/sync/QueriesQuickstart.java#L216)
+- [пакет SDK для Java](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/src/main/java/com/azure/cosmos/examples/queries/sync/QueriesQuickstart.java#L216)
 - [Пакет SDK для Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/cosmos/azure-cosmos/test/test_query.py#L533)
 
 Если запрос возвращает токен продолжения, то имеются дополнительные результаты запроса.

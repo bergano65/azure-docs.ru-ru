@@ -20,11 +20,11 @@
       href: tutorial-track-usage.md
 - name: Основные понятия
   items:
-    - name: Общие сведения о лабораториях для аудитории
+    - name: Обзор лабораторий
       href: classroom-labs-overview.md
-    - name: 'Основные понятия, используемые при работе с лабораториями для аудитории'
+    - name: Основные понятия лабораторий
       href: classroom-labs-concepts.md
-    - name: Основные понятия об архитектурах при работе с лабораториями для аудитории
+    - name: Основные понятия архитектуры лабораторий
       href: classroom-labs-fundamentals.md
     - name: Ограничения емкости
       href: capacity-limits.md
@@ -36,7 +36,7 @@
           href: classroom-labs-scenarios.md
         - name: Использование Службы лабораторий для хакатонов
           href: hackathon-labs.md
-        - name: "Лаборатории для аудитории\_— типы классов"
+        - name: 'Лаборатории: типы классов'
           items:
             - name: Общие сведения о типах классов
               href: class-types.md
@@ -112,9 +112,9 @@
           href: lab-account-owner-support-information.md
         - name: Отправка пользовательского образа в Общую коллекцию образов
           href: upload-custom-image-shared-image-gallery.md
-    - name: Создание и настройка лабораторий для аудитории (преподаватель)
+    - name: Создание и настройка лабораторий (преподаватель)
       items:
-        - name: Создание и администрирование лабораторий для аудитории
+        - name: Создание лабораторий и управление ими
           href: how-to-manage-classroom-labs.md
         - name: Использование панели мониторинга
           href: use-dashboard.md
@@ -150,9 +150,9 @@
           href: lab-creator-support-information.md
         - name: Доступ к виртуальным машинам учащихся из представления преподавателя
           href: instructor-access-virtual-machines.md
-    - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
+    - name: Подключение к виртуальным машинам в лабораториях (учащийся)
       items:
-        - name: Доступ к лабораториям для аудитории
+        - name: Доступ к лабораториям
           href: how-to-use-classroom-lab.md
         - name: Подключение к виртуальным машинам Linux
           href: how-to-use-remote-desktop-linux-student.md

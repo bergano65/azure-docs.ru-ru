@@ -151,9 +151,9 @@
           href: security-center-network-recommendations.md
         - name: Защита идентификации и доступа
           href: security-center-identity-access.md
-    - name: Оповещения в Azure Defender
+    - name: Сведения об оповещениях системы б
       items:
-        - name: Обзор оповещений Azure Defender
+        - name: Общие сведения об оповещениях системы безопасности
           href: security-center-alerts-overview.md
         - name: Справочный список оповещений
           href: alerts-reference.md
@@ -244,7 +244,7 @@
           href: continuous-export.md
         - name: Скачивание отчета в формате CSV для всех оповещений
           href: continuous-export.md#manual-one-time-export-of-alerts-and-recommendations
-    - name: Управление оповещениями в Azure Defender
+    - name: Обработка оповещений системы безопасности
       items:
         - name: Управление оповещениями системы безопасности
           href: security-center-managing-and-responding-alerts.md

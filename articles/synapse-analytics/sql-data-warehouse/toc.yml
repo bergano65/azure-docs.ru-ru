@@ -1,12 +1,12 @@
-- name: "Azure Synapse (ранее\_— Хранилище данных SQL)"
-  href: index.yml
-- name: Переключение на Azure Synapse (предварительная версия рабочих областей)
+- name: "Выделенный пул SQL (прежнее название\_— Хранилище данных SQL)"
+  href: sql-data-warehouse-overview-what-is.md
+- name: Переход на Azure Synapse
   href: ../overview-what-is.md
 - name: Обзор
   items:
-    - name: Что такое Azure Synapse Analytics?
+    - name: Что собой представляет выделенный пул SQL?
       href: sql-data-warehouse-overview-what-is.md
-    - name: Архитектура Azure Synapse Analytics
+    - name: Архитектура выделенного пула SQL
       href: massively-parallel-processing-mpp-architecture.md
     - name: Единицы использования хранилища данных
       href: what-is-a-data-warehouse-unit-dwu-cdwu.md
@@ -74,6 +74,12 @@
           href: pause-and-resume-compute-powershell.md
 - name: Основные понятия
   items:
+    - name: Интерфейс рабочей области Synapse
+      items:
+        - name: Обзор
+          href: workspace-connected-experience.md
+        - name: Поддерживаемые регионы
+          href: workspace-connected-regions.md
     - name: Безопасность
       items:
         - name: Обзор
@@ -272,6 +278,10 @@
           href: sql-data-warehouse-overview-integrate.md
 - name: Практические руководства
   items:
+    - name: Интерфейс рабочей области Synapse
+      items:
+        - name: Создание рабочей области Synapse
+          href: workspace-connected-create.md
     - name: Безопасность
       items:
         - name: "Настройка аутентификации Azure\_AD"
@@ -384,9 +394,9 @@
       items:
         - name: Полный справочник
           href: /sql/t-sql/language-reference?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest
-        - name: Элементы языка TSQL в Azure Synapse Analytics
+        - name: Элементы языка T-SQL
           href: sql-data-warehouse-reference-tsql-language-elements.md
-        - name: Инструкции TSQL в Azure Synapse Analytics
+        - name: Инструкции Т-SQL
           href: sql-data-warehouse-reference-tsql-statements.md
     - name: Системные представления
       href: sql-data-warehouse-reference-tsql-system-views.md
@@ -394,6 +404,9 @@
       href: sql-data-warehouse-reference-powershell-cmdlets.md
     - name: Интерфейсы REST API
       href: sql-data-warehouse-manage-compute-rest-api.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ../policy-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

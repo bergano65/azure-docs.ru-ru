@@ -5,19 +5,20 @@ services: active-directory
 author: curtand
 manager: daveba
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 158d8731965533b20917a25b72227a92c9638fa7
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 5ffa937f91af7078b28331a655f99397d3821def
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95488459"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545899"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Интеграция подключений учетных записей LinkedIn в Azure Active Directory
 
@@ -95,12 +96,12 @@ ms.locfileid: "95488459"
   
    Состояние | Действие
    ------ | ------
-   **Enabled** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office 2016.
+   **Включено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office 2016.
    **Отключено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 отключен, и пользователи не могут изменить это. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.
 
 Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Если пользователи отключают LinkedIn в приложениях Office 2016, они по-прежнему могут просматривать функции LinkedIn в Microsoft 365.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Согласие пользователя и общий доступ к данным для LinkedIn](linkedin-user-consent.md)
 

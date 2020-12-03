@@ -6,19 +6,20 @@ documentationcenter: ''
 author: curtand
 manager: mtillman
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3cc80ffe9fbdb9ee2222d86dbfa842113e2d4d3
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: d78a2a4e0f14d99a7a1ecada915857f59422bb58
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95503081"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96547378"
 ---
 # <a name="search-groups-and-members-preview-in-azure-active-directory"></a>Поиск групп и участников (Предварительная версия) в Azure Active Directory
 
@@ -77,7 +78,7 @@ ms.locfileid: "95503081"
 
 ![Более высокая точность в количестве членств в группах](./media/groups-members-owners-search/member-numbers.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этих статьях содержатся дополнительные сведения о работе с группами в Azure AD.
 

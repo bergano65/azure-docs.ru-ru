@@ -7,19 +7,20 @@ author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.topic: reference
 ms.workload: identity
-ms.date: 11/15/2019
+ms.date: 12/02/2019
 ms.author: curtand
 ms.custom: aaddev;it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19306d3350d905cea840a1c791b69f3b098e75fe
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 055f66ed96a293c7bc97cc34012756f0fee27f14
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95488969"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96547123"
 ---
 # <a name="azure-ad-service-limits-and-restrictions"></a>Ограничения службы Azure AD
 
@@ -27,7 +28,7 @@ ms.locfileid: "95488969"
 
 [!INCLUDE [AAD-service-limits](../../../includes/active-directory-service-limits-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Подпишитесь на Azure как организация](../fundamentals/sign-up-organization.md)
 * [Как подписки Azure связаны с Azure AD](../fundamentals/active-directory-how-subscriptions-associated-directory.md)

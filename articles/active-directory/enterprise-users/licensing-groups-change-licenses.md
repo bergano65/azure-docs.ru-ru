@@ -8,19 +8,20 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f6d472f52fa0acf791cc9b5998bf2ebf4e5951b
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 050ae95c79e7ecb98f8508c2fdb41b90fc1b1da0
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95503110"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546545"
 ---
 # <a name="change-license-assignments-for-a-user-or-group-in-azure-active-directory"></a>Изменение назначений лицензий для пользователя или группы в Azure Active Directory
 
@@ -53,7 +54,7 @@ ms.locfileid: "95503110"
 
     ![Страница "назначения лицензий" для пользователя, на котором снят флажок "Office 365 E1" и выбрано Office 365 E3](./media/licensing-groups-change-licenses/update-user-license-assignments.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Azure AD применяет новые лицензии и удаляет старые лицензии одновременно для обеспечения непрерывности обслуживания.
 
@@ -68,11 +69,11 @@ Azure AD применяет новые лицензии и удаляет ста
 
     ![Выбор команды "назначения" на странице лицензий пользователя или группы](./media/licensing-groups-change-licenses/update-group-license-assignments.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Чтобы обеспечить непрерывность обслуживания, Azure AD применяет новые лицензии и удаляет старые лицензии одновременно для всех пользователей в группе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о сценариях управления лицензиями с помощью групп см. в следующих статьях:
 

@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 06/11/2020
 ms.reviewer: sngun
-ms.openlocfilehash: b33524acd09cbf565127dc81ef2b5bfa16b4504d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 6bbf87689b577eda7de491744156e63eaa3b440c
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339773"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546885"
 ---
 # <a name="migrate-your-application-to-use-the-azure-cosmos-db-java-sdk-v4"></a>Перевод приложения на использование пакета средств разработки Java для Azure Cosmos DB версии 4
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -46,9 +46,9 @@ ms.locfileid: "93339773"
 
 ### <a name="rxjava-is-replaced-with-reactor-in-azure-cosmos-db-java-sdk-versions-3xx-and-40"></a>RxJava заменяется на Reactor в пакетах средств разработки Java для Azure Cosmos DB версий 3.x.x и 4.0
 
-Если вы еще не знакомы с асинхронным и (или) реактивным программированием, изучите [руководство по шаблону реактора](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-pattern-guide.md), в котором приведены общие сведения об асинхронном программировании и проекте Reactor. Это руководство может оказаться полезным, если вы ранее использовали пакет средств разработки Sync Java для Azure Cosmos DB версии 2.x.x или пакет средств разработки Sync Java для Azure Cosmos DB версии 3.x.x.
+Если вы еще не знакомы с асинхронным и (или) реактивным программированием, изучите [руководство по шаблону реактора](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-pattern-guide.md), в котором приведены общие сведения об асинхронном программировании и проекте Reactor. Это руководство может оказаться полезным, если вы ранее использовали пакет средств разработки Sync Java для Azure Cosmos DB версии 2.x.x или пакет средств разработки Sync Java для Azure Cosmos DB версии 3.x.x.
 
-Если вы используете пакет средств разработки Async Java для Azure Cosmos DB версии 2.x.x и планируете перейти на пакет SDK 4.0, ознакомьтесь со статьей [Сравнительная характеристика Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md), где представлены инструкции по преобразованию кода для RxJava в код для Reactor.
+Если вы используете пакет средств разработки Async Java для Azure Cosmos DB версии 2.x.x и планируете перейти на пакет SDK 4.0, ознакомьтесь со статьей [Сравнительная характеристика Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-rxjava-guide.md), где представлены инструкции по преобразованию кода для RxJava в код для Reactor.
 
 ### <a name="azure-cosmos-db-java-sdk-v4-has-direct-connectivity-mode-in-both-async-and-sync-apis"></a>Пакет средств разработки Java для Azure Cosmos DB версии 4 имеет режим прямого подключения к API-интерфейсам Sync и Async.
 
@@ -376,5 +376,5 @@ SalesOrder salesOrder = new SalesOrder(
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создайте приложение Java](create-sql-api-java.md) для управления данными API SQL для Azure Cosmos DB с помощью пакета средств разработки версии 4.
-* Узнайте о [пакетах средств разработки Java на основе Reactor](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-pattern-guide.md).
-* Узнайте о преобразовании асинхронного кода RxJava в асинхронный код Reactor см. в статье [Сравнительная характеристика Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md).
+* Узнайте о [пакетах средств разработки Java на основе Reactor](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-pattern-guide.md).
+* Узнайте о преобразовании асинхронного кода RxJava в асинхронный код Reactor см. в статье [Сравнительная характеристика Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-rxjava-guide.md).

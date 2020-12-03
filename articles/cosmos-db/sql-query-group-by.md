@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: tisande
-ms.openlocfilehash: 71314e6999031f52ebbfc582b43684ab5a17a261
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: d9cafc100ddd4b553577c447e82334e6ee7d1b6d
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93338822"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545457"
 ---
 # <a name="group-by-clause-in-azure-cosmos-db"></a>Предложение GROUP BY в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "93338822"
 
 ## <a name="remarks"></a>Remarks
   
-  Если в запросе используется предложение GROUP BY, предложение SELECT может содержать только подмножество свойств и системных функций, входящих в предложение GROUP BY. Единственным исключением являются [агрегатные системные функции](sql-query-aggregates.md), которые могут присутствовать в предложении SELECT без включения в предложение GROUP BY. Также в предложение SELECT всегда можно включать литеральные значения.
+  Если в запросе используется предложение GROUP BY, предложение SELECT может содержать только подмножество свойств и системных функций, входящих в предложение GROUP BY. Единственным исключением являются [агрегатные функции](sql-query-aggregate-functions.md), которые могут присутствовать в предложении SELECT без включения в предложение GROUP BY. Также в предложение SELECT всегда можно включать литеральные значения.
 
   Предложение GROUP BY должно располагаться после предложений SELECT, FROM и WHERE, но перед предложением OFFSET LIMIT. В настоящее время нельзя использовать GROUP BY с предложением ORDER BY, но запланирована поддержка такого варианта.
 
@@ -192,4 +192,4 @@ GROUP BY ARRAY_CONTAINS(f.tags, {name: 'orange'}), f.version BETWEEN 0 AND 2
 
 - [Начало работы](sql-query-getting-started.md)
 - [Предложение SELECT](sql-query-select.md)
-- [Агрегатные функции](sql-query-aggregates.md)
+- [Агрегатные функции](sql-query-aggregate-functions.md)

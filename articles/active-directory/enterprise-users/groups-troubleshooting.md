@@ -6,19 +6,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.subservice: users-groups-roles
+ms.subservice: enterprise-users
 ms.topic: troubleshooting
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d114896319929a0506f0201905d72d081b6408a4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 41bfdf11bad28ab772b68839a5a7bf7776eb4dff
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94650519"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548109"
 ---
 # <a name="troubleshoot-and-resolve-groups-issues"></a>Диагностика и устранение проблем с группами
 
@@ -70,7 +70,7 @@ ms.locfileid: "94650519"
 | Ошибка: не поддерживается оператор для атрибута. |(user.accountEnabled -contains true) |(user.accountEnabled - eq true)<br/><br/>Используемый оператор не поддерживается для этого типа свойств (в данном примере -contains не может использоваться в логическом типе). Используйте правильные операторы для типа свойств. |
 | Ошибка: ошибка компиляции запроса. | 1. (user.department -eq "Sales") (user.department -eq "Marketing")<br>2. (user.userPrincipalName -match "*@domain.ext") | 1. отсутствует оператор. Используйте предикат соединения -and или -or.<br>(user.department -eq "Sales") -or (user.department -eq "Marketing")<br>2. ошибка в регулярном выражении, используемом с-Match<br>(user.userPrincipalName -match ".*@domain.ext")<br>или (user.userPrincipalName -match "@domain.ext$") |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 

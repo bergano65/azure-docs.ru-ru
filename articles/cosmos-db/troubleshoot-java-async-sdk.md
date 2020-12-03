@@ -10,12 +10,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-java
-ms.openlocfilehash: 4ec2deaf3149e174cce201d0bbad8a55d156d30f
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: b39a74bd06f942cf21d201c8cef48bc6dfc57d46
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95998347"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548092"
 ---
 # <a name="troubleshoot-issues-when-you-use-the-azure-cosmos-db-async-java-sdk-v2-with-sql-api-accounts"></a>Устранение неполадок при использовании асинхронного пакета SDK Java версии 2 для Azure Cosmos DB с учетными записями API SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "95998347"
 > 
 
 > [!IMPORTANT]
-> Это *не* последняя версия пакета SDK для Java для Azure Cosmos DB! Необходимо обновить проект до [Azure Cosmos DB с пакетом SDK для Java версии 4](sql-api-sdk-java-v4.md), а затем ознакомиться с [руководством по устранению неполадок](troubleshoot-java-sdk-v4-sql.md) с пакетом SDK Java версии 4 для Azure Cosmos DB. Следуйте инструкциям в руководстве по [переходу на пакет SDK Java версии 4 для Azure Cosmos DB](migrate-java-v4-sdk.md) и руководстве по [Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md). 
+> Это *не* последняя версия пакета SDK для Java для Azure Cosmos DB! Необходимо обновить проект до [Azure Cosmos DB с пакетом SDK для Java версии 4](sql-api-sdk-java-v4.md), а затем ознакомиться с [руководством по устранению неполадок](troubleshoot-java-sdk-v4-sql.md) с пакетом SDK Java версии 4 для Azure Cosmos DB. Следуйте инструкциям в руководстве по [переходу на пакет SDK Java версии 4 для Azure Cosmos DB](migrate-java-v4-sdk.md) и руководстве по [Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-rxjava-guide.md). 
 >
 > В этой статье описывается устранение неполадок только для асинхронного пакета SDK Java версии 2 для Azure Cosmos DB. Дополнительные сведения см. в [заметках о выпуске](sql-api-sdk-async-java.md), [репозитории Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb) и [советах по повышению производительности](performance-tips-async-java.md) для асинхронного пакета SDK Java версии 2 для Azure Cosmos DB.
 >

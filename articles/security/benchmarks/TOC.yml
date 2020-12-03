@@ -129,6 +129,8 @@
       href: ../../load-balancer/security-baseline.md
     - name: Базовые средства безопасности Машинного обучения Azure
       href: ../../machine-learning/security-baseline.md
+    - name: Базовые показатели безопасности Управляемых приложений Azure
+      href: ../../azure-resource-manager/managed-applications/security-baseline.md
     - name: Базовые показатели безопасности Azure Monitor
       href: ../../azure-monitor/security-baseline.md
     - name: Базовые средства безопасности Миграции Azure
@@ -201,7 +203,7 @@
       href: ../../site-recovery/security-baseline.md
     - name: Базовые уровень безопасности Stream Analytics
       href: ../../stream-analytics/security-baseline.md
-    - name: Базовые показатели безопасности Synapse Analytics
+    - name: Базовые показатели безопасности Azure Synapse Analytics
       href: ../../synapse-analytics/security-baseline.md
     - name: Базовые показатели безопасности Диспетчера трафика
       href: ../../traffic-manager/security-baseline.md

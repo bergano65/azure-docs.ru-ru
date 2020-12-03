@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/15/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: b8883d7040ad5c73a376838f7cb1aaa1b558bfbd
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 71dc5b84deda04c02b6d1722b11abf6631e9aa03
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340840"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546375"
 ---
 # <a name="system-functions-azure-cosmos-db"></a>Системные функции (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "93340840"
   
 |Группа функций|Описание|Операции|  
 |--------------|-----------------|-----------------| 
-|[Функции массива](sql-query-array-functions.md)|Функции массивов выполняют операцию над входным массивом и возвращают числовое, логическое значение либо массив. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
+|[Функции массивов](sql-query-array-functions.md)|Функции массивов выполняют операцию над входным массивом и возвращают числовое, логическое значение либо массив. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
 |[Функции даты и времени](sql-query-date-time-functions.md)|Функции даты и времени позволяют получить текущую дату и время в формате UTC в двух формах. числовая метка времени, значение которой является эпохой UNIX в миллисекундах или в виде строки, которая соответствует формату ISO 8601. | [Жеткуррентдатетиме](sql-query-getcurrentdatetime.md), [жеткурренттиместамп](sql-query-getcurrenttimestamp.md) |
 |[Математические функции](sql-query-mathematical-functions.md)|Математические функции выполняют вычисление, которое обычно основано на входных значениях, предоставляемых в форме аргументов, и возвращают числовое значение. | [ABS](sql-query-abs.md), [Acos](sql-query-acos.md), [ASIN](sql-query-asin.md), [ATAN](sql-query-atan.md), [ATN2](sql-query-atn2.md), [Ceiling](sql-query-ceiling.md), [COS](sql-query-cos.md), [COT](sql-query-cot.md), [градусы](sql-query-degrees.md), [exp](sql-query-exp.md), [этаж](sql-query-floor.md), [Журнал](sql-query-log.md), [LOG10](sql-query-log10.md), [Pi](sql-query-pi.md), [Power](sql-query-power.md), [радианы](sql-query-radians.md), [Rand](sql-query-rand.md), [круглый](sql-query-round.md), [знак](sql-query-sign.md), [sin](sql-query-sin.md), [sqrt](sql-query-sqrt.md), [квадратный](sql-query-square.md), [Tan](sql-query-tan.md), [TRUNC](sql-query-trunc.md) |
 |[Пространственные функции](sql-query-spatial-functions.md)|Пространственные функции выполняют операцию над входным пространственным объектом и возвращают числовое или логическое значение. | [ST_DISTANCE](sql-query-st-distance.md), [ST_INTERSECTS](sql-query-st-intersects.md), [ST_ISVALID](sql-query-st-isvalid.md), [ST_ISVALIDDETAILED](sql-query-st-isvaliddetailed.md), [ST_WITHIN](sql-query-st-within.md) |
@@ -40,11 +40,11 @@ ms.locfileid: "93340840"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения об Azure Cosmos DB](introduction.md)
-- [Функции массива](sql-query-array-functions.md)
+- [Функции массивов](sql-query-array-functions.md)
 - [Функции даты и времени](sql-query-date-time-functions.md)
 - [Математические функции](sql-query-mathematical-functions.md)
 - [Пространственные функции](sql-query-spatial-functions.md)
 - [Строковые функции](sql-query-string-functions.md)
 - [Функции проверки типа](sql-query-type-checking-functions.md)
 - [Определенные пользователем функции](sql-query-udfs.md)
-- [Статистические функции](sql-query-aggregates.md)
+- [Статистические выражения](sql-query-aggregate-functions.md)

@@ -45,7 +45,7 @@
       items:
         - name: Предоставление общего доступа к данным из хранилища Azure
           href: how-to-share-from-storage.md
-        - name: Предоставление общего доступа к данным из Базы данных SQL Azure в Synapse Analytics
+        - name: Предоставление общего доступа к данным из Базы данных SQL Azure в Azure Synapse Analytics
           href: how-to-share-from-sql.md
         - name: Предоставление общего доступа к данным из Azure Data Explorer
           href: /azure/data-explorer/data-share

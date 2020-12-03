@@ -1,0 +1,113 @@
+### YamlMime:Landing
+title: Azure Synapse Analytics
+summary: Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе.
+metadata:
+  title: Azure Synapse Analytics
+  description: Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе.
+  services: synapse-analytics
+  ms.service: synapse-analytics
+  ms.subservice: overview
+  ms.topic: landing-page
+  ms.collection: collection
+  author: julieMSFT
+  ms.author: jrasnick
+  ms.date: 12/01/2020
+  ms.openlocfilehash: 6de11d0830c332d19a133592b060caca1382b667
+  ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96463352"
+landingContent:
+- title: About Azure Synapse Analytics
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что представляет собой Azure Synapse
+      url: overview-what-is.md
+    - text: Советы и рекомендации
+      url: overview-cheat-sheet.md
+    - text: ВОПРОСЫ И ОТВЕТЫ
+      url: overview-faq.md
+- title: Synapse SQL
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Архитектура Azure Synapse Analytics
+      url: ./sql/overview-architecture.md
+  - linkListType: quickstart
+    links:
+    - text: Использование бессерверного пула SQL
+      url: quickstart-sql-on-demand.md
+    - text: Создание выделенного пула SQL с помощью Synapse Studio
+      url: quickstart-create-sql-pool-studio.md
+- title: Начало работы с Azure Synapse Analytics
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Пошаговое руководство по началу работы
+      url: get-started.md
+    - text: Шаг 1. Создание и настройка рабочей области Synapse
+      url: get-started-create-workspace.md
+    - text: Шаг 2. Анализ с использованием выделенного пула SQL
+      url: get-started-analyze-sql-pool.md
+    - text: Шаг 3. Анализ с использованием Apache Spark
+      url: get-started-analyze-spark.md
+    - text: Шаг 4. Анализ с использованием бессерверного пула SQL
+      url: get-started-analyze-sql-on-demand.md
+    - text: Шаг 5. Анализ данных в учетной записи хранения
+      url: get-started-analyze-storage.md
+    - text: Шаг 6. Оркестрация с использованием конвейеров
+      url: get-started-pipelines.md
+    - text: Шаг 7. Визуализация данных с помощью Power BI
+      url: get-started-visualize-power-bi.md
+    - text: Шаг 8. Мониторинг рабочей области Synapse
+      url: get-started-monitor.md
+    - text: Шаг 9. Изучение центра знаний Synapse
+      url: get-started-knowledge-center.md
+- title: Apache Spark
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Apache Spark в Azure Synapse Analytics
+      url: ./spark/apache-spark-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Создание бессерверного пула Apache Spark с помощью Synapse Studio
+      url: quickstart-create-apache-spark-pool-studio.md
+- title: Synapse Link
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения об Azure Synapse Link для Azure Cosmos DB
+      url: ../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+  - linkListType: quickstart
+    links:
+    - text: Подключение к Azure Synapse Link для Azure Cosmos DB
+      url: quickstart-connect-synapse-link-cosmos-db.md
+- title: Машинное обучение
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Машинное обучение в Azure Synapse
+      url: ./machine-learning/what-is-machine-learning.md
+  - linkListType: quickstart
+    links:
+    - text: Создание новой связанной службы Машинного обучения Azure
+      url: ./machine-learning/quickstart-integrate-azure-machine-learning.md
+  - linkListType: tutorial
+    links:
+    - text: Мастер оценки моделей для пулов SQL
+      url: ./machine-learning/tutorial-sql-pool-model-scoring-wizard.md
+- title: Конвейер и поток данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Конвейер и действия
+      url: ../data-factory/concepts-pipelines-activities.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+  - linkListType: quickstart
+    links:
+    - text: Преобразование данных
+      url: quickstart-data-flow.md
+    - text: Загрузка данных в пул SQL
+      url: quickstart-copy-activity-load-sql-pool.md

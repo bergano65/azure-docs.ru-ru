@@ -106,6 +106,8 @@
       href: azure-advisor.md
     - name: Разрешение рекомендаций
       href: azure-advisor-recommendations.md
+    - name: Использование Azure Monitor для Виртуального рабочего стола Windows
+      href: azure-monitor.md
     - name: Подготовка плана аварийного восстановления
       href: disaster-recovery.md
 - name: Основные понятия
@@ -150,6 +152,8 @@
           href: app-attach-glossary.md
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: app-attach-faq.md
+    - name: Глоссарий Azure Monitor
+      href: azure-monitor-glossary.md
     - name: Расположения данных
       href: data-locations.md
 - name: Диагностика
@@ -170,6 +174,8 @@
       href: troubleshoot-powershell.md
     - name: Диагностика проблем с производительностью графической обработки
       href: remotefx-graphics-performance-counters.md
+    - name: Azure Monitor
+      href: troubleshoot-azure-monitor.md
 - name: Справочник
   items:
     - name: Лучшие методики обеспечения безопасности

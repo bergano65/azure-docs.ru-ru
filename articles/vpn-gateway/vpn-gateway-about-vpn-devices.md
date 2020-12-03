@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 09/01/2020
+ms.date: 12/02/2020
 ms.author: yushwang
-ms.openlocfilehash: 92f589e6a587febc10a4b407fe3616aca42d27d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae498b39a421db19f0d4e0a8daca58730321b58c
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89318953"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546817"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -37,38 +37,38 @@ ms.locfileid: "89318953"
 
 |**поставщик**          |**Семейство устройств**     |**Минимальная версия ОС** |**Инструкции по настройке PolicyBased** |**Инструкции по настройке RouteBased** |
 | ---                | ---                  | ---                   | ---            | ---           |
-| A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |Не совместимо  |[Руководству по настройке](https://www.a10networks.com/wp-content/uploads/A10-DG-16161-EN.pdf)|
-| Allied Telesis     |VPN-маршрутизаторы серии AR |Серии AR 5.4.7+               | [Руководству по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router) |[Руководству по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
-| Arista | Маршрутизатор Клаудеос | Веос 4.24.0 FX | (не протестировано) | [Руководству по настройке](https://www.arista.com/en/cg-veos-router/veos-router-cloudeos-ipsec-connectivity-to-azure-virtual-network-gateway) |
-| Barracuda Networks, Inc. |Barracuda CloudGen Firewall |PolicyBased: 5.4.3<br>RouteBased: 6.2.0 |[Руководству по настройке](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462887/how-to-configure-an-ikev1-ipsec-site-to-site-vpn-to-the-static-microsoft-azure-vpn-gateway/) |[Руководству по настройке](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462889/how-to-configure-bgp-over-ikev2-ipsec-site-to-site-vpn-to-an-azure-vpn-gateway/) |
-| Check Point |Security Gateway |R80.10 |[Руководству по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Руководству по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
+| A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |Не совместимо  |[Руководство по настройке](https://www.a10networks.com/wp-content/uploads/A10-DG-16161-EN.pdf)|
+| Allied Telesis     |VPN-маршрутизаторы серии AR |Серии AR 5.4.7+               | [Руководство по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router) |[Руководство по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
+| Arista | Маршрутизатор Клаудеос | Веос 4.24.0 FX | (не протестировано) | [Руководство по настройке](https://www.arista.com/en/cg-veos-router/veos-router-cloudeos-ipsec-connectivity-to-azure-virtual-network-gateway) |
+| Barracuda Networks, Inc. |Barracuda CloudGen Firewall |PolicyBased: 5.4.3<br>RouteBased: 6.2.0 |[Руководство по настройке](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462887/how-to-configure-an-ikev1-ipsec-site-to-site-vpn-to-the-static-microsoft-azure-vpn-gateway/) |[Руководство по настройке](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462889/how-to-configure-bgp-over-ikev2-ipsec-site-to-site-vpn-to-an-azure-vpn-gateway/) |
+| Check Point |Security Gateway |R80.10 |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
 | Cisco              |ASA       |8.3<br>8.4+ (IKEv2*) |Поддерживается |[Инструкции по настройке *](https://www.cisco.com/c/en/us/support/docs/security/adaptive-security-appliance-asa-software/214109-configure-asa-ipsec-vti-connection-to-az.html) |
 | Cisco |ASR |PolicyBased: IOS 15.1<br>RouteBased: IOS 15.2 |Поддерживается |Поддерживается |
 | Cisco | Добавлено | RouteBased: IOS — XE 16,10 | (не протестировано) | [Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
 | Cisco |ISR |PolicyBased: IOS 15.0<br>RouteBased*: IOS 15.1 |Поддерживается |Поддерживается |
-| Cisco |Meraki (MX) | 15.12 MX v |Не совместимо | [Руководству по настройке](https://documentation.meraki.com/MX/Site-to-site_VPN/Configuring_Site_to_Site_VPN_tunnels_to_Azure_VPN_Gateway) |
+| Cisco |Meraki (MX) | 15.12 MX v |Не совместимо | [Руководство по настройке](https://documentation.meraki.com/MX/Site-to-site_VPN/Configuring_Site_to_Site_VPN_tunnels_to_Azure_VPN_Gateway) |
 | Cisco | Ведже (Виптела OS) | 18.4.0 (активный/пассивный режим)<br><br>19,2 (активный/активный режим) | Не совместимо |  [Ручная настройка (Активная/пассивная)](https://community.cisco.com/t5/networking-documents/how-to-configure-ipsec-vpn-connection-between-cisco-vedge-and/ta-p/3841454)<br><br>[Облачная конфигурация с разпуском (активная/активная)](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/Network-Optimization-and-High-Availability/Network-Optimization-High-Availability-book/b_Network-Optimization-and-HA_chapter_00.html) |
-| Citrix |NetScaler MPX, SDX, VPX |10.1 и выше |[Руководству по настройке](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |Не совместимо |
-| F5 |Серия BIG-IP |12.0 |[Руководству по настройке](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[Руководству по настройке](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
-| Fortinet |FortiGate |FortiOS 5.6 | (не протестировано) |[Руководству по настройке](https://docs.fortinet.com/document/fortigate/5.6.0/cookbook/255100/ipsec-vpn-to-azure) |
-| Хиллстоне сети | Брандмауэры следующего поколения (NGFW) | 5,5 R7  | (не протестировано) | [Руководству по настройке](https://www.hillstonenet.com/wp-content/uploads/How-to-setup-Site-to-Site-VPN-between-Microsoft-Azure-and-an-on-premise-Hillstone-Networks-Security-Gateway.pdf) |
-| Internet Initiative Japan (IIJ) |Серия SEIL |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[Руководству по настройке](https://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |Не совместимо |
+| Citrix |NetScaler MPX, SDX, VPX |10.1 и выше |[Руководство по настройке](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |Не совместимо |
+| F5 |Серия BIG-IP |12.0 |[Руководство по настройке](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[Руководство по настройке](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
+| Fortinet |FortiGate |FortiOS 5.6 | (не протестировано) |[Руководство по настройке](https://docs.fortinet.com/document/fortigate/5.6.0/cookbook/255100/ipsec-vpn-to-azure) |
+| Хиллстоне сети | Брандмауэры следующего поколения (NGFW) | 5,5 R7  | (не протестировано) | [Руководство по настройке](https://www.hillstonenet.com/wp-content/uploads/How-to-setup-Site-to-Site-VPN-between-Microsoft-Azure-and-an-on-premise-Hillstone-Networks-Security-Gateway.pdf) |
+| Internet Initiative Japan (IIJ) |Серия SEIL |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[Руководство по настройке](https://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |Не совместимо |
 | Juniper |SRX |PolicyBased: JunOS 10.2<br>Routebased: JunOS 11.4 |Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |Серия J |PolicyBased: JunOS 10.4r9<br>RouteBased: JunOS 11.4 |Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |ISG |ScreenOS 6.3 |Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |SSG |ScreenOS 6.2 |Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |MX |JunOS 12.x|Поддерживается |[Сценарий конфигурации](vpn-gateway-download-vpndevicescript.md) |
-| Microsoft |Служба маршрутизации и удаленного доступа |Windows Server 2012 |Не совместимо |Поддерживается |
-| Open Systems AG |Шлюз безопасности Mission Control |Недоступно |[Руководству по настройке](https://open-systems.com/wp-content/uploads/2019/12/OpenSystems-AzureVPNSetup-Installation-Guide.pdf) |Не совместимо |
-| Palo Alto Networks |Все устройства под управлением PAN-OS |PAN-OS<br>PolicyBased: 6.1.5 или более поздней версии<br>RouteBased: 7.1.4 |Поддерживается |[Руководству по настройке](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
+| Microsoft |Служба маршрутизации и удаленного доступа |Windows Server 2012 |Не совместимо |Поддерживается |
+| Open Systems AG |Шлюз безопасности Mission Control |Недоступно |[Руководство по настройке](https://open-systems.com/wp-content/uploads/2019/12/OpenSystems-AzureVPNSetup-Installation-Guide.pdf) |Не совместимо |
+| Palo Alto Networks |Все устройства под управлением PAN-OS |PAN-OS<br>PolicyBased: 6.1.5 или более поздней версии<br>RouteBased: 7.1.4 |Поддерживается |[Руководство по настройке](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
 | Сентриум (разработчик) | вйос | Вйос 1.2.2 | (не протестировано) | [Руководству по настройке ](https://vyos.readthedocs.io/en/latest/appendix/examples/azure-vpn-bgp.html)|
-| ShareTech | UTM нового поколения (серия NU) | 9.0.1.3 | Не совместимо | [Руководству по настройке](http://www.sharetech.com.tw/images/file/Solution/NU_UTM/S2S_VPN_with_Azure_Route_Based_en.pdf) |
-| SonicWall |Серия TZ и NSA<br>Серия SuperMassive<br>Серия NSA класса E |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |Не совместимо |[Руководству по настройке](https://www.sonicwall.com/support/knowledge-base/170505320011694) |
-| Sophos | Брандмауэр следующего поколения XG | XG версии 17 | (не протестировано) | [Руководству по настройке](https://community.sophos.com/kb/127546)<br><br>[Руководство по настройке нескольких SA](https://community.sophos.com/kb/en-us/133154) |
-| синологи | MR2200ac <br>RT2600ac <br>RT1900ac | СРМ 1.1.5/Впнплуссервер-1.2.0 | (не протестировано) | [Руководству по настройке](https://www.synology.com/en-global/knowledgebase/SRM/tutorial/VPN/How_to_set_up_Site_to_Site_VPN_between_Synology_Router_and_MS_Azure) |
+| ShareTech | UTM нового поколения (серия NU) | 9.0.1.3 | Не совместимо | [Руководство по настройке](http://www.sharetech.com.tw/images/file/Solution/NU_UTM/S2S_VPN_with_Azure_Route_Based_en.pdf) |
+| SonicWall |Серия TZ и NSA<br>Серия SuperMassive<br>Серия NSA класса E |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |Не совместимо |[Руководство по настройке](https://www.sonicwall.com/support/knowledge-base/170505320011694) |
+| Sophos | Брандмауэр следующего поколения XG | XG версии 17 | (не протестировано) | [Руководство по настройке](https://community.sophos.com/kb/127546)<br><br>[Руководство по настройке нескольких SA](https://community.sophos.com/kb/en-us/133154) |
+| синологи | MR2200ac <br>RT2600ac <br>RT1900ac | СРМ 1.1.5/Впнплуссервер-1.2.0 | (не протестировано) | [Руководство по настройке](https://www.synology.com/en-global/knowledgebase/SRM/tutorial/VPN/How_to_set_up_Site_to_Site_VPN_between_Synology_Router_and_MS_Azure) |
 | Ubiquiti | EdgeRouter | EdgeOS v1.10 | (не протестировано) | [BGP через IKEv2 или IPsec](https://help.ubnt.com/hc/en-us/articles/115012374708)<br><br>[VTI через IKEv2 или IPsec](https://help.ubnt.com/hc/en-us/articles/115012305347) |
-| Ультра | 3E — 636L3 | Сборка 5.2.0. T3 — 13  | (не протестировано) | [Руководству по настройке](https://ultra-3eti.com/wp-content/uploads/2020/07/Azure-VPN-636L3-Site-to-Site-Test-Notes.pdf) |
-| WatchGuard |All |Fireware XTM<br> PolicyBased: 11.11.x<br>RouteBased: 11.12.x |[Руководству по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA2F00000000LI7KAM&lang=en_US) |[Руководству по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA22A000000XZogSAG&lang=en_US)|
+| Ультра | 3E — 636L3 | Сборка 5.2.0. T3 — 13  | (не протестировано) | [Руководство по настройке](https://ultra-3eti.com/wp-content/uploads/2020/07/Azure-VPN-636L3-Site-to-Site-Test-Notes.pdf) |
+| WatchGuard |All |Fireware XTM<br> PolicyBased: 11.11.x<br>RouteBased: 11.12.x |[Руководство по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA2F00000000LI7KAM&lang=en_US) |[Руководство по настройке](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA22A000000XZogSAG&lang=en_US)|
 | зиксел |Серия Зивалл УНИВЕРСАЛЬНУЮ<br>Серия Зивалл ATP<br>Серия VPN Зивалл | ЗЛД v 4.32 + | (не протестировано) | [VTI через IKEv2 или IPsec](https://businessforum.zyxel.com/discussion/2648/)<br><br>[BGP через IKEv2 или IPsec](https://businessforum.zyxel.com/discussion/2650/)|
 
 > [!NOTE]
@@ -112,13 +112,11 @@ ms.locfileid: "89318953"
 | &lt;SP_AzureGatewayIpAddress&gt; |Эта информация относится к конкретной виртуальной сети и отображается на портале управления как **IP-адрес шлюза**. |
 | &lt;SP_PresharedKey&gt; |Эта информация относится к виртуальной сети и находится на портале управления в разделе «Управление ключами». |
 
-## <a name="ipsecike-parameters"></a><a name="ipsec"></a>Параметры IPsec/IKE
+## <a name="default-ipsecike-parameters"></a><a name="ipsec"></a>Параметры IPsec/IKE по умолчанию
 
-> [!IMPORTANT]
-> 1. Таблицы содержат комбинации алгоритмов и параметров VPN-шлюзов Azure, используемые в стандартной конфигурации. Для VPN-шлюзов на основе маршрутов, созданных с помощью модели развертывания на основе Azure Resource Management, можно указать пользовательскую политику для каждого отдельного подключения. Дополнительные сведения см. в инструкциях по [настройке политик IPsec/IKE](vpn-gateway-ipsecikepolicy-rm-powershell.md).
->
-> 2. Кроме того, необходимо установить для TCP **MSS** значение **1350**. Если же VPN-устройства не поддерживают фиксацию MSS, в качестве альтернативы в интерфейсе туннеля можно указать для **MTU****1400** байт.
->
+Приведенные ниже таблицы содержат сочетания алгоритмов и параметров, используемых VPN-шлюзами Azure в конфигурации по умолчанию (**политики по умолчанию**). Для VPN-шлюзов на основе маршрутов, созданных с помощью модели развертывания на основе Azure Resource Management, можно указать пользовательскую политику для каждого отдельного подключения. Дополнительные сведения см. в инструкциях по [настройке политик IPsec/IKE](vpn-gateway-ipsecikepolicy-rm-powershell.md).
+
+Кроме того, необходимо засрезировать TCP- **MSS** в **1350**. Если же VPN-устройства не поддерживают фиксацию MSS, в качестве альтернативы в интерфейсе туннеля можно указать для **MTU****1400** байт.
 
 В таблицах ниже приведены следующие сведения:
 
@@ -157,22 +155,22 @@ ms.locfileid: "89318953"
 |-  |**Шифрование**|**Аутентификация**|**Группа PFS**|
 |---| ---          |---               |---          |
 | 1 |GCM AES256    |GCM (AES256)      |None         |
-| 2 |AES256        |SHA1              |None         |
+| 2 |AES256        |SHA1              |Нет         |
 | 3 |3DES          |SHA1              |None         |
-| 4 |AES256        |SHA256            |None         |
+| 4 |AES256        |SHA256            |Нет         |
 | 5 |AES128        |SHA1              |None         |
-| 6 |3DES          |SHA256            |None         |
+| 6 |3DES          |SHA256            |Нет         |
 
 #### <a name="azure-gateway-as-responder"></a>Шлюз Azure в качестве ответчика
 
 |-  |**Шифрование**|**Аутентификация**|**Группа PFS**|
 |---| ---          | ---              |---          |
 | 1 |GCM AES256    |GCM (AES256)      |None         |
-| 2 |AES256        |SHA1              |None         |
+| 2 |AES256        |SHA1              |Нет         |
 | 3 |3DES          |SHA1              |None         |
-| 4 |AES256        |SHA256            |None         |
+| 4 |AES256        |SHA256            |Нет         |
 | 5 |AES128        |SHA1              |None         |
-| 6 |3DES          |SHA256            |None         |
+| 6 |3DES          |SHA256            |Нет         |
 | 7 |DES           |SHA1              |None         |
 | 8 |AES256        |SHA1              |1            |
 | 9 |AES256        |SHA1              |2            |
@@ -188,7 +186,7 @@ ms.locfileid: "89318953"
 | 19|AES256        |SHA256            |14           |
 | 20|AES256        |SHA1              |24           |
 | 21|AES256        |SHA256            |24           |
-| 22|AES128        |SHA256            |None         |
+| 22|AES128        |SHA256            |Нет         |
 | 23|AES128        |SHA256            |1            |
 | 24|AES128        |SHA256            |2            |
 | 25|AES128        |SHA256            |14           |
