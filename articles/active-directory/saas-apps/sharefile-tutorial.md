@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/04/2020
 ms.author: jeedes
-ms.openlocfilehash: ac7382f60d5c49ac8c784566af4d9db8ea78956b
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: e0cabcbaaf8e84ac1bdfd13c0ef4ab14f326fcf7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331347"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182295"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство. Интеграция Azure Active Directory с Citrix ShareFile
 
@@ -88,7 +88,7 @@ ms.locfileid: "94331347"
     - `https://<tenant-name>.sharefile1.eu/saml/info`
     - `https://<tenant-name>.sharefile.eu/saml/info`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: .
     
     - `https://<tenant-name>.sharefile.com/saml/acs`
     - `https://<tenant-name>.sharefile.eu/saml/<URL path>`
@@ -190,7 +190,7 @@ ms.locfileid: "94331347"
 
 2. Перейдите по URL-адресу для входа в Citrix ShareFile и инициируйте поток входа.
 
-3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Citrix ShareFile на Панели доступа, вы перейдете по URL-адресу для входа вCitrix ShareFile. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Citrix ShareFile на Панели доступа, вы перейдете по URL-адресу для входа вCitrix ShareFile. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

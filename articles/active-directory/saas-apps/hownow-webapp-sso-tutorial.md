@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/06/2020
 ms.author: jeedes
-ms.openlocfilehash: 87741420a693c22be7d549eb57dfeb834b0e6ca8
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 8d5881d838c4fe952206afb827fd60ed98dbba86
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686383"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96178353"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hownow-webapp-sso"></a>Руководство по интеграции единого входа Azure Active Directory с HowNow WebApp SSO
 
@@ -138,10 +138,8 @@ ms.locfileid: "94686383"
 
 * Вручную введите URL-адрес для входа в HowNow WebApp SSO и инициируйте поток входа.
 
-* Вы можете использовать Панель доступа (Майкрософт). Щелкните плитку HowNow WebApp SSO на панели доступа. Откроется URL-адрес для входа в HowNow WebApp SSO. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+* Вы можете использовать Панель доступа (Майкрософт). Щелкните плитку HowNow WebApp SSO на панели доступа. Откроется URL-адрес для входа в HowNow WebApp SSO. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки HowNow WebApp SSO вы можете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки HowNow WebApp SSO вы можете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 68acc1ad45605512232ee3dae6f5027133270c01
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 903150a199bac1189274cadc9755b38873cde73e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686367"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182110"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-timu"></a>Руководство по интеграции единого входа Azure Active Directory с TIMU
 
@@ -148,11 +148,9 @@ ms.locfileid: "94686367"
 
 * Перейдите по URL-адресу для входа в TIMU и инициируйте поток входа.
 
-* Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку TIMU на Панели доступа, вы перейдете по URL-адресу входа TIMU. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+* Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку TIMU на Панели доступа, вы перейдете по URL-адресу входа TIMU. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки TIMU вы можете применить управление сеансами, которое защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки TIMU вы можете применить управление сеансами, которое защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

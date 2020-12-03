@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/29/2020
 ms.author: jeedes
-ms.openlocfilehash: 68ebd88be1a8c68df65557ae29fd50639df0aef5
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e421efc4076ab075984022ccb5281d4b9e250c26
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133372"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96178330"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hirebridge-ats"></a>Руководство по интеграции единого входа Azure Active Directory с Hirebridge ATS
 
@@ -123,10 +123,8 @@ ms.locfileid: "93133372"
 
 1. На портале Azure выберите "Тестировать приложение", и вы автоматически войдете в приложение Hirebridge ATS, для которого настроен единый вход.
 
-1. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Hirebridge ATS на Панели доступа, вы автоматически войдете в приложение Hirebridge ATS, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+1. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Hirebridge ATS на Панели доступа, вы автоматически войдете в приложение Hirebridge ATS, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки Hirebridge ATS вы сможете применить функцию управления сеансом, которая защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки Hirebridge ATS вы сможете применить функцию управления сеансом, которая защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

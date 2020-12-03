@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/28/2020
 ms.author: jeedes
-ms.openlocfilehash: e5f5baca5f092dac23be69d6e0361e3945b33346
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e018d0460945a0d256c189a851c4824ce61442e3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133332"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180359"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-appsec-flow-sso"></a>Руководство по интеграции единого входа Azure Active Directory с AppSec Flow SSO
 
@@ -121,10 +121,8 @@ ms.locfileid: "93133332"
 
 1. На портале Azure выберите элемент "Тестировать приложение", и вы автоматически войдете в приложение AppSec Flow SSO, для которого настроили единый вход.
 
-1. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку AppSec Flow SSO на Панели доступа, вы автоматически войдете в приложение AppSec Flow SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+1. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку AppSec Flow SSO на Панели доступа, вы автоматически войдете в приложение AppSec Flow SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки единого входа в AppSec Flow SSO вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки единого входа в AppSec Flow SSO вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

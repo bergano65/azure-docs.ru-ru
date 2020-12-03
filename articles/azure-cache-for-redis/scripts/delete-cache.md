@@ -9,12 +9,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/30/2017
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b1e044c6f61e51de1d8f2ba07f64918307109e46
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ce6e20e5e4866bc4daa3f331fa2a8612ac6c260
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87494729"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184167"
 ---
 # <a name="delete-an-azure-cache-for-redis"></a>Удаление кэша Azure для Redis
 
@@ -34,11 +34,11 @@ ms.locfileid: "87494729"
 
 | Get-Help | Примечания |
 |---|---|
-| [az redis delete](https://docs.microsoft.com/cli/azure/redis) | Удаляет экземпляр кэша Azure для Redis. |
+| [az redis delete](/cli/azure/redis) | Удаляет экземпляр кэша Azure для Redis. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов Azure CLI для кэша Azure для Redis см. в [документации по кэшу Azure для Redis](../cli-samples.md).

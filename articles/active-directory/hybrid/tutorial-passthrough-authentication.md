@@ -12,11 +12,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f02ec2220827fbec8c981ab3a1859d633675a6f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313269"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176211"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Руководство по  Интеграция одного леса AD с помощью сквозной аутентификации (PTA)
 
@@ -220,7 +220,7 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 Теперь пора скачать и установить Azure AD Connect.  После скачивания мы произведем экспресс-установку.  Выполните следующие действия.
 
 1. Скачайте [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
-2. Перейдите к файлу **AzureADConnect.msi**и дважды щелкните его.
+2. Перейдите к файлу **AzureADConnect.msi** и дважды щелкните его.
 3. На экране приветствия установите флажок, подтверждающий ваше согласие с условиями лицензионного соглашения, и нажмите кнопку **Продолжить**.  
 4. На экране "Стандартные параметры" щелкните **Настроить**.  
 5. На экране "Установка обязательных компонентов" выполните указанные ниже действия. Щелкните **Install**(Установить).  

@@ -10,11 +10,11 @@ ms.date: 08/28/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
 ms.openlocfilehash: 75428b28095b0e425a1670caffcf960aa6ae58f6
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504479"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185510"
 ---
 # <a name="tutorial-transform-data-with-azure-stack-edge-pro"></a>Руководство по Преобразование данных с помощью Azure Stack Edge Pro
 
@@ -90,7 +90,7 @@ ms.locfileid: "94504479"
 
     3. В колонке **Добавление общего файлового ресурса** укажите имя общей папки и выберите ее тип.
     4. Чтобы подключить общую папку Edge, установите флажок **Использовать общую папку с пограничными вычислениями**.
-    5. Выберите **учетную запись хранения** , **службу хранилища** , существующего пользователя, а затем щелкните **Создать**.
+    5. Выберите **учетную запись хранения**, **службу хранилища**, существующего пользователя, а затем щелкните **Создать**.
 
         ![Добавление общей папки Edge](./media/azure-stack-edge-j-series-deploy-configure-compute/add-edge-share-1.png) 
 
@@ -110,7 +110,7 @@ ms.locfileid: "94504479"
     ![Добавление локальной общей папки Edge](./media/azure-stack-edge-j-series-deploy-configure-compute/add-edge-share-2.png)
 
   
-3. Щелкните **Добавление общих папок** , чтобы просмотреть обновленный список общих папок.
+3. Щелкните **Добавление общих папок**, чтобы просмотреть обновленный список общих папок.
 
     ![Обновленный список общих папок](./media/azure-stack-edge-j-series-deploy-configure-compute/add-edge-share-3.png) 
  

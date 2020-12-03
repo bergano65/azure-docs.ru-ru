@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/28/2020
 ms.author: jeedes
-ms.openlocfilehash: abd65fc0cfd1f1c563ac9bd68b6ba58b741e152b
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: ecefc7c585f2f556e76efe6a3a272e38de98e297
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94881138"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181566"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-rstudio-server-pro-saml-authentication"></a>Руководство по интеграции единого входа Azure Active Directory с RStudio Server Pro SAML Authentication
 
@@ -137,8 +137,8 @@ ms.locfileid: "94881138"
 
 * На портале Azure выберите элемент **Тестировать приложение**. Вы автоматически войдете в приложение RStudio Server Pro SAML Authentication, для которого настроен единый вход. 
 
-Вы можете также использовать Панель доступа корпорации Майкрософт для тестирования приложения в любом режиме. Щелкните плитку приложения RStudio Server Pro SAML Authentication на Панели доступа. Вы будете перенаправлены на страницу входа приложения, если задан режим поставщика услуг, или автоматически войдете в приложение RStudio Server Pro SAML Authentication, для которого настроен единый вход, если задан режим поставщика удостоверений. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Вы можете также использовать Панель доступа корпорации Майкрософт для тестирования приложения в любом режиме. Щелкните плитку приложения RStudio Server Pro SAML Authentication на Панели доступа. Вы будете перенаправлены на страницу входа приложения, если задан режим поставщика услуг, или автоматически войдете в приложение RStudio Server Pro SAML Authentication, для которого настроен единый вход, если задан режим поставщика удостоверений. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки RStudio Server Pro SAML Authentication вы можете применить функцию управления сеансом, которая в реальном времени защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+После настройки RStudio Server Pro SAML Authentication вы можете применить функцию управления сеансом, которая в реальном времени защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

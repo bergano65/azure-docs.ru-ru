@@ -6,12 +6,12 @@ ms.author: cshoe
 ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 06/17/2020
-ms.openlocfilehash: e367e4f2a704d8c718551fb031164520b3ff5bb3
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 75e3886e31592b0672487bacd5ff2266e07e39cd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579136"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182515"
 ---
 # <a name="tutorial-establish-azure-functions-private-site-access"></a>Руководство по установке закрытого доступа к сайту для Функций Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "94579136"
     | _Подсеть_ | AzureBastionSubnet | Подсеть в виртуальной сети, в которой будет развернут новый ресурс типа "Узел-бастион". Необходимо создать подсеть, используя в качестве имени значение **AzureBastionSubnet**. По этому значению Azure сможет определить, в какую подсеть следует развертывать ресурсы типа "Бастион". Следует использовать подсеть размером не менее **/27** (/27, /26 и т. д.). |
 
     > [!NOTE]
-    > Подробное пошаговое руководство по созданию ресурса типа "Бастион Azure" см. в учебнике [Создание узла-бастиона Azure](../bastion/bastion-create-host-portal.md).
+    > Подробное пошаговое руководство по созданию ресурса типа "Бастион Azure" см. в учебнике [Создание узла-бастиона Azure](../bastion/tutorial-create-host-portal.md).
 
 1. Создайте подсеть, в которой Azure может подготовить узел-бастион Azure. При выборе элемента **Управление конфигурацией подсети** откроется новая область, в которой можно определить новую подсеть.  Выберите **+ Подсеть** для создания новой подсети.
 1. Подсеть должна иметь имя **AzureBastionSubnet**, а длина префикса подсети должна быть не менее **/27**.  Нажмите кнопку **ОК**, чтобы создать подсеть.
@@ -194,9 +194,9 @@ ms.locfileid: "94579136"
 
 1. Выполните указания в одном из следующих кратких руководств, чтобы создать и развернуть приложение Функций Azure.
 
-    * [Visual Studio Code](./functions-create-first-function-vs-code.md)
+    * [Visual Studio Code](./create-first-function-vs-code-csharp.md)
     * [Visual Studio](./functions-create-your-first-function-visual-studio.md)
-    * [Командная строка](./functions-create-first-azure-function-azure-cli.md)
+    * [Командная строка](./create-first-function-cli-csharp.md)
     * [Maven (Java)](./create-first-function-cli-java.md?tabs=bash,browser)
 
 1. При публикации проекта Функций Azure выберите ресурс типа "Приложение-функция", созданный ранее в этом руководстве.

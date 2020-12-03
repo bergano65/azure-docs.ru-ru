@@ -6,17 +6,17 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/24/2019
-ms.openlocfilehash: 8b3b6a41da6e3100739da920472d582711d1e9b1
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: a949c9b34e299e0dc4eccbb62f4b4ebb38d6ccb9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024387"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186717"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Начало работы с запросами журналов Azure Monitor
 
 > [!NOTE]
-> Вы можете выполнить это упражнение в своей среде, если собираете данные, по крайней мере, с одной виртуальной машины. Если нет, используйте нашу [демонстрационную среду](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade), которая содержит большое количество образцов данных.  Если вы уже знакомы с тем, как выполнять запросы в KQL, и вам всего лишь нужно быстро создать запросы на основе типов ресурсов, см. [панель с сохраненными примерами запросов](saved-queries.md).
+> Вы можете выполнить это упражнение в своей среде, если собираете данные, по крайней мере, с одной виртуальной машины. Если нет, используйте нашу [демонстрационную среду](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade), которая содержит большое количество образцов данных.  Если вы уже знакомы с тем, как выполнять запросы в KQL, и вам всего лишь нужно быстро создать запросы на основе типов ресурсов, см. [панель с сохраненными примерами запросов](./example-queries.md).
 
 В этом руководстве рассматривается написание запросов журналов в Azure Monitor. Вы научитесь:
 
@@ -28,7 +28,7 @@ ms.locfileid: "95024387"
 - определять и использовать настраиваемые поля;
 - вычислять и группировать результаты.
 
-Руководство по использованию Log Analytics на портале Azure см. в разделе [Начало работы со службой Log Analytics в Azure Monitor](get-started-portal.md).<br>
+Руководство по использованию Log Analytics на портале Azure см. в разделе [Начало работы со службой Log Analytics в Azure Monitor](./log-analytics-tutorial.md).<br>
 Дополнительные сведения о запросах журналов в Azure Monitor см. в разделе [Общие сведения о запросах журналов в Azure Monitor](log-query-overview.md).
 
 Ниже приведена видео-версия этого руководства.

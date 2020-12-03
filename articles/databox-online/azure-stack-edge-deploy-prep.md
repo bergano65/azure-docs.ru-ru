@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/22/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 224131d1b17c4ed34ee847638633a5a1a494ccaf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12879b22e255384701b0cd265b50ed34d5e198c9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90894132"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345548"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro"></a>Руководство по подготовке к развертыванию Azure Stack Edge Pro  
 
@@ -53,18 +53,18 @@ ms.locfileid: "90894132"
 
 Перед тем как начать, убедитесь в следующем.
 
-* Подписка Microsoft Azure включена для ресурса Azure Stack Edge. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются.
+* Подписка Microsoft Azure включена для ресурса Azure Stack Edge. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются.
 
 * У вас должен быть доступ с правами владельца или участника к Azure Stack Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
 
-  * Для предоставления прав участника необходимо быть **владельцем** на уровне подписки. Чтобы предоставить права участника другому пользователю, на портале Azure выберите **Все службы** > **Подписки** > **Управление доступом (IAM)**  >  **+ Добавить** > **Добавить назначение ролей**. Дополнительные сведения см. в статье [Учебник. Предоставление доступа пользователям к ресурсам Azure с помощью портала Azure](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal).
+  * Для предоставления прав участника необходимо быть **владельцем** на уровне подписки. Чтобы предоставить права участника другому пользователю, на портале Azure выберите **Все службы** > **Подписки** > **Управление доступом (IAM)**  >  **+ Добавить** > **Добавить назначение ролей**. Дополнительные сведения см. в статье [Учебник. Предоставление доступа пользователям к ресурсам Azure с помощью портала Azure](../role-based-access-control/quickstart-assign-role-user-portal.md).
 
   * Для создания ресурсов Azure Stack Edge или Шлюза Azure Data Box необходимы разрешения с правами не ниже участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик ресурсов `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию поставщика ресурсов, см. в разделе [Регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
   * Для создания ресурсов Центра Интернета вещей нужно зарегистрировать поставщик Microsoft.Devices. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
   * Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
-* У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
+* У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 * Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
-* Вас не блокирует ни одна политика Azure, настроенная системным администратором. Дополнительные сведения о политиках см. в разделе [Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal).
+* Вас не блокирует ни одна политика Azure, настроенная системным администратором. Дополнительные сведения о политиках см. в разделе [Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям](../governance/policy/assign-policy-portal.md).
 
 ### <a name="for-the-azure-stack-edge-pro-device"></a>Для устройства Azure Stack Edge Pro
 
@@ -96,7 +96,7 @@ ms.locfileid: "90894132"
 1. Используйте учетные данные Microsoft Azure для входа: 
 
     - на портал Azure по URL-адресу [https://portal.azure.com](https://portal.azure.com);
-    - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us). Дополнительные сведения см. в статье о [ подключении к Azure для государственных организаций с помощью портала](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal).
+    - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us). Дополнительные сведения см. в статье о [ подключении к Azure для государственных организаций с помощью портала](../azure-government/documentation-government-get-started-connect-with-portal.md).
 
 2. В левой области выберите **+ Создать ресурс**. Найдите и выберите **Azure Stack Edge или Шлюз Azure Data Box**. Нажмите кнопку **создания**.
 3. Выберите подписку, которую вы хотите использовать для устройства Azure Stack Edge Pro. Выберите регион, в котором вы хотите развернуть ресурс Azure Stack Edge. Список всех регионов, в которых доступны ресурсы Azure Stack Edge, приведен на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all).
@@ -112,7 +112,7 @@ ms.locfileid: "90894132"
     |Параметр  |Значение  |
     |---------|---------|
     |Подписка    |Это поле заполняется автоматически на основе ранее выбранного значения. Подписка привязана к учетной записи выставления счетов. |
-    |Группа ресурсов  |Создайте группу или выберите имеющуюся.<br>Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/resource-group-overview.md).     |
+    |Группа ресурсов  |Создайте группу или выберите имеющуюся.<br>Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/management/overview.md).     |
 
 4. Введите или выберите следующие **сведения об экземпляре**.
 

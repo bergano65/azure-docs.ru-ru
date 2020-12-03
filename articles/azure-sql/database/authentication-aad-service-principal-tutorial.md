@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 10/21/2020
-ms.openlocfilehash: 6231e4631c19aa3595fa85ca0aa7997861de65a3
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: e068ad01c07af4e5833399c0053da3362cd6aaa6
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675043"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185646"
 ---
 # <a name="tutorial-create-azure-ad-users-using-azure-ad-applications"></a>Руководство по созданию пользователей Azure AD с помощью приложений Azure AD
 
@@ -82,7 +82,7 @@ ms.locfileid: "92675043"
 
 1. Вы также можете проверить удостоверение на [портале Azure](https://portal.azure.com).
 
-    - В области ресурса **Azure Active Directory** выберите **Корпоративные приложения**. Введите имя логического сервера SQL. Вы увидите, что у него есть **идентификатор объекта** , присоединенный к ресурсу.
+    - В области ресурса **Azure Active Directory** выберите **Корпоративные приложения**. Введите имя логического сервера SQL. Вы увидите, что у него есть **идентификатор объекта**, присоединенный к ресурсу.
     
     :::image type="content" source="media/authentication-aad-service-principals-tutorial/enterprise-applications-object-id.png" alt-text="object-id":::
 
@@ -161,7 +161,7 @@ if ($selDirReader -eq $null) {
 
 1. Следуйте указаниям в этом разделе, чтобы [зарегистрировать приложение и задать разрешения](active-directory-interactive-connect-azure-sql-db.md#register-your-app-and-set-permissions).
 
-    Обязательно добавьте **разрешения приложения** , а также **делегированные разрешения**.
+    Обязательно добавьте **разрешения приложения**, а также **делегированные разрешения**.
 
     :::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-apps.png" alt-text="Снимок экрана: страница регистрации приложения в Azure Active Directory с выделенным приложением AppSP":::
 
@@ -173,13 +173,13 @@ if ($selDirReader -eq $null) {
     - **Идентификатор приложения**
     - **Идентификатор клиента**. Он должен остаться таким же, как прежде.
 
-В этом учебнике в качестве основного субъекта-службы будет использоваться *AppSP* , а *myapp*  — в качестве второго пользователя субъекта-службы, который будет создан в SQL Azure с помощью *AppSP*. Необходимо создать два приложения: *AppSP* и *myapp*.
+В этом учебнике в качестве основного субъекта-службы будет использоваться *AppSP*, а *myapp* — в качестве второго пользователя субъекта-службы, который будет создан в SQL Azure с помощью *AppSP*. Необходимо создать два приложения: *AppSP* и *myapp*.
 
 Дополнительные сведения о создании приложения Azure AD см. в статье [Практическое руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md).
 
 ### <a name="permissions-required-to-set-or-unset-the-azure-ad-admin"></a>Разрешения, необходимые для установки или удаления администратора Azure AD
 
-Чтобы субъект-служба мог установить или удалить администратора Azure AD для SQL Azure, требуется дополнительное разрешение API. Разрешение API приложения [Directory.Read.All](https://docs.microsoft.com/graph/permissions-reference#application-permissions-18) потребуется добавить в ваше приложение в Azure AD.
+Чтобы субъект-служба мог установить или удалить администратора Azure AD для SQL Azure, требуется дополнительное разрешение API. Разрешение API приложения [Directory.Read.All](/graph/permissions-reference#application-permissions-18) потребуется добавить в ваше приложение в Azure AD.
 
 :::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-directory-reader-all-permissions.png" alt-text="Разрешения Directory.Reader.All в Azure AD":::
 
@@ -290,7 +290,7 @@ if ($selDirReader -eq $null) {
     > $adalPath = "${env:ProgramFiles}\WindowsPowerShell\Modules\AzureRM.profile\${version}"
     > ```
     
-2. Убедитесь, что в базе данных существует пользователь *myapp* , выполнив следующую команду:
+2. Убедитесь, что в базе данных существует пользователь *myapp*, выполнив следующую команду:
 
     ```sql
     SELECT name, type, type_desc, CAST(CAST(sid as varbinary(16)) as uniqueidentifier) as appId from sys.database_principals WHERE name = 'myapp'

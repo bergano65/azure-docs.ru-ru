@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/06/2020
 ms.author: jeedes
-ms.openlocfilehash: b8eb02ea4a4882ff9abcc6425c2d0b91329a4528
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: f018cd51d1873a9f2fef5b0be2b4756d3c26f8b1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684973"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180835"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-intsights"></a>Руководство по интеграции единого входа Azure Active Directory с IntSights
 
@@ -160,7 +160,7 @@ ms.locfileid: "94684973"
 
 * На портале Azure выберите элемент **Тестировать приложение**, и вы автоматически войдете в приложение IntSights, для которого настроен единый вход. 
 
-Вы можете также использовать Панель доступа корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку IntSights на Панели доступа, вы будете перенаправлены на страницу входа приложения, если задан режим поставщика услуг, или автоматически войдете в приложение IntSights, для которого настроен единый вход, если задан режим поставщика удостоверений. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Вы можете также использовать Панель доступа корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку IntSights на Панели доступа, вы будете перенаправлены на страницу входа приложения, если задан режим поставщика услуг, или автоматически войдете в приложение IntSights, для которого настроен единый вход, если задан режим поставщика удостоверений. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

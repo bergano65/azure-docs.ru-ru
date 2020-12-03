@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: tutorial
 ms.date: 10/23/2020
 ms.author: dech
-ms.openlocfilehash: 7823c63cf618808cb1ab4400c39f4bc64b7af338
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 1cee4d2ad1bc7f362a045a5991624ec43521b8d2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427587"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96341654"
 ---
 # <a name="tutorial-use-data-migration-tool-to-migrate-your-data-to-azure-cosmos-db"></a>Руководство по Использование средства переноса данных для переноса данных в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "94427587"
 
 * **[API SQL](./introduction.md)** . Вы можете импортировать небольшие объемы данных, используя любые варианты источников средства переноса данных. [Сведения о вариантах миграции для импорта больших объемов данных](cosmosdb-migrationchoices.md).
 * **[API таблиц](table-introduction.md)** . Для импорта данных вы можете использовать средство переноса данных или [AzCopy](table-import.md#migrate-data-by-using-azcopy). Дополнительные сведения см. в статье [Import data for use with the Azure Cosmos DB Table API](table-import.md) (Импорт данных для использования с помощью API таблицы Azure DB Cosmos).
-* **[API Azure Cosmos DB для MongoDB](mongodb-introduction.md)** . Средство переноса данных не поддерживает API Azure Cosmos DB для MongoDB в качестве источника или целевого объекта. Инструкции по переносу данных в коллекции Azure Cosmos DB или из них см. в статье о [переносе данных MongoDB в базу данных Cosmos с помощью API Azure Cosmos DB для MongoDB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json). Вы по-прежнему можете экспортировать данные из MongoDB в коллекции API SQL в Azure Cosmos DB, чтобы использовать их с этим интерфейсом, с помощью средства переноса данных.
+* **[API Azure Cosmos DB для MongoDB](mongodb-introduction.md)** . Средство переноса данных не поддерживает API Azure Cosmos DB для MongoDB в качестве источника или целевого объекта. Инструкции по переносу данных в коллекции Azure Cosmos DB или из них см. в статье о [переносе данных MongoDB в базу данных Cosmos с помощью API Azure Cosmos DB для MongoDB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json). Вы по-прежнему можете экспортировать данные из MongoDB в коллекции API SQL в Azure Cosmos DB, чтобы использовать их с этим интерфейсом, с помощью средства переноса данных.
 * **[API Cassandra](graph-introduction.md)** . Средство переноса данных не поддерживает импорт учетных записей API Cassandra. [Сведения о вариантах миграции для импорта данных в API Cassandra](cosmosdb-migrationchoices.md#azure-cosmos-db-cassandra-api).
 * **[API Gremlin](graph-introduction.md)** . Сейчас средство переноса данных не поддерживает импорт учетных записей API Gremlin. [Сведения о вариантах миграции для импорта данных в API Gremlin](cosmosdb-migrationchoices.md#other-apis). 
 
@@ -131,7 +131,7 @@ dt.exe /s:JsonFile /s.Files:D:\\CompanyData\\Companies.json /t:DocumentDBBulk /t
 ## <a name="import-from-mongodb"></a><a id="MongoDB"></a>Импорт из MongoDB
 
 > [!IMPORTANT]
-> Чтобы выполнить импорт в учетную запись Cosmos, настраиваемую с помощью API Azure Cosmos DB для MongoDB, следуйте этим [инструкциям](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json).
+> Чтобы выполнить импорт в учетную запись Cosmos, настраиваемую с помощью API Azure Cosmos DB для MongoDB, следуйте этим [инструкциям](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json).
 
 Функция импорта из исходной базы данных MongoDB позволяет импортировать одну коллекцию MongoDB. При этом дополнительно можно отфильтровать документы с помощью запроса и изменить структуру документа с использованием проекции.  
 
@@ -159,7 +159,7 @@ dt.exe /s:MongoDB /s.ConnectionString:mongodb://<dbuser>:<dbpassword>@<host>:<po
 ## <a name="import-mongodb-export-files"></a><a id="MongoDBExport"></a>Импортировать файлы экспорта MongoDB
 
 > [!IMPORTANT]
-> При импорте в учетную запись Azure Cosmos DB с поддержкой MongoDB выполните эти [инструкции](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json).
+> При импорте в учетную запись Azure Cosmos DB с поддержкой MongoDB выполните эти [инструкции](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json).
 
 Параметр импорта JSON-файлов экспорта MongoDB позволяет импортировать файлы JSON, созданные с помощью служебной программы mongoexport.  
 
@@ -386,7 +386,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 > [!NOTE]
 > Используйте команду Verify, чтобы проверить доступ к экземпляру Azure Cosmos DB, указанному в строке подключения.
 
-Чтобы импортировать данные в одну коллекцию, укажите имя этой коллекции и нажмите кнопку "Добавить". Чтобы импортировать несколько коллекций, нужно либо ввести имя каждой коллекции по отдельности, либо использовать следующий синтаксис для указания нескольких коллекций: *префикс_коллекции* [начальный индекс - конечный индекс]. При указании нескольких коллекций с помощью указанного выше синтаксиса следует учитывать следующие рекомендации:
+Чтобы импортировать данные в одну коллекцию, укажите имя этой коллекции и нажмите кнопку "Добавить". Чтобы импортировать несколько коллекций, нужно либо ввести имя каждой коллекции по отдельности, либо использовать следующий синтаксис для указания нескольких коллекций: *префикс_коллекции*[начальный индекс - конечный индекс]. При указании нескольких коллекций с помощью указанного выше синтаксиса следует учитывать следующие рекомендации:
 
 1. Поддерживаются только шаблоны имени диапазона целых чисел. Например, если указать [0–3], будут созданы такие коллекции: collection0, collection1, collection2, collection3.
 2. Вы можете использовать сокращенный синтаксис: если ввести collection[3], будет создан тот же набор коллекций, что и на этапе 1.
@@ -445,7 +445,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 > [!NOTE]
 > Используйте команду Verify, чтобы проверить доступ к экземпляру Azure Cosmos DB, указанному в строке подключения.
 
-Чтобы импортировать отдельную коллекцию, введите имя коллекции, в которую импортируются данные, и нажмите кнопку "Добавить". Чтобы импортировать несколько коллекций, введите имя каждой коллекции по отдельности. Чтобы указать несколько коллекций, можно использовать следующий синтаксис: *префикс_коллекции* [начальный индекс - конечный индекс]. При указании нескольких коллекций с помощью указанного выше синтаксиса следует учитывать следующие рекомендации:
+Чтобы импортировать отдельную коллекцию, введите имя коллекции, в которую импортируются данные, и нажмите кнопку "Добавить". Чтобы импортировать несколько коллекций, введите имя каждой коллекции по отдельности. Чтобы указать несколько коллекций, можно использовать следующий синтаксис: *префикс_коллекции*[начальный индекс - конечный индекс]. При указании нескольких коллекций с помощью указанного выше синтаксиса следует учитывать следующие рекомендации:
 
 1. Поддерживаются только шаблоны имени диапазона целых чисел. Например, если указать [0–3], будут созданы такие коллекции: collection0, collection1, collection2, collection3.
 2. Вы можете использовать сокращенный синтаксис: если ввести collection[3], будет создан тот же набор коллекций, что и на этапе 1.

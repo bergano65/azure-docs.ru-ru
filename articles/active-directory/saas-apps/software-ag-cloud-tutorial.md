@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/23/2020
 ms.author: jeedes
-ms.openlocfilehash: 852fabfd1fe496064e6d13c21ba052ee6f96b79e
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: ccf945f8bfec85a18493d515dce48f4cb3e3b612
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93243048"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182375"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-software-ag-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Software AG Cloud.
 
@@ -151,10 +151,8 @@ ms.locfileid: "93243048"
 
 2. Перейдите по URL-адресу для входа в Software AG Cloud и инициируйте поток входа.
 
-3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Software AG Cloud на Панели доступа, вы перейдете по URL-адресу для входа в Software AG Cloud. Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Software AG Cloud на Панели доступа, вы перейдете по URL-адресу для входа в Software AG Cloud. Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/my-apps-portal-end-user-access.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки Software AG Cloud вы сможете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки Software AG Cloud вы сможете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

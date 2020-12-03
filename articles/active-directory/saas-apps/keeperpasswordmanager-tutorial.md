@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.author: jeedes
-ms.openlocfilehash: ef49a8a3ac1779071a4d4906bfd053530063102d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: b70c50e7c2900f884dd4d91c6650205bc626326e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984470"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96178047"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-keeper-password-manager--digital-vault"></a>Руководство по интеграции Azure Active Directory с Keeper Password Manager & Digital Vault
 
@@ -157,7 +157,7 @@ ms.locfileid: "94984470"
 
 * Вы можете перейти непосредственно к URL-адресу входа для этого приложения и начать вход из него.
 
-* Вы можете использовать Панель доступа (Майкрософт). Если выбрать элемента **Keeper Password Manager & Digital Vault** на панели доступа, вы будете перенаправлены на URL-адрес входа для приложения. Дополнительные сведения о Панели доступа см. в статье о [входе на портал "Мои приложения" и запуске приложений на нем](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать Панель доступа (Майкрософт). Если выбрать элемента **Keeper Password Manager & Digital Vault** на панели доступа, вы будете перенаправлены на URL-адрес входа для приложения. Дополнительные сведения о Панели доступа см. в статье о [входе на портал "Мои приложения" и запуске приложений на нем](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

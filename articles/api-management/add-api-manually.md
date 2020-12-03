@@ -13,15 +13,15 @@ ms.topic: tutorial
 ms.date: 04/20/2020
 ms.author: apimpm
 ms.openlocfilehash: 39a3b9d7dd9efbda93de0b5d7c5f9938922d0012
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631296"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183859"
 ---
 # <a name="add-an-api-manually"></a>Добавление API вручную
 
-Шаги в этой статье демонстрируют, как использовать портал Azure, чтобы вручную добавить API в экземпляр службы управления API. Обычно это нужно для имитации API, когда вы вручную создаете пустой API и определяете его. Сведения об имитации API см. в статье [Mock API responses](mock-api-responses.md) (Имитация ответов API).
+Шаги в этой статье показывают, как использовать портал Azure, чтобы вручную добавить API в экземпляр службы управления API. Обычно это нужно для имитации API, когда вы вручную создаете пустой API и определяете его. Сведения об имитации API см. в статье [Mock API responses](mock-api-responses.md) (Имитация ответов API).
 
 Если вы хотите импортировать существующий API, изучите список [связанных разделов](#related-topics).
 

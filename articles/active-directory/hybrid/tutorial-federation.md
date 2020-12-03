@@ -15,11 +15,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4410708905610562feb15804277021950eb1edeb
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91826532"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176296"
 ---
 # <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Руководство по Создание федерации среды одного леса AD в облаке с использованием PHS
 
@@ -237,7 +237,7 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 Теперь пора скачать и установить Azure AD Connect.  После скачивания мы произведем экспресс-установку.  Выполните следующие действия.
 
 1. Скачайте [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
-2. Перейдите к файлу **AzureADConnect.msi**и дважды щелкните его.
+2. Перейдите к файлу **AzureADConnect.msi** и дважды щелкните его.
 3. На экране приветствия установите флажок, подтверждающий ваше согласие с условиями лицензионного соглашения, и нажмите кнопку **Продолжить**.  
 4. На экране "Стандартные параметры" щелкните **Настроить**.  
 5. На экране "Установка обязательных компонентов" выполните указанные ниже действия. Щелкните **Install**(Установить).  

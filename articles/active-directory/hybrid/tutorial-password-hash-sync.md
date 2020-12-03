@@ -15,11 +15,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b82dcc633f0f2bb13cb84f80873117f9eb94a24f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313168"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176126"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-password-hash-sync-phs"></a>Руководство по  Интеграция одного леса AD с помощью синхронизации хэша паролей (PHS)
 
@@ -203,7 +203,7 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 Теперь пора скачать и установить Azure AD Connect.  После скачивания мы произведем экспресс-установку.  Выполните следующие действия.
 
 1. Скачайте [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
-2. Перейдите к файлу **AzureADConnect.msi**и дважды щелкните его.
+2. Перейдите к файлу **AzureADConnect.msi** и дважды щелкните его.
 3. На экране приветствия установите флажок, подтверждающий ваше согласие с условиями лицензионного соглашения, и нажмите кнопку **Продолжить**.  
 4. На экране «Стандартные параметры» щелкните **Использовать стандартные параметры**.</br>  
 ![Снимок экрана: экран "Стандартные параметры" с кнопкой "Использовать стандартные параметры"](media/tutorial-password-hash-sync/express1.png)</br>

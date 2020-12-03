@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: jeedes
-ms.openlocfilehash: e706649957bf427cd577d7995fb9ce104c687f4b
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: ef1ca41f54a15554a04fa3edf608bb13f5fb3398
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378998"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182025"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday-mobile-application"></a>Руководство по интеграции единого входа Azure Active Directory с мобильным приложением Workday
 
@@ -33,13 +33,13 @@ ms.locfileid: "93378998"
 Чтобы начать работу:
 
 * интегрируйте Workday с Azure AD;
-* ознакомьтесь со статьей об [интеграции единого входа Azure Active Directory с Workday](https://docs.microsoft.com/azure/active-directory/saas-apps/workday-tutorial).
+* ознакомьтесь со статьей об [интеграции единого входа Azure Active Directory с Workday](./workday-tutorial.md).
 
 ## <a name="scenario-description"></a>Описание сценария
 
 Из этого учебника вы узнаете, как настроить и проверить политики условного доступа Azure AD и Intune с помощью мобильных приложений Workday.
 
-Чтобы включить единый вход (SSO), можно настроить федеративное приложение Workday с помощью Azure AD. Дополнительные сведения см. в статье об [интеграции единого входа Azure Active Directory с Workday](https://docs.microsoft.com/azure/active-directory/saas-apps/workday-tutorial).
+Чтобы включить единый вход (SSO), можно настроить федеративное приложение Workday с помощью Azure AD. Дополнительные сведения см. в статье об [интеграции единого входа Azure Active Directory с Workday](./workday-tutorial.md).
 
 > [!NOTE] 
 > Workday не поддерживает политики защиты приложений Intune. Чтобы применять условный доступ, необходимо использовать управление мобильными устройствами.
@@ -182,4 +182,3 @@ Workday поддерживает указанные ниже элементы у
 6. В разделе **Платформа** выберите **Android**.
 7. В разделе **Связанное приложение** выберите добавленное приложение Workday для Android.
 8. Выберите **Параметры конфигурации**. В разделе **Формат параметров конфигурации** выберите **Ввод данных JSON**.
-

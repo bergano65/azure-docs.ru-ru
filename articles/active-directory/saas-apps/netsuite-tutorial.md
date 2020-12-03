@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 9bebb11c3a1162a0a7b72140f7d3812f86f793ce
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 9272114dd472717e59680b40c07d8435dea19682
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95791365"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181974"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство по Интеграция единого входа Azure AD с NetSuite
 
@@ -253,7 +253,7 @@ NetSuite поддерживает следующие технологии:
 
 - Выберите элемент "Тестировать приложение на портале Azure", и вы автоматически войдете в приложение NetSuite, для которого настроен единый вход.
 
-- Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку NetSuite в разделе "Мои приложения", вы автоматически войдете в приложение NetSuite, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+- Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку NetSuite в разделе "Мои приложения", вы автоматически войдете в приложение NetSuite, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

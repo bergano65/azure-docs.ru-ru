@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/12/2019
 ms.author: zhchia
-ms.openlocfilehash: 069c8a8e2a595248afe45bbb90de877b3b6fc87d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc05e83ac6c7f0f7c5e9a571c1fa7397af858f44
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849352"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180106"
 ---
 # <a name="tutorial-configure-cisco-webex-for-automatic-user-provisioning"></a>Руководство по настройке Cisco Webex для автоматической подготовки пользователей
 
@@ -91,21 +91,21 @@ ms.locfileid: "91849352"
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    :::image type="content" source="common/provisioning-automatic.png" alt-text="Снимок экрана: меню на портале Azure. В разделе &quot;Управление&quot; выделен пункт &quot;Подготовка&quot;." border="false":::
+    :::image type="content" source="common/provisioning-automatic.png" alt-text="Снимок экрана: список &quot;Режим подготовки&quot; с выделенным пунктом Automatic (Автоматически)." border="false":::
 
 5. В разделе **Учетные данные администратора** укажите **URL-адрес клиента** и **Маркер секрета** для вашей учетной записи Cisco Webex.
 
-    :::image type="content" source="./media/cisco-webex-provisioning-tutorial/secrettoken1.png" alt-text="Снимок экрана: меню на портале Azure. В разделе &quot;Управление&quot; выделен пункт &quot;Подготовка&quot;." border="false":::
+    :::image type="content" source="./media/cisco-webex-provisioning-tutorial/secrettoken1.png" alt-text="Снимок экрана: раздел &quot;Учетные данные администратора&quot;. Поля &quot;URL-адрес клиента&quot; и &quot;Секретный токен&quot; выделены, но пусты." border="false":::
 
 6.  В поле **URL-адрес клиента** введите значение в формате `https://api.ciscospark.com/v1/scim/[OrgId]`. Чтобы получить `[OrgId]`, войдите в [Центр управления Cisco Webex](https://admin.webex.com/login). Щелкните имя своей организации в левом нижнем углу и скопируйте значение из **идентификатора организации**. 
 
-    * Чтобы получить значение для поля **Секретный токен**, перейдите по этому [URL-адресу](https://idbroker.webex.com/idb/saml2/jsp/doSSO.jsp?type=login&goto=https%3A%2F%2Fidbroker.webex.com%2Fidb%2Foauth2%2Fv1%2Fauthorize%3Fresponse_type%3Dtoken%26client_id%3DC4ca14fe00b0e51efb414ebd45aa88c1858c3bfb949b2405dba10b0ca4bc37402%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A3000%252Fauth%252Fcode%26scope%3Dspark%253Apeople_read%2520spark%253Apeople_write%2520Identity%253ASCIM%26state%3Dthis-should-be-a-random-string-for-security-purpose). На открывшейся странице входа в Webex войдите с помощью полной учетной записи администратора Cisco Webex для своей организации. Появится страница ошибки с сообщением о том, что сайт недоступен, но это обычное явление.
+    * Чтобы получить значение для поля **Секретный токен**, перейдите по этому [URL-адресу](https://idbroker.webex.com/idb/saml2/jsp/doSSO.jsp?type=login&goto=https%3A%2F%2Fidbroker.webex.com%2Fidb%2Foauth2%2Fv1%2Fauthorize%3Fresponse_type%3Dtoken%26client_id%3DC4ca14fe00b0e51efb414ebd45aa88c1858c3bfb949b2405dba10b0ca4bc37402%26redirect_uri%3Dhttp%253A%2f%2flocalhost%253A3000%2fauth%2fcode%26scope%3Dspark%253Apeople_read%2520spark%253Apeople_write%2520Identity%253ASCIM%26state%3Dthis-should-be-a-random-string-for-security-purpose). На открывшейся странице входа в Webex войдите с помощью полной учетной записи администратора Cisco Webex для своей организации. Появится страница ошибки с сообщением о том, что сайт недоступен, но это обычное явление.
 
-        :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test.png" alt-text="Снимок экрана: меню на портале Azure. В разделе &quot;Управление&quot; выделен пункт &quot;Подготовка&quot;." border="false":::
+        :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test.png" alt-text="Снимок экрана: веб-страница с сообщением об ошибке. Сообщение информирует о том, что сайт недоступен, и содержит несколько советов по устранению неполадок." border="false":::
  
     * Скопируйте значение созданного токена носителя из URL-адреса, выделенного ниже. Этот токен действителен в течение 365 дней.
         
-        :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test1.png" alt-text="Снимок экрана: меню на портале Azure. В разделе &quot;Управление&quot; выделен пункт &quot;Подготовка&quot;." border="false":::
+        :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test1.png" alt-text="Снимок экрана с длинным URL-адресом. Часть адреса невозможно расшифровать, но он выделен и помечен как токен носителя." border="false":::
 
 7. После заполнения полей, указанных в шаге 5, нажмите кнопку **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Cisco Webex. Если установить подключение не удалось, убедитесь, что у учетной записи Cisco Webex есть разрешения администратора, и повторите попытку.
 
@@ -119,11 +119,11 @@ ms.locfileid: "91849352"
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Cisco Webex**.
 
-    :::image type="content" source="./media/cisco-webex-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана: меню на портале Azure. В разделе &quot;Управление&quot; выделен пункт &quot;Подготовка&quot;." border="false":::
+    :::image type="content" source="./media/cisco-webex-provisioning-tutorial/usermapping.png" alt-text="Снимок экрана: раздел &quot;Сопоставления&quot; на портале Azure. В разделе &quot;Имя&quot; выделен элемент Synchronize Azure Active Directory Users to CiscoSpark (Cинхронизировать пользователей Azure Active Directory с CiscoSpark)." border="false":::
 
 11. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы с Cisco Webex из Azure AD. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Cisco Webex для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    :::image type="content" source="./media/cisco-webex-provisioning-tutorial/usermappingattributes.png" alt-text="Снимок экрана: меню на портале Azure. В разделе &quot;Управление&quot; выделен пункт &quot;Подготовка&quot;." border="false":::
+    :::image type="content" source="./media/cisco-webex-provisioning-tutorial/usermappingattributes.png" alt-text="Снимок экрана: раздел &quot;Сопоставления атрибутов&quot;, в котором показаны атрибуты Azure Active Directory, соответствующие атрибуты CiscoSpark и состояние сопоставления." border="false":::
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

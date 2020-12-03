@@ -10,11 +10,11 @@ ms.date: 08/28/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
 ms.openlocfilehash: 711da24b3edf08f4867109d0d70165955236c39a
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743426"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184660"
 ---
 # <a name="tutorial-configure-compute-on-azure-stack-edge-pro-gpu-device"></a>Руководство по Настройка вычислений на устройстве Azure Stack Edge Pro с GPU
 
@@ -76,7 +76,7 @@ ms.locfileid: "91743426"
     
 При настройке роли вычислений Edge на устройстве Edge создается два устройства — устройство Интернета вещей и устройство IoT Edge. Оба устройства можно просмотреть в ресурсе Центра Интернета вещей. На этом устройстве IoT Edge также запущена среда выполнения IoT Edge. На данный момент доступна только платформа Linux для устройства IoT Edge.
 
-Настройка вычислений может занять 20–30 минут, так как в фоновом режиме создаются виртуальные машины и кластер Kubernetes. 
+Настройка вычислений может занять 20–30 минут, так как в фоновом режиме создаются виртуальные машины и кластер Kubernetes. 
 
 После успешной настройки вычислений на портале Azure вам будут доступны кластер Kubernetes и пользователь по умолчанию, связанный с пространством имен Интернета вещей (системное пространство имен, контролируемое Azure Stack Edge Pro). 
 
