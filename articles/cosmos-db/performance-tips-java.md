@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 3eced4e727954906d8ff67e7afe2279100f8f1cc
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 6e7b01ae88645d8b16c3a43e21e40b53d242fdde
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349067"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549248"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-sync-java-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB с пакетом SDK для Sync Java версии 2
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "96349067"
 > 
 
 > [!IMPORTANT]  
-> Это *не* последняя версия пакета SDK для Java для Azure Cosmos DB! Необходимо обновить проект до [Azure Cosmos DB с пакетом SDK для Java версии 4](sql-api-sdk-java-v4.md), а затем ознакомиться с [руководством по повышению производительности](performance-tips-java-sdk-v4-sql.md) Azure Cosmos DB с пакетом SDK для Java версии 4. Следуйте инструкциям в руководстве по [переходу на Azure Cosmos DB с пакетом SDK для Java версии 4](migrate-java-v4-sdk.md) и руководстве [Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md). 
+> Это *не* последняя версия пакета SDK для Java для Azure Cosmos DB! Необходимо обновить проект до [Azure Cosmos DB с пакетом SDK для Java версии 4](sql-api-sdk-java-v4.md), а затем ознакомиться с [руководством по повышению производительности](performance-tips-java-sdk-v4-sql.md) Azure Cosmos DB с пакетом SDK для Java версии 4. Следуйте инструкциям в руководстве по [переходу на Azure Cosmos DB с пакетом SDK для Java версии 4](migrate-java-v4-sdk.md) и руководстве [Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-rxjava-guide.md). 
 > 
 > Эти советы по повышению производительности предназначены только для Azure Cosmos DB с пакетом SDK для Sync Java версии 2. Ознакомьтесь с [заметками о выпуске](sql-api-sdk-java.md) и [репозиторием Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb) для Azure Cosmos DB с пакетом SDK для Sync Java версии 2.
 >
