@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
-ms.openlocfilehash: 682db0ef52e624a23d95aa18a007f05a78f39677
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 9fa38e045bbe29e5d45587adf0d277c1414fee4c
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518793"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549044"
 ---
 # <a name="hdinsight-management-ip-addresses"></a>IP-адреса управления HDInsight
 
@@ -27,6 +27,8 @@ ms.locfileid: "96518793"
 Если вы используете группы безопасности сети (группы безопасности сети) или определяемые пользователем маршруты (определяемые пользователем маршруты) для управления входящим трафиком к кластеру HDInsight, необходимо убедиться, что кластер может взаимодействовать с критически важными службами работоспособности и управления Azure.  Некоторые IP-адреса для этих служб зависят от региона, и некоторые из них применяются ко всем регионам Azure. Если у вас нет пользовательской службы DNS, вам, возможно, нужно будет разрешить трафик из службы Azure DNS.
 
 Если вам нужны IP-адреса для региона, который не указан здесь, можно использовать [API обнаружения тегов служб](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview) для поиска IP-адресов для вашего региона. Если вы не можете использовать API, скачайте [JSON-файл тега службы](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) и найдите нужный регион.
+
+HDInsight выполняет проверку этих правил с помощью создания и масштабирования кластера, чтобы предотвратить дальнейшие ошибки. Если проверка не пройдена, создание и масштабирование завершится ошибкой.
 
 В следующих разделах рассматриваются конкретные IP-адреса, которые должны быть разрешены.
 
@@ -93,7 +95,7 @@ ms.locfileid: "96518793"
 
 Если вы используете определяемые пользователем маршруты (определяемые пользователем маршруты), укажите маршрут и разрешите исходящий трафик из виртуальной сети на указанные выше IP-адреса со следующим прыжком в значение "Интернет".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md)
 * [Теги службы группы безопасности сети (NSG) для Azure HDInsight](hdinsight-service-tags.md)

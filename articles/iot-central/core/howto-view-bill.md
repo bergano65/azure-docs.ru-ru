@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 8f46c402c8c25a144cd4c12137aeabfdfa31e096
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 50d0119b08d2c76a5f6111e485408ebcdace83c6
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463145"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549027"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Управление счетами в IoT Central приложении
 
@@ -34,11 +34,11 @@ ms.locfileid: "96463145"
 
 1. Перейдите на страницу " **цены** " в разделе " **Администрирование** ".
 
-    ![Состояние бесплатной пробной версии](media/howto-view-bill/freetrialbilling.png)
+    :::image type="content" source="media/howto-view-bill/freetrialbilling.png" alt-text="Состояние бесплатной пробной версии":::
 
 1. Выберите **преобразовать в платный план**.
 
-    ![Преобразование бесплатной пробной версии](media/howto-view-bill/convert.png)
+    :::image type="content" source="media/howto-view-bill/convert.png" alt-text="Преобразование бесплатной пробной версии":::
 
 1. Выберите подходящую Azure Active Directory, а затем подписку Azure, которая будет использоваться для приложения, которое использует платный план.
 
@@ -55,7 +55,7 @@ ms.locfileid: "96463145"
 
 1. Перейдите на страницу " **цены** " в разделе " **Администрирование** ".
 
-    ![Обновление плана прЦинг](media/howto-view-bill/pricing.png)
+    :::image type="content" source="media/howto-view-bill/pricing.png" alt-text="Обновление плана ценообразования":::
 
 1. Выберите **план** и нажмите кнопку **сохранить** для обновления или перехода на более раннюю версию.
 
@@ -68,6 +68,6 @@ ms.locfileid: "96463145"
 > [!Note]
 > По умолчанию вы преобразуетесь в *стандартный 2* -план ценообразования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как управлять счетами в IoT Central приложении Azure, рекомендуем следующий шаг — узнать о [настройке пользовательского интерфейса приложения](howto-customize-ui.md) в Azure IOT Central.

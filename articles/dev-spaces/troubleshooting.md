@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранять распространенные неполадки при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: a30ae2d78d682427cf53c8f98b0ca70b441d72e1
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: bf8c4d2040445fa3417fce02fb4b66216b21f3b5
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636815"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548874"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок с Azure Dev Spaces
 
@@ -28,7 +28,7 @@ ms.locfileid: "94636815"
 
 В CLI вы можете выводить больше сведений во время выполнения команды, используя параметр `--verbose`. Вы также можете просмотреть более подробные журналы в `%TEMP%\Azure Dev Spaces`. На компьютере Mac каталог *TEMP* можно найти, выполнив команду `echo $TMPDIR` в окне терминала. На компьютере с ОС Linux каталог *TEMP* обычно размещается здесь: `/tmp`. Кроме того, убедитесь, что в [файле конфигурации Azure CLI](/cli/azure/azure-cli-configuration?view=azure-cli-latest#cli-configuration-values-and-environment-variables) включено ведение журнала.
 
-Azure Dev Spaces лучше всего использовать для отладки одного экземпляра или pod. Файл `azds.yaml` содержит параметр *replicaCount* , который определяет количество pod, которые будут выполняться в Kubernetes для службы. Если вы измените значение *replicaCount* для выполнения в приложении нескольких pod для указанной службы, отладчик присоединится к первой группе pod (в алфавитном порядке имен). Отладчик присоединяется к другому модулю pod при перезапуске оригинального модуля pod, что может привести к непредвиденному поведению.
+Azure Dev Spaces лучше всего использовать для отладки одного экземпляра или pod. Файл `azds.yaml` содержит параметр *replicaCount*, который определяет количество pod, которые будут выполняться в Kubernetes для службы. Если вы измените значение *replicaCount* для выполнения в приложении нескольких pod для указанной службы, отладчик присоединится к первой группе pod (в алфавитном порядке имен). Отладчик присоединяется к другому модулю pod при перезапуске оригинального модуля pod, что может привести к непредвиденному поведению.
 
 ## <a name="common-issues-when-enabling-azure-dev-spaces"></a>Распространенные проблемы при включении Azure Dev Spaces
 
@@ -72,9 +72,9 @@ azds controller create --name my-controller --target-name MyAKS --resource-group
 
 ### <a name="error-found-no-untainted-linux-nodes-in-ready-state-on-the-cluster-there-needs-to-be-at-least-one-untainted-linux-node-in-ready-state-to-deploy-pods-in-azds-namespace"></a>Ошибка Found no untainted Linux nodes in Ready state on the cluster. There needs to be at least one untainted Linux node in Ready state to deploy pods in 'azds' namespace (В кластере не найдены узлы Linux без отметки в состоянии готовности. Для развертывания pod в пространстве имен azds должен быть хотя бы один узел Linux без отметки в состоянии готовности)
 
-Azure Dev Spaces не может создать контроллер в кластере AKS, так как не находит узел без отметки в состоянии *готовности* , чтобы назначить для него pod. Для Azure Dev Spaces требуется хотя бы один узел Linux в состоянии *готовности* , чтобы для него можно было назначить группы pod без настройки допусков.
+Azure Dev Spaces не может создать контроллер в кластере AKS, так как не находит узел без отметки в состоянии *готовности*, чтобы назначить для него pod. Для Azure Dev Spaces требуется хотя бы один узел Linux в состоянии *готовности*, чтобы для него можно было назначить группы pod без настройки допусков.
 
-Чтобы устранить эту проблему, [измените конфигурацию отметок](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) для кластера AKS, чтобы хотя бы один узел Linux был доступен для назначения групп pod без настройки допусков. Кроме того, должен присутствовать хотя бы один узел Linux в состоянии *готовности* , допускающий назначение групп pod без настройки допусков. Если узлу требуется много времени для перехода в состояние *готовности* , попробуйте перезапустить такой узел.
+Чтобы устранить эту проблему, [измените конфигурацию отметок](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) для кластера AKS, чтобы хотя бы один узел Linux был доступен для назначения групп pod без настройки допусков. Кроме того, должен присутствовать хотя бы один узел Linux в состоянии *готовности*, допускающий назначение групп pod без настройки допусков. Если узлу требуется много времени для перехода в состояние *готовности*, попробуйте перезапустить такой узел.
 
 ### <a name="error-azure-dev-spaces-cli-not-installed-properly-when-running-az-aks-use-dev-spaces"></a>Ошибка Azure Dev Spaces CLI not installed properly (Azure Dev Spaces CLI установлен неправильно) при выполнении команды az aks use-dev-spaces
 
@@ -140,7 +140,7 @@ Container image build failed
 
 Предложенная выше команда демонстрирует, что группа pod службы была назначена виртуальному узлу *virtual-node-aci-linux*.
 
-Чтобы исправить эту проблему, обновите чарт Helm для этой службы, чтобы удалить все значения *nodeSelector* или *tolerations* , которые разрешают службе выполняться на виртуальном узле. Обычно эти значения определяются в файле `values.yaml` диаграммы.
+Чтобы исправить эту проблему, обновите чарт Helm для этой службы, чтобы удалить все значения *nodeSelector* или *tolerations*, которые разрешают службе выполняться на виртуальном узле. Обычно эти значения определяются в файле `values.yaml` диаграммы.
 
 Вы можете по-прежнему использовать кластер AKS с включенной возможностью виртуальных узлов, если служба, которую вы создаете или отлаживаете в Dev Spaces, выполняется на узле виртуальной машины. Выполнение службы на узле виртуальной машины в Dev Spaces считается стандартной конфигурацией.
 
@@ -160,9 +160,9 @@ Container image build failed
 
 ### <a name="existing-dockerfile-not-used-to-build-a-container"></a>Существующие Dockerfile не используются для сборки контейнера
 
-Настройте службу Azure Dev Spaces так, чтобы она указывала на конкретный файл _Dockerfile_ в вашем проекте. Если Azure Dev Spaces не использует файл _Dockerfile_ , который вы хотели использовать для сборки своих контейнеров, то можно явно указать Azure Dev Spaces, какой файл Dockerfile нужно использовать. 
+Настройте службу Azure Dev Spaces так, чтобы она указывала на конкретный файл _Dockerfile_ в вашем проекте. Если Azure Dev Spaces не использует файл _Dockerfile_, который вы хотели использовать для сборки своих контейнеров, то можно явно указать Azure Dev Spaces, какой файл Dockerfile нужно использовать. 
 
-Чтобы исправить эту проблему, откройте файл _azds.yaml_ , который служба Azure Dev Spaces создала в проекте. Обновите строку *configurations: develop: build: dockerfile* , чтобы она указывала на нужный файл Dockerfile. Пример:
+Чтобы исправить эту проблему, откройте файл _azds.yaml_, который служба Azure Dev Spaces создала в проекте. Обновите строку *configurations: develop: build: dockerfile*, чтобы она указывала на нужный файл Dockerfile. Пример:
 
 ```yaml
 ...
@@ -261,11 +261,11 @@ Service cannot be started.
 
 При использовании [Azure Dev Spaces для подключения кластера AKS к компьютеру разработки](https://code.visualstudio.com/docs/containers/bridge-to-kubernetes) может возникнуть ситуация, когда сетевой трафик не пересылается между компьютером разработки и кластером AKS.
 
-При подключении кластера AKS к компьютеру разработки Azure Dev Spaces перенаправляет сетевой трафик между кластером AKS и компьютером разработки, изменяя файл `hosts` на компьютере разработки. Azure Dev Spaces создает в `hosts` запись с адресом заменяемой службы Kubernetes в качестве имени узла. Эта запись используется для перенаправления портов, чтобы перенаправлять сетевой трафик между компьютером разработки и кластером AKS. Если служба на компьютере разработки конфликтует с портом службы Kubernetes, которую вы заменяете, Azure Dev Spaces не сможет перенаправить сетевой трафик для службы Kubernetes. Например, служба *Windows BranchCache* обычно привязана к адресу *0.0.0.0:80* , что приводит к конфликту порта 80 на всех локальных IP-адресах.
+При подключении кластера AKS к компьютеру разработки Azure Dev Spaces перенаправляет сетевой трафик между кластером AKS и компьютером разработки, изменяя файл `hosts` на компьютере разработки. Azure Dev Spaces создает в `hosts` запись с адресом заменяемой службы Kubernetes в качестве имени узла. Эта запись используется для перенаправления портов, чтобы перенаправлять сетевой трафик между компьютером разработки и кластером AKS. Если служба на компьютере разработки конфликтует с портом службы Kubernetes, которую вы заменяете, Azure Dev Spaces не сможет перенаправить сетевой трафик для службы Kubernetes. Например, служба *Windows BranchCache* обычно привязана к адресу *0.0.0.0:80*, что приводит к конфликту порта 80 на всех локальных IP-адресах.
 
 Чтобы устранить эту проблему, вам нужно отключить все службы или процессы, конфликтующие с портом заменяемой службы Kubernetes. Для поиска служб или процессов на компьютере разработки, которые конфликтуют, можно использовать *netstat* или другие сетевые средства.
 
-Например, чтобы отменить и отключить службу *Windows BranchCache* , сделайте следующее:
+Например, чтобы отменить и отключить службу *Windows BranchCache*, сделайте следующее:
 * Выполните `services.msc` в командной строке.
 * Щелкните правой кнопкой мыши *BranchCache* и выберите *Свойства*.
 * Нажмите *Остановить*.
@@ -274,7 +274,7 @@ Service cannot be started.
 
 ### <a name="error-no-azureassignedidentity-found-for-podazdsazds-webhook-deployment-id-in-assigned-state"></a>Ошибка "не найдено Азуреассигнедидентити для Pod: аздс/аздс-веб-перехватчика — развертывание- \<id\> в назначенном состоянии"
 
-При запуске службы с Azure Dev Spaces в кластере AKS с установленным [управляемым удостоверением](../aks/use-managed-identity.md) и [управляемыми удостоверениями Pod](../aks/developer-best-practices-pod-security.md#use-pod-managed-identities) процесс может перестать отвечать после шага *установки диаграммы* . Проверив значение *azds-injector-webhook* в пространстве имен *azds* , вы можете столкнуться с такой ошибкой.
+При запуске службы с Azure Dev Spaces в кластере AKS с установленным [управляемым удостоверением](../aks/use-managed-identity.md) и [управляемыми удостоверениями Pod](../aks/developer-best-practices-pod-security.md#use-pod-managed-identities) процесс может перестать отвечать после шага *установки диаграммы* . Проверив значение *azds-injector-webhook* в пространстве имен *azds*, вы можете столкнуться с такой ошибкой.
 
 Службы, которые Azure Dev Spaces выполняет в кластере, используют управляемое удостоверение кластера для взаимодействия с внутренними службами Azure Dev Spaces, расположенными за пределами кластера. При установке управляемого удостоверения pod на узлах кластера настраиваются сетевые правила для перенаправления всех вызовов учетных данных управляемого удостоверения в [кластерную установку Node Managed Identity (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identity). Этот контроллер DaemonSet NMI определяет вызывающую группу pod и проверяет, что она отмечена для получения доступа к запрошенному управляемому удостоверению. Azure Dev Spaces не может определить, установлено ли в кластере управляемое удостоверение pod, и не может выполнить необходимую настройку, чтобы разрешить службам Azure Dev Spaces доступ к управляемому удостоверению кластера. Так как службы Azure Dev Spaces не настроены для доступа к управляемому удостоверению кластера, Демон NMI не позволит им получить маркер Azure AD для управляемого удостоверения и не сможет взаимодействовать с Azure Dev Spaces серверными службами.
 
@@ -329,7 +329,7 @@ az aks show -g <resourcegroup> -n <cluster> -o json --query "{clientId: identity
 }
 ```
 
-Чтобы создать объект *AzureIdentity* , создайте файл с именем *clusteridentity.yaml* и примените следующее определение YAML, включив в него сведения об управляемом удостоверении, полученные из предыдущей команды.
+Чтобы создать объект *AzureIdentity*, создайте файл с именем *clusteridentity.yaml* и примените следующее определение YAML, включив в него сведения об управляемом удостоверении, полученные из предыдущей команды.
 
 ```yaml
 apiVersion: "aadpodidentity.k8s.io/v1"
@@ -342,7 +342,7 @@ spec:
   ClientID: <clientId>
 ```
 
-Чтобы создать объект *AzureIdentityBinding* , создайте файл с именем *clusteridentitybinding.yaml* и включите в него следующее определение YAML.
+Чтобы создать объект *AzureIdentityBinding*, создайте файл с именем *clusteridentitybinding.yaml* и включите в него следующее определение YAML.
 
 ```yaml
 apiVersion: "aadpodidentity.k8s.io/v1"
@@ -354,7 +354,7 @@ spec:
   Selector: my-label-value
 ```
 
-Чтобы развернуть объекты *AzureIdentity* и *AzureIdentityBinding* , используйте `kubectl`.
+Чтобы развернуть объекты *AzureIdentity* и *AzureIdentityBinding*, используйте `kubectl`.
 
 ```cmd
 kubectl apply -f clusteridentity.yaml
@@ -378,6 +378,17 @@ spec:
     spec:
       [...]
 ```
+
+### <a name="error-cannot-get-connection-details-for-azure-dev-spaces-controller-abc-because-it-is-in-the-failed-state-something-wrong-might-have-happened-with-your-controller"></a>Ошибка "не удается получить сведения о подключении для контроллера Azure Dev Spaces" ABC ", так как он находится в состоянии" сбой ". Возможно, произошла какая-то проблема с контроллером».
+
+Чтобы устранить эту проблему, попробуйте удалить контроллер Azure Dev Spaces из кластера и переустановить его.
+
+```bash
+azds remove -g <resource group name> -n <cluster name>
+azds controller create --name <cluster name> -g <resource group name> -tn <cluster name>
+```
+
+Кроме того, по мере прекращения использования Azure Dev Spaces рассмотрите возможность [перехода на мост в Kubernetes](migrate-to-bridge-to-kubernetes.md) , который обеспечивает лучшую работу.
 
 ## <a name="common-issues-using-visual-studio-and-visual-studio-code-with-azure-dev-spaces"></a>Распространенные проблемы с использованием Visual Studio и Visual Studio Code в Azure Dev Spaces
 
@@ -479,7 +490,7 @@ kubectl delete InitializerConfiguration azds
 
 После удаления *azds InitializerConfiguration* из контроллера Azure Dev Spaces выполните `kubectl delete`, чтобы удалить все группы pod в состоянии *ожидания*. После удаления всех таких групп pod повторите их развертывание.
 
-Если новые группы pod после повторного развертывания снова переходят в состояние *ожидания* ,выполните `kubectl delete`, чтобы удалить все группы pod в состоянии *ожидания*. После удаления всех таких групп pod удалите контроллер из кластера и заново установите его.
+Если новые группы pod после повторного развертывания снова переходят в состояние *ожидания*,выполните `kubectl delete`, чтобы удалить все группы pod в состоянии *ожидания*. После удаления всех таких групп pod удалите контроллер из кластера и заново установите его.
 
 ```bash
 azds remove -g <resource group name> -n <cluster name>
@@ -518,7 +529,7 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
   azds list-uris
   ```
 
-* Если URL-адрес находится в состоянии *ожидания* , значит Dev Spaces по-прежнему ожидает завершения регистрации DNS. Иногда для выполнения регистрации требуется несколько минут. Для каждой службы Dev Spaces также открывается туннель localhost, который можно использовать во время ожидания регистрации DNS.
+* Если URL-адрес находится в состоянии *ожидания*, значит Dev Spaces по-прежнему ожидает завершения регистрации DNS. Иногда для выполнения регистрации требуется несколько минут. Для каждой службы Dev Spaces также открывается туннель localhost, который можно использовать во время ожидания регистрации DNS.
 * Если URL-адрес остается в состоянии *Ожидание* более 5 минут, это может указывать на проблему с внешним модулем DNS pod, который создает общедоступную конечную точку или контроллер nginx-входа, который приобретает общедоступную конечную точку. Чтобы удалить такие группы pod, можно использовать следующие команды, после чего AKS автоматически восстановит их.
   ```console
   kubectl delete pod -n kube-system -l app=addon-http-application-routing-external-dns
@@ -530,7 +541,7 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
 Вы можете увидеть эту ошибку при попытке получить доступ к службе. Например, при переходе по URL-адресу службы в браузере. Такая ошибка означает, что порт контейнера недоступен. Это может происходить по следующим причинам:
 
 * Процесс сборки или развертывания контейнера еще не завершен. Это может случиться, если вы запускаете `azds up` или отладчик, а затем пытаетесь получить доступ к контейнеру до его успешного развертывания.
-* Конфигурация порта не согласуется в _Dockerfile_ , диаграмме Helm и серверном коде, который открывает порт.
+* Конфигурация порта не согласуется в _Dockerfile_, диаграмме Helm и серверном коде, который открывает порт.
 
 Чтобы устранить эту проблему:
 
@@ -594,7 +605,7 @@ kubectl -n my-namespace delete pod --all
 
 ### <a name="error-could-not-find-the-cluster-cluster-in-subscription-subscriptionid"></a>Ошибка "не удалось найти кластер \<cluster\> в подписке \<subscriptionId\> "
 
-Такая ошибка может возникнуть, если в файле kubeconfig указаны не те кластер или подписка, которые вы пытаетесь использовать с клиентскими средствами Azure Dev Spaces. Средства Azure Dev Spaces на стороне клиента имитируют поведение *kubectl* , то есть используют [один или несколько файлов kubeconfig](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/) для выбора кластера и взаимодействия с ним.
+Такая ошибка может возникнуть, если в файле kubeconfig указаны не те кластер или подписка, которые вы пытаетесь использовать с клиентскими средствами Azure Dev Spaces. Средства Azure Dev Spaces на стороне клиента имитируют поведение *kubectl*, то есть используют [один или несколько файлов kubeconfig](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/) для выбора кластера и взаимодействия с ним.
 
 Чтобы устранить эту проблему:
 

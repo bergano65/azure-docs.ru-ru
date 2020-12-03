@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 5374871a51586a573e9ab41121f3f2dd95baf876
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: ead878daaab977c77b3ab36f42ccfe4d01d7bc03
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695254"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548636"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Шаг 1. Развертывание сервера пересылки журналов
 
@@ -57,6 +57,9 @@ ms.locfileid: "94695254"
 1. Во время выполнения скрипта убедитесь, что не получены сообщения об ошибках и предупреждения.
     - Вы можете получить сообщение с запросом на выполнение команды для устранения проблемы с сопоставлением поля *компьютер* . Дополнительные сведения см. в описании [в скрипте развертывания](#mapping-command) .
 
+1. Перейдите к [шагу 2. Настройка решения безопасности для пересылки сообщений CEF](connect-cef-solution-config.md) .
+
+
 > [!NOTE]
 > **Использование одного компьютера для пересылки обычных системных syslog *и* сообщений CEF**
 >
@@ -67,7 +70,16 @@ ms.locfileid: "94695254"
 > 1. На этих компьютерах необходимо выполнить следующую команду, чтобы отключить синхронизацию агента с конфигурацией syslog в Azure Sentinel. Это гарантирует, что изменение конфигурации, сделанное на предыдущем шаге, не перезаписывается.<br>
 > `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/OMS_MetaConfigHelper.py --disable'`
 
-Перейдите к [шагу 2. Настройка решения безопасности для пересылки сообщений CEF](connect-cef-solution-config.md) .
+> [!NOTE]
+> **Изменение источника поля TimeGenerated**
+>
+> - По умолчанию агент Log Analytics заполняет поле *timegenerated* в схеме временем получения агентом события из управляющей программы syslog. В результате время, когда событие было создано в исходной системе, не записывается в метку Azure.
+>
+> - Тем не менее, можно выполнить следующую команду, которая загрузит и запустит `TimeGenerated.py` скрипт. Этот сценарий настраивает агент Log Analytics для заполнения поля *timegenerated* исходным временем события в исходной системе, а не временем получения агентом.
+>
+>    ```bash
+>    wget -O TimeGenerated.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/TimeGenerated.py && python TimeGenerated.py {ws_id}
+>    ```
 
 ## <a name="deployment-script-explained"></a>Описание скрипта развертывания
 
@@ -210,7 +222,7 @@ ms.locfileid: "94695254"
         ```
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как развернуть агент Log Analytics, чтобы подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

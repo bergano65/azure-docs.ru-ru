@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: d4983ecd1b8afe1ec6bd3cc31df8b711cebaddf1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 00b5d220cdbc511a309d55cfca2049508049fa30
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350268"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549010"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Заметки о выпуске Azure HDInsight
 
@@ -46,8 +46,9 @@ Azure HDInsight является одной из самых популярных
 ### <a name="disabled-vm-sizes"></a>Размеры отключенных виртуальных машин
 Начиная с ноября 16 2020, HDInsight будет блокировать новые клиенты, создавая кластеры с помощью standand_A8, standand_A9, standand_A10 и standand_A11 размеров виртуальных машин. Существующие клиенты, которые использовали эти размеры виртуальных машин за последние три месяца, не будут затронуты. Начиная с 9 2021 января HDInsight все клиенты будут блокировать создание кластеров с помощью standand_A8, standand_A9, standand_A10 и standand_A11 размеров виртуальных машин. Существующие кластеры будут работать, как есть. Рассмотрите возможность перехода на HDInsight 4,0, чтобы избежать потенциальных прерываний системы и поддержки.
 
-### <a name="behavior-changes"></a>Изменения в поведении
-Для этого выпуска изменение поведения не выполняется.
+## <a name="behavior-changes"></a>Изменения в поведении
+### <a name="add-nsg-rule-checking-before-scaling-operation"></a>Добавить проверку правил NSG до операции масштабирования
+В HDInsight добавлена проверка групп безопасности сети (группы безопасности сети) и определяемых пользователем маршрутов (определяемые пользователем маршруты) с операцией масштабирования. Такая же проверка выполняется для масштабирования кластера, помимо создания кластера. Эта проверка помогает предотвратить непредсказуемые ошибки. Если проверка не пройдена, масштабирование завершается сбоем. Дополнительные сведения о том, как правильно настроить группы безопасности сети и определяемые пользователем маршруты, см. в разделе [IP-адреса управления HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses).
 
 ## <a name="upcoming-changes"></a>Предстоящие изменения
 В предстоящих выпусках будут внесены описанные ниже изменения.

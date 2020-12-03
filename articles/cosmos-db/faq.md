@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 79ef46eef4da1beeea1c177ce39a09eea133f545
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 9e0c5ae119b734f91e8cfa1e7afb11a96e13035c
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93089667"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549078"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Часто задаваемые вопросы о различных API в службе Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -174,7 +174,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ### <a name="does-the-sql-api-support-sql-aggregation-functions"></a>Поддерживает ли API SQL статистические функции SQL?
 
-API SQL поддерживает агрегирование с низкой задержкой для любого масштаба с помощью статистических функций `COUNT`, `MIN`, `MAX`, `AVG` и `SUM` через грамматику SQL. Дополнительные сведения см. в разделе [Статистические функции](sql-query-aggregates.md).
+API SQL поддерживает агрегирование с низкой задержкой для любого масштаба с помощью статистических функций `COUNT`, `MIN`, `MAX`, `AVG` и `SUM` через грамматику SQL. Дополнительные сведения см. в разделе [Статистические функции](sql-query-aggregate-functions.md).
 
 ### <a name="how-does-the-sql-api-provide-concurrency"></a>Каким образом API SQL обеспечивает параллелизм?
 

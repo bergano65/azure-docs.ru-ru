@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 9/30/2020
+ms.date: 12/3/2020
 ms.subservice: alerts
-ms.openlocfilehash: d1a1a31d5894338e0deeed27fabcde9fdbf6f588
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: dfcc1f15ebec1337cfa7d484319c7b942ff052b2
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566492"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548245"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -75,7 +75,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.KeyVault/vaults | Да |Да |[Хранилища](./metrics-supported.md#microsoftkeyvaultvaults)|
 |Microsoft.Kusto/Clusters | Да |Нет |[Кластеры обозреватель данных](./metrics-supported.md#microsoftkustoclusters)|
 |Microsoft.Logic/integrationServiceEnvironments | Да | Нет |[Среды службы интеграции](./metrics-supported.md#microsoftlogicintegrationserviceenvironments) |
-|Microsoft.Logic/workflows | Нет | Нет |[Logic Apps](./metrics-supported.md#microsoftlogicworkflows) |
+|Microsoft.Logic/workflows | Нет | Нет |[Logic Apps](./metrics-supported.md#microsoftlogicworkflows) |
 |Microsoft.MachineLearningServices/workspaces | Да | Нет | [Машинное обучение](./metrics-supported.md#microsoftmachinelearningservicesworkspaces) |
 |Microsoft.Maps/accounts | Да | Нет | [Сопоставление учетных записей](./metrics-supported.md#microsoftmapsaccounts) |
 |Microsoft.Media/mediaservices | Нет | Нет | [Службы мультимедиа](./metrics-supported.md#microsoftmediamediaservices) |
@@ -85,7 +85,8 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Network/applicationGateways | Да | Нет | [Шлюзы приложений](./metrics-supported.md#microsoftnetworkapplicationgateways) |
 |Microsoft.Network/azurefirewalls | Да | Нет | [брандмауэры;](./metrics-supported.md#microsoftnetworkazurefirewalls) |
 |Microsoft.Network/dnsZones | Нет | Нет | [Зоны DNS](./metrics-supported.md#microsoftnetworkdnszones) |
-|Microsoft.Network/expressRouteCircuits | Недоступно | Нет |[Каналы ExpressRoute](./metrics-supported.md#microsoftnetworkexpressroutecircuits) |
+|Microsoft.Network/expressRouteCircuits | Да | Нет |[Каналы ExpressRoute](./metrics-supported.md#microsoftnetworkexpressroutecircuits) |
+|Microsoft.Network/expressRoutePorts | Да | Нет |[ExpressRoute Direct](./metrics-supported.md#microsoftnetworkexpressrouteports) |
 |Microsoft.Network/loadBalancers (только для SKU "Стандартный")| Да| Нет | [Подсистемы балансировки нагрузки](./metrics-supported.md#microsoftnetworkloadbalancers) |
 |Microsoft. Network/Натгатевайс| Нет | Нет | |
 |Microsoft. Network/Приватиндпоинтс| Нет | Нет | |
@@ -107,6 +108,9 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.StorageCache/caches | Да | Нет | |
 |Microsoft. StorageSync/Сторажесинксервицес | Да | Нет | [Службы синхронизации хранилища](./metrics-supported.md#microsoftstoragesyncstoragesyncservices) |
 |Microsoft.StreamAnalytics/streamingjobs | Да | Нет | [Stream Analytics](./metrics-supported.md#microsoftstreamanalyticsstreamingjobs) |
+|Microsoft.Synapse/workspaces | Да | Нет | [Synapse Analytics](./metrics-supported.md#microsoftsynapseworkspaces) |
+|Microsoft. синапсе/workspaces/Бигдатапулс | Да | Нет | [Пулы Apache Spark аналитики синапсе](./metrics-supported.md#microsoftsynapseworkspacesbigdatapools) |
+|Microsoft. синапсе/workspaces/Склпулс | Да | Нет | [Пулы SQL Analytics синапсе](./metrics-supported.md#microsoftsynapseworkspacessqlpools) |
 |Microsoft. Вмвареклаудсимпле/virtualMachines | Да | Нет | [Виртуальные машины CloudSimple](./metrics-supported.md#microsoftvmwarecloudsimplevirtualmachines) |
 |Microsoft.Web/hostingEnvironments/multiRolePools | Да | Нет | [Среда службы приложений пулов с несколькими ролями](./metrics-supported.md#microsoftwebhostingenvironmentsmultirolepools)|
 |Microsoft.Web/hostingEnvironments/workerPools | Да | Нет | [Пулы рабочих ролей Среда службы приложений](./metrics-supported.md#microsoftwebhostingenvironmentsworkerpools)|
@@ -175,7 +179,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Получите дополнительные сведения об [интерфейсе оповещений](./alerts-overview.md).
 * Ознакомьтесь со сведениями об [оповещениях журналов в Azure](./alerts-unified-log.md).

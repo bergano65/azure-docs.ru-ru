@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: pharring
 ms.author: pharring
 ms.date: 11/10/2020
-ms.openlocfilehash: 89c13566c3710e56a4cd737d9aa03c6fb57edc93
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 73fea1e1928cf4e1bd5342aa0a4c885ccb5cf137
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542734"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548177"
 ---
 # <a name="release-notes-for-microsoftapplicationinsightssnapshotcollector"></a>Заметки о выпуске Microsoft. ApplicationInsights. SnapshotCollector
 
@@ -22,6 +22,11 @@ ms.locfileid: "94542734"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
+## <a name="1374"></a>[1.3.7.4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.4)
+Выпуск Point для устранения проблемы, обнаруженной при тестировании сценария подключения к безкоду в службе приложений Azure.
+### <a name="changes"></a>Изменения
+- Целевой объект netcoreapp 3.0 теперь зависит от Microsoft. ApplicationInsights. AspNetCore >= «» (ранее >= 2.1.2).
+
 ## <a name="1373"></a>[1.3.7.3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.3)
 Выпуск Point для решения нескольких проблем с высоким уровнем влияния.
 ### <a name="bug-fixes"></a>Исправленные ошибки
@@ -30,9 +35,9 @@ ms.locfileid: "94542734"
 
 ## <a name="137"></a>[1.3.7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7)
 ### <a name="changes"></a>Изменения
-Целевой объект SnapshotCollector netcoreapp 2.0 зависит от Microsoft. ApplicationInsights. AspNetCore >= 2.1 (опять же). Это меняет поведение до 1.3.5. Мы попытались обновить его в 1.3.6, но некоторые сценарии службы приложений Azure были нарушены.
-### <a name="new-features"></a>Новые функции
-Snapshot Collector считывает и анализирует ConnectionString из переменной среды APPLICATIONINSIGHTS_CONNECTION_STRING или из Телеметриконфигуратион. В основном это значение используется для установки конечной точки для подключения к службе моментальных снимков. Дополнительные сведения см. в [документации по строкам подключения](./sdk-connection-string.md).
+- Целевой объект SnapshotCollector netcoreapp 2.0 зависит от Microsoft. ApplicationInsights. AspNetCore >= 2.1 (опять же). Это меняет поведение до 1.3.5. Мы попытались обновить его в 1.3.6, но некоторые сценарии службы приложений Azure были нарушены.
+### <a name="new-features"></a>новые функции;
+- Snapshot Collector считывает и анализирует ConnectionString из переменной среды APPLICATIONINSIGHTS_CONNECTION_STRING или из Телеметриконфигуратион. В основном это значение используется для установки конечной точки для подключения к службе моментальных снимков. Дополнительные сведения см. в [документации по строкам подключения](./sdk-connection-string.md).
 ### <a name="bug-fixes"></a>Исправленные ошибки
 - Переключение на использование HttpClient для всех целевых объектов, за исключением net45, так как в некоторых средах возникла ошибка WebRequest из-за несовместимого экземпляр SecurityProtocol (требуется TLS 1,2).
 
@@ -42,7 +47,7 @@ Snapshot Collector считывает и анализирует ConnectionString
 - Удалите поддержку TLS 1,0 и 1,1 в службе "отправку моментальных снимков".
 - Период сканирования PDB теперь по умолчанию составляет 24 часа, а не 15 минут. Можно настроить с помощью Пдбресканинтервал в Снапшотколлекторконфигуратион.
 - При сканировании PDB выполняется поиск только папок верхнего уровня, а не рекурсивных. Это может быть критическим изменением, если символы находятся во вложенных папках двоичной папки.
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 - Поворот журнала в Снапшотуплоадер, чтобы избежать заполнения папки Logs старыми файлами.
 - Поддержка деоптимизации (через ReJIT при присоединении) для приложений .NET Core 3,0.
 - Добавление символов в пакет NuGet.
@@ -60,20 +65,20 @@ Snapshot Collector считывает и анализирует ConnectionString
 - Упрощено добавление сборщика моментальных снимков с помощью Аддснапшотколлектор (). Дополнительные сведения см. [здесь](./snapshot-debugger-appservice.md).
 - Используйте параметр FISMA MD5 для проверки блоков BLOB-объектов. Это позволяет избежать алгоритма шифрования .NET MD5 по умолчанию, который недоступен, если ОС настроена на режим совместимости с FIPS.
 - Пропуск .NET Frameworkных кадров при деоптимизации вызовов функций. Это поведение можно контролировать с помощью параметра конфигурации Деоптимизеигноредмодулес.
-- Добавьте `DeoptimizeMethodCount` параметр конфигурации, разрешающий деоптимизацию нескольких вызовов функций. Дополнительные сведения
+- Добавьте `DeoptimizeMethodCount` параметр конфигурации, разрешающий деоптимизацию нескольких вызовов функций. Дополнительные сведения см. здесь.
 
 ## <a name="134"></a>[1.3.4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.4)
 - Разрешить структурированные ключи инструментирования.
 - Повышение надежности Снапшотуплоадер — продолжайте запуск, даже если старые журналы отгрузки нельзя перемещать.
 - Повторная включение дополнительных данных телеметрии, когда SnapshotUploader.exe выходит немедленно (было отключено в 1.3.3).
 - Упростите внутреннюю телеметрию.
-- _Экспериментальная функция_ : планы сбора точка прикрепления: Добавление "снапшотонфирстоккуренце". Дополнительные сведения см. [здесь](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
+- _Экспериментальная функция_: планы сбора точка прикрепления: Добавление "снапшотонфирстоккуренце". Дополнительные сведения см. [здесь](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
 
 ## <a name="133"></a>[1.3.3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.3)
 - Исправлена ошибка, которая привела к SnapshotUploader.exe перестает отвечать на запросы и не отправляет моментальные снимки для приложений .NET Core.
 
 ## <a name="132"></a>[1.3.2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.2)
-- _Экспериментальная функция_ : планы сбора точка прикрепления. Дополнительные сведения см. [здесь](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
+- _Экспериментальная функция_: планы сбора точка прикрепления. Дополнительные сведения см. [здесь](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
 - SnapshotUploader.exe будет завершаться, когда среда выполнения выгружает AppDomain, из которого загружается SnapshotCollector, а не ожидает завершения процесса. Это повышает надежность сборщика при размещении в IIS.
 - Добавьте конфигурацию, чтобы разрешить нескольким экземплярам SnapshotCollector, использующим один и тот же ключ инструментирования, совместно использовать один и тот же процесс Снапшотуплоадер: Шареуплоадерпроцесс (по умолчанию — `true` ).
 - Сообщать о дополнительных телеметрии, когда SnapshotUploader.exe немедленно завершает работу.

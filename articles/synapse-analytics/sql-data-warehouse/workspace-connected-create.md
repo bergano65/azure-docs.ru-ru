@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/25/2020
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: b105c4c9ee0bd27af11fe09a0fd756467e30bb35
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a1fbc6eede6c82020b765185602c672c1162fdf8
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96467714"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548194"
 ---
 # <a name="enabling-synapse-workspace-features-for-a-dedicated-sql-pool-formerly-sql-dw"></a>Включение функций рабочей области синапсе для выделенного пула SQL (ранее — хранилище данных SQL)
 
@@ -24,7 +24,7 @@ ms.locfileid: "96467714"
 ## <a name="prerequisites"></a>Предварительные требования
 Перед включением функций рабочей области синапсе в хранилище данных необходимо убедиться в следующем.
 - Права на создание ресурсов SQL, размещенных на логическом сервере SQL, и управление ими.
-- Права на создание ресурсов синапсе.
+- Права на создание ресурсов Azure синапсе.
 - Администратор Azure Active Directory, определенный на логическом сервере
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
@@ -58,5 +58,5 @@ ms.locfileid: "96467714"
 
 5. Откройте **концентратор данных** и разверните выделенный пул SQL в обозревателе объектов, чтобы обеспечить доступ к хранилищу данных и его выполнение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Начало работы с [рабочей областью синапсе и студии](../get-started.md).
