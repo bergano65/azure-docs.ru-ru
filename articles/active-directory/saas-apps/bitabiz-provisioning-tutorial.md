@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 3d17d4dd88e29440304989b8c37eaa81125d1812
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 8eccc3be7da201ee1e2af046c6b515871ef05adc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357561"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350795"
 ---
 # <a name="tutorial-configure-bitabiz-for-automatic-user-provisioning"></a>Руководство по настройке BitaBIZ для автоматической подготовки пользователей
 
@@ -92,7 +92,7 @@ ms.locfileid: "94357561"
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в BitaBIZ на основе их назначений в Azure AD.
 
 > [!TIP]
-> Для BitaBIZ также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [учебнике по единому входу в BitaBIZ](BitaBIZ-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
+> Для BitaBIZ также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [руководстве по единому входу в BitaBIZ](BitaBIZ-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-bitabiz-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в BitaBIZ в Azure AD, сделайте следующее.
 

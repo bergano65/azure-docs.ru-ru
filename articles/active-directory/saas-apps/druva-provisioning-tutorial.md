@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 5579a9d96828caa1453547e7c2e11b8f0d717d2a
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 2ef564ae61aab10e1d100ccaf2547248e4a6a8e8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359312"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352173"
 ---
 # <a name="tutorial-configure-druva-for-automatic-user-provisioning"></a>Руководство по настройке Druva для автоматической подготовки пользователей
 
@@ -95,7 +95,7 @@ ms.locfileid: "94359312"
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Druva на основе их назначений в Azure AD.
 
 > [!TIP]
-> Для Druva также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [учебнике по единому входу в Druva](druva-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
+> Для Druva также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [руководстве по единому входу в Druva](druva-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-druva-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в Druva, сделайте следующее:
 

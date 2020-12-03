@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: Zhchia
-ms.openlocfilehash: 31631209a16024e4414cc19bca37166332b427de
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: d3dee76ada7a9ed48813928937f8f8da8be4add1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359236"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348047"
 ---
 # <a name="tutorial-configure-miro-for-automatic-user-provisioning"></a>Руководство по настройке Miro для автоматической подготовки пользователей
 
@@ -79,7 +79,7 @@ ms.locfileid: "94359236"
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в Miro на основе их назначений в Azure AD.
 
 > [!TIP]
-> Для Miro также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [учебнике по единому входу в Miro](./miro-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
+> Для Miro также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [руководстве по единому входу в Miro](./miro-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
 
 > [!NOTE]
 > Дополнительные сведения о конечной точке SCIM Miro см. на [этой странице](https://help.miro.com/hc/en-us/articles/360036777814).

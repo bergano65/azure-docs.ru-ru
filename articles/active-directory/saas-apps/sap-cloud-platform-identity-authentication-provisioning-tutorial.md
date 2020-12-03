@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка SAP Cloud Platform Identity Authentication для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка SAP Cloud Platform Identity Authentication для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в SAP Cloud Platform Identity Authentication.
 services: active-directory
 author: zchia
@@ -11,14 +11,14 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: f43d7b2a858c5047c40157429dc5c50b467c8efc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 419f25ee3df471bc2fc4526254f5677b8bd71856
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012396"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342753"
 ---
-# <a name="tutorial-configure-sap-cloud-platform-identity-authentication-for-automatic-user-provisioning"></a>Руководство. Настройка SAP Cloud Platform Identity Authentication для автоматической подготовки пользователей
+# <a name="tutorial-configure-sap-cloud-platform-identity-authentication-for-automatic-user-provisioning"></a>Руководство по Настройка SAP Cloud Platform Identity Authentication для автоматической подготовки пользователей
 
 В этом руководстве описаны действия, которые нужно выполнить в SAP Cloud Platform Identity Authentication и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в AP Cloud Platform Identity Authentication.
 
@@ -94,7 +94,7 @@ ms.locfileid: "96012396"
 В этом разделе объясняется, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в SAP Cloud Platform Identity Authentication на основе их назначений в Azure AD.
 
 > [!TIP]
-> Кроме того, вы можете включить для SAP Cloud Platform Identity Authentication единый вход на основе SAML. Для этого выполните инструкции, приведенные в [руководстве по настройке единого входа для SAP Cloud Platform Identity Authentication](./sap-hana-cloud-platform-identity-authentication-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
+> Для SAP Cloud Platform Identity Authentication также можно включить единый вход на основе SAML. Для этого выполните инструкции, приведенные в [руководстве по настройке единого входа для SAP Cloud Platform Identity Authentication](./sap-hana-cloud-platform-identity-authentication-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-sap-cloud-platform-identity-authentication-in-azure-ad"></a>Настройка автоматической подготовки пользователей для SAP Cloud Platform Identity Authentication в Azure AD:
 

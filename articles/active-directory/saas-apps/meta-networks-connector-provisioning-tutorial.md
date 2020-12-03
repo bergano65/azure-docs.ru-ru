@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/01/2019
 ms.author: Zhchia
-ms.openlocfilehash: ac41fb5ed6fd1e46719fcc39ccaf5b29375e7410
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: b6a8f192cd26639431cc9fcb6b43e1bc5e8e2843
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359907"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353635"
 ---
 # <a name="tutorial-configure-meta-networks-connector-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Meta Networks Connector
 
@@ -115,7 +115,7 @@ ms.locfileid: "94359907"
 В этом разделе объясняется, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в Meta Networks Connector на основе их назначений в Azure AD.
 
 > [!TIP]
-> Кроме того, вы можете настроить для Meta Networks Connector единый вход на основе SAML, используя инструкции из [руководства по единому входу для Meta Networks Connector](./metanetworksconnector-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
+> Для Meta Networks Connector также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [руководстве по единому входу в Meta Networks Connector](./metanetworksconnector-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-meta-networks-connector-in-azure-ad"></a>Для настройки автоматической подготовки пользователей в AAD для Meta Networks Connector сделайте следующее:
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: 717500050aff89964ff959a4741aed01533ada70
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 886d6ff1d3437a9d45bdabc68b2bf3ab8cdaa3ef
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357136"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349979"
 ---
 # <a name="tutorial-configure-blink-for-automatic-user-provisioning"></a>Руководство по настройке Blink для автоматической подготовки пользователей
 
@@ -81,7 +81,7 @@ ms.locfileid: "94357136"
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей в Blink на основе их назначений в Azure AD.
 
 > [!TIP]
-> Для Blink также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [учебнике по единому входу в Blink](./blink-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
+> Для Blink также можно включить единый вход на основе SAML. Для этого следуйте инструкциям, приведенным в [руководстве по единому входу в Blink](./blink-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
 
 ### <a name="to-configure-automatic-user-provisioning-for-blink-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей Blink в Azure AD, сделайте следующее.
 
