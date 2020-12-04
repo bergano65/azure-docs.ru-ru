@@ -2,14 +2,14 @@
 title: Создание реестра схемы концентраторов событий Azure
 description: В этой статье показано, как создать реестр схемы в пространстве имен концентраторов событий Azure.
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 12/03/2020
 ms.custom: references_regions
-ms.openlocfilehash: 90556e0843cda94dc79330321d027f8d28eb7d20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45791cd69772be97ca6768184ed17179e04ad9dc
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652199"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576814"
 ---
 # <a name="create-an-azure-event-hubs-schema-registry-preview"></a>Создание реестра схемы концентраторов событий Azure (Предварительная версия)
 В этой статье показано, как создать группу схем с схемами в реестре схемы, размещенном в концентраторах событий Azure. Общие сведения о компоненте реестра схемы в концентраторах событий Azure см. в разделе [Реестр Azure Schema в концентраторах событий](schema-registry-overview.md).
@@ -17,6 +17,7 @@ ms.locfileid: "91652199"
 > [!NOTE]
 > - Функция **Реестр схем** в настоящее время находится на этапе **предварительной версии** и не рекомендуется для рабочих нагрузок в рабочей среде.
 > - Эта функция доступна только на **стандартных** и **выделенных** уровнях и не предоставляется на уровне **Базовый**.
+> - Если концентратор событий находится в **виртуальной сети**, вы не сможете создавать схемы в портал Azure, пока вы не получите доступ к порталу из виртуальной машины в той же виртуальной сети. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 [Создайте пространство имен концентраторов событий](event-hubs-create.md#create-an-event-hubs-namespace). Можно также использовать существующее пространство имен. 
@@ -28,15 +29,15 @@ ms.locfileid: "91652199"
     :::image type="content" source="./media/create-schema-registry/namespace-page.png" alt-text="Страница реестра схемы":::
 1. На странице **Создание группы схем** выполните следующие действия.
     1. Введите **имя** группы схем.
-    1. Для **типа сериализации**выберите формат сериализации, который применяется ко всем схемам в группе схем. В настоящее время поддерживается только тип **Avro** , поэтому выберите **Avro**. 
-    1. Выберите **режим совместимости** для всех схем в группе. Для **Avro**поддерживаются режимы прямого и обратной совместимости. 
+    1. Для **типа сериализации** выберите формат сериализации, который применяется ко всем схемам в группе схем. В настоящее время поддерживается только тип **Avro** , поэтому выберите **Avro**. 
+    1. Выберите **режим совместимости** для всех схем в группе. Для **Avro** поддерживаются режимы прямого и обратной совместимости. 
     1. Затем выберите **создать** , чтобы создать группу схем. 
 1. Выберите имя **группы схем** в списке групп схем.
 
-    :::image type="content" source="./media/create-schema-registry/select-schema-group.png" alt-text="Страница реестра схемы":::    
+    :::image type="content" source="./media/create-schema-registry/select-schema-group.png" alt-text="Выберите группу схем в списке.":::    
 1. Отобразится страница **Группа схемы** для группы.
 
-    :::image type="content" source="./media/create-schema-registry/schema-group-page.png" alt-text="Страница реестра схемы":::
+    :::image type="content" source="./media/create-schema-registry/schema-group-page.png" alt-text="Страница «Группа схем»":::
     
 
 ## <a name="add-a-schema-to-the-schema-group"></a>Добавление схемы в группу схем
@@ -67,29 +68,29 @@ ms.locfileid: "91652199"
     1. Нажмите кнопку **создания**. 
 1. Выберите **схему** из списка схем. 
 
-    :::image type="content" source="./media/create-schema-registry/select-schema.png" alt-text="Страница реестра схемы":::
+    :::image type="content" source="./media/create-schema-registry/select-schema.png" alt-text="Выбор схемы":::
 1. Отобразится страница « **Обзор схемы** » для схемы. 
 
-    :::image type="content" source="./media/create-schema-registry/schema-overview-page.png" alt-text="Страница реестра схемы":::    
+    :::image type="content" source="./media/create-schema-registry/schema-overview-page.png" alt-text="Страница &quot;Обзор схемы&quot;":::    
 1. Если имеется несколько версий схемы, они отображаются в раскрывающемся списке **версии** . Выберите версию для переключения на эту схему версии. 
 
 ## <a name="create-a-new-version-of-schema"></a>Создать новую версию схемы
 
 1. Обновите схему в текстовом поле и выберите **проверить**. В следующем примере в схему добавлено новое поле `id` . 
 
-    :::image type="content" source="./media/create-schema-registry/update-schema.png" alt-text="Страница реестра схемы":::    
+    :::image type="content" source="./media/create-schema-registry/update-schema.png" alt-text="Обновить схему":::    
     
 1. Проверьте состояние проверки и изменения и нажмите кнопку **сохранить**. 
 
-    :::image type="content" source="./media/create-schema-registry/compare-save-schema.png" alt-text="Страница реестра схемы":::     
+    :::image type="content" source="./media/create-schema-registry/compare-save-schema.png" alt-text="Проверка состояния проверки, изменений и сохранение":::     
 1. Вы увидите, что `2` выбрано для **версии** на странице **Обзор схемы** . 
 
-    :::image type="content" source="./media/create-schema-registry/new-version.png" alt-text="Страница реестра схемы":::    
+    :::image type="content" source="./media/create-schema-registry/new-version.png" alt-text="Новая версия схемы":::    
 1. Выберите, `1` чтобы просмотреть схему версии 1. 
 
-    :::image type="content" source="./media/create-schema-registry/select-version.png" alt-text="Страница реестра схемы":::    
+    :::image type="content" source="./media/create-schema-registry/select-version.png" alt-text="Выбор версии":::    
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о реестре схем см. [в разделе реестр Azure Schema в концентраторах событий](schema-registry-overview.md).
 

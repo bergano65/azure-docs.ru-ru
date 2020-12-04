@@ -5,15 +5,15 @@ services: storage
 author: roygara
 ms.service: storage
 ms.topic: include
-ms.date: 09/15/2020
+ms.date: 12/02/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 10177dd949ac531027e13cf633b11c16674fd4ab
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: db4bc51b937535b7b53273bf01057d9b6c5198b3
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386515"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96584613"
 ---
 В предварительной версии NFS имеются следующие ограничения.
 
@@ -21,6 +21,7 @@ ms.locfileid: "94386515"
 - Если большинство запросов ориентированы на метаданные, то задержка будет хуже по сравнению с операциями чтения, записи и обновления.
 - Чтобы создать общую папку NFS, необходимо создать новую учетную запись хранения.
 - Поддерживаются только API-интерфейсы RESTFUL для плоскости управления. Интерфейсы API недоступности для плоскости данных недоступны. Это означает, что такие средства, как Обозреватель службы хранилища, не будут работать с общими папками NFS, и вы сможете просматривать данные общего доступа NFS в портал Azure.
+- AzCopy в настоящее время не поддерживается.
 - Доступно только для уровня "Премиум".
 - Сейчас доступно только с локально избыточным хранилищем (LRS).
 

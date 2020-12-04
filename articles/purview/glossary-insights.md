@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/20/2020
-ms.openlocfilehash: 9f7d81423c75c3e1a51f5b5d5f37c54307488eb3
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: f61d99a61cb50886d70489b586d948bfa751e196
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554056"
+ms.locfileid: "96576780"
 ---
 # <a name="glossary-insights-on-your-data-in-azure-purview"></a>Глоссарий сведений о данных в Azure зрения
 
@@ -20,6 +20,7 @@ ms.locfileid: "96554056"
 
 В этом пошаговом руководство вы узнаете, как:
 
+> [!div class="checklist"]
 > - Переход к аналитике из учетной записи зрения
 > - Получите представление о данных с высоты птичьего полета
 
@@ -66,6 +67,6 @@ ms.locfileid: "96554056"
 
    :::image type="content" source="./media/glossary-insights/glossary-insights1.png" alt-text="Просмотр сведений о глоссарии":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об отчетах Azure зрения Insights с помощью [Asset Insights](./asset-insights.md)
