@@ -4,13 +4,12 @@ description: Сведения о том, как типы узлов Service Fabr
 ms.topic: conceptual
 ms.date: 03/23/2018
 ms.author: pepogors
-ms.custom: sfrev
-ms.openlocfilehash: 870467760a2baaa887b06fb8e01335f225f04d6e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7df7ed9fa1f872cd9554dcf4c8880b7c9d5e53c4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90561896"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576406"
 ---
 # <a name="azure-service-fabric-node-types-and-virtual-machine-scale-sets"></a>Типы узлов Azure Service Fabric и масштабируемые наборы виртуальных машин
 
@@ -75,7 +74,7 @@ Service Fabric расширение виртуальной машины испо
 | **Имя** | **Допустимые значения** | **Рекомендация или краткое описание** |
 | --- | --- | --- | --- |
 | name | строка | Уникальное имя для расширения |
-| type | "Сервицефабриклинуксноде" или "Сервицефабриквиндовсноде" | Идентифицирует Service Fabric ОС для начальной загрузки |
+| тип | "Сервицефабриклинуксноде" или "Сервицефабриквиндовсноде" | Идентифицирует Service Fabric ОС для начальной загрузки |
 | autoUpgradeMinorVersion | true или false | Включить автоматическое обновление вспомогательных версий среды выполнения SF |
 | publisher | Microsoft. Azure. ServiceFabric | Имя издателя расширения Service Fabric |
 | клустерендпонт | строка | URI: порт для конечной точки управления |
@@ -88,7 +87,7 @@ Service Fabric расширение виртуальной машины испо
 | typeHandlerVersion | 1,1 | Версия расширения. 1,0. рекомендуется использовать классическую версию расширения для обновления до 1,1 |
 | Пути к данным | строка | Путь к диску, используемому для сохранения состояния Service Fabric системных служб и данных приложений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о возможности развертывания в любом месте и сравнении с кластерами под управлением Azure см. в статье [Создание кластеров Service Fabric в Windows Server или Linux](service-fabric-deploy-anywhere.md).
 * Сведения о [безопасности кластера](service-fabric-cluster-security.md).

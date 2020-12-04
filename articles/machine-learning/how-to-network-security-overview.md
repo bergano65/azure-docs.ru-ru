@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperfq1
-ms.openlocfilehash: fdfaef554e4e641656abd3fd2b4a5d3bbc519ccd
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 6398d23aeb0e26fbc336c0c1066078f327fa2f73
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325424"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576576"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Общие сведения о изоляции и конфиденциальности виртуальной сети
 
@@ -145,10 +145,11 @@ ms.locfileid: "93325424"
 
 * Предварительный просмотр данных в студии.
 * Визуализируйте данные в конструкторе.
+* Разверните модель в конструкторе.
 * Отправьте Аутомл эксперимент.
 * Запустите проект меток.
 
-Сведения о включении полной функциональности Studio в виртуальной сети см. в статье [использование машинное обучение Azure Studio в виртуальных сетях](how-to-enable-studio-virtual-network.md#access-data-using-the-studio). Studio поддерживает учетные записи хранения, используя конечные точки службы или частные конечные точки.
+Сведения о включении полной функциональности Studio в виртуальной сети см. в статье [использование машинное обучение Azure Studio в виртуальных сетях](how-to-enable-studio-virtual-network.md#configure-data-access-in-the-studio). Studio поддерживает учетные записи хранения, используя конечные точки службы или частные конечные точки.
 
 ### <a name="limitations"></a>Ограничения
 - Многоязыковая [маркировка данных](how-to-create-labeling-projects.md#use-ml-assisted-labeling) в службе ML не поддерживает учетные записи хранения по умолчанию, защищенные за пределы виртуальной сети. Необходимо использовать учетную запись хранения, не используемую по умолчанию, для добавления меток к данным, помогающим в ML. Обратите внимание, что учетная запись хранения, не используемая по умолчанию, может быть защищена за счет виртуальной сети. 

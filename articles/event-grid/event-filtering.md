@@ -2,13 +2,13 @@
 title: Фильтрация событий для службы "Сетка событий Azure"
 description: В статье описывается, как фильтровать события при создании подписки на службу "Сетка событий Azure".
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 837209d4197c271598155776b8d171a705e1f454
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/03/2020
+ms.openlocfilehash: bc3e84037693fcd909961ba409871d947ef1de7d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86120098"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574912"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -72,7 +72,7 @@ ms.locfileid: "86120098"
 ]
 ```
 
-При указании нескольких различных фильтров выполняется операция **и** , поэтому должно выполняться каждое условие фильтра. Например: 
+Если задано несколько различных фильтров, операция **и** выполняется, поэтому должно выполняться каждое условие фильтра. Ниже приведен пример. 
 
 ```json
 "advancedFilters": [
@@ -117,6 +117,23 @@ ms.locfileid: "86120098"
 
 Все сравнения строк **не** учитывают регистр.
 
+> [!NOTE]
+> Если JSON события не содержит ключ расширенного фильтра, то Filter еваулатед, как **не соответствует** , для следующих операторов: 
+> - NumberGreaterThan;
+> - NumberGreaterThanOrEquals;
+> - NumberLessThan;
+> - NumberGreaterThanOrEquals;
+> - NumberIn;
+> - BoolEquals
+> - StringContains;
+> - StringBeginsWith;
+> - StringEndsWith;
+> - StringIn;
+> 
+>Фильтр еваулатед **в соответствии со** следующими операторами:
+> - NumberNotIn.
+> - StringNotIn.
+
 ### <a name="key"></a>Ключ
 
 Для событий в схеме "Сетка событий" используются следующие значения для ключа:
@@ -154,7 +171,7 @@ ms.locfileid: "86120098"
 * 5 дополнительных фильтров и 25 значений фильтров по всем подпискам на одну подписку на сетку событий
 * 512 знаков для значения строки;
 * пять значений для операторов **in** и **not in**;
-* Ключи с символом ** `.` (точкой)** . Пример: `http://schemas.microsoft.com/claims/authnclassreference` или `john.doe@contoso.com`. В настоящее время escape-символы в ключах не поддерживаются. 
+* Ключи с символом **`.` (точкой)** . Пример: `http://schemas.microsoft.com/claims/authnclassreference` или `john.doe@contoso.com`. В настоящее время escape-символы в ключах не поддерживаются. 
 
 Один ключ можно использовать в нескольких фильтрах.
 

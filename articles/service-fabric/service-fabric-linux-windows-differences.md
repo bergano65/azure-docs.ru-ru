@@ -3,13 +3,12 @@ title: Различия в Azure Service Fabric между Linux и Windows
 description: Различия между Azure Service Fabric для Linux и Azure Service Fabric для Windows.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.custom: sfrev
-ms.openlocfilehash: c064291491110b17c172a561afbd1e65d6c08d06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4adae60ded804450c25809faa0edca6bb058adf7
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75748533"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574502"
 ---
 # <a name="differences-between-service-fabric-on-linux-and-windows"></a>Различия между Service Fabric для Linux и для Windows
 

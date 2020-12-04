@@ -1,16 +1,14 @@
 ---
 title: Общие сведения об Azure Service Fabric с управлением API
 description: Эта статья содержит вводную информацию об использовании службы управления API Azure в качестве шлюза к приложениям Service Fabric.
-author: vturecek
 ms.topic: conceptual
 ms.date: 06/22/2017
-ms.author: vturecek
-ms.openlocfilehash: 8cbec0b4b28574bfbe46516de54f1b8a3fad7ce2
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 32f47d62cc9dda7cc88421dbf616bf69ffe152fc
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091140"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575692"
 ---
 # <a name="service-fabric-with-azure-api-management-overview"></a>Общие сведения о Service Fabric со службой управления API Azure
 

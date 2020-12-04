@@ -1,17 +1,15 @@
 ---
 title: Управление состоянием субъектов Reliable Actors
 description: Описание управления, сохранения и репликации субъектов Reliable Actors для обеспечения высокого уровня доступности.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9d5859886dbd1211f929be1031237f7e7d9b1fc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: badfc490f26b71881e7970c2c0be3472abfec25a
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89611714"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575607"
 ---
 # <a name="reliable-actors-state-management"></a>Управление состоянием субъектов Reliable Actors
 Субъекты Reliable Actors — это однопотоковые объекты для инкапсуляции логики и состояния. Так как субъекты выполняются в службах Reliable Services, они могут поддерживать состояние, используя те же механизмы сохранения и репликации. При этом субъекты не теряют свое состояние после сбоев, повторной активации после сборки мусора или перемещения между узлами в кластере из-за балансировки ресурсов или обновления.
@@ -117,7 +115,7 @@ class MyActorImpl extends FabricActor implements MyActor
  
 Если размер файла базы данных службы субъектов увеличился и стал больше ожидаемого размера, убедитесь, что соблюдены предыдущие инструкции. Если вы приступаете к этим рекомендациям и все еще испытываете проблемы с размером файла базы данных, вы должны отправить запрос в [службу поддержки](service-fabric-support.md) для получения помощи от группы разработчиков продукта.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Состояние, которое хранится в Reliable Actors, должно быть сериализовано перед записью на диск и реплицировано для обеспечения высокого уровня доступности. Узнайте больше о [сериализации типа субъекта](service-fabric-reliable-actors-notes-on-actor-type-serialization.md).
 

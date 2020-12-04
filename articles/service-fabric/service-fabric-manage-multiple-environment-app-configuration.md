@@ -1,16 +1,14 @@
 ---
 title: Управление приложениями для нескольких сред
 description: Приложения Azure Service Fabric могут выполняться в кластерах, содержащих от одного до нескольких тысяч компьютеров. Иногда для этих различных сред необходимо по-разному настроить приложение. В этой статье объясняется, как определить различные параметры приложения в каждой среде.
-author: mikkelhegn
 ms.topic: conceptual
 ms.date: 02/23/2018
-ms.author: mikhegn
-ms.openlocfilehash: b6d6ff37024a3181a43b67d2af26b067225654fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51bc77abca8ce2b3878df1c1859203618d3e2e27
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257477"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574451"
 ---
 # <a name="manage-applications-for-multiple-environments"></a>Управление приложениями для использования в нескольких средах
 

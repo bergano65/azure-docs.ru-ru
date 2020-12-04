@@ -3,13 +3,12 @@ title: Общие сведения об Azure и автономных класт
 description: Вы можете создать кластеры Service Fabric на любых виртуальных машинах или компьютерах, выполняемых под управлением Windows Server или Linux. Это означает, что вы можете развертывать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров под управлением Windows Server или Linux как локально, в Microsoft Azure, так и в другом поставщике облачных служб.
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.custom: sfrev
-ms.openlocfilehash: 8313d75bb6398bbe614c6f56b494079548c99954
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d83ec139c367d9a539db173a42ae909f57d5d71a
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842603"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576134"
 ---
 # <a name="comparing-azure-and-standalone-service-fabric-clusters-on-windows-server-and-linux"></a>Сравнение Azure и изолированных кластеров Service Fabric в Windows Server и Linux
 
@@ -37,7 +36,7 @@ Service Fabric позволяет создавать кластеры Service Fa
 * Широкий охват клиентов не ограничен средой размещения.
 * Дополнительный уровень надежности и защиты от масштабных простоев обеспечивается за счет перемещения служб в другую среду развертывания в случае отключения центра обработки данных или поставщика облачных решений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об кластерах Service Fabric в Azure см. [здесь](service-fabric-azure-clusters-overview.md)
 * Общие сведения об изолированных кластерах Service Fabric см. в [этой статье](service-fabric-standalone-clusters-overview.md)

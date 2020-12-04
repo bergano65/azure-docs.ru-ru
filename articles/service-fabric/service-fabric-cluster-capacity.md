@@ -4,13 +4,12 @@ description: Типы узлов, устойчивость, надежность
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: pepogors
-ms.custom: sfrev
-ms.openlocfilehash: d2b303c22eea9fb46a68bb3c8e36991d47d61554
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 731dcfdf25efc4b2f44669dacd8a400037ed47f4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91817731"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576338"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Рекомендации по планированию загрузки кластера Service Fabric
 
@@ -40,21 +39,21 @@ ms.locfileid: "91817731"
 
 Количество исходных типов узлов зависит от назначения кластера и запущенных на нем приложений и служб. Оцените следующие вопросы.
 
-* ***Есть ли у вашего приложения несколько служб, среди которых есть службы, которые должны быть общедоступными или доступными из Интернета?***
+* ***Есть ли у приложения несколько служб, и какие из них должны быть общедоступными или Интернет взаимодействующими?** _
 
     Обычные приложения содержат службу внешнего шлюза, которая получает входные данные от клиента и одну или несколько серверных служб, взаимодействующих с интерфейсными службами, с отдельной сетью между интерфейсной и внутренней службами. В таких случаях обычно требуется три типа узлов: один тип первичного узла и два типа непервичных узлов (по одному для интерфейсной и серверной служб).
 
-* ***Имеют ли службы, составляющие приложение, различные требования к инфраструктуре, такие как больший объем ОЗУ или больше циклов ЦП?***
+_ ***Все службы, составляющие приложение, имеют различные требования к инфраструктуре, такие как больший объем ОЗУ или больше циклов ЦП?** _
 
-    Часто служба внешнего интерфейса может работать на небольших виртуальных машинах (размер виртуальной машины, например D2), которые имеют открытые порты для Интернета.  Для ресурсоемких серверных служб может потребоваться работать на больших виртуальных машинах (с размерами виртуальных машин, например D4, D6, D15), которые не подключены к Интернету. Определение различных типов узлов для этих служб позволяет повысить эффективность и безопасное использование базовых Service Fabric виртуальных машин и позволяет им масштабировать их независимо друг от друга. Дополнительные сведения об оценке необходимого объема ресурсов см. в разделе [планирование емкости для Service Fabric приложений](service-fabric-capacity-planning.md) .
+    Often, front-end service can run on smaller VMs (VM sizes like D2) that have ports open to the internet.  Computationally intensive back-end services might need to run on larger VMs (with VM sizes like D4, D6, D15) that are not internet-facing. Defining different node types for these services allow you to make more efficient and secure use of underlying Service Fabric VMs, and enables them to scale them independently. For more on estimating the amount of resources you'll need, see [Capacity planning for Service Fabric applications](service-fabric-capacity-planning.md)
 
-* ***Будет ли любая из ваших служб приложений масштабироваться за пределами 100 узлов?***
+_ ***Любая из служб приложений должна масштабироваться за пределами 100 узлов?** _
 
-    Один тип узла не может надежно масштабироваться свыше 100 узлов на каждый масштабируемый набор виртуальных машин для Service Fabric приложений. Для выполнения более 100 узлов требуются дополнительные масштабируемые наборы виртуальных машин (и, следовательно, дополнительные типы узлов).
+    A single node type can't reliably scale beyond 100 nodes per virtual machine scale set for Service Fabric applications. Running more than 100 nodes requires additional virtual machine scale sets (and therefore additional node types).
 
-* ***Будет ли кластер распределяться по Зоны доступности?***
+**Будет ли кластер переноситься в зоны доступности?** _
 
-    Service Fabric поддерживает кластеры, охватывающие несколько [зоны доступности](../availability-zones/az-overview.md) , развертывая типы узлов, которые закреплены в конкретных зонах, обеспечивая высокую доступность приложений. Зоны доступности требуется планирование дополнительного типа узла и минимальные требования. Дополнительные сведения см. в статье [Рекомендуемая топология для типа первичного узла Service Fabric кластеров, охватывающих зоны доступности](service-fabric-cross-availability-zones.md#recommended-topology-for-primary-node-type-of-azure-service-fabric-clusters-spanning-across-availability-zones). 
+    Service Fabric supports clusters that span across [Availability Zones](../availability-zones/az-overview.md) by deploying node types that are pinned to specific zones, ensuring high-availability of your applications. Availability Zones require additional node type planning and minimum requirements. For details, see [Recommended topology for primary node type of Service Fabric clusters spanning across Availability Zones](service-fabric-cross-availability-zones.md#recommended-topology-for-primary-node-type-of-azure-service-fabric-clusters-spanning-across-availability-zones). 
 
 При определении числа и свойств типов узлов для первоначального создания кластера следует помнить, что при развертывании кластера всегда можно добавлять, изменять и удалять (не являющиеся первичными) типы узлов. [Типы первичных узлов можно также изменять](service-fabric-scale-up-primary-node-type.md) в работающих кластерах (хотя такие операции требует значительных средств планирования и предостережения в рабочих средах).
 
@@ -62,7 +61,7 @@ ms.locfileid: "91817731"
 
 ## <a name="durability-characteristics-of-the-cluster"></a>Характеристики устойчивости кластера
 
-*Уровень устойчивости* определяет привилегии Service Fabric виртуальных машин с базовой инфраструктурой Azure. Эта привилегия позволяет Service Fabric приостанавливать любой запрос инфраструктуры на уровне виртуальной машины (например, перезагрузку, повторное создание образа или миграцию), который влияет на требования кворума для Service Fabric системных служб и служб с отслеживанием состояния.
+Уровень _durability * обозначает привилегии Service Fabric виртуальных машин с базовой инфраструктурой Azure. Эта привилегия позволяет Service Fabric приостанавливать любой запрос инфраструктуры на уровне виртуальной машины (например, перезагрузку, повторное создание образа или миграцию), который влияет на требования кворума для Service Fabric системных служб и служб с отслеживанием состояния.
 
 > [!IMPORTANT]
 > Уровень устойчивости задается для каждого типа узла. Если ничего не указано, будет использоваться *бронзовый* уровень, однако автоматическое обновление ОС не предоставляется. Для рабочих нагрузок рекомендуется использовать уровень устойчивости « *серебро* » или « *Gold* ».
@@ -182,7 +181,7 @@ ms.locfileid: "91817731"
 
 Для рабочих нагрузок без отслеживания состояния минимальный поддерживаемый размер типа непервичного узла составляет три для поддержки кворума, однако рекомендуется использовать тип узла 5.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перед настройкой кластера проверьте `Not Allowed` [политики обновления кластера](service-fabric-cluster-fabric-settings.md) , чтобы устранить необходимость повторного создания кластера позже из-за неизменяемых параметров конфигурации системы.
 

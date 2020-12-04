@@ -1,17 +1,15 @@
 ---
 title: Отладка приложения в Visual Studio
 description: Повысьте надежность и производительность служб, разрабатывая их в Visual Studio и локальном кластере разработки.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 35c4875ca9bf3165fff84164eb3bb7ebe44cf932
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 0b7d08d610c883240abedc66c55abba64a74c8e3
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093401"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576321"
 ---
 # <a name="debug-your-service-fabric-application-by-using-visual-studio"></a>Отладка приложения Service Fabric с помощью Visual Studio
 > [!div class="op_single_selector"]

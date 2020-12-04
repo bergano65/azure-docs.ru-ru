@@ -1,17 +1,15 @@
 ---
 title: Удаленное взаимодействие служб с помощью C# в Service Fabric
 description: Удаленное взаимодействие Service Fabric позволяет осуществлять обмен данными между службами и клиентами и службами C# с помощью удаленного вызова процедур.
-author: vturecek
 ms.topic: conceptual
 ms.date: 09/20/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 246b1456c05605c4015c19e1a139e9ad65f6eaba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3659fea73abae3c9c5264f227b90d0af95a93e7
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022162"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576661"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -269,7 +267,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 
 ### <a name="use-explicit-remoting-classes-to-create-a-listenerclient-factory-for-the-v2-interface-compatible-version"></a>Использование явных классов удаленного взаимодействия для создания прослушивателя и фабрики клиента для версии 2 (с совместимым интерфейсом)
 
-Выполните следующие действия.
+Выполните следующие действия:
 
 1. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
 
@@ -358,7 +356,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 ### <a name="use-custom-serialization-with-a-remoting-wrapped-message"></a>Использование настраиваемой сериализации с упакованным сообщением удаленного взаимодействия
 
 В упакованном сообщении удаленного взаимодействия мы создаем отдельный упакованный объект, в поле которого хранятся все параметры.
-Выполните следующие действия.
+Выполните следующие действия:
 
 1. Реализуйте интерфейс `IServiceRemotingMessageSerializationProvider`, чтобы обеспечить пользовательскую сериализацию.
     В этом фрагменте кода показан пример такой реализации.
@@ -548,7 +546,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       });
       ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Веб-API с OWIN в модели Reliable Services](./service-fabric-reliable-services-communication-aspnetcore.md)
 * [WCF-based communication stack for Reliable Services](service-fabric-reliable-services-communication-wcf.md) (Стек взаимодействия для Reliable Services на основе WCF)

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/20/2020
-ms.openlocfilehash: 5045a13bb932f5907584bae23e956374a5757a68
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: ac93d835b8dbdd5a12d031825dcb879160df5e95
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554845"
+ms.locfileid: "96575352"
 ---
 # <a name="asset-insights-on-your-data-in-azure-purview"></a>Основные сведения о данных в Azure зрения
 
@@ -20,9 +20,10 @@ ms.locfileid: "96554845"
 
 В этом пошаговом руководство вы узнаете, как:
 
-* Просмотр аналитических сведений из учетной записи зрения.
-* Получите представление о данных с высоты птичьего полета.
-* Выполните детализацию для получения дополнительных сведений о количестве ресурсов.
+> [!div class="checklist"]
+> * Просмотр аналитических сведений из учетной записи зрения.
+> * Получите представление о данных с высоты птичьего полета.
+> * Выполните детализацию для получения дополнительных сведений о количестве ресурсов.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -97,6 +98,6 @@ ms.locfileid: "96554845"
 
    :::image type="content" source="./media/asset-insights/file-based-assets.png" alt-text="Просмотр ресурсов на основе файлов":::  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об отчетах Azure зрения Insights с помощью [проверки аналитики](./scan-insights.md)

@@ -5,19 +5,20 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: daveba
-ms.date: 11/17/2020
+ms.date: 12/03/2020
 ms.topic: how-to
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e51dc4ff61069bffadc4f95caee9e0f3c76d88ec
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 8e940c6eb2710ea43e756e4ea7956a39df9e0ce8
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95488476"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575556"
 ---
 # <a name="restrict-guest-access-permissions-preview-in-azure-active-directory"></a>Ограничение разрешений гостевого доступа (Предварительная версия) в Azure Active Directory
 
@@ -46,7 +47,7 @@ Azure Active Directory (Azure AD) позволяет ограничить воз
 
     ![Страница параметров внешней совместной работы Azure AD](./media/users-restrict-guest-permissions/external-collaboration-settings.png)
 
-1. Нажмите кнопку **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
+1. Щелкните **Сохранить**. Изменения могут вступить в силу для гостевых пользователей до 15 минут.
 
 ## <a name="update-with-the-microsoft-graph-api"></a>Обновление с помощью Microsoft Graph API
 
@@ -104,7 +105,7 @@ GET https://graph.microsoft.com/beta/policies/authorizationPolicy/authorizationP
 
 ### <a name="get-command-get-azureadmsauthorizationpolicy"></a>Get, команда: Get-AzureADMSAuthorizationPolicy
 
-Пример.
+Пример
 
 ````PowerShell
 PS C:\WINDOWS\system32> Get-AzureADMSAuthorizationPolicy
@@ -120,7 +121,7 @@ PermissionGrantPolicyIdsAssignedToDefaultUserRole : {user-default-legacy}
 
 ### <a name="set-command-set-azureadmsauthorizationpolicy"></a>Команда Set: Set-AzureADMSAuthorizationPolicy
 
-Пример.
+Пример
 
 ````PowerShell
 PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84b1e-32c8-42b7-82bc-daa82404023b'
@@ -162,7 +163,7 @@ PS C:\WINDOWS\system32> Set-AzureADMSAuthorizationPolicy -GuestUserRoleId '2af84
 Будут ли эти разрешения установлены по умолчанию? | Нет. Существующие разрешения по умолчанию остаются без изменений. При необходимости можно задать более ограниченные разрешения.
 Существуют ли требования к лицензиям для этой функции? | Нет, новые требования к лицензированию с этой функцией отсутствуют.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о существующих разрешениях гостя в Azure AD см [. в разделе что такое разрешения пользователя по умолчанию в Azure Active Directory?](../fundamentals/users-default-permissions.md)
 - Дополнительные сведения о методах API Microsoft Graph, позволяющих ограничивать гостевой доступ, см. в разделе [тип ресурса authorizationPolicy](/graph/api/resources/authorizationpolicy) .

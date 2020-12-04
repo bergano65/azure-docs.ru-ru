@@ -3,13 +3,12 @@ title: Сценарии и проектирование приложений
 description: Общие сведения о категориях облачных приложений в Service Fabric. Рассматривается разработка приложений, использующих службы с отслеживанием состояния и без него.
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.custom: sfrev
-ms.openlocfilehash: aaf8204158f720d8c69c98af758071cd91f6eff0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c3cc931a85b91fc02b8086ca5c2481153691e54
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86248175"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575675"
 ---
 # <a name="service-fabric-application-scenarios"></a>Сценарии приложений Service Fabric
 
@@ -71,7 +70,7 @@ Azure Service Fabric предлагает надежную и гибкую пл�
 * Посетите Центр архитектуры Azure, чтобы получить рекомендации по [созданию микрослужб в Azure](/azure/architecture/microservices/).
 * Рекомендации по проектированию приложений см. в статье [Azure Service Fabric приложения и кластеров](service-fabric-best-practices-overview.md) .
 
-* См. также:
+* См. также
   * [Общие сведения о микрослужбах](service-fabric-overview-microservices.md)
   * [Определение состояния службы и управление им](service-fabric-concepts-state.md)
   * [Доступность служб](service-fabric-availability-services.md)

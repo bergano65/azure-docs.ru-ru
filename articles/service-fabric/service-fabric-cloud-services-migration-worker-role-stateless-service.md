@@ -1,17 +1,15 @@
 ---
 title: Преобразование приложений облачных служб Azure в Service Fabric
 description: В этом руководстве веб-роли и рабочие роли облачных служб сравниваются со службами без отслеживания состояния Service Fabric в плане переноса из облачных служб на платформу Service Fabric.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 24a411403fc139a7e7fa6644690c57a3b2729bf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf593f793aabf2a0650684ed8d02fe02d756ec2b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89002289"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575743"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Руководство по преобразованию рабочих ролей и веб-ролей в службы без отслеживания состояния Service Fabric
 В этой статье описано, как переносить рабочие роли и веб-роли облачных служб в службы без отслеживания состояния Service Fabric. Это самый простой способ переноса из облачных служб в службы Service Fabric при работе с приложениями, общая архитектура которых почти не изменяется.
@@ -31,7 +29,7 @@ ms.locfileid: "89002289"
 ## <a name="web-role-to-stateless-service"></a>Преобразование веб-роли в службу без отслеживания состояния
 Как и рабочая роль, веб-роль тоже является рабочей нагрузкой без отслеживания состояния. Поэтому и ее можно сопоставить со службой без отслеживания состояния Service Fabric. В отличие от веб-ролей, платформа Service Fabric не поддерживает IIS. Чтобы перенести веб-приложение из веб-роли в службу без отслеживания состояния, сначала следует переместить автономно размещаемую веб-платформу, которая не зависит от IIS или System.Web (например, ASP.NET Core 1).
 
-| **Приложение** | **Поддерживается** | **Путь перехода** |
+| **Приложения** | **Поддерживается** | **Путь перехода** |
 | --- | --- | --- |
 | Веб-формы ASP.NET |Нет |Преобразование в ASP.NET Core 1 MVC |
 | ASP.NET MVC 3 |С переносом |Обновление до ASP.NET Core 1 MVC |

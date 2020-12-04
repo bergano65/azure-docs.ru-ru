@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: df800938d568af0b94cfb1d368ef32e9b085b6eb
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 543e6115be30963600d867bb9c2a03dfbb54e9f1
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913115"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576559"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
 
@@ -34,7 +34,7 @@ ms.locfileid: "92913115"
 
 Прежде чем приступать к началу работы, важно отметить, что можно развернуть пример средства создания меток в экземпляре контейнера Azure (ACI) двумя способами. Оба параметра используются для запуска примера средства создания меток с помощью ACI: 
 
-* [Использование портала Azure](#azure-portal)
+* [Использование портал Azure](#azure-portal)
 * [Использование Azure CLI](#azure-cli)
 
 ### <a name="azure-portal"></a>Портал Azure
@@ -42,8 +42,8 @@ ms.locfileid: "92913115"
 Чтобы создать новый ресурс с помощью портал Azure, выполните следующие действия. 
 
 1. Войдите на [портал Azure](https://portal.azure.com/signin/index/).
-2. Выберите **Создать ресурс** . 
-3. Затем выберите **веб-приложение** . 
+2. Выберите **Создать ресурс**. 
+3. Затем выберите **веб-приложение**. 
 
    > [!div class="mx-imgBorder"]
    > ![Выбор веб-приложения](./media/quickstarts/formre-create-web-app.png)
@@ -80,7 +80,7 @@ ms.locfileid: "92913115"
    * Непрерывное развертывание — задайте значение **On** , если вы хотите получить автоматические обновления, когда команда разработчиков вносит изменения в пример средства создания меток.
    * Команда запуска — задает значение `./run.sh eula=accept`
 
-    # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1) 
+    # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1) 
    * Параметры — выберите **один контейнер**
    * Источник образа — выберите **частный реестр** 
    * URL-адрес сервера — установите значение `https://mcr.microsoft.com`
@@ -95,7 +95,7 @@ ms.locfileid: "92913115"
    > [!div class="mx-imgBorder"]
    > ![Настройка Docker](./media/quickstarts/formre-configure-docker.png)
 
-7. Вот и все. Затем выберите **проверить и создать** , а затем — **создать** для развертывания веб-приложения. По завершении вы сможете получить доступ к веб-приложению по URL-адресу, указанному в **обзоре** ресурса.
+7. Вот и все. Затем выберите **проверить и создать**, а затем — **создать** для развертывания веб-приложения. По завершении вы сможете получить доступ к веб-приложению по URL-адресу, указанному в **обзоре** ресурса.
 
 > [!NOTE]
 > При создании веб-приложения можно также настроить авторизацию и проверку подлинности. Это не обязательно, чтобы начать работу. 
@@ -129,14 +129,14 @@ az container create \
   --memory 8 \
   --command-line "./run.sh eula=accept"
 ``` 
-# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
+# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
 ```azurecli
 DNS_NAME_LABEL=aci-demo-$RANDOM
 
 az container create \
   --resource-group <resource_group_name> \
   --name <name> \
-  --image mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview \
+  --image mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview \
   --ports 3000 \
   --dns-name-label $DNS_NAME_LABEL \
   --location <region name> \

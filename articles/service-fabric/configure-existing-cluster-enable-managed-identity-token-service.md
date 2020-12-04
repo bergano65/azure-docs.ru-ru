@@ -3,20 +3,19 @@ title: Настройка поддержки управляемого удост
 description: Вот как можно включить поддержку управляемых удостоверений в существующем кластере Azure Service Fabric.
 ms.topic: article
 ms.date: 03/11/2019
-ms.custom: sfrev
-ms.openlocfilehash: 722c507300cc5766d162f336f77f60293c5c90dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7bcba34e941f6fee038aa475d7c0869eb65aca2e
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257607"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574706"
 ---
 # <a name="configure-managed-identity-support-in-an-existing-service-fabric-cluster"></a>Настройка поддержки управляемого удостоверения в существующем кластере Service Fabric
 
 Чтобы использовать [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) в Service Fabric приложениях, сначала включите *службу токенов управляемого удостоверения* в кластере. Эта служба отвечает за проверку подлинности Service Fabric приложений с помощью их управляемых удостоверений и получение маркеров доступа от их имени. После включения службы ее можно увидеть в Service Fabric Explorer в разделе **System (система** ) в левой области, работающей под именем **Fabric:/System/манажедидентититокенсервице**.
 
 > [!NOTE]
-> Для включения **службы токенов управляемого удостоверения**требуется среда выполнения Service Fabric версии 6.5.658.9590 или выше.  
+> Для включения **службы токенов управляемого удостоверения** требуется среда выполнения Service Fabric версии 6.5.658.9590 или выше.  
 >
 > Service Fabric версию кластера можно найти в портал Azure, открыв ресурс кластера и установив свойство **версия Service Fabric** в разделе **основные** сведения.
 >

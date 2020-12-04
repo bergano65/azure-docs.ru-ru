@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 439337233e24dfcae2c8c911a9224fd3394d6846
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a7e9cdb18d109abeef7d7d7237444ac55f9e7da1
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462687"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576355"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью несвязанного с сервером пула SQL в предварительной версии Azure синапсе Link
 
@@ -33,6 +33,12 @@ ms.locfileid: "96462687"
 
 ## <a name="overview"></a>Обзор
 
+Бессерверный пул SQL позволяет запрашивать Azure Cosmos DB аналитического хранилища с помощью `OPENROWSET` функции. 
+- `OPENROWSET` со встроенным ключом. Этот синтаксис можно использовать для запроса коллекций Azure Cosmos DB без необходимости подготовки учетных данных.
+- `OPENROWSET` указанные учетные данные, содержащие ключ учетной записи Cosmos DB. Этот синтаксис можно использовать для создания представлений в Azure Cosmos DB коллекциях.
+
+### <a name="openrowset-with-key"></a>[OPENROWSET с ключом](#tab/openrowset-key)
+
 Для поддержки запросов и анализа данных в Azure Cosmos DBном аналитическом хранилище серверный пул SQL использует следующий `OPENROWSET` синтаксис:
 
 ```sql
@@ -45,17 +51,39 @@ OPENROWSET(
 
 Строка подключения Azure Cosmos DB указывает имя учетной записи Azure Cosmos DB, имя базы данных, главный ключ учетной записи базы данных и необязательное имя региона для `OPENROWSET` функции.
 
-> [!IMPORTANT]
-> Убедитесь, что используются некоторые параметры сортировки базы данных UTF-8, например, `Latin1_General_100_CI_AS_SC_UTF8` поскольку строковые значения в Azure Cosmos DB аналитическом хранилище кодируются как текст в кодировке UTF-8.
-> Несоответствие кодировки текста в файле и параметров сортировки может привести к непредвиденным ошибкам преобразования текста.
-> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью инструкции T-SQL `alter database current collate Latin1_General_100_CI_AI_SC_UTF8` .
-
 Строка подключения имеет следующий формат:
 ```sql
 'account=<database account name>;database=<database name>;region=<region name>;key=<database account master key>'
 ```
 
 Имя контейнера Azure Cosmos DB указывается без кавычек в `OPENROWSET` синтаксисе. Если имя контейнера содержит специальные символы, например тире (-), имя должно быть заключено в квадратные скобки ( `[]` ) в `OPENROWSET` синтаксисе.
+
+### <a name="openrowset-with-credential"></a>[OPENROWSET с учетными данными](#tab/openrowset-credential)
+
+Можно использовать `OPENROWSET` синтаксис, который ссылается на учетные данные:
+
+```sql
+OPENROWSET( 
+       PROVIDER = 'CosmosDB',
+       CONNECTION = '<Azure Cosmos DB connection string without account key>',
+       OBJECT = '<Container name>',
+       [ CREDENTIAL | SERVER_CREDENTIAL ] = '<credential name>'
+    )  [ < with clause > ] AS alias
+```
+
+В этом случае строка подключения Azure Cosmos DB не содержит ключ. Строка подключения имеет следующий формат:
+```sql
+'account=<database account name>;database=<database name>;region=<region name>'
+```
+
+Главный ключ учетной записи базы данных помещается в учетные данные уровня сервера или учетные данные области базы данных. 
+
+---
+
+> [!IMPORTANT]
+> Убедитесь, что используются некоторые параметры сортировки базы данных UTF-8, например, `Latin1_General_100_CI_AS_SC_UTF8` поскольку строковые значения в Azure Cosmos DB аналитическом хранилище кодируются как текст в кодировке UTF-8.
+> Несоответствие кодировки текста в файле и параметров сортировки может привести к непредвиденным ошибкам преобразования текста.
+> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью инструкции T-SQL `alter database current collate Latin1_General_100_CI_AI_SC_UTF8` .
 
 > [!NOTE]
 > Несерверный пул SQL не поддерживает запросы к Azure Cosmos DB хранилищу транзакций.
@@ -76,6 +104,9 @@ OPENROWSET(
 
 Самый простой способ исследовать данные в Azure Cosmos DB — использовать функцию автоматического вывода схемы. Пропустив `WITH` предложение из `OPENROWSET` инструкции, можно указать несерверному пулу SQL автоматическое обнаружение (выводить) схему аналитического хранилища контейнера Azure Cosmos DB.
 
+
+### <a name="openrowset-with-key"></a>[OPENROWSET с ключом](#tab/openrowset-key)
+
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET( 
@@ -83,6 +114,25 @@ FROM OPENROWSET(
        'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
        EcdcCases) as documents
 ```
+
+### <a name="openrowset-with-credential"></a>[OPENROWSET с учетными данными](#tab/openrowset-credential)
+
+```sql
+/*  Setup - create server-level or database scoped credential with Azure Cosmos DB account key:
+    CREATE CREDENTIAL MyCosmosDbAccountCredential
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+*/
+SELECT TOP 10 *
+FROM OPENROWSET(
+      PROVIDER = 'CosmosDB',
+      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
+      OBJECT = 'EcdcCases',
+      SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
+    ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
+```
+
+---
+
 В предыдущем примере мы предзадали бессерверному пулу SQL подключаться к `covid` базе данных в учетной записи Azure Cosmos DB, `MyCosmosDbAccount` прошедшей проверку подлинности с помощью Azure Cosmos DB ключа (фиктивного в предыдущем примере). Затем мы обратились к `EcdcCases` аналитическому хранилищу контейнера в `West US 2` регионе. Поскольку нет проекции конкретных свойств, `OPENROWSET` функция возвратит все свойства из Azure Cosmos DB элементов.
 
 Предполагая, что элементы в контейнере Azure Cosmos DB имеют `date_rep` `cases` свойства, и, `geo_id` Результаты этого запроса показаны в следующей таблице.
@@ -119,6 +169,7 @@ FROM OPENROWSET(
 
 Эти плоские документы JSON в Azure Cosmos DB могут быть представлены в виде набора строк и столбцов в синапсе SQL. `OPENROWSET`Функция позволяет указать подмножество свойств, которые необходимо считать, и точные типы столбцов в `WITH` предложении:
 
+### <a name="openrowset-with-key"></a>[OPENROWSET с ключом](#tab/openrowset-key)
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
@@ -127,7 +178,21 @@ FROM OPENROWSET(
        EcdcCases
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
-
+### <a name="openrowset-with-credential"></a>[OPENROWSET с учетными данными](#tab/openrowset-credential)
+```sql
+/*  Setup - create server-level or database scoped credential with Azure Cosmos DB account key:
+    CREATE CREDENTIAL MyCosmosDbAccountCredential
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+*/
+SELECT TOP 10 *
+FROM OPENROWSET(
+      PROVIDER = 'CosmosDB',
+      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
+      OBJECT = 'EcdcCases',
+      SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
+    ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
+```
+---
 Результат этого запроса может выглядеть, как в следующей таблице:
 
 | date_rep | cases | geo_id |
@@ -137,6 +202,26 @@ FROM OPENROWSET(
 | 2020-08-11 | 163 | Сервер отчетов |
 
 Дополнительные сведения о типах SQL, которые следует использовать для Azure Cosmos DB значений, см. в разделе [правила сопоставления типов SQL](#azure-cosmos-db-to-sql-type-mappings) в конце статьи.
+
+## <a name="create-view"></a>Создать представление
+
+Определив схему, можно подготовить представление поверх данных Azure Cosmos DB. Ключ учетной записи Azure Cosmos DB следует размещать в отдельных учетных данных и ссылаться на эти учетные данные из `OPENROWSET` функции. Не оставляйте ключ учетной записи в определении представления.
+
+```sql
+CREATE CREDENTIAL MyCosmosDbAccountCredential
+WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+GO
+CREATE OR ALTER VIEW EcdcCases
+AS SELECT *
+FROM OPENROWSET(
+      PROVIDER = 'CosmosDB',
+      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
+      OBJECT = 'EcdcCases',
+      SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
+    ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
+```
+
+Не используйте `OPENROWSET` без явно определенных схем, так как это может повлиять на производительность. Убедитесь, что используются наименьшие возможные размеры столбцов (например, VARCHAR (100) вместо VARCHAR (8000) по умолчанию. Необходимо использовать некоторые параметры сортировки UTF-8 в качестве параметров сортировки базы данных по умолчанию или задать их как явные параметры сортировки столбцов, чтобы избежать [проблем с преобразованием UTF-8](/troubleshoot/reading-utf8-text). Параметры сортировки `Latin1_General_100_BIN2_UTF8` обеспечивают лучшую производительность при Yu фильтрации данных с помощью некоторых строковых столбцов.
 
 ## <a name="query-nested-objects-and-arrays"></a>Запрос вложенных объектов и массивов
 
@@ -349,7 +434,7 @@ GROUP BY geo_id
 
 Возможные ошибки и действия по устранению неполадок перечислены в следующей таблице.
 
-| Error | Первопричина |
+| Ошибка | Первопричина |
 | --- | --- |
 | Синтаксические ошибки:<br/> — Неправильный синтаксис около "OPENROWSET"<br/> - `...` не является распознаваемым параметром поставщика BULK OPENROWSET.<br/> — Неправильный синтаксис рядом с `...` | Возможные основные причины:<br/> — Не использовать CosmosDB в качестве первого параметра.<br/> — Использование строкового литерала вместо идентификатора в третьем параметре.<br/> — Не указывает третий параметр (имя контейнера). |
 | Ошибка в строке подключения CosmosDB. | — Учетная запись, база данных или ключ не указаны. <br/> — Есть несколько параметров в строке подключения, которая не распознана.<br/> — Точка с запятой ( `;` ) помещается в конец строки соединения. |

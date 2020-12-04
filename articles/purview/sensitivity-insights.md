@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: beaa231eddd57e29578a1d69ee30af05ce7c8d0f
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 74f4391fcd071ac510fc66b2f8bc36ec4549dc47
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554378"
+ms.locfileid: "96575760"
 ---
 # <a name="sensitivity-label-insights-about-your-data-in-azure-purview"></a>Метка чувствительности к данным в Azure зрения
 
@@ -75,6 +75,7 @@ ms.locfileid: "96554378"
    |**Верхние метки применены к таблицам**     | Показывает метки верхнего уровня конфиденциальности, применяемые к таблицам базы данных в данных. |   
    |  **Действие добавления меток**  |  Отображает отдельные графы для файлов и таблиц, каждый из которых отображает количество файлов или таблиц, помеченных за выбранный промежуток времени. <br>**По умолчанию**: 30 дней<br>Выберите фильтр **времени** над диаграммами, чтобы выбрать другой интервал времени для показа.    |
    |    |    |
+
 ## <a name="sensitivity-labeling-insights-drilldown"></a>Детализация метки чувствительности Insights
 
 В любом из приведенных ниже диаграмм с учетом **метки аналитики** выберите ссылку **Просмотреть дополнительные** сведения для получения дополнительных сведений:
@@ -98,6 +99,7 @@ ms.locfileid: "96554378"
 |**Детализация углублением**     | Чтобы выполнить детализацию по определенной метке, выберите имя в столбце **Метка чувствительности** , чтобы просмотреть **метку по исходному** отчету. <br><br>В этом отчете отображаются данные для выбранной метки, включая имя источника, тип источника, идентификатор подписки и количество классифицированных файлов и таблиц.      |
 |**Обзор ресурсов**     |  Чтобы просмотреть активы, найденные с определенной меткой или источником, выберите одну или несколько меток или источников в зависимости от просматриваемого отчета, а затем выберите **Обзор ресурсов** :::image type="icon" source="media/insights/ico-browse-assets.png" border="false"::: над фильтрами. <br><br>В результатах поиска отображаются все активы с метками, найденные для выбранного фильтра.  Дополнительные сведения см. [в статье Поиск в каталоге данных Azure зрения](how-to-search-catalog.md).       |
 | | |
+
 ## <a name="sensitivity-label-integration-with-microsoft-365-compliance"></a>Интеграция метки конфиденциальности с соответствием Microsoft 365
 
 Закройте интеграцию с [Microsoft Information Protection](/microsoft-365/compliance/information-protection) , предлагаемой в Microsoft 365, означает, что зрения позволяет выполнять прямые способы расширения видимости данных и классификации и маркировки данных.
@@ -106,17 +108,11 @@ ms.locfileid: "96554378"
 
 Дополнительные сведения см. [в разделе Автоматическая маркировка данных в Azure зрения](create-sensitivity-label.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об отчетах Azure зрения Insights
-> [!div class="nextstepaction"]
-> [Глоссарий](glossary-insights.md)
+Дополнительные сведения об этих отчетах Azure зрения Insights:
 
-> [!div class="nextstepaction"]
-> [Просмотр аналитических сведений](scan-insights.md)
-
-> [!div class="nextstepaction"]
-> [Аналитика классификации](./classification-insights.md)
-
-> [!div class="nextstepaction"]
-> [Аналитика расширений файлов](file-extension-insights.md)
+- [Глоссарий](glossary-insights.md)
+- [Просмотр аналитических сведений](scan-insights.md)
+- [Аналитика классификации](./classification-insights.md)
+- [Аналитика расширений файлов](file-extension-insights.md)

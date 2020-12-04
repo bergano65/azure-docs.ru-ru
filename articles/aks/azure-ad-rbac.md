@@ -5,12 +5,12 @@ description: Узнайте, как использовать членство в
 services: container-service
 ms.topic: article
 ms.date: 07/21/2020
-ms.openlocfilehash: f49e9f6b4f5aaf58ff055043b52cfe99e3e39f19
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 89bf785a082ff479dcd824a773123fcd061dc22d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684293"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576117"
 ---
 # <a name="control-access-to-cluster-resources-using-kubernetes-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей Kubernetes и удостоверений Azure Active Directory в службе Kubernetes Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "94684293"
 
 В этой статье показано, как использовать членство в группах Azure AD для управления доступом к пространствам имен и ресурсам кластера с помощью Kubernetes RBAC в кластере AKS. Примеры групп и пользователей создаются в Azure AD, а затем роли и Ролебиндингс создаются в кластере AKS, чтобы предоставить соответствующие разрешения на создание и просмотр ресурсов.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас уже есть кластер AKS с поддержкой интеграции с Azure AD. Если вам нужен кластер AKS, см. статью [интеграция Azure Active Directory с AKS][azure-ad-aks-cli].
 

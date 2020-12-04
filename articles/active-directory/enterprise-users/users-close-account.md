@@ -5,19 +5,20 @@ services: active-directory
 author: rolyon
 manager: daveba
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.topic: how-to
 ms.workload: identity
-ms.date: 11/20/2020
+ms.date: 12/03/2020
 ms.author: rolyon
 ms.reviewer: ''
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a5042df0c2ebe9f1216ded1354c7beba28c911
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 252c993f5679d80cda97a6fade08f5f92489840d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95996786"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575590"
 ---
 # <a name="close-your-work-or-school-account-in-an-unmanaged-azure-ad-organization"></a>Закрытие рабочей или учебной учетной записи в неуправляемой Организации Azure AD
 
@@ -52,7 +53,7 @@ ms.locfileid: "95996786"
 
     ![Мои запросы к данным — подтвердить закрытие](./media/users-close-account/confirm-close.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
 - [Удаление пользователя из неуправляемого клиента](/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant)

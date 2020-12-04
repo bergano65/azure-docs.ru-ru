@@ -7,19 +7,20 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/15/2020
+ms.date: 12/03/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8684b2af99eda00fbba47db444fcf6ee19117a1e
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 296679135063e2c7e1b7f0e3ffd193c8f18c3acf
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95488527"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576270"
 ---
 # <a name="user-management-enhancements-preview-in-azure-active-directory"></a>Улучшения управления пользователями (Предварительная версия) в Azure Active Directory
 
@@ -141,7 +142,7 @@ ms.locfileid: "95488527"
 Что случилось с исходным столбцом? | **Исходный** столбец был заменен другими столбцами, предоставляющими аналогичные сведения, в то же время позволяя фильтровать по этим значениям независимо друг от друга. Примеры: **тип создания**, **синхронизированный каталог** и **Издатель удостоверений**.
 Что случилось со столбцом имени пользователя? | Столбец **имя пользователя** по-прежнему существует, но был переименован в **имя участника-пользователя**. Это лучше отражает сведения, содержащиеся в этом столбце. Вы также заметите, что теперь полное имя участника-пользователя отображается для гостей B2B. Это соответствует тому, что вы получаете в Microsoft Graph.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Операции пользователя
 

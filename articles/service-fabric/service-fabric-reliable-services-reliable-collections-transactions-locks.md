@@ -3,13 +3,12 @@ title: Транзакции и режимы блокировки в надежн
 description: Транзакции и блокировка диспетчера надежных состояний и надежных коллекций Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 5/1/2017
-ms.custom: sfrev
-ms.openlocfilehash: d1094462ebabcea1fbead3d5b30fdfb8dda6463a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57ca46047641b79d5e4c50ede4a27e16dcec5d89
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500288"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576729"
 ---
 # <a name="transactions-and-lock-modes-in-azure-service-fabric-reliable-collections"></a>Транзакции и режимы блокировки в надежных коллекциях Azure Service Fabric
 
@@ -68,10 +67,10 @@ ms.locfileid: "87500288"
 
 Ниже приведена таблица совместимости блокировок.
 
-| Запрос \ Предоставлено | None | Совмещаемая блокировка | Update | Монопольная блокировка |
+| Запрос \ Предоставлено | Нет | Общий | Обновление | Монопольная блокировка |
 | --- |:--- |:--- |:--- |:--- |
-| Совмещаемая блокировка |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
-| Update |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
+| Общий |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
+| Обновление |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
 | Монопольная блокировка |Нет конфликтов |Conflict |Conflict |Conflict |
 
 Аргумент timeout в API-интерфейсах надежных коллекций используется для обнаружения взаимоблокировок.
