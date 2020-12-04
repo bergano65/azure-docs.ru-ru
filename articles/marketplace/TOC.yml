@@ -50,7 +50,7 @@
         - name: Участие партнеров в совместных продажах
           href: marketplace-co-sell.md
         - name: Вариант совместной продажи в Центре партнеров
-          href: partner-center-portal/commercial-marketplace-co-sell.md
+          href: commercial-marketplace-co-sell.md
         - name: Перепродажа через партнеров CSP
           href: cloud-solution-providers.md
         - name: Руководство по регистрации для участия в программе Connect
@@ -382,9 +382,9 @@
     - name: Поддерживаемые страны и регионы
       href: sell-from-countries.md
     - name: Коды стран и регионов для совместной продажи
-      href: partner-center-portal/commercial-marketplace-co-sell-countries.md
+      href: commercial-marketplace-co-sell-countries.md
     - name: Коды состояния для совместной продажи
-      href: partner-center-portal/commercial-marketplace-co-sell-states.md
+      href: commercial-marketplace-co-sell-states.md
     - name: Категории и подкатегории
       href: categories.md
     - name: Поддерживаемые теги HTML

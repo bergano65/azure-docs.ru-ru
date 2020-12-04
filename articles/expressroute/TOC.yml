@@ -145,7 +145,11 @@
     - name: Управление пирингами
       items:
         - name: Включение и отключение пиринга
-          href: expressroute-howto-reset-peering.md
+          items:
+            - name: Портал Azure
+              href: expressroute-howto-reset-peering-portal.md
+            - name: Azure PowerShell
+              href: expressroute-howto-reset-peering.md
         - name: Переход с общедоступного пиринга на пиринг Майкрософт
           href: how-to-move-peering.md
     - name: Шифрование трафика по каналам
