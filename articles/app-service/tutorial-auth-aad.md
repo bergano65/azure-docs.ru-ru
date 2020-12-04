@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 04/29/2020
 ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 8620d6bc403882cb308405e8ffb4412917d0c6f1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8c3fca6cf7782c3aaac91388a8f8395e288f5ea5
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993482"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558748"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство по Сквозная проверка подлинности и авторизации в Службе приложений Azure
 
@@ -55,8 +55,9 @@ ms.locfileid: "95993482"
 
 Для работы с этим руководством сделайте следующее:
 
-* <a href="https://git-scm.com/" target="_blank">установите Git</a>;
-* <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">установите пакет SDK для .NET Core 3.1 с последними обновлениями</a>.
+- <a href="https://git-scm.com/" target="_blank">установите Git</a>;
+- <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">Установите последний пакет SDK для .NET Core 3.1.</a>
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="create-local-net-core-app"></a>Создание локального приложения .NET Core
 
@@ -77,8 +78,6 @@ dotnet run
 ![Выполняющийся локально API ASP.NET Core](./media/tutorial-auth-aad/local-run.png)
 
 Чтобы остановить ASP.NET Core в любое время, нажмите клавиши `Ctrl+C` в окне терминала.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="deploy-apps-to-azure"></a>Развертывание приложений в Azure
 

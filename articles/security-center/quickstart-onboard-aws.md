@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 7aa65cb8e37ce48a59c276fdf2631f75397d3236
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 23609613cace2f9be90ad5c88d4d51bb1c2f1a9b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122509"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573516"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Подключение учетных записей AWS к Центру безопасности Azure
 
@@ -48,6 +48,8 @@ ms.locfileid: "96122509"
 
 
 ## <a name="connect-your-aws-account"></a>Подключение к учетной записи AWS
+
+Чтобы создать облачный соединитель AWS, сделайте следующее. 
 
 ### <a name="step-1-set-up-aws-security-hub"></a>Шаг 1. Настройка центра безопасности AWS
 
@@ -160,7 +162,7 @@ AWS Systems Manager требуется для автоматизации зад�
 
         Дополнительные сведения см. в статье [Использование тегов для упорядочения ресурсов Azure и создания иерархии управления](../azure-resource-manager/management/tag-resources.md).
 
-### <a name="step-7-confirmation"></a>Шаг 7. Подтверждение
+### <a name="step-6-confirmation"></a>Шаг 6. Подтверждение
 
 После успешного создания соединителя и правильной настройки центра безопасности AWS выполняются следующие действия:
 

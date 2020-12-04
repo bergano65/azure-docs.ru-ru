@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: bbaa44fb64becee85b29cd44bee44e593ec55bf6
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 1095222f332e7a66f684feddf1fdab17704ca658
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372648"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573550"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Подключение учетных записей GCP к Центру безопасности Azure
 
@@ -44,12 +44,14 @@ ms.locfileid: "94372648"
 
 ## <a name="connect-your-gcp-account"></a>Подключение к учетной записи GCP
 
+Чтобы создать облачный соединитель GCP, сделайте следующее. 
+
 ### <a name="step-1-set-up-gcp-security-command-center-with-security-health-analytics"></a>Шаг 1. Настройка центра управления безопасностью GCP и его службы анализа работоспособности системы безопасности
 
 Для всех проектов GCP вашей организации также необходимо выполнить следующие действия:
 
-1. Настроить **центр управления безопасностью GCP** , выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/quickstart-scc-setup).
-1. Включить службу **анализа работоспособности системы безопасности** , выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/how-to-use-security-health-analytics).
+1. Настроить **центр управления безопасностью GCP**, выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/quickstart-scc-setup).
+1. Включить службу **анализа работоспособности системы безопасности**, выполнив [эти инструкции из документации по GCP](https://cloud.google.com/security-command-center/docs/how-to-use-security-health-analytics).
 1. Проверить, поступают ли данные в центр управления безопасностью.
 
 Инструкции по подключению среды GCP для настройки системы безопасности см. в соответствующих рекомендациях Google. Интеграция центра управления безопасностью Google расширяет его возможности и увеличивает потребление ресурсов, что может отразиться на сумме выставляемых счетов.
@@ -78,7 +80,7 @@ ms.locfileid: "94372648"
 1. В **меню навигации** в разделе **IAM и администрирования** выберите элемент **IAM**.
     1. Переключитесь на уровень организации.
     1. Нажмите кнопку **ADD** (Добавить).
-    1. В поле **New members** (Новые участники) вставьте **адрес электронной почты** , скопированный ранее.
+    1. В поле **New members** (Новые участники) вставьте **адрес электронной почты**, скопированный ранее.
     1. Для параметра роли выберите вариант **Security Center Admin Viewer** (Наблюдатель администратора Центра безопасности) и нажмите кнопку Save (Сохранить).
         :::image type="content" source="./media/quickstart-onboard-gcp/iam-settings-gcp-permissions-admin-viewer.png" alt-text="Предоставление необходимых разрешений GCP":::
 
