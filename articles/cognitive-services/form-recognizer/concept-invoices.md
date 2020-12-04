@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: eb1be4c78be0eb7fb943700b168fa82ede4d3861
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9a3a6bd6489baea90ed4143b42a09e7d697bbc50
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458393"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602450"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Встроенная модель накладных форм распознавателя
 
@@ -74,7 +74,7 @@ API-интерфейс накладных извлекает ключевые п
 
 Служба накладных будет извлекать текст, таблицы и 26 полей счета. Ниже приведены поля, извлеченные из счета в ответе выходных данных JSON (в приведенных ниже выходных данных используется этот [пример счета](./media/sample-invoice.jpg)).  
 
-|Название| Тип | Описание | Текст | Value (стандартизованные выходные данные) |
+|Имя| Тип | Описание | Текстовый | Value (стандартизованные выходные данные) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | строка | Клиент, которому выставляется счет | Корпорация Майкрософт |  |
 | CustomerId | строка | Идентификатор ссылки для клиента | CID-12345 |  |
@@ -112,4 +112,4 @@ API-интерфейс накладных извлекает ключевые п
 ## <a name="see-also"></a>См. также
 
 * [Что такое Распознаватель документов?](./overview.md)
-* [Справочная документация по REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeInvoiceAsync)
+* [Справочная документация по REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/5ed8c9843c2794cbb1a96291)

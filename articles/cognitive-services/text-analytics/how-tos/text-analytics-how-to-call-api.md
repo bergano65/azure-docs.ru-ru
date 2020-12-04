@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 5985c30973f703b897fa2eedc2be3b939d97900b
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 3d3c452dd883316520e0c28f01c241af74d597c8
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559003"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602790"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -260,6 +260,8 @@ example.json
 3. Добавьте в `Operation-Location` запрос.
 
 4. Ответ будет отдельным документом JSON с элементом для каждого идентификатора документа, указанного в запросе.
+
+Обратите внимание, что для асинхронных `/analyze` `/health` операций или, результаты запроса GET на шаге 2 выше доступны в течение 24 часов с момента создания задания.  На этот раз указывается `expirationDateTime` значение в ответе Get.  По истечении этого периода результаты очищаются и больше не будут доступны для извлечения.    
 
 ## <a name="example-api-responses"></a>Примеры ответов API
  

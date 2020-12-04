@@ -1,6 +1,6 @@
 ---
-title: Отправка запросов к хранилищу данных с помощью бесерверного пула SQL (предварительная версия)
-description: В этой статье описывается, как выполнять запросы к службе хранилища Azure с помощью ресурса бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics.
+title: Отправка запросов к хранилищу данных с помощью бессерверного пула SQL
+description: В этой статье описывается, как выполнять запросы к службе хранилища Azure с помощью ресурса бессерверного пула SQL в Azure Synapse Analytics.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 81a892b10996686cf58d45867e3d889505b5d3d9
-ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
+ms.openlocfilehash: 967250cf29d1f0248f296cb545a764bd8e611773
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299587"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462668"
 ---
-# <a name="query-storage-files-with-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Отправка запросов к файлам хранилища с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics
+# <a name="query-storage-files-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Отправка запросов к файлам хранилища с помощью бессерверного пула SQL в Azure Synapse Analytics
 
-Бессерверный пул SQL(предварительная версия) позволяет запрашивать данные в озере данных. Предоставляемая контактная зона для запросов T-SQL позволяет запрашивать частично структурированные и неструктурированные данные. Возможность запрашивания данных поддерживает следующие аспекты T-SQL:
+Бессерверный пул SQL позволяет запрашивать данные в озере данных. Предоставляемая контактная зона для запросов T-SQL позволяет запрашивать частично структурированные и неструктурированные данные. Возможность запрашивания данных поддерживает следующие аспекты T-SQL:
 
 - Полная контактная зона инструкции [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), включая большинство [функций и операторов SQL](overview-features.md).
 - CREATE EXTERNAL TABLE AS SELECT ([CETAS](develop-tables-cetas.md)) создает [внешнюю таблицу](develop-tables-external-tables.md), а затем в параллельном режиме экспортирует результаты инструкции SELECT Transact-SQL в службу хранилища Azure.
@@ -222,7 +222,7 @@ OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*
 ### <a name="tools"></a>Инструменты
 
 Ниже указаны средства, необходимые для создания запросов.
-    - Azure Synapse Studio (предварительная версия)
+    - Azure Synapse Studio 
     - Azure Data Studio
     - SQL Server Management Studio
 

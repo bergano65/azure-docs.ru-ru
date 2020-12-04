@@ -4,18 +4,18 @@ description: Инвентаризация службы хранилища Azure 
 services: storage
 author: mhopkins-msft
 ms.service: storage
-ms.date: 11/04/2020
+ms.date: 12/03/2020
 ms.topic: conceptual
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 149fb9c888c54ea45d273890f3fe2cd59730fa01
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 86ded3dea819702631b1fa04dbc56f727566fc98
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96355078"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602688"
 ---
 # <a name="use-azure-storage-blob-inventory-to-manage-blob-data-preview"></a>Использование инвентаризации BLOB-объектов службы хранилища Azure для управления данными больших двоичных объектов (Предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "96355078"
 
 ## <a name="availability"></a>Доступность
 
-Инвентаризация BLOB-объектов поддерживается для учетных записей общего назначения версии 2 (GPv2), хранилища блочных BLOB-объектов уровня "Премиум" и Azure Data Lake Storage Gen2 (ADLS 2-го поколения).
+Инвентаризация BLOB-объектов поддерживается как для общего назначения версии 2 (GPv2), так и для учетных записей хранения блочных BLOB-объектов класса Premium. Эта функция поддерживается с включенной функцией [иерархического пространства имен](data-lake-storage-namespace.md) или без нее.
 
 ### <a name="preview-regions"></a>Регионы предварительной версии
 

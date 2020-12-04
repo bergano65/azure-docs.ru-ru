@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 8492e2722e456b689e23041726f6eaf94e284c3b
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 1ac5e32b454cfc1adafb1f54b01d2a1a302908a4
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93028131"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600441"
 ---
 # <a name="use-active-learning-to-improve-your-knowledge-base"></a>Использование активного обучения для расширения базы знаний
 
@@ -24,6 +24,8 @@ ms.locfileid: "93028131"
 Активное обучение поддерживается в среде выполнения версии 4.4.0 и выше. Если ваша база знаний создана с помощью более ранней версии, [обновите среду выполнения](set-up-qnamaker-service-azure.md#get-the-latest-runtime-updates), чтобы воспользоваться этой функцией.
 
 ## <a name="turn-on-active-learning-for-alternate-questions"></a>Включение активного обучения для альтернативных вопросов
+
+# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
 По умолчанию активное обучение отключено. Чтобы просматривать предлагаемые вопросы, включите эту функцию. После включения активного обучения необходимо отправить сведения из клиентского приложения в QnA Maker. Дополнительные сведения см. в разделе [архитектурный поток для использования женератеансвер и обучение API-интерфейсов из Bot](improve-knowledge-base.md#architectural-flow-for-using-generateanswer-and-train-apis-from-a-bot).
 
@@ -43,6 +45,12 @@ ms.locfileid: "93028131"
     > Точная версия на предыдущем рисунке показана только в качестве примера. Ваша версия может быть другой.
 
     После включения **активного обучения** база знаний предлагает новые вопросы через регулярные интервалы в соответствии с вопросами, отправленными пользователем. Вы можете отключить **активное обучение** с помощью этого же переключателя.
+    
+# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
+
+По умолчанию активное обучение включено **в QnA Maker** Managed (Предварительная версия). Чтобы просмотреть предлагаемые альтернативные вопросы, [Используйте параметры просмотра](../How-To/improve-knowledge-base.md#view-suggested-questions) на странице Редактирование.
+
+---
 
 ## <a name="review-suggested-alternate-questions"></a>Ознакомьтесь с предлагаемыми альтернативными вопросами
 

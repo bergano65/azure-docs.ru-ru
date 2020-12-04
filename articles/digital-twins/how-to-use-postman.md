@@ -1,5 +1,5 @@
 ---
-title: Сделать запросы с помощью POST
+title: Отправка запросов с помощью Postman
 titleSuffix: Azure Digital Twins
 description: Узнайте, как настроить и использовать POST для тестирования интерфейсов API цифровых двойников Azure.
 ms.author: baanders
@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: f9be9dd94aad8c206b562f2c984ec944f70d3957
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5dbe161af172b65919328fca0b272f3b658f1b32
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188045"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600495"
 ---
 # <a name="how-to-use-postman-to-send-requests-to-the-azure-digital-twins-apis"></a>Как использовать POST для отправки запросов в интерфейсы API цифровых двойников Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "96188045"
 
 Чтобы продолжить работу с примером запроса, в этой статье будет использоваться API запросов (и его [Справочная документация](/rest/api/digital-twins/dataplane/query/querytwins)) для запроса всех цифровых двойников в экземпляре.
 
-1. Получите URL-адрес запроса и тип из справочной документации. Для API запроса это *POST https://digitaltwins-name.digitaltwins.azure.net/query?api-version=2020-10-31*.
+1. Получите URL-адрес запроса и тип из справочной документации. Для API запроса это *POST `https://digitaltwins-name.digitaltwins.azure.net/query?api-version=2020-10-31`*.
 1. В окне Post настройте тип запроса и введите URL-адрес запроса, заполняя в URL-адресе заполнители в соответствии с требованиями. Здесь вы будете использовать **имя узла** экземпляра из раздела [*предварительных требований*](#prerequisites) .
     
    :::image type="content" source="media/how-to-use-postman/postman-request-url.png" alt-text="В сведениях о новом запросе URL-адрес запроса из справочной документации был заполнен в поле URL-адрес запроса." lightbox="media/how-to-use-postman/postman-request-url.png":::

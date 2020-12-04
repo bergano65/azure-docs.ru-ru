@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 0e07dc42a45a697b293e2ebc90bdd92aa924f071
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 85fd7fdba4c62f4837a419af44c83f7e46cb9e39
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302025"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601787"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -24,6 +24,7 @@ ms.locfileid: "96302025"
 * [Настройка приложения для использования входа по учетной записи Майкрософт](configure-authentication-provider-microsoft.md)
 * [Настройка приложения для использования имени входа Twitter](configure-authentication-provider-twitter.md)
 * [Настройка приложения для входа с помощью поставщика OpenID Connect Connect (Предварительная версия)](configure-authentication-provider-openid-connect.md)
+* [Настройка приложения для входа с использованием входа с помощью Apple (Предварительная версия)](configure-authentication-provider-apple.md)
 
 ## <a name="use-multiple-sign-in-providers"></a>Использование нескольких поставщиков входа
 
@@ -41,6 +42,7 @@ ms.locfileid: "96302025"
 <a href="/.auth/login/facebook">Log in with Facebook</a>
 <a href="/.auth/login/google">Log in with Google</a>
 <a href="/.auth/login/twitter">Log in with Twitter</a>
+<a href="/.auth/login/apple">Log in with Apple</a>
 ```
 
 Когда пользователь щелкнет одну из этих ссылок, откроется соответствующая страница для входа.
@@ -315,7 +317,6 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
         "enabled": <true|false>
     },
     "globalValidation": {
-        "requireAuthentication": <true|false>,
         "unauthenticatedClientAction": "RedirectToLoginPage|AllowAnonymous|Return401|Return403",
         "redirectToProvider": "<default provider alias>",
         "excludedPaths": [
@@ -349,13 +350,13 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
             }
         },
         "preserveUrlFragmentsForLogins": <true|false>,
-        "allowedExternalRedirectUri": [
+        "allowedExternalRedirectUrls": [
             "https://uri1.azurewebsites.net/",
             "https://uri2.azurewebsites.net/",
             "url_scheme_of_your_app://easyauth.callback"
         ],
         "cookieExpiration": {
-            "convention": "FixedTime|IdentityProviderDerived",
+            "convention": "FixedTime|IdentityDerived",
             "timeToExpiration": "<timespan>"
         },
         "nonce": {
@@ -437,13 +438,26 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
                 "consumerSecretSettingName": "APP_SETTING_CONTAINING TWITTER_CONSUMER_SECRET"
             }
         },
+        "apple": {
+            "enabled": <true|false>,
+            "registration": {
+                "clientId": "<client id>",
+                "clientSecretSettingName": "APP_SETTING_CONTAINING_APPLE_SECRET"
+            },
+            "login": {
+                "scopes": [
+                    "profile",
+                    "email"
+                ]
+            }
+        },
         "openIdConnectProviders": {
             "<providerName>": {
                 "enabled": <true|false>,
                 "registration": {
                     "clientId": "<client id>",
                     "clientCredential": {
-                        "secretSettingName": "<name of app setting containing client secret>"
+                        "clientSecretSettingName": "<name of app setting containing client secret>"
                     },
                     "openIdConnectConfiguration": {
                         "authorizationEndpoint": "<url specifying authorization endpoint>",
@@ -455,7 +469,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
                 },
                 "login": {
                     "nameClaimType": "<name of claim containing name>",
-                    "scope": [
+                    "scopes": [
                         "openid",
                         "profile",
                         "email"
@@ -486,7 +500,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 #### <a name="view-the-current-runtime-version"></a>Просмотр текущей версии среды выполнения
 
-Текущую версию промежуточного слоя проверки подлинности платформы можно просмотреть либо с помощью Azure CLI, либо с помощью одной из конечных точек HTTP built0 версии в приложении.
+Текущую версию промежуточного слоя проверки подлинности платформы можно просмотреть либо с помощью Azure CLI, либо через одну из встроенных конечных точек HTTP версии в приложении.
 
 ##### <a name="from-the-azure-cli"></a>Использование Azure CLI
 

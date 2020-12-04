@@ -11,12 +11,12 @@ ms.date: 09/30/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: Обработка документов
-ms.openlocfilehash: 5df8ced885768308369599d94c5734fa0620c507
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 7671d8d58ffbd0fca444eefe53c46c99a4e76d37
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360876"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96009336"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
@@ -42,8 +42,17 @@ ms.locfileid: "93360876"
 
 Чтобы протестировать веб-средство маркировки данных Распознавателя документов, перейдите на веб-сайт [FOTT](https://fott-preview.azurewebsites.net/).
 
+# <a name="v20"></a>[Версия 2.0](#tab/v2-0)
 > [!div class="nextstepaction"]
-> [Средство маркировки данных Распознавателя документов](https://fott-preview.azurewebsites.net/)
+> [Ознакомление с предварительно созданными моделями](https://fott.azurewebsites.net/)
+
+# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)
+> [!div class="nextstepaction"]
+> [Ознакомление с предварительно созданными моделями](https://fott-preview.azurewebsites.net/)
+
+---
+
+Чтобы опробовать Распознаватель документов, вам потребуется подписка Azure ([создайте ее бесплатно](https://azure.microsoft.com/free/cognitive-services)) и конечная точка или ключ [ресурса Распознавателя документов](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer). 
 
 
 ## <a name="set-up-the-sample-labeling-tool"></a>Настройка средства маркировки данных
@@ -68,8 +77,6 @@ ms.locfileid: "93360876"
 
 
 
-
-
 1. Получите контейнер средства маркировки данных с помощью команды `docker pull`.
 
     # <a name="v20"></a>[Версия 2.0](#tab/v2-0)    
@@ -78,7 +85,7 @@ ms.locfileid: "93360876"
     ```
     # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
     ```
-    docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview
+    docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview
     ```
 
     ---
@@ -91,7 +98,7 @@ ms.locfileid: "93360876"
     ```
     # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
     ```
-    docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview eula=accept    
+    docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview eula=accept    
     ```
 
     --- 
@@ -193,7 +200,7 @@ ms.locfileid: "93360876"
    1. Щелкните **+** , чтобы создать новый тег.
    1. Введите имя тега.
    1. Нажмите клавишу ВВОД, чтобы сохранить тег.
-1. В основном редакторе щелкните и выберите слова из выделенных текстовых элементов. В _предварительной версии 2.1_ также можно выбрать _метки выделения_, такие как переключатели и флажки, в качестве пар "ключ-значение". Распознаватель документов определит, является ли метка выделения "выбранной" или "не выбранной" как значение.
+1. В основном редакторе щелкните и выберите слова из выделенных текстовых элементов. В _версии 2.1, предварительная версия 2_ также можно выбрать _метки выделения_, такие как переключатели и флажки, в качестве пар "ключ — значение". Распознаватель документов определит, является ли метка выделения "выбранной" или "не выбранной" как значение.
 1. Щелкните тег, который вам нужно применить, или нажмите соответствующую клавишу. Клавиши с цифрами позволяют быстро присвоить любой из первых десяти тегов. Чтобы изменить порядок тегов, используйте значки со стрелками вверх и вниз на панели редактора тегов.
     > [!Tip]
     > При создании меток для форм воспользуйтесь следующими советами.

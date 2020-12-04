@@ -109,6 +109,10 @@
                   displayname: vnet
                 - name: 'Частные конечные точки, управляемые рабочей областью Synapse'
                   href: ./security/synapse-workspace-managed-private-endpoints.md
+                - name: Защита от кражи данных в рабочей области Synapse
+                  href: ./security/workspace-data-exfiltration-protection.md
+                - name: Рабочая область Synapse с центрами приватных каналов
+                  href: ./security/synapse-private-link-hubs.md
             - name: Сквозная проверка подлинности
               items:
                 - name: Azure Active Directory
@@ -121,8 +125,13 @@
             - name: Управление доступом
               items:
                 - name: Обзор
-                  href: ./security/access-control.md
-                  displayname: 'access, control'
+                  href: ./security/synapse-workspace-access-control-overview.md
+                - name: RBAC в Synapse
+                  href: ./security/synapse-workspace-synapse-rbac.md
+                - name: Роли RBAC в Synapse
+                  href: ./security/synapse-workspace-synapse-rbac-roles.md
+                - name: Основные сведения о ролях RBAC в Synapse
+                  href: ./security/synapse-workspace-understand-what-role-you-need.md
                 - name: Управляемое удостоверение рабочей области Synapse
                   href: ./security/synapse-workspace-managed-identity.md
     - name: Практические руководства
@@ -135,11 +144,19 @@
           items:
             - name: Управление контролем доступа
               items:
+                - name: Настройка управления доступом
+                  href: ./security/how-to-set-up-access-control.md
+                - name: Проверка назначений ролей в Synapse
+                  href: ./security/how-to-review-synapse-rbac-role-assignments.md
+                - name: Управление назначением ролей в Synapse
+                  href: ./security/how-to-manage-synapse-rbac-role-assignments.md
                 - name: Настройка разрешений для управляемого удостоверения рабочей области Azure Synapse
                   href: security/how-to-grant-workspace-managed-identity-permissions.md
                   displayname: grant
-                - name: Настройка управления доступом
-                  href: security/how-to-set-up-access-control.md
+            - name: Защита от кражи данных
+              items:
+                - name: Создание и администрирование рабочей области с защитой от кражи данных
+                  href: security/how-to-create-a-workspace-with-data-exfiltration-protection.md
             - name: Управление частными конечными точками
               items:
                 - name: Настройка управляемых частных конечных точек для источников данных

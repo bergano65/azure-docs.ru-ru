@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bf314510a8569a825ccd309ec855e3ff186bba86
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 7a1b178450a1aa06db07d7b1ef525f7f781db9ef
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023383"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602824"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
@@ -114,7 +114,7 @@ Citrix расширяет ценность виртуальных рабочих
 
 Девицетруст расширяет ценность виртуального рабочего стола Windows с помощью его контекстной технологии безопасности. Девицетруст включает условный доступ для защищенного доступа к виртуальным рабочим столам Windows, условный доступ к приложениям в виртуальном рабочем столе Windows и применения условных политик виртуальных рабочих столов Windows без какой-либо дополнительной инфраструктуры. Использование Девицетруст включает в себя мобильную, гибкую рабочую область, которая отвечает всем требованиям безопасности, соответствия и нормативных требований.
 
-- [Перейдите на веб-сайт партнера](https://devicetrust.com/wvd).
+- [Перейдите на веб-сайт партнера](https://devicetrust.com/).
 
 ## <a name="ekran-system"></a>Екран система
 

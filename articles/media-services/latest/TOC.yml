@@ -240,6 +240,9 @@
         - name: Видео по запросу
           displayName: 'failover, bcdr, HA, high availability'
           href: media-services-high-availability-encoding.md
+    - name: Архитектуры Служб мультимедиа
+      displayName: architectures
+      href: architectures-concept.md
     - name: Устранение неполадок
       items:
         - name: Часто задаваемые вопросы

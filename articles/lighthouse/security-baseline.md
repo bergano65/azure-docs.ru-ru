@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 10ad0b83f3c85b48f9d066e1feec8d8aac4dd057
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a6a1b41dd4ede055ba81c069c2164bb36da99876
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533678"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602314"
 ---
 # <a name="azure-security-baseline-for-azure-lighthouse"></a>Базовый план безопасности Azure для Azure Лигхсаусе
 
@@ -306,7 +306,7 @@ Azure Лигхсаусе предоставляет доступ к делеги
 
 ## <a name="logging-and-threat-detection"></a>Ведение журналов и обнаружение угроз
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-protection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
 
 ### <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: Включение обнаружения угроз для ресурсов Azure
 
@@ -676,7 +676,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 -   Стратегия исправления в различных сценариях угроз и атак
 
--   Internet ребро и входящая и исходящая стратегия/Azure/Security/benchmarks/Security-Controls-v2-Logging-Threat-protection
+-   Internet ребро и входящая и исходящая стратегия/Azure/Security/benchmarks/Security-Controls-v2-Logging-Threat-Detection
 -   Стратегия взаимодействия гибридного облака и локальной среды
 
 -   Актуальные артефакты безопасности сети (например, схемы сети, эталонная архитектура сети)
@@ -748,7 +748,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Azure Security Benchmark — ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Azure Security Benchmark — реагирование на инциденты](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Azure Security Benchmark — реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Рекомендации по обеспечению безопасности в Azure 4 — процесс: обновление процессов реагирования на инциденты для облака](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

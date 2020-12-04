@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/30/2020
+ms.date: 12/3/2020
 ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 77e34e4a18012f15b9e907e3b9efc1965b98f824
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3222c790ccd0cee936b246253a16b5c434c61c8
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612126"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602212"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы удостоверений Майкрософт
 
@@ -36,7 +36,7 @@ ms.locfileid: "91612126"
 | --- | --- |
 | `alg` | Должен иметь значение **RS256** |
 | `typ` | Должен иметь значение **JWT** |
-| `x5t` | Хэш сертификата X. 509 (также известный как *отпечаток*SHA-1) кодируется в шестнадцатеричное представление в виде строкового значения Base64. Например, если получен хэш сертификата X. 509 `84E05C1D98BCE3A5421D225B140B36E86A3D5534` (HEX), `x5t` утверждение будет иметь значение `hOBcHZi846VCHSJbFAs26Go9VTQ=` (Base64). |
+| `x5t` | Хэш сертификата X. 509 (также известный как *отпечаток* SHA-1) кодируется в шестнадцатеричное представление в виде строкового значения Base64url. Например, если получен хэш сертификата X. 509 `84E05C1D98BCE3A5421D225B140B36E86A3D5534` (HEX), `x5t` утверждение будет равно `hOBcHZi846VCHSJbFAs26Go9VTQ=` (Base64url). |
 
 ### <a name="claims-payload"></a>Утверждения (полезные данные)
 
@@ -136,7 +136,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 |`client_assertion_type`|`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`| Это фиксированное значение, указывающее, что используются учетные данные сертификата. |
 |`client_assertion`| JWT |Это созданное выше JWT. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Библиотека MSAL.NET обрабатывает этот сценарий](msal-net-client-assertions.md) в одной строке кода.
 

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 6f80d41001d11c52a00454ea2a593f3f1fce32db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: da88b8554d6c3214da9a386613538c237a318f73
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027661"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546915"
 ---
 ## <a name="download-and-install"></a>Загрузите и установите
 
@@ -53,15 +53,19 @@ ms.locfileid: "96027661"
 
 Введите `spx`, чтобы получить справку по интерфейсу командной строки службы "Речь".
 
-#### <a name="docker-install"></a>[Установка Docker](#tab/dockerinstall)
+#### <a name="docker-install-windows-linux-macos"></a>[Установка Docker (Windows, Linux, macOS)](#tab/dockerinstall)
 
-> [!NOTE]
-> Нужно установить <a href="https://www.docker.com/get-started" target="_blank">Docker Desktop для своей платформы <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+Чтобы установить CLI службы "Речь" в контейнере Docker:
 
-Выполните следующие действия, чтобы установить интерфейс командной строки службы "Речь" в контейнере Docker:
-
-1. В новой командной строке или в терминале введите следующую команду: `docker pull msftspeech/spx`.
-2. Введите эту команду. Вы должны увидеть справочную информацию по интерфейсу командной строки службы "Речь": `docker run -it --rm msftspeech/spx help`.
+1. При необходимости <a href="https://www.docker.com/get-started" target="_blank">установите Docker Desktop<span class="docon docon-navigate-external x-hidden-focus"></span></a> для своей платформы.
+2. В новой командной строке или в терминале введите следующую команду: .
+   ```shell   
+   docker pull msftspeech/spx
+   ```
+3. Введите эту команду. Вы должны увидеть справочную информацию по интерфейсу командной строки службы "Речь": .
+   ```shell 
+   docker run -it --rm msftspeech/spx help
+   ```
 
 ### <a name="mount-a-directory-in-the-container"></a>Подключение каталога в контейнере
 
@@ -72,7 +76,7 @@ ms.locfileid: "96027661"
 
 `mkdir c:\spx-data`
 
-В Linux или Mac введите следующую команду в терминале, чтобы создать каталог и просмотреть его абсолютный путь:
+В Linux или macOS введите следующую команду в терминале, чтобы создать каталог и просмотреть абсолютный путь к нему:
 
 ```bash
 mkdir ~/spx-data
@@ -86,13 +90,17 @@ pwd
 
 В этой документации показана команда `spx` интерфейса командной строки службы "Речь", используемая при установках, отличных от Docker.
 При вызове команды `spx` в контейнере Docker необходимо подключить каталог в контейнере к файловой системе, в которой интерфейс командной строки службы "Речь" может хранить и находить значения конфигурации, а также считывать и записывать файлы.
+
 Команды в Windows:
 
-`docker run -it -v c:\spx-data:/data --rm msftspeech/spx`
+```shell
+docker run -it -v c:\spx-data:/data --rm msftspeech/spx
+```
 
-Команды в Linux или Mac:
-
-`sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx`
+В Linux или macOS команды будут запускаться примерно так:
+```shell   
+sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
+```
 
 > [!NOTE]
 > Замените `/ABSOLUTE_PATH` на абсолютный путь, показанный с помощью команды `pwd` в разделе выше.
@@ -100,12 +108,43 @@ pwd
 Чтобы использовать команду `spx`, установленную в контейнере, всегда вводите полную версию команды, показанную выше, а затем — параметры запроса.
 Например, в Windows эта команда задает ключ:
 
-`docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY`
+```shell
+docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY
+```
 
-> [!NOTE]
-> При запуске интерфейса командной строки службы "Речь" в контейнере Docker нельзя использовать микрофон или динамик компьютера.
-> Чтобы использовать эти устройства, передайте звуковые файлы в интерфейс командной строки службы "Речь" и обратно для записи или воспроизведения за пределами контейнера Docker.
-> Средство интерфейса командной строки службы "Речь" может получить доступ к локальному каталогу, который вы настроили, выполнив описанные выше действия.
+> [!WARNING]
+> При запуске CLI службы "Речь" в контейнере Docker нельзя использовать микрофон или динамик компьютера. Но можно выполнять чтение и сохранение звуковых файлов в локальном подключенном каталоге. 
+
+### <a name="optional-create-a-command-line-shortcut"></a>Необязательно. Создание ярлыка командной строки
+
+Если вы используете CLI службы "Речь" из контейнера Docker в Linux или macOS, можно создать ярлык. 
+
+Для этого:
+1. Откройте `.bash_profile` в предпочитаемом текстовом редакторе. Пример:
+   ```shell
+   nano ~/.bash_profile
+   ```
+2. Затем добавьте эту функцию в `.bash_profile`. Убедитесь, что вы обновляете эту функцию, указав правильный путь к подключенному каталогу:
+   ```shell   
+   spx(){
+       sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
+   }
+   ```
+3. Укажите профиль в качестве источника:
+   ```shell
+   source ~/.bash_profile
+   ```
+4. Теперь вместо выполнения `sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx` можно просто ввести `spx`, а затем указать аргументы. Пример: 
+   ```shell
+   // Get some help
+   spx help recognize
+
+   // Recognize speech from an audio file 
+   spx recognize --file /mounted/directory/file.wav
+   ```
+
+> [!WARNING]
+> При изменении подключенного каталога, на который ссылается Docker, необходимо обновить функцию в `.bash_profile`.
 
 ***
 

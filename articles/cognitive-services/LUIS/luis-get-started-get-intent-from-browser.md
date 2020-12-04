@@ -1,18 +1,18 @@
 ---
-title: Краткое руководство. Отправка запроса для прогнозирования с помощью браузера — LUIS
-description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерения пользователя на основе текста разговора в браузере.
+title: Отправка запросов для получения прогнозов с помощью браузера — LUIS
+description: Из этой статьи вы узнаете, как использовать общедоступное приложение LUIS для определения намерения пользователя на основе текста разговора в браузере.
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: quickstart
-ms.date: 04/21/2020
-ms.openlocfilehash: ce7544bee32586aa4cdeeb7f47a84744194db5da
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.topic: conceptual
+ms.date: 11/30/2020
+ms.openlocfilehash: 6aa681c8ea60cb57ac3e6d143c60cc46bc057719
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91316279"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436918"
 ---
-# <a name="quickstart-query-prediction-runtime-with-user-text"></a>Краткое руководство. Среда выполнения прогнозирующих запросов с поддержкой пользовательского текста
+# <a name="how-to-query-the-prediction-runtime-with-user-text"></a>Отправка запросов в среду выполнения прогнозирования с использованием пользовательского текста
 
 Чтобы понять, какие данные возвращает конечная точка прогнозирования LUIS, просмотрите результат прогнозирования в веб-браузере.
 

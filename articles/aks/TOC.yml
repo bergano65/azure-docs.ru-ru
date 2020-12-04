@@ -146,6 +146,8 @@
           href: reduce-latency-ppg.md
         - name: Обновление образа узла
           href: node-image-upgrade.md
+        - name: Автоматическое обновление образа узла с помощью GitHub Actions
+          href: node-upgrade-github-actions.md
         - name: Обновления ОС узла процесса
           href: node-updates-kured.md
         - name: Настройка кластера AKS.

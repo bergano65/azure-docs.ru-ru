@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4075cb71cb4dae7ac506c16e3987070cfa10bb09
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: faa334c21e23ecddad287846d34aaf0d72af66cc
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919856"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602190"
 ---
 # <a name="build-resilience-with-device-states"></a>Устойчивость сборки к состояниям устройств
 
@@ -44,7 +44,7 @@ ms.locfileid: "95919856"
 
 * Для персональных или корпоративных устройств iOS и Android разверните [приложение Microsoft Authenticator](../user-help/user-help-auth-app-overview.md). Помимо многофакторной проверки подлинности и возможностей входа без пароля, приложение Microsoft Authenticator будет включать единый вход в собственном приложении через [брокерную проверку подлинности](../develop/brokered-auth.md) с меньшим числом запросов проверки подлинности для конечных пользователей.
 
-* Для персональных или корпоративных устройств iOS и Android используйте [Управление мобильными приложениями](https://docs.microsoft.com/mem/intune/apps/app-management.md) для безопасного доступа к ресурсам компании с меньшим количеством запросов на проверку подлинности. 
+* Для персональных или корпоративных устройств iOS и Android используйте [Управление мобильными приложениями](https://docs.microsoft.com/mem/intune/apps/app-management) для безопасного доступа к ресурсам компании с меньшим количеством запросов на проверку подлинности. 
 
 * [Используйте подключаемый модуль единого входа Microsoft Enterprise для устройств Apple (Предварительная версия)](../develop/apple-sso-plugin.md). Регистрация устройства и предоставление единого входа в браузере и собственных приложениях Azure AD. 
 

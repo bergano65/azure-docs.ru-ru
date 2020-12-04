@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/21/2020
-ms.openlocfilehash: bf7e99f6e6201afefd316deafe37e38088fb9fae
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 0bd6300f4b9dbcf76b5447a0fb58502b7aebf311
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187125"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451429"
 ---
 # <a name="what-is-azure-sql-database"></a>Что такое база данных SQL Azure?
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -200,7 +200,7 @@ Azure Defender для SQL — это унифицированный пакет 
 |[Azure Data Studio](/sql/azure-data-studio/)|Кросс-платформенное средство для работы с базами данных для Windows, macOS и Linux.|
 |[Среда SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)|Бесплатное, доступное для скачивания клиентское приложение для управления любой инфраструктурой SQL, от SQL Server до Базы данных SQL.|
 |[SQL Server Data Tools в Visual Studio](/sql/ssdt/download-sql-server-data-tools-ssdt)|Бесплатное и доступное для скачивания клиентское приложение для разработки реляционных баз данных SQL Server, баз данных в Базе данных SQL Azure, пакетов Integration Services, моделей данных Analysis Services и отчетов Reporting Services.|
-|[Visual Studio Code](https://code.visualstudio.com/docs)|Бесплатный скачиваемый редактор кода с открытым кодом для Windows, macOS и Linux. Он поддерживает расширения, включая [расширение mssql](https://aka.ms/mssql-marketplace), для выполнения запросов к Microsoft SQL Server, Базе данных SQL Azure и Azure Synapse Analytics (ранее — Хранилище данных SQL).|
+|[Visual Studio Code](https://code.visualstudio.com/docs)|Бесплатный скачиваемый редактор кода с открытым кодом для Windows, macOS и Linux. Он поддерживает расширения, включая [расширение mssql](https://aka.ms/mssql-marketplace), для выполнения запросов к Microsoft SQL Server, Базе данных SQL Azure и Azure Synapse Analytics.|
 
 База данных SQL поддерживает создание приложений на языках Python, Java, Node.js, PHP, Ruby и .NET для операционных систем macOS, Windows и Linux. База данных SQL поддерживает те же [библиотеки подключений](connect-query-content-reference-guide.md#libraries), что и SQL Server.
 

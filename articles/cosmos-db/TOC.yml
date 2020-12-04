@@ -1305,7 +1305,7 @@
           href: tutorial-setup-ci-cd.md
         - name: Использование обозревателя службы хранилища Azure
           href: storage-explorer.md
-        - name: Использование Обозревателя Azure Cosmos
+        - name: "Использование Обозревателя Azure Cosmos\_DB"
           href: data-explorer.md
     - name: Аналитика и бизнес-аналитика с использованием Azure Synapse Link
       items:

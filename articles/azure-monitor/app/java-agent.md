@@ -3,13 +3,15 @@ title: Мониторинг производительности веб-прил
 description: Расширенный мониторинг производительности и использования веб-сайта Java с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 01/10/2019
+author: MS-jgol
 ms.custom: devx-track-java
-ms.openlocfilehash: e91e0252ac2af02157c30fe025e75b6cfee7de6e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.author: jgol
+ms.openlocfilehash: 299e9010b74c8363cacd1c20044d183dc1def6a6
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002023"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601294"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
@@ -125,7 +127,7 @@ ms.locfileid: "96002023"
 
 [Дополнительные сведения о диагностировании проблем зависимостей](./asp-net-dependencies.md#diagnosis).
 
-## <a name="questions-problems"></a>У вас появились вопросы? Проблемы?
+## <a name="questions-problems"></a>Есть вопросы? Проблемы?
 * Данные отсутствуют? [Настройка исключений брандмауэра](./ip-addresses.md)
 * [Устранение неполадок Java](java-troubleshoot.md)
 

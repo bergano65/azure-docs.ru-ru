@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: overview
-ms.date: 09/22/2020
+ms.date: 11/23/2020
 ms.author: mbullwin
 keywords: Обнаружение аномалий, машинное обучение, алгоритмы
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 9b540f2e04ae8533a00f79d05e220d99964d9a34
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 1a13b962a000e6e3b2143dc23f94b63c122bd963
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92016609"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95999112"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Общие сведения об API Детектора аномалий
 
@@ -85,6 +85,10 @@ API Детектор аномалий - это веб-сервис RESTful, по
 
 
 > [!VIDEO https://www.youtube.com/embed/ERTaAnwCarM]
+
+## <a name="deploy-on-premises-using-docker-containers"></a>Развертывание в локальной среде с помощью контейнеров Docker
+
+Для развертывания функций API в локальной среде [используйте контейнеры Детектора аномалий](anomaly-detector-container-howto.md). Контейнеры Docker позволяют разместить службу ближе к данным для обеспечения безопасности, соответствия требованиям и других эксплуатационных преимуществ.
 
 ## <a name="join-the-anomaly-detector-community"></a>Участие в сообществе Детектора аномалий
 

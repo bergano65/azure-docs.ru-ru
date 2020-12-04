@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/21/2020
+ms.date: 11/30/2020
 ms.author: memildin
-ms.openlocfilehash: 9b715ea890c7c85161a9e360bc16f9a2a608d64b
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: f26fffe8e6b2be6ede064b4750d012b3e4535c66
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95320986"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433339"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -41,6 +41,7 @@ ms.locfileid: "95320986"
 - [улучшены и расширены возможности автоматической подготовки](#auto-provisioning-experience-improved-and-expanded).
 - [оценка безопасности теперь доступна для непрерывного экспорта (предварительная версия);](#secure-score-is-now-available-in-continuous-export-preview)
 - [рекомендация "На компьютерах должны быть установлены обновления системы" теперь включает вложенные рекомендации.](#system-updates-should-be-installed-on-your-machines-recommendation-now-includes-sub-recommendations)
+- [на странице "Управление политиками" на портале Azure теперь отображается состояние назначений политики по умолчанию.](#policy-management-page-in-the-azure-portal-now-shows-status-of-default-policy-assignments)
 
 ### <a name="29-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark"></a>Добавлены 29 рекомендаций для предварительной версии, чтобы повысить охват Тестов производительности системы безопасности Azure
 
@@ -139,7 +140,11 @@ ms.locfileid: "95320986"
     | where properties.status.code == "Unhealthy"
     ```
 
+### <a name="policy-management-page-in-the-azure-portal-now-shows-status-of-default-policy-assignments"></a>На странице "Управление политиками" на портале Azure теперь отображается состояние назначений политики по умолчанию
 
+Теперь вы можете просмотреть, назначена ли вашим подпискам политика Центра безопасности по умолчанию, на странице **Политика безопасности** Центра безопасности на портале Azure.
+
+:::image type="content" source="media/release-notes/policy-assignment-info-per-subscription.png" alt-text="Страница &quot;Управление политиками&quot; в Центре безопасности Azure с отображением назначений политики по умолчанию":::
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 

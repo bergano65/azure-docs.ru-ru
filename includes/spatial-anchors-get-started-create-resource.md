@@ -1,17 +1,19 @@
 ---
-author: craigktreasure
+author: msftradford
 ms.service: azure-spatial-anchors
 ms.topic: include
-ms.date: 12/13/2018
-ms.author: crtreasu
-ms.openlocfilehash: b83951cd743afc7e249e3ee37182007bbe40cb5c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.date: 11/20/2020
+ms.author: parkerra
+ms.openlocfilehash: 131b21ea7bc47df9654dd7c163eb22adb68e6678
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971395"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185427"
 ---
 ## <a name="create-a-spatial-anchors-resource"></a>Создание ресурса Пространственных привязок
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>.
 
@@ -53,3 +55,72 @@ ms.locfileid: "91971395"
 В меню **Параметры** выберите **Ключ**. Скопируйте значение **первичного ключа** (**ключа учетной записи**) в текстовый редактор для дальнейшего использования.
 
 ![Снимок экрана: область "Ключи" для учетной записи.](./media/spatial-anchors-get-started-create-resource/view-account-key.png)
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы подготовить среду для Azure CLI, выполните указанные ниже действия.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](azure-cli-prepare-your-environment-no-header.md)]
+
+1. После входа выполните команду [az account set](/cli/azure/account#az_account_set), чтобы выбрать подписку, в которой нужно задать учетную запись пространственных привязок:
+
+   ```azurecli
+   az account set --subscription 00000000-0000-0000-0000-000000000000
+   ```
+
+1. Выполните команду [az group create](/cli/azure/group#az_group_create), чтобы создать группу ресурсов, или примените существующую группу ресурсов:
+
+   ```azurecli
+   az group create --name myResourceGroup --location eastus2
+   ```
+
+   [!INCLUDE [resource group intro text](resource-group.md)]
+
+   Вы можете просмотреть текущие учетные записи пространственных привязок для группы ресурсов с помощью команды [az spatial-anchors-account list](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_list):
+
+   ```azurecli
+   az spatial-anchors-account list --resource-group myResourceGroup
+   ```
+
+   Вы также можете просмотреть учетные записи пространственных привязок для своей подписки:
+
+   ```azurecli
+   az spatial-anchors-account list
+   ```
+
+1. Выполните команду [az spatial-anchors-account create](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_create), чтобы создать учетную запись пространственных привязок:
+
+   ```azurecli
+   az spatial-anchors-account create --resource-group myResourceGroup --name MySpatialAnchorsQuickStart --location eastus2
+   ```
+
+1. Просмотрите свойства ресурса с помощью команды [az spatial-anchors-account show](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_show):
+
+   ```azurecli
+   az spatial-anchors-account show --resource-group myResourceGroup --name MySpatialAnchorsQuickStart
+   ```
+
+   Скопируйте значение **идентификатора учетной записи** для ресурса и значение **домена учетной записи** для ресурса в текстовый редактор (они понадобятся позже).
+
+1. Выполните команду [az spatial-anchors-account key show](/cli/azure/ext/mixed-reality/spatial-anchors-account/key#ext_mixed_reality_az_spatial_anchors_account_key_show), чтобы получить первичный и вторичный ключи:
+
+   ```azurecli
+   az spatial-anchors-account key show --resource-group myResourceGroup --name MySpatialAnchorsQuickStart
+   ```
+
+   Скопируйте значения ключей в текстовый редактор (они понадобятся позже).
+
+   Если необходимо повторно создать ключи, выполните команду [az spatial-anchors-account key renew](/cli/azure/ext/mixed-reality/spatial-anchors-account/key#ext_mixed_reality_az_spatial_anchors_account_key_renew):
+
+   ```azurecli
+   az spatial-anchors-account key renew --resource-group myResourceGroup --name example --key primary
+   az spatial-anchors-account key renew --resource-group myResourceGroup --name example --key secondary
+   ```
+
+Вы можете удалить учетную запись с помощью команды [az spatial-anchors-account delete](/cli/azure/ext/mixed-reality/spatial-anchors-account#ext_mixed_reality_az_spatial_anchors_account_delete):
+
+```azurecli
+az spatial-anchors-account delete --resource-group myResourceGroup --name MySpatialAnchorsQuickStart
+```
+
+---

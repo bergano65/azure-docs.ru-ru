@@ -3,12 +3,12 @@ title: Приступая к работе со службами лаборато
 description: В этой статье описывается, как приступить к работе со службами лаборатории Azure.
 ms.topic: article
 ms.date: 11/18/2020
-ms.openlocfilehash: 6fb0da7f91e0eecdeefecdb6635b657245fda9af
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 44afe13fb6f555b12dfce939ce8e88e3af8dc7ef
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96434436"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602671"
 ---
 # <a name="get-started-with-lab-services"></a>Начало работы со службами лаборатории 
 
@@ -115,12 +115,8 @@ ms.locfileid: "96434436"
 
 1. На [веб-сайте служб лаборатории Azure](https://labs.azure.com/) в левой части окна щелкните **Пользователи** .
 1. В верхней части окна щелкните **Добавить пользователей** и выберите **Добавить по адресу электронной почты**. 
-
-    :::image type="content" source="./media/how-to-configure-student-usage/add-users-button.png" alt-text="Кнопка &quot;добавить пользователей&quot;":::
 1. В области **Добавить пользователей** , которая отображается справа, введите адреса электронной почты учащихся в отдельных строках или в одной строке, разделяя их точкой с запятой.
-1. Нажмите **Сохранить**.
-
-    :::image type="content" source="./media/get-started-manage-labs/add-students.png" alt-text="Добавление учащихся в лабораторию":::
+1. Выберите команду **Сохранить**.
 1. Теперь список пользователей будет обновляться с помощью сообщений электронной почты, состояния, приглашения и времени квоты.
 
     После регистрации учащихся для лаборатории их имена будут обновлены первыми и фамилиями из Azure Active Directory.
@@ -138,7 +134,7 @@ ms.locfileid: "96434436"
 1. Выберите CSV-файл, содержащий адреса электронной почты учащихся, и нажмите кнопку **Открыть**.
 
     :::image type="content" source="./media/get-started-manage-labs/add-users-spreadsheet.png" alt-text="Добавление пользователей с помощью электронной таблицы":::
-1. Теперь сообщения будут отображаться в окне справа. Нажмите **Сохранить**.
+1. Теперь сообщения будут отображаться в окне справа. Выберите команду **Сохранить**.
 
     :::image type="content" source="./media/get-started-manage-labs/register-users.png" alt-text="Регистрация пользователей":::
 

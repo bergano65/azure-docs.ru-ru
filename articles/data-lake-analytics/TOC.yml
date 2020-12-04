@@ -68,7 +68,7 @@
             - name: Основы
               href: data-lake-analytics-u-sql-get-started.md
             - name: Справочник по языку
-              href: /u-sql/
+              href: 'https://docs.microsoft.com/u-sql'
             - name: Каталог
               href: data-lake-analytics-u-sql-catalog.md
             - name: Определяемые пользователем операторы
@@ -79,8 +79,6 @@
               href: data-lake-analytics-u-sql-r-extensions.md
             - name: Когнитивные расширения
               href: data-lake-analytics-u-sql-cognitive.md
-            - name: Руководство по программированию
-              href: data-lake-analytics-u-sql-programmability-guide.md
         - name: Visual Studio
           items:
             - name: Установка
@@ -115,6 +113,28 @@
               href: data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md
             - name: Локальные запуск и отладка
               href: data-lake-tools-for-vscode-local-run-and-debug.md
+        - name: Руководство по программированию
+          items:
+            - name: Общие сведения о руководстве по программированию
+              href: data-lake-analytics-u-sql-programmability-guide.md
+            - name: 'Руководство по программированию: UDT и UDAGG'
+              href: data-lake-analytics-u-sql-programmability-guide-UDT-AGG.md
+            - name: 'Руководство по программированию: UDO'
+              items:
+                - name: Обзор определяемых пользователем объектов
+                  href: data-lake-analytics-u-sql-programmability-guide-UDO.md
+                - name: Использование определяемого пользователем средства извлечения
+                  href: data-lake-analytics-u-sql-programmability-guide-extractor.md
+                - name: Использование определяемого пользователем средства вывода
+                  href: data-lake-analytics-u-sql-programmability-guide-outputter.md
+                - name: Использование определяемого пользователем средства обработки
+                  href: data-lake-analytics-u-sql-programmability-guide-processor.md
+                - name: Использование определяемого пользователем средства применения
+                  href: data-lake-analytics-u-sql-programmability-guide-applier.md
+                - name: Использование определяемого пользователем средства объединения
+                  href: data-lake-analytics-u-sql-programmability-guide-combiner.md
+                - name: Использование определяемого пользователем средства редукции
+                  href: data-lake-analytics-u-sql-programmability-guide-reducer.md
     - name: Планирование заданий U-SQL
       items:
         - name: Планирование заданий с помощью Integration Services

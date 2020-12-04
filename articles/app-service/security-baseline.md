@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 94ab7e235f0796277d65aebb33d9011fc76b74ce
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 3d84f0df44f17bdc7dd68aa9cae1f01b06d261b4
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532794"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601647"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Базовый план безопасности Azure для службы приложений
 
@@ -71,7 +71,7 @@ ms.locfileid: "96532794"
 
 - [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](../security-center/security-center-network-recommendations.md)
 
-- [Включение мониторинга и защиты службы приложений](/azure/security-center/defender-for-app-service-intro)
+- [Включение мониторинга и защиты службы приложений](/azure/security-center/defender-for-app-service-introduction)
 
 **Мониторинг Центра безопасности Azure**: Да
 

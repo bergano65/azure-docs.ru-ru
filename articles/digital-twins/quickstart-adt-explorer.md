@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: d203cb5ccef90fd09659ba64b7bcbc8b9be9e47a
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: d42a32e236eb73f2aa9f2f61d9708314783564dd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358105"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187309"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Краткое руководство. Изучение примера сценария Azure Digital Twins с помощью ADT Explorer
 
@@ -66,6 +66,7 @@ ms.locfileid: "94358105"
 1. Следуйте инструкциям, приведенным на [странице установки](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true), чтобы выполнить установку для своей ОС.
 1. Откройте окно консоли на своем компьютере.
 1. Выполните команду `az login` и следуйте указаниям процесса аутентификации по входу в учетную запись Azure.
+1. Возможный последний шаг: если вы используете несколько подписок Azure с этой учетной записью, задайте контекст аутентификации для подписки Azure, который будет содержать ваш экземпляр Azure Digital Twins, выполнив команду `az account set --subscription "<your-subscription-name-or-ID>"` (можно указать имя или значение идентификатора для подписки).
 
 После входа приложение ADT Explorer автоматически применит учетные данные Azure, когда вы запустите его при работе со следующим разделом.
 
@@ -90,7 +91,7 @@ ms.locfileid: "94358105"
 
    :::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer с выделенным значком &quot;Войти&quot; в верхней части окна. На значке изображен простой силуэт человека, перекрытый силуэтом ключа." lightbox="media/quickstart-adt-explorer/sign-in.png":::
 
-1. Введите URL-адрес экземпляра Azure Digital Twins, который вы получили ранее при выполнении инструкций из раздела [Предварительные требования](#prerequisites), в формате *https://{имя узла экземпляра}* .
+1. Введите URL-адрес экземпляра Azure Digital Twins, который вы получили ранее при работе с разделом [Настройка экземпляра Azure Digital Twins](#set-up-an-azure-digital-twins-instance), в формате *https://{имя узла экземпляра}* .
 
 >[!NOTE]
 > Вы можете в любое время повторно просмотреть или изменить эту информацию, выбрав тот же значок для вызова поля **Sign In** (Вход). Он сохранит переданные значения.

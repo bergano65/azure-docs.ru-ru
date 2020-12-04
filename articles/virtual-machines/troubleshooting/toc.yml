@@ -39,6 +39,8 @@
       href: restart-resize-error-troubleshooting.md
     - name: 'Перезапуск, завершение работы или остановка служб'
       href: boot-error-troubleshoot-windows.md
+    - name: Проблемы с полным диском ОС на виртуальной машине Linux
+      href: os-disk-full-linux.md
 - name: Непредвиденный перезапуск
   items:
     - name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD

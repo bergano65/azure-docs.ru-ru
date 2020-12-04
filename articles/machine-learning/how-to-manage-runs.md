@@ -9,15 +9,15 @@ ms.author: roastala
 author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 01/09/2020
+ms.date: 12/04/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 921c88f4771fedb910dc41983d559987a8cdfb0c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ec006636ed7e975b696aa32300b32089e3209bb5
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349339"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600478"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 
@@ -76,7 +76,7 @@ ms.locfileid: "96349339"
         notebook_run.log(name="message", value="Hello from run!")
         ```
         
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
     
     Чтобы начать выполнение эксперимента, выполните следующие действия.
     
@@ -158,7 +158,7 @@ ms.locfileid: "96349339"
         print(notebook_run.get_status())
         ```
     
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
     
     * Чтобы просмотреть список запусков для эксперимента, используйте следующую команду. Замените на `experiment` имя своего эксперимента:
     
@@ -226,7 +226,7 @@ local_run.fail()
 print(local_run.get_status())
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Чтобы отменить запуск с помощью интерфейса командной строки, используйте следующую команду. Замените на `runid` идентификатор запуска
 
@@ -387,7 +387,7 @@ root_run(current_child_run).log("MyMetric", f"Data from child run {current_child
     print(local_run.get_tags())
     ```
     
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
     
     > [!NOTE]
     > С помощью интерфейса командной строки можно добавлять или обновлять только теги.
@@ -417,7 +417,7 @@ root_run(current_child_run).log("MyMetric", f"Data from child run {current_child
     list(exp.get_runs(properties={"author":"azureml-user"},tags="worth another look"))
     ```
     
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
     
     Azure CLI поддерживает запросы [JMESPath](http://jmespath.org) , которые можно использовать для фильтрации запусков на основе свойств и тегов. Чтобы использовать запрос JMESPath с Azure CLI, укажите его с помощью `--query` параметра. В следующих примерах показаны некоторые запросы, использующие свойства и теги.
     

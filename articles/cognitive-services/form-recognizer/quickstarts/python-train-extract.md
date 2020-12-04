@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 8c4e600e012268337a5e6c63d5b3ce4f532ccec0
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: aaf614846618f3781559ad7f9ce31cb47dd11b63
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970934"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96009574"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-python"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных из форм с помощью REST API и Python
 
@@ -50,6 +50,7 @@ ms.locfileid: "91970934"
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
 1. Замените `<endpoint>` на URL-адрес конечной точки для ресурса Распознавателя документов.
 1. Замените `<Blob folder name>` на путь к папке в хранилище BLOB-объектов, где находятся ваши формы. Если формы находятся в корне контейнера, оставьте эту строку пустой.
+1. При желании замените `<your model name>` понятным именем для модели.
 
     # <a name="v20"></a>[Версия 2.0](#tab/v2-0)
     ```python
@@ -78,6 +79,7 @@ ms.locfileid: "91970934"
             "prefix": prefix,
             "includeSubFolders": includeSubFolders
         },
+        "modelName":"<your model name>",
         "useLabelFile": useLabelFile
     }
     
@@ -101,7 +103,7 @@ ms.locfileid: "91970934"
     
     # Endpoint URL
     endpoint = r"<endpoint>"
-    post_url = endpoint + r"/formrecognizer/v2.1-preview.1/custom/models"
+    post_url = endpoint + r"/formrecognizer/v2.1-preview.2/custom/models"
     source = r"<SAS URL>"
     prefix = "<Blob folder name>"
     includeSubFolders = False

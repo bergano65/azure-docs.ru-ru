@@ -124,7 +124,7 @@
           href: shortpath.md
         - name: Обеспечение качества обслуживания (QoS)
           href: rdp-quality-of-service-qos.md
-        - name: Список надежных URL-адресов
+        - name: Список требуемых URL-адресов
           href: safe-url-list.md
         - name: Рекомендации по пропускной способности
           href: rdp-bandwidth.md

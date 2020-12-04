@@ -10,14 +10,14 @@ author: lobrien
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to, deploy
-ms.openlocfilehash: 1d2e25f76d9a68eeb01a45c34651fe1537297980
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 71f393897dff266f1b0922a19eefd70cffea133d
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510579"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600359"
 ---
-# <a name="deploy-on-your-local-machines-models-trained-with-azure-machine-learning"></a>Развертывайте на локальных компьютерах модели, обученные с помощью Машинное обучение Azure
+# <a name="deploy-models-trained-with-azure-machine-learning-on-your-local-machines"></a>Развертывание моделей, обученных Машинное обучение Azure на локальных компьютерах 
 
 В этой статье описывается, как использовать локальный компьютер в качестве целевого для обучения или развертывания моделей, созданных в Машинное обучение Azure. Машинное обучение Azure достаточно гибок для работы с большинством платформ машинного обучения Python. Как правило, решения машинного обучения имеют сложные зависимости, которые могут быть трудно дублировать. В этой статье показано, как сбалансировать общий контроль с простотой использования.
 
@@ -248,7 +248,7 @@ model = Model.register(model_path="sklearn_regression_model.pkl",
 
 Дополнительные сведения об отправке и обновлении моделей и сред см. в статье [Регистрация модели и локальное развертывание с расширенными возможностями использования](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local-advanced.ipynb).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об управлении средами см. [в разделе создание & использование программных сред в машинное обучение Azure](how-to-use-environments.md).
 - Дополнительные сведения о доступе к данным из хранилища данных см. в статье [Подключение к службам хранилища в Azure](how-to-access-data.md).
