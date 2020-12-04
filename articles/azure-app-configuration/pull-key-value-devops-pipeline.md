@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: drewbat
-ms.openlocfilehash: 15810e65873c685565ccaad6c2dcdc1707713f2c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1c28b4e9821f31f927ef4f640aa664d330cf8792
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182654"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571000"
 ---
 # <a name="pull-settings-to-app-configuration-with-azure-pipelines"></a>Извлечение параметров в конфигурацию приложения с помощью Azure Pipelines
 
@@ -27,7 +27,7 @@ ms.locfileid: "96182654"
 
 ## <a name="create-a-service-connection"></a>Создание подключения к службе
 
-Подключение к службе позволяет получить доступ к ресурсам в подписке Azure из проекта Azure DevOps.
+[Подключение к службе](/azure/devops/pipelines/library/service-endpoints) позволяет получить доступ к ресурсам в подписке Azure из проекта Azure DevOps.
 
 1. В Azure DevOps перейдите к проекту, содержащему целевой конвейер, и откройте **Параметры проекта** внизу слева.
 1. В разделе **конвейеры** выберите **подключения к службе**.

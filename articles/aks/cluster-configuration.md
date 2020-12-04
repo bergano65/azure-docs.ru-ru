@@ -2,16 +2,16 @@
 title: Настройка кластера в Службе Azure Kubernetes (AKS)
 description: Сведения о том, как настроить кластер в Службе Kubernetes Azure (AKS)
 services: container-service
-ms.topic: conceptual
+ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 88774450fb196da5de24bcad047ecdb8c424f653
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: dcd9ec52992da8037bb498dc09701879c4c94667
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736542"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572581"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -302,7 +302,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup --node-resour
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как с помощью `Kured` [применять обновления для системы безопасности и ядра для узлов Linux](node-updates-kured.md) в кластере.
+- Узнайте [, как обновить образы узлов](node-image-upgrade.md) в кластере.
 - Сведения о том, как обновить кластер до последней версии Kubernetes, см. в статье [Обновление кластера Службы Azure Kubernetes (AKS)](upgrade-cluster.md).
 - Ознакомьтесь с дополнительными сведениями о [ `containerd` и Kubernetes](https://kubernetes.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/)
 - В списке [вопросов и ответов об AKS](faq.md) собраны самые популярные рекомендации.

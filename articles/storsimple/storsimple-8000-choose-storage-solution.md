@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: e6f5bb1c2716acbbac8d3e776eb9beda045fd881
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f2de6dbba2548f0c281df35edf2883d0c00af667
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968746"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571919"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>Сравнение StorSimple с Синхронизацией файлов Azure и параметрами передачи данных Data Box Edge 
 
@@ -26,7 +26,7 @@ ms.locfileid: "94968746"
 
 ## <a name="comparison-summary"></a>Сводка сравнения
 
-|                           |StorSimple 8000   |Служба синхронизации файлов Azure   |Data Box Edge           |
+|                           |StorSimple 8000   |Синхронизация файлов Azure   |Data Box Edge           |
 |---------------------------|----------------------------------------|-------------------------------|-----------------------------------------|
 |**Обзор**     |Многоуровневое гибридное хранение и архивирование|Хранилище общего файлового сервера с распределением по уровням в облаке и синхронизацией нескольких сайтов.  |Решение хранилища предварительно обработать данные и отправить их по сети в Azure.        |
 |**Сценарии**    |Файловый сервер, архивирование, цель резервного копирования |Файловый сервер, архивирование (нескольких сайтов)   |Передача данных, данные предварительной обработки, включая выводы ML, Интернет вещей, архивирование    |
@@ -37,7 +37,7 @@ ms.locfileid: "94968746"
 |**Поддержка протокола** |iSCSI          |SMB, NFS    | SMB или NFS      |
 |**Цены**      |[StorSimple](https://azure.microsoft.com/pricing/details/storsimple/) |[Синхронизация файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/)  |[Data Box Edge](https://azure.microsoft.com/pricing/details/storage/databox/edge/)  |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о [Azure Data Box Edge](../databox-online/azure-stack-edge-overview.md) и [Шлюзе Azure Data Box](../databox-online/data-box-gateway-overview.md)
 - Узнайте о [Синхронизации файлов Azure](../storage/files/storage-sync-files-deployment-guide.md)

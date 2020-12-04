@@ -6,14 +6,14 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 3/10/2020
-ms.openlocfilehash: 469610d7195835a4b68e4d887c5be57a8926ba37
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: dd667202a329148e498d0e25ee15110de5d7448a
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489511"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573414"
 ---
-# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi"></a>Используйте управляемое удостоверение для проверки подлинности задания Azure Stream Analytics для Power BI
+# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi-preview"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в Power BI (Предварительная версия)
 
 [Проверка подлинности с помощью управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для выходных данных Power BI предоставляет Stream Analytics заданиям прямой доступ к рабочей области в учетной записи Power BI. Эта функция позволяет развертывать задания Stream Analytics для полной автоматизации, поскольку больше не требуется пользователю интерактивно входить в систему для Power BI с помощью портал Azure. Кроме того, длительные задания, выполняющие запись в Power BI, теперь лучше поддерживаются, так как вам не потребуется периодически повторно авторизовать задание.
 
@@ -35,7 +35,7 @@ ms.locfileid: "94489511"
 
 2. Перед настройкой выходных данных предоставьте Stream Analyticsному заданию доступ к рабочей области Power BI, следуя указаниям в разделе [предоставление Stream Analytics заданий доступ к рабочей области Power BI](#give-the-stream-analytics-job-access-to-your-power-bi-workspace) этой статьи.
 
-3. Перейдите к разделу **выходные данные** задания аналитики Stream, выберите **+ Добавить** , а затем выберите **Power BI**. Затем нажмите кнопку **авторизовать** и войдите в систему, используя учетную запись Power BI.
+3. Перейдите к разделу **выходные данные** задания аналитики Stream, выберите **+ Добавить**, а затем выберите **Power BI**. Затем нажмите кнопку **авторизовать** и войдите в систему, используя учетную запись Power BI.
 
    ![Авторизация с учетной записью Power BI](./media/stream-analytics-powerbi-output-managed-identity/stream-analytics-authorize-powerbi.png)
 
@@ -225,7 +225,7 @@ POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
 
 - [Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md) , не поддерживается. Это означает, что вы не можете ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба необходимо создавать с помощью Azure Stream Analytics.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Интеграция панели мониторинга Power BI с Azure Stream Analytics](./stream-analytics-power-bi-dashboard.md)
 * [Описание выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md)

@@ -1,17 +1,15 @@
 ---
 title: Перечисление субъектов в Azure Service Fabric
 description: Дополнительные сведения о перечислении Reliable Actors и их метаданных в приложении Service Fabric Azure с помощью примеров.
-author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dd3a61db32fb8e442beb42bd45c88da8559a29dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11742d1a1c0837588e7122ee615f3f7929aae363
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89016654"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571356"
 ---
 # <a name="enumerate-service-fabric-reliable-actors"></a>Перечисление Reliable Actors в Service Fabric
 Служба Reliable Actors позволяет клиенту перечислять метаданные о размещенных службой субъектах. Так как служба субъектов — это секционированная служба с отслеживанием состояния, перечисление выполняется по каждому разделу. Так как каждая секция может содержать большое количество субъектов, перечисление возвращается как набор постраничных результатов. Страницы зацикливаются до тех пор, пока все они не будут прочитаны. В следующем примере показано, как создать список всех активных субъектов в одной секции службы субъектов:

@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory подготовки приложений
 description: Новая и обновленная документация по подготовке Azure Active Directory приложений.
-ms.date: 11/05/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -9,16 +9,24 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 51a2facfdaccc6cb29264873e9ffd60fc48735da
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: fd9be81e8c23686695f8cdb49d873d5a663d69c4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174668"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571765"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory подготовка приложений: новые возможности
 
 Добро пожаловать в Azure Active Directoryную документацию по подготовке приложений. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы подготовки, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Руководство. Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](customize-application-attributes.md)
+- [Описание процесса подготовки](how-provisioning-works.md)
+- [Руководство. Создание конечной точки SCIM и настройка подготовки пользователей с Azure AD](use-scim-to-provision-users-and-groups.md)
+
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 
@@ -44,7 +52,7 @@ ms.locfileid: "96174668"
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Новые возможности в документах](whats-new-docs.md)
+- [Новые возможности документации](whats-new-docs.md)
 
 ### <a name="updated-articles"></a>Обновленные статьи
 - [Подготовка приложений в карантинном состоянии](application-provisioning-quarantine-status.md)

@@ -1,17 +1,15 @@
 ---
 title: Удаление субъектов Azure Service Fabric Actors
 description: Узнайте, как вручную и полностью удалить Reliable Actors и их состояние в приложении Service Fabric Azure.
-author: amanbha
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: amanbha
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 80192aef564317e36fba56025aa31c787676d974
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 16d4ab6a3c155f897cf9212fb1cd6c34d977b9ec
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89006862"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574026"
 ---
 # <a name="delete-reliable-actors-and-their-state"></a>Удаление субъектов Reliable Actors и данных их состояния
 При удалении деактивированных субъектов удаляется только объект субъекта; из диспетчера состояний субъекта данные не удаляются. При повторной активации субъекта его данные снова становятся доступны в диспетчере состояний. Если субъекты, данные которых хранятся в диспетчере состояний, деактивируются и больше не активируются, может возникнуть необходимость в удалении связанных с ними данных.

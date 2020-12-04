@@ -3,13 +3,12 @@ title: Обновление кластера Azure Service Fabric
 description: Узнайте, как обновить версию или конфигурацию кластера Azure Service Fabric — задание режима обновления кластера, обновление сертификатов, Добавление портов приложений, выполнение исправлений ОС и то, что можно рассчитывать при обновлении.
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.custom: sfrev
-ms.openlocfilehash: d92ac90e0e41d534231bafbe991a05764dbee07d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 028c91f85a6e318f7ea686c1bcd50262eb7c6bf1
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82789561"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571034"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 

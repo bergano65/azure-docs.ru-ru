@@ -3,15 +3,15 @@ title: Установка языковых пакетов на виртуаль�
 description: Установка языковых пакетов для многосеансовых виртуальных машин Windows 10 в виртуальном рабочем столе Windows.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 11/06/2020
+ms.date: 12/03/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 10d79d08e3f6ed422f0354074ebc6e0acc125553
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: ca4b5486b54de28497ea41765337bfa19f12e3d7
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94354042"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573125"
 ---
 # <a name="add-language-packs-to-a-windows-10-multi-session-image"></a>Добавление языковых пакетов в многосеансовый образ Windows 10
 
@@ -34,20 +34,24 @@ ms.locfileid: "94354042"
      
      - ISO-язык:
         - [Windows 10, версия 1903 или 1909 языковой пакет (ISO)](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_CLIENTLANGPACKDVD_OEM_MULTI.iso)
-        - [Windows 10, версия 2004 языковой пакет ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_CLIENTLANGPACKDVD_OEM_MULTI.iso)
+        - [Windows 10, версия 2004 или 20H2 языковой пакет ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_CLIENTLANGPACKDVD_OEM_MULTI.iso)
 
      - FOD диск 1 ISO:
         - [Windows 10, версия 1903 или 1909 FOD диск 1 ISO](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
-        - [Windows 10, версия 2004 FOD диск 1 ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
+        - [Windows 10, версия 2004 или 20H2 FOD диск 1 ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
         
      - ISO-файл входящих приложений:
         - [Windows 10, версия 1903 или 1909 Входящие приложения (ISO)](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_amd64fre_InboxApps.iso)
         - [Windows 10, версия 2004 Входящие приложения ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_InboxApps.iso)
         - [Windows 10, версия 20H2 Входящие приложения ISO](https://software-download.microsoft.com/download/pr/19041.508.200905-1327.vb_release_svc_prod1_amd64fre_InboxApps.iso)
      
-     - Если вы используете Windows 10 версии 2004 или 20H2, вы можете скачать новые языки с помощью ISO локального пакета управления (ЛКСП). Используйте информацию о [добавлении языков в Windows 10: известные проблемы](/windows-hardware/manufacture/desktop/language-packs-known-issue) , чтобы выяснить, следует ли скачать версию 9Б или 9C.
-        - [Windows 10, версия 2004 или 20H2 **9Б** лксп ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_64_ARM64_MultiLang_LangPckAll_LIP_LXP_ONLY)
-        - [Windows 10, версия 2004 или 20H2 **9C** лксп ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_32_64_ARM64_MultiLng_LngPkAll_LIP_9C_LXP_ONLY) 
+     - Если для локализации образов вы используете ISO-файлы с локальным пакетом поддержки (ЛКСП), вам также потребуется скачать соответствующий ЛКСП ISO для лучшего языкового интерфейса.
+        - Если вы используете Windows 10 версии 1903 или 1909:
+          - [Windows 10, версия 1903 или 1909 ЛКСП ISO](https://software-download.microsoft.com/download/pr/Win_10_1903_32_64_ARM64_MultiLng_LngPkAll_LXP_ONLY.iso)
+        - Если вы используете Windows 10 версии 2004 или 20H2, используйте сведения в статьи [Добавление языков в Windows 10: известные проблемы](/windows-hardware/manufacture/desktop/language-packs-known-issue) , чтобы выяснить, какой из следующих лксп ISO подходит вам:
+          - [Windows 10, версия 2004 или 20H2 **9Б** лксп ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_64_ARM64_MultiLang_LangPckAll_LIP_LXP_ONLY)
+          - [Windows 10, версия 2004 или 20H2 **9C** лксп ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_32_64_ARM64_MultiLng_LngPkAll_LIP_9C_LXP_ONLY)
+          - [Windows 10, версия 2004 или 20H2 **10C** лксп ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2010C.iso)
 
 - Общая папка службы файлов Azure или общая папка на виртуальной машине файлового сервера Windows
 
@@ -64,7 +68,7 @@ ms.locfileid: "94354042"
 
 3. Перейдите к ISO-образу языкового пакета и скопируйте содержимое из папок **локалекспериенцепаккс** и **x64 \\ лангпаккс** , а затем вставьте содержимое в общую папку.
 
-4. Перейдите в **ISO-файл FOD** , скопируйте все его содержимое, а затем вставьте его в общую папку.
+4. Перейдите в **ISO-файл FOD**, скопируйте все его содержимое, а затем вставьте его в общую папку.
 5. Перейдите в папку **amd64fre** в формате ISO "Входящие приложения" и скопируйте содержимое в репозиторий для подготовленных Вами входящих вами приложений.
 
      >[!NOTE]
@@ -257,7 +261,7 @@ Set-WinUserLanguageList $LanguageList -force
 
 После того как пользователь изменит параметры языка, ему потребуется выйти из сеанса виртуальных рабочих столов Windows и снова войти, чтобы изменения вступили в силу. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите узнать об известных проблемах, связанных с языковыми пакетами, см. статью [Добавление языковых пакетов в Windows 10, версия 1803 и более поздние версии: известные проблемы](/windows-hardware/manufacture/desktop/language-packs-known-issue).
 

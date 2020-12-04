@@ -1,7 +1,7 @@
 ---
 title: Новые возможности управления приложениями Azure Active Directory
 description: Новая и обновленная документация по управлению Azure Active Directory приложениями.
-ms.date: 11/05/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -9,16 +9,26 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 10861438334bc804d1b1e4b9a669280f7e09ffde
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 38602482f1a25f212829342fe691d7bb75666d31
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654015"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571017"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory Управление приложениями: новые возможности
 
 Добро пожаловать в документацию по управлению приложениями Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы управления приложениями, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+### <a name="new-articles"></a>Новые статьи
+- [Единый вход на основе заголовка для локальных приложений с помощью прокси-сервера Azure AD App (Предварительная версия)](application-proxy-configure-single-sign-on-with-headers.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Azure Active Directory Управление приложениями: новые возможности](whats-new-docs.md)
+- [Проблемы при входе в приложения, настроенные для единого входа на основе SAML](application-sign-in-problem-federated-sso-gallery.md)
+
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 
@@ -32,9 +42,9 @@ ms.locfileid: "94654015"
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
-- [Проблемы при входе в настроенные приложения единого входа на основе SAML](application-sign-in-problem-federated-sso-gallery.md)
+- [Проблемы при входе в приложения, настроенные для единого входа на основе SAML](application-sign-in-problem-federated-sso-gallery.md)
 - [Проблема при установке соединителя агента прокси приложения](application-proxy-connector-installation-problem.md)
-- [Перемещение проверки подлинности приложения из службы федерации Active Directory (AD FS) в Azure Active Directory](migrate-adfs-apps-to-azure.md)
+- [Перенос проверки подлинности приложения из службы федерации Active Directory (AD FS) в Azure Active Directory](migrate-adfs-apps-to-azure.md)
 - [Настройка согласия конечных пользователей для приложений](configure-user-consent.md)
 
 
@@ -65,7 +75,7 @@ ms.locfileid: "94654015"
 - [Возможности для взаимодействия пользователя с приложениями в Azure Active Directory](end-user-experiences.md)
 - [Использование самостоятельного доступа к приложениям](access-panel-manage-self-service-access.md)
 - [Устранение неполадок при входе в приложение из моих приложений Azure AD](application-sign-in-other-problem-access-panel.md)
-- [Устранение неполадок единого входа на основе пароля в Azure AD](troubleshoot-password-based-sso.md)
+- [Устранение неполадок с единым входом на основе пароля в Azure AD](troubleshoot-password-based-sso.md)
 - [Планирование Azure Active Directory развертывания приложений](access-panel-deployment-plan.md)
 - [Что собой представляет единый вход?](what-is-single-sign-on.md)
 - [Выполнение действий с недостаточными или подозрительными приложениями в Azure Active Directory](manage-application-permissions.md)

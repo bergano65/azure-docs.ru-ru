@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory "Бизнес-клиент" (B2C)
 description: Новая и обновленная документация для Azure Active Directory "Бизнес-клиент" (B2C).
-ms.date: 11/10/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: reference
@@ -9,16 +9,23 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: f89537d1e221ecc9a871343e863f021723965239
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4c204ec33604ff5edd1551f9728c28e3dcab9a61
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550077"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571085"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: новые возможности
 
 Добро пожаловать в новые возможности Azure Active Directory B2C документации. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы B2C, см. статью [новые возможности в Azure Active Directory](../active-directory/fundamentals/whats-new.md).
+
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Мониторинг Azure AD B2C с помощью Azure Monitor](azure-monitor.md)
+- [Руководство по Включение аутентификации в одностраничном приложении с помощью Azure AD B2C](tutorial-single-page-app.md)
+
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 

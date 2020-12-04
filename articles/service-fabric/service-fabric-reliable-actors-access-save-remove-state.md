@@ -1,17 +1,15 @@
 ---
 title: Управление состоянием Service Fabric Azure
 description: Сведения о доступе, сохранении и удалении состояния для надежного субъекта Azure Service Fabric и рекомендации при проектировании приложения.
-author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e97fadb374fc45110f5071aab48da0a57eef4284
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e796232719342883efc2aa5dd377d586f3039ad
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89012795"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571323"
 ---
 # <a name="access-save-and-remove-reliable-actors-state"></a>Доступ к состоянию Reliable Actors, а аткже его сохранение и удаление
 [Reliable Actors](service-fabric-reliable-actors-introduction.md) — это однопотоковые объекты для инкапсуляции логики и состояния, а также для поддержки надежного состояния. Каждый экземпляр субъекта имеет собственный [диспетчер состояний](service-fabric-reliable-actors-state-management.md): структура данных, подобная словарю, которая надежно хранит пары "ключ-значение". Диспетчер состояний — это оболочка вокруг поставщика состояний. Его можно использовать для хранения данных независимо от того, какой [параметр сохраняемости](service-fabric-reliable-actors-state-management.md#state-persistence-and-replication) используется.

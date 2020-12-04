@@ -1,16 +1,14 @@
 ---
 title: Визуализация кластера с помощью Azure Service Fabric Explorer
 description: Service Fabric Explorer — это приложение для изучения облачных приложений и узлов в кластере Microsoft Azure Service Fabric и управления ими.
-author: mikkelhegn
 ms.topic: conceptual
 ms.date: 01/24/2019
-ms.author: mikhegn
-ms.openlocfilehash: 5627aa614a7e2819b6f3cc1401c8458552e57219
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a45aff305f97610cb2660c2e3f4b4427b905d7d4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085179"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574061"
 ---
 # <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Визуализация кластера с помощью обозревателя Service Fabric
 
@@ -69,7 +67,7 @@ Service Fabric Explorer также размещается в конечной т
 
 Представление приложений позволяет перемещаться по логической иерархии Service Fabric: приложениям, службам, разделам и репликам.
 
-В примере ниже приложение **MyApp** состоит из двух служб: **MyStatefulService** и **WebSvcService** . Так как **MyStatefulService** — служба с отслеживанием состояния, она включает раздел с одной основной и двумя вторичными репликами. Напротив, WebSvcService — служба без сохранения состояния и содержит единственный экземпляр.
+В примере ниже приложение **MyApp** состоит из двух служб: **MyStatefulService** и **WebSvcService**. Так как **MyStatefulService** — служба с отслеживанием состояния, она включает раздел с одной основной и двумя вторичными репликами. Напротив, WebSvcService — служба без сохранения состояния и содержит единственный экземпляр.
 
 ![Представление приложений обозревателя Service Fabric][sfx-application-tree]
 
@@ -83,7 +81,7 @@ Service Fabric Explorer также размещается в конечной т
 ## <a name="actions"></a>Действия
 Обозреватель Service Fabric позволяет быстро выполнять действия с узлами, приложениями и службами в кластере.
 
-Например, чтобы удалить экземпляр приложения, выберите приложение из дерева слева, а затем выберите **действия**  >  **удалить приложение** .
+Например, чтобы удалить экземпляр приложения, выберите приложение из дерева слева, а затем выберите **действия**  >  **удалить приложение**.
 
 ![Удаление приложения в обозревателе Service Fabric][sfx-delete-application]
 

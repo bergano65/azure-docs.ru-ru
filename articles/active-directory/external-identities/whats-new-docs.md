@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory внешних удостоверениях
 description: Новая и обновленная документация по Azure Active Directory внешним удостоверениям.
-ms.date: 11/10/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
@@ -9,16 +9,24 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: f7c296b4a5bed0c3e599f59e9f0461295b86f197
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 35fa6909160ca707035ee9fc599e4035c2ae7981
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550115"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573907"
 ---
 # <a name="azure-active-directory-external-identities-whats-new"></a>Azure Active Directory внешние удостоверения: новые возможности
 
 Добро пожаловать в документацию по внешним удостоверениям Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы внешних удостоверений, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Microsoft 365 внешний общий доступ и Azure Active Directory (Azure AD) B2B для совместной работы](o365-external-user.md)
+- [Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам через службу совместной работы AAD B2B](hybrid-on-premises-to-cloud.md)
+- [Свойства пользователя службы совместной работы Azure Active Directory B2B](user-properties.md)
+
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 

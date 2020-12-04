@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 8/07/2020
-ms.openlocfilehash: 4179b06759802025f97bd32a355b788c96c9eddb
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: a32491453812d74d4bd93f3f97b7e6a32036f65f
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123326"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573380"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -22,7 +22,7 @@ ms.locfileid: "93123326"
 
 В общедоступную предварительную версию входят следующие функции. Вы можете воспользоваться этими функциями уже сегодня, однако не используйте их в рабочей среде.
 
-### <a name="authenticate-to-sql-database-output-with-managed-identities"></a>Проверка подлинности в выходных данных Базы данных SQL с управляемыми удостоверениями
+### <a name="authenticate-to-sql-database-output-with-managed-identities-preview"></a>Проверка подлинности в выходных данных SQL с помощью управляемых удостоверений (Предварительная версия)
 
 Azure Stream Analytics поддерживает [проверку подлинности управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для приемников выходных данных Базы данных SQL Azure. Управляемые удостоверения устраняют ограничения методов проверки подлинности на основе пользователей, например необходимость повторной проверки подлинности из-за изменения пароля. 
 

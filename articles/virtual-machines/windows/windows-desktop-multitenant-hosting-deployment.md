@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: 5bd41396cf075f83fd37a4276f7a30223ec8c1f3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 101f2cfe57624502764d145351a6343cfdd2a334
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96482949"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572870"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Как развернуть Windows 10 в Azure с правами на мультитенантное размещение 
 Клиентам, использующим Windows 10 Корпоративная E3 или Windows 10 Корпоративная E5 для каждого пользователя, либо Windows VDA для каждого пользователя (лицензии на подписку пользователя или дополнительные лицензии на подписку пользователя), права на мультитенантное размещение для Windows 10 позволяют перенести лицензии Windows 10 в облако и запустить виртуальные машины Windows 10 в Azure без необходимости платить за другую лицензию. Дополнительные сведения см. в [этом разделе](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
@@ -26,11 +26,11 @@ ms.locfileid: "96482949"
 ## <a name="deploying-windows-10-image-from-azure-marketplace"></a>Развертывание образа Windows 10 из Azure Marketplace 
 Для развертывания шаблонов PowerShell, CLI и Azure Resource Manager можно найти образ Windows 10 со следующими PublisherName, предложением, SKU.
 
-| OS  |      PublisherName      |  ПРЕДЛОЖЕНИЕ | Sku |
+| ОС  |      PublisherName      |  ПРЕДЛОЖЕНИЕ | Sku |
 |:----------|:-------------:|:------|:------|
-| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS2-Pro   |
+| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS2-Pro   |
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS2-ProN  |
-| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS3-Pro   |
+| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS3-Pro   |
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS3-ProN  |
 
 ## <a name="qualify-for-multi-tenant-hosting-rights"></a>Квалификация прав на размещение нескольких клиентов 
@@ -112,7 +112,7 @@ LicenseType              :
 
 ## <a name="additional-information-about-joining-azure-ad"></a>Дополнительная информация о присоединении к Azure AD
 >[!NOTE]
->Azure подготавливает все виртуальные машины Windows со встроенной учетной записью администратора, которую нельзя использовать для присоединения к AAD. Например, выбор команды *Параметры > Учетная запись > Доступ к рабочей или учебной учетной записи > + Подключиться* не сработает. Чтобы присоединиться к Azure AD вручную, необходимо создать журнал и войти в систему, используя учетную запись второго администратора. Можно также настроить Azure AD, используя пакет подготовки. Дополнительные сведения можно получить по ссылке в разделе *Дальнейшие действия*.
+>Azure подготавливает все виртуальные машины Windows со встроенной учетной записью администратора, которую нельзя использовать для присоединения к AAD. Например, выбор команды *Параметры > Учетная запись > Доступ к рабочей или учебной учетной записи > + Подключиться* не сработает. Чтобы присоединиться к Azure AD вручную, необходимо создать журнал и войти в систему, используя учетную запись второго администратора. Вы также можете настроить Azure AD с помощью пакета подготовки, воспользовавшись ссылкой в разделе *дальнейшие действия* , чтобы получить дополнительные сведения.
 >
 >
 

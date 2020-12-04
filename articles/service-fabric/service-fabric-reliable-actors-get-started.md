@@ -1,17 +1,15 @@
 ---
 title: Создание службы на основе субъектов в Azure Service Fabric
 description: Узнайте, как создать, выполнить отладку и развернуть первую службу на основе субъекта на C#, используя Reliable Actors в Service Fabric.
-author: vturecek
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f775608c6c349c93a43ef4aef26ad50707cd39b7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 225ccb67153a33ed47af68ebb1549dce37426278
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023624"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573467"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
 > [!div class="op_single_selector"]
@@ -108,7 +106,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
     Пакет NuGet и все его зависимости будут установлены в проект ActorClient.
 
-5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши элемент **зависимости** и выберите команду **Добавить ссылку на проект...**.  Выберите **проекты > решение** (если оно еще не выбрано), а затем установите флажок рядом с **HelloWorld. interfaces**.  Нажмите кнопку **ОК**.
+5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши элемент **зависимости** и выберите команду **Добавить ссылку на проект...**.  Выберите **проекты > решение** (если оно еще не выбрано), а затем установите флажок рядом с **HelloWorld. interfaces**.  Щелкните **ОК**.
     
     ![Диалоговое окно "Добавление ссылки"][7]
 
@@ -149,7 +147,7 @@ internal class HelloWorld : Actor, IHelloWorld
 > [!TIP]
 > В среде выполнения субъектов Service Fabric предусмотрены некоторые [события и счетчики производительности, связанные с методами субъекта](service-fabric-reliable-actors-diagnostics.md#actor-method-events-and-performance-counters). Они полезны при диагностике и мониторинге производительности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о том, [как Reliable Actors использует платформу Service Fabric](service-fabric-reliable-actors-platform.md).
 
 

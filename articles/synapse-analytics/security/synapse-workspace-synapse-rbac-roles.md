@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: bae214fb8eff9747bf3f79323d8eb9ce1cb6cdb7
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a978113265e5e61c0fc09ef0daeb1da9826f294d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531604"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572802"
 ---
 # <a name="synapse-rbac-roles"></a>Роли RBAC синапсе
 
@@ -28,7 +28,7 @@ ms.locfileid: "96531604"
 - Для нескольких ролей появились **новые области более низкого уровня** .  Эти области позволяют ролям быть ограничены конкретными ресурсами или объектами.
 
 >[!Note]
->- **Новые роли и области более низкого уровня сейчас доступны в предварительной версии**.  Рекомендуется использовать эти новые роли и области, которые полностью поддерживаются, и предоставить отзыв об их использовании.
+>**Новые роли RBAC синапсе и области более низкого уровня сейчас доступны в предварительной версии**.  Рекомендуется использовать эти новые роли и области, которые полностью поддерживаются, и предоставить отзыв об их использовании.
 
 ## <a name="built-in-synapse-rbac-roles-and-scopes"></a>Встроенные роли и области синапсе RBAC
 

@@ -6,16 +6,16 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/11/2020
-ms.openlocfilehash: f14ded89ad294abbfaf9861e5f4caf17dd82fb98
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: f1aad2464e4979ecbf35deceaad4de70e05b3004
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490718"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573669"
 ---
-# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure
+# <a name="use-managed-identity-preview-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output"></a>Использование управляемого удостоверения (Предварительная версия) для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure
 
-[Проверка подлинности с помощью управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для выходных данных в хранилище BLOB-объектов Azure предоставляет Stream Analytics заданиям прямой доступ к учетной записи хранения вместо использования строки подключения. Помимо улучшенной безопасности, эта функция также позволяет записывать данные в учетную запись хранения в виртуальной сети (VNET) в Azure.
+[Проверка подлинности управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) (Предварительная версия) для вывода в хранилище BLOB-объектов Azure предоставляет Stream Analytics заданиям прямой доступ к учетной записи хранения вместо использования строки подключения. Помимо улучшенной безопасности, эта функция также позволяет записывать данные в учетную запись хранения в виртуальной сети (VNET) в Azure.
 
 В этой статье показано, как включить управляемое удостоверение для выходных данных большого двоичного объекта Stream Analytics задания с помощью портал Azure и развертывания Azure Resource Manager.
 

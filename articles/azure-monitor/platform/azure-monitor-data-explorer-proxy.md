@@ -7,12 +7,12 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 12/02/2020
-ms.openlocfilehash: 8884fd56cfc1e18a0a358d6902f7f8bcbfc1f5d3
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 5cb2f7b3b07c20e09d61e97412bc35f03b15cb3b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553884"
+ms.locfileid: "96572156"
 ---
 # <a name="cross-resource-query-azure-data-explorer-using-azure-monitor"></a>обозреватель данных Azure для запросов между ресурсами с помощью Azure Monitor
 Azure Monitor поддерживает запросы между службами между Azure обозреватель данных, [Application Insights (AI)](/azure/azure-monitor/app/app-insights-overview)и [log Analytics (La)](/azure/azure-monitor/platform/data-platform-logs). Затем можно выполнить запрос к кластеру Azure обозреватель данных с помощью средств Log Analytics/Application Insights и обратиться к нему в межсервисном запросе. В этой статье показано, как выполнить кросс-Сервисный запрос.
@@ -20,7 +20,7 @@ Azure Monitor поддерживает запросы между службам�
 Azure Monitor кросс: :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-monitor-data-explorer-flow.png" alt-text="Azure Monitor и azure обозреватель данных Cross Service Flow.":::
 
 >[!NOTE]
->* Azure Monitor прокси-сервер находится в частном предварительной версии — требуется Алловлистинг.
+>* Azure Monitor запрос между службами находится в частном предварительной версии — требуется Алловлистинг.
 >* Свяжитесь с [группой обслуживания](mailto:ADXProxy@microsoft.com) с любыми вопросами.
 ## <a name="cross-query-your-log-analytics-or-application-insights-resources-and-azure-data-explorer"></a>Перекрестный запрос Log Analytics или Application Insights ресурсов и Azure обозреватель данных
 
@@ -62,13 +62,7 @@ union customEvents, CL1 | take 10
 
 Kusto Explorer автоматически подписывает вас в клиент, к которому изначально принадлежит учетная запись пользователя. Чтобы получить доступ к ресурсам в других клиентах с одной и той же учетной записью пользователя, `tenantId` необходимо явно указать в строке подключения: `Data Source=https://ade.applicationinsights.io/subscriptions/SubscriptionId/resourcegroups/ResourceGroupName;Initial Catalog=NetDefaultDB;AAD Federated Security=True;Authority ID=` **TenantId**
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Написание запросов](https://docs.microsoft.com/azure/data-explorer/write-queries)
 * [Запрос данных в Azure Monitor с помощью обозреватель данных Azure](https://docs.microsoft.com/azure/data-explorer/query-monitor-data)
 * [Выполнение запросов журнала между ресурсами в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/cross-workspace-query)
-
-
-
-
-
-
