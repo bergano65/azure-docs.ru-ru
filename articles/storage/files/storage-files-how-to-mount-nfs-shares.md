@@ -4,16 +4,16 @@ description: Узнайте, как подключить общую сетеву
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/15/2020
+ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 530ae82720e6b4eb6a3e4d1021c0b37b9f4dbf5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a993d9c1de35132198de5e3becc4f16d6a2a437
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90707447"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621303"
 ---
 # <a name="how-to-mount-an-nfs-file-share"></a>Как подключить файловый ресурс NFS
 
@@ -44,8 +44,8 @@ ms.locfileid: "90707447"
 
 1. Войдите в портал Azure и получите доступ к учетной записи хранения, содержащей созданный общий ресурс NFS.
 1. Щелкните **Конфигурация**.
-1. Для **обязательного безопасного перемещения**выберите **отключено** .
-1. Щелкните **Сохранить**.
+1. Для **обязательного безопасного перемещения** выберите **отключено** .
+1. Нажмите **Сохранить**.
 
     :::image type="content" source="media/storage-files-how-to-mount-nfs-shares/storage-account-disable-secure-transfer.png" alt-text="Снимок экрана с экраном настройки учетной записи хранения с отключенной безопасной защитой.":::
 
@@ -55,11 +55,15 @@ ms.locfileid: "90707447"
 1. Введите путь подключения, который вы хотите использовать, а затем скопируйте сценарий.
 1. Подключитесь к клиенту и используйте указанный сценарий подключения.
 
-    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Снимок экрана с экраном настройки учетной записи хранения с отключенной безопасной защитой.":::
+    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Снимок экрана: колонка &quot;подключение к общей папке&quot;":::
 
 Вы подключили общий ресурс NFS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="validate-connectivity"></a>Проверка подключения
+
+В случае сбоя подключения частная конечная точка может быть настроена неправильно или недоступна. Дополнительные сведения о подтверждении подключения см. в разделе [Проверка подключения](storage-files-networking-endpoints.md#verify-connectivity) конечных точек сети.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о службе файлов Azure см. в статье [Планирование развертывания файлов Azure](storage-files-planning.md).
 - Если возникнут проблемы, см. раздел [Устранение неполадок файловых ресурсов NFS Azure](storage-troubleshooting-files-nfs.md).

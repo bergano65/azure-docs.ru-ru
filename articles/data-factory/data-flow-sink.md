@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/17/2020
-ms.openlocfilehash: 63be912986542741359cd5e88227f06905d42647
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: da89d4fbc3f9e03e76d901c2215e4f16c5273013
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350880"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621116"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
 
@@ -103,6 +103,10 @@ ms.locfileid: "96350880"
 > При использовании [кэшированных поисков](./concepts-data-flow-expression-builder.md#cached-lookup)убедитесь, что в упорядочении приемников задано значение 1, самый низкий (или первый) в порядке сортировки.
 
 ![Заказ настраиваемых приемников](media/data-flow/cache-2.png "Заказ настраиваемых приемников")
+
+### <a name="sink-groups"></a>Группы приемников
+
+Можно группировать приемники, применяя одинаковый порядковый номер для ряда приемников. ADF будет рассматривать эти приемники как группы, которые могут выполняться параллельно. Параметры для параллельного выполнения будут отображаться в действии потока данных конвейера.
 
 ## <a name="error-row-handling"></a>Обработка строк ошибок
 

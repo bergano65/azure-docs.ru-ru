@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: a915b5a348e3167d2cf81906b19abd9850584ce9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 694f501efc565ed498c1c8d8e2e38326277e8605
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460982"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621422"
 ---
 # <a name="plan-an-azure-managed-application-for-an-azure-application-offer"></a>Планирование управляемого приложения Azure для предложения приложения Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "96460982"
 JIT-доступ позволяет запрашивать доступ с повышенными привилегиями к ресурсам управляемого приложения для устранения неполадок или обслуживания. Вы всегда имеете доступ к ресурсам только для чтения, но на определенный период времени у вас может быть доступ более высокого уровня. Дополнительные сведения см. в статье [Включение и запрос JIT-доступа для управляемых приложений Azure](../azure-resource-manager/managed-applications/request-just-in-time-access.md).
 
 > [!NOTE]
-> Информация, которую пользователь должен заметить, даже если для `createUiDefinition.json` поддержки этой функции скиммингбе обязательно обновить файл.
+> Не забудьте обновить файл `createUiDefinition.json` для поддержки этой функции.
 
 ## <a name="deployment-mode"></a>Режим развертывания
 

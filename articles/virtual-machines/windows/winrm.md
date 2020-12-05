@@ -8,19 +8,19 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 06/16/2016
 ms.author: mimckitt
-ms.openlocfilehash: ac6fad8995d409c14008b8345e9e576b2403c799
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fbba14980083287c91fdd3defec78b229808fb15
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86131696"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621694"
 ---
 # <a name="setting-up-winrm-access-for-virtual-machines-in-azure-resource-manager"></a>Настройка доступа WinRM для виртуальных машин в Azure Resource Manager
 
 Ниже приведены шаги, которые необходимо выполнить для настройки виртуальной машины с возможностью подключения WinRM:
 
 1. Создание хранилища ключей
-2. Создание самозаверяющего сертификата
+2. Создание самозаверяющего сертификата.
 3. передать самозаверяющий сертификат в хранилище ключей;
 4. получить URL-адрес для самозаверяющего сертификата в хранилище ключей;
 5. сослаться на URL-адрес самозаверяющего сертификата при создании виртуальной машины.
@@ -57,16 +57,12 @@ $fileName = "<Path to the .pfx file>"
 $fileContentBytes = Get-Content $fileName -Encoding Byte
 $fileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
 
-$jsonObject = @"
-{
-  "data": "$filecontentencoded",
-  "dataType" :"pfx",
-  "password": "<password>"
+[System.Collections.HashTable]$TableForJSON = @{
+    "data"     = $filecontentencoded;
+    "dataType" = "pfx";
+    "password" = "<password>";
 }
-"@
-
-$jsonObjectBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonObject)
-$jsonEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
+[System.String]$JSONObject = $TableForJSON | ConvertTo-Json
 
 $secret = ConvertTo-SecureString -String $jsonEncoded -AsPlainText –Force
 Set-AzKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValue $secret
@@ -78,7 +74,7 @@ Set-AzKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValu
 > [!NOTE]
 > URL-адрес секрета также должен включать в себя версию. Пример URL-адреса выглядит примерно ниже HTTPS: \/ /contosovault.Vault.Azure.NET:443/Secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
 
-#### <a name="templates"></a>Шаблоны
+#### <a name="templates"></a>шаблоны;
 Получить ссылку на URL-адрес в шаблоне можно с помощью следующего кода:
 
 ```json

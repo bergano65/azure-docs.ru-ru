@@ -4,16 +4,16 @@ description: Узнайте, как настроить конечные точк
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 08/17/2020
+ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 880eeb87d8727d65b2aaecdad8b0ed9ccaacea7a
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 079d7aa9b654a318c7269a41605c3e146b08f127
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629858"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621337"
 ---
 # <a name="configuring-azure-files-network-endpoints"></a>Настройка сетевых конечных точек Файлов Azure
 
@@ -55,6 +55,17 @@ ms.locfileid: "94629858"
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 [!INCLUDE [storage-files-networking-endpoints-private-portal](../../../includes/storage-files-networking-endpoints-private-portal.md)]
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+[!INCLUDE [storage-files-networking-endpoints-private-powershell](../../../includes/storage-files-networking-endpoints-private-powershell.md)]
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+[!INCLUDE [storage-files-networking-endpoints-private-cli](../../../includes/storage-files-networking-endpoints-private-cli.md)]
+---
+
+## <a name="verify-connectivity"></a>Проверка подключения
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
 Если у вас есть виртуальная машина в виртуальной сети или настроена переадресация DNS, как описано в разделе [Настройка переадресации DNS для Файлов Azure](storage-files-networking-dns.md), правильность настройки частной конечной точки можно проверить, выполнив следующие команды в PowerShell, командной строке или терминале (работает для Windows, Linux или macOS). Замените `<storage-account-name>` реальным именем учетной записи хранения.
 
 ```
@@ -74,7 +85,6 @@ Aliases:  storageaccount.file.core.windows.net
 ```
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-[!INCLUDE [storage-files-networking-endpoints-private-powershell](../../../includes/storage-files-networking-endpoints-private-powershell.md)]
 
 Если у вас есть виртуальная машина в виртуальной сети или настроена переадресация DNS, как описано в разделе [Настройка переадресации DNS для Файлов Azure](storage-files-networking-dns.md), правильность настройки частной конечной точки можно проверить, выполнив следующие команды:
 
@@ -101,7 +111,6 @@ IP4Address : 192.168.0.5
 ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-[!INCLUDE [storage-files-networking-endpoints-private-cli](../../../includes/storage-files-networking-endpoints-private-cli.md)]
 
 Если у вас есть виртуальная машина в виртуальной сети или настроена переадресация DNS, как описано в разделе [Настройка переадресации DNS для Файлов Azure](storage-files-networking-dns.md), правильность настройки частной конечной точки можно проверить, выполнив следующие команды:
 
@@ -127,10 +136,9 @@ storageaccount.file.core.windows.net      canonical name = storageaccount.privat
 Name:   storageaccount.privatelink.file.core.windows.net
 Address: 192.168.0.5
 ```
-
 ---
 
-### <a name="restrict-public-endpoint-access"></a>Ограничить доступ к общедоступной конечной точке
+## <a name="restrict-public-endpoint-access"></a>Ограничить доступ к общедоступной конечной точке
 
 Для ограничения доступа к общедоступной конечной точке сначала необходимо отключить общий доступ к общедоступной конечной точке. Отключение доступа к общедоступной конечной точке не влияет на частные конечные точки. После отключения общедоступной конечной точки можно выбрать определенные сети или IP-адреса, которые могут продолжать обращаться к ней. Как правило, большинство политик брандмауэра для учетной записи хранения ограничивают сетевой доступ к одной или нескольким виртуальным сетям.
 

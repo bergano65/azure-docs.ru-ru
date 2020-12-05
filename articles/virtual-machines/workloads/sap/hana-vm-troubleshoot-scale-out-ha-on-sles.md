@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: 7cf18e2d375d7a45c3641876b8a3ed5974882927
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 87758100299eb170a7950a1a7a2c6bd2029b27fb
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010033"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621558"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Проверка и устранение неполадок при настройке горизонтального масштабирования SAP HANA с высоким уровнем доступности в SLES 12 SP3 
 
@@ -45,6 +45,9 @@ ms.locfileid: "96010033"
 Компания SUSE опубликовала [подробное описание этой конфигурации, оптимизированной для высокой производительности][sles-hana-scale-out-ha-paper].
 
 Типы виртуальных машин, которые поддерживаются для горизонтального масштабирования SAP HANA, указаны в [каталоге систем IaaS, сертифицированных для SAP HANA][sap-hana-iaas-list].
+
+> [!NOTE]
+> Эта статья содержит ссылки на *основные* и *подчиненные* термины, которые корпорация Майкрософт больше не использует. При удалении этих терминов из программного обеспечения мы удалим их из этой статьи.
 
 Существовала техническая проблема с горизонтальным масштабированием SAP HANA в сочетании с несколькими подсетями и виртуальными сетевыми картами, а также настройкой HSR. Обязательно используйте последние исправления SAP HANA 2.0, где исправлена ​​эта проблема. Поддерживаются следующие версии SAP HANA: 
 
@@ -977,6 +980,6 @@ https://&ltnode&gt:7630
 ![Один переход Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-5.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве по устранению неполадок описываются вопросы высокой доступности для SAP HANA в конфигурации горизонтального масштабирования. Еще один важный компонент ландшафта SAP, помимо базы данных, — стек SAP NetWeaver. Узнайте о [высоком уровне доступности для SAP NetWeaver на виртуальных машинах Azure, использующих SUSE Enterprise Linux Server][sap-nw-ha-guide-sles].
