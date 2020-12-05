@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: jlian
-ms.openlocfilehash: ddb89f60c9fe380012c299afaafb6046bf6849c9
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: f4438aebcb81d665a19a595ac7ade4fea27fc43f
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602756"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621014"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Поддержка протокола TLS в центре Интернета вещей
 
@@ -22,7 +22,7 @@ ms.locfileid: "96602756"
 
 ## <a name="iot-hubs-server-tls-certificate"></a>Сертификат TLS сервера центра Интернета вещей
 
-Во время подтверждения TLS центр Интернета вещей предоставляет сертификаты сервера с ключом RSA для подключения клиентов. Его корневым центром сертификации является корневой ЦС Baltimore CyberTrust. Недавно были внесены изменения в издатели новыми промежуточными центрами сертификации (ИКАС). Дополнительные сведения см. в [статье обновление сертификата TLS центра Интернета вещей](https://azure.microsoft.com/updates/iot-hub-tls-certificate-update/) .
+Во время подтверждения TLS центр Интернета вещей предоставляет сертификаты сервера с ключом RSA для подключения клиентов. Его корневым центром сертификации является корневой ЦС Baltimore CyberTrust. Недавно мы выполнили изменение сертификата сервера TLS, чтобы он выдавался новыми промежуточными центрами сертификации (ICA). Дополнительные сведения см. в [статье обновление сертификата TLS центра Интернета вещей](https://azure.microsoft.com/updates/iot-hub-tls-certificate-update/).
 
 ### <a name="elliptic-curve-cryptography-ecc-server-tls-certificate-preview"></a>Сертификат TLS сервера шифрования на основе эллиптических кривых (ECC) (Предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "96602756"
 Предварительный просмотр сертификата сервера ECC центра Интернета вещей:
 
 1. [Создание нового центра Интернета вещей с режимом предварительного просмотра в](iot-hub-preview-mode.md).
-1. [Настройте клиент](#tls-configuration-for-sdk-and-iot-edge) так, чтобы он включал *только* наборы шифров ECDSA и не *исключая* RSA. Ниже приведены комплекты шифров для общедоступной предварительной версии сертификата ECC:
+1. [Настройте клиент](#tls-configuration-for-sdk-and-iot-edge) так, чтобы он включал *только* наборы шифров ECDSA и не *исключая* RSA. Ниже приведены поддерживаемые комплекты шифров для общедоступной предварительной версии сертификата ECC:
     - `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
     - `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
     - `TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`
@@ -133,7 +133,7 @@ ms.locfileid: "96602756"
 Официальная поддержка пакета SDK для этой общедоступной предварительной версии пока недоступна. Начало работы
 
 1. [Создание нового центра Интернета вещей с режимом предварительного просмотра в](iot-hub-preview-mode.md).
-1. Настройте клиент для установки `SSL_CTX_set_tlsext_max_fragment_length` одного из следующих значений: 2 ^ 9, 2 ^ 10, 2 ^ 11 и 2 ^ 12.
+1. При использовании OpenSSL вызовите [SSL_CTX_set_tlsext_max_fragment_length](https://manpages.debian.org/testing/libssl-doc/SSL_CTX_set_max_send_fragment.3ssl.en.html) , чтобы указать размер фрагмента.
 1. Подключите клиент к центру Интернета вещей предварительной версии.
 
 ## <a name="next-steps"></a>Дальнейшие действия

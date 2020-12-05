@@ -1,7 +1,7 @@
 ---
 title: Управление DNS для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как установить средства DNS-сервера для управления DNS и создания условных серверов пересылки для управляемого домена доменных служб Azure Active Directory.
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
@@ -9,13 +9,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: b347f8043216d4347099d68ff1c62156410582a3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: afa6920a36a5a7218571239b36815004d8f2d450
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963182"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619357"
 ---
 # <a name="administer-dns-and-create-conditional-forwarders-in-an-azure-active-directory-domain-services-managed-domain"></a>Администрирование DNS и создание условных серверов пересылки в управляемом домене доменных служб Azure Active Directory
 

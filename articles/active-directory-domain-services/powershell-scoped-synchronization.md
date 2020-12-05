@@ -2,20 +2,20 @@
 title: Синхронизация с заданной областью с помощью PowerShell для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как использовать Azure AD PowerShell для настройки синхронизации с заданной областью из Azure AD в управляемый домен доменных служб Azure Active Directory.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/24/2020
-ms.author: joflore
-ms.openlocfilehash: dc6ebb88440ecdccc3ea78d85f0b6186100da01a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: c078117baf84d7dbfaaaa2b569abb8a5f5c67e6d
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967889"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619017"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services-using-azure-ad-powershell"></a>Настройка синхронизации с заданной областью из Azure AD в Azure Active Directory доменных служб с помощью Azure AD PowerShell
 
@@ -175,7 +175,7 @@ Write-Output "******************************************************************
 
 Чтобы изменить список групп, пользователей которых нужно синхронизировать с управляемым доменом, выполните `Select-GroupsToSync.ps1` сценарий и укажите новый список групп для синхронизации.
 
-В следующем примере группы для синхронизации больше не включают *GroupName2*и теперь включают *GroupName3*.
+В следующем примере группы для синхронизации больше не включают *GroupName2* и теперь включают *GroupName3*.
 
 > [!WARNING]
 > Группу *администраторов контроллера домена AAD* необходимо включить в список групп для синхронизации с заданной областью. Если эта группа не включена, управляемый домен будет непригоден для использования.

@@ -2,20 +2,20 @@
 title: Присоединение виртуальной машины SLE к доменным службам Azure AD | Документация Майкрософт
 description: Узнайте, как настроить и присоединить виртуальную машину SUSE Linux Enterprise к управляемому домену доменных служб Azure AD.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/12/2020
-ms.author: joflore
-ms.openlocfilehash: 607d3bc8eca3bd969f0f47ca95923040fb22591e
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.author: justinha
+ms.openlocfilehash: f2f421d95dfc376aed373c718198db33a870d9dc
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275862"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619612"
 ---
 # <a name="join-a-suse-linux-enterprise-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины SUSE Linux Enterprise к управляемому домену доменных служб Azure Active Directory
 
@@ -133,7 +133,7 @@ sudo vi /etc/hosts
 
 1. Чтобы разрешить вход с использованием данных, предоставленных управляемым доменом, установите флажок *Разрешить вход пользователя в домен*.
 
-1. При необходимости в разделе *Включение источника данных домена*проверьте наличие дополнительных источников данных, необходимых для вашей среды. Эти параметры включают пользователей, которым разрешено использовать **sudo** или доступные сетевые диски.
+1. При необходимости в разделе *Включение источника данных домена* проверьте наличие дополнительных источников данных, необходимых для вашей среды. Эти параметры включают пользователей, которым разрешено использовать **sudo** или доступные сетевые диски.
 
 1. Чтобы разрешить пользователям управляемого домена использовать домашние каталоги на виртуальной машине, установите флажок *создать домашние каталоги*.
 
@@ -187,7 +187,7 @@ sudo vi /etc/hosts
 
 ## <a name="join-vm-to-the-managed-domain-using-winbind-from-the-terminal"></a>Присоединение виртуальной машины к управляемому домену с помощью Winbind из терминала
 
-Чтобы присоединиться к управляемому домену с помощью **Winbind** и выполните * `samba net` команду*:
+Чтобы присоединиться к управляемому домену с помощью **Winbind** и выполните *`samba net` команду*:
 
 1. Установите клиент Kerberos и Samba-winbind:
 

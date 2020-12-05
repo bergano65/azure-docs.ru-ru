@@ -4,16 +4,16 @@ description: Узнайте, как создать файловый ресурс
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/15/2020
+ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 7680e251d8411ce154e1f7dfb8af1d66514dd579
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 3cf22ee22c35b850aff33290a59a7043bb57c984
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629467"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620956"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Создание общей папки NFS
 
@@ -64,7 +64,7 @@ az feature register --name AllowNfsFileShares \
 az provider register --namespace Microsoft.Storage
 ```
 
-## <a name="verify-that-the-feature-is-registered"></a>Убедитесь, что компонент зарегистрирован
+## <a name="verify-feature-registration"></a>Проверка регистрации компонентов
 
 Утверждение регистрации может занять до часа. Чтобы убедиться, что регистрация завершена, используйте следующие команды:
 
@@ -80,6 +80,34 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNfs
 az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscription <yourSubscriptionIDHere>
 ```
 
+## <a name="verify-storage-account-kind"></a>Проверка вида учетной записи хранения
+
+В настоящее время только учетные записи Филестораже могут создавать общие папки NFS. 
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+Чтобы проверить тип учетной записи хранения, перейдите к ней в портал Azure. Затем в учетной записи хранения выберите **Свойства**. В колонке свойства проверьте значение в поле **тип учетной записи**, которое должно иметь значение **филестораже**.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+Чтобы убедиться, что у вас есть учетная запись Филестораже, можно использовать следующую команду:
+
+```azurepowershell
+$accountKind=Get-AzStorageAccount -ResourceGroupName "yourResourceGroup" -Name "yourStorageAccountName"
+$accountKind.Kind
+```
+
+Выходные данные должны быть **филестораже**, если это не так, то учетная запись хранения имеет неверный тип. Сведения о создании учетной записи **филестораже** см. [в статье Создание общей папки Azure Premium](storage-how-to-create-premium-fileshare.md).
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+Чтобы убедиться, что у вас есть учетная запись Филестораже, можно использовать следующую команду:
+
+```azurecli
+az storage account show -g yourResourceGroup -n yourStorageAccountName
+```
+
+Выходные данные должны содержать **"Kind": "филестораже"**, если нет, то учетная запись хранения имеет неверный тип. Сведения о создании учетной записи **филестораже** см. [в статье Создание общей папки Azure Premium](storage-how-to-create-premium-fileshare.md).
+
+---
 ## <a name="create-an-nfs-share"></a>Создание общей папки NFS
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
@@ -96,7 +124,7 @@ az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscr
     - Без корневого Squash — удаленный суперпользователь (root) получает доступ от имени привилегированного пользователя.
     - Все Squash — все пользователи сопоставлены с UID (65534) и GID (65534).
     
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
     :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/create-nfs-file-share.png" alt-text="Снимок экрана: колонка создания файлового ресурса":::
 

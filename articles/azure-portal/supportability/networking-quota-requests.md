@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
 ms.openlocfilehash: acb05da0255445de31e08f2724dcb484a3e05b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 12/05/2020
 ms.locfileid: "84764271"
 ---
 # <a name="networking-limit-increase"></a>Увеличение лимита сети
@@ -41,7 +41,7 @@ ms.locfileid: "84764271"
 
     ![Новый запрос на поддержку](./media/networking-quota-request/new-support-request.png)
 
-1. В качестве **типа проблемы**выберите **пределы службы и подписки (квоты)**.
+1. В качестве **типа проблемы** выберите **пределы службы и подписки (квоты)**.
 
     ![Раскрывающийся список "ограничения подписки из типа проблемы"](./media/networking-quota-request/select-quota-issue-type.png)
 
@@ -49,11 +49,11 @@ ms.locfileid: "84764271"
 
     ![Выберите Новости подписки](./media/networking-quota-request/select-subscription-support-request.png)
 
-1. В поле **тип квоты**выберите **сеть**. Нажмите кнопку **Далее: решения**.
+1. В поле **тип квоты** выберите **сеть**. Нажмите кнопку **Далее: решения**.
 
     ![Выберите тип квоты](./media/networking-quota-request/select-quota-type-network.png)
 
-1. В окне **сведения о проблеме**выберите **Укажите сведения** и введите дополнительные сведения, которые помогут обработать запрос.
+1. В окне **сведения о проблеме** выберите **Укажите сведения** и введите дополнительные сведения, которые помогут обработать запрос.
 
     ![Укажите сведения](./media/networking-quota-request/provide-details-link.png)
 

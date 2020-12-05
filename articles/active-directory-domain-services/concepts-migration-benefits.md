@@ -2,20 +2,20 @@
 title: Преимущества классической миграции развертываний в доменных службах Azure AD | Документация Майкрософт
 description: Дополнительные сведения о преимуществах миграции классического развертывания Azure Active Directory доменных служб в модель развертывания диспетчер ресурсов
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.author: joflore
-ms.openlocfilehash: 35224e6c9a28b1555303c1ae11b6700c1bf419bf
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 8cc5f5ebf389d35df02474d0561dc7827cde4d0b
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962502"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620092"
 ---
 # <a name="benefits-of-migration-from-the-classic-to-resource-manager-deployment-model-in-azure-active-directory-domain-services"></a>Преимущества перехода с классической модели на модель развертывания диспетчер ресурсов в доменных службах Azure Active Directory
 

@@ -2,7 +2,7 @@
 title: Разрешение оповещений от субъекта-службы в доменных службах Azure AD | Документация Майкрософт
 description: Сведения о том, как устранять неполадки по оповещениям конфигурации субъекта-службы в доменных службах Azure AD
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: fc980d18a05b18706bb7eeecd907769b80e1b18f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 00ab5c85a477c9c4080acf252cbbde9d4ce816a9
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962723"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620245"
 ---
 # <a name="known-issues-service-principal-alerts-in-azure-active-directory-domain-services"></a>Известные проблемы: Оповещения субъекта-службы в службах Azure Active Directory
 
@@ -99,8 +99,8 @@ Azure AD DS автоматически синхронизирует учетн
 2. Теперь удалите старое приложение и объект с помощью следующих командлетов PowerShell:
 
     ```powershell
-    $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
-    Remove-AzureADApplication -ObjectId $app.ObjectId
+    $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
+    Remove-AzureADApplication -ObjectId $app.ObjectId
     $spObject = Get-AzureADServicePrincipal -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
     Remove-AzureADServicePrincipal -ObjectId $spObject
     ```

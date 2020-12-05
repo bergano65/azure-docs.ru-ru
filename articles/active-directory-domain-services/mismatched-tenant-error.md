@@ -2,7 +2,7 @@
 title: Исправление ошибок несоответствия каталогов в доменных службах Azure AD | Документация Майкрософт
 description: Узнайте, что такое ошибка каталога и как ее разрешить в доменных службах Azure AD.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 40eb75b7-827e-4d30-af6c-ca3c2af915c7
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: 0c2a6ee4ee5c92122e896e62485479d50c660c7f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: ee8174114f1b892210e8ee9173ce0eb1d09c7e31
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968078"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619306"
 ---
 # <a name="resolve-mismatched-directory-errors-for-existing-azure-active-directory-domain-services-managed-domains"></a>Устранение ошибок несоответствия каталогов для существующих доменов, управляемых доменными службами Azure Active Directory
 

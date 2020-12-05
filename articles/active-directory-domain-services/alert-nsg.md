@@ -2,7 +2,7 @@
 title: Разрешение оповещений группы безопасности сети в AD DS Azure | Документация Майкрософт
 description: Узнайте, как устранять неполадки и устранять предупреждения о настройке группы безопасности сети для Azure Active Directory доменных служб
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 95f970a7-5867-4108-a87e-471fa0910b8c
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: f8917d7bd8fc1a4091607b9a405cfefbb51bc188
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: d8f2e77b7225306844cec85363a2971eaac4eebd
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962791"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620262"
 ---
 # <a name="known-issues-network-configuration-alerts-in-azure-active-directory-domain-services"></a>Известные проблемы: оповещения о конфигурации сети в доменных службах Azure Active Directory
 

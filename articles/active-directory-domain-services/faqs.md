@@ -2,7 +2,7 @@
 title: Часто задаваемые вопросы о доменных службах Azure AD | Документация Майкрософт
 description: Прочитайте и ознакомьтесь с некоторыми часто задаваемыми вопросами о настройке, администрировании и доступности для Azure Active Directory доменных служб.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 48731820-9e8c-4ec2-95e8-83dba1e58775
 ms.service: active-directory
@@ -10,19 +10,19 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 09/30/2020
-ms.author: joflore
-ms.openlocfilehash: 07d2d71c13cd054dec46b6eaa9f07079c8cec63b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: e4e7a64b9f9d7283de728216934854f4ef8f8fd1
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962298"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619739"
 ---
 # <a name="frequently-asked-questions-faqs-about-azure-active-directory-ad-domain-services"></a>Часто задаваемые вопросы о доменных службах Azure Active Directory (AD)
 
 На этой странице приведены ответы на часто задаваемые вопросы об Azure Active Directory доменных службах.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 * [Можно ли создать несколько управляемых доменов для одного каталога Azure AD?](#can-i-create-multiple-managed-domains-for-a-single-azure-ad-directory)
 * [Можно ли включить доменные службы Azure AD в классической виртуальной сети?](#can-i-enable-azure-ad-domain-services-in-a-classic-virtual-network)
@@ -160,7 +160,7 @@ ms.locfileid: "91962298"
 ### <a name="what-azure-regions-is-the-service-available-in"></a>В каких регионах Azure доступна служба?
 Перейдите на страницу [служб Azure по регионам](https://azure.microsoft.com/regions/#services/), чтобы просмотреть список регионов Azure, в которых доступны доменные службы Azure AD.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Ознакомьтесь с нашим [руководством по устранению неполадок](troubleshoot.md) для решения распространенных проблем при настройке или администрировании доменных служб Azure AD.
 

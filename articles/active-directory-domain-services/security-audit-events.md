@@ -2,7 +2,7 @@
 title: Включение аудита безопасности для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как включить аудит безопасности, чтобы централизовать ведение журнала событий для анализа и оповещений в доменных службах Azure AD.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 662362c3-1a5e-4e94-ae09-8e4254443697
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: b4fb5c1dcb2bb34b472c2a3eda88ca4c219303d0
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.author: justinha
+ms.openlocfilehash: 13bdc8797af8facaa73d3e43ecfbe504a6bd1dc2
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175174"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618881"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Включение аудита безопасности для доменных служб Azure Active Directory
 
@@ -237,10 +237,10 @@ AADDomainServicesAccountLogon
 |:---|:---|
 |Безопасность входа в учетную запись|4767, 4774, 4775, 4776, 4777|
 |Безопасность управления учетными записями|4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4738, 4740, 4741, 4742, 4743, 4754, 4755, 4756, 4757, 4758, 4764, 4765, 4766, 4780, 4781|
-|Безопасность отслеживания сведений|Нет|
+|Безопасность отслеживания сведений|None|
 |Безопасность доступа к DS|5136, 5137, 5138, 5139, 5141|
 |Безопасность Logon-Logoff|4624, 4625, 4634, 4647, 4648, 4672, 4675, 4964|
-|Безопасность доступа к объектам|Нет|
+|Безопасность доступа к объектам|None|
 |Безопасность изменения политики|4670, 4703, 4704, 4705, 4706, 4707, 4713, 4715, 4716, 4717, 4718, 4719, 4739, 4864, 4865, 4866, 4867, 4904, 4906, 4911, 4912|
 |Безопасность использование привилегий|4985|
 |Безопасность системы|4612, 4621|

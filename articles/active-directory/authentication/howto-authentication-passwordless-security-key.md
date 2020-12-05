@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d9c4dff1e4a3ba7c7a2b11311e97eb5e66a1585
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8530b74a63f4e5e2c04ff95a0106b896102dda2c
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994253"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618099"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Включить вход в систему без пароля (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "95994253"
 
 ## <a name="requirements"></a>Требования
 
-- [Многофакторная идентификация Azure AD](howto-mfa-getstarted.md)
+- [Многофакторная идентификация Azure AD](howto-mfa-getstarted.md)
 - Разрешить [объединенную предварительную версию регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md)
 - Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys)
 - Для WebAuthN требуется Windows 10 версии 1903 или более поздней * *
@@ -38,7 +38,7 @@ ms.locfileid: "95994253"
 
 ## <a name="prepare-devices-for-preview"></a>Подготовка устройств для предварительной версии
 
-Устройства, присоединенные к Azure AD, для которых выполняется Пилотная версия, должны работать под управлением Windows 10 версии 1909 или выше. В Windows 10 версии 1903 или более поздней.
+Для устройств, присоединенных к Azure AD, оптимальное взаимодействие осуществляется в Windows 10 версии 1903 или более поздней.
 
 Гибридные устройства, присоединенные к Azure AD, должны работать под управлением Windows 10 версии 2004 или более поздней.
 
@@ -59,7 +59,7 @@ ms.locfileid: "95994253"
 
 ## <a name="user-registration-and-management-of-fido2-security-keys"></a>Регистрация пользователей и управление ключами безопасности FIDO2
 
-1. Перейдите по ссылке [https://myprofile.microsoft.com](https://myprofile.microsoft.com).
+1. Перейдите по ссылке [https://myprofile.microsoft.com](https://myprofile.microsoft.com) .
 1. Войдите, если он еще не создан.
 1. Щелкните **сведения о безопасности**.
    1. Если у пользователя уже есть по крайней мере один зарегистрированный метод многофакторной идентификации Azure AD, он может немедленно зарегистрировать ключ безопасности FIDO2.
@@ -97,7 +97,7 @@ ms.locfileid: "95994253"
 
 Мы работаем над поддержкой функции, которая разрешает изменение имени участника-пользователя для гибридного присоединения к Azure AD и устройств, присоединенных к Azure AD. При изменении имени участника-пользователя вы больше не сможете изменить ключи безопасности FIDO2, чтобы учитывать изменения. Решение заключается в сбросе устройства и повторной регистрации пользователя.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [FIDO2 безопасность ключ безопасности Windows 10 вход](howto-authentication-passwordless-security-key-windows.md)
 

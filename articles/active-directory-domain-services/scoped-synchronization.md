@@ -2,7 +2,7 @@
 title: Синхронизация с заданной областью для доменных служб Azure AD | Документация Майкрософт
 description: Узнайте, как использовать портал Azure для настройки синхронизации с заданной областью из Azure AD в управляемый домен доменных служб Azure Active Directory.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 9389cf0f-0036-4b17-95da-80838edd2225
 ms.service: active-directory
@@ -10,14 +10,14 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/24/2020
-ms.author: joflore
+ms.author: justinha
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 514932726d9283af0c3fb404f787a10057ce8842
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 4e65b47b2a1fd71c69ecb350f60df1fedff66b74
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967857"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618915"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services-using-the-azure-portal"></a>Настройка синхронизации с заданной областью из Azure AD в Azure Active Directory доменных служб с помощью портал Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "91967857"
 
 1. На портале Azure найдите и выберите **Доменные службы Azure AD**. Выберите нужный управляемый домен, например *aaddscontoso.com*
 1. Выберите **Синхронизация** в меню в левой части.
-1. В поле *тип синхронизации*выберите **область**.
+1. В поле *тип синхронизации* выберите **область**.
 1. Выберите **выбрать группы**, а затем найдите и выберите группы для добавления.
 1. После внесения всех изменений выберите **Сохранить область синхронизации**.
 

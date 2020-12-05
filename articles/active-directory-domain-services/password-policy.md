@@ -2,7 +2,7 @@
 title: Создание и использование политик паролей в доменных службах Azure AD | Документация Майкрософт
 description: Узнайте, как и зачем использовать детализированные политики паролей для защиты и контроля паролей учетных записей в управляемом домене Azure AD DS.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 2dbc75ac4f143089db778b260bb2c4bee5b49f6a
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.author: justinha
+ms.openlocfilehash: df132af1675b3f373fe1eab5685c5d2f07813445
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393172"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619238"
 ---
 # <a name="password-and-account-lockout-policies-on-azure-active-directory-domain-services-managed-domains"></a>Политики блокировки паролей и учетных записей в управляемых доменах доменных служб Azure Active Directory
 
@@ -117,7 +117,7 @@ ms.locfileid: "93393172"
 
     ![Выберите пользователей и группы, к которым будет применяться политика паролей.](./media/password-policy/fgpp-applies-to.png)
 
-1. Политики паролей могут применяться только к группам. В диалоговом окне **расположения** разверните имя домена, например *aaddscontoso.com* , а затем выберите подразделение, например **Пользователи AADDC**. Если у вас есть пользовательское подразделение, содержащее группу пользователей, которые вы хотите применить, выберите это подразделение.
+1. Политики паролей могут применяться только к группам. В диалоговом окне **расположения** разверните имя домена, например *aaddscontoso.com*, а затем выберите подразделение, например **Пользователи AADDC**. Если у вас есть пользовательское подразделение, содержащее группу пользователей, которые вы хотите применить, выберите это подразделение.
 
     ![Выберите подразделение, к которому принадлежит группа](./media/password-policy/fgpp-container.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "93393172"
 
 1. Выбрав имя выбранной группы, которое отображается непосредственно в разделе **применяется к** , нажмите кнопку **ОК** , чтобы сохранить политику настраиваемых паролей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о политиках паролей и использовании центра администрирования Active Directory см. в следующих статьях:
 
