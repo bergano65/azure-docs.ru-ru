@@ -3,18 +3,18 @@ title: Настраиваемые контейнеры CI/CD из действи
 description: Узнайте, как использовать действия GitHub для развертывания пользовательского контейнера Linux в службе приложений из конвейера CI/CD.
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2020
+ms.date: 12/04/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: github-actions-azure
-ms.openlocfilehash: 068fc9dcb9a4f4a62c2dd879bf8144097452f1e0
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 76d82695f0f43638e840589c52d6713ae36c1608
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099034"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607812"
 ---
-# <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
+# <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание настраиваемого контейнера в Службе приложений с помощью GitHub Actions
 
 [Действия GitHub](https://help.github.com/en/articles/about-github-actions) дают возможность создать автоматизированный рабочий процесс разработки программного обеспечения. С помощью [действия веб-развертывание Azure](https://github.com/Azure/webapps-deploy)можно автоматизировать рабочий процесс, чтобы развернуть пользовательские контейнеры в [службе приложений](overview.md) , используя действия GitHub.
 
@@ -31,10 +31,10 @@ ms.locfileid: "93099034"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join).  
-- Рабочий реестр контейнеров и приложение службы приложений Azure для контейнеров. В этом примере используется реестр контейнеров Azure. 
+- Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join). Для развертывания в службе приложений Azure необходимо иметь код в репозитории GitHub. 
+- Рабочий реестр контейнеров и приложение службы приложений Azure для контейнеров. В этом примере используется реестр контейнеров Azure. Обязательно выполните полное развертывание в службе приложений Azure для контейнеров. В отличие от обычных веб-приложений, веб-приложения для контейнеров не имеют целевой страницы по умолчанию. Опубликуйте контейнер, чтобы получить рабочий пример.
     - [Узнайте, как создать контейнерное Node.jsное приложение с помощью DOCKER, отправить образ контейнера в реестр, а затем развернуть образ в службе приложений Azure.](/azure/developer/javascript/tutorial-vscode-docker-node-01)
-
+        
 ## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
 Рекомендуемый способ проверки подлинности в службе приложений Azure для действий GitHub — профиль публикации. Вы также можете пройти проверку подлинности с помощью субъекта-службы, но процесс требует дополнительных действий. 
@@ -47,16 +47,16 @@ ms.locfileid: "93099034"
 
 1. Перейдите к службе приложений в портал Azure. 
 
-1. На странице **Обзор** выберите **получить профиль публикации** .
+1. На странице **Обзор** выберите **получить профиль публикации**.
 
     > [!NOTE]
-    > По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием файла** . Это требование будет удалено в будущем.
+    > По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием файла**. Это требование будет удалено в будущем. Сведения о настройке общих параметров веб-приложения см. в разделе [Настройка приложения службы приложений в портал Azure](/azure/app-service/configure-common).  
 
 1. Сохраните скачанный файл. Вы будете использовать содержимое файла для создания секрета GitHub.
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/service-principal)
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать**.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -64,7 +64,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
                             --sdk-auth
 ```
 
-В примере Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений. Скопируйте этот объект JSON для последующего использования.
+В примере Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений. Скопируйте этот объект JSON для последующего использования.
 
 ```output 
   {
@@ -80,26 +80,11 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 > Рекомендуется всегда предоставлять минимальные разрешения доступа. Область в предыдущем примере ограничена конкретным приложением службы приложений, а не всей группой ресурсов.
 
 ---
-
-## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
-
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
-
-Вставьте содержимое выходных данных JSON в качестве значения переменной Secret. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
-
-Когда вы позже настроите файл рабочего процесса, этот секрет будет передан в действие входа в Azure как параметр `creds`. Пример:
-
-```yaml
-- uses: azure/login@v1
-  with:
-    creds: ${{ secrets.AZURE_CREDENTIALS }}
-```
-
 ## <a name="configure-the-github-secret-for-authentication"></a>Настройка секрета GitHub для проверки подлинности
 
 # <a name="publish-profile"></a>[Опубликовать профиль](#tab/publish-profile)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
 
 Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Назовите секрет `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
@@ -113,7 +98,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 # <a name="service-principal"></a>[Субъект-служба](#tab/service-principal)
 
-В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
+В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
 
 Чтобы использовать [учетные данные на уровне пользователя](#generate-deployment-credentials), вставьте все выходные данные JSON из команды Azure CLI в поле значения секрета. Присвойте секрету имя, например `AZURE_CREDENTIALS` .
 
@@ -129,9 +114,9 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 ## <a name="configure-github-secrets-for-your-registry"></a>Настройка секретов GitHub для реестра
 
-Определите секреты для использования с действием DOCKER Login. 
+Определите секреты для использования с действием DOCKER Login. В примере в этом документе для реестра контейнеров используется реестр контейнеров Azure. 
 
-1. Перейдите к контейнеру в портал Azure или DOCKER и скопируйте имя пользователя и пароль. 
+1. Перейдите к контейнеру в портал Azure или DOCKER и скопируйте имя пользователя и пароль. Имя пользователя и пароль реестра контейнеров Azure можно найти в портал Azure в разделе **Параметры**  >  **ключи доступа** для реестра. 
 
 2. Определите новый секрет для имени пользователя реестра с именем `REGISTRY_USERNAME` . 
 
@@ -163,7 +148,7 @@ jobs:
         docker push mycontainer.azurecr.io/myapp:${{ github.sha }}     
 ```
 
-Можно также использовать [имя входа DOCKER](https://github.com/azure/docker-login) для одновременного входа в несколько реестров контейнеров. Этот пример включает два новых секрета GitHub для проверки подлинности с помощью docker.io.
+Можно также использовать [имя входа DOCKER](https://github.com/azure/docker-login) для одновременного входа в несколько реестров контейнеров. Этот пример включает два новых секрета GitHub для проверки подлинности с помощью docker.io. В этом примере предполагается, что на корневом уровне реестра имеется Dockerfile. 
 
 ```yml
 name: Linux Container Node Workflow
@@ -248,7 +233,7 @@ jobs:
     steps:
     # checkout the repo
     - name: 'Checkout GitHub Action' 
-      uses: actions/checkout@master
+      uses: actions/checkout@main
     
     - name: 'Login via Azure CLI'
       uses: azure/login@v1

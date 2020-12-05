@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: maquaran
 ms.custom: devx-track-dotnet, contperfq2
-ms.openlocfilehash: 892d73c2b23a9806cd38b188f594f129fda9303d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 7901ad4f67f6f3243a2d3b8dc25733ac68b612db
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340725"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608373"
 ---
 # <a name="azure-cosmos-db-sql-sdk-connectivity-modes"></a>Azure Cosmos DB режимы подключения пакета SDK SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -47,9 +47,9 @@ ms.locfileid: "93340725"
 |Режим подключения  |Поддерживаемый протокол  |Поддерживаемые пакеты SDK  |API и порт службы  |
 |---------|---------|---------|---------|
 |Шлюз  |   HTTPS    |  Все пакеты SDK    |   SQL (443), MongoDB (10250, 10255, 10256), таблица (443), Cassandra (10350), Graph (443) <br> Порт 10250 сопоставляется с Azure Cosmos DB API по умолчанию для экземпляра MongoDB без георепликации. В то время как порты 10255 и 10256 сопоставляются с экземпляром с георепликацией.   |
-|Прямой доступ    |     TCP    |  Пакет SDK для .NET    | При использовании общедоступной конечной точки или конечных точек службы: порты в диапазоне от 10000 до 20000<br>При использовании частных конечных точек: порты в диапазоне от 0 до 65535 |
+|Прямой доступ    |     TCP    |  ПАКЕТ SDK для Java пакета SDK для .NET    | При использовании общедоступной конечной точки или конечных точек службы: порты в диапазоне от 10000 до 20000<br>При использовании частных конечных точек: порты в диапазоне от 0 до 65535 |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для конкретных оптимизаций производительности платформы SDK:
 

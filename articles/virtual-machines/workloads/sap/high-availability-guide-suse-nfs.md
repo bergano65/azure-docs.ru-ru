@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 5976649ee396d897b76713b7863668d92279612e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6b0504f5e4199ee3cd8e86660b866fddf2568485
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484315"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608577"
 ---
 # <a name="high-availability-for-nfs-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
@@ -53,6 +53,10 @@ ms.locfileid: "96484315"
 
 В этой статье описывается развертывание виртуальных машин, их настройка, установка платформы кластера, а также установка высокодоступного NFS-сервера, который можно использовать для хранения общих данных высокодоступной системы SAP.
 В этом руководстве описывается настройка высокодоступного NFS-сервера, который используется двумя системами SAP, NW1 и NW2. Имена ресурсов (например, виртуальных машин или виртуальных сетей) в примере предполагают, что вы использовали [шаблон файлового сервера SAP][template-file-server] с префиксом ресурсов **prod**.
+
+
+> [!NOTE]
+> Эта статья содержит ссылки на *основные и главные* *термины,* которые корпорация Майкрософт больше не использует. При удалении условий из программного обеспечения мы удалим их из этой статьи.
 
 Сначала прочитайте следующие примечания и документы SAP:
 

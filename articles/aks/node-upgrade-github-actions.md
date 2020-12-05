@@ -5,12 +5,12 @@ description: Сведения об обновлении узлов AKS с пом
 services: container-service
 ms.topic: article
 ms.date: 11/27/2020
-ms.openlocfilehash: 7a24911fd771663c7edbbdf0c8d2d763a74fc586
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 504c99a7305a5010f8dbe56a30b53d6fc3a13c5b
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96535235"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607846"
 ---
 # <a name="apply-security-updates-to-azure-kubernetes-service-aks-nodes-automatically-using-github-actions"></a>Автоматическое применение обновлений безопасности к узлам Azure Kubernetes Service (AKS) с помощью действий GitHub
 
@@ -170,8 +170,8 @@ ms.locfileid: "96535235"
 
 > [!NOTE]
 > Чтобы обновить пул с одним узлом вместо всех пулов узлов в кластере, добавьте `--name` параметр в `az aks nodepool upgrade` команду, чтобы указать имя пула узлов. Пример:
-> ```
-> inlineScript: az aks nodepool upgrade -g {resourceGroupName} --cluster-name {aksClusterName} --name {{nodePoolName}} --node-image-only
+> ```azurecli-interactive
+> az aks nodepool upgrade -g {resourceGroupName} --cluster-name {aksClusterName} --name {{nodePoolName}} --node-image-only
 > ```
 
 ## <a name="run-the-github-action-manually"></a>Выполнение действия GitHub вручную

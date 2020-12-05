@@ -7,12 +7,12 @@ author: markjbrown
 ms.author: mjbrown
 ms.date: 09/22/2020
 ms.custom: devx-track-csharp, contperfq1
-ms.openlocfilehash: 6fb1ef45ff4e77ab21480a1013a3cec6bcc7cfa1
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: bfab099c3b81164e0d9ffaa009ea13f42aefb875
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030906"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608645"
 ---
 # <a name="install-and-use-the-azure-cosmos-db-emulator-for-local-development-and-testing"></a>Установка и использование эмулятора Azure Cosmos DB для локальной разработки и тестирования
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "96030906"
 Перед установкой эмулятора убедитесь в наличии следующих требований к оборудованию и программному обеспечению.
 
 * Требования к программному обеспечению:
-  * В настоящее время Windows Server 2012 R2, Windows Server 2016, 2019 или Windows 8 поддерживают 10 ОС узла. ОС узла с включенным Active Directory в настоящее время не поддерживается.
+  * В настоящее время поддерживаются ОС Windows Server 2016, 2019 или Windows 10. ОС узла с включенным Active Directory в настоящее время не поддерживается.
   * 64-разрядная операционная система.
 
 * Минимальные требования к оборудованию:
@@ -465,7 +465,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 1. В списке приложений перейдите к **эмулятору Azure Cosmos DB**, выберите его, щелкните **Удалить**, затем подтвердите и снова выберите **Удалить** .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать локальный эмулятор для бесплатной локальной разработки. Теперь можно перейти к следующим статьям:
 

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 1383db44922a044f5e51075b6e1feafa70c78009
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 13644872fca06ad8fc5806326736aea23e504520
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94958765"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608662"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-suse-linux-enterprise-server"></a>Развертывание горизонтально масштабируемой системы SAP HANA с резервным узлом на виртуальных машинах Azure с помощью Azure NetApp Files в SUSE Linux Enterprise Server 
 
@@ -247,7 +247,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
     c. В области **Обзор** выберите пункт **прерывать** , чтобы освободить виртуальную машину.  
 
-    d. Выберите **сеть**, а затем подключите сетевой интерфейс. В раскрывающемся списке **Подключить сетевой интерфейс** выберите уже созданные сетевые интерфейсы для `storage` `hana` подсетей и.  
+    г. Выберите **сеть**, а затем подключите сетевой интерфейс. В раскрывающемся списке **Подключить сетевой интерфейс** выберите уже созданные сетевые интерфейсы для `storage` `hana` подсетей и.  
     
     д) Щелкните **Сохранить**. 
  
@@ -636,8 +636,8 @@ Azure NetApp Files доступен в нескольких [регионах Az
 6. Чтобы оптимизировать SAP HANA для базового хранилища Azure NetApp Files, задайте следующие параметры SAP HANA.
 
    - `max_parallel_io_requests`**128**
-   - `async_read_submit` **on**
-   - `async_write_submit_active` **on**
+   - `async_read_submit`**на**
+   - `async_write_submit_active`**на**
    - `async_write_submit_blocks`**все**
 
    Дополнительные сведения см. [в статье NETAPP SAP Applications on Microsoft Azure using Azure NetApp Files][anf-sap-applications-azure]. 
@@ -655,6 +655,9 @@ Azure NetApp Files доступен в нескольких [регионах Az
    > Обратите внимание на Примечание SAP [2631285](https://launchpad.support.sap.com/#/notes/2631285). 
 
 ## <a name="test-sap-hana-failover"></a>Тестовая отработка отказа SAP HANA 
+
+> [!NOTE]
+> Эта статья содержит ссылки на *основные* и *подчиненные* термины, которые корпорация Майкрософт больше не использует. При удалении этих терминов из программного обеспечения мы удалим их из этой статьи.
 
 1. Имитация сбоя узла на рабочем узле SAP HANA. Выполните следующие действия. 
 
@@ -791,7 +794,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     | hanadb3 | yes    | info   |          |        |         0 |         1 | default  | default  | master 3   | master     | standby     | master      | standby | worker  | default | default |
    </code></pre>
 
-   d. Опять же, остановите сервер имен на активном в данный момент главном узле (то есть на узле **hanadb3**).  
+   г. Опять же, остановите сервер имен на активном в данный момент главном узле (то есть на узле **hanadb3**).  
    
    <pre><code>
     hn1adm@hanadb3:/usr/sap/HN1/HDB03> HDB kill

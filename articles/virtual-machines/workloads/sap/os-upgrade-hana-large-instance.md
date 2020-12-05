@@ -14,18 +14,21 @@ ms.workload: infrastructure
 ms.date: 07/04/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7c1b09cdcf987c7ed0e489a8a67f77a4099e39a9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: cdc6dd49fe98085edf3c6fb16606b9f540b5a3a0
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955469"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608696"
 ---
 # <a name="operating-system-upgrade"></a>Обновление операционной системы
 В этом документе описывается обновление операционной системы в HANA (крупные экземпляры).
 
 >[!NOTE]
 >Обновление операционной системы — это ответственность клиента, служба поддержки Microsoft Operations может помочь вам в изходе обновления. Перед планированием обновления необходимо обратиться к поставщику операционной системы.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин « *черный* список», термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 Во время подготовки модульной подсистемы Microsoft Operations ХЛИ устанавливает операционную систему.
 Со временем вам потребуется обслуживать операционную систему (пример: установка исправлений, настройка, обновление и т. д.) на модуле HLI.
@@ -148,6 +151,6 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 * Перезагрузка системы.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с [резервным копированием и восстановлением](hana-overview-high-availability-disaster-recovery.md) операционной системы для номеров SKU класса I.
 - См. статью [резервное копирование ОС для номеров SKU типа II версий 3](os-backup-type-ii-skus.md) для класса SKU типа II.

@@ -2,13 +2,13 @@
 title: Ограничения именования ресурсов
 description: Сведения о правилах и ограничениях именования для ресурсов Azure.
 ms.topic: conceptual
-ms.date: 10/01/2020
-ms.openlocfilehash: 206bd6604ecd9dfece9c946c653b2720e75ff1e3
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.date: 12/04/2020
+ms.openlocfilehash: a6aac03277a11cf671f5a618bc85ff987cfdc2dd
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347800"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608322"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Правила и ограничения именования для ресурсов Azure
 
@@ -596,6 +596,7 @@ ms.locfileid: "93347800"
 > | resourcegroups | Подписка | 1–90 | Буквенно-цифровые символы, символы подчеркивания, круглые скобки, дефисы, точки и знаки Юникода, соответствующие [документации по Regex](/rest/api/resources/resourcegroups/createorupdate).<br><br>Не может заканчиваться точкой. |
 > | tagNames | ресурс | 1–512 | Нельзя использовать:<br>`<>%&\?/` |
 > | tagNames / tagValues | имя тега | 1–256 | Все символы. |
+> | темплатеспекс | resource group | 1–90 | Буквенно-цифровые символы, символы подчеркивания, круглые скобки, дефисы и точки. |
 
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
 

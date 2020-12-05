@@ -8,16 +8,19 @@ ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: 37e09612491d41887c5945920488569d3620bf0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 890e2b972818cf9805623d94709ce5631b50aaf5
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85052020"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608611"
 ---
 # <a name="web-application-firewall-crs-rule-groups-and-rules"></a>Группы правил и правила CR брандмауэра веб-приложения
 
 Брандмауэр веб-приложения шлюза приложений (WAF) позволяет устранить уязвимости веб-приложений и защитить их от эксплойтов. Это делается с помощью правил, определенных на основе наборов правил OWASP Core, 3,1, 3,0 или 2.2.9. Эти правила можно отключить для каждого правила. Эта статья содержит текущие правила и наборы правил.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин « *черный* список», термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 ## <a name="core-rule-sets"></a>Основные наборы правил
 

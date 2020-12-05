@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: alkohli
-ms.openlocfilehash: 75ccfe7a8e62e519b1df89792211433260a6abf6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6584b2ecc54efd257bb30c479fd0f22150e8d9e1
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89294719"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608594"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>Настройка MPIO на узле StorSimple под управлением CentOS
 В этой статье описаны этапы настройки многоканального ввода-вывода (MPIO) на сервере узла под управлением CentOS 6.6. Сервер узла подключен к устройству Microsoft Azure StorSimple через инициаторы iSCSI для обеспечения высокой доступности. Здесь также подробно описано автоматическое обнаружение устройств с поддержкой нескольких каналов ввода-вывода и приведены настройки для томов StorSimple.
@@ -21,6 +21,9 @@ ms.locfileid: "89294719"
 
 > [!NOTE]
 > Эта процедура не подходит для облачного устройства StorSimple. Дополнительные сведения см. в статье о настройке сервера узла для облачного устройства.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин « *черный* список», термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 
 ## <a name="about-multipathing"></a>Основные сведения о многоканальном вводе-выводе
@@ -357,7 +360,7 @@ A. Как правило, отсутствие многопутевых путе
   
     `$ dmesg | grep sd*`
      
-     Или
+     либо
   
     `$ fdisk -l`
   
@@ -423,7 +426,7 @@ dm-3 devnode blacklisted, unmonitored
 Дополнительные сведения см. в [статье Устранение неполадок для Multipath](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/dm_multipath/mpio_admin-troubleshoot).
 
 ## <a name="list-of-useful-commands"></a>Список полезных команд
-| Тип | Get-Help | Описание |
+| Тип | Команда | Описание |
 | --- | --- | --- |
 | **iSCSI** |`service iscsid start` |Запуск службы iSCSI |
 | &nbsp; |`service iscsid stop` |Остановка службы iSCSI |
@@ -438,13 +441,13 @@ dm-3 devnode blacklisted, unmonitored
 | **Поддержка нескольких каналов ввода-вывода** |`service multipathd start` |Запуск управляющей программы многоканального ввода-вывода |
 | &nbsp; |`service multipathd stop` |Остановка управляющей программы многоканального ввода-вывода |
 | &nbsp; |`service multipathd restart` |Перезапуск управляющей программы многоканального ввода-вывода |
-| &nbsp; |`chkconfig multipathd on` </br> OR </br> `mpathconf -with_chkconfig y` |Обеспечение запуска управляющей программы многоканального ввода-вывода во время загрузки |
+| &nbsp; |`chkconfig multipathd on` </br> ИЛИ </br> `mpathconf -with_chkconfig y` |Обеспечение запуска управляющей программы многоканального ввода-вывода во время загрузки |
 | &nbsp; |`multipathd -k` |Запуск интерактивной консоли для устранения неполадок |
 | &nbsp; |`multipath -l` |Вывод списка подключений и устройств с многоканальным вводом-выводом |
 | &nbsp; |`mpathconf --enable` |Создание примера файла mulitpath.conf в `/etc/mulitpath.conf` |
 |  | | |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Во время настройки MPIO на узле Linux вам могут пригодиться следующие документы по CentOS 6.6.
 
 * [Настройка MPIO на CentOS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/dm_multipath/index)

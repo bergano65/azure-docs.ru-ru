@@ -4,12 +4,12 @@ description: Узнайте, как подключить приложение ф
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperfq2, devx-track-azurecli
-ms.openlocfilehash: 0b8aae707f0fb055677af111f1e88c0a2e19b227
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 02d5ad2e9697c14818a985325267d7caea80f65e
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175752"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607132"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Настройка мониторинга для функций Azure
 
@@ -38,6 +38,9 @@ ms.locfileid: "96175752"
 | **`Host.Results`** | **requests** | Эти журналы, созданные во время выполнения, указывают на успешное выполнение или сбой функции. Все эти журналы записываются на уровне `Information`. При фильтрации на уровне `Warning` или выше эти данные отображаться не будут. |
 | **`Microsoft`** | **traces** | Полностью определенная категория журнала, отражающая компонент среды выполнения .NET, вызываемый узлом.  |
 | **`Worker`** | **traces** | Журналы, созданные на языке рабочего процесса для языков non-.NET. Журналы рабочих ролей языка также могут быть зарегистрированы в `Microsoft.*` категории, например `Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher` . Эти журналы записываются на `Information` уровне.|
+
+> [!NOTE]
+> Для функций библиотеки классов .NET в этих категориях предполагается, что вы используете, `ILogger` а не `ILogger<T>` . Дополнительные сведения см. в [документации по функциям ILogger](functions-dotnet-class-library.md#ilogger). 
 
 # <a name="v1x"></a>[Версия 1.x](#tab/v1)
 
@@ -192,7 +195,7 @@ ms.locfileid: "96175752"
 
 ## <a name="configure-scale-controller-logs"></a>Настройка журналов контроллера масштабирования
 
-_Эта функция доступна в предварительной версии._ 
+_Эта функция доступна в виде предварительной версии._ 
 
 Чтобы лучше понять, какие решения выполняет контроллер масштабирования для приложения-функции, можно создать журналы порождаемого [контроллера масштабирования функций Azure](./functions-scale.md#runtime-scaling) либо Application Insights, либо в хранилище BLOB-объектов.
 

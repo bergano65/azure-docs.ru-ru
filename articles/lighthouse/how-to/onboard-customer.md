@@ -1,14 +1,14 @@
 ---
 title: Подключение клиента к Azure Lighthouse
 description: Узнайте, как подключить клиента к Azure Лигхсаусе, предоставив доступ к ресурсам и управление ими с помощью собственного клиента, используя делегированное управление ресурсами Azure.
-ms.date: 09/24/2020
+ms.date: 12/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 43f28073c996167c82e241476020bdc341486b26
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b353a8194b9f5dd48b315340435669531359e8d5
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024302"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608475"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Подключение клиента к Azure Lighthouse
 
@@ -301,8 +301,9 @@ Get-AzManagedServicesAssignment
 az account list
 ```
 
+Если необходимо внести изменения после подключения клиента, можно [Обновить делегирование](update-delegation.md). Вы также можете полностью [отменить доступ к делегированию](remove-delegation.md) .
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).
 - [Просматривайте клиентов и управляйте ими](view-manage-customers.md), перейдя в раздел **Мои клиенты** на портале Azure.
-- Узнайте, как [удалить доступ к делегированию](remove-delegation.md), подключенному ранее.
