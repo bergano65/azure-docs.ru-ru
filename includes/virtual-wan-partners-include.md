@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/09/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 827b4689629dec0318ad66b21b59744392bf9919
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: fe6faf72f17dae23f6e8a6c7cc56f8577881281a
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504019"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96615923"
 ---
 В этом разделе вы можете перейти по ссылкам для получения дополнительных сведений об услугах, предлагаемых партнерами. Если ваш партнер устройства филиала отсутствует в указанном ниже разделе, попросите вашего поставщика ресурсов связаться с нами. Он может обратиться к нам, отправив сообщение по адресу azurevirtualwan@microsoft.com.
 
@@ -29,7 +29,7 @@ ms.locfileid: "94504019"
 | [NetFoundry](https://netfoundry.io/solutions/netfoundry-for-microsoft-azure-virtual-wan/)|[Центр поддержки нетфаундри: Виртуальная глобальная сеть Azure](https://support.netfoundry.io/hc/en-us/articles/360018137891-Introduction-to-Azure-Virtual-WAN-sites)|
 |[Нуаже/Nokia](https://www.nuagenetworks.net/our-partners/nuage-networks-virtualized-cloud-interconnect-for-azure/)|[Нуаже и рекомендации по развертыванию виртуальной глобальной сети Azure](https://onestore.nokia.com/asset/210073)|
 |[Открытые системы]( https://open-systems.com/solutions/microsoft-azure-virtual-wan)|[Открытые системы и рекомендации по развертыванию виртуальной глобальной сети Azure](https://open-systems.com/wp-content/uploads/2020/07/Azure-Virtual-WAN-UserGuide.pdf)|
-|[Palo Alto Networks](https://researchcenter.paloaltonetworks.com/2018/09/azure-vwan-integration/) |* |
+|[Palo Alto Networks](https://researchcenter.paloaltonetworks.com/2018/09/azure-vwan-integration/) |[Рекомендации по развертыванию виртуальной глобальной сети Azure Palo Alto Networks](https://github.com/PaloAltoNetworks/microsoft_azure_virtual_wan)|
 |[Riverbed Technology](https://www.riverbed.com/go/steelconnect-azurewan.html)|* |
 |[Серебро — пик]( https://www.silver-peak.com/silver-peak-expands-integration-with-microsoft-cloud-services)|[Инструкции по интеграции Еджеконнект и Microsoft Azure Virtual WAN](https://www.silver-peak.com/documentation/edgeconnect-and-azure-vwan-integration-guide)|
 |[Велоклауд — VMWare]( https://wan.velocloud.com/rs/098-RBR-178/images/sdwan-654-connect-azure-vwan-so-0819.pdf)|[Рекомендации по развертыванию Велоклауд для виртуальной глобальной сети Azure](https://kb.vmware.com/s/article/79000)|
