@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/11/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9da0c00bd8498e3f43d5f8258308fbc010a6a274
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 35eff46a0470d429c8ec6f364ffa836501c65f47
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839528"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743604"
 ---
 # <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Включение входа без пароля с помощью приложения Microsoft Authenticator (Предварительная версия)
 
@@ -67,7 +67,7 @@ Azure AD позволяет выбирать методы проверки по�
 
 Пользователи регистрируют себя для метода проверки подлинности с незащищенным паролем Azure AD, выполнив следующие действия.
 
-1. Перейдите по ссылке [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
+1. Перейдите по ссылке [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) .
 1. Войдите, а затем добавьте приложение Authenticator, выбрав **Добавить метод > средство проверки подлинности**, а затем **Добавить**.
 1. Следуйте инструкциям по установке и настройке приложения Microsoft Authenticator на устройстве.
 1. Выберите **Готово** , чтобы завершить настройку средства проверки подлинности.

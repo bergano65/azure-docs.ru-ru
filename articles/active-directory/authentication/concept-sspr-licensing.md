@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 06/02/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 239e49d287ebf6ad98d1a155219f0d59f6469292
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 8f8f270f740951b95b0d4c00cbcf9b08e20a8e0c
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366519"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743730"
 ---
 # <a name="licensing-requirements-for-azure-active-directory-self-service-password-reset"></a>Требования к лицензированию для самостоятельного сброса пароля Azure Active Directory
 
@@ -30,7 +30,7 @@ SSPR лицензируется для каждого пользователя. 
 
 В следующей таблице описаны различные сценарии SSPR для изменения, сброса или обратной записи паролей, а также номера SKU, которые предоставляют эту функцию.
 
-| Функция | Azure AD уровня "Бесплатный" | Microsoft 365 бизнес стандартный; | Microsoft 365 бизнес премиум. | Azure AD Premium (P1 или P2) |
+| Компонент | Azure AD уровня "Бесплатный" | Microsoft 365 бизнес стандартный; | Microsoft 365 бизнес премиум. | Azure AD Premium (P1 или P2) |
 | --- |:---:|:---:|:---:|:---:|
 | **Изменение пароля пользователя только в облаке**<br />Когда пользователь в Azure AD знает свой пароль и хочет изменить его на что-то новое. | ● | ● | ● | ● |
 | **Сброс пароля пользователя только в облаке**<br />Когда пользователь в Azure AD забыл свой пароль и его необходимо сбросить. | | ● | ● | ● |
@@ -44,8 +44,8 @@ SSPR лицензируется для каждого пользователя. 
 * [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/)
 * [Функции и возможности Azure Active Directory](https://www.microsoft.com/cloud-platform/azure-active-directory-features)
 * [Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security)
-* [Microsoft 365 корпоративный](https://www.microsoft.com/microsoft-365/enterprise)
-* [Microsoft 365 бизнес](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description)
+* [Microsoft 365 Enterprise](https://www.microsoft.com/microsoft-365/enterprise)
+* [Microsoft 365 для бизнеса](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description)
 
 ## <a name="enable-group-or-user-based-licensing"></a>Включение группового и пользовательского лицензирования
 
@@ -53,7 +53,7 @@ Azure AD поддерживает лицензирование на основе
 
 Некоторые службы Майкрософт доступны не во всех расположениях. Прежде чем можно будет назначить лицензию пользователю, администратор должен указать для пользователя свойство " **место использования** ". Назначение лицензий можно выполнить в разделе " **User**  >  **Profile**  >  **Параметры** профиля пользователя" в портал Azure. *Если лицензии назначаются группам, все пользователи, для которых не указано расположение, наследуют расположение каталога.*
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с SSPR, выполните инструкции из следующего руководства.
 

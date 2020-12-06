@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/20/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baffe307a560f2668c2d93e36939a695cf963e89
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b8a57e77ea572f899bf540714e8ac9968988f028
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968384"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741734"
 ---
 # <a name="protect-user-accounts-from-attacks-with-azure-active-directory-smart-lockout"></a>Защита учетных записей пользователей от атак с помощью Azure Active Directory Smart-блокировки
 
@@ -58,7 +58,7 @@ ms.locfileid: "91968384"
 
 1. Откройте средства управления групповыми политиками.
 2. Измените групповую политику, включающую политику блокировки учетной записи организации, например **политику домена по умолчанию**.
-3. Перейдите к параметрам **конфигурации компьютера**  >  **политики**  >  **Windows параметры**  >  **безопасности**политики  >  **учетных**записей  >  **Политика блокировки учетной записи**.
+3. Перейдите к параметрам **конфигурации компьютера**  >  **политики**  >  **Windows параметры**  >  **безопасности** политики  >  **учетных** записей  >  **Политика блокировки учетной записи**.
 4. Проверьте **порог блокировки учетной записи** и **сбросьте счетчик блокировки учетной записи после** значений.
 
 ![Изменение политики блокировки локальной учетной записи Active Directory](./media/howto-password-smart-lockout/active-directory-on-premises-account-lockout-policy.png)
@@ -70,7 +70,7 @@ ms.locfileid: "91968384"
 Чтобы проверить или изменить значения смарт-блокировки для вашей организации, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Найдите и выберите *Azure Active Directory*, а затем выберите **Security**  >  **методы проверки подлинности**безопасности  >  **пароль защита пароля**.
+1. Найдите и выберите *Azure Active Directory*, а затем выберите **Security**  >  **методы проверки подлинности** безопасности  >  **пароль защита пароля**.
 1. В зависимости от того, сколько попыток неудачного входа разрешено до первой блокировки учетной записи, установите **пороговое значение блокировки**.
 
     Значение по умолчанию равно 10.

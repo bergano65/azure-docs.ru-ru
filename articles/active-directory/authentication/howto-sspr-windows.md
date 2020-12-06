@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/17/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1cd40b8df0251aee7692df24e9bc3f7186c155d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 478ae6146caeb8a27cdaf13b7f33e421b8121afc
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966514"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741496"
 ---
 # <a name="enable-azure-active-directory-self-service-password-reset-at-the-windows-sign-in-screen"></a>Включение Azure Active Directory самостоятельного сброса пароля на экране входа Windows
 
@@ -77,11 +77,11 @@ ms.locfileid: "91966514"
 1. Войдите в [портал Azure](https://portal.azure.com) и выберите **Intune**.
 1. Создайте профиль конфигурации устройства, перейдя в профиль **конфигурации устройства**  >  **Profiles**, а затем выберите **+ создать профиль** .
    - Для **платформы** выберите *Windows 10 и более поздние версии*
-   - В качестве **типа профиля**выберите *Пользовательский* .
+   - В качестве **типа профиля** выберите *Пользовательский* .
 1. Выберите **создать**, а затем укажите понятное имя для профиля, например *экран входа Windows 10 SSPR*
 
     При необходимости укажите понятное описание профиля, а затем нажмите кнопку **Далее**.
-1. В разделе *Параметры конфигурации*выберите **Добавить** и укажите следующий параметр OMA-URI, чтобы включить ссылку для сброса пароля:
+1. В разделе *Параметры конфигурации* выберите **Добавить** и укажите следующий параметр OMA-URI, чтобы включить ссылку для сброса пароля:
       - Введите понятное имя, чтобы объяснить, что делает параметр, например *Добавить ссылку SSPR*.
       - При необходимости укажите понятное описание параметра.
       - Для параметра **OMA-URI** укажите значение `./Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset`.

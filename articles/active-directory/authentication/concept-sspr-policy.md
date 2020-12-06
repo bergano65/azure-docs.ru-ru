@@ -6,18 +6,18 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: b1583307771dd58053128d71cb0ae5dd7e709f68
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 344fee9482cd935375d25fab80b1f365d72586f8
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174387"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743672"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Политики паролей и ограничения учетных записей в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "96174387"
 
 В следующей таблице перечислены политики имен пользователей, которые применяются к локальным учетным записям AD DS, синхронизированным с Azure AD, а также только к облачным учетным записям пользователей, созданным непосредственно в Azure AD:
 
-| Свойство | Требования UserPrincipalName |
+| Свойство. | Требования UserPrincipalName |
 | --- | --- |
 | Допустимые символы |<ul> <li>A–Z</li> <li>a–z</li><li>0–9</li> <li> ' \. - \_ ! \# ^ \~</li></ul> |
 | Недопустимые символы |<ul> <li>Любой знак \@\", который не отделяет имя пользователя от домена.</li> <li>Не может содержать знак точки "." непосредственно перед знаком \@\".</li></ul> |
@@ -49,7 +49,7 @@ ms.locfileid: "96174387"
 
 Определены следующие параметры политики паролей Azure AD. Если не указано иное, эти параметры изменить нельзя.
 
-| Свойство | Требования |
+| Свойство. | Требования |
 | --- | --- |
 | Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [] {} &#124; \: ",. ? / \` ~ " ( ) ;</li> <li>пустое пространство</li></ul> |
 | Недопустимые символы | Знаки Юникода. |

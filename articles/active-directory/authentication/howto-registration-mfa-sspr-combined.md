@@ -5,25 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/20/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 12/04/2020
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8c67f72a7f0d77284dbb34104754793b36bb8d4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 29a577b50a561cb5b829e453c523e0bd18a70e1a
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838150"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741683"
 ---
 # <a name="enable-combined-security-information-registration-in-azure-active-directory"></a>Включение объединенной регистрации сведений о безопасности в Azure Active Directory
 
 Перед Объединенной регистрацией пользователи регистрировали методы проверки подлинности для многофакторной идентификации Azure AD и самостоятельного сброса пароля (SSPR) отдельно. Пользователи путают, что аналогичные методы использовались для многофакторной идентификации Azure AD и SSPR, но им пришлось зарегистрироваться для использования обеих функций. Теперь, используя объединенную регистрацию, пользователи могут зарегистрироваться и получить преимущества многофакторной идентификации Azure AD и SSPR.
 
 > [!NOTE]
-> Начиная с 15 августа 2020, все новые клиенты Azure AD будут автоматически включены для совместной регистрации.
+> Начиная с 15 августа 2020, все новые клиенты Azure AD будут автоматически включены для совместной регистрации. Начиная с декабря 14 2020, все клиенты Azure AD с одним пользователем будут автоматически включены для совместной регистрации.
 
 Чтобы убедиться, что вы понимаете функциональные возможности и эффекты перед включением нового интерфейса, см. раздел [Общие понятия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md).
 

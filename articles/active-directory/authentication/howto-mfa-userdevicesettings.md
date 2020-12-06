@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/04/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1117b5194dae92a8025594ed71fc629670d875cf
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: a96f01d38fb41f64336d0a2b1d2aa33a96ca9f1a
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838933"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96742754"
 ---
 # <a name="manage-user-authentication-methods-for-azure-ad-multi-factor-authentication"></a>Управление методами проверки подлинности пользователей для многофакторной идентификации Azure AD
 
@@ -49,7 +49,7 @@ ms.locfileid: "94838933"
 1. Выберите пользователя, для которого требуется добавить метод проверки подлинности, и выберите **методы проверки подлинности**.  
 1. В верхней части окна выберите **+ Добавить метод проверки подлинности**.
    1. Выберите метод (номер телефона или адрес электронной почты). Электронная почта может использоваться для самостоятельного сброса пароля, но не для проверки подлинности. При добавлении номера телефона выберите тип телефона и введите номер телефона в допустимом формате (например, + 1 4255551234).
-   1. Нажмите **Добавить**.
+   1. Выберите **Добавить**.
 
 > [!NOTE]
 > Предварительный просмотр позволяет администраторам добавлять доступные методы проверки подлинности для пользователей, в то время как исходный интерфейс допускает обновление только телефонных и дополнительных телефонных методов.

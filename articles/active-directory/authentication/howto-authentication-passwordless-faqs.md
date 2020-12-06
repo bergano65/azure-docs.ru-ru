@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 08/19/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5cc6847332765419001eadc5944905f55a425ef
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 98cb990ede7c4d6e261bba05b0b8c97d758e6c32
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964797"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743536"
 ---
 # <a name="deployment-frequently-asked-questions-faqs-for-hybrid-fido2-security-keys-in-azure-ad-preview"></a>Часто задаваемые вопросы о развертывании для гибридных FIDO2 ключей безопасности в Azure AD (Предварительная версия)
 
@@ -218,7 +218,7 @@ nltest /dsgetdc:<domain> /keylist /kdc
 Как и любой другой контроллер домена, ключи *KRBTGT* для шифрования сервера Azure AD необходимо поворачивать на регулярной основе. Рекомендуется следовать тому же расписанию, что и при использовании для смены всех остальных AD DS ключей *KRBTGT* .
 
 > [!NOTE]
-> Хотя есть и другие средства для смены ключей *KRBTGT* , необходимо [использовать командлеты PowerShell для смены ключей *KRBTGT* ](howto-authentication-passwordless-security-key-on-premises.md#rotating-the-azure-ad-kerberos-server-key) сервера Kerberos Azure AD. Этот метод гарантирует, что ключи будут обновлены как в локальной среде AD DS, так и в Azure AD.
+> Хотя есть и другие средства для смены ключей *KRBTGT* , необходимо [использовать командлеты PowerShell для смены ключей *KRBTGT*](howto-authentication-passwordless-security-key-on-premises.md#rotating-the-azure-ad-kerberos-server-key) сервера Kerberos Azure AD. Этот метод гарантирует, что ключи будут обновлены как в локальной среде AD DS, так и в Azure AD.
 
 ### <a name="why-do-we-need-azure-ad-connect-does-it-write-any-info-back-to-ad-ds-from-azure-ad"></a>Зачем нужно Azure AD Connect? Записывает ли любая информация обратно в AD DS из Azure AD?
 
@@ -230,7 +230,7 @@ HTTP-запрос является стандартным запросом ос�
 
 | Утверждение | Значение | Описание                             |
 |-------|-------|-----------------------------------------|
-| TGT   | Да  | Заявка указывает клиенту требуется TGT. |
+| TGT   | true  | Заявка указывает клиенту требуется TGT. |
 
 Azure AD объединяет зашифрованный ключ клиента и буфер сообщений в ответ PRT в качестве дополнительных свойств. Полезные данные шифруются с помощью ключа сеанса устройства Azure AD.
 

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: mijos, rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 11/20/2020
-ms.openlocfilehash: 59c60c876058f8664b38411b562e57c2d5cdc2a8
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 0057a4671dbc63bf53bafa8d2d742d4edcda1e5e
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510630"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741054"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Настройка ключей, управляемых клиентом, для шифрования неактивных данных в средах службы интеграции (Исес) в Azure Logic Apps
 
@@ -37,7 +37,7 @@ Azure Logic Apps использует хранилище Azure для хране
 
   * **Назначаемое пользователем управляемое удостоверение**. перед отправкой запроса HTTPS-размещения, который создает интегрированную среду сценариев, [Предоставьте доступ к хранилищу ключей для управляемого удостоверения в интегрированной среде сценариев](#identity-access-to-key-vault).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Те же [условия](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) и [требования, необходимые для обеспечения доступа к интегрированной среде сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) , как при создании интегрированной среды сценариев в портал Azure
 
@@ -47,11 +47,11 @@ Azure Logic Apps использует хранилище Azure для хране
 
 * В хранилище ключей — ключ, который создается со следующими значениями свойств:
 
-  | Свойство | Значение |
+  | Свойство. | Значение |
   |----------|-------|
   | **Тип ключа** | RSA |
   | **Размер ключа RSA** | 2048 |
-  | **Включен** | Да |
+  | **Включено** | Да |
   |||
 
   ![Создание ключа шифрования, управляемого клиентом](./media/customer-managed-keys-integration-service-environment/create-customer-managed-key-for-encryption.png)
@@ -101,7 +101,7 @@ Azure Logic Apps использует хранилище Azure для хране
 
 ```json
 {
-   "id": "/subscriptions/{Azure-subscription-ID/resourceGroups/{Azure-resource-group}/providers/Microsoft.Logic/integrationServiceEnvironments/{ISE-name}",
+   "id": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.Logic/integrationServiceEnvironments/{ISE-name}",
    "name": "{ISE-name}",
    "type": "Microsoft.Logic/integrationServiceEnvironments",
    "location": "{Azure-region}",
@@ -248,6 +248,6 @@ Azure Logic Apps использует хранилище Azure для хране
 
 Дополнительные сведения см. в статьях [Проверка подлинности в Key Vault](../key-vault/general/authentication.md) и [назначение политики доступа Key Vault](../key-vault/general/assign-access-policy-portal.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения об [Azure Key Vault](../key-vault/general/overview.md).

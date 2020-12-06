@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed0d4b754911dda49776379fb318390eae411000
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: c2124ca9fae76d87a695a2c453f7b222e7a08794
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839018"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96742799"
 ---
 # <a name="azure-ad-multi-factor-authentication-user-data-collection"></a>Сбор данных пользователя многофакторной идентификации Azure AD
 
@@ -30,7 +30,7 @@ ms.locfileid: "94839018"
 
 Попытки пройти проверку подлинности (для создания отчетов и устранения неполадок):
 
-- Отметка времени
+- Timestamp
 - Имя пользователя
 - Имя
 - Фамилия
@@ -58,20 +58,20 @@ ms.locfileid: "94839018"
 - итоговый результат;
 - Результаты
 - Аутентифицированные
-- Результат
+- Result
 - IP-адрес вызывающего;
 - Устройства
 - токен устройства;
 - Тип устройства
 - версия мобильного приложения;
 - Сценарий
-- Результат
+- Result
 - использованная проверка наличия уведомлений.
 
 Активации (попытки активировать учетную запись в мобильном приложении Microsoft Authenticator):
 - Имя пользователя
 - Имя учетной записи
-- Отметка времени
+- Timestamp
 - результат получения кода активации;
 - успешная активация;
 - ошибка активации;

@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aa093411e40b2fc60c52c2a22434658bab78e59
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 978f404aa9b99819460e46ea89df19d27431b8b8
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839256"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743145"
 ---
 # <a name="plan-an-azure-ad-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure AD
 
@@ -29,7 +29,7 @@ ms.locfileid: "94839256"
 Чтобы быстро просмотреть многофакторную идентификацию Azure AD в действии, а затем вернитесь к рассмотрению дополнительных рекомендаций по развертыванию:
 
 > [!div class="nextstepaction"]
-> [Включение многофакторной идентификации Azure AD](tutorial-enable-azure-mfa.md)
+> [Включение многофакторной проверки подлинности Azure AD](tutorial-enable-azure-mfa.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -370,4 +370,4 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 Чтобы просмотреть многофакторную идентификацию Azure AD в действии, выполните следующие действия.
 
 > [!div class="nextstepaction"]
-> [Включение многофакторной идентификации Azure AD](tutorial-enable-azure-mfa.md)
+> [Включение многофакторной проверки подлинности Azure AD](tutorial-enable-azure-mfa.md)
