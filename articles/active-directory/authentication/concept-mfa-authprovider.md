@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d69ba7b4393a815c9f9685d2e2679c6423ac65a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2c8454d2ca83d4f406149e7eb73feb19ce59554f
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965256"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744131"
 ---
 # <a name="when-to-use-an-azure-multi-factor-authentication-provider"></a>Когда следует использовать поставщик службы Многофакторной идентификации Azure
 
@@ -48,11 +48,11 @@ ms.locfileid: "91965256"
 > [!CAUTION]
 > При удалении поставщика проверки подлинности подтверждение не выполняется. Выбор **удаления** является постоянным процессом.
 
-Поставщики проверки подлинности можно найти в **портал Azure**  >  **Azure Active Directory**  >  **Security**  >  **MFA**  >  **поставщиков**mfa. Щелкните список поставщиков, чтобы просмотреть сведения и конфигурации, связанные с этим поставщиком.
+Поставщики проверки подлинности можно найти в **портал Azure**  >  **Azure Active Directory**  >  **Security**  >  **MFA**  >  **поставщиков** mfa. Щелкните список поставщиков, чтобы просмотреть сведения и конфигурации, связанные с этим поставщиком.
 
 Перед удалением поставщика проверки подлинности запишите все настроенные параметры, настроенные в поставщике. Определите, какие параметры необходимо перенести в общие параметры MFA от поставщика, и завершите перенос этих параметров. 
 
-Серверы Azure MFA, связанные с поставщиками, потребуется активировать повторно с помощью учетных данных, созданных в разделе **портал Azure**  >  **Azure Active Directory**  >  **Security**  >  **MFA**  >  **Параметры безопасности сервера**mfa. Перед повторной активацией необходимо удалить следующие файлы из `\Program Files\Multi-Factor Authentication Server\Data\` каталога на серверах Azure MFA в вашей среде:
+Серверы Azure MFA, связанные с поставщиками, потребуется активировать повторно с помощью учетных данных, созданных в разделе **портал Azure**  >  **Azure Active Directory**  >  **Security**  >  **MFA**  >  **Параметры безопасности сервера** mfa. Перед повторной активацией необходимо удалить следующие файлы из `\Program Files\Multi-Factor Authentication Server\Data\` каталога на серверах Azure MFA в вашей среде:
 
 - caCert
 - cert

@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: b6b3cac51ffd4ccd138994ac65b4f96b07816970
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 3a47ba2025bcaba542d2dbec0c89643e0900f233
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368701"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746154"
 ---
 # <a name="how-to-configure-your-saas-offer-listing-details"></a>Как настроить сведения о списке предложений SaaS
 
@@ -102,7 +102,7 @@ ms.locfileid: "94368701"
 
 Выберите **Сохранить черновик** , прежде чем перейти к следующей вкладке: Предварительная аудитория.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы продаете предложение через Майкрософт, перейдите к разделу [Добавление аудитории предварительного просмотра для предложения SaaS](create-new-saas-offer-preview.md). 
-- В противном случае перейдите к разделу [как получить предложение SaaS](create-new-saas-offer-marketing.md).
+- В противном случае перейдите к разделу [как продать предложение SaaS](create-new-saas-offer-marketing.md).

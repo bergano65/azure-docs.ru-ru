@@ -8,19 +8,19 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: ed0c7ef98e70774350c9a3ff12b0cc3f4186e1bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 041df9b77e85f09d2cf680773edc995c6288acaa
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89381191"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746426"
 ---
 # <a name="how-to-add-a-preview-audience-for-your-saas-offer"></a>Как добавить аудиторию предварительного просмотра для предложения SaaS
 
 По мере создания предложения SaaS (программное обеспечение как услуга) в центре партнеров необходимо определить аудиторию предварительной версии, которая сможет просмотреть список предлагаемых вам предложений. В этой статье объясняется, как настроить аудиторию предварительной версии.
 
 > [!NOTE]
-> Если вы решите обрабатывать транзакции независимо, этот параметр отображаться не будет. Вместо этого перейдите к [способу продвижения предложения SaaS](create-new-saas-offer-marketing.md).
+> Если вы решите обрабатывать транзакции независимо, этот параметр отображаться не будет. Вместо этого перейдите к [способу продажи предложения SaaS](create-new-saas-offer-marketing.md).
 
 ## <a name="define-a-preview-audience"></a>Определение аудитории для предварительного просмотра
 
@@ -49,6 +49,6 @@ ms.locfileid: "89381191"
 1. Выберите. CSV-файл и нажмите кнопку **Открыть**.
 1. Выберите **Сохранить черновик** , прежде чем перейти к следующей вкладке: **Техническая конфигурация**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как добавить технические сведения о предложении SaaS](create-new-saas-offer-technical.md)

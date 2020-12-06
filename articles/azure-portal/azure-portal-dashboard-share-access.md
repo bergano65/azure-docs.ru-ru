@@ -1,24 +1,15 @@
 ---
 title: Совместное использование панелей мониторинга портал Azure с помощью управления доступом на основе ролей в Azure
 description: В этой статье объясняется, как предоставить общий доступ к панели мониторинга в портал Azure с помощью управления доступом на основе ролей Azure.
-services: azure-portal
-documentationcenter: ''
-author: mgblythe
-manager: mtillman
 ms.assetid: 8908a6ce-ae0c-4f60-a0c9-b3acfe823365
-ms.service: azure-portal
-ms.devlang: NA
 ms.topic: how-to
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 03/23/2020
-ms.author: mblythe
-ms.openlocfilehash: b74cae439ce351a4d720f215679cc0802eebe898
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: de2efd75d07c3dc7df771aad1bd9c73453dad212
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92092211"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745984"
 ---
 # <a name="share-azure-dashboards-by-using-azure-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей в Azure
 
@@ -55,7 +46,7 @@ ms.locfileid: "92092211"
 
     ![Выберите общий доступ для панели мониторинга.](./media/azure-portal-dashboard-share-access/share-dashboard-for-access-control.png)
 
-1. В окне **общий доступ + управление доступом**выберите **опубликовать**.
+1. В окне **общий доступ + управление доступом** выберите **опубликовать**.
 
     ![Публикация панели мониторинга](./media/azure-portal-dashboard-share-access/publish-dashboard-for-access-control.png)
 
@@ -69,7 +60,7 @@ ms.locfileid: "92092211"
 
 1. После публикации панели мониторинга выберите параметр **общий доступ** или отменить **Общий** доступ, чтобы открыть общий доступ и **Управление доступом**.
 
-1. В окне **общий доступ и управление доступом**выберите **Управление пользователями**.
+1. В окне **общий доступ и управление доступом** выберите **Управление пользователями**.
 
     ![Управление пользователями для панели мониторинга](./media/azure-portal-dashboard-share-access/manage-users-for-access-control.png)
 

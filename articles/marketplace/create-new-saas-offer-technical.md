@@ -8,19 +8,19 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: d84e1508dec4d4a5802f7a2ac8c0e6ada5a8044c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 28c0be40387f411286230f94c19fa23a80e650af
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128697"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746409"
 ---
 # <a name="how-to-add-technical-details-for-your-saas-offer"></a>Как добавить технические сведения о предложении SaaS
 
 В этой статье описывается, как ввести технические сведения, которые помогут вам подключиться к вашему решению в коммерческом магазине Майкрософт. Это подключение позволяет нам подготавливать ваше предложение для клиента, если оно запрашивает и управляет им. Дополнительные сведения об этих параметрах см. в разделе [технические сведения](plan-saas-offer.md#technical-information).
 
 > [!NOTE]
-> Если вы решите обрабатывать транзакции независимо, этот параметр отображаться не будет. Вместо этого перейдите к [способу продвижения предложения SaaS](create-new-saas-offer-marketing.md).
+> Если вы решите обрабатывать транзакции независимо, этот параметр отображаться не будет. Вместо этого перейдите к [способу продажи предложения SaaS](create-new-saas-offer-marketing.md).
 
 ## <a name="technical-configuration"></a>Техническая конфигурация
 

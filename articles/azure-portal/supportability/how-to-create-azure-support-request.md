@@ -1,20 +1,15 @@
 ---
-title: Как создать запрос в службу поддержки Azure | Документация Майкрософт
+title: Создание запроса на поддержку Azure
 description: Клиенты, которым нужна помощь, могут использовать портал Azure для поиска решений самообслуживания, а также для создания запросов на поддержку и управления ими.
-services: Azure Supportability
-author: mgblythe
-manager: scotthit
 ms.assetid: fd6841ea-c1d5-4bb7-86bd-0c708d193b89
-ms.service: azure-supportability
 ms.topic: how-to
 ms.date: 06/25/2020
-ms.author: mblythe
-ms.openlocfilehash: f937b03b2f838f69f56a4b132d0ea7a7e298b532
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 11ca7925ce1664b5586ab8ec0fb523a2d562ee80
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372129"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745593"
 ---
 # <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
@@ -102,7 +97,7 @@ Azure предоставляет неограниченную поддержку
 Инженер службы поддержки свяжется с вами, используя указанный вами метод. Сведения о начальном времени ответа см. в разделе [область поддержки и скорость реагирования](https://azure.microsoft.com/support/plans/response/).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о вариантах самостоятельного устранения проблем в Azure см. в этом видео:
 

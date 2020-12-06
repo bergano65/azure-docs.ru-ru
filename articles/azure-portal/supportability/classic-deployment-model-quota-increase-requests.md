@@ -5,14 +5,13 @@ author: sowmyavenkat86
 ms.author: svenkat
 ms.date: 01/27/2020
 ms.topic: how-to
-ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: afdb8b2b677321239f240e74d49711195ac186c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5b5e8c11bfe164aaa3539742dac8c4d267c69e1
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84763913"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745610"
 ---
 # <a name="classic-deployment-model"></a>Классическая модель развертывания
 
@@ -38,7 +37,7 @@ ms.locfileid: "84763913"
 
    ![Создайте новый запрос в службу поддержки в портал Azure](./media/resource-manager-core-quotas-request/new-support-request.png)
 
-1. В списке **тип проблемы**выберите **пределы службы и подписки (квоты)**.
+1. В списке **тип проблемы** выберите **пределы службы и подписки (квоты)**.
 
    ![Выбор квоты в качестве типа проблемы](./media/resource-manager-core-quotas-request/select-quota-issue-type.png)
 
@@ -46,7 +45,7 @@ ms.locfileid: "84763913"
 
    ![Выберите подписку, для которой требуется увеличить квоту](./media/resource-manager-core-quotas-request/select-subscription-support-request.png)
 
-1. В качестве **типа квоты**выберите **COMPUTE-VM (Cores-виртуальных ЦП), чтобы увеличить лимит подписки**.
+1. В качестве **типа квоты** выберите **COMPUTE-VM (Cores-виртуальных ЦП), чтобы увеличить лимит подписки**.
 
    ![Выберите тип квоты для увеличения](./media/resource-manager-core-quotas-request/select-quota-type.png)
 
@@ -54,11 +53,11 @@ ms.locfileid: "84763913"
 
    ![Укажите сведения, которые помогут вам отправить запрос](./media/resource-manager-core-quotas-request/provide-details-link.png)
 
-1. В окне **сведения о квоте**выберите **классический** и укажите **Расположение**.
+1. В окне **сведения о квоте** выберите **классический** и укажите **Расположение**.
 
    ![Добавление сведений, включая модель и расположение развертывания](./media/resource-manager-core-quotas-request/quota-details-classic.png)
 
-1. В качестве **семейства SKU**выберите один или несколько семейств SKU для увеличения.
+1. В качестве **семейства SKU** выберите один или несколько семейств SKU для увеличения.
 
    ![Укажите семейство SKU для увеличения](./media/resource-manager-core-quotas-request/sku-family-classic.png)
 
@@ -94,7 +93,7 @@ ms.locfileid: "84763913"
 
    ![Укажите сведения о запросе](./media/resource-manager-core-quotas-request/provide-details-link.png)
 
-1. В окне **сведения о квоте**выберите **классический** и **Расположение**.
+1. В окне **сведения о квоте** выберите **классический** и **Расположение**.
 
    ![Выбор сведений о квоте, включая модель и расположение развертывания](./media/resource-manager-core-quotas-request/quota-details-classic.png)
 

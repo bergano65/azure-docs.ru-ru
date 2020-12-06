@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 96e22beb9f9b088e698f0db12104f526af2b936b
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 5c3bfbdf133777f0bc219d1306f80bd4d38b56ea
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989459"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746273"
 ---
 # <a name="configure-ddos-attack-mitigation-reports-and-flow-logs"></a>Настройка журналов потоков и отчетов об устранении рисков атак DDoS 
 
@@ -74,7 +74,7 @@ ms.locfileid: "94989459"
 
 ### <a name="azure-sentinel-data-connector"></a>Соединитель данных Sentinel Azure
 
-Вы можете подключить к Azure Sentinel, просматривать и анализировать данные в книгах, создавать пользовательские оповещения и внедрять их в процессы исследования. Чтобы подключиться к Azure Sentinel, см. статью [Подключение к Azure Sentinel](../sentinel/connect-azure-ddos-protection.md). 
+Вы можете подключать журналы потоков для предотвращения атак в Azure Sentinel, просматривать и анализировать данные в книгах, создавать пользовательские оповещения и внедрять их в процессы исследования. Чтобы подключиться к Azure Sentinel, см. статью [Подключение к Azure Sentinel](../sentinel/connect-azure-ddos-protection.md). 
 
 ![Соединитель от атак DDoS Azure Sentinel](./media/ddos-attack-telemetry/azure-sentinel-ddos.png)
 

@@ -1,24 +1,15 @@
 ---
 title: Создание панелей мониторинга на портале Azure и предоставление общего доступа к ним
 description: В этой статье описывается создание, Настройка, публикация и совместное использование панелей мониторинга в портал Azure.
-services: azure-portal
-documentationcenter: ''
-author: sewatson
-manager: mtillman
 ms.assetid: ff422f36-47d2-409b-8a19-02e24b03ffe7
-ms.service: azure-portal
-ms.devlang: NA
 ms.topic: how-to
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 03/23/2020
-ms.author: mblythe
-ms.openlocfilehash: b4241e51f186ea973702562ab27bb7f13a77de57
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 10c322c9d9d18f7b79a4419bd9efa2e366a5b7c3
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089491"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745831"
 ---
 # <a name="create-and-share-dashboards-in-the-azure-portal"></a>Создание панелей мониторинга на портале Azure и предоставление общего доступа к ним
 
@@ -142,7 +133,7 @@ ms.locfileid: "92089491"
 
 ## <a name="publish-and-share-a-dashboard"></a>Публикация и совместное использование панели мониторинга
 
-При создании панели мониторинга она является закрытой по умолчанию, что означает, что это единственный пользователь, который может ее видеть. Чтобы сделать панели мониторинга доступными для других пользователей, их можно опубликовать и предоставить к ним общий доступ. Дополнительные сведения см. в статье [предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей Azure](azure-portal-dashboard-share-access.md).
+При создании панели мониторинга она является закрытой по умолчанию, что означает, что это единственный пользователь, который может ее видеть. Чтобы сделать панели мониторинга доступными для других пользователей, их можно опубликовать и предоставить к ним общий доступ. Дополнительные сведения см. в статье [Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей](azure-portal-dashboard-share-access.md).
 
 ### <a name="open-a-shared-dashboard"></a>Открытие общей панели мониторинга
 

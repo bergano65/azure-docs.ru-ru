@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 63bb235dcebc67b753e01dd8b193ef1a2b66787d
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 222106f5838a1eb237987afaa93924f1efe4a1f4
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96555169"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746290"
 ---
 # <a name="file-extension-insights-about-your-data-from-azure-purview"></a>Расширение файла сведения о данных из Azure зрения 
 
@@ -39,6 +39,9 @@ ms.locfileid: "96555169"
 ## <a name="use-purview-file-extension-insights"></a>Использование расширения файлов зрения
 
 При сканировании ресурсов Azure зрения может определить типы файлов, находящиеся в области данных, и предоставить вам дополнительные сведения о каждом типе файлов. Сведения включают количество файлов каждого типа, где находятся эти файлы, и возможность их пропросмотра для конфиденциальных данных.
+
+> [!NOTE]
+> После того как вы проверили исходные типы, дайте **расширенной информации о расширении файла** несколько часов, чтобы отразить новые активы.
 
 **Просмотр расширенной аналитики файлов:**
 
@@ -91,7 +94,7 @@ ms.locfileid: "96555169"
 Над фильтрами выберите **изменить столбцы** , :::image type="icon" source="media/insights/ico-columns.png" border="false"::: чтобы отобразить больше или меньше столбцов в сетке или изменить порядок. 
 
 Чтобы отсортировать сетку, выберите заголовок столбца для сортировки по этому столбцу.
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об отчетах Azure зрения Insights
 > [!div class="nextstepaction"]

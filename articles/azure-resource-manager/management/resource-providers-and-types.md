@@ -2,14 +2,14 @@
 title: Поставщики ресурсов и типы ресурсов
 description: Описывает поставщики ресурсов, которые поддерживают Azure Resource Manager. Здесь описываются их схемы, доступные версии API и регионы, в которых могут размещаться ресурсы.
 ms.topic: conceptual
-ms.date: 12/01/2020
+ms.date: 12/04/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6413a1279c9c7a995bb144097e3db55d5f3a90d2
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6d114fdfae12dd9ee96a23e4dafc3847c6429d0c
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452107"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745122"
 ---
 # <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
@@ -45,20 +45,28 @@ ms.locfileid: "96452107"
 
 ## <a name="azure-portal"></a>Портал Azure
 
+### <a name="register-resource-provider"></a>Регистрация поставщика ресурсов
+
 Чтобы просмотреть всех поставщиков ресурсов, а также состояние регистрации для подписки, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. В меню портала Azure выберите **Все службы**.
+1. В меню портал Azure найдите пункт **подписки**. Выберите подходящий вариант из предложенных.
 
-    ![выбор подписок](./media/resource-providers-and-types/select-all-services.png)
+   :::image type="content" source="./media/resource-providers-and-types/search-subscriptions.png" alt-text="Поиск по подпискам":::
 
-3. В поле **Все службы** введите **подписка**, а затем выберите **Подписки**.
-4. Выберите подписку из списка подписок для просмотра.
-5. Выберите **Поставщики ресурсов**, а затем просмотрите список доступных поставщиков ресурсов.
+1. Выберите подписку, которую нужно просмотреть.
 
-    ![отображение поставщиков ресурсов](./media/resource-providers-and-types/show-resource-providers.png)
+   :::image type="content" source="./media/resource-providers-and-types/select-subscription.png" alt-text="Выбор подписок":::
 
-6. Чтобы зарегистрировать поставщика ресурсов, выберите **Регистрация**. На предыдущем снимке экрана ссылка **Регистрация** выделена в поле **Microsoft.Blueprint**. Для поддержания минимальных привилегий в подписке следует регистрировать только те поставщики ресурсов, которые готовы к использованию.
+1. В разделе **Параметры** выберите **Поставщики ресурсов**.
+
+   :::image type="content" source="./media/resource-providers-and-types/select-resource-providers.png" alt-text="Выбор поставщиков ресурсов":::
+
+6. Найдите поставщик ресурсов, который нужно зарегистрировать, и нажмите кнопку **зарегистрировать**. Для поддержания минимальных привилегий в подписке следует регистрировать только те поставщики ресурсов, которые готовы к использованию.
+
+   :::image type="content" source="./media/resource-providers-and-types/register-resource-provider.png" alt-text="Регистрация поставщиков ресурсов":::
+
+### <a name="view-resource-provider"></a>Просмотр поставщика ресурсов
 
 Чтобы просмотреть сведения для конкретного поставщика ресурсов, сделайте следующее:
 

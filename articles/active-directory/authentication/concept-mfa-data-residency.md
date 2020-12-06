@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/24/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3854bb410aba8da65b47a335bf13f1dcc51a0180
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 40751b7864cc62d17836ab6d57cd106f6904f64a
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839902"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744114"
 ---
 # <a name="data-residency-and-customer-data-for-azure-ad-multi-factor-authentication"></a>Данные местонахождение и данные клиента для многофакторной идентификации Azure AD
 
@@ -45,7 +45,7 @@ ms.locfileid: "94839902"
 
 Многофакторная идентификация Azure AD не регистрирует личные данные, такие как имя пользователя, номер телефона или IP-адрес, но существует *значение userobjectid* , определяющий попытки многофакторной проверки подлинности для пользователей. Данные журнала хранятся в течение 30 дней.
 
-### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
+### <a name="azure-ad-multi-factor-authentication"></a>Многофакторная идентификация Azure AD
 
 Для общедоступных облаков Azure, за исключением проверки подлинности Azure B2C, расширения NPS и адаптера AD FS в Windows Server 2016 или 2019 хранятся следующие персональные данные.
 

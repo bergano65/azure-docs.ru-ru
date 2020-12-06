@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 74f4391fcd071ac510fc66b2f8bc36ec4549dc47
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e6a92282d2bcd316a771742048dacd9a7181de4f
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575760"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746188"
 ---
 # <a name="sensitivity-label-insights-about-your-data-in-azure-purview"></a>Метка чувствительности к данным в Azure зрения
 
@@ -48,6 +48,9 @@ ms.locfileid: "96575760"
 Хотя классификации сопоставляются напрямую (номер социального страхования имеет классификацию **номера социального страхования**), метки чувствительности применяются, когда одна или несколько классификаций и сценариев находятся вместе. 
 
 Зрения использует те же классификации, которые также известны как типы конфиденциальных данных, как Microsoft 365. Это позволяет расширить существующие метки чувствительности в ресурсах Azure зрения.
+
+> [!NOTE]
+> После того как вы проверили исходные типы источников, поставьте **чувствительность к метке** за несколько часов, чтобы отразить новые активы.
 
 **Чтобы просмотреть метки конфиденциальности, выполните следующие действия.**
 

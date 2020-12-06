@@ -1,20 +1,14 @@
 ---
 title: Начало работы с Центром быстрого запуска Azure
 description: Чтобы приступить к работе с Azure, воспользуйтесь руководством по центру быстрого запуска Azure. Научитесь настраивать, выполнять миграцию и внедрять новые.
-services: azure-portal
-keywords: ''
-author: mgblythe
-ms.author: mblythe
 ms.date: 01/29/2020
 ms.topic: conceptual
-ms.service: azure-portal
-manager: mtillman
-ms.openlocfilehash: 21dd43b5179d0752699bb56b51a2c08976aa037b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2b64e52ed0a15db216d5fb298b66d8ec03fc2f42
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000850"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745712"
 ---
 # <a name="get-started-with-the-azure-quickstart-center"></a>Начало работы с Центром быстрого запуска Azure
 
@@ -43,7 +37,7 @@ ms.locfileid: "96000850"
 
 [Общие сведения о центре быстрого запуска Azure](https://www.youtube.com/watch?v=0bSA7RXrbAg)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о настройке и миграции Azure в [инфраструктуре внедрения Microsoft Cloud для Azure](/azure/architecture/cloud-adoption/).
 * Разблокируйте свои навыки работы с облаком, используя дополнительные курсы от [Microsoft Learn](/learn/azure/).

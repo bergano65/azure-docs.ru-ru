@@ -7,14 +7,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 10/27/2020
+ms.date: 12/04/2020
 ms.reviewer: sngun
-ms.openlocfilehash: b3f7a8fbe2afcf9b5603f288fe6e3bc429b14532
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 674bb67018fcbf7df6285a66c2e0aeb37d24f409
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340199"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744924"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Модель извлечения канала изменений в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "93340199"
 
 Ниже перечислены некоторые ключевые различия между обработчиком веб-канала изменений и моделью извлечения.
 
-|Функция  | Обработчик канала изменений| Модель извлечения |
+|Компонент  | Обработчик канала изменений| Модель извлечения |
 | --- | --- | --- |
 | Отслеживание текущей точки обработки в веб-канале изменений | Аренда (хранится в контейнере Azure Cosmos DB) | Маркер продолжения (сохраненный в памяти или вручную) |
 | Возможность воспроизведения прошлых изменений | Да, с моделью отправки | Да, с моделью извлечения|
@@ -52,7 +52,7 @@ ms.locfileid: "93340199"
 | Уровень поддержки | Общедоступная версия | Preview (Предварительный просмотр) |
 
 > [!NOTE]
-> В отличие от считывания с помощью обработчика веб-канала изменений, необходимо явно отреагировать на случаи, когда нет новых изменений. 
+> В отличие от чтения с помощью обработчика веб-канала изменений, необходимо явно отреагировать на случаи, когда новые изменения отсутствуют. 
 
 ## <a name="consuming-an-entire-containers-changes"></a>Обработка изменений для всего контейнера
 

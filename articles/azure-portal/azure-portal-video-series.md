@@ -1,20 +1,15 @@
 ---
 title: Серия видеоинструкций по работе с порталом Azure
 description: Ознакомьтесь с видеороликами о работе со службами Azure на портале. Просматривайте и применяйте ссылки непосредственно на последние видеоролики.
-services: azure-portal
 keywords: ''
-author: mgblythe
-ms.author: mblythe
-ms.date: 08/17/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
-ms.service: azure-portal
-manager: mtillman
-ms.openlocfilehash: 42d9c418ee6feae7a763b1a2cc76d8edb2fec6ce
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 0762174a3207c0620d3b6413d14c817014fc49a0
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873716"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745865"
 ---
 # <a name="azure-portal-how-to-video-series"></a>Серия видеоинструкций по работе с порталом Azure
 
@@ -38,6 +33,6 @@ ms.locfileid: "91873716"
 
 Ознакомьтесь с [пошаговыми руководствами по портал Azure](https://www.youtube.com/playlist?list=PLLasX02E8BPBKgXP4oflOL29TtqTzwhxR) , чтобы получить наиболее полезные советы по созданию большинства из портал Azure. Подпишитесь на канал, чтобы получать уведомления при добавлении новых видеороликов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите сотни видеороликов по службам Azure в [библиотеке видео](https://azure.microsoft.com/resources/videos/index/?tag=microsoft-azure-portal).
