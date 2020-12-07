@@ -3,12 +3,12 @@ title: IP-адреса, используемые Application Insights и Log Ana
 description: Исключения брандмауэра сервера, требуемые для Application Insights
 ms.topic: conceptual
 ms.date: 09/15/2020
-ms.openlocfilehash: c1ccb40a9b8d8080da416aeb920ed016a231f697
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 10328efa9b8b9cdbe1e57e1e982653aea7e39574
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547939"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96748881"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
 Служба [Azure Application Insights](./app-insights-overview.md) использует несколько IP-адресов. Вам могут понадобиться эти адреса, если отслеживаемое приложение расположено за брандмауэром.
@@ -46,6 +46,10 @@ ms.locfileid: "96547939"
 
 ## <a name="availability-tests"></a>Тесты доступности
 Ниже приведен список адресов, которые используются для [проверки доступности веб-сайтов](./monitor-web-app-availability.md) . Если вам нужно запустить веб-тесты в приложении, а веб-сервер обслуживает только определенные клиенты, следует разрешить входящий трафик от наших серверов тестирования доступности.
+
+
+> [!NOTE]
+> Для ресурсов, размещенных в частных виртуальных сетях, которые не могут разрешать прямую входящую связь с агентами тестирования доступности в общедоступной среде Azure, единственным вариантом является [Создание и размещение собственных тестов доступности](availability-azure-functions.md).
 
 ### <a name="service-tag"></a>Тег службы
 

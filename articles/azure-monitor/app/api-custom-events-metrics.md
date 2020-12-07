@@ -4,12 +4,12 @@ description: Вставьте несколько строк кода в свое
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: e9f175e2585a5254922c9e859cf5ece2afbbc3e3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d1ed05cd7337a7e82a02b25a2f29d54567b9f9a3
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011356"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96748898"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -32,7 +32,7 @@ ms.locfileid: "96011356"
 
 Вы можете [прикрепить свойства и метрики](#properties) к большинству этих вызовов телеметрии.
 
-## <a name="before-you-start"></a><a name="prep"></a>Перед началом работы
+## <a name="before-you-start"></a><a name="prep"></a>Прежде чем начать
 
 Если у вас еще нет ссылки на пакет SDK Application Insights, выполните указанные ниже действия.
 
@@ -530,6 +530,9 @@ telemetry.trackTrace("Slow Database response", SeverityLevel.Warning, properties
 ## <a name="trackdependency"></a>TrackDependency (Отслеживание зависимостей)
 
 Используйте вызов TrackDependency для отслеживания времени отклика и процента успешных попыток вызовов во внешнюю часть кода. Результаты отображаются в диаграммах зависимостей на портале. Приведенный ниже фрагмент кода должен быть добавлен везде, где выполняется вызов зависимости.
+
+> [!NOTE]
+> Для .NET и .NET Core можно также использовать `TelemetryClient.StartOperation` метод (расширение), который заполняет `DependencyTelemetry` свойства, необходимые для корреляции, и другие свойства, такие как время начала и длительность, поэтому вам не нужно создавать пользовательский таймер, как в приведенных ниже примерах. Дополнительные сведения см. [в разделе об отслеживании исходящих зависимостей в](https://docs.microsoft.com/azure/azure-monitor/app/custom-operations-tracking#outgoing-dependencies-tracking)этой статье.
 
 *C#*
 
@@ -1110,7 +1113,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Отсутствует. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](./export-power-bi.md) и [непрерывный экспорт](./export-telemetry.md).

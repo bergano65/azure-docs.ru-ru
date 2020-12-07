@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 06/20/2019
-ms.openlocfilehash: 86ee81f3802b7ec7f8189123192c20143a08cf3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1758cca902eb77ffc66824cb56b8add9446fabf9
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87090252"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749153"
 ---
 # <a name="build-your-first-serverless-app-by-using-azure-logic-apps-and-azure-functions-in-visual-studio"></a>Создание первого бессерверного приложения с помощью Azure Logic Apps и функций Azure в Visual Studio
 
@@ -32,7 +32,7 @@ ms.locfileid: "87090252"
     > При установке Visual Studio 2019 или 2017 обязательно выберите рабочую нагрузку **разработки Azure**.
 
   * [Пакет Microsoft Azure SDK для .NET (версия 2.9.1 или более поздняя)](https://azure.microsoft.com/downloads/). 
-  Дополнительные сведения о [пакете Azure SDK для .NET](/dotnet/azure/dotnet-tools?view=azure-dotnet).
+  Дополнительные сведения о [пакете Azure SDK для .NET](/dotnet/azure/intro).
 
   * [Azure PowerShell](https://github.com/Azure/azure-powershell#installation).
 
@@ -126,7 +126,7 @@ ms.locfileid: "87090252"
    > [!TIP]
    > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что установлены последние обновления для Visual Studio.
 
-1. После появления поля **свойства приложения логики** в разделе **Подписка**выберите подписку Azure, если она еще не выбрана. В разделе **Группа ресурсов**выберите группу ресурсов и расположение, в котором развернуто решение, а затем нажмите кнопку **ОК**.
+1. После появления поля **свойства приложения логики** в разделе **Подписка** выберите подписку Azure, если она еще не выбрана. В разделе **Группа ресурсов** выберите группу ресурсов и расположение, в котором развернуто решение, а затем нажмите кнопку **ОК**.
 
    ![Свойства приложения логики](./media/logic-apps-serverless-get-started-vs/logic-app-properties.png)
 
@@ -148,7 +148,7 @@ ms.locfileid: "87090252"
 
 1. Откройте меню **Представление** в Visual Studio и выберите **Cloud Explorer**.
 
-1. В разделе **все подписки**выберите подписку Azure, связанную с приложениями логики, которыми требуется управлять, а затем нажмите кнопку **Применить**.
+1. В разделе **все подписки** выберите подписку Azure, связанную с приложениями логики, которыми требуется управлять, а затем нажмите кнопку **Применить**.
 
 1. В разделе **Приложения логики** выберите это приложение логики. В контекстном меню для приложения логики выберите **Open with Logic App Editor** (Открыть в редакторе приложений логики).
 
@@ -157,6 +157,6 @@ ms.locfileid: "87090252"
 
 Теперь опубликованное приложение логики можно скачать в проект группы ресурсов. Поэтому, хотя вы могли запускать приложение логики в портал Azure, вы по-прежнему можете импортировать это приложение в Visual Studio и управлять им. Дополнительные сведения см. в статье [Управление приложениями логики в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление приложениями логики в Visual Studio](manage-logic-apps-with-visual-studio.md)
