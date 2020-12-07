@@ -74,7 +74,9 @@
       items:
         - name: Поддержка службы "Миграция Azure"
           href: migrate-support-matrix.md
-        - name: Базовые средства обеспечения безопасности для службы "Миграция Azure"
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Обнаружить
       items:
