@@ -9,12 +9,12 @@ metadata:
   author: anastasia-ms
   ms.author: v-stharr
   ms.date: 1/15/2020
-  ms.openlocfilehash: 0038fff540df95f6c6e24275eb39ef6bc1ecbe75
-  ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+  ms.openlocfilehash: 49de6739fe4d084bc119ffeaa0ffb3e8156f935b
+  ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/26/2020
-  ms.locfileid: "96186326"
+  ms.lasthandoff: 12/03/2020
+  ms.locfileid: "96546307"
 landingContent:
 - title: Использование службы "Карты Azure"
   linkLists:
@@ -172,6 +172,16 @@ landingContent:
       url: /rest/api/maps/traffic
     - text: Служба часовых поясов
       url: /rest/api/maps/timezone
+- title: Разработка с использованием службы "Высота"
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Получение и использование данных о высоте
+      url: how-to-request-elevation-data.md
+  - linkListType: reference
+    links:
+    - text: Служба "Высота"
+      url: /rest/api/maps/elevation/
 - title: Пространственная аналитика
   linkLists:
   - linkListType: concept

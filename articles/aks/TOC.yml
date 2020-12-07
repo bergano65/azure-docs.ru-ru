@@ -152,6 +152,8 @@
           href: node-updates-kured.md
         - name: Настройка кластера AKS.
           href: cluster-configuration.md
+        - name: Конфигурация настраиваемого узла (предварительная версия)
+          href: custom-node-configuration.md
         - name: Интеграция ACR с кластером AKS
           href: cluster-container-registry-integration.md
         - name: Создание виртуальных узлов

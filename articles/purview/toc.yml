@@ -1,0 +1,153 @@
+items:
+  - name: Документация по Azure Purview
+    href: index.yml
+  - name: Обзор
+    items:
+      - name: Что такое Azure Purview?
+        href: overview.md
+  - name: Краткие руководства
+    expanded: true
+    items:
+      - name: "Создание учетной записи Purview\_— портал Azure"
+        href: create-catalog-portal.md
+      - name: "Создание учетной записи Purview\_— Azure PowerShell"
+        href: create-catalog-powershell.md
+  - name: Учебники
+    items:
+      - name: Начальный набор
+        items:
+          - name: Проверка данных
+            href: tutorial-scan-data.md
+          - name: Навигация и поиск по домашней странице
+            href: tutorial-asset-search.md
+          - name: Просмотр ресурсов и сведений о происхождении
+            href: tutorial-browse-and-view-lineage.md
+          - name: 'Изучение наборов ресурсов, ресурсов, схем, классификаций'
+            href: tutorial-schemas-and-classifications.md
+          - name: Создание терминов глоссария
+            href: tutorial-import-create-glossary-terms.md
+      - name: Регистрация и проверка локального экземпляра SQL Server
+        href: register-scan-on-premises-sql-server.md
+  - name: Основные понятия
+    items:
+      - name: Использование Purview Studio
+        href: use-purview-studio.md
+      - name: Рекомендации по развертыванию
+        href: deployment-best-practices.md
+      - name: Ограничения Azure Purview
+        href: how-to-manage-quotas.md
+      - name: Обнаружение удаленных ресурсов при проверке
+        href: concept-detect-deleted-assets.md
+      - name: Сведения о наборах ресурсов
+        href: concept-resource-sets.md
+      - name: Происхождение данных
+        href: concept-data-lineage.md
+      - name: Поддерживаемые источники данных и типы файлов
+        href: sources-and-scans.md
+      - name: Разрешения каталога
+        href: catalog-permissions.md
+      - name: Поиск в каталоге
+        href: concept-search.md
+      - name: Бизнес-глоссарий
+        href: concept-business-glossary.md
+      - name: Аналитика данных
+        href: concept-insights.md
+      - name: Часто задаваемые вопросы
+        href: frequently-asked-questions.md
+  - name: Практические руководства
+    items:
+      - name: Регистрация и проверка
+        items:
+          - name: Управление учетными данными
+            href: manage-credentials.md
+            displayName: Create and manage Credentials
+          - name: Создание набора правил проверки
+            href: create-a-scan-rule-set.md
+          - name: Управление средами выполнения интеграции
+            href: manage-integration-runtimes.md
+          - name: Устранение неполадок с подключением
+            href: troubleshoot-connections.md
+          - name: Источники
+            items:
+              - name: Управление источниками данных
+                href: manage-data-sources.md
+              - name: Обзор соединителей Purview
+                href: purview-connector-overview.md
+              - name: хранилище BLOB-объектов Azure
+                href: register-scan-azure-blob-storage-source.md
+                displayName: Register and scan azure blob storage
+              - name: Azure Cosmos DB
+                href: register-scan-azure-cosmos-database.md
+                displayName: Register and scan Azure Cosmos DB
+              - name: Azure Data Explorer
+                href: register-scan-azure-data-explorer.md
+                displayName: Register and scan Azure Data Explorer Kusto
+              - name: "Azure Data Lake Storage\_1-го поколения"
+                href: register-scan-adls-gen1.md
+                displayName: Register and scan Azure Data Lake Storage Gen 1 ADLS
+              - name: "Azure Data Lake Storage\_2-го поколения"
+                href: register-scan-adls-gen2.md
+                displayName: Register and scan Azure Data Lake Storage Gen 2 ADLS
+              - name: База данных SQL Azure
+                href: register-scan-azure-sql-database.md
+                displayName: Register and scan Azure SQL DB
+              - name: База данных SQL Azure с брандмауэром
+                href: scan-sqlresource-firewall.md
+                displayName: Register and scan Azure SQL DB with a firewall
+              - name: "Управляемый экземпляр базы данных SQL\_Azure"
+                href: register-scan-azure-sql-database-managed-instance.md
+                displayName: Register and scan Azure SQL DB Managed Instance
+              - name: Azure Synapse Analytics
+                href: register-scan-azure-synapse-analytics.md
+              - name: "Клиент Power BI\_— портал"
+                href: register-scan-power-bi-tenant.md
+              - name: "Клиент Power BI\_— PowerShell"
+                href: powershell-register-scan-power-bi.md
+              - name: Локальный сервер SQL Server
+                href: register-scan-on-premises-sql-server.md
+      - name: Бизнес-глоссарий
+        items:
+          - name: 'Создание, импорт и экспорт терминов глоссария'
+            href: how-to-create-import-export-glossary.md
+          - name: Управление шаблонами терминов
+            href: how-to-manage-term-templates.md
+      - name: Классификация
+        items:
+          - name: Создать пользовательской классификации и правила классификации
+            href: create-a-custom-classification-and-classification-rule.md
+          - name: Применение классификаций
+            href: apply-classifications.md
+          - name: Автоматическое назначение меток содержимому
+            href: create-sensitivity-label.md
+      - name: Поиск и обзор
+        items:
+          - name: Просмотр Каталога данных
+            href: how-to-browse-catalog.md
+          - name: Поиск в Каталоге данных
+            href: how-to-search-catalog.md
+      - name: Журнал преобразований
+        items:
+          - name: Руководство по использованию данных о происхождении
+            href: catalog-lineage-user-guide.md
+          - name: Происхождение Фабрики данных Azure
+            href: how-to-link-azure-data-factory.md
+          - name: Происхождение Azure Data Share
+            href: how-to-link-azure-data-share.md
+      - name: Аналитика
+        items:
+          - name: Просмотр аналитики активов
+            href: asset-insights.md
+          - name: Просмотр аналитики глоссариев
+            href: glossary-insights.md
+          - name: Просмотр аналитики проверок
+            href: scan-insights.md
+          - name: Просмотр аналитики классификаций
+            href: classification-insights.md
+          - name: Просмотр аналитики о метках конфиденциальности
+            href: sensitivity-insights.md
+          - name: Просмотр аналитики расширений файлов
+            href: file-extension-insights.md
+  - name: Справочник
+    items:
+      - name: Поддерживаемые классификации
+        href: supported-classifications.md

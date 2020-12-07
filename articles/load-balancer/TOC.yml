@@ -61,7 +61,7 @@
           href: load-balancer-insights.md
         - name: Метрики и диагностика Load Balancer ценовой категории "Стандартный"
           href: load-balancer-standard-diagnostics.md
-        - name: Журналы Azure Monitor для Load Balancer ценовой категории "Базовый"
+        - name: Журналы Azure Monitor для Load Balancer
           href: load-balancer-monitor-log.md
         - name: Получение метрик Load Balancer с помощью REST
           href: load-balancer-query-metrics-rest-api.md

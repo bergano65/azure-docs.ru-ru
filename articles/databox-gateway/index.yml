@@ -1,0 +1,75 @@
+### YamlMime:Landing
+title: Документация по Шлюзу Azure Data Box — передача данных в подключенном режиме
+summary: Используйте устройства Шлюза Azure Data Box для передачи данных по сети для архивации в облаке, аварийного восстановления и обработки данных в масштабе облака.
+metadata:
+  title: Документация по Шлюзу Azure Data Box — передача данных в подключенном режиме
+  description: Документация по Шлюзу Data Box — высокопроизводительная передача данных по сети в Azure.
+  services: databox
+  ms.service: databox
+  ms.subservice: gateway
+  ms.topic: landing-page
+  ms.collection: collection
+  author: v-dalc
+  ms.author: alkohli
+  ms.date: 10/29/2020
+  ms.openlocfilehash: 811d0555e6fd39f372b4742501a3114bbc9a25b4
+  ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/03/2020
+  ms.locfileid: "96579951"
+landingContent:
+- title: О Шлюзе Data Box
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Шлюзе Data Box
+      url: data-box-gateway-overview.md
+  - linkListType: architecture
+    links:
+    - text: Выбор вариантов перемещения данных
+      url: /azure/storage/common/storage-choose-data-transfer-solution
+    - text: Использование передачи данных по сети или вне сети
+      url: /azure/storage/common/storage-solution-large-dataset-low-network#offline-transfer-or-network-transfer
+  - linkListType: whats-new
+    links:
+    - text: Заметки о выпуске за 2007 г. — актуальное
+      url: data-box-gateway-2007-release-notes.md
+- title: Требования и ограничения
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Требования
+      url: data-box-gateway-system-requirements.md
+    - text: Ограничения
+      url: data-box-gateway-limits.md
+- title: Развертывание
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Подготовка к развертыванию
+      url: data-box-gateway-deploy-prep.md
+    - text: Подготовка в Hyper-V
+      url: data-box-gateway-deploy-provision-hyperv.md
+    - text: Подключение, настройка и активация
+      url: data-box-gateway-deploy-connect-setup-activate.md
+    - text: Передача данных
+      url: data-box-gateway-deploy-add-shares.md
+- title: Управление
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление общими папками
+      url: data-box-gateway-manage-shares.md
+    - text: Управление с помощью PowerShell
+      url: data-box-gateway-connect-powershell-interface.md
+- title: Диагностика
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Диагностика
+      url: data-box-gateway-troubleshoot.md
+    - text: Azure Monitor
+      url: data-box-gateway-monitor.md
+    - text: Открыть запрос в службу поддержки
+      url: ../databox-online/azure-stack-edge-contact-microsoft-support.md

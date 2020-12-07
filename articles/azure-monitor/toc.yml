@@ -131,7 +131,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -274,6 +274,8 @@
                   href: log-query/resource-expression.md
                 - name: Централизация ресурсов данных приложения
                   href: log-query/unify-app-resource-data.md
+                - name: Обращение к Azure Data Explorer из Azure Monitor
+                  href: platform/azure-monitor-data-explorer-proxy.md
         - name: Экспорт данных
           items:
             - name: Экспорт данных рабочей области
@@ -550,7 +552,7 @@
               href: platform/it-service-management-connector-secure-webhook-connections.md
             - name: Создание веб-приложения Service Manager
               href: platform/itsmc-service-manager-script.md
-            - name: Исправление проблем с синхронизацией ServiceNow ITSM
+            - name: Устранение неполадок с соединителем ITSM
               href: platform/itsmc-resync-servicenow.md
         - name: Перенос классических правил генерации оповещений
           items:

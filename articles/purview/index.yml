@@ -1,0 +1,116 @@
+### YamlMime:Landing
+title: Документация по Azure Purview
+summary: Узнайте, как использовать Azure Purview для поиска, распознавания и использования источников данных в организации.
+metadata:
+  title: Документация по Azure Purview
+  description: Узнайте, как использовать Azure Purview для поиска, распознавания и использования источников данных в организации. Руководства, справочник по API REST и другая документация, в которой показано, как планировать и настраивать репозиторий данных, в котором пользователи могут искать доступные источники данных и использовать профильную информацию, предоставленную специалистами.
+  ms.service: purview
+  ms.topic: landing-page
+  author: hrasheed-msft
+  ms.author: hrasheed
+  ms.date: 11/29/2020
+  ms.openlocfilehash: 378a335653acf31275c312bcf4fa53b36bfa614e
+  ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/03/2020
+  ms.locfileid: "96549468"
+landingContent:
+- title: Об Azure Purview
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Purview?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Рекомендации по развертыванию
+      url: deployment-best-practices.md
+    - text: Разрешения Каталога данных
+      url: catalog-permissions.md
+    - text: Поддерживаемые источники данных и типы файлов
+      url: sources-and-scans.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание учетной записи Purview — портал
+      url: create-catalog-portal.md
+    - text: Создание учетной записи Purview — PowerShell/CLI
+      url: create-catalog-powershell.md
+  - linkListType: tutorial
+    links:
+    - text: Скачать начальный набор
+      url: https://download.microsoft.com/download/9/7/9/979db3b1-0916-4997-a7fb-24e3d8f83174/PurviewStarterKitV4.zip
+    - text: Запуск начального набора и проверка данных
+      url: tutorial-scan-data.md
+    - text: Навигация и поиск по домашней странице Purview
+      url: tutorial-asset-search.md
+    - text: Просмотр ресурсов и сведений о происхождении
+      url: tutorial-browse-and-view-lineage.md
+    - text: Изучение наборов ресурсов, ресурсов, схем, классификаций
+      url: tutorial-schemas-and-classifications.md
+    - text: Создание терминов глоссария
+      url: tutorial-import-create-glossary-terms.md
+- title: Проверка источников данных Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Запуск начального набора и проверка данных
+      url: tutorial-scan-data.md
+  - linkListType: how-to-guide
+    links:
+    - text: Проверка Базы данных SQL Azure
+      url: register-scan-azure-sql-database.md
+    - text: Проверка Azure Data Lake Storage 2-го поколения
+      url: register-scan-adls-gen2.md
+    - text: Проверка Azure Cosmos DB
+      url: register-scan-azure-cosmos-database.md
+    - text: Клиент Power BI
+      url: register-scan-power-bi-tenant.md
+    - text: Регистрация и проверка Хранилища BLOB-объектов Azure
+      url: register-scan-azure-blob-storage-source.md
+- title: Проверка источников данных, не относящихся к Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Проверка локального экземпляра SQL Server
+      url: register-scan-on-premises-sql-server.md
+- title: Сведения о хранилище данных
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр аналитики активов
+      url: asset-insights.md
+    - text: Просмотр аналитики глоссариев
+      url: glossary-insights.md
+    - text: Просмотр аналитики проверок
+      url: scan-insights.md
+    - text: Просмотр аналитики классификаций
+      url: classification-insights.md
+- title: Курирование данных
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Наборы ресурсов, ресурсы, схемы, классификации
+      url: tutorial-schemas-and-classifications.md
+    - text: Термины глоссария
+      url: tutorial-import-create-glossary-terms.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание, изменение и удаление настраиваемых классификаций и правил
+      url: create-a-custom-classification-and-classification-rule.md
+    - text: Создание, импорт и экспорт глоссария
+      url: how-to-create-import-export-glossary.md
+- title: Обнаружение данных
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Обзор и просмотр сведений о происхождении
+      url: tutorial-browse-and-view-lineage.md
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр по типу ресурса
+      url: how-to-browse-catalog.md
+    - text: Поиск ресурсов, терминов, заметок и контактов
+      url: how-to-search-catalog.md
