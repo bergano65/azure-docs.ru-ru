@@ -2,16 +2,16 @@
 title: Создание оценки AVS с помощью Azure "миграция сервера" | Документация Майкрософт
 description: Описание создания оценки AVS с помощью средства Azure Migrate Server для оценки
 author: rashi-ms
-ms.service: azure-migrate
-ms.topic: article
-ms.date: 06/26/2020
 ms.author: rajosh
-ms.openlocfilehash: f9fdff54cbd795c6aeda1708dcae8d00022a6a43
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.manager: abhemraj
+ms.topic: how-to
+ms.date: 06/26/2020
+ms.openlocfilehash: 93d17ec2a4fb5c191ce02c73a7a3532e9c854b00
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483510"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752079"
 ---
 # <a name="create-an-azure-vmware-solution-avs-assessment"></a>Создание оценки решения Azure VMware (AVS)
 
@@ -158,7 +158,7 @@ ms.locfileid: "96483510"
 Дополнительные [сведения](concepts-azure-vmware-solution-assessment-calculation.md) о данных производительности 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как использовать [сопоставление зависимостей](how-to-create-group-machine-dependencies.md) для создания групп с высокой степенью достоверности.
 - [Узнайте больше](concepts-azure-vmware-solution-assessment-calculation.md) о том, как рассчитываются оценки AVS.

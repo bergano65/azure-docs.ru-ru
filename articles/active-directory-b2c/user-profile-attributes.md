@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 3/20/2020
+ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 98c33d4b9e749e804f70d9dccb7198884c80dfe7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 85030285810433dc77d1f466d160c50d1f89770e
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952709"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750413"
 ---
 # <a name="user-profile-attributes"></a>Атрибуты профиля пользователя
 
@@ -75,16 +75,22 @@ ms.locfileid: "94952709"
 |streetAddress   |Строка|Почтовый адрес организации пользователя. Максимальная длина — 1024 символа.|Да|Да|Persisted, Output|
 |strongAuthentication AlternativePhoneNumber<sup>1</sup>|Строка|Дополнительный номер телефона пользователя для многофакторной проверки подлинности.|Да|нет|Persisted, Output|
 |strongAuthenticationEmailAddress<sup>1</sup>|Строка|SMTP-адрес для пользователя. Пример: "bob@contoso.com". Этот атрибут используется для входа с помощью политики имени пользователя для хранения адреса электронной почты пользователя. Адрес электронной почты, который затем используется в потоке сброса пароля.|Да|нет|Persisted, Output|
-|strongAuthenticationPhoneNumber<sup>1</sup>|Строка|Основной номер телефона пользователя для многофакторной проверки подлинности.|Да|нет|Persisted, Output|
+|Стронгаусентикатионфоненумбер<sup>2</sup>|Строка|Основной номер телефона пользователя для многофакторной проверки подлинности.|Да|нет|Persisted, Output|
 |surname         |Строка|Фамилия пользователя. Максимальная длина — 64 символа.|Да|Да|Persisted, Output|
 |telephoneNumber (первая запись businessPhones)|Строка|Основной номер телефона организации пользователя.|Да|нет|Persisted, Output|
 |userPrincipalName    |Строка|Имя участника-пользователя (UPN) этого пользователя. UPN — это атрибут, который является именем пользователя для входа через Интернет на основе интернет-стандарта RFC 822. Домен должен присутствовать в коллекции подтвержденных доменов клиента. Это свойство является обязательным при создании учетной записи. Неизменяемый.|нет|нет|Input, Persisted, Output|
 |usageLocation   |Строка|Требуется для пользователей, которым будут назначены лицензии в соответствии с юридическим требованием для проверки доступности служб в странах и регионах. Не допускает значения NULL. Двухбуквенный код региона или страны (в соответствии со стандартом ISO 3166). Примеры: "US", "JP" и "GB".|Да|нет|Persisted, Output|
 |userType        |Строка|Значение строки, которое будет использоваться для классификации типов пользователей в вашем каталоге. Значение должно быть "Member". Только для чтения.|Только для чтения|нет|Persisted, Output|
-|userState (externalUserState)<sup>2</sup>|Строка|Только для учетной записи Azure AD B2B. Указывает, является ли приглашение PendingAcceptance или Accepted.|нет|нет|Persisted, Output|
+|userState (Екстерналусерстате)<sup>3</sup>|Строка|Только для учетной записи Azure AD B2B. Указывает, является ли приглашение PendingAcceptance или Accepted.|нет|нет|Persisted, Output|
 |userStateChangedOn (externalUserStateChangeDateTime)<sup>2</sup>|Дата и время|Показывает метку времени для последних изменений в свойстве UserState.|нет|нет|Persisted, Output|
-|<sup>1 </sup>Не поддерживается Microsoft Graph<br><sup>2 </sup>Не следует использовать с Azure AD B2C||||||
 
+<sup>1 </sup>Не поддерживается Microsoft Graph<br><sup>2</sup> Дополнительные сведения см. в статье [атрибут номера телефона MFA](#mfa-phone-number-attribute) .<br><sup>3 </sup> Не следует использовать с Azure AD B2C
+
+## <a name="mfa-phone-number-attribute"></a>Атрибут номера телефона MFA
+
+При использовании телефона для многофакторной проверки подлинности (MFA) для проверки удостоверения пользователя используется мобильный телефон. Чтобы [Добавить](https://docs.microsoft.com/graph/api/authentication-post-phonemethods) новый номер телефона программно, [Обновить](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update), [получить](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get)или [Удалить](https://docs.microsoft.com/graph/api/phoneauthenticationmethod-delete) номер телефона, используйте [метод проверки подлинности](https://docs.microsoft.com/graph/api/resources/phoneauthenticationmethod)MS API Graph Phone.
+
+В Azure AD B2C [пользовательских политик](custom-policy-overview.md)номер телефона доступен через `strongAuthenticationPhoneNumber` тип утверждения.
 
 ## <a name="extension-attributes"></a>Атрибуты расширения
 

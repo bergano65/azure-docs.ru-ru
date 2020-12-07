@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 06/08/2020
+ms.date: 11/25/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 172824a2215e8a102ad4c284c847072960344549
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5aca04a649dfa5228d12737b21ef2ee2b14013b
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88041533"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750462"
 ---
 # <a name="define-a-restful-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля RESTful в пользовательской политике Azure Active Directory B2C
 
@@ -115,13 +115,13 @@ REST API технический профиль позволяет отправи
 | attribute | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | ServiceUrl | Да | URL-адрес конечной точки REST API. |
-| authenticationType | Да | Тип аутентификации, выполняемый поставщиком утверждений RESTful. Возможные значения: `None`, `Basic`, `Bearer` или `ClientCertificate`. `None`Значение указывает, что REST API является анонимным. Значение `Basic` указывает, что REST API защищен помощью базовой проверки подлинности HTTP. Доступ к API могут получить только проверенные пользователи, включая Azure AD B2C. `ClientCertificate`Значение (рекомендуется) указывает, что REST API ограничивают доступ с помощью проверки подлинности на основе сертификата клиента. Доступ к API могут получить только службы с соответствующими сертификатами, например Azure AD B2C. `Bearer`Значение указывает, что REST API ограничивают доступ с помощью токена носителя клиента OAuth2. |
+| authenticationType | Да | Тип аутентификации, выполняемый поставщиком утверждений RESTful. Возможные значения: `None` , `Basic` , `Bearer` ,  `ClientCertificate` или `ApiKeyHeader` . <br /><ul><li>`None`Значение указывает, что REST API является анонимным. </li><li>Значение `Basic` указывает, что REST API защищен помощью базовой проверки подлинности HTTP. Доступ к API могут получить только проверенные пользователи, включая Azure AD B2C. </li><li>`ClientCertificate`Значение (рекомендуется) указывает, что REST API ограничивают доступ с помощью проверки подлинности на основе сертификата клиента. Доступ к API могут получить только службы с соответствующими сертификатами, например Azure AD B2C. </li><li>`Bearer`Значение указывает, что REST API ограничивают доступ с помощью токена носителя клиента OAuth2. </li><li>`ApiKeyHeader`Значение указывает, что REST API защищена с помощью HTTP-заголовка ключа API, такого как *ключ x – functions-Key*. </li></ul> |
 | алловинсекуреаусинпродуктион| Нет| Указывает `AuthenticationType` , можно ли задать для параметра значение `none` в рабочей среде ( `DeploymentMode` параметр [TrustFrameworkPolicy](trustframeworkpolicy.md) имеет значение `Production` , или не указано). Возможные значения: true или false (по умолчанию). |
 | SendClaimsIn | Нет | Указывает, как отправляются входящие утверждения поставщику утверждений RESTful. Возможные значения: `Body` (по умолчанию), `Form` , `Header` `Url` или `QueryString` . Значение `Body` обозначает входящее утверждение, которое отправляется в тексте запроса в формате JSON. Значение `Form` обозначает входящее утверждение, которое отправляется в тексте запроса в формате пар "ключ-значение", разделенных символом амперсанда (&). Значение `Header` обозначает входящее утверждение, которое отправляется в заголовке запроса. `Url`Значение — это входящее утверждение, отправляемое в URL-адресе, например https://{claim1}. example. com/{claim2}/{claim3}? { claim4} = {claim5}. Значение `QueryString` обозначает входящее утверждение, которое отправляется в строке запроса. HTTP-команды, вызываемые каждым из них, имеют следующий вид:<br /><ul><li>`Body`: POST</li><li>`Form`: POST</li><li>`Header`: Получение</li><li>`Url`: Получение</li><li>`QueryString`: Получение</li></ul> |
 | ClaimsFormat | Нет | В настоящее время не используется, может игнорироваться. |
 | клаимуседфоррекуестпайлоад| Нет | Имя строкового утверждения, содержащего полезные данные, отправляемые в REST API. |
 | DebugMode | Нет | Выполняет технический профиль в режиме отладки. Возможные значения: `true` или `false` (по умолчанию). В режиме отладки REST API может возвращать больше информации. См. раздел [возврат сообщения об ошибке](#returning-validation-error-message) . |
-| инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true` или `false`   (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для этого параметра значение `true` . |
+| инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true` или `false` (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для этого параметра значение `true` . |
 | ресолвежсонпассинжсонтокенс  | Нет | Указывает, разрешает ли технический профиль пути JSON. Возможные значения: `true` или `false` (по умолчанию). Используйте эти метаданные для чтения данных из вложенного элемента JSON. В [OutputClaim](technicalprofiles.md#outputclaims)задайте в качестве значения `PartnerClaimType` элемент пути JSON, который требуется вывести. Например: `firstName.localized` или `data.0.to.0.email` .|
 | усеклаимасбеарертокен| Нет| Имя утверждения, содержащего токен носителя.|
 
@@ -215,6 +215,27 @@ REST API технический профиль позволяет отправи
   </Metadata>
   <CryptographicKeys>
     <Key Id="BearerAuthenticationToken" StorageReferenceId="B2C_1A_B2cRestClientAccessToken" />
+  </CryptographicKeys>
+</TechnicalProfile>
+```
+
+Если тип аутентификации имеет значение `ApiKeyHeader`, элемент **CryptographicKeys** содержит следующий атрибут:
+
+| attribute | Обязательно | Описание |
+| --------- | -------- | ----------- |
+| Имя заголовка HTTP, например `x-functions-key` , или `x-api-key` . | Да | Ключ, используемый для проверки подлинности. |
+
+```xml
+<TechnicalProfile Id="REST-API-SignUp">
+  <DisplayName>Validate user's input data and return loyaltyNumber claim</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="ServiceUrl">https://your-app-name.azurewebsites.NET/api/identity/signup</Item>
+    <Item Key="AuthenticationType">ApiKeyHeader</Item>
+    <Item Key="SendClaimsIn">Body</Item>
+  </Metadata>
+  <CryptographicKeys>
+    <Key Id="x-functions-key" StorageReferenceId="B2C_1A_RestApiKey" />
   </CryptographicKeys>
 </TechnicalProfile>
 ```

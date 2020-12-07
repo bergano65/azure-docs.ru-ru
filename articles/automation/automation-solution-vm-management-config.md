@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3fdb3b2b23d07b79a8e9979450bee653d646196c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 552cac01cd492229a19bdbc297665eb7d3ccb401
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182807"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751297"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>Настройка запуска и остановки виртуальных машин в нерабочее время
 
@@ -48,7 +48,7 @@ ms.locfileid: "96182807"
 
 2. Добавьте разделенный запятыми список виртуальных машин (без пробелов) в поле параметра **VMList** . Пример списка — `vm1,vm2,vm3` .
 
-3. Задайте для поля параметра **WHATIF** значение true.
+3. Задайте для поля параметра **WHATIF** значение true, чтобы просмотреть изменения.
 
 4. Настройте `External_ExcludeVMNames` переменную с помощью разделенного запятыми списка виртуальных машин (VM1, VM2, VM3) без пробелов между значениями, разделенными запятыми.
 
@@ -79,7 +79,7 @@ ms.locfileid: "96182807"
 
 3. Добавьте разделенный запятыми список виртуальных машин (без пробелов) в поле параметра **VMList** . Пример списка — `vm1,vm2,vm3` .
 
-4. Задайте для параметра **WHATIF** значение true. 
+4. Задайте для параметра **WHATIF** значение true, чтобы просмотреть изменения. 
 
 5. Настройте `External_ExcludeVMNames` переменную с разделенным запятыми списком виртуальных машин без пробелов между значениями, разделенными запятыми.
 

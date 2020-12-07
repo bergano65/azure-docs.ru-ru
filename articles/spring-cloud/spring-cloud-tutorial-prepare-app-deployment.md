@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 9e613331760a1715c3821bdc7dbbf0469e8bfd97
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 5d160c46b235c6890426cab9de52ec7b827efe4a
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337616"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750719"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Подготовка приложения к развертыванию в Azure Веснного облака
 
@@ -149,6 +149,9 @@ Azure Spring Cloud поддерживает только приложения Sp
 2.1 | Greenwich.RELEASE
 2.2 | Хокстон. SR8
 2.3 | Хокстон. SR8
+
+> [!NOTE]
+> Мы обнаружили проблему с пружинной загрузкой 2,4 при проверке подлинности TLS между вашими приложениями и Еурека и сейчас работаем над тем, чтобы разрешить его. Для решения этой проблемы обратитесь к нашим [часто задаваемым](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) вопросам.
 
 ### <a name="dependencies-for-spring-boot-version-21"></a>Зависимости для Spring Boot версии 2.1
 

@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 825cd451120f06597922c142dfc6bf8c10f5c700
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 404e820168c64bd47b6e94598ad5bb13faf32a86
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91875127"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751348"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -49,7 +49,7 @@ ms.locfileid: "91875127"
 
 3. Выберите **Начать**. Текст этого варианта может отличаться в зависимости от используемой версии Visual Studio. В некоторых более ранних версиях вместо нее используется кнопка **запустить бесплатно** .
 
-4. Выберите свою подписку. Затем выберите **Resource**пункт  >  **регистр**ресурсов.
+4. Выберите свою подписку. Затем выберите **Resource** пункт  >  **регистр** ресурсов.
 
 5. После добавления Application Insights в проект убедитесь, что вы используете последний стабильный выпуск пакета SDK. Перейдите в **проект**  >  **Управление пакетами NuGet**  >  **Microsoft. ApplicationInsights. AspNetCore**. При необходимости выберите **Обновить**.
 
@@ -211,18 +211,18 @@ public void ConfigureServices(IServiceCollection services)
 
 |Параметр | Описание | По умолчанию
 |---------------|-------|-------
-|енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | Да
-|енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | Да
-|енабливенткаунтерколлектионмодуле   | Включить или отключить `EventCounterCollectionModule` | Да
-|енабледепенденцитраккингтелеметримодуле   | Включить или отключить `DependencyTrackingTelemetryModule` | Да
-|енаблеаппсервицешеартбеаттелеметримодуле  |  Включить или отключить `AppServicesHeartbeatTelemetryModule` | Да
-|енаблеазуреинстанцеметадатателеметримодуле   |  Включить или отключить `AzureInstanceMetadataTelemetryModule` | Да
-|енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | Да
-|енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | Да
-|енаблехеартбеат | Функция "включить/отключить пульс", которая периодически (по умолчанию составляет 15 минут) отправляет пользовательскую метрику "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | Да
-|аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | Да
+|енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | true
+|енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | true
+|енабливенткаунтерколлектионмодуле   | Включить или отключить `EventCounterCollectionModule` | true
+|енабледепенденцитраккингтелеметримодуле   | Включить или отключить `DependencyTrackingTelemetryModule` | true
+|енаблеаппсервицешеартбеаттелеметримодуле  |  Включить или отключить `AppServicesHeartbeatTelemetryModule` | true
+|енаблеазуреинстанцеметадатателеметримодуле   |  Включить или отключить `AzureInstanceMetadataTelemetryModule` | true
+|енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
+|енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true
+|енаблехеартбеат | Функция "включить/отключить пульс", которая периодически (по умолчанию составляет 15 минут) отправляет пользовательскую метрику "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | true
+|аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | true
 |Рекуестколлектионоптионс. Траккексцептионс | Включение и отключение отчетов о необработанном отслеживании исключений модулем сбора запросов. | false в NETSTANDARD 2.0 (поскольку исключения отправляются с помощью Аппликатионинсигхтслогжерпровидер), в противном случае — значение true.
-|енабледиагностикстелеметримодуле | Включить или отключить `DiagnosticsTelemetryModule` . Отключение этого параметра приведет к игнорированию следующих параметров. `EnableHeartbeat`, `EnableAzureInstanceMetadataTelemetryModule`, `EnableAppServicesHeartbeatTelemetryModule` | Да
+|енабледиагностикстелеметримодуле | Включить или отключить `DiagnosticsTelemetryModule` . Отключение этого параметра приведет к игнорированию следующих параметров. `EnableHeartbeat`, `EnableAzureInstanceMetadataTelemetryModule`, `EnableAppServicesHeartbeatTelemetryModule` | true
 
 См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
@@ -261,6 +261,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+> [!NOTE]
+> `services.AddSingleton<ITelemetryInitializer, MyCustomTelemetryInitializer>();` работает с простыми инициализаторами. Для других требуется следующее: `services.AddSingleton(new MyCustomTelemetryInitializer() { fieldName = "myfieldName" });`
+    
 ### <a name="removing-telemetryinitializers"></a>Удаление Telemetryinitializer
 
 Инициализаторы телеметрии представлены по умолчанию. Чтобы удалить все или конкретные инициализаторы телеметрии, используйте следующий пример кода *после* вызова метода `AddApplicationInsightsTelemetry()` .
@@ -515,7 +518,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Изучите потоки пользователей](./usage-flows.md) , чтобы понять, как пользователи переходят через приложение.
 * [Настройте сбор моментальных снимков](./snapshot-debugger.md) для просмотра состояния исходного кода и переменных в момент возникновения исключения.

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: sharrai
-ms.openlocfilehash: 721e09c2bc0562ba833115361cf33c3daaef380b
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c804e13029dcec42a43885cbf0d9b227b3d0338f
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92364037"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750808"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 
@@ -34,7 +34,21 @@ ms.locfileid: "92364037"
 6. Проверьте, запущена ли на гостевой виртуальной машине последняя версия служб Integration Services.
     - [Убедитесь](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services), что у вас установлена последняя версия.
     - [Держитесь](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) Integration Services в актуальном состоянии.
-    
+
+### <a name="cannot-enable-protection-as-the-virtual-machine-is-not-highly-available-error-code-70094"></a>Не удается включить защиту, так как виртуальная машина не является высокодоступной (код ошибки 70094)
+
+Если при включении репликации для компьютера возникла ошибка с уведомлением о том, что невозможно включить репликацию, так как компьютер не обладает высокой доступностью, то чтобы устранить эту проблему, попробуйте выполнить следующие действия.
+
+- Перезапустите службу VMM на сервере VMM.
+- Удалите виртуальную машину из кластера и добавьте ее снова.
+
+### <a name="the-vss-writer-ntds-failed-with-status-11-and-writer-specific-failure-code-0x800423f4"></a>Не удалось выполнить NTDS модуля записи VSS с кодом состояния 11 и 0x800423F4 код ошибки, относящийся к записи
+
+При попытке включить репликацию может появиться сообщение об ошибке, в ходе которой не удалось включить репликацию AST NTDS. Одна из возможных причин этой проблемы заключается в том, что операционная система виртуальной машины в Windows Server 2012, а не в Windows Server 2012 R2. Чтобы устранить эту проблему, выполните следующие действия.
+
+- Обновление до Windows Server R2 с применением 4072650.
+- Убедитесь, что узел Hyper-V также имеет версию Windows 2016 или более позднюю.
+
 ## <a name="replication-issues"></a>Проблемы с репликацией
 
 Устраните неполадки с начальной и выполняющейся репликацией следующим образом.
@@ -57,7 +71,7 @@ ms.locfileid: "92364037"
 5. Проверьте, могут ли узлы Hyper-V подключаться к URL-адресу хранилища BLOB-объектов Azure. Чтобы проверить, могут ли узлы выполнять подключение, установите и проверьте **cbengine.exe**. Просмотрите **TCP-подключения**, чтобы проверить возможность подключения между узлом и хранилищем BLOB-объектов Azure.
 6. Проверьте, есть ли проблемы с производительностью, как описано ниже.
     
-### <a name="performance-issues"></a>Проблемы производительности
+### <a name="performance-issues"></a>Проблемы с производительностью
 
 Ограничения пропускной способности сети могут повлиять на выполнение репликации. Устраните неполадки следующим образом.
 

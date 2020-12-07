@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 18979ba8cbc4e68bf79275059c6c1c976578c407
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3e3245053fcc9943814268835fa5ac0f40a6f94c
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953378"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750515"
 ---
 # <a name="secure-your-restful-services"></a>Защита служб с поддержкой RESTful 
 
@@ -358,6 +358,69 @@ Authorization: Bearer <token>
       </Metadata>
       <CryptographicKeys>
         <Key Id="BearerAuthenticationToken" StorageReferenceId="B2C_1A_RestApiBearerToken" />
+      </CryptographicKeys>
+      ...
+    </TechnicalProfile>
+  </TechnicalProfiles>
+</ClaimsProvider>
+```
+
+## <a name="api-key-authentication"></a>Проверка подлинности ключа API
+
+Ключ API — это уникальный идентификатор, используемый для проверки подлинности пользователя при доступе к конечной точке REST API. Ключ отправляется в настраиваемом заголовке HTTP. Например, [триггер HTTP для функций Azure](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys) использует `x-functions-key` заголовок HTTP для обнаружения запрашивающей стороны.  
+
+### <a name="add-api-key-policy-keys"></a>Добавление ключей политики ключей API
+
+Чтобы настроить REST API технический профиль с проверкой подлинности с помощью ключа API, создайте следующий криптографический ключ для хранения ключа API:
+
+1. Войдите на [портал Azure](https://portal.azure.com/).
+1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем выберите каталог Azure AD B2C.
+1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
+1. На странице "Обзор" выберите **Identity Experience Framework**.
+1. Выберите **Ключи политики**, а затем щелкните **Добавить**.
+1. В пункте **Параметры** выберите **Manual** (Вручную).
+1. В качестве **имени** введите **рестапикэй**.
+    Префикс *B2C_1A_* может быть добавлен автоматически.
+1. В поле **секрет** введите ключ REST API.
+1. Для параметра **Использование ключа** задайте значение **Шифрование**.
+1. Нажмите кнопку **создания**.
+
+
+### <a name="configure-your-rest-api-technical-profile-to-use-api-key-authentication"></a>Настройка REST API технического профиля для использования проверки подлинности с помощью ключа API
+
+После создания нужного ключа настройте метаданные технического профиля REST API, чтобы они ссылались на учетные данные.
+
+1. В рабочей папке откройте файл политики расширения (TrustFrameworkExtensions.xml).
+1. Выполните поиск технического профиля REST API, например `REST-ValidateProfile` или `REST-GetProfile`.
+1. Найдите элемент `<Metadata>`.
+1. Установите для параметра *AuthenticationType* значение `ApiKeyHeader`.
+1. Установите для параметра *AllowInsecureAuthInProduction* значение `false`.
+1. Сразу после завершения элемента `</Metadata>` добавьте следующий фрагмент XML-кода:
+    ```xml
+    <CryptographicKeys>
+        <Key Id="x-functions-key" StorageReferenceId="B2C_1A_RestApiKey" />
+    </CryptographicKeys>
+    ```
+
+**Идентификатор** криптографического ключа определяет заголовок HTTP. В этом примере ключ API отправляется в виде **ключа x-functions-Key**.
+
+Ниже приведен пример технического профиля RESTFUL, настроенного для вызова функции Azure с проверкой подлинности с помощью ключа API:
+
+```xml
+<ClaimsProvider>
+  <DisplayName>REST APIs</DisplayName>
+  <TechnicalProfiles>
+    <TechnicalProfile Id="REST-GetProfile">
+      <DisplayName>Get user extended profile Azure Function web hook</DisplayName>
+      <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      <Metadata>
+        <Item Key="ServiceUrl">https://your-account.azurewebsites.net/api/GetProfile?code=your-code</Item>
+        <Item Key="SendClaimsIn">Body</Item>
+        <Item Key="AuthenticationType">ApiKeyHeader</Item>
+        <Item Key="AllowInsecureAuthInProduction">false</Item>
+      </Metadata>
+      <CryptographicKeys>
+        <Key Id="x-functions-key" StorageReferenceId="B2C_1A_RestApiKey" />
       </CryptographicKeys>
       ...
     </TechnicalProfile>

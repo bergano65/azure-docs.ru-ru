@@ -1,15 +1,17 @@
 ---
 title: Настройка устройства "миграция Azure" для физических серверов
 description: Узнайте, как настроить устройство "миграция Azure" для оценки физических серверов.
-ms.service: azure-migrate
-ms.topic: article
+author: vikram1988
+ms.author: vibansa
+ms.manager: abhemraj
+ms.topic: how-to
 ms.date: 04/15/2020
-ms.openlocfilehash: 1e9d79d16e805eeaf770327a56a4247067c78a35
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 21d40b1962a3e4000876686659b76d019991785d
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314151"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751688"
 ---
 # <a name="set-up-an-appliance-for-physical-servers"></a>Настройка устройства для физических серверов
 

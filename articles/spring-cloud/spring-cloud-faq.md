@@ -8,18 +8,18 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: a8180088e5a0db613d5f04106fe102f58594bf72
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 268862d6e868342a252ca9d5eb08b9753142e8b1
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655057"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750753"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
 В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure Веснного облака.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="why-azure-spring-cloud"></a>Вопросы и ответы по Azure Spring Cloud.
 
@@ -69,6 +69,23 @@ Azure Веснного облака имеет следующие известн
 ### <a name="what-java-runtime-does-azure-spring-cloud-support"></a>Какие среды выполнения Java поддерживает Azure Spring Cloud?
 
 Azure Spring Cloud поддерживает Java 8 и 11. См. раздел [Среда выполнения Java и версии ОС](#java-runtime-and-os-versions) .
+
+### <a name="is-spring-boot-24x-supported"></a>Поддерживается ли пружинная Загрузка 2.4. x?
+Мы обнаружили проблему с пружинной загрузкой 2,4 и сейчас работаем над ее устранением. В то же время включите эти две зависимости, чтобы включить проверку подлинности TLS между приложениями и Еурека.
+
+```xml
+<dependency> 
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-client</artifactId>
+    <version>1.19.4</version>
+</dependency>
+<dependency>
+    <groupId>com.sun.jersey.contribs</groupId>
+    <artifactId>jersey-apache-client4</artifactId>
+    <version>1.19.4</version>
+</dependency>
+```
+
 ::: zone-end
 
 ### <a name="where-can-i-view-my-spring-cloud-application-logs-and-metrics"></a>Где можно просматривать журналы и метрики приложений весны облака?
@@ -224,6 +241,6 @@ RetryableEurekaHttpClient: Request execution failure with status code 401; retry
 Мы улучшаем эту часть и не будем использовать эту ошибку в приложениях пользователей в течение короткого будущего времени.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если у вас возникнут другие вопросы, см. [руководство по устранению неполадок в облаке Azure весны](spring-cloud-troubleshoot.md).

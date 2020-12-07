@@ -1,14 +1,17 @@
 ---
 title: Настройка анализа зависимостей на основе агентов в службе "миграция Azure" для оценки сервера
 description: В этой статье описывается, как настроить анализ зависимостей на основе агента в службе "Миграция серверов Azure".
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 1ab5d639d68b5ce2298f907ef8346488e16b4020
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d4bf635c57bcef41cd0f3285d8a91bae4b3e0415
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483476"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752028"
 ---
 # <a name="set-up-dependency-visualization"></a>Настройка визуализации зависимостей
 
@@ -205,6 +208,6 @@ VMConnection
 | summarize sum(BytesSent), sum(BytesReceived) by Computer, Direction, SourceIp, DestinationIp, DestinationPort
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Создание оценки](how-to-create-assessment.md) для группы.
