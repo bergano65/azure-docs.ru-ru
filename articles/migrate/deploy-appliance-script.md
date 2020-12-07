@@ -1,14 +1,17 @@
 ---
 title: Настройка устройства "миграция Azure" с помощью сценария
 description: Узнайте, как настроить устройство для миграции Azure с помощью сценария.
-ms.topic: article
+ms.topic: how-to
+author: vikram1988
+ms.author: vibansa
+ms.manager: abhemraj
 ms.date: 04/16/2020
-ms.openlocfilehash: c4f92d787ea2a72dd534e514e27fa1a5defef39c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 38db1e68adde21d0e566256e9393f6fa4fc58824
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92317334"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753796"
 ---
 # <a name="set-up-an-appliance-with-a-script"></a>Настройка устройства с помощью сценария
 
@@ -20,13 +23,13 @@ ms.locfileid: "92317334"
 - Чтобы настроить устройство для физических серверов, можно использовать только скрипт. Выполните инструкции из [этой статьи](how-to-set-up-appliance-physical.md).
 - Чтобы настроить устройство в облаке Azure для государственных организаций, выполните инструкции из [этой статьи](deploy-appliance-script-government.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Этот сценарий настраивает устройство миграции Azure на существующем физическом компьютере или виртуальной машине.
 
 - Компьютер, который будет работать как устройство, должен соответствовать следующим требованиям к оборудованию и ОС:
 
-Сценарий | Requirements (Требования)
+Сценарий | Требования
 --- | ---
 VMware | Windows Server 2016 с 32 ГБ памяти, восемь виртуальных ЦП, около 80 ГБ дискового накопителя
 Hyper-V | Windows Server 2016 с 16 ГБ памяти, восемь виртуальных ЦП, около 80 ГБ дискового накопителя
@@ -72,7 +75,7 @@ Hyper-V | Windows Server 2016 с 16 ГБ памяти, восемь виртуа
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом:
+4. Выполните **AzureMigrateInstaller.ps1** скрипта следующим образом:
 
     ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public> .\AzureMigrateInstaller.ps1 -scenario VMware ```
    
@@ -119,7 +122,7 @@ Hyper-V | Windows Server 2016 с 16 ГБ памяти, восемь виртуа
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом: 
+4. Выполните **AzureMigrateInstaller.ps1** скрипта следующим образом: 
 
     ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public> .\AzureMigrateInstaller.ps1 -scenario Hyperv ```
    
@@ -129,7 +132,7 @@ Hyper-V | Windows Server 2016 с 16 ГБ памяти, восемь виртуа
 
 Убедитесь, что устройство может подключаться к URL-адресам Azure для [общедоступного](migrate-appliance.md#public-cloud-urls) облака.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После развертывания устройства необходимо настроить его в первый раз и зарегистрировать в проекте службы "миграция Azure".
 

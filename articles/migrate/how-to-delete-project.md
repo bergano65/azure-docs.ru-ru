@@ -1,17 +1,17 @@
 ---
 title: Удаление проекта службы "Миграция Azure"
 description: Из этой статьи вы узнаете, как можно удалить проект службы "миграция Azure" с помощью портал Azure.
-author: rayne-wiselman
-ms.service: azure-migrate
-ms.topic: article
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
+ms.topic: how-to
 ms.date: 10/22/2019
-ms.author: raynew
-ms.openlocfilehash: c58081e7cf88ac4820aa7d4f367b7344f3340a77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: face3d02ee72d1e05c6c08330dae4fffc2fd0e0b
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91307880"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754255"
 ---
 # <a name="delete-an-azure-migrate-project"></a>Удаление проекта службы "Миграция Azure"
 
@@ -26,7 +26,7 @@ ms.locfileid: "91307880"
 - Если вы подключили рабочую область Log Analytics к средству оценки серверов для анализа зависимостей, решите, хотите ли вы удалить рабочую область. 
     - Рабочая область не удаляется автоматически. Удалите ее вручную.
     - Прежде чем удалить рабочую область, убедитесь, что она используется. Ту же рабочую область Log Analytics можно использовать для нескольких сценариев.
-    - Перед удалением проекта можно найти ссылку на рабочую область в разделе " **Миграция Azure — серверы**  >  **Миграция Azure — Оценка**серверов" в **рабочей области OMS**.
+    - Перед удалением проекта можно найти ссылку на рабочую область в разделе " **Миграция Azure — серверы**  >  **Миграция Azure — Оценка** серверов" в **рабочей области OMS**.
     - Чтобы удалить рабочую область после удаления проекта, найдите рабочую область в соответствующей группе ресурсов и следуйте [этим инструкциям](../azure-monitor/platform/delete-workspace.md).
 
 
@@ -76,6 +76,6 @@ HyperV * KV | Хранилище ключей
 "Имя_проекта" — Мигратеваулт-* | Хранилище Служб восстановления
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как добавить дополнительные средства [оценки](how-to-assess.md) и [миграции](how-to-migrate.md) . 

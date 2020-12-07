@@ -1,14 +1,17 @@
 ---
 title: Настройка анализа зависимостей без агента в службе "миграция Azure — Оценка сервера"
 description: Настройка анализа зависимостей без агента в службе "миграция Azure" для оценки серверов.
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 6/08/2020
-ms.openlocfilehash: 722ad4cc27132815c1416331aaf0691754ccee05
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d84c85326c6f5d87189a2c24a3b13654f157cb05
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500790"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754289"
 ---
 # <a name="analyze-machine-dependencies-agentless"></a>Анализ зависимостей компьютера (без агентов)
 
@@ -243,6 +246,6 @@ ms.locfileid: "96500790"
 7. Визуализировать карту сетевых подключений по серверам и процессам. Сохраните файл.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Сгруппируйте компьютеры](how-to-create-a-group.md) для оценки.

@@ -1,14 +1,17 @@
 ---
 title: Создание и администрирование проектов Миграции Azure
 description: Поиск, создание, управление и удаление проектов в службе "миграция Azure".
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: c352c06a5e5b798563b4543122f66a302017bc8a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 445e08b255e5b4dd67dd1c6a47c8df6ce59df5bd
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500841"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753830"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
@@ -43,7 +46,7 @@ ms.locfileid: "96500841"
     - География используется только для хранения метаданных, собранных с локальных компьютеров. Можно выбрать любой целевой регион для миграции. 
     - Просмотрите список поддерживаемых регионов для [общедоступного](migrate-support-matrix.md#supported-geographies-public-cloud) облака и облака для [государственных организаций](migrate-support-matrix.md#supported-geographies-azure-government).
 
-8. Нажмите кнопку **создания**.
+8. Щелкните **Создать**.
 
    ![Страница с параметрами входного проекта](./media/create-manage-projects/project-details.png)
 
@@ -104,7 +107,7 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
     - Тип ресурса — **Microsoft. Migrate/мигратепрожектс**.
     - Если группа ресурсов используется исключительно в проекте службы "миграция Azure", можно удалить всю группу ресурсов.
 
-Обратите внимание на следующие условия.
+Обратите внимание на следующее.
 
 - При удалении проекта и метаданных об обнаруженных компьютерах удаляются.
 - Если вы используете более раннюю версию службы "миграция Azure", откройте группу ресурсов Azure, в которой был создан проект. Выберите проект миграции, который необходимо удалить (тип ресурса — **проект миграции**).
@@ -124,6 +127,6 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
        
 2. [Следуйте инструкциям](../azure-monitor/platform/delete-workspace.md) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

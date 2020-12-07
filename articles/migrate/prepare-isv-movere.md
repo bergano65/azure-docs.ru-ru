@@ -1,14 +1,17 @@
 ---
 title: Подготовка службы "Миграция Azure" к работе с помощью средств ISV/Movere
 description: В этой статье описывается порядок подготовки службы "Миграция Azure" к работе с помощью средства ISV или Movere, а также то, как начать работу с этим средством.
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 06/10/2020
-ms.openlocfilehash: 885e64536e516e4fd96233c37a68f6e77fb84e33
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 1716db0476169e12822b3f47f7199bf6e2c4ee92
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369154"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753779"
 ---
 # <a name="prepare-to-work-with-an-isv-tool-or-movere"></a>Подготовка к работе с помощью средств ISV или Movere
 
@@ -34,7 +37,7 @@ ms.locfileid: "92369154"
 В подписке Azure вашей учетной записи требуется разрешение **Microsoft.Authorization/*/Write**, чтобы назначить роль приложению Azure AD. 
 
 1. На портале Azure откройте раздел **Подписки**.
-2. Выберите соответствующую подписку. Если она не отображается, выберите**фильтр глобальных подписок**. 
+2. Выберите соответствующую подписку. Если она не отображается, выберите **фильтр глобальных подписок**. 
 3. Выберите **Мои разрешения**. Затем выберите ссылку **Щелкните здесь, чтобы просмотреть полные сведения о доступе для этой подписки**.
 4. В разделе **Назначение ролей** > **Просмотр** установите флажки для соответствующих разрешений. Если у вашей учетной записи нет разрешений, обратитесь к администратору подписки с просьбой добавить вас в роль [Администратор доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator) или роль [Владелец](../role-based-access-control/built-in-roles.md#owner).
 

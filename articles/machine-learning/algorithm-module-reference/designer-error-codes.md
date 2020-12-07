@@ -10,12 +10,12 @@ ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 11/25/2020
-ms.openlocfilehash: af7ac49fd6c1a31a8363c4ba0bf925787613ecc2
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 846c5519dced06ed16f5a0d12b0bb25443961f93
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030413"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753915"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer"></a>Исключения и коды ошибок для конструктора
 
@@ -279,7 +279,7 @@ ms.locfileid: "96030413"
 ## <a name="error-0014"></a>Ошибка 0014  
  Исключение возникает, если количество уникальных значений столбца больше чем разрешено.  
 
- Эта ошибка возникает, когда столбец содержит слишком много уникальных значений.  Например, эта ошибка может возникать, если указать, что столбец должен обрабатываться как категориальные данные, но в столбце слишком много уникальных значений, чтобы разрешить завершение обработки. Эта ошибка может также возникнуть в случае несоответствия числа уникальных значений в двух входных значениях.   
+ Эта ошибка возникает, когда столбец содержит слишком много уникальных значений, таких как столбец ИДЕНТИФИКАТОРов или текстовый столбец. Эта ошибка может возникать, если указать, что столбец должен обрабатываться как данные категории, но в столбце слишком много уникальных значений, позволяющих завершить обработку. Эта ошибка может также возникнуть в случае несоответствия числа уникальных значений в двух входных значениях.   
 
 Ошибка, связанная с уникальными значениями, больше, чем разрешено, будет иметь место при **выполнении следующих условий** :
 
@@ -292,7 +292,9 @@ ms.locfileid: "96030413"
 
 Для столбцов, которые предполагается использовать для группирования или категоризации, следует сократить число уникальных значений в столбцах. В зависимости от типа данных столбца их можно уменьшить различными способами. 
 
-Обычно в этом сценарии столбец, на который помещается ошибка, не имеет смысла в качестве функции для обучения моделей. Таким образом, можно использовать функцию [изменить метаданные](../algorithm-module-reference/edit-metadata.md) , чтобы пометить столбец как **четкий** , и он не будет использоваться во время обучения модели. 
+Для столбцов ИДЕНТИФИКАТОРов, которые не являются значимыми функциями во время обучения модели, можно использовать функцию [изменить метаданные](../algorithm-module-reference/edit-metadata.md) , чтобы пометить этот столбец как **четкий** , и он не будет использоваться во время обучения модели. 
+
+Для текстовых столбцов можно использовать [хэширование компонентов](../algorithm-module-reference/feature-hashing.md) или [извлечь N-граммные функции из текстового модуля](../algorithm-module-reference/extract-n-gram-features-from-text.md) для предварительной обработки текстовых столбцов.
 <!--
 + For text data, you might be able to use [Preprocess Text](preprocess-text.md) to collapse similar entries. 
 + For numeric data, you can create a smaller number of bins using [Group Data into Bins](group-data-into-bins.md), remove or truncate values using [Clip Values](clip-values.md), or use machine learning methods such as [Principal Component Analysis](principal-component-analysis.md) or [Learning with Counts](data-transformation-learning-with-counts.md) to reduce the dimensionality of the data.  

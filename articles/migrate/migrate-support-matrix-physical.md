@@ -1,14 +1,17 @@
 ---
 title: Поддержка оценки физических серверов в службе "миграция Azure"
 description: Сведения о поддержке оценки физических серверов с помощью Azure Migrate Server — Оценка серверов
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: 58ecba6bcedc036e31046aef292e482085ad7cc6
-ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
+ms.openlocfilehash: cfbbc1d218f590241fab804e389acd689c009dac
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93148411"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754017"
 ---
 # <a name="support-matrix-for-physical-server-assessment"></a>Матрица поддержки для оценки физических серверов 
 
@@ -24,7 +27,7 @@ ms.locfileid: "93148411"
 --- | ---
 **Ограничения оценки** | Вы можете обнаружить и оценить до 35 000 физических серверов в одном проекте службы " [Миграция Azure](migrate-support-matrix.md#azure-migrate-projects)".
 **Ограничения проекта** | Для одной подписки Azure можно создать несколько проектов. Помимо физических серверов, проект может включать виртуальные машины VMware и виртуальные машины Hyper-V, вплоть до ограничений по оценке для каждой из них.
-**Обнаружение** | Устройство для переноса Azure может обнаружить до 1000 физических серверов.
+**Discovery** | Устройство для переноса Azure может обнаружить до 1000 физических серверов.
 **Оценка** | В одну группу можно добавить до 35 000 компьютеров.<br/><br/> Вы можете оценить до 35 000 компьютеров за одну оценку.
 
 [Дополнительные сведения](concepts-assessment-calculation.md) об оценках.
@@ -35,16 +38,16 @@ ms.locfileid: "93148411"
 
 **Операционная система:** Все операционные системы Windows и Linux можно оценить для миграции.
 
-**Разрешения** .
-- Для серверов Windows используйте учетную запись домена для компьютеров, присоединенных к домену, и локальную учетную запись для компьютеров, которые не присоединены к домену. Учетная запись пользователя должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи Монитора производительности" и "Пользователи журналов производительности".
+**Разрешения**.
+- При работе с серверами Windows используйте учетную запись домена для присоединенных к домену компьютеров, а также локальную учетную запись для компьютеров, которые не присоединены к домену. Учетная запись пользователя должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи Монитора производительности" и "Пользователи журналов производительности".
 - Для серверов Linux вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить. Кроме того, можно задать некорневую учетную запись с необходимыми возможностями с помощью следующих команд:
 
 **Command** | **Назначение**
 --- | --- |
-setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk <br></br> сеткап CAP_DAC_READ_SEARCH + EIP/сбин/фдиск _(если/УСР/сбин/фдиск отсутствует)_ | Получение данных конфигурации диска
-сеткап "cap_dac_override, cap_dac_read_search, cap_fowner, cap_fsetid, cap_setuid,<br>cap_setpcap, cap_net_bind_service, cap_net_admin, cap_sys_chroot, cap_sys_admin,<br>cap_sys_resource, cap_audit_control, cap_setfcap = + EIP "/сбин/ЛВМ | Получение данных о производительности диска
-сеткап CAP_DAC_READ_SEARCH + EIP/УСР/сбин/дмидекоде | Получение серийного номера BIOS
-chmod a + r/СИС/класс/ДМИ/ИД/product_uuid | Получение идентификатора GUID BIOS
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk <br></br> setcap CAP_DAC_READ_SEARCH+eip /sbin/fdisk _(если /usr/sbin/fdisk отсутствует)_ | Получение данных конфигурации дисков
+setcap "cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_setuid,<br>cap_setpcap,cap_net_bind_service,cap_net_admin,cap_sys_chroot,cap_sys_admin,<br>cap_sys_resource,cap_audit_control,cap_setfcap=+eip" /sbin/lvm | Получение данных о производительности дисков
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/dmidecode | Получение серийного номера BIOS
+chmod a+r /sys/class/dmi/id/product_uuid | Получение GUID BIOS
 
 
 

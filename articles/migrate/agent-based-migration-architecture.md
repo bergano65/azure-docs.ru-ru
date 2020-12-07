@@ -1,17 +1,17 @@
 ---
 title: Миграция на основе агентов в Azure миграция миграции сервера
 description: Содержит общие сведения о миграции виртуальных машин VMware на основе агентов в службе "миграция Azure".
-author: rayne-wiselman
-ms.service: azure-migrate
+author: rahulg1190
+ms.author: rahugup
+ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.author: raynew
-ms.openlocfilehash: 90e499b436a3ae44fa29cec1138d939a106a4db7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1389b03d87beb24cba50fec0a782de8b7f935557
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91357171"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753898"
 ---
 # <a name="agent-based-migration-architecture"></a>Архитектура миграции на основе агента
 
@@ -120,9 +120,9 @@ ms.locfileid: "91357171"
 
     1. На компьютере сервера обработки откройте оснастку консоли управления Azure Backup MMC. На рабочем столе есть ярлык или в папке C:\Program Files\Microsoft Azure Recovery Services Ажент\бин. 
     2. В оснастке выберите **Change Properties** (Изменить свойства).
-    3. В окне **регулирования**выберите **включить регулирование использования полосы пропускания Интернета для операций резервного копирования**. Задайте ограничения для рабочего и нерабочего времени. Допустимы значения в диапазоне от 512 Кбит/с до 1,023 Мбит/с.
+    3. В окне **регулирования** выберите **включить регулирование использования полосы пропускания Интернета для операций резервного копирования**. Задайте ограничения для рабочего и нерабочего времени. Допустимы значения в диапазоне от 512 Кбит/с до 1,023 Мбит/с.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Испытайте [миграцию на основе агентов](tutorial-migrate-vmware-agent.md) для [VMware](tutorial-migrate-vmware-agent.md) или [физических серверов](tutorial-migrate-physical-virtual-machines.md).

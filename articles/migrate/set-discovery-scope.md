@@ -1,14 +1,17 @@
 ---
 title: Настройка области для обнаружения виртуальных машин VMware с помощью службы "миграция Azure"
 description: Описание настройки области обнаружения для оценки виртуальных машин VMware и миграции с помощью службы "миграция Azure".
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: 8c61f544e3222dba83123aa1be5e53a19e671035
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dc5bd178c837deea7a22fb3be5ba438085c0e748
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314033"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753558"
 ---
 # <a name="set-discovery-scope-for-vmware-vms"></a>Задание области обнаружения для виртуальных машин VMware
 
@@ -58,6 +61,6 @@ ms.locfileid: "92314033"
 Настройка управления доступом на основе ролей гарантирует, что соответствующая учетная запись пользователя vCenter имеет доступ только к виртуальным машинам, относящимся к конкретному клиенту.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка устройства](how-to-set-up-appliance-vmware.md)

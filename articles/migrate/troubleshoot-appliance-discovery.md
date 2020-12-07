@@ -1,17 +1,17 @@
 ---
 title: Устранение неполадок при развертывании и обнаружении устройств с помощью Azure migrate
-description: Получите справку по развертыванию устройства "миграция Azure" и обнаружению компьютеров.
-author: musa-57
+description: Получите справку по развертыванию устройств и обнаружению компьютеров.
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
-ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 0d4630cad94a30e0dd53785c512e452d7b4a7d38
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 26bb61e0c5a473a56c57391b53009419453956fd
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494449"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753422"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Устранение неполадок с устройством и обнаружением службы "миграция Azure"
 
@@ -249,5 +249,5 @@ ms.locfileid: "96494449"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Настройте устройство для [VMware](how-to-set-up-appliance-vmware.md), [Hyper-V](how-to-set-up-appliance-hyper-v.md)или [физических серверов](how-to-set-up-appliance-physical.md).

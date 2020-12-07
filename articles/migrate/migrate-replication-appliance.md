@@ -1,14 +1,17 @@
 ---
 title: Устройство репликации в службе "Миграция Azure"
 description: Узнайте об устройстве миграции Azure для репликации VMWare на основе агентов.
+author: anvar-ms
+ms.author: anvar
+ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 01/30/2020
-ms.openlocfilehash: af9e45e47c2f0645d81a571161f15f7d69cfec61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec277bcc3e361561f54e72c54526d65487c113b4
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532126"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754102"
 ---
 # <a name="replication-appliance"></a>Устройство репликации
 
@@ -136,10 +139,10 @@ https:\//dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.
 Устройство обновляется вручную из центра миграции Azure. Рекомендуется всегда запускать последнюю версию.
 
 1. В Azure миграция > серверы > службе "миграция Azure": Оценка серверов, серверы инфраструктуры, щелкните **серверы конфигурации**.
-2. На **серверах конфигурации**в **версии агента** появляется ссылка, если доступна новая версия устройства репликации. 
+2. На **серверах конфигурации** в **версии агента** появляется ссылка, если доступна новая версия устройства репликации. 
 3. Скачайте установщик на компьютер с устройством репликации и установите обновление. Установщик определяет текущую версию, выполняемую на устройстве.
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Узнайте, как](tutorial-migrate-vmware-agent.md#set-up-the-replication-appliance) настроить устройство репликации для миграции виртуальных машин VMware на основе агентов.
 - [Узнайте, как](tutorial-migrate-physical-virtual-machines.md#set-up-the-replication-appliance) настроить устройство репликации для физических серверов.
