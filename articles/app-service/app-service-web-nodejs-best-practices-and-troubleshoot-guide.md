@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: d826b80c11b700d753acc18f8d4c626a65510f93
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 370b84f451e22c20c798018951a7a801e0bba826
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833815"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763950"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
@@ -140,7 +140,7 @@ let keepaliveAgent = new Agent({
 
 #### <a name="my-node-application-is-consuming-too-much-cpu"></a>Приложение Node потребляет слишком много ресурсов ЦП
 
-На портале может отобразиться оповещение от службы приложений Azure о высоком потреблении ресурсов ЦП. Эти [метрики](web-sites-monitor.md) также можно отслеживать, настроив для этого мониторы. Перед проверкой использования ЦП на [панели мониторинга портала Azure](../azure-monitor/app/web-monitor-performance.md) сначала проверьте максимальные значения ЦП, чтобы не пропустить пиковые значения.
+На портале может отобразиться оповещение от службы приложений Azure о высоком потреблении ресурсов ЦП. Эти [метрики](web-sites-monitor.md) также можно отслеживать, настроив для этого мониторы. При проверке использования ЦП на [панели мониторинга портал Azure](../azure-monitor/platform/metrics-charts.md)проверьте максимальное значение для ЦП, чтобы не пропускать пиковые значения.
 Если есть основания полагать, что приложение Node потребляет слишком много ресурсов ЦП, но вы не можете выяснить причину этого, следует выполнить профилирование приложения.
 
 #### <a name="profiling-your-node-application-on-azure-app-service-with-v8-profiler"></a>Профилирование приложения Node в службе приложений Azure с помощью средства V8-Profiler
@@ -213,7 +213,7 @@ http.createServer(function (req, res) {
 
 ### <a name="my-node-application-is-consuming-too-much-memory"></a>Чрезмерное потребление памяти приложением Node
 
-Если приложение потребляет слишком много памяти, на портале может появиться уведомление о высоком потреблении памяти от службы приложений Azure. Можно настроить мониторы для отслеживания определенных [метрик](web-sites-monitor.md). Перед проверкой потребления памяти на [панели мониторинга портала Azure](../azure-monitor/app/web-monitor-performance.md) сначала проверьте максимальный объем памяти, чтобы не пропустить пиковые значения.
+Если приложение потребляет слишком много памяти, на портале может появиться уведомление о высоком потреблении памяти от службы приложений Azure. Можно настроить мониторы для отслеживания определенных [метрик](web-sites-monitor.md). При проверке использования памяти на [панели мониторинга портал Azure](../azure-monitor/platform/metrics-charts.md)не забудьте проверить максимальные значения памяти, чтобы не пропускать пиковые значения.
 
 #### <a name="leak-detection-and-heap-diff-for-nodejs"></a>Обнаружение утечки и сравнение куч для node.js
 

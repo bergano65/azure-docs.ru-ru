@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: 5dbe161af172b65919328fca0b272f3b658f1b32
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: fe79797aeef2b0c148aece0319d6b340b663b184
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600495"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763729"
 ---
 # <a name="how-to-use-postman-to-send-requests-to-the-azure-digital-twins-apis"></a>Как использовать POST для отправки запросов в интерфейсы API цифровых двойников Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "96600495"
 
 Чтобы продолжить работу с примером запроса, в этой статье будет использоваться API запросов (и его [Справочная документация](/rest/api/digital-twins/dataplane/query/querytwins)) для запроса всех цифровых двойников в экземпляре.
 
-1. Получите URL-адрес запроса и тип из справочной документации. Для API запроса это *POST `https://digitaltwins-name.digitaltwins.azure.net/query?api-version=2020-10-31`*.
+1. Получите URL-адрес запроса и тип из справочной документации. Для API запросов это *выполняется в настоящий `https://digitaltwins-hostname/query?api-version=2020-10-31`* момент.
 1. В окне Post настройте тип запроса и введите URL-адрес запроса, заполняя в URL-адресе заполнители в соответствии с требованиями. Здесь вы будете использовать **имя узла** экземпляра из раздела [*предварительных требований*](#prerequisites) .
     
    :::image type="content" source="media/how-to-use-postman/postman-request-url.png" alt-text="В сведениях о новом запросе URL-адрес запроса из справочной документации был заполнен в поле URL-адрес запроса." lightbox="media/how-to-use-postman/postman-request-url.png":::

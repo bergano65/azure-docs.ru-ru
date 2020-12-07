@@ -7,12 +7,12 @@ ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: e2432ca4cecb3c36d2fae19907c1ad17d9ef2505
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 16a21acabfd199ba16068e507919b564f01a76d5
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833509"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763916"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в Службе приложений с помощью GitHub Actions
 
@@ -55,7 +55,7 @@ ms.locfileid: "94833509"
 
 Файл рабочего процесса будет зафиксирован в репозитории. Рабочий процесс для сборки и развертывания приложения будет запущен немедленно.
 
-## <a name="set-up-a-work-manually"></a>Настройка работы вручную
+## <a name="set-up-a-workflow-manually"></a>Настройка рабочего процесса вручную
 
 Вы также можете развернуть рабочий процесс без использования центра развертывания. Для этого необходимо сначала создать учетные данные развертывания. 
 
@@ -88,7 +88,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
                             --sdk-auth
 ```
 
-В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования.
+В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные содержат объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению Службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования.
 
 ```output 
   {
@@ -114,7 +114,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Назовите секрет `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
-При настройке рабочего процесса GitHub используйте `AZURE_WEBAPP_PUBLISH_PROFILE` в действии развертывание веб-приложения Azure. Пример:
+При настройке рабочего процесса GitHub используйте `AZURE_WEBAPP_PUBLISH_PROFILE` в действии развертывание веб-приложения Azure. Пример.
     
 ```yaml
 - uses: azure/webapps-deploy@v2

@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: Infrastructure-services
 ms.date: 11/06/2020
 ms.author: derekol
-ms.openlocfilehash: 29ce0c1421019b95adb00c4eab3f9c1d90da0510
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: c2c16e6b5be4e187a776f75454ecf9377da911e3
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94353787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763185"
 ---
 # <a name="peering-service-partners"></a>Партнеры по службам пиринга
 
@@ -30,7 +30,7 @@ ms.locfileid: "94353787"
 
 | **Партнеры** | **Market**|
 |-----------|---------|
-| [CenturyLink](https://www.ctl.io/microsoft-azure-peering-services/) |США|
+| [Технологии люменов](https://www.ctl.io/microsoft-azure-peering-services/) |Северная Америка, Европа|
 | [BBIX](https://www.bbix.net/en/service/) |Япония |
 | [ккл](https://concepts.co.nz/news/general-news/) |Океания |
 | [Colt](https://www.colt.net/why-colt/strategic-alliances/microsoft-partnership/)|Европа, Азия|
@@ -49,7 +49,7 @@ ms.locfileid: "94353787"
 >Дополнительные сведения о прикреплении к партнерской программе службы пиринга см. в статье peeringservice@microsoft.com .
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о службе пиринга см. в статье [Общие сведения о службе пиринга](about.md).
 - Дополнительные сведения о вопросах пиринга см. в статье [часто задаваемые вопросы о службе пиринга](faq.md).

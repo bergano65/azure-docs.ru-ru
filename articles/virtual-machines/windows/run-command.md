@@ -9,12 +9,12 @@ ms.date: 04/26/2019
 ms.topic: how-to
 ms.custom: devx-track-azurecli
 manager: carmonm
-ms.openlocfilehash: 3c5e19a948298dead5ab3fc1183fb11b09acf455
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2388d4be0f7d51f9d5897998049b445595648c0a
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976136"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763984"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-by-using-run-command"></a>Выполнение сценариев PowerShell в виртуальной машине Windows с помощью функции выполнения команд
 
@@ -104,7 +104,7 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 ## <a name="limiting-access-to-run-command"></a>Ограничение доступа к команде запуска
 
-Для получения списка выполняемых команд или отображения сведений о команде требуется разрешение `Microsoft.Compute/locations/runCommands/read`. Это разрешение имеется у встроенной роли [Читатель](../../role-based-access-control/built-in-roles.md#reader) и более высоких уровней.
+Для получения списка команд выполнения или отображения сведений о команде требуется `Microsoft.Compute/locations/runCommands/read` разрешение на уровне подписки. Это разрешение имеется у встроенной роли [Читатель](../../role-based-access-control/built-in-roles.md#reader) и более высоких уровней.
 
 Для выполнения команды требуется разрешение `Microsoft.Compute/virtualMachines/runCommand/action`. Это разрешение имеется у роли [Участник виртуальной машины](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) и более высоких уровней.
 

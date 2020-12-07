@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 404e820168c64bd47b6e94598ad5bb13faf32a86
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 8505e67e3db7460308d208ce4f83d29a1fb4d862
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751348"
+ms.locfileid: "96763202"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -106,7 +106,7 @@ ms.locfileid: "96751348"
 
     * `ApplicationInsights:InstrumentationKey`
 
-    Пример:
+    Пример.
 
     * `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 
@@ -142,7 +142,7 @@ ms.locfileid: "96751348"
 
 ### <a name="performance-counters"></a>Счетчики производительности
 
-Поддержка [счетчиков производительности](./web-monitor-performance.md) в ASP.NET Core ограничена:
+Поддержка [счетчиков производительности](./performance-counters.md) в ASP.NET Core ограничена:
 
 * Пакеты SDK версии 2.4.1 и более поздних собирают данные счетчиков производительности, если приложение выполняется в веб-приложениях Azure (Windows).
 * Пакеты SDK версии 2.7.1 и более поздних собирают счетчики производительности, если приложение выполняется в Windows и предназначено для `NETSTANDARD2.0` или более поздних версий.
@@ -209,7 +209,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Полный список параметров в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | По умолчанию
+|Параметр | Описание | Значение по умолчанию
 |---------------|-------|-------
 |енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | true
 |енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | true
@@ -518,7 +518,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Изучите потоки пользователей](./usage-flows.md) , чтобы понять, как пользователи переходят через приложение.
 * [Настройте сбор моментальных снимков](./snapshot-debugger.md) для просмотра состояния исходного кода и переменных в момент возникновения исключения.

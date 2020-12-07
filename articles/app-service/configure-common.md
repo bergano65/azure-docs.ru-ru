@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
-ms.openlocfilehash: 1ab6f5e9c7b602ce124116c02584c5a48a3f597f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7c1b9ad033ade3b577dc4a06e84801dab3b7eb70
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999983"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763967"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "95999983"
 
 ![Параметры приложения](./media/configure-common/open-ui.png)
 
-Для разработчиков ASP.NET и ASP.NET Core Установка параметров приложения в службе приложений выполняется так же, как и `<appSettings>` в *Web.config* или *appsettings.js*, но значения в службе приложений переопределяются в *Web.config* или *appsettings.js*. Вы можете использовать параметры разработки (например, локальный пароль MySQL) в *Web.config* или *appsettings.js*, а также рабочие секреты (например, пароль базы данных MySQL Azure) в службе приложений. Этот же код использует параметры разработки при локальной отладке и использует свои рабочие секреты при развертывании в Azure.
+Для разработчиков ASP.NET и ASP.NET Core Установка параметров приложения в службе приложений выполняется так же, как и `<appSettings>` в *Web.config* или *appsettings.js*, но значения в службе приложений переопределяются в *Web.config* или *appsettings.js*. Можно использовать параметры разработки (например, локальный пароль MySQL) в *Web.config* или *appsettings.jsв* и рабочих секретах (например, пароль базы данных MySQL Azure) в службе приложений. Этот же код использует параметры разработки при локальной отладке и использует свои рабочие секреты при развертывании в Azure.
 
 Другие стеки языков, аналогично, получают параметры приложения в виде переменных среды во время выполнения. Инструкции по стеку для конкретного языка см. в следующих статьях:
 
@@ -276,7 +276,7 @@ ms.locfileid: "95999983"
 
 См. статью [Настройка пользовательского контейнера Linux для службы приложений Azure](configure-custom-container.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка личного доменного имени в службе приложений Azure]
 - [Настройка промежуточных сред в Службе приложений Azure]

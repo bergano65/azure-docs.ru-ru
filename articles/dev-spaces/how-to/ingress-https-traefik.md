@@ -6,12 +6,12 @@ ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных траефик и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a3afa43556bbab29f69b496e46a5e19dc833cd3a
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: d19dc409f4d57a114b5937e6ce3718315e550a08
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607115"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763593"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных траефик и настройка HTTPS
 
@@ -47,7 +47,7 @@ aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.14.1
 Добавьте [официальный стабильный репозиторий Helm][helm-stable-repo], который содержит диаграмму Helm для контроллера входящих данных траефик.
 
 ```console
-helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo add stable https://charts.helm.sh/stable
 ```
 
 Создайте пространство имен Kubernetes для контроллера входящих данных траефик и установите его с помощью `helm` .
@@ -306,13 +306,13 @@ helm upgrade bikesharingsampleapp . --namespace dev --atomic
 > [!IMPORTANT]
 > Для завершения изменений DNS и получения доступа к вашему образцу приложения может потребоваться 30 минут или более.
 
-Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Пример:
+Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Пример.
 
 ```console
 Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.traefik.MY_CUSTOM_DOMAIN/devsignin' was loaded over HTTPS, but requested an insecure resource 'http://azureuser1.s.dev.gateway.traefik.MY_CUSTOM_DOMAIN/api/user/allUsers'. This request has been blocked; the content must be served over HTTPS.
 ```
 
-Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)*. Пример:
+Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)*. Пример.
 
 ```yaml
 ...
