@@ -369,6 +369,8 @@
               href: ../app-service/configure-authentication-provider-twitter.md?toc=%2fazure%2fazure-functions%2ftoc.json
             - name: Проверка подлинности с помощью поставщика OpenID Connect (предварительная версия)
               href: ../app-service/configure-authentication-provider-openid-connect.md?toc=%2fazure%2fazure-functions%2ftoc.json
+            - name: Проверка подлинности путем входа с помощью Apple (предварительная версия)
+              href: ../app-service/configure-authentication-provider-apple.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Расширенная проверка подлинности
           href: ../app-service/app-service-authentication-how-to.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Запрет IP-адресов
@@ -442,7 +444,7 @@
             - name: Входные данные
               displayName: Blob storage
               href: functions-bindings-storage-blob-input.md
-            - name: Выходные данные
+            - name: Вывод
               displayName: Blob storage
               href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB

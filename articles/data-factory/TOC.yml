@@ -145,6 +145,10 @@
           href: tutorial-deploy-ssis-packages-azure-powershell.md
         - name: Присоединение к виртуальной сети
           href: tutorial-deploy-ssis-virtual-network.md
+    - name: Журнал преобразований
+      items:
+        - name: Отправка данных происхождения из Фабрики данных в Azure Purview
+          href: turorial-push-lineage-to-purview.md
     - name: Комплексные занятия
       items:
         - name: Интеграция данных с помощью фабрики данных и общего ресурса данных
@@ -688,6 +692,10 @@
           href: how-to-create-tumbling-window-trigger.md
         - name: 'Создание зависимости триггера, который запускает конвейер в "переворачивающемся" окне'
           href: tumbling-window-trigger-dependency.md
+    - name: Журнал преобразований
+      items:
+        - name: Подключение Фабрики данных к Azure Purview
+          href: connect-data-factory-to-azure-purview.md
     - name: Сценарии
       items:
         - name: Перенос данных для озера данных и EDW

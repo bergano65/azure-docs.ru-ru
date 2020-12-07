@@ -73,10 +73,16 @@
           href: virtual-network-peering-overview.md
     - name: Интеграция со службами Azure
       items:
-        - name: Конечные точки служб
-          href: virtual-network-service-endpoints-overview.md
+        - name: Обзор
+          href: vnet-integration-for-azure-services.md
         - name: Развертывание выделенной службы
           href: virtual-network-for-azure-services.md
+        - name: Приватный канал
+          href: ../private-link/private-link-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Конечные точки служб
+          href: virtual-network-service-endpoints-overview.md
+        - name: Теги служб
+          href: service-tags-overview.md
     - name: Службы IP
       items:
         - name: Общедоступные IP-адреса.
@@ -99,6 +105,8 @@
           href: security-baseline.md
         - name: Базовые средства безопасности NAT виртуальных сетей
           href: nat-security-baseline.md
+        - name: Сетевая изоляция служб Azure
+          href: vnet-integration-for-azure-services.md
         - name: Группы безопасности сети
           items:
             - name: Обзор

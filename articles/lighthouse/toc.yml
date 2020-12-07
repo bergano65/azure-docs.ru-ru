@@ -54,12 +54,18 @@
     - name: Связывание идентификатора партнера
       displayName: 'partner earned credit, pec, mpn'
       href: ./how-to/partner-earned-credit.md
+    - name: Обновление делегирования
+      displayName: upgrade
+      href: ./how-to/update-delegation.md
     - name: Удаление доступа к делегированию
       displayName: 'delete, undelegate'
       href: ./how-to/remove-delegation.md
     - name: Интеграция Azure Arc
       displayName: 'server, kubernetes, hybrid, infrastructure'
       href: ./how-to/manage-hybrid-infrastructure-arc.md
+    - name: Интеграция службы "Миграция Azure"
+      displayName: 'migration, project, on-prem'
+      href: ./how-to/migration-at-scale.md
     - name: "Интеграция Azure\_Monitor"
       items:
         - name: Использование журналов Azure Monitor в большом масштабе
