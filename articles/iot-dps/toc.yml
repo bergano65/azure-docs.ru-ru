@@ -14,6 +14,7 @@
         - name: Azure CLI
           href: quick-setup-auto-provision-cli.md
         - name: Шаблон ARM
+          displayName: Resource Manager
           href: quick-setup-auto-provision-rm.md
     - name: Подготовка устройства с симметричным ключом
       items:

@@ -126,6 +126,8 @@
               href: ../../iot-edge/how-to-install-iot-edge-ubuntuvm.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Центр Интернета вещей
               href: ../../iot-hub/horizontal-arm-route-messages.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+              href: ../../iot-dps/quick-setup-auto-provision-rm.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Управление
           items:
             - name: Помощник
