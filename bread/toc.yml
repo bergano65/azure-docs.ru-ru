@@ -464,6 +464,9 @@
         - name: Передача данных через Интернет с помощью Data Box
           tocHref: /azure/databox-online/
           topicHref: /azure/databox-online/
+        - name: Шлюз Data Box
+          tocHref: /azure/databox-gateway/
+          topicHref: /azure/databox-gateway/
     - name: Каталог данных
       tocHref: /azure/data-catalog/
       topicHref: /azure/data-catalog/
@@ -908,3 +911,6 @@
         - name: Резервирование
           tocHref: /azure/cost-management-billing/reservations/
           topicHref: /azure/cost-management-billing/reservations/
+    - name: Purview
+      tocHref: /azure/purview/
+      topicHref: /azure/purview/

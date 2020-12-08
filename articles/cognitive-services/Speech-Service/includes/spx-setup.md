@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: da88b8554d6c3214da9a386613538c237a318f73
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 6011bf90d5a97dcc027f8a9a0916c28226c5c354
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546915"
+ms.locfileid: "96584507"
 ---
 ## <a name="download-and-install"></a>Загрузите и установите
 
@@ -97,13 +97,12 @@ pwd
 docker run -it -v c:\spx-data:/data --rm msftspeech/spx
 ```
 
-В Linux или macOS команды будут запускаться примерно так:
-```shell   
-sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
-```
+В Linux или macOS команды будут выглядеть как в примере ниже. Замените `ABSOLUTE_PATH` на абсолютный путь к подключенному каталогу. Этот путь был возвращен командой `pwd` в предыдущем разделе. 
 
-> [!NOTE]
-> Замените `/ABSOLUTE_PATH` на абсолютный путь, показанный с помощью команды `pwd` в разделе выше.
+Если выполнить эту команду перед настройкой ключа и региона, появится сообщение об ошибке, уведомляющее о необходимости настроить ключ и регион:
+```shell   
+sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx
+```
 
 Чтобы использовать команду `spx`, установленную в контейнере, всегда вводите полную версию команды, показанную выше, а затем — параметры запроса.
 Например, в Windows эта команда задает ключ:
@@ -115,26 +114,28 @@ docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCR
 > [!WARNING]
 > При запуске CLI службы "Речь" в контейнере Docker нельзя использовать микрофон или динамик компьютера. Но можно выполнять чтение и сохранение звуковых файлов в локальном подключенном каталоге. 
 
-### <a name="optional-create-a-command-line-shortcut"></a>Необязательно. Создание ярлыка командной строки
+<!-- Need to troubleshoot issues with docker pull image
 
-Если вы используете CLI службы "Речь" из контейнера Docker в Linux или macOS, можно создать ярлык. 
+### Optional: Create a command line shortcut
 
-Для этого:
-1. Откройте `.bash_profile` в предпочитаемом текстовом редакторе. Пример:
+If you're running the the Speech CLI from a Docker container on Linux or macOS you can create a shortcut. 
+
+Follow these instructions to create a shortcut:
+1. Open `.bash_profile` with your favorite text editor. For example:
    ```shell
    nano ~/.bash_profile
    ```
-2. Затем добавьте эту функцию в `.bash_profile`. Убедитесь, что вы обновляете эту функцию, указав правильный путь к подключенному каталогу:
+2. Next, add this function to your `.bash_profile`. Make sure you update this function with the correct path to your mounted directory:
    ```shell   
    spx(){
-       sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
+       sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx
    }
    ```
-3. Укажите профиль в качестве источника:
+3. Source your profile:
    ```shell
    source ~/.bash_profile
    ```
-4. Теперь вместо выполнения `sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx` можно просто ввести `spx`, а затем указать аргументы. Пример: 
+4. Now instead of running `sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx`, you can just type `spx` followed by arguments. For example: 
    ```shell
    // Get some help
    spx help recognize
@@ -144,8 +145,8 @@ docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCR
    ```
 
 > [!WARNING]
-> При изменении подключенного каталога, на который ссылается Docker, необходимо обновить функцию в `.bash_profile`.
-
+> If you change the mounted directory that Docker is referencing, you need to update the function in `.bash_profile`.
+--->
 ***
 
 ## <a name="create-subscription-config"></a>Создание конфигурации подписки
