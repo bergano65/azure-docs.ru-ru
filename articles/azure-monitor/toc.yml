@@ -890,8 +890,6 @@
               items:
                 - name: Углубленная диагностика для веб-приложений и служб
                   href: app/devops.md
-                - name: Отслеживание производительности в веб-приложениях
-                  href: app/web-monitor-performance.md
                 - name: 'Разделение среды разработки, тестирования и рабочей среды'
                   href: app/separate-resources.md
                 - name: Как работать с Application Insights
