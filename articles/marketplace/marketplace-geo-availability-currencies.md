@@ -7,163 +7,163 @@ ms.topic: reference
 author: keferna
 ms.author: keferna
 ms.date: 07/29/2020
-ms.openlocfilehash: bd6067b39f12888bb903a68fb9834250c9d86638
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: bdb746c75a175d906301bcfca0b1472383fceff9
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462439"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778076"
 ---
-# <a name="geographic-availability-and-currency-support-for-commercial-marketplace"></a>Поддержка географической доступности и валюты для коммерческой платформы
+# <a name="geographic-availability-and-currency-support-for-the-commercial-marketplace"></a>Поддержка географической доступности и валюты для коммерческого рынка
 
 ## <a name="supported-geographic-locations"></a>Поддерживаемые географические расположения
 
 Предложения на коммерческой платформе можно приобрести в 141 регионах в соответствии с адресом для выставления счетов клиента, а транзакции могут осуществляться в 17 валютах. В следующей таблице перечислены все поддерживаемые географические расположения, их [буквенно-цифровой код ISO 3166 2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)и назначенная Валюта.
 
-|   Название региона или страны               |   ISO-2   |   Валюта   |
-|-------------------------------------|-----------|--------------|
-| Афганистан                         | AF        | USD          |
-| Албания                             | AL        | USD          |
-| Алжир                             | DZ        | USD          |
-| Андорра                             | AD        | EUR          |
-| Ангола                              | АО        | USD          |
-| Аргентина                           | AR        | USD          |
-| Армения                             | AM        | USD          |
-| Австралия                           | AU        | AUD          |
-| Австрия                             | AT        | EUR          |
-| Азербайджан                          | AZ        | USD          |
-| Бахрейн                             | BH        | USD          |
-| Бангладеш                          | BD        | USD          |
-| Барбадос                            | BB        | USD          |
-| Беларусь                             | BY        | USD          |
-| Бельгия                             | BE        | EUR          |
-| Белиз                              | BZ        | USD          |
-| Бермудские о-ва                             | BM        | USD          |
-| Боливия                             | BO        | USD          |
-| Босния и Герцеговина              | BA        | USD          |
-| Ботсвана                            | BW        | USD          |
-| Бразилия                              | BR        | BRL\*        |
-| Бруней-Даруссалам                              | BN        | USD          |
-| Болгария                            | BG        | EUR          |
-| Кабо-Верде                          | CV        | USD          |
-| Камерун                            | CM        | USD          |
-| Canada                              | CA        | CAD          |
-| Каймановы о-ва                      | KY        | USD          |
-| Чили                               | CL        | USD          |
-| Китай\**                            | CN        | Недоступно          |
-| Колумбия                            | CO        | USD          |
-| Коста-Рика                          | CR        | USD          |
-| Кот д'Ивуар                       | CI        | USD          |
-| Хорватия                             | HR        | EUR          |
-| Кюрасао                             | CW        | USD          |
-| Кипр                              | CY        | EUR          |
-| Чехия                      | CZ        | EUR          |
-| Дания                             | DK        | DKK          |
-| Доминиканская Республика                  | DO        | USD          |
-| Эквадор                             | EC        | USD          |
-| Египет                               | EG        | USD          |
-| Эль-Сальвадор                         | SV        | USD          |
-| Эстония                             | EE        | EUR          |
-| Эфиопия                            | ET        | USD          |
-| Фарерские о-ва                       | FO        | DKK          |
-| Фиджи                                | FJ        | AUD          |
-| Финляндия                             | FI        | EUR          |
-| Франция                              | СВ        | EUR          |
-| Джорджия                             | GE        | USD          |
-| Германия                             | DE        | EUR          |
-| Гана                               | GH        | USD          |
-| Греция                              | GR        | EUR          |
-| Гватемала                           | GT        | USD          |
-| Гондурас                            | HN        | USD          |
-| Гонконг, САР                       | HK        | USD          |
-| Венгрия                             | HU        | EUR          |
-| Исландия                             | IS        | EUR          |
-| Индия                               | IN        | INR          |
-| Индонезия                           | ID        | USD          |
-| Ирак                                | IQ        | USD          |
-| Ирландия                             | IE        | EUR          |
-| Израиль                              | IL        | USD          |
-| Италия                               | IT        | EUR          |
-| Ямайка                             | JM        | USD          |
-| Япония                               | JP        | JPY          |
-| Иордания                              | JO        | USD          |
-| Казахстан                          | KZ        | USD          |
-| Кения                               | KE        | USD          |
-| Южная Корея                       | KR        | KRW          |
-| Кувейт                              | KW        | USD          |
-| Киргизия                          | KG        | USD          |
-| Латвия                              | LV        | EUR          |
-| Ливан                             | LB        | USD          |
-| Ливия                               | LY        | USD          |
-| Лихтенштейн                       | LI        | EUR          |
-| Литва                           | LT        | EUR          |
-| Люксембург                          | LU        | EUR          |
-| Макао (САР)                           | MO        | USD          |
-| Малайзия                            | MY        | USD          |
-| Мальта                               | MT        | EUR          |
-| Маврикий                           | MU        | USD          |
-| Мексика                              | MX        | USD          |
-| Молдова                             | MD        | USD          |
-| Монако                              | MC        | EUR          |
-| Монголия                            | MN        | USD          |
-| Черногория                          | ME        | USD          |
-| Марокко                             | MA        | USD          |
-| Намибия                             | Н/Д        | USD          |
-| Непал                               | NP        | USD          |
-| Нидерланды                         | NL        | EUR          |
-| Новая Зеландия                         | NZ        | NZD          |
-| Никарагуа                           | NI        | USD          |
-| Нигерия                             | NG        | USD          |
-| Северная Македония                     | MK        | USD          |
-| Норвегия                              | NO        | NOK          |
-| Оман                                | OM        | USD          |
-| Пакистан                            | PK        | USD          |
-| Палестинская Автономия               | PS        | USD          |
-| Панама                              | PA        | USD          |
-| Парагвай                            | PY        | USD          |
-| Перу                                | PE        | USD          |
-| Филиппины                         | PH        | USD          |
-| Польша                              | PL        | EUR          |
-| Португалия                            | PT        | EUR          |
-| Пуэрто-Рико                         | PR        | USD          |
-| Катар                               | QA        | USD          |
-| Румыния                             | RO        | EUR          |
-| Россия                              | RU        | RUB          |
-| Руанда                              | RW        | USD          |
-| Сент-Китс и Невис               | KN        | USD          |
-| Саудовская Аравия                        | SA        | USD          |
-| Сенегал                             | SN        | USD          |
-| Сербия                              | Сервер отчетов        | USD          |
-| Сингапур                           | SG        | USD          |
-| Словакия                            | SK        | EUR          |
-| Словения                            | SI        | EUR          |
-| ЮАР                        | ZA        | USD          |
-| Испания                               | ES        | EUR          |
-| Шри-Ланка                           | LK        | USD          |
-| Швеция                              | SE        | SEK          |
-| Швейцария                         | CH        | CHF          |
-| Тайвань                              | TW        | TWD          |
-| Таджикистан                          | TJ        | USD          |
-| Танзания                            | TZ        | USD          |
-| Таиланд                            | ВП        | USD          |
-| Тринидад и Тобаго                 | TT        | USD          |
-| Тунис                             | TN        | USD          |
-| Турция                              | TR        | USD          |
-| Туркменистан                        | TM        | USD          |
-| Уганда                              | UG        | USD          |
-| Украина                             | UA        | USD          |
-| ОАЭ                | AE        | USD          |
-| United Kingdom                      | ГБ        | GBP          |
-| США                       | США        | USD          |
-| США (США)                 | VI        | USD          |
-| Уругвай                             | UY        | USD          |
-| Узбекистан                          | UZ        | USD          |
-| Ватикан             | VA        | EUR          |
-| Венесуэла                           | VE        | USD          |
-| Вьетнам                             | VN        | USD          |
-| Йемен                               | YE        | USD          |
-| Замбия                              | ZM        | USD          |
-| Зимбабве                            | ZW        | USD          |
+|   Название региона или страны               |   ISO-2   |   Валюта</br>(Все типы предложений)  |    Валюта</br>(Только консультационные услуги)    |
+|-------------------------------------|-----------|--------------|---------------------------------------------|
+| Афганистан                         | AF        | USD          | АФН, EUR, USD |
+| Албания                             | AL        | USD          | ВСЕ, EUR, USD |
+| Алжир                             | DZ        | USD          | ДЗД, EUR, USD |
+| Андорра                             | AD        | EUR          | EUR, USD |
+| Ангола                              | АО        | USD          | AOA, EUR, USD |
+| Аргентина                           | AR        | USD          | ARS, EUR, USD |
+| Армения                             | AM        | USD          | AMD, EUR, USD |
+| Австралия                           | AU        | AUD          | AUD, EUR, USD |
+| Австрия                             | AT        | EUR          | EUR, USD  |
+| Азербайджан                          | AZ        | USD          | АЗН, EUR, USD |
+| Бахрейн                             | BH        | USD          | БХД, EUR, USD |
+| Бангладеш                          | BD        | USD          | BDT, EUR, USD |
+| Барбадос                            | BB        | USD          | BBD, EUR, USD |
+| Беларусь                             | BY        | USD          | БИН, EUR, USD |
+| Бельгия                             | BE        | EUR          | EUR, USD  |
+| Белиз                              | BZ        | USD          | БЗД, EUR, USD |
+| Бермудские о-ва                             | BM        | USD          | BMC, EUR, USD |
+| Боливия                             | BO        | USD          | БОБ, EUR, USD |
+| Босния и Герцеговина              | BA        | USD          | BAM, EUR, USD |
+| Ботсвана                            | BW        | USD          | БВП, EUR, USD |
+| Бразилия                              | BR        | BRL\*        | БРАЗИЛЬСКИХ, EUR, USD |
+| Бруней-Даруссалам                              | BN        | USD          | БНД, EUR, SGD, USD |
+| Болгария                            | BG        | EUR          | БГН, EUR, USD |
+| Кабо-Верде                          | CV        | USD          | CVE, EUR, USD |
+| Камерун                            | CM        | USD          | КСАФ, EUR, USD |
+| Canada                              | CA        | CAD          | CAD, EUR, USD  |
+| Каймановы о-ва                      | KY        | USD          | КИД, EUR, USD |
+| Чили                               | CL        | USD          | CLP, EUR, USD |
+| Китай\**                            | CN        | Недоступно          | Недоступно |
+| Колумбия                            | CO        | USD          | COP, EUR, USD |
+| Коста-Рика                          | CR        | USD          | CRC, EUR, USD |
+| Кот д'Ивуар                       | CI        | USD          | КСОФ, EUR, USD |
+| Хорватия                             | HR        | EUR          | ХРК, EUR, USD |
+| Кюрасао                             | CW        | USD          | ЭНГ, EUR, USD |
+| Кипр                              | CY        | EUR          | EUR, USD  |
+| Чехия                             | CZ        | EUR          | EUR, USD, CZK |
+| Дания                             | DK        | DKK          | DKK, EUR, USD |
+| Доминиканская Республика                  | DO        | USD          | DOP, EUR, USD |
+| Эквадор                             | EC        | USD          | EUR, USD |
+| Египет                               | EG        | USD          | EUR, ЕГП ДОЛЛ. США |
+| Эль-Сальвадор                         | SV        | USD          | EUR, USD |
+| Эстония                             | EE        | EUR          | EUR, USD |
+| Эфиопия                            | ET        | USD          | ЕТБ, EUR, USD |
+| Фарерские о-ва                       | FO        | DKK          | DKK, EUR, USD |
+| Фиджи                                | FJ        | AUD          | AUD, EUR, ФЖД, USD |
+| Финляндия                             | FI        | EUR          | EUR, USD |
+| Франция                              | СВ        | EUR          | EUR, USD |
+| Джорджия                             | GE        | USD          | EUR, GEL, USD |
+| Германия                             | DE        | EUR          | EUR, USD |
+| Гана                               | GH        | USD          | EUR, ГХС, USD |
+| Греция                              | GR        | EUR          | EUR, USD |
+| Гватемала                           | GT        | USD          | EUR, ГТК, USD |
+| Гондурас                            | HN        | USD          | EUR, ХНЛ, USD |
+| Гонконг, САР                       | HK        | USD          | EUR, ГОНКОНГСКИХ, USD |
+| Венгрия                             | HU        | EUR          | EUR, ХУФ, USD |
+| Исландия                             | IS        | EUR          | EUR, ЫДЕЛЕНИЕ, USD |
+| Индия                               | IN        | INR          | EUR, INR, USD |
+| Индонезия                           | ID        | USD          | EUR, IDR, USD |
+| Ирак                                | IQ        | USD          | EUR, ИКД, USD |
+| Ирландия                             | IE        | EUR          | EUR, USD  |
+| Израиль                              | IL        | USD          | EUR, ILS, USD |
+| Италия                               | IT        | EUR          | EUR, USD |
+| Ямайка                             | JM        | USD          | EUR, ЖМД, USD |
+| Япония                               | JP        | JPY          | EUR, ИЕН, USD |
+| Иордания                              | JO        | USD          | EUR, ЖОД, USD |
+| Казахстан                          | KZ        | USD          | EUR, КЗТ, USD |
+| Кения                               | KE        | USD          | EUR, KES, USD |
+| Южная Корея                       | KR        | KRW          | EUR, КРВ, USD |
+| Кувейт                              | KW        | USD          | EUR, КВД, USD |
+| Киргизия                          | KG        | USD          | USD, EUR, КГ |
+| Латвия                              | LV        | EUR          | EUR, USD |
+| Ливан                             | LB        | USD          | EUR, ЛБП, USD |
+| Ливия                               | LY        | USD          | EUR, ЛИД, USD |
+| Лихтенштейн                       | LI        | EUR          | CHF, EUR, USD |
+| Литва                           | LT        | EUR          | EUR, USD |
+| Люксембург                          | LU        | EUR          | EUR, USD |
+| Макао (САР)                           | MO        | USD          | EUR, МОП, USD |
+| Малайзия                            | MY        | USD          | EUR, МИР, USD |
+| Мальта                               | MT        | EUR          | EUR, USD |
+| Маврикий                           | MU        | USD          | EUR, МУР, USD |
+| Мексика                              | MX        | USD          | EUR, MXN, USD |
+| Молдова                             | MD        | USD          | EUR, MDL, USD |
+| Монако                              | MC        | EUR          | EUR, USD |
+| Монголия                            | MN        | USD          | EUR, МНТ, USD |
+| Черногория                          | ME        | USD          | EUR, USD |
+| Марокко                             | MA        | USD          | EUR, MAD, USD |
+| Намибия                             | Н/Д        | USD          | EUR, NAD, USD, ЗАР |
+| Непал                               | NP        | USD          | EUR, NPR, USD |
+| Нидерланды                         | NL        | EUR          | EUR, USD |
+| Новая Зеландия                         | NZ        | NZD          | EUR, НЗД, USD |
+| Никарагуа                           | NI        | USD          | EUR, НИО, USD |
+| Нигерия                             | NG        | USD          | EUR, НГН, USD |
+| Северная Македония                     | MK        | USD          | EUR, МКД, USD |
+| Норвегия                              | NO        | NOK          | EUR, НОРВЕЖСКИЙ, USD |
+| Оман                                | OM        | USD          | EUR, ОМР, USD |
+| Пакистан                            | PK        | USD          | EUR, ПКР, USD |
+| Палестинская Автономия               | PS        | USD          | EUR, ILS, ЖОД, USD |
+| Панама                              | PA        | USD          | EUR, PAB, USD |
+| Парагвай                            | PY        | USD          | EUR, ПИГ, USD |
+| Перу                                | PE        | USD          | EUR, ПЕРО, USD |
+| Филиппины                         | PH        | USD          | EUR, PHP, USD |
+| Польша                              | PL        | EUR          | EUR, ПЛН, USD |
+| Португалия                            | PT        | EUR          | EUR, USD |
+| Пуэрто-Рико                         | PR        | USD          | EUR, USD |
+| Катар                               | QA        | USD          | EUR, КАР, USD |
+| Румыния                             | RO        | EUR          | EUR, РОН, USD |
+| Россия                              | RU        | RUB          | EUR, РУБ., ДОЛЛ. США |
+| Руанда                              | RW        | USD          | EUR, РВФ, USD |
+| Сент-Китс и Невис               | KN        | USD          | EUR, USD, КСКД |
+| Саудовская Аравия                        | SA        | USD          | EUR, САР, USD |
+| Сенегал                             | SN        | USD          | EUR, USD, КСОФ |
+| Сербия                              | Сервер отчетов        | USD          | EUR, RSD, USD |
+| Сингапур                           | SG        | USD          | БНД, EUR, SGD, USD |
+| Словакия                            | SK        | EUR          | EUR, USD |
+| Словения                            | SI        | EUR          | EUR, USD |
+| ЮАР                        | ZA        | USD          | EUR, USD, ЗАР |
+| Испания                               | ES        | EUR          | EUR, USD |
+| Шри-Ланка                           | LK        | USD          | EUR, USD, ЛКР |
+| Швеция                              | SE        | SEK          | EUR, USD, SEK |
+| Швейцария                         | CH        | CHF          | CHF, EUR, USD |
+| Тайвань                              | TW        | TWD          | EUR, ТВД, USD |
+| Таджикистан                          | TJ        | USD          | EUR, ТЖС, USD |
+| Танзания                            | TZ        | USD          | EUR, ТЗС, USD |
+| Таиланд                            | ВП        | USD          | EUR, СБ, USD |
+| Тринидад и Тобаго                 | TT        | USD          | EUR, МЕНЕЕ, USD |
+| Тунис                             | TN        | USD          | EUR, ТНД, USD |
+| Турция                              | TR        | USD          | EUR, ПОПЫТАТЬСЯ, USD |
+| Туркменистан                        | TM        | USD          | EUR, ТМТ, USD |
+| Уганда                              | UG        | USD          | EUR, УГКС, USD |
+| Украина                             | UA        | USD          | EUR, УАХ, РУБЛИ, USD |
+| ОАЭ                | AE        | USD          | АЕД, EUR, USD |
+| United Kingdom                      | ГБ        | GBP          | EUR, GBP, USD |
+| США                       | США        | USD          | EUR, USD |
+| США (США)                 | VI        | USD          | EUR, USD|
+| Уругвай                             | UY        | USD          | EUR, USD, УЙУ |
+| Узбекистан                          | UZ        | USD          | EUR, USD, УЗС |
+| Ватикан             | VA        | EUR          | EUR, USD |
+| Венесуэла                           | VE        | USD          | EUR, USD, VE |
+| Вьетнам                             | VN        | USD          | EUR, USD, VND |
+| Йемен                               | YE        | USD          | EUR, USD, ЕР |
+| Замбия                              | ZM        | USD          | EUR, USD, ЗМВ |
+| Зимбабве                            | ZW        | USD          | EUR, USD|
 |   |   |   |
 
 \* Для клиентов в Бразилии для коммерческого рынка с помощью поставщиков облачных решений (CSP) используется USD.

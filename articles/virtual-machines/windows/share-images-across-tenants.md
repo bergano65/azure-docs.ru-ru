@@ -1,22 +1,22 @@
 ---
 title: Совместное использование образов коллекций в клиентах в Azure
-description: Узнайте, как совместно использовать образы виртуальных машин в клиентах Azure с помощью общих коллекций образов с помощью примеров Windows.
+description: Узнайте, как совместно использовать образы виртуальных машин в клиентах Azure с помощью общих коллекций образов и PowerShell.
 author: axayjo
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 07/15/2019
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 89987ccc975f5d473a493c48be61094de1177c1b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 84998182081c6a681668fbd9bc05446357beb959
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832421"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96781051"
 ---
-# <a name="share-gallery-vm-images-across-azure-tenants"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure
+# <a name="share-gallery-vm-images-across-azure-tenants-using-powershell"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure с помощью PowerShell
 
 Коллекции общих образов позволяют предоставлять общий доступ к образам с помощью Azure RBAC. Вы можете использовать Azure RBAC для совместного использования образов в вашем клиенте и даже для пользователей за пределами клиента. Дополнительные сведения об этом простом параметре общего доступа см. в разделе [общий доступ к коллекции](./shared-images-portal.md#share-the-gallery).
 

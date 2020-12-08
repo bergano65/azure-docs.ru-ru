@@ -8,27 +8,27 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: dafb4485ae9b10d89fa36bd790dcf3a799054de3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b2cd50b1b35b87b1a11301ddc36ac355bef20dc4
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90064180"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780622"
 ---
 # <a name="manage-spark-application-dependencies"></a>Управление зависимостями приложений Spark
 
 Из этой статьи вы узнаете, как управлять зависимостями для приложений Spark, работающих в HDInsight. Мы рассмотрим как Scala, так и PySpark в приложении Spark и области кластера.
 
 Используйте быстрые ссылки, чтобы перейти к разделу, основанному на пользовательском сценарии:
-* [Настройка зависимостей JAR-файлов заданий Spark с помощью записной книжки Jupyter](#use-jupyter-notebook)
+* [Настройка зависимостей JAR-файлов заданий Spark с помощью Jupyter Notebook](#use-jupyter-notebook)
 * [Настройка зависимостей JAR-файлов заданий Spark с помощью Azure Toolkit for IntelliJ](#use-azure-toolkit-for-intellij)
 * [Настройка зависимостей JAR для кластера Spark](#jar-libs-for-cluster)
 * [Безопасное управление зависимостями JAR](#safely-manage-jar-dependencies)
-* [Настройка пакетов Python для задания Spark с помощью записной книжки Jupyter](#use-jupyter-notebook-1)
+* [Настройка пакетов Python задания Spark с помощью Jupyter Notebook](#use-jupyter-notebook-1)
 * [Безопасное управление пакетами Python для кластера Spark](#python-packages-for-cluster)
 
 ## <a name="jar-libs-for-one-spark-job"></a>Библиотеки JAR для одного задания Spark
-### <a name="use-jupyter-notebook"></a>Использовать записную книжку Jupyter
+### <a name="use-jupyter-notebook"></a>Использование Jupyter Notebook
 Когда сеанс Spark начинается в Jupyter Notebook в ядре Spark для Scala, можно настроить пакеты из:
 
 * [Репозиторий Maven](https://search.maven.org/)или пакеты, участвующие в сообществе, в [пакетах Spark](https://spark-packages.org/).
@@ -42,7 +42,7 @@ ms.locfileid: "90064180"
 
 **Пример для пакетов из репозитория Maven или пакетов Spark**
 
-После обнаружения пакета из репозитория Maven Соберите значения для **groupId**, **ArtifactId**и **Version**. Объедините три значения, разделив их двоеточием (**:**).
+После обнаружения пакета из репозитория Maven Соберите значения для **groupId**, **ArtifactId** и **Version**. Объедините три значения, разделив их двоеточием (**:**).
 
    ![Объединение схемы пакета](./media/apache-spark-manage-dependencies/spark-package-schema.png "Объединение схемы пакета")
 
@@ -102,8 +102,8 @@ import com.microsoft.azure.cosmosdb.spark._
 Кластер HDInsight имеет встроенные зависимости JAR, и обновления для этих версий JAR происходят время от времени. Чтобы избежать конфликта версий между встроенными JAR и JAR, которые вы хотите использовать для справки, рассмотрите возможность [заливки зависимостей приложения](./safely-manage-jar-dependency.md).
 
 ## <a name="python-packages-for-one-spark-job"></a>Пакеты Python для одного задания Spark
-### <a name="use-jupyter-notebook"></a>Использовать записную книжку Jupyter
-Ядро PySpark для записной книжки HDInsight Jupyter не поддерживает установку пакетов Python из репозитория пакетов PyPi или Anaconda напрямую. Если у вас `.zip` есть `.egg` зависимости, или `.py` , и вы хотите сослаться на них для одного сеанса Spark, выполните следующие действия.
+### <a name="use-jupyter-notebook"></a>Использование Jupyter Notebook
+Ядро HDInsight Jupyter Notebook PySpark не поддерживает установку пакетов Python из репозитория пакетов PyPi или Anaconda напрямую. Если у вас `.zip` есть `.egg` зависимости, или `.py` , и вы хотите сослаться на них для одного сеанса Spark, выполните следующие действия.
 
 1. Выполните приведенный ниже пример действий сценария для копирования `.zip` `.egg` или `.py` файлов из основного хранилища `wasb://mycontainer@mystorageaccount.blob.core.windows.net/libs/*` в локальную файловую систему кластера `/usr/libs/pylibs` . Этот шаг необходим, так как Linux использует `:` для разделения списка путей поиска, но HDInsight поддерживает только пути к хранилищу с такой схемой, как `wasb://` . Путь к удаленному хранилищу будет работать неправильно при использовании `sys.path.insert` .
 

@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 12/07/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 8e9013db93f5cd67448b5af8c415db0862e5d332
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: ccc545b15f16879582c671b082cab40f6b11aa08
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842725"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778977"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
@@ -50,6 +50,11 @@ ms.locfileid: "94842725"
 
 Когда субъект безопасности Azure AD пытается получить доступ к данным большого двоичного объекта или очереди, этот субъект безопасности должен иметь разрешения для ресурса. Независимо от того, является ли участник безопасности управляемым удостоверением в Azure или учетной записью пользователя Azure AD, выполняющего код в среде разработки, участнику безопасности должна быть назначена роль Azure, которая предоставляет доступ к данным большого двоичного объекта или очереди в службе хранилища Azure. Сведения о назначении разрешений с помощью Azure RBAC см. в разделе **назначение ролей Azure для прав доступа** в статье [авторизация доступа к BLOB-объектам и очередям azure с помощью Azure Active Directory](../common/storage-auth-aad.md#assign-azure-roles-for-access-rights).
 
+> [!NOTE]
+> При создании учетной записи хранения Azure вы не назначаете разрешения на доступ к данным через Azure AD автоматически. Необходимо явно назначить себе роль Azure для службы хранилища Azure. Вы можете назначить ее на уровне подписки, группы ресурсов, учетной записи хранения, контейнера или очереди.
+>
+> Прежде чем назначать себе роль для доступа к данным, вы сможете получить доступ к данным в учетной записи хранения с помощью портал Azure, так как портал Azure также может использовать ключ учетной записи для доступа к данным. Дополнительные сведения см. в разделе [Выбор способа авторизации доступа к данным BLOB-объектов в портал Azure](../blobs/authorize-data-operations-portal.md).
+
 ### <a name="authenticate-the-user-in-the-development-environment"></a>Проверка подлинности пользователя в среде разработки
 
 Если код выполняется в среде разработки, проверка подлинности может выполняться автоматически, или в зависимости от используемых инструментов может потребоваться вход в браузер. Например, Microsoft Visual Studio поддерживает единый вход (SSO), чтобы активная учетная запись пользователя Azure AD автоматически использовалась для проверки подлинности. Дополнительные сведения об единого входа см. [в статье единый вход в приложения](../../active-directory/manage-apps/what-is-single-sign-on.md).
@@ -71,7 +76,7 @@ ms.locfileid: "94842725"
 ```azurecli-interactive
 az ad sp create-for-rbac \
     --name <service-principal> \
-    --role "Storage Blob Data Reader" \
+    --role "Storage Blob Data Contributor" \
     --scopes /subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>
 ```
 
@@ -94,7 +99,7 @@ az ad sp create-for-rbac \
 
 Клиентская библиотека удостоверений Azure считывает значения из трех переменных среды во время выполнения для проверки подлинности субъекта-службы. В следующей таблице описывается значение, которое задается для каждой переменной среды.
 
-|переменная среды;|Значение
+|Переменная среды|Значение
 |-|-
 |`AZURE_CLIENT_ID`|Идентификатор приложения для субъекта-службы
 |`AZURE_TENANT_ID`|Идентификатор клиента Azure AD субъекта-службы

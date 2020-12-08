@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: d2c9d810fb3bd86d68518e1ad20088a57d538bbe
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 70ebe8ede75935bcc8d8db8729fef165a5616fe7
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500586"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779810"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Linux
 
@@ -416,6 +416,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Применение ADE к виртуальной машине с дисками, зашифрованными с помощью [шифрования на стороне сервера, с помощью ключей, управляемых клиентом](../disk-encryption.md) (SSE + CMK). Применение SSE + CMK к диску данных на виртуальной машине, зашифрованном с помощью ADE, также является неподдерживаемым сценарием.
 - Перенос виртуальной машины, зашифрованной с помощью ADE, или **когда-либо** зашифрованный с помощью ade, для [шифрования на стороне сервера с ключами, управляемыми клиентом](../disk-encryption.md).
 - [Размеры виртуальных машин Azure без локального временного диска](../azure-vms-no-temp-disk.md); в частности, dv4, Dsv4, Ev4 и Esv4.
+- Шифрование виртуальных машин в отказоустойчивых кластерах.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

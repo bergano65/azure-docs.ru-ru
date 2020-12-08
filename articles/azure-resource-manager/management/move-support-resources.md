@@ -2,13 +2,13 @@
 title: Поддержка операции перемещения типом ресурсов
 description: Список типов ресурсов Azure, подлежащих перемещению в новую группу ресурсов или подписку.
 ms.topic: conceptual
-ms.date: 11/06/2020
-ms.openlocfilehash: 5b71c991136533096604c8a35af7989a227b6d2a
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.date: 12/07/2020
+ms.openlocfilehash: 226686e51c8b59b6963609a95a2cb3c2cc03d621
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364235"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96781000"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 
@@ -1026,7 +1026,7 @@ ms.locfileid: "94364235"
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | hanainstances | нет | нет |
-> | sapmonitors | Да | Да |
+> | sapmonitors | Нет | нет |
 
 ## <a name="microsofthardwaresecuritymodules"></a>Microsoft.HardwareSecurityModules
 

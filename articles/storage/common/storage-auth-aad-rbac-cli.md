@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/16/2020
+ms.date: 12/07/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 31d98e0d37da1b957d86e425e01fe04de842f532
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b818b8b46b6ac3af98ff5f25ef69335231744cc
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715143"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779045"
 ---
 # <a name="use-azure-cli-to-assign-an-azure-role-for-access-to-blob-and-queue-data"></a>Использование Azure CLI для назначения роли Azure доступа к данным BLOB-объектов и очередей
 
@@ -57,6 +57,9 @@ Storage Queue Data Reader                 Allows for read access to Azure Storag
 ## <a name="assign-an-azure-role-to-a-security-principal"></a>Назначение роли Azure субъекту безопасности
 
 Чтобы назначить роль Azure субъекту безопасности, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create) . Формат команды может различаться в зависимости от области назначения. В следующих примерах показано, как назначить роль пользователю в различных областях, но можно использовать ту же команду, чтобы назначить роль любому субъекту безопасности.
+
+> [!NOTE]
+> При создании учетной записи хранения Azure вы не назначаете разрешения на доступ к данным через Azure AD автоматически. Необходимо явно назначить себе роль Azure для службы хранилища Azure. Вы можете назначить ее на уровне подписки, группы ресурсов, учетной записи хранения, контейнера или очереди.
 
 ### <a name="container-scope"></a>Область контейнера
 
@@ -137,7 +140,7 @@ az role assignment create \
     --scope "/subscriptions/<subscription>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Добавление или удаление назначений ролей Azure с помощью модуля Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 - [Использование модуля Azure PowerShell для назначения роли Azure доступа к данным BLOB-объектов и очередей](storage-auth-aad-rbac-powershell.md)

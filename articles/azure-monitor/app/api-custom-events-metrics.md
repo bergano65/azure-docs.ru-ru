@@ -4,12 +4,12 @@ description: Вставьте несколько строк кода в свое
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: d1ed05cd7337a7e82a02b25a2f29d54567b9f9a3
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: ae64888669fb9a3c053802ee4f7ad7db6316265d
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96748898"
+ms.locfileid: "96780507"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -32,7 +32,7 @@ ms.locfileid: "96748898"
 
 Вы можете [прикрепить свойства и метрики](#properties) к большинству этих вызовов телеметрии.
 
-## <a name="before-you-start"></a><a name="prep"></a>Прежде чем начать
+## <a name="before-you-start"></a><a name="prep"></a>Перед началом работы
 
 Если у вас еще нет ссылки на пакет SDK Application Insights, выполните указанные ниже действия.
 
@@ -437,7 +437,7 @@ exceptions
 | summarize sum(itemCount) by type
 ```
 
-Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Пример:
+Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Пример.
 
 ```kusto
 exceptions
@@ -500,7 +500,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 Ограничения по размеру `message` гораздо выше, чем ограничение для свойств.
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.  
 
-Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример:
+Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример.
 
 *C#*
 
@@ -569,8 +569,8 @@ finally {
     Instant endTime = Instant.now();
     Duration delta = Duration.between(startTime, endTime);
     RemoteDependencyTelemetry dependencyTelemetry = new RemoteDependencyTelemetry("My Dependency", "myCall", delta, success);
-    RemoteDependencyTelemetry.setTimeStamp(startTime);
-    RemoteDependencyTelemetry.trackDependency(dependencyTelemetry);
+    dependencyTelemetry.setTimeStamp(startTime);
+    telemetry.trackDependency(dependencyTelemetry);
 }
 ```
 
@@ -935,7 +935,7 @@ gameTelemetry.TrackEvent({name: "WinGame"});
 
 [Выборка](./api-filtering-sampling.md) представляет собой упакованное решение для сокращения объема данных, отправляемых из приложения на портал. На отображаемые метрики выборка не влияет. Возможность диагностировать проблемы путем перехода между связанными элементами, такими как исключения, запросы и просмотры страниц, также не затрагивается.
 
-[Подробнее](./api-filtering-sampling.md).
+[Подробнее.](./api-filtering-sampling.md)
 
 ## <a name="disabling-telemetry"></a>Отключение телеметрии
 
@@ -1066,7 +1066,7 @@ var appInsights = window.appInsights || function(config){ ...
 
 ## <a name="telemetrycontext"></a>Класс TelemetryContext
 
-Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Пример:
+Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Пример.
 
 ```csharp
 telemetry.Context.Operation.Name = "MyOperationName";
@@ -1113,7 +1113,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Отсутствует. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](./export-power-bi.md) и [непрерывный экспорт](./export-telemetry.md).

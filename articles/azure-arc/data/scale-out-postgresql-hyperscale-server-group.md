@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: df0620308fab2e813fe3802dc7effb9dc1ce226c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17bdae658c7095c44a7ae9f30fd85a6c45bf1546
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285389"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779980"
 ---
 # <a name="scale-out-your-azure-arc-enabled-postgresql-hyperscale-server-group-by-adding-more-worker-nodes"></a>Масштабирование группы масштабируемых серверов PostgreSQL в службе "Дуга Azure" путем добавления дополнительных рабочих узлов
 В этом документе объясняется, как масштабировать группу серверов PostgreSQL с поддержкой дуги Azure. Это можно сделать, выполнив сценарий. **Если вы не хотите выполнять сценарий и хотите просто прочесть сведения о том, как масштабировать, перейдите к абзацу [масштабное](#scale-out)** развертывание.
@@ -160,7 +160,7 @@ azdata arc postgres server edit -n <server group name> -w <target number of work
 azdata arc postgres server edit -n postgres01 -w 4
 ```
 
-После добавления узлов вы увидите состояние ожидания для группы серверов. Пример:
+После добавления узлов вы увидите состояние ожидания для группы серверов. Пример.
 ```console
 azdata arc postgres server list
 ```
@@ -182,7 +182,7 @@ postgres01  Pending 4/5    4
 azdata arc postgres server list
 ```
 
-Он возвращает список групп серверов, созданных в пространстве имен, и указывает их количество рабочих узлов. Пример:
+Он возвращает список групп серверов, созданных в пространстве имен, и указывает их количество рабочих узлов. Пример.
 ```console
 Name        State    Workers
 ----------  -------  ---------
@@ -195,7 +195,7 @@ postgres01  Ready    4
 kubectl get postgresql-12
 ```
 
-Он возвращает список групп серверов, созданных в пространстве имен, и указывает их количество рабочих узлов. Пример:
+Он возвращает список групп серверов, созданных в пространстве имен, и указывает их количество рабочих узлов. Пример.
 ```console
 NAME         STATE   READY-PODS   EXTERNAL-ENDPOINT   AGE
 postgres01   Ready   4/4          10.0.0.4:31066      4d20h
@@ -236,7 +236,7 @@ SELECT COUNT(*) FROM github_events;
 >* [Создание HTAP приложений с помощью Python & Azure PostgreSQL Scale (Цитус)](https://www.youtube.com/watch?v=YDT8_riLLs0)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о том [, как увеличить и уменьшить масштаб (память, виртуальных ядер) в вашей ГеоPostgreSQLной группе серверов Azure Arc](scale-up-down-postgresql-hyperscale-server-group-using-cli.md)
 - Узнайте о том, как задать параметры сервера в группе PostgreSQL "масштабируемый сервер" в службе "Дуга Azure"
@@ -252,5 +252,4 @@ SELECT COUNT(*) FROM github_events;
  > \* В приведенных выше документах пропустите разделы **Вход в портал Azure**& **создать базу данных Azure для PostgreSQL-Scale (Цитус)**. Реализуйте оставшиеся шаги в развертывании Azure ARC. Эти разделы относятся к службе "база данных Azure для PostgreSQL" (Цитус), предлагаемой в качестве службы PaaS в облаке Azure, но другие части документов напрямую применимы к вашей геомасштабированию Azure с включенной PostgreSQL.
 
 - [Основные понятия конфигурации хранилища и хранилища Kubernetes](storage-configuration.md)
-- [Развертывание утверждений Постоянного тома](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#expanding-persistent-volumes-claims)
 - [Модель ресурсов Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)

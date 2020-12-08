@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 620b696be0b9a06cf0d68145b06e3cacf2bedff2
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: e5bcc6503af5f5f685ee589ed7671b4715834fef
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96762556"
+ms.locfileid: "96779368"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Как это работает: самостоятельный сброс пароля в Azure AD
 
@@ -89,7 +89,7 @@ ms.locfileid: "96762556"
 >
 > Это прерывание для регистрации в SSPR не нарушает подключение пользователя, если оно уже зарегистрировано.
 
-## <a name="set-the-number-of-days-before-users-are-asked-to-reconfirm-their-authentication-information"></a>Указание количества дней, по истечении которых пользователям будет предложено повторно подтвердить данные проверки подлинности
+## <a name="reconfirm-authentication-information"></a>Подтверждение сведений о проверке подлинности
 
 Чтобы убедиться в правильности методов проверки подлинности, когда требуется сбросить или изменить пароль, можно потребовать от пользователей подтвердить зарегистрированную информацию по истечении определенного периода времени. Этот параметр доступен только в том случае, если включен параметр **требовать регистрацию пользователей при входе в** систему.
 

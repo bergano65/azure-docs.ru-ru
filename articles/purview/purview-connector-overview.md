@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: 88fb9c823df6ae5df345911ccce1c579009fba02
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 26efa840bacd3ee542816cf861cf2ef586b0582f
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96555140"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780218"
 ---
 # <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
@@ -31,8 +31,9 @@ ms.locfileid: "96555140"
 ||[Управляемый экземпляр Базы данных SQL Azure](register-scan-azure-sql-database-managed-instance.md)|Да| Да| Нет| Да| Да| Да|
 ||[Azure синапсе Analytics (ранее — хранилище данных SQL)](register-scan-azure-synapse-analytics.md)|Да| Да| Нет| Да| Да| Да|
 |База данных|[SQL Server](register-scan-on-premises-sql-server.md)|Да| Да| Нет| Да| Да| Да|
+||[Teradata (предварительная версия)](register-scan-teradata-source.md)|Да| Да| Нет| Нет| Нет| Да|
 |Power BI|[Power BI](register-scan-power-bi-tenant.md)|Да| Да| Нет| Нет| Нет| Да|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Регистрация и проверка источника хранилища BLOB-объектов Azure](register-scan-azure-blob-storage-source.md)

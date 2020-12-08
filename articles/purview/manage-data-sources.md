@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: ef54c40715c874364beb188d8850a9ce953aa112
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 382c79cf77cb22d3cad1af41d6daa662fb00df4c
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554623"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96781170"
 ---
 # <a name="manage-data-sources-in-azure-purview-preview"></a>Управление источниками данных в Azure зрения (Предварительная версия)
 
@@ -28,6 +28,7 @@ ms.locfileid: "96554623"
 * Azure Synapse Analytics (ранее — Хранилище данных SQL)
 * Azure Cosmos DB
 * Power BI
+* Teradata (предварительная версия)
 
 ## <a name="register-a-new-source"></a>Регистрация нового источника
 
@@ -75,7 +76,7 @@ ms.locfileid: "96554623"
 
 Вы можете удалить источники из иерархии, выбрав *нет* для родителя. Неродительские источники группируются в виде пунктирной рамки в представлении "схема" без стрелок, связывающих их с родителями.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о регистрации и сканировании различных источников данных.
 
