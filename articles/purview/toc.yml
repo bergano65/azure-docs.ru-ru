@@ -28,6 +28,8 @@ items:
             href: tutorial-import-create-glossary-terms.md
       - name: Регистрация и проверка локального экземпляра SQL Server
         href: register-scan-on-premises-sql-server.md
+      - name: Вызов REST API для каталога
+        href: tutorial-using-rest-apis.md
   - name: Основные понятия
     items:
       - name: Использование Purview Studio
@@ -133,6 +135,10 @@ items:
             href: how-to-link-azure-data-factory.md
           - name: Происхождение Azure Data Share
             href: how-to-link-azure-data-share.md
+      - name: Azure Monitor
+        items:
+          - name: Мониторинг с помощью Azure Monitor
+            href: how-to-monitor-with-azure-monitor.md
       - name: Аналитика
         items:
           - name: Просмотр аналитики активов

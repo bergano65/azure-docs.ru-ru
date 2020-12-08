@@ -453,6 +453,8 @@
               href: flexible-server/connect-python.md
     - name: Учебники
       items:
+        - name: WordPress в Azure Kubernetes
+          href: flexible-server/tutorial-deploy-wordpress-on-aks.md
         - name: Создание приложения PHP (Laravel) с базой данных
           href: flexible-server/tutorial-php-database-app.md
         - name: Подключение к частному веб-приложению

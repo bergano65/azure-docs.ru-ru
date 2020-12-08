@@ -87,10 +87,12 @@
       href: supported-map-styles.md
     - name: Уровни увеличения и сетка фрагментов
       href: zoom-levels-and-tile-grid.md
-    - name: Структура данных Службы мобильности
+    - name: Службы Mobility Services
       href: mobility-service-data-structure.md
-    - name: Основные понятия службы погоды
+    - name: 'Службы погоды: основные понятия'
       href: weather-services-concepts.md
+    - name: 'Службы погоды: вопросы и ответы'
+      href: weather-services-faq.md
 - name: Практические руководства
   items:
     - name: Управление учетными записями службы Maps
