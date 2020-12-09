@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.date: 12/03/2018
 ms.author: dobett
-ms.openlocfilehash: f58eb05ed582cf18157a76f4d637d72a228f4e96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7be0278fd8870395b8495168eb9723780eba4b26
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "65464870"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852376"
 ---
 # <a name="device-simulation-solution-accelerator-overview"></a>Общие сведения об акселераторе решений с имитацией устройств
 
@@ -36,7 +36,7 @@ ms.locfileid: "65464870"
 
 ## <a name="sample-simulations"></a>Примеры имитаций
 
-При развертывании решения имитации устройств вы получаете некоторые примеры имитаций и устройств. Вы можете использовать их, чтобы научиться использовать имитацию устройств. Чтобы приступить к работе, выполните [пример имитации 10 грузовиков](quickstart-device-simulation-deploy.md). Вы также можете [создать собственную имитацию, используя один из многих предоставленных примеров устройств](iot-accelerators-device-simulation-create-simulation.md).
+При развертывании решения имитации устройств вы получаете некоторые примеры имитаций и устройств. Вы можете использовать их, чтобы научиться использовать имитацию устройств. Чтобы приступить к работе, запустите [Пример моделирования](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md). Вы также можете [создать собственную имитацию, используя один из многих предоставленных примеров устройств](iot-accelerators-device-simulation-create-simulation.md).
 
 ![Настройка имитации](media/iot-accelerators-device-simulation-overview/samplesimulation1.png)
 
@@ -60,7 +60,7 @@ ms.locfileid: "65464870"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы узнали об акселераторе решений для имитации устройств и его возможностях. Чтобы приступить к использованию акселератора решений, перейдите к краткому руководству:
+В этой статье вы узнали об акселераторе решений для имитации устройств и его возможностях. Чтобы развернуть Solution Accelerator, посетите репозиторий GitHub:
 
 > [!div class="nextstepaction"]
-> [Развертывание и запуск имитации устройств Интернета вещей в Azure](quickstart-device-simulation-deploy.md)
+> [Развертывание и запуск имитации устройств Интернета вещей в Azure](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md)

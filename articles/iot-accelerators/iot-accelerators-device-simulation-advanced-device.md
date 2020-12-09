@@ -13,12 +13,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 3295815be035544d27da52926e5271c2c5551f28
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 58891bdb4601744129c97454f43202d3ba07b709
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076051"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852563"
 ---
 # <a name="create-an-advanced-device-model"></a>Создание расширенной модели устройства
 
@@ -30,15 +30,11 @@ ms.locfileid: "92076051"
 
 Чтобы выполнить действия, описанные в этом практическом руководстве, требуется развернутый в подписке Azure экземпляр симулятора устройств.
 
-Если симулятор устройств еще не развернут, выполните инструкции в статье [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md).
+Если вы еще не развернули симуляцию устройств, см. статью [моделирование устройств](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) на GitHub.
 
 ### <a name="open-device-simulation"></a>Открытие симулятора устройств
 
-Чтобы запустить симулятор устройств в браузере, перейдите к странице [Акселераторы решений Интернета вещей Microsoft Azure](https://www.azureiotsolutions.com).
-
-Вам может быть предложено войти, используя учетные данные своей подписки Azure.
-
-Затем щелкните **Запустить** на плитке симулятора устройств, который вы развернули в статье [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md).
+Если вы еще не развернули симуляцию устройств, см. статью [моделирование устройств](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) на GitHub.
 
 ## <a name="device-models"></a>Модель устройства
 

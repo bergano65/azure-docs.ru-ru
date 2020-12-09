@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/22/2020
-ms.openlocfilehash: cb74a799efb6099b55c9da9650d9cca7358ecbed
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 55651b3201676ee5cddb5412e950791afaa4e87a
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554329"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852138"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Подключение фабрики данных Azure и Azure зрения
 
@@ -34,7 +34,7 @@ ms.locfileid: "96554329"
     - **Отключено**. фабрика данных имеет доступ к каталогу, но она подключена к другому каталогу. В результате журнал преобразований данных не будет автоматически передаваться в каталог.
     - **Каннотакцесс**: текущий пользователь не имеет доступа к фабрике данных, поэтому состояние подключения неизвестно.
  >[!Note]
- >Чтобы просмотреть подключения фабрики данных, необходимо назначить одну из ролей сборки Azure:
+ >Чтобы просмотреть подключения фабрики данных, необходимо назначить одну из зрения ролей:
  >- Участник
  >- Владелец
  >- Читатель
@@ -72,9 +72,9 @@ ms.locfileid: "96554329"
     :::image type="content" source="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png" alt-text="Снимок экрана, показывающий, как выбрать фабрики данных для удаления подключения." lightbox="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png":::
 
 >[!Note]
->Чтобы добавить или удалить подключения к фабрике данных, необходимо назначить одну из ролей сборки Azure:
+>Чтобы добавить или удалить подключения к фабрике данных, необходимо назначить одну из зрения ролей:
 >- Владелец
->- Администратор доступа пользователей
+>- Администратор доступа пользователей. Кроме того, он требует, чтобы пользователи были "владельцем" или "участником фабрики данных". 
 
 ## <a name="configure-a-self-hosted-ir-to-collect-lineage-from-on-prem-sql"></a>Настройка автономного IR для получения журнала обращений и преобразований из локального SQL
 
@@ -100,9 +100,9 @@ Azure зрения захватывает журналы выполнения и
 | ADLS 1-го поколения (без поддержки JSON) | Да | Да (только для копирования без двоичного файла) |
 | ADLS 2-го поколения (без поддержки JSON) | Да | Да |
 | Большой двоичный объект Azure (без поддержки JSON) | Да | Да |
-| Azure Cosmos DB (API SQL) | Да | Да |
+| Azure Cosmos DB (SQL API) | Да | Да |
 | Azure Cosmos DB (API Mongo) | Да | Да |
-| Когнитивный поиск Azure | Да | Да |
+| Когнитивный поиск Azure | Да | Да |
 | Azure Data Explorer | Да | Да |
 | База данных Azure для Марии \* | Да | Да |
 | База данных Azure для MYSQL \* | Да | Да |
@@ -210,7 +210,7 @@ Azure зрения захватывает журналы выполнения и
 
 :::image type="content" source="./media/how-to-link-azure-data-factory/adf-resource-set-lineage.png" alt-text="Снимок экрана, показывающий журнал обращений и преобразований для набора ресурсов." lightbox="./media/how-to-link-azure-data-factory/adf-resource-set-lineage.png":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пользовательская структура журнала преобразований каталога](catalog-lineage-user-guide.md)
 - [Ссылка на общую папку данных Azure для журнала обращений и преобразований](how-to-link-azure-data-share.md)

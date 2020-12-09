@@ -7,12 +7,12 @@ ms.date: 9/30/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 41d98750f3c869eff5abf7482a9bb04435407318
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8bf3959651048a7a568df1d94aa07aa206663d50
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436765"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750991"
 ---
 # <a name="introduction-to-azure-defender"></a>Общие сведения об Azure Defender
 
@@ -39,6 +39,8 @@ Azure Defender предоставляет оповещения системы б
 - [Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)
 - [Azure Defender для реестров контейнеров](defender-for-container-registries-introduction.md)
 - [Azure Defender для Key Vault](defender-for-key-vault-introduction.md)
+- [Azure Defender для Resource Manager](defender-for-resource-manager-introduction.md)
+- [Azure Defender для DNS](defender-for-dns-introduction.md)
 
 Каждый из этих планов отдельно описан в документации Центра безопасности.
 
@@ -61,9 +63,9 @@ Azure Defender предоставляет оповещения системы б
 
 
 
-## <a name="security-alerts"></a>Оповещения безопасности 
+## <a name="azure-defender-security-alerts"></a>Оповещения системы безопасности в Azure Defender 
 
-Когда Azure Defender обнаруживает угрозу в любой области среды, создается оповещение. В этих оповещениях содержатся сведения об оказавшихся под угрозой ресурсах и предлагаемые действия по исправлению. В некоторых случаях предоставляется также возможность запуска приложения логики в ответ на угрозу.
+Когда Azure Defender обнаруживает угрозу в любой области вашей среды, система безопасности создает оповещение. В этих оповещениях содержатся сведения об оказавшихся под угрозой ресурсах и предлагаемые действия по исправлению. В некоторых случаях предоставляется также возможность запуска приложения логики в ответ на угрозу.
 
 Вы можете экспортировать оповещение, созданное Центром безопасности или полученное им от интегрированного продукта для обеспечения безопасности. Чтобы экспортировать оповещения в Azure Sentinel, любое стороннее средство SIEM или другие внешние средства, следуйте инструкциям в статье [Потоковая передача оповещений в решения SIEM, SOAR или решения для управления ИТ-услугами](export-to-siem.md).
 

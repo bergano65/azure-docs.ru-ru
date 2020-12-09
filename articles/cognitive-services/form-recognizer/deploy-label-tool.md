@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 543e6115be30963600d867bb9c2a03dfbb54e9f1
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: abc8cffa3d5b9dffb55beabc90cdaecb3adc647f
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576559"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852529"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
 
@@ -80,7 +80,7 @@ ms.locfileid: "96576559"
    * Непрерывное развертывание — задайте значение **On** , если вы хотите получить автоматические обновления, когда команда разработчиков вносит изменения в пример средства создания меток.
    * Команда запуска — задает значение `./run.sh eula=accept`
 
-    # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1) 
+    # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1) 
    * Параметры — выберите **один контейнер**
    * Источник образа — выберите **частный реестр** 
    * URL-адрес сервера — установите значение `https://mcr.microsoft.com`
@@ -99,6 +99,9 @@ ms.locfileid: "96576559"
 
 > [!NOTE]
 > При создании веб-приложения можно также настроить авторизацию и проверку подлинности. Это не обязательно, чтобы начать работу. 
+
+> [!IMPORTANT]
+> Может потребоваться включить TLS для веб-приложения, чтобы просмотреть его по `https` адресу. Следуйте инструкциям в разделе [Включение конечной точки TLS](https://docs.microsoft.com/azure/container-instances/container-instances-container-group-ssl) для настройки контейнера расширения, чем включение TLS/SSL для веб-приложения.
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -129,7 +132,7 @@ az container create \
   --memory 8 \
   --command-line "./run.sh eula=accept"
 ``` 
-# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
+# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
 ```azurecli
 DNS_NAME_LABEL=aci-demo-$RANDOM
 
