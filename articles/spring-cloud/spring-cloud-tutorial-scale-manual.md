@@ -1,24 +1,24 @@
 ---
-title: Руководство по масштабированию приложения в Azure Spring Cloud | Документация Майкрософт
+title: масштабированию приложения в Azure Spring Cloud | Документация Майкрософт
 description: Сведения о том, как масштабировать приложение в Azure Spring Cloud на портале Azure.
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.author: brendm
 author: bmitchell287
 ms.date: 10/06/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 33d25edafa9249300406365699930ded1c8ec75b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5632f9a6126615255306cc89425bd08a9ffa9753
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906849"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531808"
 ---
-# <a name="tutorial-scale-an-application-in-azure-spring-cloud"></a>Руководство по масштабированию приложения в Azure Spring Cloud
+# <a name="scale-an-application-in-azure-spring-cloud"></a>масштабированию приложения в Azure Spring Cloud
 
 **Эта статья применима к:** ✔️ Java ✔️ C#
 
-В этом руководстве описано, как масштабировать любое приложение для микрослужб с помощью панели мониторинга Azure Spring Cloud на портале Azure.
+В этом документе описано, как масштабировать любое приложение на базе микрослужб с помощью панели мониторинга Azure Spring Cloud на портале Azure.
 
 Вы можете масштабировать приложение, изменяя число виртуальных ЦП и объем памяти или число экземпляров приложения.
 
@@ -67,7 +67,7 @@ ms.locfileid: "90906849"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как вручную масштабировать приложения Azure Spring Cloud. Чтобы узнать, как выполнять мониторинг приложения путем настройки оповещений, перейдите к следующему руководству.
+Из описанного здесь примера вы узнали, как вручную масштабировать приложения Azure Spring Cloud. Чтобы узнать, как выполнять мониторинг приложения путем настройки оповещений, см. руководство [Настройка автомасштабирования для приложений, состоящих из микрослужб](spring-cloud-tutorial-setup-autoscale.md).
 
 > [!div class="nextstepaction"]
 > [Как настроить оповещения](spring-cloud-tutorial-alerts-action-groups.md)

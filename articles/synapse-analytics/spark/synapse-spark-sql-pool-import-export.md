@@ -1,30 +1,33 @@
 ---
-title: Импорт и экспорт данных между бессерверными пулами Apache Spark (предварительная версия) и пулами SQL
-description: В этой статье содержатся сведения об использовании настраиваемого соединителя для перемещения данных между выделенными пулами SQL и бессерверными пулами Spark (предварительная версия).
+title: Импорт и экспорт данных между бессерверными пулами Apache Spark и пулами SQL
+description: В этой статье содержатся сведения об использовании настраиваемого соединителя для перемещения данных между выделенными пулами SQL и бессерверными пулами Apache Spark.
 services: synapse-analytics
 author: euangMS
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: spark
-ms.date: 04/15/2020
+ms.date: 11/19/2020
 ms.author: prgomata
 ms.reviewer: euang
-ms.openlocfilehash: ee82fbaa9687e064747908600c7e5c9017f8f1a9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e0bdfa4a451269e82b73194e921f9067d848868e
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323900"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511089"
 ---
 # <a name="introduction"></a>Введение
 
-Соединитель Spark для Synapse SQL в службе Azure Synapse разработан для эффективной передачи данных между бессерверными пулами Apache Spark (предварительная версия) и пулами SQL в Azure Synapse. Соединитель Spark для Synapse SQL в службе Azure Synapse работает только в выделенных пулах SQL и не поддерживает бессерверный пул SQL.
+Соединитель Spark для Synapse SQL в службе Azure Synapse разработан для эффективной передачи данных между бессерверными пулами Apache Spark и выделенными пулами SQL в Azure Synapse. Соединитель Spark для Synapse SQL в службе Azure Synapse работает только в выделенных пулах SQL и не поддерживает бессерверный пул SQL.
+
+> [!WARNING]
+> Имя функции **sqlanalytics()** изменено на **synapsesql()** . Функция sqlanalytics будет и далее работать, но в то же время считаться устаревшей.  Измените любую ссылку из **sqlanalytics()** на **synapsesql()** , чтобы предотвратить прерывание работы в будущем.
 
 ## <a name="design"></a>Конструирование
 
 Передача данных между пулами Spark и SQL может выполняться с помощью JDBC. Но при наличии двух распределенных систем, таких как пулы Spark и SQL, как правило, JDBC является узким местом при последовательной передаче данных.
 
-Соединитель Spark для Synapse SQL в службе Azure Synapse реализует источник данных для Apache Spark. Он использует Azure Data Lake Storage 2-го поколения и PolyBase в выделенных пулах SQL для эффективной передачи данных между кластером Spark и экземпляром Synapse SQL.
+Соединитель Spark для Synapse SQL в службе Azure Synapse реализует источник данных для Apache Spark. Он использует Azure Data Lake Storage 2-го поколения и Polybase в выделенных пулах SQL для эффективной передачи данных между кластером Spark и выделенным экземпляром SQL Synapse.
 
 ![Архитектура соединителя](./media/synapse-spark-sqlpool-import-export/arch1.png)
 
@@ -37,6 +40,8 @@ ms.locfileid: "93323900"
 ## <a name="constraints"></a>Ограничения
 
 - Этот соединитель работает только в Scala.
+- Сведения о pySpark см. в разделе [Использование Python](#use-pyspark-with-the-connector).
+- Этот соединитель не поддерживает запросы к представлениям SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -80,7 +85,7 @@ EXEC sp_addrolemember 'db_exporter',[mike@contoso.com]
 #### <a name="read-api"></a>API чтения
 
 ```scala
-val df = spark.read.sqlanalytics("<DBName>.<Schema>.<TableName>")
+val df = spark.read.synapsesql("<DBName>.<Schema>.<TableName>")
 ```
 
 Указанный выше API будет работать как для внутренних (управляемых), так и для внешних таблиц в пуле SQL.
@@ -88,7 +93,7 @@ val df = spark.read.sqlanalytics("<DBName>.<Schema>.<TableName>")
 #### <a name="write-api"></a>API записи
 
 ```scala
-df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
+df.write.synapsesql("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
 API записи создает таблицу в выделенном пуле SQL, а затем вызывает Polybase для загрузки данных.  Таблица не должна существовать в выделенном пуле SQL, или будет возвращена ошибка с информацией о том, что объект с определенным именем уже существует.
@@ -101,7 +106,7 @@ API записи создает таблицу в выделенном пуле 
 Управляемая пулом SQL таблица
 
 ```scala
-df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
+df.write.synapsesql("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
 ```
 
 Внешняя таблица пула SQL
@@ -130,7 +135,7 @@ WITH (
 df.write.
     option(Constants.DATA_SOURCE, <DataSourceName>).
     option(Constants.FILE_FORMAT, <FileFormatName>).
-    sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.EXTERNAL)
+    synapsesql("<DBName>.<Schema>.<TableName>", Constants.EXTERNAL)
 
 ```
 
@@ -149,7 +154,7 @@ df.write.
 ```scala
 val df = spark.read.
 option(Constants.SERVER, "samplews.database.windows.net").
-sqlanalytics("<DBName>.<Schema>.<TableName>")
+synapsesql("<DBName>.<Schema>.<TableName>")
 ```
 
 #### <a name="write-api"></a>API записи
@@ -157,7 +162,7 @@ sqlanalytics("<DBName>.<Schema>.<TableName>")
 ```scala
 df.write.
 option(Constants.SERVER, "samplews.database.windows.net").
-sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
+synapsesql("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
 ### <a name="use-sql-auth-instead-of-azure-ad"></a>Использование аутентификации SQL вместо Azure AD
@@ -171,7 +176,7 @@ val df = spark.read.
 option(Constants.SERVER, "samplews.database.windows.net").
 option(Constants.USER, <SQLServer Login UserName>).
 option(Constants.PASSWORD, <SQLServer Login Password>).
-sqlanalytics("<DBName>.<Schema>.<TableName>")
+synapsesql("<DBName>.<Schema>.<TableName>")
 ```
 
 #### <a name="write-api"></a>API записи
@@ -181,10 +186,10 @@ df.write.
 option(Constants.SERVER, "samplews.database.windows.net").
 option(Constants.USER, <SQLServer Login UserName>).
 option(Constants.PASSWORD, <SQLServer Login Password>).
-sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
+synapsesql("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
-### <a name="use-the-pyspark-connector"></a>Использование соединителя PySpark
+### <a name="use-pyspark-with-the-connector"></a>Использование PySpark с помощью соединителя
 
 > [!NOTE]
 > В этом примере используется тот же интерфейс записной книжки.
@@ -203,7 +208,7 @@ pyspark_df.createOrReplaceTempView("pysparkdftemptable")
 %%spark
 val scala_df = spark.sqlContext.sql ("select * from pysparkdftemptable")
 
-scala_df.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTERNAL)
+scala_df.write.synapsesql("sqlpool.dbo.PySparkTable", Constants.INTERNAL)
 ```
 
 Аналогично в сценарии для чтения выполните считывание данных с помощью Scala и запишите их во временную таблицу. Используйте Spark SQL в PySpark, чтобы запросить перенос временной таблицы в кадр данных.
@@ -234,6 +239,7 @@ scala_df.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTERNAL)
 
 > [!IMPORTANT]
 > Не выбирайте вариант "По умолчанию", если не уверены в его необходимости.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

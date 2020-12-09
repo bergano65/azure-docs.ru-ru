@@ -1,17 +1,17 @@
 ---
-ms.openlocfilehash: 67d90836c382728f989ab2cb4fde4d81bac9eb25
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5fa8377b3cdddb2818c04c5a75e347ff73dc07d8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88691185"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509469"
 ---
 Для работы с этим учебником требуются следующие ресурсы Azure:
 
 * Центр Интернета вещей
 * Учетная запись хранения
 * Учетная запись Служб мультимедиа Azure
-* Виртуальная машина Linux в Azure с установленной [средой выполнения IoT Edge](../../../../../iot-edge/how-to-install-iot-edge-linux.md)
+* Виртуальная машина Linux в Azure с установленной [средой выполнения IoT Edge](../../../../../iot-edge/how-to-install-iot-edge.md)
 
 В целях этого краткого руководства мы рекомендуем использовать [сценарий подготовки ресурсов Аналитики видеотрансляций](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) для развертывания необходимых ресурсов в подписке Azure. Для этого выполните следующие действия.
 
@@ -29,10 +29,9 @@ ms.locfileid: "88691185"
     Если скрипт завершит работу успешно, вы увидите все необходимые ресурсы в своей подписке.
 1. Когда сценарий завершит свою работу, щелкните фигурные скобки, чтобы раскрыть структуру папок. В каталоге *~/clouddrive/lva-sample* вы увидите несколько файлов. В этом кратком руководстве нас интересуют указанные ниже файлы.
 
-     * ***~/clouddrive/lva-sample/edge-deployment/.env*** — файл, содержащий свойства, которые Visual Studio Code использует для развертывания модулей на пограничном устройстве.
-     * ***~/clouddrive/lva-sample/appsetting.json*** — файл, используемый Visual Studio Code для запуска примера кода.
+     * * **~/clouddrive/lva-sample/edge-deployment/.env** _ — файл, содержащий свойства, которые Visual Studio Code использует для развертывания модулей на пограничном устройстве.
+     _ ***~/clouddrive/lva-sample/appsetting.json*** — файл, используемый Visual Studio Code для запуска примера кода.
      
     Эти файлы понадобятся вам при настройке среды разработки в Visual Studio Code в следующем разделе. Пока мы рекомендуем сохранить локальные копии этих файлов.
     
     ![Параметры приложения](../../../media/quickstarts/clouddrive.png)
-    

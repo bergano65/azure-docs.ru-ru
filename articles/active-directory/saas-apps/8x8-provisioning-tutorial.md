@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0ed56d200c2b5a472dbf93d45ad25156ea02a884
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 90e3464ac9ddf1e839c3a731f79ac2c0771c37ea
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181158"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532712"
 ---
 # <a name="tutorial-configure-8x8-for-automatic-user-provisioning"></a>Руководство по Настройка 8x8 для автоматической подготовки пользователей
 
@@ -50,17 +50,17 @@ ms.locfileid: "96181158"
 
 ### <a name="to-configure-a-user-provisioning-access-token-in-8x8-configuration-manager"></a>Чтобы настроить маркер доступа для подготовки пользователей в 8x8 Configuration Manager, сделайте следующее:
 
-1. Войдите в [Configuration Manager](https://vo-cm.8x8.com). Выберите **Управления удостоверениями**.
+1. Войдите в [консоль администрирования](https://admin.8x8.com). Выберите **Управления удостоверениями**.
 
-   ![Управление удостоверениями](./media/8x8-provisioning-tutorial/8x8-identity-management.png)
+   ![Администратор](./media/8x8-provisioning-tutorial/8x8-identity-management.png)
 
 2. Щелкните ссылку **Show user provisioning information** (Показать сведения о подготовке пользователя), чтобы создать маркер.
 
-   ![Отображение подготовки пользователей](./media/8x8-provisioning-tutorial/8x8-show-user-provisioning.png)
+   ![Показать](./media/8x8-provisioning-tutorial/8x8-show-user-provisioning.png)
 
 3. Скопируйте **URL-адрес 8x8** и **токен API 8x8**. Эти значения будут указаны в полях **URL-адрес клиента** и **Секретный маркер** соответственно на вкладке "Подготовка" приложения 8x8 на портале Azure.
 
-   ![Копирование URL-адреса и маркера](./media/8x8-provisioning-tutorial/8x8-copy-url-token.png)
+   ![Токен](./media/8x8-provisioning-tutorial/8x8-copy-url-token.png)
 
 ## <a name="step-3-add-8x8-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление 8x8 из коллекции приложений Azure AD
 

@@ -12,20 +12,23 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/27/2020
+ms.date: 12/01/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30724edafdee0c04f0c8b004ce335072b4ce0fd4
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 759781fd61cd42d05f2823d390e99d128dd2fcac
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367454"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512398"
 ---
 # <a name="management-capabilities-for-privileged-access-azure-ad-groups-preview"></a>Возможности управления для групп Azure AD с привилегированным доступом (предварительная версия)
 
 В Privileged Identity Management вы теперь можете назначить возможность получения прав участия или владения для групп с привилегированным доступом. В этой предварительной версии вы можете назначить встроенные роли Azure Active Directory (Azure AD) облачным группам и использовать PIM для управления возможностью получения прав и активацией участников и владельцев групп. Подробные сведения о группах с возможностью назначения ролей в Azure AD см. в статье [Использование облачных групп для управления назначением ролей в Azure Active Directory (предварительная версия)](../roles/groups-concept.md).
+
+>[!Important]
+> Чтобы назначить группу с привилегированным доступом роли для получения административного доступа к Exchange, центру безопасности и соответствия требованиям или SharePoint, вам нужно предоставить пользователю или группе пользователей право на активацию в группе. Для этого используйте функцию **Роли и администраторы**, а не функцию в разделе групп с привилегированным доступом.
 
 ## <a name="require-different-policies-for-each-role-assignable-group"></a>Требование назначения разных политик для каждой группы с возможностью назначения ролей
 

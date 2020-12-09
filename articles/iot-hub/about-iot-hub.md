@@ -13,12 +13,12 @@ ms.custom:
 - 'role: System Architecture'
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: 7f1acc44a80d5ef70145997698a928e6f9ce0d48
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: a460d77a032f36505c8036bc60aa37017f630e55
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888884"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501147"
 ---
 # <a name="what-is-azure-iot-hub"></a>Что такое Центр Интернета вещей в Azure?
 
@@ -91,6 +91,7 @@ ms.locfileid: "94888884"
 Используйте библиотеки [пакета SDK для устройств Интернета вещей Azure](./iot-hub-devguide-sdks.md) для создания приложений, работающих на устройствах и взаимодействующих с Центром Интернета вещей. К поддерживаемым платформам относятся дистрибутивы Linux, Windows и операционных систем, работающих в режиме реального времени. Поддерживаемые языки включают в себя:
 
 * C
+* Embedded C;
 * C#
 * Java
 * Python

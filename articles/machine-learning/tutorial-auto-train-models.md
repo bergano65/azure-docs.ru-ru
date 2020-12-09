@@ -11,12 +11,12 @@ ms.author: anumamah
 ms.reviewer: nibaccam
 ms.date: 08/14/2020
 ms.custom: devx-track-python, automl
-ms.openlocfilehash: 4f6e194f04789fbcaf24d69965dfa8ac61b20a38
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: e1a5370501fe73fb783db9a039d9f060acdb0a35
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886334"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511038"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство по Использованию автоматического машинного обучения для прогнозирования тарифов на такси
 
@@ -210,7 +210,7 @@ x_train, x_test = train_test_split(final_df, test_size=0.2, random_state=223)
 
 |Свойство| Значение в этом руководстве |Описание|
 |----|----|---|
-|**iteration_timeout_minutes**|2|Максимальная длительность каждой итерации в минутах. Уменьшите это значение, чтобы уменьшить общее время выполнения.|
+|**iteration_timeout_minutes**|10|Максимальная длительность каждой итерации в минутах. Увеличьте это значение для больших наборов данных, которым требуется больше времени для каждой итерации.|
 |**experiment_timeout_hours**|0,3|Максимальное количество времени в часах, в течение которого могут быть пройдены все итерации до завершения эксперимента.|
 |**enable_early_stopping**|True|Флаг для включения преждевременного завершения, если оценка не улучшается за короткое время.|
 |**primary_metric**| spearman_correlation; | Метрика, который вы хотите оптимизировать. Наиболее подходящая модель будет выбрана на основе этой метрики.|
@@ -222,7 +222,7 @@ x_train, x_test = train_test_split(final_df, test_size=0.2, random_state=223)
 import logging
 
 automl_settings = {
-    "iteration_timeout_minutes": 2,
+    "iteration_timeout_minutes": 10,
     "experiment_timeout_hours": 0.3,
     "enable_early_stopping": True,
     "primary_metric": 'spearman_correlation',

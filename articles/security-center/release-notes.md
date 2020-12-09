@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/30/2020
 ms.author: memildin
-ms.openlocfilehash: f26fffe8e6b2be6ede064b4750d012b3e4535c66
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 0dbd208cea64a3b2dc22f7603f654127e5b46294
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433339"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511769"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -30,6 +30,44 @@ ms.locfileid: "96433339"
 > [!TIP]
 > Если вам понадобятся материалы, которым более шести месяцев, см. [Архив сведений о новых возможностях Центра безопасности Azure](release-notes-archive.md).
 
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+В декабре добавлены следующие обновления:
+
+- [Выпущена общедоступная версия службы Azure Defender для серверов SQL на компьютерах](#azure-defender-for-sql-servers-on-machines-is-generally-available)
+- [Выпущена общедоступная версия поддержки Azure Defender для SQL для выделенного пула SQL Azure Synapse Analytics](#azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available)
+
+### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Выпущена общедоступная версия службы Azure Defender для серверов SQL на компьютерах
+
+Центр безопасности Azure предлагает два плана Azure Defender для серверов SQL Server:
+
+- **Azure Defender для серверов базы данных SQL Azure** — защищает собственные серверы SQL Server Azure 
+- **Azure Defender для серверов SQL на компьютерах** — расширяет действие такой защиты на серверы SQL в гибридных, многооблачных и локальных средах
+
+Это объявление указывает на то, что **Azure Defender для SQL** теперь будет защищать базы данных и данные таких баз данных, независимо от их расположения.
+
+Azure Defender для SQL содержит возможности оценки уязвимостей. Средство оценки уязвимостей включает в себя следующие усовершенствованные возможности:
+
+- **Базовая конфигурация** (Новинка!) для рационального уточнения результатов проверки уязвимостей с целью выявления угроз, которые могут представлять собой реальные проблемы в области безопасности. Если задать базовое состояние безопасности, средство оценки уязвимостей будет сообщать только об отклонениях от этого базового состояния. При следующих проверках результаты, которые соответствуют базовым показателям, будут рассматриваться как прошедшие проверку. Это позволит вам и вашим аналитикам акцентировать внимание на важных моментах.
+- **Подробные сведения о тестах производительности**, изучив которые вы сможете *понять* полученные сведения, а также их связь с вашими ресурсами.
+- **Сценарии исправления**, с помощью которых вы сможете устранить идентифицированные риски.
+
+[Узнайте больше про Azure Defender для SQL](defender-for-sql-introduction.md).
+
+
+### <a name="azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available"></a>Выпущена общедоступная версия поддержки Azure Defender для SQL для выделенного пула SQL Azure Synapse Analytics
+
+Azure Synapse Analytics (ранее — Хранилище данных SQL) — это служба аналитики, которая объединяет корпоративные хранилища данных и аналитику больших данных. Выделенные пулы SQL — это функции хранения корпоративных данных Azure Synapse. Дополнительные сведения см. в статье [Что такое Azure Synapse Analytics (ранее — Хранилище данных SQL)?](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)
+
+Azure Defender для SQL защищает выделенные пулы SQL с помощью:
+
+- **Расширенной защиты от угроз** для обнаружения угроз и атак 
+- **Возможностей оценки уязвимостей** для обнаружения и исправления ошибок в конфигурациях системы безопасности
+
+Поддержка Azure Defender для SQL для пулов SQL Azure Synapse Analytics автоматически добавляется в пакет баз данных SQL Azure в Центре безопасности Azure. Новую вкладку "Azure Defender для SQL" можно найти на странице рабочей области Synapse на портале Azure.
+
+[Узнайте больше про Azure Defender для SQL](defender-for-sql-introduction.md).
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 
@@ -129,7 +167,7 @@ ms.locfileid: "96433339"
 
 - Обогащенные данные для рекомендации из Azure Resource Graph (ARG). ARG — это служба Azure, предназначенная для простого изучения ресурсов. Вы можете использовать ARG для выполнения масштабных запросов к заданному набору подписок, чтобы вы могли эффективно управлять своей средой. 
 
-    При работе с Центром безопасности Azure вы можете применять ARG с [языком запросов Kusto (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/), чтобы получить расширенный набор данных о состоянии безопасности.
+    При работе с Центром безопасности Azure вы можете применять ARG с [языком запросов Kusto (KQL)](/azure/data-explorer/kusto/query/), чтобы получить расширенный набор данных о состоянии безопасности.
 
     Ранее при запросе этой рекомендации в ARG вы могли получить только сведения о том, что вам необходимо выполнить рекомендацию на компьютере. Следующий запрос в расширенной версии будет возвращать сведения обо всех отсутствующих на компьютере обновлениях (с группировкой по компьютерам).
 
@@ -172,7 +210,7 @@ ms.locfileid: "96433339"
 
 См. дополнительные сведения о [развертывании интегрированного сканера уязвимостей на гибридных компьютерах](deploy-vulnerability-assessment-vm.md#deploy-the-integrated-scanner-to-your-azure-and-hybrid-machines).
 
-См. дополнительные сведения о [серверах с поддержкой Azure Arc](https://docs.microsoft.com/azure/azure-arc/servers/).
+См. дополнительные сведения о [серверах с поддержкой Azure Arc](../azure-arc/servers/index.yml).
 
 
 ### <a name="azure-firewall-recommendation-added-preview"></a>Добавлена рекомендация Брандмауэра Azure (предварительная версия)
@@ -206,7 +244,7 @@ ms.locfileid: "96433339"
 
 Azure Resource Graph — это служба в Azure, которая обеспечивает эффективную оценку ресурсов с возможностью выполнения запросов к заданному набору подписок в большом масштабе, чтобы вы могли эффективно управлять своей средой. 
 
-При работе с Центром безопасности Azure вы можете применять ARG с [языком запросов Kusto (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/), чтобы получить расширенный набор данных о состоянии безопасности. Пример:
+При работе с Центром безопасности Azure вы можете применять ARG с [языком запросов Kusto (KQL)](/azure/data-explorer/kusto/query/), чтобы получить расширенный набор данных о состоянии безопасности. Пример:
 
 - Инвентаризация ресурсов использует ARG.
 - Мы описали простой запрос ARG для [идентификации учетных записей, для которых не включена Многофакторная идентификация (MFA)](security-center-identity-access.md#identify-accounts-without-multi-factor-authentication-mfa-enabled).
@@ -295,7 +333,7 @@ extract("^(.+)/providers/Microsoft.Security/assessments/.+$",1,id)))))
 
 Дополнительные сведения см. по следующим ссылкам:
 - [Как создавать запросы с помощью обозревателя Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
-- [Язык запросов Kusto (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/)
+- [Язык запросов Kusto (KQL)](/azure/data-explorer/kusto/query/)
 
 
 ## <a name="september-2020"></a>Сентябрь 2020 г.
@@ -740,119 +778,3 @@ Azure Defender включает средства сканирования для
 - На серверах SQL в параметрах расширенной защиты данных должны быть включены уведомления, отправляемые по электронной почте администраторам и владельцам подписок.
 
 См. сведения о [встроенных политиках](./policy-reference.md).
-
-
-
-
-
-## <a name="june-2020"></a>Июнь 2020 г.
-
-В июне добавлены следующие обновления:
-- [API оценки безопасности (предварительная версия)](#secure-score-api-preview)
-- [Расширенная защита данных для компьютеров SQL (в Azure, других облаках и локальной среде) (предварительная версия)](#advanced-data-security-for-sql-machines-azure-other-clouds-and-on-prem-preview)
-- [Две новые рекомендации по развертыванию агента Log Analytics на компьютерах Azure Arc (предварительная версия)](#two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview)
-- [Новые политики для создания непрерывного экспорта и конфигураций автоматизации рабочих процессов в большом масштабе](#new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale)
-- [Новая рекомендация по использованию групп безопасности сети для защиты виртуальных машин, не подключенных к Интернету](#new-recommendation-for-using-nsgs-to-protect-non-internet-facing-virtual-machines)
-- [Новые политики для включения защиты от угроз и расширенной защиты данных](#new-policies-for-enabling-threat-protection-and-advanced-data-security)
-
-
-
-### <a name="secure-score-api-preview"></a>API оценки безопасности (предварительная версия)
-
-Теперь вы можете получить доступ к оценке через [API оценки безопасности](/rest/api/securitycenter/securescores/) (предварительная версия). Методы этого API позволяют гибко выполнять запросы к данным и создавать собственные механизмы создания отчетов об оценках безопасности за разные периоды. Например, API **оценки безопасности** позволяет получить оценку для конкретной подписки. Кроме того, через API **элементов управления оценкой безопасности** позволяет перечислить элементы управления безопасностью и текущие оценки для всех подписок.
-
-Примеры внешних средств, которые можно реализовать с помощью API оценки безопасности, см. в [разделе оценок безопасности в сообществе GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score).
-
-См. сведения об [оценке безопасности и элементах управления безопасностью в Центре безопасности Azure](secure-score-security-controls.md).
-
-
-
-### <a name="advanced-data-security-for-sql-machines-azure-other-clouds-and-on-prem-preview"></a>Расширенная защита данных для компьютеров SQL (в Azure, других облаках и локальной среде) (предварительная версия)
-
-Расширенная защита данных в Центре безопасности Azure для компьютеров SQL теперь защищает экземпляры SQL Server, размещенные в Azure, других облачных средах и даже на локальных компьютерах. Это позволяет обеспечить в гибридной среде такую же защиту экземпляров SQL Server, как и в Azure.
-
-Расширенная защита данных предоставляет оценку уязвимостей и расширенную защиту от угроз для компьютеров SQL в любом расположении.
-
-Настройка включает два шага:
-
-1. развертывание агента Log Analytics на компьютере с SQL Server для подключения к учетной записи Azure;
-
-1. включение дополнительного пакета на странице цен и параметров Центра безопасности.
-
-См. сведения о [расширенной защите данных для компьютеров SQL](defender-for-sql-usage.md).
-
-
-
-### <a name="two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview"></a>Две новые рекомендации по развертыванию агента Log Analytics на компьютерах Azure Arc (предварительная версия)
-
-Добавлены две новые рекомендации, которые помогают развернуть [агент Log Analytics](../azure-monitor/platform/log-analytics-agent.md) на компьютерах Azure Arc и обеспечить их защиту с помощью Центра безопасности Azure:
-
-- **На виртуальных машинах Windows с Azure Arc должен быть установлен агент Log Analytics (предварительная версия)** ;
-- **На виртуальных машинах Linux с Azure Arc должен быть установлен агент Log Analytics (предварительная версия)** .
-
-Эти новые рекомендации будут отображаться в тех же четырех элементах управления безопасностью, что и существующая связанная рекомендация (**Необходимо установить агент мониторинга на ваших компьютерах**): исправление конфигураций системы безопасности, применение адаптивного элемента управления приложениями, применение системных обновлений и включение защиты конечных точек.
-
-Также в эти рекомендации включена возможность быстрого исправления, позволяющая ускорить процесс развертывания. 
-
-Сведения об этих двух новых рекомендациях см. в таблице с [рекомендациями по вычислительной среде и приложениям](recommendations-reference.md#recs-computeapp).
-
-Сведения о том, как Центр безопасности Azure использует агент, см. в разделе [Что такое агент Log Analytics?](faq-data-collection-agents.md#what-is-the-log-analytics-agent)
-
-См. сведения о [расширениях для компьютеров Azure Arc](../azure-arc/servers/manage-vm-extensions.md).
-
-
-### <a name="new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale"></a>Новые политики для создания непрерывного экспорта и конфигураций автоматизации рабочих процессов в большом масштабе
-
-Автоматизация корпоративных процессов мониторинга и реагирования на инциденты может значительно ускорить процессы изучения и устранения инцидентов безопасности.
-
-Чтобы развернуть конфигурации автоматизации в масштабе всей организации, примените следующие встроенные политики Azure DeployIfdNotExist для создания и настройки процедур [непрерывного экспорта](continuous-export.md) и [автоматизации рабочих процессов](workflow-automation.md).
-
-Эти политики можно найти в Политике Azure:
-
-
-|Цель  |Политика  |Идентификатор политики  |
-|---------|---------|---------|
-|Непрерывный экспорт в концентратор событий|[Развертывание экспортированных данных в концентраторе событий для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcdfcce10-4578-4ecd-9703-530938e4abcb)|cdfcce10-4578-4ecd-9703-530938e4abcb|
-|Непрерывный экспорт в рабочую область Log Analytics|[Развертывание экспортированных данных в рабочей области Log Analytics для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fffb6f416-7bd2-4488-8828-56585fef2be9)|ffb6f416-7bd2-4488-8828-56585fef2be9|
-|Автоматизация рабочих процессов для оповещений системы безопасности|[Развертывание средств автоматизации рабочих процессов для оповещений Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2ff1525828-9a90-4fcf-be48-268cdd02361e)|f1525828-9a90-4fcf-be48-268cdd02361e|
-|Автоматизация рабочих процессов для рекомендаций системы безопасности|[Развертывание средств автоматизации рабочих процессов для рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f73d6ab6c-2475-4850-afd6-43795f3492ef)|73d6ab6c-2475-4850-afd6-43795f3492ef|
-||||
-
-Начало работы с [шаблонами автоматизации рабочих процессов](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation).
-
-Дополнительные сведения об использовании этих двух политик экспорта см. в разделах [Настройка автоматизации рабочих процессов в большом масштабе с помощью представленных политик](workflow-automation.md#configure-workflow-automation-at-scale-using-the-supplied-policies) и [Настройка непрерывного экспорта](continuous-export.md#set-up-a-continuous-export).
-
-
-### <a name="new-recommendation-for-using-nsgs-to-protect-non-internet-facing-virtual-machines"></a>Новая рекомендация по использованию групп безопасности сети для защиты виртуальных машин, не подключенных к Интернету
-
-Элемент управления безопасностью "Внедрение лучших методик обеспечения безопасности" теперь включает следующие новые рекомендации:
-
-- **Виртуальные машины без выхода в Интернет должны быть защищены с помощью групп безопасности сети**
-
-Существующая рекомендация (**Виртуальные машины с выходом в Интернет должны быть защищены с помощью групп безопасности сети**) ранее не учитывала разницу между виртуальными машинами, подключенными и не подключенными к Интернету. В обоих случаях создавалась рекомендация с высоким уровнем серьезности, если виртуальная машина не была назначена группе безопасности сети. Новая рекомендация исключает компьютеры, не подключенные к Интернету, чтобы сократить число ложноположительных результатов и избежать появления ненужных оповещений с высоким уровнем серьезности.
-
-См. сведения в таблице с [рекомендациями по использованию сети](recommendations-reference.md#recs-network).
-
-
-
-
-### <a name="new-policies-for-enabling-threat-protection-and-advanced-data-security"></a>Новые политики для включения защиты от угроз и расширенной защиты данных
-
-Перечисленные ниже новые политики добавлены в инициативу ASC_default, чтобы включить защиту от угроз или расширенную защиту данных для соответствующих типов ресурсов.
-
-Эти политики можно найти в Политике Azure:
-
-
-| Политика                                                                                                                                                                                                                                                                | Идентификатор политики                            |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| [На серверах Базы данных SQL Azure должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
-| [Для серверов SQL на компьютерах должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |
-| [Для учетных записей службы хранилища Azure должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f308fbb08-4ab8-4e67-9b29-592e93fb94fa)           | 308fbb08-4ab8-4e67-9b29-592e93fb94fa |
-| [Для хранилищ в службе Azure Key Vault должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f0e6763cc-5078-4e64-889d-ff4d9a839047)           | 0e6763cc-5078-4e64-889d-ff4d9a839047 |
-| [Для планов Службы приложений Azure должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f2913021d-f2fd-4f3d-b958-22354e2bdbcb)                | 2913021d-f2fd-4f3d-b958-22354e2bdbcb |
-| [Для реестров в службе "Реестр контейнеров Azure" должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4)   | c25d9a16-bc35-4e15-a7e5-9db606bf9ed4 |
-| [Для кластеров в Службе Azure Kubernetes должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f523b5cd1-3e23-492f-a539-13118b6d1e3a)   | 523b5cd1-3e23-492f-a539-13118b6d1e3a |
-| [На виртуальных машинах должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da35fc9-c9e7-4960-aec9-797fe7d9051d)           | 4da35fc9-c9e7-4960-aec9-797fe7d9051d |
-|                                                                                                                                                                                                                                                                       |                                      |
-
-Дополнительные сведения см. в статье [Защита от угроз с помощью Центра безопасности Azure](azure-defender.md).

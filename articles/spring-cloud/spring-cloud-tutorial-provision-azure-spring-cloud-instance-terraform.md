@@ -1,24 +1,24 @@
 ---
-title: Учебник. Подготовка экземпляра Azure Spring Cloud с помощью Terraform
+title: Подготовка экземпляра Azure Spring Cloud с помощью Terraform
 description: Подготовка экземпляра Azure Spring Cloud с помощью Terraform.
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: ed66da991df4dbe89c327a9a28ee28527c3da87b
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 060ef2d08b849706b47b24748142c608292971b5
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091650"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533797"
 ---
-# <a name="tutorial-provision-an-azure-spring-cloud-instance-with-terraform"></a>Руководство по Подготовка экземпляра Azure Spring Cloud с помощью Terraform
+# <a name="provision-an-azure-spring-cloud-instance-with-terraform"></a>Подготовка экземпляра Azure Spring Cloud с помощью Terraform
 
 **Эта статья применима к:** ✔️ Java ✔️ C#
 
-В этом учебнике рассказывается, как создать экземпляр Azure Spring Cloud с помощью Terraform. Приведенные здесь процедуры помогут вам создать следующие ресурсы:
+В этом примере с помощью Terraform создается экземпляр Azure Spring Cloud. Приведенные здесь процедуры помогут вам создать следующие ресурсы:
 
 > [!div class="checklist"]
 > * Группа ресурсов
@@ -161,7 +161,7 @@ ms.locfileid: "92091650"
 
 Удалите ресурсы Azure, созданные в рамках этой статьи, если они вам больше не нужны.
 
-Чтобы удалить ресурсы Azure, созданные в этом руководстве, выполните команду [terraform destroy](https://www.terraform.io/docs/commands/destroy.html).
+Чтобы удалить ресурсы Azure, созданные в рамках этого упражнения, выполните команду [terraform destroy](https://www.terraform.io/docs/commands/destroy.html):
 
 ```bash
 terraform destroy -auto-approve

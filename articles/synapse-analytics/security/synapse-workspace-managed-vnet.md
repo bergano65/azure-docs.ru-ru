@@ -8,14 +8,14 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 00920f30061832bd1d685f04113a63781df718b4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b605c2c9f3c7468d0fe1f2cccd8c3602c556714b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313696"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501079"
 ---
-# <a name="azure-synapse-analytics-managed-virtual-network-preview"></a>Управляемая виртуальная сеть Azure Synapse Analytics (предварительная версия)
+# <a name="azure-synapse-analytics-managed-virtual-network"></a>Управляемая виртуальная сеть Azure Synapse Analytics
 
 В этой статье объясняется принцип работы с управляемой виртуальной сетью в Azure Synapse Analytics.
 
@@ -52,8 +52,6 @@ ms.locfileid: "93313696"
 
 ![Включение управляемой виртуальной сети рабочей области](./media/synapse-workspace-managed-vnet/enable-managed-vnet-1.png)
 
->[!NOTE]
->В будущем весь исходящий трафик из управляемой виртуальной сети рабочей области, не проходящий через управляемые частные конечные точки, будет блокироваться. Мы рекомендуем создать управляемые частные конечные точки для подключения ко всем источникам данных Azure за пределами рабочей области. 
 
 Вы можете проверить, связана ли рабочая область Azure Synapse с управляемой виртуальной сетью, выбрав **Обзор** на портале Azure.
 
