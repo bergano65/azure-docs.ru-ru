@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 410281ce67faf345539701389d4b03351d403b99
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 502d5a5c4b3d13d32fece648ce1de6763d012096
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186071"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932291"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -25,8 +25,7 @@ ms.locfileid: "96186071"
 
 > [!NOTE]
 > 
-> Начиная с 1-Oct-2020 Cherwell и Provance ITSM интеграция с оповещением Azure больше не будут включены для новых клиентов. Новые подключения ITSM не будут поддерживаться. 
-> Существующие подключения ITSM будут поддерживаться.
+> Мы предлагаем нашим клиентам Cherwell и Provance использовать [действие веб-перехватчика](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) для Cherwell и Provance конечной точки в качестве другого решения интеграции.
 
 ## <a name="connect-system-center-service-manager-to-it-service-management-connector-in-azure"></a>Подключение System Center Service Manager к соединителю управления ИТ-службами в Azure
 

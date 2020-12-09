@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: devx-track-csharp, 80e4ff38-5174-43
-ms.openlocfilehash: 3cf495ca0687e6fa37f619615fb1529659a462dc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: efb91c7b26c67a3672abb3f9cc8992fd45971a25
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020378"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932461"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -155,7 +155,7 @@ Azure Functions Core Tools в настоящее время зависит от 
 
 ## <a name="create-a-local-functions-project"></a>Создание локального проекта службы "Функции"
 
-Каталог проекта функций содержит файлы [host.json](functions-host-json.md) и [local.settings.json](#local-settings-file), а также вложенные папки, которые содержат код для отдельных функций. Этот каталог является эквивалентом приложения-функции в Azure. Дополнительные сведения о структуре папок службы "Функции Azure" см. в [Руководстве для разработчиков по Функциям Azure](functions-reference.md#folder-structure).
+Каталог проекта функций содержит файлы, [host.js](functions-host-json.md) и [local.settings.js](#local-settings-file), а также вложенные папки, содержащие код для отдельных функций. Этот каталог является эквивалентом приложения-функции в Azure. Дополнительные сведения о структуре папок службы "Функции Azure" см. в [Руководстве для разработчиков по Функциям Azure](functions-reference.md#folder-structure).
 
 Версия 3. x/2. x требует выбрать язык по умолчанию для проекта при его инициализации. В версии 3. x/2. x все добавленные функции используют шаблоны языка по умолчанию. В версии 1.x пользователю необходимо указывать язык при каждом создании функции.
 
@@ -543,7 +543,7 @@ func azure functionapp publish <FunctionAppName>
 | **`--nozip`** | Выключает режим по умолчанию `Run-From-Package`. |
 | **`--build-native-deps`** | Пропускает создание папки. Wheels при публикации приложений функции Python. |
 | **`--build`**, **`-b`** | Выполняет действие сборки при развертывании в приложении-функции Linux. Принимает: `remote` и `local` . |
-| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например, так: `python3-dev libevent-dev`. |
+| **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например, `python3-dev libevent-dev`. |
 | **`--force`** | Пропускает проверку, выполняемую до публикации, в определенных сценариях. |
 | **`--csx`** | Публикует проект скрипта C# (CSX). |
 | **`--no-build`** | Проект не создан во время публикации. Для Python `pip install` не выполняется. |
@@ -585,7 +585,7 @@ func deploy
 Для этого типа журналов потоковой передачи требуется включить интеграцию Application Insights для приложения функции.   
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как разрабатывать, тестировать и публиковать функции Azure с помощью Azure Functions Core Tools [модуль обучения майкрософт](/learn/modules/develop-test-deploy-azure-functions-with-core-tools/) Azure functions Core Tools является [открытым исходным кодом и размещается на GitHub](https://github.com/azure/azure-functions-cli).  
 Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).

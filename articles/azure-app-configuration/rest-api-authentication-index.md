@@ -1,19 +1,19 @@
 ---
 title: REST API конфигурации приложений Azure — проверка подлинности
 description: Справочные страницы по проверке подлинности с помощью REST API конфигурации приложений Azure
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 56416009395ebf8270ad0fa8d141277424dd6d9a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 58fba309f4cf7e4fc4364d075500c02e0ed45259
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183470"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932699"
 ---
-# <a name="authentication"></a>Проверка подлинности
+# <a name="authentication"></a>Аутентификация
 
 Все HTTP-запросы должны пройти проверку подлинности. Поддерживаются следующие схемы проверки подлинности.
 

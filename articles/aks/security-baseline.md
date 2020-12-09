@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 6612e6982ae4826869134dfa46b35a3f202d4bbb
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 29bcf2fdd3e20b28b1f2cb014137cfba37ccaf2e
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183249"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931815"
 ---
 # <a name="azure-security-baseline-for-azure-kubernetes-service"></a>Базовый план безопасности Azure для службы Kubernetes Azure
 
 Базовый план безопасности Azure для службы Azure Kubernetes содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
@@ -178,7 +178,7 @@ ms.locfileid: "96183249"
 
 Выберите разрешение или запрет на определенные сетевые пути в кластере на основе пространств имен и селекторов меток с сетевыми политиками. Используйте эти пространства имен и метки в качестве дескрипторов для правил конфигурации трафика. Используйте Azure PowerShell или интерфейс командной строки Azure (CLI) для поиска или выполнения действий с ресурсами на основе их тегов.
 
-- [Политика Azure с интерфейсом командной строки](/cli/azure/policy?view=azure-cli-latest)
+- [Политика Azure с интерфейсом командной строки](/cli/azure/policy)
 
 - [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
@@ -382,7 +382,7 @@ ms.locfileid: "96183249"
 
 - [Как интегрировать AKS с Azure AD](./azure-ad-integration-cli.md)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 - [Мониторинг удостоверений и доступа с помощью центра безопасности Azure](../security-center/security-center-identity-access.md)
 
@@ -735,7 +735,7 @@ ms.locfileid: "96183249"
 
 Используйте командлет PowerShell "Get-Азсекурититаск", чтобы автоматизировать получение сведений о задачах безопасности, которые центр безопасности рекомендует выполнить, чтобы усилить результаты проверки уязвимостей в области безопасности и исправления.
 
-- [Использование PowerShell для просмотра уязвимостей, обнаруженных центром безопасности Azure](/powershell/module/az.security/get-azsecuritytask?view=azps-3.3.0)
+- [Использование PowerShell для просмотра уязвимостей, обнаруженных центром безопасности Azure](/powershell/module/az.security/get-azsecuritytask)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -763,7 +763,7 @@ ms.locfileid: "96183249"
 
 - [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription)
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -927,15 +927,15 @@ ms.locfileid: "96183249"
 
 Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов, чтобы обнаружить учетные записи, являющиеся членами административных групп AKS, и использовать их для регулярной согласования доступа. Используйте Azure CLI для таких операций, как "получить учетные данные доступа к управляемому кластеру Kubernetes. Реализуйте рекомендации по управлению удостоверениями и доступом в центре безопасности.
 
-- [Управление AKS с помощью Azure CLI](/cli/azure/aks?view=azure-cli-latest)
+- [Управление AKS с помощью Azure CLI](/cli/azure/aks)
 
 - [Общие сведения об интеграции AKS и Azure AD](concepts-identity.md)
 
 - [Как интегрировать AKS с Azure AD](./azure-ad-integration-cli.md)
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 - [Мониторинг удостоверений и доступа с помощью центра безопасности Azure](../security-center/security-center-identity-access.md)
 
@@ -1055,7 +1055,7 @@ Azure применяет ежедневные исправления (включ
 
 security-hardened-vm-host-image.md
 
-- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

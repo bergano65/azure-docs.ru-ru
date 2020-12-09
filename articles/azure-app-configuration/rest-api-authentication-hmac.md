@@ -1,17 +1,17 @@
 ---
 title: REST API конфигурации приложения Azure — проверка подлинности HMAC
 description: Используйте HMAC для проверки подлинности в конфигурации приложения Azure с помощью REST API
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: bd1667f6c17922b6c0b0bfba7a7329a3fc96b62e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f761d86bd7dbe54b687e8db75ecb3df2dbba3384
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182637"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932716"
 ---
 # <a name="hmac-authentication---rest-api-reference"></a>Проверка подлинности HMAC — Справочник по REST API
 
@@ -54,7 +54,7 @@ Authorization: HMAC-SHA256 Credential={Access Key ID}&SignedHeaders=x-ms-date;ho
 | **HMAC-SHA256** | Применить схему авторизации _необходимости_ |
 | **Учетные данные** | Идентификатор ключа доступа, используемого для расчета подписи. _необходимости_ |
 | **сигнедхеадерс** | Заголовки HTTP-запросов, добавленные в подпись. _необходимости_ |
-| **Образец** | HMACSHA256 в кодировке Base64 для строки на подпись. _необходимости_|
+| **Подпись** | HMACSHA256 в кодировке Base64 для строки на подпись. _необходимости_|
 
 ### <a name="credential"></a>Учетные данные
 

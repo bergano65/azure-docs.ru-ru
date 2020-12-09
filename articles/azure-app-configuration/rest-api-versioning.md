@@ -1,21 +1,21 @@
 ---
 title: Конфигурация приложений Azure REST API — управление версиями
 description: Справочные страницы по управлением версиями с помощью REST API конфигурации приложений Azure
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 3a7f50b26d59501d2be3a0147fe89919819b50e6
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: a869531860942e5a8b2b05212e778aca2170c89b
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95246373"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932427"
 ---
 # <a name="versioning"></a>Управление версиями
 
-Каждый клиентский запрос должен предоставлять явную версию API в качестве параметра строки запроса. Например, так: `https://{myconfig}.azconfig.io/kv?api-version=1.0`.
+Каждый клиентский запрос должен предоставлять явную версию API в качестве параметра строки запроса. Например, `https://{myconfig}.azconfig.io/kv?api-version=1.0`.
 
 `api-version` выражается в формате SemVer (основной. дополнительный). Согласование диапазона или версии не поддерживается.
 

@@ -5,15 +5,15 @@ description: Узнайте, как настроить политики бран
 services: web-application-firewall
 author: winthrop28
 ms.service: web-application-firewall
-ms.date: 12/08/2020
+ms.date: 12/09/2020
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: f282cfa6347dd6e6d591ac5cd8b1785e405c6c02
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: bf6bfd02610e92825d96255e0ee914fada091805
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905984"
+ms.locfileid: "96932104"
 ---
 # <a name="configure-per-site-waf-policies-using-azure-powershell"></a>Настройка политик WAF для отдельного сайта с помощью Azure PowerShell
 
@@ -311,7 +311,7 @@ $backendPool = Get-AzApplicationGatewayBackendAddressPool `
 
 $ipConfig = New-AzVmssIpConfig `
   -Name myVmssIPConfig `
-  -SubnetId $vnet.Subnets[1].Id `
+  -SubnetId $vnet.Subnets[0].Id `
   -ApplicationGatewayBackendAddressPoolsId $backendPool.Id
 
 $vmssConfig = New-AzVmssConfig `

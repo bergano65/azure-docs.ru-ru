@@ -2,20 +2,20 @@
 title: Отправка событий в веб-конечную точку с помощью конфигурации приложения Azure
 description: Узнайте, как использовать подписки на события конфигурации приложений Azure для отправки событий изменения ключа в веб-конечную точку.
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.devlang: csharp
 ms.topic: how-to
-ms.date: 02/25/2020
-ms.author: lcozzens
+ms.date: 03/04/2020
+ms.author: alkemper
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: dc816f54a690a4c72c44d70ecbf2cc0156ac84ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d05b8a2d309cb8d50197a1714f34e1eaa92630cf
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87498316"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932750"
 ---
 # <a name="route-azure-app-configuration-events-to-a-web-endpoint-with-azure-cli"></a>Направляйте события Конфигурации приложений Azure в конечную веб-точку с помощью Azure CLI
 
@@ -131,7 +131,7 @@ az appconfig kv set --name <appconfig_name> --key Foo --value Bar --yes
 az group delete --name <resource_group_name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать разделы и подписки на события, ознакомьтесь с дополнительными сведениями о событиях "ключ — значение" и возможностях службы "Сетка событий".
 
