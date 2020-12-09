@@ -1,5 +1,5 @@
 ---
-title: Планирование и устранение неполадок в изменениях имени участника-пользователя Azure (UPN)
+title: Планирование изменений имени участника-пользователя Azure (UPN) и устранение неполадок
 description: Общие сведения об известных проблемах и их устранении при изменениях имени участника-пользователя
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59b304505c29f424d85d5b1e16dc83c060ac2ac1
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 19e40d135316c1c7cd270d2804fff1f487937685
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744604"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858541"
 ---
 # <a name="plan-and-troubleshoot-user-principal-name-changes-in-azure-active-directory"></a>Планирование и устранение неполадок при изменении имени субъекта-пользователя в Azure Active Directory
 
@@ -135,7 +135,7 @@ username@labs.contoso.com.
 Проблемы, упомянутые в этом разделе, исправлены в обновлении Windows 10 2020 мая (2004).
 
 **Обходное решение** <br>
-Подождите достаточно времени, чтобы изменение имени участника-пользователя было синхронизировано с Azure AD. Убедившись, что новое имя участника-пользователя отображается на портале Azure AD, попросите пользователя выбрать плитку "другой пользователь", чтобы войти в систему с помощью нового UPN. Вы также можете проверить с помощью [PowerShell](/powershell/module/azuread/get-azureaduser?view=azureadps-2.0). После входа в систему с новым именем участника-пользователя ссылки на старый UPN могут отображаться в параметре Windows "доступ к рабочей или учебной заведению".
+Подождите достаточно времени, чтобы изменение имени участника-пользователя было синхронизировано с Azure AD. Убедившись, что новое имя участника-пользователя отображается на портале Azure AD, попросите пользователя выбрать плитку "другой пользователь", чтобы войти в систему с помощью нового UPN. Вы также можете проверить с помощью [PowerShell](/powershell/module/azuread/get-azureaduser). После входа в систему с новым именем участника-пользователя ссылки на старый UPN могут отображаться в параметре Windows "доступ к рабочей или учебной заведению".
 
 ![Снимок экрана проверенных доменов](./media/howto-troubleshoot-upn-changes/other-user.png)
 

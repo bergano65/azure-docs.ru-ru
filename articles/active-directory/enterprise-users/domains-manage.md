@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dd77b1d82fc427f53a251ef66230b450c1060fd
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 7b8867a137e38e7400da877f4c239e517cbebe05
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547582"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859986"
 ---
 # <a name="managing-custom-domain-names-in-your-azure-active-directory"></a>Управление личными доменными именами в Azure Active Directory
 
@@ -73,7 +73,7 @@ ms.locfileid: "96547582"
 
 Вы можете применить операцию принудительного удаления (**ForceDelete**) к доменному имени в [Центре администрирования Azure AD](https://aad.portal.azure.com) или с помощью [API Microsoft Graph](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true). В обоих случаях используется асинхронная операция и все ссылки обновляются с имени личного домена, например user@contoso.com, до начального имени домена по умолчанию, например user@contoso.onmicrosoft.com.
 
-Чтобы вызвать **ForceDelete** на портале Azure, вы должны убедиться, что существует менее 1000 ссылок на доменное имя, а любые ссылки, в которых Exchange является службой подготовки, должны быть обновлены или удалены в [Центре администрирования Exchange](https://outlook.office365.com/ecp/). Сюда входят группы безопасности с поддержкой почты и распределенные списки Exchange. Дополнительные сведения см. в статье [Manage mail-enabled security groups in Exchange Server](/Exchange/recipients/mail-enabled-security-groups?view=exchserver-2019#Remove%20mail-enabled%20security%20groups&preserve-view=true) (Управление группами безопасности с поддержкой почты в Exchange Server). Кроме того, операция **ForceDelete** не будет выполнена, если выполняется любое из следующих условий:
+Чтобы вызвать **ForceDelete** на портале Azure, вы должны убедиться, что существует менее 1000 ссылок на доменное имя, а любые ссылки, в которых Exchange является службой подготовки, должны быть обновлены или удалены в [Центре администрирования Exchange](https://outlook.office365.com/ecp/). Сюда входят группы безопасности с поддержкой почты и распределенные списки Exchange. Дополнительные сведения см. в статье [Manage mail-enabled security groups in Exchange Server](/Exchange/recipients/mail-enabled-security-groups#Remove%20mail-enabled%20security%20groups&preserve-view=true) (Управление группами безопасности с поддержкой почты в Exchange Server). Кроме того, операция **ForceDelete** не будет выполнена, если выполняется любое из следующих условий:
 
 * Вы приобрели домен с помощью служб подписки Microsoft 365 домена.
 * Вы являетесь партнером, управляющим от имени другой организации пользователя.
@@ -110,11 +110,11 @@ ms.locfileid: "96547582"
 
 Большинство задач по управлению доменными именами в Azure Active Directory также можно выполнить с помощью Microsoft PowerShell или программными средствами с помощью API Microsoft Graph.
 
-* [Управление доменными именами в Azure AD с помощью PowerShell](/powershell/module/azuread/?view=azureadps-2.0#domains&preserve-view=true)
+* [Управление доменными именами в Azure AD с помощью PowerShell](/powershell/module/azuread/#domains&preserve-view=true)
 * [Тип ресурса домена](/graph/api/resources/domain?view=graph-rest-1.0&preserve-view=true)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление имен личных доменов](../fundamentals/add-custom-domain.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)
-* [Сведения об удалении групп безопасности с поддержкой почты Exchange в Центре администрирования Exchange для имени личного домена в Azure AD](/Exchange/recipients/mail-enabled-security-groups?view=exchserver-2019#Remove%20mail-enabled%20security%20groups&preserve-view=true)
+* [Сведения об удалении групп безопасности с поддержкой почты Exchange в Центре администрирования Exchange для имени личного домена в Azure AD](/Exchange/recipients/mail-enabled-security-groups#Remove%20mail-enabled%20security%20groups&preserve-view=true)
 * [Раздел об удалении имени личного домена с помощью операции ForceDelete в API Microsoft Graph](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true)

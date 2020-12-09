@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7a77c110c12fd6b42e8defbe43a40579b9c6588
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 681f5a6cecd43eb69adf24544c774cbd22da8a49
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96168769"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860547"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -52,7 +52,7 @@ ms.locfileid: "96168769"
 
 ### <a name="invitees-admin-has-disallowed-emailverified-users-from-being-created-in-their-tenant"></a>Администратор приглашенного пользователя запретил создавать в клиенте пользователей с атрибутом EmailVerified
 
-Если приглашаются пользователи из организации, в которой используется каталог Azure Active Directory, где отсутствует учетная запись определенного пользователя (например, пользователь не существует в каталоге AAD contoso.com). Администратор contoso.com мог настроить политику, которая запрещает создавать пользователей. Пользователь должен уточнить у администратора, разрешается ли приглашать внешних пользователей. Администратору внешнего пользователя может потребоваться разрешить в своем домене пользователей с проверенным адресом электронной почты (сведения о разрешении пользователей с проверенным адресом электронной почты см. в этой [статье](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0)).
+Если приглашаются пользователи из организации, в которой используется каталог Azure Active Directory, где отсутствует учетная запись определенного пользователя (например, пользователь не существует в каталоге AAD contoso.com). Администратор contoso.com мог настроить политику, которая запрещает создавать пользователей. Пользователь должен уточнить у администратора, разрешается ли приглашать внешних пользователей. Администратору внешнего пользователя может потребоваться разрешить в своем домене пользователей с проверенным адресом электронной почты (сведения о разрешении пользователей с проверенным адресом электронной почты см. в этой [статье](/powershell/module/msonline/set-msolcompanysettings)).
 
 ![Ошибка, указывающая, что клиент не допускает проверку подлинности пользователей по электронной почте](media/troubleshoot/allow-email-verified-users.png)
 

@@ -11,12 +11,12 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b797bf5c7e69990a29f0d14c31586d0e85b42426
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: f308f46fc021a1d08f4065d48558a6dd71786c7c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738017"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860361"
 ---
 # <a name="inbound-synchronization-for-cloud-provisioning-using-ms-graph-api"></a>Входящая синхронизация для подготовки облачных приложений с помощью MS API Graph
 
@@ -30,7 +30,7 @@ ms.locfileid: "96738017"
 - [Запуск задания синхронизации](#start-sync-job)
 - [Состояние проверки](#review-status)
 
-Используйте эти [модуль Microsoft Azure Active Directory для Windows PowerShell](https://docs.microsoft.com/powershell/module/msonline/?view=azureadps-1.0) команды, чтобы включить синхронизацию для рабочего клиента — это предварительная версия для возможности вызова веб-службы администрирования для этого клиента.
+Используйте эти [модуль Microsoft Azure Active Directory для Windows PowerShell](https://docs.microsoft.com/powershell/module/msonline/) команды, чтобы включить синхронизацию для рабочего клиента — это предварительная версия для возможности вызова веб-службы администрирования для этого клиента.
 
 ## <a name="basic-setup"></a>Базовая настройка
 

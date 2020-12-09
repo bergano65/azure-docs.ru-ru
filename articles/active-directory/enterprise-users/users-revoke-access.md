@@ -13,12 +13,12 @@ ms.reviewer: krbain
 ms.date: 12/02/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d808b920ddc6ff6f1d44252c27d67edd9c0dc353
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 826ca9fc20d8bbcf9a5f90ccc895b9f9867a6be1
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575522"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860581"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Отозвать доступ пользователей в Azure Active Directory
 
@@ -60,13 +60,13 @@ ms.locfileid: "96575522"
 
 В качестве администратора в Active Directory подключитесь к локальной сети, откройте PowerShell и выполните следующие действия.
 
-1. Отключите пользователя в Active Directory. Дополнительные сведения см. в разделе [Disable-адаккаунт](/powershell/module/addsadministration/disable-adaccount?view=win10-ps).
+1. Отключите пользователя в Active Directory. Дополнительные сведения см. в разделе [Disable-адаккаунт](/powershell/module/addsadministration/disable-adaccount).
 
     ```PowerShell
     Disable-ADAccount -Identity johndoe  
     ```
 
-1. Дважды сбросьте пароль пользователя в Active Directory. Обратитесь к командлету [Set-адаккаунтпассворд](/powershell/module/addsadministration/set-adaccountpassword?view=win10-ps).
+1. Дважды сбросьте пароль пользователя в Active Directory. Обратитесь к командлету [Set-адаккаунтпассворд](/powershell/module/addsadministration/set-adaccountpassword).
 
     > [!NOTE]
     > Изменение пароля пользователя в два раза заключается в снижении риска передаваемого хэша, особенно при наличии задержек в локальной репликации паролей. Если вы можете безопасно предположить, что эта учетная запись не скомпрометирована, вы можете сбросить пароль только один раз.
@@ -83,18 +83,18 @@ ms.locfileid: "96575522"
 
 В качестве администратора в Azure Active Directory откройте PowerShell, выполните ``Connect-AzureAD`` и выполните следующие действия.
 
-1. Отключите пользователя в Azure AD. Обратитесь к командлету [Set-AzureADUser](/powershell/module/azuread/Set-AzureADUser?view=azureadps-2.0).
+1. Отключите пользователя в Azure AD. Обратитесь к командлету [Set-AzureADUser](/powershell/module/azuread/Set-AzureADUser).
 
     ```PowerShell
     Set-AzureADUser -ObjectId johndoe@contoso.com -AccountEnabled $false
     ```
-1. Отозвать маркеры обновления Azure AD пользователя. Дополнительные сведения см. в разделе [REVOKE-азуреадусераллрефрештокен](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0).
+1. Отозвать маркеры обновления Azure AD пользователя. Дополнительные сведения см. в разделе [REVOKE-азуреадусераллрефрештокен](/powershell/module/azuread/revoke-azureaduserallrefreshtoken).
 
     ```PowerShell
     Revoke-AzureADUserAllRefreshToken -ObjectId johndoe@contoso.com
     ```
 
-1. Отключите устройства пользователя. См. статью [Get-азуреадусеррегистереддевице](/powershell/module/azuread/get-azureaduserregistereddevice?view=azureadps-2.0).
+1. Отключите устройства пользователя. См. статью [Get-азуреадусеррегистереддевице](/powershell/module/azuread/get-azureaduserregistereddevice).
 
     ```PowerShell
     Get-AzureADUserRegisteredDevice -ObjectId johndoe@contoso.com | Set-AzureADDevice -AccountEnabled $false

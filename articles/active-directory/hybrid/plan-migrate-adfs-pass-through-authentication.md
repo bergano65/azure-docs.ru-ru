@@ -12,12 +12,12 @@ ms.date: 05/29/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1257c783ffeae68bf338b21a5d2f6bba72ea25b3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a10c4c0e6e40636e4803e054155d6fdaa12a9366
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997772"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858558"
 ---
 # <a name="migrate-from-federation-to-pass-through-authentication-for-azure-active-directory"></a>Переход с федеративной на сквозную проверку подлинности для Azure Active Directory
 
@@ -103,7 +103,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 Дополнительные сведения вы найдете в следующих статьях:
 
 * [Active Directory Federation Services prompt=login parameter support](/windows-server/identity/ad-fs/operations/ad-fs-prompt-login) (Поддержка параметра prompt=login в службах федерации Active Directory (AD FS))
-* [Set-MsolDomainAuthentication](/powershell/module/msonline/set-msoldomainauthentication?view=azureadps-1.0)
+* [Set-MsolDomainAuthentication](/powershell/module/msonline/set-msoldomainauthentication)
 
 > [!NOTE]
 > Если параметр **SupportsMfa** имеет значение **True**, в качестве второго фактора в потоке проверки подлинности используется локальное решение многофакторной проверки подлинности. Эта конфигурация уже не подойдет для сценариев с проверкой подлинности Azure AD. 
@@ -455,7 +455,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье об [устранении неполадок при сквозной проверке подлинности Azure Active Directory](./tshoot-connect-pass-through-authentication.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите [принципы проектирования для Azure AD Connect](plan-connect-design-concepts.md).
 * Выберите [подходящую проверку подлинности](./choose-ad-authn.md).

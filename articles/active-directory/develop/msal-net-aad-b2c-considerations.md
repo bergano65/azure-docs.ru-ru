@@ -13,12 +13,12 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: b683eaaf4c93ef0dcf74680e1e174e0f867a7041
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8be41f3fcf4d32ee81d1290c6a50a27f2cd45ee7
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173402"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860972"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
@@ -165,7 +165,7 @@ AcquireTokenByUsernamePassword(
 
 ### <a name="known-issue-with-azure-ad-b2c"></a>Известная ошибка Azure AD B2C
 
-MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsoft.identity.client.tokencache?view=azure-dotnet). Ключ кэширования маркера основан на утверждениях, возвращенных поставщиком удостоверений (IdP).
+MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsoft.identity.client.tokencache). Ключ кэширования маркера основан на утверждениях, возвращенных поставщиком удостоверений (IdP).
 
 В настоящее время MSAL.NET требуется два утверждения для создания ключа кэша маркера:
 

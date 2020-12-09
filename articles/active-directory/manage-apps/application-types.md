@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: kenwith
-ms.openlocfilehash: d83b69ea7c2a4459d30c4ceb90f62ab6a1a10cc2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 49dd8b65db771a182138f13218adda2f0e7f7396
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648180"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858235"
 ---
 # <a name="viewing-apps-using-your-azure-ad-tenant-for-identity-management"></a>Просмотр приложений с помощью клиента Azure AD для управления удостоверениями
 В [руководстве по управлению приложениями](view-applications-portal.md) представлены основные принципы. В нем вы узнаете, как просмотреть все приложения с помощью клиента Azure AD для управления удостоверениями. В этой статье более подробно подробно типы приложений.
@@ -31,7 +31,7 @@ ms.locfileid: "94648180"
 - При добавлении новой регистрации приложения путем создания собственного приложения с помощью [реестра приложений](../develop/quickstart-register-app.md).
 - При добавлении новой регистрации приложения путем создания собственного приложения с помощью [портала регистрации приложений версии 2.0](../develop/quickstart-register-app.md).
 - При добавлении приложения вы разрабатываете с помощью [методов проверки Подлинности ASP.NET](https://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions) в Visual Studio или [подключенные службы](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/)
-- При создании субъекта-службы с помощью [модуля Azure AD PowerShell](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0).
+- При создании субъекта-службы с помощью [модуля Azure AD PowerShell](/powershell/azure/active-directory/install-adv2).
 - Когда вы в качестве администратора предоставляете приложению [согласие](../develop/howto-convert-app-to-be-multi-tenant.md) на использование данных в клиенте.
 - Когда [пользователь предоставляет приложению согласие](../develop/howto-convert-app-to-be-multi-tenant.md) на использование данных в клиенте.
 - При включении определенных служб, которые хранят данные в клиенте. Примером может служить служба сброса паролей, которая оформлена как субъект-служба для безопасного хранения политики сброса паролей.

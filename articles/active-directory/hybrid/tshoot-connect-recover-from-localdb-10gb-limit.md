@@ -16,12 +16,12 @@ ms.date: 07/17/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ca5361d8500ecd4ea22a577d0a4dc7ced606eab
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4b45decd2f2cf9c99cffb0e08d4d6a5c5cfafc67
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997653"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858405"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect: восстановление из LocalDB с ограничением в 10 ГБ
 Azure AD Connect требуется база данных SQL Server для хранения учетных данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. SQL Server Express налагает ограничение в размере 10 ГБ. Если при использовании LocalDB достигнут этот предел, служба синхронизации Azure AD Connect больше не сможет запускаться или выполнять синхронизацию должным образом. Эта статья содержит рекомендации по восстановлению.
@@ -55,7 +55,7 @@ Azure AD Connect требуется база данных SQL Server для хр
 5. Попытайтесь запустить службу, если она не запущена. Если служба запустилась, пропустите шаг [сжатия базы данных](#shrink-the-database) и перейдите к шагу [удаления данных журнала выполнения](#delete-run-history-data). В противном случае перейдите к шагу [сжатия базы данных](#shrink-the-database).
 
 ### <a name="shrink-the-database"></a>Сжатие базы данных
-Операция сжатия позволяет освободить достаточный объем пространства базы данных, чтобы запустить службу синхронизации. При этом освобождается место в базе данных путем удаления пробелов. Этот наилучшее, но не всегда действующее решение. Дополнительные сведения об операции сжатия см. в статье [Сжатие базы данных](/sql/relational-databases/databases/shrink-a-database?view=sql-server-ver15).
+Операция сжатия позволяет освободить достаточный объем пространства базы данных, чтобы запустить службу синхронизации. При этом освобождается место в базе данных путем удаления пробелов. Этот наилучшее, но не всегда действующее решение. Дополнительные сведения об операции сжатия см. в статье [Сжатие базы данных](/sql/relational-databases/databases/shrink-a-database).
 
 > [!IMPORTANT]
 > Этот шаг можно пропустить, если службу синхронизации удалось запустить. Не рекомендуется сжимать базу данных SQL, так как это может привести к снижению производительности из-за увеличения фрагментации.

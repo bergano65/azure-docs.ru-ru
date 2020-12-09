@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77ecc23e2969ce4ce26eef7b9a3a485389d08ce0
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: dd438a09b929274808984322981f6d21da0bf68f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837113"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860955"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -25,7 +25,7 @@ ms.locfileid: "94837113"
 ### <a name="q-i-registered-the-device-recently-why-cant-i-see-the-device-under-my-user-info-in-the-azure-portal-or-why-is-the-device-owner-marked-as-na-for-hybrid-azure-active-directory-azure-ad-joined-devices"></a>Вопрос. Мной недавно было зарегистрировано устройство. Почему я не вижу устройство в разделе "Мои данные пользователя" в портал Azure? Почему владелец устройства отмечен как "Недоступен" для устройств, использующих гибридное присоединение к Azure Active Directory (Azure AD)?
 
 Ответ **.** Устройства Windows 10, присоединенные к гибридной среде Azure AD, не отображаются на **устройствах пользователей**.
-Откройте представление **Все устройства** на портале Azure. Вы также можете использовать командлет PowerShell [Get-MsolDevice](/powershell/module/msonline/get-msoldevice?view=azureadps-1.0).
+Откройте представление **Все устройства** на портале Azure. Вы также можете использовать командлет PowerShell [Get-MsolDevice](/powershell/module/msonline/get-msoldevice).
 
 В списке **устройств пользователей** перечислены только следующие устройства:
 
@@ -69,7 +69,7 @@ ms.locfileid: "94837113"
 
 ---
 
-### <a name="q-i-disabled-or-deleted-my-device-in-the-azure-portal-or-by-using-windows-powershell-but-the-local-state-on-the-device-says-its-still-registered-what-should-i-do"></a>Вопрос. я отключил или удалил устройство в портал Azure или с помощью Windows PowerShell. Но в локальном состоянии устройства указано, что оно по-прежнему зарегистрировано.   Что следует делать?
+### <a name="q-i-disabled-or-deleted-my-device-in-the-azure-portal-or-by-using-windows-powershell-but-the-local-state-on-the-device-says-its-still-registered-what-should-i-do"></a>Вопрос. я отключил или удалил устройство в портал Azure или с помощью Windows PowerShell. Но в локальном состоянии устройства указано, что оно по-прежнему зарегистрировано. Что следует делать?
 
 Ответ **.** Эта операция выполняется по проекту. В этом случае устройство не имеет доступа к ресурсам в облаке. Администраторы могут выполнять это действие для устаревших, потерянных или украденных устройств, чтобы предотвратить несанкционированный доступ. Если это действие было выполнено непреднамеренно, необходимо повторно включить или повторно зарегистрировать устройство, как описано ниже.
 

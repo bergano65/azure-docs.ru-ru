@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66b216e5e511d2d80378ee7e2d124dccbc7abcb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38754b9e349e27afcff58dac27a616e3e4fb5319
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85252718"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860938"
 ---
 # <a name="controlled-validation-of-hybrid-azure-ad-join"></a>Контролируемая проверка гибридного присоединения к Azure AD
 
@@ -82,7 +82,7 @@ ms.locfileid: "85252718"
 Если вы используете AD FS, сначала необходимо настроить SCP на стороне клиента, используя приведенные выше инструкции, связав объект GPO с серверами AD FS. Объект SCP определяет источник полномочий для объектов устройств. Это может быть локальная среда или Azure AD. Если точка подключения клиента настроена для AD FS, источник для объектов устройств устанавливается как Azure AD.
 
 > [!NOTE]
-> Если не удалось настроить SCP на стороне клиента на AD FS серверах, источник удостоверений устройств будет рассматриваться как локальный. Затем ADFS начнет удалять объекты устройств из локального каталога по истечении указанного периода, определенного в атрибуте регистрации устройства ADFS "MaximumInactiveDays". Объекты регистрации устройств ADFS можно найти с помощью [командлета Get-AdfsDeviceRegistration](/powershell/module/adfs/get-adfsdeviceregistration?view=win10-ps).
+> Если не удалось настроить SCP на стороне клиента на AD FS серверах, источник удостоверений устройств будет рассматриваться как локальный. Затем ADFS начнет удалять объекты устройств из локального каталога по истечении указанного периода, определенного в атрибуте регистрации устройства ADFS "MaximumInactiveDays". Объекты регистрации устройств ADFS можно найти с помощью [командлета Get-AdfsDeviceRegistration](/powershell/module/adfs/get-adfsdeviceregistration).
 
 ## <a name="controlled-validation-of-hybrid-azure-ad-join-on-windows-down-level-devices"></a>Контролируемая проверка гибридного присоединение к Azure AD на устройствах Windows нижнего уровня
 

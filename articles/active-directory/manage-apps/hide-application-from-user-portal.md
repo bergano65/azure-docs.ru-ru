@@ -12,18 +12,18 @@ ms.date: 03/25/2020
 ms.author: kenwith
 ms.reviewer: kasimpso
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0a103ac9b8e6d29830b5ecd6732cd19547014b0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: ef1abd1d72e4435aa59bbb9a99f3cc423f11268e
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659069"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858304"
 ---
 # <a name="hide-enterprise-applications-from-end-users-in-azure-active-directory"></a>Скрыть корпоративные приложения от конечных пользователей в Azure Active Directory
 
 Инструкции по скрытию приложений с панели "MyApps" конечных пользователей или средства запуска Microsoft 365. Когда приложение скрыто, у пользователей по-прежнему есть к нему доступ. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для скрытия приложения на панели "MyApps" и Microsoft 365 средстве запуска требуются права администратора приложения.
 
@@ -47,7 +47,7 @@ ms.locfileid: "94659069"
 
 ## <a name="use-azure-ad-powershell-to-hide-an-application"></a>Использование Azure AD PowerShell для скрытия приложения
 
-Чтобы скрыть приложение на панели "MyApps", можно вручную добавить тег Хидеапп к субъекту-службе для приложения. Выполните следующие команды [PowerShell AzureAD](/powershell/module/azuread/?view=azureadps-2.0#service_principals) , чтобы задать для приложения значение **нет**. для свойства **Visible** . 
+Чтобы скрыть приложение на панели "MyApps", можно вручную добавить тег Хидеапп к субъекту-службе для приложения. Выполните следующие команды [PowerShell AzureAD](/powershell/module/azuread/#service_principals) , чтобы задать для приложения значение **нет**. для свойства **Visible** . 
 
 ```PowerShell
 Connect-AzureAD

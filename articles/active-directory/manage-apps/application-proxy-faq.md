@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: ef38c5364a0df1df63be825e2c46009174840b72
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e9a03c82fd4bd79e7a47fa34ff7a69870c52f018
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658134"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858388"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -204,5 +204,5 @@ ms.locfileid: "94658134"
 1. Опубликуйте URL-адреса HTTP и HTTPS как отдельные приложения с подстановочным знаком, но присвойте каждому из них другой личный домен. Эта конфигурация будет работать, так как у них разные внешние URL-адреса.
 
 2. Опубликуйте URL-адрес HTTPS с помощью приложения с подстановочными знаками. Опубликуйте приложения HTTP отдельно с помощью этих командлетов PowerShell для прокси приложения:
-   - [Управление приложениями прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management&preserve-view=true)
-   - [Управление соединителем прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management&preserve-view=true)
+   - [Управление приложениями прокси приложения](/powershell/module/azuread/#application_proxy_application_management&preserve-view=true)
+   - [Управление соединителем прокси приложения](/powershell/module/azuread/#application_proxy_connector_management&preserve-view=true)

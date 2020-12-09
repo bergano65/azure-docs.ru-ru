@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd0a2b44fd54eb716b5e1b8f9eabc923ccd7977f
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4c97958add682a4c49d7832843c0b95ffd2663bf
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285857"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859637"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
@@ -51,15 +51,15 @@ ms.locfileid: "93285857"
 
 После того, как гостевой пользователь принимает приглашение, свойство **Источник** обновляется в зависимости от поставщика удостоверений гостевого пользователя.
 
-Для гостевых пользователей с состоянием 1 **Источник**  — это **внешний Azure Active Directory**.
+Для гостевых пользователей с состоянием 1 **Источник** — это **внешний Azure Active Directory**.
 
 ![Гостевой пользователь с состоянием 1 после активации предложения](media/user-properties/after-redemption-state1.png)
 
-Для гостевых пользователей с состоянием 2 **Источник**  — это **учетная запись Майкрософт**.
+Для гостевых пользователей с состоянием 2 **Источник** — это **учетная запись Майкрософт**.
 
 ![Гостевой пользователь с состоянием 2 после активации предложения](media/user-properties/after-redemption-state2.png)
 
-Для гостевых пользователей с состоянием 3 и 4 для свойства **Источник** задано значение **Azure Active Directory** или **Windows Server Active Directory** , как описано в следующем разделе.
+Для гостевых пользователей с состоянием 3 и 4 для свойства **Источник** задано значение **Azure Active Directory** или **Windows Server Active Directory**, как описано в следующем разделе.
 
 ## <a name="key-properties-of-the-azure-ad-b2b-collaboration-user"></a>Основные свойства пользователя службы совместной работы Azure AD B2B
 ### <a name="usertype"></a>UserType
@@ -110,7 +110,7 @@ ms.locfileid: "93285857"
 
 ## <a name="can-i-update-a-guest-users-email-address"></a>Можно ли обновить адрес электронной почты гостевого пользователя?
 
-Если гостевой пользователь принимает ваше приглашение и впоследствии изменяет свой адрес электронной почты, новое сообщение не будет автоматически синхронизироваться с объектом гостевого пользователя в вашем каталоге. Свойство mail создается с помощью [Microsoft Graph API](/graph/api/resources/user?view=graph-rest-1.0). Свойство Mail можно обновить с помощью Microsoft Graph API, центра администрирования Exchange или [Exchange Online PowerShell](/powershell/module/exchange/users-and-groups/set-mailuser?view=exchange-ps). Изменение будет отражено в объекте гостевого пользователя Azure AD.
+Если гостевой пользователь принимает ваше приглашение и впоследствии изменяет свой адрес электронной почты, новое сообщение не будет автоматически синхронизироваться с объектом гостевого пользователя в вашем каталоге. Свойство mail создается с помощью [Microsoft Graph API](/graph/api/resources/user). Свойство Mail можно обновить с помощью Microsoft Graph API, центра администрирования Exchange или [Exchange Online PowerShell](/powershell/module/exchange/users-and-groups/set-mailuser). Изменение будет отражено в объекте гостевого пользователя Azure AD.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

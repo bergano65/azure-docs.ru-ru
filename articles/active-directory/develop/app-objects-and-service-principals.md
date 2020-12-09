@@ -13,12 +13,12 @@ ms.date: 07/22/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: 7fe48cf28ab3004087e2b022d7a9eca69a1e58e2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e4325303f5a10fa1df670495dd6d8190167182e8
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169636"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861108"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Объекты приложения и субъекта-службы в Azure Active Directory
 
@@ -49,7 +49,7 @@ ms.locfileid: "96169636"
 
 Субъект-служба — это локальное представление или экземпляр приложения глобального объекта приложения в одном клиенте или каталоге. Субъект-служба — это конкретный экземпляр, созданный из объекта приложения и наследующий определенные свойства от этого объекта приложения.  Субъект-служба создается в каждом клиенте, где используется приложение, и ссылается на глобальный уникальный объект приложения.  Объект субъекта-службы определяет, что приложение может реально выполнять в конкретном клиенте, кто имеет доступ к приложению и какие ресурсы приложение может получить.
 
-Когда приложение получает разрешение на доступ к ресурсам в клиенте (при регистрации или [предоставлении согласия](developer-glossary.md#consent)), создается объект субъекта службы. Вы также можете создать объект субъекта-службы в клиенте с помощью [Azure PowerShell](howto-authenticate-service-principal-powershell.md), [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest), [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http), [портал Azure][AZURE-Portal]и других средств.  При использовании портала субъект-служба создается автоматически при регистрации приложения.
+Когда приложение получает разрешение на доступ к ресурсам в клиенте (при регистрации или [предоставлении согласия](developer-glossary.md#consent)), создается объект субъекта службы. Вы также можете создать объект субъекта-службы в клиенте с помощью [Azure PowerShell](howto-authenticate-service-principal-powershell.md), [Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli), [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?tabs=http), [портал Azure][AZURE-Portal]и других средств.  При использовании портала субъект-служба создается автоматически при регистрации приложения.
 
 Колонка **корпоративные приложения** на портале используется для перечисления субъектов-служб в клиенте и управления ими. Вы видите разрешения субъекта-службы, разрешения пользователя, которые выполнили это согласие, данные для входа и многое другое.
 
@@ -82,7 +82,7 @@ ms.locfileid: "96169636"
 
 Условия в этом примере сценария.
 
-| Шаг | Описание |
+| Шаг | Описание: |
 |------|-------------|
 | 1    | Это процесс создания объектов приложения и субъекта-службы в главном клиенте приложения. |
 | 2    | При согласии администраторов компании Contoso и Fabrikam в клиенте Azure AD компании создается объект субъекта-службы, и ему назначаются разрешения, предоставленные администратором. Обратите внимание, что приложение по управлению персоналом можно создать или настроить для отдельных пользователей. |
@@ -91,8 +91,8 @@ ms.locfileid: "96169636"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Можно использовать [проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) для запроса объектов приложения и субъекта-службы.
-- Доступ к объекту приложения приложения можно получить с помощью Microsoft Graph API, редактора манифеста приложения [портал Azure][AZURE-Portal] или [командлетов Azure AD PowerShell](/powershell/azure/?view=azureadps-2.0), представленных в [сущности приложения][MS-Graph-App-Entity]OData.
-- Доступ к объекту субъекта-службы приложения можно получить с помощью Microsoft Graph API или [командлетов Azure AD PowerShell](/powershell/azure/?view=azureadps-2.0), представленных в [сущности ServicePrincipal][MS-Graph-Sp-Entity]OData.
+- Доступ к объекту приложения приложения можно получить с помощью Microsoft Graph API, редактора манифеста приложения [портал Azure][AZURE-Portal] или [командлетов Azure AD PowerShell](/powershell/azure/), представленных в [сущности приложения][MS-Graph-App-Entity]OData.
+- Доступ к объекту субъекта-службы приложения можно получить с помощью Microsoft Graph API или [командлетов Azure AD PowerShell](/powershell/azure/), представленных в [сущности ServicePrincipal][MS-Graph-Sp-Entity]OData.
 
 <!--Image references-->
 

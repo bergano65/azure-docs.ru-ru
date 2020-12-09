@@ -17,12 +17,12 @@ ms.date: 05/18/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1efafd353bea20ea1ada0b5e92a9e6df00deb78
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c075e19422341ad7ccfd3ad951517876ab26a495
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273606"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858422"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect выполняет следующие функции: Учетные записи и разрешения
 
@@ -252,7 +252,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 Чтобы удалить неиспользуемые учетные записи службы Azure AD, выполните следующий командлет Azure AD PowerShell: `Remove-AzureADUser -ObjectId <ObjectId-of-the-account-you-wish-to-remove>`
 
 >[!NOTE]
->Прежде чем использовать приведенные выше команды PowerShell, необходимо установить [модуль Azure Active Directory PowerShell для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0#installing-the-azure-ad-module) и установить подключение к экземпляру Azure AD с помощью [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0).
+>Прежде чем использовать приведенные выше команды PowerShell, необходимо установить [модуль Azure Active Directory PowerShell для Graph](/powershell/azure/active-directory/install-adv2#installing-the-azure-ad-module) и установить подключение к экземпляру Azure AD с помощью [Connect-AzureAD](/powershell/module/azuread/connect-azuread).
 
 Дополнительные сведения о сбросе пароля для учетной записи Azure AD Connect и управлении им см. в статье [Изменение пароля учетной записи Azure AD Connect](how-to-connect-azureadaccount.md).
 

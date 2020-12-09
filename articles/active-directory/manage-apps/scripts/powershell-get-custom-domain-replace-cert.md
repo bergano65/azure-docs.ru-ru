@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 81f9810753c7ef60143021e7dd78f3f01489b7ff
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 7cdd0144a7906bbb904475bd40dc9d8bc5e12742
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94653731"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859404"
 ---
 # <a name="get-all-application-proxy-applications-published-with-the-identical-certificate-and-replace-it"></a>Получение сведений обо всех приложениях Application Proxy с одинаковыми сертификатами и их замена
 
@@ -28,7 +28,7 @@ ms.locfileid: "94653731"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Для работы с этим примером требуется [модуль Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
+Для работы с этим примером требуется [модуль Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2) (AzureAD) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -38,13 +38,13 @@ ms.locfileid: "94653731"
 
 | Get-Help | Примечания |
 |---|---|
-|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Получает субъект-службу. |
-|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Получает приложение Azure AD. |
-|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для Application Proxy в Azure AD. |
-|[Set-AzureADApplicationProxyApplicationCustomDomainCertificate](/powershell/module/azuread/set-azureadapplicationproxyapplicationcustomdomaincertificate?view=azureadps-2.0) | Назначает сертификат приложению, настроенному для Application Proxy в Azure AD. Эта команда отправляет сертификат и позволяет приложению использовать личные домены. |
+|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Получает субъект-службу. |
+|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Получает приложение Azure AD. |
+|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication) | Извлекает приложение, настроенное для Application Proxy в Azure AD. |
+|[Set-AzureADApplicationProxyApplicationCustomDomainCertificate](/powershell/module/azuread/set-azureadapplicationproxyapplicationcustomdomaincertificate) | Назначает сертификат приложению, настроенному для Application Proxy в Azure AD. Эта команда отправляет сертификат и позволяет приложению использовать личные домены. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о модуле Azure AD PowerShell см. в этом [обзоре](/powershell/azure/active-directory/overview?view=azureadps-2.0).
+Дополнительные сведения о модуле Azure AD PowerShell см. в этом [обзоре](/powershell/azure/active-directory/overview).
 
 См. другие [примеры Azure AD PowerShell для Azure AD Application Proxy](../application-proxy-powershell-samples.md).

@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e4533334204a3a1cfd46ff27b04ff0c05350dfc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8198feca2956f81e397ddee447057c1a5af99a4a
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973921"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859510"
 ---
 # <a name="create-a-basic-group-and-add-members-using-azure-active-directory"></a>Создание простой группы и добавление в нее участников с помощью Azure Active Directory
 Можно создать простую группу с помощью портала Azure Active Directory (Azure AD). В целях этой статьи простая группа добавляется для отдельного ресурса владельцем этого ресурса (администратором) и включает в себя конкретных участников (сотрудников), которым требуется доступ к этому ресурсу. Более сложные сценарии, включая динамическое членство и создание правил, описываются в [документации по управлению пользователями Azure Active Directory](../enterprise-users/index.yml).
@@ -77,7 +77,7 @@ ms.locfileid: "95973921"
 
 ## <a name="turn-on-or-off-group-welcome-email"></a>Отключение отправки приветственного сообщения электронной почты для группы
 
-При создании любой новой группы Microsoft 365 независимо от того, включено ли динамическое или статическое членство, уведомление будет отправлено всем пользователям, добавленным в группу. Если изменяются любые атрибуты пользователя или устройства, все правила динамических групп в организации обрабатываются на предмет возможных изменений членства. После этого добавляемым пользователям также отправляются приветственные уведомления. Такое поведение можно отключить в [Exchange PowerShell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps). 
+При создании любой новой группы Microsoft 365 независимо от того, включено ли динамическое или статическое членство, уведомление будет отправлено всем пользователям, добавленным в группу. Если изменяются любые атрибуты пользователя или устройства, все правила динамических групп в организации обрабатываются на предмет возможных изменений членства. После этого добавляемым пользователям также отправляются приветственные уведомления. Такое поведение можно отключить в [Exchange PowerShell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

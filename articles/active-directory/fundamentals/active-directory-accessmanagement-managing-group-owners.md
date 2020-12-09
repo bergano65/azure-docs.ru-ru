@@ -12,12 +12,12 @@ ms.date: 09/11/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2847678c78aec4a287427463a9aeeb8bd82c6771
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 358a551908a7263f3258f47dfe1cceeffe2307b1
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371942"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860496"
 ---
 # <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Добавление или удаление владельцев группы в Azure Active Directory
 Группы Azure Active Directory (Azure AD) управляются владельцами группы. Владельцы групп могут быть пользователями или субъектами-службами и могут управлять группой, включая членство. Назначать владельцев групп могут только существующие владельцы групп или администраторы групп. Владельцы группы не должны быть участниками группы.
@@ -25,7 +25,7 @@ ms.locfileid: "92371942"
 Если у группы нет владельца, администраторы групп по-прежнему могут управлять группой. Рекомендуется, чтобы каждая группа соимела по крайней мере одного владельца. Когда владельцы назначены к группе, последний владелец группы не может быть удален. Прежде чем удалять последнего владельца из группы, обязательно выберите другого владельца.
 
 ## <a name="add-an-owner-to-a-group"></a>Добавление владельца группы
-Ниже приведены инструкции по добавлению пользователя в качестве владельца группы с помощью портала Azure AD. Чтобы добавить субъект-службу в качестве владельца группы, следуйте инструкциям по выполнению этой задачи с помощью [PowerShell](/powershell/module/Azuread/Add-AzureADGroupOwner?view=azureadps-2.0).
+Ниже приведены инструкции по добавлению пользователя в качестве владельца группы с помощью портала Azure AD. Чтобы добавить субъект-службу в качестве владельца группы, следуйте инструкциям по выполнению этой задачи с помощью [PowerShell](/powershell/module/Azuread/Add-AzureADGroupOwner).
 
 ### <a name="to-add-a-group-owner"></a>Добавление владельца группы
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью глобального администратора каталога.
@@ -60,7 +60,7 @@ ms.locfileid: "92371942"
 
     После удаления владельца вернитесь на страницу **Владельцы** — имя будет удалено из списка владельцев.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Управление доступом к ресурсам с помощью групп Azure Active Directory](active-directory-manage-groups.md)
 
 - [Настройка параметров групп с помощью командлетов Azure Active Directory](../enterprise-users/groups-settings-cmdlets.md)

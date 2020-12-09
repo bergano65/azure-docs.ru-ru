@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f9cd421224ad134b4df853b06b3bc34333a0613
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 8a5b800e78448afcc970010535ba12b543d3cc74
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896112"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860513"
 ---
 # <a name="self-service-for-azure-ad-b2b-collaboration-sign-up"></a>Самостоятельная регистрация на портале для службы совместной работы Azure AD B2B
 
@@ -28,7 +28,7 @@ ms.locfileid: "92896112"
 
 ## <a name="azure-active-directory-b2b-invitation-api"></a>API-интерфейс B2B-приглашения Azure Active Directory
 
-Организации могут использовать [API диспетчера приглашений Microsoft Graph](/graph/api/resources/invitation?view=graph-rest-1.0) для создания собственных возможностей подключения гостевых пользователей B2B. Если вы хотите предложить самостоятельную регистрацию гостевых пользователей B2B, рекомендуется использовать [управление правами Azure AD](../governance/entitlement-management-overview.md). Но если вы хотите создать собственный интерфейс, можно использовать [API создания приглашения](/graph/api/invitation-post?tabs=http&view=graph-rest-1.0) для автоматической отправки настраиваемого сообщения с приглашением непосредственно пользователю B2B, например. Или ваше приложение может использовать inviteRedeemUrl, возвращенный в ответе на создание, чтобы создать собственное приглашение (с помощью выбранного механизма связи) приглашенному пользователю.
+Организации могут использовать [API диспетчера приглашений Microsoft Graph](/graph/api/resources/invitation) для создания собственных возможностей подключения гостевых пользователей B2B. Если вы хотите предложить самостоятельную регистрацию гостевых пользователей B2B, рекомендуется использовать [управление правами Azure AD](../governance/entitlement-management-overview.md). Но если вы хотите создать собственный интерфейс, можно использовать [API создания приглашения](/graph/api/invitation-post?tabs=http) для автоматической отправки настраиваемого сообщения с приглашением непосредственно пользователю B2B, например. Или ваше приложение может использовать inviteRedeemUrl, возвращенный в ответе на создание, чтобы создать собственное приглашение (с помощью выбранного механизма связи) приглашенному пользователю.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

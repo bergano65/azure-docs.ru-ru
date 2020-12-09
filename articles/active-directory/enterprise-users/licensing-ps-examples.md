@@ -14,12 +14,12 @@ ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 879c2b9fe7db6e61c7c9479c69c367a4439799a3
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: daf03ab7608357e80705403889a41895e63d07a4
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545525"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859799"
 ---
 # <a name="powershell-and-graph-examples-for-group-based-licensing-in-azure-ad"></a>Примеры PowerShell и Graph для группового лицензирования в Azure AD
 
@@ -71,7 +71,7 @@ location: https://graph.microsoft.com/v2/d056d009-17b3-4106-8173-cd3978ada898/di
 
 ## <a name="view-product-licenses-assigned-to-a-group"></a>Просмотр лицензий продуктов, назначенных группе
 
-С помощью командлета [Get-MsolGroup](/powershell/module/msonline/get-msolgroup?view=azureadps-1.0) можно извлечь объект группы и проверить свойство *Licenses*: в нем перечислены все лицензии продуктов, назначенные группе.
+С помощью командлета [Get-MsolGroup](/powershell/module/msonline/get-msolgroup) можно извлечь объект группы и проверить свойство *Licenses*: в нем перечислены все лицензии продуктов, назначенные группе.
 
 ```powershell
 (Get-MsolGroup -ObjectId 99c4216a-56de-42c4-a4ac-e411cd8c7c41).Licenses
@@ -657,7 +657,7 @@ aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipp
 > [!NOTE]
 > Обновите значения переменных `$skuId` , `$groupId` которые нацелены на удаление прямых лицензий, в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. в следующих статьях:
 

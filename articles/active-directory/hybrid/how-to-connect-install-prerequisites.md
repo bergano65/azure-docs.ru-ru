@@ -16,12 +16,12 @@ ms.date: 11/05/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 032b1ca945cf729f8a6682cf71d26a716b1e8863
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: edace0298514d1fc3cfd3afcff73fa0d29e18f0c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96172353"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858779"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure Active Directory (Azure AD) Connect.
@@ -52,7 +52,7 @@ Azure Active Directory Connect выполняет подписанные скр�
 
 Рекомендуемая политика выполнения во время установки — "RemoteSigned".
 
-Дополнительные сведения о настройке политики выполнения PowerShell см. в разделе [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7).
+Дополнительные сведения о настройке политики выполнения PowerShell см. в разделе [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy).
 
 
 ### <a name="azure-ad-connect-server"></a>Сервер Azure AD Connect
@@ -147,10 +147,10 @@ Azure AD Connect сервер должен рассматриваться как
 ### <a name="powershell-and-net-framework"></a>PowerShell и .NET Framework
 Работа Azure AD Connect основана на Microsoft PowerShell и .NET Framework 4.5.1. На сервере должна быть установлена эта или более поздняя версия. В зависимости от версии Windows Server выполните следующие действия.
 
-* Windows Server 2012 R2
+* Windows Server 2012 R2
   * Microsoft PowerShell устанавливается по умолчанию. Никаких действий не требуется.
   * Платформа .NET Framework 4.5.1 и более поздних версий распространяется через Центр обновления Windows. Убедитесь, что установлены последние обновления для Windows Server на панели управления.
-* Windows Server 2012
+* Windows Server 2012
   * Последняя версия Microsoft PowerShell доступна в Windows Management Framework 4,0, доступной в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
   * .NET Framework 4.5.1 и более поздние версии доступны в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
 

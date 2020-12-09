@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da8fe904f71fdf6f01c926bf6fa3f050ba825309
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 70387717c15dade349a323e663ac0fd31935a15f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548143"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859884"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "96548143"
 > [!IMPORTANT]
 > Для доступа к некоторым параметрам требуется лицензия Azure Active Directory Premium P1. Дополнительные сведения см. [здесь](#template-settings).
 
-Чтобы узнать, как запретить пользователям без прав администратора создавать группы безопасности, установите `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False`, как описано в статье [Set-MSOLCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
+Чтобы узнать, как запретить пользователям без прав администратора создавать группы безопасности, установите `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False`, как описано в статье [Set-MSOLCompanySettings](/powershell/module/msonline/set-msolcompanysettings).
 
 Параметры групп Microsoft 365 настраиваются с помощью объекта параметров и объекта SettingsTemplate. Изначально в каталоге не отображаются все объекты параметров, так как он настроен с параметрами по умолчанию. Чтобы изменить параметры по умолчанию, необходимо с помощью шаблона параметров создать объект параметров. Шаблоны параметров определены корпорацией Майкрософт. Поддерживается несколько разных шаблонов параметров. Чтобы настроить параметры группы Microsoft 365 для каталога, используйте шаблон с именем Group. Unified. Чтобы настроить параметры Microsoft 365 группы в одной группе, используйте шаблон с именем Group. Unified. Guest. Этот шаблон используется для управления гостевым доступом к группе Microsoft 365. 
 
@@ -319,7 +319,7 @@ ms.locfileid: "96548143"
    ```
 
 ## <a name="cmdlet-syntax-reference"></a>Справочник по синтаксису командлетов
-Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
+Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/active-directory/install-adv2) (Командлеты Azure Active Directory).
 
 ## <a name="additional-reading"></a>Дополнительные материалы
 
