@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/24/2018
-ms.openlocfilehash: e7b7acb7e67d809229825b3d393fe49af12b3642
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.date: 12/09/2020
+ms.openlocfilehash: 3f15ffd6f7ed784cce398d419e013a69c60289d8
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461219"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921811"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностное копирование из базы данных с помощью управляющей таблицы
 
@@ -45,7 +45,7 @@ ms.locfileid: "96461219"
 - *Data_Source_WaterMarkColumn* — имя столбца в исходной таблице, который используется для обнаружения новых или обновленных строк. Этот столбец обычно имеет тип *DateTime*, *int* или аналогичный.
 - *Data_Destination_Container* — это корневой путь места, куда копируются данные в целевом хранилище.
 - *Data_Destination_Directory* — это путь к каталогу в корне места, куда копируются данные в целевом хранилище.
-- *Data_Destination_Table_Name* — место, куда копируются данные в целевом хранилище (применяется, если в качестве назначения данных выбрано "Azure синапсе Analytics (ранее SQL DW)").
+- *Data_Destination_Table_Name* — место, куда копируются данные в целевом хранилище (применяется, если в качестве назначения данных выбрано "Azure синапсе Analytics").
 - *Data_Destination_Folder_Path* — место, куда копируются данные в целевом хранилище (применимо, если в качестве назначения данных выбрано "файловая система" или "Azure Data Lake Storage 1-го поколения").
 - *Control_Table_Table_Name* — это внешняя таблица элементов управления, в которой хранится значение верхнего предела.
 - *Control_Table_Column_Name* — это столбец во внешней таблице элементов управления, в котором хранится значение верхнего предела.

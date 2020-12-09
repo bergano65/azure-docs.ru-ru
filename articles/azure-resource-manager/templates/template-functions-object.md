@@ -1,18 +1,18 @@
 ---
 title: Функции шаблонов — объекты
-description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с объектами.
+description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для работы с объектами.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 7ed317b3506f00e71bbf97d5564cacec05032744
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 5e13177db1a7cf2f19a822363cb3884474566add
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004523"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920467"
 ---
 # <a name="object-functions-for-arm-templates"></a>Функции объектов для шаблонов ARM
 
-Диспетчер ресурсов предоставляет несколько функций для работы с объектами в шаблоне Azure Resource Manager (ARM).
+Диспетчер ресурсов предоставляет несколько функций для работы с объектами в шаблоне Azure Resource Manager (шаблон ARM):
 
 * [contains](#contains)
 * [createObject](#createobject)
@@ -33,7 +33,7 @@ ms.locfileid: "96004523"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание: |
 |:--- |:--- |:--- |:--- |
 | контейнер |Да |массив, объект или строка |Значение, содержащее значение, которое необходимо найти. |
 | itemToFind |Да |строка или целое число |Значение, которое необходимо найти. |
@@ -128,14 +128,14 @@ output arrayFalse bool = contains(arrayToTest, 'four')
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringTrue | Bool | True |
-| stringFalse | Bool | False |
+| stringFalse | Bool | Неверно |
 | objectTrue | Bool | True |
-| objectFalse | Bool | False |
+| objectFalse | Bool | Неверно |
 | arrayTrue | Bool | True |
-| arrayFalse | Bool | False |
+| arrayFalse | Bool | Неверно |
 
 ## <a name="createobject"></a>createObject
 
@@ -145,12 +145,12 @@ output arrayFalse bool = contains(arrayToTest, 'four')
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание: |
 |:--- |:--- |:--- |:--- |
-| key1 |нет |строка |Имя ключа. |
-| value1 |нет |int, Boolean, строка, объект или массив |Значение для ключа. |
-| Дополнительные ключи |нет |строка |Дополнительные имена ключей. |
-| дополнительные значения |нет |int, Boolean, строка, объект или массив |Дополнительные значения для ключей. |
+| key1 |Нет |строка |Имя ключа. |
+| value1 |Нет |int, Boolean, строка, объект или массив |Значение для ключа. |
+| Дополнительные ключи |Нет |строка |Дополнительные имена ключей. |
+| дополнительные значения |Нет |int, Boolean, строка, объект или массив |Дополнительные значения для ключей. |
 
 Функция принимает только четное число параметров. Каждый ключ должен иметь совпадающее значение.
 
@@ -219,7 +219,7 @@ output newObject object = {
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание: |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Да |массив, объект или строка |Значение, которое необходимо проверить, если оно пустое. |
 
@@ -286,7 +286,7 @@ output stringEmpty bool = empty(testString)
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayEmpty | Bool | True |
 | objectEmpty | Bool | True |
@@ -392,7 +392,7 @@ output arrayOutput array = intersection(firstArray, secondArray)
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | objectOutput | Объект | {"one": "a", "three": "c"} |
 | arrayOutput | Массив | ["two", "three"] |
@@ -415,7 +415,7 @@ output arrayOutput array = intersection(firstArray, secondArray)
 
 Тип данных JSON из указанной строки или пустое значение, если указано **значение NULL** .
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Если необходимо включить значение параметра или переменную в объект JSON, используйте функцию [concat](template-functions-string.md#concat) для создания строки, передаваемой в функцию.
 
@@ -520,7 +520,7 @@ output concatObjectOutput object = json(concat('{"a": "', concatValue, '"}'))
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | емптйобжектаутпут | Логическое значение | True |
 | objectOutput | Объект | {"a": "b"} |
@@ -790,6 +790,6 @@ output arrayOutput array = union(firstArray, secondArray)
 | objectOutput | Объект | {"one": "a", "two": "b", "three": "c2", "four": "d", "five": "e"} |
 | arrayOutput | Массив | ["one", "two", "three", "four"] |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

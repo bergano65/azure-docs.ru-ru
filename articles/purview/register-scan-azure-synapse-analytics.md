@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/22/2020
-ms.openlocfilehash: a0b0dc8c29bcdb51f7b348dd62e3d27796819a7d
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: e0a1d8dba9ea284322584de3b4be2ae390d15fdf
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554572"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920264"
 ---
 # <a name="register-and-scan-azure-synapse-analytics"></a>Регистрация и проверка Azure синапсе Analytics
 
@@ -21,6 +21,10 @@ ms.locfileid: "96554572"
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
 Azure синапсе Analytics (ранее — хранилище данных SQL) поддерживает полное и добавочное сканирование для записи метаданных и схемы. Проверки также классифицируют данные автоматически на основе системных и настраиваемых правил классификации.
+
+### <a name="known-limitations"></a>Известные ограничения
+
+Azure зрения не поддерживает сканирование [представлений](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15) в Azure синапсе Analytics.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -132,7 +136,7 @@ GO
 
 [!INCLUDE [create and manage scans](includes/manage-scans.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор каталога данных Azure зрения](how-to-browse-catalog.md)
 - [Поиск в каталоге данных Azure зрения](how-to-search-catalog.md)

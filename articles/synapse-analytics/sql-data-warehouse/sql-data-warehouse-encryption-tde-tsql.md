@@ -11,19 +11,19 @@ ms.date: 04/30/2019
 ms.author: jrasnick
 ms.reviewer: rortloff
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 81a28773f8f13cfb8dac75f1c4e11fd773c2c8f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9a80a9001d1d989495a246bbbc8fa703f58e08a
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85212203"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96919938"
 ---
 # <a name="get-started-with-transparent-data-encryption-tde"></a>Начало работы с прозрачным шифрованием данных (TDE)
 
 > [!div class="op_single_selector"]
 >
 > * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Аутентификация](sql-data-warehouse-authentication.md)
+> * [Authentication](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 
@@ -54,7 +54,7 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION OFF;
 ```
 
 > [!NOTE]
-> Приостановленный пул SQL необходимо возобновить перед внесением изменений в параметры TDE.
+> Приостановка выделенного пула SQL должна быть возобновлена перед внесением изменений в параметры TDE.
 
 ## <a name="verifying-encryption"></a>Проверка шифрования
 

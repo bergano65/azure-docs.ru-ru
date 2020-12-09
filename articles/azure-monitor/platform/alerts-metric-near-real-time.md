@@ -7,12 +7,12 @@ services: monitoring
 ms.topic: conceptual
 ms.date: 12/3/2020
 ms.subservice: alerts
-ms.openlocfilehash: dfcc1f15ebec1337cfa7d484319c7b942ff052b2
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 0e4674c9e0513a0b8dae29f5868b1da79da8ab84
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548245"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920561"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -60,7 +60,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.DBforPostgreSQL/flexibleServers | Да | Нет | |
 |Microsoft.DBforPostgreSQL/servers | Нет | Нет | [База данных для PostgreSQL](./metrics-supported.md#microsoftdbforpostgresqlservers)|
 |Microsoft.DBforPostgreSQL/serversv2 | Нет | Нет | [База данных для PostgreSQL v2](./metrics-supported.md#microsoftdbforpostgresqlserversv2)|
-|Microsoft. Дбфорпостгрескл/синглесерверс | Нет | Нет | [База данных для PostgreSQL (одиночные серверы)](./metrics-supported.md#microsoftdbforpostgresqlsingleservers)|
+|Microsoft. Дбфорпостгрескл/гибкий | Нет | Нет | [База данных для PostgreSQL (серверы флексиабле)](./metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
 |Microsoft.Devices/IotHubs | Да | Нет |[Центр Интернета вещей](./metrics-supported.md#microsoftdevicesiothubs) |
 |Microsoft.Devices/provisioningServices| Да | Нет | [Службы подготовки устройств](./metrics-supported.md#microsoftdevicesprovisioningservices) |
 |Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес | Да | Нет | |
@@ -115,7 +115,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Web/hostingEnvironments/multiRolePools | Да | Нет | [Среда службы приложений пулов с несколькими ролями](./metrics-supported.md#microsoftwebhostingenvironmentsmultirolepools)|
 |Microsoft.Web/hostingEnvironments/workerPools | Да | Нет | [Пулы рабочих ролей Среда службы приложений](./metrics-supported.md#microsoftwebhostingenvironmentsworkerpools)|
 |Microsoft.Web/serverfarms | Да | Нет | [Планы службы приложений](./metrics-supported.md#microsoftwebserverfarms)|
-|Microsoft.Web/sites | Да | Нет | [Службы приложений](./metrics-supported.md#microsoftwebsites-excluding-functions) и [Функции](./metrics-supported.md#microsoftwebsites-functions)|
+|Microsoft.Web/sites | Да | Нет | [Службы приложений и Функции](./metrics-supported.md#microsoftwebsites)|
 |Microsoft.Web/sites/slots | Да | Нет | [Слоты Службы приложений](./metrics-supported.md#microsoftwebsitesslots)|
 
 <sup>1</sup> не поддерживается для метрик сети виртуальной машины (общая сеть, общий объем сети, входящие потоки, исходящие потоки, максимальная частота создания входящих потоков, максимальная скорость создания исходящих потоков) и пользовательские метрики.
@@ -179,7 +179,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Получите дополнительные сведения об [интерфейсе оповещений](./alerts-overview.md).
 * Ознакомьтесь со сведениями об [оповещениях журналов в Azure](./alerts-unified-log.md).

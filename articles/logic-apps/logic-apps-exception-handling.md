@@ -8,12 +8,12 @@ ms.author: deli
 ms.reviewer: klam, estfan, logicappspm
 ms.date: 01/11/2020
 ms.topic: article
-ms.openlocfilehash: 73b116117530e5a2103b604efbf757d691006508
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d4bff4ee7980002d911426ed46ffef6fc28c43e9
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014743"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920759"
 ---
 # <a name="handle-errors-and-exceptions-in-azure-logic-apps"></a>Обработка ошибок и исключений в Azure Logic Apps
 
@@ -35,7 +35,7 @@ ms.locfileid: "96014743"
 | **Нет**  | Повторная отправка запроса не происходит. |
 |||
 
-Дополнительные сведения об ограничениях политики повтора см. в статье [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md#request-limits).
+Дополнительные сведения об ограничениях политики повтора см. в статье [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md#http-limits).
 
 ### <a name="change-retry-policy"></a>Изменение политики повтора
 
@@ -88,7 +88,7 @@ ms.locfileid: "96014743"
 
 <a name="default-retry"></a>
 
-### <a name="default"></a>По умолчанию
+### <a name="default"></a>Значение по умолчанию
 
 Если не будет указана политика повтора, действие использует политику по умолчанию, которая на самом деле представляет собой [политику экспоненциального интервала](#exponential-interval), которая отправляет до четырех повторных попыток с экспоненциально растущим интервалом с шагом в 7,5 секунд. Диапазон составляет от 5 до 45 секунд.
 
@@ -112,7 +112,7 @@ ms.locfileid: "96014743"
 }
 ```
 
-### <a name="none"></a>None
+### <a name="none"></a>Нет
 
 Чтобы указать, что действие или триггер не повторяет неудавшиеся запросы, задайте параметру <*retry-policy-type*> значение `none`.
 
@@ -366,7 +366,7 @@ ms.locfileid: "96014743"
 
 Вы можете отслеживать журналы и метрики или публиковать их в любом средстве мониторинга для оценки состояния выполнения. К примеру, можно направлять поток всех событий через Центры событий в [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). В Stream Analytics можно написать активные запросы для получения сведений об отклонении на основе средних показателей или сбоев из журналов диагностики. Stream Analytics можно использовать для отправки информации в другие источники данных, такие как очереди, разделы, SQL, Azure Cosmos DB или Power BI.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сценарий обработки исключений и ведения журнала ошибок для приложений логики](../logic-apps/logic-apps-scenario-error-and-exception-handling.md)
 * [Дополнительные Logic Apps примеры и сценарии](../logic-apps/logic-apps-examples-and-scenarios.md)

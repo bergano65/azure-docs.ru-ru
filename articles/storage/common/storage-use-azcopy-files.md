@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 087af322240322e44e70a9b5279eb7d251e735be
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 050e6b5007b9fbaedc412d8062430f1c2c1691fd
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901870"
+ms.locfileid: "96923953"
 ---
 # <a name="transfer-data-with-azcopy-and-file-storage"></a>Перенос данных с помощью AzCopy и хранилища файлов 
 
-AzCopy — это служебная программа командной строки, которую можно использовать для копирования больших двоичных объектов или файлов в учетную запись хранения или из нее. Эта статья содержит примеры команд, которые работают с файлами Azure.
+AzCopy — это служебная программа командной строки, которую можно использовать для копирования файлов в учетную запись хранения или из нее. Эта статья содержит примеры команд, которые работают с файлами Azure.
 
 Прежде чем начать, ознакомьтесь со статьей начало [работы с AzCopy](storage-use-azcopy-v10.md) , чтобы скачать AzCopy и ознакомиться с этим инструментом.
 
@@ -53,8 +53,6 @@ AzCopy — это служебная программа командной ст
 > |---|---|
 > |Скопируйте списки управления доступом (ACL) вместе с файлами.|**--Preserve-SMB-разрешения** = \[ true \| false\]|
 > |Скопируйте сведения о свойстве SMB вместе с файлами.|**--Preserve-SMB-info** = \[ true \| false\]|
-> |Отправьте файлы в виде добавочных или страничных BLOB-объектов.|**--BLOB-тип** = \[ BlockBlob \| PageBlob \| аппендблоб\]|
-> |Отправьте файлы на конкретный уровень хранилища (например, на уровень архива).|**--Block-BLOB-уровень** = \[ Нет \| горячий \| стильный \| Архив\]|
 > 
 > Полный список см. в разделе [Параметры](storage-ref-azcopy-copy.md#options).
 
@@ -217,8 +215,8 @@ AzCopy — это служебная программа командной ст
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-or-directory-name><SAS-token>' '<local-directory-path>' --include-pattern <semicolon-separated-file-list-with-wildcard-characters>` |
-| **Пример** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/FileDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'C:\myDirectory'  --include-pattern 'myFile*.txt;*.pdf*'` |
+| **Синтаксис** | `azcopy copy 'https://<storage-account-name>.file.core.windows.net/<file-share-or-directory-name><SAS-token>' '<local-directory-path>' --include-pattern <semicolon-separated-file-list-with-wildcard-characters>` |
+| **Пример** | `azcopy copy 'https://mystorageaccount.file.core.windows.net/myfileshare/myDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'C:\myDirectory'  --include-pattern 'myFile*.txt;*.pdf*'` |
 
 Кроме того, можно исключить файлы с помощью `--exclude-pattern` параметра. Дополнительные сведения см. в статье [azcopy Copy](storage-ref-azcopy-copy.md) Справочник по документам.
 
@@ -236,11 +234,24 @@ AzCopy — это служебная программа командной ст
 
 Подробные справочные сведения см. в документации по [azcopy Copy](storage-ref-azcopy-copy.md) .
 
+#### <a name="download-from-a-share-snapshot"></a>Скачивание из моментального снимка общего ресурса
+
+Вы можете скачать определенную версию файла или каталога, ссылаясь на значение **DateTime** моментального снимка общего ресурса. Дополнительные сведения о моментальных снимках общих ресурсов см. в статье [Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure](/azure/storage/files/storage-snapshots-files). 
+
+|    |     |
+|--------|-----------|
+| **Синтаксис** | `azcopy copy 'https://<storage-account-name>.file.core.windows.net/<file-share-name>/<file-path-or-directory-name><SAS-token>&sharesnapshot=<DateTime-of-snapshot>' '<local-file-or-directory-path>'` |
+| **Пример** (Загрузка файла) | `azcopy copy 'https://mystorageaccount.file.core.windows.net/myfileshare/myTextFile.txt?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z' 'C:\myDirectory\myTextFile.txt'` |
+| **Пример** (Загрузка каталога) | `azcopy copy 'https://mystorageaccount.file.core.windows.net/myfileshare/myFileShareDirectory?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z' 'C:\myDirectory'  --recursive`|
+
+
 ## <a name="copy-files-between-storage-accounts"></a>Копирование файлов между учетными записями хранения
 
 AzCopy можно использовать для копирования файлов в другие учетные записи хранения. Операция копирования является синхронной, поэтому когда команда возвращает результат, это означает, что все файлы скопированы.
 
 AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" [сервер-сервер](/rest/api/storageservices/put-block-from-url) ", поэтому данные копируются непосредственно между серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера. Вы можете увеличить пропускную способность этих операций, задав значение `AZCOPY_CONCURRENCY_VALUE` переменной среды. Дополнительные сведения см. в разделе [Оптимизация пропускной способности](storage-use-azcopy-configure.md#optimize-throughput).
+
+Также можно копировать определенные версии файлов, ссылаясь на значение **DateTime** моментального снимка общего ресурса. Дополнительные сведения о моментальных снимках общих ресурсов см. в статье [Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure](/azure/storage/files/storage-snapshots-files). 
 
 Этот раздел содержит следующие примеры.
 
@@ -257,8 +268,6 @@ AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" 
 > |---|---|
 > |Скопируйте списки управления доступом (ACL) вместе с файлами.|**--Preserve-SMB-разрешения** = \[ true \| false\]|
 > |Скопируйте сведения о свойстве SMB вместе с файлами.|**--Preserve-SMB-info** = \[ true \| false\]|
-> |Копирование файлов в качестве добавочных больших двоичных объектов или страничных BLOB-объектов.|**--BLOB-тип** = \[ BlockBlob \| PageBlob \| аппендблоб\]|
-> |Копирование на конкретный уровень доступа (например, уровень архива).|**--Block-BLOB-уровень** = \[ Нет \| горячий \| стильный \| Архив\]|
 > 
 > Полный список см. в разделе [Параметры](storage-ref-azcopy-copy.md#options).
 
@@ -268,13 +277,16 @@ AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" 
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<file-path><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name>/<file-path><SAS-token>'` |
 | **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D'` |
+| **Пример** (моментальный снимок общего ресурса) | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z' 'https://mydestinationaccount.file.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D'` |
 
 ### <a name="copy-a-directory-to-another-storage-account"></a>Копирование каталога в другую учетную запись хранения
 
 |    |     |
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name>/<directory-path><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
-| **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer/myBlobDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+| **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/myFileShare/myFileDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+| **Пример** (моментальный снимок общего ресурса) | `azcopy copy 'https://mysourceaccount.file.core.windows.net/myFileShare/myFileDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+
 
 ### <a name="copy-a-file-share-to-another-storage-account"></a>Копирование общей папки в другую учетную запись хранения
 
@@ -282,6 +294,8 @@ AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" 
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
 | **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+| **Пример** (моментальный снимок общего ресурса) | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+
 
 ### <a name="copy-all-file-shares-directories-and-files-to-another-storage-account"></a>Копирование всех общих папок, каталогов и файлов в другую учетную запись хранения
 
@@ -289,6 +303,8 @@ AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" 
 |--------|-----------|
 | **Синтаксис** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<SAS-token>' --recursive'` |
 | **Пример** | `azcopy copy 'https://mysourceaccount.file.core.windows.net?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+| **Пример** (моментальный снимок общего ресурса) | `azcopy copy 'https://mysourceaccount.file.core.windows.net?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z' 'https://mydestinationaccount.file.core.windows.net?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
+
 
 ## <a name="synchronize-files"></a>Синхронизировать файлы
 

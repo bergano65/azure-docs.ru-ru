@@ -1,18 +1,18 @@
 ---
 title: Функции шаблонов — развертывание
-description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения сведений о развертывании.
+description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для получения сведений о развертывании.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 9d6a1783bcd6d84c181edae84063ed7c0964c3d8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e63caef669a2c28d29cd0bbd649b0997cea14ee1
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004574"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920506"
 ---
 # <a name="deployment-functions-for-arm-templates"></a>Функции развертывания для шаблонов ARM
 
-Диспетчер ресурсов предоставляет следующие функции для получения значений, связанных с текущим развертыванием шаблона Azure Resource Manager (ARM):
+Диспетчер ресурсов предоставляет следующие функции для получения значений, связанных с текущим развертыванием шаблона Azure Resource Manager (шаблон ARM):
 
 * [развертывания](#deployment)
 * [environment](#environment) (среда)
@@ -104,7 +104,7 @@ ms.locfileid: "96004574"
 }
 ```
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Вы можете использовать deployment() для ссылки на другой шаблон в зависимости от URI родительского шаблона.
 
@@ -303,7 +303,7 @@ output environmentOutput object = environment()
 
 Значение указанного параметра.
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Как правило, параметры используются, чтобы задать значения ресурсов. В следующем примере значению параметра задается имя веб-сайта, переданное во время развертывания.
 
@@ -426,7 +426,7 @@ output crossOutput string = crossParameter
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringOutput | Строка | вариант 1 |
 | intOutput | Int | 1 |
@@ -434,7 +434,7 @@ output crossOutput string = crossParameter
 | arrayOutput | Массив | [1, 2, 3] |
 | crossOutput | Строка | вариант 1 |
 
-Дополнительные сведения об использовании параметров см. [в разделе Параметры в Azure Resource Manager шаблоне](template-parameters.md).
+Дополнительные сведения об использовании параметров см. [в разделе Параметры в шаблонах ARM](template-parameters.md).
 
 ## <a name="variables"></a>variables
 
@@ -444,7 +444,7 @@ output crossOutput string = crossParameter
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание: |
 |:--- |:--- |:--- |:--- |
 | variableName |Да |Строка |Имя переменной, которую необходимо вернуть. |
 
@@ -452,7 +452,7 @@ output crossOutput string = crossParameter
 
 Значение указанной переменной.
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Как правило, переменные используются, чтобы упростить шаблон за счет создания сложных значений (единожды). В примере ниже создается уникальное имя для учетной записи хранения.
 
@@ -564,15 +564,15 @@ output exampleOutput4 object = var4
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | exampleOutput1 | Строка | myVariable |
 | exampleOutput2 | Массив | [1, 2, 3, 4] |
 | exampleOutput3 | Строка | myVariable |
 | exampleOutput4 |  Объект | {"property1": "value1", "property2": "value2"} |
 
-Дополнительные сведения об использовании переменных см. [в разделе переменные в шаблоне Azure Resource Manager](template-variables.md).
+Дополнительные сведения об использовании переменных см. [в разделе переменные в шаблоне ARM](template-variables.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

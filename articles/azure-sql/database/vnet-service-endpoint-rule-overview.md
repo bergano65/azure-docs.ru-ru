@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: c5839589c35ea5a9c52303801a8767fc598434fc
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 96030f0e74c29848f675ae2e0867eefa2e79a8a7
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905882"
+ms.locfileid: "96920414"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -52,8 +52,8 @@ ms.locfileid: "96905882"
 
 Роли безопасности для администрирования конечных точек служб для виртуальной сети разделены. Требуется действие каждой из следующих ролей:
 
-- **администратор сети:** &nbsp; включение конечной точки;
-- **Администратор базы данных:** &nbsp; Обновите список управления доступом (ACL), чтобы добавить указанную подсеть на сервер.
+- **Администратор сети (роль [участника сети](../../role-based-access-control/built-in-roles.md#network-contributor) ):** &nbsp; Включите конечную точку.
+- **Администратор базы данных (роль [участника SQL Server](../../role-based-access-control/built-in-roles.md#sql-server-contributor) ):** &nbsp; Обновите список управления доступом (ACL), чтобы добавить указанную подсеть на сервер.
 
 *Альтернатива Azure RBAC:*
 
@@ -236,7 +236,7 @@ Polybase и инструкция COPY обычно используются дл
 
 - [Virtual Network Rules][rest-api-virtual-network-rules-operations-862r] (Правила виртуальной сети)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходима подсеть, помеченная определенным *именем типа* конечной точки службы для виртуальной сети, относящимся к базе данных SQL Azure.
 

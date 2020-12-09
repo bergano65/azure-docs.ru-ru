@@ -1,18 +1,18 @@
 ---
 title: Функции шаблонов — Дата
-description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с датами.
+description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для работы с датами.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 83e601adb649098f7a4e19cb71170b96a3287d9b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 58d865f109ecca2629b89eeb55e554743824c195
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004591"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920491"
 ---
 # <a name="date-functions-for-arm-templates"></a>Функции даты для шаблонов ARM
 
-Диспетчер ресурсов предоставляет следующие функции для работы с датами в шаблонах Azure Resource Manager (ARM):
+Диспетчер ресурсов предоставляет следующие функции для работы с датами в шаблоне Azure Resource Manager (шаблон ARM):
 
 * [датетимеадд](#datetimeadd)
 * [utcNow](#utcnow)
@@ -31,7 +31,7 @@ ms.locfileid: "96004591"
 |:--- |:--- |:--- |:--- |
 | base | Да | строка | Начальное значение даты и времени для сложения. Используйте [Формат метки времени ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). |
 | длительность | Да | строка | Значение времени, которое необходимо добавить в базу. Это может быть отрицательное значение. Используйте [формат длительности ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations). |
-| format | нет | строка | Формат выходных данных для результата даты и времени. Если не указано, используется формат базового значения. Используйте либо [стандартные строки формата](/dotnet/standard/base-types/standard-date-and-time-format-strings) , либо [строки настраиваемого формата](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| format | Нет | строка | Формат выходных данных для результата даты и времени. Если не указано, используется формат базового значения. Используйте либо [стандартные строки формата](/dotnet/standard/base-types/standard-date-and-time-format-strings) , либо [строки настраиваемого формата](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -182,15 +182,15 @@ resource scheduler 'Microsoft.Automation/automationAccounts/schedules@2015-10-31
 
 `utcNow(format)`
 
-Возвращает текущее значение (UTC) DateTime в указанном формате. Если формат не указан, используется формат ISO 8601 (Ииииммддсхммссз). **Эта функция может использоваться только в значении по умолчанию для параметра.**
+Возвращает текущее значение (UTC) DateTime в указанном формате. Если формат не указан, используется формат ISO 8601 ( `yyyyMMddTHHmmssZ` ). **Эта функция может использоваться только в значении по умолчанию для параметра.**
 
 ### <a name="parameters"></a>Параметры
 
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| format |нет |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Используйте либо [стандартные строки формата](/dotnet/standard/base-types/standard-date-and-time-format-strings) , либо [строки настраиваемого формата](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| format |Нет |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Используйте либо [стандартные строки формата](/dotnet/standard/base-types/standard-date-and-time-format-strings) , либо [строки настраиваемого формата](/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Эту функцию можно использовать только в выражении для значения по умолчанию для параметра. Использование этой функции в любом месте шаблона возвращает ошибку. Функция не разрешена в других частях шаблона, поскольку она возвращает другое значение при каждом вызове. Развертывание одного и того же шаблона с теми же параметрами не будет уверенно давать одинаковые результаты.
 
@@ -324,6 +324,6 @@ output utcShortOutput string = utcShort
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

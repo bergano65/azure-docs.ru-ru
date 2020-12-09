@@ -6,16 +6,16 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/22/2020
+ms.date: 12/09/2020
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.openlocfilehash: 5ce2677911ee9243ad1973a492ee9efe66265e28
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: da38dd99d0f27d83d5810a664d0c05f979f47080
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497543"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920078"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
@@ -39,12 +39,12 @@ ms.locfileid: "96497543"
 
 - Amazon Redshift
 - Amazon S3
-- Azure Cosmos DB (API SQL)
+- Azure Cosmos DB (SQL API)
 - База данных Azure для MySQL
 - Azure Databricks
 - База данных SQL Azure
-- Управляемый экземпляр SQL Azure
-- Azure Synapse Analytics (ранее — Хранилище данных SQL)
+- Управляемый экземпляр SQL Azure
+- Azure Synapse Analytics 
 - MySQL
 - Oracle;
 - SQL Server

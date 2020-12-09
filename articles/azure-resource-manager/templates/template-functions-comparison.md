@@ -1,18 +1,18 @@
 ---
 title: Функции шаблонов — сравнение
-description: Описывает функции, используемые в шаблоне Azure Resource Manager для сравнения значений.
+description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для сравнения значений.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: c5ffcfe7688935da6ea5602cdb2c66a8b86a8d88
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 1b7192db361f510e0246a737de47930534a1cb9d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004608"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920535"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Функции сравнения для шаблонов ARM
 
-Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблонах Azure Resource Manager (ARM).
+Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблоне Azure Resource Manager (шаблон ARM):
 
 * [coalesce](#coalesce)
 * [equals](#equals)
@@ -34,7 +34,7 @@ ms.locfileid: "96004608"
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число, строка, массив или объект |Первое значение, которое проверяется на соответствие значению null. |
-| дополнительные аргументы |нет |целое число, строка, массив или объект |Дополнительные значения, которые проверяются на соответствие значению null. |
+| дополнительные аргументы |Нет |целое число, строка, массив или объект |Дополнительные значения, которые проверяются на соответствие значению null. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -119,7 +119,7 @@ output emptyOutput bool =empty(coalesce(objectToTest.null1, objectToTest.null2))
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | Строка | default |
+| stringOutput | Строка | значение по умолчанию |
 | intOutput | Int | 1 |
 | objectOutput | Объект | {"first": "default"} |
 | arrayOutput | Массив |  [1] |
@@ -142,7 +142,7 @@ output emptyOutput bool =empty(coalesce(objectToTest.null1, objectToTest.null2))
 
 Возвращает результат **True**, если значения равны. В противном случае — **False**.
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Функция equals часто используется с элементом `condition`, чтобы проверить, развернут ли ресурс.
 
@@ -387,7 +387,7 @@ output checkStrings bool = firstString > secondString
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| checkInts | Bool | False |
+| checkInts | Bool | Неверно |
 | checkStrings | Bool | True |
 
 ## <a name="greaterorequals"></a>greaterOrEquals
@@ -468,7 +468,7 @@ output checkStrings bool = firstString >= secondString
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| checkInts | Bool | False |
+| checkInts | Bool | Неверно |
 | checkStrings | Bool | True |
 
 ## <a name="less"></a>less
@@ -550,7 +550,7 @@ output checkStrings bool = firstString < secondString
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
-| checkStrings | Bool | False |
+| checkStrings | Bool | Неверно |
 
 ## <a name="lessorequals"></a>lessOrEquals
 
@@ -631,8 +631,8 @@ output checkStrings bool = firstString <= secondString
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
-| checkStrings | Bool | False |
+| checkStrings | Bool | Неверно |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

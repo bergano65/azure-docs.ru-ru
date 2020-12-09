@@ -4,12 +4,12 @@ description: Используйте Application Insights для монитори
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4c350cbfdf92d19a084940941351cf1f028c93d2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7aea6c03b0ce35fa0e74c39ff5f94f714447ad6f
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186285"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920574"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -40,6 +40,9 @@ ms.locfileid: "96186285"
 ### <a name="set-up-the-nodejs-sdk"></a><a name="sdk"></a> Настройка пакета SDK для Node.js
 
 Включите пакет SDK в приложение, чтобы он мог собирать данные.
+
+> [!IMPORTANT]
+> Новые регионы Azure **должны** использовать строки подключения вместо ключей инструментирования. [Строка подключения](./sdk-connection-string.md?tabs=nodejs) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
 
 1. Скопируйте ключ инструментирования ресурса (также называемый *iKey*) из созданного ресурса. Application Insights использует ikey для сопоставления данных с ресурсом Azure. Прежде чем пакет SDK сможет использовать ikey, необходимо указать ikey в переменной среды или в коде.  
 

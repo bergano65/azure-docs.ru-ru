@@ -1,23 +1,21 @@
 ---
-title: Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
+title: Доступ к ресурсам Kubernetes из портал Azure
 description: Узнайте, как взаимодействовать с ресурсами Kubernetes для управления кластером службы Kubernetes Azure (AKS) из портал Azure.
 services: container-service
 ms.topic: article
-ms.date: 09/21/2020
-ms.openlocfilehash: cfd09e469de68a1eee7440773347e9fe58bf8619
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.date: 12/09/2020
+ms.openlocfilehash: 8e31c41573ced403a034999de71a5595a54281df
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571629"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921587"
 ---
-# <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Доступ к ресурсам Kubernetes из портал Azure (Предварительная версия)
+# <a name="access-kubernetes-resources-from-the-azure-portal"></a>Доступ к ресурсам Kubernetes из портал Azure
 
-Портал Azure включает средство просмотра ресурсов Kubernetes (Предварительная версия) для быстрого доступа к ресурсам Kubernetes в кластере службы Kubernetes Azure (AKS). Просмотр ресурсов Kubernetes из портал Azure сокращает переключение контекста между портал Azure и `kubectl` программой командной строки, что упрощает процесс просмотра и редактирования ресурсов Kubernetes. В настоящее время средство просмотра ресурсов включает несколько типов ресурсов, таких как развертывания, модули Pod и наборы реплик.
+Портал Azure содержит представление ресурсов Kubernetes для быстрого доступа к ресурсам Kubernetes в кластере службы Kubernetes Azure (AKS). Просмотр ресурсов Kubernetes из портал Azure сокращает переключение контекста между портал Azure и `kubectl` программой командной строки, что упрощает процесс просмотра и редактирования ресурсов Kubernetes. В настоящее время средство просмотра ресурсов включает несколько типов ресурсов, таких как развертывания, модули Pod и наборы реплик.
 
 Представление ресурсов Kubernetes из портал Azure заменяет [надстройку панели мониторинга AKS][kubernetes-dashboard], которая является устаревшей.
-
-[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -62,7 +60,7 @@ ms.locfileid: "96571629"
 >[!WARNING]
 > Выполнять прямые изменения рабочей среды через пользовательский интерфейс или CLI не рекомендуется, вы должны использовать [рекомендации по непрерывной интеграции (CI) и непрерывному развертыванию (CD)](kubernetes-action.md). Возможности управления Kubernetes портала Azure и редактор YAML созданы для обучения и создания новых развертываний в параметрах разработки и тестирования.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 В этом разделе рассматриваются распространенные проблемы и действия по устранению неполадок.
 

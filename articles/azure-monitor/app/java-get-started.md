@@ -6,12 +6,12 @@ ms.date: 11/22/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 25d0d409c8112292afd20f052e82494dd8e656ea
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 6bdad71f0b36995abdeb3b1edb87cbef32df8b67
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601311"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96919418"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
@@ -30,6 +30,8 @@ Application Insights — это расширяемая служба аналит
 
 ## <a name="get-an-application-insights-instrumentation-key"></a>Получение ключа инструментирования Application Insights
 
+> [!IMPORTANT]
+> Новые регионы Azure **должны** использовать строки подключения вместо ключей инструментирования. [Строка подключения](./sdk-connection-string.md?tabs=java) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. На портале Azureсоздайте ресурс Application Insights. Задайте тип приложения: веб-приложение Java.
 

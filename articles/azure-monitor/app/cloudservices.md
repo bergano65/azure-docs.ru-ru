@@ -4,12 +4,12 @@ description: Эффективное отслеживание веб-ролей �
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 09/05/2018
-ms.openlocfilehash: 29482403358936b95fc5e814b68238cc8c25f7a8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ccd863db55ef0ff9f4051947321321c8b01430c4
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186360"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920687"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 С помощью [Application Insights][start] можно отслеживать [приложения облачной службы Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из пакета SDK Application Insights с данными [системы диагностики Azure](../platform/diagnostics-extension-overview.md) из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
@@ -110,15 +110,14 @@ ms.locfileid: "96186360"
 
     b. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
-    ![Поиск Application Insights](./media/cloudservices/04-ai-nuget.png)
-
 1. Чтобы настроить пакет SDK для отправки данных в ресурс Application Insights, сделайте следующее:
 
     а. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
  
     ```csharp
-   
-     TelemetryConfiguration.Active.InstrumentationKey = RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
+        TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
+        configuration.InstrumentationKey = RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
+        var telemetryClient = new TelemetryClient(configuration);
     ```
    
     b. Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.

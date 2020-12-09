@@ -8,12 +8,12 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 02d9e65f5422b7b12900d051f01c1d6f55e8685b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 61ff5d05eb74804af69b90d839115a8468619275
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844682"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921721"
 ---
 # <a name="configuring-azure-file-sync-network-endpoints"></a>Настройка сетевых конечных точек для службы "Синхронизация файлов Azure"
 Службы "Файлы Azure" и "Синхронизация файлов Azure" предоставляют два основных типа конечных точек для доступа к общим папкам Azure: 
@@ -34,7 +34,7 @@ ms.locfileid: "94844682"
 
 Дополнительно:
 - Если вы хотите использовать Azure PowerShell, [установите последнюю версию](/powershell/azure/install-az-ps).
-- Если вы хотите использовать Azure CLI, [установите последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Если вы хотите использовать Azure CLI, [установите последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 ## <a name="create-the-private-endpoints"></a>Создание частной конечной точки
 При создании частной конечной точки для ресурса Azure развертываются следующие ресурсы.
@@ -588,7 +588,7 @@ done
 Синхронизация файлов Azure позволяет разрешать доступ к определенным виртуальным сетям только через частные конечные точки; Синхронизация файлов Azure не поддерживает конечные точки служб для разрешения доступа к общедоступной конечной точке только определенным виртуальным сетям. Это означает, что общедоступная конечная точка для службы синхронизации хранилища может быть либо включена, либо отключена.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
-На портале Azure это сделать невозможно. Чтобы получить инструкции о том, как отключить общедоступную конечную точку службы синхронизации хранилища, перейдите на вкладку с инструкциями по Azure PowerShell или Azure CLI. 
+На портале Azure это сделать невозможно. Перейдите на вкладку Azure PowerShell, чтобы получить инструкции по отключению общедоступной конечной точки службы синхронизации хранилища. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Для отключения доступа к общедоступной точке доступа службы синхронизации хранилища мы установим значение `AllowVirtualNetworksOnly` для свойства `incomingTrafficPolicy` службы синхронизации хранилища. Если вы захотите включить доступ к общедоступной конечной точке службы синхронизации хранилища, установите для свойства `incomingTrafficPolicy` значение `AllowAllTraffic`. Не забудьте заменить `<storage-sync-service-resource-group>` и `<storage-sync-service>`.
@@ -603,25 +603,13 @@ $storageSyncService = Get-AzResource `
         -ResourceType "Microsoft.StorageSync/storageSyncServices"
 
 $storageSyncService.Properties.incomingTrafficPolicy = "AllowVirtualNetworksOnly"
-$storageSyncService = $storageSyncService | Set-AzResource -Confirm:$false -Force
+$storageSyncService = $storageSyncService | Set-AzResource -Confirm:$false -Force -UsePatchSemantics
 ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-Для отключения доступа к общедоступной точке доступа службы синхронизации хранилища мы установим значение `AllowVirtualNetworksOnly` для свойства `incomingTrafficPolicy` службы синхронизации хранилища. Если вы захотите включить доступ к общедоступной конечной точке службы синхронизации хранилища, установите для свойства `incomingTrafficPolicy` значение `AllowAllTraffic`. Не забудьте заменить `<storage-sync-service-resource-group>` и `<storage-sync-service>`.
-
-```bash
-storageSyncServiceResourceGroupName="<storage-sync-service-resource-group>"
-storageSyncServiceName="<storage-sync-service>"
-
-az resource update \
-        --resource-group $storageSyncServiceResourceGroupName \
-        --name $storageSyncServiceName \
-        --resource-type "Microsoft.StorageSync/storageSyncServices" \
-        --set "properties.incomingTrafficPolicy=AllowVirtualNetworksOnly" \
-        --output none
-```
+<a name="azure-cli-does-not-support-setting-the-incomingtrafficpolicy-property-on-the-storage-sync-service-please-select-the-azure-powershell-tab-to-get-instructions-on-how-to-disable-the-storage-sync-service-public-endpoint"></a>Azure CLI не поддерживает задание `incomingTrafficPolicy` свойства в службе синхронизации хранилища. Перейдите на вкладку Azure PowerShell, чтобы получить инструкции по отключению общедоступной конечной точки службы синхронизации хранилища.
 ---
 
 ## <a name="see-also"></a>См. также раздел
 - [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
-- [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
+- [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)

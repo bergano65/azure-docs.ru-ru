@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: f09e30d6bf68cfb11d9bf808838f6cc029ed942a
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 0a2490a104d18f77a0ec326933f463eb4ebb4339
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907644"
+ms.locfileid: "96923959"
 ---
 # <a name="download-blobs-from-azure-blob-storage-by-using-azcopy-v10"></a>Скачивание больших двоичных объектов из хранилища BLOB-объектов Azure с помощью AzCopy V10
 
@@ -139,13 +139,18 @@ ms.locfileid: "96907644"
 
 Затем используйте команду [azcopy Copy](storage-ref-azcopy-copy.md) с `--list-of-versions` параметром. Укажите расположение текстового файла, содержащего список версий (например: `D:\\list-of-versions.txt` ).  
 
+#### <a name="download-a-blob-snapshot"></a>Скачивание моментального снимка большого двоичного объекта
+
+[Моментальный снимок BLOB-объекта](/azure/storage/blobs/snapshots-overview.md) можно скачать, ссылаясь на значение **DateTime** моментального снимка большого двоичного объекта. 
+
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>' '<local-directory-path>' --list-of-versions '<list-of-versions-file>'`|
-| **Пример** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt' 'C:\myDirectory\myTextFile.txt' --list-of-versions 'D:\\list-of-versions.txt'` |
-| **Пример** (иерархическое пространство имен) | `azcopy copy 'https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt' 'C:\myDirectory\myTextFile.txt' --list-of-versions 'D:\\list-of-versions.txt'` |
+| **Синтаксис** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>?sharesnapshot=<DateTime-of-snapshot>' '<local-file-path>'` |
+| **Пример** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt?sharesnapshot=2020-09-23T08:21:07.0000000Z' 'C:\myDirectory\myTextFile.txt'` |
+| **Пример** (иерархическое пространство имен) | `azcopy copy 'https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt?sharesnapshot=2020-09-23T08:21:07.0000000Z' 'C:\myDirectory\myTextFile.txt'` |
 
-Имя каждого скачанного файла начинается с идентификатора версии, за которым следует имя большого двоичного объекта. 
+> [!NOTE]
+> Если вы используете маркер SAS для авторизации доступа к данным большого двоичного объекта, добавьте моментальный снимок **DateTime** после маркера SAS. Например, `'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z'`.
 
 ## <a name="download-with-optional-flags"></a>Загрузка с дополнительными флагами
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 2c238bf3911283db5d09fdd5679d784c5e5401f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23a176bfa5e3861dbc4ad5c03ea54fc847d3f56b
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88654809"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922544"
 ---
 # <a name="scalability-and-performance-targets-for-premium-page-blob-storage-accounts"></a>Целевые показатели масштабируемости и производительности для учетных записей хранилища BLOB-объектов класса Premium
 
@@ -43,7 +43,7 @@ ms.locfileid: "88654809"
 
 Если вы не можете выполнить миграцию на управляемые диски, создайте приложение для использования нескольких учетных записей хранения и разбейте данные на эти учетные записи хранения. Например, если необходимо подключить диски объемом 51 ТБ к нескольким виртуальным машинам, распределите их между двумя учетными записями хранения. Максимальный размер, поддерживаемый одной учетной записью хранилища класса Premium, составляет 35 ТБ. Убедитесь, что в одной учетной записи хранения производительности Premium не более 35 ТБ подготовленных дисков.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Целевые показатели масштабируемости и производительности для учетных записей хранения ценовой категории "Стандартный"](../common/scalability-targets-standard-account.md)
 - [Целевые показатели масштабируемости для учетных записей хранения блочных BLOB-объектов класса Premium](../blobs/scalability-targets-premium-block-blobs.md)

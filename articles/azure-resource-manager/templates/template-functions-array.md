@@ -1,18 +1,18 @@
 ---
 title: Функции шаблонов — массивы
-description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с массивами.
+description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для работы с массивами.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 85f910f6143fd16f996a200172d0efd852897d8c
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 40a6815bb10ce9725405d68498b9a554706f3af8
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004625"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920553"
 ---
 # <a name="array-functions-for-arm-templates"></a>Функции массивов для шаблонов ARM
 
-Диспетчер ресурсов предоставляет несколько функций для работы с массивами в шаблоне Azure Resource Manager (ARM).
+Диспетчер ресурсов предоставляет несколько функций для работы с массивами в шаблоне Azure Resource Manager (шаблон ARM):
 
 * [array](#array)
 * [concat](#concat)
@@ -350,11 +350,11 @@ output arrayFalse bool = contains(arrayToTest, 'four')
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | stringTrue | Bool | True |
-| stringFalse | Bool | False |
+| stringFalse | Bool | Неверно |
 | objectTrue | Bool | True |
-| objectFalse | Bool | False |
+| objectFalse | Bool | Неверно |
 | arrayTrue | Bool | True |
-| arrayFalse | Bool | False |
+| arrayFalse | Bool | Неверно |
 
 ## <a name="createarray"></a>createArray
 
@@ -366,7 +366,7 @@ output arrayFalse bool = contains(arrayToTest, 'four')
 
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| args |нет |Строка, целое число, массив или объект |Значения в массиве. |
+| args |Нет |Строка, целое число, массив или объект |Значения в массиве. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -889,7 +889,7 @@ output objectLength int = length(objectToTest)
 
 ---
 
-Дополнительные сведения об использовании этой функции с массивом см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
+Дополнительные сведения об использовании этой функции с массивом см. [в разделе итерация ресурсов в шаблонах ARM](copy-resources.md).
 
 ## <a name="max"></a>max
 
@@ -1379,6 +1379,6 @@ output arrayOutput array = union(firstArray, secondArray)
 | objectOutput | Объект | {"one": "a", "two": "b", "three": "c2", "four": "d", "five": "e"} |
 | arrayOutput | Массив | ["one", "two", "three", "four"] |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

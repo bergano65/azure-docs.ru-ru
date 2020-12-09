@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2019
 ms.author: memildin
-ms.openlocfilehash: 68338341d47b8fa15d0bd88ea23e951210105fc4
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: d76ecc55c2e156199b2db789721946fd1f36de27
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340790"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922916"
 ---
 # <a name="cross-tenant-management-in-security-center"></a>Управление между клиентами в центре безопасности
 
@@ -30,10 +30,8 @@ ms.locfileid: "92340790"
 
 ## <a name="set-up-cross-tenant-management"></a>Настройка управления несколькими клиентами
 
-Настройка управления между клиентами путем делегирования доступа к ресурсам управляемых клиентов в собственном клиенте с помощью [управления делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md).
+Делегированное управление ресурсами Azure — один из ключевых компонентов Azure Lighthouse. Настройте управление между клиентами, делегируя доступ к ресурсам управляемых клиентов в собственный клиент, используя эти инструкции из документации по Azure Лигхсаусе: [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md).
 
-> [!NOTE]
-> Делегированное управление ресурсами Azure — один из ключевых компонентов Azure Lighthouse.
 
 ## <a name="how-does-cross-tenant-management-work-in-security-center"></a>Как работает управление между клиентами в центре безопасности
 
@@ -52,7 +50,7 @@ ms.locfileid: "92340790"
 
 - **Управление расширенными функциями защиты облака и многое другое**: управление различными службами защиты от угроз, такими как [JIT-доступ к виртуальной машине](security-center-just-in-time.md), [Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md), [адаптивное управление приложениями](security-center-adaptive-application.md)и многое другое.
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье объясняется, как работает управление между клиентами в центре безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Усиление безопасности с помощью центра безопасности Azure](security-center-monitoring.md) — Узнайте, как отслеживать работоспособность ресурсов Azure.

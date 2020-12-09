@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf91c9e081bff9860153b342648fedc0990b68b9
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 1d634978333e2b833324228fb0908cfba61a786d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862063"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96919746"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -1016,6 +1016,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
 | microsoft.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| microsoft.directory/users/create | Создание пользователей в Azure Active Directory. |
 | Microsoft. Directory/пользователи/отключить | Отключите учетную запись пользователя в Azure Active Directory. |
 | Microsoft. Directory/пользователи/включить | Включение учетной записи пользователя в Azure Active Directory |
 | microsoft.directory/users/invalidateAllRefreshTokens | Делает недействительными все маркеры обновления пользователя в Azure Active Directory, что требует повторной проверки подлинности пользователей при следующем входе |

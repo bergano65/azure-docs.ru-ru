@@ -1,18 +1,18 @@
 ---
 title: Функции шаблонов — логические
-description: Описываются функции, используемые в шаблоне Azure Resource Manager для определения логических значений.
+description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для определения логических значений.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: b54c104c8af5bb742b2c82d8a075515b8696501b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 27d94f10374daf0b9a351469579a5eb659cf5445
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004557"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920483"
 ---
 # <a name="logical-functions-for-arm-templates"></a>Логические функции для шаблонов ARM
 
-Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблонах Azure Resource Manager (ARM).
+Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблоне Azure Resource Manager (шаблон ARM):
 
 * [and](#and)
 * [bool](#bool)
@@ -84,9 +84,9 @@ output notExampleOutput bool = !(bool('true'))
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| andExampleOutput | Bool | False |
+| andExampleOutput | Bool | Неверно |
 | orExampleOutput | Bool | True |
-| notExampleOutput | Bool | False |
+| notExampleOutput | Bool | Неверно |
 
 ## <a name="bool"></a>bool
 
@@ -104,7 +104,7 @@ output notExampleOutput bool = !(bool('true'))
 
 Логическое выражение преобразованного значения.
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Для получения логических значений можно также использовать значения [true ()](#true) и [false ()](#false) .
 
@@ -155,9 +155,9 @@ output falseInt bool = bool(0)
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | trueString | Bool | True |
-| falseString | Bool | False |
+| falseString | Bool | Неверно |
 | trueInt | Bool | True |
-| falseInt | Bool | False |
+| falseInt | Bool | Неверно |
 
 ## <a name="false"></a>false
 
@@ -205,7 +205,7 @@ output falseOutput bool = false
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| фалсеаутпут | Bool | False |
+| фалсеаутпут | Bool | Неверно |
 
 ## <a name="if"></a>if
 
@@ -225,9 +225,9 @@ output falseOutput bool = false
 
 Возвращает второй параметр, если первый параметр имеет значение **True** (Истина). В противном случае возвращает третий параметр.
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
-Если условие **истинно**, вычисляется только значение true. Если условие имеет значение **false**, вычисляется только значение false. С помощью функции **If** можно включить выражения, которые являются только условно допустимыми. Например, можно сослаться на ресурс, который существует по одному условию, но не под другим условием. Пример условной оценки выражений показан в следующем разделе.
+Если условие **истинно**, вычисляется только значение true. Если условие имеет значение **false**, вычисляется только значение false. С помощью `if` функции можно включать выражения, которые являются только условно допустимыми. Например, можно сослаться на ресурс, который существует по одному условию, но не под другим условием. Пример условной оценки выражений показан в следующем разделе.
 
 ### <a name="examples"></a>Примеры
 
@@ -391,9 +391,9 @@ output notExampleOutput bool = !(bool('true'))
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| andExampleOutput | Bool | False |
+| andExampleOutput | Bool | Неверно |
 | orExampleOutput | Bool | True |
-| notExampleOutput | Bool | False |
+| notExampleOutput | Bool | Неверно |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/not-equals.json) используется **not** и [equals](template-functions-comparison.md#equals).
 
@@ -488,9 +488,9 @@ output notExampleOutput bool = !(bool('true'))
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| andExampleOutput | Bool | False |
+| andExampleOutput | Bool | Неверно |
 | orExampleOutput | Bool | True |
-| notExampleOutput | Bool | False |
+| notExampleOutput | Bool | Неверно |
 
 ## <a name="true"></a>true
 
@@ -540,6 +540,6 @@ output trueOutput bool = true
 | ---- | ---- | ----- |
 | труеаутпут | Bool | True |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

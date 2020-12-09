@@ -1,18 +1,18 @@
 ---
 title: Функции шаблонов — числовые
-description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с числами.
+description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для работы с числами.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 26f4b846c67ee7b926ea984ceefd84bf9ea56952
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 1484826b2377fe2adb2ac6ae2ab3ee6243b26c2c
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004540"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920469"
 ---
 # <a name="numeric-functions-for-arm-templates"></a>Числовые функции для шаблонов ARM
 
-Диспетчер ресурсов предоставляет следующие функции для работы с целыми числами в шаблоне Azure Resource Manager (ARM):
+Диспетчер ресурсов предоставляет следующие функции для работы с целыми числами в шаблоне Azure Resource Manager (шаблон ARM):
 
 * [add](#add)
 * [copyIndex](#copyindex)
@@ -108,10 +108,10 @@ output addResult int = first + second
 
 | Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| loopName | нет | строка | Имя цикла для получения итерации. |
-| offset |нет |INT |Число, добавляемое к отсчитываемому от нуля значению итерации. |
+| loopName | Нет | строка | Имя цикла для получения итерации. |
+| offset |Нет |INT |Число, добавляемое к отсчитываемому от нуля значению итерации. |
 
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Remarks
 
 Эта функция всегда используется с объектом **copy**. Если значение **offset** не указано, возвращается текущее значение итерации. Значение итерации начинается с нуля.
 
@@ -698,7 +698,7 @@ output subResult int = first - second
 | ---- | ---- | ----- |
 | subResult | Int | 4 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
-* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
+* Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Сведения о итерации указанного числа раз при создании типа ресурса см. в разделе [Итерация ресурсов в шаблонах ARM](copy-resources.md).

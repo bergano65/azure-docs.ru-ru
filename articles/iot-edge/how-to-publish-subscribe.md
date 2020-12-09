@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: acde6f401404596212b713f248bb6d11c25b4671
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 005830575ba7f45d30fed71a73e7a419e4d98220
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461416"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922585"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Публикация и подписка с Azure IoT Edge
 
@@ -31,7 +31,7 @@ ms.locfileid: "96461416"
 - **Центр Интернета вещей** с номером SKU: F1, S1, S2 или S3.
 - Наличие **IOT Edge устройства с версией 1,2 или более поздней**. Так как IoT Edge MQTT Broker в настоящее время находится в общедоступной предварительной версии, задайте для следующих переменных среды значение true в контейнере edgeHub, чтобы включить брокер MQTT:
 
-   | Название | Значение |
+   | Имя | Значение |
    | - | - |
    | `experimentalFeatures__enabled` | `true` |
    | `experimentalFeatures__mqttBrokerEnabled` | `true` |
@@ -177,7 +177,6 @@ ms.locfileid: "96461416"
 
 - Устройствам или модулям Azure IoT требуется явное правило авторизации для подключения к IoT Edge Broker концентратора MQTT. Ниже приведена Политика авторизации подключений по умолчанию.
 - Устройства или модули Azure IoT по умолчанию могут получать доступ к своим темам центра Интернета вещей без явного правила авторизации. Однако в этом случае авторизация обусловлена связями "родители-потомки", и эти связи должны быть установлены. IoT Edge модули автоматически устанавливаются как дочерние элементы своего IoT Edge устройства, но необходимо явно задать их как дочерние элементы шлюза IoT Edge.
-- Устройства или модули Интернета вещей Azure могут получать доступ к темам, включая разделы центра Интернета вещей, других устройств или модулей, предоставляя соответствующие явные правила авторизации.
 
 Ниже приведена Политика авторизации по умолчанию, которую можно использовать, чтобы разрешить всем устройствам или модулям Azure IoT **подключаться** к брокеру:
 
@@ -275,7 +274,7 @@ ms.locfileid: "96461416"
                },
                {
                   "identities": [
-                     "sub_client"
+                     "<iot_hub_name>.azure-devices.net/sub_client"
                   ],
                   "allow":[
                      {
@@ -284,13 +283,13 @@ ms.locfileid: "96461416"
                         ],
                         "resources":[
                            "test_topic"
-                        ],
+                        ]
                      }
                   ],
                },
                {
                   "identities": [
-                     "pub_client"
+                     "<iot_hub_name>.azure-devices.net/pub_client"
                   ],
                   "allow":[
                      {
@@ -299,9 +298,9 @@ ms.locfileid: "96461416"
                         ],
                         "resources":[
                            "test_topic"
-                        ],
+                        ]
                      }
-                  ],
+                  ]
                }
             ]
          }

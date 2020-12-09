@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 ms.custom: devx-track-csharp
 ms.reviewer: lmolkova
-ms.openlocfilehash: 98f1ea8a4994515b437841174ae95563ea53ed88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa39a1eca04621fc4db75f755402d3679403e814
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88933347"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920605"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
 
@@ -22,6 +22,9 @@ ms.locfileid: "88933347"
 > Для любых консольных приложений *настоятельно рекомендуется* использовать пакет [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) и [связанные с ним](./worker-service.md) инструкции. Этот пакет предназначен [`NetStandard2.0`](/dotnet/standard/net-standard) для использования и поэтому может использоваться в .NET Core 2,1 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
 
 ## <a name="getting-started"></a>Начало работы
+
+> [!IMPORTANT]
+> Новые регионы Azure **должны** использовать строки подключения вместо ключей инструментирования. [Строка подключения](./sdk-connection-string.md?tabs=net) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
 
 * На [портале Azure](https://portal.azure.com)[создайте ресурс Application Insights](./create-new-resource.md). Для параметра типа приложения выберите приложение **Общий**.
 * Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке **Основные компоненты** нового ресурса, который вы создали.

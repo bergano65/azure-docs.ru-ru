@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 09/18/2020
-ms.openlocfilehash: a807c76a08bf075973cd0f358c67b61b10b40ba0
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 9003366ec0d64057ca7426d5b6b99986bc21fc9d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554523"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920284"
 ---
 # <a name="register-and-scan-an-on-premises-sql-server"></a>Регистрация и сканирование локального сервера SQL Server
 
@@ -31,6 +31,10 @@ ms.locfileid: "96554523"
 - для каждой версии SQL Server 2019 назад к SQL Server 2000
 
 - Метод проверки подлинности: проверка подлинности SQL
+
+### <a name="known-limitations"></a>Известные ограничения
+
+Azure зрения не поддерживает сканирование [представлений](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15) в SQL Server. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -109,7 +113,7 @@ ms.locfileid: "96554523"
 
 [!INCLUDE [create and manage scans](includes/manage-scans.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор каталога данных Azure зрения](how-to-browse-catalog.md)
 - [Поиск в каталоге данных Azure зрения](how-to-search-catalog.md)

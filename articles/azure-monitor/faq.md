@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: b770e4488b6edb1c2d3749066315b552c0b5b40a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7336078d1f04b9dcb6c2f229654f1c36d9b3114b
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186173"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96919970"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -268,6 +268,10 @@ WireData
 
 ### <a name="how-can-i-change-which-azure-resource-my-project-sends-data-to"></a><a name="update"></a>Как изменить ресурс Azure, в который проект отправляет данные?
 В обозревателе решений щелкните правой кнопкой мыши `ApplicationInsights.config` и выберите **Обновить Application Insights**. Данные можно отправлять на существующий или новый ресурс в Azure. Мастер обновления изменяет ключ инструментирования в файле ApplicationInsights.config, который определяет, куда сервер SDK должен отправлять ваши данные. Если отменить выбор параметра "Обновить все", это также приведет к изменению ключа, отображаемого на ваших веб-страницах.
+
+### <a name="do-new-azure-regions-require-the-use-of-connection-strings"></a>Требуется ли использовать строки подключения для новых регионов Azure?
+
+Новые регионы Azure **должны** использовать строки подключения вместо ключей инструментирования. [Строка подключения](./app/sdk-connection-string.md) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
 
 ### <a name="can-i-use-providersmicrosoftinsights-componentsapiversions0-in-my-azure-resource-manager-deployments"></a>Можно ли использовать `providers('Microsoft.Insights', 'components').apiVersions[0]` в развертываниях Azure Resource Manager?
 

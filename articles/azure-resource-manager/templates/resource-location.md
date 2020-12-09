@@ -1,19 +1,19 @@
 ---
 title: Расположение ресурса шаблона
-description: Описывает, как задать расположение ресурса в шаблоне Azure Resource Manager.
+description: Описывает, как задать расположение ресурса в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.custom: ''
-ms.openlocfilehash: e1310c81d7b726e9be2fe9f38a0bb8d701035ba4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84a818109e6681b8d0e18de4d2d7969310582818
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613702"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922400"
 ---
 # <a name="set-resource-location-in-arm-template"></a>Задание расположения ресурса в шаблоне ARM
 
-При развертывании шаблона Azure Resource Manager (ARM) необходимо указать расположение для каждого ресурса. Расположение не должно совпадать с расположением группы ресурсов.
+При развертывании шаблона Azure Resource Manager (шаблон ARM) необходимо указать расположение для каждого ресурса. Расположение не должно совпадать с расположением группы ресурсов.
 
 ## <a name="get-available-locations"></a>Получить доступные расположения
 
@@ -94,7 +94,7 @@ az provider show \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Полный список функций шаблонов см. в статье [Функции шаблонов диспетчера ресурсов Azure](template-functions.md).
+* Полный список функций шаблонов см. в разделе [функции шаблонов ARM](template-functions.md).
 * Дополнительные сведения о файлах шаблонов см. [в разделе сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
