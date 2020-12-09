@@ -12,14 +12,14 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15debb69172dba00163950fdd301826c903e5307
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: b9bc7d94cff46b54b81615cf064ed63927b3ec60
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548348"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929299"
 ---
-# <a name="email-one-time-passcode-authentication"></a>Проверка подлинности по одноразовому секретному коде
+# <a name="email-one-time-passcode-authentication-preview"></a>Проверка подлинности по одноразовому секретному коде (Предварительная версия)
 
 В этой статье описывается, как включить одноразовую проверку подлинности по электронной почте для гостевых пользователей B2B. Функция одноразового секретного кода для электронной почты проверяет подлинность гостевых пользователей B2B, когда они не могут пройти проверку подлинности с помощью других средств, таких как Azure AD, учетная запись Майкрософт (MSA) или Google Federation. Благодаря проверке подлинности на основе одноразового секретного кода больше не нужно создавать учетную запись Майкрософт. Если гостевой пользователь активирует приглашение или обращается к общему ресурсу, он может запросить временный код, который будет отправлен на адрес электронной почты этого пользователя. Этот код нужно ввести, чтобы войти в систему.
 

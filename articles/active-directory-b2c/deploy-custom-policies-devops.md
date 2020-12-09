@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2652bd8ed33eb68e228f059fba9daa3c6e7c22da
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 13f5f8da0bd58cef0974e8ea8f5f3c5172daa0ba
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170163"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928738"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Развертывание настраиваемых политик с помощью Azure Pipelines
 
@@ -46,7 +46,7 @@ ms.locfileid: "96170163"
 
 Как упоминалось в [предварительных требованиях](#prerequisites), требуется регистрация приложения, выполняемая сценариями PowerShell, с помощью Azure pipelines--может использоваться для доступа к ресурсам в клиенте.
 
-Если у вас уже есть регистрация приложения, которая используется для задач автоматизации, убедитесь, что ей было предоставлено разрешение политики политики **Microsoft Graph**  >  **Policy**  >  **. ReadWrite. TrustFramework** в **разрешениях API** регистрации приложения.
+Если у вас уже есть регистрация приложения, которая используется для задач автоматизации, убедитесь, что ей было предоставлено разрешение политики политики **Microsoft Graph**  >    >  **. ReadWrite. TrustFramework** в **разрешениях API** регистрации приложения.
 
 Инструкции по регистрации приложения управления см. в статье [управление Azure AD B2C с помощью Microsoft Graph](microsoft-graph-get-started.md).
 
@@ -122,7 +122,7 @@ ms.locfileid: "96170163"
     1. Выберите **ветвь по умолчанию**. Если вы создали новый репозиторий в предыдущем разделе, ветвь по умолчанию — *master*.
     1. Оставьте параметр **версии по умолчанию** *Последняя из ветви по умолчанию*.
     1. Введите **Псевдоним источника** для репозитория. Например, *полицирепо*. Не включайте пробелы в имя псевдонима.
-1. Нажмите **Добавить**
+1. Выберите **Добавить**.
 1. Переименуйте конвейер, чтобы он отражал свое намерение. Например, *разверните пользовательский конвейер политики*.
 1. Нажмите кнопку **сохранить** , чтобы сохранить конфигурацию конвейера.
 
@@ -212,9 +212,9 @@ PublicPolicyUri="http://contoso.onmicrosoft.com/B2C_1A_TrustFrameworkBase">
 См. также:
 
 * [Вызовы между службами с использованием учетных данных клиента](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md)
-* [Azure DevOps Services](/azure/devops/user-guide/?view=azure-devops)
+* [Azure DevOps Services](/azure/devops/user-guide/)
 
 <!-- LINKS - External -->
-[devops]: /azure/devops/?view=azure-devops
-[devops-create-project]:  /azure/devops/organizations/projects/create-project?view=azure-devops
+[devops]: /azure/devops/
+[devops-create-project]:  /azure/devops/organizations/projects/create-project
 [devops-pipelines]: /azure/devops/pipelines

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f7a4d0852edded516b7fbe42f15abfe160e44cd3
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0a8e08d0045d0520241341cc08fb800468ed6897
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952800"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928619"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Общие сведения об учетных записях пользователей в Azure Active Directory B2C
 
@@ -50,27 +50,27 @@ ms.locfileid: "94952800"
 Для создания новой рабочей учетной записи перейдите по следующим ссылкам:
 
 - [Портал Azure](../active-directory/fundamentals/add-users-azure-active-directory.md)
-- [Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-post-users)
 
 ### <a name="update-a-user-profile"></a>Обновление профиля пользователя
 
 Чтобы обновить профиль пользователя, перейдите по следующим ссылкам:
 
 - [Портал Azure](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
-- [Microsoft Graph](/graph/api/user-update?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-update)
 
 ### <a name="reset-a-password-for-a-user"></a>Сброс пароля для пользователя
 
 Чтобы сбросить пароль пользователя, перейдите по следующим ссылкам:
 
 - [Портал Azure](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
-- [Microsoft Graph](/graph/api/user-update?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-update)
 
 ## <a name="guest-user"></a>Гостевой пользователь
 
 Внешних пользователей можно приглашать в свой клиент в качестве гостевого пользователя. Типичный сценарий приглашения гостевого пользователя в клиент Azure AD B2C — для совместного выполнения обязанностей администрирования. Пример использования гостевой учетной записи см. в статье [Свойства пользователя службы совместной работы Azure Active Directory B2B](../active-directory/external-identities/user-properties.md).
 
-Приглашая гостевого пользователя в клиент, необходимо предоставить адрес электронной почты получателя и сообщение, описывающее приглашение. Ссылка для приглашения перенаправляет пользователя на страницу предоставления согласия, где он может нажать кнопку **Начать работу** и принять разрешения. Если папка "Входящие" не подключена к адресу электронной почты, пользователь может перейти на страницу предоставления согласия, открыв страницу Майкрософт, используя учетные данные из приглашения. Затем пользователь вынужден активировать приглашение так же, как щелкнуть ссылку в сообщении электронной почты. Например: `https://myapps.microsoft.com/B2CTENANTNAME`.
+Приглашая гостевого пользователя в клиент, необходимо предоставить адрес электронной почты получателя и сообщение, описывающее приглашение. Ссылка для приглашения перенаправляет пользователя на страницу предоставления согласия, где он может нажать кнопку **Начать работу** и принять разрешения. Если папка "Входящие" не подключена к адресу электронной почты, пользователь может перейти на страницу предоставления согласия, открыв страницу Майкрософт, используя учетные данные из приглашения. Затем пользователь вынужден активировать приглашение так же, как щелкнуть ссылку в сообщении электронной почты. Например, `https://myapps.microsoft.com/B2CTENANTNAME`.
 
 [API Microsoft Graph](/graph/api/invitation-post?view=graph-rest-beta) также можно использовать, чтобы приглашать гостевых пользователей.
 

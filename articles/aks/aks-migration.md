@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 9371feb527bbb2d94d43072bb8a44a6705b45055
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e73ca9e485e6926c30a73ba56b24bcd4dc9a836
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87280228"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929741"
 ---
 # <a name="migrate-to-azure-kubernetes-service-aks"></a>Миграция в службу Kubernetes Azure (AKS)
 
@@ -132,7 +132,7 @@ az aks create \
 * Наведите динамический трафик в новый кластер AKS.
 * Отключите старый кластер.
 
-Если вы хотите начать с пустой общей папки и создать копию исходных данных, можно использовать [`az storage file copy`](/cli/azure/storage/file/copy?view=azure-cli-latest) команды для переноса данных.
+Если вы хотите начать с пустой общей папки и создать копию исходных данных, можно использовать [`az storage file copy`](/cli/azure/storage/file/copy) команды для переноса данных.
 
 
 #### <a name="migrating-persistent-volumes"></a>Перенос постоянных томов
@@ -159,7 +159,7 @@ az aks create \
 
 ### <a name="deployment-of-your-cluster-configuration"></a>Развертывание конфигурации кластера
 
-Мы рекомендуем использовать существующий конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) для развертывания известной работоспособной конфигурации в AKS. Azure Pipelines можно использовать для [создания и развертывания приложений в AKS](/azure/devops/pipelines/ecosystems/kubernetes/aks-template?view=azure-devops). Клонировать существующие задачи развертывания и убедиться, что они `kubeconfig` указывают на новый кластер AKS.
+Мы рекомендуем использовать существующий конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) для развертывания известной работоспособной конфигурации в AKS. Azure Pipelines можно использовать для [создания и развертывания приложений в AKS](/azure/devops/pipelines/ecosystems/kubernetes/aks-template). Клонировать существующие задачи развертывания и убедиться, что они `kubeconfig` указывают на новый кластер AKS.
 
 Если это невозможно, экспортируйте определения ресурсов из существующего кластера Kubernetes и примените их к AKS. Для экспорта объектов можно использовать `kubectl`.
 

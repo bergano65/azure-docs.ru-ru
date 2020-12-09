@@ -29,10 +29,6 @@
           href: learn/quick-collect-windows-computer.md
     - name: Мониторинг приложений
       items:
-        - name: Приложение .NET
-          href: learn/quick-monitor-portal.md
-        - name: Приложение .NET Core
-          href: learn/dotnetcore-quick-start.md
         - name: Приложение Node.js
           href: learn/nodejs-quick-start.md
         - name: Мобильное приложение
@@ -680,8 +676,10 @@
                       href: app/java-standalone-telemetry-processors.md
                     - name: Настройка аргументов виртуальной машины Java
                       href: app/java-standalone-arguments.md
-                    - name: "Обновление с версии\_2.x"
+                    - name: "Обновление пакета SDK версии\_2.x"
                       href: app/java-standalone-upgrade-from-2x.md
+                    - name: Устранение неполадок
+                      href: app/java-standalone-troubleshoot.md
             - name: Локальные серверы
               items:
                 - name: ASP.NET
@@ -1014,6 +1012,8 @@
           href: insights/container-insights-deployment-hpa-metrics.md
         - name: Мониторинг постоянных томов
           href: insights/container-insights-persistent-volumes.md
+        - name: Вкладка "Отчеты"
+          href: insights/container-insights-reports.md
         - name: Просмотр динамических данных
           items:
             - name: Общие сведения о динамических данных (предварительная версия)

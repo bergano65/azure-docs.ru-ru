@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: f3a8881b9fe44727caf07b3cc0d5ee19f0444e98
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 66ec0d4b09dc983eb898d63d45b3dd7cab291c4c
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953667"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928670"
 ---
 # <a name="tutorial-for-configuring-jumio-with-azure-active-directory-b2c"></a>Руководство по настройке Жумио с помощью Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "94953667"
 
 Чтобы приступить к работе, вам потребуется:
 
-- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 - [Azure AD B2C клиент](./tutorial-create-tenant.md) , связанный с подпиской Azure.
 
@@ -65,7 +65,7 @@ ms.locfileid: "94953667"
 
 ### <a name="deploy-the-api"></a>Развертывание API
 
-Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Jumio/API/Jumio.Api) в службе Azure. Вы можете опубликовать код из Visual Studio, следуя [этим инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/Jumio/API/Jumio.Api) в службе Azure. Вы можете опубликовать код из Visual Studio, следуя [этим инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure).
 
 >[!NOTE]
 >Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
@@ -91,7 +91,7 @@ ms.locfileid: "94953667"
 
 Создайте случайную строку длиной более 64 символов, которая содержит только буквы и цифры.
 
-Например: ``C9CB44D98642A7062A0D39B94B6CDC1E54276F2E7CFFBF44288CEE73C08A8A65``
+Пример: ``C9CB44D98642A7062A0D39B94B6CDC1E54276F2E7CFFBF44288CEE73C08A8A65``
 
 Для создания строки используйте следующий скрипт PowerShell:
 
@@ -154,7 +154,7 @@ ms.locfileid: "94953667"
 
 3. Выберите **выполнить поток пользователя** , а затем:
 
-   a. Для **приложения** выберите зарегистрированное приложение (пример — JWT).
+   а. Для **приложения** выберите зарегистрированное приложение (пример — JWT).
 
    b. В поле **URL-адрес ответа** выберите **URL-адрес перенаправления**.
 
@@ -164,7 +164,7 @@ ms.locfileid: "94953667"
 
 5. Служба Жумио будет вызываться во время последовательности после создания пользовательского атрибута. Если поток неполон, убедитесь, что пользователь не сохранен в каталоге.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

@@ -3,17 +3,17 @@ title: Использовать конфигурацию для отдельны
 titleSuffix: Azure App Configuration
 description: Используйте метки для предоставления значений конфигурации для отдельных сред.
 ms.service: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 3/12/2020
-ms.author: lcozzens
-ms.openlocfilehash: 689fdbd444aa4b20f5bef225faa259788c47cf9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: alkemper
+ms.openlocfilehash: 84286df063994f3def15079cb9b190550d5bd977
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88206672"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929622"
 ---
 # <a name="use-labels-to-enable-configurations-for-different-environments"></a>Использование меток для включения конфигураций для различных сред
 
@@ -30,7 +30,7 @@ ms.locfileid: "88206672"
 > [!div class="mx-imgBorder"]
 > ![Добавить пункт меню "значение"](media/labels-add-value.png)
 
-На экране **Добавить значение** введите **красный** и **Value** **метку** **разработки**. Оставьте поле **тип содержимого** пустым. Нажмите кнопку **Применить**.
+На экране **Добавить значение** введите **красный** и  **метку** **разработки**. Оставьте поле **тип содержимого** пустым. Нажмите кнопку **Применить**.
 
 ## <a name="load-configuration-values-with-a-specified-label"></a>Загрузить значения конфигурации с указанной меткой
 
@@ -85,7 +85,7 @@ dotnet run
 
 ![Веб-приложение, выполняемое с конфигурацией разработки](media/labels-website-dev.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Конфигурация в .NET Core](/aspnet/core/fundamentals/configuration/)

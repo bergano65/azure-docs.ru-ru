@@ -1,18 +1,18 @@
 ---
 title: Общие сведения об управлении функциями с помощью конфигурации приложений Azure
 description: Включение и отключение функций с помощью конфигурации приложения Azure
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.custom: devx-track-dotnet
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: b77f0063b37adbfaecaff68387e858d0077561b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cfd676092bcaede58909a3ec1eefeabb4c80f86b
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212650"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930234"
 ---
 # <a name="feature-management-overview"></a>Общие сведения об управлении функциями
 
@@ -81,7 +81,7 @@ if (featureFlag) {
 
 В руководстве по [использованию флагов функций в приложении ASP.NET Core](./use-feature-flags-dotnet-core.md) показано, как поставщик Конфигурации приложений для .NET Core и библиотеки управления функциями используются для реализации флагов функций в веб-приложении ASP.NET.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по добавлению флагов функций в веб-приложение ASP.NET Core](./quickstart-feature-flag-aspnet-core.md)  

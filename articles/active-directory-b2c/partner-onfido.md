@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/03/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 48fc8533ee1fd206e69e16d4c03e4b4acf047135
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 46c6eac80ddbff73d99e05c070e66aa1700da174
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953698"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928636"
 ---
 # <a name="tutorial-for-configuring-onfido-with-azure-active-directory-b2c"></a>Руководство по настройке Онфидо с помощью Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "94953698"
 
 Чтобы приступить к работе, вам потребуется:
 
-- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 - [Клиент Azure AD B2C](./tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
@@ -74,7 +74,7 @@ ms.locfileid: "94953698"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-- Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/API/Onfido.Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+- Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/OnFido-Combined/API/Onfido.Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure).
 - Настройка CORS, добавление **разрешенного источника** как HTTPS://{your_tenant_name}. b2clogin. com
 
 >[!NOTE]
@@ -98,7 +98,7 @@ ms.locfileid: "94953698"
 
 3. Разрешите доступ CORS к контейнеру хранилища, который вы создали, выполнив следующие инструкции:
 
-   a. Выберите **Параметры**  > **разрешенный источник**, введите `https://{your_tenant_name}.b2clogin.com` . Замените имя клиента на имя клиента Azure AD B2C. Например, https://fabrikam.b2clogin.com . При вводе имени клиента используйте все строчные буквы.
+   а. Выберите **Параметры**  > **разрешенный источник**, введите `https://{your_tenant_name}.b2clogin.com` . Замените имя клиента на имя клиента Azure AD B2C. Например, https://fabrikam.b2clogin.com . При вводе имени клиента используйте все строчные буквы.
 
    b. Для **разрешенных методов** выберите `GET` и `PUT` .
 
@@ -155,7 +155,7 @@ ms.locfileid: "94953698"
 
 3. Выберите **запустить поток пользователя** и выберите параметры:
 
-   a. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
+   а. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
 
    b. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
 
@@ -165,7 +165,7 @@ ms.locfileid: "94953698"
 
 5. Служба онфидо будет вызываться во время потока, после создания пользовательского атрибута. Если поток неполон, убедитесь, что пользователь не сохранен в каталоге.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

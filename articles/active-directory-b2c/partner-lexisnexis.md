@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 9bec7ffe28fbcdafd365f9867ebecaee5d2647e5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 4befcaf6b8c6b6bc4fddacb179883551609f7e19
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953697"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928653"
 ---
 # <a name="tutorial-for-configuring-lexisnexis-with-azure-active-directory-b2c"></a>Руководство по настройке Лексиснексис с помощью Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "94953697"
 
 Эта интеграция выполняет профилирование на основе нескольких частей сведений о пользователях, которые предоставляются пользователем во время процесса регистрации. Среатметрикс определяет, должен ли пользователь продолжать входить в систему или нет. В анализе рисков Среатметрикс рассматриваются следующие атрибуты:
 
-- Электронная почта
+- Адрес электронной почты
 - номер телефона;
 - Сведения о профилировании, собранные с компьютера пользователя
 
@@ -31,7 +31,7 @@ ms.locfileid: "94953697"
 
 Чтобы приступить к работе, вам потребуется:
 
-- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 - [Клиент Azure AD B2C](./tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
@@ -73,7 +73,7 @@ ms.locfileid: "94953697"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure).
 
 >[!NOTE]
 >Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
@@ -135,7 +135,7 @@ ms.locfileid: "94953697"
 
 3. Выберите **запустить поток пользователя** и выберите параметры:
 
-   a. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
+   а. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
 
    b. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
 
@@ -149,7 +149,7 @@ ms.locfileid: "94953697"
 
 7. После ввода **"продолжить"** появится окно головоломки среатметрикс.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

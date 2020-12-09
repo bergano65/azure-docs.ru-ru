@@ -6,23 +6,23 @@ ms.topic: article
 ms.date: 08/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: f631f8ee022f501cb30af4aae5cf48294b9ca3c2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: d7e312f049acc0b74aa0a253864bfce6100044bd
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93125841"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929146"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 
-Графические процессоры (GPU) обычно используются для ресурсоемких рабочих нагрузок, например графической обработки и визуализаций. AKS поддерживает создание пулов узлов с поддержкой GPU для выполнения этих ресурсоемких рабочих нагрузок в Kubernetes. Дополнительные сведения о доступных виртуальных машинах с поддержкой GPU см. в разделе [Размеры виртуальных машин, оптимизированных для GPU][gpu-skus]. Для узлов AKS мы рекомендуем использовать как минимум размер *Standard_NC6* .
+Графические процессоры (GPU) обычно используются для ресурсоемких рабочих нагрузок, например графической обработки и визуализаций. AKS поддерживает создание пулов узлов с поддержкой GPU для выполнения этих ресурсоемких рабочих нагрузок в Kubernetes. Дополнительные сведения о доступных виртуальных машинах с поддержкой GPU см. в разделе [Размеры виртуальных машин, оптимизированных для GPU][gpu-skus]. Для узлов AKS мы рекомендуем использовать как минимум размер *Standard_NC6*.
 
 > [!NOTE]
 > Виртуальные машины с поддержкой GPU содержат специализированное оборудование, на которое предусмотрена более высокая цена и которое зависит от доступности в регионе. Дополнительные сведения можно получить с помощью [калькулятора цен][azure-pricing] и данных о [доступности в регионах][azure-availability].
 
 В настоящее время использование пулов узлов с поддержкой GPU доступно только для пулов узлов Linux.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS с узлами, поддерживающими процессоры GPU. Кластер AKS должен работать на платформе Kubernetes 1.10 или более поздней версии. Если вам нужен кластер AKS, соответствующий этим требованиям, обратитесь к первой части этой статьи, чтобы [создать кластер AKS](#create-an-aks-cluster).
 
@@ -32,7 +32,7 @@ ms.locfileid: "93125841"
 
 Если вам нужен кластер AKS, соответствующий минимальным требованиям (узел с поддержкой GPU и Kubernetes 1.10 или более поздней версии), выполните приведенные ниже действия. Если у вас уже есть кластер AKS, соответствующий этим требованиям, [перейдите к следующему разделу](#confirm-that-gpus-are-schedulable).
 
-Сначала создайте группу ресурсов для кластера с помощью команды [AZ Group Create][az-group-create] . В следующем примере создается группа ресурсов *myResourceGroup* в регионе *eastus* .
+Сначала создайте группу ресурсов для кластера с помощью команды [AZ Group Create][az-group-create] . В следующем примере создается группа ресурсов *myResourceGroup* в регионе *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
@@ -58,7 +58,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
 Прежде чем можно будет использовать GPU на узлах, необходимо развернуть управляющий набор для подключаемого модуля устройства NVIDIA. Этот DaemonSet запускает pod на каждом узле, чтобы предоставить необходимые драйверы для процессоров GPU.
 
-Сначала с помощью команды [kubectl create namespace][kubectl-create] создайте пространство имен, например *gpu-resources* .
+Сначала с помощью команды [kubectl create namespace][kubectl-create] создайте пространство имен, например *gpu-resources*.
 
 ```console
 kubectl create namespace gpu-resources
@@ -134,13 +134,13 @@ daemonset "nvidia-device-plugin" created
 az feature register --name GPUDedicatedVHDPreview --namespace Microsoft.ContainerService
 ```
 
-Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature#az-feature-list):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/GPUDedicatedVHDPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider#az-provider-register):
 
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
@@ -198,7 +198,7 @@ aks-nodepool1-28993262-0   Ready    agent   13m   v1.12.7
 
 Теперь с помощью команды [kubectl describe node][kubectl-describe] подтвердите, что процессоры GPU доступны для планирования. В разделе *Емкость* PU должен отображаться как `nvidia.com/gpu:  1`.
 
-В следующем сокращенном примере показано, что GPU доступен на узле *aks-nodepool1-18821093-0* .
+В следующем сокращенном примере показано, что GPU доступен на узле *aks-nodepool1-18821093-0*.
 
 ```console
 $ kubectl describe node aks-nodepool1-28993262-0
@@ -289,7 +289,7 @@ kubectl apply -f samples-tf-mnist-demo.yaml
 
 ## <a name="view-the-status-and-output-of-the-gpu-enabled-workload"></a>Просмотр состояния и выходных данных рабочей нагрузки с поддержкой GPU
 
-Отслеживайте ход выполнения задания с помощью команды [kubectl get jobs][kubectl-get] с аргументом `--watch`. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда в столбце *завершения* отображается *1/1* , задание успешно завершено. Выйдите из `kubetctl --watch` команды с помощью *клавиш CTRL-C* :
+Отслеживайте ход выполнения задания с помощью команды [kubectl get jobs][kubectl-get] с аргументом `--watch`. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда в столбце *завершения* отображается *1/1*, задание успешно завершено. Выйдите из `kubetctl --watch` команды с помощью *клавиш CTRL-C*:
 
 ```console
 $ kubectl get jobs samples-tf-mnist-demo --watch

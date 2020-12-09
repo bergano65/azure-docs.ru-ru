@@ -1,17 +1,17 @@
 ---
 title: Использование управляемых клиентом ключей для шифрования данных конфигурации
 description: Шифрование данных конфигурации с помощью управляемых клиентом ключей
-author: lisaguthrie
-ms.author: lcozzens
-ms.date: 02/18/2020
+author: AlexandraKemperMS
+ms.author: alkemper
+ms.date: 07/28/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 8942c93b7346613b8cfdc97d9afe09f1c473fb10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46a1e99a7bc75efa85fcb5eff649c14af5abd17b
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87384877"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930506"
 ---
 # <a name="use-customer-managed-keys-to-encrypt-your-app-configuration-data"></a>Использование управляемых клиентом ключей для шифрования данных конфигурации приложения
 Конфигурация приложения Azure [шифрует неактивных конфиденциальных данных](../security/fundamentals/encryption-atrest.md). Использование управляемых клиентом ключей обеспечивает улучшенную защиту данных, позволяя управлять ключами шифрования.  При использовании шифрования управляемого ключа все конфиденциальные данные в конфигурации приложения шифруются с помощью предоставленного пользователем ключа Azure Key Vault.  Это дает возможность смены ключа шифрования по запросу.  Кроме того, она позволяет отозвать доступ конфигурации приложения Azure к конфиденциальным сведениям, отменив доступ экземпляра конфигурации приложения к ключу.
@@ -103,5 +103,5 @@ ms.locfileid: "87384877"
 
 Теперь экземпляр конфигурации приложения Azure настроен для использования управляемого клиентом ключа, хранящегося в Azure Key Vault.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 В этой статье вы настроили в экземпляре конфигурации приложения Azure использование ключа, управляемого клиентом, для шифрования.  Узнайте, как [интегрировать службу с управляемыми удостоверениями Azure](howto-integrate-azure-managed-service-identity.md).

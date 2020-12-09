@@ -1,19 +1,19 @@
 ---
 title: Проверка подлинности Azure Active Directory REST API
 description: Используйте Azure Active Directory для проверки подлинности в конфигурации приложения Azure с помощью REST API
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 73d951b3e85c170cf068693bb9b374349516ca8f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: cbf05245768a663e324e9bb6e1ad422eeee3ab1a
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183487"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930523"
 ---
-# <a name="azure-active-directory-authentication"></a>Проверка подлинности Azure Active Directory
+# <a name="azure-active-directory-authentication"></a>Проверка подлинности Azure Active Directory
 
 Для проверки подлинности HTTP-запросов можно использовать `Bearer` схему проверки подлинности с маркером, полученным от Azure Active Directory (Azure AD). Эти запросы необходимо передавать по протоколу TLS.
 

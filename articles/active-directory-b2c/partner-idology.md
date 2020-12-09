@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 07a8f785cf2b9a64f3acb9f44c4fca5023c4fcf3
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2b6001932b6f53a60eda76b6136611a10011391a
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953752"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928687"
 ---
 # <a name="tutorial-for-configuring-idology-with-azure-active-directory-b2c"></a>Руководство по настройке Идологи с помощью Azure Active Directory B2C 
 
@@ -26,7 +26,7 @@ ms.locfileid: "94953752"
 
 Чтобы приступить к работе, вам потребуется:
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Клиент Azure AD B2C](tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -67,7 +67,7 @@ ms.locfileid: "94953752"
 
 ### <a name="part-1---deploy-the-api"></a>Часть 1. Развертывание API
 
-Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/IDology/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Разверните предоставленный [код API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/IDology/Api) в службе Azure. Код можно опубликовать из Visual Studio, следуя этим [инструкциям](/visualstudio/deployment/quickstart-deploy-to-azure).
 
 Вам потребуется URL-адрес развернутой службы, чтобы настроить Azure AD с использованием требуемых параметров.
 
@@ -139,7 +139,7 @@ ms.locfileid: "94953752"
 
 7. После ввода **продолжения** появится головоломка идологи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

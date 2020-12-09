@@ -1,15 +1,15 @@
 ---
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: include
 ms.date: 1/31/2020
-ms.openlocfilehash: 48bf5d5df3c54e8b2894ad28fa08553d5add0437
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c344d7e1aa1f6d45131295ba9aad1294c5ba548c
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182708"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930749"
 ---
 1. Чтобы создать хранилище Конфигурации приложений, войдите на [портал Azure](https://portal.azure.com). Выберите **Создать ресурс** в левом верхнем углу домашней страницы. В поле **Поиск в Marketplace** введите *Конфигурация приложений* и нажмите клавишу <kbd>ВВОД</kbd>.
 

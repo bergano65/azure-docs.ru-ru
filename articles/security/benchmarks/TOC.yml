@@ -95,6 +95,8 @@
       href: ../../mysql/security-baseline.md
     - name: Базовые средства безопасности Базы данных Azure для MariaDB
       href: ../../mariadb/security-baseline.md
+    - name: Базовые средства безопасности Azure Database Migration Service
+      href: ../../dms/security-baseline.md
     - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для гипермасштабирования'
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
     - name: 'База данных Azure для PostgreSQL: базовые показатели безопасности для отдельного сервера'

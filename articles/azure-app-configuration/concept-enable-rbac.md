@@ -1,17 +1,17 @@
 ---
 title: Авторизация доступа к Конфигурации приложений Azure с помощью Azure Active Directory
 description: Включение Azure RBAC для авторизации доступа к экземпляру конфигурации приложения Azure
-author: lisaguthrie
-ms.author: lcozzens
-ms.date: 02/13/2020
+author: AlexandraKemperMS
+ms.author: alkemper
+ms.date: 05/26/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 9c749dbb1cc78bf06dfe665875bc05f75152778b
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 4768dbe292b7c71770ded1e8ad27025bc9944608
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862145"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930268"
 ---
 # <a name="authorize-access-to-azure-app-configuration-using-azure-active-directory"></a>Авторизация доступа к Конфигурации приложений Azure с помощью Azure Active Directory
 Кроме использования код проверки подлинности сообщения на основе хэша (HMAC), конфигурация приложений Azure поддерживает использование Azure Active Directory (Azure AD) для авторизации запросов к экземплярам конфигурации приложения.  Azure AD позволяет использовать управление доступом на основе ролей Azure (Azure RBAC) для предоставления разрешений субъекту безопасности.  Субъект безопасности может быть пользователем, [управляемым удостоверением](../active-directory/managed-identities-azure-resources/overview.md) или [субъектом-службой приложения](../active-directory/develop/app-objects-and-service-principals.md).  См. сведения в статье [Дополнительные сведения о ролях](../role-based-access-control/overview.md).

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 11/19/2020
 ms.reviewer: arvinh
-ms.openlocfilehash: e0a77e1e4757c8951756c3e41479628c293dfd8f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: b8bdb216cbe8d359f35c758ae89f4267ab223483
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174838"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928755"
 ---
 # <a name="known-issues-application-provisioning"></a>Известные проблемы: Подготовка приложений
 Известные проблемы, с которыми следует помнить при работе с подготовкой приложений. Вы можете отправить отзыв о службе подготовки приложений в UserVoice. см. раздел [Azure AD Application подготавливать UserVoice](https://aka.ms/appprovisioningfeaturerequest). Мы внимательно отслеживаем UserVoice, чтобы мы могли улучшить службу. 
@@ -56,6 +56,10 @@ ms.locfileid: "96174838"
 **Максимальное число символов для выражений сопоставления атрибутов**
 
 Выражение сопоставления атрибутов может содержать не более 10 000 символов. 
+
+**Неподдерживаемые фильтры области**
+
+Расширения каталогов, appRoleAssignments, userType и accountExpires не поддерживаются в качестве фильтров области.
 
 
 ## <a name="service-issues"></a>Проблемы службы 

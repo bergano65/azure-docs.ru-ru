@@ -6,8 +6,6 @@
       href: about-iot-accelerators.md
     - name: AzureIoTSolutions.com
       href: iot-accelerators-permissions.md
-    - name: удаленный мониторинг;
-      href: iot-accelerators-remote-monitoring-sample-walkthrough.md
     - name: Промышленный Интернет вещей
       href: overview-iot-industrial.md
       items:
@@ -21,37 +19,15 @@
           href: iot-accelerators-connected-factory-features.md
     - name: Виртуальное устройство
       href: iot-accelerators-device-simulation-overview.md
-    - name: Прогнозное обслуживание
-      href: iot-accelerators-predictive-walkthrough.md
 - name: Краткие руководства
-  expanded: true
   items:
-    - name: Пробное использование решения для удаленного мониторинга
-      href: quickstart-remote-monitoring-deploy.md
     - name: Пробное использование решения подключенной фабрики
       href: quickstart-connected-factory-deploy.md
-    - name: Пробное использование симулятора устройств
-      href: quickstart-device-simulation-deploy.md
-    - name: Пробное использование решения прогнозного обслуживания
-      href: quickstart-predictive-maintenance-deploy.md
+    - name: Развертывание акселератора решений для моделирования устройств
+      href: 'https://github.com/Azure/device-simulation-dotnet/blob/master/README.md'
+  expanded: true
 - name: Учебники
   items:
-    - name: удаленный мониторинг;
-      items:
-        - name: Мониторинг устройств Интернета вещей
-          href: iot-accelerators-remote-monitoring-monitor.md
-        - name: Определение проблем с устройствами
-          href: iot-accelerators-remote-monitoring-automate.md
-        - name: Настройка устройств
-          href: iot-accelerators-remote-monitoring-manage.md
-        - name: Анализ первопричин с помощью оповещений
-          href: iot-accelerators-remote-monitoring-root-cause-analysis.md
-        - name: Использование оповещений и устранение проблем с устройствами
-          href: iot-accelerators-remote-monitoring-maintain.md
-        - name: Массовое обновление конфигурации устройств
-          href: iot-accelerators-remote-monitoring-bulk-configuration-update.md
-        - name: Обнаружение аномальных действий на граничном устройстве
-          href: iot-accelerators-remote-monitoring-edge.md
     - name: Виртуальное устройство
       items:
         - name: Создание и запуск модели
@@ -60,14 +36,6 @@
           href: iot-accelerators-device-simulation-create-custom-device.md
 - name: Основные понятия
   items:
-    - name: удаленный мониторинг;
-      items:
-        - name: Architecture
-          href: iot-accelerators-remote-monitoring-architectural-choices.md
-        - name: Схема модели устройства
-          href: iot-accelerators-remote-monitoring-device-schema.md
-        - name: Поведение модели устройства
-          href: iot-accelerators-remote-monitoring-device-behavior.md
     - name: Промышленный Интернет вещей
       items:
         - name: Архитектура двойника OPC
@@ -76,79 +44,6 @@
           href: overview-opc-vault-architecture.md
 - name: Практические руководства
   items:
-    - name: удаленный мониторинг;
-      items:
-        - name: Развертывание решения
-          items:
-            - name: Развертывание с помощью CLI
-              href: iot-accelerators-remote-monitoring-deploy-cli.md
-            - name: Развертывание в локальной среде с помощью Visual Studio
-              href: iot-accelerators-remote-monitoring-deploy-local.md
-            - name: "Развертывание в локальной среде с помощью VS\_Code"
-              href: iot-accelerators-remote-monitoring-deploy-local-vscode.md
-            - name: Развертывание в локальной среде с помощью IntelliJ
-              href: iot-accelerators-remote-monitoring-deploy-local-java.md
-            - name: Развертывание в локальной среде с помощью Docker
-              href: iot-accelerators-remote-monitoring-deploy-local-docker.md
-        - name: Подключение реального устройства
-          items:
-            - name: Использование C в Windows
-              href: iot-accelerators-connecting-devices.md
-            - name: Использование C в Linux
-              href: iot-accelerators-connecting-devices-linux.md
-            - name: Использование C с Raspberry Pi
-              href: iot-accelerators-connecting-pi-c.md
-            - name: Node.js (универсальная версия)
-              href: iot-accelerators-connecting-devices-node.md
-            - name: Использование Node.js с Raspberry Pi
-              href: iot-accelerators-connecting-pi-node.md
-            - name: MXChip IoT DevKit
-              href: iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md
-        - name: Моделирование устройства
-          items:
-            - name: Создайте виртуальное устройство.
-              href: iot-accelerators-remote-monitoring-create-simulated-device.md
-            - name: Развертывание имитированного устройства
-              href: iot-accelerators-remote-monitoring-deploy-simulated-device.md
-        - name: Настройка пользовательского интерфейса
-          href: iot-accelerators-remote-monitoring-customize.md
-          items:
-            - name: Добавление страницы
-              href: iot-accelerators-remote-monitoring-customize-page.md
-            - name: Добавление службы
-              href: iot-accelerators-remote-monitoring-customize-service.md
-            - name: Добавление сетки
-              href: iot-accelerators-remote-monitoring-customize-grid.md
-            - name: Добавление всплывающего элемента
-              href: iot-accelerators-remote-monitoring-customize-flyout.md
-            - name: Добавление панели
-              href: iot-accelerators-remote-monitoring-customize-panel.md
-        - name: Настройка и повторное развертывание микрослужбы
-          href: iot-accelerators-microservices-example.md
-        - name: Импорт пакета конфигурации устройства
-          href: iot-accelerators-remote-monitoring-import-adm-package.md
-        - name: Подключение устройств IoT Edge
-          items:
-            - name: Добавление устройства IoT Edge
-              href: iot-accelerators-remote-monitoring-add-edge-device.md
-            - name: Импортирование пакета IoT Edge
-              href: iot-accelerators-remote-monitoring-import-edge-package.md
-        - name: Настройка действий электронной почты
-          href: iot-accelerators-remote-monitoring-email-actions.md
-        - name: Настройка элементов управления доступом
-          href: iot-accelerators-remote-monitoring-rbac.md
-        - name: Просмотр данных телеметрии
-          items:
-            - name: "Визуализация телеметрии с помощью Power\_BI"
-              href: iot-accelerators-integrate-data-powerbi.md
-            - name: Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
-              href: iot-accelerators-remote-monitoring-integrate-time-series-insights.md
-            - name: Анализ данных телеметрии с помощью Data Lake
-              href: iot-accelerators-integrate-data-lake.md
-            - name: Предоставление доступа к обозревателю телеметрии
-              href: iot-accelerators-remote-monitoring-rbac-tsi.md
-        - name: Интеграция данных SIM-карты
-          href: iot-accelerators-remote-monitoring-telefonica-sim.md
     - name: Промышленный Интернет вещей
       items:
         - name: Подключенная фабрика
@@ -193,8 +88,6 @@
           href: iot-accelerators-device-simulation-time-series-insights.md
         - name: Сериализация данных телеметрии с помощью буферов протокола
           href: iot-accelerators-device-simulation-protobuf.md
-        - name: Развертывание пользовательского образа Docker
-          href: iot-accelerators-device-simulation-deploy-image.md
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
@@ -223,20 +116,6 @@
           href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
           href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks
-    - name: удаленный мониторинг;
-      items:
-        - name: Справочник разработчика (.NET)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Reference-Guide'
-        - name: Справочник разработчика (Java)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-java/wiki/Developer-Reference-Guide'
-        - name: Руководство по устранению неполадок для разработчиков
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Troubleshooting-Guide'
-        - name: Репозиторий GitHub (.NET)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet'
-        - name: Репозиторий GitHub (Java)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-java'
-        - name: 'Удаленный мониторинг: вопросы и ответы'
-          href: iot-accelerators-faq-rm-v2.md
     - name: Промышленный Интернет вещей
       items:
         - name: Репозиторий GitHub
@@ -249,24 +128,12 @@
           href: 'https://github.com/Azure/device-simulation-dotnet/wiki/Simulation-Service-Developer-Reference-Guide'
         - name: Репозиторий GitHub
           href: 'https://github.com/Azure/device-simulation-dotnet'
-    - name: Репозиторий GitHub для прогнозного обслуживания
-      href: 'https://github.com/Azure/azure-iot-predictive-maintenance'
     - name: Эталонная архитектура
       href: /azure/architecture/reference-architectures/iot
       items:
-        - name: Скачать
-          href: /azure/architecture/reference-architectures/iot
-        - name: Варианты партнерских реализаций
-          items:
-            - name: Intel Connected Logistics Platform
-              href: 'https://www.azureiotsolutions.com/Accelerators#description/intel-connected-logistics-platform'
-            - name: Edge Dynamometer Analysis
-              href: 'https://www.azureiotsolutions.com/Accelerators#description/edge-dynamometer-analysis'
-            - name: Digital Signage Solution
-              href: 'https://www.azureiotsolutions.com/Accelerators#description/digital-signage-solution'
+        - name: Скачивание
+          href: 'https://aka.ms/iotrefarchitecture'
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: iot-accelerators-faq.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'
-    - name: "Удаленный мониторинг (версия\_1)"
-      href: /previous-versions/azure/iot-suite/
