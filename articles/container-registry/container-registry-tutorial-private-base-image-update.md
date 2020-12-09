@@ -2,18 +2,18 @@
 title: Руководство. Активация сборки образов при обновлении частного базового образа
 description: С помощью этого руководства вы настроите в Реестре контейнеров Azure автоматическую активацию сборки образа контейнера в облаке при обновлении базового образа в другом реестре контейнеров Azure.
 ms.topic: tutorial
-ms.date: 01/22/2020
+ms.date: 11/20/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7dda7c54c51c31e750083f302ca558ff7ef548ee
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 50eb89ccfafa27a7dcb0e97f21d14feec0ef9525
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92739550"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030464"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-another-private-container-registry"></a>Руководство по Автоматизация сборки образов контейнера при обновлении базового образа в другом частном реестре контейнеров 
 
-Решение "Задачи ACR" поддерживает сборку образа при [обновлении базового образа контейнера](container-registry-tasks-base-images.md), например, когда вы исправляете исполняющую среду или ОС в одном из базовых образов. 
+Решение [Задачи ACR](container-registry-tasks-overview.md) поддерживает автоматическую сборку образа при [обновлении базового образа](container-registry-tasks-base-images.md) контейнера, например, когда вы исправляете ОС или исполняющую среду в одном из базовых образов. 
 
 Из этого руководства вы узнаете, как создать задачу ACR, которая запускает сборку в облаке при отправке базового образа контейнера в другой реестр контейнеров Azure. В другом руководстве описано, как создать задачу ACR, которая запускает сборку образа при отправке базового образа контейнера в [тот же реестр контейнеров Azure](container-registry-tutorial-base-image-update.md).
 
@@ -26,15 +26,11 @@ ms.locfileid: "92739550"
 > * отображение активированной задачи;
 > * проверка обновленного образа приложения.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если вы хотите использовать Azure CLI локально, установите Azure CLI **2.0.68** или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="complete-the-previous-tutorials"></a>Завершение работы с предыдущими руководствами
 
-Приступая к работе с этим руководством, предполагается, что вы уже выполнили шаги, описанные в первых двух руководствах в серии, и выполнили действия ниже.
+В этом руководстве предполагается, что вы уже настроили среду и выполнили следующие шаги, описанные в первых двух руководствах в серии:
 
 * Создание реестра контейнеров Azure
 * Создание вилки примера репозитория
@@ -53,7 +49,7 @@ ms.locfileid: "92739550"
 
 Заполните эти переменные среды оболочки значениями, подходящими для вашей среды. Этот шаг не является обязательным, но он упрощает выполнение многолинейных команд Azure CLI в этом руководстве. Если вы не заполните эти переменные среды, вам придется вручную заменять каждое значение в примерах команд.
 
-```azurecli-interactive
+```azurecli
 BASE_ACR=<base-registry-name>   # The name of your Azure container registry for base images
 ACR_NAME=<registry-name>        # The name of your Azure container registry for application images
 GIT_USER=<github-username>      # Your GitHub user account name
@@ -80,8 +76,8 @@ GIT_PAT=<personal-access-token> # The PAT you generated in the second tutorial
 
 Для начала создайте базовый образ с помощью функции *быстрой задачи* в решении "Задачи ACR", выполнив команду [az acr build][az-acr-build]. Как обсуждалось в [первом руководстве](container-registry-tutorial-quick-task.md) этой серии, этот процесс позволит не только создать образ, но и отправить его в реестр контейнеров (при успешном выполнении сборки). В нашем примере образ передается в реестр базовых образов.
 
-```azurecli-interactive
-az acr build --registry $BASE_ACR --image baseimages/node:9-alpine --file Dockerfile-base .
+```azurecli
+az acr build --registry $BASE_ACR --image baseimages/node:15-alpine --file Dockerfile-base .
 ```
 
 ## <a name="create-a-task-to-track-the-private-base-image"></a>Создание задачи для отслеживания частного базового образа
@@ -90,10 +86,10 @@ az acr build --registry $BASE_ACR --image baseimages/node:9-alpine --file Docker
 
 В нашем примере используется удостоверение, назначаемое системой, но для некоторых сценариев вам будет лучше создать и подключить управляемое удостоверение, назначаемое пользователем. Дополнительные сведения см. в статье о [проверке подлинности в разных реестрах в рамках задачи контроля доступа с помощью удостоверения, управляемого Azure](container-registry-tasks-cross-registry-authentication.md).
 
-```azurecli-interactive
+```azurecli
 az acr task create \
     --registry $ACR_NAME \
-    --name taskhelloworld \
+    --name baseexample2 \
     --image helloworld:{{.Run.ID}} \
     --context https://github.com/$GIT_USER/acr-build-helloworld-node.git \
     --file Dockerfile-app \
@@ -102,11 +98,10 @@ az acr task create \
     --assign-identity
 ```
 
-
-Эта задача аналогична той, которую вы создали при работе с [предыдущим учебником](container-registry-tutorial-build-task.md). Она инструктирует решение "Задачи ACR" активировать сборку образа, когда фиксации отправляются в репозиторий, указанный с помощью `--context`. Они отличаются тем, что Dockerfile для создания образа в предыдущем руководстве определяет общедоступный базовый образ (`FROM node:9-alpine`), а в этой задаче [Dockerfile-app][dockerfile-app] задает базовый образ в реестре базовых образов.
+Эта задача аналогична той, которую вы создали при работе с [предыдущим учебником](container-registry-tutorial-build-task.md). Она инструктирует решение "Задачи ACR" активировать сборку образа, когда фиксации отправляются в репозиторий, указанный с помощью `--context`. Они отличаются тем, что Dockerfile для создания образа в предыдущем руководстве определяет общедоступный базовый образ (`FROM node:15-alpine`), а в этой задаче [Dockerfile-app][dockerfile-app] задает базовый образ в реестре базовых образов.
 
 ```Dockerfile
-FROM ${REGISTRY_NAME}/baseimages/node:9-alpine
+FROM ${REGISTRY_NAME}/baseimages/node:15-alpine
 ```
 
 Позже в этом руководстве эта конфигурация позволяет моделировать исправление платформы в базовом образе.
@@ -115,9 +110,9 @@ FROM ${REGISTRY_NAME}/baseimages/node:9-alpine
 
 Чтобы подключенное к задаче управляемое удостоверение могло извлекать образы из реестра базовых образов, ему нужно предоставить разрешения. Для начала получите идентификатор субъекта-службы для этого удостоверения, выполнив команду [az acr task show][az-acr-task-show]. Затем получите идентификатор ресурса для базового реестра, выполнив команду [az acr show][az-acr-show].
 
-```azurecli-interactive
+```azurecli
 # Get service principal ID of the task
-principalID=$(az acr task show --name taskhelloworld --registry $ACR_NAME --query identity.principalId --output tsv) 
+principalID=$(az acr task show --name baseexample2 --registry $ACR_NAME --query identity.principalId --output tsv) 
 
 # Get resource ID of the base registry
 baseregID=$(az acr show --name $BASE_ACR --query id --output tsv) 
@@ -125,7 +120,7 @@ baseregID=$(az acr show --name $BASE_ACR --query id --output tsv)
  
 Присвойте управляемому удостоверению разрешения на извлечение данных из этого реестра, выполнив команду [az role assignment create][az-role-assignment-create].
 
-```azurecli-interactive
+```azurecli
 az role assignment create \
   --assignee $principalID \
   --scope $baseregID --role acrpull 
@@ -135,9 +130,9 @@ az role assignment create \
 
 Запустите [az acr task credential add][az-acr-task-credential-add], чтобы добавить в задачу учетные данные. Передайте параметр `--use-identity [system]`, чтобы назначаемое системой управляемое удостоверение задачи получило доступ к этим учетным данным.
 
-```azurecli-interactive
+```azurecli
 az acr task credential add \
-  --name taskhelloworld \
+  --name baseexample2 \
   --registry $ACR_NAME \
   --login-server $BASE_ACR.azurecr.io \
   --use-identity [system] 
@@ -147,8 +142,8 @@ az acr task credential add \
 
 Используйте команду [az acr task run][az-acr-task-run], чтобы вручную запустить задачу и создать образ приложения. Этот шаг нужно выполнить для того, чтобы задача отслеживала зависимость образа приложения от базового образа.
 
-```azurecli-interactive
-az acr task run --registry $ACR_NAME --name taskhelloworld
+```azurecli
+az acr task run --registry $ACR_NAME --name baseexample2
 ```
 
 По завершении сборки запишите **ИД запуска** (например, "da6"), если нужно выполнить следующий необязательный шаг.
@@ -171,7 +166,7 @@ docker run -d -p 8080:80 --name myapp --rm $ACR_NAME.azurecr.io/helloworld:<run-
 
 Перейдите по адресу `http://localhost:8080` в браузере, и вы увидите номер версии Node.js, преобразованный для просмотра на веб-странице, аналогичный приведенному ниже. На более позднем этапе вы активируете версию, добавив "a" в строку версии.
 
-![Снимок экрана: пример приложения в браузере][base-update-01]
+:::image type="content" source="media/container-registry-tutorial-base-image-update/base-update-01.png" alt-text="Снимок экрана: пример приложения в браузере":::
 
 Чтобы остановить и удалить контейнер, выполните следующую команду:
 
@@ -183,7 +178,7 @@ docker stop myapp
 
 Далее перечислите запуски задачи, которые Задачи ACR выполнили для реестра, с помощью команды [az acr task list-run][az-acr-task-list-runs]:
 
-```azurecli-interactive
+```azurecli
 az acr task list-runs --registry $ACR_NAME --output table
 ```
 
@@ -192,28 +187,28 @@ az acr task list-runs --registry $ACR_NAME --output table
 ```console
 $ az acr task list-runs --registry $ACR_NAME --output table
 
-RUN ID    TASK            PLATFORM    STATUS     TRIGGER     STARTED               DURATION
---------  --------------  ----------  ---------  ----------  --------------------  ----------
-da6       taskhelloworld  Linux       Succeeded  Manual      2018-09-17T23:07:22Z  00:00:38
-da5                       Linux       Succeeded  Manual      2018-09-17T23:06:33Z  00:00:31
-da4       taskhelloworld  Linux       Succeeded  Git Commit  2018-09-17T23:03:45Z  00:00:44
-da3       taskhelloworld  Linux       Succeeded  Manual      2018-09-17T22:55:35Z  00:00:35
-da2       taskhelloworld  Linux       Succeeded  Manual      2018-09-17T22:50:59Z  00:00:32
-da1                       Linux       Succeeded  Manual      2018-09-17T22:29:59Z  00:00:57
+UN ID    TASK            PLATFORM    STATUS     TRIGGER       STARTED               DURATION
+--------  --------------  ----------  ---------  ------------  --------------------  ----------
+ca12      baseexample2    linux       Succeeded  Manual        2020-11-21T00:00:56Z  00:00:36
+ca11      baseexample1    linux       Succeeded  Image Update  2020-11-20T23:38:24Z  00:00:34
+ca10      taskhelloworld  linux       Succeeded  Image Update  2020-11-20T23:38:24Z  00:00:24
+cay                       linux       Succeeded  Manual        2020-11-20T23:38:08Z  00:00:22
+cax       baseexample1    linux       Succeeded  Manual        2020-11-20T23:33:12Z  00:00:30
+caw       taskhelloworld  linux       Succeeded  Commit        2020-11-20T23:16:07Z  00:00:29
 ```
 
 ## <a name="update-the-base-image"></a>Обновление базового образа
 
-Здесь вы моделируете исправление платформы в базовом образе. Измените файл **Dockerfile-base** , добавив "a" после номера версии, определенного в `NODE_VERSION`:
+Здесь вы моделируете исправление платформы в базовом образе. Измените файл **Dockerfile-base**, добавив "a" после номера версии, определенного в `NODE_VERSION`:
 
 ```Dockerfile
-ENV NODE_VERSION 9.11.2a
+ENV NODE_VERSION 15.2.1a
 ```
 
 Запустите функцию быстрой задачи, чтобы создать измененный базовый образ. Запишите **ИД запуска** в выходных данных.
 
-```azurecli-interactive
-az acr build --registry $BASE_ACR --image baseimages/node:9-alpine --file Dockerfile-base .
+```azurecli
+az acr build --registry $BASE_ACR --image baseimages/node:15-alpine --file Dockerfile-base .
 ```
 
 После завершения сборки и отправки решением "Задача ACR" нового базового образа в реестр оно запустит сборку образа приложения. Задаче, созданной ранее, может потребоваться несколько минут, чтобы запустить сборку образа приложения, так как она должна обнаружить недавно созданный и переданный базовый образ.
@@ -222,7 +217,7 @@ az acr build --registry $BASE_ACR --image baseimages/node:9-alpine --file Docker
 
 Теперь, когда вы обновили базовый образ, получите список выполнения задач снова, чтобы сравнить их со списком, полученным ранее. Если сначала выходные данные не отличаются, периодически запускайте команду, пока новое выполнение задачи не появится в списке.
 
-```azurecli-interactive
+```azurecli
 az acr task list-runs --registry $ACR_NAME --output table
 ```
 
@@ -231,19 +226,18 @@ az acr task list-runs --registry $ACR_NAME --output table
 ```console
 $ az acr task list-runs --registry $ACR_NAME --output table
 
-Run ID    TASK            PLATFORM    STATUS     TRIGGER       STARTED               DURATION
+         PLATFORM    STATUS     TRIGGER       STARTED               DURATION
 --------  --------------  ----------  ---------  ------------  --------------------  ----------
-da8       taskhelloworld  Linux       Succeeded  Image Update  2018-09-17T23:11:50Z  00:00:33
-da7                       Linux       Succeeded  Manual        2018-09-17T23:11:27Z  00:00:35
-da6       taskhelloworld  Linux       Succeeded  Manual        2018-09-17T23:07:22Z  00:00:38
-da5                       Linux       Succeeded  Manual        2018-09-17T23:06:33Z  00:00:31
-da4       taskhelloworld  Linux       Succeeded  Git Commit    2018-09-17T23:03:45Z  00:00:44
-da3       taskhelloworld  Linux       Succeeded  Manual        2018-09-17T22:55:35Z  00:00:35
-da2       taskhelloworld  Linux       Succeeded  Manual        2018-09-17T22:50:59Z  00:00:32
-da1                       Linux       Succeeded  Manual        2018-09-17T22:29:59Z  00:00:57
+ca13      baseexample2    linux       Succeeded  Image Update  2020-11-21T00:06:00Z  00:00:43
+ca12      baseexample2    linux       Succeeded  Manual        2020-11-21T00:00:56Z  00:00:36
+ca11      baseexample1    linux       Succeeded  Image Update  2020-11-20T23:38:24Z  00:00:34
+ca10      taskhelloworld  linux       Succeeded  Image Update  2020-11-20T23:38:24Z  00:00:24
+cay                       linux       Succeeded  Manual        2020-11-20T23:38:08Z  00:00:22
+cax       baseexample1    linux       Succeeded  Manual        2020-11-20T23:33:12Z  00:00:30
+caw       taskhelloworld  linux       Succeeded  Commit        2020-11-20T23:16:07Z  00:00:29
 ```
 
-Если вы хотите выполнить следующий необязательный шаг (запуск только что созданного контейнера), чтобы отобразился обновленный номер версии, обратите внимание на значение **ИД запуска** для сборки образа, активируемой при обновлении (в предыдущих выходных данных — "da8").
+Если вы хотите выполнить следующий необязательный шаг (запуск только что созданного контейнера), чтобы отобразился обновленный номер версии, запишите значение **ИД запуска** для сборки образа, активируемой при обновлении (в предыдущих выходных данных — ca13).
 
 ### <a name="optional-run-newly-built-image"></a>Необязательное действие: Запуск только что созданного образа
 
@@ -255,9 +249,9 @@ docker run -d -p 8081:80 --name updatedapp --rm $ACR_NAME.azurecr.io/helloworld:
 
 Перейдите по адресу http://localhost:8081 в браузере, и вы увидите обновленный номер версии Node.js (с добавленным значением "а") на веб-странице:
 
-![Снимок экрана примера приложения, отображаемого в браузере][base-update-02]
+:::image type="content" source="media/container-registry-tutorial-base-image-update/base-update-02.png" alt-text="Снимок экрана: обновленный пример приложения в браузере":::
 
-Важно отметить, что вы обновили **базовый** образ с помощью нового номера версии, но новая версия отображается в последнем созданном **образе приложения** . Решение "Задачи ACR" обнаружило изменение базового образа и автоматически перестроило образ приложения.
+Важно отметить, что вы обновили **базовый** образ с помощью нового номера версии, но новая версия отображается в последнем созданном **образе приложения**. Решение "Задачи ACR" обнаружило изменение базового образа и автоматически перестроило образ приложения.
 
 Чтобы остановить и удалить контейнер, выполните следующую команду:
 
@@ -295,6 +289,3 @@ docker stop updatedapp
 [az-acr-show]: /cli/azure/acr#az-acr-show
 [az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
 
-<!-- IMAGES -->
-[base-update-01]: ./media/container-registry-tutorial-base-image-update/base-update-01.png
-[base-update-02]: ./media/container-registry-tutorial-base-image-update/base-update-02.png

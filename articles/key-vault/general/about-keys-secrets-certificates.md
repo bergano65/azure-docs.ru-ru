@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: overview
 ms.date: 04/17/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 78f228a5e188bc930a9e7484f4c982ba746331dd
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: e0a45bde32fed651c4b38d203b3c75a6d928e7c5
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357782"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327089"
 ---
 # <a name="azure-key-vault-keys-secrets-and-certificates-overview"></a>Общие сведения о ключах, секретах и сертификатах Azure Key Vault
 
@@ -75,15 +75,16 @@ Azure для государственных организаций США | *.va
 
 К объектам в Key Vault можно обращаться, определяя или игнорируя версию для операций с текущей версией объекта. Например, если ключ `MasterKey` выполняет операции без определения версии, система будет использовать последнюю доступную. В случае выполнения операций с идентификатором, зависящим от версии, система использует эту конкретную версию объекта.  
 
+### <a name="vault-name-and-object-name"></a>Имя хранилища и имя объекта
 В Key Vault объекты уникально идентифицированы с использованием URL-адреса. Так что два объекта в системе, независимо от географического местоположения, не могут иметь один и тот же URL-адрес. Полный URL-адрес к объекту называется идентификатором объекта. Он состоит из части префикса, которая идентифицирует Key Vault, типа объекта, указанного пользователем имени объекта и версии объекта. Имя объекта не учитывает регистр и является неизменяемым. Идентификаторы, которые не включают версию объекта, называются базовыми.  
 
 Дополнительные сведения см. в статье [Authentication, requests and responses](authentication-requests-and-responses.md) (Проверка подлинности, запросы и ответы).
 
 Идентификатор объекта имеет следующий общий формат (в зависимости от типа контейнера):  
 
-- **Для хранилищ** : `https://{vault-name}.vault.azure.net/{object-type}/{object-name}/{object-version}`.  
+- **Для хранилищ**: `https://{vault-name}.vault.azure.net/{object-type}/{object-name}/{object-version}`.  
 
-- **Для пулов управляемых устройств HSM** : `https://{hsm-name}.managedhsm.azure.net/{object-type}/{object-name}/{object-version}`.  
+- **Для пулов управляемых устройств HSM**: `https://{hsm-name}.managedhsm.azure.net/{object-type}/{object-name}/{object-version}`.  
 
 > [!NOTE]
 > Сведения о типах объектов, поддерживаемых каждым типом контейнера, см. в [этом разделе](#object-types).

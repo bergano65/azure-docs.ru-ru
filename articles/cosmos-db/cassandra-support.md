@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: ecf4229c95ff9103cd27fd161fdd19c9e7a0f76b
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 8c51450fb6ce5c381784e6aaf9b1a66c3c4ff153
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636968"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188553"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -205,7 +205,7 @@ API Cassandra для Azure Cosmos DB — это платформа управл�
 
 ## <a name="hosted-cql-shell-preview"></a>Размещенная оболочка CQL (предварительная версия)
 
-Вы можете открыть размещенную собственную оболочку Cassandra (CQLSH версии 5.0.1) непосредственно из обозреватель данных на [портале Azure](data-explorer.md) или в [обозревателе Azure Cosmos](https://cosmos.azure.com/). Перед включением оболочки CQL необходимо включить в учетной записи компонент [Записные книжки](enable-notebooks.md) (если он еще не включен, при щелчке `Open Cassandra Shell` появится запрос). Поддерживаемые регионы Azure перечислены в выделенной заметке в разделе [включить записные книжки для учетных записей Azure Cosmos DB](enable-notebooks.md).
+Вы можете открыть размещенную собственную оболочку Cassandra (CQLSH версии 5.0.1) непосредственно из обозревателя данных на [портале Azure](data-explorer.md) или [Обозревателя Azure Cosmos DB](https://cosmos.azure.com/). Перед включением оболочки CQL необходимо включить в учетной записи компонент [Записные книжки](enable-notebooks.md) (если он еще не включен, при щелчке `Open Cassandra Shell` появится запрос). Поддерживаемые регионы Azure перечислены в выделенной заметке в разделе [включить записные книжки для учетных записей Azure Cosmos DB](enable-notebooks.md).
 
 :::image type="content" source="./media/cassandra-support/cqlsh.png" alt-text="Открытие CQLSH":::
 

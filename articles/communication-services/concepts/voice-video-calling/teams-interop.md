@@ -9,12 +9,12 @@ ms.author: chpalm
 ms.date: 10/10/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 028e7f9764cbf75263736471f434e04bc6daca0f
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 914581e6610e027d9440495f56f4facfb1fb9a9a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886827"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349441"
 ---
 # <a name="teams-interoperability"></a>Взаимодействие с Teams
 
@@ -39,7 +39,8 @@ ms.locfileid: "94886827"
 
 Пользователи Служб коммуникации могут присоединяться к конференциям по расписанию, если в [параметрах конференций](/microsoftteams/meeting-settings-in-teams) включены анонимные подключения.
 
-
+## <a name="teams-in-government-clouds-gcc"></a>Teams в облаке для государственных организаций (GCC)
+В настоящее время взаимодействие Служб коммуникации Azure не поддерживается для развертываний Teams с использованием [облаков для государственных организаций Microsoft 365 (GCC)](https://docs.microsoft.com/MicrosoftTeams/plan-for-government-gcc). 
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

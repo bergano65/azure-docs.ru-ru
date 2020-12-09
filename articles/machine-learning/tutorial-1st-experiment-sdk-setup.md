@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 02/10/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 6eb76c9d8cc8447755e045972a7aceddefd1604a
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ebde8048c26364d77d95b9c7b34f9d1d7a4a20ee
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94532976"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326289"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-jupyter-notebooks"></a>Руководство по началу работы с Машинным обучением Azure в Jupyter Notebook
 
@@ -80,7 +80,7 @@ ms.locfileid: "94532976"
     > [!IMPORTANT]
     > Вы можете просматривать записные книжки в папке **Примеры**, но запускать их оттуда нельзя. Для запуска записной книжки обязательно откройте клонированную версию записной книжки в разделе **Пользовательские файлы**.
     
-1. Выберите файл **tutorial-1st-experiment-sdk-train.ipynb** в папке **tutorials/image-classification-mnist-data**.
+1. Выберите файл **img-classification-part1-training.ipynb** в своей папке **tutorials/image-classification-mnist-data**.
 
     :::image type="content" source="media/tutorial-1st-experiment-sdk-setup/expand-user-folder.png" alt-text="Снимок экрана, на котором показана папка &quot;Открытые учебники&quot;.":::
 

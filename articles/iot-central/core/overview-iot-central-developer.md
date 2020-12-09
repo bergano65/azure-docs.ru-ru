@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - mvc
 - device-developer
-ms.openlocfilehash: 82818c8db326889079948cd2b32b2ed0be6ab50d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: e33f48c9496ffa3cca9d8b1aa71d524be9a311bb
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990760"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122251"
 ---
 # <a name="iot-central-device-development-overview"></a>Общие сведения о разработке для устройств для IoT Central
 
@@ -135,7 +135,7 @@ DPS позволяет следующее:
 
 Дополнительные сведения о роли шаблонов устройств см. в разделе [Что такое шаблоны устройств?](./concepts-device-templates.md).
 
-Примеры кода см. в руководстве по созданию клиентского приложения [Node.js](./tutorial-connect-device-nodejs.md) или [Python](./tutorial-connect-device-python.md) и его подключению.
+Пример кода см. в статье о [создании и подключении клиентского приложения](./tutorial-connect-device.md).
 
 ### <a name="languages-and-sdks"></a>Языки и пакеты SDK
 
@@ -143,6 +143,6 @@ DPS позволяет следующее:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы являетесь разработчиком устройства и хотите ознакомиться с кодом, [создайте и подключите клиентское приложение к приложению Azure IoT Central](./tutorial-connect-device-nodejs.md).
+Если вы являетесь разработчиком устройства и хотите ознакомиться с кодом, [создайте и подключите клиентское приложение к приложению Azure IoT Central](./tutorial-connect-device.md).
 
 Если вы хотите узнать больше об использовании IoT Central, рекомендуем далее ознакомиться с циклом кратких руководств. Начните со статьи [Создание приложения Azure IoT Central](./quick-deploy-iot-central.md).

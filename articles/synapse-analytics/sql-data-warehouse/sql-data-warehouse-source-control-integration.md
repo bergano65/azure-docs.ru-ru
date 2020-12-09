@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 766837cacb4ef2acf874c2872b347b6d35633faa
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 862fa839c56746042c072ae3100832fb2b78451a
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701003"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296935"
 ---
 # <a name="source-control-integration-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Интеграция системы управления версиями для выделенного пула SQL в Azure Synapse Analytics
 
@@ -38,11 +38,13 @@ ms.locfileid: "94701003"
    ![Управление подключениями](./media/sql-data-warehouse-source-control-integration/2-manage-connections.png "Управление подключениями")
 
 3. Подключитесь к проекту, выбрав **Управление подключениями**, а затем **Подключиться к проекту**.
- ![Подключение 1](./media/sql-data-warehouse-source-control-integration/3-connect-project.png "Подключение")
+ 
+    ![Подключение 1](./media/sql-data-warehouse-source-control-integration/3-connect-project.png "Подключение")
 
 
 4. Найдите проект, созданный на шаге 1, и щелкните **Подключиться**.
-![Подключение 2](./media/sql-data-warehouse-source-control-integration/3.5-connect.png "Подключение")
+ 
+    ![Подключение 2](./media/sql-data-warehouse-source-control-integration/3.5-connect.png "Подключение")
 
 
 3. Клонируйте репозиторий Azure DevOps из проекта на локальный компьютер.
@@ -85,7 +87,7 @@ ms.locfileid: "94701003"
 
    ![Проверка](./media/sql-data-warehouse-source-control-integration/10-verify-column-change-pushed.png "Проверка изменений")
 
-4. (**Необязательно**.) Используйте расширение "Сравнение схем" и обновите изменения в целевом хранилище данных с помощью SSDT, чтобы определения объектов в репозитории в Azure Repos и локальном репозитории отражали изменения в хранилище данных.
+4. (**Необязательно**) Используйте расширение "Сравнение схем" и обновите изменения в целевом выделенном пуле SQL с помощью SSDT, чтобы определения объектов в репозитории в Azure Repos и локальном репозитории отражали изменения в выделенном пуле SQL.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

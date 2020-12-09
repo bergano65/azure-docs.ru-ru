@@ -6,14 +6,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 11/30/2020
 ms.author: banders
-ms.openlocfilehash: 0049efda603532099cc9bf24dc9d9411b5aaa389
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 3df6b694f3a40cef17c6e0114464ad4aa2fa30ce
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132131"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344340"
 ---
 # <a name="billing-accounts-and-scopes-in-the-azure-portal"></a>Учетные записи и области выставления счетов на портале Azure
 
@@ -33,6 +33,12 @@ ms.locfileid: "92132131"
 
 ## <a name="scopes-for-billing-accounts"></a>Области для учетных записей выставления счетов
 Областью называется узел в учетной записи выставления счетов, который используется для просмотра счетов и управления их выставлением. Именно здесь вы управляете данными для выставления счетов, платежами, счетами и учетными записями в целом.
+
+Если у вас нет доступа на просмотр или администрирование учетных записей выставления счетов, возможно, у вас нет разрешения на доступ. Попросите администратора учетной записи предоставить вам такой доступ. Дополнительные сведения см. в следующих статьях:
+
+- [Доступ в рамках программы Microsoft Online Services (MOSP)](manage-billing-access.md)
+- [Доступ в рамках Клиентского соглашения Майкрософт](understand-mca-roles.md)
+- [Доступ в рамках Соглашения Enterprise](understand-ea-roles.md)
 
 ### <a name="microsoft-online-services-program"></a>Программа Microsoft Online Services
 

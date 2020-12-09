@@ -4,20 +4,23 @@ description: Узнайте, как с применением Azure Cosmos DB х
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: overview
-ms.date: 10/1/2019
+ms.date: 11/25/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: a9c4931338635e53054801885e071ad21723dea3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 8205ecab3abfc7a944c12db1aca2bf594f6cd98f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096467"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349458"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 [Azure Cosmos DB](introduction.md) — это глобально распределенная, многомодельная служба базы данных Майкрософт, необходимая для работы с критически важными приложениями. Эта служба базы данных обеспечивает [готовое к использованию глобальное распределение](distribute-data-globally.md), [гибкое масштабирование пропускной способности и хранилища](partitioning-overview.md) по всему миру, задержки менее 10 миллисекунд на уровне 99-го процентиля, а также гарантированную высокую доступность — все это согласно [ведущим в отрасли соглашениям об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [автоматически индексирует данные](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) без необходимости управлять схемой и индексом. Так как эта база данных является многомодельной, она поддерживает модели данных документа, "ключ — значение", графа и столбчатые модели данных. Служба Azure Cosmos DB реализует сетевые протоколы для стандартных API NoSQL, включая Cassandra, MongoDB, Gremlin и Хранилище таблиц Azure. Это позволяет использовать привычные клиентские драйверы и средства NoSQL для взаимодействия с базой данных Cosmos.
+
+> [!NOTE]
+> В API Azure Cosmos DB для MongoDB теперь доступен [режим бессерверной емкости](serverless.md).
 
 ## <a name="wire-protocol-compatibility"></a>Совместимость с сетевыми протоколами
 
@@ -53,7 +56,7 @@ Azure Cosmos DB реализует протокол проводной сети 
 
 * Инструкции по получению сведений о строке подключения к учетной записи см. в руководстве [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md).
 * Сведения о создании подключения между базой данных Cosmos и приложением MongoDB в Studio 3T см. в статье [Подключение к учетной записи MongoDB с помощью Studio 3T (MongoChef)](mongodb-mongochef.md).
-* Следуйте указаниям статьи [Руководство по переносу данных в учетную запись API MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json), чтобы импортировать данные в базу данных Cosmos.
+* Следуйте указаниям статьи [Руководство по переносу данных в учетную запись API MongoDB в Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json), чтобы импортировать данные в базу данных Cosmos.
 * Сведения о подключении к учетной записи Cosmos с помощью Robo 3T см. [здесь](mongodb-robomongo.md).
 * Узнайте, как [настроить параметры чтения для глобально распределенных приложений](../cosmos-db/tutorial-global-distribution-mongodb.md).
 * Узнайте, как устранить распространенные ошибки, в нашем [руководстве по устранению неполадок](mongodb-troubleshoot.md).

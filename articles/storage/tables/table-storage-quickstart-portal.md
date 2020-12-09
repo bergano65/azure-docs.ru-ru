@@ -8,12 +8,12 @@ ms.author: tamram
 ms.topic: quickstart
 ms.date: 12/02/2019
 ms.subservice: tables
-ms.openlocfilehash: d592dd6ac705d0f1a0b3ed55e115d06023b0a511
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 93c6cb0f61185457ef0684d2a1ba691a0534aa13
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88236273"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326783"
 ---
 # <a name="quickstart-create-an-azure-storage-table-in-the-azure-portal"></a>Краткое руководство. Создание таблицы службы хранилища Azure на портале Azure 
 
@@ -31,15 +31,15 @@ ms.locfileid: "88236273"
 
 1. Щелкните "Обзор" > "Таблицы".
 
-   ![Портал Azure](media/table-storage-quickstart-portal/table-storage-quickstart-01.png)
+   ![Экран "Учетная запись хранения vmamcgestorage с выделенной вкладкой "Обзор". В области "Обзор" в разделе "Службы" выделен пункт "Таблицы".](media/table-storage-quickstart-portal/table-storage-quickstart-01.png)
 
 2. Щелкните **+Таблицы**.
 
-   ![Портал Azure](media/table-storage-quickstart-portal/table-storage-quickstart-02.png)
+   ![Экран "Страница "Служба таблиц" для учетной записи хранения vmamcgestorage, на которой выделен параметр + Table (Создать таблицу)".](media/table-storage-quickstart-portal/table-storage-quickstart-02.png)
 
 3. Введите имя таблицы в поле **Имя таблицы**, а затем нажмите кнопку **ОК**. 
 
-   ![Портал Azure](media/table-storage-quickstart-portal/table-storage-quickstart-03.png)
+   ![Экран "На вкладке "Добавить таблицу" страницы "Служба таблиц" в поле "Имя таблицы" введено значение My Table, и это поле выделено. Кнопка "ОК" выбрана и выделена".](media/table-storage-quickstart-portal/table-storage-quickstart-03.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

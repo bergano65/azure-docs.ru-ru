@@ -1,20 +1,20 @@
 ---
 title: Создание шаблона — Visual Studio Code
-description: Используйте Visual Studio Code и расширение средств Azure Resource Manager для работы с шаблонами Resource Manager.
+description: Для работы с шаблонами Azure Resource Manager (шаблоны ARM) используйте Visual Studio Code и расширение средств Azure Resource Manager.
 author: neilpeterson
 ms.date: 08/09/2020
 ms.topic: quickstart
 ms.author: nepeters
-ms.openlocfilehash: 5375fedcd05aefa5d23ee872325373ce631d43bb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d8fd44a1e4c1ddfd78b2afa3280bb05c8fde91e3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88034993"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350149"
 ---
-# <a name="quickstart-create-azure-resource-manager-templates-with-visual-studio-code"></a>Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code
+# <a name="quickstart-create-arm-templates-with-visual-studio-code"></a>Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code
 
-Средства Azure Resource Manager для Visual Studio Code предоставляют языковую поддержку, фрагменты ресурсов и функцию автозавершения ресурсов. Эти средства помогают создавать и проверять шаблоны Azure Resource Manager. В этом кратком руководстве вы будете использовать расширение, чтобы создать шаблон Azure Resource Manager с нуля. При этом вы воспользуетесь возможностями расширений, например фрагментами кода шаблона Resource Manager, функциями проверки и завершения, а также поддержкой файла параметров.
+Средства Azure Resource Manager для Visual Studio Code предоставляют языковую поддержку, фрагменты ресурсов и функцию автозавершения ресурсов. Эти средства помогают создавать и проверять шаблоны Azure Resource Manager (шаблоны ARM). В этом кратком руководстве показано, как с помощью расширения создать шаблон ARM с нуля. При этом вы воспользуетесь возможностями расширений, например фрагментами кода шаблона Resource Manager, функциями проверки и завершения, а также поддержкой файла параметров.
 
 Для работы с этим кратким руководством вам необходимо установить [Visual Studio Code](https://code.visualstudio.com/) с [расширением средств Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools). Вам также потребуется установить и аутентифицировать [Azure CLI](/cli/azure/?view=azure-cli-latest) или [модуль Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-3.7.0).
 
@@ -54,7 +54,7 @@ ms.locfileid: "88034993"
 
 ## <a name="completion-and-validation"></a>Завершение и проверка
 
-Одной из наиболее мощных возможностей расширения является интеграция со схемами Azure. Схемы Azure предоставляют расширения с возможностями проверки и завершения ресурсов. Давайте изменим учетную запись хранения, чтобы увидеть возможности проверки и завершения в действии. 
+Одной из наиболее мощных возможностей расширения является интеграция со схемами Azure. Схемы Azure предоставляют расширения с возможностями проверки и завершения ресурсов. Давайте изменим учетную запись хранения, чтобы увидеть возможности проверки и завершения в действии.
 
 Сначала задайте для типа учетной записи хранения недопустимое значение, например `megaStorage`. Обратите внимание, что в результате этого действия появится предупреждение, уведомляющее, что `megaStorage` не является допустимым значением.
 
@@ -80,7 +80,7 @@ ms.locfileid: "88034993"
 
 ![Изображение, отображающее, что значения minLength и maxLength добавляются в параметр шаблона Resource Manager](./media/quickstart-create-templates-use-visual-studio-code/11.png)
 
-Теперь обновите свойство Name в ресурсе хранилища, чтобы использовать параметр. Для этого удалите текущее имя. Введите двойные кавычки и открывающуюся квадратную скобку `[`, которая вызывает список функций шаблона Resource Manager. В списке выберите *parameters*. 
+Теперь обновите свойство Name в ресурсе хранилища, чтобы использовать параметр. Для этого удалите текущее имя. Введите двойные кавычки и открывающуюся квадратную скобку `[`, которая вызывает список функций шаблона Resource Manager. В списке выберите *parameters*.
 
 ![Изображение, отображающее автоматическое завершение при использовании параметров в ресурсах шаблона Resource Manager](./media/quickstart-create-templates-use-visual-studio-code/12.png)
 

@@ -2,13 +2,13 @@
 title: Учебник по развертыванию и настройке VMware HCX
 description: Узнайте, как развернуть и настроить решение VMware HCX для частного облака Решения Azure VMware.
 ms.topic: tutorial
-ms.date: 11/18/2020
-ms.openlocfilehash: afb5c653ce7c4b4a453a4031c5664042357de6c0
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.date: 11/25/2020
+ms.openlocfilehash: e50454c2299ed0f7e249563eecac1935a29a9c47
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95999639"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352475"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>Развертывание и настройка VMware HCX
 
@@ -16,8 +16,8 @@ ms.locfileid: "95999639"
 
 Расширенный соединитель VMware HCX уже развернут в Решении Azure VMware. Он поддерживает до трех подключений к сайтам (из локальной среды в облако или из облака в облако). Если вам нужно более трех подключений к сайтам, создайте [запрос в службу поддержки](https://portal.azure.com/#create/Microsoft.Support), чтобы включить надстройку [VMware HCX Enterprise](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/). Сейчас надстройка доступна в предварительной версии. 
 
->[!Note]
->Хотя в средстве VMware Configuration Manager максимальное число пар сайтов между локальным соединителем и диспетчером облачных сред равно 25, лицензии ограничивают это число до 3 для выпуска Advanced и до 10 для выпуска Enterprise Edition.
+>[!TIP]
+>Хотя в средстве VMware Configuration Manager максимально допустимо 25 пар сайтов между локальным соединителем и диспетчером облачных сред, лицензии ограничивают это число до 3 для выпуска Advanced и до 10 для выпуска Enterprise.
 
 >[!NOTE]
 >VMware HCX Enterprise предоставляется в составе Решения Azure VMware в предварительной версии службы. Эту службу можно использовать бесплатно на условиях предварительной версии. Когда служба VMware HCX Enterprise станет общедоступной, вы получите уведомление о том, что через 30 дней начнут выставляться счета. Вы сможете отключить эту службу или отказаться от ее использования. Простого способа перейти с версии VMware HCX Enterprise к версии VMware HCX Advanced нет. Если вы решите перейти на использование более ранней версии, потребуется выполнить повторное развертывание, что предполагает простой.
@@ -79,7 +79,7 @@ ms.locfileid: "95999639"
 1. Последовательно выберите **Управление** > **Удостоверение**, а затем щелкните **Пароль администратора vCenter**, чтобы узнать пароль.
 
    > [!TIP]
-   > Пароль vCenter определяется при настройке частного облака, и именно его вы будете использовать для входа в диспетчер HCX Решения Azure VMware.
+   > Пароль vCenter был определен при настройке частного облака. Это тот же пароль, который вы будете использовать для входа в диспетчер HCX Решения Azure VMware.
 
    :::image type="content" source="media/tutorial-vmware-hcx/hcx-admin-password.png" alt-text="Получение пароля HCX." lightbox="media/tutorial-vmware-hcx/hcx-admin-password.png":::
 
@@ -91,7 +91,7 @@ ms.locfileid: "95999639"
 
 ## <a name="deploy-the-vmware-hcx-connector-ova-on-premises"></a>Развертывание OVA-файла соединителя VMware HCX в локальной среде
 
-1. В локальном экземпляре vCenter выберите [шаблон OVF-файла](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html), чтобы развернуть соединитель HCX в локальном экземпляре vCenter. 
+1. В локальном экземпляре vCenter выберите [шаблон OVF-файла](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html), чтобы развернуть соединитель HCX VMware в локальном экземпляре vCenter. 
 
    > [!TIP]
    > Выберите OVA-файл, скачанный ранее.  
@@ -111,12 +111,12 @@ ms.locfileid: "95999639"
 
    :::image type="content" source="media/tutorial-vmware-hcx/customize-template.png" alt-text="Снимок экрана: поля для настройки шаблона" lightbox="media/tutorial-vmware-hcx/customize-template.png":::
 
-1. Проверьте конфигурацию и щелкните **Finish** (Готово), чтобы развернуть OVA-файл соединителя HCX.
+1. Проверьте конфигурацию и щелкните **Finish** (Готово), чтобы развернуть OVA-файл соединителя VMware HCX.
    
    > [!IMPORTANT]
    > Возможно, вам придется вручную включить виртуальное устройство.  После включения подождите 10–15 минут, прежде чем переходить к следующему шагу.
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Appliance Deployment](https://www.youtube.com/embed/BwSnQeefnso) (Решение Azure VMware — развертывание устройства HCX). 
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Appliance Deployment](https://www.youtube.com/embed/UKmSTYrL6AY) (Решение Azure VMware — развертывание устройства HCX). 
 
 
 ## <a name="activate-vmware-hcx"></a>Активация VMware HCX
@@ -163,7 +163,7 @@ ms.locfileid: "95999639"
 
 :::image type="content" source="media/tutorial-vmware-hcx/activation-done.png" alt-text="Снимок экрана: панель мониторинга, где состояние vCenter обозначено зеленым цветом" lightbox="media/tutorial-vmware-hcx/activation-done.png":::  
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: Activate HCX](https://www.youtube.com/embed/BkAV_TNYxdE) (Решение Azure VMware — активация HCX).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: Activate HCX](https://www.youtube.com/embed/jzQZawslF8w) (Решение Azure VMware — активация HCX).
 
    > [!IMPORTANT]
    > Независимо от того, используете ли вы VMware HCX Advanced или VMware HCX Enterprise, может потребоваться установка исправления, указанного в [статье 81558 базы знаний](https://kb.vmware.com/s/article/81558) для VMware. 
@@ -174,7 +174,7 @@ ms.locfileid: "95999639"
 
 ### <a name="add-a-site-pairing"></a>Добавление связывания сайта
 
-Вы можете подключить диспетчер облаков VMware HCX в Решении Azure VMware к соединителю VMware HCX в центре обработки данных (связать их между собой). 
+Вы можете подключить диспетчер облаков VMware HCX в Решении Azure VMware к соединителю VMware HCX в центре обработки данных (связать их между собой). 
 
 1. Войдите в vCenter в локальной среде и в разделе **Home** (Домашняя страница) выберите **HCX**.
 
@@ -183,15 +183,16 @@ ms.locfileid: "95999639"
 1. Введите URL-адрес или IP-адрес (`https://x.x.x.9`) диспетчера облака HCX Решения Azure VMware, который вы сохранили ранее, имя пользователя (cloudadmin@vsphere.local) и пароль для Решения Azure VMware. В этом случае выберите **Подключиться**.
 
    > [!NOTE]
-   > Чтобы связывание сайтов прошло успешно, соединитель HCX должен иметь возможность маршрутизировать IP-адрес диспетчера облака HCX через порт 443.
+   > Условия для успешного связывания сайтов:
+   > * Соединитель VMware HCX должен иметь возможность маршрутизировать IP-адрес диспетчера облака HCX через порт 443.
    >
-   > Пароль здесь используется тот же, что и для входа в vCenter. Этот пароль был определен на начальном экране развертывания.
+   > * Используйте тот же пароль, что и для входа в vCenter. Этот пароль был определен на начальном экране развертывания.
 
-   На этом экране будет показано, что HCX Cloud Manager в Решении Azure VMware и соединитель HCX в локальной среде успешно подключены (связаны друг с другом).
+   На этом экране будет показано, что диспетчер облаков VMware HCX в Решении Azure VMware и соединитель VMware HCX в локальной среде успешно подключены (связаны друг с другом).
 
-   :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Снимок экрана: связывание HCX Manager в Решении Azure VMware и соединителя HCX":::
+   :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Снимок экрана: связывание диспетчера HCX в Решении Azure VMware и соединителя VMware HCX":::.
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Site Pairing](https://www.youtube.com/embed/sKizDCRHOko) (Решение Azure VMware — связывание сайтов HCX).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Site Pairing](https://www.youtube.com/embed/iTJtjbiwvsw) (Решение Azure VMware — связывание сайтов HCX).
 
 ### <a name="create-network-profiles"></a>Создание сетевых профилей
 
@@ -212,7 +213,7 @@ ms.locfileid: "95999639"
 
    :::image type="content" source="media/tutorial-vmware-hcx/example-configurations-network-profile.png" alt-text="Снимок экрана: сведения о новом сетевом профиле":::
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Network Profile](https://www.youtube.com/embed/NhyEcLco4JY) (Решение Azure VMware — сетевой профиль HCX).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Network Profile](https://www.youtube.com/embed/O0rU4jtXUxc) (Решение Azure VMware — сетевой профиль HCX).
 
 
 ### <a name="create-a-compute-profile"></a>Создание вычислительного профиля
@@ -261,7 +262,7 @@ ms.locfileid: "95999639"
 1. В разделе **Select Distributed Switches for Network Extensions** (Выбор распределенных коммутаторов для сетевых расширений) выберите коммутаторы, через которые подключаются виртуальные машины, переносимые в Решение Azure VMware из расширенной сети уровня 2. Затем выберите **Continue** (Продолжить).
 
    > [!NOTE]
-   > Если вы не выполняете миграцию виртуальных машин в расширенных сетях уровня 2, этот шаг можно пропустить.
+   > Если вы не выполняете миграцию виртуальных машин в расширенных сетях уровня 2, этот шаг можно пропустить.
    
    :::image type=" content" source="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png" alt-text="Снимок экрана: выбор распределенных виртуальных коммутаторов и кнопка Continue (Продолжить)" lightbox="media/tutorial-vmware-hcx/select-layer-2-distributed-virtual-switch.png":::
 
@@ -274,18 +275,20 @@ ms.locfileid: "95999639"
 
    :::image type="content" source="media/tutorial-vmware-hcx/compute-profile-done.png" alt-text="Снимок экрана: сведения о вычислительном профиле" lightbox="media/tutorial-vmware-hcx/compute-profile-done.png":::
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: Compute Profile](https://www.youtube.com/embed/qASXi5xrFzM) (Решение Azure VMware — вычислительный профиль).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: Compute Profile](https://www.youtube.com/embed/e02hsChI3b8) (Решение Azure VMware — вычислительный профиль).
 
 ### <a name="create-a-service-mesh"></a>Создание сетки служб
 
 Теперь нужно настроить сетку служб между локальной средой и программно-определяемым центром обработки данных Решения Azure VMware.
 
-   > [!NOTE]
-   > Чтобы связать сетку служб с Решением Azure VMware, требуется следующее:
-   >
-   > открытые порты UDP 500/4500 между локальными адресами сетевого профиля исходящей связи, определенными в локальном соединителе HCX, и адресами сетевого профиля исходящей связи облака HCX в Решении Azure VMware.
-   >
-   > Не забудьте проверить [требуемые порты для HCX](https://ports.vmware.com/home/VMware-HCX).
+
+
+> [!NOTE]
+> Чтобы связать сетку служб с Решением Azure VMware, требуется следующее:
+>
+> * открытые порты UDP 500/4500 между локальными адресами сетевого профиля исходящей связи, определенными в локальном соединителе VMware HCX, и адресами сетевого профиля исходящей связи облака HCX в Решении Azure VMware.
+>
+> * Не забудьте проверить [требуемые порты для VMware HCX](https://ports.vmware.com/home/VMware-HCX).
 
 1. В разделе **Infrastructure** (Инфраструктура) выберите **Interconnect** > **Service Mesh** > **Create Service Mesh** (Межсоединение > Сетка служб > Создать сетку служб).    
 
@@ -312,6 +315,10 @@ ms.locfileid: "95999639"
   
 1. Проверьте параметры на экране **Advanced Configuration — Network Extension Appliance Scale Out** (Расширенная конфигурация: горизонтальное увеличение масштаба устройство расширения сети) и выберите **Continue** (Продолжить). 
 
+   Вы можете использовать до восьми виртуальных локальных сетей на устройство. Вы также можете развернуть другое устройство, чтобы добавить еще восемь виртуальных локальных сетей. Кроме того, в учетной записи необходимо иметь IP-адреса для дополнительных устройств (один IP-адрес на устройство).  Дополнительные сведения см. на странице со сведениями об [ограничениях конфигурации VMware HCX](https://configmax.vmware.com/guest?vmwareproduct=VMware%20HCX&release=VMware%20HCX&categories=41-0,42-0,43-0,44-0,45-0).
+   
+   :::image type="content" source="media/tutorial-vmware-hcx/extend-networks-increase-vlan.png" alt-text="Снимок экрана, на котором показано, где можно увеличить число виртуальных локальных сетей." lightbox="media/tutorial-vmware-hcx/extend-networks-increase-vlan.png":::
+
 1. На экране **Advanced Configuration — Traffic Engineering** (Расширенная конфигурация: проектирование трафика) проверьте параметры и внесите необходимые изменения, а затем щелкните **Continue** (Продолжить).
 
 1. Проверьте предварительную версию топологии и нажмите **Продолжить**.
@@ -332,7 +339,7 @@ ms.locfileid: "95999639"
 
    :::image type="content" source="media/tutorial-vmware-hcx/interconnect-appliance-state.png" alt-text="Снимок экрана: выбор действий для проверки состояния устройства" lightbox="media/tutorial-vmware-hcx/interconnect-appliance-state.png":::
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: Service Mesh](https://www.youtube.com/embed/FyZ0d3P_T24) (Решение Azure VMware — сетка служб).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: Service Mesh](https://www.youtube.com/embed/COY3oIws108) (Решение Azure VMware — сетка служб).
 
 ### <a name="optional-create-a-network-extension"></a>Создание расширения сети (необязательно)
 
@@ -354,7 +361,7 @@ ms.locfileid: "95999639"
 
    :::image type="content" source="media/tutorial-vmware-hcx/extension-complete.png" alt-text="Снимок экрана: состояние завершения расширения" lightbox="media/tutorial-vmware-hcx/extension-complete.png":::
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: Network Extension](https://www.youtube.com/embed/cNlp0f_tTr0) (Решение Azure VMware — расширение сети).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: Network Extension](https://www.youtube.com/embed/gYR0nftKui0) (Решение Azure VMware — расширение сети).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
