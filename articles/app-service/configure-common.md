@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
-ms.openlocfilehash: 7c1b9ad033ade3b577dc4a06e84801dab3b7eb70
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 76cfefa3f104ecef69e28fecd1c37fc336b0ce8c
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763967"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854654"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "96763967"
 
 ![Параметры приложения](./media/configure-common/open-ui.png)
 
-Для разработчиков ASP.NET и ASP.NET Core Установка параметров приложения в службе приложений выполняется так же, как и `<appSettings>` в *Web.config* или *appsettings.js*, но значения в службе приложений переопределяются в *Web.config* или *appsettings.js*. Можно использовать параметры разработки (например, локальный пароль MySQL) в *Web.config* или *appsettings.jsв* и рабочих секретах (например, пароль базы данных MySQL Azure) в службе приложений. Этот же код использует параметры разработки при локальной отладке и использует свои рабочие секреты при развертывании в Azure.
+Для разработчиков ASP.NET и ASP.NET Core Установка параметров приложения в службе приложений выполняется так же, как и `<appSettings>` в *Web.config* или *appsettings.js*, но значения в службе приложений переопределяются в *Web.config* или *appsettings.js*. Можно использовать параметры разработки (например, локальный пароль MySQL) в *Web.config* или *appsettings.jsв* и рабочих секретах (например, пароль базы данных MySQL Azure) безопасно в службе приложений. Этот же код использует параметры разработки при локальной отладке и использует свои рабочие секреты при развертывании в Azure.
 
 Другие стеки языков, аналогично, получают параметры приложения в виде переменных среды во время выполнения. Инструкции по стеку для конкретного языка см. в следующих статьях:
 

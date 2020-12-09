@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: 6585718a549c0e0a6eac1ab50788798e1021fef9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b05ed6e1239721bcf3c1cf33d3ee63a992fd9843
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446816"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853238"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>Использование сайта azureiotsolutions.com для развертывания акселератора решений
 
@@ -22,7 +22,7 @@ ms.locfileid: "96446816"
 ![AzureIoTSolutions.com](media/iot-accelerators-permissions/iotsolutionscom.png)
 
 > [!TIP]
-> Если вам требуется больший контроль над процессом развертывания, можно использовать [CLI для развертывания акселератора решений](iot-accelerators-remote-monitoring-deploy-cli.md).
+> Если вам требуется больший контроль над процессом развертывания, можно использовать CLI для развертывания акселератора решений.
 
 Акселераторы решений можно развернуть в следующих конфигурациях.
 
@@ -64,9 +64,4 @@ ms.locfileid: "96446816"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы опробовать один из акселераторов решений Интернета вещей, см. следующие краткие руководства.
-
-* [Краткое руководство. Использование облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
-* [Краткое руководство. Пробное использование облачного решения для управления промышленными устройствами Центра Интернета вещей](quickstart-connected-factory-deploy.md)
-* [Краткое руководство. Использование облачных решений для анализа прогнозного обслуживания на подключенных устройствах](quickstart-predictive-maintenance-deploy.md)
-* [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md)
+Чтобы испытать одно из акселераторов решений Интернета вещей, ознакомьтесь с кратким руководством по использованию [решения для подключенной фабрики](quickstart-connected-factory-deploy.md).

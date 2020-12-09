@@ -5,13 +5,13 @@ ms.service: data-share
 author: jifems
 ms.author: jife
 ms.topic: conceptual
-ms.date: 11/12/2020
-ms.openlocfilehash: 6289395b5d508de8da3e5c8c89caebb4b0e9b817
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.date: 12/7/2020
+ms.openlocfilehash: 566fd2c9c31933420769f7200a0434cc53f8c2f3
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592436"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853154"
 ---
 # <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в Azure Data Share
 
@@ -30,7 +30,7 @@ ms.locfileid: "94592436"
 | Azure Data Lake Storage 2-го поколения |✓ |✓ ||
 | База данных SQL Azure |✓ | | |
 | Azure синапсе Analytics (ранее — хранилище данных SQL Azure) |✓ | | |
-| Пул SQL Azure синапсе Analytics (Рабочая область) | Общедоступная предварительная версия | | |
+| Выделенный пул SQL Azure синапсе Analytics (Рабочая область) |✓ | | |
 | Azure Data Explorer | | |✓ |
 
 ## <a name="data-store-support-matrix"></a>Матрица поддержки хранилища данных
@@ -39,22 +39,22 @@ ms.locfileid: "94592436"
 
 В таблице ниже приведены различные сочетания и варианты, которые пользователи данных имеют при принятии и настройке общей папки данных. Дополнительные сведения о настройке сопоставлений наборов данных см. в разделе [Настройка сопоставлений наборов данных](how-to-configure-mapping.md).
 
-| Хранилище данных | хранилище BLOB-объектов Azure | Хранилище Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 2-го поколения | База данных SQL Azure | Azure синапсе Analytics (ранее — хранилище данных SQL Azure) | Пул SQL Azure синапсе Analytics (Рабочая область) | Azure Data Explorer
+| Хранилище данных | хранилище BLOB-объектов Azure | Хранилище Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 2-го поколения | База данных SQL Azure | Azure синапсе Analytics (ранее — хранилище данных SQL Azure) | Выделенный пул SQL Azure синапсе Analytics (Рабочая область) | Azure Data Explorer
 |:--- |:--- |:--- |:--- |:--- |:--- |:--- | :--- |
 | Хранилище BLOB-объектов Azure | ✓ || ✓ |||
 | Хранилище Azure Data Lake Storage 1-го поколения | ✓ | | ✓ |||
 | Azure Data Lake Storage 2-го поколения | ✓ | | ✓ |||
 | База данных SQL Azure | ✓ | | ✓ | ✓ | ✓ | ✓ ||
 | Azure синапсе Analytics (ранее — хранилище данных SQL Azure) | ✓ | | ✓ | ✓ | ✓ | ✓ ||
-| Пул SQL Azure синапсе Analytics (Рабочая область) | ✓ | | ✓ | ✓ | ✓ | ✓ ||
+| Выделенный пул SQL Azure синапсе Analytics (Рабочая область) | ✓ | | ✓ | ✓ | ✓ | ✓ ||
 | Azure Data Explorer ||||||| ✓ |
 
-## <a name="share-from-a-storage-account"></a>Общий доступ из учетной записи хранения
+## <a name="share-from-a-storage-account"></a>Предоставление общего доступа к данным из учетной записи хранения
 Общая папка данных Azure поддерживает общий доступ к файлам, папкам и файловым системам Azure Data Lake Gen1 и Azure Data Lake Gen2. Он также поддерживает общий доступ к BLOB-объектам, папкам и контейнерам из хранилища BLOB-объектов Azure. В настоящее время поддерживается только блочный BLOB-объект. Если файловые системы, контейнеры или папки используются совместно с общим доступом на основе моментальных снимков, потребитель данных может создать полную копию общих данных или использовать функцию добавочного моментального снимка для копирования только новых или обновленных файлов. Добавочный моментальный снимок основан на времени последнего изменения файлов. Существующие файлы с тем же именем будут перезаписаны.
 
 Дополнительные сведения см. в разделе [общий доступ и получение данных из хранилища BLOB-объектов Azure и Azure Data Lake Storage](how-to-share-from-storage.md) .
 
-## <a name="share-from-a-sql-based-source"></a>Общий доступ из источника на основе SQL
+## <a name="share-from-a-sql-based-source"></a>Предоставление общего доступа к данным из источника на основе SQL
 Общий ресурс данных Azure поддерживает общий доступ к таблицам и представлениям из базы данных SQL Azure и Azure синапсе Analytics (ранее — хранилище Azure SQL) и общий доступ к таблицам из выделенного пула SQL Azure синапсе Analytics (Рабочая область). Совместное использование несерверного пула SQL в Azure синапсе Analytics (Рабочая область) в настоящее время не поддерживается. Потребители данных могут принять данные в Azure Data Lake Storage 2-го поколения или хранилище BLOB-объектов Azure в виде CSV-или Parquet-файла, а также в базу данных SQL Azure и Azure синапсе Analytics в качестве таблиц.
 
 При принятии данных в Azure Data Lake Store Gen2 или хранилище BLOB-объектов Azure полные моментальные снимки перезаписывают содержимое целевого файла, если он уже существует.

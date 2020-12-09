@@ -9,12 +9,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: be340ffd2df53124f516e370359df688d887ab6c
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 15bc943052218761327fa57ce8ff6f5d32bfb116
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780966"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96855096"
 ---
 # <a name="monitoring-azure-queue-storage"></a>Мониторинг хранилища очередей Azure
 
@@ -99,6 +99,8 @@ ms.locfileid: "96780966"
 
 #### <a name="archive-logs-to-a-storage-account"></a>Архивация журналов в учетную запись хранения
 
+Если вы решили архивировать журналы в учетную запись хранения, вы оплачиваете объем журналов, отправляемых в учетную запись хранения. Конкретные цены см. в разделе **журналы платформы** на странице [цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) .
+
 1. Установите флажок **архивировать в учетную запись хранения** , а затем нажмите кнопку **настроить** .
 
    > [!div class="mx-imgBorder"]
@@ -110,6 +112,8 @@ ms.locfileid: "96780966"
    > Перед тем как выбрать учетную запись хранения в качестве назначения экспорта, см. раздел [Архивация журналов ресурсов Azure](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) , чтобы ознакомиться с предварительными требованиями в учетной записи хранения.
 
 #### <a name="stream-logs-to-azure-event-hubs"></a>Потоковая передача журналов в концентраторы событий Azure
+
+Если вы решили выполнить потоковую передачу журналов в концентратор событий, вы оплачиваете объем журналов, отправляемых в концентратор событий. Конкретные цены см. в разделе **журналы платформы** на странице [цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) .
 
 1. Установите флажок **поток в концентратор событий** , а затем нажмите кнопку **настроить** .
 
@@ -143,6 +147,8 @@ ms.locfileid: "96780966"
 
 #### <a name="archive-logs-to-a-storage-account"></a>Архивация журналов в учетную запись хранения
 
+Если вы решили архивировать журналы в учетную запись хранения, вы оплачиваете объем журналов, отправляемых в учетную запись хранения. Конкретные цены см. в разделе **журналы платформы** на странице [цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) .
+
 Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](/powershell/module/az.monitor/set-azdiagnosticsetting) вместе с `StorageAccountId` параметром.
 
 ```powershell
@@ -160,6 +166,8 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccoun
 Описание каждого параметра см. в разделе [Архивация журналов ресурсов Azure с помощью Azure PowerShell](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage).
 
 #### <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
+
+Если вы решили выполнить потоковую передачу журналов в концентратор событий, вы оплачиваете объем журналов, отправляемых в концентратор событий. Конкретные цены см. в разделе **журналы платформы** на странице [цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) .
 
 Включите журналы с помощью командлета PowerShell [Set-аздиагностиксеттинг](/powershell/module/az.monitor/set-azdiagnosticsetting) с `EventHubAuthorizationRuleId` параметром.
 
@@ -201,6 +209,8 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -WorkspaceId <
 
 #### <a name="archive-logs-to-a-storage-account"></a>Архивация журналов в учетную запись хранения
 
+Если вы решили архивировать журналы в учетную запись хранения, вы оплачиваете объем журналов, отправляемых в учетную запись хранения. Конкретные цены см. в разделе **журналы платформы** на странице [цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) .
+
 Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
 
 ```azurecli-interactive
@@ -218,6 +228,8 @@ az monitor diagnostic-settings create --name <setting-name> --storage-account <s
 Описание каждого параметра см. в разделе [Архивные журналы ресурсов с помощью Azure CLI](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage).
 
 #### <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
+
+Если вы решили выполнить потоковую передачу журналов в концентратор событий, вы оплачиваете объем журналов, отправляемых в концентратор событий. Конкретные цены см. в разделе **журналы платформы** на странице [цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) .
 
 Включите журналы с помощью команды [AZ Monitor диагностики-Settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: devx-track-csharp
 ms.reviewer: sdash
-ms.openlocfilehash: 642a382f2ec5da7821c9d709bd27d592ced31c8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3383b4a3c2eab1f62d180c31e278f07b92c649c5
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90974022"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853521"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -40,7 +40,7 @@ ms.locfileid: "90974022"
 
 Щелкните любой компонент, чтобы просмотреть соответствующие данные аналитики и перейти к интерфейсу для рассмотрения производительности и сбоев этого компонента.
 
-![Flyout](media/app-map/application-map-002.png)
+![Всплывающий элемент](media/app-map/application-map-002.png)
 
 ### <a name="investigate-failures"></a>Анализ сбоев
 
@@ -165,10 +165,8 @@ namespace CustomInitializer.Telemetry
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "roleName": "my cloud role name"
-    }
+  "role": {
+    "name": "my cloud role name"
   }
 }
 ```
@@ -293,7 +291,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](correlation.md).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.

@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 11/18/2020
 ms.author: b-juche
-ms.openlocfilehash: 06885e3f6a1ceeebc7c0bb1053e36e9e95a0043e
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: ee5e1230acd059d69648144b84a8fbfa652ef6e7
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888782"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854059"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Создание тома с двумя протоколами (NFSv3 и SMB) для Azure NetApp Files
 
-Azure NetApp Files поддерживает создание томов с помощью NFS (NFSv3 и Нфсв 4.1), SMBv3 или Dual Protocol. В этой статье показано, как создать том, использующий сдвоенный протокол NFSv3 и SMB с поддержкой сопоставления пользователей LDAP.  
+Azure NetApp Files поддерживает создание томов с помощью NFS (NFSv3 и Нфсв 4.1), SMB3 или Dual Protocol. В этой статье показано, как создать том, использующий сдвоенный протокол NFSv3 и SMB с поддержкой сопоставления пользователей LDAP.  
 
 
-## <a name="before-you-begin"></a>Перед началом 
+## <a name="before-you-begin"></a>Подготовка к работе 
 
 * Вы должны уже создали пул емкости.  
     См. раздел [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md).   

@@ -1,6 +1,6 @@
 ---
 title: Создание тома SMB для Azure NetApp Files | Документация Майкрософт
-description: В этой статье показано, как создать том SMBv3 в Azure NetApp Files. Узнайте о требованиях к Active Directoryным подключениям и доменным службам.
+description: В этой статье показано, как создать том SMB3 в Azure NetApp Files. Узнайте о требованиях к Active Directoryным подключениям и доменным службам.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: b-juche
-ms.openlocfilehash: 682a97738e94c2a8188b4976a229d6a850a5b6ac
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: cd2a293ebcc35d4884211f50783738a502dcc7de
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512007"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854831"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
-Azure NetApp Files поддерживает создание томов с помощью NFS (NFSv3 и Нфсв 4.1), SMBv3 или двойного протокола (NFSv3 и SMB). Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том SMBv3.
+Azure NetApp Files поддерживает создание томов с помощью NFS (NFSv3 и Нфсв 4.1), SMB3 или двойного протокола (NFSv3 и SMB). Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том SMB3.
 
 ## <a name="before-you-begin"></a>Перед началом 
 Перед началом необходимо настроить пул емкости.   

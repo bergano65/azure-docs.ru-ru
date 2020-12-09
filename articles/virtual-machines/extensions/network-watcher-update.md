@@ -13,12 +13,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: damendo
-ms.openlocfilehash: c427a206e0422e66cb526a29a462d8b6bdf6818e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 144320ea1b2505d8a43e1885091ec14a847e4ab1
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965941"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853668"
 ---
 # <a name="update-the-network-watcher-extension-to-the-latest-version"></a>Обновление расширения наблюдателя за сетями до последней версии
 
@@ -26,15 +26,111 @@ ms.locfileid: "94965941"
 
 [Наблюдатель за сетями Azure](../../network-watcher/network-watcher-monitoring-overview.md) — это служба наблюдения за производительностью сети, диагностики и аналитики, которая наблюдает за сетями Azure. Расширение виртуальной машины агента наблюдателя за сетями — это требование для записи сетевого трафика по требованию и использования других расширенных функций на виртуальных машинах Azure. Расширение наблюдателя за сетями используется такими функциями, как монитор подключения, монитор подключения (Предварительная версия), устранение неполадок подключения и запись пакетов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что на виртуальной машине установлено расширение наблюдателя за сетями.
 
 ## <a name="latest-version"></a>Последняя версия
 
-В настоящее время доступна последняя версия расширения наблюдателя за сетями `1.4.1654.1` .
+В настоящее время доступна последняя версия расширения наблюдателя за сетями `1.4.1693.1` .
 
-## <a name="update-your-extension"></a>Обновление расширения
+## <a name="update-your-extension-using-a-powershell-script"></a>Обновление расширения с помощью сценария PowerShell
+Клиенты с большими развертываниями, которым необходимо одновременно обновить несколько виртуальных машин. Сведения об обновлении выбранных виртуальных машин вручную см. в следующем разделе. 
+
+```powershell
+<#
+    .SYNOPSIS
+    This script will scan all VMs in the provided subscription and upgrade any out of date AzureNetworkWatcherExtensions
+
+    .DESCRIPTION
+    This script should be no-op if AzureNetworkWatcherExtensions are up to date
+    Requires Azure PowerShell 4.2 or higher to be installed (e.g. Install-Module AzureRM).
+
+    .EXAMPLE
+    .\UpdateVMAgentsInSub.ps1 -SubID F4BC4873-5DAB-491E-B713-1358EF4992F2 -NoUpdate
+
+#>
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory=$true)]
+    [string] $SubID,
+    [Parameter(Mandatory=$false)]
+    [Switch] $NoUpdate = $false,
+    [Parameter(Mandatory=$false)]
+    [string] $MinVersion = "1.4.1654.1"
+)
+
+
+function NeedsUpdate($version)
+{
+    if ($version -eq $MinVersion)
+    {
+        return $false
+    }
+
+    $lessThan = $true;
+    $versionParts = $version -split '\.';
+    $minVersionParts = $MinVersion -split '\.';
+    for ($i = 0; $i -lt $versionParts.Length; $i++)
+    {
+        if ([int]$versionParts[$i] -gt [int]$minVersionParts[$i])
+        {
+            $lessThan = $false;
+            break;
+        }
+    }
+
+    return $lessThan
+}
+
+Write-Host "Scanning all VMs in the subscription: $($SubID)"
+Select-AzSubscription -SubscriptionId $SubID;
+$vms = Get-AzVM;
+$foundVMs = $false;
+Write-Host "Starting VM search, this may take a while"
+
+foreach ($vmName in $vms)
+{
+    # Get Detailed VM info
+    $vm = Get-AzVM -ResourceGroupName $vmName.ResourceGroupName -Name $vmName.name -Status;
+    $isWindows = $vm.OsVersion -match "Windows";
+    foreach ($extension in $vm.Extensions)
+    {
+        if ($extension.Name -eq "AzureNetworkWatcherExtension")
+        {
+            if (NeedsUpdate($extension.TypeHandlerVersion))
+            {
+                $foundVMs = $true;
+                if (-not ($NoUpdate))
+                {
+                    Write-Host "Found VM that needs to be updated: subscriptions/$($SubID)/resourceGroups/$($vm.ResourceGroupName)/providers/Microsoft.Compute/virtualMachines/$($vm.Name) -> Updating " -NoNewline
+                    Remove-AzVMExtension -ResourceGroupName $vm.ResourceGroupName -VMName $vm.Name -Name "AzureNetworkWatcherExtension" -Force
+                    Write-Host "... " -NoNewline
+                    $type = if ($isWindows) { "NetworkWatcherAgentWindows" } else { "NetworkWatcherAgentLinux" };
+                    Set-AzVMExtension -ResourceGroupName $vm.ResourceGroupName -Location $vmName.Location -VMName $vm.Name -Name "AzureNetworkWatcherExtension" -Publisher "Microsoft.Azure.NetworkWatcher" -Type $type -typeHandlerVersion "1.4"
+                    Write-Host "Done"
+                }
+                else
+                {
+                    Write-Host "Found $(if ($isWindows) {"Windows"} else {"Linux"}) VM that needs to be updated: subscriptions/$($SubID)/resourceGroups/$($vm.ResourceGroupName)/providers/Microsoft.Compute/virtualMachines/$($vm.Name)"
+                }
+            }
+        }
+    }
+}
+
+if ($foundVMs)
+{
+    Write-Host "Finished $(if ($NoUpdate) {"searching"} else {"updating"}) out of date AzureNetworkWatcherExtension on VMs"
+}
+else
+{
+    Write-Host "All AzureNetworkWatcherExtensions up to date"
+}
+
+```
+
+## <a name="update-your-extension-manually"></a>Обновление расширения вручную
 
 Чтобы обновить расширение, необходимо знать версию расширения.
 
@@ -48,7 +144,7 @@ ms.locfileid: "94965941"
 1. Выберите расширение **азуренетворкватчер** , чтобы открыть область сведений.
 1. В поле **Version (версия** ) щелкните номер версии.  
 
-#### <a name="use-the-azure-cli"></a>Использование Azure CLI
+#### <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
 
 Выполните следующую команду в командной строке Azure CLI:
 
@@ -72,7 +168,7 @@ Get-AzVM -ResourceGroupName "SampleRG" -Name "Sample-VM" -Status
 
 ### <a name="update-your-extension"></a>Обновление расширения
 
-Если версия более ранняя, чем `1.4.1654.1` Текущая последняя версия, обновите расширение с помощью любого из следующих параметров.
+Если ваша версия ниже последней указанной выше версии, обновите расширение, используя любой из следующих вариантов.
 
 #### <a name="option-1-use-powershell"></a>Вариант 1. Использование PowerShell
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b2fb06c838de480bb73501307ab11cb3d6831921
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9f80de5a18e27de4a9f8e85613e3c2eee6c111c
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88919324"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853481"
 ---
 # <a name="create-video-reviews-using-net"></a>Создание проверок видео с помощью .NET
 
@@ -28,7 +28,7 @@ ms.locfileid: "88919324"
 - получение состояния и сведений о проверке;
 - публикация проверки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 - В этой статье предполагается, что вы уже [модерировали видео (ознакомьтесь с кратким руководством)](video-moderation-api.md) и у вас есть данные ответа. Они требуются для создания проверок по кадрам для модераторов-пользователей.
@@ -549,7 +549,3 @@ Press any key to close the application.
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение для Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator). Они вам понадобятся для работы с этим и другими руководствами по Content Moderator для .NET.
-
-Узнайте, как добавить [модерацию расшифровки](video-transcript-moderation-review-tutorial-dotnet.md) в проверку видео. 
-
-Ознакомьтесь с подробным руководством по разработке [полного решения для модерации видео](video-transcript-moderation-review-tutorial-dotnet.md).

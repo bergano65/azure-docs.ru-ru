@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 268862d6e868342a252ca9d5eb08b9753142e8b1
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 99246ecee27f7ded693e2a797f8e98480e350983
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750753"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854535"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
@@ -37,7 +37,7 @@ Azure Веснного облака расширяет возможности д
 
 ### <a name="in-which-regions-is-azure-spring-cloud-available"></a>В каких регионах доступно облако Azure весны?
 
-Восточная часть США, восток США 2, Центральная часть США, Юго-Центральный регион США, Запад США 2, Западная Европа, Северная Европа, южная часть Соединенного Королевства, Юго-Восточная Азия и Восточная Австралия.
+Восточная часть США, Восточная часть США 2, Центральная часть США, Юго-Центральный регион США, северо-центральное, Запад США, Западная часть US 2, Западная Европа, Северная Европа, южная часть Соединенного Королевства, Юго-Восточная Азия, Восточная Австралия, Центральная Канада и Северная ОАЭ.
 
 ### <a name="is-any-customer-data-stored-outside-of-the-specified-region"></a>Хранятся ли данные клиента за пределами указанного региона?
 
@@ -241,6 +241,6 @@ RetryableEurekaHttpClient: Request execution failure with status code 401; retry
 Мы улучшаем эту часть и не будем использовать эту ошибку в приложениях пользователей в течение короткого будущего времени.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникнут другие вопросы, см. [руководство по устранению неполадок в облаке Azure весны](spring-cloud-troubleshoot.md).

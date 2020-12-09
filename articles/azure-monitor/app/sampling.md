@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 3ec9718d313e7e8d757eb41c230225bdcf9ebd49
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: e9334d222d443679362514481ecd83b90bbda0ac
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96749051"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96855079"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -33,12 +33,12 @@ ms.locfileid: "96749051"
 | Пакет SDK для Application Insights | Поддерживается Адаптивная выборка | Поддерживается выборка с фиксированной частотой | Поддерживается выборка приема |
 |-|-|-|-|
 | ASP.NET | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-applications) | Только если не действует ни одна другая выборка |
-| ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
-| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
-| Java | Нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
-| Node.JS | Нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
-| Python | Нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
-| Все остальные | Нет | Нет | [Да](#ingestion-sampling) |
+| ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
+| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | нет | Только если не действует ни одна другая выборка |
+| Java | нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
+| Node.JS | нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
+| Python | нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
+| Все остальные | нет | нет | [Да](#ingestion-sampling) |
 
 > [!NOTE]
 > Сведения, приведенные на этой странице, относятся к текущим версиям пакетов SDK для Application Insights. Сведения о более ранних версиях пакетов SDK [см. в разделе ниже](#older-sdk-versions).
@@ -315,18 +315,12 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 1. Скачайте [аппликатионинсигхтс-ажент-3.0.0-превиев. 5. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.5/applicationinsights-agent-3.0.0-PREVIEW.5.jar)
 
-1. Чтобы включить выборку, добавьте в `ApplicationInsights.json` файл следующее:
+1. Чтобы включить выборку, добавьте в `applicationinsights.json` файл следующее:
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "sampling": {
-        "fixedRate": {
-          "percentage": 10 //this is just an example that shows you how to enable only only 10% of transaction 
-        }
-      }
-    }
+  "sampling": {
+    "percentage": 10 //this is just an example that shows you how to enable only only 10% of transaction 
   }
 }
 ```
@@ -559,7 +553,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 * Выборка приема может выполняться автоматически, когда объем данных телеметрии превышает определенный порог, если пакет SDK не выполняет выборку. Такая конфигурация будет работать, например, при использовании более старой версии пакета SDK для ASP.NET или пакета SDK для Java.
 * Если вы используете текущие пакеты SDK ASP.NET или ASP.NET Core (размещенные либо в Azure, либо на собственном сервере), вы получаете адаптивную выборку по умолчанию, но можно переключиться на фиксированную расставку, как описано выше. При выборке с фиксированной частотой пакет SDK браузера выполняет автоматическую синхронизацию с событиями, связанными с выборкой. 
-* Если вы используете текущий агент Java, можно настроить `ApplicationInsights.json` (для пакета SDK для Java, настроить `ApplicationInsights.xml` ) для включения выборки с фиксированной частотой. По умолчанию выборка отключена. При использовании выборки с фиксированной частотой пакет SDK браузера и сервер автоматически синхронизируются с образцом связанных событий.
+* Если вы используете текущий агент Java, можно настроить `applicationinsights.json` (для пакета SDK для Java, настроить `ApplicationInsights.xml` ) для включения выборки с фиксированной частотой. По умолчанию выборка отключена. При использовании выборки с фиксированной частотой пакет SDK браузера и сервер автоматически синхронизируются с образцом связанных событий.
 
 *Есть определенные редкие события, которые я всегда хочу просматривать. Как сделать так, чтобы модуль выборки не отфильтровывал их?*
 

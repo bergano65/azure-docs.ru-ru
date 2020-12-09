@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: 5be6a2d73be35b3d637df9364364784d373dabb3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 08d30fb72398c4b43422eb21f132d5fddd5502b7
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186700"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853155"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые отслеживаются с помощью Azure Monitor. 
@@ -120,7 +120,7 @@ ms.locfileid: "96186700"
 |Центр Интернета вещей | Да | Да | нет |  |
 |Key Vault | Да | Да | [Да](./insights/key-vault-insights-overview.md) |  |
 |Служба Kubernetes (AKS) | нет | нет | [Да](insights/container-insights-overview.md)  |  |
-|Load Balancer | Да | Нет | нет |  |
+|Load Balancer | Да | нет | нет |  |
 |Logic Apps | Да | Да | нет |  |
 |Служба машинного обучения | нет | нет | нет |  |
 |Управляемые приложения  | нет | нет | нет |  |
@@ -130,10 +130,10 @@ ms.locfileid: "96186700"
 |Microsoft PowerApps | нет | нет | нет |  |
 |Microsoft Social Engagement | нет | нет | нет |  |
 |Microsoft Stream; | Да | Да | нет |  |
-|Миграция | нет | Нет | нет |  |
+|Миграция | нет | нет | нет |  |
 |Многофакторная идентификация | нет | Да | нет |  |
 |Наблюдатель за сетями | Да | Да | нет |  |
-|Центры уведомлений | Да | Нет | нет |  |
+|Центры уведомлений | Да | нет | нет |  |
 |Открытые наборы данных | нет | нет | нет |  |
 |Политика | нет | нет | нет |  |
 |Power Automate | нет | нет | нет |  |
@@ -142,7 +142,7 @@ ms.locfileid: "96186700"
 |Project Spool Communication Platform | нет | нет | нет |  |
 |Red Hat OpenShift. | нет | нет | нет |  |
 |кэш Redis; | Да | Да | [Да](insights/redis-cache-insights-overview.md) | |
-|Resource Graph | нет | Нет | нет |  |
+|Resource Graph | нет | нет | нет |  |
 |Resource Manager | нет | нет | нет |  |
 |Microsoft Bing для электронной коммерции | нет | нет | нет |  |
 |Поиск | Да | Да | нет |  |
@@ -150,25 +150,25 @@ ms.locfileid: "96186700"
 |Service Fabric | нет | Да | нет | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами.  |
 |Портал регистрации | нет | нет | нет |  |
 |Site Recovery | нет | Да | нет |  |
-|Служба Spring Cloud | нет | Нет | нет |  |
+|Служба Spring Cloud | нет | нет | нет |  |
 |Azure Synapse Analytics | Да | Да | нет |  |
 |База данных SQL | Да | Да | нет |  |
 |SQL Server Stretch Database | Да | Да | нет |  |
-|Стек | нет | Нет | нет |  |
+|Стек | нет | нет | нет |  |
 |Память | Да | нет | [Да](insights/storage-insights-overview.md) |  |
 |Кэш хранилища | нет | нет | нет |  |
 |Службы синхронизации хранилища | нет | нет | нет |  |
 |Stream Analytics | Да | Да | нет |  |
 |Аналитика временных рядов | Да | Да | нет |  |
-|TINA | нет | Нет | нет |  |
+|TINA | нет | нет | нет |  |
 |Диспетчер трафика | Да | Да | нет |  |
-|Универсальная печать | нет | Нет | нет |  |
+|Универсальная печать | нет | нет | нет |  |
 |Масштабируемые наборы виртуальных машин Microsoft Azure | нет | Да | [Да](insights/vminsights-overview.md) | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами. |
 |Виртуальные машины | Да | Да | [Да](insights/vminsights-overview.md) | Агент, необходимый для наблюдения за операционной системой на виртуальной машине и рабочими процессами. |
 |Виртуальная сеть | Да | Да | [Да](insights/network-insights-overview.md) |  |
 |Виртуальная сеть — журналы потоков NSG | нет | Да | нет |  |
 |VPN-шлюз | Да | Да | нет |  |
-|Виртуальный рабочий стол Windows | нет | Нет | нет |  |
+|Виртуальный рабочий стол Windows | нет | нет | нет |  |
 
 ## <a name="virtual-machine-agents"></a>Агенты виртуальных машин
 В следующей таблице перечислены агенты, которые могут получать данные из гостевой операционной системы виртуальных машин и передавать данные для наблюдения. Каждый агент может составлять различные данные и передавать их метрикам или журналам в Azure Monitor. 
@@ -177,11 +177,11 @@ ms.locfileid: "96186700"
 
 | Агент |  Метрики | Журналы |
 |:---|:---|:---|:---|
-| [Агент Azure Monitor (Предварительная версия)](platform/azure-monitor-agent-overview.md) | Да | Да |
-| [Агент Log Analytics](platform/log-analytics-agent.md) | Нет | Да|
-| [Диагностическое расширение](platform/diagnostics-extension-overview.md) | Да | Нет |
-| [Агент Telegraf](platform/collect-custom-metrics-linux-telegraf.md) | Да | Нет |
-| [Агент зависимостей](insights/vminsights-enable-overview.md) | Нет | Да |
+| [Агент Azure Monitor (предварительная версия)](platform/azure-monitor-agent-overview.md) | Да | Да |
+| [Агент Log Analytics](platform/log-analytics-agent.md) | нет | Да|
+| [Расширение системы диагностики](platform/diagnostics-extension-overview.md) | Да | нет |
+| [Агент Telegraf](platform/collect-custom-metrics-linux-telegraf.md) | Да | нет |
+| [Агент зависимостей](insights/vminsights-enable-overview.md) | нет | Да |
 
 
 ## <a name="product-integrations"></a>Интеграция продуктов
@@ -194,7 +194,7 @@ ms.locfileid: "96186700"
 | [Центр безопасности Azure](../security-center/index.yml) | Сбор и анализ событий безопасности и анализ угроз. См. [Сбор данных в Центре безопасности Azure](../security-center/security-center-enable-data-collection.md). |
 | [Azure Sentinel](../sentinel/index.yml) | Подключается к различным источникам, включая Office 365 и Amazon Web Services CloudTrail. См. статью [Подключение источников данных](../sentinel/connect-data-sources.md). |
 | [Microsoft Intune](/intune/) | Настройка параметров диагностики для отправки журналов в Azure Monitor. См. статью [Отправка данных журнала в хранилище, концентраторы событий или Log Analytics в Intune (предварительная версия)](/intune/fundamentals/review-logs-using-azure-monitor).  |
-| Сеть  | [Монитор производительности сети](insights/network-performance-monitor.md) — отслеживание сетевых подключений и производительности конечных точек служб и приложений.<br>[Шлюз приложений Azure](insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-azure-monitor) — анализ журналов и метрик из Шлюза приложений Azure.<br>[Аналитика трафика](../network-watcher/traffic-analytics.md) — анализ журналов потоков группы безопасности сети (NSG) Наблюдателя за сетями и предоставление сведений о потоке трафика в облаке Azure. |
+| Сеть  | [Монитор производительности сети](insights/network-performance-monitor.md) — отслеживание сетевых подключений и производительности конечных точек служб и приложений.<br>[Шлюз приложений Azure](insights/azure-networking-analytics.md#azure-application-gateway-analytics) — анализ журналов и метрик из Шлюза приложений Azure.<br>[Аналитика трафика](../network-watcher/traffic-analytics.md) — анализ журналов потоков группы безопасности сети (NSG) Наблюдателя за сетями и предоставление сведений о потоке трафика в облаке Azure. |
 | [Office 365](insights/solution-office-365.md) | Мониторинг среды Office 365. Обновленная версия с улучшенной процедурой подключения доступна в Azure Sentinel. |
 | [Аналитика SQL](insights/azure-sql.md) | Отслеживайте производительность баз данных SQL Azure и управляемых экземпляров SQL в масштабе и нескольких подписках. |
 | [Surface Hub](insights/surface-hubs.md) | Отслеживание работоспособности и использования устройств Surface Hub. |

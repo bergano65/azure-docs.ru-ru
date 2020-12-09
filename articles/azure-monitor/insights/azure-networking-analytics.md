@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 4dc5b84ff127aef173deecfd2be705004d92ee0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7df04bd75f3fd11b1caa702655cbd204fc2b4fda
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449923"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854888"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения для мониторинга сетей Azure в Azure Monitor
 
@@ -37,14 +37,20 @@ ms.locfileid: "91449923"
 
 Дополнительную информацию см. в статье [Решение монитора производительности сети в Azure Log Analytics](../../networking/network-monitoring-overview.md).
 
-## <a name="azure-application-gateway-and-network-security-group-analytics"></a>Шлюз приложений Azure и анализ групп безопасности сети
-Чтобы использовать эти решения, выполните следующие действия.
+## <a name="network-security-group-analytics"></a>Анализ групп безопасности сети
+
 1. Добавьте решение по управлению в Azure Monitor.
 2. Включите отправку данных диагностики в рабочую область Log Analytics в Azure Monitor. Необязательно записывать журналы в хранилище BLOB-объектов Azure.
 
-Диагностику и соответствующее решение можно включить как для одного, так и для обоих компонентов (шлюз приложений и группы безопасности сети).
+Если журналы диагностики не включены, колонки панели мониторинга для этого ресурса будут пустыми и отобразится сообщение об ошибке.
 
-Если вы установите решение, но не включите ведение журналов ресурса диагностики для определенного типа ресурсов, то колонки панели мониторинга для этого ресурса будут пустыми, а также появится сообщение об ошибке.
+## <a name="azure-application-gateway-analytics"></a>Анализ шлюзов приложений Azure
+
+1. Включите отправку данных диагностики в рабочую область Log Analytics в Azure Monitor.
+2. Используйте подробную сводку для ресурса с помощью шаблона книги для шлюза приложений.
+
+Если журналы диагностики не включены для шлюза приложений, в книге будут заполнены только данные метрик по умолчанию.
+
 
 > [!NOTE]
 > В январе 2017 г. был изменен поддерживаемый способ отправки журналов из Шлюзов приложений и групп безопасности сети в рабочую область Log Analytics. Если отобразится устаревшее решение **Анализ сетевой активности Azure (не рекомендуется)** , то выполните действия, описанные в разделе [Миграция из устаревшего решения для анализа сетевой активности](#migrating-from-the-old-networking-analytics-solution).
@@ -61,37 +67,15 @@ ms.locfileid: "91449923"
 | Azure |  |  |&#8226; |  |  |при входе |
 
 
-## <a name="azure-application-gateway-analytics-solution-in-azure-monitor"></a>Решение для анализа Шлюзов приложений Azure в Azure Monitor
-
-![Символ "Аналитика службы приложений Azure"](media/azure-networking-analytics/azure-analytics-symbol.png)
-
-Шлюзы приложений поддерживают следующие журналы:
-
-* ApplicationGatewayAccessLog
-* ApplicationGatewayPerformanceLog
-* ApplicationGatewayFirewallLog
-
-Шлюзы приложений поддерживают следующие метрики:
-
-
-* пропускная способность за 5 минут.
-
-### <a name="install-and-configure-the-solution"></a>Установка и настройка решения
-Установите и настройте решение для анализа шлюзов приложений Azure, выполнив следующие указания:
-
-1. Включите решение для анализа Шлюза приложений Azure из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureAppGatewayAnalyticsOMS?tab=Overview) или выполните инструкции статьи [Добавление решений для мониторинга в Azure Monitor из Коллекции решений](./solutions.md).
-2. Включите ведение журнала диагностики для [шлюзов приложений](../../application-gateway/application-gateway-diagnostics.md), для которых требуется выполнять мониторинг.
-
-#### <a name="enable-azure-application-gateway-diagnostics-in-the-portal"></a>Включение диагностики шлюза приложений Azure на портале
+### <a name="enable-azure-application-gateway-diagnostics-in-the-portal"></a>Включение диагностики шлюза приложений Azure на портале
 
 1. На портале Azure перейдите к ресурсу Шлюза приложений, который нужно отслеживать.
-2. Выберите *Журналы диагностики*, чтобы открыть следующую страницу.
+2. Выберите *параметры диагностики* , чтобы открыть следующую страницу.
 
-   ![Снимок экрана со страницей "журналы диагностики" для ресурса шлюза приложений, в котором отображается параметр включения диагностики.](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics01.png)
-3. Щелкните *Включить диагностику*, чтобы открыть следующую страницу.
+   ![Снимок экрана с конфигурацией параметров диагностики для ресурса шлюза приложений.](media/azure-networking-analytics/diagnostic-settings-1.png)
 
-   ![Снимок экрана страницы для настройки параметров диагностики. Параметр "отправить в Log Analytics" выбран как три типа журналов и метрика.](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics02.png)
-4. Чтобы включить диагностику, щелкните *Вкл.* в разделе *Состояние*.
+   [![Снимок экрана страницы для настройки параметров диагностики.](media/azure-networking-analytics/diagnostic-settings-2.png)](media/azure-networking-analytics/application-gateway-diagnostics-2.png#lightbox)
+
 5. Установите флажок *Отправить в Log Analytics*.
 6. Выберите существующую рабочую область Log Analytics или создайте рабочую область.
 7. В разделе **Журнал** установите флажки для всех собираемых типов журналов.
@@ -109,28 +93,33 @@ $gateway = Get-AzApplicationGateway -Name 'ContosoGateway'
 Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspaceId -Enabled $true
 ```
 
-### <a name="use-azure-application-gateway-analytics"></a>Использование анализа шлюзов приложений Azure
-![снимок экрана: элемент "Анализ шлюзов приложений Azure"](media/azure-networking-analytics/log-analytics-appgateway-tile.png)
+#### <a name="accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights"></a>Доступ к аналитике шлюза приложений Azure с помощью Azure Monitor Network Insights
 
-Выбрав элемент **Azure Application Gateway analytics** (Анализ шлюзов приложений Azure) в разделе "Обзор", можно просмотреть сводные данные журналов и подробные сведения по следующим категориям:
+Доступ к Application Insights можно получить с помощью вкладки "аналитика" в ресурсе шлюза приложений.
 
-* Журналы доступа к шлюзу приложений:
-  * ошибки клиента и сервера для журналов доступа шлюза приложений;
-  * количество запросов в час для каждого шлюза приложений;
-  * количество неудачных запросов в час для каждого шлюза приложений;
-  * ошибки агентов пользователя для шлюзов приложений.
-* Производительность шлюза приложений:
-  * работоспособность узла для шлюза приложений;
-  * максимальное количество и 95-й процентиль для неудачных запросов шлюза приложений.
+![Снимок экрана: аналитика шлюза приложений ](media/azure-networking-analytics/azure-appgw-insights.png
+)
 
-![Снимок экрана: панель мониторинга журналов доступа к шлюзу приложений с плитками, содержащими данные об ошибках шлюза, запросах и неудачных запросах.](media/azure-networking-analytics/log-analytics-appgateway01.png)
+На вкладке "просмотреть подробные метрики" откроется предварительно заполненная книга со сводкой данных из шлюза приложений.
 
-![Снимок экрана панели мониторинга "Журналы доступа к шлюзу приложений" с плитками, содержащими данные об ошибках агента пользователя, работоспособности узла и неудачных запросов.](media/azure-networking-analytics/log-analytics-appgateway02.png)
+[![Снимок экрана книги шлюза приложений](media/azure-networking-analytics/azure-appgw-workbook.png)](media/azure-networking-analytics/application-gateway-workbook.png#lightbox)
 
-На панели мониторинга **Azure Application Gateway analytics** (Анализ шлюзов приложений Azure) просмотрите сводные данные в колонках, а затем щелкните одну из них, чтобы просмотреть подробные сведения на странице поиска журналов.
+## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Миграция из решения аналитики шлюза Azure в Azure Monitor книги
 
-На любой из страниц поиска журналов можно просмотреть результаты по времени, подробные результаты и историю поиска журналов. Для сужения области результатов выполните фильтрацию по аспектам.
+> [!NOTE]
+> Решение для анализа шлюза приложений Azure устарело, поэтому рекомендуемым способом использования аналитики является использование книг, предоставляемых с помощью Azure Monitor Network Insights для ресурса шлюза приложений.
 
+* Если параметр диагностики уже включен для хранения журналов в Log Analytics рабочей области, Azure Monitor книга Network Insights может использовать данные из одного и того же расположения. Новые настройки не требуются.
+
+* Все предыдущие данные уже доступны в книге с включенными параметрами диагностики точки. Перенос данных не требуется.
+
+* Для переключения на книги не требуется активный переключатель. Как решение аналитики, так и книга анализа сети могут работать параллельно.
+
+* Нет дополнительных затрат, связанных с Azure Monitor книгами. В Log Analytics рабочей области будет взиматься плата за использование.
+
+* Чтобы очистить решение аналитики шлюза Azure из рабочей области, можно удалить решение на странице ресурсов решения.
+
+[![Снимок экрана с параметром "Удалить" для решения "анализ шлюза приложений Azure".](media/azure-networking-analytics/azure-appgw-analytics-delete.png)](media/azure-networking-analytics/application-gateway-analytics-delete.png#lightbox)
 
 ## <a name="azure-network-security-group-analytics-solution-in-azure-monitor"></a>Решение "Аналитика групп безопасности сетей Azure" в Azure Monitor
 

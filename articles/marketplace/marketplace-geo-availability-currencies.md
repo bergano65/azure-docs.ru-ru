@@ -1,18 +1,18 @@
 ---
-title: Поддержка географической доступности и валюты для коммерческой платформы Майкрософт
+title: Поддержка географической доступности и валюты для коммерческого рынка Майкрософт
 description: Поддержка географической доступности и валюты для транзакций на коммерческой платформе
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 author: keferna
 ms.author: keferna
-ms.date: 07/29/2020
-ms.openlocfilehash: bdb746c75a175d906301bcfca0b1472383fceff9
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.date: 12/07/2020
+ms.openlocfilehash: 118fe70abf52a6c96f4f2dc47e3ad23a388f3598
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778076"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853753"
 ---
 # <a name="geographic-availability-and-currency-support-for-the-commercial-marketplace"></a>Поддержка географической доступности и валюты для коммерческого рынка
 
@@ -46,22 +46,22 @@ ms.locfileid: "96778076"
 | Бруней-Даруссалам                              | BN        | USD          | БНД, EUR, SGD, USD |
 | Болгария                            | BG        | EUR          | БГН, EUR, USD |
 | Кабо-Верде                          | CV        | USD          | CVE, EUR, USD |
-| Камерун                            | CM        | USD          | КСАФ, EUR, USD |
-| Canada                              | CA        | CAD          | CAD, EUR, USD  |
-| Каймановы о-ва                      | KY        | USD          | КИД, EUR, USD |
+| Камерун                            | CM        | USD          | EUR, USD, КСАФ |
+| Canada                              | CA        | CAD          | CAD, EUR, USD |
+| Каймановы о-ва                      | KY        | USD          | EUR, КИД, USD |
 | Чили                               | CL        | USD          | CLP, EUR, USD |
 | Китай\**                            | CN        | Недоступно          | Недоступно |
 | Колумбия                            | CO        | USD          | COP, EUR, USD |
 | Коста-Рика                          | CR        | USD          | CRC, EUR, USD |
-| Кот д'Ивуар                       | CI        | USD          | КСОФ, EUR, USD |
-| Хорватия                             | HR        | EUR          | ХРК, EUR, USD |
+| Кот д'Ивуар                       | CI        | USD          | EUR, USD, КСОФ |
+| Хорватия                             | HR        | EUR          | EUR, ХРК, USD |
 | Кюрасао                             | CW        | USD          | ЭНГ, EUR, USD |
 | Кипр                              | CY        | EUR          | EUR, USD  |
-| Чехия                             | CZ        | EUR          | EUR, USD, CZK |
+| Чехия                             | CZ        | EUR          | CZK, EUR, USD |
 | Дания                             | DK        | DKK          | DKK, EUR, USD |
 | Доминиканская Республика                  | DO        | USD          | DOP, EUR, USD |
 | Эквадор                             | EC        | USD          | EUR, USD |
-| Египет                               | EG        | USD          | EUR, ЕГП ДОЛЛ. США |
+| Египет                               | EG        | USD          | ЕГП, EUR, USD |
 | Эль-Сальвадор                         | SV        | USD          | EUR, USD |
 | Эстония                             | EE        | EUR          | EUR, USD |
 | Эфиопия                            | ET        | USD          | ЕТБ, EUR, USD |
@@ -91,7 +91,7 @@ ms.locfileid: "96778076"
 | Кения                               | KE        | USD          | EUR, KES, USD |
 | Южная Корея                       | KR        | KRW          | EUR, КРВ, USD |
 | Кувейт                              | KW        | USD          | EUR, КВД, USD |
-| Киргизия                          | KG        | USD          | USD, EUR, КГ |
+| Киргизия                          | KG        | USD          | EUR, КГ, USD |
 | Латвия                              | LV        | EUR          | EUR, USD |
 | Ливан                             | LB        | USD          | EUR, ЛБП, USD |
 | Ливия                               | LY        | USD          | EUR, ЛИД, USD |
@@ -139,8 +139,8 @@ ms.locfileid: "96778076"
 | Словения                            | SI        | EUR          | EUR, USD |
 | ЮАР                        | ZA        | USD          | EUR, USD, ЗАР |
 | Испания                               | ES        | EUR          | EUR, USD |
-| Шри-Ланка                           | LK        | USD          | EUR, USD, ЛКР |
-| Швеция                              | SE        | SEK          | EUR, USD, SEK |
+| Шри-Ланка                           | LK        | USD          | EUR, ЛКР, USD |
+| Швеция                              | SE        | SEK          | EUR, SEK, USD  |
 | Швейцария                         | CH        | CHF          | CHF, EUR, USD |
 | Тайвань                              | TW        | TWD          | EUR, ТВД, USD |
 | Таджикистан                          | TJ        | USD          | EUR, ТЖС, USD |
@@ -151,7 +151,7 @@ ms.locfileid: "96778076"
 | Турция                              | TR        | USD          | EUR, ПОПЫТАТЬСЯ, USD |
 | Туркменистан                        | TM        | USD          | EUR, ТМТ, USD |
 | Уганда                              | UG        | USD          | EUR, УГКС, USD |
-| Украина                             | UA        | USD          | EUR, УАХ, РУБЛИ, USD |
+| Украина                             | UA        | USD          | EUR, РУБ, УАХ, USD |
 | ОАЭ                | AE        | USD          | АЕД, EUR, USD |
 | United Kingdom                      | ГБ        | GBP          | EUR, GBP, USD |
 | США                       | США        | USD          | EUR, USD |

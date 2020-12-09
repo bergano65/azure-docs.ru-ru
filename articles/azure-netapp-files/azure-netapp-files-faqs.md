@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: b-juche
-ms.openlocfilehash: 5409f9177116add1fd794ec1e72f276daf34e029
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 1537a87999f9a8eecf83a2431b2f53d3ceaedacb
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659154"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854705"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -60,7 +60,7 @@ ms.locfileid: "94659154"
 
 Трафик данных между клиентами Нфсв 4.1 и Azure NetApp Filesными томами можно шифровать с помощью протокола Kerberos с шифрованием AES-256. Дополнительные сведения см. в разделе [Настройка шифрования Kerberos нфсв 4.1 для Azure NetApp Files](configure-kerberos-encryption.md) .   
 
-Трафик между клиентами NFSv3 или SMBv3 и Azure NetApp Files томами не шифруется. Тем не менее трафик от виртуальной машины Azure (с клиентом NFS или SMB) на Azure NetApp Files является безопасным, как и любой другой трафик Azure-ВМ-VM. Этот трафик является локальным для сети центра обработки данных Azure. 
+Трафик между клиентами NFSv3 или SMB3 и Azure NetApp Files томами не шифруется. Тем не менее трафик от виртуальной машины Azure (с клиентом NFS или SMB) на Azure NetApp Files является безопасным, как и любой другой трафик Azure-ВМ-VM. Этот трафик является локальным для сети центра обработки данных Azure. 
 
 ### <a name="can-the-storage-be-encrypted-at-rest"></a>Может ли хранилище быть зашифровано неактивных данных?
 
@@ -168,7 +168,7 @@ Azure NetApp Files поддерживает версии домен Active Direc
 
 Размер тома, сообщаемый SMB-клиентом, — это максимальный размер, который может увеличить Azure NetApp Files том. Размер тома Azure NetApp Files, как показано на SMB-клиенте, не отражен в размере квоты или размера тома. Вы можете получить Azure NetApp Files размер или квоту тома с помощью портал Azure или API.
 
-### <a name="im-having-issues-connecting-to-my-smb-share-what-should-i-do"></a>Возникли проблемы при подключении к общему ресурсу SMB.   Что следует делать?
+### <a name="im-having-issues-connecting-to-my-smb-share-what-should-i-do"></a>Возникли проблемы при подключении к общему ресурсу SMB. Что следует делать?
 
 Рекомендуется установить максимальную погрешность синхронизации компьютерных часов до пяти минут. Дополнительные сведения см. в разделе [Максимальная погрешность синхронизации часов компьютера](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj852172(v=ws.11)). 
 
