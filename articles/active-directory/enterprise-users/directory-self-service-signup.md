@@ -7,19 +7,20 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.topic: overview
 ms.workload: identity
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01de8ab86ff5f511fd5e45c4a6e88febdb4fbb15
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 95625886ed11256a40e5993540d7e545134d6dd6
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340872"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860870"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Что такое самостоятельная регистрация для Azure Active Directory?
 
@@ -76,13 +77,13 @@ ms.locfileid: "96340872"
 
 ![Блок-схема элементов управления самостоятельной регистрации](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
 
-Сведения об этом параметре можно получить с помощью командлета Get-MsolCompanyInformation в PowerShell. Дополнительные сведения об этом см. в статье [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation?view=azureadps-1.0).
+Сведения об этом параметре можно получить с помощью командлета Get-MsolCompanyInformation в PowerShell. Дополнительные сведения об этом см. в статье [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation).
 
 ```powershell
     Get-MsolCompanyInformation | Select AllowEmailVerifiedUsers, AllowAdHocSubscriptions
 ```
 
-Дополнительные сведения об этих параметрах и примеры их использования см. в статье [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
+Дополнительные сведения об этих параметрах и примеры их использования см. в статье [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -90,5 +91,5 @@ ms.locfileid: "96340872"
 * [Как установить и настроить Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Справка по командлетам Azure](/powershell/azure/get-started-azureps)
-* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0)
+* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings)
 * [Закрытие рабочей или учебной учетной записи в неуправляемом каталоге](users-close-account.md)

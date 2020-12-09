@@ -6,12 +6,12 @@ ms.author: nimag
 ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 652566efda4d4f274dc5700d35bcf45c1ebfb9e2
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: d35e51d097c2d5e0b66c23efa27ae70c065d547c
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92347017"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96584487"
 ---
 Из этого краткого руководства вы узнаете, как начать вызов с помощью клиентской библиотеки Служб коммуникации Azure для реализации вызовов на JavaScript.
 
@@ -59,10 +59,10 @@ npm install @azure/communication-calling --save
 
 ### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
 
-В этом кратком руководстве для объединения ресурсов приложения используется webpack. Выполните следующую команду, чтобы установить пакеты npm webpack, webpack-cli и webpack-dev-server, а также указать их в качестве зависимостей разработки в файле **package.json** :
+В этом кратком руководстве для объединения ресурсов приложения используется webpack. Выполните следующую команду, чтобы установить пакеты npm webpack, webpack-cli и webpack-dev-server, а также указать их в качестве зависимостей разработки в файле **package.json**:
 
 ```console
-npm install webpack webpack-cli webpack-dev-server --save-dev
+npm install webpack@4.42.0 webpack-cli@3.3.11 webpack-dev-server@3.10.3 --save-dev
 ```
 
 Создайте файл **index.html** в корневом каталоге проекта. Мы будем использовать этоn файл для настройки базового макета, с помощью которого пользователь сможет выполнить вызов к боту Служб коммуникации Azure.
@@ -98,7 +98,7 @@ npm install webpack webpack-cli webpack-dev-server --save-dev
 </html>
 ```
 
-Создайте файл в корневом каталоге проекта с именем **client.js** , чтобы включить логику приложения для этого краткого руководства. Добавьте следующий код, чтобы импортировать клиент вызова и получить ссылки на элементы модели DOM, чтобы мы могли присоединить нашу бизнес-логику. 
+Создайте файл в корневом каталоге проекта с именем **client.js**, чтобы включить логику приложения для этого краткого руководства. Добавьте следующий код, чтобы импортировать клиент вызова и получить ссылки на элементы модели DOM, чтобы мы могли присоединить нашу бизнес-логику. 
 
 ```javascript
 import { CallClient, CallAgent } from "@azure/communication-calling";
@@ -124,7 +124,7 @@ const hangUpButton = document.getElementById("hang-up-button");
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Вам необходимо заменить `<USER_ACCESS_TOKEN>` допустимым маркером доступа пользователя для вашего ресурса. Если у вас еще нет доступного маркера, см. документацию по [маркеру доступа пользователя](../../access-tokens.md). С помощью `CallClient` инициализируйте экземпляр `CallAgent` с `CommunicationUserCredential`, который позволит нам выполнять и принимать вызовы. Добавьте следующий код в файл **client.js** :
+Вам необходимо заменить `<USER_ACCESS_TOKEN>` допустимым маркером доступа пользователя для вашего ресурса. Если у вас еще нет доступного маркера, см. документацию по [маркеру доступа пользователя](../../access-tokens.md). С помощью `CallClient` инициализируйте экземпляр `CallAgent` с `CommunicationUserCredential`, который позволит нам выполнять и принимать вызовы. Добавьте следующий код в файл **client.js**:
 
 ```javascript
 async function init() {

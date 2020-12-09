@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: a156150c2cd28964658fa8529181a70ef546b78f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a2d48a6f4e451e2a9b4140618c7c590293cb5ef5
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457328"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548534"
 ---
 # <a name="quickstart---create-an-azure-iot-central-application"></a>Краткое руководство. Создание приложения Azure IoT Central
 
@@ -29,7 +29,7 @@ ms.locfileid: "96457328"
 
 1. Перейдите на страницу **Сборка**:
 
-    ![Создание страницы приложения "Интернет вещей"](media/quick-deploy-iot-central/iotcentralcreate-new-application.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-new-application.png" alt-text="Создание страницы приложения &quot;Интернет вещей&quot;":::
 
 1. Выберите **Пользовательские приложения** и убедитесь, что выбран шаблон **пользовательского приложения**.
 
@@ -37,9 +37,9 @@ ms.locfileid: "96457328"
 
 1. Azure IoT Central также создает уникальный префикс **URL-адреса приложения** на основе имени приложения. Этот URL-адрес используется для доступа к приложению. Измените этот префикс на что-то более запоминающееся, если захотите.
 
-    ![Страница создания приложения Azure IoT Central](media/quick-deploy-iot-central/iotcentralcreate-custom.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-custom.png" alt-text="Страница создания приложения Azure IoT Central":::
 
-    ![Сведения о выставлении счетов Azure IoT Central](media/quick-deploy-iot-central/iotcentralcreate-billinginfo.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-billinginfo.png" alt-text="Сведения о выставлении счетов Azure IoT Central":::
 
     > [!NOTE]
     > Если на предыдущей странице вы выбрали **пользовательское приложение**, отобразится раскрывающийся список **Шаблон приложения**. В нем также могут отображаться другие шаблоны, которые к которым вам предоставила доступ ваша организация.
@@ -57,7 +57,7 @@ ms.locfileid: "96457328"
 
 1. Просмотрите условия и выберите **Создать** в нижней части страницы. Через несколько минут приложение IoT Central готово к использованию:
 
-    ![Приложение Azure IoT Central](media/quick-deploy-iot-central/iotcentral-application.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentral-application.png" alt-text="Приложение Azure IoT Central":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,19 +6,20 @@ documentationcenter: ''
 author: curtand
 manager: daveba
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: overview
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf5a06cf906084e3f87d5f56748476a26587ff17
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: c60d54a905f460eb5c26c2f183cd22b175a5b3c4
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95490737"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860819"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -340,7 +341,7 @@ device.objectId -ne null
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>Свойства расширения и пользовательские свойства расширения
 
-В правилах динамического членства поддерживаются атрибуты расширения и пользовательские свойства расширения в виде строковых свойств. [Атрибуты расширения](/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0) синхронизируются из локального каталога Windows Server AD и принимают формат ExtensionAttributeX, где X равно 1–15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
+В правилах динамического членства поддерживаются атрибуты расширения и пользовательские свойства расширения в виде строковых свойств. [Атрибуты расширения](/graph/api/resources/onpremisesextensionattributes) синхронизируются из локального каталога Windows Server AD и принимают формат ExtensionAttributeX, где X равно 1–15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
 
 ```
 (user.extensionAttribute15 -eq "Marketing")

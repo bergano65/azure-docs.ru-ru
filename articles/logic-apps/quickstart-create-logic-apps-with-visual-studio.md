@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/27/2020
-ms.openlocfilehash: 1301af3bd17ce44720d77aa1b812b78bbe57ffc9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ff195f7a0071c06d5309f95f77e32ae75f584f82
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101397"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749170"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание автоматизированных задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -37,7 +37,7 @@ ms.locfileid: "93101397"
     > [!IMPORTANT]
     > При установке Visual Studio 2019 или 2017 обязательно выберите рабочую нагрузку **разработки Azure**.
 
-  * [Пакет Microsoft Azure SDK для .NET (2.9.1 или более поздней версии)](https://azure.microsoft.com/downloads/). Дополнительные сведения о [пакете Azure SDK для .NET](/dotnet/azure/dotnet-tools?tabs=vs).
+  * [Пакет Microsoft Azure SDK для .NET (2.9.1 или более поздней версии)](https://azure.microsoft.com/downloads/). Дополнительные сведения о [пакете Azure SDK для .NET](/dotnet/azure/intro).
 
   * [Azure PowerShell](https://github.com/Azure/azure-powershell#installation)
 
@@ -136,7 +136,7 @@ ms.locfileid: "93101397"
 
    Visual Studio требуется подписка Azure и группа ресурсов для создания и развертывания ресурсов, связанных с приложением логики и подключениями.
 
-1. **Подписка**  — выберите подписку Azure. **Группа ресурсов**  — выберите **Создать новую** , чтобы создать другую группу ресурсов Azure.
+1. **Подписка** — выберите подписку Azure. **Группа ресурсов** — выберите **Создать новую**, чтобы создать другую группу ресурсов Azure.
 
    ![Выберите подписку, группу ресурсов и расположение.](./media/quickstart-create-logic-apps-with-visual-studio/select-azure-subscription-resource-group-location.png)
 
@@ -145,7 +145,7 @@ ms.locfileid: "93101397"
    | Учетная запись пользователя | Fabrikam <br> sophia-owen@fabrikam.com | Учетная запись, которая использовалась при входе в Visual Studio |
    | **Подписка** | Оплата по мере использования <br> (sophia-owen@fabrikam.com) | Имя подписки Azure и связанной учетной записи |
    | **Группа ресурсов** | MyLogicApp-RG <br> (Западная часть США) | Группа ресурсов Azure и расположение для хранения и развертывания ресурсов приложения логики |
-   | **Расположение** | **То же, что и для группы ресурсов** | Тип расположения и конкретное расположение для развертывания приложения логики. Тип расположения — это либо регион Azure, либо имеющаяся [среда службы интеграции (ISE)](connect-virtual-network-vnet-isolated-environment.md). <p>В этом кратком руководстве предполагается, что для типа расположения оставлено значение **Регион** , а для расположения задано значение **Same as Resource Group** (То же, что и для группы ресурсов). <p>**Примечание.** После создания проекта группы ресурсов можно [изменить расположение и его тип](manage-logic-apps-with-visual-studio.md#change-location), однако следует учитывать, что разные типы расположения по-разному влияют на приложение логики. |
+   | **Расположение** | **То же, что и для группы ресурсов** | Тип расположения и конкретное расположение для развертывания приложения логики. Тип расположения — это либо регион Azure, либо имеющаяся [среда службы интеграции (ISE)](connect-virtual-network-vnet-isolated-environment.md). <p>В этом кратком руководстве предполагается, что для типа расположения оставлено значение **Регион**, а для расположения задано значение **Same as Resource Group** (То же, что и для группы ресурсов). <p>**Примечание.** После создания проекта группы ресурсов можно [изменить расположение и его тип](manage-logic-apps-with-visual-studio.md#change-location), однако следует учитывать, что разные типы расположения по-разному влияют на приложение логики. |
    ||||
 
 1. Откроется конструктор Logic Apps и отобразится страница с вводным видео и часто используемыми триггерами. Прокрутите вниз раздел с видео и триггерами до раздела **Шаблоны** и выберите **Пустое приложение логики**.
@@ -180,7 +180,7 @@ ms.locfileid: "93101397"
 
    ![Развертывание приложения логики в группу ресурсов Azure](./media/quickstart-create-logic-apps-with-visual-studio/select-azure-subscription-resource-group-deployment.png)
 
-1. Если появится поле **Изменить параметры** , введите имя ресурса для приложения логики. Сохраните параметры.
+1. Если появится поле **Изменить параметры**, введите имя ресурса для приложения логики. Сохраните параметры.
 
    ![Указание имени развертывания для приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/edit-parameters-deployment.png)
 
