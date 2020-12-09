@@ -1,5 +1,5 @@
 ---
-title: Примеры записных книжек Jupyter
+title: Примеры записных книжек Jupyter Notebook
 titleSuffix: Azure Machine Learning
 description: Сведения о том, как находить и использовать записные книжки Jupyter, которые помогут вам изучить пакет SDK и которые можно использовать в качестве моделей для проектов машинного обучения.
 services: machine-learning
@@ -11,14 +11,14 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3f5cb2831a58ce9d0d30039b80815e281401e883
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 38d0c350718480506e1267c161a85505ece4b69d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542564"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452262"
 ---
-# <a name="explore-azure-machine-learning-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Машинном обучении Azure
+# <a name="explore-azure-machine-learning-with-jupyter-notebooks"></a>Использование записных книжек Jupyter Notebook в Машинном обучении Azure
 
 > [!NOTE] 
 > Репозиторий примеров, поддерживаемый сообществом, можно найти здесь: https://github.com/Azure/azureml-examples.

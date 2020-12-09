@@ -9,14 +9,14 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: f5c5edc067b3f7b525fd129462c48ca50fdafc8f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 605a5f2f74ca6fb46d851c41f60001c48a95be95
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314069"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450882"
 ---
-# <a name="tutorial-machine-learning-model-scoring-wizard-for-dedicated-sql-pools"></a>Руководство по Использование мастера оценки моделей машинного обучения для выделенных пулов SQL
+# <a name="tutorial-machine-learning-model-scoring-wizard-preview-for-dedicated-sql-pools"></a>Руководство по Использование мастера оценки моделей машинного обучения (предварительная версия) для выделенных пулов SQL
 
 Узнайте, как легко дополнить данные в выделенных пулах SQL с помощью прогнозных моделей машинного обучения.  Модели, создаваемые вашими данными, теперь легко доступны специалистам по анализу данных для прогнозной аналитики. Специалист по данным в Synapse может просто выбрать модель в реестре моделей Машинного обучения Azure для развертывания в пулах Synapse SQL и запустить прогнозирование, чтобы дополнить данные.
 
@@ -31,8 +31,8 @@ ms.locfileid: "93314069"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Рабочая область Synapse Analytics](../get-started-create-workspace.md) с учетной записью хранения ADLS 2-го поколения, настроенной в качестве хранилища по умолчанию. Необходимо быть **участником для данных BLOB-объектов хранилища** файловой системы ADLS 2-го поколения, с которой вы работаете.
-- Выделенный пул SQL в рабочей области Synapse Analytics. Дополнительные сведения о см. в статье [Создание выделенного пула SQL](../quickstart-create-sql-pool-studio.md).
-- Связанная служба Машинного обучения Azure в рабочей области Synapse Analytics. Дополнительные сведения см. в разделе [Создание связанной службы Машинного обучения Azure в Synapse](quickstart-integrate-azure-machine-learning.md).
+- Выделенный пул SQL в рабочей области Azure Synapse Analytics. Дополнительные сведения о см. в статье [Создание выделенного пула SQL](../quickstart-create-sql-pool-studio.md).
+- Связанная служба Машинного обучения Azure в рабочей области Azure Synapse Analytics. Дополнительные сведения см. в разделе [Создание связанной службы Машинного обучения Azure в Synapse](quickstart-integrate-azure-machine-learning.md).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -149,4 +149,4 @@ ms.locfileid: "93314069"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство. Создание новой связанной службы Машинного обучения Azure в Synapse](quickstart-integrate-azure-machine-learning.md)
-- [Возможности Машинного обучения в Azure Synapse Analytics (предварительная версия рабочих областей)](what-is-machine-learning.md)
+- [Возможности машинного обучения в Azure Synapse Analytics](what-is-machine-learning.md)

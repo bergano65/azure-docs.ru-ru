@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание пула SQL Synapse с помощью Azure PowerShell
-description: Сведения о том, как быстро создать пул SQL Synapse с правилом брандмауэра на уровне сервера с помощью Azure PowerShell.
+title: Краткое руководство. Создание выделенного пула SQL (ранее — Хранилище данных SQL) с помощью Azure PowerShell
+description: Сведения о том, как быстро создать выделенный пул SQL (ранее — Хранилище данных SQL) с правилом брандмауэра на уровне сервера с помощью Azure PowerShell.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,23 +11,23 @@ ms.date: 4/11/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse    , devx-track-azurepowershell
-ms.openlocfilehash: 5408944f16509f83c30b9ee066d6f0a93dab95f0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0ce94b62d67048896cdf7355043ec2dde7f2df79
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91567661"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456578"
 ---
-# <a name="quickstart-create-a-synapse-sql-pool-with-azure-powershell"></a>Краткое руководство. Создание пула SQL Synapse с помощью Azure PowerShell
+# <a name="quickstart-create-a-dedicated-sql-pool-formerly-sql-dw-with-azure-powershell"></a>Краткое руководство. Создание выделенного пула SQL (ранее — Хранилище данных SQL) с помощью Azure PowerShell
 
-Создайте пул SQL Synapse (хранилище данных) в Azure Synapse Analytics с помощью Azure PowerShell.
+Создайте выделенный пул SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics с помощью Azure PowerShell.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 > [!IMPORTANT]
-> Создание пула SQL может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
+> Создание выделенного пула SQL (ранее — Хранилище данных SQL) может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -93,7 +93,7 @@ New-AzSqlServer -ResourceGroupName $resourcegroupname `
 
 ## <a name="configure-a-server-level-firewall-rule"></a>Настройка правила брандмауэра на уровне сервера
 
-Создайте [правило брандмауэра на уровне сервера](../../azure-sql/database/firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) с помощью команды [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как SQL Server Management Studio или программе SQLCMD, подключаться к пулу SQL через брандмауэр службы пула SQL.
+Создайте [правило брандмауэра на уровне сервера](../../azure-sql/database/firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) с помощью команды [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как SQL Server Management Studio или программе SQLCMD, подключаться к выделенному пулу SQL (ранее — Хранилище данных SQL) через брандмауэр службы выделенного пула SQL.
 
 В следующем примере брандмауэр открыт только для других ресурсов Azure. Чтобы включить возможность внешнего подключения, измените IP-адрес на соответствующий адрес своей среды. Чтобы открыть все IP-адреса, используйте 0.0.0.0 как начальный IP-адрес, а 255.255.255.255 — как конечный.
 
@@ -107,9 +107,9 @@ New-AzSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
 > Конечные точки SQL взаимодействуют через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу. Для этого ваш ИТ-отдел должен открыть порт 1433.
 >
 
-## <a name="create-a-sql-pool"></a>Создание пула SQL
+## <a name="create-a-dedicated-sql-pool-formerly-sql-dw"></a>Создание выделенного пула SQL (ранее — Хранилище данных SQL)
 
-В следующем примере создается пул SQL с использованием ранее определенных переменных.  Он определяет цель службы как DW100c, что является бюджетной начальной точкой для пула SQL.
+В следующем примере создается выделенный пул SQL (ранее — Хранилище данных SQL) с использованием ранее определенных переменных.  Он определяет цель службы как DW100c, что является бюджетной начальной точкой для выделенного пула SQL (ранее — Хранилище данных SQL).
 
 ```Powershell
 New-AzSqlDatabase `
@@ -125,10 +125,10 @@ New-AzSqlDatabase `
 Ниже перечислены необходимые параметры.
 
 * **RequestedServiceObjectiveName**: количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-concurrency-limits.md).
-* **DatabaseName**: Имя создаваемого пула SQL.
+* **DatabaseName**: имя создаваемого выделенного пула SQL (ранее — Хранилище данных SQL).
 * **ServerName**: имя сервера, который используется для создания.
 * **ResourceGroupName**: используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.
-* **Выпуск**: для создания пула SQL необходим выпуск DataWarehouse.
+* **Выпуск**: для создания выделенного пула SQL (ранее — Хранилище данных SQL) необходим выпуск DataWarehouse.
 
 Необязательные параметры.
 
@@ -151,4 +151,4 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы создали пул SQL, создали правило брандмауэра и подключились к этому пулу SQL. Чтобы узнать больше, перейдите к статье о [загрузке данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md).
+Вы создали выделенный пул SQL (ранее — Хранилище данных SQL), правило брандмауэра, а также подключились к выделенному пулу SQL. Чтобы узнать больше, перейдите к статье о [загрузке данных в выделенный пул SQL](load-data-from-azure-blob-storage-using-polybase.md).

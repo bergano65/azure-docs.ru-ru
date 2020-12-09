@@ -5,12 +5,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 68d8270c4ca3cff07f3a70c6022b963f750ad4e9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 774f9e485c58712ea8648a148c92b6f9ef6a58c0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022117"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452609"
 ---
 # <a name="quickstart-use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Краткое руководство. Использование очередей Служебной шины Azure с Java для отправки и получения сообщений
 
@@ -18,7 +18,8 @@ ms.locfileid: "96022117"
 В этом руководстве показано, как создавать приложения Java для отправки и получения сообщений через очередь Служебной шины Azure. 
 
 > [!WARNING]
->  При работе с этим кратким руководством используется текущий общедоступный пакет azure-servicebus. Краткое руководство, в котором описывается использование нового пакета azure-messaging-servicebus, доступного в **предварительной версии**, см. в статье [Краткое руководство. Использование разделов и подписок Служебной шины с Java](service-bus-java-how-to-use-queues.md). 
+>  Для работы с этим кратким руководством используются пакеты azure-servicebus прежних версий. Сведения об использовании последнего пакета см. в кратком руководстве по [отправке и получению сообщений с помощью azure-messaging-servicebus](service-bus-java-how-to-use-queues.md). 
+
 
 ## <a name="prerequisites"></a>Предварительные требования
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).

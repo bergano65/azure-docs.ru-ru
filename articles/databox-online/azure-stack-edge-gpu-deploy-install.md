@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/02/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Azure Stack Edge Pro in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: ba903793844e44b26931a70183860c983adaf18a
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: 52f0bcbb332b5d5e47440accff9d9895dcef7056
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743409"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449369"
 ---
 # <a name="tutorial-install-azure-stack-edge-pro-with-gpu"></a>Руководство по Установка Azure Stack Edge Pro с GPU
 
@@ -228,7 +228,7 @@ ms.locfileid: "91743409"
 7. Подключите к сети ЦОД или Интернету порт PORT 2, PORT 3, PORT 4, PORT 5 или PORT 6 (или несколько из них).
 
     - Для порта PORT 2 используйте сетевой кабель 1-GbE RJ-45.
-    - Для сетевых интерфейсов 10/25 GbE используйте медные кабели SFP+.
+    - Для сетевых интерфейсов 10/25 GbE используйте медные кабели SFP+ или волокно. При применении волокна используйте адаптер между оптическими кабелями и SFP.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

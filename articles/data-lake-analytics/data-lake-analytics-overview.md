@@ -7,12 +7,12 @@ ms.reviewer: jasonwhowell
 ms.service: data-lake-analytics
 ms.topic: overview
 ms.date: 06/23/2017
-ms.openlocfilehash: e49dd110c85573c034d593940e4d19a5466a1511
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 4a6ef2821080982e2b34108703bd80574443244a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220131"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445521"
 ---
 # <a name="what-is-azure-data-lake-analytics"></a>Что такое аналитика озера данных Azure
 
@@ -47,7 +47,7 @@ Data Lake Analytics тесно интегрируется с Visual Studio. Вы
 
 ## <a name="works-with-all-your-azure-data"></a>Работает со всеми данными Azure
   
-Data Lake Analytics работает со службой Azure Data Lake Storage, обеспечивая максимальную производительность, пропускную способность и параллелизацию, а также с большими двоичными объектами службы хранилища Azure, Базой данных SQL Azure и Azure Synapse Analytics (ранее — Хранилище данных SQL).
+Data Lake Analytics работает со службой Azure Data Lake Storage, обеспечивающей максимальную производительность, пропускную способность и параллелизацию, а также с большими двоичными объектами службы хранилища Azure, службой "База данных SQL Azure" и Azure Synapse Analytics.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,6 +1,6 @@
 ---
-title: Памятка по Azure Synapse Analytics (ранее — Хранилище данных SQL)
-description: Найдите ссылки и рекомендации по быстрому созданию решений Azure Synapse Analytics (ранее — хранилище данных SQL).
+title: Памятка по выделенному пулу SQL (ранее — Хранилище данных SQL)
+description: Найдите ссылки и рекомендации по быстрому созданию выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -10,18 +10,18 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 648f06ef1af5d6dce9fa3583c6358d3bd173f209
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a236cf99d3131e83619cfab06e8ec028938a87ba
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319678"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454597"
 ---
-# <a name="cheat-sheet-for-azure-synapse-analytics-formerly-sql-dw"></a>Памятка по Azure Synapse Analytics (ранее — Хранилище данных SQL)
+# <a name="cheat-sheet-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytic"></a>Памятка по выделенному пулу SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics
 
-В этой памятке предоставляются полезные советы и рекомендации по созданию решений на основе Azure Synapse.
+В этой памятке предоставляются полезные советы и рекомендации по созданию решений выделенного пула SQL (ранее — Хранилище данных SQL).
 
-На рисунке ниже показан процесс проектирования хранилища данных.
+На рисунке ниже показан процесс проектирования хранилища данных с помощью выделенного пула SQL (ранее — Хранилище данных SQL):
 
 ![Эскиз](./media/cheat-sheet/picture-flow.png)
 
@@ -121,13 +121,13 @@ ms.locfileid: "93319678"
 
 Если вы заметили, что запросы занимают слишком много времени, убедитесь, что пользователи не работают в больших классах ресурсов. Большие классы потребляют значительно количество слотов выдачи. Они могут создать дополнительные запросы в очереди.
 
-Наконец, при использовании [пула SQL](sql-data-warehouse-overview-what-is.md#dedicated-sql-pool-in-azure-synapse) уровня Gen2 каждый класс ресурсов получает в 2,5 раза больше памяти, чем на уровне Gen1.
+Наконец, при использовании [выделенного пула SQL](sql-data-warehouse-overview-what-is.md) уровня Gen2 (ранее —Хранилище данных SQL) каждый класс ресурсов получает в 2,5 раза больше памяти, чем на уровне Gen1.
 
 Подробнее о работе с [классами ресурсов и параллелизмом](resource-classes-for-workload-management.md).
 
 ## <a name="lower-your-cost"></a>Сокращение расходов
 
-Одна из основных функций Azure Synapse — возможность [управлять вычислительными ресурсами](sql-data-warehouse-manage-compute-overview.md). Вы можете приостанавливать работу пула SQL, когда он не используется. Счет выставляется только за используемые вычислительные ресурсы. Вы можете масштабировать ресурсы в соответствии со своими требованиями к производительности. Приостановить выполнение можно на [портале Azure](pause-and-resume-compute-portal.md) или при помощи [PowerShell](pause-and-resume-compute-powershell.md). Для масштабирования используйте [портал Azure](quickstart-scale-compute-portal.md), [Powershell](quickstart-scale-compute-powershell.md), [T-SQL](quickstart-scale-compute-tsql.md), или [REST API](sql-data-warehouse-manage-compute-rest-api.md#scale-compute).
+Одна из основных функций Azure Synapse — возможность [управлять вычислительными ресурсами](sql-data-warehouse-manage-compute-overview.md). Вы можете приостанавливать работу выделенного пула SQL (ранее — Хранилище данных SQL), когда он не используется. Счет выставляется только за используемые вычислительные ресурсы. Вы можете масштабировать ресурсы в соответствии со своими требованиями к производительности. Приостановить выполнение можно на [портале Azure](pause-and-resume-compute-portal.md) или при помощи [PowerShell](pause-and-resume-compute-powershell.md). Для масштабирования используйте [портал Azure](quickstart-scale-compute-portal.md), [PowerShell](quickstart-scale-compute-powershell.md), [T-SQL](quickstart-scale-compute-tsql.md) или [REST API](sql-data-warehouse-manage-compute-rest-api.md#scale-compute).
 
 Выполняйте автоматическое масштабирование с помощью службы "Функции Azure" в любое время.
 
@@ -137,8 +137,8 @@ ms.locfileid: "93319678"
 
 Рекомендуем рассматривать базу данных SQL и Azure Analysis Services в звездообразной архитектуре. Это решение может обеспечить изоляцию рабочей нагрузки между различными группами пользователей наряду с использованием некоторых расширенных функций безопасности базы данных SQL и Azure Analysis Services. Это также поможет обеспечить неограниченный параллелизм для ваших пользователей.
 
-Подробнее о [типичных архитектурах, использующих возможности Azure Synapse](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
+Дополнительные сведения о [стандартных архитектурах, использующих выделенный пул SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
 
-Разверните периферийные зоны в базах данных SQL из пула SQL одним щелчком.
+Разверните периферийные зоны в базах данных SQL из выделенного пула SQL (ранее — Хранилище данных SQL) одним щелчком:
 
 [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://ms.portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Fsql-data-warehouse-samples%2Fmaster%2Farm-templates%2FsqlDwSpokeDbTemplate%2Fazuredeploy.json)

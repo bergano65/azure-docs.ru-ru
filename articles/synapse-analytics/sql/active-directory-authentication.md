@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7518d6ac8bc0cde515ab8da2f3d9c1496cb93f08
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b8b0ac002cb52acdc043e4e8ca4fa91daae4e665
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311722"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457990"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-synapse-sql"></a>Использование Azure Active Directory для проверки подлинности в SQL Synapse
 
@@ -36,7 +36,7 @@ ms.locfileid: "93311722"
 
 1. Создайте и заполните каталог Azure AD.
 2. Создайте идентификатор Azure AD.
-3. Назначьте роль созданному идентификатору Azure AD в рабочей области Azure Synapse (предварительной версии).
+3. Назначьте роль созданному идентификатору Azure Active Directory в рабочей области Synapse.
 4. Подключитесь к Synapse Studio, используя идентификаторы Azure AD.
 
 ## <a name="azure-ad-pass-through-in-azure-synapse-analytics"></a>Сквозная передача Azure AD в Synapse Analytics
@@ -65,7 +65,7 @@ Azure Synapse Analytics позволяет получать доступ к да
 
 Администратор Azure AD может использовать для входа имя пользователя Azure AD или имя группы Azure AD. Если учетная запись администратора является учетной записью группы, ее может использовать любой член группы. По этой причине для одного экземпляра SQL Synapse может существовать несколько администраторов Azure AD. 
 
-Использование учетной записи группы в качестве учетной записи администратора упрощает управление. Это позволяет централизованно добавлять и удалять члены группы в Azure AD, не изменяя пользователей или разрешения в рабочей области Synapse Analytics. За один раз можно настроить только одного администратора Azure AD (пользователя или группу).
+Использование учетной записи группы в качестве учетной записи администратора упрощает управление. Это позволяет централизованно добавлять и удалять участников группы в Azure AD, не изменяя пользователей или разрешения в рабочей области Azure Synapse Analytics. За один раз можно настроить только одного администратора Azure AD (пользователя или группу).
 
 ![структура администраторов](./media/aad-authentication/3-admin-structure.png)
 
@@ -109,7 +109,7 @@ Azure Synapse Analytics позволяет получать доступ к да
 - Универсальная служба Azure Active Directory с поддержкой MFA.
 - Использование маркера проверки подлинности приложения
 
-Для субъектов сервера (имен для входа) Azure AD поддерживаются следующие методы проверки подлинности ( **общедоступная предварительная версия** ):
+Для субъектов сервера (имен для входа) Azure AD поддерживаются следующие способы проверки подлинности:
 
 - Пароль Azure Active Directory.
 - Встроенная служба Azure Active Directory.
@@ -119,10 +119,10 @@ Azure Synapse Analytics позволяет получать доступ к да
 
 - Для повышения управляемости рекомендуем подготовить специальную группу Azure AD от имени администратора.
 - За один раз для пула SQL можно настроить только одного администратора Azure AD (пользователя или группу).
-  - Добавление субъектов сервера (имен для входа) Azure AD Synapse SQL (предварительная версия) позволяет создавать несколько субъектов сервера (имен для входа) Azure AD, которые можно добавить к роли `sysadmin`.
+  - Добавление субъектов сервера (имен для входа) Azure AD Synapse SQL позволяет создавать несколько субъектов сервера (имен для входа) Azure AD, которые можно добавить к роли `sysadmin`.
 - Только администратор Azure AD для Synapse SQL может подключаться к Synapse SQL, используя учетную запись Azure AD. Затем администратор Active Directory может настроить других пользователей базы данных Azure AD.
 - Мы рекомендуем установить время ожидания подключения в 30 секунд.
-- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server** , требуется версия .NET Framework не ниже 4.6.) Поэтому для последних версий этих инструментов и приложений уровня данных (DAC и BACPAC-файлов) можно применять аутентификацию Azure AD.
+- Проверку подлинности Azure Active Directory поддерживают SQL Server 2016 Management Studio и SQL Server Data Tools для Visual Studio 2015 (версии 14.0.60311.1, выпущенной в апреле 2016 г., или более поздней). (Проверку подлинности Azure AD поддерживает **поставщик данных .NET Framework для SQL Server**, требуется версия .NET Framework не ниже 4.6.) Поэтому для последних версий этих инструментов и приложений уровня данных (DAC и BACPAC-файлов) можно применять аутентификацию Azure AD.
 - Начиная с версии 15.0.1, служебные программы[SQLCMD](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [BCP](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) поддерживают интерактивную аутентификацию Active Directory с возможностью MFA.
 - Для SQL Server Data Tools для Visual Studio 2015 требуется версия Data Tools, выпущенная в апреле 2016 г. (14.0.60311.1), или более поздняя. Сейчас пользователи Azure AD не отображаются в обозревателе объектов SSDT. Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 - [Драйвер Microsoft JDBC 6.0 для SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) поддерживает проверку подлинности Azure AD. Вы можете также ознакомиться с [настройкой свойств подключения](/sql/connect/jdbc/setting-the-connection-properties?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).

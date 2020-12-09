@@ -5,12 +5,12 @@ author: emaher
 ms.topic: overview
 ms.date: 09/16/2020
 ms.author: enewman
-ms.openlocfilehash: ac390fb6624ffc762f77b676c778165e7382f73f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 71d59e8bcf7b4078255d6b119e9d62f366e46033
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334044"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437326"
 ---
 # <a name="architecture-fundamentals-in-azure-lab-services"></a>Общие понятия об архитектуре в Службе лабораторий Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "91334044"
 
 Ниже представлена базовая архитектура лаборатории для аудитории.  Учетная запись лаборатории размещается в вашей подписке. Виртуальные машины учащихся, а также необходимые ресурсы для поддержки виртуальных машин размещаются в подписке, принадлежащей Службам лабораторий. Давайте более подробно рассмотрим содержимое подписок Службы лабораторий.
 
-![Базовая архитектура лабораторий для аудитории](./media/classroom-labs-fundamentals/labservices-basic-architecture.png)
+![Базовая архитектура лабораторий](./media/classroom-labs-fundamentals/labservices-basic-architecture.png)
 
 ## <a name="hosted-resources"></a>Размещенные ресурсы
 

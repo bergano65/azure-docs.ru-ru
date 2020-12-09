@@ -1,6 +1,6 @@
 ---
-title: Доступ к файлам хранилища в бессерверном пуле SQL (предварительная версия)
-description: В этой статье описывается, как отправлять запросы к файлам хранилища с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics.
+title: Доступ к файлам хранилища в бессерверном пуле SQL
+description: В этой статье описывается, как отправлять запросы к файлам хранилища с помощью бессерверного пула SQL в Azure Synapse Analytics.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 64148cd8fd467be6a5f09ee723e230bdc8181d2d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 82a4ded3a64a8a8bbc62f99a8854eb6d2b5f0d0b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685687"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446581"
 ---
-# <a name="access-external-storage-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Доступ к внешнему хранилищу с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics
+# <a name="access-external-storage-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Доступ к внешнему хранилищу с помощью бессерверного пула SQL в Azure Synapse Analytics
 
 В этом документе описывается, как пользователи могут считывать данные из файлов, хранящихся в службе хранилища Azure в бессерверном пуле SQL. Пользователи могут обращаться к хранилищу с помощью следующих средств:
 

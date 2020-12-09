@@ -1,6 +1,6 @@
 ---
-title: Подключение к Synapse SQL с помощью Azure Data Studio (предварительная версия)
-description: Использование Azure Data Studio (предварительная версия) в Azure Synapse Analytics для подключения к Synapse SQL и создание запросов к нему.
+title: Подключение к Synapse SQL с помощью Azure Data Studio
+description: Использование Azure Data Studio в Azure Synapse Analytics для подключения и отправки запросов к Synapse SQL.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3af28ef575f770a5b8c3fb73ade1f9c53be66843
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 580dfe779ff0f550524781076d3e27805ffd6689
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685755"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451658"
 ---
-# <a name="connect-to-synapse-sql-with-azure-data-studio-preview"></a>Подключение к Synapse SQL с помощью Azure Data Studio (предварительная версия)
+# <a name="connect-to-synapse-sql-with-azure-data-studio"></a>Подключение к Synapse SQL с помощью Azure Data Studio
 
 > [!div class="op_single_selector"]
 >
@@ -26,7 +26,7 @@ ms.locfileid: "94685755"
 > * [sqlcmd](get-started-connect-sqlcmd.md)
 > * [SSMS](get-started-ssms.md)
 
-Вы можете использовать [Azure Data Studio (предварительная версия)](/sql/azure-data-studio/download-azure-data-studio?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) в Azure Synapse Analytics для подключения к Synapse SQL, а также для создания к нему запросов. 
+Вы можете использовать [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) в Azure Synapse Analytics для подключения и отправки запросов к Synapse SQL. 
 
 ## <a name="connect"></a>Подключение
 
@@ -42,7 +42,7 @@ ms.locfileid: "94685755"
 * **База данных:** Имя базы данных
 
 > [!NOTE]
-> Если вы хотите использовать **бессерверный пул SQL (предварительная версия)** , URL-адрес должен выглядеть следующим образом:
+> Если вы хотите использовать **бессерверный пул SQL**, URL-адрес должен выглядеть следующим образом:
 >
 > - `<Azure Synapse workspace name>`-ondemand.sql.azuresynapse.net.
 >

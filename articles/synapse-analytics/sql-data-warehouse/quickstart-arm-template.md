@@ -1,5 +1,5 @@
 ---
-title: Создание пула SQL с помощью шаблона Azure Resource Manager
+title: Создание выделенного пула SQL (ранее — Хранилище данных SQL) с помощью шаблона Azure Resource Manager
 description: Узнайте, как создать пул SQL Azure Synapse Analytics с помощью шаблона Azure Resource Manager.
 services: azure-resource-manager
 author: julieMSFT
@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: jrasnick
 ms.date: 06/09/2020
-ms.openlocfilehash: 29d4e4d696b34aa493714c870ebb466f491c47fe
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 70adb7409c44a79345a192df173a1a073cc9b7dd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88641880"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460747"
 ---
-# <a name="quickstart-create-an-azure-synapse-analytics-sql-pool-by-using-an-arm-template"></a>Краткое руководство. Создание пула SQL Azure Synapse Analytics с помощью шаблона ARM
+# <a name="quickstart-create-an-azure-synapse-analytics-dedicated-sql-pool-formerly-sql-dw-by-using-an-arm-template"></a>Краткое руководство. Создание выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics с помощью шаблона Resource Manager
 
-Этот шаблон Azure Resource Manager (шаблон ARM) создает пул SQL Azure Synapse Analytics с включенным прозрачным шифрованием данных. Название "пул SQL Synapse" относится к функциям хранения корпоративных данных, которые стали общедоступны в Azure Synapse.
+Этот шаблон Azure Resource Manager (шаблон Resource Manager) создает выделенный пул SQL (ранее — Хранилище данных SQL) с включенным прозрачным шифрованием данных. Выделенный пул SQL (ранее — Хранилище данных SQL) относится к функциям хранения корпоративных данных, которые стали общедоступны в Azure Synapse.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -41,7 +41,7 @@ ms.locfileid: "88641880"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Этот шаблон создает пул Synapse SQL.
+1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Этот шаблон создает выделенный пул SQL (ранее — Хранилище данных SQL).
    
    [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-sql-data-warehouse-transparent-encryption-create%2Fazuredeploy.json)
 
@@ -53,7 +53,7 @@ ms.locfileid: "88641880"
    * **Имя сервера SQL Server.** Примите имя по умолчанию или введите имя сервера SQL Server.
    * **Имя входа администратора SQL.** Введите имя пользователя администратора для сервера SQL Server.
    * **Пароль администратора SQL.** Введите пароль администратора для сервера SQL Server.
-   * **Имя хранилища данных.** Введите имя пула SQL.
+   * **Имя хранилища данных.** Введите имя выделенного пула SQL.
    * **Прозрачное шифрование данных.** Оставьте значение по умолчанию ("Включено"). 
    * **Целевой уровень обслуживания.** Примите значение по умолчанию (DW400c).
    * **Расположение.** Примите расположение группы ресурсов по умолчанию.
@@ -67,7 +67,7 @@ ms.locfileid: "88641880"
 # <a name="cli"></a>[CLI](#tab/CLI)
 
 ```azurecli-interactive
-echo "Enter the resource group where your Synapse SQL pool exists:" &&
+echo "Enter the resource group where your dedicated SQL pool (formerly SQL DW) exists:" &&
 read resourcegroupName &&
 az resource list --resource-group $resourcegroupName 
 ```
@@ -75,7 +75,7 @@ az resource list --resource-group $resourcegroupName
 # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
 ```azurepowershell-interactive
-$resourceGroupName = Read-Host -Prompt "Enter the resource group name where your SQL pool account exists"
+$resourceGroupName = Read-Host -Prompt "Enter the resource group name where your dedicated SQL pool (formerly SQL DW) account exists"
 (Get-AzResource -ResourceType "Microsoft.Sql/servers/databases" -ResourceGroupName $resourceGroupName).Name
  Write-Host "Press [ENTER] to continue..."
 ```
@@ -107,7 +107,7 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве показано, как создать пул SQL Azure Synapse Analytics с помощью шаблона ARM и проверить развертывание. Дополнительные сведения об Azure Synapse Analytics и Azure Resource Manager см. в статьях ниже.
+Пройдя это краткое руководство, вы создали выделенный пул SQL (ранее — Хранилище данных SQL) с помощью шаблона Resource Manager и проверили развертывание. Дополнительные сведения об Azure Synapse Analytics и Azure Resource Manager см. в статьях ниже.
 
 - См. статью [Сведения об Azure Synapse Analytics](sql-data-warehouse-overview-what-is.md)
 - Сведения об [Azure Resource Manager](../../azure-resource-manager/management/overview.md)

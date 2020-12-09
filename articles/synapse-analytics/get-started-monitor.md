@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: monitoring
 ms.topic: tutorial
 ms.date: 10/15/2020
-ms.openlocfilehash: 2970bb58bb73d52c75729b00a8209a9c576d4ec0
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: c2260cc0d2c6b889b44c738576e33abceebe23f1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427417"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444408"
 ---
 # <a name="monitor-your-synapse-workspace"></a>Мониторинг рабочей области Synapse
 
@@ -47,6 +47,9 @@ ms.locfileid: "94427417"
 1. Выберите **Пул** для выполнения мониторинга. Теперь вы можете просмотреть все запросы SQL, которые выполняются или выполнились в рабочей области этого пула.
 1. Найдите конкретный запрос SQL и наведите указатель мыши на этот элемент. После наведения указателя мыши появится значок скрипта SQL.
 1. Щелкните значок скрипта SQL, чтобы просмотреть полный текст запроса SQL.
+
+    > [!NOTE] 
+    > Запросы SQL, отправленные через Synapse Studio в выделенный пул SQL (ранее — Хранилище данных SQL) с поддержкой рабочей области, можно просмотреть в центре мониторинга. Для выполнения других действий мониторинга перейдите в раздел мониторинга выделенного пула SQL (ранее — Хранилище данных SQL) на портале Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

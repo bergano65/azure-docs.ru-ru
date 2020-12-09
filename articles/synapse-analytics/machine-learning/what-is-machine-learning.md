@@ -9,16 +9,14 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 382ba871f95b3b36c3f819de8d582ba2c5dc358a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 20f095a058434c36373c30ed2a633db12643814d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316088"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448273"
 ---
-# <a name="machine-learning-capabilities-in-azure-synapse-analytics-workspaces-preview"></a>Возможности Машинного обучения в Azure Synapse Analytics (предварительная версия рабочих областей)
-
-[!INCLUDE [preview](../includes/note-preview.md)]
+# <a name="machine-learning-capabilities-in-azure-synapse-analytics"></a>Возможности Машинного обучения в Azure Synapse Analytics
 
 Azure Synapse Analytics предлагает различные возможности машинного обучения. В этой статье приводятся общие сведения о том, как можно применить Машинное обучение в контексте Azure Synapse.
 
@@ -48,11 +46,11 @@ Azure Synapse Analytics предлагает различные возможно
 
 Важной частью процесса машинного обучения является понимание данных путем их изучения и визуализации.
 
-В зависимости от места хранения данных Synapse предлагает набор различных средств для их исследования и подготовки к анализу и машинному обучению. Один из способов, позволяющих максимально быстро приступить к исследованию данных, заключается в использовании Apache Spark или бессерверных пулов Synapse SQL непосредственно для данных в озере данных.
+В зависимости от места хранения данных Synapse предлагает набор различных средств для их исследования и подготовки к анализу и машинному обучению. Один из способов, позволяющих максимально быстро приступить к исследованию данных, заключается в использовании Apache Spark или бессерверных пулов SQL непосредственно для данных в озере данных.
 
 * [Apache Spark для Azure Synapse](../spark/apache-spark-overview.md) предоставляет возможности преобразования, подготовки и исследования данных в большом масштабе. Эти пулы Spark предлагают такие средства, как PySpark/Python, Scala и .NET для обработки данных в большом масштабе. С помощью эффективных библиотек визуализации можно улучшить процесс исследования данных, чтобы лучше понять их суть. [Узнайте больше о том, как исследовать и визуализировать данные в Synapse с помощью Spark](../get-started-analyze-spark.md).
 
-* [Бессерверные пулы Synapse SQL](../sql/on-demand-workspace-overview.md) обеспечивают возможность изучения данных путем непосредственного применения TSQL к озеру данных. Бессерверные пулы Synapse SQL также предлагают встроенные визуализации в Synapse Studio. [Узнайте больше о том, как исследовать данные с помощью бессерверных пулов Synapse SQL](../get-started-analyze-sql-on-demand.md).
+* [Бессерверные пулы SQL](../sql/on-demand-workspace-overview.md) обеспечивают возможность изучения данных путем непосредственного применения TSQL к озеру данных. Бессерверные пулы SQL также предлагают встроенные визуализации в Synapse Studio. [Узнайте больше о том, как исследовать данные с помощью бессерверных пулов SQL](../get-started-analyze-sql-on-demand.md).
 
 ### <a name="modeling"></a>Моделирование
 

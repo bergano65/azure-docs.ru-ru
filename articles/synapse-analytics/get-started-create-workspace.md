@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 11/21/2020
-ms.openlocfilehash: 42b586062378c59b66ca945880bf723418264071
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 949992418cb19c5c69ed8da92e9c2f0fc5f2f791
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95241936"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445423"
 ---
 # <a name="creating-a-synapse-workspace"></a>Создание рабочей области Synapse
 
@@ -28,7 +28,7 @@ ms.locfileid: "95241936"
 ## <a name="create-a-synapse-workspace-in-the-azure-portal"></a>Создание рабочей области Synapse на портале Azure
 
 1. Откройте [Портал Azure](https://portal.azure.com) и в поле поиска вверху выполните поиск по слову **Synapse**.
-1. В поисковых результатах в разделе **Службы** выберите **Azure Synapse Analytics (workspaces preview)** (Azure Synapse Analytics (предварительная версия рабочих областей)).
+1. В поисковых результатах в разделе **Службы** выберите **Azure Synapse Analytics**.
 1. Выберите **Добавить** и создайте рабочую область.
 1. В разделе **Основы** введите требуемые значения для полей **Подписка**, **Группа ресурсов**, **Регион**, а также выберите имя рабочей области. В этом учебнике используется имя **myworkspace**.
 1. Перейдите к разделу **Select Data Lake Storage Gen 2** (Выбор Data Lake Storage 2-го поколения). 
@@ -36,6 +36,10 @@ ms.locfileid: "95241936"
 1. Щелкните **Файловая система** и введите имя **users**. Будет создан контейнер **users**.
 1. В рабочей области эта учетная запись хранения будет использоваться как основная для таблиц и журналов приложений Spark.
 1. Выберите команду **Просмотреть и создать** > **Создать**. Рабочая область будет готова через несколько минут.
+
+> [!NOTE]
+> Сведения о том, как использовать функции рабочей области из существующего выделенного пула SQL (ранее — Хранилище данных SQL), см. [здесь](./sql-data-warehouse/workspace-connected-create.md).
+
 
 ## <a name="open-synapse-studio"></a>Открытие Synapse Studio
 
@@ -53,6 +57,9 @@ ms.locfileid: "95241936"
 1. Выберите команду **Просмотреть и создать** > **Создать**. Выделенный пул SQL будет готов через несколько минут. Ваш выделенный пул SQL связан с выделенной базой данных пула SQL, также называемой **SQLPOOL1**.
 
 Выделенный пул SQL использует платные ресурсы, пока он активен. Позже пул можно будет приостановить, чтобы снизить затраты.
+
+> [!NOTE] 
+> При создании выделенного пула SQL (ранее — Хранилище данных SQL) в рабочей области откроется страница подготовки выделенного пула SQL. Подготовка будет выполняться на логическом сервере SQL Server.
 
 ## <a name="create-a-serverless-apache-spark-pool"></a>Создание бессерверного пула Apache Spark
 

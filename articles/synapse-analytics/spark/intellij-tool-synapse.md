@@ -1,6 +1,6 @@
 ---
 title: Учебник по Azure Toolkit for IntelliJ (для приложения Spark)
-description: Учебник. Использование Azure Toolkit for IntelliJ для разработки приложений Spark на языке Scala и их отправка в бессерверный пул Apache Spark (предварительной версии)
+description: Руководство по использованию Azure Toolkit for IntelliJ для разработки приложений Spark на языке Scala и их отправке в бессерверный пул Apache Spark.
 services: synapse-analytics
 author: hrasheed-msft
 ms.author: jejiang
@@ -9,16 +9,16 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: 5a9fcf3e13c2f86a11e9626be486a585ec659044
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 75cc23df41741a95e87ad64d168aea4fa4f45733
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013774"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451050"
 ---
 # <a name="tutorial-create-an-apache-spark-application-with-intellij-using-a-synapse-workspace"></a>Руководство по созданию приложения Apache Spark с помощью IntelliJ и рабочей области Synapse
 
-В этом учебнике показано, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в бессерверный пул Apache Spark (предварительной версии) напрямую из интегрированной среды разработки (IDE) IntelliJ. С помощью подключаемого модуля можно выполнять следующие действия:
+В этом руководстве показано, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в бессерверный пул Apache Spark напрямую из интегрированной среды разработки (IDE) IntelliJ. С помощью подключаемого модуля можно выполнять следующие действия:
 
 - разрабатывать и отправлять приложения Spark на Scala в пул Spark.
 - получать доступ к ресурсам пулов Spark.

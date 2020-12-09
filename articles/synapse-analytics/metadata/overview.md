@@ -1,6 +1,6 @@
 ---
 title: Модель общих метаданных
-description: Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark (предварительная версия), бессерверным пулом SQL (предварительная версия) и выделенными пулами SQL.
+description: Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark, бессерверным пулом SQL и выделенными пулами SQL.
 services: synapse-analytics
 author: MikeRys
 ms.service: synapse-analytics
@@ -9,18 +9,16 @@ ms.subservice: metadata
 ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
-ms.openlocfilehash: 64c19f3331be8ffda433207da88ebf22c546ee4e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b10b6f011fa7daee4094f0cc7b819d36127fedcd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324658"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460356"
 ---
 # <a name="azure-synapse-analytics-shared-metadata"></a>Общие метаданные Azure Synapse Analytics
 
-Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark (предварительная версия) и бессерверным пулом SQL (предварительная версия).
-
-[!INCLUDE [preview](../includes/note-preview.md)]
+Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark и бессерверным пулом SQL.
 
 При совместном доступе поддерживается так называемый шаблон современного хранилища данных и ядрам SQL рабочей области предоставляется доступ к базам данных и таблицам, созданным с помощью Spark. Совместный доступ также позволяет ядрам SQL создавать собственные объекты, которые не используются совместно с другими системами.
 

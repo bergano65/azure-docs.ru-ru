@@ -12,12 +12,12 @@ ms.date: 09/10/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c7225adcfe970d17f8f86afdd15e36e2ba76de3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: eeea88d8c21ba754fbeadbb24891126b639616c7
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91287021"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437246"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание клиента в Azure Active Directory
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
@@ -33,25 +33,29 @@ ms.locfileid: "91287021"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) своей организации.
 
-1. В меню портала Azure выберите **Создать ресурс**.  
+1. В меню портала Azure выберите **Azure Active Directory**.  
 
-    ![Страница создания ресурса Azure Active Directory](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
+    <kbd>![Экран "Страница "Обзор" — "Создание клиента"в Azure Active Directory"](media/active-directory-access-create-new-tenant/azure-ad-portal.png)</kbd>  
 
-1. Найдите и выберите **Azure Active Directory**.
+1. Выберите **Create a tenant** (Создание клиента).
 
-    Откроется страница **Создание каталога**.
+1. На вкладке "Основные сведения" выберите тип клиента, который нужно создать, — **Azure Active Directory** или **Azure Active Directory (B2C)** .
 
-    ![Страница создания каталога Azure Active Directory](media/active-directory-access-create-new-tenant/azure-ad-create-new-tenant.png)
+1. По завершении выберите **Next: Конфигурация** для перехода на вкладку "Конфигурация".
 
-1.  На странице **Создание каталога** введите следующие сведения.
+    <kbd>![Экран "Страница "Создание клиента" на вкладке "Конфигурация" в Azure Active Directory" ](media/active-directory-access-create-new-tenant/azure-ad-create-new-tenant.png)</kbd>
+
+1.  На вкладке "Конфигурация" введите следующие данные:
     
-    - В поле **Название организации** введите _Contoso_.
+    - В поле **Название организации** введите _организация Contoso_.
 
-    - В поле **Первоначальное доменное имя** введите _Contoso_.
+    - В поле **Первоначальное доменное имя** введите _Contosoorg_.
 
     - Оставьте значение _США_ в поле **Страна или регион**.
 
-1. Нажмите кнопку **создания**.
+1. По завершении выберите **Next: Просмотр + создание**. Просмотрите введенные сведения и, если они верны, нажмите кнопку **Создать**.
+
+    <kbd>![Экран "Вкладка "Просмотр и создание" на странице "Создание клиента" в Azure Active Directory"](media/active-directory-access-create-new-tenant/azure-ad-review.png)</kbd>
 
 Будет создан клиент с доменом contoso.onmicrosoft.com.
 
@@ -63,7 +67,7 @@ ms.locfileid: "91287021"
 
     Клиент и связанные с ним данные будут удалены.
 
-    ![Странице "Обзор" с выделенной кнопки "Удалить каталог"](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)
+    <kbd>![Странице "Обзор" с выделенной кнопки "Удалить каталог"](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)</kbd>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Изменение и добавление доменных имен описывается в статье [Добавление имени личного домена в Azure Active Directory](add-custom-domain.md).

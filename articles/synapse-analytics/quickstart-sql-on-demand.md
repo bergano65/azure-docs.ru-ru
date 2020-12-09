@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Использование бессерверного пула SQL
-description: Из этого краткого руководства вы узнаете, как легко запрашивать файлы различных типов с помощью бессерверного пула SQL по запросу (предварительная версия).
+description: Из этого краткого руководства вы узнаете, как легко запрашивать файлы различных типов с помощью бессерверного пула SQL.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 270942392e028964c7e9b1c110e4d9f118bd4953
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: e75bab664bdd0d6a4ac898905226c9956f62b4ff
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682984"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450504"
 ---
 # <a name="quickstart-use-serverless-sql-pool"></a>Краткое руководство. Использование бессерверного пула SQL
 
-Бессерверный пул SQL в Synapse (предварительная версия) — это бессерверная служба запросов, которая позволяет выполнять SQL-запросы к файлам, размещенным в службе хранилища Azure. Из этого краткого руководства вы узнаете, как легко запрашивать файлы различных типов с помощью бессерверного пула SQL. Поддерживаемые форматы перечислены в [OPENROWSET](sql/develop-openrowset.md).
+Бессерверный пул SQL в Synapse — это бессерверная служба запросов, которая позволяет выполнять SQL-запросы к файлам, размещенным в службе хранилища Azure. Из этого краткого руководства вы узнаете, как легко запрашивать файлы различных типов с помощью бессерверного пула SQL. Поддерживаемые форматы перечислены в [OPENROWSET](sql/develop-openrowset.md).
 
 В этом кратком руководстве объясняется, как выполнять запросы к файлам CSV, Apache Parquet и JSON.
 

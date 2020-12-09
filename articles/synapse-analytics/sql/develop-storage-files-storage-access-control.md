@@ -1,6 +1,6 @@
 ---
-title: Управление доступом к учетной записи хранения в бессерверном пуле SQL (предварительная версия)
-description: В этой статье приведены сведения о том, как бессерверный пул SQL (предварительная версия) обращается к службе хранилища Azure и как можно управлять доступом к хранилищу для бессерверного пула SQL в Azure Synapse Analytics.
+title: Управление доступом к учетной записи хранения в бессерверном пуле SQL
+description: В этой статье приведены сведения о том, как бессерверный пул SQL обращается к службе хранилища Azure и как можно управлять доступом к хранилищу для бессерверного пула SQL в Azure Synapse Analytics.
 services: synapse-analytics
 author: filippopovic
 ms.service: synapse-analytics
@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 958f371a0018d20331e73d0eabba9354614d121c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 631aaf3c6a99e093f6ed59089f7ce99803f3f054
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315727"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446629"
 ---
-# <a name="control-storage-account-access-for-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Управление доступом к учетной записи хранения в бессерверном пуле SQL (предварительная версия) в Azure Synapse Analytics
+# <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Управление доступом к учетной записи хранения в бессерверном пуле SQL в Azure Synapse Analytics
 
 Бессерверный пул SQL позволяет создавать запросы для чтения файлов непосредственно из службы хранилища Azure. Разрешения на доступ к файлам в службе хранилища Azure контролируются на двух уровнях.
-- **Уровень хранилища**  — пользователь должен иметь разрешение на доступ к базовым файлам хранилища. Администратор хранилища должен разрешить субъекту Azure AD чтение и запись файлов или создать ключ SAS, который будет использоваться для доступа к хранилищу.
-- **Уровень службы SQL**  — пользователь должен иметь разрешение `SELECT` на чтение данных из [внешней таблицы](develop-tables-external-tables.md) или разрешение `ADMINISTER BULK ADMIN` на выполнение `OPENROWSET` и разрешение на использование учетных данных, которые предназначены для доступа к хранилищу.
+- **Уровень хранилища** — пользователь должен иметь разрешение на доступ к базовым файлам хранилища. Администратор хранилища должен разрешить субъекту Azure AD чтение и запись файлов или создать ключ SAS, который будет использоваться для доступа к хранилищу.
+- **Уровень службы SQL** — пользователь должен иметь разрешение `SELECT` на чтение данных из [внешней таблицы](develop-tables-external-tables.md) или разрешение `ADMINISTER BULK ADMIN` на выполнение `OPENROWSET` и разрешение на использование учетных данных, которые предназначены для доступа к хранилищу.
 
 В этой статье описываются типы учетных данных, которые вы можете использовать, и способ поиска учетных данных для пользователей SQL и Azure AD.
 
@@ -144,7 +144,7 @@ GRANT REFERENCES ON CREDENTIAL::[storage_credential] TO [specific_user];
 
 Следующий скрипт создает учетные данные уровня сервера, которые могут использоваться функцией `OPENROWSET` для доступа к любому файлу в службе хранилища Azure через токен SAS. Создайте такие учетные данные, чтобы разрешить субъекту SQL, который выполняет функцию `OPENROWSET`, считывать файлы, защищенные ключом SAS в службе хранилища Azure, которая соответствует URL-адресу в имени учетных данных.
 
-Замените < *mystorageaccountname* > реальным именем учетной записи хранения, а < *mystorageaccountcontainername* > — именем контейнера:
+Замените <*mystorageaccountname*> реальным именем учетной записи хранения, а <*mystorageaccountcontainername*> — именем контейнера:
 
 ```sql
 CREATE CREDENTIAL [https://<storage_account>.dfs.core.windows.net/<container>]

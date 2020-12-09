@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 11/16/2020
-ms.openlocfilehash: ea8fcb602f49dec61187260e08d3ccd1b148cee8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 791cab369dcbf9cab8d1256377cfee4a433c21b9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95918942"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450895"
 ---
 # <a name="tutorial-create-a-power-bi-report-using-apache-spark-and-azure-synapse-analytics"></a>Руководство по созданию отчета Power BI с помощью Apache Spark и Azure Synapse Analytics
 
@@ -69,9 +69,12 @@ ms.locfileid: "95918942"
                                     & (filtered_df.paymentType.isin({"1", "2"})))
     ```
 4. Наконец, мы сохраним наш кадр данных с помощью метода Apache Spark ```saveAsTable```. Это позволит вам в дальнейшем отправлять запросы к таблице и подключаться к ней с помощью бессерверных пулов SQL.
+  ```python
+     taxi_df.write.mode("overwrite").saveAsTable("NycTlcTutorial.nyctaxi")
+  ```
    
 ## <a name="query-data-using-serverless-sql-pools"></a>Запрос данных с помощью бессерверных пулов SQL
-Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark (предварительная версия) и бессерверным пулом SQL (предварительная версия). Такая возможность обеспечивается [системой управления общими метаданными](../metadata/overview.md) в Synapse. В результате созданные с помощью Spark базы данных и их таблицы с поддержкой Parquet становятся видимыми в бессерверном пуле SQL рабочей области.
+Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark и бессерверным пулом SQL. Такая возможность обеспечивается [системой управления общими метаданными](../metadata/overview.md) в Synapse. В результате созданные с помощью Spark базы данных и их таблицы с поддержкой Parquet становятся видимыми в бессерверном пуле SQL рабочей области.
 
 Чтобы отправить запрос к таблице Apache Spark с помощью бессерверного пула SQL, выполните следующие действия:
    1. После сохранения таблицы Apache Spark переключитесь на вкладку **данных**.

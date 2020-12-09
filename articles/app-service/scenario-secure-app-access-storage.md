@@ -7,15 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/09/2020
+ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: 250e95b33b985aedcc1b1537f57338d29e848451
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.custom: azureday1
+ms.openlocfilehash: 72b1d4fe864c23c0ac065e47d96ab0c78866defa
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96020217"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435847"
 ---
 # <a name="tutorial-access-azure-storage-from-a-web-app"></a>Руководство по доступу к службе хранилища Azure из веб-приложения
 
@@ -23,7 +24,7 @@ ms.locfileid: "96020217"
 
 :::image type="content" alt-text="Схема, на которой показано, как получить доступ к хранилищу." source="./media/scenario-secure-app-access-storage/web-app-access-storage.svg" border="false":::
 
-Предположим, что вам нужен доступ из веб-приложения к плоскости данных Azure (к службе хранилища Azure, Базе данных SQL Azure, Azure Key Vault или другим службам). Вы могли бы использовать общий ключ, но это создаст дополнительные проблемы с оперативной безопасностью, то есть с распределением прав на создание, развертывание секрета и управление им. Также этот ключ может случайно оказаться отправленным в GitHub, где злоумышленники смогут его найти. Есть более безопасный способ предоставить веб-приложению доступ к данным — применить [управляемое удостоверение](/azure/active-directory/managed-identities-azure-resources/overview).
+Предположим, что вам нужен доступ из веб-приложения к плоскости данных Azure (к службе хранилища Azure, Базе данных SQL Azure, Azure Key Vault или другим службам). Вы могли бы использовать общий ключ, но это создаст дополнительные проблемы с оперативной безопасностью, то есть с распределением прав на создание, развертывание секрета и управление им. Также этот ключ может случайно оказаться отправленным в GitHub, где злоумышленники смогут его найти. Есть более безопасный способ предоставить веб-приложению доступ к данным — применить [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md).
 
 Управляемое удостоверение из Azure Active Directory (Azure AD) позволяет Службам приложений получать доступ к ресурсам через управление доступом на основе ролей (RBAC) без учетных данных приложения. Когда вы назначаете веб-приложению управляемое удостоверение, Azure создает и распространяет сертификат. Вам не придется беспокоиться об управлении секретами или учетными данными приложения.
 
@@ -210,6 +211,8 @@ az role assignment create --assignee $spID --role 'Storage Blob Data Contributor
 ## <a name="access-blob-storage-net"></a>Доступ к хранилищу BLOB-объектов (.NET)
 
 Класс [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) используется для получения учетных данных токена для кода, чтобы авторизовать запросы в службу хранилища Azure. Создайте экземпляр класса [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), который использует управляемое удостоверение для получения токенов и их подключения к клиенту службы. Приведенный ниже пример кода получает учетные данные токена с пройденной проверкой подлинности и использует их для создания объекта клиента службы, который отправляет новый большой двоичный объект.
+
+Просмотреть этот код как часть примера приложения можно на [сайте GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-dotnet-storage-graphapi/tree/main/1-WebApp-storage-managed-identity).
 
 ### <a name="install-client-library-packages"></a>Установка пакетов клиентских библиотек
 

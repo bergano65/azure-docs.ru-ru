@@ -1,6 +1,6 @@
 ---
-title: Самопомощь при использовании бессерверного пула SQL Server (предварительная версия)
-description: В этом разделе содержатся сведения, которые могут помочь в устранении проблем с бессерверным пулом SQL (предварительная версия).
+title: Самопомощь при работе с бессерверным пулом SQL
+description: В этом разделе содержатся сведения, которые могут помочь в устранении проблем с бессерверным пулом SQL.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: aefdb90c3e6c8d3abc3924ecebb2aa46739e99ad
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 12ff369cb931eb36014b7c9598b036afdc158750
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682627"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457182"
 ---
-# <a name="self-help-for-serverless-sql-pool-preview"></a>Самопомощь при использовании бессерверного пула SQL (предварительная версия)
+# <a name="self-help-for-serverless-sql-pool"></a>Самопомощь при использовании бессерверного пула SQL
 
-Эта статья содержит информацию об устранении наиболее частых проблем с бессерверным пулом SQL (предварительная версия) в Azure Analytics.
+Эта статья содержит информацию об устранении наиболее частых проблем с бессерверным пулом SQL в Azure Synapse Analytics.
 
 ## <a name="serverless-sql-pool-is-grayed-out-in-synapse-studio"></a>Бессерверный пул SQL неактивен в Synapse Studio
 
@@ -37,7 +37,7 @@ ms.locfileid: "94682627"
 
 - Убедитесь, что используются типы данных допустимого размера. Кроме того, укажите схему для файлов Parquet для столбцов строк, так как по умолчанию у них будет тип VARCHAR(8000). 
 
-- Если запрос предназначен для CSV-файлов, [создайте статистику](develop-tables-statistics.md#statistics-in-serverless-sql-pool-preview). 
+- Если запрос предназначен для CSV-файлов, [создайте статистику](develop-tables-statistics.md#statistics-in-serverless-sql-pool). 
 
 - Ознакомьтесь с [рекомендациями по повышению производительности для бессерверного пула SQL](best-practices-sql-on-demand.md), чтобы оптимизировать создание запросов.  
 

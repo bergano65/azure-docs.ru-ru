@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 11/09/2020
+ms.date: 12/01/2020
 ms.author: banders
-ms.openlocfilehash: f90d1fe22ae2f46fdc6d764ce98db8e0f48b8b35
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 3182da0d04d61d5bad4ce3e41f213ecc3be7ecaf
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408028"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444458"
 ---
 # <a name="cancel-your-azure-subscription"></a>Отмена подписки Azure
 
@@ -38,6 +38,9 @@ ms.locfileid: "94408028"
     ![Снимок экрана, на котором показана кнопка "Отмена"](./media/cancel-azure-subscription/cancel_ibiza.png)
 1. Следуйте инструкциям и завершите отмену.
 
+> [!NOTE]
+> Партнеры могут заблокировать или отменить подписку по просьбе клиента либо в случае неуплаты или мошенничества. Дополнительные сведения см. в разделе [Блокировка или отмена подписки](/partner-center/create-a-new-subscription#suspend-or-cancel-a-subscription).
+
 ## <a name="who-can-cancel-a-subscription"></a>Кто может отменить подписку?
 
 В таблице ниже приведены разрешения для отмены подписки.
@@ -48,7 +51,7 @@ ms.locfileid: "94408028"
 |[Соглашение Microsoft Enterprise ](https://azure.microsoft.com/pricing/enterprise-agreement/) и [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/)     |  Владелец учетной записи и владельцы подписки       |
 |[План Azure](https://azure.microsoft.com/offers/ms-azr-0017g/) и [План Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g/)     |  Владельцы подписки      |
 
-## <a name="what-happens-after-i-cancel-my-subscription"></a>Что происходит после отмены подписки?
+## <a name="what-happens-after-subscription-cancellation"></a>Что происходит после отмены подписки?
 
 После отмены подписки немедленно прекратится выставление счетов. Но отображение отмены на портале может занять до 10 минут. Если вы отменяете подписку в середине расчетного периода, мы отправим вам итоговый счет в день расчета после истечения периода тарификации.
 
@@ -65,7 +68,7 @@ ms.locfileid: "94408028"
 1. Выберите подписку, которую нужно удалить.
 1. Выберите **Обзор**, а затем — **Удалить подписку**.
 
-## <a name="reactivate-subscription"></a>Повторная активация подписки
+## <a name="reactivate-a-subscription"></a>Повторная активация подписки
 
 Если вы случайно отменили подписку с оплатой по мере использования, можно [повторно активировать ее в Центре управления учетной записью](subscription-disabled.md).
 
@@ -73,7 +76,7 @@ ms.locfileid: "94408028"
 
 ## <a name="why-dont-i-see-the-cancel-subscription-option-on-the-azure-portal"></a>Почему на портале Azure не отображается параметр "Отменить подписку"? 
 
-Возможно, для отмены подписки недостаточно прав. Сведения о том, кто может отменять разные типы подписок, см. в [этом разделе](https://docs.microsoft.com/azure/cost-management-billing/manage/cancel-azure-subscription#who-can-cancel-a-subscription).
+Возможно, для отмены подписки недостаточно прав. Сведения о том, кто может отменять разные типы подписок, см. в [этом разделе](#who-can-cancel-a-subscription).
 
 ## <a name="how-do-i-delete-my-azure-account"></a>Как удалить мою учетную запись Azure?
 
@@ -85,7 +88,7 @@ ms.locfileid: "94408028"
 
 ## <a name="how-do-i-cancel-a-visual-studio-professional-account"></a>Как мне отменить учетную запись Visual Studio Professional?
 
-См. статью [Продление и отмена](https://docs.microsoft.com/visualstudio/subscriptions/faq/admin/renewal-cancellation). Если у вас есть какие-либо подписки Visual Studio Azure, их также необходимо отменить и удалить.
+См. статью [Продление и отмена](/visualstudio/subscriptions/faq/admin/renewal-cancellation). Если у вас есть какие-либо подписки Visual Studio Azure, их также необходимо отменить и удалить.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

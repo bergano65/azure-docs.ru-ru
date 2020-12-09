@@ -9,16 +9,16 @@ ms.subservice: business-intelligence
 ms.date: 10/27/2020
 ms.author: jocaplan
 ms.reviewer: jrasnick
-ms.openlocfilehash: 36334142595d4a6bd4865a690f154279967a70d5
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 996233e2526b8b69c13abd4340ead4c5e2175916
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746362"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450672"
 ---
 # <a name="quickstart-linking-a-power-bi-workspace-to-a-synapse-workspace"></a>Краткое руководство. Связывание рабочей области Power BI с рабочей областью Synapse
 
-В этом кратком руководстве вы узнаете, как подключить рабочую область Power BI к рабочей области Synapse Analytics для создания новых отчетов и наборов данных Power BI с помощью Synapse Studio (предварительная версия).
+Из этого краткого руководства вы узнаете, как подключить рабочую область Power BI к рабочей области Azure Synapse Analytics для создания новых отчетов и наборов данных Power BI с помощью Synapse Studio.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись, прежде чем начинать работу](https://azure.microsoft.com/free/).
 
@@ -29,19 +29,19 @@ ms.locfileid: "92746362"
 
 ## <a name="link-power-bi-workspace-to-your-synapse-workspace"></a>Связывание рабочей области Power BI с рабочей областью Synapse
 
-1. Откройте Synapse Studio и щелкните **Управление** .
+1. Откройте Synapse Studio и щелкните **Управление**.
 
     ![Действие "управление" в Synapse Studio.](media/quickstart-link-powerbi/synapse-studio-click-manage.png)
 
-2. В разделе **Внешние подключения** щелкните **Связанные службы** .
+2. В разделе **Внешние подключения** щелкните **Связанные службы**.
 
     ![Выделен элемент "Связанные службы".](media/quickstart-link-powerbi/manage-click-linked-services.png)
 
-3. Щелкните **+ Создать** .
+3. Щелкните **+ Создать**.
 
     ![Выделен элемент "+ Новые связанные службы".](media/quickstart-link-powerbi/new-highlighted.png)
 
-4. Щелкните **Power BI** и выберите **Продолжить** .
+4. Щелкните **Power BI** и выберите **Продолжить**.
 
     ![Отображение связанной службы Power BI.](media/quickstart-link-powerbi/powerbi-linked-service.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "92746362"
 
     ![Отображение конфигурации связанной службы Power BI.](media/quickstart-link-powerbi/workspace-link-dialog.png)
 
-6. Нажмите кнопку **Создать** .
+6. Нажмите кнопку **Создать**.
 
 ## <a name="view-power-bi-workspace-in-synapse-studio"></a>Просмотр рабочей области Power BI в Synapse Studio
 
@@ -63,7 +63,7 @@ ms.locfileid: "92746362"
 
     ![Разверните Power BI и рабочую область.](media/quickstart-link-powerbi/develop-expand-powerbi.png)
 
-Новые отчеты можно создать, щелкнув **+** в верхней части вкладки **Разработка** . Чтобы изменить существующий отчет, щелкните имя этого отчета. Все сохраненные изменения будут записаны обратно в рабочую область Power BI.
+Новые отчеты можно создать, щелкнув **+** в верхней части вкладки **Разработка**. Чтобы изменить существующий отчет, щелкните имя этого отчета. Все сохраненные изменения будут записаны обратно в рабочую область Power BI.
 
 ![Просмотр и редактирование отчета Power BI](media/quickstart-link-powerbi/powerbi-report.png)
 

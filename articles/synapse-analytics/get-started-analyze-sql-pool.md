@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
 ms.date: 11/17/2020
-ms.openlocfilehash: ae7b15bf2e2efd72184110a105f68815516569ab
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 9014469ca063ca52be0965ecbd4e8b21709d10a0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843916"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455159"
 ---
 # <a name="analyze-data-with-dedicated-sql-pools"></a>Анализ данных с помощью выделенных пулов SQL
 
@@ -94,8 +94,9 @@ Azure Synapse Analytics позволяет анализировать данны
 
     Этот запрос показывает, как общее время поездки и среднее расстояние поездки связаны с количеством пассажиров.
 1. В окне результатов скрипта SQL измените представление с **Обзор** на **График**, чтобы увидеть визуализацию результатов в виде графика.
-
-
+    
+    > [!NOTE]
+    > Выделенный пул SQL с поддержкой рабочей области (прежнее название — Хранилище данных SQL) можно найти с помощью подсказки в центре данных.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

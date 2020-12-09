@@ -7,15 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/09/2020
+ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: a7b8ca309bf5710ddbd88413935bef5e97a1ed9f
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.custom: azureday1
+ms.openlocfilehash: facc6a4ab8344f9f72fc7abc27433c18ab435504
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95999677"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436544"
 ---
 # <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-app"></a>Руководство по доступу к Microsoft Graph из защищенного приложения от имени приложения
 
@@ -23,7 +24,7 @@ ms.locfileid: "95999677"
 
 :::image type="content" alt-text="Диаграмма, в которой показан доступ к Microsoft Graph." source="./media/scenario-secure-app-access-microsoft-graph/web-app-access-graph.svg" border="false":::
 
-Необходимо вызвать Microsoft Graph для веб-приложения. Чтобы предоставить веб-приложению доступ к данным, можно использовать [управляемое удостоверение, назначаемое системой](/azure/active-directory/managed-identities-azure-resources/overview). Управляемое удостоверение из Azure Active Directory позволяет Службе приложений получать доступ к ресурсам через управление доступом на основе ролей (RBAC) без учетных данных приложения. Когда вы назначаете веб-приложению управляемое удостоверение, Azure создает и распространяет сертификат. Вам не придется беспокоиться об управлении секретами или учетными данными приложения.
+Необходимо вызвать Microsoft Graph для веб-приложения. Чтобы предоставить веб-приложению доступ к данным, можно использовать [управляемое удостоверение, назначаемое системой](../active-directory/managed-identities-azure-resources/overview.md). Управляемое удостоверение из Azure Active Directory позволяет Службе приложений получать доступ к ресурсам через управление доступом на основе ролей (RBAC) без учетных данных приложения. Когда вы назначаете веб-приложению управляемое удостоверение, Azure создает и распространяет сертификат. Вам не придется беспокоиться об управлении секретами или учетными данными приложения.
 
 В этом руководстве вы узнаете, как:
 
@@ -120,6 +121,8 @@ az rest --method post --uri $uri --body $body --headers "Content-Type=applicatio
 ## <a name="call-microsoft-graph-net"></a>Вызов Microsoft Graph (.NET)
 
 Класс [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) используется для получения учетных данных токена для кода, чтобы авторизовать запросы в Microsoft Graph. Создайте экземпляр класса [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), который использует управляемое удостоверение для получения токенов и их подключения к клиенту службы. Приведенный ниже пример кода получает учетные данные токена с пройденной проверкой подлинности и использует их для создания объекта клиента службы, который получает список пользователей в группе.
+
+Просмотреть этот код как часть примера приложения можно на [сайте GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-dotnet-storage-graphapi/tree/main/3-WebApp-graphapi-managed-identity).
 
 ### <a name="install-the-microsoftgraph-client-library-package"></a>Установка пакета клиентской библиотеки Microsoft.Graph
 

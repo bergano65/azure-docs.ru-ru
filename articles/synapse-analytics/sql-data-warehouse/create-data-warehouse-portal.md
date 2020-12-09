@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание пула SQL Synapse и отправка в него запросов с помощью портала Azure
-description: Создание пула SQL Synapse и отправка в него запросов, используя портал Azure
+title: Краткое руководство. Создание выделенного пула SQL и отправка в него запросов (портал Azure)
+description: Создание выделенного пула SQL и отправка в него запросов с помощью портала Azure.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 05/28/2019
 ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 470892aa46d3f75ce8e17200f7d0549ae14b0e86
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 3d4884fd64c773647f78a98dc7aeb1063d539edf
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023792"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456747"
 ---
-# <a name="quickstart-create-and-query-a-synapse-sql-pool-using-the-azure-portal"></a>Краткое руководство. Создание пула SQL Synapse и отправка в него запросов, используя портал Azure
+# <a name="quickstart-create-and-query-a-dedicated-sql-pool-in-azure-synapse-analytics-using-the-azure-portal"></a>Краткое руководство. Создание выделенного пула SQL в Azure Synapse Analytics и отправка в него запросов с помощью портала Azure
 
-Вы можете быстро создать пул SQL Synapse (хранилище данных) в Azure Synapse Analytics (прежнее название — Хранилище данных SQL) на портале Azure.
+Вы можете быстро создать пул SQL Synapse (хранилище данных) в Azure Synapse Analytics на портале Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

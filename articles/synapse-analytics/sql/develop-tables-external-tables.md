@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: a9f58a9cdf8dea9631443d499548f2aee61eda69
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: c2daef64b110e59da76d8342508c19c7f1b3cd08
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553681"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452779"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Использование внешних таблиц в Synapse SQL
 
-Внешняя таблица указывает на данные, расположенные в Hadoop, большом двоичном объекте в службе хранилища Azure или Azure Data Lake Storage. Внешние таблицы используются для чтения данных из файлов или записи данных в файлы, расположенные в службе хранилища Azure. В Synapse SQL внешние таблицы можно использовать для чтения и записи данных в выделенный пул SQL или бессерверный пул SQL (предварительная версия).
+Внешняя таблица указывает на данные, расположенные в Hadoop, большом двоичном объекте в службе хранилища Azure или Azure Data Lake Storage. Внешние таблицы используются для чтения данных из файлов или записи данных в файлы, расположенные в службе хранилища Azure. В Synapse SQL внешние таблицы можно использовать для чтения данных в выделенном пуле SQL или бессерверном пуле SQL, а также записи данных в такие пулы.
 
 ## <a name="external-tables-in-dedicated-sql-pool-and-serverless-sql-pool"></a>Внешние таблицы в выделенном пуле SQL и бессерверном пуле SQL
 

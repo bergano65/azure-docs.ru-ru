@@ -1,6 +1,6 @@
 ---
-title: Синхронизация Apache Spark для определений внешних таблиц в бессерверном пуле SQL (предварительная версия)
-description: Общие сведения о запросе таблиц Spark с помощью бессерверного пула SQL (предварительная версия)
+title: Синхронизация Apache Spark для определений внешних таблиц в бессерверном пуле SQL
+description: Общие сведения о запросе таблиц Spark с помощью бессерверного пула SQL
 services: synapse-analytics
 author: julieMSFT
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: ea4e7cd009be8a78faa0dcfab44371a350b6a200
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 057a69881b8b407e5d75fa3510ca1c3eb1830bc7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315837"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446497"
 ---
-# <a name="synchronize-apache-spark-for-azure-synapse-external-table-definitions-in-serverless-sql-pool-preview"></a>Синхронизация Apache Spark для определений внешних таблиц Azure Synapse в бессерверном пуле SQL (предварительная версия)
+# <a name="synchronize-apache-spark-for-azure-synapse-external-table-definitions-in-serverless-sql-pool"></a>Синхронизация Apache Spark для определений внешних таблиц Azure Synapse в бессерверном пуле SQL
 
-Бессерверный пул SQL (предварительная версия) может автоматически синхронизировать метаданные из Apache Spark. Для каждой базы данных, имеющейся в бессерверных пулах Apache Spark (предварительная версия), будет создана база данных бессерверного пула SQL. 
+Бессерверный пул SQL может автоматически синхронизировать метаданные из Apache Spark. Для каждой базы данных, имеющейся в бессерверных пулах Apache Spark, будет создана база данных бессерверного пула SQL. 
 
 Для каждой внешней таблицы Spark, основанной на Parquet и размещенной в службе хранилища Azure, внешняя таблица создается в базе данных бессерверного пула SQL. Таким образом, вы можете завершить работу пулов Spark и по-прежнему запрашивать внешние таблицы Spark из бессерверного пула SQL.
 

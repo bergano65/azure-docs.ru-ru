@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: 4a9aaca8128570af74370213e9848e26dec25156
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84a9a5f6a4644717227d0b659407e9ba0bc56675
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89490264"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452414"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-using-powershell"></a>Копирование нескольких таблиц в пакетном режиме с помощью Фабрики данных Azure и PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом учебнике показано, как выполнять **копирование нескольких таблиц из базы данных SQL Azure в Azure Synapse Analytics (ранее эта служба называлась "Хранилище данных SQL")** . Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в Базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы Базы данных SQL Azure.
+В этом руководстве показано, как **скопировать несколько таблиц из Базы данных SQL Azure в Azure Synapse Analytics**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в Базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы Базы данных SQL Azure.
 
 В целом это руководство включает следующие шаги:
 
@@ -263,7 +263,7 @@ ms.locfileid: "89490264"
     Properties        : Microsoft.Azure.Management.DataFactory.Models.AzureSqlTableDataset
     ```
 
-### <a name="create-a-dataset-for-sink-synapse-analytics"></a>Создание набора данных для приемника Synapse Analytics
+### <a name="create-a-dataset-for-sink-azure-synapse-analytics"></a>Создание набора данных для приемника Azure Synapse Analytics
 
 1. Создайте файл JSON с именем **AzureSqlDWDataset.json** в папке **C:\ADFv2TutorialBulkCopy** со приведенным ниже содержимым. tableName задается в качестве параметра, позже действие копирования, которое ссылается на этот набор данных, передает фактическое значение в набор данных.
 

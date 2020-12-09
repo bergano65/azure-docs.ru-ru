@@ -1,6 +1,6 @@
 ---
 title: Общая база данных
-description: Azure Synapse Analytics предоставляет общую модель метаданных, в которой к созданной в бессерверном пуле Apache Spark базе данных можно будет получить доступ из бессерверного пула SQL (предварительная версия) и ядер пула SQL.
+description: Azure Synapse Analytics предоставляет общую модель метаданных, в которой к созданной в бессерверном пуле Apache Spark базе данных можно будет получить доступ из бессерверного пула SQL и ядер пула SQL.
 services: synapse-analytics
 author: MikeRys
 ms.service: synapse-analytics
@@ -10,20 +10,18 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e17eb44a5f4f4aace9ce9d541b8218b35db0f5d3
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 14ae8b8670db53761d085bc019711e829633601b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93317840"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451809"
 ---
 # <a name="azure-synapse-analytics-shared-database"></a>Общая база данных Azure Synapse Analytics
 
-Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark (предварительная версия) и ядром бессерверного пула SQL (предварительная версия).
+Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы совместно с бессерверными пулами Apache Spark и ядром бессерверного пула SQL.
 
-[!INCLUDE [synapse-analytics-preview-terms](../../../includes/synapse-analytics-preview-terms.md)]
-
-База данных, созданная с помощью задания Spark, станет видимой с одним и тем же именем для всех текущих и будущих пулов Spark (предварительная версия) в рабочей области, а также для ядра бессерверного пула SQL.
+База данных, созданная с помощью задания Spark, станет видимой с одним и тем же именем для всех текущих и будущих пулов Spark в рабочей области, а также для ядра бессерверного пула SQL.
 
 База данных Spark по умолчанию с именем`default` также будет отображаться в контексте бессерверного пула SQL как база данных с именем `default`.
 

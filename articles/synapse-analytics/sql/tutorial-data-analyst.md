@@ -1,6 +1,6 @@
 ---
-title: Руководство по исследованию и анализу озера данных с помощью бессерверной среды Synapse SQL
-description: В этом руководстве показано, как без усилий выполнять исследовательский анализ данных, объединяя разные Открытые наборы данных Azure с помощью бессерверного пула SQL (предварительная версия), и визуализировать результаты в Synapse Studio для Synapse Analytics.
+title: Руководство по анализу открытых наборов данных Azure в Azure Synapse Studio с помощью бессерверного пула SQL
+description: В этом руководстве показано, как без усилий выполнять исследовательский анализ данных, объединяя разные открытые наборы данных Azure с помощью бессерверного пула SQL, и визуализировать результаты в Azure Synapse Studio.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: sql
 ms.date: 11/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: af6fc75b5de22fc77313932ca17ce695e889dad3
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 7b2d4953b3a42c5d66fca4a67b4a6d0f13700a35
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95238025"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459123"
 ---
-# <a name="tutorial-explore-and-analyze-data-lakes-with-serverless-sql-pool-preview"></a>Руководство по Исследование и анализ озера данных с помощью бессерверного пула SQL (предварительная версия)
+# <a name="tutorial-explore-and-analyze-data-lakes-with-serverless-sql-pool"></a>Руководство по исследованию и анализу озера данных с помощью бессерверного пула SQL
 
 В этом учебнике вы узнаете, как выполнять исследовательский анализ данных. Вы научитесь объединять различные открытые наборы данных Azure с помощью бессерверного пула SQL. Затем вы сможете визуализировать результаты в Synapse Studio для Azure Synapse Analytics.
 

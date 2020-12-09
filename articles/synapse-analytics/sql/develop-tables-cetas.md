@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: df0198ba77e1661bb18aa72285e100ca070966a8
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 8ffb3a0948267ea40a5d0511de63a80ad23584d1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331742"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454665"
 ---
 # <a name="cetas-with-synapse-sql"></a>CETAS в SQL Synapse
 
-Вы можете использовать CREATE EXTERNAL TABLE AS SELECT (CETAS) в выделенных пулах SQL или бессерверных пулах SQL (предварительная версия) для выполнения следующих задач:  
+Вы можете использовать CREATE EXTERNAL TABLE AS SELECT (CETAS) в выделенных пулах SQL или бессерверных пулах SQL для выполнения следующих задач:  
 
 - Создание внешней таблицы
 - Параллельный экспорт результатов инструкции Transact-SQL SELECT в:

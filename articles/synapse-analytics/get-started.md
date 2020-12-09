@@ -10,16 +10,16 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 11/17/2020
-ms.openlocfilehash: f55e266b548ea3b43a50d9500a427dfe1199b73f
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: b1339a0ab5be9004643cf2e9f86203eba9a2cc72
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699769"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445070"
 ---
 # <a name="get-started-with-azure-synapse-analytics"></a>Начало работы с Azure Synapse Analytics
 
-Этот учебник является пошаговым руководством по основным функциональным возможностям Azure Synapse Analytics. Учебник — это идеальная отправная точка для тех, кто хочет ознакомиться с основными сценариями в Azure Synapse Analytics. После выполнения действий, описанных в этом учебнике, будет создана полнофункциональная рабочая область Synapse, в которой можно начать анализ данных с помощью выделенного пула SQL, бессерверного пула SQL или Apache Spark.
+Этот учебник является пошаговым руководством по основным функциональным возможностям Azure Synapse Analytics. Учебник — это идеальная отправная точка для тех, кто хочет ознакомиться с основными сценариями в Azure Synapse Analytics. Выполнив действия, приведенные в этом учебнике, вы получите рабочую область Synapse. В этом учебнике также содержатся сведения по [использованию рабочей области для выделенного пула SQL (ранее — Хранилище данных SQL)](./sql-data-warehouse/workspace-connected-create.md). Создав рабочую область, можно начать анализ данных с помощью выделенного пула SQL, бессерверного пула SQL или бессерверного пула Apache Spark.
 
 Выполните действия в указанном ниже *порядке*, чтобы ознакомиться с различными возможностями и узнать, как выполнять основные функции.
 

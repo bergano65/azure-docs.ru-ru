@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Масштабирование вычислительных ресурсов в Azure Synapse Analytics с использованием T-SQL
-description: Масштабируйте вычислительные ресурсы в Azure Synapse Analytics с использованием T-SQL и SQL Server Management Studio. Горизонтально увеличивайте масштаб вычислительных ресурсов, чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить расходы.
+title: Краткое руководство. Масштабирование вычислительных ресурсов в выделенном пуле SQL (ранее — Хранилище данных SQL) с помощью T-SQL
+description: Масштабируйте вычислительные ресурсы в выделенном пуле SQL (ранее — Хранилище данных SQL) с помощью T-SQL и SQL Server Management Studio (SSMS). Горизонтально увеличивайте масштаб вычислительных ресурсов, чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить расходы.
 services: synapse-analytics
 author: Antvgski
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: d11474a3f3b5d8c314f67260fddbbe0a98fe5196
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 37033e3c5f388d1a55a122899114914e661565f6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91569899"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460236"
 ---
-# <a name="quickstart-scale-compute-in-azure-synapse-analytics-using-t-sql"></a>Краткое руководство. Масштабирование вычислительных ресурсов в Azure Synapse Analytics с использованием T-SQL
+# <a name="quickstart-scale-compute-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-t-sql"></a>Краткое руководство. Масштабирование вычислительных ресурсов в выделенном пуле SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics с помощью T-SQL
 
-Масштабируйте вычислительные ресурсы в Azure Synapse Analytics (ранее — Хранилище данных SQL) с использованием T-SQL и SQL Server Management Studio. [Горизонтально увеличивайте масштаб вычислительных ресурсов](sql-data-warehouse-manage-compute-overview.md), чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить затраты.
+Масштабируйте вычислительные ресурсы в выделенном пуле SQL (ранее — Хранилище данных SQL) с помощью T-SQL и SQL Server Management Studio (SSMS). [Горизонтально увеличивайте масштаб вычислительных ресурсов](sql-data-warehouse-manage-compute-overview.md), чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить затраты.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -28,9 +28,9 @@ ms.locfileid: "91569899"
 
 Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
-## <a name="create-a-data-warehouse"></a>Создание хранилища данных
+## <a name="create-a-dedicated-sql-pool-formerly-sql-dw"></a>Создание выделенного пула SQL (ранее — Хранилище данных SQL)
 
-Используйте инструкции из краткого руководства [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**. По завершении работы с кратким руководством должно быть создано правило брандмауэра и подключение к хранилищу данных из SQL Server Management Studio.
+Выполните инструкции из [краткого руководства по созданию и подключению выделенного пула SQL с помощью портала Azure](create-data-warehouse-portal.md), чтобы создать выделенный пул SQL (ранее — Хранилище данных SQL) с названием **mySampleDataWarehouse**. По завершении работы с кратким руководством должно быть создано правило брандмауэра и подключение к выделенному пулу SQL (ранее — Хранилище данных SQL) из SQL Server Management Studio.
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
@@ -58,9 +58,9 @@ ms.locfileid: "91569899"
 
 ## <a name="view-service-objective"></a>Просмотр целевого уровня обслуживания
 
-Параметр целевого уровня обслуживания содержит число единиц DWU для хранилища данных.
+Параметр целевого уровня обслуживания содержит число единиц DWU для выделенного пула SQL (ранее — Хранилище данных SQL).
 
-Чтобы просмотреть текущее значение DWU для хранилища данных, сделайте следующее:
+Чтобы просмотреть текущие значения единиц использования хранилища данных для выделенного пула SQL (ранее — Хранилище данных SQL), выполните следующие действия:
 
 1. В разделе подключения к **mySampleDataWarehouseservername.database.windows.net** разверните узел **Системные базы данных**.
 2. Щелкните правой кнопкой мыши **master** и выберите **Создать запрос**. Откроется новое окно запроса.
@@ -85,7 +85,7 @@ ms.locfileid: "91569899"
 
 ## <a name="scale-compute"></a>Масштабирование вычислительных ресурсов
 
-В Azure Synapse вы можете увеличивать и уменьшать объем вычислительных ресурсов, изменяя число единиц использования хранилища данных. В статье [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) мы создали хранилище **mySampleDataWarehouse** и инициализировали его со значением 400 DWU. Ниже описаны шаги по изменению числа единиц DWU для **mySampleDataWarehouse**.
+В выделенном пуле SQL (ранее — Хранилище данных SQL) вы можете увеличивать и уменьшать объем вычислительных ресурсов, изменяя число единиц использования хранилища данных. В статье [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) мы создали хранилище **mySampleDataWarehouse** и инициализировали его со значением 400 DWU. Ниже описаны шаги по изменению числа единиц DWU для **mySampleDataWarehouse**.
 
 Изменить число единиц использования хранилища данных можно так:
 
@@ -130,13 +130,13 @@ ms.locfileid: "91569899"
 
     ![Состояние операции](./media/quickstart-scale-compute-tsql/polling-output.png)
 
-## <a name="check-data-warehouse-state"></a>Проверка состояния хранилища данных
+## <a name="check-dedicated-sql-pool-formerly-sql-dw-state"></a>Проверка состояния выделенного пула SQL (ранее — Хранилище данных SQL)
 
-Если хранилище данных остановлено, вы не сможете подключиться к нему с помощью T-SQL. Чтобы просмотреть текущее состояние хранилища данных, используйте командлет PowerShell. Пример см. в разделе [Проверка состояния хранилища данных](quickstart-scale-compute-powershell.md#check-data-warehouse-state).
+Если выделенный пул SQL (ранее — Хранилище данных SQL) приостановлен, подключиться к нему с помощью T-SQL невозможно. Чтобы просмотреть текущее состояние выделенного пула SQL (ранее — Хранилище данных SQL), можно использовать командлет PowerShell. Пример см. в разделе о [проверке состояния выделенного пула SQL (ранее — Хранилище данных SQL) с помощью PowerShell](quickstart-scale-compute-powershell.md#check-data-warehouse-state).
 
 ## <a name="check-operation-status"></a>Проверка состояния операции
 
-Чтобы получить сведения о разных операциях управления, выполняемых в Azure Synapse, отправьте следующий запрос в динамическом административном представлении [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Например, это представление возвращает сведения о разных операциях, а также их состояние со значением IN_PROGRESS или COMPLETED.
+Чтобы получить сведения о различных операциях управления, выполняемых в выделенном пуле SQL (ранее — Хранилище данных SQL), отправьте следующий запрос в динамическом административном представлении [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Например, это представление возвращает сведения о разных операциях, а также их состояние со значением IN_PROGRESS или COMPLETED.
 
 ```sql
 SELECT *
@@ -150,7 +150,7 @@ AND
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы узнали, как масштабировать вычислительные ресурсы для хранилища данных. Чтобы узнать больше об Azure Synapse, перейдите к учебнику по загрузке данных.
+Вы узнали, как масштабировать вычислительные ресурсы для выделенного пула SQL (ранее — Хранилище данных SQL). Чтобы узнать больше об Azure Synapse Analytics, перейдите к учебнику по загрузке данных.
 
 > [!div class="nextstepaction"]
->[Загрузка данных в Azure Synapse Analytics](load-data-from-azure-blob-storage-using-polybase.md)
+>[Загрузка данных в выделенный пул SQL](load-data-from-azure-blob-storage-using-polybase.md)
