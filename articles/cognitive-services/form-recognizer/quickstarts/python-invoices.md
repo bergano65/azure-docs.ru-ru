@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/12/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c6b5406728817c3dd700ec285d9af77c9d3cf60
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 2ed8bdd167814ea21fced89042bdcf80fd3a73df
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96009319"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602654"
 ---
 # <a name="quickstart-extract-invoice-data-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение данных счетов с помощью REST API Распознавателя документов и Python
 
@@ -30,7 +30,7 @@ ms.locfileid: "96009319"
 - Документ счета. Вы можете использовать [пример счета](../media/sample-invoice.jpg) для работы с этим кратким руководством.
 
 > [!NOTE]
-> В этом кратком руководстве предполагается использование локального файла. Сведения о получении документа счета по URL-адресу см. в [справочной документации](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeInvoiceAsync).
+> В этом кратком руководстве предполагается использование локального файла. Сведения о получении документа счета по URL-адресу см. в [справочной документации](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync).
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
@@ -290,6 +290,6 @@ if __name__ == '__main__':
 При работе с этим кратким руководством вы воспользовались REST API Распознавателя документов и Python для извлечения содержимого из счетов. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeInvoiceAsync)
+> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync)
 
    

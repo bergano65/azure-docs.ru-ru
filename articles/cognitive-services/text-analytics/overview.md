@@ -12,12 +12,12 @@ ms.date: 11/17/2020
 ms.author: aahi
 keywords: интеллектуальный анализ текста, анализ тональности, анализ текста
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 68f892fea01582b16dad5efd8c86dbf0b578e50f
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 0f5e6a2327f5d952f92009b0c9e408ab8188d6d7
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353057"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558782"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
@@ -25,7 +25,7 @@ API Анализа текста — это облачная служба, ко�
 
 API — это компонент [Microsoft Cognitive Services](../index.yml), коллекции алгоритмов машинного обучения и ИИ в облаке для использования в проектах по разработке. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или [клиентской библиотекой](quickstarts/text-analytics-sdk.md).
 
-> [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Understanding-Text-using-Cognitive-Services/player]
+> [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Whats-New-in-Text-Analytics-Opinion-Mining-and-Async-API/player]
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 

@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: trbye
-ms.openlocfilehash: 0e2324f7e524567b07f0228e046605b781bc4916
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: d50d4c554f47629f6e04adf957e02f8ffcc48fe5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94424973"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509431"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Python. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `pip install azure-cognitiveservices-speech`.
 
@@ -79,7 +79,7 @@ import azure.cognitiveservices.speech as speechsdk
    ![Установка расширения Python](~/articles/cognitive-services/speech-service/media/sdk/qs-python-vscode-python-extension.png)
 
 1. Кроме того, в Visual Studio Code можно установить пакет SDK службы "Речь" для Python из интегрированной командной строки:
-   1. Откройте терминал (в раскрывающихся меню выберите **Терминал** > **Новый терминал** ).
+   1. Откройте терминал (в раскрывающихся меню выберите **Терминал** > **Новый терминал**).
    1. В открывшемся окне терминала введите команду `python -m pip install azure-cognitiveservices-speech`.
 
 Если вы не знакомы с Visual Studio Code, ознакомьтесь с более детальной [документацией по Visual Studio Code](https://code.visualstudio.com/docs). Дополнительные сведения о Visual Studio Code и Python см. в [учебнике по Visual Studio Code для Python](https://code.visualstudio.com/docs/python/python-tutorial).
@@ -90,7 +90,7 @@ import azure.cognitiveservices.speech as speechsdk
 Если новая версия доступна, вы можете обновить ее с помощью команды `pip install --upgrade azure-cognitiveservices-speech`.
 Проверьте, какая версия установлена в данный момент, просмотрев переменную `azure.cognitiveservices.speech.__version__`.
 
-Если у вас возникла проблема или отсутствует функция, ознакомьтесь со статьей [Возможности получения поддержки и справки](../../../../cognitive-services-support-options.md?context=%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext%253fcontext%253d%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext).
+Если у вас возникла проблема или отсутствует функция, ознакомьтесь со статьей [Возможности получения поддержки и справки](../../../../cognitive-services-support-options.md?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext%253fcontext%253d%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

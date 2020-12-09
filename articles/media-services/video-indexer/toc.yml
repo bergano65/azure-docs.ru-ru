@@ -73,7 +73,7 @@
     - name: Настройка моделей содержимого
       items:
         - name: Анимированные символы
-          href: animated-characters-recognition.md
+          href: animated-characters-recognition-how-to.md
         - name: Модель Person
           items:
             - name: Использование веб-сайта Индексатора видео

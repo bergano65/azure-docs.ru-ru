@@ -290,7 +290,7 @@
           href: /rest/api/maps/data
         - name: Служба геолокации
           href: /rest/api/maps/geolocation
-        - name: Служба Mobility Service
+        - name: Службы Mobility Services
           href: /rest/api/maps/mobility
         - name: Служба отрисовки
           href: /rest/api/maps/render
@@ -306,7 +306,7 @@
           href: /rest/api/maps/timezone
         - name: Служба отслеживания дорожного движения
           href: /rest/api/maps/traffic
-        - name: Служба погоды
+        - name: Службы погоды
           href: /rest/api/maps/weather
         - name: Служба Maps Creator
           items:

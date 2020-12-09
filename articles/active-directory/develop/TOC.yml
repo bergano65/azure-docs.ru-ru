@@ -280,7 +280,7 @@
     - name: Использование библиотеки аутентификации Майкрософт
       displayName: MSAL
       items:
-        - Name: Все платформы
+        - name: Все платформы
           items:
             - name: Поддерживаемые потоки аутентификации
               href: msal-authentication-flows.md

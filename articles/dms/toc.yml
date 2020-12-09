@@ -28,6 +28,10 @@
           href: resource-network-topologies.md
         - name: Пользовательские роли
           href: resource-custom-roles-sql-db-managed-instance.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Учебники
   expanded: true
   items:
