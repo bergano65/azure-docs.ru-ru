@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6c30dffbc8f97273ee59ce33ae3fe75ed730763
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: b2ce3b362d02e7acb0a11e6d93b8e94ca8e4d04e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356643"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903536"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
@@ -67,7 +67,7 @@ ms.locfileid: "93356643"
    
     ![Управление правами на портале Azure](./media/entitlement-management-shared/access-packages-list.png)
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 На вкладке " **основы** " Присвойте пакету доступа имя и укажите каталог для создания пакета доступа в.
 
@@ -83,13 +83,13 @@ ms.locfileid: "93356643"
 
     Создаваемый пакет Access и все ресурсы, включенные в него, будут добавлены в новый каталог. Вы также можете добавить дополнительных владельцев каталога позже.
 
-1. Щелкните **Далее**.
+1. Нажмите кнопку **Далее**.
 
 ## <a name="resource-roles"></a>Роли ресурсов
 
 На вкладке **роли ресурсов** выберите ресурсы для включения в пакет Access. Пользователи, запрашивающие и получающие доступ к пакету Access, получат все роли ресурсов в пакете Access.
 
-1. Выберите тип ресурса, который необходимо добавить ( **группы и команды** , **приложения** или **сайты SharePoint** ).
+1. Выберите тип ресурса, который необходимо добавить (**группы и команды**, **приложения** или **сайты SharePoint**).
 
 1. В открывшейся области Выбор выберите один или несколько ресурсов из списка.
 
@@ -105,7 +105,10 @@ ms.locfileid: "93356643"
 
     ![Доступ к пакету — Выбор роли ресурсов](./media/entitlement-management-access-package-create/resource-roles-role.png)
 
-1. Щелкните **Далее**.
+1. Нажмите кнопку **Далее**.
+
+>[!NOTE]
+>Динамические группы можно добавлять в каталог и в пакет Access. Однако вы сможете выбрать только роль владельца при управлении ресурсом динамической группы в пакете Access.
 
 ## <a name="requests"></a>Requests
 

@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf2e3f98bd96c09fe741a24a1332443c876e2e61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af448d5d28c5add39176500b988824b17f85b9fb
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89225916"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861975"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Начало работы с API отчетов Azure Active Directory
 
@@ -47,7 +47,7 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 ## <a name="api-endpoints"></a>Конечные точки API 
 
-`https://graph.microsoft.com/v1.0/auditLogs/directoryAudits` — это конечная точка API Microsoft Graph для журналов аудита, а `https://graph.microsoft.com/v1.0/auditLogs/signIns` — конечная точка API Microsoft Graph для входа в систему. Дополнительные сведения см. в справке по [API аудита](/graph/api/resources/directoryaudit?view=graph-rest-1.0) и [API входа](/graph/api/resources/signIn?view=graph-rest-1.0).
+`https://graph.microsoft.com/v1.0/auditLogs/directoryAudits` — это конечная точка API Microsoft Graph для журналов аудита, а `https://graph.microsoft.com/v1.0/auditLogs/signIns` — конечная точка API Microsoft Graph для входа в систему. Дополнительные сведения см. в справке по [API аудита](/graph/api/resources/directoryaudit) и [API входа](/graph/api/resources/signIn).
 
 Кроме того, вы можете использовать [API-интерфейс обнаружения риска защиты идентификации](/graph/api/resources/identityriskevent?view=graph-rest-beta), чтобы получить программный доступ к сведениям об обнаружениях с помощью Microsoft Graph. Дополнительные сведения см. в статье [Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph](../identity-protection/howto-identity-protection-graph-api.md). 
   

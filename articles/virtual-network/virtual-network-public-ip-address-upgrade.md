@@ -13,15 +13,15 @@ ms.devlang: NA
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/07/2020
+ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions , devx-track-azurecli
-ms.openlocfilehash: 0c248149694c2bf66b8c94e9c0a29a8f7da9f4e4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 9ea29c47349fd7ccee469188f8929a864cf7bbef
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843746"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905797"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Обновление общедоступных IP-адресов
 
@@ -159,6 +159,7 @@ US Gov (Вирджиния)<br>
 
 * Чтобы обновить базовый общедоступный IP-адрес, он не может быть связан ни с одним ресурсом Azure.  Дополнительные сведения о том, как разорвать связь с общедоступными IP-адресами, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) .  Аналогично, чтобы перенести зарезервированный IP-адрес, он не может быть связан с какой-либо облачной службой.  Дополнительные сведения о том, как отсоединить зарезервированные IP-адреса, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/remove-public-ip-address-vm) .  
 * Общедоступные IP-адреса, обновленные с уровня "базовый" до SKU "Стандартный", не будут иметь [зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones) и поэтому не могут быть связаны с ресурсом Azure, который является избыточным в виде зоны или зональные.  Обратите внимание, что это относится только к регионам, предлагающим зоны доступности.
+* Нельзя перейти с уровня "Стандартный" на базовый.
 
 ## <a name="next-steps"></a>Next Steps
 

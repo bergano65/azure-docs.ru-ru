@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fed7123d916c1dc0facab3bd22e6b3f03d39684f
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 710e31c18338243f9405a071b8fa544fe44044be
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96858966"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903162"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Новые возможности Azure Active Directory
 
@@ -57,6 +57,8 @@ Azure Active Directory будет использовать следующие п
 - Office 365 GCC и WW
 
 Связанные объявления все сочетания клиент-сервер и браузер-сервер должны использовать TLS 1,2 и современные комплекты шифров для обеспечения безопасного подключения к Azure Active Directory для Azure, Office 365 и служб Microsoft 365. Это изменение связано с [Azure Active Directory TLS 1,0 & 1,1 и прекращением использования алгоритма 3DES в US gov Cloud](whats-new.md#azure-active-directory-tls-10-tls-11-and-3des-deprecation-in-us-gov-cloud).
+
+---
 
 ### <a name="new-federated-apps-available-in-azure-ad-application-gallery---november-2020"></a>Новые Федеративные приложения, доступные в коллекции приложений Azure AD — Ноябрь 2020
 

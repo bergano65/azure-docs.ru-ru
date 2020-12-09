@@ -10,12 +10,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - contperfq1
-ms.openlocfilehash: ae0c4c69cf500fb352cc889e068888084d1d8f8b
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: c39ce2bed63b6efb6224e0e27fdb1104ef7a5ec8
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045964"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862400"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -85,7 +85,7 @@ URL-адрес прокси-сервера имеет такой формат: *
    . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Initialize-IoTEdge
    ```
 
-Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например:
+Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. например следующие.
 
 ```powershell
 $proxyCredential = (Get-Credential).GetNetworkCredential()
@@ -270,6 +270,12 @@ Restart-Service iotedge
     }
 }
 ```
+
+## <a name="working-with-traffic-inspecting-proxies"></a>Работа с проверками прокси-серверов
+
+Если прокси-сервер, который вы пытаетесь использовать, выполняет проверку трафика для подключений, защищенных с помощью TLS, важно отметить, что проверка подлинности с помощью сертификатов X. 509 не работает. IoT Edge устанавливает TLS-канал, который шифруется в конце с помощью предоставленного сертификата и ключа. Если этот канал будет недоступен для проверки трафика, прокси-сервер не сможет восстановить канал с соответствующими учетными данными, а центр Интернета вещей и служба подготовки устройств центра Интернета вещей возвращают `Unauthorized` ошибку.
+
+Чтобы использовать прокси-сервер, выполняющий проверку трафика, необходимо использовать проверку подлинности с помощью подписанного URL-доступа или включить центр Интернета вещей и службу подготовки устройств центра Интернета вещей, добавленную в разрешенных, чтобы избежать проверки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

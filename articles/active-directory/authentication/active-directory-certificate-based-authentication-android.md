@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd9f59dd75620f3a7b5c9142a4b8f73f75c5ee7b
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 1001d5524fe99783cda4d5b77bdaceacc6791848
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744488"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861379"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-android"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве Android
 
@@ -67,7 +67,7 @@ Azure Active Directory добавляет эти утверждения в ма�
 Дополнительные сведения см. в статье о [настройке страниц входа AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).
 
 Некоторые приложения Office (с включенной современной проверкой подлинности) отправляют запрос "*Prompt = login*" в Azure AD в своем запросе. По умолчанию Azure AD преобразует "*Prompt = login*" в запрос в ADFS как "*wauth = усернамепассвордури*" (запрашивает ADFS для проверки подлинности U/P) и "*wfresh = 0*" (запрашивает ADFS игнорировать состояние единого входа и выполняет новую проверку подлинности). Чтобы включить проверку подлинности на основе сертификатов для этих приложений, необходимо изменить поведение Azure AD по умолчанию. Задайте для параметра "*промптлогинбехавиор*" в параметрах федеративного домена значение "*disabled" (отключено*).
-Для выполнения этой задачи можно использовать командлет [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0):
+Для выполнения этой задачи можно использовать командлет [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings):
 
 `Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled`
 

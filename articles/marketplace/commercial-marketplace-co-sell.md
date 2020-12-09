@@ -6,27 +6,31 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: palanis-MSFT
 ms.author: palanis
-ms.date: 12/04/2020
-ms.openlocfilehash: 7b335c3db5fb52c4323b797556d48e3ed9ae410a
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.date: 12/08/2020
+ms.openlocfilehash: b5001898fa18834ce7c04403de70879084df85f1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621626"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904914"
 ---
-# <a name="co-sell-option-in-the-commercial-marketplace"></a>Вариант совместной продажи в коммерческом магазине
+# <a name="co-sell-option-in-the-commercial-marketplace"></a>Возможность совместных продаж на коммерческой платформе
 
 Предоставление сведений на вкладке **Майкрософт для совместной продажи** является полностью необязательным. Это необходимо для достижения [готовности совместной продажи и выгодно состояния](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status). Предоставленные сведения будут использоваться группами продаж Майкрософт для получения дополнительных сведений о вашем предложении при оценке соответствия требованиям клиентов. Они не будут отображаться для клиентов. Дополнительные сведения см. [в статье совместное пропродажа с корпорацией Майкрософт](https://partner.microsoft.com/membership/co-sell-with-microsoft).
 
-В настоящее время параметр совместной продажи в центре партнеров доступен в следующих типах предложений.
+Параметр совместной продажи в центре партнеров доступен для следующих типов предложений.
 
 - Приложение Azure
+- Контейнер Azure
+- Виртуальная машина Azure
+- Консультационная услуга
 - Dynamics 365 для участия клиентов & PowerApps
-- Dynamics 365 for Operations
+- Dynamics 365 для операций
 - Dynamics 365 Business Central
+- Модуль IoT Edge
+- Управляемая служба
+- Приложение Power BI
 - Программное обеспечение как услуга (SaaS)
-
-Поддержка дополнительных типов предложений будет предоставляться со временем.
 
 ## <a name="listing"></a>Список
 

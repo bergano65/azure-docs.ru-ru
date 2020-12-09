@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 344fee9482cd935375d25fab80b1f365d72586f8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: a53b193d16a2cefbde7877fd930e5fa73b0c6a36
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743672"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861278"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Политики паролей и ограничения учетных записей в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "96743672"
 
 В следующей таблице перечислены политики имен пользователей, которые применяются к локальным учетным записям AD DS, синхронизированным с Azure AD, а также только к облачным учетным записям пользователей, созданным непосредственно в Azure AD:
 
-| Свойство. | Требования UserPrincipalName |
+| Свойство | Требования UserPrincipalName |
 | --- | --- |
 | Допустимые символы |<ul> <li>A–Z</li> <li>a–z</li><li>0–9</li> <li> ' \. - \_ ! \# ^ \~</li></ul> |
 | Недопустимые символы |<ul> <li>Любой знак \@\", который не отделяет имя пользователя от домена.</li> <li>Не может содержать знак точки "." непосредственно перед знаком \@\".</li></ul> |
@@ -49,7 +49,7 @@ ms.locfileid: "96743672"
 
 Определены следующие параметры политики паролей Azure AD. Если не указано иное, эти параметры изменить нельзя.
 
-| Свойство. | Требования |
+| Свойство | Требования |
 | --- | --- |
 | Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [] {} &#124; \: ",. ? / \` ~ " ( ) ;</li> <li>пустое пространство</li></ul> |
 | Недопустимые символы | Знаки Юникода. |
@@ -95,7 +95,7 @@ ms.locfileid: "96743672"
 * Для вашего клиента Azure AD настроен пользовательский домен, например *contoso.com*; ни
 * Azure AD Connect выполняет синхронизацию удостоверений из вашего локального каталога.
 
-Вы можете отключить использование SSPR для учетных записей администратора с помощью командлета PowerShell [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0) . `-SelfServePasswordResetEnabled $False`Параметр отключает SSPR для администраторов.
+Вы можете отключить использование SSPR для учетных записей администратора с помощью командлета PowerShell [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings) . `-SelfServePasswordResetEnabled $False`Параметр отключает SSPR для администраторов.
 
 ### <a name="exceptions"></a>Исключения
 
@@ -107,7 +107,7 @@ ms.locfileid: "96743672"
 
 ## <a name="password-expiration-policies"></a><a name="set-password-expiration-policies-in-azure-ad"></a>Политики истечения срока действия паролей
 
-*Глобальный администратор* или *администратор пользователей* может использовать [модуль Microsoft Azure AD для Windows PowerShell](/powershell/module/Azuread/?view=azureadps-2.0) , чтобы задать для паролей пользователей не срок действия.
+*Глобальный администратор* или *администратор пользователей* может использовать [модуль Microsoft Azure AD для Windows PowerShell](/powershell/module/Azuread/) , чтобы задать для паролей пользователей не срок действия.
 
 Кроме того, можно использовать командлеты PowerShell, чтобы удалить конфигурацию с неистекшим сроком действия или определить, какие пароли пользователей не имеют срока действия.
 
@@ -118,13 +118,13 @@ ms.locfileid: "96743672"
 
 ### <a name="set-or-check-the-password-policies-by-using-powershell"></a>Задание или проверка политик пароля с помощью PowerShell
 
-Чтобы приступить к работе, [скачайте и установите модуль Azure AD PowerShell](/powershell/module/Azuread/?view=azureadps-2.0) и [подключите его к клиенту Azure AD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples).
+Чтобы приступить к работе, [скачайте и установите модуль Azure AD PowerShell](/powershell/module/Azuread/) и [подключите его к клиенту Azure AD](/powershell/module/azuread/connect-azuread#examples).
 
 После установки модуля выполните следующие действия, чтобы выполнить каждую задачу по мере необходимости.
 
 ### <a name="check-the-expiration-policy-for-a-password"></a>Проверка политики срока действия пароля
 
-1. Откройте командную строку PowerShell и [подключитесь к клиенту Azure AD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples) с помощью учетной записи *глобального администратора* или *администратора пользователей* .
+1. Откройте командную строку PowerShell и [подключитесь к клиенту Azure AD](/powershell/module/azuread/connect-azuread#examples) с помощью учетной записи *глобального администратора* или *администратора пользователей* .
 1. Выполните одну из следующих команд либо для отдельного пользователя, либо для всех пользователей.
 
    * Чтобы узнать, не просрочен ли пароль одного пользователя, выполните следующий командлет. Замените `<user ID>` идентификатором пользователя, которого требуется проверить, например *дрилэй \@ contoso.onmicrosoft.com*:
@@ -141,7 +141,7 @@ ms.locfileid: "96743672"
 
 ### <a name="set-a-password-to-expire"></a>Задание срока действия пароля
 
-1. Откройте командную строку PowerShell и [подключитесь к клиенту Azure AD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples) с помощью учетной записи *глобального администратора* или *администратора пользователей* .
+1. Откройте командную строку PowerShell и [подключитесь к клиенту Azure AD](/powershell/module/azuread/connect-azuread#examples) с помощью учетной записи *глобального администратора* или *администратора пользователей* .
 1. Выполните одну из следующих команд либо для отдельного пользователя, либо для всех пользователей.
 
    * Чтобы задать пароль одного пользователя, чтобы срок действия пароля истек, выполните следующий командлет. Замените `<user ID>` идентификатором пользователя, которого требуется проверить, например *дрилэй \@ contoso.onmicrosoft.com*
@@ -158,7 +158,7 @@ ms.locfileid: "96743672"
 
 ### <a name="set-a-password-to-never-expire"></a>Установка бессрочного пароля
 
-1. Откройте командную строку PowerShell и [подключитесь к клиенту Azure AD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples) с помощью учетной записи *глобального администратора* или *администратора пользователей* .
+1. Откройте командную строку PowerShell и [подключитесь к клиенту Azure AD](/powershell/module/azuread/connect-azuread#examples) с помощью учетной записи *глобального администратора* или *администратора пользователей* .
 1. Выполните одну из следующих команд либо для отдельного пользователя, либо для всех пользователей.
 
    * Чтобы задать бессрочный пароль для одного пользователя, выполните следующий командлет. Замените `<user ID>` идентификатором пользователя, которого требуется проверить, например *дрилэй \@ contoso.onmicrosoft.com*

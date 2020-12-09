@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 01/25/2019
 ms.author: cynthn
-ms.openlocfilehash: 34f43d51bf0df488e04605f7f7c77e9c6dcfe9a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56d2aa9f7aa36808774876ac0f5cfc596887ff26
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87374088"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906392"
 ---
 # <a name="find-linux-vm-images-in-the-azure-marketplace-with-the-azure-cli"></a>Поиск образов виртуальных машин Linux в Azure Marketplace с помощью Azure CLI
 
@@ -22,6 +22,45 @@ ms.locfileid: "87374088"
 Убедитесь, что у вас установлена последняя версия [Azure CLI](/cli/azure/install-azure-cli), и войдите в учетную запись Azure с помощью команды `az login`.
 
 [!INCLUDE [virtual-machines-common-image-terms](../../../includes/virtual-machines-common-image-terms.md)]
+
+
+## <a name="deploy-from-a-vhd-using-purchase-plan-parameters"></a>Развертывание из виртуального жесткого диска с помощью параметров плана покупки
+
+При наличии существующего виртуального жесткого диска, созданного с помощью платного образа Azure Marketplace, может потребоваться предоставить сведения о плане покупки при создании новой виртуальной машины из этого виртуального жесткого диска. 
+
+Если у вас по-прежнему есть исходная виртуальная машина или другая виртуальная машина, созданная с помощью того же образа Marketplace, вы можете получить имя плана, издателя и сведения о продукте с помощью команды [AZ VM Get-instance-View](/cli/azure/vm#az_vm_get_instance_view). Этот пример получает виртуальную машину с именем *myVM* в группе ресурсов *myResourceGroup* , а затем отображает сведения о плане покупки.
+
+```azurepowershell-interactive
+az vm get-instance-view -g myResourceGroup -n myVM --query plan
+```
+
+Если вы не получили сведения о плане до удаления исходной виртуальной машины, можно [Отправить запрос в службу поддержки](https://ms.portal.azure.com/#create/Microsoft.Support). Им потребуется имя виртуальной машины, идентификатор подписки и метка времени операции удаления.
+
+После получения сведений о плане можно создать новую виртуальную машину с помощью параметра, `--attach-os-disk` чтобы указать виртуальный жесткий диск.
+
+```azurecli-interactive
+az vm create \
+   --resource-group myResourceGroup \
+  --name myNewVM \
+  --nics myNic \
+  --size Standard_DS1_v2 --os-type Linux \
+  --attach-os-disk myVHD \
+  --plan-name planName \
+  --plan-publisher planPublisher \
+  --plan-product planProduct 
+```
+
+## <a name="deploy-a-new-vm-using-purchase-plan-parameters"></a>Развертывание новой виртуальной машины с помощью параметров плана покупки
+
+Если у вас уже есть сведения об образе, его можно развернуть с помощью `az vm create` команды. В этом примере мы развертываем виртуальную машину с помощью образа RabbitMQ Certified by BitNami:
+
+```azurecli
+az group create --name myResourceGroupVM --location westus
+
+az vm create --resource-group myResourceGroupVM --name myVM --image bitnami:rabbitmq:rabbitmq:latest --plan-name rabbitmq --plan-product rabbitmq --plan-publisher bitnami
+```
+
+Если появится сообщение о принятии условий образа, см. раздел [примите условия](#accept-the-terms) , приведенные далее в этой статье.
 
 ## <a name="list-popular-images"></a>Просмотр списка популярных образов
 
@@ -325,7 +364,7 @@ az vm image show --location westus --urn bitnami:rabbitmq:rabbitmq:latest
 }
 ```
 
-### <a name="accept-the-terms"></a>Принятие условий
+## <a name="accept-the-terms"></a>Принятие условий
 
 Чтобы просмотреть и принять условия лицензии, используйте команду [az vm image accept-terms](/cli/azure/vm/image?). При принятии условий в вашей подписке будет включено программное развертывание. Необходимо принять условия соглашения для каждой подписки в образе. Пример:
 
@@ -350,16 +389,6 @@ az vm image accept-terms --urn bitnami:rabbitmq:rabbitmq:latest
   "signature": "XXXXXXLAZIK7ZL2YRV5JYQXONPV76NQJW3FKMKDZYCRGXZYVDGX6BVY45JO3BXVMNA2COBOEYG2NO76ONORU7ITTRHGZDYNJNXXXXXX",
   "type": "Microsoft.MarketplaceOrdering/offertypes"
 }
-```
-
-### <a name="deploy-using-purchase-plan-parameters"></a>Развертывание с помощью параметров плана приобретения
-
-После принятия условий для образа виртуальную машину можно развернуть в подписке. Чтобы развернуть образ с помощью команды `az vm create`, укажите параметры для плана покупки и URN образа. Например, чтобы развернуть виртуальную машину из образа RabbitMQ, сертифицированного Bitnami, выполните следующие команды:
-
-```azurecli
-az group create --name myResourceGroupVM --location westus
-
-az vm create --resource-group myResourceGroupVM --name myVM --image bitnami:rabbitmq:rabbitmq:latest --plan-name rabbitmq --plan-product rabbitmq --plan-publisher bitnami
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 2ff8f6134f74e0eda355342a7282e8be81a3d8df
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c5839589c35ea5a9c52303801a8767fc598434fc
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450242"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905882"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -95,7 +95,7 @@ ms.locfileid: "96450242"
 ### <a name="expressroute"></a>ExpressRoute
 
 Если вы используете [ExpressRoute](../../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для локальной среды, для общедоступного пиринга или пиринга Майкрософт, то вам необходимо определить используемые IP-адреса NAT. Для общедоступного пиринга в каждом канале ExpressRoute по умолчанию используется два IP-адреса NAT для трафика служб Azure, когда он входит в основную магистральную сеть Microsoft Azure. Для пиринга Майкрософт используются IP-адреса NAT, предоставленные клиентом или поставщиком услуг. Чтобы разрешить доступ к ресурсам служб, необходимо разрешить эти общедоступные IP-адреса в настройках брандмауэра IP-адресов ресурсов. Чтобы найти IP-адреса канала ExpressRoute для общедоступного пиринга, [отправьте запрос по ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure. Узнайте больше о [NAT для общедоступного пиринга и пиринга Майкрософт](../../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering).
-  
+
 Чтобы разрешить взаимодействие канала с Базой данных SQL Azure, необходимо создать правила IP-сети для общедоступных IP-адресов NAT.
 
 <!--
@@ -122,7 +122,7 @@ Polybase и инструкция COPY обычно используются дл
 
 #### <a name="steps"></a>Шаги
 
-1. В PowerShell **Зарегистрируйте сервер** , на котором размещена служба Azure синапсе, с Azure Active Directory (AAD):
+1. При наличии автономного выделенного пула SQL Зарегистрируйте SQL Server в Azure Active Directory (AAD) с помощью PowerShell: 
 
    ```powershell
    Connect-AzAccount
@@ -130,6 +130,14 @@ Polybase и инструкция COPY обычно используются дл
    Set-AzSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-SQL-servername -AssignIdentity
    ```
 
+   Этот шаг не требуется для выделенных пулов SQL в рабочей области синапсе.
+
+1. Если у вас есть рабочая область синапсе, зарегистрируйте управляемое системой удостоверение рабочей области:
+
+   1. Перейдите в рабочую область синапсе на портал Azure
+   2. Переход к колонке "управляемые удостоверения" 
+   3. Убедитесь, что включен параметр "разрешить конвейеры".
+   
 1. Создайте **учетную запись хранения общего назначения версии 2** с помощью этого [руководства](../../storage/common/storage-account-create.md).
 
    > [!NOTE]
@@ -137,7 +145,7 @@ Polybase и инструкция COPY обычно используются дл
    > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](../../storage/common/storage-account-upgrade.md).
    > - Сведения об известных проблемах с Azure Data Lake Storage 2-го поколения см. в этом [руководстве](../../storage/blobs/data-lake-storage-known-issues.md).
 
-1. В своей учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и выберите **Добавить назначение ролей**. Назначьте роль Azure " **участник данных BLOB-объекта хранилища** " серверу, на котором размещена аналитика Azure синапсе Analytics, зарегистрированная в Azure Active Directory (AAD), как на шаге #1.
+1. В своей учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и выберите **Добавить назначение ролей**. Назначьте роль Azure " **участник данных BLOB-объекта хранилища** " серверу или рабочей области, где размещен выделенный пул SQL, зарегистрированный в Azure Active Directory (AAD).
 
    > [!NOTE]
    > Этот шаг могут выполнять только члены с правами владельца в учетной записи хранения. Сведения о различных встроенных ролях Azure см. в этом [руководстве](../../role-based-access-control/built-in-roles.md).
@@ -228,7 +236,7 @@ Polybase и инструкция COPY обычно используются дл
 
 - [Virtual Network Rules][rest-api-virtual-network-rules-operations-862r] (Правила виртуальной сети)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Необходима подсеть, помеченная определенным *именем типа* конечной точки службы для виртуальной сети, относящимся к базе данных SQL Azure.
 

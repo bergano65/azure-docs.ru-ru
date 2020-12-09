@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: c77f0e93e9f0084f335df39d2878871d66af0aac
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 2da0407f848b0795414b071b9e082c7ed60a633d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498036"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861890"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -41,12 +41,12 @@ ms.locfileid: "96498036"
 
 - [Шаблон Azure Resource Manager](../../api-management/api-management-howto-use-managed-service-identity.md)
 
-### <a name="azure-app-configuration"></a>конфигурация приложения Azure;
+### <a name="azure-app-configuration"></a>Конфигурация приложений Azure
 
 | Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | Недоступно |
-| Назначено пользователем | ![Доступно][check] | ![Доступно][check]  | Недоступно  | Недоступно |
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] |
+| Назначено пользователем | ![Доступно][check] | ![Доступно][check]  | Недоступно  | ![Доступно][check] |
 
 См. следующий список, чтобы настроить управляемое удостоверение для конфигурации приложения Azure (в регионах, где это возможно):
 
@@ -98,7 +98,7 @@ ms.locfileid: "96498036"
 - [REST API — назначение схемы](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
 
 
-### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
+### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
@@ -252,7 +252,7 @@ ms.locfileid: "96498036"
 
 - [Портал Azure](../../governance/policy/tutorials/create-and-manage.md#assign-a-policy)
 - [PowerShell](../../governance/policy/how-to/remediate-resources.md#create-managed-identity-with-powershell)
-- [Azure CLI](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create)
+- [Azure CLI](/cli/azure/policy/assignment#az-policy-assignment-create)
 - [Шаблоны диспетчера ресурсов Azure](/azure/templates/microsoft.authorization/policyassignments)
 - [REST](/rest/api/resources/policyassignments/create)
 
@@ -274,7 +274,7 @@ ms.locfileid: "96498036"
 
 | Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | ![Доступно][check] | Недоступно | Недоступно | Недоступно |
+| Назначено системой | ![Доступно][check] | Недоступно | Недоступно | ![Доступно][check] |
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 

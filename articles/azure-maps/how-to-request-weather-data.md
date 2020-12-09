@@ -1,24 +1,28 @@
 ---
-title: Запрос данных о погоде в реальном времени и прогнозировании с помощью Azure Mapsных служб погоды
-description: Узнайте, как запрашивать данные о погоде в реальном времени (текущий) и прогнозировать (минуты, ежечасно, ежедневно) с помощью служб Microsoft Azure Maps.
+title: Запрос данных о погоде в реальном времени и прогнозировании с помощью Azure Mapsных служб погоды (Предварительная версия)
+description: Узнайте, как запрашивать данные о погоде в реальном времени (текущий) и прогнозируемый (каждый час, ежечасный, ежедневный) с помощью служб Microsoft Azure карты погоды (Предварительная версия)
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 10/27/2020
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: c11f20286c514056d14b8faa941315345fea71f2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a5ae262d2882bd76e31666f058fa9a7a703a9e1e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186343"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906018"
 ---
-# <a name="request-real-time-and-forecasted-weather-data-using-azure-maps-weather-services"></a>Запрос данных о погоде в реальном времени и прогнозировании с помощью Azure Mapsных служб погоды
+# <a name="request-real-time-and-forecasted-weather-data-using-azure-maps-weather-services-preview"></a>Запрос данных о погоде в реальном времени и прогнозировании с помощью Azure Mapsных служб погоды (Предварительная версия) 
 
-Служба Azure Maps [weather](/rest/api/maps/weather) — это набор интерфейсов API RESTful, позволяющих разработчикам интегрировать в свои решения высокодинамические исторические данные, а также прогнозы погоды и визуализации. В этой статье мы покажем, как запрашивать данные о погоде в режиме реального времени и прогнозировании.
+> [!IMPORTANT]
+> Azure Mapsные службы погоды в настоящее время доступны в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+Azure Mapsные [службы погоды](/rest/api/maps/weather) — это набор интерфейсов API RESTful, позволяющих разработчикам интегрировать в свои решения высокодинамические исторические данные, а также прогнозы погоды и визуализации. В этой статье мы покажем, как запрашивать данные о погоде в режиме реального времени и прогнозировании.
 
 В этой статье вы узнаете, как:
 
@@ -28,7 +32,7 @@ ms.locfileid: "96186343"
 * Запросите почасовые прогнозы с помощью [API получения почасового прогноза](/rest/api/maps/weather/gethourlyforecastpreview).
 * Запросить минуты по поминутному прогнозу с помощью [API-интерфейса получения минут](/rest/api/maps/weather/getminuteforecastpreview).
 
-В этом видео представлен обзор служб погоды в Azure Maps с примерами вызова RESTFUL.
+В этом видеоролике приведены примеры вызова функций RESTFUL для Azure Maps служб погоды.
 
 <br/>
 
@@ -751,8 +755,7 @@ ms.locfileid: "96186343"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Основные понятия службы погоды Azure Maps](./weather-services-concepts.md)
+> [Основные понятия Azure Mapsных служб погоды (Предварительная версия)](./weather-services-concepts.md)
 
 > [!div class="nextstepaction"]
-> [Azure Maps REST API службы погоды](/rest/api/maps/weather
-)
+> [Azure Mapsные службы погоды (Предварительная версия) REST API](/rest/api/maps/weather)

@@ -11,16 +11,14 @@ author: NilsPohlmann
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 57806ecaf4b0e295457c78faaff6033126ddb2c8
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2b534f82aeda438b1d2bd5d60eeb4871acffc54a
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463024"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96902023"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
-
-
 
 Из этой статьи вы узнаете, как создать и запустить [конвейер машинного обучения](concept-ml-pipelines.md) с помощью [пакета SDK для машинное обучение Azure](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). Используйте **конвейеры машинного обучения** для создания рабочего процесса, который объединяет различные фазы машинного обучения. Затем опубликуйте этот конвейер для последующего доступа или совместного использования с другими пользователями. Отслеживайте конвейеры машинного обучения, чтобы узнать, как модель работает в реальном мире и как обнаружить смещение данных. Конвейеры машинного обучения идеально подходят для сценариев пакетной оценки с использованием различных вычислений, повторного использования действий вместо их перезапуска, а также совместного использования рабочих процессов машинного обучения с другими пользователями.
 
@@ -32,7 +30,7 @@ ms.locfileid: "96463024"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Создайте [рабочую область Машинного обучения Azure](how-to-manage-workspace.md) для хранения всех ресурсов конвейера.
 
@@ -106,6 +104,9 @@ output_data1 = PipelineData(
 
 > [!TIP]
 > Сохранение промежуточных данных между этапами конвейера также возможно благодаря общедоступному классу предварительной версии [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) . Пример кода с использованием `OutputFileDatasetConfig` класса см. в разделе [создание конвейера машинного обучения на два этапа](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb).
+
+> [!TIP]
+> Отправляйте только файлы, относящиеся к заданию. Любые изменения в файлах в каталоге данных будут рассматриваться как причины для повторного выполнения шага при следующем запуске конвейера, даже если указано повторное использование. 
 
 ## <a name="set-up-a-compute-target"></a>Настройка целевой среды для вычислений
 

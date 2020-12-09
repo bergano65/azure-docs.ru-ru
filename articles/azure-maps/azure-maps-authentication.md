@@ -4,18 +4,18 @@ titleSuffix: Azure Maps
 description: 'Узнайте о двух способах проверки подлинности запросов в Azure Maps: проверка подлинности с помощью общего ключа и Azure Active Directory (Azure AD).'
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 07/27/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: dc3792b5eff1b0ba51f5d7938e52e6914660109a
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d47e98273e696a4b6e827d8ebbc71a297f2861cb
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889890"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905321"
 ---
 # <a name="authentication-with-azure-maps"></a>Аутентификация в Azure Maps
 
@@ -90,7 +90,7 @@ Azure Maps поддерживает доступ ко всем типам уча
 
 Для поддержки сценариев приложений существуют следующие типы определений ролей.
 
-| Определение роли Azure       | Описание                                                                                              |
+| Определение роли Azure       | Описание:                                                                                              |
 | :-------------------------- | :------------------------------------------------------------------------------------------------------- |
 | Читатель данных Azure Maps      | Предоставляет доступ к неизменяемым Azure Maps API-интерфейсам RESTFUL.                                                       |
 | Участник данных Azure Maps | Предоставляет доступ к изменяемым Azure Maps API-интерфейсам RESTFUL. Изменяемость определяется действиями: Write и DELETE. |

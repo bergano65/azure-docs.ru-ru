@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 6db7037cbcad335db77784ecfa624f08e88b1e83
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 3ba84bb3ee38981217e72f8372a836b03647083d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744437"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861346"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory
 
@@ -93,7 +93,7 @@ ms.locfileid: "96744437"
     }
 ```
 
-Для настройки можно использовать [Azure Active Directory PowerShell версии 2](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0):
+Для настройки можно использовать [Azure Active Directory PowerShell версии 2](/powershell/azure/active-directory/install-adv2):
 
 1. Запустите Windows PowerShell с правами администратора.
 2. Установите модуль Azure AD версии [2.0.0.33](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) или более поздней.
@@ -106,7 +106,7 @@ ms.locfileid: "96744437"
 
 ### <a name="connect"></a>Подключение
 
-Чтобы установить подключение к клиенту, используйте командлет [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0):
+Чтобы установить подключение к клиенту, используйте командлет [Connect-AzureAD](/powershell/module/azuread/connect-azuread):
 
 ```azurepowershell
     Connect-AzureAD
@@ -114,7 +114,7 @@ ms.locfileid: "96744437"
 
 ### <a name="retrieve"></a>Получение
 
-Чтобы получить доверенные центры сертификации, определенные в каталоге, используйте командлет [Get-AzureADTrustedCertificateAuthority](/powershell/module/azuread/get-azureadtrustedcertificateauthority?view=azureadps-2.0):
+Чтобы получить доверенные центры сертификации, определенные в каталоге, используйте командлет [Get-AzureADTrustedCertificateAuthority](/powershell/module/azuread/get-azureadtrustedcertificateauthority):
 
 ```azurepowershell
     Get-AzureADTrustedCertificateAuthority
@@ -122,7 +122,7 @@ ms.locfileid: "96744437"
 
 ### <a name="add"></a>Добавить
 
-Чтобы создать доверенный центр сертификации, используйте командлет [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority?view=azureadps-2.0) и задайте правильное значение атрибута **crlDistributionPoint**.
+Чтобы создать доверенный центр сертификации, используйте командлет [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority) и задайте правильное значение атрибута **crlDistributionPoint**.
 
 ```azurepowershell
     $cert=Get-Content -Encoding byte "[LOCATION OF THE CER FILE]"
@@ -135,7 +135,7 @@ ms.locfileid: "96744437"
 
 ### <a name="remove"></a>Удалить
 
-Чтобы удалить доверенный центр сертификации, используйте командлет [Remove-AzureADTrustedCertificateAuthority](/powershell/module/azuread/remove-azureadtrustedcertificateauthority?view=azureadps-2.0):
+Чтобы удалить доверенный центр сертификации, используйте командлет [Remove-AzureADTrustedCertificateAuthority](/powershell/module/azuread/remove-azureadtrustedcertificateauthority):
 
 ```azurepowershell
     $c=Get-AzureADTrustedCertificateAuthority
@@ -144,7 +144,7 @@ ms.locfileid: "96744437"
 
 ### <a name="modify"></a>Изменить
 
-Чтобы изменить доверенный центр сертификации, используйте командлет [Set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority?view=azureadps-2.0):
+Чтобы изменить доверенный центр сертификации, используйте командлет [Set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority):
 
 ```azurepowershell
     $c=Get-AzureADTrustedCertificateAuthority

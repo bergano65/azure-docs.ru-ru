@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e16f33cb8aa7c6ceeb1398dd23ccba31b5f936b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5367e5027bfae2fa3ed7e87a779e50e4048ba608
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776142"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861737"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 
@@ -49,7 +49,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 1. Выберите **Новая регистрация**.
 1. На странице **Создание** выполните следующие действия.
    1. В текстовом поле **имя** введите имя приложения (например, API обнаружения рисков Azure AD).
-   1. В разделе **Поддерживаемые типы учетных записей**выберите тип учетных записей, которые будут использовать API.
+   1. В разделе **Поддерживаемые типы учетных записей** выберите тип учетных записей, которые будут использовать API.
    1. Выберите **Зарегистрировать**.
 1. Скопируйте **идентификатор приложения**.
 
@@ -160,7 +160,7 @@ GET https://graph.microsoft.com/v1.0/identityProtection/riskDetections?$filter=d
 GET https://graph.microsoft.com/v1.0/identityProtection/riskyUsers?$filter=riskDetail eq 'userPassedMFADrivenByRiskBasedPolicy'
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Поздравляем, вы только что выполнили первый вызов Microsoft Graph.  
 Теперь вы можете запросить обнаружение рисков удостоверений и использовать данные, но вы увидите их по своему усмотрению.
@@ -173,4 +173,4 @@ GET https://graph.microsoft.com/v1.0/identityProtection/riskyUsers?$filter=riskD
 - [Типы обнаружений рисков, обнаруживаемые Защита идентификации Azure Active Directory](./overview-identity-protection.md)
 - [Microsoft Graph](https://developer.microsoft.com/graph/)
 - [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://developer.microsoft.com/graph/docs)
-- [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](/graph/api/resources/identityprotectionroot?view=graph-rest-1.0)
+- [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](/graph/api/resources/identityprotectionroot)

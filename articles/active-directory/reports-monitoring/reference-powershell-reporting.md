@@ -18,12 +18,12 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 25f3402864e2ba873ce63acb6cedcd3f2ea018f7
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9ff923d0231a1b00493a54996c2fcd489012bbe7
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123138"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862043"
 ---
 # <a name="azure-ad-powershell-cmdlets-for-reporting"></a>Командлеты Azure AD PowerShell для создания отчетов
 
@@ -36,7 +36,7 @@ ms.locfileid: "93123138"
 Install-module AzureADPreview
 ```
 
-Дополнительные сведения о подключении к Azure AD с помощью PowerShell см. в статье [Azure AD PowerShell для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0).  
+Дополнительные сведения о подключении к Azure AD с помощью PowerShell см. в статье [Azure AD PowerShell для Graph](/powershell/azure/active-directory/install-adv2).  
 
 С помощью отчетов Azure Active Directory (Azure AD) можно получить сведения о действиях, связанных со всеми операциями записи в вашем направлении (журналы аудита) и данными проверки подлинности (журналы входа). Хотя сведения доступны с помощью MS API Graph, теперь вы можете получить те же данные с помощью командлетов Azure AD PowerShell для создания отчетов.
 
@@ -74,7 +74,7 @@ Install-module AzureADPreview
 | :--                           | :--                |
 | Отображаемое имя пользователя             | Get-AzureADAuditSignInLogs-Filter "userDisplayName EQ" Тимоти Перкинс "" |
 | Создать дату и время              | Get-AzureADAuditSignInLogs-Filter "Креатеддатетиме gt 2019-04-18T17:30:00.0 Z" (все, начиная с 5:30 PM на 4/18) |
-| Состояние                        | Get-AzureADAuditSignInLogs-Filter "Status/errorCode EQ 50105" |
+| Status                        | Get-AzureADAuditSignInLogs-Filter "Status/errorCode EQ 50105" |
 | Отображаемое имя приложения      | Get-AzureADAuditSignInLogs-Filter "appDisplayName EQ" Сторефронтстудио [WSFED Enabled] " |
 | Все вышеперечисленное              | Get-AzureADAuditSignInLogs-Filter "userDisplayName EQ" Тимоти Перкинс "and Status/errorCode Ne 0 и appDisplayName EQ" Сторефронтстудио [WSFED Enabled] "" |
 

@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/03/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0769366ad56e1b7431dbfa7c95f1256c509d24fa
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: bed64df921326ad4d219f934f7a7bc6860bfc7d8
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358173"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861907"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа 
 
@@ -30,7 +30,7 @@ ms.locfileid: "93358173"
 
 Эта статья содержит различные примеры кода и скриптов для получения маркера, а также инструкции по обработке ситуаций с просроченным маркером и устранению ошибок HTTP. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -81,7 +81,7 @@ GET 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-0
 | `client_id` | (Необязательно.) Параметр строки запроса, указывающий client_id управляемого удостоверения, для которого требуется токен. Требуется, если виртуальная машина имеет несколько управляемых удостоверений, назначаемых пользователем.|
 | `mi_res_id` | Используемых Параметр строки запроса, указывающий mi_res_id (идентификатор ресурса Azure) управляемого удостоверения, для которого вы хотите получить маркер. Требуется, если виртуальная машина имеет несколько управляемых удостоверений, назначаемых пользователем. |
 
-Пример запроса с использованием управляемых удостоверений для ресурсов Azure к конечной точке расширения виртуальной машины *(в январе 2019 года эта служба будет объявлена устаревшей)* :
+Пример запроса с использованием управляемых удостоверений для ресурсов Azure к конечной точке расширения виртуальной машины *(в январе 2019 года эта служба будет объявлена устаревшей)*:
 
 ```http
 GET http://localhost:50342/oauth2/token?resource=https%3A%2F%2Fmanagement.azure.com%2F HTTP/1.1
@@ -125,7 +125,7 @@ Content-Type: application/json
 
 ## <a name="get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net"></a>Получение токена с помощью библиотеки Microsoft.Azure.Services.AppAuthentication для .NET
 
-Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями для ресурсов Azure заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](/cli/azure?view=azure-cli-latest) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication](../../key-vault/general/service-to-service-authentication.md). В этом разделе показано, как начать работу с библиотекой в коде.
+Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями для ресурсов Azure заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](/cli/azure) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication](../../key-vault/general/service-to-service-authentication.md). В этом разделе показано, как начать работу с библиотекой в коде.
 
 1. Добавьте ссылки на пакеты NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) в приложение.
 
@@ -371,7 +371,7 @@ echo The managed identities for Azure resources access token is $access_token
 
 В этом разделе описываются возможные сообщения об ошибках. Состояние "200 ОК" — это успешный ответ, а маркер доступа содержится в коде JSON текста ответа в элементе access_token.
 
-| Код состояния | Error | Описание ошибки | Решение |
+| Код состояния | Ошибка | Описание ошибки | Решение |
 | ----------- | ----- | ----------------- | -------- |
 | 400 — недопустимый запрос | invalid_resource | AADSTS50001: приложение с именем *\<URI\>* не найдено в клиенте с именем *\<TENANT-ID\>* . Это может произойти, если приложение установил не администратор клиента или если пользователь в клиенте не предоставил к нему разрешение. Возможно, вы отправили запрос на проверку подлинности не тому клиенту. | (только для Linux) |
 | 400 — недопустимый запрос | bad_request_102 | Необходимый заголовок метаданных не указан | Поле заголовка запроса `Metadata` отсутствует или имеет неправильный формат. Должно быть указано значение `true` в нижнем регистре. В качестве примера см. "Пример запроса" в предыдущем разделе для REST.|

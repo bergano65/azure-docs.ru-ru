@@ -1,18 +1,18 @@
 ---
 title: Условное развертывание с помощью шаблонов
-description: Описание условного развертывания ресурса в шаблоне Azure Resource Manager.
+description: Описание условного развертывания ресурса в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: effa7fe6ee1393e44a124bc087609da5d4898210
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a31bd1fbf755046f331542b4d5952b27a793360
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84259326"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906001"
 ---
 # <a name="conditional-deployment-in-arm-templates"></a>Условное развертывание в шаблонах ARM
 
-Иногда при необходимости можно развернуть ресурс в шаблоне Azure Resource Manager (ARM). Используйте `condition` элемент, чтобы указать, развернут ли ресурс. Этот элемент возвращает значение True или False. Если значение true, ресурс создан. Если значение false, ресурс не создан. Значение может применяться только ко всему ресурсу.
+Иногда при необходимости можно развернуть ресурс в шаблоне Azure Resource Manager (шаблон ARM). Используйте `condition` элемент, чтобы указать, развернут ли ресурс. Этот элемент возвращает значение True или False. Если значение true, ресурс создан. Если значение false, ресурс не создан. Значение может применяться только ко всему ресурсу.
 
 > [!NOTE]
 > Условное развертывание не распространяется каскадом на [дочерние ресурсы](child-resource-name-type.md). Если требуется условно развернуть ресурс и его дочерние ресурсы, необходимо применить одно и то же условие к каждому типу ресурсов.

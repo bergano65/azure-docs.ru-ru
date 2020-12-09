@@ -9,19 +9,16 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 7419e8667f07eec03e860634c7b3fddcac0e186b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 97b52159684eca9be59ccc711f6d2f19b5eb8d49
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95901559"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906120"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов с помощью протокола NFS 3,0 (Предварительная версия)
 
 Контейнер в хранилище BLOB-объектов можно подключить из виртуальной машины Azure под управлением Windows или Linux или системы Windows или Linux, которая выполняется локально с помощью протокола NFS 3,0. В этой статье приводятся пошаговые инструкции. Дополнительные сведения о поддержке протокола NFS 3,0 в хранилище больших двоичных объектов см. в статье [Поддержка протоколов nfs 3,0 в хранилище BLOB-объектов Azure (Предварительная версия)](network-file-system-protocol-support.md).
-
-> [!NOTE]
-> Поддержка протокола NFS 3,0 в хранилище BLOB-объектов Azure доступна в общедоступной предварительной версии. она доступна в следующих регионах: Восточная часть США, Центральная часть США, Центральная часть США, Юго-Восточная Австралия, Северная Европа, западная часть Соединенного Королевства, Центральная Корея, Южная Корея и Центральная Канада.
 
 ## <a name="step-1-register-the-nfs-30-protocol-feature-with-your-subscription"></a>Шаг 1. регистрация функции протокола NFS 3,0 в подписке
 
@@ -48,13 +45,7 @@ ms.locfileid: "95901559"
    Register-AzProviderFeature -FeatureName AllowNFSV3 -ProviderNamespace Microsoft.Storage 
    ```
 
-5. Зарегистрируйте `PremiumHns` функцию с помощью следующей команды.
-
-   ```powershell
-   Register-AzProviderFeature -FeatureName PremiumHns -ProviderNamespace Microsoft.Storage  
-   ```
-
-6. Зарегистрируйте поставщик ресурсов с помощью следующей команды.
+5. Зарегистрируйте поставщик ресурсов с помощью следующей команды.
     
    ```powershell
    Register-AzResourceProvider -ProviderNamespace Microsoft.Storage   
@@ -66,7 +57,6 @@ ms.locfileid: "95901559"
 
 ```powershell
 Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNFSV3
-Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumHns  
 ```
 
 ## <a name="step-3-create-an-azure-virtual-network-vnet"></a>Шаг 3. Создание виртуальной сети Azure (VNet)
@@ -86,20 +76,20 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 
 Чтобы подключить контейнер с помощью NFS 3,0, необходимо создать учетную запись хранения **после** регистрации этой функции в подписке. Вы не можете включить учетные записи, существовавшие до регистрации функции. 
 
-В предварительной версии этой функции протокол NFS 3,0 поддерживается только в учетных записях [блоккблобстораже](../blobs/storage-blob-create-account-block-blob.md) .
+В предварительной версии этой функции протокол NFS 3,0 поддерживается в учетных записях [блоккблобстораже](../blobs/storage-blob-create-account-block-blob.md) и [общего назначения v2](../common/storage-account-overview.md#general-purpose-v2-accounts) .
 
 При настройке учетной записи выберите следующие значения:
 
-|Параметр | Значение|
-|----|---|
-|Расположение|Одна из следующих областей: Восток США, Центральная часть США, Центральная часть США, Юго-Восточная Австралия, Северная Европа, западная часть Соединенного Королевства, Центральная Корея, Южная Корея и Центральная Канада |
-|Производительность|Premium|
-|Тип учетной записи|BlockBlobStorage|
-|Репликация|Локально избыточное хранилище (LRS)|
-|Метод подключения|Общедоступная конечная точка (выбранные сети) или частная конечная точка|
-|Требуется безопасная передача данных|Выключено|
-|Иерархическое пространство имен|Активировано|
-|NFS V3|Активировано|
+|Параметр | Производительность Premium | Стандартная производительность  
+|----|---|---|
+|Расположение|Все доступные регионы |Один из следующих регионов: Восточная Австралия, Центральная Корея и Юго-Центральная часть США   
+|Производительность|Premium| Standard
+|Тип учетной записи|BlockBlobStorage| Общего назначения версии 2
+|Репликация|Локально избыточное хранилище (LRS)| Локально избыточное хранилище (LRS)
+|Метод подключения|Общедоступная конечная точка (выбранные сети) или частная конечная точка |Общедоступная конечная точка (выбранные сети) или частная конечная точка
+|Требуется безопасная передача данных|Выключено|Выключено
+|Иерархическое пространство имен|Активировано|Активировано
+|NFS V3|Активировано |Активировано 
 
 Можно принять значения по умолчанию для всех остальных параметров. 
 
@@ -112,7 +102,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumH
 |[Портал Azure](https://portal.azure.com)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
-|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container);|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
+|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
 ||[REST](/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Шаг 7. Подключение контейнера

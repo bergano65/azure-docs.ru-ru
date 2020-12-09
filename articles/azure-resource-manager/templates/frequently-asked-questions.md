@@ -1,39 +1,39 @@
 ---
 title: Часто задаваемые вопросы о шаблоне ARM
-description: Часто задаваемые вопросы о шаблонах Azure Resource Manager.
+description: Часто задаваемые вопросы о шаблонах Azure Resource Manager (шаблоны ARM).
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: af6a46e16cd888e3ff6a382be2b1a4264fcc2941
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5a23cf031b5d7cf40e2077f2e5287e10de563207
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184014"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903009"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Часто задаваемые вопросы о шаблонах ARM
 
-В этой статье содержатся ответы на часто задаваемые вопросы о шаблонах Azure Resource Manager (ARM).
+В этой статье содержатся ответы на часто задаваемые вопросы о шаблонах Azure Resource Manager (шаблоны ARM).
 
 ## <a name="getting-started"></a>Начало работы
 
 * **Что такое шаблоны ARM и зачем их использовать?**
 
   Шаблоны ARM — это файлы JSON, в которых вы определяете, что нужно развернуть в Azure. Шаблоны помогают реализовать решение с инфраструктурой "на основе кода" для Azure. Организация может многократно и надежно развертывать необходимую инфраструктуру в различных средах.
-  
+
   Дополнительные сведения о том, как шаблоны ARM помогают управлять инфраструктурой Azure, см [. в статье что такое шаблоны ARM?](overview.md)
 
 * **Разделы справки начать работу с шаблонами?**
 
-  Для упрощения создания шаблонов ARM необходимы верные средства. Рекомендуется установить [Visual Studio Code](https://code.visualstudio.com/) и [расширение средств Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools). Краткие сведения об этих средствах см. в разделе [Краткое руководство. Создание шаблонов Azure Resource Manager с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+  Для упрощения создания шаблонов ARM необходимы верные средства. Рекомендуется установить [Visual Studio Code](https://code.visualstudio.com/) и [расширение средств Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools). Краткие сведения об этих средствах см. в разделе [Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
   Когда вы будете готовы ознакомиться с созданием шаблонов ARM, запустите [серию учебных руководств для начинающих по шаблонам ARM](template-tutorial-create-first-template.md). В этих руководствах вы узнаете, как пошагово выполнить процесс создания шаблона ARM. Вы узнаете о различных разделах шаблона и о том, как они работают вместе. Это содержимое также доступно в виде [модуля Microsoft Learn](/learn/modules/authoring-arm-templates/).
 
 * **Следует ли использовать шаблоны ARM или terraform для развертывания в Azure?**
 
   Используйте параметр, который вам нравится лучше. Обе службы помогают автоматизировать развертывание в Azure.
-  
+
   Мы считаем преимущества использования шаблонов ARM для других служб, основанных на инфраструктуре. Дополнительные сведения об этих преимуществах см [. в статье Зачем выбирать шаблоны ARM?](overview.md#why-choose-arm-templates)
 
 ## <a name="build-2020"></a>Сборка 2020
@@ -59,7 +59,7 @@ ms.locfileid: "96184014"
 * **Моя среда настроена на портале. Есть ли способ получить шаблон из существующей группы ресурсов?**
 
   Да, шаблон можно [экспортировать](export-template-portal.md) из группы ресурсов. Экспортированный шаблон является хорошей отправной точкой для изучения шаблонов, но вы, вероятно, захотите изменить его, прежде чем использовать его в рабочей среде.
-  
+
   При экспорте шаблона можно выбрать ресурсы, которые необходимо включить в шаблон.
 
 * **Можно ли создать группу ресурсов в шаблоне ARM и развернуть в ней ресурсы?**
@@ -182,11 +182,11 @@ ms.locfileid: "96184014"
 
 * **Можно ли интегрировать шаблоны ARM в Azure Pipelines?**
 
-  Да. Описание использования шаблонов и конвейеров см. в разделе [учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure pipelines](deployment-tutorial-pipeline.md) и [Интеграция шаблонов ARM с Azure pipelines](add-template-to-azure-pipelines.md).
+  Да. Описание использования шаблонов и конвейеров см. в разделе [учебник. Непрерывная интеграция шаблонов ARM с Azure pipelines](deployment-tutorial-pipeline.md) и [Интеграция шаблонов ARM с Azure pipelines](add-template-to-azure-pipelines.md).
 
 * **Можно ли использовать действия GitHub для развертывания шаблона?**
 
-  Да, см. статью [Развертывание шаблонов Azure Resource Manager с помощью действий GitHub](deploy-github-actions.md).
+  Да, см. раздел [Развертывание шаблонов ARM с помощью действий GitHub](deploy-github-actions.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

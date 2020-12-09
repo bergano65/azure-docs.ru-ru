@@ -7,12 +7,12 @@ author: nikmd23
 ms.author: nimolnar
 ms.date: 09/17/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5c1e6f3f6c4ee0abe1a25d5a9182f6e4e1a9d0f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ee41fc9066aa4cf4775d4998b7e809e45519512
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88929233"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904318"
 ---
 # <a name="what-is-distributed-tracing"></a>Что такое распределенная трассировка?
 
@@ -34,8 +34,8 @@ Azure Monitor также предлагает представление [схе
 
 Application Insights агенты и (или) пакеты SDK для .NET, .NET Core, Java, Node.js и JavaScript поддерживают распределенную трассировку изначально. Инструкции по установке и настройке каждого пакета SDK Application Insights приведены ниже.
 
-* [.NET](../learn/quick-monitor-portal.md)
-* [.NET Core](../learn/dotnetcore-quick-start.md)
+* [.NET](asp-net.md)
+* [.NET Core](asp-net-core.md)
 * [Java](./java-in-process-agent.md)
 * [Node.js](../learn/nodejs-quick-start.md)
 * [JavaScript](./javascript.md)
@@ -53,7 +53,7 @@ Application Insights агенты и (или) пакеты SDK для .NET, .NET
 
 На веб-сайте OpenCensus поддерживается справочная документация по API для [Python](https://opencensus.io/api/python/trace/usage.html) и [Go](https://godoc.org/go.opencensus.io), а также несколько различных руководств по использованию OpenCensus. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство по использованию OpenCensus для Python](https://opencensus.io/api/python/trace/usage.html)
 * [Сопоставление приложений](./app-map.md)

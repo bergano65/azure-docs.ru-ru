@@ -10,12 +10,12 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffddac13009b84aa8253955d265f11aefe2ce5dd
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: a5f9b96fe9ee0781803bbbd86316e8783b60a6f1
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744420"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861329"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве iOS
 
@@ -75,7 +75,7 @@ ms.locfileid: "96744420"
 
 Некоторые приложения Office с включенной современной проверкой подлинности отправляют в `prompt=login` Azure AD в своем запросе. По умолчанию Azure AD преобразует запрос в `prompt=login` ADFS как `wauth=usernamepassworduri` (запрашивает ADFS для проверки подлинности U/P) и `wfresh=0` (запрашивает ADFS игнорировать состояние единого входа и выполняет новую проверку подлинности). Если вы хотите включить проверку подлинности на основе сертификатов для этих приложений, измените поведение Azure AD по умолчанию.
 
-Чтобы обновить поведение по умолчанию, задайте для параметра "*промптлогинбехавиор*" в параметрах федеративного домена значение " *отключено*". Для выполнения этой задачи можно использовать командлет [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) , как показано в следующем примере:
+Чтобы обновить поведение по умолчанию, задайте для параметра "*промптлогинбехавиор*" в параметрах федеративного домена значение " *отключено*". Для выполнения этой задачи можно использовать командлет [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings) , как показано в следующем примере:
 
 ```powershell
 Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled

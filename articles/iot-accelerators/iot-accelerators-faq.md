@@ -8,39 +8,48 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 40c1fb314a2dea653740e7f87b5caa14c759fffb
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 1fd2b8461bd66c826dc4890c331b740c4703f896
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078227"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903995"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
-См. также вопросы и ответы по вопросам [удаленного мониторинга](iot-accelerators-faq-rm-v2.md) , связанные с [подключенной фабрикой](iot-accelerators-faq-cf.md) .
+См. также [часто задаваемые вопросы о подключенной фабрике](iot-accelerators-faq-cf.md).
 
 ### <a name="where-can-i-find-the-source-code-for-the-solution-accelerators"></a>Где можно найти исходный код акселераторов решений?
 
 Исходный код хранится в следующих репозиториях GitHub:
 
-* [акселератор решения для удаленного мониторинга (.NET)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet);
-* [акселератор решения для удаленного мониторинга (Java)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java);
-* [акселератор решений для прогнозного обслуживания](https://github.com/Azure/azure-iot-predictive-maintenance);
 * [акселератор решения "Подключенная фабрика"](https://github.com/Azure/azure-iot-connected-factory).
+* [Акселератор решений для моделирования устройств](https://github.com/Azure/device-simulation-dotnet)
+
+### <a name="where-can-i-find-the-remote-monitoring-and-predictive-maintenance-solution-accelerators"></a>Где найти Акселераторы решений для удаленного мониторинга и прогнозного обслуживания?
+
+По состоянию на 10 декабря 2020 г. ускорители удаленного мониторинга и прогнозного обслуживания были удалены с сайта [акселераторов решений Azure IOT](https://www.azureiotsolutions.com/Accelerators) и больше не доступны для новых развертываний. Репозитории GitHub для обоих сочетаний клавиш были архивированы. Код по-прежнему доступен всем, но репозитории не занимают новых материалов.
+
+### <a name="what-happens-to-my-existing-remote-monitoring-and-predictive-maintenance-deployments"></a>Что происходит с существующими развертываниями для удаленного мониторинга и прогнозного обслуживания?
+
+На существующие развертывания не влияет удаление ускорителей решений для удаленного мониторинга и прогнозного обслуживания. они будут продолжать работать. Разветвленные репозитории также не затрагиваются. Главные репозитории на GitHub были архивированы.
+
+### <a name="how-do-i-deploy-device-simulation-solution-accelerator"></a>Разделы справки развернуть акселератор решений для моделирования устройств?
+
+Сведения о развертывании акселератора решений для моделирования устройств см. в репозитории [симуляторов устройств](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) .
+
+### <a name="where-can-i-find-information-about-the-removed-solution-accelerators"></a>Где можно найти сведения об удаленных ускорителях решений?
+
+См. следующие страницы на сайте предыдущих версий:
+
+* [удаленный мониторинг;](/previous-versions/azure/iot-accelerators/about-iot-accelerators)
+* [Прогнозное обслуживание](/previous-versions/azure/iot-accelerators/about-iot-accelerators)
 
 ### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Какие пакеты SDK можно использовать для разработки клиентов устройств для акселераторов решений?
 
 Ссылки на пакеты SDK для устройств Интернета вещей для других языков (C, .NET, Java, Node.js, Python) можно найти в репозиториях GitHub для [пакетов SDK Microsoft Azure для Интернета вещей](https://github.com/Azure/azure-iot-sdks).
 
 Если вы используете устройство DevKit, ресурсы и примеры можно найти в репозитории GitHub для [пакета SDK для DevKit IoT](https://github.com/Microsoft/devkit-sdk).
-
-### <a name="is-the-new-microservices-architecture-available-for-all-the-three-solution-accelerators"></a>Доступна ли новая архитектура микрослужб для всех трех типов акселераторов решений?
-
-Сейчас архитектура микрослужб используется только в решении для удаленного мониторинга, так как в нем охватывается самый широкий сценарий.
-
-### <a name="what-advantages-does-the-new-open-sourced-microservices-based-architecture-provide-in-the-new-update"></a>Каковы преимущества новой архитектуры на базе микрослужб с открытым кодом в новом обновлении?
-
-За последние два года облачная архитектура значительно улучшилась. Микрослужбы стали оптимальным вариантом, который обеспечивает масштабируемость и гибкость без снижения скорости разработки. В некоторых службах Майкрософт по умолчанию используется шаблон архитектуры, который обеспечивает высокую надежность и масштабируемость. Майкрософт воплощает эти знания на практике, предлагая акселераторы решений для клиентов.
 
 ### <a name="im-a-service-administrator-and-id-like-to-change-the-directory-mapping-between-my-subscription-and-a-specific-azure-ad-tenant-how-do-i-complete-this-task"></a>Я являюсь администратором службы и хочу изменить сопоставление каталогов подписки и конкретного клиента Azure AD. Как выполнить эту задачу?
 
@@ -63,14 +72,6 @@ ms.locfileid: "92078227"
 
 Если точно известно, что у вас есть подписка Azure, проверьте сопоставление клиентов для своей подписки и убедитесь, что в раскрывающемся списке выбран правильный клиент. Если клиент выбран правильно, следуйте приведенной выше схеме и проверьте сопоставление подписки и этого клиента Azure AD.
 
-### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Где можно найти сведения о предыдущей версии решения для удаленного мониторинга?
-
-Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Архивную документацию можно найти по адресу [https://docs.microsoft.com/previous-versions/azure/iot-suite/](/previous-versions/azure/iot-suite/) .
-
-### <a name="is-the-new-solution-accelerator-available-in-the-same-geographic-region-as-the-existing-solution"></a>Доступен ли новый акселератор решений в том же географическом регионе, что и существующее решение?
-
-Да, новое решение для удаленного мониторинга доступно в том же географическом регионе.
-
 ### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>В чем разница между удалением группы ресурсов в портал Azure и нажатием кнопки Удалить в Solution Accelerator в azureiotsolutions.com?
 
 * Если удалить Solution Accelerator в [azureiotsolutions.com](https://www.azureiotsolutions.com/), удаляются все ресурсы, развернутые при создании акселератора решений. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
@@ -88,10 +89,6 @@ ms.locfileid: "92078227"
 
 Пятьдесят. Вы можете отправить [запрос в службу поддержки Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы увеличить это количество, но по умолчанию в рамках одной подписки можно подготовить только 50 экземпляров Cosmos DB.
 
-### <a name="how-many-free-bing-maps-apis-can-i-provision-in-a-subscription"></a>Сколько бесплатных API-интерфейсов Карт Bing можно подготовить в рамках одной подписки?
-
-Два. В рамках подписки Azure можно создать только две карты Bing уровня 1 с внутренними транзакциями для корпоративных планов. Решение для удаленного мониторинга по умолчанию подготавливается с помощью плана уровня 1 с внутренними транзакциями. Иными словами, используя одну подписку, в которую не вносились изменения, вы можете подготовить не более двух решений для удаленного мониторинга.
-
 ### <a name="can-i-create-a-solution-accelerator-if-i-have-microsoft-azure-for-dreamspark"></a>Можно ли создать акселератор решений, если я использую Microsoft Azure для DreamSpark?
 
 > [!NOTE]
@@ -107,7 +104,5 @@ ms.locfileid: "92078227"
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Изучите возможности акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
-* [Обзор акселератора решений для прогнозного обслуживания](./iot-accelerators-predictive-walkthrough.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
 * [Все аспекты безопасности Интернета вещей](../iot-fundamentals/iot-security-ground-up.md)

@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 978f404aa9b99819460e46ea89df19d27431b8b8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: c9ee81abd7cd0268a7cbd6b16aa6065ec7b54bef
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743145"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861312"
 ---
 # <a name="plan-an-azure-ad-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure AD
 
@@ -165,7 +165,7 @@ ms.locfileid: "96743145"
 2. С помощью условного доступа активируйте многофакторную проверку подлинности для этой группы при доступе ко всем ресурсам.
 3. Периодически пересматривайте членство в группе и удаляйте из группы зарегистрированных пользователей.
 
-Зарегистрированные и незарегистрированные пользователи Azure AD MFA можно вычислить с помощью команд PowerShell, которые используют [модуль MSOnline PowerShell](/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).
+Зарегистрированные и незарегистрированные пользователи Azure AD MFA можно вычислить с помощью команд PowerShell, которые используют [модуль MSOnline PowerShell](/powershell/azure/active-directory/install-msonlinev1).
 
 #### <a name="identify-registered-users"></a>Определение зарегистрированных пользователей
 

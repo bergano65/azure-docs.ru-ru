@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: dc262e133f6e91271d7e9848bdca9d3a6062fc66
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: d46c1d8efb5234d47c80ca4256c2f56d56ccf805
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751722"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862179"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о Шлюзе приложений
 
@@ -133,7 +133,7 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 
 ### <a name="does-application-gateway-v2-support-proxying-requests-with-ntlm-authentication"></a>Поддерживает ли Шлюз приложений версии 2 запросы прокси с проверкой подлинности NTLM?
 
-Нет. Шлюз приложений версии 2 пока не поддерживает запросы на использование прокси-сервера с проверкой подлинности NTLM.
+Нет. Шлюз приложений версии 2 не поддерживает запросы прокси с проверкой подлинности NTLM.
 
 ### <a name="does-application-gateway-affinity-cookie-support-samesite-attribute"></a>Поддерживает ли атрибут SameSite файл cookie сходства Шлюза приложений?
 Да, в [обновлении браузера Chromium](https://www.chromium.org/Home) [версии 80](https://chromiumdash.appspot.com/schedule) внедрено предписание считать, что для файлов cookie HTTP без атрибута SameSite значение SameSite=Lax. Это означает, что браузер не будет отправлять файл cookie сходства Шлюза приложений в контексте решений сторонних разработчиков. 

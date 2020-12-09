@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/23/2019
 ms.author: kenwith
 ms.reviewer: zhchia
-ms.openlocfilehash: 9cb3d8f39d83e27755b1e8982dfe3b807c431413
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: d4c6c5b51e00f7f2ed7e29c27aa8e8bb88a2ea94
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92069727"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861364"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
 
@@ -89,7 +89,7 @@ Azure AD предоставляет несколько путей интегра
 
 ## <a name="microsoft-graph-for-provisioning"></a>Microsoft Graph для подготовки
 
-При использовании Microsoft Graph для подготовки предоставляется доступ ко всем пользовательским данным, доступным в Graph. Помимо сведений о пользователях и группах, можно также получить дополнительные сведения, такие как роли пользователя, диспетчер и прямые отчеты, принадлежащие и зарегистрированные устройства, а также сотни других элементов данных, доступных в [Microsoft Graph](/graph/api/overview?view=graph-rest-1.0). 
+При использовании Microsoft Graph для подготовки предоставляется доступ ко всем пользовательским данным, доступным в Graph. Помимо сведений о пользователях и группах, можно также получить дополнительные сведения, такие как роли пользователя, диспетчер и прямые отчеты, принадлежащие и зарегистрированные устройства, а также сотни других элементов данных, доступных в [Microsoft Graph](/graph/api/overview). 
 
 Более 15 000 000 организаций и 90% компаний из списка Fortune 500 используют Azure AD при подписке на облачные службы Майкрософт, такие как Microsoft 365, Microsoft Azure или Enterprise Mobility Suite. Microsoft Graph можно использовать для интеграции приложения с рабочими процессами администрирования, например для адаптации сотрудников (и завершения работы), обслуживания профиля и многого другого. 
 

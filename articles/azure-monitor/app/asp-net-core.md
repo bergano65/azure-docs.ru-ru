@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 8505e67e3db7460308d208ce4f83d29a1fb4d862
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 2921c6379b34e002013b5f0087cefd502ab0ab84
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763202"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904539"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -31,10 +31,14 @@ ms.locfileid: "96763202"
 > [!NOTE]
 > ASP.NET Core 3. X требует [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более поздней версии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](./create-new-resource.md).
+
+> [!IMPORTANT]
+> Новые регионы Azure **должны** использовать строки подключения вместо ключей инструментирования. [Строка подключения](./sdk-connection-string.md?tabs=net) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
+
 
 ## <a name="enable-application-insights-server-side-telemetry-visual-studio"></a>Включение телеметрии на стороне сервера Application Insights (Visual Studio)
 
@@ -106,7 +110,7 @@ ms.locfileid: "96763202"
 
     * `ApplicationInsights:InstrumentationKey`
 
-    Пример.
+    Пример:
 
     * `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 
@@ -209,7 +213,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Полный список параметров в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | Значение по умолчанию
+|Параметр | Описание: | Значение по умолчанию
 |---------------|-------|-------
 |енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | true
 |енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | true
