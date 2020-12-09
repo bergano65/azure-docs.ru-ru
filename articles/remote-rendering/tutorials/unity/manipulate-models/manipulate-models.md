@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 003203ef1a25102f9fd3c50001603dbd5d33ce5a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 48c835070329b5cb0892b10760d37708e46bfa1d
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565976"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559139"
 ---
 # <a name="tutorial-manipulating-models"></a>Руководство по Манипулирование моделями
 
@@ -176,7 +176,7 @@ ms.locfileid: "94565976"
 1. В Unity нажмите кнопку Play (Воспроизвести), чтобы воспроизвести сцену и открыть меню **Model Tools** (Средства работы с моделью) в **AppMenu**.
 ![Контроллер представления](./media/model-with-view-controller.png)
 
-Префаб **AppMenu** содержит подменю **Model Tools** (Средства работы с моделью), которое реализует контроллер представления для привязки к модели. Если игровой объект содержит компонент **RemoteBounds**, контроллер представления добавит компонент [**BoundingBox**](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html). Это компонент MRTK, который отрисовывает ограничивающий прямоугольник вокруг объекта с **BoxCollider**. [**ObjectManipulator**](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/api/Microsoft.MixedReality.Toolkit.Experimental.UI.ObjectManipulator.html?q=ObjectManipulator) отвечает за взаимодействие с помощью руки. Вместе эти скрипты позволяют перемещать, вращать и масштабировать удаленно подготовленную для просмотра модель.
+Префаб **AppMenu** содержит подменю **Model Tools** (Средства работы с моделью), которое реализует контроллер представления для привязки к модели. Если игровой объект содержит компонент **RemoteBounds**, контроллер представления добавит компонент [**BoundingBox**](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html). Это компонент MRTK, который отрисовывает ограничивающий прямоугольник вокруг объекта с **BoxCollider**. [**ObjectManipulator**](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/api/Microsoft.MixedReality.Toolkit.UI.ObjectManipulator.html) отвечает за взаимодействие с помощью руки. Вместе эти скрипты позволяют перемещать, вращать и масштабировать удаленно подготовленную для просмотра модель.
 
 1. Переместите указатель мыши на игровую панель и щелкните внутри нее, чтобы переместить на нее фокус.
 1. Используя [имитацию руки MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html#hand-simulation), нажмите и удерживайте клавишу SHIFT слева.

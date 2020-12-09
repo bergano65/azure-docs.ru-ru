@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bcee951dc85d9c317bad481ebdb91ff6c761371c
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.openlocfilehash: 834df29597abaaadad98b232ce75b32a6431cfc2
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91653678"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574740"
 ---
 # <a name="tutorial-viewing-a-remotely-rendered-model"></a>Руководство по Просмотр модели удаленной отрисовки
 
@@ -76,7 +76,7 @@ ms.locfileid: "91653678"
 
 После изменения и сохранения манифеста Unity обновится автоматически. Убедитесь, что пакеты загружены в окне *Project* (Проект):
 
-:::image type="content" source="./media/confirm-packages.png" alt-text="Создание проекта Unity":::
+:::image type="content" source="./media/confirm-packages.png" alt-text="Подтверждение импорта пакетов":::
 
 Если пакеты не загружаются, проверьте наличие ошибок в консоли Unity. Если ошибок нет, но пакеты не отображаются в папке **Packages**, проверьте положение выключателя видимости пакетов.
 ![Снимок экрана со стрелкой, указывающей на выключатель видимости пакетов.](./media/unity-package-visibility.png)
@@ -220,7 +220,7 @@ public class RemoteRenderingCoordinator : MonoBehaviour
     public static RemoteRenderingCoordinator instance;
 
     // AccountDomain must be '<region>.mixedreality.azure.com' - if no '<region>' is specified, connections will fail
-    // For most people '<region>' is either 'westus2' or 'westeurope'
+    // The list of regions is available at https://docs.microsoft.com/azure/remote-rendering/reference/regions
     [SerializeField]
     private string accountDomain = "westus2.mixedreality.azure.com";
     public string AccountDomain
