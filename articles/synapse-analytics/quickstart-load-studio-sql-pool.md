@@ -9,20 +9,20 @@ ms.topic: quickstart
 ms.date: 11/16/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8d70a45b89142f6f9c6990fdbb4b79751c82275f
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 312c57c103bf733bc72c5de1d22ab3239d5b5e96
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95237482"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484718"
 ---
 # <a name="quickstart-bulk-loading-with-synapse-sql"></a>Краткое руководство. Массовая загрузка в Synapse SQL
 
-Загружать данные никогда не было так просто, как с помощью мастера массовой загрузки в Synapse Studio. Этот мастер поможет вам создать скрипт T-SQL с использованием [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) для массовой загрузки данных. 
+Благодаря мастеру массовой загрузки в Synapse Studio загружать данные стало гораздо проще. Этот мастер поможет вам создать скрипт T-SQL с использованием [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) для массовой загрузки данных. 
 
 ## <a name="entry-points-to-the-bulk-load-wizard"></a>Точки входа в мастер массовой загрузки
 
-Теперь вы можете без усилий выполнять массовую загрузку данных с использованием выделенных пулов SQL, щелкнув правой кнопкой мыши в следующих областях Synapse Studio:
+Вы можете без труда выполнять массовую загрузку данных с использованием выделенных пулов SQL, щелкнув правой кнопкой мыши в следующих областях Synapse Studio:
 
 - Файл или папка в учетной записи хранения Azure, присоединенной к рабочей области. ![Меню, вызываемое щелчком правой кнопкой мыши по файлу или папке в учетной записи хранения](./sql/media/bulk-load/bulk-load-entry-point-0.png)
 

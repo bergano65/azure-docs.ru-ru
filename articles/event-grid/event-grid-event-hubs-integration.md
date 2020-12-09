@@ -4,15 +4,15 @@ description: Руководство по Описывается, как пере
 ms.topic: tutorial
 ms.date: 07/07/2020
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: e6dfcac17d79edd417af07179224fdf922906c4e
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 42a2f7fd557970328f6d88b08e296317cecd8c66
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841382"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462150"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
-[Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из Хранилища BLOB-объектов в Azure Synapse Analytics (прежнее название — Хранилище данных SQL).
+[Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища BLOB-объектов в Azure Synapse Analytics.
 
 ![Обзор приложений](media/event-grid-event-hubs-integration/overview.png)
 
@@ -27,8 +27,8 @@ ms.locfileid: "94841382"
 Ниже перечислены действия, которые вы выполните в этой статье.
 
 > [!div class="checklist"]
-> * Используете шаблон Azure Resource Manager для развертывания инфраструктуры: концентратор событий, учетная запись хранения, приложение-функция, Azure Synapse Analytics.
-> * Создадите таблицу в хранилище данных.
+> * Используете шаблон Azure Resource Manager для развертывания инфраструктуры: концентратор событий, учетная запись хранения, приложение-функция, выделенный пул SQL.
+> * Создайте таблицу в выделенном пуле SQL.
 > * Добавите код в приложение-функцию.
 > * Оформите подписку на событие. 
 > * Запустите приложение, отправляющее данные в концентратор событий.

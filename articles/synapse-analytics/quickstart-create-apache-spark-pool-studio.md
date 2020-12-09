@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание бессерверного пула Apache Spark (предварительная версия) с помощью Synapse Studio
+title: Краткое руководство. Создание бессерверного пула Apache Spark с помощью Synapse Studio
 description: Создайте бессерверный пул Apache Spark с помощью Synapse Studio, выполнив действия из этого руководства.
 services: synapse-analytics
 author: saveenr
@@ -9,14 +9,14 @@ ms.subservice: spark
 ms.date: 10/16/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 313ad0c620fe06158e96c208ae265702134b58d1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d280e96b354f38a86545ed5f6bcaa6c9a314c46b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324206"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462031"
 ---
-# <a name="quickstart-create-a-serverless-apache-spark-pool-preview-using-synapse-studio"></a>Краткое руководство. Создание бессерверного пула Apache Spark (предварительная версия) с помощью Synapse Studio
+# <a name="quickstart-create-a-serverless-apache-spark-pool-using-synapse-studio"></a>Краткое руководство. Создание бессерверного пула Apache Spark с помощью Synapse Studio
 
 Azure Synapse Analytics предлагает различные аналитические модули, упрощающие прием, преобразование, моделирование, анализ и предоставление данных. Пул Apache Spark предоставляет возможности для вычислений больших данных из открытых источников. После создания пула Apache Spark в рабочей области Synapse данные можно загружать, моделировать, обрабатывать и обслуживать для получения аналитических сведений.  
 
@@ -53,7 +53,7 @@ Azure Synapse Analytics предлагает различные аналитич
 
 ## <a name="create-the-apache-spark-pool-in-synapse-studio"></a>Создание пула Apache Spark в Synapse Studio
 
-1. На домашней странице Synapse Studio перейдите в **центр управления** , щелкнув в области навигации слева значок **Управление**.
+1. На домашней странице Synapse Studio перейдите в **центр управления**, щелкнув в области навигации слева значок **Управление**.
 
     ![Домашняя страница Synapse Studio, раздел "Управление" выделен цветом.](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-21.png)
 
@@ -63,7 +63,7 @@ Azure Synapse Analytics предлагает различные аналитич
 
 1. Выберите **+ Создать**. Запустится мастер создания пула Apache Spark. 
 
-1. Введите следующие сведения на вкладке **Основные сведения** :
+1. Введите следующие сведения на вкладке **Основные сведения**:
 
     | Параметр | Рекомендуемое значение | Описание |
     | :------ | :-------------- | :---------- |
@@ -100,7 +100,7 @@ Azure Synapse Analytics предлагает различные аналитич
 Если вы хотите удалить пул Apache Spark, выполните следующие действия:
 
 1. Перейдите к пулам Apache Spark в центре управления Synapse Studio.
-1. Щелкните многоточие рядом с удаляемым пулом Apache (в данном случае **contosospark** ), чтобы отобразить команды для пула Apache Spark.
+1. Щелкните многоточие рядом с удаляемым пулом Apache (в данном случае **contosospark**), чтобы отобразить команды для пула Apache Spark.
 
     ![Список пулов Apache Spark с выбранным недавно созданным пулом](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-29.png)
 

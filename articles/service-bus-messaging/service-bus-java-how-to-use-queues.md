@@ -5,18 +5,19 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 11/09/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: a91ed2a358a9595a4d22dd629b8d470423b786d6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 041229ffb047c922e1f1f97993fada3841133d35
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95909532"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489655"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-java"></a>Отправка сообщений в очереди Служебной шины и получение сообщений из них (Java)
 В этом кратком руководстве описывается создание приложения Java для отправки сообщений в очередь служебной шины Azure и получения сообщений из нее. 
 
 > [!IMPORTANT]
-> Для работы с этим кратким руководством используется новый пакет azure-messaging-servicebus (**предварительная версия**). Краткое руководство, в котором используется общедоступный пакет azure-servicebus, см. в статье [Отправка и получение сообщений с помощью azure-servicebus](service-bus-java-how-to-use-queues-legacy.md).
+> Для работы с этим кратким руководством используется новый пакет azure-messaging-servicebus. Сведения об использовании пакета прежней версии см. в кратком руководстве по [отправке и получению сообщений с помощью azure-servicebus](service-bus-java-how-to-use-queues-legacy.md).
+
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
@@ -37,7 +38,7 @@ ms.locfileid: "95909532"
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-messaging-servicebus</artifactId>
-    <version>7.0.0-beta.7</version>
+    <version>7.0.0</version>
 </dependency>
 ```
 
@@ -220,7 +221,7 @@ Stopping and closing the processor
 
 - [Клиентская библиотека Служебной шины Azure для Java: файл сведений](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/README.md)
 - [Примеры на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/servicebus/azure-messaging-servicebus/src/samples)
-- [Справочник по API Java](https://docs.microsoft.com/java/api/overview/azure/servicebus?view=azure-java-preview&preserve-view=true)
+- [Справочник по API Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-preview)
 
 См. [другие примеры на сайте GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/servicebus/azure-messaging-servicebus). 
 

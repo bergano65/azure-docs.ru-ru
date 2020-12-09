@@ -1,6 +1,6 @@
 ---
 title: Сохранение результатов запроса из бессерверного пула SQL
-description: Из этой статьи вы узнаете, как сохранять результаты запросов в хранилище, используя бессерверный пул SQL (предварительная версия).
+description: Из этой статьи вы узнаете, как сохранять результаты запросов в хранилище, используя бессерверный пул SQL.
 services: synapse-analytics
 author: vvasic-msft
 ms.service: synapse-analytics
@@ -9,20 +9,20 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 50897d81ed5ef2fc33e458bd46d9229f6184fea8
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: dd989d5925da864728e944e84962086c0cfb08ea
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322612"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462316"
 ---
-# <a name="store-query-results-to-storage-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Сохранение результатов запросов в хранилище с помощью бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics
+# <a name="store-query-results-to-storage-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Сохранение результатов запросов в хранилище с помощью бессерверного пула SQL в Azure Synapse Analytics
 
-Из этой статьи вы узнаете, как сохранять результаты запросов в хранилище, используя бессерверный пул SQL (предварительная версия).
+Из этой статьи вы узнаете, как сохранять результаты запросов в хранилище, используя бессерверный пул SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для начала **создайте базу данных** , в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот скрипт создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются для чтения данных в этих примерах.
+Для начала **создайте базу данных**, в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот скрипт создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются для чтения данных в этих примерах.
 
 Придерживаясь инструкций в этой статье, создайте источники данных, учетные данные области базы данных и форматы внешних файлов, которые будут использоваться для записи данных в выходное хранилище.
 

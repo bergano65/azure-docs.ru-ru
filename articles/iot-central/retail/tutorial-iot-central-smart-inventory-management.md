@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 827d571a6545d0aaffb0f96134fcf094eaa5f26b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1b7069cb723bffd758c3603cc957329dd6d2a9b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90980603"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463272"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Руководство по развертыванию шаблона приложения для интеллектуального управления запасами для IoT Central и его использованию
 
@@ -35,22 +35,19 @@ ms.locfileid: "90980603"
 
 1. Перейдите на веб-сайт диспетчера приложений в Azure IoT Central. Выберите **Build** (Сборка) в области навигации слева, а затем перейдите на вкладку **Retail** (Розничная торговля).
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана: выбор шаблона интеллектуального управления запасами managementapplication](./media/tutorial-iot-central-smart-inventory-management/iotc_retail_homepage.png)
+    :::image type="content" source="media/tutorial-iot-central-smart-inventory-management/iotc_retail_homepage.png" alt-text="Снимок экрана: выбор шаблона интеллектуального управления запасами managementapplication":::
 
 2. Выберите вкладку **Розничная торговля** и щелкните **Создать приложение** в разделе **Интеллектуальное управление запасами**
 
 3. Для **создания приложения** откроется форма нового приложения, которая будет заполнена запрошенными данными, как показано ниже.
-   **Application name** (Имя приложения): можно использовать предложенное имя по умолчанию или ввести понятное имя приложения.
-   **URL** (URL-адрес): можно использовать предложенный URL-адрес по умолчанию или ввести понятный уникальный URL-адрес. Если у вас уже есть подписка Azure, то рекомендуется использовать параметр по умолчанию. Вы можете начать с 7-дневной бесплатной пробной версии тарифного плана и выбрать преобразование в стандартный тарифный план в любое время до истечения срока действия бесплатной версии.
-   **Billing Info** (Данные для выставления счетов): сведения о каталоге, подписке Azure и регионе необходимы для подготовки ресурсов.
-   **Создание**. Выберите "Create" (Создать) в нижней части страницы, чтобы развернуть приложение.
+    **Application name** (Имя приложения): можно использовать предложенное имя по умолчанию или ввести понятное имя приложения.
+    **URL** (URL-адрес): можно использовать предложенный URL-адрес по умолчанию или ввести понятный уникальный URL-адрес. Если у вас уже есть подписка Azure, то рекомендуется использовать параметр по умолчанию. Вы можете начать с 7-дневной бесплатной пробной версии тарифного плана и выбрать преобразование в стандартный тарифный план в любое время до истечения срока действия бесплатной версии.
+    **Billing Info** (Данные для выставления счетов): сведения о каталоге, подписке Azure и регионе необходимы для подготовки ресурсов.
+    **Создание**. Выберите "Create" (Создать) в нижней части страницы, чтобы развернуть приложение.
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана: создание приложения на основе шаблона интеллектуального управления запасами managementapplication](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_app_create.png)
+    :::image type="content" source="media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_app_create.png" alt-text="Снимок экрана: создание приложения на основе шаблона интеллектуального управления запасами managementapplication":::
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана: варианты выставления счетов при создании приложения](./media/tutorial-iot-central-smart-inventory-management/smart-inventory-management-app-create-billinginfo.png)
+    :::image type="content" source="media/tutorial-iot-central-smart-inventory-management/smart-inventory-management-app-create-billinginfo.png" alt-text="Снимок экрана: варианты выставления счетов при создании приложения":::
 
 ## <a name="walk-through-the-application"></a>ознакомиться с этим приложением. 
 

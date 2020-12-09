@@ -4,18 +4,18 @@ description: В этом кратком руководстве описано, �
 ms.devlang: Java
 ms.topic: quickstart
 ms.date: 11/09/2020
-ms.openlocfilehash: 6a63e907e01174042f679c57e1ef0994ad2a11b9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 011dbfef1155b82daca216e9519db07188260130
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95909583"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489553"
 ---
 # <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-java"></a>Отправка сообщений в раздел Служебной шины Azure и получение сообщений из подписок в раздел (Java)
 В этом кратком руководстве описано, как написать код Java с помощью пакета azure-messaging-servicebus для отправки сообщений в раздел Служебной шины Azure и их последующего получения из подписок в этот раздел.
 
 > [!IMPORTANT]
-> Для работы с этим кратким руководством используется новый пакет azure-messaging-servicebus (**предварительная версия**). Чтобы перейти к краткому руководству, в котором используется текущая общедоступная версия (GA) пакета azure-servicebus, см. [Использование очередей Служебной шины Azure с Java для отправки и получения сообщений](service-bus-java-how-to-use-topics-subscriptions-legacy.md).
+> Для работы с этим кратким руководством используется новый пакет azure-messaging-servicebus. Сведения об использовании пакета прежней версии см. в кратком руководстве по [отправке и получению сообщений с помощью azure-servicebus](service-bus-java-how-to-use-topics-subscriptions-legacy.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,7 +37,7 @@ ms.locfileid: "95909583"
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-messaging-servicebus</artifactId>
-    <version>7.0.0-beta.7</version>
+    <version>7.0.0</version>
 </dependency>
 ```
 
@@ -226,7 +226,7 @@ Stopping and closing the processor
 
 - [Клиентская библиотека Служебной шины Azure для Java: файл сведений](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/README.md)
 - [Примеры на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/servicebus/azure-messaging-servicebus/src/samples)
-- [Справочник по API Java](https://docs.microsoft.com/java/api/overview/azure/servicebus?view=azure-java-preview&preserve-view=true)
+- [Справочник по API Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-preview)
 
 
 [Azure SDK for Java]: /java/api/overview/azure/
@@ -235,4 +235,3 @@ Stopping and closing the processor
 [SqlFilter]: /dotnet/api/microsoft.azure.servicebus.sqlfilter
 [SqlFilter.SqlExpression]: /dotnet/api/microsoft.azure.servicebus.sqlfilter.sqlexpression
 [BrokeredMessage]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage
-

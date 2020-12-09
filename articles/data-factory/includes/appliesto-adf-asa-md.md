@@ -6,5 +6,5 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 12/01/2020
 ms.locfileid: "96476996"
 ---
-<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::Фабрика данных Azure :::image type="icon" source="../media/applies-to/yes.png" border="false":::Azure Synapse Analytics </Token> 
+<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::Фабрика данных Azure :::image type="icon" source="../media/applies-to/yes.png" border="false":::Azure Synapse Analytics</Token> 
 

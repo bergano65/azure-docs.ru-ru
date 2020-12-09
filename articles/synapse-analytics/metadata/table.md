@@ -1,6 +1,6 @@
 ---
 title: Таблицы общих метаданных
-description: Azure Synapse Analytics предоставляет общую модель метаданных, в которой к созданной в бессерверном пуле Apache Spark таблице можно будет получить доступ из бессерверного пула SQL (предварительная версия) и выделенного пула SQL без необходимости репликации данных.
+description: Azure Synapse Analytics предоставляет общую модель метаданных, в которой к таблице, созданной в бессерверном пуле Apache Spark, можно будет получить доступ из бессерверного пула SQL и выделенного пула SQL без необходимости дублировать данные.
 services: sql-data-warehouse
 author: MikeRys
 ms.service: synapse-analytics
@@ -10,18 +10,17 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f269217908bea4b5e8ef3c0004a9cec9d5d682c7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 9ee18edd563d94a85dedf48b7a4d6df394c09707
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314547"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461383"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Таблицы общих метаданных Azure Synapse Analytics
 
-[!INCLUDE [synapse-analytics-preview-terms](../../../includes/synapse-analytics-preview-terms.md)]
 
-Azure Synapse Analytics позволяет разным вычислительным системам рабочей области совместно использовать базы данных и таблицы на основе Parquet в пулах Apache Spark (предварительная версия) и бессерверном пуле SQL (предварительная версия).
+Azure Synapse Analytics позволяет различным вычислительным системам рабочих областей использовать базы данных и таблицы на основе Parquet совместно с пулами Apache Spark и бессерверным пулом SQL.
 
 После того как задание Spark создаст базу данных, в ней можно с помощью Spark создать таблицы с форматом хранения Parquet. Эти таблицы немедленно становятся доступными для выполнения запросов через любой пул Spark в рабочей области Azure Synapse. Их также можно использовать из любого задания Spark при наличии соответствующих разрешений.
 

@@ -4,12 +4,12 @@ description: В этом учебнике вы будете использова
 ms.topic: tutorial
 ms.date: 09/08/2020
 titleSuffix: Azure
-ms.openlocfilehash: d03737f43ee719b72860e7ffeff076e3f156cade
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: a15984917b854a9f3e2dbc80dd0775989c80bf81
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91776346"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483684"
 ---
 # <a name="tutorial-analyze-live-video-by-using-openvino-model-server--ai-extension-from-intel"></a>Руководство по Анализ видеотрансляций с помощью OpenVINO™ Model Server (расширение ИИ от Intel) 
 
@@ -84,11 +84,11 @@ ms.locfileid: "91776346"
 
 1. Теперь перейдите в папку *src/cloud-to-device-console-app*. Здесь вы увидите файл *appSettings.json* и несколько других файлов:
 
-    * ***c2d-console-app.csproj*** — файл проекта Visual Studio Code.
-    * ***operations.json*** — список операций, которые должна запускать программа.
-    * ***Program.cs*** — пример кода программы. Этот код выполняет следующие действия:
+    * ***c2d-console-app.csproj** _ — файл проекта Visual Studio Code.
+    _ ***operations.json** _ — список операций, которые должна запускать программа.
+    _ ***Program.cs** _ — пример кода программы. Этот код выполняет следующие действия:
 
-        * загружает параметры приложения;
+        _ загружает параметры приложения;
         * вызывает прямые методы, которые представляются модулем Аналитики видеотрансляций в IoT Edge (с помощью модуля можно анализировать потоки видеотрансляции, вызывая его [прямые методы](direct-methods.md));
         * приостанавливает выполнение, позволяя проанализировать выходные данные программы в окне **ТЕРМИНАЛ** и проверить сгенерированные модулем события в окне **ВЫХОДНЫЕ ДАННЫЕ**;
         * вызывает прямые методы для очистки ресурсов.
@@ -145,10 +145,38 @@ ms.locfileid: "91776346"
 1. Щелкните правой кнопкой мыши и выберите **Параметры расширения**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Обзор" (Показывать подробное сообщение).
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Параметры расширения":::
+1. Найдите и включите параметр "Show Verbose Message" (Показывать подробное сообщение).
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Обзор"
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Show Verbose Message"::: (Показывать подробное сообщение)
+1. Чтобы начать сеанс отладки, нажмите клавишу F5. В окне **ТЕРМИНАЛ** отображаются выводимые сообщения.
+1. Код *operations.json* начинается с вызовов прямых методов `GraphTopologyList` и `GraphInstanceList`. Если вы очистили ресурсы после работы с предыдущими краткими руководствами, тогда этот процесс возвратит пустые списки, а затем приостановится. Чтобы продолжить, нажмите клавишу ВВОД.
+
+    В окне **ТЕРМИНАЛ** показывается следующий набор вызовов прямых методов:
+
+     * Вызов `GraphTopologySet`, который использует использованный ранее `topologyUrl`.
+     * Вызов `GraphInstanceSet`, который использует такой код:
+
+         ```
+         {
+           "@apiVersion": "1.0",
+           "name": "Sample-Graph-1",
+           "properties": {
+             "topologyName": "InferencingWithOpenVINO",
+             "description": "Sample graph description",
+             "parameters": [
+               {
+                 "name": "rtspUrl",
+                 "value": "rtsp://rtspsim:554/media/lots_015.mkv"
+               },
+               {
+                 "name": "rtspUserName",
+                 "value": "testuser"
+               },
+               {
+                 "name": "rtspPassword",
+                 "value": "testpassword"
                }
              ]
            }
@@ -364,4 +392,4 @@ ms.locfileid: "91776346"
 Ознакомьтесь с дополнительными задачами для опытных пользователей.
 
 * Вместо симулятора RTSP используйте [IP-камеру](https://en.wikipedia.org/wiki/IP_camera) с поддержкой RTSP. IP-камеры, поддерживающие протокол RTSP, можно найти на странице [продуктов, соответствующих ONVIF](https://www.onvif.org/conformant-products/). Ищите устройства, которые соответствуют профилям G, S или T.
-* Используйте устройство AMD64 или x64 на базе Linux вместо виртуальной машины Linux в Azure. Устройство должно находиться в той же сети, что и IP-камера. Вы можете выполнить инструкции из статьи [Install Azure IoT Edge runtime on Linux](../../iot-edge/how-to-install-iot-edge-linux.md) (Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian). Чтобы зарегистрировать устройство в Центре Интернета вещей Azure, следуйте инструкциям краткого руководства [Развертывание первого модуля IoT Edge на виртуальном устройстве Linux](../../iot-edge/quickstart-linux.md).
+* Используйте устройство AMD64 или x64 на базе Linux вместо виртуальной машины Linux в Azure. Устройство должно находиться в той же сети, что и IP-камера. Вы можете выполнить инструкции из статьи [Install Azure IoT Edge runtime on Linux](../../iot-edge/how-to-install-iot-edge.md) (Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian). Чтобы зарегистрировать устройство в Центре Интернета вещей Azure, следуйте инструкциям краткого руководства [Развертывание первого модуля IoT Edge на виртуальном устройстве Linux](../../iot-edge/quickstart-linux.md).

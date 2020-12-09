@@ -10,17 +10,17 @@ ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0897ca35dd5ae1b7209a36aee4bd5335d4ea4d25
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 2ff2d9708642c347a829de290d45849d8629807f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681539"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462356"
 ---
 # <a name="connect-to-synapse-sql"></a>Подключение к Synapse SQL
 Установите подключение к функции Synapse SQL в Azure Synapse Analytics.
 
-## <a name="supported-tools-for-serverless-sql-pool-preview"></a>Поддерживаемые средства для бессерверного пула SQL (предварительная версия)
+## <a name="supported-tools-for-serverless-sql-pool"></a>Поддерживаемые средства для бессерверного пула SQL
 
 [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) полностью поддерживается, начиная с версии 1.18.0. SSMS частично поддерживается, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
 

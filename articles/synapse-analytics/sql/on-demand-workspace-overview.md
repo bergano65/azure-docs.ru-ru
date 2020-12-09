@@ -1,5 +1,5 @@
 ---
-title: Бессерверный пул SQL (предварительная версия)
+title: Бессерверный пул SQL
 description: Сведения о бессерверном пуле SQL в Azure Synapse Analytics.
 services: synapse analytics
 author: filippopovic
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: e0d47567c3bc0b05c47efafa3bdc8b297a7bdbea
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 34ce36f0ff348f896b7c2ea680c113b5e9e4ea09
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93306879"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463167"
 ---
-# <a name="serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Использование бессерверного пула SQL (предварительная версия) в Azure Synapse Analytics 
+# <a name="serverless-sql-pool-in-azure-synapse-analytics"></a>Использование бессерверного пула SQL в Azure Synapse Analytics 
 
-В каждой рабочей области Azure Synapse Analytics (предварительная версия) есть конечные точки бессерверного пула SQL (предварительная версия), с помощью которых можно запрашивать данные из озера данных.
+В каждой рабочей области Azure Synapse Analytics есть конечные точки бессерверного пула SQL, с помощью которых можно запрашивать данные из озера данных.
 
 Бессерверный пул SQL — это служба для создания запросов к данным в озере данных. Она позволяет обращаться к данным с помощью следующих функциональных возможностей:
  
