@@ -4,16 +4,16 @@ description: AzCopy — это служебная программа коман�
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/09/2020
+ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperfq2
-ms.openlocfilehash: ad9b40b448b48500cd6882ac614611f91370ec9e
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 9379417fcb96dce8a59f7d81335cec44e1bb5e6a
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410278"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901778"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -95,19 +95,20 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 Дополнительные сведения о маркерах SAS и их получении см. в разделе [использование подписанных URL-адресов (SAS)](./storage-sas-overview.md).
 
+<a id="transfer-data"></a>
+
 ## <a name="transfer-data"></a>Передача данных
 
 После авторизации удостоверения или получения маркера SAS можно начать передачу данных.
 
 Примеры команд см. в любой из этих статей.
 
-- [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
-
-- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
-
-- [Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)
-
-- [Перенос данных с помощью AzCopy и хранилища Azure Stack](/azure-stack/user/azure-stack-storage-transfer#azcopy)
+| Служба | Статья |
+|--------|-----------|
+|Хранилище BLOB-объектов Azure |[Отправка файлов в хранилище BLOB-объектов Azure](storage-use-azcopy-blobs-upload.md)<br><br>[Скачивание больших двоичных объектов из хранилища BLOB-объектов Azure](storage-use-azcopy-blobs-download.md)<br><br>[Копирование больших двоичных объектов между учетными записями хранения Azure](storage-use-azcopy-blobs-download.md)<br><br>[Синхронизация с хранилищем BLOB-объектов Azure](storage-use-azcopy-blobs-download.md)|
+|Файлы Azure |[Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)|
+|Amazon S3|[Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)|
+|Хранилище Azure Stack|[Перенос данных с помощью AzCopy и хранилища Azure Stack](/azure-stack/user/azure-stack-storage-transfer#azcopy)|
 
 ## <a name="use-in-a-script"></a>Использование в скрипте
 
@@ -119,7 +120,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 Чтобы получить ссылку, выполните следующую команду:
 
-| Операционная система  | Get-Help |
+| Операционная система  | Команда |
 |--------|-----------|
 | **Linux** | `curl -s -D- https://aka.ms/downloadazcopy-v10-linux | grep ^Location` |
 | **Windows** | `(curl https://aka.ms/downloadazcopy-v10-windows -MaximumRedirection 0 -ErrorAction silentlycontinue).headers.location` |
@@ -129,7 +130,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 URL-адрес отображается в выходных данных этой команды. Затем скрипт может скачать AzCopy с помощью этого URL-адреса.
 
-| Операционная система  | Get-Help |
+| Операционная система  | Команда |
 |--------|-----------|
 | **Linux** | `wget -O azcopy_v10.tar.gz https://aka.ms/downloadazcopy-v10-linux && tar -xf azcopy_v10.tar.gz --strip-components=1` |
 | **Windows** | `Invoke-WebRequest https://azcopyvnext.azureedge.net/release20190517/azcopy_windows_amd64_10.1.2.zip -OutFile azcopyv10.zip <<Unzip here>>` |

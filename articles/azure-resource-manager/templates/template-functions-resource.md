@@ -3,12 +3,12 @@ title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: b7bb726250c6d1ef8a597481b5f7e95f024a56d4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3b5a2642ebbabac61e46f4d9b0a2dfec9610a673
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183997"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96902669"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Функции ресурсов для шаблонов ARM
 
@@ -205,7 +205,7 @@ resource myAssignment 'Microsoft.Authorization/policyAssignments@2019-09-01' = {
 | Microsoft. ApiManagement/Service/Намедвалуес | [Значение списка](/rest/api/apimanagement/2019-12-01/namedvalue/listvalue) |
 | Microsoft. ApiManagement/Service/Опенидконнектпровидерс | [листсекретс](/rest/api/apimanagement/2019-12-01/openidconnectprovider/listsecrets) |
 | Microsoft.AppConfiguration/configurationStores | [ListKeys](/rest/api/appconfiguration/configurationstores/listkeys) |
-| Microsoft.AppPlatform/Spring | [листтесткэйс](/rest/api/azurespringclould/services/listtestkeys) |
+| Microsoft.AppPlatform/Spring | [листтесткэйс](/rest/api/azurespringcloud/services/listtestkeys) |
 | Microsoft.Automation/automationAccounts | [listKeys](/rest/api/automation/keys/listbyautomationaccount) |
 | Microsoft.Batch/batchAccounts | [listkeys](/rest/api/batchmanagement/batchaccount/getkeys) |
 | Microsoft.BatchAI/workspaces/experiments/jobs | [listoutputfiles](/rest/api/batchai/jobs/listoutputfiles) |
@@ -443,8 +443,8 @@ sasToken: listAccountSas(storagename, '2018-02-01', accountSasProperties).accoun
 | пространство_имен_поставщика | Да | строка | Пространство имен поставщика ресурсов для типа ресурса, для которого проверяется поддержка зоны. |
 | тип_ресурса | Да | строка | Тип ресурса для проверки поддержки зоны. |
 | location | Да | строка | Регион, в котором проверяется поддержка зоны. |
-| нумберофзонес | Нет | Целое число | Число возвращаемых логических зон. Значение по умолчанию — 1. Число должно быть целым положительным числом от 1 до 3.  Используйте 1 для ресурсов с одной зоной. Для ресурсов с несколькими зонами значение должно быть меньше или равно числу поддерживаемых зон. |
-| offset | Нет | Целое число | Смещение от начальной логической зоны. Функция возвращает ошибку, если смещение плюс Нумберофзонес превышает число поддерживаемых зон. |
+| нумберофзонес | нет | Целое число | Число возвращаемых логических зон. Значение по умолчанию — 1. Число должно быть целым положительным числом от 1 до 3.  Используйте 1 для ресурсов с одной зоной. Для ресурсов с несколькими зонами значение должно быть меньше или равно числу поддерживаемых зон. |
+| offset | нет | Целое число | Смещение от начальной логической зоны. Функция возвращает ошибку, если смещение плюс Нумберофзонес превышает число поддерживаемых зон. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -516,7 +516,7 @@ output notSupportedType array = pickZones('Microsoft.Cdn', 'profiles', 'westus2'
 
 Выходные данные из предыдущих примеров возвращают три массива.
 
-| Имя | Тип | Значение |
+| Название | Type | Значение |
 | ---- | ---- | ----- |
 | Поддерживается | массиве | ["1"] |
 | нотсуппортедрегион | массиве | [] |
@@ -1344,7 +1344,7 @@ output nestedResourceOutput string = resourceId('Microsoft.SQL/servers/databases
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | sameRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |

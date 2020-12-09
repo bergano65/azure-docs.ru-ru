@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/08/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b5b83d75df734c667c365f20fad2e1f62f997d7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 95f70005f2c7f53833163dcd5f0d2ee89b3db37c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994287"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861295"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
 
@@ -266,7 +266,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 3. Откатите любые другие изменения, которые вы сделали и задокументировали во время сбоя.
 4. Если вы использовали учетную запись для аварийного доступа, не забудьте повторно создать учетные данные и физически защитить детали новых учетных данных как часть процедур учетной записи для аварийного доступа.
 5. Продолжайте [рассмотрение всех обнаружений рисков, о которых сообщается](../reports-monitoring/concept-sign-ins.md) после прерывания подозрительных действий.
-6. Отмените все токены обновления, выпущенные [с помощью PowerShell](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0) для целевого набора пользователей. Отмена всех токенов обновления важна для привилегированных учетных записей, используемых во время сбоя. Это заставит их повторно пройти проверку подлинности и получить контроль над восстановленными политиками.
+6. Отмените все токены обновления, выпущенные [с помощью PowerShell](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) для целевого набора пользователей. Отмена всех токенов обновления важна для привилегированных учетных записей, используемых во время сбоя. Это заставит их повторно пройти проверку подлинности и получить контроль над восстановленными политиками.
 
 ## <a name="emergency-options"></a>Параметры аварийного режима
 
@@ -282,12 +282,12 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 >[!NOTE]
  > Настройка [надежных IP-адресов](./howto-mfa-mfasettings.md) для Azure AD MFA доступна только для [лицензий Azure AD Premium](./concept-mfa-licensing.md).
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
 * [Настройка сервера Многофакторной идентификации Azure для веб-приложений IIS](./howto-mfaserver-iis.md)
 * [Управление учетными записями администратора для аварийного доступа в Azure AD](../roles/security-emergency-access.md)
 * [Настройка именованных расположений в Azure Active Directory](../reports-monitoring/quickstart-configure-named-locations.md)
-  * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0)
+  * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings)
 * [Настройка гибридных устройств, присоединенных к Azure Active Directory](../devices/hybrid-azuread-join-plan.md)
 * [Руководство по развертыванию Windows Hello для бизнеса](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Password Guidance - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf) (Руководство о паролях — Microsoft Research)

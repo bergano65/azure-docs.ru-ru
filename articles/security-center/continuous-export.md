@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 10/27/2020
+ms.date: 12/08/2020
 ms.author: memildin
-ms.openlocfilehash: 43b66a59062a230aa2fba6909172deb5f1740b28
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: bdca5a753a49c26587db27892b54c2cb88910c83
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122323"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862468"
 ---
 # <a name="continuously-export-security-center-data"></a>Непрерывный экспорт данных Центра безопасности
 
@@ -72,6 +72,7 @@ ms.locfileid: "96122323"
     - Необходимо исправить результаты оценки уязвимостей на серверах SQL Server на компьютерах (Предварительная версия)
     - Должны быть исправлены уязвимости в образах Реестра контейнеров Azure (на платформе Qualys)
     - Должны быть устранены уязвимости на ваших виртуальных машинах.
+    - На ваших компьютерах должны быть установлены обновления системы
 
     Чтобы включить результаты с этими рекомендациями, включите параметр **включить результаты обеспечения безопасности** .
 

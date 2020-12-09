@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: af394b68a943f4c89358a719c155606c264b9dc4
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: ce23119e568347fff2ad270cfea7f8b563cae529
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554509"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904998"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Регистрация и сканирование клиента Power BI (Предварительная версия)
 
@@ -49,16 +49,12 @@ ms.locfileid: "96554509"
 
 ## <a name="associate-the-security-group-with-the-tenant"></a>Связывание группы безопасности с клиентом
 
-1. Войдите на [портал администрирования Power BI](https://app.powerbi.com/admin-portal/tenantSettings?allowServicePrincipalsUseReadAdminAPIsUI=1). Добавьте этот флаг функции в URI:  `allowServicePrincipalsUseReadAdminAPIsUI=1` . Этот флаг включает функцию, которая позволяет связать группу безопасности. Например,
-
-    ```http
-    https://app.powerbi.com/admin-portal/tenantSettings?allowServicePrincipalsUseReadAdminAPIsUI=1
-    ```
+1. Войдите на [портал администрирования Power BI](https://app.powerbi.com/admin-portal/tenantSettings).
 
     > [!Important]
     > Для просмотра страницы параметры клиента необходимо быть администратором Power BI.
 
-1. Выберите **Параметры разработчика**  >  **Разрешить субъектам-службам использовать Power BI интерфейсы API только для чтения (Предварительная версия)**.
+1. Выберите **Параметры разработчика**  >  **Разрешить субъектам-службам использовать доступ только для чтения Power BI API администратора (Предварительная версия)**.
 1. Выберите **определенные группы безопасности**.
 
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/allow-service-principals-power-bi-admin.png" alt-text="Изображение, показывающее, как разрешить субъектам-службам получать разрешения API администратора Power BI только для чтения":::
@@ -113,7 +109,7 @@ ms.locfileid: "96554509"
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/save-run-power-bi-scan.png" alt-text="Сохранить и запустить Power BI изображение экрана":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об использовании командлетов PowerShell для регистрации и сканирования Power BI клиента см. в следующих статьях:
   

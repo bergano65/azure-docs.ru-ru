@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
-ms.openlocfilehash: 55934e8c33b74740b7398be1ae18a3ef899aee74
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 22acfc5095b1ffcad382fa2b665a86d382645e7a
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651283"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861683"
 ---
 # <a name="manage-user-assignment-for-an-app-in-azure-active-directory"></a>Управление назначением пользователей для приложения в Azure Active Directory
 
@@ -81,11 +81,11 @@ ms.locfileid: "94651283"
     # Assign the user to the app role
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
-Дополнительные сведения о том, как назначить пользователю роль в приложении, см. в документации по командлету [New-AzureADUserAppRoleAssignment](/powershell/module/azuread/new-azureaduserapproleassignment?view=azureadps-2.0).
+Дополнительные сведения о том, как назначить пользователю роль в приложении, см. в документации по командлету [New-AzureADUserAppRoleAssignment](/powershell/module/azuread/new-azureaduserapproleassignment).
 
 Чтобы назначить группу корпоративному приложению, необходимо заменить `Get-AzureADUser` на `Get-AzureADGroup`, а `New-AzureADUserAppRoleAssignment` — на `New-AzureADGroupAppRoleAssignment`.
 
-Дополнительные сведения о том, как назначить группе роль в приложении, см. в документации по командлету [New-AzureADGroupAppRoleAssignment](/powershell/module/azuread/new-azureadgroupapproleassignment?view=azureadps-2.0).
+Дополнительные сведения о том, как назначить группе роль в приложении, см. в документации по командлету [New-AzureADGroupAppRoleAssignment](/powershell/module/azuread/new-azureadgroupapproleassignment).
 
 ### <a name="example"></a>Пример
 

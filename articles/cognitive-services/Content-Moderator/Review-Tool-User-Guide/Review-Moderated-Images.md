@@ -10,25 +10,25 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pafarley
-ms.openlocfilehash: cfda4d7970c734d92c9f2355d553721ef6165e43
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 77d7b8a0bf4d7fe9a94a61ea3f2f4279246ffb69
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911857"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903893"
 ---
 # <a name="create-human-reviews"></a>Создание пользовательских проверок
 
 В этом руководство вы узнаете, как настроить [рецензию](../review-api.md#reviews) на веб-сайте средства проверки. Проверяет хранение и отображение содержимого для оценки человеческим модератором. Модераторы могут изменять примененные Теги и применять собственные пользовательские теги. Когда пользователь завершает проверку, результаты отправляются в указанную конечную точку обратного вызова, и содержимое удаляется с сайта.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
 ## <a name="image-reviews"></a>Оценка изображений
 
 1. Перейдите к [средству проверки](https://contentmoderator.cognitive.microsoft.com/), выберите вкладку **try** и отправьте некоторые изображения для просмотра.
-1. После завершения обработки отправленных изображений перейдите на вкладку **Проверка** и выберите **изображение** .
+1. После завершения обработки отправленных изображений перейдите на вкладку **Проверка** и выберите **изображение**.
 
     ![Средство проверки, открытое в браузере Chrome, с выделенным параметром Image (Изображение) на вкладке Review (Проверка)](images/review-images-1.png)
 
@@ -38,7 +38,7 @@ ms.locfileid: "92911857"
 
     ![Браузер Chrome с открытым средством проверки, в котором показаны изображения с тегами, выбранные для проверки](images/review-images-2.png)
 
-1. Чтобы просмотреть дополнительные сведения о изображении, щелкните многоточие в эскизе и выберите **Просмотреть сведения** . Вы можете назначить образ для подгруппы с помощью параметра **переместить в** (см. раздел [группы](./configure.md#manage-team-and-subteams) , чтобы узнать больше о подкомандах).
+1. Чтобы просмотреть дополнительные сведения о изображении, щелкните многоточие в эскизе и выберите **Просмотреть сведения**. Вы можете назначить образ для подгруппы с помощью параметра **переместить в** (см. раздел [группы](./configure.md#manage-team-and-subteams) , чтобы узнать больше о подкомандах).
 
     ![Изображение с выделенным параметром View details (Просмотреть сведения)](images/review-images-3.png)
 
@@ -56,4 +56,4 @@ ms.locfileid: "92911857"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом разделе вы узнали, как настроить и использовать [проверки в средстве](https://contentmoderator.cognitive.microsoft.com)Content Moderatorных проверок. Дополнительные сведения о создании рецензий программными средствами см. в [руководстве по REST API](../try-review-api-review.md) или в разделе Краткое руководство по [пакету SDK для .NET](../client-libraries.md?pivots=programming-language-csharp%253fpivots%253dprogramming-language-csharp) .
+В этом разделе вы узнали, как настроить и использовать [проверки в средстве](https://contentmoderator.cognitive.microsoft.com)Content Moderatorных проверок. Далее ознакомьтесь с [руководством по консоли API](../try-review-api-review.md) или [пакетом SDK для .NET](../client-libraries.md?pivots=programming-language-csharp%253fpivots%253dprogramming-language-csharp) , чтобы узнать, как создавать рецензии программным способом.

@@ -3,18 +3,18 @@ title: Проекты Azure Maps Community Open-Source | Карты Microsoft Az
 description: Проекты с открытым исходным кодом, которые координируются для платформы карт Microsoft Azure.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/17/2019
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: ebe633bbfa8ec950e7726c127e38adecf0d1872f
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 138160eb1515d1443302dbc23bbafa482e2eb905
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896265"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904556"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
 
@@ -24,7 +24,7 @@ ms.locfileid: "92896265"
 
 **Боты**
 
-| Имя проекта | Описание |
+| Имя проекта | Описание: |
 |-|-|
 | [Платформа Bot — навык интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык по интересам предоставляет виртуальному помощнику достопримечательности связанные возможности, используя Azure Maps со службой Azure Bot и Bot Framework. |
 | [Расположение BotBuilder](https://github.com/Microsoft/BotBuilder-Location) | Элемент управления выбор расположения с открытым исходным кодом для платформы Microsoft Bot на платформе службы Bing Maps. |
@@ -35,7 +35,7 @@ ms.locfileid: "92896265"
 
 Ниже приведен список проектов с открытым исходным кодом, расширяющих возможности веб-пакета SDK для Azure Maps.
 
-| Имя проекта | Описание |
+| Имя проекта | Описание: |
 |-|-|
 | [Модуль анимации Azure Maps](https://github.com/Azure-Samples/azure-maps-animations) | Обширная библиотека анимации для использования с веб-пакетом SDK для Azure Maps. |
 | [Модуль управления географом Azure Maps](https://github.com/Azure-Samples/azure-maps-geolocation-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления, который использует API географического расположения браузера для поиска пользователя на карте. |
@@ -48,7 +48,7 @@ ms.locfileid: "92896265"
 
 **Примеры**
 
-| Имя проекта | Описание |
+| Имя проекта | Описание: |
 |-|-|
 | [Примеры кода Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в веб-приложениях. |
 | [Azure Maps примеры кода gov Cloud](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в облаке Azure для государственных организаций. |
@@ -59,10 +59,10 @@ ms.locfileid: "92896265"
 
 **Средства и ресурсы**
 
-| Имя проекта | Описание |
+| Имя проекта | Описание: |
 |-|-|
 | [Azure Maps документы](https://github.com/MicrosoftDocs/azure-docs/tree/master/articles/azure-maps) | Источник для всей документации по Azure Location Based Services. |
-| [Средства создателя Azure Maps](https://github.com/Azure-Samples/AzureMapsCreator) | Средства Python для средств создателя Azure Maps. |
+| [Средства создателя Azure Maps (Предварительная версия)](https://github.com/Azure-Samples/AzureMapsCreator) | Инструменты Python для инструментов для Azure Maps Creator (Предварительная версия). |
 
 Более длинный список проектов с открытым исходным кодом для Azure Maps, включающий проекты, созданные сообществом, можно найти [здесь](https://github.com/microsoft/Maps/blob/master/AzureMaps.md) .
 

@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 4280932787cfb2220dab1da84dca41ca0c40e302
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: cf7c5fa8563544add55a7fad5075848eb5116fe1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92485262"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901938"
 ---
 # <a name="networking-overview---azure-database-for-postgresql---flexible-server"></a>Обзор сети: база данных Azure для PostgreSQL — гибкий сервер
 
@@ -107,8 +107,9 @@ ms.locfileid: "92485262"
    * Попросите поставщика услуг Интернета (ISP) назначить диапазон IP-адресов тем клиентским компьютерам, с которых осуществляется доступ к серверу базы данных Azure для PostgreSQL, а затем добавьте диапазон IP-адресов в качестве правила брандмауэра.
    * Получите статические IP-адреса для клиентских компьютеров, а затем добавьте статические IP-адреса как правила брандмауэра.
 
+* **Правило брандмауэра недоступно для формата IPv6:** Правила брандмауэра должны иметь формат IPv4. Если указать правила брандмауэра в формате IPv6, отобразится ошибка проверки.
 
-## <a name="hostname"></a>Имя узла
+## <a name="hostname"></a>Hostname (Имя узла)
 Независимо от выбранного варианта работы в сети, при подключении к гибкому серверу рекомендуется всегда использовать полное доменное имя в качестве имени узла. IP-адрес сервера не обязательно должен быть статическим. Использование полного доменного имени поможет избежать внесения изменений в строку подключения. 
 
 Пример
@@ -121,6 +122,6 @@ ms.locfileid: "92485262"
 
 База данных Azure для PostgreSQL — гибкий сервер поддерживает только зашифрованные подключения с использованием протокола TLS. Все входящие подключения с TLS 1,0 и TLS 1,1 будут отклонены. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как создать гибкий сервер с **частным доступом (интеграция с виртуальной сетью)** в [портал Azure](how-to-manage-virtual-network-portal.md) или [в Azure CLI](how-to-manage-virtual-network-cli.md).
 * Узнайте, как создать гибкий сервер с общедоступным **(разрешенным IP-адресом)** в [портал Azure](how-to-manage-firewall-portal.md) или [Azure CLI](how-to-manage-firewall-cli.md).

@@ -11,12 +11,12 @@ ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ce068f1b43fcd6611d4abf65029cbcc5de3b7d30
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c9ee57baf63867e4dca4236d484321586cfb3b17
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311595"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862349"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Использование пакета интерпретации для объяснения моделей машинного обучения & прогнозах в Python (Предварительная версия)
 
@@ -47,7 +47,7 @@ ms.locfileid: "93311595"
     pip install azureml-interpret
     ```
 
-2. Обучение образца модели в локальной записной книжке Jupyter.
+2. Обучение образца модели в локальной Jupyter Notebook.
 
     ```python
     # load breast cancer dataset, a well-known small dataset that comes with scikit-learn
@@ -85,7 +85,7 @@ ms.locfileid: "93311595"
                                  classes=classes)
     ```
 
-    или диспетчер конфигурации служб
+    или
 
     ```python
 
@@ -111,7 +111,7 @@ ms.locfileid: "93311595"
                                classes=classes)
     ```
 
-    или диспетчер конфигурации служб
+    или
 
     ```python
     from interpret.ext.blackbox import PFIExplainer
@@ -242,7 +242,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
     ```bash
     pip install azureml-interpret
     ```
-1. Создайте сценарий обучения в локальной записной книжке Jupyter. Например, `train_explain.py`.
+1. Создание обучающего скрипта в локальной Jupyter Notebook. Например, `train_explain.py`.
 
     ```python
     from azureml.interpret import ExplanationClient
@@ -275,7 +275,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 1. Настройте Машинное обучение Azure вычислений в качестве целевого объекта вычислений и отправьте обучающий запуск. Инструкции см. в статье [Создание и управление машинное обучение Azure вычислений для кластеров](how-to-create-attach-compute-cluster.md) . Вы также можете найти [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) .
 
-1. Скачайте пояснение в локальной записной книжке Jupyter.
+1. Скачайте пояснения в локальную Jupyter Notebook.
 
     ```python
     from azureml.interpret import ExplanationClient
@@ -296,13 +296,13 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 ## <a name="visualizations"></a>Визуализации
 
-После скачивания объяснений в локальную записную книжку Jupyter можно использовать панель мониторинга визуализации для понимания и интерпретации модели.
+После скачивания объяснений в локальную Jupyter Notebook можно использовать панель мониторинга визуализации для понимания и интерпретации модели.
 
 ### <a name="understand-entire-model-behavior-global-explanation"></a>Понимание поведения модели (глобальное объяснение) 
 
 На следующих диаграммах представлено общее представление обученной модели, а также ее прогнозов и объяснений.
 
-|Графическое представления|Описание|
+|Графическое представления|Описание:|
 |----|-----------|
 |Исследование данных| Отображает общие сведения о наборе данных вместе со значениями прогноза.|
 |Глобальная важность|Выполняет статистическую обработку значений важности для отдельных точек данных, чтобы отобразить общие основные функции K (с возможностью настройки K) для модели. Помогает понять общее поведение базовой модели.|
@@ -316,7 +316,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 Можно загрузить график важности отдельных компонентов для любой точки данных, щелкнув любую из отдельных точек данных в любой из общих графиков.
 
-|Графическое представления|Описание|
+|Графическое представления|Описание:|
 |----|-----------|
 |Локальная важность|Показывает первые K (с возможностью настройки K) важные функции для отдельного прогноза. Помогает проиллюстрировать локальное поведение базовой модели на определенной точке данных.|
 |Исследование пертурбатион (анализ гипотетических)|Позволяет изменять значения компонентов выбранной точки данных и отслеживать итоговые изменения в прогнозируемом значении.|

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 05/20/2020
+ms.date: 12/08/2020
 ms.author: curtand
-ms.openlocfilehash: 795c68fc063d98bdee6ccf59dba6ee718dc92d03
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b3af7c5bd55e748b1d1f4cf8f192797187da30a
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84323031"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901802"
 ---
 # <a name="microsoft-authenticator-for-android-in-the-public-cloud-in-china"></a>Microsoft Authenticator для Android в общедоступном облаке в Китае
 
@@ -57,6 +57,7 @@ ms.locfileid: "84323031"
 Регистрация для входа с помощью телефона | Нет
 Вход с помощью предварительно зарегистрированного телефона и push-уведомлений | Нет
 Вход с помощью предварительно зарегистрированного телефона и выполняемой вручную проверки на наличие запросов на проверку подлинности | Да
+Поддержка приложения для проверки подлинности для личных учетных записей Майкрософт | нет
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/12/2018
-ms.openlocfilehash: e41fa9f9918f4f17bd89e80610ae608e83eb3402
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 1892afde42ccbcf1c28b7d6a757875772ee3ac5d
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996404"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905610"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -28,7 +28,7 @@ ms.locfileid: "91996404"
 - [Azure DevOps Projects](../devops-project/overview.md) предоставляет вам упрощенный интерфейс с подключением существующего кода и репозитория Git. Или можно выбрать один из примеров приложений, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
 - [Непрерывный мониторинг в вашем конвейере выпуска DevOps](./app/continuous-monitoring.md) позволяет вам контролировать или откатывать развертывание на основе данных мониторинга.
 - [Монитор состояния](./app/monitor-performance-live-website-now.md) позволяет вживую использовать приложение .NET в Windows с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода.
-- Если у вас есть доступ к коду для вашего приложения, включите полный мониторинг с помощью [Application Insights](./app/app-insights-overview.md), установив пакет SDK Azure Monitor Application Insights для [.NET](./learn/quick-monitor-portal.md), [Java](./app/java-get-started.md), [Node.js](./learn/nodejs-quick-start.md) или [любых других языков программирования](./app/platforms.md). Это позволяет вам задавать пользовательские события, метрики или просмотры страниц, которые имеют отношение к вашему приложению и бизнесу.
+- Если у вас есть доступ к коду приложения, включите полный мониторинг с помощью [Application Insights](./app/app-insights-overview.md) , установив пакет SDK Azure Monitor Application Insights для [.NET](./app/asp-net.md), [.net Core](./app/asp-net-core.md), [Java](./app/java-get-started.md), [Node.js](./learn/nodejs-quick-start.md)или [любых других языков программирования](./app/platforms.md). Это позволяет вам задавать пользовательские события, метрики или просмотры страниц, которые имеют отношение к вашему приложению и бизнесу.
 
 
 

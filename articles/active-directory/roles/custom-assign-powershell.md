@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cd9148f1084727141f725d76f7ae756f44e210e
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: d4695d0844ef8b707edce53a05de611c91223a46
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379525"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861958"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Назначение пользовательских ролей с областью действия ресурса с помощью PowerShell в Azure Active Directory
 
-В этой статье описывается, как создать назначение роли в масштабе всей Организации в Azure Active Directory (Azure AD). Назначение роли в масштабе всей организации предоставляет доступ в рамках всей Организации Azure AD. Сведения о создании назначения ролей с областью действия одного ресурса Azure AD см. в статье [Создание настраиваемой роли и ее назначение в области ресурсов](custom-create.md). В этой статье используется модуль [Azure Active Directory PowerShell версии 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) .
+В этой статье описывается, как создать назначение роли в масштабе всей Организации в Azure Active Directory (Azure AD). Назначение роли в масштабе всей организации предоставляет доступ в рамках всей Организации Azure AD. Сведения о создании назначения ролей с областью действия одного ресурса Azure AD см. в статье [Создание настраиваемой роли и ее назначение в области ресурсов](custom-create.md). В этой статье используется модуль [Azure Active Directory PowerShell версии 2](/powershell/module/azuread/#directory_roles) .
 
 Дополнительные сведения о ролях администратора Azure AD см. [в разделе Назначение ролей администратора в Azure Active Directory](permissions-reference.md).
 
@@ -69,7 +69,7 @@ $resourceScope = '/' + $appRegistration.objectId
 $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
 ```
 
-Чтобы назначить роль субъекту-службе, а не пользователю, используйте [командлет Get-азуреадмссервицепринЦипал](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0).
+Чтобы назначить роль субъекту-службе, а не пользователю, используйте [командлет Get-азуреадмссервицепринЦипал](/powershell/module/azuread/get-azureadserviceprincipal).
 
 ## <a name="operations-on-roledefinition"></a>Операции с определения роли
 
@@ -160,7 +160,7 @@ Get-AzureADMSRoleAssignment -Filter "roleDefinitionId eq '355aed8a-864b-4e2b-b22
 Remove-AzureADMSRoleAssignment -Id 'qiho4WOb9UKKgng_LbPV7tvKaKRCD61PkJeKMh7Y458-1'
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Поделитесь с нами на [форуме по административным ролям Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032)
 - Дополнительные сведения о ролях и назначениях ролей администратора Azure AD см. в статье [назначение ролей администратора](permissions-reference.md) .

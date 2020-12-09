@@ -4,12 +4,12 @@ description: Настройка средств аналитики произво
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 861a9f53c2f149268e06005053206a7411e842f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 970971082e684ebcb6efce07bb707ffbb20ed228
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91838948"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904182"
 ---
 # <a name="configure-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -20,11 +20,15 @@ ms.locfileid: "91838948"
 
 - Установите последнюю версию [Visual Studio 2019 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
     - ASP.NET и веб-разработка.
-    - Разработка Azure.
+    - разработка Azure;
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 - Создайте [Application Insights ресурс на основе рабочей области](create-workspace-resource.md).
+
+> [!IMPORTANT]
+> Новые регионы Azure **должны** использовать строки подключения вместо ключей инструментирования. [Строка подключения](./sdk-connection-string.md?tabs=net) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
+
 
 ## <a name="create-a-basic-aspnet-web-app"></a>Создание базового веб-приложения ASP.NET
 
@@ -356,7 +360,7 @@ ms.locfileid: "91838948"
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Добавьте искусственные транзакции, чтобы проверить доступность веб-сайта по всему миру с [мониторингом доступности](monitor-web-app-availability.md).
 * [Настройка выборки](sampling.md) для уменьшения трафика телеметрии и затрат на хранение данных.

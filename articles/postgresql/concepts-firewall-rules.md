@@ -6,12 +6,12 @@ ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: e677aef7a90e7372c5af4bfa48c6160c439b3ee8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 08c0d05ac10d9e61497d36793740c8e827fbeca1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707971"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903689"
 ---
 # <a name="firewall-rules-in-azure-database-for-postgresql---single-server"></a>Правила брандмауэра в базе данных Azure для PostgreSQL — один сервер
 Брандмауэр сервера базы данных Azure для PostgreSQL предотвращает доступ к серверу базы данных, пока вы не укажете, какие компьютеры имеют разрешение. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -40,7 +40,7 @@ ms.locfileid: "91707971"
 > Параметр **Разрешить доступ к службам Azure** позволяет настроить брандмауэр для разрешения всех подключений из Azure, включая подключения из подписок других клиентов. При выборе этого параметра убедитесь, что используемое имя для входа и разрешения пользователя предоставляют доступ только авторизованным пользователям.
 > 
 
-:::image type="content" source="media/concepts-firewall-rules/allow-azure-services.png" alt-text="Пример рабочего потока брандмауэра":::
+:::image type="content" source="media/concepts-firewall-rules/allow-azure-services.png" alt-text="Настройка разрешения доступа к службам Azure на портале":::
 
 ### <a name="connecting-from-a-vnet"></a>Подключение из виртуальной сети
 Чтобы безопасно подключиться к серверу базы данных Azure для PostgreSQL из виртуальной сети, рассмотрите возможность использования [конечных точек службы виртуальной сети](./concepts-data-access-and-security-vnet.md). 
@@ -71,7 +71,10 @@ ms.locfileid: "91707971"
 
    Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+* **Правило брандмауэра недоступно для формата IPv6:** Правила брандмауэра должны иметь формат IPv4. Если указать правила брандмауэра в формате IPv6, отобразится ошибка проверки.
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md)
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI](howto-manage-firewall-using-cli.md)
 * [Конечные точки службы виртуальной сети в базе данных Azure для PostgreSQL](./concepts-data-access-and-security-vnet.md)

@@ -4,12 +4,12 @@ description: Не отображаются данные в Azure Application Ins
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: c3f0350152ece32829291012d583be87a90227cf
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 26ba586715c7b76ff8972c6574c3c29b837713a1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96748946"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904471"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET/.NET Core не отображаются данные
 
@@ -39,6 +39,10 @@ ms.locfileid: "96748946"
 
 * См. раздел [Устранение неполадок](./monitor-performance-live-website-now.md#troubleshoot).
 
+> [!IMPORTANT]
+> Новые регионы Azure **должны** использовать строки подключения вместо ключей инструментирования. [Строка подключения](./sdk-connection-string.md?tabs=net) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
+
+
 ## <a name="filenotfoundexception-could-not-load-file-or-assembly-microsoftaspnet-telemetrycorrelation"></a>FileNotFoundException: не удалось загрузить файл или сборку "Microsoft. AspNet Телеметрикоррелатион
 
 Дополнительные сведения об этой ошибке см. в [номере GitHub 1610] ( https://github.com/microsoft/ApplicationInsights-dotnet/issues/1610) .
@@ -64,7 +68,7 @@ ms.locfileid: "96748946"
     </TelemetryModules>
     ```
 
-***Неправильное обновление может привести к непредвиденным исключениям или телеметрии, которые не будут собираться.** _
+**_Неправильное обновление может привести к непредвиденным исключениям или телеметрии, которые не будут собираться._* _
 
 
 ## <a name="no-add-application-insights-option-in-visual-studio"></a><a name="q01"></a>Параметр "Добавление Application Insights" в Visual Studio не отображается

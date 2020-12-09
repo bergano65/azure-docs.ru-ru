@@ -1,19 +1,19 @@
 ---
-title: Поддержка локализации | Microsoft Azure Maps
+title: Поддержка локализации с помощью карт Microsoft Azure
 description: Узнайте, какие регионы Azure Maps поддерживаются службами, такими как карты, поиск, маршрутизация, погода и инциденты трафика. Узнайте, как настроить параметр View.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 11/20/2019
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: a6664b5a2c0c6b4de2435ee5c8bb29f63560c342
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50e5d0721eb14d1fcdfad26aaf081bfa370e954e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88037700"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904522"
 ---
 # <a name="localization-support-in-azure-maps"></a>Поддержка локализации в Azure Maps
 
@@ -22,7 +22,7 @@ ms.locfileid: "88037700"
 
 ## <a name="azure-maps-supported-languages"></a>Поддерживаемые языки в службе "Карты Azure"
 
-Службы Azure Maps локализованы на разные языки. В таблице ниже содержатся записи коды языков для каждой службы.  
+Службы Azure Maps локализованы на разные языки. В таблице ниже содержатся записи коды языков для каждой службы.  
   
 
 | ID         | Имя                   |  Maps | Поиск | Маршрутизация | Weather | Инциденты трафика | Элементы управления картой JS |
@@ -129,10 +129,10 @@ ms.locfileid: "88037700"
  * Get Search Address Reverse
  * Get Search Address Reverse Cross Street
  * Post Search Inside Geometry
- * Post Search Address Batch Preview
- * Post Search Address Reverse Batch Preview
+ * Пакет разноски адреса поиска
+ * Обратный пакет для обратного поиска адреса
  * Post Search Along Route
- * Post Search Fuzzy Batch Preview
+ * Нечеткий пакет после поиска
 
  
 ### <a name="sdks"></a>Пакеты SDK

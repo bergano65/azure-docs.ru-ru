@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2eb656e46ce5e26fca5ae5c094f9b8bb85819caa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d33b419e0f24201d661ad0f5f1373022ea6e9e9f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89275782"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861754"
 ---
 # <a name="azure-ad-connect-sync-handling-largeobject-errors-caused-by-usercertificate-attribute"></a>Синхронизация Azure AD Connect: обработка ошибок LargeObject, вызванных атрибутом userCertificate
 
@@ -49,7 +49,7 @@ ms.locfileid: "89275782"
  * Сократите количество значений сертификата в локальном объекте AD (15 или меньше), удалив значения, которые больше не используются в вашей организации. Это подходящий вариант, если увеличение числа атрибутов произошло из-за сертификатов с истекшим сроком действия или неиспользуемых сертификатов. Чтобы найти, архивировать и удалить сертификаты с истекшим сроком действия в локальной версии AD, вы можете использовать [скрипт PowerShell отсюда](https://gallery.technet.microsoft.com/Remove-Expired-Certificates-0517e34f). Прежде чем удалять сертификаты, мы рекомендуем свериться с администраторами инфраструктуры открытых ключей в организации.
 
  * Настройте Azure AD Connect таким образом, чтобы атрибут userCertificate не экспортировался в Azure AD. В общем мы не рекомендуем этот вариант, так как атрибут может использоваться в Microsoft Online Services для реализации определенных сценариев, В частности:
-    * Атрибут userCertificate объекта User используется в клиентах Exchange Online и Outlook для подписывания и шифрования сообщений. Дополнительные сведения об этой функции см. в статье [S/MIME для подписи и шифрования сообщений](/microsoft-365/security/office-365-security/s-mime-for-message-signing-and-encryption?view=o365-worldwide).
+    * Атрибут userCertificate объекта User используется в клиентах Exchange Online и Outlook для подписывания и шифрования сообщений. Дополнительные сведения об этой функции см. в статье [S/MIME для подписи и шифрования сообщений](/microsoft-365/security/office-365-security/s-mime-for-message-signing-and-encryption).
 
     * Атрибут userCertificate объекта Computer используется в Azure AD для подключения локальных, присоединенных к домену устройств с Windows 10 к Azure AD. Дополнительные сведения об этой функции см. в статье [Подключение присоединенных к домену устройств к Azure AD для работы в Windows 10](../devices/hybrid-azuread-join-plan.md).
 
@@ -92,7 +92,7 @@ ms.locfileid: "89275782"
 
     | attribute | Значение |
     | --- | --- |
-    | Direction |**Исходящий трафик** |
+    | Направление |**Исходящий трафик** |
     | Тип объекта метавселенной |**Person** |
     | Соединитель |*Имя вашего клиента Azure AD* |
     | Тип объекта соединителя |**user** |
@@ -113,7 +113,7 @@ ms.locfileid: "89275782"
 ### <a name="step-3-create-the-outbound-sync-rule-required"></a>Шаг 3. Создайте требуемое исходящее правило синхронизации
 Для нового и имеющегося правила синхронизации нужно использовать один и тот же **фильтр области**, но **приоритет** нового правила синхронизации должен быть выше, чем приоритет имеющегося. Таким образом, новое и имеющееся правила синхронизации будут применяться к одному набору объектов. При этом новое правило будет переопределять имеющееся для атрибута userCertificate. Чтобы создать правило синхронизации, сделайте следующее:
 1. В редакторе правил синхронизации нажмите кнопку **Add new rule** (Добавить новое правило).
-2. На **вкладке Описание**укажите следующую конфигурацию.
+2. На **вкладке Описание** укажите следующую конфигурацию.
 
     | attribute | Значение | Сведения |
     | --- | --- | --- |

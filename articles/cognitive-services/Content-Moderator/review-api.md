@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
-ms.openlocfilehash: e2d87d4322ac6b91a19a4775c23ceec75d528030
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 43c39c40af6e02861211a8666fefa57c34072f32
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325338"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905202"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Обзоры, рабочие процессы и задания для контроля содержимого
 
@@ -42,7 +42,7 @@ Content Moderator сочетает ролевую поддержку с возм
 > [!div class="mx-imgBorder"]
 > ![Отображается панель инструментов поиска. В нем есть различные поля со списком для ввода условий поиска, например состояние проверки и теги.](./Review-Tool-user-Guide/images/review-search.png)
 
-Дополнительные сведения о том, как это сделать, см. в разделе [руководство по ознакомлению с руководством](./review-tool-user-guide/review-moderated-images.md) по [REST API](./try-review-api-review.md) .
+Дополнительные сведения о том, как это сделать, см. в разделе [руководство по просмотру инструментов](./review-tool-user-guide/review-moderated-images.md) , чтобы приступить [к созданию](./try-review-api-review.md) рецензий.
 
 ## <a name="workflows"></a>Рабочие процессы
 
@@ -80,13 +80,13 @@ Content Moderator сочетает ролевую поддержку с возм
 }
 ```
 
-[Чтобы](./review-tool-user-guide/workflows.md) приступить к созданию и использованию рабочих процессов, см. руководство по [REST API](./try-review-api-workflow.md) , чтобы узнать, как это сделать программным способом.
+Дополнительные сведения о том, как это сделать, см. в разделе [руководство по просмотру инструментов](./review-tool-user-guide/workflows.md) , чтобы приступить к созданию и использованию рабочих процессов, или см. [руководство по консоли API](./try-review-api-workflow.md) .
 
 ## <a name="jobs"></a>Задания
 
 Задание по созадаче служит разновидностью оболочки для функций контроля содержимого, рабочих процессов и проверок. Задание сканирует содержимое с помощью Content Moderator API контроля изображений или API-интерфейса контроля текста, а затем проверяет его на назначенный рабочий процесс. На основе результатов рабочего процесса он может или не может создать проверку содержимого в [средстве проверки](./review-tool-user-guide/human-in-the-loop.md). Хотя проверки и рабочие процессы можно создавать и настраивать с помощью соответствующих API-интерфейсов, API задания позволяет получить подробный отчет по всему процессу (который можно отправить в указанную конечную точку обратного вызова).
 
-Чтобы приступить к работе с заданиями, ознакомьтесь с [руководством по REST API](./try-review-api-job.md) .
+Чтобы приступить к работе с заданиями, см. [руководство по консоли API](./try-review-api-job.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

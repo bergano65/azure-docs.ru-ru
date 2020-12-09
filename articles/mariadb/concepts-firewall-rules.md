@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 7/17/2020
-ms.openlocfilehash: f8233e9974964e5d760d6b0b388278ff4eee7b34
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 452ef4787812dbdf88eb541cf5a164f2888dddcc
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534489"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905440"
 ---
 # <a name="azure-database-for-mariadb-server-firewall-rules"></a>Правила брандмауэра сервера Базы данных Azure для MariaDB
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -72,6 +72,7 @@ ms.locfileid: "94534489"
 
    Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
 
+* **Правило брандмауэра недоступно для формата IPv6:** Правила брандмауэра должны иметь формат IPv4. Если указать правила брандмауэра в формате IPv6, отобразится ошибка проверки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)

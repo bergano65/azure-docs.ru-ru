@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/04/2020
-ms.openlocfilehash: 9408aaa8fd5b677f012392ef4bd51c8826650eee
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 5b8dd911952a63ba8775f27a6128ff61e849e823
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93395161"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861431"
 ---
 # <a name="enable-and-disable-data-retention-policies"></a>Включение и отключение политик хранения данных
 
@@ -88,7 +88,7 @@ where is_data_deletion_filter_column =1
 and object_id = object_id(N'dbo.data_retention_table', N'U')
 ```
 
-## <a name="corelating-db-and-table-data-retention-settings"></a>Параметры хранения сосвязанных баз данных и таблиц
+## <a name="correlating-db-and-table-data-retention-settings"></a>Сопоставление параметров хранения баз данных и таблиц
 
 Параметр хранения данных в базе данных и таблице используется совместно, чтобы определить, будет ли выполняться автоматическая очистка для устаревших строк в таблицах или нет. 
 
@@ -116,6 +116,6 @@ Set (DATA_DELETION = OFF)
 ALTER DATABASE <DatabaseName> SET DATA_RETENTION  OFF;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Хранение данных и автоматическая очистка данных](data-retention-overview.md)
 - [Управление историческими данными с помощью политики хранения](data-retention-cleanup.md)

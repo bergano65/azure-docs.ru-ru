@@ -15,12 +15,12 @@ ms.date: 01/15/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9470e9af38fdd814f5059538656e6a3dbb8e3a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e015f7937db6788aa4473a8a04434121299901e9
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279318"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861788"
 ---
 # <a name="azure-ad-connect-sync-understanding-users-groups-and-contacts"></a>Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах
 Существует несколько разных причин, по которым нужно иметь несколько лесов Active Directory. Кроме того, существует несколько разных топологий развертывания. Распространенные модели включают развертывание ресурсов учетной записи и лесов с синхронизированным глобальным списком адресов после слияния и поглощения. Но даже при наличии чистых моделей гибридные модели не менее часто используются. Конфигурация по умолчанию в службе синхронизации Azure AD Connect не предполагает какой-то конкретной модели. Тем не менее, в зависимости от выбора сопоставления пользователей в руководстве по установке, можно наблюдать разное поведение.
@@ -41,7 +41,7 @@ ms.locfileid: "89279318"
 
 * Azure AD Connect не поддерживает синхронизацию [основных групп](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771489(v=ws.11)) в Azure AD;
 
-* Azure AD Connect не поддерживает синхронизацию [динамических групп рассылки](/Exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups?view=exchserver-2019) в Azure AD.
+* Azure AD Connect не поддерживает синхронизацию [динамических групп рассылки](/Exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups) в Azure AD.
 
 * Чтобы синхронизировать группу Active Directory в Azure AD как группу с поддержкой электронной почты, выполните следующие действия:
 

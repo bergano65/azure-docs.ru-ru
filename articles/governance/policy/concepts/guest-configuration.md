@@ -3,12 +3,12 @@ title: Узнайте больше про аудит содержимого ви
 description: Узнайте, как служба "Политика Azure" использует гостевую конфигурацию для аудита параметров виртуальной машины.
 ms.date: 10/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: e941938fce09e8729856322a5b6572b46a3714be
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: a956d5e8dcfa82f85020928e1427a08ac8fe7a69
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075490"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906256"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -62,7 +62,7 @@ ms.locfileid: "92075490"
 
 |Издатель|Имя|Версии|
 |-|-|-|
-|Canonical|Сервер Ubuntu|Версия 14.04 и позднее|
+|Canonical|Сервер Ubuntu|14,04-18,04|
 |Credativ|Debian|8 и более поздних версий|
 |Microsoft|Windows Server|2012 и более поздних версии|
 |Microsoft|Клиент Windows|Windows 10|

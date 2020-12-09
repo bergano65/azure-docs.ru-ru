@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 4efd9fd814165755d27de1d269b6319890f7190d
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: eb178e38001e54ac39a269c8b8cdef12c77d74cf
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541612"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901955"
 ---
 # <a name="azure-database-for-mysql-server-firewall-rules"></a>Правила брандмауэра сервера базы данных Azure для MySQL
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -69,6 +69,8 @@ ms.locfileid: "94541612"
 * **Не удается подключиться из ресурса Azure с разрешенным IP-адресом:** Проверьте, включена ли конечная точка службы **Microsoft. SQL** для подсети, из которой вы подключаетесь. Если **Microsoft. SQL** включен, то это означает, что для этой подсети нужно использовать только [правила конечной точки службы VNet](concepts-data-access-and-security-vnet.md) .
 
    Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
+
+* **Правило брандмауэра недоступно для формата IPv6:** Правила брандмауэра должны иметь формат IPv4. Если указать правила брандмауэра в формате IPv6, отобразится ошибка проверки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

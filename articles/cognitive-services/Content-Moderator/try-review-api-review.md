@@ -10,18 +10,18 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: pafarley
-ms.openlocfilehash: a9726e41a84926d00d48b51e31f534a3d8c2fe0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 479c7c455f07d098edd327196803e85df24dfb6d
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "72757137"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905156"
 ---
-# <a name="create-human-reviews-rest"></a>Создание пользовательских рецензий (остальное)
+# <a name="create-human-reviews-api-console"></a>Создание пользовательских рецензий (консоль API)
 
 [Проверяет](./review-api.md#reviews) хранение и отображение содержимого для оценки человеческим модератором. Когда пользователь завершает проверку, результаты отправляются в указанную конечную точку обратного вызова. В этом руководство вы узнаете, как настроить рецензии с помощью API-интерфейсов API-интерфейса RESTFUL через консоль. Когда вы понимаете структуру интерфейсов API, вы можете легко перенести эти вызовы на любую платформу, совместимую с остальными частями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
@@ -33,7 +33,7 @@ ms.locfileid: "72757137"
 
 ### <a name="enter-rest-call-parameters"></a>Введите параметры вызова RESTFUL
 
-Введите значения для **теамнаме**и **OCP-Apim-Subscription-Key**:
+Введите значения для **теамнаме** и **OCP-Apim-Subscription-Key**:
 
 - **теамнаме**: идентификатор команды, созданный при настройке учетной записи [средства проверки](https://contentmoderator.cognitive.microsoft.com/) (находится в поле **идентификатор** на экране учетных данных средства проверки).
 - **OCP-Apim-Subscription-Key**— ключ Content Moderator. Его можно найти на вкладке **Параметры** [средства проверки](https://contentmoderator.cognitive.microsoft.com).
@@ -135,7 +135,7 @@ ms.locfileid: "72757137"
 
 ### <a name="examine-the-new-review"></a>Проверка новой проверки
 
-В [средстве проверки](https://contentmoderator.cognitive.microsoft.com)выберите **Проверка**  >  **Image** / **текста**изображения / **видео** (в зависимости от используемого содержимого). Содержимое, которое вы перегрузили, должно отобразиться для человеческого анализа.
+В [средстве проверки](https://contentmoderator.cognitive.microsoft.com)выберите **Проверка**  >  **Image** / **текста** изображения / **видео** (в зависимости от используемого содержимого). Содержимое, которое вы перегрузили, должно отобразиться для человеческого анализа.
 
 ![Изображение футбольного мяча в инструменте проверки](images/test-drive-review-5.PNG)
 

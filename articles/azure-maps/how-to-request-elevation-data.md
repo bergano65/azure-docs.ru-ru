@@ -1,26 +1,30 @@
 ---
-title: Запрос данных о повышении прав с помощью службы повышения Azure Maps
-description: Узнайте, как запросить повышение прав с помощью службы повышения Azure Maps.
+title: Запрос данных о повышении прав с помощью службы повышения прав Azure Maps (Предварительная версия)
+description: Узнайте, как запросить повышение прав с помощью службы повышения прав Azure Maps (Предварительная версия).
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 12/02/2020
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 9937d72b44eb33df8027eddb9a9f500a372c9037
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: af3653d9e4509b1aa31a377dfc22cb6b6b2ff34e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554266"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906069"
 ---
-# <a name="request-elevation-data-using-the-azure-maps-elevation-service"></a>Запрос данных о повышении прав с помощью службы повышения Azure Maps
+# <a name="request-elevation-data-using-the-azure-maps-elevation-service-preview"></a>Запрос данных о повышении прав с помощью службы повышения прав Azure Maps (Предварительная версия)
 
-[Служба повышения](https://docs.microsoft.com/rest/api/maps/elevation) Azure Maps предоставляет API-интерфейсы для запроса данных о повышении уровня расположения на земле. Можно запросить выборку данных повышения прав по путям, в определенном ограничивающем прямоугольнике или по определенным координатам. Кроме того, можно использовать [API плитки прорисовки v2](https://docs.microsoft.com/rest/api/maps/renderv2) , чтобы получить данные повышения прав в формате мозаики. Плитки доставляются в виде растрового формата Жеотифф. В этой статье показано, как использовать службу повышения уровня Azure Maps и API плитки для получения данных о повышении прав. Данные повышения прав могут быть запрошены в форматах геоjson и Жеотифф.
+> [!IMPORTANT]
+> Служба повышения Azure Maps в настоящее время доступна в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные требования
+[Служба повышения](https://docs.microsoft.com/rest/api/maps/elevation) Azure Maps предоставляет интерфейсы API для запроса данных о повышении прав в любом месте на поверхности земли. Можно запросить выборку данных повышения прав по путям, в определенном ограничивающем прямоугольнике или по определенным координатам. Кроме того, можно использовать [API плитки прорисовки v2](https://docs.microsoft.com/rest/api/maps/renderv2) , чтобы получить данные повышения прав в формате мозаики. Плитки доставляются в виде растрового формата Жеотифф. В этой статье показано, как использовать службу повышения уровня Azure Maps и API плитки для получения данных о повышении прав. Данные повышения прав могут быть запрошены в форматах геоjson и Жеотифф.
+
+## <a name="prerequisites"></a>Предварительные условия
 
 1. [Создание учетной записи Azure Maps в ценовой категории S1](quick-demo-map-app.md#create-an-azure-maps-account)
 2. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки.
@@ -50,7 +54,7 @@ ms.locfileid: "96554266"
 
 ## <a name="request-elevation-data-in-geojson-format"></a>Запрос данных о повышении прав в формате геоjson
 
-Используйте API-интерфейсы службы повышения прав для запроса данных о повышении прав в формате геоjson. В этом разделе будет показан каждый из трех интерфейсов API:
+Используйте API-интерфейсы службы повышения прав (Предварительная версия) для запроса данных о повышении прав в формате геоjson. В этом разделе будет показан каждый из трех интерфейсов API:
 
 * [Получение данных для точек](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
 * [Отправка данных для точек](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates)
@@ -443,7 +447,7 @@ ms.locfileid: "96554266"
     }
     ```
 
-## <a name="samples-use-elevation-service-apis-in-azure-maps-control"></a>Примеры: использование API-интерфейсов службы повышения прав в элементе управления Azure Maps
+## <a name="samples-use-elevation-service-preview-apis-in-azure-maps-control"></a>Примеры: использование API-интерфейсов службы повышения прав (Предварительная версия) в элементе управления Azure Maps
 
 ### <a name="get-elevation-data-by-coordinate-position"></a>Получение данных повышения прав по координатам
 
@@ -476,18 +480,18 @@ ms.locfileid: "96554266"
 </iframe>
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об API-интерфейсах повышения Azure Maps см. в следующих статьях:
-
-> [!div class="nextstepaction"]
-> [Повышение прав — получение данных для длинных координат lat](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
+Дополнительные сведения об API повышения уровня Azure Maps (Предварительная версия) см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Повышение прав — получение данных для ограничивающего прямоугольника](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
+> [Повышение прав (Предварительная версия) — получение данных для длинных координат lat](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
 
 > [!div class="nextstepaction"]
-> [Повышение прав — получение данных для ломаной линии](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
+> [Повышение прав (Предварительная версия) — получение данных для ограничивающего прямоугольника](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
+
+> [!div class="nextstepaction"]
+> [Повышение прав (Предварительная версия) — получение данных для ломаной линии](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
 
 > [!div class="nextstepaction"]
 > [Прорисовка v2 — получение плитки карты](https://docs.microsoft.com/rest/api/maps/renderv2)

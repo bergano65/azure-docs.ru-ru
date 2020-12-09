@@ -1,48 +1,86 @@
 ---
-title: Поиск и использование образов Azure Marketplace
-description: Вы можете использовать Azure PowerShell для определения издателя, предложения, номера SKU и версии для образов виртуальных машин из Marketplace.
+title: Поиск и использование образов и планов Azure Marketplace
+description: Используйте Azure PowerShell, чтобы найти и использовать сведения о издателе, предложении, номере SKU, версии и плане для образов виртуальных машин Marketplace.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: how-to
 ms.workload: infrastructure
-ms.date: 01/25/2019
+ms.date: 12/07/2020
 ms.author: cynthn
-ms.openlocfilehash: 96b5e3770a3f5e08237d61eab05cfeafbc72a5db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45e6b157dba5ef7410d8a5c0223fd3ecb52f39d0
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87288344"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906273"
 ---
-# <a name="find-and-use-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>Поиск и использование образов виртуальных машин в Azure Marketplace с помощью Azure PowerShell
+# <a name="find-and-use-azure-marketplace-vm-images-with-azure-powershell"></a>Поиск и использование образов виртуальных машин Azure Marketplace с помощью Azure PowerShell     
 
-В этой статье описывается, как с помощью Azure PowerShell находить образы виртуальных машин в Azure Marketplace. После этого можно указать образ Marketplace при создании виртуальной машины.
+В этой статье описывается, как с помощью Azure PowerShell находить образы виртуальных машин в Azure Marketplace. Затем можно указать образ Marketplace и сведения о плане при создании виртуальной машины.
 
 Вы также можете просмотреть доступные образы и предложения в онлайн-магазине [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/), на [портале Azure](https://portal.azure.com) или с помощью [Azure CLI](../linux/cli-ps-findimage.md). 
 
 
 [!INCLUDE [virtual-machines-common-image-terms](../../../includes/virtual-machines-common-image-terms.md)]
 
-## <a name="table-of-commonly-used-windows-images"></a>Таблица часто используемых образов Windows
 
-В этой таблице показано подмножество доступных номеров SKU для указанных издателей и предложений.
+## <a name="create-a-vm-from-vhd-with-plan-information"></a>Создание виртуальной машины из виртуального жесткого диска с использованием сведений о плане
 
-| Издатель | ПРЕДЛОЖЕНИЕ | Sku |
-|:--- |:--- |:--- |
-| MicrosoftWindowsServer |WindowsServer |2019-Datacenter |
-| MicrosoftWindowsServer |WindowsServer |2019-Datacenter-Core |
-| MicrosoftWindowsServer |WindowsServer |2019-Datacenter-with-Containers |
-| MicrosoftWindowsServer |WindowsServer |2016-Datacenter |
-| MicrosoftWindowsServer |WindowsServer |2016-Datacenter-Server-Core |
-| MicrosoftWindowsServer |WindowsServer |2016-Datacenter-with-Containers |
-| MicrosoftWindowsServer |WindowsServer |2012-R2-Datacenter |
-| MicrosoftWindowsServer |WindowsServer |2012-Datacenter |
-| MicrosoftSharePoint |MicrosoftSharePointServer |2019 |
-| MicrosoftSQLServer |SQL2019 WS2016 |Enterprise |
-| MicrosoftRServer |RServer-WS2016 |Enterprise |
+При наличии существующего виртуального жесткого диска, созданного с помощью образа Azure Marketplace, может потребоваться предоставить сведения о плане покупки при создании новой виртуальной машины из этого виртуального жесткого диска.
 
-## <a name="navigate-the-images"></a>Переход к образам
+Если у вас по-прежнему есть исходная виртуальная машина или другая виртуальная машина, созданная из того же образа, можно получить имя плана, издателя и сведения о продукте с помощью команды Get-AzVM. Этот пример получает виртуальную машину с именем *myVM* в группе ресурсов *myResourceGroup* , а затем отображает сведения о плане покупки.
+
+```azurepowershell-interactive
+$vm = Get-azvm `
+   -ResourceGroupName myResourceGroup `
+   -Name myVM
+$vm.Plan
+```
+
+Если вы не получили сведения о плане до удаления исходной виртуальной машины, можно [Отправить запрос в службу поддержки](https://ms.portal.azure.com/#create/Microsoft.Support). Им потребуется имя виртуальной машины, идентификатор подписки и метка времени операции удаления.
+
+Сведения о создании виртуальной машины с помощью виртуального жесткого диска см. в статье [Создание виртуальной машины на основе специализированного виртуального жесткого диска](create-vm-specialized.md) и Добавление сведений о планах в конфигурацию виртуальной машины с помощью командлета [Set-азвмплан](/powershell/module/az.compute/set-azvmplan) , аналогичного следующему:
+
+```azurepowershell-interactive
+$vmConfig = Set-AzVMPlan `
+   -VM $vmConfig `
+   -Publisher "publisherName" `
+   -Product "productName" `
+   -Name "planName"
+```
+
+## <a name="create-a-new-vm-from-a-marketplace-image"></a>Создание новой виртуальной машины из образа Marketplace
+
+Если у вас уже есть сведения о том, какой образ вы хотите использовать, эту информацию можно передать в командлет [Set-азвмсаурцеимаже](/powershell/module/az.compute/set-azvmsourceimage) , чтобы добавить сведения об образе в конфигурацию виртуальной машины. В следующих разделах содержатся сведения о поиске и перечислении образов, доступных в Marketplace.
+
+Для некоторых платных образов также требуется предоставить сведения о плане покупки с помощью команды [Set-азвмплан](/powershell/module/az.compute/set-azvmplan). 
+
+```powershell
+...
+
+$vmConfig = New-AzVMConfig -VMName "myVM" -VMSize Standard_D1
+
+# Set the Marketplace image
+$offerName = "windows-data-science-vm"
+$skuName = "windows2016"
+$version = "19.01.14"
+$vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version $version
+
+# Set the Marketplace plan information, if needed
+$publisherName = "microsoft-ads"
+$productName = "windows-data-science-vm"
+$planName = "windows2016"
+$vmConfig = Set-AzVMPlan -VM $vmConfig -Publisher $publisherName -Product $productName -Name $planName
+
+...
+```
+
+Затем вы передадите конфигурацию виртуальной машины вместе с другими объектами конфигурации в `New-AzVM` командлет. Подробный пример использования конфигурации виртуальной машины с помощью PowerShell см. в этом [сценарии](https://github.com/Azure/azure-docs-powershell-samples/blob/master/virtual-machine/create-vm-detailed/create-windows-vm-detailed.ps1).
+
+Если появится сообщение о принятии условий образа, см. раздел [примите условия](#accept-the-terms) , приведенные далее в этой статье.
+
+## <a name="list-images"></a>Вывод списка образов
 
 Один из способов поиска образа в расположении основан на запуске командлетов [Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), [Get-AzVMImageOffer](/powershell/module/az.compute/get-azvmimageoffer) и [Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku) по порядку.
 
@@ -276,41 +314,7 @@ Accepted          : True
 Signdate          : 2/23/2018 7:49:31 PM
 ```
 
-### <a name="deploy-using-purchase-plan-parameters"></a>Развертывание с помощью параметров плана приобретения
 
-После принятия условий для образа виртуальную машину можно развернуть в подписке. В следующем фрагменте показано, как использовать командлет [Set-AzVMPlan](/powershell/module/az.compute/set-azvmplan), чтобы задать сведения о плане Marketplace для объекта виртуальной машины. Для завершения сценария по созданию параметров сети для виртуальной машины и завершения развертывания см. статью [Примеры PowerShell для виртуальной машины Azure](powershell-samples.md).
-
-```powershell
-...
-
-$vmConfig = New-AzVMConfig -VMName "myVM" -VMSize Standard_D1
-
-# Set the Marketplace plan information
-
-$publisherName = "microsoft-ads"
-
-$productName = "windows-data-science-vm"
-
-$planName = "windows2016"
-
-$vmConfig = Set-AzVMPlan -VM $vmConfig -Publisher $publisherName -Product $productName -Name $planName
-
-$cred=Get-Credential
-
-$vmConfig = Set-AzVMOperatingSystem -Windows -VM $vmConfig -ComputerName "myVM" -Credential $cred
-
-# Set the Marketplace image
-
-$offerName = "windows-data-science-vm"
-
-$skuName = "windows2016"
-
-$version = "19.01.14"
-
-$vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version $version
-...
-```
-Затем нужно передать конфигурацию виртуальной машины (вместе с объектами конфигурации сети) командлету `New-AzVM`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
