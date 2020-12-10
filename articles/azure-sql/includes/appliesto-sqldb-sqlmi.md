@@ -6,5 +6,5 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 10/23/2020
 ms.locfileid: "90533152"
 ---
-<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::База данных SQL Azure :::image type="icon" source="../media/applies-to/yes.png" border="false":::Управляемый экземпляр SQL Azure </Token> 
+<Token>**ОБЛАСТЬ ПРИМЕНЕНИЯ:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::База данных SQL Azure :::image type="icon" source="../media/applies-to/yes.png" border="false":::Управляемый экземпляр SQL Azure</Token> 
 

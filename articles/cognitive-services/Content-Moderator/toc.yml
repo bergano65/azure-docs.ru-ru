@@ -12,7 +12,7 @@
   items:
     - name: Пробная версия Content Moderator в Интернете
       href: quick-start.md
-    - name: Использование клиентской библиотеки
+    - name: "Использование клиентской библиотеки или REST\_API"
       href: client-libraries.md
 - name: Учебники
   items:
@@ -20,8 +20,6 @@
       href: ecommerce-retail-catalog-moderation.md
     - name: Модерация содержимого Facebook
       href: facebook-post-moderation.md
-    - name: Модерация видео и расшифровок речи
-      href: video-transcript-moderation-review-tutorial-dotnet.md
 - name: Основные понятия
   items:
     - name: Модерация изображений
@@ -38,7 +36,7 @@
   items:
     - name: Модерация содержимого
       items:
-        - name: REST API
+        - name: Консоль API
           items:
             - name: Изображения (консоль API)
               href: try-image-api.md
@@ -60,7 +58,7 @@
       items:
         - name: Средство проверки (браузер)
           href: Review-Tool-User-Guide/Review-Moderated-Images.md
-        - name: REST API
+        - name: Консоль API
           href: try-review-api-review.md
         - name: Проверки видео (.NET)
           href: video-reviews-quickstart-dotnet.md
@@ -70,11 +68,11 @@
       items:
         - name: Средство проверки (браузер)
           href: Review-Tool-User-Guide/Workflows.md
-        - name: REST API
+        - name: Консоль API
           href: try-review-api-workflow.md
     - name: Определение и использование заданий
       items:
-        - name: REST API
+        - name: Консоль API
           href: try-review-api-job.md
         - name: Пакет SDK для .NET
           href: moderation-jobs-quickstart-dotnet.md
