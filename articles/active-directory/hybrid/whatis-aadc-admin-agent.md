@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: da4e1cfc68dff4ad2bc0552c6d35fe1230779306
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "91312964"
 ---
 # <a name="what-is-the-azure-ad-connect-admin-agent"></a>Общие сведения об агенте администратора Azure AD Connect 
@@ -39,7 +39,7 @@ ms.locfileid: "91312964"
 Двоичные файлы агента администрирования Azure AD Connect размещаются на сервере Azure AD Connect. Чтобы установить этот агент, сделайте следующее:
 
 1.    Откройте PowerShell с правами администратора.
-2.    Перейдите к папке, в которой расположено приложение: cd C:\Program Files\Microsoft Azure Active Directory Connect\Tools\
+2.    Перейдите к папке, в которой расположено приложение: cd C:\Program Files\Microsoft Azure Active Directory Connect\Tools
 3.    Запустите ConfigureAdminAgent.ps1.
 
 В ответ на приглашение введите учетные данные глобального администратора AAD. Это должны быть те же учетные данные, которые вы указали во время установки Azure AD Connect.
