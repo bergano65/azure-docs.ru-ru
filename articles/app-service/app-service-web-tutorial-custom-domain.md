@@ -7,12 +7,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 08/25/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: a74a3b7542a8d683e9bbf16f99c9b2646d95e00d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b45e1fbaf912cc045ba51a79db434baecbabdf43
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95986553"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608271"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
@@ -206,7 +206,7 @@ ms.locfileid: "95986553"
 > | Тип записи | Узел | Значение |
 > | - | - | - |
 > | Объект | `www` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
-> | TXT | `asuid.www` | `<app-name>.azurewebsites.net` |
+> | TXT | `asuid.www` | [Идентификатор проверки, полученный ранее](#get-a-domain-verification-id) |
 >
 
 После добавления этих записей страница управления записями DNS выглядит так:

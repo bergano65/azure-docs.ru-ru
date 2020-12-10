@@ -1,18 +1,17 @@
 ---
 title: Миграция виртуальных машин VMware в Azure (без агента) — PowerShell
 description: Узнайте, как выполнить миграцию виртуальных машин VMware с помощью службы "Миграция Azure" без агента, используя PowerShell.
-services: ''
-author: rahugup
+author: rahulg1190
+ms.author: rahugup
 manager: bsiva
 ms.topic: tutorial
 ms.date: 10/1/2020
-ms.author: rahugup
-ms.openlocfilehash: 3cd8d29a498a6a00fa8fff679afc969b339934b1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 187e17bcf385ba6b3c17566fc00e5ee77cf009fe
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494347"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752487"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless---powershell"></a>Миграция виртуальных машин VMware в Azure (без агента) — PowerShell
 

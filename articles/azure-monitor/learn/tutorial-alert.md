@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/10/2019
 ms.custom: mvc
-ms.openlocfilehash: 706f3913e25eca6240c186e45709faf6c77620bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1aa3ae5be3e9f3fb50909cb5311d167bbeee647
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324579"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904233"
 ---
 # <a name="monitor-and-alert-on-application-health-with-azure-application-insights"></a>Мониторинг и оповещение о работоспособности приложения с помощью Azure Application Insights
 
@@ -28,7 +28,7 @@ Azure Application Insights позволяет выполнять монитор�
 
 Для работы с этим руководством:
 
-Создайте [ресурс Application Insights](./dotnetcore-quick-start.md#enable-application-insights).
+Создайте [ресурс Application Insights](../app/create-new-resource.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

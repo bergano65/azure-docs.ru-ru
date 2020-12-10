@@ -12,19 +12,19 @@ ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f10e2b0aa5c7e178ae6b58805703fcb1b0ff3e2b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 8b0955e67c5a35cbea96490a0395522fa145dad1
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352496"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858371"
 ---
 # <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Примеры Azure AD PowerShell для прокси приложения Azure AD
 
-В следующей таблице содержатся ссылки на примеры скриптов PowerShell для прокси приложения Azure AD. Для этих примеров требуется [модуль Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview), если не указано иное.
+В следующей таблице содержатся ссылки на примеры скриптов PowerShell для прокси приложения Azure AD. Для этих примеров требуется [модуль Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview), если не указано иное.
 
 
-Дополнительные сведения о командлетах, используемых в этих примерах, см. в разделах [Управление приложением прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management) и [Управление соединителем прокси приложения](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management).
+Дополнительные сведения о командлетах, используемых в этих примерах, см. в разделах [Управление приложением прокси приложения](/powershell/module/azuread/#application_proxy_application_management) и [Управление соединителем прокси приложения](/powershell/module/azuread/#application_proxy_connector_management).
 
 | Ссылка | Описание |
 |---|---|

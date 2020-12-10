@@ -1,15 +1,18 @@
 ---
 title: Оценка готовности виртуальных машин VMware к миграции в Решение Azure VMware (AVS) с помощью Миграции Azure
 description: Узнайте, как оценить виртуальные машины VMware для миграции в AVS с помощью средства оценки серверов Миграции Azure.
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: 29f7f824d96aedd80e490ba84c390be4d9493683
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6d3c6f77b062939a88e7277cb7f0ab6ecff9fcb
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753082"
 ---
 # <a name="tutorial-assess-vmware-vms-for-migration-to-avs"></a>Руководство по Оценка готовности виртуальных машин VMware к переносу в AVS
 

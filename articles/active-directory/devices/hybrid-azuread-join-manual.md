@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0fe19a1fadd54b7146ccb074d82a68ec259100f2
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 5316a1647c96076696b14de157e74e2155a6b368
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093265"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860020"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -169,7 +169,7 @@ Azure AD Connect выполняет следующие функции:
 
 Дополнительные сведения о проверенных доменных именах см. в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md).
 
-Чтобы получить список проверенных доменов компании, можно использовать командлет [Get-AzureADDomain](/powershell/module/Azuread/Get-AzureADDomain?view=azureadps-2.0).
+Чтобы получить список проверенных доменов компании, можно использовать командлет [Get-AzureADDomain](/powershell/module/Azuread/Get-AzureADDomain).
 
 ![Список доменов компании](./media/hybrid-azuread-join-manual/01.png)
 
@@ -328,7 +328,7 @@ Azure AD Connect выполняет следующие функции:
 
 Дополнительные сведения о проверенных доменных именах см. в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md).  
 
-Чтобы получить список проверенных доменов компании, можно использовать командлет [Get-MsolDomain](/powershell/module/msonline/get-msoldomain?view=azureadps-1.0).
+Чтобы получить список проверенных доменов компании, можно использовать командлет [Get-MsolDomain](/powershell/module/msonline/get-msoldomain).
 
 ![Список доменов компании](./media/hybrid-azuread-join-manual/01.png)
 
@@ -570,7 +570,7 @@ Azure AD Connect выполняет следующие функции:
 
 ### <a name="using-powershell"></a>Использование PowerShell
 
-Проверьте состояние регистрации устройства в клиенте Azure с помощью **[Get-MsolDevice](/powershell/module/msonline/get-msoldevice)** . Этот командлет применяется в [модуле PowerShell для Azure Active Directory](/powershell/azure/active-directory/install-msonlinev1?view=azureadps-2.0).
+Проверьте состояние регистрации устройства в клиенте Azure с помощью **[Get-MsolDevice](/powershell/module/msonline/get-msoldevice)** . Этот командлет применяется в [модуле PowerShell для Azure Active Directory](/powershell/azure/active-directory/install-msonlinev1).
 
 Когда вы используете командлет **Get-MSolDevice**, чтобы получить сведения о службе:
 

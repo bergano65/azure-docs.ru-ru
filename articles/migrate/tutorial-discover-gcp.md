@@ -1,15 +1,18 @@
 ---
 title: Обнаружение экземпляров виртуальных машин GCP с помощью средства оценки серверов службы "Миграция Azure"
 description: Узнайте, как обнаруживать экземпляры виртуальных машин GCP с помощью средства оценки серверов службы "Миграция Azure".
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: c445bc06983aeb72d13f2bea5e2f39e73374d93a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9053246ef747236d9efbc9239ced46b0c421f5bb
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91716478"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753099"
 ---
 # <a name="tutorial-discover-google-cloud-platform-gcp-instances-with-server-assessment"></a>Руководство по Обнаружение экземпляров Google Cloud Platform (GCP) с помощью средства оценки серверов
 
@@ -23,8 +26,8 @@ ms.locfileid: "91716478"
 > * Настройка учетной записи Azure.
 > * Подготовка экземпляров виртуальных машин GCP к обнаружению.
 > * Создайте проект службы "Миграция Azure".
-> * Настройка устройства службы "Миграция Azure".
-> * Запуск непрерывного обнаружения.
+> * настройка устройства службы "Миграция Azure";
+> * запуск непрерывного обнаружения.
 
 > [!NOTE]
 > В учебниках показан самый быстрый способ выполнения сценария и используются параметры по умолчанию.  

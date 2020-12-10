@@ -1,20 +1,20 @@
 ---
 title: Руководство. Настройка виртуальных сетей для доменных служб Azure AD | Документация Майкрософт
 description: В этом руководстве описано, как создать и настроить подсеть виртуальной сети Azure или пиринг сетей для управляемого домена доменных служб Azure Active Directory с помощью портала Azure.
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 33beb0767ef1f21d4fb3d08c9072d7c8479d2cb1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: ddb8f360304bdb41ae359f293af4d10b0afc6558
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967415"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618422"
 ---
 # <a name="tutorial-configure-virtual-networking-for-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по настройке виртуальных сетей для управляемого домена доменных служб Azure Active Directory
 

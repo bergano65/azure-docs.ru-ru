@@ -1,15 +1,18 @@
 ---
 title: Обнаружение физических серверов с помощью средства оценки серверов Миграции Azure
 description: Узнайте, как обнаружить локальные физические серверы с помощью средства оценки серверов Миграции Azure.
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 83ff63392c6cbcaa6a2ea011eb60199f61844bb1
-ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
+ms.openlocfilehash: 1263bc3ffe18aa951b3e5b61747c889d36acbab1
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93148343"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752820"
 ---
 # <a name="tutorial-discover-physical-servers-with-server-assessment"></a>Руководство по обнаружению физических серверов с помощью средства оценки серверов
 

@@ -1,14 +1,17 @@
 ---
 title: Оценка локальных серверов с помощью импортированного CSV-файла и средства оценки серверов службы "Миграция Azure"
 description: В этой статье описывается, как обнаружить локальные серверы для миграции в Azure с помощью импортированного CSV-файла в средстве оценки сервера в службе "Миграция Azure".
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
-ms.openlocfilehash: 30f17bb6b22d4d19cf225aa52d8284f5306a44ee
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dfa7ee941e2c373b02fe5fb2f2a648a60a677670
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92308386"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753116"
 ---
 # <a name="tutorial-assess-servers-using-an-imported-csv-file"></a>Руководство по оценке серверов с помощью импортированного CSV-файла
 

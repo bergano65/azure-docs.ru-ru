@@ -10,12 +10,13 @@ ms.workload: identity
 ms.date: 11/09/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: 297db67b80f9e5ae04e3c10f370ece9b5fdedee3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.custom: azureday1
+ms.openlocfilehash: a8bd2ef1348692bf57f7e5cb7b6606cfcfd324fe
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96020455"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905576"
 ---
 # <a name="tutorial-add-authentication-to-your-web-app-running-on-azure-app-service"></a>Руководство по добавлению проверки подлинности в веб-приложение, работающее в Службе приложений Azure
 

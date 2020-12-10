@@ -1,20 +1,20 @@
 ---
 title: Руководство. Настройка протокола LDAPS для доменных служб Azure Active Directory | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить простой защищенный протокол доступа к каталогам (LDAPS) для управляемого домена доменных служб Azure AD.
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: f5ebe594f1f50c7b7490e5ead8cb3fe7636f0ce7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.author: justinha
+ms.openlocfilehash: d5dbb7b71e2d67ed5b3f624c93c3c143d6c98e5d
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994032"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618541"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по настройке защищенного протокола LDAP для управляемого домена доменных служб Azure AD
 

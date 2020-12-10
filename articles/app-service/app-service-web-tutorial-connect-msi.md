@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
-ms.openlocfilehash: 7b6f762dd04244f430f08894cc06991796a11229
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: e5587c4826fea780c1e379ee1599440b2865dd50
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96004931"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862230"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -47,7 +47,9 @@ ms.locfileid: "96004931"
 
 Чтобы отладить приложение, используя Базу данных SQL в качестве серверного компонента, убедитесь, что вы разрешили клиентские подключения со своего компьютера. В противном случае добавьте IP-адрес клиента, выполнив шаги, указанные в разделе [Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью портала Azure](../azure-sql/database/firewall-configure.md#use-the-azure-portal-to-manage-server-level-ip-firewall-rules).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Подготовьте среду к работе с Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="grant-database-access-to-azure-ad-user"></a>Предоставление доступа к базе данных для пользователя Azure AD
 
@@ -87,7 +89,7 @@ az sql server ad-admin create --resource-group myResourceGroup --server-name <se
 
 После установки Azure CLI на локальном компьютере войдите в Azure CLI с помощью следующей команды, используя учетные данные пользователя Azure AD:
 
-```bash
+```azurecli
 az login --allow-no-subscriptions
 ```
 Теперь вы готовы разрабатывать и отлаживать свое приложение с базой данных SQL в качестве серверной части, используя аутентификацию Azure AD.
@@ -206,7 +208,7 @@ az webapp identity assign --resource-group myResourceGroup --name <app-name>
 
 В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<server-name>_ именем сервера, _\<db-name>_ именем базы данных, которое использует приложение, а _\<aad-user-name>_ и _\<aad-password>_ учетными данными пользователя Azure AD.
 
-```azurecli-interactive
+```bash
 sqlcmd -S <server-name>.database.windows.net -d <db-name> -U <aad-user-name> -P "<aad-password>" -G -l 30
 ```
 
@@ -249,7 +251,7 @@ az webapp config connection-string delete --resource-group myResourceGroup --nam
 
 ```bash
 git commit -am "configure managed identity"
-git push azure master
+git push azure main
 ```
 
 Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с управляемым удостоверением.

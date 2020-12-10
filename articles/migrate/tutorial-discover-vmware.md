@@ -1,15 +1,18 @@
 ---
 title: Обнаружение виртуальных машин VMware с помощью средства оценки серверов службы "Миграция Azure"
 description: Узнайте, как обнаружить локальные виртуальные машины VMware с помощью средства оценки сервера службы "Миграция Azure".
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 8a09f4583bd5cdae977b927be9649897a2d24ee6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: ff82b90189e134db7d39b259c2c135489d14595d
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832659"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752793"
 ---
 # <a name="tutorial-discover-vmware-vms-with-server-assessment"></a>Руководство по обнаружению виртуальных машин VMware с помощью средства оценки серверов
 
