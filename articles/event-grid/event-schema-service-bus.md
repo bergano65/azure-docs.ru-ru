@@ -3,16 +3,16 @@ title: Служба "служебная шина Azure" как источник 
 description: Описание свойств для событий служебной шины, используемых со службой "Сетка событий Azure"
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 81293321b3a8fb989023a231c905996b4059bd81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34c6990c4e6e87304c457a5b2ca6459c404c8d9a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86121140"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008118"
 ---
 # <a name="azure-service-bus-as-an-event-grid-source"></a>Служебная шина Azure в качестве источника службы "Сетка событий"
 
-В этой статье описаны свойства и схема для событий служебной шины.Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+В этой статье описаны свойства и схема для событий служебной шины. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
 ## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
@@ -24,8 +24,12 @@ ms.locfileid: "86121140"
 | ---------- | ----------- |
 | Microsoft.ServiceBus.ActiveMessagesAvailableWithNoListeners | Возникает, если в очереди или подписке присутствуют активные сообщения, а получатели отсутствуют. |
 | Microsoft.ServiceBus.DeadletterMessagesAvailableWithNoListener | Возникает, если в очереди недоставленных сообщений присутствуют активные сообщения, а активные прослушиватели отсутствуют. |
+| Microsoft. ServiceBus. Активемессажесаваилаблепериодикнотификатионс | Возникает периодически при наличии активных сообщений в очереди или подписке, даже если имеются активные прослушиватели для этой очереди или подписки. |
+| Microsoft. ServiceBus. Деадлеттермессажесаваилаблепериодикнотификатионс | Возникает периодически при наличии сообщений в недоставленной сущности очереди или подписки, даже если имеются активные прослушиватели для сущности недоставленных сообщений этой конкретной очереди или подписки. | 
 
 ### <a name="example-event"></a>Пример события
+
+#### <a name="active-messages-available-with-no-listeners"></a>Активные сообщения, доступные без прослушивателей
 
 В следующем примере показана схема события активных сообщений без прослушивателей:
 
@@ -49,6 +53,8 @@ ms.locfileid: "86121140"
 }]
 ```
 
+#### <a name="deadletter-messages-available-with-no-listener"></a>Недоставленные сообщения доступны без прослушивателя
+
 Схема события очереди недоставленных сообщений выглядит похоже:
 
 ```json
@@ -71,11 +77,55 @@ ms.locfileid: "86121140"
 }]
 ```
 
+#### <a name="active-messages-available-periodic-notifications"></a>Активные сообщения доступные периодические уведомления
+
+```json
+[{
+  "topic": "/subscriptions/<subscription id>/resourcegroups/DemoGroup/providers/Microsoft.ServiceBus/namespaces/<YOUR SERVICE BUS NAMESPACE WILL SHOW HERE>",
+  "subject": "topics/<service bus topic>/subscriptions/<service bus subscription>",
+  "eventType": "Microsoft.ServiceBus.ActiveMessagesAvailablePeriodicNotifications",
+  "eventTime": "2018-02-14T05:12:53.4133526Z",
+  "id": "dede87b0-3656-419c-acaf-70c95ddc60f5",
+  "data": {
+    "namespaceName": "YOUR SERVICE BUS NAMESPACE WILL SHOW HERE",
+    "requestUri": "https://YOUR-SERVICE-BUS-NAMESPACE-WILL-SHOW-HERE.servicebus.windows.net/TOPIC-NAME/subscriptions/SUBSCRIPTIONNAME/$deadletterqueue/messages/head",
+    "entityType": "subscriber",
+    "queueName": "QUEUE NAME IF QUEUE",
+    "topicName": "TOPIC NAME IF TOPIC",
+    "subscriptionName": "SUBSCRIPTION NAME"
+  },
+  "dataVersion": "1",
+  "metadataVersion": "1"
+}]
+```
+
+#### <a name="deadletter-messages-available-periodic-notifications"></a>Доступные периодические уведомления о недоставленных сообщениях
+
+```json
+[{
+  "topic": "/subscriptions/<subscription id>/resourcegroups/DemoGroup/providers/Microsoft.ServiceBus/namespaces/<YOUR SERVICE BUS NAMESPACE WILL SHOW HERE>",
+  "subject": "topics/<service bus topic>/subscriptions/<service bus subscription>",
+  "eventType": "Microsoft.ServiceBus.DeadletterMessagesAvailablePeriodicNotifications",
+  "eventTime": "2018-02-14T05:12:53.4133526Z",
+  "id": "dede87b0-3656-419c-acaf-70c95ddc60f5",
+  "data": {
+    "namespaceName": "YOUR SERVICE BUS NAMESPACE WILL SHOW HERE",
+    "requestUri": "https://YOUR-SERVICE-BUS-NAMESPACE-WILL-SHOW-HERE.servicebus.windows.net/TOPIC-NAME/subscriptions/SUBSCRIPTIONNAME/$deadletterqueue/messages/head",
+    "entityType": "subscriber",
+    "queueName": "QUEUE NAME IF QUEUE",
+    "topicName": "TOPIC NAME IF TOPIC",
+    "subscriptionName": "SUBSCRIPTION NAME"
+  },
+  "dataVersion": "1",
+  "metadataVersion": "1"
+}]
+```
+
 ### <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:
 
-| Свойство | Тип | Описание |
+| Свойство. | Type | Описание |
 | -------- | ---- | ----------- |
 | Раздел | строка | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
 | subject | строка | Определенный издателем путь к субъекту событий. |
@@ -88,7 +138,7 @@ ms.locfileid: "86121140"
 
 Объект данных имеет следующие свойства:
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | -------- | ---- | ----------- |
 | namespaceName | строка | Пространство имен служебной шины, в котором существует ресурс. |
 | requestUri | строка | URI определенной очереди или подписки, создающей события. |

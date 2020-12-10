@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 653110b953b6947254d5063a9e389505d45ea4cb
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: e5793d21f27128162095e2d86e13006c5b6e7b7c
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149022"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007999"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
 [Служба приложений Azure](./overview.md) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не совпадают с учетными данными подписки Azure.
@@ -23,7 +23,7 @@ ms.locfileid: "92149022"
 
 ### <a name="in-the-cloud-shell"></a>В Cloud Shell
 
-Чтобы настроить пользователя развертывания, выполните в [Cloud Shell](https://shell.azure.com) команду [az webapp deployment user set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Вместо \<username> и \<password> укажите имя пользователя и пароль развертывания. 
+Чтобы настроить пользователя развертывания, выполните в [Cloud Shell](https://shell.azure.com) команду [az webapp deployment user set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set). Вместо \<username> и \<password> укажите имя пользователя и пароль развертывания. 
 
 - Имя пользователя должно быть уникальным в Azure. Кроме того, чтобы отправка в локальный репозиторий Git работала, имя пользователя не должно содержать символ @. 
 - Пароль должен содержать не менее восьми символов и включать два из трех следующих элементов: буквы, цифры и символы. 
@@ -38,7 +38,7 @@ az webapp deployment user set --user-name <username> --password <password>
 
 Чтобы можно было открыть страницу учетных данных развертывания, на портале Azure должно существовать хотя бы одно приложение. Чтобы настроить учетные данные на уровне пользователя, выполните следующие действия.
 
-1. В [портал Azure](https://portal.azure.com)в меню слева выберите панель мониторинга **службы приложений**  >  **\<any_app>**  >  **центр развертывания**  >  **FTP**  >  **Dashboard**.
+1. В [портал Azure](https://portal.azure.com)в меню слева выберите панель мониторинга **службы приложений**  >  **\<any_app>**  >  **центр развертывания**  >  **FTP**  >  .
 
     ![Здесь показано, как можно выбрать панель мониторинга FTP в центре развертывания в службах приложений Azure.](./media/app-service-deployment-credentials/access-no-git.png)
 
@@ -96,7 +96,7 @@ az resource update --resource-group <resource-group> --name ftp --namespace Micr
 az resource update --resource-group <resource-group> --name scm --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Чтобы убедиться, что учетные данные профиля публикации заблокированы для WebDeploy, попробуйте [Опубликовать веб-приложение с помощью Visual Studio 2019](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Чтобы убедиться, что учетные данные профиля публикации заблокированы для WebDeploy, попробуйте [Опубликовать веб-приложение с помощью Visual Studio 2019](/visualstudio/deployment/quickstart-deploy-to-azure).
 
 ### <a name="disable-access-to-the-api"></a>Отключить доступ к API
 

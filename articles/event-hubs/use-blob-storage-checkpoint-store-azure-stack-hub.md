@@ -1,25 +1,22 @@
 ---
-title: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек в концентраторе Azure Stack (Предварительная версия)
-description: В этой статье описывается, как использовать хранилище BLOB-объектов в качестве хранилища контрольных точек в концентраторах событий в концентраторе Azure Stack (Предварительная версия).
+title: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек в Azure Stack Hub
+description: В этой статье описывается, как использовать хранилище BLOB-объектов в качестве хранилища контрольных точек в концентраторах событий в концентраторе Azure Stack.
 ms.topic: how-to
-ms.date: 06/23/2020
-ms.openlocfilehash: 9da525decfb7b972f05af17c259836d0b17bb21e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 12/09/2020
+ms.openlocfilehash: 07d7cf844480a9a88468c17cecc7ca38cca5d176
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021241"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007829"
 ---
-# <a name="use-blob-storage-as-checkpoint-store---event-hubs-on-azure-stack-hub-preview"></a>Использование хранилища BLOB-объектов в качестве хранилища контрольных точек — концентраторов событий в концентраторе Azure Stack (Предварительная версия)
+# <a name="use-blob-storage-as-checkpoint-store---event-hubs-on-azure-stack-hub"></a>Использование хранилища BLOB-объектов в качестве хранилища контрольных точек — концентраторов событий в концентраторе Azure Stack
 Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем те, которые обычно доступны в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
 
 - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/)
 - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorWithCustomStorageVersion.java). 
 - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript/receiveEventsWithApiSpecificStorage.js) или  [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript/src/receiveEventsWithApiSpecificStorage.ts) 
 - Python — [синхронный](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob/samples/receive_events_using_checkpoint_store_storage_api_version.py), [асинхронный](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/receive_events_using_checkpoint_store_storage_api_version_async.py)
-
-> [!IMPORTANT]
-> Концентраторы событий в концентраторе Azure Stack в настоящее время находятся на [этапе предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) и бесплатно. 
 
 Если вы запускаете приемник концентраторов событий, который использует хранилище BLOB-объектов в качестве хранилища контрольных точек, не нацеливание на версию, которую поддерживает Azure Stack концентратора, вы получите следующее сообщение об ошибке:
 
@@ -57,6 +54,6 @@ The exception is HttpResponseError('The value for one of the HTTP headers is not
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о секционировании и создании контрольных точек см. в следующей статье: [Балансировка нагрузки секций между несколькими экземплярами приложения](event-processor-balance-partition-load.md)

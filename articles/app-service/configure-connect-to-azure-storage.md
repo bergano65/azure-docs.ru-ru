@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 7f177a7801e18bcdb2c2d6ef737f0c790cf6b1d1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: e75eef86a4a0c679a44a61267f94d337538daaa8
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93075795"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007625"
 ---
 # <a name="access-azure-storage-preview-as-a-network-share-from-a-container-in-app-service"></a>Доступ к хранилищу Azure (Предварительная версия) в качестве сетевой папки из контейнера в службе приложений
 
@@ -20,7 +20,7 @@ ms.locfileid: "93075795"
 В этом руководство показано, как подключить файлы службы хранилища Azure в качестве сетевой папки к контейнеру Windows в службе приложений. Поддерживаются только общие папки службы [файлов Azure](../storage/files/storage-how-to-use-files-cli.md) и [файлы Premium](../storage/files/storage-how-to-create-premium-fileshare.md) . Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи.
 
 > [!NOTE]
->Служба хранилища Azure в службе приложений доступна **в режиме предварительной версии** и **не поддерживается** в **рабочих сценариях** .
+>Служба хранилища Azure в службе приложений доступна **в режиме предварительной версии** и **не поддерживается** в **рабочих сценариях**.
 
 ::: zone-end
 
@@ -29,7 +29,7 @@ ms.locfileid: "93075795"
 В этом руководство показано, как подключить службу хранилища Azure к службе приложений контейнеров Linux. К преимуществам относятся защищенное содержимое, переносимость содержимого, постоянное хранилище, доступ к нескольким приложениям и несколько методов передачи.
 
 > [!NOTE]
->Служба хранилища Azure в службе приложений доступна **в предварительной версии** для службы приложений на платформе Linux и веб-приложение для контейнеров. Он **не поддерживается** в **рабочих сценариях** .
+>Служба хранилища Azure в службе приложений доступна **в предварительной версии** для службы приложений на платформе Linux и веб-приложение для контейнеров. Он **не поддерживается** в **рабочих сценариях**.
 
 ::: zone-end
 
@@ -80,7 +80,7 @@ ms.locfileid: "93075795"
 
 После создания [учетной записи хранения Azure, общей папки и каталога](#prerequisites)вы можете настроить приложение в службе хранилища Azure.
 
-Чтобы подключить файловый ресурс Azure к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища должен быть AzureFiles.
+Чтобы подключить файловый ресурс Azure к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account#az-webapp-config-storage-account-add) команду. Тип хранилища должен быть AzureFiles.
 
 ```azurecli
 az webapp config storage-account add --resource-group <group-name> --name <app-name> --custom-id <custom-id> --storage-type AzureFiles --share-name <share-name> --account-name <storage-account-name> --access-key "<access-key>" --mount-path <mount-path-directory of form c:<directory name> >
@@ -94,7 +94,7 @@ az webapp config storage-account add --resource-group <group-name> --name <app-n
 
 После создания [учетной записи хранения Azure, общей папки и каталога](#prerequisites)вы можете настроить приложение в службе хранилища Azure.
 
-Чтобы подключить учетную запись хранения к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles. Параметр пути подключения соответствует папке в контейнере, которую необходимо подключить к службе хранилища Azure. Если задать для него значение "/", весь контейнер будет подключен к службе хранилища Azure.
+Чтобы подключить учетную запись хранения к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account#az-webapp-config-storage-account-add) команду. Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles. Параметр пути подключения соответствует папке в контейнере, которую необходимо подключить к службе хранилища Azure. Если задать для него значение "/", весь контейнер будет подключен к службе хранилища Azure.
 
 
 > [!CAUTION]
@@ -117,7 +117,7 @@ az webapp config storage-account add --resource-group <group-name> --name <app-n
 az webapp config storage-account list --resource-group <resource-group> --name <app-name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 ::: zone pivot="container-windows"
 

@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 5c3bfbdf133777f0bc219d1306f80bd4d38b56ea
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 0a59c748dba87765537fc7c9d6382c7d2b726f43
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746273"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008067"
 ---
 # <a name="configure-ddos-attack-mitigation-reports-and-flow-logs"></a>Настройка журналов потоков и отчетов об устранении рисков атак DDoS 
 
 Защита от атак DDoS Azure (цен. категория "Стандартный") обеспечивает подробные сведения об атаках и визуализацию с помощью аналитики атак DDoS. Клиенты, защищающие виртуальные сети от атак DDoS, могут просматривать подробные сведения о трафике атаки и действиях, предпринятых для устранения атак, благодаря отчетам об устранении рисков атак и журналам потоков устранения рисков. Расширенные телеметрические данные предоставляются через Azure Monitor включая подробные метрики в течение от атак DDoS атаки. Предупреждения можно настроить для любой метрики Azure Monitor, предоставленной с помощью службы "Защита от атак DDoS". Ведение журнала может быть дополнительно интегрировано с [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (концентраторы событий Azure), OMS log Analytics и хранилищем Azure для расширенного анализа через интерфейс диагностики Azure Monitor.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве вы узнаете, как:
 
 > [!div class="checklist"]
 > * Просмотр и настройка отчетов об устранении уязвимости от атак DDoS
@@ -80,9 +80,15 @@ ms.locfileid: "96746273"
 
 ### <a name="azure-ddos-protection-workbook"></a>Книга защиты от атак DDoS Azure
 
-Чтобы просматривать данные журналов потоков на панели мониторинга Аналитики Azure, вы можете импортировать пример панели мониторинга из https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Azure%20DDoS%20Protection%20Workbook.
+Этот шаблон Azure Resource Manager (ARM) можно использовать для развертывания книги анализа атак. Эта книга всегда позволяет визуализировать данные атаки на нескольких фильтруемых панелях, чтобы легко понять, что находится на заявляйте. При развертывании этого шаблона ARM вам потребуется ввести следующее:
 
-Журналы потоков будут содержать следующие поля: 
+* Имя рабочей области
+* Группа ресурсов рабочей области
+* Идентификатор подписки рабочей области
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FAzure%2520DDoS%2520Protection%2520Workbook%2FAzureDDoSWorkbook_ARM.json)
+
+Журналы потоков будут иметь следующие поля: 
 - Исходный IP-адрес
 - Конечный IP-адрес
 - Исходный порт 
@@ -110,7 +116,7 @@ ms.locfileid: "96746273"
 
 ![Ддосмитигатионрепортс защита от атак DDoS](./media/ddos-attack-telemetry/ddos-mitigation-reports.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как выполнять следующие задачи:
 

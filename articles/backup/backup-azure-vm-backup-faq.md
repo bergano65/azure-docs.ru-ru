@@ -1,21 +1,20 @@
 ---
 title: Часто задаваемые вопросы о резервном копировании виртуальных машин Azure
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure с помощью службы Azure Backup.
-ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 0f4f990654cc23fde7cf1ad2e37ba1ada76d94e3
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: ba2779305302e91f68cb2664c90f53fdf9a9ca55
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324794"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008356"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure со службой [Azure Backup](./backup-overview.md) .
 
-## <a name="backup"></a>Резервное копирование
+## <a name="backup"></a>Backup
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных машин можно включить для резервного копирования при их создании?
 
@@ -163,11 +162,20 @@ Azure Backup теперь поддерживает выборочное резе
 
 ### <a name="can-i-access-the-vm-once-restored-due-to-a-vm-having-broken-relationship-with-domain-controller"></a>Можно ли получить доступ к виртуальной машине после восстановления из-за неработающего отношения виртуальной машины с контроллером домена?
 
-Да, вы получите доступ к виртуальной машине после восстановления из-за неработающего отношения виртуальной машины с контроллером домена. Дополнительные сведения см. в [этой статье](./backup-azure-arm-restore-vms.md#post-restore-steps).
+Да, вы получите доступ к виртуальной машине после восстановления из-за неработающего отношения виртуальной машины с контроллером домена. Дополнительные сведения см. в этой [статье](./backup-azure-arm-restore-vms.md#post-restore-steps).
+
+### <a name="can-i-cancel-an-in-progress-restore-job"></a>Можно ли отменить выполняющееся задание восстановления?
+Нет, отменить выполняемое задание восстановления невозможно.
 
 ### <a name="why-restore-operation-is-taking-long-time-to-complete"></a>Почему выполнение операции восстановления занимает много времени?
 
 Общее время восстановления зависит от количества операций ввода-вывода в секунду и пропускной способности учетной записи хранения. Общее время восстановления может быть затронуто, если Целевая учетная запись хранения загружена с другими операциями чтения и записи приложения. Чтобы улучшить операцию восстановления, выберите учетную запись хранения, которая не загружена с другими данными приложений.
+
+### <a name="how-do-we-handle-create-new-virtual-machine-restore-type-conflicts-with-governance-policies"></a>Как обрабатывалась команда "создать новую виртуальную машину" — тип восстановления конфликтует с политиками управления?
+
+Azure Backup использует "присоединение" дисков из точек восстановления и не просматривает ссылки на образы или галереи. Поэтому в политике можно проверить «storageProfile. osDisk. createOption как Attach», и условие сценария будет следующим:
+
+`if (storageProfile.osDisk.createOption == "Attach") then { exclude <Policy> }`
 
 ## <a name="manage-vm-backups"></a>Управление резервным копированием виртуальных машин
 

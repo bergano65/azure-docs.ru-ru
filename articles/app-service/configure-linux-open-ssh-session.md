@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: d46aacc441b412a117d906e0201a9bed6046a338
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7178b8079bbb2411e0b38c3ef59a9981fb2d55be
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961611"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005245"
 ---
 # <a name="open-an-ssh-session-to-a-linux-container-in-azure-app-service"></a>Открытие сеанса SSH для контейнера Linux в службе приложений Azure
 
@@ -39,9 +39,9 @@ ms.locfileid: "88961611"
 
 С помощью TCP-туннеля можно создать сетевое подключение между веб-приложением для контейнеров и компьютером, на котором выполняется разработка, с проверкой подлинности через WebSocket. Это позволяет открыть из необходимого клиента сеанс SSH с контейнером, запущенным в службе приложений.
 
-Чтобы начать работу, нужно установить [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы ознакомиться с принципами работы без установки Azure CLI, перейдите к статье [Обзор Azure Cloud Shell](../cloud-shell/overview.md). 
+Чтобы начать работу, нужно установить [Azure CLI](/cli/azure/install-azure-cli). Чтобы ознакомиться с принципами работы без установки Azure CLI, перейдите к статье [Обзор Azure Cloud Shell](../cloud-shell/overview.md). 
 
-Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите _\<subscription-id>_ _\<group-name>_ и \_ \<app-name> _ для своего приложения.
+Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection#ext-webapp-az-webapp-remote-connection-create). Укажите _\<subscription-id>_ _\<group-name>_ и \_ \<app-name> _ для своего приложения.
 
 ```azurecli-interactive
 az webapp create-remote-connection --subscription <subscription-id> --resource-group <resource-group-name> -n <app-name> &
@@ -111,7 +111,7 @@ Load average: 0.07 0.04 0.08 4/765 45738
 45738     1 root     Z        0   0%   0   0% [init]
 </pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если у вас возникли вопросы, опубликуйте их на [форуме Azure](/answers/topics/azure-webapps.html).
 

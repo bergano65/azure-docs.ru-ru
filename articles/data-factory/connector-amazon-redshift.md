@@ -2,7 +2,6 @@
 title: Копирование данных из Amazon RedShift
 description: Узнайте, как копировать данные из Amazon Redshift в поддерживаемые хранилища данных-приемники с помощью фабрики данных Azure.
 services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
 manager: shwang
@@ -10,13 +9,13 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 09/04/2018
-ms.openlocfilehash: a756a3cec5702570751e0bea09a4f59152accafc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/09/2020
+ms.openlocfilehash: b17c567b2e83bef3c37c8f1272091021a1943b15
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89484550"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008334"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -24,7 +23,6 @@ ms.locfileid: "89484550"
 > * [Текущая версия](connector-amazon-redshift.md)
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
-
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Amazon Redshift. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
@@ -57,7 +55,7 @@ ms.locfileid: "89484550"
 
 Для связанной службы Amazon Redshift поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно |
+| Свойство. | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства Type необходимо задать значение **AmazonRedshift** . | Да |
 | server |IP-адрес или имя узла сервера Amazon Redshift. |Да |
@@ -99,7 +97,7 @@ ms.locfileid: "89484550"
 
 Чтобы скопировать данные из Amazon RedShift, поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно |
+| Свойство. | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение **амазонредшифттабле** . | Да |
 | схема | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
@@ -164,9 +162,9 @@ ms.locfileid: "89484550"
 
 [UNLOAD](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) — это механизм, предоставляемый Amazon Redshift, позволяющий выгрузить результаты запроса в один или несколько файлов в Amazon Simple Storage Service (Amazon S3). Компания Amazon рекомендует использовать этот способ для копирования большого набора данных из Redshift.
 
-**Пример. копирование данных из Amazon RedShift в Azure синапсе Analytics (ранее — хранилище данных SQL) с помощью выгрузки, промежуточного копирования и Polybase**
+**Пример. копирование данных из Amazon RedShift в Azure синапсе Analytics с помощью unload, промежуточного копирования и Polybase**
 
-В этом примере вариант использования действие копирования отгружает данные из Amazon RedShift в Amazon S3, как настроено в "redshiftUnloadSettings", а затем копирует данные из Amazon S3 в BLOB-объект Azure, как указано в "stagingSettings", в последнем случае используйте Polybase для загрузки данных в Azure синапсе Analytics (ранее — хранилище данных SQL). Формат промежуточного хранения обрабатывается действием копирования должным образом.
+В этом образце варианта использования действие копирования отгружает данные из Amazon RedShift в Amazon S3, как указано в разделе "redshiftUnloadSettings", а затем копирует данные из Amazon S3 в большой двоичный объект Azure в соответствии с указаниями в разделе "stagingSettings". в последнем случае для загрузки данных в Azure синапсе Analytics используется Polybase. Формат промежуточного хранения обрабатывается действием копирования должным образом.
 
 ![Рабочий процесс копирования RedShift в Azure синапсе Analytics](media/copy-data-from-amazon-redshift/redshift-to-sql-dw-copy-workflow.png)
 
@@ -221,16 +219,16 @@ ms.locfileid: "89484550"
 | Тип данных Amazon Redshift | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | bigint |Int64 |
-| BOOLEAN |Строковый тип |
+| BOOLEAN |Строка |
 | CHAR |Строка |
-| DATE |Дата и время |
+| DATE |Дата/время |
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
 | ВЕЩЕСТВЕННОЕ ЧИСЛО |Один |
 | SMALLINT |Int16 |
-| TEXT |Строковый тип |
-| timestamp |Дата и время |
+| TEXT |Строка |
+| timestamp |Дата/время |
 | VARCHAR |Строка |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

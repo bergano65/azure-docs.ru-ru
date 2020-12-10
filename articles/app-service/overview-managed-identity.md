@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: fa99920c8e9d8cd532bb6230d6a337a038ee3e31
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 8e1f7bb2faaf9d2c706e63ae73b9e265eb95d09b
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929333"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007217"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -109,7 +109,7 @@ ms.locfileid: "96929333"
 
 1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
-2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](/powershell/module/az.functions/?view=azps-4.1.0#functions):
+2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](/powershell/module/az.functions/#functions):
 
     ```azurepowershell-interactive
     # Create a resource group.
@@ -219,7 +219,7 @@ ms.locfileid: "96929333"
 
 1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
-2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](/powershell/module/az.functions/?view=azps-4.1.0#functions). В приведенном ниже скрипте также используется, `New-AzUserAssignedIdentity` который должен быть установлен отдельно при [создании, перечислении или удалении назначенного пользователем управляемого удостоверения с помощью Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
+2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](/powershell/module/az.functions/#functions). В приведенном ниже скрипте также используется, `New-AzUserAssignedIdentity` который должен быть установлен отдельно при [создании, перечислении или удалении назначенного пользователем управляемого удостоверения с помощью Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
 
     ```azurepowershell-interactive
     # Create a resource group.

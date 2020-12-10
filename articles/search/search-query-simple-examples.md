@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 10/05/2020
-ms.openlocfilehash: 834e4fe8c7b3923f40a07c02c0310200db222308
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.date: 12/09/2020
+ms.openlocfilehash: 027852216b3f2055a5a381d00aff94526953b898
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697260"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007880"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в Azure Когнитивный поиск
 
@@ -22,6 +22,14 @@ ms.locfileid: "94697260"
 В этой статье мы будем использовать примеры для иллюстрации простого синтаксиса, заполняя `search=` параметр операции [поиска документов](/rest/api/searchservice/search-documents) .
 
 Альтернативный синтаксис запросов — это [полная Lucene](query-lucene-syntax.md), поддерживающая более сложные структуры запросов, например поиск нечетких и подстановочных знаков, для обработки которых может потребоваться дополнительное время. Дополнительные сведения и примеры, демонстрирующие полный синтаксис, см. [в разделе Использование полного синтаксиса Lucene](search-query-lucene-examples.md).
+
+Для отправки запросов выберите один из следующих средств и API-интерфейсов.
+
+| Методика | Описание |
+|-------------|-------------|
+| [Обозреватель поиска (портал)](search-explorer.md) | Предоставляет панель поиска и параметры для выбора индекса и значения api-version. Будут возвращены результаты в виде документов JSON. Рекомендуется для изучения, тестирования и проверки. <br/>[Подробнее.](search-get-started-portal.md#query-index) | 
+| [POST или Visual Studio Code](search-get-started-rest.md) | Средства веб-тестирования отлично подходят для вызовов составления [поиска документов](/rest/api/searchservice/search-documents) . REST API поддерживает все программные операции в Когнитивный поиск Azure, поэтому запросы можно выдавать в интерактивном режиме, чтобы сосредоточиться на исследовании конкретной задачи.  |
+| [Сеарчклиент (.NET)](/dotnet/api/azure.search.documents.searchclient) | Клиент, который можно использовать для запроса индекса Когнитивный поиск Azure.  <br/>[Подробнее.](search-howto-dotnet-sdk.md)  |
 
 ## <a name="formulate-requests-in-postman"></a>Формирование запросов в Postman
 

@@ -55,7 +55,7 @@ ms.locfileid: "90987289"
 
 1. Нажмите кнопку **Сохранить**, чтобы сохранить черновую копию runbook.
 
-    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-edit-runbook.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot;.":::
+    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-edit-runbook.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot; с примером кода в правом окне.":::
 
 ## <a name="test-the-runbook"></a>Тестирование модуля Runbook
 
@@ -65,9 +65,13 @@ ms.locfileid: "90987289"
 
 1. Введите значение для параметра **Name** и щелкните **Запустить**. Это действие запускает задание тестирования и отображение его состояния и выходных данных.
 
-    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-test-runbook.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot;." нажмите кнопку **Опубликовать**, чтобы опубликовать официальную версию runbook в учетной записи.
+    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-test-runbook.png" alt-text="Снимок экрана: область &quot;Тестирование&quot; с примером значения в поле &quot;Имя&quot;.":::
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot;.":::
+1. Закройте окно "Тест", щелкнув значок крестика (**X**) в правом верхнем углу. Нажмите **ОК** во всплывающем окне.
+
+1. На странице "Изменение Runbook PowerShell" нажмите кнопку **Опубликовать**, чтобы опубликовать официальную версию runbook в учетной записи.
+
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot;, на которой выбрана кнопка &quot;Опубликовать&quot;.":::
 
 ## <a name="run-the-runbook"></a>Запуск runbook
 
@@ -75,15 +79,15 @@ ms.locfileid: "90987289"
 
 1. Щелкните **Запустить** на этой странице, чтобы открыть страницу конфигурации "Запустить Runbook" для этого runbook.
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-start.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot;.":::
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-start.png" alt-text="Снимок экрана: страница настройки &quot;Запуск Runbook&quot;.":::
 
 1. Оставьте поле **Имя** пустым, чтобы применить значение по умолчанию, и щелкните **ОК**. Задание runbook отправится на выполнение, после чего откроется страница этого задания.
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-job-page.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot;.":::
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-job-page.png" alt-text="Снимок экрана: страница &quot;Задание&quot; с выбранной кнопкой &quot;Выходные данные&quot;.":::
 
 1. Если состояние задания имеет значение `Running` или `Completed`, щелкните **Выходные данные**, чтобы открыть панель с результатами работы runbook.
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job-output.png" alt-text="Снимок экрана: страница &quot;Изменение runbook PowerShell&quot;.":::
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job-output.png" alt-text="Снимок экрана: область &quot;Выходные данные&quot;, отображающая выходные данные runbook.":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

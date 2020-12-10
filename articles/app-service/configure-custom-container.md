@@ -4,12 +4,12 @@ description: Узнайте, как настроить пользователь�
 ms.topic: article
 ms.date: 09/22/2020
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 2aece0550d7b78ac4312e71b2671de4a64e4b86b
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: a7582bbb866a63820abbd959e06628eda5d57e29
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96557932"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007642"
 ---
 # <a name="configure-a-custom-container-for-azure-app-service"></a>Настройка контейнера клиента в Службе приложений Azure
 
@@ -345,7 +345,7 @@ SSH обеспечивает безопасный обмен данными ме
 
 Для правильной работы приложений с несколькими контейнерами, таких как WordPress, требуется постоянное хранилище. Чтобы включить его, конфигурация Docker Compose должна указывать на место хранения *за пределами* контейнера. Расположения хранилищ внутри контейнера не сохраняют изменения после перезапуска приложения.
 
-Включите постоянное хранилище, задав `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр приложения с помощью команды [AZ webapp config appSettings set](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в [Cloud Shell](https://shell.azure.com).
+Включите постоянное хранилище, задав `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр приложения с помощью команды [AZ webapp config appSettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) в [Cloud Shell](https://shell.azure.com).
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=TRUE
@@ -402,7 +402,7 @@ wordpress:
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство. Миграция пользовательского программного обеспечения в службу приложений Azure с помощью пользовательского контейнера](tutorial-custom-container.md)

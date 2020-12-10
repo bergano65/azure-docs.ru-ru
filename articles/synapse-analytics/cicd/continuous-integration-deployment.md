@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 5dbd49312b58dc656e2239e8a0a4acea614023de
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: d38c57a8c8504e1e03406f7cd8a0b61725cb0511
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317142"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008096"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Непрерывная интеграция и доставка для рабочей области Azure синапсе
 
@@ -107,7 +107,13 @@ ms.locfileid: "96317142"
 
      ![Добавить расширение](media/add-extension-task.png)
 
-1.  В задаче укажите связанные сведения о репозитории Git **workspace_publish** и выберите группу ресурсов, регион, имя и облачную среду для целевой рабочей области. При необходимости укажите параметры и значения.
+1.  В задаче выберите **...** рядом с полем **шаблон** , чтобы выбрать файл шаблона.
+
+1. Выберите **…** рядом с полем **Параметры шаблона** для выбора файла параметров.
+
+1. Выберите подключение, группу ресурсов и имя целевой рабочей области. 
+
+1. Выберите **…** рядом с полем **переопределить параметры шаблона** и введите значения требуемых параметров для целевой рабочей области. 
 
     ![Развертывание рабочей области синапсе](media/create-release-artifacts-deployment.png)
 

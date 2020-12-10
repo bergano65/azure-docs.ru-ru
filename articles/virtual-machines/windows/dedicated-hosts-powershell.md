@@ -5,15 +5,15 @@ author: cynthn
 ms.service: virtual-machines-windows
 ms.topic: how-to
 ms.workload: infrastructure
-ms.date: 08/01/2019
+ms.date: 11/12/2020
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: 884a9e82dacb2a0dfc6763809a2ccfd2b886df1a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2f8f2d9eb14e1272af126c9a6d6663f41aaee33f
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91974181"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005092"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
@@ -53,10 +53,6 @@ $hostGroup = New-AzHostGroup `
 
 Добавьте `-SupportAutomaticPlacement true` параметр, чтобы виртуальные машины и экземпляры масштабируемых наборов автоматически размещались на узлах в группе узлов. Дополнительные сведения см. в разделе [Ручное и автоматическое размещение ](../dedicated-hosts.md#manual-vs-automatic-placement).
 
-> [!IMPORTANT]
-> В настоящее время автоматическое размещение находится в общедоступной предварительной версии.
-> Чтобы принять участие в предварительной версии, выполните предварительный просмотр опроса по адресу [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="create-a-host"></a>Создание узла
 
@@ -173,12 +169,7 @@ Location               : eastus
 Tags                   : {}
 ```
 
-## <a name="create-a-scale-set-preview"></a>Создание масштабируемого набора (Предварительная версия)
-
-> [!IMPORTANT]
-> Масштабируемые наборы виртуальных машин на выделенных узлах в настоящее время находятся в общедоступной предварительной версии.
-> Чтобы принять участие в предварительной версии, выполните предварительный просмотр опроса по адресу [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+## <a name="create-a-scale-set"></a>Создание масштабируемого набора 
 
 При развертывании масштабируемого набора указывается группа узлов.
 
