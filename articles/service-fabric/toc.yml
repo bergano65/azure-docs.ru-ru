@@ -797,6 +797,8 @@
               href: configure-existing-cluster-enable-managed-identity-token-service.md
             - name: Настройка нового кластера Azure Service Fabric с использованием управляемого удостоверения
               href: configure-new-azure-service-fabric-enable-managed-identity.md
+            - name: Настройка управляемого кластера Service Fabric для использования управляемого удостоверения
+              href: how-to-managed-identity-managed-cluster-virtual-machine-scale-sets.md
         - name: Настройка приложения
           items:
             - name: Как развернуть приложение с использованием управляемого удостоверения

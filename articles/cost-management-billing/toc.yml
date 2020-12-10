@@ -188,15 +188,15 @@
               href: manage/pay-by-invoice.md
             - name: Создание дополнительных подписок
               href: manage/create-subscription.md
-            - name: Создание подписок EA программными средствами с помощью API последней версии
+            - name: "Создание подписок EA\_— REST"
               href: manage/programmatically-create-subscription-enterprise-agreement.md
-            - name: Создание подписок MCA программными средствами с помощью API последней версии
+            - name: "Создание подписок MCA\_— REST"
               href: manage/programmatically-create-subscription-microsoft-customer-agreement.md
-            - name: Создание подписок MPA программными средствами с помощью API последней версии
+            - name: "Создание подписок MPA\_— REST"
               href: manage/programmatically-create-subscription-microsoft-partner-agreement.md
-            - name: Создание подписок программными средствами с помощью шаблона ARM
+            - name: Создание подписок с помощью шаблона ARM
               href: manage/create-subscription-template.md
-            - name: Создание подписок программными средствами с помощью API предыдущей предварительной версии
+            - name: Создание подписок с помощью предварительной версии REST API
               href: manage/programmatically-create-subscription-preview.md
             - name: Предоставление доступа для создания подписок EA
               href: manage/grant-access-to-create-subscription.md

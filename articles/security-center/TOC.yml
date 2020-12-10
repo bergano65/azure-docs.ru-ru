@@ -55,6 +55,12 @@
         - name: Azure Defender для Key Vault
           displayName: 'KV, akv'
           href: defender-for-key-vault-introduction.md
+        - name: Azure Defender для Resource Manager
+          displayName: ARM
+          href: defender-for-resource-manager-introduction.md
+        - name: Azure Defender для DNS
+          displayName: domain
+          href: defender-for-dns-introduction.md
         - name: Azure Defender для Kubernetes
           displayName: 'clusters, k8s, aks'
           href: defender-for-kubernetes-introduction.md
@@ -253,6 +259,11 @@
         - name: 'Azure Defender: реагирование на оповещения Key Vault'
           displayName: 'akv, kv'
           href: defender-for-key-vault-usage.md
+        - name: 'Azure Defender: реагирование на оповещения DNS'
+          href: defender-for-dns-usage.md
+        - name: 'Azure Defender: реагирование на оповещения Resource Manager'
+          displayName: arm
+          href: defender-for-resource-manager-usage.md
         - name: Управление инцидентами безопасности
           href: security-center-incident.md
         - name: Создание отчетов по аналитике угроз
