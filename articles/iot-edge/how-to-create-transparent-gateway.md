@@ -11,22 +11,37 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 506f6a2025a61b4d9d16918b2a95de620171c46b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 9f81d059c1a71bf6349d0ef9b4aae8f7a47c161f
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147844"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938789"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Настройка устройства IoT Edge в качестве прозрачного шлюза
 
 В этой статье содержатся подробные инструкции по настройке устройства IoT Edge для работы в качестве прозрачного шлюза для взаимодействия других устройств с центром Интернета вещей. В этой статье используется термин *IOT Edge Gateway* для обозначения устройства IOT EDGE, настроенного в качестве прозрачного шлюза. Дополнительные сведения см. [в статье как можно использовать IOT Edge устройство в качестве шлюза](./iot-edge-as-gateway.md).
+
+<!-- 1.0.10 -->
+::: moniker range="iotedge-2018-06"
 
 >[!NOTE]
 >В данный момент:
 >
 > * устройства с поддержкой Edge не могут подключиться к шлюзам IoT Edge;
 > * подчиненные устройства не поддерживают отправку файлов.
+
+::: moniker-end
+
+<!-- 1.2.0 -->
+::: moniker range=">=iotedge-2020-11"
+
+>[!NOTE]
+>В данный момент:
+>
+> * подчиненные устройства не поддерживают отправку файлов.
+
+::: moniker-end
 
 Для настройки успешного подключения к прозрачному шлюзу необходимо выполнить три шага. В этой статье рассматривается первый шаг:
 

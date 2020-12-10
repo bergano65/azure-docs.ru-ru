@@ -5,12 +5,12 @@ ms.assetid: 35fa18ec-21d8-41bf-af2b-e5e92703401d
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.custom: accessibility
-ms.openlocfilehash: 8009d0d4ac971d81e25b276b19605bc6a70cff02
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 81c4ccef688622ec20d111383359053b82045996
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745678"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938092"
 ---
 # <a name="supported-devices"></a>Поддерживаемые устройства
 
@@ -23,7 +23,7 @@ ms.locfileid: "96745678"
 Мы советуем использовать самые последние браузеры, совместимые с вашей с операционной системой. Поддерживаются следующие браузеры:
 
 * Microsoft Edge (последняя версия);
-* Internet Explorer 11;
+* Internet Explorer 11 (поддерживается до 31 марта 2021 г.)
 * Safari (последняя версия, только для Mac);
 * Chrome (последняя версия);
 * Firefox (последняя версия).

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 502d5a5c4b3d13d32fece648ce1de6763d012096
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: a0ef8d9f28f90db77686c3139c8b45eccfb669aa
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932291"
+ms.locfileid: "96938823"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -309,8 +309,7 @@ ms.locfileid: "96932291"
 
 > [!NOTE]
 > 
-> Начиная с 1-Oct-2020 Provance ITSM интеграция с оповещением Azure больше не будет включена для новых клиентов. Новые подключения ITSM не будут поддерживаться. 
-> Существующие подключения ITSM будут поддерживаться.
+> Мы предлагаем нашим клиентам Provance использовать [действие веб-перехватчика](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) для Cherwell и Provance конечной точки в качестве другого решения интеграции.
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -367,8 +366,7 @@ ms.locfileid: "96932291"
 
 > [!NOTE]
 > 
-> Начиная с 1-Oct-2020 Cherwell ITSM интеграция с оповещением Azure больше не будет включена для новых клиентов. Новые подключения ITSM не будут поддерживаться. 
-> Существующие подключения ITSM будут поддерживаться.
+> Мы предлагаем нашим клиентам Cherwell использовать [действие веб-перехватчика](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) для Cherwell и Provance конечной точки в качестве другого решения интеграции.
 
 ### <a name="prerequisites"></a>Предварительные требования
 

@@ -7,18 +7,18 @@ documentationcenter: na
 author: allegradomel
 ms.service: virtual-network
 ms.devlang: NA
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: d99ed9304612d5c1d3cbdc56a76cee751f2a4d3f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ece6dfb5277e7ca363548c8d90021835a96a61ba
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017939"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937361"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -63,7 +63,7 @@ ms.locfileid: "96017939"
 | **AzureDatabricks** | Azure Databricks. | both | Нет | Нет |
 | **AzureDataExplorerManagement** | Управление обозревателем Azure Data Explorer. | Входящий трафик | Нет | Нет |
 | **AzureDataLake** | Azure Data Lake Storage 1-го поколения. | Исходящие | Нет | Да |
-| **AzureDevSpaces** | Azure Dev Spaces. | Исходящие | Нет | нет |
+| **AzureDevSpaces** | Azure Dev Spaces. | Исходящие | Нет | Нет |
 | **азуредевопс** | Операции разработки Azure.<br/><br/>*Примечание. Сейчас этот тег нельзя настроить с помощью портала Azure.*| Входящий трафик | Нет | Да |
 | **азуредигиталтвинс** | Azure Digital двойников.<br/><br/>*Примечание.* Этот тег или IP-адреса, охваченные этим тегом, можно использовать для ограничения доступа к конечным точкам, настроенным для маршрутов событий. *Сейчас этот тег нельзя настроить с помощью портала Azure.* | Входящий трафик | Нет | Да |
 | **AzureEventGrid** | Сетка событий Azure. | both | Нет | Нет |

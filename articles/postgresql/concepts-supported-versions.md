@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 72d774b4ced6471ff7b355b2cb43c3c9127b5975
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f0c9a01e43f12e8fbe597c85c22b79c0994305e3
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658525"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938874"
 ---
 # <a name="supported-postgresql-major-versions"></a>Поддерживаемые основные версии PostgreSQL
 
@@ -38,10 +38,10 @@ ms.locfileid: "94658525"
 ## <a name="managing-upgrades"></a>Управление обновлениями
 Проект PostgreSQL регулярно выдает дополнительные выпуски для исправления ошибок, о которых сообщили. База данных Azure для PostgreSQL автоматически закрывает серверы с дополнительными выпусками во время ежемесячных развертываний службы. 
 
-Автоматическое обновление на месте для основных версий не поддерживается. Чтобы выполнить обновление до следующей основной версии, можно 
-   * Ознакомьтесь с различными методами [обновления основных версий с помощью дампа и восстановления](./how-to-upgrade-using-dump-and-restore.md) .
-   * Использование [pg_dump и pg_restore](./howto-migrate-using-dump-and-restore.md) для перемещения базы данных на сервер, созданный с помощью новой версии модуля
-   * Кроме того, можно выполнить обновление с PostgreSQL 10 до 11 с помощью [Azure Database Migration Service](..\dms\tutorial-azure-postgresql-to-azure-postgresql-online-portal.md) .
+Автоматическое обновление на месте для основных версий не поддерживается. Для обновления до более крупной основной версии можно 
+   * Используйте один из методов, описанных в статье [обновление основных версий с помощью функции дампа и восстановления](./how-to-upgrade-using-dump-and-restore.md).
+   * Используйте [pg_dump и pg_restore](./howto-migrate-using-dump-and-restore.md) , чтобы переместить базу данных на сервер, созданный с помощью новой версии модуля.
+   * Используйте [службу миграции баз данных Azure](..\dms\tutorial-azure-postgresql-to-azure-postgresql-online-portal.md) для обновления в сети.
 
 ### <a name="version-syntax"></a>Синтаксис версии
 До PostgreSQL версии 10 [Политика управления версиями PostgreSQL](https://www.postgresql.org/support/versioning/) считается обновлением _основного номера версии_ , что приводит к увеличению первого _или_ второго числа. Например, 9,5 на 9,6 считалось обновлением _основной_ версии. Начиная с версии 10, только изменение первого числа считается обновлением основной версии. Например, 10,0 на 10,1 — это _незначительное_ обновление выпуска. Версия 10 до 11 является _основным_ обновлением версии.

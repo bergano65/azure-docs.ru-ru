@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/03/2020
+ms.date: 12/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 683f0e070ad77add62ed76eabd70b42ba15f012e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b6c75bc13bf26510ee72968c5a27407b6b7bfee6
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498138"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937497"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Принудительная минимальная требуемая версия протокола TLS для запросов к учетной записи хранения
 
@@ -339,6 +339,23 @@ resources
 На следующем рисунке показана ошибка, возникающая при попытке создать учетную запись хранения с минимальной версией TLS, установленной на TLS 1,0 (значение по умолчанию для новой учетной записи), если для политики с применением Deny требуется, чтобы минимальная версия TLS была настроена на TLS 1,2.
 
 :::image type="content" source="media/transport-layer-security-configure-minimum-version/deny-policy-error.png" alt-text="Снимок экрана, показывающий ошибку, возникающую при создании учетной записи хранения с нарушением политики":::
+
+## <a name="permissions-necessary-to-require-a-minimum-version-of-tls"></a>Разрешения, необходимые для требования минимальной версии TLS
+
+Чтобы задать свойство **минимумтлсверсион** для учетной записи хранения, пользователь должен иметь разрешения на создание учетных записей хранения и управление ими. Роли управления доступом на основе ролей Azure (Azure RBAC), предоставляющие эти разрешения, включают действие **Microsoft. Storage, storageAccounts/Write** или **Microsoft. Storage/storageAccounts \* /* _. Это действие включает следующие встроенные роли:
+
+- Роль [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager
+- Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
+- Роль [участника учетной записи хранения](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
+
+Эти роли не обеспечивают доступ к данным в учетной записи хранения с помощью Azure Active Directory (Azure AD). Однако они включают в себя _ * Microsoft. Storage/storageAccounts/listkeys/Action * *, который предоставляет доступ к ключам доступа к учетной записи. С помощью этого разрешения пользователь может использовать ключи доступа к учетной записи для доступа ко всем данным в учетной записи хранения.
+
+Назначение ролей должно быть ограничено уровнем учетной записи хранения или выше, чтобы разрешить пользователю требовать минимальную версию TLS для учетной записи хранения. Дополнительные сведения об области действия роли см. в статье [сведения о области действия для Azure RBAC](../../role-based-access-control/scope-overview.md).
+
+Не забудьте ограничить назначение этих ролей только теми, кому требуется возможность создания учетной записи хранения или обновления ее свойств. Используйте принцип минимальных привилегий, чтобы убедиться, что пользователи имеют минимальные разрешения, необходимые для выполнения своих задач. Дополнительные сведения об управлении доступом с помощью Azure RBAC см. в статье рекомендации [по использованию Azure RBAC](../../role-based-access-control/best-practices.md).
+
+> [!NOTE]
+> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, поэтому пользователь с одной из этих административных ролей может также создавать учетные записи хранения и управлять ими. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
 
 ## <a name="network-considerations"></a>Рекомендации по сети
 

@@ -9,12 +9,12 @@ ms.date: 10/14/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ab7749c93f39d0c7b630b63e0b0e68589b61ede2
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: a12fc991734fe74e450aa14a477f3a4500ba659c
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090953"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937259"
 ---
 # <a name="list-blob-containers-with-net"></a>Вывод списка контейнеров больших двоичных объектов с помощью .NET
 
@@ -60,7 +60,7 @@ ms.locfileid: "92090953"
 
 # <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
 
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Containers.cs" id="ListContainers":::
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Containers.cs" id="Snippet_ListContainers":::
 
 # <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
 

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 8c13dc0854fb29467b0fe8a1ce5f2dfc1c19bd78
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c7bb79cbd67ba2fb151641ddeeb31b54e399b906
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352343"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938262"
 ---
 # <a name="create-knowledge-base-and-manage-settings"></a>Создание базы знаний и управление параметрами
 
@@ -46,7 +46,7 @@ QnA Maker позволяет управлять базами знаний, пр�
     |--|--|
     |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx)|Флажок установлен|
     |**Текст ответа по умолчанию**| `Quickstart - default answer not found.`|
-    |**Добавление URL-адреса**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**Добавление URL-адреса**|`https://azure.microsoft.com/en-us/support/faq/`|
     |**Chit-chat** (Беседа)|Выберите значение **Professional** (Профессиональная)|
 
 1. На **шаге 5** выберите **Create your KB** (Создать базу знаний).

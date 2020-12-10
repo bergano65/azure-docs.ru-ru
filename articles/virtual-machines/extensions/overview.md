@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 08/03/2020
 ms.author: amjads
-ms.openlocfilehash: b1dd26fce2e0a761ceed211933cb79ce518905e2
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: dd3b713a027df80908e1a8a3ae53e8dc526d7d6e
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965890"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936953"
 ---
 # <a name="azure-virtual-machine-extensions-and-features"></a>Расширения и компоненты виртуальной машины Azure
 Расширения — это небольшие приложения, которые обеспечивают настройку и автоматизацию после развертывания на виртуальных машинах Azure. Платформа Azure содержит множество расширений, охватывающих конфигурацию виртуальных машин, мониторинг, безопасность и служебные приложения. Издатели принимают приложение, заключает его в расширение и упрощают установку. Все, что нужно сделать, — предоставить обязательные параметры. 
@@ -57,7 +57,7 @@ ms.locfileid: "94965890"
 | Microsoft. recoveryservices. vmsnapshot | [Моментальный снимок для Windows](vmsnapshot-windows.md#troubleshoot-and-support) |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о работе агента и расширений Linux см. в статье [расширения и компоненты виртуальной машины Azure для Linux](features-linux.md).
 * Дополнительные сведения о работе гостевого агента и расширений Windows см. в статье [расширения и компоненты виртуальной машины Azure для Windows](features-windows.md).  
 * Сведения об установке гостевого агента Windows см. в статье [Обзор агента виртуальных машин Windows в Azure](agent-windows.md).  

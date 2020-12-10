@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6b54cff85da02415bbc9dfa9ead037ced48cb58f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a2cbca8c02dcbfc0e59d31040d1fca7a790cd35
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259447"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936664"
 ---
 # <a name="define-an-oauth1-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля OAuth1 в настраиваемой политике Azure Active Directory B2C
 
@@ -92,4 +92,4 @@ Azure Active Directory B2C (Azure AD B2C) обеспечивает поддер�
 
 Примеры:
 
-- [Azure Active Directory B2C. Добавление Twitter в качестве поставщика удостоверений OAuth1 с помощью пользовательских политик](identity-provider-twitter-custom.md)
+- [Azure Active Directory B2C. Добавление Twitter в качестве поставщика удостоверений OAuth1 с помощью пользовательских политик](identity-provider-twitter.md)

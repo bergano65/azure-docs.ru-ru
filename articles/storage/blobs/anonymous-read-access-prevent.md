@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/02/2020
+ms.date: 12/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: f12a899d3b6daa3b233e6a799871afca1e24d046
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 179e60a41a9cd6a2277959b3cd31159c796d845d
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533759"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937293"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Запретить анонимный общий доступ на чтение к контейнерам и BLOB-объектам
 
@@ -287,6 +287,23 @@ resources
 На следующем рисунке показана ошибка, возникающая при попытке создать учетную запись хранения, которая разрешает общий доступ (по умолчанию для новой учетной записи), если политика с включенным действием требует, чтобы общий доступ запрещен.
 
 :::image type="content" source="media/anonymous-read-access-prevent/deny-policy-error.png" alt-text="Снимок экрана, показывающий ошибку, возникающую при создании учетной записи хранения с нарушением политики":::
+
+## <a name="permissions-for-allowing-or-disallowing-public-access"></a>Разрешения на разрешение или запрет общего доступа
+
+Чтобы задать свойство **алловблобпубликакцесс** для учетной записи хранения, пользователь должен иметь разрешения на создание учетных записей хранения и управление ими. Роли управления доступом на основе ролей Azure (Azure RBAC), предоставляющие эти разрешения, включают действие **Microsoft. Storage, storageAccounts/Write** или **Microsoft. Storage/storageAccounts \* /* _. Это действие включает следующие встроенные роли:
+
+- Роль [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager
+- Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
+- Роль [участника учетной записи хранения](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
+
+Эти роли не обеспечивают доступ к данным в учетной записи хранения с помощью Azure Active Directory (Azure AD). Однако они включают в себя _ * Microsoft. Storage/storageAccounts/listkeys/Action * *, который предоставляет доступ к ключам доступа к учетной записи. С помощью этого разрешения пользователь может использовать ключи доступа к учетной записи для доступа ко всем данным в учетной записи хранения.
+
+Назначение ролей должно быть ограничено уровнем учетной записи хранения или выше, чтобы разрешить пользователю разрешить или запретить доступ к учетной записи хранения. Дополнительные сведения об области действия роли см. в статье [сведения о области действия для Azure RBAC](../../role-based-access-control/scope-overview.md).
+
+Не забудьте ограничить назначение этих ролей только теми, кому требуется возможность создания учетной записи хранения или обновления ее свойств. Используйте принцип минимальных привилегий, чтобы убедиться, что пользователи имеют минимальные разрешения, необходимые для выполнения своих задач. Дополнительные сведения об управлении доступом с помощью Azure RBAC см. в статье рекомендации [по использованию Azure RBAC](../../role-based-access-control/best-practices.md).
+
+> [!NOTE]
+> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, поэтому пользователь с одной из этих административных ролей может также создавать учетные записи хранения и управлять ими. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

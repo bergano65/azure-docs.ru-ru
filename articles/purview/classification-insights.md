@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 553c33b3d5ea2e3f1ee81503cb69fe15db387af6
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: bb3c7cc3f51eae90c5b712d224407e639b232fbc
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745032"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938891"
 ---
 # <a name="classification-insights-about-your-data-from-azure-purview"></a>Сведения о классификации данных из Azure зрения
 
@@ -44,7 +44,7 @@ ms.locfileid: "96745032"
 Зрения использует те же конфиденциальные типы данных, что и Microsoft 365, что позволяет растянуть существующие политики безопасности и обеспечить защиту всей области данных.
 
 > [!NOTE]
-> После того как вы проверили исходные типы источников, предоставьте **классификацию** "аналитика" на несколько часов, чтобы отразить новые активы.
+> После того как вы проверили типы источников, предоставьте сведения о **классификации** в несколько часов, чтобы отразить новые активы.
 
 **Чтобы просмотреть аналитику классификации, выполните следующие действия.**
 

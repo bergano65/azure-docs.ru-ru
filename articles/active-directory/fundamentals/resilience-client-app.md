@@ -11,12 +11,12 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: 9189d4d8cda5f9fcfce7e6ac2097414aa29f0a68
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: fc15176318dcfae99434f50a0b4370f371cec05a
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317475"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938245"
 ---
 # <a name="increase-the-resilience-of-authentication-and-authorization-in-client-applications-you-develop"></a>Повышение устойчивости проверки подлинности и авторизации в разрабатываемых клиентских приложениях
 
@@ -30,7 +30,9 @@ MSAL кэширует маркеры и использует шаблон пол
 
 ![Изображение устройства с и приложением, использующее MSAL для вызова Microsoft Identity](media/resilience-client-app/resilience-with-microsoft-authentication-library.png)
 
-При использовании MSAL вы получаете кэширование, обновление и автоматическое получение токенов с помощью следующего шаблона.
+При использовании MSAL поддержка кэширования маркеров, обновления и автоматического приобретения поддерживается автоматически. Для получения маркеров, необходимых для современной проверки подлинности, можно использовать простые шаблоны. Поддерживается множество языков, и вы можете найти пример, соответствующий вашему языку и сценарию на странице [примеров](https://docs.microsoft.com/azure/active-directory/develop/sample-v2-code) .
+
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 try
@@ -42,6 +44,28 @@ catch(MsalUiRequiredException ex)
     result = await app.AcquireToken(scopes).WithClaims(ex.Claims).ExecuteAsync()
 }
 ```
+
+## <a name="javascript"></a>[Javascript](#tab/javascript)
+
+```javascript
+return myMSALObj.acquireTokenSilent(request).catch(error => {
+    console.warn("silent token acquisition fails. acquiring token using redirect");
+    if (error instanceof msal.InteractionRequiredAuthError) {
+        // fallback to interaction when silent call fails
+        return myMSALObj.acquireTokenPopup(request).then(tokenResponse => {
+            console.log(tokenResponse);
+
+            return tokenResponse;
+        }).catch(error => {
+            console.error(error);
+        });
+    } else {
+        console.warn(error);
+    }
+});
+```
+
+---
 
 MSAL может в некоторых случаях заранее обновлять маркеры. Когда Microsoft Identity выдает долгосрочный маркер, он может отправить клиенту сведения в течение оптимального времени для обновления маркера ("обновить \_ в"). MSAL будет заранее обновлять маркер на основе этих данных. Приложение продолжит работу, пока Старый токен является допустимым, но в течение длительного времени он будет продолжать получение маркера.
 
@@ -65,7 +89,9 @@ MSAL может в некоторых случаях заранее обновл
 
 [Ознакомьтесь с последней версией Microsoft. Identity. Web и заметками о выпуске.](https://github.com/AzureAD/microsoft-identity-web/releases)
 
-## <a name="if-not-using-msal-use-these-resilient-patterns-for-token-handling"></a>Если не используется MSAL, используйте эти устойчивые шаблоны для обработки маркеров.
+## <a name="use-resilient-patterns-for-token-handling"></a>Использование устойчивых шаблонов для обработки маркеров
+
+Если вы не используете MSAL, эти устойчивые шаблоны можно использовать для обработки маркеров. Эти рекомендации реализуются автоматически с помощью библиотеки MSAL. 
 
 Как правило, приложение, использующее современную проверку подлинности, будет вызывать конечную точку для получения токенов, которые проверяют подлинность пользователя или разрешают приложению вызывать защищенные API. MSAL предназначен для обработки подробностей проверки подлинности и реализует несколько шаблонов для повышения устойчивости этого процесса. Используйте рекомендации в этом разделе, чтобы реализовать рекомендации, если вы решили использовать библиотеку, отличную от MSAL. Если вы используете MSAL, вы получаете все эти рекомендации бесплатно, так как MSAL реализует их автоматически.
 

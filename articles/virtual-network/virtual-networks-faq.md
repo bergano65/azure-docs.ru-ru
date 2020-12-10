@@ -8,17 +8,17 @@ author: KumudD
 manager: twooley
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 00ef685c755c0fa6f5217d567bfa255ea940d72a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 3ee9e165ce9c24968b072d19367e0285f5438259
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015975"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938806"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -44,7 +44,7 @@ ms.locfileid: "95015975"
 ### <a name="can-i-perform-wan-optimization-between-vnets-or-a-vnet-and-my-on-premises-data-center"></a>Можно ли выполнять оптимизацию глобальной сети между виртуальными сетями или между виртуальной сетью и локальным центром обработки данных?
 Да. Вы можете развернуть [виртуальные сетевые устройства оптимизации глобальной сети](https://azuremarketplace.microsoft.com/en-us/marketplace/?term=wan%20optimization), предоставляемые несколькими поставщиками через Azure Marketplace.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="what-tools-do-i-use-to-create-a-vnet"></a>Какие средства необходимо использовать для создания виртуальной сети?
 Для создания или настройки виртуальной сети можно использовать указанные ниже средства.
@@ -95,7 +95,7 @@ ms.locfileid: "95015975"
 Нет. Многоадресная и широковещательная рассылка не поддерживаются.
 
 ### <a name="what-protocols-can-i-use-within-vnets"></a>Какие протоколы можно использовать в рамках виртуальных сетей?
-Вы можете использовать в виртуальных сетях протоколы TCP, UDP и ICMP, относящиеся к стеку TCP/IP. Одноадресная рассылка поддерживается в виртуальных сетей, за исключением динамического протокола конфигурации узла (DHCP) через одноадресную рассылку (исходящий порт UDP/68/порт назначения UDP/67) и порт источника UDP 65330, зарезервированный для узла. В виртуальных сетях блокируются многоадресные и широковещательные рассылки, инкапсулированные пакеты IP in IP и пакеты, передаваемые по протоколу GRE (Generic Routing Encapsulation). 
+Вы можете использовать в виртуальных сетях протоколы TCP, UDP и ICMP, относящиеся к стеку TCP/IP. Между виртуальными сетями поддерживается одноадресная передача. Исключением является одноадресная передача по протоколу DHCP (исходный порт UDP/68, конечный порт UDP/67) и через исходный порт UDP 65330, зарезервированный для узла. В виртуальных сетях блокируются многоадресные и широковещательные рассылки, инкапсулированные пакеты IP in IP и пакеты, передаваемые по протоколу GRE (Generic Routing Encapsulation). 
 
 ### <a name="can-i-ping-my-default-routers-within-a-vnet"></a>Можно ли в виртуальной сети проверять связь с маршрутизаторами по умолчанию?
 Нет.

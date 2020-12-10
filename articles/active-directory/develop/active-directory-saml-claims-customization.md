@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/22/2019
+ms.date: 12/09/2020
 ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
-ms.openlocfilehash: f462a78790e73f3e0f67f55b6417589c7826a75d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1c88b9f77513021609b99c81ea572c2b5b3d365b
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173674"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936800"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство по настройке утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -60,7 +60,6 @@ ms.locfileid: "96173674"
 | **Persistent** | Платформа Microsoft Identity будет использовать persistent в качестве формата NameID. |
 | **EmailAddress** | Платформа Microsoft Identity будет использовать EmailAddress в качестве формата NameID. |
 | **Unspecified** | Платформа Microsoft Identity будет использовать в качестве формата NameID значение не указано. |
-| **WindowsDomainQualifiedName** | Платформа Microsoft Identity будет использовать Виндовсдомаинкуалифиеднаме в качестве формата NameID. |
 
 Также поддерживается временное значение NameID, но оно недоступно в раскрывающемся списке и его нельзя настроить на стороне Azure. Дополнительные сведения об атрибуте NameIDPolicy см. в статье [Протокол единого входа SAML](single-sign-on-saml-protocol.md).
 

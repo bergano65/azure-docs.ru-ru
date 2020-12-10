@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: f270ac736bb5dbc429dc8659cc88e63d0b51a523
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: cc17a66aceb6ab3eba9a18f8f07902822f4c81bb
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366644"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937667"
 ---
 # <a name="limits-in-azure-database-for-postgresql---flexible-server"></a>Ограничения в базе данных Azure для PostgreSQL-гибкого сервера
 
@@ -116,9 +116,10 @@ PostgreSQL подключение, даже бездействующее, мож
 
 * Проверка подлинности Azure AD пока не поддерживается. Если требуется проверка подлинности Azure AD, рекомендуется использовать параметр [Single Server](../overview-single-server.md) .
 * Реплики чтения пока не поддерживаются. Если требуются реплики Read, рекомендуется использовать параметр [Single Server](../overview-single-server.md) .
+* Перемещение ресурсов в другую подписку не поддерживается. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения [о доступных параметрах вычислений и хранилища](concepts-compute-storage.md)
 - См. [поддерживаемые версии базы данных PostgreSQL](concepts-supported-versions.md).
