@@ -7,13 +7,13 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.custom: contperfq1
-ms.date: 10/2/2020
-ms.openlocfilehash: 022e2e25c96473f49468f2bd48e5ee997933baea
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.date: 12/9/2020
+ms.openlocfilehash: 70a2d5fac643c9af6954f154e1c91813bbbfa5bc
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348718"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008390"
 ---
 # <a name="outputs-from-azure-stream-analytics"></a>Выходные данные из Azure Stream Analytics
 
@@ -25,12 +25,12 @@ ms.locfileid: "93348718"
 
 | Тип выходных данных | Секционирование | Безопасность | 
 |-------------|--------------|----------|
-|[Azure Data Lake Storage 1-го поколения](azure-data-lake-storage-gen1-output.md)|Да|Пользователь Azure Active Directory </br> MSI|
-|[База данных SQL Azure](sql-database-output.md)|Да, необязательно.|Проверка подлинности пользователя SQL </br> MSI (Предварительная версия)|
-|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Да|Проверка подлинности пользователя SQL|
-|[Хранилище BLOB-объектов и Azure Data Lake Gen 2](blob-storage-azure-data-lake-gen2-output.md)|Да|MSI </br> Ключ доступа|
-|[Центры событий Azure](event-hubs-output.md)|Да, необходимо задать ключевой столбец секции в выходной конфигурации.|Ключ доступа|
-|[Power BI](power-bi-output.md)|Нет|Пользователь Azure Active Directory </br> MSI|
+|[Azure Data Lake Storage 1-го поколения](azure-data-lake-storage-gen1-output.md)|Да|Пользователь Azure Active Directory </br> , Управляемое удостоверение|
+|[База данных SQL Azure](sql-database-output.md)|Да, необязательно.|Проверка подлинности пользователя SQL </br> Управляемое удостоверение (предварительная версия)|
+|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Да|Проверка подлинности пользователя SQL </br> Управляемое удостоверение (предварительная версия)|
+|[Хранилище BLOB-объектов и Azure Data Lake Gen 2](blob-storage-azure-data-lake-gen2-output.md)|Да|Ключ доступа, </br> Управляемое удостоверение (предварительная версия)|
+|[Центры событий Azure](event-hubs-output.md)|Да, необходимо задать ключевой столбец секции в выходной конфигурации.|Ключ доступа, </br> Управляемое удостоверение (предварительная версия)|
+|[Power BI](power-bi-output.md)|Нет|Azure Active Directory пользователь, </br> Управляемое удостоверение|
 |[Хранилище таблиц Azure](table-storage-output.md)|Да|Ключ учетной записи|
 |[Очереди служебной шины Azure](service-bus-queues-output.md)|Да|Ключ доступа|
 |[Разделы по служебной шине Azure](service-bus-topics-output.md)|Да|Ключ доступа|
@@ -41,7 +41,7 @@ ms.locfileid: "93348718"
 
 Stream Analytics поддерживает секции для всех выходных данных, за исключением Power BI. Дополнительные сведения о ключах разделов и количестве модулей записи вывода см. в статье, посвященной определенному типу выхода. Все выходные статьи связаны в предыдущем разделе.  
 
-Кроме того, для более сложной настройки секций количество модулей записи вывода можно контролировать с помощью `INTO <partition count>` предложения (см.) [INTO](/stream-analytics-query/into-azure-stream-analytics#into-shard-count)в запросе, что может быть полезным при достижении требуемой топологии задания. Если выходной адаптер не секционирован, недостаток данных в одной входной секции приведет к задержке до наступления времени задержки. В таком случае выходные данные объединяются в общий модуль записи, что может привести к возникновению узких мест в конвейере. Дополнительные сведения о политике допустимого интервала поступления с задержкой см. в статье [Рассмотрение порядка событий Azure Stream Analytics](./stream-analytics-time-handling.md).
+Кроме того, для более сложной настройки секций количество модулей записи вывода можно контролировать с помощью `INTO <partition count>` предложения (см.) [](/stream-analytics-query/into-azure-stream-analytics#into-shard-count)в запросе, что может быть полезным при достижении требуемой топологии задания. Если выходной адаптер не секционирован, недостаток данных в одной входной секции приведет к задержке до наступления времени задержки. В таком случае выходные данные объединяются в общий модуль записи, что может привести к возникновению узких мест в конвейере. Дополнительные сведения о политике допустимого интервала поступления с задержкой см. в статье [Рассмотрение порядка событий Azure Stream Analytics](./stream-analytics-time-handling.md).
 
 ## <a name="output-batch-size"></a>Размер выходного пакета
 

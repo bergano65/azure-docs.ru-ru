@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 06/16/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-js, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 25d5aa3961ad5dabd29ab4501d8f5076362d9df8
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: b3d88c99ab0e9e204eb4d7dd78dc319f889a5e7d
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862279"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005534"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство по Разработка приложения на основе Node.js и MongoDB в Azure
 
@@ -129,7 +129,7 @@ MEAN.JS — среда разработки
 > За создание баз данных Azure Cosmos DB, используемых в этом руководстве, взимается плата в вашей подписке Azure. Чтобы получить бесплатную учетную запись Azure Cosmos DB на семь дней, можно использовать [бесплатную пробную версию Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/). Просто нажмите кнопку **Создать** на плитке MongoDB, чтобы создать бесплатную базу данных MongoDB в Azure. После создания базы данных перейдите к разделу **Строка подключения** на портале и извлеките строку подключения к Azure Cosmos DB для дальнейшего использования в этом руководстве.
 >
 
-В Cloud Shell создайте учетную запись Cosmos DB при помощи команды [`az cosmosdb create`](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-create).
+В Cloud Shell создайте учетную запись Cosmos DB при помощи команды [`az cosmosdb create`](/cli/azure/cosmosdb#az_cosmosdb_create).
 
 В следующей команде замените заполнитель *\<cosmosdb-name>* уникальным именем базы данных Cosmos DB. Это имя используется как часть конечной точки Cosmos DB (`https://<cosmosdb-name>.documents.azure.com/`), поэтому оно должно быть уникальным для всех учетных записей Cosmos DB в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков.
 
@@ -163,7 +163,7 @@ az cosmosdb create --name <cosmosdb-name> --resource-group myResourceGroup --kin
 
 ### <a name="retrieve-the-database-key"></a>Получение ключа базы данных
 
-Для подключения к базе данных Cosmos DB потребуется ключ базы данных. Чтобы получить первичный ключ, выполните в Cloud Shell команду [`az cosmosdb list-keys`](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-list-keys).
+Для подключения к базе данных Cosmos DB потребуется ключ базы данных. Чтобы получить первичный ключ, выполните в Cloud Shell команду [`az cosmosdb list-keys`](/cli/azure/cosmosdb#az-cosmosdb-list-keys).
 
 ```azurecli-interactive
 az cosmosdb list-keys --name <cosmosdb-name> --resource-group myResourceGroup
@@ -276,7 +276,7 @@ MEAN.JS
 
 По умолчанию _config/env/local-production.js_ хранится в проекте MEAN.js вне репозитория Git. Поэтому для приложения Azure вам нужно использовать параметры приложения, чтобы определить строку подключения MongoDB.
 
-Чтобы задать параметры приложения, выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. 
+Чтобы задать параметры приложения, выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) в Cloud Shell. 
 
 В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app-name>* , *\<cosmosdb-name>* и *\<primary-master-key>* .
 
@@ -482,7 +482,7 @@ git push azure main
 
 При запуске приложения Node.js в службе приложений Azure можно направить журналы консоли в свой терминал. Таким образом, вы будете получать те же диагностические сообщения, которые помогут устранить ошибки приложения.
 
-Чтобы настроить потоки для журналов, выполните команду [`az webapp log tail`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-tail) в Cloud Shell.
+Чтобы настроить потоки для журналов, выполните команду [`az webapp log tail`](/cli/azure/webapp/log#az-webapp-log-tail) в Cloud Shell.
 
 ```azurecli-interactive
 az webapp log tail --name <app-name> --resource-group myResourceGroup

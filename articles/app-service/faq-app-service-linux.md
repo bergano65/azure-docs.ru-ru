@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: c35647a46cd252ce045d10e8dfefcf78236ba74b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2ab39f090124aaf590798795f446bda5b0fe48a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961726"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008560"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -94,7 +94,7 @@ ms.locfileid: "88961726"
 
 ```nodejs
 const io = require('socket.io')(server,{
-  perMessageDeflate :false
+  perMessageDeflate :false
 });
 ```
 
@@ -122,7 +122,7 @@ const io = require('socket.io')(server,{
 
 **Какой формат используется для имени образа в частном реестре?**
 
-Добавьте полное имя образа, включая URL-адрес частного реестра (например, myacr.azurecr.io/dotnet:latest). [На портале нельзя вводить](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650) имена образов, которые используют пользовательский порт. Для установки `docker-custom-image-name` Используйте [ `az` программу командной строки](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set).
+Добавьте полное имя образа, включая URL-адрес частного реестра (например, myacr.azurecr.io/dotnet:latest). [На портале нельзя вводить](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650) имена образов, которые используют пользовательский порт. Для установки `docker-custom-image-name` Используйте [ `az` программу командной строки](/cli/azure/webapp/config/container#az-webapp-config-container-set).
 
 **Можно ли предоставить несколько портов в образе настраиваемого контейнера?**
 
@@ -201,7 +201,7 @@ image: <server-name>.azurecr.io/<image-name>:<tag>
 
 Вы можете отправить свои идеи на [форум отзывов о веб-приложениях](https://aka.ms/webapps-uservoice). Добавьте [Linux] в заголовок своей идеи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о службе приложений на платформе Linux](overview.md#app-service-on-linux).
 - [Настройка промежуточных сред в Службе приложений Azure](deploy-staging-slots.md)
