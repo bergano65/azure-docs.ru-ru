@@ -5,12 +5,12 @@ ms.author: puagarw
 ms.topic: tutorial
 ms.date: 07/12/2019
 author: pulkitaggarwl
-ms.openlocfilehash: 36b2e829e56cf4d3b5ace64af989fa7f71725c44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15b0413eabcfae7e3a4b28243caf2a708260ccae
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360843"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932223"
 ---
 # <a name="deployment-center-for-azure-kubernetes"></a>Центр развертывания для Azure Kubernetes
 
@@ -56,7 +56,7 @@ ms.locfileid: "91360843"
 
    ![Снимок экрана: портал Azure со стрелкой, указывающей на Центр развертывания.](media/deployment-center-launcher/settings.png)
 
-1. Выберите расположение кода и нажмите кнопку **Далее**. Затем выберите один из репозиториев, поддерживаемых на данный момент: **[Azure Repos](/azure/devops/repos/index?view=azure-devops)** или **GitHub**.
+1. Выберите расположение кода и нажмите кнопку **Далее**. Затем выберите один из репозиториев, поддерживаемых на данный момент: **[Azure Repos](/azure/devops/repos/index)** или **GitHub**.
 
     Azure Repos — это набор средств управления версиями, которые помогают вам управлять кодом. Независимо от того, малый или большой проект программного обеспечения вы имеете, рекомендуется как можно раньше использовать контроль версий.
 
@@ -77,7 +77,7 @@ ms.locfileid: "91360843"
 
     ![Снимок экрана: Центр развертывания с сообщением "Не удалось найти Dockerfile в репозитории".](media/deployment-center-launcher/dockerfile.png)
 
-1. Выберите существующий реестр контейнеров или создайте его, а затем нажмите кнопку **Готово**. Конвейер создается автоматически и встает в очередь сборки в [Azure Pipelines](/azure/devops/pipelines/index?view=azure-devops).
+1. Выберите существующий реестр контейнеров или создайте его, а затем нажмите кнопку **Готово**. Конвейер создается автоматически и встает в очередь сборки в [Azure Pipelines](/azure/devops/pipelines/index).
 
     Azure Pipelines — это облачная служба, которую можно использовать для автоматической сборки и тестирования проекта кода, а также предоставления доступа другим пользователям. Azure Pipelines сочетает непрерывную интеграцию и непрерывную доставку для постоянного и согласованного тестирования, а также создания кода и помещения его в любой целевой объект.
 
