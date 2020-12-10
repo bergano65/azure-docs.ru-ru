@@ -91,7 +91,7 @@
         - name: Доступность
           href: ../availability.md
         - name: Совместное размещение
-          href: co-location.md
+          href: ../co-location.md
         - name: проблемы с производительностью сети;
           href: ../..//virtual-network/virtual-network-optimize-network-bandwidth.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Типы и размеры виртуальных машин
@@ -725,7 +725,7 @@
                       href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
                     - name: Пользовательские поля
                       href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-            - name: Устранение неполадок
+            - name: Диагностика
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
