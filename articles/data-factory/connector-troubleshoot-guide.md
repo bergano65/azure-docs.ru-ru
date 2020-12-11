@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 12/02/2020
+ms.date: 12/09/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: c90b7ce86e06669696a4b9f7e0b2f5287e9dd97e
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a7a81a742922d45be965c7f73e3cb910d0ef989a
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533202"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109301"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок с соединителями Фабрики данных Azure
 
@@ -46,6 +46,15 @@ ms.locfileid: "96533202"
 ### <a name="error-code--azurestorageoperationfailedconcurrentwrite"></a>Код ошибки:  AzureStorageOperationFailedConcurrentWrite
 
 - **Сообщение**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
+
+
+### <a name="invalid-property-during-copy-activity"></a>Недопустимое свойство во время действия копирования
+
+- **Сообщение**:  `Copy activity <Activity Name> has an invalid "source" property. The source type is not compatible with the dataset <Dataset Name> and its linked service <Linked Service Name>. Please verify your input against.`
+
+- **Причина**: тип, определенный в DataSet, не согласуется с типом источника или приемника, определенным в действии копирования.
+
+- **Решение**. Измените определение набора данных или конвейера, чтобы обеспечить единообразие типов и повторное развертывание.
 
 
 ## <a name="azure-cosmos-db"></a>Azure Cosmos DB
@@ -158,7 +167,33 @@ ms.locfileid: "96533202"
 
 ### <a name="error-code-adlsgen2timeouterror"></a>Код ошибки: AdlsGen2TimeoutError
 
-- **Сообщение**: `Request to ADLS Gen2 account '%account;' met timeout error. It is mostly caused by the poor network between the Self-hosted IR machine and the ADLS Gen2 account. Check the network to resolve such error.`
+- **Сообщение.** `Request to ADLS Gen2 account '%account;' met timeout error. It is mostly caused by the poor network between the Self-hosted IR machine and the ADLS Gen2 account. Check the network to resolve such error.`
+
+
+### <a name="request-to-adls-gen2-account-met-timeout-error"></a>Запрос на ADLS 2-го поколения учетной записи достигает ошибки времени ожидания
+
+- **Сообщение**: код ошибки = `UserErrorFailedBlobFSOperation` , сообщение об ошибке = `BlobFS operation failed for: A task was canceled` .
+
+- **Причина**. Эта неполадка вызвана ошибкой истечения времени ожидания приемника ADLS 2-го поколения, которая в основном происходит на автономном IR-компьютере.
+
+- **Рекомендация**. 
+
+    1. Поместите собственный IR-компьютер и целевую учетную запись ADLS 2-го поколения в том же регионе, если это возможно. Это может избежать ошибки произвольного времени ожидания и повысить производительность.
+
+    1. Проверьте наличие специальных сетевых параметров, таких как ExpressRoute, и убедитесь, что пропускная способность сети достаточна. Мы рекомендуем уменьшить значение параметра одновременных параллельных заданий, когда общая пропускная способность мала, с помощью которой можно избежать конкуренции за использование сетевых ресурсов в нескольких параллельных заданиях.
+
+    1. Используйте меньший размер блока для недвоичного копирования, чтобы устранить такую ошибку времени ожидания, если размер файла умеренный или маленький. См. Дополнительные сведения о [блоке размещения хранилища BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/put-block).
+
+       Чтобы указать размер пользовательского блока, можно изменить свойство в редакторе JSON:
+    ```
+    "sink": {
+        "type": "DelimitedTextSink",
+        "storeSettings": {
+            "type": "AzureBlobFSWriteSettings",
+            "blockSizeInMB": 8
+        }
+    }
+    ```
 
 
 ## <a name="azure-data-lake-storage-gen1"></a>Хранилище Azure Data Lake Storage 1-го поколения
@@ -372,6 +407,7 @@ ms.locfileid: "96533202"
 
 - **Решение**. В приемнике действия копирования в разделе параметров PolyBase задайте для параметра, определяющего **использование типа по умолчанию**, значение false.
 
+
 ### <a name="error-message-expected-data-type-decimalxx-offending-value"></a>Сообщение об ошибке: Ожидаемый тип данных: DECIMAL(x,x), ошибочное значение
 
 - **Симптомы**. при копировании данных из источника табличных данных (например, SQL Server) в Azure синапсе Analytics с помощью промежуточного копирования и polybase вы столкнулись со следующей ошибкой:
@@ -387,6 +423,7 @@ ms.locfileid: "96533202"
 - **Причина**: Azure синапсе Analytics polybase не может вставить пустую строку (значение null) в десятичный столбец.
 
 - **Решение**. В приемнике действия копирования в разделе параметров PolyBase задайте для параметра, определяющего **использование типа по умолчанию**, значение false.
+
 
 ### <a name="error-message-java-exception-message-hdfsbridgecreaterecordreader"></a>Сообщение об ошибке: сообщение исключения Java: Хдфсбридже:: Креатерекордреадер
 
@@ -421,6 +458,7 @@ ms.locfileid: "96533202"
 
 - Или используйте подход с массовыми вставками, отключив PolyBase.
 
+
 ### <a name="error-message-the-condition-specified-using-http-conditional-headers-is-not-met"></a>Сообщение об ошибке: Условие, указанное с помощью условных заголовков HTTP, не выполнено.
 
 - **Симптомы**. вы используете SQL Query для извлечения данных из Azure синапсе Analytics и нажмем следующую ошибку:
@@ -433,6 +471,58 @@ ms.locfileid: "96533202"
 
 - **Решение**. Выполните тот же запрос в SSMS и проверьте, отображается ли тот же результат. Если да, отправьте запрос в службу поддержки в Azure синапсе Analytics и укажите имя сервера и базы данных Azure синапсе Analytics для дальнейшего устранения неполадок.
             
+
+### <a name="low-performance-when-load-data-into-azure-sql"></a>Низкая производительность при загрузке данных в SQL Azure
+
+- **Симптомы**. при копировании данных в в Azure SQL происходит снижение скорости работы.
+
+- **Причина**. Основная причина проблемы в основном инициируется узким местом на стороне Azure SQL. Ниже приведены некоторые возможные причины.
+
+    1. Уровень базы данных Azure недостаточно высок.
+
+    1. Использование DTU в базе данных Azure близко к 100%. Вы можете [отслеживать производительность](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) и обновлять уровень базы данных.
+
+    1. Индексы заданы неправильно. Удалите все индексы перед загрузкой данных и создайте их повторно после завершения загрузки.
+
+    1. WriteBatchSize недостаточно велик, чтобы вместить размер строки схемы. Попытайтесь увеличить свойство для проблемы.
+
+    1. Вместо использования массовых отступов используется хранимая процедура, которая, как ожидается, может ухудшить производительность. 
+
+- **Решение**. см. сведения о [производительности действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting) ТСГ.
+
+
+### <a name="performance-tier-is-low-and-leads-to-copy-failure"></a>Низкий уровень производительности, что приводит к сбою копирования
+
+- **Симптомы**: при копировании данных в SQL Azure произошло следующее сообщение об ошибке: `Database operation failed. Error message from database execution : ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.`
+
+- **Причина**: используется Azure SQL S1, что приводит к ограничениям ввода-вывода в таком случае.
+
+- **Решение**. Обновите уровень производительности SQL Azure, чтобы устранить проблему. 
+
+
+### <a name="sql-table-cannot-be-found"></a>Не удается найти таблицу SQL 
+
+- **Симптомы**: при копировании данных из гибридной среды в локальную SQL Serverную таблицу произошла ошибка:`Cannot find the object "dbo.Contoso" because it does not exist or you do not have permissions.`
+
+- **Причина**: текущая учетная запись SQL не имеет достаточных разрешений для выполнения запросов, выданных .NET SqlBulkCopy. WriteToServer.
+
+- **Решение**. Переключитесь на более привилегированную учетную запись SQL.
+
+
+### <a name="string-or-binary-data-would-be-truncated"></a>Строковые или двоичные данные будут обрезаны
+
+- **Симптомы**: при копировании данных в локальную таблицу или SQL Server Azure произошла ошибка: 
+
+- **Причина**: определение схемы таблицы SQL CX содержит один или несколько столбцов с меньшей длиной, чем ожидание.
+
+- **Решение**. чтобы устранить проблему, выполните следующие действия:
+
+    1. Примените [отказоустойчивость](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance), особенно "redirectIncompatibleRowSettings", чтобы устранить неполадки в строках.
+
+    1. Дважды проверьте перенаправленные данные с помощью длины столбца схемы таблицы SQL, чтобы узнать, какие столбцы необходимо обновить.
+
+    1. Соответствующим образом обновите схему таблицы.
+
 
 ## <a name="delimited-text-format"></a>Формат текста с разделителями
 
@@ -453,7 +543,7 @@ ms.locfileid: "96533202"
 
 - **Рекомендация**: получение количества строк в сообщении об ошибке, проверка столбца строки и исправление данных.
 
-- **Причина.** Если ожидаемое число столбцов равно 1 в сообщении об ошибке, возможно, указаны неправильные параметры сжатия или форматирования, что привело к неправильному анализу файлов Фабрикой данных Azure.
+- **Причина**: Если ожидаемое число столбцов равно "1" в сообщении об ошибке, возможно, указано неправильное сжатие или параметры формата. Поэтому ADF неправильно анализировал файлы.
 
 - **Рекомендация**.  Проверьте параметры формата на соответствие исходным файлам.
 
@@ -488,6 +578,16 @@ ms.locfileid: "96533202"
 
 - **Рекомендация**.  Перезапустите конвейер. Если ошибка сохраняется, попробуйте уменьшить степень параллелизма. Если это не помогло, обратитесь в службу поддержки Dynamics.
 
+
+### <a name="columns-are-missing-when-previewingimporting-schema"></a>При предварительном просмотре или импорте схемы отсутствуют столбцы
+
+- **Симптомы**. Некоторые из столбцов могут быть пропущены при импорте схемы или предварительном просмотре данных. Сообщение об ошибке: `The valid structure information (column name and type) are required for Dynamics source.`
+
+- **Причина**. Эта проблема по сути заключается в проектировании, так как ADF не может отображать столбцы, не имеющие значения в первых 10 записях. Убедитесь, что добавленные столбцы имеют правильный формат. 
+
+- **Рекомендация**: вручную добавьте столбцы на вкладке "сопоставление".
+
+
 ## <a name="excel-format"></a>Формат Excel
 
 ### <a name="timeout-or-slow-performance-when-parsing-large-excel-file"></a>Время ожидания или снижение производительности при анализе большого файла Excel
@@ -495,7 +595,8 @@ ms.locfileid: "96533202"
 - **Симптомы**:
 
     1. При создании набора данных Excel и импорте схемы из подключения или хранилища, предварительного просмотра данных, списка или обновления листов может возникнуть ошибка времени ожидания, если файл Excel имеет большой размер.
-    2. При использовании действия копирования для копирования данных из большого файла Excel (>= 100 МБ) в другое хранилище данных может наблюдаться снижение производительности или проблем с производительностью.
+
+    1. При использовании действия копирования для копирования данных из большого файла Excel (>= 100 МБ) в другое хранилище данных может наблюдаться снижение производительности или проблем с производительностью.
 
 - **Причина**. 
 
@@ -507,9 +608,23 @@ ms.locfileid: "96533202"
 
     1. Для импорта схемы можно создать файл примера меньшего размера, который является подмножеством исходного файла, и выбрать «импортировать схему из образца файла» вместо «импортировать схему из подключения или хранилища».
 
-    2. Для перечисления ворксит в раскрывающемся списке лист можно щелкнуть "Изменить" и ввести вместо этого имя или индекс листа.
+    2. Для листа списка в раскрывающемся списке лист можно щелкнуть "Изменить" и ввести вместо этого имя или индекс листа.
 
     3. Чтобы скопировать большой файл Excel (>100 МБ) в другое хранилище, можно использовать источник Excel потока данных, который прочитает и улучшит потоковую передачу.
+
+
+## <a name="hdinsight"></a>HDInsight
+
+### <a name="ssl-error-when-adf-linked-service-using-hdinsight-esp-cluster"></a>Ошибка SSL при связанной службе ADF с помощью кластера HDInsight ESP
+
+- **Сообщение**: `Failed to connect to HDInsight cluster: 'ERROR [HY000] [Microsoft][DriverSupport] (1100) SSL certificate verification failed because the certificate is missing or incorrect.`
+
+- **Причина**. скорее всего, эта неполадка связана с надежным хранилищем системы.
+
+- **Решение**. можно перейти по пути **Microsoft Integration RUNTIME\4.0\SHARED\ODBC Дриверс\микрософт Hive ODBC дривер\либ** и открыть DriverConfiguration64.exe, чтобы изменить этот параметр.
+
+    ![Снимите флажок использовать системное хранилище доверия](./media/connector-troubleshoot-guide/system-trust-store-setting.png)
+
 
 ## <a name="json-format"></a>Формат JSON
 
@@ -548,6 +663,20 @@ ms.locfileid: "96533202"
 - **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
 
 
+## <a name="oracle"></a>Oracle;
+
+### <a name="error-code-argumentoutofrangeexception"></a>Код ошибки: ArgumentOutOfRangeException
+
+- **Сообщение.** `Hour, Minute, and Second parameters describe an un-representable DateTime.`
+
+- **Причина**. в ADF значения DateTime поддерживаются в диапазоне от 0001-01-01 00:00:00 до 9999-12-31 23:59:59. Однако Oracle поддерживает более широкий диапазон значений DateTime (например, BC век или min/sec>59), что приводит к сбою в ADF.
+
+- **Рекомендация**. 
+
+    Выполните команду `select dump(<column name>)` , чтобы проверить, находится ли значение в Oracle в диапазоне ADF. 
+
+    Если вы хотите узнать последовательность байтов в результатах, проверьте https://stackoverflow.com/questions/13568193/how-are-dates-stored-in-oracle .
+
 
 ## <a name="parquet-format"></a>Формат Parquet
 
@@ -570,18 +699,18 @@ ms.locfileid: "96533202"
 
 ### <a name="error-code--parquetinvalidfile"></a>Код ошибки:  ParquetInvalidFile
 
-- **Сообщение**: `File is not a valid parquet file.`
+- **Сообщение**: `File is not a valid Parquet file.`
 
 - **Причина.** Ошибка в файле Parquet.
 
-- **Рекомендация**.  Убедитесь в том, что входные данные являются допустимым файлом Parquet.
+- **Рекомендация**: Убедитесь, что входные данные являются допустимым файлом Parquet.
 
 
 ### <a name="error-code--parquetnotsupportedtype"></a>Код ошибки:  ParquetNotSupportedType
 
 - **Сообщение**: `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
 
-- **Причина.** Формат Parquet не поддерживается в Фабрике данных Azure.
+- **Причина**: формат Parquet не поддерживается в фабрике данных Azure.
 
 - **Рекомендация**.  Тщательно проверьте исходные данные. См. документ https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs.
 
@@ -651,7 +780,7 @@ ms.locfileid: "96533202"
 
 ### <a name="error-code--parquetunsupportedinterpretation"></a>Код ошибки:  ParquetUnsupportedInterpretation
 
-- **Сообщение**: `The given interpretation '%interpretation;' of parquet format is not supported.`
+- **Сообщение**: `The given interpretation '%interpretation;' of Parquet format is not supported.`
 
 - **Причина.** Неподдерживаемый сценарий
 
@@ -665,6 +794,45 @@ ms.locfileid: "96533202"
 - **Причина.** Неподдерживаемый сценарий
 
 - **Рекомендация**.  Удалите CompressionType в полезных данных.
+
+
+### <a name="error-code--usererrorjniexception"></a>Код ошибки: Усерерроржниексцептион
+
+- **Сообщение.** `Cannot create JVM: JNI return code [-6][JNI call failed: Invalid arguments.]`
+
+- **Причина**: невозможно создать виртуальной машины Java, так как заданы некоторые недопустимые (глобальные) аргументы.
+
+- **Рекомендация**: Войдите на компьютер, на котором размещены **все узлы** локальной среды IR. Проверьте, правильно ли задана системная переменная следующим образом: `_JAVA_OPTIONS "-Xms256m -Xmx16g" with memory bigger than 8 G` . Перезапустите все ИНФРАКРАСные узлы, а затем перезапустите конвейер.
+
+
+### <a name="arithmetic-overflow"></a>Переполнение при арифметической операции
+
+- **Симптомы**: при копировании файлов Parquet возникла ошибка: `Message = Arithmetic Overflow., Source = Microsoft.DataTransfer.Common`
+
+- **Причина**: в настоящее время при копировании файлов из Oracle в Parquet поддерживается только десятичное значение точности <= 38 и длина целочисленной части <= 20. 
+
+- **Решение**. в качестве обходного пути можно преобразовать столбцы с такой проблемой в VARCHAR2.
+
+
+### <a name="no-enum-constant"></a>Нет константы перечисления
+
+- **Симптомы**: при копировании данных в формат Parquet произошла ошибка: `java.lang.IllegalArgumentException:field ended by &apos;;&apos;` , или: `java.lang.IllegalArgumentException:No enum constant org.apache.parquet.schema.OriginalType.test` .
+
+- **Причина**. 
+
+    Эта ошибка может быть вызвана пробелами или неподдерживаемыми символами (например,,; {} () \n\t =) в имени столбца, так как Parquet не поддерживает такой формат. 
+
+    Например, имя столбца, например *contoso (тест)* , будет анализировать тип в квадратных скобках из [кода](https://github.com/apache/parquet-mr/blob/master/parquet-column/src/main/java/org/apache/parquet/schema/MessageTypeParser.java) `Tokenizer st = new Tokenizer(schemaString, " ;{}()\n\t");` . Эта ошибка будет вызвана тем, что такой тип "Test" не существует.
+
+    Проверить поддерживаемые типы можно [здесь](https://github.com/apache/parquet-mr/blob/master/parquet-column/src/main/java/org/apache/parquet/schema/OriginalType.java).
+
+- **Решение**. 
+
+    1. Дважды проверьте наличие пробелов в имени столбца приемника.
+
+    1. Дважды проверьте, используется ли в качестве имени столбца первая строка с пробелами.
+
+    1. Проверьте, поддерживается ли тип Оригиналтипе. Старайтесь не использовать эти специальные символы `,;{}()\n\t=` . 
 
 
 ## <a name="rest"></a>REST
@@ -689,6 +857,114 @@ ms.locfileid: "96533202"
     - Обратите внимание, что "изогнутое" может не подойти для воспроизведения проблемы проверки SSL-сертификата. В некоторых сценариях команда "изогнутая" была выполнена успешно без возникновения каких-либо проблем с проверкой SSL-сертификата. Но если в браузере выполняется один и тот же URL-адрес, SSL-сертификат на самом деле не возвращается в первую очередь, чтобы клиент установил отношение доверия с сервером.
 
       Для описанного выше варианта рекомендуются такие средства, как **posts** и **Fiddler** .
+
+
+## <a name="sftp"></a>SFTP
+
+### <a name="invalid-sftp-credential-provided-for-sshpublickey-authentication-type"></a>Для типа проверки подлинности "SSHPublicKey" указаны недопустимые учетные данные SFTP
+
+- **Симптомы**. используется проверка подлинности с открытым ключом SSH, если для типа проверки подлинности "SshPublicKey" предоставлены недопустимые учетные данные SFTP.
+
+- **Причина**. Эта ошибка может быть вызвана тремя возможными причинами.
+
+    1. Содержимое закрытого ключа извлекается из AKV/SDK, но оно неправильно кодируется.
+
+    1. Выбран неправильный формат содержимого ключа.
+
+    1. Недопустимое содержимое учетных данных или закрытого ключа.
+
+- **Решение**. 
+
+    1. Для **причины 1**:
+
+       Если содержимое закрытого ключа относится к AKV, а исходный файл ключа может работать, если клиент загружает его непосредственно в связанную службу SFTP
+
+       https://docs.microsoft.com/azure/data-factory/connector-sftp#using-ssh-public-key-authenticationСодержимое privateKey — это содержимое закрытого ключа SSH в кодировке Base64.
+
+       Запишите **все содержимое исходного файла закрытого ключа** с помощью кодировки Base64 и сохраните закодированную строку в AKV. Исходный закрытый ключ — это файл, который может работать в связанной службе SFTP, если щелкнуть отправить из файла.
+
+       Ниже приведены некоторые примеры, используемые для создания строки.
+
+       - Использовать код C#:
+       ```
+       byte[] keyContentBytes = File.ReadAllBytes(Private Key Path);
+       string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
+       ```
+
+       - Использовать код Python:
+       ```
+       import base64
+       rfd = open(r'{Private Key Path}', 'rb')
+       keyContent = rfd.read()
+       rfd.close()
+       print base64.b64encode(Key Content)
+       ```
+
+       - Использование стороннего средства преобразования Base64
+
+         https://www.base64encode.org/Рекомендуется использовать такие средства, как.
+
+    1. Для **причины 2**:
+
+       Если используется закрытый ключ SSH в формате PKCS # 8
+
+       Формат PKCS # 8 закрытый ключ SSH (начинающийся с-----BEGIN ENCRYPTed закрытый ключ-----") сейчас не поддерживается для доступа к серверу SFTP в ADF. 
+
+       Выполните приведенные ниже команды, чтобы преобразовать ключ в традиционный формат ключей SSH (начинающийся с "-----BEGIN RSA закрытый ключ-----"):
+
+       ```
+       openssl pkcs8 -in pkcs8_format_key_file -out traditional_format_key_file
+       chmod 600 traditional_format_key_file
+       ssh-keygen -f traditional_format_key_file -p
+       ```
+    1. **Причина 3**:
+
+       Проверьте правильность файла ключа или пароля с помощью таких средств, как WinSCP.
+
+
+### <a name="incorrect-linked-service-type-is-used"></a>Используется неправильный тип связанной службы
+
+- **Симптомы**: не удается связаться с сервером FTP или SFTP.
+
+- **Причина**: для сервера FTP или SFTP используется неправильный тип связанной службы, например с помощью связанной службы FTP для подключения к серверу SFTP или в обратную связь.
+
+- **Решение**. Проверьте порт целевого сервера. По умолчанию протокол FTP использует порт 21, а SFTP использует порт 22.
+
+
+### <a name="sftp-copy-activity-failed"></a>Сбой действия SFTP Copy
+
+- **Симптомы**: код ошибки: усерерроринвалидколумнмаппингколумннотфаунд. Сообщение об ошибке: `Column &apos;AccMngr&apos; specified in column mapping cannot be found in source data.`
+
+- **Причина**: источник не включает столбец с именем "аккмнгр".
+
+- **Решение**. Дважды проверьте, как набор данных настраивается путем сопоставления столбца целевого набора данных, чтобы подтвердить наличие такого столбца "аккмнгр".
+
+
+### <a name="sftp-server-connection-throttling"></a>Регулирование подключения SFTP к серверу
+
+- **Симптомы**: ответ сервера не содержит идентификацию протокола SSH и не удалось выполнить копирование.
+
+- **Причина**: ADF будет создавать несколько подключений для скачивания с SFTP Server параллельно, и иногда это приведет к регулированию сервера SFTP. В большинстве случаях при регулировании попаданий для разных серверов будет возвращена другая ошибка.
+
+- **Решение**. 
+
+    Укажите максимальное одновременное подключение к набору данных SFTP до 1 и повторите копирование. В случае успешного прохождения этой проблемы можно убедиться в том, что в этом заключается регулирование.
+
+    Если вы хотите повысить пропускную способность, обратитесь к администратору SFTP, чтобы увеличить число одновременных подключений, или добавьте следующий IP-адрес в список разрешений:
+
+    - Если вы используете управляемый IR, добавьте [диапазоны IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653).
+      Если вы не хотите добавлять большой список диапазонов IP-адресов в список разрешенных серверов SFTP, можно установить автономные IR.
+
+    - Если вы используете локальную среду IR, добавьте IP-адрес компьютера, который установил Шир, в список разрешений.
+
+
+### <a name="error-code-sftprenameoperationfail"></a>Код ошибки: Сфтпренамеоператионфаил
+
+- **Симптомы**: конвейеру не удалось скопировать данные из большого двоичного объекта в SFTP со следующей ошибкой: `Operation on target Copy_5xe failed: Failure happened on 'Sink' side. ErrorCode=SftpRenameOperationFail,Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException` .
+
+- **Причина**: для параметра усетемпфилеренаме было задано значение true при копировании данных. Это позволяет процессу использовать временные файлы. Ошибка будет активирована, если один или несколько временных файлов были удалены до копирования всех данных.
+
+- **Решение**. Задайте для параметра Усетемпфиленаме значение false.
 
 
 ## <a name="general-copy-activity-error"></a>Общая ошибка действия копирования

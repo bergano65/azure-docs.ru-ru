@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 11/09/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4fa0f4d87567bd77faacfd2373dba0d2b8996446
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 81a1263d0eacbffa77e2e35e4594e23235394183
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873375"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108677"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 
@@ -442,7 +442,7 @@ ms.locfileid: "94873375"
 
 ## <a name="azure-ad-mfa-error-messages"></a>Сообщения об ошибках Azure AD MFA
 
-Ниже приведены идентификаторы сообщений об ошибках [технического профиля Azure AD MFA](multi-factor-auth-technical-profile.md) .
+Ниже приведены идентификаторы для сообщения об ошибке [технического профиля Azure AD MFA](multi-factor-auth-technical-profile.md) :
 
 | ID | Значение по умолчанию |
 | -- | ------------- |
@@ -543,9 +543,9 @@ ms.locfileid: "94873375"
 </LocalizedResources>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Примеры локализации см. в следующих статьях:
 
-- [Настройка языка с помощью настраиваемой политики в Azure Active Directory B2C](custom-policy-localization.md)
-- [Настройка языка с помощью потоков пользователя в Azure Active Directory B2C](user-flow-language-customization.md)
+- [Настройка языка с помощью настраиваемой политики в Azure Active Directory B2C](language-customization.md)
+- [Настройка языка с помощью потоков пользователя в Azure Active Directory B2C](language-customization.md)

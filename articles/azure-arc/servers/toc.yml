@@ -55,6 +55,8 @@
               href: manage-vm-extensions-powershell.md
             - name: Развертывание расширений с помощью шаблона ARM
               href: manage-vm-extensions-template.md
+        - name: Использование управляемых удостоверений на сервере
+          href: managed-identity-authentication.md
         - name: Управление агентом
           href: manage-agent.md
     - name: Сценарии

@@ -3,22 +3,16 @@ title: Сопоставление настраиваемого поля со с�
 description: В этой статье описывается, как преобразовать пользовательскую схему в схему сетки событий Azure, если данные событий не соответствуют схеме сетки событий.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 836e7b340c5c89100207e2f9409710b8dfa5e3bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34381782c9337631b0aa04e47eb5897a8071139a
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86105529"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109204"
 ---
 # <a name="map-custom-fields-to-event-grid-schema"></a>Сопоставление настраиваемых полей со схемой службы "Сетка событий Azure"
 
 Если данные события не соответствуют ожидаемой [схеме службы "Сетка событий"](event-schema.md), вы по-прежнему можете использовать службу "Сетка событий", чтобы выполнять маршрутизацию событий для подписчиков. В этой статье описывается сопоставление схемы со схемой службы "Сетка событий".
-
-[!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
-
-## <a name="install-preview-feature"></a>Установка предварительной версии функции
-
-[!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
 ## <a name="original-event-schema"></a>Исходная схема событий
 
@@ -40,7 +34,7 @@ ms.locfileid: "86105529"
 
 При создании настраиваемого раздела укажите способ сопоставления полей исходного события со схемой службы "Сетка событий". Существует три значения, которые позволяют настраивать сопоставление:
 
-* Значение **input schema** указывает тип схемы. Его возможные значения: схема CloudEvents, схема custom event или схема "Сетка событий". Значение по умолчанию — схема "Сетка событий". При создании настраиваемого сопоставления между своей схемой и схемой "Сетка событий" используйте значение "схема custom event". Если события находятся в схеме CloudEvents, используйте значение "схема Cloudevents".
+* Значение **input schema** указывает тип схемы. Его возможные значения: схема CloudEvents, схема custom event или схема "Сетка событий". Значение по умолчанию — схема "Сетка событий". При создании настраиваемого сопоставления между своей схемой и схемой "Сетка событий" используйте значение "схема custom event". Если события находятся в формате Клаудевентс, используйте схему Клаудевентс.
 
 * Свойство **mapping default values** задает значения по умолчанию для полей в схеме "Сетка событий". Можно задать значения по умолчанию для `subject`, `eventtype`, и `dataversion`. Как правило, этот параметр используется, если настраиваемая схема не содержит поле, которое соответствует одному из этих трех полей. Например, можно указать, что версия данных всегда имеет значение **1.0**.
 
@@ -49,10 +43,6 @@ ms.locfileid: "86105529"
 Чтобы создать настраиваемый раздел с помощью Azure CLI, выполните следующий действия.
 
 ```azurecli-interactive
-# If you have not already installed the extension, do it now.
-# This extension is required for preview features.
-az extension add --name eventgrid
-
 az eventgrid topic create \
   -n demotopic \
   -l eastus2 \
@@ -65,11 +55,7 @@ az eventgrid topic create \
 Для PowerShell используйте команду:
 
 ```azurepowershell-interactive
-# If you have not already installed the module, do it now.
-# This module is required for preview features.
-Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
-
-New-AzureRmEventGridTopic `
+New-AzEventGridTopic `
   -ResourceGroupName myResourceGroup `
   -Name demotopic `
   -Location eastus2 `
@@ -107,9 +93,9 @@ az eventgrid event-subscription create \
 В следующем примере показана подписка на раздел службы "Сетка событий" и использование схемы "Сетка событий". Для PowerShell используйте команду:
 
 ```azurepowershell-interactive
-$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName myResourceGroup -Name demoTopic).Id
+$topicid = (Get-AzEventGridTopic -ResourceGroupName myResourceGroup -Name demoTopic).Id
 
-New-AzureRmEventGridSubscription `
+New-AzEventGridSubscription `
   -ResourceId $topicid `
   -EventSubscriptionName eventsub1 `
   -EndpointType webhook `
@@ -120,7 +106,7 @@ New-AzureRmEventGridSubscription `
 В следующем примере используется входная схема события:
 
 ```azurepowershell-interactive
-New-AzureRmEventGridSubscription `
+New-AzEventGridSubscription `
   -ResourceId $topicid `
   -EventSubscriptionName eventsub2 `
   -EndpointType webhook `
@@ -146,8 +132,8 @@ curl -X POST -H "aeg-sas-key: $key" -d "$event" $endpoint
 Для PowerShell используйте команду:
 
 ```azurepowershell-interactive
-$endpoint = (Get-AzureRmEventGridTopic -ResourceGroupName myResourceGroup -Name demotopic).Endpoint
-$keys = Get-AzureRmEventGridTopicKey -ResourceGroupName myResourceGroup -Name demotopic
+$endpoint = (Get-AzEventGridTopic -ResourceGroupName myResourceGroup -Name demotopic).Endpoint
+$keys = Get-AzEventGridTopicKey -ResourceGroupName myResourceGroup -Name demotopic
 
 $htbody = @{
     myEventTypeField="Created"

@@ -563,10 +563,10 @@
             - name: "Предоставление учетных данных владельца ресурса OAuth\_2.0"
               displayName: ROPC
               href: v2-oauth-ropc.md
-            - name: "Поток утверждения носителя в OAuth\_2.0 SAML"
-              href: v2-saml-bearer-assertion.md
             - name: Смена ключей подписывания
               href: active-directory-signing-key-rollover.md
+            - name: Сценарии обмена маркерами
+              href: scenario-token-exchange-saml-oauth.md
             - name: Маркеры идентификации
               href: id-tokens.md
             - name: Маркеры доступа

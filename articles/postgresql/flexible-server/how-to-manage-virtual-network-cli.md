@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 830a97db562820853efcd88b1ab8c0b729a5dc9a
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: eb22946bb3f0858a545d5b854afe48b2e1e61927
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490141"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109238"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-postgresql---flexible-server-using-the-azure-cli"></a>Создание виртуальных сетей для базы данных Azure для PostgreSQL-гибкого сервера и управление ими с помощью Azure CLI
 
@@ -61,22 +61,22 @@ az account set --subscription <subscription id>
     ```azurecli-interactive
     az postgres flexible-server create
     ```
-<!--- Create a flexible server using already existing virtual network and subnet
+- Создайте гибкий сервер, используя уже существующую виртуальную сеть и подсеть. Если указанная виртуальная сеть и подсеть не существует, будет создана виртуальная сеть и подсеть с префиксом адреса по умолчанию.
     ```azurecli-interactive
     az postgres flexible-server create --vnet myVnet --subnet mySubnet
-    ```-->
+    ```
 - Создайте гибкий сервер, используя уже существующую виртуальную сеть, подсеть и используя идентификатор подсети. В указанной подсети не должно быть развернутого другого ресурса, и эта подсеть будет делегирована в **Microsoft. дбфорпостгрескл/флексиблесерверс**, если она еще не делегирована.
     ```azurecli-interactive
     az postgres flexible-server create --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNetName}/subnets/{SubnetName}
     ```
     > [!Note]
     > Виртуальная сеть и подсеть должны находиться в том же регионе и подписке, что и гибкий сервер.
-<!--  
-- Create a flexible server using new virtual network, subnet with non-default address prefix
+
+- Создание гибкого сервера с помощью новой виртуальной сети, подсети с префиксом адреса не по умолчанию
     ```azurecli-interactive
-    az postgres flexible-server create --vnet myVnet --vnet-address-prefix 10.0.0.0/24 --subnet mySubnet --subnet-address-prefix 10.0.0.0/24
-    ```-->
-См. справочную документацию по Azure CLI <!--FIXME --> где описаны все настраиваемые параметры для интерфейса командной строки.
+    az postgres flexible-server create --vnet myVnet --address-prefixes 10.0.0.0/24 --subnet mySubnet --subnet-prefixes 10.0.0.0/24
+    ```
+Полный список настраиваемых параметров интерфейса командной строки см. в [справочной документации](/cli/azure/postgres/flexible-server) по Azure CLI.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о работе [в сети в базе данных Azure для PostgreSQL-гибкого сервера](./concepts-networking.md).

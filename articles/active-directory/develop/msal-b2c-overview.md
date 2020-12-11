@@ -13,12 +13,12 @@ ms.date: 06/05/2020
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev devx-track-js
-ms.openlocfilehash: 327280c193c3c2fb829e468bccfc352f35edfdb5
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: ef1c0003978251dd2637915e56dc396e85f4438f
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92673513"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107878"
 ---
 # <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для JavaScript для работы с Azure AD B2C
 
@@ -169,7 +169,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
 ### <a name="step-2-catch-and-handle-authentication-errors-in-your-login-method"></a>Шаг 2. перехват и обработку ошибок проверки подлинности в методе входа
 
-Когда пользователь выбирает команду " **забыли пароль** ", приложение выдает ошибку, которую следует перехватить в коде, а затем обработаемся путем представления соответствующего потока пользователя. В этом случае это `b2c_1_reset` поток сброса пароля.
+Когда пользователь выбирает команду " **забыли пароль**", приложение выдает ошибку, которую следует перехватить в коде, а затем обработаемся путем представления соответствующего потока пользователя. В этом случае это `b2c_1_reset` поток сброса пароля.
 
 1. Расширьте метод входа следующим образом:
 
@@ -207,14 +207,14 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
     После сброса пароля пользователь возвращается в приложение для повторного входа.
 
-    :::image type="content" source="media/msal-b2c-overview/user-journey-02-password-reset.png" alt-text="Экран входа, отображаемый Azure AD B2C" border="false":::
+    :::image type="content" source="media/msal-b2c-overview/user-journey-02-password-reset.png" alt-text="Экраны потока сброса пароля, показанные Azure AD B2C" border="false":::
 
-    Дополнительные сведения о кодах ошибок и обработке исключений см. в разделе [MSAL Error and Exception Codes](msal-handling-exceptions.md).
+    Дополнительные сведения о кодах ошибок и обработке исключений см. в разделе [MSAL Error and Exception Codes](msal-error-handling-js.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об этих Azure AD B2C концепциях:
 
 - [Потоки пользователей](../../active-directory-b2c/tutorial-create-user-flows.md)
-- [Пользовательские политики](../../active-directory-b2c/custom-policy-get-started.md)
-- [Настройка UX](../../active-directory-b2c/custom-policy-configure-user-input.md)
+- [Настраиваемые политики](../../active-directory-b2c/custom-policy-get-started.md)
+- [Настройка UX](../../active-directory-b2c/configure-user-input.md)

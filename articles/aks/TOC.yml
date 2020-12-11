@@ -179,7 +179,7 @@
         - name: Развертывание AKS с помощью Terraform
           href: /azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
           maintainContext: true
-        - name: Использование средства просмотра ресурсов Kubernetes (предварительная версия)
+        - name: Представления ресурсов Kubernetes на портале Azure
           href: kubernetes-portal.md
         - name: Использование панели мониторинга Kubernetes
           href: kubernetes-dashboard.md

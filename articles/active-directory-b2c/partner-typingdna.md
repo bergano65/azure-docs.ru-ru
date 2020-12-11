@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 06/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 6f62675d27310a15c434baba8e3451a3cd81f058
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 68617d86fda940c5d3752f2389088a8c729aebec
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953531"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108354"
 ---
 # <a name="tutorial-for-configuring-typingdna-with-azure-active-directory-b2c"></a>Руководство по настройке Типингдна с помощью Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "94953531"
 
 2. Когда пользователь отправляет страницу, Библиотека Типингдна вычислит характеристики ввода для пользователя. После этого вставьте данные в скрытое текстовое поле, которое Azure AD B2C отобразить. Это поле скрыто с помощью CSS.  
 
-    [Пример содержит HTML-файлы](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/TypingDNA/source-code/selfAssertedSignUp.cshtml) с изменениями JavaScript и CSS, на которые ссылаются `api.selfasserted.tdnasignin` `api.selfasserted.tdnasignup` определения содержимого и. Сведения об размещении HTML-файлов см. в разделе [Размещение содержимого страницы](./custom-policy-ui-customization.md#hosting-the-page-content) .
+    [Пример содержит HTML-файлы](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/TypingDNA/source-code/selfAssertedSignUp.cshtml) с изменениями JavaScript и CSS, на которые ссылаются `api.selfasserted.tdnasignin` `api.selfasserted.tdnasignup` определения содержимого и. Сведения об размещении HTML-файлов см. в разделе [Размещение содержимого страницы](./customize-ui-with-html.md#hosting-the-page-content) .
 
 3. Azure AD B2C теперь имеет шаблон ввода в контейнере утверждений, когда пользователь отправляет свои учетные данные. Он должен вызвать API (Your) для передачи этих данных в конечную точку REST API Типингдна. Этот API включен в [пример (типингдна-API-Interface)](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface).
 4. Затем API среднего уровня передает данные шаблона ввода в Типингдна REST API. При регистрации вызывается [Пользовательская конечная точка проверки](https://api.typingdna.com/index.html#api-API_Services-GetUser) , чтобы подтвердить, что пользователь не существовал, а затем вызывается конечная точка [сохранения шаблона](https://api.typingdna.com/index.html#api-API_Services-saveUserPattern) , чтобы сохранить первый шаблон ввода пользователя.
@@ -160,7 +160,7 @@ API должен возвращать утверждение,  `saveTypingPatter
 
 1. Размещение [интерфейса типингдна-API](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface) на выбранном поставщике услуг размещения
 2. Замените все экземпляры `apiKey` и `apiSecret` в решении [типингдна-API-Interface](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface) на учетные данные из панели мониторинга типингдна.
-3. Разместите HTML-файлы поставщика по своему усмотрению, следуя требованиям CORS [здесь](./custom-policy-ui-customization.md#3-configure-cors) .
+3. Разместите HTML-файлы поставщика по своему усмотрению, следуя требованиям CORS [здесь](./customize-ui-with-html.md#3-configure-cors) .
 4. Замените элементы LoadURI для `api.selfasserted.tdnasignup` `api.selfasserted.tdnasignin` определений содержимого и в `TrustFrameworkExtensions.xml` файле на URI размещенных HTML-файлов соответственно.
 5. Создайте ключ политики B2C в разделе Инфраструктура процедур идентификации в колонке Azure AD в **портал Azure**. Используйте `Generate` параметр и назовите этот ключ `tdnaHashedId` .
 6. Замена TenantId в файлах политики
@@ -190,7 +190,7 @@ API должен возвращать утверждение,  `saveTypingPatter
 
 • Зарегистрируйтесь [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SU_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login) и войдите [здесь](https://b2cprod.b2clogin.com/b2cprod.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SI_TDNA&client_id=51d907f8-db14-4460-a1fd-27eaeb2a74da&nonce=defaultNonce&redirect_uri=https://jwt.ms/&scope=openid&response_type=id_token&prompt=login)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

@@ -4,18 +4,17 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 02/19/2020
 ms.author: glenga
-ms.openlocfilehash: ca8da227c97a44abe14354a5c530d508ce357884
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a5c113849296275432acf1f5603377a1909a2c04
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88704467"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96842343"
 ---
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
 Основные инструменты Функций Azure интегрируются с Visual Studio Code, что дает возможность запускать и отлаживать проект Функций Azure локально. Инструкции по отладке с помощью Visual Studio Code см. в [этой статье](../articles/azure-functions/functions-debug-powershell-local.md). 
-
-1. Нажмите клавишу F5, чтобы запустить проект приложения-функции. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал).
+1. Чтобы вызвать функцию, нажмите клавишу <kbd>F5</kbd>, чтобы запустить проект приложения-функции. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал). При возникновении проблем с запуском в Windows убедитесь, что в качестве терминала по умолчанию для Visual Studio Code не используется **оболочка WSL**.
 
 1. На панели **Terminal** (Терминал) скопируйте URL-адрес конечной точки функции, активируемой HTTP-запросом.
 

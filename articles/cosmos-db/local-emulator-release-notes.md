@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: 42259b36f1a9bfe243df47cc08b33fe8c46d819d
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 5d105ad4c2aff03dae52b340037e4c193bf82ca1
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493072"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608441"
 ---
 # <a name="azure-cosmos-db-emulator---release-notes-and-download-information"></a>Эмулятор Azure Cosmos DB. Заметки о выпуске и сведения о скачивании
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -26,6 +26,12 @@ ms.locfileid: "96493072"
 |**Начало работы**|[Установка и использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде](local-emulator.md)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="2119-3-december-2020"></a>2.11.9 (3 декабря 2020 г.)
+
+ - В этом выпуске решены некоторые проблемы, связанные с функциональностью эмулятора Azure Cosmos DB, а также представлено общее обновление содержимого, отражающее новейшие функции и улучшения в Azure Cosmos DB.
+ * Устранена проблема, из-за которой запросы на получение полезных данных из большого документа завершались сбоем при использовании режима прямого подключения и клиентских приложений Java.
+ * Устранена проблема с подключением к конечной точке MongoDB версии 3.6, на которую нацеливались приложения на базе .NET.
 
 ### <a name="2118-6-november-2020"></a>2.11.8 (6 ноября 2020 г.)
 

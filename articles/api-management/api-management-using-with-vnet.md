@@ -10,15 +10,15 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/22/2020
+ms.date: 12/10/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: 7af15552a489f36d87204bfefe47e579cc19f6dc
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: e36f7c6085908630d5e7aa2593fe4d57202d6ee7
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778818"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107657"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -88,7 +88,7 @@ ms.locfileid: "96778818"
 
 ## <a name="deploy-api-management-into-external-vnet"></a><a name="deploy-apim-external-vnet"> </a>Развертывание управления API во внешней виртуальной сети
 
-[![Развернуть в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-api-management-create-with-external-vnet%2Fazuredeploy.json)
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-api-management-create-with-external-vnet%2Fazuredeploy.json)
 
 * **Создание службы управления API в виртуальной сети**. Чтобы создать службу управления API Azure в виртуальной сети, используйте командлет [New-AzApiManagement](/powershell/module/az.apimanagement/new-azapimanagement).
 
@@ -116,8 +116,9 @@ ms.locfileid: "96778818"
 | * / [80], 443                  | Входящий трафик            | TCP                | INTERNET — VIRTUAL_NETWORK            | Подключения клиентов к службе управления API                      | External             |
 | * / 3443                     | Входящий трафик            | TCP                | ApiManagement / VIRTUAL_NETWORK       | Конечная точка управления для портала Azure и PowerShell         | Внешний и внутренний  |
 | * / 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | **Зависимость от службы хранилища Azure**                             | Внешний и внутренний  |
-| * / 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureActiveDirectory | [Azure Active Directory](api-management-howto-aad.md) (где применимо)                   | Внешний и внутренний  |
+| * / 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureActiveDirectory | [Azure Active Directory](api-management-howto-aad.md) и зависимость Azure KeyVault                  | Внешний и внутренний  |
 | * / 1433                     | Исходящие           | TCP                | VIRTUAL_NETWORK / SQL                 | **Доступ к конечным точкам службы SQL Azure**                           | Внешний и внутренний  |
+| */433                     | Исходящие           | TCP                | VIRTUAL_NETWORK/AzureKeyVault                 | **Доступ к Azure KeyVault**                           | Внешний и внутренний  |
 | * / 5671, 5672, 443          | Исходящие           | TCP                | VIRTUAL_NETWORK / EventHub            | Зависимость для [политики ведения журнала Центра событий](api-management-howto-log-event-hubs.md) и агента мониторинга | Внешний и внутренний  |
 | * / 445                      | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | Зависимость от общей папки Azure для [GIT](api-management-configuration-repository-git.md)                      | Внешний и внутренний  |
 | */443, 12000                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureCloud            | Расширение работоспособности и мониторинга         | Внешний и внутренний  |
@@ -125,7 +126,7 @@ ms.locfileid: "96778818"
 | */25, 587, 25028                       | Исходящие           | TCP                | VIRTUAL_NETWORK — INTERNET            | Подключение к SMTP-ретранслятору для отправки сообщений электронной почты                    | Внешний и внутренний  |
 | * / 6381 - 6383              | Входящий и исходящий | TCP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Доступ к службе Redis для политик [кэша](api-management-caching-policies.md) между компьютерами         | Внешний и внутренний  |
 | */4290              | Входящий и исходящий | UDP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Счетчики синхронизации для политик [ограничения скорости](api-management-access-restriction-policies.md#LimitCallRateByKey) между компьютерами         | Внешний и внутренний  |
-| * / *                        | Входящий трафик            | TCP                | AZURE_LOAD_BALANCER / VIRTUAL_NETWORK | Подсистема балансировки нагрузки инфраструктуры Azure                          | Внешний и внутренний  |
+| * / \*                        | Входящий трафик            | TCP                | AZURE_LOAD_BALANCER / VIRTUAL_NETWORK | Подсистема балансировки нагрузки инфраструктуры Azure                          | Внешний и внутренний  |
 
 >[!IMPORTANT]
 > Порты, для которых *назначение* выделено **полужирным**, требуются для успешного развертывания службы управления API. Тем не менее, блокировка других портов приведет к **ухудшению** возможности использования и **мониторинга работающей службы и предоставлению подтвержденного соглашения об уровне обслуживания**.

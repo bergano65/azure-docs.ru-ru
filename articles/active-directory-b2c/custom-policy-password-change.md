@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1c942d52bbcdad711115d81a78395979c507784b
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: a471f510f60eeb6428c5c4e8ec7cccd1e0804d10
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131757"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108864"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка смены пароля в настраиваемых политиках в Azure Active Directory B2C
 
@@ -183,4 +183,4 @@ ms.locfileid: "92131757"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения см. в разделе [Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C](custom-policy-password-complexity.md).
+- Дополнительные сведения см. в разделе [Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C](password-complexity.md).

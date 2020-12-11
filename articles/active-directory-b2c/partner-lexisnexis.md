@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 4befcaf6b8c6b6bc4fddacb179883551609f7e19
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 5f408699cae9580188a3780fc8f8654eaa97c26b
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928653"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108439"
 ---
 # <a name="tutorial-for-configuring-lexisnexis-with-azure-active-directory-b2c"></a>Руководство по настройке Лексиснексис с помощью Azure Active Directory B2C
 
@@ -95,7 +95,7 @@ ms.locfileid: "96928653"
 
 В этом решении используются пользовательские шаблоны пользовательского интерфейса, загружаемые Azure AD B2C. Эти шаблоны пользовательского интерфейса выполняют профилирование, которое отправляется непосредственно в службу Среатметрикс.
 
-Инструкции по развертыванию включенных [файлов пользовательского интерфейса](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template) в учетную запись хранения BLOB-объектов см. в этих [инструкциях](./custom-policy-ui-customization.md#custom-page-content-walkthrough) . Инструкции включают настройку учетной записи хранения BLOB-объектов, настройку CORS и предоставление общего доступа.
+Инструкции по развертыванию включенных [файлов пользовательского интерфейса](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template) в учетную запись хранения BLOB-объектов см. в этих [инструкциях](./customize-ui-with-html.md#custom-page-content-walkthrough) . Инструкции включают настройку учетной записи хранения BLOB-объектов, настройку CORS и предоставление общего доступа.
 
 Пользовательский интерфейс основан на [шаблоне «морской цвета](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template/ocean_blue)». Все ссылки в пользовательском интерфейсе должны быть обновлены для ссылки на развернутое расположение. В папке пользовательского интерфейса найдите и замените на https://yourblobstorage/blobcontainer развернутое расположение.
 
@@ -135,7 +135,7 @@ ms.locfileid: "96928653"
 
 3. Выберите **запустить поток пользователя** и выберите параметры:
 
-   а. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
+   a. **Приложение**: выберите зарегистрированное приложение (пример — JWT)
 
    b. **URL-адрес ответа**: выберите **URL-адрес перенаправления**
 
