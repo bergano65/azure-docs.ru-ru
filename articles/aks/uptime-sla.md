@@ -5,12 +5,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 06/24/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 0d1c2304f68f5e24c45390dca2cc0deb6e8dede2
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 51430a37f34600d3191a646df7c1890b6d94f481
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931951"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033023"
 ---
 # <a name="azure-kubernetes-service-aks-uptime-sla"></a>Соглашение об уровне обслуживания с гарантией времени доступности для Службы Azure Kubernetes (AKS)
 
@@ -28,13 +28,6 @@ ms.locfileid: "96931951"
 Соглашение об уровне обслуживания доступности доступно в общедоступных регионах и регионах Azure для государственных организаций, где [поддерживается AKS](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
 
 ## <a name="limitations"></a>Ограничения
-
-Частные кластеры поддерживаются только в следующих регионах:
- *  Восточная часть США
- *  западная часть США
- *  Западная часть США 2
- *  Центрально-северная часть США
- *  центрально-западная часть США
 
 ## <a name="sla-terms-and-conditions"></a>Условия Соглашения об уровне обслуживания
 

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: 195ddfcc3c781c1866a7751f989c9460463edbb9
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: c824e0abea7320a20441e51caa2a05d534ff61b3
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558170"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092692"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Автоматическая маркировка данных в Azure зрения
 
@@ -101,7 +101,7 @@ ms.locfileid: "96558170"
 
 В Microsoft 365 перейдите на страницу **Information Protection** . В области **расширение меток для ресурсов в Azure зрения** нажмите кнопку **включить** , а затем в появившемся диалоговом окне подтверждения выберите **Да** .
 
-Пример:
+Пример.
 
 :::image type="content" source="media/create-sensitivity-label/extend-sensitivity-labels-to-purview-small.png" alt-text="Выберите * * включить * *, чтобы расширить метки чувствительности на зрения" lightbox="media/create-sensitivity-label/extend-sensitivity-labels-to-purview.png":::
  
@@ -159,7 +159,7 @@ ms.locfileid: "96558170"
 
 На странице **Автоматическое добавление меток для приложений Office** включите **автоматическую маркировку для приложений Office,** а затем определите условия, при которых должна автоматически применяться метка к данным.
 
-Пример:
+Пример.
 
 :::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-files-small.png" alt-text="Определение правил автометки для файлов в центре безопасности и соответствия требованиям Microsoft 365" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-files.png":::
  
@@ -175,7 +175,7 @@ ms.locfileid: "96558170"
 
 1. Выберите **проверить конфиденциальные типы сведений** , чтобы выбрать типы конфиденциальных сведений, которые нужно применить к метке.
 
-Пример:
+Пример.
         
 :::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-db-columns-small.png" alt-text="Определение правил автометки для столбцов SQL в Microsoft 365 центре безопасности и соответствия требованиям" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-db-columns.png":::
 
@@ -190,7 +190,6 @@ ms.locfileid: "96558170"
 |**Хранилище BLOB-объектов Azure**     |[Регистрация и проверка хранилища BLOB-объектов Azure](register-scan-azure-blob-storage-source.md)         |
 |**Хранилище озера данных Azure**     |[Регистрация и сканирование Azure Data Lake Storage 1-го поколения](register-scan-adls-gen1.md) </br>[Регистрация и сканирование Azure Data Lake Storage 2-го поколения](register-scan-adls-gen2.md)         |
 |**Базы данных SQL Azure**|[Регистрация и сканирование базы данных SQL Azure](register-scan-azure-sql-database.md) </br>[Регистрация и сканирование Управляемый экземпляр Базы данных SQL Azure](register-scan-azure-sql-database-managed-instance.md)|
-|**Учетные записи хранения, защищенные брандмауэрами**     |[Проверка учетных записей хранения за брандмауэром в Azure зрения](scan-sqlresource-firewall.md)         |
 | | |
 
 ## <a name="view-labels-on-assets"></a>Просмотр меток для ресурсов
@@ -199,11 +198,11 @@ ms.locfileid: "96558170"
 
 **Чтобы просмотреть метки, применяемые к вашим ресурсам в каталоге Azure зрения, выполните следующие действия.**
 
-В каталоге Azure зрения используйте параметры фильтрации **меток** , чтобы показывать только файлы с конкретными метками. Пример: 
+В каталоге Azure зрения используйте параметры фильтрации **меток** , чтобы показывать только файлы с конкретными метками. Пример. 
 
 :::image type="content" source="media/create-sensitivity-label/filter-search-results-small.png" alt-text="Поиск активов по метке" lightbox="media/create-sensitivity-label/filter-search-results.png":::
 
-Пример:
+Пример.
 
 :::image type="content" source="media/create-sensitivity-label/view-labeled-files-blob-storage-small.png" alt-text="Просмотр метки чувствительности для файла в хранилище BLOB-объектов Azure" lightbox="media/create-sensitivity-label/view-labeled-files-blob-storage.png":::
 

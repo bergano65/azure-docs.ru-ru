@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: e995cd8f300787a19934e9b9eeae1dea73e8576c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c694cf58f4c6b613cbc183753785a34bc15063bd
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457079"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093610"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "96457079"
 Сама фабрика данных Azure не хранит никакие данные, за исключением учетных данных связанной службы для облачных хранилищ данных, зашифрованных с помощью сертификатов. Она предоставляет возможность создавать управляемые данными рабочие процессы для обработки данных с помощью [служб вычислений](data-factory-compute-linked-services.md) в других регионах или локальной среде и оркестрации перемещения данных между [поддерживаемыми хранилищами](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Кроме того, с помощью фабрики данных можно [отслеживать рабочие процессы и управлять ими](data-factory-monitor-manage-pipelines.md) , используя программные методы и пользовательский интерфейс.
 
 Перемещение данных с помощью фабрики данных Azure было **сертифицировано** для:
--   [HIPAA/HITECH](https://www.microsoft.com/en-us/trustcenter/Compliance/HIPAA)  
+-   [HIPAA/HITECH](/compliance/regulatory/offering-hipaa-hitech)  
 -   [ISO/IEC 27001](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27001)  
 -   [ISO/IEC 27018](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27018) 
 -   [CSA STAR](https://www.microsoft.com/en-us/trustcenter/Compliance/CSA-STAR-Certification).
@@ -60,7 +60,7 @@ ms.locfileid: "96457079"
 ### <a name="data-encryption-at-rest"></a>Шифрование неактивных данных
 Некоторые хранилища данных поддерживают шифрование неактивных данных. Мы советуем включить механизм шифрования данных для этих хранилищ данных. 
 
-#### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
+#### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 Прозрачное шифрование данных (TDE) в Azure синапсе Analytics помогает защититься от угроз вредоносных действий, выполняя шифрование и расшифровку неактивных данных в режиме реального времени. Этот процесс является прозрачным для клиента. Дополнительные сведения см. [в статье Защита базы данных в Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-manage-security.md).
 
 #### <a name="azure-sql-database"></a>База данных SQL Azure

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: troubleshooting
 ms.custom: troubleshooting, contperf-fy20q4
 ms.date: 11/09/2020
-ms.openlocfilehash: e383ac260a67c7334b806612325ed0b6a9fbbef9
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 010d37baff76a046bef2da877262f6427cb3d5c9
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030983"
+ms.locfileid: "97094443"
 ---
 # <a name="known-issues-and-troubleshooting-in-azure-machine-learning"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -358,7 +358,14 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
     pip install --upgrade pandas==0.23.4
     pip install --upgrade scikit-learn==0.20.3
   ```
- 
+
+* **Сбой развертывания**: для версий <= 1.18.0 пакета SDK, базовый образ, созданный для развертывания, может завершиться со следующей ошибкой: "импортеррор: не удается импортировать имя `cached_property` из `werkzeug` ". 
+
+  Для устранения этой проблемы можно выполнить следующие действия.
+  1. Скачивание пакета модели
+  2. Отмена почтовых индексов пакета
+  3. Развертывание с использованием несжатых ресурсов
+
 * **Показатель "прогнозирование R2" всегда равен нулю**. Эта проблема возникает, если в предоставленных данных для обучения есть временные ряды, которые содержат одинаковые значения для последних `n_cv_splits`  +  `forecasting_horizon` точек данных. Если этот шаблон ожидается в ряде временных рядов, можно переключить основную метрику на нормализованное среднее значение ошибки в корне.
  
 * **TensorFlow**: начиная с версии 1.5.0 пакета SDK, автоматизированное машинное обучение по умолчанию не устанавливает модели TensorFlow. Чтобы установить TensorFlow и использовать его с автоматизированными экспериментами ML, установите TensorFlow = = 1.12.0 через КондадепендеЦиес. 

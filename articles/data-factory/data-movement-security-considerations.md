@@ -1,5 +1,5 @@
 ---
-title: Замечания по безопасности
+title: Вопросы безопасности
 description: В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для помощи в защите информации.
 services: data-factory
 ms.author: abnarain
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/26/2020
-ms.openlocfilehash: 9e34ce05d055e6933ecfbacf672bb8b1eba544bd
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 5a666d265550de6e24d791db6daa954d50ddde38
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512313"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094188"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -39,13 +39,13 @@ ms.locfileid: "96512313"
 | **[Сертификация CSA STAR](https://www.microsoft.com/trustcenter/compliance/csa-star-certification)** |
 | :----------------------------------------------------------- |
 | **[ISO 20000-1:2011](https://www.microsoft.com/trustcenter/Compliance/ISO-20000-1)** |
-| **[ISO 22301:2012](https://www.microsoft.com/trustcenter/compliance/iso-22301)** |
+| **[ISO 22301:2012](/compliance/regulatory/offering-iso-22301)** |
 | **[ISO 27001:2013](https://www.microsoft.com/trustcenter/compliance/iso-iec-27001)** |
 | **[ISO 27017:2015](https://www.microsoft.com/trustcenter/compliance/iso-iec-27017)** |
 | **[ISO 27018:2014](https://www.microsoft.com/trustcenter/compliance/iso-iec-27018)** |
 | **[ISO 9001:2015](https://www.microsoft.com/trustcenter/compliance/iso-9001)** |
 | **[SOC 1, 2, 3](https://www.microsoft.com/trustcenter/compliance/soc)** |
-| **[HIPAA BAA](https://www.microsoft.com/trustcenter/compliance/hipaa)** |
+| **[HIPAA BAA](/compliance/regulatory/offering-hipaa-hitech)** |
 
 Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx). Самый актуальный список всех предложений для соответствия требованиям Azure см. на странице https://aka.ms/AzureCompliance.
 
@@ -80,7 +80,7 @@ ms.locfileid: "96512313"
 ### <a name="data-encryption-at-rest"></a>Шифрование неактивных данных
 Некоторые хранилища данных поддерживают шифрование неактивных данных. Мы рекомендуем включить механизм шифрования данных для этих хранилищ данных. 
 
-#### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
+#### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 Прозрачное шифрование данных (TDE) в Azure синапсе Analytics помогает защититься от угроз вредоносных действий, выполняя шифрование и расшифровку неактивных данных в режиме реального времени. Этот процесс является прозрачным для клиента. Дополнительные сведения см. [в статье Защита базы данных в Azure синапсе Analytics](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-manage-security.md).
 
 #### <a name="azure-sql-database"></a>База данных SQL Azure
@@ -173,7 +173,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 
 В следующей таблице представлены требования к входящему порту для брандмауэра Windows.
 
-| Входящие порты | Описание:                              |
+| Входящие порты | Описание                              |
 | ------------- | ---------------------------------------- |
 | 8060 (TCP)    | Требуется для командлета шифрования PowerShell, как описано в статье [Шифрование учетных данных для локальных хранилищ данных в фабрике данных Azure](encrypt-credentials-self-hosted-integration-runtime.md), или для приложения диспетчера учетных данных, чтобы обеспечить безопасную настройку учетных данных для локальных хранилищ данных в локальной среде выполнения интеграции. |
 
@@ -201,6 +201,6 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 Локальная среда выполнения интеграции устанавливает HTTP-подключения для доступа к Интернету. Для установки этих подключений для локальной среды выполнения интеграции должны быть открыты исходящие порты 443. Откройте входящий порт 8060 только на уровне компьютера (не на уровне корпоративного брандмауэра) для приложения диспетчера учетных данных. Если база данных SQL Azure или Azure синапсе Analytics используется в качестве источника или назначения, необходимо также открыть порт 1433. Дополнительные сведения см. в разделе [конфигурации брандмауэра и Настройка списка разрешений для IP-адресов](#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway) . 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о производительности действия копирования для фабрики данных Azure см. в статье [Руководство по настройке производительности действия копирования](copy-activity-performance.md).
 

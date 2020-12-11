@@ -10,13 +10,13 @@ ms.author: jordane
 author: jpe316
 ms.date: 09/24/2020
 ms.topic: conceptual
-ms.custom: how-to, contperfq2, devx-track-python, deploy
-ms.openlocfilehash: e2bb133997ec7b7d5ee3b8b82ec3179460596eeb
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.custom: how-to, contperf-fy21q2, devx-track-python, deploy
+ms.openlocfilehash: 9e43291325510f92f2e5fd6c07cdb9257fdede9d
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511106"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033074"
 ---
 # <a name="deploy-ml-models-to-field-programmable-gate-arrays-fpgas-with-azure-machine-learning"></a>Развертывание моделей машинного обучения в программируемых массивах Gate (FPGA) с Машинное обучение Azure 
 
@@ -31,7 +31,7 @@ FPGA позволяет достичь низкой задержки при вы
 
 ![Схема сравнения Машинное обучение Azure FPGA](./media/how-to-deploy-fpga-web-service/azure-machine-learning-fpga-comparison.png)
 
-|Процессор| Сокращение |Описание:|
+|Процессор| Сокращение |Описание|
 |---|:-------:|------|
 |Микросхемы приложений|ASIC|Пользовательские каналы, такие как единицы процессора тензорные Google (ТПУ), обеспечивают максимальную эффективность. Их нельзя настраивать повторно в случае изменения требований.|
 |Программируемые пользователем вентильные матрицы|FPGA|ППВМ (например те, что доступны в Azure) обеспечивают производительность, близкую к микросхемам ASIC. Они также гибкие и поддерживают перенастройку для реализации новой логики.|
@@ -359,7 +359,7 @@ registered_model.delete()
 converted_model.delete()
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Узнайте, как [защитить документ веб-служб](how-to-secure-web-service.md) .
 

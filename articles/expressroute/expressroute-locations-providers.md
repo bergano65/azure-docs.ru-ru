@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 11/25/2020
+ms.date: 12/10/2020
 ms.author: duau
-ms.openlocfilehash: f514e158e0914475bfe0b7b7ee2c1bf6a63396fe
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: e24c0aacd1b10615e645c14ceb2b8d31f1f75e40
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008407"
+ms.locfileid: "97093899"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -51,7 +51,7 @@ ms.locfileid: "97008407"
 | **Южная Корея** | Республика Корея, центральный регион, Республика Корея, южный регион |Пусан, Сеул|
 | **ОАЭ** | Центральная часть ОАЭ, Северная часть ОАЭ | Дубаи, Дубаи 2 |
 | **ЮАР** | Западная часть ЮАР, Северная часть ЮАР |Кейптаун, Йоханнесбург |
-| **Южная Америка** | Южная Бразилия |Сан-Паулу |
+| **Южная Америка** | Южная Бразилия |Богота, Сан-Паулу |
 
 ## <a name="azure-regions-and-geopolitical-boundaries-for-national-clouds"></a>Регионы Azure и геополитические границы для национальных облаков
 В таблице ниже содержатся сведения о регионах и геополитических границах для национальных облаков.
@@ -83,6 +83,7 @@ ms.locfileid: "97008407"
 | **Окленд** | [Vocus Group NZ Albany](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | Недоступно | 10G | Devoli, Kordia, Megaport, Spark NZ, Vocus Group NZ |
 | **Бангкок** | [AIS](https://business.ais.co.th/solution/en/azure-expressroute.html) | 2 | Недоступно | 10G | AIS, УИХ |
 | **Берлин** | [NTT GDC](https://www.e-shelter.de/en/location/berlin-1-data-center) | 1 | Северная Германия | 10G | Equinix, NTT Global Datacenters EMEA|
+| **Богота** | [Equinix BG1](https://www.equinix.com/locations/americas-colocation/colombia-colocation/bogota-data-centers/bg1/) | 3 | Недоступно | 10G | |
 | **Пусан** | [LG CNS](https://www.lgcns.com/En/Service/DataCenter) | 2 | Республика Корея, южный регион | Недоступно | LG CNS |
 | **Канберра** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия | 10G, 100G | CDC |
 | **Канберра 2** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия 2| 10G, 100G | CDC, Equinix |

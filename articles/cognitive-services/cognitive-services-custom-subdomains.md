@@ -7,14 +7,14 @@ author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 07/24/2019
+ms.date: 12/04/2020
 ms.author: erhopf
-ms.openlocfilehash: 95f3de0fe26678f6b4bcd97a78c06e92b72a7135
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 4746aad2d7cd62cb309a1823f8c50487e6f7e87c
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368820"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032972"
 ---
 # <a name="custom-subdomain-names-for-cognitive-services"></a>Имена пользовательских поддоменов для Cognitive Services
 
@@ -39,7 +39,7 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 ## <a name="what-if-an-sdk-asks-me-for-the-region-for-a-resource"></a>Что делать, если пакет SDK запрашивает регион для ресурса?
 
 > [!WARNING]
-> В настоящее время службы речи **не** поддерживают пользовательские поддомены. Используйте региональные конечные точки при использовании речевых служб и соответствующих пакетов SDK.
+> Службы речи используют пользовательские поддомены **только** с [частными конечными точками](Speech-Service/speech-services-private-link.md) . Во всех остальных случаях используются **региональные конечные точки** с голосовыми службами и соответствующими пакетами SDK.
 
 Региональные конечные точки и имена пользовательских поддоменов поддерживаются и могут использоваться взаимозаменяемыми. Однако требуется полная конечная точка.
 
@@ -80,7 +80,7 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 | | восточная часть США 2 | `https://eastus2.api.cognitive.microsoft.com` |
 | | Центральная Франция | `https://francecentral.api.cognitive.microsoft.com` |
 | | Центральная Индия | `https://centralindia.api.cognitive.microsoft.com` |
-| | Восточная Япония | `https://japaneast.api.cognitive.microsoft.com` |
+| | Japan East | `https://japaneast.api.cognitive.microsoft.com` |
 | | Республика Корея, центральный регион | `https://koreacentral.api.cognitive.microsoft.com` |
 | | Центрально-северная часть США | `https://northcentralus.api.cognitive.microsoft.com` |
 | | Северная Европа | `https://northeurope.api.cognitive.microsoft.com` |

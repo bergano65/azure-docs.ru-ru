@@ -9,12 +9,12 @@ ms.date: 11/18/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: bad71cfeb8f15f463bb9659be704374325d1f50a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5efdfcea7b6d727038bad124368179b9395bfafd
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462002"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093283"
 ---
 # <a name="azure-synapse-analytics-notebooks"></a>Записные книжки Azure синапсе Analytics
 
@@ -51,4 +51,4 @@ ms.locfileid: "96462002"
   - [Создание записной книжки](./spark/../../quickstart-apache-spark-notebook.md)
   - [Создание визуализаций с помощью записных книжек синапсе Studio](./spark/../apache-spark-data-visualization-tutorial.md)
   - [Создание моделей машинного обучения с помощью Apache Spark MLlib](./spark/../apache-spark-machine-learning-mllib-notebook.md)
-  - [Создание моделей машинного обучения с помощью Azure Аутомл](./spark/../apache-spark-azure-machine-learning-tutorial.md)
+  - [Создание моделей машинного обучения с помощью автоматического машинного обучения Azure](./spark/../apache-spark-azure-machine-learning-tutorial.md)

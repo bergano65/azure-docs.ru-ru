@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: 677ab3327f2357ce7b242c314b44702370779def
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c4f65da4f9a4f7ade94d76e99d57439e62b3c808
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351679"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092063"
 ---
 # <a name="access-your-security-data"></a>Доступ к данным безопасности
 
 Защитник для Интернета вещей хранит оповещения системы безопасности, рекомендации и необработанные данные безопасности (если вы решили сохранить их) в рабочей области Log Analytics.
 
-## <a name="log-analytics"></a>Log Analytics
+## <a name="log-analytics"></a>Анализ журналов
 
 Чтобы настроить используемую рабочую область Log Analytics:
 
@@ -37,7 +37,7 @@ ms.locfileid: "96351679"
 1. Выберите оповещение или рекомендацию в защитнике для Интернета вещей.
 1. Щелкните **дальнейшее исследование**, а затем щелкните, **чтобы узнать, какие устройства имеют это оповещение щелкните здесь и просмотрите столбец DeviceID**.
 
-Дополнительные сведения о запросах данных из Log Analytics см. [в разделе Начало работы с запросами в log Analytics](//azure/log-analytics/query-language/get-started-queries).
+Дополнительные сведения о запросах данных из Log Analytics см. [в разделе Начало работы с запросами в log Analytics](/azure/azure-monitor/log-query/get-started-queries).
 
 ## <a name="security-alerts"></a>Оповещения безопасности
 
@@ -87,7 +87,7 @@ SecurityAlert
     DisplayName
 ```
 
-| иосубид                                                                                                       | DeviceId      | AlertSeverity | DisplayName                           | Счетчик |
+| иосубид                                                                                                       | DeviceId      | AlertSeverity | DisplayName                           | Count |
 |----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|-----|
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/Провидерс/Микрософт.девицес/иосубс/<iot_hub> | <device_name> | Высокий          | Успешная атака методом подбора           | 9   |
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/Провидерс/Микрософт.девицес/иосубс/<iot_hub> | <device_name> | Средний        | Неудачная попытка локального входа на устройство  | 242 |
@@ -164,7 +164,7 @@ SecurityRecommendation
 | summarize Cnt=count() by IoTHubId, DeviceId, RecommendationSeverity
 ```
 
-| иосубид                                                                                                       | DeviceId      | рекоммендатионсеверити | Счетчик |
+| иосубид                                                                                                       | DeviceId      | рекоммендатионсеверити | Count |
 |----------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----|
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/Провидерс/Микрософт.девицес/иосубс/<iot_hub> | <device_name> | Высокий          | 2   |
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/Провидерс/Микрософт.девицес/иосубс/<iot_hub> | <device_name> | Средний        | 1 |

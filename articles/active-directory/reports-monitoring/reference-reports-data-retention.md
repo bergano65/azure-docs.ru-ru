@@ -17,12 +17,12 @@ ms.date: 11/05/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc5f902d75084d649f211d589e53041f1eb37f0e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4e240e8ec53ce007be1a858af7b6e41273ca8831
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012720"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093644"
 ---
 # <a name="how-long-does-azure-ad-store-reporting-data"></a>Как долго Azure AD хранит данные отчетов?
 
@@ -47,7 +47,7 @@ ms.locfileid: "96012720"
 
 ### <a name="how-soon-can-i-see-activities-data-after-getting-a-premium-license"></a>Как скоро после получения лицензии уровня "Премиум" я увижу данные о действиях?
 
-Если у вас уже есть данные о действиях с бесплатной лицензией, то вы увидите их сразу же после обновления. Если у вас нет данных, то потребуется один или два дня, чтобы эти данные отобразились в отчетах после обновления лицензии до уровня "Премиум".
+Если у вас уже есть данные о действиях с бесплатной лицензией, то вы увидите их сразу же после обновления. Если у вас нет данных, то после обновления до лицензии Premium для отображения данных в отчетах потребуется до трех дней.
 
 ---
 
@@ -61,7 +61,7 @@ ms.locfileid: "96012720"
 
 **Отчеты о действиях**    
 
-| Report                 | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
+| Отчет                 | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--                    | :--           | :--                 | :--                 |
 | Журналы аудита             | 7 дней        | 30 дней             | 30 дней             |
 | Вход в систему               | 7 дней        | 30 дней             | 30 дней             |
@@ -71,10 +71,10 @@ ms.locfileid: "96012720"
 
 **Сигналы системы безопасности**
 
-| Report         | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
+| Отчет         | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--            | :--           | :--                 | :--                 |
 | Пользователи, подверженные риску  | 7 дней        | 30 дней             | 90 дней             |
-| Вход, представляющий риск | 7 дней        | 30 дней             | 90 дней             |
+| Рискованные входы | 7 дней        | 30 дней             | 90 дней             |
 
 ---
 

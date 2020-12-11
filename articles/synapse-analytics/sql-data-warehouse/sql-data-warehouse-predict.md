@@ -11,12 +11,12 @@ ms.date: 07/21/2020
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: ce77a169e28e21aa37be2a49997a58ee42c93807
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: b1a2e802f66132a88060fb74831781055897b077
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510834"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093661"
 ---
 # <a name="score-machine-learning-models-with-predict"></a>Оценка моделей машинного обучения с помощью ПРОГНОЗа
 
@@ -35,7 +35,7 @@ ms.locfileid: "96510834"
 
 - Выделенный пул SQL поддерживает только модели формата ONNX. ONNX — это формат модели с открытым исходным кодом, который позволяет обмениваться моделями между различными платформами для обеспечения взаимодействия. Можно преобразовать существующие модели в формат ONNX с помощью платформ, которые либо поддерживаются изначально, либо преобразуют доступные пакеты. Например, пакет [sklearn-onnx](https://github.com/onnx/sklearn-onnx) Convert scikit-учиться Models to onnx. В [репозитории ONNX GitHub](https://github.com/onnx/tutorials#converting-to-onnx-format) содержится список поддерживаемых платформ и примеры.
 
-   Если для обучения используется [автоматизированное машинное](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) обучение, убедитесь, что для параметра *enable_onnx_compatible_models* задано значение true, чтобы создать модель формата onnx. В [автоматизированной машинное обучение записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) показан пример использования аутомл для создания модели машинного обучения в формате ONNX.
+   Если для обучения используется [автоматизированное машинное](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) обучение, убедитесь, что для параметра *enable_onnx_compatible_models* задано значение true, чтобы создать модель формата onnx. В [автоматизированной машинное обучение записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) показан пример использования автоматизированного ml для создания модели машинного обучения в формате ONNX.
 
 - Для входных данных поддерживаются следующие типы данных:
     - int, bigint, Real, float
@@ -91,6 +91,6 @@ FROM PREDICT(MODEL = (SELECT Model FROM Models WHERE Id = 1),
 DATA = dbo.mytable AS d, RUNTIME = ONNX) WITH (Score float) AS p;
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функции PREDICT см. в разделе [Predict (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true).

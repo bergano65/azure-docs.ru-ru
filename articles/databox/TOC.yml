@@ -90,6 +90,8 @@
               href: data-box-local-web-ui-admin.md
             - name: Использование самоуправляемой доставки
               href: data-box-portal-customer-managed-shipping.md
+            - name: Использование собственных сертификатов
+              href: data-box-bring-your-own-certificates.md
             - name: Включение управляемого клиентом ключа
               href: data-box-customer-managed-encryption-key-portal.md
             - name: Использование защищенного хранилища

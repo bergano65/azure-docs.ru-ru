@@ -9,12 +9,12 @@ ms.subservice: machine-learning
 ms.date: 11/13/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: ced78955c71f37a5a6f5231f61e5327428834f00
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ca55186a53b228aa97cc82d33a09aa3ffe455eee
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919803"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092012"
 ---
 # <a name="machine-learning-with-apache-spark"></a>Машинное обучение с Apache Spark
 
@@ -43,8 +43,8 @@ Apache Spark в Azure синапсе Analytics обеспечивает маши
 ### <a name="sparkml-and-mllib"></a>SparkM и MLlib
 Возможности распределенного вычисления в памяти Spark отлично подходят для итеративных алгоритмов, используемых в машинном обучении и графовых вычислениях. ```spark.ml``` предоставляет универсальный набор интерфейсов API высокого уровня, помогающих пользователям создавать и настраивать конвейеры машинного обучения. Дополнительные сведения о ```spark.ml``` см. в [Apache Sparkном руководством по программированию для машинного обучения](https://spark.apache.org/docs/1.2.2/ml-guide.html).
 
-### <a name="azure-machine-learning-automl"></a>Машинное обучение Azure Аутомл
-[Машинное обучение Azure аутомл](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) (автоматизированное машинное обучение) помогает автоматизировать процесс разработки моделей машинного обучения. С его помощью специалисты по обработке и анализу данных могут создавать модели машинного обучения с высокой масштабируемостью, эффективностью и производительностью, сохраняя при этом качество модели. Компоненты для запуска пакета SDK для Машинное обучение Azure Аутомл создаются непосредственно в среде выполнения синапсе.
+### <a name="azure-machine-learning-automated-ml"></a>Машинное обучение Azure автоматизированного ML
+[Машинное обучение Azure автоматизированного ML](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) (автоматизированное машинное обучение) помогает автоматизировать процесс разработки моделей машинного обучения. С его помощью специалисты по обработке и анализу данных могут создавать модели машинного обучения с высокой масштабируемостью, эффективностью и производительностью, сохраняя при этом качество модели. Компоненты для запуска Машинное обучение Azure автоматизированного пакета SDK для машинного обучения создаются непосредственно в среде выполнения синапсе.
 
 ### <a name="open-source-libraries"></a>Библиотеки с открытым исходным кодом
 Каждый пул Apache Spark в Azure синапсе Analytics поставляется с набором предварительно загруженных и популярных библиотек машинного обучения.  Ниже перечислены некоторые из соответствующих библиотек машинного обучения, включенных по умолчанию.
@@ -68,7 +68,7 @@ Apache Spark в Azure синапсе Analytics обеспечивает маши
 Чтобы приступить к работе с машинным обучением в Azure синапсе Analytics, ознакомьтесь со следующими учебниками:
 - [Анализ данных с помощью записных книжек синапсе Azure](../spark/apache-spark-data-visualization-tutorial.md)
 
-- [Обучение модели машинного обучения с помощью Аутомл](../spark/apache-spark-azure-machine-learning-tutorial.md)
+- [Обучение модели машинного обучения с помощью автоматизированного ML](../spark/apache-spark-azure-machine-learning-tutorial.md)
 
 - [Обучение модели машинного обучения с помощью Apache Spark MLlib](../spark/apache-spark-machine-learning-mllib-notebook.md)
   

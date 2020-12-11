@@ -3,12 +3,12 @@ title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: faea6badc24d0152e94fc507cafdb15932d1ea3e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5e89b2b7cf7c27a501d93f63c74d81d8fb40883c
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452628"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033550"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -24,8 +24,8 @@ ms.locfileid: "96452628"
 | Microsoft.Addons | core |
 | Microsoft. Адхибридхеалссервице — [зарегистрировано](#registration) | [Azure Active Directory](../../active-directory/index.yml) |
 | Microsoft.Advisor | [Помощник по Azure](../../advisor/index.yml) |
-| Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
-| Microsoft.AnalysisServices | [Azure Analysis Services](../../analysis-services/index.yml) |
+| Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.AnalysisServices | [Службы Azure Analysis Services](../../analysis-services/index.yml) |
 | Microsoft.ApiManagement | [Управление API](../../api-management/index.yml) |
 | Microsoft.AppConfiguration | [Конфигурация приложений Azure](../../azure-app-configuration/index.yml) |
 | Microsoft.AppPlatform | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
@@ -35,6 +35,7 @@ ms.locfileid: "96452628"
 | Microsoft. Аутономауссистемс | [Автономные системы](https://www.microsoft.com/ai/autonomous-systems) |
 | Microsoft.AVS | [Решение Azure VMware](../../azure-vmware/index.yml) |
 | Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
+| Microsoft. Азуреаркдата | Реестр служб данных с включенной службой Arc Azure |
 | Microsoft.AzureData | Реестр SQL Server |
 | Microsoft.AzureStack | core |
 | Microsoft.AzureStackHCI | [Azure Stack HCI](/azure-stack/hci/overview) |
@@ -49,7 +50,7 @@ ms.locfileid: "96452628"
 | Microsoft.Capacity | core |
 | Microsoft.Cdn | [Сеть доставки содержимого](../../cdn/index.yml) |
 | Microsoft.CertificateRegistration | [Сертификаты службы приложений](../../app-service/configure-ssl-certificate.md#import-an-app-service-certificate) |
-| Microsoft.ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.ChangeAnalysis | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.ClassicCompute | Виртуальная машина классической модели развертывания |
 | Microsoft.ClassicInfrastructureMigrate | Миграция классической модели развертывания |
 | Microsoft.ClassicNetwork | Виртуальная сеть классической модели развертывания |
@@ -73,7 +74,7 @@ ms.locfileid: "96452628"
 | Microsoft.DataFactory | [Фабрика данных](../../data-factory/index.yml) |
 | Microsoft.DataLakeAnalytics | [Аналитика озера данных](../../data-lake-analytics/index.yml) |
 | Microsoft.DataLakeStore | [Azure Data Lake Storage 2-го поколения](../../storage/blobs/data-lake-storage-introduction.md) |
-| Microsoft.DataMigration | [Миграция баз данных Azure](../../dms/index.yml) |
+| Microsoft.DataMigration | [Azure Database Migration Service](../../dms/index.yml) |
 | Microsoft.DataProtection | Защита данных |
 | Microsoft.DataShare | [Azure Data Share](../../data-share/index.yml) |
 | Microsoft.DBforMariaDB | [База данных Azure для MariaDB](../../mariadb/index.yml) |
@@ -102,10 +103,10 @@ ms.locfileid: "96452628"
 | Microsoft.HybridData | [StorSimple](../../storsimple/index.yml) |
 | Microsoft. Хибриднетворк  | [Зоны частного периметра](../../networking/edge-zones-overview.md) |
 | Microsoft.ImportExport | [Импорт и экспорт Microsoft Azure](../../storage/common/storage-import-export-service.md) |
-| microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml) |
+| microsoft.insights | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.IoTCentral | [Azure IoT Central](../../iot-central/index.yml) |
 | Microsoft.IoTSpaces | [Azure Digital Twins](../../digital-twins/index.yml) |
-| Microsoft.Intune | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.Intune | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.KeyVault | [хранилище ключей;](../../key-vault/index.yml) |
 | Microsoft.Kubernetes | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
 | Microsoft.KubernetesConfiguration | [Служба Azure Kubernetes (AKS)](../../aks/index.yml) |
@@ -133,8 +134,8 @@ ms.locfileid: "96452628"
 | Microsoft.NotificationHubs | [Центры уведомлений](../../notification-hubs/index.yml) |
 | Microsoft.ObjectStore | Хранилище объектов |
 | Microsoft.OffAzure | [Миграция Azure](../../migrate/migrate-services-overview.md) |
-| Microsoft.OperationalInsights | [Azure Monitor](../../azure-monitor/index.yml) |
-| Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.OperationalInsights | [Azure Monitor](../../azure-monitor/index.yml); |
+| Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml); |
 | Microsoft.Peering | [Служба пиринга Azure](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Политика Azure](../../governance/policy/index.yml) |
 | Microsoft. Portal — [зарегистрировано](#registration) | [Портал Azure](../../azure-portal/index.yml) |
@@ -183,7 +184,7 @@ ms.locfileid: "96452628"
 | Microsoft.WindowsDefenderATP | [Advanced Threat Protection в Microsoft Defender](../../security-center/security-center-wdatp.md) |
 | Microsoft.WindowsESU | Расширенные обновления для системы безопасности |
 | Microsoft.WindowsIoT | [Основные службы Windows 10 IoT](/windows-hardware/manufacture/iot/iotcoreservicesoverview) |
-| Microsoft.WorkloadMonitor | [Azure Monitor](../../azure-monitor/index.yml) |
+| Microsoft.WorkloadMonitor | [Azure Monitor](../../azure-monitor/index.yml); |
 
 ## <a name="registration"></a>Регистрация
 

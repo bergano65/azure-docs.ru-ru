@@ -10,13 +10,13 @@ author: nishankgu
 ms.author: nigup
 ms.date: 12/1/2020
 ms.topic: conceptual
-ms.custom: troubleshooting,contperfq4, contperfq2
-ms.openlocfilehash: 30859593e240c4143dc298cff446ce8bc116a993
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.custom: troubleshooting,contperf-fy20q4, contperf-fy21q2
+ms.openlocfilehash: 58dacc9e65da6502d083446cb7202c222cb7e795
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780592"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034043"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Управление и увеличение квот для ресурсов с помощью Машинное обучение Azure
 
@@ -122,7 +122,7 @@ Azure использует ограничения и квоты, чтобы пр
 
 Дополнительные сведения см. в разделе [ограничения экземпляров контейнеров](../azure-resource-manager/management/azure-subscription-service-limits.md#container-instances-limits).
 
-### <a name="storage"></a>Память
+### <a name="storage"></a>Хранилище
 В службе хранилища Azure предусмотрено ограничение в 250 учетных записей хранения на регион для каждой подписки. Это ограничение включает учетные записи хранения уровня "Стандартный" и "Премиум".
 
 Чтобы увеличить это ограничение, выполните запрос через [службу поддержки Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Команда разработчиков службы хранилища Azure просматривает ваш случай и может утвердить до 250 учетных записей хранения для региона.
@@ -194,7 +194,7 @@ Azure использует ограничения и квоты, чтобы пр
 
 1. [Создайте запрос в службу поддержки Azure](../azure-portal/supportability/how-to-create-azure-support-request.md#create-a-support-request) и выберите следующие параметры в разделе __Основные сведения__ .
 
-    | Поле | Выбор |
+    | Поле | Выбранное |
     | ----- | ----- |
     | Тип проблемы | **Технические требования** |
     | Служба | **Мои службы**. Выберите __машинное обучение__ в раскрывающемся списке. |

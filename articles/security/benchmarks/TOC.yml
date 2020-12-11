@@ -192,9 +192,9 @@
     - name: Базовые показатели безопасности Logic Apps
       href: ../../logic-apps/security-baseline.md
     - name: Базовые показатели Microsoft Cloud App Security
-      href: /cloud-app-security/security-baseline.md
+      href: 'https://docs.microsoft.com/cloud-app-security/security-baseline'
     - name: Базовые показатели безопасности Microsoft Defender для удостоверений
-      href: /defender-for-identity/security-baseline.md
+      href: 'https://docs.microsoft.com/defender-for-identity/security-baseline'
     - name: Базовые показатели безопасности Наблюдателя за сетями
       href: ../../network-watcher/security-baseline.md
     - name: "Базовые средства безопасности Power\_BI"

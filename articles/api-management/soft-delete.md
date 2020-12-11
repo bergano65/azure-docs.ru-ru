@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vladvino
 ms.author: apimpm
 ms.date: 11/27/2020
-ms.openlocfilehash: fca98414a87f3b8a4f3c0969a28ee95c7ed47dc3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 72e91715398b4920c62afae5f36aa09954a577f9
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501579"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092148"
 ---
 # <a name="api-management-soft-delete-preview"></a>Обратимое удаление управления API (Предварительная версия)
 
@@ -48,7 +48,7 @@ ms.locfileid: "96501579"
 
 ## <a name="list-deleted-apim-instances"></a>Список удаленных экземпляров APIM
 
-Вы можете проверить, доступен ли Обратимо удаленный экземпляр APIM для восстановления (отмены удаления), используя операции по [подписке](/deletedservices/listbysubscription) , [получаемые по имени](/rest/api/apimanagement/2020-06-01-preview/deletedservices/getbyname) или списку.
+Вы можете проверить, доступен ли Обратимо удаленный экземпляр APIM для восстановления (отмены удаления), используя операции по [подписке](/rest/api/apimanagement/2020-06-01-preview/deletedservices/listbysubscription) , [получаемые по имени](/rest/api/apimanagement/2020-06-01-preview/deletedservices/getbyname) или списку.
 
 ### <a name="get-a-soft-deleted-instance-by-name"></a>Получить Обратимо удаленный экземпляр по имени
 
@@ -76,7 +76,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/providers/Micros
 
 ### <a name="list-all-soft-deleted-instances-for-a-given-subscription"></a>Список всех обратимо удаленных экземпляров для данной подписки
 
-Используйте список управления API [с помощью операции подписки](/deletedservices/listbysubscription) , подставив `{subscriptionId}` идентификатор подписки:
+Используйте список управления API [с помощью операции подписки](/rest/api/apimanagement/2020-06-01-preview/deletedservices/listbysubscription) , подставив `{subscriptionId}` идентификатор подписки:
 
 ```rest
 GET https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/deletedservices?api-version=2020-06-01-preview

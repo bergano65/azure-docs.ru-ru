@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a439ce5cd56bde5f9a60a1d99f5299bd16c81f8b
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 2918b845430a6fc6dc59eca7041c114fc9d06515
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96519082"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092216"
 ---
 # <a name="create-an-account-sas-with-net"></a>Создание SAS учетной записи с помощью .NET
 
@@ -30,7 +30,7 @@ ms.locfileid: "96519082"
 
 SAS учетной записи подписывается с помощью ключа доступа к учетной записи. Используйте класс [сторажешаредкэйкредентиал](/dotnet/api/azure.storage.storagesharedkeycredential) для создания учетных данных, которые используются для подписания SAS. Затем создайте новый объект [аккаунтсасбуилдер](/dotnet/api/azure.storage.sas.accountsasbuilder) и вызовите метод [тосаскуерипараметерс](/dotnet/api/azure.storage.sas.accountsasbuilder.tosasqueryparameters) , чтобы получить строку токена SAS.
 
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_GetAccountSASToken":::
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Sas.cs" id="Snippet_GetAccountSASToken":::
 
 ### <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
@@ -68,7 +68,7 @@ static string GetAccountSASToken()
 
 ### <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_UseAccountSAS":::
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Sas.cs" id="Snippet_UseAccountSAS":::
 
 ### <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 

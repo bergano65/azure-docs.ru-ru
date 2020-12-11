@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 39625914f179dfc8d5511b9a3d386cc8332b7efa
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a96d49a029eb83e24c1fb86954406693aa9c33a3
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456297"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093967"
 ---
 # <a name="best-practices-for-loading-data-using-dedicated-sql-pools-in-azure-synapse-analytics"></a>Рекомендации по загрузке данных с помощью выделенных пулов SQL в Azure синапсе Analytics
 
@@ -71,6 +71,9 @@ ms.locfileid: "96456297"
        ,MEMBERNAME = 'loader'
    );
 ```
+<br><br>
+>[!IMPORTANT] 
+>Это очень большой пример выделения ресурсов в 100% пула SQL для одной нагрузки. Это обеспечит максимальную степень параллелизма 1. Имейте в виду, что этот параметр следует использовать только для начальной загрузки, где необходимо создать дополнительные группы рабочей нагрузки с собственными конфигурациями, чтобы баланаце ресурсы в рабочих нагрузках. 
 
 Чтобы выполнить загрузку с ресурсами для группы рабочей нагрузки "Загрузка", войдите в систему как загрузчик и запустите загрузку.
 

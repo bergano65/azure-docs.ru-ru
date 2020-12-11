@@ -3,19 +3,19 @@ title: Указание конечных точек службы Service Fabric
 description: В этой статье поясняется, как описать ресурсы конечной точки в манифесте служб, включая настройку конечных точек HTTPS.
 ms.topic: conceptual
 ms.date: 09/16/2020
-ms.custom: contperfq1
-ms.openlocfilehash: 5e8f39fe25011d02b989614fdc6538cd92c12d4e
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 0ed5a4aa8993f52d42b97288cd143e6114ff36ff
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313573"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033312"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
 Service Fabric приложения и службы определяются, а управление версиями осуществляется с помощью файлов манифеста. Обзор ServiceManifest.xml и ApplicationManifest.xml более высокого уровня см. в разделе [Service Fabric манифесты приложения и службы](service-fabric-application-and-service-manifests.md).
 
-Манифест службы позволяет объявлять или изменять ресурсы, используемые службой, без изменения скомпилированного кода. Service Fabric поддерживает настройку ресурсов конечных точек для службы. Доступ к ресурсам, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента SecurityGroup. Объявление ресурсов позволяет изменять их при развертывании, т. е. службе не нужно внедрять новый механизм настройки. Определение схемы для файла ServiceManifest.xml устанавливается вместе с Service Fabricным пакетом SDK и инструментами для *C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd*и описывается в [документации по схеме ServiceFabricServiceModel. xsd](service-fabric-service-model-schema.md).
+Манифест службы позволяет объявлять или изменять ресурсы, используемые службой, без изменения скомпилированного кода. Service Fabric поддерживает настройку ресурсов конечных точек для службы. Доступ к ресурсам, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента SecurityGroup. Объявление ресурсов позволяет изменять их при развертывании, т. е. службе не нужно внедрять новый механизм настройки. Определение схемы для файла ServiceManifest.xml устанавливается вместе с Service Fabricным пакетом SDK и инструментами для *C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd* и описывается в [документации по схеме ServiceFabricServiceModel. xsd](service-fabric-service-model-schema.md).
 
 ## <a name="endpoints"></a>Конечные точки
 Если ресурс конечной точки определен в манифесте службы, Service Fabric назначает порты из диапазона зарезервированных портов приложений, если порт не указан явным образом. Например, рассмотрим конечную точку *ServiceEndpoint1* , которая указана во фрагменте кода манифеста, приведенном после абзаца. Кроме того, службы также могут запрашивать наличие в ресурсе конкретного порта. Репликам службы, которые выполняются на различных узлах кластера, можно назначить разные номера портов, а реплики службы, выполняющиеся на одном и том же узле, будут совместно используют один порт. Реплики службы при необходимости могут использовать эти порты для репликации и прослушивания клиентских запросов.
@@ -199,7 +199,7 @@ Service Fabric будет автоматически указывать коне
   </Parameters>
 ```
 
-При развертывании приложения можно передать эти значения как ApplicationParameters.  Пример:
+При развертывании приложения можно передать эти значения как ApplicationParameters.  Пример.
 
 ```powershell
 PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -ApplicationTypeName "AppType" -ApplicationTypeVersion "1.0.0" -ApplicationParameter @{Port='1001'; Protocol='https'; Type='Input'; Port1='2001'; Protocol='http'}
@@ -207,7 +207,7 @@ PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -Application
 
 Примечание. Если значение, указанное для данного Аппликатионпараметер, является пустым, мы вернемся к значению по умолчанию, указанному в ServiceManifest для соответствующего элемента EndPointName.
 
-Пример:
+Пример.
 
 Допустим, в ServiceManifest заданы следующие значения:
 

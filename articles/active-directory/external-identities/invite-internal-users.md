@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c03c2c55988df04cc45ef4a1d66d959513c1626d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75839893d0048841440f2c790df7d23ad825d962
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87909328"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093474"
 ---
 # <a name="invite-internal-users-to-b2b-collaboration"></a>Пригласите внутренних пользователей в службу совместной работы B2B
 
@@ -32,7 +32,7 @@ ms.locfileid: "87909328"
 
 В общедоступной предварительной версии метод, описанный в этой статье для приглашения внутренних пользователей в службу совместной работы B2B, не может использоваться в следующих экземплярах:
 
-- Внутреннему пользователю уже назначена лицензия Exchange.
+- У внутреннего пользователя есть назначенная лицензия Exchange.
 - Пользователь входит в домен, настроенный на прямую федерацию в вашем каталоге.
 - Внутренний пользователь является учетной записью только для облака, а ее Главная учетная запись не находится в Azure AD.
 
@@ -97,6 +97,6 @@ ContentType: application/json
 
 Ответ на API — это тот же ответ, который вы получаете при приглашении нового гостевого пользователя в каталог.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)

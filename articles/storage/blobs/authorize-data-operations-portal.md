@@ -10,13 +10,13 @@ ms.date: 09/08/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: blobs
-ms.custom: contperfq1
-ms.openlocfilehash: 5b7d2c05df71e77d623aeb8a3842851db208f691
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 8c963f11a34217253f02cb5d116d66cdbf8bcc19
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94637424"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033964"
 ---
 # <a name="choose-how-to-authorize-access-to-blob-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным BLOB-объектов в портал Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "94637424"
 
 ### <a name="use-the-account-access-key"></a>Использование ключа доступа к учетной записи
 
-Чтобы получить доступ к данным большого двоичного объекта с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие Azure RBAC **(Microsoft. Storage/storageAccounts/listkeys/действие** ). Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
+Чтобы получить доступ к данным большого двоичного объекта с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие Azure RBAC **(Microsoft. Storage/storageAccounts/listkeys/действие**). Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
 
 - Роль [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager
 - Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
@@ -39,7 +39,7 @@ ms.locfileid: "94637424"
 При попытке получить доступ к данным большого двоичного объекта в портал Azure на портале сначала проверяется, была ли назначена роль с помощью **Microsoft. Storage/storageAccounts/listkeys/Action**. Если вы назначили роль с этим действием, портал использует ключ учетной записи для доступа к данным большого двоичного объекта. Если вы не назначили роль с этим действием, портал пытается получить доступ к данным с помощью учетной записи Azure AD.
 
 > [!NOTE]
-> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action** , поэтому пользователь с одной из этих административных ролей также может получать доступ к данным большого двоичного объекта с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
+> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может получать доступ к данным большого двоичного объекта с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
 
 ### <a name="use-your-azure-ad-account"></a>Использование учетной записи Azure AD
 

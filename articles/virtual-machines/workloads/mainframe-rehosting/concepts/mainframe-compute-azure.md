@@ -6,12 +6,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: 9c5941ec88cd793961ad66245d0dc0b5e0d7772f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04ec652c6e7ce8de003a464c6427439cf1519eab
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86998941"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092675"
 ---
 # <a name="move-mainframe-compute-to-azure"></a>Перемещение вычислений мэйнфреймов в Azure
 
@@ -135,4 +135,4 @@ CF позволяет вычисленным кластерам совместн
 ### <a name="more-migration-resources"></a>Дополнительные материалы по миграции
 
 - [Виртуальный центр обработки данных Azure: руководство по миграции методом lift-and-shift](https://azure.microsoft.com/resources/azure-virtual-datacenter-lift-and-shift-guide/)
-- [iSCSI GlusterFS](https://docs.gluster.org/en/latest/Administrator%20Guide/GlusterFS%20iSCSI/)
+- [iSCSI GlusterFS](https://glusterdocs.readthedocs.io/en/latest/Administrator%20Guide/GlusterFS%20iSCSI/)

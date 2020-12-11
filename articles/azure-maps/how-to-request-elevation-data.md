@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: af3653d9e4509b1aa31a377dfc22cb6b6b2ff34e
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 76232a917e8856a06645fabc0ab4716195c5c0e1
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906069"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094205"
 ---
 # <a name="request-elevation-data-using-the-azure-maps-elevation-service-preview"></a>Запрос данных о повышении прав с помощью службы повышения прав Azure Maps (Предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "96906069"
 
 [Служба повышения](https://docs.microsoft.com/rest/api/maps/elevation) Azure Maps предоставляет интерфейсы API для запроса данных о повышении прав в любом месте на поверхности земли. Можно запросить выборку данных повышения прав по путям, в определенном ограничивающем прямоугольнике или по определенным координатам. Кроме того, можно использовать [API плитки прорисовки v2](https://docs.microsoft.com/rest/api/maps/renderv2) , чтобы получить данные повышения прав в формате мозаики. Плитки доставляются в виде растрового формата Жеотифф. В этой статье показано, как использовать службу повышения уровня Azure Maps и API плитки для получения данных о повышении прав. Данные повышения прав могут быть запрошены в форматах геоjson и Жеотифф.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. [Создание учетной записи Azure Maps в ценовой категории S1](quick-demo-map-app.md#create-an-azure-maps-account)
 2. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки.
@@ -56,8 +56,8 @@ ms.locfileid: "96906069"
 
 Используйте API-интерфейсы службы повышения прав (Предварительная версия) для запроса данных о повышении прав в формате геоjson. В этом разделе будет показан каждый из трех интерфейсов API:
 
-* [Получение данных для точек](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
-* [Отправка данных для точек](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates)
+* [Получение данных для точек](/rest/api/maps/elevation/getdataforpoints)
+* [Отправка данных для точек](/rest/api/maps/elevation/postdataforpoints)
 * [Получение данных для ломаной линии](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
 * [Опубликовать данные для ломаной линии](https://docs.microsoft.com/rest/api/maps/elevation/postdataforpolyline)
 * [Получить данные для ограничивающего прямоугольника](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
@@ -67,7 +67,7 @@ ms.locfileid: "96906069"
 
 ### <a name="request-elevation-data-for-points"></a>Запрос данных о повышении прав для точек
 
-В этом примере мы будем использовать [API получения данных для точек](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates) для запроса данных о повышении прав в Mt. Эверест и Чамланг горы. Затем мы будем использовать [API POST Data for Points](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates) для запроса данных о повышении прав с помощью тех же двух точек. Широты и долготы в URL-адресе должны быть в десятичной степени WGS84 (геодезический System).
+В этом примере мы будем использовать [API получения данных для точек](/rest/api/maps/elevation/getdataforpoints) для запроса данных о повышении прав в Mt. Эверест и Чамланг горы. Затем мы будем использовать [API POST Data for Points](/rest/api/maps/elevation/postdataforpoints) для запроса данных о повышении прав с помощью тех же двух точек. Широты и долготы в URL-адресе должны быть в десятичной степени WGS84 (геодезический System).
 
  >[!IMPORTANT]
  >Из-за ограничения длины символов URL-адреса, равного 2048, невозможно передать более 100 координат как строку с разделителями конвейера в запросе на получение URL-адреса. Если предполагается передавать более 100 координат в виде строки с разделителями-конвейером, используйте данные POST для точек.
@@ -103,7 +103,7 @@ ms.locfileid: "96906069"
     }
     ```
 
-4. Теперь мы вызываем [API POST Data for Points](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates) для получения данных о повышении прав для тех же двух точек. Выберите метод **POST** HTTP на вкладке Построитель и введите следующий URL-адрес. Для этого запроса и других запросов, упомянутых в этой статье, замените `{Azure-Maps-Primary-Subscription-key}` первичным ключом подписки.
+4. Теперь мы вызываем [API POST Data for Points](/rest/api/maps/elevation/postdataforpoints) для получения данных о повышении прав для тех же двух точек. Выберите метод **POST** HTTP на вкладке Построитель и введите следующий URL-адрес. Для этого запроса и других запросов, упомянутых в этой статье, замените `{Azure-Maps-Primary-Subscription-key}` первичным ключом подписки.
 
     ```http
     https://atlas.microsoft.com/elevation/point/json?subscription-key={Azure-Maps-Primary-Subscription-key}&api-version=1.0
@@ -485,7 +485,7 @@ ms.locfileid: "96906069"
 Дополнительные сведения об API повышения уровня Azure Maps (Предварительная версия) см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Повышение прав (Предварительная версия) — получение данных для длинных координат lat](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
+> [Повышение прав (Предварительная версия) — получение данных для длинных координат lat](/rest/api/maps/elevation/getdataforpoints)
 
 > [!div class="nextstepaction"]
 > [Повышение прав (Предварительная версия) — получение данных для ограничивающего прямоугольника](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)

@@ -11,12 +11,12 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f308f46fc021a1d08f4065d48558a6dd71786c7c
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 5c6ed106462d7dcac3f31a2ab157e5b634391006
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860361"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093457"
 ---
 # <a name="inbound-synchronization-for-cloud-provisioning-using-ms-graph-api"></a>Входящая синхронизация для подготовки облачных приложений с помощью MS API Graph
 
@@ -43,7 +43,7 @@ ms.locfileid: "96860361"
 Первая из этих двух команд требует Azure Active Directory учетных данных. Эти командлеты неявно указывают клиента и включают его для синхронизации.
 
 ## <a name="create-service-principals"></a>Создание субъектов-служб
-Далее необходимо создать [приложение AD2AAD или субъект-службу](https://docs.microsoft.com/graph/apiapplicationtemplate-instantiate?view=graph-rest-beta&tabs=http) .
+Далее необходимо создать [приложение AD2AAD или субъект-службу](/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) .
 
 Необходимо использовать идентификатор приложения 1a4721b3-e57f-4451-ae87-ef078703ec94. DisplayName — это URL-адрес домена AD, если он используется на портале (например, contoso.com), но может называться что-то другое.
 
