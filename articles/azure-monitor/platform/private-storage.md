@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: f424a2c3102f7b270a64c612a91d645ab71461fc
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f221237bee441ec78d726dabf476d1085a27071d
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184099"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095310"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Использование управляемых клиентом учетных записей хранения в Azure Monitor Log Analytics
 
@@ -22,7 +22,7 @@ Log Analytics полагается на хранилище Azure в различ
 
 ## <a name="ingesting-azure-diagnostics-extension-logs-wadlad"></a>Прием журналов расширений система диагностики Azure (WAD/LAD)
 Агенты расширения система диагностики Azure (также называемые WAD и LAD для агентов Windows и Linux соответственно) собираются различные журналы операционной системы и сохраняют их в управляемой пользователем учетной записи хранения. Затем эти журналы можно принять в Log Analytics для их анализа и анализа.
-Как получить журналы расширений система диагностики Azure из учетной записи хранения Подключите учетную запись хранения к рабочей области Log Analytics как к источнику данных хранилища с помощью [портал Azure](./diagnostics-extension-logs.md#collect-logs-from-azure-storage) или путем вызова [API Storage Insights](/rest/api/loganalytics/connectedsources/storage%20insights/createorupdate).
+Как получить журналы расширений система диагностики Azure из учетной записи хранения Подключите учетную запись хранения к рабочей области Log Analytics как к источнику данных хранилища с помощью [портал Azure](./diagnostics-extension-logs.md#collect-logs-from-azure-storage) или путем вызова [API Storage Insights](/rest/api/loganalytics/storage%20insights/createorupdate).
 
 Поддерживаемые типы данных:
 * Системный журнал

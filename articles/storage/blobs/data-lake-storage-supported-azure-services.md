@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 66efc02990c958ba056b6e678cdbf2815f10078c
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 3d3fb983f5e55f8b262be0925c2138b465413fc3
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600393"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095412"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения
 
@@ -41,10 +41,10 @@ ms.locfileid: "96600393"
 |Power BI|Общедоступная версия|Да|Да|[Анализ данных в Data Lake Storage 2-го поколения с помощью Power BI](/power-query/connectors/datalakestorage)|
 |Azure Synapse Analytics (прежнее название — Хранилище данных SQL)|Общедоступная версия|Да|Да|[Использование с Azure синапсе Analytics](../../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Службы SQL Server Integration Services (SSIS)|Общедоступная версия|Да|Да|[Диспетчер подключений службы хранилища Azure](/sql/integration-services/connection-manager/azure-storage-connection-manager)|
-|Azure Data Explorer|Общедоступная версия|Да|Да|[Запрос данных в Azure Data Lake с помощью обозреватель данных Azure](/azure/data-explorer/data-lake-query-data)|
-|Когнитивный поиск Azure|Preview (Предварительный просмотр)|Да|Да|[Индексирование и поиск Azure Data Lake Storage 2-го поколения документов (Предварительная версия)](../../search/search-howto-index-azure-data-lake-storage.md)|
+|Azure Data Explorer|Общедоступная версия|Да|Да|[Запрос данных в Azure Data Lake с помощью Azure Data Explorer](/azure/data-explorer/data-lake-query-data)|
+|Когнитивный поиск Azure|Preview (Предварительный просмотр)|Да|Да|[Индексирование и поиск Azure Data Lake Storage 2-го поколения документов (Предварительная версия)](../../search/search-howto-index-azure-data-lake-storage.md)|
 |Сеть доставки содержимого Azure|Еще не поддерживается|Неприменимо|Неприменимо|[Индексирование и поиск Azure Data Lake Storage 2-го поколения документов (Предварительная версия)](../../cdn/cdn-overview.md)|
-|База данных SQL Azure|Еще не поддерживается|Неприменимо|Неприменимо|[Что такое База данных SQL Azure](/azure/azure-sql/database/sql-database-paas-overview.md)|
+|База данных SQL Azure|Еще не поддерживается|Неприменимо|Неприменимо|[Что такое База данных SQL Azure](/azure/azure-sql/database/sql-database-paas-overview)|
 
 ## <a name="see-also"></a>См. также раздел
 

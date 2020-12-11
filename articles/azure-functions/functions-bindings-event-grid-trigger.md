@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, fasttrack-edit, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 0e2e09bc72991330ccdec7a35400460cbeba26fc
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 0e3ba9aa4eac30c3387bdf6c2890a1172ebef544
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327038"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094732"
 ---
 # <a name="azure-event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий Azure" для Функций Azure
 
@@ -128,78 +128,6 @@ public static void Run(JObject eventGridEvent, TraceWriter log)
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-В следующем примере показана привязка триггера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку.
-
-Данные привязки в файле *function.json*:
-
-```json
-{
-  "bindings": [
-    {
-      "type": "eventGridTrigger",
-      "name": "eventGridEvent",
-      "direction": "in"
-    }
-  ],
-  "disabled": false
-}
-```
-
-Ниже показан код JavaScript.
-
-```javascript
-module.exports = function (context, eventGridEvent) {
-    context.log("JavaScript Event Grid function processed a request.");
-    context.log("Subject: " + eventGridEvent.subject);
-    context.log("Time: " + eventGridEvent.eventTime);
-    context.log("Data: " + JSON.stringify(eventGridEvent.data));
-    context.done();
-};
-```
-
-# <a name="python"></a>[Python](#tab/python)
-
-В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку.
-
-Данные привязки в файле *function.json*:
-
-```json
-{
-  "bindings": [
-    {
-      "type": "eventGridTrigger",
-      "name": "event",
-      "direction": "in"
-    }
-  ],
-  "disabled": false,
-  "scriptFile": "__init__.py"
-}
-```
-
-Ниже приведен код Python.
-
-```python
-import json
-import logging
-
-import azure.functions as func
-
-def main(event: func.EventGridEvent):
-
-    result = json.dumps({
-        'id': event.id,
-        'data': event.get_json(),
-        'topic': event.topic,
-        'subject': event.subject,
-        'event_type': event.event_type,
-    })
-
-    logging.info('Python EventGrid trigger processed an event: %s', result)
-```
-
 # <a name="java"></a>[Java](#tab/java)
 
 Этот раздел содержит следующие примеры.
@@ -265,6 +193,103 @@ public class EventSchema {
 
 В [библиотеке выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `EventGridTrigger` для параметров, значение которых должно быть получено от EventGrid. Параметры с этими заметками запускают функцию, когда происходит событие.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
 
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В следующем примере показана привязка триггера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку.
+
+Данные привязки в файле *function.json*:
+
+```json
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "eventGridEvent",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+Ниже показан код JavaScript.
+
+```javascript
+module.exports = function (context, eventGridEvent) {
+    context.log("JavaScript Event Grid function processed a request.");
+    context.log("Subject: " + eventGridEvent.subject);
+    context.log("Time: " + eventGridEvent.eventTime);
+    context.log("Data: " + JSON.stringify(eventGridEvent.data));
+    context.done();
+};
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показано, как настроить привязку триггера для сетки событий в *function.jsв* файле.
+
+```powershell
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "eventGridEvent",
+      "direction": "in"
+    }
+  ]
+}
+```
+
+Событие сетки событий становится доступным для функции через параметр с именем `eventGridEvent` , как показано в следующем примере PowerShell.
+
+```powershell
+param($eventGridEvent, $TriggerMetadata)
+
+# Make sure to pass hashtables to Out-String so they're logged correctly
+$eventGridEvent | Out-String | Write-Host
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку.
+
+Данные привязки в файле *function.json*:
+
+```json
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "event",
+      "direction": "in"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "__init__.py"
+}
+```
+
+Ниже приведен код Python.
+
+```python
+import json
+import logging
+
+import azure.functions as func
+
+def main(event: func.EventGridEvent):
+
+    result = json.dumps({
+        'id': event.id,
+        'data': event.get_json(),
+        'topic': event.topic,
+        'subject': event.subject,
+        'event_type': event.event_type,
+    })
+
+    logging.info('Python EventGrid trigger processed an event: %s', result)
+```
+
 ---
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
@@ -289,17 +314,21 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 В скрипте C# атрибуты не поддерживаются.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Аннотация [EventGridTrigger](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/EventGridTrigger.java) позволяет декларативно настроить привязку Сетки событий, предоставив значения конфигурации. Дополнительные сведения см. в разделах [примера](#example) и [конфигурации](#configuration).
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В JavaScript атрибуты не поддерживаются.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
 # <a name="python"></a>[Python](#tab/python)
 
 В Python атрибуты не поддерживаются.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Аннотация [EventGridTrigger](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/EventGridTrigger.java) позволяет декларативно настроить привязку Сетки событий, предоставив значения конфигурации. Дополнительные сведения см. в разделах [примера](#example) и [конфигурации](#configuration).
 
 ---
 
@@ -343,17 +372,21 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 > [!NOTE]
 > В службе "Функции" 1.х при попытке сделать привязку к `Microsoft.Azure.WebJobs.Extensions.EventGrid.EventGridEvent` в компиляторе появится сообщение о том, что это не рекомендуется, и совет использовать `Microsoft.Azure.EventGrid.Models.EventGridEvent`. Чтобы использовать более новый тип, ссылайтесь на пакет NuGet [Microsoft.Azure.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid) и полностью определите имя типа `EventGridEvent`, добавив префикс `Microsoft.Azure.EventGrid.Models`. Сведения о том, как ссылаться на пакеты NuGet в функции сценария C#, см. в разделе [об использовании пакетов NuGet](functions-reference-csharp.md#using-nuget-packages).
 
+# <a name="java"></a>[Java](#tab/java)
+
+Экземпляр Сетки событий доступен через параметр, связанный с атрибутом `EventGridTrigger`, который имеет тип `EventSchema`. Дополнительные сведения см. в [этом примере](#example).
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` файла *function.json*.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` файла *function.json*.
 
 # <a name="python"></a>[Python](#tab/python)
 
 Экземпляр Сетки событий доступен через параметр, который настраивается в свойстве `name` с типом `func.EventGridEvent` в файле *function.json*.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Экземпляр Сетки событий доступен через параметр, связанный с атрибутом `EventGridTrigger`, который имеет тип `EventSchema`. Дополнительные сведения см. в [этом примере](#example).
 
 ---
 

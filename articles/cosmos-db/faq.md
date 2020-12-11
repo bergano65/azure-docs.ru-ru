@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 9e0c5ae119b734f91e8cfa1e7afb11a96e13035c
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 2e4ff4d9159947ea87f97d56f3fb9c2825698227
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549078"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095072"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Часто задаваемые вопросы о различных API в службе Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -41,7 +41,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ### <a name="is-azure-cosmos-db-hipaa-compliant"></a>Соответствует ли Azure Cosmos DB HIPAA?
 
-Да, соответствует. HIPAA устанавливает требования к использованию, раскрытию и защите идентифицирующей личной медицинской информации. Дополнительные сведения см. в [центре управления безопасностью Майкрософт](https://www.microsoft.com/en-us/TrustCenter/Compliance/HIPAA).
+Да, соответствует. HIPAA устанавливает требования к использованию, раскрытию и защите идентифицирующей личной медицинской информации. Дополнительные сведения см. в [центре управления безопасностью Майкрософт](/compliance/regulatory/offering-hipaa-hitech).
 
 ### <a name="what-are-the-storage-limits-of-azure-cosmos-db"></a>Каковы ограничения на использование хранилища в Azure Cosmos DB?
 
@@ -105,7 +105,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ### <a name="what-is-a-primary-key"></a>Что такое первичный ключ?
 
-Первичный ключ — это маркер безопасности для доступа ко всем ресурсам учетной записи. Пользователи с этим ключом имеют доступ на чтение и запись для всех ресурсов в пределах учетной записи базы данных. Будьте внимательны при распространении первичных ключей. Первичный первичный ключ и вторичный первичный ключ доступны **Keys** в колонке ключи [портал Azure][azure-portal]. Дополнительные сведения о ключах см. в разделе [Просмотр, копирование и повторное создание ключей доступа](manage-with-cli.md#list-account-keys).
+Первичный ключ — это маркер безопасности для доступа ко всем ресурсам учетной записи. Пользователи с этим ключом имеют доступ на чтение и запись для всех ресурсов в пределах учетной записи базы данных. Будьте внимательны при распространении первичных ключей. Первичный первичный ключ и вторичный первичный ключ доступны  в колонке ключи [портал Azure][azure-portal]. Дополнительные сведения о ключах см. в разделе [Просмотр, копирование и повторное создание ключей доступа](manage-with-cli.md#list-account-keys).
 
 ### <a name="what-are-the-regions-that-preferredlocations-can-be-set-to"></a>Какие регионы можно указать в списке PreferredLocations?
 

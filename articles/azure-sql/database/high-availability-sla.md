@@ -12,12 +12,12 @@ author: sashan
 ms.author: sashan
 ms.reviewer: sstein, sashan
 ms.date: 10/28/2020
-ms.openlocfilehash: e5e58f8592fcf8627870c3a574335bbe34394064
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 15067a046d8adc0ba38101bbe24cdc48cd433d56
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452461"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095446"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Высокий уровень доступности для базы данных SQL Azure и Управляемый экземпляр SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -122,7 +122,7 @@ ms.locfileid: "96452461"
 
 |Тип развертывания|PowerShell|REST API| Azure CLI|
 |:---|:---|:---|:---|
-|База данных|[Invoke-Азсклдатабасефаиловер](/powershell/module/az.sql/invoke-azsqldatabasefailover)|[Отработка отказа базы данных](/rest/api/sql/databases(failover)/failover/)|[AZ RESTful](/cli/azure/reference-index#az-rest) можно использовать для вызова вызова REST API из Azure CLI|
+|База данных|[Invoke-Азсклдатабасефаиловер](/powershell/module/az.sql/invoke-azsqldatabasefailover)|[Отработка отказа базы данных](/rest/api/sql/databases/failover)|[AZ RESTful](/cli/azure/reference-index#az-rest) можно использовать для вызова вызова REST API из Azure CLI|
 |Эластичный пул|[Invoke-Азсклеластикпулфаиловер](/powershell/module/az.sql/invoke-azsqlelasticpoolfailover)|[Отработка отказа эластичного пула](/rest/api/sql/elasticpools(failover)/failover/)|[AZ RESTful](/cli/azure/reference-index#az-rest) можно использовать для вызова вызова REST API из Azure CLI|
 |Базы данных SQL|[Invoke-Азсклинстанцефаиловер](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[Управляемые экземпляры — отработка отказа](/rest/api/sql/managed%20instances%20-%20failover/failover)|[AZ SQL MI Failover](/cli/azure/sql/mi/#az-sql-mi-failover)|
 

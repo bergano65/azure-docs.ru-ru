@@ -5,14 +5,14 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 11/05/2020
+ms.date: 12/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: ad3cf33dacffc8bcda9376857206784afedf7139
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 472261666c86b666efd09c7217d12e5a795a50d9
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94362004"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094904"
 ---
 # <a name="vnet-peering-and-azure-bastion-preview"></a>Пиринг виртуальных сетей и Azure бастиона (Предварительная версия)
 
@@ -44,7 +44,7 @@ Azure бастиона работает со следующими типами �
 1. Azure бастиона легко обнаруживается в одноранговой виртуальной сети.
 1. Одним щелчком мыши в браузере открывается сеанс RDP или SSH. Ограничения одновременных сеансов RDP и SSH см. в разделе [сеансы RDP и SSH](bastion-faq.md#limits).
 
-   :::image type="content" source="../../includes/media/bastion-vm-rdp/connect-vm.png" alt-text="Подключить":::
+  :::image type="content" source="../../includes/media/bastion-vm-rdp/connect-vm.png" alt-text="Подключить":::
 
    Дополнительные сведения о подключении к виртуальной машине через Azure бастиона см. в следующих статьях:
 

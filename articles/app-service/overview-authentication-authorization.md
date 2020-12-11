@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 4f1aceed7e6a41a8ad4f3a062f23a796e31e34ad
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 1b95b1e96dc26fb72338518fc969c69b035d5f68
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601685"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095242"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Проверка подлинности и авторизация в службе приложений Azure и функциях Azure
 
@@ -152,6 +152,7 @@ ms.locfileid: "96601685"
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
+* [Руководство. Проверка подлинности и авторизация пользователей в веб-приложении, которое обращается к службе хранилища Azure и Microsoft Graph](scenario-secure-app-authentication-app-service.md)
 * [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](tutorial-auth-aad.md)  
 * [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](./tutorial-auth-aad.md?pivots=platform-linux%3fpivots%3dplatform-linux)  
 * [Customize authentication and authorization in Azure App Service](app-service-authentication-how-to.md) (Настройка проверки подлинности и авторизации в Службе приложений Azure)

@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 45393f116149f6cf16763d2d7033f8425df235bf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fd33ca4c5d637e31230d8c124fdb9ec7c71d2ba7
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998855"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094851"
 ---
 # <a name="azure-blob-storage-trigger-for-azure-functions"></a>Триггер хранилища BLOB-объектов Azure для функций Azure
 
@@ -213,7 +213,7 @@ public void run(
 
 * [BlobTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobTriggerAttribute.cs)
 
-  Конструктор атрибута принимает строку пути, которая указывает на контейнер для просмотра, и при необходимости [шаблон имени большого двоичного объекта](#blob-name-patterns). Пример:
+  Конструктор атрибута принимает строку пути, которая указывает на контейнер для просмотра, и при необходимости [шаблон имени большого двоичного объекта](#blob-name-patterns). Ниже приведен пример:
 
   ```csharp
   [FunctionName("ResizeImage")]
@@ -323,6 +323,9 @@ public void run(
 
 Вы можете указать шаблон имени большого двоичного объекта в свойстве `path` в файле *function.json* или в конструкторе атрибута `BlobTrigger`. Шаблон имени может быть [выражением фильтра или привязки](./functions-bindings-expressions-patterns.md). Примеры приведены в следующих разделах.
 
+> [!TIP]
+> Имя контейнера не может содержать сопоставитель в шаблоне имени.
+
 ### <a name="get-file-name-and-extension"></a>Получение имени и расширения файла
 
 В следующем примере показано, как выполнить привязку имени и расширения файла большого двоичного объекта по отдельности:
@@ -424,7 +427,7 @@ module.exports = function (context, myBlob) {
 
 Функции JavaScript и Java загружают весь большой двоичный объект в память, а функции C# делают это при привязке к `string` , или `Byte[]` .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Чтение данных хранилища BLOB-объектов при выполнении функции](./functions-bindings-storage-blob-input.md)
 - [Запись данных хранилища BLOB-объектов из функции](./functions-bindings-storage-blob-output.md)

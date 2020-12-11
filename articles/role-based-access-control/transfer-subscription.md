@@ -8,14 +8,14 @@ ms.service: role-based-access-control
 ms.devlang: na
 ms.topic: how-to
 ms.workload: identity
-ms.date: 10/06/2020
+ms.date: 12/10/2020
 ms.author: rolyon
-ms.openlocfilehash: ad0ba3c63f6f0ef6e7e02051031cf215c2e72cce
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 92b27690ab1f2ca8d98eb2231c5a27bc508613f8
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648248"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095429"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Перенос подписки Azure в другой каталог Azure AD
 
@@ -53,7 +53,12 @@ ms.locfileid: "94648248"
 - Часть вашего бизнеса делится на отдельную компанию, и вам нужно переместить некоторые ресурсы в другой каталог Azure AD.
 - Вы хотите управлять некоторыми ресурсами в другом каталоге Azure AD для обеспечения изоляции безопасности.
 
-Передача подписки требует простоя для завершения процесса. В зависимости от сценария может быть лучше просто повторно создать ресурсы и скопировать данные в целевой каталог и подписку.
+### <a name="alternate-approaches"></a>Альтернативные подходы
+
+Передача подписки требует простоя для завершения процесса. В зависимости от сценария можно рассмотреть следующие альтернативные подходы.
+
+- Повторно создайте ресурсы и скопируйте данные в целевой каталог и подписку.
+- Применяйте архитектуру с несколькими каталогами и оставьте подписку в исходном каталоге. Используйте Azure Лигхсаусе для делегирования ресурсов, чтобы пользователи в целевом каталоге могли получить доступ к подписке в исходном каталоге. Дополнительные сведения см. [в статье Azure лигхсаусе в корпоративных сценариях](../lighthouse/concepts/enterprise.md).
 
 ### <a name="understand-the-impact-of-transferring-a-subscription"></a>Общие сведения о влиянии передачи подписки
 
@@ -73,7 +78,7 @@ ms.locfileid: "94648248"
 | Служба хранилища Azure и Azure Data Lake Storage 2-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
 | Хранилище Azure Data Lake Storage 1-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
 | Файлы Azure | Да | Да |  | Необходимо повторно создать все списки ACL. |
-| Служба синхронизации файлов Azure | Да | Да |  |  |
+| Синхронизация файлов Azure | Да | Да |  |  |
 | управляемые диски Azure. | Да | Да |  |  Если вы используете наборы шифрования дисков для шифрования управляемых дисков с помощью управляемых клиентом ключей, необходимо отключить и повторно включить назначенные системой удостоверения, связанные с наборами шифрования дисков. Кроме того, необходимо повторно создать назначения ролей, т. е. предоставить необходимые разрешения для наборов шифрования дисков в хранилищах ключей. |
 | Служба Azure Kubernetes | Да | Да |  |  |
 | Политика Azure | Да | Нет | Все объекты политики Azure, включая пользовательские определения, назначения, исключения и данные о соответствии. | Необходимо [экспортировать](../governance/policy/how-to/export-resources.md), импортировать и повторно назначить определения. Затем создайте новые назначения политик и все необходимые [исключения политик](../governance/policy/concepts/exemption-structure.md). |
@@ -383,3 +388,4 @@ ms.locfileid: "94648248"
 - [Передача прав владения на выставление счетов для подписки Azure другой учетной записи](../cost-management-billing/manage/billing-subscription-transfer.md)
 - [Перенос подписок Azure между подписчиками и CSP](../cost-management-billing/manage/transfer-subscriptions-subscribers-csp.md)
 - [Associate or add an Azure subscription to your Azure Active Directory tenant](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md) (Связывание или добавление подписки Azure в клиент Azure Active Directory)
+- [Использование Azure Lighthouse в корпоративных сценариях](../lighthouse/concepts/enterprise.md)

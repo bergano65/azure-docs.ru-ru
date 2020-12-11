@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: d889c82142cda60b920f7b29bd91755cbc34f525
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 48ff32655b107958a3e8e42dbd7de0f405a6fffa
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701455"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094868"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
 
@@ -33,8 +33,6 @@ ms.locfileid: "94701455"
 
 
 Списки ACL для доступа и ACL по умолчанию имеют одинаковую структуру.
-
-
 
 > [!NOTE]
 > Изменение ACL по умолчанию в родительском объекте не оказывает влияния на ACL для доступа или ACL по умолчанию для уже существующих дочерних элементов.
@@ -74,9 +72,9 @@ ms.locfileid: "94701455"
 | Операция | Объект              |    /      | Seattle/   | Portland/   | Data.txt       |
 |-----------|---------------------|-----------|------------|-------------|----------------|
 | Чтение      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
-| Добавление к | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `RW-`          |
-| Удалить    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
-| Создать    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Добавление к | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `-W-`          |
+| Удаление    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Создание    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Список      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
 | Список      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
 | Список      | /Seattle/Portland/  |   `--X`   |   `--X`    |  `R-X`      | `---`          |

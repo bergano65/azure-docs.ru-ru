@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, fasttrack-edit, devx-track-python
-ms.openlocfilehash: 6bd4d5d82af213063b2000693e46d22744604480
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 888afdc2764fed9f0b2c8b548c3e2b1c48e9a31e
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88214126"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094682"
 ---
 # <a name="azure-event-grid-output-binding-for-azure-functions"></a>Выходная привязка Сетки событий Azure для функций Azure
 
@@ -100,6 +100,10 @@ public static void Run(TimerInfo myTimer, ICollector<EventGridEvent> outputEvent
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+Выходная привязка Сетки событий недоступна для Java.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В приведенных ниже примерах показаны данные выходной привязки Сетки событий в файле *function.json*.
@@ -160,6 +164,70 @@ module.exports = function(context) {
 };
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показано, как настроить функцию для вывода сообщения о событии сетки событий. В разделе, где `type` задается `eventGrid` Настройка значений, необходимых для создания выходной привязки сетки событий.
+
+```powershell
+{
+  "bindings": [
+    {
+      "type": "eventGrid",
+      "name": "outputEvent",
+      "topicEndpointUri": "MyEventGridTopicUriSetting",
+      "topicKeySetting": "MyEventGridTopicKeySetting",
+      "direction": "out"
+    },
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    }
+  ]
+}
+```
+
+В функции используйте `Push-OutputBinding` для отправки события в пользовательский раздел через выходную привязку сетки событий.
+
+```powershell
+using namespace System.Net
+
+# Input bindings are passed in via param block.
+param($Request, $TriggerMetadata)
+
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell HTTP trigger function processed a request."
+
+# Interact with query parameters or the body of the request.
+$message = $Request.Query.Message
+
+Push-OutputBinding -Name outputEvent -Value  @{
+    id = "1"
+    EventType = "testEvent"
+    Subject = "testapp/testPublish"
+    EventTime = "2020-08-27T21:03:07+00:00"
+    Data = @{
+        Message = $message
+    }
+    DataVersion = "1.0"
+}
+
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = 200
+    Body = "OK"
+})
+```
+
 # <a name="python"></a>[Python](#tab/python)
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку. Затем он отправляет событие в пользовательский раздел, как указано в `topicEndpointUri` .
@@ -194,7 +262,6 @@ import logging
 import azure.functions as func
 import datetime
 
-
 def main(eventGridEvent: func.EventGridEvent, 
          outputEvent: func.Out[func.EventGridOutputEvent]) -> None:
 
@@ -209,10 +276,6 @@ def main(eventGridEvent: func.EventGridEvent,
             event_time=datetime.datetime.utcnow(),
             data_version="1.0"))
 ```
-
-# <a name="java"></a>[Java](#tab/java)
-
-Выходная привязка Сетки событий недоступна для Java.
 
 ---
 
@@ -239,17 +302,21 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 В скрипте C# атрибуты не поддерживаются.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Выходная привязка Сетки событий недоступна для Java.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В JavaScript атрибуты не поддерживаются.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Выходная привязка Сетки событий недоступна для Python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Выходная привязка Сетки событий недоступна для Java.
 
 ---
 
@@ -280,20 +347,24 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 Для отправки сообщений используйте параметр метода, например `out EventGridEvent paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<EventGridEvent>` или `IAsyncCollector<EventGridEvent>` вместо `out EventGridEvent`.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Выходная привязка Сетки событий недоступна для Java.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к выходному событию с помощью `context.bindings.<name>`, где `<name>` — это значение, указанное в свойстве `name` файла *function.json*.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Получите доступ к выходному событию с помощью `Push-OutputBinding` командлет, чтобы отправить событие в выходную привязку сетки событий.
 
 # <a name="python"></a>[Python](#tab/python)
 
 Выходная привязка Сетки событий недоступна для Python.
 
-# <a name="java"></a>[Java](#tab/java)
-
-Выходная привязка Сетки событий недоступна для Java.
-
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Подготовка события Сетки событий к отправке](./functions-bindings-event-grid-trigger.md)
+* [Отправка события Сетки событий](./functions-bindings-event-grid-trigger.md)

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: sukishen
-ms.openlocfilehash: 7ba8f4e08b1be1af5fa2870494db2c08c2cd7b7e
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 009ae601613c7706ddee3ec3397622376d95b0f6
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94739841"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094929"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах программы для поставщиков сетевых устройств и служб Azure (MSP)
 
@@ -42,7 +42,7 @@ ms.locfileid: "94739841"
 |[Федеративная беспроводная сеть](https://www.federatedwireless.com/caas/)||||[Федеративное беспроводное подключение как услуга](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/federatedwireless1580839623708.fw_caas?tab=Overview)|
 |[Infosys](https://www.infosys.com/services/microsoft-cloud-business/pages/index.aspx)|[Infosys Integrate+ для Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/infosysltd.infosys-integrate-for-azure?tab=Overview)|||||
 |[Interxion](https://www.interxion.com/products/interconnection/cloud-connect/support-your-cloud-strategy/)|[Сеть Azure: оценка (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/interxionhq.inxn_azure_networking_assessment)|||||
-|[Liquid Telecom](https://liquidcloud.africa/)|[Готовность к облаку: оценка (2 ч)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/liquidtelecommunicationsoperationslimited.liquid_cloud_readiness_assessment)|[Управление ExpressRoute с управлением](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/liquidtelecommunicationsoperationslimited.42cfee0b-8f07-4948-94b0-c9fc3e1ddc42?tab=Overview)||||
+|[Liquid Telecom](https://liquidcloud.africa/)|[Готовность к облаку: оценка (2 ч)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/liquidtelecommunicationsoperationslimited.liquid_cloud_readiness_assessment)|[Управление ExpressRoute с управлением](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/liquidtelecommunicationsoperationslimited.5dab29ab-bb14-4df8-8978-9a8608a41ad7?tab=Overview)||||
 |[Macquarie Telecom](https://macquariecloudservices.com/azure-managed-services/)|[Управляемые службы Azure с помощью Маккуарие Cloud](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/macquariecloudservices.managed_services?tab=Overview); [Расширение Azure с помощью Маккуарие облачных служб](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/macquariecloudservices.azure_extend?tab=Overview)||[Установка Virtual Edge SD-WAN от Macquarie Cloud](https://azuremarketplace.microsoft.com/marketplace/apps/coevolveptylimited1581027739259.managed-vmware-sdwan-edge?tab=Overview)|||
 |[Megaport](https://www.megaport.com/services/microsoft-expressroute/)||[mcr](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/megaport1582290752989.megaport_mcr?tab=Overview)||||
 |[Nokia](https://www.nokia.com/networks/services/managed-services/)|||[Нбконсулт Nokia НУАЖЕ сдван](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/nbconsult1588859334197.nbconsult-nokia-nuage?tab=Overview); [НУАЖЕ SD-wan 2,0 Виртуальная глобальная сеть Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/nokiaofamericacorporation1591716055441.nuage_sd-wan_2-0_azure_virtual_wan?tab=Overview)|[Клавиатура Nokia 4G & 5G Private Wireless (НДАК)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/nokiaofamericacorporation1591716055441.ndac_5g-ready_private_wireless?tab=Overview)|
