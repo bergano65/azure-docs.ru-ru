@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 11/13/2020
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
-ms.custom: aaddev, fasttrack-edit, contperfq2
-ms.openlocfilehash: 4c72d1b4b78c0b7ca9e7fa1f6468beb6fdd4b247
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.custom: aaddev, fasttrack-edit, contperf-fy21q2
+ms.openlocfilehash: fd1fc59fd1ade6036c57f15415afccfc693f7bff
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628090"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029759"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -28,7 +28,7 @@ ms.locfileid: "94628090"
 Необходимо зарегистрировать каждое приложение, использующее конечную точку платформы удостоверений Microsoft на портале Azure [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908). В процессе регистрации приложения будет задано несколько параметров приложения:
 
 * **ИД приложения (клиента)** , идентифицирующий ваше приложение уникальным образом
-* **универсальный код ресурса (URI) перенаправления** , который можно использовать для направления ответов к приложению;
+* **универсальный код ресурса (URI) перенаправления**, который можно использовать для направления ответов к приложению;
 * Несколько других значений, относящихся к сценарию, например поддерживаемые типы учетных записей
 
 Дополнительные сведения см. в статье о [регистрации приложения](quickstart-register-app.md).

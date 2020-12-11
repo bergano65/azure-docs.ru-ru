@@ -10,13 +10,13 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.date: 11/16/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 03d10f71b585090157eff164cc98246f50608fe1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.custom: how-to, devx-track-python, contperf-fy21q1, devx-track-azurecli
+ms.openlocfilehash: 6fe43c39b17e574e1913cd9e7b4292a71f1e418d
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018789"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031765"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Настройка среды разработки Python для Машинное обучение Azure
 
@@ -104,7 +104,7 @@ ms.locfileid: "96018789"
 
 Теперь, когда локальная среда настроена, можно приступить к работе с Машинное обучение Azure. Чтобы приступить к работе, ознакомьтесь с [руководством по началу работы с машинное обучение Azure Python](tutorial-1st-experiment-sdk-setup-local.md) .
 
-### <a name="jupyter-notebooks"></a><a id="jupyter"></a>Записные книжки Jupyter
+### <a name="jupyter-notebooks"></a><a id="jupyter"></a>Jupyter Notebook
 
 При запуске локального Jupyter Notebook сервера рекомендуется создать ядро IPython Notebook для виртуальной среды Python. Это помогает обеспечить ожидаемое поведение при импорте ядра и пакета.
 
@@ -174,7 +174,7 @@ ms.locfileid: "96018789"
 
     * Используйте портал Azure, чтобы создать DSVM [Ubuntu](data-science-virtual-machine/dsvm-ubuntu-intro.md) или [Windows](data-science-virtual-machine/provision-vm.md) .
     * [Создайте виртуальную машину для обработки и анализа данных с помощью шаблонов ARM](data-science-virtual-machine/dsvm-tutorial-resource-manager.md).
-    * Использование Azure CLI
+    * Использование командной строки Azure CLI
 
         Чтобы создать виртуальную машину Ubuntu для обработки и анализа данных, используйте следующую команду:
 
@@ -214,7 +214,7 @@ ms.locfileid: "96018789"
 Дополнительные сведения о Виртуальных машинах для обработки и анализа данных см. [здесь](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST.
 - См. [Справочник по машинное обучение Azure SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). 

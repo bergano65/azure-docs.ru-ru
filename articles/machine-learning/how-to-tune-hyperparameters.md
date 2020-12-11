@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 03/30/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: b65553edf61d8e646e7238a5385656fe75a3156f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, devx-track-python, contperf-fy21q1
+ms.openlocfilehash: a1a0b89dee5a6d57e6f317c5f6c8b61ffeda3c33
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311380"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029079"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 
@@ -339,7 +339,7 @@ hyperdrive_run = experiment.submit(hd_config)
 
 
 Горячий запуск обрабатывается по-разному в зависимости от метода выборки:
-- **Выборка Байеса** : пробные версии из предыдущего запуска используются в качестве предыдущих знаний для выбора новых примеров и для улучшения основной метрики.
+- **Выборка Байеса**: пробные версии из предыдущего запуска используются в качестве предыдущих знаний для выбора новых примеров и для улучшения основной метрики.
 - **Случайная выборка** или **выборка в сетке**. для определения плохо выполняемых запусков с ранним прекращением используются знания из предыдущих запусков. 
 
 Укажите список родительских запусков, из которых требуется горячий запуск.

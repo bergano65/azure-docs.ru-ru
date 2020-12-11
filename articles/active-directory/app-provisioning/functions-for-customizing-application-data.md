@@ -10,13 +10,13 @@ ms.workload: identity
 ms.topic: reference
 ms.date: 02/05/2020
 ms.author: kenwith
-ms.custom: contperfq2
-ms.openlocfilehash: a1d83f91ad82bddacb7e806e31151b8e4a7ab612
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: fe18513bbfc69fb63f8b1b248b7cf02ad55b467d
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344935"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97027379"
 ---
 # <a name="reference-for-writing-expressions-for-attribute-mappings-in-azure-ad"></a>Справочник по написанию выражений для сопоставления атрибутов в Azure AD
 
@@ -38,7 +38,7 @@ ms.locfileid: "96344935"
 
 ## <a name="list-of-functions"></a>Список функций
 
-[Append](#append) &nbsp; &nbsp; Добавить &nbsp; &nbsp; [BitAnd](#bitand) &nbsp; &nbsp; BitAnd &nbsp; &nbsp; [CBool](#cbool) &nbsp; &nbsp; CBool &nbsp; &nbsp; [Coalesce](#coalesce) &nbsp; &nbsp; Объединение &nbsp; &nbsp; [ConvertToBase64](#converttobase64) &nbsp; &nbsp; ConvertToBase64 &nbsp; &nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp; &nbsp; ConvertToUTF8Hex &nbsp; &nbsp; [Count](#count) &nbsp; &nbsp; Количество &nbsp; &nbsp; [CStr](#cstr) &nbsp; &nbsp; CStr &nbsp; &nbsp; [Датефромнум](#datefromnum) &nbsp; [FormatDateTime](#formatdatetime) &nbsp; &nbsp; FormatDateTime &nbsp; &nbsp; [Идентификатор](#guid) &nbsp; &nbsp; GUID &nbsp; &nbsp; [IIF](#iif) &nbsp; &nbsp; IIf &nbsp; &nbsp; [InStr](#instr) &nbsp; &nbsp; InStr &nbsp; &nbsp; [IsNull](#isnull) &nbsp; &nbsp; IsNull &nbsp; &nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp; &nbsp; IsNullOrEmpty &nbsp; &nbsp; [IsPresent](#ispresent) &nbsp; &nbsp; Present &nbsp; &nbsp; [IsString](#isstring) &nbsp; &nbsp; Substring &nbsp; &nbsp; [Item](#item) &nbsp; &nbsp; Элемент &nbsp; &nbsp; [Join](#join) &nbsp; &nbsp; Соединение &nbsp; &nbsp; По [левому краю](#left) &nbsp; &nbsp; &nbsp; &nbsp; [MID](#mid) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [нормализедиакритикс](#normalizediacritics) [Not](#not) &nbsp; &nbsp; &nbsp; &nbsp; [RemoveDuplicates](#removeduplicates) &nbsp; &nbsp; &nbsp; &nbsp; [заменить](#replace) &nbsp; &nbsp; &nbsp; &nbsp; [селектуникуевалуе](#selectuniquevalue) &nbsp; &nbsp; &nbsp; &nbsp; [синглеаппролеассигнмент](#singleapproleassignment) &nbsp; &nbsp; &nbsp; &nbsp; [разделить](#split) &nbsp; &nbsp; &nbsp; &nbsp; [стрипспацес](#stripspaces) &nbsp; &nbsp; &nbsp; &nbsp; [switch](#switch) &nbsp; &nbsp; &nbsp; &nbsp; [ToLower](#tolower) &nbsp; &nbsp; &nbsp; &nbsp; [ToUpper](#toupper) &nbsp; &nbsp; &nbsp; &nbsp; [Word](#word)
+[](#append) &nbsp; &nbsp; Добавить &nbsp; &nbsp; [](#bitand) &nbsp; &nbsp; BitAnd &nbsp; &nbsp; [](#cbool) &nbsp; &nbsp; CBool &nbsp; &nbsp; [](#coalesce) &nbsp; &nbsp; Объединение &nbsp; &nbsp; [](#converttobase64) &nbsp; &nbsp; ConvertToBase64 &nbsp; &nbsp; [](#converttoutf8hex) &nbsp; &nbsp; ConvertToUTF8Hex &nbsp; &nbsp; [](#count) &nbsp; &nbsp; Количество &nbsp; &nbsp; [](#cstr) &nbsp; &nbsp; CStr &nbsp; &nbsp; [Датефромнум](#datefromnum) &nbsp; [](#formatdatetime) &nbsp; &nbsp; FormatDateTime &nbsp; &nbsp; [Идентификатор](#guid) &nbsp; &nbsp; GUID &nbsp; &nbsp; [](#iif) &nbsp; &nbsp; IIf &nbsp; &nbsp; [](#instr) &nbsp; &nbsp; InStr &nbsp; &nbsp; [](#isnull) &nbsp; &nbsp; IsNull &nbsp; &nbsp; [](#isnullorempty) &nbsp; &nbsp; IsNullOrEmpty &nbsp; &nbsp; [](#ispresent) &nbsp; &nbsp; Present &nbsp; &nbsp; [](#isstring) &nbsp; &nbsp; Substring &nbsp; &nbsp; [](#item) &nbsp; &nbsp; Элемент &nbsp; &nbsp; [](#join) &nbsp; &nbsp; Соединение &nbsp; &nbsp; По [левому краю](#left) &nbsp; &nbsp; &nbsp; &nbsp; [MID](#mid) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [нормализедиакритикс](#normalizediacritics) [Not](#not) &nbsp; &nbsp; &nbsp; &nbsp; [RemoveDuplicates](#removeduplicates) &nbsp; &nbsp; &nbsp; &nbsp; [заменить](#replace) &nbsp; &nbsp; &nbsp; &nbsp; [селектуникуевалуе](#selectuniquevalue) &nbsp; &nbsp; &nbsp; &nbsp; [синглеаппролеассигнмент](#singleapproleassignment) &nbsp; &nbsp; &nbsp; &nbsp; [разделить](#split) &nbsp; &nbsp; &nbsp; &nbsp; [стрипспацес](#stripspaces) &nbsp; &nbsp; &nbsp; &nbsp; [switch](#switch) &nbsp; &nbsp; &nbsp; &nbsp; [ToLower](#tolower) &nbsp; &nbsp; &nbsp; &nbsp; [ToUpper](#toupper) &nbsp; &nbsp; &nbsp; &nbsp; [Word](#word)
 
 ---
 ### <a name="append"></a>Добавление
@@ -69,7 +69,7 @@ ms.locfileid: "96344935"
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **value1** |Обязательно |num |Числовое значение, которое должно быть двух с value2|
+| **Значение1** |Обязательно |num |Числовое значение, которое должно быть двух с value2|
 | **value2** |Обязательно |num |Числовое значение, которое должно быть двух с значение1|
 
 **Например**
@@ -143,7 +143,7 @@ ms.locfileid: "96344935"
  Возвращает 48656C6C6F20776F726C6421.
 
 ---
-### <a name="count"></a>Счетчик
+### <a name="count"></a>Count
 **Функция:** Count (атрибут)
 
 **Описание:** Функция Count возвращает количество элементов в атрибуте с несколькими значениями.
@@ -237,7 +237,7 @@ ms.locfileid: "96344935"
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **value1** |Обязательно |Строка |Строка для поиска |
+| **Значение1** |Обязательно |Строка |Строка для поиска |
 | **value2** |Обязательно |Строка |Строка для поиска |
 | **start** |Необязательный |Целое число |Начальная Расположение для поиска подстроки|
 | **компаретипе** |Необязательно |Перечисление |Может быть Вбтексткомпаре или Вббинарикомпаре |
@@ -323,7 +323,7 @@ ms.locfileid: "96344935"
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **версию** |Обязательно |Атрибут |Атрибут с несколькими значениями для поиска |
+| **версию** |Обязательно |attribute |Атрибут с несколькими значениями для поиска |
 | **index** |Обязательный |Целое число | Индексирование элемента в строке с несколькими значениями|
 
 **Например**
@@ -357,7 +357,7 @@ ms.locfileid: "96344935"
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **String** |Обязательно |Атрибут | Строка, из которой возвращаются символы |
+| **String** |Обязательно |attribute | Строка, из которой возвращаются символы |
 | **NumChars** |Обязательный |Целое число | Число, определяющее количество символов, возвращаемых с начала (слева) строки|
 
 **Например**
@@ -392,7 +392,7 @@ ms.locfileid: "96344935"
 | **source** |Обязательно |Строка | Обычно атрибут имени или фамилии. |
 
 ---
-### <a name="not"></a>not
+### <a name="not"></a>Not
 **Функция:** Не (источник)
 
 **Описание:** Переворачивает логическое значение **источника**. Если **Source** value имеет значение true, возвращает значение false. В противном случае возвращает значение true.

@@ -10,13 +10,13 @@ ms.reviewer: larryfr
 ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
-ms.custom: contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 2b0a56bac1652881e9d1733bcb52b02610e27e9e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1
+ms.openlocfilehash: 131feaf6ff01659b7d126604a5d081275e64508f
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314173"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029572"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Защита Машинное обучение Azureной среды обучения с помощью виртуальных сетей
 
@@ -112,8 +112,8 @@ ms.locfileid: "93314173"
 - Запретите исходящие интернет-подключения с помощью правил NSG.
 
 - Ограничьте исходящий трафик для __экземпляра вычислительных ресурсов__ или __кластера вычислительных ресурсов__ следующими элементами.
-   - Служба хранилища Azure, с помощью __тега службы__ __Storage.RegionName__ , где `{RegionName}` — имя региона Azure.
-   - Реестр контейнеров Azure, с помощью __тега службы__ __AzureContainerRegistry.RegionName__ , где `{RegionName}` — имя региона Azure.
+   - Служба хранилища Azure, с помощью __тега службы__ __Storage.RegionName__, где `{RegionName}` — имя региона Azure.
+   - Реестр контейнеров Azure, с помощью __тега службы__ __AzureContainerRegistry.RegionName__, где `{RegionName}` — имя региона Azure.
    - Машинное обучение Azure, с помощью __тега службы__ __AzureMachineLearning__
    - Azure Resource Manager, с помощью __тега службы__ __AzureResourceManager__
    - Azure Active Directory, с помощью __тега службы__ __AzureActiveDirectory__
@@ -123,7 +123,7 @@ ms.locfileid: "93314173"
 [![Правила NSG для исходящего трафика вычислительной среды машинного обучения](./media/how-to-enable-virtual-network/limited-outbound-nsg-exp.png)](./media/how-to-enable-virtual-network/limited-outbound-nsg-exp.png#lightbox)
 
 > [!NOTE]
-> Если вы планируете использовать образы DOCKER по умолчанию, предоставляемые корпорацией Майкрософт, и включите управляемые пользователем зависимости, необходимо также использовать следующие __теги служб__ :
+> Если вы планируете использовать образы DOCKER по умолчанию, предоставляемые корпорацией Майкрософт, и включите управляемые пользователем зависимости, необходимо также использовать следующие __теги служб__:
 >
 > * __MicrosoftContainerRegistry__
 > * __AzureFrontDoor.FirstParty__
@@ -262,7 +262,7 @@ except ComputeTargetException:
 > [!div class="checklist"]
 > * Виртуальная сеть должна размещаться в той же подписке и том же регионе, что и рабочая область Машинного обучения Azure.
 > * Если учетные записи хранения Azure для рабочей области также предусмотрены в виртуальной сети, они должны находиться в той же виртуальной сети, что и кластер Azure Databricks.
-> * В дополнение к подсетям __databricks-private__ и __databricks-public__ , используемым Azure Databricks, необходимо также создать подсеть __по умолчанию__ для виртуальной сети.
+> * В дополнение к подсетям __databricks-private__ и __databricks-public__, используемым Azure Databricks, необходимо также создать подсеть __по умолчанию__ для виртуальной сети.
 
 Конкретные сведения об использовании Azure Databricks с виртуальной сетью см. в разделе [Развертывание Azure Databricks в виртуальной сети Azure](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html).
 

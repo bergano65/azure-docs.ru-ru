@@ -9,13 +9,13 @@ ms.author: laobri
 author: lobrien
 ms.date: 08/20/2020
 ms.topic: conceptual
-ms.custom: how-to, contperfq4, devx-track-python, data4ml
-ms.openlocfilehash: bf5bfd8c2047764f9a03889c8fdd5012dc38ab65
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.custom: how-to, contperf-fy20q4, devx-track-python, data4ml
+ms.openlocfilehash: 8a5663df590e0f617f8049f0201e6e508351c755
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359771"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97027583"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
 
@@ -158,7 +158,7 @@ ds = Dataset.get_by_name(workspace=ws, name='mnist_opendataset')
 
 ## <a name="use-pipelinedata-for-intermediate-data"></a>Использовать `PipelineData` для промежуточных данных
 
-Хотя `Dataset` объекты представляют постоянные данные, объекты [пипелинедата](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?preserve-view=true&view=azure-ml-py) используются для временных данных, выводимых шагами конвейера. Так как время существования `PipelineData` объекта длиннее, чем один шаг конвейера, оно определяется в скрипте определения конвейера. При создании `PipelineData` объекта необходимо указать имя и хранилище данных, в котором будут размещаться данные. Передайте `PipelineData` объекты в объект `PythonScriptStep` _both_ с помощью `arguments` `outputs` аргументов и.
+Хотя `Dataset` объекты представляют постоянные данные, объекты [пипелинедата](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?preserve-view=true&view=azure-ml-py) используются для временных данных, выводимых шагами конвейера. Так как время существования `PipelineData` объекта длиннее, чем один шаг конвейера, оно определяется в скрипте определения конвейера. При создании `PipelineData` объекта необходимо указать имя и хранилище данных, в котором будут размещаться данные. Передайте `PipelineData` объекты в объект `PythonScriptStep`  с помощью `arguments` `outputs` аргументов и.
 
 ```python
 

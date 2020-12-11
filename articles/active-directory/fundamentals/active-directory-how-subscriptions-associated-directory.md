@@ -11,14 +11,14 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: ajburnle
 ms.reviewer: jeffsta
-ms.custom: it-pro, seodec18, contperfq4
+ms.custom: it-pro, seodec18, contperf-fy20q4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ed68211d034a133b923b6a2eec20ad6f1a0ffe2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c7a39340f44e2c6eeae5b5f1a8e687bc73b3b0fe
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541032"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028416"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "92541032"
 >
 > Перемещение кластера Azure Kubernetes Service (AKS) в другую подписку или перемещение владения кластером в новый клиент приводит к потере функциональности кластера из-за потери назначений ролей и прав субъекта-службы. Дополнительные сведения о AKS см. в статье [Azure Kubernetes Service (AKS)](../../aks/index.yml).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем можно будет связать или добавить подписку, выполните следующие действия.
 
@@ -63,11 +63,11 @@ ms.locfileid: "92541032"
 
 1. Войдите и выберите подписку, которую вы хотите использовать, на [странице "подписки" в портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
 
-1. Выберите **изменить каталог** .
+1. Выберите **изменить каталог**.
 
    ![Страница подписок с выделенным параметром "Изменить каталог"](media/active-directory-how-subscriptions-associated-directory/change-directory-in-azure-subscriptions.png)
 
-1. Просмотрите все появившиеся предупреждения и нажмите кнопку **изменить** .
+1. Просмотрите все появившиеся предупреждения и нажмите кнопку **изменить**.
 
    ![Страница "Изменить каталог" с новым каталогом](media/active-directory-how-subscriptions-associated-directory/edit-directory-ui.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "92541032"
 
    ![Страница "переключение каталога" с образцом данных](media/active-directory-how-subscriptions-associated-directory/directory-switcher.png)
 
-   Для правильного отображения всех элементов может потребоваться несколько часов. Если кажется, что он занимает слишком много времени, проверьте **глобальный фильтр подписки** . Убедитесь, что перемещенная подписка не скрыта. Возможно, потребуется выйти из портал Azure и войти снова, чтобы увидеть новый каталог.
+   Для правильного отображения всех элементов может потребоваться несколько часов. Если кажется, что он занимает слишком много времени, проверьте **глобальный фильтр подписки**. Убедитесь, что перемещенная подписка не скрыта. Возможно, потребуется выйти из портал Azure и войти снова, чтобы увидеть новый каталог.
 
 Изменение каталога подписки происходит на уровне службы и не влияет на выставление счетов для подписки. Чтобы удалить исходный каталог, необходимо переместить владельца выставления счетов по подписке на нового администратора учетной записи. Дополнительные сведения о передаче владения выставлением счетов см. в статье передача прав владения [подпиской Azure другой учетной записи](../../cost-management-billing/manage/billing-subscription-transfer.md).
 

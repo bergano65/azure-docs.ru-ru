@@ -7,13 +7,13 @@ ms.date: 11/10/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.custom: contperfq2
-ms.openlocfilehash: 55607527ced2e5d93a61cfd85477758482f18daa
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: b0a86a32148086a3b644d0bf147d12be0d812536
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95495429"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030321"
 ---
 # <a name="install-and-use-azure-iot-explorer"></a>Установка и использование Azure IoT Explorer
 
@@ -97,7 +97,7 @@ ms.locfileid: "95495429"
 
 :::image type="content" source="media/howto-use-iot-explorer/components-iot-explorer.png" alt-text="Просмотр компонентов в обозревателе Интернета вещей Azure":::
 
-#### <a name="properties"></a>Свойства
+#### <a name="properties"></a>Properties (Свойства)
 
 :::image type="content" source="media/howto-use-iot-explorer/properties-iot-explorer.png" alt-text="Просмотр свойств в Azure IoT Explorer":::
 
@@ -128,6 +128,6 @@ ms.locfileid: "95495429"
 
 Список функций Интернета вещей, поддерживаемых последней версией средства, см. в разделе [список компонентов](https://github.com/Azure/azure-iot-explorer/wiki).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом пошаговом руководстве вы узнали, как установить и использовать Azure IoT Explorer для взаимодействия с устройствами IoT Plug and Play. Предлагаемый следующий шаг — Узнайте, как [установить и использовать средства разработки дтдл](howto-use-dtdl-authoring-tools.md).

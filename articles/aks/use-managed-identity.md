@@ -4,12 +4,12 @@ description: Узнайте, как использовать управляем�
 services: container-service
 ms.topic: article
 ms.date: 12/06/2020
-ms.openlocfilehash: e2a80ea869e17665e8a6d4fbd6960c3ccc8c1042
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 68d8111da5ec10f23d14b375a18229bca075da84
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751280"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97026835"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Использование управляемых удостоверений в службе Kubernetes Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "96751280"
 
 *Управляемые удостоверения* по сути являются оболочкой для субъектов-служб и упрощают их управление. Поворот учетных данных для MI происходит автоматически каждые 46 дней в соответствии с Azure Active Directory по умолчанию. AKS использует управляемые системой и назначенные пользователем типы удостоверений. В настоящее время эти удостоверения неизменяемы. Дополнительные сведения см. в статье об [управляемых удостоверениях для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Необходимо установить следующий ресурс:
 
@@ -119,7 +119,7 @@ az feature register --namespace Microsoft.ContainerService -n MigrateToMSICluste
 az aks update -g <RGName> -n <AKSName> --enable-managed-identity
 ```
 
-Обновите назначенное пользователем удостоверение:
+Зарегистрируйте флаг функции для назначенного пользователю удостоверения:
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.ContainerService -n UserAssignedIdentityPreview
@@ -201,7 +201,7 @@ az aks create \
  },
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [шаблоны Azure Resource Manager (ARM) ][aks-arm-template] для создания кластеров с поддержкой управляемого удостоверения.
 
 <!-- LINKS - external -->
