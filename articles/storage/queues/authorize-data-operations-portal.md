@@ -10,13 +10,13 @@ ms.date: 09/08/2020
 ms.author: tamram
 ms.reviewer: ozguns
 ms.subservice: queues
-ms.custom: contperfq1
-ms.openlocfilehash: 9b3ae58544504495c89fce0ca07bc96d5f2c6028
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 68ac9cd5e89617a820cba9a1d6c61890e50a56a7
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94637493"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031748"
 ---
 # <a name="choose-how-to-authorize-access-to-queue-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным очереди в портал Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "94637493"
 
 ### <a name="use-the-account-access-key"></a>Использование ключа доступа к учетной записи
 
-Чтобы получить доступ к данным очереди с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие Azure RBAC **(Microsoft. Storage/storageAccounts/listkeys/действие** ). Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
+Чтобы получить доступ к данным очереди с помощью ключа доступа к учетной записи, необходимо назначить роль Azure, которая включает действие Azure RBAC **(Microsoft. Storage/storageAccounts/listkeys/действие**). Эта роль Azure может быть встроенной или настраиваемой ролью. Встроенные роли, поддерживающие **Microsoft. Storage, storageAccounts/listkeys/Action** , включают:
 
 - Роль [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager
 - Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
@@ -37,7 +37,7 @@ ms.locfileid: "94637493"
 При попытке получить доступ к данным очереди в портал Azure портал сначала проверяет, была ли назначена роль с помощью **Microsoft. Storage/storageAccounts/listkeys/Action**. Если вы назначили роль с этим действием, портал использует ключ учетной записи для доступа к данным очереди. Если вы не назначили роль с этим действием, портал пытается получить доступ к данным с помощью учетной записи Azure AD.
 
 > [!NOTE]
-> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action** , поэтому пользователь с одной из этих административных ролей также может получить доступ к данным очереди с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
+> Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может получить доступ к данным очереди с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
 
 ### <a name="use-your-azure-ad-account"></a>Использование учетной записи Azure AD
 

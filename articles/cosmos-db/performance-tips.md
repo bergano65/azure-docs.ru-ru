@@ -7,13 +7,13 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: sngun
-ms.custom: devx-track-dotnet, contperfq2
-ms.openlocfilehash: f2da2047469f342814ff349cfa059ed61e3adc25
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.custom: devx-track-dotnet, contperf-fy21q2
+ms.openlocfilehash: 962b95307b440c3bafde019b5b2b630461718073
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339688"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029011"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB и пакета SDK для .NET версии 2
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -46,7 +46,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
 - Для исполняемых приложений можно изменить обработку узла, задав для параметра [Целевая платформа](/visualstudio/ide/how-to-configure-projects-to-target-platforms?preserve-view=true&view=vs-2019) значение **x64**  в окне **Свойства проекта** на вкладке **Сборка** .
 
-- Для тестовых проектов на основе VSTest можно изменить обработку узла **, выбрав в**  >  **Test Settings**  >  меню **тест** Visual Studio пункт Параметры тестирования **архитектура процессора по умолчанию как x64** .
+- Для тестовых проектов на основе VSTest можно изменить обработку узла **, выбрав в**  >    >  меню **тест** Visual Studio пункт Параметры тестирования **архитектура процессора по умолчанию как x64** .
 
 - Для локально развернутых веб-приложений ASP.NET можно изменить обработку узла, выбрав **использовать 64-разрядную версию IIS Express для веб-сайтов и проектов** в разделе **Сервис**  >  **Параметры**  >  **проекты и решения**  >  **веб-проекты**.
 
@@ -180,7 +180,7 @@ readDocument.RequestDiagnosticsString
 > [!NOTE] 
 > `maxItemCount`Свойство не должно использоваться только для разбиения на страницы. Его основное использование — повышение производительности запросов за счет уменьшения максимального числа элементов, возвращаемых на одной странице.  
 
-Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet&preserve-view=true) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Пример:
+Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet&preserve-view=true) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Пример.
     
 ```csharp
 IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
@@ -257,7 +257,7 @@ x-ms-retry-after-ms :100
 
 Плата за запрос (т. е. затраты на обработку запросов) данной операции напрямую соотносится с размером документа. Операции с большими документами изменяют больше операций с малыми документами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Пример приложения, который используется для оценки Azure Cosmos DB для высокопроизводительных сценариев на нескольких клиентских компьютерах, см. в статье [Тестирование производительности и масштабирования с помощью Azure Cosmos DB](performance-testing.md).
 

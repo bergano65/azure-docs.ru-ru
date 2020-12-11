@@ -9,14 +9,14 @@ ms.reviewer: mldocs
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: troubleshooting
-ms.custom: troubleshooting, contperfq4
+ms.custom: troubleshooting, contperf-fy20q4
 ms.date: 11/09/2020
-ms.openlocfilehash: 55ac11b7888a8e351b52554f76fb44af35633c16
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: e383ac260a67c7334b806612325ed0b6a9fbbef9
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780983"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030983"
 ---
 # <a name="known-issues-and-troubleshooting-in-azure-machine-learning"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -426,7 +426,7 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
 
 Выполните следующие действия для следующих ошибок:
 
-|Ошибка  | Разрешение  |
+|Ошибка  | Решение  |
 |---------|---------|
 |Ошибка при создании образа при развертывании веб-службы     |  Добавьте "Пинакл = = 1.2.1" в качестве зависимости PIP к файлу Conda для конфигурации образа.       |
 |`['DaskOnBatch:context_managers.DaskOnBatch', 'setup.py']' died with <Signals.SIGKILL: 9>`     |   Измените номер SKU для виртуальных машин, используемых в развертывании, на один с большим объемом памяти. |

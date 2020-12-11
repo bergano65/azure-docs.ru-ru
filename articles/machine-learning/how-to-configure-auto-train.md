@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python,contperfq1, automl
-ms.openlocfilehash: b03eb8015d318471cf8bf11fc5a3cd94044d2cfe
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
+ms.openlocfilehash: 6aa54f65b504e61a5e74ed584c5dad51e49eb087
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455586"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031459"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -74,7 +74,7 @@ automl_config = AutoMLConfig(task = "classification")
 Наборы данных Машинного обучения Azure предоставляют следующие функциональные возможности:
 
 * Легко переносите данные из статических файлов или URL-источников в рабочую область.
-* предоставление доступа к данным обучающим скриптам в облачной вычислительной среде. Пример [How to train with datasets](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) использования `Dataset` класса для подключения данных к удаленному целевому объекту вычислений см. в разделе обучение с помощью наборов данных.
+* предоставление доступа к данным обучающим скриптам в облачной вычислительной среде. Пример [](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) использования `Dataset` класса для подключения данных к удаленному целевому объекту вычислений см. в разделе обучение с помощью наборов данных.
 
 Следующий код создает Табулардатасет на основе URL-адреса. См. статью [Создание табулардатасетс](how-to-create-register-datasets.md#create-a-tabulardataset) для примеров кода, посвященных созданию наборов данных из других источников, таких как локальные файлы и хранилища данных.
 

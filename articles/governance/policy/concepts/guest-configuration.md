@@ -3,12 +3,12 @@ title: Узнайте больше про аудит содержимого ви
 description: Узнайте, как служба "Политика Azure" использует гостевую конфигурацию для аудита параметров виртуальной машины.
 ms.date: 10/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: a956d5e8dcfa82f85020928e1427a08ac8fe7a69
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 2fd1f17d38b0a58fbf64670849a8d5e13bb00cf8
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906256"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032717"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -84,7 +84,7 @@ ms.locfileid: "96906256"
 
 ### <a name="communicate-over-private-link-in-azure"></a>Связь по частной ссылке в Azure
 
-Виртуальные машины могут использовать [закрытую ссылку](../../../private-link/private-link-overview.md) для подключения к гостевой службе настройки. Примените тег с именем `EnablePrivateNeworkGC` и значением, `TRUE` чтобы включить эту функцию. Тег можно применить до или после применения определений политик гостевой конфигурации к компьютеру.
+Виртуальные машины могут использовать [закрытую ссылку](../../../private-link/private-link-overview.md) для подключения к гостевой службе настройки. Примените тег с именем `EnablePrivateNetworkGC` и значением, `TRUE` чтобы включить эту функцию. Тег можно применить до или после применения определений политик гостевой конфигурации к компьютеру.
 
 Трафик направляется с помощью [виртуального общедоступного IP-адреса](../../../virtual-network/what-is-ip-address-168-63-129-16.md) Azure, чтобы установить защищенный канал с проверкой подлинности с помощью ресурсов платформы Azure.
 

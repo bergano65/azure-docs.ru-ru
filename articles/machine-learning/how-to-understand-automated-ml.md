@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.custom: how-to, contperfq2, automl
-ms.openlocfilehash: a3b3640922daf84357354efc389e20afea78d216
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.custom: how-to, contperf-fy21q2, automl
+ms.openlocfilehash: 747cc88cdea59017483245b59e4b2c56c4b06a40
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937718"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032938"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Оценка результатов автоматического эксперимента машинного обучения
 
@@ -190,6 +190,7 @@ weighted_accuracy|Взвешенная точность — точность, в
 --|--|--|
 explained_variance|Описанная дисперсия измеряет степень, до которой учетные записи модели для варианта в целевой переменной. Это процент уменьшения дисперсии исходных данных по отношению к дисперсии ошибок. Если среднее значение ошибки равно 0, то оно равно коэффициенту определения (см. r2_score ниже). <br> <br> **Цель:** Ближе к 1 лучше <br> **Диапазон:** (-INF, 1]|[Вычисление](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.explained_variance_score.html)|
 mean_absolute_error|Средняя абсолютная ошибка — это ожидаемое значение абсолютного значения разности между целевым объектом и прогнозом.<br><br> **Цель:** Ближе к 0 лучше <br> **Диапазон:** [0, INF-файл) <br><br> Типов <br>`mean_absolute_error` <br>  `normalized_mean_absolute_error`mean_absolute_error, деленную на диапазон данных. | [Вычисление](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)|
+mean_absolute_percentage_error|Среднее значение абсолютной ошибки в процентах (MAPE) — это мера среднего различия между прогнозируемым значением и фактическим значением.<br><br> **Цель:** Ближе к 0 лучше <br> **Диапазон:** [0, INF-файл) ||
 median_absolute_error|Медиана абсолютной погрешности — это медиана всех абсолютных отклонений между целевым и прогнозируемым значениями. Такая потеря устойчива к выбросам.<br><br> **Цель:** Ближе к 0 лучше <br> **Диапазон:** [0, INF-файл)<br><br>Типов <br> `median_absolute_error`<br> `normalized_median_absolute_error`: median_absolute_error, деленную на диапазон данных. |[Вычисление](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.median_absolute_error.html)|
 r2_score;|R ^ 2 является коэффициентом определения или процентным уменьшением в квадратных ошибках по сравнению с базовой моделью, выводит среднее значение. <br> <br> **Цель:** Ближе к 1 лучше <br> **Диапазон:** (-INF, 1]|[Вычисление](https://scikit-learn.org/0.16/modules/generated/sklearn.metrics.r2_score.html)|
 root_mean_squared_error |Средняя квадратная ошибка (корень СРЕДНЕКВАДРАТИЧНОЙ ПОГРЕШНОСТИ) — это квадратный корень ожидаемого квадратного различия между целевым объектом и прогнозом. Для несмещенной оценки корень СРЕДНЕКВАДРАТИЧНОЙ ПОГРЕШНОСТИ равно стандартному отклонению.<br> <br> **Цель:** Ближе к 0 лучше <br> **Диапазон:** [0, INF-файл)<br><br>Типов<br> `root_mean_squared_error` <br> `normalized_root_mean_squared_error`: root_mean_squared_error, деленную на диапазон данных. |[Вычисление](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)|
