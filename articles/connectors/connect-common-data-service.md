@@ -1,22 +1,25 @@
 ---
-title: Подключение к Common Data Service
-description: Создание записей Common Data Service и управление ими с помощью Azure Logic Apps
+title: Подключение к Common Data Service (Microsoft инверсия)
+description: Создание записей Common Data Service (Microsoft инверсия) и управление ими с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: jdaly, logicappspm
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 12/11/2020
 tags: connectors
-ms.openlocfilehash: de85a61cbd699ec9ac2669f8abb6217254038de9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b17c3d54b7065a18e015363a0362766f844e4e10
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334588"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355126"
 ---
-# <a name="create-and-manage-records-in-common-data-service-by-using-azure-logic-apps"></a>Создание записей и управление ими в Common Data Service с помощью Azure Logic Apps
+# <a name="create-and-manage-records-in-common-data-service-microsoft-dataverse-by-using-azure-logic-apps"></a>Создание записей и управление ими в Common Data Service (Microsoft инверсия) с помощью Azure Logic Apps
 
-С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [соединителя Common Data Service](/connectors/commondataservice/)можно создавать автоматизированные рабочие процессы, управляющие записями в базе данных [Common Data Service](/powerapps/maker/common-data-service/data-platform-intro) . Эти рабочие процессы могут создавать записи, обновлять записи и выполнять другие операции. Вы также можете получить сведения из базы данных Common Data Service и сделать выходные данные доступными для других действий в приложении логики. Например, при обновлении записи в базе данных Common Data Service можно отправить сообщение электронной почты с помощью соединителя Outlook для Office 365.
+> [!NOTE]
+> В ноябре 2020 Common Data Service был переименован в Microsoft инверсия.
+
+С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [соединителя Common Data Service](/connectors/commondataservice/)можно создавать автоматизированные рабочие процессы, управляющие записями в [Common Data Service, теперь](/powerapps/maker/common-data-service/data-platform-intro) это база данных Microsoft для обратного подключения. Эти рабочие процессы могут создавать записи, обновлять записи и выполнять другие операции. Вы также можете получить сведения из базы данных Common Data Service и сделать выходные данные доступными для других действий в приложении логики. Например, при обновлении записи в базе данных Common Data Service можно отправить сообщение электронной почты с помощью соединителя Outlook для Office 365.
 
 В этой статье показано, как создать приложение логики, которое создает запись задачи при создании новой записи интереса.
 
@@ -53,7 +56,7 @@ ms.locfileid: "91334588"
    |----------|----------|-------------|
    | **Среда** | Да | Наблюдаемая среда, например "Fabrikam Sales Production". Дополнительные сведения см. в разделе [Power Platform-](/power-platform/admin/environments-overview)Environments Overview. |
    | **Имя сущности** | Да | Сущность для отслеживания, например "интересы" |
-   | **Область действия** | Да | Источник, создавший новую запись, например пользователь в подразделении или любой пользователь в Организации. В этом примере используется "бизнес-единица". |
+   | **Область** | Да | Источник, создавший новую запись, например пользователь в подразделении или любой пользователь в Организации. В этом примере используется "бизнес-единица". |
    ||||
 
 ## <a name="add-common-data-service-action"></a>Добавить Common Data Service действие
@@ -110,7 +113,7 @@ ms.locfileid: "91334588"
 
    ![Снимок экрана, показывающий действие "при обновлении записи" и открытого списка "добавить новый параметр" с выбранным свойством "Фильтры атрибутов".](./media/connect-common-data-service/when-record-updated-trigger-add-attribute-filters.png)
 
-1. Для каждого **элемента фильтрации атрибутов**выберите атрибут, который требуется отслеживать для обновлений, например:
+1. Для каждого **элемента фильтрации атрибутов** выберите атрибут, который требуется отслеживать для обновлений, например:
 
    ![Добавить свойство "Фильтры атрибутов"](./media/connect-common-data-service/when-record-updated-trigger-select-attribute-filter.png)
 

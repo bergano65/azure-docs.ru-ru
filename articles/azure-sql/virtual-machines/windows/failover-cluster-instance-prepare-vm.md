@@ -7,17 +7,18 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: a9289fad6f7ae1030628bedcf1a62cacc0b1e23a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 52d6bc97245423a4add392ab05634d21bcf83a0d
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564486"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358018"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Подготовка виртуальных машин для FCI (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -26,7 +27,7 @@ ms.locfileid: "94564486"
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 - Подписка Microsoft Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
 - Домен Windows на виртуальных машинах Azure или локальный центр обработки данных, который был расширен в Azure с помощью связывания виртуальных сетей.
@@ -47,19 +48,22 @@ ms.locfileid: "94564486"
 
 Тщательно выберите вариант доступности виртуальной машины, соответствующий предполагаемой конфигурации кластера: 
 
- - **Общие диски Azure**. Группа [доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) , настроенная с доменом сбоя и доменом обновления, имеет значение 1 и помещается в [группу размещения](../../../virtual-machines/windows/proximity-placement-groups-portal.md)с учетом расположения.
- - **Общие файловые ресурсы** уровня "Премиум": [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) или [Зона доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address). Общие файловые ресурсы уровня "Премиум" являются единственным вариантом общего хранилища, если в качестве конфигурации доступности для виртуальных машин выбраны зоны доступности. 
- - **Локальные дисковые пространства** : [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set).
+- **Общие диски Azure**. параметр доступности зависит от того, используете ли вы службы SSDS или ултрадиск уровня "Премиум":
+   - SSD (цен. категория "Премиум"): группа [доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) в разных доменах сбоя и обновления для твердотельных накопителей уровня "Премиум" размещена в [группе размещения](../../../virtual-machines/windows/proximity-placement-groups-portal.md)с учетом расположения.
+   - Ultra Disk: [Зона доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , но виртуальные машины должны размещаться в той же зоне доступности, что приводит к снижению доступности кластера до 99,9%. 
+- **Общие файловые ресурсы** уровня "Премиум": [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) или [Зона доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address).
+- **Локальные дисковые пространства**: [Группа доступности](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set).
 
->[!IMPORTANT]
->После создания виртуальной машины установить или изменить группу доступности невозможно.
+> [!IMPORTANT]
+> После создания виртуальной машины установить или изменить группу доступности невозможно.
 
 ## <a name="create-the-virtual-machines"></a>Создание виртуальных машин
 
 После настройки доступности виртуальной машины можно приступать к созданию виртуальных машин. Вы можете использовать образ Azure Marketplace, который не имеет SQL Server уже установлен на нем. Однако при выборе образа для SQL Server на виртуальных машинах Azure необходимо удалить SQL Server с виртуальной машины перед настройкой экземпляра отказоустойчивого кластера. 
 
 ### <a name="considerations"></a>Рекомендации
-Для отказоустойчивого кластера гостевых виртуальных машин IaaS Azure рекомендуется использовать один сетевой адаптер на сервер (узел кластера) и одну подсеть. Сеть Azure обладает физической избыточностью, что делает ненужными дополнительные сетевые адаптеры и подсети в кластере гостевых виртуальных машин IaaS Azure. Несмотря на то, что отчет о проверке кластера выдаст предупреждение о том, что узлы доступны только в одной сети, это предупреждение можно спокойно проигнорировать в отказоустойчивых кластерах гостевых виртуальных машин IaaS Azure.
+
+В гостевом отказоустойчивом кластере виртуальной машины Azure рекомендуется использовать один сетевой адаптер для каждого сервера (узел кластера) и одну подсеть. Сеть Azure обладает физической избыточностью, что делает ненужными дополнительные сетевые адаптеры и подсети в кластере гостевых виртуальных машин IaaS Azure. Несмотря на то, что отчет о проверке кластера выдаст предупреждение о том, что узлы доступны только в одной сети, это предупреждение можно спокойно проигнорировать в отказоустойчивых кластерах гостевых виртуальных машин IaaS Azure.
 
 Разместите обе виртуальные машины:
 
@@ -96,7 +100,7 @@ SQL Server образы виртуальных машин из Azure Marketplace
 
       ![Выбор функций](./media/failover-cluster-instance-prepare-vm/03-remove-features.png)
 
-   1. Щелкните **Далее** , а затем **Удалить**.
+   1. Щелкните **Далее**, а затем **Удалить**.
    1. После успешного удаления экземпляра перезапустите виртуальную машину. 
 
 ## <a name="open-the-firewall"></a>Открытие брандмауэра 
@@ -107,11 +111,11 @@ SQL Server образы виртуальных машин из Azure Marketplace
 
 В этой таблице содержатся сведения о портах, которые может потребоваться открыть, в зависимости от конфигурации FCI: 
 
-   | Назначение | Port | Примечания
+   | Назначение | Порт | Примечания
    | ------ | ------ | ------
-   | SQL Server | TCP 1433 | Обычный порт для экземпляров SQL Server по умолчанию. Если используется образ из коллекции, этот порт будет автоматически открыт. </br> </br> **Используется** : всеми конфигурациями FCI. |
-   | Проверка работоспособности | TCP 59999 | Любой открытый TCP-порт. Настройте [проверку работоспособности](failover-cluster-instance-vnn-azure-load-balancer-configure.md#configure-health-probe) балансировщика нагрузки и кластер для использования этого порта. </br> </br> **Используется** : FCI с подсистемой балансировки нагрузки. |
-   | Общая папка | UDP 445 | Порт, используемый службой файлового ресурса. </br> </br> **Используется** : FCI с общей папкой Premium. |
+   | SQL Server | TCP 1433 | Обычный порт для экземпляров SQL Server по умолчанию. Если используется образ из коллекции, этот порт будет автоматически открыт. </br> </br> **Используется**: всеми конфигурациями FCI. |
+   | Проверка работоспособности | TCP 59999 | Любой открытый TCP-порт. Настройте [проверку работоспособности](failover-cluster-instance-vnn-azure-load-balancer-configure.md#configure-health-probe) балансировщика нагрузки и кластер для использования этого порта. </br> </br> **Используется**: FCI с подсистемой балансировки нагрузки. |
+   | Общая папка | UDP 445 | Порт, используемый службой файлового ресурса. </br> </br> **Используется**: FCI с общей папкой Premium. |
 
 ## <a name="join-the-domain"></a>Присоединение к домену.
 

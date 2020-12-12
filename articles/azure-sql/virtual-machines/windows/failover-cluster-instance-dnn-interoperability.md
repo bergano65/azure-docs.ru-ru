@@ -7,17 +7,18 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: ca782e9949f990857db408919cac342d7f712d2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c92aa3b35240831fad14919dc73609d803c610a
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91272622"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358220"
 ---
 # <a name="feature-interoperability-with-sql-server-fci--dnn"></a>Взаимодействие функций с SQL Server FCI & DNN
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -71,7 +72,7 @@ READ_ONLY_ROUTING_URL = 'TCP://dnnlsnr:1444'
 
 Репликация включает три компонента: издатель, распространитель, подписчик. Любой из этих компонентов может быть экземпляром отказоустойчивого кластера. Поскольку FCI VNN интенсивно используется в конфигурации репликации, как явно, так и неявно, для работы репликации может потребоваться сетевой псевдоним, который сопоставляет VNN с DNN. 
 
-Используйте имя VNN в качестве имени FCI в репликации, но *перед настройкой репликации*Создайте псевдоним сети в следующих удаленных ситуациях:
+Используйте имя VNN в качестве имени FCI в репликации, но *перед настройкой репликации* Создайте псевдоним сети в следующих удаленных ситуациях:
 
 | **Компонент репликации (FCI с DNN)** | **Удаленный компонент** | **Сетевая схема псевдонима** | **Сервер с картой сети**| 
 |---------|---------|---------|-------- | 
@@ -86,7 +87,7 @@ READ_ONLY_ROUTING_URL = 'TCP://dnnlsnr:1444'
 
 Используйте полное имя экземпляра для именованного экземпляра, как показано на следующем рисунке: 
 
-:::image type="content" source="media/failover-cluster-instance-dnn-interoperability/alias-named-instance-configuration-manager.png" alt-text="Настройте DNS-имя DNN в качестве сетевого псевдонима с помощью диспетчер конфигурации SQL Server." :::
+:::image type="content" source="media/failover-cluster-instance-dnn-interoperability/alias-named-instance-configuration-manager.png" alt-text="Используйте полное имя экземпляра при настройке сетевого псевдонима для именованного экземпляра." :::
 
 ## <a name="database-mirroring"></a>Зеркальное отображение базы данных
 

@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 12/11/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: c37e4aeb9b9af1c4f792d0827fec39750a1b1c2a
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: f57cd3361d7888d9d7f747955257d96282274fd6
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97096170"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357352"
 ---
 # <a name="recover-a-deleted-storage-account"></a>Восстановление удаленной учетной записи хранения.
 
@@ -73,3 +73,5 @@ ms.locfileid: "97096170"
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
 - [создать учетную запись хранения;](storage-account-create.md)
+- [Обновление до учетной записи хранения общего назначения версии 2](storage-account-upgrade.md)
+- [Перемещение учетной записи хранения Azure в другой регион](storage-account-move.md)

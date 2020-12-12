@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/15/2020
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 615ce7da3ec480b766ceaeb307c50f7cb759fd4a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 52904296df77d9097a6180345388e8e702e2bca0
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100122"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357637"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db---sql-api"></a>Подготавливает пропускную способность автомасштабирования для базы данных или контейнера в Azure Cosmos DB API SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,13 +28,13 @@ ms.locfileid: "93100122"
 
 1. Войдите на [портал Azure](https://portal.azure.com) или в [обозреватель Azure Cosmos DB](https://cosmos.azure.com/).
 
-1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer** .
+1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
 
-1. Выберите **Новый контейнер** . Введите имя базы данных, контейнера и ключа раздела. В разделе **Пропускная способность** выберите параметр **Автомасштабирование** и задайте значение [максимальной пропускной способности (единиц запросов в секунду)](provision-throughput-autoscale.md#how-autoscale-provisioned-throughput-works), которое будет использоваться для масштабирования базы данных или контейнера.
+1. Выберите **Новый контейнер**. Введите имя базы данных, контейнера и ключа раздела. В разделе **Пропускная способность** выберите параметр **Автомасштабирование** и задайте значение [максимальной пропускной способности (единиц запросов в секунду)](provision-throughput-autoscale.md#how-autoscale-provisioned-throughput-works), которое будет использоваться для масштабирования базы данных или контейнера.
 
    :::image type="content" source="./media/how-to-provision-autoscale-throughput/create-new-autoscale-container.png" alt-text="Создание контейнера и настройка пропускной способности, подготовленной с использованием автомасштабирования":::
 
-1. Щелкните **ОК** .
+1. Щелкните **ОК**.
 
 Чтобы подготовить автомасштабирование для базы данных с совместно используемой пропускной способностью, выберите параметр **Подготовка пропускной способности базы данных** при создании новой базы данных. 
 
@@ -45,13 +45,13 @@ ms.locfileid: "93100122"
 
 1. Войдите на [портал Azure](https://portal.azure.com) или в [обозреватель Azure Cosmos DB](https://cosmos.azure.com/).
 
-1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer** .
+1. Перейдите к своей учетной записи Azure Cosmos DB и откройте вкладку **Data Explorer**.
 
 1. Выберите **Масштаб и параметры** для контейнера или **Масштаб** для базы данных.
 
-1. В разделе **Масштаб** выберите параметр **Автомасштабирование** и нажмите **Сохранить** .
+1. В разделе **Масштаб** выберите параметр **Автомасштабирование** и нажмите **Сохранить**.
 
-   :::image type="content" source="./media/how-to-provision-autoscale-throughput/autoscale-scale-and-settings.png" alt-text="Создание контейнера и настройка пропускной способности, подготовленной с использованием автомасштабирования":::
+   :::image type="content" source="./media/how-to-provision-autoscale-throughput/autoscale-scale-and-settings.png" alt-text="Включение автомасштабирования для существующего контейнера":::
 
 > [!NOTE]
 > При включении автомасштабирования для существующей базы данных или контейнера начальное значение максимального числа единиц запросов в секунду определяется системой с учетом текущих параметров пропускной способности и хранилища, подготовленных вручную. По завершении операции при необходимости можно изменить значение максимального числа единиц запросов в секунду. [Подробнее.](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work) 
@@ -128,7 +128,7 @@ await container.ReplaceThroughputAsync(ThroughputProperties.CreateAutoscaleThrou
 // Create instance of CosmosClient
 CosmosAsyncClient client = new CosmosClientBuilder()
     .setEndpoint(HOST)
-    .setKey(MASTER)
+    .setKey(PRIMARYKEY)
     .setConnectionPolicy(CONNECTIONPOLICY)
     .buildAsyncClient();
 
@@ -145,7 +145,7 @@ CosmosAsyncDatabase database = client.createDatabase(databaseName, autoscaleThro
 // Create instance of CosmosClient
 CosmosClient client = new CosmosClientBuilder()
     .setEndpoint(HOST)
-    .setKey(MASTER)
+    .setKey(PRIMARYKEY)
     .setConnectionPolicy(CONNECTIONPOLICY)
     .buildClient();
 

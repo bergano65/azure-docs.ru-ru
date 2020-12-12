@@ -6,18 +6,19 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 6b563e8ca93487a123f97f0bbb86624dc3be2db0
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 68c7805136a7361a64a6ff6dfbb9e7d910b2ea9b
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556296"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357948"
 ---
 # <a name="manage-sql-server-vms-in-azure-by-using-the-azure-portal"></a>Управление виртуальными машинами SQL Server в Azure с помощью портала Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -34,12 +35,12 @@ ms.locfileid: "94556296"
 
 
 ## <a name="access-the-sql-virtual-machines-resource"></a>Доступ к ресурсу "Виртуальные машины SQL"
-Вот как можно открыть ресурс **Виртуальные машины SQL** :
+Вот как можно открыть ресурс **Виртуальные машины SQL**:
 
 1. Откройте [портал Azure](https://portal.azure.com). 
 1. Выбор пункта **Все службы**. 
 1. В поле поиска введите **Виртуальные машины SQL**.
-1. (Необязательно.) Щелкните звезду рядом с названием **Виртуальные машины SQL** , чтобы добавить этот ресурс в меню **Избранное**. 
+1. (Необязательно.) Щелкните звезду рядом с названием **Виртуальные машины SQL**, чтобы добавить этот ресурс в меню **Избранное**. 
 1. Выберите **Виртуальные машины SQL**. 
 
    ![Поиск виртуальных машин SQL Server среди всех служб](./media/manage-sql-vm-portal/sql-vm-search.png)
@@ -48,7 +49,7 @@ ms.locfileid: "94556296"
 
    ![Все доступные виртуальные машины SQL Server](./media/manage-sql-vm-portal/all-sql-vms.png)
 
-   При выборе виртуальной машины SQL Server откроется ресурс **Виртуальные машины SQL** : 
+   При выборе виртуальной машины SQL Server откроется ресурс **Виртуальные машины SQL**: 
 
 
    ![Просмотр ресурса виртуальных машин SQL](./media/manage-sql-vm-portal/sql-vm-resource.png)
@@ -59,18 +60,18 @@ ms.locfileid: "94556296"
 ## <a name="access-the-sql-server-configuration-tab"></a>Доступ к вкладке "Конфигурация SQL Server"
 Вкладка **Конфигурация SQL Server** устарела. В настоящее время это единственный способ управления [окончанием поддержки](sql-server-2008-extend-end-of-support.md) SQL Server виртуальных машин и SQL Server виртуальных машин, которые не были [зарегистрированы в расширении агента IaaS SQL](sql-agent-extension-manually-register-single-vm.md).
 
-Чтобы открыть устаревшую вкладку **Конфигурация SQL Server** , перейдите к ресурсу **Виртуальные машины**. Выполните указанные ниже действия.
+Чтобы открыть устаревшую вкладку **Конфигурация SQL Server**, перейдите к ресурсу **Виртуальные машины**. Выполните указанные ниже действия.
 
 1. Откройте [портал Azure](https://portal.azure.com). 
 1. Выбор пункта **Все службы**. 
 1. В поле поиска введите **Виртуальные машины**.
-1. (Необязательно.) Щелкните звезду рядом с названием **Виртуальные машины** , чтобы добавить этот ресурс в меню **Избранное**. 
+1. (Необязательно.) Щелкните звезду рядом с названием **Виртуальные машины**, чтобы добавить этот ресурс в меню **Избранное**. 
 1. Выберите **Виртуальные машины**. 
 
    ![Поиск виртуальных машин](./media/manage-sql-vm-portal/vm-search.png)
 
 1. На портале отображается список всех виртуальных машин в рамках подписки. Выберите нужную виртуальную машину, чтобы открыть ресурс **Виртуальные машины**. Если виртуальная машина SQL Server не отображается, воспользуйтесь полем поиска. 
-1. В области **Параметры** выберите пункт **Конфигурация SQL Server** , чтобы перейти к настройке виртуальной машины SQL Server. 
+1. В области **Параметры** выберите пункт **Конфигурация SQL Server**, чтобы перейти к настройке виртуальной машины SQL Server. 
 
    ![Конфигурация SQL Server](./media/manage-sql-vm-portal/sql-vm-configuration.png)
 

@@ -7,6 +7,7 @@ author: MashaMSFT
 manager: jroth
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -14,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 8f8513746271fff0ab52603e31b75304d5ebc1bf
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 5670a29e86eb201a707e5ceef28043aafe4839d9
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168986"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357982"
 ---
 # <a name="configure-azure-load-balancer-for-failover-cluster-instance-vnn"></a>Настройка Azure Load Balancer для экземпляра отказоустойчивого кластера VNN
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -46,7 +47,7 @@ ms.locfileid: "92168986"
 
 1. На портале Azure перейдите в группу ресурсов с виртуальными машинами.
 
-1. Выберите **Добавить**. Поиск **Load Balancer**в Azure Marketplace. Выберите **Load Balancer**.
+1. Выберите **Добавить**. Поиск **Load Balancer** в Azure Marketplace. Выберите **Load Balancer**.
 
 1. Нажмите кнопку **создания**.
 
@@ -85,7 +86,7 @@ ms.locfileid: "92168986"
 
 1. Выберите **Добавить**.
 
-1. В области " **добавить проверку работоспособности** " <span id="probe"> </span> задайте следующие параметры проверки работоспособности.
+1. В области " **добавить проверку работоспособности** " <span id="probe"></span> задайте следующие параметры проверки работоспособности.
 
    - **Name** (Имя). Имя для проверки работоспособности.
    - **Протокол**. Протокол TCP.
@@ -156,7 +157,7 @@ Get-ClusterResource $IPResourceName | Get-ClusterParameter
 
 Тестовая отработка отказа кластеризованного ресурса для проверки функциональности кластера. 
 
-Выполните следующие шаги:
+Выполните следующие шаги.
 
 1. Подключитесь к одному из SQL Server узлов кластера по протоколу RDP.
 1. Откройте **диспетчер отказоустойчивости кластеров**. Выберите **Роли**. Обратите внимание, какой узел является владельцем роли SQL Server FCI.

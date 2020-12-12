@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/24/2020
+ms.date: 12/11/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: b7faec5023abe37802d8b08980f216934d70a6ac
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c8d07e53e259fff28e662f0c1ca3934eabf015e8
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005557"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357455"
 ---
 # <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
@@ -45,7 +45,7 @@ Get-InstalledModule -Name "Az"
 
 Сведения об установке или обновлении Azure PowerShell см. в разделе [install Azure PowerShell Module](/powershell/azure/install-Az-ps).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов:
 
@@ -86,7 +86,7 @@ Azure CLI также можно установить и применять ло�
 Connect-AzAccount
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы запустить Azure Cloud Shell, войдите в [портал Azure](https://portal.azure.com).
 
@@ -147,14 +147,14 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 
 |Параметр репликации  |Параметр SkuName  |
 |---------|---------|
-|Локально избыточное хранилище (LRS)     |Standard_LRS         |
+|локально избыточное хранилище (LRS);     |Standard_LRS         |
 |хранилище, избыточное между зонами (ZRS);     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |
 |Хранилище, геоизбыточное между зонами (GZRS)    |Standard_GZRS         |
 |Хранилище, геоизбыточное между зонами, с доступом на чтение (RA-GZRS)    |Standard_RAGZRS         |
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Сначала создайте новую группу ресурсов с помощью Azure CLI, используя команду [az group create](/cli/azure/group#az_group_create).
 
@@ -190,7 +190,7 @@ az storage account create \
 
 |Параметр репликации  |параметр sku  |
 |---------|---------|
-|Локально избыточное хранилище (LRS)     |Standard_LRS         |
+|локально избыточное хранилище (LRS);     |Standard_LRS         |
 |хранилище, избыточное между зонами (ZRS);     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |
@@ -246,7 +246,7 @@ az group deployment create --resource-group $resourceGroupName --template-file "
 Remove-AzStorageAccount -Name <storage-account> -ResourceGroupName <resource-group>
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы удалить учетную запись хранения, используйте команду [AZ Storage Account Delete](/cli/azure/storage/account#az-storage-account-delete) :
 
@@ -281,8 +281,9 @@ az storage account delete --name storageAccountName --resource-group resourceGro
 >
 > Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Сведения об устранении этой ошибки см. в разделе [Устранение ошибок при удалении учетных записей хранения](../../virtual-machines/troubleshooting/index.yml).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об учетной записи хранения](storage-account-overview.md)
 - [Обновление до учетной записи хранения общего назначения версии 2](storage-account-upgrade.md)
 - [Перемещение учетной записи хранения Azure в другой регион](storage-account-move.md)
+- [Восстановление удаленной учетной записи хранения.](storage-account-recover.md)

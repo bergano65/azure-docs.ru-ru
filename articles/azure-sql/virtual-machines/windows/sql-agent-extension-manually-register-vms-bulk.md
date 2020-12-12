@@ -6,6 +6,7 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -13,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 208df7ad53049598255ce358f2db128ba84fea9a
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 558daede55f6563155d3f54e97d77c0a3ca4de59
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557780"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357234"
 ---
 # <a name="register-multiple-sql-vms-in-azure-with-the-sql-iaas-agent-extension"></a>Регистрация нескольких виртуальных машин SQL в Azure с помощью расширения агента IaaS SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -28,18 +29,18 @@ ms.locfileid: "94557780"
 
 В этой статье содержатся инструкции по регистрации SQL Server виртуальных машин вручную. Кроме того, можно вручную зарегистрировать [все SQL Server виртуальные машины](sql-agent-extension-automatic-registration-all-vms.md) или [отдельные SQL Server виртуальные машины](sql-agent-extension-manually-register-single-vm.md). 
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 Командлет `Register-SqlVMs` можно использовать для регистрации всех виртуальных машин в заданном списке подписок, групп ресурсов или в списке конкретных виртуальных машин. Командлет зарегистрирует виртуальные машины в [режиме управления lightweight_](sql-server-iaas-agent-extension-automate-management.md#management-modes), а затем создаст [отчет и файл журнала](#output-description). 
 
 Процесс регистрации не несет риска, не имеет простоев и не перезапускает службу SQL Server или виртуальную машину. 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы зарегистрировать виртуальную машину SQL Server с расширением, вам потребуется следующее: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/) , [зарегистрированная в поставщике **Microsoft. склвиртуалмачине**](sql-agent-extension-manually-register-single-vm.md#register-subscription-with-rp) и содержащая незарегистрированные SQL Server виртуальные машины. 
-- Учетные данные клиента, используемые для регистрации виртуальных машин, существуют в любой из следующих ролей Azure: **участник виртуальной машины** , **участник** или **владелец**. 
+- Учетные данные клиента, используемые для регистрации виртуальных машин, существуют в любой из следующих ролей Azure: **участник виртуальной машины**, **участник** или **владелец**. 
 - Последняя версия [AZ PowerShell (5,0 минимум)](/powershell/azure/new-azureps-module-az). 
 
 

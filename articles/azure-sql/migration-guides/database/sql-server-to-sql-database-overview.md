@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о миграции SQL Server в базу данных SQL
+title: 'SQL Server к базе данных SQL: Обзор миграции'
 description: Узнайте о различных средствах и параметрах, доступных для переноса баз данных SQL Server в базу данных SQL Azure.
 ms.service: sql-database
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 46216fe06e3d3425d5b237cdbb7326eed596945a
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 2d668775e8d11faa0b2913cebc41e5217b49c278
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326936"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357336"
 ---
 # <a name="migration-overview-sql-server-to-sql-database"></a>Общие сведения о миграции: SQL Server в базу данных SQL
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]

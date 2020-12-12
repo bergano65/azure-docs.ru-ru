@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/24/2020
+ms.date: 12/11/2020
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40751b7864cc62d17836ab6d57cd106f6904f64a
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 788512db242bf1a1c6f18ffc0ee773bd3372aa42
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744114"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355876"
 ---
 # <a name="data-residency-and-customer-data-for-azure-ad-multi-factor-authentication"></a>Данные местонахождение и данные клиента для многофакторной идентификации Azure AD
 
@@ -57,7 +57,7 @@ ms.locfileid: "96744114"
 | Уведомление Microsoft Authenticator | В журналах многофакторной идентификации<br />Хранилище отчетов о действиях службы многофакторной идентификации<br />Заблокированные пользователи, если поступило сообщение о мошенничестве<br />Запросы на изменение при изменении маркеров устройств Microsoft Authenticator |
 
 > [!NOTE]
-> Хранилище данных отчета о действиях службы многофакторной идентификации для всех облаков находится в США независимо от региона, в котором обрабатывается запрос проверки подлинности. Microsoft Azure — Германия, Microsoft Azure, обслуживаемая 21Vianet, и облако Microsoft для государственных организаций имеют собственные независимые хранилища данных, отделенные от хранилищ данных общедоступного облака, однако эти данные всегда хранятся в США.
+> Хранилище данных отчета о действиях службы многофакторной идентификации для всех облаков находится в США независимо от региона, в котором обрабатывается запрос проверки подлинности. Microsoft Azure — Германия, Microsoft Azure, обслуживаемая 21Vianet, и облако Microsoft для государственных организаций имеют собственные независимые хранилища данных, отделенные от хранилищ данных общедоступного облака, однако эти данные всегда хранятся в США. Эти хранилища данных содержат персональные данные (личные сведения), такие как имя участника-пользователя (UPN) и полный номер телефона. 
 
 Для Microsoft Azure для государственных организаций, Microsoft Azure — Германия, Microsoft Azure, обслуживаемой 21Vianet, службы проверки подлинности Azure B2C, расширения NPS и адаптера AD FS для Windows Server 2016 или 2019 хранятся следующие персональные данные.
 

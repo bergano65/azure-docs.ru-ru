@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: d219ff8469c471a37deb47e0f217292d70e8f0f9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 75073cd2f0dae9cac12175677427671101813a90
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497118"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355228"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "96497118"
 Чтобы сделать процесс разработки удобнее, Фабрика данных Azure позволяет настроить репозиторий Git в Azure Repos или GitHub. Git — это система управления версиями, упрощающая отслеживание изменений и совместную работу. В этой статье описывается, как настроить и работать в репозитории Git вместе с рекомендациями и руководством по устранению неполадок.
 
 > [!NOTE]
-> Интеграция Git фабрики данных Azure недоступна в облаке Azure для государственных организаций.
+> Интеграция Git фабрики данных Azure доступна только для GitHub Enterprise в облаке Azure для государственных организаций.
 
 Дополнительные сведения о том, как фабрика данных Azure интегрируется с Git, см. на 15-минутном учебном видео ниже:
 

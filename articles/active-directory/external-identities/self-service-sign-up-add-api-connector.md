@@ -11,16 +11,19 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d121e6280b83265a742736f9b8dd3aee96a8b32e
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: f34ca47d5ff6c809eef40f89ee0049285cfd7d42
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351765"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355399"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Добавление соединителя API в поток пользователя
 
 Чтобы использовать [соединитель API](api-connectors-overview.md), сначала создайте соединитель API, а затем включите его в потоке пользователя.
+
+> [!IMPORTANT]
+>**Начиная с 4 января 2021** г. Компания Google не [WebView поддержку входа в систему](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете Google Federation или самостоятельную регистрацию с помощью Gmail, необходимо [протестировать собственные бизнес-приложения для обеспечения совместимости](google-federation.md#deprecation-of-webview-sign-in-support).
 
 ## <a name="create-an-api-connector"></a>Создание соединителя API
 
@@ -75,7 +78,7 @@ Content-type: application/json
 }
 ```
 
-В запросе могут быть отправлены только свойства пользователя **Azure Active Directory** и настраиваемые атрибуты, перечисленные в  >  пользовательском интерфейсе пользовательских атрибутов Azure Active Directory **внешних удостоверений**  >  **Custom user attributes** .
+В запросе могут быть отправлены только свойства пользователя и настраиваемые атрибуты, перечисленные в  >  пользовательском интерфейсе пользовательских атрибутов Azure Active Directory **внешних удостоверений**  >   .
 
 Пользовательские атрибуты существуют в **extension_ формате \<extensions-app-id> _AttributeName**  в каталоге. API должен рассчитывать на получение утверждений в том же сериализованном формате. Дополнительные сведения о настраиваемых атрибутах см. в разделе [Определение настраиваемых атрибутов для самостоятельной регистрации](user-flow-add-custom-attributes.md).
 

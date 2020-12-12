@@ -1,14 +1,14 @@
 ---
 title: Просмотр действий поставщика служб
 description: Клиенты могут просматривать зарегистрированные в журнале действия, чтобы просмотреть действия, выполняемые поставщиками услуг через делегированное управление ресурсами Azure.
-ms.date: 10/12/2020
+ms.date: 12/11/2020
 ms.topic: how-to
-ms.openlocfilehash: 56c8b88274909aa55e19a4b364aaa3ace2a0c26d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: dcf177cc41dac846d096607445ff4c3d433620ca
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371092"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356384"
 ---
 # <a name="view-service-provider-activity"></a>Просмотр действий поставщика служб
 
@@ -43,7 +43,13 @@ ms.locfileid: "92371092"
 
 Дополнительные сведения см. в разделе Общие сведения о [запросах журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="view-user-activity-across-domains"></a>Просмотр активности пользователей в разных доменах
+
+Вы можете просматривать действия отдельных пользователей в нескольких доменах с помощью образца книги [журналы действий по доменам](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/workbook-activitylogs-by-domain) .
+
+Результаты можно фильтровать по доменному имени. Можно также применить дополнительные фильтры, такие как категория, уровень или группа ресурсов.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте подробнее о службе [Azure Monitor](../../azure-monitor/index.yml).
 - Узнайте, как [просматривать предложения поставщиков услуг и управлять ими](view-manage-service-providers.md) в портал Azure.

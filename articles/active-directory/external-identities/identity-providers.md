@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a61eca3340985886ef782b28a59a1283c5f473ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ead05598c6ca4d096e1a68c8d640938ecd771c2
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91265720"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355517"
 ---
 # <a name="identity-providers-for-external-identities"></a>Поставщики удостоверений для внешних удостоверений
 
@@ -25,6 +25,9 @@ ms.locfileid: "91265720"
 Но вы можете разрешить пользователям выполнять вход и с помощью других поставщиков удостоверений.
 
 - **Google**. Федерация Google позволяет внешним пользователям активировать приглашения от вас и входить в ваши приложения с собственными учетными записями Gmail. Федерацию Google можно также использовать в потоках самостоятельной регистрации пользователей.
+   > [!IMPORTANT]
+   > **Начиная с 4 января 2021** г. Компания Google не [WebView поддержку входа в систему](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете Google Federation или самостоятельную регистрацию с помощью Gmail, необходимо [протестировать собственные бизнес-приложения для обеспечения совместимости](google-federation.md#deprecation-of-webview-sign-in-support).
+
    > [!NOTE]
    > В текущей предварительной версии, если поток пользователя для самостоятельной регистрации связан с приложением и вы отправляете пользователю приглашение на это приложение, пользователь не сможет использовать учетную запись Gmail для активации приглашения. В качестве решения этой проблемы пользователь может самостоятельно зарегистрироваться, активировать приглашение в другом приложении или воспользоваться порталом "Мои приложения" по адресу https://myapps.microsoft.com.
 

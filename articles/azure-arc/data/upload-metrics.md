@@ -10,12 +10,12 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: f31cf22ae8814975dcee92c33026d223275cf121
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: f319f912520a69a0c68f89a3d4178f63cc45ca1f
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92378131"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356554"
 ---
 # <a name="upload-metrics-to-azure-monitor"></a>Отправка метрик в Azure Monitor
 
@@ -26,13 +26,13 @@ ms.locfileid: "92378131"
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжать, убедитесь, что вы создали требуемый субъект-службу и назначили его соответствующей роли. Подробная информация доступна в следующих статьях:
 * [Создание субъекта-службы](upload-metrics-and-logs-to-azure-monitor.md#create-service-principal).
 * [Назначение ролей субъекту-службе](upload-metrics-and-logs-to-azure-monitor.md#assign-roles-to-the-service-principal)
 
-## <a name="upload-metrics"></a>Передача метрик
+## <a name="upload-metrics"></a>Отправка метрик
 
 С помощью служб данных Arc Azure можно дополнительно передать метрики в Azure Monitor, чтобы можно было выполнять статистическую обработку и анализ метрик, создавать оповещения, отправлять уведомления или запускать автоматические действия. 
 
@@ -47,7 +47,7 @@ ms.locfileid: "92378131"
 ::: zone pivot="client-operating-system-windows-command"
 
 ```console
-SET SPN_AUTHORITY='https://login.microsoftonline.com'
+SET SPN_AUTHORITY=https://login.microsoftonline.com
 ```
 
 ::: zone-end
@@ -126,7 +126,7 @@ echo %SPN_AUTHORITY%
    >[!NOTE]
    >Подождите не менее 30 минут после создания экземпляров данных с поддержкой Arc Azure для первой передачи.
    >
-   >Убедитесь `upload` , что метрики сразу после `export` Azure Monitor принимают только метрики за последние 30 минут. [Подробнее](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting).
+   >Убедитесь `upload` , что метрики сразу после `export` Azure Monitor принимают только метрики за последние 30 минут. [Подробнее.](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)
 
 
 Если при экспорте отображаются ошибки, указывающие на неудачу получения метрик, `true` выполните следующую команду:
@@ -201,7 +201,7 @@ watch -n 1200 ./myuploadscript.sh
 
 Для отправки метрик Azure Monitor принимает только последние 30 минут данных (дополнительные[сведения](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)). Рекомендации по передаче метрик можно передать сразу после создания файла экспорта, чтобы вы могли просмотреть весь набор данных в портал Azure. Например, если вы экспортировали метрики в 2:00 PM и выполнили команду upload в 2:50 РМ. Поскольку Azure Monitor принимает данные только за последние 30 минут, на портале могут не отображаться данные. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Отправка журналов в Azure Monitor](upload-logs.md)
 

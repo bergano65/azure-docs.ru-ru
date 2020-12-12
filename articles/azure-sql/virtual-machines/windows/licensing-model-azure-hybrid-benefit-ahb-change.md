@@ -9,16 +9,17 @@ ms.service: virtual-machines-sql
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
+ms.subservice: management
 ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 37f6e60aea033dee8adfd66839c82b9fd165c879
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: da136c1f3ce36bf85592c3c73c9e8f92c41c7442
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556268"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357914"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL в Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -26,7 +27,7 @@ ms.locfileid: "94556268"
 
 В этой статье описывается, как изменить модель лицензии для SQL Server виртуальной машины в Azure с помощью [расширения агента IaaS SQL](./sql-server-iaas-agent-extension-automate-management.md).
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 Существует три модели лицензирования для виртуальной машины Azure, на которой размещена SQL Server: оплата по мере использования, Преимущество гибридного использования Azure (АХБ), высокая доступность и аварийное восстановление (HA/DR). Вы можете изменить модель лицензирования для виртуальной машины SQL Server с помощью портала Azure, Azure CLI или PowerShell. 
 
@@ -75,7 +76,7 @@ ms.locfileid: "94556268"
 
 Вы можете изменить модель лицензирования с помощью Azure CLI.  
 
-Укажите следующие значения для **типа лицензии** :
+Укажите следующие значения для **типа лицензии**:
 - `AHUB` для Преимущество гибридного использования Azure
 - `PAYG` для оплаты по мере использования
 - `DR` Активация бесплатной реплики высокой доступности или аварийного восстановления
@@ -91,7 +92,7 @@ az sql vm update -n <VMName> -g <ResourceGroupName> --license-type <license-type
 
 Вы можете изменить модель лицензирования с помощью PowerShell.
 
-Укажите следующие значения для **типа лицензии** :
+Укажите следующие значения для **типа лицензии**:
 - `AHUB` для Преимущество гибридного использования Azure
 - `PAYG` для оплаты по мере использования
 - `DR` Активация бесплатной реплики высокой доступности или аварийного восстановления
