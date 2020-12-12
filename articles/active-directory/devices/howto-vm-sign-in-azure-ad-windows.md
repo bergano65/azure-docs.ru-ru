@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 134148fa3ea73212d85393cc433d60f7ddeecd17
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8644040565bd46800b888a32653b6c8bbf89f096
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837130"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347444"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -157,6 +157,9 @@ az vm extension set \
 - Использование интерфейса портала Azure AD
 - Использование интерфейса Azure Cloud Shell
 
+> [!NOTE]
+> Роли входа администратора виртуальной машины и пользователя виртуальной машины используют действия с данными и поэтому не могут быть назначены в области группы управления. В настоящее время эти роли можно назначать только в области действия подписки.
+
 ### <a name="using-azure-ad-portal-experience"></a>Использование интерфейса портала Azure AD
 
 Чтобы настроить назначения ролей для виртуальных машин Windows Server 2019 Datacenter с поддержкой Azure AD, выполните следующие действия.
@@ -177,8 +180,8 @@ az vm extension set \
 В следующем примере используется команда [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) для назначения роли Имя для входа администратора виртуальной машины виртуальной машине текущего пользователя Azure. Имя пользователя активной учетной записи Azure можно получить с помощью команды [az account show](/cli/azure/account#az-account-show). В качестве области задается виртуальная машина, созданная на предыдущем шаге с помощью команды [az vm show](/cli/azure/vm#az-vm-show). Область может также быть назначена на уровне группы ресурсов или подписки, и применяются обычные разрешения на наследование Azure RBAC. Дополнительные сведения см. в статье [Вход в виртуальную машину Linux в Azure с использованием проверки подлинности Azure Active Directory](../../virtual-machines/linux/login-using-aad.md).
 
 ```   AzureCLI
-username=$(az account show --query user.name --output tsv)
-vm=$(az vm show --resource-group myResourceGroup --name myVM --query id -o tsv)
+$username=$(az account show --query user.name --output tsv)
+$vm=$(az vm show --resource-group myResourceGroup --name myVM --query id -o tsv)
 
 az role assignment create \
     --role "Virtual Machine Administrator Login" \

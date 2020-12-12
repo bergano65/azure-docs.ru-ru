@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: victorh
-ms.openlocfilehash: 858343b6c5081b52d9e93909f9d52eaccd88a584
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c5613dda7adbbc47f989bc2a772777e716620b3c
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660276"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97348039"
 ---
 # <a name="azure-firewall-snat-private-ip-address-ranges"></a>Диапазоны частных IP-адресов SNAT в брандмауэре Azure
 
@@ -35,9 +35,22 @@ ms.locfileid: "94660276"
 
 ### <a name="new-firewall"></a>Новый брандмауэр
 
-Для нового брандмауэра используется команда Azure PowerShell:
+Для нового брандмауэра командлетом Azure PowerShell является:
 
-`New-AzFirewall -Name $GatewayName -ResourceGroupName $RG -Location $Location -VirtualNetworkName $vnet.Name -PublicIpName $LBPip.Name -PrivateRange @("IANAPrivateRanges","IPRange1", "IPRange2")`
+```azurepowershell
+$azFw = @{
+    Name               = '<fw-name>'
+    ResourceGroupName  = '<resourcegroup-name>'
+    Location           = '<location>'
+    VirtualNetworkName = '<vnet-name>'
+    PublicIpName       = '<public-ip-name>'
+    PrivateRange       = @("IANAPrivateRanges", "192.168.1.0/24", "192.168.1.10")
+}
+
+New-AzFirewall @azFw
+```
+> [!NOTE]
+> Для развертывания брандмауэра Azure с помощью `New-AzFirewall` требуется существующая виртуальная сеть и общедоступный IP-адрес. Полное пошаговое развертывание см. в статье [развертывание и настройка брандмауэра Azure с помощью Azure PowerShell](deploy-ps.md) .
 
 > [!NOTE]
 > Ианаприватеранжес расширяется до текущих значений по умолчанию в брандмауэре Azure, в то время как к нему добавляются другие диапазоны. Чтобы сохранить значение Ианаприватеранжес по умолчанию в спецификации частного диапазона, оно должно остаться в `PrivateRange` спецификации, как показано в следующих примерах.
@@ -46,22 +59,54 @@ ms.locfileid: "94660276"
 
 ### <a name="existing-firewall"></a>Существующий брандмауэр
 
-Чтобы настроить существующий брандмауэр, используйте следующие Azure PowerShell команды:
+Чтобы настроить существующий брандмауэр, используйте следующие командлеты Azure PowerShell.
 
 ```azurepowershell
-$azfw = Get-AzFirewall -ResourceGroupName "Firewall Resource Group name"
-$azfw.PrivateRange = @("IANAPrivateRanges","IPRange1", "IPRange2")
+$azfw = Get-AzFirewall -Name '<fw-name>' -ResourceGroupName '<resourcegroup-name>'
+$azfw.PrivateRange = @("IANAPrivateRanges","192.168.1.0/24", "192.168.1.10")
 Set-AzFirewall -AzureFirewall $azfw
 ```
 
-### <a name="templates"></a>Шаблоны
+## <a name="configure-snat-private-ip-address-ranges---azure-cli"></a>Настройка диапазонов частных IP-адресов SNAT — Azure CLI
 
-В раздел можно добавить следующее `additionalProperties` :
+Чтобы указать диапазоны частных IP-адресов для брандмауэра, можно использовать Azure CLI.
 
+### <a name="new-firewall"></a>Новый брандмауэр
+
+Для нового брандмауэра используется команда Azure CLI:
+
+```azurecli-interactive
+az network firewall create \
+-n <fw-name> \
+-g <resourcegroup-name> \
+--private-ranges 192.168.1.0/24 192.168.1.10 IANAPrivateRanges
 ```
+
+> [!NOTE]
+> Для развертывания брандмауэра Azure с помощью команды Azure CLI `az network firewall create` требуются дополнительные действия по настройке для создания общедоступных IP-адресов и IP-конфигурации. Полное пошаговое развертывание см. в статье [развертывание и настройка брандмауэра Azure с помощью Azure CLI](deploy-cli.md) .
+
+> [!NOTE]
+> Ианаприватеранжес расширяется до текущих значений по умолчанию в брандмауэре Azure, в то время как к нему добавляются другие диапазоны. Чтобы сохранить значение Ианаприватеранжес по умолчанию в спецификации частного диапазона, оно должно остаться в `PrivateRange` спецификации, как показано в следующих примерах.
+
+### <a name="existing-firewall"></a>Существующий брандмауэр
+
+Для настройки существующего брандмауэра используется команда Azure CLI:
+
+```azurecli-interactive
+az network firewall update \
+-n <fw-name> \
+-g <resourcegroup-name> \
+--private-ranges 192.168.1.0/24 192.168.1.10 IANAPrivateRanges
+```
+
+## <a name="configure-snat-private-ip-address-ranges---arm-template"></a>Настройка диапазонов частных IP-адресов SNAT — шаблон ARM
+
+Чтобы настроить SNAT во время Шаблоны развертывания ARM, можно добавить в `additionalProperties` свойство следующее:
+
+```json
 "additionalProperties": {
-                    "Network.SNAT.PrivateRanges": "IANAPrivateRanges , IPRange1, IPRange2"
-                },
+   "Network.SNAT.PrivateRanges": "IANAPrivateRanges , IPRange1, IPRange2"
+},
 ```
 
 ## <a name="configure-snat-private-ip-address-ranges---azure-portal"></a>Настройка диапазонов частных IP-адресов SNAT — портал Azure

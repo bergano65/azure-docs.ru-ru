@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/03/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ca4b5486b54de28497ea41765337bfa19f12e3d7
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 780324d1a6f7d9edfb552377c3e966e6a186c231
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573125"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347937"
 ---
 # <a name="add-language-packs-to-a-windows-10-multi-session-image"></a>Добавление языковых пакетов в многосеансовый образ Windows 10
 
@@ -52,6 +52,7 @@ ms.locfileid: "96573125"
           - [Windows 10, версия 2004 или 20H2 **9Б** лксп ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_64_ARM64_MultiLang_LangPckAll_LIP_LXP_ONLY)
           - [Windows 10, версия 2004 или 20H2 **9C** лксп ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_32_64_ARM64_MultiLng_LngPkAll_LIP_9C_LXP_ONLY)
           - [Windows 10, версия 2004 или 20H2 **10C** лксп ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2010C.iso)
+          - [Windows 10, версия 2004 или 20H2 **11C** лксп ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2011C.iso)
 
 - Общая папка службы файлов Azure или общая папка на виртуальной машине файлового сервера Windows
 
@@ -173,7 +174,7 @@ Set-WinUserLanguageList $LanguageList -force
 
 Сценарий может занять некоторое время в зависимости от числа языков, которые необходимо установить.
 
-После завершения выполнения скрипта убедитесь, что языковые пакеты правильно установлены, перейдя к **Start**  >  **параметру**  >  **время запуска &**  >  **язык**. Если языковые файлы установлены, все они будут установлены.
+После завершения выполнения скрипта убедитесь, что языковые пакеты правильно установлены, перейдя к   >  **параметру**  >  **время запуска &**  >  **язык**. Если языковые файлы установлены, все они будут установлены.
 
 После добавления дополнительных языков в образ Windows также необходимо обновить Входящие приложения для поддержки добавленных языков. Это можно сделать, обновив предварительно установленные приложения содержимым из ISO-файла входящих приложений. Чтобы выполнить это обновление в отключенной среде (нет доступа к Интернету из виртуальной машины), можно использовать следующий пример сценария PowerShell для автоматизации процесса.
 

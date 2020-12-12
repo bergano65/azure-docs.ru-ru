@@ -1,72 +1,72 @@
 ---
-title: Устранение неполадок — Azure Monitor Application Insights Java
-description: Устранение неполадок Azure Monitor Application Insights Java
+title: Устранение неполадок Azure Monitor Application Insights для Java
+description: Узнайте, как устранять неполадки агента Java для Azure Monitor Application Insights
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: cf27763f857cc1fd1aad5256d0c6cecf91251caf
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 1ccfd583b58d129268af2a94e3072200e58308cd
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855659"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347836"
 ---
-# <a name="troubleshooting-azure-monitor-application-insights-java"></a>Устранение неполадок Azure Monitor Application Insights Java
+# <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Руководство по устранению неполадок: Azure Monitor Application Insights для Java
 
-В этой статье мы рассмотрели некоторые распространенные проблемы, с которыми пользователь может столкнуться при инструментировании приложения Java с помощью агента Java, а также действия по устранению этих проблем.
+В этой статье рассматриваются некоторые распространенные проблемы, которые могут возникнуть при инструментировании приложения Java с помощью агента Java для Application Insights. Мы также рассмотрим действия по устранению этих проблем. Application Insights является компонентом службы платформы Azure Monitor.
 
-## <a name="self-diagnostic-log-file"></a>Файл журнала самодиагностики
+## <a name="check-the-self-diagnostic-log-file"></a>Проверка файла журнала самодиагностики
 
-По умолчанию Application Insights Java 3,0 создает файл журнала с именем `applicationinsights.log` в том же каталоге, где `applicationinsights-agent-3.0.0.jar` находится файл.
+По умолчанию агент Java 3,0 для Application Insights создает файл журнала с именем `applicationinsights.log` в том же каталоге, в котором находится `applicationinsights-agent-3.0.0.jar` файл.
 
 Этот файл журнала является первым местом для поиска подсказок о любых проблемах, которые могут возникнуть.
 
-## <a name="upgrade-from-application-insights-java-2x-sdk"></a>Обновление с Application Insights пакета SDK для Java 2. x
+## <a name="upgrade-from-the-application-insights-java-2x-sdk"></a>Обновление с помощью пакета SDK для Java 2. x Application Insights
 
-См. статью [обновление с пакета SDK для 2. x](./java-standalone-upgrade-from-2x.md).
+Если вы уже используете пакет SDK для Java 2. x Application Insights в приложении, вы можете использовать его. Агент Java 3,0 определит его. Дополнительные сведения см. [в статье обновление с помощью пакета SDK для Java 2. x](./java-standalone-upgrade-from-2x.md).
 
-## <a name="upgrade-from-30-preview"></a>Обновление с предварительной версии 3,0
+## <a name="upgrade-from-application-insights-java-30-preview"></a>Обновление с предварительной версии Application Insights Java 3,0
 
-При обновлении с предварительной версии 3,0 внимательно просмотрите все [Параметры конфигурации](./java-standalone-config.md) , так как структура JSON полностью изменилась в выпуске 3,0 в общедоступной версии.
+Если вы выполняете обновление с помощью предварительной версии агента Java 3,0, внимательно просмотрите все [Параметры конфигурации](./java-standalone-config.md) . Структура JSON полностью изменена в выпуске 3,0 общей доступности (общедоступной версии).
 
 Это следующие изменения:
 
-1.  Имя файла конфигурации изменилось с `ApplicationInsights.json` на `applicationinsights.json` .
-2.  `instrumentationSettings`Узел больше не существует. Все содержимое в `instrumentationSettings` перемещается на корневой уровень. 
-3.  Узлы конфигурации, такие как `sampling` , `jmxMetrics` и, `instrumentation` `heartbeat` перемещаются из `preview` в корневой уровень.
+-  Имя файла конфигурации изменено с `ApplicationInsights.json` на `applicationinsights.json` .
+-  `instrumentationSettings`Узел больше не существует. Все содержимое в `instrumentationSettings` перемещается на корневой уровень. 
+-  Узлы конфигурации, такие как `sampling` ,, `jmxMetrics` и, `instrumentation` `heartbeat` перемещаются из `preview` в корневой уровень.
 
-## <a name="ssl-certificate-issues"></a>Проблемы с SSL-сертификатами
+## <a name="import-ssl-certificates"></a>Импорт SSL-сертификатов
 
-Если вы используете хранилище ключей Java по умолчанию, он уже будет иметь все корневые сертификаты ЦС, и вам не потребуется импортировать дополнительные SSL-сертификаты.
+Если вы используете хранилище ключей Java по умолчанию, он уже будет иметь все корневые сертификаты ЦС. Вам не нужно импортировать больше SSL-сертификатов.
 
-При использовании пользовательского хранилища ключей Java может потребоваться импортировать в него сертификаты SSL Application Insights конечной точки.
+Если вы используете настраиваемый хранилище ключей Java, может потребоваться импортировать в него сертификаты SSL Application Insights конечной точки.
 
-### <a name="some-key-terminology"></a>Некоторые ключевые термины:
-*Хранилище ключей* — это репозиторий сертификатов, открытых и закрытых ключей. Обычно JDK распределения имеют исполняемый файл для управления ими — `keytool` .
+### <a name="key-terminology"></a>Ключевая терминология
+*Хранилище ключей* — это репозиторий сертификатов, открытых ключей и закрытых ключей. Обычно дистрибутивы пакета разработки Java имеют исполняемый файл для управления ими: `keytool` .
 
 Ниже приведен пример простой команды для импорта SSL-сертификата в хранилище ключей.
 
 `keytool -importcert -alias your_ssl_certificate -file "your downloaded SSL certificate name".cer -keystore "Your KeyStore name" -storepass "Your keystore password" -noprompt`
 
-### <a name="steps-to-download-and-add-the-ssl-certificate"></a>Инструкции по скачиванию и добавлению SSL-сертификата:
+### <a name="steps-to-download-and-add-an-ssl-certificate"></a>Действия по скачиванию и добавлению SSL-сертификата
 
-1.  Откройте свой любимый браузер и перейдите по `IngestionEndpoint` URL-адресу, указанному в строке подключения, используемой для инструментирования приложения, как показано ниже.
+1.  Откройте свой любимый браузер и перейдите по `IngestionEndpoint` URL-адресу, указанному в строке подключения, используемой для инструментирования приложения.
 
-    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-url.png" alt-text="Строка подключения Application Insights":::
+    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-url.png" alt-text="Снимок экрана, на котором показана строка подключения Application Insights.":::
 
-2.  Щелкните значок "просмотреть сведения о сайте" (блокировка) в браузере и выберите параметр "сертификат", как показано ниже.
+2.  Выберите значок **Просмотр сведений о сайте** (блокировка) в браузере, а затем выберите параметр **сертификат** .
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="Запись SSL-сертификата":::
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="Снимок экрана с параметром сертификата в сведениях о сайте.":::
 
-3.  Перейдите на вкладку сведения и нажмите кнопку Копировать в файл.
-4.  Нажмите кнопку "Далее" и выберите "Base-64 Encoded X. 509 (. CER) "формат и нажмите кнопку" Далее ".
+3.  Перейдите на вкладку **сведения** и выберите **Копировать в файл**.
+4.  Нажмите кнопку **Далее** , выберите **base-64 Encoded X. 509 (. CER)** , а затем снова нажмите кнопку **Далее** .
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="SSL-сертификат Експортвизард":::
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="Снимок экрана мастера экспорта сертификатов с выбранным форматом.":::
 
-5.  Укажите файл, в который нужно сохранить SSL-сертификат. Наконец, нажмите кнопку Далее и готово. Вы увидите сообщение "Экспорт выполнен успешно".
-6.  Получив сертификат, можно импортировать сертификат в хранилище ключей Java. Используйте приведенную выше [команду](#some-key-terminology) для импорта сертификатов.
+5.  Укажите файл, в котором вы хотите сохранить SSL-сертификат. Затем нажмите кнопку **Далее**  >  **Готово**. Вы увидите сообщение "Экспорт выполнен успешно".
+6.  После создания сертификата необходимо импортировать сертификат в хранилище ключей Java. Используйте [предыдущую команду](#key-terminology) для импорта сертификатов.
 
 > [!WARNING]
-> Чтобы получить новый сертификат до истечения срока действия текущего сертификата, необходимо повторить эти действия. Сведения об истечении срока действия можно найти на вкладке "сведения" всплывающего окна сертификата, как показано ниже.
-
-:::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Сведения о SSL-сертификате":::
+> Чтобы получить новый сертификат до истечения срока действия текущего сертификата, необходимо повторить эти действия. Сведения об истечении срока действия можно найти на вкладке **сведения** в диалоговом окне **сертификат** .
+>
+> :::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Снимок экрана, показывающий сведения о SSL-сертификате.":::

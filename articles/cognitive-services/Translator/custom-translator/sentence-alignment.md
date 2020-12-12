@@ -9,16 +9,16 @@ ms.subservice: translator-text
 ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: a8a662bf94e958d9e96a454ced9c44058b178a8c
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: e5d360933cbeb611046aede6164ec2e2fa497664
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366848"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347801"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Связывание и сопоставление предложений в параллельных документах
 
-Во время обучения предложения, присутствующие в параллельных документах, связываются или сопоставляются. Custom Translator сообщает о количестве предложений, которые удалось связать в каждом из наборов данных как сопоставленные предложения.
+После отправки документов предложения, представленные в параллельных документах, будут парными или согласованными. Custom Translator сообщает о количестве предложений, которые удалось связать в каждом из наборов данных как сопоставленные предложения.
 
 ## <a name="pairing-and-alignment-process"></a>Процесс связывания и сопоставления
 
@@ -46,6 +46,6 @@ Custom Translator анализирует перевод по одному пре
 > - Настройка и тестирование являются необязательными. Если они не будут предоставлены, система удалит соответствующий процент от обучения, чтобы использовать его для проверки и тестирования. 
 > - При обучении модели можно ограничиться только данными в формате словаря. См. статью [что такое словарь](./what-is-dictionary.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об использовании [словаря](what-is-dictionary.md) в Custom Translator.

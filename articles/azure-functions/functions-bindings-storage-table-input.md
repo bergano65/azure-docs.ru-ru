@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 7f5db2a2df7314c89f2ebba8e7e54ebe24126386
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 20dc6cde9cce6a9d57047940a38adb5cf004ae6a
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098251"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347682"
 ---
 # <a name="azure-table-storage-input-bindings-for-azure-functions"></a>Входные привязки хранилища таблиц Azure для функций Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "92098251"
 
 ### <a name="one-entity"></a>Одна сущность
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая считывает одну строку таблицы. Для каждого сообщения, отправляемого в очередь, будет активирована функция.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая считывает одну строку таблицы. Для каждого сообщения, отправленного в очередь, будет активирована функция.
 
 Значение ключа строки {queueTrigger} указывает, что ключ строки получен из строки сообщения очереди.
 

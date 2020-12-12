@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: e3503a9eef5c11db35684ca61fb1ee39525a465d
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 9f2b0dccde0532646457a0841fc2798e103d8cc7
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427604"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347954"
 ---
 # <a name="configure-object-replication-for-block-blobs"></a>Настройка репликации объекта для блочных BLOB-объектов
 
@@ -73,7 +73,7 @@ ms.locfileid: "94427604"
 
     :::image type="content" source="media/object-replication-configure/configure-replication-copy-scope.png" alt-text="Снимок экрана, показывающий пользовательскую область копирования для репликации объектов":::
 
-1. Выберите **Сохранить и применить** , чтобы создать политику репликации и начать репликацию данных.
+1. Выберите **Сохранить и применить**, чтобы создать политику репликации и начать репликацию данных.
 
 После настройки репликации объектов портал Azure отображает политику и правила репликации, как показано на следующем рисунке.
 
@@ -291,7 +291,7 @@ az storage account or-policy show \
 Затем можно скачать JSON-файл, содержащий определение политики, которое можно предоставить другому пользователю для настройки исходной учетной записи. Чтобы скачать этот файл JSON, выполните следующие действия.
 
 1. Перейдите к параметрам **репликации объектов** для целевой учетной записи в портал Azure.
-1. Нажмите кнопку **Дополнительно** рядом с политикой, которую вы хотите скачать, а затем выберите **правила загрузки** , как показано на следующем рисунке.
+1. Нажмите кнопку **Дополнительно** рядом с политикой, которую вы хотите скачать, а затем выберите **правила загрузки**, как показано на следующем рисунке.
 
     :::image type="content" source="media/object-replication-configure/replication-rules-download-portal.png" alt-text="Снимок экрана, показывающий, как скачать правила репликации в JSON-файл":::
 
@@ -314,7 +314,7 @@ $destPolicy = Get-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
 $destPolicy | ConvertTo-Json -Depth 5 > c:\temp\json.txt
 ```
 
-Чтобы использовать JSON файл для настройки политики репликации в исходной учетной записи с помощью PowerShell, извлеките локальный файл и преобразуйте его из JSON в объект. Затем вызовите команду [Set-азсторажеобжектрепликатионполици](/powershell/module/az.storage/set-azstorageobjectreplicationpolicy) , чтобы настроить политику в исходной учетной записи, как показано в следующем примере. Не забудьте заменить значения в угловых скобках и пути к файлам собственными значениями:
+Чтобы использовать JSON файл для определения политики репликации в исходной учетной записи с помощью PowerShell, извлеките локальный файл и преобразуйте его из JSON в объект. Затем вызовите команду [Set-азсторажеобжектрепликатионполици](/powershell/module/az.storage/set-azstorageobjectreplicationpolicy) , чтобы настроить политику в исходной учетной записи, как показано в следующем примере. Не забудьте заменить значения в угловых скобках и пути к файлам собственными значениями:
 
 ```powershell
 $object = Get-Content -Path C:\temp\json.txt | ConvertFrom-Json
