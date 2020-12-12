@@ -8,6 +8,7 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: effe4e2f-35b5-490a-b5ef-b06746083da4
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -16,12 +17,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 572363f429cb828d44c9dd12ba2424930c94fefe
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: e8268630b2c108dc95ded059ce41866a14fadd0e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553545"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359257"
 ---
 # <a name="automate-management-with-the-sql-server-iaas-agent-extension"></a>Автоматизация управления с помощью расширения агента SQL Server IaaS
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -31,7 +32,7 @@ ms.locfileid: "94553545"
 
 В этой статье приводятся общие сведения о расширении. Чтобы установить расширение IaaS SQL Server для SQL Server на виртуальных машинах Azure, изучите статьи для [автоматической установки](sql-agent-extension-automatic-registration-all-vms.md), [отдельных виртуальных машин](sql-agent-extension-manually-register-single-vm.md)или [виртуальных машин](sql-agent-extension-manually-register-vms-bulk.md). 
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 Расширение агента SQL Server IaaS предоставляет ряд преимуществ для SQL Server на виртуальных машинах Azure. 
 
@@ -70,7 +71,7 @@ ms.locfileid: "94553545"
 Эти преимущества приведены в следующей таблице. 
 
 
-| Компонент | Описание |
+| Функция | Описание |
 | --- | --- |
 | **Управление на портале** | Разблокирует [Управление на портале](manage-sql-vm-portal.md), чтобы вы могли просматривать все SQL Server виртуальные машины в одном месте, а также включать и отключать функции SQL непосредственно на портале. 
 | **Автоматическая архивация** |Автоматизирует планирование резервного копирования всех баз данных для экземпляра по умолчанию или [правильно установленного](frequently-asked-questions-faq.md#administration) именованного экземпляра SQL Server на виртуальной машине SQL Server. Дополнительные сведения см. в статье [Автоматическое резервное копирование для виртуальных машин SQL Server (Resource Manager)](automated-backup-sql-2014.md). |
@@ -140,7 +141,7 @@ ms.locfileid: "94553545"
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Вы также можете использовать командлет Azure PowerShell **Get-AzVMSqlServerExtension** :
+Вы также можете использовать командлет Azure PowerShell **Get-AzVMSqlServerExtension**:
 
    ```powershell-interactive
    Get-AzVMSqlServerExtension -VMName "vmname" -ResourceGroupName "resourcegroupname"

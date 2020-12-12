@@ -6,19 +6,19 @@ ms.service: virtual-machines
 ms.topic: how-to
 ms.date: 11/12/2020
 ms.author: cynthn
-ms.openlocfilehash: d2cf78d328017f96552bd51794ac997c394d18f1
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: ef0c8d53d885f11acdcf578db155de3d7848887e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008424"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360073"
 ---
 # <a name="deploy-to-dedicated-hosts-using-the-azure-cli"></a>Развертывание на выделенных узлах с помощью Azure CLI
  
 
 В этой статье рассказывается, как создать [выделенный узел](../dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
-Обязательно установите Azure CLI версии 2.0.70 или более поздней и войдите в учетную запись Azure с помощью команды `az login`. 
+Убедитесь, что установлен Azure CLI версии 2.16.0 или более поздней, и войдите в учетную запись Azure с помощью `az login` . 
 
 
 ## <a name="limitations"></a>Ограничения

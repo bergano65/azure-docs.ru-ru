@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: how-to
 ms.date: 05/23/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 6c5ef4f0ee0d68e2eae755f000423db4620b834d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: a9bea0664f99a21ac734de666c802e9875ff00b5
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341388"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359332"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Защита ключей Azure Cosmos с помощью Azure Key Vault 
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "93341388"
 
 ## <a name="add-azure-cosmos-db-access-keys-to-the-key-vault"></a>Добавление в Key Vault ключей доступа Azure Cosmos DB
 1. Перейдите в хранилище Key Vault, созданное на предыдущем шаге, и откройте вкладку **Секреты**.  
-2. Выберите **+ создать/импорт** , 
+2. Выберите **+ создать/импорт**, 
 
    * Выберите **вручную** для **параметров отправки**.
    * Укажите **имя** для секрета.
@@ -59,7 +59,7 @@ ms.locfileid: "93341388"
 
 ## <a name="create-an-azure-web-application"></a>создание веб-приложения Azure;
 
-1. Создайте веб-приложение Azure или загрузите его из [репозитория GitHub](https://github.com/Azure/azure-cosmosdb-dotnet/tree/master/Demo/keyvaultdemo). Это простое приложение MVC.  
+1. Создайте веб-приложение Azure или загрузите его из [репозитория GitHub](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/Demo/keyvaultdemo). Это простое приложение MVC.  
 
 2. Распакуйте загруженное приложение и откройте файл **HomeController.cs**. Обновите идентификатор секрета в следующей строке:
 
@@ -80,9 +80,9 @@ ms.locfileid: "93341388"
 
 В этом разделе вы регистрируете приложение в Azure Active Directory и предоставляете ему разрешения на чтение из Key Vault. 
 
-1. Перейдите на портал Azure и откройте **Key Vault** , созданное в предыдущем разделе.  
+1. Перейдите на портал Azure и откройте **Key Vault**, созданное в предыдущем разделе.  
 
-2. Откройте **политики доступа** , выберите **+ Добавить** , найдите развернутое веб-приложение, выберите разрешения и нажмите кнопку **ОК**.  
+2. Откройте **политики доступа**, выберите **+ Добавить**, найдите развернутое веб-приложение, выберите разрешения и нажмите кнопку **ОК**.  
 
    :::image type="content" source="./media/access-secrets-from-keyvault/add-access-policy.png" alt-text="Добавление политики доступа":::
 
@@ -90,9 +90,9 @@ ms.locfileid: "93341388"
 
 :::image type="content" source="./media/access-secrets-from-keyvault/app-deployed-with-access.png" alt-text="Развернутое приложение, в котором отображается секрет":::
  
-Аналогичным образом вы можете предоставить пользователю доступ к Key Vault. Вам нужно добавить себя в Key Vault. Для этого выберите **Политики доступа** , а затем предоставьте все необходимые разрешения для запуска приложения из Visual Studio. Если это приложение запускается с вашего рабочего стола, оно использует ваш идентификатор.
+Аналогичным образом вы можете предоставить пользователю доступ к Key Vault. Вам нужно добавить себя в Key Vault. Для этого выберите **Политики доступа**, а затем предоставьте все необходимые разрешения для запуска приложения из Visual Studio. Если это приложение запускается с вашего рабочего стола, оно использует ваш идентификатор.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье [Поддержка брандмауэра](how-to-configure-firewall.md) .
 * Чтобы настроить конечную точку службы для виртуальной сети, перейдите к статье [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы для виртуальной сети Azure](how-to-configure-vnet-service-endpoint.md).

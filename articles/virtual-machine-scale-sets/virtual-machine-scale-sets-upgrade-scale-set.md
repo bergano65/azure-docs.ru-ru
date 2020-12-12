@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 03/10/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 7577c8510746d1140c1f8b70081f600d992ae512
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c255a3d68b1a24e25c1c0e308faa3fd364a15861
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016681"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358747"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Изменение масштабируемого набора виртуальных машин
 
@@ -350,12 +350,12 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 
 - **singlePlacementGroup**. Если это свойство имеет значение true, его можно изменить на false. Однако, если значением является false, его **не возможно** изменить на true.
 - **subnet**. Подсеть масштабируемого набора можно изменить, если исходная и новая подсети находятся в одной и той же виртуальной сети.
+- **имажереференцеску** -SKU Reference может быть обновлен для подтвержденных [дистрибутивов Linux](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros), образов Windows Server, клиентов и образов без [сведений о плане](https://docs.microsoft.com/azure/virtual-machines/linux/cli-ps-findimage#view-plan-properties). 
 
 ### <a name="properties-that-require-deallocation-to-change"></a>Свойства, для изменения которых требуется освободить виртуальные машины
 Для некоторых свойств можно задать определенные значения, только если виртуальные машины в масштабируемом наборе освобождены. Эти свойства включают в себя:
 
-- **SKU name**. Если новый SKU виртуальной машины не поддерживается на оборудовании масштабируемого набора, необходимо освободить виртуальные машины в наборе перед изменением имени SKU. Дополнительные сведения см. в статье [Изменение размера виртуальной машины Windows](../virtual-machines/windows/resize-vm.md).
-
+- **Имя SKU**. Если новый номер SKU виртуальной машины не поддерживается на оборудовании, на котором в настоящее время находится масштабируемый набор, необходимо отменить распределение виртуальных машин в масштабируемом наборе перед изменением имени SKU. Дополнительные сведения см. в статье [Изменение размера виртуальной машины Windows](../virtual-machines/windows/resize-vm.md). 
 
 ## <a name="vm-specific-updates"></a>Обновления отдельных виртуальных машин
 Некоторые изменения можно применить к отдельным виртуальным машинам, а не к глобальным свойствам масштабируемого набора. В настоящее время единственным обновлением отдельных виртуальных машин, которое поддерживается, является подключение или отключение дисков данных виртуальных машин в масштабируемом наборе. Эта функция предоставляется в предварительной версии. Дополнительные сведения см. в [документации по предварительной версии](https://github.com/Azure/vm-scale-sets/tree/master/preview/disk).
@@ -450,5 +450,5 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 > Эти команды предполагают наличие только одной конфигурации IP и балансировщика нагрузки в масштабируемом наборе. Если их несколько, может потребоваться использовать индекс списка, отличный от *0*.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Общие задачи управления масштабируемыми наборами можно также выполнять с помощью [Azure CLI](virtual-machine-scale-sets-manage-cli.md) или [Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md).

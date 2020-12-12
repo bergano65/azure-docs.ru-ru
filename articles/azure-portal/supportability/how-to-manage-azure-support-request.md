@@ -5,12 +5,12 @@ tags: billing
 ms.assetid: 86697fdf-3499-4cab-ab3f-10d40d3c1f70
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: a9dd703dc0a3f5e8f85b1022fa2a71ff9a8c295d
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 882dfaa802638efd98eaf6f12a33a77a9727adc2
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745576"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359070"
 ---
 # <a name="manage-an-azure-support-request"></a>Управление запросом на поддержку Azure
 
@@ -88,36 +88,36 @@ ms.locfileid: "96745576"
 * Размер файлов не может превышать 4 МБ.
 * Все файлы должны иметь расширение имени файла, например *docx* или *xlsx*. В следующей таблице приведены расширения имен файлов, разрешенные для отправки.
 
-| 0-9, A-C    | D-G   | H-M         | N-P   | R-T      | U-W        | X-Z     |
+| 0-9, A-C     | D-G   | H-M         | N-P   | R-T      | U-W        | X-Z     |
 |-------------|-------|-------------|-------|----------|------------|---------|
-| .7z         | .dat  | .hwl        | .odx  | .rar     | .tdb       | .xlam   |
-| .a          | .db   | .ics        | .oft  | RDL     | .tdf       | .xlr    |
-| .abc        | .dmp  | .ini        | .old  | .rdlc    | .text      | .xls    |
-| .adm        | .do_  | .java       | .one  | .re_     | .thmx      | .xlsb   |
-| .aspx       | .doc  | .jpg        | .osd  | .reg     | .tif       | .xlsm   |
-| .atf        | .docm | .ldf        | .out  | .remove  | .trc       | .xlsx   |
-| .b          | .docx | .letterhead | .p1   | .ren     | .ttd       | .xlt    |
-| .ba_        | .dotm | .lnk        | .pcap | .rename  | .tx_       | .xltx   |
-| .bak        | .dotx | .lo_        | .pdb  | .rft     | .txt       | XML    |
-| .bat        | .dtsx | .log        | .pdf  | .rpt     | .uccapilog | XMLA   |
-| .blg        | .eds  | .lpk        | .piz  | .rte     | .uccplog   | .xps    |
-| .ca_        | .emf  | .manifest   | .pmls | .rtf     | .udcx      | .xsd    |
-| .cab        | .eml  | .master     | .png  | .run     | .vb_       | .xsn    |
-| .cap        | .emz  | .mdmp       | .potx | .saz     | .vbs_      | .xxx    |
-| .catx       | .err  | .mof        | .ppt  | .sql     | .vcf       | .z_     |
-| .cfg        | .etl  | .mp3        | .pptm | .sqlplan | .vsd       | .z01    |
-| .compressed | .evt  | .mpg        | .pptx | .stp     | .wdb       | .z02    |
-| .config     | .evtx | .ms_        | .prn  | .svclog  | .wks       | .zi     |
-| .cpk        | .ex   | .msg        | .psf  |   -       | .wma       | .zi_    |
-| .cpp        | .ex_  | .msi        | .pst  |  -        | .wmv       | .zip    |
-| .cs         | .ex0  | .mso        | .pub  | -         | .wmz       | .zip_   |
-| .csv        | .frd  | .msu        | -      |-          | .wps       | .zipp   |
-| .cvr        | .gif  | .nfo        | -      |-          | .wpt       | .zipped |
-| -            | .guid | -            | -      | -         | .wsdl      | .zippy  |
-| -            | .gz   | -            | -      | -         | .wsp       | .zipx   |
-| -            | -      | -            | -      | -         | .wtl       | .zit    |
-| -            | -      | -            | -      | -         |     -       | .zix    |
-| -            | -      | -            | -      | -         |  -          | .zzz    |
+| .7z         | .dat  | . Har        | .odx  | .rar     | .tdb       | .xlam   |
+| .a          | .db   | .hwl        | .oft  | RDL     | .tdf       | .xlr    |
+| .abc        | .dmp  | .ics        | .old  | .rdlc    | .text      | .xls    |
+| .adm        | .do_  | .ini        | .one  | .re_     | .thmx      | .xlsb   |
+| .aspx       | .doc  | .java       | .osd  | .reg     | .tif       | .xlsm   |
+| .atf        | .docm | .jpg        | .out  | .remove  | .trc       | .xlsx   |
+| .b          | .docx | .ldf        | .p1   | .ren     | .ttd       | .xlt    |
+| .ba_        | .dotm | .letterhead | .pcap | .rename  | .tx_       | .xltx   |
+| .bak        | .dotx | .lnk        | .pdb  | .rft     | .txt       | XML    |
+| .bat        | .dtsx | .lo_        | .pdf  | .rpt     | .uccapilog | XMLA   |
+| .blg        | .eds  | .log        | .piz  | .rte     | .uccplog   | .xps    |
+| .ca_        | .emf  | .lpk        | .pmls | .rtf     | .udcx      | .xsd    |
+| .cab        | .eml  | .manifest   | .png  | .run     | .vb_       | .xsn    |
+| .cap        | .emz  | .master     | .potx | .saz     | .vbs_      | .xxx    |
+| .catx       | .err  | .mdmp       | .ppt  | .sql     | .vcf       | .z_     |
+| .cfg        | .etl  | .mof        | .pptm | .sqlplan | .vsd       | .z01    |
+| .compressed | .evt  | .mp3        | .pptx | .stp     | .wdb       | .z02    |
+| .config     | .evtx | .mpg        | .prn  | .svclog  | .wks       | .zi     |
+| .cpk        | .ex   | .ms_        | .psf  | -        | .wma       | .zi_    |
+| .cpp        | .ex_  | .msg        | .pst  | -        | .wmv       | .zip    |
+| .cs         | .ex0  | .msi        | .pub  | -        | .wmz       | .zip_   |
+| .csv        | .frd  | .mso        | -     | -        | .wps       | .zipp   |
+| .cvr        | .gif  | .msu        | -     | -        | .wpt       | .zipped |
+| -           | .guid | .nfo        | -     | -        | .wsdl      | .zippy  |
+| -           | .gz   | -           | -     | -        | .wsp       | .zipx   |
+| -           | -     | -           | -     | -        | .wtl       | .zit    |
+| -           | -     | -           | -     | -        | -          | .zix    |
+| -           | -     | -           | -     | -        | -          | .zzz    |
 
 ## <a name="reopen-a-closed-request"></a>Повторное открытие закрытого запроса
 

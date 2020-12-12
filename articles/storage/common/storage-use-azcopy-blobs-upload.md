@@ -4,16 +4,16 @@ description: Эта статья содержит набор AzCopy пример
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/08/2020
+ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 11d40805cda2ea2e3693c6c93034ae19f1f0fcc0
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: ec88a3c740ceda7ccf352f8f32f94e2cd52d0988
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907584"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358764"
 ---
 # <a name="upload-files-to-azure-blob-storage-by-using-azcopy-v10"></a>Отправка файлов в хранилище BLOB-объектов Azure с помощью AzCopy V10
 
@@ -28,7 +28,7 @@ ms.locfileid: "96907584"
 > [!NOTE] 
 > В примерах, приведенных в этой статье, предполагается, что вы указали учетные данные авторизации с помощью Azure Active Directory (Azure AD).
 >
-> Если вы предпочитаете использовать маркер SAS для авторизации доступа к данным большого двоичного объекта, можно добавить этот маркер к URL-адресу ресурса в каждой команде AzCopy. Например, `'https://<storage-account-name>.blob.core.windows.net/<container-name><SAS-token>'`.
+> Если вы предпочитаете использовать маркер SAS для авторизации доступа к данным большого двоичного объекта, можно добавить этот маркер к URL-адресу ресурса в каждой команде AzCopy. Например, так: `'https://<storage-account-name>.blob.core.windows.net/<container-name><SAS-token>'`.
 
 ## <a name="create-a-container"></a>Создание контейнера
 
@@ -135,9 +135,11 @@ ms.locfileid: "96907584"
 
 `--include-pattern`Параметры и `--exclude-pattern` применяются только к именам файлов, а не к пути.  Если необходимо скопировать все текстовые файлы, существующие в дереве каталогов, используйте `–recursive` параметр для получения всего дерева каталогов, а затем используйте `–include-pattern` и укажите, `*.txt` чтобы получить все текстовые файлы.
 
-### <a name="upload-files-that-were-modified-after-a-date-and-time"></a>Передача файлов, которые были изменены после даты и времени 
+### <a name="upload-files-that-were-modified-before-or-after-a-date-and-time"></a>Передача файлов, которые были изменены до или после даты и времени 
 
-Используйте команду [azcopy Copy](storage-ref-azcopy-copy.md) с `--include-after` параметром. Укажите дату и время в формате ISO-8601 (например: `2020-08-19T15:04:00Z` ). 
+Используйте команду [azcopy Copy](storage-ref-azcopy-copy.md) с `--include-before` `--include-after` параметром или. Укажите дату и время в формате ISO-8601 (например: `2020-08-19T15:04:00Z` ). 
+
+В следующих примерах передаются файлы, которые были изменены или после указанной даты.
 
 |    |     |
 |--------|-----------|
@@ -186,10 +188,10 @@ ms.locfileid: "96907584"
 
 Дополнительные примеры см. в следующих статьях:
 
-- [Примеры: Download](storage-use-azcopy-blobs-download.md)
-- [Примеры: копирование между учетными записями](storage-use-azcopy-blobs-copy.md)
+- [Примеры: Скачивание](storage-use-azcopy-blobs-download.md)
+- [Примеры: Копирование между учетными записями](storage-use-azcopy-blobs-copy.md)
 - [Примеры: Synchronize](storage-use-azcopy-blobs-synchronize.md)
-- [Примеры: контейнеры Amazon S3](storage-use-azcopy-s3.md)
+- [Примеры: Контейнеры Amazon S3](storage-use-azcopy-s3.md)
 - [Примеры: службы файлов Azure](storage-use-azcopy-files.md)
 - [Руководство. Перенос локальных данных в облачное хранилище с помощью AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)

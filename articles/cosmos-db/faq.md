@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 2e4ff4d9159947ea87f97d56f3fb9c2825698227
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 81c959467c4bb3700120917cf150773fb18e866d
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095072"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359835"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Часто задаваемые вопросы о различных API в службе Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -180,7 +180,7 @@ API SQL поддерживает агрегирование с низкой за
 
 API SQL поддерживает оптимистическое параллельное управление (OCC) через теги сущностей HTTP или ETag. У каждого ресурса API SQL есть тег ETag, значение которого определяется на сервере при каждом обновлении документа. Заголовок и текущее значение ETag добавляются во все сообщения ответа. Чтобы сервер мог определить, нужно ли обновлять ресурс, можно использовать теги ETag с заголовком If-Match. Значением If-Match является значение ETag, используемое для проверки. Если это значение ETag совпадает со значением ETag сервера, ресурс будет обновлен. Если тег ETag больше не актуален, сервер отклоняет операцию с кодом ответа "HTTP 412: ошибка в предусловии". После этого клиенту нужно повторно извлечь ресурс, чтобы получить его текущее значение ETag. Кроме того, теги ETag можно использовать с заголовком If-None-Match, чтобы определить, требуется ли повторное извлечение ресурса.
 
-Чтобы применить оптимистичный параллелизм в .NET, используйте класс [AccessCondition](/dotnet/api/microsoft.azure.documents.client.accesscondition) . Пример для .NET см. в файле [Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/DocumentManagement/Program.cs) примера DocumentManagement на сайте GitHub.
+Чтобы применить оптимистичный параллелизм в .NET, используйте класс [AccessCondition](/dotnet/api/microsoft.azure.documents.client.accesscondition) . Пример для .NET см. в файле [Program.cs](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/samples/code-samples/DocumentManagement/Program.cs) примера DocumentManagement на сайте GitHub.
 
 ### <a name="how-do-i-perform-transactions-in-the-sql-api"></a>Как выполнять транзакции в API SQL?
 

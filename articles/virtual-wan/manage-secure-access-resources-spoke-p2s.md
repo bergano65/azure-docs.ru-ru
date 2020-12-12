@@ -6,14 +6,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 12/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: d4257e5ade1e32ec971bb77f9d5a686d30195735
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: b0937bbd72460b1d46ce0394af1933e858424966
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97111539"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360328"
 ---
 # <a name="manage-secure-access-to-resources-in-spoke-vnets-for-user-vpn-clients"></a>Управление безопасным доступом к ресурсам в лучевой виртуальных сетей для VPN-клиентов пользователей
 
@@ -41,7 +41,11 @@ ms.locfileid: "97111539"
 
 При выборе метода проверки подлинности у вас есть три варианта. Каждый метод имеет определенные требования. Выберите один из следующих методов и выполните действия.
 
-* **Azure Active Directory проверка подлинности:** Получите идентификатор приложения Azure VPN Enterprise, зарегистрированного в клиенте Azure AD, [издателе](https://sts.windows.net/your-Directory-ID/)и [клиенте Azure AD](https://login.microsoftonline.com/your-Directory-ID).
+* **Azure Active Directory проверка подлинности:** Получите следующее:
+
+   * **Идентификатор приложения** для приложения Azure VPN Enterprise, зарегистрированного в клиенте Azure AD.
+   * **Издатель**. Например, `https://sts.windows.net/your-Directory-ID`.
+   * **Клиент Azure AD**. Например, `https://login.microsoftonline.com/your-Directory-ID`.
 
 * **Проверка подлинности на основе RADIUS:** Получите IP-адрес сервера RADIUS, секрет RADIUS-сервера и сведения о сертификате.
 

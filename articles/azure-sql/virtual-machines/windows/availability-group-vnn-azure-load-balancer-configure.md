@@ -1,5 +1,5 @@
 ---
-title: Настройка подсистемы балансировки нагрузки для прослушивателя VNN группы доступности
+title: Настройка подсистемы балансировки нагрузки для прослушивателя VNN группы доступности
 description: Узнайте, как настроить Azure Load Balancer для маршрутизации трафика в прослушиватель имени виртуальной сети (VNN) для группы доступности с SQL Server на виртуальных машинах Azure для обеспечения высокой доступности и аварийного восстановления (HADR).
 services: virtual-machines-windows
 documentationcenter: na
@@ -7,6 +7,7 @@ author: MashaMSFT
 manager: jroth
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -14,14 +15,14 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: a07f0416f26f81e8a2b6d22c79047dc8651bb78c
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 2d89759438cb625a0e220af10ab6b287096f6390
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168901"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359886"
 ---
-# <a name="configure-load-balancer-for-ag-vnn-listener"></a>Настройка подсистемы балансировки нагрузки для прослушивателя VNN группы доступности
+# <a name="configure-load-balancer-for-ag-vnn-listener"></a>Настройка подсистемы балансировки нагрузки для прослушивателя VNN группы доступности
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 На виртуальных машинах Azure кластеры используют подсистему балансировки нагрузки для хранения IP-адреса, который должен находиться на одном узле кластера за раз. В этом решении подсистема балансировки нагрузки содержит IP-адрес для прослушивателя имени виртуальной сети (VNN) для группы доступности Always On. 
@@ -47,7 +48,7 @@ ms.locfileid: "92168901"
 
 1. На портале Azure перейдите в группу ресурсов с виртуальными машинами.
 
-1. Выберите **Добавить**. Поиск **Load Balancer**в Azure Marketplace. Выберите **Load Balancer**.
+1. Выберите **Добавить**. Поиск **Load Balancer** в Azure Marketplace. Выберите **Load Balancer**.
 
 1. Нажмите кнопку **создания**.
 
@@ -86,7 +87,7 @@ ms.locfileid: "92168901"
 
 1. Выберите **Добавить**.
 
-1. В области " **добавить проверку работоспособности** " <span id="probe"> </span> задайте следующие параметры проверки работоспособности.
+1. В области " **добавить проверку работоспособности** " <span id="probe"></span> задайте следующие параметры проверки работоспособности.
 
    - **Name** (Имя). Имя для проверки работоспособности.
    - **Протокол**. Протокол TCP.
@@ -158,7 +159,7 @@ Get-ClusterResource $IPResourceName | Get-ClusterParameter
 Тестовая отработка отказа кластеризованного ресурса для проверки функциональности кластера. 
 
 
-Выполните следующие шаги:
+Выполните следующие шаги.
 
 1. Откройте [SQL Server Management Studio)](/sql/ssms/download-sql-server-management-studio-ssms) и подключитесь к прослушивателю группы доступности. 
 1. Разверните **Always on группа доступности** в **обозревателе объектов**. 

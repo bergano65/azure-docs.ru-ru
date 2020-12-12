@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: sngun
 ms.custom: devx-track-dotnet, contperf-fy21q2
-ms.openlocfilehash: 962b95307b440c3bafde019b5b2b630461718073
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 47e20e89c8eaef59b9acd6cf7e31244afd4bcf60
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029011"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359053"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB и пакета SDK для .NET версии 2
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -133,7 +133,7 @@ new ConnectionPolicy
 
 **Настройка параллельных запросов для секционированных коллекций**
 
-Пакет SDK для SQL .NET 1.9.0 и более поздних версий поддерживает параллельные запросы, позволяющие параллельно запрашивать секционированную коллекцию. Дополнительные сведения см. в [примерах кода](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Queries/Program.cs) для работы с пакетами SDK. Параллельные запросы предназначены для обеспечения более высокой задержки и пропускной способности запросов, чем их последовательный аналог. Параллельные запросы предоставляют два параметра, которые можно настроить в соответствии с вашими требованиями. 
+Пакет SDK для SQL .NET 1.9.0 и более поздних версий поддерживает параллельные запросы, позволяющие параллельно запрашивать секционированную коллекцию. Дополнительные сведения см. в [примерах кода](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/samples/code-samples/Queries/Program.cs) для работы с пакетами SDK. Параллельные запросы предназначены для обеспечения более высокой задержки и пропускной способности запросов, чем их последовательный аналог. Параллельные запросы предоставляют два параметра, которые можно настроить в соответствии с вашими требованиями. 
 - `MaxDegreeOfParallelism` управляет максимальным числом секций, к которым можно обращаться параллельно. 
 - `MaxBufferedItemCount` управляет количеством предварительно выбранных результатов.
 
@@ -180,7 +180,7 @@ readDocument.RequestDiagnosticsString
 > [!NOTE] 
 > `maxItemCount`Свойство не должно использоваться только для разбиения на страницы. Его основное использование — повышение производительности запросов за счет уменьшения максимального числа элементов, возвращаемых на одной странице.  
 
-Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet&preserve-view=true) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Пример.
+Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet&preserve-view=true) в `FeedOptions` позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если параметр `maxItemCount` имеет значение-1, пакет SDK автоматически находит оптимальное значение в зависимости от размера документа. Пример:
     
 ```csharp
 IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });

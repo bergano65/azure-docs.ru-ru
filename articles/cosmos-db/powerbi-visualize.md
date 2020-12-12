@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: 3b47c7e8f31b51d51f5fad20cc068debb1dc2927
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b27bab9ea3029264143caaacf094f0a799894356
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339739"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359869"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -27,12 +27,12 @@ ms.locfileid: "93339739"
 > [!NOTE]
 > Подключение к Azure Cosmos DB с помощью соединителя Power BI в настоящее время поддерживается только для учетных записей API SQL Azure Cosmos DB и Gremlin API.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед выполнением инструкций в этом руководстве по Power BI убедитесь в наличии доступа к следующим ресурсам:
 
 * [загруженной последней версии Power BI Desktop](https://powerbi.microsoft.com/desktop);
 
-* загруженному из GitHub [примеру данных о вулканах](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json);
+* загруженному из GitHub [примеру данных о вулканах](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/main/SampleData/VolcanoData.json);
 
 * [Создайте учетную запись базы данных Azure Cosmos](create-cosmosdb-resources-portal.md#create-an-azure-cosmos-db-account) и импортируйте данные о вулканах с помощью [средства переноса данных Azure Cosmos DB](import-data.md). При импорте данных советуем использовать в средстве переноса следующие параметры источника и целевых расположений:
 
@@ -44,7 +44,7 @@ ms.locfileid: "93339739"
 
       * **Строка подключения:**`AccountEndpoint=<Your_account_endpoint>;AccountKey=<Your_primary_or_secondary_key>;Database= <Your_database_name>` 
 
-      * **Ключ секции** : /страна 
+      * **Ключ секции**: /страна 
 
       * **Пропускная способность коллекции:** 1000 
 
@@ -76,13 +76,13 @@ ms.locfileid: "93339739"
 
 1. Запустите Power BI Desktop.
 
-2. Непосредственно на экране приветствия можно **получить данные** , просмотреть **последние источники** или **открыть другие отчеты**. Щелкните значок X в правом верхнем углу, чтобы закрыть этот экран. Откроется представление **Отчет** средства Power BI Desktop.
+2. Непосредственно на экране приветствия можно **получить данные**, просмотреть **последние источники** или **открыть другие отчеты**. Щелкните значок X в правом верхнем углу, чтобы закрыть этот экран. Откроется представление **Отчет** средства Power BI Desktop.
    
    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbireportview.png" alt-text="Представление отчета в Power BI Desktop — соединитель Power BI":::
 
 3. Откройте ленту **Главная** и щелкните **Получить данные**.  Откроется окно **Получение данных** .
 
-4. Выберите **Azure** , затем — **Azure Cosmos DB (бета-версия)** и щелкните **Подключить**. 
+4. Выберите **Azure**, затем — **Azure Cosmos DB (бета-версия)** и щелкните **Подключить**. 
 
    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbigetdata.png" alt-text="Получение данных в Power BI Desktop — соединитель Power BI":::
 
@@ -104,7 +104,7 @@ ms.locfileid: "93339739"
     
     :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbinavigator.png" alt-text="Руководство по Power BI для соединителя Power BI Azure Cosmos DB — окно навигатора":::
 
-12. Нажмите кнопку **Изменить** , чтобы открыть в новом окне редактор запросов для преобразования данных.
+12. Нажмите кнопку **Изменить**, чтобы открыть в новом окне редактор запросов для преобразования данных.
 
 ## <a name="flattening-and-transforming-json-documents"></a>Преобразование документов JSON в плоскую структуру и их трансформация
 1. Переключитесь в окно редактора запросов Power BI, где по центру отображается столбец **Документ**.
@@ -225,6 +225,6 @@ For a scheduled refresh, do the following.
 5. Expand **Schedule Refresh** and set up the schedule you want to refresh the dataset. 
 6. Click **Apply** and you are done setting up the scheduled refresh.
 -->
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о Power BI см. в статье [Приступая к работе с Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 * Дополнительные сведения об Azure Cosmos DB см. на [целевой странице документации по Azure Cosmos DB](https://azure.microsoft.com/documentation/services/cosmos-db/).

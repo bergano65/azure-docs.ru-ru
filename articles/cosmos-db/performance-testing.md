@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: f27e4f9f8e9f027233db89838614b523c5d0fe1f
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: cb0dd8eb879c5511da3c79a3dee6a715fb1275e4
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341779"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358679"
 ---
 # <a name="performance-and-scale-testing-with-azure-cosmos-db"></a>Проверка производительности и масштабирования с помощью Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "93341779"
 * Где найти образец клиентского приложения .NET для тестирования производительности Azure Cosmos DB? 
 * Как добиться высокого уровня пропускной способности с помощью Azure Cosmos DB из клиентского приложения?
 
-Чтобы начать работу с кодом, скачайте проект со страницы [примера для тестирования производительности Azure Cosmos DB](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark). 
+Чтобы начать работу с кодом, скачайте проект со страницы [примера для тестирования производительности Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples/documentdb-benchmark). 
 
 > [!NOTE]
 > Цель этого приложения — продемонстрировать, как обеспечить максимальную производительность Azure Cosmos DB при использовании небольшого числа клиентских компьютеров. Цель примера — не допустить всплесков нагрузки на пропускную способность Azure Cosmos DB (которую можно масштабировать без ограничений).
@@ -37,7 +37,7 @@ ms.locfileid: "93341779"
 ## <a name="run-the-performance-testing-application"></a>Запуск приложения для тестирования производительности
 Самый быстрый способ начать работу — скомпилировать и запустить пример .NET, как описано в следующих шагах. Вы также можете просмотреть исходный код и реализовать аналогичные конфигурации в клиентских приложениях.
 
-**Шаг 1.** Скачайте проект из [Azure Cosmos DB примера теста производительности](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark)или разветвления репозитория GitHub.
+**Шаг 1.** Скачайте проект из [Azure Cosmos DB примера теста производительности](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples/documentdb-benchmark)или разветвления репозитория GitHub.
 
 **Шаг 2.** Измените параметры для EndpointUrl, Authorizationkey согласно инструкциям, CollectionThroughput и DocumentTemplate (необязательно) в App.config.
 
@@ -97,7 +97,7 @@ Press any key to exit...
 
 В этой статье мы рассмотрели способы тестирования производительности и масштабируемости с Azure Cosmos DB с помощью консольного приложения .NET. Дополнительные сведения см. в следующих статьях:
 
-* [Пример для тестирования производительности Azure Cosmos DB](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark)
+* [Пример для тестирования производительности Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples/documentdb-benchmark)
 * [Советы по улучшению производительности Azure Cosmos DB](performance-tips.md)
 * [Секционирование, ключи секции и масштабирование в Azure Cosmos DB](partitioning-overview.md)
 

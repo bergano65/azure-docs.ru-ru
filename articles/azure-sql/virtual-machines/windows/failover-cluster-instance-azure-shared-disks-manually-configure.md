@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: df50583e650d3d44e702c0f7d1596f2a733a4445
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 244fae9f8611acd21f2ee6cd7dafa45b88606456
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556392"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359359"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Создание FCI с общими дисками Azure (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -28,12 +28,12 @@ ms.locfileid: "94556392"
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
 
-## <a name="prerequisites"></a>Обязательные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Перед выполнением инструкций, приведенных в этой статье, у вас уже должны быть:
 
 - Подписка Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
-- [Две или более виртуальных машин Windows Azure](failover-cluster-instance-prepare-vm.md). Поддерживаются [наборы доступности](../../../virtual-machines/windows/tutorial-availability-sets.md) и [группы размещения](../../../virtual-machines/windows/co-location.md#proximity-placement-groups) с учетом расположения (ппгс). При использовании ППГ все узлы должны находиться в одной группе.
+- [Две или более виртуальных машин Windows Azure](failover-cluster-instance-prepare-vm.md). [Наборы доступности](../../../virtual-machines/windows/tutorial-availability-sets.md) и [группы размещения](../../../virtual-machines/windows/co-location.md#proximity-placement-groups) ппгс, поддерживаемые для SSD (цен. Категория "Премиум") и [зон доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , поддерживаются для Ultra-дисков. При использовании ППГ все узлы должны находиться в одной группе.
 - учетная запись с разрешениями на создание объектов как на виртуальных машинах Azure, так и в Active Directory;
 - Последняя версия [PowerShell](/powershell/azure/install-az-ps). 
 
@@ -44,7 +44,7 @@ ms.locfileid: "94556392"
 Добавьте общий диск Azure, выполнив следующие действия. 
 
 
-1. Сохраните следующий скрипт как *SharedDiskConfig.js* : 
+1. Сохраните следующий скрипт как *SharedDiskConfig.js*: 
 
    ```JSON
    { 
@@ -152,7 +152,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 Чтобы проверить кластер с помощью пользовательского интерфейса, выполните следующие действия на одной из виртуальных машин:
 
 1. На панели **Диспетчер серверов** выберите **Инструменты** и нажмите **Диспетчер отказоустойчивости кластеров**.
-1. В разделе **Диспетчер отказоустойчивости кластеров** выберите **Действие** , а затем выберите **Проверить конфигурацию**.
+1. В разделе **Диспетчер отказоустойчивости кластеров** выберите **Действие**, а затем выберите **Проверить конфигурацию**.
 1. Выберите **Далее**.
 1. На вкладке **Выбор серверов или кластера** введите имена обеих виртуальных машин.
 1. На вкладке **Параметры тестирования** выберите **Выполнять только выбранные тесты**. 
@@ -161,7 +161,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 ## <a name="test-cluster-failover"></a>Тестовая отработка отказа кластера
 
-Протестируйте отработку отказа кластера. В **Диспетчер отказоустойчивости кластеров** щелкните правой кнопкой мыши кластер, выберите **другие действия**  >  **переместить основной кластер ресурс**  >  **выберите узел** , а затем выберите другой узел кластера. Перенесите основной кластерный ресурс на каждый узел кластера, а затем верните его на основной узел. Если вам удалось успешно перенести ресурс на каждый узел, вы готовы к установке SQL Server.  
+Протестируйте отработку отказа кластера. В **Диспетчер отказоустойчивости кластеров** щелкните правой кнопкой мыши кластер, выберите **другие действия**  >  **переместить основной кластер ресурс**  >  **выберите узел**, а затем выберите другой узел кластера. Перенесите основной кластерный ресурс на каждый узел кластера, а затем верните его на основной узел. Если вам удалось успешно перенести ресурс на каждый узел, вы готовы к установке SQL Server.  
 
 :::image type="content" source="media/failover-cluster-instance-premium-file-share-manually-configure/test-cluster-failover.png" alt-text="Тестирование отказоустойчивости кластеров путем переноса основного кластерного ресурса на другие узлы":::
 

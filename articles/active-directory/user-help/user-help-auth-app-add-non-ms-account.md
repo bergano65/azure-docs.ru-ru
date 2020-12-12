@@ -8,19 +8,19 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 01/24/2019
+ms.date: 11/02/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: cba8837fc738884fc187b13083487c2ab62d25f0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 21c8e75ac81a443b1dd9d4a0f43263bbf40bee88
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020098"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359206"
 ---
 # <a name="add-non-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Добавление учетных записей сторонних поставщиков в приложение Microsoft Authenticator
 
-Сведения о добавлении учетных записей сторонних поставщиков, таких как Google, Facebook или GitHub, в приложение Microsoft Authenticator для двухфакторной проверки подлинности. Приложение Microsoft Authenticator работает с любым приложением, использующим двухфакторную проверку подлинности, и с любой учетной записью, поддерживающей стандарты одноразовых паролей с ограниченным сроком действия (TOTP).
+Если у вас есть учетные записи, отличные от Майкрософт, например для Google, Facebook или GitHub, их можно добавить в Microsoft Authenticator приложение для двухфакторной проверки подлинности. Приложение Microsoft Authenticator работает с любым приложением, которое использует двухфакторную проверку подлинности, и любую учетную запись, которая поддерживает стандарты одноразового пароля (TOTP) на основе времени.
 
 >[!Important]
 >Но для добавления такой учетной записи необходимо скачать и установить приложение Microsoft Authenticator. Если вы еще не сделали этого, выполните шаги, описанные в статье [Начало работы с приложением Microsoft Authenticator](user-help-auth-app-download-install.md).
@@ -130,7 +130,7 @@ ms.locfileid: "96020098"
 
 1. На странице **Two-factor authentication** (Двухфакторная проверка подлинности), которая открыта на компьютере, выберите **Set up using an app** (Настроить с помощью приложения).
 
-2. Сохраните коды восстановления, которые позволяют вернуться в учетную запись в случае потери доступа к ней, а затем щелкните **Далее**. 
+2. Сохраните коды восстановления, которые позволяют вернуться в учетную запись в случае потери доступа к ней, а затем щелкните **Далее**.
 
     Чтобы сохранить эти коды, их можно скачать на устройство, распечатать на бумаге или скопировать в средство диспетчера паролей.
 

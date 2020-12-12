@@ -6,6 +6,7 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -14,12 +15,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 48c996b6c7d0024b256908565c57032fe3e18514
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: bb7331747db301be5db00d550eec211f75257e29
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545644"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360039"
 ---
 # <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>Регистрация SQL Server виртуальной машины с помощью расширения агента IaaS SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -29,7 +30,7 @@ ms.locfileid: "96545644"
 В этой статье описывается, как зарегистрировать одну виртуальную машину SQL Server с расширением агента IaaS SQL. Кроме того, можно зарегистрировать все SQL Server виртуальные машины [автоматически](sql-agent-extension-automatic-registration-all-vms.md) или [несколько виртуальных машин, которые были внесены в пакетную](sql-agent-extension-manually-register-vms-bulk.md)операцию.
 
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 При регистрации в [расширении агента SQL Server IaaS](sql-server-iaas-agent-extension-automate-management.md) в подписке создается _ресурс_ **виртуальной машины SQL** , который является _отдельным_ ресурсом из ресурса виртуальной машины. При отмене регистрации ВИРТУАЛЬНОЙ машины SQL Server в расширении _ресурс_ **виртуальной машины SQL** будет удален, но фактические виртуальные машины не будут удалены.
 
@@ -44,7 +45,7 @@ ms.locfileid: "96545644"
 
 Чтобы зарегистрировать виртуальную машину SQL Server с расширением, вам потребуется: 
 
-- [Подписка Azure](https://azure.microsoft.com/free/).
+- [Подписка Azure](https://azure.microsoft.com/free/)
 - Модель ресурсов Azure — это [Виртуальная машина Windows Server 2008 (или более поздняя)](../../../virtual-machines/windows/quick-create-portal.md) с [SQL Server 2008 (или более поздней)](https://www.microsoft.com/sql-server/sql-server-downloads) , развернутая в общедоступном облаке или Azure для государственных организаций 
 - Последняя версия [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell (5,0 минимум)](/powershell/azure/install-az-ps). 
 
@@ -98,7 +99,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 
 Экземпляры отказоустойчивого кластера и развертывания с несколькими экземплярами могут быть зарегистрированы только с расширением агента IaaS SQL в упрощенном режиме. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash);
+# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
 
 Зарегистрируйте SQL Serverную виртуальную машину в упрощенном режиме с Azure CLI: 
 
@@ -148,7 +149,7 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008 
 Чтобы зарегистрировать SQL Server 2008 ( `SQL2008-WS2008` ) или 2008 R2 ( `SQL2008R2-WS2008` ) в экземпляре Windows Server 2008, используйте следующий Azure CLI или Azure PowerShell фрагмент кода: 
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash);
+# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
 
 Зарегистрируйте виртуальную машину SQL Server в режиме агента с Azure CLI: 
 
@@ -247,7 +248,7 @@ SQL Server виртуальные машины, которые зарегист�
 
 Проверьте текущее состояние регистрации виртуальной машины SQL Server с помощью Azure CLI или Azure PowerShell. Параметр `ProvisioningState` отображает состояние `Succeeded`, если регистрация прошла успешно. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash);
+# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
 
 Чтобы проверить состояние регистрации с помощью Azure CLI, выполните следующий фрагмент кода:  
 

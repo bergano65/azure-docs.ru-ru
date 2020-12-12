@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: abc8cffa3d5b9dffb55beabc90cdaecb3adc647f
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 985f9e741a1491a812c1d2b20de96381f8af3fa4
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852529"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359852"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
 
@@ -86,7 +86,7 @@ ms.locfileid: "96852529"
    * URL-адрес сервера — установите значение `https://mcr.microsoft.com`
    * Username (необязательно) — создайте имя пользователя. 
    * Пароль (необязательно). Создайте защищенный пароль, который вы помните.
-   * Изображение и тег. Задайте для этого свойства значение `mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview`
+   * Изображение и тег. Задайте для этого свойства значение `mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview`
    * Непрерывное развертывание — задайте значение **On** , если вы хотите получить автоматические обновления, когда команда разработчиков вносит изменения в пример средства создания меток.
    * Команда запуска — задает значение `./run.sh eula=accept`
     

@@ -1,5 +1,5 @@
 ---
-title: Инструкции по миграции SQL Server в SQL Управляемый экземпляр
+title: 'SQL Server Управляемый экземпляр SQL: руководство по миграции'
 description: Следуйте этому руководству, чтобы перенести базы данных SQL Server в Azure SQL Управляемый экземпляр.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 5d5404537ad107a54bd32110727e5a7d0f74ebea
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: ac8b0e0c2cdbd46626677f4be0f78800d839ad28
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326902"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358900"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Руководство по миграции: SQL Server в SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -144,14 +144,14 @@ ms.locfileid: "96326902"
 
 1. Создайте резервную копию базы данных в хранилище BLOB-объектов Azure. Например, используйте [резервное копирование в URL-адрес](/sql/relational-databases/backup-restore/sql-server-backup-to-url) в [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms). Используйте [средство Microsoft Azure](https://go.microsoft.com/fwlink/?LinkID=324399) для поддержки баз данных, предшествующих SQL Server 2012 с пакетом обновления 1 (SP1) Cu2. 
 1. Подключитесь к Управляемый экземпляр Azure SQL с помощью SQL Server Management Studio. 
-1. Создайте учетные данные, используя подписанный URL-доступ для доступа к учетной записи хранилища BLOB-объектов Azure с резервными копиями базы данных. Например:
+1. Создайте учетные данные, используя подписанный URL-доступ для доступа к учетной записи хранилища BLOB-объектов Azure с резервными копиями базы данных. Пример:
 
    ```sql
    CREATE CREDENTIAL [https://mitutorials.blob.core.windows.net/databases]
    WITH IDENTITY = 'SHARED ACCESS SIGNATURE'
    , SECRET = 'sv=2017-11-09&ss=bfqt&srt=sco&sp=rwdlacup&se=2028-09-06T02:52:55Z&st=2018-09-04T18:52:55Z&spr=https&sig=WOTiM%2FS4GVF%2FEEs9DGQR9Im0W%2BwndxW2CQ7%2B5fHd7Is%3D'
    ```
-1. Восстановите резервную копию из контейнера больших двоичных объектов службы хранилища Azure. Например: 
+1. Восстановите резервную копию из контейнера больших двоичных объектов службы хранилища Azure. Пример: 
 
     ```sql
    RESTORE DATABASE [TargetDatabaseName] FROM URL =
@@ -177,7 +177,7 @@ ms.locfileid: "96326902"
 > Дополнительные сведения о конкретных действиях, связанных с выполнением прямую миграцию в процессе миграции с помощью DMS, см. в разделе [выполнение миграции прямую миграцию](../../../dms/tutorial-sql-server-managed-instance-online.md#performing-migration-cutover).
 
 
-## <a name="post-migration"></a>Действия после миграции
+## <a name="post-migration"></a>После миграции
 
 После успешного завершения этапа миграции пройдите ряд задач, выполняемых после миграции, чтобы обеспечить бесперебойную работу всех компонентов. 
 

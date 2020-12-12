@@ -6,6 +6,7 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -13,12 +14,12 @@ ms.date: 01/14/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 801a9a112615bd6220b5f273b51ed39248ebcd45
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: b6ea6f947b2cd8d7d9c38a0e5e440ce5fd273bb7
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556477"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358832"
 ---
 # <a name="in-place-change-of-sql-server-edition-on-azure-vm"></a>Замена выпуска SQL Server на месте на виртуальной машине Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -50,7 +51,7 @@ ms.locfileid: "94556477"
 
    ![Выбор параметра для обновления выпуска SQL Server](./media/change-sql-server-edition/edition-upgrade.png)
 
-1. Выберите **Далее** пока не откроется страница **Все готово для обновления выпуска** , а затем щелкните **Обновить**. Окно установки может не отвечать на запросы в течение нескольких минут, пока изменение вступит в силу. Откроется страница **Завершено** , которая подтвердит, что обновление выпуска завершено. 
+1. Выберите **Далее** пока не откроется страница **Все готово для обновления выпуска**, а затем щелкните **Обновить**. Окно установки может не отвечать на запросы в течение нескольких минут, пока изменение вступит в силу. Откроется страница **Завершено**, которая подтвердит, что обновление выпуска завершено. 
 
 После обновления выпуска SQL Server измените свойство выпуска виртуальной машины SQL Server на портале Azure. При этом будут обновлены метаданные и данные для выставления счетов, связанные с этой виртуальной машиной.
 

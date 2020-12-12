@@ -6,6 +6,7 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -13,12 +14,12 @@ ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019, devx-track-azurecli
-ms.openlocfilehash: 9129d0cb44aea9b85c5569d4d939c0904c398c07
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 865ee3a5aeb8a2dd06d8759ba04d02259d2b4bee
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556528"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359971"
 ---
 # <a name="use-powershell-or-az-cli-to-configure-an-availability-group-for-sql-server-on-azure-vm"></a>Настройка группы доступности для SQL Server на виртуальной машине Azure с помощью PowerShell или AZ CLI 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -29,7 +30,7 @@ ms.locfileid: "94556528"
 
 Хотя в этой статье используются PowerShell и AZ CLI для настройки среды группы доступности, ее также можно выполнить из [портал Azure](availability-group-azure-portal-configure.md), с помощью шаблонов быстрого запуска [Azure](availability-group-quickstart-template-configure.md)или [вручную](availability-group-manually-configure-tutorial.md) . 
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить Always On группы доступности, необходимо выполнить следующие предварительные требования. 
 
@@ -246,7 +247,7 @@ New-AzLoadBalancer -name sqlILB -ResourceGroupName <resource group name> `
 
 После создания группы доступности вручную можно создать прослушиватель с помощью команды [az sql vm ag-listener](/cli/azure/sql/vm/group/ag-listener#az-sql-vm-group-ag-listener-create). 
 
-*Идентификатор ресурса подсети*  — это значение `/subnets/<subnetname>`, которое добавляется к идентификатору ресурса виртуальной сети. Чтобы определить идентификатор ресурса подсети, выполните следующие действия:
+*Идентификатор ресурса подсети* — это значение `/subnets/<subnetname>`, которое добавляется к идентификатору ресурса виртуальной сети. Чтобы определить идентификатор ресурса подсети, выполните следующие действия:
    1. Перейдите к группе ресурсов на [портале Azure](https://portal.azure.com). 
    1. Выберите ресурс виртуальной сети. 
    1. Выберите **Свойства** в области **Параметры**. 

@@ -8,18 +8,19 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: c492db4c-3faa-4645-849f-5a1a663be55a
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 8572a73586b01967c8aef7f6c4947b5ce96146b4
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 1a9a2f9d999a51f2b4600e8379d4a8913675b338
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324862"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360022"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Учебник. Предварительные требования для создания групп доступности на SQL Server на виртуальных машинах Azure
 
@@ -124,7 +125,7 @@ ms.locfileid: "96324862"
 
 5. Чтобы создать вторую подсеть, выберите **+ Subnet (+ подсеть**).
 6. В колонке **Добавление подсети** настройте подсеть, указав в поле **Имя** значение **sqlsubnet**. Azure автоматически укажет допустимое значение в поле **Диапазон адресов**. Убедитесь, что этот диапазон адресов содержит по крайней мере 10 адресов. Для рабочей среды может потребоваться больше адресов.
-7. Щелкните **ОК**.
+7. Нажмите кнопку **OK**.
 
     ![Настройка подсети](./media/availability-group-manually-configure-prerequisites-tutorial-/08-configuresubnet.png)
 
@@ -421,7 +422,7 @@ Azure создаст виртуальные машины.
 2. В **диспетчере сервера** выберите **Локальный сервер**.
 3. Выберите ссылку **Рабочая группа** .
 4. В разделе **имя компьютера** выберите **изменить**.
-5. Установить флажок **Домен** и введите в текстовом поле **corp.contoso.com**. Щелкните **ОК**.
+5. Установить флажок **Домен** и введите в текстовом поле **corp.contoso.com**. Нажмите кнопку **OK**.
 6. Во всплывающем диалоговом окне **Безопасность Windows** укажите имя (**CORP\DomainAdmin**) и пароль (**Contoso!0000**) учетной записи администратора домена по умолчанию.
 7. Когда появится сообщение "Добро пожаловать в corp.contoso.com домен", нажмите кнопку **ОК**.
 8. Нажмите кнопку **Закрыть**, а затем в диалоговом окне всплывающее окно выберите **перезагрузить** .
@@ -471,7 +472,7 @@ Azure создаст виртуальные машины.
 
 1. Сделайте имя для входа участником фиксированной роли сервера **sysadmin**.
 
-1. Щелкните **ОК**.
+1. Нажмите кнопку **OK**.
 
 Повторите эти действия на другой виртуальной машине SQL Server.
 

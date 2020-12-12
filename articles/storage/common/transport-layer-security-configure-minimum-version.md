@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/09/2020
+ms.date: 12/11/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: b6c75bc13bf26510ee72968c5a27407b6b7bfee6
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 558f4792a055fc491f15600ecc5502c3a114a94b
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937497"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360226"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Принудительная минимальная требуемая версия протокола TLS для запросов к учетной записи хранения
 
@@ -86,6 +86,9 @@ StorageBlobLogs
 ## <a name="remediate-security-risks-with-a-minimum-version-of-tls"></a>Устранение угроз безопасности с помощью минимальной версии TLS
 
 Если вы уверены, что трафик от клиентов, использующих более старые версии TLS, является минимальным, или что можно не допустить запросов, созданных с помощью более старой версии протокола TLS, вы можете приступить к принудительному применению минимальной версии TLS в учетной записи хранения. Требовать, чтобы клиенты использовали минимальную версию протокола TLS для выполнения запросов к учетной записи хранения, является частью стратегии для снижения угроз безопасности для данных.
+
+> [!IMPORTANT]
+> Если вы используете службу, которая подключается к службе хранилища Azure, убедитесь, что эта служба использует соответствующую версию протокола TLS для отправки запросов в службу хранилища Azure до того, как будет задана требуемая минимальная версия для учетной записи хранения.
 
 ### <a name="configure-the-minimum-tls-version-for-a-storage-account"></a>Настройка минимальной версии TLS для учетной записи хранения
 

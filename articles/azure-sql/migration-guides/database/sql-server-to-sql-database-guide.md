@@ -1,5 +1,5 @@
 ---
-title: Инструкции по миграции SQL Server в базу данных SQL
+title: 'SQL Server в базу данных SQL: руководство по миграции'
 description: Следуйте этому руководству, чтобы перенести базы данных SQL Server в базу данных SQL Azure.
 ms.service: sql-database
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: ee4abaf3c9f6aa70ba14920711c8917994254649
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: f4f54aa02fb56ba5bf5ae9fcec2dae07c7dc0a27
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326987"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358985"
 ---
 # <a name="migration-guide-sql-server-to-sql-database"></a>Руководство по миграции: SQL Server в базу данных SQL
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -151,7 +151,7 @@ ms.locfileid: "96326987"
 > Дополнительные сведения о конкретных действиях, связанных с выполнением прямую миграцию в процессе миграции с помощью DMS, см. в разделе [выполнение миграции прямую миграцию](../../../dms/tutorial-sql-server-azure-sql-online.md#perform-migration-cutover).
 
 
-## <a name="post-migration"></a>Действия после миграции
+## <a name="post-migration"></a>После миграции
 
 После успешного завершения этапа миграции пройдите ряд задач, выполняемых после миграции, чтобы обеспечить бесперебойную работу всех компонентов. 
 

@@ -6,6 +6,7 @@ documentationcenter: ''
 author: MashaMSFT
 tags: azure-service-management
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -13,12 +14,12 @@ ms.date: 04/08/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 1c1dd2ba5eb6ee61a0f8cf151649441cbc783166
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 4c25adc16d14b4a5fb72ae0103ca05b193b40499
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553539"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359172"
 ---
 # <a name="extend-support-for-sql-server-2008-and-sql-server-2008-r2-with-azure"></a>Расширенная поддержка SQL Server 2008 и SQL Server 2008 R2 с Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -40,7 +41,7 @@ ms.locfileid: "94553539"
 В образах, развертываемых через Azure Marketplace, заранее установлено расширение SQL IaaS. Расширение SQL IaaS необходимо для гибкого лицензирования и автоматической установки исправлений. Клиентам, которые развертывают самостоятельно установленные виртуальные машины, потребуется вручную установить расширение SQL IaaS. Расширение SQL IaaS не поддерживается на Windows Server 2008.
 
 > [!NOTE]
-> Хотя колонки **Создание** и **Управление** в SQL Server совместимы с образом SQL Server 2008 R2 на портале Azure, следующие функции _не поддерживаются_ : автоматическое резервное копирование, интеграция с Azure Key Vault, службы R и конфигурация хранилища.
+> Хотя колонки **Создание** и **Управление** в SQL Server совместимы с образом SQL Server 2008 R2 на портале Azure, следующие функции _не поддерживаются_: автоматическое резервное копирование, интеграция с Azure Key Vault, службы R и конфигурация хранилища.
 
 ## <a name="licensing"></a>Лицензирование
 Лицензии на развертывание SQL Server 2008 R2 с оплатой по мере использования можно преобразовать в лицензии [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/).

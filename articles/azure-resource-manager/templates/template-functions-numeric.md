@@ -3,12 +3,12 @@ title: Функции шаблонов — числовые
 description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для работы с числами.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 1484826b2377fe2adb2ac6ae2ab3ee6243b26c2c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: f3687581d94f80cc923614a0655da1813bd5c97b
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920469"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359716"
 ---
 # <a name="numeric-functions-for-arm-templates"></a>Числовые функции для шаблонов ARM
 
@@ -111,7 +111,7 @@ output addResult int = first + second
 | loopName | Нет | строка | Имя цикла для получения итерации. |
 | offset |Нет |INT |Число, добавляемое к отсчитываемому от нуля значению итерации. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эта функция всегда используется с объектом **copy**. Если значение **offset** не указано, возвращается текущее значение итерации. Значение итерации начинается с нуля.
 
@@ -247,7 +247,7 @@ output addResult int = first / second
 
 `float(arg1)`
 
-Преобразует значение в число с плавающей запятой. Эта функция используется только при передаче пользовательских параметров в приложение, такое как приложение логики. `float`Функция не поддерживается в беЦип.  См. раздел [поддержка числовых типов, отличных от 32-разрядных целых чисел](https://github.com/Azure/bicep/issues/486).
+Преобразует значение в число с плавающей запятой. Эта функция используется только при передаче пользовательских параметров в приложение, такое как приложение логики. `float`Функция не поддерживается в бицеп.  См. раздел [поддержка числовых типов, отличных от 32-разрядных целых чисел](https://github.com/Azure/bicep/issues/486).
 
 ### <a name="parameters"></a>Параметры
 

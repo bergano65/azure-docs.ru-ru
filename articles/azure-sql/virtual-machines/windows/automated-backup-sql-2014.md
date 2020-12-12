@@ -7,18 +7,19 @@ author: MashaMSFT
 tags: azure-resource-manager
 ms.assetid: bdc63fd1-db49-4e76-87d5-b5c6a890e53c
 ms.service: virtual-machines-sql
+ms.subservice: backup
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: ccd998bc2f6e2771ff4dd1bedfa2213af7573102
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 41add54ce767413982ab0503f7263c58aed4d4e2
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556596"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359307"
 ---
 # <a name="automated-backup-for-sql-server-2014-virtual-machines-resource-manager"></a>Автоматическое резервное копирование для виртуальных машин SQL Server 2014 (Resource Manager)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -84,7 +85,7 @@ ms.locfileid: "94556596"
 
 ![Автоматизированная архивация SQL для существующих виртуальных машин](./media/automated-backup-sql-2014/azure-sql-rm-autobackup-existing-vms.png)
 
-По завершении в нижней части страницы **Резервные копии** нажмите кнопку **Применить** , чтобы сохранить изменения.
+По завершении в нижней части страницы **Резервные копии** нажмите кнопку **Применить**, чтобы сохранить изменения.
 
 Если автоматизированная архивация включается впервые, Azure настроит агент IaaS SQL Server в фоновом режиме. При этом портал Azure может не сообщать о том, что выполняется настройка автоматической архивации. Установка и настройка агента занимают несколько минут. После этого новые параметры отобразятся на портале Azure.
 
@@ -112,7 +113,7 @@ $resourcegroupname = "resourcegroupname"
 
 Если расширение агента IaaS для SQL Server установлено, вы увидите его в списке как SqlIaaSAgent или SQLIaaSExtension. Свойство **ProvisioningState** для расширения должно иметь значение Succeeded.
 
-Если расширение не установлено или его не удалось подготовить, то для его установки можно выполнить приведенную ниже команду. Кроме имени и группы ресурсов виртуальной машины, необходимо указать регион ( **$region** ), в котором она расположена. Укажите тип лицензии для виртуальной машины SQL Server, выбрав в рамках [Преимущества гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) один из вариантов: с оплатой по мере использования или с использованием собственной лицензии. Дополнительные сведения о лицензировании см. [здесь](licensing-model-azure-hybrid-benefit-ahb-change.md). 
+Если расширение не установлено или его не удалось подготовить, то для его установки можно выполнить приведенную ниже команду. Кроме имени и группы ресурсов виртуальной машины, необходимо указать регион ( **$region**), в котором она расположена. Укажите тип лицензии для виртуальной машины SQL Server, выбрав в рамках [Преимущества гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) один из вариантов: с оплатой по мере использования или с использованием собственной лицензии. Дополнительные сведения о лицензировании см. [здесь](licensing-model-azure-hybrid-benefit-ahb-change.md). 
 
 ```powershell
 New-AzSqlVM  -Name $vmname `
@@ -148,7 +149,7 @@ FullBackupWindowHours       :
 LogBackupFrequency          : 
 ```
 
-Если выходные данные показывают, что значение **Enable** равно **False** , то необходимо включить автоматическую архивацию. Хорошая новость состоит в том, что включить и настроить автоматическую архивацию можно точно так же. Этот процесс описан в следующем разделе.
+Если выходные данные показывают, что значение **Enable** равно **False**, то необходимо включить автоматическую архивацию. Хорошая новость состоит в том, что включить и настроить автоматическую архивацию можно точно так же. Этот процесс описан в следующем разделе.
 
 > [!NOTE] 
 > Если вы проверяете параметры сразу же после внесения изменений, возможно, вы увидите старые значения конфигурации. Подождите несколько минут и проверьте параметры, чтобы убедиться, что изменения были применены.
@@ -172,7 +173,7 @@ If (-Not $storage)
 > [!NOTE]
 > Служба автоматической архивации не поддерживает хранение резервных копий в хранилище уровня "Премиум", но может создавать резервные копии дисков виртуальных машин, которые используют хранилище уровня "Премиум".
 
-Затем с помощью **New-AzVMSqlServerAutoBackupConfig** включите и настройте параметры автоматической архивации для хранения архивных копий в учетной записи хранения Azure. В этом примере резервные копии хранятся в течение 10 дней. Вторая команда, **Set-AzVMSqlServerExtension** , обновляет указанную виртуальную машину Azure в соответствии с заданными параметрами.
+Затем с помощью **New-AzVMSqlServerAutoBackupConfig** включите и настройте параметры автоматической архивации для хранения архивных копий в учетной записи хранения Azure. В этом примере резервные копии хранятся в течение 10 дней. Вторая команда, **Set-AzVMSqlServerExtension**, обновляет указанную виртуальную машину Azure в соответствии с заданными параметрами.
 
 ```powershell
 $autobackupconfig = New-AzVMSqlServerAutoBackupConfig -Enable `
@@ -186,7 +187,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 Установка и настройка агента SQL Server IaaS занимают несколько минут.
 
 > [!NOTE]
-> Существуют и другие параметры для **New-AzVMSqlServerAutoBackupConfig** , которые применяются только для SQL Server 2016 и автоматической архивации версии 2. SQL Server 2014 не поддерживает следующие параметры: **BackupSystemDbs** , **BackupScheduleType** , **FullBackupFrequency** , **FullBackupStartHour** , **FullBackupWindowInHours** и **LogBackupFrequencyInMinutes**. При попытке настроить эти параметры на виртуальной машине SQL Server 2014 ошибки не возникают, но параметры не применяется. Если вы хотите использовать эти параметры на виртуальной машине SQL Server 2016, см. статью [Автоматическое резервное копирование (версия 2) для виртуальных машин SQL Server 2016 в Azure](automated-backup.md).
+> Существуют и другие параметры для **New-AzVMSqlServerAutoBackupConfig**, которые применяются только для SQL Server 2016 и автоматической архивации версии 2. SQL Server 2014 не поддерживает следующие параметры: **BackupSystemDbs**, **BackupScheduleType**, **FullBackupFrequency**, **FullBackupStartHour**, **FullBackupWindowInHours** и **LogBackupFrequencyInMinutes**. При попытке настроить эти параметры на виртуальной машине SQL Server 2014 ошибки не возникают, но параметры не применяется. Если вы хотите использовать эти параметры на виртуальной машине SQL Server 2016, см. статью [Автоматическое резервное копирование (версия 2) для виртуальных машин SQL Server 2016 в Azure](automated-backup.md).
 
 Чтобы включить шифрование, измените предыдущий сценарий таким образом, чтобы он передавал параметр **EnableEncryption** вместе с паролем (защищенной строкой) для параметра **CertificatePassword**. Следующий скрипт активирует параметры автоматической архивации их предыдущего примера и добавляет шифрование.
 
@@ -261,7 +262,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 Во-первых, можно опрашивать состояние, вызывая [msdb.smart_admin.sp_get_backup_diagnostics](/sql/relational-databases/system-stored-procedures/managed-backup-sp-get-backup-diagnostics-transact-sql). Можно также запрашивать функцию с табличным значением [msdb.smart_admin.fn_get_health_status](/sql/relational-databases/system-functions/managed-backup-fn-get-health-status-transact-sql).
 
 > [!NOTE]
-> Схема для управляемого резервного копирования в SQL Server 2014 — **msdb.smart_admin**. В SQL Server 2016 она изменена на **msdb.managed_backup** , и в справочных разделах используется именно новая схема. Но для SQL Server 2014 необходимо использовать схему **smart_admin** для всех объектов управляемого резервного копирования.
+> Схема для управляемого резервного копирования в SQL Server 2014 — **msdb.smart_admin**. В SQL Server 2016 она изменена на **msdb.managed_backup**, и в справочных разделах используется именно новая схема. Но для SQL Server 2014 необходимо использовать схему **smart_admin** для всех объектов управляемого резервного копирования.
 
 Другой вариант — воспользоваться преимуществами встроенного компонента Database Mail для отправки уведомлений.
 
