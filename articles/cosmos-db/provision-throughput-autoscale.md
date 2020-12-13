@@ -5,14 +5,14 @@ author: kirillg
 ms.author: kirillg
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 06/04/2020
+ms.date: 12/11/2020
 ms.custom: seo-nov-2020
-ms.openlocfilehash: aaedca5acf7861db05f0ec724e05449316379829
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: ba0dd347c4ee2cb41b34c2fc34f1848a7295dc3a
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337548"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368670"
 ---
 # <a name="create-azure-cosmos-containers-and-databases-with-autoscale-throughput"></a>Создание контейнеров и баз данных Azure Cosmos с автомасштабируемой пропускной способностью
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -59,7 +59,7 @@ ms.locfileid: "94337548"
 
 ## <a name="enable-autoscale-on-existing-resources"></a>Включение автомасштабирования для существующих ресурсов
 
-Используйте [портал Azure](how-to-provision-autoscale-throughput.md#enable-autoscale-on-existing-database-or-container) для включения автомасштабирования для существующей базы данных или контейнера. Вы также можете в любое время переключаться между автомасштабированием и стандартной пропускной способностью, подготовленной вручную. Дополнительные сведения см. в этой [документации](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work). В настоящее время для всех API можно использовать только портал Azure, чтобы включить Автомасштабирование для существующих ресурсов.
+Используйте [портал Azure](how-to-provision-autoscale-throughput.md#enable-autoscale-on-existing-database-or-container), [Azure Resource Manager шаблон](how-to-provision-autoscale-throughput.md#azure-resource-manager), интерфейс [командной строки](how-to-provision-autoscale-throughput.md#azure-cli) или [PowerShell](how-to-provision-autoscale-throughput.md#azure-powershell) , чтобы включить Автомасштабирование в существующей базе данных или контейнере. Вы также можете в любое время переключаться между автомасштабированием и стандартной пропускной способностью, подготовленной вручную. Дополнительные сведения см. в этой [документации](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work).
 
 ## <a name="throughput-and-storage-limits-for-autoscale"></a><a id="autoscale-limits"></a> Ограничения пропускной способности и хранилища при использовании автомасштабирования
 

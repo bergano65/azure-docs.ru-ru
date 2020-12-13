@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 0d5c9c4a0191c6d5effd8f6067cb6602ed239125
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 9751bd082947e66b3fc5ea47448857558301a1e7
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94329566"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366419"
 ---
 ### <a name="networking-limits---azure-resource-manager"></a><a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети — Azure Resource Manager
 Следующие ограничения применяются только к сетевым ресурсам, управление которыми осуществляется с помощью **Azure Resource Manager** для каждых региона и подписки. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
@@ -73,7 +73,7 @@ ms.locfileid: "94329566"
 | Правила на сетевой адаптер (для всех IP-адресов на сетевом адаптере) | 300                           |
 | Интерфейсные IP-конфигурации              | 600                           |
 | Размер серверного пула                       | 1000 IP-конфигураций, одна виртуальная сеть |
-| Внутренние ресурсы на Load Balancer<sup>1<sup> | 150                   |
+| Внутренние ресурсы на Load Balancer<sup>1<sup> | 250                   |
 | Порты с высоким уровнем доступности                 | 1 на внутренний интерфейс       |
 | Правила для исходящего трафика на Load Balancer        | 600                           |
 | Подсистем балансировки нагрузки на виртуальную машину                   | 2 (1 общедоступная и 1 внутренняя)   |

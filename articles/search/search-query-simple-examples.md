@@ -1,5 +1,5 @@
 ---
-title: Создание простого запроса
+title: Использование простого синтаксиса запроса Lucene
 titleSuffix: Azure Cognitive Search
 description: Изучите пример, запустив запросы на основе простого синтаксиса полнотекстового поиска, фильтра поиска, географического поиска и поиска по индексу Azure Когнитивный поиск.
 manager: nitinme
@@ -7,135 +7,115 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/09/2020
-ms.openlocfilehash: 027852216b3f2055a5a381d00aff94526953b898
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.date: 12/12/2020
+ms.openlocfilehash: 51d36211c7ffa0507a186c9a1e1f2b52d478fe4e
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007880"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369108"
 ---
-# <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в Azure Когнитивный поиск
+# <a name="use-the-simple-search-syntax-in-azure-cognitive-search"></a>Использование синтаксиса "простого" поиска в Azure Когнитивный поиск
 
-В Когнитивный поиск Azure [простой синтаксис запроса](query-simple-syntax.md) вызывает средство синтаксического анализа запросов по умолчанию для выполнения запросов полнотекстового поиска по индексу. Это средство синтаксического анализа работает быстро и обрабатывает распространенные сценарии, включая полнотекстовый поиск, фильтрованный и аспектный Поиск, а также географический поиск. 
+В Когнитивный поиск Azure [простой синтаксис запроса](query-simple-syntax.md) вызывает средство синтаксического анализа запросов по умолчанию для полнотекстового поиска. Средство синтаксического анализа работает быстро и обрабатывает распространенные сценарии, включая полнотекстовый поиск, фильтрованный и аспектный Поиск, а также Префиксный поиск. В этой статье приводятся примеры, иллюстрирующие простое использование синтаксиса в запросе [поиска документов (REST API)](/rest/api/searchservice/search-documents) .
 
-В этой статье мы будем использовать примеры для иллюстрации простого синтаксиса, заполняя `search=` параметр операции [поиска документов](/rest/api/searchservice/search-documents) .
+> [!NOTE]
+> Альтернативный синтаксис запросов — это [полная Lucene](query-lucene-syntax.md), поддерживающая более сложные структуры запросов, например поиск нечетких и подстановочных знаков. Дополнительные сведения и примеры см. [в разделе Использование полного синтаксиса Lucene](search-query-lucene-examples.md).
 
-Альтернативный синтаксис запросов — это [полная Lucene](query-lucene-syntax.md), поддерживающая более сложные структуры запросов, например поиск нечетких и подстановочных знаков, для обработки которых может потребоваться дополнительное время. Дополнительные сведения и примеры, демонстрирующие полный синтаксис, см. [в разделе Использование полного синтаксиса Lucene](search-query-lucene-examples.md).
+## <a name="nyc-jobs-examples"></a>Примеры заданий Нью
 
-Для отправки запросов выберите один из следующих средств и API-интерфейсов.
+В следующих примерах используется [индекс поиска заданий Нью](https://azjobsdemo.azurewebsites.net/) , состоящий из заданий, доступных на основе набора данных, предоставленного в городе Нью- [Йорк опендата](https://nycopendata.socrata.com/). Эти данные не являются текущими или завершенными. Индекс находится в службе "песочницы", предоставляемой корпорацией Майкрософт. Это означает, что для работы с этими запросами не требуется подписка Azure или Azure Когнитивный поиск.
 
-| Методика | Описание |
-|-------------|-------------|
-| [Обозреватель поиска (портал)](search-explorer.md) | Предоставляет панель поиска и параметры для выбора индекса и значения api-version. Будут возвращены результаты в виде документов JSON. Рекомендуется для изучения, тестирования и проверки. <br/>[Подробнее.](search-get-started-portal.md#query-index) | 
-| [POST или Visual Studio Code](search-get-started-rest.md) | Средства веб-тестирования отлично подходят для вызовов составления [поиска документов](/rest/api/searchservice/search-documents) . REST API поддерживает все программные операции в Когнитивный поиск Azure, поэтому запросы можно выдавать в интерактивном режиме, чтобы сосредоточиться на исследовании конкретной задачи.  |
-| [Сеарчклиент (.NET)](/dotnet/api/azure.search.documents.searchclient) | Клиент, который можно использовать для запроса индекса Когнитивный поиск Azure.  <br/>[Подробнее.](search-howto-dotnet-sdk.md)  |
+Для отправки HTTP-запроса по запросу GET или POST требуется соответствующее средство. Если вы не знакомы с этими инструментами, см. статью [Краткое руководство. изучение Azure Когнитивный поиск REST API](search-get-started-rest.md).
 
-## <a name="formulate-requests-in-postman"></a>Формирование запросов в Postman
+## <a name="set-up-the-request"></a>Настройка запроса
 
-В следующих примерах используется индекс поиска вакансий в Нью-Йорке, состоящий из вакансий, доступных на основе набора данных, полученных в рамках инициативы [City of New York OpenData](https://nycopendata.socrata.com/). Эти данные не являются текущими или завершенными. Индекс находится в службе "песочницы", предоставляемой корпорацией Майкрософт. Это означает, что для работы с этими запросами не требуется подписка Azure или Azure Когнитивный поиск.
+1. Заголовки запроса должны иметь следующие значения:
 
-Вам потребуется Postman или аналогичный инструмент для отправки HTTP-запроса GET. Дополнительные сведения см. в разделе [Краткое руководство. изучение REST API когнитивный Поиск Azure](search-get-started-rest.md).
+   | Ключ | Значение |
+   |-----|-------|
+   | Content-Type | `application/json`|
+   | api-key  | `252044BE3886FE4A8E3BAA4F595114BB` </br> (это фактический ключ API запроса для службы поиска "песочницы", в которой размещается индекс заданий Нью). |
 
-### <a name="set-the-request-header"></a>Настройка заголовка запроса
+1. Задайте для команды значение **`GET`** .
 
-1. В заголовке запроса задайте значение **Content-Type** для `application/json`.
+1. Задайте для URL-адреса значение **`https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&search=*&$count=true`** . 
 
-2. Добавьте элемент **api-key** и задайте для него следующую строку: `252044BE3886FE4A8E3BAA4F595114BB`. Это ключ запроса для службы поиска в песочнице, в которой размещен индекс поиска вакансий Нью-Йорка.
+   + Коллекция Documents в индексе содержит все содержимое, доступное для поиска. Ключ API запроса, указанный в заголовке запроса, работает только для операций чтения, предназначенных для коллекции Documents.
 
-Настроенный заголовок запроса можно многократно использовать для всех запросов в этой статье, только заменяя строку **search=**. 
+   + **`$count=true`** Возвращает количество документов, соответствующих условиям поиска. В пустой строке поиска счетчик будет содержать все документы в индексе (около 2558 в случае заданий Нью).
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-header.png" alt-text="Параметры набора заголовков запроса POST" border="false":::
+   + **`search=*`** является неопределенным запросом, эквивалентным null или пустым поиском. Это не особенно полезно, но это самый простой поиск, который можно сделать, и Показать все доступные для получения поля в индексе со всеми значениями.
 
-### <a name="set-the-request-url"></a>Настройка URL-адреса запроса
+1. В качестве шага проверки вставьте приведенный ниже запрос в раздел GET и щелкните **Отправить**. Будут возвращены результаты в виде подробных документов JSON.
 
-Запрос — это команда GET с URL-адресом, содержащим конечную точку Когнитивный поиск Azure и строку поиска.
+   ```http
+   https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=*&queryType=full
+   ```
 
-  :::image type="content" source="media/search-query-lucene-examples/postman-basic-url-request-elements.png" alt-text="Запрос POST заголовка GET" border="false":::
+### <a name="how-to-invoke-simple-query-parsing"></a>Как вызвать анализ простого запроса
 
-URL-адрес содержит следующие элементы.
-
-+ **`https://azs-playground.search.windows.net/`** — это служба поиска "песочницы", поддерживаемая командой разработчиков Когнитивный поиск Azure. 
-+ **`indexes/nycjobs/`** Индекс заданий Нью в коллекции индексов этой службы. Имя службы и индекс должны быть указаны в запросе.
-+ **`docs`** — Это коллекция Documents, содержащая все содержимое, доступное для поиска. Значение api-key в заголовке запроса подходит только для операций чтения, нацеленных на эту коллекцию документов.
-+ **`api-version=2020-06-30`** Задает версию API, которая является обязательным параметром при каждом запросе.
-+ **`search=*`** Строка запроса, которая в исходном запросе имеет значение null, возвращает первые 50 результатов (по умолчанию).
-
-## <a name="send-your-first-query"></a>Отправка первого запроса
-
-В качестве шага проверки вставьте приведенный ниже запрос в раздел GET и щелкните **Отправить**. Будут возвращены результаты в виде подробных документов JSON. Возвращаются все документы, что позволяет просматривать все поля и все значения.
-
-Вставьте этот URL-адрес в клиент RESTFUL в качестве шага проверки и просмотрите структуру документа.
-
-  ```http
-  https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=*
-  ```
-
-Строка запроса, **`search=*`** , является неопределенным поиском, эквивалентом null или пустым поиском. Этот запрос не очень полезен, но это самый простой поиск, который можно выполнить.
-
-При необходимости можно добавить **`$count=true`** в URL-адрес, чтобы вернуть число документов, соответствующих условиям поиска. При пустой строке поиска это будут все документы в индексе (примерно 2800 в случае вакансий в Нью-Йорке).
-
-## <a name="how-to-invoke-simple-query-parsing"></a>Как вызвать анализ простого запроса
-
-Для интерактивных запросов не нужно указывать дополнительные параметры: простой синтаксис используется по умолчанию. В коде, если вы ранее вызывали **queryType=full** для применения полного синтаксиса запросов, можно вернуть значение по умолчанию, **queryType=simple**.
-
-## <a name="example-1-field-scoped-query"></a>Пример 1. Запрос по полю
-
-Первый пример не связан с синтаксическим анализатором, но мы начали с него, чтобы представить первое фундаментальное понятие запроса: автономность. В этом примере задается область выполнения запроса и для ответа определяется всего несколько конкретных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
-
-Для краткости запрос нацелен только на поле *business_title* и указывает возвращаемые должности. Синтаксис **searchFields** ограничивает выполнение запроса только полем business_title и **выбирает**, какие поля должны быть включены в ответ.
-
-### <a name="partial-query-string"></a>Частичная строка запроса
+Для интерактивных запросов не нужно указывать дополнительные параметры: простой синтаксис используется по умолчанию. В коде, если был вызван ранее **`queryType=full`** , можно сбросить значение по умолчанию с помощью **`queryType=simple`** .
 
 ```http
-searchFields=business_title&$select=business_title&search=*
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+{
+    "count": true,
+    "queryType": "simple",
+    "search": "*"
+}
 ```
 
-Ниже приведен тот же запрос с несколькими полями в списке, разделенном запятыми.
+## <a name="example-1-full-text-search-on-specific-fields"></a>Пример 1. полнотекстовый поиск по конкретным полям
+
+Первый пример не связан с синтаксическим анализатором, но мы начали с него, чтобы представить первое фундаментальное понятие запроса: автономность. Этот пример ограничивает как выполнение запроса, так и ответ на несколько конкретных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
+
+Этот запрос предназначен только для *business_title* в **`searchFields`** , указывая с помощью **`select`** параметра то же поле в ответе.
 
 ```http
-search=*&searchFields=business_title, posting_type&$select=business_title, posting_type
-```
-
-### <a name="full-url"></a>Полный URL-адрес
-
-```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchFields=business_title&$select=business_title&search=*
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+{
+    "count": true,
+    "queryType": "simple",
+    "search": "*",
+    "searchFields": "business_title",
+    "select": "business_title"
+}
 ```
 
 Результат запроса должен выглядеть, как на снимке экрана ниже.
 
   :::image type="content" source="media/search-query-lucene-examples/postman-sample-results.png" alt-text="Пример ответа Postman" border="false":::
 
-Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. Когда вы добавите условие поиска, вы увидите, как оценки поиска превратятся в понятные значения.
+Вы могли заметить оценку поиска в ответе. Однородные баллы, равные **1** , происходят, когда нет ранга, так как поиск не является полнотекстовым поиском или не был предоставлен ни один критерий. Для пустого поиска строки возвращаются в произвольном порядке. Когда вы добавите условие поиска, вы увидите, как оценки поиска превратятся в понятные значения.
 
 ## <a name="example-2-look-up-by-id"></a>Пример 2. Поиск по идентификатору
 
-Это немного нетипичный пример. Однако при оценке поведения при поиске может потребоваться проверить все содержимое конкретного документа, чтобы понять, почему он был включен в результаты или исключен из них. Чтобы вернуть весь документ, используйте [операцию поиска](/rest/api/searchservice/lookup-document) для передачи идентификатора документа.
+При возврате результатов поиска в запросе логический последующий шаг заключается в предоставлении страницы сведений, которая содержит больше полей из документа. В этом примере показано, как вернуть один документ с помощью [операции уточняющего запроса](/rest/api/searchservice/lookup-document) для передачи идентификатора документа.
 
 Все документы имеют уникальный идентификатор. Чтобы проверить синтаксис запроса поиска, сначала получите список идентификаторов документов, чтобы найти в нем нужный идентификатор. В индексе вакансий в Нью-Йорке идентификаторы хранятся в поле `id`.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchFields=id&$select=id&search=*
+GET /indexes/nycjobs/docs?api-version=2020-06-30&search=*&$select=id&$count=true
 ```
 
-В следующем примере выполняется запрос поиска, возвращающий определенный документ по значению `id` "9E1E3AF9-0660-4E00-AF51-9B654925A2D5", которое было указано первым в предыдущем ответе. Следующий запрос возвращает весь документ, а не отдельные поля. 
+Затем извлеките документ из коллекции на основе `id` "9E1E3AF9-0660-4E00-AF51-9B654925A2D5", который был первым в предыдущем ответе. Следующий запрос возвращает все доступные для получения поля для всего документа.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs/9E1E3AF9-0660-4E00-AF51-9B654925A2D5?api-version=2020-06-30&$count=true&search=*
+GET /indexes/nycjobs/docs/9E1E3AF9-0660-4E00-AF51-9B654925A2D5?api-version=2020-06-30
 ```
 
 ## <a name="example-3-filter-queries"></a>Пример 3. Фильтрация запросов
 
-[Синтаксис фильтра](./search-query-odata-filter.md) — это выражение OData, которое можно использовать с параметром **search** или само по себе. Автономный фильтр без параметра поиска полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ (все оценки имеют значение 1), нет оценки и рейтинга. Обратите внимание, что строка поиска пуста.
+[Синтаксис фильтра](./search-query-odata-filter.md) — это выражение OData, которое можно использовать самостоятельно или с помощью **`search`** . Автономный фильтр без параметра поиска полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ (все оценки имеют значение 1), нет оценки и рейтинга. Обратите внимание, что строка поиска пуста.
 
 ```http
 POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
+      "count": true,
       "search": "",
       "filter": "salary_frequency eq 'Annual' and salary_range_from gt 90000",
-      "select": "job_id, business_title, agency, salary_range_from",
-      "count": "true"
+      "select": "job_id, business_title, agency, salary_range_from"
     }
 ```
 
@@ -143,16 +123,16 @@ POST /indexes/nycjobs/docs/search?api-version=2020-06-30
 
   :::image type="content" source="media/search-query-simple-examples/filtered-query.png" alt-text="Фильтр ответа на запрос" border="false":::
 
-Если вы хотите попробовать это в Postman, используя GET, вы можете вставить эту строку:
-
-```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,business_title,agency,salary_range_from&search=&$filter=salary_frequency eq 'Annual' and salary_range_from gt 90000
-```
-
 Еще один эффективный способ объединения фильтра и поиска заключается **`search.ismatch*()`** в критерии фильтра, где можно использовать поисковый запрос в фильтре. Это выражение фильтра использует подстановочный знак для термина *план*, чтобы выбрать должность business_title, содержащую термины "план", "планировщик", "планирование" и т. д.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,business_title,agency&search=&$filter=search.ismatch('plan*', 'business_title', 'full', 'any')
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "",
+      "filter": "search.ismatch('plan*', 'business_title', 'full', 'any')",
+      "select": "job_id, business_title, agency, salary_range_from"
+    }
 ```
 
 Дополнительные сведения о функции см. в [описании search.ismatch в разделе с примерами фильтров](./search-query-odata-full-text-search-functions.md#examples).
@@ -161,148 +141,201 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 Фильтрация диапазона поддерживается в **`$filter`** выражениях для любого типа данных. В следующих примерах выполняется поиск по числовым и строковым полям. 
 
-Типы данных важны в фильтрах диапазона и лучше всего работают, когда числовые данные находятся в числовых полях, а строковые данные — в строковых. Числовые данные в строковых полях не подходят для диапазонов, так как числовые строки не сравнимы в Azure Когнитивный поиск. 
+Типы данных важны в фильтрах диапазона и лучше всего работают, когда числовые данные находятся в числовых полях, а строковые данные — в строковых. Числовые данные в строковых полях не подходят для диапазонов, так как числовые строки не сравнимы в Azure Когнитивный поиск.
 
-Следующие примеры приведены в формате POST для удобства чтения (числовой диапазон, за которым следует текстовый диапазон):
+Следующий запрос является числовым диапазоном:
 
 ```http
 POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
+      "count": true,
       "search": "",
       "filter": "num_of_positions ge 5 and num_of_positions lt 10",
       "select": "job_id, business_title, num_of_positions, agency",
-      "orderby": "agency",
-      "count": "true"
+      "orderby": "agency"
     }
 ```
+Результат запроса должен выглядеть, как на снимке экрана ниже.
+
   :::image type="content" source="media/search-query-simple-examples/rangefilternumeric.png" alt-text="Фильтр диапазона для числовых диапазонов" border="false":::
 
+В этом запросе диапазон находится над строковым полем (business_title):
 
 ```http
 POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
+      "count": true,
       "search": "",
       "filter": "business_title ge 'A*' and business_title lt 'C*'",
       "select": "job_id, business_title, agency",
-      "orderby": "business_title",
-      "count": "true"
+      "orderby": "business_title"
     }
 ```
 
+Результат запроса должен выглядеть, как на снимке экрана ниже.
+
   :::image type="content" source="media/search-query-simple-examples/rangefiltertext.png" alt-text="Фильтр диапазона для текстовых диапазонов" border="false":::
 
-Вы также можете попробовать их в Postman, используя GET:
-
-```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&search=&$filter=num_of_positions ge 5 and num_of_positions lt 10&$select=job_id, business_title, num_of_positions, agency&$orderby=agency&$count=true
-```
-
-```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&search=&$filter=business_title ge 'A*' and business_title lt 'C*'&$select=job_id, business_title, agency&$orderby=business_title&$count=true
-```
-
 > [!NOTE]
-> В приложениях поиска часто используется фасетная навигация на основе диапазонов значений. Дополнительные сведения и примеры создания фильтров для структур фасетной навигации см. в разделе ["Фильтрация по диапазону значений" в статье *Как реализовать фасетную навигацию в службе поиска Azure*](search-faceted-navigation.md#filter-based-on-a-range).
+> В приложениях поиска часто используется фасетная навигация на основе диапазонов значений. Дополнительные сведения и примеры см. [в разделе Создание фильтра аспектов](search-filters-facets.md).
 
 ## <a name="example-5-geo-search"></a>Пример 5. Геопространственный поиск
 
-Индекс выборки включает в себя поле geo_location с координатами широты и долготы. В этом примере используется [функция geo.distance](./search-query-odata-geo-spatial-functions.md#examples), которая фильтрует документы в пределах окружности начальной точки до произвольного расстояния (в километрах), которое вы предоставляете. Вы можете отрегулировать последнее значение в запросе (4), чтобы уменьшить или увеличить площадь поверхности запроса.
-
-Следующий пример приведен в формате POST для удобства чтения:
+Индекс выборки включает в себя поле geo_location с координатами широты и долготы. В этом примере используется [функция geo.distance](search-query-odata-geo-spatial-functions.md#examples), которая фильтрует документы в пределах окружности начальной точки до произвольного расстояния (в километрах), которое вы предоставляете. Вы можете отрегулировать последнее значение в запросе (4), чтобы уменьшить или увеличить площадь поверхности запроса.
 
 ```http
 POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
+      "count": true,
       "search": "",
       "filter": "geo.distance(geo_location, geography'POINT(-74.11734 40.634384)') le 4",
-      "select": "job_id, business_title, work_location",
-      "count": "true"
+      "select": "business_title, work_location"
     }
 ```
-Для более удобочитаемых результатов результаты поиска усекаются, чтобы включить идентификатор задания, должность и рабочий ресурс. Начальные координаты были получены из случайного документа в индексе (в данном случае для места работы в Статен-Айленде).
 
-Вы также можете попробовать их в Postman, используя GET:
+Для более удобочитаемых результатов результаты поиска будут обрезаны, чтобы они включали название задания и рабочий ресурс. Начальные координаты были получены из случайного документа в индексе (в данном случае для места работы в Статен-Айленде).
 
-```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=&$select=job_id, business_title, work_location&$filter=geo.distance(geo_location, geography'POINT(-74.11734 40.634384)') le 4
-```
+  :::image type="content" source="media/search-query-simple-examples/geo-search.png" alt-text="Схема острова Стейтэн" border="false":::
 
 ## <a name="example-6-search-precision"></a>Пример 6. Точность поиска
 
 Запросы терминов позволяют искать одиночные термины или наборы терминов, которые оцениваются независимо друг от друга. Запросы фраз заключаются кавычки и проверяются как буквальная строка. Точностью соответствия управляют операторы и параметр searchMode.
 
-Пример 1. **`&search=fire`**  возвращает 150 результатов, где все совпадения содержат слово Fire где-нибудь в документе.
+Пример 1. `search=fire`  совпадение с результатами в 140, где все совпадения содержат слово Fire где-нибудь в документе.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=fire
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "fire"
+    }
 ```
 
-Пример 2. **`&search=fire department`** возвращает 2002 результатов. Возвращаются документы, содержащие слово "fire" или "department".
+Пример 2. `search=fire department` возвращает 2002 результата. Возвращаются документы, содержащие слово "fire" или "department".
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=fire department
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "fire department"
+    }
 ```
 
-Пример 3. **`&search="fire department"`** возвращает 82 результатов. Заключение строки в кавычки позволяет выполнить буквальный поиск обоих терминов, и в индексе, состоящем из объединенных терминов, найдены совпадения с терминами, снабженными маркером. Это объясняет, почему поиск **`search=+fire +department`** , например, не эквивалентен. Оба термина являются обязательными, но их наличие проверяется независимо друг от друга. 
+Пример 3. `search="fire department"` возвращает 77 результатов. При заключении строки в кавычки создается Поиск по фразам, состоящий из обоих терминов, а совпадения обнаруживаются по маркерам в индексе, состоящим из Объединенных терминов. Это объясняет, почему поисковый запрос `search=+fire +department` не является эквивалентным. Оба термина являются обязательными, но их наличие проверяется независимо друг от друга. 
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search="fire department"
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+    "count": true,
+    "search": "\"fire department\""
+    }
 ```
+
+> [!Note]
+> Поскольку запрос фразы задается в кавычках, в этом примере добавляется escape-символ ( `\` ) для сохранения синтаксиса.
 
 ## <a name="example-7-booleans-with-searchmode"></a>Пример 7. Логические операторы с параметром searchMode
 
-Простой синтаксис поддерживает логические операторы в виде знаков (`+, -, |`). Параметр searchMode задает компромисс между точностью и полнотой результатов. `searchMode=any` позволяет отдать предпочтение полноте (в результирующий набор добавляется любой документ, соответствующий любому заданному условию), а `searchMode=all` позволяет отдать предпочтение точности (все условия должны быть выполнены). По умолчанию используется `searchMode=any`, что может порождать неожиданные результаты, если вы формируете запрос с несколькими операторами и получаете больше результатов, а не сокращаете их число до более точных. Это особенно верно для оператора NOT, когда результаты включают в себя все документы, которые "не содержат" конкретный термин.
+Простой синтаксис поддерживает логические операторы в виде знаков (`+, -, |`). Параметр searchMode информирует о компромиссах между точностью и отзывом, при **`searchMode=any`** этом при помощи вызова Call (Match для любого критерия определяется документ для результирующего набора) и **`searchMode=all`** точность (все условия должны быть сопоставлены). 
 
-С помощью параметра searchMode по умолчанию (any) возвращаются 2800 документов. Это документы, которые содержат составной термин "fire department", а также все документы, в которых нет термина "Metrotech Center".
+Значение по умолчанию — **`searchMode=any`** , что может быть запутанным, если вы накладываете запрос с несколькими операторами и получаете более широкие вместо более узких результатов. Это особенно верно для оператора NOT, когда результаты включают в себя все документы, которые "не содержат" конкретный термин.
+
+При использовании searchMode по умолчанию (Any) возвращаются документы 2800: те, которые содержат фразу «пожарный отдел», а также все документы, у которых нет фразы «Метротеч Center».
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=any&search="fire department"  -"Metrotech Center"
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "\"fire department\"-\"Metrotech Center\"",
+      "searchMode": "any"
+    }
 ```
+
+Результат запроса должен выглядеть, как на снимке экрана ниже.
 
   :::image type="content" source="media/search-query-simple-examples/searchmodeany.png" alt-text="режим поиска &quot;любой&quot;" border="false":::
 
-Изменение значения параметра searchMode на `all` обеспечивает эффект накопления условий и возвращает меньший результирующий набор — 21 документ. Это документы, содержащие фразу ""fire department", кроме вакансий по адресу Metrotech Center.
+Изменение для **`searchMode=all`** применения совокупного воздействия на критерии и возвращает меньший результирующий набор — 21 документ, состоящий из документов, содержащих целую фразу «пожарный отдел», за вычетом этих заданий по адресу Метротеч Center.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=all&search="fire department"  -"Metrotech Center"
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "\"fire department\"-\"Metrotech Center\"",
+      "searchMode": "all"
+    }
 ```
+
   :::image type="content" source="media/search-query-simple-examples/searchmodeall.png" alt-text="режим поиска &quot;все&quot;" border="false":::
 
 ## <a name="example-8-structuring-results"></a>Пример 8. Структурирование результатов
 
-Несколько параметров управляют тем, какие поля добавляются в результаты поиска, числом документов, возвращаемых в каждом пакете, и порядком сортировки. В этом примере используются некоторые из предыдущих примеров, но результаты ограничиваются конкретными полями с помощью оператора **$select** и условия буквального поиска. Результат содержит 82 совпадения. 
+Несколько параметров управляют тем, какие поля добавляются в результаты поиска, числом документов, возвращаемых в каждом пакете, и порядком сортировки. В этом примере переводятся некоторые из предыдущих примеров, ограничивающие результаты конкретными полями с помощью **`$select`** оператора и условий поиска точных выражений, возвращая 82 соответствий.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "\"fire department\"",
+      "searchMode": "any",
+      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description"
+    }
 ```
+
 Они добавлены к предыдущему примеру, и их можно отсортировать по заголовку. Сортировка работает, так как поле civil_service_title является *сортируемым* в индексе.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "\"fire department\"",
+      "searchMode": "any",
+      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description",
+      "orderby": "civil_service_title"
+    }
 ```
 
-Разбиение результатов по страницам реализуется с помощью параметра **$top**. В этом случае возвращаются первые 5 документов.
+Результаты разбиения на страницы реализуются с помощью **`$top`** параметра. в этом случае возвращаются пять первых документов:
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=0
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "\"fire department\"",
+      "searchMode": "any",
+      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description",
+      "orderby": "civil_service_title",
+      "top": "5"
+    }
 ```
 
 Чтобы получить следующие 5 документов, пропустите первый пакет.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=5
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
+    {
+      "count": true,
+      "search": "\"fire department\"",
+      "searchMode": "any",
+      "select": "job_id,agency,business_title,civil_service_title,work_location,job_description",
+      "orderby": "civil_service_title",
+      "top": "5",
+      "skip": "5"
+    }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-Попробуйте указать запросы в коде. Чтобы узнать о том, как настроить поисковые запросы для .NET и REST API, используя простой синтаксис по умолчанию, воспользуйтесь приведенными ссылками.
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Запрос индекса с помощью пакета SDK для .NET](./search-get-started-dotnet.md)
-* [Запрос индекса с помощью REST API](./search-get-started-powershell.md)
+Попробуйте указать запросы в коде. Следующие ссылки содержат сведения о настройке поисковых запросов с помощью пакетов SDK для Azure.
+
++ [Запрос индекса с помощью пакета SDK для .NET](search-get-started-dotnet.md)
++ [Запрос индекса с помощью пакета SDK для Python](search-get-started-python.md)
++ [Запрос индекса с помощью пакета SDK для JavaScript](search-get-started-javascript.md)
 
 Дополнительные справочные материалы по синтаксису, архитектуре запросов и примеры можно найти по следующим ссылкам:
 
 + [Примеры синтаксиса запросов Lucene для создания расширенных запросов](search-query-lucene-examples.md)
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Простой синтаксис запросов](/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [Полный запрос Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
-+ [Фильтры и синтаксис Orderby](/rest/api/searchservice/odata-expression-syntax-for-azure-search)
++ [Простой синтаксис запросов](query-simple-syntax.md)
++ [Полный синтаксис запроса Lucene](query-lucene-syntax.md)
++ [Синтаксис фильтра](search-query-odata-filter.md)

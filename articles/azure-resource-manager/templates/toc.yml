@@ -515,6 +515,8 @@
       href: /python/api/overview/azure/resources?view=azure-python
 - name: Ресурсы
   items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/paths/deploy-manage-resource-manager-templates/
     - name: Шаблоны быстрого запуска Azure
       href: 'https://azure.microsoft.com/resources/templates/'
     - name: Стратегия развития Azure

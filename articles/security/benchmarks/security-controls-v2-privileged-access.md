@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: d6676187f87cecb7f876150d1582cde9051dd251
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: f6c990b3ce5edaab4d2ce6600c0291272058e092
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367488"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369299"
 ---
 # <a name="security-control-v2-privileged-access"></a>Управление безопасностью v2: привилегированный доступ
 
@@ -20,7 +20,7 @@ ms.locfileid: "92367488"
 
 ## <a name="pa-1-protect-and-limit-highly-privileged-users"></a>PA-1: защита и ограничение пользователей с высоким уровнем привилегий
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-1 | 4,3, 4,8 | AC-2 |
 
@@ -32,17 +32,17 @@ ms.locfileid: "92367488"
 
 Примечание. у вас могут быть другие критически важные роли, которыми необходимо управлять при использовании пользовательских ролей с назначенными привилегированными разрешениями. Кроме того, может потребоваться применить аналогичные элементы управления к учетной записи администратора критических бизнес-ресурсов.  
 
-Вы можете включить привилегированный доступ (JIT) для ресурсов Azure и Azure AD с помощью Azure AD Privileged Identity Management (PIM). JIT предоставляет временные разрешения на выполнение привилегированных задач только в том случае, если это требуется пользователям. PIM также может создавать оповещения системы безопасности при наличии подозрительных или ненадежных действий в Организации Azure AD.
+Вы можете разрешить пользователям привилегированный JIT-доступ к ресурсам Azure и Azure AD с помощью Azure AD Privileged Identity Management (PIM). JIT-доступ предоставляет временные разрешения на выполнение привилегированных задач только в том случае, если это необходимо пользователям. PIM также может создавать оповещения безопасности при обнаружении подозрительных или небезопасных действий в организации Azure AD.
 
-- [Разрешения роли администратора в Azure AD](../../active-directory/roles/permissions-reference.md)
+- [Разрешения роли администратора в Azure Active Directory](../../active-directory/roles/permissions-reference.md)
 
-- [Использование оповещений системы безопасности Azure управление привилегированными пользователями](../../active-directory/privileged-identity-management/pim-how-to-configure-security-alerts.md)
+- [Использование оповещений системы безопасности в рамках управления привилегированными пользователями Azure](../../active-directory/privileged-identity-management/pim-how-to-configure-security-alerts.md)
 
 - [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/roles/security-planning.md)
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Управление удостоверениями и ключами](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
@@ -54,7 +54,7 @@ ms.locfileid: "92367488"
 
 ## <a name="pa-2-restrict-administrative-access-to-business-critical-systems"></a>PA-2: ограничение административного доступа к системам, критически важным для бизнеса
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-2 | 13,2, 2,10 | AC-2, SC-3, SC-7 |
 
@@ -72,7 +72,7 @@ ms.locfileid: "92367488"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Управление удостоверениями и ключами](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
@@ -80,9 +80,9 @@ ms.locfileid: "92367488"
 
 - [Архитектура безопасности](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
-## <a name="pa-3-review-and-reconcile-user-access-regularly"></a>PA-3: регулярное изучение и согласование доступа пользователей
+## <a name="pa-3-review-and-reconcile-user-access-regularly"></a>PA-3: регулярная проверка и сверка доступа пользователей
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-3 | 4,1, 16,9, 16,10 | AC-2 |
 
@@ -93,11 +93,11 @@ ms.locfileid: "92367488"
 
 - [Создание проверки доступа для ролей ресурсов Azure в управление привилегированными пользователями (PIM)](../../active-directory/privileged-identity-management/pim-resource-roles-start-access-review.md)
 
-- [Как использовать проверки подлинности и доступа Azure AD](../../active-directory/governance/access-reviews-overview.md)
+- [Использование проверок доступа для идентификации Azure AD](../../active-directory/governance/access-reviews-overview.md)
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Управление удостоверениями и ключами](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
@@ -105,9 +105,9 @@ ms.locfileid: "92367488"
 
 - [Управление соответствием требованиям безопасности](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
-## <a name="pa-4-set-up-emergency-access-in-azure-ad"></a>PA-4: Настройка аварийного доступа в Azure AD
+## <a name="pa-4-set-up-emergency-access-in-azure-ad"></a>PA-4: настройка аварийного доступа в Azure AD
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-4 | 16 | AC-2, CP-2 |
 
@@ -118,7 +118,7 @@ ms.locfileid: "92367488"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Управление удостоверениями и ключами](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
@@ -130,7 +130,7 @@ ms.locfileid: "92367488"
 
 ## <a name="pa-5-automate-entitlement-management"></a>PA-5: Автоматизация управления назначениями
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-5 | 16 | AC-2, AC-5, PM-10 |
 
@@ -141,7 +141,7 @@ ms.locfileid: "92367488"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Управление удостоверениями и ключами](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
@@ -151,11 +151,11 @@ ms.locfileid: "92367488"
 
 ## <a name="pa-6-use-privileged-access-workstations"></a>PA-6: использование рабочих станций с привилегированным доступом
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-6 | 4,6, 11,6, 12,12 | AC-2, SC-3, SC-7 |
 
-Защищенные изолированные рабочие станции критически важны для защиты конфиденциальных ролей, таких как администраторы, разработчики и критические операторы обслуживания. Используйте высокозащищенные рабочие станции пользователей и (или) Azure бастиона для административных задач. Чтобы развернуть защищенную и управляемую рабочую станцию для административных задач, используйте Azure Active Directory, расширенный уровень защиты от угроз Microsoft Defender (ATP) и (или) Microsoft Intune. Защищенные рабочие станции можно централизованно управлять, чтобы обеспечить безопасную настройку, включая надежную проверку подлинности, базовые показатели программного обеспечения и оборудования, а также ограниченный логический и сетевой доступ. 
+Защищенные изолированные рабочие станции критически важны для защиты конфиденциальных ролей, таких как администраторы, разработчики и критические операторы обслуживания. Используйте высокозащищенные рабочие станции пользователей и (или) Azure бастиона для административных задач. Чтобы развернуть защищенную и управляемую рабочую станцию для административных задач, используйте Azure Active Directory, Advanced Threat Protection в Microsoft Defender и (или) Microsoft Intune. Защищенные рабочие станции можно централизованно управлять, чтобы обеспечить безопасную настройку, включая надежную проверку подлинности, базовые показатели программного обеспечения и оборудования, а также ограниченный логический и сетевой доступ. 
 
 - [Общие сведения о рабочих станциях с привилегированным доступом](../../active-directory/devices/concept-azure-managed-workstation.md)
 
@@ -163,7 +163,7 @@ ms.locfileid: "92367488"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность приложений и DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
@@ -171,24 +171,24 @@ ms.locfileid: "92367488"
 
 - [Управление удостоверениями и ключами](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
-## <a name="pa-7-follow-just-enough-administration-least-privilege-principle"></a>PA-7: соблюдение достаточного администрирования (принцип минимальных привилегий)
+## <a name="pa-7-follow-just-enough-administration-least-privilege-principle"></a>PA-7. Использование Just Enough Administration (принцип предоставления наименьших прав)
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-7 | 14,6 | AC-2, AC-3, SC-3 |
 
 Управление доступом на основе ролей Azure (Azure RBAC) позволяет управлять доступом к ресурсам Azure с помощью назначений ролей. Эти роли можно назначить пользователям, субъектам групповых служб и управляемым удостоверениям. Существуют предварительно определенные встроенные роли для определенных ресурсов, и эти роли могут быть учтены или запрошены с помощью таких средств, как Azure CLI, Azure PowerShell и портал Azure. Привилегии, назначаемые ресурсам через Azure RBAC, всегда должны быть ограничены всеми требованиями ролей. Ограниченные привилегии дополняют JIT-подход Azure AD Privileged Identity Management (PIM), и эти привилегии следует периодически проверять.
-Используйте встроенные роли для выделения разрешения и создания настраиваемой роли только при необходимости. 
+Используйте встроенные роли для выделения привилегии. Создавать настраиваемые роли можно только при необходимости. 
 
 - [Что такое управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md)
 
 - [Настройка Azure RBAC](../../role-based-access-control/role-assignments-portal.md)
 
-- [Как использовать проверки подлинности и доступа Azure AD](../../active-directory/governance/access-reviews-overview.md)
+- [Использование проверок доступа для идентификации Azure AD](../../active-directory/governance/access-reviews-overview.md)
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность приложений и DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
@@ -200,7 +200,7 @@ ms.locfileid: "92367488"
 
 ## <a name="pa-8-choose-approval-process-for-microsoft-support"></a>PA-8: выберите процесс утверждения для службы поддержки Майкрософт 
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | PA-8 | 16 | AC-2 (AC-3), AC-4 |
 
@@ -210,7 +210,7 @@ ms.locfileid: "92367488"
 
 **Ответственность**: Customer
 
-**Заинтересованные лица по безопасности клиентов** (дополнительные[сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Безопасность приложений и DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 

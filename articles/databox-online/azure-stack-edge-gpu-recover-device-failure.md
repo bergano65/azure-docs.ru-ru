@@ -6,20 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 10/06/2020
+ms.date: 12/11/2020
 ms.author: alkohli
-ms.openlocfilehash: bf4d0a845b7f26c82ba3940d6613a33bcacf9187
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e5734591bfc48469eacc1ad39cbb89f3850bfc8c
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448337"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97367072"
 ---
 # <a name="recover-from-a-failed-azure-stack-edge-pro-gpu-device"></a>Восстановление после неудачного Azure Stack устройства GPU с пограничным Pro 
 
 В этой статье описывается, как выполнить восстановление после неприемлемой сбоя на устройстве с Azure Stack ребра Pro GPU. Для приемлемой сбоя на устройстве с графическим процессором с пограничным управлением Azure Stack требуется замена устройства.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Убедитесь в наличии следующих элементов.
 
@@ -35,12 +35,12 @@ ms.locfileid: "96448337"
 
 Выполните следующие действия, чтобы настроить заменяющее устройство.
 
-1. Соберите сведения, необходимые в [контрольном списке развертывания](azure-stack-edge-gpu-deploy-checklist.md). Следует использовать сведения, сохраненные в предыдущей конфигурации устройства. 
+1. Соберите сведения, необходимые в [контрольном списке развертывания](azure-stack-edge-gpu-deploy-checklist.md). Вы можете использовать информацию, сохраненную из предыдущей конфигурации устройства. 
 1. Закажите новое устройство той же конфигурации, в которой произошел сбой.  Чтобы разместить заказ, [Создайте новый ресурс Azure Stack ребра](azure-stack-edge-gpu-deploy-prep.md#) в портал Azure.
 1. [Распаковка](azure-stack-edge-gpu-deploy-install.md#unpack-the-device), [Подключение к стойке](azure-stack-edge-gpu-deploy-install.md#rack-the-device) и [кабель устройства](azure-stack-edge-gpu-deploy-install.md#cable-the-device). 
 1. [Подключитесь к локальному пользовательскому интерфейсу устройства](azure-stack-edge-gpu-deploy-connect.md).
-1. Настройте сеть, используя те же IP-адреса, которые использовались для старого устройства. Это снизит влияние на все клиентские компьютеры, используемые в вашей среде. См. раздел [Настройка параметров сети](azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md).
-1. Назначьте то же имя устройства и домен DNS, что и для старого устройства. Это гарантирует, что клиенты смогут использовать одно и то же имя устройства для взаимодействия с новым устройством. См. раздел [Настройка параметров устройства](azure-stack-edge-gpu-deploy-set-up-device-update-time.md).
+1. Настройте сеть, используя те же IP-адреса, которые использовались для старого устройства. Использование одних и тех же IP-адресов позволит снизить влияние на все клиентские компьютеры, используемые в вашей среде. См. раздел [Настройка параметров сети](azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md).
+1. Назначьте то же имя устройства и домен DNS, что и для старого устройства. Таким образом, клиенты могут использовать одно и то же имя устройства для взаимодействия с новым устройством. См. раздел [Настройка параметров устройства](azure-stack-edge-gpu-deploy-set-up-device-update-time.md).
 1. Настройте сертификаты на новом устройстве так же, как и для старого устройства. Помните, что новое устройство имеет новый серийный номер узла. Если вы использовали собственные сертификаты на старом устройстве, вам нужно будет получить новый сертификат узла. См. раздел [Настройка сертификатов](azure-stack-edge-gpu-deploy-configure-certificates.md).
 1. Получите ключ активации из портал Azure и активируйте новое устройство. См. раздел [Активация устройства](azure-stack-edge-gpu-deploy-activate.md).
 
@@ -53,7 +53,7 @@ ms.locfileid: "96448337"
 1. [Добавьте общие папки](azure-stack-edge-j-series-manage-shares.md#add-a-share) с теми же именами, которые были созданы ранее на неисправном устройстве. Убедитесь, что при создании общих папок **выберите параметр контейнер больших двоичных объектов** установлен на **использование существующего** параметра, а затем выберите контейнер, который использовался с предыдущим устройством.
 1. [Добавьте пользователей](azure-stack-edge-j-series-manage-users.md#add-a-user) , имеющих доступ к предыдущему устройству.
 1. [Добавьте учетные записи хранения](azure-stack-edge-j-series-manage-storage-accounts.md#add-an-edge-storage-account) , связанные с общими папками, которые ранее находились на устройстве. При создании учетных записей хранения пограничных данных выберите из существующего контейнера и укажите контейнер, сопоставленный с учетной записью хранения Azure, сопоставленной с предыдущим устройством. Все данные с устройства, записанные в учетную запись хранения пограничных данных на предыдущем устройстве, были отправлены в выбранный контейнер хранилища в сопоставленной учетной записи хранения Azure.
-1. [Обновите данные общего доступа](azure-stack-edge-j-series-manage-shares.md#refresh-shares) из Azure. Это приведет к извлекать все облачные данные из существующего контейнера в общие папки.
+1. [Обновите данные общего доступа](azure-stack-edge-j-series-manage-shares.md#refresh-shares) из Azure. В результате все облачные данные из существующего контейнера извлекаются в общие папки.
 
 ## <a name="restore-edge-local-shares"></a>Восстановление граничных локальных общих папок
 
@@ -62,12 +62,13 @@ ms.locfileid: "96448337"
 | Стороннее программное обеспечение           | Ссылка на решение                               |
 |--------------------------------|---------------------------------------------------------|
 | Cohesity                       | [https://www.cohesity.com/solution/cloud/azure/](https://www.cohesity.com/solution/cloud/azure/) <br> Для получения дополнительных сведений обратитесь к Cohesity.          |
-| Commvault                      | https://www.commvault.com/azure <br> Для получения дополнительных сведений обратитесь к Commvault. |
-| Компанию                        | http://veritas.com/azure <br> Для получения дополнительных сведений обратитесь в компанию Veritas.   |
+| Commvault                      | [https://www.commvault.com/azure](https://www.commvault.com/azure) <br> Для получения дополнительных сведений обратитесь к Commvault. |
+| Компанию                        | [http://veritas.com/azure](http://veritas.com/azure) <br> Для получения дополнительных сведений обратитесь в компанию Veritas.   |
+| Veeam                          | [https://www.veeam.com/kb4041](https://www.veeam.com/kb4041) <br> Для получения дополнительных сведений обратитесь к Veeam. |
 
 После полной настройки устройства замены включите его для локального хранилища. 
 
-Чтобы восстановить данные из локальных общих папок, выполните следующие действия. 
+Чтобы восстановить данные из локальных общих папок, выполните следующие действия.
 
 1. [Настройка вычислений на устройстве](azure-stack-edge-gpu-deploy-configure-compute.md).
 1. [Добавьте локальный общий ресурс](azure-stack-edge-j-series-manage-shares.md#add-a-local-share) обратно.
@@ -79,12 +80,13 @@ ms.locfileid: "96448337"
 
 
 
-| Решения для архивации        | Поддерживаемая ОС   | Справочник                                                                |
+| Решения для архивации        | Поддерживаемая ОС   | Ссылка                                                                |
 |-------------------------|----------------|--------------------------------------------------------------------------|
 | Агент Службы восстановления Microsoft Azure (MARS) для Azure Backup | Windows        | [Сведения об агенте MARS](../backup/backup-azure-about-mars.md)    |
-| Cohesity                | Windows, Linux | [Краткое описание решения Microsoft Azure интеграции, резервного копирования и восстановления](https://www.cohesity.com/solution/cloud/azure) <br>Для получения дополнительных сведений обратитесь к Cohesity.                          |
-| Commvault               | Windows, Linux | https://www.commvault.com/azure <br> Для получения дополнительных сведений обратитесь к Commvault.
-| Компанию                 | Windows, Linux | http://veritas.com/azure <br> Для получения дополнительных сведений обратитесь в компанию Veritas.                    |
+| Cohesity                | Windows, Linux | [Microsoft Azure интеграция, решение для восстановления резервной копии &](https://www.cohesity.com/solution/cloud/azure) <br>Для получения дополнительных сведений обратитесь к Cohesity.                          |
+| Commvault               | Windows, Linux | [https://www.commvault.com/azure](https://www.commvault.com/azure) <br> Для получения дополнительных сведений обратитесь к Commvault.
+| Компанию                 | Windows, Linux | [https://vox.veritas.com/t5/Protection/Protecting-Azure-Stack-edge-with-NetBackup/ba-p/883370](https://vox.veritas.com/t5/Protection/Protecting-Azure-Stack-edge-with-NetBackup/ba-p/883370) <br> Для получения дополнительных сведений обратитесь в компанию Veritas.                    |
+| Veeam                   | Windows, Linux | [https://www.veeam.com/kb4041](https://www.veeam.com/kb4041) <br> Для получения дополнительных сведений обратитесь к Veeam. |
 
 После полной настройки устройства замены можно повторно развернуть виртуальные машины с использованием ранее использованного образа виртуальной машины. 
 
@@ -94,6 +96,10 @@ ms.locfileid: "96448337"
 1. Установите решение для защиты данных на виртуальной машине.
 1. Выполните процедуру восстановления, предоставленную решением "Защита данных" по выбору. См. ссылки из предыдущей таблицы.
 
+## <a name="restore-a-kubernetes-deployment"></a>Восстановление развертывания Kubernetes
+
+Если вы выполнили развертывание Kubernetes с помощью Azure Arc, вы можете восстановить развертывание после сбоя устройства, отличного от приемлемой. Необходимо повторно развернуть приложение или контейнеры клиента из репозитория, в `git` котором хранится определение приложения. [Сведения о развертывании Kubernetes с помощью дуги Azure](./azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md)<!--Original text: Kubernetes deployments can be restored from a non-tolerated failure with the device when deployed with Azure Arc. Customer application/containers deployed onto a Kubernetes on Azure Stack Edge via Azure Arc can be redeployed from the git repository where the application definition is. Here is a link to the article to deploy Kubernetes with Arc -->
+ 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [вернуть устройство Pro Azure Stack](azure-stack-edge-return-device.md).

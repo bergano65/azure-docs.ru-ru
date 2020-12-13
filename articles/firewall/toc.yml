@@ -87,8 +87,6 @@
     - name: Мониторинг журналов диагностики
       href: firewall-diagnostics.md
       displayName: 'Azure CLI, az monitor diagnostic-settings create, monitor diagnostic settings'
-    - name: Журналы Azure Monitor
-      href: log-analytics-samples.md
     - name: Книга Брандмауэра Azure
       href: firewall-workbook.md
 - name: Справочник

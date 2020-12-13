@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: e74994847608b7fb59a1bf507691f02cf02b714a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 937d0b379c4f669e5b57e5053d5e3bffeb091e78
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408895"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368959"
 ---
 # <a name="security-control-v2-endpoint-security"></a>Управление безопасностью v2: безопасность конечных точек
 
@@ -20,7 +20,7 @@ ms.locfileid: "94408895"
 
 ## <a name="es-1-use-endpoint-detection-and-response-edr"></a>ES-1. Использование обнаружения конечных точек и ответа (ЕДР)
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | ES-1 | 8.1 | SI-2, SI-3, SC-3 |
 
@@ -34,7 +34,7 @@ ms.locfileid: "94408895"
 
 - [Служба ATP в защитнике Майкрософт для серверов, отличных от Windows](/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-non-windows)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -48,7 +48,7 @@ ms.locfileid: "94408895"
 
 ## <a name="es-2-use-centrally-managed-modern-anti-malware-software"></a>ES-2. Использование централизованно управляемого современного программного обеспечения для защиты от вредоносных программ
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | ES-2 | 8.1 | SI-2, SI-3, SC-3 |
 
@@ -62,7 +62,7 @@ ms.locfileid: "94408895"
 
 - [Поддерживаемые решения для защиты конечных точек](../../security-center/security-center-services.md?tabs=features-windows#supported-endpoint-protection-solutions-)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -76,7 +76,7 @@ ms.locfileid: "94408895"
 
 ## <a name="es-3-ensure-anti-malware-software-and-signatures-are-updated"></a>ES-3: обеспечение обновления программного обеспечения и подписей для защиты от вредоносных программ
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | ES-3 | 8.2 | SI-2, SI-3 |
 
@@ -86,7 +86,7 @@ ms.locfileid: "94408895"
 
 - [Развертывание антивредоносного по Майкрософт для облачных служб и виртуальных машин Azure](../fundamentals/antimalware.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 

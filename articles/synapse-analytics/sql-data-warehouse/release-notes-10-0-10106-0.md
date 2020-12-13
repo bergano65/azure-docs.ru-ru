@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: baf2734c2f3c4de86b75a20239ecf7440c61a632
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 0cad8fcdf58f4827f28b40550ae93e607e0c0858
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96534052"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369010"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-release-notes"></a>Заметки о выпуске для выделенного пула SQL (прежнее название — SQL DW) в Azure синапсе Analytics
 
@@ -59,7 +59,7 @@ ms.locfileid: "96534052"
 | Улучшения службы | Сведения |
 | --- | --- |
 |**Управление рабочей нагрузкой — интерфейс портала**|Пользователи могут настраивать параметры управления рабочей нагрузкой и управлять ими с помощью портала Azure. Вы можете настраивать важные [группы рабочей нагрузки](/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-portal) и [классификаторы рабочей нагрузки](/azure/synapse-analytics/sql-data-warehouse/quickstart-create-a-workload-classifier-portal).|
-|**Улучшено представление каталога сопоставления таблиц**|Новое представление каталога [sys.pdw_permanent_table_mappings](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=sqlallproducts-allversions) сопоставляет **object_ids** постоянных пользовательских таблиц с их именами физических таблиц.|
+|**Улучшено представление каталога сопоставления таблиц**|Новое представление каталога [sys.pdw_permanent_table_mappings](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql) сопоставляет **object_ids** постоянных пользовательских таблиц с их именами физических таблиц.|
 
 ## <a name="july-2020"></a>Июль 2020 г.
 

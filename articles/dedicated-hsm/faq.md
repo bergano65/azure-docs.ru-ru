@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.author: keithp
-ms.openlocfilehash: 61a9fcc5490c20383a2ae7d5c57b7fda7567c643
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 1f349931fb479be3b3ba936b3d0a665427357f29
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095157"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369044"
 ---
 # <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
@@ -277,8 +277,8 @@ PKCS#11, Java (JCA/JCE), Microsoft CAPI и CNG, OpenSSL
   * RC5;
   * CAST
   * Хэш или HMAC: SHA-1, SHA-2, SM3
-  * Формирование ключа: обратный режим SP800-108
-  * Упаковка ключа: SP800-38F
+  * Получение ключа: режим счетчика SP 800-108
+  * Перенос ключа: SP 800-38F
   * Генерация случайных чисел: DRBG согласно FIPS 140-2 (режим SP 800-90 CTR), соответствие требованиям BSI DRG.4
 
 ### <a name="q-is-dedicated-hsm-fips-140-2-level-3-validated"></a>Вопрос. Проверена ли служба выделенных устройств HSM на соответствие требованиям FIPS 140-2 уровня 3?

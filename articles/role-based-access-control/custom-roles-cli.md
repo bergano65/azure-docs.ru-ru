@@ -14,17 +14,17 @@ ms.workload: identity
 ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 8fa77f13b99564246c048e7b7a8129f9fc141c47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31dabcf77f0db76047919fa76d00f1c5ed3c96d6
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84984188"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369146"
 ---
 # <a name="create-or-update-azure-custom-roles-using-azure-cli"></a>Создание или изменение настраиваемых ролей Azure с помощью Azure CLI
 
 > [!IMPORTANT]
-> Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
+> В настоящее время добавление группы управления в `AssignableScopes` доступно в режиме предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -138,7 +138,7 @@ az role definition list --name "Virtual Machine Operator" --output json --query 
 ]
 ```
 
-## <a name="create-a-custom-role"></a>Создание настраиваемой роли
+## <a name="create-a-custom-role"></a>Создание пользовательской роли
 
 Чтобы создать пользовательскую роль, используйте команду [az role definition create](/cli/azure/role/definition#az-role-definition-create). Определением роли может быть описание JSON или путь к файлу, содержащему описание JSON.
 
@@ -189,7 +189,7 @@ az role definition create --role-definition ~/roles/vmoperator.json
 az role definition update --role-definition {roleDefinition}
 ```
 
-В следующем примере добавляется операция *Microsoft. Insights/diagnosticSettings/* , которая `Actions` добавляет группу управления в `AssignableScopes` для настраиваемой роли *оператора виртуальной машины* . Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
+В следующем примере добавляется операция *Microsoft. Insights/diagnosticSettings/* , которая `Actions` добавляет группу управления в `AssignableScopes` для настраиваемой роли *оператора виртуальной машины* . В настоящее время добавление группы управления в `AssignableScopes` доступно в режиме предварительной версии.
 
 vmoperator.json
 
@@ -244,4 +244,4 @@ az role definition delete --name "Virtual Machine Operator"
 
 - [Руководство по Создание настраиваемой роли Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
 - [Настраиваемые роли Azure](custom-roles.md)
-- [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)
+- [Операции с поставщиками ресурсов Azure](resource-provider-operations.md)

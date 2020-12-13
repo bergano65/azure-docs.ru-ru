@@ -15,12 +15,12 @@ ms.date: 05/08/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 7c6f9203385c47da9803fb05358889d00d77d3e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc3640fecbe1138e46fd0d36975691740bc669dd
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511642"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369265"
 ---
 # <a name="understand-azure-role-definitions"></a>Общие сведения о определениях ролей Azure
 
@@ -262,7 +262,7 @@ assignableScopes []
 
 Для просмотра операций с данными и работы с ними необходимо иметь правильные версии средств или пакетов SDK:
 
-| Инструмент  | Версия  |
+| Средство  | Версия  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-az-ps) | 1.1.0 или более поздней версии |
 | [Azure CLI](/cli/azure/install-azure-cli) | 2.0.30 или более поздней версии |
@@ -339,4 +339,4 @@ assignableScopes []
 
 * [Встроенные роли Azure](built-in-roles.md)
 * [Настраиваемые роли Azure](custom-roles.md)
-* [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)
+* [Операции с поставщиками ресурсов Azure](resource-provider-operations.md)

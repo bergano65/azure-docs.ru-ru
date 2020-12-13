@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 99e7a8fcb34c963cfab366f1913508a7ff3f4a51
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: c5a855ffe06a17d8ec1bfe249dbe7bc41d1166af
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408708"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369078"
 ---
 # <a name="security-control-v2-logging-and-threat-detection"></a>Управление безопасностью v2: ведение журнала и обнаружение угроз
 
@@ -20,7 +20,7 @@ ms.locfileid: "94408708"
 
 ## <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: Включение обнаружения угроз для ресурсов Azure
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | LT – 1 | 6.7 | AU-3, AU-6, AU-12, SI-4 |
 
@@ -38,7 +38,7 @@ ms.locfileid: "94408708"
 
 - [Кибератакная аналитика угроз с помощью Sentinel Azure](/azure/architecture/example-scenario/data/sentinel-threat-intelligence)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -52,9 +52,9 @@ ms.locfileid: "94408708"
 
 - [Анализ угроз](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2: Включение обнаружения угроз для управления удостоверениями и доступом Azure
+## <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2: включение обнаружения угроз для управления удостоверениями и доступом Azure
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | LT – 2 | 6,8 | AU-3, AU-6, AU-12, SI-4 |
 
@@ -71,11 +71,11 @@ Azure AD предоставляет следующие журналы польз
 
 - [Отчеты о действиях аудита в Azure AD](../../active-directory/reports-monitoring/concept-audit-logs.md)
 
-- [Включение защиты идентификации Azure](../../active-directory/identity-protection/overview-identity-protection.md)
+- [Включение Защиты идентификации Azure](../../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Защита от угроз с помощью Центра безопасности Azure](../../security-center/azure-defender.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -89,9 +89,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Анализ угроз](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: Включение ведения журнала для сетевых операций Azure
+## <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: включение ведения журнала для сетевых операций Azure
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | LT – 3 | 9,3, 12,2, 12,5, 12,8 | AU-3, AU-6, AU-12, SI-4 |
 
@@ -109,7 +109,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Сбор подробных сведений о инфраструктуре DNS с помощью решения Аналитика DNS](../../azure-monitor/insights/dns-analytics.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -123,9 +123,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Анализ угроз](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-4-enable-logging-for-azure-resources"></a>LT-4: Включение ведения журнала для ресурсов Azure
+## <a name="lt-4-enable-logging-for-azure-resources"></a>LT-4: включение ведения журнала для ресурсов Azure
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | LT – 4 | 6,2, 6,3, 8,8 | AU-3, AU-12 |
 
@@ -137,7 +137,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Общие сведения о сборе данных в центре безопасности Azure](../../security-center/security-center-enable-data-collection.md)
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -149,9 +149,9 @@ Azure AD предоставляет следующие журналы польз
 
 - [Анализ угроз](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-5-centralize-security-log-management-and-analysis"></a>LT-5: централизованное управление журналом безопасности и анализ
+## <a name="lt-5-centralize-security-log-management-and-analysis"></a>LT-5: централизованные управление журналом безопасности и анализ
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | LT – 5 | 6,5, 6,6 | AU-3, SI-4 |
 
@@ -167,7 +167,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -179,7 +179,7 @@ Azure AD предоставляет следующие журналы польз
 
 ## <a name="lt-6-configure-log-storage-retention"></a>LT-6: Настройка хранения журналов
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | LT – 6 | 6.4 | AU-3, AU-11 |
 
@@ -193,7 +193,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Экспорт оповещений и рекомендаций центра безопасности Azure](../../security-center/continuous-export.md)
 
-**Ответственность** : Customer
+**Ответственность**: Customer
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -207,7 +207,7 @@ Azure AD предоставляет следующие журналы польз
 
 ## <a name="lt-7-use-approved-time-synchronization-sources"></a>LT-7: использование источников синхронизации утвержденного времени
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | LT – 7 | 6.1 | AU-8 |
 
@@ -221,7 +221,7 @@ Azure AD предоставляет следующие журналы польз
 
 - [Как отключить входящий трафик UDP для служб Azure](https://support.microsoft.com/help/4558520/how-to-disable-inbound-udp-for-azure-services)
 
-**Ответственность** : Совмещаемая блокировка
+**Ответственность**: Совмещаемая блокировка
 
 **Заинтересованные лица по безопасности клиентов** (дополнительные [сведения](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 

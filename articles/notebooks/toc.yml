@@ -8,43 +8,11 @@
   items:
     - name: Вход и настройка идентификатора пользователя
       href: quickstart-sign-in-azure-notebooks.md
-    - name: Создание и совместное использование записной книжки
-      href: quickstart-create-share-jupyter-notebook.md
-    - name: Клонирование записной книжки
-      href: quickstart-clone-jupyter-notebook.md
-    - name: Перенос локальной записной книжки Jupyter
-      href: quickstart-migrate-local-jupyter-notebook.md
-    - name: Использование настраиваемой среды
-      href: quickstart-create-jupyter-notebook-project-environment.md
     - name: Экспорт проекта
       href: quickstart-export-jupyter-notebook-project.md
-- name: Учебники
-  items:
-    - name: Создание и запуск записной книжки
-      href: tutorial-create-run-jupyter-notebook.md
-- name: Примеры
-  items:
-    - name: Записные книжки с примерами
-      href: azure-notebooks-samples.md
 - name: Основные понятия
   items:
     - name: Учетные записи
       href: azure-notebooks-user-account.md
     - name: Профили
       href: azure-notebooks-user-profile.md
-- name: Практические руководства
-  items:
-    - name: Создание и клонирование проектов
-      href: create-clone-jupyter-notebooks.md
-    - name: Администрирование и настройка проектов
-      href: configure-manage-azure-notebooks-projects.md
-    - name: Установка пакетов в записной книжке
-      href: install-packages-jupyter-notebook.md
-    - name: Представление слайд-шоу
-      href: present-jupyter-notebooks-slideshow.md
-    - name: Работа с файлами данных
-      href: work-with-project-data-files.md
-    - name: Доступ к ресурсам данных
-      href: access-data-resources-jupyter-notebooks.md
-    - name: Использование Виртуальных машин для обработки и анализа данных
-      href: use-data-science-virtual-machine.md

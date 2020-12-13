@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 1ed477c6cf069dbb402e5bda9c1f48f7bc208f18
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 089cf521a7c5428833be340001c88b870c568a8f
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698807"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368891"
 ---
 # <a name="security-control-v2-backup-and-recovery"></a>Управление безопасностью версии 2: резервное копирование и восстановление
 
@@ -20,7 +20,7 @@ ms.locfileid: "94698807"
 
 ## <a name="br-1-ensure-regular-automated-backups"></a>BR-1: обеспечение регулярного автоматического резервного копирования
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | BR-1 | 10.1 | CP-2, CP4, CP-6, CP-9 |
 
@@ -34,7 +34,7 @@ ms.locfileid: "94698807"
 
 - [Включение Azure Backup](../../backup/index.yml)
 
-- [Включение восстановления между регионами](../../backup/backup-azure-arm-restore-vms.md#cross-region-restore)
+- [Как включить восстановление между регионами](../../backup/backup-azure-arm-restore-vms.md#cross-region-restore)
 
 **Ответственность**: Customer
 
@@ -50,7 +50,7 @@ ms.locfileid: "94698807"
 
 ## <a name="br-2-encrypt-backup-data"></a>BR-2: шифрование данных резервных копий
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | BR-2 | 10,2 | CP-9 |
 
@@ -78,9 +78,9 @@ ms.locfileid: "94698807"
 
 - [Подготовка инцидентов](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
-## <a name="br-3-validate-all-backups-including-customer-managed-keys"></a>BR-3. Проверка всех резервных копий, включая ключи, управляемые клиентом
+## <a name="br-3-validate-all-backups-including-customer-managed-keys"></a>BR-3: проверка всех резервных копий, включая ключи, управляемый клиентом
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | BR-3 | 10.3 | CP-4, CP-9 |
 
@@ -100,7 +100,7 @@ ms.locfileid: "94698807"
 
 ## <a name="br-4-mitigate-risk-of-lost-keys"></a>BR-4: снижение риска потери ключей
 
-| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | ИДЕНТИФИКАТОРы для директивы NIST SP800-53 |
+| Идентификатор Azure | ИДЕНТИФИКАТОРы элементов управления CIS v 7.1 | Директива NIST SP 800-53 R4 ID (s) |
 |--|--|--|--|
 | BR-4 | 10.4 | CP-9 |
 
