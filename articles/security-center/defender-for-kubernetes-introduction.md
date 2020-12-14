@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: a815295c4f2ab78cbd3aff82949d7c28197afd82
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a0dd00709dbe8a1b0e037fe22750adea7e071162
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791925"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97372008"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Общие сведения об Azure Defender для Kubernetes
 
@@ -31,7 +31,7 @@ ms.locfileid: "92791925"
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Плата за использование **Azure Defender для Kubernetes** начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
 |Требуемые роли и разрешения|**Администратор безопасности** может отклонять предупреждения.<br>**Читатель сведений о безопасности** может просматривать результаты.|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) China Gov<br>![Нет](./media/icons/no-icon.png) US Gov и другие правительственные облака|
 |||
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-kubernetes"></a>Каковы преимущества Azure Defender для Kubernetes?
@@ -49,7 +49,7 @@ ms.locfileid: "92791925"
     >[!IMPORTANT]
     > Если вы решили не устанавливать агенты на узлах, то получите только часть преимуществ защиты от угроз и лишь некоторые из оповещений системы безопасности. Вы будете по-прежнему получать оповещения, связанные с анализом сети и обменом данными с вредоносными серверами.
 
-- **Уровень кластера AKS (предоставляется Azure Defender для Kubernetes).** На уровне кластера защита от угроз реализуется на основе анализа журналов аудита Kubernetes. Чтобы включить **мониторинг без агента** , включите Azure Defender. Для создания предупреждений на этом уровне Центр безопасности отслеживает службы, которыми управляет служба AKS, с помощью полученных ею журналов. Примерами событий на этом уровне могут служить представление панелей мониторинга Kubernetes, создание ролей с высоким уровнем привилегий и создание конфиденциальных подключений.
+- **Уровень кластера AKS (предоставляется Azure Defender для Kubernetes).** На уровне кластера защита от угроз реализуется на основе анализа журналов аудита Kubernetes. Чтобы включить **мониторинг без агента**, включите Azure Defender. Для создания предупреждений на этом уровне Центр безопасности отслеживает службы, которыми управляет служба AKS, с помощью полученных ею журналов. Примерами событий на этом уровне могут служить представление панелей мониторинга Kubernetes, создание ролей с высоким уровнем привилегий и создание конфиденциальных подключений.
 
     Список оповещений на уровне кластера AKS см. в [справочной таблице оповещений](alerts-reference.md#alerts-akscluster).
 
@@ -72,7 +72,7 @@ ms.locfileid: "92791925"
 - журналы аудита с сервера API;
 - необработанные события безопасности от агента Log Analytics;
 - сведения о конфигурации кластера из кластера AKS;
-- конфигурации рабочих нагрузок из Политики Azure (через **надстройку Политики Azure для Kubernetes** ). [Дополнительные сведения о защите рабочих нагрузок с использованием средств управления допуском в Kubernetes](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
+- конфигурации рабочих нагрузок из Политики Azure (через **надстройку Политики Azure для Kubernetes**). [Дополнительные сведения о защите рабочих нагрузок с использованием средств управления допуском в Kubernetes](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
 
 :::image type="content" source="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png" alt-text="Подробная схема взаимодействия между Центром безопасности Azure, Службой Azure Kubernetes и Политикой Azure" lightbox="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png":::
 

@@ -141,6 +141,8 @@
           href: howto-firewall.md
         - name: Настройка подключения к Приватному каналу
           href: howto-private-link.md
+        - name: 'Управление доступом к ресурсам: периферийная виртуальная сеть P2S'
+          href: manage-secure-access-resources-spoke-p2s.md
     - name: Наблюдение
       items:
         - name: Журналы и метрики

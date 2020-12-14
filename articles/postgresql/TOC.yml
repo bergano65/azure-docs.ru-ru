@@ -12,6 +12,10 @@
           href: concepts-certificate-rotation.md
 - name: Общая документация
   items:
+    - name: Развертывание баз данных
+      items:
+        - name: Github Actions
+          href: how-to-deploy-github-action.md
     - name: Миграция
       items:
         - name: Перенос данных с помощью pg_dump и pg_restore
@@ -202,6 +206,8 @@
               displayName: 'query store, performance, optimize, recommendations'
         - name: Разработка приложений
           items:
+            - name: Рекомендации
+              href: application-best-practices.md
             - name: Библиотеки подключений
               href: concepts-connection-libraries.md
               displayName: 'libraries, drivers'
@@ -416,10 +422,16 @@
               href: flexible-server/connect-python.md
     - name: Учебники
       items:
-        - name: Создание веб-приложения в виртуальной сети
-          href: flexible-server/tutorial-webapp-server-vnet.md
-        - name: Развертывание приложения Django
-          href: flexible-server/tutorial-django-app-service-postgres.md
+        - name: Создание решений с использованием AKS
+          items:
+            - name: Развертывание приложения Python в Kubernetes
+              href: flexible-server/tutorial-django-aks-database.md
+        - name: Создание решений с использованием служб приложений
+          items:
+            - name: Создание веб-приложения в виртуальной сети
+              href: flexible-server/tutorial-webapp-server-vnet.md
+            - name: Развертывание приложения Django в Службе приложений
+              href: flexible-server/tutorial-django-app-service-postgres.md
     - name: Основные понятия
       items:
         - name: Серверы
@@ -466,6 +478,8 @@
               href: flexible-server/how-to-manage-server-portal.md
             - name: Azure CLI
               href: flexible-server/how-to-manage-server-cli.md
+            - name: Руководство по подключению и отправке запросов
+              href: flexible-server/how-to-connect-query-guide.md
         - name: Запланированное обслуживание
           items:
             - name: Портал Azure

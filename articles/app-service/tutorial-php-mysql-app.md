@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 06/15/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: b321985bf7920934193723b60abb7bfb28482e6d
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 2daf445c6721b4b6c3b2a57e7ef65f52eabd8a4c
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862247"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347155"
 ---
 # <a name="tutorial-build-a-php-and-mysql-app-in-azure-app-service"></a>Руководство по Разработка приложения на основе PHP и MySQL в Службе приложений Azure
 
@@ -162,7 +162,7 @@ php artisan serve
 
 В Cloud Shell создайте сервер в службе "База данных Azure для MySQL", выполнив команду [`az mysql server create`](/cli/azure/mysql/server?view=azure-cli-latest&preserve-view=true#az-mysql-server-create).
 
-В следующей команде заполнитель *\<mysql-server-name>* замените уникальным именем сервера, а заполнители *\<admin-user>* и *\<admin-password>*  — именем пользователя и паролем. Это имя используется как часть конечной точки MySQL (`https://<mysql-server-name>.mysql.database.azure.com`), поэтому оно должно быть уникальным на всех серверах в Azure. Дополнительные сведения о выборе номера SKU базы данных MySQL см. в разделе [Создайте сервер базы данных Azure для MySQL](../mysql/quickstart-create-mysql-server-database-using-azure-cli.md#create-an-azure-database-for-mysql-server).
+В следующей команде заполнитель *\<mysql-server-name>* замените уникальным именем сервера, а заполнители *\<admin-user>* и *\<admin-password>*  — именем пользователя и паролем. Это имя используется как часть конечной точки MySQL (`https://<mysql-server-name>.mysql.database.azure.com`), поэтому оно должно быть уникальным на всех серверах в Azure. Дополнительные сведения о выборе номера SKU базы данных MySQL см. в разделе о [создании сервера Базы данных Azure для MySQL](../mysql/quickstart-create-mysql-server-database-using-azure-cli.md#create-an-azure-database-for-mysql-server).
 
 ```azurecli-interactive
 az mysql server create --resource-group myResourceGroup --name <mysql-server-name> --location "West Europe" --admin-user <admin-user> --admin-password <admin-password> --sku-name B_Gen5_1
@@ -451,7 +451,7 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 291 bytes | 0 bytes/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
-remote: Updating branch 'main'.
+remote: Updating branch 'master'.
 remote: Updating submodules.
 remote: Preparing deployment for commit id 'a5e076db9c'.
 remote: Running custom deployment command...
@@ -482,7 +482,7 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 291 bytes | 0 bytes/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
-remote: Updating branch 'main'.
+remote: Updating branch 'master'.
 remote: Updating submodules.
 remote: Preparing deployment for commit id 'a5e076db9c'.
 remote: Running custom deployment command...
@@ -634,7 +634,7 @@ php artisan migrate --env=production --force
 ```bash
 git add .
 git commit -m "added complete checkbox"
-git push azure main
+git push azure master
 ```
 
 После выполнения команды `git push` перейдите в приложение Azure и проверьте новые функции.
@@ -657,7 +657,7 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 
 После настройки потоков обновите приложение Azure в браузере, чтобы получить немного трафика. Вы должны увидеть, что журналы консоли теперь направляются в терминал. Если журналы консоли не отображаются, проверьте еще раз через 30 секунд.
 
-Чтобы отменить потоки для журналов, выполните команду `Ctrl`+`C`.
+Чтобы остановить потоковую передачу журналов, нажмите клавиши `Ctrl`+`C`.
 
 ::: zone-end
 

@@ -39,6 +39,8 @@
       href: template-samples.md
 - name: Основные понятия
   items:
+    - name: Основные понятия и рекомендации
+      href: concepts-and-best-practices.md
     - name: Непрерывность бизнес-процессов
       href: virtual-network-disaster-recovery-guidance.md
     - name: Соединение

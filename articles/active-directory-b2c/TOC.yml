@@ -155,6 +155,25 @@
           href: identity-provider-wechat.md
         - name: Weibo
           href: identity-provider-weibo.md
+    - name: Настройка UX
+      items:
+        - name: Настройка пользовательского ввода
+          href: configure-user-input.md
+        - name: Настройка пользовательского интерфейса с использованием фирменной символики компании
+          href: company-branding.md
+        - name: Настройка пользовательского интерфейса с использованием HTML-шаблона
+          href: customize-ui-with-html.md
+        - name: JavaScript и макеты страниц
+          href: javascript-and-page-layout.md
+        - name: Настройка языка
+          href: language-customization.md
+        - name: Сложность пароля
+          href: password-complexity.md
+        - name: Отключение проверки по электронной почте
+          href: disable-email-verification.md
+        - name: Включение MFA
+          href: multi-factor-authentication.md
+          displayName: multi-factor auth
     - name: Поток пользователя
       items:
         - name: Создание потока
@@ -167,21 +186,6 @@
               href: user-flow-self-service-password-reset.md
         - name: Добавление условного доступа
           href: conditional-access-user-flow.md
-        - name: Настройка UX
-          items:
-            - name: Настройка пользовательского интерфейса
-              href: customize-ui-overview.md
-            - name: JavaScript и макеты страниц
-              href: user-flow-javascript-overview.md
-            - name: Настройка языка
-              href: user-flow-language-customization.md
-            - name: Сложность пароля
-              href: user-flow-password-complexity.md
-            - name: Отключение проверки по электронной почте
-              href: user-flow-disable-email-verification.md
-            - name: Включение MFA
-              href: custom-policy-multi-factor-authentication.md
-              displayName: multi-factor auth
         - name: Управление токенами и сеансами
           items:
             - name: Конфигурирование токенов
@@ -219,29 +223,13 @@
             - name: Регистрация и вход с помощью телефона
               href: phone-authentication.md
               displayName: 'otp, passwordless, phone number'
-        - name: Настройка UX
+        - name: Пользовательская проверка по электронной почте
           items:
-            - name: Настройка пользовательского ввода
-              href: custom-policy-configure-user-input.md
-              displayName: 'ui, ux'
-            - name: Настройка пользовательского интерфейса
-              href: custom-policy-ui-customization.md
-              displayName: 'ux, input, cors, html, css'
-            - name: Настройка языка
-              href: custom-policy-localization.md
-            - name: Пользовательская проверка по электронной почте
-              items:
-                - name: Mailjet
-                  href: custom-email-mailjet.md
-                - name: SendGrid
-                  href: custom-email-sendgrid.md
-              displayName: verification
-            - name: Отключение проверки по электронной почте
-              href: custom-policy-disable-email-verification.md
-            - name: Включение JavaScript
-              href: javascript-samples.md
-            - name: Сложность пароля
-              href: custom-policy-password-complexity.md
+            - name: Mailjet
+              href: custom-email-mailjet.md
+            - name: SendGrid
+              href: custom-email-sendgrid.md
+          displayName: verification
         - name: Управление токенами и сеансами
           items:
             - name: Настройка токенов

@@ -9,7 +9,7 @@
       href: rbac-and-directory-admin-roles.md
 - name: Краткие руководства
   items:
-    - name: Просмотр разрешений на доступ пользователя
+    - name: Проверка разрешений на доступ пользователя
       href: check-access.md
     - name: Шаблон ARM
       displayName: Resource Manager

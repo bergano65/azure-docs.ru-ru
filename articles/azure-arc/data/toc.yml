@@ -42,13 +42,13 @@
               href: /sql/azdata/install/deploy-install-azdata-pip?toc=/azure/azure-arc/data/toc.json&bc=/azure/azure-arc/data/breadcrumb/toc.json
     - name: Создание контроллера данных
       items:
-        - name: Создание контроллера данных (Azure Data Studio)
+        - name: Azure Data Studio
           href: create-data-controller-azure-data-studio.md
-        - name: Создание контроллера данных (портал)
+        - name: Портал Azure
           href: create-data-controller-resource-in-azure-portal.md
-        - name: "Создание контроллера данных\_— Azure Data CLI"
+        - name: Azure Data CLI (azdata)
           href: create-data-controller-using-azdata.md
-        - name: Создание контроллера (Kubernetes)
+        - name: Средства Kubernetes
           href: create-data-controller-using-kubernetes-native-tools.md
     - name: "Распространенные возможности в службах данных с поддержкой Azure\_Arc"
       items:
@@ -80,6 +80,8 @@
           href: view-arc-data-services-inventory-in-azure-portal.md
         - name: Получение имени пользователя и пароля контроллера данных
           href: retrieve-the-username-password-for-data-controller.md
+        - name: Обновление учетных данных субъекта-службы
+          href: update-service-principal-credentials.md
     - name: Устранение неполадок
       items:
         - name: Руководство
