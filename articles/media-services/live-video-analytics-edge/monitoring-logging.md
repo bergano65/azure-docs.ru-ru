@@ -3,12 +3,12 @@ title: Мониторинг и ведение журналов — Azure
 description: В этой статье представлен обзор функции Live Video Analytics по IoT Edge мониторингу и ведению журнала.
 ms.topic: reference
 ms.date: 04/27/2020
-ms.openlocfilehash: ef00517fc61ac532bdd99c1e887dfd93d56a8c4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ae455a4157cd649f610620e486323ac2c0a5744
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89567560"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401055"
 ---
 # <a name="monitoring-and-logging"></a>Мониторинг и ведение журнала
 
@@ -21,7 +21,7 @@ ms.locfileid: "89567560"
 Интерактивная аналитика видео на IoT Edge выдает события или данные телеметрии в соответствии со следующей классификацией.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/telemetry-schema/taxonomy.png" alt-text="Классификация событий&quot;:::
+> :::image type="content" source="./media/telemetry-schema/taxonomy.png" alt-text="Классификация событий":::
 
 * Операционные: события, которые создаются как часть действий, выполненных пользователем, или во время выполнения [графа мультимедиа](media-graph-concept.md).
    
@@ -32,16 +32,16 @@ ms.locfileid: "89567560"
       
       ```
       {
-        &quot;body&quot;: {
-          &quot;outputType&quot;: &quot;assetName&quot;,
-          &quot;outputLocation&quot;: &quot;sampleAssetFromEVR-LVAEdge-20200512T233309Z&quot;
+        "body": {
+          "outputType": "assetName",
+          "outputLocation": "sampleAssetFromEVR-LVAEdge-20200512T233309Z"
         },
-        &quot;applicationProperties&quot;: {
-          &quot;topic&quot;: &quot;/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/<my-resource-group>/providers/microsoft.media/mediaservices/<ams-account-name>&quot;,
-          &quot;subject&quot;: &quot;/graphInstances/Sample-Graph-2/sinks/assetSink&quot;,
-          &quot;eventType&quot;: &quot;Microsoft.Media.Graph.Operational.RecordingStarted&quot;,
-          &quot;eventTime&quot;: &quot;2020-05-12T23:33:10.392Z&quot;,
-          &quot;dataVersion&quot;: &quot;1.0"
+        "applicationProperties": {
+          "topic": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/<my-resource-group>/providers/microsoft.media/mediaservices/<ams-account-name>",
+          "subject": "/graphInstances/Sample-Graph-2/sinks/assetSink",
+          "eventType": "Microsoft.Media.Graph.Operational.RecordingStarted",
+          "eventTime": "2020-05-12T23:33:10.392Z",
+          "dataVersion": "1.0"
         }
       }
       ```
@@ -160,11 +160,11 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 События происходят на пограничном устройстве, и их можно использовать на границе или в облаке. События, создаваемые функцией Live Video Analytics на IoT Edge, соответствуют [шаблону обмена сообщениями с потоковой передачей](../../iot-hub/iot-hub-devguide-messages-construct.md) , установленному центром Интернета вещей Azure, со свойствами системы, свойствами приложения и телом.
 
-### <a name="summary"></a>Итоги
+### <a name="summary"></a>Сводка
 
 Каждое событие, наблюдаемое через центр Интернета вещей, будет иметь набор общих свойств, как описано ниже.
 
-|Свойство   |Тип свойства| Тип данных   |Описание|
+|Свойство.   |Тип свойства| Тип данных   |Описание|
 |---|---|---|---|
 |message-id |система |guid|  Уникальный идентификатор события.|
 |Раздел| аппликатионпроперти |строка|    Azure Resource Manager путь к учетной записи служб мультимедиа.|
@@ -207,7 +207,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 |Имя класса|Описание|
 |---|---|
-|Аналитика  |События, создаваемые как часть анализа содержимого.|
+|Analytics  |События, создаваемые как часть анализа содержимого.|
 |Диагностика    |События, помогающие в диагностике проблем и производительности.|
 |Операционный    |События, создаваемые как часть операции с ресурсами.|
 
@@ -223,7 +223,86 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 Время события описывается в строке ISO8601 и в момент возникновения события.
 
-## <a name="logging"></a>Ведение журнала
+### <a name="azure-monitor-collection-using-telegraf"></a>Azure Monitor коллекции с помощью Telegraf
+
+Эти метрики будут сообщать о модуле Live Video Analytics в IoT Edge модуль:  
+
+|Имя метрики|Тип|Метка|Описание|
+|-----------|----|-----|-----------|
+|lva_active_graph_instances|Датчик|iothub, edge_device, module_name, graph_topology|Общее число активных графиков на топологию.|
+|lva_received_bytes_total|Счетчик|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node|Общее число байтов, полученных узлом. Поддерживается только для источников RTSP|
+|lva_data_dropped_total|Счетчик|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node, data_kind|Счетчик любых удаленных данных (событий, носителей и т. д.)|
+
+> [!NOTE]
+> [Конечная точка Prometheus](https://prometheus.io/docs/practices/naming/) предоставляется по порту **9600** контейнера. Если вы направите свое имя в Live Video Analytics на IoT Edge модуле "Лваедже", он сможет получить доступ к метрикам, отправив запрос GET в http://lvaEdge:9600/metrics .   
+
+Выполните следующие действия, чтобы включить сбор метрик из интерактивной аналитики видео в модуле IoT Edge:
+
+1. Создайте папку на компьютере разработки и перейдите к этой папке.
+
+1. В этой папке создайте `telegraf.toml` файл со следующим содержимым.
+    ```
+    [agent]
+        interval = "30s"
+        omit_hostname = true
+
+    [[inputs.prometheus]]
+      metric_version = 2
+      urls = ["http://edgeHub:9600/metrics", "http://edgeAgent:9600/metrics", "http://{LVA_EDGE_MODULE_NAME}:9600/metrics"]
+
+    [[outputs.azure_monitor]]
+      namespace_prefix = ""
+      region = "westus"
+      resource_id = "/subscriptions/{SUBSCRIPTON_ID}/resourceGroups/{RESOURCE_GROUP}/providers/Microsoft.Devices/IotHubs/{IOT_HUB_NAME}"
+    ```
+    > [!IMPORTANT]
+    > Убедитесь, что переменные (помеченные `{ }` ) в файле содержимого заменены.
+
+1. В этой папке создайте объект `.dockerfile` со следующим содержимым.
+    ```
+        FROM telegraf:1.15.3-alpine
+        COPY telegraf.toml /etc/telegraf/telegraf.conf
+    ```
+
+1. Теперь с помощью команды DOCKER CLI **Создайте файл DOCKER** и опубликуйте образ в реестре контейнеров Azure.
+    1. Узнайте, как [отправлять и запрашивать образы DOCKER в реестре контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-docker-cli).  Дополнительные сведения о реестре контейнеров Azure (запись контроля доступа) можно найти [здесь](https://docs.microsoft.com/azure/container-registry/).
+
+
+1. После завершения отправки в запись контроля доступа добавьте в файл манифеста развертывания следующий узел:
+    ```
+    "telegraf": 
+    {
+      "settings": 
+        {
+            "image": "{ACR_LINK_TO_YOUR_TELEGRAF_IMAGE}"
+        },
+      "type": "docker",
+      "version": "1.0",
+      "status": "running",
+      "restartPolicy": "always",
+      "env": 
+        {
+            "AZURE_TENANT_ID": { "value": "{YOUR_TENANT_ID}" },
+            "AZURE_CLIENT_ID": { "value": "{YOUR CLIENT_ID}" },
+            "AZURE_CLIENT_SECRET": { "value": "{YOUR_CLIENT_SECRET}" }
+        }
+    ``` 
+    > [!IMPORTANT]
+    > Убедитесь, что переменные (помеченные `{ }` ) в файле содержимого заменены.
+
+
+1. **Authentication**
+    1. [Проверка подлинности](https://github.com/influxdata/telegraf/blob/master/plugins/outputs/azure_monitor/README.md#azure-authentication)Azure Monitor может выполняться субъектом-службой.
+        1. Подключаемый модуль Azure Monitor Telegraf предоставляет [несколько методов проверки подлинности](https://github.com/influxdata/telegraf/blob/master/plugins/outputs/azure_monitor/README.md#azure-authentication). Для использования проверки подлинности субъекта-службы необходимо задать следующие переменные среды.  
+            • AZURE_TENANT_ID: указывает клиента, для которого проверяется подлинность.  
+            • AZURE_CLIENT_ID: Указывает используемый идентификатор клиента приложения.  
+            • AZURE_CLIENT_SECRET: указывает секрет приложения для использования.  
+    >[!TIP]
+    > Субъекту-службе можно предоставить роль "**Издатель метрик мониторинга**".
+
+1. После развертывания модулей в Azure Monitor в одном пространстве имен будут отображаться метрики с именами метрик, совпадающими с теми, которые были созданы Prometheus. 
+    1. В этом случае в портал Azure перейдите в центр Интернета вещей и щелкните ссылку "**метрики**" в левой области навигации. Вы должны увидеть метрики там.
+## <a name="logging"></a>Logging
 
 Как и в случае с другими IoT Edgeными модулями, можно также [изучить журналы контейнеров](../../iot-edge/troubleshoot.md#check-container-logs-for-issues) на пограничном устройстве. Сведения, которые записываются в журналы, можно контролировать с помощью [следующих свойств модуля двойника](module-twin-configuration-schema.md) :
 
@@ -268,6 +347,6 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 [Вопросы и ответы](faq.md#monitoring-and-metrics)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Непрерывная запись видео](continuous-video-recording-tutorial.md)

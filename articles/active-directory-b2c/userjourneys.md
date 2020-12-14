@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/13/2020
+ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5b89126b837f9c197a8babf81abb17bfd98002e4
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ce41edd2c0048a20368dd02c2dd6101248e26c14
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345003"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400019"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -37,13 +37,44 @@ ms.locfileid: "96345003"
 
 | Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | Да | Идентификатор пути взаимодействия пользователя, который можно использовать для ссылки на этот путь из других элементов в политике. Элемент **DefaultUserJourney**[политики проверяющей стороны](relyingparty.md) указывает на этот атрибут. |
+| Id | Да | Идентификатор пути взаимодействия пользователя, который можно использовать для ссылки на этот путь из других элементов в политике. Элемент **DefaultUserJourney**[политики проверяющей стороны](relyingparty.md) указывает на этот атрибут. |
 
 Элемент **UserJourney** содержит следующие элементы.
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
+| аусоризатионтечникалпрофилес | 0:1 | Список технических профилей авторизации. | 
 | OrchestrationSteps | 1:n | Последовательность оркестрации, которая должна соблюдаться для успешного выполнения транзакции. Каждый путь взаимодействия пользователя состоит из упорядоченного списка шагов оркестрации, которые должны выполняться в соответствующей последовательности. Если какой-либо шаг завершится ошибкой, выполнение транзакции завершается сбоем. |
+
+## <a name="authorizationtechnicalprofiles"></a>аусоризатионтечникалпрофилес
+
+Предположим, что пользователь завершил UserJourney и получил доступ или маркер идентификации. Для управления дополнительными ресурсами, такими как [Конечная точка UserInfo](userinfo-endpoint.md), необходимо определить пользователя. Чтобы начать этот процесс, пользователь должен предоставить маркер доступа, выпущенный ранее, как доказательство того, что изначально прошло проверку подлинности с помощью допустимой политики Azure AD B2C. Во время этого процесса для пользователя всегда должен присутствовать действительный маркер, чтобы убедиться, что он может выполнить этот запрос. Технические профили авторизации проверяют входящий токен и извлекают утверждения из токена.
+
+Элемент **аусоризатионтечникалпрофилес** содержит следующий элемент:
+
+| Элемент | Вхождения | Описание |
+| ------- | ----------- | ----------- |
+| аусоризатионтечникалпрофиле | 0:1 | Список технических профилей авторизации. | 
+
+Элемент **аусоризатионтечникалпрофиле** содержит следующий атрибут:
+
+| Атрибут | Обязательно | Описание |
+| --------- | -------- | ----------- |
+| TechnicalProfileReferenceId | Да | Идентификатор технического профиля, который необходимо выполнить. |
+
+В следующем примере показан элемент пути взаимодействия пользователя с техническими профилями авторизации:
+
+```xml
+<UserJourney Id="UserInfoJourney" DefaultCpimIssuerTechnicalProfileReferenceId="UserInfoIssuer">
+  <Authorization>
+    <AuthorizationTechnicalProfiles>
+      <AuthorizationTechnicalProfile ReferenceId="UserInfoAuthorization" />
+    </AuthorizationTechnicalProfiles>
+  </Authorization>
+  <OrchestrationSteps>
+    <OrchestrationStep Order="1" Type="ClaimsExchange">
+     ...
+```
 
 ## <a name="orchestrationsteps"></a>OrchestrationSteps
 
@@ -143,7 +174,7 @@ ms.locfileid: "96345003"
 ```xml
 <OrchestrationStep Order="4" Type="ClaimsExchange">
   <Preconditions>
-  <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
+    <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
       <Value>objectId</Value>
       <Action>SkipThisOrchestrationStep</Action>
     </Precondition>
@@ -187,17 +218,17 @@ ms.locfileid: "96345003"
 
 ```xml
 <OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
-    <ClaimsProviderSelections>
+  <ClaimsProviderSelections>
     <ClaimsProviderSelection TargetClaimsExchangeId="FacebookExchange" />
     <ClaimsProviderSelection TargetClaimsExchangeId="LinkedInExchange" />
     <ClaimsProviderSelection TargetClaimsExchangeId="TwitterExchange" />
     <ClaimsProviderSelection TargetClaimsExchangeId="GoogleExchange" />
     <ClaimsProviderSelection ValidationClaimsExchangeId="LocalAccountSigninEmailExchange" />
-    </ClaimsProviderSelections>
-    <ClaimsExchanges>
-    <ClaimsExchange Id="LocalAccountSigninEmailExchange"
-                    TechnicalProfileReferenceId="SelfAsserted-LocalAccountSignin-Email" />
-    </ClaimsExchanges>
+  </ClaimsProviderSelections>
+  <ClaimsExchanges>
+  <ClaimsExchange Id="LocalAccountSigninEmailExchange"
+        TechnicalProfileReferenceId="SelfAsserted-LocalAccountSignin-Email" />
+  </ClaimsExchanges>
 </OrchestrationStep>
 
 
@@ -211,7 +242,7 @@ ms.locfileid: "96345003"
   <ClaimsExchanges>
     <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" />
     <ClaimsExchange Id="SignUpWithLogonEmailExchange" TechnicalProfileReferenceId="LocalAccountSignUpWithLogonEmail" />
-    <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAUTH" />
+  <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAUTH" />
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
     <ClaimsExchange Id="TwitterExchange" TechnicalProfileReferenceId="Twitter-OAUTH1" />
   </ClaimsExchanges>
@@ -230,7 +261,7 @@ ms.locfileid: "96345003"
 
 | Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | Да | Идентификатор шага обмена утверждениями. Этот идентификатор используется для ссылки на обмен утверждениями из шага выбора поставщика утверждений в политике. |
+| Id | Да | Идентификатор шага обмена утверждениями. Этот идентификатор используется для ссылки на обмен утверждениями из шага выбора поставщика утверждений в политике. |
 | TechnicalProfileReferenceId | Да | Идентификатор технического профиля, который необходимо выполнить. |
 
 ## <a name="journeylist"></a>жаурнэйлист

@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 18da50fe763ef7c5fc3c06ac00052679c488cae7
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 2800d41340e45867ea4126733cdb5968cf8b91c5
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015640"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400851"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -23,9 +23,23 @@ ms.locfileid: "92015640"
 
 <hr width=100%>
 
+## <a name="december-14-2020"></a>14 декабря 2020 г.
+Этот выпуск является общедоступным предварительным обновлением службы Live Video Analytics на IoT Edge. Тег выпуска
+
+```
+     mcr.microsoft.com/media/live-video-analytics:2.0.0
+```
+### <a name="module-updates"></a>Обновления модулей
+* Добавлена поддержка использования нескольких процессоров расширений HTTP и процессора расширений gRPC на топологию графа.
+* Добавлена поддержка управления дисковым пространством для узлов приемника.
+* `MediaGraphGrpcExtension` Теперь узел поддерживает свойство [екстенсионконфигуратион](grpc-extension-protocol.md) для использования нескольких моделей AI на одном сервере gRPC.
+* Добавлена поддержка сбора метрик модуля Live Video Analytics в [формате Prometheus](https://prometheus.io/docs/practices/naming/) . 
+* Обработчик фильтра частоты кадров **устарел**.  
+    * Управление частотой кадров теперь доступно в самих узлах процессора расширения графа.
+
 ## <a name="september-22-2020"></a>22 сентября 2020 г.
 
-Этот тег выпуска для обновления модуля в сентябре 2020:
+Этот тег выпуска предназначен для обновления модуля за Сентябрь 2020:
 
 ```
 mcr.microsoft.com/media/live-video-analytics:1.0.4
@@ -48,7 +62,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.4
 
 ## <a name="august-19-2020"></a>19 августа 2020 г.
 
-Этот тег выпуска для обновления 2020 августа:
+Этот тег выпуска предназначен для обновления 2020 августа:
 
 ```
 mcr.microsoft.com/media/live-video-analytics:1.0.3
@@ -73,7 +87,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.3
 
 ## <a name="july-13-2020"></a>13 июля 2020 г.
 
-Этот тег выпуска для обновления за Июль 2020:
+Этот тег выпуска предназначен для обновления за Июль 2020:
 
 ```
 mcr.microsoft.com/media/live-video-analytics:1.0.2

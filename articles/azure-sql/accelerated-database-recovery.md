@@ -11,19 +11,19 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/19/2020
-ms.openlocfilehash: c9f29a891061dc0e6dcfe8c8f6a65f0f190c6afc
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: bd1b33b2f6b1b0e0bf94639b3991b6507a89f5a9
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593592"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400800"
 ---
 # <a name="accelerated-database-recovery-in-azure-sql"></a>Ускоренное восстановление базы данных в SQL Azure 
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
 
 **Ускоренное восстановление базы данных (ADR)** — это SQL Server компонент ядра СУБД, который значительно повышает доступность базы данных, особенно в случае длительных транзакций, путем перепроектирования SQL Server процесса восстановления ядра СУБД. 
 
-В настоящее время ADR доступен для базы данных SQL Azure, Управляемый экземпляр Azure SQL, баз данных в Azure синапсе Analytics (в настоящее время в предварительной версии) и SQL Server на виртуальных машинах Azure, начиная с SQL Server 2019. 
+В настоящее время ADR доступен для базы данных SQL Azure, Управляемый экземпляр Azure SQL, баз данных в Azure синапсе Analytics и SQL Server на виртуальных машинах Azure, начиная с SQL Server 2019. 
 
 > [!NOTE] 
 > Параметр ADR включен по умолчанию в базе данных SQL Azure и Azure SQL Управляемый экземпляр и отключение ADR для любого из этих продуктов не поддерживается. 

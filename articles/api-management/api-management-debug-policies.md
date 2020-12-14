@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 4eb32243df219d721d7baae80984c45d0fc4cf25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8ed834c9ab093ae063e386978bca4d73fa46543
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91345128"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400732"
 ---
 # <a name="debug-azure-api-management-policies-in-visual-studio-code"></a>Отладка политик управления API Azure в Visual Studio Code
 
@@ -30,9 +30,11 @@ ms.locfileid: "91345128"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Сначала создайте экземпляр уровня разработчика управления API, следуя этому [учебнику](get-started-create-service-instance.md) .
+* Сначала создайте экземпляр уровня разработчика управления API, следуя этому [краткому](get-started-create-service-instance.md) руководству.
 
-Установите [Visual Studio Code](https://code.visualstudio.com/) и последнюю версию [расширения управления API Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement). 
+* Установите [Visual Studio Code](https://code.visualstudio.com/) и последнюю версию [расширения управления API Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement). 
+
+* Импортируйте API в экземпляр управления API. Примеры шагов см. [в разделе Учебник. Использование расширения управления API для Visual Studio Code для импорта API-интерфейсов и управления ими](visual-studio-code-tutorial.md).
 
 ## <a name="restrictions-and-limitations"></a>Ограничения
 
@@ -76,7 +78,7 @@ ms.locfileid: "91345128"
 > Не забудьте выйти из сеанса отладки, нажав кнопку " **Закрыть** " после завершения.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Дополнительные сведения о [расширении управления API для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement). 
 + Сообщить о проблемах в [репозитории GitHub](https://github.com/Microsoft/vscode-apimanagement)

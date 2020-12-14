@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.date: 05/03/2020
 ms.author: kaib
 ms.custom: seodec18
-ms.openlocfilehash: 3565b165c669af3566667d9bdfa401d15fcce101
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 76aa18c9724d85b1dd3fb8de3d7d033d40ff95ce
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544162"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400239"
 ---
 # <a name="resize-an-os-disk-that-has-a-gpt-partition"></a>Изменение размера диска ОС с разделом GPT
 
@@ -292,13 +292,13 @@ user@myvm:~#
    1. Увеличьте размер диска операционной системы на портале.
    1. Запустите виртуальную машину.
 
-1. После перезапуска виртуальной машины установите пакет **Cloud-utils-гровпарт** , чтобы получить `growpart` команду, в которой необходимо увеличить размер диска операционной системы.
+1. После перезапуска виртуальной машины выполните следующие действия.
 
-      Этот пакет предварительно устанавливается в большинстве образов Azure Marketplace.
+   - Установите пакет **Cloud-utils-гровпарт** , чтобы предоставить команду **гровпарт** , которая требуется для увеличения размера диска операционной системы и обработчика гдиск для разметки дисков GPT. Эти пакеты предварительно устанавливаются в большинстве образов Marketplace.
 
-      ```bash
-      [root@dd-rhel7vm ~]# yum install cloud-utils-growpart
-      ```
+   ```bash
+   [root@dd-rhel7vm ~]# yum install cloud-utils-growpart gdisk
+   ```
 
 1. Определите, какой диск и раздел содержат физический том или тома LVM (ПС) в группе томов с именем **рутвг** , выполнив `pvscan` команду. Обратите внимание на размер и свободное пространство, перечисленное между квадратными скобками (**[** и **]**).
 
@@ -400,8 +400,6 @@ user@myvm:~#
 > Чтобы использовать ту же процедуру для изменения размера любого другого логического тома, измените имя LV на шаге 12.
 
 ### <a name="rhel-raw"></a>RHEL RAW
->[!NOTE]
->Прежде чем увеличивать размер диска ОС, всегда сделайте снимок виртуальной машины.
 
 Чтобы увеличить размер диска операционной системы в необработанном разделе RHEL, выполните следующие действия.
 
@@ -411,119 +409,125 @@ user@myvm:~#
 
 После перезапуска виртуальной машины выполните следующие действия.
 
-1. Получите доступ к виртуальной машине от имени **привилегированного** пользователя с помощью следующей команды:
- 
-   ```
-   sudo su
+1. Войдите на виртуальную машину с учетными данными **корневого**, используя следующую команду:
+
+   ```bash
+   [root@dd-rhel7vm ~]# sudo -i
    ```
 
-1. Установите пакет **гптфдиск** , который потребуется увеличить размер диска операционной системы.
+1. После перезапуска виртуальной машины выполните следующие действия.
 
-   ```
-   yum install gdisk -y
-   ```
+   - Установите пакет **Cloud-utils-гровпарт** , чтобы предоставить команду **гровпарт** , которая требуется для увеличения размера диска операционной системы и обработчика гдиск для разметки дисков GPT. Этот пакет предварительно устанавливается в большинстве образов Marketplace.
 
-1.  Чтобы просмотреть все доступные секторы на диске, выполните следующую команду:
-    ```
-    gdisk -l /dev/sda
-    ```
-
-1. Вы увидите сведения, уведомляющие о типе секции. Убедитесь, что это GPT. Определяет корневой раздел. Не изменяйте или не удаляйте загрузочный раздел (загрузочный раздел BIOS) или системный раздел (системный раздел EFI).
-
-1. Используйте эту команду, чтобы начать секционирование в первый раз: 
-    ```
-    gdisk /dev/sda
-    ```
-
-1. Вы увидите сообщение с запросом следующей команды: `Command: ? for help` . Выберите клавишу **w** :
-
-   ```
-   w
+   ```bash
+   [root@dd-rhel7vm ~]# yum install cloud-utils-growpart gdisk
    ```
 
-1. Вы получите следующее сообщение: `Warning! Secondary header is placed too early on the disk! Do you want to
-correct this problem? (Y/N)` . Выберите ключ **Y** : 
+1. Используйте команду **лсблк-f** , чтобы проверить раздел и тип файловой системы, в которых находится корневой **/** раздел ():
 
-   ```
-   Y
-   ```
-
-1. Должно отобразиться сообщение о том, что окончательные проверки завершены и запрашивают подтверждение. Выберите ключ **Y** :
-
-   ```
-   Y
-   ```
-
-1. Используйте `partprobe` команду, чтобы проверить, что все произошло правильно:
-
-   ```
-   partprobe
+   ```bash
+   [root@vm-dd-cent7 ~]# lsblk -f
+   NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+   sda
+   ├─sda1  xfs          2a7bb59d-6a71-4841-a3c6-cba23413a5d2 /boot
+   ├─sda2  xfs          148be922-e3ec-43b5-8705-69786b522b05 /
+   ├─sda14
+   └─sda15 vfat         788D-DC65                            /boot/efi
+   sdb
+   └─sdb1  ext4         923f51ff-acbd-4b91-b01b-c56140920098 /mnt/resource
    ```
 
-1. Вы выполнили предыдущие шаги, чтобы убедиться в том, что дополнительный заголовок GPT помещается в конец. Затем запустите процесс изменения размера с помощью `gdisk` средства. Используйте следующую команду:
+1. Для проверки Начните с перечисления таблицы разделов на диске SDA с **гдиск**. В этом примере мы видим диск размером 48 ГБ с Секцией 2 в 29,0 гиб. Диск был увеличен с 30 ГБ до 48 ГБ в портал Azure.
 
-   ```
-   gdisk /dev/sda
-   ```
-1. В меню Команда выберите клавишу **p** , чтобы просмотреть список секций. Определяет корневой раздел. (В этих шагах **sda2** считается корневой секцией.) Найдите загрузочный раздел. (В этих шагах **sda3** считается загрузочным разделом.) 
+   ```bash
+   [root@vm-dd-cent7 ~]# gdisk -l /dev/sda
+   GPT fdisk (gdisk) version 0.8.10
 
-   ```
-   p
-   ```
-    ![Снимок экрана, на котором показан корневой раздел и загрузочный раздел.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw1.png)
+   Partition table scan:
+   MBR: protective
+   BSD: not present
+   APM: not present
+   GPT: present
 
-1. Выберите ключ **d** , чтобы удалить секцию. Затем выберите номер раздела, назначенный загрузочному разделу. (В данном примере это **3**.)
-   ```
-   d
-   3
-   ```
-1. Выберите ключ **d** , чтобы удалить секцию. Выберите номер раздела, назначенный загрузочному разделу. (В этом примере это **2**.)
-   ```
-   d
-   2
-   ```
-    ![Снимок экрана, на котором показаны действия по удалению корневого и загрузочного разделов.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw2.png)
+   Found valid GPT with protective MBR; using GPT.
+   Disk /dev/sda: 100663296 sectors, 48.0 GiB
+   Logical sector size: 512 bytes
+   Disk identifier (GUID): 78CDF84D-9C8E-4B9F-8978-8C496A1BEC83
+   Partition table holds up to 128 entries
+   First usable sector is 34, last usable sector is 62914526
+   Partitions will be aligned on 2048-sector boundaries
+   Total free space is 6076 sectors (3.0 MiB)
 
-1. Чтобы повторно создать корневой раздел с увеличенным размером, выберите ключ **n** и введите номер раздела, который вы ранее удалили для корня (**2** в этом примере). Выберите `Default Value` для первого сектора. Выберите `Last sector value -  boot size sector` для последнего сектора ( `4096` в данном случае — для загрузки в 2 МБ). Выберите `8300` для шестнадцатеричного кода.
-   ```
-   n
-   2
-   (Enter default)
-   (Calculated value of Last sector value - 4096)
-   8300
-   ```
-1. Чтобы повторно создать загрузочный раздел, выберите ключ **n** и введите номер раздела, который вы ранее удалили для загрузки (**3** в этом примере). Выберите `Default Value` для первого сектора и последнего сектора. Выберите `EF02` для шестнадцатеричного кода.
-   ```
-   n
-   3
-   (Enter default)
-   (Enter default)
-   EF02
+   Number  Start (sector)    End (sector)  Size       Code  Name
+      1         1026048         2050047   500.0 MiB   0700
+      2         2050048        62912511   29.0 GiB    0700
+   14            2048           10239   4.0 MiB     EF02
+   15           10240         1024000   495.0 MiB   EF00  EFI System Partition
    ```
 
-1. Запишите изменения с помощью `w` команды, а затем выберите, `Y` чтобы подтвердить изменения:
-   ```
-   w
-   Y
-   ```
-1. Выполните `partprobe` команду, чтобы проверить стабильность диска:
-   ```
-   partprobe
-   ```
-1. Перезагрузите виртуальную машину. Необходимо увеличить размер корневого раздела.
-   ```
-   reboot
+1. Разверните раздел root, в данном случае sda2 с помощью команды **гровпарт** . С помощью этой команды можно развернуть раздел, чтобы использовать все смежные места на диске.
+
+   ```bash
+   [root@vm-dd-cent7 ~]# growpart /dev/sda 2
+   CHANGED: partition=2 start=2050048 old: size=60862464 end=62912512 new: size=98613214 end=100663262
    ```
 
-   ![Снимок экрана, на котором показаны шаги для повторного создания загрузочного раздела.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw3.png)
+1. Теперь снова распечатайте новую таблицу разделов с помощью **гдиск** .  Обратите внимание, что Секция 2 расширилась до 47,0 гиб:
 
-1. Выполните `xfs_growfs` команду в разделе, чтобы изменить ее размер:
+   ```bash
+   [root@vm-dd-cent7 ~]# gdisk -l /dev/sda
+   GPT fdisk (gdisk) version 0.8.10
+
+   Partition table scan:
+   MBR: protective
+   BSD: not present
+   APM: not present
+   GPT: present
+
+   Found valid GPT with protective MBR; using GPT.
+   Disk /dev/sda: 100663296 sectors, 48.0 GiB
+   Logical sector size: 512 bytes
+   Disk identifier (GUID): 78CDF84D-9C8E-4B9F-8978-8C496A1BEC83
+   Partition table holds up to 128 entries
+   First usable sector is 34, last usable sector is 100663262
+   Partitions will be aligned on 2048-sector boundaries
+   Total free space is 4062 sectors (2.0 MiB)
+
+   Number  Start (sector)    End (sector)  Size       Code  Name
+      1         1026048         2050047   500.0 MiB   0700
+      2         2050048       100663261   47.0 GiB    0700
+   14            2048           10239   4.0 MiB     EF02
+   15           10240         1024000   495.0 MiB   EF00  EFI System Partition
    ```
-   xfs_growfs /dev/sda2
+
+1. Разверните файловую систему в разделе, используя **xfs_growfs**, которая подходит для стандартной системы RedHat, созданной Marketplace:
+
+   ```bash
+   [root@vm-dd-cent7 ~]# xfs_growfs /
+   meta-data=/dev/sda2              isize=512    agcount=4, agsize=1901952 blks
+            =                       sectsz=4096  attr=2, projid32bit=1
+            =                       crc=1        finobt=0 spinodes=0
+   data     =                       bsize=4096   blocks=7607808, imaxpct=25
+            =                       sunit=0      swidth=0 blks
+   naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+   log      =internal               bsize=4096   blocks=3714, version=2
+            =                       sectsz=4096  sunit=1 blks, lazy-count=1
+   realtime =none                   extsz=4096   blocks=0, rtextents=0
+   data blocks changed from 7607808 to 12326651
    ```
 
-   ![Снимок экрана, показывающий результат выполнения xfs_growfs.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw4.png)
+1. Убедитесь, что новый размер отражается с помощью команды **DF** :
 
-## <a name="next-steps"></a>Дальнейшие действия
-
-- [Изменение размера диска](expand-disks.md)
+   ```bash
+   [root@vm-dd-cent7 ~]# df -hl
+   Filesystem      Size  Used Avail Use% Mounted on
+   devtmpfs        452M     0  452M   0% /dev
+   tmpfs           464M     0  464M   0% /dev/shm
+   tmpfs           464M  6.8M  457M   2% /run
+   tmpfs           464M     0  464M   0% /sys/fs/cgroup
+   /dev/sda2        48G  2.1G   46G   5% /
+   /dev/sda1       494M   65M  430M  13% /boot
+   /dev/sda15      495M   12M  484M   3% /boot/efi
+   /dev/sdb1       3.9G   16M  3.7G   1% /mnt/resource
+   tmpfs            93M     0   93M   0% /run/user/1000
+   ```

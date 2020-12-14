@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2020
-ms.openlocfilehash: 8eb163c95fb1426ebae8956d50f6d8f6aec6fd7f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1a6b328bc076ffa619921a8698549e95e6f15c60
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013655"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400766"
 ---
 # <a name="perform-log-query-in-azure-monitor-that-span-across-workspaces-and-apps"></a>Выполнение запроса журнала в Azure Monitor, охватывающем рабочие области и приложения
 
@@ -22,7 +22,7 @@ ms.locfileid: "96013655"
 2. Неявно с помощью [запросов контекста ресурсов](../platform/design-logs-deployment.md#access-mode). При выполнении запроса в контексте определенного ресурса, группы ресурсов или подписки соответствующие данные будут получены из всех рабочих областей, содержащих данные для этих ресурсов. Application Insights данные, хранящиеся в приложениях, не будут получены.
 
 > [!IMPORTANT]
-> Если вы используете Application Insights телеметрии [ресурсов на основе рабочей области](../app/create-workspace-resource.md) , она хранится в log Analytics рабочей области со всеми остальными данными журнала. Используйте выражение log () для записи запроса, который включает приложение в несколько рабочих областей. Для нескольких приложений в одной рабочей области не требуется перекрестный запрос к рабочей области.
+> Если вы используете Application Insights телеметрии [ресурсов на основе рабочей области](../app/create-workspace-resource.md) , она хранится в log Analytics рабочей области со всеми остальными данными журнала. Используйте выражение Workspace () для написания запроса, включающего в себя приложение в нескольких рабочих областях. Для нескольких приложений в одной рабочей области не требуется перекрестный запрос к рабочей области.
 
 
 ## <a name="cross-resource-query-limits"></a>Ограничения запросов между ресурсами 
@@ -140,7 +140,7 @@ applicationsScoping
 
 ![Timechart](media/cross-workspace-query/chart.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите статью [Анализ данных журнала в Azure Monitor](log-query-overview.md), где описываются запросы журнала и структуры данных журнала Azure Monitor.
 

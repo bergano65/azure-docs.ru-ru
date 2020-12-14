@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 12/02/2020
+ms.date: 12/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 396d6f69673f8758d8d1302f8d10b8a92e5f50b4
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 37d9c24d58e0dd9fb10db607ef1b96de0a44eb78
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96530761"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399372"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Публикация приложения в коллекции приложений Azure AD
 
@@ -95,8 +95,8 @@ ms.locfileid: "96530761"
 | Единый выход через Интернет| √| √ |
 | Единый вход на основе мобильных устройств| √| √* |
 | Единый выход на основе мобильных устройств| √| √* |
-| Политики условного доступа для мобильных приложений| √| X |
-| Простой интерфейс MFA для мобильных приложений| √| X |
+| Политики условного доступа для мобильных приложений| √| √* |
+| Простой интерфейс MFA для мобильных приложений| √| √* |
 | Подготовка SCIM| √| √ |
 | Доступ к Microsoft Graph| √| X |
 

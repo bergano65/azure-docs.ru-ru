@@ -11,12 +11,12 @@ ms.date: 09/29/2020
 ms.custom:
 - mqtt
 - 'Role: Cloud Development'
-ms.openlocfilehash: ef1d6787ab3d4083ee6418694d1965ea0f90f730
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: b83faecb16ac09a47a0ade25474f7a5b3ecd4296
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996125"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400934"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Общие сведения о двойниках устройств и их использование в Центре Интернета вещей
 
@@ -185,7 +185,7 @@ ms.locfileid: "91996125"
 
   - Свойства
 
-    | Название | Значение |
+    | Имя | Значение |
     | --- | --- |
     $content-type | приложение/json |
     $iothub-enqueuedtime |  Время отправки уведомления |
@@ -201,7 +201,7 @@ ms.locfileid: "91996125"
 
   - Текст
         
-    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление. разница заключается в том, что он может содержать все разделы двойника: Теги, Properties. reсообщаемые, Properties. и что содержит элементы "$metadata". Например, примененная к объекту директива
+    Этот раздел содержит все изменения двойника в формате JSON. Он использует тот же формат, что и исправление. разница заключается в том, что он может содержать все разделы двойника: Теги, Properties. reсообщаемые, Properties. и что содержит элементы "$metadata". Например,
 
     ```json
     {
@@ -339,7 +339,9 @@ ms.locfileid: "91996125"
             "batteryLevel": "55%",
             "$metadata": {
                 "telemetryConfig": {
-                    "sendFrequency": "5m",
+                    "sendFrequency": {
+                        "$lastUpdated": "2016-03-31T16:35:48.789Z"
+                    },
                     "status": {
                         "$lastUpdated": "2016-03-31T16:35:48.789Z"
                     },
