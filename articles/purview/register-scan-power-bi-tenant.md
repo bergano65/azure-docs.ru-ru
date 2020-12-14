@@ -7,19 +7,19 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: ce23119e568347fff2ad270cfea7f8b563cae529
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 1f08bfd6b7c0439dd08a3091b5ea927781af9b84
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904998"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387587"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Регистрация и сканирование клиента Power BI (Предварительная версия)
 
 В этой статье показано, как использовать портал Azure зрения для регистрации и сканирования клиента Power BI.
 
 > [!Note]
-> Если экземпляр зрения и клиент Power BI находятся в одном клиенте Azure, для настройки проверки клиента Power BI можно использовать только проверку подлинности управляемого удостоверения (MSI). Если экземпляр зрения и клиент Power BI находятся в разных клиентах Azure, необходимо пройти проверку подлинности с делегированной проверкой подлинности, а для настройки проверок необходимо использовать PowerShell. См. статью [Использование PowerShell для регистрации и сканирования Power BI](powershell-register-scan-power-bi.md).
+> Если экземпляр зрения и клиент Power BI находятся в одном клиенте Azure, для настройки проверки клиента Power BI можно использовать только проверку подлинности управляемого удостоверения (MSI). 
 
 ## <a name="create-a-security-group-for-permissions"></a>Создание группы безопасности для разрешений
 

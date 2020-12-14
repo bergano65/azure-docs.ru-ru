@@ -8,18 +8,18 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: b05ed6e1239721bcf3c1cf33d3ee63a992fd9843
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 5a088cb07fa74b65e497de54be8c97bd51d31c16
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853238"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387842"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>Использование сайта azureiotsolutions.com для развертывания акселератора решений
 
 Акселераторы решений Интернета вещей Azure можно развернуть в подписке Azure на сайте [AzureIoTSolutions.com](https://www.azureiotsolutions.com/Accelerators). На сайте AzureIoTSolutions.com вы найдете акселераторы решений Microsoft с открытым исходным кодом и акселераторы решений от партнеров. Эти акселераторы решений соответствуют [эталонной архитектуре Интернета вещей Azure](/azure/architecture/reference-architectures/iot). Сайт можно использовать для быстрого развертывания акселератора решений в качестве демонстрационной или производственной среды.
 
-![AzureIoTSolutions.com](media/iot-accelerators-permissions/iotsolutionscom.png)
+:::image type="content" source="media/iot-accelerators-permissions/iotsolutionscom.png" alt-text="Домашняя страница решений IoT":::
 
 > [!TIP]
 > Если вам требуется больший контроль над процессом развертывания, можно использовать CLI для развертывания акселератора решений.
