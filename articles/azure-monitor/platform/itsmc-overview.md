@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 917eb52a7255527b55aacd488f33125ad853e894
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 6c9e2ae420e56c5ef99ff79cdcb49592bc7e049e
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932274"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371991"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Подключение Azure к средствам ITSM с помощью Соединитель управления ИТ-услугами
 
@@ -42,9 +42,12 @@ ms.locfileid: "96932274"
 Вы можете начать использовать ITSMC, выполнив следующие действия.
 
 1.  [Добавьте ITSMC.](#add-it-service-management-connector)
-2.  [Создайте подключение ITSM.](#create-an-itsm-connection)
-3.  [Используйте соединение.](#use-itsmc)
-
+2. [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-connections)
+3.  [Создайте подключение ITSM.](#create-an-itsm-connection)
+4.  [Используйте соединение.](#use-itsmc)
+   
+   >[!NOTE]
+> Необходимо выполнить шаги по этому заказу, иначе вы получите ошибку.
 
 ##  <a name="add-it-service-management-connector"></a>Добавить Соединитель управления ИТ-услугами
 
@@ -70,7 +73,7 @@ ms.locfileid: "96932274"
    >[!NOTE]
    >В рамках текущего перехода с Microsoft Operations Management Suite (OMS) на Azure Monitor рабочие области OMS теперь называются *рабочими областями log Analytics*.
 
-5. Щелкните **ОК**.
+5. Нажмите кнопку **OK**.
 
 При развертывании ресурса ITSMC в правом верхнем углу окна появляется уведомление.
 
@@ -156,7 +159,7 @@ ms.locfileid: "96932274"
    * В случае выбора в раскрывающемся списке Рабочий элемент "событие": Если выбрать **создать отдельные рабочие элементы для каждой записи журнала** в выбранном переключателе, то каждое оповещение создаст новый рабочий элемент. При выборе параметра **создать отдельные рабочие элементы для каждого элемента конфигурации** в выбранном переключателе каждый элемент конфигурации будет иметь свой собственный рабочий элемент.
    ![Снимок экрана, на котором показано окно билета ITSM.](media/itsmc-overview/itsm-action-configuration-event.png)
 
-10. Щелкните **ОК**.
+10. Нажмите кнопку **OK**.
 
 При создании или изменении правила генерации оповещений Azure используйте группу действий с действием ITSM. При срабатывании оповещения рабочий элемент создается или обновляется в средстве ITSM.
 

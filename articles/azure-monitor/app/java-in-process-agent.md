@@ -6,12 +6,12 @@ ms.date: 03/29/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 4b29e5375c10fc3c1aaa203df720fdd24090d11e
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 3cab22c2271fd5874b4b094be65c36f5b5f3a22d
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601141"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371889"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Application Insights Azure Monitor отслеживания приложений Java с некодированным кодом
 
@@ -186,17 +186,17 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 По умолчанию ведение журнала выполняется только в том случае, если ведение журнала выполняется на уровне INFO или выше.
 Сведения о том, как изменить этот уровень, см. в разделе [Параметры конфигурации](./java-standalone-config.md#auto-collected-logging) .
 
-Если вы хотите присоединить пользовательские измерения к журналам, вы можете использовать [log4j 1 MDC](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html), [log4j 2 MDC](https://logging.apache.org/log4j/2.x/manual/thread-context.html)или [Logback MDC](http://logback.qos.ch/manual/mdc.html), а Application Insights Java 3,0 автоматически захватывает эти свойства MDC как пользовательские измерения в телеметрии трассировки и исключений.
+Если вы хотите присоединить пользовательские измерения к журналам, можно использовать [Log4j 1,2 MDC](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html), [log4j 2 MDC](https://logging.apache.org/log4j/2.x/manual/thread-context.html)или [Logback MDC](http://logback.qos.ch/manual/mdc.html), а Application Insights Java 3,0 автоматически захватит эти свойства MDC в виде пользовательских измерений для трассировки и телеметрии исключений.
 
 ### <a name="send-custom-telemetry-using-application-insights-java-2x-sdk"></a>Отправка пользовательской телеметрии с помощью пакета SDK для Java 2. x Application Insights
 
-Добавьте `applicationinsights-core-2.6.0.jar` в приложение (все версии 2. x поддерживаются Application Insights Java 3,0, но следует использовать последнюю версию, если у вас есть вариант):
+Добавьте `applicationinsights-core-2.6.2.jar` в приложение (все версии 2. x поддерживаются Application Insights Java 3,0, но следует использовать последнюю версию, если у вас есть вариант):
 
 ```xml
 <dependency>
   <groupId>com.microsoft.azure</groupId>
   <artifactId>applicationinsights-core</artifactId>
-  <version>2.6.0</version>
+  <version>2.6.2</version>
 </dependency>
 ```
 

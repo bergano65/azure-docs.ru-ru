@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 04/21/2020
+ms.date: 12/12/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a02c30423ab3c6de87eac7d34b5f0004e54a8d5d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 28d47b61bce7e154da6c6adb4b74e2b5cf1f3f3d
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957815"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371855"
 ---
 # <a name="what-sap-software-is-supported-for-azure-deployments"></a>Программное обеспечение SAP, поддерживаемое для развертываний Azure
 В этой статье описывается, как можно узнать, какое программное обеспечение SAP поддерживается для развертываний Azure, а также какие выпуски операционной системы или выпуски СУБД.
@@ -82,6 +82,12 @@ ms.locfileid: "94957815"
 - Системы SAP не в Юникоде поддерживаются только для серверов приложений, работающих под управлением гостевой ОС Windows. Гостевой операционной системой СУБД может быть Oracle Linux или Windows. Причина этого ограничения очевидна при проверке матрицы доступности продуктов SAP (PAM). Для Oracle Linux SAP никогда не выпустил ядра SAP не в Юникоде
 
 Знание выпусков СУБД, которые поддерживаются в целевой инфраструктуре Azure, необходимо проверить матрицу доступности продуктов SAP на наличие необходимых выпусков ОС и СУБД для выпусков продуктов SAP, которые предполагается выполнять. 
+
+## <a name="oracle-linux"></a>Oracle Linux
+Наиболее выразительно задаваемый вопрос относительно Oracle Linux заключается в том, поддерживает ли SAP ядро Red Hat, которое также является неотъемлемой частью Oracle Linux. Дополнительные сведения см. в статье о [поддержке SAP #1565179](https://launchpad.support.sap.com/#/notes/1565179).
+
+## <a name="other-database-than-sap-hana"></a>Другая база данных, чем SAP HANA
+Поддержка баз данных, отличных от HANA для рабочей нагрузки SAP, задокументирована в [заметке о поддержке sap #1928533](https://launchpad.support.sap.com/#/notes/1928533).
 
 
 ## <a name="sap-hana-support"></a>Поддержка SAP HANA

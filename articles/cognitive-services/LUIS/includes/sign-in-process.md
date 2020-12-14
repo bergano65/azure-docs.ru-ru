@@ -8,18 +8,20 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.date: 10/30/2020
 ms.topic: include
-ms.openlocfilehash: e592c11062e81d48014a90895a0e42b460d4b77c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e006f804b8ab6411f4949424147acf567dc2ed24
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128240"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97371323"
 ---
 ## <a name="sign-in-to-luis-portal"></a>Вход на портал LUIS
 
+[!INCLUDE [Note about portal deprecation](luis-portal-note.md)]
+
 Новому пользователю LUIS следует выполнить следующие действия:
 
-1. Войдите на [портал LUIS](https://www.luis.ai), выберите свою страну или регион и примите условия использования. Если же вы видите **Мои приложения** , это значит, что ресурс LUIS уже существует и вы можете сразу перейти к созданию приложения. У вас будет два варианта регистрации:
+1. Войдите на [портал LUIS](https://www.luis.ai), выберите свою страну или регион и примите условия использования. Если же вы видите **Мои приложения**, это значит, что ресурс LUIS уже существует и вы можете сразу перейти к созданию приложения. У вас будет два варианта регистрации:
 
     * Использование ресурса Azure (рекомендуется). Вы сможете связать учетную запись LUIS с новым или существующим ресурсом разработки Azure. Это соответствует варианту с выполненным переносом регистрации. Вам не нужно будет выполнять [перенос](../luis-migration-authoring.md#what-is-migration) позже.
 

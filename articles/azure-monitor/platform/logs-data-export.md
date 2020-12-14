@@ -7,17 +7,17 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: d2e93ccfaf3ff2c5b74ceef1f6a274f71ee52c4e
-ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
+ms.openlocfilehash: 4155cda1e1de6f15aefa6d5fc960988eba15068d
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2020
-ms.locfileid: "96309840"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371974"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 После настройки экспорта данных для рабочей области Log Analytics все новые данные, отправляемые в выбранные таблицы в рабочей области, автоматически экспортируются в учетную запись хранения каждый час или в концентратор событий в ближайшем режиме реального времени.
 
 ![Общие сведения о экспорте данных](media/logs-data-export/data-export-overview.png)
@@ -48,7 +48,7 @@ Log Analytics экспорт данных рабочей области непр
 > [!NOTE]
 > Log Analytics экспорт данных записывает данные как добавочный BLOB-объект, который сейчас находится в предварительной версии для Azure Data Lake Storage 2-го поколения. Перед настройкой экспорта в это хранилище необходимо открыть запрос в службу поддержки. Для этого запроса используйте следующие сведения.
 > - Тип проблемы: "Техническая".
-> - Подписка: ваша подписка
+> - Подписка. Ваша подписка
 > - Служба: Data Lake Storage 2-го поколения
 > - Ресурс: имя ресурса
 > - Сводка. запрос регистрации подписки для принятия данных из Log Analytics экспорта данных.
@@ -58,7 +58,7 @@ Log Analytics экспорт данных рабочей области непр
 ## <a name="data-completeness"></a>Полнота данных
 Экспорт данных продолжит попытки отправки данных в течение 30 минут, когда назначение недоступно. Если он по-прежнему недоступен через 30 минут, данные будут удалены до тех пор, пока назначение не станет доступным.
 
-## <a name="cost"></a>Cost
+## <a name="cost"></a>Стоимость
 В настоящее время дополнительная плата за функцию экспорта данных не взимается. Цены на экспорт данных будут объявлены в будущем и появится уведомление, предоставленное до начала выставления счетов. Если вы решили продолжить использование экспорта данных после периода уведомления, плата будет взиматься по соответствующей ставке.
 
 ## <a name="export-destinations"></a>Экспорт назначений
@@ -122,6 +122,10 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.insights
 
 Недоступно
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Недоступно
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду CLI для просмотра таблиц в рабочей области. Он поможет скопировать нужные таблицы и включить их в правило экспорта данных.
@@ -133,13 +137,22 @@ az monitor log-analytics workspace table list -resource-group resourceGroupName 
 Используйте следующую команду, чтобы создать правило экспорта данных для учетной записи хранения с помощью интерфейса командной строки.
 
 ```azurecli
-az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $storageAccountId
+$storageAccountResourceId = '/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.Storage/storageAccounts/storage-account-name'
+az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $storageAccountResourceId
 ```
 
-Используйте следующую команду, чтобы создать правило экспорта данных для концентратора событий с помощью интерфейса командной строки.
+Используйте следующую команду, чтобы создать правило экспорта данных для концентратора событий с помощью интерфейса командной строки. Для каждой таблицы создается отдельный концентратор событий.
 
 ```azurecli
-az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubsNamespacesId
+$eventHubsNamespacesResourceId = '/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.EventHub/namespaces/namespaces-name'
+az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubsNamespacesResourceId
+```
+
+Используйте следующую команду, чтобы создать правило экспорта данных для определенного концентратора событий с помощью интерфейса командной строки. Все таблицы экспортируются в указанное имя концентратора событий. 
+
+```azurecli
+$eventHubResourceId = '/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.EventHub/namespaces/namespaces-name/eventHubName/eventhub-name'
+az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubResourceId
 ```
 
 # <a name="rest"></a>[REST](#tab/rest)
@@ -205,9 +218,13 @@ PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 ```
 ---
 
-## <a name="view-data-export-configuration"></a>Просмотр конфигурации экспорта данных
+## <a name="view-data-export-rule-configuration"></a>Просмотр конфигурации правила экспорта данных
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Недоступно
 
@@ -231,6 +248,10 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 ## <a name="disable-an-export-rule"></a>Отключение правила экспорта
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
+
+Недоступно
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Недоступно
 
@@ -272,6 +293,10 @@ Content-type: application/json
 
 Недоступно
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Недоступно
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду, чтобы удалить правило экспорта данных с помощью интерфейса командной строки.
@@ -295,6 +320,10 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 Недоступно
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Недоступно
+
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду, чтобы просмотреть все правила экспорта данных в рабочей области с помощью интерфейса командной строки.
@@ -315,7 +344,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 ## <a name="unsupported-tables"></a>Неподдерживаемые таблицы
 Если правило экспорта данных включает неподдерживаемую таблицу, то конфигурация будет выполнена, но данные для этой таблицы не будут экспортированы. Если таблица в дальнейшем поддерживается, в это время будут экспортированы ее данные.
 
-Если правило экспорта данных включает таблицу, которая не существует, она завершится ошибкой. ```Table <tableName> does not exist in the workspace.```
+Если правило экспорта данных включает таблицу, которая не существует, она завершится ошибкой "Таблица <tableName> не существует в рабочей области".
 
 
 ## <a name="supported-tables"></a>Поддерживаемые таблицы
