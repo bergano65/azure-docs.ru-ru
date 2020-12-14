@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/11/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: 70b983d0fc2b13957a3701c778dec074b328a770
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 07d118073a73f539df8ea9c5428562a8cdd26db3
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94482761"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912398"
 ---
 Одной из основных функций службы "Речь" является распознавание и преобразование человеческой речи (часто это называется преобразованием речи в текст). Из этого краткого руководство вы узнаете, как использовать пакет SDK для службы "Речь" в приложениях и продуктах для выполнения высококачественного преобразования речи в текст.
 
@@ -31,7 +31,7 @@ ms.locfileid: "94482761"
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
-Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig?view=azure-java-stable). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации. Создайте [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig?view=azure-java-stable) с помощью ключа и региона. Сведения о том, как найти пару "ключ-регион", см. в разделе [Поиск ключей и региона](../../../overview.md#find-keys-and-region).
+Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации. Создайте [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig) с помощью ключа и региона. Сведения о том, как найти пару "ключ-регион", см. в разделе [Поиск ключей и региона](../../../overview.md#find-keys-and-region).
 
 ```java
 import com.microsoft.cognitiveservices.speech.*;
@@ -46,7 +46,7 @@ public class Program {
 }
 ```
 
-Существует несколько других способов инициализации [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig?view=azure-java-stable):
+Существует несколько других способов инициализации [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig):
 
 * С помощью конечной точки: передайте конечную точку службы "Речь". Ключ или маркер авторизации являются необязательными.
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
@@ -57,7 +57,7 @@ public class Program {
 
 ## <a name="recognize-from-microphone"></a>Распознавание речи с микрофона
 
-Чтобы распознать речь с микрофона устройства, создайте `AudioConfig` с помощью `fromDefaultMicrophoneInput()`. Затем инициализируйте [`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer?view=azure-java-stable), передав `audioConfig` и `config`.
+Чтобы распознать речь с микрофона устройства, создайте `AudioConfig` с помощью `fromDefaultMicrophoneInput()`. Затем инициализируйте [`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer), передав `audioConfig` и `config`.
 
 ```java
 import com.microsoft.cognitiveservices.speech.*;
@@ -87,7 +87,7 @@ public class Program {
 
 ## <a name="recognize-from-file"></a>Распознавание речи из файла
 
-Чтобы распознавать речь из аудиофайла, а не с помощью микрофона, вам все равно нужно создать `AudioConfig`. Но при создании [`AudioConfig`](/java/api/com.microsoft.cognitiveservices.speech.audio.audioconfig?view=azure-java-stable) вместо вызова `fromDefaultMicrophoneInput()` необходимо вызвать `fromWavFileInput()` и передать путь к файлу.
+Чтобы распознавать речь из аудиофайла, а не с помощью микрофона, вам все равно нужно создать `AudioConfig`. Но при создании [`AudioConfig`](/java/api/com.microsoft.cognitiveservices.speech.audio.audioconfig) вместо вызова `fromDefaultMicrophoneInput()` необходимо вызвать `fromWavFileInput()` и передать путь к файлу.
 
 ```java
 import com.microsoft.cognitiveservices.speech.*;
@@ -114,7 +114,7 @@ public class Program {
 
 ## <a name="error-handling"></a>Обработка ошибок
 
-В предыдущих примерах мы просто получили распознанный текст с помощью `result.getText()`, но чтобы обработать ошибки и другие ответы, необходимо написать код для обработки результата. Следующий пример кода вычисляет значение [`result.getReason()`](/java/api/com.microsoft.cognitiveservices.speech.resultreason?view=azure-java-stable&preserve-view=true) и выполняет следующее:
+В предыдущих примерах мы просто получили распознанный текст с помощью `result.getText()`, но чтобы обработать ошибки и другие ответы, необходимо написать код для обработки результата. Следующий пример кода вычисляет значение [`result.getReason()`](/java/api/com.microsoft.cognitiveservices.speech.recognitionresult.getreason) и выполняет следующее:
 
 * Выводит результат распознавания: `ResultReason.RecognizedSpeech`
 * Если совпадений нет, сообщает об этом пользователю: `ResultReason.NoMatch`
@@ -149,7 +149,7 @@ switch (result.getReason()) {
 
 Непрерывное распознавание функционирует иначе. Оно используется, если требуется **контролировать**, когда следует остановить распознавание. Для получения результатов распознавания необходимо подписаться на события `recognizing`, `recognized`и `canceled`. Чтобы отключить распознавание, необходимо вызвать [`stopContinuousRecognitionAsync`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.stopcontinuousrecognitionasync). Ниже приведен пример того, как выполняется непрерывное распознавание входного аудиофайла.
 
-Начнем с определения входных данных и инициализации [`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer?preserve-view=true&view=azure-java-stable):
+Начнем с определения входных данных и инициализации [`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer):
 
 ```java
 AudioConfig audioConfig = AudioConfig.fromWavFileInput("YourAudioFile.wav");
@@ -162,12 +162,12 @@ SpeechRecognizer recognizer = new SpeechRecognizer(config, audioConfig);
 private static Semaphore stopTranslationWithFileSemaphore;
 ```
 
-Мы будем подписываться на события, отправленные из [`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer?preserve-view=true&view=azure-java-stable).
+Мы будем подписываться на события, отправленные из [`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer).
 
-* [`recognizing`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.recognizing?preserve-view=true&view=azure-java-stable): Сигнал для событий, содержащих промежуточные результаты распознавания.
-* [`recognized`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.recognized?preserve-view=true&view=azure-java-stable): Сигнал для событий, содержащих окончательные результаты распознавания (указывает на успешность попытки распознавания).
-* [`sessionStopped`](/java/api/com.microsoft.cognitiveservices.speech.recognizer.sessionstopped?preserve-view=true&view=azure-java-stable): Сигнал для событий, указывающих на окончание распознавания (операция).
-* [`canceled`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.canceled?preserve-view=true&view=azure-java-stable): Сигнал для событий, содержащих отмененные результаты распознавания (показывающий попытку распознавания, которая была отменена в результате ошибки распознавания или при прямом запросе об отмене, в случае сбоя транспортировки или протоколирования).
+* [`recognizing`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.recognizing): Сигнал для событий, содержащих промежуточные результаты распознавания.
+* [`recognized`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.recognized): Сигнал для событий, содержащих окончательные результаты распознавания (указывает на успешность попытки распознавания).
+* [`sessionStopped`](/java/api/com.microsoft.cognitiveservices.speech.recognizer.sessionstopped): Сигнал для событий, указывающих на окончание распознавания (операция).
+* [`canceled`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.canceled): Сигнал для событий, содержащих отмененные результаты распознавания (показывающий попытку распознавания, которая была отменена в результате ошибки распознавания или при прямом запросе об отмене, в случае сбоя транспортировки или протоколирования).
 
 ```java
 // First initialize the semaphore.
@@ -221,7 +221,7 @@ recognizer.stopContinuousRecognitionAsync().get();
 
 При использовании непрерывного распознавания вы можете включить обработку диктовки с помощью соответствующей функции "Включить диктовку". Этот режим приведет к тому, что экземпляр конфигурации речи будет интерпретировать словесные описания структуры предложения, например, пунктуацию. Например, речевой фрагмент "Живете ли вы в городе вопросительный знак" будет интерпретироваться как текст "Живете ли вы в городе?".
 
-Чтобы включить режим диктовки, используйте метод [`enableDictation`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig.enabledictation?preserve-view=true&view=azure-java-stable) в [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-java-stable).
+Чтобы включить режим диктовки, используйте метод [`enableDictation`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig.enabledictation) в [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig).
 
 ```java
 config.enableDictation();
@@ -229,24 +229,28 @@ config.enableDictation();
 
 ## <a name="change-source-language"></a>Изменение исходного языка
 
-Распространенной задачей распознавания речи является указание языка ввода (или исходного языка). Давайте посмотрим, как изменить язык ввода на французский. В коде найдите [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-java-stable), а затем добавьте следующую строку непосредственно под ней.
+Распространенной задачей распознавания речи является указание языка ввода (или исходного языка). Давайте посмотрим, как изменить язык ввода на французский. В коде найдите [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig), а затем добавьте следующую строку непосредственно под ней.
 
 ```java
 config.setSpeechRecognitionLanguage("fr-FR");
 ```
 
-[`setSpeechRecognitionLanguage`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setspeechrecognitionlanguage?preserve-view=true&view=azure-java-stable) — это параметр, принимающий строку в качестве аргумента. Вы можете указать любое значение в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
+[`setSpeechRecognitionLanguage`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setspeechrecognitionlanguage) — это параметр, принимающий строку в качестве аргумента. Вы можете указать любое значение в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
 
 ## <a name="improve-recognition-accuracy"></a>Улучшение точности распознавания
 
-Существует несколько способов улучшить точность распознавания с помощью пакета SDK службы "Речь". Давайте взглянем на списки фраз. Списки фраз используются для определения известных фраз в звуковых данных, например имени пользователя или определенного местоположения. В список фраз можно добавить отдельные слова или полные фразы. Если в аудиофайл включено точное совпадение всей фразы, во время распознавания в списке фраз используется запись. Если точное совпадение с фразой не найдено, распознавание не происходит.
+Списки фраз используются для определения известных фраз в звуковых данных, например имени пользователя или определенного местоположения. Предоставив список фраз, вы улучшите точность распознавания речи.
+
+Например, если у вас есть команда "Move to" и возможное произносимое назначение "Ward", вы можете добавить запись "Move to Ward". Добавление фразы увеличит вероятность того, что аудио будет распознано как "Move to Ward", а не "Move toward".
+
+В список фраз можно добавить отдельные слова или полные фразы. В ходе распознавания запись в списке фраз используется для ускоренного распознавания слов и фраз в списке, даже если записи появляются в середине речевого фрагмента. 
 
 > [!IMPORTANT]
-> Функция "Список фраз" доступна только на английском языке.
+> Функция списка фраз доступна для следующих языков: en-US, de-DE, en-AU, en-CA, en-GB, es-ES, es-MX, fr-CA, fr-FR, it-IT, ja-JP, ko-KR, pt-BR, zh-CN.
 
-Чтобы использовать список фраз, сначала создайте объект [`PhraseListGrammar`](/java/api/com.microsoft.cognitiveservices.speech.phraselistgrammar?preserve-view=true&view=azure-java-stable), а затем добавьте определенные слова и фразы с помощью [`AddPhrase`](/java/api/com.microsoft.cognitiveservices.speech.phraselistgrammar.addphrase?view=azure-java-stable#com_microsoft_cognitiveservices_speech_PhraseListGrammar_addPhrase_String_).
+Чтобы использовать список фраз, сначала создайте объект [`PhraseListGrammar`](/java/api/com.microsoft.cognitiveservices.speech.phraselistgrammar), а затем добавьте определенные слова и фразы с помощью [`AddPhrase`](/java/api/com.microsoft.cognitiveservices.speech.phraselistgrammar.addphrase#com_microsoft_cognitiveservices_speech_PhraseListGrammar_addPhrase_String_).
 
-Любые изменения [`PhraseListGrammar`](/java/api/com.microsoft.cognitiveservices.speech.phraselistgrammar?preserve-view=true&view=azure-java-stable) вступают в силу при следующем распознавании или после повторного подключения к службе "Речь".
+Любые изменения [`PhraseListGrammar`](/java/api/com.microsoft.cognitiveservices.speech.phraselistgrammar) вступают в силу при следующем распознавании или после повторного подключения к службе "Речь".
 
 ```java
 PhraseListGrammar phraseList = PhraseListGrammar.fromRecognizer(recognizer);
@@ -263,5 +267,5 @@ phraseList.clear();
 
 Списки фраз — это только один вариант для повышения точности распознавания. Кроме того, вы можете сделать следующее: 
 
-* [Повышение точности с помощью пользовательского распознавания речи](../../../how-to-custom-speech.md)
+* [Повышение точности с помощью пользовательского распознавания речи](../../../custom-speech-overview.md)
 * [Повышение точности с помощью моделей клиентов](../../../tutorial-tenant-model.md)

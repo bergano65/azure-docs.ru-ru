@@ -15,27 +15,30 @@ ms.custom:
 - devx-track-js
 - devx-track-csharp
 - cog-serv-seo-aug-2020
-zone_pivot_groups: programming-languages-set-one
+zone_pivot_groups: programming-languages-computer-vision
 keywords: компьютерное зрение; служба компьютерного зрения
-ms.openlocfilehash: c0ed1d534ce76f870b34c626b1b21f7745aa3247
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 20378eff09abed0eb4d7587211f576de6313ea1d
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91309832"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533351"
 ---
 # <a name="quickstart-use-the-computer-vision-client-library"></a>Краткое руководство. С помощью клиентской библиотеки службы "Компьютерное зрение" можно выполнять следующие операции:
 
-Начало работы с клиентской библиотекой службы "Компьютерное зрение". Служба Компьютерного зрения предоставляет доступ к алгоритмам ИИ для обработки изображений и возврата данных о визуальных признаках. Выполните приведенные здесь действия, чтобы установить пакет SDK для приложения и протестировать пример кода для выполнения базовых задач.
+Начать работу с REST API или клиентскими библиотеками Компьютерного зрения. Служба Компьютерного зрения предоставляет доступ к алгоритмам ИИ для обработки изображений и возврата данных о визуальных признаках. Выполните приведенные здесь действия, чтобы установить пакет SDK для приложения и протестировать пример кода для выполнения базовых задач.
 
-С помощью клиентской библиотеки службы "Компьютерное зрение" можно выполнять следующие операции:
 
-* анализ изображений на наличие тегов, текстового описания, лиц, содержимого для взрослых и многого другого.
-* считывание печатного и рукописного текста с помощью API службы чтения.
 
 ::: zone pivot="programming-language-csharp"
 
 [!INCLUDE [C# SDK quickstart](../includes/quickstarts-sdk/csharp-sdk.md)]
+
+::: zone-end
+
+::: zone pivot="programming-language-python"
+
+[!INCLUDE [Python SDK quickstart](../includes/quickstarts-sdk/python-sdk.md)]
 
 ::: zone-end
 
@@ -51,14 +54,14 @@ ms.locfileid: "91309832"
 
 ::: zone-end
 
-::: zone pivot="programming-language-python"
-
-[!INCLUDE [Python SDK quickstart](../includes/quickstarts-sdk/python-sdk.md)]
-
-::: zone-end
-
 ::: zone pivot="programming-language-go"
 
 [!INCLUDE [Go SDK quickstart](../includes/quickstarts-sdk/go-sdk.md)]
+
+::: zone-end
+
+::: zone pivot="programming-language-rest-api"
+
+[!INCLUDE [REST API quickstart](../includes/curl-quickstart.md)]
 
 ::: zone-end

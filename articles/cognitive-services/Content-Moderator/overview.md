@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: Content Moderator, Azure Content Moderator, онлайн-модератор, программное обеспечение для фильтрации содержимого, служба модерации контента, модерация контента
-ms.openlocfilehash: aa1f4c1fab9b3d8a1b5db0e965f1608e694646b2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c7c996ae49bdf7aa72873322f11af754843fd835
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91596863"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905253"
 ---
 # <a name="what-is-azure-content-moderator"></a>Что такое Azure Content Moderator?
 
@@ -81,4 +81,4 @@ API проверки позволяют интегрировать работу 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы приступить к работе с Content Moderator на веб-портале, выполните инструкции по [пробной работе с Content Moderator в Интернете](quick-start.md). Или изучите [краткое руководство по клиентской библиотеке](client-libraries.md), чтобы реализовать базовые сценарии в коде.
+Чтобы приступить к работе с Content Moderator на веб-портале, выполните инструкции по [пробной работе с Content Moderator в Интернете](quick-start.md). Или изучите [краткое руководство по клиентской библиотеке или REST API](client-libraries.md), чтобы реализовать базовые сценарии в коде.

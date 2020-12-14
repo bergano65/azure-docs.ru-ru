@@ -504,6 +504,8 @@
       href: how-to-use-logging.md
     - name: Отслеживание использования памяти
       href: how-to-track-speech-sdk-memory-usage.md
+    - name: Включение частной конечной точки
+      href: speech-services-private-link.md
     - name: Настройка OpenSSL для Linux
       displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
       href: how-to-configure-openssl-linux.md
