@@ -2,14 +2,14 @@
 author: wolfma61
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 02/12/2020
+ms.date: 12/10/2020
 ms.author: wolfma
-ms.openlocfilehash: c8e6c11771ae4cd216b3b1e43f3db7924dca81cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 329241c2660ff7828f57fb21daeb6de20caedc43
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77168174"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504463"
 ---
 | Географический регион | Регион | Идентификатор региона |
 | ----- | ----- | ----- |
@@ -20,11 +20,11 @@ ms.locfileid: "77168174"
 | Северная и Южная Америка | Центрально-южная часть США | `southcentralus` |
 | Северная и Южная Америка | центрально-западная часть США | `westcentralus` |
 | Северная и Южная Америка | западная часть США | `westus` |
-| Северная и Южная Америка | западная часть США 2 | `westus2` |
+| Северная и Южная Америка | Западная часть США 2 | `westus2` |
 | Северная и Южная Америка | Центральная Канада | `canadacentral` |
-| Северная и Южная Америка | Южная Бразилия | `brazilsouth` |
+| Северная и Южная Америка | Brazil South | `brazilsouth` |
 | Азиатско-Тихоокеанский регион | Восточная Азия | `eastasia` |
-| Азиатско-Тихоокеанский регион | Юго-Восточная Азия | `southeastasia` |
+| Азиатско-Тихоокеанский регион | Southeast Asia | `southeastasia` |
 | Азиатско-Тихоокеанский регион | Восточная Австралия | `australiaeast` |
 | Азиатско-Тихоокеанский регион | Центральная Индия | `centralindia` |
 | Азиатско-Тихоокеанский регион | Japan East | `japaneast` |

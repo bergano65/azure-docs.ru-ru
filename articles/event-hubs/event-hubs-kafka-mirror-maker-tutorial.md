@@ -3,12 +3,12 @@ title: Использование Apache Kafka MirrorMaker в службе "Це
 description: В этой статье описано, как с помощью Kafka MirrorMaker настроить зеркальное отображение кластера Kafka в службе "Центры событий Azure".
 ms.topic: how-to
 ms.date: 06/23/2020
-ms.openlocfilehash: d1ec20a32ef27856483492212608e20e82725f58
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: f2e7ac6951c84adfd8fc313995724021640ee0ab
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369528"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503205"
 ---
 # <a name="use-kafka-mirrormaker-with-event-hubs-for-apache-kafka"></a>Использование Apache Kafka MirrorMaker с Центрами событий
 
@@ -19,6 +19,8 @@ ms.locfileid: "92369528"
 > [!NOTE]
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/mirror-maker).
 
+> [!NOTE]
+> Эта статья содержит ссылки на термин *список разрешений*— термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 В этом руководстве описано следующее:
 > [!div class="checklist"]
@@ -44,10 +46,10 @@ ms.locfileid: "92369528"
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 * [Скачивание](https://maven.apache.org/download.cgi) и [Установка](https://maven.apache.org/install.html) двоичного архива Maven
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
-* [GIT](https://www.git-scm.com/downloads)
+* [Git](https://www.git-scm.com/downloads);
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен Центров событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 
 Для отправки и получения данных из любой службы Центров событий требуется пространство имен Центров событий. Инструкции по созданию пространства имен и концентратора событий см. в разделе [Создание концентратора событий](event-hubs-create.md) . Скопируйте строку подключения к Центрам событий для дальнейшего использования.
 
@@ -102,7 +104,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 ```
 
 > [!IMPORTANT]
-> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в статье [Получение строки подключения Центров событий](event-hubs-get-connection-string.md). Пример конфигурации см. здесь: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
 
 ## <a name="run-kafka-mirrormaker"></a>Запуск Kafka MirrorMaker
 
@@ -122,7 +124,7 @@ bin/kafka-mirror-maker.sh --consumer.config source-kafka.config --num.streams 1 
 - [Пример кода для этого руководства на GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/mirror-maker)
 - [Службы концентраторов событий Azure Kafka MirrorMaker, выполняющиеся на экземпляре контейнера Azure](https://github.com/djrosanova/EventHubsMirrorMaker)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о концентраторах событий для Kafka см. в следующих статьях:  
 
 - [Подключение Apache Spark к концентратору событий](event-hubs-kafka-spark-tutorial.md)

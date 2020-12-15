@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: b5a3ec1d6e33c08b460088c9aeb4fd18f6bf29ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 410b73d3f9011f9384fafa18394d9318e3eafa67
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88864721"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504497"
 ---
 ## <a name="authentication"></a>Аутентификация
 
@@ -151,7 +151,7 @@ def get_token(subscription_key):
 
 Маркер доступа должен отправляться в службу в виде заголовка `Authorization: Bearer <TOKEN>`. Каждый маркер доступа действителен в течение 10 минут. Вы можете получить новый маркер в любое время, но чтобы уменьшить сетевой трафик и задержку, мы рекомендуем использовать один маркер в течение девяти минут.
 
-Ниже приведен пример HTTP-запроса REST API преобразования текста в речь.
+Ниже приведен пример HTTP-запроса к REST API преобразования речи в текст для коротких аудио:
 
 ```http
 POST /cognitiveservices/v1 HTTP/1.1

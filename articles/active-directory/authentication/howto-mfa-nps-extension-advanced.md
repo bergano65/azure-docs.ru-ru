@@ -11,16 +11,19 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdadc02c8bb1c3f9450ff34ac935547343989cf6
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 6d436414393d77c83acc835110f17e55e491dce1
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96742975"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503495"
 ---
 # <a name="advanced-configuration-options-for-the-nps-extension-for-multi-factor-authentication"></a>Параметры расширенной конфигурации расширения NPS для Многофакторной идентификации
 
-Расширение сервера политики сети (NPS) расширяет возможности многофакторной идентификации Azure AD на основе облачных служб в локальной инфраструктуре. В этой статье предполагается, что расширение уже установлено и вы хотите узнать, как настроить его для своих потребностей. 
+Расширение сервера политики сети (NPS) расширяет возможности многофакторной идентификации Azure AD на основе облачных служб в локальной инфраструктуре. В этой статье предполагается, что расширение уже установлено и вы хотите узнать, как настроить его для своих потребностей.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин *список разрешений*— термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 ## <a name="alternate-login-id"></a>Альтернативное имя пользователя
 

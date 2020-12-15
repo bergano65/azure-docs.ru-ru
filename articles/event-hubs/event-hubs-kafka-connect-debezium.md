@@ -5,12 +5,12 @@ ms.topic: how-to
 author: abhirockzz
 ms.author: abhishgu
 ms.date: 08/11/2020
-ms.openlocfilehash: a13713f01a6bdb0ffcd787ef9c1d2f9a0336f63c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: ae3ef2e1f35be432558769c512845543867ef27a
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369562"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505415"
 ---
 # <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview-with-debezium-for-change-data-capture"></a>Интеграция поддержки Apache Kafka Connect в концентраторы событий Azure (Предварительная версия) с Дебезиум для отслеживания измененных данных
 
@@ -18,10 +18,13 @@ ms.locfileid: "92369562"
 
 В этом руководстве описано, как настроить систему на основе системы отслеживания измененных данных в Azure с помощью [концентраторов событий Azure](./event-hubs-about.md?WT.mc_id=devto-blog-abhishgu) (для Kafka), [Azure DB для PostgreSQL](../postgresql/overview.md) и дебезиум. Он будет использовать [соединитель Дебезиум PostgreSQL](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html) для потоковой передачи изменений базы данных из PostgreSQL в Kafka статьи в концентраторах событий Azure.
 
+> [!NOTE]
+> Эта статья содержит ссылки на термин *список разрешений*— термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
+
 При работе с этим руководством вы выполните следующие задачи:
 
 > [!div class="checklist"]
-> * Создание пространства имен Центров событий
+> * Создание пространства имен в Центрах событий
 > * Установка и Настройка базы данных Azure для PostgreSQL
 > * Настройка и запуск Kafka Connect с помощью соединителя Дебезиум PostgreSQL
 > * Проверка отслеживания измененных данных
@@ -35,7 +38,7 @@ ms.locfileid: "92369562"
 - Выпуск Kafka (версии 1.1.1, Scala версии 2.11) доступен на сайте [kafka.apache.org](https://kafka.apache.org/downloads#1.1.1)
 - Ознакомьтесь со статьей [Центры событий Azure для Apache Kafka (предварительная версия)](./event-hubs-for-kafka-ecosystem-overview.md).
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен Центров событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 Для отправки и получения данных из любой службы Центров событий требуется пространство имен Центров событий. Инструкции по созданию пространства имен и концентратора событий см. в разделе [Создание концентратора событий](event-hubs-create.md) . Получите строку подключения Центров событий и полное доменное имя (FQDN) для последующего использования. Инструкции см. в статье [Get an Event Hubs connection string](event-hubs-get-connection-string.md) (Получение строки подключения для Центров событий). 
 
 ## <a name="setup-and-configure-azure-database-for-postgresql"></a>Установка и Настройка базы данных Azure для PostgreSQL
@@ -100,7 +103,7 @@ plugin.path={KAFKA.DIRECTORY}/libs # path to the libs directory within the Kafka
 ```
 
 > [!IMPORTANT]
-> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в статье [Получение строки подключения Центров событий](event-hubs-get-connection-string.md). Пример конфигурации см. здесь: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
 
 
 ### <a name="run-kafka-connect"></a>Выполнение Kafka Connect
@@ -279,7 +282,7 @@ tail -f /Users/foo/todos-cdc.txt
 ## <a name="cleanup"></a>Очистка
 Kafka Connect создает разделы Центра событий для хранения конфигураций, смещений и состояния, которые сохраняются даже после завершения работы кластера Connect. Если этого не требуется, рекомендуется удалить эти разделы. Также может потребоваться удалить `my-server.public.todos` концентратор событий, созданный в ходе этого руководства.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о концентраторах событий для Kafka см. в следующих статьях:  
 

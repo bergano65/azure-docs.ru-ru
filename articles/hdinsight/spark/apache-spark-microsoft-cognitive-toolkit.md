@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/14/2020
-ms.openlocfilehash: d94a4858b4c4fa99a09acc2bec88f94a64686c2d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7fa3355ff7e61d624d57da68d0f835faa7ca3736
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539145"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505432"
 ---
 # <a name="use-microsoft-cognitive-toolkit-deep-learning-model-with-azure-hdinsight-spark-cluster"></a>Использование модели глубокого обучения Microsoft Cognitive Toolkit в кластере Azure HDInsight Spark
 
@@ -31,12 +31,12 @@ ms.locfileid: "92539145"
 
 ## <a name="how-does-this-solution-flow"></a>Как реализуется это решение?
 
-Это решение делится между этой статьей и записной книжкой Jupyter, которую вы отправляете в рамках этой статьи. Ниже перечислены действия, которые вы выполните в этой статье.
+Это решение делится на эту статью и Jupyter Notebook, которую вы отправляете в рамках этой статьи. Ниже перечислены действия, которые вы выполните в этой статье.
 
 * Запуск действия сценария в кластере HDInsight Spark для установки Microsoft Cognitive Toolkit и пакетов Python.
-* Передача элемента Jupyter Notebook, запускающего решение в кластере HDInsight Spark.
+* Загрузите Jupyter Notebook, который запускает решение, в кластер HDInsight Spark.
 
-Перечисленные ниже оставшиеся шаги приведены в описании Jupyter Notebook.
+Следующие оставшиеся действия описаны в Jupyter Notebook.
 
 * Загрузите образцы изображений в отказоустойчивый распределенный набор данных Spark или RDD.
   * Загрузка модулей и определение предустановок.
@@ -66,23 +66,23 @@ Microsoft Cognitive Toolkit в кластере Spark можно установ�
 |Типы узлов:|Головной, Рабочий|
 |Параметры|None|
 
-## <a name="upload-the-jupyter-notebook-to-azure-hdinsight-spark-cluster"></a>Передача Jupyter Notebook в кластер Azure HDInsight Spark
+## <a name="upload-the-jupyter-notebook-to-azure-hdinsight-spark-cluster"></a>Отправка Jupyter Notebook в кластер Azure HDInsight Spark
 
-Чтобы использовать Microsoft Cognitive Toolkit с кластером Azure HDInsight Spark, необходимо загрузить Jupyter Notebook **CNTK_model_scoring_on_Spark_walkthrough.ipynb** в кластер Azure HDInsight Spark. Эта записная книжка доступна на сайте GitHub по адресу [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
+Чтобы использовать Microsoft Cognitive Toolkit с кластером Azure HDInsight Spark, необходимо загрузить Jupyter Notebook **CNTK_model_scoring_on_Spark_walkthrough. ipynb** в кластер Azure HDInsight Spark. Эта записная книжка доступна на сайте GitHub по адресу [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
 
 1. Скачайте и распакуйте [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
 
 1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net/jupyter`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. В записной книжке Jupyter выберите **Upload (отправить** ) в правом верхнем углу, а затем перейдите к файлу Download (скачать) и выберите File (файл) `CNTK_model_scoring_on_Spark_walkthrough.ipynb` .
+1. В Jupyter Notebook выберите **Отправить** в правом верхнем углу, а затем перейдите к файлу Download (скачать) и выберите File (файл) `CNTK_model_scoring_on_Spark_walkthrough.ipynb` .
 
-    ![Отправка записной книжки Jupyter в кластер Azure HDInsight Spark](./media/apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Отправка записной книжки Jupyter в кластер Azure HDInsight Spark")
+    ![Отправка Jupyter Notebook в кластер Azure HDInsight Spark](./media/apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Отправка Jupyter Notebook в кластер Azure HDInsight Spark")
 
 1. Выберите **Отправить** еще раз.
 
 1. После отправки записной книжки щелкните имя записной книжки, а затем следуйте инструкциям в самой записной книжке о том, как загрузить набор данных и выполнить статью.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 
@@ -99,12 +99,12 @@ Microsoft Cognitive Toolkit в кластере Spark можно установ�
 * [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
 * [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](apache-spark-livy-rest-interface.md)
 
-### <a name="tools-and-extensions"></a>Средства и расширения
+### <a name="tools-and-extensions"></a>Инструменты и расширения
 
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
 * [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра, доступные для Jupyter Notebook в кластере Apache Spark для HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 

@@ -14,13 +14,13 @@ ms.workload: iaas-sql-server
 ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: bb7331747db301be5db00d550eec211f75257e29
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.custom: devx-track-azurecli, devx-track-azurepowershell, contperf-fy21q2
+ms.openlocfilehash: e7a8f54abbadb63c870c4d92843699c67f59752c
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360039"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505636"
 ---
 # <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>Регистрация SQL Server виртуальной машины с помощью расширения агента IaaS SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "97360039"
 В этой статье описывается, как зарегистрировать одну виртуальную машину SQL Server с расширением агента IaaS SQL. Кроме того, можно зарегистрировать все SQL Server виртуальные машины [автоматически](sql-agent-extension-automatic-registration-all-vms.md) или [несколько виртуальных машин, которые были внесены в пакетную](sql-agent-extension-manually-register-vms-bulk.md)операцию.
 
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 При регистрации в [расширении агента SQL Server IaaS](sql-server-iaas-agent-extension-automate-management.md) в подписке создается _ресурс_ **виртуальной машины SQL** , который является _отдельным_ ресурсом из ресурса виртуальной машины. При отмене регистрации ВИРТУАЛЬНОЙ машины SQL Server в расширении _ресурс_ **виртуальной машины SQL** будет удален, но фактические виртуальные машины не будут удалены.
 

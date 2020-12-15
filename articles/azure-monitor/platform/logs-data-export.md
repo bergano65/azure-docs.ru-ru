@@ -7,17 +7,17 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 4155cda1e1de6f15aefa6d5fc960988eba15068d
-ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
+ms.openlocfilehash: 8fa823620d6d1306260d719cbabaa3d815cc0d09
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97371974"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505449"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 После настройки экспорта данных для рабочей области Log Analytics все новые данные, отправляемые в выбранные таблицы в рабочей области, автоматически экспортируются в учетную запись хранения каждый час или в концентратор событий в ближайшем режиме реального времени.
 
 ![Общие сведения о экспорте данных](media/logs-data-export/data-export-overview.png)
@@ -131,7 +131,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.insights
 Используйте следующую команду CLI для просмотра таблиц в рабочей области. Он поможет скопировать нужные таблицы и включить их в правило экспорта данных.
 
 ```azurecli
-az monitor log-analytics workspace table list -resource-group resourceGroupName --workspace-name workspaceName --query [].name --output table
+az monitor log-analytics workspace table list --resource-group resourceGroupName --workspace-name workspaceName --query [].name --output table
 ```
 
 Используйте следующую команду, чтобы создать правило экспорта данных для учетной записи хранения с помощью интерфейса командной строки.

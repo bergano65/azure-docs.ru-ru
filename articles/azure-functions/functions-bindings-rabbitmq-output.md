@@ -1,0 +1,326 @@
+---
+title: Выходные привязки RabbitMQ для функций Azure
+description: Узнайте, как отправить сообщения RabbitMQ из функций Azure.
+author: cachai2
+ms.assetid: ''
+ms.topic: reference
+ms.date: 12/13/2020
+ms.author: cachai
+ms.custom: ''
+ms.openlocfilehash: 212bfcee09cd63b6ff09faaba4d99e4b4c583fe8
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505778"
+---
+# <a name="rabbitmq-output-binding-for-azure-functions-overview"></a>Обзор выходной привязки RabbitMQ для функций Azure
+
+> [!NOTE]
+> Привязки RabbitMQ полностью поддерживаются только в планах **Windows Premium** . Использование и Linux в настоящее время не поддерживаются.
+
+Используйте выходную привязку RabbitMQ для отправки сообщений в очередь RabbitMQ.
+
+Сведения об установке и настройке см. в [этой обзорной статье](functions-bindings-rabbitmq-output.md).
+
+## <a name="example"></a>Пример
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+В следующем примере показана [функция C#](functions-dotnet-class-library.md) , которая отправляет сообщение RabbitMQ при активации TimerTrigger каждые 5 минут, используя возвращаемое значение метода в качестве выходных данных:
+
+```cs
+[FunctionName("RabbitMQOutput")]
+[return: RabbitMQ("outputQueue", ConnectionStringSetting = "ConnectionStringSetting")]
+public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILogger log)
+{
+    log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+    return $"{DateTime.Now}";
+}
+```
+
+В следующем примере показано, как использовать интерфейс IAsyncCollector для отправки сообщений.
+
+```cs
+[FunctionName("RabbitMQOutput")]
+public static async Task Run(
+[RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "TriggerConnectionString")] string rabbitMQEvent,
+[RabbitMQ("destinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<string> outputEvents,
+ILogger log)
+{
+    // processing:
+    var myProcessedEvent = DoSomething(rabbitMQEvent);
+    
+     // send the message
+    await outputEvents.AddAsync(JsonConvert.SerializeObject(myProcessedEvent));
+}
+```
+
+В следующем примере показано, как отправить сообщения в виде POCO.
+
+```cs
+public class TestClass
+{
+    public string x { get; set; }
+}
+
+[FunctionName("RabbitMQOutput")]
+public static async Task Run(
+[RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "TriggerConnectionString")] TestClass rabbitMQEvent,
+[RabbitMQ("destinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<TestClass> outputPocObj,
+ILogger log)
+{
+    // send the message
+    await outputPocObj.Add(rabbitMQEvent);
+}
+```
+
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
+
+В следующем примере показана выходная привязка RabbitMQ в *function.jsдля* файла и [функция сценария C#](functions-reference-csharp.md) , которая использует эту привязку. Функция считывает сообщение из триггера HTTP и выводит его в очередь RabbitMQ.
+
+Данные привязки в файле *function.json*:
+
+```json
+{
+    "bindings": [
+        {
+            "type": "httpTrigger",
+            "direction": "in",
+            "authLevel": "function",
+            "name": "input",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "rabbitMQ",
+            "name": "outputMessage",
+            "queueName": "outputQueue",
+            "connectionStringSetting": "connectionStringAppSetting",
+            "direction": "out"
+        }
+    ]
+}
+```
+
+Ниже приведен код скрипта C#.
+
+```csx
+using System;
+using Microsoft.Extensions.Logging;
+
+public static void Run(string input, out string outputMessage, ILogger log)
+{
+    log.LogInformation(input);
+    outputMessage = input;
+}
+```
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В следующем примере показана выходная привязка RabbitMQ в *function.jsдля* файла и [функция JavaScript](functions-reference-node.md) , которая использует эту привязку. Функция считывает сообщение из триггера HTTP и выводит его в очередь RabbitMQ.
+
+Данные привязки в файле *function.json*:
+
+```json
+{
+    "bindings": [
+        {
+            "type": "httpTrigger",
+            "direction": "in",
+            "authLevel": "function",
+            "name": "input",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "rabbitMQ",
+            "name": "outputMessage",
+            "queueName": "outputQueue",
+            "connectionStringSetting": "connectionStringAppSetting",
+            "direction": "out"
+        }
+    ]
+}
+```
+
+Вот код JavaScript:
+
+```javascript
+module.exports = function (context, input) {
+    context.bindings.myQueueItem = input.body;
+    context.done();
+};
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+В следующем примере показана выходная привязка RabbitMQ в *function.jsдля* файла и функция Python, использующая привязку. Функция считывает сообщение из триггера HTTP и выводит его в очередь RabbitMQ.
+
+Данные привязки в файле *function.json*:
+
+```json
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "$return"
+        },
+        {
+            "type": "rabbitMQ",
+            "name": "outputMessage",
+            "queueName": "outputQueue",
+            "connectionStringSetting": "connectionStringAppSetting",
+            "direction": "out"
+        }
+    ]
+}
+```
+
+В *_\_ init_ \_ . Корректировка* можно записать сообщение в очередь, передав значение `set` методу.
+
+```python
+import azure.functions as func
+
+def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
+    input_msg = req.params.get('message')
+    msg.set(input_msg)
+    return 'OK'
+```
+
+# <a name="java"></a>[Java](#tab/java)
+
+В следующем примере показана функция Java, которая отправляет сообщение в очередь RabbitMQ при активации TimerTrigger каждые 5 минут.
+
+```java
+@FunctionName("RabbitMQOutputExample")
+public void run(
+@TimerTrigger(name = "keepAliveTrigger", schedule = "0 */5 * * * *") String timerInfo,
+@RabbitMQOutput(connectionStringSetting = "rabbitMQ", queueName = "hello") OutputBinding<String> output,
+final ExecutionContext context) {
+    output.setValue("Some string");
+}
+```
+
+---
+
+## <a name="attributes-and-annotations"></a>Атрибуты и заметки
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+В [библиотеках классов C#](functions-dotnet-class-library.md)используйте [раббитмкаттрибуте](https://github.com/Azure/azure-functions-rabbitmq-extension/blob/dev/src/RabbitMQAttribute.cs).
+
+Вот `RabbitMQAttribute` атрибут в сигнатуре метода:
+
+```csharp
+[FunctionName("RabbitMQOutput")]
+public static async Task Run(
+[RabbitMQTrigger("SourceQueue", ConnectionStringSetting = "TriggerConnectionString")] string rabbitMQEvent,
+[RabbitMQ("DestinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<string> outputEvents,
+ILogger log)
+{
+    ...
+}
+```
+
+Полный пример см. в разделе [Пример](#example)на C#.
+
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
+
+В скрипте C# атрибуты не поддерживаются.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В JavaScript атрибуты не поддерживаются.
+
+# <a name="python"></a>[Python](#tab/python)
+
+В Python атрибуты не поддерживаются.
+
+# <a name="java"></a>[Java](#tab/java)
+
+`RabbitMQOutput`Заметка позволяет создать функцию, которая выполняется при отправке сообщения RabbitMQ. Доступные параметры конфигурации включают имя очереди и имя строки подключения. Дополнительные сведения о параметрах см. в [заметках Java раббитмкаутпут](https://github.com/Azure/azure-functions-rabbitmq-extension/blob/dev/binding-library/java/src/main/java/com/microsoft/azure/functions/rabbitmq/annotation/RabbitMQOutput.java).
+
+Дополнительные сведения см. в [примере](#example) выходной привязки.
+
+---
+
+## <a name="configuration"></a>Конфигурация
+
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `RabbitMQ`.
+
+|свойство function.json | Свойство атрибута |Описание|
+|---------|---------|----------------------|
+|**type** | Недоступно | Необходимо задать значение "RabbitMQ".|
+|**direction** | Недоступно | Для этого свойства необходимо задать значение out. |
+|**name** | Недоступно | Имя переменной, представляющей очередь в коде функции. |
+|**queueName**|**QueueName**| Имя очереди, в которую отправляются сообщения. |
+|**Имя узла**|**HostName**|(необязательно, если используется Коннектстрингсеттинг) <br>Имя узла очереди (например: 10.26.45.210)|
+|**усернамесеттинг**|**усернамесеттинг**|(необязательно, если используется Коннектионстрингсеттинг) <br>Имя для доступа к очереди |
+|**пассвордсеттинг**|**пассвордсеттинг**|(необязательно, если используется Коннектионстрингсеттинг) <br>Пароль для доступа к очереди|
+|**коннектионстрингсеттинг**|**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения очереди сообщений RabbitMQ. Обратите внимание, что если вы укажете строку подключения напрямую, а не через параметр приложения в local.settings.js, триггер не будет работать. (Пример: в *function.json*: коннектионстрингсеттинг: "раббитмкконнектион" <br> В *local.settings.js*: "раббитмкконнектион": "< актуалконнектионстринг >")|
+|**port**|**порт**.|Возвращает или задает используемый порт. Значение по умолчанию — 0.|
+
+## <a name="usage"></a>Использование
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+Используйте следующие типы параметров для выходной привязки:
+
+* `byte[]`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `POCO` — Если значение параметра не отформатировано как объект C#, будет получена ошибка. Полный пример см. в разделе [Пример](#example)на C#.
+
+При работе с функциями C#:
+
+* Асинхронным функциям требуется возвращаемое значение или `IAsyncCollector` вместо `out` параметра.
+
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
+
+Используйте следующие типы параметров для выходной привязки:
+
+* `byte[]`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `POCO` — Если значение параметра не отформатировано как объект C#, будет получена ошибка.
+
+При работе с функциями скриптов C#:
+
+* Асинхронным функциям требуется возвращаемое значение или `IAsyncCollector` вместо `out` параметра.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Сообщение RabbitMQ отправляется через строку.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Сообщение RabbitMQ отправляется через строку.
+
+# <a name="java"></a>[Java](#tab/java)
+
+Используйте следующие типы параметров для выходной привязки:
+
+* `byte[]`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `POJO` — Если значение параметра не отформатировано как объект Java, будет получено сообщение об ошибке.
+
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Выполнение функции при создании сообщения RabbitMQ (триггер)](./functions-bindings-rabbitmq-trigger.md)

@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/06/2018
+ms.date: 12/14/2020
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50e0fe1cf3bb628c40e774423e45ea88d6ab78a5
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b6900647acf7182529f34c8cc065dbb039de38be
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359719"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504412"
 ---
 # <a name="assign-or-remove-licenses-in-the-azure-active-directory-portal"></a>Назначение или удаление лицензий на портале Azure Active Directory
 
@@ -49,11 +49,18 @@ ms.locfileid: "92359719"
 
 1. Выберите **Azure Active Directory**, а затем щелкните **Лицензии**.
 
-    ![Страница лицензий с количеством приобретенных служб и назначенными лицензиями](media/license-users-groups/license-details-blade.png)
+    :::image type="content" source="media/license-users-groups/license-details-blade.png" alt-text="Страница лицензий с количеством приобретенных служб и назначенными лицензиями":::
 
-1. Щелкните **приобретенную** ссылку, чтобы просмотреть страницу **продукты** и просмотреть **назначенные**, **Доступные**и **просроченные номера скоростей** для ваших планов лицензирования.
+1. Выберите **все продукты** , чтобы просмотреть страницу все продукты и просмотреть **итоговые**, **назначенные**, **Доступные** и **просроченные номера скоростей** для ваших планов лицензирования.
 
-    ![Страница "службы" с планами лицензирования служб и связанными сведениями о лицензиях](media/license-users-groups/license-products-blade-with-products.png)
+    :::image type="content" source="media/license-users-groups/license-products-blade-with-products.png" alt-text="Страница &quot;службы&quot; — с планами лицензий на службы — связанные сведения о лицензиях":::
+
+    > [!NOTE]
+    > Числа определяются следующим образом: 
+    > - Всего: общее количество приобретенных лицензий
+    > - Назначено: число лицензий, назначенных пользователям
+    > - Доступно: количество лицензий, доступных для назначения, включая срок действия которых скоро истекает
+    > - Срок действия скоро истекает: число лицензий, срок действия которых скоро истекает
 
 1. Выберите имя плана, чтобы просмотреть его лицензированных пользователей и группы.
 
@@ -140,7 +147,7 @@ ms.locfileid: "92359719"
     > [!NOTE]
     > Если локальная учетная запись пользователя, синхронизированная с Azure AD, выходит за пределы области действия синхронизации или при удалении синхронизации, то пользователь обратимо удаляется в Azure AD. В этом случае лицензии, назначенные пользователю напрямую или через лицензирование на основе группы, будут помечены как **приостановленные** , а не **удалены**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После назначения лицензий можно выполнять следующие операции:
 

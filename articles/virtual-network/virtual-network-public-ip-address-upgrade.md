@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions , devx-track-azurecli
-ms.openlocfilehash: 9ea29c47349fd7ccee469188f8929a864cf7bbef
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 6cabc340c0be347165a3e506703a6277f7eb1cea
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905797"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503939"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Обновление общедоступных IP-адресов
 
@@ -32,9 +32,6 @@ ms.locfileid: "96905797"
 * Как перенести классическую зарезервированный IP-адрес Azure на общедоступный IP-адрес Azure Resource Manager Basic SKU
 
 ## <a name="upgrade-public-ip-address-from-basic-to-standard-sku"></a>Обновление общедоступного IP-адреса с базового на стандартный SKU
-
->[!NOTE]
->Возможность обновления общедоступных IP-адресов с уровня "базовый" до "Стандартный" доступна не во всех регионах.  Дополнительные сведения см. в разделе [**ограничения**](#limitations) .
 
 Чтобы обновить общедоступный IP-адрес, он не должен быть связан ни с одним ресурсом (Дополнительные сведения о том, как отменять связь с общедоступными IP, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) ).
 
@@ -147,15 +144,6 @@ azure network reserved-ip commit-migration $name
 ---
 
 ## <a name="limitations"></a>Ограничения
-
-* В настоящее время эта возможность недоступна в следующих регионах:<br>
-US Gov (Вирджиния)<br>
-восточный регион US DoD<br>
-центральный регион US DoD<br>
-Восточный Китай<br>
-Восточный Китай 2<br>
-Северный Китай<br>
-Северный Китай 2
 
 * Чтобы обновить базовый общедоступный IP-адрес, он не может быть связан ни с одним ресурсом Azure.  Дополнительные сведения о том, как разорвать связь с общедоступными IP-адресами, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) .  Аналогично, чтобы перенести зарезервированный IP-адрес, он не может быть связан с какой-либо облачной службой.  Дополнительные сведения о том, как отсоединить зарезервированные IP-адреса, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/remove-public-ip-address-vm) .  
 * Общедоступные IP-адреса, обновленные с уровня "базовый" до SKU "Стандартный", не будут иметь [зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones) и поэтому не могут быть связаны с ресурсом Azure, который является избыточным в виде зоны или зональные.  Обратите внимание, что это относится только к регионам, предлагающим зоны доступности.

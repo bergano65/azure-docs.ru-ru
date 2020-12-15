@@ -7,17 +7,20 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/18/2018
+ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a9e7c537e85039675f27fa3e276b6b964ce1679b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: f3b918fdf753cef75782a47ef157c282ef47e1ed
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388601"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503647"
 ---
 # <a name="set-up-direct-sign-in-using-azure-active-directory-b2c"></a>Настройка прямого входа в систему с помощью Azure Active Directory B2C
+
+[!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
 При настройке входа для приложения с помощью Azure Active Directory (AD) B2C вы можете настроить предварительное заполнение имени для входа или прямой вход в поставщик удостоверений в определенных социальных сетях, например Facebook или LinkedIn, или учетной записи Майкрософт.
 
@@ -29,7 +32,9 @@ ms.locfileid: "85388601"
 
 Пользователь может изменить значение, отображаемое в текстовом поле, для входа в систему.
 
-Если вы используете пользовательскую политику, переопределите технический профиль `SelfAsserted-LocalAccountSignin-Email`. В разделе `<InputClaims>` задайте для DefaultValue утверждения signInName значение `{OIDC:LoginHint}`. Переменная `{OIDC:LoginHint}` содержит значение параметра `login_hint`. Azure AD B2C считывает значение утверждения signInName и заполняет текстовое поле signInName.
+::: zone pivot="b2c-custom-policy"
+
+Для поддержки параметра указания имени входа Переопределите `SelfAsserted-LocalAccountSignin-Email` технический профиль. В разделе `<InputClaims>` задайте для DefaultValue утверждения signInName значение `{OIDC:LoginHint}`. Переменная `{OIDC:LoginHint}` содержит значение параметра `login_hint`. Azure AD B2C считывает значение утверждения signInName и заполняет текстовое поле signInName.
 
 ```xml
 <ClaimsProvider>
@@ -45,13 +50,35 @@ ms.locfileid: "85388601"
 </ClaimsProvider>
 ```
 
+::: zone-end
+
 ## <a name="redirect-sign-in-to-a-social-provider"></a>Перенаправление операции входа в поставщик социальных сетей
 
 Если вы настроили для приложения возможность входа с использованием учетных записей социальных сетей, таких как Facebook, LinkedIn или Google, вы можете указать параметр `domain_hint`. Этот параметр запроса сообщает Azure AD B2C о поставщике удостоверений социальных сетей, который должен использоваться для входа в систему. Например, если приложение указывает `domain_hint=facebook.com`, вход в систему выполняется непосредственно на странице входа в Facebook.
 
 ![Страница входа с domain_hint параметром запроса, выделенным в URL-адресе](./media/direct-signin/domain-hint.png)
 
-Если вы используете пользовательскую политику, вы можете настроить доменное имя с помощью XML-элемента `<Domain>domain name</Domain>` любого `<ClaimsProvider>`.
+::: zone pivot="b2c-user-flow"
+
+Параметр строки запроса Domain указание может иметь один из следующих доменов:
+
+- amazon.com
+- facebook.com
+- github.com
+- google.com
+- linkedin.com
+- microsoft.com
+- qq.com
+- twitter.com
+- wechat.com
+- weibo.com 
+- Сведения об [универсальном OpenID Connect Connect](identity-provider-generic-openid-connect.md)см. в разделе [Указание домена](identity-provider-generic-openid-connect.md#response-mode).
+
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
+
+Для поддержки параметра шарнира домена можно настроить имя домена с помощью `<Domain>domain name</Domain>` XML-элемента Any `<ClaimsProvider>` .
 
 ```xml
 <ClaimsProvider>
@@ -62,4 +89,5 @@ ms.locfileid: "85388601"
     ...
 ```
 
+::: zone-end
 

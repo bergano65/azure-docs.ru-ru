@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/21/2020
+ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e72bd04bb41537546191b8ceb320c0722bd10146
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 6bfabd13c43501f7539eb3756ffbd06802cee823
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340297"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503478"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -130,7 +130,7 @@ ms.locfileid: "92340297"
   - **DefaultValue** — значение по умолчанию. Можно также задать значение по умолчанию для [сопоставителя заявок](claim-resolver-overview.md), например идентификатор клиента.
   - **Алвайсуседефаултвалуе** — принудительно использовать значение по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
 - Узнайте, как [настроить поведение сеанса в пользовательских политиках](session-behavior-custom-policy.md).

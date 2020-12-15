@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 3d3c452dd883316520e0c28f01c241af74d597c8
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 7b035af85e250d97fb05625bf386bec8dc94a74c
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602790"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505262"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -34,7 +34,7 @@ ms.locfileid: "96602790"
 | Компонент | Синхронная | Асинхронный |
 |--|--|--|
 | Определение языка | ✔ |  |
-| Анализ мнений | ✔ |  |
+| Анализ тональности | ✔ |  |
 | Интеллектуальный анализ данных | ✔ |  |
 | Извлечение ключевой фразы | ✔ | ✔* |
 | Распознавание именованных сущностей (включая персональные и фи) | ✔ | ✔* |
@@ -52,7 +52,7 @@ ms.locfileid: "96602790"
 
 
 > [!NOTE]
-> * Если вы хотите использовать [pricing tier](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) `/analyze` `/health` конечные точки или, вам потребуется ресурс анализ текста с помощью ценовой категории Standard (S).
+> * Если вы хотите использовать [](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) `/analyze` `/health` конечные точки или, вам потребуется ресурс анализ текста с помощью ценовой категории Standard (S).
 
 1.  Во-первых, перейдите к [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) и создайте новый ресурс анализ текста, если у вас еще нет такого ресурса. Если вы хотите использовать конечные точки или, выберите **ценовую категорию Standard (S)** `/analyze` `/health` . `/analyze`Конечная точка включена в [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/).
 
@@ -197,7 +197,7 @@ example.json
 | Компонент | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Определение языка | POST | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
-| Анализ мнений | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
+| Анализ тональности | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
 | Интеллектуальный анализ мнений | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment?opinionMining=true` |
 | Извлечение ключевой фразы | POST | `<your-text-analytics-resource>/text/analytics/v3.0/keyPhrases` |
 | Распознавание именованных сущностей — общие | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/general` |
@@ -346,5 +346,5 @@ example.json
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
 * [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
-* [Использование клиентской библиотеки Анализа текста](../quickstarts/text-analytics-sdk.md)
+* [Использование клиентской библиотеки Анализа текста](../quickstarts/client-libraries-rest-api.md)
 * [Новые возможности](../whats-new.md)

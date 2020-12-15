@@ -5,16 +5,16 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: 7566235cf92965d5d3de1ec7f40353430ec7e0c6
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: c6d171717865fe4bdf3dfb30a6d24badd4fe29ca
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107147"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505568"
 ---
-# <a name="use-deployment-scripts-in-arm-templates-preview"></a>Использование скриптов развертывания в шаблонах ARM (Предварительная версия)
+# <a name="use-deployment-scripts-in-arm-templates"></a>Использование скриптов развертывания в шаблонах ARM
 
 Узнайте, как использовать скрипты развертывания в шаблонах ресурсов Azure (шаблоны ARM). С помощью нового типа ресурсов `Microsoft.Resources/deploymentScripts` пользователи могут выполнять сценарии в развертываниях шаблонов и просматривать результаты выполнения. Эти сценарии можно использовать для выполнения настраиваемых действий, в том числе с их помощью можно:
 
@@ -88,7 +88,7 @@ ms.locfileid: "97107147"
 ```json
 {
   "type": "Microsoft.Resources/deploymentScripts",
-  "apiVersion": "2019-10-01-preview",
+  "apiVersion": "2020-10-01",
   "name": "runPowerShellInline",
   "location": "[resourceGroup().location]",
   "kind": "AzurePowerShell", // or "AzureCLI"
@@ -259,7 +259,7 @@ reference('<ResourceName>').output.text
 
 - Поддерживаются следующие типы учетных записей хранения:
 
-    | SKU             | Поддерживаемый тип     |
+    | Номер SKU             | Поддерживаемый тип     |
     |-----------------|--------------------|
     | Premium_LRS     | FileStorage        |
     | Premium_ZRS     | FileStorage        |
@@ -441,18 +441,18 @@ Timeout             : PT1H
 Сведения о развертывании ресурсов сценария развертывания можно получить на уровне группы ресурсов и на уровне подписки с помощью REST API.
 
 ```rest
-/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>?api-version=2019-10-01-preview
+/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>?api-version=2020-10-01
 ```
 
 ```rest
-/subscriptions/<SubscriptionID>/providers/microsoft.resources/deploymentScripts?api-version=2019-10-01-preview
+/subscriptions/<SubscriptionID>/providers/microsoft.resources/deploymentScripts?api-version=2020-10-01
 ```
 
 В следующем примере используется [ARMClient](https://github.com/projectkudu/ARMClient).
 
 ```azurepowershell
 armclient login
-armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups/myrg/providers/microsoft.resources/deploymentScripts/myDeployementScript?api-version=2019-10-01-preview
+armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups/myrg/providers/microsoft.resources/deploymentScripts/myDeployementScript?api-version=2020-10-01
 ```
 
 Выходные данные должны быть следующего вида.
@@ -510,7 +510,7 @@ armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups
 Приведенный ниже REST API возвращает журнал.
 
 ```rest
-/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>/logs?api-version=2019-10-01-preview
+/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>/logs?api-version=2020-10-01
 ```
 
 Он работает только до удаления ресурсов сценария развертывания.

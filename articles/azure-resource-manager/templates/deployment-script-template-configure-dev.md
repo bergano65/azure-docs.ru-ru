@@ -5,16 +5,16 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: 232a1ae5d125a2ea1d5723e85073fb3dd02420cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4a7f21410bb97db0a7974870efb812c9954ac241
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87294476"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503562"
 ---
-# <a name="configure-development-environment-for-deployment-scripts-in-templates-preview"></a>Настройка среды разработки для скриптов развертывания в шаблонах (Предварительная версия)
+# <a name="configure-development-environment-for-deployment-scripts-in-templates"></a>Настройка среды разработки для скриптов развертывания в шаблонах
 
 Узнайте, как создать среду разработки для разработки и тестирования скриптов развертывания с помощью образа скрипта развертывания. Вы можете создать [экземпляр контейнера Azure](../../container-instances/container-instances-overview.md) или использовать [DOCKER](https://docs.docker.com/get-docker/). В этой статье рассматриваются оба варианта.
 
@@ -197,7 +197,7 @@ Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fi
 
     ![экземпляр контейнера подключения скрипта развертывания](./media/deployment-script-template-configure-dev/deployment-script-container-instance-connect.png)
 
-1. Выберите **подключить**и нажмите кнопку **подключить**. Если не удается подключиться к экземпляру контейнера, перезапустите группу контейнеров и повторите попытку.
+1. Выберите **подключить** и нажмите кнопку **подключить**. Если не удается подключиться к экземпляру контейнера, перезапустите группу контейнеров и повторите попытку.
 1. В области консоли выполните следующие команды:
 
     ```

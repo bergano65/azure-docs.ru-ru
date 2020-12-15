@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 157bef31b375db54f294284ca0a5d97cd7035b17
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: c304c2aad3ba40d7b3a044f0e3222e31bb013648
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558969"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503987"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
 
-## <a name="december-2020"></a>Декабрь 2020 г.
+## <a name="december-2020"></a>Декабрь 2020 г.
 
 * [Обновлены](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) сведения о ценах на API анализа текста
 
@@ -61,7 +61,7 @@ API анализа текста обновляется на постоянной
     * Версия 3.0-Preview. 1
     
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о API анализа текста версии 3.1-Preview. 2](quickstarts/text-analytics-sdk.md)
+> [Дополнительные сведения о API анализа текста версии 3.1-Preview. 2](quickstarts/client-libraries-rest-api.md)
 
 ### <a name="text-analytics-for-health-container-updates"></a>Анализ текста для обновлений контейнера работоспособности
 
@@ -129,7 +129,7 @@ API анализа текста обновляется на постоянной
 * Связывание сущностей
 * Отрицание
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="text-analytics-api-v3-general-availability"></a>Общая доступность API анализа текста v3
 
@@ -178,13 +178,13 @@ API анализа текста v3 теперь общедоступен со с
 ### <a name="sdk-support-for-text-analytics-api-v3-public-preview"></a>Поддержка пакета SDK для общедоступной предварительной версии API анализа текста v3
 
 В рамках [единой версии пакета SDK для Azure](https://techcommunity.microsoft.com/t5/azure-sdk/january-2020-unified-azure-sdk-release/ba-p/1097290)пакет sdk для API анализа текста v3 теперь доступен в виде общедоступной предварительной версии для следующих языков программирования:
-   * [C#](./quickstarts/text-analytics-sdk.md?pivots=programming-language-csharp&tabs=version-3)
-   * [Python](./quickstarts/text-analytics-sdk.md?pivots=programming-language-python&tabs=version-3)
-   * [JavaScript (Node.js)](./quickstarts/text-analytics-sdk.md?pivots=programming-language-javascript&tabs=version-3)
-   * [Java](./quickstarts/text-analytics-sdk.md?pivots=programming-language-java&tabs=version-3)
+   * [C#](./quickstarts/client-libraries-rest-api.md?pivots=programming-language-csharp&tabs=version-3)
+   * [Python](./quickstarts/client-libraries-rest-api.md?pivots=programming-language-python&tabs=version-3)
+   * [JavaScript (Node.js)](./quickstarts/client-libraries-rest-api.md?pivots=programming-language-javascript&tabs=version-3)
+   * [Java](./quickstarts/client-libraries-rest-api.md?pivots=programming-language-java&tabs=version-3)
    
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о пакете SDK для API анализа текста v3](./quickstarts/text-analytics-sdk.md?tabs=version-3)
+> [Дополнительные сведения о пакете SDK для API анализа текста v3](./quickstarts/client-libraries-rest-api.md?tabs=version-3)
 
 ### <a name="named-entity-recognition-v3-public-preview"></a>Общедоступная Предварительная версия распознавания имен сущностей v3
 
@@ -199,7 +199,7 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * План
+    * Организация
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
     * Адрес электронной почты 
@@ -218,7 +218,7 @@ API анализа текста v3 теперь общедоступен со с
 * [Версия модели](concepts/model-versioning.md) `2019-10-01` , которая включает в себя:
     * Расширенное обнаружение и классификация сущностей, найденных в тексте. 
     * Распознавание следующих новых типов сущностей:
-        * Номер телефона
+        * номер телефона.
         * IP-адрес
 
 Связывание сущностей поддерживает английский и испанский языки. Языковая поддержка NER зависит от типа сущности.
@@ -239,7 +239,7 @@ API анализа текста v3 теперь общедоступен со с
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое API анализа текста?](overview.md)  
+* [Что такое API "Анализ текста"?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)
 * [Пример. Как определить тональность с помощью Анализа текста](how-tos/text-analytics-how-to-sentiment-analysis.md)
 * [Пример. Как определить язык с помощью Анализа текста](how-tos/text-analytics-how-to-language-detection.md)
