@@ -30,6 +30,8 @@
   items:
     - name: Определение аномалий в данных
       href: how-to/identify-anomalies.md
+    - name: Развертывание в IoT Edge
+      href: how-to/deploy-anomaly-detection-on-iot-edge.md
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров
