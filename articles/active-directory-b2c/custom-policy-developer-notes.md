@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 04852e3081807930ced9fdacc75c956d9a15ff23
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 68526fd542d8bc891358a36d031af3314edab4c2
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840735"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507988"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Примечания о настраиваемых политика в Azure Active Directory B2C для разработчиков
 
@@ -127,7 +127,7 @@ ms.locfileid: "94840735"
 | [Внешний поставщик сеансов внешнего входа](custom-policy-reference-sso.md#externalloginssosessionprovider) |  |  | X |  |
 | [Поставщик сеансов единого входа SAML](custom-policy-reference-sso.md#samlssosessionprovider) |  |  | X |  |
 | [OAuthSSOSessionProvider](custom-policy-reference-sso.md#oauthssosessionprovider)  |  | X |  |  |
-| [Единый выход](session-overview.md#sign-out)  |  | X |  |  |
+| [Единый выход](session-behavior.md#sign-out)  |  | X |  |  |
 
 ### <a name="security"></a>Безопасность
 

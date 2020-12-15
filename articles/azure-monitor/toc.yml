@@ -127,7 +127,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -1175,6 +1175,8 @@
               href: platform/workbooks-automate.md
             - name: Группы
               href: platform/workbooks-groups.md
+            - name: Использование собственного хранилища
+              href: platform/workbooks-bring-your-own-storage.md
             - name: Преобразование данных JSON с использованием JSONPath
               href: platform/workbooks-jsonpath.md
             - name: Перемещение книг в другой регион

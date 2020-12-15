@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e17c390dddcb2af9fdc83b45ae812ef1fff7f1c3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 14195ad4638c724cf0c8dd46945a0da79ec0e4ec
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345088"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509706"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение самоподтвержденного технического профиля в настраиваемой политике Azure Active Directory B2C
 
@@ -209,7 +209,7 @@ ms.locfileid: "96345088"
 | setting.showContinueButton | Нет | Отображает кнопку "Продолжить". Возможные значения: `true` (по умолчанию) или `false`. |
 | Настройка. Шовсигнуплинк <sup>2</sup>| Нет | Отображает кнопку "Регистрация". Возможные значения: `true` (по умолчанию) или `false`. |
 | Настройка. Форготпассвордлинклокатион <sup>2</sup>| Нет| Отображает ссылку Забыли пароль. Возможные значения: `AfterInput` (по умолчанию) ссылка отображается в нижней части страницы или `None` удаляется ссылка на забытый пароль.|
-| Настройка. Енаблеремемберме <sup>2</sup>| Нет| Отображает флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. Возможные значения: `true` или `false` (по умолчанию). |
+| Настройка. Енаблеремемберме <sup>2</sup>| Нет| Отображает флажок [оставаться в](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) системе. Возможные значения: `true` или `false` (по умолчанию). |
 | Настройка. Инпутверификатионделайтимеинмиллисекондс <sup>3</sup>| Нет| Улучшает взаимодействие с пользователем, ожидая, когда пользователь останавливает ввод, а затем проверяет значение. Значение по умолчанию 2000 миллисекунд. |
 | инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true` или `false` (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для этого параметра значение `true` . |
 

@@ -11,12 +11,12 @@ author: jhirono
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: c67dcbbe2ca6dea533260f59831556c4338374ba
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 07ff656c5eacbbcdc16c6c7cf098478ca6baf745
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95012993"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509297"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Использование рабочей области с пользовательским DNS-сервером
 
@@ -41,6 +41,7 @@ ms.locfileid: "95012993"
 
 Следующий список содержит полные доменные имена (FQDN), используемые рабочей областью и частной конечной точкой.
 
+* `<workspace-GUID>.workspace.<region>.cert.api.azureml.ms`
 * `<workspace-GUID>.workspace.<region>.api.azureml.ms`
 * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
@@ -90,6 +91,7 @@ $workspaceDns.CustomDnsConfigs | format-table
 > [!IMPORTANT]
 > Некоторые полные доменные имена не отображаются в списке частной конечной точки, но являются обязательными для рабочей области. Эти полные доменные имена перечислены в следующей таблице и также должны быть добавлены на DNS-сервер.
 >
+> * `<workspace-GUID>.workspace.<region>.cert.api.azureml.ms`
 > * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 > * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
 > * `<workspace-GUID>.workspace.<region>.aether.ms`

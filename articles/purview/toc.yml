@@ -54,6 +54,8 @@ items:
         href: concept-business-glossary.md
       - name: Аналитика данных
         href: concept-insights.md
+      - name: Поддерживаемые браузеры
+        href: supported-browsers.md
       - name: Часто задаваемые вопросы
         href: frequently-asked-questions.md
   - name: Практические руководства
@@ -110,6 +112,8 @@ items:
             href: how-to-create-import-export-glossary.md
           - name: Управление шаблонами терминов
             href: how-to-manage-term-templates.md
+          - name: Массовое изменение ресурсов для назначения терминов глоссария
+            href: how-to-bulk-edit-assets.md
       - name: Классификация
         items:
           - name: Создать пользовательской классификации и правила классификации

@@ -257,8 +257,10 @@
         - name: Типы запросов и составление запросов
           href: search-query-overview.md
         - name: Создание простого запроса
+          href: search-query-create.md
+        - name: Использование простого синтаксиса (примеры)
           href: search-query-simple-examples.md
-        - name: Использование полного синтаксиса Lucene
+        - name: Использование полного синтаксиса Lucene (примеры)
           href: search-query-lucene-examples.md
         - name: Частично введенные термины и специальные символы
           href: search-query-partial-matching.md
@@ -536,6 +538,8 @@
           href: 'https://wolterskluwereap.azurewebsites.net/'
         - name: Демонстрация с файлами JFK
           href: 'https://www.microsoft.com/en-us/ai/ai-lab-jfk-files'
+        - name: Демонстрация заданий NYC
+          href: 'https://azjobsdemo.azurewebsites.net/'
     - name: Обучение
       items:
         - name: Введение (Microsoft Learn)

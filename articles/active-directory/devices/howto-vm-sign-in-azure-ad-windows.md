@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8644040565bd46800b888a32653b6c8bbf89f096
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 3c42495ceab7108d20b0f0dedbf0cf94f5f9352d
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347444"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509314"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -158,7 +158,7 @@ az vm extension set \
 - Использование интерфейса Azure Cloud Shell
 
 > [!NOTE]
-> Роли входа администратора виртуальной машины и пользователя виртуальной машины используют действия с данными и поэтому не могут быть назначены в области группы управления. В настоящее время эти роли можно назначать только в области действия подписки.
+> Роли входа администратора виртуальной машины и пользователя виртуальной машины используют действия с данными и поэтому не могут быть назначены в области группы управления. В настоящее время эти роли можно назначать только в подписке, группе ресурсов или области ресурсов.
 
 ### <a name="using-azure-ad-portal-experience"></a>Использование интерфейса портала Azure AD
 

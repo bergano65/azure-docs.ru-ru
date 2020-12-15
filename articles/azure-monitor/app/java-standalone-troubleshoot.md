@@ -4,12 +4,12 @@ description: Узнайте, как устранять неполадки аге
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1ccfd583b58d129268af2a94e3072200e58308cd
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 14644f76b7de53b2b6ee3f04131daaf59267a5ff
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347836"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507648"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Руководство по устранению неполадок: Azure Monitor Application Insights для Java
 
@@ -34,6 +34,14 @@ ms.locfileid: "97347836"
 -  Имя файла конфигурации изменено с `ApplicationInsights.json` на `applicationinsights.json` .
 -  `instrumentationSettings`Узел больше не существует. Все содержимое в `instrumentationSettings` перемещается на корневой уровень. 
 -  Узлы конфигурации, такие как `sampling` ,, `jmxMetrics` и, `instrumentation` `heartbeat` перемещаются из `preview` в корневой уровень.
+
+## <a name="some-logging-is-not-auto-collected"></a>Некоторые журналы не собираются
+
+Ведение журнала захватывается только в том случае, если оно сначала соответствует заданному пороговому значению платформ ведения журналов, а вторая также соответствует пороговому значению Application Insights.
+
+Лучший способ узнать, соответствует ли определенная инструкция ведения журнала заданному пороговому значению платформ ведения журналов, — убедиться, что она отображается в нормальном журнале приложений (например, файл или консоль).
+
+Дополнительные сведения см. в разделе [Конфигурация автоматического сбора журналов](./java-standalone-config.md#auto-collected-logging) .
 
 ## <a name="import-ssl-certificates"></a>Импорт SSL-сертификатов
 

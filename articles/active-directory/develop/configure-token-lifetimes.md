@@ -9,22 +9,22 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/23/2020
+ms.date: 12/14/2020
 ms.author: ryanwi
 ms.custom: aaddev, content-perf, FY21Q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 2815041f32ebd7c2dae235229d1ca19aad253f7d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: e663cdd3846e804d1dcf96076c07b9a3db84272c
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503627"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507750"
 ---
 # <a name="configure-token-lifetime-policies-preview"></a>Настройка политик времени жизни токенов (Предварительная версия)
 Указывая и изменяя время жизни маркеров для приложений, субъектов-служб и организации в целом, вы сможете реализовать в Azure AD много новых сценариев.  
 
 > [!IMPORTANT]
-> После 30 января 2021 клиенты больше не смогут настроить время существования маркера обновления и сеанса, и Azure AD прекратит учитывать существующую конфигурацию маркера обновления и сеанса в политиках после этой даты. Вы по-прежнему можете настроить время существования маркера доступа после его устаревания.  Дополнительные сведения см. [в статье настраиваемое время существования маркеров на платформе Microsoft Identity](active-directory-configurable-token-lifetimes.md).
+> После мая 2020 клиенты больше не смогут настраивать время существования маркера обновления и сеанса.  Azure Active Directory прекращает учитывать существующую конфигурацию маркера обновления и сеанса в политиках после 30 января 2021 г. Вы по-прежнему можете настроить время существования маркера доступа после его устаревания.  Дополнительные сведения см. [в статье настраиваемое время существования маркеров на платформе Microsoft Identity](active-directory-configurable-token-lifetimes.md).
 > Мы реализовали [возможности управления сеансом проверки подлинности](../conditional-access/howto-conditional-access-session-lifetime.md)   в условном доступе Azure AD. С помощью этой новой функции можно настроить время существования маркера обновления, установив частоту входа.
 
 
@@ -41,7 +41,7 @@ ms.locfileid: "92503627"
 * как создать политику для собственного приложения, которое вызывает веб-API;
 * как управлять расширенной политикой.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для приложений, субъектов-служб и организации в целом. Если вы еще не знакомы с Azure AD, мы рекомендуем узнать, [как получить клиент Azure AD](quickstart-create-new-tenant.md) , прежде чем продолжить работу с этими примерами.  
 
 Чтобы приступить к работе, сделайте следующее:
@@ -116,7 +116,7 @@ ms.locfileid: "92503627"
         $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"02:00:00","MaxAgeSessionSingleFactor":"02:00:00"}}') -DisplayName "WebPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
         ```
 
-    1. Чтобы просмотреть новую политику и получить идентификатор **ObjectID**политики, выполните командлет [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) :
+    1. Чтобы просмотреть новую политику и получить идентификатор **ObjectID** политики, выполните командлет [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) :
 
         ```powershell
         Get-AzureADPolicy -Id $policy.Id
@@ -153,7 +153,7 @@ ms.locfileid: "92503627"
         Get-AzureADPolicy -Id $policy.Id
         ```
 
-1. Назначьте политику для веб-API. Вам потребуется также получить **идентификатор объекта** приложения. Используйте командлет [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) , чтобы найти **ObjectID**приложения, или используйте [портал Azure](https://portal.azure.com/).
+1. Назначьте политику для веб-API. Вам потребуется также получить **идентификатор объекта** приложения. Используйте командлет [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) , чтобы найти **ObjectID** приложения, или используйте [портал Azure](https://portal.azure.com/).
 
     Получите идентификатор объекта ( **ObjectID** ) приложения и назначьте политику:
 

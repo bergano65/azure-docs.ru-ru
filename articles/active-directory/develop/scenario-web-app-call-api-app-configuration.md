@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: b24b95423adb271b8a4016430e7d2b381c386cd2
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: e055287f069c477318a54aedf3d9a2fe22343367
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443761"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509161"
 ---
 # <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, которое вызывает веб-API. Конфигурация кода
 
@@ -99,7 +99,7 @@ ms.locfileid: "94443761"
 
 ## <a name="startupcs"></a>Startup.cs
 
-Веб-приложению потребуется получить маркер для подчиненного API. Его можно указать, добавив `.EnableTokenAcquisitionToCallDownstreamApi()` строку после `.AddMicrosoftIdentityWebApi(Configuration)` . Эта строка предоставляет `ITokenAcquisition` службу, которую можно использовать в действиях контроллера и страницы. Однако, как вы увидите в следующих двух вариантах, это можно сделать более просто. Также необходимо выбрать реализацию кэша маркеров, например `.AddInMemoryTokenCaches()` в *Startup.CS* :
+Веб-приложению потребуется получить маркер для подчиненного API. Его можно указать, добавив `.EnableTokenAcquisitionToCallDownstreamApi()` строку после `.AddMicrosoftIdentityWebApi(Configuration)` . Эта строка предоставляет `ITokenAcquisition` службу, которую можно использовать в действиях контроллера и страницы. Однако, как вы увидите в следующих двух вариантах, это можно сделать более просто. Также необходимо выбрать реализацию кэша маркеров, например `.AddInMemoryTokenCaches()` в *Startup.CS*:
 
    ```csharp
    using Microsoft.Identity.Web;
@@ -110,7 +110,7 @@ ms.locfileid: "94443761"
      public void ConfigureServices(IServiceCollection services)
      {
      // ...
-     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+     services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
              .AddMicrosoftIdentityWebApp(Configuration, Configuration.GetSection("AzureAd"))
                .EnableTokenAcquisitionToCallDownstreamApi(new string[]{"user.read" })
                .AddInMemoryTokenCaches();
@@ -140,7 +140,7 @@ ms.locfileid: "94443761"
      public void ConfigureServices(IServiceCollection services)
      {
      // ...
-     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+     services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
              .AddMicrosoftIdentityWebApp(Configuration, Configuration.GetSection("AzureAd"))
                .EnableTokenAcquisitionToCallDownstreamApi(new string[]{"user.read" })
                   .AddMicrosoftGraph(Configuration.GetSection("GraphBeta"))
@@ -164,7 +164,7 @@ ms.locfileid: "94443761"
      public void ConfigureServices(IServiceCollection services)
      {
      // ...
-     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+     services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
              .AddMicrosoftIdentityWebApp(Configuration, "AzureAd")
                .EnableTokenAcquisitionToCallDownstreamApi(new string[]{"user.read" })
                   .AddDownstreamWebApi("MyApi", Configuration.GetSection("GraphBeta"))
@@ -175,7 +175,7 @@ ms.locfileid: "94443761"
    }
    ```
 
-### <a name="summary"></a>Сводка
+### <a name="summary"></a>Итоги
 
 Как и в случае с веб-API, можно выбрать различные реализации кэша маркеров. Дополнительные сведения см. в [статье сериализация кэша маркеров в Microsoft. Identity. Web](https://aka.ms/ms-id-web/token-cache-serialization) .
 

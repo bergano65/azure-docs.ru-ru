@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: b5c1ab7db818daa91497728299d2247f612fe21b
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 73e3d8834fcb41f863fe2e3d686b812bb6174e70
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387757"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507665"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Параметры конфигурации — Application Insights Azure Monitor для Java
 
@@ -184,9 +184,9 @@ ms.locfileid: "97387757"
 
 Log4j, Logback и Java. util. Logging устанавливаются в автоматическом инструментировании. ведение журнала выполняется с помощью этих платформ ведения журналов.
 
-По умолчанию ведение журнала выполняется только в том случае, если ведение журнала выполняется на `INFO` уровне или выше.
+Ведение журнала захватывается только в том случае, если оно сначала соответствует заданному пороговому значению платформ ведения журналов, а вторая также соответствует пороговому значению Application Insights.
 
-Если вы хотите изменить этот уровень коллекции, сделайте следующее:
+Пороговое значение Application Insights по умолчанию — `INFO` . Если вы хотите изменить этот уровень:
 
 ```json
 {
@@ -205,8 +205,8 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 | уровень             | Log4j  | Logback | ИЮЛ     |
 |-------------------|--------|---------|---------|
 | OFF               | OFF    | OFF     | OFF     |
-| АВАРИЙ             | АВАРИЙ  | ОШИБКА   | SEVERE  |
-| Ошибка (или СЕРЬЕЗная) | ОШИБКА  | ОШИБКА   | SEVERE  |
+| АВАРИЙ             | АВАРИЙ  | ошибка   | SEVERE  |
+| Ошибка (или СЕРЬЕЗная) | ошибка  | ошибка   | SEVERE  |
 | ПРЕДУПРЕЖДАть (или ПРЕДУПРЕЖДАть) | ДАТЬ   | ДАТЬ    | ПРЕДУПРЕЖДЕНИЕ |
 | ИНФОРМАЦИЯ              | ИНФОРМАЦИЯ   | ИНФОРМАЦИЯ    | ИНФОРМАЦИЯ    |
 | CONFIG            | DEBUG  | DEBUG   | CONFIG  |

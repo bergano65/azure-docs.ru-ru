@@ -48,6 +48,8 @@
       items:
         - name: Автоматическое обновление агента
           href: how-to-automatic-upgrade.md
+        - name: Параметры реестра агента
+          href: how-to-manage-registry-options.md
     - name: Разработка
       items:
         - name: Преобразования

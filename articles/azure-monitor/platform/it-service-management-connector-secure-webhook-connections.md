@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 09/08/2020
-ms.openlocfilehash: 3f6342fcb658611c754a16399ec05f5fa76c79b8
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 1cd8041f801a418f67d26461c5f4e9ebff7e5c30
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546120"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507308"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-secure-export"></a>Подключение Azure к средствам ITSM с помощью безопасного экспорта
 
@@ -72,7 +72,7 @@ ITSMC использует учетные данные пользователя 
 3. Выберите **задать** для **URI идентификатора приложения**.
 
    [![Снимок экрана с параметром для задания U R I для приложения I D.](media/it-service-management-connector-secure-webhook-connections/azure-ad.png)](media/it-service-management-connector-secure-webhook-connections/azure-ad-expand.png#lightbox)
-4. Щелкните **Сохранить**.
+4. Выберите **Сохранить**.
 
 ## <a name="create-a-secure-webhook-action-group"></a>Создание безопасной группы действий веб-перехватчика
 
@@ -108,7 +108,7 @@ ITSMC использует учетные данные пользователя 
 
 В следующих разделах приводятся сведения о подключении продукта ServiceNow и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что выполнены следующие предварительные требования:
 
@@ -120,15 +120,15 @@ ITSMC использует учетные данные пользователя 
 1. Используйте ссылку HTTPS://(имя экземпляра). Service-Now. com/API/sn_em_connector/ем/inbound_event? Source = азуремонитор URI для определения безопасного экспорта.
 
 2. Следуйте инструкциям в соответствии с версией:
-   * [Париж](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/concept/azure-integration.html)
-   * [Орландо](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/concept/azure-integration.html)
-   * [Нью-Йорк](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/concept/azure-integration.html)
+   * [Париж](https://docs.servicenow.com/bundle/paris-it-operations-management/page/product/event-management/task/azure-events-authentication.html)
+   * [Орландо](https://docs.servicenow.com/bundle/orlando-it-operations-management/page/product/event-management/task/azure-events-authentication.html)
+   * [Нью-Йорк](https://docs.servicenow.com/bundle/newyork-it-operations-management/page/product/event-management/task/azure-events-authentication.html)
 
 ### <a name="connect-bmc-helix-to-azure-monitor"></a>Подключение BMC Хеликс к Azure Monitor
 
 В следующих разделах содержатся сведения о подключении продукта Хеликс BMC и безопасном экспорте в Azure.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что выполнены следующие предварительные требования:
 

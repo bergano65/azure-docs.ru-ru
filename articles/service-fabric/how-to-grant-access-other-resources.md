@@ -3,12 +3,12 @@ title: Предоставление приложению доступа к др�
 description: В этой статье объясняется, как предоставить управляемому удостоверению приложения Service Fabric доступ к другим ресурсам Azure, поддерживающим проверку подлинности на основе Azure Active Directory.
 ms.topic: article
 ms.date: 12/09/2019
-ms.openlocfilehash: a1d963c49f9522000028b00c138b2e5731a9ccca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c7560294fbf6d122396b6a5a8ffd3ee93bc89048
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333636"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507461"
 ---
 # <a name="granting-a-service-fabric-applications-managed-identity-access-to-azure-resources"></a>Предоставление управляемому удостоверению приложения Service Fabric доступ к ресурсам Azure
 
@@ -104,6 +104,6 @@ ms.locfileid: "91333636"
 
 Дополнительные сведения см. в разделе [хранилища — Политика доступа для обновления](/rest/api/keyvault/vaults/updateaccesspolicy).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Развертывание приложения Service Fabric Azure с управляемым удостоверением, назначенным системой](./how-to-deploy-service-fabric-application-system-assigned-managed-identity.md)
 * [Развертывание приложения Service Fabric Azure с помощью управляемого удостоверения, назначенного пользователем](./how-to-deploy-service-fabric-application-user-assigned-managed-identity.md)

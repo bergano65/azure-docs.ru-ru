@@ -96,8 +96,6 @@
           href: ./cicd/continuous-integration-deployment.md
         - name: Безопасность
           items:
-            - name: Базовые средства безопасности
-              href: security-baseline.md
             - name: Encryption
               href: ./security/workspaces-encryption.md
             - name: Безопасность сети
@@ -566,7 +564,7 @@
           href: ./spark/apache-spark-delta-lake-overview.md
         - name: Управление библиотеками
           href: ./spark/apache-spark-azure-portal-add-libraries.md
-        - name: Использование записных книжек
+        - name: Использование записных книжек и средств IDE
           items:
             - name: Управление записными книжками
               href: ./spark/apache-spark-development-using-notebooks.md

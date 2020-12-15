@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: 481b801d481f32ef84279be2d8bd6089670a01b1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c65ef2eb25f330f645048cdc73371d98d8c2ce91
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496525"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508478"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-studio-classic-and-azure-data-factory"></a>Создание прогнозирующих конвейеров с помощью Машинное обучение Azure Studio (классическая модель) и фабрики данных Azure
 
@@ -35,7 +35,6 @@ ms.locfileid: "96496525"
 ## <a name="introduction"></a>Введение
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [преобразовании данных с помощью машинного обучения в службе "Фабрика данных"](../transform-data-using-machine-learning.md).
-
 
 ### <a name="azure-machine-learning-studio-classic"></a>Машинное обучение Azure Studio (классическая модель)
 [Машинное обучение Azure Studio (классическая модель)](https://azure.microsoft.com/documentation/services/machine-learning/) позволяет создавать, тестировать и развертывать решения прогнозной аналитики. Этот процесс можно обобщить до трех этапов.
@@ -86,7 +85,7 @@ ms.locfileid: "96496525"
 >
 >
 
-```JSON
+```json
 {
   "name": "PredictivePipeline",
   "properties": {
@@ -127,6 +126,7 @@ ms.locfileid: "96496525"
   }
 }
 ```
+
 > [!NOTE]
 > Только входные и выходные данные действия AzureMLBatchExecution могут передаваться как параметры веб-службы. Например, в приведенном выше фрагменте JSON DecisionTreeInputBlob —входные данные действия AzureMLBatchExecution, которые передаются в качестве входных данных в веб-службу через параметр webServiceInput.
 >
@@ -139,115 +139,119 @@ ms.locfileid: "96496525"
 
 1. Создайте **связанную службу** для **службы хранилища Azure**. Если входные и выходные файлы находятся в разных учетных записях хранения, то потребуются две связанные службы. Ниже приведен пример JSON:
 
-    ```JSON
-    {
-      "name": "StorageLinkedService",
-      "properties": {
-        "type": "AzureStorage",
-        "typeProperties": {
-          "connectionString": "DefaultEndpointsProtocol=https;AccountName=[acctName];AccountKey=[acctKey]"
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "StorageLinkedService",
+     "properties": {
+       "type": "AzureStorage",
+       "typeProperties": {
+         "connectionString": "DefaultEndpointsProtocol=https;AccountName= [acctName];AccountKey=[acctKey]"
+       }
+     }
+   }
+   ```
+
 2. Создайте **входной****набор данных** фабрики данных Azure. В отличие от некоторых других наборов данных фабрики данных, эти наборы должны содержать значения **folderPath** и **fileName**. Можно использовать секционирование для выполнения каждого пакета (каждого среза данных) для обработки или создания уникальных входных и выходных файлов. Возможно, потребуется включить некоторые вышестоящие действия для преобразования входных данных в формат CSV-файла и его размещения в учетной записи хранения для каждого среза. В этом случае не будут включены параметры **external** и **externalData**, как показано в примере ниже, а DecisionTreeInputBlob будет выходным набором данных другого действия.
 
-    ```JSON
-    {
-      "name": "DecisionTreeInputBlob",
-      "properties": {
-        "type": "AzureBlob",
-        "linkedServiceName": "StorageLinkedService",
-        "typeProperties": {
-          "folderPath": "azuremltesting/input",
-          "fileName": "in.csv",
-          "format": {
-            "type": "TextFormat",
-            "columnDelimiter": ","
-          }
-        },
-        "external": true,
-        "availability": {
-          "frequency": "Day",
-          "interval": 1
-        },
-        "policy": {
-          "externalData": {
-            "retryInterval": "00:01:00",
-            "retryTimeout": "00:10:00",
-            "maximumRetry": 3
-          }
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "DecisionTreeInputBlob",
+     "properties": {
+       "type": "AzureBlob",
+       "linkedServiceName": "StorageLinkedService",
+       "typeProperties": {
+         "folderPath": "azuremltesting/input",
+         "fileName": "in.csv",
+         "format": {
+           "type": "TextFormat",
+           "columnDelimiter": ","
+         }
+       },
+       "external": true,
+       "availability": {
+         "frequency": "Day",
+         "interval": 1
+       },
+       "policy": {
+         "externalData": {
+           "retryInterval": "00:01:00",
+           "retryTimeout": "00:10:00",
+           "maximumRetry": 3
+         }
+       }
+     }
+   }
+   ```
 
-    Входной CSV-файл должен содержать строку заголовков столбцов. Если вы используете **действие копирования** для создания или перемещения CSV-файла в хранилище BLOB-объектов, следует установить для свойства **blobWriterAddHeader** приемника значение **true**. Пример:
+   Входной CSV-файл должен содержать строку заголовков столбцов. Если вы используете **действие копирования** для создания или перемещения CSV-файла в хранилище BLOB-объектов, следует установить для свойства **blobWriterAddHeader** приемника значение **true**. Пример:
 
-    ```JSON
-    sink:
-    {
-        "type": "BlobSink",
-        "blobWriterAddHeader": true
-    }
-    ```
+   ```json
+   sink:
+   {
+     "type": "BlobSink",
+     "blobWriterAddHeader": true
+     }
+   ```
 
-    если CSV-файл не имеет строку заголовков, может появиться следующая ошибка: **Ошибка в действии: ошибка при чтении строки. Непредвиденный токен: StartObject. Путь '', строка 1, позиция 1**.
+   если CSV-файл не имеет строку заголовков, может появиться следующая ошибка: **Ошибка в действии: ошибка при чтении строки. Непредвиденный токен: StartObject. Путь '', строка 1, позиция 1**.
+
 3. Создайте **выходной****набор данных** фабрики данных Azure. В этом примере используется секционирование для создания уникального выходного пути при выполнении каждого из срезов. Без этого действие перезапишет файл.
 
-    ```JSON
-    {
-      "name": "DecisionTreeResultBlob",
-      "properties": {
-        "type": "AzureBlob",
-        "linkedServiceName": "StorageLinkedService",
-        "typeProperties": {
-          "folderPath": "azuremltesting/scored/{folderpart}/",
-          "fileName": "{filepart}result.csv",
-          "partitionedBy": [
-            {
-              "name": "folderpart",
-              "value": {
-                "type": "DateTime",
-                "date": "SliceStart",
-                "format": "yyyyMMdd"
-              }
-            },
-            {
-              "name": "filepart",
-              "value": {
-                "type": "DateTime",
-                "date": "SliceStart",
-                "format": "HHmmss"
-              }
-            }
-          ],
-          "format": {
-            "type": "TextFormat",
-            "columnDelimiter": ","
-          }
-        },
-        "availability": {
-          "frequency": "Day",
-          "interval": 15
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "DecisionTreeResultBlob",
+     "properties": {
+       "type": "AzureBlob",
+       "linkedServiceName": "StorageLinkedService",
+       "typeProperties": {
+         "folderPath": "azuremltesting/scored/{folderpart}/",
+         "fileName": "{filepart}result.csv",
+         "partitionedBy": [
+           {
+             "name": "folderpart",
+             "value": {
+               "type": "DateTime",
+               "date": "SliceStart",
+               "format": "yyyyMMdd"
+             }
+           },
+           {
+             "name": "filepart",
+             "value": {
+               "type": "DateTime",
+               "date": "SliceStart",
+               "format": "HHmmss"
+             }
+           }
+         ],
+         "format": {
+           "type": "TextFormat",
+           "columnDelimiter": ","
+         }
+       },
+       "availability": {
+         "frequency": "Day",
+         "interval": 15
+       }
+     }
+   }
+   ```
+
 4. Создайте **связанную службу** типа **AzureMLLinkedService**, предоставляющую ключ API и URL-адрес выполнения пакета для модели.
 
-    ```JSON
-    {
-      "name": "MyAzureMLLinkedService",
-      "properties": {
-        "type": "AzureML",
-        "typeProperties": {
-          "mlEndpoint": "https://[batch execution endpoint]/jobs",
-          "apiKey": "[apikey]"
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "MyAzureMLLinkedService",
+     "properties": {
+       "type": "AzureML",
+       "typeProperties": {
+         "mlEndpoint": "https://[batch execution endpoint]/jobs",
+         "apiKey": "[apikey]"
+       }
+     }
+   }
+   ```
+
 5. Наконец, создайте конвейер, содержащий действие **AzureMLBatchExecution** . Конвейер выполняет следующие действия:
 
    1. Получает расположение входного файла из входных наборов данных.
@@ -259,45 +263,45 @@ ms.locfileid: "96496525"
       >
       >
 
-      ```JSON
+      ```json
       {
         "name": "PredictivePipeline",
         "properties": {
-            "description": "use AzureML model",
-            "activities": [
-            {
-                "name": "MLActivity",
-                "type": "AzureMLBatchExecution",
-                "description": "prediction analysis on batch input",
-                "inputs": [
+          "description": "use AzureML model",
+          "activities": [
+              {
+              "name": "MLActivity",
+              "type": "AzureMLBatchExecution",
+              "description": "prediction analysis on batch input",
+              "inputs": [
                 {
-                    "name": "DecisionTreeInputBlob"
+                  "name": "DecisionTreeInputBlob"
                 }
                 ],
-                "outputs": [
+              "outputs": [
                 {
-                    "name": "DecisionTreeResultBlob"
+                  "name": "DecisionTreeResultBlob"
                 }
                 ],
-                "linkedServiceName": "MyAzureMLLinkedService",
-                "typeProperties":
+              "linkedServiceName": "MyAzureMLLinkedService",
+              "typeProperties":
                 {
-                    "webServiceInput": "DecisionTreeInputBlob",
-                    "webServiceOutputs": {
-                        "output1": "DecisionTreeResultBlob"
-                    }
+                "webServiceInput": "DecisionTreeInputBlob",
+                "webServiceOutputs": {
+                  "output1": "DecisionTreeResultBlob"
+                }
                 },
-                "policy": {
-                    "concurrency": 3,
-                    "executionPriorityOrder": "NewestFirst",
-                    "retry": 1,
-                    "timeout": "02:00:00"
-                }
+              "policy": {
+                "concurrency": 3,
+                "executionPriorityOrder": "NewestFirst",
+                "retry": 1,
+                "timeout": "02:00:00"
+              }
             }
-            ],
-            "start": "2016-02-13T00:00:00Z",
-            "end": "2016-02-14T00:00:00Z"
-        }
+          ],
+          "start": "2016-02-13T00:00:00Z",
+          "end": "2016-02-14T00:00:00Z"
+          }
       }
       ```
 
@@ -320,7 +324,7 @@ ms.locfileid: "96496525"
 
 Рассмотрим сценарий использования параметров веб-службы. У вас есть развернутая веб-служба Studio (классическая), которая использует модуль чтения для чтения данных из одного из источников данных, поддерживаемых Studio (классическая модель) (например, база данных SQL Azure). После пакетного выполнения результаты записываются с помощью модуля записи (база данных SQL Azure).  В экспериментах не определены входные и выходные данные веб-службы. В этом случае мы советуем настроить соответствующие параметры веб-службы для модулей чтения и записи. Это позволит настроить их при использовании действия AzureMLBatchExecution. Параметры веб-службы указываются в разделе **globalParameters** действия JSON, как показано ниже.
 
-```JSON
+```json
 "typeProperties": {
     "globalParameters": {
         "Param 1": "Value 1",
@@ -331,7 +335,7 @@ ms.locfileid: "96496525"
 
 Вы также можете использовать [функции фабрики данных](data-factory-functions-variables.md) при передаче значений для параметров веб-службы, как показано в следующем примере:
 
-```JSON
+```json
 "typeProperties": {
     "globalParameters": {
        "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = \\'{0:yyyy-MM-dd HH:mm:ss}\\'', Time.AddHours(WindowStart, 0))"

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/06/2020
+ms.date: 12/13/2020
 ms.author: memildin
-ms.openlocfilehash: d92047a5b24f04ee7e0d08454867ec9e1a52a8b1
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: d3492685efbf70b69e5bafba919d38a4f06fb666
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754387"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387476"
 ---
 # <a name="pricing-of-azure-security-center"></a>Цены на Центр безопасности Azure
 Центр безопасности Azure предоставляет возможности унифицированного управления безопасностью и расширенной защиты от угроз для рабочих нагрузок в Azure, в локальной среде и в других облаках. Он повышает вашу информированность о гибридных облачных рабочих нагрузках, обеспечивает управление ими, а также предоставляет активные средства защиты, снижающие уровень риска угроз, и интеллектуальные средства обнаружения, которые позволяют быть в курсе быстро развивающихся рисков для кибербезопасности.
@@ -68,12 +68,24 @@ Azure Defender предоставляется бесплатно в течени
 
 ## <a name="faq---pricing-and-billing"></a>Вопросы и ответы: цены и выставление счетов 
 
-### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-azure-security-center"></a>Как узнать, кто из сотрудников моей организации включил изменения Azure Defender в Центре безопасности Azure?
+- [Как узнать, кто из сотрудников моей организации включил изменения Azure Defender в Центре безопасности Azure?](#how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center)
+- [Какие планы предлагаются в Центре безопасности?](#what-are-the-plans-offered-by-security-center)
+- [Как включить Azure Defender для моей подписки?](#how-do-i-enable-azure-defender-for-my-subscription)
+- [Можно ли включить Azure Defender для серверов из подмножества серверов в моей подписке?](#can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription)
+- [В моей подписке включено средство "Azure Defender для серверов". Будет ли взиматься плата за незапущенные серверы?](#my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers)
+- [Будет ли взиматься плата за компьютеры без установленного агента Log Analytics?](#will-i-be-charged-for-machines-without-the-log-analytics-agent-installed)
+- [Если агент Log Analytics отправляет отчеты в несколько рабочих областей, будет ли плата взиматься дважды?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
+- [Если агент Log Analytics отправляет отчеты в несколько рабочих областей, распространяется ли возможность бесплатного приема данных объемом 500 МБ на все рабочие области?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them)
+- [Бесплатный прием данных объемом 500 МБ рассчитывается для всей рабочей области или строго для каждого компьютера?](#is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine)
+
+### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center"></a>Как узнать, кто из сотрудников моей организации включил изменения Azure Defender в Центре безопасности?
 В подписках Azure может быть несколько администраторов с разрешениями на изменение параметров цен. Чтобы узнать, какой именно пользователь внес изменения, используйте журнал действий Azure.
 
-Если сведения о пользователе не указаны в столбце **Кем инициировано событие**, ознакомьтесь с соответствующим подробным описанием события.
+:::image type="content" source="media/security-center-pricing/logged-change-to-pricing.png" alt-text="Журнал действий Azure со сведениями о событии изменения цен":::
 
-:::image type="content" source="media/security-center-pricing/logged-change-to-pricing.png" alt-text="Журнал событий Azure со сведениями о событии изменения цен":::
+Если информация о пользователе не указана в столбце **Кем инициировано событие**, ознакомьтесь с соответствующими сведениями в JSON события.
+
+:::image type="content" source="media/security-center-pricing/tracking-pricing-changes-in-activity-log.png" alt-text="Обозреватель JSON журнала действий Azure":::
 
 
 ### <a name="what-are-the-plans-offered-by-security-center"></a>Какие планы предлагаются в Центре безопасности? 
@@ -115,6 +127,10 @@ Azure Defender предоставляется бесплатно в течени
 ### <a name="if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them"></a>Если агент Log Analytics отправляет отчеты в несколько рабочих областей, распространяется ли возможность бесплатного приема данных объемом 500 МБ на все рабочие области?
 Да. Если вы настроили агент Log Analytics для отправки данных в две или более рабочих областей Log Analytics (многоадресная рассылка), вы получите возможность бесплатного приема данных объемом 500 МБ. Расчет выполняется для каждого узла и каждой рабочей области в день. Возможность предоставляется для каждой рабочей области, в которой установлены решения с отметкой "Безопасность" или "Антивредоносная программа". За любые принятые данные свыше 500 МБ с вас будет взиматься плата.
 
+### <a name="is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine"></a>Бесплатный прием данных объемом 500 МБ рассчитывается для всей рабочей области или строго для каждого компьютера?
+Для каждого компьютера, подключенного к рабочей области, вы получаете возможность бесплатного приема 500 МБ данных в день. В первую очередь это касается типов данных безопасности, собираемых непосредственно Центром безопасности Azure.
+
+Это значение представляет собой среднесуточный объем по всем узлам. Таким образом, даже если с одних компьютеров отправляется 100 МБ, а с других — 800 МБ, но общая сумма не превышает **[количество компьютеров] x 500 МБ** (бесплатное ограничение), с вас не будет взиматься дополнительная плата.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье описаны варианты цен в Центре безопасности. Дополнительные материалы:

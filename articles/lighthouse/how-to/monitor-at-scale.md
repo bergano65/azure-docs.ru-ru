@@ -1,14 +1,14 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 10/26/2020
+ms.date: 12/14/2020
 ms.topic: how-to
-ms.openlocfilehash: 96ca05faf2b3da8f214c14ae57eb186c7b71e1b3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6c1cbde696ccf9131797a05db33553b8505216a4
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461516"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509280"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
@@ -40,7 +40,25 @@ ms.locfileid: "96461516"
 
 ## <a name="analyze-the-gathered-data"></a>Анализ собранных данных
 
-После развертывания политик данные будут регистрироваться в Log Analytics рабочих областях, созданных в каждом клиенте клиента. Для получения подробных сведений обо всех управляемых клиентах можно использовать такие средства, как [Azure Monitor книги](../../azure-monitor/platform/workbooks-overview.md) , для сбора и анализа информации из нескольких источников данных. 
+После развертывания политик данные будут регистрироваться в Log Analytics рабочих областях, созданных в каждом клиенте клиента. Для получения подробных сведений обо всех управляемых клиентах можно использовать такие средства, как [Azure Monitor книги](../../azure-monitor/platform/workbooks-overview.md) , для сбора и анализа информации из нескольких источников данных.
+
+## <a name="view-alerts-across-customers"></a>Просмотр оповещений по клиентам
+
+Вы можете просматривать [предупреждения](../../azure-monitor/platform/alerts-overview.md) для делегированных подписок в клиентах клиентов, которыми управляет.
+
+ЧТОБЫ автоматически обновлять оповещения для нескольких клиентов, используйте запрос к [графу ресурсов Azure](../../governance/resource-graph/overview.md) для фильтрации оповещений. Вы можете закрепить запрос на панели мониторинга и выбрать всех соответствующих клиентов и подписок.
+
+В следующем примере запроса будут отображаться предупреждения с уровнем серьезности 0 и 1, которые обновляются каждые 60 минут.
+
+```kusto
+alertsmanagementresources
+| where type == "microsoft.alertsmanagement/alerts"
+| where properties.essentials.severity =~ "Sev0" or properties.essentials.severity =~ "Sev1"
+| where properties.essentials.monitorCondition == "Fired"
+| where properties.essentials.startDateTime > ago(60m)
+| project StartTime=properties.essentials.startDateTime,name,Description=properties.essentials.description, Severity=properties.essentials.severity, subscriptionId
+| sort by tostring(StartTime)
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

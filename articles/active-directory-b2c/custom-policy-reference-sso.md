@@ -11,24 +11,24 @@ ms.topic: reference
 ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3e47eda29b0ad1c47edad08195b2ffd0fe3835af
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 453042766c427b05ec1ee1090a0702f64065542d
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750481"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508056"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Управление [сеансами единого входа (SSO)](session-overview.md) использует ту же семантику, что и любой другой технический профиль в пользовательских политиках. При выполнении шага оркестрации из технического профиля, связанного с шагом, запрашиваются ссылка на `UseTechnicalProfileForSessionManagement`. Затем, при наличии такового, указанный поставщик сеансов единого входа проверяется, чтобы определить, является ли пользователь участником сеанса. Если это так, то поставщик сеансов единого входа используется для повторного заполнения данных сеанса. Аналогичным образом после выполнения шага оркестрации поставщик используется для сохранения сведений в сеансе, если был указан поставщик сеансов единого входа.
+Управление [сеансами единого входа (SSO)](session-behavior.md) использует ту же семантику, что и любой другой технический профиль в пользовательских политиках. При выполнении шага оркестрации из технического профиля, связанного с шагом, запрашиваются ссылка на `UseTechnicalProfileForSessionManagement`. Затем, при наличии такового, указанный поставщик сеансов единого входа проверяется, чтобы определить, является ли пользователь участником сеанса. Если это так, то поставщик сеансов единого входа используется для повторного заполнения данных сеанса. Аналогичным образом после выполнения шага оркестрации поставщик используется для сохранения сведений в сеансе, если был указан поставщик сеансов единого входа.
 
 В Azure AD B2C можно использовать определенное количество поставщиков сеансов единого входа.
 
 |Поставщик сеанса  |Область  |
 |---------|---------|
-|[NoopSSOSessionProvider](#noopssosessionprovider)     |  Отсутствуют       |       
+|[NoopSSOSessionProvider](#noopssosessionprovider)     |  Нет       |       
 |[DefaultSSOSessionProvider](#defaultssosessionprovider)    | Azure AD B2C диспетчер внутренних сеансов.      |       
 |[ExternalLoginSSOSessionProvider](#externalloginssosessionprovider)     | Между Azure AD B2C и OAuth1, OAuth2 или OpenID Connect Connect Identity Provider.        |         |
 |[OAuthSSOSessionProvider](#oauthssosessionprovider)     | Между приложением проверяющей стороны OAuth2 или OpenID Connect и Azure AD B2C.        |        
@@ -166,7 +166,6 @@ ms.locfileid: "96750481"
 | RegisterServiceProviders | Нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
-- Узнайте, как [настроить поведение сеанса в пользовательских политиках](session-behavior-custom-policy.md).
+Узнайте, как [настроить поведение сеанса](session-behavior.md).

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e55bb9ba49cfcaf07e8d3dc17dc13e30036e100f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 682b83d7016a89b27b5c936853abda1438f59c28
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109051"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508022"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -88,7 +88,7 @@ ms.locfileid: "97109051"
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
 | {Context:DeploymentMode} |Режим развертывания политики.  | Рабочая среда |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
-| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. |  true |
+| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) системе. |  Да |
 
 ### <a name="claims"></a>Утверждения 
 

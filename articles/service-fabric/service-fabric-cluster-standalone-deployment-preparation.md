@@ -3,12 +3,12 @@ title: Подготовка автономного развертывания к
 description: Документация по подготовке среды и созданию конфигурации кластера, с которой следует ознакомиться перед развертыванием кластера, предназначенным для обработки производственной рабочей нагрузки.
 ms.topic: conceptual
 ms.date: 9/11/2018
-ms.openlocfilehash: 9e5ad37d803b2042fd57b0a325570e69d7b73038
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 277c7e047815b3b4171f7cced203ecbe5b68b155
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842960"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509178"
 ---
 # <a name="plan-and-prepare-your-service-fabric-standalone-cluster-deployment"></a>Планирование и подготовка развертывания изолированного кластера Service Fabric
 
@@ -60,7 +60,7 @@ ms.locfileid: "91842960"
 * [Windows PowerShell 3.0](/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7)
 * [Служба RemoteRegistry](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754820(v=ws.11)) должна быть запущена на всех компьютерах.
 * **Диск установки Service Fabric должен быть файловой системой NTFS**
-* ** *Журналы производительности служб Windows & оповещения* и *журнал событий Windows* должны [быть включены](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755249(v=ws.11))**.
+* ***Журналы производительности служб Windows & оповещения* и *журнал событий Windows* должны [быть включены](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755249(v=ws.11))**.
 
 > [!IMPORTANT]
 > У администратора кластера, который развертывает и настраивает кластер, должны быть [привилегии администратора](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) на всех компьютерах. Пакет Service Fabric нельзя установить на контроллере домена.
@@ -103,7 +103,7 @@ ms.locfileid: "91842960"
 5. Если компьютеры в составе кластера не имеют доступ к Интернету, задайте в конфигурации кластера следующие параметры:
    * Отключить телеметрию: в разделе *Properties* задайте *"enableTelemetry": false*
    * Отключить автоматическое скачивание версии Fabric & уведомления о том, что приближается окончание поддержки текущей версии кластера: в разделе *Properties* Set *"fabricClusterAutoupgradeEnabled": false*
-   * Кроме того, если доступ из Интернета к сети ограничен доменами из списка разрешений, такие домены необходимы для автоматического обновления: go.microsoft.com, download.microsoft.com.
+   * Кроме того, если сетевой доступ к Интернету ограничен доменами алловлистед, указанные ниже домены необходимы для автоматического обновления: go.microsoft.com download.microsoft.com
 
 6. Установите соответствующие исключения при проверке антивирусной программой для Service Fabric:
 
@@ -159,5 +159,5 @@ Passed                     : True
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)
