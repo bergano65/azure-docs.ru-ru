@@ -1,21 +1,21 @@
 ---
 title: Учебник по добавлению функций шаблона
-description: Добавьте функции шаблона в шаблон Azure Resource Manager для создания значений.
+description: Сведения о том, как добавить функции шаблона в шаблон Azure Resource Manager для создания значений.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: c6ced832cad6809e7cd016eee132713c6b266480
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67c88e98d966a21163aafefcad8363086d5b3bf4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613855"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931050"
 ---
 # <a name="tutorial-add-template-functions-to-your-arm-template"></a>Руководство по добавлению функций шаблона в шаблон ARM
 
-Из этого руководства вы узнаете, как добавлять [функции шаблона](template-functions.md) в шаблон Azure Resource Manager (ARM). Функции используются для динамического создания значений. Помимо этих системных функций шаблонов можно также создать [функции, определяемые пользователем](./template-user-defined-functions.md). Для выполнения инструкций из этого учебника требуется **7 минут**.
+Из этого учебника вы узнаете, как добавить [функции шаблона](template-functions.md) в шаблон Azure Resource Manager (ARM). Функции используются для динамического создания значений. Помимо этих системных функций шаблонов можно также создать [функции, определяемые пользователем](./template-user-defined-functions.md). Для выполнения инструкций из этого учебника требуется **7 минут**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,7 +33,7 @@ ms.locfileid: "91613855"
 
 ## <a name="use-function"></a>Использование функции
 
-Если вы выполнили инструкции из предыдущего учебника в этой серии, вы уже использовали функцию. При добавлении **"[parameters('storageName')]"** использовалась функция [parameters](template-functions-deployment.md#parameters). Квадратные скобки указывают на то, что синтаксис внутри них — это [выражение шаблона](template-expressions.md). Resource Manager разрешает синтаксис и не рассматривает его как литеральное значение.
+Если вы выполнили инструкции из предыдущего учебника в этой серии, вы уже использовали функцию. При добавлении `"[parameters('storageName')]"` использовалась функция [parameters](template-functions-deployment.md#parameters). Квадратные скобки указывают на то, что синтаксис внутри них — это [выражение шаблона](template-expressions.md). Resource Manager разрешает синтаксис и не рассматривает его как литеральное значение.
 
 Функции позволяют адаптировать шаблон за счет динамического получения значения во время развертывания. В рамках этого учебника вы используете функцию для получения расположения группы ресурсов, используемой для развертывания.
 

@@ -1,38 +1,42 @@
 ---
-title: Краткое руководство по использованию клиентской библиотеки Azure Key Vault для JavaScript (версия 4)
+title: Краткое руководство по использованию клиентской библиотеки секретов Azure Key Vault для JavaScript (версия 4)
 description: Сведения о том, как создавать, извлекать и удалять секреты в Azure Key Vault с помощью клиентской библиотеки JavaScript.
 author: msmbaldwin
 ms.author: mbaldwin
-ms.date: 10/20/2019
+ms.date: 12/6/2020
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 73a12edb4576fe26fbb8e0918566aa8e292e35fc
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8e04fcea53869fe15ebbeb3c7709cff842893931
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184320"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780796"
 ---
-# <a name="quickstart-azure-key-vault-client-library-for-javascript-v4"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для JavaScript (версия 4)
+# <a name="quickstart-azure-key-vault-secret-client-library-for-javascript-version-4"></a>Краткое руководство. Использование клиентской библиотеки секретов Azure Key Vault для JavaScript (версия 4)
 
-Начало работы с клиентской библиотекой секретов Azure Key Vault для JavaScript. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги.
+Начало работы с клиентской библиотекой секретов Azure Key Vault для JavaScript. [Azure Key Vault](../general/overview.md) — это облачная служба, которая предоставляет защищенное хранилище для секретов. Вы можете безопасно хранить ключи, пароли, сертификаты и другие секреты. Создать хранилища Azure Key Vault и управлять ими можно на портале Azure. В рамках этого краткого руководства вы узнаете, как создавать, извлекать и удалять секреты в Azure Key Vault с помощью клиентской библиотеки JavaScript.
+
+Ресурсы клиентской библиотеки Key Vault:
 
 [Справочная документация по API](/javascript/api/overview/azure/key-vault-index) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/keyvault) | [Пакет (npm)](https://www.npmjs.com/package/@azure/keyvault-secrets).
+
+Дополнительные сведения о Key Vault и секретах см. в следующих статьях:
+- [Общие сведения о Key Vault](../general/overview.md)
+- [Общие сведения о секретах](about-secrets.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - Последняя версия [Node.js](https://nodejs.org) для вашей операционной системы.
 - [Azure CLI](/cli/azure/install-azure-cli)
+- Хранилище Key Vault можно создать с помощью [портала Azure](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) или [Azure PowerShell](../general/quick-create-powershell.md).
 
-В этом кратком руководстве предполагается, что вы используете [Azure CLI](/cli/azure/install-azure-cli) в окне терминала Linux.
+В этом кратком руководстве предполагается, что вы используете [Azure CLI](/cli/azure/install-azure-cli).
 
-## <a name="setting-up"></a>Настройка
-В этом кратком руководстве используется библиотека удостоверений Azure и Azure CLI для проверки подлинности пользователя в службах Azure. Разработчики также могут использовать Visual Studio или Visual Studio Code для проверки подлинности своих вызовов. Дополнительные сведения см. в статье [Проверка подлинности клиента с помощью клиентской библиотеки удостоверений Azure](/javascript/api/overview/azure/identity-readme).
-
-### <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 1. Выполните команду `login`.
 
@@ -46,33 +50,38 @@ ms.locfileid: "96184320"
 
 2. Выполните вход в браузере с помощью учетных данных.
 
-### <a name="install-the-package"></a>Установка пакета
+## <a name="create-new-nodejs-application"></a>Создание приложения Node.js
 
-Через окно консоли установите клиентскую библиотеку секретов Azure Key Vault для Node.js.
+Теперь создайте приложение Node. js, которое можно развернуть в облаке. 
 
-```console
+1. В командной оболочке создайте папку с именем `key-vault-node-app`.
+
+```azurecli
+mkdir key-vault-node-app
+```
+
+1. Перейдите к созданному новому каталогу *key-vault-node-app* и выполните команду init, чтобы инициализировать проект узла.
+
+```azurecli
+cd key-vault-node-app
+npm init -y
+```
+
+## <a name="install-key-vault-packages"></a>Установка пакетов Key Vault
+
+Через окно консоли установите клиентскую [библиотеку секретов](https://www.npmjs.com/package/@azure/keyvault-secrets) Azure Key Vault для Node.js.
+
+```azurecli
 npm install @azure/keyvault-secrets
 ```
 
-Для этого краткого руководства вам также понадобится установить пакет azure.identity.
+Установите пакет [azure.identity](https://www.npmjs.com/package/@azure/identity) для проверки подлинности в Key Vault.
 
-```console
+```azurecli
 npm install @azure/identity
 ```
 
-### <a name="create-a-resource-group-and-key-vault"></a>Создание группы ресурсов и хранилища ключей
-
-[!INCLUDE [Create a resource group and key vault](../../../includes/key-vault-rg-kv-creation.md)]
-
-#### <a name="grant-access-to-your-key-vault"></a>Предоставление доступа к хранилищу ключей
-
-Создайте для хранилища ключей политику доступа, которая предоставляет учетной записи пользователя разрешения на использование секрета.
-
-```console
-az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --secret-permissions delete get list set purge
-```
-
-#### <a name="set-environment-variables"></a>Настройка переменных среды
+## <a name="set-environment-variables"></a>Настройка переменных среды
 
 Это приложение использует имя хранилища ключей в качестве переменной среды с именем `KEY_VAULT_NAME`.
 
@@ -90,11 +99,47 @@ macOS или Linux
 export KEY_VAULT_NAME=<your-key-vault-name>
 ```
 
-## <a name="object-model"></a>Объектная модель
+## <a name="grant-access-to-your-key-vault"></a>Предоставление доступа к хранилищу ключей
 
-Клиентская библиотека секретов Azure Key Vault для JavaScript позволяет управлять секретами. В приведенных ниже примерах кода показано, как создать клиент, а также как задать, извлечь и удалить секрет.
+Создайте для хранилища ключей политику доступа, которая предоставляет учетной записи пользователя разрешения на использование секрета.
+
+```azurecli
+az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --secret-permissions delete get list set purge
+```
 
 ## <a name="code-examples"></a>Примеры кода
+
+В приведенных ниже примерах кода показано, как создать клиент, а также как задать, извлечь и удалить секрет. 
+
+### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
+
+1. Создать новый текстовый файл и сохранить его как "index.js".
+
+1. Добавьте в него вызовы require для загрузки модулей Azure и Node.js.
+
+1. Создайте структуру программы, включая простую обработку исключений.
+
+```javascript
+const readline = require('readline');
+
+function askQuestion(query) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise(resolve => rl.question(query, ans => {
+        rl.close();
+        resolve(ans);
+    }))
+}
+
+async function main() {
+    
+}
+
+main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
+```
 
 ### <a name="add-directives"></a>Добавление директив
 
@@ -109,7 +154,9 @@ const { SecretClient } = require("@azure/keyvault-secrets");
 
 В этом кратком руководстве пользователь, вошедший в систему, проходит проверку подлинности в хранилище ключей, который является предпочтительным методом при локальной разработке. Для приложений, развернутых в Azure, службе приложений или виртуальной машине должно быть назначено управляемое удостоверение. Дополнительные сведения см. в разделе [Обзор управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
 
-В примере ниже имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://\<your-key-vault-name\>.vault.azure.net". В этом примере показан класс ["DefaultAzureCredential()"](https://docs.microsoft.com/javascript/api/@azure/identity/defaultazurecredential), который для предоставления удостоверения позволяет использовать один и тот же код в различных средах с различными параметрами. Дополнительные сведения см. в статье [Проверка подлинности учетных данных Azure по умолчанию](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme). 
+В примере ниже имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://\<your-key-vault-name\>.vault.azure.net". В этом примере показан класс [DefaultAzureCredential()](https://docs.microsoft.com/javascript/api/@azure/identity/defaultazurecredential) из [библиотеки удостоверений Azure](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme), который для предоставления удостоверения позволяет использовать один и тот же код в различных средах с различными параметрами. Дополнительные сведения о проверке подлинности в хранилище ключей см. в [руководстве для разработчиков](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code).
+
+Добавьте следующий код в функцию main():
 
 ```javascript
 const keyVaultName = process.env["KEY_VAULT_NAME"];
@@ -121,21 +168,15 @@ const client = new SecretClient(KVUri, credential);
 
 ### <a name="save-a-secret"></a>Сохранение секрета
 
-Теперь, когда приложение прошло проверку подлинности, вы можете разместить секрет в хранилище ключей с помощью [метода client.setSecret](/javascript/api/@azure/keyvault-secrets/secretclient?#setsecret-string--string--setsecretoptions-). Для этого нужно указать имя секрета — в нашем примере это mySecret.  
+Теперь, когда приложение прошло проверку подлинности, вы можете разместить секрет в хранилище ключей с помощью [метода setSecret](/javascript/api/@azure/keyvault-secrets/secretclient?#setsecret-string--string--setsecretoptions-). Для этого нужно указать имя секрета — в нашем примере это mySecret.  
 
 ```javascript
 await client.setSecret(secretName, secretValue);
 ```
 
-Команда [az keyvault secret show](/cli/azure/keyvault/secret?#az-keyvault-secret-show) позволяет убедиться, что секрет задан успешно:
-
-```azurecli
-az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
-```
-
 ### <a name="retrieve-a-secret"></a>Получение секрета
 
-Теперь вы можете получить ранее заданное значение с помощью [метода client.getSecret](/javascript/api/@azure/keyvault-secrets/secretclient?#getsecret-string--getsecretoptions-).
+Теперь вы можете получить ранее заданное значение с помощью [метода getSecret](/javascript/api/@azure/keyvault-secrets/secretclient?#getsecret-string--getsecretoptions-).
 
 ```javascript
 const retrievedSecret = await client.getSecret(secretName);
@@ -145,28 +186,12 @@ const retrievedSecret = await client.getSecret(secretName);
 
 ### <a name="delete-a-secret"></a>Удаление секрета.
 
-Наконец, давайте удалим секрет из хранилища ключей с помощью [метода client.beginDeleteSecret](/javascript/api/@azure/keyvault-secrets/secretclient?#begindeletesecret-string--begindeletesecretoptions-).
+Наконец, удалите секрет из хранилища ключей и очистите его с помощью методов [beginDeleteSecret](https://docs.microsoft.com/javascript/api/@azure/keyvault-secrets/secretclient?#beginDeleteSecret_string__BeginDeleteSecretOptions_) и [purgeDeletedSecret](https://docs.microsoft.com/javascript/api/@azure/keyvault-secrets/secretclient?#purgeDeletedSecret_string__PurgeDeletedSecretOptions_).
 
 ```javascript
-await client.beginDeleteSecret(secretName)
-```
-
-Команда [az keyvault secret show](/cli/azure/keyvault/secret?#az-keyvault-secret-show) позволяет убедиться, что секрет успешно удален.
-
-```azurecli
-az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
-```
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если ресурсы больше не нужны, вы можете использовать интерфейс командной строки Azure или Azure PowerShell, чтобы удалить хранилище ключей и соответствующую группу ресурсов.
-
-```azurecli
-az group delete -g "myResourceGroup"
-```
-
-```azurepowershell
-Remove-AzResourceGroup -Name "myResourceGroup"
+const deletePoller = await client.beginDeleteSecret(secretName);
+await deletePoller.pollUntilDone();
+await client.purgeDeletedSecret(secretName);
 ```
 
 ## <a name="sample-code"></a>Образец кода
@@ -214,23 +239,52 @@ async function main() {
   const retrievedSecret = await client.getSecret(secretName);
 
   console.log("Your secret is '" + retrievedSecret.value + "'.");
+
   console.log("Deleting your secret from " + keyVaultName + " ...");
-
-  await client.beginDeleteSecret(secretName);
-
+  const deletePoller = await client.beginDeleteSecret(secretName);
+  await deletePoller.pollUntilDone();
   console.log("Done.");
-
+  
+  console.log("Purging your secret from {keyVaultName} ...");
+  await client.purgeDeletedSecret(secretName);
+  
 }
 
-main()
+main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
 
 ```
+
+## <a name="test-and-verify"></a>Тестирование и проверка
+
+1. Воспользуйтесь следующей командой для запуска этого приложения.
+
+    ```azurecli
+    npm install
+    npm index.js
+    ```
+
+1. При появлении запроса введите значение секрета. Например, mySecretPassword.
+
+    Отображаются выходные данные, аналогичные следующим:
+
+    ```azurecli
+    Input the value of your secret > mySecretPassword
+    Creating a secret in <your-unique-keyvault-name> called 'mySecret' with the value 'mySecretPassword' ... done.
+    Forgetting your secret.
+    Your secret is ''.
+    Retrieving your secret from <your-unique-keyvault-name>.
+    Your secret is 'mySecretPassword'.
+    Deleting your secret from <your-unique-keyvault-name> ... done.  
+    Purging your secret from <your-unique-keyvault-name> ... done.   
+    ```
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этим кратким руководством вы создали хранилище ключей, сохранили в нем секрет и извлекли его. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
 - [Обзор Azure Key Vault](../general/overview.md)
+- [Обзор секретов Azure Key Vault](about-secrets.md)
 - [Безопасный доступ к хранилищу ключей](../general/secure-your-key-vault.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
 - [Рекомендации по Azure Key Vault](../general/best-practices.md)

@@ -1,21 +1,21 @@
 ---
 title: Создание нескольких экземпляров ресурсов
-description: Узнайте, как создать шаблон Azure Resource Manager для создания нескольких экземпляров ресурса Azure.
+description: Сведения о том, как создать шаблон Resource Manager для создания нескольких экземпляров ресурса Azure.
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: dac1e9429965607aea1490f0ec3b540d7b441d09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94509ba209e95eb9199ddd760529d47eb48bda10
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91614399"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930805"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-arm-templates"></a>Руководство по Создание нескольких экземпляров ресурса с помощью шаблонов ARM
 
-Узнайте, как выполнить итерацию в шаблоне Azure Resource Manager (ARM) для создания нескольких экземпляров ресурса Azure. В этом руководстве описано, как изменить шаблон для создания трех экземпляров учетной записи хранения.
+Узнайте, как выполнить итерацию в шаблоне Azure Resource Manager для создания нескольких экземпляров ресурса Azure. В этом руководстве описано, как изменить шаблон для создания трех экземпляров учетной записи хранения.
 
 ![Создание нескольких экземпляров с помощью Azure Resource Manager](./media/template-tutorial-create-multiple-instances/resource-manager-template-create-multiple-instances-diagram.png)
 
@@ -32,7 +32,7 @@ ms.locfileid: "91614399"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 

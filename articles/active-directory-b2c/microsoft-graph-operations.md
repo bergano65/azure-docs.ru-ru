@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cd4c70354920655507f987f43a542e4b474803e1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e4463b932c95e224981b74093effbb355de24f6b
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170945"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509824"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph операции, доступные для Azure AD B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "96170945"
 
 Каждая ссылка в следующих разделах предназначена для соответствующей страницы в справочнике по Microsoft Graph API для этой операции.
 
-## <a name="user-management"></a>Управление пользователями
+## <a name="user-management"></a>управление пользователями;
 
 - [Список пользователей](/graph/api/user-list)
 - [Создание пользователя-получателя](/graph/api/user-post-users)
@@ -39,7 +39,7 @@ ms.locfileid: "96170945"
 - [Добавление](/graph/api/authentication-post-phonemethods)
 - [Получить](/graph/api/b2cauthenticationmethodspolicy-get)
 - [Обновление](/graph/api/b2cauthenticationmethodspolicy-update)
-- [Удаление](/graph/api/phoneauthenticationmethod-delete)
+- [Удалить](/graph/api/phoneauthenticationmethod-delete)
 
 Дополнительные сведения об управлении номером телефона для входа пользователя с помощью Microsoft Graph API см. в разделе [методы проверки подлинности B2C](/graph/api/resources/b2cauthenticationmethodspolicy).
 
@@ -107,7 +107,7 @@ ms.locfileid: "96170945"
 
 - [Список свойств расширения](/graph/api/application-list-extensionproperty)
 
-Azure AD B2C предоставляет каталог, который может содержать 100 настраиваемых атрибутов для каждого пользователя. Для потоков пользователей эти свойства расширения [управляются с помощью портал Azure](custom-policy-custom-attributes.md). Для настраиваемых политик Azure AD B2C создает свойство для вас в первый раз, когда политика записывает значение в свойство расширения.
+Azure AD B2C предоставляет каталог, который может содержать 100 настраиваемых атрибутов для каждого пользователя. Для потоков пользователей эти свойства расширения [управляются с помощью портал Azure](user-flow-custom-attributes.md). Для настраиваемых политик Azure AD B2C создает свойство для вас в первый раз, когда политика записывает значение в свойство расширения.
 
 ## <a name="audit-logs"></a>Журналы аудита
 

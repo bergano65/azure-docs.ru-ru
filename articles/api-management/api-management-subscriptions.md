@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: d1ab8990d0e5c389e0454c23a31989a71b0cd9a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cdc7668b06308bd5532f4885d0e1365fc34ae989
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87843782"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511252"
 ---
 # <a name="subscriptions-in-azure-api-management"></a>Подписки в службе управления API Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "87843782"
 > Управление API поддерживает также другие механизмы для защиты доступа к API, среди них:
 > - OAuth2.0 (дополнительные сведения см. [здесь](api-management-howto-protect-backend-with-aad.md));
 > - [Сертификаты клиента](api-management-howto-mutual-certificates-for-clients.md)
-> - [список разрешенных IP-адресов.](./api-management-access-restriction-policies.md#RestrictCallerIPs)
+> - [Ограничение IP-адресов вызывающего объекта](./api-management-access-restriction-policies.md#RestrictCallerIPs)
 
 ## <a name="scope-of-subscriptions"></a>Область подписок
 
@@ -59,7 +59,7 @@ ms.locfileid: "87843782"
 
     ![Гибкие подписки](./media/api-management-subscriptions/flexible-subscription.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе управления API:
 
 + Ознакомьтесь с другими [концепциями](api-management-terminology.md) в управлении API.

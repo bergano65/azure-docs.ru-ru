@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 0728e5d12b13164d127941a49603836ff92fd515
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: e46105f5889f4925be9873fd8613021fe5e8ac2d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045794"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920775"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Руководство по разработке модулей IoT Edge для устройств с Windows
 
@@ -33,24 +33,6 @@ ms.locfileid: "92045794"
 > * Создание проекта как контейнера и его сохранение в реестре контейнеров Azure.
 > * Развертывание кода на устройстве IoT Edge.
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
-## <a name="key-concepts"></a>Основные понятия
-
-В этом учебнике рассказывается о разработке модуля IoT Edge. *Модуль IoT Edge*, а иногда просто *модуль*, является контейнером, который содержит исполняемый код. На устройстве IoT Edge можно развернуть один или несколько модулей. Модули выполняют определенные задачи, такие как прием данных с датчиков, выполнение анализа данных или операции очистки данных или отправки сообщений в центр Интернета вещей. Дополнительные сведения см. в статье [Understand Azure IoT Edge modules](iot-edge-modules.md) (Общие сведения о модулях Azure IoT Edge).
-
-При разработке модулей IoT Edge важно понимать разницу между компьютером для разработки и целевым устройством IoT Edge, где в конечном итоге будет развернут модуль. Контейнер, созданный для хранения кода модуля, должен соответствовать операционной системе (ОС) *целевого устройства*. Для разработки контейнера Windows такой подход проще, так как контейнеры Windows запускаются только на операционных системах Windows. Но вы можете, например, использовать компьютер для разработки Windows, чтобы создать модули для устройств IoT Edge с Linux. В таком случае вам нужно было бы убедиться, что на компьютере для разработки запущены контейнеры Linux. При прохождении данного учебника помните о разнице между *ОС компьютера разработки* и *ОС контейнера*.
-
-Этот учебник предназначен для устройств с Windows с IoT Edge. Устройства Windows IoT Edge используют контейнеры Windows. Для разработки решений для устройств с Windows мы рекомендуем использовать Visual Studio. Вы также можете использовать Visual Studio Code, хотя между этими двумя средствами есть различия в поддержке.
-
-В следующей таблице перечислены поддерживаемые сценарии разработки **контейнеров Windows** в Visual Studio Code и Visual Studio.
-
-|   | Visual Studio Code | Visual Studio 2017 или 2019 |
-| - | ------------------ | ------------------ |
-| **Службы Azure**; | Функции Azure <br> Azure Stream Analytics |   |
-| **Языки** | C# (отладка не поддерживается) | C <br> C# |
-| **Дополнительные сведения** | [Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Средства Azure IoT Edge для Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools)<br>[Средства Azure IoT Edge для Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) |
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 Компьютер для разработки:
@@ -68,6 +50,24 @@ ms.locfileid: "92045794"
 Облачные ресурсы.
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="key-concepts"></a>Основные понятия
+
+В этом учебнике рассказывается о разработке модуля IoT Edge. *Модуль IoT Edge*, а иногда просто *модуль*, является контейнером, который содержит исполняемый код. На устройстве IoT Edge можно развернуть один или несколько модулей. Модули выполняют определенные задачи, такие как прием данных с датчиков, выполнение анализа данных или операции очистки данных или отправки сообщений в центр Интернета вещей. Дополнительные сведения см. в статье [Understand Azure IoT Edge modules](iot-edge-modules.md) (Общие сведения о модулях Azure IoT Edge).
+
+При разработке модулей IoT Edge важно понимать разницу между компьютером для разработки и целевым устройством IoT Edge, где в конечном итоге будет развернут модуль. Контейнер, созданный для хранения кода модуля, должен соответствовать операционной системе (ОС) *целевого устройства*. Для разработки контейнера Windows такой подход проще, так как контейнеры Windows запускаются только на операционных системах Windows. Но вы можете, например, использовать компьютер для разработки Windows, чтобы создать модули для устройств IoT Edge с Linux. В таком случае вам нужно было бы убедиться, что на компьютере для разработки запущены контейнеры Linux. При прохождении данного учебника помните о разнице между *ОС компьютера разработки* и *ОС контейнера*.
+
+Этот учебник предназначен для устройств с Windows с IoT Edge. Устройства Windows IoT Edge используют контейнеры Windows. Для разработки решений для устройств с Windows мы рекомендуем использовать Visual Studio. Вы также можете использовать Visual Studio Code, хотя между этими двумя средствами есть различия в поддержке.
+
+В следующей таблице перечислены поддерживаемые сценарии разработки **контейнеров Windows** в Visual Studio Code и Visual Studio.
+
+|   | Visual Studio Code | Visual Studio 2017 или 2019 |
+| - | ------------------ | ------------------ |
+| **Службы Azure**; | Функции Azure <br> Azure Stream Analytics |   |
+| **Языки** | C# (отладка не поддерживается) | C <br> C# |
+| **Дополнительные сведения** | [Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Средства Azure IoT Edge для Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools)<br>[Средства Azure IoT Edge для Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) |
 
 ## <a name="install-container-engine"></a>Установка платформы контейнеров
 
@@ -205,7 +205,7 @@ ms.locfileid: "92045794"
 
 7. Найдите свойство **routes** для требуемых свойств $edgeHub.
 
-   Одной из функций модуля центра IoT Edge является маршрутизация сообщений между всеми модулями в развертывании. Просмотрите значения в свойстве routes. Первый маршрут, **IotEdgeModule1ToIoTHub**, использует подстановочный знак ( **\*** ) для включения любых сообщений, поступающих из любых выходных очередей в модуле IotEdgeModule1. Эти сообщения поступают в *$upstream*, зарезервированное имя, которое указывает на Центр Интернета вещей. Второй маршрут, **sensorToIotEdgeModule1**, принимает сообщения, поступающие из модуля SimulatedTemperatureSensor, и направляет их в очередь ввода *input1* модуля IotEdgeModule1.
+   Одной из функций модуля центра IoT Edge является маршрутизация сообщений между всеми модулями в развертывании. Просмотрите значения в свойстве routes. Первый маршрут, **IotEdgeModule1ToIoTHub**, использует подстановочный знак (* *\** _) для включения любых сообщений, поступающих из любых выходных очередей в модуле IotEdgeModule1. Эти сообщения поступают в _$upstream*, зарезервированное имя, которое указывает на Центр Интернета вещей. Второй маршрут, **sensorToIotEdgeModule1**, принимает сообщения, поступающие из модуля SimulatedTemperatureSensor, и направляет их в очередь ввода *input1* модуля IotEdgeModule1.
 
    ![Просмотр маршрутов в deployment.template.json](./media/tutorial-develop-for-windows/deployment-routes.png)
 

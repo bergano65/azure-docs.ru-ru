@@ -1,21 +1,21 @@
 ---
 title: Использование справочника по шаблонам
-description: Для создания шаблона используйте справочник по шаблонам Azure Resource Manager.
+description: Сведения о том, как создать шаблон с помощью справочника по шаблонам Azure Resource Manager.
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 3709511fa8da0a40f4faf4ab2dac9505d69003ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dfd6311fab8d9c65fa7c82d2f707ac96549a32a9
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86118517"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931424"
 ---
-# <a name="tutorial-utilize-the-resource-manager-template-reference"></a>Руководство по использованию справочника по шаблонам Resource Manager
+# <a name="tutorial-utilize-the-arm-template-reference"></a>Руководство по использованию справочной документации по шаблонам Resource Manager
 
-Узнайте, как найти сведения о схеме шаблона и использовать их для создания шаблонов Azure Resource Manager (ARM).
+Узнайте, как найти сведения о схеме шаблона и использовать их для создания шаблонов Azure Resource Manager.
 
 В этом руководстве вы используете базовый шаблон из шаблонов быстрого запуска Azure. Вы настроите шаблон с использованием соответствующей справочной документации.
 
@@ -36,7 +36,7 @@ ms.locfileid: "86118517"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 

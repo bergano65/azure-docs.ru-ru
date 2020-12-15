@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 28b34ecaf51406b35c67d3838714691390f5adf7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c1dba383f259e35b143688b2db68f05f1a67def6
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453048"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938231"
 ---
 # <a name="tutorial-create-a-hierarchy-of-iot-edge-devices-preview"></a>Руководство по созданию иерархии устройств IoT Edge (предварительная версия)
 
@@ -50,10 +50,19 @@ ms.locfileid: "96453048"
 Чтобы создать иерархию устройств IoT Edge, потребуются следующие ресурсы:
 
 * Компьютер (Windows или Linux) с подключением к Интернету.
-* Два устройства Linux, настроенные в качестве устройств IoT Edge. Если у вас нет доступных устройств, можно использовать [виртуальные машины Azure](../virtual-machines/linux/index.yml).
 * Учетная запись Azure с действительной подпиской. Если у вас еще нет [подписки Azure](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начать работу.
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
-* Azure CLI версии 2.3.1 с установленным расширением Azure IoT версии 0.10.6 или более поздней версии. В этом учебнике используется [Azure Cloud Shell](../cloud-shell/overview.md). Если вы не работали с Azure Cloud Shell, [ознакомьтесь с этим кратким руководством](./quickstart-linux.md#use-azure-cloud-shell).
+* Azure CLI версии 2.3.1 с установленным расширением Azure IoT версии 0.10.6 или более поздней версии. В этом учебнике используется [Azure Cloud Shell](../cloud-shell/overview.md). Если вы не работали с Azure Cloud Shell, [ознакомьтесь с этим кратким руководством](./quickstart-linux.md#prerequisites).
+* Два устройства Linux, настроенные в качестве устройств IoT Edge. Если у вас нет доступных устройств, можно создать две виртуальные машины Azure, заменив текст заполнителя в следующей команде и дважды выполнив ее:
+
+   ```azurecli-interactive
+   az vm create \
+    --resource-group <REPLACE_WITH_RESOURCE_GROUP> \
+    --name <REPLACE_WITH_UNIQUE_NAMES_FOR_EACH_VM> \
+    --image UbuntuLTS \
+    --admin-username azureuser \
+    --admin-password <REPLACE_WITH_PASSWORD>
+   ```
 
 Вы также можете протестировать этот сценарий, используя скрипт [примера Azure IoT Edge для промышленного Интернета вещей](https://aka.ms/iotedge-nested-sample), который развертывает виртуальные машины Azure в качестве предварительно настроенных устройств для имитации заводской среды.
 
@@ -185,11 +194,11 @@ ms.locfileid: "96453048"
    sudo apt-get install moby-engine
    ```
 
-1. Установите средство hsmlib и управляющую программу IoT Edge. <!-- Update with proper image links on release -->
+1. Установите hsmlib и управляющую программу IoT Edge. Чтобы просмотреть ресурсы для других дистрибутивов Linux, [посетите репозиторий выпуска на сайте GitHub](https://github.com/Azure/azure-iotedge/releases/tag/1.2.0-rc1). <!-- Update with proper image links on release -->
 
    ```bash
-   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc2/libiothsm-std_1.2.0.rc2-1-1_debian9_amd64.deb -o libiothsm-std.deb
-   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc2/iotedge_1.2.0_rc2-1_debian9_amd64.deb -o iotedge.deb
+   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc1/libiothsm-std_1.2.0.rc1-1-1_debian9_amd64.deb -o libiothsm-std.deb
+   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc1/iotedge_1.2.0_rc1-1_debian9_amd64.deb -o iotedge.deb
    sudo dpkg -i ./libiothsm-std.deb
    sudo dpkg -i ./iotedge.deb
    ```
@@ -611,7 +620,7 @@ You can also view these messages through the [Azure Cloud Shell](https://shell.a
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-При работе с этим учебником вы настроили два устройства IoT Edge в качестве шлюзов и настроили одно из них для выполнения роли родительского устройства для другого. Затем вы выполнили извлечение образа контейнера в дочернее устройство через шлюз. Вы также можете протестировать этот сценарий, используя скрипт [примера Azure IoT Edge для промышленного Интернета вещей](https://aka.ms/iotedge-nested-sample), который развертывает виртуальные машины Azure в качестве предварительно настроенных устройств для имитации заводской среды.
+При работе с этим учебником вы настроили два устройства IoT Edge в качестве шлюзов и настроили одно из них для выполнения роли родительского устройства для другого. Затем вы выполнили извлечение образа контейнера в дочернее устройство через шлюз.
 
 Вы можете перейти к изучению других руководств, чтобы узнать, как Azure IoT Edge может создавать решения для вашего бизнеса.
 

@@ -503,7 +503,7 @@
       displayName: pipelines
       items:
         - name: Создание конвейеров ML (Python)
-          href: how-to-create-your-first-pipeline.md
+          href: how-to-create-machine-learning-pipelines.md
         - name: Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
           href: how-to-move-data-in-out-of-pipelines.md
         - name: Развертывание конвейеров ML (Python)

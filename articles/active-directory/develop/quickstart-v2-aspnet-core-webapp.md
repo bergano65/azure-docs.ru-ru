@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 98d2b4ed4b0d3cef2cde156dc05ebb314edff365
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 085ebcc147082ac78de9f8b97c810dee5bb1e96a
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592266"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762811"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
@@ -50,7 +50,7 @@ ms.locfileid: "94592266"
 > 1. Войдите на [портал Azure](https://portal.azure.com).
 > 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 > 1. Найдите и выберите **Azure Active Directory**.
-> 1. В разделе **Управление** щелкните **Регистрация приложений** и выберите пункт **Новая регистрация**.
+> 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 > 1. Введите **имя** приложения, например `AspNetCore-Quickstart`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
 > 1. Введите **URI перенаправления** `https://localhost:44321/`
 > 1. Выберите **Зарегистрировать**.

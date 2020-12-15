@@ -7,12 +7,12 @@ ms.reviewer: jonfan, deli, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/28/2020
-ms.openlocfilehash: 0b777fdef344ce1a60ed00ee46eeaa8cee23b8c0
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c4d4c659fd1c33c9ffc1b833b92d0727b5c17bf7
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099195"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922891"
 ---
 # <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложения логики и управление ими с помощью Visual Studio Code
 
@@ -307,4 +307,4 @@ ms.locfileid: "93099195"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание рабочих процессов с отслеживанием состояния или без отслеживания состояния в Visual Studio Code с помощью расширения Azure Logic Apps (предварительная версия)](../logic-apps/create-stateful-stateless-workflows-visual-studio-code.md)
+> [Создание рабочих процессов с отслеживанием состояния и без отслеживания состояния в Visual Studio Code с помощью расширения Azure Logic Apps (предварительная версия)](../logic-apps/create-stateful-stateless-workflows-visual-studio-code.md)

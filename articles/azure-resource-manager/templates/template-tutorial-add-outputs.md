@@ -1,21 +1,21 @@
 ---
 title: Учебник. Добавление выходных данных в шаблон
-description: Добавьте выходные данные в шаблон Azure Resource Manager, чтобы упростить синтаксис.
+description: Сведения о том, как добавить выходные данные в шаблон Azure Resource Manager, чтобы упростить синтаксис.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: abd5fbed4ab19135fb30ec5adda387d839df3ab6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e55638e20bceb6df4b8e74375d67836123167162
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613872"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931747"
 ---
 # <a name="tutorial-add-outputs-to-your-arm-template"></a>Руководство по добавлению выходных данных в шаблон ARM
 
-Из этого руководства вы узнаете, как возвращать значения из шаблона Azure Resource Manager (ARM). Если требуется значение из развернутого ресурса, используются выходные данные. Для выполнения инструкций из этого учебника требуется **7 минут**.
+Из этого учебника вы узнаете, как возвращать значения из шаблона Azure Resource Manager (ARM). Если требуется значение из развернутого ресурса, используются выходные данные. Для выполнения инструкций из этого учебника требуется **7 минут**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

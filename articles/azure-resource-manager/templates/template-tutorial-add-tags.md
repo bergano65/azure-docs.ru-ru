@@ -1,21 +1,21 @@
 ---
 title: Учебник. Добавление тегов к ресурсам в шаблоне
-description: Добавьте теги к ресурсам, развертываемым в шаблоне Azure Resource Manager. Теги позволяют логически упорядочивать ресурсы.
+description: Сведения о том, как добавить теги к ресурсам, которые вы развертываете в шаблоне Azure Resource Manager. Теги позволяют логически упорядочивать ресурсы.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 16fc294784d9d6ff3c2fdd920d053eae5cd4b56d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4084508202fc7db5280d34c157552fe723b1dfba
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613209"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930948"
 ---
 # <a name="tutorial-add-tags-in-your-arm-template"></a>Руководство по добавлению тегов в шаблон ARM
 
-Из этого руководства вы узнаете, как добавлять теги к ресурсам в шаблон Azure Resource Manager (ARM). [Теги](../management/tag-resources.md) помогают логически упорядочивать ресурсы. Значения тегов отображаются в отчетах о затратах. Для выполнения инструкций из этого учебника требуется **8 минут**.
+Из этого учебника вы узнаете, как добавлять теги к ресурсам в шаблоне Azure Resource Manager. [Теги](../management/tag-resources.md) помогают логически упорядочивать ресурсы. Значения тегов отображаются в отчетах о затратах. Для выполнения инструкций из этого учебника требуется **8 минут**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

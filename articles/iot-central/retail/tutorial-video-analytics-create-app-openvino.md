@@ -8,12 +8,12 @@ ms.topic: tutorial
 author: KishorIoT
 ms.author: nandab
 ms.date: 10/06/2020
-ms.openlocfilehash: af967c58cdeb2c750178141193a711a66af7477c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: fbe1e84525eed47127a08abc9fb7ec5d1144d02f
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426747"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763623"
 ---
 # <a name="tutorial-create-a-video-analytics---object-and-motion-detection-application-in-azure-iot-central-openvinotrade"></a>Руководство по созданию видеоаналитики — приложения для распознавания объектов и движения в Azure IoT Central (OpenVINO&trade;)
 
@@ -24,10 +24,10 @@ ms.locfileid: "94426747"
 
 [!INCLUDE [iot-central-video-analytics-part1](../../../includes/iot-central-video-analytics-part1.md)]
 
-- [Scratchpad.txt](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/Scratchpad.txt)
+- [Scratchpad.txt.](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/Scratchpad.txt) Этот файл позволяет записывать различные параметры конфигурации, необходимые для работы с этими руководствами.
 - [deployment.openvino.amd64.json](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/deployment.openvino.amd64.json)
 - [LvaEdgeGatewayDcm.json](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/LvaEdgeGatewayDcm.json)
-- [state.json](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/state.json)
+- [state.json.](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/state.json) Этот файл нужно скачать, только если вы планируете использовать устройство Intel NUC в рамках второго руководства.
 
 [!INCLUDE [iot-central-video-analytics-part2](../../../includes/iot-central-video-analytics-part2.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "94426747"
 
 1. Откройте файл *deployment.openvino.amd64.json*, сохраненный в папке *lva-configuration*, с помощью текстового редактора.
 
-1. Найдите параметры `LvaEdgeGatewayModule` и измените имя образа, как показано в следующем фрагменте кода:
+1. Найдите параметры `LvaEdgeGatewayModule` и приведите имя образа в соответствие с показанным в следующем фрагменте кода:
 
     ```json
     "LvaEdgeGatewayModule": {
@@ -47,7 +47,7 @@ ms.locfileid: "94426747"
             "image": "mcr.microsoft.com/lva-utilities/lva-edge-iotc-gateway:1.0-amd64",
     ```
 
-1. Добавьте имя учетной записи Служб мультимедиа в узел `env` в разделе `LvaEdgeGatewayModule`. Вы записали это имя учетной записи в файле *scratchpad.txt*:
+1. Добавьте имя учетной записи Служб мультимедиа в узел `env` в разделе `LvaEdgeGatewayModule`. Вы записали имя учетной записи Служб мультимедиа в файл *scratchpad.txt*:
 
     ```json
     "env": {
@@ -55,7 +55,7 @@ ms.locfileid: "94426747"
             "value": "lvaEdge"
         },
         "amsAccountName": {
-            "value": "<YOUR_AZURE_MEDIA_ACCOUNT_NAME>"
+            "value": "<YOUR_AZURE_MEDIA_SERVICES_ACCOUNT_NAME>"
         }
     }
     ```
@@ -64,7 +64,16 @@ ms.locfileid: "94426747"
 
     `azureMediaServicesArmId` является **идентификатором ресурса**, который вы записали в файле *scratchpad.txt* при создании учетной записи Служб мультимедиа.
 
-    При создании субъекта-службы для учетной записи Служб мультимедиа вы записали `aadTenantId`, `aadServicePrincipalAppId` и `aadServicePrincipalSecret` в файле *scratchpad.txt*.
+    В следующей таблице приведены значения из **API подключения к Службам мультимедиа (JSON)** в файле *scratchpad.txt*, который следует использовать в манифесте развертывания:
+
+    | Манифест развертывания       | Scratchpad  |
+    | ------------------------- | ----------- |
+    | aadTenantId               | AADTenantId |
+    | aadServicePrincipalAppId  | AadClientId |
+    | aadServicePrincipalSecret | AadSecret   |
+
+    > [!CAUTION]
+    > Используйте предыдущую таблицу, чтобы добавить правильные значения в манифест развертывания. Иначе устройство не будет работать.
 
     ```json
     {

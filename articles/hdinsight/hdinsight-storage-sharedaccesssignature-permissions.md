@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-azurecli
 ms.date: 04/28/2020
-ms.openlocfilehash: eb8201ea888b98250d452e0b0e1c48f30cbb1efc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 141db7feee987b7fffc578e19c60bd94ad56d239
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022740"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511643"
 ---
 # <a name="use-azure-blob-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписей общего доступа хранилища BLOB-объектов Azure для ограничения доступа к данным в HDInsight
 
@@ -86,7 +86,7 @@ HDInsight имеет полный доступ к данным в учетных
 ?sv=2018-03-28&sr=c&si=myPolicyPS&sig=NAxefF%2BrR2ubjZtyUtuAvLQgt%2FJIN5aHJMj6OsDwyy4%3D
 ```
 
-### <a name="using-powershell"></a>Регистрация с помощью PowerShell
+### <a name="using-powershell"></a>Использование PowerShell
 
 Замените `RESOURCEGROUP` , `STORAGEACCOUNT` и `STORAGECONTAINER` соответствующими значениями для существующего контейнера хранилища. Измените каталог на `hdinsight-dotnet-python-azure-storage-shared-access-signature-master` или измените параметр, `-File` чтобы он содержал абсолютный путь для `Set-AzStorageblobcontent` . Введите следующую команду PowerShell:
 
@@ -188,7 +188,7 @@ Set-AzStorageblobcontent `
     az storage container policy list --container-name %AZURE_STORAGE_CONTAINER% --account-key %AZURE_STORAGE_KEY% --account-name %AZURE_STORAGE_ACCOUNT%
 
     # Generate a shared access signature for the container
-    az storage container generate-sas --name myPolicyCLI --account-key %AZURE_STORAGE_KEY% --account-name %AZURE_STORAGE_ACCOUNT%
+    az storage container generate-sas --name %AZURE_STORAGE_CONTAINER% --policy-name myPolicyCLI --account-key %AZURE_STORAGE_KEY% --account-name %AZURE_STORAGE_ACCOUNT%
 
     # Reversal
     # az storage container policy delete --container-name %AZURE_STORAGE_CONTAINER% --name myPolicyCLI --account-key %AZURE_STORAGE_KEY% --account-name %AZURE_STORAGE_ACCOUNT%
@@ -353,7 +353,7 @@ Remove-AzResourceGroup `
 
 1. Откройте веб-интерфейс Ambari для вашего кластера. Адрес этой страницы: `https://YOURCLUSTERNAME.azurehdinsight.net`. При появлении запроса пройдите проверку подлинности, указав имя пользователя и пароль администратора, которые использовались при создании кластера.
 
-1. Перейдите в **HDFS** раздел  >  **конфигурации** HDFS  >  **Расширенные**  >  **пользовательские основные компоненты — сайт**.
+1. Перейдите в раздел  >  **конфигурации** HDFS  >  **Расширенные**  >  **пользовательские основные компоненты — сайт**.
 
 1. Разверните раздел **пользовательское ядро — сайт** , прокрутите до конца и выберите **Добавить свойство...**. Используйте следующие значения для **ключа** и **значения**:
 
@@ -433,7 +433,7 @@ Remove-AzResourceGroup `
 
     На этот раз операция должна завершиться успешно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как добавить хранилище с ограниченным доступом в кластер HDInsight, Узнайте о других способах работы с данными в кластере:
 

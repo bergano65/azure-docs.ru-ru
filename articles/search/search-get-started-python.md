@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Создание индекса поиска в Python
 titleSuffix: Azure Cognitive Search
-description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Python, Jupyter Notebook и библиотеки Azure.Documents.Search.
+description: Описание того, как создать индекс, загрузить данные и выполнять запросы с помощью Python, записных книжек и библиотеки Azure.Documents.Search.
 author: HeidiSteen
 manager: nitinme
 ms.author: heidist
@@ -9,14 +9,14 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/19/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 528d29f3b285c2583fd1bb52e1de7c24fdc9e28a
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 126fc69678148d4d478c96ff8d05f194c7e3d1b3
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917092"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861873"
 ---
-# <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter Notebook
 
 > [!div class="op_single_selector"]
 > * [Python](search-get-started-python.md)
@@ -26,7 +26,7 @@ ms.locfileid: "94917092"
 > * [Портал](search-get-started-portal.md)
 >
 
-Создайте записную книжку Jupyter, которая создает, загружает и запрашивает индекс Когнитивного поиска Azure с помощью Python и [библиотеки azure-search-documents](/python/api/overview/azure/search-documents-readme) в пакете SDK Azure для Python. В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
+Создайте записную книжку Jupyter Notebook, которая создает, загружает и запрашивает индекс Когнитивного поиска Azure с помощью Python и [библиотеки azure-search-documents](/python/api/overview/azure/search-documents-readme) в пакете SDK Azure для Python. В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -54,7 +54,7 @@ ms.locfileid: "94917092"
 
 ## <a name="connect-to-azure-cognitive-search"></a>Подключение к Когнитивному поиску Azure
 
-Для выполнения этой задачи запустите записную книжку Jupyter и проверьте, можете ли вы подключиться к службе "Когнитивный поиск Azure". Для этого запросите список индексов из службы. В Windows с Anaconda3 для запуска записной книжки можно использовать Anaconda Navigator.
+Для выполнения этой задачи запустите записную книжку Jupyter Notebook и проверьте, можете ли вы подключиться к службе "Когнитивный поиск Azure". Для этого запросите список индексов из службы. В Windows с Anaconda3 для запуска записной книжки можно использовать Anaconda Navigator.
 
 1. Создайте записную книжку Python3.
 

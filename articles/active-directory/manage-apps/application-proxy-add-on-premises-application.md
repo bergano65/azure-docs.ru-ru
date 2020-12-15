@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/24/2019
+ms.date: 12/04/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 41955475f32fe674bcb3ef2d1b6e59c71a008b6b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 5d0b2df551c73e8c9b24d80280bbc993d9b361b7
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656451"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928473"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory
 
@@ -51,8 +51,12 @@ Azure Active Directory (Azure AD) содержит службу прокси п�
 > ```
 > Windows Registry Editor Version 5.00
 > 
-> [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp] "EnableDefaultHttp2"=dword:00000000
+> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 Value: 0
 > ```
+>
+> Ключ можно задать через PowerShell с помощью следующей команды.
+> ```
+> Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\' -Name EnableDefaultHTTP2 -Value 0
 >
 
 #### <a name="recommendations-for-the-connector-server"></a>Рекомендации для сервера соединителя
@@ -87,6 +91,9 @@ Azure Active Directory (Azure AD) содержит службу прокси п�
 
 1. Перезапустите сервер.
 
+> [!Note]
+> Корпорация Майкрософт обновляет службы Azure для использования TLS-сертификатов от других корневых центров сертификации (ЦС). Это изменение связано с тем, что текущие сертификаты ЦС не соответствуют одному из базовых требований организации CA/Browser Forum. Дополнительные сведения см. на странице со сведениями об [изменениях TLS-сертификатов Azure](https://docs.microsoft.com/azure/security/fundamentals/tls-certificate-changes).
+
 ## <a name="prepare-your-on-premises-environment"></a>Подготовка локальной среды
 
 Для подготовки среды для Azure AD Application Proxy необходимо сначала установить связь с центрами обработки данных Azure. Если в сетевом пути используется брандмауэр, убедитесь, что он открыт. Открытый брандмауэр разрешает соединителю выполнять запросы HTTPS (TCP) к Application Proxy.
@@ -113,7 +120,7 @@ Azure Active Directory (Azure AD) содержит службу прокси п�
 | --- | --- | --- |
 | &ast;.msappproxy.net;<br>&ast;.servicebus.windows.net. | HTTPS 443 | Связь между соединителем и облачной службой прокси приложения |
 | crl3.digicert.com<br>crl4.digicert.com<br>ocsp.digicert.com<br>crl.microsoft.com<br>oneocsp.microsoft.com<br>ocsp.msocsp.com<br> | HTTP 80 |Соединитель использует эти URL-адреса для проверки сертификатов. |
-| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com | HTTPS 443 |Соединитель использует эти URL-адреса во время регистрации. |
+| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com<br>www.microsoft.com/pkiops | HTTPS 443 |Соединитель использует эти URL-адреса во время регистрации. |
 | ctldl.windowsupdate.com | HTTP 80 |Соединитель использует этот URL-адрес во время регистрации. |
 
 Вы можете разрешить подключения к &ast;.msappproxy.net, &ast;.servicebus.windows.net и другим приведенным выше URL-адресам, если ваш брандмауэр или прокси-сервер позволяет настраивать списки разрешений DNS. В противном случае необходимо разрешить доступ к [диапазонам IP-адресов Azure и тегам служб в общедоступном облаке](https://www.microsoft.com/download/details.aspx?id=56519). Список диапазонов IP-адресов обновляется еженедельно.
@@ -184,7 +191,7 @@ Azure Active Directory (Azure AD) содержит службу прокси п�
 1. Войдите на [портал Azure](https://portal.azure.com/) с учетной записью администратора.
 2. В области навигации слева выберите **Azure Active Directory**.
 3. Перейдите в колонку **Корпоративные приложения** и выберите **Новое приложение**.
-4. В разделе **Локальные приложения** выберите **Добавление локального приложения**.
+4. В разделе **Создать собственное приложение** выберите **Настроить прокси-сервер приложения для безопасного удаленного доступа к локальному приложению**.
 5. В разделе **Добавление локального приложения** укажите следующие сведения о приложении.
 
     | Поле | Описание |

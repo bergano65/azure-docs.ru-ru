@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/03/2020
+ms.date: 11/25/2020
 ms.author: jeedes
-ms.openlocfilehash: 557d2eb636e51f4259bc525fe39f8c95303774cd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9a2c52674bafeb170efd41afa9c395aeecda9df8
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181042"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602127"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-clientvpn"></a>Руководство по интеграции единого входа Azure Active Directory с AWS ClientVPN
 
@@ -80,7 +80,13 @@ ms.locfileid: "96181042"
 
     а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<LOCALHOST>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<LOCALHOST>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в одном из таких форматов:
+
+    | URL-адрес ответа |
+    |------------|
+    | `https://<LOCALHOST>` |
+    | `https://self-service.clientvpn.amazonaws.com/api/auth/sso/saml` |
+    |
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов AWS ClientVPN](https://aws.amazon.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -146,11 +152,11 @@ ms.locfileid: "96181042"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
 
-1. Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в AWS ClientVPN, где можно инициировать поток входа. 
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в AWS ClientVPN, где можно инициировать поток входа. 
 
-2. Перейдите по URL-адресу для входа в AWS ClientVPN и инициируйте поток входа.
+* Перейдите по URL-адресу для входа в AWS ClientVPN и инициируйте поток входа.
 
-3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку AWS ClientVPN на Панели доступа, вы перейдете по URL-адресу для входа в AWS ClientVPN. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку AWS ClientVPN на портале "Мои приложения", вы перейдете по URL-адресу для входа в AWS ClientVPN. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

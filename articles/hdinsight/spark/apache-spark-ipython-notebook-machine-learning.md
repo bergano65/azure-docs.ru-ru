@@ -1,6 +1,6 @@
 ---
 title: Руководство по Создание приложения машинного обучения Spark — Azure HDInsight
-description: 'Учебник: пошаговые инструкции по созданию приложения машинного обучения Apache Spark в кластерах HDInsight Spark с помощью записной книжки Jupyter.'
+description: 'Учебник: пошаговые инструкции по созданию приложения машинного обучения Apache Spark в кластерах HDInsight Spark с помощью записной книжки Jupyter Notebook.'
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc, devx-track-python
 ms.date: 04/07/2020
-ms.openlocfilehash: 753f45257f820f87f2e4bfb1893f581bee167a4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6af50bae075e88ac3bbba39cba9c9042eee2000e
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89230931"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932251"
 ---
 # <a name="tutorial-build-an-apache-spark-machine-learning-application-in-azure-hdinsight"></a>Руководство по Создание приложения машинного обучения Apache Spark в Azure HDInsight
 
@@ -41,7 +41,7 @@ ms.locfileid: "89230931"
 
 В этом приложении используется [конвейер машинного обучения](https://spark.apache.org/docs/2.2.0/ml-pipeline.html) Spark для выполнения классификации документов. Конвейеры машинного обучения предоставляют универсальный набор интерфейсов API высокого уровня, построенных на основе DataFrames. DataFrames позволяют создавать и настраивать практичные конвейеры машинного обучения. В конвейере вы разобьете документ на слова, преобразуете слова в вектор числового признака и, наконец, создадите модель прогнозирования с помощью вектора и меток признаков. Выполните следующие действия, чтобы создать приложение.
 
-1. Создайте записную книжку Jupyter, используя ядро PySpark. Инструкции см. в разделе [Создание файла записной книжки Jupyter](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook-file).
+1. Создайте записную книжку Jupyter Notebook с помощью ядра PySpark. Инструкции см. в разделе [Создание файла записной книжки Jupyter Notebook](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook-file).
 
 1. Импортируйте типы, необходимые для этого сценария. Вставьте следующий фрагмент кода в пустую ячейку и нажмите клавиши **SHIFT + ВВОД**.
 
@@ -186,7 +186,7 @@ ms.locfileid: "89230931"
 
 ## <a name="use-anaconda-scikit-learn-library-for-spark-machine-learning"></a>Использование библиотеки scikit-learn Anaconda для машинного обучения Spark
 
-Кластеры Apache Spark в HDInsight включают библиотеки Anaconda. Они также включают библиотеку **scikit-learn** для машинного обучения. Кроме того, библиотека включает различные наборы данных, которые можно использовать для создания примеров приложений прямо в записной книжке Jupyter. Примеры использования библиотеки scikit-learn см. здесь: [https://scikit-learn.org/stable/auto_examples/index.html](https://scikit-learn.org/stable/auto_examples/index.html).
+Кластеры Apache Spark в HDInsight включают библиотеки Anaconda. Они также включают библиотеку **scikit-learn** для машинного обучения. Кроме того, библиотека включает различные наборы данных, которые можно использовать для создания примеров приложений прямо в записной книжке Jupyter Notebook. Примеры использования библиотеки scikit-learn см. здесь: [https://scikit-learn.org/stable/auto_examples/index.html](https://scikit-learn.org/stable/auto_examples/index.html).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

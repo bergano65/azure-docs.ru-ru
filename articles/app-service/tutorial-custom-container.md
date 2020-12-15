@@ -7,12 +7,12 @@ ms.author: msangapu
 keywords: служба приложений azure, веб-приложение, linux, windows, docker, контейнер
 ms.custom: devx-track-csharp, mvc, seodec18, devx-track-python, devx-track-azurecli
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: b5682275a9e5f3993de715ab5f23a708d5df47ae
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 68fe49ff201ead89d846a0676e81dda9fc9b75b9
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130125"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558612"
 ---
 # <a name="migrate-custom-software-to-azure-app-service-using-a-custom-container"></a>Перенос пользовательского программного обеспечения в Службу приложений Azure с помощью пользовательского контейнера
 
@@ -228,31 +228,16 @@ https://<app-name>.scm.azurewebsites.net/api/logstream
 
 ## <a name="set-up-your-initial-environment"></a>Настройка начальной среды
 
-* Подготовьте учетную запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
-* Установите [Docker](https://docs.docker.com/get-started/#setup) для создания образов Docker. Для установки Docker может потребоваться перезагрузка компьютера.
-* Установите <a href="/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> версии 2.0.80 или более поздней для выполнения команд в любой оболочке для подготовки и настройки ресурсов Azure.
+- Подготовьте учетную запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- Установите [Docker](https://docs.docker.com/get-started/#setup) для создания образов Docker. Для установки Docker может потребоваться перезагрузка компьютера.
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+- Для работы с этим учебником требуется Azure CLI версии 2.0.80 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-После установки Docker и Azure CLI откройте окно терминала и убедитесь, что вы все готово к использованию Docker.
+После установки Docker или запуска Azure Cloud Shell откройте окно терминала и убедитесь, что Docker установлен:
 
 ```bash
 docker --version
 ```
-
-Также убедитесь, что у вас есть Azure CLI версии 2.0.80 или выше.
-
-```azurecli
-az --version
-```
-
-Теперь войдите в Azure с помощью CLI.
-
-```azurecli
-az login
-```
-
-Команда `az login` открывает окно браузера для ввода учетных данных. После выполнения команда отображает выходные данные JSON с информацией о подписках.
-
-Войдя, вы сможете выполнять в Azure CLI команды Azure для работы с ресурсами в подписке.
 
 ## <a name="clone-or-download-the-sample-app"></a>Клонирование или скачивание примера приложения
 
@@ -343,8 +328,6 @@ ENTRYPOINT ["init.sh"]
 1. Перейдите по адресу `http://localhost:8000` и убедитесь, что веб-приложение и контейнер функционируют правильно.
 
     ![Локальное тестирование веб-приложения](./media/app-service-linux-using-custom-docker-image/app-service-linux-browse-local.png)
-
-[!INCLUDE [Try Cloud Shell](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

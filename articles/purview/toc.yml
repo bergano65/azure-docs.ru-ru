@@ -104,8 +104,6 @@ items:
                 href: register-scan-on-premises-sql-server.md
               - name: "Клиент Power BI\_— портал"
                 href: register-scan-power-bi-tenant.md
-              - name: "Клиент Power BI\_— PowerShell"
-                href: powershell-register-scan-power-bi.md
       - name: Бизнес-глоссарий
         items:
           - name: 'Создание, импорт и экспорт терминов глоссария'

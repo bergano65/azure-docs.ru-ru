@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/30/2020
+ms.date: 12/07/2020
 ms.author: memildin
-ms.openlocfilehash: 0dbd208cea64a3b2dc22f7603f654127e5b46294
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 3272212a857f24916acce7da5a4ee31561ec0c5a
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511769"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922929"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -37,6 +37,8 @@ ms.locfileid: "96511769"
 
 - [Выпущена общедоступная версия службы Azure Defender для серверов SQL на компьютерах](#azure-defender-for-sql-servers-on-machines-is-generally-available)
 - [Выпущена общедоступная версия поддержки Azure Defender для SQL для выделенного пула SQL Azure Synapse Analytics](#azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available)
+- [Теперь глобальные администраторы могут предоставлять себе разрешения на уровне клиента](#global-administrators-can-now-grant-themselves-tenant-level-permissions)
+- [Два новых плана Azure Defender: Azure Defender для DNS и Azure Defender для Resource Manager (предварительная версия)](#two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview)
 
 ### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Выпущена общедоступная версия службы Azure Defender для серверов SQL на компьютерах
 
@@ -68,6 +70,31 @@ Azure Defender для SQL защищает выделенные пулы SQL с 
 Поддержка Azure Defender для SQL для пулов SQL Azure Synapse Analytics автоматически добавляется в пакет баз данных SQL Azure в Центре безопасности Azure. Новую вкладку "Azure Defender для SQL" можно найти на странице рабочей области Synapse на портале Azure.
 
 [Узнайте больше про Azure Defender для SQL](defender-for-sql-introduction.md).
+
+
+### <a name="global-administrators-can-now-grant-themselves-tenant-level-permissions"></a>Теперь глобальные администраторы могут предоставлять себе разрешения на уровне клиента
+
+У пользователя с ролью Azure Active Directory **Глобальный администратор** могут быть обязанности на уровне клиента, но отсутствовать разрешения Azure на просмотр сведений в масштабах организации в Центре безопасности Azure. 
+
+Чтобы назначить себе разрешения уровня клиента, следуйте инструкциям в разделе [Предоставление себе разрешений на уровне клиента ](security-center-management-groups.md#grant-tenant-wide-permissions-to-yourself).
+
+
+### <a name="two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview"></a>Два новых плана Azure Defender: Azure Defender для DNS и Azure Defender для Resource Manager (предварительная версия)
+
+Мы добавили две новые ориентированные на облако возможности защиты от угроз для вашей среды Azure.
+
+Эти новые возможности защиты значительно улучшают устойчивость к атакам со стороны субъектов угроз и существенно увеличивают число ресурсов Azure, защищенных с помощью Azure Defender.
+
+- **Azure Defender для Resource Manager** автоматически отслеживает все операции управления ресурсами, выполняемые в организации. Дополнительные сведения см. в разделе:
+    - [Общие сведения об Azure Defender для Resource Manager](defender-for-resource-manager-introduction.md)
+    - [Реагирование на оповещения Azure Defender для Resource Manager](defender-for-resource-manager-usage.md)
+    - [Список оповещений Azure Defender для Resource Manager](alerts-reference.md#alerts-resourcemanager)
+
+- **Azure Defender для DNS** постоянно отслеживает все запросы DNS из ресурсов Azure. Дополнительные сведения см. в разделе:
+    - [Общие сведения об Azure Defender для DNS](defender-for-dns-introduction.md)
+    - [Реагирование на оповещения Azure Defender для DNS](defender-for-dns-usage.md)
+    - [Список оповещений Azure Defender для DNS](alerts-reference.md#alerts-dns)
+
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 
@@ -124,7 +151,7 @@ Azure Defender для SQL защищает выделенные пулы SQL с 
 
 Теперь можно отфильтровать список рекомендаций по безопасности по ряду критериев. В следующем примере список отфильтрован для отображения рекомендаций, которые:
 
-- **общедоступны** (т. е. не являются предварительной версией);
+- **общедоступны** (т. е. не являются предварительной версией);
 - предназначены **для учетных записей хранения**;
 - поддерживают **быстрое исправление**.
 
@@ -226,7 +253,7 @@ Azure Defender для SQL защищает выделенные пулы SQL с 
 
 Для рекомендации **В службах Kubernetes нужно определить разрешенные диапазоны IP-адресов** выпущено быстрое исправление.
 
-Дополнительные сведения об этой и всех других рекомендациях Центра безопасности см. в статье [Рекомендации по безопасности — справочное руководство](recommendations-reference.md).
+Сведения об этой и всех других рекомендациях Центра безопасности см. в статье [Рекомендации по безопасности — справочное руководство](recommendations-reference.md).
 
 :::image type="content" source="./media/release-notes/authorized-ip-ranges-recommendation.png" alt-text="Рекомендация &quot;В службах Kubernetes нужно определить разрешенные диапазоны IP-адресов&quot; с быстрым исправлением":::
 

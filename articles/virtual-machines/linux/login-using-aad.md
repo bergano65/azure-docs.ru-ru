@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 11/17/2020
 ms.author: sandeo
-ms.openlocfilehash: 4c11e8c9cbd767bb95e094535a8a6cd7c8fe84fc
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b4fc6b9facc79db109c5ce5be09576b16a2abdc7
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340889"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510895"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "96340889"
 | Distribution | Версия |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
-| Debian | Debian 9 |
+| Debian | Debian 9 |
 | openSUSE | openSUSE Leap 42.3 |
 | RedHat Enterprise Linux | RHEL 6, RHEL 7 | 
 | SUSE Linux Enterprise Server | SLES 12 |
@@ -119,7 +119,7 @@ az vm extension set \
 - **Имя для входа пользователя виртуальной машины.** Пользователи с этой ролью могут входить на виртуальную машину Azure с правами обычного пользователя.
 
 > [!NOTE]
-> Чтобы разрешить пользователю входить в на виртуальную машину через SSH, необходимо назначить ему роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*. Пользователю Azure с ролью *Владелец* или *Участник*, назначенной для виртуальной машины, права для входа на эту виртуальную машину через SSH не предоставляются автоматически.
+> Чтобы разрешить пользователю входить в на виртуальную машину через SSH, необходимо назначить ему роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*. Роли входа администратора виртуальной машины и пользователя виртуальной машины используют действия с данными и поэтому не могут быть назначены в области группы управления. В настоящее время эти роли можно назначать только в подписке, группе ресурсов или области ресурсов. Пользователю Azure с ролью *Владелец* или *Участник*, назначенной для виртуальной машины, права для входа на эту виртуальную машину через SSH не предоставляются автоматически. 
 
 В следующем примере используется команда [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) для назначения роли *Имя для входа администратора виртуальной машины* виртуальной машине текущего пользователя Azure. Имя пользователя активной учетной записи Azure можно получить с помощью команды [az account show](/cli/azure/account#az-account-show). В качестве *области* задается виртуальная машина, созданная на предыдущем шаге с помощью команды [az vm show](/cli/azure/vm#az-vm-show). Область может также быть назначена на уровне группы ресурсов или подписки, и применяются обычные разрешения на наследование Azure RBAC. Дополнительные сведения см. в разделе [Azure RBAC](../../role-based-access-control/overview.md) .
 
@@ -138,7 +138,12 @@ az role assignment create \
 
 Дополнительные сведения об использовании Azure RBAC для управления доступом к ресурсам подписки Azure см. в разделе Использование [Azure CLI](../../role-based-access-control/role-assignments-cli.md), [портал Azure](../../role-based-access-control/role-assignments-portal.md)или [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
-Также можно настроить Azure AD, чтобы при входе конкретного пользователя на виртуальную машину Linux требовалось пройти аутентификацию MFA. Дополнительные сведения см. в статье Начало [работы с многофакторной идентификацией Azure AD в облаке](../../active-directory/authentication/howto-mfa-getstarted.md).
+## <a name="using-conditional-access"></a>Использование условного доступа
+
+Вы можете применить политики условного доступа, такие как многофакторная проверка подлинности или проверка риска входа пользователя, прежде чем авторизовать доступ к виртуальным машинам Linux в Azure, которые включены с входом в Azure AD. Чтобы применить политику условного доступа, необходимо выбрать приложение "вход в виртуальную машину Azure" в параметрах облачных приложений или назначения действий, а затем использовать риск входа в качестве условия и/или требовать многофакторную проверку подлинности в качестве предоставления контроля доступа. 
+
+> [!WARNING]
+> Многофакторная проверка подлинности Azure AD для каждого пользователя включена и не поддерживается для входа на виртуальную машину.
 
 ## <a name="log-in-to-the-linux-virtual-machine"></a>Вход на виртуальную машину Linux
 
@@ -195,6 +200,8 @@ Using keyboard-interactive authentication.
 Access denied:  to sign-in you be assigned a role with action 'Microsoft.Compute/virtualMachines/login/action', for example 'Virtual Machine User Login'
 Access denied
 ```
+> [!NOTE]
+> Если вы используете проблемы с назначениями ролей Azure, см. статью [Устранение неполадок в Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting#azure-role-assignments-limit).
 
 ### <a name="continued-ssh-sign-in-prompts"></a>Непрерывные запросы на вход SSH
 

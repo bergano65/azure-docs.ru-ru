@@ -1,7 +1,7 @@
 ---
 title: Руководство по классификации изображений. Обучение моделей
 titleSuffix: Azure Machine Learning
-description: Узнайте, как с помощью Машинного обучения Azure обучить модель классификации изображений, используя Scikit-learn в Jupyter Notebook для Python. Это руководство представляет первую часть серии (всего две части).
+description: Сведения о том, как с помощью Машинного обучения Azure обучить модель классификации изображений, используя Scikit-learn в Jupyter Notebook для Python. Это руководство представляет первую часть серии (всего две части).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 09/28/2020
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 003056ae9d3f236d37ddc10764812c15a3c6c695
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d1dbe51dd095290c296699bbb4bc6bd3a8caf7bf
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321294"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862434"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Руководство по обучению моделей классификации изображений с использованием данных MNIST и Scikit-learn 
 
@@ -54,7 +54,7 @@ ms.locfileid: "93321294"
 > [!Important]
 > Оставшаяся часть этой статьи содержит то же содержимое, что и записная книжка.  
 >
-> Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода. 
+> Перейдите в записную книжку Jupyter Notebook, чтобы вы могли просматривать его во время выполнения кода. 
 > Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
 
 ## <a name="set-up-your-development-environment"></a><a name="start"></a>Настройка среды разработки

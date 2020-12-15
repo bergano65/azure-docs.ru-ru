@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 49f244ea8e602f3b5e6499b8e14db2be15bfc8f7
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: b40a13b84a0191b5c454d7edac2226f8f06fadcd
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317083"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780167"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-net-sdk-v4"></a>Краткое руководство. Использование клиентской библиотеки сертификатов Azure Key Vault для .NET (пакет SDK версии 4)
 
@@ -54,6 +54,13 @@ ms.locfileid: "96317083"
 
 2. Выполните вход в браузере с помощью учетных данных.
 
+#### <a name="grant-access-to-your-key-vault"></a>Предоставление доступа к хранилищу ключей
+
+Создайте политику доступа для хранилища ключей, которая предоставляет разрешение сертификата для учетной записи пользователя.
+
+```console
+az keyvault set-policy --name <your-key-vault-name> --upn user@domain.com --certificate-permissions delete get list create purge
+```
 
 ### <a name="create-new-net-console-app"></a>Создание консольного приложения .NET
 
@@ -89,14 +96,6 @@ dotnet add package Azure.Security.KeyVault.Certificates
 
 ```dotnetcli
 dotnet add package Azure.Identity
-```
-
-#### <a name="grant-access-to-your-key-vault"></a>Предоставление доступа к хранилищу ключей
-
-Создайте политику доступа для хранилища ключей, которая предоставляет разрешение сертификата для учетной записи пользователя
-
-```console
-az keyvault set-policy --name <your-key-vault-name> --upn user@domain.com --certificate-permissions delete get list create purge
 ```
 
 #### <a name="set-environment-variables"></a>Настройка переменных среды
@@ -137,7 +136,7 @@ using Azure.Security.KeyVault.Certificates;
 
 В этом кратком руководстве пользователь, вошедший в систему, проходит проверку подлинности в хранилище ключей, который является предпочтительным методом при локальной разработке. Для приложений, развернутых в Azure, службе приложений или виртуальной машине должно быть назначено управляемое удостоверение. Дополнительные сведения см. в разделе [Обзор управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
 
-В примере ниже имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://\<your-key-vault-name\>.vault.azure.net". В этом примере показан класс ["DefaultAzureCredential()"](/dotnet/api/azure.identity.defaultazurecredential), который для предоставления удостоверения позволяет использовать один и тот же код в различных средах с различными параметрами. Дополнительные сведения о проверке подлинности в хранилище ключей см. в [руководстве для разработчиков](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code).
+В примере ниже имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://\<your-key-vault-name\>.vault.azure.net". В этом примере показан класс [DefaultAzureCredential()](/dotnet/api/azure.identity.defaultazurecredential) из [библиотеки удостоверений Azure](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme), который для предоставления удостоверения позволяет использовать один и тот же код в различных средах с различными параметрами. Дополнительные сведения о проверке подлинности в хранилище ключей см. в [руководстве для разработчиков](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code).
 
 ```csharp
 string keyVaultName = Environment.GetEnvironmentVariable("KEY_VAULT_NAME");
@@ -228,61 +227,20 @@ await client.PurgeDeletedCertificateAsync("myCertificate");
     ```
 ### <a name="test-and-verify"></a>Тестирование и проверка
 
-1.  Чтобы создать проект, выполните указанную ниже команду.
+Чтобы создать проект, выполните указанную ниже команду.
 
-    ```dotnetcli
-    dotnet build
-    ```
-
-1. Выполните следующую команду для запуска этого приложения.
-
-    ```dotnetcli
-    dotnet run
-    ```
-
-1. При появлении запроса введите значение секрета. Например, mySecretPassword.
-
-    Отображаются выходные данные, аналогичные следующим:
-
-    ```console
-    Creating a certificate in mykeyvault called 'myCertificate' ... done.
-    Retrieving your certificate from mykeyvault.
-    Your certificate version is '8532359bced24e4bb2525f2d2050738a'.
-    Deleting your certificate from jl-kv ... done
-    ```
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если ресурсы больше не нужны, вы можете использовать интерфейс командной строки Azure или Azure PowerShell, чтобы удалить хранилище ключей и соответствующую группу ресурсов.
-
-### <a name="delete-a-key-vault"></a>Удаление хранилища ключей
-
-```azurecli
-az keyvault delete --name <your-unique-keyvault-name>
+```dotnetcli
+dotnet build
 ```
 
-```azurepowershell
-Remove-AzKeyVault -VaultName <your-unique-keyvault-name>
-```
+Отображаются выходные данные, аналогичные следующим:
 
-### <a name="purge-a-key-vault"></a>Очистка хранилища ключей
-
-```azurecli
-az keyvault purge --location eastus --name <your-unique-keyvault-name>
-```
-
-```azurepowershell
-Remove-AzKeyVault -VaultName <your-unique-keyvault-name> -InRemovedState -Location eastus
-```
-
-### <a name="delete-a-resource-group"></a>Удаление группы ресурсов
-
-```azurecli
-az group delete -g "myResourceGroup"
-```
-
-```azurepowershell
-Remove-AzResourceGroup -Name "myResourceGroup"
+```console
+Creating a certificate in mykeyvault called 'myCertificate' ... done.
+Retrieving your certificate from mykeyvault.
+Your certificate version is '8532359bced24e4bb2525f2d2050738a'.
+Deleting your certificate from mykeyvault ... done
+Purging your certificate from mykeyvault ... done
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

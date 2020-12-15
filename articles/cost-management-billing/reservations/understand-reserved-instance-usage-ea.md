@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 12/02/2020
 ms.author: banders
-ms.openlocfilehash: 070d105785ee3ab9811188406bda56dbe6ceb558
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 874d5cb022a38b172bb37009bd86b5e6988f3204
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350897"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545610"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Получение сведений о затратах на резервирование и использовании по Соглашениям Enterprise
 
@@ -139,6 +139,8 @@ https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enroll
 1. Выполните оценку затрат на оплату по мере использования. Умножьте значение _UnitPrice_ (Стоимость единицы) на значение _Quantity_ (Количество), чтобы узнать примерную величину затрат на оплату по мере использования без применения скидки за резервирование.
 2. Рассчитайте стоимость резервирования. Суммируйте все значения _Cost_, чтобы получить величину затрат на зарезервированный экземпляр в денежном выражении. Сюда входит стоимость как использованной, так и неиспользованной частей резервирования.
 3. Вычтите затраты на резервирование из оценки затрат на оплату по мере использования, чтобы узнать предполагаемую экономию.
+
+Помните, что при наличии резервирования с недостаточной нагрузкой требуется учитывать запись _UnusedReservation_ для _ChargeType_. Если резервирование имеет достаточную нагрузку, экономия будет максимальной. При наличии любого количества записей _UnusedReservation_ экономия будет снижена.
 
 ## <a name="reservation-purchases-and-amortization-in-cost-analysis"></a>Покупки резервирований и амортизация в анализе затрат
 

@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.reviewer: mamccrea
 ms.custom: mvc, devx-track-js
 ms.date: 06/16/2020
-ms.openlocfilehash: aac85fdab157d581285af91c4c818258a5f1790b
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 092e07ed01fb870cdcd9a3fd63d46d30cef96007
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124787"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780847"
 ---
 # <a name="javascript-user-defined-functions-in-azure-stream-analytics"></a>Определяемые пользователем функции JavaScript в Azure Stream Analytics
  
-Azure Stream Analytics поддерживает определяемые пользователем функции, написанные на языке JavaScript. Благодаря обширному набору методов, которые предоставляют объекты JavaScript **String** , **RegExp** , **Math** , **Array** и **Date** , в заданиях Stream Analytics стало проще создавать сложные преобразования данных.
+Azure Stream Analytics поддерживает определяемые пользователем функции, написанные на языке JavaScript. Благодаря обширному набору методов, которые предоставляют объекты JavaScript **String**, **RegExp**, **Math**, **Array** и **Date**, в заданиях Stream Analytics стало проще создавать сложные преобразования данных.
 
 ## <a name="overview"></a>Обзор
 
@@ -184,6 +184,35 @@ INTO
     output
 FROM
     input A
+```
+
+### <a name="tolocalestring"></a>toLocaleString()
+Метод **toLocaleString** в JavaScript можно использовать для возврата строки с учетом языка, представляющей данные даты и времени для среды, из которой вызывается этот метод.
+Хотя Azure Stream Analytics принимает в качестве системной метки времени только дату и время в формате UTC, этот метод можно использовать, чтобы преобразовать системную метку времени в данные с другим языковым стандартом и часовым поясом.
+Этот метод соответствует тому же принципу реализации, что и метод в Internet Explorer.
+
+**Определение определяемой пользователем функции JavaScript:**
+
+```javascript
+function main(datetime){
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return event.toLocaleDateString('de-DE', options);
+}
+```
+
+**Пример запроса: передача даты и времени в качестве входного значения**
+```SQL
+SELECT
+    udf.toLocaleString(input.datetime) as localeString
+INTO
+    output
+FROM
+    input
+```
+
+Результатом этого запроса будет входное значение времени и даты в **de-DE** с предоставленными параметрами.
+```
+Samstag, 28. Dezember 2019
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

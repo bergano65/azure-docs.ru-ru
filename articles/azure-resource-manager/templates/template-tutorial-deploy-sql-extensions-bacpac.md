@@ -1,20 +1,20 @@
 ---
 title: Импорт BACPAC-файлов SQL с помощью шаблонов
-description: Здесь приведены сведения о том, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager.
+description: Сведения о том, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Resource Manager.
 author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 6a56602ad5217af07d9e35872a26ddb478146d0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b798e5ceb72ece3989fb81014555f2bc0fea5926
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86101891"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931407"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-arm-templates"></a>Руководство по Импорт BACPAC-файлов SQL с помощью шаблонов ARM
 
-Узнайте, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager (ARM). Артефакты развертывания — это любые файлы, которые помимо файлов основного шаблона необходимы для выполнения развертывания. BACPAC-файл является артефактом.
+Узнайте, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файла с помощью шаблонов Resource Manager. Артефакты развертывания — это любые файлы, которые помимо файлов основного шаблона необходимы для выполнения развертывания. BACPAC-файл является артефактом.
 
 В этом учебнике вы создадите шаблон для развертывания [логического сервера SQL Server](../../azure-sql/database/logical-servers.md), отдельной базы данных и импорта BACPAC-файла. См. сведения о развертывании расширений виртуальной машины Azure с помощью шаблонов ARM в руководстве по [ развертыванию расширений виртуальной машины с помощью шаблонов ARM](./template-tutorial-deploy-vm-extensions.md).
 
@@ -34,7 +34,7 @@ ms.locfileid: "86101891"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора сервера. Ниже приведен пример создания пароля.
 
     ```console

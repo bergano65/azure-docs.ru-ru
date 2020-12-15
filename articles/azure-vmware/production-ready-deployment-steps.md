@@ -3,12 +3,12 @@ title: Планирование развертывания Решения Azure 
 description: В этой статье описывается рабочий процесс развертывания Решения Azure VMware.  Его конечным результатом будет среда, готовая к созданию виртуальной машины и миграции.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 1ef83a568e41fe99f1e8e385a599de9c5ab7c0ca
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 1d1deebd56717c63a745500198eb8df9e3687b49
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "95529739"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558697"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>Планирование развертывания Решения Azure VMware
 
@@ -25,7 +25,7 @@ ms.locfileid: "95529739"
 Укажите подписку, которую планируется использовать для развертывания Решения Azure VMware.  Вы можете создать новую подписку или использовать существующую.
 
 >[!NOTE]
->Подписка должна быть связана с Соглашением Microsoft Enterprise.
+>Подписка должна быть связана с Соглашением Microsoft Enterprise или с планом поставщика облачных решений Azure. Дополнительные сведения см. в статье [Включение ресурса Решения Azure VMware](enable-azure-vmware-solution.md).
 
 ## <a name="resource-group"></a>Группа ресурсов
 

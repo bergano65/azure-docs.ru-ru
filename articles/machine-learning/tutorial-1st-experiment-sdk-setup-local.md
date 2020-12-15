@@ -11,16 +11,16 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 1b4ee9f06e8ed8bd47be1075070dea71b42b1cef
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 05ac0f78345e1c1d7643f24410d53b209ab7c375
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349075"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574162"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Руководство по началу работы с Машинным обучением Azure в среде разработки (часть 1 из 4)
 
-В рамках этой *серии учебников, состоящей из четырех частей* , вы изучите основы Машинного обучения Azure и выполните указанные ниже задачи машинного обучения для Python на основе заданий на облачной платформе Azure. 
+В рамках этой *серии учебников, состоящей из четырех частей*, вы изучите основы Машинного обучения Azure и выполните указанные ниже задачи машинного обучения для Python на основе заданий на облачной платформе Azure. 
 
 В части 1 этой серии учебников вы выполните указанные ниже задачи.
 
@@ -52,7 +52,10 @@ ms.locfileid: "93349075"
 pip install azureml-sdk
 ```
 
-## <a name="create-a-directory-structure-for-code"></a>Создание структуры каталогов для кода
+> [!div class="nextstepaction"]
+> [Мной установлен пакет SDK](?success=install-sdk#dir) [Возникла проблема](https://www.research.net/r/7C8Z3DN?issue=install-sdk)
+
+## <a name="create-a-directory-structure-for-code"></a><a name="dir"></a>Создание структуры каталогов для кода
 Для работы с этим руководством рекомендуется настроить следующую простую структуру каталогов:
 
 ```markdown
@@ -63,7 +66,11 @@ tutorial
 - `tutorial`: каталог верхнего уровня проекта.
 - `.azureml`: скрытый подкаталог для хранения файлов конфигурации Машинного обучения Azure.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Создание рабочей области машинного обучения Azure
+
+> [!div class="nextstepaction"]
+> [Мной создан каталог](?success=create-dir#workspace) [Возникла проблема](https://www.research.net/r/7C8Z3DN?issue=create-dir)
+
+## <a name="create-an-azure-machine-learning-workspace"></a><a name="workspace"></a>Создание рабочей области машинного обучения Azure
 
 Рабочая область — это ресурс верхнего уровня для Машинного обучения Azure и централизованное расположение для:
 
@@ -119,7 +126,10 @@ tutorial
 >
 > Для взаимодействия с рабочей областью Машинного обучения Azure также необходимо пройти проверку подлинности.
 
-## <a name="create-an-azure-machine-learning-compute-cluster"></a>Создание вычислительного кластера Машинного обучения Azure
+> [!div class="nextstepaction"]
+> [Мной создана рабочая область](?success=create-workspace#cluster) [Возникла проблема](https://www.research.net/r/7C8Z3DN?issue=create-workspace)
+
+## <a name="create-an-azure-machine-learning-compute-cluster"></a><a name="cluster"></a> Создание вычислительного кластера Машинного обучения Azure
 
 Создайте скрипт Python в каталоге верхнего уровня `tutorial` с именем `02-create-compute.py`. Заполните его следующим кодом, чтобы создать кластер Машинного обучения Azure, который будет автоматически масштабироваться от нуля до четырех узлов:
 
@@ -167,6 +177,9 @@ tutorial
 └──01-create-workspace.py
 └──02-create-compute.py
 ```
+
+> [!div class="nextstepaction"]
+> [Мной создан вычислительный кластер](?success=create-compute-cluster#next-steps) [Возникла проблема](https://www.research.net/r/7C8Z3DN?issue=create-compute-cluster)
 
 ## <a name="next-steps"></a>Следующие шаги
 

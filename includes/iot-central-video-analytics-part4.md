@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: de916fcbe0623185821e2f5da15a8f9cf71dfd4e
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 0b3ccc31c9159b5d7b1615add89e8fdc308bf8df
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426783"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763461"
 ---
 ### <a name="publish-the-device-template"></a>Публикация шаблона устройства
 
@@ -40,6 +40,12 @@ ms.locfileid: "94426783"
 1. В списке в диалоговом окне **Миграция** выберите **Шлюз LVA Edge версии 2** и щелкните **Перенести**.
 
 Через несколько секунд перенос завершится. Теперь устройство использует шаблон устройства **Шлюз LVA Edge версии 2** с настроенным манифестом развертывания.
+
+Теперь устройства, использующие исходный **шлюз LVA Edge**, отсутствуют. Удалите этот шаблон устройства:
+
+1. Перейдите на страницу **Шаблоны устройств** и выберите шаблон устройства **шлюза LVA Edge**.
+
+1. Выберите **Удалить**, чтобы удалить шаблон устройства.
 
 ### <a name="get-the-device-credentials"></a>Получение учетных данных устройства
 

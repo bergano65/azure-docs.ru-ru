@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 12/3/2020
+ms.date: 12/15/2020
 ms.subservice: alerts
-ms.openlocfilehash: 0e4674c9e0513a0b8dae29f5868b1da79da8ab84
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 8f59f3488f6c8f5b35ec68d93db656447f882a92
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920561"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510688"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -41,10 +41,10 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.ClassicCompute/domainNames/slots/roles | Нет | Нет | [Классические облачные службы](./metrics-supported.md#microsoftclassiccomputedomainnamesslotsroles) |
 |Microsoft.classicСompute/virtualMachines | Нет | Нет | [Классические виртуальные машины](./metrics-supported.md#microsoftclassiccomputevirtualmachines) |
 |Microsoft.ClassicStorage/storageAccounts | Да | Нет | [Учетные записи хранения (классические)](./metrics-supported.md#microsoftclassicstoragestorageaccounts) |
-|Microsoft.ClassicStorage/storageAccounts/blobServices | Да | Нет | |
-|Microsoft.ClassicStorage/storageAccounts/fileServices | Да | Нет | |
-|Microsoft.ClassicStorage/storageAccounts/queueServices | Да | Нет | |
-|Microsoft.ClassicStorage/storageAccounts/tableServices | Да | Нет | |
+|Microsoft.ClassicStorage/storageAccounts/blobServices | Да | Нет | [Учетные записи хранения (классические) — BLOB-объекты](./metrics-supported.md#microsoftclassicstoragestorageaccountsblobservices) |
+|Microsoft.ClassicStorage/storageAccounts/fileServices | Да | Нет | [Учетные записи хранения (классические) — файлы](./metrics-supported.md#microsoftclassicstoragestorageaccountsfileservices) |
+|Microsoft.ClassicStorage/storageAccounts/queueServices | Да | Нет | [Учетные записи хранения (классические) — очереди](./metrics-supported.md#microsoftclassicstoragestorageaccountsqueueservices) |
+|Microsoft.ClassicStorage/storageAccounts/tableServices | Да | Нет | [Учетные записи хранения (классические) — таблицы](./metrics-supported.md#microsoftclassicstoragestorageaccountstableservices) |
 |Microsoft.CognitiveServices/accounts | Да | Нет | [Cognitive Services](./metrics-supported.md#microsoftcognitiveservicesaccounts) |
 |Microsoft.Compute/virtualMachines | Да | Да<sup>1</sup> | [Виртуальные машины](./metrics-supported.md#microsoftcomputevirtualmachines) |
 |Microsoft.Compute/virtualMachineScaleSets; | Да | Нет |[Масштабируемые наборы виртуальных машин](./metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
@@ -57,10 +57,9 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.DataShare/accounts | Да | Нет | |
 |Microsoft.DBforMariaDB/servers | Нет | Нет | [База данных для MariaDB](./metrics-supported.md#microsoftdbformariadbservers) |
 |Microsoft.DBforMySQL/servers | Нет | Нет |[База данных для MySQL](./metrics-supported.md#microsoftdbformysqlservers)|
-|Microsoft.DBforPostgreSQL/flexibleServers | Да | Нет | |
 |Microsoft.DBforPostgreSQL/servers | Нет | Нет | [База данных для PostgreSQL](./metrics-supported.md#microsoftdbforpostgresqlservers)|
 |Microsoft.DBforPostgreSQL/serversv2 | Нет | Нет | [База данных для PostgreSQL v2](./metrics-supported.md#microsoftdbforpostgresqlserversv2)|
-|Microsoft. Дбфорпостгрескл/гибкий | Нет | Нет | [База данных для PostgreSQL (серверы флексиабле)](./metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
+|Microsoft.DBforPostgreSQL/flexibleServers | Да | Нет | [База данных для PostgreSQL (гибкие серверы)](./metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
 |Microsoft.Devices/IotHubs | Да | Нет |[Центр Интернета вещей](./metrics-supported.md#microsoftdevicesiothubs) |
 |Microsoft.Devices/provisioningServices| Да | Нет | [Службы подготовки устройств](./metrics-supported.md#microsoftdevicesprovisioningservices) |
 |Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес | Да | Нет | |
@@ -75,7 +74,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.KeyVault/vaults | Да |Да |[Хранилища](./metrics-supported.md#microsoftkeyvaultvaults)|
 |Microsoft.Kusto/Clusters | Да |Нет |[Кластеры обозреватель данных](./metrics-supported.md#microsoftkustoclusters)|
 |Microsoft.Logic/integrationServiceEnvironments | Да | Нет |[Среды службы интеграции](./metrics-supported.md#microsoftlogicintegrationserviceenvironments) |
-|Microsoft.Logic/workflows | Нет | Нет |[Logic Apps](./metrics-supported.md#microsoftlogicworkflows) |
+|Microsoft.Logic/workflows | Нет | Нет |[Logic Apps](./metrics-supported.md#microsoftlogicworkflows) |
 |Microsoft.MachineLearningServices/workspaces | Да | Нет | [Машинное обучение](./metrics-supported.md#microsoftmachinelearningservicesworkspaces) |
 |Microsoft.Maps/accounts | Да | Нет | [Сопоставление учетных записей](./metrics-supported.md#microsoftmapsaccounts) |
 |Microsoft.Media/mediaservices | Нет | Нет | [Службы мультимедиа](./metrics-supported.md#microsoftmediamediaservices) |
@@ -104,7 +103,10 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Sql/servers/databases | Нет | Да | [Базы данных SQL](./metrics-supported.md#microsoftsqlserversdatabases) |
 |Microsoft.Sql/servers/elasticPools | Нет | Да | [Эластичные пулы SQL](./metrics-supported.md#microsoftsqlserverselasticpools) |
 |Microsoft.Storage/storageAccounts |Да | Нет | [Учетные записи хранения](./metrics-supported.md#microsoftstoragestorageaccounts)|
-|Microsoft.Storage/storageAccounts/services | Да| Нет | [Службы BLOB-объектов](./metrics-supported.md#microsoftstoragestorageaccountsblobservices), [службы файлов](./metrics-supported.md#microsoftstoragestorageaccountsfileservices), [службы очередей](./metrics-supported.md#microsoftstoragestorageaccountsqueueservices) и [службы таблиц](./metrics-supported.md#microsoftstoragestorageaccountstableservices)|
+|Microsoft.Storage/storageAccounts/blobServices | Да| Нет | [Учетные записи хранения — BLOB-объекты](./metrics-supported.md#microsoftstoragestorageaccountsblobservices) |
+|Microsoft.Storage/storageAccounts/fileServices | Да| Нет | [Учетные записи хранения — файлы](./metrics-supported.md#microsoftstoragestorageaccountsfileservices) |
+|Microsoft.Storage/storageAccounts/queueServices | Да| Нет | [Учетные записи хранения — очереди](./metrics-supported.md#microsoftstoragestorageaccountsqueueservices) |
+|Microsoft.Storage/storageAccounts/tableServices | Да| Нет | [Учетные записи хранения — таблицы](./metrics-supported.md#microsoftstoragestorageaccountstableservices) |
 |Microsoft.StorageCache/caches | Да | Нет | |
 |Microsoft. StorageSync/Сторажесинксервицес | Да | Нет | [Службы синхронизации хранилища](./metrics-supported.md#microsoftstoragesyncstoragesyncservices) |
 |Microsoft.StreamAnalytics/streamingjobs | Да | Нет | [Stream Analytics](./metrics-supported.md#microsoftstreamanalyticsstreamingjobs) |

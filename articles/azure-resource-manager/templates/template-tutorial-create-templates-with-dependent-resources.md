@@ -1,20 +1,20 @@
 ---
 title: Шаблон с зависимыми ресурсами
-description: Узнайте, как создавать шаблон Azure Resource Manager с несколькими ресурсами, а также, как развертывать его, используя портал Azure
+description: Сведения о том, как создать шаблон Azure Resource Manager с несколькими ресурсами и как развернуть его, используя портал Azure.
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 3ed653c511dbd775d124e1abd6f4bb02923edb25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a43fa12e72484e97b828648cd7d610f5cf15ea4e
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86102078"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931594"
 ---
 # <a name="tutorial-create-arm-templates-with-dependent-resources"></a>Руководство по созданию шаблонов Resource Manager с зависимыми ресурсами
 
-Узнайте, как создать шаблон Azure Resource Manager (ARM) для развертывания нескольких ресурсов и настроить порядок развертывания. После создания шаблон можно развернуть с помощью Cloud Shell, используя портал Azure.
+Узнайте, как создать шаблон Azure Resource Manager для развертывания нескольких ресурсов и настроить порядок развертывания. После создания шаблон можно развернуть с помощью Cloud Shell, используя портал Azure.
 
 В рамках этого руководства вы создадите учетную запись хранения, виртуальную машину, виртуальную сеть и другие зависимые ресурсы. Некоторые ресурсы невозможно развернуть до тех пор, пока не будет существовать другой ресурс. Например, невозможно создать виртуальную машину, пока не существуют ее учетная запись хранения и сетевой интерфейс. Эта связь определяется путем пометки зависимости одного ресурса от других. Диспетчер ресурсов оценивает зависимости между ресурсами и развертывает эти ресурсы согласно установленным зависимостям. Если ресурсы не зависят друг от друга, диспетчер ресурсов развертывает их параллельно. Дополнительные сведения см. в статье [Определение порядка развертывания ресурсов в шаблонах ARM](./define-resource-dependency.md).
 
@@ -33,7 +33,7 @@ ms.locfileid: "86102078"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console
@@ -67,7 +67,7 @@ ms.locfileid: "86102078"
 
 1. В Visual Studio Code сверните элементы, пока не появятся элементы только первого уровня и элементы второго уровня внутри **ресурсов**.
 
-    ![Шаблоны Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
+    ![Шаблоны Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
 
     Шаблоном определено шесть ресурсов:
 
@@ -82,19 +82,19 @@ ms.locfileid: "86102078"
 
 1. Разверните первый ресурс. Это учетная запись хранения. Сравните определение ресурса с определением в [справочнике по шаблону](/azure/templates/Microsoft.Storage/storageAccounts).
 
-    ![Определение учетной записи хранения для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-storage-account-definition.png)
+    ![Определение учетной записи хранения для шаблонов Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-storage-account-definition.png)
 
 1. Разверните второй ресурс. В качестве типа ресурса используйте `Microsoft.Network/publicIPAddresses`. Сравните определение ресурса с определением в [справочнике по шаблону](/azure/templates/microsoft.network/publicipaddresses).
 
-    ![Определение общедоступного IP-адреса для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
+    ![Определение общедоступного IP-адреса для шаблонов Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
 
 1. Разверните третий ресурс. В качестве типа ресурса используйте `Microsoft.Network/networkSecurityGroups`. Сравните определение ресурса с определением в [справочнике по шаблону](/azure/templates/microsoft.network/networksecuritygroups).
 
-    ![Определение группы безопасности сети для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-network-security-group-definition.png)
+    ![Определение группы безопасности сети для шаблонов Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-network-security-group-definition.png)
 
 1. Разверните четвертый ресурс: В качестве типа ресурса используйте `Microsoft.Network/virtualNetworks`.
 
-    ![Элемент dependsOn для виртуальной сети для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-virtual-network-definition.png)
+    ![Элемент dependsOn для виртуальной сети для шаблонов Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-virtual-network-definition.png)
 
     Элемент dependsOn позволяет определить один ресурс как зависимый от одного или нескольких ресурсов. Этот ресурс зависит от одного из этих ресурсов:
 
@@ -112,7 +112,7 @@ ms.locfileid: "86102078"
 
 На следующей схеме приведены ресурсы и информация о зависимости для этого шаблона.
 
-![Схема зависимости шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependency-diagram.png)
+![Схема зависимости шаблонов Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependency-diagram.png)
 
 Путем указания зависимостей диспетчер ресурсов позволяет эффективно развертывать решение. Развертывание учетной записи хранения, общедоступного IP-адреса и виртуальной сети происходит в параллельном режиме, так как они не имеют зависимостей. После развертывания общедоступного IP-адреса и виртуальной сети создается сетевой интерфейс. Когда все ресурсы развернуты, диспетчер ресурсов развертывает виртуальную машину.
 

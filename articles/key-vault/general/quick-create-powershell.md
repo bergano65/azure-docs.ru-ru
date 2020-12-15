@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: quickstart
-ms.date: 11/08/2019
+ms.date: 12/08/2020
 ms.author: mbaldwin
-ms.openlocfilehash: ace6d21d2928eac1fb91903c5e395f1e3479a3ff
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: c3407b9539047b5c683f304549977eace7b57341
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91823445"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779011"
 ---
 # <a name="quickstart-create-a-key-vault-using-powershell"></a>Краткое руководство. Создание хранилища ключей с помощью PowerShell
 
@@ -74,7 +74,7 @@ Remove-AzResourceGroup -Name "myResourceGroup"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этого краткого руководства вы создали Key Vault и сохранили в нем секрет. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
+С помощью этого краткого руководства вы создали хранилище ключей с помощью Azure PowerShell. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
 - [Обзор Azure Key Vault](overview.md)
 - Справочник по [командлетам Azure PowerShell для Azure Key Vault](/powershell/module/az.keyvault/)

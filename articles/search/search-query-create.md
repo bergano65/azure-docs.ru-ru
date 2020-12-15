@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/14/2020
-ms.openlocfilehash: a02d51d66b9d2b8bf3c08d4515713ecb062e0c8e
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: db36a77d93735b151ad893b7e25ba86f104e7b90
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400222"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510470"
 ---
 # <a name="create-a-query-in-azure-cognitive-search"></a>Создание запроса в Azure Когнитивный поиск
 
@@ -76,31 +76,7 @@ POST https://myservice.search.windows.net/indexes/hotels-sample-index/docs/searc
 
 [Полный синтаксис запроса Lucene](query-Lucene-syntax.md#bkmk_syntax), включенный при добавлении `queryType=full` в запрос, основан на [средстве синтаксического анализа Apache Lucene](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html).
 
-Полный синтаксис — это расширение простого синтаксиса с дополнительными операторами, позволяющее создавать расширенные запросы, такие как нечеткий поиск, поиск с использованием подстановочных знаков, поиск с учетом расположения и регулярные выражения. В следующих примерах показан один и тот же запрос, но с разными **`queryType`** параметрами, которые дают разные результаты. В первом простом запросе параметр `^3` After `historic` рассматривается как часть условия поиска. Итоговый результат для этого запроса — "Маркуис за & Suite", в его описание которого есть *океанские* части.
-
-```http
-POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
-{
-    "count": true,
-    "queryType": "simple",
-    "search": "ocean historic^3",
-    "searchFields": "Description",
-    "select": "HotelId, HotelName, Tags, Description",
-}
-```
-
-Тот же запрос, использующий полное средство синтаксического анализа Lucene, интерпретируется `^3` как повышение в поле. При переключении синтаксических анализаторов изменяется ранг, а результаты, содержащие термин с *предысторией* , перемещаются в начало.
-
-```http
-POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
-{
-    "count": true,
-    "queryType": "full",
-    "search": "ocean historic^3",
-    "searchFields": "Description",
-    "select": "HotelId, HotelName, Tags, Description",
-}
-```
+Полный синтаксис и простой синтаксис перекрываются в той степени, которая поддерживает одинаковые операции prefix и Boolean, но полный синтаксис предоставляет больше операторов. В полной мере, существуют дополнительные операторы для логических выражений и другие операторы для расширенных запросов, таких как нечеткий поиск, поиск с использованием подстановочных знаков, поиск с учетом расположения и регулярные выражения.
 
 ## <a name="choose-query-methods"></a>Выбор методов запроса
 

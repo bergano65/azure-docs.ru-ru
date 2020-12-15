@@ -11,12 +11,12 @@ ms.date: 10/12/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: dbfeefc14059785ba82cbf245a60e5e72759db76
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 48c60878a6a58b2f4629768b81af894a741dab1c
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840412"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509807"
 ---
 # <a name="web-sign-in-with-openid-connect-in-azure-active-directory-b2c"></a>Вход в веб-приложения с помощью OpenID Connect в Azure Active Directory B2C
 
@@ -262,7 +262,7 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=op
 
 ## <a name="send-a-sign-out-request"></a>Отправка запроса на выход
 
-Если вы хотите подписать пользователя из приложения, достаточно очистить файлы cookie приложения или иным способом завершить сеанс с пользователем. Перенаправление пользователя в Azure AD B2C для выхода. Если этого не сделать, пользователь может выполнить повторную проверку подлинности в приложении без повторного ввода учетных данных. Дополнительные сведения см. в разделе [Azure AD B2C Session](session-overview.md).
+Если вы хотите подписать пользователя из приложения, достаточно очистить файлы cookie приложения или иным способом завершить сеанс с пользователем. Перенаправление пользователя в Azure AD B2C для выхода. Если этого не сделать, пользователь может выполнить повторную проверку подлинности в приложении без повторного ввода учетных данных. Дополнительные сведения см. в разделе [Azure AD B2C Session](session-behavior.md).
 
 Чтобы выйти из учетной записи пользователя, перенаправьте пользователя на `end_session` конечную точку, которая указана в документе OpenID Connect Connect metadata, описанном ранее.
 
@@ -283,8 +283,8 @@ GET https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{policy}/oauth2/v2.0/
 
 После выхода пользователя перенаправляется на URI, указанный в `post_logout_redirect_uri` параметре, независимо от URL-адресов ответа, указанных для приложения. Однако если `id_token_hint` передано допустимое значение и **маркер обязательного идентификатора в запросах выхода** включен, Azure AD B2C проверяет, соответствует ли значения `post_logout_redirect_uri` одному из настроенных URI перенаправления приложения перед выполнением перенаправления. Если соответствующий URL-адрес ответа не был настроен для приложения, выводится сообщение об ошибке, и пользователь не перенаправляется.
 
-Сведения о задании требуемого маркера идентификации в запросах выхода см. в статьях [Настройка поведения сеанса в Azure Active Directory B2C](session-behavior-custom-policy.md#secure-your-logout-redirect)и [Настройка поведения сеанса с помощью пользовательских политик в Azure Active Directory B2C](session-behavior-custom-policy.md#secure-your-logout-redirect).
+Сведения о задании требуемого маркера идентификации в запросах выхода см. в разделе [Настройка поведения сеанса в Azure Active Directory B2C](session-behavior.md#secure-your-logout-redirect).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
+- Дополнительные сведения о [Azure AD B2C сеансе](session-behavior.md).

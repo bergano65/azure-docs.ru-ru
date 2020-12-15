@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efa4b625afb641209d3920c8663ed810ee27e1ad
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 427cf2614f81a086dcb174db06cd636df4876c7e
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89228653"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778501"
 ---
 # <a name="what-is-azure-active-directory-monitoring"></a>Мониторинг в Azure Active Directory
 
@@ -39,6 +39,22 @@ ms.locfileid: "89228653"
 > [!VIDEO https://www.youtube.com/embed/syT-9KNfug8]
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="licensing-and-prerequisites-for-azure-ad-reporting-and-monitoring"></a>Лицензирование и предварительные требования для отчетов и мониторинга Azure AD
+
+Для доступа к журналам входа в Azure AD вам потребуется лицензия Azure AD Premium.
+
+Подробные сведения о компонентах и лицензировании см. на странице с [ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+
+Для развертывания мониторинга и отчетов Azure AD вам потребуется пользователь с правами глобального администратора или администратора безопасности для арендатора Azure AD.
+
+В зависимости от конечного назначения данных журналов вам потребуется одно из следующего:
+
+* Учетная запись хранения Azure, для которой имеется разрешение ListKeys. Рекомендуется использовать общую учетную запись хранения вместо учетной записи хранилища BLOB-объектов. Информацию о ценах на хранилище см. [здесь](https://azure.microsoft.com/pricing/calculator/?service=storage).
+
+* Пространство имен Центров событий Azure для интеграции со сторонними решениями SIEM.
+
+* Рабочая область Azure Log Analytics для отправки данных в журналы Azure Monitor.
 
 ## <a name="diagnostic-settings-configuration"></a>Настройка параметров диагностики
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 199da0586a061bccdf8a6ff8a1f53df2f703512f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 25db7104e565a987f3be9e2d6f3b239cf1884ae4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959447"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932342"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Руководство. Создание и развертывание пользовательских модулей IoT Edge
 
@@ -51,6 +51,15 @@ ms.locfileid: "94959447"
 ![Архитектура трех модулей IoT Edge](media/tutorial-machine-learning-edge-06-custom-modules/modules-diagram.png)
 
 Описанные в этой статье действия обычно выполняются разработчиком облачной системы.
+
+Из этого раздела учебника, вы узнаете, как:
+
+> [!div class="checklist"]
+>
+> * создать модуль IoT Edge из пользовательского кода;
+> * создать образ Docker из пользовательского модуля;
+> * перенастроить маршрутизацию Центра Интернета вещей для поддержки пользовательских модулей;
+> * выполнить сборку, публикацию и развертывание пользовательских модулей.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -804,6 +813,10 @@ ms.locfileid: "94959447"
    ```bash
    sudo docker exec -it avroFileWriter bash
    ```
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Этот учебник является частью серии статей, каждая из которых продолжает предыдущую. Не очищайте ресурсы, пока не завершите работу с последним учебником.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

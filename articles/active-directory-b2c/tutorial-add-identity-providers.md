@@ -11,12 +11,13 @@ ms.topic: tutorial
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9f9abf9105da773ec5f8321c0f8e70e20516618c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 166bdb7a2cf15a84e1b826a9a798042c568bb227
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87922155"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608237"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Руководство по Добавление поставщиков удостоверений приложениям в Azure Active Directory B2C
 
@@ -86,7 +87,7 @@ ms.locfileid: "87922155"
 1. Рядом с полем **App Secret** (Секрет приложения) щелкните кнопку **Show** (Показать) и скопируйте представленное значение. Идентификатор и секрет приложения потребуются вам для настройки Facebook в качестве поставщика удостоверений для вашего клиента. **Секрет приложения** — это важные учетные данные безопасности, которые необходимо хранить безопасно.
 1. Щелкните знак плюса рядом с полем **PRODUCTS** (Продукты), а затем выберите **Set up** (Настройка) в разделе **Facebook Login** (Вход через Facebook).
 1. В разделе **Facebook Login** (Вход через Facebook) в меню слева выберите **Settings** (Параметры).
-1. В поле **Valid OAuth redirect URIs** (Допустимые URI перенаправления OAuth) введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`. Замените `your-tenant-name` именем вашего клиента. Щелкните**Save Changes** (Сохранить изменения) в нижней части страницы.
+1. В поле **Valid OAuth redirect URIs** (Допустимые URI перенаправления OAuth) введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`. Замените `your-tenant-name` именем вашего клиента. Щелкните **Save Changes** (Сохранить изменения) в нижней части страницы.
 1. Чтобы сделать приложение Facebook доступным в Azure AD B2C, щелкните селектор **Status** (Состояние) в верхней правой части страницы и установите его в положение **On** (Вкл.) для предоставления общего доступа к приложению, а затем нажмите кнопку **Confirm** (Подтвердить). На этом этапе состояние должно измениться с **Разработка** на **Активно**.
 
 ## <a name="add-the-identity-providers"></a>Добавление поставщиков удостоверений
@@ -99,19 +100,21 @@ ms.locfileid: "87922155"
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 1. Щелкните элемент **Поставщики удостоверений**, а затем выберите **Новый поставщик OpenID Connect**.
 1. Введите **Имя**. Например, введите *Azure AD Contoso*.
-1. В поле **URL-адрес метаданных** введите указанный ниже URL-адрес, заменив `your-AD-tenant-domain` реальным доменным именем вашего клиента Azure AD.
+1. В поле **URL-адрес метаданных** введите указанный ниже URL-адрес, заменив `{tenant}` реальным доменным именем вашего клиента Azure AD.
 
     ```
-    https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
+    https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
     ```
 
-    Например, `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
+    Например, `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`.
+    Например, `https://login.microsoftonline.com/contoso.com/v2.0/.well-known/openid-configuration`.
 
 1. В поле **Идентификатор клиента** введите ранее записанное значение идентификатора приложения.
 1. В поле **Секрет клиента** введите ранее записанное значение секрета клиента.
-1. Сохраните значения по умолчанию для параметров **Область**, **Тип ответа** и **Режим ответа**.
-1. (Необязательно) Введите значение для указания домена (**Domain_hint**). Например, *ContosoAD*. [Указания домена](../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) представляют собой директивы, включаемые в запрос на аутентификацию из приложения. Их можно использовать для ускорения входа пользователя на страницу входа федеративного поставщика удостоверений. Или они могут использоваться мультитенантным приложением, чтобы ускорить для клиента вход пользователя непосредственно на страницу входа Azure AD с фирменной символикой.
-1. В разделе **Сопоставление утверждений поставщика удостоверений** введите следующие значения для сопоставления утверждений:
+1. Для параметра **Область** введите значение `openid profile`.
+1. Сохраните значения по умолчанию для параметров **Тип ответа** и **Режим ответа**.
+1. (Необязательно) В поле **Указание домена** Введите `contoso.com`. Дополнительные сведения см. в статье [Настройка прямого входа в систему с помощью Azure Active Directory B2C](direct-signin.md#redirect-sign-in-to-a-social-provider).
+1. В разделе **Сопоставление утверждений поставщика удостоверений** выберите следующие утверждения:
 
     * **User ID**: *oid*;
     * **Display name**: *name*;

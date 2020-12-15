@@ -9,14 +9,14 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 09/03/2019
+ms.date: 12/08/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e1c780d1eb9535343373701e6dfe4899a9cba366
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
+ms.openlocfilehash: b5f4f3d2b3eda9f00049cee26ae95850d65257d6
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91803931"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778875"
 ---
 # <a name="quickstart-create-a-key-vault-using-the-azure-portal"></a>Краткое руководство. Создание хранилища ключей с помощью портала Azure
 
@@ -67,7 +67,7 @@ Azure Key Vault — это облачная служба, которая пре
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этого краткого руководства вы создали Key Vault и сохранили в нем секрет. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
+С помощью этого краткого руководства вы создали хранилище ключей на портале Azure. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
 - [Обзор Azure Key Vault](overview.md)
 - [Руководство разработчика Azure Key Vault](developers-guide.md)

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 7246375468b3419c3d52ee3d5a51a95aa20050a9
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 2f3e4bf640b8da31a7fa4d818b94b0372d3026b8
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876723"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763439"
 ---
 Пример приложения включает в себя два имитированных устройства и один шлюз IoT Edge. В следующих учебниках описаны два подхода, с которыми можно поэкспериментировать, а также сведения о возможностях шлюза.
 
@@ -36,6 +36,6 @@ ms.locfileid: "91876723"
 
 ## <a name="initial-setup"></a>Начальная настройка
 
-В этих учебниках вы обновите и используете несколько файлов конфигурации. Исходные версии этих файлов доступны в репозитории [LVA-gateway](https://github.com/Azure/live-video-analytics/tree/master/ref-apps/lva-edge-iot-central-gateway) на GitHub. Репозиторий также содержит текстовый файл блокнота, который можно скачать и использовать для записи значений конфигурации из развертываемых служб.
+В этих учебниках вы обновите и используете несколько файлов конфигурации. Исходные версии этих файлов доступны в репозитории [LVA-gateway](https://github.com/Azure/live-video-analytics/tree/master/ref-apps/lva-edge-iot-central-gateway) на GitHub. Репозиторий содержит текстовый файл [scratchpad](https://github.com/Azure/live-video-analytics/blob/master/ref-apps/lva-edge-iot-central-gateway/setup/Scratchpad.txt), который можно скачать и использовать для записи значений конфигурации из развертываемых служб. Этот файл поможет выполнить дальнейшие действия в учебниках.
 
 Создайте папку с именем *lva-configuration* на локальном компьютере, чтобы сохранить копии этих файлов. Затем щелкните правой кнопкой мыши каждую из следующих ссылок и выберите **Сохранить как**, чтобы сохранить файл в папку *lva-configuration*.

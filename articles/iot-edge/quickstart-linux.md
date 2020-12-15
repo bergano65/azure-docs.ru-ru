@@ -4,17 +4,17 @@ description: Из этого краткого руководства вы узн
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/30/2020
+ms.date: 12/02/2020
 ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 720a4d14a73350d98b3f9054f748b93d296be11b
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: ff9ba73e71e4525fe56a3cbb54626030f57e990b
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579323"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920795"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
 
@@ -33,23 +33,15 @@ ms.locfileid: "94579323"
 
 Если у вас нет активной подписки Azure, перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Для выполнения многих действий, описанных в этом кратком руководстве, используется Azure CLI, а также расширение Интернета вещей Azure для предоставления дополнительных функций.
-
-Добавьте расширение Интернета вещей Azure в экземпляр Cloud Shell.
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
+
+Подготовьте среду к работе с Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 Облачные ресурсы.
 
-* Группа ресурсов для управления всеми ресурсами, которые вы используете в этом кратком руководстве. В этом кратком руководстве и последующих руководствах мы используем пример имени группы ресурсов **IoTEdgeResources**.
+- Группа ресурсов для управления всеми ресурсами, которые вы используете в этом кратком руководстве. В этом кратком руководстве и последующих руководствах мы используем пример имени группы ресурсов **IoTEdgeResources**.
 
    ```azurecli-interactive
    az group create --name IoTEdgeResources --location westus2
@@ -119,11 +111,11 @@ ms.locfileid: "94579323"
    az deployment group create \
    --resource-group IoTEdgeResources \
    --template-uri "https://aka.ms/iotedge-vm-deploy" \
-   --parameters dnsLabelPrefix='my-edge-vm' \
+   --parameters dnsLabelPrefix='<REPLACE_WITH_VM_NAME>' \
    --parameters adminUsername='azureUser' \
    --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name
    <REPLACE_WITH_HUB_NAME> -o tsv) \
-   --parameters authenticationType='password'
+   --parameters authenticationType='password' \
    --parameters adminPasswordOrKey="<REPLACE_WITH_PASSWORD>"
    ```
 
@@ -133,7 +125,7 @@ ms.locfileid: "94579323"
    az deployment group create `
    --resource-group IoTEdgeResources `
    --template-uri "https://aka.ms/iotedge-vm-deploy" `
-   --parameters dnsLabelPrefix='my-edge-vm1' `
+   --parameters dnsLabelPrefix='<REPLACE_WITH_VM_NAME>' `
    --parameters adminUsername='azureUser' `
    --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) `
    --parameters authenticationType='password' `
@@ -146,7 +138,7 @@ ms.locfileid: "94579323"
 | --------- | ----------- |
 | **resource-group** | Группа ресурсов, в которой будут созданы ресурсы. Используйте имя по умолчанию **IoTEdgeResources**, которое применяется в этой статье, или укажите имя существующей группы ресурсов в подписке. |
 | **template-uri** | Указатель на используемый шаблон Resource Manager. |
-| **dnsLabelPrefix** | Строка, которая будет использоваться для создания имени узла виртуальной машины. Используйте пример **my-edge-vm** или укажите новую строку. |
+| **dnsLabelPrefix** | Строка, которая будет использоваться для создания имени узла виртуальной машины. Замените заполнитель именем вашей виртуальной машины. |
 | **adminUsername** | Имя пользователя для учетной записи администратора виртуальной машины. Используйте пример **azureUser** или укажите новое имя пользователя. |
 | **deviceConnectionString** | Строка подключения из удостоверения устройства в Центре Интернета вещей, которая используется для настройки среды выполнения IoT Edge на виртуальной машине. Команда CLI в этом параметре извлекает строку подключения. Замените текст заполнителя именем центра Интернета вещей. |
 | **authenticationType** | Метод аутентификации для учетной записи администратора. В этом кратком руководстве используется аутентификация на основе **пароля**, но для этого параметра также можно задать значение **sshPublicKey**. |

@@ -3,18 +3,18 @@ title: Руководство. Создание экспортированных
 description: В этой статье показано, как создавать экспортированные данные в службе "Управление затратами Azure" и управлять ими, чтобы использовать эти данные во внешних системах.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/20/2020
+ms.date: 12/7/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
-ms.custom: seodec18
-ms.openlocfilehash: dcf9b925e7f0ce691a5a50850a30f723d48ec50b
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.custom: seodec18, devx-track-azurepowershell
+ms.openlocfilehash: 32989b4d5c595416f82fc9d3f1cec2eddec1d6ee
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96007228"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929265"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Руководство. Создание задачи для экспорта данных и управление экспортированными данными
 
@@ -58,20 +58,20 @@ ms.locfileid: "96007228"
 > - Помимо подписок можно экспортировать группы ресурсов, группы управления, подразделения и регистрации. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 >- Войдя в систему как партнер в области учетной записи выставления счетов или в клиентском арендаторе, вы можете экспортировать данные в учетную запись хранения Azure, связанную с учетной записью хранения партнера. При этом в арендаторе CSP должна быть активная подписка.
 
-1. Выберите **Добавить** и введите имя для экспорта. 
+1. Выберите **Добавить** и введите имя для экспорта.
 1. Для параметра **Метрика** выберите одно из следующих значений:
     - Выберите **Actual cost (Usage and Purchases)** (Фактическая стоимость (использование и покупки)), чтобы экспортировать стандартное использование и покупки.
     - Выберите **Amortized cost (Usage and Purchases)** (Амортизированная стоимость (использование и покупки)), чтобы экспортировать амортизированную стоимость покупок, например резервирований Azure.
 1. Для параметра **Тип экспорта** выберите одно из следующих значений:
     - **Ежедневный экспорт расходов за текущий месяц** — ежедневное предоставление нового файла экспорта для расходов за текущий месяц. Последние данные агрегируются из предыдущего ежедневного экспорта.
-    - **Weekly export of cost for the last seven days** (Еженедельный экспорт расходов за последние семь дней) — создание еженедельного экспорта расходов за последние семь дней с выбранной даты начала экспорта.  
-    - **Monthly export of last month's costs** (Ежемесячный экспорт расходов за прошлый месяц) — предоставление экспорта расходов за прошлый месяц по сравнению с текущим месяцем создания экспорта. Далее экспорт будет выполняться по расписанию на пятый день каждого нового месяца с расходами за предыдущие месяцы.  
-    - **One-time export** (Однократный экспорт) — позволяет выбрать диапазон дат для экспорта исторических данных в хранилище BLOB-объектов Azure. Вы можете экспортировать историю затрат максимум за 90 дней со дня, который вы выберете. Этот экспорт выполняется немедленно и будет доступен в вашей учетной записи хранения в течение двух часов.  
+    - **Weekly export of cost for the last seven days** (Еженедельный экспорт расходов за последние семь дней) — создание еженедельного экспорта расходов за последние семь дней с выбранной даты начала экспорта.
+    - **Monthly export of last month's costs** (Ежемесячный экспорт расходов за прошлый месяц) — предоставление экспорта расходов за прошлый месяц по сравнению с текущим месяцем создания экспорта. Далее экспорт будет выполняться по расписанию на пятый день каждого нового месяца с расходами за предыдущие месяцы.
+    - **One-time export** (Однократный экспорт) — позволяет выбрать диапазон дат для экспорта исторических данных в хранилище BLOB-объектов Azure. Вы можете экспортировать историю затрат максимум за 90 дней со дня, который вы выберете. Этот экспорт выполняется немедленно и будет доступен в вашей учетной записи хранения в течение двух часов.
         В зависимости от типа экспорта выберите дату начала или дату **С** и **До**.
-1. Укажите подписку для учетной записи хранения Azure, а затем выберите группу ресурсов или создайте новую. 
-1. Выберите имя учетной записи хранения или создайте новую. 
+1. Укажите подписку для учетной записи хранения Azure, а затем выберите группу ресурсов или создайте новую.
+1. Выберите имя учетной записи хранения или создайте новую.
 1. Выберите расположение (регион Azure).
-1. Укажите контейнер хранилища и путь к каталогу для экспорта файла. 
+1. Укажите контейнер хранилища и путь к каталогу для экспорта файла.
     :::image type="content" source="./media/tutorial-export-acm-data/basics_exports.png" alt-text="Пример нового экспорта" lightbox="./media/tutorial-export-acm-data/basics_exports.png":::
 1. Просмотрите данные об экспорте и нажмите кнопку **Создать**.
 
@@ -132,7 +132,7 @@ ms.locfileid: "96007228"
 1. Экспорт можно обновить с помощью команды [az costmanagement export update](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_update):
 
    ```azurecli
-   az costmanagement export update --name DemoExport 
+   az costmanagement export update --name DemoExport
       --scope "subscriptions/00000000-0000-0000-0000-000000000000" --storage-directory demodirectory02
    ```
 
@@ -145,6 +145,89 @@ ms.locfileid: "96007228"
 
 ```azurecli
 az costmanagement export delete --name DemoExport --scope "subscriptions/00000000-0000-0000-0000-000000000000"
+```
+
+### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+Сначала подготовьте среду для Azure PowerShell:
+
+[!INCLUDE [azure-powershell-requirements-no-header.md](../../../includes/azure-powershell-requirements-no-header.md)]
+
+* > [!IMPORTANT]
+  > Так как предоставляется предварительная версия модуля PowerShell **Az.CostManagement**, его нужно установить отдельно с помощью командлета `Install-Module`. Как только этот модуль PowerShell станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и по умолчанию встроен в Azure Cloud Shell.
+
+  ```azurepowershell-interactive
+  Install-Module -Name Az.CostManagement
+  ```
+
+1. Чтобы просмотреть сведения о своих текущих операциях экспорта после входа в систему, используйте командлет [Get-AzCostManagementExport](/powershell/module/Az.CostManagement/get-azcostmanagementexport):
+
+   ```azurepowershell-interactive
+   Get-AzCostManagementExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000'
+   ```
+
+   >[!NOTE]
+   >
+   >* Помимо подписок можно экспортировать группы ресурсов и группы управления. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
+   >* Войдя в систему как партнер в области учетной записи выставления счетов или в клиентском арендаторе, вы можете экспортировать данные в учетную запись хранения Azure, связанную с учетной записью хранения партнера. При этом в арендаторе CSP должна быть активная подписка.
+
+1. Создайте группу ресурсов или используйте существующую. Чтобы создать группу ресурсов, выполните командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup):
+
+   ```azurepowershell-interactive
+   New-AzResourceGroup -Name TreyNetwork -Location eastus
+   ```
+
+1. Создайте учетную запись хранения, чтобы получать экспортируемые данные, или используйте уже существующую. Чтобы создать учетную запись хранения, выполните командлет [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount):
+
+   ```azurepowershell-interactive
+   New-AzStorageAccount -ResourceGroupName TreyNetwork -AccountName cmdemo -SkuName Standard_RAGRS -Location eastus
+   ```
+
+1. Выполните командлет [New-AzCostManagementExport](/powershell/module/Az.CostManagement/new-azcostmanagementexport), чтобы создать операцию экспорта:
+
+   ```azurepowershell-interactive
+   $Params = @{
+     Name = 'DemoExport'
+     DefinitionType = 'ActualCost'
+     Scope = 'subscriptions/00000000-0000-0000-0000-000000000000'
+     DestinationResourceId = '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/treynetwork/providers/Microsoft.Storage/storageAccounts/cmdemo'
+     DestinationContainer = 'democontainer'
+     DefinitionTimeframe = 'MonthToDate'
+     ScheduleRecurrence = 'Daily'
+     RecurrencePeriodFrom = '2020-06-01T00:00:00Z'
+     RecurrencePeriodTo = '2020-10-31T00:00:00Z'
+     ScheduleStatus = 'Active'
+     DestinationRootFolderPath = 'demodirectory'
+     Format = 'Csv'
+   }
+   New-AzCostManagementExport @Params
+   ```
+
+   Значение параметра **DefinitionType** можно выбирать между `ActualCost`, `AmortizedCost` или `Usage`.
+
+   В этом примере используется `MonthToDate`. Экспорт ежедневно создает файл экспорта для дневных расходов за текущий месяц. Последние данные агрегируются из предыдущего ежедневного экспорта текущего месяца.
+
+1. Просмотреть сведения об операции экспорта можно с помощью командлета `Get-AzCostManagementExport`:
+
+   ```azurepowershell-interactive
+   Get-AzCostManagementExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000'
+   ```
+
+1. Обновите операцию экспорта с использованием командлета [Update-AzCostManagementExport](/powershell/module/Az.CostManagement/update-azcostmanagementexport):
+
+   ```azurepowershell-interactive
+   Update-AzCostManagementExport -Name DemoExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000' -DestinationRootFolderPath demodirectory02
+   ```
+
+   В этом примере изменяется выходной каталог.
+
+>[!NOTE]
+>Изначально до начала экспорта может потребоваться от 12 до 24 часов. Однако для отображения данных в экспортированных файлах может понадобиться больше времени.
+
+Удалить операцию экспорта можно с помощью командлета [Remove-AzCostManagementExport](/powershell/module/Az.CostManagement/remove-azcostmanagementexport):
+
+```azurepowershell-interactive
+Remove-AzCostManagementExport -Name DemoExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000'
 ```
 
 ---
@@ -162,9 +245,9 @@ az costmanagement export delete --name DemoExport --scope "subscriptions/0000000
 Экспортирование не поддерживается для групп управления другими типами подписки.
 
 1. Если группа управления еще не создана, создайте одну группу и назначьте ей подписки.
-1. В поле анализа затрат задайте область для группы управления и щелкните **Select this management group** (Выбрать эту группу управления).  
+1. В поле анализа затрат задайте область для группы управления и щелкните **Select this management group** (Выбрать эту группу управления).
     :::image type="content" source="./media/tutorial-export-acm-data/management-group-scope.png" alt-text="Пример параметра выбора группы управления" lightbox="./media/tutorial-export-acm-data/management-group-scope.png":::
-1. Создайте операцию экспорта в этой области, чтобы получить данные по управлению затратами для подписок в этой группе управления.  
+1. Создайте операцию экспорта в этой области, чтобы получить данные по управлению затратами для подписок в этой группе управления.
     :::image type="content" source="./media/tutorial-export-acm-data/new-export-management-group-scope.png" alt-text="Пример параметра создания нового экспорта с областью группы управления":::
 
 ## <a name="verify-that-data-is-collected"></a>Проверка сбора данных
@@ -196,7 +279,7 @@ az costmanagement export delete --name DemoExport --scope "subscriptions/0000000
 
 [![Пример загрузки экспорта данных](./media/tutorial-export-acm-data/download-export.png)](./media/tutorial-export-acm-data/download-export.png#lightbox)
 
-## <a name="view-export-run-history"></a>Просмотр журнала выполнения экспорта  
+## <a name="view-export-run-history"></a>Просмотр журнала выполнения экспорта
 
 Чтобы просмотреть журнал выполнения запланированного экспорта, выберите отдельный экспорт на странице со списком экспортов. На этой же странице вы можете быстро просмотреть время выполнения предыдущих операций экспорта, а также запустить следующий экспорт. Ниже приведен пример журнала выполнения.
 

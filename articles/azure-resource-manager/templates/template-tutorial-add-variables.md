@@ -1,21 +1,21 @@
 ---
 title: Учебник. Добавление переменной в шаблон
-description: Добавьте переменные в шаблон Azure Resource Manager, чтобы упростить синтаксис.
+description: Сведения о том, как добавить переменные в шаблон Azure Resource Manager, чтобы упростить синтаксис.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 482608172ac9e6e2b9765f236a4b6d655e2455fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d259510d880cbfc60e9ae80b533af6792cc95536
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613158"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930734"
 ---
 # <a name="tutorial-add-variables-to-your-arm-template"></a>Руководство по добавлению переменных в шаблон ARM
 
-Из этого руководства вы узнаете, как добавлять переменные в шаблон Azure Resource Manager (ARM). Переменные упрощают работу с шаблонами, позволяя записывать выражение один раз и повторно использовать его во всем шаблоне. Для выполнения инструкций из этого учебника требуется **7 минут**.
+Из этого учебника вы узнаете, как добавить переменные в шаблон Azure Resource Manager (ARM). Переменные упрощают работу с шаблонами, позволяя записывать выражение один раз и повторно использовать его во всем шаблоне. Для выполнения инструкций из этого учебника требуется **7 минут**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

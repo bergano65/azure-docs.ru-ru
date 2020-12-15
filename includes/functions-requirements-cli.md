@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: glenga
-ms.openlocfilehash: 951dbb6c1a44e3c081f682db49458be165e9e930
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: f102a5dd5b7dccba6643176d06d17a2a65171c90
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95561690"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904086"
 ---
 ## <a name="configure-your-local-environment"></a>Настройка локальной среды
 
@@ -17,8 +17,8 @@ ms.locfileid: "95561690"
 
 + Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 
-::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-java"  
-+ [Azure Functions Core Tools](../articles/azure-functions/functions-run-local.md#v2) 2.7.1846 или версии, более поздней, чем 2.
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-java,programming-language-other"  
++ [Azure Functions Core Tools](../articles/azure-functions/functions-run-local.md#v2) версии 2.7.1846 или более поздней.
 ::: zone-end  
 ::: zone pivot="programming-language-python"
 + Версия Azure Functions Core Tools, соответствующая установленной версии Python:
@@ -46,4 +46,7 @@ ms.locfileid: "95561690"
 
 + [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 
+::: zone-end
+::: zone pivot="programming-language-other"
++ Средства разработки для используемого вами языка. В этом учебнике в качестве примера используется [язык программирования R](https://www.r-project.org/).
 ::: zone-end

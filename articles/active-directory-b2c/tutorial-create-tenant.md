@@ -7,19 +7,22 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/24/2020
+ms.date: 12/03/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c15b3a64b4a0017c5c352e08cebc796537255479
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5229175af618f897caeae7310338cbe51966a48d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447044"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859618"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Руководство по Создание клиента Azure Active Directory B2C
 
-Чтобы приложения могли взаимодействовать с Azure Active Directory B2C (Azure AD B2C), их нужно зарегистрировать в клиенте, которым вы управляете.
+Чтобы приложения могли взаимодействовать с Azure Active Directory B2C (Azure AD B2C), их нужно зарегистрировать в клиенте, которым вы управляете. 
+
+> [!NOTE]
+> В одной подписке можно создать до 20 арендаторов. Это ограничение помогает защитить ресурсы от угроз, таких как атаки типа "отказ в обслуживании", и применяется на портале Azure и в базовом API создания арендатора. Если необходимо создать более 20 арендаторов, обратитесь в [службу поддержки Майкрософт](support-options.md).
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -46,8 +49,11 @@ ms.locfileid: "96447044"
     ![Клиент подписки, где установлен фильтр каталогов и подписки и выбран клиент подписки](media/tutorial-create-tenant/portal-01-pick-directory.png)
 
 1. На **домашней странице** или в меню портала Azure выберите **Создать ресурс**.
+
+   ![Выбор кнопки "Создать ресурс"](media/tutorial-create-tenant/create-a-resource.png)
+
 1. Выполните поиск по строке **Azure Active Directory B2C** и выберите **Создать**.
-1. Выберите **Создать B2C-клиент Azure AD**.
+2. Выберите **Создать B2C-клиент Azure AD**.
 
     ![Портал Azure, где выбрана операция создания нового клиента Azure AD B2C](media/tutorial-create-tenant/portal-02-create-tenant.png)
 
@@ -57,7 +63,7 @@ ms.locfileid: "96447044"
    - **Первоначальное доменное имя** — введите доменное имя для клиента Azure AD B2C.
    - **Страна или регион** — выберите из списка свою страну или регион. Этот вариант нельзя изменить позже.
    - **Подписка** — выберите из списка нужную подписку.
-   - **Группа ресурсов** — выберите группу ресурсов, которая будет содержать клиент. Щелкните команду **Создать**, введите **имя** для группы ресурсов, затем выберите элемент **Расположение группы ресурсов** и нажмите кнопку **ОК**.
+   - **Группа ресурсов** — выберите или найдите группу ресурсов с арендатором.
 
     ![Портал Azure, где отображается форма создания клиента с введенными примерами значений](media/tutorial-create-tenant/review-and-create-tenant.png)
 

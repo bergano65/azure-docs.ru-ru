@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: b52bfc14906d8e47c804ae15ee898f6ca00784af
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 8642f4284770df54704a4e7066054d3bb4640486
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503850"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545878"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Примеры кода Azure Active Directory B2C
 
@@ -68,15 +68,25 @@ ms.locfileid: "92503850"
 | [Node.js](https://github.com/Azure-Samples/active-directory-nodejs-external-identities-api-connector-azure-function-validate)   | В этом примере функции Azure для Node.js показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения.  |
 | [Python](https://github.com/Azure-Samples/active-directory-python-external-identities-api-connector-azure-function-validate)    | В этом примере функции Azure для Python показано, как ограничить число регистраций для определенных доменов электронной почты и проверить предоставляемые пользователями сведения.    |
 
-### <a name="identity-verification-with-api-connectors"></a>Проверка личности с помощью соединителей API
+
+### <a name="automated-fraud-protection-services--captcha"></a>Автоматизированные службы защиты от мошенничества и CAPTCHA
+| Образец                                                                                                            | Описание                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [Arkose Labs: защита от мошенничества и нарушений](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose) | В этом примере показано, как обеспечить безопасность регистрации пользователей с помощью службы Arkose Labs для защиты от мошенничества и нарушений. |
+| [reCAPTCHA](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-captcha) | В этом примере показано, как обеспечить безопасность регистрации пользователей с помощью задачи reCAPTCHA, предотвращающей автоматизированные нарушения. |
+
+
+### <a name="identity-verification"></a>Проверка личности
 
 | Образец                                                                                                            | Описание                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [IDology](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-idology-identity-verification) | В этом примере показано, как проверить удостоверение пользователя при самостоятельной регистрации с помощью соединителя API для интеграции с IDology. |
-| [Experian](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-experian-identity-verification) | В этом примере показано, как проверить удостоверение пользователя при самостоятельной регистрации с помощью соединителя API для интеграции с Experian. |
+| [IDology](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-idology-identity-verification) | В этом примере показано, как проверить удостоверение пользователя в рамках потоков регистрации с помощью соединителя API для интеграции с IDology. |
+| [Experian](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-experian-identity-verification) | В этом примере показано, как проверить удостоверение пользователя в рамках потоков регистрации с помощью соединителя API для интеграции с Experian. |
 
-### <a name="community-samples"></a>Предоставленные сообществом примеры
+
+### <a name="other"></a>Другое
 
 | Образец                                                                                                            | Описание                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [Код приглашения](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-invitation-code) | В этом примере показано, как ограничить регистрацию определенной аудиторией с помощью кодов приглашения.|
 | [Предоставленные сообществом примеры использования соединителей API](https://github.com/azure-ad-b2c/api-connector-samples) | В этом репозитории содержатся поддерживаемые сообществом примеры сценариев, реализуемых с помощью соединителей API.|

@@ -8,12 +8,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: 450d471beebbcc554a6d534fb2d5361778f158bc
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 74e9224b30ccee274eaf52ba47a0ec05573c2e9d
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992324"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558731"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Создание проекта маркировки данных и экспорт меток 
 
@@ -109,7 +109,7 @@ ms.locfileid: "94992324"
 
 Чтобы добавить в проект дополнительные изображения, отправьте данные в соответствующую папку в хранилище BLOB-объектов с помощью [Обозревателя службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/). 
 
-Установите флажок **Enable incremental refresh** (Включить добавочное обновление), если нужно, чтобы в хранилище данных для проекта постоянно отслеживалось появление новых данных.
+Установите флажок **Enable incremental refresh** (Включить добавочное обновление), если нужно, чтобы в хранилище данных для проекта постоянно отслеживалось появление новых данных. Если этот параметр включен, такие данные будут раз в день извлекаться в ваш проект.
 
 Снимите этот флажок, если вам не нужно, чтобы новые изображения, появляющиеся в хранилище данных, добавлялись в проект.
 

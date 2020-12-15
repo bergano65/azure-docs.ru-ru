@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 20173c4ba02f53a526167a5a8e22bd0cedc85594
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 971bac8a0b0951d4e07e139aea6c465a9159b8db
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393224"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96570966"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Руководство по выполнению скрипта "Hello world!" Сценарий Python (часть 2 из 4)
 
@@ -61,7 +61,8 @@ tutorial
 └──02-create-compute.py
 ```
 
-### <a name="test-your-script-locally"></a>Тестирование скрипта в локальной среде
+
+### <a name="test-your-script-locally"></a><a name="test"></a>Тестирование скрипта в локальной среде
 
 Вы можете запустить свой код в локальной среде, используя избранную интегрированную среду разработки или терминал. Выполнение кода в локальной среде предоставляет преимущество в виде интерактивной отладки кода.
 
@@ -70,7 +71,10 @@ cd <path/to/tutorial>
 python ./src/hello.py
 ```
 
-## <a name="create-a-control-script"></a>Создание скрипта элемента управления
+> [!div class="nextstepaction"]
+> [Сценарий запущен мной локально](?success=run-local#control-script) [Возникла проблема](https://www.research.net/r/7C2NTH7?issue=run-local)
+
+## <a name="create-a-control-script"></a><a name="control-script"></a> Создание скрипта элемента управления
 
 *Скрипт элемента управления* позволяет выполнять скрипт `hello.py` в облаке. Сценарий элемента управления используется, чтобы контролировать, как и где выполняется код машинного обучения.  
 
@@ -89,6 +93,8 @@ run = experiment.submit(config)
 aml_url = run.get_portal_url()
 print(aml_url)
 ```
+
+
 
 ### <a name="understand-the-code"></a>Изучение кода
 
@@ -135,7 +141,10 @@ print(aml_url)
    :::column-end:::
 :::row-end:::
 
-## <a name="submit-and-run-your-code-in-the-cloud"></a>Отправка и выполнение кода в облаке
+> [!div class="nextstepaction"]
+> [Мной создан скрипт управления](?success=create-control-script#submit) [Возникла проблема](https://www.research.net/r/7C2NTH7?issue=create-control-script)
+
+## <a name="submit-and-run-your-code-in-the-cloud"></a><a name="submit"></a> Отправка и выполнение кода в облаке
 
 Запустите скрипт элемента управления, который затем выполняет `hello.py` в вычислительном кластере, созданном во время работы с [учебником по установке](tutorial-1st-experiment-sdk-setup-local.md).
 
@@ -154,7 +163,10 @@ python 03-run-hello.py
 > [!TIP]
 > Если выполнение этого кода приводит к ошибке с сообщением о том, что у вас нет доступа к подписке, см. раздел [Подключение к рабочей области](how-to-manage-workspace.md?tab=python#connect-multi-tenant), чтобы получить сведения о параметрах проверки подлинности.
 
-## <a name="monitor-your-code-in-the-cloud-by-using-the-studio"></a>Мониторинг кода в облаке с помощью студии
+> [!div class="nextstepaction"]
+> [Мной отправлен код в облако](?success=submit-to-cloud#monitor) [Возникла проблема](https://www.research.net/r/7C2NTH7?issue=submit-to-cloud)
+
+## <a name="monitor-your-code-in-the-cloud-by-using-the-studio"></a><a name="monitor"></a>Мониторинг кода в облаке с помощью студии
 
 Выходные данные будут содержать ссылку на студию, которая выглядит примерно так: `https://ml.azure.com/experiments/hello-world/runs/<run-id>?wsid=/subscriptions/<subscription-id>/resourcegroups/<resource-group>/workspaces/<workspace-name>`.
 
@@ -185,6 +197,9 @@ python 03-run-hello.py
 В строке 8 отображается сообщение Hello World!
 
 Файл `70_driver_log.txt` содержит стандартные выходные данные выполнения. Этот файл может быть полезен при отладке удаленных запусков в облаке.
+
+> [!div class="nextstepaction"]
+> [Мной просмотрен журнал в Студии](?success=monitor-in-studio#next-steps) [Возникла проблема](https://www.research.net/r/7C2NTH7?issue=monitor-in-studio)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

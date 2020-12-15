@@ -3,12 +3,12 @@ title: Рекомендации
 description: Ознакомьтесь с рекомендациями и полезными советами по разработке решений пакетной службы Azure.
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6aaed76ad398b5278850dd66ce1da6d5bd33807f
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 1eaa34e02a4c505691662e9fc29334cb823a3185
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95254669"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511218"
 ---
 # <a name="azure-batch-best-practices"></a>Рекомендации для пакетной службы Azure
 
@@ -140,6 +140,10 @@ ms.locfileid: "95254669"
 ### <a name="idempotent-start-tasks"></a>Идемпотентные задачи запуска
 
 Как и в случае с другими задачами, [задачи запуска](jobs-and-tasks.md#start-task) узла должны быть идемпотентными, так как они будут повторно выполняться при каждом запуске узла. Идемпотентная задача — это просто задача, которая выдает одинаковые результаты при многократном выполнении.
+
+### <a name="isolated-nodes"></a>Изолированные узлы
+
+Рассмотрите возможность использования изолированного размера виртуальной машины для рабочих нагрузок с соблюдением требований или нормативными требованиями. Поддерживаемые изолированные размеры в режиме конфигурации виртуальной машины: `Standard_E64i_v3` , `Standard_E80ids_v4` ,,, `Standard_F72s_v2` `Standard_G5` `Standard_GS5` и `Standard_M128ms` . Дополнительные сведения о размерах изолированных виртуальных машин см. [в статье изоляция виртуальных машин в Azure](https://docs.microsoft.com/azure/virtual-machines/isolation).
 
 ### <a name="manage-long-running-services-via-the-operating-system-services-interface"></a>Управление долго работающими службами с помощью интерфейса служб операционной системы
 

@@ -4,23 +4,22 @@ titleSuffix: Azure App Configuration
 description: Из этого руководства вы узнаете, как динамически обновлять данные конфигурации для приложений ASP.NET Core.
 services: azure-app-configuration
 documentationcenter: ''
-author: lisaguthrie
-manager: maiye
+author: AlexandraKemperMS
 editor: ''
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.workload: tbd
 ms.devlang: csharp
 ms.topic: tutorial
-ms.date: 02/24/2019
-ms.author: lcozzens
+ms.date: 09/1/2020
+ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: f98ec384876da1d30952d1c4edc1d00049e44682
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 1fd495083f5f9be367dd0f125883b181e3bed27b
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077003"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930557"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство. Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -57,7 +56,7 @@ ASP.NET Core имеет подключаемую систему конфигур
 1. Нажмите кнопку **Применить**.
 
 > [!NOTE]
-> Если вы не используете ключ Sentinel, необходимо вручную зарегистрировать каждый ключ, который вы хотите отслеживать.
+> Если вы не используете ключ Sentinel, необходимо вручную зарегистрировать каждый ключ, который вы хотите отслеживать.
 
 ## <a name="reload-data-from-app-configuration"></a>Перезагрузка данных из App Configuration
 
@@ -161,7 +160,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     ```
     ---
     > [!Tip]
-    > Дополнительные сведения о шаблоне параметров, используемых при чтении значений конфигурации, см. в статье  [Шаблон параметров в ASP.NET Core](/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1).
+    > Дополнительные сведения о шаблоне параметров, используемых при чтении значений конфигурации, см. в статье [Шаблон параметров в ASP.NET Core](/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1).
 
 4. Обновите метод `Configure`, добавив ПО промежуточного слоя `UseAzureAppConfiguration`, чтобы обновлять зарегистрированные для обновления параметры конфигурации, в то время как веб-приложение ASP.NET Core продолжает получать запросы.
 
@@ -221,6 +220,9 @@ ASP.NET Core имеет подключаемую систему конфигур
     ---
     
     ПО промежуточного слоя использует обновление конфигурации, заданное в методе `AddAzureAppConfiguration`, в `Program.cs`, чтобы активировать обновление для каждого запроса, полученного веб-приложением ASP.NET Core. Операция обновления запускается для каждого запроса, а клиентская библиотека проверяет, не истек ли срок действия кэшированного значения для зарегистрированного параметра конфигурации. Если срок действия истек, значение параметра обновляется.
+
+    > [!NOTE]
+    > Если вы хотите обеспечить обновление конфигурации, как можно раньше добавьте ПО промежуточного слоя в конвейер запросов, чтобы его работа не прерывалась другим ПО промежуточного слоя в приложении.
 
 ## <a name="use-the-latest-configuration-data"></a>Использование последних данных конфигурации
 

@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
 ms.date: 11/24/2020
-ms.openlocfilehash: fe335b00df23ff132ad61b27efd733d195ee3bfb
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 7ee203595a796529ae0aefe8b0c52a689ac29968
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030979"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762335"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-the-azure-portal"></a>Руководство. Создание Azure Load Balancer в нескольких регионах с помощью портала Azure
 
@@ -28,6 +28,10 @@ ms.locfileid: "96030979"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+> [!IMPORTANT]
+> Azure Load Balancer в нескольких регионах в настоящее время предоставляется в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure.
@@ -37,8 +41,7 @@ ms.locfileid: "96030979"
 
 ## <a name="sign-in-to-azure-portal"></a>Вход на портал Azure
 
-> [!IMPORTANT]
-> Подсистема балансировки нагрузки в нескольких регионах сейчас доступна в предварительной версии, поэтому ее можно использовать только на портале предварительной версии.  Войдите на портал по адресу **https://preview.portal.azure.com/?feature.globallb=true** , чтобы найти и развернуть этот компонент.
+[Войдите](https://preview.portal.azure.com) на портал предварительной версии Azure.
 
 ## <a name="create-cross-region-load-balancer"></a>Создание подсистемы балансировки нагрузки в нескольких регионах
 

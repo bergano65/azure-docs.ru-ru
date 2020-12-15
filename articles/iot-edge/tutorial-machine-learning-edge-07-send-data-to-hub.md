@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f0695af6922182aa8be7acfb4b0a931bed35ef7d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 50df3424892594a6817d481aa4a3d540a342854f
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959311"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932325"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>Руководство по отправке данных через прозрачный шлюз
 
@@ -23,6 +23,14 @@ ms.locfileid: "94959311"
 Пока имитированное устройство отправляет данные, мы отслеживаем работу устройства IoT Edge. По завершении работы устройства мы изучаем данные в вашей учетной записи хранения, чтобы убедиться, что все работает должным образом.
 
 Этот шаг обычно выполняет разработчик облака или устройства.
+
+Из этого раздела учебника, вы узнаете, как:
+
+> [!div class="checklist"]
+>
+> * создать и запустить конечное устройство;
+> * проверить, что созданные данные сохраняются в Хранилище BLOB-объектов Azure;
+> * проверить, что модель машинного обучения выполнила классификацию данных устройства.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -237,10 +245,7 @@ ms.locfileid: "94959311"
 
 В этой статье мы применили виртуальную машину разработки для имитации отправки данных с датчика и операционных данных из конечного устройства на пограничное устройство. Мы убедились, что модули на устройстве перенаправили, классифицировали, сохранили и передали данные, проверив работу пограничного устройства в реальном времени и просмотрев файлы, переданные в учетную запись хранения.
 
-См. подробнее в следующих статьях:
+Чтобы узнать больше о возможностях IoT Edge, перейдите к следующему учебнику:
 
 > [!div class="nextstepaction"]
-> [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge)
-
-> [!div class="nextstepaction"]
-> [Store data at the edge with Azure Blob Storage on IoT Edge (preview)](how-to-store-data-blob.md) (Хранение данных на границе с помощью хранилища BLOB-объектов Azure в IoT Edge (предварительная версия))
+> [Создание иерархии устройств IoT Edge (предварительная версия)](tutorial-nested-iot-edge.md?view=iotedge-2020-11&preserve-view=true)

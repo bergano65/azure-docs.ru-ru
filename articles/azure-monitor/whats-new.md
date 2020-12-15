@@ -5,17 +5,81 @@ ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
-ms.date: 11/11/2020
-ms.openlocfilehash: bf15e380eb1a88acc39ca63165d18d04a260b35d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 12/04/2020
+ms.openlocfilehash: 91aa76fd3d9dbb54316f32fdb319e92ca2283b1d
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185901"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745780"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="november-2020"></a>Ноябрь 2020 г.
+
+### <a name="general"></a>Общие сведения
+- [Ограничения службы Azure Monitor](service-limits.md). Обновлено для поддержки Azure Arc.
+
+### <a name="agents"></a>Агенты
+- [Общие сведения об агентах мониторинга Azure](platform/agents-overview.md). Обновлено для поддержки Azure Arc.
+- [Установка агентов Azure Monitor](platform/azure-monitor-agent-install.md). Новая статья.
+- [Обзор агента Azure Monitor](platform/azure-monitor-agent-overview.md). Обновлено для поддержки Azure Arc.
+- [Примеры шаблонов Resource Manager для агентов](samples/resource-manager-agent.md). Обновлено для поддержки Azure Arc.
+
+### <a name="alerts"></a>видны узлы
+- [Создание групп действий и управление ими на портале Azure](platform/action-groups.md). Добавлены исходные IP-адреса для веб-перехватчиков.
+
+### <a name="application-insights"></a>Application Insights
+- [Мониторинг приложений Java без написания кода с помощью Azure Monitor Мониторинг в Application Insights](app/java-in-process-agent.md). Добавлен пример конфигурации.
+- [Подключаемый модуль React для пакета SDK JavaScript для Application Insights](app/javascript-react-plugin.md). Добавлен раздел об использовании перехватчиков React.
+- [Обновление с пакета SDK Java 2.x для Application Insights](app/java-standalone-upgrade-from-2x.md). Новая статья.
+- [Заметки о выпуске Microsoft.ApplicationInsights.SnapshotCollector](app/snapshot-collector-release-notes.md). Новая статья.
+
+### <a name="autoscale"></a>Автомасштабирование
+- [Начало работы с автомасштабированием в Azure](platform/autoscale-get-started.md). Добавлен раздел о перемещении автомасштабирования в другой регион.
+
+### <a name="data-collection"></a>Сбор данных
+- [Настройка сбора данных для агента Azure Monitor (предварительная версия)](platform/data-collection-rule-azure-monitor-agent.md). Обновлено для поддержки Azure Arc.
+- [Правила сбора данных в Azure Monitor (предварительная версия)](platform/data-collection-rule-overview.md). Обновлено для поддержки Azure Arc.
+- [Примеры шаблонов Resource Manager для правил сбора данных](samples/resource-manager-data-collection-rules.md). Новая статья.
+
+### <a name="insights-and-solutions"></a>Полезные сведения и решения
+- [Подключение Azure к средствам ITSM с помощью безопасного экспорта](platform/it-service-management-connector-secure-webhook-connections.md). Добавлен раздел о подключении к ServiceNow.
+
+### <a name="logs"></a>Журналы
+- [Интеграция Log Analytics с Excel](log-query/log-excel.md). Новая статья.
+- [Безопасность данных Log Analytics](platform/data-security.md). Добавлен раздел о дополнительных функциях безопасности.
+- [Интеграция Log Analytics с Power BI](log-query/log-powerbi.md). Новая статья.
+- [Стандартные столбцы в записях журнала Azure Monitor](platform/log-standard-columns.md). Добавлен столбец _SubscriptionId.
+
+Новые и измененные статьи, посвященные реструктуризации содержимого запроса журнала.
+
+- [Руководство по Log Analytics](log-query/log-analytics-tutorial.md)
+- [Запросы журналов в Azure Monitor](log-query/log-query-overview.md)
+- [Обзор Log Analytics в Azure Monitor](log-query/log-analytics-overview.md)
+- [Примеры запросов для Azure Data Explorer и Azure Monitor](/azure/data-explorer/kusto/query/samples?pivots=azuremonitor)
+- [Учебник. Использование запросов Kusto в Azure Data Explorer и Azure Monitor](/azure/data-explorer/kusto/query/tutorial?pivots=azuremonitor)
+
+
+
+### <a name="virtual-machines"></a>Виртуальные машины
+
+- [Общие сведения о включении Azure Monitor для виртуальных машин](insights/vminsights-enable-overview.md) — добавлены поддерживаемые регионы.
+
+Новые статьи о работоспособности гостевых виртуальных машин в Azure Monitor (предварительная версия)
+
+- [Работоспособность гостевых виртуальных машин в Azure Monitor (предварительная версия)](insights/vminsights-health-overview.md)
+- [Оповещения работоспособности гостевых виртуальных машин в Azure Monitor (предварительная версия)](insights/vminsights-health-alerts.md)
+- [Настройка мониторинга в работоспособности гостевых виртуальных машин в Azure Monitor (предварительная версия)](insights/vminsights-health-configure.md)
+- [Настройка мониторинга в работоспособности гостевых виртуальных машин в Azure Monitor с помощью правил сбора данных (предварительная версия)](insights/vminsights-health-configure-dcr.md)
+- [Включение работоспособности гостевых виртуальных машин в Azure Monitor (предварительная версия)](insights/vminsights-health-enable.md)
+- [Устранение неполадок работоспособности гостевых виртуальных машин в Azure Monitor (предварительная версия)](insights/vminsights-health-troubleshoot.md)
+
+
+
+
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 

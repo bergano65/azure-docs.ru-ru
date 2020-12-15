@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: troyhop
-ms.openlocfilehash: 09a6920e0d3a50da1bdacbf2bc7a80396c885897
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e0d7310c4863c8dd431b991a2c249f2d8e257aeb
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61448558"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852359"
 ---
 # <a name="tutorial-create-and-run-an-iot-device-simulation"></a>Руководство по созданию и запуску имитации устройства Интернета вещей
 
@@ -34,15 +34,7 @@ ms.locfileid: "61448558"
 
 Для работы с этим руководством необходим развернутый экземпляр Симулятора устройств в подписке Azure.
 
-Если симулятор устройств еще не развернут, выполните инструкции в статье [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md).
-
-## <a name="open-device-simulation"></a>Открытие симулятора устройств
-
-Чтобы запустить симулятор устройств в браузере, перейдите к странице [Акселераторы решений Интернета вещей Microsoft Azure](https://www.azureiotsolutions.com). 
-
-Вам может быть предложено войти, используя учетные данные своей подписки Azure.
-
-Щелкните **Запустить** на плитке для Симулятора устройств, развернутого при выполнении инструкций из [краткого руководства](quickstart-device-simulation-deploy.md).
+Если вы еще не развернули имитацию устройств, см. сведения о [развертывании имитации устройств](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) на сайте GitHub.
 
 ## <a name="view-simulations"></a>Просмотр имитаций
 

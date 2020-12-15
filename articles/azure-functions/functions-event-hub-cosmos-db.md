@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: karler
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: aa9e7612a5b3b9655b0c1981fbba87645526b3a2
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 20792d58ab259f93d7725fbafda1507f9eddc740
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327208"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862162"
 ---
 # <a name="tutorial-create-a-function-in-java-with-an-event-hub-trigger-and-an-azure-cosmos-db-output-binding"></a>Руководство по созданию функции на языке Java с триггером Центра событий и выходной привязкой Azure Cosmos DB
 
@@ -30,17 +30,14 @@ ms.locfileid: "96327208"
 
 Для выполнения действий в этом руководстве необходимо установить следующие средства:
 
-* [Java Developer Kit (JDK)](/azure/developer/java/fundamentals/java-jdk-long-term-support) версии 8.
-* [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
-* [Azure CLI](/cli/azure/install-azure-cli), если вы не хотите использовать Cloud Shell.
-* [Azure Functions Core Tools](https://www.npmjs.com/package/azure-functions-core-tools) 2.6.666 или более поздней версии.
+- [Java Developer Kit (JDK)](/azure/developer/java/fundamentals/java-jdk-long-term-support) версии 8.
+- [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
+- [Azure Functions Core Tools](https://www.npmjs.com/package/azure-functions-core-tools) 2.6.666 или более поздней версии [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)].
 
 > [!IMPORTANT]
 > В переменной среды `JAVA_HOME` следует сохранить расположение установки JDK, чтобы завершить работу с этим руководством.
 
 Если вы предпочитаете сразу получить код для этого руководства, см. репозиторий примера [java-functions-eventhub-cosmosdb](https://github.com/Azure-Samples/java-functions-eventhub-cosmosdb).
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-azure-resources"></a>Создание ресурсов Azure
 
@@ -53,17 +50,13 @@ ms.locfileid: "96327208"
 
 В следующих разделах показано, как создать эти ресурсы с помощью Azure CLI.
 
-### <a name="log-in-to-azure"></a>Вход в Azure
-
-Если вы не используете Cloud Shell, для доступа к учетной записи вам потребуется локальный интерфейс командной строки Azure. Выполните команду `az login` в командной строке Bash, чтобы запустить интерфейс входа в браузере. Если у вас есть доступ к нескольким подпискам Azure, выберите из них подписку по умолчанию, указав `az account set --subscription` и идентификатор подписки.
-
 ### <a name="set-environment-variables"></a>Настройка переменных среды
 
 Теперь создайте несколько переменных среды для имен и расположения ресурсов, которые вы создадите. Добавьте следующие команды, заменив заполнители `<value>` значениями на свой выбор. Эти значения должны соответствовать [правилам и ограничениям именования для ресурсов Azure](/azure/architecture/best-practices/resource-naming). Для переменной `LOCATION` укажите одно из значений, созданных командой `az functionapp list-consumption-locations`.
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
-```bash
+```Bash
 RESOURCE_GROUP=<value>
 EVENT_HUB_NAMESPACE=<value>
 EVENT_HUB_NAME=<value>
@@ -350,7 +343,7 @@ az functionapp config appsettings set ^
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
-```bash
+```Bash
 RESOURCE_GROUP=<value>
 FUNCTION_APP=<value>
 ```
@@ -370,7 +363,7 @@ set FUNCTION_APP=<value>
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
-```bash
+```Bash
 mvn archetype:generate --batch-mode \
     -DarchetypeGroupId=com.microsoft.azure \
     -DarchetypeArtifactId=azure-functions-archetype \
@@ -406,7 +399,7 @@ mvn archetype:generate --batch-mode ^
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
-```bash
+```Bash
 cd telemetry-functions
 rm -r src/test
 ```
@@ -426,7 +419,7 @@ rmdir /s /q src\test
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
-```bash
+```Bash
 func azure functionapp fetch-app-settings $FUNCTION_APP
 ```
 
@@ -584,7 +577,7 @@ public class TelemetryItem {
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
-```bash
+```Bash
 mvn clean package
 mvn azure-functions:run
 ```
@@ -623,7 +616,7 @@ mvn azure-functions:run
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
-```bash
+```Bash
 mvn azure-functions:deploy
 ```
 

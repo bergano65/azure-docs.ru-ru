@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание выделенного пула SQL и отправка в него запросов (портал Azure)
-description: Создание выделенного пула SQL и отправка в него запросов с помощью портала Azure.
+title: Краткое руководство. Создание выделенного пула SQL (ранее — Хранилище данных SQL) и отправка в него запросов (портал Azure)
+description: Создание выделенного пула SQL (ранее — Хранилище данных SQL) и отправка в него запросов с помощью портала Azure
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,23 +11,23 @@ ms.date: 05/28/2019
 ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 3d4884fd64c773647f78a98dc7aeb1063d539edf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 78a0982081b8e34461fb2910cc7ce21be622cb6a
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456747"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922844"
 ---
-# <a name="quickstart-create-and-query-a-dedicated-sql-pool-in-azure-synapse-analytics-using-the-azure-portal"></a>Краткое руководство. Создание выделенного пула SQL в Azure Synapse Analytics и отправка в него запросов с помощью портала Azure
+# <a name="quickstart-create-and-query-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-the-azure-portal"></a>Краткое руководство. Создание выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics и отправка в него запросов с помощью портала Azure
 
-Вы можете быстро создать пул SQL Synapse (хранилище данных) в Azure Synapse Analytics на портале Azure.
+Вы можете быстро создать выделенный пул SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics и отправлять в него запросы с помощью портала Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 1. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
    > [!NOTE]
-   > Создание пула SQL в Azure Synapse может привести к дополнительным расходам. Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/).
+   > Создание выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse может повлечь дополнительные расходы. Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/).
 
 2. Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
@@ -37,25 +37,25 @@ ms.locfileid: "96456747"
 
 ## <a name="create-a-sql-pool"></a>Создание пула SQL
 
-Хранилища данных создаются с использованием пула SQL в Azure Synapse Analytics. Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [логического сервера SQL](../../azure-sql/database/logical-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+Хранилища данных создаются с помощью выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics. Выделенный пул SQL (ранее — Хранилище данных SQL) создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [логического сервера SQL](../../azure-sql/database/logical-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
-Следуйте приведенным инструкциям по созданию пула SQL, содержащего пример данных **AdventureWorksDW**.
+Следуйте приведенным инструкциям по созданию выделенного пула SQL (ранее — Хранилище данных SQL), содержащего пример данных **AdventureWorksDW**.
 
-1. Щелкните значок **Создать ресурс** в верхнем левом углу окна портала Azure.
+1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 
    ![Создание ресурса на портале Azure](./media/create-data-warehouse-portal/create-a-resource.png)
 
-2. Щелкните раздел **Базы данных** на странице **Создать** и выберите **Azure Synapse Analytics (ранее — Хранилище данных SQL)** в списке **Подборка**.
+2. В строке поиска введите "выделенный пул SQL" и выберите выделенный пул SQL (ранее — Хранилище данных SQL). На открывшейся странице выберите **Создать**.
 
    ![создание пустого хранилища данных](./media/create-data-warehouse-portal/create-a-data-warehouse.png)
 
-3. На вкладке **Основные сведения** укажите подписку, группу ресурсов, имя пула SQL, а также имя сервера:
+3. На вкладке **Основные сведения** укажите подписку, группу ресурсов, имя выделенного пула SQL (ранее — Хранилище данных SQL), а также имя сервера.
 
    | Параметр | Рекомендуемое значение | Описание |
    | :------ | :-------------- | :---------- |
    | **Подписка** | Ваша подписка | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
    | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
-   | **Имя пула SQL** | Любое глобально уникальное имя (например, *mySampleDataWarehouse*). | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Обратите внимание, что пул SQL является одним из типов базы данных. |
+   | **Имя пула SQL** | Любое глобально уникальное имя (например, *mySampleDataWarehouse*). | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  |
    | **Server** | Любое глобально уникальное имя | Выберите существующий сервер или создайте сервер с новым именем, щелкнув ссылку **Создать новый**. Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
 
    ![Основные сведения при создании хранилища данных](./media/create-data-warehouse-portal/create-sql-pool-basics.png)
@@ -68,7 +68,7 @@ ms.locfileid: "96456747"
 
 5. В разделе **Использовать существующие данные** выберите **Дополнительные параметры** и щелкните **Пример**, чтобы создать пример базы данных AdventureWorksDW.
 
-    ![Выберите "Использовать существующие данные"](./media/create-data-warehouse-portal/create-sql-pool-additional-1.png) 
+    ![Выберите "Использовать существующие данные"](./media/create-data-warehouse-portal/create-sql-pool-additional-1.png)
 
 6. Заполнив форму Azure Synapse Analytics на вкладке "Основные сведения", выберите элемент **Просмотр и создание**, а затем нажмите кнопку **Создать**, чтобы создать пул SQL. Подготовка занимает несколько минут.
 
@@ -124,7 +124,7 @@ ms.locfileid: "96456747"
 
 3. На странице портала Azure вашей базы данных в области **Основные компоненты** найдите и скопируйте **имя сервера**. В этом примере полное имя — sqlpoolservername.database.windows.net.
 
-    ![Сведения о подключении](./media/create-data-warehouse-portal/find-server-name-copy.png)
+    ![Сведения о подключении](./media/create-data-warehouse-portal/find-server-name.png)
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
@@ -180,21 +180,21 @@ ms.locfileid: "96456747"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Плата взимается за единицы хранилища данных и данные, хранящиеся в пуле SQL. Плата за вычислительные ресурсы и ресурсы хранилища взимается отдельно.
+Плата взимается за единицы хранилища данных и данные, хранящиеся в выделенном пуле SQL (ранее — Хранилище данных SQL). Плата за вычислительные ресурсы и ресурсы хранилища взимается отдельно.
 
-- Если вы хотите сохранить данные в хранилище, то можете приостановить работу вычислительных ресурсов, когда не используете пул SQL. При приостановке вычислений плата взимается только за хранение данных. Когда вы будете готовы работать с данными, можно будет возобновить вычисления.
+- Если вы хотите сохранить данные в хранилище, то можете приостановить работу вычислительных ресурсов, когда не используете выделенный пул SQL (ранее — Хранилище данных SQL). При приостановке вычислений плата взимается только за хранение данных. Когда вы будете готовы работать с данными, можно будет возобновить вычисления.
 
-- Если вы хотите исключить будущие расходы, то можете удалить пул SQL.
+- Если вы хотите исключить будущие расходы, то можете удалить выделенный пул SQL (ранее — Хранилище данных SQL).
 
 Выполните следующие действия, чтобы очистить ресурсы, которые больше не нужны.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и выберите пул SQL.
+1. Войдите на [портал Azure](https://portal.azure.com) и выберите выделенный пул SQL (ранее — Хранилище данных SQL).
 
    ![Очистка ресурсов](./media/create-data-warehouse-portal/clean-up-resources.png)
 
-2. Чтобы приостановить вычисление, нажмите кнопку **Пауза**. Если работа пула SQL приостановлена, вы увидите кнопку **Возобновить**. Чтобы возобновить вычисление, нажмите кнопку **Возобновить**.
+2. Чтобы приостановить вычисление, нажмите кнопку **Пауза**. Если работа выделенного пула SQL (ранее — Хранилище данных SQL) приостановлена, вы увидите кнопку **Возобновить**. Чтобы возобновить вычисление, нажмите кнопку **Возобновить**.
 
-3. Чтобы удалить пул SQL во избежание дальнейших платежей за вычисления или хранение, нажмите кнопку **Удалить**.
+3. Чтобы удалить выделенный пул SQL (ранее — Хранилище данных SQL) во избежание дальнейших платежей за вычисление или хранение, нажмите кнопку **Удалить**.
 
 4. Чтобы удалить созданный вами сервер, выберите сервер **sqlpoolservername.database.windows.net**, выделенный на предыдущем изображении, и нажмите кнопку **Удалить**. Будьте внимательны, так как удаление сервера приведет к удалению всех баз данных, назначенных этому серверу.
 
@@ -206,4 +206,4 @@ ms.locfileid: "96456747"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье о [загрузке данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md).
+Дополнительные сведения см. в статье о [загрузке данных в выделенный пул SQL (ранее — Хранилище данных SQL)](load-data-from-azure-blob-storage-using-copy.md).

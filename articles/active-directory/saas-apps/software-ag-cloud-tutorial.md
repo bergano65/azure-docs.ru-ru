@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/23/2020
+ms.date: 11/20/2020
 ms.author: jeedes
-ms.openlocfilehash: ccf945f8bfec85a18493d515dce48f4cb3e3b612
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4acc4c0cec530b8f83648042cd7a417992257543
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182375"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602076"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-software-ag-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Software AG Cloud.
 
@@ -77,9 +77,9 @@ ms.locfileid: "96182375"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.softwareag.cloud/auth/realms/TENANT-NAME/broker/IDENTITY-PROVIDER-NAME/endpoint`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://*.softwareag.cloud/auth/realms/TENANT-NAME/broker/IDENTITY-PROVIDER-NAME/endpoint`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.softwareag.cloud/auth/realms/TENANT-NAME`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://*.softwareag.cloud/auth/realms/TENANT-NAME`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Software AG Cloud](mailto:support@softwareag.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -121,19 +121,19 @@ ms.locfileid: "96182375"
 
 1.  Щелкните **Administration** (Администрирование).
 
-    ![Настройка Software AG Cloud1](./media/software-ag-cloud-tutorial/admin.png)
+    ![Настройка администрирования в Software AG Cloud](./media/software-ag-cloud-tutorial/admin.png)
 
 1. Выберите **Single-sign on > Add identity provider** (Единый вход > Добавить поставщика удостоверений).
 
-    ![Настройка Software AG Cloud2](./media/software-ag-cloud-tutorial/add-identity-provider.png)
+    ![Настройка поставщика удостоверений в Software AG Cloud](./media/software-ag-cloud-tutorial/add-identity-provider.png)
 
 1. На следующей странице выполните приведенные ниже шаги.
 
-    ![Настройка Software AG Cloud3](./media/software-ag-cloud-tutorial/saml-1.png)
+    ![Настройка выполнения шагов в Software AG Cloud](./media/software-ag-cloud-tutorial/saml-1.png)
 
     а. В текстовом поле **Identity provider display name** (Отображаемое имя поставщика удостоверений) введите любое имя, например `azure ad`.
 
-    б. Вставьте значение **идентификатора сущности**, скопированное на портале Azure, в текстовое поле **Identity provider unique identifier for use in Software AG Cloud redirect URI** (Уникальный идентификатор поставщика удостоверений для использования в URI перенаправления Software AG Cloud).
+    б. В текстовом поле **Identity provider unique identifier for use in Software AG Cloud redirect URI** (Уникальный идентификатор поставщика удостоверений для использования в URI перенаправления в Software AG Cloud) введите уникальное имя для поставщика удостоверений. Поле **Software AG Cloud redirect URI** (URI перенаправления в Software AG Cloud) будет обновлено и заполнено универсальным кодом ресурса (URI). Скопируйте этот URI и используйте его для настройки **идентификатора сущности** и других сведений на портале Azure согласно заданным шаблонам.
 
     c. Импортируйте **XML-файл метаданных федерации** в **конфигурацию поставщика удостоверений** и выберите **Далее**.
 
@@ -147,11 +147,12 @@ ms.locfileid: "96182375"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
 
-1. Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Software AG Cloud, где можно инициировать поток входа. 
+* Перейдите на сайт `www.softwareag.cloud`, нажмите кнопку входа и введите имя среды (предполагается, что в Software AG Cloud в качестве поставщика указана система Microsoft Azure). На следующем экране щелкните ссылку Log in with <IDP NAME>(Войти с помощью < Имя поставщика удостоверений>) и введите учетные данные. После проверки подлинности вы войдете в службу и перейдете на домашнюю страницу Cloud AG Software.
 
-2. Перейдите по URL-адресу для входа в Software AG Cloud и инициируйте поток входа.
+* Перейдите по URL-адресу для входа в Software AG Cloud и инициируйте поток входа.
 
-3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Software AG Cloud на Панели доступа, вы перейдете по URL-адресу для входа в Software AG Cloud. Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/my-apps-portal-end-user-access.md)
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Software AG Cloud на портале "Мои приложения", вы перейдете по URL-адресу для входа в Software AG Cloud. Дополнительные сведения см. в [статье о портале "Мои приложения"](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

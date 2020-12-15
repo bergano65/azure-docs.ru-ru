@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 18b62e34ab57d1d7e937eb21b9ed2a7feffa758c
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: f7bd3822a0acaffe98c1a86eda5e10fe97ab4361
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95758954"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762590"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript с помощью потока кода авторизации
 
@@ -52,10 +52,10 @@ ms.locfileid: "95758954"
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com).
-> 1. Если ваша учетная запись предоставляет доступ к нескольким клиентам, в правом верхнем углу щелкните свою учетную запись и выберите для текущего сеанса работы нужный клиент Azure AD.
-> 1. Щелкните [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
-> 1. Выберите **Новая регистрация**.
-> 1. Когда откроется страница **Register an application** (Регистрация приложения), введите имя приложения.
+> 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
+> 1. Найдите и выберите **Azure Active Directory**.
+> 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
+> 1. Введите значение **Name** (Имя) для приложения. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
 > 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 > 1. Выберите **Зарегистрировать**. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)** для использования в будущем.
 > 1. В левой области зарегистрированного приложения выберите **Проверка подлинности**.

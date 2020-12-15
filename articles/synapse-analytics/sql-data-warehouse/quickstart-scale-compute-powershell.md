@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Масштабирование вычислительных ресурсов пула SQL Synapse (Azure PowerShell)
-description: Вы можете масштабировать вычислительные ресурсы для пула SQL Synapse (хранилища данных) с помощью Azure PowerShell.
+title: Краткое руководство. Масштабирование вычислительных ресурсов для выделенного пула SQL (прежнее название — Хранилище данных SQL) с помощью Azure PowerShell
+description: Вы можете масштабировать вычислительные ресурсы для выделенного пула SQL (прежнее название — Хранилище данных SQL) с помощью Azure PowerShell.
 services: synapse-analytics
 author: Antvgski
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, devx-track-azurepowershell
-ms.openlocfilehash: 8077b1a52e44ce3a5160309c92288f756bed1014
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 87e10740e6081431bad96daa930f61238ca495bd
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91566148"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921906"
 ---
-# <a name="quickstart-scale-compute-for-synapse-sql-pool-with-azure-powershell"></a>Краткое руководство. Масштабирование вычислительных ресурсов пула SQL Synapse (Azure PowerShell)
+# <a name="quickstart-scale-compute-for-dedicated-sql-pool-formerly-sql-dw-with-azure-powershell"></a>Краткое руководство. Масштабирование вычислительных ресурсов для выделенного пула SQL (прежнее название — Хранилище данных SQL) с использованием Azure PowerShell
 
-Вы можете масштабировать вычислительные ресурсы для пула SQL Synapse (хранилища данных) с помощью Azure PowerShell. [Горизонтально увеличивайте масштаб вычислительных ресурсов](sql-data-warehouse-manage-compute-overview.md), чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить затраты.
+Вы можете масштабировать вычислительные ресурсы для выделенного пула SQL (прежнее название — Хранилище данных SQL) с помощью Azure PowerShell. [Горизонтально увеличивайте масштаб вычислительных ресурсов](sql-data-warehouse-manage-compute-overview.md), чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить затраты.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -28,7 +28,7 @@ ms.locfileid: "91566148"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-В этом кратком руководстве предполагается, что у вас уже есть пул SQL, который можно масштабировать. Если его требуется создать, используйте инструкции из статьи [Краткое руководство. Создание Хранилища данных SQL Azure на портале Azure и выполнение запроса к нему](create-data-warehouse-portal.md), чтобы создать пул SQL **mySampleDataWarehouse**.
+В этом кратком руководстве предполагается, что у вас уже есть выделенный пул SQL (прежнее название — Хранилище данных SQL), который можно масштабировать. Если его нет, выполните инструкции из краткого руководства по [созданию и подключению пула на портале](create-data-warehouse-portal.md), чтобы создать выделенный пул SQL (прежнее название — Хранилище данных SQL) **mySampleDataWarehouse**.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -67,7 +67,7 @@ Set-AzContext -SubscriptionName "MySubscription"
 
 ## <a name="scale-compute"></a>Масштабирование вычислительных ресурсов
 
-В пуле SQL вы можете увеличивать и уменьшать объем вычислительных ресурсов, изменяя число единиц использования хранилища данных. В статье [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) мы создали хранилище **mySampleDataWarehouse** и инициализировали его со значением 400 DWU. Ниже описаны шаги по изменению числа единиц DWU для **mySampleDataWarehouse**.
+В выделенном пуле SQL (ранее — Хранилище данных SQL) вы можете увеличивать и уменьшать объем вычислительных ресурсов, изменяя число единиц использования хранилища данных. В статье [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) мы создали хранилище **mySampleDataWarehouse** и инициализировали его со значением 400 DWU. Ниже описаны шаги по изменению числа единиц DWU для **mySampleDataWarehouse**.
 
 Чтобы изменить число единиц DWU, используйте командлет PowerShell [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). В следующем примере для параметра числа единиц задано значение DW300c для базы данных **mySampleDataWarehouse**, размещенной в группе ресурсов **resourcegroupname** на сервере **sqlpoolservername**.
 
@@ -121,7 +121,7 @@ $database | Select-Object DatabaseName,Status
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы научились масштабировать вычислительные ресурсы для пула SQL. Чтобы узнать больше о пуле SQL, перейдите к учебнику по загрузке данных.
+Вы узнали, как масштабировать вычислительные ресурсы для выделенного пула SQL (прежнее название — Хранилище данных SQL). Чтобы узнать больше о выделенном пуле SQL (прежнее название — Хранилище данных SQL), перейдите к руководству по загрузке данных.
 
 > [!div class="nextstepaction"]
->[Загрузка данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md)
+>[Загрузка данных в выделенный пул SQL](load-data-from-azure-blob-storage-using-copy.md)

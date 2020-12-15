@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.custom: designer
-ms.openlocfilehash: 28358db2e538867957fcc8d4984cf1c028f9ab2c
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 14be695f2f58b9738af11a3d2ca3f06592a1cc6e
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030376"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575964"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора
 
@@ -123,7 +123,7 @@ ms.locfileid: "96030376"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы узнали как создать, развернуть и использовать модели машинного обучения в конструкторе. Чтобы получить дополнительные сведения об использовании конструктора для решения других типов проблем, ознакомьтесь с примерами конвейеров.
+В этом учебнике вы узнали как создать, развернуть и использовать модели машинного обучения в конструкторе. Дополнительные сведения об использовании конструктора см. по следующим ссылкам:
 
-> [!div class="nextstepaction"]
-> [Примеры из конструктора](samples-designer.md)
++ [Примеры из конструктора:](samples-designer.md) узнайте, как использовать конструктор для решения других типов проблем.
++ [Использование Студии машинного обучения Azure в виртуальной сети Azure.](how-to-enable-studio-virtual-network.md)

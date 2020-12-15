@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 70b60d340e3af8d726915db513e30eaff26ed217
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 203af02841e6d17546d254ed83868c859ba3ac0d
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96347605"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938942"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Oracle Cloud Infrastructure Console
 
@@ -37,8 +37,8 @@ ms.locfileid: "96347605"
 
 * [Клиент Azure AD.](../develop/quickstart-create-new-tenant.md) 
 * Учетная запись пользователя в Azure AD с [разрешением](../roles/permissions-reference.md) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
-* [Клиент](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton) Oracle Cloud Infrastructure Control.
-* Учетная запись пользователя в Oracle Cloud Infrastructure Control с разрешениями администратора.
+* [Арендатор](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton) Oracle Cloud Infrastructure Console.
+* Учетная запись пользователя в Oracle Cloud Infrastructure Console с разрешениями администратора.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
 1. Узнайте, [как работает служба подготовки](../app-provisioning/user-provisioning.md).

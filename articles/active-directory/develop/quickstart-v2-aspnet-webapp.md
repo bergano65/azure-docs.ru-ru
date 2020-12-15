@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperfq1
-ms.openlocfilehash: d356674819304897aef353d161ddf236e19db1f5
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 3fed5fa53af9bd69f828eaf40db5d2ac441ffa08
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592249"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762777"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Краткое руководство. Добавление функции входа платформы Microsoft Identity в веб-приложение ASP.NET
 
@@ -39,7 +39,7 @@ ms.locfileid: "94592249"
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
 > 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs).
-> 1. Введите имя своего приложения и щелкните **Зарегистрировать**.
+> 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >
 > ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
@@ -47,16 +47,15 @@ ms.locfileid: "94592249"
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
-> 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
-> 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
-> 1. Выберите **Новая регистрация**.
-> 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
->      - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `ASPNET-Quickstart`.
->      - В поле **URI перенаправления** добавьте `https://localhost:44368/` и щелкните **Зарегистрировать**.
->      - В области навигации слева в разделе управления выберите **Проверка подлинности**.
->          - В подразделе **Неявное предоставление** выберите **Токен идентификатора**.
->          - Нажмите кнопку **Сохранить**.
+> 1. Войдите на [портал Azure](https://portal.azure.com).
+> 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
+> 1. Найдите и выберите **Azure Active Directory**.
+> 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
+> 1. Введите **имя** приложения, например `ASPNET-Quickstart`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
+> 1. Добавьте `https://localhost:44368/` в поле **URI перенаправления** и выберите **Зарегистрировать**.
+> 1. В области навигации слева в разделе управления выберите **Проверка подлинности**.
+> 1. В подразделе **Неявное предоставление** выберите **Токен идентификатора**.
+> 1. Щелкните **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure

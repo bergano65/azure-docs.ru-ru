@@ -1,17 +1,17 @@
 ---
 title: Учебник по созданию, сборке и развертыванию смарт-контрактов в службе "Блокчейн Azure"
 description: Руководство по использованию комплекта SDK Блокчейн Azure для расширения Ethereum в Visual Studio Code для создания, сборки и развертывания смарт-контракта в службе Azure Блокчейн.
-ms.date: 04/22/2020
+ms.date: 11/30/2020
 ms.topic: tutorial
 ms.reviewer: caleteet
-ms.openlocfilehash: dc23c680dfb2ed33cae2a251af16e1b1f25c6ac7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7605a0c118a40e52210582d2411569795fb25ee
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82086663"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763695"
 ---
-# <a name="tutorial-create-buildanddeploysmartcontracts-on-azure-blockchain-service"></a>Руководство по Создание, сборка и развертывание смарт-контрактов в службе "Блокчейн Azure"
+# <a name="tutorial-create-build-and-deploy-smart-contracts-on-azure-blockchain-service"></a>Руководство по Создание, сборка и развертывание смарт-контрактов в службе "Блокчейн Azure"
 
 В этом руководстве показано использование комплекта SDK Блокчейн Azure для расширения Ethereum в Visual Studio Code для создания, сборки и развертывания смарт-контракта в службе "Блокчейн Azure". Вы также можете использовать комплект SDK для выполнения функции смарт-контракта путем транзакции.
 
@@ -31,7 +31,6 @@ ms.locfileid: "82086663"
 * [расширение "Комплект SDK Блокчейна Azure для Ethereum"](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain);
 * [Node.js 10.15.x или более поздней версии](https://nodejs.org/download).
 * [Git 2.10.x или более поздней версии](https://git-scm.com).
-* [Python 2.7.15](https://www.python.org/downloads/release/python-2715/). Добавьте в путь файл python.exe. Python версии 2.7.15 необходим для комплекта SDK службы "Блокчейн Azure".
 * [Truffle 5.0.0](https://www.trufflesuite.com/docs/truffle/getting-started/installation).
 * [Ganache CLI 6.0.0](https://github.com/trufflesuite/ganache-cli).
 
@@ -47,7 +46,7 @@ ms.locfileid: "82086663"
 
 Комплект SDK службы "Блокчейн Azure" для Ethereum использует шаблоны проектов и средства Truffle для создания, сборки и развертывания контрактов. Перед началом работы изучите следующее [краткое руководство: Подключение к сети консорциума Блокчейн Azure с помощью Visual Studio Code](connect-vscode.md). Краткое руководство содержит инструкции по установке и настройке комплекта SDK службы "Блокчейн Azure" для Ethereum.
 
-1. В палитре команд VS Code выберите **Azure Blockchain: Создать проект Solidity**.
+1. В палитре команд VS Code выберите **Блокчейн: Создать проект Solidity**.
 1. Выберите **Create basic project** (Создать базовый проект).
 1. Создайте папку с именем `HelloBlockchain` и выберите **Select new project path** (Выбрать путь к новому проекту).
 
@@ -94,7 +93,7 @@ Truffle использует скрипты миграции для развер
 
     ![Пример страницы взаимодействия со смарт-контрактом](./media/send-transaction/interaction-page.png)
 
-1. Чтобы вызвать функцию смарт-контракта, выберите действие контракта и передайте аргументы. Выберите действие контракта**SendRequest** и введите **Hello, Blockchain!** для параметра **requestMessage**. Выберите **Execute** (Выполнить), чтобы вызвать функцию **SendRequest** путем транзакции.
+1. Чтобы вызвать функцию смарт-контракта, выберите действие контракта и передайте аргументы. Выберите действие контракта **SendRequest** и введите **Hello, Blockchain!** для параметра **requestMessage**. Выберите **Execute** (Выполнить), чтобы вызвать функцию **SendRequest** путем транзакции.
 
     ![Действие выполнения SendRequest](./media/send-transaction/sendrequest-action.png)
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 383cd286f89bde13f5e557792e980f0455e00917
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 472c1770e2793d8da4e8fc76fafbf3b9073b746d
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876753"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763432"
 ---
 ## <a name="deploy-and-configure-azure-media-services"></a>Развертывание и настройка Служб мультимедиа Azure
 
@@ -34,7 +34,15 @@ ms.locfileid: "91876753"
 
 Запишите имя учетной записи **Служб мультимедиа** в файле *scratchpad.txt*.
 
-После завершения развертывания перейдите к странице **Свойства** учетной записи **Служб мультимедиа**. Запишите **идентификатор ресурса** в файле *scratchpad.txt*. Это значение будет использоваться позже при настройке модуля IoT Edge.
+После завершения развертывания откройте Cloud Shell и выполните следующую команду, чтобы получить **идентификатор ресурса,** для учетной записи службы мультимедиа:
+
+```azurecli
+az resource list --resource-group lva-rg --resource-type microsoft.media/mediaservices --output table --query "[].{ResourceID:id}"
+```
+
+:::image type="content" source="media/iot-central-video-analytics-part2/get-resource-id.png" alt-text="Использование Cloud Shell для получения идентификатора ресурса":::
+
+Запишите **идентификатор ресурса** в файле *scratchpad.txt*. Это значение будет использоваться позже при настройке модуля IoT Edge.
 
 Затем настройте субъект-службу Azure Active Directory для ресурса Служб мультимедиа. Выберите **Доступ к API**, а затем — **Проверка подлинности субъекта-службы**. Создайте приложение Azure Active Directory с тем же именем, что и ресурс Служб мультимедиа, а затем — секрет с описанием *Доступ к IoT Edge*.
 
@@ -74,7 +82,7 @@ ms.locfileid: "91876753"
 
 1. Нажмите кнопку **создания**.
 
-    :::image type="content" source="./media/iot-central-video-analytics-part2/new-application.png" alt-text="Настройка приложения Azure Active Directory для Служб мультимедиа Azure":::
+    :::image type="content" source="./media/iot-central-video-analytics-part2/new-application.png" alt-text="Страница создания приложения Azure IoT Central":::
 
 ### <a name="retrieve-the-configuration-data"></a>Получение данных конфигурации
 
@@ -82,11 +90,11 @@ ms.locfileid: "91876753"
 
 В разделе **Администрирование** выберите **Ваше приложение** и запишите **URL-адрес приложения** и **идентификатор приложения** в файле *scratchpad.txt*.
 
-:::image type="content" source="./media/iot-central-video-analytics-part2/administration.png" alt-text="Настройка приложения Azure Active Directory для Служб мультимедиа Azure":::
+:::image type="content" source="./media/iot-central-video-analytics-part2/administration.png" alt-text="Снимок экрана: панель администрирования на странице приложения видеоаналитики с выделенными URL-адресом и идентификатором приложения":::
 
 Выберите **Токены API** и создайте токен с именем **LVAEdgeToken** для роли **Оператор**.
 
-:::image type="content" source="./media/iot-central-video-analytics-part2/token.png" alt-text="Настройка приложения Azure Active Directory для Служб мультимедиа Azure":::
+:::image type="content" source="./media/iot-central-video-analytics-part2/token.png" alt-text="Создание токена":::
 
 Запишите маркер в файле *scratchpad.txt* для последующего использования. После закрытия диалогового окна вы не сможете снова просмотреть токен.
 

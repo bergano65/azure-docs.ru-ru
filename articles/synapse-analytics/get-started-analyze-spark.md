@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: d7b198790b1ecc884321ad42c97eb5cf0c239b7e
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: ee4dc945f63180fd06f13287b22949d0ac1e3873
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95241987"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862026"
 ---
 # <a name="analyze-with-apache-spark"></a>Анализ с помощью Apache Spark
 
@@ -23,7 +23,7 @@ ms.locfileid: "95241987"
 
 В этом учебнике описываются основные шаги по загрузке и анализу данных с помощью Apache Spark для Azure Synapse.
 
-1. В центре **Данные** щелкните **Добавить новый ресурс** (кнопка со знаком плюса над пунктом **Связанный**) >> **Обзор**. 
+1. В центре **Данные** щелкните **Добавить новый ресурс** (кнопка со знаком плюса над пунктом **Связанный**) >> **Обзор коллекции**. 
 1. Найдите и выберите **NYC Taxi & Limousine Commission - yellow taxi trip records**. 
 1. В нижней части страницы щелкните **Продолжить** и выберите **Добавить набор данных**. 
 1. Теперь в центре **Данные** в разделе **Связанный** щелкните правой кнопкой мыши элементы **Хранилище BLOB-объектов Azure >> Sample Datasets (Примеры наборов данных) >> nyc_tlc_yellow** и выберите элемент **Новая записная книжка**.

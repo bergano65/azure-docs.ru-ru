@@ -6,12 +6,12 @@ ms.date: 11/10/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python, devx-track-azurecli
 zone_pivot_groups: python-frameworks-01
 adobe-target: true
-ms.openlocfilehash: b32977ac1c8cfe0c461bcd1628c08a0ca215ba93
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 7eebbe5605c0b4d70ea15c1605cff5416965e535
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506198"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780779"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
@@ -74,23 +74,11 @@ az login
 ```terminal
 git clone https://github.com/Azure-Samples/python-docs-hello-world
 ```
-
-Затем перейдите в эту папку:
-
-```terminal
-cd python-docs-hello-world
-```
 ::: zone-end
 
 ::: zone pivot="python-framework-django"
 ```terminal
 git clone https://github.com/Azure-Samples/python-docs-hello-django
-```
-
-Затем перейдите в эту папку:
-
-```terminal
-cd python-docs-hello-django
 ```
 ::: zone-end
 
@@ -101,7 +89,11 @@ cd python-docs-hello-django
 ## <a name="run-the-sample"></a>Запуск примера
 
 ::: zone pivot="python-framework-flask"
-1. Убедитесь, что вы находитесь в папке *python-docs-hello-world*. 
+1. Перейдите в папку *python-docs-hello-world*:
+
+    ```terminal
+    cd python-docs-hello-world
+    ```
 
 1. Создайте виртуальную среду и установите необходимые зависимости.
 
@@ -115,7 +107,11 @@ cd python-docs-hello-django
     flask run
     ```
     
-    По умолчанию сервер предполагает, что модулем записи приложения является *app.py*, как в примере. (Если вы используете другое имя модуля, задайте это имя для переменной среды `FLASK_APP`.)
+    По умолчанию сервер предполагает, что модулем записи приложения является *app.py*, как в примере.
+
+    Если вы используете другое имя модуля, задайте это имя для переменной среды `FLASK_APP`.
+
+    При возникновении ошибки "Could not locate a Flask application. You did not provide the 'FLASK_APP' environment variable, and a 'wsgi.py' or 'app.py' module was not found in the current directory." (Не удалось обнаружить приложение Flask. Вы не предоставили переменную среды FLASK_APP, а модуль wsgi.py или app.py не найден в текущем каталоге) убедитесь, что вы находитесь в папке `python-docs-hello-world` с примером.
 
 1. Откройте веб-браузер и перейдите к примеру приложения по адресу `http://localhost:5000/`. Приложение отображает сообщение **Hello World!** .
 
@@ -125,7 +121,11 @@ cd python-docs-hello-django
 ::: zone-end
 
 ::: zone pivot="python-framework-django"
-1. Убедитесь, что вы находитесь в папке *python-docs-hello-django*. 
+1. Перейдите в папку *python-docs-hello-django*:
+
+    ```terminal
+    cd python-docs-hello-django
+    ```
 
 1. Создайте виртуальную среду и установите необходимые зависимости.
 

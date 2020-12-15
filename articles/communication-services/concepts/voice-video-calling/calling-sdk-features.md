@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 44365dec247b9f3135a090cee397cad32598fd29
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: f621d11553101c2c0bcfce804b26c218ae58670c
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977873"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576474"
 ---
 # <a name="calling-client-library-overview"></a>Общие сведения о клиентской библиотеке для вызовов
 
@@ -64,12 +64,32 @@ ms.locfileid: "91977873"
 
 |                                  | Windows          | MacOS          | Ubuntu | Linux  | Android | iOS    |
 | -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ |
-| **Клиентская библиотека для вызовов** | Chrome*, новый Microsoft Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
+| **Клиентская библиотека для вызовов** | Chrome*, новый Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
 
 
 * Обратите внимание, что для Chrome кроме двух предыдущих выпусков поддерживается также последняя версия.<br/>
 
 ** Обратите внимание, что поддерживаются браузеры Safari версии 13.1 +. Исходящее видео в Safari macOS пока не поддерживается, однако оно поддерживается в iOS. Возможность общего доступа к исходящему экрану поддерживается только в настольных устройствах iOS.
+
+## <a name="calling-client---browser-security-model"></a>Модель безопасности вызова между клиентом и браузером
+
+### <a name="user-webrtc-over-https"></a>Работа с WebRTC по протоколу HTTPS
+
+Интерфейсы API WebRTC, например `getUserMedia`, требуют, чтобы вызывающее их приложение обслуживалось по протоколу HTTPS.
+
+Для локальной разработки можно использовать `http://localhost`.
+
+### <a name="embed-the-communication-services-calling-sdk-in-an-iframe"></a>Внедрение пакета SDK для вызова Служб коммуникации в iframe
+
+В различных браузерах была внедрена новая [политика разрешений (также называемая политикой компонентов)](https://www.w3.org/TR/permissions-policy-1/#iframe-allow-attribute). Эта политика влияет на сценарии вызова, контролируя то, как приложения могут получать доступ к камере и микрофону устройства через элемент iframe с различными источниками.
+
+Если вы хотите использовать элемент iframe для размещения части приложения из другого домена, необходимо добавить в него атрибут `allow` с правильным значением.
+
+Например, этот iframe обеспечивает доступ как к камере, так и к микрофону:
+
+```html
+<iframe allow="camera *; microphone *">
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

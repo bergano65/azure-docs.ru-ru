@@ -1,21 +1,21 @@
 ---
 title: Развертывание расширений виртуальной машины с помощью шаблона
-description: Узнайте, как можно развернуть расширения виртуальной машины с помощью шаблонов Azure Resource Manager
+description: Сведения о том, как развернуть расширения виртуальной машины с помощью шаблонов Resource Manager.
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: f82e0eb45f4bc7c3260554b1b1120025029336bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49bc1a77e2e25cb069a89812603ff562b8a4c1cd
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89073648"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931458"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-arm-templates"></a>Руководство по развертыванию расширений виртуальных машин с помощью шаблонов Resource Manager
 
-Узнайте, как использовать [расширения виртуальных машин Azure](../../virtual-machines/extensions/features-windows.md), чтобы выполнять задачи настройки и автоматизации после развертывания виртуальных машин Azure. Существует множество разных расширений виртуальных машин, которые можно использовать с виртуальными машинами Azure. При работе с этим руководством вы развернете расширение настраиваемого скрипта из шаблона Azure Resource Manager (ARM) для выполнения скрипта PowerShell на виртуальной машине Windows.  Скрипт устанавливает веб-сервер на виртуальной машине.
+Узнайте, как использовать [расширения виртуальных машин Azure](../../virtual-machines/extensions/features-windows.md), чтобы выполнять задачи настройки и автоматизации после развертывания виртуальных машин Azure. Существует множество разных расширений виртуальных машин, которые можно использовать с виртуальными машинами Azure. При работе с этим учебником вы развернете расширение пользовательского скрипта из шаблона Azure Resource Manager для выполнения скрипта PowerShell на виртуальной машине Windows. Скрипт устанавливает веб-сервер на виртуальной машине.
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -31,14 +31,14 @@ ms.locfileid: "89073648"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console
     openssl rand -base64 32
     ```
 
-    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона ARM](./template-tutorial-use-key-vault.md). Мы также советуем обновлять пароль каждые три месяца.
+    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция Azure Key Vault в развертывание шаблона Resource Manager](./template-tutorial-use-key-vault.md). Мы также советуем обновлять пароль каждые три месяца.
 
 ## <a name="prepare-a-powershell-script"></a>Подготовка скрипта PowerShell
 

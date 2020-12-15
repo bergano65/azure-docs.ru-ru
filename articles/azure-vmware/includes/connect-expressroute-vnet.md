@@ -2,17 +2,17 @@
 title: Подключение ExpressRoute к шлюзу виртуальной сети
 description: Инструкции по подключению ExpressRoute к шлюзу виртуальной сети.
 ms.topic: include
-ms.date: 09/28/2020
-ms.openlocfilehash: 214ef9c01193b238c8e456ef2809f7a2edbdb6c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/08/2020
+ms.openlocfilehash: 5f9a565a7662041dbd85e61388129496fa376962
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598172"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861528"
 ---
 <!-- Used in deploy-azure-vmware-solution.md and tutorial-configure-networking.md -->
 
-1. Перейдите к частному облаку, которое вы создали при работе с предыдущим руководством, и выберите **Подключение** в разделе **Управление**, а затем перейдите на вкладку **ExpressRoute**.
+1. Перейдите к частному облаку, созданному вами при работе с учебником [Развертывание кластера vSphere в Azure](../tutorial-create-private-cloud.md). Выберите **Возможность подключения** в разделе **Управление** и откройте вкладку **ExpressRoute**.
 
 1. Скопируйте ключ авторизации. Если ключ авторизации отсутствует, его необходимо создать, выбрав **+ Запросить ключ авторизации**.
 
@@ -31,6 +31,6 @@ ms.locfileid: "91598172"
    | **Ключ авторизации**  | Скопируйте и вставьте сюда ключ авторизации, полученный на вкладке ExpressRoute для группы ресурсов. |
    | **URI одноранговой цепи**  | Скопируйте и вставьте сюда идентификатор ExpressRoute, полученный на вкладке ExpressRoute для группы ресурсов.  |
 
-   :::image type="content" source="../media/expressroute-global-reach/open-cloud-shell.png" alt-text="Скопируйте ключ авторизации. Если ключ авторизации отсутствует, его необходимо создать, выбрав &quot;+ Запросить ключ авторизации&quot;" border="true" lightbox="../media/expressroute-global-reach/open-cloud-shell.png":::
+   :::image type="content" source="../media/expressroute-global-reach/open-cloud-shell.png" alt-text="На странице &quot;Добавление подключения&quot; укажите значения в полях и нажмите кнопку &quot;OК&quot;." border="true" lightbox="../media/expressroute-global-reach/open-cloud-shell.png":::
 
 В результате создается подключение между каналом ExpressRoute и виртуальной сетью.

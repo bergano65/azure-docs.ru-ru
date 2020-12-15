@@ -1,15 +1,15 @@
 ---
 title: Подключение к службе "Блокчейн Azure" с помощью Visual Studio Code
 description: Подключение к сети консорциума службы "Блокчейн Azure" с помощью комплекта SDK службы "Azure Блокчейн" для Ethereum в Visual Studio Code
-ms.date: 04/22/2020
+ms.date: 12/04/2020
 ms.topic: quickstart
 ms.reviewer: caleteet
-ms.openlocfilehash: 8b502966317c5d07e89de4ae70ff72b899e963e6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6e94d93d91f25c15743c4c467e31de49fd9da41d
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82084844"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763338"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-to-an-azure-blockchain-service-consortium-network"></a>Краткое руководство. Подключение к сети консорциума службы "Блокчейн Azure" с помощью Visual Studio Code
 
@@ -24,7 +24,6 @@ ms.locfileid: "82084844"
 * [расширение "Комплект SDK Блокчейна Azure для Ethereum"](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain);
 * [Node.js 10.15.x или более поздней версии](https://nodejs.org).
 * [Git 2.10.x или более поздней версии](https://git-scm.com).
-* [Python 2.7.15](https://www.python.org/downloads/release/python-2715/). Добавьте в путь файл python.exe. Python версии 2.7.15 необходим для комплекта SDK службы "Блокчейн Azure".
 * [Truffle 5.0.0](https://www.trufflesuite.com/docs/truffle/getting-started/installation).
 * [Ganache CLI 6.0.0](https://github.com/trufflesuite/ganache-cli).
 
@@ -40,7 +39,7 @@ ms.locfileid: "82084844"
 
 Комплект SDK службы "Блокчейн Azure" проверяет, выполняются ли необходимые условия для среды разработки. Чтобы проверить среду разработки, выполните следующие действия:
 
-В палитре команд VS Code выберите **Azure Blockchain: Show Welcome Page** (Блокчейн Azure. Показать страницу приветствия).
+В палитре команд VS Code выберите **Блокчейн: Show Welcome Page** (Блокчейн Azure. Показать страницу приветствия).
 
 Комплект SDK службы "Блокчейн Azure" запускает проверочный скрипт, выполнение которого займет около минуты. Чтобы просмотреть выходные данные, выберите **Терминал > Создать терминал**. В строке меню терминала выберите вкладку **Выходные данные**, а в раскрывающемся списке — **Блокчейн Azure**. При успешном завершении проверки отобразится следующий результат:
 

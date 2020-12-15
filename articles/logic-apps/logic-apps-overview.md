@@ -1,20 +1,20 @@
 ---
-title: Автоматические задачи для корпоративной интеграции
-description: Узнайте о рабочих процессах автоматизации для интеграции приложений, данных, служб и систем с использованием минимального количества кода для корпоративной интеграции с помощью Azure Logic Apps.
+title: Общие сведения об Azure Logic Apps
+description: Azure Logic Apps — это облачное решение для создания и оркестрации автоматизированных рабочих процессов, которое интегрирует приложения, данные, службы и системы с минимальным кодом для сценариев корпоративного уровня.
 services: logic-apps
 ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: overview
 ms.custom: mvc
 ms.date: 03/11/2020
-ms.openlocfilehash: 3496dfd7813818ced8963175d73ec0f8ef6892d4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4c4e8c8f809452286fee493e20dbef2cc538c8bd
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86536238"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921513"
 ---
-# <a name="overview---what-is-azure-logic-apps"></a>Обзор: Azure Logic Apps
+# <a name="what-is-azure-logic-apps"></a>Что такое Azure Logic Apps
 
 Служба [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps) — это облачная служба, которая помогает автоматизировать, планировать и оркестрировать задачи, бизнес-процессы и [рабочие процессы](#logic-app-concepts), когда необходимо интегрировать приложения, данные, системы и службы между предприятиями или организациями. Эта служба упрощает разработку и создание масштабируемых решений [интеграции](https://azure.microsoft.com/product-categories/integration/) стандартных и корпоративных приложений (EAI), данных, систем и реализации взаимодействия типа "бизнес — бизнес" (B2B) в облаке, локальных системах или в обеих средах.
 

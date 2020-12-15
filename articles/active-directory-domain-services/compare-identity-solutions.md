@@ -2,20 +2,20 @@
 title: Сравнение служб на основе Active Directory в Azure | Документация Майкрософт
 description: В этом обзоре представлено сравнение нескольких предложений по идентификации для доменных служб Active Directory, Azure Active Directory и доменных служб Azure Active Directory.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: overview
 ms.date: 06/08/2020
-ms.author: joflore
-ms.openlocfilehash: 0576fdaa9bdcc90636c3cd2bc90ba2818f1e69e7
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 479cc036ed3231d970d46eef9d89daa39a0b0876
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962672"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620194"
 ---
 # <a name="compare-self-managed-active-directory-domain-services-azure-active-directory-and-managed-azure-active-directory-domain-services"></a>Сравнение самостоятельно управляемых доменных служб Active Directory, Azure Active Directory и управляемых доменных служб Azure Active Directory.
 
@@ -114,6 +114,9 @@ Azure AD позволяет управлять идентификаторами 
 | Управление                      | Программное обеспечение для управления мобильными устройствами (MDM), например Intune | Групповая политика                                                              |
 | Сеть                      | Работает через Интернет                             | Требуется подключение к виртуальной сети, в которой развернут управляемый домен, или пиринг с ней |
 | Отлично подойдет для:                    | мобильных или настольных устройств пользователей                  | серверных виртуальных машин, развернутых в Azure                                              |
+
+
+Если локальные службы AD DS и Azure AD настроены для федеративной аутентификации с помощью ADFS, значит в Azure DS будет отсутствовать доступный (текущий/допустимый) хэш паролей. Учетные записи пользователей Azure AD, созданные до реализации федеративной аутентификации, который с большой вероятностью не будет соответствовать хэшу их локального пароля. Поэтому доменные службы Azure Active Directory не смогут проверить учетные данные пользователей.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

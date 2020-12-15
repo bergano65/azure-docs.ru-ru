@@ -3,12 +3,12 @@ title: Подключение сред к виртуальной сети лаб
 description: Узнайте, как подключить среду (например, Service Fabric Cluster) к виртуальной сети лаборатории в Azure DevTest Labs
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 31f924a4b6d7cbe1b6f71c7e34d43fd9c135bac9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 980c6317ded70db374c2b948075f060754168b0f
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85483777"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511966"
 ---
 # <a name="connect-an-environment-to-your-labs-virtual-network-in-azure-devtest-labs"></a>Подключите среду к виртуальной сети лаборатории в Azure DevTest Labs
 Azure DevTest Labs упрощает создание виртуальных машин в лаборатории со [встроенными сетевыми подключениями](devtest-lab-configure-vnet.md). Она имеет большую гибкость благодаря возможности [создавать среды с несколькими ВМ](devtest-lab-test-env.md). В этой статье показано, как подключить виртуальные машины в среде к виртуальной сети лаборатории. Одним из сценариев, в которых используется эта функция, является настройка N-уровневого приложения с SQL Server уровнем данных, подключенным к лабораторной виртуальной сети, что позволяет тестировать виртуальные машины в лаборатории для доступа к ней.  

@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 10/7/2020
 ms.subservice: alerts
-ms.openlocfilehash: e5f78c8b58cc3100d746957094ddfd9bab2b29fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51ae97567e9c3720c7e36a81bfa7bff44935aac6
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91813225"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511626"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
@@ -270,7 +270,7 @@ az login
 
 az deployment group create \
     --name AlertDeployment \
-    --resource-group ResourceGroupofTargetResource \
+    --resource-group ResourceGroupOfTargetResource \
     --template-file simplestaticmetricalert.json \
     --parameters @simplestaticmetricalert.parameters.json
 ```
@@ -377,7 +377,7 @@ az deployment group create \
                 "description": "The number of unhealthy periods to alert on (must be lower or equal to numberOfEvaluationPeriods)."
             }
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
@@ -518,7 +518,7 @@ az deployment group create \
         "minFailingPeriodsToAlert": {
             "value": "3"
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "value": ""
         },
         "timeAggregation": {
@@ -570,7 +570,6 @@ az deployment group create \
 - Невозможно использовать "\*" в качестве значения измерения.
 - Если метрики, настроенные в разных критериях, поддерживают одно и то же измерение, то настроенное значение измерения должно быть явно задано одинаково для всех этих метрик (в соответствующих критериях).
     - В приведенном ниже примере, поскольку в метриках **Transactions** и **SuccessE2ELatency** есть измерение **ApiName**, а параметр *criterion1* определяет значение *"GetBlob"* для измерения **ApiName**, то для параметра *criterion2* также нужно задать значение *"GetBlob"* для измерения **ApiName**.
-
 
 В целях данного пошагового руководства сохраните приведенный ниже JSON в виде файла advancedstaticmetricalert.json.
 
@@ -976,7 +975,7 @@ az deployment group create \
                             "values": ["*"]
                         },
                         {
-                "name":"ApiName",
+                            "name":"ApiName",
                             "operator": "Include",
                             "values": ["GetBlob", "PutBlob"]    
                         }
@@ -3623,7 +3622,7 @@ az deployment group create \
     --parameters @availabilityalert.parameters.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [оповещениях в Azure](alerts-overview.md)
 - Сведения о [создании группы действий с помощью шаблона Resource Manager](action-groups-create-resource-manager-template.md)

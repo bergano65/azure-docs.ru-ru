@@ -10,16 +10,18 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 9ea4ec748ca37f93e9711970b10746a009543d00
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c0253dc3c9dc029cd964fb32b148be1405e7fbad
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656604"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780184"
 ---
 # <a name="quickstart-set-up-oidc-based-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)
 
 Чтобы использовать упрощенный вход пользователей, настройте единый вход для приложения, которое вы добавили в арендатор Azure Active Directory (Azure AD). Когда вы настроите единый вход пользователи смогут входить в приложение, используя свои учетные данные Azure AD. Возможности единого входа включены в бесплатную версию Azure AD.
+
+Чтобы узнать больше о едином входе на основе OIDC, см. статью [Общие сведения о едином входе на основе OIDC](configure-oidc-single-sign-on.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,7 +54,7 @@ ms.locfileid: "94656604"
    > [!IMPORTANT]
     > Если у вас уже есть подписка на приложение, будет выполнена проверка данных пользователя и информации об арендаторе или каталоге. Если приложение не может проверить пользователя, оно перенаправит вас на регистрацию в службе приложения или на страницу ошибки.
 
-3. После успешной проверки подлинности появится диалоговое окно с запросом согласия администратора. Выберите **Согласие от имени вашей организации**, а затем — **Принять**. 
+3. После успешной проверки подлинности появится диалоговое окно с запросом согласия администратора. Выберите **Согласие от имени вашей организации**, а затем — **Принять**. Дополнительные сведения о согласии пользователя и администратора см. в [этой статье](../develop/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent).
 
     :::image type="content" source="media/add-application-portal-setup-oidc-sso/consent.png" alt-text="Снимок экрана: экран согласия для приложения." lightbox="media/add-application-portal-setup-oidc-sso/consent.png":::
 
@@ -62,6 +64,11 @@ ms.locfileid: "94656604"
 > [!TIP]
 > Вы можете автоматизировать управление приложениями с помощью API Graph — см. [соответствующую статью](/graph/application-saml-sso-configure-api).
 
+Ниже приведено видео с дополнительные сведениями по добавлению приложения на основе OIDC в Azure AD.
+
+Добавление приложения на основе OIDC в Azure Active Directory
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

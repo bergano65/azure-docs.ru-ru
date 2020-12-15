@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 11/21/2020
-ms.openlocfilehash: 949992418cb19c5c69ed8da92e9c2f0fc5f2f791
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c9b7d796612981f0e8194be84b0ed141721f644d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445423"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862383"
 ---
 # <a name="creating-a-synapse-workspace"></a>Создание рабочей области Synapse
 
@@ -45,7 +45,7 @@ ms.locfileid: "96445423"
 
 После создания рабочей области Azure Synapse можно открыть Synapse Studio двумя способами:
 
-* Откройте рабочую область Synapse на [портале Azure](https://portal.azure.com). В верхней области раздела **Обзор** выберите **Запуск Synapse Studio**.
+* Откройте рабочую область Synapse на [портале Azure](https://portal.azure.com). В верхней области раздела **Обзор** выберите **Открыть Synapse Studio**.
 * Перейдите по адресу `https://web.azuresynapse.net` и войдите в рабочую область.
 
 ## <a name="create-a-dedicated-sql-pool"></a>Создание выделенного пула SQL

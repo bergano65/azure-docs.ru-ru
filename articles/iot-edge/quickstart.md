@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 5f6d768e3d863d52cfc91beb799d86fcd854af16
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 547bf111e73813c939caa917c0117dac6c8989e9
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517637"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922464"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве с Windows
 
@@ -33,23 +33,21 @@ ms.locfileid: "94517637"
 
 Если у вас нет активной подписки Azure, перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Для выполнения многих действий, описанных в этом кратком руководстве, используется Azure CLI. Центр Интернета вещей Azure имеет расширение для предоставления дополнительных функций.
-
-Добавьте расширение Интернета вещей Azure в экземпляр Cloud Shell.
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования
+
+Подготовьте среду к работе с Azure CLI.
+
+- Используйте [Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell) со средой PowerShell.
+
+   [![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)   
+- При необходимости [установите](/cli/azure/install-azure-cli) Azure CLI, чтобы выполнять справочные команды CLI.
+   - Если вы используете локальную установку, выполните вход с помощью команды Azure CLI [az login](/cli/azure/reference-index#az-login).  Чтобы выполнить аутентификацию, следуйте инструкциям в окне терминала.  Сведения о дополнительных возможностях, доступных при входе, см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
+  - Если появится запрос, установите расширения Azure CLI при первом использовании.  Дополнительные сведения о расширениях см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+  - Выполните команду [az version](/cli/azure/reference-index?#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index?#az_upgrade).
 
 Облачные ресурсы.
 
-* Группа ресурсов для управления всеми ресурсами, которые вы используете в этом кратком руководстве.
+- Группа ресурсов для управления всеми ресурсами, которые вы используете в этом кратком руководстве.
 
    ```azurecli-interactive
    az group create --name IoTEdgeResources --location westus2
@@ -57,7 +55,7 @@ ms.locfileid: "94517637"
 
 Устройства IoT Edge:
 
-* Виртуальная машина Windows для работы в качестве устройства IoT Edge. Вы можете создать эту виртуальную машину с помощью следующей команды, заменив `{password}` надежным паролем:
+- Виртуальная машина Windows для работы в качестве устройства IoT Edge. Вы можете создать эту виртуальную машину с помощью следующей команды, заменив `{password}` надежным паролем:
 
   ```azurecli-interactive
   az vm create --resource-group IoTEdgeResources --name EdgeVM --image MicrosoftWindowsDesktop:Windows-10:rs5-pro:latest --admin-username azureuser --admin-password {password} --size Standard_DS1_v2
@@ -116,7 +114,7 @@ ms.locfileid: "94517637"
 2. Просмотрите строку подключения для устройства, которая связывает физическое устройство с его удостоверением в Центре Интернета вещей. Она содержит имя центра Интернета вещей и имя устройства, а также общий ключ, который используется для аутентификации подключений между ними.
 
    ```azurecli-interactive
-   az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {hub_name}
+   az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name {hub_name}
    ```
 
 3. Скопируйте значение ключа `connectionString` из выходных данных JSON и сохраните его. Это значение — строка подключения устройства. Эта строка потребуется для настройки среды выполнения IoT Edge в следующем разделе.

@@ -9,12 +9,12 @@ ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 34fe909c7fca3c91845c58b41abb0d8885e156e6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0cdd25b2937dd1fb2cc70ef7b1c5a9e9ddaef375
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94850946"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780626"
 ---
 # <a name="programmatically-create-azure-enterprise-agreement-subscriptions-with-the-latest-apis"></a>Программное создание подписок Azure для Соглашения Enterprise с помощью новейших API
 
@@ -89,7 +89,7 @@ GET https://management.azure.com/providers/Microsoft.Billing/billingaccounts/?ap
 
 ```
 
-Запишите `id` одной из учетных записей `enrollmentAccounts`. Это область выставления счетов, для которой инициируется запрос на создание подписки. 
+Значение для области выставления счетов и `id` — это одно и то же. `id` для учетной записи регистрации — это область выставления счетов, в рамках которой инициируется запрос на подписку. Знать идентификатор важно, так как это обязательный параметр, который будет использоваться далее при работе со статьей для создания подписки.
 
 <!-- 
 ### [PowerShell](#tab/azure-powershell-getEnrollments)
@@ -130,6 +130,8 @@ PUT  https://management.azure.com/providers/Microsoft.Subscription/aliases/sampl
   }
 }
 ```
+
+Разрешены следующие значения для `Workload`: `Production` и `DevTest`.
 
 #### <a name="response"></a>Ответ
 

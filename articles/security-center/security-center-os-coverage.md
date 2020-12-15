@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/31/2020
 ms.author: memildin
-ms.openlocfilehash: 68cb738ae6e4689a0356ea56c1de2d383ea83ad6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31ff3620bcab6b10b59582daa255ff1f259ab0d3
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449937"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852648"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -44,8 +44,10 @@ ms.locfileid: "91449937"
 
 Кроме того, убедитесь, что агент Log Analytics [правильно настроен для отправки данных в Центр безопасности](security-center-enable-data-collection.md#manual-agent).
 
-> [!TIP]
-> Дополнительные сведения об отдельных функциях Центра безопасности, доступных в Windows и Linux, см. в статье [Поддерживаемые функции для виртуальных машин](security-center-services.md).
+Дополнительные сведения об отдельных функциях Центра безопасности, доступных в Windows и Linux, см. в статье [Поддерживаемые функции для виртуальных машин](security-center-services.md).
+
+> [!NOTE]
+> Хотя инструмент Azure Defender предназначен для защиты серверов, большинство возможностей **Azure Defender для серверов** поддерживаются на компьютерах Windows 10. Одна из неподдерживаемых в настоящее время функций — это [интегрированное решение EDR Центра безопасности: Microsoft Defender для конечных точек](security-center-wdatp.md).
 
 ## <a name="managed-virtual-machine-services"></a>Виртуальные машины в управляемых службах <a name="virtual-machine"></a>
 
