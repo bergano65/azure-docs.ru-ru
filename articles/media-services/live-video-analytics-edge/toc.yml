@@ -66,6 +66,7 @@
     - name: Граф мультимедиа
       href: media-graph-concept.md
     - name: Расширение графа мультимедиа
+      displayName: AI
       href: media-graph-extension-concept.md
     - name: Запись видео
       href: video-recording-concept.md
@@ -99,6 +100,10 @@
       href: configure-signal-gate-how-to.md
     - name: Диагностика
       href: troubleshoot-how-to.md
+    - name: Обновление
+      href: upgrading-lva-module.md
+    - name: Разработка и развертывание сервера вывода gRPC
+      href: develop-deploy-grpc-inference-srv-how-to.md
 - name: Справочник
   items:
     - name: Протокол расширения HTTP

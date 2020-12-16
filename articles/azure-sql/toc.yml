@@ -69,6 +69,8 @@
                   href: database/sql-vulnerability-assessment.md
                 - name: Правила оценки уязвимостей
                   href: database/sql-database-vulnerability-assessment-rules.md
+                - name: Журнал изменений правил оценки уязвимостей
+                  href: database/sql-database-vulnerability-assessment-rules-changelog.md
                 - name: Хранение результатов проверок уязвимостей в хранилище
                   href: database/sql-database-vulnerability-assessment-storage.md
             - name: 'Имена для входа, учетные записи пользователей, роли и разрешения'

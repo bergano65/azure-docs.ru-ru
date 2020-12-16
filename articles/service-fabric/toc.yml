@@ -663,6 +663,8 @@
                   href: service-fabric-cluster-creation-via-portal.md
                 - name: Развертывание кластера Azure Service Fabric в зонах доступности
                   href: service-fabric-cross-availability-zones.md
+                - name: Развертывание кластера Azure Service Fabric с типами узлов без отслеживания состояния
+                  href: service-fabric-stateless-node-types.md
                 - name: Настройка проверки подлинности Azure Active Directory
                   href: service-fabric-cluster-creation-setup-aad.md
                 - name: Создание настраиваемого шаблона кластера

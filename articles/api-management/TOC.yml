@@ -42,6 +42,8 @@
       href: api-management-get-started-publish-versions.md
     - name: 9. Настройка портала разработчика
       href: api-management-howto-developer-portal-customize.md
+    - name: "10.\_Управление API-интерфейсами в Visual Studio Code"
+      href: visual-studio-code-tutorial.md
 - name: Примеры
   items:
     - name: Политики
@@ -216,7 +218,7 @@
           href: api-management-sample-flexible-throttling.md
         - name: Использование внешних служб
           href: api-management-sample-send-request.md
-        - name: Управление секретами с помощью свойств
+        - name: Управление секретами с помощью именованных значений
           href: api-management-howto-properties.md
         - name: Политики ограничения доступа
           href: api-management-access-restriction-policies.md
