@@ -1,20 +1,20 @@
 ---
-title: Справочник по данным мониторинга хранилища очередей Azure | Документация Майкрософт
+title: Справочник по данным мониторинга хранилища очередей Azure
 description: Справочник по журналам и метрикам для мониторинга данных из хранилища очередей Azure.
 author: normesta
 services: azure-monitor
-ms.service: azure-monitor
-ms.topic: reference
-ms.date: 10/02/2020
 ms.author: normesta
+ms.date: 10/02/2020
+ms.topic: reference
+ms.service: azure-monitor
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: a3a07f828bb8ef20da630e909e46f03e8556eb98
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: ba8a82ed1113bfb3e71560ca9a6c713602df21f2
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780371"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590653"
 ---
 # <a name="azure-queue-storage-monitoring-data-reference"></a>Справочник по данным мониторинга хранилища очередей Azure
 
@@ -30,19 +30,19 @@ ms.locfileid: "96780371"
 
 Служба хранилища Azure предоставляет следующие метрики емкости в Azure Monitor.
 
-#### <a name="account-level"></a>На уровне учетной записи
+#### <a name="account-level-capacity-metrics"></a>Метрики емкости на уровне учетной записи
 
-[!INCLUDE [Account level capacity metrics](../../../includes/azure-storage-account-capacity-metrics.md)]
+[!INCLUDE [Account-level capacity metrics](../../../includes/azure-storage-account-capacity-metrics.md)]
 
-#### <a name="queue-storage"></a>Хранилище очередей
+#### <a name="queue-storage-metrics"></a>Метрики хранилища очередей
 
 В этой таблице показаны [метрики хранилища очередей](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsqueueservices).
 
 | Метрика | Описание |
 | ------------------- | ----------------- |
-| QueueCapacity | Объем хранилища очередей, используемый учетной записью хранения. <br/><br/> Единица измерения: Байты <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
-| QueueCount   | Количество очередей в учетной записи хранения. <br/><br/> Единица измерения: Count <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
-| QueueMessageCount | Приблизительное количество сообщений очередей в службе очередей учетной записи хранения. <br/><br/>Единица измерения: Count <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
+| **QueueCapacity** | Объем хранилища очередей, используемого учетной записью хранения. <br><br> Модульных `Bytes` <br> Тип агрегирования: `Average` <br> Пример значения: `1024` |
+| **QueueCount** | Количество очередей в учетной записи хранения. <br><br> Модульных `Count` <br> Тип агрегирования: `Average` <br> Пример значения: `1024` |
+| **QueueMessageCount** | Приблизительное количество сообщений в очереди в учетной записи хранения. <br><br> Модульных `Count` <br> Тип агрегирования: `Average` <br> Пример значения: `1024` |
 
 ### <a name="transaction-metrics"></a>Метрики транзакций
 
@@ -77,7 +77,7 @@ ms.locfileid: "96780371"
 
 [!INCLUDE [Account level capacity metrics](../../../includes/azure-storage-logs-properties-service.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
-- Описание мониторинга службы хранилища Azure см. в статье [мониторинг хранилища очередей Azure](monitor-queue-storage.md) .
+- Описание мониторинга хранилища очередей Azure см. в статье [мониторинг хранилища очередей Azure](monitor-queue-storage.md) .
 - Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md).

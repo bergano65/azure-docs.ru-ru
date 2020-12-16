@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 10/14/2020
-ms.openlocfilehash: f3763857af1df8f34f38b36835a667c6610e1909
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.date: 12/15/2020
+ms.openlocfilehash: 5d265fe02d801cf0d2d66be37a8dc2a220e19b34
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107833"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591350"
 ---
 # <a name="service-limits-in-azure-cognitive-search"></a>Ограничения службы "Когнитивный поиск Azure"
 
@@ -143,7 +143,7 @@ ms.locfileid: "92107833"
 
 Действуют следующие ограничения по запросам для операций, связанных с индексом.
 
-+ Получение списка индексов (GET /indexes): 5 запросов в секунду на единицу поиска.
++ Список индексов (GET/индексес): 3 в секунду на единицу поиска
 + Получение индекса (GET /indexes/myindex): 10 запросов в секунду на единицу поиска.
 + Создание индекса (POST /indexes): 12 запросов в минуту на единицу поиска.
 + Создание или обновление индекса (PUT /indexes/myindex): 6 запросов в секунду на единицу поиска.

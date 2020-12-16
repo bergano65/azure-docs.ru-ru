@@ -3,17 +3,17 @@ title: Архитектура приложения для непрерывног
 description: Руководство. Сведения об архитектуре решения для непрерывного мониторинга состояния пациентов.
 author: philmea
 ms.author: philmea
-ms.date: 09/14/2020
+ms.date: 12/11/2020
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: 3ef4790f9f7a3b3488dade9312203de41be1ff75
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: dad6327acd24fe7642bf1033b1527ef3e40b772e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92122157"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590109"
 ---
 # <a name="continuous-patient-monitoring-architecture"></a>Архитектура приложения для непрерывного мониторинга состояния пациентов
 

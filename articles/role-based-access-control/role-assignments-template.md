@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 11/13/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9bdd70baa906d9dc03a37eecb0388eee5638f153
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1e05ecd162ccb333c6ab29b0185f6ffcb04a6213
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184286"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591367"
 ---
 # <a name="add-azure-role-assignments-using-azure-resource-manager-templates"></a>Добавление назначений ролей Azure с помощью шаблона Azure Resource Manager
 
@@ -109,14 +109,14 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 }
 ```
 
-Ниже приведены примеры команд [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [az group deployment create](/cli/azure/group/deployment#az-group-deployment-create), показывающие, как запустить развертывание в группе ресурсов с именем ExampleGroup.
+Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ развертывания Group Create](/cli/azure/deployment/group#az_deployment_group_create) для запуска развертывания в группе ресурсов с именем ексамплеграуп.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file rbac-test.json
+az deployment group create --resource-group ExampleGroup --template-file rbac-test.json
 ```
 
 Ниже приведен пример назначения роли Reader пользователю для группы ресурсов после развертывания шаблона.
@@ -187,24 +187,24 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 > [!NOTE]
 > Этот шаблон не идемпотентный, если для каждого развертывания шаблона в качестве параметра не предоставляется одно и то же значение `roleNameGuid`. Если значение `roleNameGuid` не предоставляется, по умолчанию в каждом развертывании создается новый идентификатор GUID, и последующие развертывания завершаются с ошибкой `Conflict: RoleAssignmentExists`.
 
-Область назначения ролей определяется исходя из уровня развертывания. Ниже приведены примеры команд [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [az group deployment create](/cli/azure/group/deployment#az-group-deployment-create), показывающие, как запустить развертывание в области группы ресурсов.
+Область назначения ролей определяется исходя из уровня развертывания. Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ развертывания Group Create](/cli/azure/deployment/group#az_deployment_group_create) для запуска развертывания в области группы ресурсов.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
+az deployment group create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
-Ниже приведены примеры команд [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) и [az deployment create](/cli/azure/deployment#az-deployment-create), показывающие, как запустить развертывание в области подписки и указать расположение.
+Ниже приведены примеры команд [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment) и [AZ Deployment recreate](/cli/azure/deployment/sub#az_deployment_sub_create) для запуска развертывания в области действия подписки и указания расположения.
 
 ```azurepowershell
 New-AzDeployment -Location centralus -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
 ```
 
 ```azurecli
-az deployment create --location centralus --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
+az deployment sub create --location centralus --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
 ### <a name="resource-scope"></a>Область ресурса
@@ -290,14 +290,14 @@ az deployment create --location centralus --template-file rbac-test.json --param
 }
 ```
 
-Чтобы развернуть предыдущий шаблон, используйте команды группы ресурсов. Ниже приведены примеры команд [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [az group deployment create](/cli/azure/group/deployment#az-group-deployment-create), показывающие, как запустить развертывание в области ресурса.
+Чтобы развернуть предыдущий шаблон, используйте команды группы ресурсов. Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ развертывания Group Create](/cli/azure/deployment/group#az_deployment_group_create) для запуска развертывания в области действия ресурса.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Contributor
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Contributor
+az deployment group create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Contributor
 ```
 
 Ниже приведен пример назначения роли Contributor пользователю для учетной записи хранения после развертывания шаблона.
@@ -360,14 +360,14 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 }
 ```
 
-Ниже приведены примеры команд [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) и [az group deployment create](/cli/azure/group/deployment#az-group-deployment-create), показывающие, как запустить развертывание в области группы ресурсов.
+Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ развертывания Group Create](/cli/azure/deployment/group#az_deployment_group_create) для запуска развертывания в области группы ресурсов.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup2 -TemplateFile rbac-test.json
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup2 --template-file rbac-test.json
+az deployment group create --resource-group ExampleGroup2 --template-file rbac-test.json
 ```
 
 Ниже приведен пример назначения роли Contributor новому субъекту-службе управляемого удостоверения после развертывания шаблона.
@@ -385,7 +385,7 @@ az group deployment create --resource-group ExampleGroup2 --template-file rbac-t
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
-- [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
+- [Краткое руководство. Создание и развертывание шаблонов ARM с помощью портала Azure](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
+- [Описание структуры и синтаксиса шаблонов ARM](../azure-resource-manager/templates/template-syntax.md)
 - [Создание групп ресурсов и ресурсов на уровне подписки](../azure-resource-manager/templates/deploy-to-subscription.md)
 - [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)

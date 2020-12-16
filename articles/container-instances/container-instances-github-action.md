@@ -4,12 +4,12 @@ description: Настройка действия GitHub, которое авто
 ms.topic: article
 ms.date: 08/20/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 0068b9869e5ef7a3b6c0fd21c1b69cdae1d4ab4b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 270aa69e74045a48a3567ca74b722ca48a030654
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96454828"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591639"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>Настройка действия GitHub для создания экземпляра контейнера
 
@@ -31,7 +31,7 @@ ms.locfileid: "96454828"
 > [!IMPORTANT]
 > Действие GitHub для службы "экземпляры контейнеров Azure" сейчас находится на этапе предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Учетная запись GitHub** . Создайте учетную запись, https://github.com если она еще не создана.
 * **Azure CLI** — для выполнения Azure CLI действий можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
@@ -141,7 +141,7 @@ jobs:
         steps:
         # checkout the repo
         - name: 'Checkout GitHub Action'
-          uses: actions/checkout@master
+          uses: actions/checkout@main
           
         - name: 'Login via Azure CLI'
           uses: azure/login@v1

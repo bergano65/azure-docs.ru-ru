@@ -7,12 +7,12 @@ ms.service: sql-db-mi
 ms.subservice: service
 ms.topic: conceptual
 ms.date: 09/13/2020
-ms.openlocfilehash: b0a10744d2b48fa620b48b731144222199f711c7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 96367b143711c4ec5f3f8d609f048c72c6fded16
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792537"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590857"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-sql-database--sql-managed-instance"></a>Основные сведения об изменениях в корневом ЦС для базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -72,7 +72,7 @@ ms.locfileid: "92792537"
 ### <a name="how-often-does-microsoft-update-their-certificates-or-what-is-the-expiry-policy"></a>Как часто Корпорация Майкрософт обновляет свои сертификаты или какова политика срока действия?
 Эти сертификаты, используемые базой данных SQL Azure & Управляемый экземпляр SQL, предоставляются доверенными центрами сертификации (CA). Поэтому поддержка этих сертификатов в базе данных SQL Azure & Управляемый экземпляр SQL привязывается к поддержке этих сертификатов центром сертификации. Однако, как и в этом случае, в этих стандартных сертификатах могут воздержаться непредвиденные ошибки, которые должны быть исправлены самым ранним образом.
 
-### <a name="if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-master-server-or-all-the-read-replicas"></a>Если я использую для чтения реплики, нужно ли выполнять это обновление только на главном сервере или во всех репликах чтения?
+### <a name="if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-primary-server-or-all-the-read-replicas"></a>Если я использую для чтения реплики, нужно ли выполнять это обновление только на основном сервере или во всех репликах чтения?
 Так как это обновление является изменением на стороне клиента, если клиент использовался для считывания данных с сервера реплики, необходимо также применить изменения для этих клиентов. 
 
 ### <a name="do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>Есть ли у нас запрос на стороне сервера для проверки использования SSL?

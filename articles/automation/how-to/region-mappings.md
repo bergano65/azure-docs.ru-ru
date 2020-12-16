@@ -1,16 +1,16 @@
 ---
 title: Регионы, в которых поддерживается связанная рабочая область Log Analytics
 description: В этой статье описываются поддерживаемые сопоставления регионов между учетной записью службы автоматизации и рабочей областью Log Analytics, так как она относится к определенным функциям службы автоматизации Azure.
-ms.date: 12/01/2020
+ms.date: 12/15/2020
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 25ddf562f92ca96a505432a58f137657a2bbc4bd
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 95537bd54ecb476055608c89ac68a46d410288b6
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446977"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590891"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Регионы, в которых поддерживается связанная рабочая область Log Analytics
 
@@ -44,12 +44,16 @@ ms.locfileid: "96446977"
 |ChinaEast2<sup>3</sup>|ChinaEast2|
 |JapanEast|JapanEast|
 |**Европа**||
+|норсеуропе|норсеуропе|
+|францецентрал|францецентрал|
 |UKSouth|UKSouth|
 |WestEurope|WestEurope|
 |свитзерланднорс|свитзерланднорс|
 |**US Gov**||
 |USGovVirginia|USGovVirginia|
 |Усговаризона<sup>3</sup>|USGov (Аризона)|
+
+
 
 <sup>1</sup> Сопоставление EastUS рабочих областей Log Analytics с учетными записями службы автоматизации не является точным сопоставлением региона с регионом, однако оно корректно.
 

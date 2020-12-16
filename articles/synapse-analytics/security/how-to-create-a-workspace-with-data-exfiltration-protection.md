@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8f11f104e8d3d0a4f3a004ebe9f149cb4132d910
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f8ebbdf70836f3f2613183268f03dc43da1f0671
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501492"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590566"
 ---
 # <a name="create-a-workspace-with-data-exfiltration-protection-enabled"></a>Создание рабочей области с включенной защитой утечка данных
 В этой статье описывается создание рабочей области с включенной защитой утечка данных и Управление утвержденными клиентами Azure AD для этой рабочей области.
@@ -21,7 +21,7 @@ ms.locfileid: "96501492"
 >[!Note]
 >После создания рабочей области невозможно изменить конфигурацию рабочей области для управляемой виртуальной сети и защиты утечка данных.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 - Разрешения на создание ресурса рабочей области в Azure.
 - Разрешения рабочей области синапсе для создания управляемых частных конечных точек.
 - Подписки, зарегистрированные для поставщика сетевых ресурсов. [Подробнее.](../../azure-resource-manager/management/resource-providers-and-types.md)
@@ -33,7 +33,7 @@ ms.locfileid: "96501492"
 1. Выберите "Да" для параметра "разрешить трафик только для исходящих данных только утвержденных целей".
 1. Выберите утвержденные клиенты Azure AD для этой рабочей области.
 1. Проверьте конфигурацию и создайте рабочую область.
-:::image type="content" source="./media/how-to-create-a-workspace-with-data-exfiltration-protection/workspace-creation-data-exfiltration-protection.png" alt-text="Создание рабочей области с защитой утечка данных":::
+:::image type="content" source="./media/how-to-create-a-workspace-with-data-exfiltration-protection/workspace-creation-data-exfiltration-protection.png" alt-text="Снимок экрана, на котором показано, как создать рабочую область синапсе с выбранным параметром &quot;включить управление виртуальной сетью&quot;.":::
 
 ## <a name="manage-approved-azure-active-directory-tenants-for-the-workspace"></a>Управление утвержденными клиентами Azure Active Directory для рабочей области
 1. В портал Azure рабочей области перейдите в раздел "утвержденные клиенты Azure AD". Список утвержденных клиентов Azure AD для этой рабочей области будет указан здесь. Клиент рабочей области включен по умолчанию и не указан в списке.

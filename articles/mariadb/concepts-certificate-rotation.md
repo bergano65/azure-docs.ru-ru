@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 29a693ac8ff0b170abf59c9671d4b411b456b540
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 02c0ecfc24b65afd46d75464b5411cfd5cf61857
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346984"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591537"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Основные сведения об изменениях в корневом центре сертификации для базы данных Azure для MariaDB
 
@@ -129,8 +129,12 @@ ms.locfileid: "93346984"
 Так как это обновление является изменением на стороне клиента, если клиент использовался для считывания данных с сервера реплики, необходимо также применить изменения для этих клиентов.
 
 ###    <a name="12-if-i-am-using-data-in-replication-do-i-need-to-perform-any-action"></a>12. Если я использую репликацию данных, нужно ли выполнять какие-либо действия?
+
 Если вы используете [репликацию данных](concepts-data-in-replication.md) для подключения к базе данных Azure для MySQL, необходимо учитывать два фактора.
-*   Если репликация данных выполняется из виртуальной машины (локальной или виртуальной машины Azure) в базу данных Azure для MySQL, необходимо проверить, используется ли SSL для создания реплики. Выполните команду **ОТОБРАЗИТЬ состояние Slave** и проверьте следующий параметр.  
+
+> [!NOTE]
+>  Эта статья содержит ссылки на термин «ведомый» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
+*   Если репликация данных выполняется из виртуальной машины (локальной или виртуальной машины Azure) в базу данных Azure для MySQL, необходимо проверить, используется ли SSL для создания реплики. Выполните команду **ОТОБРАЗИТЬ состояние Slave** и проверьте следующий параметр. 
 
     ```azurecli-interactive
     Master_SSL_Allowed            : Yes
@@ -149,7 +153,7 @@ ms.locfileid: "93346984"
 Чтобы проверить, используется ли SSL-соединение для подключения к серверу, обратитесь к [проверке SSL](howto-configure-ssl.md#verify-the-ssl-connection).
 
 ### <a name="14-is-there-an-action-needed-if-i-already-have-the-digicertglobalrootg2-in-my-certificate-file"></a>14. требуется ли действие, если у меня уже есть DigiCertGlobalRootG2 в файле сертификата?
-Нет. Если файл сертификата уже содержит **DigiCertGlobalRootG2** , никаких действий не требуется.
+Нет. Если файл сертификата уже содержит **DigiCertGlobalRootG2**, никаких действий не требуется.
 
 ###    <a name="15-what-if-i-have-further-questions"></a>15. что делать, если у меня возникнут дополнительные вопросы?
 Если у вас есть вопросы, получите ответы от экспертов сообщества в [Microsoft Q&а](mailto:AzureDatabaseformariadb@service.microsoft.com). Если у вас есть план поддержки и вам нужна техническая помощь, [свяжитесь с нами](mailto:AzureDatabaseformariadb@service.microsoft.com).

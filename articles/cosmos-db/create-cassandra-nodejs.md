@@ -9,12 +9,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/18/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 6b05e8fbd2f688b4dd5611302c8df1b1deb16ab3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b9e036df91eecadc701664a19905a92c142b7585
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099799"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591911"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-nodejs-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Node.js и Azure Cosmos DB
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -107,7 +107,7 @@ ms.locfileid: "93099799"
 
    ```javascript
    function createTable(next) {
-    var query = "CREATE TABLE IF NOT EXISTS uprofile.user (user_id int PRIMARY KEY, user_name text, user_bcity text)";
+       var query = "CREATE TABLE IF NOT EXISTS uprofile.user (user_id int PRIMARY KEY, user_name text, user_bcity text)";
         client.execute(query, next);
         console.log("created table");
    },
@@ -149,7 +149,7 @@ ms.locfileid: "93099799"
             });
         },
     ```  
-    
+
 * Запрос на получение значения ключа.
 
     ```javascript
@@ -189,7 +189,7 @@ ms.locfileid: "93099799"
     Теперь строка 2 должна выглядеть примерно так: 
 
     `config.username = 'cosmos-db-quickstart';`
-    
+
 1. Скопируйте значение параметра "Пароль" с портала и вставьте его над элементом `<FillMEIN>` в строке 3.
 
     Теперь строка 3 должна выглядеть примерно так:
@@ -197,12 +197,12 @@ ms.locfileid: "93099799"
     `config.password = '2Ggkr662ifxz2Mg==';`
 
 1. Сохраните файл `config.js`.
-    
+
 ## <a name="use-the-x509-certificate"></a>Использование сертификата X509
 
 1. Скачайте сертификат Baltimore CyberTrust Root на локальный компьютер из [https://cacert.omniroot.com/bc2025.crt](https://cacert.omniroot.com/bc2025.crt). Переименуйте файл, указав расширение файла `.cer`.
 
-   Сертификат имеет серийный номер `02:00:00:b9` и отпечаток SHA1 `d4🇩🇪20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`.
+   Сертификат имеет серийный номер `02:00:00:b9` и отпечаток SHA1 `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`.
 
 2. Откройте `uprofile.js` и измените `path\to\cert` таким образом, чтобы они указывали на новый сертификат.
 
@@ -242,7 +242,7 @@ ms.locfileid: "93099799"
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
 
-5. На портале Azure откройте **обозреватель данных** , чтобы запросить, изменить и обработать новые данные. 
+5. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
     :::image type="content" source="./media/create-cassandra-nodejs/data-explorer.png" alt-text="Просмотр данных в обозревателе данных"::: 
 

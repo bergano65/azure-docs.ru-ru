@@ -4,12 +4,12 @@ description: В статье описано, как создать прилож�
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1b973f8c132d9faec4fd6c9185345c0926cc35e1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e77ff762de11a9c8a723b162993db11efe715b66
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88942263"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591554"
 ---
 # <a name="use-java-to-send-events-to-or-receive-events-from-azure-event-hubs-azure-eventhubs"></a>Использование Java для отправки и получения событий в Центрах событий Azure (azure-eventhubs)
 
@@ -74,8 +74,8 @@ public class SimpleSend {
 
     public static void main(String[] args)
             throws EventHubException, ExecutionException, InterruptedException, IOException {
-            
-            
+
+
     }
  }
 ```
@@ -178,11 +178,11 @@ eventHubClient.closeSync();
 
 1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **Создать ресурс** в левой части экрана.
 2. Выберите **Хранилище**, а затем **Учетная запись хранения**. В окне **Создание учетной записи хранения** введите имя учетной записи хранения. Заполните остальные поля, выберите нужный регион, а затем **Создать**.
-   
+
     ![Создание учетной записи хранения на портале Azure](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-azure-storage-account.png)
 
 3. Выберите созданную учетную запись хранения, а затем **Ключи доступа**:
-   
+
     ![Получение ключей доступа на портале Azure](./media/event-hubs-dotnet-framework-getstarted-receive-eph/select-azure-storage-access-keys.png)
 
     Скопируйте значение key1 во временное расположение. Оно будет использоваться далее в этом руководстве.
@@ -207,11 +207,11 @@ eventHubClient.closeSync();
 Для различных типов сред сборки можно явно получить последние выпущенные JAR-файлы из [центрального репозитория Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22).
 
 1. Следующий пример сначала создает новый проект Maven для приложения консоли или оболочки в избранной среде разработки Java. Класс называется `ErrorNotificationHandler`.     
-   
+
     ```java
     import java.util.function.Consumer;
     import com.microsoft.azure.eventprocessorhost.ExceptionReceivedEventArgs;
-   
+
     public class ErrorNotificationHandler implements Consumer<ExceptionReceivedEventArgs>
     {
         @Override
@@ -222,7 +222,7 @@ eventHubClient.closeSync();
     }
     ```
 2. Создайте новый класс с именем `EventProcessorSample`с помощью следующего кода: Замените значения заполнителей значениями, которые использовались при создании концентратора событий и учетной записи хранения:
-   
+
    ```java
    package com.microsoft.azure.eventhubs.samples.eventprocessorsample;
 
@@ -250,13 +250,13 @@ eventHubClient.closeSync();
            String storageConnectionString = "----AzureStorageConnectionString----";
            String storageContainerName = "----StorageContainerName----";
            String hostNamePrefix = "----HostNamePrefix----";
-        
+
            ConnectionStringBuilder eventHubConnectionString = new ConnectionStringBuilder()
                 .setNamespaceName(namespaceName)
                 .setEventHubName(eventHubName)
                 .setSasKeyName(sasKeyName)
                 .setSasKey(sasKey);
-        
+
            EventProcessorHost host = new EventProcessorHost(
                 EventProcessorHost.createHostName(hostNamePrefix),
                 eventHubName,
@@ -264,7 +264,7 @@ eventHubClient.closeSync();
                 eventHubConnectionString.toString(),
                 storageConnectionString,
                 storageContainerName);
-        
+
            System.out.println("Registering host named " + host.getHostName());
            EventProcessorOptions options = new EventProcessorOptions();
            options.setExceptionNotification(new ErrorNotificationHandler());
@@ -284,7 +284,7 @@ eventHubClient.closeSync();
            .thenAccept((unused) ->
            {
                System.out.println("Press enter to stop.");
-               try 
+                 try 
                {
                    System.in.read();
                }
@@ -294,8 +294,8 @@ eventHubClient.closeSync();
                }
            })
            .thenCompose((unused) ->
-           {
-               return host.unregisterEventProcessor();
+            {
+                return host.unregisterEventProcessor();
            })
            .exceptionally((e) ->
            {
@@ -307,13 +307,13 @@ eventHubClient.closeSync();
                return null;
            })
            .get(); // Wait for everything to finish before exiting main!
-        
+
            System.out.println("End of sample");
        }
    }
    ```
 3. Создайте еще один класс с именем `EventProcessor` при помощи следующего кода:
-   
+
     ```java
     public static class EventProcessor implements IEventProcessor
     {
@@ -332,7 +332,7 @@ eventHubClient.closeSync();
         {
             System.out.println("SAMPLE: Partition " + context.getPartitionId() + " is closing for reason " + reason.toString());
         }
-        
+
         // onError is called when an error occurs in EventProcessorHost code that is tied to this partition, such as a receiver failure.
         @Override
         public void onError(PartitionContext context, Throwable error)
@@ -353,7 +353,7 @@ eventHubClient.closeSync();
                     System.out.println("SAMPLE (" + context.getPartitionId() + "," + data.getSystemProperties().getOffset() + "," +
                             data.getSystemProperties().getSequenceNumber() + "): " + new String(data.getBytes(), "UTF8"));
                     eventCount++;
-                    
+
                     // Checkpointing persists the current position in the event stream for this partition and means that the next
                     // time any host opens an event processor on this event hub+consumer group+partition combination, it will start
                     // receiving at the event after this one. 
@@ -361,7 +361,7 @@ eventHubClient.closeSync();
                     if ((checkpointBatchingCount % 5) == 0)
                     {
                         System.out.println("SAMPLE: Partition " + context.getPartitionId() + " checkpointing at " +
-                            data.getSystemProperties().getOffset() + "," + data.getSystemProperties().getSequenceNumber());
+                               data.getSystemProperties().getOffset() + "," + data.getSystemProperties().getSequenceNumber());
                         // Checkpoints are created asynchronously. It is important to wait for the result of checkpointing
                         // before exiting onEvents or before creating the next checkpoint, to detect errors and to ensure proper ordering.
                         context.checkpoint(data).get();
@@ -426,4 +426,3 @@ API предоставляет механизм реализации польз�
 - [EventProcessorHost](event-hubs-event-processor-host.md)
 - [Функции и терминология в Центрах событий Azure](event-hubs-features.md)
 - [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
-

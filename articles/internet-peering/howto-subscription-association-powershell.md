@@ -6,15 +6,15 @@ services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: how-to
-ms.date: 11/27/2019
+ms.date: 12/15/2020
 ms.author: prmitiki
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: aed079c467139ac5819951c5895ba753ee38ae2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b463293899dc2586404d68145943caff3105e89
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89067745"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590194"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-powershell"></a>Связывание однорангового ASN с подпиской Azure с помощью PowerShell
 
@@ -101,7 +101,7 @@ Set-PeerAsn -Name Contoso_1234 -Email "newemail@test.com" -Phone "1800-000-0000"
 ## <a name="delete-peerasn"></a>Удаление PeerAsn
 Удаление PeerASN в настоящее время не поддерживается. Если вам нужно удалить PeerASN, обратитесь в службу [пиринга Майкрософт](mailto:peering@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание или изменение прямого пиринга](howto-direct-powershell.md)
 * [Преобразование устаревшего прямого пиринга в ресурс Azure](howto-legacy-direct-powershell.md)

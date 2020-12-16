@@ -7,13 +7,13 @@ ms.subservice: reservations
 ms.author: banders
 ms.reviewer: yashar
 ms.topic: troubleshooting
-ms.date: 11/16/2020
-ms.openlocfilehash: 1b36577c3c0940687f98394f8ea4faae83f371be
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.date: 12/15/2020
+ms.openlocfilehash: ad85bd278b5dff1532f218acc0b8e88515d96070
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887201"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561211"
 ---
 # <a name="troubleshoot-no-eligible-subscriptions"></a>Устранение неполадок с неподходящими подписками
 
@@ -94,8 +94,8 @@ You can only purchase reservations using subscriptions on which you have owner o
 1. Укажите адрес электронной почты пользователя, для которого хотите добавить роль "Владелец".
 1. Выберите пользователя, а затем щелкните **Сохранить**.
 
-Дополнительные сведения см. в разделе [Добавление или изменение пользователей, которые могут управлять резервированием](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
+Дополнительные сведения см. в разделе [Добавление или изменение пользователей, которые могут управлять резервированием](manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- Если нужно, чтобы владелец резервирования предоставил вам доступ к резервированию, см. статью [Добавление или изменение пользователей, которые могут управлять резервированием](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
+- Если нужно, чтобы владелец резервирования предоставил вам доступ к резервированию, см. статью [Добавление или изменение пользователей, которые могут управлять резервированием](manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default).

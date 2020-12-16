@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/18/2020
+ms.date: 12/15/2020
 ms.author: b-juche
-ms.openlocfilehash: ee5e1230acd059d69648144b84a8fbfa652ef6e7
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: ceaf0209dd14c8d97088d7f8e8e6990429607089
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854059"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591828"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Создание тома с двумя протоколами (NFSv3 и SMB) для Azure NetApp Files
 
@@ -49,8 +49,8 @@ Azure NetApp Files поддерживает создание томов с по�
     
     | Стиль безопасности    | Клиенты, которые могут изменять разрешения   | Разрешения, которые могут использовать клиенты  | Итоговый действующий стиль безопасности    | Клиенты, у которых есть доступ к файлам     |
     |-  |-  |-  |-  |-  |
-    | UNIX  | NFS   | Биты режима NFSv3   | UNIX  | NFS и Windows   |
-    | NTFS  | Windows   | Списки ACL NTFS     | NTFS  |NFS и Windows|
+    | `Unix`    | NFS   | Биты режима NFSv3   | UNIX  | NFS и Windows   |
+    | `Ntfs`    | Windows   | Списки ACL NTFS     | NTFS  |NFS и Windows|
 * Пользователи UNIX, монтирование тома в стиле безопасности NTFS с помощью NFS, будут проходить проверку подлинности как пользователь Windows `root` для UNIX `root` и `pcuser` для всех остальных пользователей. Убедитесь, что эти учетные записи пользователей существуют в Active Directory до подключения тома при использовании NFS. 
 
 

@@ -16,12 +16,12 @@ ms.date: 09/16/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e36b2d4576b43544bec89efd326363344b35be9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48b5260e883d85899953240f6ee4f83127681c9e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90997088"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591312"
 ---
 # <a name="change-approval-and-requestor-information-preview-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение параметров утверждения и сведений о запрашивающей (Предварительная версия) для пакета Access в управлении назначениями Azure AD
 
@@ -132,13 +132,15 @@ ms.locfileid: "90997088"
 
 1. Под первым утверждающим, вторым утверждающим или обоими нажмите кнопку " **отобразить дополнительные параметры запроса**".
 
-    ![Доступ к пакету — политика — отображение дополнительных параметров запроса](./media/entitlement-management-access-package-approval-policy/alternate-approvers-click-advanced-request.png)
+    :::image type="content" source="media/entitlement-management-access-package-approval-policy/alternate-approvers-click-advanced-request.png" alt-text="Доступ к пакету — политика — отображение дополнительных параметров запроса":::
 
 1. Задать **, если действие не предпринято, пересылаться другим утверждающим?** переключитесь на **"Да"**.
 
 1. Нажмите кнопку **добавить других утверждающих** и выберите из списка альтернативных утверждающих.
 
     ![Доступ к пакету — политика — Добавление других утверждающих](./media/entitlement-management-access-package-approval-policy/alternate-approvers-add.png)
+
+    Если выбрать менеджер в качестве утверждающего для первого утверждающего, у вас будет дополнительный параметр — **Диспетчер второго уровня в качестве альтернативного утверждающего**, доступный для выбора в поле Альтернативный утверждающий. Если выбран этот параметр, необходимо добавить утверждающего утверждающий, чтобы перенаправить запрос в, если система не может найти диспетчер второго уровня.
 
 1. В поле **переадресация на альтернативные утверждающие (-s) после** поля Количество дней укажите число дней, в течение которых утверждающие должны утвердить или отклонить запрос. Если ни один из утверждающих не утвердил или не отклонил запрос до длительности запроса, срок действия запроса истекает (время ожидания), и пользователь должен будет отправить другой запрос на пакет Access. 
 
@@ -173,7 +175,7 @@ ms.locfileid: "90997088"
 
     ![Доступ к пакету — политика — Настройка локализованного текста](./media/entitlement-management-access-package-approval-policy/add-localization-question.png)
 
-1. Выберите **Формат ответа** , в котором должны отвечать запрашивающие стороны. Форматы ответов: *короткий текст*, *несколько вариантов*и *длинный текст*.
+1. Выберите **Формат ответа** , в котором должны отвечать запрашивающие стороны. Форматы ответов: *короткий текст*, *несколько вариантов* и *длинный текст*.
  
     ![Доступ к пакету — политика — выберите Просмотр и изменение формата ответов с несколькими вариантами.](./media/entitlement-management-access-package-approval-policy/answer-format-view-edit.png)
  
@@ -190,6 +192,6 @@ ms.locfileid: "90997088"
 
 После настройки сведений о запрашивающей странице в политике пакета доступа можно просмотреть ответы запрашивающей стороны на вопросы. Рекомендации по просмотру сведений о запрашивающей стороны см. [в статье ответы на вопросы (Предварительная версия)](entitlement-management-request-approve.md#view-requestors-answers-to-questions-preview).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Изменение параметров жизненного цикла пакета Access](entitlement-management-access-package-lifecycle-policy.md)
 - [Просмотр запросов для пакета Access](entitlement-management-access-package-requests.md)

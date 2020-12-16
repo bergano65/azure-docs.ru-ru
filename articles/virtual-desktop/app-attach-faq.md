@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 73fb9bf436c043e903977fafbb5a502e2edc5488
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 78c21e9515965f1c15315967f6a19a0df2838dc2
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518691"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591201"
 ---
 # <a name="msix-app-attach-faq"></a>Часто задаваемые вопросы о присоединении приложения MSIX
 
@@ -27,7 +27,7 @@ MSIX — это формат упаковки для приложений, а п
 
 Присоединение приложения MSIX не использует Фслогикс. Однако MSIX приложений Attach и Фслогикс предназначены для совместной работы, чтобы обеспечить удобство работы пользователей.
 
-## <a name="can-i-use-msix-app-attach-outside-of-windows-virtual-desktop"></a>Можно ли использовать подключение приложения MSIX за пределами виртуального рабочего стола Windows?
+## <a name="can-i-use-the-msix-app-attach-outside-of-windows-virtual-desktop"></a>Можно ли использовать приложение MSIX, подключенное за пределами виртуального рабочего стола Windows?
 
 API-интерфейсы, подключаемые к приложению Power MSIX, доступны для Windows 10 Корпоративная. Эти API-интерфейсы можно использовать за пределами виртуального рабочего стола Windows. Однако нет плоскости управления для подключения приложения MSIX за пределами виртуального рабочего стола Windows.
 

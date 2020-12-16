@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: pimorano
 ms.reviewer: omafnan
-ms.openlocfilehash: 077815d117af0328a3466346727e135caaf8ff21
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8d4c1928ae1fac9b840245756c4bf5fe22a83f0f
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458010"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590517"
 ---
 # <a name="synapse-studio-sql-scripts-in-azure-synapse-analytics"></a>Скрипты SQL синапсе Studio в Azure синапсе Analytics 
 
@@ -79,7 +79,7 @@ ms.locfileid: "96458010"
 В меню действия в разделе Разработка скриптов SQL выберите пункт "создать папку" в меню "действия" в разделе "Разработка скриптов SQL". И введите имя новой папки во всплывающем окне. 
 
 > [!div class="mx-imgBorder"] 
-> ![невсклскрипт](./media/author-sql-script/new-sql-script-create-folder.png)
+> ![Снимок экрана, на котором показан пример скрипта SQL с выбранным параметром "создать папку".](./media/author-sql-script/new-sql-script-create-folder.png)
 
 Чтобы переместить скрипт SQL в папку, можно выбрать скрипт SQL и выбрать пункт "переместить в" в меню "действия". Затем найдите конечную папку в новом окне и переместите скрипт SQL в выбранную папку. Можно также быстро перетащить скрипт SQL и поместить его в папку.  
 
