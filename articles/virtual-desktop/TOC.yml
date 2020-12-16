@@ -92,8 +92,18 @@
           href: diagnostics-log-analytics.md
     - name: Публикация встроенных приложений
       href: publish-apps.md
-    - name: Настройка присоединения приложения MSIX
-      href: app-attach.md
+    - name: Использование технологии подключения приложений MSIX
+      items:
+        - name: Настройка технологии подключения приложений MSIX с использованием портала Azure
+          href: app-attach-azure-portal.md
+        - name: Настройка технологии подключения приложений MSIX с использованием PowerShell
+          href: app-attach-powershell.md
+        - name: Создание скриптов PowerShell
+          href: app-attach.md
+        - name: Подготовка образа MSIX
+          href: app-attach-image-prep.md
+        - name: Настройка файлового ресурса
+          href: app-attach-file-share.md
     - name: Использование Microsoft Teams
       href: teams-on-wvd.md
     - name: Настройка Многофакторной идентификации Azure AD
@@ -112,6 +122,8 @@
       href: disaster-recovery.md
 - name: Основные понятия
   items:
+    - name: Встроенные роли
+      href: rbac.md
     - name: Аутентификация
       href: authentication.md
     - name: Среда Виртуального рабочего стола Windows

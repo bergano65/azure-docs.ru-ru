@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/18/2020
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 3f68ca0fc577e6cf3f896ede0418f11f59756701
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4d8f8783e9f6eece4de8dc1c35740fa7aaf03f8
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86512625"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97532028"
 ---
 | Ресурс | Basic | Standard | Premium |
 |---|---|---|---|
@@ -23,7 +23,7 @@ ms.locfileid: "86512625"
 | Операции чтения за минуту<sup>2, 3</sup> | 1000 | 3000 | 10 000 |
 | Операции записи за минуту<sup>2, 4</sup> | 100 | 500 | 2 000 |
 | Пропускная способность скачивания в Мбит/с<sup>2</sup> | 30 | 60 | 100 |
-| Пропускная способность передачи в Мбит/с<sup>2</sup> | 10 | 20 | 50 |
+| Пропускная способность отправки в Мбит/с<sup>2</sup> | 10 | 20 | 50 |
 | Веб-перехватчики | 2 | 10 | 500 |
 | Георепликация | Недоступно | Недоступно | [Поддерживаются][geo-replication] |
 | Доверие к содержимому | Недоступно | Недоступно | [Поддерживаются][content-trust] |
