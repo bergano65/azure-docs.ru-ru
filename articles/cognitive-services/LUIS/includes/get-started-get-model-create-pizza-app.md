@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: include
 ms.custom: include file
 ms.author: roy-har
-ms.openlocfilehash: 9965e4c856fdef2af17b116264ad5344ebc97eb2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 081b9288d091e26d0e6d30aa849ced18a3c2ffb6
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "84466861"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938466"
 ---
 Создайте приложение Pizza.
 
@@ -59,7 +59,7 @@ ms.locfileid: "84466861"
 
 ## <a name="record-the-access-values-for-your-pizza-app"></a>Запись значений доступа для приложения Pizza
 
-Чтобы использовать новое приложение Pizza, вам потребуются его идентификатор, а также ключ и конечная точка разработки.
+Чтобы использовать новое приложение Pizza, вам потребуются его идентификатор, а также ключ и конечная точка разработки. Для получения прогнозов потребуется отдельная конечная точка прогнозирования и ключ прогнозирования.
 
 Вот как найти эти значения:
 
@@ -67,5 +67,5 @@ ms.locfileid: "84466861"
 1. На странице **Application Settings** (Параметры приложения) запишите значение **App ID** (Идентификатор приложения).
 1. Щелкните **Azure Resources** (Ресурсы Azure).
 1. Щелкните **Authoring Resource** (Ресурс разработки).
-1. На вкладке **Authoring Resource** (Ресурс разработки) запишите значение **Primary Key** (Первичный ключ). Это значение является ключом разработки.
+1. На вкладках **Authoring Resource** (Ресурс разработки) и **Prediction Resources** (Ресурсы прогнозирования) запишите **первичный ключ**. Это значение является ключом разработки.
 1. Скопируйте значение **Endpoint URL** (URL-адрес конечной точки). Это значение является конечной точкой разработки.
