@@ -6,14 +6,14 @@ services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: conceptual
-ms.date: 11/27/2019
+ms.date: 12/15/2020
 ms.author: prmitiki
-ms.openlocfilehash: 20f25e0add5d05bb2dcf7f3ebdc86ccd5ae889d0
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: bee41bb8e5beb4df3086ab50499cb185a83e4efe
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510793"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97592336"
 ---
 # <a name="peering-policy"></a>Политика пиринга
 Корпорация Майкрософт поддерживает избирательную политику пиринга, предназначенную для обеспечения оптимального взаимодействия с клиентами по отраслевым стандартам и рекомендациям, масштабирования для будущего спроса и стратегического размещения пиринга. Таким образом, корпорация Майкрософт оставляет за собой право делать исключения в соответствии с политикой, как нужно. Общие требования корпорации Майкрософт к сети описаны в разделах ниже. Они применимы как к прямым пиринга, так и к запросам пиринга Exchange. 

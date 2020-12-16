@@ -7,19 +7,19 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: af8d768ceeaacdf1c8a0f6cdc8be0041e4ae4ed1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fb0d3e3c57a26f7ca14b74edc42cb657ba6074c3
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099085"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605008"
 ---
 # <a name="what-is-the-new-azure-digital-twins-how-is-it-different-from-the-previous-version-2018"></a>Новые возможности в Azure Digital Twins. В чем отличие от предыдущей версии (2018)?
 
 Первая общедоступная предварительная версия Azure Digital Twins была выпущена в октябре 2018 года. Хотя основные понятия из этой первой версии были перенесены в новую службу, многие из интерфейсов и деталей реализации были изменены, чтобы сделать службу более гибкой и доступной. Эти изменения были произведены на основе отзывов клиентов.
 
 > [!IMPORTANT]
-> С учетом расширенных возможностей новой службы поддержка предыдущей службы Azure Digital Twins будет прекращена до конца 2020 года.
+> В свете расширенных возможностей новой службы Предыдущая Служба Digital двойников будет прекращена, а ее API и связанные с ним данные станут недоступны с 18 января 2021 г.
 
 Если вы использовали первую версию Azure Digital двойников во время первой общедоступной предварительной версии, воспользуйтесь информацией и рекомендациями в этой статье, чтобы научиться работать с новой службой и использовать преимущества ее функций.
 
@@ -38,7 +38,7 @@ ms.locfileid: "93099085"
 
 ## <a name="service-limits"></a>Ограничения службы
 
-Список ограничений Azure Digital двойников см. в разделе [*reference: ограничения службы*](reference-service-limits.md).
+Список ограничений Azure Digital Twins см. в статье [*Справочные материалы. Ограничения службы*](reference-service-limits.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

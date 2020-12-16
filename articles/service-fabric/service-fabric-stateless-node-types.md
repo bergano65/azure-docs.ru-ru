@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: pepogors
-ms.openlocfilehash: 266c04a049cab574576f781c397aee566efe5372
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 6259de345b534bfb51ef6ba1a9c3895800546caf
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516625"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605502"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-with-stateless-only-node-types-preview"></a>Развертывание кластера Azure Service Fabric с типами узлов только без отслеживания состояния (Предварительная версия)
 Service Fabric типы узлов поставляются с предположением, что в некоторый момент времени службы с отслеживанием состояния могут размещаться на узлах. Типы узлов без отслеживания состояния отменяют это предположение для типа узла, тем самым позволяя типу узла использовать другие функции, такие как более быстрые операции масштабирования, поддержку автоматического обновления ОС на бронзовой устойчивости и масштабирование до более чем 100 узлов в одном масштабируемом наборе виртуальных машин.
@@ -37,7 +37,7 @@ Service Fabric типы узлов поставляются с предполо�
             "startPort": "[parameters('nt0applicationStartPort')]"
         },
         "clientConnectionEndpointPort": "[parameters('nt0fabricTcpGatewayPort')]",
-        "durabilityLevel": "Bronze",
+        "durabilityLevel": "Silver",
         "ephemeralPorts": {
             "endPort": "[parameters('nt0ephemeralEndPort')]",
             "startPort": "[parameters('nt0ephemeralStartPort')]"
@@ -54,7 +54,7 @@ Service Fabric типы узлов поставляются с предполо�
             "startPort": "[parameters('nt1applicationStartPort')]"
         },
         "clientConnectionEndpointPort": "[parameters('nt1fabricTcpGatewayPort')]",
-        "durabilityLevel": "Silver",
+        "durabilityLevel": "Bronze",
         "ephemeralPorts": {
             "endPort": "[parameters('nt1ephemeralEndPort')]",
             "startPort": "[parameters('nt1ephemeralStartPort')]"
@@ -103,7 +103,7 @@ Service Fabric типы узлов поставляются с предполо�
             "clusterEndpoint": "[reference(parameters('clusterName')).clusterEndpoint]",
             "nodeTypeRef": "[parameters('vmNodeType1Name')]",
             "dataPath": "D:\\\\SvcFab",
-            "durabilityLevel": "Silver",
+            "durabilityLevel": "Bronze",
             "certificate": {
                 "thumbprint": "[parameters('certificateThumbprint')]",
                 "x509StoreName": "[parameters('certificateStoreValue')]"
@@ -254,7 +254,7 @@ Load Balancer (цен. категория "Стандартный") и стан�
 После завершения развертывания ресурсов можно приступить к отключению узлов в типе узла, которые необходимо удалить из исходного кластера.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 * [Надежные службы](service-fabric-reliable-services-introduction.md)
 * [Типы узлов и масштабируемые наборы виртуальных машин](service-fabric-cluster-nodetypes.md)
 

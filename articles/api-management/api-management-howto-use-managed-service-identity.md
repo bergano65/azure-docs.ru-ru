@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 11/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 2866633503399e9f6d78e8665f7a45d9063f01d9
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 8ec0f8cf090b3ae85a8602fb39cb07f03a417133
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585791"
+ms.locfileid: "97605604"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Использование управляемых удостоверений в службе управления API Azure
 
@@ -38,7 +38,6 @@ ms.locfileid: "97585791"
 3. На вкладке **назначенная система** переключите **состояние** **на вкл**. Нажмите **Сохранить**.
 
     :::image type="content" source="./media/api-management-msi/enable-system-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного системой" border="true":::
-
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -118,7 +117,6 @@ ms.locfileid: "97585791"
 ```
 
 `tenantId`Свойство определяет, к какому клиенту Azure AD принадлежит удостоверение. `principalId`Свойство является уникальным идентификатором для нового удостоверения экземпляра. В Azure AD субъект-служба имеет то же имя, которое вы присвоили экземпляру службы управления API.
-
 
 > [!NOTE]
 > Экземпляр управления API может одновременно иметь как назначенные системой, так и назначенные пользователем удостоверения. В этом случае свойство будет `type` иметь значение `SystemAssigned,UserAssigned` .
@@ -265,7 +263,6 @@ ms.locfileid: "97585791"
 ### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Проверка подлинности в серверной части с помощью удостоверения управления API
 
 Вы можете использовать назначенное системой удостоверение для проверки подлинности в серверной части с помощью политики [аутентификации, управляемой удостоверениями](api-management-authentication-policies.md#ManagedIdentity) .
-
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем
 
@@ -415,7 +412,6 @@ ms.locfileid: "97585791"
 ### <a name="authenticate-to-the-back-end-by-using-a-user-assigned-identity"></a>Проверка подлинности в серверной части с помощью назначенного пользователем удостоверения
 
 Вы можете использовать назначенное пользователем удостоверение для проверки подлинности в серверной части с помощью политики [аутентификации, управляемой удостоверениями](api-management-authentication-policies.md#ManagedIdentity) .
-
 
 ## <a name="remove-an-identity"></a><a name="remove"></a>Удаление удостоверения
 

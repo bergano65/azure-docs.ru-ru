@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 10/02/2020
+ms.date: 12/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: b8f13a20232fab61dc082c1b12b7ddaa11807554
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 7d97958c5fd1274495da88c064b63e59e354f691
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016196"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606969"
 ---
 # <a name="azure-time-series-insights-gen2-use-cases"></a>Примеры использования службы "Аналитика временных рядов Azure" 2-го поколения
 
@@ -86,7 +86,7 @@ Gen2 "аналитика временных рядов Azure" интуитивн
 
 Обеспечьте интеграцию со службами расширенной аналитики, такими как машинное обучение Azure и Azure Databricks. Служба "аналитика временных рядов Azure" Gen2 передает необработанные данные с миллионов устройств. Служба добавляет контекстные данные, которые можно легко использовать с помощью набора служб Azure Analytics.
 
-[![Analytics](media/v2-update-use-cases/advanced-analytics.png)](media/v2-update-use-cases/advanced-analytics.png#lightbox)
+[![Аналитика](media/v2-update-use-cases/advanced-analytics.png)](media/v2-update-use-cases/advanced-analytics.png#lightbox)
 
 Расширенная аналитика и машинное обучение используют и обрабатывают большие объемы данных. Эти данные используются для принятия решений на основе данных и прогнозного анализа. В случае использования Интернета вещей расширенные аналитические алгоритмы получают сведения о данных из миллионов устройств. Эти устройства передают данные несколько раз в секунду. Данные, которые поступают с устройств Интернета вещей, не обработаны. Они не содержат контекстной информации, такой как расположение устройства и единицы измерения показания датчика. Таким образом, необработанные данные трудно использовать непосредственно в расширенной аналитике.
 

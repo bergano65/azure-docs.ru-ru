@@ -3,12 +3,12 @@ title: Руководство. Развертывание многоконтей
 description: Из этого руководства вы узнаете, как развернуть группу с несколькими контейнерами в службе "Экземпляры контейнеров Azure" с помощью YAML-файла и Azure CLI.
 ms.topic: article
 ms.date: 07/01/2020
-ms.openlocfilehash: 8f1f13d4fa7e32b76988cdf356d5d1bb0528f824
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6f9dda7735587dfee1dde86c85375efcf057daa7
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091299"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605167"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-a-yaml-file"></a>Руководство по развертыванию многоконтейнерной группы с использованием YAML-файла
 
@@ -37,7 +37,7 @@ ms.locfileid: "93091299"
 
 Чтобы развернуть многоконтейнерную группу с помощью команды [az container create][az-container-create] в Azure CLI, вы должны указать конфигурацию группы контейнеров в YAML-файле. Затем передайте YAML-файл в качестве параметра в команду.
 
-Сначала скопируйте следующий YAML-файл в новый файл с именем **deploy-aci.yaml** . В Azure Cloud Shell для создания файла в рабочей папке можно применить Visual Studio Code.
+Сначала скопируйте следующий YAML-файл в новый файл с именем **deploy-aci.yaml**. В Azure Cloud Shell для создания файла в рабочей папке можно применить Visual Studio Code.
 
 ```
 code deploy-aci.yaml
@@ -178,7 +178,6 @@ Connection: keep-alive
 Вы также можете определить многоконтейнерную группу с использованием [шаблона Resource Manager](container-instances-multi-container-group.md). Шаблон Resource Manager можно легко адаптировать под такие сценарии, в которых нужно развернуть дополнительные ресурсы служб Azure в группе контейнеров.
 
 <!-- LINKS - External -->
-
 
 <!-- LINKS - Internal -->
 [aci-tutorial]: ./container-instances-tutorial-prepare-app.md

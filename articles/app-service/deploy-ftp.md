@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 9884b109db3f3a34ceb323bef9fba1d5bfc23147
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ce8c32b1afdf4178e3ffdc09e9c9176436fa771b
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150259"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605082"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -29,7 +29,7 @@ ms.locfileid: "92150259"
 
     ![Выберите свое приложение.](media/app-service-continuous-deployment/select-your-app.png)
 
-3. Выберите **Deployment Center**  >  **FTP**  >  **панель мониторинга**FTP центра развертывания.
+3. Выберите   >    >  **панель мониторинга** FTP центра развертывания.
 
     ![Откройте панель мониторинга FTP](./media/app-service-deploy-ftp/open-dashboard.png)
 
@@ -42,7 +42,7 @@ ms.locfileid: "92150259"
 Рекомендуется использовать **учетные данные приложения** для развертывания приложения, так как они уникальны для каждого приложения. Тем не менее если щелкнуть **Учетные данные пользователя**, можно задать уровень учетных данных пользователя, которые потом можно использовать для входа в FTP/S во всех службах приложений своей подписки.
 
 > [!NOTE]
-> Проверка подлинности в конечной точке FTP или FTPS с использованием учетных данных уровня пользователя требует имени пользователя в следующем формате:  
+> Для проверки подлинности в конечной точке FTP или FTPS с использованием учетных данных на уровне пользователя требуется имя пользователя в следующем формате: 
 >
 >`<app-name>\<user-name>`
 >
@@ -85,9 +85,18 @@ ms.locfileid: "92150259"
 
 ## <a name="troubleshoot-ftp-deployment"></a>Устранение неполадок с развертыванием FTP
 
-- [Как устранять неполадки с развертыванием FTP?](#how-can-i-troubleshoot-ftp-deployment)
-- [Я не могу выполнять FTP и публиковать мой код. Как устранить проблему?](#im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue)
-- [Как применить пассивный режим для подключения к FTP в Службе приложений Azure?](#how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode)
+- [Развертывание приложения в службе приложений Azure с помощью FTP или FTPS](#deploy-your-app-to-azure-app-service-using-ftps)
+  - [Откройте панель мониторинга FTP](#open-ftp-dashboard)
+  - [Получение информации о подключении по FTP](#get-ftp-connection-information)
+  - [Развертывание файлов в Azure](#deploy-files-to-azure)
+  - [Принудительное применение FTPS](#enforce-ftps)
+  - [Автоматизация с помощью сценариев](#automate-with-scripts)
+  - [Устранение неполадок с развертыванием FTP](#troubleshoot-ftp-deployment)
+    - [Как устранять неполадки с развертыванием FTP?](#how-can-i-troubleshoot-ftp-deployment)
+    - [Я не могу выполнять FTP и публиковать мой код. Как устранить проблему?](#im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue)
+    - [Как применить пассивный режим для подключения к FTP в Службе приложений Azure?](#how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode)
+  - [Дальнейшие действия](#next-steps)
+  - [Дополнительные ресурсы](#more-resources)
 
 ### <a name="how-can-i-troubleshoot-ftp-deployment"></a>Как устранять неполадки с развертыванием FTP?
 

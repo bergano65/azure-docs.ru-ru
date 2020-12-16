@@ -9,22 +9,22 @@ ms.reviewer: dineshm
 ms.date: 09/11/2020
 ms.subservice: blobs
 ms.custom: devx-track-javascript, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 799c0dbc3ddb673cafe0fe4962f7346a841bd4b7
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 544b22e3395cacf0cc2e7a21e4b86325a8f4d236
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95543108"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605264"
 ---
 # <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Настройка рабочего процесса GitHub Actions для развертывания статического веб-сайта в службе хранилища Azure
 
-Начните работу с [действиями GitHub](https://docs.github.com/en/actions) , используя рабочий процесс для развертывания статического сайта в учетной записи хранения Azure. После настройки рабочего процесса для действий GitHub вы сможете автоматически развернуть сайт в Azure из GitHub при внесении изменений в код сайта.
+Начните работу с [действиями GitHub](https://docs.github.com/en/free-pro-team@latest/actions) , используя рабочий процесс для развертывания статического сайта в учетной записи хранения Azure. После настройки рабочего процесса для действий GitHub вы сможете автоматически развернуть сайт в Azure из GitHub при внесении изменений в код сайта.
 
 > [!NOTE]
 > Если вы используете [статические веб-приложения Azure](../../static-web-apps/index.yml), вам не нужно вручную настраивать рабочий процесс для действий GitHub.
 > Статические веб-приложения Azure автоматически создают рабочий процесс для действий GitHub. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Подписка Azure и учетная запись GitHub. 
 
@@ -45,7 +45,7 @@ ms.locfileid: "95543108"
    az ad sp create-for-rbac --name {myStaticSite} --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
 ```
 
-В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки и именем группы ресурсов. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к учетной записи хранения, как показано ниже. Скопируйте этот объект JSON для последующего использования.
+В указанном выше примере замените заполнители своим идентификатором подписки и именем группы ресурсов. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к учетной записи хранения, как показано ниже. Скопируйте этот объект JSON для последующего использования.
 
 ```output 
   {
@@ -184,7 +184,7 @@ ms.locfileid: "95543108"
 
 Если статический веб-сайт и репозиторий GitHub больше не требуются, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о статических веб-приложениях Azure](../../static-web-apps/index.yml)

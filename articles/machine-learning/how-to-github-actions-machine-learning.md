@@ -1,5 +1,5 @@
 ---
-title: Действия GitHub для CI/CD
+title: GitHub Actions для CI/CD
 titleSuffix: Azure Machine Learning
 description: Узнайте, как создать рабочий процесс действий GitHub для обучения модели на Машинное обучение Azure
 services: machine-learning
@@ -10,16 +10,16 @@ ms.author: jukullam
 ms.date: 10/19/2020
 ms.topic: conceptual
 ms.custom: github-actions-azure
-ms.openlocfilehash: 4336827dc7f8cb45f04e4cef94d79d1e6409d5c0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e7f6066cb7ed5c166d3e2bdc3f895073b05b92b9
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92795339"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605031"
 ---
-# <a name="use-github-actions-with-azure-machine-learning"></a>Использование действий GitHub с Машинное обучение Azure
+# <a name="use-github-actions-with-azure-machine-learning"></a>Использование GitHub Actions с Машинным обучением Azure
 
-Начните работу с [действиями GitHub](https://help.github.com/en/articles/about-github-actions) , чтобы обучить модель на машинное обучение Azure. 
+Начните работу с [действиями GitHub](https://docs.github.com/en/free-pro-team@latest/actions) , чтобы обучить модель на машинное обучение Azure. 
 
 > [!NOTE]
 > Действия GitHub для Машинное обучение Azure предоставляются "как есть" и не полностью поддерживаются корпорацией Майкрософт. Если возникли проблемы с конкретным действием, откройте проблему в репозитории для действия. Например, если возникла проблема с действием AML-deploy, сообщите о проблеме в [https://github.com/Azure/aml-deploy]( https://github.com/Azure/aml-deploy) репозитории.
@@ -47,7 +47,7 @@ ms.locfileid: "92795339"
 Создайте репозиторий с помощью операций [ml с действиями GitHub и шаблоном машинное обучение Azure](https://github.com/machine-learning-apps/ml-template-azure). 
 
 1. Откройте [шаблон](https://github.com/machine-learning-apps/ml-template-azure) на сайте GitHub. 
-2. Щелкните **Использовать этот шаблон** . 
+2. Щелкните **Использовать этот шаблон**. 
 
     :::image type="content" source="media/how-to-github-actions-machine-learning/gh-actions-use-template.png" alt-text="Выберите использовать этот шаблон":::
 3. Создайте новый репозиторий из шаблона. В качестве имени репозитория укажите `ml-learning` или выберите нужное имя. 
@@ -55,7 +55,7 @@ ms.locfileid: "92795339"
 
 ## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать**.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myML" --role contributor \
@@ -63,7 +63,7 @@ az ad sp create-for-rbac --name "myML" --role contributor \
                             --sdk-auth
 ```
 
-В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования.
+В приведенном выше примере Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения. Выходные данные содержат объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению Службы приложений, как показано ниже. Скопируйте этот объект JSON для последующего использования.
 
 ```output 
   {
@@ -77,7 +77,7 @@ az ad sp create-for-rbac --name "myML" --role contributor \
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-1. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет** .
+1. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**.
 
 2. Вставьте все выходные данные JSON, полученные из команды Azure CLI, в поле значения секрета. Присвойте секрету имя `AZURE_CREDENTIALS`.
 

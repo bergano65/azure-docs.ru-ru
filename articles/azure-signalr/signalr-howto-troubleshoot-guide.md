@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: cc17dcef7a554bee2715c79ba7d0c2356db2c6b3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 55ad9c90129a5d732f377ac1b6c905c14de319dc
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185663"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607429"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Руководство по устранению неполадок службы Azure SignalR
 
@@ -36,7 +36,7 @@ ms.locfileid: "96185663"
 
 ### <a name="solution"></a>Решение.
 
-По умолчанию утверждения из `context.User.Claims` включаются при создании маркера доступа JWT для **АСРС**(**A** Zure игнал **S****R** **s** ервице), чтобы утверждения сохранялись и можно было передавать из **АСРС** в, `Hub` когда клиент подключается к `Hub` .
+По умолчанию утверждения из `context.User.Claims` включаются при создании маркера доступа JWT для **АСРС**(Zure игнал **R** **s** ервице), чтобы утверждения сохранялись и можно было передавать из **АСРС** в, `Hub` когда клиент подключается к `Hub` .
 
 В некоторых случаях используется `context.User.Claims` для хранения большого количества сведений для сервера приложений, большинство из которых не используются, `Hub` а другими компонентами.
 
@@ -144,11 +144,17 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 ## <a name="429-too-many-requests-returned-for-client-requests"></a>429 (слишком много запросов) возвращено для клиентских запросов
 
-429 возвращает значение, если число **параллельных** подключений превышает предел.
+Есть два способа.
+
+### <a name="concurrent-connection-count-exceeds-limit"></a>Число **одновременных** подключений превышает предел.
 
 Для **свободных** экземпляров ограничение числа **одновременных** подключений равно 20 для **стандартных** экземпляров, ограничение числа **одновременных** подключений **на единицу** равно 1 K, что означает, что Unit100 допускает одновременные подключения 100-K.
 
 Подключения включают как клиентские, так и серверные соединения. Проверьте [,](./signalr-concept-messages-and-connections.md#how-connections-are-counted) как подсчитываются подключения.
+
+### <a name="too-many-negotiate-requests-at-the-same-time"></a>Слишком много запросов на согласование одновременно.
+
+Мы рекомендуем установить произвольную задержку перед повторной попыткой подключения. Дополнительные примеры см. [здесь](#restart_connection) .
 
 ## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500 ошибка при согласовании: служба Azure SignalR еще не подключена, повторите попытку позже.
 
@@ -257,7 +263,7 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 Убедитесь, что подключение закрыто. Вызов метода `HubConnection.DisposeAsync()` останавливает подключение вручную после его использования.
 
-Пример:
+Пример.
 
 ```C#
 var connection = new HubConnectionBuilder()

@@ -10,12 +10,12 @@ author: nabhishek
 ms.author: abnarain
 manager: anandsub
 ms.date: 05/08/2019
-ms.openlocfilehash: a454c1297b0f25c64b11217811999d4331148205
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: f2a0784b2795b82131880d73a6d9217acc1d72d3
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96022468"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606221"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "96022468"
 | [Машинное обучение Azure Studio (классическая модель)](#azure-machine-learning-studio-classic-linked-service) | [Действия Машинное обучение Studio (классическая модель): выполнение пакета и обновление ресурса](transform-data-using-machine-learning.md) |
 | [Машинное обучение Azure](#azure-machine-learning-linked-service) | [Выполнение конвейера в Машинном обучении Azure](transform-data-machine-learning-service.md) |
 | [Azure Data Lake Analytics](#azure-data-lake-analytics-linked-service) | [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md) |
-| [Azure SQL](#azure-sql-database-linked-service), [Azure синапсе Analytics (ранее — хранилище данных SQL)](#azure-synapse-analytics-linked-service), [SQL Server](#sql-server-linked-service) | [Хранимая процедура](transform-data-using-stored-procedure.md) |
+| [Azure SQL](#azure-sql-database-linked-service), [azure синапсе Analytics](#azure-synapse-analytics-linked-service) [SQL Server](#sql-server-linked-service) | [Хранимая процедура](transform-data-using-stored-procedure.md) |
 | [Azure Databricks](#azure-databricks-linked-service)         | [Notebook](transform-data-databricks-notebook.md), [Jar](transform-data-databricks-jar.md), [Python](transform-data-databricks-python.md) |
 | [Функция Azure](#azure-function-linked-service)         | [Действия функции Azure](control-flow-azure-function-activity.md)
 >  
@@ -43,12 +43,12 @@ ms.locfileid: "96022468"
 
 | В связанной службе вычислений | Имя свойства                | Описание                                                  | BLOB-объект | ADLS 2-го поколения | БД SQL Azure | ADLS 1-го поколения |
 | ------------------------- | ---------------------------- | ------------------------------------------------------------ | ---- | --------- | ------------ | ---------- |
-| По запросу                 | linkedServiceName            | Связанная служба хранилища Azure, которую кластер по запросу должен использовать для хранения и обработки данных. | Да  | Да       | нет           | Нет         |
-|                           | additionalLinkedServiceNames | Указывает дополнительные учетные записи хранения для связанной службы HDInsight, чтобы служба фабрики данных могла регистрировать их от вашего имени. | Да  | нет        | нет           | Нет         |
-|                           | hcatalogLinkedServiceName    | Имя связанной службы SQL Azure, указывающее на базу данных HCatalog. При создании кластера HDInsight по запросу используется база данных SQL Azure в качестве хранилища метаданных. | Нет   | нет        | Да          | Нет         |
-| BYOC                      | linkedServiceName            | Ссылка на связанную службу хранилища Azure.                | Да  | Да       | нет           | Нет         |
-|                           | additionalLinkedServiceNames | Указывает дополнительные учетные записи хранения для связанной службы HDInsight, чтобы служба фабрики данных могла регистрировать их от вашего имени. | Нет   | нет        | Нет           | Нет         |
-|                           | hcatalogLinkedServiceName    | Ссылка на связанную службу SQL Azure, указывающая на базу данных HCatalog. | Нет   | нет        | Нет           | Нет         |
+| По запросу                 | linkedServiceName            | Связанная служба хранилища Azure, которую кластер по запросу должен использовать для хранения и обработки данных. | Да  | Да       | Нет           | Нет         |
+|                           | additionalLinkedServiceNames | Указывает дополнительные учетные записи хранения для связанной службы HDInsight, чтобы служба фабрики данных могла регистрировать их от вашего имени. | Да  | Нет        | Нет           | Нет         |
+|                           | hcatalogLinkedServiceName    | Имя связанной службы SQL Azure, указывающее на базу данных HCatalog. При создании кластера HDInsight по запросу используется база данных SQL Azure в качестве хранилища метаданных. | Нет   | Нет        | Да          | Нет         |
+| BYOC                      | linkedServiceName            | Ссылка на связанную службу хранилища Azure.                | Да  | Да       | Нет           | Нет         |
+|                           | additionalLinkedServiceNames | Указывает дополнительные учетные записи хранения для связанной службы HDInsight, чтобы служба фабрики данных могла регистрировать их от вашего имени. | Нет   | Нет        | Нет           | Нет         |
+|                           | hcatalogLinkedServiceName    | Ссылка на связанную службу SQL Azure, указывающая на базу данных HCatalog. | Нет   | Нет        | Нет           | Нет         |
 
 ### <a name="azure-hdinsight-on-demand-linked-service"></a>Связанная служба Azure HDInsight по запросу
 
@@ -253,7 +253,7 @@ ms.locfileid: "96022468"
 "dataNodeSize": "Standard_D4",
 ```
 
-Если для этих свойств указано неверное значение, может возникнуть следующая **ошибка**: "Не удалось создать кластер. Исключение: не удается завершить операцию создания кластера. Операция завершилась ошибкой с кодом 400. Оставшееся состояние кластера: "Ошибка". Сообщение: "PreClusterCreationValidationFailure". При появлении этой ошибки убедитесь, что вы используете имя **командлета или API** из таблицы в статье [Размеры виртуальных машин в Azure](../virtual-machines/sizes.md).          
+Если для этих свойств указано неверное значение, может возникнуть следующая **ошибка**: "Не удалось создать кластер. Исключение: не удается завершить операцию создания кластера. Операция завершилась ошибкой с кодом 400. Оставшееся состояние кластера: "Ошибка". Сообщение: "PreClusterCreationValidationFailure". При появлении этой ошибки убедитесь, что вы используете имя **командлета или API** из таблицы в статье [Размеры виртуальных машин в Azure](../virtual-machines/sizes.md).
 
 ### <a name="bring-your-own-compute-environment"></a>Использование собственной среды вычислений
 В конфигурации такого типа вы можете зарегистрировать уже существующую среду вычислений как связанную службу в фабрике данных. Вы будете управлять средой вычислений, а служба фабрики данных — использовать ее для выполнения действий.
@@ -365,7 +365,7 @@ ms.locfileid: "96022468"
 | batchUri          | URL-адрес учетной записи пакетной службы Azure в формате https://*batchaccountname.region*.batch.azure.com. | Да      |
 | poolName          | Имя пула виртуальных машин.    | Да      |
 | linkedServiceName | Имя связанной службы хранилища Azure, которая ассоциируется с этой связанной пакетной службой Azure. Эта связанная служба используется для промежуточных файлов, необходимых для выполнения действий. | Да      |
-| connectVia        | Среда выполнения интеграции, используемая для отправки действий в связанную службу. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | нет       |
+| connectVia        | Среда выполнения интеграции, используемая для отправки действий в связанную службу. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | Нет       |
 
 ## <a name="azure-machine-learning-studio-classic-linked-service"></a>Связанная служба Машинное обучение Azure Studio (классическая модель)
 Вы создаете связанную службу Машинное обучение Azure Studio (классическая модель) для регистрации конечной точки пакетной оценки Машинное обучение Studio (классической) для фабрики данных.
@@ -547,8 +547,8 @@ ms.locfileid: "96022468"
 | name                 | Имя связанной службы               | Да   |
 | type                 | Свойству type необходимо присвоить значение **Azure Databricks**. | Да                                      |
 | домен               | Укажите регион Azure на основе региона рабочей области Databricks. Например, https://eastus.azuredatabricks.net. | Да                                 |
-| accessToken          | Чтобы фабрика данных прошла аутентификацию в Azure Databricks, необходим маркер доступа. Маркер доступа должен быть создан в рабочей области Databricks. Подробные инструкции по поиску маркера доступа см. в [этой статье](https://docs.azuredatabricks.net/api/latest/authentication.html#generate-token).  | нет                                       |
-| MSI          | Используйте управляемое удостоверение фабрики данных (назначенное системой) для проверки подлинности в Azure Databricks. При использовании проверки подлинности "MSI" маркер доступа не нужен  | нет                                       |
+| accessToken          | Чтобы фабрика данных прошла аутентификацию в Azure Databricks, необходим маркер доступа. Маркер доступа должен быть создан в рабочей области Databricks. Подробные инструкции по поиску маркера доступа см. в [этой статье](https://docs.azuredatabricks.net/api/latest/authentication.html#generate-token).  | Нет                                       |
+| MSI          | Используйте управляемое удостоверение фабрики данных (назначенное системой) для проверки подлинности в Azure Databricks. При использовании проверки подлинности "MSI" маркер доступа не нужен  | Нет                                       |
 | existingClusterId    | Идентификатор существующего кластера, где будут выполняться все задания. Это должен быть уже созданный интерактивный кластер. Если кластер перестанет отвечать, вам может понадобиться перезапустить его вручную. Для улучшения надежности Databricks предлагает выполнять задания на новых кластерах. Идентификатор интерактивного кластера можно найти, выбрав "Рабочая область Databricks -> Кластеры -> Имя интерактивного кластера -> Конфигурация -> Теги". [Дополнительные сведения](https://docs.databricks.com/user-guide/clusters/tags.html) | Нет 
 | instancePoolId    | Идентификатор экземпляра пула существующего пула в рабочей области Databricks.  | Нет  |
 | newClusterVersion    | Версия Spark кластера. Она создает кластер заданий в Databricks. | Нет  |
@@ -564,7 +564,7 @@ ms.locfileid: "96022468"
 
 ## <a name="azure-synapse-analytics-linked-service"></a>Связанная служба Azure синапсе Analytics
 
-Вы создаете связанную службу Azure синапсе Analytics (ранее — хранилище данных SQL) и используете ее с [действием хранимой процедуры](transform-data-using-stored-procedure.md) для вызова хранимой процедуры из конвейера фабрики данных. Дополнительные сведения об этой связанной службе см. в статье о [соединителе Azure синапсе Analytics (ранее — хранилище данных SQL)](connector-azure-sql-data-warehouse.md#linked-service-properties) .
+Вы создаете связанную службу Azure синапсе Analytics и используете ее с [действием хранимой процедуры](transform-data-using-stored-procedure.md) для вызова хранимой процедуры из конвейера фабрики данных. Дополнительные сведения об этой связанной службе см. в статье о [соединителе Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#linked-service-properties) .
 
 ## <a name="sql-server-linked-service"></a>Связанная служба SQL Server
 

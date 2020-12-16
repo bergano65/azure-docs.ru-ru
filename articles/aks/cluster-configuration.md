@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 439714f8fe4a6373f2ffce80e744802dd19b67f0
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: ab9e2a5483f0699ad7bfca991539025adff34b11
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928789"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606918"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -173,7 +173,7 @@ az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-gro
 * Вы больше не можете получить доступ к подсистеме DOCKER `/var/run/docker.sock` или использовать DOCKER-in-DOCKER (динд).
   * Если в данный момент вы извлечете журналы приложений или данные мониторинга из подсистемы DOCKER, используйте вместо них нечто вроде [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-enable-new-cluster.md) . Кроме того, AKS не поддерживает выполнение команд с использованием аппаратного контроллера управления на узлах агента, которые могут привести к нестабильной работе.
   * Даже при использовании значок Кита/DOCKER создание образов и непосредственное использование подсистемы DOCKER с помощью приведенных выше методов настоятельно не рекомендуется. Kubernetes не полностью осведомлен о потребляемых ресурсах, и эти подходы представляют множество проблем, описанных [здесь](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) , и [здесь](https://securityboulevard.com/2018/05/escaping-the-whale-things-you-probably-shouldnt-do-with-docker-part-1/), например.
-* Создание образов. Рекомендуемый подход для создания образов — использование [задач контроля](../container-registry/container-registry-quickstart-task-cli.md)доступа. Альтернативный подход заключается в использовании более защищенных параметров в кластере, таких как [DOCKER буилдкс](https://github.com/docker/buildx).
+* Создание образов. Вы можете продолжать использовать текущий рабочий процесс DOCKER в качестве обычного, если вы не создаете имагажес в кластере AKS. В этом случае рассмотрите возможность перехода на рекомендуемый подход к созданию образов с помощью [задач контроля](../container-registry/container-registry-quickstart-task-cli.md)доступа или более безопасного варианта в кластере, такого как [DOCKER буилдкс](https://github.com/docker/buildx).
 
 ## <a name="generation-2-virtual-machines-preview"></a>Виртуальные машины поколения 2 (Предварительная версия)
 
