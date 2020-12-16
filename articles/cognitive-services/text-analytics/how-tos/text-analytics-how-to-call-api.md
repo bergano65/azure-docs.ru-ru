@@ -10,16 +10,34 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 7b035af85e250d97fb05625bf386bec8dc94a74c
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.custom: references_regions
+ms.openlocfilehash: bf53ce5ed3f9505572538533263f0d17c5dcbf45
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505262"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562571"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
 В этой статье мы используем Анализ текста REST API и [POST](https://www.postman.com/downloads/) для демонстрации основных концепций. API предоставляет несколько синхронных и асинхронных конечных точек для использования функций службы. 
+
+## <a name="create-a-text-analytics-resource"></a>Создание ресурса "Анализ текста"
+
+> [!NOTE]
+> * Если вы хотите использовать [](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) `/analyze` `/health` конечные точки или, вам потребуется ресурс анализ текста с помощью ценовой категории Standard (S). `/analyze`Конечная точка включена в [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/).
+
+Прежде чем использовать API анализа текста, вам потребуется создать ресурс Azure с ключом и конечной точкой для ваших приложений. 
+
+1.  Во-первых, перейдите к [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) и создайте новый ресурс анализ текста, если у вас еще нет такого ресурса. Выберите [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/).
+
+2.  Выберите регион, который вы хотите использовать для конечной точки.  Обратите внимание, что `/analyze` `/health` конечные точки и доступны только в следующих регионах: Западная часть США 2, Восточная часть США 2, Центральная часть США, Северная Европа и Западная Европа.
+
+3.  Создайте ресурс Анализ текста и перейдите в колонку "ключи и конечная точка" в левой части страницы. Скопируйте ключ, который будет использоваться позже при вызове API. Вы добавите его позже в качестве значения для `Ocp-Apim-Subscription-Key` заголовка.
+
+## <a name="using-the-api-synchronously"></a>Синхронное использование API
+
+Можно вызвать Анализ текста синхронно (для сценариев с низкой задержкой). При использовании синхронного API необходимо вызывать каждый API (функцию) отдельно. Если необходимо вызвать несколько функций, ознакомьтесь с приведенным ниже разделом об асинхронном вызове Анализ текста. 
 
 ## <a name="using-the-api-asynchronously"></a>Асинхронное использование API
 
@@ -31,7 +49,7 @@ ms.locfileid: "97505262"
 
 См. таблицу ниже, чтобы узнать, какие функции можно использовать асинхронно. Обратите внимание, что из конечной точки можно вызывать только несколько функций `/analyze` . 
 
-| Компонент | Синхронная | Асинхронный |
+| Функция | Синхронная | Асинхронный |
 |--|--|--|
 | Определение языка | ✔ |  |
 | Анализ тональности | ✔ |  |
@@ -48,24 +66,16 @@ ms.locfileid: "97505262"
 
 [!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
-
-
-> [!NOTE]
-> * Если вы хотите использовать [](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) `/analyze` `/health` конечные точки или, вам потребуется ресурс анализ текста с помощью ценовой категории Standard (S).
-
-1.  Во-первых, перейдите к [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) и создайте новый ресурс анализ текста, если у вас еще нет такого ресурса. Если вы хотите использовать конечные точки или, выберите **ценовую категорию Standard (S)** `/analyze` `/health` . `/analyze`Конечная точка включена в [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/).
-
-2.  Выберите регион, который вы хотите использовать для конечной точки.  Обратите внимание, что `/analyze` `/health` конечные точки и доступны только в следующих регионах: Западная часть США 2, Восточная часть США 2, Центральная часть США, Северная Европа и Западная Европа.
-
-3.  Создайте ресурс Анализ текста и перейдите в колонку "ключи и конечная точка" в левой части страницы. Скопируйте ключ, который будет использоваться позже при вызове API. Вы добавите его позже в качестве значения для `Ocp-Apim-Subscription-Key` заголовка.
-
 
 <a name="json-schema"></a>
 
-## <a name="api-request-format"></a>Формат запроса API
+## <a name="api-request-formats"></a>Форматы запросов API
+
+В API анализа текста можно отправить синхронные и асинхронные вызовы.
 
 #### <a name="synchronous"></a>[Синхронная](#tab/synchronous)
+
+### <a name="synchronous-requests"></a>Синхронные запросы
 
 Формат запросов API одинаков для всех синхронных операций. Документы отправляются в объекте JSON как необработанный неструктурированный текст. XML не поддерживается. Схема JSON состоит из элементов, описанных ниже.
 
@@ -89,7 +99,9 @@ ms.locfileid: "97505262"
 }
 ```
 
-#### <a name="analyze"></a>[Анализ](#tab/analyze)
+#### <a name="asynchronous"></a>[Асинхронный](#tab/asynchronous)
+
+### <a name="asynchronous-requests-to-the-analyze-endpoint"></a>Асинхронные запросы к `/analyze` конечной точке
 
 > [!NOTE]
 > Последняя Предварительная версия клиентской библиотеки Анализ текста позволяет вызывать асинхронные операции анализа с помощью клиентского объекта. Примеры можно найти на сайте GitHub:
@@ -154,7 +166,7 @@ ms.locfileid: "97505262"
 
 ```
 
-#### <a name="text-analytics-for-health"></a>[Анализ текста для сферы здравоохранения](#tab/health)
+### <a name="asynchronous-requests-to-the-health-endpoint"></a>Асинхронные запросы к `/health` конечной точке
 
 Формат запросов API к Анализ текста для API, размещенного в работоспособности, аналогичен его контейнеру. Документы отправляются в объекте JSON как необработанный неструктурированный текст. XML не поддерживается. Схема JSON состоит из элементов, описанных ниже.  Заполните и отправьте [форму запроса Cognitive Services](https://aka.ms/csgate) , чтобы запросить доступ к анализ текста для общедоступной предварительной версии работоспособности. Вам не будет выставлен счет за Анализ текста для использования работоспособности. 
 
@@ -194,7 +206,9 @@ example.json
 
 #### <a name="synchronous"></a>[Синхронная](#tab/synchronous)
 
-| Компонент | Тип запроса | Конечные точки ресурсов |
+### <a name="endpoints-for-sending-synchronous-requests"></a>Конечные точки для отправки синхронных запросов
+
+| Функция | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Определение языка | POST | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
 | Анализ тональности | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
@@ -204,16 +218,18 @@ example.json
 | Распознавание именованных сущностей — PII | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii` |
 | Распознавание именованных сущностей — фи | POST |  `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii?domain=phi` |
 
-#### <a name="analyze"></a>[Анализ](#tab/analyze)
+#### <a name="asynchronous"></a>[Асинхронный](#tab/asynchronous)
 
-| Компонент | Тип запроса | Конечные точки ресурсов |
+### <a name="endpoints-for-sending-asynchronous-requests-to-the-analyze-endpoint"></a>Конечные точки для отправки асинхронных запросов к `/analyze` конечной точке
+
+| Функция | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Отправить задание анализа | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze` |
 | Получение состояния и результатов анализа | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>` |
 
-#### <a name="text-analytics-for-health"></a>[Анализ текста для сферы здравоохранения](#tab/health)
+### <a name="endpoints-for-sending-asynchronous-requests-to-the-health-endpoint"></a>Конечные точки для отправки асинхронных запросов к `/health` конечной точке
 
-| Компонент | Тип запроса | Конечные точки ресурсов |
+| Функция | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Отправка Анализ текста для задания работоспособности  | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs` |
 | Получение состояния задания и результатов | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |
@@ -267,6 +283,8 @@ example.json
  
 # <a name="synchronous"></a>[Синхронная](#tab/synchronous)
 
+### <a name="example-responses-for-synchronous-operation"></a>Примеры ответов для синхронной операции
+
 Синхронные ответы конечных точек будут зависеть от используемой конечной точки. Примеры ответов см. в следующих статьях.
 
 + [Пример. Как определить язык с помощью Анализа текста](text-analytics-how-to-language-detection.md#step-3-view-the-results)
@@ -274,70 +292,15 @@ example.json
 + [Пример. Как определить тональность с помощью Анализа текста](text-analytics-how-to-sentiment-analysis.md#view-the-results)
 + [Распознавание сущностей](text-analytics-how-to-entity-linking.md#view-results)
 
-# <a name="analyze"></a>[Анализ](#tab/analyze)
+# <a name="asynchronous"></a>[Асинхронный](#tab/asynchronous)
+
+### <a name="example-responses-for-asynchronous-operations"></a>Примеры ответов для асинхронных операций
 
 В случае успешного выполнения запрос GET к `/analyze` конечной точке возвратит объект, содержащий назначенные задачи. Например, `keyPhraseExtractionTasks`. Эти задачи содержат объект Response из соответствующей Анализ текста функции. Дополнительные сведения см. в приведенных ниже статьях.
 
 + [Пример. Как извлечь ключевые фразы с помощью Анализа текста](text-analytics-how-to-keyword-extraction.md#step-3-view-results)
 + [Распознавание сущностей](text-analytics-how-to-entity-linking.md#view-results)
-
-
-```json
-{
-  "displayName": "My Analyze Job",
-  "jobId": "dbec96a8-ea22-4ad1-8c99-280b211eb59e_637408224000000000",
-  "lastUpdateDateTime": "2020-11-13T04:01:14Z",
-  "createdDateTime": "2020-11-13T04:01:13Z",
-  "expirationDateTime": "2020-11-14T04:01:13Z",
-  "status": "running",
-  "errors": [],
-  "tasks": {
-      "details": {
-          "name": "My Analyze Job",
-          "lastUpdateDateTime": "2020-11-13T04:01:14Z"
-      },
-      "completed": 1,
-      "failed": 0,
-      "inProgress": 2,
-      "total": 3,
-      "keyPhraseExtractionTasks": [
-          {
-              "name": "My Analyze Job",
-              "lastUpdateDateTime": "2020-11-13T04:01:14.3763516Z",
-              "results": {
-                  "inTerminalState": true,
-                  "documents": [
-                      {
-                          "id": "doc1",
-                          "keyPhrases": [
-                              "sunny outside"
-                          ],
-                          "warnings": []
-                      },
-                      {
-                          "id": "doc2",
-                          "keyPhrases": [
-                              "favorite Seattle attraction",
-                              "Pike place market"
-                          ],
-                          "warnings": []
-                      }
-                  ],
-                  "errors": [],
-                  "modelVersion": "2020-07-01"
-              }
-          }
-      ]
-  }
-}
-```
-
-# <a name="text-analytics-for-health"></a>[Анализ текста для сферы здравоохранения](#tab/health)
-
-Дополнительные сведения о Анализ текста для асинхронного ответа API работоспособности см. в следующей статье:
-
 + [Анализ текста для сферы здравоохранения](text-analytics-for-health.md#hosted-asynchronous-web-api-response)
-
 
 --- 
 

@@ -11,12 +11,12 @@ ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: tagore
-ms.openlocfilehash: 404fc887cf40ee5d88b2824e8d2324d103226973
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: a875c036c79419357f1134c32f62fdb060fec7c6
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164369"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562299"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -70,7 +70,7 @@ ms.locfileid: "92164369"
 
 ## <a name="download-and-run-the-completed-solution"></a>Загрузка и запуск готового решения
 1. Загрузите и распакуйте [готовое решение](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4).
-2. Запустите среду Visual Studio.
+2. Запустите Visual Studio.
 3. В меню **Файл** выберите **Открыть проект**, перейдите к папке, куда вы скачали решение, а затем откройте файл решения.
 4. Чтобы построить решение, нажмите CTRL+SHIFT+B.
 
@@ -218,7 +218,7 @@ ms.locfileid: "92164369"
 7. В **обозревателе решений** в разделе **Роли** в проекте облачной службы щелкните правой кнопкой мыши пункт **ContosoAdsWorker** и выберите **Свойства**.
 
     ![Снимок экрана, посвященный пункту меню "Свойства".](./media/cloud-services-dotnet-get-started/rolepropertiesworker.png)
-8. Перейдите на вкладку **Параметры**.
+8. Перейдите на вкладку **Параметры** .
 9. В раскрывающемся списке **Конфигурация службы** выберите значение **Облако**.
 10. Выберите поле **Значение** для параметра `ContosoAdsDbConnectionString` и вставьте строку подключения, которую скопировали в предыдущем разделе руководства.
 
@@ -340,7 +340,7 @@ ms.locfileid: "92164369"
 7. В диалоговом окне **Новый проект ASP.NET** нажмите кнопку **ОК**.
 8. В **обозревателе решений** щелкните правой кнопкой мыши решение (не проект) и выберите **Добавить новый проект**.
 9. В диалоговом окне **Добавить новый проект** выберите **Windows** в разделе **Visual C#** на панели слева, а затем щелкните шаблон **Библиотека классов**.  
-10. Присвойте проекту имя *ContosoAdsCommon*и нажмите кнопку **ОК**.
+10. Присвойте проекту имя *ContosoAdsCommon* и нажмите кнопку **ОК**.
 
     Необходимо сослаться на контекст и модель данных Entity Framework в обоих проектах — веб-роли и рабочей роли. Как вариант, можно определить связанные с EF классы в проекте веб-роли и сослаться на этот проект из проекта рабочей роли. Но в случае альтернативного метода в проекте рабочей роли будет ссылка на веб-сборки, которые ему не нужны.
 
@@ -744,7 +744,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 У вас что-то не работает, когда вы выполняете инструкции из этого руководства? Вот несколько общих ошибок и способы их устранения.
 
 ### <a name="serviceruntimeroleenvironmentexception"></a>ServiceRuntime.RoleEnvironmentException
-Объект `RoleEnvironment` предоставляется Azure, когда приложение запущено в Azure или локально с использованием эмулятора вычислений Azure.  Если сообщение об этой ошибке появляется при локальном выполнении, убедитесь, что проект ContosoAdsCloudService установлен как начальный. Это настраивает проект для запуска с использованием эмулятора вычислений Azure.
+`RoleEnvironment`Объект предоставляется Azure при запуске приложения в Azure или при локальном запуске с помощью эмулятора вычислений Azure.  Если сообщение об этой ошибке появляется при локальном выполнении, убедитесь, что проект ContosoAdsCloudService установлен как начальный. Это настраивает проект для запуска с помощью эмулятора вычислений Azure.
 
 Одной из причин, по которым приложение использует RoleEnvironment в Azure, — это получение значений строки подключения, которые что они хранятся в файлах *.cscfg* , поэтому другой причиной этого исключения является отсутствие строки подключения. Убедитесь, что настройка StorageConnectionString создана для вариантов "Облако" и "Локально" в проекте ContosoAdsWeb, и что созданы обе строки подключения для обоих вариантов в проекте ContosoAdsWorker. Выполните поиск **Найти все** по StorageConnectionString во всем решении; запись должна появиться 9 раз в 6 файлах.
 
@@ -754,13 +754,13 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 Другим вариантом может быть решение в следующем разделе.
 
 ### <a name="other-errors-when-running-locally"></a>Другие ошибки при работе локально
-По умолчанию новые проекты облачной службы используют облегченный эмулятор вычислений Azure для имитации среды Azure. Это облегченная версия полнофункционального эмулятора вычислений; при некоторых условиях полнофункциональный эмулятор будет работать, а облегченный — нет.  
+По умолчанию новые проекты облачных служб используют Azure COMPUTE Emulator Express для имитации среды Azure. Это облегченная версия полнофункционального эмулятора вычислений; при некоторых условиях полнофункциональный эмулятор будет работать, а облегченный — нет.  
 
 Для переключения проекта на использование полнофункционального эмулятора щелкните правой кнопкой мыши проект ContosoAdsCloudService и выберите **Свойства**. В окне **Свойства** щелкните вкладку **Веб**, а затем установите переключатель **Использовать полный эмулятор**.
 
 Для запуска приложения с полным эмулятором следует открыть Visual Studio с правами администратора.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Приложение Contoso Ads намеренно сделано простым для руководства по началу работы. Например, оно не реализует [вставку зависимостей](https://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) или [репозиторий и блок рабочих шаблонов](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), не использует [интерфейс для журналов](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), не использует [EF Code First Migrations](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) для управления изменениями модели данных или [EF Connection Resiliency](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) для управления кратковременными ошибками сети и т. д.
 
 Есть несколько примеров приложений облачной службы, которые демонстрируют более жизненные примеры кодирования — от менее сложных к более сложным:

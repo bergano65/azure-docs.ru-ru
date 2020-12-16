@@ -14,12 +14,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20088ccc79abe978eb5b3f1c98e958f6c26bcb86
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: cfe3d995cef888d2f0e973a6a6b2a06e0dd6cb54
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861805"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563217"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Использование поставщика удостоверений (IdP) SAML 2.0 для единого входа
 
@@ -273,7 +273,7 @@ ms.locfileid: "96861805"
 Дополнительные сведения о извлечении New-MsolUser см. в статье [/Previous-Versions/Azure/dn194096 (v = Azure. 100)](/previous-versions/azure/dn194096(v=azure.100)) .
 
 >[!NOTE]
->Значение UserPrinciplName должно совпадать со значением, которое будет отправляться для атрибута IDPEmail в утверждении SAML 2.0, а значение ImmutableID должно совпадать со значением, отправляемым в утверждении NameID.
+>Значение UserPrincipalName должно совпадать со значением, которое будет отправлено для "IDPEmail" в утверждении SAML 2,0, а значение "ImmutableID" должно совпадать со значением, отправленным в утверждении "NameID".
 
 ## <a name="verify-single-sign-on-with-your-saml-20-idp"></a>Проверка единого входа с помощью поставщика удостоверений SAML 2.0
 Перед проверкой единого входа (также называемого федерацией удостоверений) и управлением им администратору следует ознакомиться с информацией и выполнить инструкции в указанных ниже статьях, чтобы настроить единый вход с помощью поставщика удостоверений на основе SAML 2.0 SP-Lite:

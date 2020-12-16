@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 9e2210cdbcc2916723c8c2e2ed1ef514d427c9d6
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: c304354f378708c43c25ef8b92b7b80b37ac03af
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032190"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563115"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения для мониторинга сетей Azure в Azure Monitor
 
@@ -107,19 +107,31 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 ## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Миграция из решения аналитики шлюза Azure в Azure Monitor книги
 
 > [!NOTE]
-> Решение для анализа шлюза приложений Azure устарело, поэтому рекомендуемым способом использования аналитики является использование книг, предоставляемых с помощью Azure Monitor Network Insights для ресурса шлюза приложений.
+> Книга Azure Monitor Network Insights — это рекомендуемое решение для доступа к метрикам и log Analytics для ресурсов шлюза приложений.
 
-* Если параметр диагностики уже включен для хранения журналов в Log Analytics рабочей области, Azure Monitor книга Network Insights может использовать данные из одного и того же расположения. Новые настройки не требуются.
+1. Убедитесь [, что параметры диагностики включены](#enable-azure-application-gateway-diagnostics-in-the-portal) для хранения журналов в log Analytics рабочей области. Если она уже настроена, то Azure Monitor книга "аналитика сети" сможет использовать данные из одного и того же расположения, и никаких дополнительных изменений не потребуется.
 
-* Все предыдущие данные уже доступны в книге с включенными параметрами диагностики точки. Перенос данных не требуется.
+> [!NOTE]
+> Все прошлые данные уже доступны в книге из параметров диагностики точек изначально были включены. Перенос данных не требуется.
 
-* Для переключения на книги не требуется активный переключатель. Как решение аналитики, так и книга анализа сети могут работать параллельно.
+2. Получите доступ к [книге Insights по умолчанию](#accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights) для ресурса шлюза приложений. Все существующие аналитические данные, поддерживаемые решением аналитики шлюза приложений, будут уже присутствовать в книге. Это можно расширить, добавив пользовательские [визуализации](../platform/workbooks-overview.md#visualizations) на основе метрик & данных журнала.
 
-* Нет дополнительных затрат, связанных с Azure Monitor книгами. В Log Analytics рабочей области будет взиматься плата за использование.
-
-* Чтобы очистить решение аналитики шлюза Azure из рабочей области, можно удалить решение на странице ресурсов решения.
+3. После того как вы сможете просмотреть все данные метрик и журналов, чтобы очистить решение аналитики шлюза Azure из рабочей области, можно удалить решение на странице ресурсов решения.
 
 [![Снимок экрана с параметром "Удалить" для решения "анализ шлюза приложений Azure".](media/azure-networking-analytics/azure-appgw-analytics-delete.png)](media/azure-networking-analytics/application-gateway-analytics-delete.png#lightbox)
+
+### <a name="new-capabilities-with-azure-monitor-network-insights-workbook"></a>Новые возможности в книге Azure Monitor Network Insights
+
+> [!NOTE]
+> Нет дополнительных затрат, связанных с книгой Azure Monitor Insights. В Log Analytics рабочей области будет взиматься плата за использование.
+
+Книга Network Insights позволяет воспользоваться преимуществами новейших возможностей Azure Monitor и Log Analytics включая:
+
+* Централизованная консоль для мониторинга и устранения неполадок с данными [метрик](../insights/network-insights-overview.md#resource-health-and-metrics) и журналов.
+
+* Гибкое полотно для поддержки создания пользовательских полнофункциональных [визуализаций](../platform/workbooks-overview.md#visualizations).
+
+* Возможность использования и [совместного использования шаблонов книг](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) с более широкими сообществом.
 
 Дополнительные сведения о возможностях нового решения для книги извлечь [книги — обзор](../platform/workbooks-overview.md)
 

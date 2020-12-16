@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory подготовки приложений
 description: Новая и обновленная документация по подготовке Azure Active Directory приложений.
-ms.date: 12/03/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -9,16 +9,24 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: fd9be81e8c23686695f8cdb49d873d5a663d69c4
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 053d342c8fbdd506ac5d4ba0916a1ae9361e7189
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571765"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562214"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory подготовка приложений: новые возможности
 
 Добро пожаловать в Azure Active Directoryную документацию по подготовке приложений. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы подготовки, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Известные проблемы: Подготовка приложений](known-issues.md)
+- [Что представляет собой автоматическая подготовка пользователей для приложений SaaS в Azure AD?](user-provisioning.md)
+- [Руководство. Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](customize-application-attributes.md)
+
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 
@@ -52,7 +60,7 @@ ms.locfileid: "96571765"
 
 ### <a name="new-articles"></a>Новые статьи
 
-- [Новые возможности документации](whats-new-docs.md)
+- [Новые возможности в документах](whats-new-docs.md)
 
 ### <a name="updated-articles"></a>Обновленные статьи
 - [Подготовка приложений в карантинном состоянии](application-provisioning-quarantine-status.md)

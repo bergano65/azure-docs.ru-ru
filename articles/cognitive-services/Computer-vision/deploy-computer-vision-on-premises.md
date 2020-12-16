@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 11/23/2020
 ms.author: aahi
-ms.openlocfilehash: dce8893cac156ce2941652e32409357cb8ec3b1a
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: d79c52c05d09eedab2dd964acb544c9cdb405380
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96015321"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562605"
 ---
 # <a name="use-computer-vision-container-with-kubernetes-and-helm"></a>Использование контейнера Компьютерное зрение с Kubernetes и Helm
 
@@ -27,7 +27,7 @@ ms.locfileid: "96015321"
 
 | Обязательно | Назначение |
 |----------|---------|
-| Учетная запись Azure | Если у вас нет подписки Azure, перед началом работы [создайте бесплатную учетную запись][free-azure-account]. |
+| Учетная запись Azure | Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][free-azure-account], прежде чем начинать работу. |
 | Kubernetes CLI | Интерфейс [командной строки Kubernetes][kubernetes-cli] требуется для управления общими учетными данными из реестра контейнеров. Kubernetes также требуется перед Helm, который является диспетчером пакетов Kubernetes. |
 | Интерфейс командной строки Helm | Установите интерфейс [командной строки Helm][helm-install], который используется для установки диаграммы Helm (определение пакета контейнера). |
 | Ресурс Компьютерное зрение |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure **компьютерное зрение** и соответствующий ключ API для конечной точки. Оба значения доступны на страницах обзора и ключей для ресурса и необходимы для запуска контейнера.<br><br>**{API_KEY}**: один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}**: конечная точка, указанная на странице **обзора**|
@@ -166,6 +166,9 @@ spec:
 ```
 
 В той же папке *Templates* скопируйте и вставьте следующие вспомогательные функции в `helpers.tpl` . `helpers.tpl` определяет полезные функции, помогающие создать шаблон Helm.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин «ведомый» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 ```yaml
 {{- define "rabbitmq.hostname" -}}
@@ -347,7 +350,7 @@ replicaset.apps/read-6cbbb6678   3         3         3       3s
 
 [!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об установке приложений с помощью Helm в службе Kubernetes Azure (AKS) см. [здесь][installing-helm-apps-in-aks].
 

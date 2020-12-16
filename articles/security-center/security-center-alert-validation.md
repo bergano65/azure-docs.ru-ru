@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 12/15/2020
 ms.author: memildin
-ms.openlocfilehash: 999888b12f10c07f7d42f14289e88030f9542a36
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 598c13b0434a364e73471b53c82663b94fb42f4e
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340824"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560107"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Проверка предупреждений в центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
@@ -27,7 +27,42 @@ ms.locfileid: "92340824"
 Оповещения — это уведомления, которые Центр безопасности создает при обнаружении угроз для ресурсов. Он определяет приоритеты и отображает оповещения вместе с информацией, необходимой для быстрого изучения проблемы. Центр безопасности также предоставляет рекомендации по устранению атак.
 Дополнительные сведения см. в статьях [оповещения системы безопасности в центре безопасности](security-center-alerts-overview.md) и [Управление оповещениями системы безопасности и реагирование на них](security-center-managing-and-responding-alerts.md) .
 
-## <a name="validate-alerts-on-windows-vms"></a>Проверка оповещений на виртуальных машинах Windows <a name="validate-windows"></a>
+
+## <a name="generate-sample-azure-defender-alerts"></a>Создание примера оповещений защитника Azure
+
+Если вы используете новые возможности, предварительные действия с предупреждениями, как описано в статье [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md), можно создать примеры оповещений, выполнив несколько щелчков на странице оповещения системы безопасности в портал Azure.
+
+Используйте примеры оповещений для:
+
+- Оценка ценности и возможностей защитника Azure
+- Проверка всех конфигураций, созданных для оповещений системы безопасности (например, интеграции SIEM, автоматизации рабочих процессов и уведомлений по электронной почте).
+
+> [!NOTE]
+> Для этой процедуры требуется новое (Предварительная версия) оповещение, доступное в баннере в верхней части страницы **оповещения системы безопасности** .
+>
+> :::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Баннер со ссылкой на новый интерфейс предварительного просмотра оповещений":::
+
+Для создания образцов оповещений:
+
+1. На панели инструментов на странице оповещения выберите **создать образцы оповещений**. 
+1. Выберите подписку.
+1. Выберите соответствующие планы защитника Azure, для которых вы хотите просмотреть оповещения. 
+1. Выберите **создать образцы оповещений**.
+
+    :::image type="content" source="media/security-center-alert-validation/create-sample-alerts-procedures.png" alt-text="Действия по созданию образцов оповещений в центре безопасности Azure":::
+    
+    Появится уведомление о том, что создаются образцы оповещений:
+
+    :::image type="content" source="media/security-center-alert-validation/notification-sample-alerts-creation.png" alt-text="Уведомление о создании образцов оповещений.":::
+
+    Через несколько минут оповещения будут отображаться на странице оповещения системы безопасности. Они также отображаются в любом месте, где настроено получение оповещений безопасности центра безопасности Azure (подключенные решения Siem, уведомления по электронной почте и т. д.).
+
+    :::image type="content" source="media/security-center-alert-validation/sample-alerts.png" alt-text="Примеры оповещений в списке оповещений системы безопасности":::
+
+    > [!TIP]
+    > Оповещения предназначены для имитации ресурсов.
+
+## <a name="simulate-alerts-on-your-azure-vms-windows"></a>Моделирование оповещений на виртуальных машинах Azure (Windows) <a name="validate-windows"></a>
 
 После установки агента Центра безопасности на компьютере выполните следующие действия на компьютере, на котором вы хотите использовать для этого предупреждение:
 
@@ -40,7 +75,7 @@ ms.locfileid: "92340824"
 >
 >```reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system\Audit" /f /v "ProcessCreationIncludeCmdLine_Enabled"```
 
-## <a name="validate-alerts-on-linux-vms"></a>Проверка оповещений на виртуальных машинах Linux <a name="validate-linux"></a>
+## <a name="simulate-alerts-on-your-azure-vms-linux"></a>Моделирование оповещений на виртуальных машинах Azure (Linux) <a name="validate-linux"></a>
 
 После установки агента Центра безопасности на компьютере выполните следующие действия на компьютере, на котором вы хотите использовать для этого предупреждение:
 1. Скопируйте исполняемый файл в удобное место и переименуйте его в **./asc_alerttest_662jfi039n**, например:
@@ -54,7 +89,7 @@ ms.locfileid: "92340824"
 1. Подождите 5–10 минут и откройте оповещения центра безопасности. Должно появиться предупреждение.
 
 
-## <a name="validate-alerts-on-kubernetes"></a>Проверка оповещений в Kubernetes <a name="validate-kubernetes"></a>
+## <a name="simulate-alerts-on-kubernetes"></a>Моделирование оповещений в Kubernetes <a name="validate-kubernetes"></a>
 
 Если вы интегрируете службу Kubernetes Azure с центром безопасности, вы можете проверить, работают ли оповещения с помощью следующей команды kubectl:
 

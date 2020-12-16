@@ -2,14 +2,14 @@
 title: Ограничения запросов и регулирование
 description: В данной статье описывается использование регулирования запросов Azure Resource Manager при достижении ограничений подписки.
 ms.topic: conceptual
-ms.date: 03/24/2020
+ms.date: 12/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4d387749261747eb9ea1ea26629ade4fe8729856
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 181ed1a3059d86f78e40a9949448af77a551efbc
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80239360"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563132"
 ---
 # <a name="throttling-resource-manager-requests"></a>Регулирование запросов Resource Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "80239360"
 
 Ограничения по умолчанию для регулирования в час показаны в следующей таблице.
 
-| Область | Операции | Ограничение |
+| Область | Operations | Ограничение |
 | ----- | ---------- | ------- |
 | Подписка | reads | 12000 |
 | Подписка | deletes | 15 000 |
@@ -65,6 +65,13 @@ ms.locfileid: "80239360"
 ### <a name="azure-resource-graph-throttling"></a>Регулирование графа ресурсов Azure
 
 [Граф ресурсов Azure](../../governance/resource-graph/overview.md) ограничивает количество запросов к его операциям. Действия, описанные в этой статье, позволяют определить оставшиеся запросы и ответы на них, если достигнуто предельное значение, которое также применяется к графу ресурсов. Тем не менее, граф ресурсов устанавливает собственные ограничения и скорость сброса. Дополнительные сведения см. в разделе [заголовков регулирования для графика ресурсов](../../governance/resource-graph/concepts/guidance-for-throttled-requests.md#understand-throttling-headers).
+
+### <a name="other-resource-providers"></a>Другие поставщики ресурсов
+
+Сведения о регулировании в других поставщиках ресурсов см. в следующих статьях:
+
+* [Руководство по регулированию хранилища ключей Azure](../../key-vault/general/overview-throttling.md)
+* [Устранение неполадок с AKS](../../aks/troubleshooting.md#im-receiving-429---too-many-requests-errors)
 
 ## <a name="error-code"></a>Код ошибки
 
@@ -189,7 +196,7 @@ msrest.http_logger :     'Expires': '-1'
 msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-writes': '1199'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Полный пример для PowerShell см. в разделе [Проверьте ограничения Resource Manager для подписки](https://github.com/Microsoft/csa-misc-utils/tree/master/psh-GetArmLimitsViaAPI).
 * Дополнительные сведения об ограничениях и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).

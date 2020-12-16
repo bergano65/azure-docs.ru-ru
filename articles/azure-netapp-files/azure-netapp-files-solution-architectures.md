@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 12/15/2020
 ms.author: b-juche
-ms.openlocfilehash: ffa24115e8c827729b98656d319589101395d0e5
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 2b567eba43cfec9af05ebea262b3f6bd61b00259
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092522"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562554"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
@@ -38,6 +38,9 @@ ms.locfileid: "97092522"
 * [Рекомендации по развертыванию Oracle в Azure с помощью Azure NetApp Files](https://www.netapp.com/us/media/tr-4780.pdf)
 * [Образы виртуальных машин Oracle и их развертывание на Microsoft Azure: параметры конфигурации общего хранилища](../virtual-machines/workloads/oracle/oracle-vm-solutions.md#shared-storage-configuration-options)
 * [Преимущества использования Azure NetApp Files с Oracle Database](solutions-benefits-azure-netapp-files-oracle-database.md)
+
+### <a name="machine-learning"></a>Машинное обучение
+*   [Cloudera Машинное обучение](https://docs.cloudera.com/machine-learning/cloud/requirements-azure/topics/ml-requirements-azure.html)
 
 ## <a name="windows-apps-and-sql-server-solutions"></a>Приложения Windows и решения SQL Server
 
@@ -118,7 +121,7 @@ ms.locfileid: "97092522"
 * [Azure Циклеклауд: EDA HPC Lab с Azure NetApp Files](https://github.com/Azure/cyclecloud-hands-on-labs/blob/master/EDA/README.md)
 * [Azure для полупроводниковой индустрии](https://azurecomcdn.azureedge.net/cvt-f40f39cd9de2d875ab0c198a8d7b186350cf0bca161e80d7896941389685d012/mediahandler/files/resourcefiles/azure-for-the-semiconductor-industry/Azure_for_the_Semiconductor_Industry.pdf)
 
-### <a name="analytics"></a>Аналитика
+### <a name="analytics"></a>Analytics
 
 * [Azure NetApp Files: Общая файловая система, используемая в сетке SAS на Microsoft Azure](https://communities.sas.com/t5/Administration-and-Deployment/Azure-NetApp-Files-A-shared-file-system-to-use-with-SAS-Grid-on/m-p/705192)
 * [Рекомендации по использованию Microsoft Azure с SAS®](https://communities.sas.com/t5/Administration-and-Deployment/Best-Practices-for-Using-Microsoft-Azure-with-SAS/m-p/676833#M19680)

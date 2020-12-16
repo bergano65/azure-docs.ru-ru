@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/3/2020
-ms.openlocfilehash: 3017d0dec5acd3494600c42bef410ed346fead1a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f002bfdd5aeb784b5b10b549389e663216fa0361
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025948"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561228"
 ---
 # <a name="testing-for-luis-devops"></a>Тестирование для LUIS DevOps
 
@@ -18,7 +18,7 @@ ms.locfileid: "95025948"
 
 В методиках гибкой разработки программного обеспечения тестирование играет важную роль в разработке качественного программного обеспечения. Каждое существенное изменение приложения LUIS должно сопровождаться тестами, предназначенными для тестирования новых функциональных возможностей, создаваемых разработчиком в приложении. Эти тесты возвращаются в репозиторий исходного кода вместе с `.lu` источником приложения Luis. Реализация изменения завершается, когда приложение удовлетворяет тестам.
 
-Тесты являются важной частью [рабочих процессов CI/CD](luis-concept-devops-automation.md). Когда изменения в приложении LUIS предлагаются в запросе на вытягивание (PR) или после слияния изменений с главной ветвью, рабочие процессы CI должны выполнять тесты, чтобы убедиться, что обновления не привели к регрессии.
+Тесты являются важной частью [рабочих процессов CI/CD](luis-concept-devops-automation.md). Если изменения в приложении LUIS предложены в запросе на включение внесенных изменений или после их слияния в основную ветвь, то рабочие процессы CI должны выполнить тесты, чтобы убедиться, что обновления не привели к регрессии.
 
 ## <a name="how-to-do-unit-testing-and-batch-testing"></a>Как выполнять модульное тестирование и пакетное тестирование
 
@@ -133,7 +133,7 @@ LUIS не предлагает средство командной строки 
 
 Если вы хотите отключить недетерминированное обучение для тех версий приложений LUIS, которые вы собираетесь использовать для тестирования, используйте [API параметров версии](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с `UseAllTrainingData` параметром, для которого задано значение `true` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [реализации рабочих процессов CI/CD](luis-concept-devops-automation.md)
 * Узнайте, как [реализовать DevOps для Luis с GitHub](luis-how-to-devops-with-github.md)

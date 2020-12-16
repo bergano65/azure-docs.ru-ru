@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/06/2020
 ms.author: atulmal
 ms.custom: github-actions-azure
-ms.openlocfilehash: 716cf4f4bfaed31dcbd756ae9494e1ddc8e475ad
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: b17d005afa4b14a7895dbc7c9d7f9a67c680e320
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929886"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560361"
 ---
 # <a name="github-actions-for-deploying-to-kubernetes-service"></a>Действия GitHub для развертывания в службе Kubernetes
 
@@ -96,7 +96,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     
     # Connect to Azure Container registry (ACR)
     - uses: azure/docker-login@v1
@@ -163,7 +163,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     
     # Connect to Azure Container registry (ACR)
     - uses: azure/docker-login@v1
@@ -215,7 +215,7 @@ jobs:
 
 Если кластер Kubernetes, реестр контейнеров и репозиторий больше не требуются, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о службе Kubernetes Azure](/azure/architecture/reference-architectures/containers/aks-start-here)

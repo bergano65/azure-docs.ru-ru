@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/10/2020
 ms.author: duau
-ms.openlocfilehash: 6d39a4860e6db6f0f409ab5ce52260fd0ce2f3df
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: cc844059d14a182db11e18f95e676b38762f6a0d
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092641"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561653"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -86,7 +86,7 @@ ms.locfileid: "97092641"
 | **[BBIX](https://www.bbix.net/en/service/ix/)** | Поддерживается | Поддерживается | Токио |
 | **[BCX](https://www.bcx.co.za/solutions/connectivity/data-networks)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург|
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Поддерживается |Поддерживается |Квебек, Монреаль, Торонто |
-| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Гонконг, САР, Йоханнесбург, Лондон, London2, Ньюпорт (штат Вашингтон), Париж, Сан-Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
+| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Чикаго, Гонконг, САР, Йоханнесбург, Лондон, London2, Ньюпорт (штат Вашингтон), Париж, Сан-Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[C3ntro](https://www.c3ntro.com/data1/express-route1.php)** |Поддерживается |Поддерживается |Майами |
 | **CDC** | Поддерживается | Поддерживается | Канберра, Канберра 2 |
 | **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Amsterdam2, Чикаго, Дублин, Франкфурт, Гонконг, Лас деньги, London2, Нью Йорк, Париж, Сан Сан Антонио, Silicon впадина, Токио, Торонто, Вашингтон (округ Колумбия), штат Вашингтон |

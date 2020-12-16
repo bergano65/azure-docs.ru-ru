@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffb1d5eb756c7bc316a6d8e1de30a95eb1ac5194
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f76f4a3e5fc87420c242c693e3c48a91244641e0
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287055"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560039"
 ---
 # <a name="add-a-self-service-sign-up-user-flow-to-an-app-preview"></a>Добавление потока пользователя для самостоятельной регистрации в приложении (предварительная версия)
 > [!NOTE]
@@ -53,7 +53,7 @@ AAD является поставщиком удостоверений по ум
 4. Переместите переключатель **Включение самостоятельной регистрации гостей через маршруты пользователей (предварительная версия)** в положение **Да**.
 
    ![Включение самостоятельной регистрации гостей](media/self-service-sign-up-user-flow/enable-self-service-sign-up.png)
-
+5. Щелкните **Сохранить**.
 ## <a name="create-the-user-flow-for-self-service-sign-up"></a>Создание потока пользователя для самостоятельной регистрации
 
 Теперь вам нужно создать поток пользователя для самостоятельной регистрации и добавить его в приложение.

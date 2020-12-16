@@ -3,12 +3,12 @@ title: Рекомендации
 description: Ознакомьтесь с рекомендациями и полезными советами по разработке решений пакетной службы Azure.
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1eaa34e02a4c505691662e9fc29334cb823a3185
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0f19fceca0212bd0a05d7caa311403b173c19de5
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511218"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563183"
 ---
 # <a name="azure-batch-best-practices"></a>Рекомендации для пакетной службы Azure
 
@@ -143,7 +143,7 @@ ms.locfileid: "97511218"
 
 ### <a name="isolated-nodes"></a>Изолированные узлы
 
-Рассмотрите возможность использования изолированного размера виртуальной машины для рабочих нагрузок с соблюдением требований или нормативными требованиями. Поддерживаемые изолированные размеры в режиме конфигурации виртуальной машины: `Standard_E64i_v3` , `Standard_E80ids_v4` ,,, `Standard_F72s_v2` `Standard_G5` `Standard_GS5` и `Standard_M128ms` . Дополнительные сведения о размерах изолированных виртуальных машин см. [в статье изоляция виртуальных машин в Azure](https://docs.microsoft.com/azure/virtual-machines/isolation).
+Рассмотрите возможность использования изолированных размеров виртуальных машин для рабочих нагрузок с соблюдением требований или нормативными требованиями. Поддерживаемые изолированные размеры в режиме конфигурации виртуальной машины: `Standard_E80ids_v4` , `Standard_M128ms` ,,, `Standard_F72s_v2` `Standard_G5` `Standard_GS5` и `Standard_E64i_v3` . Дополнительные сведения о размерах изолированных виртуальных машин см. [в статье изоляция виртуальных машин в Azure](https://docs.microsoft.com/azure/virtual-machines/isolation).
 
 ### <a name="manage-long-running-services-via-the-operating-system-services-interface"></a>Управление долго работающими службами с помощью интерфейса служб операционной системы
 

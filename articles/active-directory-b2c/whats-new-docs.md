@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory "Бизнес-клиент" (B2C)
 description: Новая и обновленная документация для Azure Active Directory "Бизнес-клиент" (B2C).
-ms.date: 12/03/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: reference
@@ -9,16 +9,29 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 4c204ec33604ff5edd1551f9728c28e3dcab9a61
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 8805caad990cd472b3199bda27130d8d63be3071
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571085"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559733"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: новые возможности
 
 Добро пожаловать в новые возможности Azure Active Directory B2C документации. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы B2C, см. статью [новые возможности в Azure Active Directory](../active-directory/fundamentals/whats-new.md).
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Создание потока пользователя в Azure Active Directory B2C](create-user-flow.md)
+- [Настройка регистрации и входа с телефона для потоков пользователей (Предварительная версия)](phone-authentication-user-flows.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Учебник. Создание клиента Azure Active Directory B2C](tutorial-create-tenant.md).
+- [Примеры кода Azure Active Directory B2C](code-samples.md)
+- [Версии макета страницы](page-layout.md)
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 

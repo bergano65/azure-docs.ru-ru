@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory внешних удостоверениях
 description: Новая и обновленная документация по Azure Active Directory внешним удостоверениям.
-ms.date: 12/03/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
@@ -9,16 +9,32 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 35fa6909160ca707035ee9fc599e4035c2ae7981
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e614507fbcfce5fc006983e0be7963223bb0b7ed
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573907"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562384"
 ---
 # <a name="azure-active-directory-external-identities-whats-new"></a>Azure Active Directory внешние удостоверения: новые возможности
 
 Добро пожаловать в документацию по внешним удостоверениям Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы внешних удостоверений, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B](faq.md)
+- [Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B](google-federation.md)
+- [Поставщики удостоверений для внешних удостоверений](identity-providers.md)
+- [Активация приглашения службы совместной работы Azure Active Directory B2B](redemption-experience.md)
+- [Добавление соединителя API в поток пользователя](self-service-sign-up-add-api-connector.md)
+- [Добавление пользовательского рабочего процесса утверждения для самостоятельной регистрации](self-service-sign-up-add-approvals.md)
+- [Устранение неполадок службы совместной работы Azure Active Directory B2B](troubleshoot.md)
+- [Что такое гостевой доступ в Azure Active Directory B2B?](what-is-b2b.md)
+- [Рекомендации по Azure Active Directory B2B](b2b-fundamentals.md)
+- [Включение внешнего взаимодействия B2B и управление пользователями, которые могут приглашать гостей](delegate-invitations.md)
+- [Проверка подлинности по одноразовому секретному коде](one-time-passcode.md)
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 8340712e10721374bb2f0a35ac2e2e9a6abf181c
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: deb05083ca45c24a58cabf9e923b706575ef093b
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743043"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562146"
 ---
 # <a name="integrate-your-existing-network-policy-server-nps-infrastructure-with-azure-ad-multi-factor-authentication"></a>Интеграция существующей инфраструктуры сервера сетевых политик (NPS) с многофакторной идентификацией Azure AD
 
@@ -225,6 +225,10 @@ Windows Server 2012 или более поздней версии.
 
 1. Запустите сценарий PowerShell, созданный установщиком.
 
+   Возможно, потребуется включить TLS 1,2 для PowerShell, чтобы обеспечить правильное подключение и загрузку пакетов:
+   
+   `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+
    > [!IMPORTANT]
    > Для клиентов, использующих облака Azure для государственных организаций или Azure для Китая в Китае, сначала измените `Connect-MsolService` командлеты в *AzureMfaNpsExtnConfigSetup.ps1* скрипте, чтобы включить параметры *AzureEnvironment* для требуемого облака. Например, укажите *-AzureEnvironment усговернмент* или *-AzureEnvironment AzureChinaCloud*.
    >
@@ -251,7 +255,7 @@ Windows Server 2012 или более поздней версии.
 > Эти параметры реестра следует настраивать только в том случае, если вы являетесь клиентом Azure для государственных организаций или Azure для Китая.
 
 1. Если вы являетесь клиентом Azure для государственных организаций или Azure для Китая (21Vianet), откройте **редактор реестра** на сервере NPS.
-1. Перейдите к `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa`.
+1. Перейдите на страницу `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa`.
 1. Для клиентов Azure для государственных организаций задайте следующие значения ключей:
 
     | Раздел реестра       | Значение |

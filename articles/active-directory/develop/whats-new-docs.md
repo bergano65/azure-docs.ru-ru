@@ -5,22 +5,43 @@ description: Новая и обновленная документация по 
 services: active-directory
 author: mmacy
 manager: CelesteDG
-ms.date: 12/01/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 108cd5f74b7b560534baf8f55f7d07ebb6557e7f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4813a71a0bdd14e747aa4cfe51ab5a4191df62a4
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457158"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563047"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Документация по платформе Microsoft Identity: новые возможности
 
 Добро пожаловать в документацию по платформе удостоверений Майкрософт. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца.
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Краткое руководство. ASP.NET Core веб-приложение, которое подписывает пользователей и вызывает Microsoft Graph от их имени](quickstart-v2-aspnet-core-webapp-calls-graph.md)
+- [Обработка ошибок и исключений в MSAL.NET](msal-error-handling-dotnet.md)
+- [Обработка ошибок и исключений в MSAL для iOS или macOS](msal-error-handling-ios.md)
+- [Обработка ошибок и исключений в MSAL для Java](msal-error-handling-java.md)
+- [Обработка ошибок и исключений в MSAL.js](msal-error-handling-js.md)
+- [Обработка ошибок и исключений в MSAL для Python](msal-error-handling-python.md)
+- [Сценарии обмена маркерами платформы идентификации Microsoft Identity с SAML и OIDC/OAuth](scenario-token-exchange-saml-oauth.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Руководство по Создание мультитенантной управляющей программы, которая использует конечную платформу удостоверений Майкрософт](tutorial-v2-aspnet-daemon-web-app.md)
+- [Веб-приложение, которое входит в систему пользователей: регистрация приложения](scenario-web-app-sign-user-app-registration.md)
+- [Платформа удостоверений Майкрософт и неявный поток предоставления](v2-oauth2-implicit-grant-flow.md)
+- [Маркеры доступа платформы удостоверений Майкрософт](access-tokens.md)
+- [Веб-API, вызывающий веб-API: получение маркера для приложения](scenario-web-api-call-api-acquire-token.md)
+
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 

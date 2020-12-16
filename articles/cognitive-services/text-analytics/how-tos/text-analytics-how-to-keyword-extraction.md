@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 05/13/2020
+ms.date: 12/15/2020
 ms.author: aahi
-ms.openlocfilehash: 39823792a438e533134f38c04e72f2c314c57678
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: e5d25e71e4700f3f327319e4f444d2060c7ab5f6
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505194"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561891"
 ---
 # <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример. Извлечение ключевых фраз с помощью Анализ текста
 
@@ -37,7 +37,12 @@ ms.locfileid: "97505194"
 
 Необходимо иметь документы JSON в следующем формате: ID, Text, Language.
 
-Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример иллюстрации содержимого, которое можно отправлять для извлечения ключевых фраз.
+Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример иллюстрации содержимого, которое можно отправлять для извлечения ключевых фраз. 
+
+Дополнительные сведения об объектах запросов и ответов см. в разделе [вызов API анализа текста](text-analytics-how-to-call-api.md) .  
+
+### <a name="example-synchronous-request-object"></a>Пример синхронного объекта запроса
+
 
 ```json
     {
@@ -71,13 +76,43 @@ ms.locfileid: "97505194"
     }
 ```
 
+### <a name="example-asynchronous-request-object"></a>Пример объекта асинхронного запроса
+
+Начиная `v3.1-preview.3` с, запросы NER можно отправить асинхронно с помощью `/analyze` конечной точки.
+
+
+```json
+{
+    "displayName": "My Job",
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "doc1",
+                "text": "It's incredibly sunny outside! I'm so happy"
+            },
+            {
+                "id": "doc2",
+                "text": "Pike place market is my favorite Seattle attraction."
+            }
+        ]
+    },
+    "tasks": {
+        "keyPhraseExtractionTasks": [{
+            "parameters": {
+                "model-version": "latest"
+            }
+        }],
+    }
+}
+```
+
 ## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Дополнительные сведения об определении запроса см. в статье [How to call the Text Analytics API](text-analytics-how-to-call-api.md) (Как вызвать REST API службы "Анализ текста"). Для удобства повторим следующие моменты.
 
 + Создайте запрос **POST** . Ознакомьтесь с документацией по API для этого запроса: [Ключевые фразы API](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases).
 
-+ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v3.0/keyPhrases`. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`.
++ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). Если вы используете API в синхронном режиме, необходимо включить `/text/analytics/v3.0/keyPhrases` в URL-адрес. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`.
 
 + Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
@@ -99,6 +134,8 @@ ms.locfileid: "97505194"
 Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими.
 
 Ниже показан пример выходных данных для извлечения ключевых фраз из конечной точки v 3.1-Preview. 2:
+
+### <a name="synchronous-result"></a>Синхронный результат
 
 ```json
     {
@@ -160,13 +197,68 @@ ms.locfileid: "97505194"
 ```
 Как уже отмечалось, анализатор находит и отбрасывает слова, которые не представляют смысла и сохраняет одиночные термины или фразы, которые могут быть темой или объектом предложения.
 
-## <a name="summary"></a>Сводка
+### <a name="asynchronous-result"></a>Асинхронный результат
+
+При использовании `/analyze` конечной точки для асинхронной операции вы получите ответ, содержащий задачи, отправленные в API.
+
+```json
+{
+  "displayName": "My Analyze Job",
+  "jobId": "dbec96a8-ea22-4ad1-8c99-280b211eb59e_637408224000000000",
+  "lastUpdateDateTime": "2020-11-13T04:01:14Z",
+  "createdDateTime": "2020-11-13T04:01:13Z",
+  "expirationDateTime": "2020-11-14T04:01:13Z",
+  "status": "running",
+  "errors": [],
+  "tasks": {
+      "details": {
+          "name": "My Analyze Job",
+          "lastUpdateDateTime": "2020-11-13T04:01:14Z"
+      },
+      "completed": 1,
+      "failed": 0,
+      "inProgress": 2,
+      "total": 3,
+      "keyPhraseExtractionTasks": [
+          {
+              "name": "My Analyze Job",
+              "lastUpdateDateTime": "2020-11-13T04:01:14.3763516Z",
+              "results": {
+                  "inTerminalState": true,
+                  "documents": [
+                      {
+                          "id": "doc1",
+                          "keyPhrases": [
+                              "sunny outside"
+                          ],
+                          "warnings": []
+                      },
+                      {
+                          "id": "doc2",
+                          "keyPhrases": [
+                              "favorite Seattle attraction",
+                              "Pike place market"
+                          ],
+                          "warnings": []
+                      }
+                  ],
+                  "errors": [],
+                  "modelVersion": "2020-07-01"
+              }
+          }
+      ]
+  }
+}
+```
+
+
+## <a name="summary"></a>Итоги
 
 В этой статье рассматриваются основные понятия и рабочий процесс извлечения ключевой фразы с помощью Анализа текста в Cognitive Services. В разделе "Сводка" сделайте следующее.
 
 + [API извлечения ключевых фраз](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases) доступен для некоторых языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
-+ Запрос POST передается в конечную точку `/keyphrases`, используя личный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), допустимые для вашей подписки.
++ Запрос POST к `/keyphrases` `/analyze` конечной точке или, используя персонализированный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) , допустимую для вашей подписки.
 + Выходные данные ответа, состоящие из ключевых слов и фраз для каждого идентификатора документа, могут передаваться в любое приложение, поддерживающее формат JSON, например Microsoft Office Excel и Power BI.
 
 ## <a name="see-also"></a>См. также раздел

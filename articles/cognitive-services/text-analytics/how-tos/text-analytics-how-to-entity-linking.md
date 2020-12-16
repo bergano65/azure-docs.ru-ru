@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 11/19/2020
+ms.date: 12/15/2020
 ms.author: aahi
-ms.openlocfilehash: 5b064365a6f0bd8a544f57d67cd6e4beb98bb404
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 9b90f177432de11f8281d03021b38bae647dadf2
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505245"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562537"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -37,7 +37,7 @@ API анализа текста позволяет получить нестру
 
 [!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
-| Компонент                                                         | NER версии 3.0 | NER версии 3.1 – Preview. 3 |
+| Функция                                                         | NER версии 3.0 | NER версии 3.1 – Preview. 3 |
 |-----------------------------------------------------------------|--------|----------|
 | Методы для одиночных и пакетных запросов                          | X      | X        |
 | Расширенное распознавание сущностей в нескольких категориях           | X      | X        |
@@ -99,6 +99,14 @@ API анализа текста позволяет получить нестру
 
 [Распознавание именованных сущностей версии 3,1 — Предварительная версия справочника для `PII`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesRecognitionPii)
 
+**Асинхронная операция**
+
+Начиная `v3.1-preview.3` с, запросы NER можно отправить асинхронно с помощью `/analyze` конечной точки.
+
+* Асинхронная операция — `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/analyze`
+
+Сведения об отправке асинхронных запросов см. в разделе [вызов API анализа текста](text-analytics-how-to-call-api.md) .
+
 #### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 В примере распознавания сущностей v3 используются отдельные конечные точки для запросов NER и связывания сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
@@ -117,7 +125,11 @@ API анализа текста позволяет получить нестру
 
 Включите ключ API Анализа текста в заголовок запроса. В тексте запроса укажите подготовленные документы JSON.
 
-### <a name="example-ner-request"></a>Пример запроса NER 
+## <a name="example-requests"></a>Примеры запросов
+
+#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-preview)
+
+### <a name="example-synchronous-ner-request"></a>Пример синхронного запроса NER 
 
 Следующий код JSON является примером содержимого, которое можно отправить в API. Формат запроса одинаков для обеих версий API.
 
@@ -131,8 +143,64 @@ API анализа текста позволяет получить нестру
     }
   ]
 }
-
 ```
+
+### <a name="example-asynchronous-ner-request"></a>Пример асинхронного запроса NER
+
+При использовании `/analyze` конечной точки для [асинхронной операции](text-analytics-how-to-call-api.md)вы получите ответ, содержащий задачи, отправленные в API.
+
+```json
+{
+    "displayName": "My Job",
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "doc1",
+                "text": "It's incredibly sunny outside! I'm so happy"
+            },
+            {
+                "id": "doc2",
+                "text": "Pike place market is my favorite Seattle attraction."
+            }
+        ]
+    },
+    "tasks": {
+        "entityRecognitionTasks": [
+            {
+                "parameters": {
+                    "model-version": "latest",
+                    "stringIndexType": "TextElements_v8"
+                }
+            }
+        ],
+        "entityRecognitionPiiTasks": [{
+            "parameters": {
+                "model-version": "latest"
+            }
+        }]
+    }
+}
+```
+
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
+
+### <a name="example-synchronous-ner-request"></a>Пример синхронного запроса NER 
+
+Версия 3,0 включает только синхронные операции. Следующий код JSON является примером содержимого, которое можно отправить в API. Формат запроса одинаков для обеих версий API.
+
+```json
+{
+  "documents": [
+    {
+        "id": "1",
+        "language": "en",
+        "text": "Our tour guide took us up the Space Needle during our trip to Seattle last week."
+    }
+  ]
+}
+```
+
+---
 
 ## <a name="post-the-request"></a>Передача запроса
 
@@ -148,11 +216,68 @@ API Анализа текста не учитывает состояние. Ни
 
 ### <a name="example-responses"></a>Примеры ответов
 
-Версия 3 предоставляет отдельные конечные точки для общих NER, PII и связывания сущностей. Ниже приведены ответы для обеих операций. 
+Версия 3 предоставляет отдельные конечные точки для общих NER, PII и связывания сущностей. Версия 3,1-паревиев включает режим асинхронного анализа. Ниже приведены ответы на эти операции. 
 
 #### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-preview)
 
+### <a name="synchronous-example-results"></a>Синхронные примеры результатов
+
+Пример общего ответа NER:
+
+```json
+{
+  "documents": [
+    {
+      "id": "1",
+      "entities": [
+        {
+          "text": "tour guide",
+          "category": "PersonType",
+          "offset": 4,
+          "length": 10,
+          "confidenceScore": 0.45
+        },
+        {
+          "text": "Space Needle",
+          "category": "Location",
+          "offset": 30,
+          "length": 12,
+          "confidenceScore": 0.38
+        },
+        {
+          "text": "trip",
+          "category": "Event",
+          "offset": 54,
+          "length": 4,
+          "confidenceScore": 0.78
+        },
+        {
+          "text": "Seattle",
+          "category": "Location",
+          "subcategory": "GPE",
+          "offset": 62,
+          "length": 7,
+          "confidenceScore": 0.78
+        },
+        {
+          "text": "last week",
+          "category": "DateTime",
+          "subcategory": "DateRange",
+          "offset": 70,
+          "length": 9,
+          "confidenceScore": 0.8
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "modelVersion": "2020-04-01"
+}
+```
+
 Пример ответа с PII-откликом:
+
 ```json
 {
   "documents": [
@@ -239,6 +364,58 @@ API Анализа текста не учитывает состояние. Ни
 }
 ```
 
+### <a name="example-asynchronous-result"></a>Пример асинхронного результата
+
+```json
+{
+  "displayName": "My Analyze Job",
+  "jobId": "dbec96a8-ea22-4ad1-8c99-280b211eb59e_637408224000000000",
+  "lastUpdateDateTime": "2020-11-13T04:01:14Z",
+  "createdDateTime": "2020-11-13T04:01:13Z",
+  "expirationDateTime": "2020-11-14T04:01:13Z",
+  "status": "running",
+  "errors": [],
+  "tasks": {
+      "details": {
+          "name": "My Analyze Job",
+          "lastUpdateDateTime": "2020-11-13T04:01:14Z"
+      },
+      "completed": 1,
+      "failed": 0,
+      "inProgress": 2,
+      "total": 3,
+      "keyPhraseExtractionTasks": [
+          {
+              "name": "My Analyze Job",
+              "lastUpdateDateTime": "2020-11-13T04:01:14.3763516Z",
+              "results": {
+                  "inTerminalState": true,
+                  "documents": [
+                      {
+                          "id": "doc1",
+                          "keyPhrases": [
+                              "sunny outside"
+                          ],
+                          "warnings": []
+                      },
+                      {
+                          "id": "doc2",
+                          "keyPhrases": [
+                              "favorite Seattle attraction",
+                              "Pike place market"
+                          ],
+                          "warnings": []
+                      }
+                  ],
+                  "errors": [],
+                  "modelVersion": "2020-07-01"
+              }
+          }
+      ]
+  }
+}
+```
+
 
 #### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
@@ -298,7 +475,7 @@ API Анализа текста не учитывает состояние. Ни
 ---
 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 
@@ -306,7 +483,7 @@ API Анализа текста не учитывает состояние. Ни
 * Запросы POST отправляются на одну или несколько конечных точек, используя персонализированный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) , допустимую для вашей подписки.
 * Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Использование клиентской библиотеки Анализа текста](../quickstarts/client-libraries-rest-api.md)

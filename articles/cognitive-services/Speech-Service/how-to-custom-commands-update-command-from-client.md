@@ -3,19 +3,19 @@ title: Обновление команды из клиентского прил�
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как обновить команду в клиентском приложении.
 services: cognitive-services
-author: encorona-ms
+author: nitinme
 manager: yetian
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/20/2020
-ms.author: encorona
-ms.openlocfilehash: 765bcbd0521f93bacb0799595e6fbef565d0f313
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.author: nitinme
+ms.openlocfilehash: 08c674a7a7ec060a4273836064cb1c21e979e725
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94963629"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560293"
 ---
 # <a name="update-a-command-from-a-client-app"></a>Обновление команды из клиентского приложения
 
@@ -147,7 +147,7 @@ ms.locfileid: "94963629"
 - Для можно использовать сложные объекты `clientContext` .
 - Можно использовать `clientContext` в речевых ответах для отправки действий и вызова конечных веб-точек.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Обновление команды из конечной точки в Интернете](./how-to-custom-commands-update-command-from-web-endpoint.md)

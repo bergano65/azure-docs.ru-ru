@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8d982d06bd100313d643033294b6d14e6383d5df
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 7a2b2344bbb110cd4b35cc1f6428f61e48552b01
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424701"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563013"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к службе v-Center для частного облака с локальных рабочих станций
 
@@ -25,7 +25,7 @@ ms.locfileid: "92424701"
 
 2. Перейдите к разделу **ресурсы**  >  **частные облака** и выберите частное облако, к которому нужно подключиться.
 
-3. На странице **Сводка** частного облака в разделе **Основные сведения**скопируйте IP-адрес DNS-сервера частного облака.
+3. На странице **Сводка** частного облака в разделе **Основные сведения** скопируйте IP-адрес DNS-сервера частного облака.
 
     ![DNS-серверы частного облака](media/private-cloud-dns-server.png)
 
@@ -44,6 +44,9 @@ ms.locfileid: "92424701"
 Конкретный файл и параметры для настройки могут зависеть от конкретной настройки DNS.
 
 Например, для конфигурации сервера привязки по умолчанию измените файл/ЕТК/намед.конф на DNS-сервере и добавьте следующие сведения о зоне.
+
+> [!NOTE]
+>Эта статья содержит ссылки на термин «ведомый» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 ```
 zone "az.cloudsimple.io"

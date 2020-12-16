@@ -10,12 +10,12 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: calui
-ms.openlocfilehash: ff6ae6ea6812397e737deb4b97bf1cd15e022c03
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 0ca5f6a853852acbb4ef97adfce2364592bae270
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743179"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559846"
 ---
 # <a name="sign-in-to-azure-active-directory-using-email-as-an-alternate-login-id-preview"></a>Вход в Azure Active Directory использование электронной почты в качестве альтернативного имени для входа (Предварительная версия)
 
@@ -36,6 +36,9 @@ ms.locfileid: "96743179"
 
 > [!NOTE]
 > Эта функция предназначена только для пользователей Azure AD с аутентификацией в облаке.
+
+> [!NOTE]
+> Сейчас эта функция не поддерживается на устройствах с Windows 10, присоединенных к Azure AD, для клиентов с проверкой подлинности в облаке. Эта функция неприменима к гибридным устройствам, присоединенным к Azure AD.
 
 ## <a name="overview-of-azure-ad-sign-in-approaches"></a>Обзор подходов к входу в Azure AD
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 5a23cf031b5d7cf40e2077f2e5287e10de563207
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 757dfa119649e21c6e1787671afa61ee18184300
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96903009"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561908"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Часто задаваемые вопросы о шаблонах ARM
 
@@ -154,7 +154,7 @@ ms.locfileid: "96903009"
 
 * **Когда я использую "что если", я вижу изменения в свойствах, которых нет в моем шаблоне. Ожидается ли этот "шум"?**
 
-  Что если находится в предварительной версии. Мы работаем над уменьшением шума. Вы Помогите нам улучшить, отправив проблемы в репозиторий GitHub здесь: https://aka.ms/WhatIfIssues
+  Мы работаем над уменьшением шума. Вы Помогите нам улучшить, отправив проблемы в репозиторий GitHub здесь: https://aka.ms/WhatIfIssues
 
 ## <a name="template-visualizer"></a>Визуализатор шаблонов
 
@@ -188,6 +188,6 @@ ms.locfileid: "96903009"
 
   Да, см. раздел [Развертывание шаблонов ARM с помощью действий GitHub](deploy-github-actions.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Общие сведения о шаблонах ARM см. в статье [что такое шаблоны ARM?](overview.md).

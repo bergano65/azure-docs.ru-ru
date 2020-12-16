@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ffae02a11f2857e72cf7c5d2bbc84d8ab6174e17
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: d8ed429003a9da7ae93fb93f4218cd66767dcd7b
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97426021"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562282"
 ---
 # <a name="set-up-msix-app-attach-with-the-azure-portal"></a>Настройка присоединения приложения MSIX с портал Azure
 
@@ -31,6 +31,7 @@ ms.locfileid: "97426021"
 
 - Работающее развертывание виртуального рабочего стола Windows. Сведения о развертывании виртуальных рабочих столов Windows (классическая модель) см. в статье [Создание клиента в виртуальном рабочем столе Windows](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Чтобы узнать, как развернуть виртуальный рабочий стол Windows с Azure Resource Managerной интеграцией, см. раздел [Создание пула узлов с портал Azure](./create-host-pools-azure-marketplace.md).
 - Пул узлов виртуальных рабочих столов Windows, который имеет хотя бы один активный узел сеансов.
+- Этот пул узлов должен находиться в среде проверки. 
 - Средство упаковки MSIX.
 - MSIX приложение, развернутое в образе MSIX, передаваемый в общую папку.
 - Файловый ресурс в развертывании виртуальных рабочих столов Windows, где будет храниться пакет MSIX.
@@ -232,7 +233,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
 4. Выберите приложение, которое необходимо удалить, а затем нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Запросите наши вопросы сообщества об этой функции в [Windows Virtual Desktop течкоммунити](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 
