@@ -1,7 +1,7 @@
 ---
 title: Новые возможности управления приложениями Azure Active Directory
 description: Новая и обновленная документация по управлению Azure Active Directory приложениями.
-ms.date: 12/03/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -9,16 +9,30 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 38602482f1a25f212829342fe691d7bb75666d31
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: bad312b777c57a48c3205de588325d477b5773af
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571017"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563404"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory Управление приложениями: новые возможности
 
 Добро пожаловать в документацию по управлению приложениями Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы управления приложениями, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-setup-oidc-sso.md)
+- [Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory](application-proxy-add-on-premises-application.md)
+- [Общие сведения о едином входе на основе OIDC](configure-oidc-single-sign-on.md)
+- [Перенос проверки подлинности приложения из службы федерации Active Directory (AD FS) в Azure Active Directory](migrate-adfs-apps-to-azure.md)
+- [Работа с имеющимися локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md)
+- [Azure Active Directory Управление приложениями: новые возможности](whats-new-docs.md)
+- [Использование отчета о действиях приложения (Предварительная версия) AD FS для переноса приложений в Azure AD](migrate-adfs-application-activity.md)
+- [Публикация удаленного рабочего стола с помощью прокси-сервера приложений Azure AD](application-proxy-integrate-with-remote-desktop-services.md)
+
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 
@@ -53,7 +67,7 @@ ms.locfileid: "96571017"
 ### <a name="new-articles"></a>Новые статьи
 - [Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-setup-oidc-sso.md)
 - [Краткое руководство. Назначение пользователей приложению, которое использует Azure AD в качестве поставщика удостоверений](add-application-portal-assign-users.md)
-- [Новые возможности документации](whats-new-docs.md)
+- [Новые возможности в документах](whats-new-docs.md)
 
 
 ### <a name="updated-articles"></a>Обновленные статьи

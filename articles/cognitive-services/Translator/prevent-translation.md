@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: ec39b3692a90f22409e85b5502d3ea874e3282d6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf8923c1090669caa46ef51a26418933b1cda023
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742066"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563438"
 ---
 # <a name="how-to-prevent-translation-of-content-with-the-translator"></a>Как предотвратить перевод содержимого с помощью транслятора
 
@@ -25,7 +25,7 @@ ms.locfileid: "91742066"
 
 1. Пометьте содержимое с помощью `notranslate`. Это можно сделать, только если входные Тексттипе заданы в формате HTML.
 
-   Пример.
+   Пример
 
    ```html
    <span class="notranslate">This will not be translated.</span>
@@ -49,14 +49,15 @@ ms.locfileid: "91742066"
    ```html
    <div translate="no">This will not be translated.</div>
    <div>This will be translated. </div>
+   ```
+   
+3. Используйте [динамический словарь](dynamic-dictionary.md), чтобы настроить требуемый перевод.
 
-3. Use the [dynamic dictionary](dynamic-dictionary.md) to prescribe a specific translation.
+4. Не передавайте строку транслятору для перевода.
 
-4. Don't pass the string to the Translator for translation.
-
-5. Custom Translator: Use a [dictionary in Custom Translator](custom-translator/what-is-dictionary.md) to prescribe the translation of a phrase with 100% probability.
+5. Пользовательский переводчик. Используйте [словарь в пользовательском трансляторе](custom-translator/what-is-dictionary.md) , чтобы предписывает перевод фразы с вероятностью 100%.
 
 
-## Next steps
+## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]
-> [Use the Translate operation to translate text](reference/v3-0-translate.md)
+> [Преобразование текста с помощью операции преобразования](reference/v3-0-translate.md)
