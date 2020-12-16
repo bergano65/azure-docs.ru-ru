@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
-ms.openlocfilehash: 97bd079034a39f158e3ca438c484929cb6f00363
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d936555a4d9a9c80718a24ba892c762f5a8354a
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542263"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608398"
 ---
 # <a name="composite-entity"></a>Составная сущность
 
@@ -172,15 +172,14 @@ ms.locfileid: "91542263"
 
 * * *
 
-
 |Объект данных|Имя сущности|Значение|
 |--|--|--|
 |Предварительно созданная сущность — число|"builtin.number"|"2"|
 |Предварительно созданная сущность — GeographyV2|"Location::ToLocation"|Каиро|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сущностях:
 
-* [Концепции](luis-concept-entity-types.md)
+* [Основные понятия](luis-concept-entity-types.md)
 * [Создание](luis-how-to-add-entities.md)

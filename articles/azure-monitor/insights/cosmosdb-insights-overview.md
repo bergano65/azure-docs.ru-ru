@@ -5,12 +5,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: dcd64cf779b931dbf3b4f743844071835e0b8c91
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 5e40f91945f83af7880f272f1578370f2ee1ec42
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932062"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608499"
 ---
 # <a name="explore-azure-monitor-for-azure-cosmos-db"></a>Изучите Azure Monitor для Azure Cosmos DB
 
@@ -71,7 +71,7 @@ Azure Monitor для Azure Cosmos DB предоставляет единый �
 
 ![Снимок экрана со сведениями по сбоям, разбитыми по типу HTTP-запроса](./media/cosmosdb-insights-overview/failures.png)
 
-| Код      |  Описание       | 
+| Код |  Описание       | 
 |-----------|:--------------------|
 | `200 OK`  | Одна из следующих REST-операций завершена успешно. </br>— GET на ресурсе. </br> — PUT на ресурсе. </br> — POST на ресурсе. </br> — POST на ресурсе хранимой процедуры для выполнения хранимой процедуры.|
 | `201 Created` | Операция POST для создания ресурса завершена успешно. |

@@ -4,16 +4,16 @@ description: Настройка действия GitHub, которое авто
 ms.topic: article
 ms.date: 08/20/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 270aa69e74045a48a3567ca74b722ca48a030654
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7dfa2a66851db760049e7c3dc3446223c7dffad1
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591639"
+ms.locfileid: "97609162"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>Настройка действия GitHub для создания экземпляра контейнера
 
-[Действия GitHub](https://help.github.com/actions/getting-started-with-github-actions/about-github-actions) — это набор функций в GitHub для автоматизации рабочих процессов разработки программного обеспечения в том же месте, где вы храните код и работаете над запросами на вытягивание и проблемами.
+[Действия GitHub](https://docs.github.com/en/free-pro-team@latest/actions) — это набор функций в GitHub для автоматизации рабочих процессов разработки программного обеспечения в том же месте, где вы храните код и работаете над запросами на вытягивание и проблемами.
 
 Чтобы автоматизировать развертывание одного контейнера в службе "экземпляры контейнеров Azure", используйте действие GitHub " [развернуть в Azure Container](https://github.com/azure/aci-deploy) ". Это действие позволяет задать свойства для экземпляра контейнера, аналогичные тем, которые находятся в команде [AZ Container Create][az-container-create] .
 
@@ -31,7 +31,7 @@ ms.locfileid: "97591639"
 > [!IMPORTANT]
 > Действие GitHub для службы "экземпляры контейнеров Azure" сейчас находится на этапе предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Учетная запись GitHub** . Создайте учетную запись, https://github.com если она еще не создана.
 * **Azure CLI** — для выполнения Azure CLI действий можно использовать Azure Cloud Shell или локальную установку Azure CLI. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
@@ -177,7 +177,7 @@ jobs:
 
 ![Просмотр хода выполнения рабочего процесса](./media/container-instances-github-action/github-action-progress.png)
 
-Сведения о просмотре состояния и результатах каждого шага в рабочем процессе см. в разделе [Управление запуском рабочего процесса](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run) . Если рабочий процесс не завершен, см. раздел [Просмотр журналов для диагностики сбоев](https://docs.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run#viewing-logs-to-diagnose-failures).
+Сведения о просмотре состояния и результатов каждого шага в рабочем процессе см. в статье [Просмотр журнала выполнения рабочего процесса](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/viewing-workflow-run-history) . Если рабочий процесс не завершен, см. раздел [Просмотр журналов для диагностики сбоев](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/using-workflow-run-logs#viewing-logs-to-diagnose-failures).
 
 Когда рабочий процесс завершится успешно, получите сведения об экземпляре контейнера с именем *ACI-SampleApp* , выполнив команду [AZ Container показывать][az-container-show] . Замените имя группы ресурсов: 
 
@@ -237,7 +237,7 @@ az container app up \
 
 ### <a name="command-progress"></a>Ход выполнения команд
 
-* При появлении запроса укажите учетные данные GitHub или предоставьте [личный маркер доступа GitHub](https://help.github.com/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) (PAT), который содержит *репозиторий* и области *пользователей* для проверки подлинности в учетной записи GitHub. При предоставлении учетных данных GitHub команда создает PAT. Следуйте дополнительным запросам, чтобы настроить рабочий процесс.
+* При появлении запроса укажите учетные данные GitHub или предоставьте [личный маркер доступа GitHub](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) (PAT), который содержит *репозиторий* и области *пользователей* для проверки подлинности в учетной записи GitHub. При предоставлении учетных данных GitHub команда создает PAT. Следуйте дополнительным запросам, чтобы настроить рабочий процесс.
 
 * Команда создает секреты репозитория для рабочего процесса:
 
@@ -258,7 +258,7 @@ Workflow succeeded
 Your app is deployed at:  http://acr-build-helloworld-node.eastus.azurecontainer.io:8080/
 ```
 
-Чтобы просмотреть состояние рабочего процесса и результаты каждого шага в пользовательском интерфейсе GitHub, см. раздел [Управление запуском рабочего процесса](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run).
+Чтобы просмотреть состояние рабочего процесса и результаты каждого шага в пользовательском интерфейсе GitHub, см. раздел [Просмотр журнала выполнения рабочего процесса](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/viewing-workflow-run-history).
 
 ### <a name="validate-workflow"></a>Проверка рабочего процесса
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/20/2020
 ms.author: wieastbu
 ms.custom: fasttrack-new, devx-track-js
-ms.openlocfilehash: aa3bce73d2a91538dff0fdeb9e0eb814d878459a
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: b157200b03bdc89e00bfa5c8264d78baf24875c1
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676018"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609128"
 ---
 # <a name="protect-spa-backend-with-oauth-20-azure-active-directory-b2c-and-azure-api-management"></a>Защита серверной части SPA с помощью OAuth 2,0, Azure Active Directory B2C и Azure API Management
 
@@ -180,7 +180,7 @@ ms.locfileid: "92676018"
    > Теперь API-интерфейс функции не следует вызывать из любого места, отличного от управления через Управление API, или вашего адреса.
    
 ## <a name="import-the-function-app-definition"></a>Импорт определения приложения функции
-1. Откройте *колонку управления API* , а затем откройте *свой экземпляр* .
+1. Откройте *колонку управления API*, а затем откройте *свой экземпляр*.
 1. Выберите колонку API из раздела управления API своего экземпляра.
 1. В области "добавить новый API" выберите "приложение-функция", а затем в верхней части всплывающего окна выберите "полная".
 1. Нажмите кнопку Обзор, выберите приложение-функцию, в котором вы размещаете API, и нажмите кнопку Выбрать.
@@ -396,7 +396,8 @@ ms.locfileid: "92676018"
                     // Make the api call here
                 $.ajax({
                     type: "get",
-                    headers: {'Authorization': 'Bearer ' + token, 'Ocp-Apim-Subscription-Key': applicationConfig.subKey},                   url: applicationConfig.webApi
+                    headers: {'Authorization': 'Bearer ' + token, 'Ocp-Apim-Subscription-Key': applicationConfig.subKey},
+                    url: applicationConfig.webApi
                 }
                 ).done(function (body) {
                     document.getElementById("message").innerHTML = "The API Said " + body;

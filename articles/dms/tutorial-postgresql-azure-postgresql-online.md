@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019, devx-track-azurecli
 ms.topic: tutorial
 ms.date: 04/11/2020
-ms.openlocfilehash: e5ee40a156d1b6a322895a9e3f0bdbd73ee029b6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: fb303054a3026a305831309413c51c061a68c5d6
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94954891"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608057"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-cli"></a>Руководство по Миграция из PostgreSQL в Базу данных Azure для PostgreSQL с помощью DMS и Azure CLI в подключенном режиме
 
@@ -47,7 +47,7 @@ Azure Database Migration Service можно использовать для пе
     Также обратите внимание, что версия целевой Базы данных Azure для PostgreSQL не может быть более ранней, чем версия исходного экземпляра. Например, для PostgreSQL 9.6 можно выполнить миграцию только в Базу данных Azure для PostgreSQL 9.6, 10 или 11, но не в Базу данных Azure для PostgreSQL 9.5.
 
 * Создайте [экземпляр Базы данных Azure для PostgreSQL](../postgresql/quickstart-create-server-database-portal.md) или [сервер базы данных Azure для PostgreSQL (Гипермасштабирование (Citus))](../postgresql/quickstart-create-hyperscale-portal.md).
-* Создайте виртуальную сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](../expressroute/expressroute-introduction.md) или [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](../virtual-network/index.yml). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
+* Создайте виртуальную сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](../expressroute/expressroute-introduction.md) или [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md). Дополнительные сведения см. в статье [Документация по виртуальной сети](../virtual-network/index.yml), где особое внимание стоит уделить кратким руководствам с пошаговыми инструкциями.
 
     > [!NOTE]
     > Если вы используете ExpressRoute с пиринговым подключением к сети, управляемой Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](../virtual-network/virtual-network-service-endpoints-overview.md):
@@ -250,8 +250,8 @@ Azure Database Migration Service можно использовать для пе
     * Как добавить IP-адрес к файлу pg_hba.conf в источнике, см. ниже.
 
         ```
-        host    all     all     172.16.136.18/10    md5
-        host    replication     postgres    172.16.136.18/10    md5
+        host     all            all        172.16.136.18/10    md5
+        host     replication    postgres   172.16.136.18/10    md5
         ```
 
 5. Создайте проект миграции PostgreSQL, выполнив следующую команду.
@@ -376,23 +376,23 @@ Azure Database Migration Service можно использовать для пе
 В выходном файле существует несколько параметров, которые указывают ход выполнения миграции. Например, просмотрите выходной файл, приведенный ниже.
 
   ```output
-    "output": [                                 Database Level
+    "output": [                                 // Database Level
           {
-            "appliedChanges": 0,        //Total incremental sync applied after full load
-            "cdcDeleteCounter": 0       // Total delete operation  applied after full load
-            "cdcInsertCounter": 0,      // Total insert operation applied after full load
-            "cdcUpdateCounter": 0,      // Total update operation applied after full load
+            "appliedChanges": 0,         // Total incremental sync applied after full load
+            "cdcDeleteCounter": 0        // Total delete operation  applied after full load
+            "cdcInsertCounter": 0,       // Total insert operation applied after full load
+            "cdcUpdateCounter": 0,       // Total update operation applied after full load
             "databaseName": "inventory",
             "endedOn": null,
             "fullLoadCompletedTables": 2,   //Number of tables completed full load
-            "fullLoadErroredTables": 0, //Number of tables that contain migration error
-            "fullLoadLoadingTables": 0, //Number of tables that are in loading status
-            "fullLoadQueuedTables": 0,  //Number of tables that are in queued status
+            "fullLoadErroredTables": 0,     //Number of tables that contain migration error
+            "fullLoadLoadingTables": 0,     //Number of tables that are in loading status
+            "fullLoadQueuedTables": 0,      //Number of tables that are in queued status
             "id": "db|inventory",
-            "incomingChanges": 0,       //Number of changes after full load
+            "incomingChanges": 0,           //Number of changes after full load
             "initializationCompleted": true,
             "latency": 0,
-            "migrationState": "READY_TO_COMPLETE",  //Status of migration task. READY_TO_COMPLETE means the database is ready for cutover
+            "migrationState": "READY_TO_COMPLETE",    //Status of migration task. READY_TO_COMPLETE means the database is ready for cutover
             "resultType": "DatabaseLevelOutput",
             "startedOn": "2018-07-05T23:36:02.27839+00:00"
           },
@@ -408,25 +408,25 @@ Azure Database Migration Service можно использовать для пе
             "targetServer": "builddemotarget.postgres.database.azure.com",
             "targetVersion": "Azure Database for PostgreSQL"
           },
-          {                                     Table 1
+          {                                        // Table 1
             "cdcDeleteCounter": 0,
             "cdcInsertCounter": 0,
             "cdcUpdateCounter": 0,
             "dataErrorsCount": 0,
             "databaseName": "inventory",
-            "fullLoadEndedOn": "2018-07-05T23:36:20.740701+00:00",  //Full load completed time
+            "fullLoadEndedOn": "2018-07-05T23:36:20.740701+00:00",    //Full load completed time
             "fullLoadEstFinishTime": "1970-01-01T00:00:00+00:00",
             "fullLoadStartedOn": "2018-07-05T23:36:15.864552+00:00",    //Full load started time
-            "fullLoadTotalRows": 10,                    //Number of rows loaded in full load
-            "fullLoadTotalVolumeBytes": 7056,               //Volume in Bytes in full load
-            "id": "or|inventory|public|actor",          
+            "fullLoadTotalRows": 10,                     //Number of rows loaded in full load
+            "fullLoadTotalVolumeBytes": 7056,            //Volume in Bytes in full load
+            "id": "or|inventory|public|actor",
             "lastModifiedTime": "2018-07-05T23:36:16.880174+00:00",
             "resultType": "TableLevelOutput",
-            "state": "COMPLETED",                   //State of migration for this table
+            "state": "COMPLETED",                       //State of migration for this table
             "tableName": "public.catalog",              //Table name
-            "totalChangesApplied": 0                //Total sync changes that applied after full load
+            "totalChangesApplied": 0                    //Total sync changes that applied after full load
           },
-          {                                     Table 2
+          {                                            //Table 2
             "cdcDeleteCounter": 0,
             "cdcInsertCounter": 50,
             "cdcUpdateCounter": 0,
@@ -444,8 +444,8 @@ Azure Database Migration Service можно использовать для пе
             "tableName": "public.orders",
             "totalChangesApplied": 0
           }
-        ],                          DMS migration task state
-        "state": "Running", //Migration task state – Running means it is still listening to any changes that might come in                  
+        ],                                      // DMS migration task state
+        "state": "Running",    //Migration task state – Running means it is still listening to any changes that might come in
         "taskType": null
       },
       "resourceGroup": "PostgresDemo",
@@ -460,12 +460,12 @@ Azure Database Migration Service можно использовать для пе
 
 ```
 "migrationState": "READY_TO_COMPLETE", //Status of migration task. READY_TO_COMPLETE means database is ready for cutover
- "incomingChanges": 0,  //continue to check for a period of 5-10 minutes to make sure no new incoming changes that need to be applied to the target server
+ "incomingChanges": 0, //continue to check for a period of 5-10 minutes to make sure no new incoming changes that need to be applied to the target server
    "fullLoadTotalRows": 10, //full load for table 1
-    "cdcDeleteCounter": 0,  //delete, insert and update counter on incremental sync after full load
+    "cdcDeleteCounter": 0, //delete, insert and update counter on incremental sync after full load
     "cdcInsertCounter": 50,
     "cdcUpdateCounter": 0,
-     "fullLoadTotalRows": 112,  //full load for table 2
+     "fullLoadTotalRows": 112, //full load for table 2
 ```
 
 1. Выполните задачу прямой миграции базы данных с помощью следующей команды.

@@ -11,12 +11,12 @@ manager: shwang
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: 6d3c9f0df0d834ffe75d0b56e3c80a432c27ea38
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4679d06e877679f0a56ee782b9a43a5a8147d7a5
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018551"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608125"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -64,8 +64,8 @@ ms.locfileid: "96018551"
 |type|Тип действия Databricks Notebook — DatabricksNotebook.|Да|
 |linkedServiceName|Имя связанной службы Databricks, в которой запускается записная книжка Databricks. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md).|Да|
 |notebookPath|Абсолютный путь записной книжки, которая будет запущена в рабочей области Databricks. Этот путь должен начинаться с косой черты.|Да|
-|baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|нет|
-|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Это может быть массив \<string, object> .|нет|
+|baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Нет|
+|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Это может быть массив \<string, object> .|Нет|
 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
@@ -81,7 +81,7 @@ ms.locfileid: "96018551"
         {
             "egg": "dbfs:/mnt/libraries/library.egg"
         },
-    {
+        {
             "whl": "dbfs:/mnt/libraries/mlflow-0.0.1.dev0-py2-none-any.whl"
         },
         {
@@ -123,7 +123,7 @@ ms.locfileid: "96018551"
 2. Выходные данные в фабрике данных можно использовать с помощью выражения, такого как `'@activity('databricks notebook activity name').output.runOutput'` . 
 
    > [!IMPORTANT]
-   > При передаче объекта JSON значения можно получить, добавив имена свойств. Пример: `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`
+   > При передаче объекта JSON значения можно получить, добавив имена свойств. Например, `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`.
 
 ## <a name="how-to-upload-a-library-in-databricks"></a>Отправка библиотеки в Databricks
 

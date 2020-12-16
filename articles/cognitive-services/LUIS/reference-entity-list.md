@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
-ms.openlocfilehash: 29f0f0c3fd48920990519aecfe5ae58c32b43db9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 410b33b5c6078d096fa4b2acaa7b49bc14c95e31
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253842"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608278"
 ---
 # <a name="list-entity"></a>Сущность списка
 
@@ -85,7 +85,6 @@ ms.locfileid: "91253842"
 
 #### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-
 Это JSON, если `verbose=false` в строке запроса задано:
 
 ```json
@@ -131,10 +130,9 @@ ms.locfileid: "91253842"
 |--|--|--|
 |Сущность списка|`Cities`|`paris`|
 
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сущностях:
 
-* [Концепции](luis-concept-entity-types.md)
+* [Основные понятия](luis-concept-entity-types.md)
 * [Создание](luis-how-to-add-entities.md)

@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: d2eef20b4c5648b1b11f16d8e46b956fc1497181
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d432f29e91097491fc4719ec59a11cb96948f431
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92364428"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609060"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы сервера с Гипермасштабированием PostgreSQL с поддержкой Azure Arc
 
@@ -32,7 +32,7 @@ ms.locfileid: "92364428"
 - [Основные понятия конфигурации хранилища и хранилища Kubernetes](storage-configuration.md)
 - [Модель ресурсов Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)
 
-Если вы предпочитаете работать без подготовки полной среды самостоятельно, начните работу с помощью [Azure Arc JumpStart](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
+Если вы предпочитаете работать без подготовки полной среды самостоятельно, начните работу с помощью [Azure Arc JumpStart](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
 
 
 ## <a name="login-to-the-azure-arc-data-controller"></a>Вход в контроллер данных ARC в Azure
@@ -112,7 +112,7 @@ postgres01  Ready     2
 ```console
 azdata arc postgres endpoint list -n <server group name>
 ```
-Пример:
+Пример.
 ```console
 [
   {
@@ -183,7 +183,7 @@ az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o 
 psql postgresql://postgres:<EnterYourPassword>@10.0.0.4:30655
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с основными понятиями и руководствами по использованию службы "база данных Azure для PostgreSQL", чтобы распределить данные между несколькими узлами PostgreSQL, а также получить преимущества от всех возможностей службы "база данных Azure для PostgreSQL". :
     * [Узлы и таблицы](../../postgresql/concepts-hyperscale-nodes.md)

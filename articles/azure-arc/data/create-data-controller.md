@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 6830bdd38e8e1f1d649673cfdaf48e8c50ba6c3e
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: b9a41f4d4bb10599d50e58ad6f08d61aaba7ecfc
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413230"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608788"
 ---
 # <a name="create-the-azure-arc-data-controller"></a>Создание контроллера данных ARC в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "94413230"
 - Служба с открытым исходным кодом Kubernetes обычно развертывается с помощью kubeadm
 
 > [!IMPORTANT]
-> * Минимальная поддерживаемая версия Kubernetes — v 1.17.
+> * Минимальная поддерживаемая версия Kubernetes — v 1.17. Дополнительные сведения см. в статье [Известные проблемы](./release-notes.md#known-issues) . 
 > * Минимальная поддерживаемая версия OCP — 4,3.
 > * Ознакомьтесь с [требованиями к подключению](connectivity.md) , чтобы узнать, какое подключение требуется для вашей среды и Azure.
 > * Сведения о настройке постоянного хранилища см. в [руководстве по настройке хранилища](storage-configuration.md) .
@@ -64,10 +64,10 @@ ms.locfileid: "94413230"
 Существует несколько вариантов создания контроллера данных Arc Azure.
 
 > **Хотите попробовать?**  
-> Быстро Начните работу с помощью [Azure Arc JumpStart](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
+> Быстро Начните работу с помощью [Azure Arc JumpStart](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
 > 
 - [Создание контроллера данных с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]](create-data-controller-using-azdata.md)
 - [Создание контроллера данных с Azure Data Studio](create-data-controller-azure-data-studio.md)
 - [Создание контроллера данных из портал Azure через записную книжку Jupyter в Azure Data Studio](create-data-controller-resource-in-azure-portal.md)
 - [Создание контроллера данных с помощью таких средств Kubernetes, как kubectl или OC](create-data-controller-using-kubernetes-native-tools.md)
-- [Создание контроллера данных с помощью Azure Arc JumpStart для ускоренного взаимодействия с тестовым развертыванием](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services)
+- [Создание контроллера данных с помощью Azure Arc JumpStart для ускоренного взаимодействия с тестовым развертыванием](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/)
