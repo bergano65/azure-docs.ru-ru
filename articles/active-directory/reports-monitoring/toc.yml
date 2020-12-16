@@ -6,6 +6,8 @@
       href: overview-reports.md
     - name: Обзор функции мониторинга в Azure AD
       href: overview-monitoring.md
+    - name: Что такое диагностика входа?
+      href: overview-sign-in-diagnostics.md
 - name: Краткие руководства
   expanded: true
   items:

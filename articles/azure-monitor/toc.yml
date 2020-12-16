@@ -127,7 +127,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: Предупреждения
+    - name: видны узлы
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -190,6 +190,8 @@
               href: platform/metrics-getting-started.md
             - name: Расширенные возможности обозревателя метрик
               href: platform/metrics-charts.md
+            - name: Просмотр нескольких ресурсов в обозревателе метрик
+              href: platform/metrics-dynamic-scope.md
             - name: Примеры диаграмм метрик
               href: platform/metric-chart-samples.md
             - name: Устранение неполадок с диаграммами метрик
@@ -546,12 +548,12 @@
               href: platform/itsmc-overview.md
             - name: Подключения управления ИТ-услугами
               href: platform/itsmc-connections.md
-            - name: Интеграция с Secure Export
-              href: platform/it-service-management-connector-secure-webhook-connections.md
             - name: Создание веб-приложения Service Manager
               href: platform/itsmc-service-manager-script.md
             - name: Устранение неполадок с соединителем ITSM
               href: platform/itsmc-resync-servicenow.md
+            - name: Интеграция с Secure Export
+              href: platform/it-service-management-connector-secure-webhook-connections.md
         - name: Перенос классических правил генерации оповещений
           items:
             - name: Сведения о классических оповещениях
@@ -752,6 +754,8 @@
               href: app/pre-aggregated-metrics-log-metrics.md
             - name: Определения метрик на основе журнала
               href: platform/app-insights-metrics.md
+            - name: Стандартные метрики
+              href: app/standard-metrics.md
         - name: Поиск
           href: app/diagnostic-search.md
         - name: Profiler

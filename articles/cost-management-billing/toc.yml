@@ -384,6 +384,8 @@
       href: /azure/templates/microsoft.consumption/budgets
     - name: "Примеры REST\_API службы \"Управление затратами\""
       href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
+    - name: "Управление затратами\_— Azure PowerShell"
+      href: /powershell/module/Az.CostManagement
     - name: Сценарии автоматизации выставления счетов
       href: manage/cost-management-automation-scenarios.md
     - name: Общие сведения об API выставления счетов Azure

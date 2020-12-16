@@ -306,10 +306,12 @@
       items:
         - name: Выбор уровня
           href: search-sku-tier.md
-        - name: Ограничения службы
-          href: search-limits-quotas-capacity.md
+        - name: Оценка емкости и стоимости
+          href: search-sku-manage-costs.md
         - name: Настройка емкости
           href: search-capacity-planning.md
+        - name: Ограничения службы
+          href: search-limits-quotas-capacity.md
         - name: Масштабирование для производительности
           href: search-performance-optimization.md
         - name: Мультитенантная архитектура
@@ -362,12 +364,6 @@
               href: service-configure-firewall.md
             - name: Создание частной конечной точки
               href: service-create-private-endpoint.md
-        - name: Доступ на основе удостоверений
-          items:
-            - name: Фильтры системы безопасности
-              href: search-security-trimming-for-azure-search.md
-            - name: Фильтрация по удостоверениям пользователей
-              href: search-security-trimming-for-azure-search-with-aad.md
         - name: Безопасность исходящего трафика (индексаторы)
           items:
             - name: Реализация доступа через диапазон IP-адресов
@@ -376,6 +372,12 @@
               href: search-indexer-howto-access-trusted-service-exception.md
             - name: Реализация доступа через частные конечные точки
               href: search-indexer-howto-access-private.md
+        - name: Доступ на основе удостоверений
+          items:
+            - name: Фильтры системы безопасности
+              href: search-security-trimming-for-azure-search.md
+            - name: Фильтрация по удостоверениям пользователей
+              href: search-security-trimming-for-azure-search-with-aad.md
     - name: Управление
       items:
         - name: Портал

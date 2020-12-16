@@ -95,8 +95,6 @@
       href: user-overview.md
     - name: Атрибуты профиля пользователя
       href: user-profile-attributes.md
-    - name: Сеансы единого входа
-      href: session-overview.md
     - name: Защита идентификации и условный доступ
       href: conditional-access-identity-protection-overview.md
 - name: Практические руководства
@@ -155,6 +153,8 @@
           href: identity-provider-wechat.md
         - name: Weibo
           href: identity-provider-weibo.md
+        - name: Передача токена поставщика удостоверений
+          href: idp-pass-through-user-flow.md
     - name: Настройка UX
       items:
         - name: Настройка пользовательского ввода
@@ -174,6 +174,24 @@
         - name: Включение MFA
           href: multi-factor-authentication.md
           displayName: multi-factor auth
+        - name: Настройка прямого входа в систему
+          href: direct-signin.md
+    - name: Управление токенами и сеансами
+      items:
+        - name: Настройка поведения сеанса
+          href: session-behavior.md
+        - name: Конфигурирование токенов
+          href: configure-tokens.md
+    - name: Определение настраиваемых атрибутов
+      href: user-flow-custom-attributes.md
+    - name: Защита идентификации и условный доступ
+      items:
+        - name: Настройка защиты идентификации и условного доступа
+          href: conditional-access-identity-protection-setup.md
+        - name: Добавление условного доступа
+          href: conditional-access-user-flow.md
+    - name: Настройка проверки возраста
+      href: basic-age-gating.md
     - name: Поток пользователя
       items:
         - name: Создание потока
@@ -184,40 +202,23 @@
               href: configure-ropc.md
             - name: Настройка самостоятельного сброса пароля
               href: user-flow-self-service-password-reset.md
-        - name: Добавление условного доступа
-          href: conditional-access-user-flow.md
-        - name: Управление токенами и сеансами
-          items:
-            - name: Конфигурирование токенов
-              href: configure-tokens.md
-            - name: Настройка поведения сеанса
-              href: session-behavior.md
-        - name: Настройка проверки возраста
-          href: basic-age-gating.md
-        - name: Определение настраиваемых атрибутов
-          href: user-flow-custom-attributes.md
         - name: Соединители API (предварительная версия)
           items:
             - name: Обзор
               href: api-connectors-overview.md
             - name: Добавление соединителя API
               href: add-api-connector.md
-        - name: Транзитный внешний токен IdP
-          href: idp-pass-through-user-flow.md
-    - name: Защита идентификации и условный доступ
-      href: conditional-access-identity-protection-setup.md
     - name: Настраиваемая политика
       items:
+        - name: Общие сведения о настраиваемой политике
+          href: custom-policy-trust-frameworks.md
+        - name: Начало работы с настраиваемыми политиками
+          href: custom-policy-get-started.md
         - name: Создание политики
           items:
-            - name: Начало работы с настраиваемыми политиками
-              href: custom-policy-get-started.md
             - name: Учетные данные владельца ресурса
               href: ropc-custom.md
               displayName: ropc
-            - name: Включение возможности оставаться в системе
-              href: custom-policy-keep-me-signed-in.md
-              displayName: kmsi
             - name: Изменение пароля
               href: custom-policy-password-change.md
             - name: Регистрация и вход с помощью телефона
@@ -230,18 +231,6 @@
             - name: SendGrid
               href: custom-email-sendgrid.md
           displayName: verification
-        - name: Управление токенами и сеансами
-          items:
-            - name: Настройка токенов
-              href: configure-tokens-custom-policy.md
-            - name: Настройка поведения сеанса
-              href: session-behavior-custom-policy.md
-        - name: Транзитный внешний токен IdP
-          href: idp-pass-through-custom.md
-        - name: Адаптивное взаимодействие
-          items:
-            - name: Настройка прямого входа в систему
-              href: direct-signin.md
         - name: Добавление собственной бизнес-логики
           items:
             - name: "Интеграция REST\_API"
@@ -254,8 +243,6 @@
               displayName: rest claims exchange
             - name: "Безопасный REST\_API"
               href: secure-rest-api.md
-        - name: Определение настраиваемых атрибутов
-          href: custom-policy-custom-attributes.md
         - name: Устранение неполадок
           items:
             - name: Сбор журналов с помощью Application Insights
@@ -268,8 +255,6 @@
           href: analytics-with-application-insights.md
         - name: Справочник
           items:
-            - name: Определение инфраструктуры доверия
-              href: custom-policy-trust-frameworks.md
             - name: TrustFrameworkPolicy
               href: trustframeworkpolicy.md
             - name: BuildingBlocks
@@ -315,11 +300,9 @@
             - name: ClaimsProviders
               href: claimsproviders.md
               items:
-                - name: TechnicalProfiles
+                - name: Технические профили
                   href: technicalprofiles.md
                   items:
-                    - name: Сведения о технических профилях
-                      href: technical-profiles-overview.md
                     - name: Сведения о технических профилях проверки
                       href: validation-technical-profile.md
                     - name: Application Insights
@@ -370,6 +353,8 @@
               href: relyingparty.md
             - name: Арбитры утверждений
               href: claim-resolver-overview.md
+    - name: Конечная точка UserInfo
+      href: userinfo-endpoint.md
     - name: Интеграция партнеров
       items:
         - name: "Список партнеров Azure\_AD B2C"

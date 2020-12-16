@@ -16,6 +16,8 @@
       items:
         - name: Добавление чата в приложение
           href: quickstarts/chat/get-started.md
+        - name: Подключение приложения чата к собранию в Teams
+          href: quickstarts/chat/meeting-interop.md
     - name: Телефония и SMS
       items:
         - name: Получение номера телефона

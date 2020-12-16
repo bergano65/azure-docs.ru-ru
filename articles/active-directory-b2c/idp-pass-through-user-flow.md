@@ -9,15 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 12/15/2020
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e379b3fc77716eeea28b3dbeb9c3a022f0f16106
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: a99d41f5f9fc9538aaf563bd3ae56075d269c94a
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516291"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584652"
 ---
 # <a name="pass-an-identity-provider-access-token-to-your-application-in-azure-active-directory-b2c"></a>Передайте маркер доступа поставщика удостоверений в приложение в Azure Active Directory B2C
 
@@ -41,7 +42,7 @@ Azure AD B2C поддерживает передачу маркеров дост
 
 ![Поставщик удостоверений проходит через поток](./media/idp-pass-through-user-flow/identity-provider-pass-through-flow.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
@@ -153,6 +154,6 @@ Azure AD B2C поддерживает передачу маркеров дост
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [обзоре маркеров Azure AD B2C](tokens-overview.md).

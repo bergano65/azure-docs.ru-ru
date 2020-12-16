@@ -423,6 +423,8 @@
       items:
         - name: Azure
           href: backup-azure-vms-troubleshoot.md
+        - name: Восстановление файлов на виртуальной машине Azure
+          href: backup-azure-vm-file-recovery-troubleshoot.md
         - name: Истечение времени ожидания агента Azure Backup или расширения виртуальной машины
           href: backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md
         - name: Агент Azure Backup

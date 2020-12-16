@@ -31,24 +31,8 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Клиентская библиотека
-      items:
-        - name: Анализ текста с использованием клиентской библиотеки
-          href: quickstarts/text-analytics-sdk.md
-    - name: REST API
-      items:
-        - name: Использование Java
-          href: quickstarts/java.md
-        - name: Использование Python
-          href: quickstarts/python.md
-        - name: Использование Node.js
-          href: quickstarts/nodejs.md
-        - name: Использование PHP
-          href: quickstarts/php.md
-        - name: Использование Go
-          href: quickstarts/go.md
-        - name: Использование Ruby
-          href: quickstarts/ruby.md
+    - name: "Использование клиентской библиотеки и REST\_API"
+      href: quickstarts/client-libraries-rest-api.md
 - name: Учебники
   items:
     - name: "Интеграция Power\_BI для анализа отзывов пользователей"
