@@ -118,31 +118,31 @@
       items:
         - name: Общего назначения
           href: ../virtual-machines/sizes-general.md
-          maintainContext: true
           items:
             - name: Серия B с накапливаемыми ресурсами
               href: ../virtual-machines/sizes-b-series-burstable.md
               maintainContext: true
+          maintainContext: true
         - name: Оптимизированные для вычислений
           href: ../virtual-machines/sizes-compute.md
           maintainContext: true
         - name: Оптимизированные для операций в памяти
           href: ../virtual-machines/sizes-memory.md
-          maintainContext: true
           items:
             - name: Ограниченное число виртуальных ЦП
               href: ../virtual-machines/constrained-vcpu.md
               maintainContext: true
+          maintainContext: true
         - name: Оптимизированные для операций в хранилище
           href: ../virtual-machines/sizes-storage.md
           maintainContext: true
         - name: Оптимизированные для GPU
           href: ../virtual-machines/sizes-gpu.md
-          maintainContext: true
           items:
             - name: Настройка драйверов NVIDIA для GPU
               href: ../virtual-machines/windows/n-series-driver-setup.md
               maintainContext: true
+          maintainContext: true
         - name: Для высокопроизводительных вычислений
           href: ../virtual-machines/sizes-hpc.md
           maintainContext: true
@@ -165,8 +165,6 @@
     - name: Обслуживание и обновления
       href: ../virtual-machines/maintenance-and-updates.md?bc=/azure/virtual-machines/windows/breadcrumb/toc.json&toc=/azure/virtual-machines/windows/toc.json
       maintainContext: true
-    - name: Режимы оркестрации
-      href: orchestration-modes.md
     - name: Хранилище дисков
       items:
         - name: Управляемые диски

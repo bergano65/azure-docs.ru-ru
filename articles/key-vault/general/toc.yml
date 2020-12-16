@@ -114,10 +114,6 @@
           href: developers-guide.md
         - name: Использование Azure Resource Manager для развертывания Key Vault
           href: vault-create-template.md
-        - name: Сохранение секретов веб-приложений
-          href: /previous-versions/azure/key-vault/vs-secure-secret-appsettings?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
-        - name: Аутентификация между службами с помощью .NET
-          href: service-to-service-authentication.md
         - name: Использование подключенной службы Key Vault
           href: vs-key-vault-add-connected-service.md
     - name: Мониторинг и управление

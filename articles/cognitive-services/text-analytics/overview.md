@@ -12,18 +12,18 @@ ms.date: 11/17/2020
 ms.author: aahi
 keywords: интеллектуальный анализ текста, анализ тональности, анализ текста
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 0f5e6a2327f5d952f92009b0c9e408ab8188d6d7
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 6cef9dc65a72134e0aa70db5f89f4934263c48b4
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558782"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563234"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
 API Анализа текста — это облачная служба, которая предоставляет функцию обработки естественного языка (NLP) для интеллектуального анализа текста, включая: анализ тональности, интеллектуальный анализ мнений, извлечение ключевых фраз, определение языка и распознавание именованных сущностей.
 
-API — это компонент [Microsoft Cognitive Services](../index.yml), коллекции алгоритмов машинного обучения и ИИ в облаке для использования в проектах по разработке. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или [клиентской библиотекой](quickstarts/text-analytics-sdk.md).
+API — это компонент [Microsoft Cognitive Services](../index.yml), коллекции алгоритмов машинного обучения и ИИ в облаке для использования в проектах по разработке. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или [клиентской библиотекой](quickstarts/client-libraries-rest-api.md).
 
 > [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Whats-New-in-Text-Analytics-Opinion-Mining-and-Async-API/player]
 
@@ -64,7 +64,7 @@ API — это компонент [Microsoft Cognitive Services](../index.yml),
 
 Рабочий процесс прост: данные отправляются для анализа, а выходные данные обрабатываются в коде. Анализаторы используются как есть без дополнительной конфигурации или настройки.
 
-1. [Создайте ресурс Azure](../cognitive-services-apis-create-account.md) для Анализа текста. После этого [получите ключ](../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), созданный для аутентификации ваших запросов.
+1. [Создайте ресурс Azure](how-tos/text-analytics-how-to-call-api.md) для Анализа текста. После этого [получите ключ](how-tos/text-analytics-how-to-call-api.md), созданный для аутентификации ваших запросов.
 
 2. [Сформулируйте запрос](how-tos/text-analytics-how-to-call-api.md#json-schema), содержащий ваши данные как необработанный неструктурированный текст в формате JSON.
 
@@ -109,7 +109,7 @@ API анализа текста использует кодировку Юник
 
 + [Создайте ресурс Azure](../cognitive-services-apis-create-account.md) для Анализа текста, чтобы получить ключ и конечную точку для своих приложений.
 
-+ Следуйте инструкциям в [кратком руководстве](quickstarts/text-analytics-sdk.md), чтобы начать отправку вызовов API. Узнайте, как отправить текст, выбрать анализ и просмотреть результаты с минимальным объемом кода.
++ Следуйте инструкциям в [кратком руководстве](quickstarts/client-libraries-rest-api.md), чтобы начать отправку вызовов API. Узнайте, как отправить текст, выбрать анализ и просмотреть результаты с минимальным объемом кода.
 
 + Сведения о новых выпусках и возможностях см. в статье [What's new in the Text Analytics API?](whats-new.md) (Новые возможности API "Анализ текста").
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 5ea5e352084e379632b88194fd13011879041fd3
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: e9368b5c6c90fe7ce65fc066e0b19523e07ece51
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899442"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504344"
 ---
 # <a name="quickstart-extract-text-and-layout-information-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение текста и сведений о макете с использованием Распознавателя документов и Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "92899442"
 
 Для работы с этим кратким руководством требуется следующее:
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
-- Документ формы. Для выполнения инструкций из этого краткого руководства можно использовать изображение из [образца набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) (скачайте и разархивируйте файл *sample_data.zip* ).
+- Документ формы. Для выполнения инструкций из этого краткого руководства можно использовать изображение из [образца набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) (скачайте и разархивируйте файл *sample_data.zip*).
 
 > [!NOTE]
 > В этом кратком руководстве используется документ, сохраненный локально. Чтобы узнать, как использовать удаленные файлы, доступ к которым осуществляется по URL-адресу, см. [справочную документацию](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync).
@@ -90,7 +90,7 @@ ms.locfileid: "92899442"
     # Endpoint URL
     endpoint = r"<Endpoint>"
     apim_key = "<Subscription Key>"
-    post_url = endpoint + "/formrecognizer/v2.1-preview.1/Layout/analyze"
+    post_url = endpoint + "/formrecognizer/v2.1-preview.2/Layout/analyze"
     source = r"<path to your form>"
     
     headers = {
@@ -122,7 +122,7 @@ ms.locfileid: "92899442"
 1. Откройте окно командной строки.
 1. В командной строке выполните пример кода с помощью команды `python`. Например, `python form-recognizer-layout.py`.
 
-Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location** , который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором операции.
+Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location**, который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором операции.
 
 # <a name="v20"></a>[Версия 2.0](#tab/v2-0)   
 ```console
@@ -130,7 +130,7 @@ https://cognitiveservice/formrecognizer/v2.0/layout/operations/54f0b076-4e38-43e
 ``` 
 # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)  
 ```console
-https://cognitiveservice/formrecognizer/v2.1-preview.1/layout/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+https://cognitiveservice/formrecognizer/v2.1-preview.2/layout/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```  
 
 ---

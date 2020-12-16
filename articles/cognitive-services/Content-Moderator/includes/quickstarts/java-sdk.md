@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 10/16/2020
 ms.custom: devx-track-java, cog-serv-seo-aug-2020
 ms.author: pafarley
-ms.openlocfilehash: 30360253c0b1aa34c4af1e5efdf3cf9b4d8baaa0
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 7713765a36207f0d9da05c4c11629e4a7f1164d9
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356500"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561517"
 ---
 Начните работу с клиентской библиотекой Azure Content Moderator для Java. Выполните приведенные здесь действия, чтобы установить пакет Maven и протестировать пример кода для выполнения базовых задач. 
 
@@ -24,8 +24,8 @@ Content Moderator — это служба ИИ, позволяющая упра
 
 Клиентскую библиотеку Content Moderator для Java можно использовать для такой задачи:
 
-* Модерация изображений
 * Модерация текста
+* Модерация изображений
 
 [Справочная документация](/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-contentmoderator) |[Артефакт (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator) | [Примеры](/samples/browse/?products=azure&term=content-moderator)
 
@@ -127,14 +127,42 @@ mkdir -p src/main/java
 Эти фрагменты кода показывают, как выполнить следующие действия с помощью клиентской библиотеки Content Moderator для Java:
 
 * [аутентификация клиента](#authenticate-the-client);
-* [модерация изображений](#moderate-images);
 * [модерация текста](#moderate-text);
+* [модерация изображений](#moderate-images);
+
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 В методе `main` приложения создайте объект [ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient?view=azure-java-stable), используя значение конечной точки подписки и ключа подписки.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_client)]
+
+
+
+## <a name="moderate-text"></a>Модерация текста
+
+### <a name="set-up-sample-text"></a>Настройка примера текста
+
+В верхней части класса **ContentModeratorQuickstart** определите ссылку на локальный текстовый файл. Добавьте TXT-файл в каталог проекта и введите текст, который необходимо проанализировать.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod_var)]
+
+### <a name="analyze-text"></a>Анализ текста
+
+Создайте метод, считывающий TXT-файл и вызывающий метод **screenText** в каждой строке.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod)]
+
+### <a name="print-text-moderation-results"></a>Печать результатов модерации текста
+
+Добавьте следующий код, чтобы вывести результаты модерации в JSON-файл в каталоге проекта.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod_print)]
+
+Закройте операторы `try` и `catch` для завершения метода.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod_catch)]
+
 
 ## <a name="moderate-images"></a>Модерация изображений
 
@@ -180,31 +208,6 @@ mkdir -p src/main/java
 Закройте оператор `try` и добавьте оператор `catch` для завершения метода.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_imagemod_catch)]
-
-## <a name="moderate-text"></a>Модерация текста
-
-### <a name="set-up-sample-text"></a>Настройка примера текста
-
-В верхней части класса **ContentModeratorQuickstart** определите ссылку на локальный текстовый файл. Добавьте TXT-файл в каталог проекта и введите текст, который необходимо проанализировать.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod_var)]
-
-### <a name="analyze-text"></a>Анализ текста
-
-Создайте метод, считывающий TXT-файл и вызывающий метод **screenText** в каждой строке.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod)]
-
-### <a name="print-text-moderation-results"></a>Печать результатов модерации текста
-
-Добавьте следующий код, чтобы вывести результаты модерации в JSON-файл в каталоге проекта.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod_print)]
-
-Закройте операторы `try` и `catch` для завершения метода.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_textmod_catch)]
-
 
 ## <a name="run-the-application"></a>Выполнение приложения
 

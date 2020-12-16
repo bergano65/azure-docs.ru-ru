@@ -758,6 +758,8 @@
           href: data-factory-troubleshoot-guide.md
         - name: Соединители
           href: connector-troubleshoot-guide.md
+        - name: Триггеры конвейера
+          href: pipeline-trigger-troubleshoot-guide.md
         - name: Потоки данных
           href: data-flow-troubleshoot-guide.md
         - name: Непрерывная интеграция и развертывание

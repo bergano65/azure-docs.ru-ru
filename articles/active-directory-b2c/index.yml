@@ -12,12 +12,12 @@ metadata:
   author: msmimart
   ms.author: mimart
   ms.date: 01/28/2020
-  ms.openlocfilehash: c59610b96367f467926d330b7615025e8a051377
-  ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+  ms.openlocfilehash: 1f7eac5adc9099f4c00b5a12528a74a50965675c
+  ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/11/2020
-  ms.locfileid: "97108660"
+  ms.lasthandoff: 12/15/2020
+  ms.locfileid: "97508005"
 landingContent:
 - title: Azure AD B2C
   linkLists:
@@ -56,7 +56,7 @@ landingContent:
     - text: 'Добавьте рабочие учетные записи и учетные записи социальных сетей: OIDC/OAuth2/SAML'
       url: tutorial-add-identity-providers.md
     - text: Включение единого входа (SSO)
-      url: session-overview.md
+      url: session-behavior.md
     - text: Настройте пользовательский интерфейс и взаимодействие пользователей
       url: customize-ui-with-html.md
     - text: Миграция пользователей и приложений

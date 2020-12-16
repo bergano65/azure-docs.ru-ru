@@ -5,6 +5,8 @@
   items:
     - name: Что представляет собой служба "Распознавание лиц"?
       href: Overview.md
+    - name: Новые возможности
+      href: releasenotes.md
 - name: Краткие руководства
   items:
     - name: "Использование клиентской библиотеки или REST\_API"
@@ -97,5 +99,3 @@
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Шифрование
       href: face-encryption-of-data-at-rest.md
-    - name: Заметки о выпуске
-      href: ReleaseNotes.md
