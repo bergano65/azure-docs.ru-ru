@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: thvankra
 ms.reviewer: thvankra
-ms.openlocfilehash: 827abcdb9eb2eb8b7328eb3e3a78f49d51e87e6b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 74088d749279ab72851e714a50b558dc2adbc0d7
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349186"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516555"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-azure-databricks"></a>Перенос данных из Cassandra в учетную запись API Cassandra Azure Cosmos DB с помощью Azure Databricks
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -42,7 +42,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
 ## <a name="provision-an-azure-databricks-cluster"></a>Предоставление кластера Azure Databricks
 
-Вы можете выполнить инструкции по [подготовке кластера Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal). Однако обратите внимание, Apache Spark 3. x в настоящее время не поддерживается для соединителя Apache Cassandra. Необходимо подготавливать среду выполнения для модуля данных с поддерживаемой версией версии 2. x Apache Spark. Мы рекомендуем использовать среду выполнения для модуля данных версии 6,6:
+Вы можете выполнить инструкции по [подготовке кластера Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal). Однако обратите внимание, Apache Spark 3. x в настоящее время не поддерживается для соединителя Apache Cassandra. Необходимо подготавливать среду выполнения для модуля данных с поддерживаемой версией версии 2. x Apache Spark. Рекомендуется выбрать версию среды выполнения модуля данных, которая поддерживает последнюю версию Spark 2. x, но не более поздней версии, чем Scala версии 2,11:
 
 :::image type="content" source="./media/cassandra-migrate-cosmos-db-databricks/databricks-runtime.png" alt-text="Среда выполнения модулями":::
 
@@ -116,7 +116,7 @@ DFfromNativeCassandra
 > [!NOTE]
 > `spark.cassandra.output.concurrent.writes`Конфигурации и `connections_per_executor_max` важны для предотвращения [ограничения скорости](/samples/azure-samples/azure-cosmos-cassandra-java-retry-sample/azure-cosmos-db-cassandra-java-retry-sample/), что происходит, когда запросы Cosmos DB превышают подготовленную пропускную способность ([единицы запроса](./request-units.md)). Может потребоваться изменить эти параметры в зависимости от количества исполнителей в кластере Spark и, возможно, размера (и, следовательно, стоимости на ЕДИНИЦу) каждой записи, записываемой в целевые таблицы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md) 
 * [Рекомендации по использованию ключа секции](partitioning-overview.md#choose-partitionkey)

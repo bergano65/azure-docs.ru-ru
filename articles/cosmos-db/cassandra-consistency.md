@@ -8,14 +8,14 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 10/12/2020
 ms.reviewer: sngun
-ms.openlocfilehash: a02076c09d038b02c0ab846440ad14e799271733
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 3107610215d5b37c43124ce4129b2eb5437e3b62
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339960"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516838"
 ---
-# <a name="apache-cassandra-and-azure-cosmos-db-consistency-levels"></a>Уровни согласованности Apache Cassandra и Azure Cosmos DB
+# <a name="apache-cassandra-and-azure-cosmos-db-cassandra-api-consistency-levels"></a>Уровни согласованности API Cassandra Apache Cassandra и Azure Cosmos DB
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
 В отличие от Azure Cosmos DB, Apache Cassandra изначально не предоставляет точно определенные гарантии согласованности. Вместо этого Apache Cassandra предоставляет уровень согласованности записи и уровень согласованности чтения, чтобы обеспечить высокую доступность, согласованность и задержку. При использовании API Cassandra Azure Cosmos DB:
@@ -24,11 +24,24 @@ ms.locfileid: "93339960"
 
 * Azure Cosmos DB будет динамически сопоставлять уровень согласованности чтения, заданный драйвером клиента Cassandra, с одним из Azure Cosmos DBных уровней согласованности, динамически настроенных для запроса на чтение.
 
+## <a name="multi-region-writes-vs-single-region-writes"></a>Операции записи в несколько регионов в сравнении с операциями записи в одном регионе
+
+База данных Apache Cassandra по умолчанию является системой с несколькими хозяевами и не предоставляет готовый вариант для операций записи в одном регионе с репликацией в нескольких регионах. Однако Azure Cosmos DB предоставляет возможность готовности к использованию в одном регионе или конфигурациях записи в [нескольких регионах](how-to-multi-master.md) . Одним из преимуществ возможности выбора конфигурации записи в одном регионе в нескольких регионах является предотвращение сценариев конфликтов между регионами и возможность поддержания строгой согласованности в нескольких регионах. 
+
+С помощью операций записи в один регион можно обеспечить строгую согласованность, сохраняя при этом высокий уровень доступности в регионах с [автоматической отработкой отказа](high-availability.md#multi-region-accounts-with-a-single-write-region-write-region-outage). В этой конфигурации вы по-прежнему можете использовать локальность данных для сокращения задержки чтения путем понижения до окончательной согласованности на основе каждого запроса. Помимо этих возможностей, Azure Cosmos DBная платформа также обеспечивает возможность включения [избыточности зоны](high-availability.md#availability-zone-support) при выборе региона. Таким образом, в отличие от собственных Apache Cassandra, Azure Cosmos DB позволяет переходить на [бескомпромиссный](consistency-levels.md#rto) теореманый спектр с большей степенью детализации.
+
 ## <a name="mapping-consistency-levels"></a>Сопоставление уровней согласованности
 
-В следующей таблице показано, как собственные уровни согласованности Cassandra сопоставляются с уровнями согласованности Azure Cosmos DB при использовании API Cassandra.  
+Платформа Azure Cosmos DB предоставляет набор из пяти четко определенных параметров согласованности, ориентированных на бизнес-использование, относительно репликации и компромиссов, определенных с помощью [политик Cap Теорема](https://en.wikipedia.org/wiki/CAP_theorem) и [паклк Теорема](https://en.wikipedia.org/wiki/PACELC_theorem). Так как этот подход значительно отличается от Apache Cassandra, мы рекомендуем вам получить время на просмотр и понимание Azure Cosmos DB параметров согласованности в нашей [документации](consistency-levels.md)или просмотреть [это короткое руководство](https://www.youtube.com/watch?v=t1--kZjrG-o) , чтобы понять параметры согласованности на Azure Cosmos DBной платформе.
 
-:::image type="content" source="./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png" alt-text="Сопоставление модели согласованности Cassandra" lightbox="./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png" :::
+В следующей таблице показаны возможные сопоставления между уровнями согласованности Apache Cassandra и Azure Cosmos DB при использовании API Cassandra. Это показывает конфигурации для одного региона, операций чтения в нескольких регионах с записью в один регион и операций записи в несколько регионов.
+
+> [!NOTE]
+> Эти сопоставления не являются точными. Вместо этого мы предоставили наиболее близкие аналоги для Apache Cassandra и неоднозначность любых качественных различий в крайнем правом столбце. Как упоминалось выше, рекомендуется просмотреть [Параметры согласованности](consistency-levels.md)Azure Cosmos DB. 
+
+:::image type="content" source="./media/cassandra-consistency/account.png" alt-text="Сопоставление уровня учетной записи согласованности Cassandra" lightbox="./media/cassandra-consistency/account.png" :::
+
+:::image type="content" source="./media/cassandra-consistency/dynamic.png" alt-text="Динамическое сопоставление Cassandra согласованности" lightbox="./media/cassandra-consistency/dynamic.png" :::
 
 Если ваша учетная запись Azure Cosmos настроена с уровнем согласованности, отличным от строгой согласованности, можно выяснить вероятность того, что клиенты могут получить надежные и согласованные операции чтения для рабочих нагрузок, просмотрев метрику *Probabilistically ограниченного устаревания* (PBS). Эта метрика предоставляется на портале Azure. Дополнительные сведения см. в разделе [Мониторинг метрики вероятностного ограниченного устаревания (PBS)](how-to-manage-consistency.md#monitor-probabilistically-bounded-staleness-pbs-metric).
 

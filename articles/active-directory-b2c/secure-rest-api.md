@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3e3245053fcc9943814268835fa5ac0f40a6f94c
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: f6907db7f6e53247a8f2fc0042e8c8e6b081dbd3
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750515"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516372"
 ---
 # <a name="secure-your-restful-services"></a>Защита служб с поддержкой RESTful 
 
@@ -230,7 +230,7 @@ Authorization: Bearer <token>
 
 ### <a name="acquiring-an-access-token"></a>Получение маркера доступа 
 
-Маркер доступа можно получить любым из нескольких способов: от [поставщика федеративного удостоверения](idp-pass-through-custom.md), с помощью REST API, который возвращает маркер доступа, с помощью [потока ROPC](../active-directory/develop/v2-oauth-ropc.md) или [потока учетных данных клиента](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md).  
+Маркер доступа можно получить любым из нескольких способов: от [поставщика федеративного удостоверения](idp-pass-through-user-flow.md), с помощью REST API, который возвращает маркер доступа, с помощью [потока ROPC](../active-directory/develop/v2-oauth-ropc.md) или [потока учетных данных клиента](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md).  
 
 В следующем примере используется технический профиль REST API для выполнения запроса к конечной точке маркера Azure AD с учетными данными клиента, которые передаются в формате обычной аутентификации через HTTP. Чтобы настроить этот механизм в Azure AD, см. статью [Платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2.0](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md). Возможно, вам придется изменить его с учетом методов взаимодействия с поставщиком удостоверений. 
 

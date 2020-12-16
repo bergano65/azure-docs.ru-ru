@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 68526fd542d8bc891358a36d031af3314edab4c2
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 68e282f192b87b9f2217e0727753e7d37ff1aeb1
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507988"
+ms.locfileid: "97516090"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Примечания о настраиваемых политика в Azure Active Directory B2C для разработчиков
 
@@ -116,7 +116,7 @@ ms.locfileid: "97507988"
 | Параметр строки запроса `login_hint` |  |  | X | Доступен в качестве утверждения; можно передать поставщику удостоверений. |
 | Вставка данных в формате JSON в путь взаимодействия пользователя с помощью `client_assertion` | X |  |  | Будет считаться устаревшим. |
 | Вставка данных в формате JSON в путь взаимодействия пользователя в виде `id_token_hint` |  | X |  | Правильный подход к передаче данных в формате JSON. |
-| [Передача токена поставщика удостоверений в приложение](idp-pass-through-custom.md) |  | X |  | Например, из Facebook в приложение. |
+| [Передача токена поставщика удостоверений в приложение](idp-pass-through-user-flow.md) |  | X |  | Например, из Facebook в приложение. |
 
 
 ### <a name="session-management"></a>Управление сеансом

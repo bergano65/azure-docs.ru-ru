@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 94da22fbb2940bddaad1324bedc8759706eca37b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 47c3c091e767cac63bb814469397ef1a0aeca3a4
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173572"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516491"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и советы по платформе удостоверений Майкрософт
 
@@ -28,7 +28,7 @@ ms.locfileid: "96173572"
 Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрировано с [платформой Microsoft Identity](./index.yml).
 
 > [!TIP]
-> *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую из [регистраций приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **Помощник по интеграции (Предварительная версия)** , чтобы начать работу с помощником.
+> *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую [регистрацию приложения](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **помощника по интеграции** , чтобы начать работу с помощником.
 
 ## <a name="basics"></a>Основные сведения
 

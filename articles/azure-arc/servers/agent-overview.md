@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1bc9546e6db35153424ba670f8157adb86d19b71
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 277e6616ce1bf90ada83516cb71f9cb55de1b7b0
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452958"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516805"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -55,6 +55,9 @@ ms.locfileid: "96452958"
 - SUSE Linux Enterprise Server (SLES) 15 (x64)
 - Red Hat Enterprise Linux (RHEL) 7 (x64)
 - Amazon Linux 2 (x64)
+
+> [!WARNING]
+> Имя узла или компьютера Linux не может использовать одно из зарезервированных слов или товарных знаков в имени. в противном случае попытка регистрации подключенного компьютера в Azure завершится ошибкой. Список зарезервированных слов см. в разделе [Устранение ошибок зарезервированных имен ресурсов](../../azure-resource-manager/templates/error-reserved-resource-name.md) .
 
 ### <a name="required-permissions"></a>Необходимые разрешения
 
@@ -255,7 +258,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

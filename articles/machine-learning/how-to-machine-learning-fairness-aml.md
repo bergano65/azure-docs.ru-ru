@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 3fbd4990fd330960bb8dbce2e2a8d1bcb578cf2a
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 17b0564b4b73f5a5032343dcb78669cbf4cabd5a
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701190"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516151"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Использование Машинное обучение Azure с пакетом с открытым исходным кодом Фаирлеарн для оценки распределения моделей машинного обучения (Предварительная версия)
 
@@ -38,80 +38,99 @@ ms.locfileid: "94701190"
 pip install azureml-contrib-fairness
 pip install fairlearn==0.4.6
 ```
+Более поздние версии Фаирлеарн также должны работать в следующем примере кода.
 
 
 
 ## <a name="upload-fairness-insights-for-a-single-model"></a>Отправка сведений об равноправии для одной модели
 
-В следующем примере показано, как использовать пакет равноправия для передачи сведений о равномерном использовании модели в Машинное обучение Azure и просматривать панель мониторинга оценки равноправия в Машинное обучение Azure Studio.
+В следующем примере показано, как использовать пакет равномерного распределения. Мы отправим аналитическую аналитику распределения модели в Машинное обучение Azure и видим панель мониторинга оценки равноправия в Машинное обучение Azure Studio.
 
 1. Обучение образца модели в записной книжке Jupyter. 
 
-    Для набора данных используется известный набор данных для взрослых переписей, который мы загружаем с помощью `shap` (для удобства). В этом примере этот набор данных рассматривается как проблема принятия решения по ссуде и предполагается, что метка показывает, оплачивается ли кредит в прошлом. Мы будем использовать данные для обучения прогнозируемого прогноза, чтобы предсказать, порепай ли ранее незамеченные лица в аренду. Предполагается, что прогнозы модели используются для принятия решения о том, следует ли предоставлять заявку на получение ссуды.
+    Для набора данных используется известный набор данных для взрослых переписей, который мы получаем из Опенмл. Мы надеемся, что у нас есть проблема принятия решения по ссуде с меткой, которая указывает, оплачивается ли человек в прошлом займе. Мы обучить модель для прогнозирования того, что ранее незамеченные лица будут репай ссуду. Такую модель можно использовать для принятия решений о займах.
 
     ```python
-    from sklearn.model_selection import train_test_split
-    from fairlearn.widget import FairlearnDashboard
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.preprocessing import LabelEncoder, StandardScaler
+    import copy
+    import numpy as np
     import pandas as pd
-    import shap
+
+    from sklearn.compose import ColumnTransformer
+    from sklearn.datasets import fetch_openml
+    from sklearn.impute import SimpleImputer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler, OneHotEncoder
+    from sklearn.compose import make_column_selector as selector
+    from sklearn.pipeline import Pipeline
+    
+    from fairlearn.widget import FairlearnDashboard
 
     # Load the census dataset
-    X_raw, Y = shap.datasets.adult()
-    X_raw["Race"].value_counts().to_dict()
+    data = fetch_openml(data_id=1590, as_frame=True)
+    X_raw = data.data
+    y = (data.target == ">50K") * 1
     
-
     # (Optional) Separate the "sex" and "race" sensitive features out and drop them from the main data prior to training your model
-    A = X_raw[['Sex','Race']]
-    X = X_raw.drop(labels=['Sex', 'Race'],axis = 1)
-    X = pd.get_dummies(X)
+    X_raw = data.data
+    y = (data.target == ">50K") * 1
+    A = X_raw[["race", "sex"]]
+    X = X_raw.drop(labels=['sex', 'race'],axis = 1)
     
-    sc = StandardScaler()
-    X_scaled = sc.fit_transform(X)
-    X_scaled = pd.DataFrame(X_scaled, columns=X.columns)
+    # Split the data in "train" and "test" sets
+    (X_train, X_test, y_train, y_test, A_train, A_test) = train_test_split(
+        X_raw, y, A, test_size=0.3, random_state=12345, stratify=y
+    )
 
-    # Perform some standard data preprocessing steps to convert the data into a format suitable for the ML algorithms
-    le = LabelEncoder()
-    Y = le.fit_transform(Y)
-
-    # Split data into train and test
-    from sklearn.model_selection import train_test_split
-    from sklearn.model_selection import train_test_split
-    X_train, X_test, Y_train, Y_test, A_train, A_test = train_test_split(X_scaled, 
-                                                        Y, 
-                                                        A,
-                                                        test_size = 0.2,
-                                                        random_state=0,
-                                                        stratify=Y)
-
-    # Work around indexing issue
+    # Ensure indices are aligned between X, y and A,
+    # after all the slicing and splitting of DataFrames
+    # and Series
     X_train = X_train.reset_index(drop=True)
-    A_train = A_train.reset_index(drop=True)
     X_test = X_test.reset_index(drop=True)
+    y_train = y_train.reset_index(drop=True)
+    y_test = y_test.reset_index(drop=True)
+    A_train = A_train.reset_index(drop=True)
     A_test = A_test.reset_index(drop=True)
 
-    # Improve labels
-    A_test.Sex.loc[(A_test['Sex'] == 0)] = 'female'
-    A_test.Sex.loc[(A_test['Sex'] == 1)] = 'male'
+    # Define a processing pipeline. This happens after the split to avoid data leakage
+    numeric_transformer = Pipeline(
+        steps=[
+            ("impute", SimpleImputer()),
+            ("scaler", StandardScaler()),
+        ]
+    )
+    categorical_transformer = Pipeline(
+        [
+            ("impute", SimpleImputer(strategy="most_frequent")),
+            ("ohe", OneHotEncoder(handle_unknown="ignore")),
+        ]
+    )
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ("num", numeric_transformer, selector(dtype_exclude="category")),
+            ("cat", categorical_transformer, selector(dtype_include="category")),
+        ]
+    )
 
+    # Put an estimator onto the end of the pipeline
+    lr_predictor = Pipeline(
+        steps=[
+            ("preprocessor", copy.deepcopy(preprocessor)),
+            (
+                "classifier",
+                LogisticRegression(solver="liblinear", fit_intercept=True),
+            ),
+        ]
+    )
 
-    A_test.Race.loc[(A_test['Race'] == 0)] = 'Amer-Indian-Eskimo'
-    A_test.Race.loc[(A_test['Race'] == 1)] = 'Asian-Pac-Islander'
-    A_test.Race.loc[(A_test['Race'] == 2)] = 'Black'
-    A_test.Race.loc[(A_test['Race'] == 3)] = 'Other'
-    A_test.Race.loc[(A_test['Race'] == 4)] = 'White'
-
-
-    # Train a classification model
-    lr_predictor = LogisticRegression(solver='liblinear', fit_intercept=True)
-    lr_predictor.fit(X_train, Y_train)
+    # Train the model on the test data
+    lr_predictor.fit(X_train, y_train)
 
     # (Optional) View this model in Fairlearn's fairness dashboard, and see the disparities which appear:
     from fairlearn.widget import FairlearnDashboard
     FairlearnDashboard(sensitive_features=A_test, 
-                       sensitive_feature_names=['Sex', 'Race'],
-                       y_true=Y_test,
+                       sensitive_feature_names=['Race', 'Sex'],
+                       y_true=y_test,
                        y_pred={"lr_model": lr_predictor.predict(X_test)})
     ```
 
@@ -149,11 +168,11 @@ pip install fairlearn==0.4.6
 
     ```python
     #  Create a dictionary of model(s) you want to assess for fairness 
-    sf = { 'Race': A_test.Race, 'Sex': A_test.Sex}
+    sf = { 'Race': A_test.race, 'Sex': A_test.sex}
     ys_pred = { lr_reg_id:lr_predictor.predict(X_test) }
     from fairlearn.metrics._group_metric_set import _create_group_metric_set
 
-    dash_dict = _create_group_metric_set(y_true=Y_test,
+    dash_dict = _create_group_metric_set(y_true=y_test,
                                         predictions=ys_pred,
                                         sensitive_features=sf,
                                         prediction_type='binary_classification')
@@ -203,32 +222,37 @@ pip install fairlearn==0.4.6
     1. Если вы зарегистрировали исходную модель, выполнив описанные выше действия, можно выбрать **модели** на левой панели, чтобы просмотреть их.
     1. Выберите модель, а затем вкладку **равноправие** , чтобы просмотреть панель мониторинга визуализации пояснения.
 
-    Дополнительные сведения о панели мониторинга визуализации и том, что она содержит, см [. в фаирлеарн.](https://fairlearn.github.io/master/user_guide/assessment.html#fairlearn-dashboard)
+    Дополнительные сведения о панели мониторинга визуализации и содержащихся в ней элементах см. в статье о [пользователе](https://fairlearn.github.io/master/user_guide/assessment.html#fairlearn-dashboard)фаирлеарн.
 
 ## <a name="upload-fairness-insights-for-multiple-models"></a>Передача сведений об равноправии для нескольких моделей
 
-Если вы хотите сравнить несколько моделей и увидеть, как различаются их оценки равноправия, можно передать более одной модели на панель мониторинга визуализации и проанализировать компромиссы по повышению производительности.
+Чтобы сравнить несколько моделей и увидеть, как различаются их оценки равноправия, можно передать более одной модели на панель мониторинга визуализации и сравнить компромиссы с их производительностью.
 
 1. Обучение моделей:
     
-    В дополнение к предыдущей модели логистической регрессии теперь мы создадим второй классификатор, основанный на механизме оценки машинного вектора поддержки, и отправим словарь панели мониторинга равноправия с помощью `metrics` пакета фаирлеарн. Обратите внимание, что здесь мы пропустите шаги по загрузке и предварительной обработке данных и переходим к этапу обучения модели.
+    Теперь мы создадим второй классификатор, основанный на механизме оценки машинного вектора поддержки, и отправим словарь панели мониторинга равноправия с помощью `metrics` пакета фаирлеарн. Предполагается, что ранее обученная модель по-прежнему доступна.
 
 
     ```python
-    # Train your first classification model
-    from sklearn.linear_model import LogisticRegression
-    lr_predictor = LogisticRegression(solver='liblinear', fit_intercept=True)
-    lr_predictor.fit(X_train, Y_train)
+    # Put an SVM predictor onto the preprocessing pipeline
+    from sklearn import svm
+    svm_predictor = Pipeline(
+        steps=[
+            ("preprocessor", copy.deepcopy(preprocessor)),
+            (
+                "classifier",
+                svm.SVC(),
+            ),
+        ]
+    )
 
     # Train your second classification model
-    from sklearn import svm
-    svm_predictor = svm.SVC()
-    svm_predictor.fit(X_train, Y_train)
+    svm_predictor.fit(X_train, y_train)
     ```
 
 2. Регистрация моделей
 
-    Затем следует зарегистрировать обе модели в Машинное обучение Azure. Для удобства в последующих вызовах методов сохраните результаты в словаре, который сопоставляет `id` зарегистрированную модель (строку в `name:version` формате) с самим прогнозом:
+    Затем следует зарегистрировать обе модели в Машинное обучение Azure. Для удобства храните результаты в словаре, который сопоставляет `id` зарегистрированную модель (строку в `name:version` формате) с самим прогнозом:
 
     ```python
     model_dict = {}
@@ -255,8 +279,8 @@ pip install fairlearn==0.4.6
     from fairlearn.widget import FairlearnDashboard
 
     FairlearnDashboard(sensitive_features=A_test, 
-                    sensitive_feature_names=['Sex', 'Race'],
-                    y_true=Y_test.tolist(),
+                    sensitive_feature_names=['Race', 'Sex'],
+                    y_true=y_test.tolist(),
                     y_pred=ys_pred)
     ```
 
@@ -265,7 +289,7 @@ pip install fairlearn==0.4.6
     Создание словаря панели мониторинга с помощью `metrics` пакета фаирлеарн.
 
     ```python
-    sf = { 'Race': A_test.Race, 'Sex': A_test.Sex }
+    sf = { 'Race': A_test.race, 'Sex': A_test.sex }
 
     from fairlearn.metrics._group_metric_set import _create_group_metric_set
 
@@ -311,15 +335,15 @@ pip install fairlearn==0.4.6
 
 Вы можете использовать [алгоритмы защиты](https://fairlearn.github.io/master/user_guide/mitigation.html)фаирлеарн, сравнить созданные по снижению модели с исходными неминимизированными моделями и перемещаться по компромиссам производительности и равноправию между сравниваемыми моделями.
 
-Чтобы увидеть пример, демонстрирующий использование алгоритма устранения рисков [поиска в сетке](https://fairlearn.github.io/master/user_guide/mitigation.html#grid-search) (который создает коллекцию сниженных моделей с различными компромиссами равноправия и производительности), ознакомьтесь с [примером записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/contrib/fairness/fairlearn-azureml-mitigation.ipynb). 
+Пример, демонстрирующий использование алгоритма устранения рисков [поиска в сетке](https://fairlearn.github.io/master/user_guide/mitigation.html#grid-search) (который создает коллекцию проблемных моделей с разными компромиссами и обделами производительности), см. в этом [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/contrib/fairness/fairlearn-azureml-mitigation.ipynb). 
 
-Отправка нескольких моделей распределения по равноправию в одном запуске позволяет сравнивать модели по отношению к равномерности и производительности. Вы можете дополнительно щелкнуть любую из моделей, отображаемых на диаграмме сравнения модели, чтобы увидеть подробные сведения о геоотношении распределения конкретной модели.
+Загрузка нескольких моделей "равноправие аналитики" в одном запуске позволяет сравнивать модели по отношению к равномерности и производительности. Можно щелкнуть любую из моделей, отображаемых на диаграмме сравнения моделей, чтобы просмотреть подробные сведения об равноправии конкретной модели.
 
 
 [![Панель мониторинга Фаирлеарн для сравнения моделей](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
     
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о равномерном использовании модели](concept-fairness-ml.md)
 

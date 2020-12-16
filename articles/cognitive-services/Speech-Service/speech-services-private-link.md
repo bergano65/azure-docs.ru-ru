@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/04/2020
 ms.author: alexeyo
-ms.openlocfilehash: c88a7820518d0a73bfb0e93d3b364190207b8f90
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 01a0171ed2b660fbabebf4276a74f8a3ea631bde
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97051234"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516533"
 ---
 # <a name="using-speech-services-with-private-endpoints-provided-by-azure-private-link"></a>Использование речевых служб с частными конечными точками, предоставляемыми частной ссылкой Azure
 
@@ -53,11 +53,11 @@ ms.locfileid: "97051234"
 - Появится новая панель с инструкциями по созданию уникального пользовательского поддомена для ресурса.
 > [!WARNING]
 > После создания имени пользовательского домена его **нельзя** изменить. Дополнительные сведения см. в приведенном выше предупреждении.
-- После завершения операции может потребоваться выбрать *ключи и конечную точку* (группа *управления ресурсами* ) и проверить новое имя конечной точки ресурса в формате `{your custom name}.cognitiveservices.azure.com`
+- После завершения операции может потребоваться выбрать *ключи и конечную точку* (группа *управления ресурсами* ) и проверить новое имя конечной точки ресурса в формате <p />`{your custom name}.cognitiveservices.azure.com`
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Для работы с этим разделом необходимо локально запустить PowerShell версии 7. x или более поздней версии с Azure PowerShellным модулем 5.1.0 или более поздней версией. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если необходимо установить или обновить, см. раздел [install Azure PowerShell Module](/powershell/azure/install-Az-ps) .
+Для работы с этим разделом необходимо локально запустить PowerShell версии 7. x или более поздней версии с Azure PowerShellным модулем 5.1.0 или более поздней версией. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
 Прежде чем продолжить выполнение `Connect-AzAccount` , создайте подключение к Azure.
 
@@ -275,10 +275,10 @@ Aliases:  my-private-link-speech.cognitiveservices.azure.com
 Речь-to-Text имеет два разных интерфейса API-интерфейсов RESTFUL. Каждый API-интерфейс предназначен для разных целей, использует разные конечные точки и требует другого подхода при использовании индивидуального сценария с включенной конечной точкой.
 
 API-интерфейсы RESTFUL для преобразования речи в текст:
-- [v 1.0](rest-speech-to-text.md) используется для построчного транскрипции
-- v 3.0 используется для [пакетной](batch-transcription.md) записи и [пользовательское распознавание речи](custom-speech-overview.md). (См. [полный справочник](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0))
+- Преобразование [речи в текст REST API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30) используется для [пакетной](batch-transcription.md) записи и [пользовательское распознавание речи](custom-speech-overview.md). Версия 3.0 является [последователем версии 2.0](/azure/cognitive-services/speech-service/migrate-v2-to-v3).
+- [REST API преобразования речи в текст для коротких аудиофайлов](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) используется для интерактивного разговора. 
 
-Использование преобразования речи в текст v 1.0 и преобразования текста в REST API речь в сценарии частной конечной точки аналогично тому, что и в случае с [пакетом SDK для распознавания речи](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk) , описанным далее в этой статье. 
+Использование преобразования речи в REST API текст для коротких аудио-и речевых REST API в сценарии частной конечной точки аналогично тому, что аналогично [случаю речевого пакета SDK](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk) , описанному далее в этой статье. 
 
 Преобразование речи в текст REST API v 3.0 использует другой набор конечных точек, поэтому для сценария с включенной конечной точкой требуется другой подход.
 
@@ -287,7 +287,7 @@ API-интерфейсы RESTFUL для преобразования речи в
 
 ##### <a name="speech-to-text-rest-api-v30"></a>Преобразование речи в текст REST API v 3.0
 
-Обычно речевые ресурсы используют [Cognitive Services региональных конечных точек](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) для взаимодействия с [текстом REST API v 3.0](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0). Эти ресурсы имеют следующий формат именования: <p/>`{region}.api.cognitive.microsoft.com`
+Обычно речевые ресурсы используют [Cognitive Services региональных конечных точек](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) для взаимодействия с [текстом REST API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30). Эти ресурсы имеют следующий формат именования: <p/>`{region}.api.cognitive.microsoft.com`
 
 Вот пример URL-адреса запроса:
 
@@ -311,15 +311,18 @@ https://my-private-link-speech.cognitiveservices.azure.com/speechtotext/v3.0/tra
 >
 > Пользовательское доменное имя ресурса речи **не** содержит сведений о регионе, в котором развернут ресурс. Поэтому описанная выше логика приложения **не** будет работать и должна быть изменена.
 
-##### <a name="speech-to-text-rest-api-v10-and-text-to-speech-rest-api"></a>Преобразование речи в текст REST API v 1.0 и преобразование текста в речь REST API
+##### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>REST API преобразования речи в текст для коротких REST API аудио и текста в речь
 
-Преобразование [речи в текст REST API v 1.0](rest-speech-to-text.md) и преобразование [текста в речь REST API](rest-text-to-speech.md) используют два типа конечных точек:
+[REST API преобразования речи в текст для коротких аудио](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) и [текста в речь REST API](rest-text-to-speech.md) использовать два типа конечных точек:
 - [Cognitive Services региональные конечные точки](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) для взаимодействия с Cognitive Services REST API для получения маркера авторизации
 - Специальные конечные точки для всех других операций
 
 Подробное описание специальных конечных точек и их URL-адресов, которые должны быть преобразованы для ресурса речи с поддержкой частной конечной точки, приведены в [этом подразделе](#general-principle) раздела "использование с РЕЧЕВым пакетом SDK" ниже. Тот же принцип, который описан для пакета SDK, относится к REST API преобразования речи в текст v 1.0 и преобразования текста в речь.
 
-Ознакомьтесь с материалами в подразделе, упомянутом в предыдущем абзаце, и см. Следующий пример. (В примере описывается REST API преобразования текста в речь; использование преобразования речи в текст v 1.0 REST API полностью эквивалентно)
+Ознакомьтесь с материалами в подразделе, упомянутом в предыдущем абзаце, и см. Следующий пример. (В примере описывается REST API преобразования текста в речь; использование REST API преобразования речи в текст для коротких аудиозаписей полностью эквивалентно)
+
+> [!NOTE]
+> При использовании **REST API речи в текст для коротких аудио** в сценариях частных конечных точек необходимо использовать токен авторизации, [переданный](rest-speech-to-text.md#request-headers) в `Authorization` [заголовке](rest-speech-to-text.md#request-headers); передача ключа подписки речи в специальную конечную точку через `Ocp-Apim-Subscription-Key` заголовок **не** будет работать и создаст ошибку 401.
 
 **Пример использования преобразования текста в речь REST API.**
 
@@ -359,7 +362,7 @@ https://my-private-link-speech.cognitiveservices.azure.com/tts/cognitiveservices
 
 Обычно в сценариях пакета SDK (а также в сценариях REST API преобразования текста в речь) для речевых ресурсов используются специальные региональные конечные точки для различных предложений услуг. Для этих конечных точек используется формат DNS-имен: </p>`{region}.{speech service offering}.speech.microsoft.com`
 
-Пример. </p>`westeurope.stt.speech.microsoft.com`
+Пример </p>`westeurope.stt.speech.microsoft.com`
 
 Все возможные значения для региона (первый элемент DNS-имени [) перечислены ниже в следующей таблице](regions.md) представлены возможные значения для предложения служб речи (второй элемент DNS-имени):
 
@@ -497,14 +500,16 @@ Aliases:  my-private-link-speech.cognitiveservices.azure.com
 
 Использование преобразования речи в текст REST API v 3.0 полностью эквивалентно случаю [речевых ресурсов с поддержкой частных конечных точек](#speech-to-text-rest-api-v30).
 
-##### <a name="speech-to-text-rest-api-v10-and-text-to-speech-rest-api"></a>Преобразование речи в текст REST API v 1.0 и преобразование текста в речь REST API
+##### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>REST API преобразования речи в текст для коротких REST API аудио и текста в речь
 
-В этом случае преобразование речи в текст REST API v 1.0 и преобразование текста в REST API речь не приводит к различиям в общем случае и должно использоваться, как описано в статье преобразование [речи в текст REST API v 1.0](rest-speech-to-text.md) и документация по [тексту в речь REST API](rest-text-to-speech.md) .
+В этом случае речь-текст REST API для короткого аудио и текста в речь, REST API использование не имеет различия в общем случае с одним исключением для REST API короткого звучания (см. Примечание ниже). Оба API-интерфейса следует использовать, как описано в разделе Преобразование [речи в текст REST API для коротких аудио](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) и [текста в речь REST API](rest-text-to-speech.md) документации.
 
+> [!NOTE]
+> При использовании **REST API преобразования речи в текст для коротких звуков** в пользовательских сценариях необходимо использовать токен авторизации, [передаваемый по](rest-speech-to-text.md#request-headers) `Authorization` [заголовку](rest-speech-to-text.md#request-headers); передача ключа подписки речи в специальную конечную точку через `Ocp-Apim-Subscription-Key` заголовок **не** будет работать и создаст ошибку 401.
 
 #### <a name="speech-resource-with-custom-domain-name-without-private-endpoints-usage-with-speech-sdk"></a>Речевой ресурс с именем личного домена без закрытых конечных точек. Использование с речевым пакетом SDK
 
-Использование речевого пакета SDK с включенными пользовательскими доменными именами **без** закрытых конечных точек требует просмотра и, вероятнее всего, изменений кода приложения. Обратите внимание, что эти изменения **различны** в случае использования [речевого ресурса с поддержкой частной конечной точки](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk). Мы работаем над более эффективной поддержкой частной конечной точки или личного домена.
+Использование речевого пакета SDK с включенными пользовательскими доменными именами **без** закрытых конечных точек требует просмотра и, вероятнее всего, изменений кода приложения. Обратите внимание, что эти изменения **различны** в случае использования [речевого ресурса с поддержкой частной конечной точки](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk). Мы работаем над более простой поддержкой сценария частной конечной точки или пользовательского домена.
 
 `my-private-link-speech.cognitiveservices.azure.com`Для этого раздела мы будем использовать в качестве примера DNS-имя ресурса речи (личный домен).
 

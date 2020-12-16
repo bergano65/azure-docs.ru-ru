@@ -3,25 +3,20 @@ title: Развертывание средства диагностики для
 description: Развертывание средства диагностики для виртуальных рабочих столов Windows (классическая модель).
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/30/2020
+ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 729e22f8ad94d2119d0f3f3e9fc474cc83a493a8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 9672d18fe99d8baae3c73fa3782531eb84114713
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023077"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97515632"
 ---
 # <a name="deploy-the-windows-virtual-desktop-classic-diagnostics-tool"></a>Развертывание средства диагностики виртуальных рабочих столов Windows (классическая модель)
 
 >[!IMPORTANT]
 >Это содержимое применимо к Виртуальному рабочему столу Windows (классическому), который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
-
->[!IMPORTANT]
->По состоянию на 16 марта 2020 мы временно отключили диагностические запросы, которые затронули взаимодействие с пользователем из-за высокой нагрузки на службу. Это приведет к прекращению работы средства, так как оно использует эти запросы для функционирования. Мы будем обновлять эту статью, когда диагностические запросы снова становятся доступными.
->
->До этого мы настоятельно рекомендуем [использовать log Analytics](diagnostics-log-analytics-2019.md) для непрерывного мониторинга.
 
 Вот что может сделать средство диагностики для виртуальных рабочих столов Windows:
 
@@ -43,8 +38,8 @@ ms.locfileid: "95023077"
 
 Кроме того, перед началом работы необходимо установить эти два модуля PowerShell:
 
-- [Overview of Azure PowerShell](/powershell/azure/install-az-ps?view=azps-2.4.0/) (Общие сведения об Azure PowerShell)
-- [Модуль Azure AD](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0/)
+- [Overview of Azure PowerShell](/powershell/azure/install-az-ps?view=azps-2.4.0/&preserve-view=true) (Общие сведения об Azure PowerShell)
+- [Модуль Azure AD](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0/&preserve-view=true)
 
 Убедитесь, что ваш идентификатор подписки готов для входа в систему.
 
@@ -191,7 +186,7 @@ ms.locfileid: "95023077"
 4.  На левой панели в разделе Управление выберите **Проверка подлинности**.
 5.  Введите нужный URI перенаправления в текстовое поле **URI перенаправления** , а затем выберите **сохранить** в левом верхнем углу меню.
 6. Выберите **веб-сайт** в раскрывающемся меню в разделе тип.
-7. Введите URL-адрес на странице обзора приложения и добавьте **/секурити/сигнин-каллбакк** в конец. Например, так: `https://<yourappname>.azurewebsites.net/security/signin-callback`.
+7. Введите URL-адрес на странице обзора приложения и добавьте **/секурити/сигнин-каллбакк** в конец. Например: `https://<yourappname>.azurewebsites.net/security/signin-callback`.
 
    > [!div class="mx-imgBorder"]
    > ![Страница URI перенаправления](../media/redirect-uri-page.png)
@@ -264,7 +259,7 @@ ms.locfileid: "95023077"
 
     - Пороговое значение: выше 2000 мс помечено как неработоспособное.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как отслеживать журналы действий при [использовании диагностики с log Analytics](diagnostics-log-analytics-2019.md).
 - Ознакомьтесь с распространенными сценариями ошибок и способами их устранения в статье [Обнаружение и диагностика проблем](diagnostics-role-service-2019.md).
