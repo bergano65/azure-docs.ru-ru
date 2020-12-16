@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: 6a000daa7d9e2aa93e68844e8aec5aa168c9fa60
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: becf9f8c7f6a967ed63cfd3040de90de76e32fff
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97592421"
+ms.locfileid: "97607275"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Создание FCI с общими дисками Azure (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -27,8 +27,7 @@ ms.locfileid: "97592421"
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
-
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Перед выполнением инструкций, приведенных в этой статье, у вас уже должны быть:
 
@@ -37,12 +36,10 @@ ms.locfileid: "97592421"
 - учетная запись с разрешениями на создание объектов как на виртуальных машинах Azure, так и в Active Directory;
 - Последняя версия [PowerShell](/powershell/azure/install-az-ps). 
 
-
 ## <a name="add-azure-shared-disk"></a>Добавление общего диска Azure
 Развертывание управляемого SSD (цен. категория "Премиум") диска с включенным компонентом "общий диск". Задайте `maxShares` для параметра значение **соответствует количеству узлов кластера** , чтобы сделать диск общим для всех узлов FCI. 
 
 Добавьте общий диск Azure, выполнив следующие действия. 
-
 
 1. Сохраните следующий скрипт как *SharedDiskConfig.js*: 
 
@@ -85,7 +82,6 @@ ms.locfileid: "97592421"
    }
    ```
 
-
 2. Запустите *SharedDiskConfig.jsв* с помощью PowerShell: 
 
    ```powershell
@@ -119,7 +115,6 @@ ms.locfileid: "97592421"
 - Имя отказоустойчивого кластера.
 - IP-адрес отказоустойчивого кластера. Вы можете использовать IP-адрес, который не используется в той же виртуальной сети и подсети Azure, где расположены узлы кластера.
 
-
 # <a name="windows-server-2012-2016"></a>[Windows Server 2012-2016](#tab/windows2012)
 
 Следующий сценарий PowerShell создает отказоустойчивый кластер. Обновите скрипт, введя имена узлов (имена виртуальных машин) и доступный IP-адрес из виртуальной сети Azure.
@@ -139,7 +134,6 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 Дополнительные сведения см. в статье [Отказоустойчивый кластер: сетевой объект кластера](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97).
 
 ---
-
 
 ## <a name="configure-quorum"></a>Настройка кворума
 
@@ -198,7 +192,6 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 Чтобы управлять виртуальной машиной SQL Server на портале, зарегистрируйте ее с помощью расширения агента IaaS SQL (RP) в [режиме упрощенного управления](sql-agent-extension-manually-register-single-vm.md#lightweight-management-mode), в настоящее время единственным режимом, поддерживаемым FCI и SQL Server на виртуальных машинах Azure. 
 
-
 Регистрация SQL Server виртуальной машины в упрощенном режиме с помощью PowerShell:  
 
 ```powershell-interactive
@@ -221,7 +214,6 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](failover-cluster-instance-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](failover-cluster-instance-distributed-network-name-dnn-configure.md). 
-
 
 Если общие диски Azure не являются подходящим решением для хранения FCI, рассмотрите возможность создания FCI с помощью [файловых ресурсов Premium](failover-cluster-instance-premium-file-share-manually-configure.md) или [Локальные дисковые пространства](failover-cluster-instance-storage-spaces-direct-manually-configure.md) . 
 

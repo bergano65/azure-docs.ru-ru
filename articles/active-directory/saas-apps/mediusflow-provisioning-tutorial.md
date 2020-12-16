@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4d3ee6df90424788c6f9b6bb4e2055023a5d56a6
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 881309c040f6c1bdff758d17ab7f51e935437192
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182076"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607887"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Руководство по Настройка MediusFlow для автоматической подготовки пользователей
 
@@ -172,11 +172,11 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 
 11. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизируются из Azure AD в MediusFlow. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления групп в MediusFlow в операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-      |attribute|Тип|
-      |---|---|
-      |displayName|Строка|
-      |externalID|Строка|
-      |members|Справочник|
+    | attribute | Тип |
+    |--|--|
+    | displayName | Строка |
+    | externalID | Строка |
+    | members | Справочник |
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

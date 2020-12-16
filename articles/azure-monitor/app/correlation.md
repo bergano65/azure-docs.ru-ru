@@ -7,12 +7,12 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: 7a206d61124b2524feae0cf155083c1939696e18
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 20e9ed7e83ff3359651acebc11a939a998f2889d
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853328"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607921"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -79,7 +79,6 @@ Application Insights также определяет [расширение](http
 | `Operation_Id`                         | [Идентификатор трассировки](https://w3c.github.io/trace-context/#trace-id)                                           |
 | `Operation_ParentId`                   | [родительский идентификатор](https://w3c.github.io/trace-context/#parent-id) родительского диапазона этого диапазона. Если это корневой диапазон, это поле должно быть пустым.     |
 
-
 Дополнительные сведения см. в разделе [Application Insightsная модель данных телеметрии](../../azure-monitor/app/data-model.md).
 
 ### <a name="enable-w3c-distributed-tracing-support-for-net-apps"></a>Включить поддержку распределенной трассировки W3C для приложений .NET
@@ -103,7 +102,7 @@ Application Insights также определяет [расширение](http
        <Param name ="enableW3CBackCompat" value = "true" />
     </Add>
     ```
-    
+
   - Для приложений с пружинной загрузкой добавьте следующие свойства:
 
     - `azure.application-insights.web.enable-W3C=true`
@@ -139,7 +138,7 @@ Application Insights также определяет [расширение](http
   ```JavaScript
     distributedTracingMode: DistributedTracingModes.W3C
   ```
-  
+
 - **[Настройка на основе фрагментов кода](./javascript.md#snippet-based-setup)**
 
 Добавьте следующую конфигурацию:

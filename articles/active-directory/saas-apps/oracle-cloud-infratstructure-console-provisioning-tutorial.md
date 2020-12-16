@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 203af02841e6d17546d254ed83868c859ba3ac0d
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 94de0ca0a5393c891e567e558cbbadd0ca1f453b
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938942"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608006"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Oracle Cloud Infrastructure Console
 
@@ -120,40 +120,40 @@ ms.locfileid: "96938942"
 
 9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Oracle Cloud Infrastructure Console. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Oracle Cloud Infrastructure Console для операций обновления. Если вы решили изменить [целевой атрибут сопоставления](../app-provisioning/customize-application-attributes.md), потребуется убедиться, что API Oracle Cloud Infrastructure Console поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-      |attribute|Тип|
-      |---|---|
-      |displayName|Строка|
-      |userName|Строка|
-      |active|Логическое|
-      |title|Строка|
-      |emails[type eq "work"].value|Строка|
-      |preferredLanguage|Строка|
-      |name.givenName|Строка|
-      |name.familyName|Строка|
-      |addresses[type eq "work"].formatted|Строка|
-      |addresses[type eq "work"].locality|Строка|
-      |addresses[type eq "work"].region|Строка|
-      |addresses[type eq "work"].postalCode|Строка|
-      |addresses[type eq "work"].country|Строка|
-      |addresses[type eq "work"].streetAddress|Строка|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
-      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification|логический|
-      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|логический|
+    |attribute|Тип|
+    |---|---|
+    |displayName|Строка|
+    |userName|Строка|
+    |active|Логическое|
+    |title|Строка|
+    |emails[type eq "work"].value|Строка|
+    |preferredLanguage|Строка|
+    |name.givenName|Строка|
+    |name.familyName|Строка|
+    |addresses[type eq "work"].formatted|Строка|
+    |addresses[type eq "work"].locality|Строка|
+    |addresses[type eq "work"].region|Строка|
+    |addresses[type eq "work"].postalCode|Строка|
+    |addresses[type eq "work"].country|Строка|
+    |addresses[type eq "work"].streetAddress|Строка|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
+    |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification|логический|
+    |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|логический|
 
 10. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Groups to Oracle Cloud Infrastructure Console** (Синхронизировать группы Azure Active Directory с Oracle Cloud Infrastructure Console).
 
 11. В разделе **Сопоставление атрибутов** просмотрите атрибуты группы, которые синхронизированы из Azure AD в Oracle Cloud Infrastructure Console. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления групп в Oracle Cloud Infrastructure Console при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-      |attribute|Тип|
-      |---|---|
-      |displayName|Строка|
-      |externalId|Строка|
-      |members|Справочник|
+    | attribute | Тип |
+    |--|--|
+    | displayName | Строка |
+    | externalId | Строка |
+    | members | Справочник |
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

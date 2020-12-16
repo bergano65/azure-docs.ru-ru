@@ -6,12 +6,12 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 4/23/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 36c5fc93886327c0e3261418343d900ee66cb4eb
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: b44279f31aea8fc02130f1c3d7520f42c648bd4c
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168585"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607955"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
@@ -23,37 +23,35 @@ ms.locfileid: "92168585"
 
 ## <a name="supported-features"></a>Поддерживаемые функции
 
-| Функции Azure                       | V1                | V2 & V3   | 
-|-----------------------------------    |---------------    |------------------ |
+| Функции Azure                   | V1            | V2 & V3 | 
+|-----------------------------------|---------------|------------------|
 | | | | 
-| **Автоматический сбор**        |                 |                   |               
-| &bull; Запросы                     | Да             | Да               | 
-| &bull; Исключения                   | Да             | Да               | 
-| &bull; Счетчики производительности         | Да             | Да               |
-| &bull; Зависимости                   |                   |                   |               
-| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | Да               | 
-| &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|                 | Да               | 
-| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |                 | Да               | 
-| &nbsp;&nbsp;&nbsp;&mdash; SQL       |                 | Да               | 
+| **Автоматический сбор**        |               |                  |
+| &bull; Запросы                     | Да           | Да              |
+| &bull; Исключения                   | Да           | Да              |
+| &bull; Счетчики производительности         | Да           | Да              |
+| &bull; Зависимости                 |               |                  |
+| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |               | Да              |
+| &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|               | Да              |
+| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |               | Да              |
+| &nbsp;&nbsp;&nbsp;&mdash; SQL       |               | Да              |
 | | | | 
-| **Поддерживаемые функции**                |                   |                   |               
-| &bull; QuickPulse/LiveMetrics       | Да             | Да               | 
-| &nbsp;&nbsp;&nbsp;&mdash; Безопасный канал управления|                 | Да               | 
-| &bull; Выборка                     | Да             | Да               | 
-| &bull; Пакет пульса                   |                 | Да               | 
+| **Поддерживаемые функции**              |               |                  |
+| &bull; QuickPulse/LiveMetrics       | Да           | Да              | 
+| &nbsp;&nbsp;&nbsp;&mdash; Безопасный канал управления |               | Да | 
+| &bull; Выборка                     | Да           | Да              | 
+| &bull; Пакет пульса                   | | Да              | 
+| | | |
+| **Correlation** (корреляция).                    |               |                  |
+| &bull; Служебная шина                  |               | Да              |
+| &bull; EventHub                    |               | Да              |
 | | | | 
-| **Correlation**                       |                   |                   |               
-| &bull; Служебная шина                     |                   | Да               | 
-| &bull; EventHub                       |                   | Да               | 
-| | | | 
-| **Настраиваемый**                      |                   |                   |           
-| &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>См. [ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) для всех вариантов.               |                   | Да                   | 
-
+| **Настраиваемый**                  |               |                  |           
+| &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>См. [ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) для всех вариантов.           |               | Да                 | 
 
 ## <a name="performance-counters"></a>Счетчики производительности
 
 Автоматический сбор данных счетчиков производительности работает только на компьютерах Windows.
-
 
 ## <a name="live-metrics--secure-control-channel"></a>Интерактивные метрики и безопасный канал управления
 
@@ -65,7 +63,7 @@ ms.locfileid: "92168585"
 
 Если проект использует зависимость от пакета SDK Application Insights для ручного отслеживания телеметрии, то может наблюдаться странное поведение, если конфигурация выборки отличается от конфигурации выборки функций. 
 
-Мы рекомендуем использовать ту же конфигурацию, что и функции. В **функциях версии 2**можно получить ту же конфигурацию с помощью внедрения зависимостей в конструкторе:
+Мы рекомендуем использовать ту же конфигурацию, что и функции. В **функциях версии 2** можно получить ту же конфигурацию с помощью внедрения зависимостей в конструкторе:
 
 ```csharp
 using Microsoft.ApplicationInsights;
