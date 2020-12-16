@@ -1,5 +1,5 @@
 ---
-title: Восстановление существующего выделенного пула SQL
+title: Восстановление существующего выделенного пула SQL (ранее — хранилища данных SQL)
 description: Руководство по восстановлению существующего выделенного пула SQL в Azure синапсе Analytics.
 services: synapse-analytics
 author: anumjs
@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: d3c84f7d951db715d26042f524f385826197e076
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2ce552a13592c9d26ef70575f98b0b76ecc454ff
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449996"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591998"
 ---
 # <a name="restore-an-existing-dedicated-sql-pool-formerly-sql-dw"></a>Восстановление существующего выделенного пула SQL (ранее — хранилища данных SQL)
 
@@ -26,7 +26,7 @@ ms.locfileid: "96449996"
 
 **Проверьте ресурсы DTU.** Каждый пул размещается на [логическом сервере SQL](../../azure-sql/database/logical-servers.md) Server (например, MyServer.Database.Windows.NET), который имеет квоту DTU по умолчанию. Убедитесь, что на сервере достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 1. Не забудьте [установить Azure PowerShell](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Наличие существующей точки восстановления, из которой необходимо выполнить восстановление. Если вы хотите создать новое восстановление, см. [руководство по созданию новой точки восстановления, определенной пользователем](sql-data-warehouse-restore-points.md).
