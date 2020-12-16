@@ -9,16 +9,17 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e8decbe22f869573bf7a2221099d2bc30c00fc8a
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: d6409c005e006372f55e77aeb4d977e6b1c45832
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888850"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936292"
 ---
 # <a name="quickstart-handle-sms-events"></a>Краткое руководство. Обработка событий SMS
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
+[!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
 Начало работы со Службами коммуникации Azure с помощью службы "Сетка событий Azure" для обработки событий SMS Служб коммуникации. 
 

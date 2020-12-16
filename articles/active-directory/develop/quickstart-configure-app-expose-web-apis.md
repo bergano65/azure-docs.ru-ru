@@ -11,14 +11,14 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 09/03/2020
 ms.author: marsma
-ms.custom: aaddev, contperfq1
+ms.custom: aaddev, contperf-fy21q1
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 72d66bd4c738ed60bbaefc123daae90ecc0db163
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4ebae7e97f9128bb9302e9076e71dd3164f0c29e
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89442167"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030966"
 ---
 # <a name="quickstart-configure-an-application-to-expose-a-web-api"></a>Краткое руководство. Настройка приложения для предоставления веб-API
 
@@ -95,7 +95,7 @@ ms.locfileid: "89442167"
 
 Если вы успешно добавили оба примера областей, описанные в предыдущих разделах, они отобразятся в области **Предоставление API** регистрации приложения веб-API, как показано на следующем рисунке:
 
-:::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-03-scopes-list.png" alt-text="Панель &quot;Предоставление API&quot; регистрации приложения на портале Azure":::
+:::image type="content" source="media/quickstart-configure-app-expose-web-apis/portal-03-scopes-list.png" alt-text="Снимок экрана: панели &quot;Предоставление API&quot; с двумя предоставленными областями.":::
 
 Как показано на рисунке, полной строкой области является объединение **URI идентификатора приложения** веб-API и **имени области**.
 

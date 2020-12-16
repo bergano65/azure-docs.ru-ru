@@ -5,12 +5,12 @@ ms.assetid: 94af2caf-a2ec-4415-a097-f60694b860b3
 ms.topic: overview
 ms.date: 07/06/2020
 ms.custom: devx-track-dotnet, mvc, seodec18
-ms.openlocfilehash: 1b72224441741990a1fc94400dfe718ea9d1b0b3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e9c49d472f6cf0b9f0e5b3e2f7728417034059b1
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88961488"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007099"
 ---
 # <a name="app-service-overview"></a>Обзор Службы приложений Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "88961488"
 
 ### <a name="built-in-languages-and-frameworks"></a>Встроенная поддержка нескольких языков и платформ
 
-Служба приложений в Linux поддерживает ряд встроенных образов, характерных для конкретного языка. Просто разверните код. Поддерживаемые языки включают в себя: Node.js, Java (JRE 8 и JRE 11), PHP, Python, .NET Core и Ruby. Выполните [`az webapp list-runtimes --linux`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes), чтобы просмотреть поддерживаемые языки и версии. Если среда выполнения, необходимая для приложения, не поддерживается во встроенных образах, ее можно развернуть с помощью пользовательского контейнера.
+Служба приложений в Linux поддерживает ряд встроенных образов, характерных для конкретного языка. Просто разверните код. Поддерживаемые языки включают в себя: Node.js, Java (JRE 8 и JRE 11), PHP, Python, .NET Core и Ruby. Выполните [`az webapp list-runtimes --linux`](/cli/azure/webapp#az-webapp-list-runtimes), чтобы просмотреть поддерживаемые языки и версии. Если среда выполнения, необходимая для приложения, не поддерживается во встроенных образах, ее можно развернуть с помощью пользовательского контейнера.
 
 ### <a name="limitations"></a>Ограничения
 

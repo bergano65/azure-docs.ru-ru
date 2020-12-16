@@ -10,21 +10,22 @@ ms.date: 10/05/2020
 ms.topic: overview
 ms.custom: references_regions
 ms.service: azure-communication-services
-ms.openlocfilehash: 0420360b70485e49dc6cd06dbeb19400c0f73ef5
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 271d7ce38d50fd21975327eb1f21528aeacc485e
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92070356"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937242"
 ---
 # <a name="plan-your-telephony-and-sms-solution"></a>Планирование решения для телефонии и SMS
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
-
+[!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
 Службы коммуникации Azure позволяют использовать номера телефонов для голосовых звонков и отправки SMS-сообщений через телефонную сеть общего пользования (ТСОП). В этом документе мы рассмотрим типы телефонных номеров, параметры коммуникации и доступность по регионам для планирования решения по обеспечению телефонной связи и отправки SMS с помощью Служб коммуникации.
 
-[!INCLUDE [Emergency Calling Notice](../../includes/emergency-calling-notice-include.md)]
+
+
 
 
 ## <a name="phone-number-types-in-azure-communication-services"></a>Типы телефонных номеров в Службах коммуникации Azure
@@ -52,6 +53,8 @@ ms.locfileid: "92070356"
 
 
 ## <a name="phone-number-features-in-azure-communication-services"></a>Функции телефонных номеров в Службах коммуникации Azure 
+
+[!INCLUDE [Emergency Calling Notice](../../includes/emergency-calling-notice-include.md)]
 
 Для большинства номеров телефонов мы поддерживаем персонализированную настройку набора функций. Эти функции можно выбрать при оформлении аренды телефонных номеров в Службах коммуникации Azure.
 

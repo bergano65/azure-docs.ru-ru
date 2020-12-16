@@ -9,15 +9,14 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: f1f83fdd73816e6e30c5cac7d193719591bb8dc1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3486b636325393f9c8e96669ba3d21e7d489efee
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "80999018"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347988"
 ---
 # <a name="in-store-analytics-architecture"></a>Архитектура решения для аналитики магазина
-
 
 
 Решения для аналитики магазина позволяют отслеживать различные условия в среде розничного магазина. Эти решения можно создать, используя один из шаблонов приложений в IoT Central и описанную ниже архитектуру в качестве примера.
