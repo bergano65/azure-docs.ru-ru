@@ -7,18 +7,18 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/14/2019
-ms.openlocfilehash: 5ffd688a60f793ffa497cd0d23ed88437e56a07c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ec19497f8e718eaf081d0fd8e2a4012e3ee24bf7
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022689"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587389"
 ---
 # <a name="troubleshoot-azure-hdinsight"></a>Устранение неполадок в Azure HDInsight
 
 | Рабочая нагрузка Apache | Основные вопросы |
 |---|---|
-|![значок значка hdinsight Apache HBase](./media/hdinsight-troubleshoot-guide/hdinsight-apache-hbase.png)<br>[Устранение неполадок с Apache HBase]()|<br>[Неназначенные регионы](hbase/hbase-troubleshoot-unassigned-regions.md#scenario-unassigned-regions)<br><br>[Истечение времени ожидания при выполнении команды "hbase hbck" в Azure HDInsight](hbase/hbase-troubleshoot-timeouts-hbase-hbck.md)<br><br>[Проблемы с подключением к Apache Phoenix в Azure HDInsight](hbase/hbase-troubleshoot-phoenix-connectivity.md)<br><br>[Что вызывает сбой запуска главного сервера?](hbase/hbase-troubleshoot-start-fails.md)<br><br>[Биндексцептион-Address уже используется](hbase/hbase-troubleshoot-bindexception-address-use.md)|
+|![значок значка hdinsight Apache HBase](./media/hdinsight-troubleshoot-guide/hdinsight-apache-hbase.png)<br>[Устранение неполадок с Apache HBase]()|<br>[Неназначенные регионы](hbase/hbase-troubleshoot-unassigned-regions.md#scenario-unassigned-regions)<br><br>[Истечение времени ожидания при выполнении команды "hbase hbck" в Azure HDInsight](hbase/hbase-troubleshoot-timeouts-hbase-hbck.md)<br><br>[Проблемы с подключением к Apache Phoenix в Azure HDInsight](hbase/hbase-troubleshoot-phoenix-connectivity.md)<br><br>[В чем причина сбоя запуска сервера-источника?](hbase/hbase-troubleshoot-start-fails.md)<br><br>[Биндексцептион-Address уже используется](hbase/hbase-troubleshoot-bindexception-address-use.md)|
 |![значок значка hdinsight Apache HDFS](./media/hdinsight-troubleshoot-guide/hdinsight-apache-hdfs.png)<br>[Устранение неполадок с Apache Hadoop HDFS](hdinsight-troubleshoot-hdfs.md)|<br>[Разделы справки доступ к локальной системе HDFS из кластера?](hdinsight-troubleshoot-hdfs.md#how-do-i-access-local-hdfs-from-inside-a-cluster)<br><br>[Локальная служба HDFS зависает в защищенном режиме в кластере Azure HDInsight](hadoop/hdinsight-hdfs-troubleshoot-safe-mode.md)|
 |![значок значка hdinsight Apache Hive](./media/hdinsight-troubleshoot-guide/hdinsight-apache-hive.png)<br>[Устранение неполадок Apache Hive](hdinsight-troubleshoot-hive.md)|<br>[Как экспортировать хранилище метаданных Hive и импортировать его в другой кластер?](hdinsight-troubleshoot-hive.md#how-do-i-export-a-hive-metastore-and-import-it-on-another-cluster)<br><br>[Как найти журналы Apache Hive в кластере?](hdinsight-troubleshoot-hive.md#how-do-i-locate-hive-logs-on-a-cluster)<br><br>[Как запустить оболочку Apache Hive с определенными конфигурациями в кластере?](hdinsight-troubleshoot-hive.md#how-do-i-launch-the-hive-shell-with-specific-configurations-on-a-cluster)<br><br>[Как анализировать данные направленного ациклического графа Apache Tez по критическому пути кластера?](hdinsight-troubleshoot-hive.md#how-do-i-analyze-tez-dag-data-on-a-cluster-critical-path)<br><br>[Как скачать данные направленного ациклического графа Apache Tez из кластера?](hdinsight-troubleshoot-hive.md#how-do-i-download-tez-dag-data-from-a-cluster)|
 |![значок Apache Spark для hdinsight](./media/hdinsight-troubleshoot-guide/hdinsight-apache-spark.png)<br>[Устранение неполадок с Apache Spark](./spark/apache-troubleshoot-spark.md)|<br>[Как настроить приложение Apache Spark с помощью Apache Ambari в кластерах?](spark/apache-troubleshoot-spark.md#how-do-i-configure-an-apache-spark-application-by-using-apache-ambari-on-clusters)<br><br>[Как настроить приложение Apache Spark с помощью Jupyter Notebook в кластерах?](spark/apache-troubleshoot-spark.md#how-do-i-configure-an-apache-spark-application-by-using-a-jupyter-notebook-on-clusters)<br><br>[Как настроить приложение Apache Spark с помощью Apache Livy в кластерах?](spark/apache-troubleshoot-spark.md#how-do-i-configure-an-apache-spark-application-by-using-apache-livy-on-clusters)<br><br>[Как настроить приложение Apache Spark с помощью spark-submit в кластерах?](spark/apache-troubleshoot-spark.md#how-do-i-configure-an-apache-spark-application-by-using-spark-submit-on-clusters)<br><br>[Как настроить приложение Apache Spark с помощью IntelliJ?](spark/apache-spark-intellij-tool-plugin.md)<br><br>[Как настроить приложение Apache Spark с помощью Eclipse?](spark/apache-spark-eclipse-tool-plugin.md)<br><br>[Как настроить приложение Apache Spark с помощью VSCode?](hdinsight-for-vscode.md)<br><br>[Исключение OutOfMemoryError для Apache Spark](spark/apache-spark-troubleshoot-outofmemory.md#scenario-outofmemoryerror-exception-for-apache-spark)|
@@ -34,6 +34,6 @@ ms.locfileid: "96022689"
 | ошибки | - [Понимание и устранение ошибок WebHCat](hdinsight-hadoop-templeton-webhcat-debug-errors.md)<br>- [Параметры Apache Hive для устранения ошибки OutofMemory (нехватка памяти)](hdinsight-hadoop-hive-out-of-memory-error-oom.md) |
 | Инструменты | - [Оптимизация запросов Apache Hive](hdinsight-hadoop-optimize-hive-query.md)<br>- [Средство HDInsight для IntelliJ](./spark/apache-spark-intellij-tool-plugin.md)<br>- [Средство HDInsight для Eclipse](./spark/apache-spark-eclipse-tool-plugin.md)<br>- [Средство HDInsight для VSCode](hdinsight-for-vscode.md)<br>- [Средство HDInsight для Visual Studio](./hadoop/apache-hadoop-visual-studio-tools-get-started.md) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [troubleshooting next steps](../../includes/hdinsight-troubleshooting-next-steps.md)]

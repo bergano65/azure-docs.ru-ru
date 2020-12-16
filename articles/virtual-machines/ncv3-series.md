@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 854c988346bce9be06811d386b3798d2d0427dd7
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 0e3aa70a1a40e3878aea7b4f42f5aa167e4204c5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92095931"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585396"
 ---
 # <a name="ncv3-series"></a>Серия NCv3
 
@@ -23,6 +23,7 @@ ms.locfileid: "92095931"
 [Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
+Нвлинкное Interconnect NVIDIA: не поддерживается<br>
 
 > [!IMPORTANT]
 > Для этой серии виртуальных машин квота виртуальных ЦП (Core) в вашей подписке изначально равна 0 в каждом регионе. [Запросите увеличение квоты виртуальных ЦП](../azure-portal/supportability/resource-manager-core-quotas-request.md) для этой серии в [доступном регионе](https://azure.microsoft.com/regions/services/). Эти номера SKU недоступны для пробной версии или подписки Azure для подписчиков Visual Studio. Ваш уровень подписки может не поддерживать выбор или развертывание этих номеров SKU. 

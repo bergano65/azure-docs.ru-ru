@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2613a4fd931ad49a4f40a4221ea20e8c25f185fe
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d49868199d8f9f2da97f08dd06f29afd8f553bd9
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501591"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586981"
 ---
 # <a name="connect-to-azure-synapse-studio-using-azure-private-link-hubs"></a>Подключение к Azure синапсе Studio с помощью концентраторов частной связи Azure 
 
@@ -35,9 +35,9 @@ ms.locfileid: "96501591"
 ## <a name="azure-private-links-hubs-and-azure-virtual-network"></a>Концентраторы частных ссылок Azure и виртуальная сеть Azure
 Чтобы защитить сквозное подключение к синапсе Studio, необходимо подключить виртуальную сеть Azure к ресурсу концентратора частных каналов синапсе. Для этого необходимо создать частную конечную точку из виртуальной сети в созданном частном центре ссылок. Вы можете использовать портал Azure для центра частной связи и перейдите к разделу частная конечная точка. Выберите "+ Частная конечная точка", чтобы создать новую частную конечную точку, которая подключается к концентратору частных ссылок.
 
-:::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-private-endpoint.png" alt-text="Создание частной конечной точки для концентратора частных ссылок":::
+:::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-private-endpoint.png" alt-text="Снимок экрана, на котором показана страница подключений к частным конечным точкам.":::
 
-Выберите тип ресурса Microsoft. синапсе/Привателинкхубс на вкладке "ресурс". :::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-resource-type.png" alt-text="создайте частную конечную точку для частного концентратора ссылок":::
+Выберите тип ресурса Microsoft. синапсе/Привателинкхубс на вкладке "ресурс". :::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-resource-type.png" alt-text="снимок экрана, на котором показана страница &quot;Создание частной конечной точки&quot; с выделенным типом ресурса.":::
 
 На вкладке "Конфигурация" выберите "privatelink.azuresynapse.net" для зон Частная зона DNS при интеграции с виртуальной сетью и частной зоной DNS.
 

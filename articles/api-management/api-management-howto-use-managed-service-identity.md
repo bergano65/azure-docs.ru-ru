@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 11/14/2020
 ms.author: apimpm
-ms.openlocfilehash: db1a8238cf9ddae57d73438d43daa54294ce6860
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 2866633503399e9f6d78e8665f7a45d9063f01d9
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686231"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585791"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Использование управляемых удостоверений в службе управления API Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "94686231"
 
 1. Создайте экземпляр управления API на портале как обычно. Перейдите к нему на портале.
 2. Выберите **управляемые удостоверения**.
-3. На вкладке **назначенная система** переключите **состояние** **на вкл**. Нажмите кнопку **Сохранить**.
+3. На вкладке **назначенная система** переключите **состояние** **на вкл**. Нажмите **Сохранить**.
 
     :::image type="content" source="./media/api-management-msi/enable-system-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного системой" border="true":::
 
@@ -279,7 +279,7 @@ ms.locfileid: "94686231"
 1. Создайте экземпляр управления API на портале как обычно. Перейдите к нему на портале.
 2. Выберите **управляемые удостоверения**.
 3. На вкладке **Назначенные пользователи** выберите **Добавить**.
-4. Найдите созданное ранее удостоверение и выберите его. Нажмите **Добавить**.
+4. Найдите созданное ранее удостоверение и выберите его. Выберите **Добавить**.
 
    :::image type="content" source="./media/api-management-msi/enable-user-assigned-msi.png" alt-text="Параметры для включения управляемого удостоверения, назначенного пользователем" border="true":::
 
@@ -361,7 +361,7 @@ ms.locfileid: "94686231"
                 "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('identityName'))]": {}
              }
         },
-        "dependsOn": [       
+         "dependsOn": [       
           "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('identityName'))]"
         ]
     }]

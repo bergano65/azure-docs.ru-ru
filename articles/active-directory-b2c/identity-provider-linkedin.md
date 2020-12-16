@@ -9,15 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2020
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 1abc0f075098768d3823b6ce916d7c44711c0567
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 1ade28af1094694d2cb6dffaecec4e4131630535
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516190"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584873"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C
 
@@ -70,7 +71,7 @@ ms.locfileid: "97516190"
 1. Введите **Имя**. Например, *LinkedIn*.
 1. В поле **идентификатор клиента** введите идентификатор клиента приложения LinkedIn, созданного ранее.
 1. В качестве **секрета клиента** введите записанный секрет клиента.
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 
 ::: zone-end
 
@@ -245,7 +246,7 @@ ms.locfileid: "97516190"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните пользовательский поток, который вы хотите использовать в качестве поставщика удостоверений LinkedIn.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **LinkedIn**.
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

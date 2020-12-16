@@ -9,14 +9,14 @@ ms.subservice: monitoring
 ms.date: 11/30/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: c1545efc43d034dba5b8ffe8d19b9bbee95dff68
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5f9733866e85d79bdb85b8a24d1878e1169c2479
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455461"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586046"
 ---
-# <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Использование синапсе Studio для мониторинга приложений Apache Spark
+# <a name="how-to-use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Как использовать синапсе Studio для мониторинга приложений Apache Spark
 
 С помощью Azure синапсе Analytics вы можете использовать Spark для запуска записных книжек, заданий и других видов приложений в пулах Spark в рабочей области.
 

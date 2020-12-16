@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-java
-ms.openlocfilehash: 8a95ee631797c4dcca87f3506a6cf29245328159
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c86689681aa99f60c4345e92f7f5c426795a69e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89263464"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586709"
 ---
 # <a name="get-started-with-the-java-client-sdk-for-azure-media-services"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "89263464"
 
 В этом руководстве описано, как реализовать простую службу доставки видео с помощью служб мультимедиа Azure и клиентского пакета SDK для Java.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -51,7 +51,7 @@ ms.locfileid: "89263464"
 >С выпуска пакета `azure-media` версии `0.9.8` для аутентификации пакет SDK поддерживает службу Azure Active Directory и не поддерживает службу контроля доступа Azure. Мы рекомендуем как можно быстрее перейти на использование модели аутентификации Azure AD. Дополнительные сведения о переходе см. в статье [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
 
 >[!NOTE]
->Исходный код пакета SDK для Java для служб мультимедиа Azure можно найти в [репозитории GitHub](https://github.com/Azure/azure-sdk-for-java/tree/0.9/services/azure-media). Перейдите на ветвь 0.9, а не на главную ветвь. 
+>Исходный код пакета SDK для Java для служб мультимедиа Azure можно найти в [репозитории GitHub](https://github.com/Azure/azure-sdk-for-java/tree/0.9/services/azure-media). Обязательно переключитесь на ветвь 0,9, а не на главную ветвь. 
 
 ## <a name="how-to-use-azure-media-services-with-java"></a>Практическое руководство. Использование служб мультимедиа Azure с Java
 

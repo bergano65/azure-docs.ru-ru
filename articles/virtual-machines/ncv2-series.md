@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 19ed565cbc68cc49da9daa5460e4dca41ce01cbc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 97fa5148d7de7cac67a69c8d9c21721cb57951d3
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653491"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585397"
 ---
 # <a name="ncv2-series"></a>Серия NCv2
 
@@ -25,6 +25,7 @@ ms.locfileid: "91653491"
 [Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
+Нвлинкное Interconnect NVIDIA: не поддерживается
 
 > [!IMPORTANT]
 > Для этой серии виртуальных машин квота виртуальных ЦП (Core) в вашей подписке изначально равна 0 в каждом регионе. [Запросите увеличение квоты виртуальных ЦП](../azure-portal/supportability/resource-manager-core-quotas-request.md) для этой серии в [доступном регионе](https://azure.microsoft.com/regions/services/).

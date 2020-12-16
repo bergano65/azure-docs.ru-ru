@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: Устранение неполадок, обновление, ошибка, Kinect, обратная связь, восстановление, ведение журнала, советы
-ms.openlocfilehash: 9711968de061956a945fca183444dd6ebde4ca9c
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: a6e00b6c5e9e4f82bb668769aade8311896bef32
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94356388"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587287"
 ---
 # <a name="azure-kinect-known-issues-and-troubleshooting"></a>Известные проблемы и устранение неполадок в Azure Kinect
 
@@ -166,6 +166,21 @@ ms.locfileid: "94356388"
 
 Чтобы использовать пакет SDK для отслеживания текста с нереальными данными, убедитесь, что вы добавили `<SDK Installation Path>\tools` в переменную среды `PATH` и скопировали `dnn_model_2_0.onnx` и `cudnn64_7.dll` в `Program Files/Epic Games/UE_4.23/Engine/Binaries/Win64` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="using-azure-kinect-on-headless-linux-system"></a>Использование Azure Kinect в системе с автономной системой Linux
+
+Подсистема глубины Azure Kinect в Linux использует OpenGL. Для OpenGL требуется экземпляр окна, который требует, чтобы монитор был подключен к системе. Обходной путь для этой проблемы:
+
+1. Включите автоматический вход в учетную запись пользователя, которую планируется использовать. Инструкции по включению автоматического входа см. в [этой](https://vitux.com/how-to-enable-disable-automatic-login-in-ubuntu-18-04-lts/) статье.
+2. Выключите систему, отключите монитор и включите систему. Автоматический вход приводит к принудительному созданию сеанса x-Server.
+2. Подключение через SSH и задание переменной среды дисплея `export DISPLAY=:0`
+3. Запустите приложение Azure Kinect.
+
+## <a name="missing-c-documentation"></a>Отсутствует документация по C#
+
+Документация по пакету SDK для датчика C# находится [здесь](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/namespace_microsoft_1_1_azure_1_1_kinect_1_1_sensor.html).
+
+Документация по пакету SDK для отслеживания текста находится [здесь](https://microsoft.github.io/Azure-Kinect-Body-Tracking/release/1.x.x/namespace_microsoft_1_1_azure_1_1_kinect_1_1_body_tracking.html).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о поддержке](support.md)

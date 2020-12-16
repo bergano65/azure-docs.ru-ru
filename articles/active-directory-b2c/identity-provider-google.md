@@ -9,15 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2020
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 5b04613a74755f8515d967b8dd28397b36816fec
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: c8b942e66a76bcc3a095f9bd3d40b44bf4217e50
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516223"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584890"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C
 
@@ -29,7 +30,7 @@ ms.locfileid: "97516223"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
@@ -61,7 +62,7 @@ ms.locfileid: "97516223"
 1. Введите **Имя**. Например, *Google*.
 1. В поле **идентификатор клиента** введите идентификатор клиента приложения Google, созданного ранее.
 1. В качестве **секрета клиента** введите записанный секрет клиента.
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 
 ::: zone-end
 
@@ -190,7 +191,7 @@ ms.locfileid: "97516223"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните пользовательский поток, который вы хотите использовать в качестве поставщика удостоверений Google.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Google**.
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**
@@ -214,6 +215,6 @@ ms.locfileid: "97516223"
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [передавать токен Google в приложение](idp-pass-through-user-flow.md).

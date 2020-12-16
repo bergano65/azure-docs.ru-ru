@@ -8,15 +8,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 12/14/2020
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 9b5782df01cad260852fb6ee5c00e3d7669acf47
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: a4299eff296d9795f8d256ff1236a8e8b4ad3e42
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503541"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585213"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Настройка маркеров в Azure Active Directory B2C
 
@@ -57,7 +58,7 @@ ms.locfileid: "97503541"
 1. Откройте созданный ранее пользовательский поток.
 1. Выберите **Свойства**.
 1. В разделе **время существования маркера** настройте свойства в соответствии с потребностями приложения.
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ::: zone-end
 
@@ -113,7 +114,7 @@ ms.locfileid: "97503541"
 1. Откройте созданный ранее пользовательский поток.
 1. Выберите **Свойства**.
 1. В разделе **параметры совместимости токенов** настройте свойства в соответствии с потребностями приложения.
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ::: zone-end
 
@@ -182,7 +183,7 @@ ms.locfileid: "97503541"
 1. Откройте созданный ранее пользовательский поток.
 1. Выберите элемент **Утверждения приложения**.
 1. Выберите утверждения и атрибуты, которые необходимо отправить обратно в приложение.
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ::: zone-end
 

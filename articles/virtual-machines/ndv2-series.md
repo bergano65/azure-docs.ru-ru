@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: ff828024610ce498d40a4039d8116e28366aebb9
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: dcfbacb788225d936b236c901e9477a9bbb23b94
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92494421"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585298"
 ---
 # <a name="updated-ndv2-series"></a>Обновленная серия NDv2
 
@@ -39,6 +39,7 @@ NDv2 работает на основе 8 видеопроцессоров NVIDI
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 2<br>
 InfiniBand: поддерживается<br>
+NVIDIA Нвлинк Interconnect: поддерживается<br>
 <br>
 
 | Размер | vCPU | Память: ГиБ | Хранилище Temp (SSD): гиб | Графический процессор | Память GPU: гиб | Максимальное число дисков данных | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальная пропускная способность сети | Максимальное число сетевых адаптеров |

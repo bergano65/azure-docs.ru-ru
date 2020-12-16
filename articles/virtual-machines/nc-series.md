@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 38365cc144bbffbedfa1416112c5f8eca2b5fc13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 97b5d6bc6f19e07ea7c980b98c1e7986c59dc546
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653525"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585417"
 ---
 # <a name="nc-series"></a>Серия NC
 
@@ -23,6 +23,7 @@ ms.locfileid: "91653525"
 [Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1<br>
+Нвлинкное Interconnect NVIDIA: не поддерживается<br>
 <br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Графический процессор | Память GPU: ГиБ | Максимальное число дисков данных | Максимальное число сетевых адаптеров |

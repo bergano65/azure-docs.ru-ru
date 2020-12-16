@@ -9,15 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 12/10/2020
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 53f5346030e3c5a247d1ad2a73b23882e83ed41a
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: eb7cba1de280793a1ca98687c71355c1ea702d4c
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508124"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585230"
 ---
 #  <a name="add-user-attributes-and-customize-user-input-in-azure-active-directory-b2c"></a>Добавление атрибутов пользователя и настройка пользовательского ввода в Azure Active Directory B2C
 
@@ -31,7 +32,7 @@ ms.locfileid: "97508124"
 
 В этой статье вы соберете новый атрибут во время регистрации в Azure Active Directory B2C (Azure AD B2C). Вы получите город пользователя, настроите его в виде раскрывающегося списка и определите, требуется ли предоставлять его.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
@@ -42,7 +43,7 @@ ms.locfileid: "97508124"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Откройте политику (например B2C_1_SignupSignin), щелкнув ее.
 1. Выберите **атрибуты пользователя** , а затем выберите атрибут User (например, "City"). 
-1. Выберите **Сохранить**.
+1. Нажмите **Сохранить**.
 
 ## <a name="provide-optional-claims-to-your-app"></a>Предоставление приложению дополнительных утверждений
 
@@ -51,7 +52,7 @@ ms.locfileid: "97508124"
 1. Откройте политику (например B2C_1_SignupSignin), щелкнув ее.
 1. Выберите элемент **Утверждения приложения**.
 1. Выберите атрибуты, которые необходимо отправить обратно в приложение (например, "City").
-1. Выберите **Сохранить**.
+1. Нажмите **Сохранить**.
  
 ## <a name="configure-user-attributes-input-type"></a>Настройка типа входных атрибутов пользователя
 
@@ -61,7 +62,7 @@ ms.locfileid: "97508124"
 1. В разделе **атрибуты пользователя** выберите **City**.
     1. В раскрывающемся списке **Пользовательский тип ввода** выберите **дропдовнсинглеселект**.
     1. В раскрывающемся списке **необязательный** выберите **нет**.
-1. Выберите **Сохранить**. 
+1. Нажмите **Сохранить**. 
 
 ### <a name="provide-a-list-of-values-by-using-localized-collections"></a>Предоставление списка значений с помощью локализованных коллекций
 

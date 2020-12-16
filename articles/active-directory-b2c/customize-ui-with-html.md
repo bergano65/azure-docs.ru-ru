@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 869cf5a47831844b04e0461a95fb7d16aa4d1569
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 520b2eff91faf2e333ab0a5df7bcc85e6a47c80a
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97111491"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585196"
 ---
 # <a name="customize-the-user-interface-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса в Azure Active Directory B2C
 
@@ -29,9 +29,7 @@ ms.locfileid: "97111491"
 > [!TIP]
 > Если вы хотите изменить только эмблему баннера, фоновое изображение и цвет фона страниц потока пользователя, можно попробовать функцию [фирменной символики компании](company-branding.md) .
 
-
 ## <a name="custom-html-and-css-overview"></a>Общие сведения о пользовательском HTML и CSS
-
 
 Azure AD B2C выполняет код в браузере клиента, используя [общий доступ к ресурсам между источниками (CORS)](https://www.w3.org/TR/cors/). Во время выполнения содержимое загружается по URL-адресу, указанному в пользовательском потоке или настраиваемой политике. Каждая страница в интерфейсе пользователя загружает свое содержимое из URL-адреса, указанного для этой страницы. После загрузки содержимого из URL-адреса оно объединяется с фрагментом HTML, вставленным Azure AD B2C, а затем страница отображается для клиента.
 
@@ -118,10 +116,9 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 1. настройка общего доступа к ресурсам независимо от источника (CORS) для своего веб-приложения;
 1. Наведите политику на универсальный код ресурса (URI) содержимого настраиваемой политики.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
-
 
 ### <a name="1-create-your-html-content"></a>1. Создание HTML-содержимого
 
@@ -223,7 +220,7 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 1. В поле **Допустимые заголовки** введите звездочку (*).
 1. В поле **Доступные заголовки** введите звездочку (*).
 1. В поле **Максимальный возраст** введите 200.
-1. Щелкните **Сохранить**.
+1. Нажмите **Сохранить**.
 
 #### <a name="31-test-cors"></a>3,1. Тестирование CORS
 
@@ -235,7 +232,6 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 1. Выберите **Отправить запрос**.
     Результат должен быть `XHR status: 200` . 
     Если произошла ошибка, проверьте правильность параметров CORS. Кроме того, вам может потребоваться очистить кэш браузера или открыть закрытый сеанс, нажав CTRL+SHIFT+P.
-
 
 ::: zone pivot="b2c-user-flow"
 
@@ -378,7 +374,7 @@ git clone https://github.com/Azure-Samples/Azure-AD-B2C-page-templates
 
 1. Клонировать репозиторий на локальном компьютере. Выберите папку шаблона `/ocean_blue` или `/slate_gray` .
 1. Отправьте все файлы в папке шаблона и `/assets` папке в хранилище BLOB-объектов, как описано в предыдущих разделах.
-1. Затем откройте каждый `\*.html` файл в корневой папке `/ocean_blue` или `/slate_gray` , замените все экземпляры относительных URL-адресов файлами CSS, изображениями и шрифтами, отправленными на шаге 2. Пример:
+1. Затем откройте каждый `\*.html` файл в корневой папке `/ocean_blue` или `/slate_gray` , замените все экземпляры относительных URL-адресов файлами CSS, изображениями и шрифтами, отправленными на шаге 2. Например:
     ```html
     <link href="./css/assets.css" rel="stylesheet" type="text/css" />
     ```
@@ -391,10 +387,7 @@ git clone https://github.com/Azure-Samples/Azure-AD-B2C-page-templates
 1. Теперь измените политику, указав HTML-файл, как упоминалось ранее.
 1. Если вы видите отсутствующие шрифты, изображения или CSS, проверьте ссылки в политике расширения и \* HTML-файлах.
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как включить [код JavaScript на стороне клиента](javascript-and-page-layout.md).
-
-
 

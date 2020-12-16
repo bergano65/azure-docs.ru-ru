@@ -4,12 +4,12 @@ description: Узнайте о поддерживаемых службах и с
 ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: 6a76d642863a0baac8021a3da196ad5a2db48126
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: c1c5ed715527add4218378c05602ed3352e55461
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931169"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586947"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Распространенная и зависящая от службы схема для журналов ресурсов Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "96931169"
 
 ## <a name="top-level-common-schema"></a>Общая схема верхнего уровня
 
-| Имя | Обязательный/необязательный | Описание |
+| Название | Обязательный/необязательный | Описание |
 |---|---|---|
 | time | Обязательно | Метка времени события (UTC). |
 | resourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
@@ -57,11 +57,11 @@ ms.locfileid: "96931169"
 | Пакетная служба Azure |[Ведение журнала пакетной службы Azure](../../batch/batch-diagnostics.md) |
 | Службы Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
 | Реестр контейнеров | [Ведение журнала для реестра контейнеров Azure](../../container-registry/container-registry-diagnostics-audit-logs.md) |
-| Сеть доставки содержимого (CDN) | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
+| Сеть доставки содержимого | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/monitor-cosmos-db.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам для Azure Data Lake Analytics](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
-| Data Lake Store |[Доступ к журналам для Azure Data Lake Store](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
+| Data Lake Storage |[Доступ к журналам для Azure Data Lake Store](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
 | Azure Data Explorer | [Журналы обозреватель данных Azure](/azure/data-explorer/using-diagnostic-logs) |
 | База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | База данных Azure для PostgreSQL | [Журналы базы данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#resource-logs) |
@@ -77,11 +77,11 @@ ms.locfileid: "96931169"
 | Load Balancer |[Служба анализа журналов для балансировщика нагрузки Azure](../../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Настраиваемая схема отслеживания Logic Apps B2B](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | группы сетевой безопасности; |[Аналитика журналов для групп безопасности сети](../../virtual-network/virtual-network-nsg-manage-log.md) |
-| Защита от атак DDoS | [Управление службой "Защита от атак DDoS Azure" уровня "Стандартный"](../../ddos-protection/manage-ddos-protection.md) |
+| Защита от атак DDoS | [Управление службой "Защита от атак DDoS Azure" уровня "Стандартный"](../../ddos-protection/reports-and-flow-logs.md#sample-log-outputs) |
 | Power BI (цен. категория "Выделенный") | [Ведение журнала для Power BI Embedded в Azure](/power-bi/developer/azure-pbie-diag-logs) |
 | Службы восстановления | [Модель данных для Azure Backup](../../backup/backup-azure-reports-data-model.md)|
 | Поиск |[Включение и использование аналитики поискового трафика](../../search/search-traffic-analytics.md) |
-| Cлужебная шина |[Журналы служебной шины Azure](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
+| Служебная шина |[Журналы служебной шины Azure](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
 | База данных SQL | [Ведение журнала базы данных SQL Azure](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md) |
 | Stream Analytics |[Журналы заданий](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |
 | Диспетчер трафика | [Схема журнала диспетчера трафика](../../traffic-manager/traffic-manager-diagnostic-logs.md) |
