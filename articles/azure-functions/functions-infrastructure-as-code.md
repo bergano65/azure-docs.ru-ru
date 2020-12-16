@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2403e3a4bfe7824659a9c34c407e55e6c56e6046
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 708478f50078276245a7dfab7d185dd50d597407
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994661"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589803"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -299,8 +299,6 @@ ms.locfileid: "95994661"
 }
 ```
 
-
-
 <a name="premium"></a>
 
 ## <a name="deploy-on-premium-plan"></a>Развертывание в плане Premium
@@ -380,7 +378,6 @@ ms.locfileid: "95994661"
     }
 }
 ```
-
 
 <a name="app-service-plan"></a>
 
@@ -689,7 +686,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 Чтобы протестировать это развертывание, можно использовать [шаблон, аналогичный этому](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) , который создает приложение-функцию в Windows в плане потребления. Замените `<function-app-name>` уникальным именем для приложения-функции.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке и настройке Функций Azure:
 

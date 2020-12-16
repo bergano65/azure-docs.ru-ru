@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: 7466f037f0a39b67023b9ebcc27c2e19b27f42ab
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 79558bd2c8e9bfec0aff47d254944977d271a762
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485269"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587820"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -30,7 +30,7 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 ## <a name="on-premises-servers"></a>Локальные серверы
 
-**Сервер** | **Требования** | **Сведения**
+**Server** | **Требования** | **Сведения**
 --- | --- | ---
 Hyper-V (без Virtual Machine Manager) |  Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 с последними обновлениями <br/><br/> **Примечание.** Также поддерживаются установки основных серверных компонентов этих операционных систем. | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md)
 Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 <br/><br/> **Примечание.** Также поддерживаются установки основных серверных компонентов этих операционных систем.  | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.
@@ -83,7 +83,7 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Mac
 Azure ExpressRoute | Да | Да
 Внутренний балансировщик нагрузки | Да | Да
 Внешний балансировщик нагрузки | Да | Да
-Azure Traffic Manager | Да | Да
+Диспетчер трафика Azure | Да | Да
 Несколько сетевых адаптеров | Да | Да
 Зарезервированный IP-адрес | Да | Да
 IPv4 | Да | Да
@@ -94,7 +94,7 @@ IPv4 | Да | Да
 
 ## <a name="hyper-v-host-storage"></a>Хранилище узла Hyper-V
 
-**Память** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
+**Хранилище** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | --- 
 NFS | Н/Д | Н/Д
 SMB 3.0 | Да | Да
@@ -103,7 +103,7 @@ SMB 3.0 | Да | Да
 
 ## <a name="hyper-v-vm-guest-storage"></a>Гостевое хранилище виртуальной машины Hyper-V
 
-**Память** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
+**Хранилище** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | ---
 VMDK | Н/Д | Н/Д
 VHD (VHDX) | Да | Да
@@ -131,6 +131,7 @@ RDM | Н/Д | Н/Д
 Локально избыточное хранилище | Да | Да
 Геоизбыточное хранилище | Да | Да
 Геоизбыточное хранилище с доступом для чтения | Да | Да
+Хранилище, избыточное между зонами | Нет | Нет
 "Холодное" хранилище | Нет | Нет
 "Горячее" хранилище| Нет | Нет
 Blob-блоки | Нет | Нет
@@ -147,7 +148,7 @@ Blob-блоки | Нет | Нет
 
 ## <a name="azure-compute-features"></a>Вычислительные компоненты Azure
 
-**Возможность** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
+**Компонент** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | ---
 Группы доступности | Да | Да
 Концентратор | Да | Да  

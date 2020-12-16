@@ -4,20 +4,20 @@ description: Обратимое удаление в Azure Key Vault позвол
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-author: msmbaldwin
-ms.author: mbaldwin
-ms.date: 09/30/2020
-ms.openlocfilehash: 184003e42a14e786cc52c4f585c6781f7b9fe0e7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+author: ShaneBala-keyvault
+ms.author: sudbalas
+ms.date: 12/15/2020
+ms.openlocfilehash: 0f428954ac6ef74253e6e6e430977a85a3943f99
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452184"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589990"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Общие сведения об обратимом удалении в Azure Key Vault
 
 > [!IMPORTANT]
-> Вы должны немедленно включить обратимое удаление в хранилищах ключей. Возможность отказа от обратимого удаления будет прекращена в конце года, а защита с обратимым удалением будет автоматически включена для всех хранилищ ключей.  Ознакомьтесь с полными [сведениями](soft-delete-change.md)
+> Вы должны немедленно включить обратимое удаление в хранилищах ключей. Возможность отказаться от обратимого удаления будет нерекомендуемой в ближайшее время. Ознакомьтесь с полными [сведениями](soft-delete-change.md)
 
 Функция обратимого удаления Key Vault позволяет восстанавливать удаленные хранилища и удаленные объекты хранилища ключей (например, ключи, секреты, сертификаты), называемые обратимым удалением. В частности, мы будем решать следующие сценарии защиты:
 

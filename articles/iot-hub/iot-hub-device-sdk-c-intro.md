@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 9b870e21ffd5c6a8261b6731b939b5dff558256d
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 17b31e365e311b97e322828927827f40733313a6
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501198"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588834"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -43,9 +43,9 @@ ms.locfileid: "96501198"
 
 [**Пакет SDK для устройств Интернета вещей Azure для C**](https://github.com/Azure/azure-iot-sdk-c) доступен в репозитории на сайте GitHub. Дополнительные сведения об API см. в [справочной документации по API для C](/azure/iot-hub/iot-c-sdk-ref/).
 
-Последнюю версию библиотеки можно найти в ветке **master** этого репозитория.
+Последнюю версию библиотек можно найти в **основной** ветви репозитория:
 
-  ![Снимок экрана главной ветви репозитория](./media/iot-hub-device-sdk-c-intro/RepoMasterBranch.png)
+  ![Снимок экрана: Главная ветвь репозитория](./media/iot-hub-device-sdk-c-intro/RepoMasterBranch.png)
 
 * Реализация ядра пакета SDK находится в папке **iothub\_client**, где содержится реализация самого нижнего уровня API в пакете SDK — библиотека **IoTHubClient**. Библиотека **IoTHubClient** содержит API-интерфейсы, реализующие обмен необработанными сообщениями для отправки сообщений в Центр Интернета вещей, а также получения сообщений из него. Если вы используете эту библиотеку, вам нужно самостоятельно реализовать сериализацию сообщений. Другие составляющие процесса взаимодействия с Центром Интернета вещей реализуются автоматически.
 
@@ -72,7 +72,7 @@ ms.locfileid: "96501198"
 
 Пакеты предоставляются для общих платформ (например, NuGet для Windows или apt_get для Debian и Ubuntu) и по возможности используются в примерах. В некоторых случаях может потребоваться выполнить компиляцию пакета SDK для устройства. Дополнительные сведения о компиляции пакета SDK см. на [странице о подготовке среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) в репозитории GitHub.
 
-Чтобы получить код примера приложения, скачайте копию пакета SDK из GitHub. Получите копию исходного кода из ветви **master**[репозитория GitHub](https://github.com/Azure/azure-iot-sdk-c).
+Чтобы получить код примера приложения, скачайте копию пакета SDK из GitHub. Получите копию источника из **основной** ветви [репозитория GitHub](https://github.com/Azure/azure-iot-sdk-c).
 
 
 ### <a name="obtain-the-device-credentials"></a>Получение учетных данных устройства

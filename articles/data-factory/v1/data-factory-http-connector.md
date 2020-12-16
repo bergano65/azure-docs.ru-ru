@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 36592151385a08d75b9b34e85bfa9d62342fc8cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ddf8236dbbc9714c705e442bb65eb2ac3d293cc7
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80991575"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589582"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Перемещение данных из источника HTTP с помощью фабрики данных Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "80991575"
 
 - Проще всего создать конвейер с помощью мастера копирования данных. Краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных см. в статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md).
 
-- Для создания конвейера можно также использовать следующие средства: **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET**или **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в статье [Руководство. Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). Примеры JSON для копирования данных из источника HTTP в хранилище BLOB-объектов Azure см. в разделе [Примеры JSON](#json-examples).
+- Для создания конвейера можно также использовать следующие средства: **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** или **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в статье [Руководство. Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). Примеры JSON для копирования данных из источника HTTP в хранилище BLOB-объектов Azure см. в разделе [Примеры JSON](#json-examples).
 
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 
@@ -54,7 +54,7 @@ ms.locfileid: "80991575"
 | --- | --- | --- |
 | type | Свойству **Тип** необходимо задать значение **Http**. | Да |
 | url | Базовый URL-адрес веб-сервера. | Да |
-| authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic **, **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой статьи. | Да |
+| authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic**, **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой статьи. | Да |
 | enableServerCertificateValidation | Указывает, следует ли включить проверку сертификата TLS или SSL на сервере, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверенный сертификат, установите значение **false**. | Нет<br /> (значение по умолчанию — **true**) |
 | gatewayName | Имя экземпляра шлюза управления данными для подключения к локальному источнику HTTP. | Да, если вы копируете данные из локального источника HTTP |
 | encryptedCredential | Зашифрованные учетные данные для доступа к конечной точке HTTP. Значение создается автоматически при настройке сведений для проверки подлинности в мастере копирования или в диалоговом окне **ClickOnce**. | Нет<br /> (применимо, только когда копирование данных выполняется с локального HTTP-сервера) |
@@ -120,8 +120,8 @@ ms.locfileid: "80991575"
         {
             "authenticationType": "ClientCertificate",
             "url": "https://en.wikipedia.org/wiki/",
-            "certThumbprint": "thumbprint of certificate",
-            "gatewayName": "gateway name"
+        "certThumbprint": "thumbprint of certificate",
+        "gatewayName": "gateway name"
 
         }
     }
@@ -142,8 +142,8 @@ ms.locfileid: "80991575"
         {
             "authenticationType": "ClientCertificate",
             "url": "https://en.wikipedia.org/wiki/",
-            "embeddedCertData": "Base64-encoded cert data",
-            "password": "password of cert"
+        "embeddedCertData": "Base64-encoded cert data",
+        "password": "password of cert"
         }
     }
 }
@@ -171,14 +171,14 @@ ms.locfileid: "80991575"
 
 ```json
 {
-    "name": "HttpSourceDataInput",
+  "name": "HttpSourceDataInput",
     "properties": {
-        "type": "Http",
+    "type": "Http",
         "linkedServiceName": "HttpLinkedService",
         "typeProperties": {
-            "relativeUrl": "XXX/test.xml",
-            "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
-        },
+      "relativeUrl": "XXX/test.xml",
+        "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
+    },
         "external": true,
         "availability": {
             "frequency": "Hour",
@@ -198,7 +198,7 @@ ms.locfileid: "80991575"
         "linkedServiceName": "HttpLinkedService",
         "typeProperties": {
             "relativeUrl": "/XXX/test.xml",
-           "requestMethod": "Post",
+       "requestMethod": "Post",
             "requestBody": "body for POST HTTP request"
         },
         "external": true,
@@ -283,14 +283,14 @@ ms.locfileid: "80991575"
 
 ```json
 {
-    "name": "HttpSourceDataInput",
+  "name": "HttpSourceDataInput",
     "properties": {
-        "type": "Http",
+    "type": "Http",
         "linkedServiceName": "HttpLinkedService",
         "typeProperties": {
             "relativeUrl": "$$Text.Format('/my/report?month={0:yyyy}-{0:MM}&fmt=csv', SliceStart)",
-            "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
-        },
+        "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
+    },
         "external": true,
         "availability": {
             "frequency": "Hour",

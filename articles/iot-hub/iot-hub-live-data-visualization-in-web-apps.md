@@ -12,12 +12,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 3218df4601ef7a5e1b1e04c20c89eefc367b720b
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 7753c6c118d763163e6bc8f69f5b4eee13fe2393
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746460"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588800"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-in-a-web-application"></a>Визуализация данных, поступающих от датчиков в реальном времени, из центра Интернета вещей в веб-приложении
 
@@ -202,10 +202,10 @@ set EventHubConsumerGroup=YourConsumerGroupName
    git remote add webapp <Git clone URL>
    ```
 
-8. Чтобы развернуть код в службе приложений, введите в командном окне следующую команду. При появлении запроса на ввод учетных данных введите учетные данные развертывания на уровне пользователя, созданные на шаге 5. Убедитесь, что отправляете код в главную ветвь удаленного репозитория службы приложений.
+8. Чтобы развернуть код в службе приложений, введите в командном окне следующую команду. При появлении запроса на ввод учетных данных введите учетные данные развертывания на уровне пользователя, созданные на шаге 5. Убедитесь, что вы перемещаетесь в главную ветвь службы приложений Remote.
 
     ```cmd
-    git push webapp master:master
+    git push webapp main:main
     ```
 
 9. Ход выполнения развертывания будет обновлен в окне командной строки. Если развертывание пройдет успешно, вы увидите примерно такой результат:
@@ -216,7 +216,7 @@ set EventHubConsumerGroup=YourConsumerGroupName
     remote: Running post deployment command(s)...
     remote: Deployment successful.
     To https://contoso-web-app-3.scm.azurewebsites.net/contoso-web-app-3.git
-    6b132dd..7cbc994  master -> master
+    6b132dd..7cbc994  main -> main
     ```
 
 10. Выполните следующую команду, чтобы запросить состояние веб-приложения и убедиться, что оно выполняется:

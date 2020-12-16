@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/10/2019
+ms.date: 12/15/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd49c60a23a0ad58f0907d3c1d7c38178ac08c97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7a503235f3ef948939f3188828b1e01f54dd2fe
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266363"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588630"
 ---
 # <a name="create-list-and-delete-a-user-assigned-managed-identity-using-azure-resource-manager"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure Resource Manager
 
@@ -33,9 +33,9 @@ ms.locfileid: "89266363"
 
 - [Отображение управляемого удостоверения, назначаемого пользователем](how-to-manage-ua-identity-cli.md#list-user-assigned-managed-identities)
 - [Удаление управляемого удостоверения, назначаемого пользователем](how-to-manage-ua-identity-cli.md#delete-a-user-assigned-managed-identity)
-  ## <a name="prerequisites"></a>Предварительные требования
+  ## <a name="prerequisites"></a>Обязательные условия
 
-- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
+- Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, ознакомьтесь с [разделом Обзор](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 
 ## <a name="template-creation-and-editing"></a>Создание и редактирование шаблона
@@ -83,7 +83,7 @@ ms.locfileid: "89266363"
   }
 }
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о том, как задать управляемое удостоверение, назначаемое пользователем, для виртуальной машины Azure с помощью шаблона Azure Resource Manager, см. в статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью шаблонов](qs-configure-template-windows-vm.md).
 

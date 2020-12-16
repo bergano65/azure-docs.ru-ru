@@ -14,12 +14,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfe3d995cef888d2f0e973a6a6b2a06e0dd6cb54
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: b26c24149d422021dcb86f75c915ade89cbccdec
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563217"
+ms.locfileid: "97589881"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Использование поставщика удостоверений (IdP) SAML 2.0 для единого входа
 
@@ -60,19 +60,19 @@ ms.locfileid: "97563217"
 В ответном сообщении SAML узел Signature содержит сведения о цифровой подписи самого сообщения. К блоку подписи предъявляются указанные ниже требования.
 
 1. Узел утверждения должен быть подписан.
-2.  В качестве метода DigestMethod необходимо использовать алгоритм RSA-sha1. Другие алгоритмы цифровой подписи не допускаются.
+2. В качестве метода DigestMethod необходимо использовать алгоритм RSA-sha1. Другие алгоритмы цифровой подписи не допускаются.
    `<ds:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha1"/>`
-3.  Также можно подписать XML-документ. 
-4.  Значения алгоритма Transform Algorithm должны соответствовать приведенным в следующем примере: `<ds:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+3. Также можно подписать XML-документ. 
+4. Алгоритм преобразования должен соответствовать значениям в следующем примере:     `<ds:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
        <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#"/>`
-9.  Алгоритм SignatureMethod Algorithm должен соответствовать приведенному в следующем примере:`<ds:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha1"/>`
+9. Алгоритм SignatureMethod должен соответствовать следующему примеру:    `<ds:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha1"/>`
 
 ## <a name="supported-bindings"></a>Поддерживаемые привязки
 Привязки — это обязательные параметры взаимодействия, связанные с транспортом. В отношении привязок действуют указанные ниже требования.
 
 1. HTTPS — это обязательный транспорт.
-2.  Службе Azure AD потребуется запрос HTTP POST для отправки токена во время входа.
-3.  Служба Azure AD будет использовать метод HTTP POST для отправки запроса аутентификации поставщику удостоверений и метод REDIRECT для отправки ему сообщения о выходе.
+2. Службе Azure AD потребуется запрос HTTP POST для отправки токена во время входа.
+3. Служба Azure AD будет использовать метод HTTP POST для отправки запроса аутентификации поставщику удостоверений и метод REDIRECT для отправки ему сообщения о выходе.
 
 ## <a name="required-attributes"></a>Требуемые атрибуты
 В таблице ниже приведены требования к определенным атрибутам в сообщении SAML 2.0.
@@ -91,16 +91,16 @@ ms.locfileid: "97563217"
 Это пример сообщения с запросом, отправляемого из Azure AD поставщику удостоверений SAML 2.0. Поставщик удостоверений SAML 2.0 в этом примере представляет собой службы федерации Active Directory (AD FS), настроенные для использования протокола SAML-P. Тестирование взаимодействия было выполнено и для других поставщиков удостоверений SAML 2.0.
 
 ```xml
-    <samlp:AuthnRequest 
-        xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" 
-        xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" 
-        ID="_7171b0b2-19f2-4ba2-8f94-24b5e56b7f1e" 
-        IssueInstant="2014-01-30T16:18:35Z" 
-        Version="2.0" 
-        AssertionConsumerServiceIndex="0" >
-            <saml:Issuer>urn:federation:MicrosoftOnline</saml:Issuer>
-            <samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
-    </samlp:AuthnRequest>
+  <samlp:AuthnRequest 
+    xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" 
+    xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" 
+    ID="_7171b0b2-19f2-4ba2-8f94-24b5e56b7f1e" 
+    IssueInstant="2014-01-30T16:18:35Z" 
+    Version="2.0" 
+    AssertionConsumerServiceIndex="0" >
+        <saml:Issuer>urn:federation:MicrosoftOnline</saml:Issuer>
+        <samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
+  </samlp:AuthnRequest>
 ```
 
 Ниже приведен пример ответного сообщения, которое отправляется из примера поставщика удостоверений, совместимых с SAML 2,0, в Azure AD/Microsoft 365.
@@ -196,47 +196,47 @@ ms.locfileid: "97563217"
 
 1. Подключитесь к каталогу Azure AD в качестве администратора клиента:
 
-    ```powershell
-    Connect-MsolService
-    ```
-    
+  ```powershell
+  Connect-MsolService
+  ```
+  
 2. Настройте требуемый домен Microsoft 365 для использования Федерации с SAML 2,0:
 
-    ```powershell
-    $dom = "contoso.com" 
-    $BrandName - "Sample SAML 2.0 IDP" 
-    $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
-    $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
-    $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
-    $MyURI = "urn:uri:MySamlp2IDP" 
-    $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
-    $uri = "http://WS2012R2-0.contoso.com/adfs/services/trust" 
-    $Protocol = "SAMLP" 
-    Set-MsolDomainAuthentication `
-        -DomainName $dom `
-        -FederationBrandName $BrandName `
-        -Authentication Federated `
-        -PassiveLogOnUri $LogOnUrl `
-        -ActiveLogOnUri $ecpUrl `
-        -SigningCertificate $MySigningCert `
-        -IssuerUri $MyURI `
-        -LogOffUri $LogOffUrl `
-        -PreferredAuthenticationProtocol $Protocol
-    ``` 
+  ```powershell
+  $dom = "contoso.com" 
+  $BrandName - "Sample SAML 2.0 IDP" 
+  $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
+  $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
+  $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
+  $MyURI = "urn:uri:MySamlp2IDP" 
+  $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
+  $uri = "http://WS2012R2-0.contoso.com/adfs/services/trust" 
+  $Protocol = "SAMLP" 
+  Set-MsolDomainAuthentication `
+    -DomainName $dom `
+    -FederationBrandName $BrandName `
+    -Authentication Federated `
+    -PassiveLogOnUri $LogOnUrl `
+    -ActiveLogOnUri $ecpUrl `
+    -SigningCertificate $MySigningCert `
+    -IssuerUri $MyURI `
+    -LogOffUri $LogOffUrl `
+    -PreferredAuthenticationProtocol $Protocol
+  ``` 
 
 3.  Получить строку сертификата подписи в кодировке base64 можно из файла метаданных IDP. Пример его расположения приведен, но в зависимости от особенностей развертывания оно может быть немного иным.
 
-    ```xml
-    <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-        <KeyDescriptor use="signing">
-          <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
-             <X509Data>
-                 <X509Certificate> MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate>
-              </X509Data>
-            </KeyInfo>
-        </KeyDescriptor>
-    </IDPSSODescriptor>
-    ``` 
+  ```xml
+  <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <KeyDescriptor use="signing">
+      <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
+       <X509Data>
+         <X509Certificate> MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </KeyDescriptor>
+  </IDPSSODescriptor>
+  ``` 
 
 Дополнительные сведения о "Set-MsolDomainAuthentication" см. в разделе: [/Previous-Versions/Azure/dn194112 (v = Azure. 100)](/previous-versions/azure/dn194112(v=azure.100)).
 
@@ -278,13 +278,12 @@ ms.locfileid: "97563217"
 ## <a name="verify-single-sign-on-with-your-saml-20-idp"></a>Проверка единого входа с помощью поставщика удостоверений SAML 2.0
 Перед проверкой единого входа (также называемого федерацией удостоверений) и управлением им администратору следует ознакомиться с информацией и выполнить инструкции в указанных ниже статьях, чтобы настроить единый вход с помощью поставщика удостоверений на основе SAML 2.0 SP-Lite:
 
-
-1.  Ознакомление с требованиями к протоколу SAML 2.0 для Azure AD.
-2.  Настройки поставщика удостоверений SAML 2.0.
-3.  Установка Windows PowerShell для единого входа с помощью поставщика удостоверений SAML 2.0.
-4.  Настройка отношения доверия между поставщиком удостоверений SAML 2.0 и Azure AD.
-5.  Выполнив подготовку известного тестового участника-пользователя для Azure Active Directory (Microsoft 365) с помощью Windows PowerShell или Azure AD Connect.
-6.  Настройка синхронизации каталогов с помощью [Azure AD Connect](whatis-hybrid-identity.md).
+1. Ознакомление с требованиями к протоколу SAML 2.0 для Azure AD.
+2. Настройки поставщика удостоверений SAML 2.0.
+3. Установка Windows PowerShell для единого входа с помощью поставщика удостоверений SAML 2.0.
+4. Настройка отношения доверия между поставщиком удостоверений SAML 2.0 и Azure AD.
+5. Выполнив подготовку известного тестового участника-пользователя для Azure Active Directory (Microsoft 365) с помощью Windows PowerShell или Azure AD Connect.
+6. Настройка синхронизации каталогов с помощью [Azure AD Connect](whatis-hybrid-identity.md).
 
 После настройки единого входа с помощью поставщика удостоверений на основе SAML 2.0 SP-Lite следует проверить, правильно ли он работает.
 
@@ -302,29 +301,33 @@ ms.locfileid: "97563217"
 
 
 
-1. Скачайте анализатор подключений по адресу [https://testconnectivity.microsoft.com/?tabid=Client](https://testconnectivity.microsoft.com/?tabid=Client).
-2.  Чтобы начать загрузку и установку средства, щелкните "Установить сейчас".
-3.  Выберите пункт "Не удается настроить федерацию с Office 365, Azure или другими службами, использующими Azure Active Directory".
-4.  После загрузки и запуска средства откроется окно "Диагностика подключений". Средство предоставляет пошаговые инструкции по тестированию подключения федерации.
-5.  Анализатор подключений откроет SAML 2,0 IDP для входа, введите учетные данные для тестируемого участника-пользователя: ![ снимок экрана, на котором показано окно входа для SAML 2,0 IDP.](./media/how-to-connect-fed-saml-idp/saml1.png)
+1. Загрузите [анализатор подключений](https://testconnectivity.microsoft.com/?tabid=Client).
+2. Чтобы начать загрузку и установку средства, щелкните "Установить сейчас".
+3. Выберите пункт "Не удается настроить федерацию с Office 365, Azure или другими службами, использующими Azure Active Directory".
+4. После загрузки и запуска средства откроется окно "Диагностика подключений". Средство предоставляет пошаговые инструкции по тестированию подключения федерации.
+5. Анализатор подключений откроет SAML 2,0 IDP для входа, введите учетные данные для тестируемого участника-пользователя:
+
+    ![Снимок экрана, на котором показано окно входа для SAML 2,0 IDP.](./media/how-to-connect-fed-saml-idp/saml1.png)
+
 6.  В диалоговом окне "Вход для выполнения тестирования федерации" следует ввести имя учетной записи и пароль клиента Azure AD, который настроен для федерации с поставщиком удостоверений SAML 2.0. Средство попытается выполнить вход, используя эти учетные данные, после чего выведет подробные результаты тестов, выполненных во время попытки входа.
-![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
+
+    ![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
+
 7. В этом окне показано, что тест не пройден. Щелкнув ссылку "Просмотреть подробные результаты", можно просмотреть сведения о результатах каждого выполненного теста. Также можно сохранить результаты на диск, чтобы поделиться ими.
  
->[!NOTE]
->Кроме того, анализатор подключений тестирует активную федерацию с помощью протоколов на основе WS*, а также протоколов ECP и PAOS. Если вы их не используете, игнорируйте следующую ошибку. Тестирование потока активного входа в систему с помощью конечной точки активной федерации вашего поставщика удостоверений.
+> [!NOTE]
+> Кроме того, анализатор подключений тестирует активную федерацию с помощью протоколов на основе WS*, а также протоколов ECP и PAOS. Если вы их не используете, игнорируйте следующую ошибку. Тестирование потока активного входа в систему с помощью конечной точки активной федерации вашего поставщика удостоверений.
 
 ### <a name="manually-verify-that-single-sign-on-has-been-set-up-correctly"></a>Проверка правильной настройки единого входа с помощью средства
+
 Проверка вручную — это дополнительный способ, с помощью которого можно убедиться в том, что поставщик удостоверений SAML 2.0 работает правильно во многих сценариях.
 Чтобы проверить, правильно ли настроен единый вход, выполните указанные ниже действия.
 
-
 1. На присоединенном к домену компьютере войдите в облачную службу, используя то же имя для входа, что и в ваших корпоративных учетных данных.
-2.  Щелкните в поле "Пароль". Если единый вход настроен, поле "Пароль" станет темнее и отобразится следующее сообщение: "Вам нужно войти на веб-сайт &lt;ваша организация&gt;".
-3.  Щелкните ссылку "Sign-in at &lt;ваша организация&gt;" (Войти на веб-сайт "ваша организация"). Если вход возможен, то единый вход настроен.
+2. Щелкните в поле "Пароль". Если единый вход настроен, поле "Пароль" станет темнее и отобразится следующее сообщение: "Вам нужно войти на веб-сайт &lt;ваша организация&gt;".
+3. Щелкните ссылку "Sign-in at &lt;ваша организация&gt;" (Войти на веб-сайт "ваша организация"). Если вход возможен, то единый вход настроен.
 
 ## <a name="next-steps"></a>Next Steps
-
 
 - [Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect](how-to-connect-fed-management.md)
 - [Список совместимости с федерацией Azure AD](how-to-connect-fed-compatibility.md)

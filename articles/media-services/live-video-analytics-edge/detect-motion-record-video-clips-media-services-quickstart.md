@@ -3,12 +3,12 @@ title: Запись видео в Службы мультимедиа Azure пр
 description: В этом кратком руководстве показано, как использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения во время видеотрансляции и записи видеороликов в Службы мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 861351e16120c3f46612ba35518135fbfaf4c81b
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 8872c9aefa0ed748cbed93d0f7376586859be9df
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91776482"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511898"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Краткое руководство. Запись видео в Cлужбы мультимедиа при обнаружении движения
 
@@ -44,10 +44,11 @@ ms.locfileid: "91776482"
 1. Щелкните правой кнопкой мыши и выберите **Параметры расширения**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Запись видео на основе событий в активы на основе событий движения" (Показывать подробное сообщение).
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Параметры расширения":::
+1. Найдите и включите параметр "Show Verbose Message" (Показывать подробное сообщение).
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Запись видео на основе событий в активы на основе событий движения"::: (Показывать подробное сообщение)
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Show Verbose Message"::: (Показывать подробное сообщение)
 
 ### <a name="invoke-graphtopologylist"></a>Вызов GraphTopologyList
 В этом шаге перечислены все [топологии графа](media-graph-concept.md#media-graph-topologies-and-instances) в модуле.
@@ -58,7 +59,7 @@ ms.locfileid: "91776482"
     
 ```
 {
-    "@apiVersion" : "1.0"
+    "@apiVersion" : "2.0"
 }
 ```
 
@@ -83,7 +84,7 @@ ms.locfileid: "91776482"
 
 ```
 {
-    "@apiVersion": "1.0",
+    "@apiVersion": "2.0",
     "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to Assets based on motion events",
@@ -330,7 +331,7 @@ ms.locfileid: "91776482"
 ```
 
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```
@@ -473,7 +474,7 @@ ms.locfileid: "91776482"
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2",
     "properties" : {
         "topologyName" : "EVRtoAssetsOnMotionDetection",
@@ -555,7 +556,7 @@ ms.locfileid: "91776482"
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -579,7 +580,7 @@ ms.locfileid: "91776482"
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -758,7 +759,7 @@ ms.locfileid: "91776482"
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -786,7 +787,7 @@ ms.locfileid: "91776482"
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -810,7 +811,7 @@ ms.locfileid: "91776482"
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```

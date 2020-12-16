@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: dc6056653fc50976439d4b16594e6d554e62f061
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65107b0924351ca6debf37201e8849ffe8dd1eab
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652828"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589433"
 ---
 # <a name="nvv3-series"></a>Серия NVv3
 
@@ -26,6 +26,7 @@ ms.locfileid: "91652828"
 [Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
+Ускоренная сеть: поддерживается<br>
 <br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Графический процессор | Память GPU: ГиБ | Максимальное число дисков данных | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых адаптеров / ожидаемая пропускная способность сети (Мбит/с) | Виртуальная рабочая станция | Виртуальные приложения |
@@ -35,8 +36,6 @@ ms.locfileid: "91652828"
 | Standard_NV48s_v3 |48 | 448 | 1280 | 4 | 32 | 32 | 80000/800 | 8 / 24000 | 4 | 100 |
 
 <sup>1</sup> 1 графический процессор = одна половина карты M60.
-
-<sup>2</sup> в настоящее время ускорение работы в сети не поддерживается в этом СЕМЕЙСТВЕ виртуальных машин, поэтому производительность сети в реальной среде может быть ниже пиковой теоретической величины, которая захватывается здесь.
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 99f2c690360167626566b2ea45aef172e1e832ab
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 6aeded077c20e59b3f9b3863a9956596382d3a82
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91829126"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97532076"
 ---
 ### <a name="examine-and-edit-the-sample-files"></a>Изучение и изменение образцов файлов
 
@@ -16,11 +16,11 @@ ms.locfileid: "91829126"
 
 1. Теперь перейдите в папку *src/cloud-to-device-console-app*. Здесь вы увидите файл *appSettings.json* и несколько других файлов:
 
-    * ***c2d-console-app.csproj*** — файл проекта Visual Studio Code.
-    * ***operations.json*** — список операций, которые должна запускать программа.
-    * ***Program.cs*** — пример кода программы. Этот код выполняет следующие действия:
+    * ***c2d-console-app.csproj** _ — файл проекта Visual Studio Code.
+    _ ***operations.json** _ — список операций, которые должна запускать программа.
+    _ ***Program.cs** _ — пример кода программы. Этот код выполняет следующие действия:
 
-        * загружает параметры приложения;
+        _ загружает параметры приложения;
         * вызывает прямые методы, которые представляются модулем Аналитики видеотрансляций в IoT Edge (с помощью модуля можно анализировать потоки видеотрансляции, вызывая его [прямые методы](../../../direct-methods.md));
         * приостанавливает выполнение, позволяя проанализировать выходные данные программы в окне **ТЕРМИНАЛ** и проверить сгенерированные модулем события в окне **ВЫХОДНЫЕ ДАННЫЕ**;
         * вызывает прямые методы для очистки ресурсов.
@@ -29,7 +29,7 @@ ms.locfileid: "91829126"
 1. Внесите правки в файл *operations.json*:
     * Измените ссылку на топологию графа:
 
-        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtension/topology.json"`
+        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtension/2.0/topology.json"`
 
     * В разделе `GraphInstanceSet` измените имя топологии графа, чтобы оно совпадало со значением в приведенной выше ссылке:
 
@@ -68,16 +68,15 @@ ms.locfileid: "91829126"
 
 ### <a name="prepare-to-monitor-events"></a>Подготовка к мониторингу событий
 
-1. В Visual Studio Code откройте вкладку **Расширения** (или нажмите клавиши CTRL+SHIFT+X) и найдите Центр Интернета вещей Azure.
+1. В Visual Studio Code откройте вкладку **Расширения** (или нажмите клавиши CTRL+SHIFT+X) и найдите центр Интернета вещей Azure.
 1. Щелкните правой кнопкой мыши и выберите **Параметры расширения**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="../../../media/run-program/extensions-tab.png" alt-text="Параметры расширения&quot;:::
-1. Найдите и включите параметр &quot;Show Verbose Message" (Показывать подробное сообщение).
+    > :::image type="content" source="../../../media/run-program/extensions-tab.png" alt-text="Параметры расширения":::
+1. Найдите и включите параметр "Show Verbose Message" (Показывать подробное сообщение).
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="../../../media/run-program/show-verbose-message.png" alt-text="Параметры расширения&quot;:::
-1. Найдите и включите параметр &quot;Show Verbose Message"::: (Показывать подробное сообщение)
+    > :::image type="content" source="../../../media/run-program/show-verbose-message.png" alt-text="Show Verbose Message"::: (Показывать подробное сообщение)
 1. Щелкните правой кнопкой мыши устройство Аналитики видеотрансляции и выберите **Запуск мониторинга встроенной конечной точки события**. Этот шаг необходим для мониторинга событий Центра Интернета вещей в окне **ВЫХОДНЫЕ ДАННЫЕ** в Visual Studio Code. 
 
    ![Запуск мониторинга](../../../media/quickstarts/start-monitoring-iothub-events.png) 
@@ -92,7 +91,7 @@ ms.locfileid: "91829126"
    Executing operation GraphTopologyList
    -----------------------  Request: GraphTopologyList  --------------------------------------------------
    {
-   "@apiVersion": "1.0"
+   "@apiVersion": "2.0"
    }
    ---------------  Response: GraphTopologyList - Status: 200  ---------------
    {
@@ -110,7 +109,7 @@ ms.locfileid: "91829126"
 
          ```
          {
-           "@apiVersion": "1.0",
+           "@apiVersion": "2.0",
            "name": "Sample-Graph-1",
            "properties": {
              "topologyName": "InferencingWithHttpExtension",

@@ -11,18 +11,18 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 35f503e7214fa91962c91c35611fc9447302f9fc
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9f2bbc39b9c9c4770775bf49a7775ab8980a1f3b
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462808"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589905"
 ---
 # <a name="continuous-integration-and-deployment-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Непрерывная интеграция и развертывание для выделенного пула SQL в Azure синапсе Analytics
 
 В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Это руководство является вторым шагом в создании конвейера непрерывной интеграции и развертывания для хранения данных.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 - Изучите [учебник по интеграции системы управления версиями](sql-data-warehouse-source-control-integration.md).
 
@@ -42,7 +42,7 @@ ms.locfileid: "96462808"
 
       ![YAML](./media/sql-data-warehouse-continuous-integration-and-deployment/3-yaml-file.png "YAML")
 
-На этом этапе у вас есть простая среда, в которой в результате любого возврата к главной ветви репозитория системы управления версиями автоматически активируется успешная сборка проекта базы данных в Visual Studio. Убедитесь, что автоматизация работает комплексно, внеся изменение в проект локальной базы данных и возвратив это изменение в главную ветвь.
+На этом этапе у вас есть простая среда, в которой любой возврат в основную ветвь репозитория системы управления версиями должен автоматически активировать успешное построение проекта базы данных в Visual Studio. Убедитесь, что автоматизация работает в конце, внеся изменения в проект локальной базы данных и отметив это изменение в основной ветви.
 
 ## <a name="continuous-deployment-with-the-azure-synapse-analytics-or-database-deployment-task"></a>Непрерывное развертывание с помощью задачи развертывания Azure синапсе Analytics (или базы данных)
 

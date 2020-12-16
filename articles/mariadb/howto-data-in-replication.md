@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 9/29/2020
-ms.openlocfilehash: fe7e02cc34dc9c97e540d7b8d96c48ee8d5cfe09
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 3ed0fea4846b969c2af80aa525f7da64e7700bb5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535373"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587933"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Настройка Репликация входных данных в базе данных Azure для MariaDB
 
@@ -52,9 +52,9 @@ ms.locfileid: "94535373"
 
 Следующие шаги подготавливают и настраивают сервер MariaDB, размещенный локально, на виртуальной машине или в облачной службе базы данных для Репликация входных данных. Сервер MariaDB является источником в Репликация входных данных.
 
-1. Прежде чем продолжать, ознакомьтесь с [требованиями к главному серверу](concepts-data-in-replication.md#requirements) . 
+1. Прежде чем продолжать, ознакомьтесь с [требованиями к основному серверу](concepts-data-in-replication.md#requirements) . 
 
-2. Убедитесь, что исходный сервер разрешает как входящий, так и исходящий трафик через порт 3306 и что исходный сервер имеет общедоступный **IP-адрес** , DNS является публично доступным или имеет полное доменное имя (FQDN). 
+2. Убедитесь, что исходный сервер разрешает как входящий, так и исходящий трафик через порт 3306 и что исходный сервер имеет общедоступный **IP-адрес**, DNS является публично доступным или имеет полное доменное имя (FQDN). 
    
    Проверьте подключение к исходному серверу, выполнив попытку подключения из средства, такого как Командная строка MySQL, размещенного на другом компьютере, или из [Azure Cloud Shell](../cloud-shell/overview.md) , доступных в портал Azure.
 
@@ -78,7 +78,7 @@ ms.locfileid: "94535373"
       ```bash
       ping <output of step 2b>
       ``` 
-      Пример: 
+      Например: 
       ```bash      
       C:\Users\testuser> ping e299ae56f000.tr1830.westus1-a.worker.database.windows.net
       Pinging tr1830.westus1-a.worker.database.windows.net (**11.11.111.111**) 56(84) bytes of data.
@@ -220,7 +220,7 @@ ms.locfileid: "94535373"
    CALL mysql.az_replication_change_master('<master_host>', '<master_user>', '<master_password>', 3306, '<master_log_file>', <master_log_pos>, '<master_ssl_ca>');
    ```
    
-   или
+   или диспетчер конфигурации служб
    
    ```sql
    CALL mysql.az_replication_change_master_with_gtid('<master_host>', '<master_user>', '<master_password>', 3306, '<master_gtid_pos>', '<master_ssl_ca>');
@@ -284,7 +284,7 @@ ms.locfileid: "94535373"
     
     Из-за ограничений собственной репликации в MariaDB необходимо задать  [`sync_master_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_master_info) [`sync_relay_log_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_relay_log_info) переменные и в репликации без сценария гтид.
 
-    Проверьте значения и переменные подчиненного сервера `sync_master_info` `sync_relay_log_info` , чтобы убедиться в стабильной репликации данных, и задайте для переменных значение `1` .
+    Проверьте значения переменных и сервера реплики `sync_master_info` `sync_relay_log_info` , чтобы убедиться в стабильной репликации данных, и задайте для переменных значение `1` .
     
 ## <a name="other-stored-procedures"></a>Другие хранимые процедуры
 

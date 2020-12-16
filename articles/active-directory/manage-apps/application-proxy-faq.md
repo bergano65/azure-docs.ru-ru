@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: c40a0cb362f8c43541194cd1ca0c57abbf8fa974
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 49388ee75fa3e5570a906998fdeaa579208fd636
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033108"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588596"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -80,10 +80,12 @@ ms.locfileid: "97033108"
 Соединитель не обязательно должен находиться в той же подсети. Однако ему требуется разрешение имен (DNS, файл Hosts) для ресурса и необходимое сетевое подключение (маршрутизация к ресурсу, порты, открытые на ресурсе и т. д.). Рекомендации см. в разделе [рекомендации по топологии сети при использовании Azure Active Directory Application proxy](application-proxy-network-topology.md).
 
 ### <a name="what-versions-of-windows-server-can-i-install-a-connector-on"></a>В каких версиях Windows Server можно установить соединитель?
+
 Для прокси приложения требуется Windows Server 2012 R2 или более поздней версии. В настоящее время существует ограничение на HTTP2 для Windows Server 2019. Для успешного использования соединителя в Windows Server 2019 необходимо добавить следующий раздел реестра и перезапустить сервер:
-    ```
-    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
-    ```
+
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
+```
 
 ## <a name="application-configuration"></a>Конфигурация приложений
 
@@ -131,7 +133,7 @@ ms.locfileid: "97033108"
 
 В этом случае будет использоваться резервное имя участника-пользователя. Дополнительные сведения о сценарии B2B см. в статье [предоставление пользователям B2B в Azure AD доступа к локальным приложениям](../external-identities/hybrid-cloud-to-on-premises.md).
 
-## <a name="pass-through-authentication"></a>Сквозная проверка подлинности
+## <a name="pass-through-authentication"></a>Сквозная аутентификация
 
 ### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Можно ли использовать политики условного доступа для приложений, опубликованных с помощью сквозной проверки подлинности?
 

@@ -3,12 +3,12 @@ title: Начало работы с Аналитикой видеотрансл�
 description: В этом кратком руководстве показано, как приступить к работе с Аналитикой видеотрансляций в IoT Edge. Узнайте, как обнаружить движение в потоке видеотрансляции.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: e67c717a4476ab9191471483d9aa8e8f222cd750
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: db48183e918fcb1096734f912f02c091ddac1d74
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498274"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511881"
 ---
 # <a name="quickstart-get-started---live-video-analytics-on-iot-edge"></a>Краткое руководство. Начало работы. Общие сведения об Аналитике видеотрансляции в IoT Edge
 
@@ -115,7 +115,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
     ```
     {
-        "@apiVersion" : "1.0"
+        "@apiVersion" : "2.0"
     }
     ```
 
@@ -141,7 +141,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
 {
-    "@apiVersion": "1.0",
+    "@apiVersion": "2.0",
     "name": "MotionDetection",
     "properties": {
         "description": "Analyzing live video to detect motion and emit events",
@@ -304,7 +304,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "MotionDetection"
 }
 ```
@@ -402,7 +402,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1",
     "properties" : {
         "topologyName" : "MotionDetection",
@@ -462,7 +462,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1"
 }
 ```
@@ -486,7 +486,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
  {
-     "@apiVersion" : "1.0",
+     "@apiVersion" : "2.0",
      "name" : "Sample-Graph-1"
  }
  ```
@@ -619,7 +619,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1"
 }
 ```
@@ -645,7 +645,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1"
 }
 ```
@@ -669,7 +669,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "MotionDetection"
 }
 ```
