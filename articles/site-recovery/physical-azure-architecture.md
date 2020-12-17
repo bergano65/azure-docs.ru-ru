@@ -3,12 +3,12 @@ title: Архитектура аварийного восстановления 
 description: В этой статье представлен обзор компонентов и архитектуры, используемых при аварийном восстановлении физических серверов из локальной среды в Azure с помощью службы Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 02/11/2020
-ms.openlocfilehash: f2184654a8169cb353fb40fa76f0a7fe9b3df6f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 966636e269043d81912b552711635f34b412f22f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87422663"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654733"
 ---
 # <a name="physical-server-to-azure-disaster-recovery-architecture"></a>Архитектура для аварийного восстановления физических серверов в Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "87422663"
 
 **Архитектура: репликация физических компьютеров в Azure**
 
-![Компоненты](./media/physical-azure-architecture/arch-enhanced.png)
+![Components](./media/physical-azure-architecture/arch-enhanced.png)
 
 ## <a name="set-up-outbound-network-connectivity"></a>Настройка исходящего сетевого подключения
 
@@ -42,7 +42,7 @@ ms.locfileid: "87422663"
 
 | **имя**;                  | **Коммерческие организации**                               | **Государственные организации**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
-| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`               | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net` | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
 | Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
 | Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |
@@ -92,6 +92,6 @@ ms.locfileid: "87422663"
 
 ![Восстановление размещения](./media/physical-azure-architecture/enhanced-failback.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Инструкции](physical-azure-disaster-recovery.md)по настройке аварийного восстановления для физических серверов в Azure см. в этом разделе.

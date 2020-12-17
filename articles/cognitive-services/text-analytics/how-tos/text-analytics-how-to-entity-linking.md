@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 12/15/2020
+ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: 9b90f177432de11f8281d03021b38bae647dadf2
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 589f320f0099fdab829e9e707a86e3e77d51c21e
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562537"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656297"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -35,9 +35,7 @@ API анализа текста позволяет получить нестру
 
 ## <a name="named-entity-recognition-features-and-versions"></a>Функции и версии распознавания сущностей
 
-[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
-
-| Функция                                                         | NER версии 3.0 | NER версии 3.1 – Preview. 3 |
+| Компонент                                                         | NER версии 3.0 | NER версии 3.1 – Preview. 3 |
 |-----------------------------------------------------------------|--------|----------|
 | Методы для одиночных и пакетных запросов                          | X      | X        |
 | Расширенное распознавание сущностей в нескольких категориях           | X      | X        |
@@ -74,7 +72,7 @@ API анализа текста позволяет получить нестру
 
 ### <a name="request-endpoints"></a>Конечные точки запроса
 
-#### <a name="version-31-preview3"></a>[Версия 3,1-Preview. 3](#tab/version-3-preview)
+#### <a name="version-31-preview3"></a>[Версия 3.1 (предварительная версия 3)](#tab/version-3-preview)
 
 При распознавании именованных сущностей `v3.1-preview.3` используются отдельные конечные точки для NER, PII и запросов на связывание сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса.
 
@@ -475,7 +473,7 @@ API Анализа текста не учитывает состояние. Ни
 ---
 
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 
@@ -483,7 +481,7 @@ API Анализа текста не учитывает состояние. Ни
 * Запросы POST отправляются на одну или несколько конечных точек, используя персонализированный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) , допустимую для вашей подписки.
 * Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Использование клиентской библиотеки Анализа текста](../quickstarts/client-libraries-rest-api.md)

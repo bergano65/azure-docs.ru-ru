@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/27/2020
-ms.openlocfilehash: 4d420bf45cd705f518df0d52929a331d23537184
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 97189fd7a232c2467981b23dc20da51ebef08252
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93395178"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656348"
 ---
 # <a name="create-a-data-streaming-job-in-azure-sql-edge"></a>Создание задания потоковой передачи данных в Azure SQL ребро 
 
@@ -154,7 +154,7 @@ ms.locfileid: "93395178"
         DATA_COMPRESSION = 'org.apache.hadoop.io.compress.GzipCodec' 
     )
    ```
-    
+
 3. Создайте объект внешнего потока. В следующем примере создается объект внешнего потока, указывающий на раздел Kafka `*TemperatureMeasurement*` .
 
     ```sql
@@ -163,7 +163,7 @@ ms.locfileid: "93395178"
     (  
         DATA_SOURCE = KafkaInput, 
         FILE_FORMAT = JsonGzipped,
-        LOCATION = 'TemperatureMeasurement',     
+        LOCATION = 'TemperatureMeasurement',
         INPUT_OPTIONS = 'PARTITIONS: 10' 
     ); 
     ```
@@ -251,7 +251,7 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 | Остановлена | Выполнение задания потоковой передачи остановлено. |
 | Сбой | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр метаданных, связанных с заданиями потоковой передачи в Azure SQL ребро](streaming-catalog-views.md) 
 - [Создание внешнего потока](create-external-stream-transact-sql.md)
