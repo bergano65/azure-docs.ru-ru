@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: b647b5ee9dbd7a0447bbb69a47db76685daa1102
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 777fc60f76692734ea34ff3cdf8f6bc6e5e8316b
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030201"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97615717"
 ---
 # <a name="using-the-location-condition-in-a-conditional-access-policy"></a>Использование условия расположения в политике условного доступа 
 
@@ -195,6 +195,9 @@ Azure Active Directory (Azure AD) в настоящее время не подд
 ### <a name="api-support-and-powershell"></a>Поддержка API и PowerShell
 
 Доступна предварительная версия API Graph для именованных расположений. Дополнительные сведения см. в разделе [API намедлокатион](/graph/api/resources/namedlocation?view=graph-rest-beta).
+
+> [!NOTE]
+> Именованные расположения, созданные с помощью PowerShell, отображаются только в именованных расположениях (Предварительная версия). В старом представлении не отображаются именованные расположения.  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

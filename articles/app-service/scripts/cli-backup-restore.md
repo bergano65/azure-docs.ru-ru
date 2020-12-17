@@ -9,12 +9,12 @@ ms.date: 12/07/2017
 ms.author: msangapu
 ms.reviewer: cephalin
 ms.custom: mvc, seodec18
-ms.openlocfilehash: be6a0a5b700c4110acd4481b12130185c9878883
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8b7d20c3eee57d10a7025b05605603f82437cdb
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962786"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97006427"
 ---
 # <a name="restore-a-web-app-from-a-backup-using-cli"></a>Восстановление веб-приложения из резервной копии в интерфейсе командной строки
 
@@ -38,8 +38,8 @@ ms.locfileid: "88962786"
 
 | Get-Help | Примечания |
 |---|---|
-| [`az webapp config backup list`](/cli/azure/webapp/config/backup?view=azure-cli-latest#az-webapp-config-backup-list) | Получение списка резервных копий веб-приложения. |
-| [`az webapp config backup restore`](/cli/azure/webapp/config/backup?view=azure-cli-latest#az-webapp-config-backup-restore) | Восстановление веб-приложения из резервной копии. |
+| [`az webapp config backup list`](/cli/azure/webapp/config/backup#az-webapp-config-backup-list) | Получение списка резервных копий веб-приложения. |
+| [`az webapp config backup restore`](/cli/azure/webapp/config/backup#az-webapp-config-backup-restore) | Восстановление веб-приложения из резервной копии. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

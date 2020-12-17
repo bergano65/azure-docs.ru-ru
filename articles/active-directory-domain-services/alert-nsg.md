@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 07/06/2020
+ms.date: 12/16/2020
 ms.author: justinha
-ms.openlocfilehash: d8f2e77b7225306844cec85363a2971eaac4eebd
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 58cdd025587823f7eb702164c965ab622a7325d3
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620262"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97615653"
 ---
 # <a name="known-issues-network-configuration-alerts-in-azure-active-directory-domain-services"></a>Известные проблемы: оповещения о конфигурации сети в доменных службах Azure Active Directory
 
@@ -40,12 +40,12 @@ ms.locfileid: "96620262"
 
 | Приоритет | Имя | Порт | Протокол | Источник | Назначение | Действие |
 |----------|------|------|----------|--------|-------------|--------|
-| 101      | алловсинквисазуреад | 443 | TCP | AzureActiveDirectoryDomainServices | Любой | Allow |
-| 201      | алловрд | 3389 | TCP | CorpNetSaw | Любой | Allow |
 | 301      | алловпсремотинг | 5986| TCP | AzureActiveDirectoryDomainServices | Любой | Allow |
+| 201      | алловрд | 3389 | TCP | CorpNetSaw | Любой | Запретить<sup>1</sup> |
 | 65000    | аллвнетинбаунд | Любой | Любой | Виртуальная сеть | Виртуальная сеть | Allow |
 | 65001    | AllowAzureLoadBalancerInBound | Любой | Любой | AzureLoadBalancer | Любой | Allow |
 | 65500    | DenyAllInBound | Любой | Любой | Любой | Любой | Запрет |
+<sup>1</sup> Необязательно для отладки. Разрешение при необходимости для расширенного устранения неполадок.
 
 > [!NOTE]
 > Кроме того, у вас может быть дополнительное правило, разрешающее входящий трафик при [настройке защищенного протокола LDAP][configure-ldaps]. Это дополнительное правило требуется для правильной связи LDAPs.

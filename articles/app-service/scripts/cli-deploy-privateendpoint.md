@@ -9,12 +9,12 @@ ms.date: 07/06/2020
 ms.author: ericg
 ms.service: app-service
 ms.workload: web
-ms.openlocfilehash: 7246bb3453f6e4863faf15dbcbfdf8534481ddad
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 21f937d95c6cd0dafa27daae50d7a74648af7bdc
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561454"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97006112"
 ---
 # <a name="create-an-app-service-app-and-deploy-private-endpoint-using-azure-cli"></a>Создание приложения Службы приложений и развертывание частной конечной точки с помощью Azure CLI
 
@@ -37,7 +37,7 @@ az group create --name myResourceGroup --location francecentral
 ## <a name="create-an-app-service-plan"></a>Создание плана службы приложений
 
 Вам нужно создать план Службы приложений для размещения веб-приложения.
-Для этого выполните команду [az appservice plan create](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create).
+Для этого выполните команду [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create).
 Этот пример создает план плужбы приложений с именем *myAppServicePlan* в расположении *francecentral* с ценовой категорией *P1V2* и одним рабочим процессом. 
 
 ```azurecli-interactive
@@ -78,7 +78,7 @@ az network vnet create \
 
 ## <a name="configure-the-subnet"></a>Настройка подсети 
 
-Вам нужно изменить настройки подсети, чтобы отключить сетевые политики для частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
+Вам нужно изменить настройки подсети, чтобы отключить сетевые политики для частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update \

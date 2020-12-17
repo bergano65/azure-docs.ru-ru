@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a9ca6d91be95bfb1a47f85b20f3775a57518ffcf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 036e9e6bf58d837c698a6092770ef581f77bc20c
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87922138"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108252"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Руководство по Настройка удобного для пользователей интерфейса в Azure Active Directory B2C
 
-Для наиболее распространенных операций пользователя, таких как регистрация, вход и редактирование профиля, в Azure Active Directory B2C (Azure AD B2C) можно использовать [потоки пользователя](user-flow-overview.md). Сведения в этом руководстве помогут вам узнать, как [настроить пользовательский интерфейс](customize-ui-overview.md) этих функций, используя собственные HTML- и CSS-файлы.
+Для наиболее распространенных операций пользователя, таких как регистрация, вход и редактирование профиля, в Azure Active Directory B2C (Azure AD B2C) можно использовать [потоки пользователя](user-flow-overview.md). Сведения в этом руководстве помогут вам узнать, как [настроить пользовательский интерфейс](customize-ui-with-html.md) этих функций, используя собственные HTML- и CSS-файлы.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -166,4 +166,4 @@ ms.locfileid: "87922138"
 > * Тестирование настраиваемого пользовательского интерфейса.
 
 > [!div class="nextstepaction"]
-> [Настройка пользовательского интерфейса в Azure Active Directory B2C](customize-ui-overview.md)
+> [Настройка пользовательского интерфейса в Azure Active Directory B2C](customize-ui-with-html.md)

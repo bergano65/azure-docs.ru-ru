@@ -10,13 +10,13 @@ ms.subservice: team-data-science-process
 ms.topic: sample
 ms.date: 06/03/2020
 ms.author: tdsp
-ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath, contperfq4
-ms.openlocfilehash: b7a361319c3fc6c80c6dac80c48fb10155a3ff5b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath, contperf-fy20q4
+ms.openlocfilehash: 1ef6c678110037a4aed24ef40631b73a04ca6a9d
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314846"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028093"
 ---
 # <a name="data-exploration-and-modeling-with-spark"></a>Исследование и моделирование данных с помощью Spark
 
@@ -697,7 +697,7 @@ F1 Score = 0.984304060189
 
 **Графическое представление кривой ROC.**
 
-*predictionAndLabelsDF* регистрируется как таблица ( *tmp_results* ) в предыдущей ячейке. *tmp_results* может использоваться для выполнения запросов и вывода результатов во фрейм данных sqlResults для построения графика. Ниже приведен код:
+*predictionAndLabelsDF* регистрируется как таблица (*tmp_results*) в предыдущей ячейке. *tmp_results* может использоваться для выполнения запросов и вывода результатов во фрейм данных sqlResults для построения графика. Ниже приведен код:
 
 ```python
 # QUERY RESULTS                              

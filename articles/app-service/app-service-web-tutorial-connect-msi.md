@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
-ms.openlocfilehash: e5587c4826fea780c1e379ee1599440b2865dd50
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 1f6757a9f78e3c400d92fd65a0795ceae7570c99
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862230"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347580"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -57,7 +57,7 @@ ms.locfileid: "96862230"
 
 Если в вашем клиенте Azure AD отсутствует пользователь, создайте его, выполнив действия, описанные в статье [Add or delete users using Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md) (Добавление или удаление пользователей с помощью Azure Active Directory).
 
-Найдите идентификатор объекта пользователя Azure AD с помощью [`az ad user list`](/cli/azure/ad/user?view=azure-cli-latest#az-ad-user-list) и замените *\<user-principal-name>* . Результат сохраняется в переменной.
+Найдите идентификатор объекта пользователя Azure AD с помощью [`az ad user list`](/cli/azure/ad/user#az-ad-user-list) и замените *\<user-principal-name>* . Результат сохраняется в переменной.
 
 ```azurecli-interactive
 azureaduser=$(az ad user list --filter "userPrincipalName eq '<user-principal-name>'" --query [].objectId --output tsv)
@@ -66,7 +66,7 @@ azureaduser=$(az ad user list --filter "userPrincipalName eq '<user-principal-na
 > Чтобы просмотреть список всех имен участников-пользователей в Azure AD, запустите `az ad user list --query [].userPrincipalName`.
 >
 
-Добавьте этого пользователя Azure AD в качестве администратора Active Directory с помощью команды [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin-create) в Cloud Shell. В следующей команде замените *\<server-name>* именем сервера (без суффикса `.database.windows.net`).
+Добавьте этого пользователя Azure AD в качестве администратора Active Directory с помощью команды [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) в Cloud Shell. В следующей команде замените *\<server-name>* именем сервера (без суффикса `.database.windows.net`).
 
 ```azurecli-interactive
 az sql server ad-admin create --resource-group myResourceGroup --server-name <server-name> --display-name ADMIN --object-id $azureaduser
@@ -176,7 +176,7 @@ connection.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureSe
 
 ### <a name="enable-managed-identity-on-app"></a>Включение управляемого удостоверения в приложении
 
-Чтобы включить управляемое удостоверение для приложения Azure, используйте команду [az webapp identity assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app-name>* .
+Чтобы включить управляемое удостоверение для приложения Azure, используйте команду [az webapp identity assign](/cli/azure/webapp/identity#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app-name>* .
 
 ```azurecli-interactive
 az webapp identity assign --resource-group myResourceGroup --name <app-name>
@@ -251,7 +251,7 @@ az webapp config connection-string delete --resource-group myResourceGroup --nam
 
 ```bash
 git commit -am "configure managed identity"
-git push azure main
+git push azure master
 ```
 
 Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с управляемым удостоверением.

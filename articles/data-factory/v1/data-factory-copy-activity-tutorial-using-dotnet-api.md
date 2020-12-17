@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 7b925a25e1e246008f393f7b15160417c3b3d7a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d047a45d678918541eb3c2d2c45e4519a34bdd57
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85254860"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608686"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-net-api"></a>Руководство по Создание конвейера с действием копирования с помощью API .NET
 > [!div class="op_single_selector"]
@@ -108,7 +108,7 @@ ms.locfileid: "85254860"
 9. Получите идентификатор приложения.
 
     ```powershell
-    $azureAdApplication 
+    $azureAdApplication
     ```
     Запишите идентификатор приложения (applicationID) из выходных данных.
 
@@ -122,7 +122,7 @@ ms.locfileid: "85254860"
 ## <a name="walkthrough"></a>Пошаговое руководство
 1. С помощью Visual Studio 2012, 2013 или 2015 создайте консольное приложение C# .NET.
    1. Запустите **Visual Studio** 2012, 2013 или 2015.
-   2. В меню **Файл**выберите **Создать**, а затем **Проект**.
+   2. В меню **Файл** выберите **Создать**, а затем **Проект**.
    3. Разверните раздел **Шаблоны** и выберите **Visual C#** . В этом пошаговом руководстве используется C#, но можно использовать любой язык .NET.
    4. Выберите **Консольное приложение** в списке типов проектов справа.
    5. В качестве имени введите **DataFactoryAPITestApp** .

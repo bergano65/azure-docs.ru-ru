@@ -4,15 +4,15 @@ description: Узнайте, как запустить функцию Azure пр
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/13/2020
+ms.date: 12/15/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: e7095c08c385457bddf6d70d345c4f47073b4adb
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 26dee5200a60f4900ed20c2fd49a874552272776
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505771"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617227"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>Общие сведения о триггере RabbitMQ для функций Azure
 
@@ -133,14 +133,12 @@ module.exports = async function (context, myQueueItem) {
             "name": "myQueueItem",
             "type": "rabbitMQTrigger",
             "direction": "in",
-            "queueName": "",
-            "connectionStringSetting": ""
+            "queueName": "queue",
+            "connectionStringSetting": "rabbitMQConnection"
         }
     ]
 }
 ```
-
-Код в *_\_ init_ \_ . Корректировка* объявляет параметр как `func.RabbitMQMessage` , который позволяет читать сообщение в функции.
 
 ```python
 import logging
@@ -214,11 +212,11 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 |**direction** | Недоступно | Для этого свойства необходимо задать значение "in".|
 |**name** | Недоступно | Имя переменной, представляющей очередь в коде функции. |
 |**queueName**|**QueueName**| Имя очереди, из которой должны быть получены сообщения. |
-|**Имя узла**|**HostName**|(необязательно, если используется Коннектстрингсеттинг) <br>Имя узла очереди (например: 10.26.45.210)|
-|**усернамесеттинг**|**усернамесеттинг**|(необязательно, если используется Коннектионстрингсеттинг) <br>Имя для доступа к очереди |
-|**пассвордсеттинг**|**пассвордсеттинг**|(необязательно, если используется Коннектионстрингсеттинг) <br>Пароль для доступа к очереди|
+|**Имя узла**|**HostName**|(пропускается при использовании Коннектстрингсеттинг) <br>Имя узла очереди (например: 10.26.45.210)|
+|**усернамесеттинг**|**усернамесеттинг**|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя параметра приложения, содержащего имя пользователя для доступа к очереди. Пример: Усернамесеттинг: "% < Усернамефромсеттингс >%"|
+|**пассвордсеттинг**|**пассвордсеттинг**|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя параметра приложения, который содержит пароль для доступа к очереди. Пример: Пассвордсеттинг: "% < Пассвордфромсеттингс >%"|
 |**коннектионстрингсеттинг**|**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения очереди сообщений RabbitMQ. Обратите внимание, что если вы укажете строку подключения напрямую, а не через параметр приложения в local.settings.js, триггер не будет работать. (Пример: в *function.json*: коннектионстрингсеттинг: "раббитмкконнектион" <br> В *local.settings.js*: "раббитмкконнектион": "< актуалконнектионстринг >")|
-|**port**|**порт**.|Возвращает или задает используемый порт. Значение по умолчанию — 0.|
+|**port**|**порт**.|(пропускается при использовании Коннектионстрингсеттинг) Возвращает или задает используемый порт. Значение по умолчанию — 0.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -226,31 +224,29 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Для этого сообщения доступны следующие типы параметров:
+Типом сообщений по умолчанию является [событие RabbitMQ](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html), а `Body` свойство события RabbitMQ может быть считано так, как показано ниже.
 
-* [Событие RabbitMQ](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html) — формат по умолчанию для сообщений RabbitMQ.
-  * `byte[]`— Через свойство Body события RabbitMQ.
-* `string` — Сообщение является текстом.
 * `An object serializable as JSON` — Сообщение доставляется в виде допустимой строки JSON.
+* `string`
+* `byte[]`
 * `POCO` — Сообщение отформатировано как объект C#. Полный пример см. в разделе [Пример](#example)на C#.
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Для этого сообщения доступны следующие типы параметров:
+Типом сообщений по умолчанию является [событие RabbitMQ](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html), а `Body` свойство события RabbitMQ может быть считано так, как показано ниже.
 
-* [Событие RabbitMQ](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html) — формат по умолчанию для сообщений RabbitMQ.
-  * `byte[]`— Через свойство Body события RabbitMQ.
-* `string` — Сообщение является текстом.
 * `An object serializable as JSON` — Сообщение доставляется в виде допустимой строки JSON.
-* `POCO` — Сообщение отформатировано как объект C#.
+* `string`
+* `byte[]`
+* `POCO` — Сообщение отформатировано как объект C#. Полный пример см. в разделе [Пример](#example)скрипта C#.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Сообщение RabbitMQ передается в функцию в виде строки или объекта JSON.
+Сообщение очереди доступно через контекст. Bindings.<NAME> где <NAME> соответствует имени, определенному в function.js. Если полезная нагрузка — JSON, значение десериализуется в объект.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Сообщение RabbitMQ передается в функцию в виде строки или объекта JSON.
+См. [Пример](#example)на Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -284,14 +280,14 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 |prefetchCount|30|Возвращает или задает количество сообщений, которые получатель сообщения может одновременно запрашивать и кэшировать.|
 |queueName|н/д| Имя очереди, из которой должны быть получены сообщения. |
 |connectionString|н/д|Имя параметра приложения, содержащего строку подключения очереди сообщений RabbitMQ. Обратите внимание, что если вы укажете строку подключения напрямую, а не через параметр приложения в local.settings.js, триггер не будет работать.|
-|порт|0|Максимальное количество сеансов, которые могут обрабатываться одновременно для каждого масштабируемого экземпляра.|
+|порт|0|(пропускается при использовании connectionString) Максимальное количество сеансов, которые могут обрабатываться одновременно для каждого масштабируемого экземпляра.|
 
 ## <a name="local-testing"></a>Локальное тестирование
 
 > [!NOTE]
 > Строка подключения имеет приоритет над "имя_узла", "userName" и "Password". Если все они заданы, то строка подключения будет переопределять два других.
 
-Если выполняется локальное тестирование без строки подключения, следует задать параметр hostName и "Username" и "Password", если это применимо в разделе "rabbitMQ" *host.json*:
+Если выполняется локальное тестирование без строки подключения, следует задать параметр hostName и "userName" и "Password", если это применимо в разделе "rabbitMQ" *host.json*:
 
 ```json
 {
@@ -300,8 +296,8 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
         "rabbitMQ": {
             ...
             "hostName": "localhost",
-            "username": "<your username>",
-            "password": "<your password>"
+            "username": "userNameSetting",
+            "password": "passwordSetting"
         }
     }
 }
@@ -309,9 +305,9 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 
 |Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
-|hostName|н/д|(необязательно, если используется Коннектстрингсеттинг) <br>Имя узла очереди (например: 10.26.45.210)|
-|userName|н/д|(необязательно, если используется Коннектионстрингсеттинг) <br>Имя для доступа к очереди |
-|password|н/д|(необязательно, если используется Коннектионстрингсеттинг) <br>Пароль для доступа к очереди|
+|hostName|н/д|(пропускается при использовании Коннектстрингсеттинг) <br>Имя узла очереди (например: 10.26.45.210)|
+|userName|н/д|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя для доступа к очереди |
+|password|н/д|(пропускается при использовании Коннектионстрингсеттинг) <br>Пароль для доступа к очереди|
 
 ## <a name="monitoring-rabbitmq-endpoint"></a>Мониторинг конечной точки RabbitMQ
 Для мониторинга очередей и обмена для определенной конечной точки RabbitMQ:

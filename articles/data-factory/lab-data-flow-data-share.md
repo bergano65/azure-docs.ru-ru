@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 12/09/2020
-ms.openlocfilehash: bdf9cbfef7dfdcf80976641b527ddeb61368d50b
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: fa424f7e1f5e1f885dd433b8abc8aae1dc1bc206
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921035"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97006203"
 ---
 # <a name="data-integration-using-azure-data-factory-and-azure-data-share"></a>Интеграция данных с помощью Фабрики данных Azure и Azure Data Share
 
@@ -72,7 +72,7 @@ ms.locfileid: "96921035"
     ![Настройка портала 3](media/lab-data-flow-data-share/configure3.png)
 1. Первой связанной службой, которую вы настроите, является база данных SQL Azure. С помощью строки поиска можно отфильтровать список хранилищ данных. Щелкните плитку **База данных SQL Azure** и нажмите "Продолжить".
 
-    ![Настройка портала 4](media/lab-data-flow-data-share/configure4.png)
+    ![Настройка портала 4](media/lab-data-flow-data-share/configure-4.png)
 1. В панели конфигурации базы данных SQL введите "SQLDB" в качестве имени связанной службы. Введите свои учетные данные, чтобы обеспечить подключение фабрики данных к базе данных. Если вы используете проверку подлинности SQL, введите имя сервера, базу данных, имя пользователя и пароль. Правильность сведений о подключении можно проверить, нажав **Тестирование подключения**. После завершения нажмите **Создать**.
 
     ![Настройка портала 5](media/lab-data-flow-data-share/configure5.png)
@@ -81,10 +81,10 @@ ms.locfileid: "96921035"
 
 1. Повторите этот же процесс, чтобы добавить связанную службу Azure Synapse Analytics. Щелкните **Новый** на вкладке подключений. Выберите плитку **Azure Synapse Analytics** и нажмите кнопку "Продолжить".
 
-    ![Настройка портала 6](media/lab-data-flow-data-share/configure6.png)
+    ![Настройка портала 6](media/lab-data-flow-data-share/configure-6.png)
 1. На панели конфигурации связанной службы введите "SQLDW" в качестве имени связанной службы. Введите свои учетные данные, чтобы обеспечить подключение фабрики данных к базе данных. Если вы используете проверку подлинности SQL, введите имя сервера, базу данных, имя пользователя и пароль. Правильность сведений о подключении можно проверить, нажав **Тестирование подключения**. После завершения нажмите **Создать**.
 
-    ![Настройка портала 7](media/lab-data-flow-data-share/configure7.png)
+    ![Настройка портала 7](media/lab-data-flow-data-share/configure-7.png)
 
 ### <a name="create-an-azure-data-lake-storage-gen2-linked-service"></a>Создание связанной службы Azure Data Lake Storage 2-го поколения
 
@@ -128,7 +128,7 @@ ms.locfileid: "96921035"
     ![Копирование портала 4](media/lab-data-flow-data-share/copy4.png)
 1. Выполните поиск по **База данных SQL Azure** и щелкните "Продолжить".
 
-    ![Копирование портала 5](media/lab-data-flow-data-share/copy5.png)
+    ![Копирование портала 5](media/lab-data-flow-data-share/copy-5.png)
 1. Вызовите набор данных "TripData". Выберите "SQLDB" в качестве связанной службы. Выберите "dbo.TripData" из раскрывающегося списка имени таблицы. Импортируйте схему **From connection/store** (из подключения/хранилища). Щелкните "OK", когда все будет готово.
 
     ![Копирование портала 6](media/lab-data-flow-data-share/copy6.png)
@@ -211,7 +211,7 @@ ms.locfileid: "96921035"
     ![Поток данных портала 9](media/lab-data-flow-data-share/dataflow9.png)
 1. Выберите плитку **База данных SQL Azure** и нажмите "Продолжить". *Примечание. Вы можете заметить, что многие соединители в фабрике данных не поддерживаются в потоке данных для сопоставления. Чтобы преобразовать данные из одного из этих источников, загрузите их в поддерживаемый источник с помощью действия копирования*.
 
-    ![Поток данных портала 10](media/lab-data-flow-data-share/dataflow10.png)
+    ![Поток данных портала 10](media/lab-data-flow-data-share/dataflow-10.png)
 1. Вызовите набор данных "TripFares". Выберите "SQLDB" в качестве связанной службы. Выберите "dbo.TripFares" из раскрывающегося списка имени таблицы. Импортируйте схему **From connection/store** (из подключения/хранилища). Щелкните "OK", когда все будет готово.
 
     ![Поток данных портала 11](media/lab-data-flow-data-share/dataflow11.png)
@@ -276,7 +276,7 @@ ms.locfileid: "96921035"
 
 1. Выберите плитку **Azure Synapse Analytics** и нажмите кнопку "Продолжить".
 
-    ![Приемник портала 3](media/lab-data-flow-data-share/sink3.png)
+    ![Приемник портала 3](media/lab-data-flow-data-share/sink-3.png)
 1. Вызовите набор данных "AggregatedTaxiData". Выберите "SQLDW" в качестве связанной службы. Выберите **Создать таблицу** и назовите новую таблицу "dbo.AggregateTaxiData". Щелкните "OK", когда все будет готово
 
     ![Приемник портала 4](media/lab-data-flow-data-share/sink4.png)

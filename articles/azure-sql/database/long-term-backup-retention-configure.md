@@ -10,13 +10,13 @@ ms.topic: how-to
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
-ms.date: 04/14/2020
-ms.openlocfilehash: 3cab3b262f9116903d0b423cd5e4a0ebd03c46fa
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.date: 12/16/2020
+ms.openlocfilehash: 49dfed7faac1e55a40bc7b7ddd5e9555519350a2
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984436"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617312"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Управление долгосрочным хранением резервных копий базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -71,7 +71,7 @@ ms.locfileid: "94984436"
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания. Например, вы можете [извлечь часть данных из восстановленной базы данных, чтобы скопировать их в существующую базу данных, или удалить существующую базу данных и присвоить ее имя восстановленной базе данных](recovery-using-backups.md#point-in-time-restore).
 
-## <a name="using-powershell"></a>Регистрация с помощью PowerShell
+## <a name="using-powershell"></a>Использование PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -203,6 +203,7 @@ Restore-AzSqlDatabase -FromLongTermRetentionBackup -ResourceId $ltrBackup.Resour
 
 ## <a name="limitations"></a>Ограничения
 - При восстановлении из резервной копии LTR свойство Read Scale отключено. Чтобы включить, прочтите масштаб восстановленной базы данных, обновите базу данных после ее создания.
+- Необходимо указать целевую цель уровня обслуживания при восстановлении из резервной копии LTR, которая была создана, когда база данных находилась в эластичном пуле. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

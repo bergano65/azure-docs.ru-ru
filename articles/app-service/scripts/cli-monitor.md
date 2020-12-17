@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: mvc, seodec18, devx-track-azurecli
-ms.openlocfilehash: 995ca98a21e5ec392182bb48932765cca35acf3a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 9881a5f37c32849fc4f10acda8346510977e6b7b
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94562463"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005793"
 ---
 # <a name="monitor-an-app-service-app-with-web-server-logs-using-azure-cli"></a>Мониторинг приложения Службы приложений с помощью журналов веб-сервера в интерфейсе командной строки Azure
 
@@ -38,11 +38,11 @@ ms.locfileid: "94562463"
 
 | Get-Help | Примечания |
 |---|---|
-| [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) | Создает план службы приложений. |
-| [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) | Создает приложение Службы приложений. |
-| [`az webapp log config`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-config) | Настраивает журналы, в которых сохраняются данные приложения Службы приложений. |
-| [`az webapp log download`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-download) | Скачивает журналы приложения Службы приложений на локальный компьютер. |
+| [`az group create`](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [`az appservice plan create`](/cli/azure/appservice/plan#az-appservice-plan-create) | Создает план службы приложений. |
+| [`az webapp create`](/cli/azure/webapp#az-webapp-create) | Создает приложение Службы приложений. |
+| [`az webapp log config`](/cli/azure/webapp/log#az-webapp-log-config) | Настраивает журналы, в которых сохраняются данные приложения Службы приложений. |
+| [`az webapp log download`](/cli/azure/webapp/log#az-webapp-log-download) | Скачивает журналы приложения Службы приложений на локальный компьютер. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

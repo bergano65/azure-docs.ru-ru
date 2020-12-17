@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 73e3d8834fcb41f863fe2e3d686b812bb6174e70
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 7c5cac0b52fb0a224595ca7e328b551fd48d6661
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507665"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614240"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Параметры конфигурации — Application Insights Azure Monitor для Java
 
@@ -168,6 +168,9 @@ ms.locfileid: "97507665"
 ```
 
 `${...}` может использоваться для считывания значения из указанной переменной среды при запуске.
+
+> [!NOTE]
+> Начиная с версии 3.0.1-BETA, при добавлении настраиваемого измерения с именем оно `service.version` будет храниться в `application_Version` столбце таблицы Application Insights Logs, а не в виде пользовательского измерения.
 
 ## <a name="telemetry-processors-preview"></a>Обработчики данных телеметрии (Предварительная версия)
 

@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 831da4153eebc798265493441ee72c041901904f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a007e64a7bd034397c2030c435a5ad349bd4acc7
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87053894"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608754"
 ---
 # <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера фабрики данных для копирования данных с использованием шаблона Azure Resource Manager 
 > [!div class="op_single_selector"]
@@ -341,46 +341,58 @@ ms.locfileid: "87053894"
 ## <a name="monitor-pipeline"></a>Отслеживание конвейера
 
 1. Войдите на [портал Azure](https://portal.azure.com), используя свою учетную запись Azure.
-2. Щелкните **Фабрики данных** в меню слева или выберите **Все службы** и щелкните **Фабрики данных** в категории **Аналитика**.
+
+1. Щелкните **Фабрики данных** в меню слева или выберите **Все службы** и щелкните **Фабрики данных** в категории **Аналитика**.
    
     ![Меню "Фабрики данных"](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factories-menu.png)
-3. На странице **Фабрики данных** найдите свою фабрику данных (AzureBlobToAzureSQLDatabaseDF). 
+
+1. На странице **Фабрики данных** найдите свою фабрику данных (AzureBlobToAzureSQLDatabaseDF). 
    
     ![Поиск фабрики данных](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/search-for-data-factory.png)  
-4. Щелкните свою фабрику данных Azure. После этого откроется домашняя страница фабрики данных.
+
+1. Щелкните свою фабрику данных Azure. После этого откроется домашняя страница фабрики данных.
    
     ![Домашняя страница фабрики данных](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factory-home-page.png)  
-6. Следуйте инструкциям из раздела [Отслеживание конвейера](data-factory-monitor-manage-pipelines.md) для мониторинга конвейера и баз данных, созданных при работе с этим руководством. Сейчас Visual Studio не поддерживает мониторинг конвейеров фабрики данных.
-7. Когда срез будет в состоянии **Готово**, проверьте, были ли скопированы данные в таблицу **emp** в Базе данных SQL Azure.
 
+1. Следуйте инструкциям из раздела [Отслеживание конвейера](data-factory-monitor-manage-pipelines.md) для мониторинга конвейера и баз данных, созданных при работе с этим руководством. Сейчас Visual Studio не поддерживает мониторинг конвейеров фабрики данных.
+
+1. Когда срез будет в состоянии **Готово**, проверьте, были ли скопированы данные в таблицу **emp** в Базе данных SQL Azure.
 
 Дополнительные сведения о том, как использовать колонки на портале Azure для мониторинга конвейера и наборов данных, созданных с помощью этого руководства, см.в [этой статье](data-factory-monitor-manage-pipelines.md).
 
 Дополнительные сведения о том, как использовать приложение по мониторингу и управлению для мониторинга конвейеров данных, см. в [этой статье](data-factory-monitor-manage-app.md).
 
 ## <a name="data-factory-entities-in-the-template"></a>Сущности фабрики данных в шаблоне
+
 ### <a name="define-data-factory"></a>Определение фабрики данных
-Фабрику данных следует определить в шаблоне Resource Manager, как показано в следующем примере:  
+
+Фабрику данных следует определить в шаблоне Resource Manager, как показано в следующем примере:
 
 ```json
-"resources": [
 {
-    "name": "[variables('dataFactoryName')]",
-    "apiVersion": "2015-10-01",
-    "type": "Microsoft.DataFactory/datafactories",
-    "location": "West US"
+  "resources": [
+    {
+      "name": "[variables('dataFactoryName')]",
+      "apiVersion": "2015-10-01",
+      "type": "Microsoft.DataFactory/datafactories",
+      "location": "West US"
+    }
+  ]
 }
 ```
 
 Параметр dataFactoryName определяется следующим образом: 
 
 ```json
-"dataFactoryName": "[concat('AzureBlobToAzureSQLDatabaseDF', uniqueString(resourceGroup().id))]"
+{
+    "dataFactoryName": "[concat('AzureBlobToAzureSQLDatabaseDF', uniqueString(resourceGroup().id))]"
+}
 ```
 
-Это уникальная строка благодаря идентификатору группы ресурсов.  
+Это уникальная строка благодаря идентификатору группы ресурсов.
 
 ### <a name="defining-data-factory-entities"></a>Определение сущностей фабрики данных
+
 В шаблоне JSON определены следующие сущности фабрики данных: 
 
 1. [Связанная служба хранения Azure](#azure-storage-linked-service)
@@ -390,6 +402,7 @@ ms.locfileid: "87053894"
 5. [Конвейер данных с действием копирования](#data-pipeline)
 
 #### <a name="azure-storage-linked-service"></a>Связанная служба хранения Azure
+
 Связанная служба хранилища Azure связывает учетную запись хранения Azure с фабрикой данных. Вы создали контейнер и отправили данные в эту учетную запись хранения в ходе выполнения предварительных [требований](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). В этом разделе вы укажете имя и ключ вашей учетной записи хранения Azure. Дополнительные сведения о свойствах JSON для определения связанной службы хранилища Azure см. в разделе [Связанная служба хранилища Azure](data-factory-azure-blob-connector.md#azure-storage-linked-service). 
 
 ```json
@@ -413,6 +426,7 @@ ms.locfileid: "87053894"
 Для connectionString используются параметры storageAccountName и storageAccountKey. Значения для этих параметров передаются с помощью файла конфигурации. В этом определении также используются переменные azureStorageLinkedService и dataFactoryName, заданные в шаблоне. 
 
 #### <a name="azure-sql-database-linked-service"></a>Связанная служба "База данных SQL Azure"
+
 Связанная служба SQL Azure (AzureSqlLinkedService) связывает базу данных в службе "База данных SQL Azure" с фабрикой данных. В этой базе данных хранятся данные, скопированные из хранилища BLOB-объектов. Вы создали пустую таблицу в этой базе данных в ходе выполнения [предварительных требований](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). В этом разделе вы укажете имя логического сервера SQL Server, имя базы данных, имя пользователя и пароль. Дополнительные сведения о свойствах JSON для определения связанной службы SQL Azure см. в разделе [Связанная служба SQL Azure](data-factory-azure-sql-connector.md#linked-service-properties).  
 
 ```json
@@ -424,11 +438,11 @@ ms.locfileid: "87053894"
     ],
     "apiVersion": "2015-10-01",
     "properties": {
-          "type": "AzureSqlDatabase",
-          "description": "Azure SQL linked service",
-          "typeProperties": {
-            "connectionString": "[concat('Server=tcp:',parameters('sqlServerName'),'.database.windows.net,1433;Database=', parameters('databaseName'), ';User ID=',parameters('sqlServerUserName'),';Password=',parameters('sqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
-          }
+      "type": "AzureSqlDatabase",
+      "description": "Azure SQL linked service",
+      "typeProperties": {
+        "connectionString": "[concat('Server=tcp:',parameters('sqlServerName'),'.database.windows.net,1433;Database=', parameters('databaseName'), ';User ID=',parameters('sqlServerUserName'),';Password=',parameters('sqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
+      }
     }
 }
 ```
