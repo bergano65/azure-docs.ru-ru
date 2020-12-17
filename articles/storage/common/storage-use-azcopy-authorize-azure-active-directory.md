@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 43002fdfbdce146b52774aa4182445bf34dd7199
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 46a5c941822dd258b420b51c710734dc3152f30f
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360294"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617414"
 ---
 # <a name="authorize-access-to-blobs-with-azcopy-and-azure-active-directory-azure-ad"></a>Авторизация доступа к BLOB-объектам с помощью AzCopy и Azure Active Directory (Azure AD)
 
@@ -183,9 +183,9 @@ azcopy login --service-principal --certificate-path <path-to-certificate-file> -
 > [!NOTE]
 > Рассмотрите возможность использования запроса, как показано в этом примере. В этом случае ваш пароль не будет отображаться в журнале команд консоли. 
 
-## <a name="authorize-without-a-keyring-linux"></a>Авторизация без набора ключей (Linux)
+## <a name="authorize-without-a-secret-store"></a>Авторизация без хранилища секретов
 
-Если в вашей операционной системе нет хранилища секретов, такого как набор *ключей*, `azcopy login` команда не будет работать. Вместо этого можно задать переменные среды в памяти перед выполнением каждой операции. После завершения операции эти значения исчезают из памяти, поэтому эти переменные придется устанавливать каждый раз при выполнении команды azcopy.
+Если у вашей операционной системы нет секретного хранилища, такого как набор *ключей* Linux, `azcopy login` команда не будет работать. Вместо этого можно задать переменные среды в памяти перед выполнением каждой операции. 
 
 ### <a name="authorize-a-user-identity"></a>Авторизация удостоверения пользователя
 

@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 6d1e9e8eeddaaa2ce8c891888935faad12d40295
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: f8210428e772241134b57ac4fccb5b1549e04483
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907579"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617278"
 ---
 # <a name="synchronize-with-azure-blob-storage-by-using-azcopy-v10"></a>Синхронизация с хранилищем BLOB-объектов Azure с помощью AzCopy V10
 
@@ -79,7 +79,7 @@ ms.locfileid: "96907579"
 | **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.blob.core.windows.net/<container-name>' 'https://<destination-storage-account-name>.blob.core.windows.net/<container-name>' --recursive` |
 | **Пример** | `azcopy sync 'https://mysourceaccount.blob.core.windows.net/mycontainer' 'https://mydestinationaccount.blob.core.windows.net/mycontainer' --recursive` |
 
-## <a name="update-a-directory-with-changes-to-a-directory-in-another-file-share"></a>Обновление каталога с изменениями в каталоге в другой общей папке
+## <a name="update-a-directory-with-changes-to-a-directory-in-another-container"></a>Обновление каталога с изменениями в каталоге в другом контейнере
 
 Первым каталогом, который отображается в этой команде, является источник. Второй — назначение.
 
@@ -107,10 +107,10 @@ ms.locfileid: "96907579"
 
 Дополнительные примеры см. в следующих статьях:
 
-- [Примеры: upload](storage-use-azcopy-blobs-upload.md)
-- [Примеры: Download](storage-use-azcopy-blobs-download.md)
-- [Примеры: копирование между учетными записями](storage-use-azcopy-blobs-copy.md)
-- [Примеры: контейнеры Amazon S3](storage-use-azcopy-s3.md)
+- [Примеры: Передать](storage-use-azcopy-blobs-upload.md)
+- [Примеры: Скачивание](storage-use-azcopy-blobs-download.md)
+- [Примеры: Копирование между учетными записями](storage-use-azcopy-blobs-copy.md)
+- [Примеры: Контейнеры Amazon S3](storage-use-azcopy-s3.md)
 - [Примеры: службы файлов Azure](storage-use-azcopy-files.md)
 - [Руководство. Перенос локальных данных в облачное хранилище с помощью AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)

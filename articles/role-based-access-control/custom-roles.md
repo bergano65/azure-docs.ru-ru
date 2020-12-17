@@ -7,14 +7,14 @@ manager: mtillman
 ms.service: role-based-access-control
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 12/11/2020
+ms.date: 12/15/2020
 ms.author: rolyon
-ms.openlocfilehash: eddbd9cb695f3ff7eabd9f2549d0a868d8826eb9
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 79aaeee942a6d46243ee1c72d5904484b8698ebe
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369129"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617329"
 ---
 # <a name="azure-custom-roles"></a>Настраиваемые роли Azure
 
@@ -208,6 +208,7 @@ Microsoft.CostManagement/*/query/*
 - Каждый каталог может иметь до **5000** пользовательских ролей.
 - Azure для Германии и Azure для Китая в Китае могут иметь до 2000 пользовательских ролей для каждого каталога.
 - Нельзя задать `AssignableScopes` в качестве корневой области ( `"/"` ).
+- В нельзя использовать подстановочные знаки ( `*` ) `AssignableScopes` . Это ограничение по шаблону позволяет гарантировать, что пользователь не сможет получить доступ к области, обновив определение роли.
 - В пользовательской роли можно определить только одну группу управления `AssignableScopes` . В настоящее время добавление группы управления в `AssignableScopes` доступно в режиме предварительной версии.
 - Пользовательские роли с `DataActions` не могут быть назначены в области группы управления.
 - Azure Resource Manager не проверяет существование группы управления в назначаемой области определения роли.

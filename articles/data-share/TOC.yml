@@ -27,6 +27,8 @@
   items:
     - name: Безопасность
       items:
+        - name: Общие сведения о безопасности
+          href: security.md
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Терминология Azure Data Share
@@ -62,8 +64,6 @@
       href: how-to-revoke-share-subscription.md
     - name: Монитор
       href: how-to-monitor.md
-    - name: Безопасность
-      href: security.md
     - name: Аварийное восстановление
       href: disaster-recovery.md
     - name: Диагностика

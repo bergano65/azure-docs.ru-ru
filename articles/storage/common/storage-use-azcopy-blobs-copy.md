@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: f536e163e3d19d91c150506ab44fdd9cbc02c693
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 524e3f70f9588cfae2c739722fc1a44e683f9a7f
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907574"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617295"
 ---
 # <a name="copy-blobs-between-azure-storage-accounts-by-using-azcopy-v10"></a>Копирование больших двоичных объектов между учетными записями хранения Azure с помощью AzCopy V10
 
@@ -28,6 +28,8 @@ AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" 
 ## <a name="guidelines"></a>Рекомендации
 
 Примените следующие рекомендации к командам AzCopy. 
+
+- Клиент должен иметь доступ к сети как к исходной, так и к конечной учетной записи хранения. Сведения о настройке параметров сети для каждой учетной записи хранения см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](storage-network-security.md?toc=/azure/storage/blobs/toc.json).
 
 - Добавьте маркер SAS к каждому исходному URL-адресу. 
 
@@ -146,10 +148,10 @@ AzCopy использует [API](/rest/api/storageservices/put-page-from-url)" 
 
 Дополнительные примеры см. в следующих статьях:
 
-- [Примеры: upload](storage-use-azcopy-blobs-upload.md)
-- [Примеры: Download](storage-use-azcopy-blobs-download.md)
+- [Примеры: Передать](storage-use-azcopy-blobs-upload.md)
+- [Примеры: Скачивание](storage-use-azcopy-blobs-download.md)
 - [Примеры: Synchronize](storage-use-azcopy-blobs-synchronize.md)
-- [Примеры: контейнеры Amazon S3](storage-use-azcopy-s3.md)
+- [Примеры: Контейнеры Amazon S3](storage-use-azcopy-s3.md)
 - [Примеры: службы файлов Azure](storage-use-azcopy-files.md)
 - [Руководство. Перенос локальных данных в облачное хранилище с помощью AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)

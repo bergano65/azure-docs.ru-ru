@@ -82,7 +82,7 @@
           href: deny-assignments-powershell.md
         - name: REST API
           href: deny-assignments-rest.md
-    - name: Создание или обновление настраиваемых ролей
+    - name: Создание настраиваемых ролей
       items:
         - name: Обзор
           href: custom-roles.md
