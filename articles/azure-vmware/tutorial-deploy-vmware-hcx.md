@@ -3,12 +3,12 @@ title: Учебник по развертыванию и настройке VMwa
 description: Узнайте, как развернуть и настроить решение VMware HCX для частного облака Решения Azure VMware.
 ms.topic: tutorial
 ms.date: 11/25/2020
-ms.openlocfilehash: e50454c2299ed0f7e249563eecac1935a29a9c47
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: a792f8dbc646f61377cf0a88e1a6e386340f23e8
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352475"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357897"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>Развертывание и настройка VMware HCX
 
@@ -163,7 +163,7 @@ ms.locfileid: "96352475"
 
 :::image type="content" source="media/tutorial-vmware-hcx/activation-done.png" alt-text="Снимок экрана: панель мониторинга, где состояние vCenter обозначено зеленым цветом" lightbox="media/tutorial-vmware-hcx/activation-done.png":::  
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: Activate HCX](https://www.youtube.com/embed/jzQZawslF8w) (Решение Azure VMware — активация HCX).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: Activate HCX](https://www.youtube.com/embed/PnVg6SZkQsY?rel=0&amp;vq=hd720) (Решение Azure VMware — активация HCX).
 
    > [!IMPORTANT]
    > Независимо от того, используете ли вы VMware HCX Advanced или VMware HCX Enterprise, может потребоваться установка исправления, указанного в [статье 81558 базы знаний](https://kb.vmware.com/s/article/81558) для VMware. 
@@ -192,7 +192,7 @@ ms.locfileid: "96352475"
 
    :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Снимок экрана: связывание диспетчера HCX в Решении Azure VMware и соединителя VMware HCX":::.
 
-Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Site Pairing](https://www.youtube.com/embed/iTJtjbiwvsw) (Решение Azure VMware — связывание сайтов HCX).
+Полный обзор этой процедуры см. в видео [Azure VMware Solution: HCX Site Pairing](https://www.youtube.com/embed/jXOmYUnbWZY?rel=0&amp;vq=hd720) (Решение Azure VMware — связывание сайтов HCX).
 
 ### <a name="create-network-profiles"></a>Создание сетевых профилей
 

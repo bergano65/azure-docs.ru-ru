@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 17bf7b3f457ff6046d92012ffd679ed4b9315530
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: a2f76df05878151405d56b1bff5e588f426d9d92
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574128"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093559"
 ---
 # <a name="tutorial-train-your-first-machine-learning-model-part-3-of-4"></a>Руководство по обучению первых моделей машинного обучения (часть 3 из 4)
 
@@ -133,7 +133,7 @@ python src/train.py                             # train model
 :::row-end:::
 
 > [!div class="nextstepaction"]
-> [Мной создан скрипт управления](?success=control-script#submit) [Возникла проблема](https://www.research.net/r/7CTJQQ?issue=control-script)
+> [Мной создан скрипт управления](?success=control-script#submit) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=control-script)
 
 
 ## <a name="submit-the-run-to-azure-machine-learning"></a><a name="submit"></a> Отправка выполнения в Машинное обучение Azure
@@ -186,7 +186,7 @@ Finished Training
 Если коротко, использование зарегистрированных сред позволяет экономить время. Дополнительные сведения см. в статье [Использование сред](./how-to-use-environments.md).
 
 > [!div class="nextstepaction"]
-> [Выполнение отправлено](?success=test-w-environment#log) [Возникла проблема](https://www.research.net/r/7CTJQQ?issue=test-w-environment)
+> [Выполнение отправлено](?success=test-w-environment#log) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=test-w-environment)
 
 ## <a name="log-training-metrics"></a><a name="log"></a> Ведение журнала метрик обучения
 
@@ -221,7 +221,7 @@ run.log('loss', loss)
 - Предназначены для масштабирования, поэтому вы можете использовать эти преимущества даже при выполнении сотен экспериментов.
 
 > [!div class="nextstepaction"]
-> [Файл train.py изменен](?success=modify-train#log) [Возникла проблема](https://www.research.net/r/7CTJQQ?issue=modify-train)
+> [Файл train.py изменен](?success=modify-train#log) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=modify-train)
 
 ### <a name="update-the-conda-environment-file"></a>Обновление файла среды Conda
 
@@ -230,7 +230,7 @@ run.log('loss', loss)
 :::code language="python" source="~/MachineLearningNotebooks/tutorials/get-started-day1/configuration/pytorch-aml-env.yml":::
 
 > [!div class="nextstepaction"]
-> [Файл среды обновлен](?success=update-environment#submit-again) [Возникла проблема](https://www.research.net/r/7CTJQQ?issue=update-environment)
+> [Файл среды обновлен](?success=update-environment#submit-again) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=update-environment)
 
 ### <a name="submit-the-run-to-azure-machine-learning"></a><a name="submit-again"></a> Отправка выполнения в Машинное обучение Azure
 Отправьте этот сценарий еще раз:
@@ -244,7 +244,7 @@ python 04-run-pytorch.py
 :::image type="content" source="media/tutorial-1st-experiment-sdk-train/logging-metrics.png" alt-text="Диаграмма потерь обучения на вкладке метрик":::
 
 > [!div class="nextstepaction"]
-> [Выполнение отправлено мною повторно](?success=resubmit-with-logging#next-steps) [Возникла проблема](https://www.research.net/r/7CTJQQ?issue=resubmit-with-logging)
+> [Выполнение отправлено мною повторно](?success=resubmit-with-logging#next-steps) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=resubmit-with-logging)
 
 ## <a name="next-steps"></a>Следующие шаги
 

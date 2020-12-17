@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: sample
 ms.date: 05/18/2020
 ms.subservice: alerts
-ms.openlocfilehash: 4340bd0ffc4a060b1eb8884efa8078aaf18e1e28
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: c05f9a326fcbe75a3348e58987d57e106094cf56
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92893987"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510572"
 ---
 # <a name="resource-manager-template-samples-for-metric-alert-rules-in-azure-monitor"></a>Примеры шаблонов Resource Manager для правил генерации оповещений метрик в Azure Monitor
 
@@ -343,7 +343,7 @@ ms.locfileid: "92893987"
                 "description": "The number of unhealthy periods to alert on (must be lower or equal to numberOfEvaluationPeriods)."
             }
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
@@ -480,7 +480,7 @@ ms.locfileid: "92893987"
         "minFailingPeriodsToAlert": {
             "value": "3"
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "value": ""
         },
         "timeAggregation": {
@@ -502,7 +502,7 @@ ms.locfileid: "92893987"
 - В каждом из критериев можно выбрать только одно значение для каждого измерения.
 - Невозможно использовать "\*" в качестве значения измерения.
 - Если метрики, настроенные в разных критериях, поддерживают одно и то же измерение, то настроенное значение измерения должно быть явно задано одинаковым способом для всех этих метрик в соответствующем критерии.
-    - В приведенном ниже примере, поскольку в метриках **Transactions** и **SuccessE2ELatency** есть измерение **ApiName** , а параметр *criterion1* определяет значение *"GetBlob"* для измерения **ApiName** , то для параметра *criterion2* также нужно задать значение *"GetBlob"* для измерения **ApiName**.
+    - В приведенном ниже примере, поскольку в метриках **Transactions** и **SuccessE2ELatency** есть измерение **ApiName**, а параметр *criterion1* определяет значение *"GetBlob"* для измерения **ApiName**, то для параметра *criterion2* также нужно задать значение *"GetBlob"* для измерения **ApiName**.
 
 ### <a name="template-file"></a>Файл шаблона
 
@@ -707,15 +707,15 @@ ms.locfileid: "92893987"
 ## <a name="multiple-dimensions-static-threshold"></a>Несколько измерений, статический порог
 Одно правило генерации оповещений может отслеживать несколько временных рядов за один раз, что позволяет сократить количество правил генерации оповещений. В следующем примере создается статическое правило генерации оповещений метрики для метрик измерений.
 
-В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions** :
-1. **ResponsType**  — использование подстановочного знака "\*" означает, что для каждого значения измерения **ResponseType** , включая будущие значения, каждый временной ряд отслеживается отдельно.
-2. **ApiName**  — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
+В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions**:
+1. **ResponsType** — использование подстановочного знака "\*" означает, что для каждого значения измерения **ResponseType**, включая будущие значения, каждый временной ряд отслеживается отдельно.
+2. **ApiName** — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
 
 Например, вот несколько возможных временных рядов, которые отслеживаются этим правилом генерации оповещений:
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *PutBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *PutBlob*
 
 ### <a name="template-file"></a>Файл шаблона
 
@@ -875,7 +875,7 @@ ms.locfileid: "92893987"
                             "values": ["*"]
                         },
                         {
-                "name":"ApiName",
+                            "name":"ApiName",
                             "operator": "Include",
                             "values": ["GetBlob", "PutBlob"]    
                         }
@@ -898,15 +898,15 @@ ms.locfileid: "92893987"
 Отдельное правило генерации оповещений с динамическими порогами может создать точно настроенные пороги для нескольких сотен временных рядов метрик (различных типов) одновременно, что приведет к управлению небольшим числом правил генерации оповещений. В следующем примере создается правило генерации оповещений метрик с динамическими порогами для метрик измерений.
 
 
-В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions** :
-1. **ResponsType**  — для каждого значения измерения **ResponseType** , включая будущие значения, каждый временный ряд отслеживается отдельно.
-2. **ApiName**  — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
+В этом примере правило генерации оповещений отслеживает сочетания значений измерений **ResponseType** и **ApiName** для метрики **Transactions**:
+1. **ResponsType** — для каждого значения измерения **ResponseType**, включая будущие значения, каждый временный ряд отслеживается отдельно.
+2. **ApiName** — другой временный ряд, который отслеживается только для значений измерений **GetBlob** и **PutBlob**.
 
 Например, вот несколько возможных временных рядов, которые отслеживаются этим правилом генерации оповещений:
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *PutBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *PutBlob*
 
 >[!NOTE]
 > В настоящее время несколько критериев для правил генерации оповещений метрик, использующих динамические пороги, не поддерживаются.

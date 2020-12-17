@@ -11,15 +11,14 @@ ms.custom:
 ms.author: dobett
 author: dominicbetts
 ms.date: 11/12/2019
-ms.openlocfilehash: f00448f19cc0a2118477a9527005548fea25537e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: fca9a72fa237a11a02b6d4fbe30ebba5857384cf
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187278"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346373"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>Руководство по Экспорт данных из Azure IoT Central и визуализация аналитических сведений в Power BI
-
 
 
 В двух предыдущих руководствах вы создали и настроили приложение IoT Central с помощью шаблона приложения **Аналитика магазина — оформление заказа**. В этом руководстве вы настроите приложение IoT Central для экспорта данных телеметрии, собранных с устройств. Затем с помощью Power BI вы создадите настраиваемую панель мониторинга для диспетчера магазинов, чтобы визуализировать аналитические данные, полученные из данных телеметрии.
