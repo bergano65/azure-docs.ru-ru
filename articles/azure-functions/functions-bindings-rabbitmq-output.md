@@ -7,17 +7,17 @@ ms.topic: reference
 ms.date: 12/16/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: febcb3d2b6990d36a686dc4fab57a6bcbc96b080
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 8ea4b0c7c8df1ff7fe0e3ecb253b23d188681e80
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616666"
+ms.locfileid: "97629686"
 ---
 # <a name="rabbitmq-output-binding-for-azure-functions-overview"></a>Обзор выходной привязки RabbitMQ для функций Azure
 
 > [!NOTE]
-> Привязки RabbitMQ полностью поддерживаются только в планах **Windows Premium** . Использование и Linux в настоящее время не поддерживаются.
+> Привязки RabbitMQ полностью поддерживаются только в **Windows Premium и в выделенных** планах. Использование и Linux в настоящее время не поддерживаются.
 
 Используйте выходную привязку RabbitMQ для отправки сообщений в очередь RabbitMQ.
 

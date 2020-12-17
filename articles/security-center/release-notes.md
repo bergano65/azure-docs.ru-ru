@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/07/2020
+ms.date: 12/15/2020
 ms.author: memildin
-ms.openlocfilehash: 3272212a857f24916acce7da5a4ee31561ec0c5a
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 484a8c7c230863f230719ddaf4e98a6248512bcc
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922929"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560259"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -39,6 +39,7 @@ ms.locfileid: "96922929"
 - [Выпущена общедоступная версия поддержки Azure Defender для SQL для выделенного пула SQL Azure Synapse Analytics](#azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available)
 - [Теперь глобальные администраторы могут предоставлять себе разрешения на уровне клиента](#global-administrators-can-now-grant-themselves-tenant-level-permissions)
 - [Два новых плана Azure Defender: Azure Defender для DNS и Azure Defender для Resource Manager (предварительная версия)](#two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview)
+- [Новая страница оповещений системы безопасности на портале Azure (предварительная версия)](#new-security-alerts-page-in-the-azure-portal-preview)
 
 ### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Выпущена общедоступная версия службы Azure Defender для серверов SQL на компьютерах
 
@@ -95,6 +96,24 @@ Azure Defender для SQL защищает выделенные пулы SQL с 
     - [Реагирование на оповещения Azure Defender для DNS](defender-for-dns-usage.md)
     - [Список оповещений Azure Defender для DNS](alerts-reference.md#alerts-dns)
 
+
+### <a name="new-security-alerts-page-in-the-azure-portal-preview"></a>Новая страница оповещений системы безопасности на портале Azure (предварительная версия)
+
+Страница оповещений системы безопасности в Центре безопасности Azure изменена для предоставления следующих возможностей:
+
+- **Улучшен интерфейс для рассмотрения оповещений.** Список включает настраиваемые фильтры и параметры группирования, которые помогают скрыть избыточные оповещения и сосредоточиться на наиболее важных угрозах.
+- **В списки оповещений добавлена информация**, например сведения о тактиках из базы знаний MITRE ATT&ACK.
+- **Кнопка для создания примеров оповещений.** Чтобы оценить возможности Azure Defender и протестировать конфигурацию оповещений (для интеграции SIEM, уведомлений по электронной почте и автоматизации рабочих процессов), можно создать примеры оповещений практически во всех планах Azure Defender.
+- **Согласованность с функциями для инцидентов в Azure Sentinel.** Клиентам, использующим оба продукта, стало удобнее переключаться между ними, а также стал проще обмен данными между этими продуктами.
+- **Улучшена производительность** при работе с большими списками оповещений.
+- **Добавлена навигация** по списку оповещений с помощью клавиатуры.
+- **Оповещения из Azure Resource Graph**. Вы можете запросить оповещения из Azure Resource Graph (работающий по принципу Kusto API) для всех ваших ресурсов. Это также удобно, если вы создаете собственные панели мониторинга для оповещений. [Узнайте больше об Azure Resource Graph.](../governance/resource-graph/index.yml)
+
+Чтобы получить доступ к новому интерфейсу, используйте ссылку "Попробовать сейчас" в баннере вверху страницы "Оповещения системы безопасности".
+
+:::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Баннер со ссылкой на новый интерфейс для работы с оповещениями (предварительная версия)":::
+
+Сведения о том, как создать примеры оповещений в новом интерфейсе, см. в разделе [Создание примеров оповещений Azure Defender](security-center-alert-validation.md#generate-sample-azure-defender-alerts).
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 

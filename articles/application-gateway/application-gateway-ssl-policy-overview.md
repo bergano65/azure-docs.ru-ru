@@ -5,14 +5,14 @@ services: application gateway
 author: amsriva
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 11/16/2019
+ms.date: 12/17/2020
 ms.author: amsriva
-ms.openlocfilehash: 16c6dd28d47573c2ad5b0d5a331b0dc48e7aacef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77239cd8586b8fb07abf6862be436979541bdb99
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85253636"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631696"
 ---
 # <a name="application-gateway-tls-policy-overview"></a>Общие сведения о политике TLS для шлюза приложений
 
@@ -23,6 +23,18 @@ ms.locfileid: "85253636"
 ## <a name="predefined-tls-policy"></a>Предопределенная политика TLS
 
 Шлюз приложений имеет три стандартных политики безопасности. Для настройки шлюза можно использовать любую из этих политик, чтобы обеспечить надлежащий уровень безопасности. В названиях политик указаны год и месяц, в которых они были настроены. Каждая политика предлагает разные версии протокола TLS и комплекты шифров. Для обеспечения оптимальной безопасности TLS рекомендуется использовать новейшие политики TLS.
+
+## <a name="known-issue"></a>Известная проблема
+Шлюз приложений версии 2 не поддерживает следующие шифры ДХЕ, и они не будут использоваться для соединений TLS с клиентами, даже если они упоминаются в стандартных политиках. Вместо шифров ДХЕ рекомендуется использовать безопасные и быстрые шифры ECDHE.
+
+- TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+- TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+- TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+- TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+- TLS_DHE_DSS_WITH_AES_128_CBC_SHA256
+- TLS_DHE_DSS_WITH_AES_128_CBC_SHA
+- TLS_DHE_DSS_WITH_AES_256_CBC_SHA256
+- TLS_DHE_DSS_WITH_AES_256_CBC_SHA
 
 ### <a name="appgwsslpolicy20150501"></a>AppGwSslPolicy20150501
 
@@ -39,7 +51,7 @@ ms.locfileid: "85253636"
 |   ---      |  ---       |
 |Имя     | AppGwSslPolicy20170401        |
 |MinProtocolVersion     | TLSv1_1        |
-|Значение по умолчанию| False |
+|Значение по умолчанию| Неверно |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA |
   
 ### <a name="appgwsslpolicy20170401s"></a>AppGwSslPolicy20170401S
@@ -48,12 +60,16 @@ ms.locfileid: "85253636"
 |---|---|
 |Имя     | AppGwSslPolicy20170401S        |
 |MinProtocolVersion     | TLSv1_2        |
-|Значение по умолчанию| False |
+|Значение по умолчанию| Неверно |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 <br>    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 <br>    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA<br> |
 
 ## <a name="custom-tls-policy"></a>Настраиваемая политика TLS
 
 Если Предопределенная политика TLS должна быть настроена для ваших требований, необходимо определить собственную настраиваемую политику TLS. Благодаря настраиваемой политике TLS вы полностью контролируете минимальную версию протокола TLS для поддержки, а также поддерживаемые комплекты шифров и их порядок приоритета.
+
+> [!IMPORTANT]
+> Если вы используете пользовательскую политику SSL в номере SKU шлюза приложений версии 1 (Standard или WAF), убедитесь, что в список добавлен обязательный шифр "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256". Этот шифр необходим для включения метрик и ведения журнала в номере SKU шлюза приложений версии 1.
+> Это необязательно для SKU шлюза приложений версии 2 (Standard_v2 или WAF_v2).
  
 ### <a name="tlsssl-protocol-versions"></a>Версии протокола TLS/SSL
 
@@ -97,17 +113,6 @@ ms.locfileid: "85253636"
 
 > [!NOTE]
 > Наборы шифров TLS, используемые для соединения, также основываются на типе используемого сертификата. В подключениях клиента к шлюзу приложений используемые комплекты шифров основываются на типе сертификатов сервера в прослушивателе шлюза приложений. В шлюзе приложений к подключениям к серверному пулу используемые комплекты шифров основываются на типе сертификатов сервера на серверах серверного пула.
-
-## <a name="known-issue"></a>Известная проблема
-В настоящее время шлюз приложений версии 2 не поддерживает следующие шифры:
-- ДХЕ-RSA-AES128-GCM-SHA256
-- ДХЕ-RSA-AES128-SHA
-- ДХЕ-RSA-AES256-GCM-SHA384
-- ДХЕ-RSA-AES256-SHA
-- ДХЕ-DSS-AES128-SHA256
-- ДХЕ-DSS-AES128-SHA
-- ДХЕ-DSS-AES256-SHA256
-- ДХЕ-DSS-AES256-SHA
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

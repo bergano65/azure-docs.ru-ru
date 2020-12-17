@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 12/09/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: ff51c2a71dfcaec580733a92e265628ac816e229
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 223f8acd6aad7aaf4c37e0b2eae2df882ed2ad1d
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97096181"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629380"
 ---
 # <a name="tutorial-to-configure-zscaler-private-access-with-azure-active-directory-b2c-for-secure-hybrid-access"></a>Руководство по настройке Zscaler закрытого доступа с помощью Azure Active Directory B2C для безопасного гибридного доступа
 
@@ -72,7 +72,7 @@ ms.locfileid: "97096181"
 
 4. Для **получения сведений о 1 IDP** введите следующее:
 
-   а. **Имя**: Azure AD B2C
+   a. **Имя**: Azure AD B2C
 
    b. **Единый вход**: выбор пользователя
 
@@ -84,7 +84,7 @@ ms.locfileid: "97096181"
 
 6. Для **2 МЕТАДАННЫХ SP**:
 
-   а. Скопируйте URL-адрес поставщика услуг и запишите его для последующего использования.
+   a. Скопируйте URL-адрес поставщика услуг и запишите его для последующего использования.
 
    b. Скопируйте идентификатор сущности поставщика услуг и запишите его для последующего использования.
 
@@ -125,7 +125,7 @@ ms.locfileid: "97096181"
 
 где `<tenant-name>` — имя клиента Azure AD B2C, а `<policy-name>` — имя настраиваемой политики SAML, созданной на предыдущем шаге.
 
-Например https://safemarch.b2clogin.com/safemarch.onmicrosoft.com/B2C_1A_signup_signin_saml//Samlp/metadata.
+Например, " https://safemarch.b2clogin.com/safemarch.onmicrosoft.com/B2C_1A_signup_signin_saml//Samlp/metadata "
 
 Откройте веб-браузер и перейдите по URL-адресу метаданных SAML. При загрузке страницы щелкните правой кнопкой мыши в любом месте страницы. Выберите **сохранить страницу как** и сохраните файл на компьютере. Он будет использоваться в следующей части.
 
@@ -141,7 +141,7 @@ ms.locfileid: "97096181"
 
 4. Для **3. Create IDP**
 
-   а. Перейдите к **файлу метаданных IDP**.  >  **выберите файл** и отправьте файл метаданных, сохраненный в части 4.
+   a. Перейдите к **файлу метаданных IDP**.  >  **выберите файл** и отправьте файл метаданных, сохраненный в части 4.
 
    b. Убедитесь, **что** конфигурация IDP **включена**.
 

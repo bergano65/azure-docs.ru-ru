@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c42495ceab7108d20b0f0dedbf0cf94f5f9352d
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: ef2c9d7e2388d2da7a807fbf6b579360115a8323
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509314"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629805"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -333,6 +333,9 @@ az role assignment create \
 ![Ваша учетная запись настроена для предотвращения использования этого устройства.](./media/howto-vm-sign-in-azure-ad-windows/rbac-role-not-assigned.png)
 
 Убедитесь, что для ВИРТУАЛЬНОЙ машины [настроены политики RBAC Azure](../../virtual-machines/linux/login-using-aad.md) , которые предоставляют пользователю имя входа администратора виртуальной машины или роль входа пользователя виртуальной машины.
+
+> [!NOTE]
+> Если вы используете проблемы с назначениями ролей Azure, см. статью [Устранение неполадок в Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting#azure-role-assignments-limit).
  
 #### <a name="unauthorized-client"></a>Неавторизованный клиент
 

@@ -4,20 +4,20 @@ description: Узнайте, как запустить функцию Azure пр
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/15/2020
+ms.date: 12/16/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 26dee5200a60f4900ed20c2fd49a874552272776
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 1db27db97cdc1746b3392bd386ee6539980cd6d6
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617227"
+ms.locfileid: "97630740"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>Общие сведения о триггере RabbitMQ для функций Azure
 
 > [!NOTE]
-> Привязки RabbitMQ полностью поддерживаются только в планах **Windows Premium** . Использование и Linux в настоящее время не поддерживаются.
+> Привязки RabbitMQ полностью поддерживаются только в **Windows Premium и в выделенных** планах. Использование и Linux в настоящее время не поддерживаются.
 
 Используйте триггер RabbitMQ для реагирования на сообщения из очереди RabbitMQ.
 

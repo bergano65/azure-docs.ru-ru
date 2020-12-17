@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/22/2020
 ms.author: aahi
-ms.openlocfilehash: 80e0de73bbeae2ee1a79199fde34a3c430959ac8
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: cc6bcef77ca1601b76468586aa6af202836f1438
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356711"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631998"
 ---
 # <a name="batch-processing-kit-for-speech-containers"></a>Набор пакетной обработки для речевых контейнеров
 
@@ -25,7 +25,7 @@ ms.locfileid: "93356711"
 
 Контейнер пакета пакетной службы доступен бесплатно в [GitHub](https://github.com/microsoft/batch-processing-kit) и   [DOCKER Hub](https://hub.docker.com/r/batchkit/speech-batch-kit/tags). [Плата взимается](speech-container-howto.md#billing) только за используемые контейнеры речи.
 
-| Функция  | Описание  |
+| Компонент  | Описание  |
 |---------|---------|
 | Распространение пакетного звукового файла     | Автоматическая отправка большого количества файлов в локальные или облачные конечные точки контейнера речи. Файлы могут находиться на любом томе, совместимом с POSIX, в том числе в сетевых файловых системах.       |
 | Интеграция с пакетом SDK для распознавания речи | Передайте общие флаги в пакет SDK для распознавания речи, включая: n-лучшие данные, диаризатион, язык, маскировка на ненормативную лексику.  |
@@ -86,13 +86,13 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs --entrypoint /bin/bash /mn
 Чтобы запустить клиент пакетной службы, выполните следующие действия.  
 
 ```Docker
-run-batch-client -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
+run-batch-client -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -file_log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
 ```
 
 Чтобы запустить клиент и контейнер пакетной службы, выполните одну команду:
 
 ```Docker
-docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
+docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -file_log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
 ```
 
 
@@ -156,7 +156,7 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batc
 > [!NOTE]
 > Клиент пакетной службы может периодически перезаписывать файл *Run. log* , если он становится слишком большим.
 
-Клиент создает файл *Run. log* в каталоге, указанном `-log_folder` аргументом в `run` команде DOCKER. Журналы записываются на уровне отладки по умолчанию. Одни и те же журналы отправляются в `stdout/stderr` и фильтруются в зависимости от `-log_level` аргумента. Этот журнал необходим только для отладки, или если необходимо отправить трассировку для поддержки. В папке Logging также содержатся журналы речевого пакета SDK для каждого звукового файла.
+Клиент создает файл *Run. log* в каталоге, указанном `-log_folder` аргументом в `run` команде DOCKER. Журналы записываются на уровне отладки по умолчанию. Одни и те же журналы отправляются в `stdout/stderr` и фильтруются в зависимости `-file_log_level` от `console_log_level` аргументов или. Этот журнал необходим только для отладки, или если необходимо отправить трассировку для поддержки. В папке Logging также содержатся журналы речевого пакета SDK для каждого звукового файла.
 
 Выходной каталог, заданный параметром, `-output_folder` будет содержать *run_summary.jsв*   файле, который периодически перезаписывается каждые 30 секунд или каждый раз, когда завершается новая транскрипция. Этот файл можно использовать для проверки хода выполнения пакета. Он также будет содержать окончательную статистику выполнения и окончательное состояние каждого файла по завершении выполнения пакета. Выполнение пакета завершается, когда процесс завершается с помощью чистого выхода. 
 

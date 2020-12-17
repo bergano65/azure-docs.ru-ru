@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 470dc146d1658b97a707be8cb7ad868d943a8e60
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 19aa847ce7ce1a6ba727a4733aefcdfad845e8c6
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170908"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629397"
 ---
 # <a name="tutorial-to-configure-nevis-with-azure-active-directory-b2c-for-passwordless-authentication"></a>Руководство по настройке Невис с Azure Active Directory B2C для проверки подлинности без пароля
 
@@ -28,7 +28,7 @@ ms.locfileid: "96170908"
 
 - Невис [пробная учетная запись](https://www.nevis-security.com/aadb2c/)
 
-- Подписка Azure AD. Если у вас ее нет, получите [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- подписка Azure AD; Если у вас ее нет, получите [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 - [Клиент Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с вашей подпиской Azure.
 
@@ -114,7 +114,7 @@ ms.locfileid: "96170908"
 
 5. Выберите **Добавить** и создайте новый ключ со следующими параметрами:
 
-      а. Выбор параметра " **вручную** " в параметрах
+      a. Выбор параметра " **вручную** " в параметрах
 
       b. Задайте имя **аусклаудакцесстокен** .
 
@@ -122,7 +122,7 @@ ms.locfileid: "96170908"
 
       d. Для параметра использование ключа выберите **Шифрование** .
 
-      д) Нажмите кнопку **Создать**
+      д) Выберите **Создать**.
 
 ### <a name="configure-and-upload-the-nevishtml-to-azure-blob-storage"></a>Настройка и отправка nevis.html в хранилище BLOB-объектов Azure
 
@@ -134,9 +134,9 @@ ms.locfileid: "96170908"
 
 4. **Сохраните** изменения в файле.
 
-5. Следуйте [инструкциям](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#2-create-an-azure-blob-storage-account) и передайте файл **nevis.html** в хранилище BLOB-объектов Azure.
+5. Следуйте [инструкциям](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#2-create-an-azure-blob-storage-account) и передайте файл **nevis.html** в хранилище BLOB-объектов Azure.
 
-6. Следуйте [инструкциям](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#3-configure-cors) и включите общий доступ к ресурсам в разных источниках (CORS) для этого файла.
+6. Следуйте [инструкциям](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#3-configure-cors) и включите общий доступ к ресурсам в разных источниках (CORS) для этого файла.
 
 7. После завершения передачи и включения CORS выберите в списке файл **nevis.html** .
 
@@ -256,7 +256,7 @@ ms.locfileid: "96170908"
 
 4. Укажите свой адрес электронной почты.
 
-5. Выберите **Continue** (Продолжить).
+5. Щелкните **Продолжить**.
 
 6. На телефоне в окне уведомления выберите " **Невис Access App Notification**".
 

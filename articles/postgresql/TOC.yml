@@ -553,6 +553,12 @@
               displayName: 'portal, create hyperscale'
     - name: Учебники
       items:
+        - name: Создавать группу серверов
+          href: tutorial-hyperscale-server-group.md
+        - name: Моделирование и загрузка данных
+          items:
+            - name: Сегментирование данных на рабочих узлах
+              href: tutorial-hyperscale-shard.md
         - name: Проектирование мультитенантной базы данных
           href: tutorial-design-database-hyperscale-multi-tenant.md
           displayName: 'hyperscale, tutorial, multi-tenant'

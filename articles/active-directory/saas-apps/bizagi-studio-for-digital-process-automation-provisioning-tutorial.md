@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2020
 ms.author: Zhchia
-ms.openlocfilehash: 141dd37dff8403825df713de8f7176d4dd9d20f8
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: b739cd50c4d4477d3622350a9a9c96b600794c7d
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008050"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97632045"
 ---
 # <a name="tutorial-configure-bizagi-studio-for-digital-process-automation-for-automatic-user-provisioning"></a>Руководство. Настройка Бизаги Studio для автоматизации цифровых процессов для автоматической подготовки пользователей
 
@@ -59,7 +59,7 @@ ms.locfileid: "97008050"
    ![Снимок экрана Бизаги с выделенными приложениями OAuth 2.](media/bizagi-studio-for-digital-process-automation-provisioning-tutorial/admin.png)
 
 3. Выберите **Добавить**.
-4. В качестве **типа предоставления** выберите **токен носителя**. Для **разрешенной области** выберите **API** и **синхронизация пользователей**. Затем выберите **Сохранить**.
+4. В качестве **типа предоставления** выберите **токен носителя**. Для **разрешенной области** выберите **API** и **синхронизация пользователей**. Затем нажмите кнопку **Save** (Сохранить).
 
    ![Снимок экрана: регистрация приложения с выделенным типом предоставления и допустимой областью действия.](media/bizagi-studio-for-digital-process-automation-provisioning-tutorial/token.png)
 
@@ -105,7 +105,7 @@ ms.locfileid: "97008050"
 5. В разделе **учетные данные администратора** введите URL-адрес клиента и секретный маркер для бизаги Studio для автоматизации цифровых процессов. 
 
       * **URL-адрес клиента:** Введите конечную точку SCIM Бизаги со следующей структурой:  `<Your_Bizagi_Project>/scim/v2/` .
-         Например, `https://my-company.bizagi.com/scim/v2/`.
+         Например, так: `https://my-company.bizagi.com/scim/v2/`.
 
       * **Секретный токен:** Это значение извлекается из шага, рассмотренного ранее в этой статье.
 
@@ -117,7 +117,7 @@ ms.locfileid: "97008050"
 
     ![Снимок экрана параметров электронной почты для уведомлений.](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Бизаги Studio для автоматизации цифровых процессов**.
 
@@ -132,7 +132,14 @@ ms.locfileid: "97008050"
    |name.familyName|Строка|
    |name.formatted|Строка|
    |phoneNumbers[type eq "mobile"].value|Строка|
+
+   Настраиваемые атрибуты расширения можно добавить, перейдя к **параметру отобразить дополнительные параметры > изменить список атрибутов для бизаги**. Атрибуты настраиваемого расширения должны иметь префикс **urn: IETF: params: scim: schemas: Extension: бизаги: 2.0: усерпропертиес:**. Например, если настраиваемый атрибут расширения имеет значение **Идентификационныйномер**, атрибут должен быть добавлен в виде **urn: IETF: params: scim: схемы: Extension: бизаги: 2.0: усерпропертиес: Идентификационныйномер**. Чтобы зафиксировать изменения, щелкните **Сохранить**.
    
+    ![Изменить список атрибутов.](media/bizagi-studio-for-digital-process-automation-provisioning-tutorial/edit.png)  
+
+   Дополнительные сведения о добавлении настраиваемых атрибутов можно найти в [таблице Настройка атрибутов приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).
+
+
 10. Чтобы настроить фильтры области, см. [руководство по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. Чтобы включить службу подготовки Azure AD для Бизаги Studio для автоматизации цифровых процессов, в разделе **Параметры** измените значение параметра **состояние подготовки** на **включено**.

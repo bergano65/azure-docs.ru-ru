@@ -3,12 +3,12 @@ title: Частные конечные точки
 description: Изучите процесс создания частных конечных точек для Azure Backup и сценариев, в которых использование частных конечных точек помогает обеспечить безопасность ресурсов.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: 0ca4e7a83e18ac72e25131d320737ce9578b1cf3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3ed71e49ebc550cb7bc2041e25aa6b9bde77b1ef
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184759"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629720"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Частные конечные точки для Azure Backup
 
@@ -26,6 +26,7 @@ Azure Backup позволяет безопасно выполнять резер
 - Azure Active Directory в настоящее время не поддерживает частные конечные точки. Поэтому для Azure Active Directory работы в регионе необходимо разрешить исходящий доступ из защищенной сети при выполнении резервного копирования баз данных на виртуальных машинах Azure и резервного копирования с помощью агента MARS. Вы также можете использовать теги NSG и теги брандмауэра Azure, чтобы разрешить доступ к Azure AD, как применимо.
 - Виртуальные сети с политиками сети не поддерживаются для частных конечных точек. Прежде чем продолжить, необходимо отключить политики сети.
 - Необходимо повторно зарегистрировать поставщик ресурсов служб восстановления с подпиской, если вы зарегистрировали его до 1 2020 мая. Чтобы повторно зарегистрировать поставщик, перейдите к своей подписке в портал Azure, перейдите к **поставщику ресурсов** на левой панели навигации, а затем выберите **Microsoft. RecoveryServices** и щелкните " **Повторная регистрация**".
+- [Восстановление между регионами](backup-create-rs-vault.md#set-cross-region-restore) для SQL и SAP HANA резервных копий баз данных не поддерживается, если в хранилище включены частные конечные точки.
 
 ## <a name="recommended-and-supported-scenarios"></a>Рекомендуемые и поддерживаемые сценарии
 
@@ -305,7 +306,7 @@ PrivateEndpointSubnetContributorRoleDef.jsна
 
 1. Перейдите в корневую папку (например,). `cd /home/user`
 
-1. Выполните следующий сценарий:
+1. Выполните следующий скрипт:
 
     ```azurepowershell
     ./VaultMsiPrereqScript.ps1 -subscription <subscription-Id> -vaultPEResourceGroup <vaultPERG> -vaultPESubnetResourceGroup <subnetRG> -vaultMsiName <msiName>
@@ -389,7 +390,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
 | **Зона**                                                     | **Служба** |
 | ------------------------------------------------------------ | ----------- |
-| `privatelink.<geo>.backup.windowsazure.com`      | Резервное копирование      |
+| `privatelink.<geo>.backup.windowsazure.com`      | Backup      |
 | `privatelink.blob.core.windows.net`                            | BLOB-объект        |
 | `privatelink.queue.core.windows.net`                           | Очередь       |
 
@@ -439,7 +440,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
     ![Добавьте запись для полного доменного имени и частного IP-адреса в качестве записи типа для служба очередей](./media/private-endpoints/add-type-a-record-for-queue.png)
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 У. Можно ли создать частную конечную точку для существующего резервного хранилища?<br>
 A. Нет, частные конечные точки можно создавать только для новых резервных хранилищ. Поэтому хранилище не должно иметь каких-либо элементов, защищенных в нем. На самом деле, перед созданием частных конечных точек не попытается защитить какие бы то ни было элементы в хранилище.

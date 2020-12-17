@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 324a2acbf069e8e23246b99a7d79a3195f737a56
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 836cf4600e353da61673ec8ee5df8f30fb4b9562
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492307"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629856"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -582,7 +582,7 @@ ms.locfileid: "96492307"
 
 **Руководство**. в настоящее время база данных Azure для PostgreSQL-Scale (Цитус) не поддерживает управляемые удостоверения напрямую. При создании сервера базы данных Azure для PostgreSQL необходимо предоставить учетные данные для администратора. В интерфейсе портал Azure можно создавать дополнительные роли пользователей.
 
-- [Создание базы данных Azure для PostgreSQL. Гипермасштабирование (Citus)](./quickstart-create-hyperscale-portal.md#create-an-azure-database-for-postgresql---hyperscale-citus)
+- [Создание базы данных Azure для PostgreSQL. Гипермасштабирование (Citus)](./quickstart-create-hyperscale-portal.md#create-a-hyperscale-citus-server-group)
 
 - [Создание дополнительных ролей пользователей](./howto-hyperscale-create-users.md#how-to-create-additional-user-roles)
 

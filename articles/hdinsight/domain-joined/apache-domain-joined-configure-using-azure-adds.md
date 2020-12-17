@@ -1,5 +1,5 @@
 ---
-title: Настройка кластеров для интеграции Active Directory
+title: Настройка кластеров для интеграции Azure Active Directory
 titleSuffix: Azure HDInsight
 description: Узнайте, как настроить и настроить кластер HDInsight, интегрированный с Active Directory, с помощью Azure Active Directory доменных служб и Корпоративный пакет безопасности компонента.
 author: hrasheed-msft
@@ -9,20 +9,20 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seodec18,seoapr2020, contperf-fy21q2
 ms.date: 10/30/2020
-ms.openlocfilehash: 248d909e633607271aec7c2c9b8a373f111f7d98
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: c5c5db892f417f2e2ef3fde3535d806d39342327
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031488"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631556"
 ---
-# <a name="configure-hdinsight-clusters-for-active-directory-integration-with-enterprise-security-package"></a>Настройка кластеров HDInsight для интеграции Active Directory с Корпоративный пакет безопасности
+# <a name="configure-hdinsight-clusters-for-azure-active-directory-integration-with-enterprise-security-package"></a>Настройка кластеров HDInsight для интеграции Azure Active Directory с Корпоративный пакет безопасности
 
-В этой статье вы узнаете, как создать и настроить кластер HDInsight, интегрированный с Active Directory, с помощью функции Корпоративный пакет безопасности (ESP), Azure Active Directory доменных служб (Azure AD-DS) и ранее существующей локальной Active Directory.
+Эта статья содержит сводку и обзор процесса создания и настройки кластера HDInsight, интегрированного с Azure Active Directory. Эта интеграция зависит от функции HDInsight, которая называется Корпоративный пакет безопасности (ESP), Azure Active Directory доменных служб (Azure AD-DS) и ранее существовавшей локальной Active Directory.
 
-Руководство по настройке и настройке домена в Azure и созданию кластера с поддержкой ESP см. [в статье Создание и настройка кластеров корпоративный пакет безопасности в Azure HDInsight](apache-domain-joined-create-configure-enterprise-security-cluster.md).
+Подробное пошаговое руководство по настройке и настройке домена в Azure и созданию кластера с поддержкой ESP с последующей синхронизацией локальных пользователей см. [в статье Создание и настройка кластеров корпоративный пакет безопасности в Azure HDInsight](apache-domain-joined-create-configure-enterprise-security-cluster.md).
 
-## <a name="background"></a>История
+## <a name="background"></a>Историческая справка
 
 Корпоративный пакет безопасности (ESP) обеспечивает интеграцию Active Directory для Azure HDInsight. Такая интеграция позволяет пользователям домена использовать учетные данные домена для аутентификации в кластерах HDInsight и выполнения заданий обработки больших данных.
 
@@ -33,12 +33,13 @@ ms.locfileid: "97031488"
 
 Прежде чем можно будет создать кластер HDInsight с поддержкой ESP, необходимо выполнить несколько предварительных требований:
 
+- Существующие локальные Active Directory и Azure Active Directory.
 - Включите Azure AD-DS.
 - Проверьте состояние работоспособности DS Azure AD, чтобы убедиться, что синхронизация завершена.
 - Создание и авторизация управляемого удостоверения.
 - Завершите настройку сети для DNS и связанных с ней проблем.
 
-Каждый из этих элементов будет подробно рассмотрен ниже.
+Каждый из этих элементов будет подробно рассмотрен ниже. Пошаговое руководство по выполнению всех этих действий см. [в статье Создание и настройка кластеров корпоративный пакет безопасности в Azure HDInsight](apache-domain-joined-create-configure-enterprise-security-cluster.md).
 
 ### <a name="enable-azure-ad-ds"></a>Включение Azure AD DS
 

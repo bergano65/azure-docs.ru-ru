@@ -112,6 +112,8 @@
       href: my-apps-portal-end-user-groups.md
     - name: Упорядочение приложений с использованием коллекций
       href: my-applications-portal-workspaces.md
+    - name: Предварительный просмотр коллекций в разделе "Мои приложения"
+      href: my-apps-portal-user-collections.md
     - name: Изменение или отмена разрешений приложения
       href: my-applications-portal-permissions-saved-accounts.md
     - name: Выполнение собственных проверок доступа

@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 11/18/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: f7e16400f6460f7479cdffd1928126cdd70a8f0c
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 872958f87e7d75427d5939aed73314920cfaf3ea
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504004"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631097"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинного обучения Azure.
 
@@ -75,34 +75,23 @@ ms.locfileid: "97504004"
 
 Чтобы развернуть (или повторно развернуть) службу с включенным протоколом TLS, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
 
-### <a name="deploy-on-aks-and-field-programmable-gate-array-fpga"></a>Развертывание в AKS и программируемом массиве Gates (FPGA)
+### <a name="deploy-on-azure-kubernetes-service"></a>Развертывание в службе Kubernetes Azure
 
   > [!NOTE]
   > Сведения в этом разделе также применяются при развертывании безопасной веб-службы для конструктора. Если вы не знакомы с использованием пакета SDK для Python, см. статью [что такое пакет SDK для машинное обучение Azure для Python?](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
 
-При развертывании в AKS можно создать новый кластер AKS или подключить существующий. Дополнительные сведения о создании или присоединении кластера см. в статье [развертывание модели в кластере службы Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
-  
--  При создании нового кластера используется **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)**.
-- При присоединении существующего кластера используется **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)**. Оба возвращают объект конфигурации, имеющий метод **enable_ssl** .
+Как **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** , так и **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** возвращают объект конфигурации, имеющий метод **ENABLE_SSL** , и для включения TLS можно использовать метод **enable_ssl** .
 
-Метод **enable_ssl** может использовать сертификат, предоставляемый корпорацией Майкрософт или сертификатом, который вы приобрели.
+TLS можно включить с помощью сертификата Майкрософт или специального сертификата, приобретенного в центре сертификации. 
 
-> [!WARNING]
-> Если в кластере AKS настроен внутренний балансировщик нагрузки, использование сертификата, предоставленного корпорацией Майкрософт, __не поддерживается__. Для использования сертификата, предоставленного корпорацией Майкрософт, требуется ресурс общедоступного IP-адреса в Azure, который недоступен для AKS при настройке для внутренней подсистемы балансировки нагрузки.
-
-  * При использовании сертификата от корпорации Майкрософт необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение Contoso создает доменное имя Contoso \<six-random-characters> . \<azureregion> cloudapp.azure.com ", где \<azureregion> — регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label*.
-
-    Чтобы развернуть (или повторно развернуть) службу с включенным протоколом TLS, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
-
-    > [!IMPORTANT]
-    > При использовании сертификата от корпорации Майкрософт вам не нужно приобретать собственный сертификат или имя домена.
-
-    В следующем примере показано, как создать конфигурацию, которая включает сертификат TLS/SSL от Майкрософт:
+* **При использовании сертификата от корпорации Майкрософт** необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение Contoso создает доменное имя Contoso \<six-random-characters> . \<azureregion> cloudapp.azure.com ", где \<azureregion> — регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label*. В следующем примере показано, как создать конфигурацию, которая включает TLS с сертификатом Майкрософт:
 
     ```python
     from azureml.core.compute import AksCompute
+
     # Config used to create a new AKS cluster and enable TLS
     provisioning_config = AksCompute.provisioning_configuration()
+
     # Leaf domain label generates a name using the formula
     #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
     #  where "######" is a random series of characters
@@ -112,20 +101,28 @@ ms.locfileid: "97504004"
     # Config used to attach an existing AKS cluster to your workspace and enable TLS
     attach_config = AksCompute.attach_configuration(resource_group = resource_group,
                                           cluster_name = cluster_name)
+
     # Leaf domain label generates a name using the formula
     #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
     #  where "######" is a random series of characters
     attach_config.enable_ssl(leaf_domain_label = "contoso")
     ```
+    > [!IMPORTANT]
+    > При использовании сертификата от корпорации Майкрософт вам не нужно приобретать собственный сертификат или имя домена.
 
-  * При использовании *приобретенного сертификата* вы используете параметры *ssl_cert_pem_file*, *ssl_key_pem_file* и *ssl_cname* . В следующем примере показано, как использовать *PEM* -файлы для создания конфигурации, использующей приобретенный сертификат TLS/SSL.
+    > [!WARNING]
+    > Если в кластере AKS настроен внутренний балансировщик нагрузки, использование сертификата, предоставленного корпорацией Майкрософт, __не поддерживается__ , и для включения TLS необходимо использовать пользовательский сертификат.
 
+* **При использовании пользовательского сертификата, который вы приобрели**, используются параметры *ssl_cert_pem_file*, *ssl_key_pem_file* и *ssl_cname* . В следующем примере показано, как использовать PEM-файлы для создания конфигурации, использующей приобретенный сертификат TLS/SSL.
+ 
     ```python
     from azureml.core.compute import AksCompute
+
     # Config used to create a new AKS cluster and enable TLS
     provisioning_config = AksCompute.provisioning_configuration()
     provisioning_config.enable_ssl(ssl_cert_pem_file="cert.pem",
                                         ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+
     # Config used to attach an existing AKS cluster to your workspace and enable SSL
     attach_config = AksCompute.attach_configuration(resource_group = resource_group,
                                          cluster_name = cluster_name)
@@ -150,23 +147,17 @@ aci_config = AciWebservice.deploy_configuration(
 
 ## <a name="update-your-dns"></a>Обновление DNS
 
-Теперь необходимо обновить DNS, чтобы оно указывало на веб-службу.
+Для развертывания AKS с настраиваемым сертификатом или развертыванием ACI необходимо обновить запись DNS, чтобы она указывала на IP-адрес конечной точки оценки.
 
-+ **Для экземпляров контейнеров:**
+  > [!IMPORTANT]
+  > При использовании сертификата от Майкрософт для развертывания AKS не требуется вручную обновлять значение DNS для кластера. Значение должно быть задано автоматически.
 
-  Используйте средства регистратора доменных имен, чтобы обновить запись DNS для доменного имени. Запись должна указывать на IP-адрес службы.
+Чтобы обновить запись DNS для имени личного домена, выполните следующие действия.
+* Возвращает IP-адрес конечной точки оценки из универсального кода ресурса (URI) конечной точки оценки, который обычно имеет формат *http://104.214.29.152:80/api/v1/service/<service-name>/score* . 
+* Используйте средства регистратора доменных имен, чтобы обновить запись DNS для доменного имени. Запись должна указывать на IP-адрес конечной точки оценки.
+* После обновления записи DNS можно проверить разрешение DNS с помощью команды *nslookup Custom-domain-name* . Если запись DNS обновляется правильно, имя личного домена будет указывать на IP-адрес конечной точки оценки.
+* Может быть задержка в минутах или часах, прежде чем клиенты смогут разрешить доменное имя в зависимости от регистратора и срока жизни (TTL), настроенного для доменного имени.
 
-  Может быть задержка в минутах или часах, прежде чем клиенты смогут разрешить доменное имя в зависимости от регистратора и срока жизни (TTL), настроенного для доменного имени.
-
-+ **Для AKS:**
-
-  > [!WARNING]
-  > Если вы использовали *leaf_domain_label* для создания службы с помощью сертификата от Майкрософт, не обновляйте вручную значение DNS для кластера. Значение должно быть задано автоматически.
-  >
-  > Если в кластере AKS настроен внутренний балансировщик нагрузки, использование предоставленного Майкрософт сертификата (путем установки *leaf_domain_label*) __не поддерживается__. Для использования сертификата, предоставленного корпорацией Майкрософт, требуется ресурс общедоступного IP-адреса в Azure, который недоступен для AKS при настройке для внутренней подсистемы балансировки нагрузки.
-  Обновите DNS общедоступного IP-адреса кластера AKS на вкладке **Конфигурация** в разделе **Параметры** в левой области. (См. следующее изображение.) Общедоступный IP-адрес — это тип ресурса, который создается в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
-
-  [![Машинное обучение Azure: Защита веб-служб с помощью TLS](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)
 
 ## <a name="update-the-tlsssl-certificate"></a>Обновление сертификата TLS/SSL
 

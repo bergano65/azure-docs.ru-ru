@@ -1,6 +1,6 @@
 ---
-title: Создание настраиваемой роли Azure с помощью шаблона Azure Resource Manager — Azure RBAC
-description: Узнайте, как создать настраиваемую роль Azure с помощью шаблона Azure Resource Manager (шаблон ARM) и управления доступом на основе ролей Azure (Azure RBAC).
+title: Создание или обновление пользовательских ролей Azure с помощью шаблона Azure Resource Manager — Azure RBAC
+description: Узнайте, как создать или обновить пользовательские роли Azure с помощью шаблона Azure Resource Manager (шаблон ARM) и управления доступом на основе ролей Azure (Azure RBAC).
 services: role-based-access-control,azure-resource-manager
 author: rolyon
 manager: mtillman
@@ -8,24 +8,24 @@ ms.service: role-based-access-control
 ms.topic: how-to
 ms.custom: subject-armqs
 ms.workload: identity
-ms.date: 06/25/2020
+ms.date: 12/16/2020
 ms.author: rolyon
-ms.openlocfilehash: 96dfdc0a1c32237c55d4e65bb25989656e2a4ad2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: beea0c5cecd7bb99973a4692a4cce17e7a69d708
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097028"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631318"
 ---
-# <a name="create-an-azure-custom-role-using-an-arm-template"></a>Создание настраиваемой роли Azure с помощью шаблона ARM
+# <a name="create-or-update-azure-custom-roles-using-an-arm-template"></a>Создание или обновление пользовательских ролей Azure с помощью шаблона ARM
 
-Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные [пользовательские роли](custom-roles.md). В этой статье описывается создание пользовательской роли с помощью шаблона Azure Resource Manager (шаблон ARM).
+Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные [пользовательские роли](custom-roles.md). В этой статье описывается создание или обновление пользовательской роли с помощью шаблона Azure Resource Manager (шаблон ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 Чтобы создать пользовательскую роль, необходимо указать имя роли, разрешения и место, где можно использовать эту роль. В этой статье вы создадите роль _Custom Role-RG читатель_ с разрешениями ресурсов, которые могут быть назначены в области действия подписки или ниже.
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsubscription-deployments%2Fcreate-role-def%2Fazuredeploy.json)
 
@@ -66,15 +66,13 @@ ms.locfileid: "93097028"
     $location = Read-Host -Prompt "Enter a location (i.e. centralus)"
     [string[]]$actions = Read-Host -Prompt "Enter actions as a comma-separated list (i.e. action1,action2)"
     $actions = $actions.Split(',')
-
     $templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/subscription-deployments/create-role-def/azuredeploy.json"
-
     New-AzDeployment -Location $location -TemplateUri $templateUri -actions $actions
     ```
 
-1. Введите расположение для развертывания, например *centralus* .
+1. Введите расположение для развертывания, например `centralus` .
 
-1. Введите список действий для пользовательской роли в виде списка с разделителями-запятыми *, например Microsoft. Resources/Resources/Read, Microsoft. Resources/Subscriptions/resourceGroups/Read* .
+1. Введите список действий для пользовательской роли в виде списка с разделителями-запятыми, например `Microsoft.Resources/resources/read,Microsoft.Resources/subscriptions/resourceGroups/read` .
 
 1. При необходимости нажмите клавишу ВВОД, чтобы выполнить `New-AzDeployment` команду.
 
@@ -143,15 +141,56 @@ ms.locfileid: "93097028"
 
 1. В портал Azure откройте подписку.
 
-1. В меню слева выберите **Управление доступом (IAM)** .
+1. В меню слева выберите **Управление доступом (IAM)**.
 
 1. Перейдите на вкладку **роли** .
 
-1. Задайте для списка **типов** значение **кустомроле** .
+1. Задайте для списка **типов** значение **кустомроле**.
 
 1. Убедитесь, что в списке указана **пользовательская роль читателя RG** .
 
    ![Новая настраиваемая роль в портал Azure](./media/custom-roles-template/custom-role-template-portal.png)
+
+## <a name="update-a-custom-role"></a>Обновление пользовательской роли
+
+Аналогично созданию пользовательской роли можно обновить существующую пользовательскую роль с помощью шаблона. Чтобы обновить пользовательскую роль, необходимо указать роль, которую требуется обновить.
+
+Ниже приведены изменения, которые необходимо внести в предыдущий шаблон быстрого запуска для обновления пользовательской роли.
+
+- Включите идентификатор роли в качестве параметра.
+    ```json
+        ...
+        "roleDefName": {
+          "type": "string",
+          "metadata": {
+            "description": "ID of the role definition"
+          }
+        ...
+    ```
+
+- Включите параметр идентификатора роли в определение роли.
+
+    ```json
+      ...
+      "resources": [
+        {
+          "type": "Microsoft.Authorization/roleDefinitions",
+          "apiVersion": "2018-07-01",
+          "name": "[parameters('roleDefName')]",
+          "properties": {
+            ...
+    ```
+
+Ниже приведен пример развертывания шаблона.
+
+```azurepowershell
+$location = Read-Host -Prompt "Enter a location (i.e. centralus)"
+[string[]]$actions = Read-Host -Prompt "Enter actions as a comma-separated list (i.e. action1,action2)"
+$actions = $actions.Split(',')
+$roleDefName = Read-Host -Prompt "Enter the role ID to update"
+$templateFile = "rg-reader-update.json"
+New-AzDeployment -Location $location -TemplateFile $templateFile -actions $actions -roleDefName $roleDefName
+```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

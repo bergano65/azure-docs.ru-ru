@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/10/2020
 ms.author: jodowns
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8890eb76e3f9521aa5070789f969ffeb8f3e4ec6
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 409ba7a954830bb2370ce83989b9e8b08b742fe7
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618929"
+ms.locfileid: "97631182"
 ---
 # <a name="assign-a-managed-identity-access-to-an-application-role-using-powershell"></a>Назначение управляемому удостоверению доступа к роли приложения с помощью PowerShell
 
@@ -35,10 +35,10 @@ ms.locfileid: "97618929"
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Выполнить примеры скриптов можно двумя способами:
-    - используйте службу [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **Попробовать** в правом верхнем углу блоков кода.
+    - Используйте [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **попробовать** в правом верхнем углу блоков кода.
     - Выполните сценарии локально, установив последнюю версию [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
 
-## <a name="use-azure-ad-to-assign-a-managed-identity-access-to-another-applications-app-role"></a>Назначение управляемому удостоверению доступа к роли приложения другого приложения с помощью Azure AD
+## <a name="assign-a-managed-identity-access-to-another-applications-app-role"></a>Назначение управляемому удостоверению доступа к роли приложения другого приложения
 
 1. Включите управляемое удостоверение в ресурсе Azure, [например на виртуальной машине Azure](qs-configure-powershell-windows-vm.md).
 
@@ -86,14 +86,53 @@ ms.locfileid: "97618929"
 
 1. Назначьте роль приложения управляемому удостоверению. Для назначения роли приложения потребуются следующие сведения:
     * `managedIdentityObjectId`— Идентификатор объекта субъекта-службы управляемого удостоверения, который вы нашли на шаге 2.
-    * `serverApplicationObjectId`— Идентификатор объекта субъекта-службы серверного приложения, который вы нашли на шаге 4.
+    * `serverServicePrincipalObjectId`— Идентификатор объекта субъекта-службы серверного приложения, который вы нашли на шаге 4.
     * `appRoleId`: идентификатор роли приложения, предоставляемой серверным приложением, созданным на шаге 5. в этом примере идентификатор роли приложения — `0566419e-bb95-4d9d-a4f8-ed9a0f147fa6` .
    
    Выполните следующий сценарий PowerShell, чтобы добавить назначение роли:
 
     ```powershell
-    New-AzureADServiceAppRoleAssignment -ObjectId $managedIdentityObjectId -Id $appRoleId -PrincipalId $managedIdentityObjectId -ResourceId $serverApplicationObjectId
+    New-AzureADServiceAppRoleAssignment -ObjectId $managedIdentityObjectId -Id $appRoleId -PrincipalId $managedIdentityObjectId -ResourceId $serverServicePrincipalObjectId
     ```
+
+## <a name="complete-script"></a>Полный скрипт
+
+В этом примере сценария показано, как назначить управляемое удостоверение веб-приложения Azure роли приложения.
+
+```powershell
+# Install the module. (You need admin on the machine.)
+# Install-Module AzureAD
+
+# Your tenant ID (in the Azure portal, under Azure Active Directory > Overview).
+$tenantID = '<tenant-id>'
+
+# The name of your web app, which has a managed identity that should be assigned to the server app's app role.
+$webAppName = '<web-app-name>'
+$resourceGroupName = '<resource-group-name-containing-web-app>'
+
+# The name of the server app that exposes the app role.
+$serverApplicationName = '<server-application-name>' # For example, MyApi
+
+# The name of the app role that the managed identity should be assigned to.
+$appRoleName = '<app-role-name>' # For example, MyApi.Read.All
+
+# Look up the web app's managed identity's object ID.
+$managedIdentityObjectId = (Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $webAppName).identity.principalid
+
+Connect-AzureAD -TenantId $tenantID
+
+# Look up the details about the server app's service principal and app role.
+$serverServicePrincipal = (Get-AzureADServicePrincipal -Filter "DisplayName eq '$serverApplicationName'")
+$serverServicePrincipalObjectId = $serverServicePrincipal.ObjectId
+$appRoleId = ($serverServicePrincipal.AppRoles | Where-Object {$_.Value -eq $appRoleName }).Id
+
+# Assign the managed identity access to the app role.
+New-AzureADServiceAppRoleAssignment `
+    -ObjectId $managedIdentityObjectId `
+    -Id $appRoleId `
+    -PrincipalId $managedIdentityObjectId `
+    -ResourceId $serverServicePrincipalObjectId
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

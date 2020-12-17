@@ -86,8 +86,8 @@
                 - name: Скрипт SQL
                   href: ./sql/author-sql-script.md
                   displayname: author
-                - name: Поток данных для сопоставления
-                  href: ../data-factory/concepts-data-flow-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: Поток данных
+                  href: concepts-data-flow-overview.md
         - name: Расписание обслуживания
           href: ./sql-data-warehouse/maintenance-scheduling.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Система управления версиями
@@ -660,8 +660,8 @@
           href: ../data-factory/concepts-integration-runtime.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Потоки данных
           items:
-            - name: Общие сведения о сопоставлении потоков данных
-              href: ../data-factory/concepts-data-flow-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Общие сведения о потоке данных
+              href: concepts-data-flow-overview.md
             - name: Режим отладки
               href: ../data-factory/concepts-data-flow-debug-mode.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Смещение схемы

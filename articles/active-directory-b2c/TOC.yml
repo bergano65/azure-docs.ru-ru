@@ -119,6 +119,22 @@
           href: signin-appauth-ios.md
         - name: Использование Android и AppAuth
           href: signin-appauth-android.md
+    - name: Создание потока
+      items:
+        - name: Политика регистрации или входа
+          href: add-sign-up-and-sign-in-policy.md
+        - name: Политика сброса пароля
+          href: add-password-reset-policy.md
+        - name: Политика изменения пароля
+          href: add-password-change-policy.md
+        - name: Политика изменения профиля
+          href: add-profile-editing-policy.md
+        - name: Политика учетных данных для пароля владельца ресурса
+          href: add-ropc-policy.md
+        - name: Настройка политики самостоятельного сброса пароля (не рекомендуется)
+          href: user-flow-self-service-password-reset.md
+        - name: Регистрация и вход с помощью телефона
+          href: phone-authentication-user-flows.md
     - name: Поставщики удостоверений
       items:
         - name: Добавьте поставщик удостоверений
@@ -192,38 +208,18 @@
           href: conditional-access-user-flow.md
     - name: Настройка проверки возраста
       href: basic-age-gating.md
-    - name: Поток пользователя
+    - name: Соединители API (предварительная версия)
       items:
-        - name: Создание потока
-          items:
-            - name: Регистрация или вход
-              href: tutorial-create-user-flows.md
-            - name: Учетные данные владельца ресурса
-              href: configure-ropc.md
-            - name: Настройка самостоятельного сброса пароля
-              href: user-flow-self-service-password-reset.md
-        - name: Соединители API (предварительная версия)
-          items:
-            - name: Обзор
-              href: api-connectors-overview.md
-            - name: Добавление соединителя API
-              href: add-api-connector.md
+        - name: Обзор
+          href: api-connectors-overview.md
+        - name: Добавление соединителя API
+          href: add-api-connector.md
     - name: Настраиваемая политика
       items:
         - name: Общие сведения о настраиваемой политике
           href: custom-policy-trust-frameworks.md
         - name: Начало работы с настраиваемыми политиками
           href: custom-policy-get-started.md
-        - name: Создание политики
-          items:
-            - name: Учетные данные владельца ресурса
-              href: ropc-custom.md
-              displayName: ropc
-            - name: Изменение пароля
-              href: custom-policy-password-change.md
-            - name: Регистрация и вход с помощью телефона
-              href: phone-authentication.md
-              displayName: 'otp, passwordless, phone number'
         - name: Пользовательская проверка по электронной почте
           items:
             - name: Mailjet
