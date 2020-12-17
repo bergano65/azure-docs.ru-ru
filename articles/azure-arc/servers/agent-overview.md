@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 12/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 531041b7d7439dd2a48fa9e06eb82796f470e9ed
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 0532441e1ab0d2676e7800c9d63878f9bf3bb3dc
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563030"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616167"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "97563030"
 
 Агент Azure Connected Machine официально поддерживают следующие версии операционных систем Windows и Linux:
 
-- Windows Server 2012 R2 или более поздние версии (в том числе Windows Server Core)
+- Windows Server 2008 R2, Windows Server 2012 R2 и более поздние версии (включая Server Core)
 - Ubuntu 16,04 и 18,04 LTS (x64)
 - CentOS Linux 7 (x64);
 - SUSE Linux Enterprise Server (SLES) 15 (x64)
@@ -260,7 +260,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

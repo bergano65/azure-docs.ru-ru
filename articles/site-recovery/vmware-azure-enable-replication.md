@@ -6,18 +6,18 @@ ms.service: site-recovery
 ms.date: 12/07/2020
 ms.topic: conceptual
 ms.author: ramamill
-ms.openlocfilehash: a1f4759bc40c4074f0dd618be8ac66ad088e848c
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7e4f18b5d4f074d6596b375cbc11f40c2ab69d68
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587763"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616615"
 ---
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Включение репликации в Azure для виртуальных машин VMware
 
 В этой статье описывается, как включить репликацию локальных виртуальных машин VMware (VM) в Azure.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что система соответствует следующим критериям.
 
@@ -109,7 +109,7 @@ ms.locfileid: "97587763"
 - Завершено в процентах — указывает процент завершения начальной репликации для виртуальной машины.
 - Всего передано данных — объем данных, передаваемых из виртуальной машины в Azure
 
-:::image type="content" source="media/vmware-azure-enable-replication/initial-replication-state.png" alt-text="состояние репликации" lightbox="media/vmware-azure-enable-replication/initial-replication-state.png":::
+    :::image type="content" source="media/vmware-azure-enable-replication/initial-replication-state.png" alt-text="состояние репликации" lightbox="media/vmware-azure-enable-replication/initial-replication-state.png":::
 
 - Ход выполнения синхронизации (для отслеживания сведений на уровне диска)
     - Состояние репликации

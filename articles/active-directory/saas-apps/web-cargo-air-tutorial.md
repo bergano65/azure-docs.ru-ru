@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 9a62576b65be04414580b42377398e27c4aa389c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 3cca568245dfce01fb96d7a46590cb72349213ac
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353567"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591962"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-web-cargo-air"></a>Руководство по интеграции единого входа Azure Active Directory с Web Cargo Air
 
@@ -88,7 +88,7 @@ ms.locfileid: "96353567"
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
-    ![The Certificate download link](common/certificatebase64.png)
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
 1. Требуемые URL-адреса можно скопировать из раздела **Настройка Web Cargo Air**.
 

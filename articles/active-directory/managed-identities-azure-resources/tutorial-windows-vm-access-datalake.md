@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/14/2018
+ms.date: 12/15/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d29edec6145ebc03218264532cae07b6afc9654c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 908fb1ac869ec2b22085af2e07ced6ff64229308
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89254208"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97592489"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-data-lake-store"></a>Руководство по Получение доступа к Azure Data Lake Storage с помощью назначаемого системой управляемого удостоверения на виртуальной машине Windows
 
@@ -34,7 +34,12 @@ ms.locfileid: "89254208"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
+- Основные сведения об управляемых удостоверениях. См. дополнительные сведения об [управляемых удостоверениях для ресурсов Azure](overview.md). 
+- Учетная запись Azure. Зарегистрируйте [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Разрешения роли "Владелец" в соответствующей области (подписка или группа ресурсов) для выполнения требуемых операций создания ресурсов и управления ролями учетной записи. Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../../role-based-access-control/role-assignments-portal.md), если нуждаетесь в помощи с назначением ролей.
+- Кроме того, вам потребуется виртуальная машина Windows с включенными управляемыми удостоверениями, назначенными системой.
+  - Если вам нужно создать виртуальную машину для работы с этим руководством, см. раздел [Управляемое удостоверение, назначаемое системой](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity).
+
 
 
 

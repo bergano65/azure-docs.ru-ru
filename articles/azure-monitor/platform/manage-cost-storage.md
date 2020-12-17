@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/22/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: a6b92d1b7f36b73d91b8e0e8e519981b936d8735
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 99375abbf8e9749712b878ea35c9bc034bedbc5e
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97592438"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616150"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor    
 
@@ -266,7 +266,7 @@ Usage
 - "Имя правила генерации оповещений" — "Достигнут ежедневный предел сбора данных";
 - "Уровень серьезности" — "Предупреждение (серьезность 1)"
 
-Как только будет определено оповещение и достигнут предел, активируется предупреждение и будет выполнен ответ, определенный в группе действий. Ваша команда может получать сообщение по электронной почте и текстовое сообщение, могут быть автоматизированы действия с помощью веб-перехватчиков, модулей Runbook службы автоматизации или же выполнена [интеграция с внешним решением ITSM](itsmc-overview.md#create-itsm-work-items-from-azure-alerts). 
+Как только будет определено оповещение и достигнут предел, активируется предупреждение и будет выполнен ответ, определенный в группе действий. Ваша команда может получать сообщение по электронной почте и текстовое сообщение, могут быть автоматизированы действия с помощью веб-перехватчиков, модулей Runbook службы автоматизации или же выполнена [интеграция с внешним решением ITSM](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts). 
 
 ## <a name="troubleshooting-why-usage-is-higher-than-expected"></a>Превышенный объем данных: причины и устранение
 

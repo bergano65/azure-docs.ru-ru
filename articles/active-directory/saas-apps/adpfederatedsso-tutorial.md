@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/26/2019
 ms.author: jeedes
-ms.openlocfilehash: cf6973242e81cef53625a3b1eda4f2d92e1d5ffd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0d78f2c8da338a92ef88734371647a48ddb190c3
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998640"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591231"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adp"></a>Руководство по интеграции единого входа Azure Active Directory с ADP
 
@@ -155,11 +155,11 @@ ms.locfileid: "95998640"
 
     ![Свойства единого входа по ссылке](./media/adpfederatedsso-tutorial/tutorial_adp_linkedproperties.png)
 
-    а.  Задайте для параметра **Включен ли вход для пользователей?** значение **Да**.
+    1. Задайте для параметра **Включен ли вход для пользователей?** значение **Да**.
 
-    b.  Задайте для параметра **Требуется назначение пользователей** значение **Да**.
+    1. Задайте для параметра **Требуется назначение пользователей** значение **Да**.
 
-    c.  Задайте для параметра **Видно пользователям?** значение **Да**.
+    1. Задайте для параметра **Видно пользователям?** значение **Да**.
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **ADP** найдите раздел **Управление** и выберите **Единый вход**.
 
@@ -171,39 +171,39 @@ ms.locfileid: "95998640"
 
     ![Свойства единого входа](./media/adpfederatedsso-tutorial/tutorial_adp_linkedsignon.png)
 
-    а. Вставьте **URL-адрес пользовательского доступа**, который вы скопировали ранее на вкладке **Свойства** (из основного приложения ADP).
-                                                             
-    b. Ниже перечислены 5 приложений, которые поддерживают разные **URL-адреса состояния ретранслятора**. Необходимо вручную добавить соответствующее значение **URL-адреса состояния ретранслятора** к **URL-адресу пользовательского доступа** для конкретного приложения.
-    
-    * **ADP Workforce Now**
-        
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?WFN`
+    1. Вставьте **URL-адрес пользовательского доступа**, который вы скопировали ранее на вкладке **Свойства** (из основного приложения ADP).
 
-    * **ADP Workforce Now Enhanced Time**
-        
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?EETDC2`
-    
-    * **ADP Vantage HCM**
-        
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?ADPVANTAGE`
+    1. Ниже перечислены 5 приложений, которые поддерживают разные **URL-адреса состояния ретранслятора**. Необходимо вручную добавить соответствующее значение **URL-адреса состояния ретранслятора** к **URL-адресу пользовательского доступа** для конкретного приложения.
 
-    * **ADP Enterprise HR**
+        * **ADP Workforce Now**
 
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?PORTAL`
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?WFN`
 
-    * **MyADP**
+        * **ADP Workforce Now Enhanced Time**
 
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?REDBOX`
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?EETDC2`
 
-9. **Сохраните** изменения.
+        * **ADP Vantage HCM**
 
-10. Получив подтверждение от представителя ADP, приступите к тестированию с использованием одного или двух пользователей.
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?ADPVANTAGE`
 
-    а. Назначьте приложению службы ADP нескольких пользователей для тестирования федеративного доступа.
+        * **ADP Enterprise HR**
 
-    b. Проверка считается успешной, если пользователи получают доступ к приложению службы ADP в коллекции и могут открыть назначенную им службу ADP.
- 
-11. После подтверждения успешной проверки назначьте службу федеративного доступа ADP отдельным пользователям или группам пользователей, что описано далее в этом руководстве, и разверните ее для своих сотрудников.
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?PORTAL`
+
+        * **MyADP**
+
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?REDBOX`
+
+1. **Сохраните** внесенные изменения.
+
+1. Получив подтверждение от представителя ADP, приступите к тестированию с использованием одного или двух пользователей.
+
+    1. Назначьте приложению службы ADP нескольких пользователей для тестирования федеративного доступа.
+
+    1. Проверка считается успешной, если пользователи получают доступ к приложению службы ADP в коллекции и могут открыть назначенную им службу ADP.
+
+1. После подтверждения успешной проверки назначьте службу федеративного доступа ADP отдельным пользователям или группам пользователей, что описано далее в этом руководстве, и разверните ее для своих сотрудников.
 
 ### <a name="create-adp-test-user"></a>Создание тестового пользователя ADP
 
@@ -222,5 +222,3 @@ ms.locfileid: "95998640"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
-
-- [Проверьте работу ADP с Azure AD](https://aad.portal.azure.com)

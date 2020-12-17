@@ -4,12 +4,12 @@ description: Создание субъект-службы Azure Active Directory
 services: container-service
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: e95eae3ab8d992bc169e54700e7e31715e72102e
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: c6f50b152174cee1ee2cc37baa22432957107d2c
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607829"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614801"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -100,18 +100,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 
 ### <a name="networking"></a>Сеть
 
-Вы можете использовать расширенное сетевое взаимодействие, где виртуальная сеть и подсеть или общедоступные IP-адреса находятся в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
-
-- Создайте [пользовательскую роль][rbac-custom-role] и определите следующие разрешения роли:
-  - *Microsoft.Network/virtualNetworks/subnets/join/action*
-  - *Microsoft.Network/virtualNetworks/subnets/read*
-  - *Microsoft.Network/publicIPAddresses/join/action*
-  - *Microsoft.Network/publicIPAddresses/read*
-  - *Microsoft.Network/publicIPAddresses/write*
-  - Если вы используете [пользовательские таблицы маршрутов в кластерах кубенет](configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) , добавьте следующие дополнительные разрешения:
-    - *Microsoft.Network/routeTables/write*
-    - *Microsoft. Network/Раутетаблес/чтение*
-- Или назначьте встроенную роль [Участник сетей][rbac-network-contributor] в подсети виртуальной сети.
+Вы можете использовать расширенное сетевое взаимодействие, где виртуальная сеть и подсеть или общедоступные IP-адреса находятся в другой группе ресурсов. Назначьте встроенную роль " [участник сети][rbac-network-contributor] " в подсети в виртуальной сети. Кроме того, можно создать [пользовательскую роль][rbac-custom-role] с разрешениями на доступ к сетевым ресурсам в этой группе ресурсов. Дополнительные сведения см. в разделе [разрешения службы AKS][aks-permissions] .
 
 ### <a name="storage"></a>Память
 
@@ -145,7 +134,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Учетные данные субъекта-службы для кластера AKS кэшируются Azure CLI. Если срок действия этих учетных данных истек, возникнут ошибки при развертывании кластеров AKS. Следующее сообщение об ошибке при выполнении команды [AZ AKS Create][az-aks-create] может указывать на проблему с кэшированными учетными данными субъекта-службы:
 
@@ -188,3 +177,4 @@ ls -la $HOME/.azure/aksServicePrincipal.json
 [aks-to-acr]: cluster-container-registry-integration.md
 [update-credentials]: update-credentials.md
 [azure-ad-permissions]: ../active-directory/fundamentals/users-default-permissions.md
+[aks-permissions]: concepts-identity.md#aks-service-permissions

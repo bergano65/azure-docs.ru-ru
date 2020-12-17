@@ -13,12 +13,12 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 8be41f3fcf4d32ee81d1290c6a50a27f2cd45ee7
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 15f65da83f14f43a7892d52c6a2ed4e08580d367
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860972"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614920"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
@@ -78,7 +78,7 @@ AuthenticationResult ar = await application.AcquireTokenInteractive(scopes)
 
 - `policy` — Это строка, содержащая имя пользовательского потока Azure AD B2C или настраиваемой политики (например, `PolicySignUpSignIn` ).
 - `ParentActivityOrWindow` требуется для Android (действие) и является необязательным для других платформ, поддерживающих родительский пользовательский интерфейс, такой как Windows в Microsoft Windows и UIViewController в iOS. Дополнительные сведения о диалоговом окне пользовательского интерфейса см. в разделе [виспарентактивитйорвиндов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively#withparentactivityorwindow) на вики-сайте MSAL.
-- `GetAccountByPolicy(IEnumerable<IAccount>, string)` метод, который находит учетную запись для заданной политики. Пример:
+- `GetAccountByPolicy(IEnumerable<IAccount>, string)` метод, который находит учетную запись для заданной политики. Пример.
 
   ```csharp
   private IAccount GetAccountByPolicy(IEnumerable<IAccount> accounts, string policy)
@@ -134,7 +134,7 @@ private async void EditProfileButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="configure-the-ropc-flow-in-azure-ad-b2c"></a>Настройка потока РОПК в Azure AD B2C
 
-В клиенте Azure AD B2C создайте новый поток пользователя и выберите **Вход с помощью ропк** , чтобы включить ропк для потока пользователя. Дополнительные сведения см. [в статье Настройка потока учетных данных для пароля владельца ресурса](../../active-directory-b2c/configure-ropc.md).
+В клиенте Azure AD B2C создайте новый поток пользователя и выберите **Вход с помощью ропк** , чтобы включить ропк для потока пользователя. Дополнительные сведения см. [в статье Настройка потока учетных данных для пароля владельца ресурса](../../active-directory-b2c/add-ropc-policy.md).
 
 `IPublicClientApplication` содержит `AcquireTokenByUsernamePassword` метод:
 

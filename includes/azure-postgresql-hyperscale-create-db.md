@@ -5,23 +5,24 @@ author: jonels-msft
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: include
-ms.date: 09/12/2019
+ms.date: 12/16/2020
 ms.author: jonels
 ms.custom: include file
-ms.openlocfilehash: e7a6f7b4ba4219483cd3eb8f4600bc94213df131
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 54cc31cdb0ddc7694568d60b1446f1cf99663e95
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74973426"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616632"
 ---
+## <a name="create-an-azure-database-for-postgresql---hyperscale-citus"></a>Создание базы данных Azure для PostgreSQL. Гипермасштабирование (Citus)
+
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+### <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портал Azure](https://portal.azure.com).
 
-## <a name="create-an-azure-database-for-postgresql---hyperscale-citus"></a>Создание базы данных Azure для PostgreSQL. Гипермасштабирование (Citus)
 
 Чтобы создать базу данных Azure для сервера PostgreSQL, сделайте следующее:
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
@@ -53,7 +54,7 @@ ms.locfileid: "74973426"
 10. Произойдет переход на страницу отслеживания развертывания. Когда состояние изменится с **Развертывание выполняется** на **Развертывание выполнено**, щелкните пункт меню **Выходные данные** в левой части страницы.
 11. На странице выходных данных будет указано имя узла-координатора, кнопка рядом с которым позволяет скопировать это значение в буфер обмена. Сохраните эту информацию на будущее.
 
-## <a name="connect-to-the-database-using-psql"></a>Подключение к базе данных с помощью psql
+### <a name="connect-to-the-database-using-psql"></a>Подключение к базе данных с помощью psql
 
 При создании базы данных Azure для сервера PostgreSQL создается база данных по умолчанию с именем **citus**. Чтобы подключиться к серверу базы данных, требуется строка подключения и пароль администратора.
 

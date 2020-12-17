@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: df8ebd97ed9e34e0fce85a50297c595732057115
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 472a7f128ea19cdcc9df5a03d171f345c7d601de
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761470"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616836"
 ---
 # <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Устранение неполадок агента Application Insights (прежнее название — монитор состояния v2)
 
@@ -51,6 +51,11 @@ ms.locfileid: "91761470"
     0x0000000009b90000  0x4f000   C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\Instrumentation64\Microsoft.ApplicationInsights.ExtensionsHost_x64.dll
     0x0000000004d20000  0xb2000   C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\Instrumentation64\Microsoft.ApplicationInsights.Extensions.Base_x64.dll
     ```
+
+### <a name="powershell-versions"></a>Версии PowerShell
+Этот продукт написан и протестирован с помощью PowerShell версии 5.1.
+Этот модуль несовместим с PowerShell версии 6 или 7.
+Мы рекомендуем использовать PowerShell версии 5.1 вместе с новыми версиями. Дополнительные сведения см. в статье [параллельное использование PowerShell 7 с powershell 5,1](https://docs.microsoft.com/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.1#using-powershell-7-side-by-side-with-windows-powershell-51).
 
 ### <a name="conflict-with-iis-shared-configuration"></a>Конфликт с общей конфигурацией IIS
 
@@ -150,6 +155,6 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со [справочником по API](status-monitor-v2-overview.md#powershell-api-reference) , чтобы узнать о параметрах, которые могли быть пропущены.

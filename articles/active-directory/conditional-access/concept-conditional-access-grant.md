@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8915ae349e33390ce5bb687d7c07a21665a0258
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 34f82fc060586e2df5acefa6b0836171e558aa4a
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029410"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97615773"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -110,6 +110,7 @@ ms.locfileid: "96029410"
    - поддерживает только iOS и Android для условия платформы устройства;
    - Для регистрации устройства требуется приложение брокера. Приложение брокера может быть Microsoft Authenticatorом для iOS либо Microsoft Authenticator или корпоративного портала Майкрософт для устройств Android.
 - Условный доступ не может рассматривать Microsoft ребро в режиме InPrivate в утвержденном клиентском приложении.
+- Использование AD Application Proxy Azure для включения мобильного приложения Power BI для подключения к локальной Сервер отчетов Power BI не поддерживается с политиками условного доступа, для которых требуется приложение Microsoft Power BI в качестве утвержденного клиентского приложения.
 
 Примеры конфигурации см. в статье [как требовать утвержденные клиентские приложения для облачного доступа к приложениям с помощью условного доступа](app-based-conditional-access.md) .
 
@@ -167,7 +168,7 @@ ms.locfileid: "96029410"
 
 Если ваша организация создала условия использования, в разделе предоставление элементов управления могут отображаться дополнительные параметры. Эти параметры позволяют администраторам требовать подтверждения условий использования в качестве условия доступа к ресурсам, защищенным политикой. Дополнительные сведения об условиях использования можно найти в статье [Azure Active Directory условия использования](terms-of-use.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Условный доступ: элементы управления сеансом](concept-conditional-access-session.md)
 

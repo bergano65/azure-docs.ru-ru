@@ -3,17 +3,17 @@ title: Руководство по созданию приложения для 
 description: Руководство по созданию приложения для мониторинга качества воды с помощью шаблонов приложений Azure IoT Central.
 author: miriambrus
 ms.author: miriamb
-ms.date: 11/12/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 07f0e66888eaa909dfce14924e9186bcb9b876b4
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 6e8f9b8b33d391c4e13c6076a8589d336455d8c0
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014498"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590228"
 ---
 # <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>Руководство по Создание приложения для мониторинга качества воды в Azure IoT Central
 

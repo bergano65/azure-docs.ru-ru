@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: a0ef8d9f28f90db77686c3139c8b45eccfb669aa
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 9b097b561ef6b91ae648a950247d1a88b99e7e64
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938823"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614818"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](./itsmc-overview.md).
@@ -35,7 +35,7 @@ ms.locfileid: "96938823"
 
 Выполните указанные ниже предварительные требования.
 
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview) (Добавление решения "Соединитель управления ИТ-услугами").
 - Разверните и настройте веб-приложение Service Manager. Дополнительные сведения о веб-приложении см. [здесь](#create-and-deploy-service-manager-web-app-service).
 - Создайте и настройте гибридное подключение. Дополнительные сведения: [Настройка гибридного подключения](#configure-the-hybrid-connection).
 - Поддерживаемые версии Service Manager:  2012 R2 или 2016.
@@ -45,7 +45,7 @@ ms.locfileid: "96938823"
 > [!NOTE]
 > 
 > - Соединитель ITSM позволяет подключаться только к облачным экземплярам ServiceNow. Локальные экземпляры ServiceNow сейчас не поддерживаются.
-> - Чтобы использовать пользовательские [шаблоны](./itsmc-overview.md#template-definitions) в составе действий, параметр "прожектионтипе" в шаблоне SCSM должен быть сопоставлен с "IncidentManagement! System. WorkItem. инцидент. Прожектионтипе "
+> - Чтобы использовать пользовательские [шаблоны](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview) в составе действий, параметр "прожектионтипе" в шаблоне SCSM должен быть сопоставлен с "IncidentManagement! System. WorkItem. инцидент. Прожектионтипе "
 
 ### <a name="connection-procedure"></a>Процедура подключения
 
@@ -85,7 +85,7 @@ ms.locfileid: "96938823"
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также из оповещений Azure в этом экземпляре Service Manager.
 
 
-Дополнительные сведения: [Create ITSM work items from Azure alerts](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
+Дополнительные сведения: [Create ITSM work items from Azure alerts](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
 
 ### <a name="create-and-deploy-service-manager-web-app-service"></a>Создание и развертывание службы веб-приложения Service Manager
 
@@ -184,7 +184,7 @@ ms.locfileid: "96938823"
 
 ### <a name="prerequisites"></a>Предварительные требования
 Выполните указанные ниже предварительные требования.
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Поддерживаемые версии ServiceNow: Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки, Geneva.
 - Сегодня оповещения, отправленные из Azure Monitor могут быть созданы в ServiceNow один из следующих элементов: события, инциденты или оповещения.
 > [!NOTE]
@@ -257,7 +257,7 @@ ms.locfileid: "96938823"
 
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также из оповещений Azure в этом экземпляре ServiceNow.
 
-Дополнительные сведения: [Create ITSM work items from Azure alerts](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
+Дополнительные сведения: [Create ITSM work items from Azure alerts](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
 
 
 > [!NOTE]
@@ -316,7 +316,7 @@ ms.locfileid: "96938823"
 Выполните указанные ниже предварительные требования.
 
 
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Приложение Provance необходимо зарегистрировать с помощью Azure AD, а идентификатор клиента должен быть доступен. Дополнительные сведения см. в статье [Настройка приложения службы приложений для использования службы входа Azure Active Directory](../../app-service/configure-authentication-provider-aad.md).
 
 - Роль пользователя:  Администратор.
@@ -358,7 +358,7 @@ ms.locfileid: "96938823"
 
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также оповещений Azure в этом экземпляре Provance.
 
-Дополнительные сведения: [Create ITSM work items from Azure alerts](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
+Дополнительные сведения: [Create ITSM work items from Azure alerts](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
 
 ## <a name="connect-cherwell-to-it-service-management-connector-in-azure"></a>Подключение Cherwell к соединителю управления ИТ-службами в Azure
 
@@ -372,7 +372,7 @@ ms.locfileid: "96938823"
 
 Выполните указанные ниже предварительные требования.
 
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-overview.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
+- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
 - Создайте идентификатор клиента. Дополнительные сведения: [Создание идентификатора клиента для Cherwell](#generate-client-id-for-cherwell).
 - Роль пользователя:  Администратор.
 
@@ -414,7 +414,7 @@ ms.locfileid: "96938823"
 
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также оповещений Azure в этом экземпляре Cherwell.
 
-Дополнительные сведения: [Create ITSM work items from Azure alerts](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
+Дополнительные сведения: [Create ITSM work items from Azure alerts](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
 
 ### <a name="generate-client-id-for-cherwell"></a>Создание идентификатора клиента для Cherwell
 
@@ -428,4 +428,4 @@ ms.locfileid: "96938823"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
- - [Создание рабочих элементов ITSM из оповещений Azure](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts)
+ - [Создание рабочих элементов ITSM из оповещений Azure](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts)

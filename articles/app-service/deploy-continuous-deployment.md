@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/20/2020
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: b7730558e2a660b0cf00a5b6962d1e2275dd472c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 799699662b738804790e3fe18ce9bd579027808d
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004363"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616321"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "96004363"
 
 Чтобы служба приложений Azure была создана непрерывной поставкой с помощью Azure Pipelines, ваша организация Azure DevOps должна иметь следующие разрешения: 
 
-- Учетная запись Azure должна иметь разрешения на запись в Azure Active Directory и создание службы. 
+- Учетная запись Azure должна иметь разрешения на запись в Azure Active Directory и создание регистрации приложения. 
   
 - Ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
 
