@@ -1,7 +1,7 @@
 ---
 title: Расширение виртуальной машины для диагностики производительности Azure для Windows | Документация Майкрософт
 description: Эта статья содержит сведения о расширении виртуальной машины для диагностики производительности Azure для Windows.
-services: virtual-machines-windows'
+services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
 manager: dcscontentpm
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 16af8b8c1258ef7945e88a7af42e86a7bba2003b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 9edba575b35613abb8bc3081964a37b838bb358b
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963267"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656601"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
 
@@ -30,7 +30,7 @@ ms.locfileid: "91963267"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Это расширение можно установить на
-* Windows Server 2019
+* Windows Server 2019
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
@@ -54,16 +54,16 @@ ms.locfileid: "91963267"
         "typeHandlerVersion": "1.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
-            "storageAccountName": "[parameters('storageAccountName')]",
-            "performanceScenario": "[parameters('performanceScenario')]",
-            "traceDurationInSeconds": "[parameters('traceDurationInSeconds')]",
-            "perfCounterTrace": "[parameters('perfCounterTrace')]",
-            "networkTrace": "[parameters('networkTrace')]",
-            "xperfTrace": "[parameters('xperfTrace')]",
-            "storPortTrace": "[parameters('storPortTrace')]",
-            "srNumber": "[parameters('srNumber')]",
-            "requestTimeUtc":  "[parameters('requestTimeUtc')]",
-            "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
+          "storageAccountName": "[parameters('storageAccountName')]",
+          "performanceScenario": "[parameters('performanceScenario')]",
+          "traceDurationInSeconds": "[parameter('traceDurationInSeconds')]",
+          "perfCounterTrace": "[parameters('perfCounterTrace')]",
+          "networkTrace": "[parameters('networkTrace')]",
+          "xperfTrace": "[parameters('xperfTrace')]",
+          "storPortTrace": "[parameters('storPortTrace')]",
+          "srNumber": "[parameters('srNumber')]",
+          "requestTimeUtc":  "[parameters('requestTimeUtc')]",
+          "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
         },
         "protectedSettings": {
             "storageAccountKey": "[parameters('storageAccountKey')]"        
@@ -74,23 +74,23 @@ ms.locfileid: "91963267"
 
 ### <a name="property-values"></a>Значения свойств
 
-|   **Имя**   |**Значение и пример**|       **Описание**      |
-|--------------|-------------------|----------------------------|
-|версия_API|2015-06-15|Версия API.
-|publisher|Microsoft.Azure.Performance.Diagnostics|Пространство имен издателя для расширения.
-|type|AzurePerformanceDiagnostics|Тип расширения виртуальной машины.
-|typeHandlerVersion|1.0|Версия обработчика расширения.
-|performanceScenario|basic|Сценарий производительности, для которого требуется собрать данные. Допустимые значения: **basic**, **vmslow**, **azurefiles** и **custom**.
-|traceDurationInSeconds|300|Длительность трассировки, если выбран любой из параметров трассировки.
-|perfCounterTrace|p|Параметр, позволяющий включить трассировку счетчиков производительности. Допустимые значения: **p** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым.
-|networkTrace|n|Параметр, позволяющий включить трассировку сети. Допустимые значения: **n** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым.
-|xperfTrace|x|Параметр, позволяющий включить трассировку XPerf. Допустимые значения: **x** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым.
-|storPortTrace|s|Параметр, позволяющий включить трассировку StorPort. Допустимые значения: **s** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым.
-|srNumber|123452016365929|Номер запроса в службу поддержки (если доступно). Если его нет, оставьте значение поля пустым.
-|requestTimeUtc|2017-09-28T22:08:53.736Z|Текущая дата и время в формате UTC. Если вы устанавливали расширение с помощью портала, это значение можно не указывать.
-|resourceId|/subscriptions/{ИД_подписки}/resourceGroups/{имя_группы_ресурсов}/providers/{пространство_имен_поставщика_ресурса}/{тип_ресурса}/{имя_ресурса}|Уникальный идентификатор виртуальной машины.
-|storageAccountName|mystorageaccount|Имя учетной записи хранения для хранения журналов диагностики и результатов.
-|storageAccountKey|lDuVvxuZB28NNP…hAiRF3voADxLBTcc==|Ключ для учетной записи хранения.
+| Имя | Значение и пример | Описание |
+|--|--|--|
+| версия_API | 2015-06-15 | Версия API. |
+| publisher | Microsoft.Azure.Performance.Diagnostics | Пространство имен издателя для расширения. |
+| тип | AzurePerformanceDiagnostics | Тип расширения виртуальной машины. |
+| typeHandlerVersion | 1.0 | Версия обработчика расширения. |
+| performanceScenario | basic | Сценарий производительности, для которого требуется собрать данные. Допустимые значения: **basic**, **vmslow**, **azurefiles** и **custom**. |
+| traceDurationInSeconds | 300 | Длительность трассировки, если выбран любой из параметров трассировки. |
+| perfCounterTrace | p | Параметр, позволяющий включить трассировку счетчиков производительности. Допустимые значения: **p** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым. |
+| networkTrace | n | Параметр, позволяющий включить трассировку сети. Допустимые значения: **n** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым. |
+| xperfTrace | x | Параметр, позволяющий включить трассировку XPerf. Допустимые значения: **x** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым. |
+| storPortTrace | s | Параметр, позволяющий включить трассировку StorPort. Допустимые значения: **s** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым. |
+| srNumber | 123452016365929 | Номер запроса в службу поддержки (если доступно). Если его нет, оставьте значение поля пустым. |
+| requestTimeUtc | 2017-09-28T22:08:53.736Z | Текущая дата и время в формате UTC. Если вы устанавливали расширение с помощью портала, это значение можно не указывать. |
+| resourceId | /subscriptions/{ИД_подписки}/resourceGroups/{имя_группы_ресурсов}/providers/{пространство_имен_поставщика_ресурса}/{тип_ресурса}/{имя_ресурса} | Уникальный идентификатор виртуальной машины. |
+| storageAccountName | mystorageaccount | Имя учетной записи хранения для хранения журналов диагностики и результатов. |
+| storageAccountKey | lDuVvxuZB28NNP…hAiRF3voADxLBTcc== | Ключ для учетной записи хранения. |
 
 ## <a name="install-the-extension"></a>Установка расширения
 
@@ -117,6 +117,7 @@ ms.locfileid: "91963267"
     > Расширение запустится после успешного завершения подготовки. Для базового сценария оно выполняется не более двух минут. Для других сценариев расширение выполняется в течение периода, указанного во время установки.
 
 ## <a name="remove-the-extension"></a>Удаление расширения
+
 Чтобы удалить расширение с виртуальной машины, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com), выберите виртуальную машину, из которой вы хотите удалить расширение, а затем выберите колонку **Расширения**. 
@@ -128,9 +129,10 @@ ms.locfileid: "91963267"
     > Вы также можете выбрать запись в списке, а затем — параметр **Удалить**.
 
 ## <a name="template-deployment"></a>Развертывание шаблона
+
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. В шаблоне Azure Resource Manager можно использовать схему JSON, описанную в предыдущем разделе. Таким образом во время развертывания шаблона Azure Resource Manager запустится расширение виртуальной машины для диагностики производительности Azure. Вот пример шаблона:
 
-```
+```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
@@ -144,11 +146,11 @@ ms.locfileid: "91963267"
       "defaultValue": "southcentralus"
     },
     "storageAccountName": {
-      "type": "securestring"
+      "type": "securestring",
       "defaultValue": "yourStorageAccount"
     },
     "storageAccountKey": {
-      "type": "securestring"
+      "type": "securestring",
       "defaultValue": "yourStorageAccountKey"
     },
     "performanceScenario": {
@@ -159,10 +161,10 @@ ms.locfileid: "91963267"
       "type": "string",
       "defaultValue": ""
     },
-    "traceDurationInSeconds": {
-      "type": "int",
+  "traceDurationInSeconds": {
+    "type": "int",
     "defaultValue": 300
-    },
+  },
     "perfCounterTrace": {
       "type": "string",
       "defaultValue": "p"
@@ -196,16 +198,16 @@ ms.locfileid: "91963267"
         "typeHandlerVersion": "1.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
-            "storageAccountName": "[parameters('storageAccountName')]",
-            "performanceScenario": "[parameters('performanceScenario')]",
-            "traceDurationInSeconds": "[parameters('traceDurationInSeconds')]",
-            "perfCounterTrace": "[parameters('perfCounterTrace')]",
-            "networkTrace": "[parameters('networkTrace')]",
-            "xperfTrace": "[parameters('xperfTrace')]",
-            "storPortTrace": "[parameters('storPortTrace')]",
-            "srNumber": "[parameters('srNumber')]",
-            "requestTimeUtc":  "[parameters('requestTimeUtc')]",
-            "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
+          "storageAccountName": "[parameters('storageAccountName')]",
+          "performanceScenario": "[parameters('performanceScenario')]",
+          "traceDurationInSeconds": "[parameters('traceDurationInSeconds')]",
+          "perfCounterTrace": "[parameters('perfCounterTrace')]",
+          "networkTrace": "[parameters('networkTrace')]",
+          "xperfTrace": "[parameters('xperfTrace')]",
+          "storPortTrace": "[parameters('storPortTrace')]",
+          "srNumber": "[parameters('srNumber')]",
+          "requestTimeUtc":  "[parameters('requestTimeUtc')]",
+          "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
         },
         "protectedSettings": {
             "storageAccountKey": "[parameters('storageAccountKey')]"
@@ -217,6 +219,7 @@ ms.locfileid: "91963267"
 ```
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
+
 Команду `Set-AzVMExtension` можно использовать для развертывания расширения виртуальной машины для диагностики производительности Azure на имеющейся виртуальной машине.
 
 PowerShell
@@ -241,7 +244,7 @@ Set-AzVMExtension -ExtensionName "AzurePerformanceDiagnostics" `
 
 ## <a name="view-and-share-the-results"></a>Просмотр результатов и предоставление к ним общего доступа
 
-Выходные данные расширения можно найти в ZIP-файле, который передается в учетную запись хранения, указанную во время установки. Его можно совместно использовать на протяжении 30 дней с помощью [подписанного URL-адреса (SAS)](../../storage/common/storage-sas-overview.md). Этот ZIP-файл содержит журналы диагностики и отчет с результатами и рекомендациями. Ссылку SAS на выходной ZIP-файл можно найти в текстовом файле с именем *zipfilename*_saslink.txt в папке **к:\паккажес\плугинс\микрософт.Азуре.перформанце.Диагностикс.азуреперформанцедиагностикс \\ \<version> **. Любой пользователь, у которого есть эта ссылка, может скачать ZIP-файл.
+Выходные данные расширения можно найти в ZIP-файле, который передается в учетную запись хранения, указанную во время установки. Его можно совместно использовать на протяжении 30 дней с помощью [подписанного URL-адреса (SAS)](../../storage/common/storage-sas-overview.md). Этот ZIP-файл содержит журналы диагностики и отчет с результатами и рекомендациями. Ссылку SAS на выходной ZIP-файл можно найти в текстовом файле с именем *zipfilename* _saslink.txt в папке **к:\паккажес\плугинс\микрософт.Азуре.перформанце.Диагностикс.азуреперформанцедиагностикс \\ \<version>**. Любой пользователь, у которого есть эта ссылка, может скачать ZIP-файл.
 
 Чтобы помочь сотрудникам службы поддержки, которые работают над вашим запросом, корпорация Майкрософт может использовать ссылку SAS для скачивания данных диагностики.
 

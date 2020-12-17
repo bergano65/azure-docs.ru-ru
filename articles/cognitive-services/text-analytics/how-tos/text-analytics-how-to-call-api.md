@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 12/02/2020
+ms.date: 12/17/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: bf53ce5ed3f9505572538533263f0d17c5dcbf45
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 57fda08a996b7d46da74c0ce35bff0df20821b31
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562571"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654835"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -49,10 +49,10 @@ ms.locfileid: "97562571"
 
 См. таблицу ниже, чтобы узнать, какие функции можно использовать асинхронно. Обратите внимание, что из конечной точки можно вызывать только несколько функций `/analyze` . 
 
-| Функция | Синхронная | Асинхронный |
+| Компонент | Синхронная | Асинхронный |
 |--|--|--|
 | Определение языка | ✔ |  |
-| Анализ тональности | ✔ |  |
+| Анализ мнений | ✔ |  |
 | Интеллектуальный анализ данных | ✔ |  |
 | Извлечение ключевой фразы | ✔ | ✔* |
 | Распознавание именованных сущностей (включая персональные и фи) | ✔ | ✔* |
@@ -63,9 +63,6 @@ ms.locfileid: "97562571"
 
 
 [!INCLUDE [text-analytics-api-references](../includes/text-analytics-api-references.md)]
-
-[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
-
 
 <a name="json-schema"></a>
 
@@ -208,10 +205,10 @@ example.json
 
 ### <a name="endpoints-for-sending-synchronous-requests"></a>Конечные точки для отправки синхронных запросов
 
-| Функция | Тип запроса | Конечные точки ресурсов |
+| Компонент | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Определение языка | POST | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
-| Анализ тональности | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
+| Анализ мнений | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
 | Интеллектуальный анализ мнений | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment?opinionMining=true` |
 | Извлечение ключевой фразы | POST | `<your-text-analytics-resource>/text/analytics/v3.0/keyPhrases` |
 | Распознавание именованных сущностей — общие | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/general` |
@@ -222,14 +219,14 @@ example.json
 
 ### <a name="endpoints-for-sending-asynchronous-requests-to-the-analyze-endpoint"></a>Конечные точки для отправки асинхронных запросов к `/analyze` конечной точке
 
-| Функция | Тип запроса | Конечные точки ресурсов |
+| Компонент | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Отправить задание анализа | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze` |
 | Получение состояния и результатов анализа | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>` |
 
 ### <a name="endpoints-for-sending-asynchronous-requests-to-the-health-endpoint"></a>Конечные точки для отправки асинхронных запросов к `/health` конечной точке
 
-| Функция | Тип запроса | Конечные точки ресурсов |
+| Компонент | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
 | Отправка Анализ текста для задания работоспособности  | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs` |
 | Получение состояния задания и результатов | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |

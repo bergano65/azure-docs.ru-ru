@@ -6,12 +6,12 @@ ms.custom: devx-track-csharp, devx-track-azurecli
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 0f7047638aa2e2b4a9ac6ffade82fdc117b56cfb
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 1223ff5c56d3c7d58b324d2099980bc0b5408125
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744174"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655974"
 ---
 # <a name="configure-an-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core для службы приложений Azure
 
@@ -125,7 +125,7 @@ namespace SomeNamespace
 }
 ```
 
-Если вы настроили параметр приложения с тем же именем в службе приложений и в *appsettings.js* , например, значение службы приложений имеет приоритет над *appsettings.js* значением. Локальная *appsettings.jsпо* значению позволяет выполнять отладку приложения локально, но значение службы приложений позволяет запускать приложение в продукте с параметрами рабочей среды. Строки подключения работают таким же образом. Таким образом вы сможете защитить секреты приложения за пределами репозитория кода и получить доступ к соответствующим значениям без изменения кода.
+Если вы настроили параметр приложения с тем же именем в службе приложений и в *appsettings.js*, например, значение службы приложений имеет приоритет над *appsettings.js* значением. Локальная *appsettings.jsпо* значению позволяет выполнять отладку приложения локально, но значение службы приложений позволяет запускать приложение в продукте с параметрами рабочей среды. Строки подключения работают таким же образом. Таким образом вы сможете защитить секреты приложения за пределами репозитория кода и получить доступ к соответствующим значениям без изменения кода.
 
 > [!NOTE]
 > Обратите внимание, что [иерархические данные конфигурации](/aspnet/core/fundamentals/configuration/#hierarchical-configuration-data) в *appsettings.js* , доступ к которым осуществляется с помощью `:` стандартного разделителя .NET Core. Чтобы переопределить конкретный иерархический параметр конфигурации в службе приложений, задайте имя параметра приложения с тем же форматом с разделителями в ключе. в [Cloud Shell](https://shell.azure.com)можно выполнить следующий пример:
@@ -167,7 +167,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ## <a name="get-detailed-exceptions-page"></a>Страница «Получение подробных сведений об исключениях»
 
-Когда приложение ASP.NET Core создает исключение в отладчике Visual Studio, браузер отображает подробное сообщение об исключении, но в службе приложений эта страница заменяется общей ошибкой **HTTP 500** или **при обработке запроса произошла ошибка.** !". Чтобы отобразить страницу подробного исключения в службе приложений, добавьте `ASPNETCORE_ENVIRONMENT` параметр приложения в приложение, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+Когда приложение ASP.NET Core создает исключение в отладчике Visual Studio, браузер отображает подробное сообщение об исключении, но в службе приложений эта страница заменяется общей ошибкой **HTTP 500** или **при обработке запроса произошла ошибка.** . Чтобы отобразить страницу подробного исключения в службе приложений, добавьте `ASPNETCORE_ENVIRONMENT` параметр приложения в приложение, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings ASPNETCORE_ENVIRONMENT="Development"
@@ -175,7 +175,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ## <a name="detect-https-session"></a>Обнаружение сеанса HTTPS
 
-В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика приложения должна определить, зашифрованы ли запросы пользователя, настройте по промежуточного слоя перенаправляемых заголовков в *Startup.CS* :
+В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика приложения должна определить, зашифрованы ли запросы пользователя, настройте по промежуточного слоя перенаправляемых заголовков в *Startup.CS*:
 
 - Настройте ПО промежуточного слоя с помощью [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions), чтобы заголовки `X-Forwarded-For` и `X-Forwarded-Proto` перенаправлялись в `Startup.ConfigureServices`.
 - Добавьте в известные сети диапазоны частных IP-адресов, чтобы по промежуточного слоя можно было доверять подсистеме балансировки нагрузки службы приложений.
@@ -192,6 +192,7 @@ public void ConfigureServices(IServiceCollection services)
     {
         options.ForwardedHeaders =
             ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+        // These three subnets encapsulate the applicable Azure subnets. At the moment, it's not possible to narrow it down further.
         options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("::ffff:10.0.0.0"), 104));
         options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("::ffff:192.168.0.0"), 112));
         options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse("::ffff:172.16.0.0"), 108));

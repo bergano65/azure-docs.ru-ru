@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: ed36948faf6fe12467128a57af634e52ee457180
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 71e3bf429c7b8d3f4f8fe205c05b0701732fdef9
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585000"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653815"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа для мультитенантного Azure Active Directory с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -32,19 +32,7 @@ ms.locfileid: "97585000"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-::: zone pivot="b2c-user-flow"
-
-* [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-* Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
+[!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 В этой статье показано, как включить вход для пользователей, использующих конечную точку с несколькими клиентами, для Azure Active Directory (Azure AD). Это позволяет пользователям из нескольких клиентов Azure AD входить в систему, используя Azure AD B2C, без необходимости настройки поставщика удостоверений для каждого клиента. Однако гостевые пользователи любого из этих тенантов **не смогут** войти в систему. Для этого необходимо [отдельно настроить каждый клиент](identity-provider-azure-ad-single-tenant.md).
 
@@ -113,7 +101,7 @@ ms.locfileid: "97585000"
     - **Surname**: *family_name*;
     - **Адрес электронной почты**: *preferred_username*
 
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ::: zone-end
 
@@ -203,7 +191,7 @@ ms.locfileid: "97585000"
 
 Вам необходимо обновить список допустимых издателей маркеров и предоставить доступ только определенному списку пользователей клиента Azure AD, которые могут выполнить вход в систему.
 
-Чтобы получить эти значения, просмотрите метаданные обнаружения OpenID Connect Connect для каждого клиента Azure AD, из которого будут входить пользователи. URL-адрес метаданных аналогичен формату `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration` , где `your-tenant` — имя клиента Azure AD. Например:
+Чтобы получить эти значения, просмотрите метаданные обнаружения OpenID Connect Connect для каждого клиента Azure AD, из которого будут входить пользователи. URL-адрес метаданных аналогичен формату `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration` , где `your-tenant` — имя клиента Azure AD. Пример:
 
 `https://login.microsoftonline.com/fabrikam.onmicrosoft.com/v2.0/.well-known/openid-configuration`
 
@@ -265,7 +253,7 @@ ms.locfileid: "97585000"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений Azure AD.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **contoso Azure AD**.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 7c884ce839523706e67e4278f43e237e1a2b0580
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d400e6bcda0a2114d798a3289f01f52b677a6f94
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87496973"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656501"
 ---
 # <a name="architecture-for-vmwarephysical-server-replication-to-a-secondary-on-premises-site"></a>Архитектура для репликации виртуальных машин VMware или физических серверов в дополнительном локальном расположении
 
@@ -44,7 +44,7 @@ ms.locfileid: "87496973"
 
 | **имя**;                  | **Коммерческие организации**                               | **Государственные организации**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
-| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net` | Позволяет записывать данные из виртуальной машины в учетную запись хранения кэша в исходном регионе. |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Обеспечивает авторизацию и проверку подлинности URL-адресов службы Site Recovery. |
 | Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Позволяет виртуальной машине взаимодействовать со службой Site Recovery. |
 | Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Позволяет виртуальной машине записывать данные мониторинга и диагностики службы Site Recovery. |

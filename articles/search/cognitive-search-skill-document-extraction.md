@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: chalton
-ms.openlocfilehash: f209be383e445e3b0c011e0bfb4266a191a8d931
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c77da8252fb3dcb2672a50ec75f676e18dd31da
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85080873"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652336"
 ---
 # <a name="document-extraction-cognitive-skill"></a>Раскадровка извлечения документов
 
@@ -34,7 +34,7 @@ Microsoft.Skills.Util.DocumentExtractionSkill
 
 Параметры зависят от регистра.
 
-| Входные данные            | Допустимые значения | Описание |
+| Входные данные | Допустимые значения | Описание |
 |-----------------|----------------|-------------|
 | `parsingMode`   | `default` <br/> `text` <br/> `json`  | Задайте для значение, чтобы `default` извлечь документ из файлов, не являющихся чистым текстом или JSON. Задайте для значение `text` , чтобы повысить производительность в обычных текстовых файлах. Задайте значение `json` , чтобы извлечь структурированное содержимое из файлов JSON. Если `parsingMode` параметр не определен явным образом, ему будет присвоено значение `default` . |
 | `dataToExtract` | `contentAndMetadata` <br/> `allMetadata` | Задайте значение `contentAndMetadata` , чтобы извлечь все метаданные и текстовое содержимое из каждого файла. Задайте значение `allMetadata` , чтобы извлечь только [метаданные, относящиеся к типу содержимого](search-howto-indexing-azure-blob-storage.md#ContentSpecificMetadata) (например, метаданные, уникальные только для PNG-файлов). Если `dataToExtract` параметр не определен явным образом, ему будет присвоено значение `contentAndMetadata` . |
@@ -146,7 +146,7 @@ Microsoft.Skills.Util.DocumentExtractionSkill
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)

@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e1161a8a4625c855198ea04f336d54c80271a3ef
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7779730b98630d08af046e7cb402caca1d0c2fe6
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584700"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653662"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-twitter-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Twitter через Azure Active Directory B2C
 
@@ -31,19 +31,7 @@ ms.locfileid: "97584700"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-::: zone pivot="b2c-user-flow"
-
-* [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-* Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
+[!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-an-application"></a>Создание приложения
 
@@ -69,7 +57,7 @@ ms.locfileid: "97584700"
 1. Введите **Имя**. Например, *Twitter*.
 1. В поле **идентификатор клиента** введите ключ API потребителя созданного ранее приложения Twitter.
 1. В качестве **секрета клиента** введите записанный секретный ключ API-интерфейса потребителя.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ::: zone-end
 
@@ -195,7 +183,7 @@ ms.locfileid: "97584700"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните поток пользователя, который вы хотите использовать для поставщика удостоверений Twitter.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Twitter**.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

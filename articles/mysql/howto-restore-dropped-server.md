@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 10/09/2020
-ms.openlocfilehash: 982747c1a7e093f84daeb63e75cfdf439d3fccf9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 34dddd8e5f3fb418fc7155630bf82a922e418402
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546727"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657096"
 ---
 # <a name="restore-a-dropped-azure-database-for-mysql-server"></a>Восстановление удаленной базы данных Azure для сервера MySQL
 
@@ -45,15 +45,15 @@ ms.locfileid: "92546727"
  6. Прокрутите страницу ниже в разделе текст запроса и вставьте следующую замену "Удаленные расположения сервера", "Субмиссионтиместамп" и "resourceId". Для параметра "Ресторепоинтинтиме" укажите значение "Субмиссионтиместамп" минус **15 минут** , чтобы команда не выдает ошибку.
  
     ```json
-        {
-          "location": "Dropped Server Location",  
-          "properties": 
-              {
-                  "restorePointInTime": "submissionTimestamp - 15 minutes",
-                  "createMode": "PointInTimeRestore",
-                  "sourceServerId": "resourceId"
+    {
+        "location": "Dropped Server Location",  
+        "properties": 
+            {
+                "restorePointInTime": "submissionTimestamp - 15 minutes",
+                "createMode": "PointInTimeRestore",
+                "sourceServerId": "resourceId"
             }
-        }
+    }
     ```
 
 7. Если вы видите код ответа 201 или 202, запрос на восстановление успешно отправлен. 

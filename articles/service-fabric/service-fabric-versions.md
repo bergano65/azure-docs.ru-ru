@@ -3,12 +3,12 @@ title: Поддерживаемые версии кластера в Azure Servi
 description: Узнайте о версиях кластера в Azure Service Fabric, включая ссылку на последние выпуски из блога группы Service Fabric.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 46b1a7845a0da1ede30ed450f1e673f40e450105
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 4407ddb80b00c847e14643be816bc681718dcb8b
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905389"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652217"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
@@ -62,13 +62,13 @@ ms.locfileid: "96905389"
 
 | Операционная система | Самая ранняя поддерживаемая версия Service Fabric |
 | --- | --- |
-| Windows Server 2012 R2 | Все версии |
+| Windows Server 2012 R2 | Все версии |
 | Windows Server 2016 | Все версии |
-| Windows Server 1709 | 6.0 |
+| Windows Server 1709 | 6,0 |
 | Windows Server 1803 | 6.4 |
 | Windows Server 1809 | 6.4.654.9590 |
-| Windows Server 2019 | 6.4.654.9590 |
-| Linux Ubuntu 16.04 | 6.0 |
+| Windows Server 2019 | 6.4.654.9590 |
+| Linux Ubuntu 16.04 | 6,0 |
 | Linux Ubuntu 18,04 | 7.1 |
 
 ## <a name="supported-version-names"></a>Поддерживаемые имена версий
@@ -85,7 +85,7 @@ ms.locfileid: "96905389"
 | 5,5 CU1 | 5.5.216.0    | Н/Д |
 | 5,5 CU2 | 5.5.219.0    | Н/Д |
 | 5,5 CU3 | 5.5.227.0    | Н/Д |
-| 5,5 CU4 | 5.5.232.0    | Н/Д |
+| 5,5 CU4 | 5.5.232.0 | Н/Д |
 | 5,6 RTO | 5.6.204.9494 | Н/Д |
 | 5,6 CU2 | 5.6.210.9494 | Н/Д |
 | 5,6 CU3 | 5.6.220.9494 | Н/Д |

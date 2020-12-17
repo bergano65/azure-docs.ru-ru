@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 81721cb52035a51cffa2667568914c780b4c397b
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 1324afb38560afeb43b5be9191b6e2e7afc5c81d
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588664"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654903"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>Установка SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS в Azure
 
@@ -66,8 +66,6 @@ ms.locfileid: "97588664"
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f
 
 [sap-high-availability-infrastructure-wsfc-shared-disk]:sap-high-availability-infrastructure-wsfc-shared-disk.md
-
-
 
 [sap-ha-guide-figure-1000]:./media/virtual-machines-shared-sap-high-availability-guide/1000-wsfc-for-sap-ascs-on-azure.png
 [sap-ha-guide-figure-1001]:./media/virtual-machines-shared-sap-high-availability-guide/1001-wsfc-on-azure-ilb.png
@@ -153,7 +151,7 @@ ms.locfileid: "97588664"
 - [Общие диски Azure](../../disks-shared.md)
 - Использование [SIOS Cluster Edition](https://us.sios.com/products/datakeeper-cluster/) для создания зеркально отображаемого хранилища, которое имитирует кластерный общий диск 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом установки изучите следующие документы:
 
@@ -173,7 +171,6 @@ ms.locfileid: "97588664"
 > [!IMPORTANT]
 > Если вы используете SIOS для представления общего диска, не размещайте файл подкачки на зеркальных томах SIOS. Можно оставить файл подкачки на временном диске D виртуальной машины Azure, который задан по умолчанию. Если файла там нет, поместите его на диск D виртуальной машины Azure.  
 
-
 Установка SAP с высокодоступным экземпляром ASCS/SCS состоит из следующих заданий:
 
 * Создание имени виртуального узла для кластеризованного экземпляра SAP ASCS/SCS.
@@ -189,7 +186,6 @@ ms.locfileid: "97588664"
    > [!IMPORTANT]
    > IP-адрес, назначаемый имени виртуального узла экземпляра ASCS/SCS, должен совпадать с IP-адресом, назначенным Azure Load Balancer.  
 
-
    ![Рис. 1. Определение записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-3046]
 
    _Настройка записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS_
@@ -199,11 +195,9 @@ ms.locfileid: "97588664"
    > [!IMPORTANT]
    > IP-адрес, назначаемый имени виртуального узла экземпляра ERS2, должен быть вторым IP-адресом, назначенным Azure Load Balancer.    
 
-
    ![Рис. 1A. Определение записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-3046-ers2]
 
    _Определение записи DNS для виртуального имени и TCP/IP-адреса кластера SAP ERS2_
-
 
 3. Чтобы определить IP-адрес, назначенный имени виртуального узла, выберите домен **диспетчера DNS**  >  .
 
@@ -219,7 +213,6 @@ ms.locfileid: "97588664"
    * **Для системы Java**: экземпляр **SCS** с номером **01**;
    * **Для системы ABAP+Java**: экземпляр **ASCS** с номером **00** и экземпляр **SCS** с номером **01**.
 
-
    > [!IMPORTANT]
    > Помните, что конфигурация в правилах балансировки нагрузки внутреннего балансировщика нагрузки Azure (если используется SKU "базовый") и номера выбранных экземпляров SAP должны совпадать.
 
@@ -227,8 +220,6 @@ ms.locfileid: "97588664"
 
 > [!TIP]
 > В документации по установке SAP содержатся сведения по установке первого узла кластера ASCS/SCS.
-
-
 
 ### <a name="modify-the-sap-profile-of-the-ascsscs-instance"></a><a name="e4caaab2-e90f-4f2c-bc84-2cd2e12a9556"></a> Изменение профиля SAP экземпляра ASCS/SCS
 
@@ -295,7 +286,6 @@ ms.locfileid: "97588664"
     .PARAMETER IsSAPERSClusteredInstance 
     Optional parameter.Default value is '$False'.
     If set to $True , then handle clsutered new SAP ERS2 instance.
-
 
     .EXAMPLE 
     # Set probe port to 62000, on SAP cluster resource 'SAP AB1 IP', and restart the SAP cluster group 'SAP AB1', to activate the changes.

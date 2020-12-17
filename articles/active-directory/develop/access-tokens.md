@@ -13,12 +13,12 @@ ms.date: 10/27/2020
 ms.author: hirsin
 ms.reviewer: mmacy, hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 909c8910a86734b0a34787f75c233975cd3503c3
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: ceb5acbee2e572b1859a5577b58dd586fc924b3b
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518249"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653288"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Маркеры доступа платформы удостоверений Майкрософт
 
@@ -140,8 +140,8 @@ JWT (веб-маркеры JSON) состоят из трех частей.
        }
      }
   ...
- }
- ```
+}
+```
 
 Вы можете использовать `BulkCreateGroups.ps1`, предоставленный в папке [Скрипты создания приложений](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-2-Groups/AppCreationScripts), чтобы тестировать сценарии избытка.
 
@@ -186,7 +186,7 @@ JWT (веб-маркеры JSON) состоят из трех частей.
 
 Если ни один из описанных выше сценариев не применяется, приложение не будет использовать проверку маркера и может представлять угрозу безопасности и надежности, если решения выполняются на основе допустимости маркера.  Общедоступные клиенты, например собственные приложения или одностраничные приложения, не могут воспользоваться преимуществами проверки маркеров — приложение взаимодействует напрямую с IDP, поэтому защита SSL гарантирует допустимость маркеров.
 
- API и веб-приложения должны проверять только маркеры, имеющие `aud` утверждение, соответствующее приложению; другие ресурсы могут иметь настраиваемые правила проверки маркеров. Например, маркеры для Microsoft Graph не будут проверяться согласно этим правилам из-за их собственного формата. Проверка и прием маркеров, предназначенных для другого ресурса, является примером [Deputy](https://cwe.mitre.org/data/definitions/441.html) проблемы.
+API и веб-приложения должны проверять только маркеры, имеющие `aud` утверждение, соответствующее приложению; другие ресурсы могут иметь настраиваемые правила проверки маркеров. Например, маркеры для Microsoft Graph не будут проверяться согласно этим правилам из-за их собственного формата. Проверка и прием маркеров, предназначенных для другого ресурса, является примером [Deputy](https://cwe.mitre.org/data/definitions/441.html) проблемы.
 
 Если приложению требуется проверить id_token или access_token в соответствии с приведенным выше, приложение должно сначала проверить подпись маркера и издателя на соответствие значениям в документе OpenID Connect Discovery. Например, версия документа для любых клиентов находится в [https://login.microsoftonline.com/common/.well-known/openid-configuration](https://login.microsoftonline.com/common/.well-known/openid-configuration).
 

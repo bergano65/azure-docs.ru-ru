@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 308cbc1e2a9d6e0fbce91b1fac5748af909cc2c1
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: af840a7becb0fb2c23e01153828458ee1cfa51a1
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584635"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654240"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-wechat-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью WeChat в Azure Active Directory B2C
 
@@ -27,11 +27,9 @@ ms.locfileid: "97584635"
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-::: zone pivot="b2c-custom-policy"
+## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
-
-::: zone-end
+[!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-a-wechat-application"></a>Создание приложения WeChat
 
@@ -56,7 +54,7 @@ ms.locfileid: "97584635"
 1. Введите **Имя**. Например, *WeChat*.
 1. В поле **идентификатор клиента** введите идентификатор приложения WeChat, созданного ранее.
 1. В качестве **секрета клиента** введите ЗАПИСАННЫЙ ключ приложения.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ::: zone-end
 
@@ -187,7 +185,7 @@ ms.locfileid: "97584635"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений WeChat.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **WeChat**.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

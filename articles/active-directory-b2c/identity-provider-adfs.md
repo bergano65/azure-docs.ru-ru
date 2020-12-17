@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 8e9cf9a7c2556a1f0710b2bf646d83ffbf84ea97
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 767f60cae2f74f7e2a928253d45011bb6ceb5d0e
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585060"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653849"
 ---
 # <a name="add-ad-fs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление AD FS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "97585060"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
-- Убедитесь, что у вас есть доступ к PFX-файлу сертификата с закрытым ключом. Можно создать собственный подписанный сертификат и передать его в Azure AD B2C. Azure AD B2C использует этот сертификат для подписи запроса SAML, отправляемого поставщику удостоверений SAML. Дополнительные сведения о создании сертификата см. в разделе [Создание сертификата для подписи](identity-provider-salesforce.md#generate-a-signing-certificate).
+- Убедитесь, что у вас есть доступ к PFX-файлу сертификата с закрытым ключом. Можно создать собственный подписанный сертификат и передать его в Azure AD B2C. Azure AD B2C использует этот сертификат для подписи запроса SAML, отправляемого поставщику удостоверений SAML. Дополнительные сведения о создании сертификата см. в разделе [Создание сертификата для подписи](identity-provider-salesforce-saml.md#generate-a-signing-certificate).
 - Чтобы служба Azure принимала пароль PFX-файла, пароль должен быть зашифрован с помощью параметра TripleDES – SHA1 в служебной программе экспорта хранилища сертификатов Windows, а не AES256-SHA256.
 
 ## <a name="create-a-policy-key"></a>Создание ключа политики

@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: 674ce347f929dd70e32537e9bde3139c5fafc7ea
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 24ffce1528aa5c82fec9666fa0cb7b8717107f54
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92368015"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652268"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -20,10 +20,10 @@ ms.locfileid: "92368015"
 
 | **имя**;                  | **Коммерческие организации**                               | **Государственные организации**                                 | **Описание** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
-| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
+| Память                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net` | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery. |
 | Репликация               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
-| Служебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
+| Cлужебная шина               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 
 ## <a name="outbound-connectivity-for-site-recovery-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие подключения для URL-адресов Site Recovery или IP-диапазонов (код ошибки 151037 или 151072)
 
@@ -41,7 +41,7 @@ ms.locfileid: "92368015"
 
 1. Откройте **виртуальные машины** и выберите виртуальную машину.
 1. Перейдите к **параметрам** виртуальных машин и выберите **сети**.
-1. В области **Виртуальная сеть или подсеть**щелкните ссылку, чтобы открыть страницу ресурсов виртуальной сети.
+1. В области **Виртуальная сеть или подсеть** щелкните ссылку, чтобы открыть страницу ресурсов виртуальной сети.
 1. Перейдите в раздел **Параметры** и выберите **DNS-серверы**.
 
 Попытайтесь получить доступ к DNS-серверу с виртуальной машины. Если DNS-сервер недоступен, сделайте его доступным, выполнив отработку отказа DNS-сервера или создав линию сайта между сетью аварийного восстановления и DNS.
@@ -74,11 +74,14 @@ ms.locfileid: "92368015"
 
 1. Создайте правило безопасности для исходящего трафика HTTPS для NSG, как показано на следующем снимке экрана. В этом примере используется **тег целевой службы**: _Storage. EastUS_ и **диапазоны портов назначения**: _443_.
 
-     :::image type="content" source="./media/azure-to-azure-about-networking/storage-tag.png" alt-text="com-error":::
+     :::image type="content" source="./media/azure-to-azure-about-networking/storage-tag.png" alt-text="На снимке экрана показана панель Добавление правила безопасности для исходящего трафика для правила безопасности для точки подключения &quot;Восток&quot; (точка).":::
 
 1. Создайте правило безопасности для исходящего трафика HTTPS для NSG, как показано на следующем снимке экрана. В этом примере используется **тег целевой службы**: _AzureActiveDirectory_ и **диапазоны портов назначения**: _443_.
 
-     :::image type="content" source="./media/azure-to-azure-about-networking/aad-tag.png" alt-text="com-error" на NSG. Это позволяет получить доступ к службам Site Recovery в любом регионе.
+     :::image type="content" source="./media/azure-to-azure-about-networking/aad-tag.png" alt-text="На снимке экрана показана панель Добавление правила безопасности для исходящего трафика для правила безопасности Azure Active Directory.":::
+
+1. Аналогично приведенным выше правилам безопасности, создайте правило безопасности исходящего HTTPS (443) для "EventHub. CentralUS" на NSG, которое соответствует целевому расположению. Это позволяет получить доступ к Site Recovery мониторинга.
+1. Создайте правило безопасности исходящего трафика HTTPS (443) для "Азуреситерековери" на NSG. Это позволяет получить доступ к службам Site Recovery в любом регионе.
 
 #### <a name="nsg-rules---central-us"></a>Правила NSG. Центральная часть США
 
@@ -105,7 +108,7 @@ ms.locfileid: "92368015"
 
 #### <a name="resolution"></a>Решение
 
-Если вы используете правило или прокси-сервер брандмауэра группы безопасности сети Azure (NSG) для управления исходящими сетевыми подключениями на компьютере, необходимо разрешить несколько тегов служб. [Подробнее](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags).
+Если вы используете правило или прокси-сервер брандмауэра группы безопасности сети Azure (NSG) для управления исходящими сетевыми подключениями на компьютере, необходимо разрешить несколько тегов служб. [Дополнительные сведения](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags).
 
 ### <a name="issue-4-azure-to-azure-replication-failed-when-the-network-traffic-goes-through-on-premises-proxy-server-151072"></a>Причина 4. сбой репликации из Azure в Azure, если сетевой трафик проходит через локальный прокси-сервер (151072)
 
@@ -136,6 +139,6 @@ ms.locfileid: "92368015"
 
 Чтобы разрешить [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags)адресов, выполните действия, описанные в [документе Руководство](./azure-to-azure-about-networking.md)по работе с сетями.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Репликация виртуальных машин Azure в другой регион Azure](azure-to-azure-how-to-enable-replication.md)
