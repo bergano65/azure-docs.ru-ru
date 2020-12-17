@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: 3097f7b0b6b69dc470877d4951efbcbd3c7482b1
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 212a6b0786b371bfb92f2e193e67d9accd432bf8
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078499"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657249"
 ---
 # <a name="api-management-transformation-policies"></a>Политики преобразования службы управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](./api-management-policies.md).
@@ -207,7 +207,7 @@ ms.locfileid: "92078499"
 <set-backend-service base-url="base URL of the backend service" />
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```xml
 <set-backend-service backend-id="identifier of the backend entity specifying base URL of the backend service" />
@@ -268,13 +268,13 @@ ms.locfileid: "92078499"
 
 |Имя|Описание|Обязательно|Значение по умолчанию|
 |----------|-----------------|--------------|-------------|
-|base-url|Новый базовый URL-адрес внутренней службы.|`base-url` `backend-id` Должен присутствовать один из или.|Н/Д|
-|backend-id|Идентификатор серверной части для перенаправления. (Внутренние сущности управляются через [API](/rest/api/apimanagement/2019-12-01/backend) и [PowerShell](https://www.powershellgallery.com/packages?q=apimanagement).)|`base-url` `backend-id` Должен присутствовать один из или.|Н/Д|
-|sf-partition-key|Применяется только, когда серверной частью является служба Service Fabric и она задана с помощью атрибута backend-id. Используется для разрешения определенной секции в имени службы разрешения имен.|Нет|Н/Д|
-|sf-replica-type|Применяется только, когда серверной частью является служба Service Fabric и она задана с помощью атрибута backend-id. Контролирует, куда должен отправляться запрос: в первичную или вторичную реплику секции. |Нет|Н/Д|
-|sf-resolve-condition|Применяется только, когда серверной частью является служба Service Fabric. Условие, определяющее, необходимо ли повторить вызов к серверной части Service Fabric с новым разрешением.|Нет|Н/Д|
-|sf-service-instance-name|Применяется только, когда серверной частью является служба Service Fabric. Разрешает изменение экземпляров службы в среде выполнения. |Нет|Н/Д|
-|sf-listener-name|Применяется, только когда серверной частью является служба Service Fabric, а также при определении с помощью атрибута backend-id. Reliable Services Service Fabric позволяют создавать несколько прослушивателей в одной службе. Этот атрибут используется для выбора конкретного прослушивателя, когда у серверной службы Reliable Service есть больше одного прослушивателя. Если этот атрибут не указан, управление API попытается использовать прослушиватель без имени. Прослушиватель без имени часто используются службами Reliable Services, у которых есть только один прослушиватель. |Нет|Н/Д|
+|base-url|Новый базовый URL-адрес внутренней службы.|`base-url` `backend-id` Должен присутствовать один из или.|Недоступно|
+|backend-id|Идентификатор серверной части для перенаправления. (Внутренние сущности управляются через [API](/rest/api/apimanagement/2019-12-01/backend) и [PowerShell](https://www.powershellgallery.com/packages?q=apimanagement).)|`base-url` `backend-id` Должен присутствовать один из или.|Недоступно|
+|sf-partition-key|Применяется только, когда серверной частью является служба Service Fabric и она задана с помощью атрибута backend-id. Используется для разрешения определенной секции в имени службы разрешения имен.|Нет|Недоступно|
+|sf-replica-type|Применяется только, когда серверной частью является служба Service Fabric и она задана с помощью атрибута backend-id. Контролирует, куда должен отправляться запрос: в первичную или вторичную реплику секции. |Нет|Недоступно|
+|sf-resolve-condition|Применяется только, когда серверной частью является служба Service Fabric. Условие, определяющее, необходимо ли повторить вызов к серверной части Service Fabric с новым разрешением.|Нет|Недоступно|
+|sf-service-instance-name|Применяется только, когда серверной частью является служба Service Fabric. Разрешает изменение экземпляров службы в среде выполнения. |Нет|Недоступно|
+|sf-listener-name|Применяется, только когда серверной частью является служба Service Fabric, а также при определении с помощью атрибута backend-id. Reliable Services Service Fabric позволяют создавать несколько прослушивателей в одной службе. Этот атрибут используется для выбора конкретного прослушивателя, когда у серверной службы Reliable Service есть больше одного прослушивателя. Если этот атрибут не указан, управление API попытается использовать прослушиватель без имени. Прослушиватель без имени часто используются службами Reliable Services, у которых есть только один прослушиватель. |Нет|Недоступно|
 
 ### <a name="usage"></a>Использование
  Эта политика может использоваться в следующих [разделах](./api-management-howto-policies.md#sections) и [областях](./api-management-howto-policies.md#scopes).
@@ -316,12 +316,12 @@ ms.locfileid: "92078499"
 
 ```xml
 <set-body>
-@{ 
-    string inBody = context.Request.Body.As<string>(preserveContent: true); 
-    if (inBody[0] =='c') { 
-        inBody[0] = 'm'; 
-    } 
-    return inBody; 
+@{ 
+    string inBody = context.Request.Body.As<string>(preserveContent: true); 
+    if (inBody[0] =='c') { 
+        inBody[0] = 'm'; 
+    } 
+    return inBody; 
 }
 </set-body>
 ```
@@ -329,14 +329,14 @@ ms.locfileid: "92078499"
 #### <a name="example-accessing-the-body-as-a-jobject-note-that-since-we-are-not-reserving-the-original-request-body-accessing-it-later-in-the-pipeline-will-result-in-an-exception"></a>Пример доступа к тексту как к объекту JObject Обратите внимание, что мы не резервировали исходный текст запроса, поэтому попытка получить к нему доступ позже в конвейере приведет к возникновению исключения.
 
 ```xml
-<set-body> 
-@{ 
-    JObject inBody = context.Request.Body.As<JObject>(); 
-    if (inBody.attribute == <tag>) { 
-        inBody[0] = 'm'; 
-    } 
-    return inBody.ToString(); 
-} 
+<set-body> 
+@{ 
+    JObject inBody = context.Request.Body.As<JObject>(); 
+    if (inBody.attribute == <tag>) { 
+        inBody[0] = 'm'; 
+    } 
+    return inBody.ToString(); 
+} 
 </set-body>
 
 ```
@@ -513,7 +513,7 @@ OriginalUrl.
 |Название|Описание|Обязательно|
 |----------|-----------------|--------------|
 |set-header|Корневой элемент.|Да|
-|value|Указывает значение заголовка, которое должно быть установлено. Для нескольких заголовков с одним и тем же именем добавьте дополнительные элементы `value`.|Нет|
+|значение|Указывает значение заголовка, которое должно быть установлено. Для нескольких заголовков с одним и тем же именем добавьте дополнительные элементы `value`.|Нет|
 
 ### <a name="properties"></a>Свойства
 
@@ -568,7 +568,7 @@ OriginalUrl.
 |Название|Описание|Обязательно|
 |----------|-----------------|--------------|
 |set-query-parameter|Корневой элемент.|Да|
-|value|Указывает значение параметра запроса, которое должно быть установлено. Для нескольких параметров запроса с одним и тем же именем добавьте дополнительные элементы `value`.|Да|
+|значение|Указывает значение параметра запроса, которое должно быть установлено. Для нескольких параметров запроса с одним и тем же именем добавьте дополнительные элементы `value`.|Да|
 
 ### <a name="properties"></a>Свойства
 
@@ -697,7 +697,7 @@ OriginalUrl.
   <outbound>
       <base />
       <xsl-transform>
-        <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+          <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:output omit-xml-declaration="yes" method="xml" indent="yes" />
             <!-- Copy all nodes directly-->
             <xsl:template match="node()| @*|*">
@@ -705,7 +705,7 @@ OriginalUrl.
                     <xsl:apply-templates select="@* | node()|*" />
                 </xsl:copy>
             </xsl:template>
-        </xsl:stylesheet>
+          </xsl:stylesheet>
     </xsl-transform>
   </outbound>
 </policies>
@@ -716,7 +716,7 @@ OriginalUrl.
 |Название|Описание|Обязательно|
 |----------|-----------------|--------------|
 |xsl-transform|Корневой элемент.|Да|
-|parameter|Используется для определения переменных, используемых при преобразовании.|Нет|
+|параметр|Используется для определения переменных, используемых при преобразовании.|Нет|
 |xsl:stylesheet|Корневой элемент таблицы стилей. Все определенные элементы и атрибуты соответствуют стандарту [спецификации XSLT](https://www.w3.org/TR/xslt).|Да|
 
 ### <a name="usage"></a>Использование

@@ -12,12 +12,12 @@ ms.date: 8/11/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 981ac775e7153cfd03dc1760bbbc4e50fd9ecc57
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c9fbf6990f789bdb0edb1cf45885003569d4f6a8
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169551"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653237"
 ---
 # <a name="signing-key-rollover-in-microsoft-identity-platform"></a>Смена ключей подписывания на платформе Microsoft Identity
 В этой статье рассказывается о том, что необходимо знать об открытых ключах, используемых платформой идентификации Майкрософт для подписания маркеров безопасности. Важно отметить, что эти ключи переносятся на периодический основе, и в экстренной ситуации можно сразу же выполнить откат. Все приложения, использующие платформу Microsoft Identity, должны быть способны программно обрабатывать процесс смены ключей. Здесь вы узнаете принцип действия ключей, а также то, как оценить степень влияния их смены на приложение и как обновить приложение или настроить периодический запуск процесса смены ключей в ручном режиме, чтобы приложение могло обрабатывать этот процесс.
@@ -85,7 +85,7 @@ app.UseWsFederationAuthentication(
      });
 ```
 ```
- app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+app.UseWindowsAzureActiveDirectoryBearerAuthentication(
      new WindowsAzureActiveDirectoryBearerAuthenticationOptions
      {
      // ...

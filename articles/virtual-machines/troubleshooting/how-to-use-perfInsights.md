@@ -1,7 +1,7 @@
 ---
 title: Как использовать PerfInsights в Microsoft Azure | Документация Майкрософт
 description: Использование PerfInsights для устранения проблем производительности на виртуальных машинах Windows.
-services: virtual-machines-windows'
+services: virtual-machines-windows
 documentationcenter: ''
 author: anandhms
 manager: dcscontentpm
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: f49ae5139dc92ec1448e5dea05be8c8c216ef91e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9e298bf39446024f384b9af142fe3000e936bb6d
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002669"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656858"
 ---
 # <a name="how-to-use-perfinsights-in-azure"></a>Как использовать PerfInsights в Azure
 
@@ -169,7 +169,7 @@ PerfInsights может собирать и анализировать неск�
    * Windows Server 2016
    * Windows Server 2012 R2
    * Windows Server 2012
-   * Windows Server 2008 R2
+   * Windows Server 2008 R2
    * Windows 10
    * Windows 8.1
    * Windows 8
@@ -309,7 +309,7 @@ Diskspd — это генератор нагрузки хранилища и и�
 
 XPerf является средством командной строки для записи сведений трассировок из набора средств оценки производительности Windows. Дополнительные сведения см. в записи блога [Windows Performance Toolkit - Xperf](/archive/blogs/ntdebugging/windows-performance-toolkit-xperf) (Набор средств оценки производительности Windows — XPerf).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете отправить журналы диагностики и отчетов в службу поддержки Майкрософт для дальнейшего анализа Службе поддержки Майкрософт может потребоваться передать выходные данные, созданные PerfInsights, чтобы упростить процесс устранения неполадок.
 

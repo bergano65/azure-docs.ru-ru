@@ -16,12 +16,12 @@ ms.date: 07/27/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99da9b787bfe06bece8b8dafdafc257336dddf63
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 251f9a2b075189f19b9e943ff660baaba93ec33b
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96176194"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652047"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -61,7 +61,7 @@ ms.locfileid: "96176194"
 
 1. Создайте тестовую учетную запись.  
 2. Импортируйте модуль PowerShell на компьютере агента:
- 
+
  ```powershell
  Import-Module "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\PassthroughAuthPSModule\PassthroughAuthPSModule.psd1"
  ```
@@ -85,7 +85,7 @@ ms.locfileid: "96176194"
 
 Перейдите в раздел **Azure Active Directory**  ->  **входы** в [центр администрирования Azure Active Directory](https://aad.portal.azure.com/) и щелкните действие входа конкретного пользователя. Найдите поле **КОД ОШИБКИ ВХОДА**. Сопоставьте значение этого поля c причиной сбоя и способом разрешения с помощью следующей таблицы:
 
-|Код ошибки входа|Причина ошибки входа|Разрешение
+|Код ошибки входа|Причина ошибки входа|Решение
 | --- | --- | ---
 | 50144 | Истек срок действия пароля пользователя Active Directory. | Сбросьте пароль пользователя в локальной службе Active Directory.
 | 80001 | Агент аутентификации недоступен. | Установите и зарегистрируйте агент аутентификации.

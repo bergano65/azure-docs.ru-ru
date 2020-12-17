@@ -13,12 +13,12 @@ ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 0181313a404127f4c542423cdcfe90ca64a03fe6
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 48887df0ce6228fa436cb91bfb0a3ee7aa0f6c08
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585077"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654512"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Amazon через Azure Active Directory B2C
 
@@ -32,19 +32,7 @@ ms.locfileid: "97585077"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-::: zone pivot="b2c-user-flow"
-
-* [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-* Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
+[!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-an-app-in-the-amazon-developer-console"></a>Создание приложения в консоли разработчика Amazon
 
@@ -68,7 +56,7 @@ ms.locfileid: "97585077"
 1. Введите **Имя**. Например, *Amazon*.
 1. В поле **идентификатор клиента** введите идентификатор клиента приложения Amazon, созданного ранее.
 1. В качестве **секрета клиента** введите записанный секрет клиента.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ::: zone-end
 
@@ -195,7 +183,7 @@ ms.locfileid: "97585077"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений Amazon.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Amazon**.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

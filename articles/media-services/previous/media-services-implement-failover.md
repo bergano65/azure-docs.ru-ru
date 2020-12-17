@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 10976c91e781763264d73adcc54ba88ec8d07f54
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68cd107b2606643d712c4de94b6d1a82e8ee614a
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89256537"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657266"
 ---
 # <a name="implement-failover-streaming-with-media-services-v2"></a>Реализация потоковой передачи отработки отказа с помощью служб мультимедиа v2
 
@@ -66,7 +66,7 @@ ms.locfileid: "89256537"
 
 1. Чтобы создать новое решение, содержащее проект консольного приложения на C#, используйте Visual Studio. Введите в качестве имени **HandleRedundancyForOnDemandStreaming** и нажмите кнопку **ОК**.
 2. Создайте папку **SupportFiles** на том же уровне, где находится файл проекта **HandleRedundancyForOnDemandStreaming.csproj**. В папке **SupportFiles** создайте папки **OutputFiles** и **MP4Files**. Скопируйте MP4-файл в папку **MP4Files**. (В этом примере используется файл **ignite.mp4** .) 
-3. Используйте **NuGet** для добавления ссылок на библиотеки DLL, связанные со службами мультимедиа. В **главном меню Visual Studio**выберите **Сервис**  >  **Диспетчер пакетов NuGet**  >  **консоль диспетчера пакетов**. В окне консоли введите **Install-Package windowsazure.mediaservices** и нажмите клавишу ВВОД.
+3. Используйте **NuGet** для добавления ссылок на библиотеки DLL, связанные со службами мультимедиа. В **главном меню Visual Studio** выберите **Сервис**  >  **Диспетчер пакетов NuGet**  >  **консоль диспетчера пакетов**. В окне консоли введите **Install-Package windowsazure.mediaservices** и нажмите клавишу ВВОД.
 4. Добавьте другие ссылки, необходимые для этого проекта: System. Runtime. Serialization и System. Web.
 5. Замените операторы **using**, добавленные в файл **Programs.cs** по умолчанию, на следующие:
 
@@ -755,11 +755,11 @@ using System.Runtime.Serialization.Json;
 
 Дополнительные сведения о защите содержимого см. [в статье Использование динамического шифрования AES-128 и службы доставки ключей](media-services-protect-with-aes128.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Использование веб-перехватчиков Azure для мониторинга уведомлений о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-webhooks.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь для маршрутизации запросов между двумя центрами обработки данных и отработки отказов в случае проблем подключения можно использовать диспетчер трафика.
 

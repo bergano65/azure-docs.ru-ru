@@ -9,12 +9,12 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 935ba888352d2454a609a40866ef10ccf13a2dac
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 2c9b239269aa00255aa08d6c233cd7978b253d94
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605468"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653577"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Заметки о выпуске — службы данных с поддержкой ARC в Azure (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "97605468"
 Просмотр конечных точек для SQL Управляемый экземпляр и PostgreSQL с помощью интерфейса командной строки () в Azure Data CLI ( `azdata` ) с `azdata arc sql endpoint list` `azdata arc postgres endpoint list` командами и.
 
 Изменение запросов и ограничений для ресурсов SQL Управляемый экземпляр (ЦП и памяти) с помощью Azure Data Studio.
-     
+
 В дополнение к полному восстановлению до полного восстановления для версий 11 и 12 PostgreSQL служба "Дуга Azure" с поддержкой PostgreSQL теперь поддерживает восстановление на момент времени. Функция восстановления на момент времени позволяет указать конкретную дату и время для восстановления.
 
 Изменилось соглашение об именовании модулей Pod для PostgreSQL с поддержкой ARC в Azure. Теперь он имеет вид: Серверграупнаме {r, s}-_n_. Например, группа серверов с тремя узлами, одним узлом координатора и двумя рабочими узлами, представлена следующим образом:
@@ -127,7 +127,7 @@ azdata arc dc create --profile-name azure-arc-aks-hci --namespace arc --name arc
 Инструкции см. в статье [что такое службы данных с поддержкой дуги Azure?](overview.md)
 
 ## <a name="next-steps"></a>Следующие шаги
-  
+
 > **Хотите попробовать?**  
 > Быстро Начните работу с помощью [Azure Arc JumpStart](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) в AKS, AWS эластичной Kubernetes службы (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure.
 

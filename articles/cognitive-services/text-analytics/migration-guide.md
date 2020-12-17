@@ -8,18 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 11/19/2020
+ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: 56464268b95181af0379a1895d392cc3cc26624c
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 6a71bcbfb8341098711e330cebf8545e1fd2751c
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980904"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656960"
 ---
 # <a name="migrate-to-version-3x-of-the-text-analytics-api"></a>Переход на версию 3. x API анализа текста
-
-[!INCLUDE [v3 region availability](includes/v3-region-availability.md)]
 
 Если вы используете версию 2,1 API анализа текста, эта статья поможет вам обновить приложение для использования версии 3. x. Версия 3,0 является общедоступной и содержит новые функции, такие как расширенное [Распознавание сущностей (NER)](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-features-and-versions) и [Управление версиями модели](concepts/model-versioning.md). Также доступна предварительная версия версии 3.1 (версия 3.1-Preview. x), которая добавляет такие функции, как [интеллектуальный анализ данных об мнениях](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features). Модели, используемые в версии 2, не получат будущие обновления. 
 
@@ -107,7 +105,7 @@ NER
 
 #### <a name="rest-api"></a>REST API
 
-Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для извлечения ключевых фраз. Например: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
+Если приложение использует REST API, обновите конечную точку запроса до конечной точки v3 для извлечения ключевых фраз. Пример: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
 
 Примеры ответа JSON см. в справочной документации.
 * [Версия 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6)

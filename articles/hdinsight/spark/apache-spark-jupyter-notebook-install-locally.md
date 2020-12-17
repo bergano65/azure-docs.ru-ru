@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-python
 ms.date: 04/23/2020
-ms.openlocfilehash: 16cb8a9c2a951c9f60640248ef74757d1e5ee200
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: de11e6f9fd9acc81f7be6d23bb1019f88f9e1322
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518929"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657215"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка Jupyter Notebook на компьютере и подключение к Apache Spark в HDInsight
 
@@ -42,12 +42,7 @@ ms.locfileid: "96518929"
 
 ## <a name="install-spark-magic"></a>Установка программы Spark Magic
 
-1. Введите одну из приведенных ниже команд, чтобы установить магическую версию Spark. См. также [документацию по sparkmagic](https://github.com/jupyter-incubator/sparkmagic#installation).
-
-    |Cluster version | Команда установки |
-    |---|---|
-    |v 3.6 и v 3.5 |`pip install sparkmagic==0.13.1`|
-    |v 3.4|`pip install sparkmagic==0.2.3`|
+1. Введите команду `pip install sparkmagic==0.13.1` для установки программы Spark Magic для кластеров HDInsight версии 3,6 и 4,0. См. также [документацию по sparkmagic](https://github.com/jupyter-incubator/sparkmagic#installation).
 
 1. Убедитесь, что `ipywidgets` установлен правильный параметр, выполнив следующую команду:
 
@@ -74,7 +69,7 @@ ms.locfileid: "96518929"
     |PySpark|`jupyter-kernelspec install sparkmagic/kernels/pysparkkernel`|
     |PySpark3|`jupyter-kernelspec install sparkmagic/kernels/pyspark3kernel`|
 
-1. Необязательный элемент. Введите следующую команду, чтобы включить расширение сервера:
+1. Необязательный параметр. Введите следующую команду, чтобы включить расширение сервера:
 
     ```cmd
     jupyter serverextension enable --py sparkmagic

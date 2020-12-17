@@ -7,12 +7,12 @@ ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 51bd073b6f84f3378b91091e04f2f278ea2f49b6
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ddb8027c145f6a38bfcd953be66dae2943a20c3a
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95495275"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654614"
 ---
 # <a name="manage-iot-plug-and-play-digital-twins"></a>Управление Plug and Play Интернета вещей Digital двойников
 
@@ -26,7 +26,7 @@ IoT Plug and Play поддерживает **получение цифровых
 
 Устройство IoT Plug and Play, используемое в качестве примера в этой статье, реализует [модель контроллера температуры](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) с компонентами [термостата](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) .
 
-В следующем фрагменте кода показан ответ на запрос **Get Digital двойника** , отформатированный как объект JSON. Дополнительные сведения о формате Digital двойника см. в разделе [Общие сведения об IoT Plug and Play Digital двойников](./concepts-digital-twin.md#digital-twin-json-format).
+В следующем фрагменте кода показан ответ на запрос **Get Digital двойника** , отформатированный как объект JSON. Дополнительные сведения о формате Digital двойника см. в разделе [Общие сведения об IoT Plug and Play Digital двойников](./concepts-digital-twin.md#digital-twin-example).
 
 ```json
 {
@@ -155,7 +155,7 @@ Digital двойников позволяет обновить весь комп
 
 ### <a name="rules-for-setting-the-desired-value-of-a-digital-twin-property"></a>Правила настройки требуемого значения свойства цифрового двойника
 
-**Имя**
+**имя**;
 
 Имя компонента или свойства должно быть допустимым именем ДТДЛ v2.
 
@@ -189,7 +189,7 @@ API Digital двойника создает следующее общее соо
 
 Обновление может завершиться неудачей, если сообщаемые значения устройства не соответствуют [соглашениям об отсоединениях и игре IOT](./concepts-convention.md#writable-properties).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о цифровом двойников, вот несколько дополнительных ресурсов:
 

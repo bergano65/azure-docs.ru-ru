@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 43abdd1db2e8e24033332f99c583e30efbf64a00
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 4dfbffcaedb6c544a34e347633d5adc173fab33e
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957407"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655991"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-azure-shared-disk"></a>Высокий уровень доступности экземпляра SAP ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и общего диска Azure
 
@@ -104,11 +104,11 @@ ms.locfileid: "94957407"
 | --- | --- | --- |---| ---|
 | 1-й кластер узлов кластера ASCS/SCS |PR1-ASCS-10 |10.0.0.4 |PR1-ASCS-avset |PR1PPG |
 | кластер ASCS/SCS второго узла кластера |PR1-ASCS-11 |10.0.0.5 |PR1-ASCS-avset |PR1PPG |
-| Сетевое имя кластера | pr1clust |10.0.0.42 (**только** для кластера Win 2016) | Недоступно | Недоступно |
-| **SID1** Сетевое имя кластера ASCS | PR1 — аскскл |10.0.0.43 | Недоступно | Недоступно |
-| **SID1** Сетевое имя кластера ERS (**только** для ERS2) | PR1 — ерскл |10.0.0.44 | Недоступно | Недоступно |
-| **SID2** Сетевое имя кластера ASCS | PR2 — аскскл |10.0.0.45 | Недоступно | Недоступно |
-| **SID2** Сетевое имя кластера ERS (**только** для ERS2) | PR1 — ерскл |10.0.0.46 | Недоступно | Недоступно |
+| Сетевое имя кластера | pr1clust |10.0.0.42 (**только** для кластера Win 2016) | Н/Д | Н/Д |
+| **SID1** Сетевое имя кластера ASCS | PR1 — аскскл |10.0.0.43 | Н/Д | Н/Д |
+| **SID1** Сетевое имя кластера ERS (**только** для ERS2) | PR1 — ерскл |10.0.0.44 | Н/Д | Н/Д |
+| **SID2** Сетевое имя кластера ASCS | PR2 — аскскл |10.0.0.45 | Н/Д | Н/Д |
+| **SID2** Сетевое имя кластера ERS (**только** для ERS2) | PR1 — ерскл |10.0.0.46 | Н/Д | Н/Д |
 
 ### <a name="create-azure-internal-load-balancer"></a>Создание внутренней подсистемы балансировки нагрузки Azure
 
@@ -236,9 +236,9 @@ SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное и
 
 4. Зарегистрируйте диск в кластере.  
    ```powershell
-    # Add the disk to cluster 
+     # Add the disk to cluster 
     Get-ClusterAvailableDisk -All | Add-ClusterDisk
-    # Example output     
+    # Example output 
     # Name           State  OwnerGroup        ResourceType 
     # ----           -----  ----------        ------------ 
     # Cluster Disk 2 Online Available Storage Physical Disk
@@ -260,7 +260,7 @@ SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное и
  
    _Определение записи DNS для виртуального имени и IP-адреса кластера SAP ERS2_
 
-3. Чтобы определить IP-адрес, назначенный имени виртуального узла, выберите домен **диспетчера DNS**  >  **Domain**.
+3. Чтобы определить IP-адрес, назначенный имени виртуального узла, выберите домен **диспетчера DNS**  >  .
 
    ![Новое виртуальное имя и IP-адрес для конфигурации кластера SAP ASCS/SCS и ERS2][sap-ha-guide-figure-6011]
 
@@ -346,7 +346,7 @@ SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное и
     
     .EXAMPLE 
     # Set probe port to 62000, on SAP cluster resource 'SAP AB1 IP'. SAP cluster group 'SAP AB1' IS NOT restarted, therefore changes are NOT active.
-    # To activate the changes you need to manualy restart 'SAP AB1' cluster group.
+    # To activate the changes you need to manually restart 'SAP AB1' cluster group.
     Set-AzureLoadBalancerHealthCheckProbePortOnSAPClusterIPResource -SAPSID AB1 -ProbePort 62000 -RestartSAPClusterGroup $False
     
     .EXAMPLE 
@@ -362,7 +362,7 @@ SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное и
             [ValidateNotNullOrEmpty()]  
             [ValidateLength(3,3)]      
             [string]$SAPSID,
-                  
+
             [Parameter(Mandatory=$True)]
             [ValidateNotNullOrEmpty()]        
             [int] $ProbePort,
@@ -479,7 +479,7 @@ SAP ASCS, SAP SCS и New SAP ERS2 используют виртуальное и
 3. Перезапустите узел A кластера с помощью портала Azure. Это инициирует автоматическую отработку отказа \<SID\> кластерной группы SAP с узла A на узел B.  
 4. Перезапустите узел A кластера с помощью Azure PowerShell. Это инициирует автоматическую отработку отказа \<SID\> кластерной группы SAP с узла A на узел B.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте, как подготовить инфраструктуру Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
 * [Установите SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]

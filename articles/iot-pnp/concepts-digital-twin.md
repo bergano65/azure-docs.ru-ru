@@ -3,42 +3,115 @@ title: Сведения о цифровых двойниках IoT Plug and Play
 description: Сведения о том, как IoT Plug and Play использует цифровые двойников
 author: prashmo
 ms.author: prashmo
-ms.date: 07/17/2020
+ms.date: 12/14/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: f13230c7bd88a9c3cf043fc1881a34f6b7ce6fe7
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 99c957e5bf6ffe69c94e109796590f5ab975c3cf
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95495327"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656892"
 ---
 # <a name="understand-iot-plug-and-play-digital-twins"></a>Сведения о цифровых двойниках IoT Plug and Play
 
-Устройство IoT Plug and Play реализует модель, описываемую схемой [Digital двойников Definition Language (дтдл)](https://github.com/Azure/opendigitaltwins-dtdl) . Модель описывает набор компонентов, свойств, команд и сообщений телеметрии, которые может иметь определенное устройство. Устройство двойника и цифровой двойника инициализируются при первом подключении устройства IoT Plug and Play к центру Интернета вещей.
+Устройство IoT Plug and Play реализует модель, описываемую схемой [Digital двойников Definition Language (дтдл)](https://github.com/Azure/opendigitaltwins-dtdl) . Модель описывает набор компонентов, свойств, команд и сообщений телеметрии, которые может иметь определенное устройство.
 
 В Plug and Play IoT используется версия 2 ДТДЛ. Дополнительные сведения об этой версии см. в спецификации [Digital двойников Definition Language (дтдл) — версия 2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md) на сайте GitHub.
 
-ДТДЛ не является эксклюзивным Plug and Play Интернета вещей. Другие службы IoT, такие как [Azure Digital двойников](../digital-twins/overview.md), используют ее для представления целых сред, таких как здания и сети Energy. Дополнительные сведения см. в статье [двойника Models in Azure Digital двойников](../digital-twins/concepts-models.md).
+> [!NOTE]
+> ДТДЛ не является эксклюзивным Plug and Play Интернета вещей. Другие службы IoT, такие как [Azure Digital двойников](../digital-twins/overview.md), используют ее для представления целых сред, таких как здания и сети Energy.
 
-В этой статье описывается, как компоненты и свойства представлены в *требуемых* и *сообщаемых* разделах двойникаа устройства. Кроме того, в ней также описано, как эти основные понятия сопоставляются с соответствующим цифровым двойником.
+Пакеты SDK для службы Azure IoT включают интерфейсы API, которые позволяют службе взаимодействовать с цифровым двойникаом устройства. Например, служба может считывать свойства устройства из цифрового двойника или использовать цифровое двойника для вызова команды на устройстве. Дополнительные сведения см. в статье [примеры цифровых двойника для центра Интернета вещей](concepts-developer-guide-service.md#iot-hub-digital-twin-examples).
 
-Устройство для подключения к IoT (Plug and Play) в этой статье, которое реализует [модель контроллера температуры](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) с компонентом [термостата](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) .
+В примере устройства IoT Plug and Play в этой статье реализована [модель контроллера температуры](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) с компонентами [термостата](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) .
 
 ## <a name="device-twins-and-digital-twins"></a>Двойникови устройств и Цифровые двойников
 
-Двойникови устройств — это документы JSON, в которых хранятся сведения о состоянии устройства, включая метаданные, конфигурации и условия. Дополнительные сведения см. в статье [изучение и использование двойниковов устройств в центре Интернета вещей](../iot-hub/iot-hub-devguide-device-twins.md). Построители устройств и решений могут по-прежнему использовать один и тот же набор API-интерфейсов Двойникаа устройств и пакетов SDK для реализации устройств и решений с помощью соглашений Plug and Play IoT.
+Кроме цифрового двойника, центр Интернета вещей Azure также поддерживает *двойника устройств* для каждого подключенного устройства. Двойника устройства похоже на цифровое двойника в том, что это представление свойств устройства. Пакеты SDK для службы Azure IoT включают API для взаимодействия с двойниковами устройств.
 
-API-интерфейсы Digital двойника работают с высокоуровневые конструкциями на языке определения цифровых двойников (ДТДЛ), такими как компоненты, свойства и команды. Интерфейсы API Digital двойника упрощают создание решений IoT Plug and Play решениями для сборщиков решений.
+Центр Интернета вещей инициализирует цифровое двойника и устройство двойника при первом подключении устройства IoT Plug and Play.
 
-В двойникае устройства состояние доступного для записи свойства разбивается по нужным и сообщаемым разделам. Все свойства, доступные только для чтения, доступны в разделе с отчетом.
+Двойникови устройств — это документы JSON, в которых хранятся сведения о состоянии устройства, включая метаданные, конфигурации и условия. Дополнительные сведения см. в статье [примеры клиентов службы центра Интернета вещей](concepts-developer-guide-service.md#iot-hub-service-client-examples). Построители устройств и решений могут по-прежнему использовать один и тот же набор API-интерфейсов Двойникаа устройств и пакетов SDK для реализации устройств и решений с помощью соглашений Plug and Play IoT.
+
+API-интерфейсы Digital двойника работают с ДТДЛми конструкциями высокого уровня, такими как компоненты, свойства и команды. Интерфейсы API Digital двойника упрощают создание решений IoT Plug and Play решениями для сборщиков решений.
+
+В двойникае устройства состояние доступного для записи свойства разбивается по *нужным свойствам* и разделам *сообщаемых свойств* . Все свойства, доступные только для чтения, доступны в разделе сообщаемые свойства.
 
 В цифровом двойника есть унифицированное представление текущего и требуемого состояния свойства. Состояние синхронизации для данного свойства хранится в соответствующем разделе компонента по умолчанию `$metadata` .
 
-### <a name="digital-twin-json-format"></a>Формат JSON Digital двойника
+### <a name="device-twin-json-example"></a>Пример JSON двойникаа устройства
 
-При представлении в виде объекта JSON цифровое двойника включает следующие поля:
+В следующем фрагменте кода показано, как двойника устройство IoT Plug and Play отформатировано как объект JSON:
+
+```json
+{
+  "deviceId": "sample-device",
+  "modelId": "dtmi:com:example:TemperatureController;1",
+  "version": 15,
+  "properties": {
+    "desired": {
+      "thermostat1": {
+        "__t": "c",
+        "targetTemperature": 21.8
+      },
+      "$metadata": {...},
+      "$version": 4
+    },
+    "reported": {
+      "serialNumber": "alwinexlepaho8329",
+      "thermostat1": {
+        "maxTempSinceLastReboot": 25.3,
+        "__t": "c",
+        "targetTemperature": {
+          "value": 21.8,
+          "ac": 200,
+          "ad": "Successfully executed patch",
+        }
+      },
+      "$metadata": {...},
+      "$version": 11
+    }
+  }
+}
+```
+
+### <a name="digital-twin-example"></a>Пример цифрового двойника
+
+В следующем фрагменте кода показан цифровой двойника, отформатированный как объект JSON:
+
+```json
+{
+  "$dtId": "sample-device",
+  "serialNumber": "alwinexlepaho8329",
+  "thermostat1": {
+    "maxTempSinceLastReboot": 25.3,
+    "targetTemperature": 21.8,
+    "$metadata": {
+      "targetTemperature": {
+        "desiredValue": 21.8,
+        "desiredVersion": 4,
+        "ackVersion": 4,
+        "ackCode": 200,
+        "ackDescription": "Successfully executed patch",
+        "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
+      },
+      "maxTempSinceLastReboot": {
+         "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
+      }
+    }
+  },
+  "$metadata": {
+    "$model": "dtmi:com:example:TemperatureController;1",
+    "serialNumber": {
+      "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
+    }
+  }
+}
+```
+
+В следующей таблице описаны поля в объекте Digital двойника JSON:
 
 | Имя поля | Описание |
 | --- | --- |
@@ -55,83 +128,13 @@ API-интерфейсы Digital двойника работают с высок
 | `{componentName}.{propertyName}` | Значение свойства компонента в JSON |
 | `{componentName}.$metadata` | Сведения о метаданных для компонента. |
 
-#### <a name="device-twin-sample"></a>Пример Двойникаа устройства
-
-В следующем фрагменте кода показано, как двойника устройство IoT Plug and Play отформатировано как объект JSON:
-
-```json
-{
-    "deviceId": "sample-device",
-    "modelId": "dtmi:com:example:TemperatureController;1",
-    "version": 15,
-    "properties": {
-        "desired": {
-            "thermostat1": {
-                "__t": "c",
-                "targetTemperature": 21.8
-            },
-            "$metadata": {...},
-            "$version": 4
-        },
-        "reported": {
-            "serialNumber": "alwinexlepaho8329",
-            "thermostat1": {
-                "maxTempSinceLastReboot": 25.3,
-                "__t": "c",
-                "targetTemperature": {
-                    "value": 21.8,
-                    "ac": 200,
-                    "ad": "Successfully executed patch",
-                }
-            },
-            "$metadata": {...},
-            "$version": 11
-        }
-    }
-}
-```
-
-#### <a name="digital-twin-sample"></a>Пример цифрового двойника
-
-В следующем фрагменте кода показан цифровой двойника, отформатированный как объект JSON:
-
-```json
-{
-    "$dtId": "sample-device",
-    "serialNumber": "alwinexlepaho8329",
-    "thermostat1": {
-        "maxTempSinceLastReboot": 25.3,
-        "targetTemperature": 21.8,
-        "$metadata": {
-            "targetTemperature": {
-                "desiredValue": 21.8,
-                "desiredVersion": 4,
-                "ackVersion": 4,
-                "ackCode": 200,
-                "ackDescription": "Successfully executed patch",
-                "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
-            },
-            "maxTempSinceLastReboot": {
-                "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-            }
-        }
-    },
-    "$metadata": {
-        "$model": "dtmi:com:example:TemperatureController;1",
-        "serialNumber": {
-            "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-        }
-    }
-}
-```
-
 ### <a name="properties"></a>Свойства
 
 Свойства — это поля данных, представляющие состояние сущности (например, свойства во многих языках объектно-ориентированного программирования).
 
 #### <a name="read-only-property"></a>Свойство только для чтения
 
-Схема.
+Схема ДТДЛ:
 
 ```json
 {
@@ -152,9 +155,9 @@ API-интерфейсы Digital двойника работают с высок
 
 ```json
 "properties": {
-    "reported": {
-        "serialNumber": "alwinexlepaho8329"
-    }
+  "reported": {
+    "serialNumber": "alwinexlepaho8329"
+  }
 }
 ```
 
@@ -171,15 +174,17 @@ API-интерфейсы Digital двойника работают с высок
 
 #### <a name="writable-property"></a>Доступное для записи свойство
 
-Предположим, что устройство также имеет следующее свойство, доступное для записи, в компоненте по умолчанию:
+В следующих примерах показано свойство, доступное для записи, в компоненте по умолчанию.
+
+ДТДЛ:
 
 ```json
 {
-    "@type": "Property",
-    "name": "fanSpeed",
-    "displayName": "Fan Speed",
-    "writable": true,
-    "schema": "double"
+  "@type": "Property",
+  "name": "fanSpeed",
+  "displayName": "Fan Speed",
+  "writable": true,
+  "schema": "double"
 }
 ```
 
@@ -189,19 +194,19 @@ API-интерфейсы Digital двойника работают с высок
 
 ```json
 {
-    "properties": {
-        "desired": {
-            "fanSpeed": 2.0,
-        },
-        "reported": {
-            "fanSpeed": {
-                "value": 3.0,
-                "ac": 200,
-                "av": 1,
-                "ad": "Successfully executed patch version 1"
-            }
-        }
+  "properties": {
+    "desired": {
+      "fanSpeed": 2.0,
     },
+    "reported": {
+      "fanSpeed": {
+        "value": 3.0,
+        "ac": 200,
+        "av": 1,
+        "ad": "Successfully executed patch version 1"
+      }
+    }
+  },
 }
 ```
 
@@ -211,17 +216,17 @@ API-интерфейсы Digital двойника работают с высок
 
 ```json
 {
-    "fanSpeed": 3.0,
-    "$metadata": {
-        "fanSpeed": {
-            "desiredValue": 2.0,
-            "desiredVersion": 2,
-            "ackVersion": 1,
-            "ackCode": 200,
-            "ackDescription": "Successfully executed patch version 1",
-            "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-        }
+  "fanSpeed": 3.0,
+  "$metadata": {
+    "fanSpeed": {
+      "desiredValue": 2.0,
+      "desiredVersion": 2,
+      "ackVersion": 1,
+      "ackCode": 200,
+      "ackDescription": "Successfully executed patch version 1",
+      "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
     }
+  }
 }
 ```
 
@@ -233,8 +238,7 @@ API-интерфейсы Digital двойника работают с высок
 ### <a name="components"></a>Components
 
 Компоненты позволяют строить интерфейс модели в виде сборки других интерфейсов.
-Рассмотрим интерфейс [термостата](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) , который определен как модель.
-Теперь этот интерфейс можно встроить как компонент thermostat1 (и другой компонент thermostat2) при определении [модели контроллера температуры](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json).
+Например, интерфейс [термостата](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) может быть включен как компоненты `thermostat1` и  `thermostat2` в модель [модели контроллера температуры](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) .
 
 В двойникае устройства компонент идентифицируется `{ "__t": "c"}` маркером. В цифровом двойника присутствие `$metadata` помечает компонент.
 
@@ -251,30 +255,30 @@ API-интерфейсы Digital двойника работают с высок
 
 ```json
 "properties": {
-    "desired": {
-        "thermostat1": {
-            "__t": "c",
-            "targetTemperature": 21.8
-        },
-        "$metadata": {
-        },
-        "$version": 4
+  "desired": {
+    "thermostat1": {
+      "__t": "c",
+      "targetTemperature": 21.8
     },
-    "reported": {
-        "thermostat1": {
-            "maxTempSinceLastReboot": 25.3,
-            "__t": "c",
-            "targetTemperature": {
-                "value": 21.8,
-                "ac": 200,
-                "ad": "Successfully executed patch",
-                "av": 4
-            }
-        },
-        "$metadata": {
-        },
-        "$version": 11
-    }
+    "$metadata": {
+    },
+    "$version": 4
+  },
+  "reported": {
+    "thermostat1": {
+      "maxTempSinceLastReboot": 25.3,
+      "__t": "c",
+      "targetTemperature": {
+        "value": 21.8,
+        "ac": 200,
+        "ad": "Successfully executed patch",
+        "av": 4
+      }
+    },
+    "$metadata": {
+    },
+    "$version": 11
+  }
 }
 ```
 
@@ -284,21 +288,21 @@ API-интерфейсы Digital двойника работают с высок
 
 ```json
 "thermostat1": {
-    "maxTempSinceLastReboot": 25.3,
-    "targetTemperature": 21.8,
-    "$metadata": {
-        "targetTemperature": {
-            "desiredValue": 21.8,
-            "desiredVersion": 4,
-            "ackVersion": 4,
-            "ackCode": 200,
-            "ackDescription": "Successfully executed patch",
-            "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
-        },
-        "maxTempSinceLastReboot": {
-            "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-        }
+  "maxTempSinceLastReboot": 25.3,
+  "targetTemperature": 21.8,
+  "$metadata": {
+    "targetTemperature": {
+      "desiredValue": 21.8,
+      "desiredVersion": 4,
+      "ackVersion": 4,
+      "ackCode": 200,
+      "ackDescription": "Successfully executed patch",
+      "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
+    },
+    "maxTempSinceLastReboot": {
+       "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
     }
+  }
 }
 ```
 
@@ -307,7 +311,7 @@ API-интерфейсы Digital двойника работают с высок
 
 ## <a name="digital-twin-apis"></a>Интерфейсы API цифровых двойника
 
-В Azure Digital двойников имеется **поддержка получения цифровых двойника**, **обновления цифровых двойника**, **вызова компонентов** и **вызова команды** для управления цифровым устройством двойника. Вы можете использовать API- [интерфейсы RESTful](/rest/api/iothub/service/digitaltwin) напрямую или через [пакет SDK службы](../iot-pnp/libraries-sdks.md).
+В число API-интерфейсов Digital двойника входит **получение цифровых двойника**, **обновление цифровых двойника**, **вызов компонента Component** и **вызов** командных операций для управления цифровыми двойника. Вы можете использовать API- [интерфейсы RESTful](/rest/api/iothub/service/digitaltwin) напрямую или через [пакет SDK службы](../iot-pnp/libraries-sdks.md).
 
 ## <a name="digital-twin-change-events"></a>События изменения цифровых двойников
 
@@ -377,7 +381,7 @@ content-encoding:utf-8
 > [!NOTE]
 > Двойника сообщения об изменении уведомлений при включении в уведомлениях об изменениях устройства и цифрового двойника удваивается.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о цифровом двойников, вот несколько дополнительных ресурсов:
 

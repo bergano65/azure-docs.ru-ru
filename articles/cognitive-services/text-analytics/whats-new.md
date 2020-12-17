@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: c304c2aad3ba40d7b3a044f0e3222e31bb013648
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 625fe5f53318ebc641d102e679ef7fd0607ef683
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503987"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652855"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -129,7 +129,7 @@ API анализа текста обновляется на постоянной
 * Связывание сущностей
 * Отрицание
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="text-analytics-api-v3-general-availability"></a>Общая доступность API анализа текста v3
 
@@ -160,8 +160,6 @@ API анализа текста v3 теперь общедоступен со с
     * `confidenceScore` имеет две десятичные точки точности. 
 * `type` был переименован в `category`.
 * `subtype` был переименован в `subcategory`.
-
-[!INCLUDE [v3 region availability](includes/v3-region-availability.md)]
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о API анализа текста v3](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages)

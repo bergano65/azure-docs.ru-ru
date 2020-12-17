@@ -15,12 +15,12 @@ ms.date: 07/01/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f38ef7db114705392bd1d3dc6f9a4562a809e20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4e3fe72492ef92fe65572c75bf9f88b5f9ffda3
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86023889"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653424"
 ---
 # <a name="activate-my-azure-resource-roles-in-privileged-identity-management"></a>Активация ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -50,7 +50,7 @@ ms.locfileid: "86023889"
 
 1. Выберите **активировать** , чтобы открыть страницу активация.
 
-     ![Открытая панель активации с областью, временем начала, длительностью и причиной](./media/pim-resource-roles-activate-your-roles/azure-role-eligible-activate.png)
+    ![Открытая панель активации с областью, временем начала, длительностью и причиной](./media/pim-resource-roles-activate-your-roles/azure-role-eligible-activate.png)
 
 1. Если эта роль требует многофакторной проверки подлинности, щелкните **Чтобы продолжить, подтвердите свою личность**. Проверка подлинности выполняется один раз за сеанс.
 

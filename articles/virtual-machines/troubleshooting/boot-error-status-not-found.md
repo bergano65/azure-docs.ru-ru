@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: v-miegge
-ms.openlocfilehash: 3677d67f55cfccdc80245b2ec870ffa76b0a1940
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff7d5a4e1181dccedc3584d958038a1d695c57ca
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088671"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657130"
 ---
 # <a name="troubleshoot-windows-boot-manager-error----0xc0000225-status-not-found"></a>Устранение ошибки диспетчера загрузки Windows 0xC0000225 "Состояние не найдено"
  
@@ -126,7 +126,7 @@ ms.locfileid: "87088671"
       `dir <BINARY WITH ".SYS" EXTENSION>  /s`
 
       Эта команда выводит список всех версий файла на компьютере, предоставляя журнал путей к этому компоненту.
-      
+
       Например, файл **dir cng.sys** был бы переименован: **dir cng.sys /s**.
 
    1. Выберите последнюю версию файла в списке (или любую другую на ваш выбор) и скопируйте файл в папку **Windows\System32**, используя предыдущий путь и приведенную ниже команду.

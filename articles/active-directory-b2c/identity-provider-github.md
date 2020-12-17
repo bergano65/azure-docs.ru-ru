@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: a890a72773392ec179c3565954c3136d47db1dc4
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 68ffde11059de4809e519c1ac4f79503f25b0004
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584924"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653747"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-github-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью GitHub через Azure Active Directory B2C
 
@@ -34,19 +34,7 @@ ms.locfileid: "97584924"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-::: zone pivot="b2c-user-flow"
-
-* [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-* Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
-* [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
-
-::: zone-end
+[!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-a-github-oauth-application"></a>Создание приложения OAuth GitHub
 
@@ -70,7 +58,7 @@ ms.locfileid: "97584924"
 1. Введите **Имя**. Например, *GitHub*.
 1. В поле **идентификатор клиента** введите идентификатор клиента приложения GitHub, созданного ранее.
 1. В качестве **секрета клиента** введите записанный секрет клиента.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ::: zone-end
 
@@ -232,7 +220,7 @@ ms.locfileid: "97584924"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните пользовательский поток, который вы хотите использовать в качестве поставщика удостоверений GitHub.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **GitHub**.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

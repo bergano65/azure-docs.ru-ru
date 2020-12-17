@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: 81764294cc29ad74d5a77f2055f10498d69b59e5
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 591f01004cfba247112f702625ab05ddc0aaede3
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93343247"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652931"
 ---
 # <a name="restore-a-dropped-azure-database-for-postgresql-server"></a>Восстановление удаленной базы данных Azure для сервера PostgreSQL
 
@@ -39,23 +39,26 @@ ms.locfileid: "93343247"
 
  4. Перейдите на страницу PostgreSQL [CREATE Server REST API](/rest/api/PostgreSQL/servers/create) и выберите вкладку **пробная** работа, выделенная зеленым цветом. Войдите в систему с использованием учетной записи Azure.
 
- 5. Укажите **resourceGroupName** , **ServerName** (имя удаленного сервера), свойства **SubscriptionId** на основе значения JSON атрибута resourceId, захваченного на предыдущем шаге 3. Свойство API-Version предварительно заполняется и может быть оставлено как есть, как показано на следующем рисунке.
+ 5. Укажите **resourceGroupName**, **ServerName** (имя удаленного сервера), свойства **SubscriptionId** на основе значения JSON атрибута resourceId, захваченного на предыдущем шаге 3. Свойство API-Version предварительно заполняется и может быть оставлено как есть, как показано на следующем рисунке.
 
     ![Создание сервера с помощью REST API](./media/howto-restore-dropped-server/create-server-from-rest-api-azure.png)
   
  6. Прокрутите страницу ниже в разделе текст запроса и вставьте следующую замену "Удаленные расположения сервера", "Субмиссионтиместамп" и "resourceId". Для параметра "Ресторепоинтинтиме" укажите значение "Субмиссионтиместамп" минус **15 минут** , чтобы команда не выдает ошибку.
+    
     ```json
-        {
-          "location": "Dropped Server Location",  
-          "properties": 
-              {
-                  "restorePointInTime": "submissionTimestamp - 15 minutes",
-                  "createMode": "PointInTimeRestore",
-                  "sourceServerId": "resourceId"
-            }
-        }
+    {
+      "location": "Dropped Server Location",  
+      "properties": 
+      {
+        "restorePointInTime": "submissionTimestamp - 15 minutes",
+        "createMode": "PointInTimeRestore",
+        "sourceServerId": "resourceId"
+      }
+    }
     ```
+
     Например, если текущее время — 2020-11-02T23:59:59.0000000 Z, мы рекомендуем не менее 15 минут до точки восстановления во времени 2020-11-02T23:44:59.0000000 Z.
+
     > [!Important]
     > На время удаления сервера существует ограничение в 5 дней. Через пять дней ожидается ошибка, так как не удается найти файл резервной копии.
     

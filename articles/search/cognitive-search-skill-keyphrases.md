@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 145d8265412c4efcaa2afad97feb23528a36191d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fdebffbf9643febc08cba997b3a5a5fc4bb5998
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88936067"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652319"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Когнитивный навык извлечения ключевой фразы
 
@@ -37,7 +37,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 
 Параметры зависят от регистра.
 
-| Входные данные                | Описание |
+| Входные данные | Описание |
 |---------------------|-------------|
 | `defaultLanguageCode` | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом.  Если код языка по умолчанию не указан, английский (en) используется как язык по умолчанию. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/language-support.md). |
 | `maxKeyPhraseCount`   | (Необязательно.) Максимальное количество ключевых фраз для создания. |
@@ -91,7 +91,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
   }
 ```
 
-##  <a name="sample-output"></a>Пример полученных результатов
+##  <a name="sample-output"></a>Пример выходных данных
 
 В приведенном выше примере выходные данные вашего навыка будут записаны в новый узел в расширенном дереве с именем Document/Микэйфрасес, поскольку именно `targetName` мы указали. Если не указать, будет `targetName` использоваться значение Document/фраз.
 

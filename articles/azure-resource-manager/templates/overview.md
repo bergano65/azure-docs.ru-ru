@@ -2,13 +2,13 @@
 title: Обзор шаблонов
 description: Описание преимуществ использования шаблонов Azure Resource Manager (шаблоны ARM) для развертывания ресурсов.
 ms.topic: conceptual
-ms.date: 12/01/2020
-ms.openlocfilehash: da091d09f6d242d4b98903a8dcd76fe305e578b8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/17/2020
+ms.openlocfilehash: c4995791b784351219458c546442d082e2396315
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498002"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657317"
 ---
 # <a name="what-are-arm-templates"></a>Что такое шаблоны ARM?
 
@@ -129,6 +129,7 @@ REQUEST BODY
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Пошаговые инструкции по созданию шаблона см. в статье [Учебник. Создание и развертывание первого шаблона ARM](template-tutorial-create-first-template.md).
+* Дополнительные сведения о шаблонах ARM в интерактивном наборе модулей на Microsoft Learn см. в статье [развертывание ресурсов и управление ими в Azure с помощью шаблонов ARM](/learn/paths/deploy-manage-resource-manager-templates/).
 * Сведения о свойствах в файлах шаблонов см. в разделе сведения о [структуре и синтаксисе шаблонов ARM](template-syntax.md).
 * Дополнительные сведения об экспорте шаблонов см. [в разделе Краткое руководство. Создание и развертывание шаблонов ARM с помощью портал Azure](quickstart-create-templates-use-the-portal.md).
 * Ответы на распространенные вопросы см. в разделе [часто задаваемые вопросы о шаблонах ARM](frequently-asked-questions.md).

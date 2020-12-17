@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 8fa823620d6d1306260d719cbabaa3d815cc0d09
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 3b29245aed1b2c7767c340cbe8cd35dfa38610b9
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505449"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656688"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
@@ -58,7 +58,7 @@ Log Analytics экспорт данных рабочей области непр
 ## <a name="data-completeness"></a>Полнота данных
 Экспорт данных продолжит попытки отправки данных в течение 30 минут, когда назначение недоступно. Если он по-прежнему недоступен через 30 минут, данные будут удалены до тех пор, пока назначение не станет доступным.
 
-## <a name="cost"></a>Стоимость
+## <a name="cost"></a>Cost
 В настоящее время дополнительная плата за функцию экспорта данных не взимается. Цены на экспорт данных будут объявлены в будущем и появится уведомление, предоставленное до начала выставления счетов. Если вы решили продолжить использование экспорта данных после периода уведомления, плата будет взиматься по соответствующей ставке.
 
 ## <a name="export-destinations"></a>Экспорт назначений

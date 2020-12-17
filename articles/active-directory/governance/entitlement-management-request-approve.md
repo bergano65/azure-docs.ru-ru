@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfbd5e6f190e0600c31aa17e9b1a75f08e213df4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fddb3b171e5a26273cb2e0045f11e3a4dbb48c5f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973581"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655107"
 ---
 # <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management"></a>Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD
 
@@ -57,11 +57,11 @@ ms.locfileid: "95973581"
 
 1. Щелкните **сведения о запросе**.
 
-     ![Мой портал доступа — запрос на доступ. Щелкните сведения о запросе.](./media/entitlement-management-request-approve/requestor-information-request-details.png)
+    ![Мой портал доступа — запрос на доступ. Щелкните сведения о запросе.](./media/entitlement-management-request-approve/requestor-information-request-details.png)
 
 1. Сведения, предоставленные запрашивающей стороны, будут находиться в нижней части панели.
 
-     ![На снимке экрана показаны подробные сведения о запросе](./media/entitlement-management-request-approve/requestor-information-requestor-answers.png)
+    ![На снимке экрана показаны подробные сведения о запросе](./media/entitlement-management-request-approve/requestor-information-requestor-answers.png)
 
 1. На основе информации, предоставленной запрашивающей стороны, можно утвердить или отклонить запрос. Инструкции см. в разделе утверждение или отклонение запроса.
 
@@ -89,7 +89,7 @@ ms.locfileid: "95973581"
 
     Если ни один из настроенных утверждающих не может утвердить или отклонить запрос доступа, срок действия запроса истечет через настроенную длительность запроса. Пользователь получает оповещение о том, что срок действия запроса на доступ истек, и необходимо повторно отправить запрос на доступ.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запрос доступа к пакету Access](entitlement-management-request-access.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)
