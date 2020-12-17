@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: d01136ea4377bd7d35a2e11b4bcf654bcf677fbe
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: e357667e650e9feeb8dceeffe71c287cde9fe8a0
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401565"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631607"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -53,6 +53,7 @@ ms.locfileid: "97401565"
 | **AzureActiveDirectory** | Azure Active Directory; | Исходящие | Нет | Да |
 | **AzureActiveDirectoryDomainServices** | Трафик управления для развертываний, выделенных для доменных служб Azure Active Directory. | both | Нет | Да |
 | **AzureAdvancedThreatProtection** | Расширенная защита от угроз Azure | Исходящие | Нет | Нет |
+| **азуреарЦинфраструктуре** | Серверы с поддержкой Arc Azure, Kubernetes и трафик конфигурации гостя с поддержкой ARC.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory**,**AzureTrafficManager** и **AzureResourceManager** . *Сейчас этот тег нельзя настроить с помощью портала Azure*.| Исходящие | Нет | Да |
 | **AzureBackup** |Azure Backup.<br/><br/>*Примечание.* Этот тег зависит от тегов **Storage** и **AzureActiveDirectory**. | Исходящие | Нет | Да |
 | **AzureBotService** | Служба Azure Bot. | Исходящие | Нет | Нет |
 | **AzureCloud** | Все [общедоступные IP-адреса центра обработки данных](https://www.microsoft.com/download/details.aspx?id=56519). | Исходящие | Да | Да |

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: df6a4053eb70c02e27599bbd9086dfa32b0bcc65
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 5d11f343a55d30e5d14d6f4ae0ddb1a74d9c61fa
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508838"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631981"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
@@ -32,6 +32,11 @@ ms.locfileid: "97508838"
 Выберите один из стандартных и нейронных голосов или создайте собственный пользовательский голос, уникальный для продукта или торговой марки. более 75 языков и национальных стандартов доступны на более чем 45 языках, а на четырех языках и национальных стандартах доступно 5 голосов нейронов. Полный список поддерживаемых языков, языковых стандартов и голосовых моделей (нейронных и стандартных) см. в разделе [языковой поддержки](language-support.md).
 
 Дополнительные сведения о стандартном, нейронном и настраиваемом голосовом см. в статье [Обзор преобразования текста в речь](text-to-speech.md).
+
+
+> [!NOTE]
+> Вы можете услышать голоса в разных стилях и прочесть пример текста [, используя страницу преобразование текста в речь](https://azure.microsoft.com/services/cognitive-services/text-to-speech/#features).
+
 
 ## <a name="special-characters"></a>Специальные символы
 
@@ -198,6 +203,7 @@ speechConfig!.setPropertyTo(
 * `en-US-AriaNeural`
 * `en-US-JennyNeural`
 * `en-US-GuyNeural`
+* `pt-BR-FranciscaNeural`
 * `zh-CN-XiaoxiaoNeural`
 * `zh-CN-YunyangNeural`
 * `zh-CN-YunyeNeural`
@@ -257,6 +263,7 @@ speechConfig!.setPropertyTo(
 |                         | `style="assistant"`       | Выражает горячий и неослабленный тон для цифровых помощников    |
 |                         | `style="newscast"`        | Выражает универсальный и обычный тон для общей доставки новостей   |
 | `en-US-GuyNeural`       | `style="newscast"`        | Выражает формальный и профессиональный тон для новостных закадровых новостей |
+| `pt-BR-FranciscaNeural` | `style="calm"`            | Выражает замечательную, собранную и соотношение, если говорить. Тон, тон, Prosody гораздо более единообразно сравнивается с другими типами речи.                                |
 | `zh-CN-XiaoxiaoNeural`  | `style="newscast"`        | Выражает формальный и профессиональный тон для новостных закадровых новостей |
 |                         | `style="customerservice"` | Выражает понятный и полезный тон поддержки клиентов  |
 |                         | `style="assistant"`       | Выражает горячий и неослабленный тон для цифровых помощников    |

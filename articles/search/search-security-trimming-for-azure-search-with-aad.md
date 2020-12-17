@@ -1,28 +1,28 @@
 ---
 title: Фильтры безопасности для усечения результатов с помощью Active Directory
 titleSuffix: Azure Cognitive Search
-description: Права безопасности на уровне документа для результатов поиска Когнитивный поиск Azure с использованием фильтров безопасности и удостоверений Azure Active Directory (AAD).
+description: Узнайте, как реализовать привилегии безопасности на уровне документа для результатов поиска Когнитивный поиск Azure с помощью фильтров безопасности и удостоверений Azure Active Directory (AD).
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/04/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 87337cf22bdb388c5873a2811bb9913c3e7f4d4e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5788585b2365b12a90a508e5a972b61f73e48c15
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994967"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629516"
 ---
 # <a name="security-filters-for-trimming-azure-cognitive-search-results-using-active-directory-identities"></a>Фильтры безопасности для усечения результатов Когнитивный поиск Azure с использованием удостоверений Active Directory
 
-В этой статье показано, как использовать удостоверения безопасности Azure Active Directory (AAD) вместе с фильтрами в Когнитивный поиск Azure, чтобы обрезать результаты поиска на основе членства в группе пользователей.
+В этой статье показано, как использовать удостоверения безопасности Azure Active Directory (AD) вместе с фильтрами в Когнитивный поиск Azure, чтобы обрезать результаты поиска на основе членства в группе пользователей.
 
 В этой статье рассматриваются следующие задачи:
 > [!div class="checklist"]
-> - создание групп и пользователей AAD;
+> - Создание групп и пользователей Azure AD
 > - связывание пользователя с созданной группой;
 > - кэширование новых групп;
 > - индексация документов со связанными группами;
@@ -35,71 +35,87 @@ ms.locfileid: "95994967"
 
 Индекс в Когнитивный поиске Azure должен иметь [поле безопасности](search-security-trimming-for-azure-search.md) для хранения списка удостоверений групп, имеющих доступ на чтение документа. Этот вариант использования предполагает прямое соответствие между защищаемым элементом (например, заявление на вступление в колледж конкретного человека) и полем безопасности, в котором указывается, кто имеет доступ к этому элементу (персонал приемной комиссии).
 
-В этом пошаговом руководстве для создания пользователей, групп и ассоциаций в AAD необходимо иметь разрешения администратора AAD.
+Необходимо иметь разрешения администратора Azure AD, необходимые в этом пошаговом руководстве для создания пользователей, групп и ассоциаций. 
 
-Ваша заявка также должна быть зарегистрирована в AAD, как описано в следующей процедуре.
+Приложение также должно быть зарегистрировано в Azure AD как приложение с несколькими клиентами, как описано в следующей процедуре.
 
-### <a name="register-your-application-with-aad"></a>Регистрация приложения с помощью AAD
+### <a name="register-your-application-with-azure-active-directory"></a>Регистрация приложения в Azure Active Directory
 
-На этом шаге приложение интегрируется с AAD для приема входа с использованием учетных записей пользователя и группы. Если вы не являетесь администратором AAD в своей организации, для выполнения следующих действий может потребоваться [создать клиент](../active-directory/develop/quickstart-create-new-tenant.md).
+Этот шаг интегрирует приложение с Azure AD в целях принятия входов в учетные записи пользователей и групп. Если вы не являетесь администратором клиента в вашей организации, вам может потребоваться [создать новый клиент](../active-directory/develop/quickstart-create-new-tenant.md) , чтобы выполнить следующие действия.
 
-1. Перейдите на [**портал регистрации приложений**](https://apps.dev.microsoft.com)  >   **приложение для**  >  **добавления** приложения.
-2. Введите имя приложения, а затем щелкните **Создать**. 
-3. Выберите только что зарегистрированное приложение на странице "Мои приложения".
-4. На странице Регистрация приложения > **платформы**  >  **Добавить платформу** выберите **веб-API**.
-5. По-прежнему на странице регистрации приложения перейдите к > **Microsoft Graph разрешения**  >  **добавить**.
-6. В разделе "Выберите разрешения" добавьте следующие делегированные разрешения, а затем щелкните **ОК**:
+1. В [портал Azure](https://portal.azure.com)найдите ресурс Azure Active Directory для своей подписки.
 
-   + **Directory.ReadWrite.All**;
-   + **Group.ReadWrite.All**
-   + **User.ReadWrite.All**.
+1. Слева в разделе **Управление** выберите **Регистрация приложений**, а затем щелкните **Новая регистрация**.
 
-Microsoft Graph предоставляет API, который обеспечивает программный доступ к AAD через REST API. Пример кода в этом пошаговом руководстве использует разрешения для вызова API Microsoft Graph, чтобы создавать группы, пользователей и ассоциации. API также используются для кэширования идентификаторов групп для более быстрой фильтрации.
+1. Присвойте регистрационное имя, возможно, имя, похожее на имя приложения поиска. Выберите **Зарегистрировать**.
+
+1. После создания регистрации приложения скопируйте идентификатор приложения. Необходимо предоставить эту строку приложению.
+
+   При пошаговом выполнении [дотнесовтосекурититримминг](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToEncryptionUsingCMK)вставьте это значение в файл **app.config** .
+
+   Повторите процедуру для идентификатора клиента.
+
+   :::image type="content" source="media/search-manage-encryption-keys/cmk-application-id.png" alt-text="Идентификатор приложения в разделе &quot;основные компоненты&quot;":::
+
+1. В левой части экрана выберите **разрешения API** и щелкните **Добавить разрешение**. 
+
+1. Выберите **Microsoft Graph** а затем **делегированные разрешения**.
+
+1. Найдите и добавьте следующие делегированные разрешения:
+
+   - **Directory.ReadWrite.All**;
+   - **Group.ReadWrite.All**
+   - **User.ReadWrite.All**.
+
+Microsoft Graph предоставляет API, который обеспечивает программный доступ к Azure AD через REST API. Пример кода в этом пошаговом руководстве использует разрешения для вызова API Microsoft Graph, чтобы создавать группы, пользователей и ассоциации. API также используются для кэширования идентификаторов групп для более быстрой фильтрации.
 
 ## <a name="create-users-and-groups"></a>Создание пользователей и групп
 
-При добавлении поиска в установленное приложение у вас могут быть идентификаторы пользователей и групп в AAD. В этом случае можно пропустить следующие три шага. 
+Если вы добавляете Поиск в установленное приложение, у вас могут быть существующие идентификаторы пользователей и групп в Azure AD. В этом случае можно пропустить следующие три шага. 
 
 Однако, если у вас нет имеющихся пользователей, можно использовать API Microsoft Graph для создания субъектов безопасности. В следующих фрагментах кода показано, как создавать идентификаторы, которые становятся значениями данных для поля безопасности в индексе Azure Когнитивный поиск. В нашем гипотетическом приложении для приема в колледж это будут идентификаторы безопасности для сотрудников приемной комиссии.
 
 Назначение пользователей и членство в группе может быть очень гибким, особенно в крупных организациях. Код, который создает удостоверения пользователей и групп, должен выполняться достаточно часто для учета изменений в членстве организации. Аналогично, для индекса Когнитивный поиск Azure требуется аналогичное расписание обновления, отражающее текущее состояние разрешенных пользователей и ресурсов.
 
-### <a name="step-1-create-aad-group"></a>Шаг 1. Создание [группы AAD](/graph/api/group-post-groups?view=graph-rest-1.0) 
+### <a name="step-1-create-group"></a>Шаг 1. [Создание группы](/graph/api/group-post-groups) 
+
 ```csharp
-// Instantiate graph client 
-GraphServiceClient graph = new GraphServiceClient(new DelegateAuthenticationProvider(...));
-Group group = new Group()
+private static Dictionary<Group, List<User>> CreateGroupsWithUsers(string tenant)
 {
-    DisplayName = "My First Prog Group",
-    SecurityEnabled = true,
-    MailEnabled = false,
-    MailNickname = "group1"
-}; 
-Group newGroup = await graph.Groups.Request().AddAsync(group);
+    Group group = new Group()
+    {
+        DisplayName = "My First Prog Group",
+        SecurityEnabled = true,
+        MailEnabled = false,
+        MailNickname = "group1"
+    };
 ```
-   
-### <a name="step-2-create-aad-user"></a>Шаг 2. Создание [пользователя AAD](/graph/api/user-post-users?view=graph-rest-1.0)
+
+### <a name="step-2-create-user"></a>Шаг 2. [Создание пользователя](/graph/api/user-post-users)
+
 ```csharp
-User user = new User()
+User user1 = new User()
 {
     GivenName = "First User",
     Surname = "User1",
     MailNickname = "User1",
     DisplayName = "First User",
-    UserPrincipalName = "User1@FirstUser.com",
+    UserPrincipalName = String.Format("user1@{0}", tenant),
     PasswordProfile = new PasswordProfile() { Password = "********" },
     AccountEnabled = true
 };
-User newUser = await graph.Users.Request().AddAsync(user);
 ```
 
 ### <a name="step-3-associate-user-and-group"></a>Шаг 3. Связывание пользователя и групп
+
 ```csharp
-await graph.Groups[newGroup.Id].Members.References.Request().AddAsync(newUser);
+List<User> users = new List<User>() { user1, user2 };
+Dictionary<Group, List<User>> groups = new Dictionary<Group, List<User>>() { { group, users } };
 ```
 
 ### <a name="step-4-cache-the-groups-identifiers"></a>Шаг 4. Кэширование идентификаторов групп
-Чтобы уменьшить задержки в сети, при необходимости можно кэшировать ассоциации пользователей и групп, чтобы при выдаче запроса на поиск группы возвращались из кэша и не приходилось обращаться в AAD. Вы можете использовать [API пакетной службы AAD](/graph/json-batching) для отправки одного HTTP-запроса с несколькими пользователями и создания кэша.
+
+Кроме того, чтобы сократить задержку в сети, можно кэшировать сопоставления групп пользователей, чтобы при выполнении запроса поиска группы возвращались из кэша, сохранив при этом циклическое обращение к Azure AD. Вы можете использовать [API пакетной службы Azure AD](/graph/json-batching) для отправки одного HTTP-запроса с несколькими пользователями и создания кэша.
 
 Microsoft Graph может обрабатывать большое число запросов. Если возникает огромное количество запросов, Microsoft Graph отклоняет запрос с кодом состояния HTTP 429. Дополнительные сведения см. в статье [Руководство по регулированию Microsoft Graph](/graph/throttling).
 
@@ -114,21 +130,20 @@ Microsoft Graph может обрабатывать большое число з
 В универсальном примере, используемом в примере кода для этого пошагового руководства, действие индекса может выглядеть следующим образом:
 
 ```csharp
-var actions = new IndexAction<SecuredFiles>[]
-              {
-                  IndexAction.Upload(
-                  new SecuredFiles()
-                  {
-                      FileId = "1",
-                      Name = "secured_file_a",
-                      GroupIds = new[] { groups[0] }
-                  }),
+private static void IndexDocuments(string indexName, List<string> groups)
+{
+    IndexDocumentsBatch<SecuredFiles> batch = IndexDocumentsBatch.Create(
+        IndexDocumentsAction.Upload(
+            new SecuredFiles()
+            {
+                FileId = "1",
+                Name = "secured_file_a",
+                GroupIds = new[] { groups[0] }
+            }),
               ...
-             };
+            };
 
-var batch = IndexBatch.New(actions);
-
-_indexClient.Documents.Index(batch);  
+IndexDocumentsResult result = searchClient.IndexDocuments(batch);
 ```
 
 ## <a name="issue-a-search-request"></a>Отправка поискового запроса
@@ -139,56 +154,47 @@ _indexClient.Documents.Index(batch);
 
 ### <a name="step-1-retrieve-users-group-identifiers"></a>Шаг 1. Получение идентификаторов группы пользователя
 
-Если группы пользователя не кэшированы или истек срок действия кэша, отправьте запрос [групп](/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0).
+Если группы пользователя еще не кэшированы или истек срок действия кэша, выдайте запрос [группам](/graph/api/directoryobject-getmembergroups) .
+
 ```csharp
-private static void RefreshCacheIfRequired(string user)
+private static async void RefreshCache(IEnumerable<User> users)
 {
-    if (!_groupsCache.ContainsKey(user))
-    {
-        var groups = GetGroupIdsForUser(user).Result;
-        _groupsCache[user] = groups;
-    }
+    HttpClient client = new HttpClient();
+    var userGroups = await _microsoftGraphHelper.GetGroupsForUsers(client, users);
+    _groupsCache = new ConcurrentDictionary<string, List<string>>(userGroups);
 }
-
-private static async Task<List<string>> GetGroupIdsForUser(string userPrincipalName)
-{
-    List<string> groups = new List<string>();
-    var allUserGroupsRequest = graph.Users[userPrincipalName].GetMemberGroups(true).Request();
-
-    while (allUserGroupsRequest != null) 
-    {
-        IDirectoryObjectGetMemberGroupsRequestBuilder allUserGroups = await allUserGroupsRequest.PostAsync();
-        groups = allUserGroups.ToList();
-        allUserGroupsRequest = allUserGroups.NextPageRequest;
-    }
-    return groups;
-}
-``` 
+```
 
 ### <a name="step-2-compose-the-search-request"></a>Шаг 2. Составление поискового запроса
 
 Предположим, что у вас есть членство в группах пользователей. Это позволяет отправить поисковой запрос с соответствующими значениями фильтра.
 
 ```csharp
-string filter = String.Format("groupIds/any(p:search.in(p, '{0}'))", string.Join(",", groups.Select(g => g.ToString())));
-SearchParameters parameters = new SearchParameters()
-             {
-                 Filter = filter,
-                 Select = new[] { "application essays" }
-             };
+private static void SearchQueryWithFilter(string user)
+{
+    // Using the filter below, the search result will contain all documents that their GroupIds field   
+    // contain any one of the Ids in the groups list
+    string filter = String.Format("groupIds/any(p:search.in(p, '{0}'))", string.Join(",", String.Join(",", _groupsCache[user])));
+    SearchOptions searchOptions =
+        new SearchOptions()
+        {
+            Filter = filter
+        };
+    searchOptions.Select.Add("name");
 
-DocumentSearchResult<SecuredFiles> results = _indexClient.Documents.Search<SecuredFiles>("*", parameters);
+    SearchResults<SecuredFiles> results = searchClient.Search<SecuredFiles>("*", searchOptions);
+
+    Console.WriteLine("Results for groups '{0}' : {1}", _groupsCache[user], results.GetResults().Select(r => r.Document.Name));
+}
 ```
+
 ### <a name="step-3-handle-the-results"></a>Шаг 3. Обработка результатов
 
 Ответ включает отфильтрованный список, состоящий из тех документов, для которых у пользователя есть разрешение на просмотр. В зависимости от структуры страницы результатов поиска можно включить визуальные подсказки для отражения отфильтрованного набора результатов.
 
-## <a name="conclusion"></a>Заключение
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом пошаговом руководстве вы узнали, как использовать входы AAD для фильтрации документов в Azure Когнитивный поиск результаты, обрезая результаты документов, которые не соответствуют фильтру, указанному в запросе.
+В этом пошаговом руководстве вы узнали, как использовать входы в Azure AD для фильтрации документов в Azure Когнитивный поиск результаты, обрезая результаты документов, которые не соответствуют фильтру, указанному в запросе. Для альтернативного шаблона, который может быть более простым, или для повторного посещения других функций безопасности, см. следующие ссылки.
 
-## <a name="see-also"></a>См. также
-
-+ [Управление доступом на основе удостоверений с помощью фильтров Когнитивный поиск Azure](search-security-trimming-for-azure-search.md)
-+ [Фильтры в Когнитивный поиск Azure](search-filters.md)
-+ [Безопасность данных и управление доступом в Azure Когнитивный поиск операции](search-security-overview.md)
+- [Фильтры безопасности для усечения результатов](search-security-trimming-for-azure-search.md)
+- [Безопасность в Azure Когнитивный поиск](search-security-overview.md)

@@ -242,7 +242,7 @@ echo "Press [ENTER] to continue ..."
 Пошаговые инструкции по созданию шаблона ARM см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> Создание и развертывание первого шаблона ARM[
+> [Создание и развертывание первого шаблона ARM](../../azure-resource-manager/templates/template-tutorial-create-first-template.md)
 
 Пошаговое руководство по созданию приложения в Службе приложений с помощью MySQL представлено в статье:
 

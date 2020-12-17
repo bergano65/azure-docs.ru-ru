@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 11/09/2020
-ms.openlocfilehash: f1712a51fcd35c348f6177b670a7686898a0c78b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 1fe1ad14dc1cc8f5ff5171ef517d23363969be4d
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96346144"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387791"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Краткое руководство. Создание, подготовка и публикация базы знаний QnA Maker
 
@@ -48,7 +48,7 @@ ms.locfileid: "96346144"
     |--|--|
     |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx)|Флажок установлен|
     |**Многоэтапное извлечение текста по умолчанию**| Выбор и вариант|
-    |**Добавление URL-адреса**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**Добавление URL-адреса**|`https://www.microsoft.com/en-us/software-download/faq`|
     |**Chit-chat** (Беседа)|Выберите значение **Professional** (Профессиональная)|
 
 7. На **шаге 5** выберите **Create your KB** (Создать базу знаний).
@@ -83,7 +83,7 @@ ms.locfileid: "96346144"
     |--|--|
     |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx)|Флажок установлен|
     |**Многоэтапное извлечение текста по умолчанию**| Выбор и вариант|
-    |**Добавление URL-адреса**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**+ Добавить файл**| Скачайте руководство по ноутбуку Surface по адресу https://download.microsoft.com/download/7/B/1/7B10C82E-F520-4080-8516-5CF0D803EEE0/surface-book-user-guide-EN.pdf. 
     |**Chit-chat** (Беседа)|Выберите значение **Professional** (Профессиональная)|
 
 8. На **шаге 5** выберите **Create your KB** (Создать базу знаний).
@@ -122,9 +122,9 @@ ms.locfileid: "96346144"
 1. На портале QnA Maker в правом верхнем углу выберите **Test** (Тестировать), чтобы проверить, вступили ли в силу внесенные изменения.
 2. В текстовом поле введите пример пользовательского запроса.
 
-    `How many Azure services are used by a knowledge base?`
+    `I want to know the difference between 32 bit and 64 bit Windows`
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png" alt-text="В текстовом поле введите пример пользовательского запроса.":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/query-dialogue.png" alt-text="В текстовом поле введите пример пользовательского запроса.":::
 
 3. Выберите **Inspect** (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед публикацией своей базы знаний.
 

@@ -6,21 +6,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 10/07/2020
+ms.date: 12/11/2020
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: 35d5940fbc001d1806711afb14aa4a549bcb1826
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 8ed768d7bb47db6f102dbb48b438f9f4a2987f1e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96615767"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366317"
 ---
 <a name="HOLTop"></a>
 
 # <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
-[Справочная документация по версии 3.1](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet-previews) | [Исходный код библиотеки версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics) | [Пакет для разработки (NuGet) версии 3.1](https://www.nuget.org/packages/Azure.AI.TextAnalytics/5.1.0-beta.1) | [Примеры кода версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
+[Справочная документация по версии 3.1](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet-previews) | [Исходный код библиотеки версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics) | [Пакет для разработки (NuGet) версии 3.1](https://www.nuget.org/packages/Azure.AI.TextAnalytics/5.1.0-beta.3) | [Примеры кода версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
 
 # <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
@@ -39,6 +39,7 @@ ms.locfileid: "96615767"
 * Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank">созданию ресурса Анализа текста<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку.  После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* Чтобы использовать функцию анализа, вам потребуется ресурс Анализа текста ценовой категории "Стандартный" (S).
 
 ## <a name="setting-up"></a>Настройка
 
@@ -48,7 +49,7 @@ ms.locfileid: "96615767"
 
 # <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
-Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Установите флажок **Включить предварительные версии**, выберите версию `5.1.0-beta.1` и нажмите кнопку **Установить**. Вы также можете использовать [консоль диспетчера пакетов](/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Установите флажок **Включить предварительные версии**, выберите версию `5.1.0-beta.3` и нажмите кнопку **Установить**. Вы также можете использовать [консоль диспетчера пакетов](/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
 
 # <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
@@ -804,5 +805,103 @@ Key phrases:
     cat
     veterinarian
 ```
+
+---
+
+## <a name="use-the-api-asynchronously-with-the-analyze-operation"></a>Асинхронное использование API с операцией анализа
+
+# <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
+
+> [!CAUTION]
+> Чтобы использовать операцию анализа, убедитесь, что ресурс Azure относится к ценовой категории "Стандартный".
+
+Создайте функцию с именем `AnalyzeOperationExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `StartAnalyzeOperationBatch()`. Возвращаемый объект `AnalyzeOperation` будет содержать объект интерфейса `Operation` для `AnalyzeOperationResult`. Так как это длительная операция, для `operation.WaitForCompletionAsync()` нужно использовать `await`, чтобы значение обновилось. По завершении `WaitForCompletionAsync()` коллекция должна быть обновлена в `operation.Value`. При появлении ошибки возникает исключение `RequestFailedException`.
+
+
+```csharp
+static async Task AnalyzeOperationExample(TextAnalyticsClient client)
+{
+    string inputText = "Microsoft was founded by Bill Gates and Paul Allen.";
+
+    var batchDocuments = new List<string> { inputText };
+
+    AnalyzeOperationOptions operationOptions = new AnalyzeOperationOptions()
+    {
+        EntitiesTaskParameters = new EntitiesTaskParameters(),
+        DisplayName = "Analyze Operation Quick Start Example"
+    };
+
+    AnalyzeOperation operation = client.StartAnalyzeOperationBatch(batchDocuments, operationOptions, "en");
+
+    await operation.WaitForCompletionAsync();
+
+    AnalyzeOperationResult resultCollection = operation.Value;
+
+    RecognizeEntitiesResultCollection entitiesResult = resultCollection.Tasks.EntityRecognitionTasks[0].Results;
+
+    Console.WriteLine("Analyze Operation Request Details");
+    Console.WriteLine($"    Status: {resultCollection.Status}");
+    Console.WriteLine($"    DisplayName: {resultCollection.DisplayName}");
+    Console.WriteLine("");
+
+    Console.WriteLine("Recognized Entities");
+
+    foreach (RecognizeEntitiesResult result in entitiesResult)
+    {
+        Console.WriteLine($"    Recognized the following {result.Entities.Count} entities:");
+
+        foreach (CategorizedEntity entity in result.Entities)
+        {
+            Console.WriteLine($"    Entity: {entity.Text}");
+            Console.WriteLine($"    Category: {entity.Category}");
+            Console.WriteLine($"    Offset: {entity.Offset}");
+            Console.WriteLine($"    ConfidenceScore: {entity.ConfidenceScore}");
+            Console.WriteLine($"    SubCategory: {entity.SubCategory}");
+        }
+        Console.WriteLine("");
+    }
+}
+```
+
+После добавления этого примера в приложение вызовите метод `main()` с помощью `await`.
+
+```csharp
+await AnalyzeOperationExample(client).ConfigureAwait(false);
+```
+### <a name="output"></a>Выходные данные
+
+```console
+Analyze Operation Request Details
+    Status: succeeded
+    DisplayName: Analyze Operation Quick Start Example
+
+Recognized Entities
+    Recognized the following 3 entities:
+    Entity: Microsoft
+    Category: Organization
+    Offset: 0
+    ConfidenceScore: 0.83
+    SubCategory: 
+    Entity: Bill Gates
+    Category: Person
+    Offset: 25
+    ConfidenceScore: 0.85
+    SubCategory: 
+    Entity: Paul Allen
+    Category: Person
+    Offset: 40
+    ConfidenceScore: 0.9
+    SubCategory: 
+```
+
+Кроме того, вы можете использовать операцию анализа для обнаружения персональных данных и извлечения ключевых фраз. [Пример анализа](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples/Sample_AnalyzeOperation.md) см. на сайте GitHub.
+
+# <a name="version-30"></a>[Версия 3.0](#tab/version-3)
+
+Эта функция недоступна в версии 3.0.
+
+# <a name="version-21"></a>[Версия 2.1](#tab/version-2)
+
+Эта функция недоступна в версии 2.1.
 
 ---
