@@ -110,6 +110,8 @@
       items:
         - name: Метрики емкости
           href: api-management-capacity.md
+        - name: Планирование затрат и управление ими
+          href: plan-manage-costs.md
         - name: Обновление и масштабирование
           href: upgrade-and-scale.md
         - name: Настройка автомасштабирования

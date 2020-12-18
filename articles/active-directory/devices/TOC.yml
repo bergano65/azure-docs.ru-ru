@@ -30,8 +30,6 @@
       href: azuread-join-sso.md
     - name: Основные токены обновления
       href: concept-primary-refresh-token.md
-    - name: 'Рабочие станции, управляемые Azure'
-      href: concept-azure-managed-workstation.md
 - name: Практические руководства
   expanded: false
   items:
@@ -55,8 +53,6 @@
       href: howto-vm-sign-in-azure-ad-windows.md
     - name: Инфраструктура виртуальных рабочих столов
       href: howto-device-identity-virtual-desktop-infrastructure.md
-    - name: 'Развертывание рабочих станций, управляемых Azure'
-      href: howto-azure-managed-workstation.md
     - name: Устранение неполадок с удостоверениями устройств
       items:
         - name: 'Устранение неполадок с текущими устройствами Windows, присоединенными к гибридной среде Azure AD'

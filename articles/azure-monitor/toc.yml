@@ -546,10 +546,10 @@
           items:
             - name: Соединитель управления ИТ-услугами
               href: platform/itsmc-overview.md
-            - name: Определение Соединителя управления ИТ-услугами
-              href: platform/itsmc-definition.md
             - name: Подключения управления ИТ-услугами
               href: platform/itsmc-connections.md
+            - name: Определение Соединителя управления ИТ-услугами
+              href: platform/itsmc-definition.md
             - name: Создание веб-приложения Service Manager
               href: platform/itsmc-service-manager-script.md
             - name: Устранение неполадок с соединителем ITSM
