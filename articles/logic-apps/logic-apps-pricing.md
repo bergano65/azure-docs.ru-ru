@@ -1,6 +1,6 @@
 ---
 title: Цена & модель выставления счетов
-description: Общие сведения о работе модели ценообразования и выставления счетов для Azure Logic Apps
+description: Общие сведения о ценах и выставлении счетов для Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: jonfancey
@@ -8,12 +8,12 @@ ms.author: jonfan
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 520b4a0e87f27a90a604947ae0b558066b4ab82f
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 9243d089b4a000066ec03dbeeccd046db374f558
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937599"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673116"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Модель ценообразования для Azure Logic Apps
 
@@ -65,11 +65,11 @@ ms.locfileid: "96937599"
 
   * **Разработчик** SKU ISE: учетная запись интеграции с одним [свободным уровнем](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits)
 
-  Независимо от SKU, каждая интегрированная среда сценариев может иметь [ограниченное число учетных записей интеграции](logic-apps-limits-and-config.md#integration-account-limits). Это ограничение можно увеличить за дополнительную стоимость:
+  Для получения дополнительных затрат можно создать дополнительные учетные записи интеграции для интегрированной среды сценариев [вплоть до общего ограничения](logic-apps-limits-and-config.md#integration-account-limits). 
 
-  * **Premium** SKU ISE: до четырех стандартных учетных записей. Нет бесплатных или базовых учетных записей.
+  * **Premium** SKU ISE: до 19 других стандартных учетных записей. Учетные записи уровней "Бесплатный" и "Базовый" не разрешены.
 
-  * **Разработчик** SKU ISE: либо до 4 более стандартных учетных записей, либо до 5 общих стандартных учетных записей. Нет базовых учетных записей.
+  * **Разработчик** SKU ISE: до 19 других стандартных учетных записей, если у вас уже есть бесплатная учетная запись или 20 общих учетных записей, если у вас нет бесплатной учетной записи. Учетные записи уровней "Базовый" не разрешены.
 
   Дополнительные сведения об ограничениях учетной записи интеграции см. в разделе [ограничения и настройка для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits). Дополнительные сведения об [уровнях учетных записей интеграции и их модели ценообразования см](#integration-accounts) . Далее в этом разделе.
 
@@ -118,7 +118,7 @@ Azure Logic Apps измеряет все успешные и неудачные 
 
 Azure Logic Apps предоставляет бесплатные, базовые и стандартные учетные записи интеграции. Уровни "базовый" и "Стандартный" поддерживаются Logic Apps соглашением об уровне обслуживания (SLA), а уровень "бесплатный" не поддерживается SLA и имеет ограничения на доступность, пропускную способность и использование региона. За исключением учетных записей интеграции уровня Free, в каждом регионе Azure можно использовать несколько учетных записей интеграции. Сведения о тарифах см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/).
 
-Если у вас есть [ *Среда службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), независимо от [SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level), в интегрированной среде сценариев может быть [ограниченное количество учетных записей интеграции](logic-apps-limits-and-config.md#integration-account-limits), но [это ограничение можно увеличить за дополнительную плату](#fixed-pricing). Чтобы узнать, как работает модель ценообразования для интегрированной среды сценариев, см. раздел Предыдущая [модель ценообразования](#fixed-pricing) этой статьи. Сведения о тарифах см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps).
+При наличии [ *среды службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)интегрированная среда сценариев может использовать одну учетную запись интеграции без дополнительных затрат, хотя тип учетной записи зависит от [SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level). Для получения [дополнительных затрат](#fixed-pricing)можно создать дополнительные учетные записи интеграции для интегрированной среды сценариев вплоть до [общего ограничения учетных записей интеграции](logic-apps-limits-and-config.md#integration-account-limits). Чтобы узнать, как работает модель ценообразования для интегрированной среды сценариев, см. раздел Предыдущая [модель ценообразования](#fixed-pricing) этой статьи. Сведения о тарифах см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps).
 
 Для выбора между бесплатной, базовой или стандартной учетной записью интеграции ознакомьтесь со следующими описаниями вариантов использования:
 
@@ -174,7 +174,7 @@ Azure Logic Apps предоставляет бесплатные, базовые
    > [!NOTE]
    > Для циклов for только действия верхнего уровня показывают размеры входных и выходных данных. Для действий внутри вложенных циклов входные и выходные данные показывают нулевой размер и не имеют ссылок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения о Azure Logic Apps](logic-apps-overview.md)
 * [Создание первого приложения логики](quickstart-create-first-logic-app-workflow.md)

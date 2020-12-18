@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: tomfitz
-ms.openlocfilehash: a1ce7f8f718b364dc4b47593cf9ea37e8baf1e72
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: fa70d88b046cf38aa74582066d230c15580465b9
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563098"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673976"
 ---
 # <a name="arm-template-deployment-what-if-operation"></a>Операция "что если" развертывания шаблона ARM
 
@@ -393,9 +393,10 @@ Are you sure you want to execute the deployment?
 
 * Для .NET используйте [класс деплойментвхатиф](/dotnet/api/microsoft.azure.management.resourcemanager.models.deploymentwhatif).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Если вы заметили неправильные результаты операции "что если", сообщите о проблемах по адресу [https://aka.ms/whatifissues](https://aka.ms/whatifissues) .
+- Сведения о модуле Microsoft Learn, который охватывает использование функции, см. в разделе [Предварительный просмотр изменений и проверка ресурсов Azure с помощью средств тестирования шаблонов ARM](/learn/modules/arm-template-test/).
 - Сведения о развертывании шаблонов с помощью Azure PowerShell см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md).
 - Сведения о развертывании шаблонов с помощью Azure CLI см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure CLI](deploy-cli.md).
 - Сведения о развертывании шаблонов с помощью RESTFUL см. в статье [развертывание ресурсов с помощью шаблонов ARM и диспетчер ресурсов REST API](deploy-rest.md).

@@ -5,15 +5,15 @@ services: storage
 author: wmgries
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/5/2020
+ms.date: 12/17/2020
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 0b85bbbbd69338f54f9e698d9d47058f78c32057
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 739e59ea8e5737abbc6f0f0799129be5f59fb9b0
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630079"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674503"
 ---
 # <a name="release-notes-for-the-azure-file-sync-agent"></a>Заметки о выпуске агента службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Установки серверов Windows Server преобразовываются в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server (в том числе SMB, NFS и FTPS). Кроме того, вы можете создать любое количество кэшей.
@@ -25,7 +25,7 @@ ms.locfileid: "94630079"
 
 | Веха | Номер версии агента | Дата выпуска | Состояние |
 |----|----------------------|--------------|------------------|
-| Версия 11.1, выпуск — [KB4539951](https://support.microsoft.com/en-us/help/4539951)| 11.1.0.0 | 4 ноября 2020 г. | Поддерживается — перелет |
+| Версия 11.1, выпуск — [KB4539951](https://support.microsoft.com/en-us/help/4539951)| 11.1.0.0 | 4 ноября 2020 г. | Поддерживается |
 | Версия 10.1 — [KB4522411](https://support.microsoft.com/en-us/help/4522411)| 10.1.0.0 | 5 июня 2020 г. | Поддерживается |
 | Накопительный пакет обновлений за май 2020 г. — [KB4522412](https://support.microsoft.com/help/4522412)| 10.0.2.0 | 19 мая 2020 г. | Поддерживается |
 | Выпуск версии 10 — [KB4522409](https://support.microsoft.com/en-us/help/4522409)| 10.0.0.0 | 9 апреля 2020 г. | Поддерживается |

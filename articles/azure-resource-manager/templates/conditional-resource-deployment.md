@@ -2,13 +2,13 @@
 title: Условное развертывание с помощью шаблонов
 description: Описание условного развертывания ресурса в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
-ms.date: 06/01/2020
-ms.openlocfilehash: 0a31bd1fbf755046f331542b4d5952b27a793360
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.date: 12/17/2020
+ms.openlocfilehash: 1492e9f9f45f23628f9933628fd2740e08ad9eb0
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906001"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672854"
 ---
 # <a name="conditional-deployment-in-arm-templates"></a>Условное развертывание в шаблонах ARM
 
@@ -88,7 +88,8 @@ ms.locfileid: "96906001"
 
 Если вы развертываете шаблон с [полным режимом](deployment-modes.md) , а ресурс не развернут, так как условие принимает значение false, результат зависит от того, какая REST API версия используется для развертывания шаблона. Если вы используете более раннюю версию, чем 2019-05-10, ресурс **не удаляется**. В 2019-05-10 или более поздней версии ресурс **удаляется**. Последние версии Azure PowerShell и Azure CLI удаляют ресурс, если условие имеет значение false.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
+* Сведения о модуле Microsoft Learn, охватывающем условное развертывание, см. в статье [управление комплексными облачными развертываниями с помощью расширенных функций шаблонов ARM](/learn/modules/manage-deployments-advanced-arm-template-features/).
 * Рекомендации по созданию шаблонов см. в статье рекомендации по использованию [шаблонов ARM](template-best-practices.md).
 * Сведения о создании нескольких экземпляров ресурса см. [в статье итерация ресурсов в шаблонах ARM](copy-resources.md).

@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: c6d171717865fe4bdf3dfb30a6d24badd4fe29ca
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: fbbccfb21f136d926ac0e3e701ad686d2a42e715
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505568"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674231"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Использование скриптов развертывания в шаблонах ARM
 
@@ -147,7 +147,7 @@ ms.locfileid: "97505568"
 
     Если аргументы содержат escape-символы, используйте [жсонескапер](https://www.jsonescaper.com/) для двойного экранирования символов. Вставьте исходную экранированную строку в средство, а затем выберите **escape**.  Средство выводит строку с двойным экранированием. Например, в предыдущем примере шаблона аргумент имеет **имя \\ «Джон дружащим \\ »**.  Экранированная строка имеет **имя \\ \\ \\ «Джон дружащим \\ \\ \\ »**.
 
-    Чтобы передать параметр шаблона ARM типа Object в качестве аргумента, преобразуйте объект в строку с помощью функции [String ()](./template-functions-string.md#string) , а затем используйте функцию **\\ \\ \\** [Replace ()](./template-functions-string.md#replace) для замены любого из них. **\\** Пример:
+    Чтобы передать параметр шаблона ARM типа Object в качестве аргумента, преобразуйте объект в строку с помощью функции [String ()](./template-functions-string.md#string) , а затем используйте функцию **\\ \\ \\** [Replace ()](./template-functions-string.md#replace) для замены любого из них. **\\** Вот несколько примеров:
 
     ```json
     replace(string(parameters('tables')), '\"', '\\\"')
@@ -259,7 +259,7 @@ reference('<ResourceName>').output.text
 
 - Поддерживаются следующие типы учетных записей хранения:
 
-    | Номер SKU             | Поддерживаемый тип     |
+    | номер SKU             | Поддерживаемый тип     |
     |-----------------|--------------------|
     | Premium_LRS     | FileStorage        |
     | Premium_ZRS     | FileStorage        |
@@ -592,3 +592,7 @@ armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups
 
 > [!div class="nextstepaction"]
 > [Руководство. Использование сценариев развертывания в шаблонах Azure Resource Manager](./template-tutorial-deployment-script.md)
+
+> [!div class="nextstepaction"]
+> [Изучение модуля: расширение шаблонов ARM с помощью скриптов развертывания](/learn/modules/extend-resource-manager-template-deployment-scripts/)
+
