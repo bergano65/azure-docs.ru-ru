@@ -9,17 +9,17 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: a5ae262d2882bd76e31666f058fa9a7a703a9e1e
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: fe1b337fe3e1dcf499f9a7428f66543108d0c050
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906018"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680409"
 ---
 # <a name="request-real-time-and-forecasted-weather-data-using-azure-maps-weather-services-preview"></a>Запрос данных о погоде в реальном времени и прогнозировании с помощью Azure Mapsных служб погоды (Предварительная версия) 
 
 > [!IMPORTANT]
-> Azure Mapsные службы погоды в настоящее время доступны в общедоступной предварительной версии.
+> Службы погоды Azure Maps в настоящее время предоставляются в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Azure Mapsные [службы погоды](/rest/api/maps/weather) — это набор интерфейсов API RESTful, позволяющих разработчикам интегрировать в свои решения высокодинамические исторические данные, а также прогнозы погоды и визуализации. В этой статье мы покажем, как запрашивать данные о погоде в режиме реального времени и прогнозировании.
@@ -34,9 +34,9 @@ Azure Mapsные [службы погоды](/rest/api/maps/weather) — это 
 
 В этом видеоролике приведены примеры вызова функций RESTFUL для Azure Maps служб погоды.
 
-<br/>
+</br>
 
-<iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Maps-Weather-services-for-developers/player" width="960" height="540" allowFullScreen frameBorder="0" title="Azure Mapsные службы погоды для разработчиков — видео Microsoft Channel 9"></iframe>
+>[!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Maps-Weather-services-for-developers/player?format=ny]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -752,7 +752,7 @@ Azure Mapsные [службы погоды](/rest/api/maps/weather) — это 
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Основные понятия Azure Mapsных служб погоды (Предварительная версия)](./weather-services-concepts.md)

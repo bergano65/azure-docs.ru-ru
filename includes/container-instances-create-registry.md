@@ -17,9 +17,9 @@ ms.locfileid: "92746930"
 ---
 ## <a name="create-azure-container-registry"></a>Создание реестра контейнеров Azure
 
-Перед созданием реестра контейнеров необходимо создать *группу ресурсов* , куда он будет развернут. Группа ресурсов — это логическая коллекция, в которой выполняется развертывание и администрирование всех ресурсов Azure.
+Перед созданием реестра контейнеров необходимо создать *группу ресурсов*, куда он будет развернут. Группа ресурсов — это логическая коллекция, в которой выполняется развертывание и администрирование всех ресурсов Azure.
 
-Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus* .
+Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*.
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -31,7 +31,7 @@ az group create --name myResourceGroup --location eastus
 az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
 ```
 
-Ниже приведена часть выходных данных для нового реестра контейнеров Azure *mycontainerregistry082* .
+Ниже приведена часть выходных данных для нового реестра контейнеров Azure *mycontainerregistry082*.
 
 ```output
 {

@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Presto с помощью фабрики данных Azure (предварительная версия)
+title: Копирование данных из Presto с помощью Фабрики данных Azure
 description: Узнайте, как копировать данные из Presto в поддерживаемые хранилища данных в качестве приемников с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -9,22 +9,19 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 12/18/2020
 ms.author: jingwang
-ms.openlocfilehash: 15f4133b03c1fe77548425500445937e86ed5a8e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af05983432c0f76a88ff82a3638d86a971ef77f5
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87372507"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680704"
 ---
-# <a name="copy-data-from-presto-using-azure-data-factory-preview"></a>Копирование данных из Presto с помощью фабрики данных Azure (предварительная версия)
+# <a name="copy-data-from-presto-using-azure-data-factory"></a>Копирование данных из Presto с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Presto. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!IMPORTANT]
-> Сейчас этот соединитель доступен в режиме предварительной версии. Попробуйте поработать с ним и оставьте свой отзыв. Если вы хотите использовать в своем решении зависимость от соединителей в предварительной версии, обратитесь в службу [поддержки Azure](https://azure.microsoft.com/support/).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
