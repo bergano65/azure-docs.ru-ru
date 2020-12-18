@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/08/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8bacb7a434cfa04dbdfdaf39d9fd3a0baab5f11a
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b0a5547928bd7d19343c50e40ab9fcb2c335e893
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489818"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674537"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-postgresql-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "92489818"
 
 Вы можете создавать реплики чтения и управлять ими с помощью PowerShell.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -60,7 +60,7 @@ Get-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 
 ```azurepowershell-interactive
 Get-AzPostgreSqlServer -Name mrdemoserver -ResourceGroupName myresourcegroup |
-  New-AzMariaDServerReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -Location westus
+  New-AzPostgreSQLServerReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -Location westus
 ```
 
 Дополнительные сведения о том, в каких регионах можно создать реплику, см. в статье [об основных понятиях реплики чтения](concepts-read-replicas.md).
@@ -75,15 +75,23 @@ Get-AzPostgreSqlServer -Name mrdemoserver -ResourceGroupName myresourcegroup |
 Чтобы просмотреть все реплики для данного сервера-источника, выполните следующую команду:
 
 ```azurepowershell-interactive
-Get-AzMariaDReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
+Get-AzPostgreSQLReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
 ```
 
-Для команды `Get-AzMariaDReplica` обязательны указанные ниже параметры.
+Для команды `Get-AzPostgreSQLReplica` обязательны указанные ниже параметры.
 
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | ServerName | mydemoserver | Имя или идентификатор сервера источника. |
+
+### <a name="stop-a-replica-server"></a>Останавливает сервер реплики
+
+Остановка сервера реплики чтения повышает, что реплика чтения становится независимым сервером. Это можно сделать, запустив `Update-AzPostgreSqlServer` командлет и задав для параметра репликатионроле значение `None` .
+
+```azurepowershell-interactive
+Update-AzPostgreSqlServer -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -ReplicationRole None
+```
 
 ### <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
@@ -104,7 +112,7 @@ Remove-AzPostgreSqlServer -Name mydemoreplicaserver -ResourceGroupName myresourc
 Remove-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Перезапуск базы данных Azure для сервера PostgreSQL с помощью PowerShell](howto-restart-server-powershell.md)

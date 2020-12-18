@@ -4,12 +4,12 @@ description: Описывает, как развертывать шаблоны 
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: f8c669393d38d7af2af4f63f251740d8ad72edf7
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 4c1f59e9a18e7359ae543b0311baea0c2a4ab8d6
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607309"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674338"
 ---
 # <a name="deploy-arm-templates-by-using-github-actions"></a>Развертывание шаблонов ARM с помощью действий GitHub
 
@@ -154,7 +154,10 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Если группа ресурсов и репозиторий больше не требуются, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Создание первого шаблона ARM](./template-tutorial-create-first-template.md)
+
+> [!div class="nextstepaction"]
+> [Сведения о модуле: Автоматизация развертывания шаблонов ARM с помощью действий GitHub](/learn/modules/deploy-templates-command-line-github-actions/)

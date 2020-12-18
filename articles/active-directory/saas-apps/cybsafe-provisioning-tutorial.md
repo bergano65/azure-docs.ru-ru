@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2020
 ms.author: Zhchia
-ms.openlocfilehash: 92329a3fa04d3cc685ba5068e9e5ae9932d1eb4d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 932a94c348c38902c68a6cf8108d8246cdc434ac
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96178948"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673383"
 ---
 # <a name="tutorial-configure-cybsafe-for-automatic-user-provisioning"></a>Учебник. Настройка Цибсафе для автоматической подготовки пользователей
 
@@ -135,15 +135,15 @@ ms.locfileid: "96178948"
 
 13. Чтобы включить службу подготовки Azure AD для Цибсафе, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
-    ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
+      ![Состояние подготовки "Включено"](common/provisioning-toggle-on.png)
 
 14. Определите пользователей и (или) группы, которые вы хотите подготавливать к Цибсафе, выбрав нужные значения в **области** в разделе **Параметры** .
 
-    ![Область действия подготовки](common/provisioning-scope.png)
+      ![Область действия подготовки](common/provisioning-scope.png)
 
 15. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
 
-    ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
+      ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
 После этого начнется цикл начальной синхронизации всех пользователей и групп, определенных в поле **Область** в разделе **Параметры**. Начальный цикл занимает больше времени, чем последующие циклы. Пока служба подготовки Azure AD запущена, они выполняются примерно каждые 40 минут. 
 

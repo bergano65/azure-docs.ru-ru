@@ -1,14 +1,14 @@
 ---
 title: Публикация предложения управляемой службы в Azure Marketplace
 description: Узнайте, как опубликовать предложение управляемой службы, которое осуществляет подключение клиентов к Azure Лигхсаусе.
-ms.date: 08/18/2020
+ms.date: 12/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 033003d7e782ca0e99b1fc908c5261b6e31bf613
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a003e671631e9f23654eb524c7c2d937339a9588
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023931"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673160"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Публикация предложения управляемой службы в Azure Marketplace
 
@@ -18,7 +18,7 @@ ms.locfileid: "96023931"
 
 Для создания и публикации предложений необходимо иметь действительную [учетную запись в центре партнеров](../../marketplace/partner-center-portal/create-account.md) . Если у вас еще нет учетной записи, [процесс регистрации](https://aka.ms/joinmarketplace) поможет вам выполнить действия по созданию учетной записи в центре партнеров и регистрации в программе коммерческого рынка.
 
-В соответствии с [требованиями к сертификации для управляемой службы](/legal/marketplace/certification-policies#7004-business-requirements)необходимо иметь [уровень компетенции серебряной или Золотой облачной платформы](/partner-center/learn-about-competencies) или [экспертный MSP](https://partner.microsoft.com/membership/azure-expert-msp) -пакет Azure для публикации предложения управляемой службы.
+В соответствии с [требованиями к сертификации для управляемой службы](/legal/marketplace/certification-policies#7004-business-requirements)необходимо иметь [уровень компетенции серебряной или Золотой облачной платформы](/partner-center/learn-about-competencies) или [экспертный MSP](https://partner.microsoft.com/membership/azure-expert-msp) -пакет Azure для публикации предложения управляемой службы. Необходимо также [ввести назначение интереса, которое будет создавать запись в системе CRM](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#customer-leads) каждый раз, когда Клиент развертывает ваше предложение.
 
 Ваш идентификатор Microsoft Partner Network будет [автоматически связан](../../cost-management-billing/manage/link-partner-id.md) с публикуемыми предложениями, чтобы отследить влияние на привлечение клиентов.
 
@@ -28,12 +28,12 @@ ms.locfileid: "96023931"
 
 |**Рассмотрение**  |**Предложение управляемой службы**  |**Шаблоны ARM**  |
 |---------|---------|---------|
-|Требуется [учетная запись центра партнеров](../../marketplace/partner-center-portal/create-account.md)   |Да         |нет        |
-|Требуется [уровень компетенции серебристой или Золотой облачной платформы](/partner-center/learn-about-competencies) или [экспертный MSP Azure](https://partner.microsoft.com/membership/azure-expert-msp)      |Да         |нет         |
-|Доступно для новых клиентов через Azure Marketplace     |Да     |нет       |
+|Требуется [учетная запись центра партнеров](../../marketplace/partner-center-portal/create-account.md)   |Да         |Нет        |
+|Требуется [уровень компетенции серебристой или Золотой облачной платформы](/partner-center/learn-about-competencies) или [экспертный MSP Azure](https://partner.microsoft.com/membership/azure-expert-msp)      |Да         |Нет         |
+|Доступно для новых клиентов через Azure Marketplace     |Да     |Нет       |
 |Может ограничить предложение конкретными клиентами     |Да (только с частными предложениями, которые нельзя использовать с подписками, установленными через торгового посредника программы поставщика облачных решений (CSP))         |Да         |
-|Требуется согласие клиента в портал Azure     |Да     |нет   |
-|Можно использовать автоматизацию для подключения нескольких подписок, групп ресурсов или клиентов. |нет     |Да    |
+|Требуется согласие клиента в портал Azure     |Да     |Нет   |
+|Можно использовать автоматизацию для подключения нескольких подписок, групп ресурсов или клиентов. |Нет     |Да    |
 |Немедленный доступ к новым встроенным ролям и функциям Azure Лигхсаусе     |Не всегда (обычно доступно после некоторой задержки)         |Да         |
 
 ## <a name="create-your-offer"></a>Создайте предложение

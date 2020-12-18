@@ -5,15 +5,15 @@ description: Дополнительные сведения см. в статье
 author: baanders
 ms.author: baanders
 ms.date: 11/19/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 966b87dfb3111d7a112ea99f37dee730495d491f
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: df7462cf047dd113c34669d9a5f68f2589cc50f4
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032836"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672999"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Запрос к графу Azure Digital двойников двойника
 
@@ -75,7 +75,7 @@ SELECT * FROM DIGITALTWINS T WHERE IS_NUMBER(T.Temperature)
 * Двойника напрямую реализует модель, предоставленную в `IS_OF_MODEL()` , а номер версии модели на двойника *больше или равен* номеру версии указанной модели.
 * Двойника реализует модель, которая *расширяет* модель, предоставленную в `IS_OF_MODEL()` , а номер версии расширенной модели двойника *больше или равен* номеру версии указанной модели.
 
-Например, при запросе двойников модели `dtmi:example:widget;4` запрос возвратит все двойников, основанные на **версии 4 или выше** модели **мини** -приложения, а также двойников на основе **моделей, наследующих от Widget**. **4 or greater**
+Например, при запросе двойников модели `dtmi:example:widget;4` запрос возвратит все двойников, основанные на **версии 4 или выше** модели **мини** -приложения, а также двойников на основе **моделей, наследующих от Widget**. 
 
 `IS_OF_MODEL` может принимать несколько различных параметров, и остальная часть этого раздела будет отделена от различных вариантов перегрузки.
 
@@ -362,6 +362,6 @@ catch (RequestFailedException e)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о [API-интерфейсах и пакетах SDK для цифровых двойников Azure](how-to-use-apis-sdks.md), включая API запросов, который используется для выполнения запросов из этой статьи.

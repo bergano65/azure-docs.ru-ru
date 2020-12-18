@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2020
 ms.author: Zhchia
-ms.openlocfilehash: b739cd50c4d4477d3622350a9a9c96b600794c7d
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 4eaac716d06b102a07872059af28da4986889caa
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632045"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673446"
 ---
 # <a name="tutorial-configure-bizagi-studio-for-digital-process-automation-for-automatic-user-provisioning"></a>Руководство. Настройка Бизаги Studio для автоматизации цифровых процессов для автоматической подготовки пользователей
 
@@ -117,7 +117,7 @@ ms.locfileid: "97632045"
 
     ![Снимок экрана параметров электронной почты для уведомлений.](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Бизаги Studio для автоматизации цифровых процессов**.
 
@@ -139,6 +139,8 @@ ms.locfileid: "97632045"
 
    Дополнительные сведения о добавлении настраиваемых атрибутов можно найти в [таблице Настройка атрибутов приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).
 
+> [!NOTE]
+> Поддерживаются только базовые свойства типа (например, строка, целое число, логическое значение, DateTime и т. д.). Свойства, связанные с параметрической таблицей или несколькими типами, пока не поддерживаются.
 
 10. Чтобы настроить фильтры области, см. [руководство по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 

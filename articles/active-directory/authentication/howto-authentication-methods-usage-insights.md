@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/21/2019
+ms.date: 12/17/2020
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8633ae0d23650eb12ee2e1fdcd355864dfd8b6c3
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: bfff8d450a6506cb37730838e4f70609080ca7b1
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743638"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670797"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Использование методов проверки подлинности & Insights (Предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "96743638"
 - Администратор безопасности
 - Читатель отчетов
 
-Для доступа к использованию и аналитике не требуется никаких дополнительных лицензий. Сведения о лицензировании службы многофакторной идентификации Azure AD и самостоятельного сброса пароля (SSPR) можно найти на [сайте цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+ Для доступа к использованию и аналитике требуется лицензия Azure AD Premium P1 или P2. Сведения о лицензировании службы многофакторной идентификации Azure AD и самостоятельного сброса пароля (SSPR) можно найти на [сайте цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -96,7 +96,7 @@ ms.locfileid: "96743638"
 
 В настоящее время отчет не может быть отфильтрован для исключения внешних пользователей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Работа с API отчетов по использованию методов проверки подлинности](/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
 - [Выбор методов проверки подлинности для Организации](concept-authentication-methods.md)

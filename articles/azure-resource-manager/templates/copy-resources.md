@@ -2,13 +2,13 @@
 title: Развертывание нескольких экземпляров ресурсов
 description: Используйте операцию копирования и массивы в шаблоне Azure Resource Manager (шаблон ARM), чтобы развернуть тип ресурса много раз.
 ms.topic: conceptual
-ms.date: 09/21/2020
-ms.openlocfilehash: 47f3d693b84347973889a6003360d7113c427f4d
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.date: 12/17/2020
+ms.openlocfilehash: 7a894ee6a31a43dd8da3d84d88276824c6bbc9f7
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905916"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672837"
 ---
 # <a name="resource-iteration-in-arm-templates"></a>Итерация ресурсов в шаблонах ARM
 
@@ -85,7 +85,7 @@ ms.locfileid: "96905916"
 }
 ```
 
-Обратите внимание, что имя каждого ресурса содержит функцию `copyIndex()`, которая возвращает текущую итерацию в цикле. Индекс `copyIndex()` отсчитывается от нуля. См. приведенный ниже пример.
+Обратите внимание, что имя каждого ресурса содержит функцию `copyIndex()`, которая возвращает текущую итерацию в цикле. `copyIndex()` отсчитывается, начиная с нуля. См. приведенный ниже пример.
 
 ```json
 "name": "[concat('storage', copyIndex())]",
@@ -289,13 +289,12 @@ ms.locfileid: "96905916"
 |[Развертывание виртуальной машины с переменным количеством дисков данных](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-windows-copy-datadisks) |Развертывает несколько дисков данных с виртуальной машиной. |
 |[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы пройти обучение, см. раздел [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов ARM](template-tutorial-create-multiple-instances.md).
+* Сведения о модуле Microsoft Learn, который охватывает копирование ресурсов, см. в статье [управление комплексными облачными развертываниями с помощью расширенных функций шаблонов ARM](/learn/modules/manage-deployments-advanced-arm-template-features/).
 * Другие способы использования элемента copy см. в следующих статьях:
   * [Итерация свойства в шаблонах ARM](copy-properties.md)
   * [Итерация переменных в шаблонах ARM](copy-variables.md)
   * [Выходная итерация в шаблонах ARM](copy-outputs.md)
 * Сведения об использовании инструкции Copy с вложенными шаблонами см. [в разделе Использование копирования](linked-templates.md#using-copy).
-* Сведения о разделах шаблона см. в разделе Общие сведения о [структуре и синтаксисе шаблонов ARM](template-syntax.md).
-* Сведения о развертывании шаблона см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md).

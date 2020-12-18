@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 0435fe3946118d59d786dd3e6cec350a5ab4eee4
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 34af380d057ad47811e394da1e7a29198e102920
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046457"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672786"
 ---
 # <a name="iot-plug-and-play-bridge"></a>Мост для IoT Plug and Play
 
@@ -29,63 +29,125 @@ ms.locfileid: "92046457"
 
 |Периферийные устройства|Windows|Linux|
 |---------|---------|---------|
-|[Bluetooth с низким энергопотреблением](https://aka.ms/iot-pnp-bridge-bluetooth)       |Да|Нет|
-|[Камеры](https://aka.ms/iot-pnp-bridge-camera)               |Да|Нет|
-|[Modbus](https://aka.ms/iot-pnp-bridge-modbus)                |Да|Да|
-|[MQTT](https://aka.ms/iot-pnp-bridge-mqtt)                    |Да|Да|
-|[Подключение](https://aka.ms/iot-pnp-bridge-serial)                |Да|Да|
-|[Периферийные устройства USB Windows](https://aka.ms/iot-pnp-bridge-usb)  |Да|Н/Д|
+|[Адаптер датчика Bluetooth](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/bluetooth_sensor_adapter.md) подключается к обнаруженным датчикам Bluetooth с низким энергопотреблением (BLE).       |Да|Нет|
+|[Адаптер камеры](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/camera_adapter.md) подключает камеры на устройстве с Windows 10.               |Да|Нет|
+|[Адаптер Modbus](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/modbus_adapters.md) подключает датчики на устройстве Modbus.              |Да|Да|
+|[Адаптер MQTT](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/mqtt_adapter.md) подключает устройства, ИСПОЛЬЗУЮЩИЕ брокер MQTT.                  |Да|Да|
+|[Адаптер сериалпнп](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/serialpnp/Readme.md) подключает устройства, взаимодействующие по последовательному подключению.               |Да|Да|
+|[Периферийные устройства Windows USB](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/coredevicehealth_adapter.md) используют список классов интерфейсов устройств, поддерживаемых адаптером, для подключения устройств с указанным идентификатором оборудования.  |Да|Не применимо|
 
->[!Important]
->Разработчики могут расширить мост Интернета вещей Plug and Play для поддержки дополнительных протоколов устройств, следуя инструкциям в документации по средству для **[разработчиков центра Интернета вещей Plug and Play](https://aka.ms/iot-pnp-bridge-dev-doc)**.
-
-## <a name="prerequisites"></a>Предварительные требования
-
-### <a name="os-platform"></a>Платформа ОС
-
-Поддерживаются следующие платформы и версии ОС:
-
-|Платформа  |Поддерживаемые версии  |
-|---------|---------|
-|Windows 10 |     Поддерживаются все номера SKU Windows. Например: IoT Корпоративная, сервер, Настольный компьютер, IoT Core. *Для функций мониторинга работоспособности камеры рекомендуется использовать 20H1 или более позднюю сборку. Все остальные функции доступны во всех сборках Windows 10.*  |
-|Linux     |Протестированные и поддерживаемые в Ubuntu 18,04, функции других дистрибутивов не были протестированы.         |
-||
-
-### <a name="hardware"></a>Оборудование
-
-- Любая аппаратная платформа, поддерживающая указанные выше номера SKU и версии ОС.
-- Устройства с последовательными портами, USB, Bluetooth, камеры и датчики поддерживаются изначально. Мост центра Интернета вещей Plug and Play можно расширить для поддержки любого настраиваемого периферийного устройства или датчика ([см. раздел выше](#iot-plug-and-play-bridge)).
-
-### <a name="development-environment"></a>Среда разработки
-
-Для сборки, расширения и разработки центра Интернета вещей Plug and Play вам потребуется:  
-
-- Среда разработки, поддерживающая компиляцию C++, например [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/). при установке Visual Studio убедитесь, что вы включили рабочую нагрузку Разработка классических приложений на C++.
-- [CMAK](https://cmake.org/download/) — при установке CMAK выберите параметр `Add CMake to the system PATH` .
-- При построении на Windows необходимо также загрузить пакет SDK для Windows 17763: [https://developer.microsoft.com/windows/downloads/windows-10-sdk](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-- [Пакет SDK для устройства с центром Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c). Прилагаемые скрипты сборки в этом репозитории будут автоматически клонировать необходимый пакет SDK для Azure IoT C.
-
-### <a name="azure-iot-products-and-tools"></a>Продукты и инструменты Azure IoT
-
-- **Центр Интернета вещей Azure** — для подключения устройства к требуется [центр Интернета вещей Azure](../iot-hub/index.yml) в подписке Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. Если у вас нет центра Интернета вещей, [следуйте этим инструкциям, чтобы создать его](../iot-hub/iot-hub-create-using-cli.md).
-
-> [!Note]
-> Сейчас функция IoT Plug and Play доступна в центрах Интернета вещей, созданных в таких регионах, как Центральная часть США, Северная Европа и Восточная Япония. Поддержка Plug and Play IoT не включена в центры Интернета вещей ценовой категории "Базовый". Для взаимодействия с устройством Plug and Play IoT можно использовать средство Azure IoT Explorer. [Скачайте и установите последний выпуск обозревателя Интернета вещей Azure](./howto-use-iot-explorer.md) для вашей операционной системы.
+Дополнительные сведения о расширении моста Plug and Play IoT для поддержки дополнительных протоколов устройств см. в статье [Создание, развертывание и расширение моста Plug and Play центра Интернета вещей](howto-build-deploy-extend-pnp-bridge.md).
 
 ## <a name="iot-plug-and-play-bridge-architecture"></a>Архитектура моста Plug and Play IoT
 
-:::image type="content" source="media/concepts-iot-pnp-bridge/iot-pnp-bridge-components.png" alt-text="В левой части существует несколько подключенных датчиков (как проводные, так и беспроводные) на компьютер под управлением Windows или Linux, содержащий мост Интернета вещей Plug and Play. Затем мост IoT Plug and Play соединяется с центром Интернета вещей справа":::
+:::image type="content" source="media/concepts-iot-pnp-bridge/iot-pnp-bridge-components.png" alt-text="В левой части есть несколько флажков, указывающих на различные периферийные устройства, подключенные к компьютеру под управлением Windows или Linux, который содержит мост IoT Plug and Play. В верхней части — поле, обозначенное точками конфигурации в отношении моста. Затем мост соединяется с центром Интернета вещей в правой части схемы.":::
+
+### <a name="iot-plug-and-play-bridge-adapters"></a>Адаптеры для мостов Plug and Play IoT
+
+Мост IoT Plug and Play поддерживает набор адаптеров моста Интернета вещей Plug and Play для различных типов устройств. *Манифест адаптера* статически определяет адаптеры для моста.
+
+Диспетчер адаптеров моста использует манифест для обнаружения и вызова функций адаптера. Диспетчер адаптеров вызывает только функцию Create для адаптеров моста, необходимых компонентам интерфейса, перечисленным в файле конфигурации. Для каждого компонента Plug and Play IoT создается экземпляр адаптера.
+
+Адаптер моста создает и получает обработчик цифрового двойниканого интерфейса. Адаптер использует этот обработчик для привязки функции устройства к цифровому двойника.
+
+Используя сведения в файле конфигурации, адаптер моста использует следующие методы для включения передачи данных с устройства в цифровое двойника через мост:
+
+- Устанавливает коммуникационный канал напрямую.
+- Создает наблюдатель устройств, чтобы ждать, пока канал связи станет доступным.
+
+### <a name="configuration-file"></a>Файл конфигурации
+
+Мост Интернета вещей Plug and Play использует файл конфигурации на основе JSON, который указывает:
+
+- Как подключиться к центру Интернета вещей или IoT Central приложению: параметры включают строки подключения, параметры проверки подлинности или службу подготовки устройств (DPS).
+- Расположение моделей возможностей центра Интернета вещей Plug and Play, используемых мостом. Модель определяет возможности устройства IoT Plug and Play, а также является статичной и неизменяемой.
+- Список компонентов интерфейса Интернета вещей Plug and Play и следующие сведения для каждого компонента:
+- Идентификатор интерфейса и имя компонента.
+- Адаптер моста, необходимый для взаимодействия с компонентом.
+- Сведения об устройстве, необходимые адаптеру моста для установления связи с устройством. Например, идентификатор оборудования или конкретные сведения о адаптере, интерфейсе или протоколе.
+- Дополнительный подтип адаптера моста или Конфигурация интерфейса, если адаптер поддерживает несколько типов связи с аналогичными устройствами. В примере показано, как можно настроить компонент датчика Bluetooth:
+
+    ```json
+    {
+      "_comment": "Component BLE sensor",
+      "pnp_bridge_component_name": "blesensor1",
+      "pnp_bridge_adapter_id": "bluetooth-sensor-pnp-adapter",
+      "pnp_bridge_adapter_config": {
+        "bluetooth_address": "267541100483311",
+        "blesensor_identity" : "Blesensor1"
+      }
+    }
+    ```
+
+- Необязательный список параметров адаптера глобальных мостов. Например, адаптер моста датчика Bluetooth имеет словарь поддерживаемых конфигураций. Компонент интерфейса, для которого требуется адаптер датчика Bluetooth, может выбрать одну из следующих конфигураций `blesensor_identity` :
+
+    ```json
+    {
+      "pnp_bridge_adapter_global_configs": {
+        "bluetooth-sensor-pnp-adapter": {
+          "Blesensor1" : {
+            "company_id": "0x499",
+            "endianness": "big",
+            "telemetry_descriptor": [
+              {
+                "telemetry_name": "humidity",
+                "data_parse_type": "uint8",
+                "data_offset": 1,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.5
+              },
+              {
+                "telemetry_name": "temperature",
+                "data_parse_type": "int8",
+                "data_offset": 2,
+                "conversion_bias": 0,
+                "conversion_coefficient": 1.0
+              },
+              {
+                "telemetry_name": "pressure",
+                "data_parse_type": "int16",
+                "data_offset": 4,
+                "conversion_bias": 0,
+                "conversion_coefficient": 1.0
+              },
+              {
+                "telemetry_name": "acceleration_x",
+                "data_parse_type": "int16",
+                "data_offset": 6,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.00980665
+              },
+              {
+                "telemetry_name": "acceleration_y",
+                "data_parse_type": "int16",
+                "data_offset": 8,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.00980665
+              },
+              {
+                "telemetry_name": "acceleration_z",
+                "data_parse_type": "int16",
+                "data_offset": 10,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.00980665
+              }
+            ]
+          }
+        }
+      }
+    }
+    ```
 
 ## <a name="download-iot-plug-and-play-bridge"></a>Скачивание моста Plug and Play IoT
 
-Вы можете скачать предварительно созданную версию моста с поддерживаемыми адаптерами в [IoT Plug and Play мостовыми выпусками](https://aka.ms/iot-pnp-bridge-releases) и расширить список ресурсов для самого последнего выпуска. Скачайте последнюю версию приложения для вашей операционной системы.
+Вы можете скачать предварительно созданную версию моста с поддерживаемыми адаптерами в [IoT Plug and Play мостовыми выпусками](https://github.com/Azure/iot-plug-and-play-bridge/releases) и расширить список ресурсов для самого последнего выпуска. Скачайте последнюю версию приложения для вашей операционной системы.
 
-Кроме того, вы можете загрузить и просмотреть исходный код [центра Интернета вещей Plug and Play Bridge на GitHub](https://aka.ms/bridge).
+Кроме того, вы можете загрузить и просмотреть исходный код [центра Интернета вещей Plug and Play Bridge на GitHub](https://github.com/Azure/iot-plug-and-play-bridge).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда у вас есть общие сведения об архитектуре центра Интернета вещей Plug and Play, выполните следующие действия, чтобы получить дополнительные сведения:
 
 - [Как использовать Plug and Play моста Интернета вещей](./howto-use-iot-pnp-bridge.md)
-- [См. Справочник разработчика GitHub для центра Интернета вещей Plug and Play Bridge](https://aka.ms/iot-pnp-bridge-dev-doc)
-- [Мост IoT Plug and Play на GitHub](https://aka.ms/iotplugandplaybridge)
+- [Создание, развертывание и расширение моста Plug and Play IoT](howto-build-deploy-extend-pnp-bridge.md)
+- [Мост IoT Plug and Play на GitHub](https://github.com/Azure/iot-plug-and-play-bridge)

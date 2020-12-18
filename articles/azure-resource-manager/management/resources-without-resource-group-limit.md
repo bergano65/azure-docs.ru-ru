@@ -3,12 +3,12 @@ title: Ресурсы без ограничения числа 800
 description: Список типов ресурсов Azure, которые могут иметь более 800 экземпляров в группе ресурсов.
 ms.topic: conceptual
 ms.date: 10/28/2020
-ms.openlocfilehash: cec7ea87bbe81d3bfcca37f3133ac650e66f849f
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: c2d5797a7ec354f41d510ec6e884968bf9dbdbcd
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913506"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672370"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Ресурсы, не ограниченные 800 экземплярами на группу ресурсов
 
@@ -81,7 +81,7 @@ ms.locfileid: "92913506"
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
-* Labs/virtualMachines — по умолчанию ограничено до 800 экземпляров. Это ограничение можно увеличить, обратившись в службу поддержки.
+* Labs/virtualMachines — по умолчанию ограничено до 800 экземпляров. 
 * schedules
 
 ## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
@@ -211,6 +211,6 @@ ms.locfileid: "92913506"
 * apiManagementAccounts/apis
 * sites
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Полный список квот и ограничений см. в статье [Подписка Azure, границы, квоты и ограничения службы](azure-subscription-service-limits.md).

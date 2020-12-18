@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 0d8b90e18865afeb5cb0c171d21c89d7c6e932f0
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 69c2bd96c7aa3bb3328784bb3b5027ade4902c43
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654291"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97669233"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-salesforce-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с помощью учетной записи SalesForce с помощью Azure Active Directory B2C
 
@@ -39,7 +39,9 @@ ms.locfileid: "97654291"
 
 Чтобы использовать учетную запись Salesforce в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в **диспетчере приложений** Salesforce. Дополнительные сведения см. в статьях [Настройка основных параметров подключенного приложения](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm)и [Включение параметров OAuth для интеграции API](https://help.salesforce.com/articleView?id=connected_app_create_api_integration.htm) .
 
-1. В **программе установки** введите **приложения** в поле **Быстрый поиск** и выберите **app Manager**.
+1. [Войдите в Salesforce](https://login.salesforce.com/).
+1. В меню выберите пункт **Настройка**.
+1.  Разверните узел **приложения** и выберите **app Manager**.
 1. Выберите **новое подключенное приложение**.
 1. В разделе **Основные сведения** введите:
     1. **Имя подключенного приложения** . имя подключенного приложения отображается в диспетчере приложений и на плитке запуска приложения. Имя должно быть уникальным в пределах организации. 
@@ -233,6 +235,6 @@ ms.locfileid: "97654291"
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [передать токен Salesforce в приложение](idp-pass-through-user-flow.md).

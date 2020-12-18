@@ -2,20 +2,20 @@
 title: Включение Snapshot Debugger для приложений .NET в службе приложений Azure | Документация Майкрософт
 description: Включение Snapshot Debugger для приложений .NET в службе приложений Azure
 ms.topic: conceptual
-author: brahmnes
-ms.author: bfung
+author: cweining
+ms.author: cweining
 ms.date: 03/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 35653840c5ddd6f5ae2d5dc078513f0fa35ab34a
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 0fc46c815906b9aaca7b3ce964e0d23cfdc4e1aa
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560939"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673580"
 ---
 # <a name="enable-snapshot-debugger-for-net-apps-in-azure-app-service"></a>Включение Snapshot Debugger для приложений .NET в службе приложений Azure
 
-Snapshot Debugger в настоящее время работает для приложений ASP.NET и ASP.NET Core, работающих в службе приложений Azure в планах служб Windows. При использовании отладчика моментальных снимков рекомендуется запускать приложение на уровне служб Basic или выше. Для большинства приложений уровни обслуживания "бесплатный" и "общий" не имеют достаточно памяти для сохранения моментальных снимков.
+Snapshot Debugger в настоящее время работает для приложений ASP.NET и ASP.NET Core, работающих в службе приложений Azure в планах служб Windows. При использовании отладчика моментальных снимков рекомендуется запускать приложение на уровне служб Basic или выше. Для большинства приложений уровни обслуживания "бесплатный" и "общий" не содержат достаточно памяти или места на диске для сохранения моментальных снимков.
 
 ## <a name="enable-snapshot-debugger"></a><a id="installation"></a> Включить Snapshot Debugger
 Чтобы включить Snapshot Debugger для приложения, следуйте приведенным ниже инструкциям.
@@ -94,7 +94,7 @@ Snapshot Debugger предварительно устанавливается в
 },
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Создание трафика для приложения, которое может вызвать исключение. Затем подождите 10 – 15 минут, чтобы моментальные снимки отправлялись на экземпляр Application Insights.
 - См. раздел [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) в портал Azure.

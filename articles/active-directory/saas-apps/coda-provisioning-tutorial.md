@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: Zhchia
-ms.openlocfilehash: ea2f25d6b03f002448079b16bd261729807d8a03
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8df1588a78829252d55f82349d6889c754c989e6
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96179711"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673234"
 ---
 # <a name="tutorial-configure-coda-for-automatic-user-provisioning"></a>Руководство по настройке Coda для автоматической подготовки пользователей
 
@@ -93,7 +93,7 @@ ms.locfileid: "96179711"
 
 5. В разделе **Учетные данные администратора** укажите URL-адрес клиента Coda и секретный токен, полученный ранее на шаге 2. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Coda. Если установить подключение не удалось, убедитесь, что у учетной записи Coda есть разрешения администратора, и повторите попытку.
 
-    ![Снимок экрана: диалоговое окно учетных данных администратора, в котором можно ввести URL-адрес клиента и секретный токен.](./media/coda-provisioning-tutorial/provisioning.png)
+     ![Снимок экрана: диалоговое окно учетных данных администратора, в котором можно ввести URL-адрес клиента и секретный токен.](./media/coda-provisioning-tutorial/provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 

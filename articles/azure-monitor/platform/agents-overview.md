@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2020
-ms.openlocfilehash: 9c453219638b9586d4ad2cc2a89311b1f2bdeefe
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8b9a79ee32d7a81fee64e40b85272877b7d87589
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450090"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674204"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -32,7 +32,7 @@ ms.locfileid: "96450090"
 
 ### <a name="windows-agents"></a>Агенты Windows
 
-| | Агент Azure Monitor (Предварительная версия) | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
+| | Агент Azure Monitor (предварительная версия) | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure<br>Другое облако (Дуга Azure)<br>Локально (Дуга Azure)  | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда | 
 | **Требования к агентам**  | Нет | Нет | Нет | Требуется агент Log Analytics |
@@ -42,7 +42,7 @@ ms.locfileid: "96450090"
 
 ### <a name="linux-agents"></a>Агенты Linux
 
-| | Агент Azure Monitor (Предварительная версия) | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
+| | Агент Azure Monitor (предварительная версия) | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|:---|
 | **Поддерживаемые среды** | Azure<br>Другое облако (Дуга Azure)<br>Локально (Дуга ARC) | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда |
 | **Требования к агентам**  | Нет | Нет | Нет | Нет | Требуется агент Log Analytics |
@@ -51,7 +51,7 @@ ms.locfileid: "96450090"
 | **Службы и**<br>**особенностей**<br>**поддерживается** | Log Analytics<br>Обозреватель метрик | | Обозреватель метрик | Azure Monitor для виртуальных машин<br>Log Analytics<br>Служба автоматизации Azure<br>Центр безопасности Azure<br>Azure Sentinel | Azure Monitor для виртуальных машин<br>Сопоставление служб |
 
 
-## <a name="azure-monitor-agent-preview"></a>Агент Azure Monitor (Предварительная версия)
+## <a name="azure-monitor-agent-preview"></a>Агент Azure Monitor (предварительная версия)
 Сейчас [агент Azure Monitor](azure-monitor-agent-overview.md) находится на этапе предварительной версии и заменит агент log Analytics и агент Telegraf для виртуальных машин Windows и Linux. Он может передавать данные в журналы Azure Monitor и Azure Monitor метрики и использует [правила сбора данных (ДКР)](data-collection-rule-overview.md) , которые предоставляют более масштабируемый метод настройки сбора и назначения данных для каждого агента.
 
 Используйте агент Azure Monitor, если необходимо:
@@ -142,15 +142,15 @@ ms.locfileid: "96450090"
 
 | Система операций | Агент Azure Monitor | Агент Log Analytics | Агент зависимостей | Расширение системы диагностики | 
 |:---|:---:|:---:|:---:|:---:|
-| Windows Server 2019                                      | X | X | X | X |
+| Windows Server 2019                                      | X | X | X | X |
 | Windows Server 2016                                      | X | X | X | X |
 | Windows Server 2016 Core                                 |   |   |   | X |
-| Windows Server 2012 R2                                   | X | X | X | X |
+| Windows Server 2012 R2                                   | X | X | X | X |
 | Windows Server 2012                                      | X | X | X | X |
-| Windows Server 2008 R2                                   |   | X | X | X |
-| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro<br>(Только серверные сценарии)  | X | X | X | X |
+| Windows Server 2008 R2                                   |   | X | X | X |
+| Windows 10 Корпоративная<br>(включая несколько сеансов) и Pro<br>(Только серверные сценарии)  | X | X | X | X |
 | Windows 8 Корпоративная и Профессиональная<br>(Только серверные сценарии)  |   | X | X |   |
-| Windows 7 SP1<br>(Только серверные сценарии)                 |   | X | X |   |
+| Windows 7 с пакетом обновления 1 (SP1);<br>(Только серверные сценарии)                 |   | X | X |   |
 
 
 ### <a name="linux"></a>Linux
@@ -165,10 +165,11 @@ ms.locfileid: "96450090"
 | CentOS Linux 6                                           |   | X |   |   |
 | CentOS Linux 6.5 +                                        |   | X |   | X |
 | Debian 10                                                | X |   |   |   |
-| Debian 9                                                 | X | X | x | X |
+| Debian 9                                                 | X | X | x | X |
 | Debian 8                                                 |   | X | X | X |
 | Debian 7                                                 |   |   |   | X |
 | OpenSUSE 13.1+                                           |   |   |   | X |
+| Oracle Linux 8                                           |   | X |   |   |
 | Oracle Linux 7                                           | X | X |   | X |
 | Oracle Linux 6                                           |   | X |   |   |
 | Oracle Linux 6.4+                                        |   | X |   | X |
@@ -188,7 +189,7 @@ ms.locfileid: "96450090"
 #### <a name="dependency-agent-linux-kernel-support"></a>Поддержка ядра Linux для агента зависимостей
 Так как агент зависимостей работает на уровне ядра, поддержка также зависит от версии ядра. В следующей таблице перечислены основные и вспомогательные версии ОС Linux и поддерживаемые в агенте зависимости версиях ядра.
 
-| Распределение | Версия ОС | Версия ядра |
+| Distribution | Версия ОС | Версия ядра |
 |:---|:---|:---|
 |  Red Hat Linux 7   | 7.6     | 3.10.0-957  |
 |                    | 7,5 %     | 3.10.0-862  |
@@ -206,7 +207,7 @@ ms.locfileid: "96450090"
 | Debian                          | 9      | 4.9  | 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о каждом из агентов см. в следующих статьях:
 

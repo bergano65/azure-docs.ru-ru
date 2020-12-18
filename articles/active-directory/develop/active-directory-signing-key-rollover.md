@@ -12,12 +12,12 @@ ms.date: 8/11/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
-ms.openlocfilehash: c9fbf6990f789bdb0edb1cf45885003569d4f6a8
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: a8c9a15761a4b37dfcf5ba7cc4cf046390092145
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653237"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672151"
 ---
 # <a name="signing-key-rollover-in-microsoft-identity-platform"></a>Смена ключей подписывания на платформе Microsoft Identity
 В этой статье рассказывается о том, что необходимо знать об открытых ключах, используемых платформой идентификации Майкрософт для подписания маркеров безопасности. Важно отметить, что эти ключи переносятся на периодический основе, и в экстренной ситуации можно сразу же выполнить откат. Все приложения, использующие платформу Microsoft Identity, должны быть способны программно обрабатывать процесс смены ключей. Здесь вы узнаете принцип действия ключей, а также то, как оценить степень влияния их смены на приложение и как обновить приложение или настроить периодический запуск процесса смены ключей в ручном режиме, чтобы приложение могло обрабатывать этот процесс.
@@ -68,28 +68,30 @@ ms.locfileid: "97653237"
 ### <a name="web-applications--apis-protecting-resources-using-net-owin-openid-connect-ws-fed-or-windowsazureactivedirectorybearerauthentication-middleware"></a><a name="owin"></a>Веб-приложения и интерфейсы API, защищающие ресурсы с использованием ПО промежуточного слоя для аутентификации Microsoft Azure Active Directory, .NET OWIN OpenID Connect или WS-Fed
 Если в приложении используется ПО промежуточного слоя для аутентификации Microsoft Azure Active Directory, .NET OWIN OpenID Connect или WS-Fed, в нем уже предусмотрена логика для обработки автоматической смены ключей.
 
-Чтобы проверить это, нужно поискать один из следующих фрагментов кода в файле Startup.cs или Startup.Auth.cs приложения.
+Чтобы убедиться, что приложение использует любое из этих действий, выполните поиск любого из следующих фрагментов в файлах Startup.cs или Startup.Auth.cs приложения.
 
-```
+```csharp
 app.UseOpenIdConnectAuthentication(
-     new OpenIdConnectAuthenticationOptions
-     {
-         // ...
-     });
+    new OpenIdConnectAuthenticationOptions
+    {
+        // ...
+    });
 ```
-```
+
+```csharp
 app.UseWsFederationAuthentication(
     new WsFederationAuthenticationOptions
     {
-     // ...
-     });
+        // ...
+    });
 ```
-```
+
+```csharp
 app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-     new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-     {
-     // ...
-     });
+    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+    {
+        // ...
+    });
 ```
 
 ### <a name="web-applications--apis-protecting-resources-using-net-core-openid-connect-or--jwtbearerauthentication-middleware"></a><a name="owincore"></a>Веб-приложения и интерфейсы API, защищающие ресурсы с использованием ПО промежуточного слоя для аутентификации на основе токена носителя JWT или OpenID Connect .NET Core

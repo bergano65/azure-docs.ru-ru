@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 9c27139e2dca37c1ff8d963e1e8cdb5de682d39d
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 86c2d9585abd546acb3efb22256d3f3b70bfb972
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302947"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674401"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-carlson-wagonlit-travel"></a>Руководство. Интеграция Azure Active Directory с Carlson Wagonlit Travel
 
@@ -63,7 +63,7 @@ ms.locfileid: "96302947"
 
 4. В поле поиска введите **Carlson Wagonlit Travel**, а затем выберите **Carlson Wagonlit Travel** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
-     ![Carlson Wagonlit Travel в списке результатов](common/search-new-app.png)
+    ![Carlson Wagonlit Travel в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -138,7 +138,7 @@ ms.locfileid: "96302947"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 

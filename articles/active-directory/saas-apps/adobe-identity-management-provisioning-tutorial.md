@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: a87a08db672c459138fc1efd865332dc0f19944e
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7b4dd01b74f81318338196a40949d339f13d16da
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586666"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673308"
 ---
 # <a name="tutorial-configure-adobe-identity-management-for-automatic-user-provisioning"></a>Учебник. Настройка управления удостоверениями Adobe для автоматической подготовки пользователей
 
@@ -57,15 +57,15 @@ ms.locfileid: "97586666"
 
 2. Нажмите кнопку **Добавить синхронизацию**.
 
-      ![Добавить](media/adobe-identity-management-provisioning-tutorial/add-sync.png)
+    ![Добавить](media/adobe-identity-management-provisioning-tutorial/add-sync.png)
 
 3. Выберите **синхронизировать пользователей из Microsoft Azure** и нажмите кнопку **Далее**.
 
-      ![Снимок экрана с выбранным флажком "синхронизировать пользователей из Microsoft Azure Active Directory".](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
+    ![Снимок экрана с выбранным флажком "синхронизировать пользователей из Microsoft Azure Active Directory".](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
 
 4. Скопируйте и сохраните **URL-адрес клиента** и **секретный маркер**. Эти значения будут указаны в полях **URL-адрес клиента** и **секретный токен** на вкладке Подготовка приложения Adobe Identity Management в портал Azure.
 
-      ![Sync](media/adobe-identity-management-provisioning-tutorial/token.png)
+    ![Sync](media/adobe-identity-management-provisioning-tutorial/token.png)
 
 ## <a name="step-3-add-adobe-identity-management-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление управления удостоверениями Adobe из коллекции приложений Azure AD
 

@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: a0dd00709dbe8a1b0e037fe22750adea7e071162
-ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
+ms.openlocfilehash: 04427a1eb2760e44086003a06ed4eb0d5cb473bf
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97372008"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673330"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Общие сведения об Azure Defender для Kubernetes
 
@@ -31,7 +31,7 @@ ms.locfileid: "97372008"
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Плата за использование **Azure Defender для Kubernetes** начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
 |Требуемые роли и разрешения|**Администратор безопасности** может отклонять предупреждения.<br>**Читатель сведений о безопасности** может просматривать результаты.|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) China Gov<br>![Нет](./media/icons/no-icon.png) US Gov и другие правительственные облака|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-kubernetes"></a>Каковы преимущества Azure Defender для Kubernetes?

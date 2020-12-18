@@ -2,13 +2,13 @@
 title: Задание порядка развертывания для ресурсов
 description: В этой статье описан способ определения зависимостей между ресурсами во время развертывания для обеспечения правильного порядка развертывания ресурсов.
 ms.topic: conceptual
-ms.date: 12/03/2019
-ms.openlocfilehash: 84cea915565ec6ac9872681e1d4173abacb46ac4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/17/2020
+ms.openlocfilehash: 933764f1930bd6c9e21d4ccffbde1bb93bbc9613
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85255217"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672820"
 ---
 # <a name="define-the-order-for-deploying-resources-in-arm-templates"></a>Определение порядка развертывания ресурсов в шаблонах ARM
 
@@ -147,9 +147,10 @@ Resource Manager выявляет циклические зависимости 
 
 Сведения об оценке порядка развертывания и устранении ошибок зависимостей см. в статье [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](template-tutorial-create-templates-with-dependent-resources.md).
+* Сведения о модуле Microsoft Learn, охватывающем зависимости ресурсов, см. в статье [управление комплексными облачными развертываниями с помощью расширенных функций шаблонов ARM](/learn/modules/manage-deployments-advanced-arm-template-features/).
 * Дополнительные рекомендации по созданию зависимостей см. в статье [Рекомендации по работе с шаблонами Azure Resource Manager](template-best-practices.md).
 * Чтобы узнать об устранении ошибок зависимостей во время развертывания, ознакомьтесь с разделом [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
 * Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](template-syntax.md).

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 29ebe2f0ec4d4c39154272bbbdf4d0c9ede9fd95
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: e5ad0b6dca7718166517b52148fbc6dd49f38869
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928194"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674018"
 ---
 # <a name="use-arm-template-test-toolkit"></a>Использование набора средств для тестирования шаблонов ARM
 
@@ -22,7 +22,7 @@ ms.locfileid: "96928194"
 
 Набор средств — это набор сценариев PowerShell, которые можно запускать из команды в PowerShell или CLI.
 
-## <a name="install-on-windows"></a>Установка в Windows
+## <a name="install-on-windows"></a>Установка в Windows
 
 1. Если у вас еще нет PowerShell, [установите PowerShell в Windows](/powershell/scripting/install/installing-powershell-core-on-windows).
 
@@ -280,6 +280,7 @@ param(
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о тестах по умолчанию см. в разделе [тестовые случаи по умолчанию для набора средств тестирования шаблонов ARM](test-cases.md).
+- Дополнительные сведения о тестах по умолчанию см. в разделе [тестовые случаи по умолчанию для набора средств тестирования шаблонов ARM](test-cases.md).
+- Сведения о модуле Microsoft Learn, посвященном использованию набора тестов, см. в разделе [Предварительный просмотр изменений и проверка ресурсов Azure с помощью набора средств для тестирования шаблонов ARM](/learn/modules/arm-template-test/).

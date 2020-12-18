@@ -5,12 +5,12 @@ ms.service: iot-pnp
 ms.topic: include
 ms.date: 03/17/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 3ac72360db5fb3d075b4caa3208f372f22441c7b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ea5d4ef26fb14e22b871bb4bfa1054cb749d38e8
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92756104"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673037"
 ---
 ## <a name="prepare-an-iot-hub"></a>Подготовка Центра Интернета вещей
 
@@ -35,10 +35,7 @@ az iot hub create --name <YourIoTHubName> \
     --resource-group my-pnp-resourcegroup --sku F1
 ```
 
-> [!NOTE]
-> Сейчас функция IoT Plug and Play доступна в центрах Интернета вещей, созданных в таких регионах, как Центральная часть США, Северная Европа и Восточная Япония. Поддержка Plug and Play IoT не включена в центры Интернета вещей ценовой категории "Базовый".
-
-Выполните приведенную ниже команду, чтобы создать удостоверение устройства в Центре Интернета вещей. Замените заполнители `<YourIoTHubName>` и `<YourDeviceID>` своими значениями _имени центра Интернета вещей_ и _идентификатора устройства_ .
+Выполните приведенную ниже команду, чтобы создать удостоверение устройства в Центре Интернета вещей. Замените заполнители `<YourIoTHubName>` и `<YourDeviceID>` своими значениями _имени центра Интернета вещей_ и _идентификатора устройства_.
 
 ```azurecli-interactive
 az iot hub device-identity create --hub-name <YourIoTHubName> --device-id <YourDeviceID>

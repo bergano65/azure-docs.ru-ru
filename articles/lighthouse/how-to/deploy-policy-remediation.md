@@ -1,14 +1,14 @@
 ---
 title: Развертывание политики, которую можно исправить
 description: Чтобы развернуть политики, использующие задачу исправления с помощью Azure Лигхсаусе, необходимо создать управляемое удостоверение в клиенте клиента.
-ms.date: 08/12/2020
+ms.date: 12/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 998576d06d470c525a551463861f7a25d4ab9d8f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: eb473fe2f589cf719e3944c887d46e75e9e7fdbf
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010101"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670497"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Развертывание политики, которую можно исправить в рамках делегированной подписки
 
@@ -41,7 +41,7 @@ ms.locfileid: "96010101"
 
 ## <a name="deploy-policies-that-can-be-remediated"></a>Развертывание политик, которые можно исправить
 
-После создания пользователя с необходимыми разрешениями, как описано выше, пользователь может развернуть политики, использующие задачи исправления в клиенте клиента.
+После создания пользователя с необходимыми разрешениями, как описано выше, этот пользователь может развернуть политики, использующие задачи исправления в делегированных подписках клиента.
 
 Например, предположим, что вы хотите включить диагностику для Azure Key Vault ресурсов в клиенте клиента, как показано в этом [примере](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-enforce-keyvault-monitoring). Пользователь в управляющем клиенте с соответствующими разрешениями (как описано выше) развернет [шаблон Azure Resource Manager](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/policy-enforce-keyvault-monitoring/enforceAzureMonitoredKeyVault.json), чтобы включить этот сценарий.
 

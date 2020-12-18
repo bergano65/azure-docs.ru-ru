@@ -4,15 +4,15 @@ description: Узнайте, как запустить функцию Azure пр
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/16/2020
+ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 1db27db97cdc1746b3392bd386ee6539980cd6d6
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 5930219486de8704c777496bcaf293411c5fb7b1
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630740"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673993"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>Общие сведения о триггере RabbitMQ для функций Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "97630740"
 ```cs
 [FunctionName("RabbitMQTriggerCSharp")]
 public static void RabbitMQTrigger_BasicDeliverEventArgs(
-    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnection")] BasicDeliverEventArgs args,
+    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] BasicDeliverEventArgs args,
     ILogger logger
     )
 {
@@ -50,7 +50,7 @@ public class TestClass
 
 [FunctionName("RabbitMQTriggerCSharp")]
 public static void RabbitMQTrigger_BasicDeliverEventArgs(
-    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnection")] TestClass pocObj,
+    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] TestClass pocObj,
     ILogger logger
     )
 {
@@ -74,7 +74,7 @@ public static void RabbitMQTrigger_BasicDeliverEventArgs(
             "type": "rabbitMQTrigger",
             "direction": "in",
             "queueName": "queue",
-            "connectionStringSetting": "rabbitMQConnection"
+            "connectionStringSetting": "rabbitMQConnectionAppSetting"
         }
     ]
 }
@@ -105,7 +105,7 @@ public static void Run(string myQueueItem, ILogger log)
             "type": "rabbitMQTrigger",
             "direction": "in",
             "queueName": "queue",
-            "connectionStringSetting": "rabbitMQConnection"
+            "connectionStringSetting": "rabbitMQConnectionAppSetting"
         }
     ]
 }
@@ -134,7 +134,7 @@ module.exports = async function (context, myQueueItem) {
             "type": "rabbitMQTrigger",
             "direction": "in",
             "queueName": "queue",
-            "connectionStringSetting": "rabbitMQConnection"
+            "connectionStringSetting": "rabbitMQConnectionAppSetting"
         }
     ]
 }
@@ -155,7 +155,7 @@ def main(myQueueItem) -> None:
 ```java
 @FunctionName("RabbitMQTriggerExample")
 public void run(
-    @RabbitMQTrigger(connectionStringSetting = "rabbitMQConnection", queueName = "queue") String input,
+    @RabbitMQTrigger(connectionStringSetting = "rabbitMQConnectionAppSetting", queueName = "queue") String input,
     final ExecutionContext context)
 {
     context.getLogger().info("Java HTTP trigger processed a request." + input);
@@ -180,7 +180,7 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 }
 ```
 
-Полный пример см. в разделе "Пример C#".
+Полный пример см. в разделе [Пример](#example)на C#.
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
@@ -278,9 +278,9 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 |Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
 |prefetchCount|30|Возвращает или задает количество сообщений, которые получатель сообщения может одновременно запрашивать и кэшировать.|
-|queueName|н/д| Имя очереди, из которой должны быть получены сообщения. |
-|connectionString|н/д|Имя параметра приложения, содержащего строку подключения очереди сообщений RabbitMQ. Обратите внимание, что если вы укажете строку подключения напрямую, а не через параметр приложения в local.settings.js, триггер не будет работать.|
-|порт|0|(пропускается при использовании connectionString) Максимальное количество сеансов, которые могут обрабатываться одновременно для каждого масштабируемого экземпляра.|
+|queueName|н/д| Имя очереди, из которой должны быть получены сообщения.|
+|connectionString|н/д|Строка подключения очереди сообщений RabbitMQ. Обратите внимание, что строка подключения указывается непосредственно здесь, а не с помощью параметра приложения.|
+|порт|0|(пропускается при использовании Коннектионстрингсеттинг) Возвращает или задает используемый порт. Значение по умолчанию — 0.|
 
 ## <a name="local-testing"></a>Локальное тестирование
 
@@ -315,6 +315,6 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 * Включение [подключаемого модуля управления RabbitMQ](https://www.rabbitmq.com/management.html)
 * Перейдите по http://{node-имя_узла}: 15672 и войдите в систему, используя имя пользователя и пароль.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Отправка сообщений RabbitMQ из функций Azure (Выходная привязка)](./functions-bindings-rabbitmq-output.md)
