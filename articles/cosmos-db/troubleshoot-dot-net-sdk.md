@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 68d9a64e388d24f2067f47282945b9561d807535
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 6a78b38bd71a2822d94e58834ab17824c9ef6ec6
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545933"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683108"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Diagnose and troubleshoot issues when using Azure Cosmos DB .NET SDK (Диагностика и устранение неполадок при использовании пакета SDK Azure Cosmos DB для .NET)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -54,9 +54,16 @@ ms.locfileid: "96545933"
 ### <a name="check-the-portal-metrics"></a>Проверка метрик портала
 Проверка [метрик портала](./monitor-cosmos-db.md) поможет определить, является ли это проблемой на стороне клиента, или возникли проблемы со службой. Например, если метрики содержат высокую частоту запросов с ограниченным количеством записей (код состояния HTTP 429), то есть запрос регулируется, а затем проверяется [слишком большое значение частоты запросов](troubleshoot-request-rate-too-large.md) . 
 
+## <a name="retry-logic"></a>Логика повторных попыток <a id="retry-logics"></a>
+Cosmos DB SDK при любой ошибке ввода-вывода попытается повторить неудачную операцию, если это возможно в пакете SDK. Наличие повторных попыток для любой ошибки является хорошей практикой, но, в частности, требуется обработка или повторная попытка записи. Рекомендуется использовать последний пакет SDK, так как логика повторных попыток постоянно улучшается.
+
+1. Ошибки ввода-вывода при чтении и запросе будут повторяться пакетом SDK, не отображая их конечному пользователю.
+2. Операции записи (Create, Upsert, Replace, DELETE) не являются идемпотентными, и поэтому пакет SDK не всегда может без каких-либо ошибок повторить операции записи. Необходимо, чтобы логика приложения пользователя обрабатывала ошибку и повторить попытку.
+3. Устранение [проблем с доступностью пакета SDK](troubleshoot-sdk-availability.md) объясняет повторные попытки для учетных записей Cosmos DB в нескольких регионах.
+
 ## <a name="common-error-status-codes"></a>Коды распространенных состояний ошибок <a id="error-codes"></a>
 
-| Код состояния | Описание: | 
+| Код состояния | Описание | 
 |----------|-------------|
 | 400 | Недопустимый запрос (зависит от сообщения об ошибке)| 
 | 401 | [Не санкционировано](troubleshoot-unauthorized.md) | 
@@ -113,7 +120,7 @@ ResponseTime: 2020-03-09T22:44:49.9279906Z, StoreResult: StorePhysicalAddress: r
 
 Если возникла следующая ошибка: `Unable to load DLL 'Microsoft.Azure.Cosmos.ServiceInterop.dll' or one of its dependencies:` и используют Windows, следует выполнить обновление до последней версии Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о рекомендациях по производительности для [.NET v3](performance-tips-dotnet-sdk-v3-sql.md) и [.NET v2](performance-tips.md)
 * Узнайте о [пакетах средств разработки Java на основе Reactor](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-pattern-guide.md).

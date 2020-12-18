@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: ec0d6d618edad87b76861ea834adb2f29531e6f5
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 62793e0551c914b77310a0e9b72fea31ec621848
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929673"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683371"
 ---
 # <a name="how-to-deploy-updates-and-review-results"></a>Развертывание обновлений и результатов проверки
 
@@ -117,7 +117,7 @@ ms.locfileid: "96929673"
 
 Чтобы узнать, как создать развертывание обновлений с помощью REST API, ознакомьтесь со статьей [Software Update Configurations — Create](/rest/api/automation/softwareupdateconfigurations/create) (Конфигурации обновления программного обеспечения. Создание).
 
-Развертывание еженедельного обновления можно создать с помощью примера модуля runbook. Дополнительные сведения об этом модуле runbook см. в статье [Create a weekly update deployment for one or more VMs in a resource group](https://gallery.technet.microsoft.com/scriptcenter/Create-a-weekly-update-2ad359a1) (Создание развертывания еженедельного обновления для одной или нескольких виртуальных машин в группе ресурсов).
+Развертывание еженедельного обновления можно создать с помощью примера модуля runbook. Дополнительные сведения об этом модуле runbook см. в статье [Create a weekly update deployment for one or more VMs in a resource group](https://github.com/azureautomation/create-a-weekly-update-deployment-for-one-or-more-vms-in-a-resource-group) (Создание развертывания еженедельного обновления для одной или нескольких виртуальных машин в группе ресурсов).
 
 ## <a name="check-deployment-status"></a>Проверка состояния развертывания
 

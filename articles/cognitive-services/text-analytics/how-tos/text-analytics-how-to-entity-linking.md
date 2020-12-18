@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: 589f320f0099fdab829e9e707a86e3e77d51c21e
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 0b57629f5c21d933fc898258263199b5fc713fdb
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656297"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683356"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -35,7 +35,7 @@ API анализа текста позволяет получить нестру
 
 ## <a name="named-entity-recognition-features-and-versions"></a>Функции и версии распознавания сущностей
 
-| Компонент                                                         | NER версии 3.0 | NER версии 3.1 – Preview. 3 |
+| Функция                                                         | NER версии 3.0 | NER версии 3.1 – Preview. 3 |
 |-----------------------------------------------------------------|--------|----------|
 | Методы для одиночных и пакетных запросов                          | X      | X        |
 | Расширенное распознавание сущностей в нескольких категориях           | X      | X        |
@@ -52,7 +52,7 @@ API анализа текста позволяет получить нестру
 * Необязательный `domain=phi` параметр для обнаружения конфиденциальных сведений о работоспособности ( `PHI` ).
 * [Асинхронная операция](text-analytics-how-to-call-api.md) с использованием `/analyze` конечной точки.
 
-Дополнительные сведения см. в разделе статьи о [категориях сущностей](../named-entity-types.md) и [запрос конечных точек](#request-endpoints) ниже. 
+Дополнительные сведения см. в разделе статьи о [категориях сущностей](../named-entity-types.md) и [запрос конечных точек](#request-endpoints) ниже. Дополнительные сведения о рейтинге достоверности см. в разделе [анализ текстаная заметка о прозрачности](/legal/cognitive-services/text-analytics/transparency-note?context=/azure/cognitive-services/text-analytics/context/context). 
 
 ## <a name="sending-a-rest-api-request"></a>Отправка запроса к REST API
 
@@ -473,7 +473,7 @@ API Анализа текста не учитывает состояние. Ни
 ---
 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 

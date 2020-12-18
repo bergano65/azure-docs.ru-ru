@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 07/10/2018
-ms.openlocfilehash: 95abf403dfd4abd4c0533b6e8b4a2f83b33fa18b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43b145f5a37ea4209947e54cb276e16ff55c1da1
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86045558"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97682823"
 ---
 # <a name="use-visual-studio-to-view-azure-stream-analytics-jobs"></a>Просмотр заданий Azure Stream Analytics с помощью Visual Studio
 
@@ -48,7 +48,7 @@ ms.locfileid: "86045558"
 
 ## <a name="check-job-results"></a>Проверка результатов задания
 
-Инструменты Stream Analytics для Visual Studio в настоящее время поддерживают просмотр выходных данных для хранилища Azure Data Lake Storage и хранилища BLOB-объектов. Чтобы просмотреть результат, просто дважды щелкните выходной узел схемы задания в разделе**Представление задания** и введите соответствующие учетные данные.
+Инструменты Stream Analytics для Visual Studio в настоящее время поддерживают просмотр выходных данных для хранилища Azure Data Lake Storage и хранилища BLOB-объектов. Чтобы просмотреть результат, просто дважды щелкните выходной узел схемы задания в разделе **Представление задания** и введите соответствующие учетные данные.
 
    ![Выходные данные большого двоичного объекта задания Stream Analytics](./media/stream-analytics-vs-tools/stream-analytics-blob-preview.png)
 
@@ -74,7 +74,7 @@ ms.locfileid: "86045558"
 
    ![Раскрывающееся меню "Проверить подключение"](./media/stream-analytics-vs-tools/stream-analytics-test-connection-dropdown.png)
 
-Результаты **проверки подключения**отображаются в окне **Выход**.
+Результаты **проверки подключения** отображаются в окне **Выход**.
 
    ![Результаты проверки подключения](./media/stream-analytics-vs-tools/stream-analytics-test-connection-results.png)
 
@@ -82,5 +82,4 @@ ms.locfileid: "86045558"
 
 * [Мониторинг заданий Stream Analytics и управление ими с помощью Visual Studio](stream-analytics-monitor-jobs-use-vs.md)
 * [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
-* [Руководство по Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines](stream-analytics-tools-visual-studio-cicd-vsts.md)
 * [Непрерывная интеграция и разработка с помощью инструментов Stream Analytics](stream-analytics-tools-for-visual-studio-cicd.md)

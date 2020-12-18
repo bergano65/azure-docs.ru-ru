@@ -9,12 +9,12 @@ ms.devlang: java
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.custom: devx-track-java
-ms.openlocfilehash: 4753f7c0b8b5e515d33da3f9df48a2cdd9d921cc
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: d6b23a831426a3308a0b47946d5a82679e937bbe
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96017582"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683127"
 ---
 # <a name="troubleshoot-issues-when-you-use-azure-cosmos-db-java-sdk-v4-with-sql-api-accounts"></a>Устранение неполадок при использовании SDK Java версии 4 для Azure Cosmos DB с учетными записями API SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -38,6 +38,13 @@ ms.locfileid: "96017582"
 * Просмотрите пакет SDK для Java в центральном репозитории Azure Cosmos DB, который доступен [с открытым исходным кодом на GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-cosmos). Он имеет [раздел проблем](https://github.com/Azure/azure-sdk-for-java/issues), который активно отслеживается. Вы можете там найти уже готовое обходное решение похожей проблемы. Одним из полезных советов является фильтрация проблем по тегу *cosmos:v4-item*.
 * Просмотрите [советы по повышению производительности](performance-tips-java-sdk-v4-sql.md) для пакета SDK Java версии 4 для Azure Cosmos DB и следуйте предложенным рекомендациям.
 * Следуйте указаниям в оставшейся части этой статьи, если решение не нашлось. Затем [сообщите о проблеме в GitHub](https://github.com/Azure/azure-sdk-for-java/issues). Если есть возможность добавить теги к проблеме на GitHub, добавьте тег *cosmos:v4-item*.
+
+### <a name="retry-logic"></a>Логика повторных попыток <a id="retry-logics"></a>
+Cosmos DB SDK при любой ошибке ввода-вывода попытается повторить неудачную операцию, если это возможно в пакете SDK. Наличие повторных попыток для любой ошибки является хорошей практикой, но, в частности, требуется обработка или повторная попытка записи. Рекомендуется использовать последний пакет SDK, так как логика повторных попыток постоянно улучшается.
+
+1. Ошибки ввода-вывода при чтении и запросе будут повторяться пакетом SDK, не отображая их конечному пользователю.
+2. Операции записи (Create, Upsert, Replace, DELETE) не являются идемпотентными, и поэтому пакет SDK не всегда может без каких-либо ошибок повторить операции записи. Необходимо, чтобы логика приложения пользователя обрабатывала ошибку и повторить попытку.
+3. Устранение [проблем с доступностью пакета SDK](troubleshoot-sdk-availability.md) объясняет повторные попытки для учетных записей Cosmos DB в нескольких регионах.
 
 ## <a name="common-issues-and-workarounds"></a><a name="common-issues-workarounds"></a>Распространенные проблемы и их обходные решения
 

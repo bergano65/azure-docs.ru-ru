@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: b82dd4ea8a74c51606b7a388b8d6ede07b1057c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 02276ebf8e8a2289db2a1f6eac506443cea61c31
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89461550"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97682717"
 ---
 # <a name="azure-stream-analytics-solution-patterns"></a>Шаблоны решений Azure Stream Analytics
 
@@ -20,7 +20,7 @@ ms.locfileid: "89461550"
 
 ## <a name="create-a-stream-analytics-job-to-power-real-time-dashboarding-experience"></a>Создание Stream Analytics задания для работы с панелями мониторинга в режиме реального времени
 
-С помощью Azure Stream Analytics можно быстро разделять панели мониторинга и оповещения в режиме реального времени. Простое решение принимает события из концентраторов событий или центра Интернета вещей и передает [Power BI панель мониторинга с набором данных потоковой передачи](/power-bi/service-real-time-streaming). Дополнительные сведения см. в подробном руководстве [анализ данных телефонных вызовов с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI](stream-analytics-manage-job.md).
+С помощью Azure Stream Analytics можно быстро разделять панели мониторинга и оповещения в режиме реального времени. Простое решение принимает события из концентраторов событий или центра Интернета вещей и передает [Power BI панель мониторинга с набором данных потоковой передачи](/power-bi/service-real-time-streaming). Дополнительные сведения см. в подробном руководстве [анализ данных о мошеннических вызовах с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI](stream-analytics-real-time-fraud-detection.md).
 
 ![ASA Power BI панель мониторинга](media/stream-analytics-solution-patterns/power-bi-dashboard.png)
 
@@ -180,7 +180,7 @@ SQL не является хранилищем данных с высокой п
 
 Ключом является проектирование системы в шаблонах с композицией, поэтому каждая подсистема может быть построена, протестирована, обновлена и восстановлена независимо друг от друга.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали о различных шаблонах решений, использующих Azure Stream Analytics. Теперь вы можете вникнуть в детали и создать свое первое задание Stream Analytics:
 
