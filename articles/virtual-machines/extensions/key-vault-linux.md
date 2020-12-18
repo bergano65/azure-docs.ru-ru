@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 9377a21415c22e7b68d850ca1a95f931e62fe573
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c9b624a1efc72bebec8547e8ecf9f3bf9fc99863
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499736"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680660"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -96,7 +96,7 @@ ms.locfileid: "96499736"
 | certificateStoreName | Он игнорируется в Linux | строка |
 | linkOnRenewal | false | Логическое |
 | certificateStoreLocation  | /вар/либ/ваажент/микрософт.азуре.кэйваулт | строка |
-| requiredInitialSync | Да | Логическое |
+| рекуиреинитиалсинк | Да | Логическое |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate", "https://myvault.vault.azure.net/secrets/mycertificate2"] | массив строк
 | мсиендпоинт | http://169.254.169.254/metadata/identity | строка |
 | msiClientId | c7373ae5-91c2-4165-8ab6-7381d6e75619 | строка |
@@ -217,7 +217,7 @@ Azure PowerShell можно использовать для развертыва
   - оно должно существовать во время развертывания; 
   - Политика доступа Key Vault должна быть установлена для удостоверения виртуальной машины или VMSS с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md) и [назначение политики доступа Key Vault](../../key-vault/general/assign-access-policy-cli.md).
 
-### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+### <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 * Существует ли ограничение на количество Обсерведцертификатес, которые можно настроить?
   Нет, Key Vaultное расширение виртуальной машины не ограничивает число Обсерведцертификатес.
@@ -247,7 +247,7 @@ Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 
 Символьные ссылки или символических ссылок по сути являются расширенными сочетаниями клавиш. Чтобы избежать наблюдения за папкой и автоматического получения последнего сертификата, вы можете использовать эту символьную ссылку `([VaultName].[CertificateName])` для получения последней версии сертификата в Linux.
 
-### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+### <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 * Существует ли ограничение на количество Обсерведцертификатес, которые можно настроить?
   Нет, Key Vaultное расширение виртуальной машины не ограничивает число Обсерведцертификатес.

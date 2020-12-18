@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/10/2020
 ms.author: mbullwin
-ms.openlocfilehash: d1add17c1c84d2a22d76aaa1f96aeca4db645ba7
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 037b9746571678e24e80bd76e7e2ed173ab8eb90
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97506287"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97677649"
 ---
 ## <a name="create-an-anomaly-detector-resource"></a>Создание ресурса "Детектор аномалий"
 
@@ -26,7 +26,7 @@ ms.locfileid: "97506287"
     |Имя|Требуемое имя (от 2 до 64 символов)|
     |Подписка|Выберите соответствующую подписку|
     |Расположение|Выберите доступное поблизости расположение|
-    |Ценовая категория|`F0` — 100 вызовов в секунду, 20 000 транзакций в месяц. <br> Или сделайте так:<br> `S0` -80 вызовов в секунду|
+    |Ценовая категория|`F0` -10 вызовов в секунду, 20 000 транзакций в месяц. <br> Или сделайте так:<br> `S0` -80 вызовов в секунду|
     |Группа ресурсов|Выберите доступную группу ресурсов|
 
 1. Щелкните **Создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.

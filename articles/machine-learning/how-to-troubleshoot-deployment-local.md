@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 4f70978e7b7c2315aff4c51d8b019933df78e7e8
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 01a5f600acf9542c5adabcdf2523a42ca44233af
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028807"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680507"
 ---
 # <a name="troubleshoot-model-deployment-locally"></a>Устранение неполадок развертывания моделей локально
 
@@ -28,7 +28,7 @@ ms.locfileid: "97028807"
 * [Пакет SDK для Машинного обучения Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
 * [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 * [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
-* Для локальной отладки вам необходима рабочая установка Docker в локальной системе.
+* Чтобы выполнить отладку локально, можно развернуть модель для [машинное обучение Azure вычислительного экземпляра](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-local-container-notebook-vm) или иметь рабочую установку DOCKER в локальной системе.
 
     Чтобы проверить установку Docker, выполните команду `docker run hello-world` в терминале или командной строке. Сведения об установке Docker или устранении ошибок Docker см. в [документации Docker](https://docs.docker.com/).
 

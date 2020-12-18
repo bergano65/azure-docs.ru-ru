@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 12/02/2020
-ms.openlocfilehash: 57b4b6f3f49e9b82ada4b37c8e2de0697781e063
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.date: 12/17/2020
+ms.openlocfilehash: 5d291ad745122d929c4b664e9da5e4649e463529
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510596"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679104"
 ---
 # <a name="execute-r-script-module"></a>Выполнить модуль R Script
 
@@ -50,6 +50,9 @@ azureml_main <- function(dataframe1, dataframe2){
 
 > [!NOTE]
 > При установке пакетов укажите репозиторий CRAN, например `install.packages("zoo",repos = "http://cran.us.r-project.org")` .
+
+> [!WARNING]
+> Модуль скрипта R екскуте не поддерживает установку пакетов, для которых требуется компиляция в собственном коде, например `qdap` пакет, требующий Java и Package, для `drc` которых требуется C++. Это происходит потому, что этот модуль выполняется в предварительно установленной среде с разрешениями, не являющимися администраторами.
 
 В этом примере показано, как установить Zoo:
 ```R
@@ -346,7 +349,7 @@ azureml_main <- function(dataframe1, dataframe2){
 
 | Пакет      | Версия    | 
 |--------------|------------| 
-| аскпасс      | 1,1        | 
+| аскпасс      | 1.1        | 
 | assertthat   | 0.2.1      | 
 | backports    | 1.1.4      | 
 | base         | 3.5.1      | 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 32cd6c23e1fe465a801e56fad5dd3461df860503
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 485042c795fd94ef7daa8e00b9869190e9df61c8
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182739"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678539"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Регионы и Зоны доступности в Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "96182739"
 
 | Тип области | Не региональный | Основное | Основной | Специализированный | Зоны доступности | Местонахождение данных |
 | --- | --- | --- | --- | --- | --- | --- |
-| Рекомендуется | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
+| Рекомендуемая | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
 | Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Недоступно | :heavy_check_mark: |
 
 ### <a name="services-by-category"></a>Службы по категориям
@@ -92,7 +92,7 @@ ms.locfileid: "96182739"
 > | Основное | Основной | Специализированный |
 > | --- | --- | --- |
 > | Хранилище учетных записей | Управление API | Azure API для FHIR |
-> | Шлюз приложений | Конфигурация приложений | Azure Analysis Services |
+> | Шлюз приложений | Конфигурация приложений | Службы Azure Analysis Services |
 > | Azure Backup | Служба приложений | Служба Блокчейн Azure |
 > | Azure Cosmos DB | Служба автоматизации | Azure Blueprints |
 > | Azure Data Lake Storage 2-го поколения | Доменные службы Azure Active Directory | База данных Azure для MariaDB |
@@ -111,7 +111,7 @@ ms.locfileid: "96182739"
 > | Подсистема балансировки нагрузки | Диспетчер брандмауэра Azure | Cognitive Services: Распознавание говорящего |
 > | Cлужебная шина | Функции Azure | Data Box Heavy |
 > | Service Fabric | Azure HPC Cache | Каталог данных |
-> | Масштабируемые наборы виртуальных машин Microsoft Azure | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
+> | Масштабируемые наборы виртуальных машин | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
 > | Виртуальные машины | Служба Azure Kubernetes (AKS) | Data Lake Analytics |
 > | Виртуальные машины: Av2-Series | Машинное обучение Azure | Машинное обучение Azure Studio (классическая модель)|
 > | Виртуальные машины: Bs-Series | Приватный канал Azure | Microsoft Genomics |
@@ -123,7 +123,7 @@ ms.locfileid: "96182739"
 > | Виртуальные машины: Ev3-Series | Azure Synapse Analytics | Виртуальные машины: DAv4-Series |
 > | Виртуальные машины: серии F | Пакетная служба | Виртуальные машины: серия DCsv2 |
 > | Виртуальные машины: FS-Series | Облачные службы: серия M | Виртуальные машины: EASv4-Series |
-> | Виртуальные машины: IP-адреса уровня экземпляра | Cognitive Services | Виртуальные машины: EAv4-Series |
+> | Виртуальные машины: IP-адреса уровня экземпляра | Службы Cognitive Services | Виртуальные машины: EAv4-Series |
 > | Виртуальные машины: зарезервированный IP-адрес | Cognitive Services: Компьютерное зрение | Виртуальные машины: серия G |
 > | Виртуальная сеть | Cognitive Services: Content Moderator | Виртуальные машины: GS-Series |
 > | VPN-шлюз | Cognitive Services: лицо | Виртуальные машины: HBv1-Series |
@@ -181,8 +181,9 @@ ms.locfileid: "96182739"
 - [начало работы кэша Azure для Redis Зоны доступности](https://aka.ms/redis/az/getstarted)
 - [Создание экземпляра доменных служб Azure Active Directory](../active-directory-domain-services/tutorial-create-instance.md)
 - [Создание кластера Azure Kubernetes Service (AKS), использующего Зоны доступности](../aks/availability-zones.md)
+- [Включение избыточности зоны в реестре контейнеров Azure](../container-registry/zone-redundancy.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Регионы, поддерживающие Зоны доступности в Azure](az-region.md)
 - [Шаблоны быстрого запуска](https://aka.ms/azqs)

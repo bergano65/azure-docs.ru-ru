@@ -6,22 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 12/07/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: 859eb6abd138f0660407618bba4550daf9158ab9
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: e84f39fa5b9245d1874e60d651156e99c0885040
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855011"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678915"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Использование локального веб-интерфейса для администрирования Data Box и Data Box Heavy
 
 В этой статье описываются некоторые задачи по настройке и управлению, выполняемые на устройствах Data Box и Data Box Heavy. Вы можете управлять Data Box и Data Box Heavy устройствами через пользовательский интерфейс портал Azure и локальный веб-интерфейс для устройства. В этой статье рассматриваются задачи, выполняемые с помощью локального веб-интерфейса.
 
 Локальный веб-интерфейс для Data Box и для Data Box Heavy используется для начальной настройки устройства. Можно также использовать локальный веб-интерфейс для выключения или перезапуска устройства, выполнения диагностических тестов, обновления программного обеспечения, просмотра журналов копирования, удаления локальных данных с устройства и создания пакета поддержки для служба поддержки Майкрософт. На Data Box Heavy устройстве с двумя независимыми узлами можно получить доступ к двум отдельным локальным веб-интерфейсам, соответствующим каждому узлу устройства.
-
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="generate-support-package"></a>Создание пакета поддержки
 
@@ -284,6 +282,6 @@ ms.locfileid: "96855011"
 4. В локальном пользовательском веб-интерфейсе перейдите в раздел **Завершение работы или перезагрузка**.
 5. Нажмите кнопку **Перезапустить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [управлять Data Box и Data Box Heavy с помощью портал Azure](data-box-portal-admin.md).

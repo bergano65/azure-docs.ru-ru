@@ -1,21 +1,21 @@
 ---
-title: Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
-description: Узнайте, как добавить мозаичный слой на карту. См. пример, в котором для добавления лепестковой диаграммы погоды в карту используется Microsoft Azure карты пакет SDK для Android.
-author: anastasia-ms
-ms.author: v-stharr
-ms.date: 04/26/2019
-ms.topic: how-to
+title: Добавление мозаичного слоя в карты Android | Карты Microsoft Azure
+description: Узнайте, как добавить мозаичный слой на карту. См. пример, использующий Azure Maps пакет SDK для Android для добавления лепестковой диаграммы погоды на карту.
+author: rbrundritt
+ms.author: richbrun
+ms.date: 12/08/2020
+ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: philmea
-ms.openlocfilehash: 22618a28f1a87e68c19467aedf639e96ec2fb91e
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+manager: cpendle
+ms.openlocfilehash: 8ea6f44c47c5cd4d223b053640f65827f46db482
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532682"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679294"
 ---
-# <a name="add-a-tile-layer-to-a-map-using-the-azure-maps-android-sdk"></a>Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
+# <a name="add-a-tile-layer-to-a-map-android-sdk"></a>Добавление мозаичного слоя на карту (пакет SDK для Android)
 
 В этой статье показано, как визуализировать мозаичный слой на карте с помощью пакет SDK для Android Azure Maps. Слои фрагментов позволяют накладывать изображения поверх фрагментов карты в Azure Maps. Дополнительные сведения о системе фрагментов Azure Maps см. в статье [Уровни увеличения и параметры сетки](zoom-levels-and-tile-grid.md).
 
@@ -23,10 +23,10 @@ ms.locfileid: "96532682"
 
 * X, Y, нотация увеличения. В зависимости от уровня увеличения, x — это столбец, а y — позиция строки фрагмента в сетке фрагментов.
 * Нотация Quadkey. Сочетание данных x, y и увеличения в одном строковом значении, которое является уникальным идентификатором для фрагмента.
-* Ограничивающий прямоугольник. Координаты ограничивающего прямоугольника позволяют указать образ в формате `{west},{south},{east},{north}`. Часто используется [веб-службами сопоставления (WMS)](https://www.opengeospatial.org/standards/wms).
+* Ограничивающие прямоугольники ограничивающие прямоугольники можно использовать для указания изображения в формате `{west},{south},{east},{north}` , который обычно используется [службами веб-СОПОСТАВЛЕНИЯ (WMS)](https://www.opengeospatial.org/standards/wms).
 
 > [!TIP]
-> Класс TileLayer — отличный способ визуализировать большие объемы данных на карте. С его помощью можно не только создать слой фрагментов из образа, но и отобразить векторные данные в виде слоя фрагментов. Отображение векторных данных в виде слоя фрагментов позволяет элементу управления картой загрузить фрагменты, размер файлов которых может быть значительно меньше, чем у векторных данных, которые они представляют. Эта техника часто используется, когда нужно преобразовать для просмотра огромное количество строк данных на карте.
+> Класс TileLayer — отличный способ визуализировать большие объемы данных на карте. С его помощью можно не только создать слой фрагментов из образа, но и отобразить векторные данные в виде слоя фрагментов. При отрисовке векторных данных в виде мозаичного слоя элементу управления картой необходимо загрузить только плитки, размер файла которого может быть намного меньше, чем у данных, которые они представляют. Эта техника часто используется, когда нужно преобразовать для просмотра огромное количество строк данных на карте.
 
 URL-адрес фрагмента, передаваемый в слой фрагментов, должен быть URL-адресом с http/https к ресурсу TileJSON или шаблоном URL-адреса фрагмента, который использует следующие параметры: 
 
@@ -39,144 +39,34 @@ URL-адрес фрагмента, передаваемый в слой фраг
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](./how-to-use-android-map-control-library.md) , чтобы загрузить карту.
-
+Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](how-to-use-android-map-control-library.md) , чтобы загрузить карту.
 
 ## <a name="add-a-tile-layer-to-the-map"></a>Добавление мозаичного слоя на карту
 
- В этом примере показано, как создать мозаичный слой, указывающий на набор плиток. На этих плитках используется система заполнения "x, y, Zoom". Источником этого слоя фрагментов является наложение радара погоды из [лаборатории окружающей среды Университета штата Айова](https://mesonet.agron.iastate.edu/ogc/). 
+В этом примере показано, как создать мозаичный слой, указывающий на набор плиток. В этом образце используется система заполнения "x, y, Zoom". Источником этого мозаичного слоя является [проект опенсеамап](https://openseamap.org/index.php), который содержит исходные диаграммы морских публика. Часто при просмотре мозаичных слоев желательно иметь возможность четко видеть метки городов на карте. Это поведение можно сделать, вставив мозаичный слой под слоями "метка карты".
 
-Вы можете добавить мозаичный слой на карту, выполнив следующие действия.
+```java
+TileLayer layer = new TileLayer(
+    tileUrl("https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"),
+    opacity(0.8f),
+    tileSize(256),
+    minSourceZoom(7),
+    maxSourceZoom(17)
+);
 
-1. Измените **разметку res > > activity_main.xml** так, чтобы она выглядела так:
+map.layers.add(layer, "labels");
+```
 
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    
-        <com.microsoft.azure.maps.mapcontrol.MapControl
-            android:id="@+id/mapcontrol"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:mapcontrol_centerLat="40.75"
-            app:mapcontrol_centerLng="-99.47"
-            app:mapcontrol_zoom="3"
-            />
-    
-    </FrameLayout>
-    ```
+На следующем снимке экрана показан приведенный выше код, отображающий мозаичный слой сведений о морских на карте с темно-черным стилем.
 
-2. Скопируйте приведенный ниже фрагмент кода в метод **OnCreate ()** `MainActivity.java` класса.
+![Схема Android, отображающая мозаичный слой](media/how-to-add-tile-layer-android-map/xyz-tile-layer-android.png)
 
-    ```Java
-    mapControl.onReady(map -> {
-        //Add a tile layer to the map, below the map labels.
-        map.layers.add(new TileLayer(
-            tileUrl("https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913/{z}/{x}/{y}.png"),
-            opacity(0.8f),
-            tileSize(256)
-        ), "labels");
-    });
-    ```
-    
-    Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова **Onreading ()** . Затем он создает `TileLayer` объект и передает отформатированный URL-адрес элемента **XYZ** в `tileUrl` параметр. Непрозрачность слоя имеет значение `0.8` , а поскольку плитки из используемой службы мозаики — 256 пикселей, эти сведения передаются в `tileSize` параметр. Затем мозаичный слой передается в Диспетчер слоев Maps.
-
-    После добавления приведенного выше фрагмента кода он `MainActivity.java` должен выглядеть следующим образом:
-    
-    ```Java
-    package com.example.myapplication;
-
-    import android.app.Activity;
-    import android.os.Bundle;
-    import android.support.v7.app.AppCompatActivity;
-    import com.microsoft.azure.maps.mapcontrol.layer.TileLayer;
-    import java.util.Arrays;
-    import java.util.List;
-    import com.microsoft.azure.maps.mapcontrol.AzureMaps;
-    import com.microsoft.azure.maps.mapcontrol.MapControl;
-    import static com.microsoft.azure.maps.mapcontrol.options.TileLayerOptions.tileSize;
-    import static com.microsoft.azure.maps.mapcontrol.options.TileLayerOptions.tileUrl;
-        
-    public class MainActivity extends AppCompatActivity {
-    
-        static{
-            AzureMaps.setSubscriptionKey("<Your Azure Maps subscription key>");
-        }
-    
-        MapControl mapControl;
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-    
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-    
-            mapControl = findViewById(R.id.mapcontrol);
-    
-            mapControl.onCreate(savedInstanceState);
-    
-            mapControl.onReady(map -> {
-
-                //Add a tile layer to the map, below the map labels.
-                map.layers.add(new TileLayer(
-                    tileUrl("https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913/{z}/{x}/{y}.png"),
-                    opacity(0.8f),
-                    tileSize(256)
-                ), "labels");
-            });    
-        }
-    
-        @Override
-        public void onResume() {
-            super.onResume();
-            mapControl.onResume();
-        }
-    
-        @Override
-        public void onPause() {
-            super.onPause();
-            mapControl.onPause();
-        }
-    
-        @Override
-        public void onStop() {
-            super.onStop();
-            mapControl.onStop();
-        }
-    
-        @Override
-        public void onLowMemory() {
-            super.onLowMemory();
-            mapControl.onLowMemory();
-        }
-    
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            mapControl.onDestroy();
-        }
-    
-        @Override
-        protected void onSaveInstanceState(Bundle outState) {
-            super.onSaveInstanceState(outState);
-            mapControl.onSaveInstanceState(outState);
-        }    
-    }
-    ```
-
-Если запустить приложение сейчас, на карте отобразится строка, как показано ниже:
-
-<center>
-
-![Линия с картой Android](./media/how-to-add-tile-layer-android-map/xyz-tile-layer-android.png)</center>
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о способах установки стилей карт см. в следующей статье.
 
 > [!div class="nextstepaction"]
-> [Изменение стилей карт Android](./set-android-map-styles.md)
+> [Изменение стиля схемы](set-android-map-styles.md)
+
+> [!div class="nextstepaction"]
+> [Добавление тепловой карты](map-add-heat-map-layer-android.md)

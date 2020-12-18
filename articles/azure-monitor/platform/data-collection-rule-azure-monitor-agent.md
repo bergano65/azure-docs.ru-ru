@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/19/2020
-ms.openlocfilehash: 94c926c555a4bc96ac3c6fbe773650e16554bcf2
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: d04fa25b9c953d151fc16d11f304c48b7046ab76
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95315708"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680397"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Настройка сбора данных для агента Azure Monitor (Предварительная версия)
 
@@ -35,6 +35,9 @@ ms.locfileid: "95315708"
 
 Вы можете использовать портал Azure для создания правила сбора данных и связывания виртуальных машин в подписке с этим правилом. Агент Azure Monitor будет автоматически установлен и управляемое удостоверение, созданное для всех виртуальных машин, на которых он еще не установлен.
 
+> [!IMPORTANT]
+> В настоящее время существует известная ошибка, когда правило сбора данных создает управляемое удостоверение на виртуальной машине, для которой уже назначено управляемое удостоверение, назначенное пользователем удостоверение отключено.
+
 В меню **Azure Monitor** в портал Azure выберите **правила сбора данных** в разделе **Параметры** . Нажмите кнопку **Добавить** , чтобы добавить новое правило и назначение сбора данных.
 
 [![Правила сбора данных](media/azure-monitor-agent/data-collection-rules.png)](media/azure-monitor-agent/data-collection-rules.png#lightbox)
@@ -52,7 +55,7 @@ ms.locfileid: "95315708"
 [![Базовый источник данных](media/azure-monitor-agent/data-collection-rule-data-source-basic.png)](media/azure-monitor-agent/data-collection-rule-data-source-basic.png#lightbox)
 
 
-Чтобы указать другие журналы и счетчики производительности, выберите **Пользовательский**. Затем можно указать [XPath ](https://www.w3schools.com/xml/xpath_syntax.asp) для всех конкретных значений, которые необходимо получить. Примеры см. в разделе [Sample ДКР](data-collection-rule-overview.md#sample-data-collection-rule) .
+Чтобы указать другие журналы и счетчики производительности из [текущих поддерживаемых источников данных](azure-monitor-agent-overview.md#data-sources-and-destinations) или отфильтровать события с помощью запросов XPath, выберите **Пользовательский**. Затем можно указать [XPath ](https://www.w3schools.com/xml/xpath_syntax.asp) для всех конкретных значений, которые необходимо получить. Примеры см. в разделе [Sample ДКР](data-collection-rule-overview.md#sample-data-collection-rule) .
 
 [![Пользовательский источник данных](media/azure-monitor-agent/data-collection-rule-data-source-custom.png)](media/azure-monitor-agent/data-collection-rule-data-source-custom.png#lightbox)
 
@@ -81,7 +84,7 @@ ms.locfileid: "95315708"
 
 Невозможно создать правило сбора данных с помощью шаблона диспетчер ресурсов, но можно создать связь между виртуальной машиной Azure или сервером с поддержкой ARC в Azure с помощью шаблона диспетчер ресурсов. Примеры шаблонов см. [в разделе Образцы шаблонов диспетчер ресурсов для правил сбора данных в Azure Monitor](../samples/resource-manager-data-collection-rules.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об [агенте Azure Monitor](azure-monitor-agent-overview.md).
 - Дополнительные сведения о [правилах сбора данных](data-collection-rule-overview.md).

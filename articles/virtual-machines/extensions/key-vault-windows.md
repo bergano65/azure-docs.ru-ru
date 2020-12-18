@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 0418c11d84fb82ac4a4b181289f032407a29f92e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 0b2346ae4777b31ce2e5c396fb03084d38b2008f
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500671"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678975"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -24,7 +24,7 @@ ms.locfileid: "96500671"
 
 Расширение Key Vault VM поддерживает следующие версии Windows:
 
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012
 
@@ -98,7 +98,7 @@ ms.locfileid: "96500671"
 | certificateStoreName | MY | строка |
 | linkOnRenewal | false | Логическое |
 | certificateStoreLocation  | LocalMachine или CurrentUser (с учетом регистра) | строка |
-| requiredInitialSync | Да | Логическое |
+| рекуиреинитиалсинк | Да | Логическое |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate","https://myvault.vault.azure.net/secrets/mycertificate2"] | массив строк
 | мсиендпоинт | http://169.254.169.254/metadata/identity | строка |
 | msiClientId | c7373ae5-91c2-4165-8ab6-7381d6e75619 | строка |
@@ -222,7 +222,7 @@ Azure PowerShell можно использовать для развертыва
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+### <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 * Существует ли ограничение на количество Обсерведцертификатес, которые можно настроить?
   Нет, Key Vaultное расширение виртуальной машины не ограничивает число Обсерведцертификатес.

@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 631aaf3c6a99e093f6ed59089f7ce99803f3f054
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6eff662ac0140e7a64cc3bab28856178708cb9b2
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446629"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400681"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Управление доступом к учетной записи хранения в бессерверном пуле SQL в Azure Synapse Analytics
 
 Бессерверный пул SQL позволяет создавать запросы для чтения файлов непосредственно из службы хранилища Azure. Разрешения на доступ к файлам в службе хранилища Azure контролируются на двух уровнях.
 - **Уровень хранилища** — пользователь должен иметь разрешение на доступ к базовым файлам хранилища. Администратор хранилища должен разрешить субъекту Azure AD чтение и запись файлов или создать ключ SAS, который будет использоваться для доступа к хранилищу.
-- **Уровень службы SQL** — пользователь должен иметь разрешение `SELECT` на чтение данных из [внешней таблицы](develop-tables-external-tables.md) или разрешение `ADMINISTER BULK ADMIN` на выполнение `OPENROWSET` и разрешение на использование учетных данных, которые предназначены для доступа к хранилищу.
+- **Уровень службы SQL** — пользователь должен иметь разрешение на чтение данных с использованием [внешней таблицы](develop-tables-external-tables.md) или на выполнение функции `OPENROWSET`. Дополнительные сведения о необходимых разрешениях см. в [этом разделе](develop-storage-files-overview.md#permissions).
 
 В этой статье описываются типы учетных данных, которые вы можете использовать, и способ поиска учетных данных для пользователей SQL и Azure AD.
 

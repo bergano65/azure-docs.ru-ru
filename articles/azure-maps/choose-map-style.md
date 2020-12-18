@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: f2d7c9e39cb3eb14a2c2c6a7b13e37f3a526184b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 556e265cc0d1aae33823185ec98d23f191ed1694
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889805"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680022"
 ---
 # <a name="change-the-style-of-the-map"></a>Изменение стиля карты
 
@@ -29,9 +29,9 @@ ms.locfileid: "92889805"
 var map = new atlas.Map('map', {
     renderWorldCopies: false,
     showBuildingModels: false,
-    showLogo = true,
-    showFeedbackLink = true,
-    style='road'
+    showLogo: true,
+    showFeedbackLink: true,
+    style: 'road'
 
     //Additional map options.
 };
@@ -40,8 +40,8 @@ var map = new atlas.Map('map', {
 map.setStyle({
     renderWorldCopies: true,
     showBuildingModels: true,
-    showLogo = false,
-    showFeedbackLink = false
+    showLogo: false,
+    showFeedbackLink: false
 });
 ```
 
@@ -101,7 +101,7 @@ map.setStyle({ style: 'satellite' });
 
 На рисунке ниже показан элемент управления "Выбор стиля", отображаемый в `list` макете.
 
-:::image type="content" source="./media/choose-map-style/style-picker-list-layout.png" alt-text="Макет значка выбора стиля":::
+:::image type="content" source="./media/choose-map-style/style-picker-list-layout.png" alt-text="Макет списка средств выбора стилей":::
 
 > [!IMPORTANT]
 > По умолчанию элемент управления Выбор стиля перечисляет все стили, доступные в ценовой категории S0 Azure Maps. Если требуется сократить число стилей в этом списке, передайте массив стилей, которые должны отображаться в списке, в `mapStyle` параметр выбора стиля. Если вы используете S1 и хотите отобразить все доступные стили, задайте `mapStyles` для параметра Выбор стиля значение `"all"` .
@@ -113,7 +113,7 @@ map.setStyle({ style: 'satellite' });
 <iframe height='500' scrolling='no' title='Добавление элемента выбора стиля' src='//codepen.io/azuremaps/embed/OwgyvG/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. фрагмент кода <a href='https://codepen.io/azuremaps/pen/OwgyvG/'>Добавление элемента выбора стиля</a> в службе Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, используемых в этой статье.
 
@@ -129,10 +129,13 @@ map.setStyle({ style: 'satellite' });
 > [!div class="nextstepaction"]
 > [стилеконтролоптионс](/javascript/api/azure-maps-control/atlas.stylecontroloptions)
 
-Добавление элементов управления в карты:
+Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
 > [Добавление элементов управления картой в службе Azure Maps](map-add-controls.md)
 
 > [!div class="nextstepaction"]
-> [Добавление ПИН-кода](map-add-pin.md)
+> [Добавление слоя символов](map-add-pin.md)
+
+> [!div class="nextstepaction"]
+> [Добавление слоя пузырьков](map-add-bubble-layer.md)

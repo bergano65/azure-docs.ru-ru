@@ -7,42 +7,51 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: duau
-ms.openlocfilehash: d4d6b0b0cce4f5304f7c5790ef2bda05633be52f
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 432ecedbbb8965926499380eb1165fdf43018426
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582989"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680275"
 ---
-# <a name="reset-expressroute-circuit-peerings-use-the-azure-portal"></a>Сброс пиринга канала ExpressRoute используйте портал Azure
+# <a name="reset-expressroute-circuit-peerings-by-using-the-azure-portal"></a>Сброс пиринга канала ExpressRoute с помощью портал Azure
 
-В этой статье описывается, как отключить и включить пирингы канала ExpressRoute с помощью портал Azure. При отключении пиринга сеанс BGP для основного и дополнительного подключения канала ExpressRoute будет закрыт. Связь с этим пирингом с корпорацией Майкрософт будет потеряна. При включении пиринга будет выведен сеанс BGP как на основном, так и в дополнительном подключении канала ExpressRoute. Вы снова получите возможность подключения через этот пиринг к Майкрософт. В цепи ExpressRoute можно индивидуально отключать и включать как пиринг Майкрософт, так и частный пиринг Azure. При первой настройке пиринга в канале ExpressRoute пиринг по умолчанию включен.
+В этой статье описывается, как отключить и включить пирингы канала Azure ExpressRoute с помощью портал Azure. При отключении пиринга выполняется завершение сеанса протокол BGP (BGP) для основного и дополнительного подключений канала ExpressRoute. При включении пиринга выполняется восстановление сеанса BGP на основном и дополнительном подключении канала ExpressRoute.
 
-Существует несколько сценариев, в которых сброс пиринга для ExpressRoute может оказаться полезным.
-* Протестируйте проектирование и реализацию аварийного восстановления. Например, существует две цепи ExpressRoute. Пиринг в первой цепи можно отключить и принудительно перевести весь сетевой трафик на вторую цепь.
-* Включите обнаружение двунаправленной переадресации (БФД) в частном пиринга Azure или пиринга Майкрософт для канала ExpressRoute. БФД по умолчанию включается в частном пиринга Azure, если канал ExpressRoute создается после 1 2018 августа и пиринга Майкрософт. Если канал ExpressRoute создается после 10 2020 января. Если цепь была создана ранее приведенной даты, BFD включено не было. BFD можно включить путем отключения и повторного включения пиринга. 
+> [!Note]
+> При первой настройке пиринга в канале ExpressRoute пиринг по умолчанию включен.
 
-### <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+Сброс параметров пиринга ExpressRoute может быть полезен в следующих сценариях:
 
-В браузере откройте [портал Azure](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
+* Вы тестируете проект и реализацию аварийного восстановления. Например, предположим, что у вас есть две цепи ExpressRoute. Вы можете отключить одноранговые узлы и принудительно настроить сетевой трафик для использования другого канала.
+
+* Вы хотите включить обнаружение двунаправленной переадресации (БФД) для частного пиринга Azure или пиринга Майкрософт. Если ваш канал ExpressRoute был создан до 1 августа 2018, на частном одноранговом пиринга Azure или до 10 января 2020 на пиринг Майкрософт, БФД не был включен по умолчанию. Сбросьте пиринг, чтобы включить БФД.
+
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+
+В браузере перейдите к [портал Azure](https://portal.azure.com), а затем выполните вход с помощью учетной записи Azure.
 
 ## <a name="reset-a-peering"></a>Сброс пиринга
 
-1. Выберите канал, для которого необходимо внести изменения в конфигурацию пиринга.
+Вы можете сбросить пиринг Майкрософт и частный пиринг Azure в канале ExpressRoute независимо друг от друга.
 
-    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit-list.png" alt-text="Список каналов ExpressRoute":::
+1. Выберите цепь, которую необходимо изменить.
 
-1. Выберите конфигурацию пиринга, которую необходимо включить или отключить.
+    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit-list.png" alt-text="Снимок экрана, показывающий выбор канала в списке канала ExpressRoute.":::
 
-    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit.png" alt-text="Обзор канала ExpressRoute":::
+1. Выберите конфигурацию пиринга, которую требуется сбросить.
+
+    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit.png" alt-text="Снимок экрана, на котором показано, как выбрать пиринг в обзоре канала ExpressRoute.":::
 
 1. Снимите флажок **включить пиринг** и нажмите кнопку **сохранить** , чтобы отключить конфигурацию пиринга.
 
-    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/disable-peering.png" alt-text="Отключить частный пиринг":::
+    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/disable-peering.png" alt-text="Снимок экрана, на котором показан сброс флажка &quot;включить пиринг&quot;.":::
 
-1. Вы можете снова включить пиринг, установив флажок **включить пиринг** и нажав кнопку **сохранить**.
+1. Установите флажок **включить пиринг** и нажмите кнопку **сохранить** , чтобы снова включить конфигурацию пиринга.
 
-## <a name="next-steps"></a>Дальнейшие действия
-Если вам нужна помощь с устранением неполадок ExpressRoute, ознакомьтесь со следующими статьями:
+## <a name="next-steps"></a>Следующие шаги
+
+Сведения об устранении неполадок ExpressRoute см. в следующих статьях:
+
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 * [Устранение проблем с производительностью сети](expressroute-troubleshooting-network-performance.md)

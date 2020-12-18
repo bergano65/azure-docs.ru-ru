@@ -1,184 +1,150 @@
 ---
-title: Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
-description: Узнайте, как добавить маркер к карте. См. пример, использующий Microsoft Azure Maps пакет SDK для Android для добавления слоя символов, который содержит данные на основе точек из источника данных.
-author: anastasia-ms
-ms.author: v-stharr
-ms.date: 11/24/2020
-ms.topic: how-to
+title: Добавление слоя символов в карты Android | Карты Microsoft Azure
+description: Узнайте, как добавить маркер к карте. См. пример, использующий Azure Maps пакет SDK для Android для добавления слоя символов, который содержит данные на основе точек из источника данных.
+author: rbrundritt
+ms.author: richbrun
+ms.date: 12/08/2020
+ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: philmea
-ms.openlocfilehash: 300a7968b2072459d6d7709e4d89388e1bcf59f3
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+manager: cpendle
+ms.openlocfilehash: 040fcde35707074ffaf102ed6c224b2f47a084bb
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531213"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679336"
 ---
-# <a name="add-a-symbol-layer-to-a-map-using-azure-maps-android-sdk"></a>Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
+# <a name="add-a-symbol-layer-android-sdk"></a>Добавление слоя символов (пакет SDK для Android)
 
-В этой статье показано, как преобразовать данные точек из источника данных в качестве слоя символов на карте с помощью Azure Maps пакет SDK для Android.
+В этой статье показано, как преобразовать данные точек из источника данных в качестве слоя символов на карте с помощью Azure Maps пакет SDK для Android. Слои символов отрисовывает точки в виде изображения и текста на карте.
+
+> [!TIP]
+> Слои символов по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только возможности геометрических точек, установите `filter` параметр слоя в значение `eq(geometryType(), "Point")` . Если вы хотите включить компоненты MultiPoint, установите `filter` параметр слоя в значение `any(eq(geometryType(), "Point"), eq(geometryType(), "MultiPoint"))` .
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account)
-2. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки.
-3. Скачайте и установите [пакет SDK для Android Azure Maps](./how-to-use-android-map-control-library.md).
+Не забудьте выполнить действия, описанные в разделе [Краткое руководство. Создание документа приложения Android](quick-android-map.md) . Блоки кода в этой статье можно вставить в `onReady` обработчик событий Maps.
 
 ## <a name="add-a-symbol-layer"></a>Добавление слоя символов
 
-Чтобы добавить маркер на карту с помощью слоя символов, выполните следующие действия:
+Прежде чем добавить на карту слой символов, необходимо выполнить несколько действий. Сначала создайте источник данных и добавьте его на карту. Создание слоя символов. Затем передайте источник данных на слой символов, чтобы получить данные из источника данных. Наконец, добавьте данные в источник данных, чтобы отобразить что-либо.
 
-1. Измените макет " **RES**  >  **layout**  >  "**activity_main.xml** так, чтобы он выглядел как следующий XML:
-    
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+В приведенном ниже коде показано, что следует добавить к карте после ее загрузки. Этот пример отображает единую точку на карте с помощью слоя символов.
 
-        <com.microsoft.azure.maps.mapcontrol.MapControl
-            android:id="@+id/mapcontrol"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:mapcontrol_centerLat="47.64"
-            app:mapcontrol_centerLng="-122.33"
-            app:mapcontrol_zoom="12"
-            />
+```java
+//Create a data source and add it to the map.
+DataSource source = new DataSource();
+map.sources.add(source);
 
-    </FrameLayout>
-    ```
+//Create a point and add it to the data source.
+source.add(Point.fromLngLat(0, 0));
 
-2. Скопируйте следующий фрагмент кода в метод **OnCreate ()** `MainActivity.java` класса.
+//Create a symbol layer to render icons and/or text at points on the map.
+SymbolLayer layer = new SymbolLayer(source);
 
-    ```Java
-    mapControl.onReady(map -> {
-    
-        //Create a data source and add it to the map.
-        DataSource dataSource = new DataSource();
-        map.sources.add(dataSource);
-    
-        //Create a point feature and add it to the data source.
-        dataSource.add(Feature.fromGeometry(Point.fromLngLat(-122.33, 47.64)));
-    
-        //Add a red custom image icon to the map resources.
-        map.images.add("my-icon", R.drawable.mapcontrol_marker_red);
-    
-        //Create a symbol layer and add it to the map.
-        map.layers.add(new SymbolLayer(dataSource,
-            iconImage("my-icon")));
-        });
-    
-    ```
-    
-    После добавления приведенного выше фрагмента кода он `MainActivity.java` должен выглядеть следующим образом:
-    
-    ```Java
-    package com.example.myapplication;
-    
-    import android.app.Activity;
-    import android.os.Bundle;
-    import com.mapbox.geojson.Feature;
-    import com.mapbox.geojson.Point;
-    import com.microsoft.azure.maps.mapcontrol.AzureMaps;
-    import com.microsoft.azure.maps.mapcontrol.MapControl;
-    import com.microsoft.azure.maps.mapcontrol.layer.SymbolLayer;
-    import com.microsoft.azure.maps.mapcontrol.source.DataSource;
-    import static com.microsoft.azure.maps.mapcontrol.options.SymbolLayerOptions.iconImage;
-    public class MainActivity extends AppCompatActivity {
-        
-        static{
-                AzureMaps.setSubscriptionKey("<Your Azure Maps subscription key>");
-            }
-    
-        MapControl mapControl;
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-    
-            mapControl = findViewById(R.id.mapcontrol);
-    
-            mapControl.onCreate(savedInstanceState);
-    
-            mapControl.onReady(map -> {
-    
-                //Create a data source and add it to the map.
-                DataSource dataSource = new DataSource();
-                map.sources.add(dataSource);
-            
-                //Create a point feature and add it to the data source.
-                dataSource.add(Feature.fromGeometry(Point.fromLngLat(-122.33, 47.64)));
-            
-                //Add a custom image icon to the map resources.
-                map.images.add("my-icon", R.drawable.mapcontrol_marker_red);
-            
-                //Create a symbol layer and add it to the map.
-                map.layers.add(new SymbolLayer(dataSource,
-                    iconImage("my-icon")));
-            });
-        }
-    
-        @Override
-        public void onStart() {
-            super.onStart();
-            mapControl.onStart();
-        }
-    
-        @Override
-        public void onResume() {
-            super.onResume();
-            mapControl.onResume();
-        }
-    
-        @Override
-        public void onPause() {
-            super.onPause();
-            mapControl.onPause();
-        }
-    
-        @Override
-        public void onStop() {
-            super.onStop();
-            mapControl.onStop();
-        }
-    
-        @Override
-        public void onLowMemory() {
-            super.onLowMemory();
-            mapControl.onLowMemory();
-        }
-    
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            mapControl.onDestroy();
-        }
-    
-        @Override
-        protected void onSaveInstanceState(Bundle outState) {
-            super.onSaveInstanceState(outState);
-            mapControl.onSaveInstanceState(outState);
-        }
-    }
-    ```
+//Add the layer to the map.
+map.layers.add(layer);
+```
 
-При запуске приложения на карте должен отобразиться маркер, как показано ниже:
+Существует три различных типа данных точек, которые можно добавить на карту:
 
-![Метка на карте Android](./media/how-to-add-symbol-to-android-map/android-map-pin.png)
+- Геометрическая точка в формате JSON. Этот объект содержит только координаты точки и ничего другого. `Point.fromLngLat`Статический метод можно использовать для простого создания этих объектов.
+- Геометрическая геометрия MultiPoint — этот объект содержит координаты нескольких точек и ничего другого. Передайте массив точек в `MultiPoint` класс для создания этих объектов.
+- Функция геоjson — этот объект состоит из любой геометрической фигуры и набора свойств, содержащих метаданные, связанные с геометрическим объектом.
+
+Дополнительные сведения см. в документе [Создание источника данных](create-data-source-android-sdk.md) для создания и добавления данных на карту.
+
+В следующем примере кода создается геометрическая точка в формате JSON, которая передается в функцию геоjson и имеет `title` значение, добавленное к его свойствам. `title`Свойство отображается как текст над значком символа на карте.
+
+```java
+//Create a data source and add it to the map.
+DataSource source = new DataSource();
+map.sources.add(source);
+
+//Create a point feature.
+Feature feature = Feature.fromGeometry(Point.fromLngLat(0, 0));
+
+//Add a property to the feature.
+feature.addStringProperty("title", "Hello World!");
+
+//Add the feature to the data source.
+source.add(feature);
+
+//Create a symbol layer to render icons and/or text at points on the map.
+SymbolLayer layer = new SymbolLayer(source, 
+    //Get the title property of the feature and display it on the map.
+    textField(get("title"))
+);
+
+//Add the layer to the map.
+map.layers.add(layer);
+```
+
+На следующем снимке экрана показан приведенный выше код, отрисовки компонент с помощью значка и текстовой метки с уровнем символов.
+
+![Сопоставьте с точкой, отображаемой с помощью слоя символов, отображающего значок и текстовую метку для функции точки](media/how-to-add-symbol-to-android-map/android-map-pin.png)
 
 > [!TIP]
-> По умолчанию слои символов оптимизируют отрисовку символов путем скрытия перекрывающихся символов. При изменении масштаба скрытые символы становятся видимыми. Чтобы отключить эту функцию и вывести все символы в любое время, установите `iconAllowOverlap` параметр в значение `true` .
+> По умолчанию слои символов оптимизируют отрисовку символов путем скрытия перекрывающихся символов. При изменении масштаба скрытые символы становятся видимыми. Чтобы отключить эту функцию и вывести все символы в любое время, задайте `iconAllowOverlap` `textAllowOverlap` для параметров и значение `true` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="add-a-custom-icon-to-a-symbol-layer"></a>Добавление пользовательского значка в слой символов
 
-Дополнительные сведения о добавлении данных в карту см. в следующих статьях:
+Слои символов преобразовываются для просмотра с помощью WebGL. Таким образом, все ресурсы (например, образы значков) необходимо загрузить в контекст WebGL. В этом примере показано, как добавить пользовательский значок в ресурсы Map. Этот значок используется для отрисовки данных точек с помощью пользовательского символа на карте. Свойство `textField` слоя символа требует указания выражения. В этом случае нам нужно отобразить свойство температуры. Так как температура является числом, ее необходимо преобразовать в строку. Кроме того, мы хотим добавить к нему «° F». Для этого объединения можно использовать выражение. `concat(Expression.toString(get("temperature")), literal("°F"))`.
+
+```java
+//Load a custom icon image into the image sprite of the map.
+map.images.add("my-custom-icon", R.drawable.showers);
+
+//Create a data source and add it to the map.
+DataSource source = new DataSource();
+map.sources.add(source);
+
+//Create a point feature.
+Feature feature = Feature.fromGeometry(Point.fromLngLat(-73.985708, 40.75773));
+
+//Add a property to the feature.
+feature.addNumberProperty("temperature", 64);
+
+//Add the feature to the data source.
+source.add(feature);
+
+//Create a symbol layer to render icons and/or text at points on the map.
+SymbolLayer layer = new SymbolLayer(source,
+    iconImage("my-custom-icon"),
+    iconSize(0.5f),
+
+    //Get the title property of the feature and display it on the map.
+    textField(concat(Expression.toString(get("temperature")), literal("°F"))),
+    textOffset(new Float[]{0f, -1.5f})
+);
+```
+
+В этом примере приведенное ниже изображение было загружено в папку для рисования приложения.
+
+| ![Изображение значка погоды для дождя ливни](media/how-to-add-symbol-to-android-map/showers.png)|
+|:-----------------------------------------------------------------------:|
+| showers.png                                                  |
+
+На следующем снимке экрана показан приведенный выше код, отрисовки компонент с помощью пользовательского значка и метки форматированного текста с слоем символов.
+
+![Сопоставьте с точкой, отображаемой с помощью слоя символов, отображающего пользовательский значок и метку форматированного текста для функции точки](media/how-to-add-symbol-to-android-map/android-custom-symbol-layer.png)
+
+> [!TIP]
+> Если требуется отобразить только текст с помощью слоя символов, можно скрыть значок, задав `iconImage` для свойства параметров значка значение `"none"` .
+
+## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление фигур на карту Android](./how-to-add-shapes-to-android-map.md)
+> [Создание источника данных](create-data-source-android-sdk.md)
+
+> [!div class="nextstepaction"]
+> [Добавление слоя пузырьков](map-add-bubble-layer-android.md)
+
+> [!div class="nextstepaction"]
+> [Использование стилистических выражений на основе данных](data-driven-style-expressions-android-sdk.md)
 
 > [!div class="nextstepaction"]
 > [Отображение сведений о компоненте](display-feature-information-android.md)

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 51df9683152d97b899150e240dee98896f8c40ee
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: b15ee7091a68f7fcc79c71877c4af28b511b84de
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896384"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680152"
 ---
 # <a name="add-a-heat-map-layer"></a>Добавление слоя тепловой карты
 
@@ -24,16 +24,16 @@ ms.locfileid: "92896384"
 
 Карты рисков можно использовать в различных сценариях, в том числе:
 
-- **Данные температуры** : выводит приблизительные показатели температуры между двумя точками данных.
-- **Данные для датчиков шума** . показывает не только интенсивность шума, в которой находится датчик, но также позволяет получить представление о расположении на расстоянии. Уровень шума на одном сайте может быть невысоким. Если область действия шума из нескольких датчиков перекрывается, возможно, эта перекрывающаяся область может иметь более высокие уровни шума. Таким образом, область перекрытия будет видна на тепловой карте.
-- **Трассировка GPS** : включает скорость как карту взвешенной высоты, где интенсивность каждой точки данных зависит от скорости. Например, эта функция позволяет узнать, где был ускорен процесс.
+- **Данные температуры**: выводит приблизительные показатели температуры между двумя точками данных.
+- **Данные для датчиков шума**. показывает не только интенсивность шума, в которой находится датчик, но также позволяет получить представление о расположении на расстоянии. Уровень шума на одном сайте может быть невысоким. Если область действия шума из нескольких датчиков перекрывается, возможно, эта перекрывающаяся область может иметь более высокие уровни шума. Таким образом, область перекрытия будет видна на тепловой карте.
+- **Трассировка GPS**: включает скорость как карту взвешенной высоты, где интенсивность каждой точки данных зависит от скорости. Например, эта функция позволяет узнать, где был ускорен процесс.
 
 > [!TIP]
 > По умолчанию уровни тепловой карт отображают координаты всех геометрических объектов в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только возможности геометрических точек, установите `filter` для свойства слоя значение `['==', ['geometry-type'], 'Point']` . Если вы хотите включить компоненты MultiPoint, установите `filter` для свойства слоя значение `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` .
 
-<br/>
+</br>
 
-<iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Heat-Maps-and-Image-Overlays-in-Azure-Maps/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+>[!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Heat-Maps-and-Image-Overlays-in-Azure-Maps/player?format=ny]
 
 ## <a name="add-a-heat-map-layer"></a>Добавление слоя тепловой карты
 
@@ -103,7 +103,7 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Последовательная тепловая схема масштабируемый" src="//codepen.io/azuremaps/embed/OGyMZr/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder='no' loading="lazy" loading="lazy" allowtransparency="true" allowfullscreen="true">
-См. Azure Maps () на CodePen с помощью <a href='https://codepen.io/azuremaps/pen/OGyMZr/'>масштабируемый</a> ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) <a href='https://codepen.io'>CodePen</a>.
+См. Azure Maps () на CodePen с помощью <a href='https://codepen.io/azuremaps/pen/OGyMZr/'>масштабируемый</a> ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) <a href='https://codepen.io'></a>.
 </iframe>
 
 > [!TIP]

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 138160eb1515d1443302dbc23bbafa482e2eb905
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 0f0d94dbc7b2c720faa1da41a88e3c3313dac377
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904556"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680764"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
 
@@ -24,7 +24,7 @@ ms.locfileid: "96904556"
 
 **Боты**
 
-| Имя проекта | Описание: |
+| Имя проекта | Описание |
 |-|-|
 | [Платформа Bot — навык интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык по интересам предоставляет виртуальному помощнику достопримечательности связанные возможности, используя Azure Maps со службой Azure Bot и Bot Framework. |
 | [Расположение BotBuilder](https://github.com/Microsoft/BotBuilder-Location) | Элемент управления выбор расположения с открытым исходным кодом для платформы Microsoft Bot на платформе службы Bing Maps. |
@@ -35,31 +35,39 @@ ms.locfileid: "96904556"
 
 Ниже приведен список проектов с открытым исходным кодом, расширяющих возможности веб-пакета SDK для Azure Maps.
 
-| Имя проекта | Описание: |
+| Имя проекта | Описание |
 |-|-|
 | [Модуль анимации Azure Maps](https://github.com/Azure-Samples/azure-maps-animations) | Обширная библиотека анимации для использования с веб-пакетом SDK для Azure Maps. |
+| [Azure Maps перенести данные в модуль управления представлением](https://github.com/Azure-Samples/azure-maps-bring-data-into-view-control) | Модуль веб-пакета SDK Azure Maps, предоставляющий элемент управления, который позволяет легко переносить все данные, загруженные на карту, в представление. |
 | [Модуль управления географом Azure Maps](https://github.com/Azure-Samples/azure-maps-geolocation-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления, который использует API географического расположения браузера для поиска пользователя на карте. |
 | [Модуль источника данных Azure Maps климатические](https://github.com/Azure-Samples/azure-maps-gridded-data-source) | Модуль для веб-пакета SDK Azure Maps, предоставляющий источник данных, который объединяет точки данных в ячейки области сетки. Эта операция также известна многим именам, например тесселяции, группирования данных или шестнадцатеричные ячейки.  |
 | [Azure Maps полноэкранный модуль управления](https://github.com/Azure-Samples/azure-maps-fullscreen-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления для отображения карт в полноэкранном режиме. |
+| [Модуль слоя маркера HTML Azure Maps](https://github.com/Azure-Samples/azure-maps-html-marker-layer) | Модуль веб-пакета SDK Azure Maps, предоставляющий слой, который отображает данные точек из источника данных в виде HTML-элементов на карте. |
+| [Модуль экспорта изображений Azure Maps](https://github.com/Azure-Samples/azure-maps-image-exporter) | Модуль для веб-пакета SDK Azure Maps, который создает снимки экрана для схемы. |
+| [Azure Maps обзорный модуль карт](https://github.com/Azure-Samples/azure-maps-overview-map) | Модуль веб-пакета SDK Azure Maps, предоставляющий элемент управления, отображающий обзорную карту области, на которой сосредоточена основная схема. |
+| [Модуль управления линейкой Azure Maps шкалы](https://github.com/Azure-Samples/azure-maps-scale-bar-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элемент управления, отображающий линейку шкалы относительно разрешения пикселя в центре сопоставления. |
 | [Модуль управления выбором Azure Maps](https://github.com/Azure-Samples/azure-maps-selection-control) | Модуль веб-пакета SDK Azure Maps, который предоставляет элементы управления для выбора данных в источнике данных с помощью средств рисования или запроса многоугольника диапазона маршрутов. |
+| [Модуль пользовательского интерфейса Azure Maps Services](https://github.com/Azure-Samples/azure-maps-services-ui) | Набор элементов управления веб-ИНТЕРФЕЙСов, которые служат оболочкой для служб Azure Maps RESTFUL. |
+| [Модуль "кластеры Azure Maps пасьянс"](https://github.com/Azure-Samples/azure-maps-spider-clusters) | Модуль для веб-пакета SDK Azure Maps, который добавляет визуализацию к карте, которая расширяет кластеры в макет «паук». |
+| [Модуль управления Azure Maps Спигласс](https://github.com/Azure-Samples/azure-maps-spyglass-control) | Модуль веб-пакета SDK Azure Maps, предоставляющий окно, которое отображает набор данных в спигласс на карте.  |
 | [Модуль Azure Maps считывания карт](https://github.com/Azure-Samples/azure-maps-swipe-map) | Модуль для веб-пакета SDK Azure Maps, который позволяет прокрутить две перекрывающиеся карты, идеально подходит для сравнения двух перекрывающихся наборов данных. |
 | [Модуль синхронизации Azure Maps](https://github.com/Azure-Samples/azure-maps-sync-maps) | Модуль веб-пакета SDK Azure Maps, который синхронизирует камеры двух или более карт. |
-| [Модуль пользовательского интерфейса Azure Maps Services](https://github.com/Azure-Samples/azure-maps-services-ui) | Набор элементов управления веб-ИНТЕРФЕЙСов, которые служат оболочкой для служб Azure Maps RESTFUL. |
 
 **Примеры**
 
-| Имя проекта | Описание: |
+| Имя проекта | Описание |
 |-|-|
 | [Примеры кода Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в веб-приложениях. |
 | [Azure Maps примеры кода gov Cloud](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в облаке Azure для государственных организаций. |
 | [Примеры Azure Active Directory & Azure Maps](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples) | Коллекция примеров, демонстрирующих использование Azure Active Directory с Azure Maps. | 
+| [ливемапс](https://github.com/Azure-Samples/LiveMaps) | Пример приложения для представления данных Интернета вещей в реальном времени на основе Azure Maps с помощью создателя Azure Maps |
 | [Примеры Jupyter Notebook Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook) | Коллекция примеров Python, использующих службы Azure Maps RESTFUL. |
 | [Удаленное управление IoT Azure Maps .NET UWP](https://github.com/Azure-Samples/azure-maps-dotnet-webgl-uwp-iot-remote-control) | Это пример приложения, в котором показано, как создать карту с удаленным управлением с помощью Azure Maps и служб центра Интернета вещей. |
 | [Реализация пространственной аналитики Интернета вещей с помощью Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. |
 
 **Средства и ресурсы**
 
-| Имя проекта | Описание: |
+| Имя проекта | Описание |
 |-|-|
 | [Azure Maps документы](https://github.com/MicrosoftDocs/azure-docs/tree/master/articles/azure-maps) | Источник для всей документации по Azure Location Based Services. |
 | [Средства создателя Azure Maps (Предварительная версия)](https://github.com/Azure-Samples/AzureMapsCreator) | Инструменты Python для инструментов для Azure Maps Creator (Предварительная версия). |
@@ -77,7 +85,7 @@ ms.locfileid: "96904556"
 - Azure Maps проекты с открытым исходным кодом и примеры не являются продуктом, поэтому они не поддерживаются поддержка Premier или другими официальными каналами поддержки.
 - Azure Maps проекты с открытым исходным кодом и примеры поддерживаются аналогично другим проектам с открытым исходным кодом, осуществляемым корпорацией Майкрософт вместе со службой поддержки сообщества.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Найдите другие проекты Azure Maps с открытым кодом.
 
