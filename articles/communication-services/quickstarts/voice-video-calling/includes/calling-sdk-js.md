@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: ff9eca855269597477bc42a319c99c886576d92c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: d50ce842a1b2bca26ef14dfbc81aab90d4ac2d8c
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94482667"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691990"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -53,7 +53,7 @@ npm install @azure/communication-calling --save
 const userToken = '<user token>';
 callClient = new CallClient(options);
 const tokenCredential = new AzureCommunicationUserCredential(userToken);
-const callAgent = await callClient.createCallAgent(tokenCredential);
+const callAgent = await callClient.createCallAgent(tokenCredential, { displayName: 'optional ACS user name' });
 const deviceManager = await callClient.getDeviceManager()
 ```
 
@@ -89,7 +89,9 @@ const groupCall = callAgent.call([userCallee, pstnCallee], placeCallOptions);
 > Сейчас может быть не более одного исходящего локального потока видео.
 Чтобы поместить видеовызов, необходимо перечислить локальные камеры с помощью `getCameraList` API девицеманажер.
 После выбора нужной камеры используйте ее для создания `LocalVideoStream` экземпляра и передайте его в `videoOptions` качестве элемента в `localVideoStream` массиве в `call` метод.
-Когда звонок будет подключен, автоматически начнется отправка видеопотока от выбранной камеры другим участникам.
+После того, как звонок будет подключен, автоматически начнется отправка видеопотока из выбранной камеры другим участникам.
+
+Это также относится к параметрам Call. Accept () видео и Каллажент. Join () видео.
 ```js
 const deviceManager = await callClient.getDeviceManager();
 const videoDeviceInfo = deviceManager.getCameraList()[0];
@@ -99,13 +101,41 @@ const call = callAgent.call(['acsUserId'], placeCallOptions);
 
 ```
 
+### <a name="receiving-an-incoming-call"></a>Получение входящего вызова
+```js
+callAgent.on('callsUpdated', e => {
+    e.added.forEach(addedCall => {
+        if(addedCall.isIncoming) {
+        addedCall.accept();
+    }
+    });
+})
+```
+
 ### <a name="join-a-group-call"></a>Присоединение к групповому вызову
 Чтобы начать новый вызов группы или присоединиться к текущему вызову группы, используйте метод "Join" и передайте объект со `groupId` свойством. Значение должно быть идентификатором GUID.
 ```js
 
-const context = { groupId: <GUID>}
-const call = callAgent.join(context);
+const locator = { groupId: <GUID>}
+const call = callAgent.join(locator);
 
+```
+
+### <a name="join-a-teams-meeting"></a>Присоединяйтесь к собранию команд
+Чтобы присоединиться к собранию команд, используйте метод "Join" и передайте ссылку на собрание или координату собрания.
+```js
+// Join using meeting link
+const locator = { meetingLink: <meeting link>}
+const call = callAgent.join(locator);
+
+// Join using meeting coordinates
+const locator = {
+    threadId: <thread id>,
+    organizerId: <organizer id>,
+    tenantId: <tenant id>,
+    messageId: <message id>
+}
+const call = callAgent.join(locator);
 ```
 
 ## <a name="call-management"></a>Управление вызовами
@@ -162,6 +192,11 @@ const callEndReason = call.callEndReason;
 * Чтобы узнать, является ли текущий вызов входящим вызовом, проверьте `isIncoming` свойство, возвращаемое `Boolean` .
 ```js
 const isIncoming = call.isIncoming;
+```
+
+* Чтобы проверить, записывается ли вызов, проверьте `isRecordingActive` свойство, возвращаемое `Boolean` .
+```js
+const isResordingActive = call.isRecordingActive;
 ```
 
 *  Чтобы проверить, отключен ли текущий микрофон, проверьте `muted` свойство, которое возвращается `Boolean` .
@@ -234,7 +269,7 @@ const source callClient.getDeviceManager().getCameraList()[1];
 localVideoStream.switchSource(source);
 
 ```
-### <a name="faq"></a>Вопросы и ответы
+### <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
  * Если сетевое подключение потеряно, состояние вызова изменится на "Disconnecteded"?
     * Да, если сетевое подключение будет потеряно в течение более 2 минут, вызов переходит в состояние DISCONNECTED и вызов завершается.
 
@@ -415,7 +450,7 @@ document.body.appendChild(rendererView.target);
 ```js
 view.updateScalingMode('Crop')
 ```
-### <a name="faq"></a>Вопросы и ответы
+### <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 * Если удаленный участник теряет свое сетевое подключение, изменяет ли его состояние на "отключено"?
     * Да, если удаленный участник потеряет сетевое подключение в течение более 2 минут, их состояние перейдет в режим «отключено» и они будут удалены из вызова.
 ## <a name="device-management"></a>Управление устройствами
