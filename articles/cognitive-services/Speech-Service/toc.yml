@@ -367,21 +367,9 @@
                   href: quickstart-custom-commands-application.md
             - name: Практические руководства
               items:
-                - name: Разработка
-                  items:
-                    - name: Создание приложения с использованием простых команд
-                      href: how-to-custom-commands-create-application-with-simple-commands.md
-                    - name: Добавление параметров в команды
-                      href: how-to-custom-commands-add-parameters-to-commands.md
-                    - name: Добавление конфигураций в параметры команд
-                      href: how-to-custom-commands-add-parameter-configuration.md
-                    - name: Добавление правил взаимодействия
-                      href: how-to-custom-commands-add-interaction-rules.md
-                    - name: Добавление шаблонов создания языков для речевых ответов
-                      href: how-to-custom-commands-add-language-generation-templates.md
-                    - name: Использование набора инструментов "Пользовательский голос"
-                      href: how-to-custom-commands-use-custom-voice.md
-                - name: Интеграция
+                - name: Разработка и настройка приложений Пользовательских голосовых команд
+                  href: how-to-develop-custom-commands-application.md
+                - name: Интеграция с клиентскими приложениями
                   items:
                     - name: Интеграция с клиентским приложением с использованием пакета SDK службы "Речь"
                       href: how-to-custom-commands-setup-speech-sdk.md
@@ -395,26 +383,18 @@
                       href: how-to-custom-commands-update-command-from-client.md
                     - name: Обновление команды из конечной точки в Интернете
                       href: how-to-custom-commands-update-command-from-web-endpoint.md
-                - name: Развертывание
-                  items:
-                    - name: Непрерывное развертывание с помощью Azure DevOps
-                      href: how-to-custom-commands-deploy-cicd.md
-                - name: Тест
-                  items:
-                    - name: Тестирование приложения пользовательских команд
-                      href: how-to-custom-commands-developer-flow-test.md
-                - name: Отладка
-                  items:
-                    - name: Отладка ошибок при создании приложения
-                      href: how-to-custom-commands-debug-build-time.md
-                    - name: Отладка ошибок при запуске приложения
-                      href: how-to-custom-commands-debug-runtime.md
-                - name: Ссылки
-                  items:
-                    - name: Основные понятия пользовательских команд
-                      href: custom-commands-references.md
+                - name: Непрерывное развертывание с помощью Azure DevOps
+                  href: how-to-custom-commands-deploy-cicd.md
+                - name: Тестирование приложений Пользовательских голосовых команд
+                  href: how-to-custom-commands-developer-flow-test.md
+                - name: Отладка ошибок при создании приложения
+                  href: how-to-custom-commands-debug-build-time.md
+                - name: Отладка ошибок при запуске приложения
+                  href: how-to-custom-commands-debug-runtime.md
             - name: Ресурсы
               items:
+                - name: Основные понятия пользовательских команд
+                  href: custom-commands-references.md
                 - name: Примеры пользовательских команд (GitHub)
                   href: 'https://aka.ms/speech/cc-samples'
                 - name: Примеры голосовых помощников (GitHub)

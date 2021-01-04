@@ -59,6 +59,8 @@
               href: solutions-windows-virtual-desktop.md
     - name: Вопросы и ответы об Azure NetApp Files
       href: azure-netapp-files-faqs.md
+    - name: 'Что такое средство создания моментальных снимков, согласованных с приложениями Azure'
+      href: azacsnap-introduction.md
 - name: Практические руководства
   items:
     - name: Регистрация в службе Azure NetApp Files
@@ -131,6 +133,32 @@
       href: /rest/api/netapp/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.netapp/allversions
+    - name: 'Средство создания моментальных снимков, согласованных с приложениями Azure (AzAcSnap)'
+      items:
+        - name: Начало работы с AzAcSnap
+          href: azacsnap-get-started.md
+        - name: Установка AzAcSnap
+          href: azacsnap-installation.md
+        - name: Аварийное восстановление с использованием AzAcSnap
+          href: azacsnap-disaster-recovery.md
+        - name: Советы и рекомендации по использованию AzAcSnap
+          href: azacsnap-tips.md
+        - name: Устранение неполадок с AzAcSnap
+          href: azacsnap-troubleshoot.md
+        - name: Справочник по командам AzAcSnap
+          items:
+            - name: Настройка AzAcSnap
+              href: azacsnap-cmd-ref-configure.md
+            - name: Тестирование AzAcSnap
+              href: azacsnap-cmd-ref-test.md
+            - name: Резервное копирование с помощью AzAcSnap
+              href: azacsnap-cmd-ref-backup.md
+            - name: Получение сведений с помощью AzAcSnap
+              href: azacsnap-cmd-ref-details.md
+            - name: Удаление с помощью AzAcSnap
+              href: azacsnap-cmd-ref-delete.md
+            - name: Восстановление с помощью AzAcSnap
+              href: azacsnap-cmd-ref-restore.md
 - name: Ресурсы
   items:
     - name: Цены

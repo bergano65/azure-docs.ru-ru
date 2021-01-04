@@ -290,6 +290,8 @@
         - name: Использование проверки работоспособности в диспетчере развертывания
           displayName: adm
           href: deployment-manager-tutorial-health-check.md
+    - name: 'Схема Microsoft Learn, посвященная шаблонам'
+      href: /learn/paths/deploy-manage-resource-manager-templates/
 - name: Основные понятия
   items:
     - name: Рекомендации по работе с шаблоном

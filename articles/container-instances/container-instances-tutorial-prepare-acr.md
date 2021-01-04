@@ -40,7 +40,7 @@ ms.locfileid: "92746953"
 az acr show --name <acrName> --query loginServer --output table
 ```
 
-Например, если имя реестра — *mycontainerregistry082* :
+Например, если имя реестра — *mycontainerregistry082*:
 
 ```azurecli
 az acr show --name mycontainerregistry082 --query loginServer --output table
@@ -58,7 +58,7 @@ mycontainerregistry082.azurecr.io
 docker images
 ```
 
-Вместе с другими образами, присутствующими на компьютере, появится образ *aci-tutorial-app* , созданный вами при работе с [предыдущим руководством](container-instances-tutorial-prepare-app.md).
+Вместе с другими образами, присутствующими на компьютере, появится образ *aci-tutorial-app*, созданный вами при работе с [предыдущим руководством](container-instances-tutorial-prepare-app.md).
 
 ```console
 $ docker images
@@ -111,7 +111,7 @@ v1: digest: sha256:ed67fff971da47175856505585dcd92d1270c3b37543e8afd46014d328f05
 az acr repository list --name <acrName> --output table
 ```
 
-Пример:
+Пример.
 
 ```azurecli
 az acr repository list --name mycontainerregistry082 --output table

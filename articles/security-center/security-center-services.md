@@ -1,6 +1,6 @@
 ---
-title: Поддерживаемые функции, доступные в Центре безопасности Azure | Документация Майкрософт
-description: Этот документ содержит список поддерживаемых служб в Центре безопасности Azure.
+title: Функции Центра безопасности Azure в зависимости от ОС, типа компьютера и облака
+description: Узнайте, какие функции Центра безопасности Azure доступны в зависимости от ОС, типа компьютера и облачного развертывания.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/12/2020
+ms.date: 12/17/2020
 ms.author: memildin
-ms.openlocfilehash: 40d70c7bd740d8c72ddb72047a3bae3586e1aa1f
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: b3671a57b8371c47b1690b4bf6be008d695d1ca0
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445257"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654750"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -99,13 +99,48 @@ ms.locfileid: "94445257"
 | McAfee v10+ | Семейство Linux Server  | Нет | Да * *\** _ |
 | Sophos, начиная с версии 9| Семейство Linux Server  | Нет | Да _*\**_  |
 
- _ *\** *Сведения о поддержке и вспомогательные данные сейчас доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Они не отображаются на портале Центра безопасности Azure.
+ _*\**_ Сведения о поддержке и вспомогательные данные сейчас доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Они не отображаются на портале Центра безопасности Azure.
 
 > [!NOTE]
 > Чтобы служба System Center Endpoint Protection (SCEP) была доступна для обнаружения на виртуальной машине Windows Server 2008 R2, службу нужно установить после установки PowerShell 3.0 или более поздней версии.
 
 
-## <a name="next-steps"></a>Следующие шаги
+
+## <a name="feature-support-in-government-clouds"></a>Поддержка компонентов и функций в облаках для государственных организаций
+
+| Служба, компонент или функция | US Gov | China Gov |
+|------|:----:|:----:|
+|[JIT-доступ к виртуальной машине](security-center-just-in-time.md) (1)|✔|✔|
+|[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md) (1)|✔|-|
+|[Адаптивные элементы управления приложениями](security-center-adaptive-application.md) (1)|✔|✔|
+|[Адаптивная защита сети](security-center-adaptive-network-hardening.md) (1)|-|-|
+|[Защита узлов Docker](harden-docker-hosts.md) (1)|✔|✔|
+|[Интегрированная оценка уязвимостей для компьютеров](deploy-vulnerability-assessment-vm.md) (1)|-|-|
+|[Microsoft Defender для конечных точек](harden-docker-hosts.md) (1)|✔|-|
+|[Подключение учетной записи AWS](quickstart-onboard-aws.md) (1)|-|-|
+|[Подключение учетной записи GCP](quickstart-onboard-gcp.md) (1)|-|-|
+|[непрерывный экспорт.](continuous-export.md)|✔|✔|
+|[Автоматизация рабочих процессов](workflow-automation.md)|✔|✔|
+|[Правила исключения рекомендаций](exempt-resource.md)|-|-|
+|[Правила подавления оповещений](alerts-suppression-rules.md)|✔|✔|
+|[Отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)|✔|✔|
+|[Инвентаризация ресурсов](asset-inventory.md)|-|-|
+|[Azure Defender для Службы приложений](defender-for-app-service-introduction.md)|-|-|
+|[Azure Defender для службы хранилища](defender-for-storage-introduction.md)|✔|-|
+|[Azure Defender для SQL](defender-for-sql-introduction.md)|✔|✔ (2)|
+|[Azure Defender для Key Vault](defender-for-key-vault-introduction.md)|-|-|
+|[Azure Defender для Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
+|[Azure Defender для DNS](defender-for-dns-introduction.md)|-|-|
+|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
+|[Azure Defender для реестров контейнеров](defender-for-container-registries-introduction.md)|✔ (2)|-|
+|||
+
+(1) Требуется _ *Azure Defender для серверов**.
+
+(2) Частично.
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [в Центре безопасности собираются данные с помощью агента Log Analytics](security-center-enable-data-collection.md).
 - Узнайте, как [Центр безопасности управляет данными и защищает их](security-center-data-security.md).

@@ -89,6 +89,22 @@
       href: event-hubs-availability-and-consistency.md
     - name: Масштабируемость
       href: event-hubs-scalability.md
+    - name: Федерация
+      items:
+        - name: Федерация для нескольких сайтов и нескольких регионов
+          href: event-hubs-federation-overview.md
+        - name: Задачи и приложения репликации событий
+          href: event-hubs-federation-replicator-functions.md
+        - name: Шаблоны задач репликации событий
+          href: event-hubs-federation-patterns.md
+        - name: Настроенные задачи репликации
+          href: event-hubs-federation-configuration.md
+        - name: Репликация событий между Центрами событий
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopy'
+        - name: Отправка событий в Служебную шину Azure
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopyToServiceBus'
+        - name: Получение событий из Служебной шины Azure
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopyToEventHub'
     - name: Геоизбыточное аварийное восстановление
       items:
         - name: Геоизбыточное аварийное восстановление и георепликация
