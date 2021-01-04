@@ -1,18 +1,18 @@
 ---
 title: Регистрация и сканирование клиента Power BI (Предварительная версия)
 description: Узнайте, как использовать портал Azure зрения для регистрации и сканирования клиента Power BI.
-author: viseshag
-ms.author: viseshag
+author: chanuengg
+ms.author: csugunan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 3813d58d894d87051b1bcf8b512c848d527a52bb
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 3d8107e980b9cad9bc55cb51cc78b63985986ba5
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97615854"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696231"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Регистрация и сканирование клиента Power BI (Предварительная версия)
 
@@ -72,8 +72,6 @@ ms.locfileid: "97615854"
 
 Сначала добавьте специальный флаг функции в URL-адрес зрения. 
 
-1. Добавьте следующую строку в конец URI экземпляра зрения: `?feature.ext.catalog={"pbi":"true"}` . Это позволяет включить параметр регистрации Power BI в каталоге.
-
 1. Щелкните значок **центра управления** .
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/management-center.png" alt-text="Значок центра управления.":::
@@ -112,6 +110,5 @@ ms.locfileid: "97615854"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об использовании командлетов PowerShell для регистрации и сканирования Power BI клиента см. в следующих статьях:
-  
-- [Использование PowerShell для регистрации и сканирования Power BI](powershell-register-scan-power-bi.md)
+- [Обзор каталога данных Azure Purview](how-to-browse-catalog.md)
+- [Поиск по каталогу данных Azure Purview](how-to-search-catalog.md)

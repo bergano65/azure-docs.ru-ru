@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: d6f3d2051790ba02f5e4ea1687830ccbdf6dcf21
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 1ab382ec10d932b94961c73b7d7ac9082125a88c
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285133"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704526"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Как создать хранилище ключей Azure и политику доступа к хранилищу с помощью шаблона диспетчер ресурсов
 
@@ -23,7 +23,7 @@ ms.locfileid: "93285133"
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
@@ -176,14 +176,14 @@ ms.locfileid: "93285133"
 
 Вы можете использовать портал Azure для развертывания описанных выше шаблонов с помощью параметра **создать собственный шаблон в редакторе** , как описано здесь: [развертывание ресурсов из пользовательского шаблона](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
 
-Вы также можете сохранить приведенные выше шаблоны в файлы и использовать следующие команды:  [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create):
+Вы также можете сохранить приведенные выше шаблоны в файлы и использовать следующие команды:  [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create):
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile key-vault-template.json
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file key-vault-template.json
+az deployment group create --resource-group ExampleGroup --template-file key-vault-template.json
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -219,4 +219,4 @@ Write-Host "Press [ENTER] to continue..."
 
 - [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md)
 - [Аутентификация в хранилище ключей](authentication.md)
-- [Руководство разработчика хранилища ключей Azure](developers-guide.md)
+- [Azure Key Vaultное руководством разработчика](developers-guide.md)

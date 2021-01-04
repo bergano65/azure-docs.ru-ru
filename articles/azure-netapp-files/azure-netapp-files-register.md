@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 06/09/2020
 ms.author: b-juche
-ms.openlocfilehash: e2838b759a611cb55b9fd3fadf834c84eb74210d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a61d6ba1f908a7dae56db066bfae329fc26f1c5c
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91533644"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696126"
 ---
 # <a name="register-for-azure-netapp-files"></a>Регистрация в службе Azure NetApp Files
 
@@ -30,7 +30,8 @@ ms.locfileid: "91533644"
 
 ## <a name="submit-a-waitlist-request-for-accessing-the-service"></a><a name="waitlist"></a>Отправка запроса ваитлист для доступа к службе
 
-1. Отправьте запрос ваитлист для доступа к службе Azure NetApp Files на [странице отправки Azure NetApp Files ваитлист](https://aka.ms/azurenetappfiles). 
+1. Перейдите на следующую страницу и отправьте запрос ваитлист для доступа к службе Azure NetApp Files:  
+    [**Страница отправки Azure NetApp Files ваитлист**](https://aka.ms/azurenetappfiles) 
 
     Ваитлист регистрация не гарантирует немедленного доступа к службе. 
 
@@ -106,6 +107,6 @@ ms.locfileid: "91533644"
       ![Зарегистрированный Microsoft.NetApp](../media/azure-netapp-files/azure-netapp-files-registered-resource-providers.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание учетной записи NetApp](azure-netapp-files-create-netapp-account.md)

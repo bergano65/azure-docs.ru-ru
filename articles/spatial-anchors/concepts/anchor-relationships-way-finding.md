@@ -8,12 +8,12 @@ ms.author: parkerra
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 8c321eae9451715077aa50d163b62b51ec88ce1a
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ce79fe88b33659241a226af7bbb7a966ede41abb
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95496891"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696168"
 ---
 # <a name="anchor-relationships-and-way-finding-in-azure-spatial-anchors"></a>Связи между привязками и поиск пути в Пространственных привязках Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "95496891"
 
 Чтобы создать связи между привязками в нескольких сеансах, сделайте следующее:
 
-1. Приложение создает несколько привязок в одном сеансе CloudSpatialAnchorSession.
+1. Приложение создает несколько привязок (привязок A и B) в одном Клаудспатиаланчорсессион.
 2. В другой момент приложение размещает одну из этих привязок (скажем, Привязку A), используя новый сеанс CloudSpatialAnchorSession.
 3. Перейдите в новое расположение. Базовая платформа смешанной или дополненной реальности отслеживает это перемещение.
 4. Создайте привязку В в том же сеансе CloudSpatialAnchorSession. Теперь привязки А, Б и В будут связаны. Эта связь сохраняется и обрабатывается службой "Пространственные привязки".

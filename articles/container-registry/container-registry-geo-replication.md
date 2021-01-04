@@ -5,12 +5,12 @@ author: stevelas
 ms.topic: article
 ms.date: 07/21/2020
 ms.author: stevelas
-ms.openlocfilehash: 636896edf8180052508f366bcc548efe13dec1e2
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: e5f0fe76b599874afe8d64c293f3d914da5dd243
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95810050"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705172"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Георепликация в реестре контейнеров Azure
 
@@ -59,6 +59,8 @@ docker push contosowesteu.azurecr.io/public/products/web:1.2
 * Управление единственной конфигурацией развертываний образов, так как все регионы используют один и тот же URL-адрес образа: `contoso.azurecr.io/public/products/web:1.2`
 * Отправляйте данные в отдельный реестр, а ACR будет управлять георепликацией. Запись контроля доступа реплицирует только уникальные уровни, уменьшая объем данных, передаваемых между регионами. 
 * Настройка региональных [веб-перехватчиков](container-registry-webhook.md) для уведомления о событиях в конкретных репликах.
+
+Реестр контейнеров Azure также поддерживает [зоны доступности](zone-redundancy.md) для создания отказоустойчивого и высокого уровня доступности реестра контейнеров Azure в регионе Azure. Сочетание зон доступности для обеспечения избыточности в пределах региона и георепликации в нескольких регионах повышает надежность и производительность реестра.
 
 ## <a name="configure-geo-replication"></a>Настройка георепликации
 

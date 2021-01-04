@@ -507,7 +507,8 @@
           href: speech-container-howto-on-premises.md
         - name: Использование контейнеров службы "Речь" с экземплярами контейнеров Azure
           displayName: 'ACI,azure container instances,container instances,containers'
-          href: deploy-speech-on-container-instances.md
+          maintainContext: true
+          href: ../containers/azure-container-instance-recipe.md
         - name: Часто задаваемые вопросы о контейнерах
           href: speech-container-faq.md
         - name: Документация по контейнерам Cognitive Services

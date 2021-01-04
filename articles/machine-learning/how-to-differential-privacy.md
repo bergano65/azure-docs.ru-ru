@@ -1,7 +1,7 @@
 ---
-title: Как сохранить конфиденциальность данных с помощью пакетов Вхитеноисе (Предварительная версия)
+title: Как сохранить конфиденциальность данных с помощью пакетов Смартноисе (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Сведения о том, как применить рекомендации по дифференциальной конфиденциальности для моделей Машинного обучения Azure с помощью пакетов WhiteNoise.
+description: Узнайте, как применить рекомендации по обеспечению разностной конфиденциальности для Машинное обучение Azure моделей с помощью пакетов Смартноисе.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,31 +10,27 @@ ms.custom: how-to
 ms.author: slbird
 author: slbird
 ms.reviewer: luquinta
-ms.date: 07/09/2020
-ms.openlocfilehash: 355d96fe5a617effab89fbd038f7f1785215f88f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/21/2020
+ms.openlocfilehash: f004f0f052e466441999c1bfd511823edd6b907e
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90897680"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722442"
 ---
 # <a name="use-differential-privacy-in-azure-machine-learning-preview"></a>Использование разностной конфиденциальности в Машинное обучение Azure (Предварительная версия)
 
-
-
-Сведения о том, как применить рекомендации по дифференциальной конфиденциальности для моделей Машинного обучения Azure с помощью пакетов Python WhiteNoise.
+Узнайте, как применить рекомендации по обеспечению разностной конфиденциальности для Машинное обучение Azure моделей с помощью пакетов Python Смартноисе.
 
 Дифференциальная конфиденциальность является образцовым определением конфиденциальности. Системы, которые соответствуют этому определению конфиденциальности, предоставляют надежную защиту от широкого спектра атак с целью реконструкции и переидентификации данных, в том числе атак злоумышленников, располагающих дополнительными сведениями. См. дополнительные сведения о [работе дифференциальной конфиденциальности](./concept-differential-privacy.md).
 
-> [!NOTE]
-> Обратите внимание, что мы переименованы набор средств, и в ближайшие недели будет введено новое имя. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 - [Python 3](https://www.python.org/downloads/);
 
-## <a name="install-whitenoise-packages"></a>Установка пакетов WhiteNoise
+## <a name="install-smartnoise-packages"></a>Установка пакетов Смартноисе
 
 ### <a name="standalone-installation"></a>Автономная установка
 
@@ -42,45 +38,45 @@ ms.locfileid: "90897680"
 
 В приведенных ниже инструкциях предполагается, что команды `python` и `pip` сопоставлены с `python3` и `pip3`.
 
-Используйте pip, чтобы установить [пакеты Python WhiteNoise](https://pypi.org/project/opendp-whitenoise/).
+Используйте PIP для установки [пакетов Python смартноисе](https://pypi.org/project/opendp-smartnoise/).
 
-`pip install opendp-whitenoise`
+`pip install opendp-smartnoise`
 
 Чтобы убедиться, что пакеты установлены, откройте командную строку Python и введите следующее.
 
 ```python
-import opendp.whitenoise.core
-import opendp.whitenoise.sql
+import opendp.smartnoise.core
+import opendp.smartnoise.sql
 ```
 
 Если импорт выполнен успешно, то библиотеки установлены и готовы к использованию.
 
 ### <a name="docker-image"></a>Образ Docker
 
-Вы также можете использовать пакеты WhiteNoise с Docker.
+Вы также можете использовать пакеты Смартноисе с DOCKER.
 
-Извлеките образ `opendp/whitenoise` для использования библиотек в контейнере Docker, который включает Spark, Jupyter и пример кода.
+Извлеките образ `opendp/smartnoise` для использования библиотек в контейнере Docker, который включает Spark, Jupyter и пример кода.
 
 ```sh
-docker pull opendp/whitenoise:privacy
+docker pull opendp/smartnoise:privacy
 ```
 
 После извлечения образа запустите сервер Jupyter.
 
 ```sh
-docker run --rm -p 8989:8989 --name whitenoise-run opendp/whitenoise:privacy
+docker run --rm -p 8989:8989 --name smartnoise-run opendp/smartnoise:privacy
 ```
 
-Это запустит сервер Jupyter на порте `8989` вашего `localhost` с паролем `pass@word99`. Если вы использовали приведенную выше командную строку для запуска контейнера с именем `whitenoise-privacy`, можете открыть терминал bash на сервере Jupyter, выполнив следующую команду.
+Это запустит сервер Jupyter на порте `8989` вашего `localhost` с паролем `pass@word99`. Если вы использовали приведенную выше командную строку для запуска контейнера с именем `smartnoise-privacy`, можете открыть терминал bash на сервере Jupyter, выполнив следующую команду.
 
 ```sh
-docker exec -it whitenoise-run bash
+docker exec -it smartnoise-run bash
 ```
 
 Этот экземпляр Docker очищает все состояния при завершении работы, поэтому вы потеряете все записные книжки, созданные в запущенном экземпляре. Чтобы устранить эту проблему, можно привязать локальную папку к контейнеру при запуске.
 
 ```sh
-docker run --rm -p 8989:8989 --name whitenoise-run --mount type=bind,source=/Users/your_name/my-notebooks,target=/home/privacy/my-notebooks opendp/whitenoise:privacy
+docker run --rm -p 8989:8989 --name smartnoise-run --mount type=bind,source=/Users/your_name/my-notebooks,target=/home/privacy/my-notebooks opendp/smartnoise:privacy
 ```
 
 Все записные книжки, созданные в папке *my-notebooks*, будут храниться в локальной файловой системе.
@@ -95,7 +91,7 @@ docker run --rm -p 8989:8989 --name whitenoise-run --mount type=bind,source=/Use
 import os
 import sys
 import numpy as np
-import opendp.whitenoise.core as wn
+import opendp.smartnoise.core as sn
 
 data_path = os.path.join('.', 'data', 'PUMS_california_demographics_1000', 'data.csv')
 var_names = ["age", "sex", "educ", "race", "income", "married", "pid"]
@@ -104,19 +100,19 @@ var_names = ["age", "sex", "educ", "race", "income", "married", "pid"]
 В этом примере мы вычисляем среднее значение и дисперсию возраста.  Мы используем общий `epsilon`, равный 1,0 (epsilon — это параметр конфиденциальности, распределяющий наш бюджет конфиденциальности по двум величинам, которые мы хотим вычислить). Дополнительные сведения о [метриках конфиденциальности](concept-differential-privacy.md#differential-privacy-metrics).
 
 ```python
-with wn.Analysis() as analysis:
+with sn.Analysis() as analysis:
     # load data
-    data = wn.Dataset(path = data_path, column_names = var_names)
+    data = sn.Dataset(path = data_path, column_names = var_names)
 
     # get mean of age
-    age_mean = wn.dp_mean(data = wn.cast(data['age'], type="FLOAT"),
+    age_mean = sn.dp_mean(data = sn.cast(data['age'], type="FLOAT"),
                           privacy_usage = {'epsilon': .65},
                           data_lower = 0.,
                           data_upper = 100.,
                           data_n = 1000
                          )
     # get variance of age
-    age_var = wn.dp_variance(data = wn.cast(data['age'], type="FLOAT"),
+    age_var = sn.dp_variance(data = sn.cast(data['age'], type="FLOAT"),
                              privacy_usage = {'epsilon': .35},
                              data_lower = 0.,
                              data_upper = 100.,
@@ -156,19 +152,19 @@ Privacy usage: approximate {
 | SUM           |            | Добавления отсутствующих данных |
 | Вариативность/ковариация |      | Преобразование  |
 
-Дополнительные сведения см. в [записной книжке анализ данных](https://github.com/opendifferentialprivacy/whitenoise-samples/blob/master/analysis/basic_data_analysis.ipynb) .
+Дополнительные сведения см. в [записной книжке анализ данных](https://github.com/opendifferentialprivacy/smartnoise-samples/blob/master/analysis/basic_data_analysis.ipynb) .
 
 ## <a name="approximate-utility-of-differentially-private-releases"></a>Приблизительная полезность выпусков с дифференциальной конфиденциальностью
 
 Так как дифференциальная конфиденциальность работает путем калибровки шума, полезность выпусков может зависеть от риска конфиденциальности.  Как правило, шум, необходимый для защиты каждого отдельного пользователя, становится незначительным по мере увеличения размера образцов, однако кардинальным образом меняет результат для выпусков, ориентированных на отдельного пользователя.  Аналитики могут изучить сведения о точности для выпуска, чтобы определить, насколько он полезен.
 
 ```python
-with wn.Analysis() as analysis:
+with sn.Analysis() as analysis:
     # load data
-    data = wn.Dataset(path = data_path, column_names = var_names)
+    data = sn.Dataset(path = data_path, column_names = var_names)
 
     # get mean of age
-    age_mean = wn.dp_mean(data = wn.cast(data['age'], type="FLOAT"),
+    age_mean = sn.dp_mean(data = sn.cast(data['age'], type="FLOAT"),
                           privacy_usage = {'epsilon': .65},
                           data_lower = 0.,
                           data_upper = 100.,
@@ -202,11 +198,11 @@ Age accuracy is: 0.2995732273553991
 ```python
 income_edges = list(range(0, 100000, 10000))
 
-with wn.Analysis() as analysis:
-    data = wn.Dataset(path = data_path, column_names = var_names)
+with sn.Analysis() as analysis:
+    data = sn.Dataset(path = data_path, column_names = var_names)
 
-    income_histogram = wn.dp_histogram(
-            wn.cast(data['income'], type='int', lower=0, upper=100),
+    income_histogram = sn.dp_histogram(
+            sn.cast(data['income'], type='int', lower=0, upper=100),
             edges = income_edges,
             upper = 1000,
             null_value = 150,
@@ -216,11 +212,11 @@ with wn.Analysis() as analysis:
 
 Так как отдельные пользователи дизъюнктивно разнесены по ячейкам гистограммы, расходы на конфиденциальность начисляются только один раз для каждой гистограммы, даже если гистограмма содержит много ячеек.
 
-Дополнительные сведения о гистограммах см. в [записной книжке о гистограммах](https://github.com/opendifferentialprivacy/whitenoise-samples/blob/master/analysis/histograms.ipynb).
+Дополнительные сведения о гистограммах см. в [записной книжке о гистограммах](https://github.com/opendifferentialprivacy/smartnoise-samples/blob/master/analysis/histograms.ipynb).
 
 ## <a name="generate-a-covariance-matrix"></a>Создание матрицы ковариаций
 
-WhiteNoise предлагает три различных варианта использования для функции `dp_covariance`.
+Смартноисе предлагает три различные `dp_covariance` функции:
 
 - Ковариация между двумя векторами
 - Матрица ковариаций
@@ -229,13 +225,13 @@ WhiteNoise предлагает три различных варианта ис�
 Ниже приведен пример вычисления скалярной ковариации.
 
 ```python
-with wn.Analysis() as analysis:
-    wn_data = wn.Dataset(path = data_path, column_names = var_names)
+with sn.Analysis() as analysis:
+    wn_data = sn.Dataset(path = data_path, column_names = var_names)
 
-    age_income_cov_scalar = wn.dp_covariance(
-      left = wn.cast(wn_data['age'], 
+    age_income_cov_scalar = sn.dp_covariance(
+      left = sn.cast(wn_data['age'], 
       type = "FLOAT"), 
-      right = wn.cast(wn_data['income'], 
+      right = sn.cast(wn_data['income'], 
       type = "FLOAT"), 
       privacy_usage = {'epsilon': 1.0},
       left_lower = 0., 
@@ -247,8 +243,8 @@ with wn.Analysis() as analysis:
 ```
 
 Дополнительные сведения см. в [записной книжке ковариации](
-https://github.com/opendifferentialprivacy/whitenoise-samples/blob/master/analysis/covariance.ipynb).
+https://github.com/opendifferentialprivacy/smartnoise-samples/blob/master/analysis/covariance.ipynb).
 
 ## <a name="next-steps"></a>Next Steps
 
-- Изучите [примеры записных книжек WhiteNoise](https://github.com/opendifferentialprivacy/whitenoise-samples/tree/master/analysis).
+- Ознакомьтесь с [примерами записных книжек смартноисе](https://github.com/opendifferentialprivacy/smartnoise-samples/tree/master/analysis).

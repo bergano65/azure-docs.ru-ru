@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 72d7a40c38f3629a70260f223074b456dff9ce38
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3ae3e12c11f194b3efcc149382dc952bd74d38b5
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182841"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704322"
 ---
 # <a name="microsoft-azure-attestation-troubleshooting-guide"></a>Руководство по устранению неполадок аттестации Microsoft Azure
 
@@ -280,7 +280,7 @@ At line:1 char:1
 Пользователь назначен с соответствующими ролями. Но при управлении политиками аттестации с помощью PowerShell возникают проблемы с авторизацией.
 
 ### <a name="error"></a>Ошибка
-Клиент с идентификатором объекта <object Id>  не имеет авторизации для выполнения действия Microsoft. Authorization/roleassignments/overwrite Scope ' подписками/ <subscriptionId> resourcegroups/secure_enclave_poc/провидерс/Микрософт.аусоризатион/ролеассигнментс/ <role assignmentId> ' или Недопустимая область. Если доступ был недавно предоставлен, обновите учетные данные.
+Клиент с идентификатором объекта идентификатор объекта не &lt; &gt;  имеет авторизации для выполнения действия Microsoft. Authorization/roleassignments/overwrite Scope "подписками/ &lt; subscriptionId &gt; resourcegroups/secure_enclave_poc/провидерс/Микрософт.аусоризатион/ролеассигнментс/ &lt; Role assignmentId", &gt; либо Недопустимая область. Если доступ был недавно предоставлен, обновите учетные данные.
 
 ### <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 

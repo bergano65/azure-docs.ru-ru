@@ -4,12 +4,12 @@ description: В этом руководстве вы узнаете, как ра
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.custom: mvc, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 89c49ae530b7a4716bc6e8bf0ea6ccb011847eb8
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: c2e2b2883bfa01d3a36de5d58425449f6f973010
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738914"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702163"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по Развертывание приложения Java в кластере Service Fabric в Azure
 
@@ -114,10 +114,10 @@ ms.locfileid: "92738914"
 10. Создайте ресурс Центров событий, используя следующую команду. Следуя инструкциям, введите данные namespaceName, eventHubName, customerGroupName, sendAuthorizationRule и receiveAuthorizationRule.
 
     ```azurecli
-    az group deployment create -g [RESOURCE-GROUP-NAME] --template-file eventhubsdeploy.json
+    az deployment group create -g [RESOURCE-GROUP-NAME] --template-file eventhubsdeploy.json
 
     Example:
-    az group deployment create -g testeventhubsrg --template-file eventhubsdeploy.json
+    az deployment group create -g testeventhubsrg --template-file eventhubsdeploy.json
     Please provide string value for 'namespaceName' (? for help): testeventhubnamespace
     Please provide string value for 'eventHubName' (? for help): testeventhub
     Please provide string value for 'consumerGroupName' (? for help): testeventhubconsumergroup
@@ -148,13 +148,13 @@ ms.locfileid: "92738914"
     }
     ```
 
-11. Запустите скрипт *eventhubssastoken.py* , чтобы создать URL-адрес SAS для созданного ресурса EventHubs. Этот URL-адрес SAS используется кластером Service Fabric для отправки журналов в Центры событий. В результате для формирования URL-адреса используется политика **отправителя** . Скрипт возвращает URL-адрес SAS для ресурса Центров событий, который используется на следующем шаге:
+11. Запустите скрипт *eventhubssastoken.py*, чтобы создать URL-адрес SAS для созданного ресурса EventHubs. Этот URL-адрес SAS используется кластером Service Fabric для отправки журналов в Центры событий. В результате для формирования URL-адреса используется политика **отправителя**. Скрипт возвращает URL-адрес SAS для ресурса Центров событий, который используется на следующем шаге:
 
     ```python
     python3 eventhubssastoken.py 'testeventhubs' 'testeventhubs' 'sender' '[PRIMARY-KEY]'
     ```
 
-    Скопируйте значение поля **sr** в возвращаемом JSON. Значение поля **sr** — это токен SAS для концентраторов событий. Следующий URL-адрес является примером поля **sr** :
+    Скопируйте значение поля **sr** в возвращаемом JSON. Значение поля **sr** — это токен SAS для концентраторов событий. Следующий URL-адрес является примером поля **sr**:
 
     ```output
     https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender
@@ -176,8 +176,8 @@ ms.locfileid: "92738914"
     }
     ```
 
-13. Открывает **sfdeploy.parameters.json** . Измените следующие параметры, а затем сохраните файл.
-    - **clusterName** . Вы можете использовать только строчные буквы и цифры.
+13. Открывает **sfdeploy.parameters.json**. Измените следующие параметры, а затем сохраните файл.
+    - **clusterName**. Вы можете использовать только строчные буквы и цифры.
     - **adminUserName** (на значение, отличное от пустого).
     - **adminUserName** (на значение, отличное от пустого).
 
@@ -189,7 +189,7 @@ ms.locfileid: "92738914"
 
 ## <a name="deploy-your-application-to-the-cluster"></a>Развертывание приложения в кластере
 
-1. Перед развертыванием приложения необходимо добавить следующий фрагмент кода в файл *Voting/VotingApplication/ApplicationManifest.xml* . Поле **X509FindValue** — это отпечаток, полученный на шаге 4 раздела **Создание кластера Service Fabric в Azure** . Этот фрагмент кода вложен в поле **ApplicationManifest** (корневое поле).
+1. Перед развертыванием приложения необходимо добавить следующий фрагмент кода в файл *Voting/VotingApplication/ApplicationManifest.xml*. Поле **X509FindValue** — это отпечаток, полученный на шаге 4 раздела **Создание кластера Service Fabric в Azure**. Этот фрагмент кода вложен в поле **ApplicationManifest** (корневое поле).
 
     ```xml
     <Certificates>
@@ -209,13 +209,13 @@ ms.locfileid: "92738914"
     sfctl cluster select --endpoint https://<clustername>.<region>.cloudapp.azure.com:19080 --pem sfctlconnection.pem --no-verify
     ```
 
-4. Чтобы развернуть приложение, перейдите в папку *Voting/Scripts* и запустите скрипт **install.sh** .
+4. Чтобы развернуть приложение, перейдите в папку *Voting/Scripts* и запустите скрипт **install.sh**.
 
     ```bash
     ./install.sh
     ```
 
-5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите `https://testlinuxcluster.westus.cloudapp.azure.com:19080`. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh* , нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере.
+5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите `https://testlinuxcluster.westus.cloudapp.azure.com:19080`. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh*, нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере.
 
     ![SFX Java Azure](./media/service-fabric-tutorial-java-deploy-azure/sfxjavaonazure.png)
 
@@ -223,7 +223,7 @@ ms.locfileid: "92738914"
 
     ![Приложение для голосования Java Azure](./media/service-fabric-tutorial-java-deploy-azure/votingappjavaazure.png)
 
-7. Чтобы удалить приложение из кластера, запустите скрипт *uninstall.sh* в папке **Scripts** .
+7. Чтобы удалить приложение из кластера, запустите скрипт *uninstall.sh* в папке **Scripts**.
 
     ```bash
     ./uninstall.sh

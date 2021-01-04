@@ -2,13 +2,13 @@
 title: Новые возможности агента серверов с поддержкой ARC в Azure
 description: В этой статье содержатся заметки о выпуске агента серверов с поддержкой ARC в Azure. Для многих из обобщенных проблем имеются ссылки на дополнительные сведения.
 ms.topic: conceptual
-ms.date: 12/14/2020
-ms.openlocfilehash: 3a01113d0d6416fb050f5c66191d5c420b7ac137
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.date: 12/21/2020
+ms.openlocfilehash: 4b7fd97d5b7e1cddc1d78e0d24205890e74c45c1
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505653"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722527"
 ---
 # <a name="whats-new-with-azure-arc-enabled-servers-agent"></a>Новые возможности агента серверов с поддержкой ARC в Azure
 
@@ -20,6 +20,8 @@ ms.locfileid: "97505653"
 
 ## <a name="december-2020"></a>Декабрь 2020 г.
 
+Версия: 1,3
+
 ### <a name="new-feature"></a>Новая функция
 
 Добавлена поддержка Windows Server 2008 R2.
@@ -30,11 +32,15 @@ ms.locfileid: "97505653"
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 
+Версия: 1,2
+
 ### <a name="fixed"></a>Фиксированный
 
 Устранена проблема, при которой конфигурация прокси-сервера может быть потеряна после обновления в дистрибутивах на основе RPM.
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
+
+Версия: 1.1
 
 ### <a name="fixed"></a>Фиксированный
 
@@ -61,7 +67,7 @@ ms.locfileid: "97505653"
 - Добавлен `azcmagent show --json` параметр для вывода состояния агента в удобном для анализа формате.
 - Добавлен флаг в `azcmagent show` выходных данных, указывающий, находится ли сервер на виртуальной машине, размещенной в Azure.
 - Добавлен `azcmagent disconnect --force-local-only` параметр, позволяющий сбрасывать состояние локального агента при недоступности службы Azure.
-- Добавлен `azcmagent connect --cloud` параметр для поддержки дополнительных облаков. В этом выпуске служба поддерживается только в Azure во время выпуска агента.
+- Добавлен `azcmagent connect --cloud` параметр для поддержки других облаков. В этом выпуске служба поддерживается только в Azure во время выпуска агента.
 - Агент переведен на языки, поддерживаемые Azure.
 
 ### <a name="fixed"></a>Фиксированный

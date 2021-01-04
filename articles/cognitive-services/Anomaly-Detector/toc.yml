@@ -12,14 +12,6 @@
       items:
         - name: Клиентские библиотеки Детектора аномалий
           href: ./quickstarts/client-libraries.md
-    - name: REST API
-      items:
-        - name: Использование C#
-          href: quickstarts/detect-data-anomalies-csharp.md
-        - name: Использование Java
-          href: quickstarts/detect-data-anomalies-java.md
-        - name: Использование Python
-          href: quickstarts/detect-data-anomalies-python.md
 - name: Учебники
   items:
     - name: "Визуализация аномалий в пакетном режиме с помощью Power\_BI"

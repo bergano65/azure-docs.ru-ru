@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: 4babd015b05527cb03d2747b1c9b9a34941634ab
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: d620df0b55b024cd5d7c25ea17d9b09c5c5da8ff
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657011"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722884"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Создание веб-приложения Service Manager с помощью автоматизированного скрипта
 
-Чтобы создать веб-приложение для экземпляра Service Manager используйте следующий скрипт. См. дополнительные сведения о подключении [Service Manager](./itsmc-connections.md#create-and-deploy-service-manager-web-app-service).
+Чтобы создать веб-приложение для экземпляра Service Manager используйте следующий скрипт. См. дополнительные сведения о подключении [Service Manager](./itsmc-connections-scsm.md).
 
 Запустите скрипт, указав следующие данные:
 
@@ -29,9 +29,6 @@ ms.locfileid: "97657011"
 Скрипт создает веб-приложение, используя имя, которое вы указали (с несколькими дополнительными строками, обеспечивающими его уникальность). При этом создается **URL-адрес приложения**, **идентификатор клиента** и **секрет клиента**.
 
 Сохраните эти значения. Вы сможете их использовать при создании подключения с помощью Соединителя управления ИТ-услугами.
-
-> [!NOTE]
-> Эта статья содержит ссылки на термин *список разрешений*. Корпорация Майкрософт больше не использует его. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -321,5 +318,5 @@ if(!$err)
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Настройте гибридное подключение](./itsmc-connections.md#configure-the-hybrid-connection).
+[Настройте гибридное подключение](./itsmc-connections-scsm.md#configure-the-hybrid-connection).
 

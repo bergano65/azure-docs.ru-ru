@@ -11,16 +11,19 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/18/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8560acd9c5a11004c5144441d395863c8b85edba
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0fa3492555b2870ae7b95abec08bbd3280cdc985
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461401"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705070"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
-Из этой статьи вы узнаете, как настроить брандмауэр Azure для управления доступом к рабочей области Машинное обучение Azure и к общедоступному Интернету. Дополнительные сведения о защите Машинное обучение Azure см. в разделе [Корпоративная безопасность для машинное обучение Azure](concept-enterprise-security.md)
+Из этой статьи вы узнаете, как настроить брандмауэр Azure для управления доступом к рабочей области Машинное обучение Azure и к общедоступному Интернету. Дополнительные сведения о защите Машинное обучение Azure см. в разделе [Корпоративная безопасность для машинное обучение Azure](concept-enterprise-security.md).
+
+> [!WARNING]
+> Доступ к хранилищу данных за брандмауэром поддерживается только в первом интерфейсе кода. Использование [машинное обучение Azure Studio](overview-what-is-machine-learning-studio.md) для доступа к данным за брандмауэром не поддерживается. Для работы с хранилищем данных в частной сети с помощью студии необходимо сначала [настроить виртуальную сеть](../virtual-network/quick-create-portal.md) и [предоставить среде доступ к данным, хранящимся в виртуальной сети](how-to-enable-studio-virtual-network.md).
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
 

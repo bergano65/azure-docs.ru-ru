@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/2/2020
-ms.openlocfilehash: 2cfd391daa13a100a56bb10b79b27eda80902374
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.date: 12/18/2020
+ms.openlocfilehash: e7f5b3ae0a4dc7faa67a361b210b1d014e1f1b93
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533619"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722136"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Использование эталонных данных для уточняющих запросов в Stream Analytics
 
@@ -137,6 +137,18 @@ INTO    output
 FROM    Step1
 JOIN    refData2 ON refData2.Desc = Step1.Desc 
 ``` 
+
+## <a name="iot-edge-jobs"></a>Задания IoT Edge
+
+Для заданий Stream Analytics пограничных устройств поддерживаются только локальные ссылочные данные. Когда задание развертывается на устройстве IoT Edge, оно загружает эталонные данные из определенного пользователем пути к файлу. Подготовьте на устройстве файл с эталонными данными. Для контейнера Windows поместите файл с эталонными данными на локальный диск и предоставьте доступ к этому диску контейнеру Docker. Для контейнера Linux создайте том Docker и разместите на нем файл с данными.
+
+Справочные данные по обновлению IoT Edge запускаются развертыванием. После активации модуль Stream Analytics выбирает обновленные данные без остановки выполняющегося задания.
+
+Есть два способа обновить эталонные данные:
+
+* Обновите путь к ссылочным данным в задании Stream Analytics из портал Azure.
+
+* обновить развертывание IoT Edge.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]

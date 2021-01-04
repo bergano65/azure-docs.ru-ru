@@ -5,21 +5,21 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/30/2020
+ms.date: 12/18/2020
 ms.author: mimart
 author: msmimart
-manager: celestedg
+manager: CelesteDG
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9bc7d94cff46b54b81615cf064ed63927b3ec60
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: b1aebfaa176992b7e20824518bc214a6688ae493
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929299"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703591"
 ---
-# <a name="email-one-time-passcode-authentication-preview"></a>Проверка подлинности по одноразовому секретному коде (Предварительная версия)
+# <a name="email-one-time-passcode-authentication"></a>Проверка подлинности по одноразовому секретному коде
 
 В этой статье описывается, как включить одноразовую проверку подлинности по электронной почте для гостевых пользователей B2B. Функция одноразового секретного кода для электронной почты проверяет подлинность гостевых пользователей B2B, когда они не могут пройти проверку подлинности с помощью других средств, таких как Azure AD, учетная запись Майкрософт (MSA) или Google Federation. Благодаря проверке подлинности на основе одноразового секретного кода больше не нужно создавать учетную запись Майкрософт. Если гостевой пользователь активирует приглашение или обращается к общему ресурсу, он может запросить временный код, который будет отправлен на адрес электронной почты этого пользователя. Этот код нужно ввести, чтобы войти в систему.
 

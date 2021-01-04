@@ -3,25 +3,37 @@ title: Общие сведения о восстановлении Azure Key Vau
 description: Функции восстановления Key Vault предназначены для предотвращения случайного или вредоносного удаления хранилища ключей, секретов, ключей и сертификатов, хранящихся в хранилище ключей.
 ms.service: key-vault
 ms.subservice: general
-ms.topic: conceptual
-author: ShaneBala-keyvault
-ms.author: sudbalas
-manager: ravijan
-ms.date: 12/15/2020
-ms.openlocfilehash: 485da2230de80150c9a5d13b262d1857c8c172fc
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.topic: how-to
+ms.author: mbaldwin
+author: msmbaldwin
+manager: rkarlin
+ms.date: 09/30/2020
+ms.openlocfilehash: 258d100276b20ea2437ebffb1473492a247657e8
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587117"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704220"
 ---
-# <a name="how-to-enable-soft-delete-and-purge-protection"></a>Включение защиты от обратимого удаления и очистки
+# <a name="azure-key-vault-recovery-management-with-soft-delete-and-purge-protection"></a>Azure Key Vault Управление восстановлением с обратимым удалением и защитой от вирусов
 
 В этой статье рассматриваются две функции восстановления Azure Key Vault, обратимого удаления и защиты от вирусов. В этом документе представлен обзор этих функций и показано, как управлять ими с помощью портал Azure, Azure CLI и Azure PowerShell.
 
+Дополнительные сведения о Key Vault см. в разделе.
+- [Обзор Key Vault](overview.md)
+- [Общие сведения о ключах, секретах и сертификатах Azure Key Vault](about-keys-secrets-certificates.md)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/dotnet).
+* [Модуль PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+* [Azure CLI](/cli/azure/install-azure-cli)
+* Хранилище Key Vault можно создать с помощью [портала Azure](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) или [Azure PowerShell](../general/quick-create-powershell.md).
+
 ## <a name="what-are-soft-delete-and-purge-protection"></a>Что такое обратимое удаление и защита от очистки
 
-Защита от обратимого удаления и очистки — это две различные функции восстановления хранилища ключей.
+Защита от [обратимого удаления](soft-delete-overview.md) и очистки — это две различные функции восстановления хранилища ключей.
+
 > [!IMPORTANT]
 > Включение обратимого удаления крайне важно для обеспечения защиты хранилища ключей и учетных данных от случайного удаления. Однако включение обратимого удаления считается критическим изменением, так как может потребовать изменения логики приложения или предоставления дополнительных разрешений для субъектов-служб. Перед включением обратимого удаления с помощью приведенных ниже инструкций убедитесь, что приложение совместимо с изменениями, использующими этот документ [ .](soft-delete-change.md)
 
@@ -33,6 +45,8 @@ ms.locfileid: "97587117"
 
 > [!NOTE]
 > Защита от удаления разработана таким образом, что роль администратора или разрешение не могут переопределять, отключать или обходить защиту от очистки. **После включения защиты от удаления она не может быть отключена или переопределена любым пользователем, включая Майкрософт.** Это означает, что необходимо восстановить удаленное хранилище ключей или подождать окончания срока хранения, прежде чем повторно использовать имя хранилища ключей.
+
+Дополнительные сведения об обратимом удалении см. в статье [обзор Azure Key Vault обратимого удаления](soft-delete-overview.md) .
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/azure-portal)
 
@@ -370,3 +384,14 @@ ms.locfileid: "97587117"
   ```powershell
   Remove-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState -name SQLPassword
   ```
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Azure Key Vault командлетов PowerShell](https://docs.microsoft.com/powershell/module/az.keyvault)
+- [Key Vault команды Azure CLI](https://docs.microsoft.com/cli/azure/keyvault)
+- [Резервное копирование в Azure Key Vault](backup.md)
+- [Включение ведения журнала Key Vault](howto-logging.md)
+- [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md)
+- [Руководство разработчика Azure Key Vault](developers-guide.md)
+- [Рекомендации по использованию хранилища ключей](best-practices.md)

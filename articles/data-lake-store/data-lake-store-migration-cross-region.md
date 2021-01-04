@@ -3,7 +3,7 @@ title: Перенос Azure Data Lake Storage 1-го поколения межд
 description: Узнайте, что следует учитывать при планировании и завершении миграции на Azure Data Lake Storage 1-го поколения, так как оно станет доступным в новых регионах.
 services: data-lake-store
 documentationcenter: ''
-author: swums
+author: twooley
 manager: amitkul
 editor: swums
 ms.assetid: ebde7b9f-2e51-4d43-b7ab-566417221335
@@ -11,13 +11,13 @@ ms.service: data-lake-store
 ms.devlang: na
 ms.topic: article
 ms.date: 01/27/2017
-ms.author: stewu
-ms.openlocfilehash: ba28d767c11c15b2dd70eeed2b39e13b084a7500
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: twooley
+ms.openlocfilehash: c6520036f3ddb8799025129391330268b0604886
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88191344"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723812"
 ---
 # <a name="migrate-azure-data-lake-storage-gen1-across-regions"></a>Перенос Data Lake Storage 1-го поколения между регионами
 
@@ -50,5 +50,5 @@ ms.locfileid: "88191344"
 
 * **Расположение служб аналитики**. Для оптимальной производительности ваши службы аналитики, такие как Data Lake Analytics или HDInsight, должны находиться в том же регионе, что и данные.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)

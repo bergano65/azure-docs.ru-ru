@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/25/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 50abfec19295f80fa79864fedb31eadd31dd4d69
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 34a947a2a0f6d8c87c0580f273130b671b4f17fc
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203676"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722238"
 ---
 # <a name="troubleshoot"></a>Диагностика
 
@@ -23,7 +23,7 @@ ms.locfileid: "92203676"
 
 ## <a name="client-cant-connect-to-server"></a>Клиенту не удается подключиться к серверу
 
-Убедитесь, что брандмауэры (на устройстве, внутри маршрутизаторов и т. д.) не блокируют порты, указанные в [требованиях к системе](../overview/system-requirements.md#network-ports).
+Убедитесь, что брандмауэры (на устройстве, внутри маршрутизаторов и т. д.) не блокируют порты, указанные в [требованиях к системе](../overview/system-requirements.md#network-firewall).
 
 ## <a name="error-disconnected-videoformatnotavailable"></a>Ошибка " `Disconnected: VideoFormatNotAvailable` "
 

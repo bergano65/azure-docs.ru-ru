@@ -6,13 +6,13 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/01/2020
-ms.openlocfilehash: 875b84613bede922b01b1043f2d6dab9aedbc2e8
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.date: 12/18/2020
+ms.openlocfilehash: f715a51367a82f190d394ecb8e10dea24ca70e97
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436935"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706921"
 ---
 # <a name="data-transformation-expressions-in-mapping-data-flow"></a>Выражения преобразования данных в потоке данных для сопоставления
 
@@ -1890,6 +1890,28 @@ ___
 * ``toBoolean(byName(4))``  
 * ``toString(byName($colName))``  
 * ``toString(byPosition(1234))``  
+
+## <a name="cached-lookup-functions"></a>Кэшированные функции поиска
+Следующие функции доступны только при использовании кэшированного поиска, если вы включили кэшированный приемник.
+___
+### <code>lookup</code>
+<code><b>lookup(key, key2, ...) => complex[]</b></code><br/><br/>
+Ищет первую строку из кэшированного приемника, используя указанные ключи, которые соответствуют ключам из кэшированного приемника.
+* ``cacheSink#lookup(movieId)``  
+___
+### <code>mlookup</code>
+<code><b>mlookup(key, key2, ...) => complex[]</b></code><br/><br/>
+Ищет все совпадающие строки из кэшированного приемника с использованием указанных ключей, совпадающих с ключами из кэшированного приемника.
+* ``cacheSink#mlookup(movieId)``  
+___
+### <code>output</code>
+<code><b>output() => any</b></code><br/><br/>
+Возвращает первую строку результатов приемника кэша * ``cacheSink#output()``  
+___
+### <code>outputs</code>
+<code><b>output() => any</b></code><br/><br/>
+Возвращает весь набор выходных строк результатов приемника кэша * ``cacheSink#outputs()``
+___
 
 ## <a name="window-functions"></a>Оконные функции
 Следующие функции доступны только в преобразованиях окна.

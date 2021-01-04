@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.date: 08/15/2020
 ms.author: glenga
 ms.reviewer: jehollan
-ms.openlocfilehash: b2bf406dcab626b3ac08caf1a21ffea9332d3ca2
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 70ec9248db002823e969fa5f4fba8bf1074a9af7
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672650"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706938"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
@@ -30,7 +30,7 @@ ms.locfileid: "97672650"
 
 - пакет [Microsoft.NET.Sdk.Functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) версии 1.0.28 или более поздней.
 
-- [Microsoft. вносит изменения. депенденциинжектион](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (в настоящее время поддерживается только версия 3. x и более ранние версии)
+- [Microsoft. Extensions. депенденциинжектион](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (в настоящее время поддерживается только версия 3. x и более ранние версии)
 
 ## <a name="register-services"></a>Регистрация служб
 
@@ -310,7 +310,7 @@ namespace MyNamespace
 > [!IMPORTANT]
 > Для приложений функций, выполняющихся в планах потребления или Premium, изменение значений конфигурации, используемых в триггерах, может привести к ошибкам масштабирования. Любые изменения этих свойств `FunctionsStartup` класса приводят к ошибке запуска приложения-функции.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

@@ -6,12 +6,12 @@ ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 6/30/2020
-ms.openlocfilehash: debdbf6e08af7b9005336231abd6c998a871c525
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 82cec4cc448f0ec30aecf6f8a69f399e0abbdde0
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708090"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706955"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL — один сервер с помощью портал Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "91708090"
 2. Выберите сервер базы данных Azure для PostgreSQL. Откроется страница **Обзор**.
 3. В меню в разделе **Параметры** выберите **Ценовая категория**. С помощью ползунка можно изменить **срок хранения резервных копий** в диапазоне от 7 до 35 дней.
 На приведенном ниже снимке экрана он увеличен до 34 дней.
-:::image type="content" source="./media/howto-restore-server-portal/3-increase-backup-days.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+:::image type="content" source="./media/howto-restore-server-portal/3-increase-backup-days.png" alt-text="Увеличенный срок хранения резервных копий":::
 
 4. Нажмите кнопку **ОК**, чтобы подтвердить изменение.
 
@@ -53,11 +53,11 @@ ms.locfileid: "91708090"
 
 2. На панели инструментов на странице **Обзор** для сервера выберите **Восстановить**.
 
-   :::image type="content" source="./media/howto-restore-server-portal/2-server.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/2-server.png" alt-text="База данных Azure для PostgreSQL: колонка &quot;Восстановление&quot; в колонке &quot;Обзор&quot;":::
 
 3. Заполните форму "Восстановление", указав следующие сведения.
 
-   :::image type="content" source="./media/howto-restore-server-portal/3-restore.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/3-restore.png" alt-text="База данных Azure для PostgreSQL: информация для восстановления":::
    - **Точка восстановления.** Выберите точку во времени, до которой нужно восстановить сервер.
    - **Целевой сервер.** Укажите имя для нового сервера.
    - **Расположение.** Невозможно выбрать регион. По умолчанию он совпадает с исходным сервером.
@@ -71,23 +71,25 @@ ms.locfileid: "91708090"
 
 На новом сервере, созданном во время восстановления, нет правил брандмауэра или конечных точек службы виртуальной сети, которые настроены на сервере-источнике. Для этого нового сервера правила нужно настроить отдельно.
 
+Если исходный сервер PostgreSQL шифруется с помощью управляемых клиентом ключей, дополнительные рекомендации см. в [документации](concepts-data-encryption-postgresql.md) .
+
 ## <a name="geo-restore"></a>Геовосстановление
 
 Если вы настроили сервер для геоизбыточного резервного копирования, из резервной копии можно создать новый сервер. Его можно создать в любом регионе, где доступна службы "База данных Azure для PostgreSQL".  
 
 1. Нажмите кнопку **Создать ресурс** (+) в левом верхнем углу окна портала. Выберите **Базы данных** > **База данных Azure для PostgreSQL**.
 
-   :::image type="content" source="./media/howto-restore-server-portal/1-navigate-to-postgres.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/1-navigate-to-postgres.png" alt-text="Перейдите к базе данных Azure для PostgreSQL.":::
 
 2. Выберите вариант развертывания **Отдельный сервер**.
 
-   :::image type="content" source="./media/howto-restore-server-portal/2-select-deployment-option.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/2-select-deployment-option.png" alt-text="Выберите вариант развертывания &quot;база данных Azure для PostgreSQL-одиночный сервер&quot;.":::
  
 3. Укажите подписку, группу ресурсов и имя нового сервера. 
 
 4. Выберите **резервное копирование** в качестве **источника данных**. Это действие загружает раскрывающееся меню, содержащее список серверов с включенными географически избыточными резервными копиями.
    
-   :::image type="content" source="./media/howto-restore-server-portal/4-geo-restore.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/4-geo-restore.png" alt-text="Выберите источник данных.":::
     
    > [!NOTE]
    > Сразу после создания сервер может быть еще не готов к географическому восстановлению. Заполнение метаданных может занять несколько часов.
@@ -95,17 +97,21 @@ ms.locfileid: "91708090"
 
 5. Выберите раскрывающийся список **резервная копия** .
    
-   :::image type="content" source="./media/howto-restore-server-portal/5-geo-restore-backup.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/5-geo-restore-backup.png" alt-text="Выберите раскрывающееся меню резервное копирование.":::
 
 6. Выберите исходный сервер для восстановления.
    
-   :::image type="content" source="./media/howto-restore-server-portal/6-select-backup.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования":::
+   :::image type="content" source="./media/howto-restore-server-portal/6-select-backup.png" alt-text="Выберите резервное копирование.":::
 
-7. По умолчанию сервер будет иметь значения для параметра количество **виртуальных ядер**, **срок хранения резервной**копии, **параметр избыточности резервной копии**, **Версия подсистемы**и **учетные данные администратора**. Выберите **Continue** (Продолжить). 
+7. По умолчанию сервер будет иметь значения для параметра количество **виртуальных ядер**, **срок хранения резервной** копии, **параметр избыточности резервной копии**, **Версия подсистемы** и **учетные данные администратора**. Выберите **Continue** (Продолжить). 
    
-   :::image type="content" source="./media/howto-restore-server-portal/7-accept-backup.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования" или "С оптимизацией для операций в памяти") и объем **хранилища** во время восстановления нельзя.
+   :::image type="content" source="./media/howto-restore-server-portal/7-accept-backup.png" alt-text="Продолжайте резервное копирование.":::
 
-   :::image type="content" source="./media/howto-restore-server-portal/8-create.png" alt-text="Окно &quot;Ценовая категория&quot; — выбор типа избыточности для резервного копирования"::: 
+8. Заполните оставшиеся поля формы в соответствии со своими предпочтениями. Вы можете выбрать любое **расположение**.
+
+    Выбрав расположение, можно выбрать параметр **настроить сервер** , чтобы обновить **поколение вычислений** (если оно доступно в выбранном регионе), число **виртуальных ядер**, **срок хранения резервной копии** и **избыточность резервной копии**. Изменить **ценовую категорию** ("Базовый", "Общего назначения" или "С оптимизацией для операций в памяти") и объем **хранилища** во время восстановления нельзя.
+
+   :::image type="content" source="./media/howto-restore-server-portal/8-create.png" alt-text="Форма заливки."::: 
 
 9. Выберите **Просмотр и создание** , чтобы просмотреть выбранные элементы. 
 
@@ -115,7 +121,9 @@ ms.locfileid: "91708090"
 
 На новом сервере, созданном во время восстановления, нет правил брандмауэра или конечных точек службы виртуальной сети, которые настроены на сервере-источнике. Для этого нового сервера правила нужно настроить отдельно.
 
+Если исходный сервер PostgreSQL шифруется с помощью управляемых клиентом ключей, дополнительные рекомендации см. в [документации](concepts-data-encryption-postgresql.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+
+## <a name="next-steps"></a>Дальнейшие действия
 - Подробнее о [резервном копировании](concepts-backup.md) в службе.
 - Подробнее о вариантах обеспечения [непрерывности бизнеса](concepts-business-continuity.md).

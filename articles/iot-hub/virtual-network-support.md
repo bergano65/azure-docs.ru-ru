@@ -5,14 +5,14 @@ services: iot-hub
 author: jlian
 ms.service: iot-fundamentals
 ms.topic: conceptual
-ms.date: 12/02/2020
+ms.date: 12/18/2020
 ms.author: jlian
-ms.openlocfilehash: f79b03884109ffbd856ff4f60909565daeb0e792
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 08f033cbe121135e281379a013e11a33ae962dfb
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549125"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703812"
 ---
 # <a name="iot-hub-support-for-virtual-networks-with-private-link-and-managed-identity"></a>Поддержка Центра Интернета вещей для виртуальных сетей с Приватным каналом и управляемым удостоверением
 
@@ -89,9 +89,15 @@ ms.locfileid: "96549125"
 
     :::image type="content" source="media/virtual-network-support/managed-identity.png" alt-text="Снимок экрана: включение управляемого удостоверения для Центра Интернета вещей":::
 
+Чтобы включить управляемое удостоверение, используйте Azure CLI:
+
+```azurecli-interactive
+az iot hub update --name <iot-hub-resource-name> --set identity.type="SystemAssigned"
+```
+
 ### <a name="assign-managed-identity-to-your-iot-hub-at-creation-time-using-arm-template"></a>Назначение управляемого удостоверения для центра Интернета вещей во время создания с помощью шаблона ARM
 
-Чтобы назначить управляемое удостоверение для центра Интернета вещей во время подготовки ресурсов, используйте шаблон ARM ниже:
+Чтобы назначить управляемое удостоверение для центра Интернета вещей во время подготовки ресурсов, используйте шаблон ARM ниже. Этот шаблон ARM имеет два необходимых ресурса, и они должны быть развернуты перед созданием других ресурсов, таких как `Microsoft.Devices/IotHubs/eventHubEndpoints/ConsumerGroups` . 
 
 ```json
 {
@@ -115,9 +121,9 @@ ms.locfileid: "96549125"
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-02-01",
-      "name": "updateIotHubWithKeyEncryptionKey",
+      "name": "createIotHub",
       "dependsOn": [
-        "<provide-a-valid-resource-name>"
+        "[resourceId('Microsoft.Devices/IotHubs', '<provide-a-valid-resource-name>')]"
       ],
       "properties": {
         "mode": "Incremental",

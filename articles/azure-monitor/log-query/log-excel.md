@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: roygalMS
 ms.author: roygal
 ms.date: 11/03/2020
-ms.openlocfilehash: d903d1bb16ba3576d0092979f1cc6b82fac1c0be
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 6fa181a35c46ed16e4e8c1884e66c54984c418ca
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507586"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703455"
 ---
 # <a name="integrate-log-analytics-and-excel"></a>Интеграция Log Analytics и Excel
 
-Azure Monitor Log Analytics и Microsoft Excel можно интегрировать с помощью запросов M и API Log Analytics.  Такая интеграция позволяет отправить 500 000 записей в Excel.
+Azure Monitor Log Analytics и Microsoft Excel можно интегрировать с помощью запросов M и API Log Analytics. Такая интеграция позволяет передавать до 500 000 записей в Excel, если общий объем результатов не превышает 61MiB.
 
 > [!NOTE]
 > Поскольку Excel является локальным клиентским приложением, ограничения на локальное оборудование и программное обеспечение влияют на производительность и возможность обработки больших наборов данных.
@@ -80,11 +80,11 @@ in AnalyticsQuery
 Для импорта запроса. 
 
 1. Откройте Microsoft Excel. 
-1. На ленте перейдите в меню **данные** . Выберите **получить данные**. В **других источниках** выберите **пустой запрос** :
+1. На ленте перейдите в меню **данные** . Выберите **получить данные**. В **других источниках** выберите **пустой запрос**:
  
    :::image type="content" source="media/log-excel/excel-import-blank-query.png" alt-text="Параметр &quot;импортировать с пустым&quot; в Excel" border="true":::
 
-1. В окне Power Query выберите **Расширенный редактор** :
+1. В окне Power Query выберите **Расширенный редактор**:
 
    :::image type="content" source="media/log-excel/advanced-editor.png" alt-text="Расширенный редактор запросов Excel" border="true":::
 
@@ -93,10 +93,13 @@ in AnalyticsQuery
 
    :::image type="content" source="media/log-excel/advanced-editor-2.png" alt-text="Создание пустого запроса" border="true":::
  
-1. Нажмите кнопку **Готово** , а затем — **загрузить и закрыть**. Excel выполняет запрос, используя API log Analytics и результирующий набор, а затем показывает.
+1. Нажмите кнопку **Готово**, а затем — **загрузить и закрыть**. Excel выполняет запрос, используя API log Analytics и результирующий набор, а затем показывает.
  
 
    :::image type="content" source="media/log-excel/excel-query-result.png" alt-text="Результаты запроса в Excel" border="true":::
+
+> [!Note]
+> Если число записей меньше ожидаемого, объем результатов может превысить ограничение 61MiB. Попробуйте использовать `project` или `project-away` в запросе, чтобы ограничить столбцы нужными столбцами.
 
 ##  <a name="refreshing--data"></a>Обновление данных
 

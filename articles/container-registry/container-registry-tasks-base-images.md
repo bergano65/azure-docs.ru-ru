@@ -3,12 +3,12 @@ title: Обновления базовых образов — задачи
 description: Сведения об основных образах для образов контейнеров приложений, а также о том, как обновление базового образа может вызвать задачу реестра контейнеров Azure.
 ms.topic: article
 ms.date: 01/22/2019
-ms.openlocfilehash: 74e5fb81e3ef6f75b5ee2872ee44b99aae096fd8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: df33096830cd7b34a288c38c105aff3610315337
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009829"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707492"
 ---
 # <a name="about-base-image-updates-for-acr-tasks"></a>Основные сведения об обновлениях базовых образов для задач контроля доступа
 
@@ -57,7 +57,7 @@ ms.locfileid: "96009829"
 * **Включено по умолчанию** . при создании задачи контроля учетных записей с помощью команды [AZ запись контроля][az-acr-task-create] доступа задача по умолчанию *включается* для триггера обновлением базового образа. То есть свойству `base-image-trigger-enabled` присвоено значение "True". Если нужно отключить это поведение в задаче, измените свойство на "False". Например, выполните следующую команду [az acr task update][az-acr-task-update]:
 
   ```azurecli
-  az acr task update --myregistry --name mytask --base-image-trigger-enabled False
+  az acr task update --registry myregistry --name mytask --base-image-trigger-enabled False
   ```
 
 * **Триггер для трассировки зависимостей** . позволяет задаче записи контроля доступа определять и относить зависимости образа контейнера, включая его базовый образ, поэтому необходимо сначала запустить задачу для сборки образа **по крайней мере один раз**. Например, запустите задачу вручную с помощью команды [az acr task run][az-acr-task-run].
@@ -66,7 +66,7 @@ ms.locfileid: "96009829"
 
 * **Другие триггеры задач** . в задаче, активируемой обновлениями базовых образов, можно также включить триггеры на основе [фиксации исходного кода](container-registry-tutorial-build-task.md) или [расписания](container-registry-tasks-scheduled.md). Обновление базового образа также может вызвать [многошаговую задачу](container-registry-tasks-multi-step.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих руководствах содержатся сценарии для автоматизации сборок образа приложения после обновления базового образа.
 

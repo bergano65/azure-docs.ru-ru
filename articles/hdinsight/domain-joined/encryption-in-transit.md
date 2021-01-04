@@ -7,18 +7,18 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/24/2020
-ms.openlocfilehash: ac210adbc29075f27739b08dcf83eeedbeea3ed5
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: ba1542d1bb10933edb34b697f1c81cc5e3e7f1c9
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630368"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705376"
 ---
 # <a name="ipsec-encryption-in-transit-for-azure-hdinsight"></a>Шифрование IPSec при передаче для Azure HDInsight
 
 В этой статье рассматривается реализация шифрования при передаче для обмена данными между узлами кластера Azure HDInsight.
 
-## <a name="background"></a>История
+## <a name="background"></a>Историческая справка
 
 Azure HDInsight предлагает разнообразные функции безопасности для защиты корпоративных данных. Эти решения сгруппированы по основам безопасности периметра, проверки подлинности, авторизации, аудита, шифрования и соответствия. Шифрование может применяться к данным как при хранении, так и при передаче.
 
@@ -70,7 +70,7 @@ az account set --subscription <SUBSCRIPTION_ID>
 # Create resource group
 az group create --name <RESOURCEGROUPNAME> --location eastus2
 
-az group deployment create --name HDInsightEnterpriseSecDeployment \
+az deployment group create --name HDInsightEnterpriseSecDeployment \
     --resource-group <RESOURCEGROUPNAME> \
     --template-file hdinsight-enterprise-security.json \
     --parameters parameters.json

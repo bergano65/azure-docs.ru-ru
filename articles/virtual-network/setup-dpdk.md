@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/12/2020
 ms.author: labattul
-ms.openlocfilehash: 622b7e629a7f5fea77afc18ec5121fe3466716ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba7c2a37d58f20ac4ff1f49a46a406d1b1f70106
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87387563"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704424"
 ---
 # <a name="set-up-dpdk-in-a-linux-virtual-machine"></a>Настройка DPDK в виртуальной машине Linux
 
@@ -50,7 +50,7 @@ DPDK может работать на виртуальных машинах Azur
 
 **Поддержка настраиваемого ядра**
 
-Любую версию ядра Linux, не указанную в списке, можно найти в [репозитории GitHub](https://github.com/microsoft/azure-linux-kernel). Чтобы получить дополнительные сведения, обратитесь по адресу [azuredpdk@microsoft.com](mailto:azuredpdk@microsoft.com). 
+Любую версию ядра Linux, не указанную в списке, можно найти в [репозитории GitHub](https://github.com/microsoft/azure-linux-kernel). Чтобы получить дополнительные сведения, обратитесь по адресу [aznetdpdk@microsoft.com](mailto:aznetdpdk@microsoft.com). 
 
 ## <a name="region-support"></a>Поддержка регионов
 

@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: mbullwin
-ms.openlocfilehash: b2cd5e32503953de874ab470ca3f9413d2b37d59
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 74f891ba7f5b400b5782565e670539167f4e2464
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014653"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703438"
 ---
 # <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Как использовать API детектора аномалии для данных временных рядов  
 
@@ -26,7 +26,7 @@ ms.locfileid: "92014653"
 API детектора аномалий предоставляет режимы обнаружения: пакетная и потоковая передача.
 
 > [!NOTE]
-> Следующие URL-адреса запросов должны быть объединены с соответствующей конечной точкой для подписки. Например: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
+> Следующие URL-адреса запросов должны быть объединены с соответствующей конечной точкой для подписки. Пример: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
 
 
 ### <a name="batch-detection"></a>Пакетное обнаружение
@@ -71,4 +71,4 @@ API детектора аномалий предоставляет режимы 
 ## <a name="next-steps"></a>Next Steps
 
 * [Общие сведения об API Детектора аномалий](../overview.md)
-* [Краткое руководство. Обнаружение аномалий в данных временных рядов с помощью Детектор аномалий API REST](../quickstarts/detect-data-anomalies-csharp.md)
+* [Краткое руководство. обнаружение аномалий в данных временных рядов с помощью детектора аномалий](../quickstarts/client-libraries.md)

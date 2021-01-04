@@ -10,17 +10,19 @@ author: likebupt
 ms.reviewer: peterlu
 ms.date: 10/29/2020
 ms.topic: conceptual
-ms.custom: how-to, deploy, studio
-ms.openlocfilehash: 23c6417741d0753fcdaaf30c89c8f51348cc5dc5
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.custom: how-to, deploy, studio, designer
+ms.openlocfilehash: 35acfc51ae76fdacef11f03b1fbd91ad58650ae6
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554688"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722629"
 ---
 # <a name="use-the-studio-to-deploy-models-trained-in-the-designer"></a>Развертывание моделей, обученных в конструкторе, с помощью студии
 
-Из этой статьи вы узнаете, как развернуть обученную модель из конструктора в качестве конечной точки в режиме реального времени в Машинное обучение Azure Studio.
+Из этой статьи вы узнаете, как развернуть модель конструктора в качестве конечной точки в режиме реального времени в Машинное обучение Azure Studio.
+
+После регистрации или загрузки можно использовать обученные модели конструктора, как и любые другие модели. Экспортированные модели можно развертывать в таких случаях, как Интернет вещей (IoT) и локальное развертывание.
 
 Развертывание в студии состоит из следующих шагов:
 
@@ -33,7 +35,7 @@ ms.locfileid: "94554688"
 
 Модели, обученные в конструкторе, также можно развернуть с помощью пакета SDK или интерфейса командной строки (CLI). Дополнительные сведения см. в статье [развертывание существующей модели с помощью машинное обучение Azure](how-to-deploy-existing-model.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Рабочая область Машинное обучение Azure](how-to-manage-workspace.md)
 
@@ -61,7 +63,6 @@ ms.locfileid: "94554688"
 После регистрации модели ее можно найти на странице ресурсов **модели** в студии.
     
 ![Снимок экрана зарегистрированной модели на странице ресурсов моделей](./media/how-to-deploy-model-designer/models-asset-page.png)
-
 
 ## <a name="download-the-entry-script-file-and-conda-dependencies-file"></a>Скачайте файл скрипта записи и файл зависимостей conda
 
