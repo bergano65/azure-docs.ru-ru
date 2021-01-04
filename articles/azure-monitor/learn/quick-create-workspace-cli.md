@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: 54d1d8a29c87f8d129c0ea5b29973c4fef0e6f7a
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 2d9d511098613ddc5bf3579a42b7abe91f51e1a4
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94889003"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694313"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-cli-20"></a>Создание рабочей области Log Analytics с помощью Azure CLI 2.0
 
@@ -32,10 +32,10 @@ Azure CLI 2.0 используется для создания ресурсов 
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
-- Для работы с этой статьей требуется версия 2.0.30 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+- Для работы с этой статьей требуется Azure CLI версии 2.0.30 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-## <a name="create-a-workspace"></a>Создание рабочей области
-Создайте рабочую область с помощью команды [az group deployment create](/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create). В следующем примере создается рабочая область в регионе *eastus* с помощью шаблона Resource Manager на локальном компьютере. Шаблон в формате JSON настроен так, чтобы осталось только указать имя рабочей области и задать значения по умолчанию для других параметров, которые скорее всего будут использоваться в качестве стандартной конфигурации в вашей среде. Кроме того, шаблон можно хранить в учетной записи хранения Azure для общего доступа в организации. Дополнительную информацию о работе с шаблонами см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md).
+## <a name="create-a-workspace"></a>Создать рабочую область
+Создайте рабочую область с помощью команды [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create). В следующем примере создается рабочая область в регионе *eastus* с помощью шаблона Resource Manager на локальном компьютере. Шаблон в формате JSON настроен так, чтобы осталось только указать имя рабочей области и задать значения по умолчанию для других параметров, которые скорее всего будут использоваться в качестве стандартной конфигурации в вашей среде. Кроме того, шаблон можно хранить в учетной записи хранения Azure для общего доступа в организации. Дополнительную информацию о работе с шаблонами см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md).
 
 Сведения о поддерживаемых регионах см. в Анализе журналов [регионов, доступном в](https://azure.microsoft.com/regions/services/), и найдите Azure Monitor в поле **Поиск продукта**.
 
@@ -111,7 +111,7 @@ Azure CLI 2.0 используется для создания ресурсов 
 4. Теперь вы можете развернуть этот шаблон. Используйте следующие команды из папки, содержащей шаблон. При появлении запроса на ввод имени рабочей области укажите имя, глобально уникальное во всех подписках Azure.
 
     ```azurecli
-    az group deployment create --resource-group <my-resource-group> --name <my-deployment-name> --template-file deploylaworkspacetemplate.json
+    az deployment group create --resource-group <my-resource-group> --name <my-deployment-name> --template-file deploylaworkspacetemplate.json
     ```
 
 Развертывание может занять несколько минут. По завершении выполнения появится сообщение с результатами наподобие приведенного ниже.

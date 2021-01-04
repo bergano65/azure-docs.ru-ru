@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.subservice: alerts
-ms.openlocfilehash: 7c1e1d52b8434db930fcdd05c5c5441ba027abc8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f9005e95ac902a2d09b792c5f64520d0175c7707
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186020"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694981"
 ---
 # <a name="create-metric-alerts-for-logs-in-azure-monitor"></a>Создание оповещений о метриках для журналов в Azure Monitor
 
@@ -366,7 +366,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfrom
 Также можно развернуть шаблон ресурса с помощью интерфейса командной строки Azure:
 
 ```azurecli
-az group deployment create --resource-group myRG --template-file metricfromLogsAlertStatic.json --parameters @metricfromLogsAlertStatic.parameters.json
+az deployment group create --resource-group myRG --template-file metricfromLogsAlertStatic.json --parameters @metricfromLogsAlertStatic.parameters.json
 ```
 
 ### <a name="metric-alerts-for-logs-with-dynamic-thresholds"></a>Оповещения о метриках для журналов с динамическими пороговыми значениями
@@ -682,7 +682,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfrom
 Также можно развернуть шаблон ресурса с помощью интерфейса командной строки Azure:
 
 ```azurecli
-az group deployment create --resource-group myRG --template-file metricfromLogsAlertDynamic.json --parameters @metricfromLogsAlertDynamic.parameters.json
+az deployment group create --resource-group myRG --template-file metricfromLogsAlertDynamic.json --parameters @metricfromLogsAlertDynamic.parameters.json
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

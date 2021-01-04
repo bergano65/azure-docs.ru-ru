@@ -65,6 +65,8 @@
           href: ./security-controls-policy.md
         - name: Базовые средства безопасности
           href: security-baseline.md
+        - name: Лучшие методики обеспечения безопасности
+          href: security-best-practices.md
     - name: Рабочий процесс и ресурсы пакетной службы
       displayName: developer features
       href: batch-service-workflow-features.md

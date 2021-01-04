@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: justinha
-ms.openlocfilehash: 58cdd025587823f7eb702164c965ab622a7325d3
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 5b48d326efad889adbcf25d487ee27b8200f558f
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97615653"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693914"
 ---
 # <a name="known-issues-network-configuration-alerts-in-azure-active-directory-domain-services"></a>Известные проблемы: оповещения о конфигурации сети в доменных службах Azure Active Directory
 
@@ -45,6 +45,8 @@ ms.locfileid: "97615653"
 | 65000    | аллвнетинбаунд | Любой | Любой | Виртуальная сеть | Виртуальная сеть | Allow |
 | 65001    | AllowAzureLoadBalancerInBound | Любой | Любой | AzureLoadBalancer | Любой | Allow |
 | 65500    | DenyAllInBound | Любой | Любой | Любой | Любой | Запрет |
+
+
 <sup>1</sup> Необязательно для отладки. Разрешение при необходимости для расширенного устранения неполадок.
 
 > [!NOTE]

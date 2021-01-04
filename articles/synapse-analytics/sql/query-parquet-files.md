@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 20bfbaeea48711a680877e4d5d8f618e84eb12d7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: cce4c6aff986c2e8c3d879d962714e13f6b2e7ae
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462571"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694685"
 ---
 # <a name="query-parquet-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью бессерверного пула SQL в Azure синапсе Analytics
 
@@ -38,9 +38,9 @@ from openrowset(
 Убедитесь, что у вас есть доступ к этому файлу. Если файл защищен с помощью ключа SAS или настраиваемого удостоверения Azure, необходимо настроить [учетные данные уровня сервера для входа SQL](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#server-scoped-credential).
 
 > [!IMPORTANT]
-> Убедитесь, что используются параметры сортировки базы данных UTF-8 (например, `Latin1_General_100_CI_AS_SC_UTF8` ), так как строковые значения в файлах Parquet кодируются с использованием кодировки UTF-8.
+> Убедитесь, что используются параметры сортировки базы данных UTF-8 (например, `Latin1_General_100_BIN2_UTF8` ), так как строковые значения в файлах Parquet кодируются с использованием кодировки UTF-8.
 > Несоответствие текстовых кодировок в файле PARQUET и параметров сортировки может привести к непредвиденным ошибкам преобразования.
-> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью следующей инструкции T-SQL: `alter database current collate Latin1_General_100_CI_AI_SC_UTF8`
+> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью следующей инструкции T-SQL: `alter database current collate Latin1_General_100_BIN2_UTF8`
 
 ### <a name="data-source-usage"></a>Использование источника данных
 
@@ -74,10 +74,10 @@ from openrowset(
 ```
 
 > [!IMPORTANT]
-> Убедитесь, что експлиЦилти заданы некоторые параметры сортировки UTF-8 (например, `Latin1_General_100_CI_AS_SC_UTF8` ) для всех строковых столбцов в `WITH` предложении, или задайте некоторые параметры сортировки UTF-8 на уровне базы данных.
+> Убедитесь, что експлиЦилти заданы некоторые параметры сортировки UTF-8 (например, `Latin1_General_100_BIN2_UTF8` ) для всех строковых столбцов в `WITH` предложении, или задайте некоторые параметры сортировки UTF-8 на уровне базы данных.
 > Несоответствие кодировки текста в параметрах сортировки столбца file и String может привести к непредвиденным ошибкам преобразования.
-> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью следующей инструкции T-SQL: `alter database current collate Latin1_General_100_CI_AI_SC_UTF8`
-> Параметры сортировки для типов столбцов можно легко задать с помощью следующего определения: `geo_id varchar(6) collate Latin1_General_100_CI_AI_SC_UTF8`
+> Параметры сортировки по умолчанию для текущей базы данных можно легко изменить с помощью следующей инструкции T-SQL: `alter database current collate Latin1_General_100_BIN2_UTF8`
+> Параметры сортировки для типов столбцов можно легко задать с помощью следующего определения: `geo_id varchar(6) collate Latin1_General_100_BIN2_UTF8`
 
 В следующих разделах показано, как выполнять запросы к различным типам файлов PARQUET.
 

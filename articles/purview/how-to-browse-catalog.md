@@ -1,20 +1,20 @@
 ---
 title: Руководство. Просмотр каталога данных
 description: В этой статье приводятся общие сведения о том, как просматривать каталог данных Azure зрения на основе типа ресурса.
-author: hrasheed-msft
-ms.author: hrasheed
+author: chanuengg
+ms.author: csugunan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: b8cdbbc29472ae10920c347dde308c352bf0b68a
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: dd2fd4fbc9d8aecd9821d668dd02bd4b68659cf6
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553608"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695053"
 ---
-# <a name="browse-the-azure-purview-data-catalog"></a>Обзор каталога данных Azure зрения
+# <a name="browse-the-azure-purview-data-catalog"></a>Обзор каталога данных Azure Purview
 
 В этой статье описывается, как обнаруживать данные в каталоге данных зрения Azure с помощью иерархического пространства имен источника данных.
 
@@ -64,7 +64,7 @@ ms.locfileid: "96553608"
 
     :::image type="content" source="media/how-to-browse-catalog/select-different-hierarchy.jpg" alt-text="Выбрать другую иерархию" border="true":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание, импорт и экспорт терминов глоссария](how-to-create-import-export-glossary.md)
 - [Управление шаблонами терминов для бизнес-глоссария](how-to-manage-term-templates.md)

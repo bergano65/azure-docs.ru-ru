@@ -5,12 +5,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 33d8aa9be6a6ee4182e49e658bd41ebf6da588e5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c44f3329626c42bdbb9e206c9dbf258c97b1aa57
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456552"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655651"
 ---
 # <a name="quickstart-use-service-bus-topics-and-subscriptions-with-java"></a>Краткое руководство. Использование разделов и подписок Служебной шины с Java
 В этом кратком руководстве описано, как создать код Java для отправки сообщений в раздел Служебной шины Azure и их последующего получения из подписок в этот раздел. 

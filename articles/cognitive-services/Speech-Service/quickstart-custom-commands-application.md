@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
-ms.openlocfilehash: d89f9330947d1c5d0146b8531f265d86d0fd5160
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.custom: references_regions
+ms.openlocfilehash: c5f8be87e7ee95e1deff12cce09204b5fe8a0bb7
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92329157"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694186"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Создание голосового помощника с помощью пользовательских команд
 
@@ -27,12 +28,12 @@ ms.locfileid: "92329157"
 * Западная часть США 2
 * Восточная часть США
 * восточная часть США 2
+* центрально-западная часть США
 * Северная Европа
 * Западная Европа
-* центрально-западная часть США
-* Центральная Индия
 * Восточная Азия
 * Юго-Восточная Азия
+* Центральная Индия
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -66,7 +67,7 @@ ms.locfileid: "92329157"
     > [!div class="mx-imgBorder"]
     > ![Создание проекта](media/custom-commands/import-project.png)
 
-1.  В списке **ресурсов для разработки Luis** выберите ресурс для разработки. Если нет допустимых ресурсов для разработки, создайте его, выбрав  **создать новый ресурс**для создания Luis.
+1.  В списке **ресурсов для разработки Luis** выберите ресурс для разработки. Если нет допустимых ресурсов для разработки, создайте его, выбрав  **создать новый ресурс** для создания Luis.
 
     > [!div class="mx-imgBorder"]
     > ![Создание ресурса](media/custom-commands/create-new-luis-resource.png)
@@ -133,6 +134,6 @@ ms.locfileid: "92329157"
 > [!TIP]
 > Можно щелкнуть записи в **журнале действий** , чтобы проверить необработанные ответы, отправляемые из службы пользовательских команд.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы использовали существующее приложение. Далее в разделах с [инструкциями](how-to-custom-commands-create-application-with-simple-commands.md)вы узнаете, как проектировать, разрабатывать, отлаживать, тестировать и интегрировать пользовательские команды с нуля.

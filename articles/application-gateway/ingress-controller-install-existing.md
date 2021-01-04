@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 2f585dd80219afac7c67eebabd72cb41dce0b673
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2d64766c754c0ea104ae83fde799a514e9da6d68
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018704"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693735"
 ---
 # <a name="install-an-application-gateway-ingress-controller-agic-using-an-existing-application-gateway"></a>Установка контроллера входящего трафика шлюза приложений (АГИК) с помощью существующего шлюза приложений
 
@@ -323,7 +323,7 @@ Helm install с `appgw.shared=true` выполнит развертывание 
     ```
 
 ### <a name="enable-for-an-existing-agic-installation"></a>Включить для существующей установки АГИК
-Предположим, что у нас уже есть рабочий AKS, шлюз приложений и настроенный АГИК в нашем кластере. У нас есть `prod.contosor.com` входящий трафик для и успешно обслуживать его в AKS. Мы хотим добавить `staging.contoso.com` к нашему существующему шлюзу приложений, но необходимо разместить его на [виртуальной машине](https://azure.microsoft.com/services/virtual-machines/). Мы будем повторно использовать существующий шлюз приложений и вручную настроить прослушиватель и серверные пулы для `staging.contoso.com` . Но Настройка конфигурации шлюза приложений вручную (через [портал](https://portal.azure.com), [API ARM](/rest/api/resources/) или [terraform](https://www.terraform.io/)) противоречит предположениям полного владения агик. Вскоре после применения изменений АГИК будет перезаписывать или удалять их.
+Предположим, что у нас уже есть рабочий AKS, шлюз приложений и настроенный АГИК в нашем кластере. У нас есть `prod.contoso.com` входящий трафик для и успешно обслуживать его в AKS. Мы хотим добавить `staging.contoso.com` к нашему существующему шлюзу приложений, но необходимо разместить его на [виртуальной машине](https://azure.microsoft.com/services/virtual-machines/). Мы будем повторно использовать существующий шлюз приложений и вручную настроить прослушиватель и серверные пулы для `staging.contoso.com` . Но Настройка конфигурации шлюза приложений вручную (через [портал](https://portal.azure.com), [API ARM](/rest/api/resources/) или [terraform](https://www.terraform.io/)) противоречит предположениям полного владения агик. Вскоре после применения изменений АГИК будет перезаписывать или удалять их.
 
 Мы можем запретить АГИК внесение изменений в подмножество конфигурации.
 
