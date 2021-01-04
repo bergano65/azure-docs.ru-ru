@@ -5,14 +5,14 @@ services: vpn-gateway
 author: radwiv
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/03/2020
+ms.date: 12/2/2020
 ms.author: radwiv
-ms.openlocfilehash: c6aa2b63344ef629d55f5a4efb66e4ee0e55975e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: caa9a0869d7d4bca58b91a0c682177e1408f8300
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661041"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733812"
 ---
 # <a name="configure-packet-capture-for-vpn-gateways"></a>Настройка записи пакетов для VPN-шлюзов
 
@@ -31,6 +31,7 @@ ms.locfileid: "94661041"
 - Одновременное выполнение нескольких захватов пакетов на уровне шлюза невозможно.
 - Невозможно одновременно запустить несколько записей пакетов для одного подключения. Одновременно можно запустить несколько записей пакетов для разных подключений.
 - Для каждого шлюза можно параллельно выполнять не более пяти записей пакетов. Эти записи пакетов могут представлять собой сочетание захвата пакетов на уровне шлюза и записи пакетов для каждого подключения.
+- Единица для Макспаккетбуфферсизе — байты, а MaxFileSize — МБ.
 
 ### <a name="example-json"></a>Пример JSON
 ```JSON-interactive

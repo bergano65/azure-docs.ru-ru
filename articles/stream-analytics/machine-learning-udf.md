@@ -6,14 +6,14 @@ ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 03/19/2020
+ms.date: 12/21/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 14f7462aec65d2a13eb36b291331c347b995d281
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 01c85311c9ea49be3543edee405cdd66a0659797
+ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130686"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733011"
 ---
 # <a name="integrate-azure-stream-analytics-with-azure-machine-learning-preview"></a>Интеграция Azure Stream Analytics со службой "Машинное обучение Azure" (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "93130686"
 
 ### <a name="azure-portal"></a>Портал Azure
 
-1. Перейдите к заданию Stream Analytics в портале Azure и выберите **Функции** в разделе **Топология задания** . Затем в раскрывающемся меню **Добавить** выберите пункт **машинное обучение Azure служба** .
+1. Перейдите к заданию Stream Analytics в портале Azure и выберите **Функции** в разделе **Топология задания**. Затем в раскрывающемся меню **Добавить** выберите пункт **машинное обучение Azure служба** .
 
    ![Добавление Машинное обучение Azure UDF](./media/machine-learning-udf/add-azure-machine-learning-udf.png)
 
@@ -47,17 +47,17 @@ ms.locfileid: "93130686"
 
 ### <a name="visual-studio-code"></a>Visual Studio Code
 
-1. Откройте проект Stream Analytics в Visual Studio Code и щелкните правой кнопкой мыши папку **функции** . Затем нажмите кнопку **Добавить функцию** . Выберите **машинное обучение UDF** из раскрывающегося списка.
+1. Откройте проект Stream Analytics в Visual Studio Code и щелкните правой кнопкой мыши папку **функции** . Затем нажмите кнопку **Добавить функцию**. Выберите **машинное обучение UDF** из раскрывающегося списка.
 
    :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-add-function.png" alt-text="Добавление определяемой пользователем функции в VS Code":::
 
-   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-add-function-2.png" alt-text="Добавление определяемой пользователем функции в VS Code":::
+   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-add-function-2.png" alt-text="Добавление Машинное обучение Azure UDF в VS Code":::
 
 2. Введите имя функции и заполните параметры в файле конфигурации, используя **SELECT из подписок** в CodeLens.
 
-   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-function-name.png" alt-text="Добавление определяемой пользователем функции в VS Code":::
+   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-function-name.png" alt-text="Выберите Машинное обучение Azure UDF в VS Code":::
 
-   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-configure-settings.png" alt-text="Добавление определяемой пользователем функции в VS Code":::
+   :::image type="content" source="media/machine-learning-udf/visual-studio-code-machine-learning-udf-configure-settings.png" alt-text="Настройка Машинное обучение Azure UDF в VS Code":::
 
 В следующей таблице описаны все свойства Машинное обучение Azure функций службы в Stream Analytics.
 
@@ -83,7 +83,7 @@ INTO output
 FROM input
 ```
 
-Stream Analytics поддерживает передачу только одного параметра для функций Машинного обучения Azure. Возможно, потребуется подготовить данные перед передачей их в качестве входных данных в определяемую пользователем функцию Машинного обучения Azure.
+Stream Analytics поддерживает передачу только одного параметра для функций Машинного обучения Azure. Возможно, потребуется подготовить данные перед передачей их в качестве входных данных в определяемую пользователем функцию Машинного обучения Azure. Необходимо убедиться, что входные данные для пользовательской UDF не равны NULL, так как входные значения NULL приведут к сбою задания.
 
 ## <a name="pass-multiple-input-parameters-to-the-udf"></a>Передача нескольких входных параметров в определяемую пользователем функцию
 
@@ -104,11 +104,18 @@ function createArray(vendorid, weekday, pickuphour, passenger, distance) {
 После добавления определяемой пользователем функции JavaScript в задание определяемую пользователем функцию Машинного обучение Azure можно вызвать с помощью следующего запроса:
 
 ```SQL
-SELECT udf.score(
-udf.createArray(vendorid, weekday, pickuphour, passenger, distance)
-)
-INTO output
+WITH 
+ModelInput AS (
+#use JavaScript UDF to construct array that will be used as input to ML UDF
+SELECT udf.createArray(vendorid, weekday, pickuphour, passenger, distance) as inputArray
 FROM input
+)
+
+SELECT udf.score(inputArray)
+INTO output
+FROM ModelInput
+#validate inputArray is not null before passing it to ML UDF to prevent job from failing
+WHERE inputArray is not null
 ```
 
 Следующий JSON является примером запроса:

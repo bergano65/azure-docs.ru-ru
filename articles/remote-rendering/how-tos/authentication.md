@@ -5,28 +5,31 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: how-to
-ms.openlocfilehash: dc325fdf68c5afbb122f9e77c5509a6a8053a12e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 35fd78a9d55dc684045fdb4b83691c1613801421
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427463"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724889"
 ---
-# <a name="configure-authentication"></a>Настроить проверку подлинности
+# <a name="configure-authentication"></a>Настройка аутентификации
 
 Удаленная визуализация Azure использует тот же механизм проверки подлинности, что и [Пространственные привязки Azure (ASA)](../../spatial-anchors/concepts/authentication.md?tabs=csharp). Чтобы успешно вызывать API-интерфейсы, клиентам необходимо установить *одно* из следующих действий.
 
 * **AccountKey**: можно получить на вкладке "ключи" для учетной записи удаленной подготовки к просмотру на портал Azure. Ключи учетной записи рекомендуются только для разработки и создания прототипов.
     ![идентификатор учетной записи](./media/azure-account-primary-key.png);
 
+* **Аккаунтдомаин**: можно получить на вкладке "Обзор" для учетной записи удаленной подготовки к просмотру на портал Azure.
+    ![Домен учетной записи](./media/azure-account-domain.png)
+
 * **AuthenticationToken**— это маркер Azure AD, который можно получить с помощью [библиотеки MSAL](../../active-directory/develop/msal-overview.md). Существует несколько различных потоков, которые принимают учетные данные пользователя и используют эти учетные данные для получения маркера доступа.
 
-* **Мракцесстокен**: — это токен MR, который может быть получен из службы маркеров безопасности (STS) в смешанной реальности Azure. Извлечение из `https://sts.mixedreality.azure.com` конечной точки с помощью вызова RESTful, аналогичного приведенному ниже вызову:
+* **Мракцесстокен**: — это токен MR, который может быть получен из службы маркеров безопасности (STS) в смешанной реальности Azure. Извлекается из `https://sts.<accountDomain>` конечной точки с помощью вызова RESTful, аналогичного приведенному ниже:
 
     ```rest
-    GET https://sts.mixedreality.azure.com/Accounts/35d830cb-f062-4062-9792-d6316039df56/token HTTP/1.1
+    GET https://sts.southcentralus.mixedreality.azure.com/Accounts/35d830cb-f062-4062-9792-d6316039df56/token HTTP/1.1
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1Ni<truncated>FL8Hq5aaOqZQnJr1koaQ
-    Host: sts.mixedreality.azure.com
+    Host: sts.southcentralus.mixedreality.azure.com
     Connection: Keep-Alive
 
     HTTP/1.1 200 OK

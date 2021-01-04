@@ -6,12 +6,12 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: d9731455edf0afbe4c0768ae40a51316ac71ad94
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c2241d738a43c6891ee4bea0829400fdc51a664b
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92537581"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734238"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-with-azure-cache-for-redis"></a>Развертывание модели машинного обучения в службе "функции Azure" с помощью кэша Azure для Redis 
 
@@ -43,7 +43,7 @@ ms.locfileid: "92537581"
 
 1. Перейдите на домашнюю страницу портал Azure или откройте меню боковой панели, а затем выберите **создать ресурс**. 
    
-1. На странице **Создание** выберите **Базы данных** , а затем **Кэш Azure для Redis**.
+1. На странице **Создание** выберите **Базы данных**, а затем **Кэш Azure для Redis**.
 
     :::image type="content" source="media/cache-private-link/2-select-cache.png" alt-text="Выбор элемента &quot;Кэш Azure для Redis&quot;.":::
    
@@ -123,7 +123,7 @@ def run(data):
 
 Дополнительные сведения о скрипте входа см. в разделе [Определение кода оценки.](../machine-learning/how-to-deploy-and-where.md?tabs=python#define-an-entry-script)
 
-* **Зависимости** , такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
+* **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
 
 Эти сущности инкапсулированы в __конфигурацию вывода__. В конфигурации зависимостей указываются скрипт входа и другие зависимости.
 
@@ -283,14 +283,14 @@ print(model_package.location)
 > [!IMPORTANT]
 > Загрузка образа может занять несколько минут. Ход выполнения можно отслеживать с помощью портал Azure.
 
-## <a name="test-azure-function-http-trigger"></a>Проверка триггера HTTP функции Azure 
+## <a name="test-azure-functions-http-trigger"></a>Проверка триггера HTTP для функций Azure 
 
-Теперь мы выполним и тестируем триггер HTTP для функции Azure.
+Теперь мы выполним и протестируем триггер HTTP для функций Azure.
 
-1. Перейдите к приложению функции Azure в портал Azure.
+1. Перейдите к приложению функции в портал Azure.
 1. В разделе Разработчик выберите **код + тест**. 
 1. На правой стороне выберите вкладку **входные данные** . 
-1. Нажмите кнопку **выполнить** , чтобы проверить триггер HTTP функции Azure. 
+1. Нажмите кнопку " **выполнить** ", чтобы проверить триггер HTTP для функций Azure. 
 
 Теперь вы успешно развернули модель из Машинное обучение Azure как приложение-функцию, используя кэш Azure для экземпляра Redis. Узнайте больше о кэше Azure для Redis, перейдя по ссылкам в разделе ниже.
 
@@ -307,7 +307,7 @@ print(model_package.location)
 
 1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
-2. Введите имя группы ресурсов в поле **Фильтровать по имени...** В своей группе ресурсов в списке результатов щелкните **...** , а затем выберите **Удалить группу ресурсов**.
+2. Введите имя группы ресурсов в поле **Фильтровать по имени...** В своей группе ресурсов в списке результатов щелкните **...**, а затем выберите **Удалить группу ресурсов**.
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов, которую необходимо удалить, и щелкните **Удалить**.
 
@@ -316,6 +316,6 @@ print(model_package.location)
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 * Дополнительные сведения о [кэше Azure для Redis](./cache-overview.md)
-* Научитесь настраивать приложение функций в документации по [функциям](../azure-functions/functions-create-function-linux-custom-image.md) .
+* Научитесь настраивать приложение функции в документации по [функциям](../azure-functions/functions-create-function-linux-custom-image.md) .
 * [Справочник по интерфейсам API](/python/api/azureml-contrib-functions/azureml.contrib.functions?preserve-view=true&view=azure-ml-py) 
 * Создание [приложения Python, использующего кэш Azure для Redis](./cache-python-get-started.md)

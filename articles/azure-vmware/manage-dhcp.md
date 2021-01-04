@@ -2,21 +2,22 @@
 title: Управление DHCP для решения VMware Azure
 description: Узнайте, как создать DHCP для частного облака решения Azure VMware и управлять им.
 ms.topic: how-to
+ms.custom: contperf-fy21q2
 ms.date: 11/09/2020
-ms.openlocfilehash: 9143a8544fe1b98262c3e990ccdf56f5d5f65957
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: bcaba4274b0e6b423e9fa490c80fc57204d4e153
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335994"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708557"
 ---
 # <a name="manage-dhcp-for-azure-vmware-solution"></a>Управление DHCP для решения VMware Azure
 
 Приложениям и рабочим нагрузкам, работающим в среде частного облака, требуются службы DHCP для назначения IP-адресов.  В этой статье показано, как создать DHCP и управлять им в решении Azure VMware двумя способами:
 
-- Если вы используете НСКС-T для размещения DHCP-сервера, необходимо [создать DHCP-сервер](#create-a-dhcp-server) и [ретранслировать его на этот сервер](#create-dhcp-relay-service). При создании DHCP-сервера также добавляется сегмент сети и указывается диапазон IP-адресов DHCP.   
+- Если вы используете NSX-T для размещения DHCP-сервера, необходимо [создать DHCP-сервер](#create-a-dhcp-server) и [ретранслятор для этого сервера](#create-dhcp-relay-service). При создании DHCP-сервера также добавляется сегмент сети и указывается диапазон IP-адресов DHCP.   
 
-- Если вы используете внешний DHCP-сервер стороннего производителя в сети, необходимо [создать службу ретранслятора DHCP](#create-dhcp-relay-service). При создании ретранслятора на DHCP-сервере (НСКС-T или стороннего производителя для размещения DHCP-сервера) необходимо указать диапазон IP-адресов DHCP.
+- Если вы используете сторонний внешний DHCP-сервер в сети, необходимо [создать службу ретранслятора DHCP](#create-dhcp-relay-service). При создании ретранслятора на DHCP-сервере (НСКС-T или стороннего производителя для размещения DHCP-сервера) необходимо указать диапазон IP-адресов DHCP.
 
 >[!IMPORTANT]
 >DHCP не работает для виртуальных машин в сети VMware ХККС на уровне 2, если DHCP-сервер находится в локальном центре обработки данных.  По умолчанию НСКС блокирует все DHCP-запросы от обхода перетягивания L2. Сведения о решении см. в разделе [Отправка запросов DHCP в локальную процедуру DHCP-сервера](#send-dhcp-requests-to-the-on-premises-dhcp-server) .
@@ -28,11 +29,11 @@ ms.locfileid: "94335994"
 
 1. В диспетчере НСКС-T выберите **сети**  >  **DHCP** и нажмите кнопку **Добавить сервер**.
 
-1. Выберите **DHCP** для **типа сервера** , укажите имя и IP-адрес сервера, а затем нажмите кнопку **сохранить**.
+1. Выберите **DHCP** для **типа сервера**, укажите имя и IP-адрес сервера, а затем нажмите кнопку **сохранить**.
 
    :::image type="content" source="./media/manage-dhcp/dhcp-server-settings.png" alt-text="добавить DHCP-сервер" border="true":::
 
-1. Выберите **шлюзы уровня 1** , щелкните вертикальное многоточие на шлюзе уровня 1, а затем выберите **изменить**.
+1. Выберите **шлюзы уровня 1**, щелкните вертикальное многоточие на шлюзе уровня 1, а затем выберите **изменить**.
 
    :::image type="content" source="./media/manage-dhcp/edit-tier-1-gateway.png" alt-text="Выберите шлюз для использования" border="true":::
 
@@ -57,11 +58,11 @@ ms.locfileid: "94335994"
 
 1. В диспетчере НСКС-T выберите **сети**  >  **DHCP** и нажмите кнопку **Добавить сервер**.
 
-1. Выберите **ретранслятор DHCP** для **типа сервера** , укажите имя и IP-адрес сервера, а затем нажмите кнопку **сохранить**.
+1. Выберите **ретранслятор DHCP** для **типа сервера**, укажите имя и IP-адрес сервера, а затем нажмите кнопку **сохранить**.
 
    :::image type="content" source="./media/manage-dhcp/create-dhcp-relay.png" alt-text="Создание службы ретранслятора DHCP" border="true":::
 
-1. Выберите **шлюзы уровня 1** , щелкните вертикальное многоточие на шлюзе уровня 1, а затем выберите **изменить**.
+1. Выберите **шлюзы уровня 1**, щелкните вертикальное многоточие на шлюзе уровня 1, а затем выберите **изменить**.
 
    :::image type="content" source="./media/manage-dhcp/edit-tier-1-gateway-relay.png" alt-text="Изменение шлюза уровня 1" border="true":::
 
@@ -78,7 +79,7 @@ ms.locfileid: "94335994"
 
 ## <a name="specify-the-dhcp-ip-address-range"></a>Укажите диапазон IP-адресов DHCP
 
-1. В диспетчере НСКС-T выберите сегмент **сети**  >  **Segments**. 
+1. В NSX-T Manager выберите **Networking** > **Segments** (Сеть > Сегменты). 
    
 1. Щелкните вертикальное многоточие в названии сегмента и выберите **изменить**.
    
@@ -90,7 +91,7 @@ ms.locfileid: "94335994"
       
    :::image type="content" source="./media/manage-dhcp/edit-subnet.png" alt-text="изменение подсетей" border="true":::
       
-1. Нажмите кнопку **Применить** , а затем **сохранить**. Сегменту назначается пул DHCP-серверов.
+1. Нажмите кнопку **Применить**, а затем **сохранить**. Сегменту назначается пул DHCP-серверов.
       
    :::image type="content" source="./media/manage-dhcp/assigned-to-segment.png" alt-text="Пул DHCP-серверов, назначенный сегменту" border="true":::
 
@@ -109,7 +110,7 @@ ms.locfileid: "94335994"
 
    :::image type="content" source="media/manage-dhcp/hcx-find-destination-network.png" alt-text="Снимок экрана расширения сети в VMware vSphere Client" lightbox="media/manage-dhcp/hcx-find-destination-network.png":::
 
-1. В диспетчере решений Azure VMware НСКС-T выберите **сети**  >  **Segments**  >  **сегмент профили** сегментов. 
+1. В диспетчере решений Azure VMware НСКС-T выберите **сети**  >    >  **сегмент профили** сегментов. 
 
 1. Выберите **Добавить профиль сегмента** , а затем **сегмент безопасность**.
 
@@ -123,7 +124,7 @@ ms.locfileid: "94335994"
 
    :::image type="content" source="media/manage-dhcp/add-segment-profile-bpdu-filter-allow-list.png" alt-text="Снимок экрана, показывающий MAC-адреса в списке разрешений фильтра БПДУ":::
 
-1. В разделе сегменты сегментов **сети**  >  **Segments**  >  **Segments** в области поиска введите сетевое имя определения.
+1. В разделе сегменты сегментов **сети**  >    >  в области поиска введите сетевое имя определения.
 
    :::image type="content" source="media/manage-dhcp/networking-segments-search.png" alt-text="Снимок экрана: поле фильтра &quot;Сетевые > сегментов&quot;":::
 
@@ -135,6 +136,6 @@ ms.locfileid: "94335994"
 
    :::image type="content" source="media/manage-dhcp/edit-segment-security.png" alt-text="Снимок экрана: поле &quot;безопасность сегмента&quot;" lightbox="media/manage-dhcp/edit-segment-security.png":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [обслуживании узла и управлении жизненным циклом](concepts-private-clouds-clusters.md#host-maintenance-and-lifecycle-management).

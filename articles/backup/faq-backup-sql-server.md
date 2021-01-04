@@ -4,12 +4,12 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 89316770dc137bff031e6268db5ece156edd4f25
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 7518fc49f7d6d728bd8faa0de4cf0edc1c6d5831
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172369"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734119"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -33,11 +33,11 @@ ms.locfileid: "92172369"
 Автовосстановление в качестве возможности включено для всех пользователей по умолчанию. Однако если вы решили отказаться от него, выполните следующие действия.
 
 - На экземпляре SQL Server в папке *C:\Program Files\azure Multi рабочей нагрузки баккуп\бин* Создайте или измените **ExtensionSettingsOverrides.jsв** файле.
-- В **ExtensionSettingsOverrides.jsв**установите *{"енаблеаутохеалер": false}*.
+- В **ExtensionSettingsOverrides.jsв** установите *{"енаблеаутохеалер": false}*.
 - Сохраните изменения и закройте файл.
 - На SQL Server экземпляр откройте **задачу Управление** , а затем перезапустите службу **азуревлбаккупкурдинаторсвк** .
 
-## <a name="can-i-control-how-many-concurrent-backups-run-on-the-sql-server"></a>Можно ли контролировать, сколько параллельных операций резервного копирования выполняется на сервере SQL Server?
+## <a name="can-i-control-how-many-concurrent-backups-run-on-the-sql-server"></a>Можно ли проконтролировать, сколько одновременных операций резервного копирования выполняется на SQL Server?
 
 Да. Вы можете регулировать частоту, с которой выполняется политика резервного копирования, чтобы свести к минимуму влияние на экземпляр SQL Server. Чтобы изменить этот параметр:
 
@@ -78,7 +78,7 @@ ms.locfileid: "92172369"
 
 Да, эту возможность можно реализовать с помощью [автоматической защиты](backup-sql-server-database-azure-vms.md#enable-auto-protection).  
 
-## <a name="if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups"></a>Что произойдет с резервным копированием, если удалить базу данных из автозащищаемого экземпляра?
+## <a name="if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups"></a>Что произойдет с резервным копированием, если удалить базу данных из автоматически защищенного экземпляра?
 
 Если база данных удаляется из автозащищаемого экземпляра, резервные копии базы данных по-прежнему будут пытаться. Это означает, что удаленная база данных начнет отображаться как неработоспособная в разделе **Элементы архивации** и будет по-прежнему обрабатываться как защищенная.
 
@@ -104,7 +104,12 @@ ms.locfileid: "92172369"
   
 ## <a name="can-i-protect-databases-that-have-tde-transparent-data-encryption-turned-on-and-will-the-database-stay-encrypted-through-the-entire-backup-process"></a>Можно ли защитить базы данных с включенной TDE (прозрачное шифрование данных), и база данных останется зашифрованной по всему процессу резервного копирования?
 
-Да, Azure Backup поддерживает резервное копирование баз данных SQL Server или сервера с включенным TDE. Служба архивации поддерживает [TDE](/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017) с ключами, управляемыми Azure, или с ключами, управляемыми клиентом (BYOK).  Резервное копирование не выполняет шифрование SQL в рамках процесса резервного копирования, поэтому база данных остается зашифрованной при резервном копировании.
+Да, Azure Backup поддерживает резервное копирование баз данных SQL Server или сервера с включенным TDE. Служба архивации поддерживает [TDE](/sql/relational-databases/security/encryption/transparent-data-encryption) с ключами, управляемыми Azure, или с ключами, управляемыми клиентом (BYOK).  Резервное копирование не выполняет шифрование SQL в рамках процесса резервного копирования, поэтому база данных остается зашифрованной при резервном копировании.
+
+## <a name="does-azure-backup-perform-a-checksum-operation-on-the-data-stream"></a>Azure Backup выполнить операцию вычисления контрольной суммы для потока данных?
+
+Мы выполняем операцию вычисления контрольной суммы для потока данных. Однако это не следует путать с [контрольной суммой SQL](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
+Резервная копия рабочей нагрузки Azure вычислит контрольную сумму потока данных и сохранит ее явным образом во время операции резервного копирования. Затем этот поток контрольной суммы принимается в виде ссылки и перекрестно проверяется с помощью контрольной суммы потока данных во время операции восстановления, чтобы обеспечить согласованность данных.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 2197d5be91af4c93e9691e1dc2b953198669deaf
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: d8918181024715a57c6029d3ad0a36ea75140fcb
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027413"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739949"
 ---
 # <a name="configure-and-submit-training-runs"></a>Настройка и отправка запуска на выполнение обучения
 
@@ -172,6 +172,38 @@ run.wait_for_completion(show_output=True)
 * [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/image-classification-mnist-data/img-classification-part1-training.ipynb)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+ * **Модулиррорс (без модуля с именем)**. Если вы используете в модулиррорс при отправке экспериментов в машинном обучении Azure, сценарий обучения ожидает установки пакета, но не добавляется. Когда вы укажите имя пакета, Azure ML установит пакет в среде, используемой для запуска обучения.
+
+    Если для отправки экспериментов используются средства оценки, можно указать имя пакета с помощью `pip_packages` параметра или в средстве `conda_packages` оценки на основе источника, на котором нужно установить пакет. Можно также указать файл yml со всеми зависимостями с помощью `conda_dependencies_file` или перечислить все требования к PIP в TXT-файле с помощью `pip_requirements_file` параметра. Если у вас есть собственный объект среды машинного обучения Azure, для которого необходимо переопределить образ по умолчанию, используемый средством оценки, можно указать эту среду с помощью `environment` параметра конструктора средства оценки.
+    
+    Образы DOCKER, поддерживаемые МАШИНным обучением Azure, и их содержимое можно просмотреть в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers).
+    Зависимости, зависящие от платформы, перечислены в соответствующей документации по платформе:
+    *  [Chainer](/python/api/azureml-train-core/azureml.train.dnn.chainer?preserve-view=true&view=azure-ml-py#&preserve-view=trueremarks)
+    * [PyTorch](/python/api/azureml-train-core/azureml.train.dnn.pytorch?preserve-view=true&view=azure-ml-py#&preserve-view=trueremarks)
+    * [TensorFlow](/python/api/azureml-train-core/azureml.train.dnn.tensorflow?preserve-view=true&view=azure-ml-py#&preserve-view=trueremarks);
+    *  [SKLearn](/python/api/azureml-train-core/azureml.train.sklearn.sklearn?preserve-view=true&view=azure-ml-py#&preserve-view=trueremarks)
+    
+    > [!Note]
+    > Если вы считаете, что определенный пакет является достаточно распространенным для добавления в образы и среды машинного обучения Azure, повысьте вопрос GitHub в [контейнерах AzureML](https://github.com/Azure/AzureML-Containers). 
+ 
+* **Намиррор (имя не определено), аттрибутиррор (объект не имеет атрибута)**: это исключение должно поступать из сценариев обучения. Чтобы получить дополнительные сведения о конкретном имени, которое не определено или об ошибке атрибута, можно просмотреть файлы журналов из портал Azure. Из пакета SDK можно использовать `run.get_details()` для просмотра сообщения об ошибке. Также будут перечислены все файлы журналов, созданные для выполнения. Обязательно ознакомьтесь со сценарием обучения и устраните ошибку перед повторной отправкой запуска. 
+
+
+* **Запуск или экспериментирование удаление**. эксперименты можно архивировать с помощью метода [эксперимент. Archive](/python/api/azureml-core/azureml.core.experiment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truearchive--) или из представления "эксперимент" в машинное обучение Azure Studio Client с помощью кнопки "архивировать эксперимент". Это действие скрывает эксперимент из списка запросов и представлений, но не удаляет его.
+
+    Постоянное удаление отдельных экспериментов или запусков сейчас не поддерживается. Дополнительные сведения об удалении ресурсов рабочей области см. в разделе [Экспорт или удаление данных рабочей области службы машинное обучение](how-to-export-delete-data.md).
+
+* **Документ метрики слишком большой**: машинное обучение Azure имеет внутренние ограничения на размер объектов метрик, которые могут быть зарегистрированы одновременно в ходе обучающего запуска. Если при записи метрик в виде списка возникает ошибка "Документ метрики слишком велик", попробуйте разделить список на меньшие блоки, например:
+
+    ```python
+    run.log_list("my metric name", my_metric[:N])
+    run.log_list("my metric name", my_metric[N:])
+    ```
+
+    На внутреннем уровне Машинное обучение Azure объединяет блоки с одинаковым именем метрики в непрерывный список.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

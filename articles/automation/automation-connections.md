@@ -3,15 +3,15 @@ title: Управление подключениями в службе авто�
 description: В этой статье рассказывается, как управлять подключениями службы автоматизации Azure к внешним службам и приложениям, а также как работать с ними в модулях runbook.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 01/13/2020
+ms.date: 12/22/2020
 ms.topic: conceptual
 ms.custom: has-adal-ref
-ms.openlocfilehash: 0a3cff616f814b8e5209b15f9d3f7439533452ca
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 8deb249dc042701ec02c3e5e30f3603be132d0ec
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92071767"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734000"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Управление подключениями в службе автоматизации Azure
 
@@ -43,10 +43,10 @@ ms.locfileid: "92071767"
 
 |Командлет|Описание|
 |---|---|
-|[Get-AzAutomationConnection](/powershell/module/az.automation/get-azautomationconnection?view=azps-3.7.0)|Извлекает сведения о подключении.|
-|[New-AzAutomationConnection](/powershell/module/az.automation/new-azautomationconnection?view=azps-3.7.0)|Создает новое подключение.|
-|[Remove-AzAutomationConnection](/powershell/module/Az.Automation/Remove-AzAutomationConnection?view=azps-3.7.0)|Удаляет существующее подключение.|
-|[Set-AzAutomationConnectionFieldValue](/powershell/module/Az.Automation/Set-AzAutomationConnectionFieldValue?view=azps-3.7.0)|Задает значение определенного поля для существующего подключения.|
+|[Get-AzAutomationConnection](/powershell/module/az.automation/get-azautomationconnection)|Извлекает сведения о подключении.|
+|[New-AzAutomationConnection](/powershell/module/az.automation/new-azautomationconnection)|Создает новое подключение.|
+|[Remove-AzAutomationConnection](/powershell/module/Az.Automation/Remove-AzAutomationConnection)|Удаляет существующее подключение.|
+|[Set-AzAutomationConnectionFieldValue](/powershell/module/Az.Automation/Set-AzAutomationConnectionFieldValue)|Задает значение определенного поля для существующего подключения.|
 
 ## <a name="internal-cmdlets-to-access-connections"></a>Внутренние командлеты для доступа к подключениям
 
@@ -59,11 +59,11 @@ ms.locfileid: "92071767"
 >[!NOTE]
 >Не следует использовать переменные с параметром `Name` командлета `Get-AutomationConnection`. Использование переменных в таком случае может усложнить обнаружение зависимостей между модулями runbook или конфигурациями DSC и ресурсами подключения во время разработки.
 
-## <a name="python-2-functions-to-access-connections"></a>Функции Python 2 для доступа к подключениям
+## <a name="python-functions-to-access-connections"></a>Функции Python для доступа к подключениям
 
-Функция, приведенная в следующей таблице, используется для доступа к подключениям в модуле runbook на Python 2.
+Функция, приведенная в следующей таблице, используется для доступа к подключениям в модуле Runbook Python 2 и 3. Модули Runbook Python 3 сейчас доступны в предварительной версии.
 
-| Компонент | Описание |
+| Функция | Описание |
 |:---|:---|
 | `automationassets.get_automation_connection` | Извлекает подключение. Возвращает словарь со свойствами подключения. |
 
@@ -124,9 +124,9 @@ New-AzAutomationConnection -ResourceGroupName $ResourceGroup -AutomationAccountN
 
 ## <a name="get-a-connection-in-a-runbook-or-dsc-configuration"></a>Получение подключения в модуле runbook или конфигурации DSC
 
-Получите подключение в модуле runbook или конфигурации DSC, используя внутренний командлет `Get-AutomationConnection`. Этот командлет является предпочтительным по отношению к командлету `Get-AzAutomationConnection`, так как он получает значения подключения вместо сведений о подключении. 
+Получите подключение в модуле runbook или конфигурации DSC, используя внутренний командлет `Get-AutomationConnection`. Этот командлет является предпочтительным по отношению к командлету `Get-AzAutomationConnection`, так как он получает значения подключения вместо сведений о подключении.
 
-### <a name="textual-runbook-example"></a>Пример текстового модуля runbook
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 В следующем примере показано, как использовать учетную запись запуска от имени для проверки подлинности при обращении из модуля runbook к ресурсам Azure Resource Manager. Здесь используется ресурс подключения, представляющий учетную запись запуска от имени, которая ссылается на субъект-службу на основе сертификатов.
 
@@ -135,19 +135,9 @@ $Conn = Get-AutomationConnection -Name AzureRunAsConnection
 Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
 ```
 
-### <a name="graphical-runbook-examples"></a>Примеры графического модуля runbook
+# <a name="python"></a>[Python](#tab/python2)
 
-Вы можете добавить действие для внутреннего командлета `Get-AutomationConnection` в графический модуль runbook. Щелкните правой кнопкой мыши подключение в области "Библиотека" графического редактора и выберите **Добавить на холст**.
-
-![Добавление на холст](media/automation-connections/connection-add-canvas.png)
-
-На следующем рисунке показан пример использования объекта подключения в графическом модуле runbook. В этом примере используется набор данных `Constant value` для действия `Get RunAs Connection`, в котором объект подключения используется для проверки подлинности. Здесь используется [конвейерная связь](automation-graphical-authoring-intro.md#use-links-for-workflow), так как набор параметров `ServicePrincipalCertificate` ожидает один объект.
-
-![Установление подключений](media/automation-connections/automation-get-connection-object.png)
-
-### <a name="python-2-runbook-example"></a>Пример runbook на Python 2
-
-В следующем примере показано, как выполнить проверку подлинности с помощью подключения запуска от имени в модуле runbook на Python 2.
+В следующем примере показано, как выполнить проверку подлинности с помощью подключения запуска от имени в модуле Runbook Python 2 и 3.
 
 ```python
 """ Tutorial to show how to authenticate against Azure resource manager resources """
@@ -155,7 +145,7 @@ import azure.mgmt.resource
 import automationassets
 
 def get_automation_runas_credential(runas_connection):
-    """ Returns credentials to authenticate against Azure resoruce manager """
+    """ Returns credentials to authenticate against Azure resource manager """
     from OpenSSL import crypto
     from msrestazure import azure_active_directory
     import adal
@@ -189,6 +179,18 @@ runas_connection = automationassets.get_automation_connection(
     "AzureRunAsConnection")
 azure_credential = get_automation_runas_credential(runas_connection)
 ```
+
+---
+
+### <a name="graphical-runbook-examples"></a>Примеры графического модуля runbook
+
+Вы можете добавить действие для внутреннего командлета `Get-AutomationConnection` в графический модуль runbook. Щелкните правой кнопкой мыши подключение в области "Библиотека" графического редактора и выберите **Добавить на холст**.
+
+![Добавление на холст](media/automation-connections/connection-add-canvas.png)
+
+На следующем рисунке показан пример использования объекта подключения в графическом модуле runbook. В этом примере используется набор данных `Constant value` для действия `Get RunAs Connection`, в котором объект подключения используется для проверки подлинности. Здесь используется [конвейерная связь](automation-graphical-authoring-intro.md#use-links-for-workflow), так как набор параметров `ServicePrincipalCertificate` ожидает один объект.
+
+![Установление подключений](media/automation-connections/automation-get-connection-object.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

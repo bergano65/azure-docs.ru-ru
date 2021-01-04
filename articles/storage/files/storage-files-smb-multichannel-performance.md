@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: f85df2e16554b4830d3e5f1bc82c5c8cdf22e28b
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 4f4cd8189c9166ee08c1e4ccd800a1202d3b5893
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586636"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724822"
 ---
 # <a name="smb-multichannel-performance"></a>Производительность SMB Multichannel
 
@@ -40,7 +40,7 @@ ms.locfileid: "97586636"
 
 [!INCLUDE [storage-files-smb-multi-channel-regions](../../../includes/storage-files-smb-multi-channel-regions.md)]
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 Многоканальный SMB работает только в том случае, если эта функция включена как на стороне клиента, так и на стороне службы (ваша учетная запись хранения Azure).
 
@@ -63,7 +63,7 @@ ms.locfileid: "97586636"
 1. Откройте PowerShell с правами администратора и используйте следующую команду: `Get-SmbMultichannelConnection |fl`
 1. Поиск свойств **максчаннелс** и **куррентчаннелс**
 
-:::image type="content" source="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG" alt-text="Снимок экрана с результатами Get-смбмултичаннелконнектион." lightbox="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG":::
+:::image type="content" source="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG" alt-text="Снимок экрана Get-SMBMultichannelConnection результатов." lightbox="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG":::
 
 ## <a name="performance-comparison"></a>Сравнение производительности
 
@@ -119,7 +119,7 @@ ms.locfileid: "97586636"
 - Убедитесь, что ваша учетная запись хранения и клиент находятся в одном регионе Azure, чтобы снизить задержку в сети.
 - Используйте многопоточные приложения и Распределите нагрузку между несколькими файлами.
 - Преимущества повышения производительности для многоканального увеличения нагрузки SMB с учетом количества файлов, распределяемых при распределении.
-- Производительность общего ресурса уровня "Премиум" ограничивается подготовленным размером общего ресурса (число операций ввода-вывода в секунду/исходящий трафик/входящий трафик) и ограничением для одного файла. Дополнительные сведения см. в разделе [Основные сведения о подготовке общих файловых ресурсов](storage-files-planning.md#understanding-provisioning-for-premium-file-shares)уровня "Премиум".
+- Производительность общего ресурса уровня "Премиум" ограничивается подготовленным размером общего ресурса (число операций ввода-вывода в секунду/исходящий трафик/входящий трафик) и ограничением для одного файла. Дополнительные сведения см. в разделе [Основные сведения о подготовке общих файловых ресурсов](understanding-billing.md#provisioned-billing)уровня "Премиум".
 - Максимальная производительность одного клиента виртуальной машины по-прежнему привязана к ограничениям виртуальной машины. Например, [Standard_D32s_v3](../../virtual-machines/dv3-dsv3-series.md) может поддерживать максимальную пропускную способность 16 000 Мбит/с (или 2Gbps), исходящий трафик из виртуальной машины (запись в хранилище) измеряется, входящий (чтение из хранилища). Производительность общего файлового ресурса зависит от ограничений сети компьютера, ЦП, внутренней доступной памяти сети, объема операций ввода-вывода, параллелизма, а также других факторов.
 - Первоначальный тест обычно является прогревом, отбросить его результаты и повторите тест.
 - Если производительность ограничена одним клиентом, а Рабочая нагрузка по-прежнему ниже подготовленных пределов общего ресурса, более высокая производительность может быть достигнута за счет распределения нагрузки по нескольким клиентам.

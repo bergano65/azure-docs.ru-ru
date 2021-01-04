@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 63d03559b2a30020ed2e8bd1cd030855b8fb20b7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 65752321f94bfa1403839889ead284d46b5f7191
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445107"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740068"
 ---
 # <a name="azure-synapse-analytics-output-from-azure-stream-analytics"></a>Выходные данные аналитики Azure синапсе из Azure Stream Analytics
 
@@ -39,9 +39,5 @@ Azure Stream Analytics задания могут выводить данные �
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Использование управляемых удостоверений для доступа к базе данных SQL Azure или Azure синапсе Analytics из задания Azure Stream Analytics (Предварительная версия)](sql-database-output-managed-identity.md)
 * [Краткое руководство. по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics с помощью Azure CLI](quick-create-azure-cli.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics с помощью шаблона ARM](quick-create-azure-resource-manager.md)
-* [Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-visual-studio-code.md)

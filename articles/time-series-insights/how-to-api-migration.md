@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: shresha
-ms.openlocfilehash: 3aedbef079ba62f42ea79afdcd9995d7ee23d9fa
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 15f1a814b302611029cf6459b8d2df93a32a2d36
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020731"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740561"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Переход на новые версии API службы "аналитика временных рядов Azure Gen2"
 
@@ -63,7 +63,7 @@ ms.locfileid: "95020731"
 
     [![Обновление сохраненных запросов](media/api-migration/ux-migration-tool-updated-variables.png)](media/v2-update-overview/overview-one.png#lightbox)
 
-1. Нажмите кнопку **Done**(Готово).
+1. Нажмите кнопку **Готово**.
 
     [![Завершенная миграция](media/api-migration/ux-migration-tool-updated-saved-queries.png)](media/v2-update-overview/overview-one.png#lightbox)
 
@@ -76,7 +76,7 @@ ms.locfileid: "95020731"
 Чтобы обновить запросы для использования новой версии API и нового синтаксиса выражений временных рядов, необходимо повторно создать запросы из обозревателя. Узнайте больше о том [, как создавать запросы с помощью соединителя Power BI](./how-to-connect-power-bi.md).
 
 > [!NOTE]
-> Необходимо использовать Power BI Desktop версии за Июль 2020. Если это не так, может отобразиться [Недопустимая версия полезных данных запроса](./how-to-diagnose-troubleshoot.md#problem-power-bi-connector-shows-unable-to-connect).
+> Необходимо использовать по крайней мере 2020 июля версии Power BI Desktop. Если этого не сделать, может отобразиться ошибка "Недопустимая версия полезных данных запроса".
 
 ## <a name="migrate-custom-applications"></a>Миграция пользовательских приложений
 

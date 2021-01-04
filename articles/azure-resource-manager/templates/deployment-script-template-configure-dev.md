@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: 4a7f21410bb97db0a7974870efb812c9954ac241
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: d12ec5e3fef45429741fff1665f435d68e6c83f6
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503562"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734187"
 ---
 # <a name="configure-development-environment-for-deployment-scripts-in-templates"></a>Настройка среды разработки для скриптов развертывания в шаблонах
 
@@ -155,7 +155,10 @@ $DeploymentScriptOutputs['text'] = $output
 ```
 Значение по умолчанию для пути подключения — **деплойментскрипт**.  Это путь в экземпляре контейнера, в котором он подключен к общему файловому ресурсу.
 
-Образ контейнера по умолчанию, указанный в шаблоне, — **MCR.Microsoft.com/azuredeploymentscripts-PowerShell:az4.3**.  Список поддерживаемых версий Azure PowerShell и Azure CLI см. в разделе [Azure PowerShell или Azure CLI](./deployment-script-template.md#prerequisites).
+Образ контейнера по умолчанию, указанный в шаблоне, — **MCR.Microsoft.com/azuredeploymentscripts-PowerShell:az4.3**.   См. список [поддерживаемых версий Azure PowerShell](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list). См. список [поддерживаемых версий Azure CLI](https://mcr.microsoft.com/v2/azure-cli/tags/list).
+
+  >[!IMPORTANT]
+  > Сценарий развертывания использует доступные образы CLI из Реестра контейнеров Майкрософт (MCR). Сертификация образа CLI для сценария развертывания занимает около одного месяца. Не используйте версии CLI, выпущенные менее 30 дней назад. Чтобы найти даты выпуска образов, ознакомьтесь с [заметками о выпуске Azure CLI](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true). Если используется неподдерживаемая версия, в сообщении об ошибке выводится список поддерживаемых версий.
 
 Шаблон приостанавливает экземпляр контейнера 1800 секунд. У вас 30 минут до того, как экземпляр контейнера перейдет в состояние терминала, и сеанс завершится.
 
@@ -200,7 +203,7 @@ Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fi
 1. Выберите **подключить** и нажмите кнопку **подключить**. Если не удается подключиться к экземпляру контейнера, перезапустите группу контейнеров и повторите попытку.
 1. В области консоли выполните следующие команды:
 
-    ```
+    ```console
     cd deploymentScript
     ls
     pwsh ./hello.ps1 "John Dole"
@@ -209,6 +212,14 @@ Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fi
     Выходные данные — **Hello Джон дружащим**.
 
     ![тест экземпляра контейнера скрипта развертывания](./media/deployment-script-template-configure-dev/deployment-script-container-instance-test.png)
+
+1. Если вы используете образ контейнера AZ CLI, выполните следующий код:
+
+   ```console
+   cd /mnt/azscripts/azscriptinput
+   ls
+   ./userscript.sh
+   ```
 
 ## <a name="use-docker"></a>Использование DOCKER
 

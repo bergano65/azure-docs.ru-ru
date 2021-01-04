@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3d26a0ef86ab96940f3d5bb96d87340b77f1faca
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: eca2009ee0470dec9c9ce60d8754f8f7a71619d3
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016842"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740544"
 ---
 # <a name="diagnose-and-troubleshoot-an-azure-time-series-insights-gen2-environment"></a>Диагностика и устранение неполадок среды Gen2 "аналитика временных рядов Azure"
 
@@ -124,14 +124,6 @@ ms.locfileid: "95016842"
 Эта проблема может возникать, если в вашей среде не определена иерархия модели временных рядов. Дополнительные сведения см. в статье о [работе с моделями временных рядов](./time-series-insights-overview.md).
 
   [![Экземпляры, не являющиеся родительскими, будут отображать предупреждение.](media/preview-troubleshoot/unparented-instances.png)](media/preview-troubleshoot/unparented-instances.png#lightbox)
-
-## <a name="problem-power-bi-connector-shows-unable-to-connect"></a>Проблема. в соединителе Power BI отображается сообщение "не удается подключиться"
-
-Эта проблема может возникать, если в Power BI Desktop не используется последняя версия соединителя Power BI.
-
-[![На снимке экрана показано диалоговое окно "не удалось подключиться".](media/preview-troubleshoot/power-bi-unable-to-connect.png)](media/preview-troubleshoot/power-bi-unable-to-connect.png#lightbox)
-
-- Проверьте версию Power BI Desktop и убедитесь, что вы используете версию 2020 июля. В противном случае обновите Power BI Desktop и запустите соединитель еще раз.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

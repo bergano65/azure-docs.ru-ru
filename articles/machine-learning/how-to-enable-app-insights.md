@@ -11,12 +11,12 @@ author: blackmist
 ms.date: 09/15/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 5d49a88b89f9e2f4e2c2e6fa8ef18a01c803e3f7
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 13b99fe129191b89b5bb2d7f5473e910fa619ce7
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94536597"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739847"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения
 
@@ -32,7 +32,7 @@ ms.locfileid: "94536597"
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
  
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 
@@ -157,14 +157,24 @@ Application Insights Azure можно также включить из Маши�
 
 ### <a name="query-logs-for-deployed-models"></a>Журналы запросов для развернутых моделей
 
-Функцию можно использовать `get_logs()` для получения журналов из ранее развернутой веб-службы. Эти журналы могут содержать подробные сведения об ошибках, возникающих во время развертывания.
+Журналы конечных точек в режиме реального времени — это данные клиентов. Функцию можно использовать `get_logs()` для получения журналов из ранее развернутой веб-службы. Эти журналы могут содержать подробные сведения об ошибках, возникающих во время развертывания.
 
 ```python
+from azureml.core import Workspace
 from azureml.core.webservice import Webservice
+
+ws = Workspace.from_config()
 
 # load existing web service
 service = Webservice(name="service-name", workspace=ws)
 logs = service.get_logs()
+```
+
+Если у вас несколько клиентов, может потребоваться добавить следующий код проверки подлинности перед `ws = Workspace.from_config()`
+
+```python
+from azureml.core.authentication import InteractiveLoginAuthentication
+interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in which your workspace resides")
 ```
 
 ### <a name="view-logs-in-the-studio"></a>Просмотр журналов в студии

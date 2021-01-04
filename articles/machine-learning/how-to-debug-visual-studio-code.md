@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 09/30/2020
-ms.openlocfilehash: a9d20732c3ae08718c400faff44137000e98fffd
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: e572f1f6a9452ccab9deddb62a5e219a81df5d47
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629479"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740000"
 ---
 # <a name="interactive-debugging-with-visual-studio-code"></a>Интерактивная Отладка с помощью Visual Studio Code
 
@@ -100,7 +100,7 @@ ms.locfileid: "97629479"
 > [!TIP]
 > Хотя вы можете работать с Машинное обучение Azureными ресурсами, которые не находятся за виртуальной сетью, рекомендуется использовать виртуальную сеть.
 
-### <a name="how-it-works"></a>Принцип работы
+### <a name="how-it-works"></a>Принципы работы
 
 Этапы конвейера машинного обучения запускают скрипты Python. Эти скрипты изменяются для выполнения следующих действий.
 
@@ -536,4 +536,10 @@ docker stop debug
 
 Теперь, когда вы настроили VS Code удаленно, вы можете использовать вычислительный экземпляр в качестве удаленного вычислений от VS Code для интерактивной отладки кода. 
 
-[Руководство. Обучение модели Машинного обучения](tutorial-1st-experiment-sdk-train.md) — демонстрация использования вычислительного экземпляра со встроенной записной книжкой.
+Дополнительные сведения об устранении неполадок:
+
+* [Развертывание локальной модели](how-to-troubleshoot-deployment-local.md)
+* [Удаленное развертывание модели](how-to-troubleshoot-deployment.md)
+* [Конвейеры машинного обучения](how-to-debug-pipelines.md)
+* [параллелрунстеп](how-to-debug-parallel-run-step.md)
+

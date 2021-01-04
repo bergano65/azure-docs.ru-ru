@@ -3,14 +3,14 @@ title: Управление учетными данными в службе ав
 description: В этой статье рассказывается, как создать ресурсы-контейнеры учетных данных и использовать их в модуле Runbook или конфигурации DSC.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 12/03/2020
+ms.date: 12/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: ec35653f67c46a7032e834020d8e2ca4ab3125c8
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: caaeb0e40d277ef5e356c0f385a818b831326d6e
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558847"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734833"
 ---
 # <a name="manage-credentials-in-azure-automation"></a>Управление учетными данными в службе автоматизации Azure
 
@@ -51,11 +51,11 @@ Import-Module Orchestrator.AssetManagement.Cmdlets -ErrorAction SilentlyContinue
 > [!NOTE]
 > Не следует использовать переменные в параметре `Name` `Get-AutomationPSCredential`. Их использование может усложнить обнаружение зависимостей между модулями Runbook или конфигурациями DSC и ресурсами-контейнерами учетных данных во время разработки.
 
-## <a name="python-2-functions-that-access-credentials"></a>Функции Python 2, обращающиеся к учетным данным
+## <a name="python-functions-that-access-credentials"></a>Функции Python, обращающиеся к учетным данным
 
-Функция, приведенная в следующей таблице, используется для доступа к учетным данным в модуле Runbook Python 2.
+Функция, приведенная в следующей таблице, используется для доступа к учетным данным в модуле Runbook Python 2 и 3. Модули Runbook Python 3 сейчас доступны в предварительной версии.
 
-| Компонент | Описание |
+| Функция | Описание |
 |:---|:---|
 | `automationassets.get_automation_credential` | Извлекает сведения о ресурсе учетных данных. |
 
@@ -104,6 +104,8 @@ New-AzureAutomationCredential -AutomationAccountName "MyAutomationAccount" -Name
 
 ### <a name="textual-runbook-example"></a>Пример текстового модуля Runbook
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 Команды в приведенном ниже примере демонстрируют использование учетных данных PowerShell в модуле Runbook. Он получает учетные данные и присваивает переменным имя пользователя и пароль.
 
 ```powershell
@@ -126,6 +128,36 @@ $myPsCred = New-Object System.Management.Automation.PSCredential ($userName,$sec
 Connect-AzAccount -Credential $myPsCred
 ```
 
+# <a name="python-2"></a>[Python 2;](#tab/python2)
+
+Ниже приведен пример доступа к учетным данным в модулях Runbook Python 2.
+
+```python
+import automationassets
+from automationassets import AutomationAssetNotFound
+
+# get a credential
+cred = automationassets.get_automation_credential("credtest")
+print cred["username"]
+print cred["password"]
+```
+
+# <a name="python-3"></a>[Python 3](#tab/python3);
+
+В следующем примере показан пример доступа к учетным данным в модулях Runbook для Python 3 (Предварительная версия).
+
+```python
+import automationassets
+from automationassets import AutomationAssetNotFound
+
+# get a credential
+cred = automationassets.get_automation_credential("credtest")
+print (cred["username"])
+print (cred["password"])
+```
+
+---
+
 ### <a name="graphical-runbook-example"></a>Пример графического модуля Runbook
 
 Можно добавить действие для внутреннего командлета `Get-AutomationPSCredential` в графический модуль Runbook, щелкнув правой кнопкой мыши учетные данные в области "Библиотека" графического редактора и выбрав пункт **Добавить на холст**.
@@ -140,22 +172,8 @@ Connect-AzAccount -Credential $myPsCred
 
 Несмотря на то, что конфигурации DSC в службе автоматизации Azure могут работать с ресурсами-контейнерами учетных данных с помощью `Get-AutomationPSCredential`, они также могут передавать ресурсы-контейнеры учетных данных посредством параметров. Дополнительные сведения см. в статье [Компилирование конфигураций в Azure Automation DSC](../automation-dsc-compile.md#credential-assets).
 
-## <a name="use-credentials-in-a-python-2-runbook"></a>Использование учетных данных в модуле Runbook Python 2
-
-Ниже приведен пример доступа к учетным данным в модулях Runbook Python 2.
-
-```python
-import automationassets
-from automationassets import AutomationAssetNotFound
-
-# get a credential
-cred = automationassets.get_automation_credential("credtest")
-print cred["username"]
-print cred["password"]
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о командлетах, используемых для доступа к сертификатам, см. в разделе [Администрирование модулей в службе автоматизации Azure](modules.md).
-* Общие сведения о модулях Runbook см. в разделе [Выполнение модуля Runbook в службе автоматизации Azure](../automation-runbook-execution.md).
+* Дополнительные сведения о командлетах, используемых для доступа к сертификатам, см. в статье [Управление модулями в службе автоматизации Azure](modules.md).
+* Общие сведения о runbook см. в статье [Выполнение модуля Runbook в службе автоматизации Azure](../automation-runbook-execution.md).
 * Дополнительные сведения о конфигурациях DSC см. в разделе [Общие сведения о настройке состояния службы автоматизации Azure](../automation-dsc-overview.md).

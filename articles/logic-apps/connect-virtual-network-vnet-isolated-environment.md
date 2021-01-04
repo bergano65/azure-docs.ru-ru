@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 12/18/2020
-ms.openlocfilehash: 3eaabc6c1e7d34bb5d9433d742581f39bdfbf98e
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 315de18539bf083515658b40fa70f3c214d7c909
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97669539"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739745"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -44,24 +44,14 @@ ms.locfileid: "97669539"
   > [!IMPORTANT]
   > Приложения логики, встроенные триггеры и соединители, которые выполняются в среде службы интеграции, используют ценовой план, отличный от плана, рассчитанного на потребление. Сведения о ценах и выставлении счетов для сред ISE см. в статье [Модель ценообразования для Azure Logic Apps](../logic-apps/logic-apps-pricing.md#fixed-pricing). Сведения о тарифах см. на странице [цен на Logic Apps](../logic-apps/logic-apps-pricing.md).
 
-* [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md). Ваша виртуальная сеть должна иметь четыре *пустые* подсети, которые необходимы для создания и развертывания ресурсов в интегрированной среде сценариев и используются этими внутренними и скрытыми компонентами:
+* [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md) с четырьмя *пустыми* подсетями, которые необходимы для создания и развертывания ресурсов в интегрированной среде сценариев и используются этими внутренними и скрытыми компонентами:
 
   * Logic Apps вычислений
   * Внутренние Среда службы приложений (соединители)
   * Внутреннее управление API (соединители)
   * Внутренние Redis для кэширования и производительности
   
-  Вы можете заранее создать подсети или дождаться создания интегрированной среды сценариев, чтобы вы могли создавать подсети одновременно. Однако перед созданием подсетей ознакомьтесь с [требованиями к подсети](#create-subnet).
-
-  > [!IMPORTANT]
-  >
-  > Не используйте следующие пространства IP-адресов для виртуальной сети или подсетей, так как они не разрешается с помощью Azure Logic Apps:<p>
-  > 
-  > * 0.0.0.0/8
-  > * 100.64.0.0/10
-  > * 127.0.0.0/8
-  > * 168.63.129.16/32
-  > * 169.254.169.254/32
+  Вы можете создавать подсети заранее или при создании интегрированной среды сценариев, чтобы можно было одновременно создавать подсети. Однако перед созданием подсетей убедитесь, что вы просматриваете [требования к подсети](#create-subnet).
 
   * Убедитесь, что ваша виртуальная сеть [обеспечивает доступ к среде службы интеграции](#enable-access), чтобы ваша среда службы интеграции работала правильно и оставалась доступной.
 
@@ -170,14 +160,14 @@ ms.locfileid: "97669539"
 
 * Конечные точки служб
 
-  Необходимо включить конечные точки службы для Azure SQL, хранилища, служебной шины и концентраторов событий, так как вы не можете отправить трафик через брандмауэр к этим службам.
+  Необходимо включить конечные точки службы для Azure SQL, хранилища, служебной шины, KeyVault и концентраторов событий, так как вы не можете отправить трафик через брандмауэр к этим службам.
 
 *  Другие зависимости для входящей и исходящей связи
 
    В брандмауэре *должны быть* разрешены следующие входящие и исходящие зависимости:
    
    * [Зависимости службы приложений Azure](../app-service/environment/firewall-integration.md#deploying-your-ase-behind-a-firewall)
-   * [Зависимости службы кэша Azure](../azure-cache-for-redis/cache-how-to-premium-vnet.md#what-are-some-common-misconfiguration-issues-with-azure-cache-for-redis-and-vnets)
+   * [Зависимости службы кэша Azure](../azure-cache-for-redis/cache-how-to-premium-vnet.md#what-are-some-common-misconfiguration-issues-with-azure-cache-for-redis-and-virtual-networks)
    * [Зависимости службы управления API Azure](../api-management/api-management-using-with-vnet.md#-common-network-configuration-issues)
 
 <a name="create-environment"></a>
@@ -219,7 +209,7 @@ ms.locfileid: "97669539"
 
    * Использует имя, начинающееся с буквы или знака подчеркивания (без чисел), и не использует следующие символы: `<` ,,,,, `>` `%` `&` `\\` `?` , `/` .
 
-   * Использовать формат [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) и пространство адресов класса B.
+   * Использует [Формат "Неклассовая маршрутизация Inter-Domain (CIDR)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)".
    
      > [!IMPORTANT]
      >

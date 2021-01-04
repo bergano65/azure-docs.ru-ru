@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: cee6d030a9639a7203a32a3c0957733cecb1f8b6
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8cf440a517c1a3496b3df438fdd0d2534609908f
+ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445304"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733117"
 ---
 # <a name="troubleshoot-connectivity-between-azure-synapse-analytics-synapse-studio-and-storage"></a>Устранение неполадок с подключением между Azure Synapse Analytics Synapse Studio и хранилищем
 
@@ -24,7 +24,11 @@ ms.locfileid: "96445304"
 
 Подробное сообщение об ошибке может отличаться, но общее значение сообщения об ошибке: "Этот запрос не имеет полномочий на выполнение этой операции".
 
-![Проблемы с подключением к хранилищу 1](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue.1.png)
+В узле связанного хранилища:  
+![Проблемы с подключением к хранилищу 1](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-1.png)
+
+В узле контейнера хранилища:  
+![Проблемы с подключением к хранилищу 1A](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-1a.png)
 
 **Решение**. чтобы назначить учетную запись правильной роли, см. статью [Использование портал Azure для назначения роли Azure для доступа к данным BLOB-объектов и очередей](../../storage/common/storage-auth-aad-rbac-portal.md) .
 
@@ -33,7 +37,11 @@ ms.locfileid: "96445304"
 
 При выборе стрелки для расширения структуры хранилища в разделе "данные" — > "связанный" в синапсе Studio может появиться ошибка "REQUEST_SEND_ERROR" на панели слева. См. снимок экрана проблемы ниже:
 
-![Проблемы с подключением к хранилищу 2](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue.2.png)
+В узле связанного хранилища:  
+![Проблемы с подключением к хранилищу 2](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-2.png)
+
+В узле контейнера хранилища:  
+![Проблемы с подключением к хранилищу 2A](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-2a.png)
 
 Эта проблема может быть вызвана несколькими причинами.
 
@@ -51,6 +59,7 @@ ms.locfileid: "96445304"
 
 * Ресурс хранилища, к которому вы обращаетесь, Azure Data Lake Storage 2-го поколения и находится за брандмауэром и виртуальной сетью (с настроенной частной конечной точкой хранилища) одновременно.
 * Ресурс контейнера, к которому вы обращаетесь, был удален или не существует.
+* Пересечение с клиентом. клиент рабочей области, который пользователь использовал для входа, не совпадает с клиентом учетной записи хранения. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

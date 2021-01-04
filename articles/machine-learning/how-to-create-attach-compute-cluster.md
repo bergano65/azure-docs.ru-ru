@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 0bbf70016dc9b93120b3158e8954c336095ea211
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0d1cbb8efe0882f48a345d44a650eb711a44d570
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832693"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739191"
 ---
 # <a name="create-an-azure-machine-learning-compute-cluster"></a>Создание вычислительного кластера Машинного обучения Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "94832693"
 При создании Вычислительной среды машинного обучения Azure вы можете также настроить несколько дополнительных свойств. Эти свойства позволяют создать постоянный кластер фиксированного размера, который может размещаться в существующей виртуальной сети Azure в вашей подписке.  Дополнительные сведения см. в разделе о [классе AmlCompute](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?preserve-view=true&view=azure-ml-py).
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 
 ```azurecli-interactive
@@ -112,7 +112,7 @@ compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2',
                                                             max_nodes=4)
 ```
     
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Задайте `vm-priority` :
     
@@ -173,7 +173,7 @@ az ml computetarget create amlcompute --name lowpriocluster --vm-size Standard_N
                                     identity_id=['/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'])
         ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 * Создание нового управляемого кластера вычислений с управляемым удостоверением
 
@@ -211,6 +211,14 @@ az ml computetarget create amlcompute --name lowpriocluster --vm-size Standard_N
 ### <a name="managed-identity-usage"></a>Использование управляемого удостоверения
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-managed-identity-default.md)]
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Существует вероятность того, что некоторые пользователи, которые создали свою Машинное обучение Azureную рабочую область из портал Azure до общедоступного выпуска, не смогут создать Амлкомпуте в этой рабочей области. Вы можете либо отправить запрос в службу поддержки, либо создать новую рабочую область на портале или с помощью пакета SDK, чтобы немедленно разблокировать пользователя.
+
+Если при изменении размера узла (0-> 0) в кластере Машинное обучение Azure будет заблокировано, это может быть вызвано блокировкой ресурсов Azure.
+
+[!INCLUDE [resource locks](../../includes/machine-learning-resource-lock.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

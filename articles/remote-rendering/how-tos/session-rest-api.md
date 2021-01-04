@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: 0af9d6906e038a4b9285a2c302fc0c98345fdbd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d957c5d6521010c7393e2297be16cd7bef41c35f
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90023760"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724074"
 ---
 # <a name="use-the-session-management-rest-api"></a>Использование REST API управления сеансами
 
@@ -33,15 +33,18 @@ ms.locfileid: "90023760"
 $endPoint = "https://remoterendering.westus2.mixedreality.azure.com"
 ```
 
-## <a name="accounts"></a>Учетные записи
+## <a name="accounts"></a>Счета
 
 Если у вас нет учетной записи удаленной подготовки, [создайте ее](create-an-account.md). Каждый ресурс идентифицируется путем *accountId*, который используется во всех интерфейсах API сеанса.
 
-### <a name="example-script-set-accountid-and-accountkey"></a>Пример скрипта: Set accountId и accountKey
+### <a name="example-script-set-accountid-accountkey-and-account-domain"></a>Пример скрипта: Настройка accountId, accountKey и домена учетной записи
+
+Домен учетной записи — это расположение учетной записи удаленной подготовки к просмотру. В этом примере используется расположение учетной записи Region *eastus*.
 
 ```PowerShell
 $accountId = "********-****-****-****-************"
 $accountKey = "*******************************************="
+$accountDomain = "eastus.mixedreality.azure.com"
 ```
 
 ## <a name="common-request-headers"></a>Общие заголовки запросов
@@ -52,7 +55,7 @@ $accountKey = "*******************************************="
 
 ```PowerShell
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-$webResponse = Invoke-WebRequest -Uri "https://sts.mixedreality.azure.com/accounts/$accountId/token" -Method Get -ContentType "application/json" -Headers @{ Authorization = "Bearer ${accountId}:$accountKey" }
+$webResponse = Invoke-WebRequest -Uri "https://sts.$accountDomain/accounts/$accountId/token" -Method Get -ContentType "application/json" -Headers @{ Authorization = "Bearer ${accountId}:$accountKey" }
 $response = ConvertFrom-Json -InputObject $webResponse.Content
 $token = $response.AccessToken;
 ```
@@ -79,7 +82,7 @@ $token = $response.AccessToken;
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 202 | -sessionId: GUID | Успех |
+| 202 | -sessionId: GUID | Success |
 
 ### <a name="example-script-create-a-session"></a>Пример сценария. Создание сеанса
 
@@ -265,7 +268,7 @@ RawContentLength  : 60
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 204 | | Успех |
+| 204 | | Success |
 
 ### <a name="example-script-stop-a-session"></a>Пример скрипта. Завершение сеанса
 

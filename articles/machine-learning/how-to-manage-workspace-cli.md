@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 66a9c9d605911a9d3b30a55d47e16026e26e502a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4c457ef2c4957308735c222488ad04dac80235df
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447266"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740391"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 
@@ -79,6 +79,8 @@ az extension add -n azure-cli-ml
 | **Azure Application Insights** | `--application-insights <service-id>` |
 | **Хранилище ключей Azure** | `--keyvault <service-id>` |
 | **Реестр контейнеров Azure** | `--container-registry <service-id>` |
+
+Реестр контейнеров Azure (записи контроля доступа) в настоящее время не поддерживает символы Юникода в именах групп ресурсов. Чтобы устранить эту ошибку, используйте группу ресурсов, которая не содержит этих символов.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 

@@ -1,18 +1,18 @@
 ---
 title: Рекомендации по работе с шаблонами
-description: Описание рекомендуемых подходов для разработки шаблонов Azure Resource Manager. Содержит рекомендации, как избежать распространенных проблем при использовании шаблонов.
+description: Описывает Рекомендуемые подходы для создания шаблонов Azure Resource Manager (шаблоны ARM). Содержит рекомендации, как избежать распространенных проблем при использовании шаблонов.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: c62bde8fc8cfc79330d13b7b2ff4f778dadf1339
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 85d58098508d5ac7cad6c1cb3cb68ad6c7f179f9
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497985"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724992"
 ---
 # <a name="arm-template-best-practices"></a>Рекомендации по использованию шаблона ARM
 
-В этой статье показано, как использовать рекомендуемые методики при создании шаблона ARM. Эти рекомендации помогут избежать распространенных проблем при использовании шаблона ARM для развертывания решения.
+В этой статье показано, как использовать рекомендуемые методики при создании шаблона Azure Resource Manager (шаблон ARM). Эти рекомендации помогут избежать распространенных проблем при использовании шаблона ARM для развертывания решения.
 
 ## <a name="template-limits"></a>Ограничения шаблонов
 
@@ -26,7 +26,7 @@ ms.locfileid: "96497985"
 * 64 выходных значения;
 * 24 576 знаков в выражении шаблона.
 
-Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. разделе [Использование связанных шаблонов в при развертывании ресурсов Azure](linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
+Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. [в статье Использование связанных и вложенных шаблонов при развертывании ресурсов Azure](linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
 
 ## <a name="resource-group"></a>Группа ресурсов
 
@@ -48,32 +48,32 @@ ms.locfileid: "96497985"
 
 * Используйте параметры для имен ресурсов, которые вы хотите задать, чтобы упростить идентификацию.
 
-* Укажите описание для каждого параметра в метаданных.
+* Введите описание каждого параметра в метаданных.
 
-   ```json
-   "parameters": {
-       "storageAccountType": {
-           "type": "string",
-           "metadata": {
-               "description": "The type of the new storage account created to store the VM disks."
-           }
-       }
-   }
-   ```
-
-* Укажите значения по умолчанию для конфиденциальных параметров. Указав значение по умолчанию, проще развернуть шаблон, и пользователи шаблона будут видеть пример соответствующего значения. Любое значение для параметра по умолчанию должно быть допустимым для всех пользователей в конфигурации развертывания по умолчанию. 
-   
-   ```json
-   "parameters": {
-        "storageAccountType": {
-            "type": "string",
-            "defaultValue": "Standard_GRS",
-            "metadata": {
-                "description": "The type of the new storage account created to store the VM disks."
-            }
+    ```json
+    "parameters": {
+      "storageAccountType": {
+        "type": "string",
+        "metadata": {
+          "description": "The type of the new storage account created to store the VM disks."
         }
-   }
-   ```
+      }
+    }
+    ```
+
+* Укажите значения по умолчанию для конфиденциальных параметров. Указав значение по умолчанию, проще развернуть шаблон, и пользователи шаблона будут видеть пример соответствующего значения. Любое значение для параметра по умолчанию должно быть допустимым для всех пользователей в конфигурации развертывания по умолчанию.
+
+    ```json
+    "parameters": {
+      "storageAccountType": {
+        "type": "string",
+        "defaultValue": "Standard_GRS",
+        "metadata": {
+          "description": "The type of the new storage account created to store the VM disks."
+        }
+      }
+    }
+    ```
 
 * Чтобы указать дополнительный параметр, не используйте пустую строку в качестве значения по умолчанию. Вместо этого используйте литеральное значение или выражение языка для составления значения.
 
@@ -84,7 +84,7 @@ ms.locfileid: "96497985"
      "metadata": {
        "description": "Name of the storage account"
      }
-   },
+   }
    ```
 
 * Используйте `allowedValues` только в крайнем случае. Используйте ее только в том случае, когда необходимо убедиться в том, что некоторые значения не включены в разрешенные параметры. Если вы используете `allowedValues` слишком широкие возможности, вы можете блокировать допустимые развертывания, не поддерживая список обновлений.
@@ -95,18 +95,18 @@ ms.locfileid: "96497985"
 
 * Всегда используйте параметры для имен пользователей и паролей (или секретов).
 
-* Используйте `securestring` для всех паролей и секретов. При передаче конфиденциальных данных в объекте JSON используйте тип `secureObject`. Параметры шаблона с типами строки и объекта безопасности невозможно считать после развертывания ресурса. 
-   
-   ```json
-   "parameters": {
-       "secretValue": {
-           "type": "securestring",
-           "metadata": {
-               "description": "The value of the secret to store in the vault."
-           }
-       }
-   }
-   ```
+* Используйте `securestring` для всех паролей и секретов. При передаче конфиденциальных данных в объекте JSON используйте тип `secureObject`. Параметры шаблона с типами строки и объекта безопасности невозможно считать после развертывания ресурса.
+
+    ```json
+    "parameters": {
+      "secretValue": {
+        "type": "securestring",
+        "metadata": {
+          "description": "The value of the secret to store in the vault."
+        }
+      }
+    }
+    ```
 
 * Не указывайте значения по умолчанию для имен пользователей, паролей или любое значение, которое требует тип `secureString`.
 
@@ -114,7 +114,7 @@ ms.locfileid: "96497985"
 
 ### <a name="location-recommendations-for-parameters"></a>Рекомендации по расположению параметров
 
-* Используйте параметр для указания расположения ресурсов и задайте значения по умолчанию для `resourceGroup().location`. Параметр расположения позволяет пользователям шаблона указывать расположение, на которое они имеют разрешение для развертывания.
+* Используйте параметр для указания расположения ресурсов и задайте значения по умолчанию для `resourceGroup().location`. Указание параметра Location позволяет пользователям шаблона указать расположение, в котором у них есть разрешение на развертывание ресурсов.
 
    ```json
    "parameters": {
@@ -125,7 +125,7 @@ ms.locfileid: "96497985"
          "description": "The location in which the resources should be deployed."
        }
      }
-   },
+   }
    ```
 
 * Не указывайте `allowedValues` для параметра расположения. Указываемые расположения могут оказаться недоступными во всех облаках.
@@ -142,9 +142,9 @@ ms.locfileid: "96497985"
 
 * Применяйте переменные для значений, которые необходимо использовать в шаблоне более одного раза. Если значение используется только один раз, жестко задайте его. Это облегчит чтение шаблона.
 
-* Используйте переменные для значений, составленных на основе сложного упорядочения функций шаблонов. Шаблон более удобный для считывания, когда сложное выражение отображается только в переменных.
+* Используйте переменные для значений, составленных на основе сложного упорядочения функций шаблонов. Шаблон легче читать, если сложное выражение отображается только в переменных.
 
-* Нельзя использовать функцию [reference](template-functions-resource.md#reference) в разделе **variables** шаблона. Функция **reference** получает свое значение из состояния среды выполнения ресурса, а переменные разрешаются при начальной обработке шаблона. Сформируйте значения, которым требуется функция **reference**, непосредственно в разделе **resources** или **outputs** шаблона.
+* Нельзя использовать функцию [Reference](template-functions-resource.md#reference) в `variables` разделе шаблона. `reference`Функция получает свое значение из состояния среды выполнения ресурса. а переменные разрешаются при начальной обработке шаблона. Создайте значения, для которых требуется `reference` функция непосредственно в `resources` `outputs` разделе или шаблона.
 
 * Добавьте переменные для имен ресурсов, которые должны быть уникальными.
 
@@ -166,7 +166,7 @@ ms.locfileid: "96497985"
 
 При принятии решения о том, какие [зависимости](define-resource-dependency.md) следует задать, используйте следующие рекомендации.
 
-* Используйте функцию **reference** и передайте имя ресурса, чтобы задать неявные зависимости между ресурсами, которые должны совместно использовать свойство. Не добавляйте явный элемент `dependsOn`, если неявная зависимость уже определена. Такой подход уменьшает риск появления ненужных зависимостей. Пример настройки неявной зависимости см. в разделе [неявная зависимость](define-resource-dependency.md#reference-and-list-functions).
+* Используйте `reference` функцию и передайте имя ресурса, чтобы установить неявную зависимость между ресурсами, которым необходимо предоставить общий доступ к свойству. Не добавляйте явный элемент `dependsOn`, если неявная зависимость уже определена. Такой подход уменьшает риск появления ненужных зависимостей. Пример настройки неявной зависимости см. в разделе [функции Reference и List](define-resource-dependency.md#reference-and-list-functions).
 
 * Назначайте дочерний ресурс зависимым от его родительского ресурса.
 
@@ -180,109 +180,108 @@ ms.locfileid: "96497985"
 
 Ниже приведены некоторые рекомендации по работе с [ресурсами](template-syntax.md#resources).
 
-* Чтобы другим участникам было проще понять назначение этого ресурса, укажите **комментарии** для каждого ресурса в шаблоне:
-   
-   ```json
-   "resources": [
-     {
-         "name": "[variables('storageAccountName')]",
-         "type": "Microsoft.Storage/storageAccounts",
-         "apiVersion": "2019-06-01",
-         "location": "[resourceGroup().location]",
-         "comments": "This storage account is used to store the VM disks.",
-         ...
-     }
-   ]
-   ```
+* Чтобы помочь другим участникам понять назначение ресурса, укажите `comments` для каждого ресурса в шаблоне.
 
-* Если вы используете в шаблоне *общедоступную конечную точку* (например, общедоступную конечную точку хранилища BLOB-объектов Azure), то *не следует жестко кодировать* пространство имен. Используйте функцию **reference** для динамического извлечения пространства имен. Вы можете использовать этот подход, чтобы развернуть шаблон в другом общедоступном пространстве имен, не изменяя конечную точку в шаблоне вручную. Задайте для версии API ту же версию, которая указана в учетной записи хранения в вашем шаблоне.
-   
-   ```json
-   "diagnosticsProfile": {
-       "bootDiagnostics": {
-           "enabled": "true",
-           "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
-       }
-   }
-   ```
-   
-   Если учетная запись хранения развернута в том же шаблоне, а имя учетной записи хранения не является общим для другого ресурса в шаблоне, то при ссылке на ресурс не нужно указывать пространство имен поставщика или apiVersion. В следующем примере показан упрощенный синтаксис.
-   
-   ```json
-   "diagnosticsProfile": {
-       "bootDiagnostics": {
-           "enabled": "true",
-           "storageUri": "[reference(variables('storageAccountName')).primaryEndpoints.blob]"
-       }
-   }
-   ```
-     
-   Вы также можете использовать функцию reference для ссылки на учетную запись хранения в другой группе ресурсов:
+    ```json
+    "resources": [
+      {
+        "name": "[variables('storageAccountName')]",
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2019-06-01",
+        "location": "[resourceGroup().location]",
+        "comments": "This storage account is used to store the VM disks.",
+          ...
+      }
+    ]
+    ```
 
-   ```json
-   "diagnosticsProfile": {
-       "bootDiagnostics": {
-           "enabled": "true",
-           "storageUri": "[reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('existingStorageAccountName')), '2019-06-01').primaryEndpoints.blob]"
-       }
-   }
-   ```
+* Если вы используете в шаблоне *общедоступную конечную точку* (например, общедоступную конечную точку хранилища BLOB-объектов Azure), то *не следует жестко кодировать* пространство имен. Используйте `reference` функцию, чтобы динамически получить пространство имен. Вы можете использовать этот подход, чтобы развернуть шаблон в другом общедоступном пространстве имен, не изменяя конечную точку в шаблоне вручную. Задайте в качестве версии API ту же версию, которую вы используете для учетной записи хранения в шаблоне.
+
+    ```json
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": "true",
+        "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
+      }
+    }
+    ```
+
+   Если учетная запись хранения развернута в том же шаблоне, а имя учетной записи хранения не является общим для другого ресурса в шаблоне, то не нужно указывать пространство имен поставщика или `apiVersion` при ссылке на ресурс. В следующем примере показан упрощенный синтаксис.
+
+    ```json
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": "true",
+        "storageUri": "[reference(variables('storageAccountName')).primaryEndpoints.blob]"
+      }
+    }
+    ```
+
+   Вы также можете ссылаться на существующую учетную запись хранения, которая находится в другой группе ресурсов.
+
+    ```json
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": "true",
+        "storageUri": "[reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('existingStorageAccountName')), '2019-06-01').primaryEndpoints.blob]"
+      }
+    }
+    ```
 
 * Назначайте общедоступные IP-адреса виртуальной машине только в том случае, если это требуется для работы приложения. Чтобы подключиться к виртуальной машине с целью отладки, управления или администрирования, используйте правила преобразования сетевых адресов для входящих подключений, шлюз виртуальной машины или jumpbox.
-   
+
      Дополнительные сведения о подключении к виртуальным машинам можно получить в приведенных ниже статьях.
-   
+
    * [Run Windows VMs for an N-tier application](/azure/architecture/reference-architectures/n-tier/n-tier-sql-server) (Запуск виртуальных машин Windows в n-уровневом приложении)
    * [Настройка доступа WinRM для виртуальных машин в Azure Resource Manager](../../virtual-machines/windows/winrm.md)
    * [Открытие портов для виртуальной машины в Azure с помощью портала Azure](../../virtual-machines/windows/nsg-quickstart-portal.md)
    * [Открытие портов и конечных точек для виртуальной машины в Azure с помощью PowerShell](../../virtual-machines/windows/nsg-quickstart-powershell.md)
    * [Открытие портов и конечных точек для виртуальной машины Linux с помощью интерфейса командной строки Azure](../../virtual-machines/linux/nsg-quickstart.md)
 
-* Свойство **DomainNameLabel** для общедоступных IP-адресов должно быть уникальным. Свойство **domainNameLabel** должно содержать то 3 до 63 знаков и соответствовать правилам, определенным этим регулярным выражением: `^[a-z][a-z0-9-]{1,61}[a-z0-9]$`. Так как функция **uniqueString** создает строку длиной 13 знаков, в параметре **dnsPrefixString** можно использовать не более 50 знаков:
+* `domainNameLabel`Свойство для общедоступных IP-адресов должно быть уникальным. `domainNameLabel`Значение должно иметь длину от 3 до 63 символов и следовать правилам, заданным в этом регулярном выражении: `^[a-z][a-z0-9-]{1,61}[a-z0-9]$` . Поскольку `uniqueString` функция создает строку длиной 13 символов, длина `dnsPrefixString` параметра ограничена 50 символами.
 
-   ```json
-   "parameters": {
-       "dnsPrefixString": {
-           "type": "string",
-           "maxLength": 50,
-           "metadata": {
-               "description": "The DNS label for the public IP address. It must be lowercase. It should match the following regular expression, or it will raise an error: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$"
-           }
-       }
-   },
-   "variables": {
-       "dnsPrefix": "[concat(parameters('dnsPrefixString'),uniquestring(resourceGroup().id))]"
-   }
-   ```
+    ```json
+    "parameters": {
+      "dnsPrefixString": {
+        "type": "string",
+        "maxLength": 50,
+        "metadata": {
+          "description": "The DNS label for the public IP address. It must be lowercase. It should match the following regular expression, or it will raise an error: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$"
+        }
+      }
+    },
+    "variables": {
+      "dnsPrefix": "[concat(parameters('dnsPrefixString'),uniquestring(resourceGroup().id))]"
+    }
+    ```
 
-* При добавлении пароля в расширение пользовательских скриптов используйте свойство **commandToExecute** в **protectedSettings**:
-   
-   ```json
-   "properties": {
-       "publisher": "Microsoft.Azure.Extensions",
-       "type": "CustomScript",
-       "typeHandlerVersion": "2.0",
-       "autoUpgradeMinorVersion": true,
-       "settings": {
-           "fileUris": [
-               "[concat(variables('template').assets, '/lamp-app/install_lamp.sh')]"
-           ]
-       },
-       "protectedSettings": {
-           "commandToExecute": "[concat('sh install_lamp.sh ', parameters('mySqlPassword'))]"
-       }
-   }
-   ```
-   
+* При добавлении пароля в расширение пользовательского скрипта используйте `commandToExecute` свойство в `protectedSettings` свойстве.
+
+    ```json
+    "properties": {
+      "publisher": "Microsoft.Azure.Extensions",
+      "type": "CustomScript",
+      "typeHandlerVersion": "2.0",
+      "autoUpgradeMinorVersion": true,
+      "settings": {
+        "fileUris": [
+          "[concat(variables('template').assets, '/lamp-app/install_lamp.sh')]"
+        ]
+      },
+      "protectedSettings": {
+        "commandToExecute": "[concat('sh install_lamp.sh ', parameters('mySqlPassword'))]"
+      }
+    }
+    ```
+
    > [!NOTE]
-   > Чтобы обеспечить шифрование секретов, которые передаются как параметры в виртуальные машины и расширения, необходимо использовать свойство **protectedSettings** соответствующих расширений.
-   > 
+   > Чтобы обеспечить шифрование секретов, когда они передаются в качестве параметров для виртуальных машин и расширений, используйте `protectedSettings` свойство соответствующих расширений.
 
 ## <a name="use-test-toolkit"></a>Использование набора средств тестирования
 
 Набор средств тестирования шаблонов ARM — это сценарий, который проверяет, использует ли шаблон рекомендованные методы. Если шаблон не соответствует рекомендуемым методикам, он возвращает список предупреждений с предлагаемыми изменениями. Набор средств тестирования поможет вам научиться реализовывать рекомендации в шаблоне.
 
-Завершив работу с шаблоном, запустите набор средств тестирования, чтобы узнать, есть ли способы улучшения его реализации. Дополнительные сведения см. в статье [набор средств для тестирования шаблонов ARM](test-toolkit.md).
+Завершив работу с шаблоном, запустите набор средств тестирования, чтобы узнать, есть ли способы улучшения его реализации. Дополнительные сведения см. в статье [Использование набора средств для тестирования шаблонов ARM](test-toolkit.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/12/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 00e264cea34c7c3e7223b47217ecf5a59b76ba41
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 6eae805b6edce4c414d26f1b79d52ac33f8f2d9d
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97592472"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709118"
 ---
 # <a name="azure-activity-log"></a>Журнал действий Azure
 Журнал действий — это журнал [платформы в Azure](platform-logs-overview.md), который предоставляет аналитические сведения о событиях уровня подписки, например об изменении ресурса или запуске виртуальной машины. Вы можете просмотреть журнал действий на портале Azure или получить записи с помощью PowerShell и CLI. Для дополнительной функциональности следует создать параметр диагностики для отправки журнала действий в [журналы Azure Monitor](data-platform-logs.md), в концентраторы событий Azure для пересылки за пределы Azure или в службу хранилища Azure для архивации. Эта статья содержит сведения о просмотре журнала действий и его отправке в различные назначения.
@@ -67,14 +67,14 @@ ms.locfileid: "97592472"
 
 ```kusto
 AzureActivity
-| summarize count() by Category
+| summarize count() by CategoryValue
 ```
 
 Чтобы получить все записи в административной категории, используйте следующий запрос.
 
 ```kusto
 AzureActivity
-| where Category == "Administrative"
+| where CategoryValue == "Administrative"
 ```
 
 
@@ -278,6 +278,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/00000000
 |:---|:---|
 | ActivityStatus    | ActivityStatusValue    |
 | активитисубстатус | активитисубстатусвалуе |
+| Категория          | категоривалуе          |
 | OperationName     | оператионнамевалуе     |
 | ResourceProvider  | ресаурцепровидервалуе  |
 

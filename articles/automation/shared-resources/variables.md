@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5be0d45843eed8c7c0d7d9b6dc4655de01e914c3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d064eb0b748c361b76139b1a21d25cec8996e818
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461457"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734782"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Управление переменными в службе автоматизации Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "96461457"
 
 Служба автоматизации Azure сохраняет переменные, чтобы они были доступны даже после сбоя модуля runbook или конфигурации DSC. Это также позволяет модулю runbook или конфигурации DSC задать значение, которое может использоваться другим модулем или этим же модулем либо конфигурацией DSC при следующем запуске.
 
-Служба автоматизации Azure хранит каждую зашифрованную переменную безопасным образом. При создании переменной можно указать ее шифрование и хранение с помощью службы автоматизации Azure в качестве безопасного ресурса. После создания переменной ее состояние шифрования нельзя изменить без повторного создания переменной. При наличии переменных учетной записи службы автоматизации, в которых хранятся конфиденциальные данные, которые еще не зашифрованы, их необходимо удалить и создать заново в виде зашифрованных переменных. Рекомендация центра безопасности Azure заключается в шифровании всех переменных службы автоматизации Azure, как описано в разделе [переменные учетной записи службы автоматизации](../../security-center/recommendations-reference.md#recs-computeapp). Если у вас есть незашифрованные переменные, которые вы хотите исключить из этой рекомендации по безопасности, см. статью [исключение ресурса из рекомендаций и безопасность оценки](../../security-center/exempt-resource.md) для создания правила исключения.
+Служба автоматизации Azure хранит каждую зашифрованную переменную безопасным образом. При создании переменной можно указать ее шифрование и хранение с помощью службы автоматизации Azure в качестве безопасного ресурса. После создания переменной вы не сможете изменить ее состояние шифрования, не создав переменную снова. Если у вас есть переменные учетной записи службы автоматизации, в которых хранятся еще не зашифрованные конфиденциальные данные, удалите их и создайте снова в виде зашифрованных переменных. Центр безопасности Azure рекомендует шифровать все переменные службы автоматизации Azure, как описано в рекомендации [Переменные учетной записи службы автоматизации должны быть зашифрованы](../../security-center/recommendations-reference.md#recs-computeapp). Если у вас есть незашифрованные переменные, которые нужно исключить из этой рекомендации по безопасности, выполните указания, приведенные в статье [Исключение ресурса из рекомендаций и оценки безопасности](../../security-center/exempt-resource.md), чтобы создать правило исключения.
 
 >[!NOTE]
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Служба автоматизации Azure хранит ключ в управляемом системой хранилище ключей Key Vault. Перед сохранением защищенного ресурса служба автоматизации Azure загружает ключ из Key Vault, а затем использует его для шифрования ресурса.
@@ -80,11 +80,11 @@ $mytestencryptvar = Get-AutomationVariable -Name TestVariable
 Write-output "The encrypted value of the variable is: $mytestencryptvar"
 ```
 
-## <a name="python-2-functions-to-access-variables"></a>Функции Python 2 для доступа к переменным
+## <a name="python-functions-to-access-variables"></a>Функции Python для доступа к переменным
 
-Функции, приведенные в таблице ниже, используются для доступа к переменным в модуле runbook Python 2.
+Функции в следующей таблице используются для доступа к переменным в модуле Runbook Python 2 и 3. Модули Runbook Python 3 сейчас доступны в предварительной версии.
 
-|Функции Python 2|Описание|
+|Функции Python|Описание|
 |:---|:---|
 |`automationassets.get_automation_variable`|Получает значение существующей переменной. |
 |`automationassets.set_automation_variable`|Получает значение существующей переменной. |
@@ -135,9 +135,10 @@ $vmValue = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
 $vmName = $vmValue.Name
 $vmExtensions = $vmValue.Extensions
 ```
+
 ## <a name="textual-runbook-examples"></a>Примеры текстовых модулей runbook
 
-### <a name="retrieve-and-set-a-simple-value-from-a-variable"></a>Получение и задание простого значения переменной
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 В приведенном ниже примере показано, как задать и получить переменную в текстовом модуле runbook. В этом примере предполагается создание целочисленных переменных с именами `NumberOfIterations` и `NumberOfRunnings` и строковой переменной с именем `SampleMessage`.
 
@@ -154,7 +155,7 @@ for ($i = 1; $i -le $NumberOfIterations; $i++) {
 Set-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
 ```
 
-### <a name="retrieve-and-set-a-variable-in-a-python-2-runbook"></a>Получение и задание переменной в модуле runbook Python 2
+# <a name="python-2"></a>[Python 2;](#tab/python2)
 
 В приведенном ниже примере показано, как получить и задать переменную, а также обработать исключение для несуществующей переменной в модуле runbook Python 2.
 
@@ -177,6 +178,32 @@ try:
 except AutomationAssetNotFound:
     print "variable not found"
 ```
+
+# <a name="python-3"></a>[Python 3](#tab/python3);
+
+В следующем примере показано, как получить переменную, задать переменную и выполнить обработку исключения для несуществующей переменной в модуле Runbook Python 3 (Предварительная версия).
+
+```python
+import automationassets
+from automationassets import AutomationAssetNotFound
+
+# get a variable
+value = automationassets.get_automation_variable("test-variable")
+print value
+
+# set a variable (value can be int/bool/string)
+automationassets.set_automation_variable("test-variable", True)
+automationassets.set_automation_variable("test-variable", 4)
+automationassets.set_automation_variable("test-variable", "test-string")
+
+# handle a non-existent variable exception
+try:
+    value = automationassets.get_automation_variable("nonexisting variable")
+except AutomationAssetNotFound:
+    print ("variable not found")
+```
+
+---
 
 ## <a name="graphical-runbook-examples"></a>Примеры графических модулей runbook
 
