@@ -12,15 +12,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 11/20/2020
+ms.date: 12/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2732f9fc4b1b9251391180874a055e8ffd8d9e7a
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 886cd57b59bd4103ced9d496021e54ab0bdc99ad
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985082"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723292"
 ---
 # <a name="available-skus-for-hana-large-instances"></a>Доступные номера SKU для крупных экземпляров HANA
 
@@ -33,7 +33,7 @@ SAP HANA в службе Azure (крупные экземпляры), основ
 
 SAP HANA в службе Azure (крупные экземпляры), основанной на метках версии 4, можно найти в нескольких конфигурациях в следующих регионах Azure:
 
-- Западная часть США 2
+- Западная часть США 2
 - Восточная часть США
 
 BareMetal инфраструктура (сертифицированная для рабочих нагрузок SAP HANA), основанная на метках редакции 4,2. Он доступен в нескольких конфигурациях в регионах Azure:
@@ -52,7 +52,7 @@ BareMetal инфраструктура (сертифицированная дл�
 
 
 
-| SAP HANA сертификации | Моделирование | Общий объем памяти | Память DRAM | Оптане памяти | Память | Доступность |
+| SAP HANA сертификации | Модель | Общий объем памяти | Память DRAM | Оптане памяти | Память | Доступность |
 | --- | --- | --- | --- | --- | --- | --- |
 | YES <br />[OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2185), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2265) | SAP HANA на виртуальных машинах Azure S96<br /> – 2 x Intel® Xeon® процессор E7-8890 v4 <br /> 48 ядер ЦП и 96 потоков ЦП |  768 ГБ | 768 ГБ | --- | 3 ТБ | Доступно |
 | YES <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2186), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2269) | SAP HANA в Azure S224<br /> — 4 процессора Intel® Xeon® Platinum 8276 <br /> 112 ядер ЦП и 224 ЦП |  3 ТБ | 3 ТБ | --- | 6,3 ТБ | Доступно |
@@ -64,24 +64,24 @@ BareMetal инфраструктура (сертифицированная дл�
 | YES <br />[OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=1983), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2268) | SAP HANA на виртуальных машинах Azure S384<br /> — 8 процессоров Intel® Xeon® E7-8890 v4<br /> 192 ядра ЦП и 384 потока ЦП |  4 TБ | 4 TБ | --- | 16 ТБ | Доступно |
 | YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2080) | SAP HANA на виртуальных машинах Azure S384m<br /> — 8 процессоров Intel® Xeon® E7-8890 v4<br /> 192 ядра ЦП и 384 потока ЦП |  6 ТБ | 6 ТБ | --- | 18 ТБ |  Доступно  |
 | YES <br />[OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=1984), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2267) | SAP HANA на виртуальных машинах Azure S384xm<br /> — 8 процессоров Intel® Xeon® E7-8890 v4<br /> 192 ядра ЦП и 384 потока ЦП |  8 TБ | 8 TБ | --- | 22 ТБ | Доступно |
-| YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2378) | SAP HANA в Azure S448<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 6 ТБ |  6 ТБ |  --- | 10,5 ТБ | Доступно (только версия 4) |
-| YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2377) | SAP HANA в Azure S448m<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 12 ТБ |  12 ТБ |  --- | 18,9 ТБ | Доступно (только версия 4) |
+| YES <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=iaas;ve:24&id=s:2411), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2378) | SAP HANA в Azure S448<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 6 ТБ |  6 ТБ |  --- | 10,5 ТБ | Доступно (только версия 4) |
+| YES <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=iaas;ve:24&id=s:2410), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2377) | SAP HANA в Azure S448m<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 12 ТБ |  12 ТБ |  --- | 18,9 ТБ | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S448oo<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 9,0 ТБ |  3 ТБ |  6 ТБ | 14,8 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S448om<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 12 ТБ |  6 ТБ |  6 ТБ | 18,9 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S448ooo<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 15,0 ТБ |  3 ТБ |  12 ТБ | 23,2 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S448oom<br /> — 8 x процессоров Intel® Xeon® Platinum 8276 <br /> 224 ядер ЦП и 448 ЦП | 18,0 TБ |  6 ТБ |  12 ТБ | 27,4 ТБ  | Доступно (только версия 4) |
-| YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2049) | SAP HANA на виртуальных машинах Azure S576m<br /> — 12 процессоров Intel® Xeon® E7-8890 v4<br /> 288 ядер ЦП и 576 потоков ЦП |  12 ТБ | 12 ТБ | --- | 28 ТБ | Доступно (только версия 4) |
+| YES <br /> [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2049) | SAP HANA на виртуальных машинах Azure S576m<br /> — 12 процессоров Intel® Xeon® E7-8890 v4<br /> 288 ядер ЦП и 576 потоков ЦП |  12 ТБ | 12 ТБ | --- | 28 ТБ | Доступно (только версия 4) |
 | NO | SAP HANA на виртуальных машинах Azure S576xm<br /> — 12 процессоров Intel® Xeon® E7-8890 v4<br /> 288 ядер ЦП и 576 потоков ЦП |  18,0 TБ | 18.0 | --- |  41 TБ | Доступно |
-| YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2380) | SAP HANA в Azure S672<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 9,0 ТБ |  9,0 ТБ |  --- | 14,7 ТБ | Доступно (только версия 4) |
-| YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2379) | SAP HANA в Azure S672m<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 18,0 TБ |  18,0 TБ |  --- | 27,4 ТБ | Доступно (только версия 4) |
+| YES <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=iaas;ve:24&id=s:2409), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2380) | SAP HANA в Azure S672<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 9,0 ТБ |  9,0 ТБ |  --- | 14,7 ТБ | Доступно (только версия 4) |
+| YES <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=iaas;ve:24&id=s:2408), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2379) | SAP HANA в Azure S672m<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 18,0 TБ |  18,0 TБ |  --- | 27,4 ТБ | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S672oo<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 13,5 ТБ |  4,5 ТБ |  9,0 ТБ | 21,1 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S672om<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 18,0 TБ |  9,0 ТБ |  9,0 ТБ | 27,4 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S672ooo<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 22,5 ТБ |  4,5 ТБ |  18,0 TБ | 33,7 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S672oom<br /> – 12 x процессоров Intel® Xeon® Platinum 8276 <br /> 336 ядер ЦП и 672 ЦП | 27,0 ТБ |  9,0 ТБ |  18,0 TБ | 40,0 ТБ  | Доступно (только версия 4) |
 | YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=1985) | SAP HANA на виртуальных машинах Azure S768m<br /> — 16 процессоров Intel® Xeon® E7-8890 v4<br /> 384 ядра ЦП и 768 потоков ЦП |  16 TБ | 16 TБ | -- | 36 ТБ | Доступно |
 | NO | SAP HANA на виртуальных машинах Azure S768xm<br /> — 16 процессоров Intel® Xeon® E7-8890 v4<br /> 384 ядра ЦП и 768 потоков ЦП |  24,0 TБ | 24,0 TБ | --- | 56 ТБ | Доступно |
-|  YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2376)  | SAP HANA в Azure S896<br /> – 16 x процессоров Intel® Xeon® Platinum 8276 <br /> 448 ядер ЦП и 896 ЦП | 12 ТБ |  12 ТБ |  --- | 18,9 ТБ | Доступно (только версия 4) |
-| YES <br />[OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2328) | SAP HANA в Azure S896m<br /> – 16 x процессоров Intel® Xeon® Platinum 8276 <br /> 448 ядер ЦП и 896 ЦП | 24,0 TБ | 24,0 TБ | -- | 35,8 ТБ | Доступно |
+|  YES <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=iaas;ve:24&id=s:2407), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2376)  | SAP HANA в Azure S896<br /> – 16 x процессоров Intel® Xeon® Platinum 8276 <br /> 448 ядер ЦП и 896 ЦП | 12 ТБ |  12 ТБ |  --- | 18,9 ТБ | Доступно (только версия 4) |
+| YES <br /> [OLAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=iaas;ve:24&id=s:2406), [OLTP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure&recordid=2328) | SAP HANA в Azure S896m<br /> – 16 x процессоров Intel® Xeon® Platinum 8276 <br /> 448 ядер ЦП и 896 ЦП | 24,0 TБ | 24,0 TБ | -- | 35,8 ТБ | Доступно |
 | NO | SAP HANA в Azure S896oo<br /> – 16 x процессоров Intel® Xeon® Platinum 8276 <br /> 448 ядер ЦП и 896 ЦП | 18,0 TБ |  6 ТБ |  12 ТБ | 27,4 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S896om<br /> – 16 x процессоров Intel® Xeon® Platinum 8276 <br /> 448 ядер ЦП и 896 ЦП | 24,0 TБ |  12 ТБ |  12 ТБ | 35,8 ТБ  | Доступно (только версия 4) |
 | NO | SAP HANA в Azure S896ooo<br /> – 16 x процессоров Intel® Xeon® Platinum 8276 <br /> 448 ядер ЦП и 896 ЦП | 30,0 ТБ |  6 ТБ |  24,0 TБ | 44,3 ТБ  | Доступно (только версия 4) |

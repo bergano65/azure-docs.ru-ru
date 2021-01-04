@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: deanwe
 ms.custom: references_regions
-ms.openlocfilehash: ffbf3fa3e2d404b7bc5888ef01707cbd816600b3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ab056e0685264b03d35ee6b95afad7c6362f9db6
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182858"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695797"
 ---
 # <a name="azure-automanage-for-virtual-machines"></a>Управление Azure для виртуальных машин
 
@@ -52,7 +52,7 @@ ms.locfileid: "96182858"
 > [!NOTE]
 > Если вы хотите использовать управление на виртуальной машине, подключенной к рабочей области, в другой подписке, необходимо иметь разрешения, описанные выше в каждой подписке.
 
-Также важно отметить, что управление только виртуальными машинами Windows поддерживается в следующих регионах: Западная Европа, Восточная часть США, Западная часть США 2, Центральная Канада, Западная Центральная часть США.
+Также важно отметить, что для управления только виртуальными машинами Windows, расположенными в следующих регионах: Западная Европа, Восточная часть США, Западная часть США 2, Центральная Канада, Западная Центральная часть США, Восточная Япония.
 
 ## <a name="participating-services"></a>Участвующие службы
 

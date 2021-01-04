@@ -3,12 +3,12 @@ title: Обзор AMQP 1,0 в служебной шине Azure
 description: Узнайте, как служебная шина Azure поддерживает Расширенный протокол управления очередью сообщений (AMQP) — открытый стандартный протокол.
 ms.topic: article
 ms.date: 11/20/2020
-ms.openlocfilehash: e585fcc905d1651d49008b623b01a6c2f8a04fcc
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 241a6b7fb9f9055ce610e44e5cd37dba87c77554
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498784"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709288"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Поддержка AMQP 1.0 в служебной шине
 Облачная служба служебной шины Azure использует [протокол расширенных очередей сообщений (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) в качестве основного средства связи. Корпорация Майкрософт сотрудничает с партнерами по отрасли, а также клиентам и поставщикам конкурирующих брокеров обмена сообщениями, чтобы разрабатывать и развивать AMQP за последние десять лет. новые расширения разрабатываются в [техническом комитете Oasis AMQP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 — это стандарт ISO и IEC ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
@@ -42,7 +42,7 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 * **Поставщики технологий**: Axway Software, Huawei Technologies, IIT Software, INETCO Systems, Kaazing, Microsoft, Mitre Corporation, Primeton Technologies, Progress Software, Red Hat, SITA, Software AG, Solace Systems, VMware, WSO2, Zenika.
 * **Пользовательские компании**: Bank of America, Credit Suisse, Deutsche Boerse, Goldman Sachs, JPMorgan Chase.
 
-Текущие стулья [OASIS AMQP Technical Комитет] (( https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp) представляет Red Hat и Microsoft.
+Текущие стулья [технического комитета по Oasis AMQP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp) представляют собой Red Hat и Майкрософт.
 
 Ниже приведены некоторые из часто упоминаемых преимуществ открытых стандартов:
 
@@ -65,10 +65,10 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 Все поддерживаемые клиентские библиотеки служебной шины, доступные через пакет Azure SDK, используют AMQP 1,0.
 
 - [Служебная шина Azure для .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true&view=azure-dotnet)
-- [Библиотеки служебной шины Azure для Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
-- [Поставщик служебной шины Azure для Java JMS 2,0](how-to-use-java-message-service-20.md)
-- [Модули служебной шины Azure для JavaScript и TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
-- [Библиотеки служебной шины Azure для Python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
+- [Библиотеки Служебной шины Azure для Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
+- [Поставщик Служебной шины Azure для Java JMS 2.0](how-to-use-java-message-service-20.md)
+- [Модули Служебной шины Azure для JavaScript и TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
+- [Библиотеки Служебной шины для Python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
 
 [!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 
@@ -76,7 +76,7 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 
 [!INCLUDE [messaging-oss-amqp-stacks.md](../../includes/messaging-oss-amqp-stacks.md)]
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 * AMQP 1.0 — это открытый и надежный протокол обмена сообщениями, который можно использовать для создания кроссплатформенных гибридных приложений. AMQP 1.0 является стандартом OASIS.
 
 ## <a name="next-steps"></a>Дальнейшие действия

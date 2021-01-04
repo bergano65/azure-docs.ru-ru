@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 11/25/2020
 ms.topic: conceptual
-ms.custom: how-to
-ms.openlocfilehash: c67415be38bc7b6fa48fd1046b51194c294df2f3
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.custom: designer
+ms.openlocfilehash: 29d83f4acddfce6294457f87519d62e35f52bf15
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030396"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709424"
 ---
 # <a name="enable-logging-in-azure-machine-learning-designer-pipelines"></a>Включение ведения журнала в конвейерах конструктора Машинное обучение Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "96030396"
 
     ![Просмотр метрик выполнения в студии](./media/how-to-track-experiments/experiment-page-metrics-across-runs.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать журналы в конструкторе. Дальнейшие действия см. в соответствующих статьях:
 

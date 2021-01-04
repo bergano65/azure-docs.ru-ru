@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/18/2020
 ms.author: Zhchia
-ms.openlocfilehash: 860b880faae9c5fe37a2c7eab2ef3a068ed4da3e
-ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
+ms.openlocfilehash: 127a9568d4f129763bee26210efedeaee8fe4aa1
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96299096"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709386"
 ---
 # <a name="tutorial-configure-papercut-cloud-print-management-for-automatic-user-provisioning"></a>Учебник. Настройка управления печатью Паперкут в облаке для автоматической подготовки пользователей
 
@@ -39,7 +39,7 @@ ms.locfileid: "96299096"
 
 * [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
-* Учетная запись пользователя в Паперкут Cloud Print Management с разрешениями администратора
+* Учетная запись администратора управления печатью Паперкут Cloud.
 
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
@@ -76,7 +76,7 @@ ms.locfileid: "96299096"
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-papercut-cloud-print-management"></a>Шаг 5. Настройка автоматической подготовки пользователей для Паперкутного управления печатью в облаке
 
-В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в TestApp на основе их назначений в Azure AD.
+В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в Паперкут Cloud Print Management на основе назначений пользователей и групп в Azure AD.
 
 ### <a name="to-configure-automatic-user-provisioning-for-papercut-cloud-print-management-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей для управления печатью Паперкут в облаке в Azure AD, сделайте следующее:
 
@@ -106,7 +106,8 @@ ms.locfileid: "96299096"
 
 7. Щелкните **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей для паперкут управления печатью в облаке**.
+8. В разделе **Сопоставления** выберите **Подготовка пользователей Azure Active Directory**.
+   ![Сопоставление AAD](media/papercut-cloud-print-management-provisioning-tutorial/mapping.png)
 
 9. Ознакомьтесь с атрибутами пользователей, которые синхронизированы из Azure AD, с Паперкут управления печатью в облаке в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Паперкут Cloud Print Management для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), необходимо убедиться, что API-интерфейс управления печатью паперкут Cloud поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 

@@ -57,6 +57,9 @@
           href: container-registry-image-tag-version.md
         - name: Георепликация
           href: container-registry-geo-replication.md
+        - name: Избыточность в пределах зоны
+          displayName: availability zone
+          href: zone-redundancy.md
         - name: Рекомендации по использованию реестра
           href: container-registry-best-practices.md
         - name: Управление общедоступными образами

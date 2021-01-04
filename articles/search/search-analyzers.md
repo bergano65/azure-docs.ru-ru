@@ -7,14 +7,14 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/20/2020
+ms.date: 12/18/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 544509a8c90c9273b748591509b1fa86510d71c3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bbda4268ca00d1c12f851517e2b35add7fba7f9b
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013825"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694299"
 ---
 # <a name="analyzers-for-text-processing-in-azure-cognitive-search"></a>Анализаторы для обработки текста в Azure Когнитивный поиск
 
@@ -315,57 +315,63 @@ API включает в себя дополнительные атрибуты �
 
 Для определения поля указан любой анализатор, используемый "как есть" без конфигурации. Нет необходимости в создании записи в разделе **[Analyzer]** индекса. 
 
-В этом примере для полей описания назначается Microsoft English и французский анализаторы. Это фрагмент кода, взятый из большего определения индекса гостиниц, который создается с помощью класса отеля в файле hotels.cs примера [дотнесовто](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) .
+Языковые анализаторы используются как есть. Чтобы использовать их, вызовите [лексикаланализер](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer), указав тип [лексикаланализернаме](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) , который предоставляет анализатор текста, поддерживаемый в Azure когнитивный Поиск.
 
-Вызовите [лексикаланализер](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer), указав тип [лексикаланализернаме](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) , который предоставляет анализатор текста, поддерживаемый в Azure когнитивный Поиск.
+Пользовательские анализаторы аналогичны указанным в определении поля, но для работы необходимо указать анализатор в определении индекса, как описано в следующем разделе.
 
 ```csharp
     public partial class Hotel
     {
        . . . 
-
-        [IsSearchable]
-        [Analyzer(AnalyzerName.AsString.EnMicrosoft)]
-        [JsonProperty("description")]
+        [SearchableField(AnalyzerName = LexicalAnalyzerName.Values.EnLucene)]
         public string Description { get; set; }
 
-        [IsSearchable]
-        [Analyzer(AnalyzerName.AsString.FrLucene)]
-        [JsonProperty("description_fr")]
+        [SearchableField(AnalyzerName = LexicalAnalyzerName.Values.FrLucene)]
+        [JsonPropertyName("Description_fr")]
         public string DescriptionFr { get; set; }
 
+        [SearchableField(AnalyzerName = "url-analyze")]
+        public string Url { get; set; }
       . . .
     }
 ```
+
 <a name="Define-a-custom-analyzer"></a>
 
 ### <a name="define-a-custom-analyzer"></a>Определение пользовательского анализатора
 
-Если требуется настройка или Настройка, необходимо добавить в индекс конструкцию анализатора. Определив его, можно добавить его определение поля, как показано в предыдущем примере.
+Если требуется настройка или Настройка, добавьте к индексу конструкцию анализатора. Определив его, можно добавить его определение поля, как показано в предыдущем примере.
 
-Создайте объект [кустоманализер](/dotnet/api/azure.search.documents.indexes.models.customanalyzer) . Дополнительные примеры см. в разделе [CustomAnalyzerTests.CS](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Microsoft.Azure.Search/tests/Tests/CustomAnalyzerTests.cs).
+Создайте объект [кустоманализер](/dotnet/api/azure.search.documents.indexes.models.customanalyzer) . Пользовательский анализатор — это определяемое пользователем сочетание известного маркера, ноль или более фильтров маркеров и ноль или более имен символьных фильтров:
+
++ [Кустоманализер. лексический токен](/dotnet/api/microsoft.azure.search.models.customanalyzer.tokenizer)
++ [Кустоманализер. Токенфилтерс](/dotnet/api/microsoft.azure.search.models.customanalyzer.tokenfilters)
++ [Кустоманализер. Чарфилтерс](/dotnet/api/microsoft.azure.search.models.customanalyzer.charfilters)
+
+В следующем примере создается пользовательский анализатор с именем "URL-анализ", использующий маркер [uax_url_email](/dotnet/api/microsoft.azure.search.models.customanalyzer.tokenizer) и [Фильтр маркеров нижнего регистра](/dotnet/api/microsoft.azure.search.models.tokenfiltername.lowercase).
 
 ```csharp
+private static void CreateIndex(string indexName, SearchIndexClient adminClient)
 {
-   var definition = new Index()
+   FieldBuilder fieldBuilder = new FieldBuilder();
+   var searchFields = fieldBuilder.Build(typeof(Hotel));
+
+   var analyzer = new CustomAnalyzer("url-analyze", "uax_url_email")
    {
-         Name = "hotels",
-         Fields = FieldBuilder.BuildForType<Hotel>(),
-         Analyzers = new[]
-            {
-               new CustomAnalyzer()
-               {
-                     Name = "url-analyze",
-                     Tokenizer = TokenizerName.UaxUrlEmail,
-                     TokenFilters = new[] { TokenFilterName.Lowercase }
-               }
-            },
+         TokenFilters = { TokenFilterName.Lowercase }
    };
 
-   serviceClient.Indexes.Create(definition);
+   var definition = new SearchIndex(indexName, searchFields);
+
+   definition.Analyzers.Add(analyzer);
+
+   adminClient.CreateOrUpdateIndex(definition);
+}
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+Дополнительные примеры см. в разделе [CustomAnalyzerTests.CS](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Microsoft.Azure.Search/tests/Tests/CustomAnalyzerTests.cs).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Ознакомьтесь с нашим подробным описанием [работы полнотекстового поиска в Azure когнитивный Поиск](search-lucene-query-architecture.md). В этой статье используются примеры для пояснения режимов, являющихся, на первый взгляд, нелогичными.
 
@@ -375,13 +381,13 @@ API включает в себя дополнительные атрибуты �
 
 + [Настройте пользовательские анализаторы](index-add-custom-analyzers.md) для минимальной или специализированной обработки определенных полей.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
- [Поиск документов REST API](/rest/api/searchservice/search-documents) 
+ [Search Documents (Azure Search Service REST API)](/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure)) 
 
- [Простой синтаксис запросов](query-simple-syntax.md) 
+ [Синтаксис простых запросов](query-simple-syntax.md) 
 
- [Полный синтаксис запроса Lucene](query-lucene-syntax.md) 
+ [Lucene query syntax in Azure Search](query-lucene-syntax.md) (Синтаксис запросов Lucene в службе поиска Azure) 
  
  [Обработка результатов поиска](search-pagination-page-layout.md)
 

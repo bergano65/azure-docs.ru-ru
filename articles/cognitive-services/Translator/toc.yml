@@ -56,30 +56,20 @@
       items:
         - name: "Справочник по службе \"Переводчик\" версии\_3"
           href: reference/v3-0-reference.md
-          items:
-            - name: Языки
-              href: reference/v3-0-languages.md
-            - name: Перевод
-              href: reference/v3-0-translate.md
-            - name: Транслитерация
-              href: reference/v3-0-transliterate.md
-            - name: Определение
-              href: reference/v3-0-detect.md
-            - name: BreakSentence
-              href: reference/v3-0-break-sentence.md
-            - name: Поиск по словарю
-              href: reference/v3-0-dictionary-lookup.md
-            - name: Примеры словарей
-              href: reference/v3-0-dictionary-examples.md
-        - name: "Справочник по службе \"Переводчик\" версии\_2 (нерекомендуемая версия)"
-          href: reference/v2-0-reference.md
-          items:
-            - name: Преобразование текста
-              href: transform-text.md
-            - name: Как использовать отчеты на платформе для совместного перевода (CTF)
-              href: ctf-reporting.md
-            - name: Возврат определенного количества (N) лучших переводов
-              href: return-n-best-translations.md
+        - name: Языки
+          href: reference/v3-0-languages.md
+        - name: Перевод
+          href: reference/v3-0-translate.md
+        - name: Транслитерация
+          href: reference/v3-0-transliterate.md
+        - name: Определение
+          href: reference/v3-0-detect.md
+        - name: BreakSentence
+          href: reference/v3-0-break-sentence.md
+        - name: Поиск по словарю
+          href: reference/v3-0-dictionary-lookup.md
+        - name: Примеры словарей
+          href: reference/v3-0-dictionary-examples.md
         - name: Ограничения запроса
           href: request-limits.md
     - name: Ресурсы

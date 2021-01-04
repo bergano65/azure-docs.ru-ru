@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 2dff68f98e2922d5fc7a4fca1e6de8740bc2ae68
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
+ms.lasthandoff: 12/18/2020
 ms.locfileid: "92459685"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itrp"></a>Руководство по Интеграция Azure Active Directory с ITRP
@@ -86,7 +86,7 @@ ms.locfileid: "92459685"
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением ITRP выберите **Единый вход**.
 
-    ![Выбор параметра "Единый вход"](common/select-sso.png)
+    ![Выбор параметра Единый вход](common/select-sso.png)
 
 2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
@@ -135,7 +135,7 @@ ms.locfileid: "92459685"
 
 1. В верхней части окна щелкните значок **Settings** (Параметры).
 
-    ![Значок Параметры](./media/itrp-tutorial/ic775570.png "Значок "Параметры"")
+    ![Значок Параметры](./media/itrp-tutorial/ic775570.png "Значок Параметры")
 
 1. В левой области выберите **Single Sign-On** (Единый вход).
 
