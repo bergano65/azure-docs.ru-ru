@@ -1,18 +1,18 @@
 ---
 title: Регистрация и сканирование Azure Data Lake Storage (ADLS) Gen1
 description: В этом руководстве описывается, как проверить данные из Azure Data Lake Storage 1-го поколения в Azure зрения.
-author: kchandra
-ms.author: kchandra
+author: shsandeep123
+ms.author: sandeepshah
 ms.service: data-catalog
 ms.subservice: data-catalog-gen2
 ms.topic: how-to
 ms.date: 11/30/2020
-ms.openlocfilehash: ee0b9238deb7805113f0cbfa28d0b60a114820a9
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: a831681f892de9f6aae50fa9a2fcf71e883fe6ba
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96555097"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693707"
 ---
 # <a name="register-and-scan-azure-data-lake-storage-gen1"></a>Регистрация и сканирование Azure Data Lake Storage 1-го поколения
 
@@ -34,7 +34,7 @@ ms.locfileid: "96555097"
 - Перед регистрацией источников данных создайте учетную запись Azure зрения. Дополнительные сведения о создании учетной записи зрения см. в разделе [Краткое руководство. Создание учетной записи Azure зрения](create-catalog-portal.md).
 - Необходимо быть администратором источника данных Azure зрения.
 
-## <a name="setting-up-authentication-for-a-scan"></a>Настройка проверки подлинности при проверке
+## <a name="setting-up-authentication-for-a-scan"></a>Настройка проверки подлинности для сканирования
 
 Для Azure Data Lake Storage 1-го поколения поддерживаются следующие методы проверки подлинности:
 
@@ -69,7 +69,7 @@ ms.locfileid: "96555097"
 
 5. Если хранилище ключей еще не подключено к зрения, необходимо [создать новое подключение к хранилищу ключей](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account).
 
-6. Наконец, [Создайте новые учетные данные](manage-credentials.md#create-a-new-credential) с помощью субъекта-службы для настройки проверки.
+6. Наконец, [создайте новые учетные данные](manage-credentials.md#create-a-new-credential) для сканирования, указав субъект-службу.
 > [!Note]
 > После добавления MSI-файла каталога в источник данных подождите до 15 минут, пока разрешения будут распространяться перед настройкой проверки.
 
@@ -81,7 +81,7 @@ ms.locfileid: "96555097"
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 
-2. Выберите **Azure Active Directory** в меню слева.
+2. В меню слева выберите **Azure Active Directory**.
 
 3. Щелкните **Регистрация приложений**.
 
@@ -89,7 +89,7 @@ ms.locfileid: "96555097"
 
 5. Введите имя **приложения** (имя субъекта-службы).
 
-6. Выберите **учетные записи только в этом каталоге Организации**.
+6. Установите флажок **Учетные записи только в этом каталоге организации**.
 
 7. Для **URI перенаправления** выберите **Интернет** и введите любой URL-адрес. Он не должен быть реальным или работать.
 
@@ -127,15 +127,15 @@ ms.locfileid: "96555097"
 
 На экране регистрация источников (Azure Data Lake Storage 1-го поколения) выполните следующие действия.
 
-1. Введите **имя** , в котором будет указан источник данных в каталоге.
+1. Введите **Имя**, под которым этот источник данных будет включен в каталог.
 2. Выберите подписку, чтобы отфильтровать учетные записи хранения
 3. Выбор учетной записи хранения
-4. Выберите или создайте новую коллекцию (необязательно)
-5. Готово для регистрации источника данных.
+4. Выберите коллекцию или создайте новую (необязательно).
+5. Щелкните Готово, чтобы завершить регистрацию источника данных.
 
 [!INCLUDE [create and manage scans](includes/manage-scans.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обзор каталога данных Azure зрения](how-to-browse-catalog.md)
-- [Поиск в каталоге данных Azure зрения](how-to-search-catalog.md)
+- [Обзор каталога данных Azure Purview](how-to-browse-catalog.md)
+- [Поиск по каталогу данных Azure Purview](how-to-search-catalog.md)

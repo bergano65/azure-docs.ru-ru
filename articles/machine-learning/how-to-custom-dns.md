@@ -11,16 +11,16 @@ author: jhirono
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 07ff656c5eacbbcdc16c6c7cf098478ca6baf745
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 8d3145639d2d4fb64bdb374f1dea0a7b70e4151c
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509297"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724720"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Использование рабочей области с пользовательским DNS-сервером
 
-При использовании рабочей области Машинное обучение Azure с частной конечной точкой существует [несколько способов обработки разрешения имен DNS](../private-link/private-endpoint-dns.md). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Если вместо этого _используется собственный настраиваемый DNS-сервер_, необходимо вручную создать записи DNS для рабочей области.
+При использовании рабочей области Машинное обучение Azure с частной конечной точкой существует [несколько способов обработки разрешения имен DNS](../private-link/private-endpoint-dns.md). По умолчанию Azure автоматически обрабатывает разрешение имен для рабочей области и частной конечной точки. Если вместо этого _используется собственный настраиваемый DNS-сервер_, необходимо вручную создать записи DNS или использовать условные серверы пересылки для рабочей области.
 
 > [!IMPORTANT]
 > В этой статье описывается, как найти полное доменное имя и IP-адреса для этих записей, которые не предоставляют сведений о настройке записей DNS для этих элементов. Сведения о добавлении записей см. в документации по программному обеспечению DNS.
@@ -37,9 +37,9 @@ ms.locfileid: "97509297"
 
 - При необходимости [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/install-az-ps).
 
-## <a name="find-the-ip-addresses"></a>Поиск IP-адресов
-
-Следующий список содержит полные доменные имена (FQDN), используемые рабочей областью и частной конечной точкой.
+## <a name="fqdns-in-use"></a>Используемые полные доменные имена
+### <a name="these-fqdns-are-in-use-in-the-following-regions-eastus-southcentralus-and-westus2"></a>Эти полные доменные имена используются в следующих регионах: eastus, southcentralus и westus2.
+В следующем списке содержатся полные доменные имена, используемые рабочей областью.
 
 * `<workspace-GUID>.workspace.<region>.cert.api.azureml.ms`
 * `<workspace-GUID>.workspace.<region>.api.azureml.ms`
@@ -51,6 +51,19 @@ ms.locfileid: "97509297"
 
     > [!NOTE]
     > Доступ к экземплярам вычислений можно получить только в пределах виртуальной сети.
+    
+### <a name="these-fqdns-are-in-use-in-all-other-regions"></a>Эти полные доменные имена используются во всех других регионах.
+В следующем списке содержатся полные доменные имена, используемые рабочей областью.
+
+* `<workspace-GUID>.workspace.<region>.cert.api.azureml.ms`
+* `<workspace-GUID>.workspace.<region>.api.azureml.ms`
+* `ml-<workspace-name>-<region>-<workspace-guid>.notebooks.azure.net`
+* `<instance-name>.<region>.instances.azureml.ms`
+
+    > [!NOTE]
+    > Доступ к экземплярам вычислений можно получить только в пределах виртуальной сети.
+
+## <a name="find-the-ip-addresses"></a>Поиск IP-адресов
 
 Чтобы найти внутренние IP-адреса для полных доменных имен в виртуальной сети, используйте один из следующих методов.
 
@@ -89,7 +102,7 @@ $workspaceDns.CustomDnsConfigs | format-table
 | `ml-myworkspace-eastus-fb7e20a0-8891-458b-b969-55ddb3382f51.notebooks.azure.net` | `10.1.0.6` |
 
 > [!IMPORTANT]
-> Некоторые полные доменные имена не отображаются в списке частной конечной точки, но являются обязательными для рабочей области. Эти полные доменные имена перечислены в следующей таблице и также должны быть добавлены на DNS-сервер.
+> Некоторые полные доменные имена не отображаются в списке частной конечной точки, но требуются для рабочей области в eastus, southcentralus и westus2. Эти полные доменные имена перечислены в следующей таблице, и их также необходимо добавить на DNS-сервер и (или) в зону Частная зона DNS Azure.
 >
 > * `<workspace-GUID>.workspace.<region>.cert.api.azureml.ms`
 > * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
@@ -102,3 +115,5 @@ $workspaceDns.CustomDnsConfigs | format-table
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании Машинное обучение Azure с виртуальной сетью см. в [обзоре виртуальной сети](how-to-network-security-overview.md).
+
+Дополнительные сведения об интеграции частных конечных точек в конфигурацию DNS см. в статье [Настройка DNS для частной конечной точки Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-dns).

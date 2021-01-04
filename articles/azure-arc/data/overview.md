@@ -9,12 +9,12 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 09/22/2020
 ms.topic: overview
-ms.openlocfilehash: e8a28415bf9448133102e92a658e7d200ac2772c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: ef16a4c0b6ea40fb4934307916f1fe79ccea72f9
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316972"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609145"
 ---
 # <a name="what-are-azure-arc-enabled-data-services-preview"></a>Службы данных с поддержкой Azure Arc (предварительная версия)
 
@@ -50,7 +50,7 @@ Azure Arc также предоставляет другие преимущес�
 ## <a name="next-steps"></a>Следующие шаги
 
 > **Хотите попробовать?**  
-> Быстро приступите к работе с [Azure Arc](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS Elastic Kubernetes Service (EKS), Google Cloud Kubernetes Engine (GKE) или на виртуальной машине Azure.
+> Быстро приступите к работе с [Azure Arc](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) в службе Azure Kubernetes Service (AKS), AWS Elastic Kubernetes Service (EKS), Google Cloud Kubernetes Engine (GKE) или на виртуальной машине Azure.
 
 [Установка клиентских средств](install-client-tools.md)
 

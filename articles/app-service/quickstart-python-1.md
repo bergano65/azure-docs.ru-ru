@@ -1,21 +1,23 @@
 ---
-title: Краткое руководство. Создание приложения Python для Linux
+title: Краткое руководство. Создание приложения Python в Linux
 description: Начните работу со Службой приложений Azure, развернув приложение Python в контейнере Linux в Службе приложений.
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python, devx-track-azurecli
 zone_pivot_groups: python-frameworks-01
 robots: noindex
-ms.openlocfilehash: e068de77760752070117644c269e80a52c8c1707
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 9f9805c25955384e7ca5b3f1d560581a7ca4a638
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561551"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614665"
 ---
-# <a name="quickstart-create-a-python-app-in-azure-app-service-for-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure для Linux
+# <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
 В этом кратком руководстве описывается процесс развертывания веб-приложения Python для [службы приложений на платформе Linux](overview.md#app-service-on-linux), высокомасштабируемой службы веб-размещения Azure с самостоятельной установкой исправлений. Для развертывания примера с помощью платформ Flask или Django на компьютерах Mac, Linux или Windows используется [интерфейс командной строки Azure (CLI)](/cli/azure/install-azure-cli). Веб-приложение, которое вы настраиваете, использует бесплатный уровень Службы приложений, поэтому в процессе выполнения этого руководства затраты на ресурсы Azure не изменяются.
+
+**Определения общих терминов** см. в статье [Краткое описание терминологии Azure](/azure/developer/python/cloud-azure-terminology?toc=/azure/app-service/toc.json).
 
 > [!TIP]
 > Если вы предпочитаете развертывать приложения с помощью интегрированной среды разработки, см. статью **[Развертывание приложений Python в Службе приложений из Visual Studio Code](/azure/developer/python/tutorial-deploy-app-service-on-linux-01)** .
