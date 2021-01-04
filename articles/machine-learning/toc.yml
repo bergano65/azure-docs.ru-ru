@@ -165,6 +165,8 @@
       href: concept-model-management-and-deployment.md
     - name: Переносимость модели (ONNX)
       href: concept-onnx.md
+    - name: Интеграции с открытым кодом
+      href: concept-open-source.md
     - name: Конвейеры Машинного обучения
       href: concept-ml-pipelines.md
     - name: Безопасность
@@ -370,6 +372,8 @@
           href: how-to-train-pytorch.md
         - name: Обучение с помощью пользовательского образа Docker
           href: how-to-train-with-custom-image.md
+        - name: Переход с оценщиков на ScriptRunConfig
+          href: how-to-migrate-from-estimators-to-scriptrunconfig.md
         - name: Отслеживание и мониторинг обучения
           items:
             - name: 'Запуск, мониторинг и отмена выполнения'
@@ -513,8 +517,6 @@
           href: how-to-move-data-in-out-of-pipelines.md
         - name: Развертывание конвейеров ML (Python)
           href: how-to-deploy-pipelines.md
-        - name: Планирование конвейера (Python)
-          href: how-to-schedule-pipelines.md
         - name: Активация конвейера
           href: how-to-trigger-published-pipeline.md
         - name: Конструктор (перетаскивание)

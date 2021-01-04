@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: 5d105ad4c2aff03dae52b340037e4c193bf82ca1
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 92fdef48556a3306ee5e3f10e07ff609a8fc4be4
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608441"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656229"
 ---
 # <a name="azure-cosmos-db-emulator---release-notes-and-download-information"></a>Эмулятор Azure Cosmos DB. Заметки о выпуске и сведения о скачивании
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -23,7 +23,7 @@ ms.locfileid: "96608441"
 | | |
 |---------|---------|
 |**Скачивание MSI**|[Центре загрузки Майкрософт](https://aka.ms/cosmosdb-emulator)|
-|**Начало работы**|[Установка и использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде](local-emulator.md)|
+|**Начало работы**|[Разработка в локальной среде с помощью эмулятора Azure Cosmos DB](local-emulator.md)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
@@ -83,7 +83,7 @@ ms.locfileid: "96608441"
 
 ### <a name="246"></a>2.4.6
 
-- В этом выпуске, опубликованном в июле 2019 г., реализованы все функции службы Azure Cosmos, за исключением тех, что описаны в статье [Установка и использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде](local-emulator.md). В нем также устранены некоторые ошибки, связанные с завершением работы эмулятора при вызове из командной строки и переопределениями внутренних IP-адресов для клиентов пакета SDK, использующих режим прямого подключения.
+- В этом выпуске, опубликованном в июле 2019 года, реализованы все функции службы Azure Cosmos, за исключением тех, что описаны в статье о [разработке в локальной среде с помощью эмулятора Azure Cosmos DB](local-emulator.md). В нем также устранены некоторые ошибки, связанные с завершением работы эмулятора при вызове из командной строки и переопределениями внутренних IP-адресов для клиентов пакета SDK, использующих режим прямого подключения.
 
 ### <a name="243"></a>2.4.3
 

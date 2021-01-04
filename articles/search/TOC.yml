@@ -372,7 +372,7 @@
               href: search-indexer-howto-access-trusted-service-exception.md
             - name: Реализация доступа через частные конечные точки
               href: search-indexer-howto-access-private.md
-        - name: Доступ на основе удостоверений
+        - name: Безопасность на уровне документа
           items:
             - name: Фильтры системы безопасности
               href: search-security-trimming-for-azure-search.md
@@ -550,9 +550,11 @@
           href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
         - name: Курс для разработчиков (Pluralsight)
           href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
+    - name: Решения партнеров
+      href: resource-partners-knowledge-mining.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'

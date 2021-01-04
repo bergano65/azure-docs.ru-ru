@@ -9,24 +9,24 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 61b6f4a530ab1861c67b0bd4983167546e268957
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: decf289614179718d5c3424f6d4482a5ce2c43e1
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896333"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680723"
 ---
-# <a name="tutorial---migrate-from-google-maps-to-azure-maps"></a>Руководство по переходу с Google Карт на Azure Maps
+# <a name="tutorial-migrate-from-google-maps-to-azure-maps"></a>Руководство по Переход с Google Карт на Azure Maps
 
 В этой статье содержатся сведения о переносе веб-приложений, мобильных и серверных программ из Google Карт на платформу Microsoft Azure Maps. Руководство предоставляет примеры кода для сравнения, а также предложения и рекомендации по переходу на Azure Maps. Из этого руководства вы узнаете:
 
 > [!div class="checklist"]
 > * о сходстве и различиях между эквивалентными функциями Google Карт и Azure Maps;
-> * какие нужно учесть различия в лицензировании;
+> * какие различия в лицензировании нужно учесть;
 > * как спланировать миграцию;
 > * где найти технические ресурсы и поддержку.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Войдите на [портал Azure](https://portal.azure.com). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 2. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account)
@@ -70,16 +70,16 @@ Azure Maps предоставляет разработчикам из всех 
 
 При переходе на Azure Maps из Google Карт учитывайте следующие моменты, связанные с лицензированием.
 
-- За использование интерактивных карт Azure Maps взымает плату, основанную на количестве загруженных фрагментов карты. С другой стороны, служба Google Карты взимает плату за загрузку элемента управления картой. В пакетах средств разработки для интерактивного использования Azure Maps плитки карт автоматически кэшируются, что позволяет снизить затраты на разработку. Одна транзакция Azure Maps создается для каждых 15 загруженных плиток карт. В пакетах средств разработки для интерактивной работы с Azure Maps используются фрагменты размером 512 пикселей. Это дает возможность выполнять в среднем не более одной транзакции на каждое представление страницы.
-- Зачастую гораздо экономичнее заменить статические изображения карты из веб-служб Google Карт на веб-пакет SDK Azure Maps. Веб-пакет SDK для Azure Maps использует фрагменты карт. Если пользователь не изменяет карту и не масштабирует ее, служба зачастую создает лишь часть транзакции на каждую загрузку карты. Веб-пакет SDK для Azure Maps позволяет отключить панорамирование и масштабирование при необходимости. Кроме того, веб-пакет SDK для Azure Maps дает гораздо больше возможностей для визуализации, чем веб-служба статических карт.
-- Azure Maps позволяет хранить в Azure данные для этой платформы. Также данные можно кэшировать в любом расположении на срок до шести месяцев согласно [условиям использования](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46).
+* За использование интерактивных карт Azure Maps взымает плату, основанную на количестве загруженных фрагментов карты. С другой стороны, служба Google Карты взимает плату за загрузку элемента управления картой. В пакетах средств разработки для интерактивного использования Azure Maps плитки карт автоматически кэшируются, что позволяет снизить затраты на разработку. Одна транзакция Azure Maps создается для каждых 15 загруженных плиток карт. В пакетах средств разработки для интерактивной работы с Azure Maps используются фрагменты размером 512 пикселей. Это дает возможность выполнять в среднем не более одной транзакции на каждое представление страницы.
+* Зачастую гораздо экономичнее заменить статические изображения карты из веб-служб Google Карт на веб-пакет SDK Azure Maps. Веб-пакет SDK для Azure Maps использует фрагменты карт. Если пользователь не изменяет карту и не масштабирует ее, служба зачастую создает лишь часть транзакции на каждую загрузку карты. Веб-пакет SDK для Azure Maps позволяет отключить панорамирование и масштабирование при необходимости. Кроме того, веб-пакет SDK для Azure Maps дает гораздо больше возможностей для визуализации, чем веб-служба статических карт.
+* Azure Maps позволяет хранить в Azure данные для этой платформы. Также данные можно кэшировать в любом расположении на срок до шести месяцев согласно [условиям использования](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46).
 
 Ниже перечислены некоторые ресурсы с информацией об Azure Maps.
 
-- [Цены на Azure Maps](https://azure.microsoft.com/pricing/details/azure-maps/)
-- [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/?service=azure-maps).
-- [Условия использования Azure Maps](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46) (в составе условий для служб Microsoft Online Services)
-- [Choose the right pricing tier in Azure Maps](./choose-pricing-tier.md) (Выбор подходящей ценовой категории для Azure Maps)
+* [Цены на Azure Maps](https://azure.microsoft.com/pricing/details/azure-maps/)
+* [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/?service=azure-maps).
+* [Условия использования Azure Maps](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46) (в составе условий для служб Microsoft Online Services)
+* [Choose the right pricing tier in Azure Maps](./choose-pricing-tier.md) (Выбор подходящей ценовой категории для Azure Maps)
 
 ## <a name="suggested-migration-plan"></a>Предлагаемый план миграции
 
@@ -119,15 +119,13 @@ Azure Maps предоставляет разработчикам из всех 
 
 Разработчики могут получить поддержку по миграции на [форумах](/answers/topics/azure-maps.html) или через любой из многих каналов поддержки Azure: [https://azure.microsoft.com/support/options](https://azure.microsoft.com/support/options)
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов для очистки.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как перенести приложение Google Карт, изучив следующие статьи:
 
 > [!div class="nextstepaction"]
 > [Перенос веб-приложения](migrate-from-google-maps-web-app.md)
-
-> [!div class="nextstepaction"]
-> [Перенос веб-службы](migrate-from-google-maps-web-services.md) 
-
-> [!div class="nextstepaction"]
-> [Перенос приложения Android](migrate-from-google-maps-android-app.md) 

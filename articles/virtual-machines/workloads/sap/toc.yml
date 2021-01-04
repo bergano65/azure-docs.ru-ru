@@ -72,6 +72,8 @@
       items:
         - name: Управление крупными экземплярами HANA в Azure с помощью портала Azure
           href: hana-li-portal.md
+        - name: Управление экземплярами BareMetal на портале Azure
+          href: baremetal-infrastructure-portal.md
         - name: Обеспечение высокого уровня доступности с помощью STONITH
           href: ha-setup-with-stonith.md
         - name: "Резервное копирование ОС для номеров SKU типа\_II"

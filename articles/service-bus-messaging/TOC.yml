@@ -96,6 +96,22 @@
       href: service-bus-azure-and-service-bus-queues-compared-contrasted.md
     - name: Оптимизация производительности
       href: service-bus-performance-improvements.md
+    - name: Федерация
+      items:
+        - name: Репликация сообщений и федерация между регионами
+          href: service-bus-federation-overview.md
+        - name: Задачи и приложения репликации сообщений
+          href: service-bus-federation-replicator-functions.md
+        - name: Шаблоны задач репликации сообщений
+          href: service-bus-federation-patterns.md
+        - name: Настроенные задачи репликации
+          href: service-bus-federation-configuration.md
+        - name: Репликация событий между сущностями Служебной шины
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopy'
+        - name: Репликация сообщений в Центры событий
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopyToEventHub'
+        - name: Получение сообщений из Центров событий
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopyToServiceBus'
     - name: Геоизбыточное аварийное восстановление и георепликация
       href: service-bus-geo-dr.md
     - name: Асинхронный обмен сообщениями и высокий уровень доступности

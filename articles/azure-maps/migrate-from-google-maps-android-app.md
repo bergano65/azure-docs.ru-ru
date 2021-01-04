@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: b096b24acd5cf65f6ad3e9eabb1d536b3aae0168
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f4b0642ce54b862b4d4c7b9663cf10e74b206281
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187074"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680482"
 ---
-# <a name="tutorial---migrate-an-android-app-from-google-maps"></a>Руководство по переносу приложения Android из Google Карт
+# <a name="tutorial-migrate-an-android-app-from-google-maps"></a>Руководство по Перенос приложения Android из Google Карт
 
 Пакет SDK Azure Maps для Android содержит интерфейс API, который похож на веб-пакет SDK. Если вы использовали один из таких пакетов SDK для разработки, большинство основных понятий, рекомендаций и архитектур будут аналогичными. В этом учебнике рассматривается следующее.
 
@@ -33,9 +33,9 @@ ms.locfileid: "96187074"
 
 Дополнительные сведения о разработке с помощью пакета SDK Azure Maps для Android см. в [этих практических руководствах](how-to-use-android-map-control-library.md).
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования
 
-1. Войдите на [портал Azure](https://portal.azure.com). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+1. Создайте учетную запись Azure Maps, выполнив вход на [портал Azure](https://portal.azure.com). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 2. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account)
 3. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
@@ -46,14 +46,14 @@ ms.locfileid: "96187074"
 * Получить ключ API или подписки для доступа к любой из платформ.
 * Добавить XML-код в действие, чтобы указать, где должна отображаться карта и как она должна быть размещена.
 * Переопределить все методы жизненного цикла из действия, содержащего представление карты, соответствующими объектами в классе map. В частности, необходимо переопределить следующие методы.
-    * `onCreate(Bundle)`
-    * `onStart()`
-    * `onResume()`
-    * `onPause()`
-    * `onStop()`
-    * `onDestroy()`
-    * `onSaveInstanceState(Bundle)`
-    * `onLowMemory()`
+  * `onCreate(Bundle)`
+  * `onStart()`
+  * `onResume()`
+  * `onPause()`
+  * `onStop()`
+  * `onDestroy()`
+  * `onSaveInstanceState(Bundle)`
+  * `onLowMemory()`
 * Дождаться готовности схемы, прежде чем пытаться получить к ней доступ и программировать ее.
 
 ### <a name="before-google-maps"></a>До: Google Карты
@@ -165,9 +165,9 @@ ms.locfileid: "96187074"
 
 1. Откройте файл верхнего уровня **build.gradle** и добавьте приведенный ниже код в раздел блока **all projects** (все проекты):
 
-    ```JAVA
+    ```java
     maven {
-            url "https://atlas.microsoft.com/sdk/android"
+        url "https://atlas.microsoft.com/sdk/android"
     }
     ```
 
@@ -186,12 +186,12 @@ ms.locfileid: "96187074"
 
     3. Обновите блок зависимостей. Добавьте новую строку зависимости реализации для последнего пакета SDK Azure Maps для Android.
 
-        ```java
-        implementation "com.microsoft.azure.maps:mapcontrol:0.2"
+        ```Java
+        implementation "com.microsoft.azure.maps:mapcontrol:0.6"
         ```
 
         > [!Note]
-        > Пакет SDK Azure Maps для Android регулярно обновляется и улучшается. Последний номер версии Azure Maps можно узнать в статье о [начале работы с элементом управления картой в Android](how-to-use-android-map-control-library.md). Кроме того, для номера версии можно задать значение с "0.2" до "0+", чтобы в вашем коде всегда использовалась последняя версия.
+        > Для номера версии можно задать значение "0+", чтобы в вашем коде всегда использовалась последняя версия.
 
     4. Перейдите в раздел **Файл** на панели инструментов, а затем щелкните **Sync Project with Gradle Files** (Синхронизировать проект с файлами Gradle).
 
@@ -224,98 +224,99 @@ ms.locfileid: "96187074"
 
     Элемент управления картой содержит собственные методы жизненного цикла для управления жизненным циклом OpenGL Android. Они должны вызываться непосредственно из содержащегося действия. Чтобы правильно вызывать методы жизненного цикла элемента управления картой, переопределите приведенные ниже методы жизненного цикла в действии, содержащем элемент управления картой. Вызовите соответствующий метод элемента управления картой.
 
-    * `onCreate(Bundle)` 
-    * `onStart()` 
-    * `onResume()` 
-    * `onPause()` 
-    * `onStop()` 
-    * `onDestroy()` 
-    * `onSaveInstanceState(Bundle)` 
+    * `onCreate(Bundle)`
+    * `onStart()`
+    * `onResume()`
+    * `onPause()`
+    * `onStop()`
+    * `onDestroy()`
+    * `onSaveInstanceState(Bundle)`
     * `onLowMemory()`
 
     Измените файл **MainActivity.java** следующим образом:
 
-    ```java
+    ```Java
     package com.example.myapplication;
-
-    import android.support.v7.app.AppCompatActivity;
-    import android.os.Bundle;
+    
+    //For older versions use: import android.support.v7.app.AppCompatActivity; 
+    import androidx.appcompat.app.AppCompatActivity;
     import com.microsoft.azure.maps.mapcontrol.AzureMaps;
     import com.microsoft.azure.maps.mapcontrol.MapControl;
     import com.microsoft.azure.maps.mapcontrol.layer.SymbolLayer;
     import com.microsoft.azure.maps.mapcontrol.options.MapStyle;
     import com.microsoft.azure.maps.mapcontrol.source.DataSource;
-
+    
     public class MainActivity extends AppCompatActivity {
-     
-        static {
-            AzureMaps.setSubscriptionKey("<Your Azure Maps subscription key>");
-        }
-
-        MapControl mapControl;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-
-            mapControl = findViewById(R.id.mapcontrol);
-
-            mapControl.onCreate(savedInstanceState);
     
-            //Wait until the map resources are ready.
-            mapControl.onReady(map -> {
-                //Add your post map load code here.
-    
-            });
-        }
+    static {
+        AzureMaps.setSubscriptionKey("<Your Azure Maps subscription key>");
 
-        @Override
-        public void onResume() {
-            super.onResume();
-            mapControl.onResume();
-        }
-
-        @Override
-        protected void onStart(){
-            super.onStart();
-            mapControl.onStart();
-        }
-
-        @Override
-        public void onPause() {
-            super.onPause();
-            mapControl.onPause();
-        }
-
-        @Override
-        public void onStop() {
-            super.onStop();
-            mapControl.onStop();
-        }
-
-        @Override
-        public void onLowMemory() {
-            super.onLowMemory();
-            mapControl.onLowMemory();
-        }
-
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            mapControl.onDestroy();
-        }
-
-        @Override
-        protected void onSaveInstanceState(Bundle outState) {
-            super.onSaveInstanceState(outState);
-            mapControl.onSaveInstanceState(outState);
-        }
+        //Alternatively use Azure Active Directory authenticate.
+        //AzureMaps.setAadProperties("<Your aad clientId>", "<Your aad AppId>", "<Your aad Tenant>");
     }
+
+    MapControl mapControl;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mapControl = findViewById(R.id.mapcontrol);
+
+        mapControl.onCreate(savedInstanceState);
+
+        //Wait until the map resources are ready.
+        mapControl.onReady(map -> {
+            //Add your post map load code here.
+
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mapControl.onResume();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        mapControl.onStart();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mapControl.onPause();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mapControl.onStop();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapControl.onLowMemory();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mapControl.onDestroy();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mapControl.onSaveInstanceState(outState);
+    }}
     ```
 
 При запуске приложения будет загружаться элемент управления картой, как показано ниже.
-
 
 ![Простые службы Azure Maps](media/migrate-google-maps-android-app/simple-azure-maps.png)
 
@@ -359,7 +360,7 @@ static {
     AzureMaps.setLanguage("fr-FR");
 
     //Set the regional view to be used by Azure Maps.
-    AzureMaps.setView("auto");
+    AzureMaps.setView("Auto");
 }
 ```
 
@@ -371,7 +372,7 @@ static {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:mapcontrol_language="fr-FR"
-    app:mapcontrol_view="auto"
+    app:mapcontrol_view="Auto"
     />
 ```
 
@@ -379,8 +380,10 @@ static {
 
 ```java
 mapControl.onReady(map -> {
-    map.setStyle(StyleOptions.language("fr-FR"));
-    map.setStyle(StyleOptions.view("auto"));
+    map.setStyle(
+        language("fr-FR"),
+        view("Auto")
+    );
 });
 ```
 
@@ -436,7 +439,7 @@ public void onMapReady(GoogleMap googleMap) {
 ```java
 mapControl.onReady(map -> {
     //Set the camera of the map.
-    map.setCamera(center(35.0272, -111.0225), zoom(14));
+    map.setCamera(center(Point.fromLngLat(-111.0225, 35.0272)), zoom(14));
 
     //Set the style of the map.
     map.setStyle(style(MapStyle.SATELLITE));
@@ -492,10 +495,8 @@ mapControl.onReady(map -> {
 
 Для представления точек на карте можно использовать пользовательские изображения. В приведенных ниже примерах карты пользовательское изображение применяется для отображения точки на карте. Координаты точки (широта: 51,5, долгота −0,2. Привязка смещает положение маркера таким образом, чтобы точка значка вешки была правильно размещена на карте.
 
-<center>
-
 ![Изображение желтой вешки](media/migrate-google-maps-web-app/yellow-pushpin.png)<br/>
-yellow-pushpin.png</center>
+yellow-pushpin.png
 
 В обоих примерах приведенное выше изображение добавляется в папку с прорисовываемыми ресурсами приложений.
 
@@ -666,6 +667,7 @@ mapControl.onReady(map -> {
         strokeWidth(2f)));
 });
 ```
+
 ![Многоугольник в Azure Maps](media/migrate-google-maps-android-app/azure-maps-polygon.png)
 
 ## <a name="overlay-a-tile-layer"></a>Наложение слоя фрагментов
@@ -758,18 +760,13 @@ mapControl.onReady(map -> {
 
 ![Данные дорожного движения в Azure Maps](media/migrate-google-maps-android-app/azure-maps-traffic.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Подробнее о пакете SDK для Android в Azure Maps:
+Нет ресурсов для очистки.
 
-> [!div class="nextstepaction"]
-> [Как использовать элемент управления картой в Android](how-to-use-android-map-control-library.md)
+## <a name="next-steps"></a>Следующие шаги
 
-> [!div class="nextstepaction"]
-> [Добавление слоя символов на карту Android](how-to-add-symbol-to-android-map.md)
+Узнайте больше о переходе на Azure Maps:
 
 > [!div class="nextstepaction"]
-> [Добавление фигур на карту Android](./how-to-add-shapes-to-android-map.md)
-
-> [!div class="nextstepaction"]
-> [Изменение стилей карт Android](./set-android-map-styles.md)
+> [Перенос приложения Android](migrate-from-google-maps-android-app.md)
