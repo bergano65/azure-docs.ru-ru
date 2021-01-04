@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 672c9f0d5403ae27a26d58617dca44f0f1121411
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b83201ae864d1f1eb9124af5268360bb1748f6c8
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904164"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507614"
 ---
 # <a name="tutorial-sync-data-from-sql-edge-to-azure-blob-storage-by-using-azure-data-factory"></a>Руководство по синхронизации данных из SQL Azure для пограничных вычислений с хранилищем BLOB-объектов Azure с помощью Фабрики данных Azure
 
@@ -59,8 +59,11 @@ ms.locfileid: "90904164"
     CREATE PROCEDURE usp_write_watermark @timestamp datetime, @TableName varchar(50)  
     AS  
     BEGIN
+    
     UPDATE [dbo].[watermarktable]
-    SET [WatermarkValue] = @timestamp WHERE [TableName] = @TableName
+    SET [WatermarkValue] = @timestamp
+    WHERE [TableName] = @TableName
+
     END
     Go
 ```
@@ -91,7 +94,7 @@ ms.locfileid: "90904164"
 
 6. В окне **Установка свойств** для набора данных введите **WatermarkDataset** в поле **Имя**.
 
-7. В поле **Связанная служба**, выберите**Создать**, а затем выполните следующие действия:
+7. В поле **Связанная служба**, выберите **Создать**, а затем выполните следующие действия:
 
     1. В поле **Имя** введите **SQLDBEdgeLinkedService**.
 
@@ -187,7 +190,7 @@ ms.locfileid: "90904164"
 
 30. Выберите параметр **Операция хранимой процедуры** в конструкторе конвейеров и измените его имя на **SPtoUpdateWatermarkActivity**.
 
-31. Перейдите на вкладку **Учетная запись SQL** и выберите ***SQLDBEdgeLinkedService** в списке **Связанная служба**.
+31. Перейдите на вкладку **Учетная запись SQL** и выберите **_QLDBEdgeLinkedService_* в разделе **Связанная служба**.
 
 32. Перейдите на вкладку **Хранимая процедура** и выполните здесь следующие действия:
 

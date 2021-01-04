@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: c476fe2af1fb4bddff4799609b164aab14f57b00
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5aab11b31756ee8430e8ae4d54a2b3de5ea2e136
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187410"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97612702"
 ---
 ### <a name="is-azure-virtual-wan-in-ga"></a>Является ли виртуальная Глобальная сеть Azure общедоступной?
 
@@ -277,3 +277,7 @@ IPv6 не поддерживается в концентраторе Вирту�
 ### <a name="does-virtual-wan-store-customer-data"></a>Хранятся ли данные клиента в виртуальной глобальной сети? 
 
 Нет. В виртуальной глобальной сети не хранятся данные клиента.
+
+### <a name="are-there-any-managed-service-providers-that-can-manage-virtual-wan-for-users-as-a-service"></a>Существуют ли поставщики управляемых служб, которые могут (в качестве услуги) управлять виртуальной глобальной сетью для пользователей? 
+
+Да. Список решений от поставщиков управляемых служб (MSP), поддерживаемых в Azure Marketplace, см. в разделе [Предложения в Azure Marketplace от партнеров программы для поставщиков сетевых устройств и служб Azure (MSP)](../articles/networking/networking-partners-msp.md#msp).

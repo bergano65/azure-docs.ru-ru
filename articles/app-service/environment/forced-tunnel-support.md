@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 05/29/2018
 ms.author: ccompy
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c8a4b6998d1471a79dd789ed6528e22b07f2015c
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 95a4d00a27a0da363561f469b4c5e9e2ad16463c
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540981"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510504"
 ---
 # <a name="configure-your-app-service-environment-with-forced-tunneling"></a>Настройка принудительного туннелирования в среде службы приложений
 
@@ -95,7 +95,7 @@ ms.locfileid: "92540981"
 
 3. Получите адреса, которые будут использоваться для всего исходящего трафика из среды службы приложений в Интернет. Если вы выполняете маршрутизацию трафика локально, эти адреса будут выполнять роль NAT или IP-адреса шлюза. Если вы хотите перенаправить исходящий трафик среды службы приложений через виртуальный сетевой модуль, то адресом исходящего трафика будет общедоступный IP-адрес виртуального сетевого модуля.
 
-4. _Чтобы настроить адрес исходящего трафика в существующей Среде службы приложений,_ Перейдите на сайт resource.azure.com в раздел Subscription/\<subscription id>/resourceGroups/\<ase resource group>/providers/Microsoft.Web/hostingEnvironments/\<ase name>. Затем вы сможете просмотреть код JSON, в котором описана ваша среда службы приложений. Убедитесь, что вверху отображается строка **read/write** . Выберите команду **Изменить** . Прокрутите вниз. Измените значение **userWhitelistedIpRanges** с **null** на строку, приведенную ниже. Используйте адреса, которые нужно задать в качестве диапазона адресов исходящего трафика. 
+4. _Чтобы настроить адрес исходящего трафика в существующей Среде службы приложений,_ Перейдите на сайт resource.azure.com в раздел Subscription/\<subscription id>/resourceGroups/\<ase resource group>/providers/Microsoft.Web/hostingEnvironments/\<ase name>. Затем вы сможете просмотреть код JSON, в котором описана ваша среда службы приложений. Убедитесь, что вверху отображается строка **read/write**. Выберите команду **Изменить**. Прокрутите вниз. Измените значение **userWhitelistedIpRanges** с **null** на строку, приведенную ниже. Используйте адреса, которые нужно задать в качестве диапазона адресов исходящего трафика. 
 
     ```json
     "userWhitelistedIpRanges": ["11.22.33.44/32", "55.66.77.0/24"]

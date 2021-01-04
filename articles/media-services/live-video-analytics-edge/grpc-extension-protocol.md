@@ -3,25 +3,29 @@ title: Протокол расширения gRPC (Azure)
 description: Из этой статьи вы узнаете об использовании протокола расширения gRPC для отправки сообщений между модулем службы "Аналитика видеотрансляций" и пользовательским расширением для искусственного интеллекта или компьютерного зрения.
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 288dcd1a11c7c42d8796d3b17f2bfd56f562aaf1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7f21ff358b8dd5ac540de8c39c37c52e98977e59
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89448097"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401633"
 ---
 # <a name="grpc-extension-protocol"></a>Протокол расширения gRPC
 
+Аналитика видеотрансляций в IoT Edge позволяет расширить возможности обработки графов мультимедиа с помощью [узла расширения графа](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/media-graph-extension-concept?branch=release-lva-dec-update). Если в качестве узла расширения используется обработчик расширений gRPC, обмен данными между модулем Аналитики видеотрансляций и модулем искусственного интеллекта или компьютерного зрения осуществляется по высокопроизводительному структурированному протоколу на базе gRPC.
+
 Из этой статьи вы узнаете об использовании протокола расширения gRPC для отправки сообщений между модулем службы "Аналитика видеотрансляций" и пользовательским расширением для искусственного интеллекта или компьютерного зрения.
 
-gRPC — это современная высокопроизводительная платформа RPC с открытым кодом, которая работает в любой среде. Служба транспорта gRPC использует двунаправленную потоковую передачу HTTP/2 между:
+gRPC — это современная высокопроизводительная платформа RPC с открытым исходным кодом, которая работает в любой среде и поддерживает обмен данными для любых платформ и языков. Служба транспорта gRPC использует двунаправленную потоковую передачу HTTP/2 между:
 
 * клиентом gRPC (службой "Аналитика видеотрансляций" в модуле IoT Edge) и 
 * сервером gRPC (настраиваемым расширением).
 
 Сеанс gRPC — это одно подключение клиента gRPC к серверу gRPC через порт TCP/TLS. 
 
-В рамках одного сеанса происходит следующее. Клиент отправляет на сервер дескриптор потока мультимедиа, а затем видеокадры. Отправка осуществляется в виде сообщения [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc) в сеансе потоковой передачи gRPC. Сервер проверяет дескриптор потока, анализирует видеокадр и возвращает результирующие выводы в виде сообщения protobuf.
+В рамках одного сеанса происходит следующее. Клиент отправляет на сервер дескриптор потока мультимедиа, а затем видеокадры. Отправка осуществляется в виде сообщения [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc) в сеансе потоковой передачи gRPC. Сервер проверяет дескриптор потока, анализирует видеокадр и возвращает результирующие выводы в виде сообщения protobuf. 
+
+Настоятельно рекомендуется использовать для возврата ответов допустимые документы JSON, соответствующие предварительно установленной схеме, определенной согласно [объектной модели схемы метаданных выводов](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/inference-metadata-schema?branch=release-lva-dec-update). Это улучшит совместимость с другими компонентами и возможностями, которые могут быть добавлены в модуль Аналитики видеотрансляций в будущем.
 
 ![Контракт для расширения gRPC](./media/grpc-extension-protocol/grpc.png)
 
@@ -32,9 +36,10 @@ gRPC — это современная высокопроизводительн
 Пользовательское расширение должно реализовать следующую службу gRPC:
 
 ```
-service MediaGraphExtension {
-  rpc ProcessMediaStream(stream MediaStreamMessage) returns (stream MediaStreamMessage);
-}
+service MediaGraphExtension
+    {
+        rpc ProcessMediaStream(stream MediaStreamMessage) returns (stream MediaStreamMessage);
+    }
 ```
 
 При вызове она будет открывать двунаправленный поток для обмена сообщениями между расширением gRPC и графом Аналитики видеотрансляций. Первое сообщение, отправленное в этом потоке каждой стороной, будет содержать дескриптор MediaStreamDescriptor, который определяет, какие сведения будут отправляться в следующих сообщениях MediaSample.
@@ -45,18 +50,23 @@ service MediaGraphExtension {
  {
     "sequence_number": 1,
     "ack_sequence_number": 0,
-    "media_stream_descriptor": {
-        "graph_identifier": {
+    "media_stream_descriptor": 
+    {
+        "graph_identifier": 
+        {
             "media_services_arm_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/microsoft.media/mediaservices/mediaAccountName",
             "graph_instance_name": "mediaGraphName",
             "graph_node_name": "grpcExtension"
         },
-        "media_descriptor": {
+        "media_descriptor": 
+        {
             "timescale": 90000,
-            "video_frame_sample_format": {
+            "video_frame_sample_format": 
+            {
                 "encoding": "RAW",
                 "pixel_format": "RGB24",
-                "dimensions": {
+                "dimensions": 
+                {
                     "width": 416,
                     "height": 416
                 },
@@ -73,13 +83,17 @@ service MediaGraphExtension {
 {
     "sequence_number": 1,
     "ack_sequence_number": 1,
-    "media_stream_descriptor": {
-        "extension_identifier": "customExtensionName"    }
+    "media_stream_descriptor": 
+    {
+        "extension_identifier": "customExtensionName"    
+    }
 }
 ```
 
 Теперь, когда обе стороны обменялись дескрипторами мультимедиа, служба "Аналитика видеотрансляций" начнет передачу кадров в расширение.
 
+> [!NOTE]
+> Реализацию gRPC на стороне сервера можно выполнить на любом языке программирования.
 ### <a name="sequence-numbers"></a>Порядковые номера
 
 Как узел расширения gRPC, так и пользовательское расширение сохраняют отдельные наборы порядковых номеров, назначенных их сообщениям. Эти порядковые номера должны единообразно увеличиваться, начиная с 1. `ack_sequence_number` можно пропустить при отсутствии подтвержденных сообщений, что возможно при отправке первого сообщения.
@@ -106,7 +120,8 @@ service MediaGraphExtension {
 ```
 {
     "timestamp": 143598615750000,
-    "content_reference": {
+    "content_reference": 
+    {
         "address_offset": 519168,
         "length_bytes": 173056
     }
@@ -123,25 +138,27 @@ service MediaGraphExtension {
 Ниже показано, как это может выглядеть на двойнике устройства при использовании первого из приведенных выше вариантов.
 
 ```
-"liveVideoAnalytics": {
+"liveVideoAnalytics": 
+{
   "version": "1.0",
   "type": "docker",
   "status": "running",
   "restartPolicy": "always",
-  "settings": {
+  "settings": 
+  {
     "image": "mcr.microsoft.com/media/live-video-analytics:1",
     "createOptions": 
-      "HostConfig": {
+      "HostConfig": 
+      {
         "IpcMode": "host"
       }
-    }
   }
 }
 ```
 
 Дополнительные сведения о режимах IPC см. по ссылке https://docs.docker.com/engine/reference/run/#ipc-settings---ipc.
 
-## <a name="media-graph-grpc-extension-contract-definitions"></a>Определения контракта расширения gRPC для графа мультимедиа
+## <a name="mediagraph-grpc-extension-contract-definitions"></a>Определения контракта расширения gRPC для графа мультимедиа
 
 В этом разделе рассказывается о том, как определить контракт gRPC, задающий поток данных.
 
@@ -159,10 +176,12 @@ service MediaGraphExtension {
 {
   "@type": "#Microsoft.Media.MediaGraphGrpcExtension",
   "name": "{moduleIdentifier}",
-  "endpoint": {
+  "endpoint": 
+  {
     "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
     "url": "tcp://customExtension:8081",
-    "credentials": {
+    "credentials": 
+    {
       "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
       "username": "username",
       "password": "password"
@@ -175,6 +194,35 @@ service MediaGraphExtension {
 При отправке запроса gRPC в его метаданные включается приведенный ниже заголовок. Это напоминает обычную проверку подлинности HTTP.
 
 `x-ms-authentication: Basic (Base64 Encoded username:password)`
+
+
+## <a name="configuring-inference-server-for-each-mediagraph-over-grpc-extension"></a>Настройка сервера вывода для каждого графа мультимедиа с помощью расширения gRPC
+При настройке сервера вывода не нужно предоставлять узел для каждой модели ИИ, упакованной на сервере вывода. Вместо этого для экземпляра графа можно использовать свойство `extensionConfiguration` узла `MediaGraphGrpcExtension` и определить способ выбора моделей ИИ. Во время выполнения LVA передаст эту строку серверу вывода, который может использовать ее для вызова требуемой модели ИИ. Это свойство `extensionConfiguration` является необязательным и зависит от сервера. Свойство можно использовать следующим образом:
+```
+{
+  "@type": "#Microsoft.Media.MediaGraphGrpcExtension",
+  "name": "{moduleIdentifier}",
+  "endpoint": 
+  {
+    "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
+    "url": "${grpcExtensionAddress}",
+    "credentials": 
+    {
+      "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
+      "username": "${grpcExtensionUserName}",
+      "password": "${grpcExtensionPassword}"
+    }
+  },
+    // Optional server configuration string. This is server specific 
+  "extensionConfiguration": "{Optional extension specific string}",
+  "dataTransfer": 
+  {
+    "mode": "sharedMemory",
+    "SharedMemorySizeMiB": "5"
+  }
+    //Other fields omitted
+}
+```
 
 ## <a name="using-grpc-over-tls"></a>Использование gRPC через TLS
 

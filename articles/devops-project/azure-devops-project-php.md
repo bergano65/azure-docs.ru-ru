@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 99c8bc00beb7b189b200e0b02435262ae34835d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5727a08159f750a69920f66f4b743c187aa00885
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91856098"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588970"
 ---
 # <a name="create-a-cicd-pipeline-for-php-with-azure-devops-starter"></a>Создание конвейера CI/CD для приложения PHP в службе Azure DevOps Starter
 
@@ -64,7 +64,7 @@ Azure DevOps Starter представляет собой упрощенный и
 
  DevOps Starter создает репозиторий Git в Azure Repos или на сайте GitHub. Выполните следующие действия, чтобы просмотреть репозиторий и внести изменения в код приложения.
 
-1. В левой части панели мониторинга DevOps Starter выберите ссылку главной ветви. Эта ссылка открывает представление созданного репозитория Git.
+1. В левой части панели мониторинга DevOps Starter выберите ссылку для главной ветви. Эта ссылка открывает представление созданного репозитория Git.
 
 1. Чтобы просмотреть URL-адрес клона репозитория, щелкните **Клонировать** в правом верхнем углу браузера. Вы можете клонировать свой репозиторий Git в предпочитаемую интегрированную среду разработки. На следующих нескольких шагах используйте веб-браузер для создания и фиксации изменений кода непосредственно в главной ветви.
 

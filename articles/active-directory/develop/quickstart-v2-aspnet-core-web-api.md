@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/22/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: aa0a001f9c35202939eeb4a7752803b998a3acf7
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: e85e433e1b1b31470fc8d7dee24353fd719b64e2
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94562021"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031187"
 ---
 # <a name="quickstart-protect-an-aspnet-core-web-api-with-microsoft-identity-platform"></a>Краткое руководство. Защита веб-API ASP.NET Core с помощью платформы удостоверений Майкрософт
 
@@ -38,12 +38,10 @@ ms.locfileid: "94562021"
 > 1. Войдите на [портал Azure](https://portal.azure.com).
 > 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 > 1. Найдите и выберите **Azure Active Directory**.
-> 1. В разделе **Управление** щелкните **Регистрация приложений** и выберите пункт **Новая регистрация**.
+> 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 > 1. Введите **имя** приложения, например `AspNetCoreWebApi-Quickstart`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
 > 1. Выберите **Зарегистрировать**.
-> 1. В разделе **Управление** выберите **Предоставление API**
-> 1. Выберите **Добавить область** и щелкните **Сохранить и продолжить**, чтобы принять **URI идентификатора приложения по умолчанию**.
-> 1. В области **Добавить область** выберите следующие значения:
+> 1. В разделе **Управление** выберите **Предоставление API** > **Добавить группу**. Примите **URI идентификатора приложения** по умолчанию, выбрав **Сохранить и продолжить**, а затем введите следующие данные:
 >    - **Имя области**: `access_as_user`
 >    - **Кто может давать согласие?** : **Администраторы и пользователи**
 >    - **Отображаемое имя согласия администратора**: `Access AspNetCoreWebApi-Quickstart`

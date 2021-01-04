@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
 ms.custom: devx-track-js
-ms.openlocfilehash: 6f96b74726684d37795c94be74e48611b4145402
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: a22d06137c3ec17851280605ac85c94ef8b342cd
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350217"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563081"
 ---
 # <a name="deploy-static-rendered-nextjs-websites-on-azure-static-web-apps-preview"></a>Развертывание статических веб-сайтов Next.js в Статических веб-приложениях Azure (предварительная версия)
 
@@ -125,7 +125,7 @@ ms.locfileid: "96350217"
 1. Отправьте изменения в GitHub, выполнив следующую команду:
 
     ```bash
-    git push origin master
+    git push origin main
     ```
 
 ## <a name="deploy-your-static-website"></a>Развертывание статического веб-сайта
@@ -155,7 +155,7 @@ ms.locfileid: "96350217"
 1. Нажмите кнопку **Войти по учетным данным GitHub**.
 1. В поле **Организация** выберите ту, в которой был создан репозиторий для проекта Next.js (это может быть имя пользователя GitHub).
 1. Найдите и выберите имя созданного ранее репозитория.
-1. Выберите **master** в качестве ветви в раскрывающемся списке *Ветвь*.
+1. Выберите **main** в качестве ветви в раскрывающемся списке *Ветвь*.
 
    :::image type="content" source="media/deploy-nextjs/connect-github.png" alt-text="Подключение GitHub":::
 
@@ -189,7 +189,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nextjs-starter/actions
 
 При создании приложения служба "Статические веб-приложения Azure" создала файл рабочего процесса GitHub Actions в вашем репозитории. Этот файл необходимо перенести в локальный репозиторий для синхронизации журнала Git.
 
-Вернитесь в терминал и выполните команду `git pull origin master`.
+Вернитесь в терминал и выполните команду `git pull origin main`.
 
 ## <a name="configure-dynamic-routes"></a>Настройка динамических маршрутов
 

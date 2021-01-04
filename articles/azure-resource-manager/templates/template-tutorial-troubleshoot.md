@@ -5,12 +5,12 @@ author: mumian
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 7a44edc7cd09709f14415fa0a92e63558001d46d
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 31c4e6383b5eaea2bb66dc1baafa0fbff4918a7c
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928534"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589123"
 ---
 # <a name="tutorial-troubleshoot-arm-template-deployments"></a>Руководство по устранению неполадок при развертывании шаблонов ARM
 
@@ -43,7 +43,7 @@ ms.locfileid: "96928534"
 
 Откройте шаблон [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной запись хранения) из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) и настройте две ошибки шаблона.
 
-1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
+1. В Visual Studio Code выберите **Файл** > **Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
 
     ```url
@@ -51,16 +51,16 @@ ms.locfileid: "96928534"
     ```
 
 3. Чтобы открыть файл, выберите **Открыть**.
-4. Измените строку **apiVersion** на следующую.
+4. Измените строку `apiVersion` на следующую.
 
     ```json
     "apiVersion1": "2018-07-02",
     ```
 
-    - **apiVersion1** является недопустимым именем элемента. Это ошибка проверки.
-    - Версия API должна быть "2018-07-01".  Это ошибка развертывания.
+    - `apiVersion1` — недопустимое имя элемента. Это ошибка проверки.
+    - Должна быть версия API `"2018-07-01"`.  Это ошибка развертывания.
 
-5. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл в качестве **azuredeploy.json** на локальном компьютере.
+5. Выберите **Файл** > **Сохранить как**, чтобы сохранить файл в качестве _azuredeploy.json_ на локальном компьютере.
 
 ## <a name="troubleshoot-the-validation-error"></a>Устранение ошибки проверки
 
@@ -68,13 +68,13 @@ ms.locfileid: "96928534"
 
 Вы получите сообщение об ошибке следующего содержания.
 
-```
+```azurepowershell
 New-AzResourceGroupDeployment : 4:29:24 PM - Error: Code=InvalidRequestContent; Message=The request content was invalid and could not be deserialized: 'Could not find member 'apiVersion1' on object of type 'TemplateResource'. Path 'properties.template.resources[0].apiVersion1', line 36, position 24.'.
 ```
 
-Сообщение об ошибке указывает, что проблема связана с **apiVersion1**.
+Сообщение об ошибке указывает, что проблема связана с `apiVersion1`.
 
-Чтобы устранить проблему, используйте Visual Studio Code, изменив **apiVersion1** на **apiVersion**, а затем сохраните шаблон.
+Чтобы устранить проблему, используйте Visual Studio Code, изменив `apiVersion1` на `apiVersion`, а затем сохраните шаблон.
 
 ## <a name="troubleshoot-the-deployment-error"></a>Устранение ошибки развертывания
 
@@ -82,7 +82,7 @@ New-AzResourceGroupDeployment : 4:29:24 PM - Error: Code=InvalidRequestContent; 
 
 Вы получите сообщение об ошибке следующего содержания.
 
-```
+```azurepowershell
 New-AzResourceGroupDeployment : 4:48:50 PM - Resource Microsoft.Storage/storageAccounts 'storeqii7x2rce77dc' failed with message '{
   "error": {
     "code": "NoRegisteredProviderFound",

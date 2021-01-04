@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Приостановка и возобновление вычислений в выделенном пуле SQL (ранее — Хранилище данных SQL) с помощью портала Azure
-description: Используйте портал Azure, чтобы приостановить вычисления для пула SQL и сэкономить. Возобновите вычисления, когда вы готовы к использованию хранилища данных.
+title: Краткое руководство. Приостановка и возобновление вычислений в выделенном пуле SQL с помощью портала Azure
+description: Используйте портал Azure, чтобы приостановить вычисления для выделенного пула SQL и сэкономить. Возобновите вычисления, когда вы готовы к использованию хранилища данных.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 88f6782a0f81b94977b37bd8f87bf26a0d4c8a72
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7d258243dae06461d21e9b5f0346e419f034eea9
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457703"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109703"
 ---
-# <a name="quickstart-pause-and-resume-compute-in-dedicated-sql-pool-formerly-sql-dw-via-the-azure-portal"></a>Краткое руководство. Приостановка и возобновление вычислений в выделенном пуле SQL (ранее — Хранилище данных SQL) с помощью портала Azure
+# <a name="quickstart-pause-and-resume-compute-in-dedicated-sql-pool-via-the-azure-portal"></a>Краткое руководство. Приостановка и возобновление вычислений в выделенном пуле SQL с помощью портала Azure
 
-Для приостановки и возобновления работы вычислительных ресурсов выделенного пула SQL (ранее — Хранилище данных SQL) можно использовать портал Azure. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Для приостановки и возобновления работы вычислительных ресурсов выделенного пула SQL можно использовать портал Azure. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -40,9 +40,8 @@ ms.locfileid: "96457703"
 Чтобы приостановить работу выделенного пула SQL, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. На портале Azure на странице навигации слева выберите раздел **Выделенный пул SQL (ранее — Хранилище данных SQL)** .
-2. Выберите **mySampleDataWarehouse** на странице **Dedicated SQL pool (formerly SQL DW)** (Выделенный пул SQL (ранее — Хранилище данных SQL)), чтобы открыть пул SQL. 
-3. На странице **mySampleDataWarehouse** обратите внимание на то, что параметр **Состояние** имеет значение **В сети**.
+2. Перейдите на страницу **Выделенный пул SQL**, чтобы открыть пул SQL. 
+3. В поле **Состояние** должно отображаться значение **В сети**.
 
     ![Вычисления в сети](././media/pause-and-resume-compute-portal/compute-online.png)
 
@@ -62,8 +61,7 @@ ms.locfileid: "96457703"
 
 Чтобы возобновить работу выделенного пула SQL, сделайте следующее:
 
-1. На портале Azure на странице слева выберите раздел **Dedicated SQL pool (formerly SQL DW)** (Выделенный пул SQL (ранее — Хранилище данных SQL)).
-2. Выберите **mySampleDataWarehouse** на странице **Dedicated SQL pool (formerly SQL DW)** (Выделенный пул SQL (ранее — Хранилище данных SQL)), чтобы открыть страницу пула SQL. 
+1. Перейдите на страницу **Выделенный пул SQL**, чтобы открыть пул SQL.
 3. На странице **mySampleDataWarehouse** обратите внимание на то, что параметр **Состояние** имеет значение **Приостановлено**.
 
     ![Вычисления вне сети](././media/pause-and-resume-compute-portal/compute-offline.png)

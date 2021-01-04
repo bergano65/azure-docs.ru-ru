@@ -9,10 +9,10 @@ ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
 ms.openlocfilehash: d49868199d8f9f2da97f08dd06f29afd8f553bd9
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
+ms.lasthandoff: 12/21/2020
 ms.locfileid: "97586981"
 ---
 # <a name="connect-to-azure-synapse-studio-using-azure-private-link-hubs"></a>Подключение к Azure синапсе Studio с помощью концентраторов частной связи Azure 
@@ -43,7 +43,7 @@ ms.locfileid: "97586981"
 
 :::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-dns-zones.png" alt-text="Создание частной конечной точки для концентратора частных ссылок":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подключение к ресурсам рабочей области из ограниченной сети](./how-to-connect-to-workspace-from-restricted-network.md)
 

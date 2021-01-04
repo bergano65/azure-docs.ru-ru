@@ -1,18 +1,18 @@
 ---
 title: Краткое руководство. Создание учетной записи Azure Purview на портале Azure (предварительная версия)
 description: В этом кратком руководстве описано, как создать учетную запись Azure Purview и настроить разрешения для ее использования.
-author: hophan
+author: hophanms
 ms.author: hophan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: quickstart
 ms.date: 10/23/2020
-ms.openlocfilehash: c9e0b155a4cf34373bb6d851241dc62ddd661045
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 3119152e4a7d0dc799dfe273722101c95c11c0c9
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602387"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400392"
 ---
 # <a name="quickstart-create-an-azure-purview-account-in-the-azure-portal"></a>Краткое руководство. Создание учетной записи Azure Purview на портале Azure
 
@@ -30,6 +30,10 @@ ms.locfileid: "96602387"
 * Ваша учетная запись должна иметь разрешение на создание ресурсов в подписке.
 
 * Если используется **политика Azure**, которая запрещает всем приложениям создавать **учетные записи хранения** и **пространства имен EventHub**, следует создать исключение из этой политики с помощью тега, который можно указать при создании учетной записи Azure Purview. Основная причина заключается в том, что для каждой созданной учетной записи Azure Purview необходимо создать управляемую группу ресурсов, а в этой группе ресурсов создать учетную запись хранения и пространство имен EventHub.
+
+    > [!important]
+    > Вам не нужно выполнять этот шаг, если у вас нет Политики Azure или существующая Политика Azure не блокирует создание **учетной записи хранения** и **пространства имен EventHub**.
+
     1. Откройте портал Azure и выполните поиск по запросу **Политика**.
     1. Выполните инструкции по [созданию определения пользовательской политики](https://docs.microsoft.com/azure/governance/policy/tutorials/create-custom-policy-definition) или добавьте в существующую политику два исключения с помощью оператора `not` и тега `resourceBypass`:
 
@@ -151,7 +155,7 @@ ms.locfileid: "96602387"
 
 1. Выберите **Добавить назначение ролей**.
 
-1. Выберите тип роли **Куратор дынных Purview** или **Администратор источника данных Purview** в зависимости от того, для чего будет использоваться этот субъект-служба (см. статью о [разрешениях каталога](catalog-permissions.md)).
+1. Выберите тип роли **Куратор дынных Purview** или **Администратор источника данных Purview** в зависимости от того, для чего будет использоваться этот субъект безопасности (см. статьи о [разрешениях каталога](catalog-permissions.md), а также [объектах приложений и субъектов-служб в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)).
 
 1. В поле **Назначить доступ для** сохраните вариант по умолчанию **Пользователь, группа или субъект-служба**.
 

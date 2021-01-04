@@ -16,12 +16,12 @@ ms.date: 09/30/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4030dedfb0d7308bb5a0f7a86bc49ee168e6d0c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 2e8d68643b5cc0002467f738dd60343fb2c42dc6
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362813"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631297"
 ---
 # <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management"></a>Руководство по созданию пакета для доступа в управлении правами Azure AD
 
@@ -117,6 +117,7 @@ ms.locfileid: "92362813"
 11. В раскрывающемся списке **Роль** выберите роль **Участник**.
 
     ![Создание пакета для доступа на вкладке "Роли ресурсов"](./media/entitlement-management-access-package-first/resource-roles.png)
+
     >[!IMPORTANT]
     >Группы с назначением ролей, добавленные в пакет для доступа, будут указаны с использованием подтипа **Assignable to roles** (Возможность назначения для ролей). Дополнительные сведения см. в статье [Создание группы с назначением ролей в Azure Active Directory](../roles/groups-create-eligible.md). Если группа назначением ролей, которую вы хотите добавить, не отображается или вам не удается добавить ее, убедитесь, что у вас есть необходимая роль Azure AD и роль управления правами для выполнения этой операции. Возможно, вам потребуется попросить пользователя с необходимыми ролями добавить ресурс в каталог. Дополнительные сведения см. в разделе [Роли, требуемые для добавления ресурсов в каталог](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 

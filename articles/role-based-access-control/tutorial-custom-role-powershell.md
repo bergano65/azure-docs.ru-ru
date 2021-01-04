@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: 8aedc59fc34278bf84983d78bf0e9a31fe38ee93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b1815e7598410cd709572d93082d5dee5e0b0fb
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82735595"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369248"
 ---
 # <a name="tutorial-create-an-azure-custom-role-using-azure-powershell"></a>Руководство по Создание настраиваемой роли Azure с помощью Azure PowerShell
 
@@ -51,7 +51,7 @@ ms.locfileid: "82735595"
 
 Создать пользовательскую роль проще всего с помощью встроенной роли, в которую вы можете добавлять изменения для создания новой роли.
 
-1. В PowerShell вы можете получить список операций, доступных поставщику ресурсов с помощью команды [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation). Полезно знать операции, которые доступны для создания разрешений. См. дополнительные сведения о [доступных операциях поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md#microsoftsupport).
+1. В PowerShell вы можете получить список операций, доступных поставщику ресурсов с помощью команды [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation). Полезно знать операции, которые доступны для создания разрешений. Список всех операций см. в статье [Операции с поставщиками ресурсов Azure](resource-provider-operations.md#microsoftsupport).
 
     ```azurepowershell
     Get-AzProviderOperation "Microsoft.Support/*" | FT Operation, Description -AutoSize

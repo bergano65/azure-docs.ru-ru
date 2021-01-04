@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 12/05/2019
+ms.date: 12/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9433945ffe1181b62ee193baf1c2dd0b89ec14c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0acef468aa53e456cd6fb416fe45558aee064699
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91856812"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355823"
 ---
 # <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Что такое подготовка облака Azure AD Connect?
 Облачная подготовка Azure AD Connect — это новый агент Майкрософт, предназначенный для соблюдения и достижения целей гибридной идентификации для синхронизации пользователей, групп и контактов с Azure AD.  Его можно использовать вместе с синхронизацией Azure AD Connect, чтобы получить следующие преимущества:
@@ -72,6 +72,7 @@ ms.locfileid: "91856812"
 | Поддержка доменных служб Azure AD|● | |
 | [Гибридная обратная запись Exchange](../hybrid/reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) |● | |
 | Поддержка более 50 000 объектов на каждый домен AD |● | |
+| Междоменные ссылки|● | |
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 

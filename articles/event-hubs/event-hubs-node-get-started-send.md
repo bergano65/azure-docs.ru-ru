@@ -1,18 +1,18 @@
 ---
 title: Отправка и получение событий через Центры событий Azure с помощью JavaScript (последних версий)
-description: В статье описано, как создать приложение JavaScript, которое отправляет события или получает их из службы "Центры событий Azure" с помощью последнего пакета azure/event-hubs версии 5.
+description: В статье описано, как создать приложение JavaScript, которое отправляет события или получает их через службу "Центры событий Azure" с помощью пакета azure/event-hubs, выпущенного последним.
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 01516f29e727b5be2a81d3d8dd473808b6ea60f7
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.openlocfilehash: 2e5f297d5edb9a271843db060f948209dd076074
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91728953"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106093"
 ---
-# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs-version-5"></a>Отправка событий или получение событий из концентраторов событий с помощью JavaScript (azure/event-hubs версии 5)
-В этом кратком руководстве показано, как отправлять и получать события через концентратор событий с помощью пакета JavaScript **azure/event-hubs версии 5**. 
+# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs"></a>Отправка или получение событий через концентраторы событий с помощью JavaScript (azure/event-hubs)
+В этом кратком руководстве показано, как отправлять и получать события через концентратор событий с помощью пакета JavaScript **azure/event-hubs**. 
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -91,7 +91,7 @@ npm install @azure/eventhubs-checkpointstore-blob
     * `EVENT HUBS NAMESPACE CONNECTION STRING` 
     * `EVENT HUB NAME`
 1. запустите `node send.js`, чтобы выполнить этот файл. Эта команда отправляет в концентратор событий пакет из трех событий.
-1. Проверьте получение сообщения концентратором событий на портале Azure. В разделе**Метрики** переключитесь на представление **Сообщения**. Обновите страницу, чтобы обновить диаграмму. На отображение полученных сообщений может уйти несколько секунд.
+1. Проверьте получение сообщения концентратором событий на портале Azure. В разделе **Метрики** переключитесь на представление **Сообщения**. Обновите страницу, чтобы обновить диаграмму. На отображение полученных сообщений может уйти несколько секунд.
 
     [![Проверка получения сообщения концентратором событий](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png)](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png#lightbox)
 

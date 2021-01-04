@@ -1,15 +1,15 @@
 ---
 title: Краткое руководство. Создание учетной записи пакетной службы с помощью шаблона Azure Resource Manager
-description: Быстро научитесь выполнять пакетное задание с помощью Azure CLI. Создание ресурсов Azure и управление ими из командной строки или с помощью скриптов.
+description: В этом кратком руководстве показано, как создать учетную запись пакетной службы с помощью шаблона ARM.
 ms.topic: quickstart
 ms.date: 08/17/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: 606862b31ba4921e39e693735507fca39282091c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: fc6f1537b32c8ced2cfc2bf09f16106f791001fc
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88642407"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106586"
 ---
 # <a name="quickstart-create-a-batch-account-by-using-arm-template"></a>Краткое руководство. Создание учетной записи пакетной службы с помощью шаблона ARM
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bc24d6670cbf0c2ac72c9a1d100467b8724779b3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 426c735dfd0d015cdc1a734edde9d336fb88cfbc
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88682288"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97486780"
 ---
 Согласно предварительным требованиям этого краткого руководства вы загрузили пример кода в папку. Выполните указания ниже, чтобы изучить и изменить пример кода.
 
@@ -12,11 +12,11 @@ ms.locfileid: "88682288"
 
     Шаблон развертывания — это манифест развертывания для пограничного устройства, где для некоторых параметров используются переменные. В *ENV*-файле указаны значения таких переменных.
 1. Теперь перейдите в папку *src/cloud-to-device-console-app*. Здесь вы увидите файл *appsettings.json* и несколько других файлов:
-    * ***c2d-console-app.csproj*** — файл проекта Visual Studio Code.
-    * ***operations.json*** — список операций, которые должна запускать программа.
-    * ***Program.cs*** — пример кода программы. Этот код выполняет следующие действия:
+    * ***c2d-console-app.csproj** _ — файл проекта Visual Studio Code.
+    _ ***operations.json** _ — список операций, которые должна запускать программа.
+    _ ***Program.cs** _ — пример кода программы. Этот код выполняет следующие действия:
 
-        * загружает параметры приложения;
+        _ загружает параметры приложения;
         * вызывает прямые методы, которые представляются модулем Аналитики видеотрансляций в IoT Edge (с помощью модуля можно анализировать потоки видеотрансляции, вызывая его [прямые методы](../../../direct-methods.md)); 
         * приостанавливает выполнение, позволяя проанализировать выходные данные программы в окне **ТЕРМИНАЛ** и проверить сгенерированные модулем события в окне **ВЫХОДНЫЕ ДАННЫЕ**;
         * вызывает прямые методы для очистки ресурсов.
@@ -24,7 +24,7 @@ ms.locfileid: "88682288"
 1. Внесите правки в файл *operations.json*:
     * Измените ссылку на топологию графа:
 
-        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/evr-motion-files/topology.json"`
+        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/evr-motion-files/2.0/topology.json"`
     * В разделе `GraphInstanceSet` измените имя топологии графа, чтобы оно совпадало со значением в приведенной выше ссылке:
     
       `"topologyName" : "EVRToFilesOnMotionDetection"`

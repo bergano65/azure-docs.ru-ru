@@ -7,20 +7,30 @@ ms.service: attestation
 ms.topic: quickstart
 ms.date: 11/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: dee9e7596c0a30301d9e0453ef22a6dfe9541522
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: fb8b0f12844ce1057bd3cfc4716a32ee64ec5586
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96020948"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937225"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-cli"></a>Краткое руководство. Настройка службы "Аттестация Azure" с помощью Azure CLI
 
 Приступайте к работе с Аттестацией Azure, настроив аттестацию с помощью Azure CLI.
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
-
 ## <a name="get-started"></a>Начало работы
+
+1. Установите это расширение с помощью команды CLI, приведенной ниже.
+
+   ```azurecli
+   az extension add --name attestation
+   ```
+   
+1. Проверка версии
+
+   ```azurecli
+   az extension show --name attestation --query version
+   ```
 
 1. Примените следующую команду, чтобы войти в Azure:
 
@@ -55,19 +65,16 @@ ms.locfileid: "96020948"
 
 Ниже приведены команды, которые можно использовать для создания поставщика аттестации и управления им.
 
-1. Выполните команду [az attestation create](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_create), чтобы создать поставщик аттестации:
+1. Выполните команду [az attestation create](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_create), чтобы создать поставщик аттестации:
 
    ```azurecli
-   az attestation create --resource-group attestationrg --name attestationProvider --location uksouth \
-      --attestation-policy SgxDisableDebugMode --certs-input-path C:\test\policySignersCertificates.pem
+   az attestation create --name "myattestationprovider" --resource-group "MyResourceGroup" --location westus
    ```
-
-   Параметр **--certs-input-path** указывает набор доверенных ключей подписывания. Если для этого параметра указано имя файла, то поставщик аттестации нужно настраивать только с помощью политик в формате подписанного JWT. В остальных случаях для политик можно использовать форматы простого текста или неподписанного JWT. Сведения о JWT см. в разделе [Основные понятия](basic-concepts.md). Примеры сертификатов для подписывания политик аттестации см. [здесь](policy-signer-examples.md).
-
-1. Выполните команду [az attestation show](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_show), чтобы получить сведения о свойствах поставщика аттестации, включая сведения о состоянии и URI аттестации:
+   
+1. Выполните команду [az attestation show](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_show), чтобы получить сведения о свойствах поставщика аттестации, включая сведения о состоянии и URI аттестации:
 
    ```azurecli
-   az attestation show --resource-group attestationrg --name attestationProvider
+   az attestation show --name "myattestationprovider" --resource-group "MyResourceGroup"
    ```
 
    С помощью этой команды отображаются значения, аналогичные приведенным ниже:
@@ -84,34 +91,20 @@ ms.locfileid: "96020948"
    TagsTable:
    ```
 
-Поставщик аттестации можно удалить с помощью команды [az attestation delete](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_delete):
+Поставщик аттестации можно удалить с помощью команды [az attestation delete](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_delete):
 
 ```azurecli
-az attestation delete --resource-group attestationrg --name attestationProvider
+az attestation delete --name "myattestationprovider" --resource-group "sample-resource-group"
 ```
 
 ## <a name="policy-management"></a>Управление политикой
 
-Для управления политиками пользователю Azure AD требуются следующие разрешения для `Actions`:
+Управлять политиками для поставщика аттестации можно с помощью описанных здесь команд (один тип аттестации за раз).
 
-- `Microsoft.Attestation/attestationProviders/attestation/read`
-- `Microsoft.Attestation/attestationProviders/attestation/write`
-- `Microsoft.Attestation/attestationProviders/attestation/delete`
-
-Эти разрешения могут назначаться пользователю AD с помощью роли `Owner` (разрешения с подстановочными знаками), `Contributor` (разрешения с подстановочными знаками) или `Attestation Contributor` (только определенные разрешения для Аттестации Azure).  
-
-Для чтения политик пользователю Azure AD требуются следующие разрешения для `Actions`:
-
-- `Microsoft.Attestation/attestationProviders/attestation/read`
-
-Эти разрешения можно назначать пользователю AD с помощью роли `Reader` (разрешения с подстановочными знаками) или `Attestation Reader` (только определенные разрешения для Аттестации Azure).
-
-Управлять политиками для поставщика аттестации можно с помощью описанных здесь команд (одна среда TEE за раз).
-
-Команда [az attestation policy show](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_show) возвращает текущую политику для указанной среды TEE:
+Команда [az attestation policy show](/cli/azure/ext/attestation/attestation/policy?view=azure-cli-latest#ext_attestation_az_attestation_policy_show) возвращает текущую политику для указанной среды TEE:
 
 ```azurecli
-az attestation policy show --resource-group attestationrg --name attestationProvider --tee SgxEnclave
+az attestation policy show --name "myattestationprovider" --resource-group "MyResourceGroup" --attestation-type SGX-IntelSDK
 ```
 
 > [!NOTE]
@@ -119,48 +112,24 @@ az attestation policy show --resource-group attestationrg --name attestationProv
 
 Поддерживаются следующие типы TEE:
 
-- `CyResComponent`
-- `OpenEnclave`
-- `SgxEnclave`
-- `VSMEnclave`
+- `SGX-IntelSDK`
+- `SGX-OpenEnclaveSDK`
+- `TPM`
 
-Используйте команду [az attestation policy set](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_set), чтобы задать новую политику для указанной среды TEE.
+Используйте команду [az attestation policy set](/cli/azure/ext/attestation/attestation/policy?view=azure-cli-latest#ext_attestation_az_attestation_policy_set), чтобы задать новую политику для указанного типа аттестации.
 
-```azurecli
-az attestation policy set --resource-group attestationrg --name attestationProvider --tee SgxEnclave \
-   --new-attestation-policy newAttestationPolicyname
-```
-
-Политика аттестации в формате JWT должна содержать утверждение с именем `AttestationPolicy`. Для подписывания политики нужно применять ключ, соответствующий любому из существующих сертификатов для подписывания политик.
-
-Примеры политик см. [здесь](policy-examples.md).
-
-Используйте команду [az attestation policy reset](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_reset), чтобы задать новую политику для указанной среды TEE.
+Чтобы задать политику в текстовом формате для заданного типа аттестации с помощью пути к файлу, сделайте следующее:
 
 ```azurecli
-az attestation policy reset --resource-group attestationrg --name attestationProvider --tee SgxEnclave \
-   --policy-jws "eyJhbGciOiJub25lIn0.."
+az attestation policy set --name testatt1 --resource-group testrg --attestation-type SGX-IntelSDK --new-attestation-policy-file "{file_path}"
 ```
 
-## <a name="policy-signer-certificates-management"></a>Управление сертификатами для подписывания политик
-
-Управлять сертификатами для подписывания политик для поставщика аттестации можно с помощью следующих команд:
+Чтобы задать политику в формате JWT для заданного типа аттестации с помощью пути к файлу, сделайте следующее:
 
 ```azurecli
-az attestation signer list --resource-group attestationrg --name attestationProvider
-
-az attestation signer add --resource-group attestationrg --name attestationProvider \
-   --signer "eyAiYWxnIjoiUlMyNTYiLCAie..."
-
-az attestation signer remove --resource-group attestationrg --name attestationProvider \
-   --signer "eyAiYWxnIjoiUlMyNTYiLCAie..."
+az attestation policy set --name "myattestationprovider" --resource-group "MyResourceGroup" \
+--attestation-type SGX-IntelSDK --new-attestation-policy-file "{file_path}" --policy-format JWT
 ```
-
-Сертификат для подписывания политик — это подписанный JWT, в котором есть утверждение с именем `maa-policyCertificate`. Значением этого утверждения является объект JWK, содержащий доверенный ключ для подписывания, который нужно добавить. Для подписывания JWT нужно применять закрытый ключ, соответствующий любому из существующих сертификатов для подписывания политик. Сведения о JWT и JWK см. в разделе [Основные понятия](basic-concepts.md).
-
-Все семантические операции с сертификатом для подписывания политик следует выполнять за пределами Azure CLI. Сама операция в Azure CLI представляет собой простую строку.
-
-Примеры сертификатов для подписывания политик аттестации см. [здесь](policy-signer-examples.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

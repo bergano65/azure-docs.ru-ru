@@ -1,22 +1,25 @@
 ---
 title: Новые возможности в службе "Миграция Azure"
 description: Узнайте о новых и недавних обновлениях в службе "Миграция Azure".
-author: bsiva
-ms.author: bsiva
-ms.manager: abhemraj
 ms.topic: overview
+author: anvar-ms
+ms.author: anvar
+ms.manager: bsiva
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: e39b8f7ee7b76a1955e02a7140524f812be086b5
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 7ff9d9c6624016d4b1ea94072d52de1c42d73913
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752453"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400477"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Новые возможности в службе "Миграция Azure"
 
 С помощью [службы "Миграция Azure"](migrate-services-overview.md) можно обнаруживать, оценивать и переносить локальные серверы, приложения и данные в облако Microsoft Azure. В этой статье описаны новые выпуски и функции службы "Миграция Azure".
+## <a name="update-december-2020"></a>Обновление (декабрь 2020 г.)
+- Служба "Миграция Azure" теперь автоматически устанавливает агент виртуальных машин Azure на виртуальных машинах VMware, когда они переносятся в Azure с помощью метода миграции VMware без агента.
+- Теперь на портале Azure можно перенести виртуальные машины VMware на виртуальные машины Azure с дисками, зашифрованными на стороне сервера (SSE) с помощью ключей, управляемых клиентом (CMK). Для такой миграции используется средство "Миграция сервера" службы "Миграция Azure" (репликация без агента).
 
 ## <a name="update-september-2020"></a>Обновление (сентябрь 2020 г.)
 - Добавлена поддержка переноса серверов в зоны доступности.
@@ -25,7 +28,7 @@ ms.locfileid: "96752453"
 - Анализ зависимостей (без агента) теперь можно выполнять параллельно на 1000 виртуальных машинах.
 - Анализ зависимостей (без агента) теперь можно включить или отключить в большом масштабе с помощью скриптов PowerShell. [Подробнее.](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/dependencies-at-scale)
 - Доступна визуализация сетевых подключений в Power BI с помощью данных, собранных с использованием анализа зависимостей (без агента). [Подробнее.](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/dependencies-at-scale)
-- Теперь можно переносить виртуальные машины VMware с диском данных размером до 32 ТБ с помощью метода миграции VMware без агента, поддерживаемом в средстве "Миграция сервера" службы "Миграция Azure". 
+- Теперь можно переносить виртуальные машины VMware с диском данных размером до 32 ТБ с помощью метода миграции VMware без агента, поддерживаемом в средстве "Миграция сервера" службы "Миграция Azure".
 
 ## <a name="update-august-2020"></a>Обновление (август 2020 г.)
 

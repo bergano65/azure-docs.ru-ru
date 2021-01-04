@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 49bc1a77e2e25cb069a89812603ff562b8a4c1cd
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 9e04006a0908832c623230d89caa62b0985f32e4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931458"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587950"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-arm-templates"></a>Руководство по развертыванию расширений виртуальных машин с помощью шаблонов Resource Manager
 
@@ -42,7 +42,7 @@ ms.locfileid: "96931458"
 
 ## <a name="prepare-a-powershell-script"></a>Подготовка скрипта PowerShell
 
-Вы можете использовать встроенный скрипт PowerShell или файл скрипта.  В этом руководстве описано, как использовать файл скрипта. Используется доступный на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1) скрипт PowerShell со следующим содержимым:
+Вы можете использовать встроенный скрипт PowerShell или файл скрипта. В этом руководстве описано, как использовать файл скрипта. Используется доступный на [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1) скрипт PowerShell со следующим содержимым:
 
 ```azurepowershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
@@ -105,22 +105,22 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 Дополнительные сведения об определении этого ресурса см. в [справочнике по расширению](/azure/templates/microsoft.compute/virtualmachines/extensions). Ниже приведены некоторые важные элементы.
 
-* **name**. Так как ресурс расширения является дочерним ресурсом объекта виртуальной машины, у имени должен быть префикс имени виртуальной машины. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md).
-* **dependsOn**. Создайте ресурс расширения после создания виртуальной машины.
-* **fileUris**. Это расположение, в котором хранятся файлы скриптов. Если вы решили не использовать указанное расположение, необходимо обновить значения.
-* **commandToExecute**. Эта команда запускает скрипт.
+* `name`. Так как ресурс расширения является дочерним ресурсом объекта виртуальной машины, у имени должен быть префикс имени виртуальной машины. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md).
+* `dependsOn`. Создайте ресурс расширения после создания виртуальной машины.
+* `fileUris`. Это расположение, в котором хранятся файлы скриптов. Если вы решили не использовать указанное расположение, необходимо обновить значения.
+* `commandToExecute`. Эта команда запускает скрипт.
 
-Чтобы использовать встроенный скрипт, удалите **fileUris** и измените **commandToExecute** на:
+Чтобы использовать встроенный скрипт, удалите `fileUris` и обновите `commandToExecute` следующим образом:
 
 ```powershell
 powershell.exe Install-WindowsFeature -name Web-Server -IncludeManagementTools && powershell.exe remove-item 'C:\\inetpub\\wwwroot\\iisstart.htm' && powershell.exe Add-Content -Path 'C:\\inetpub\\wwwroot\\iisstart.htm' -Value $('Hello World from ' + $env:computername)
 ```
 
-Этот встроенный скрипт также обновляет содержимое файла iisstart.html.
+Этот встроенный скрипт также обновляет содержимое файла _iisstart.html_.
 
-Кроме того, необходимо открыть HTTP-порт, чтобы вы могли получить доступ к серверу.
+Кроме того, необходимо открыть HTTP-порт, чтобы вы могли получить доступ к веб-серверу.
 
-1. Найдите **securityRules** в шаблоне.
+1. Найдите `securityRules` в шаблоне.
 1. Добавьте следующее правило рядом с **default-allow-3389**.
 
     ```json
@@ -141,7 +141,7 @@ powershell.exe Install-WindowsFeature -name Web-Server -IncludeManagementTools &
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Дополнительные сведения о процедуре развертывания см. в разделе "Развертывание шаблона" статьи [Руководство. Создание шаблонов Resource Manager с зависимыми ресурсами](./template-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Мы советуем использовать пароль, созданный для учетной записи администратора виртуальной машины. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites) этой статьи.
+Дополнительные сведения о процедуре развертывания см. в разделе **Развертывание шаблона** статьи [Руководство. Создание шаблонов Resource Manager с зависимыми ресурсами](./template-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Мы советуем использовать пароль, созданный для учетной записи администратора виртуальной машины. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites) этой статьи.
 
 В Cloud Shell выполните следующую команду, чтобы получить общедоступный IP-адрес виртуальной машины.
 

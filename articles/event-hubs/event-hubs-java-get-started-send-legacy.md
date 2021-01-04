@@ -4,12 +4,12 @@ description: В статье описано, как создать прилож�
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e77ff762de11a9c8a723b162993db11efe715b66
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: e86ca76f3eb661e1407a02b58e60b62b391f5702
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591554"
+ms.locfileid: "97607989"
 ---
 # <a name="use-java-to-send-events-to-or-receive-events-from-azure-event-hubs-azure-eventhubs"></a>Использование Java для отправки и получения событий в Центрах событий Azure (azure-eventhubs)
 
@@ -17,7 +17,6 @@ ms.locfileid: "97591554"
 
 > [!WARNING]
 > В этом руководстве используются старые пакеты **azure-eventhubs** и **azure-eventhubs-eph**. Краткое руководство, в рамках которого используется последний пакет **azure-messaging-eventhubs**, см. в статье об [отправке и получении событий с помощью azure-messaging-eventhubs](event-hubs-java-get-started-send.md). Чтобы начать использовать в приложении новый пакет вместо старого, ознакомьтесь с руководством по [переходу с azure-eventhubs на azure-messaging-eventhubs](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/migration-guide.md). 
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -75,7 +74,6 @@ public class SimpleSend {
     public static void main(String[] args)
             throws EventHubException, ExecutionException, InterruptedException, IOException {
 
-
     }
  }
 ```
@@ -109,7 +107,6 @@ public class SimpleSend {
         // Each EventHubClient instance spins up a new TCP/TLS connection, which is expensive.
         // It is always a best practice to reuse these instances. The following sample shows this.
         final EventHubClient ehClient = EventHubClient.createSync(connStr.toString(), executorService);
-
 
         try {
             for (int i = 0; i < 10; i++) {
@@ -418,7 +415,6 @@ API предоставляет механизм реализации польз�
 Вы можете использовать любое хранилище данных, которое доступно в вашей среде.
 
 Класс com.microsoft.azure.eventprocessorhost.EventProcessorHost предоставляет два конструктора, которые позволяют переопределить диспетчер контрольных точек для EventProcessorHost.
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями: 

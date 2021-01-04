@@ -7,12 +7,12 @@ author: vladvino
 ms.author: apimpm
 ms.topic: quickstart
 ms.date: 09/14/2020
-ms.openlocfilehash: 19080679291b88b693c95bd71f8ddc0e59286356
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: fdf7e842959e09a8ec35017031f745cb16d13c6d
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90057353"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400409"
 ---
 # <a name="quickstart-create-a-new-azure-api-management-service-instance-using-visual-studio-code"></a>Краткое руководство. Создание экземпляра службы "Управление API Azure" с помощью Visual Studio Code
 
@@ -55,7 +55,7 @@ ms.locfileid: "90057353"
 >
 > Хотя подготовка SKU *Consumption* занимает меньше минуты, чтобы создать другие SKU обычно требуется 30–40 минут.
 
-Теперь можно импортировать и опубликовать первый API. Кроме этого можно выполнять общие операции Управления API в расширении для Visual Studio Code. См. документацию по работе с [расширением службы "Управление API" Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview)
+Теперь можно импортировать и опубликовать первый API. Кроме этого можно выполнять общие операции Управления API в расширении для Visual Studio Code. Дополнительные сведения см. в [этом руководстве](visual-studio-code-tutorial.md).
 
 ![Созданный экземпляр службы "Управление API" в области расширения службы "Управление API" для VS Code](./media/vscode-create-service-instance/vscode-apim-instance.png)
 
@@ -70,4 +70,4 @@ ms.locfileid: "90057353"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Импорт и публикация первого API](import-and-publish.md)
+> [Импорт API и управление ими с помощью расширения службы "Управление API"](visual-studio-code-tutorial.md)

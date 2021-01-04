@@ -2,13 +2,13 @@
 title: Подключение гибридной виртуальной машины к серверам с поддержкой Azure Arc
 description: Узнайте, как подключить и зарегистрировать гибридную виртуальную машину на серверах с поддержкой Azure Arc.
 ms.topic: quickstart
-ms.date: 11/12/2020
-ms.openlocfilehash: 3779d95ac138e83b1d953f744e07ae553890a5d7
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.date: 12/15/2020
+ms.openlocfilehash: 68869854cbfcf6d7297137e6239b2229a20c04a1
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576836"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516782"
 ---
 # <a name="quickstart-connect-hybrid-machine-with-azure-arc-enabled-servers"></a>Краткое руководство. Подключение гибридной виртуальной машины к серверам с поддержкой Azure Arc
 
@@ -29,6 +29,9 @@ ms.locfileid: "94576836"
     * Если компьютер подключается через брандмауэр или прокси-сервер для связи через Интернет, убедитесь, что [перечисленные](../agent-overview.md#networking-configuration) URL-адреса не заблокированы.
 
     * Серверы с поддержкой Azure Arc поддерживают только регионы, указанные на [этой странице](../overview.md#supported-regions).
+
+> [!WARNING]
+> В имени узла Linux или компьютера Windows нельзя использовать зарезервированные слова или товарные знаки. В противном случае, при попытке зарегистрировать подключенный компьютер в Azure произойдет ошибка. Список зарезервированных слов см. в статье [Ошибки имен зарезервированных ресурсов](../../../azure-resource-manager/templates/error-reserved-resource-name.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 

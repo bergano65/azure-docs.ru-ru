@@ -7,16 +7,17 @@ ms.author: sumuth
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 31ad9450c775e5e4e7ae543241b48f8c372ad9ee
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 7713b7596b21e02e941a19f64d3658ab0f5f51f5
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96749212"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359019"
 ---
 # <a name="tutorial-deploy-wordpress-app-on-aks-with-azure-database-for-mysql---flexible-server"></a>Руководство по Развертывание приложения WordPress в AKS с Гибким сервером Базы данных Azure для MySQL
 
-В рамках этого краткого руководства вы развернете приложение WordPress в кластере Azure Kubernetes Service (AKS) с Гибким сервером Базы данных Azure для MySQL (предварительная версия) с помощью Azure CLI. [Служба Azure Kubernetes](../../aks/intro-kubernetes.md) (AKS) — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. [Гибкий сервер Базы данных Azure для MySQL (предварительная версия)](overview.md) — это полностью управляемая служба базы данных, которая повышает точность управления, а также гибкость функций управления базами данных и параметров конфигурации. Сейчас предоставляется предварительная версия Гибкого сервера.
+В рамках этого краткого руководства вы развернете приложение WordPress в кластере Azure Kubernetes Service (AKS) с Гибким сервером Базы данных Azure для MySQL (предварительная версия) с помощью Azure CLI. 
+**[AKS](../../aks/intro-kubernetes.md)**  — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. **[Гибкий сервер Базы данных Azure для MySQL (предварительная версия)](overview.md)**  — это полностью управляемая служба базы данных, которая повышает точность управления, а также гибкость функций управления базами данных и параметров конфигурации. Сейчас предоставляется предварительная версия Гибкого сервера.
 
 > [!NOTE]
 > - Сейчас предоставляется общедоступная предварительная версия Гибкого сервера Базы данных Azure для MySQL.
@@ -115,7 +116,7 @@ az mysql flexible-server create --public-access <YOUR-IP-ADDRESS>
 - Так как эта команда использует локальный контекст, сервер создается в группе ресурсов ```wordpress-project``` и в регионе ```eastus```.
 
 
-## <a name="build-your-wordpress-docker-image"></a>Создание образа Docker для WordPress
+### <a name="build-your-wordpress-docker-image"></a>Создание образа Docker для WordPress
 
 Скачайте [последнюю версию WordPress](https://wordpress.org/download/). Создайте для своего проекта новый каталог ```my-wordpress-app``` с представленной здесь несложной структурой папок.
 
@@ -173,6 +174,7 @@ define('DB_COLLATE', '');
 define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
 ```
 
+### <a name="create-a-dockerfile"></a>Создание файла Dockerfile
 Создайте новый файл Dockerfile и скопируйте в него этот фрагмент кода. Этот Dockerfile настроит веб-сервер Apache с PHP и включит расширение mysqli.
 
 ```docker
@@ -182,12 +184,12 @@ RUN docker-php-ext-install mysqli
 RUN docker-php-ext-enable mysqli
 ```
 
-## <a name="build-your-docker-image"></a>Создание образа Docker
-В терминале убедитесь, что вы находитесь в каталоге ```my-wordpress-app```, выполнив команду ```cd```. Выполните следующую команду, чтобы создать образ для доски объявлений:
+### <a name="build-your-docker-image"></a>Создание образа Docker
+В терминале убедитесь, что вы находитесь в каталоге ```my-wordpress-app```, выполнив команду ```cd```. Запустите сборку образа с помощью следующей команды.
 
 ``` bash
 
-docker build --tag myblog:latest . 
+docker build --tag myblog:latest .
 
 ```
 
@@ -272,8 +274,6 @@ kubectl apply -f mywordpress.yaml
 
 ```output
 deployment "wordpress-blog" created
-service "php-svc" created
-deployment "azure-vote-front" created
 service "php-svc" created
 ```
 

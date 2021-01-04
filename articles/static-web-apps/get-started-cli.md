@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство. Создание первого статического веб-приложения с помощью службы "Статические веб-приложения Azure" в Azure CLI
-description: Узнайте, как создать экземпляр приложения службы "Статические веб-приложения Azure" с помощью Azure CLI.
+title: Краткое руководство. Создание первого статического сайта с помощью службы "Статические веб-приложения Azure" в CLI
+description: Узнайте, как развернуть статический сайт в службе "Статические веб-приложения Azure" с помощью Azure CLI.
 services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: ed49892284b53844c5c578b752a598cdbdd9b946
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: ca05194c0d8e63290a9cab8d9f7903daa192069b
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320346"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030354"
 ---
-# <a name="quickstart-building-your-first-static-web-app-using-the-azure-cli"></a>Краткое руководство. Создание первого статического веб-приложения с помощью Azure CLI
+# <a name="quickstart-building-your-first-static-site-using-the-azure-cli"></a>Краткое руководство. Создание первого статического сайта с помощью Azure CLI
 
 Служба "Статические веб-приложения Azure" публикует веб-сайты в рабочей среде, создавая приложения из репозитория GitHub. В этом кратком руководстве рассказывается о том, как развернуть веб-приложение в службе "Статические веб-приложения Azure" с помощью Azure CLI.
 

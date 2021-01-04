@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/04/2020
 ms.author: aahi
 ms.openlocfilehash: 3b6c2a5a50cedadd8818eae735df55b661e794ef
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
+ms.lasthandoff: 12/22/2020
 ms.locfileid: "97034026"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
@@ -44,7 +44,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 > [!div class="checklist"]
 > * Детектор аномалий
-> * Компьютерное зрение
+> * API Компьютерного зрения
 > * Content Moderator
 > * Custom Vision
 > * Распознавание лиц

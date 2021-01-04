@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.author: jukullam
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 9203cebbd721b918f2514f7615712c035a0460ed
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 216658b5f5443409e7bd44cbd29bff40cd56c75f
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92669747"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606986"
 ---
 # <a name="use-github-actions-to-connect-to-azure-sql-database"></a>Применение GitHub Actions для подключения к Базе данных SQL Azure
 
-Начните работу с [GitHub Actions](https://docs.github.com/en/actions), настроив и применив рабочий процесс для развертывания обновлений базы данных в [Базе данных SQL](../azure-sql-iaas-vs-paas-what-is-overview.md). 
+Начните работу с [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions), настроив и применив рабочий процесс для развертывания обновлений базы данных в [Базе данных SQL](../azure-sql-iaas-vs-paas-what-is-overview.md). 
 
 ## <a name="prerequisites"></a>Обязательные условия
 
@@ -41,7 +41,7 @@ ms.locfileid: "92669747"
 
 ## <a name="generate-deployment-credentials"></a>Создание учетных данных для развертывания.
 
-Вы можете создать [субъект-службу](../../active-directory/develop/app-objects-and-service-principals.md) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать** .
+Вы можете создать [субъект-службу](../../active-directory/develop/app-objects-and-service-principals.md) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) в [Azure CLI](/cli/azure/). Чтобы выполнить эту команду, откройте [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или нажмите кнопку **Попробовать**.
 
 Замените заполнители `server-name` именем сервера SQL, размещенного в Azure. Замените `subscription-id` и `resource-group` идентификатором подписки и группой ресурсов, которые сопоставлены с этим сервером SQL.  
 
@@ -68,7 +68,7 @@ ms.locfileid: "92669747"
 
 ## <a name="copy-the-sql-connection-string"></a>Копирование строки подключения SQL 
 
-На портале Azure перейдите к серверу Базы данных SQL и последовательно откройте **Параметры** > **Строки подключения** . Скопируйте строку подключения по протоколу **ADO.NET** . Замените заполнители значениями для `your_database` и `your_password`. Теперь строка подключения будет выглядеть как в этих выходных данных. 
+На портале Azure перейдите к серверу Базы данных SQL и последовательно откройте **Параметры** > **Строки подключения**. Скопируйте строку подключения по протоколу **ADO.NET**. Замените заполнители значениями для `your_database` и `your_password`. Теперь строка подключения будет выглядеть как в этих выходных данных. 
 
 ```output
     Server=tcp:my-sql-server.database.windows.net,1433;Initial Catalog={your-database};Persist Security Info=False;User ID={admin-name};Password={your-password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

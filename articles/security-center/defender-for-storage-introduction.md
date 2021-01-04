@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 8979e315f188a5c21cce206c24f195f72096d438
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: b338b8ee93fb24cff54968630d4ff00deca0b64b
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516514"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606731"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Общие сведения об Azure Defender для службы хранилища
 
@@ -20,7 +20,6 @@ ms.locfileid: "97516514"
 **Azure Defender для службы хранилища** — это собственный уровень аналитики безопасности Azure, позволяющий обнаруживать необычные и потенциально опасные попытки доступа к вашим учетным записям хранения или их использования. Он использует расширенные возможности средств обеспечения безопасности на основе ИИ и [Microsoft Threat Intelligence](https://go.microsoft.com/fwlink/?linkid=2128684) для предоставления контекстных оповещений и рекомендаций системы безопасности.
 
 Оповещения системы безопасности активируются при возникновении аномальных действий. Эти оповещения интегрируются с Центром безопасности Azure, а также отправляются по электронной почте администраторам подписки. Они содержат сведения о подозрительных действиях и рекомендации о том, как определить причину угроз и устранить их.
-
 
 ## <a name="availability"></a>Доступность
 
@@ -31,6 +30,17 @@ ms.locfileid: "97516514"
 |Типы защищенного хранилища:|[Хранилище BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/)<br>[Файлы Azure](../storage/files/storage-files-introduction.md)<br>[Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) China Gov и другие правительственные облака|
 |||
+
+
+## <a name="what-are-the-benefits-of-azure-defender-for-storage"></a>Каковы преимущества Azure Defender для службы хранилища?
+
+Azure Defender для службы хранилища обеспечивает следующее.
+
+- **Собственная безопасность Azure.** При включении в один клик Defender для службы хранилища защищает данные, хранящиеся в большом двоичном объекте Azure, Файлах Azure и озерах данных. Как собственная служба Azure, Defender для службы хранилища обеспечивает централизованную безопасность для всех ресурсов данных, управляемых Azure, и интегрируется с другими службами безопасности Azure, такими как Azure Sentinel.
+- **Расширенный набор средств обнаружения.** Обнаружения в Defender для службы хранилища на платформе Microsoft Threat Intelligence охватывают основные угрозы для хранилища, такие как анонимный доступ, скомпрометированные учетные данные, социотехнику, злоупотребление привилегиями и вредоносное содержимое.
+- **Масштабное реагирование.** Инструменты автоматизации Центра безопасности упрощают предотвращение выявленных угроз и реагирование на них. Дополнительные сведения см. в статье [Автоматизация реагирования на триггеры Центра безопасности](workflow-automation.md).
+
+:::image type="content" source="media/defender-for-storage-introduction/defender-for-storage-high-level-overview.png" alt-text="Общий обзор функций Azure Defender для службы хранилища":::
 
 
 ## <a name="what-kind-of-alerts-does-azure-defender-for-storage-provide"></a>Какие типы оповещений предоставляет Azure Defender для службы хранилища?

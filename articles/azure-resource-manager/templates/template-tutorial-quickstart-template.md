@@ -6,12 +6,12 @@ ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 445e7ce2d6e609d75bff38bb3d049a87f184be12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46b32ae7aeb971c9391a69e3ca3d01f669774248
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613600"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106909"
 ---
 # <a name="tutorial-use-azure-quickstart-templates"></a>Руководство по Tutorial: Use Azure Quickstart templates (Учебник. Использование шаблонов быстрого запуска)
 
@@ -34,10 +34,10 @@ ms.locfileid: "91613600"
 ## <a name="find-template"></a>Поиск шаблона
 
 1. Откройте [шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/)
-1. В поле **Поиск** введите **deploy linux web app**.
-1. Выберите имя с названием **Deploy a basic Linux web app** (Развертывание простого веб-приложения Linux). Если у вас возникли проблемы с поиском, используйте [прямую ссылку](https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/).
+1. В поле **Поиск** введите _deploy linux web app_.
+1. Выберите элемент с названием **Deploy a basic Linux web app** (Развертывание простого веб-приложения Linux). Если у вас возникли проблемы с поиском, используйте [прямую ссылку](https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/).
 1. Выберите **Browse on GitHub** (Найти на GitHub).
-1. Выберите **azuredeploy.json**.
+1. Выберите _azuredeploy.json_.
 1. Изучите шаблон. В частности, найдите ресурс `Microsoft.Web/sites`.
 
     ![Веб-сайт краткого руководства по шаблону Resource Manager](./media/template-tutorial-quickstart-template/resource-manager-template-quickstart-template-web-site.png)
@@ -48,15 +48,15 @@ ms.locfileid: "91613600"
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/quickstart-template/azuredeploy.json" range="1-108" highlight="32-45,49,85-100":::
 
-Имя веб-приложения должно быть уникальным в Azure. Чтобы предотвратить дублирование имен, переменная **webAppPortalName** была обновлена с **"webAppPortalName": "[concat(parameters('webAppName'), '-webapp')]"** на **"webAppPortalName": "[concat(parameters('webAppName'), uniqueString(resourceGroup().id))]"** .
+Имя веб-приложения должно быть уникальным в Azure. Чтобы предотвратить дублирование имен, переменная `webAppPortalName` была обновлена с `"webAppPortalName": "[concat(parameters('webAppName'), '-webapp')]"` на `"webAppPortalName": "[concat(parameters('webAppName'), uniqueString(resourceGroup().id))]"` .
 
 Добавьте запятую в конце определения `Microsoft.Web/serverfarms`, чтобы отделить определение ресурса от определения `Microsoft.Web/sites`.
 
 В этом новом ресурсе есть несколько важных компонентов.
 
-Вы увидите, что он содержит элемент с именем **dependsOn**, для которого установлен план службы приложений. Этот параметр является обязательным, так как план службы приложений должен существовать до создания веб-приложения. Элемент **dependsOn** указывает Resource Manager, как упорядочивать ресурсы для развертывания.
+Вы увидите, что он содержит элемент с именем `dependsOn`, для которого установлен план службы приложений. Этот параметр является обязательным, так как план службы приложений должен существовать до создания веб-приложения. Элемент `dependsOn` указывает Resource Manager, как упорядочивать ресурсы для развертывания.
 
-Свойство **serverFarmId** использует функцию [resourceId](template-functions-resource.md#resourceid). Эта функция возвращает уникальный идентификатор ресурса. Здесь она получает уникальный идентификатор для плана службы приложений. Веб-приложение связано с одним определенным планом службы приложений.
+Свойство `serverFarmId` использует функцию [resourceId](template-functions-resource.md#resourceid). Эта функция возвращает уникальный идентификатор ресурса. Здесь она получает уникальный идентификатор для плана службы приложений. Веб-приложение связано с одним определенным планом службы приложений.
 
 ## <a name="deploy-template"></a>Развертывание шаблона
 
@@ -91,7 +91,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Если развертывание завершилось сбоем, используйте параметр **verbose**, чтобы получить сведения о создаваемых ресурсах. Используйте параметр **отладки**, чтобы получить дополнительные сведения для отладки.
+> Если развертывание завершилось сбоем, используйте параметр `verbose`, чтобы получить сведения о создаваемых ресурсах. Используйте параметр `debug`, чтобы получить дополнительные сведения для отладки.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

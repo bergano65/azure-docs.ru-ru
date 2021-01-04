@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a43fa12e72484e97b828648cd7d610f5cf15ea4e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: d1e5848e568f42fb8a77c65c775962f27a5a03df
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931594"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588042"
 ---
 # <a name="tutorial-create-arm-templates-with-dependent-resources"></a>Руководство по созданию шаблонов Resource Manager с зависимыми ресурсами
 
@@ -46,7 +46,7 @@ ms.locfileid: "96931594"
 
 Шаблоны быстрого запуска Azure — это репозиторий для шаблонов ARM. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом руководстве, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows).
 
-1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
+1. В Visual Studio Code выберите **Файл** > **Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
 
     ```url
@@ -54,18 +54,18 @@ ms.locfileid: "96931594"
     ```
 
 3. Чтобы открыть файл, выберите **Открыть**.
-4. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
+4. Выберите **Файл** > **Сохранить как**, чтобы сохранить файл на локальный компьютер с именем _azuredeploy.json_.
 
 ## <a name="explore-the-template"></a>Обзор шаблона
 
 Рассматривая шаблон в этом разделе, постарайтесь ответить на следующие вопросы:
 
 * Сколько ресурсов Azure определено в этом шаблоне?
-* Одним из ресурсов является учетная запись хранения Azure.  Похоже ли это определение на использованное в предыдущем руководстве?
+* Одним из ресурсов является учетная запись хранения Azure. Похоже ли это определение на использованное в предыдущем руководстве?
 * Можете ли вы найти справочники по шаблонам для ресурсов, определенных в этом шаблоне?
 * Можете ли вы найти зависимости ресурсов?
 
-1. В Visual Studio Code сверните элементы, пока не появятся элементы только первого уровня и элементы второго уровня внутри **ресурсов**.
+1. В Visual Studio Code сверните элементы, пока не появятся элементы только первого уровня и элементы второго уровня внутри `resources`.
 
     ![Шаблоны Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
 
@@ -96,7 +96,7 @@ ms.locfileid: "96931594"
 
     ![Элемент dependsOn для виртуальной сети для шаблонов Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-virtual-network-definition.png)
 
-    Элемент dependsOn позволяет определить один ресурс как зависимый от одного или нескольких ресурсов. Этот ресурс зависит от одного из этих ресурсов:
+    Элемент `dependsOn` позволяет определить один ресурс как зависимый от одного или нескольких ресурсов. Этот ресурс зависит от одного из этих ресурсов:
 
     * `Microsoft.Network/networkSecurityGroups`
 
@@ -124,7 +124,7 @@ ms.locfileid: "96931594"
 
     ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана. Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана. Выберите файл, сохраненный ранее. После отправки вы можете с помощью команд `ls` и `cat` проверить, успешно отправлен ли файл.
 
 1. а затем выполните следующий сценарий PowerShell для его развертывания.
 

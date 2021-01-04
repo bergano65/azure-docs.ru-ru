@@ -1,16 +1,16 @@
 ---
-title: Параллельное моделирование на R с помощью пакетной службы Azure
+title: Руководство. Параллельное моделирование на R с помощью пакетной службы Azure
 description: Руководство. Пошаговые инструкции по запуску финансового моделирования методом Монте-Карло в пакетной службе Azure с помощью пакета doAzureParallel на языке R
 ms.devlang: r
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: mvc
-ms.openlocfilehash: 3ce4cff94bb565ce3dd9bc4e9307a2b21c4c0ac5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f157a3596992fc9d40179653cc1f9a070c6ef803
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91851141"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106367"
 ---
 # <a name="tutorial-run-a-parallel-r-simulation-with-azure-batch"></a>Руководство по Параллельное моделирование на R с помощью пакетной службы Azure
 
@@ -251,7 +251,7 @@ stopCluster(cluster)
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Из этого руководства вы узнали, как выполнять такие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > Установка пакета doAzureParallel и настройка доступа к учетным записям пакетной службы и другим учетным записям хранения.
@@ -263,7 +263,3 @@ stopCluster(cluster)
 
 > [!div class="nextstepaction"]
 > [Пакет doAzureParallel](https://github.com/Azure/doAzureParallel/)
-
-
-
-

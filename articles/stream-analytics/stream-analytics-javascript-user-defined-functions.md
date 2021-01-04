@@ -7,13 +7,13 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.reviewer: mamccrea
 ms.custom: mvc, devx-track-js
-ms.date: 06/16/2020
-ms.openlocfilehash: 092e07ed01fb870cdcd9a3fd63d46d30cef96007
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.date: 12/15/2020
+ms.openlocfilehash: 085ac8c2ca7cfafcf0e40152458acf68dd847937
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780847"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605536"
 ---
 # <a name="javascript-user-defined-functions-in-azure-stream-analytics"></a>Определяемые пользователем функции JavaScript в Azure Stream Analytics
  
@@ -215,6 +215,14 @@ FROM
 Samstag, 28. Dezember 2019
 ```
 
+## <a name="user-logging"></a>Ведение журнала пользователя
+Механизм ведения журнала позволяет собирать определенные сведения во время выполнения задания. Данные журнала можно использовать для отладки или оценки правильности пользовательского кода в реальном времени. Этот механизм доступен через метод Console.Log().
+
+```javascript
+console.log('my error message');
+```
+
+Доступ к сообщениям журнала можно получить с помощью [журналов диагностики](data-errors.md).
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определяемая пользователем функция в машинном обучении](./machine-learning-udf.md)

@@ -9,12 +9,12 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 20f095a058434c36373c30ed2a633db12643814d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 906d3d28aabf8f6ecd6e04c38b4519937fa95c2b
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448273"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092165"
 ---
 # <a name="machine-learning-capabilities-in-azure-synapse-analytics"></a>Возможности Машинного обучения в Azure Synapse Analytics
 
@@ -62,9 +62,9 @@ Azure Synapse Analytics предлагает различные возможно
 
 Помимо MLlib для разработки моделей можно также использовать такие популярные библиотеки, как [Scikit Learn](https://scikit-learn.org/stable/). Дополнительные сведения об установке библиотек в пулах Synapse Spark см. в статье [Управление библиотеками для Apache Spark в Azure Synapse Analytics](../spark/apache-spark-azure-portal-add-libraries.md).
 
-#### <a name="train-models-with-azure-machine-learning-automl"></a>Обучение моделей с помощью AutoML Машинного обучения Azure
+#### <a name="train-models-with-azure-machine-learning-automated-ml"></a>Обучение моделей с помощью автоматизированного машинного обучения в Машинном обучении Azure
 
-Другой способ обучения моделей машинного обучения, не требующий глубоких предварительных знаний о машинном обучении, заключается в использовании AutoML. [AutoML](/azure/machine-learning/concept-automated-ml) — это функция, которая автоматически обучает набор моделей машинного обучения и позволяет пользователю выбрать наилучшую модель на основе определенных метрик. Благодаря простой интеграции с Машинным обучением Azure из записных книжек Azure Synapse пользователи могут легко использовать AutoML в Synapse, используя сквозную проверку подлинности Azure Active Directory.  Это означает, что вам нужно только указать рабочую область Машинного обучения Azure, а вводить учетные данные не требуется. Ниже приведен [учебник по AutoML](../spark/apache-spark-azure-machine-learning-tutorial.md), в котором описано, как обучать модели с помощью функции AutoML Машинного обучения Azure в пулах Synapse Spark.
+Другой способ обучения моделей машинного обучения, не требующий глубоких предварительных знаний о машинном обучении, заключается в использовании автоматизированного машинного обучения. [Автоматизированное машинное обучение](/azure/machine-learning/concept-automated-ml) — это функция, которая автоматически обучает набор моделей машинного обучения и позволяет пользователю выбрать наилучшую модель на основе определенных метрик. Благодаря простой интеграции с Машинным обучением Azure из записных книжек Azure Synapse пользователи могут легко использовать автоматизированное машинное обучение в Synapse, используя сквозную проверку подлинности Azure Active Directory.  Это означает, что вам нужно только указать рабочую область Машинного обучения Azure, а вводить учетные данные не требуется. Ниже приведен [учебник по автоматизированному машинному обучению](../spark/apache-spark-azure-machine-learning-tutorial.md), в котором описано, как обучать модели с помощью автоматизированного ML в Машинном обучении Azure в пулах Synapse Spark.
 
 ### <a name="model-deployment-and-scoring"></a>Развертывание модели и ее оценка
 

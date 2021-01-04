@@ -11,16 +11,18 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: 5b593add9c9d7be446798eecdd03b396c3fe513a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 486add54a6d41493c54bd7b0b0339804f6c31847
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174736"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400001"
 ---
 # <a name="what-is-automated-saas-app-user-provisioning-in-azure-ad"></a>Что представляет собой автоматическая подготовка пользователей для приложений SaaS в Azure AD?
 
 В Azure Active Directory (Azure AD) термин **подготовка приложений** относится к автоматическому созданию удостоверений и ролей пользователей в облачных ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) приложениях, к которым пользователям требуется доступ. Кроме создания удостоверений пользователей, автоматическая подготовка включает в себя обслуживание и удаление удостоверений пользователей по мере изменения их статуса или ролей. Типичные сценарии включают подготовку пользователя Azure AD к таким приложениям, как [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Salesforce](../saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), и других.
+
+Дополнительные сведения о SCIM и о том, как присоединиться к обсуждению в техническом сообществе, см. в статье [Подготовка с помощью SCIM](https://aka.ms/scimoverview) на сайте технического сообщества.
 
 ![Обзорная схема подготовки](./media/user-provisioning/provisioning-overview.png)
 

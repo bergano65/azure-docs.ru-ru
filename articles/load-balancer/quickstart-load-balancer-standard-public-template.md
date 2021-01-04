@@ -5,22 +5,22 @@ description: В этом кратком руководстве показано,
 services: load-balancer
 documentationcenter: na
 author: asudbring
-manager: twooley
+manager: KumudD
 Customer intent: I want to create a load balancer by using an Azure Resource Manager template so that I can load balance internet traffic to VMs.
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/26/2020
+ms.date: 12/09/2020
 ms.author: allensu
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: 66d702846bac5825239e891ce47f8cca5bb857f0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 378ab88f4dee0c725e89f77cc6b2ffe049ff877a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90984413"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008441"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-by-using-an-arm-template"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки для распределения нагрузки между виртуальными машинами с помощью шаблона ARM
 
@@ -51,12 +51,13 @@ ms.locfileid: "90984413"
 В шаблоне определено несколько ресурсов Azure:
 
 - [**Microsoft.Network/loadBalancers**](/azure/templates/microsoft.network/loadbalancers);
-- [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses) (для подсистемы балансировки нагрузки и каждой из трех виртуальных машин);
-- [**Microsoft.Network/networkSecurityGroups;** ](/azure/templates/microsoft.network/networksecuritygroups)
+- [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses): для подсистемы балансировки нагрузки, узла-бастиона и каждой из трех виртуальных машин;
+- [**Microsoft.Network/bastionHosts**](/azure/templates/microsoft.network/bastionhosts);
+- [**Microsoft.Network/networkSecurityGroups;**](/azure/templates/microsoft.network/networksecuritygroups)
 - [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks);
-- [**Microsoft.Compute/virutalMachines**](/azure/templates/microsoft.compute/virtualmachines) (три из них);
-- [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces) (три из них);
-- [**Microsoft.Compute/virtualMachine/extensions**](/azure/templates/microsoft.compute/virtualmachines/extensions) (три из них): используется для настройки IIS и веб-страниц.
+- [**Microsoft.Compute/virutalMachines**](/azure/templates/microsoft.compute/virtualmachines) (3);
+- [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces) (3);
+- [**Microsoft.Compute/virtualMachine/extensions**](/azure/templates/microsoft.compute/virtualmachines/extensions) (3): используется для настройки Internet Information Server (IIS) и веб-страниц.
 
 Чтобы найти дополнительные связанные шаблоны Azure Load Balancer, перейдите на страницу [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular).
 
@@ -131,6 +132,8 @@ ms.locfileid: "90984413"
 
 В этом кратком руководстве показано, как:
 
+* создать виртуальную сеть для подсистемы балансировки нагрузки и виртуальных машин;
+* создать узел-бастион Azure для управления;
 * создать подсистему балансировки нагрузки уровня "Стандартный" и присоединили к ней виртуальные машины;
 * настроить правило трафика подсистемы балансировки нагрузки и пробу работоспособности;
 * тестировать подсистему балансировки нагрузки.

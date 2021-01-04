@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: timlt
-ms.openlocfilehash: 193ceab0b2df1ab833a86eb748c18271a8e33b71
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 5012383e64a85ee025273f5339b828f5338e1d4f
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852920"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629074"
 ---
 # <a name="what-are-azure-iot-solution-accelerators"></a>Что такое акселераторы решений Интернета вещей Azure?
 
@@ -29,7 +29,7 @@ ms.locfileid: "96852920"
 Код приложения в каждом акселераторе решений включает веб-приложение, которое позволяет управлять им.
 
 > [!NOTE]
-> Решения для удаленного мониторинга и прогнозного обслуживания были удалены с сайта [акселераторов решений Azure IoT](https://www.azureiotsolutions.com/Accelerators). Дополнительные сведения см. в статье [Что такое акселераторы решений для Интернета вещей Azure?](/previous-versions/azure/iot-accelerators/about-iot-accelerators.md) (предыдущая версия).
+> Решения для удаленного мониторинга и прогнозного обслуживания были удалены с сайта [акселераторов решений Azure IoT](https://www.azureiotsolutions.com/Accelerators). Дополнительные сведения см. в статье [Что такое акселераторы решений для Интернета вещей Azure?](/previous-versions/azure/iot-accelerators/about-iot-accelerators) (предыдущая версия).
 
 ## <a name="supported-iot-scenarios"></a>Поддерживаемые сценарии Интернета вещей
 

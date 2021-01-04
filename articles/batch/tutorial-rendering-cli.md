@@ -1,15 +1,15 @@
 ---
-title: Отрисовка сцены в облаке
+title: Руководство. Отрисовка сцены в облаке
 description: Руководство. Отрисовка сцены Autodesk 3ds Max с Arnold с помощью пакетной службы рендеринга и интерфейса командной строки Azure
 ms.topic: tutorial
 ms.date: 03/05/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 579a5446cb199bb73f98e2e1cbb0948f062470a8
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: e0858e838ba73862ef7f15040915c5f5cd3c751b
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542394"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106348"
 ---
 # <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство по Отрисовка сцены с помощью пакетной службы Azure 
 
@@ -346,7 +346,7 @@ az group delete --name myResourceGroup
 > * Масштабирование пула и отрисовка сцены с несколькими кадрами.
 > * Скачивание выводимых данных.
 
-Дополнительные сведения о рендеринге облачных вычислений см. в параметрах пакетной службы рендеринга. 
+Дополнительные сведения о рендеринге облачных вычислений см. в документации о возможностях рендеринга в пакетной службе.
 
 > [!div class="nextstepaction"]
 > [Пакетная служба рендеринга](batch-rendering-service.md)

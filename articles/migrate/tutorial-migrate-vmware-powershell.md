@@ -6,12 +6,12 @@ ms.author: rahugup
 manager: bsiva
 ms.topic: tutorial
 ms.date: 10/1/2020
-ms.openlocfilehash: 187e17bcf385ba6b3c17566fc00e5ee77cf009fe
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: ce712736c25c0757f5b654e4442a4f08acdf15e2
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752487"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029793"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless---powershell"></a>Миграция виртуальных машин VMware в Azure (без агента) — PowerShell
 
@@ -464,7 +464,7 @@ while (($StopReplicationJob.State -eq "InProgress") -or ($StopReplicationJob.Sta
 Write-Output $StopReplicationJob.State
 ```
 
-2. Установите агент виртуальной машины Azure для [Windows](../virtual-machines/extensions/agent-windows.md) или [Linux](../virtual-machines/extensions/agent-linux.md) на перенесенных компьютерах.
+2. Установите агент [Linux](../virtual-machines/extensions/agent-linux.md) на перенесенных компьютерах, если на них используется ОС Linux. Агент виртуальных машин автоматически устанавливается для виртуальных машин Windows во время миграции.
 3. Выполните любые действия по настройке после миграции приложения, такие как обновление строк подключения к базе данных и конфигурация веб-сервера.
 4. Выполните приемочное тестирование конечного приложения и миграции на перенесенном приложении, работающем в Azure.
 5. Остановите трафик для перенесенного экземпляра виртуальной машины Azure.

@@ -8,13 +8,13 @@ ms.subservice: cost-management
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
-ms.custom: contperfq1
-ms.openlocfilehash: b2340e5b220936c1333cf842251b669b3e034042
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: f6df8c6ff0db74798b71d57feae91e5245f2a6c2
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151214"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028724"
 ---
 # <a name="analyze-unexpected-charges"></a>Анализ непредвиденных расходов
 
@@ -80,7 +80,7 @@ ms.locfileid: "92151214"
 
 ### <a name="analyze-user-permissions-to-the-resources-parent-scope"></a>Анализ разрешений пользователя для родительской области ресурса
 
-Пользователи с доступом на запись к подписке или группе ресурсов обычно имеют сведения о созданных ресурсах. Они должны объяснить назначение ресурса или направить вас к специалисту. Чтобы определить пользователей с разрешениями для области подписки, ознакомьтесь с разделом [Просмотр назначений ролей](../../role-based-access-control/check-access.md#view-role-assignments). Для групп ресурсов можно использовать аналогичную процедуру.
+Пользователи с доступом на запись к подписке или группе ресурсов обычно имеют сведения о созданных ресурсах. Они должны объяснить назначение ресурса или направить вас к специалисту. Чтобы определить пользователей с разрешениями для области подписки, ознакомьтесь со статьей [Краткое руководство. Просмотр прав доступа пользователя к ресурсам Azure](../../role-based-access-control/check-access.md). Для групп ресурсов можно использовать аналогичную процедуру.
 
 ## <a name="get-help-to-identify-charges"></a>Получение справки для определения расходов
 

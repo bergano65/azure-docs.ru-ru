@@ -3,17 +3,17 @@ title: Краткое руководство. Создание очередей 
 description: Для создания очереди используется портал Azure. Затем используйте портал Azure, чтобы добавить сообщение, просмотреть свойства сообщения и вывести сообщение из очереди.
 author: mhopkins-msft
 ms.author: mhopkins
+ms.reviewer: dineshm
 ms.date: 08/13/2020
+ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
-ms.topic: quickstart
-ms.reviewer: dineshm
-ms.openlocfilehash: 0ee3d9c26d6972da9e528660d034432ce696aa45
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 24b1d16ab5f13a9aef1faa5bc7a3579ad1a5aa5e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347205"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585553"
 ---
 # <a name="quickstart-create-a-queue-and-add-a-message-with-the-azure-portal"></a>Краткое руководство. Создание очереди и добавление сообщения в нее с помощью портала Azure
 
@@ -28,10 +28,10 @@ ms.locfileid: "93347205"
 Чтобы создать очередь на портале Azure, сделайте следующее:
 
 1. Войдите в новую учетную запись хранения на портале Azure.
-2. В меню слева для учетной записи хранения перейдите к разделу **Служба очередей** , а затем выберите **Очереди**.
+2. В меню слева для учетной записи хранения перейдите к разделу **Хранилище очередей**, а затем выберите **Очереди**.
 3. Нажмите кнопку **+ Очередь**.
 4. Введите имя для новой очереди. Все знаки в имени очереди должны быть строчными. Оно должно начинаться с буквы или цифры и может содержать только буквы, цифры и дефисы (-).
-6. Нажмите кнопку **ОК** , чтобы создать очередь.
+6. Нажмите кнопку **ОК**, чтобы создать очередь.
 
     ![Снимок экрана, на котором показано, как создавать очередь на портале Azure](media/storage-quickstart-queues-portal/create-queue.png)
 
@@ -66,4 +66,4 @@ ms.locfileid: "93347205"
 В этом кратком руководстве вы узнали, как на портале Azure можно создать очередь, добавить в нее сообщение, просмотреть его свойства и вывести его из очереди.
 
 > [!div class="nextstepaction"]
-> [Общие сведения об очередях](storage-queues-introduction.md)
+> [Что такое хранилище очередей Azure?](storage-queues-introduction.md)
