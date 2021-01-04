@@ -3,12 +3,12 @@ title: Настройка лаборатории для использовани
 description: Узнайте, как настроить лабораторию в Azure DevTest Labs с помощью шлюза удаленных рабочих столов, чтобы обеспечить безопасный доступ к виртуальным машинам лаборатории без необходимости предоставлять порт RDP.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: b48a0709deb21ca0f8a27d1cf953c7d8d4ba2cc8
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: dcf5191dea64c3d7bf28b9ce1c616d3d2defb73e
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144706"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695689"
 ---
 # <a name="configure-your-lab-in-azure-devtest-labs-to-use-a-remote-desktop-gateway"></a>Настройка лаборатории в Azure DevTest Labs для использования шлюза удаленных рабочих столов
 В Azure DevTest Labs можно настроить шлюз удаленных рабочих столов для лаборатории, чтобы обеспечить безопасный доступ к виртуальным машинам лаборатории, не открывая RDP-порт. Лаборатория предоставляет пользователям лабораторий централизованное представление и подключение ко всем виртуальным машинам, к которым у них есть доступ. Кнопка **подключить** на странице **виртуальной машины** создает файл RDP, зависящий от компьютера, который можно открыть для подключения к компьютеру. Вы можете дополнительно настроить и защитить подключение RDP, подключив свою лабораторию к шлюзу удаленных рабочих столов. 
@@ -135,7 +135,7 @@ az resource show --name {lab-name} --resource-type 'Microsoft.DevTestLab/labs' -
     Шаблон можно развернуть с помощью Azure CLI с помощью следующей команды:
 
     ```azurecli
-    az group deployment create --resource-group {resource-group} --template-file azuredeploy.json --parameters @azuredeploy.parameters.json -–parameters _artifactsLocation="{storage-account-endpoint}/{container-name}" -–parameters _artifactsLocationSasToken = "?{sas-token}"
+    az deployment group create --resource-group {resource-group} --template-file azuredeploy.json --parameters @azuredeploy.parameters.json -–parameters _artifactsLocation="{storage-account-endpoint}/{container-name}" -–parameters _artifactsLocationSasToken = "?{sas-token}"
     ```
 
     Ниже приведены описания параметров.

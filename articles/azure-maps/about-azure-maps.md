@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, references_regions
-ms.openlocfilehash: 1a38da6cd80b692925e353eb0d16f3d6f84c3e7b
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: b53af0fda8bb24bf03d0e02f61ce7d195ae69503
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905418"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680831"
 ---
 # <a name="what-is-azure-maps"></a>Что такое Azure Maps?
 
@@ -37,9 +37,9 @@ Azure Maps — это коллекция служб обработки и па�
 
 В следующем видео подробно объясняется принцип действия Azure Maps.
 
-<br/>
+</br>
 
-<iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Maps/player?format=ny" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+> [!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Maps/player?format=ny]
 
 ## <a name="map-controls"></a>Элементы управления картами
 

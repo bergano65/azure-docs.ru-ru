@@ -7,18 +7,18 @@ ms.topic: quickstart
 ms.author: jukullam
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 1fb5396fae4676d85f67e98bb333cd58324d5a4e
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 6e3dbb968d0dff8d8227518fe53d257bfc1fae4b
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357575"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607972"
 ---
 # <a name="quickstart-use-github-actions-to-connect-to-azure-mysql"></a>Краткое руководство. Использование GitHub Actions для подключения к Azure MySQL
 
 **Область применения**: :::image type="icon" source="./media/applies-to/yes.png" border="false":::База данных Azure для PostgreSQL — отдельный сервер :::image type="icon" source="./media/applies-to/yes.png" border="false":::База данных Azure для PostgreSQL — гибкий сервер
 
-Начните работу с [GitHub Actions](https://docs.github.com/en/actions), используя рабочий процесс для развертывания обновлений базы данных в [Базе данных Azure для MySQL](https://azure.microsoft.com/services/mysql/).
+Начните работу с [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions), используя рабочий процесс для развертывания обновлений базы данных в [Базе данных Azure для MySQL](https://azure.microsoft.com/services/mysql/).
 
 
 ## <a name="prerequisites"></a>Обязательные условия

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/20/2017
 ms.author: kyliel
-ms.openlocfilehash: 6a20708c5564075c24eb031a39292b020a2ecc00
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c7027dd86945e53149b3c4daeb9d6faee3593e95
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91371326"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702248"
 ---
 # <a name="how-to-use-freebsds-packet-filter-to-create-a-secure-firewall-in-azure"></a>Создание защищенного брандмауэра в Azure с использованием PF FreeBSD
 В этой статье рассматривается использование фильтра пакетов FreeBSD для развертывания брандмауэра для NAT с помощью шаблона Azure Resource Manager для общего сценария веб-сервера.
@@ -34,10 +34,10 @@ PF — это лицензированный (по лицензии BSD) фил�
 az group create --name myResourceGroup --location westus
 ```
 
-Далее разверните шаблон pf-freebsd-setup, используя команду [az group deployment create](/cli/azure/group/deployment). Скачайте файл azuredeploy.parameters.json, путь к которому тот же, и определите значения ресурсов, например `adminPassword`, `networkPrefix` и `domainNamePrefix`. 
+Затем разверните шаблон PF-FreeBSD-Setup с [AZ Deployment Group Create](/cli/azure/deployment/group). Скачайте файл azuredeploy.parameters.json, путь к которому тот же, и определите значения ресурсов, например `adminPassword`, `networkPrefix` и `domainNamePrefix`. 
 
 ```azurecli
-az group deployment create --resource-group myResourceGroup --name myDeploymentName \
+az deployment group create --resource-group myResourceGroup --name myDeploymentName \
     --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/pf-freebsd-setup/azuredeploy.json \
     --parameters '@azuredeploy.parameters.json' --verbose
 ```

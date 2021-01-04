@@ -4,12 +4,12 @@ description: Узнайте, как быстро приступить к раб�
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 61a13d80fd67751d77bc77199fa433143ad92048
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b89204e2df5c8e79200b780de38d06b1a93c1fa3
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96007109"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702197"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
@@ -243,9 +243,9 @@ New-AzResourceGroupDeployment -ResourceGroupName $groupname -TemplateFile "$temp
 
 ```azurecli
 ResourceGroupName="sfclustertutorialgroup"
-az group deployment create --name ApiMgmtNetworkDeployment --resource-group $ResourceGroupName --template-file network-apim.json --parameters @network-apim.parameters.json
+az deployment group create --name ApiMgmtNetworkDeployment --resource-group $ResourceGroupName --template-file network-apim.json --parameters @network-apim.parameters.json
 
-az group deployment create --name ApiMgmtDeployment --resource-group $ResourceGroupName --template-file apim.json --parameters @apim.parameters.json
+az deployment group create --name ApiMgmtDeployment --resource-group $ResourceGroupName --template-file apim.json --parameters @apim.parameters.json
 ```
 
 ## <a name="test-it"></a>Тестирование
@@ -289,7 +289,7 @@ ResourceGroupName="sfclustertutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании [управления API](../api-management/import-and-publish.md).
 
