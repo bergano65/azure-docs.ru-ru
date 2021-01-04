@@ -7,16 +7,19 @@ ms.topic: quickstart
 ms.author: jukullam
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 57e740e6c47d9518c12a49473e103d0abe772618
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 1fb5396fae4676d85f67e98bb333cd58324d5a4e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337019"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357575"
 ---
 # <a name="quickstart-use-github-actions-to-connect-to-azure-mysql"></a>Краткое руководство. Использование GitHub Actions для подключения к Azure MySQL
 
-Начните работу с [GitHub Actions](https://docs.github.com/en/actions), используя рабочий процесс для развертывания обновлений базы данных в [Базе данных Azure для MySQL](https://azure.microsoft.com/services/mysql/). 
+**Область применения**: :::image type="icon" source="./media/applies-to/yes.png" border="false":::База данных Azure для PostgreSQL — отдельный сервер :::image type="icon" source="./media/applies-to/yes.png" border="false":::База данных Azure для PostgreSQL — гибкий сервер
+
+Начните работу с [GitHub Actions](https://docs.github.com/en/actions), используя рабочий процесс для развертывания обновлений базы данных в [Базе данных Azure для MySQL](https://azure.microsoft.com/services/mysql/).
+
 
 ## <a name="prerequisites"></a>Обязательные условия
 
@@ -67,6 +70,11 @@ ms.locfileid: "93337019"
 ## <a name="copy-the-mysql-connection-string"></a>Скопируйте строку подключения MySQL 
 
 На портале Azure перейдите к серверу Базы данных Azure для MySQL и откройте раздел **Параметры** > **Строки подключения**. Скопируйте строку подключения по протоколу **ADO.NET**. Замените заполнители значениями для `your_database` и `your_password`. Теперь строка подключения будет выглядеть примерно так. 
+
+> [!IMPORTANT]
+> - Для отдельного сервера используйте **Uid=adminusername@servername** . Обратите внимание, что часть **@servername** является обязательной.
+> - Для гибкого сервера используйте **Uid=adminusername** без @servername. Обратите внимание, что гибкий сервер MySQL предоставляется в предварительной версии. 
+
 
 ```output
    Server=my-mysql-server.mysql.database.azure.com; Port=3306; Database={your_database}; Uid=adminname@my-mysql-server; Pwd={your_password}; SslMode=Preferred;

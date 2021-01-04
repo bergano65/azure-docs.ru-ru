@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 89f59bba856d662aea0c3ed249d5a1462297ec60
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 63bbec6de8f122178289cc313e5d938e3b926af2
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309044"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673256"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-captivate-prime"></a>Руководство по интеграции Azure Active Directory с Adobe Captivate Prime
 
@@ -63,7 +63,7 @@ ms.locfileid: "92309044"
 
 4. В поле поиска введите **Adobe Captivate Prime**, выберите **Adobe Captivate Prime** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Adobe Captivate Prime в списке результатов](common/search-new-app.png)
+    ![Adobe Captivate Prime в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -144,7 +144,7 @@ ms.locfileid: "92309044"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
@@ -180,7 +180,7 @@ ms.locfileid: "92309044"
 
 ### <a name="create-adobe-captivate-prime-test-user"></a>Создание тестового пользователя Adobe Captivate Prime
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Adobe Captivate Prime. Обратитесь к  [группе поддержки Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com), чтобы добавить пользователей на платформу Adobe Captivate Prime. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Adobe Captivate Prime. Обратитесь в [группу поддержки Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com), чтобы добавить пользователей на платформу Adobe Captivate Prime. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

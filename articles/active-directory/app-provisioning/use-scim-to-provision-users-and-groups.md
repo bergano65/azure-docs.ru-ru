@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: c9738d25fdcb1c0ccda70ec116eb369f8b50e980
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: a0abbacc55cff2f561323a22dd83311c87b1511d
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027481"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584499"
 ---
 # <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Руководство. Создание конечной точки SCIM и настройка подготовки пользователей с Azure AD
 
@@ -1170,7 +1170,7 @@ _ ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
 ### <a name="gallery-onboarding-checklist"></a>Контрольный список для подключения коллекции
 Следуйте приведенному ниже контрольному списку, чтобы обеспечить быстрое подключение приложения и предоставить клиентам возможность беспрепятственного развертывания. Сведения будут собраны при подключении к коллекции. 
 > [!div class="checklist"]
-> * Поддержка конечной точки [SCIM 2.0](#step-2-understand-the-azure-ad-scim-implementation) пользователя и группы (необходим только один, однако рекомендуются оба)
+> * Поддержка конечной точки [SCIM 2.0](#step-2-understand-the-azure-ad-scim-implementation) пользователя и группы (требуется только одна, но рекомендуются обе).
 > * Поддержка по меньшей мере 25 запросов в секунду на каждого клиента, чтобы обеспечить подготовку и отмену подготовки без задержки для пользователей и групп (обязательно).
 > * Создание контактов по проектированию и поддержке для направления клиентов при подключению коллекции (обязательно)
 > * 3 тестовых учетных данных без истечения срока действия для приложения (обязательно)

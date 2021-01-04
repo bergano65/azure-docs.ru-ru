@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 78f473a7c4b10475c6c206764ce526c70fa056fe
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 5fe070bc1abe0592b3082c597c1812781335448a
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313353"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673194"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-acquireio"></a>Руководство по интеграции единого входа Azure Active Directory с AcquireIO
 
@@ -73,7 +73,7 @@ ms.locfileid: "92313353"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -110,7 +110,7 @@ ms.locfileid: "92313353"
 1. Из списка приложений выберите **AcquireIO**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
@@ -134,7 +134,7 @@ ms.locfileid: "92313353"
 
 1. В левой части меню щелкните **App Store**.
 
-     ![Снимок экрана: выделенный элемент "App Store".](./media/acquireio-tutorial/config01.png)
+    ![Снимок экрана: выделенный элемент "App Store".](./media/acquireio-tutorial/config01.png)
 
 1. Прокрутите страницу вниз до **Active Directory** и щелкните **Install** (Установить).
 
@@ -162,7 +162,7 @@ ms.locfileid: "92313353"
 
 1. В левой части меню щелкните **Profiles** (Профили) и выберите **Add Profile** (Добавить профиль).
 
-     ![Снимок экрана: выделенный элемент "Профили" в меню в левой части экрана и выделенный параметр "Добавить профиль".](./media/acquireio-tutorial/config04.png)
+    ![Снимок экрана: выделенный элемент "Профили" в меню в левой части экрана и выделенный параметр "Добавить профиль".](./media/acquireio-tutorial/config04.png)
 
 1. Во всплывающем элементе **Add customer** (Добавление клиента) выполните следующие действия.
 

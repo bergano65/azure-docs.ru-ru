@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 6845923d65b5fbe5a9f010474330ce2bbed948e1
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 25d084b8af148707685b2cbb4368394a12d99db2
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780099"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005313"
 ---
 # <a name="tutorial-provision-multiple-x509-devices-using-enrollment-groups"></a>Руководство по инициализации нескольких устройств X.509 с помощью групп регистрации
 
@@ -195,7 +195,7 @@ ms.locfileid: "96780099"
 3. Выполните следующую команду, чтобы создать PEM-файл полной цепочки сертификатов, включающий новый сертификат устройства.
 
     ```Bash
-    cd ./certs && cat new-device.cert.pem azure-iot-test-only.intermediate.cert.pem azure-iot-test-only.root.ca.cert.pem > new-device-full-chain.cert.pem
+    cd ./certs && cat new-device.cert.pem azure-iot-test-only.intermediate.cert.pem azure-iot-test-only.root.ca.cert.pem > new-device-full-chain.cert.pem && cd ..
     ```
 
     Используйте текстовый редактор и откройте файл цепочки сертификатов *./certs/new-device-full-chain.cert.pem*. Текст цепочки сертификатов содержит полную цепочку всех трех сертификатов. Этот текст будет использоваться в качестве цепочки сертификатов с кодом настраиваемого модуля HSM далее в этом учебнике.
@@ -241,48 +241,85 @@ ms.locfileid: "96780099"
     static const char* const COMMON_NAME = "custom-hsm-device-01";
     ```
 
-4. В том же файле обновите строковое значение строковой константы `CERTIFICATE`, используя текст цепочки сертификатов, сохраненный в каталоге *./certs/new-device-full-chain.cert.pem* после создания сертификатов.
+4. В том же файле потребуется обновить строковое значение строковой константы `CERTIFICATE`, используя текст цепочки сертификатов, сохраненный в каталоге *./certs/new-device-full-chain.cert.pem* после создания сертификатов.
 
-    > [!IMPORTANT]
-    > При копировании текста в Visual Studio можно заметить, что текст анализируется и обновляется с добавлением пробелов в код и т. п. В этом случае необходимо удалить эти пробелы и запустить синтаксический анализ, нажав клавиши **CTRL+Z**.
-
-    Обновите текст сертификата, чтобы он соответствовал приведенному ниже шаблону без лишних пробелов или выполнения синтаксического анализа Visual Studio.
+    Синтаксис текста сертификата должен соответствовать приведенному ниже шаблону без лишних пробелов или выполнения синтаксического анализа Visual Studio.
 
     ```c
     // <Device/leaf cert>
     // <intermediates>
     // <root>
     static const char* const CERTIFICATE = "-----BEGIN CERTIFICATE-----\n"
-    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV"
+    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
         ...
-    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB"
-    "\n-----END CERTIFICATE-----\n"
+    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
+    "-----END CERTIFICATE-----\n"
     "-----BEGIN CERTIFICATE-----\n"
-    "MIIFPDCCAySgAwIBAgIBATANBgkqhkiG9w0BAQsFADAqMSgwJgYDVQQDDB9BenVy"
+    "MIIFPDCCAySgAwIBAgIBATANBgkqhkiG9w0BAQsFADAqMSgwJgYDVQQDDB9BenVy\n"
         ...
-    "MTEyMjIxMzAzM1owNDEyMDAGA1UEAwwpQXp1cmUgSW9UIEh1YiBJbnRlcm1lZGlh"
-    "\n-----END CERTIFICATE-----\n"
+    "MTEyMjIxMzAzM1owNDEyMDAGA1UEAwwpQXp1cmUgSW9UIEh1YiBJbnRlcm1lZGlh\n"
+    "-----END CERTIFICATE-----\n"
     "-----BEGIN CERTIFICATE-----\n"
-    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV"
+    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
         ...
-    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB"
-    "\n-----END CERTIFICATE-----";        
+    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
+    "-----END CERTIFICATE-----";        
     ```
 
-5. В том же файле замените строковое значение строковой константы `PRIVATE_KEY` закрытым ключом для сертификата устройства.
+    На этом шаге требуется много времени, чтобы изменить значение строки, поэтому можно легко ошибиться. Чтобы создать правильный синтаксис в командной строке Git Bash, скопируйте и вставьте следующие команды оболочки bash в командную строку Git Bash и нажмите клавишу **ВВОД**. Эти команды создают синтаксис для значения строковой константы `CERTIFICATE`.
 
-    > [!IMPORTANT]
-    > При копировании текста в Visual Studio можно заметить, что текст анализируется и обновляется с добавлением пробелов в код и т. п. В этом случае необходимо удалить эти пробелы и запустить синтаксический анализ, нажав клавиши **CTRL+Z**.
+    ```Bash
+    input="./certs/new-device-full-chain.cert.pem"
+    bContinue=true
+    prev=
+    while $bContinue; do
+        if read -r next; then
+          if [ -n "$prev" ]; then   
+            echo "\"$prev\\n\""
+          fi
+          prev=$next  
+        else
+          echo "\"$prev\";"
+          bContinue=false
+        fi  
+    done < "$input"
+    ```
 
-    Обновите текст закрытого ключа, чтобы он соответствовал приведенному ниже шаблону без лишних пробелов или выполнения синтаксического анализа Visual Studio.
+    Скопируйте и вставьте выходной текст сертификата для нового значения константы. 
+
+
+5. В том же файле также нужно заменить строковое значение константы `PRIVATE_KEY` закрытым ключом для сертификата устройства.
+
+    Синтаксис текста закрытого ключа должен соответствовать приведенному ниже шаблону без лишних пробелов или выполнения синтаксического анализа Visual Studio.
 
     ```c
     static const char* const PRIVATE_KEY = "-----BEGIN RSA PRIVATE KEY-----\n"
-    "MIIJJwIBAAKCAgEAtjvKQjIhp0EE1PoADL1rfF/W6v4vlAzOSifKSQsaPeebqg8U"
+    "MIIJJwIBAAKCAgEAtjvKQjIhp0EE1PoADL1rfF/W6v4vlAzOSifKSQsaPeebqg8U\n"
         ...
-    "X7fi9OZ26QpnkS5QjjPTYI/wwn0J9YAwNfKSlNeXTJDfJ+KpjXBcvaLxeBQbQhij"
-    "\n-----END RSA PRIVATE KEY-----";
+    "X7fi9OZ26QpnkS5QjjPTYI/wwn0J9YAwNfKSlNeXTJDfJ+KpjXBcvaLxeBQbQhij\n"
+    "-----END RSA PRIVATE KEY-----";
     ```
+
+    На этом шаге требуется много времени, чтобы изменить значение строки, поэтому можно легко ошибиться. Чтобы создать правильный синтаксис в командной строке Git Bash, скопируйте и вставьте следующие команды оболочки bash и нажмите клавишу **ВВОД**. Эти команды создают синтаксис для значения строковой константы `PRIVATE_KEY`.
+
+    ```Bash
+    input="./private/new-device.key.pem"
+    bContinue=true
+    prev=
+    while $bContinue; do
+        if read -r next; then
+          if [ -n "$prev" ]; then   
+            echo "\"$prev\\n\""
+          fi
+          prev=$next  
+        else
+          echo "\"$prev\";"
+          bContinue=false
+        fi  
+    done < "$input"
+    ```
+
+    Скопируйте и вставьте выходной текст закрытого ключа для нового значения константы. 
 
 6. Сохраните *custom_hsm_example.c*.
 

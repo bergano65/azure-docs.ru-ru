@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: e6ad11e4d0c0db30d091faec45f3433f544ef622
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 5554ec4521a126a2c2e823b707fe42d9983b5d8e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92308997"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97671704"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adoddle-csaas-platform"></a>Руководство по Интеграция Azure Active Directory с Adoddle cSaas Platform
 
@@ -65,7 +65,7 @@ ms.locfileid: "92308997"
 
 4. В поле поиска введите **Adoddle cSaas Platform**, выберите **Adoddle cSaas Platform** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Adoddle cSaas Platform в списке результатов](common/search-new-app.png)
+    ![Adoddle cSaas Platform в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -138,7 +138,7 @@ ms.locfileid: "92308997"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 1/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 0264baf6a8ff107c4a3aa811b9e8639352dca782
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 349a77d2f2cd5e1c492de63919d84efb436a51a3
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96301807"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673708"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-autotask-endpoint-backup"></a>Руководство по интеграции Azure Active Directory с Autotask Endpoint Backup
 
@@ -63,7 +63,7 @@ ms.locfileid: "96301807"
 
 4. В поле поиска введите **Autotask Endpoint Backup**, на панели результатов выберите **Autotask Endpoint Backup** и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
-     ![Autotask Endpoint Backup в списке результатов](common/search-new-app.png)
+    ![Autotask Endpoint Backup в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 

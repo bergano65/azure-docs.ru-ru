@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 12/01/2020
+ms.date: 12/14/2020
 ms.author: banders
-ms.openlocfilehash: 3182da0d04d61d5bad4ce3e41f213ecc3be7ecaf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 662e1bf721c93ee1d59946d2fd603551f3f88ad3
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444458"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503800"
 ---
 # <a name="cancel-your-azure-subscription"></a>Отмена подписки Azure
 
@@ -30,6 +30,17 @@ ms.locfileid: "96444458"
 
 Если вы отмените подписку на платный план поддержки Azure, вам по-прежнему будут выставляться счета за оставшуюся часть срока действия подписки. Дополнительные сведения см. на странице [Планы поддержки Azure](https://azure.microsoft.com/support/plans/).
 
+## <a name="who-can-cancel-a-subscription"></a>Кто может отменить подписку?
+
+В таблице ниже приведены разрешения для отмены подписки.
+
+|Тип подписки     |Кто может отменить  |
+|---------|---------|
+|Подписки, созданные при регистрации в Azure через веб-сайт Azure. Например, при регистрации с [бесплатной учетной записи Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), [учетной записью с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) или как [подписчик Visual Studio](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/). |  Администратор учетной записи и владельцы подписки  |
+|[Соглашение Microsoft Enterprise ](https://azure.microsoft.com/pricing/enterprise-agreement/) и [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/)     |  Владелец учетной записи и владельцы подписки       |
+|[План Azure](https://azure.microsoft.com/offers/ms-azr-0017g/) и [План Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g/)     |  Владельцы подписки      |
+
+
 ## <a name="cancel-subscription-in-the-azure-portal"></a>Отмена подписки на портале Azure
 
 1. Выберите свою подписку на [Странице подписок на портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
@@ -41,15 +52,13 @@ ms.locfileid: "96444458"
 > [!NOTE]
 > Партнеры могут заблокировать или отменить подписку по просьбе клиента либо в случае неуплаты или мошенничества. Дополнительные сведения см. в разделе [Блокировка или отмена подписки](/partner-center/create-a-new-subscription#suspend-or-cancel-a-subscription).
 
-## <a name="who-can-cancel-a-subscription"></a>Кто может отменить подписку?
+## <a name="cancel-a-support-plan"></a>Отмена плана поддержки
 
-В таблице ниже приведены разрешения для отмены подписки.
+Если вы приобрели свой план поддержки на веб-сайте Azure или портале Azure либо если план доступен вам в рамках Клиентского соглашения Майкрософт, вы можете отменить план поддержки. Если вы приобрели план поддержки через представителя или партнера корпорации Майкрософт, обратитесь к нему за помощью. 
 
-|Тип подписки     |Кто может отменить  |
-|---------|---------|
-|Подписки, созданные при регистрации в Azure через веб-сайт Azure. Например, при регистрации с [бесплатной учетной записи Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), [учетной записью с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) или как [подписчик Visual Studio](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/). |  Администратор учетной записи и владельцы подписки  |
-|[Соглашение Microsoft Enterprise ](https://azure.microsoft.com/pricing/enterprise-agreement/) и [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/)     |  Владелец учетной записи и владельцы подписки       |
-|[План Azure](https://azure.microsoft.com/offers/ms-azr-0017g/) и [План Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g/)     |  Владельцы подписки      |
+1. Перейдите к разделу **Управление затратами + выставление счетов** на портале Azure.
+1. В разделе **Выставление счетов** выберите элемент **Повторяющиеся затраты**.
+1. В правой части элемента строки плана поддержки щелкните многоточие ( **...** ) и выберите элемент **Отключение автоматического обновления**.
 
 ## <a name="what-happens-after-subscription-cancellation"></a>Что происходит после отмены подписки?
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: ef057b64fa04387d0ebec5a6e5c38f0e06c55a7d
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: c9db5ab471f743ffbf3ae4e140ad4cb32d0a3d6c
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368976"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670199"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с Alibaba Cloud Service (единый вход на основе ролей)
 
@@ -76,7 +76,7 @@ ms.locfileid: "97368976"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
@@ -84,7 +84,7 @@ ms.locfileid: "97368976"
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    
+
     >[!NOTE]
     >1. Для международного сайта Alibaba Cloud скачайте метаданные поставщика услуг по [этой ссылке](https://signin.alibabacloud.com/saml-role/sp-metadata.xml).
     > 1. Для сайта Alibaba Cloud Service(CN) скачайте метаданные поставщика услуг по [этой ссылке](https://signin.aliyun.com/saml-role/sp-metadata.xml).
@@ -184,17 +184,17 @@ ms.locfileid: "97368976"
     е) Вернитесь в обозреватель Graph, измените метод с **GET** на **PATCH**, вставьте указанное ниже содержимое в раздел **Текст запроса** и щелкните **Выполнить запрос**:
     ```
     { 
-    "appRoles": [
+      "appRoles": [
         { 
-        "allowedMemberTypes":[
+          "allowedMemberTypes":[
             "User"
-        ],
-        "description": "msiam_access",
-        "displayName": "msiam_access",
-        "id": "41be2db8-48d9-4277-8e86-f6d22d35****",
-        "isEnabled": true,
-        "origin": "Application",
-        "value": null
+          ],
+          "description": "msiam_access",
+          "displayName": "msiam_access",
+          "id": "41be2db8-48d9-4277-8e86-f6d22d35****",
+          "isEnabled": true,
+          "origin": "Application",
+          "value": null
         },
         { "allowedMemberTypes": [
             "User"
@@ -206,7 +206,7 @@ ms.locfileid: "97368976"
         "origin": "ServicePrincipal",
         "value": "acs:ram::187125022722****:role/aadrole,acs:ram::187125022722****:saml-provider/AAD"
         }
-    ]
+      ]
     }
     ```
     > [!NOTE]

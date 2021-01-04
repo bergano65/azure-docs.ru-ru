@@ -1,18 +1,18 @@
 ---
 title: Руководство по просмотру ресурсов в Azure Purview и просмотру их происхождения данных
 description: В этом учебнике описывается, как просматривать ресурсы в каталоге и просматривать журнал происхождения данных.
-author: hophanms
-ms.author: hophan
+author: djpmsft
+ms.author: daperlov
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: ab51e604412e79fb706190fef769ad76c694fd6c
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 7ffbe2ded44ded4f580655f6ae9e98391490f94a
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97399440"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696097"
 ---
 # <a name="tutorial-browse-assets-in-azure-purview-preview-and-view-their-lineage"></a>Руководство по просмотру ресурсов в Azure Purview (предварительная версия) и просмотру их происхождения данных
 

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs, devx-track-azurecli
 ms.date: 06/25/2020
 ms.author: allensu
-ms.openlocfilehash: 0612445d0a1bfa10182eb8ce827001d0856f4d9b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: b215dfff3bf62b67b89aa260b0134381de6edeae
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92777908"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695716"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint---arm-template"></a>Краткое руководство. Создание конечной точки и профиля Azure CDN — шаблон ARM
 
@@ -25,7 +25,7 @@ ms.locfileid: "92777908"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cdn-with-custom-origin%2Fazuredeploy.json)
 
@@ -61,7 +61,7 @@ az group create \
 --name $resourceGroupName \
 --location $location
 
-az group deployment create \
+az deployment group create \
 --resource-group $resourceGroupName \
 --template-uri  $templateUri
 ```
@@ -86,9 +86,9 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. В области слева выберите **Группы ресурсов** .
+2. В области слева выберите **Группы ресурсов**.
 
-3. Выберите группу ресурсов, созданную при работе с предыдущим разделом. Имя группы ресурсов по умолчанию — **myResourceGroupCDN** .
+3. Выберите группу ресурсов, созданную при работе с предыдущим разделом. Имя группы ресурсов по умолчанию — **myResourceGroupCDN**.
 
 4. Убедитесь, что в группе ресурсов созданы следующие ресурсы:
 
@@ -115,7 +115,7 @@ Remove-AzResourceGroup -Name myResourceGroupCDN
 
 ### <a name="portal"></a>Портал
 
-Удалите ставшие ненужными группу ресурсов, профиль CDN и все связанные ресурсы. Выберите группу ресурсов **myResourceGroupCDN** , которая содержит конечную точку и профиль CDN, и щелкните **Удалить** .
+Удалите ставшие ненужными группу ресурсов, профиль CDN и все связанные ресурсы. Выберите группу ресурсов **myResourceGroupCDN**, которая содержит конечную точку и профиль CDN, и щелкните **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

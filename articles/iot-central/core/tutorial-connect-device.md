@@ -11,12 +11,12 @@ ms.custom:
 - mqtt
 - device-developer
 zone_pivot_groups: programming-languages-set-twenty-six
-ms.openlocfilehash: 9eeb8174c900b0f548144231e65643c9559f75e3
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 2757d696f5922263abf87399d6491e46b5e5513c
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126115"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033902"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application"></a>Руководство по созданию клиентского приложения и его подключению к приложению Azure IoT Central
 
@@ -84,3 +84,4 @@ ms.locfileid: "96126115"
 * Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
 * Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
 * Дополнительные сведения о данных, которыми устройство обменивается с IoT Central см. в статье [Полезные данные телеметрии, свойств и команд](concepts-telemetry-properties-commands.md).
+* Прочитайте [руководство для разработчиков по работе с устройствами IoT Plug and Play](../../iot-pnp/concepts-developer-guide-device.md).

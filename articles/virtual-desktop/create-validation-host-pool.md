@@ -3,15 +3,15 @@ title: Обновление службы в пуле узлов Виртуаль
 description: Сведения о создании пула узлов проверки для мониторинга обновлений службы перед их развертыванием в рабочую среду.
 author: Heidilohr
 ms.topic: tutorial
-ms.date: 03/13/2020
+ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b8eb8378480b8784939e3ab63327e73e3705c74a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ead4c0aa7d8d71642fd8a4635edbabcafee5b6c2
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526516"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563251"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates"></a>Руководство по Создание пула узлов для проверки обновлений службы
 
@@ -66,6 +66,20 @@ Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | 
     LoadBalancerType    : BreadthFirst
     ValidationEnvironment : True
 ```
+
+## <a name="enable-your-validation-environment-with-the-azure-portal"></a>Включение среды проверки с помощью портала Azure
+
+Включить среду проверки также можно с помощью портала Azure.
+
+Настройка пула узлов проверки с помощью портала Azure:
+
+1. Войдите на портал Azure по адресу <https://portal.azure.com>.
+2. Найдите и выберите **Виртуальный рабочий стол Windows**.
+3. На странице Виртуального рабочего стола Windows выберите элемент **Пулы узлов**.
+4. Выберите имя пула узлов, который нужно изменить.
+5. Выберите **Свойства**.
+6. В поле среды проверки выберите вариант **Да**, чтобы включить среду проверки.
+7. Нажмите **Сохранить**. Будут применены новые параметры.
 
 ## <a name="update-schedule"></a>Обновление расписания
 

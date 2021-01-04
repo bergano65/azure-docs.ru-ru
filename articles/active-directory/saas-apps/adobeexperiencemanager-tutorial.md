@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: d82fa5b44d4797d4254a91b4caa72b7c6b5e02ab
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 9a98a77b9cc89b7a1a05e676048775aa38c83733
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309242"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672116"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство. Интеграция Azure Active Directory с Adobe Experience Manager
 
@@ -65,7 +65,7 @@ ms.locfileid: "92309242"
 
 4. В поле поиска введите **Adobe Experience Manager** и выберите **Adobe Experience Manager** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
-     ![Adobe Experience Manager в списке результатов](common/search-new-app.png)
+    ![Adobe Experience Manager в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -215,7 +215,7 @@ ms.locfileid: "92309242"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
@@ -253,7 +253,7 @@ ms.locfileid: "92309242"
 
 В этом разделе описано, как создать пользователя Britta Simon в приложении Adobe Experience Manager. Если выбран параметр **Autocreate CRX Users** (Автоматическое создание пользователей CRX), то пользователи будут создаваться автоматически после успешной аутентификации.
 
-Если вы хотите создать пользователей вручную, обратитесь к [группе поддержки Adobe Experience Manager](https://helpx.adobe.com/support/experience-manager.html)  для добавления пользователей на платформу Adobe Experience Manager.
+Если вы хотите создать пользователей вручную, обратитесь к [группе поддержки Adobe Experience Manager](https://helpx.adobe.com/support/experience-manager.html) для добавления пользователей на платформу Adobe Experience Manager.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

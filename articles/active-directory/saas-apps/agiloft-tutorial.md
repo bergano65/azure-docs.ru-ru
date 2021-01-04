@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: c56f1ab546327aaf281ff3616fa489728f3885a6
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: cd926875eda5676da6c154a57b0ac18ca12d9b79
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96297089"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97671657"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство по интеграции Azure Active Directory с Agiloft
 
@@ -64,7 +64,7 @@ ms.locfileid: "96297089"
 
 4. В поле поиска введите **Agiloft**, выберите **Agiloft** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Agiloft в списке результатов](common/search-new-app.png)
+    ![Agiloft в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -184,7 +184,7 @@ ms.locfileid: "96297089"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 

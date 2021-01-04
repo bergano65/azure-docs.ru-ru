@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/09/2019
 ms.author: jeedes
-ms.openlocfilehash: 0e5b9b9ba71412244d42204f6cad712b939d7c15
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 82f3a2dc7f43bd484d6a81efaa8d07f13b746d9e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318994"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97671103"
 ---
 # <a name="tutorial-integrate-aha-with-azure-active-directory"></a>Руководство по Интеграция Aha! с Azure Active Directory
 
@@ -77,7 +77,7 @@ ms.locfileid: "92318994"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -143,7 +143,7 @@ ms.locfileid: "92318994"
     ![Параметры](./media/aha-tutorial/IC798950.png "Настройки")
 
 5. Выберите раздел **Учетная запись**.
-  
+
     ![Профиль](./media/aha-tutorial/IC798951.png "Профиль")
 
 6. Нажмите **Безопасность и единый вход**.

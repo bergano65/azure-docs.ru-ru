@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 10/30/2020
 ms.author: apimpm
-ms.openlocfilehash: e6afa26c65f097683a5b471dc34621cca38c01e6
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 4a107b4cc0dbf0b0845211ca64691fb0e792a47c
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377437"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679098"
 ---
 # <a name="tutorial-publish-multiple-versions-of-your-api"></a>Руководство по Публикация нескольких версий API 
 
@@ -111,4 +111,4 @@ ms.locfileid: "93377437"
 Перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
-> [Настройка стиля страниц для портала разработчика](api-management-customize-styles.md)
+> [Настройка стиля страниц для портала разработчика](api-management-howto-developer-portal-customize.md)

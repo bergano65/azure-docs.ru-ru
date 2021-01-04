@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/29/2020
+ms.date: 12/10/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cd1fb7f33c56aefe76bc55181ae92ca3d149754
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: cc3417284137cdbc9f93ac02f825820bfe744843
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006982"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107504"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к Azure Cosmos DB
 
@@ -36,25 +36,18 @@ ms.locfileid: "96006982"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
-
+- См. дополнительные сведения об [управляемых удостоверениях для ресурсов Azure](overview.md). 
+- Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжить.
+- Для выполнения требуемых операций создания ресурсов и управления ролями учетной записи нужно предоставить разрешения роли "Владелец" в соответствующей области (подписка или группа ресурсов). Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../../role-based-access-control/role-assignments-portal.md), если нуждаетесь в помощи с назначением ролей.
 - Установка последней версии [Azure PowerShell](/powershell/azure/install-az-ps)
+- Кроме того, вам потребуется виртуальная машина Windows с включенными управляемыми удостоверениями, назначенными системой.
+  - Если вам нужно создать виртуальную машину для работы с этим руководством, см. раздел [Управляемое удостоверение, назначаемое системой](./qs-configure-portal-windows-vm.md#system-assigned-managed-identity).
 
-
-## <a name="enable"></a>Включить
-
-[!INCLUDE [msi-tut-enable](../../../includes/active-directory-msi-tut-enable.md)]
-
-
-
-## <a name="grant-access"></a>Предоставление доступа
-
-
-### <a name="create-a-cosmos-db-account"></a>Создание учетной записи Cosmos DB 
+## <a name="create-a-cosmos-db-account"></a>Создание учетной записи Cosmos DB 
 
 Если у вас еще нет учетной записи Cosmos DB, создайте ее. Этот шаг можно пропустить и использовать имеющуюся учетную запись Cosmos DB. 
 
-1. Нажмите кнопку **+ Создание службы** в верхнем левом углу портала Azure.
+1. Нажмите кнопку **Создать ресурс** в верхнем левом углу окна портала Azure.
 2. Выберите **Databases** (Базы данных),а затем — **Azure Cosmos DB**, после чего отобразится панель New account (Новая учетная запись).
 3. Введите **идентификатор** учетной записи Cosmos DB, которая будет использоваться далее.  
 4. **API** должно иметь значение SQL. Подход, описанный в этом руководстве, можно использовать с другими доступными типами API, но указанные в этом руководстве действия подходят только для API SQL.
@@ -70,11 +63,17 @@ ms.locfileid: "96006982"
 3. Присвойте коллекции идентификатор базы данных, идентификатор коллекции, выберите емкость хранилища, введите ключ секции и значение пропускной способности, а затем нажмите кнопку **ОК**.  Для этого руководства в качестве идентификатора базы данных и коллекции достаточно будет использовать значение Test. Выберите фиксированное значение емкости хранилища и самую низкую пропускную способность (400 ЕЗ/с).  
 
 
-### <a name="grant-access-to-the-cosmos-db-account-access-keys"></a>Предоставление доступа к ключам доступа к учетной записи Cosmos DB
+## <a name="grant-access"></a>Предоставление доступа
 
 В этом разделе описано, как предоставлять назначаемому системой управляемому удостоверению виртуальной машины Windows доступ к ключам доступа для учетной записи Cosmos DB. В Cosmos DB не встроена поддержка аутентификации Azure AD. Но можно использовать назначаемое системой управляемое удостоверение, чтобы извлечь ключ доступа к Cosmos DB из Resource Manager и с помощью этого ключа получить доступ к Cosmos DB. На этом шаге назначаемому системой управляемому удостоверению предоставляется доступ к ключам учетной записи Cosmos DB.
 
-Чтобы с помощью PowerShell предоставить назначаемому системой управляемому удостоверению доступ к учетной записи Cosmos DB в Azure Resource Manager, укажите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить для учетной записи ключи для записи и чтения, или роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения.  Для этого руководства назначьте `Cosmos DB Account Reader Role`:
+Чтобы с помощью PowerShell предоставить виртуальной машине Windows доступ на основе управляемого удостоверения, назначаемого системой, к учетной записи Cosmos DB в Azure Resource Manager, укажите следующие значения:
+
+- `<SUBSCRIPTION ID>`
+- `<RESOURCE GROUP>`
+- `<COSMOS DB ACCOUNT NAME>`
+
+Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить для учетной записи ключи для записи и чтения, или роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения.  Для этого руководства назначьте `Cosmos DB Account Reader Role`:
 
 ```azurepowershell
 $spID = (Get-AzVM -ResourceGroupName myRG -Name myVM).identity.principalid
@@ -89,8 +88,6 @@ New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Read
 В этом разделе показано, как вызывать Azure Resource Manager с помощью маркера доступа для назначенного системой управляемого удостоверения ВМ Windows. Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали. 
 
 Вам нужно установить последнюю версию [Azure CLI](/cli/azure/install-azure-cli) на виртуальной машине Windows.
-
-
 
 ### <a name="get-an-access-token"></a>Получение маркера доступа
 
@@ -119,10 +116,18 @@ New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Read
 
 ### <a name="get-access-keys"></a>Получение ключей доступа 
 
-В этом разделе описано, как получить ключи доступа из Azure Resource Manager для создания вызовов Cosmos DB Теперь мы с помощью PowerShell обратимся к Resource Manager, используя полученный на предыдущем этапе маркер доступа, и получим ключ доступа к учетной записи Cosmos DB. Получив ключ доступа, можно создать запрос к Cosmos DB. Не забудьте заменить значения параметров `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` своими значениями. Замените значение `<ACCESS TOKEN>` маркером доступа, который вы получили ранее.  Если вы хотите получить ключи для чтения и записи, используйте тип операции ключа `listKeys`.  Если вы хотите получить ключи только для чтения, используйте тип операции ключа `readonlykeys`.
+В этом разделе описано, как получить ключи доступа из Azure Resource Manager для создания вызовов Cosmos DB С помощью PowerShell мы обратимся к Resource Manager, используя полученный ранее маркер доступа, и получим ключ доступа к учетной записи Cosmos DB. Получив ключ доступа, можно создать запрос к Cosmos DB. Используйте собственные значения, чтобы заменить приведенные ниже:
+
+- `<SUBSCRIPTION ID>`
+- `<RESOURCE GROUP>`
+- `<COSMOS DB ACCOUNT NAME>` 
+- Замените значение `<ACCESS TOKEN>` маркером доступа, который вы получили ранее. 
+
+>[!NOTE]
+>Если вы хотите получить ключи для чтения и записи, используйте тип операции ключа `listKeys`.  Если вы хотите получить ключи только для чтения, используйте тип операции ключа `readonlykeys`. Если вы не можете использовать listkeys, убедитесь, что управляемому удостоверению назначена [соответствующая роль](../../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role).
 
 ```powershell
-Invoke-WebRequest -Uri 'https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.DocumentDb/databaseAccounts/<COSMOS DB ACCOUNT NAME>/listKeys/?api-version=2016-03-31' -Method POST -Headers @{Authorization="Bearer $ARMToken"}
+Invoke-WebRequest -Uri 'https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.DocumentDb/databaseAccounts/<COSMOS DB ACCOUNT NAME>/readonlykeys/?api-version=2016-03-31' -Method POST -Headers @{Authorization="Bearer $ARMToken"}
 ```
 В ответе будет содержаться список ключей.  Например, при получении ключей только для чтения вы увидите следующее:
 

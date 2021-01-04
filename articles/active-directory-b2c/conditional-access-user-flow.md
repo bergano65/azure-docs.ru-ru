@@ -5,17 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 09/01/2020
+ms.date: 12/14/2020
+ms.custom: project-no-code
 ms.author: mimart
 author: msmimart
 manager: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60bfac3b80e772e7b359b1e926d5fb84e447a8fb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: d6d5ab13c8997dffee42a053ba498376ccbcb6d8
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89270797"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585264"
 ---
 # <a name="add-conditional-access-to-user-flows-in-azure-active-directory-b2c"></a>Добавление условного доступа к потокам пользователей в Azure Active Directory B2C
 
@@ -34,6 +36,22 @@ ms.locfileid: "89270797"
 - **Условный доступ.** Этот параметр всегда должен иметь значение **Включено**. Обычно его **отключают** только на период устранения неполадок или миграции либо для устаревших реализаций.
 
 См. сведения о [защите идентификации и условном доступе](conditional-access-identity-protection-overview.md) в Azure AD B2C, а также о [настройке этих возможностей](conditional-access-identity-protection-setup.md).
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Для создания политик рискованного входа требуется Azure AD B2C Premium 2. Арендаторы уровня Premium P1 могут создавать политики на основе расположения, приложения или группы.
+- В целях тестирования вы можете [зарегистрировать тестовое веб-приложение](tutorial-register-applications.md) `https://jwt.ms`, которое поддерживается корпорацией Майкрософт и отображает декодированное содержимое токена (содержимое токена не выходит за пределы браузера). 
+- Чтобы имитировать рискованный вход, скачайте браузер TOR и попытайтесь войти на конечную точку вашего потока пользователя.
+- Используя следующие параметры, [создайте политику условного доступа](conditional-access-identity-protection-setup.md).
+   
+  - В поле **Пользователи и группы** выберите любого пользователя для теста (но не указывайте вариант **Все пользователи**, чтобы случайно не заблокировать вход самому себе).
+  - В области **Облачные приложения или действия** щелкните **Выбрать приложения** и выберите нужное приложение проверяющей стороны.
+  - В области "Условия" выберите **Риск при входе** и укажите уровни риска **Высокий**, **Средний** и **Низкий**.
+  - В поле **Предоставить** выберите **Запретить доступ**.
+
+      ![Обнаружение рисков](media/conditional-access-identity-protection-setup/test-conditional-access-policy.png)
+
+::: zone pivot="b2c-user-flow"
 
 ## <a name="add-conditional-access-to-a-new-user-flow"></a>Добавление условного доступа к новому потоку пользователя
 
@@ -89,19 +107,6 @@ ms.locfileid: "89270797"
 
 Чтобы проверить условный доступ в потоке пользователя, [создайте политику условного доступа](conditional-access-identity-protection-setup.md) и включите условный доступ в потоке пользователя, как описано выше. 
 
-### <a name="prerequisites"></a>Предварительные требования
-
-- Для создания политик рискованного входа требуется Azure AD B2C Premium 2. Арендаторы уровня Premium P1 могут создавать политики на основе расположения, приложения или группы.
-- В целях тестирования вы можете [зарегистрировать тестовое веб-приложение](tutorial-register-applications.md) `https://jwt.ms`, которое поддерживается корпорацией Майкрософт и отображает декодированное содержимое токена (содержимое токена не выходит за пределы браузера). 
-- Чтобы имитировать рискованный вход, скачайте браузер TOR и попытайтесь войти на конечную точку вашего потока пользователя.
-- Используя следующие параметры, [создайте политику условного доступа](conditional-access-identity-protection-setup.md).
-   
-   - В поле **Пользователи и группы** выберите любого пользователя для теста (но не указывайте вариант **Все пользователи**, чтобы случайно не заблокировать вход самому себе).
-   - В области **Облачные приложения или действия** щелкните **Выбрать приложения** и выберите нужное приложение проверяющей стороны.
-   - В области "Условия" выберите **Риск при входе** и укажите уровни риска **Высокий**, **Средний** и **Низкий**.
-   - В поле **Предоставить** выберите **Запретить доступ**.
-
-      ![Обнаружение рисков](media/conditional-access-identity-protection-setup/test-conditional-access-policy.png)
 
 ### <a name="run-the-user-flow"></a>Запуск потока пользователя
 
@@ -117,6 +122,16 @@ ms.locfileid: "89270797"
 
    ![Тестирование запрета входа](media/conditional-access-identity-protection-setup/test-blocked-sign-in.png)
 
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
+
+## <a name="add-conditional-access-to-your-policy"></a>Добавление условного доступа в политику
+
+Пример политики условного доступа можно найти на [GitHub](https://github.com/azure-ad-b2c/samples/tree/master/policies/conditional-access).
+
+::: zone-end
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Настройка пользовательского интерфейса в потоке пользователя Azure AD B2C](customize-ui-overview.md)
+[Настройка пользовательского интерфейса в потоке пользователя Azure AD B2C](customize-ui-with-html.md)

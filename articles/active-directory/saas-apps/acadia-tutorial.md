@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 1/17/2019
 ms.author: jeedes
-ms.openlocfilehash: b6bf0736c2887ee19551e2719ec2418bbacdbd1d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: bf1b46a42b0b8b68e1ab95a3345bb3b5435a576b
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313671"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673848"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-acadia"></a>Руководство по Интеграция Azure Active Directory с Acadia
 
@@ -64,7 +64,7 @@ ms.locfileid: "92313671"
 
 4. В поле поиска введите **Acadia**, выберите **Acadia** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Acadia в списке результатов](common/search-new-app.png)
+    ![Acadia в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -150,7 +150,7 @@ ms.locfileid: "92313671"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 

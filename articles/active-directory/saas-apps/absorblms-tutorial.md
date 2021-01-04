@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: jeedes
-ms.openlocfilehash: 31b0a4fd8d97371eb4e127a2a473893a0487f220
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 3d90d35e113b5f9757faf59681bb2532b66f2b09
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319075"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673874"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Руководство. Интеграция Azure Active Directory с Absorb LMS
 
@@ -66,7 +66,7 @@ ms.locfileid: "92319075"
 
 4. В поле поиска введите **Absorb LMS**, выберите **Absorb LMS** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Absorb LMS в списке результатов](common/search-new-app.png)
+    ![Absorb LMS в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -159,7 +159,7 @@ ms.locfileid: "92319075"
 
     а. В текстовом поле **Имя** введите имя, например Azure AD Marketplace SSO.
 
-    b. Выберите **SAML**в качестве **метода**.
+    b. Выберите **SAML** в качестве **метода**.
 
     c. В Блокноте откройте сертификат, скачанный с портала Azure. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**. Затем в поле **Key** (Ключ) вставьте оставшееся содержимое.
 
@@ -196,7 +196,7 @@ ms.locfileid: "92319075"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`.  
     Например BrittaSimon@contoso.com.
 

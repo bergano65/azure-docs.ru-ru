@@ -4,12 +4,12 @@ ms.author: dobett
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/24/2020
-ms.openlocfilehash: 6ad2a405fc8abf2e7df2a896d5c5363b9618dda2
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 16cba46d9c0f6a933965366d82eb8e21c4ab1ca6
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126124"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033909"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -69,7 +69,7 @@ git submodule update --init
 
 Функция `main` сначала вызывает `CreateAndConfigureDeviceClientHandleForPnP`, чтобы:
 
-* задать идентификатор модели `dtmi:com:example:Thermostat;1`;
+* задать идентификатор модели `dtmi:com:example:Thermostat;1`; IoT Central использует идентификатор модели для идентификации или создания шаблона устройства для этого устройства. Дополнительные сведения см. в разделе [Связывание устройства с шаблоном устройства](../articles/iot-central/core/concepts-get-connected.md#associate-a-device-with-a-device-template).
 * использовать DPS для подготовки и регистрации устройства;
 * создать обработчик команд для команды `getMaxMinReport`;
 * создать обработчик обновления свойства `targetTemperature`, доступного для записи;

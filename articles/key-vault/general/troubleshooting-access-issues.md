@@ -7,16 +7,19 @@ ms.date: 08/10/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: f9bbf6e9d1d932f7225807613b789821c1462932
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 78b42a8ad3685d07b61c4faca384c7ee8f5a5f94
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441857"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616394"
 ---
 # <a name="troubleshooting-azure-key-vault-access-policy-issues"></a>Устранение проблем с политикой доступа к хранилищу ключей Azure
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+
+### <a name="i-am-not-able-to-list-or-get-secretskeyscertificate-i-am-seeing-something-went-wrong-error"></a>Мне не удается перечислить либо получить секреты, ключи или сертификаты. Отображается ошибка "Что-то пошло не так…". Ошибка.
+Если у вас возникла проблема с перечислением, получением, созданием секретов или доступом к ним, убедитесь в наличии политики доступа, определенной для выполнения этой операции. [Политики доступа Key Vault](https://docs.microsoft.com/azure/key-vault/general/group-permissions-for-apps)
 
 ### <a name="how-can-i-identify-how-and-when-key-vaults-are-accessed"></a>Как можно определить, как и когда осуществляется доступ к хранилищам ключей?
 

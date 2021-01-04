@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.subservice: alerts
-ms.openlocfilehash: 61aba3e5792d1cc20da16686d052de91744dab76
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a8dbadd3af9dc21ced54af151e4de705f854e011
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186785"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696064"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
@@ -112,7 +112,7 @@ ms.locfileid: "96186785"
 
 1. На [портале](https://portal.azure.com/)выберите **монитор** и щелкните **оповещения**.
 
-    ![Наблюдение](media/alerts-log/AlertsPreviewMenu.png)
+    ![Мониторинг](media/alerts-log/AlertsPreviewMenu.png)
 
 1. Выберите **новое правило генерации оповещений**. 
 
@@ -312,7 +312,7 @@ Azure Resource Manager CLI можно также использовать с ф�
 ```azurecli
 az login
 
-az group deployment create \
+az deployment group create \
     --name AlertDeployment \
     --resource-group ResourceGroupofTargetResource \
     --template-file mylogalerttemplate.json \

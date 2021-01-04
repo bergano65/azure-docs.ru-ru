@@ -3,12 +3,12 @@ title: Вход в предварительную версию службы "З
 description: Быстро входите в предварительную версию службы "Записные книжки Azure" и настраивайте идентификатор пользователя для получения доступа к сохраненным проектам и совместного использования записных книжек с другими пользователями.
 ms.topic: quickstart
 ms.date: 04/15/2019
-ms.openlocfilehash: 8a2d9836cd005ab11106c569929a6776d605da50
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 168da5d4d36cd4cfadb4ef120ddfabbd261cafaf
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85830423"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109459"
 ---
 # <a name="quickstart-sign-in-and-set-a-user-id-for-azure-notebooks-preview"></a>Краткое руководство. Вход и установление идентификатора пользователя для предварительной версии службы "Записные книжки Microsoft Azure"
 
@@ -59,4 +59,4 @@ ms.locfileid: "85830423"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. по созданию и совместному использованию записной книжки](quickstart-create-share-jupyter-notebook.md)
+> [Краткое руководство. Экспорт проекта Jupyter Notebook](quickstart-export-jupyter-notebook-project.md)

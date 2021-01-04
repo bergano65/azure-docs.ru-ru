@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 20f66621368840b5d496000186e6be0e36aff19a
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 79c6a5959d000217dcb69370b0e0ac4ccc18ccdd
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319194"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673925"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-15five"></a>Руководство. Интеграция Azure Active Directory с 15Five
 
@@ -63,7 +63,7 @@ ms.locfileid: "92319194"
 
 4. В поле поиска введите **15Five**, выберите **15Five** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![15Five в списке результатов](common/search-new-app.png)
+    ![15Five в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -143,7 +143,7 @@ ms.locfileid: "92319194"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 

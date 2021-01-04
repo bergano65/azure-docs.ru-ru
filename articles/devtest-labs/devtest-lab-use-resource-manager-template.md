@@ -3,12 +3,12 @@ title: Просмотр и использование шаблона Azure Resou
 description: Сведения об использовании шаблона Azure Resource Manager виртуальной машины для создания других виртуальных машин.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 7f969abe1ca903a226e73c5c70781dce512c2926
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb7cb38dfb2c1664017f0e342fefecdd464df45f
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282516"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696014"
 ---
 # <a name="create-virtual-machines-using-an-azure-resource-manager-template"></a>Создание виртуальных машин с использованием шаблона Azure Resource Manager 
 
@@ -25,7 +25,7 @@ ms.locfileid: "91282516"
 
    ![Снимок экрана, показывающий список виртуальных машин в виде отдельных элементов в списке виртуальных машин DevTest Labs.](./media/devtest-lab-use-arm-template/devtestlab-lab-vm-single-item.png)
 
-   Этот тип шаблона диспетчер ресурсов можно подготовить с помощью команды Azure PowerShell **New-азресаурцеграупдеплоймент** или команды Azure CLI **AZ Group Deployment Create**. Для это требуется иметь разрешения администратора, поэтому пользователи, которым назначена роль пользователя DevTest Labs, не могут выполнить развертывание. 
+   Этот тип шаблона диспетчер ресурсов можно подготовить с помощью команды Azure PowerShell **New-азресаурцеграупдеплоймент** или команды Azure CLI **AZ Deployment Group Create**. Для это требуется иметь разрешения администратора, поэтому пользователи, которым назначена роль пользователя DevTest Labs, не могут выполнить развертывание. 
 
 - Шаблоны Resource Manager, использующие тип ресурса Microsoft.Compute/virtualmachines, могут подготовить несколько виртуальных машин, которые отображаются в качестве отдельной среды в списке виртуальных машин DevTest Labs:
 
@@ -57,7 +57,7 @@ ms.locfileid: "91282516"
 
 
 
-### <a name="next-steps"></a>Дальнейшие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения см. в статье [Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
 * [Развертывание шаблона Resource Manager для создания виртуальной машины](devtest-lab-create-environment-from-arm.md#automate-deployment-of-environments)
 * Ознакомьтесь с дополнительными руководствами диспетчер ресурсов шаблонов для автоматизации DevTest Labs из [общедоступного репозитория GitHub DevTest Labs](https://github.com/Azure/azure-quickstart-templates).

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: allensu
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: b00d0c83758d0349fd3926e0c263b65af2e4dc92
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 2b22c00845b38d2edea2d78497fb4b46a51896d4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96021186"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587134"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -53,6 +53,8 @@ ms.locfileid: "96021186"
 
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/resources-diagram.png" alt-text="Ресурсы подсистемы балансировки нагрузки ценовой категории &quot;Стандартный&quot;, созданные для работы с этим кратким руководством." border="false":::
 
 ## <a name="configure-virtual-network---standard"></a>Настройка виртуальной сети, категория "Стандартный"
 
@@ -98,7 +100,7 @@ az network public-ip create \
 * с именем **AzureBastionSubnet**;
 * с префиксом подсети **10.1.1.0/24**.
 * в виртуальной сети **myVNet**;
-* в группе ресурсов **CreatePubLBQS-rg**.
+* в группе ресурсов **CreatePubLBQS-rg**;
 
 ```azurecli-interactive
 az network vnet subnet create \
@@ -551,6 +553,8 @@ az network bastion create \
 
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/resources-diagram-basic.png" alt-text="Ресурсы подсистемы балансировки нагрузки ценовой категории &quot;Базовый&quot;, созданные при работе с этим кратким руководством." border="false":::
 
 ## <a name="configure-virtual-network---basic"></a>Настройка виртуальной сети, категория "Базовый"
 

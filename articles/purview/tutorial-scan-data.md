@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 802b7d2ca5d96bf385c4b8f0ee0cdaa3db181a1c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: feda969a5818402f4a5f2dadc80c70c324ad7492
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922568"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559970"
 ---
 # <a name="tutorial-scan-data-with-azure-purview-preview"></a>Руководство по сканированию данных с помощью Azure Purview (предварительная версия)
 
@@ -146,10 +146,11 @@ ms.locfileid: "96922568"
 
    При выполнении этой команды может появиться всплывающее окно для входа с учетными данными Azure Active Directory.
 
-1. Выполните следующую команду, чтобы запустить начальный набор. Замените заполнители `CatalogName`, `TenantID`, `SubscriptionID`, `newresourcegroupname` и `CatalogResourceGroupName`. Для `newresourcegroupname` укажите уникальное имя группы ресурсов, которая будет содержать пространство данных.
 
-> [!IMPORTANT]
-> Для параметра **newresourcegroupname** допускаются только цифры и строчные буквы общим количеством не более 17 символов. **Прописные буквы и специальные символы не допускаются.** Это ограничение связано с правилами именования для учетных записей хранения.
+1. Выполните следующую команду, чтобы запустить начальный набор. Замените заполнители `CatalogName`, `TenantID`, `SubscriptionID`, `NewResourceGroupName` и `CatalogResourceGroupName`. Для `NewResourceGroupName` укажите уникальное имя (должно содержать только строчные числа и буквы) группы ресурсов, которая будет содержать пространство данных.
+
+   > [!IMPORTANT]
+   > Для параметра **newresourcegroupname** допускаются только цифры и строчные буквы общим количеством не более 17 символов. **Прописные буквы и специальные символы не допускаются.** Это ограничение связано с правилами именования для учетных записей хранения.
 
    ```powershell
    .\RunStarterKit.ps1 -CatalogName <CatalogName> -TenantId <TenantID>`

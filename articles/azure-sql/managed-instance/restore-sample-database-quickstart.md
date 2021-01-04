@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: 413786cf8946c1ffbb76bd0e18eae7c7ba16a9c1
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9b2333e38415a2c0ad50ce36c213ead711c70ab4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790752"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928806"
 ---
 # <a name="quickstart-restore-a-database-to-azure-sql-managed-instance-with-ssms"></a>Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр SQL Azure с помощью SSMS
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -49,8 +49,11 @@ ms.locfileid: "92790752"
 В SQL Server Management Studio выполните следующие шаги для восстановления базы данных Wide World Importers в Управляемый экземпляр SQL. Файл резервной копии базы данных хранится в предварительно настроенной учетной записи хранения больших двоичных объектов Azure.
 
 1. Откройте SSMS и подключитесь к Управляемому экземпляру.
-2. В **обозревателе объектов** щелкните правой кнопкой мыши Управляемый экземпляр и выберите **Создать запрос** , чтобы открыть окно нового запроса.
+2. В **обозревателе объектов** щелкните правой кнопкой мыши Управляемый экземпляр и выберите **Создать запрос**, чтобы открыть окно нового запроса.
 3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SAS, чтобы [создать учетные данные](/sql/t-sql/statements/create-credential-transact-sql) в управляемом экземпляре.
+ 
+   > [!IMPORTANT]
+   > Объект `CREDENTIAL` должен соответствовать пути к контейнеру, начинаться с `https` и не может содержать косую черту в конце. Аргумент `IDENTITY` должен иметь значение `SHARED ACCESS SIGNATURE`. Объект `SECRET` должен быть маркером подписанного URL-адреса и не может содержать символ `?` в начале.
 
    ```sql
    CREATE CREDENTIAL [https://mitutorials.blob.core.windows.net/databases]
