@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: dec2c845780b62e9a595c73504037142c511c0e6
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 08ab78171376f702aecb1f49571dda583eae5d82
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989417"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813876"
 ---
 # <a name="manage-ddos-protection-plans-permissions-and-restrictions"></a>Управление планами защиты от атак DDoS: разрешения и ограничения
 
@@ -51,4 +51,4 @@ ms.locfileid: "94989417"
 Чтобы узнать, как просмотреть и настроить данные телеметрии для плана защиты от атак DDoS, перейдите к руководствам.
 
 > [!div class="nextstepaction"]
-> [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry-monitoring-alerting.md)
+> [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry.md)

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 0a80f03ee82e8d1216353482dc867402adcf7d09
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 2b31a8aa8b126c228ac7e9c3ca182300c710b098
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992239"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814063"
 ---
 # <a name="components-of-a-ddos-response-strategy"></a>Компоненты стратегии реагирования на атаки DDoS
 
@@ -56,7 +56,7 @@ ms.locfileid: "94992239"
 
 ## <a name="alerts-during-an-attack"></a>Предупреждения во время атаки
 
-"Защита от атак DDoS Azure" уровня "Стандартный" определяет и устраняет атаки DDoS без вмешательства пользователя. Чтобы получать уведомления при наличии активного устранения проблем с защищенным общедоступным IP-адресом, можно [настроить оповещение](telemetry-monitoring-alerting.md) для метрики **в разделе от атак DDoS-атака**. Вы можете создать оповещения для других метрик атак DDoS, чтобы изучить масштабирование атаки, снижающийся трафик и другие сведения.
+"Защита от атак DDoS Azure" уровня "Стандартный" определяет и устраняет атаки DDoS без вмешательства пользователя. Чтобы получать уведомления при наличии активной защиты для защищенного общедоступного IP-адреса, можно [настроить оповещения](alerts.md).
 
 ### <a name="when-to-contact-microsoft-support"></a>Обращаться в службу поддержки Майкрософт необходимо в следующих случаях:
 

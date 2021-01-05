@@ -6,30 +6,34 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: ae2bc6e87f0b694e949057280233c19e0b98132c
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 74135c0b36f533ebfbba6422bc79af47825a1a3b
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892236"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813230"
 ---
 # <a name="connect-to-a-vm-using-remote-desktop-protocol-on-a-chromebook"></a>Подключение к виртуальной машине с помощью протокола удаленного рабочего стола на Chromebook
+
 В этом разделе показано, как учащийся может подключиться к виртуальной машине задания с компьютера Chromebook с помощью RDP.
 
 ## <a name="install-microsoft-remote-desktop-on-a-chromebook"></a>Установка удаленного рабочего стола (Майкрософт) на компьютере Chromebook
+
 1. Откройте App Store на компьютере Chromebook и выполните поиск по запросу **удаленный рабочий стол (Майкрософт)** .
 
     ![Удаленный рабочий стол (Майкрософт)](./media/how-to-use-classroom-lab/install-ms-remote-desktop-chromebook.png)
+    
 1. Установите последнюю версию удаленного рабочего стола (Майкрософт). 
 
 ## <a name="access-the-vm-from-your-chromebook-using-rdp"></a>Доступ к виртуальной машине с компьютера Chromebook с помощью RDP
-1. Откройте файл **RDP** , скачанный на компьютере с установленным **удаленным рабочим столом (Майкрософт)** . При этом должно начаться подключение к виртуальной машине. 
+
+1. Откройте файл **RDP**, скачанный на компьютере с установленным **удаленным рабочим столом (Майкрософт)** . При этом должно начаться подключение к виртуальной машине. 
 
     ![Подключение к виртуальной машине](./media/how-to-use-classroom-lab/connect-vm-chromebook.png)
 
 1. При появлении запроса введите свой пароль.
-    ![Снимок экрана входа в систему, в котором вы вводите имя пользователя и пароль.](./media/how-to-use-classroom-lab/password-chromebook.png)
 
+    ![Снимок экрана входа в систему, в котором вы вводите имя пользователя и пароль.](./media/how-to-use-classroom-lab/password-chromebook.png)
 
 1. Выберите **Continue** (Продолжить), если появится следующее предупреждение. 
 
@@ -38,6 +42,6 @@ ms.locfileid: "92892236"
 1. Вы должны увидеть рабочий стол виртуальной машины, к которой вы подключаетесь.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше о [подключении к виртуальным машинам Linux](how-to-use-remote-desktop-linux-student.md).
 
+Узнайте больше о [подключении к виртуальным машинам Linux](how-to-use-remote-desktop-linux-student.md).
 

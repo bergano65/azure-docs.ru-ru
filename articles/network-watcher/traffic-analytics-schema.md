@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: vinigam
-ms.openlocfilehash: ccfbb92c27e4508595f19c2ea6900730cde609b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 015b8e400e9d386fff8f35756a77139e61bbaff1
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74666381"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809298"
 ---
 # <a name="schema-and-data-aggregation-in-traffic-analytics"></a>Схема и агрегирование данных в Аналитика трафика
 
@@ -39,11 +39,11 @@ ms.locfileid: "74666381"
 5. FlowStartTime_t поле указывает первое вхождение такого агрегированного потока (то же четыре кортежа) в интервале обработки журнала потока между "FlowIntervalStartTime_t" и "FlowIntervalEndTime_t".
 6. Для любого ресурса в TA потоки, указанные в пользовательском интерфейсе, являются общими потоками, видимыми в NSG, но в Log Analytics пользователь увидит только одну, сокращенную запись. Чтобы просмотреть все потоки, используйте поле blob_id, на которое можно ссылаться из хранилища. Общее число потоков для этой записи будет соответствовать отдельным потокам, отображаемым в большом двоичном объекте.
 
-Приведенный ниже запрос позволяет взглянуть на все журналы потоков из локальной среды за последние 30 дней.
+Приведенный ниже запрос поможет взглянуть на все подсети, взаимодействующие с общедоступными IP-адресами Azure за последние 30 дней.
 ```
 AzureNetworkAnalytics_CL
 | where SubType_s == "FlowLog" and FlowStartTime_t >= ago(30d) and FlowType_s == "ExternalPublic"
-| project Subnet_s  
+| project Subnet1_s, Subnet2_s  
 ```
 Чтобы просмотреть путь к большому двоичному объекту для потоков в приведенном выше запросе, используйте следующий запрос:
 
@@ -177,4 +177,4 @@ https://{saName}@insights-logs-networksecuritygroupflowevent/resoureId=/SUBSCRIP
 1. К именам полей добавляются \_ s или \_ d. Они не обозначают источник и назначение, но указывают типы данных String и Decimal соответственно.
 
 ### <a name="next-steps"></a>Next Steps
-Чтобы получить ответы на часто задаваемые вопросы, см. раздел [вопросы и ответы по аналитике трафика](traffic-analytics-faq.md) , чтобы просмотреть сведения о функциональных возможностях. [Traffic analytics documentation](traffic-analytics.md)
+Чтобы получить ответы на часто задаваемые вопросы, см. раздел [вопросы и ответы по аналитике трафика](traffic-analytics-faq.md) , чтобы просмотреть сведения о функциональных возможностях. [](traffic-analytics.md)

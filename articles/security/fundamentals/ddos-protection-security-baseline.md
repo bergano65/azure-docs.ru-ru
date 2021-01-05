@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1c1a5a96742d380ce42c0aea8c77a199083df47f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: cbc22f9b55f8d20880b43516a2a5bc8f55d389f5
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492256"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814505"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Базовый план безопасности Azure для Azure от атак DDoS Protection Standard
 
@@ -38,7 +38,7 @@ ms.locfileid: "96492256"
 
 Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, в концентратор событий Azure или в учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, которые выполнялись в кэше Azure для экземпляров Redis на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для экземпляров защиты Azure от атак DDoS.
 
-- [Настройка оповещений для метрик защиты от атак DDoS](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
+- [Просмотр и Настройка ведения журнала диагностики от атак DDoS](../../ddos-protection/diagnostic-logging.md)
 
 - [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
 
@@ -60,7 +60,7 @@ ms.locfileid: "96492256"
 
 **Руководство**. Включение параметров диагностики журнала действий Azure и отправка журналов в рабочую область log Analytics. Выполнение запросов в Log Analytics для поиска терминов, выявления тенденций, анализа закономерностей и предоставления многих других аналитических сведений на основе данных журнала действий, которые могли быть собраны для хранилищ служб восстановления.
 
-- [Сведения о том, как получить доступ к телеметрии, журналам и службе анализа атак для стандартной службы защиты от атак DDoS](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
+- [Сведения о том, как получить доступ к телеметрии, журналам и службе анализа атак для стандартной службы защиты от атак DDoS](../../ddos-protection/telemetry.md)
 
 - [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
 
@@ -76,7 +76,7 @@ ms.locfileid: "96492256"
 
 Подключение рабочей области Log Analytics к Azure Sentinel, так как она предоставляет решение для автоматического реагирования на согласованность безопасности (ВЗЛЕТЕЛ). Это позволяет создавать и использовать сборники схем (автоматизированные решения) для устранения проблем безопасности. Кроме того, можно создавать пользовательские оповещения журнала в рабочей области Log Analytics с помощью Azure Monitor.
 
-- [Настройка оповещений для метрик от атак DDoS](https://azure.microsoft.com/blog/holiday-season-is-ddos-season/)
+- [Настройка оповещений для метрик от атак DDoS](../../ddos-protection/alerts.md)
 
 - [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
@@ -166,7 +166,7 @@ ms.locfileid: "96492256"
 
 - [Развертывание защищенной рабочей станции, управляемой Azure](../../active-directory/devices/howto-azure-managed-workstation.md)
 
-- [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных служб](../../active-directory/authentication/howto-mfa-getstarted.md)
+- [Планирование развертывания облачной службы Многофакторной идентификации Azure AD](../../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -524,7 +524,7 @@ ms.locfileid: "96492256"
 
 Выберите любую из доступных метрик защиты от атак DDoS, чтобы предупредить вас об активном устранении рисков во время атаки, используя конфигурацию оповещений Azure Monitor. При соблюдении условий указанный адрес получает электронное сообщение с оповещением.
 
-- [Настройка оповещений о метриках защиты от атак DDoS](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
+- [Настройка оповещений о метриках защиты от атак DDoS](../../ddos-protection/alerts.md)
 
 - [Настройка непрерывного экспорта данных](../../security-center/continuous-export.md)
 

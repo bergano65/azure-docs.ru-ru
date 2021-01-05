@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 76695d4d8dbc3e3a6b04b89b8f34e41b83a92963
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 88af554faab9479a402dd393b0a7eed0835ce59e
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965193"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814352"
 ---
-# <a name="working-with-security-policies"></a>Использование политик безопасности
+# <a name="manage-security-policies"></a>Управление политиками безопасности
 
 В этой статье объясняется, как настраивать политики безопасности и как просматривать их в центре безопасности. 
 
@@ -121,14 +121,14 @@ ms.locfileid: "94965193"
 
    ![отключить политику](./media/tutorial-security-policy/disable-policy.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
    > [!NOTE]
    > Для вступления в силу изменений политики отключения может потребоваться до 12 часов.
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье описаны политики безопасности. Связанные сведения см. в следующих статьях:
 
 - [Сведения о настройке политик с помощью PowerShell](../governance/policy/assign-policy-powershell.md) - 

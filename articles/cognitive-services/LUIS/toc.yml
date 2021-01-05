@@ -36,8 +36,6 @@
       items:
         - name: Исправление неточных прогнозов
           href: luis-tutorial-review-endpoint-utterances.md
-        - name: Пакетное тестирование наборов данных
-          href: luis-tutorial-batch-testing.md
         - name: Добавление шаблонов для улучшения прогнозирования
           href: luis-tutorial-pattern.md
     - name: Использование с ботом
@@ -93,8 +91,6 @@
       items:
         - name: Интерактивное тестирование
           href: luis-concept-test.md
-        - name: Пакетное тестирование
-          href: luis-concept-batch-test.md
     - name: Управление данными
       items:
         - name: Изменение данных
@@ -229,7 +225,7 @@
         - name: Настройка контейнеров
           href: luis-container-configuration.md
         - name: Использование экземпляров контейнеров
-          href: deploy-luis-on-container-instances.md
+          href: ../containers/azure-container-instance-recipe.md
         - name: Ограничения контейнеров
           href: luis-container-limitations.md
           displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, French, German, Italian, Korean, Portuguese, Spanish, Turkish, Keigo, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'

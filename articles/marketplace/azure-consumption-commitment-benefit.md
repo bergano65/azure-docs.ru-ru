@@ -8,12 +8,12 @@ author: emuench
 ms.author: mingshen
 ms.date: 10/15/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: aeee13152364c31d82f674df784a27114035a041
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: d8cb5179583dd23ea2bd4baf5ebe7d84b0ae9cbf
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028552"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814437"
 ---
 # <a name="azure-consumption-commitment-benefit"></a>Преимущество обязательства потребления Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "97028552"
 
 ## <a name="determine-if-your-organization-has-an-azure-consumption-commitment-maccctc"></a>Определение, имеет ли ваша организация обязательство по потреблению Azure (МАКК/CtC)
 
-Если вы не уверены, имеет ли ваша организация квалифицированное соглашение, войдите в систему Marketplace в [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home) в рамках клиента, связанного с вашей организацией. Если вы видите параметр " **преимущества Azure** " в рамках фильтра цен, вы получите соответствующее обязательство по потреблению Azure. Если вы приобрели их напрямую через Azure Marketplace, вы получите подходящие покупки в Azure Marketplace.
+Если вы не уверены, имеет ли ваша организация квалифицированное соглашение, войдите в систему Marketplace в [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home) в рамках клиента, связанного с вашей организацией. Если вы видите возможность выбора **преимущества Azure только** в качестве параметра фильтра, вы получите соответствующее обязательство по потреблению Azure. Если вы приобрели их напрямую через Azure Marketplace, вы получите подходящие покупки в Azure Marketplace.
 
 [![Пункт меню "преимущества Azure".](media/azure-benefit/azure-benefit-eligible.png)](media/azure-benefit/azure-benefit-eligible.png#lightbox)
 

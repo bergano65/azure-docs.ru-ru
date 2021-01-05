@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 3655b117b641a6179bd6539aaf3f75af07f21a1a
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 8de95a56f3da928997a97ff216b13d522c82afca
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992375"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814199"
 ---
 # <a name="azure-ddos-rapid-response"></a>Быстрый отклик Azure от атак DDoS
 
-При активном доступе клиенты стандарта защиты Azure от атак DDoS имеют доступ к группе от атак DDoS быстрого реагирования (ДРР), которая может помочь при расследовании атак и анализе после атаки.
+При активном доступе клиенты стандарта защиты Azure от атак DDoS имеют доступ к группе от атак DDoS быстрого реагирования (ДРР), которая может помочь в исследовании атак во время атаки и анализа после атаки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -56,5 +56,5 @@ ms.locfileid: "94992375"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как выполнять [тестирование с помощью симуляций](test-through-simulations.md).
-- Узнайте, как [просматривать и настраивать данные телеметрии защиты от атак DDoS](telemetry-monitoring-alerting.md).
-- Узнайте, как [настроить отчеты по предотвращению атак от атак DDoS и журналы потоков](reports-and-flow-logs.md).
+- Узнайте, как [просматривать и настраивать данные телеметрии защиты от атак DDoS](telemetry.md).
+- Узнайте, как [просматривать и настраивать ведение журнала диагностики от атак DDoS](diagnostic-logging.md).

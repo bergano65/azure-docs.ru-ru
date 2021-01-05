@@ -9,12 +9,12 @@ ms.subservice: custom-vision
 ms.topic: how-to
 ms.date: 09/11/2020
 ms.author: pafarley
-ms.openlocfilehash: f4d9cc4c02ab062c73e9dbd977d9ea9e6ccdb60d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43cd03e8f4a66d18adc33c943481002ff7b326d3
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532787"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813213"
 ---
 # <a name="integrate-azure-storage-for-notifications-and-backup"></a>Интеграция службы хранилища Azure с уведомлениями и резервным копированием
 
@@ -203,7 +203,8 @@ curl -v -X PATCH "{endpoint}/customvision/v3.3/Training/projects/{projectId}"
 
 `"exportStatus"`Поле может иметь значение `"ExportCompleted"` или `"ExportFailed"` . `"modelUri"`Поле будет содержать URL-адрес модели резервного копирования, хранящейся в контейнере, при условии, что в начале были интегрированы уведомления об очередях. Если это не так, в `"modelUri"` поле отобразится URL-адрес SAS для пользовательское визуальное распознавание модели BLOB.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как копировать и перемещать проект между Пользовательское визуальное распознаваниеными ресурсами. Затем изучите документацию по API, чтобы узнать, что еще можно сделать с помощью Пользовательское визуальное распознавание.
-* [Справочная документация по REST API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3)
+* [Справочная документация по REST API (обучение)](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3)
+* [Справочная документация по REST API (прогноз)](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.1/operations/5eb37d24548b571998fde5f3)

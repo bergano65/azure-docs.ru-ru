@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: yitoh
-ms.openlocfilehash: e2f5528fde977520dc0aa0215a480a40ef8f1e7d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 6c628d93c112a770c85a10d0eff958614a7cf4cb
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989621"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814165"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-cli"></a>Краткое руководство. Создание и Настройка стандарта защиты от атак DDoS Azure с помощью Azure CLI
 
@@ -134,4 +134,4 @@ az network vnet update \
 Чтобы узнать, как просмотреть и настроить данные телеметрии для плана защиты от атак DDoS, перейдите к руководствам.
 
 > [!div class="nextstepaction"]
-> [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry-monitoring-alerting.md)
+> [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry.md)
