@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7e8e2f3f9dd49693faa26eaaab309fcad58f6f9f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9721685fc3ccd2c1c80b55e9118d6d347cc97a9c
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89076163"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830706"
 ---
 # <a name="get-service-access-tokens"></a>Получение маркеров доступа к службе
 
@@ -25,7 +25,7 @@ ms.locfileid: "89076163"
 
 ## <a name="token-service-rest-api"></a>REST API службы маркеров
 
-Для создания маркеров доступа *Служба маркеров безопасности* предоставляет один REST API. URL-адрес для службы STS-обслуживания — HTTPS: \/ /STS.mixedreality.Azure.com.
+Для создания маркеров доступа *Служба маркеров безопасности* предоставляет один REST API. URL-адрес службы STS зависит от домена учетной записи удаленной подготовки к просмотру. Он имеет вид https://sts . [ домен учетной записи], например `https://sts.southcentralus.mixedreality.azure.com`
 
 ### <a name="get-token-request"></a>Запрос "получение токена"
 
@@ -43,7 +43,7 @@ ms.locfileid: "89076163"
 
 | Код состояния | полезные данные JSON | Комментарии |
 |-----------|:-----------|:-----------|
-| 200 | AccessToken: строка | Успех |
+| 200 | AccessToken: строка | Success |
 
 | Header | Назначение |
 |--------|:------|
@@ -56,9 +56,10 @@ ms.locfileid: "89076163"
 ```PowerShell
 $accountId = "<account_id_from_portal>"
 $accountKey = "<account_key_from_portal>"
+$accountDomain = "<account_domain_from_portal>
 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
-$webResponse = Invoke-WebRequest -Uri "https://sts.mixedreality.azure.com/accounts/$accountId/token" -Method Get -Headers @{ Authorization = "Bearer ${accountId}:$accountKey" }
+$webResponse = Invoke-WebRequest -Uri "https://sts.$accountDomain/accounts/$accountId/token" -Method Get -Headers @{ Authorization = "Bearer ${accountId}:$accountKey" }
 $response = ConvertFrom-Json -InputObject $webResponse.Content
 
 Write-Output "Token: $($response.AccessToken)"
@@ -66,7 +67,7 @@ Write-Output "Token: $($response.AccessToken)"
 
 Сценарий просто выводит маркер в выход, откуда его можно скопировать & вставить. Для реальных проектов этот процесс следует автоматизировать.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)
 * [Интерфейсные API Azure](../how-tos/frontend-apis.md)

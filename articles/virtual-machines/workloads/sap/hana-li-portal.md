@@ -13,20 +13,20 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 12/18/2020
+ms.date: 12/31/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 36f6638614d5c0b55b2adc202e8f8d6f9450aaf3
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: e5adb8edbeafa4d77e24bf865338e111c455cb80
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674418"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827518"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Управление крупными экземплярами HANA в Azure с помощью портала Azure
 
 >[!NOTE]
->Для версии 4,2 Следуйте инструкциям в разделе [Управление экземплярами BareMetal с помощью портал Azure](baremetal-infrastructure-portal.md) .
+>Для версии 4,2 Следуйте инструкциям в разделе [Управление экземплярами BareMetal с помощью портал Azure](../../../baremetal-infrastructure/workloads/sap/baremetal-infrastructure-portal.md) .
 
 В этом документе рассматривается способ представления [крупных экземпляров Hana](./hana-overview-architecture.md) в [портал Azure](https://portal.azure.com) и действия, выполняемые с помощью портал Azure с развернутыми единицами крупных экземпляров Hana. Видимость крупных экземпляров HANA в портал Azure предоставляется через поставщик ресурсов Azure для крупных экземпляров HANA, которые в настоящее время доступны в общедоступной предварительной версии.
 
@@ -162,7 +162,7 @@ az provider register --namespace Microsoft.HanaOnAzure
 
 Когда вы ответили на вопросы и указали дополнительные сведения, вы можете перейти к следующему шагу, чтобы ознакомиться с запросом на поддержку и отправить его.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Мониторинг SAP HANA на крупных экземплярах Azure](./troubleshooting-monitoring.md)
 - [Мониторинг и устранение неполадок со стороны HANA](./hana-monitor-troubleshoot.md)

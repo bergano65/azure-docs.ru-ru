@@ -4,12 +4,12 @@ description: Узнайте, как устранить распростране�
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: d157dd6b3347c8fbfd8712fa20d52cedb425f47f
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 02ff1581bafe62a092be87d16df51c7ca8c020b4
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751484"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830944"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -439,7 +439,7 @@ E1114 09:58:55.367731 1 static_autoscaler.go:239] Failed to fix node group sizes
 
 ### <a name="why-do-upgrades-to-kubernetes-116-fail-when-using-node-labels-with-a-kubernetesio-prefix"></a>Почему при использовании меток узлов с префиксом kubernetes.io происходит сбой обновления до Kubernetes 1,16
 
-Начиная с Kubernetes [1,16](https://v1-16.docs.kubernetes.io/docs/setup/release/notes/) , kubelet к узлам могут быть применены [только определенные подмножества меток с префиксом kubernetes.IO](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/0000-20170814-bounding-self-labeling-kubelets.md#proposal) . AKS не может удалить активные метки от вашего имени без согласия, так как это может привести к простою рабочих нагрузок.
+Начиная с Kubernetes [1,16](https://v1-16.docs.kubernetes.io/docs/setup/release/notes/) , kubelet к узлам могут быть применены [только определенные подмножества меток с префиксом kubernetes.IO](https://v1-18.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/) . AKS не может удалить активные метки от вашего имени без согласия, так как это может привести к простою рабочих нагрузок.
 
 В результате, чтобы устранить эту ошибку, можно выполнить следующие действия.
 

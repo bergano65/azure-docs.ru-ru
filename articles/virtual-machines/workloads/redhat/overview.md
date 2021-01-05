@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 02/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 3e4a770a33f5cdb3c3b2de09cbcb8431b2fc3fbb
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 09612ff3d86c669801f9e824d367a2b9a5bb10ac
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968661"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830655"
 ---
 # <a name="red-hat-workloads-on-azure"></a>Рабочие нагрузки Red Hat в Azure
 
@@ -36,7 +36,7 @@ Azure предлагает разные образы RHEL с оплатой по
 ### <a name="red-hat-gold-images"></a>Образы Red Hat Gold
 
 Azure также предлагает образы Red Hat Gold (`rhel-byos`). Эти образы полезны тем клиентам, у которых уже есть подписки Red Hat и которые хотят использовать их в Azure. Чтобы использовать существующие подписки Red Hat для доступа к облаку Red Hat, их необходимо включить в Azure. Доступ к этим образам предоставляется автоматически, если подписки Red Hat включены для доступа к облаку и соответствуют требованиям доступа. Использование этих образов позволяет клиенту избежать двойной оплаты, которая может происходить при использовании образов с оплатой по мере использования.
-* Узнайте, как [включить подписки Red Hat для облачного доступа с помощью Azure](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs).
+* Узнайте, как [включить подписки Red Hat для облачного доступа с помощью Azure](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/enabling-and-maintaining-subs_cloud-access).
 * Узнайте, как [размещать образы Red Hat Gold на портале Azure, в Azure CLI или командлете PowerShell](./byos.md).
 
 > [!NOTE]

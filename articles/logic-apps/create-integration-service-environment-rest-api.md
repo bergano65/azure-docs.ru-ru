@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 12/05/2020
-ms.openlocfilehash: 783431c4888a68e24cf3d2603c541c4797ea65d8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.date: 12/29/2020
+ms.openlocfilehash: 34a5dfb44ee78245b56c1774701f48b3b8a494df
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741105"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827484"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Создание среды службы интеграции (ISE) с помощью REST API Logic Apps 
 
@@ -69,9 +69,7 @@ ms.locfileid: "96741105"
 
 В тексте запроса укажите определение ресурса для использования при создании интегрированной среды сценариев, включая сведения о дополнительных возможностях, которые необходимо включить в интегрированной среде сценариев, например:
 
-* Чтобы создать интегрированную среду сценариев, разрешающую использование самозаверяющего сертификата, установленного в `TrustedRoot` расположении, включите `certificates` объект в раздел описания интегрированной среды `properties` , как описано в этой статье ниже.
-
-  Чтобы включить эту возможность для существующей интегрированной среды сценариев, можно отправить запрос на исправление только для `certificates` объекта. Дополнительные сведения об использовании самозаверяющих сертификатов см. [в разделе безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests).
+* Чтобы создать интегрированную среду сценариев, позволяющую использовать самозаверяющий сертификат и сертификат, выданный центром сертификации предприятия, установленным в `TrustedRoot` расположении, включите `certificates` объект в раздел описания ISE `properties` , как описано в этой статье ниже.
 
 * Чтобы создать интегрированную среду сценариев, использующую назначенное системой или назначенное пользователем управляемое удостоверение, включите `identity` объект с типом управляемого удостоверения и другими необходимыми сведениями в определение интегрированной среды, как описано в этой статье далее.
 
@@ -123,7 +121,7 @@ ms.locfileid: "96741105"
             }
          ]
       },
-      // Include `certificates` object to enable self-signed certificate support
+      // Include `certificates` object to enable self-signed certiificate and certificate issued by Enterprise Certificate Authority
       "certificates": {
          "testCertificate": {
             "publicCertificate": "{base64-encoded-certificate}",
@@ -183,6 +181,45 @@ ms.locfileid: "96741105"
             "publicCertificate": "LS0tLS1CRUdJTiBDRV...",
             "kind": "TrustedRoot"
          }
+      }
+   }
+}
+```
+## <a name="add-custom-root-certificates"></a>Добавление пользовательских корневых сертификатов
+
+Интегрированная среда сценариев часто используется для подключения к пользовательским службам в виртуальной сети или локальной среде. Эти пользовательские службы часто защищаются сертификатом, выданным пользовательским корневым центром сертификации, например центром сертификации предприятия или самозаверяющим сертификатом. Дополнительные сведения об использовании самозаверяющих сертификатов см. [в разделе безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests). Чтобы интегрированная среда сценариев успешно подключались к этим службам через протокол TLS, интегрированной среде сценариев требуется доступ к этим корневым сертификатам. Чтобы обновить интегрированную среду сценариев с помощью пользовательского доверенного корневого сертификата, выполните этот `PATCH` запрос HTTPS:
+
+`PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01`
+
+Перед выполнением этой операции ознакомьтесь с приведенными ниже замечаниями.
+
+* Обязательно отправьте корневой сертификат *и* все промежуточные сертификаты. Максимальное число сертификатов — 20.
+
+* Отправка корневых сертификатов — это операция замены, при которой Последняя отправка перезаписывает предыдущие передачи. Например, если вы отправляете запрос, который отправляет один сертификат, а затем отправляете другой запрос на отправку другого сертификата, в интегрированной среде сценариев используется только второй сертификат. Если необходимо использовать оба сертификата, добавьте их вместе в один и тот же запрос.  
+
+* Отправка корневых сертификатов — это асинхронная операция, которая может занять некоторое время. Чтобы проверить состояние или результат, можно отправить `GET` запрос, используя тот же универсальный код ресурса (URI). Ответное сообщение содержит `provisioningState` поле, которое возвращает `InProgress` значение, когда операция передачи все еще работает. Если `provisioningState` значение равно `Succeeded` , операция передачи завершена.
+
+#### <a name="request-body-syntax-for-adding-custom-root-certificates"></a>Синтаксис текста запроса для добавления пользовательских корневых сертификатов
+
+Ниже приведен синтаксис текста запроса, описывающий свойства, используемые при добавлении корневых сертификатов.
+
+```json
+{
+   "id": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.Logic/integrationServiceEnvironments/{ISE-name}",
+   "name": "{ISE-name}",
+   "type": "Microsoft.Logic/integrationServiceEnvironments",
+   "location": "{Azure-region}",
+   "properties": {
+      "certificates": {
+         "testCertificate1": {
+            "publicCertificate": "{base64-encoded-certificate}",
+            "kind": "TrustedRoot"
+         },
+         "testCertificate2": {
+            "publicCertificate": "{base64-encoded-certificate}",
+            "kind": "TrustedRoot"
+         }
+      }
    }
 }
 ```

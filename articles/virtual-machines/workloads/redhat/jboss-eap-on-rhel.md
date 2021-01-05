@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.assetid: 8a4df7bf-be49-4198-800e-db381cda98f5
 ms.date: 10/30/2020
-ms.openlocfilehash: bab84b12c871c621b5a317ba8b47f9b18c91bff3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: bd6ff46807c22309679ba7e8518685bb05cc77e2
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500195"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830723"
 ---
 # <a name="deploy-enterprise-java-applications-to-azure-with-jboss-eap-on-red-hat-enterprise-linux"></a>Развертывание корпоративных приложений Java в Azure с помощью JBoss EAP на Red Hat Enterprise Linux
 
@@ -152,7 +152,7 @@ JBoss EAP также может работать в режиме кластер
 Чтобы использовать BYOS для ОС RHEL, необходимо иметь действующую подписку Red Hat с правами для использования ОС RHEL в Azure. Перед развертыванием этого ОС RHEL с моделью BYOS выполните следующие предварительные требования:
 
 1. Убедитесь, что у вас есть права на ОС RHEL и JBoss EAP, подключенные к подписке Red Hat.
-2. Авторизуйте идентификатор подписки Azure, чтобы использовать образы RHEL BYOS. Следуйте инструкциям [документации по управлению подписками Red Hat](https://access.redhat.com/documentation/en/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs), чтобы завершить процесс, который включает следующие действия:
+2. Авторизуйте идентификатор подписки Azure, чтобы использовать образы RHEL BYOS. Следуйте инструкциям [документации по управлению подписками Red Hat](https://access.redhat.com/documentation/red_hat_subscription_management/1/), чтобы завершить процесс, который включает следующие действия:
 
    1. Включите Microsoft Azure в качестве поставщика на панели мониторинга Red Hat Cloud Access.
 
@@ -160,7 +160,7 @@ JBoss EAP также может работать в режиме кластер
 
    1. Включите новые продукты для Cloud Access в Microsoft Azure.
     
-   1. Активируйте образы Red Hat Gold для подписки Azure. Дополнительную информацию см. в разделе [Образы Red Hat Gold в Microsoft Azure](https://access.redhat.com/documentation/en/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-gold-image-azure).
+   1. Активируйте образы Red Hat Gold для подписки Azure. Дополнительную информацию см. в разделе [Образы Red Hat Gold в Microsoft Azure](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/cloud-access-gold-images_cloud-access#proc_using-gold-images-azure_cloud-access).
 
    1. Подождите, пока в подписке Azure будут доступны образы Red Hat Gold. Эти образы обычно стают доступными в течение трех часов после отправки.
     
@@ -212,7 +212,7 @@ JBoss EAP также может работать в режиме кластер
   ```
 
   ```
-  az group deployment create --resource-group <my-resource-group> --template-uri <raw link to the template which can be obtained from github>
+  az deployment group create --resource-group <my-resource-group> --template-uri <raw link to the template which can be obtained from github>
   ```
 
   Сведения об установке и настройке Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).

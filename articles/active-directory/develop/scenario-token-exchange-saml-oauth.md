@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: kenwith
 ms.reviewer: paulgarn
-ms.openlocfilehash: 16de95e177f6be1b5bb2517b5ae3ca595cfb5766
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 5841af4225f88b36fe727b60a597af208ac830f5
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96939206"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827178"
 ---
 # <a name="microsoft-identity-platform-token-exchange-scenarios-with-saml-and-oidcoauth"></a>Сценарии обмена маркерами платформы идентификации Microsoft Identity с SAML и OIDC/OAuth
 
@@ -33,4 +33,4 @@ SAML и OpenID Connect Connect (OIDC)/OAuth — это популярные пр
 > Рекомендуемой библиотекой для добавления поведения OIDC/OAuth является библиотека проверки подлинности Майкрософт (MSAL). Дополнительные сведения о MSAL см. в статье [Обзор библиотеки проверки подлинности Майкрософт (MSAL)](msal-overview.md). Предыдущая библиотека называлась Библиотека проверки подлинности Active Directory (ADAL), но не рекомендуется, так как MSAL заменяет ее.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)
+- [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

@@ -10,13 +10,13 @@ ms.author: aashishb
 author: aashishb
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 872958f87e7d75427d5939aed73314920cfaf3ea
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.custom: how-to
+ms.openlocfilehash: 86cd5a5cbbb17dc3d3e4d56e4267be2718f6081d
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631097"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830876"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинного обучения Azure.
 
@@ -73,14 +73,17 @@ ms.locfileid: "97631097"
 
 ## <a name="enable-tls-and-deploy"></a><a id="enable"></a> Включение TLS и развертывание
 
-Чтобы развернуть (или повторно развернуть) службу с включенным протоколом TLS, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
+**Для развертывания AKS** можно включить завершение TLS при [создании или присоединении кластера AKS](how-to-create-attach-kubernetes.md) в рабочей области AML. Во время развертывания модели AKS можно отключить завершение TLS с помощью объекта конфигурации развертывания. в противном случае для всех развертываний моделей AKS по умолчанию будет включено завершение TLS во время создания или присоединения кластера AKS.
+
+Для развертывания ACI можно включить завершение TLS во время развертывания модели с помощью объекта конфигурации развертывания.
+
 
 ### <a name="deploy-on-azure-kubernetes-service"></a>Развертывание в службе Kubernetes Azure
 
   > [!NOTE]
   > Сведения в этом разделе также применяются при развертывании безопасной веб-службы для конструктора. Если вы не знакомы с использованием пакета SDK для Python, см. статью [что такое пакет SDK для машинное обучение Azure для Python?](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
 
-Как **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** , так и **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** возвращают объект конфигурации, имеющий метод **ENABLE_SSL** , и для включения TLS можно использовать метод **enable_ssl** .
+При [создании или присоединении кластера AKS](how-to-create-attach-kubernetes.md) в рабочей области AML можно включить завершение TLS с помощью объектов конфигурации **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** и **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** . Оба метода возвращают объект конфигурации, имеющий метод **enable_ssl** , и для включения TLS можно использовать метод **enable_ssl** .
 
 TLS можно включить с помощью сертификата Майкрософт или специального сертификата, приобретенного в центре сертификации. 
 
