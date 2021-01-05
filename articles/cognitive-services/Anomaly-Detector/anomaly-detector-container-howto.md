@@ -12,12 +12,12 @@ ms.date: 09/28/2020
 ms.author: mbullwin
 ms.custom: cog-serv-seo-aug-2020
 keywords: локальная среда, Docker, контейнер, потоковая передача, алгоритмы
-ms.openlocfilehash: 911eb993ea5bb3dcce63057efc2d56d91d5a136b
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 70e5950f6577ce2cca2f28be070f3ba372d46a7e
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364400"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862312"
 ---
 # <a name="install-and-run-docker-containers-for-the-anomaly-detector-api"></a>Установка и запуск контейнеров DOCKER для API детектора аномалий 
 
@@ -41,11 +41,11 @@ ms.locfileid: "94364400"
 
 Прежде чем использовать контейнеры детекторов аномалий, необходимо выполнить следующие предварительные требования:
 
-|Обязательно|Цель|
+|Обязательно|Назначение|
 |--|--|
-|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
+|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
-|Ресурс детектора аномалий |Для использования контейнеров необходимо следующее:<br><br>Ресурс _детектора аномалий_ Azure для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **детекторов аномалий** " и "ключи" портал Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора**|
+|Ресурс детектора аномалий |Для использования контейнеров необходимо следующее:<br><br>Ресурс _детектора аномалий_ Azure для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **детекторов аномалий** " и "ключи" портал Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}**: один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}**: конечная точка, указанная на странице **обзора**|
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
@@ -59,7 +59,7 @@ ms.locfileid: "94364400"
 
 В следующей таблице описаны минимальные и Рекомендуемые ядра ЦП и память, выделяемые для контейнера детекторов обнаружения аномалий.
 
-| QPS (запросов в секунду) | Минимальные требования | Рекомендуется |
+| QPS (запросов в секунду) | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | 10 QPS | 4 ядра, 1 ГБ памяти | 8-ядерный 2 ГБ памяти |
 | 20 QPS | 8 ядер, 2 ГБ памяти | 16-ядерный 4 ГБ памяти |
@@ -174,10 +174,6 @@ ApiKey={API_KEY}
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](anomaly-detector-container-configuration.md).
-
-<!--blogs/samples/video coures -->
-
-[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
 ## <a name="summary"></a>Сводка
 

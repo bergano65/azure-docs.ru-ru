@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: fafa4c1e8c12ce26a90cfdf9df940823abf5ff25
-ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
+ms.openlocfilehash: 54da62ce961156b64c917b448557c17e7516e222
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857449"
+ms.locfileid: "97862133"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "97857449"
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/действие*
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/перезагрузка/действие*
 
-Обратите внимание, что для создания вычислительного экземпляра пользователь должен иметь разрешения для следующих действий:
+Чтобы создать вычислительный экземпляр, необходимо иметь разрешения на следующие действия:
 * *Microsoft.MachineLearningServices/workspaces/computes/write*
 * *Microsoft. Мачинелеарнингсервицес/workspaces/Чекккомпутенамеаваилабилити/действие*
 

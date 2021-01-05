@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/15/2020
+ms.date: 01/04/2020
 ms.author: b-juche
-ms.openlocfilehash: 2b567eba43cfec9af05ebea262b3f6bd61b00259
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 919a9831731a8f7c8065f2f1c496691ae33ba659
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562554"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861980"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
@@ -99,6 +99,7 @@ ms.locfileid: "97562554"
 * [Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files](../virtual-desktop/create-fslogix-profile-container.md)
 * [Виртуальный рабочий стол Windows в масштабе предприятия](/azure/architecture/example-scenario/wvd/windows-virtual-desktop)
 * [Рекомендации Microsoft Фслогикс для корпоративного Azure NetApp Files](/azure/architecture/example-scenario/wvd/windows-virtual-desktop-fslogix#azure-netapp-files-best-practices)
+* [Настройка Azure NetApp Files для подключения к приложению MSIX](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/setting-up-azure-netapp-files-for-msix-app-attach-step-by-step/m-p/1990021)
 
 ## <a name="hpc-solutions"></a>Высокопроизводительные решения
 

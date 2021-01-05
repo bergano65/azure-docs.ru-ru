@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: aahi
 keywords: локальный, Docker, контейнер, анализ тональности, обработка на естественном языке
-ms.openlocfilehash: 088cf407320dcf8ef6705c57d86836531d9bdfe6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f785a5e6749e46b34723af11b4d61a98b5d94384
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965172"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862497"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
 
@@ -44,7 +44,7 @@ ms.locfileid: "94965172"
 
 |Обязательно|Назначение|
 |--|--|
-|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
+|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
 |Ресурс API анализа текста |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure [анализ текста](../../cognitive-services-apis-create-account.md) для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор" и "Ключи" API анализа текста на портале Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}**: один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}**: конечная точка, указанная на странице **обзора**|
 
@@ -85,7 +85,7 @@ ms.locfileid: "94965172"
 
 [!INCLUDE [docker-pull-language-detection-container](../includes/docker-pull-language-detection-container.md)]
 
-# <a name="text-analytics-for-health-preview"></a>[Анализ текста для работоспособности (Предварительная версия)](#tab/healthcare)
+# <a name="text-analytics-for-health-preview"></a>[Анализ текста для здравоохранения (предварительная версия).](#tab/healthcare)
 
 [!INCLUDE [docker-pull-health-container](../includes/docker-pull-health-container.md)]
 
@@ -119,7 +119,7 @@ ms.locfileid: "94965172"
 
 [!INCLUDE [docker-run-language-detection-container](../includes/docker-run-language-detection-container.md)]
 
-# <a name="text-analytics-for-health-preview"></a>[Анализ текста для работоспособности (Предварительная версия)](#tab/healthcare)
+# <a name="text-analytics-for-health-preview"></a>[Анализ текста для здравоохранения (предварительная версия).](#tab/healthcare)
 
 [!INCLUDE [docker-run-health-container](../includes/docker-run-health-container.md)]
 
@@ -155,11 +155,7 @@ ms.locfileid: "94965172"
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](../text-analytics-resource-container-config.md).
 
-<!--blogs/samples/video course -->
-
-[!INCLUDE [Discoverability of more container information](../../../../includes/cognitive-services-containers-discoverability.md)]
-
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье вы узнали основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Анализа текста. В разделе "Сводка" сделайте следующее.
 
@@ -167,7 +163,7 @@ ms.locfileid: "94965172"
    * *анализ тональности*;
    * *Извлечение ключевых фраз (Предварительная версия)* 
    * *Распознавание языка (Предварительная версия)*
-   * *Анализ текста для работоспособности (Предварительная версия)*
+   * *Анализ текста для здравоохранения (предварительная версия).*
 * Образы контейнеров загружаются из реестра контейнеров Майкрософт (мкр) или из репозитория предварительной версии.
 * Образы контейнеров выполняются в Docker.
 * Указав узел URI контейнера, пакет SDK или REST API можно использовать для вызова операций в контейнерах Анализа текста.
