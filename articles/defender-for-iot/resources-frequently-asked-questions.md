@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2020
 ms.author: rkarlin
-ms.openlocfilehash: 5e7eabd44ea8c56fbb102f9e48812745a31de62a
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 0c303adb4ee7c7551c6b389ec169d92a661a63bc
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089202"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835029"
 ---
 # <a name="azure-defender-for-iot-frequently-asked-questions"></a>Часто задаваемые вопросы о защитнике Azure для IoT
 
@@ -79,15 +79,11 @@ ms.locfileid: "92089202"
 
 Датчики и агенты продолжают работать и хранить данные при условии, что устройство работает. Данные хранятся в кэше сообщений безопасности в соответствии с конфигурацией размера. Когда устройство восстанавливает подключение, отправка сообщений безопасности возобновляется.
 
-
-
-
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как приступить к работе с защитником для Интернета вещей, см. в следующих статьях:
 
 - Ознакомьтесь с [обзором](overview.md) защитника для IOT
-- Проверьте [Предварительные требования службы](service-prerequisites.md)
-- Узнайте больше о том, как [начать работу](getting-started.md)
+- Проверка [предварительных требований к системе](quickstart-system-prerequisites.md)
+- Дополнительные сведения о начале [работы с защитником для Интернета вещей](getting-started.md)
 - Сведения [о защитнике для оповещений системы безопасности IOT](concept-security-alerts.md)

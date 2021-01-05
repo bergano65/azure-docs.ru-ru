@@ -3,14 +3,14 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Сведения о центре безопасности
+    - name: Что такое Центр безопасности Azure?
+      href: security-center-introduction.md
+    - name: Доступность
       items:
-        - name: Что такое Центр безопасности Azure?
-          href: security-center-introduction.md
         - name: Поддерживаемые платформы
           displayName: coverage
           href: security-center-os-coverage.md
-        - name: Покрытие компонентов для виртуальных машин
+        - name: 'Охват в зависимости от ОС, типа компьютера и облака'
           href: security-center-services.md
         - name: Покрытие компонентов для ресурсов Azure PaaS
           href: features-paas.md
@@ -110,6 +110,8 @@
       href: tutorial-security-incident.md
     - name: Обеспечение соответствия нормативным требованиям на высоком уровне
       href: security-center-compliance-dashboard.md
+    - name: Управление политиками безопасности
+      href: tutorial-security-policy.md
 - name: Основные понятия
   items:
     - name: Управление состоянием безопасности облака
@@ -120,11 +122,6 @@
           href: secure-score-security-controls.md
         - name: Обзор рекомендаций по обеспечению безопасности
           href: security-center-recommendations.md
-        - name: Обзор политик безопасности
-          href: tutorial-security-policy.md
-        - name: Встроенные политики безопасности
-          displayName: 'samples, policy'
-          href: ./policy-reference.md
         - name: Использование рекомендаций для повышения уровня безопасности
           href: security-center-using-recommendations.md
         - name: Базовые средства безопасности
@@ -224,14 +221,9 @@
         - name: Защита узлов Docker
           displayName: containers
           href: harden-docker-hosts.md
-    - name: Использование Azure Defender для SQL
-      items:
-        - name: Настройка Azure Defender для SQL на виртуальных машинах Azure
+        - name: Использование Azure Defender для SQL
           href: defender-for-sql-usage.md
           displayName: 'hybrid, arc'
-        - name: Настройка политики защиты информации SQL
-          displayName: 'sql, database, data discovery'
-          href: security-center-info-protection-policy.md
     - name: Использование Azure Defender для реестров контейнеров
       items:
         - name: Проверка образов реестра на наличие уязвимостей
@@ -281,6 +273,9 @@
       href: security-center-investigation-user-data.md
     - name: Визуальный контроль на уровне клиента
       href: security-center-management-groups.md
+    - name: Настройка политики защиты информации SQL
+      displayName: 'sql, database, data discovery'
+      href: security-center-info-protection-policy.md
 - name: Справочник
   items:
     - name: Интерфейсы REST API
@@ -297,6 +292,9 @@
           href: faq-vms.md
         - name: Существующие пользователи Azure Log Analytics
           href: faq-azure-monitor-logs.md
+    - name: Встроенные политики безопасности
+      displayName: 'samples, policy'
+      href: policy-reference.md
     - name: Блог о стратегии развития Azure
       href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: Оценка защиты конечной точки и рекомендации
