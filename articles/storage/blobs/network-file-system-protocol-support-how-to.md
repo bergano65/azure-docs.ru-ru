@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 97b52159684eca9be59ccc711f6d2f19b5eb8d49
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: b61ce696c28a2c72a2cd3d0eb2d2fde0022dbb01
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906120"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897745"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Подключение хранилища BLOB-объектов с помощью протокола NFS 3,0 (Предварительная версия)
 
@@ -83,7 +83,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNFS
 |Параметр | Производительность Premium | Стандартная производительность  
 |----|---|---|
 |Расположение|Все доступные регионы |Один из следующих регионов: Восточная Австралия, Центральная Корея и Юго-Центральная часть США   
-|Производительность|Premium| Standard
+|Производительность|Premium| Стандартный
 |Тип учетной записи|BlockBlobStorage| Общего назначения версии 2
 |Репликация|Локально избыточное хранилище (LRS)| Локально избыточное хранилище (LRS)
 |Метод подключения|Общедоступная конечная точка (выбранные сети) или частная конечная точка |Общедоступная конечная точка (выбранные сети) или частная конечная точка
@@ -134,7 +134,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNFS
 
    ![Клиент для сетевой файловой системы](media/network-file-system-protocol-how-to/client-for-network-files-system-feature.png)
 
-2. Подключите контейнер с помощью команды [Mount](/windows-server/administration/windows-commands/mount) .
+2. Откройте окно **командной строки** (cmd.exe). Затем подключите контейнер с помощью команды [Mount](/windows-server/administration/windows-commands/mount) .
 
    ```
    mount -o nolock <storage-account-name>.blob.core.windows.net:/<storage-account-name>/<container-name> *
@@ -157,7 +157,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNFS
 
 ## <a name="resolve-common-issues"></a>Устранение распространенных проблем
 
-|Вопрос или ошибка | Разрешение|
+|Вопрос или ошибка | Решение|
 |---|---|
 |`Access denied by server while mounting`|Убедитесь, что клиент работает в поддерживаемой подсети. См. раздел [Поддерживаемые сетевые расположения](network-file-system-protocol-support.md#supported-network-connections).|
 |`No such file or directory`| Убедитесь, что подключенный контейнер был создан после того, как подтвердилась регистрация этой возможности. См. [Шаг 2. Убедитесь, что компонент зарегистрирован](#step-2-verify-that-the-feature-is-registered). Кроме того, обязательно введите команду mount и ее параметры непосредственно в терминале. Если вы скопируете любую часть этой команды в терминал из другого приложения, скрытые символы в скопированных данных могут вызвать ошибку.|

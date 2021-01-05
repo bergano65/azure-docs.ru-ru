@@ -1,19 +1,19 @@
 ---
 title: Создание и передача виртуального жесткого диска с операционной системой SUSE Linux в Azure
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD-файл) Azure, содержащий операционную систему SUSE Linux.
-author: gbowerman
+author: danielsollondon
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 03/12/2018
-ms.author: guybo
-ms.openlocfilehash: 6a8c60c51842ae67c12101189a4e265b775bcb77
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/01/2020
+ms.author: danis
+ms.openlocfilehash: 36af60082c575dfb19e71710fbdd8e3bf181bf96
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498461"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97896231"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Подготовка виртуальной машины SLES или openSUSE для Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "96498461"
 ## <a name="use-suse-studio"></a>Использование SUSE Studio
 [SUSE Studio](https://studioexpress.opensuse.org/) можно с легкостью использовать для создания образов SLES и openSUSE для Azure и Hyper-V, а также для управления этими образами. Этот подход рекомендуется для настройки собственных образов SLES и openSUSE.
 
-Вместо того чтобы создать собственный виртуальный жесткий диск, SUSE публикует образы BYOS (использование собственной подписки) для SLES в каталоге [VM Depot](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/04/using-and-contributing-vms-to-vm-depot.pdf).
+В качестве альтернативы созданию собственного виртуального жесткого диска SUSE также публикует образы BYOS (присвоить собственные подписки) для SLES на [виртуальной машине хранилище](https://www.microsoft.com/research/wp-content/uploads/2016/04/using-and-contributing-vms-to-vm-depot.pdf).
 
 ## <a name="prepare-suse-linux-enterprise-server-for-azure"></a>Подготовка SUSE Linux Enterprise Server для Azure
 1. На центральной панели диспетчера Hyper-V выберите виртуальную машину.
@@ -46,6 +46,7 @@ ms.locfileid: "96498461"
 
     ```console
     # SUSEConnect -p sle-module-public-cloud/15.2/x86_64  (SLES 15 SP2)
+    # sudo zypper refresh
     # sudo zypper install python-azure-agent
     # sudo zypper install cloud-init
     ```
@@ -65,8 +66,8 @@ ms.locfileid: "96498461"
 7. Обновление конфигурации waagent и Cloud-init
 
     ```console
-    # sudo sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
-    # sudo sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+    # sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
+    # sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
 
     # sudo sh -c 'printf "datasource:\n  Azure:" > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg'
     # sudo sh -c 'printf "reporting:\n  logging:\n    type: log\n  telemetry:\n    type: hyperv" > /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg'
@@ -103,23 +104,53 @@ ms.locfileid: "96498461"
 
 13. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки. Обычно это сделано по умолчанию.
 
-14. Не создавайте пространство подкачки на диске с ОС.
-    
-    Агент Linux для Azure может автоматически настраивать пространство подкачки с использованием диска на локальном ресурсе, подключенном к виртуальной машине после подготовки для работы в среде Azure. Следует отметить, что локальный диск ресурсов является *временным* диском и должен быть очищен при отмене подготовки виртуальной машины. После установки агента Linux для Azure (см. предыдущий шаг) измените следующие параметры в /etc/waagent.conf соответствующим образом:
+14. Переключить конфигурацию
+ 
+    Не создавайте пространство подкачки на диске ОС.
 
-    ```config-conf
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
+    Ранее агент Linux для Azure использовал автоматическую настройку области подкачки с помощью локального диска ресурсов, подключенного к виртуальной машине после подготовки виртуальной машины в Azure. Однако это теперь обрабатывается с помощью Cloud-init, поэтому **не следует** использовать агент Linux для форматирования диска ресурсов. Создайте файл подкачки, измените следующие параметры соответствующим образом `/etc/waagent.conf` :
+
+    ```console
+    # sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    # sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
     ```
+
+    Если требуется подключить, отформатировать и создать подкачку, можно выполнить одно из следующих действий.
+    * Передайте это в качестве конфигурации Cloud-init при каждом создании виртуальной машины.
+    * Используйте директиву Cloud-init, помогут в образ, который будет выполнять это при каждом создании виртуальной машины:
+
+        ```console
+        cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+        #cloud-config
+        # Generated by Azure cloud image build
+        disk_setup:
+          ephemeral0:
+            table_type: mbr
+            layout: [66, [33, 82]]
+            overwrite: True
+        fs_setup:
+          - device: ephemeral0.1
+            filesystem: ext4
+          - device: ephemeral0.2
+            filesystem: swap
+        mounts:
+          - ["ephemeral0.1", "/mnt"]
+          - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+        EOF
+        ```
 
 15. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
 
     ```console
-    # sudo waagent -force -deprovision
+    # sudo rm -rf /var/lib/waagent/
+    # sudo rm -f /var/log/waagent.log
+
+    # waagent -force -deprovision+user
+    # rm -f ~/.bash_history
+    
+
     # export HISTSIZE=0
+
     # logout
     ```
 16. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
@@ -130,7 +161,7 @@ ms.locfileid: "96498461"
 2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
 3. В консоли оболочки выполните команду`zypper lr`. Если эта команда возвращает результат следующего вида, то репозитории настроены надлежащим образом, и никаких изменений не требуется (обратите внимание, что номера версий могут отличаться):
 
-   | # | Псевдоним                 | Название                  | Включен | Обновить
+   | # | Псевдоним                 | Имя                  | Активировано | Обновить
    | - | :-------------------- | :-------------------- | :------ | :------
    | 1 | Облако: Tools_13.1      | Облако: Tools_13.1      | Да     | Да
    | 2 | openSUSE_13 openSUSE_13.1_OSS     | openSUSE_13 openSUSE_13.1_OSS     | Да     | Да

@@ -1,19 +1,19 @@
 ---
 title: Решение Azure VMware с помощью Клаудсимпле — настройте высокий уровень доступности с локального компьютера на Клаудсимпле VPN-шлюз.
 description: В этой статье описано, как настроить подключение с высокой доступностью из локальной среды к VPN-шлюзу Клаудсимпле, для которого включена высокая доступность.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6e3118814eacc6cc63b5db59bd7f1877c1d347dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80805aaa172518c40c7ad123ca24361ee0f15e69
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77025271"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895705"
 ---
 # <a name="configure-a-high-availability-connection-from-on-premises-to-cloudsimple-vpn-gateway"></a>Настройка подключения с высокой доступностью из локальной среды в VPN-шлюз Клаудсимпле
 
@@ -180,7 +180,7 @@ crypto map mymap 1 set ikev1 transform-set devtest39
 
 Определите криптографический профиль, в котором указываются протоколы и алгоритмы для идентификации, проверки подлинности и шифрования, которые будут использоваться для настройки туннелей VPN на этапе 1 в IKEv1.
 
-Последовательно выберите **сеть**  >  **развернуть профили сети**  >  Параметры**шифрования IKE**  >  **Добавить**, настройте следующие поля и нажмите кнопку **ОК**.
+Последовательно выберите **сеть**  >  **развернуть профили сети**  >  Параметры **шифрования IKE**  >  **Добавить**, настройте следующие поля и нажмите кнопку **ОК**.
 
 * Название Введите любое имя профиля шифрования IKE.
 * DH-группа. Нажмите кнопку **Добавить** и выберите соответствующую группу Диффи-Хелмана.

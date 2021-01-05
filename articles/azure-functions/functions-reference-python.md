@@ -4,12 +4,12 @@ description: Сведения о разработке функций на язы
 ms.topic: article
 ms.date: 11/4/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 8254abda68949e6884143316d4b29b07ade129dc
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: cf1d8f89de61a548f6c542d6d8a73fde93675e95
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96167851"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895416"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -299,87 +299,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 ## <a name="scaling-and-performance"></a>Масштабирование и производительность
 
-Важно понимать, как работают функции и как эта производительность влияет на масштабирование приложения функции. Это особенно важно при проектировании высокопроизводительных приложений. Ниже приведены несколько факторов, которые следует учитывать при проектировании, написании и настройке приложений функций.
-
-### <a name="horizontal-scaling"></a>Горизонтальное масштабирование
-По умолчанию Функции Azure автоматически отслеживают нагрузку на приложение и при необходимости создают дополнительные экземпляры узлов для Python. Функции используют встроенные пороговые значения для различных типов триггеров, чтобы решить, когда следует добавлять экземпляры, например возраст сообщений и размер очереди для QueueTrigger. Эти пороговые значения не настраиваются пользователем. Дополнительные сведения см. в статье, [посвященной планам с оплатой по мере использования и планам "Премиум"](functions-scale.md#how-the-consumption-and-premium-plans-work).
-
-### <a name="improving-throughput-performance"></a>Повышение производительности пропускной способности
-
-Ключом к повышению производительности является понимание того, как ваше приложение использует ресурсы и может настраивать приложение-функцию соответствующим образом.
-
-#### <a name="understanding-your-workload"></a>Основные сведения о рабочей нагрузке
-
-Конфигурации по умолчанию подходят для большинства приложений функций Azure. Однако производительность приложений можно повысить путем применения конфигураций на основе профиля рабочей нагрузки. Первым шагом является понимание типа выполняемой рабочей нагрузки.
-
-| | Рабочая нагрузка с привязкой ввода-вывода | Рабочая нагрузка, привязанная к ЦП |
-|--| -- | -- |
-|**Характеристики приложения функции**| <ul><li>Приложение должно выполнять много одновременных вызовов.</li> <li> Приложение обрабатывает большое количество событий ввода-вывода, таких как сетевые вызовы и дисковые операции чтения и записи.</li> </ul>| <ul><li>Приложение выполняет длительные вычисления, такие как изменение размера изображения.</li> <li>Приложение выполняет преобразование данных.</li> </ul> |
-|**Примеры**| <ul><li>Веб-API</li><ul> | <ul><li>Обработка данных</li><li> Определение машинного обучения</li><ul>|
-
-
-> [!NOTE]
->  Так как рабочие нагрузки реальных реальных функций чаще всего являются сочетанием операций ввода-вывода и ЦП, рекомендуется профилировать рабочую нагрузку при реалистичных рабочих нагрузках.
-
-
-#### <a name="performance-specific-configurations"></a>Конфигурации, зависящие от производительности
-
-После знакомства с профилем рабочей нагрузки приложения функции ниже приведены конфигурации, которые можно использовать для повышения производительности функций.
-
-##### <a name="async"></a>Async
-
-Поскольку [Python является однопотоковым временем выполнения](https://wiki.python.org/moin/GlobalInterpreterLock), экземпляр узла для Python может одновременно обрабатывать только один вызов функции. Для приложений, обрабатывающих большое количество событий ввода-вывода и/или связанных с вводом-выводом, производительность можно значительно повысить, запустив функции асинхронно.
-
-Чтобы выполнить функцию в асинхронном режиме, используйте инструкцию `async def`, которая запускает функцию с [asyncio](https://docs.python.org/3/library/asyncio.html) напрямую:
-
-```python
-async def main():
-    await some_nonblocking_socket_io_op()
-```
-Ниже приведен пример функции с триггером HTTP, который использует HTTP-клиент [аиохттп](https://pypi.org/project/aiohttp/) :
-
-```python
-import aiohttp
-
-import azure.functions as func
-
-async def main(req: func.HttpRequest) -> func.HttpResponse:
-    async with aiohttp.ClientSession() as client:
-        async with client.get("PUT_YOUR_URL_HERE") as response:
-            return func.HttpResponse(await response.text())
-
-    return func.HttpResponse(body='NotFound', status_code=404)
-```
-
-
-Функция без ключевого слова `async` выполняется автоматически в пуле потоков asyncio:
-
-```python
-# Runs in an asyncio thread-pool
-
-def main():
-    some_blocking_socket_io()
-```
-
-Чтобы добиться полной выгоды от асинхронного выполнения функций, в коде для операции ввода-вывода или библиотеки, используемой кодом, должна также быть реализована асинхронная реализация. Использование синхронных операций ввода-вывода в функциях, определенных как асинхронные, может отрицательно **понизить** общую производительность.
-
-Вот несколько примеров клиентских библиотек, в которых реализована асинхронная модель:
-- [аиохттп](https://pypi.org/project/aiohttp/) -HTTP клиент/сервер для асинЦио 
-- [API потоков](https://docs.python.org/3/library/asyncio-stream.html) — основные примитивы для работы с сетевым подключением высокого уровня с поддержкой асинхронных и ожидающих выполнения
-- [Очередь Янус](https://pypi.org/project/janus/) — потокобезопасная очередь с поддержкой АсинЦио для Python
-- привязки [пизмк](https://pypi.org/project/pyzmq/) -Python для ZeroMQ
- 
-
-##### <a name="use-multiple-language-worker-processes"></a>Использование многоязыковых рабочих процессов
-
-По умолчанию каждый экземпляр узла функций имеет рабочий процесс с одним языком. Вы можете увеличить количество рабочих процессов на узел (до 10) с помощью параметра приложения [FUNCTIONS_WORKER_PROCESS_COUNT](functions-app-settings.md#functions_worker_process_count). Затем Функции Azure пытаются равномерно распределять одновременные вызовы функций между этими рабочими процессами.
-
-Для приложений, привязанных к ЦП, необходимо задать количество языковых рабочих ролей, равное или большему количеству ядер, доступных для каждого приложения функции. Дополнительные сведения см. в разделе [номера SKU доступных экземпляров](functions-premium-plan.md#available-instance-skus). 
-
-Приложения, привязанные к вводу-выводу, также могут увеличить количество рабочих процессов за пределами числа доступных ядер. Помните, что установка слишком большого количества рабочих процессов может повлиять на общую производительность из-за большего количества требуемых переключений контекста. 
-
-FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу, создаваемому функциями при масштабировании приложения для удовлетворения потребности.
-
+Рекомендации по масштабированию и повышению производительности для приложений функций Python см. в [статье масштабирование и производительность Python](python-scale-performance-reference.md).
 
 ## <a name="context"></a>Контекст
 
@@ -694,8 +614,8 @@ getattr(azure.functions, '__version__', '< 1.2.1')
 
 |  Среда выполнения функций  | Версия Debian | Версии Python |
 |------------|------------|------------|
-| Версия 2.x | Stretch  | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python36/python36.Dockerfile)<br/>[Python 3,7](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python37/python37.Dockerfile) |
-| Версия 3.x | бустер | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python36/python36.Dockerfile)<br/>[Python 3,7](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python37/python37.Dockerfile)<br />[Python 3.8](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python38/python38.Dockerfile) |
+| Версия 2.x | Stretch  | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python36/python36.Dockerfile)<br/>[Python 3.7](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python37/python37.Dockerfile) |
+| Версия 3.x | бустер | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python36/python36.Dockerfile)<br/>[Python 3.7](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python37/python37.Dockerfile)<br />[Python 3.8](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python38/python38.Dockerfile) |
 
 ## <a name="cross-origin-resource-sharing"></a>Предоставление общего доступа к ресурсам независимо от источника
 

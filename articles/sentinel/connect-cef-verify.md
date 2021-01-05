@@ -9,17 +9,17 @@ editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/01/2020
+ms.date: 01/05/2021
 ms.author: yelevin
-ms.openlocfilehash: 974418a1b3c1e7fe93b2f6839c16169e5bd5abc5
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 557f53e39781406674b9903dcf0bb3cb536cd804
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697005"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897490"
 ---
 # <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
@@ -44,7 +44,7 @@ ms.locfileid: "94697005"
 1. Выполните следующий скрипт на стороне сервера пересылки журналов (вместо заполнителя используйте идентификатор рабочей области), чтобы проверить подключение между решением безопасности, пересылкой журнала и Sentinel Azure. Этот сценарий проверяет, что управляющая программа прослушивает правильные порты, что пересылка настроена правильно и что ничто не блокирует обмен данными между управляющей программой и агентом Log Analytics. Он также отправляет фиктивные сообщения "Тесткоммоневентформат" для проверки сквозного подключения. <br>
 
     ```bash
-    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]` 
+    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]
     ```
 
    - Вы можете получить сообщение с запросом на выполнение команды для устранения проблемы с **сопоставлением поля *компьютер***. Дополнительные сведения см. в описании [в скрипте проверки](#mapping-command) .
@@ -207,8 +207,7 @@ ms.locfileid: "94697005"
     - Файл конфигурации: `/etc/syslog-ng/conf.d/security-config-omsagent.conf`
 
         ```bash
-        filter f_oms_filter {match(\"CEF\|ASA\" ) ;};
-        destination oms_destination {tcp(\"127.0.0.1\" port("25226"));};
+        filter f_oms_filter {match(\"CEF\|ASA\" ) ;};destination oms_destination {tcp(\"127.0.0.1\" port(25226));};
         log {source(s_src);filter(f_oms_filter);destination(oms_destination);};
         ```
 
@@ -244,7 +243,7 @@ ms.locfileid: "94697005"
     ```
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

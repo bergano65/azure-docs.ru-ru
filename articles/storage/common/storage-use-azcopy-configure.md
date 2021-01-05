@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: a54c77844498beb4fd052153cbcf8cbe498cdb75
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 23c62562299768afb5f5d87bbcf4f7b19b3235ce
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132216"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897864"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configure, optimize, and troubleshoot AzCopy (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -28,13 +28,13 @@ AzCopy — это служебная программа командной ст
 
 ## <a name="configure-proxy-settings"></a>Настройка параметров прокси
 
-Чтобы настроить параметры прокси-сервера для AzCopy, задайте `https_proxy` переменную среды. Если AzCopy выполняется в среде Windows, средство AzCopy автоматически определяет параметры прокси-сервера, поэтому в Windows этот параметр не нужно использовать. Если вы укажете этот параметр в Windows, он переопределит автоматически определяемое значение.
+Чтобы настроить параметры прокси-сервера для AzCopy, задайте `HTTPS_PROXY` переменную среды. Если AzCopy выполняется в среде Windows, средство AzCopy автоматически определяет параметры прокси-сервера, поэтому в Windows этот параметр не нужно использовать. Если вы укажете этот параметр в Windows, он переопределит автоматически определяемое значение.
 
 | Операционная система | Get-Help  |
 |--------|-----------|
-| **Windows** | В командной строке используйте `set https_proxy=<proxy IP>:<proxy port>`.<br> В PowerShell используйте `$env:https_proxy="<proxy IP>:<proxy port>"`.|
-| **Linux** | `export https_proxy=<proxy IP>:<proxy port>` |
-| **macOS** | `export https_proxy=<proxy IP>:<proxy port>` |
+| **Windows** | В командной строке используйте `set HTTPS_PROXY=<proxy IP>:<proxy port>`.<br> В PowerShell используйте `$env:HTTPS_PROXY="<proxy IP>:<proxy port>"`.|
+| **Linux** | `export HTTPS_PROXY=<proxy IP>:<proxy port>` |
+| **macOS** | `export HTTPS_PROXY=<proxy IP>:<proxy port>` |
 
 В настоящее время AzCopy не поддерживает прокси-серверы, для которых требуется проверка подлинности с помощью NTLM или Kerberos.
 

@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: c9b624a1efc72bebec8547e8ecf9f3bf9fc99863
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 0558513d88eb5ffb03484e9d3bd8e37b2c9a0dcf
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680660"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895025"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -38,6 +38,21 @@ ms.locfileid: "97680660"
   - Key Vault экземпляр с сертификатом. См. раздел [создание Key Vault](../../key-vault/general/quick-create-portal.md)
   - Виртуальная машина или VMSS должна иметь назначенное [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md) .
   - Политика доступа Key Vault должна быть установлена с секретами `get` и `list` разрешениями на управляемое удостоверение VM/VMSS для получения части сертификата, относящейся к секрету. См. статью [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md) и [назначение политики доступа Key Vault](../../key-vault/general/assign-access-policy-cli.md).
+  -  VMSS должен иметь следующий параметр Identity: ` 
+  "identity": {
+  "type": "UserAssigned",
+  "userAssignedIdentities": {
+  "[parameters('userAssignedIdentityResourceId')]": {}
+  }
+  }
+  `
+  
+ - Расширение AKV должно иметь этот параметр: `
+                 "authenticationSettings": {
+                    "msiEndpoint": "[parameters('userAssignedIdentityEndpoint')]",
+                    "msiClientId": "[reference(parameters('userAssignedIdentityResourceId'), variables('msiApiVersion')).clientId]"
+                  }
+   `
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -138,6 +153,17 @@ ms.locfileid: "97680660"
     }
 ```
 
+### <a name="extension-dependency-ordering"></a>Упорядочение зависимостей расширений
+Key Vaultное расширение виртуальной машины поддерживает упорядочение расширений, если оно настроено. По умолчанию расширение сообщает о том, что оно успешно запущено, как только начнется опрос. Однако можно настроить ожидание до успешной загрузки полного списка сертификатов, прежде чем сообщать об успешном запуске. Если другие расширения зависят от установки полного набора сертификатов перед запуском, то включение этого параметра позволит этому расширению объявить зависимость от расширения Key Vault. Это предотвратит запуск этих расширений до тех пор, пока не будут установлены все сертификаты, от которых они зависят. Расширение будет повторять начальную загрузку неограниченно долго и останется в `Transitioning` состоянии.
+
+Чтобы включить эту функцию, установите следующие значения:
+```
+"secretsManagementSettings": {
+    "requireInitialSync": true,
+    ...
+}
+```
+> Метим Использование этой функции несовместимо с шаблоном ARM, который создает удостоверение, назначенное системой, и обновляет политику Key Vaultного доступа с этим удостоверением. Это приведет к взаимоблокировке, так как политика доступа к хранилищу невозможно обновить до тех пор, пока не будут запущены все расширения. Вместо этого следует использовать *одно назначенное пользователем удостоверение MSI* и предварительно список ACL для хранилищ с этим удостоверением перед развертыванием.
 
 ## <a name="azure-powershell-deployment"></a>Развертывание с помощью Azure PowerShell
 > [!WARNING]
@@ -217,7 +243,7 @@ Azure PowerShell можно использовать для развертыва
   - оно должно существовать во время развертывания; 
   - Политика доступа Key Vault должна быть установлена для удостоверения виртуальной машины или VMSS с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md) и [назначение политики доступа Key Vault](../../key-vault/general/assign-access-policy-cli.md).
 
-### <a name="frequently-asked-questions"></a>Вопросы и ответы
+### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 * Существует ли ограничение на количество Обсерведцертификатес, которые можно настроить?
   Нет, Key Vaultное расширение виртуальной машины не ограничивает число Обсерведцертификатес.
@@ -247,7 +273,7 @@ Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 
 Символьные ссылки или символических ссылок по сути являются расширенными сочетаниями клавиш. Чтобы избежать наблюдения за папкой и автоматического получения последнего сертификата, вы можете использовать эту символьную ссылку `([VaultName].[CertificateName])` для получения последней версии сертификата в Linux.
 
-### <a name="frequently-asked-questions"></a>Вопросы и ответы
+### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 * Существует ли ограничение на количество Обсерведцертификатес, которые можно настроить?
   Нет, Key Vaultное расширение виртуальной машины не ограничивает число Обсерведцертификатес.

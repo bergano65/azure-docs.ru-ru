@@ -1,19 +1,19 @@
 ---
 title: Решение VMware для Azure от Клаудсимпле — Настройка таблиц и правил брандмауэра
 description: Описание настройки таблиц и правил брандмауэра частного облака для ограничения трафика в подсетях и виртуальных ЛС.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/15/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 986f4b0da7254ebac3725a704f32af785c72fbcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32dcfb0c6cd26b5f34afad328db8f383fa1c2a6f
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85846863"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895637"
 ---
 # <a name="set-up-firewall-tables-and-rules-for-private-clouds"></a>Настройка таблиц и правил брандмауэра для частных облаков
 
@@ -72,7 +72,7 @@ ms.locfileid: "85846863"
 
 После определения таблицы брандмауэра можно указать подсети, к которым применяются правила в таблице.
 
-1. На странице **Network**  >  **таблицы сетевого брандмауэра** выберите таблицу брандмауэра.
+1. На странице   >  **таблицы сетевого брандмауэра** выберите таблицу брандмауэра.
 2. Откройте вкладку **подключенные виртуальные ЛС/подсеть** .
 3. Щелкните **присоединить к виртуальной ЛС или подсети**.
 4. Выберите частное облако и виртуальную ЛС. Отобразятся связанные имя подсети и блок CIDR.

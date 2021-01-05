@@ -1,18 +1,18 @@
 ---
 title: Создание и передача виртуального жесткого диска Oracle Linux
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD-файл) Azure, содержащий операционную систему Oracle Linux.
-author: gbowerman
+author: danielsollondon
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 12/10/2019
-ms.author: guybo
-ms.openlocfilehash: 4e9f87ec4a0df28b14bca8f5a44dfe9388e8ff03
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/01/2020
+ms.author: danis
+ms.openlocfilehash: b63591db7f72e655839ee6f575e49bbf873abc5b
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500535"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895467"
 ---
 # <a name="prepare-an-oracle-linux-virtual-machine-for-azure"></a>Подготовка виртуальной машины Oracle Linux для Azure
 
@@ -23,9 +23,10 @@ ms.locfileid: "96500535"
 * Hyper-V и Azure поддерживают Oracle Linux с ядром Unbreakable Enterprise Kernel (UEK) или ядром, совместимым с Red Hat.
 * Oracle UEK2 не поддерживается в Hyper-V и Azure, поскольку не включает необходимые драйверы.
 * Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd.
-* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. Для дисков данных можно использовать [LVM](/previous-versions/azure/virtual-machines/linux/configure-lvm?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](/previous-versions/azure/virtual-machines/linux/configure-raid?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+* **Требуется поддержка ядра для монтирования файловых систем UDF.** При первой загрузке в Azure конфигурация подготовки передается в виртуальную машину Linux через UDF-носитель, подключенный к гостевой машине. Агент Azure Linux должен иметь возможность подключать файловую систему UDF для считывания конфигурации и подготовки виртуальной машины.
+* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. Для дисков данных можно использовать [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 * Версии ядра Linux ниже 2.6.37 не поддерживают NUMA в Hyper-V с виртуальными машинами большего размера. Эта проблема влияет в основном на дистрибутивы более ранних версий, в которых используется вышестоящее ядро Red Hat 2.6.32, и была исправлена в Oracle Linux 6.6 и более поздних версий.
-* Не настраивайте раздел подкачки на диске с ОС. Можно настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны далее.
+* Не настраивайте раздел подкачки на диске с ОС. Дополнительные сведения описаны далее.
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. См. дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 * Убедитесь, что `Addons` включен репозиторий. Измените файл `/etc/yum.repos.d/public-yum-ol6.repo` (Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo` (Oracle Linux 7) и замените в нем строку `enabled=0` строкой `enabled=1` в разделе **[ol6_addons]** или **[ol7_addons]** .
 
@@ -207,34 +208,106 @@ ms.locfileid: "96500535"
     ```
 
 11. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки.  Обычно это сделано по умолчанию.
-12. Установите агент Linux для Azure, выполнив следующую команду:
+12. Установите агент Linux для Azure и зависимости:
 
-    ```console
-    # sudo yum install WALinuxAgent
-    # sudo systemctl enable waagent
+    ```bash
+    sudo yum install WALinuxAgent
+    sudo systemctl enable waagent
     ```
 
-13. Не создавайте пространство подкачки на диске с ОС.
-    
-    Агент Linux для Azure может автоматически настраивать пространство подкачки с использованием диска на локальном ресурсе, подключенном к виртуальной машине после подготовки для работы в среде Azure. Следует отметить, что локальный диск ресурсов является *временным* диском и должен быть очищен при отмене подготовки виртуальной машины. После установки агента Linux для Azure (см. предыдущий шаг) измените следующие параметры в /etc/waagent.conf соответствующим образом.
+13. Установка Cloud-init для решения подготовки
 
-    ```config-conf
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
+    ```console
+    yum install -y cloud-init cloud-utils-growpart gdisk hyperv-daemons
+
+    # Configure waagent for cloud-init
+    sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
+    sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
+
+
+    echo "Adding mounts and disk_setup to init stage"
+    sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
+    sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+
+    echo "Allow only Azure datasource, disable fetching network setting via IMDS"
+    cat > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg <<EOF
+    datasource_list: [ Azure ]
+    datasource:
+    Azure:
+        apply_network_config: False
+    EOF
+
+    if [[ -f /mnt/resource/swapfile ]]; then
+    echo Removing swapfile - RHEL uses a swapfile by default
+    swapoff /mnt/resource/swapfile
+    rm /mnt/resource/swapfile -f
+    fi
+
+    echo "Add console log file"
+    cat >> /etc/cloud/cloud.cfg.d/05_logging.cfg <<EOF
+
+    # This tells cloud-init to redirect its stdout and stderr to
+    # 'tee -a /var/log/cloud-init-output.log' so the user can see output
+    # there without needing to look on the console.
+    output: {all: '| tee -a /var/log/cloud-init-output.log'}
+    EOF
+
     ```
 
-14. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
-    
+14. Конфигурация переключения не создает пространство подкачки на диске операционной системы.
+
+    Ранее агент Linux для Azure использовал автоматическую настройку области подкачки с помощью локального диска ресурсов, подключенного к виртуальной машине после подготовки виртуальной машины в Azure. Однако это теперь обрабатывается с помощью Cloud-init, поэтому **не следует** использовать агент Linux для форматирования диска ресурсов. Создайте файл подкачки, измените следующие параметры соответствующим образом `/etc/waagent.conf` :
+
     ```console
-    # sudo waagent -force -deprovision
+    sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+    ```
+
+    Если требуется подключить, отформатировать и создать подкачку, можно выполнить одно из следующих действий.
+    * Передавайте это в качестве конфигурации Cloud-init при каждом создании виртуальной машины.
+    * Используйте директиву Cloud-init, помогут в образ, который будет выполнять это при каждом создании виртуальной машины:
+
+        ```console
+        cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+        #cloud-config
+        # Generated by Azure cloud image build
+        disk_setup:
+          ephemeral0:
+            table_type: mbr
+            layout: [66, [33, 82]]
+            overwrite: True
+        fs_setup:
+          - device: ephemeral0.1
+            filesystem: ext4
+          - device: ephemeral0.2
+            filesystem: swap
+        mounts:
+          - ["ephemeral0.1", "/mnt"]
+          - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+        EOF
+        ```
+
+
+15. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
+
+    ```console
+    # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
+    # skip the deprovision step
+    # sudo rm -rf /var/lib/waagent/
+    # sudo rm -f /var/log/waagent.log
+
+    # waagent -force -deprovision+user
+    # rm -f ~/.bash_history
+    
+
     # export HISTSIZE=0
+
     # logout
     ```
 
-15. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
+16. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы можете создавать новые виртуальные машины в Azure с помощью VHD-файла системы Oracle Linux. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).

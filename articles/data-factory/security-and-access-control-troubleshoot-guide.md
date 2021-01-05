@@ -5,15 +5,15 @@ services: data-factory
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 11/19/2020
+ms.date: 01/05/2021
 ms.author: lle
 ms.reviewer: craigg
-ms.openlocfilehash: 51cb1a1a8151748fc9c6cd4c81da967424b52868
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: fac4f3029d783e9257d00466ddb9fc9741b0f5a2
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505160"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895654"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Устранение неполадок, связанных с управлением безопасностью и доступом в фабрике данных Azure
 
@@ -151,6 +151,16 @@ ms.locfileid: "97505160"
 Попробуйте включить доступ к общедоступной сети в пользовательском интерфейсе, как показано на следующем снимке экрана:
 
 ![Снимок экрана элемента управления "включено" для "разрешить доступ к общедоступной сети" в области "Сетевые подключения".](media/self-hosted-integration-runtime-troubleshoot-guide/enable-public-network-access.png)
+
+### <a name="pipeline-runtime-varies-when-basing-on-different-ir"></a>Среда выполнения конвейера зависит от того, где основан на разных IR
+
+#### <a name="symptoms"></a>Симптомы
+
+Простое переключение связанной службы в наборе данных выполняет те же действия конвейера, но значительно отличается от времени выполнения. Если набор данных основан на Integration Runtime управляемой виртуальной сети, то среднее для завершения выполнения занимает более 2 минут, но при использовании Integration Runtime по умолчанию выполнение занимает примерно 20 секунд.
+
+#### <a name="cause"></a>Причина
+
+Проверив сведения о выполнении конвейера, можно увидеть, что замедляют конвейер работает в управляемой виртуальной сети (виртуальная сеть) IR, а обычная — на Azure IR. По своей структуре управляемая виртуальная сеть использует больше времени в очереди, чем Azure IR, так как мы не будем обслуживать один расчетный узел на фабрику данных, поэтому для каждого действия копирования достаточно 2 минуты, и это происходит в основном при присоединении к виртуальной сети, а не Azure IR.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

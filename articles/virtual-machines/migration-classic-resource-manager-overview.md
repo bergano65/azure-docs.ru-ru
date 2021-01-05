@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: e7d013775861f290d532e0d7c132896ebeff8ae8
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 137670715af8b90d8a867459fa50249cd9be8e70
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680220"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897122"
 ---
 # <a name="platform-supported-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-linux"></a>Поддерживаемый платформой перенос ресурсов IaaS из классической модели в Azure Resource Manager в Linux
 
@@ -23,6 +23,8 @@ ms.locfileid: "97680220"
 
 
 В этой статье содержатся общие сведения о средстве миграции, поддерживаемых платформой, о переносе ресурсов из классической модели Service Manager Azure (ASM) в модель развертывания диспетчер ресурсов (ARM), а также сведения о подключении ресурсов из двух моделей развертывания, сосуществующих в подписке, с помощью шлюза "сеть — сеть" виртуальной сети. Дополнительные сведения о [Azure Resource Manager функциях и преимуществах см](../azure-resource-manager/management/overview.md). здесь. 
+
+ASM поддерживает два различных продукта вычислений: виртуальные машины Azure (классические), которые являются виртуальными машинами IaaS & [облачных службах Azure (классические)](https://docs.microsoft.com/azure/cloud-services/) , которые являются виртуальными машинами PaaS или веб-ролями. Этот документ говорит только о переносе виртуальных машин Azure (классическая модель).
 
 ## <a name="goal-for-migration"></a>Цель миграции
 Resource Manager позволяет развертывать сложные приложения с помощью шаблонов, настраивать виртуальные машины с помощью расширений виртуальных машин и внедрять управление доступом и добавление тегов. Azure Resource Manager позволяет выполнить масштабируемое параллельное развертывание виртуальных машин в группах доступности. Новая модель предоставляет также возможности независимого управления жизненным циклом вычислительных и сетевых ресурсов, а также ресурсов хранилища. И наконец, благодаря принудительному использованию виртуальных машин в виртуальной сети появилась возможность включать защиту по умолчанию.
@@ -145,7 +147,7 @@ Resource Manager позволяет развертывать сложные пр
 | Microsoft Dynamics Lifecycle Services |Виртуальные сети, содержащие виртуальные машины под управлением служб Dynamics Lifecycle Services |В настоящее время это не поддерживается. |
 | Служба управления Azure API |Виртуальные сети, содержащие развернутые службы управления API Azure. |В настоящее время это не поддерживается. Чтобы перенести виртуальную сеть IaaS, измените виртуальную сеть развернутой службы управления API. Эта операция не влечет за собой простой. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md)
 * [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)

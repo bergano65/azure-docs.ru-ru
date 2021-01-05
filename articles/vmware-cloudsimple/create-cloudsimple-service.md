@@ -1,19 +1,19 @@
 ---
 title: Решение VMware для Azure от Клаудсимпле — создание службы Клаудсимпле
 description: Узнайте, как создать службу Клаудсимпле в портал Azure. Прежде чем начать, проверьте требуемую конфигурацию.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 2a196e717dd6e02570e4bdf830a24ce342b47ece
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53f2d0fc9f73985bd70792c8c3b7607eb4c560fa
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88140553"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97896300"
 ---
 # <a name="create-the-azure-vmware-solution-by-cloudsimple-service"></a>Создание решения Azure VMware с помощью службы Клаудсимпле
 
@@ -29,7 +29,7 @@ ms.locfileid: "88140553"
 
 ## <a name="create-the-service"></a>Создание службы
 
-1. Выберите элемент **Все службы**.
+1. Выбор пункта **Все службы**.
 2. Выполните поиск по запросу **Клаудсимпле Services**.
     ![Поиск службы Клаудсимпле](media/create-cloudsimple-service-search.png)
 3. Выберите **Клаудсимпле Services (службы**).
@@ -45,7 +45,7 @@ ms.locfileid: "88140553"
 
 Служба будет создана и добавлена в список служб.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [подготовке узлов](create-nodes.md)
 * Узнайте, как [создать частное облако](create-private-cloud.md)

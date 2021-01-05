@@ -1,24 +1,26 @@
 ---
 title: Создание и передача виртуального жесткого диска Red Hat Enterprise Linux для использования в Azure
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD) Azure, содержащий операционную систему RedHat Linux.
-author: gbowerman
+author: danielsollondon
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
-ms.date: 05/17/2019
-ms.author: guybo
-ms.openlocfilehash: 8c352b9e6b067724fbfc00bf5b0338baf8514421
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/01/2020
+ms.author: danis
+ms.openlocfilehash: 065b4348675fcd48088fd26db0e0293eb2d7a387
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500501"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97896470"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Подготовка виртуальной машины на основе Red Hat для Azure
 В этой статье вы узнаете, как подготовить виртуальную машину Red Hat Enterprise Linux (RHEL) для использования в Azure. В статье описываются версии RHEL 6.7+ и 7.1+. Низкоуровневые оболочки для подготовки, о которых идет речь в этой статье, — это Hyper-V, Kernel-based Virtual Machine (KVM) и VMware. Подробнее о требованиях к участникам в программе Red Hat Cloud Access см. на [веб-сайте Red Hat Cloud Access](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) и странице [запуска RHEL в Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Способы автоматизации создания образов RHEL см. в разделе [Построитель образов Azure](./image-builder-overview.md).
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-hyper-v-manager"></a>Подготовка виртуальной машины под управлением Red Hat в диспетчере Hyper-V
+## <a name="hyper-v-manager"></a>В диспетчере Hyper-V
+
+В этом разделе показано, как подготовить виртуальную машину [RHEL 6](#rhel-6-using-hyper-v-manager) или [RHEL 7](#rhel-7-using-hyper-v-manager) с помощью диспетчера Hyper-V.
 
 ### <a name="prerequisites"></a>Предварительные требования
 В этом разделе предполагается, что вы уже получили ISO-файл с веб-сайта Red Hat и установили образ RHEL на виртуальный жесткий диск. Дополнительные сведения о том, как использовать диспетчер Hyper-V для установки образа операционной системы, см. в статье [Установка Hyper-V и создание виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11)).
@@ -28,12 +30,13 @@ ms.locfileid: "96500501"
 * Формат VHDX не поддерживается в Azure. В Azure поддерживается только формат фиксированного виртуального жесткого диска. Вы можете преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd. Если вы используете VirtualBox, при создании диска выберите **фиксированный размер** вместо динамически выделяемого (по умолчанию).
 * Azure поддерживает виртуальные машины Gen1 (Boot BIOS) & Gen2 (Загрузка UEFI).
 * Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ.
-* Диспетчер логических томов (LVM) поддерживается и может использоваться для дисков операционной системы или дисков с данными на виртуальных машинах Azure. Однако, как правило, для дисков операционной системы рекомендуется использовать стандартные разделы, а не LVM. Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой идентичной виртуальной машине в целях устранения неполадок. См. также документацию по [LVM](/previous-versions/azure/virtual-machines/linux/configure-lvm?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) и [RAID](/previous-versions/azure/virtual-machines/linux/configure-raid?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* Требуется поддержка ядра для подключения файловых систем UDF. При первой загрузке в Azure UDF-носитель, подключенный к гостевой машине, передает конфигурацию подготовки в виртуальную машину Linux. Агент Azure Linux должен иметь возможность подключать файловую систему UDF для считывания конфигурации и подготовки виртуальной машины.
-* Не настраивайте раздел swap на диске операционной системы. Вы можете настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны ниже.
+* Диспетчер логических томов (LVM) поддерживается и может использоваться для дисков операционной системы или дисков с данными на виртуальных машинах Azure. Однако, как правило, для дисков операционной системы рекомендуется использовать стандартные разделы, а не LVM. Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой идентичной виртуальной машине в целях устранения неполадок. См. также документацию по [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) и [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+* **Требуется поддержка ядра для подключения файловых систем UDF**. При первой загрузке в Azure UDF-носитель, подключенный к гостевой машине, передает конфигурацию подготовки в виртуальную машину Linux. Агент Linux для Azure должен иметь возможность подключить файловую систему UDF для считывания конфигурации и подготовки виртуальной машины без этого, подготовка завершится ошибкой.
+* Не настраивайте раздел swap на диске операционной системы. Дополнительные сведения описаны ниже.
+
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. Дополнительные сведения можно найти в инструкциях ниже. См. также дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 
-### <a name="prepare-a-rhel-6-virtual-machine-from-hyper-v-manager"></a>Подготовка виртуальной машины RHEL 6 в диспетчере Hyper-V
+### <a name="rhel-6-using-hyper-v-manager"></a>RHEL 6 с использованием диспетчера Hyper-V
 
 1. В диспетчере Hyper-V выберите виртуальную машину.
 
@@ -156,7 +159,7 @@ ms.locfileid: "96500501"
 1. Щелкните **действие**  >  **Завершение работы** в диспетчере Hyper-V. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 
-### <a name="prepare-a-rhel-7-virtual-machine-from-hyper-v-manager"></a>Подготовка виртуальной машины RHEL 7 в диспетчере Hyper-V
+### <a name="rhel-7-using-hyper-v-manager"></a>RHEL 7 с помощью диспетчера Hyper-V
 
 1. В диспетчере Hyper-V выберите виртуальную машину.
 
@@ -235,25 +238,89 @@ ms.locfileid: "96500501"
     # sudo systemctl enable waagent.service
     ```
 
-1. Не создавайте пространство подкачки на диске ОС.
-
-    Агент Linux для Azure может автоматически настраивать размер области подкачки с использованием локального диска ресурсов, подключенного к виртуальной машине после ее подготовки в Azure. Обратите внимание, что локальный диск ресурсов является временным и может быть очищен, если виртуальная машина будет отменена. После установки агента Linux для Azure (см. предыдущий шаг) измените соответствующим образом следующие параметры в файле `/etc/waagent.conf`:
+1. Установка Cloud-init для решения подготовки
 
     ```console
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
+    yum install -y cloud-init cloud-utils-growpart gdisk hyperv-daemons
+
+    # Configure waagent for cloud-init
+    sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
+    sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+
+    echo "Adding mounts and disk_setup to init stage"
+    sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
+    sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+
+    echo "Allow only Azure datasource, disable fetching network setting via IMDS"
+    cat > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg <<EOF
+    datasource_list: [ Azure ]
+    datasource:
+    Azure:
+        apply_network_config: False
+    EOF
+
+    if [[ -f /mnt/resource/swapfile ]]; then
+    echo Removing swapfile - RHEL uses a swapfile by default
+    swapoff /mnt/resource/swapfile
+    rm /mnt/resource/swapfile -f
+    fi
+
+    echo "Add console log file"
+    cat >> /etc/cloud/cloud.cfg.d/05_logging.cfg <<EOF
+
+    # This tells cloud-init to redirect its stdout and stderr to
+    # 'tee -a /var/log/cloud-init-output.log' so the user can see output
+    # there without needing to look on the console.
+    output: {all: '| tee -a /var/log/cloud-init-output.log'}
+    EOF
+
     ```
 
+1. Конфигурация переключения не создает пространство подкачки на диске операционной системы.
+
+    Ранее агент Linux для Azure использовал автоматическую настройку области подкачки с помощью локального диска ресурсов, подключенного к виртуальной машине после подготовки виртуальной машины в Azure. Однако это теперь обрабатывается с помощью Cloud-init, поэтому **не следует** использовать агент Linux для форматирования диска ресурсов. Создайте файл подкачки, измените следующие параметры соответствующим образом `/etc/waagent.conf` :
+
+    ```console
+    ResourceDisk.Format=n
+    ResourceDisk.EnableSwap=n
+    ```
+
+    Если требуется подключить, отформатировать и создать подкачку, можно выполнить одно из следующих действий.
+    * Передавайте это в качестве конфигурации Cloud-init при каждом создании виртуальной машины.
+    * Используйте директиву Cloud-init, помогут в образ, который будет выполнять это при каждом создании виртуальной машины:
+
+        ```console
+        cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+        #cloud-config
+        # Generated by Azure cloud image build
+        disk_setup:
+          ephemeral0:
+            table_type: mbr
+            layout: [66, [33, 82]]
+            overwrite: True
+        fs_setup:
+          - device: ephemeral0.1
+            filesystem: ext4
+          - device: ephemeral0.2
+            filesystem: swap
+        mounts:
+          - ["ephemeral0.1", "/mnt"]
+          - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+        EOF
+        ```
 1. Чтобы отменить регистрацию подписки, выполните следующую команду:
 
     ```console
     # sudo subscription-manager unregister
     ```
 
-1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
+1. Отзыв
+
+    Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
 
     ```console
     # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
@@ -268,8 +335,11 @@ ms.locfileid: "96500501"
 1. Щелкните **действие**  >  **Завершение работы** в диспетчере Hyper-V. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-kvm"></a>Подготовка виртуальной машины под управлением Red Hat в KVM
-### <a name="prepare-a-rhel-6-virtual-machine-from-kvm"></a>Подготовка виртуальной машины RHEL 6 в KVM
+## <a name="kvm"></a>KVM
+
+В этом разделе показано, как использовать KVM для подготовки [RHEL 6](#rhel-6-using-kvm) или [RHEL 7](#rhel-7-using-kvm) дистрибутив к передаче в Azure. 
+
+### <a name="rhel-6-using-kvm"></a>RHEL 6 Использование KVM
 
 1. Скачайте образ KVM RHEL 6 с веб-сайта Red Hat.
 
@@ -420,7 +490,12 @@ ms.locfileid: "96500501"
     ```console
     # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
     # skip the deprovision step
-    # waagent -force -deprovision
+    # sudo rm -rf /var/lib/waagent/
+    # sudo rm -f /var/log/waagent.log
+
+    # waagent -force -deprovision+user
+    # rm -f ~/.bash_history
+    
 
     # export HISTSIZE=0
 
@@ -465,7 +540,7 @@ ms.locfileid: "96500501"
     ```
 
         
-### <a name="prepare-a-rhel-7-virtual-machine-from-kvm"></a>Подготовка виртуальной машины RHEL 7 в KVM
+### <a name="rhel-7-using-kvm"></a>RHEL 7 с помощью KVM
 
 1. Скачайте образ KVM RHEL 7 с веб-сайта Red Hat. В примере используется RHEL 7.
 
@@ -596,17 +671,13 @@ ms.locfileid: "96500501"
     # systemctl enable waagent.service
     ```
 
-1. Не создавайте пространство подкачки на диске ОС.
+1. Установка Cloud-init выполните действия, описанные в подразделе "Подготовка виртуальной машины RHEL 7 из диспетчера Hyper-V", шаг 12, "Установка Cloud-init для обработки подготовки".
 
-    Агент Linux для Azure может автоматически настраивать размер области подкачки с использованием локального диска ресурсов, подключенного к виртуальной машине после ее подготовки в Azure. Обратите внимание, что локальный диск ресурсов является временным и может быть очищен, если виртуальная машина будет отменена. После установки агента Linux для Azure (см. предыдущий шаг) измените соответствующим образом следующие параметры в файле `/etc/waagent.conf`:
+1. Переключить конфигурацию 
 
-    ```config-conf
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
-    ```
+    Не создавайте пространство подкачки на диске ОС.
+    Выполните действия, описанные в подразделе "Подготовка виртуальной машины RHEL 7 из диспетчера Hyper-V", шаг 13, "переключить конфигурацию"
+
 
 1. Отмените регистрацию подписки (при необходимости), выполнив следующую команду:
 
@@ -614,17 +685,10 @@ ms.locfileid: "96500501"
     # subscription-manager unregister
     ```
 
-1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
 
-    ```console
-    # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
-    # skip the deprovision step
-    # sudo waagent -force -deprovision
+1. Отзыв
 
-    # export HISTSIZE=0
-
-    # logout
-    ```
+    Выполните действия, описанные в подразделе "Подготовка виртуальной машины RHEL 7 из диспетчера Hyper-V", шаг 15, "отменить подготовку".
 
 1. Остановите работу виртуальной машины в KVM.
 
@@ -663,7 +727,10 @@ ms.locfileid: "96500501"
     # qemu-img convert -f raw -o subformat=fixed,force_size -O vpc rhel-7.4.raw rhel-7.4.vhd
     ```
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-vmware"></a>Подготовка виртуальной машины под управлением Red Hat в VMware
+## <a name="vmware"></a>VMware
+
+В этом разделе показано, как подготовить [RHEL 6](#rhel-6-using-vmware) или [RHEL 7](#rhel-6-using-vmware)  дистрибутив из VMware.
+
 ### <a name="prerequisites"></a>Предварительные требования
 В этом разделе предполагается, что вы уже установили виртуальную машину RHEL в VMWare. Дополнительные сведения об установке операционной системы на виртуальной машине VMware см. [здесь](https://partnerweb.vmware.com/GOSIG/home.html).
 
@@ -671,7 +738,7 @@ ms.locfileid: "96500501"
 * Не настраивайте раздел swap на диске операционной системы. Вы можете настроить агент Linux для создания файла подкачки на временном диске с ресурсами. Дополнительные сведения приведены ниже.
 * При создании виртуального жесткого диска выберите параметр **Store virtual disk as a single file**(Сохранять виртуальный диск как один файл).
 
-### <a name="prepare-a-rhel-6-virtual-machine-from-vmware"></a>Подготовка виртуальной машины RHEL 6 в VMware
+### <a name="rhel-6-using-vmware"></a>RHEL 6 с использованием VMware
 1. В RHEL 6 NetworkManager может мешать работе агента Linux для Azure. Установите пакет, выполнив следующую команду:
 
     ```console
@@ -788,7 +855,12 @@ ms.locfileid: "96500501"
     ```console
     # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
     # skip the deprovision step
-    # sudo waagent -force -deprovision
+    # sudo rm -rf /var/lib/waagent/
+    # sudo rm -f /var/log/waagent.log
+
+    # waagent -force -deprovision+user
+    # rm -f ~/.bash_history
+    
 
     # export HISTSIZE=0
 
@@ -830,7 +902,7 @@ ms.locfileid: "96500501"
     # qemu-img convert -f raw -o subformat=fixed,force_size -O vpc rhel-6.9.raw rhel-6.9.vhd
     ```
 
-### <a name="prepare-a-rhel-7-virtual-machine-from-vmware"></a>Подготовка виртуальной машины RHEL 7 в VMware
+### <a name="rhel-7-using-vmware"></a>RHEL 7 с использованием VMware
 1. Создайте или измените файл `/etc/sysconfig/network`, добавив следующий текст:
 
     ```config
@@ -918,17 +990,14 @@ ms.locfileid: "96500501"
     # sudo systemctl enable waagent.service
     ```
 
-1. Не создавайте пространство подкачки на диске ОС.
+1. Установка Cloud-init
 
-    Агент Linux для Azure может автоматически настраивать размер области подкачки с использованием локального диска ресурсов, подключенного к виртуальной машине после ее подготовки в Azure. Обратите внимание, что локальный диск ресурсов является временным и может быть очищен, если виртуальная машина будет отменена. После установки агента Linux для Azure (см. предыдущий шаг) измените соответствующим образом следующие параметры в файле `/etc/waagent.conf`:
+    Выполните действия, описанные в подразделе "Подготовка виртуальной машины RHEL 7 из диспетчера Hyper-V", шаг 12, "Установка Cloud-init для обработки подготовки".
 
-    ```config-conf
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
-    ```
+1. Переключить конфигурацию
+
+    Не создавайте пространство подкачки на диске ОС.
+    Выполните действия, описанные в подразделе "Подготовка виртуальной машины RHEL 7 из диспетчера Hyper-V", шаг 13, "переключить конфигурацию"
 
 1. Чтобы отменить регистрацию подписки, выполните следующую команду:
 
@@ -936,17 +1005,10 @@ ms.locfileid: "96500501"
     # sudo subscription-manager unregister
     ```
 
-1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
+1. Отзыв
 
-    ```console
-    # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
-    # skip the deprovision step
-    # sudo waagent -force -deprovision
+    Выполните действия, описанные в подразделе "Подготовка виртуальной машины RHEL 7 из диспетчера Hyper-V", шаг 15, "отменить подготовку".
 
-    # export HISTSIZE=0
-
-    # logout
-    ```
 
 1. Завершите работу виртуальной машины и конвертируйте файл VMDK в формат VHD.
 
@@ -983,8 +1045,11 @@ ms.locfileid: "96500501"
     # qemu-img convert -f raw -o subformat=fixed,force_size -O vpc rhel-7.4.raw rhel-7.4.vhd
     ```
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-an-iso-by-using-a-kickstart-file-automatically"></a>Подготовка виртуальной машины под управлением Red Hat из ISO-образа с помощью автоматического использования файла kickstart
-### <a name="prepare-a-rhel-7-virtual-machine-from-a-kickstart-file"></a>Подготовка виртуальной машины RHEL 7 из файла kickstart
+## <a name="kickstart-file"></a>Файл Kickstart
+
+В этом разделе показано, как подготовить RHEL 7 дистрибутив из ISO-образа с помощью файла Kickstart.
+
+### <a name="rhel-7-from-a-kickstart-file"></a>RHEL 7 из файла Kickstart
 
 1.  Создайте файл kickstart, который будет включать содержимое ниже, и сохраните его. Дополнительные сведения об установке kickstart см. [здесь](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
 
@@ -1075,12 +1140,46 @@ ms.locfileid: "96500501"
     # Enable waaagent at boot-up
     systemctl enable waagent
 
+    # Install cloud-init
+    yum install -y cloud-init cloud-utils-growpart gdisk hyperv-daemons
+
+    # Configure waagent for cloud-init
+    sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
+    sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+
+    echo "Adding mounts and disk_setup to init stage"
+    sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
+    sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+
     # Disable the root account
     usermod root -p '!!'
 
-    # Configure swap in WALinuxAgent
-    sed -i 's/^\(ResourceDisk\.EnableSwap\)=[Nn]$/\1=y/g' /etc/waagent.conf
-    sed -i 's/^\(ResourceDisk\.SwapSizeMB\)=[0-9]*$/\1=2048/g' /etc/waagent.conf
+    # Disabke swap in WALinuxAgent
+    ResourceDisk.Format=n
+    ResourceDisk.EnableSwap=n
+
+    # Configure swap using cloud-init
+    cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+    #cloud-config
+    # Generated by Azure cloud image build
+    disk_setup:
+    ephemeral0:
+        table_type: mbr
+        layout: [66, [33, 82]]
+        overwrite: True
+    fs_setup:
+    - device: ephemeral0.1
+        filesystem: ext4
+    - device: ephemeral0.2
+        filesystem: swap
+    mounts:
+    - ["ephemeral0.1", "/mnt"]
+    - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+    EOF
 
     # Set the cmdline
     sed -i 's/^\(GRUB_CMDLINE_LINUX\)=".*"$/\1="console=tty1 console=ttyS0 earlyprintk=ttyS0 rootdelay=300"/g' /etc/default/grub
@@ -1105,7 +1204,14 @@ ms.locfileid: "96500501"
     EOF
 
     # Deprovision and prepare for Azure if you are creating a generalized image
-    waagent -force -deprovision
+    sudo cloud-init clean --logs --seed
+    sudo rm -rf /var/lib/cloud/
+    sudo rm -rf /var/lib/waagent/
+    sudo rm -f /var/log/waagent.log
+
+    sudo waagent -force -deprovision+user
+    rm -f ~/.bash_history
+    export HISTSIZE=0
 
     %end
     ```
@@ -1116,7 +1222,7 @@ ms.locfileid: "96500501"
 
 1. Откройте параметры виртуальной машины:
 
-    a.  Подключите новый виртуальный жесткий диск к виртуальной машине. Выберите параметры **VHD Format** (Формат VHD) и **Фиксированный размер**.
+    а.  Подключите новый виртуальный жесткий диск к виртуальной машине. Выберите параметры **VHD Format** (Формат VHD) и **Фиксированный размер**.
 
     b.  Подключите установочный ISO-образ к DVD-дисководу.
 

@@ -8,17 +8,17 @@ ms.custom: references_regions
 ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
-ms.date: 09/02/2020
-ms.openlocfilehash: fd33ebebf35e0407f7ce39c609ee372a7d1d4a61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/04/2021
+ms.openlocfilehash: 48a0c3484b6cbeac4d71d3fbf383bb1c14466a9d
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250510"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897337"
 ---
 # <a name="supported-publisher-countries-and-regions"></a>Поддерживаемые страны и регионы издателя
 
-Чтобы опубликовать предложение в коммерческом магазине Майкрософт, у вас должно быть ваше проживания в одной из следующих стран или регионов.
+Чтобы опубликовать предложение в коммерческом магазине Майкрософт, ваша компания должна находиться в одной из следующих стран или регионов:
 
 - Афганистан
 - Аландские острова
@@ -134,7 +134,6 @@ ms.locfileid: "91250510"
 - Казахстан
 - Кения
 - Кирибати
-- Корея
 - Косово
 - Кувейт
 - Киргизстан
@@ -224,6 +223,7 @@ ms.locfileid: "91250510"
 - Сомали
 - Южно-Африканская Республика
 - Южная Джорджия и Южные Сандвичевы острова
+- Южная Корея (Республика Корея)
 - Южный Судан
 - Испания
 - Шри-Ланка

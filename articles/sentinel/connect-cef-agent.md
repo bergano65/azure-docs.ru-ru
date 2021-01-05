@@ -9,17 +9,17 @@ editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/01/2020
+ms.date: 01/05/2021
 ms.author: yelevin
-ms.openlocfilehash: ead878daaab977c77b3ab36f42ccfe4d01d7bc03
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 617599e3eb6dcca74324a7bdfd51e604904a2fa1
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548636"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897507"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Шаг 1. Развертывание сервера пересылки журналов
 
@@ -51,13 +51,13 @@ ms.locfileid: "96548636"
 1. В разделе **1,2 Установка СБОРЩИКА CEF на компьютере Linux** скопируйте ссылку, указанную в разделе **выполните следующий скрипт, чтобы установить и применить сборщик CEF**, или из приведенного ниже текста (применение идентификатора рабочей области и первичного ключа вместо заполнителей):
 
     ```bash
-    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]`
+    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]
     ```
 
 1. Во время выполнения скрипта убедитесь, что не получены сообщения об ошибках и предупреждения.
     - Вы можете получить сообщение с запросом на выполнение команды для устранения проблемы с сопоставлением поля *компьютер* . Дополнительные сведения см. в описании [в скрипте развертывания](#mapping-command) .
 
-1. Перейдите к [шагу 2. Настройка решения безопасности для пересылки сообщений CEF](connect-cef-solution-config.md) .
+1. Перейдите к [шагу 2. Настройка решения безопасности для пересылки сообщений CEF](connect-cef-solution-config.md).
 
 
 > [!NOTE]
@@ -189,8 +189,7 @@ ms.locfileid: "96548636"
         Содержимое `security-config-omsagent.conf` файла:
 
         ```bash
-        filter f_oms_filter {match(\"CEF\|ASA\" ) ;};
-        destination oms_destination {tcp(\"127.0.0.1\" port("25226"));};
+        filter f_oms_filter {match(\"CEF\|ASA\" ) ;};destination oms_destination {tcp(\"127.0.0.1\" port(25226));};
         log {source(s_src);filter(f_oms_filter);destination(oms_destination);};
         ```
 
@@ -222,7 +221,7 @@ ms.locfileid: "96548636"
         ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как развернуть агент Log Analytics, чтобы подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/30/2020
 ms.author: juliako
-ms.openlocfilehash: 9f7bf41bd864f6780eee00938f35bb34d2336eb5
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 7ce0807fa4cd068cfdd09ac9f78c5415da7e6437
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145758"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895348"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -29,6 +29,12 @@ ms.locfileid: "93145758"
 * Известные проблемы
 * Исправления ошибок
 * Нерекомендуемые функции
+
+##  <a name="december-2020"></a>Декабрь 2020? 
+
+### <a name="video-indexer-deployed-in-the-switzerland-west-and-switzerland-north"></a>Индексатор видео, развернутый в Западная Швейцария и Северная Швейцария
+
+Теперь можно создать платную учетную запись индексатора видео в Западная Швейцария и Северная Швейцария регионах.
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 
@@ -77,7 +83,7 @@ ms.locfileid: "93145758"
 
 Боковая панель также используется для пользовательских настроек и справки.
 
-## <a name="june-2020"></a>Июнь 2020 г.
+## <a name="june-2020"></a>июнь 2020 г.
 
 ### <a name="search-by-topics"></a>Поиск по темам
 
@@ -89,7 +95,7 @@ ms.locfileid: "93145758"
 
 Средство создания тегов меток Обновлено и теперь содержит больше визуальных меток, которые можно определить.
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="video-indexer-deployed-in-the-east-us"></a>Индексатор видео, развернутый в восточной части США
 
@@ -233,7 +239,7 @@ ms.locfileid: "93145758"
     
     Модель, в которой описывается тема, теперь поддерживает более глубокую детализацию таксономии IPTC. Ознакомьтесь с полными сведениями о [новых нововведениях на основе искусственного интеллекта в службах мультимедиа Azure](https://azure.microsoft.com/blog/azure-media-services-new-ai-powered-innovation/).
 
-## <a name="august-2019"></a>Август 2019 г.
+## <a name="august-2019"></a>Август 2019 г.
  
 ### <a name="video-indexer-deployed-in-uk-south"></a>Индексатор видео, развернутый в южная часть Соединенного Королевства
 

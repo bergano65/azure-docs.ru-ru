@@ -2,19 +2,19 @@
 title: Создание пулов ресурсов с помощью сопоставления подписок Azure
 titleSuffix: Azure VMware Solution by CloudSimple
 description: Описание создания пулов ресурсов для частного облака с помощью сопоставления подписок Azure
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 474ef03d482288b6bf7b5a8b1c224349a8e2d3a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7be4a4c601d3f33972c1e52596ef623116dcadd4
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77014969"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897082"
 ---
 # <a name="create-resource-pools-for-your-private-cloud-with-azure-subscription-mapping"></a>Создание пулов ресурсов для частного облака с помощью сопоставления подписок Azure
 Сопоставление подписок Azure позволяет создавать пулы ресурсов для частного облака из доступных пулов ресурсов vSphere. На портале Клаудсимпле вы можете просматривать подписку Azure для частных облаков и управлять ею.
