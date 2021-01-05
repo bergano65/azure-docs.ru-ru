@@ -5,17 +5,18 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 11/16/2020
+ms.date: 12/30/2020
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: c9dd39ffa68d8261f5c5d301d4c351c52b3f27c1
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 922ec6c4b579a657e7ee5e872148f8126ce175e2
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654598"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822290"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок в Фабрике данных Azure
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье рассматриваются распространенные методы устранения неполадок для внешних действий управления Фабрики данных Azure.
@@ -498,7 +499,7 @@ ms.locfileid: "94654598"
 
 - **Сообщение.** `There are duplicate files in the resource folder.`
 
-- **Причина.** Несколько одноименных файлов находятся в разных вложенных папках folderPath.
+- **Причина**: несколько файлов с одинаковыми именами находятся в разных вложенных папках FolderPath.
 
 - **Рекомендация**. Настраиваемые действия преобразовывают структуру папок в folderPath в плоскую структуру. Если вам нужно сохранить структуру папок, заархивируйте файлы и извлеките их в пакетной службе Azure с помощью команды unzip.
    
@@ -545,7 +546,6 @@ ms.locfileid: "94654598"
 - **Причина.** Возникла внутренняя ошибка при попытке чтения субъекта-службы или при создании экземпляра проверки подлинности MSI.
 
 - **Рекомендация**. Предоставьте субъект-службу, у которой есть разрешения на создание кластера HDInsight в указанной подписке, и повторите попытку. Проверьте [правильность настройки Управления удостоверениями](../hdinsight/hdinsight-managed-identities.md).
-
 
 ### <a name="error-code-2300"></a>Код ошибки: 2300
 
@@ -952,6 +952,16 @@ ms.locfileid: "94654598"
 
 - **Рекомендация**. Предоставьте учетную запись хранилища BLOB-объектов Azure в качестве дополнительного хранилища для связанной службы HDInsight по запросу.
 
+### <a name="ssl-error-when-adf-linked-service-using-hdinsight-esp-cluster"></a>Ошибка SSL при связанной службе ADF с помощью кластера HDInsight ESP
+
+- **Сообщение.** `Failed to connect to HDInsight cluster: 'ERROR [HY000] [Microsoft][DriverSupport] (1100) SSL certificate verification failed because the certificate is missing or incorrect.`
+
+- **Причина**. скорее всего, эта неполадка связана с надежным хранилищем системы.
+
+- **Решение**. можно перейти по пути **Microsoft Integration RUNTIME\4.0\SHARED\ODBC Дриверс\микрософт Hive ODBC дривер\либ** и открыть DriverConfiguration64.exe, чтобы изменить этот параметр.
+
+    ![Снимите флажок использовать системное хранилище доверия](./media/connector-troubleshoot-guide/system-trust-store-setting.png)
+
 ## <a name="web-activity"></a>Веб-действие
 
 ### <a name="error-code-2128"></a>Код ошибки: 2128
@@ -1005,7 +1015,7 @@ ms.locfileid: "94654598"
 
 Дополнительные сведения см. на странице [начала работы с Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler).
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="activity-stuck-issue"></a>Проблемы с задержанным действием
 
@@ -1015,7 +1025,7 @@ ms.locfileid: "94654598"
 
 **Сообщение об ошибке:**`The payload including configurations on activity/dataSet/linked service is too large. Please check if you have settings with very large value and try to reduce its size.`
 
-**Причина:** Полезные данные для каждого выполнения действия включают конфигурацию действия, связанные наборы данных и конфигурации связанных служб, если таковые имеются, и небольшую часть системных свойств, созданных для каждого типа действия. Ограничение такого размера полезных данных — 896KB, как упоминалось в разделе [ограничения фабрики данных](../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits) .
+**Причина:** Полезные данные для каждого выполнения действия включают конфигурацию действия, связанные наборы данных и конфигурации связанных служб, если таковые имеются, и небольшую часть системных свойств, созданных для каждого типа действия. Ограничение такого размера полезной нагрузки составляет 896 КБ, как упоминалось в разделе [ограничения фабрики данных](../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits) .
 
 **Рекомендации:** Это может быть вызвано тем, что вы передаете одно или несколько значений больших параметров из вышестоящего или внешнего выходного действия, особенно если передаются фактические данные между действиями в потоке управления. Проверьте, можно ли уменьшить размер значений больших параметров, или настройте логику конвейера, чтобы избежать передачи таких значений между действиями и обработки их внутри действия.
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: e3e2ca2eca0d258a14365edc97b98d0c827b0b6f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: d0d990bc273c33e94b82b597753b29361b1665e1
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546064"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821865"
 ---
 # <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Порты, используемые службами Apache Hadoop в HDInsight
 
@@ -55,11 +55,11 @@ HDInsight реализуется несколькими виртуальными
 | Storm |443 |HTTPS |Storm |Веб-интерфейс Storm. Дополнительные сведения см. в статье [Развертывание и администрирование топологий Apache Storm в Azure HDInsight](storm/apache-storm-deploy-monitor-topology-linux.md) |
 | Прокси-сервер Kafka RESTful |443 |HTTPS |Kafka |REST API Kafka. См. статью [взаимодействие с кластерами Apache Kafka в Azure HDInsight с помощью прокси-сервера RESTful](kafka/rest-proxy.md) . |
 
-### <a name="authentication"></a>Аутентификация
+### <a name="authentication"></a>Проверка подлинности
 
 Все общедоступные службы в Интернете должны проходить проверку подлинности.
 
-| Port | Учетные данные |
+| Порт | Учетные данные |
 | --- | --- |
 | 22 или 23 |Учетные данные пользователя SSH, указанные при создании кластера. |
 | 443 |Имя для входа (по умолчанию — admin) и пароль, указанные при создании кластера. |
@@ -74,7 +74,7 @@ HDInsight реализуется несколькими виртуальными
 
 ### <a name="ambari"></a>Ambari
 
-| Служба | Узлы | Port | URL-адрес | Протокол |
+| Служба | Узлы | Порт | URL-адрес | Протокол |
 | --- | --- | --- | --- | --- |
 | Веб-интерфейс Ambari | Головные узлы | 8080 | / | HTTP |
 | Ambari REST API | Головные узлы | 8080 | /api/v1 | HTTP |
@@ -166,7 +166,7 @@ HDInsight реализуется несколькими виртуальными
 | --- | --- | --- | --- | --- | --- |
 | Серверы Thrift Spark |Головные узлы |10002 |Thrift | &nbsp; | Служба для подключения к Spark SQL (с помощью протокола Thrift или JDBC) |
 | Сервер Livy | Головные узлы | 8998 | HTTP | &nbsp; | Служба для запуска инструкций, заданий и приложений |
-| Записная книжка Jupyter | Головные узлы | 8001 | HTTP | &nbsp; | Веб-сайт записных книжек Jupyter |
+| Портативный компьютер Jupyter | Головные узлы | 8001 | HTTP | &nbsp; | Веб-сайт Jupyter Notebook |
 
 Примеры:
 

@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
 ms.author: amishu
-ms.openlocfilehash: a715d0ece88cf2caf1cb3d20d703f550353094c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b8dda0347e5713ef35705425b54f29a110803488
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87282753"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821525"
 ---
-Обработка сжатого аудио-сигнала реализуется с помощью [`GStreamer`](https://gstreamer.freedesktop.org) . Из соображений лицензирования `GStreamer` двоичные файлы не компилируются и не связываются с пакетом SDK для распознавания речи. Разработчикам необходимо установить несколько зависимостей и подключаемых модулей, см. раздел [Установка в Windows](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html?gi-language=c). `GStreamer` двоичные файлы должны находиться в системном пути, чтобы пакет SDK для распознавания речи мог загружать двоичные файлы во время выполнения. Если речевой пакет SDK может найти `libgstreamer-1.0-0.dll` во время выполнения, это означает, что двоичные файлы находятся в системном пути.
+Обработка сжатого аудио-сигнала реализуется с помощью [гстреамер](https://gstreamer.freedesktop.org). По соображениям лицензирования двоичные файлы Гстреамер не компилируются и не связываются с пакетом SDK для распознавания речи. Разработчикам необходимо установить несколько зависимостей и подключаемых модулей, см. статью [Установка в Windows](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html?gi-language=c) или [Установка в Linux](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c). Двоичные файлы Гстреамер должны находиться в системном пути, чтобы пакет SDK для распознавания речи мог загружать двоичные файлы во время выполнения. Например, в Windows, если речевой пакет SDK может найти `libgstreamer-1.0-0.dll` во время выполнения, это означает, что двоичные файлы гстреамер находятся в системном пути.
 

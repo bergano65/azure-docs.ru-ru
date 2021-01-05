@@ -1,6 +1,6 @@
 ---
 title: Действие скрипта для пакетов Python с Jupyter в Azure HDInsight
-description: Пошаговые инструкции по использованию действия скрипта для настройки записных книжек Jupyter с кластерами Spark HDInsight для использования внешних пакетов Python.
+description: Пошаговые инструкции по использованию действия сценария для настройки записных книжек Jupyter, доступных в кластерах HDInsight Spark для использования внешних пакетов Python.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/29/2020
-ms.openlocfilehash: 5a0f9f9f972ec42987d6152c16e4377e399cdba5
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 21423f7200d25c9a5b3b63d2371e56977cd9d227
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896418"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821381"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -167,5 +167,5 @@ ms.locfileid: "92896418"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
-* [Использование внешних пакетов с записными книжками Jupyter в Apache Spark](apache-spark-jupyter-notebook-use-external-packages.md)
+* [Внешние пакеты с записными книжками Jupyter в Apache Spark](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Отслеживание и отладка заданий в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-job-debugging.md)

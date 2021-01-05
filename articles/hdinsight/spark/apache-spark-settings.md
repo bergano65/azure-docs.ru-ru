@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: c2e2daf6d8c9afa6ffef03b088ec9a7dc144cf47
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: f74307cc7f074788ac12712b3722dc0ad7fa71b6
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504939"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821151"
 ---
 # <a name="configure-apache-spark-settings"></a>Настройка параметров Apache Spark
 
@@ -130,7 +130,7 @@ YARN управляет максимальным объемом памяти, и
 |Ядро Spark|В Spark Core, Spark SQL, API потоковой передачи Spark, GraphX и Apache Spark MLlib.|
 |Anaconda|Диспетчер пакетов Python.|
 |Apache Livy|REST API Apache Spark, используемый для отправки удаленных заданий в кластер HDInsight Spark.|
-|Записные книжки Jupyter и Apache Zeppelin|Интерактивный пользовательский интерфейс на основе браузера для взаимодействия с кластером Spark.|
+|Записные книжки Jupyter и записные книжки Apache Zeppelin|Интерактивный пользовательский интерфейс на основе браузера для взаимодействия с кластером Spark.|
 |Драйвер ODBC|Подключает кластеры Spark в HDInsight к средствам бизнес-аналитики (BI), таким как Microsoft Power BI и Tableau.|
 
 Для приложений, выполняемых в Jupyter Notebook, используйте `%%configure` команду, чтобы внести изменения в конфигурацию из самой записной книжки. Эти изменения конфигурации будут применены к заданиям Spark, запущенным из экземпляра записной книжки. Внесите такие изменения в начале приложения, прежде чем запускать первую ячейку кода. Измененная конфигурация будет применена к сеансу Livy, когда он будет создан.

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: a692f4dd86d110f7f0a91a862a7b16ac28345de5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 00b9568d03260a9d1ac0b6916e09f3d9ef4da34d
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084534"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822171"
 ---
 # <a name="use-apache-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight
 
@@ -26,7 +26,7 @@ ms.locfileid: "86084534"
 
 ## <a name="launch-an-apache-zeppelin-notebook"></a>Запуск записной книжки Apache Zeppelin
 
-1. В разделе **Общие сведения о**кластере Spark в разделе **панели мониторинга кластера**выберите **Записная книжка Zeppelin** . Введите учетные данные администратора для кластера.  
+1. В разделе **Общие сведения о** кластере Spark в разделе **панели мониторинга кластера** выберите **Записная книжка Zeppelin** . Введите учетные данные администратора для кластера.  
 
    > [!NOTE]  
    > Также можно открыть Zeppelin Notebook для своего кластера, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
@@ -89,7 +89,7 @@ ms.locfileid: "86084534"
 
     Инструкция **%sql** в начале сообщает записной книжке, что необходимо использовать интерпретатор Livy Scala.
 
-6. Щелкните значок **линейчатой диаграммы** , чтобы изменить отображение.  **Параметры**, отображаемые после выбора **линейчатой диаграммы**, позволяют выбрать **ключи**и **значения**.  Выходные данные показаны на снимке экрана ниже.
+6. Щелкните значок **линейчатой диаграммы** , чтобы изменить отображение.  **Параметры**, отображаемые после выбора **линейчатой диаграммы**, позволяют выбрать **ключи** и **значения**.  Выходные данные показаны на снимке экрана ниже.
 
     ![Выполнение инструкции Spark SQL с помощью notebook1](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-spark-query-1.png "Выполнение инструкции Spark SQL с помощью notebook1")
 
@@ -115,7 +115,7 @@ ms.locfileid: "86084534"
 
 Записная книжка Zeppelin в кластере Apache Spark в HDInsight может использовать внешние, участвующие в сообществе пакеты, которые не включены в кластер. Полный список доступных пакетов можно найти в [репозитории Maven](https://search.maven.org/) . Его также можно получить из других источников. Например, полный список предоставленных сообществом пакетов можно найти в разделе [Пакеты Spark](https://spark-packages.org/).
 
-В этой статье вы узнаете, как использовать пакет [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar) с записной книжкой Jupyter.
+В этой статье вы узнаете, как использовать пакет [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar) с Jupyter Notebook.
 
 1. Откройте параметры интерпретатора. В правом верхнем углу выберите имя пользователя, выполнившего вход, а затем выберите **интерпретатор**.
 
@@ -133,11 +133,11 @@ ms.locfileid: "86084534"
 
 4. Вот как можно получить значение указанного выше ключа.
 
-    a. Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
+    а. Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
 
     b. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
 
-    ![Использование внешних пакетов с записной книжкой Jupyter](./media/apache-spark-zeppelin-notebook/use-external-packages-with-jupyter.png "Использование внешних пакетов с записной книжкой Jupyter")
+    ![Использование внешних пакетов с Jupyter Notebook](./media/apache-spark-zeppelin-notebook/use-external-packages-with-jupyter.png "Использование внешних пакетов с Jupyter Notebook")
 
     c. Объедините три значения, разделив их двоеточием (**:**).
 
@@ -205,7 +205,7 @@ ms.locfileid: "86084534"
 
 ### <a name="log-locations"></a>Расположения журналов
 
-|Служба |путь |
+|Служба |Путь |
 |---|---|
 |Zeppelin — сервер|/уср/хдп/куррент/зеппелин-сервер/|
 |Журналы сервера|/вар/лог/зеппелин|
@@ -227,5 +227,5 @@ ms.locfileid: "86084534"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
-* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра, доступные для Jupyter Notebook в кластере Apache Spark для HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)

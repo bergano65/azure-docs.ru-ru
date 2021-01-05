@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/13/2019
-ms.openlocfilehash: 6e472c65897fa57cdb1e0b09d94c62913e268040
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3397c57f793c6994847786ff8247e5ccfa453ec0
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087477"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821253"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-on-apache-spark-in-hdinsight"></a>Запуск Машинное обучение Azure рабочих нагрузок с помощью автоматического машинного обучения на Apache Spark в HDInsight
 
@@ -24,7 +24,7 @@ ms.locfileid: "86087477"
 Все новые кластеры HDInsight-Spark предварительно установлены с помощью пакета SDK для AzureML-AutoML.
 
 > [!Note]
-> Пакеты Машинного обучения Azure устанавливаются в среду conda Python3. Установленная записная книжка Jupyter должна выполняться с помощью ядра PySpark3.
+> Пакеты Машинного обучения Azure устанавливаются в среду conda Python3. Установленный Jupyter Notebook следует запускать с помощью ядра PySpark3.
 
 Для использования Аутомл также можно использовать записные книжки Zeppelin.
 

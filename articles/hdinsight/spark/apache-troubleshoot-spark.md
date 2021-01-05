@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9e60903aaa61cae63d406d459937d33317eee394
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4cfcc860e40415403952efeda13bac513a2c6347
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022257"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822154"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
@@ -37,7 +37,7 @@ ms.locfileid: "96022257"
 
 1. Задайте для этого параметра рекомендуемое значение. Рекомендуется использовать значение **2048m**.
 
-1. Сохраните это значение, а затем сохраните конфигурацию. Нажмите кнопку **Сохранить**.
+1. Сохраните это значение, а затем сохраните конфигурацию. Щелкните **Сохранить**.
 
     ![Изменение значения на 2048m](./media/apache-troubleshoot-spark/apache-spark-ambari-config6a.png)
 
@@ -75,9 +75,9 @@ ms.locfileid: "96022257"
 
 Эти изменения применяются на уровне кластера, но их можно переопределить при отправке задания Spark.
 
-## <a name="how-do-i-configure-an-apache-spark-application-by-using-a-jupyter-notebook-on-clusters"></a>Как настроить приложение Apache Spark с помощью Jupyter Notebook в кластерах?
+## <a name="how-do-i-configure-an-apache-spark-application-by-using-a-jupyter-notebook-on-clusters"></a>Разделы справки настроить Apache Spark приложение с помощью Jupyter Notebook в кластерах?
 
-Укажите конфигурации Spark в допустимом формате JSON в первой ячейке Jupyter Notebook после директивы **%%configure**. При необходимости измените фактические значения:
+В первой ячейке Jupyter Notebook после директивы **%% Configure** Укажите конфигурации Spark в допустимом формате JSON. При необходимости измените фактические значения:
 
 ![Добавление конфигурации](./media/apache-troubleshoot-spark/add-configuration-cell.png)
 
@@ -97,7 +97,7 @@ curl -k --user 'username:password' -v -H 'Content-Type: application/json' -X POS
 spark-submit --master yarn-cluster --class com.microsoft.spark.application --num-executors 4 --executor-memory 4g --executor-cores 2 --driver-memory 8g --driver-cores 4 /home/user/spark/sparkapplication.jar
 ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 [Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 

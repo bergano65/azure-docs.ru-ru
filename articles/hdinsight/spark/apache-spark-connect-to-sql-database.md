@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: d979a68f4e3aa0071fb7654647610af1fbf95e90
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 97c326bd1d2f61ba3fb9d6e381f5a8711bd0ca1d
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023982"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821202"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Использование кластера HDInsight Spark для чтения и записи данных в базе данных SQL Azure
 
@@ -36,20 +36,20 @@ ms.locfileid: "96023982"
 Начните с создания Jupyter Notebook, связанного с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье.
 
 1. Откройте кластер на [портале Azure](https://portal.azure.com/).
-1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если **панели мониторинга кластера** не отображаются, выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
+1. В правой части выберите **Jupyter Notebook** **панели мониторинга кластера** .  Если **панели мониторинга кластера** не отображаются, выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
 
-    ![Записная книжка Jupyter на Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
+    ![Jupyter Notebook на Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Jupyter Notebook в Spark")
 
    > [!NOTE]  
-   > Вы также можете получить доступ к записной книжке Jupyter в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
+   > Вы также можете получить доступ к Jupyter Notebook в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
    >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
-1. Чтобы создать записную книжку Scala, в записной книжке Jupyter в правом верхнем углу щелкните **New** (Создать), а затем — **Spark**. Записные книжки Jupyter в кластере HDInsight Spark предоставляют ядро **PySpark** для приложений Python2 и ядро **PySpark3** для приложений Python3. В этой статье мы создаем записную книжку Scala.
+1. В Jupyter Notebook в правом верхнем углу щелкните **создать**, а затем нажмите **Spark** , чтобы создать записную книжку Scala. Записные книжки Jupyter в кластере HDInsight Spark также предоставляют ядро **PySpark** для приложений python2 и ядро **PySpark3** для приложений Python3. В этой статье мы создаем записную книжку Scala.
 
-    ![Ядра для записной книжки Jupyter в Spark](./media/apache-spark-connect-to-sql-database/kernel-jupyter-notebook-on-spark.png "Ядра для записной книжки Jupyter в Spark")
+    ![Ядра для Jupyter Notebook в Spark](./media/apache-spark-connect-to-sql-database/kernel-jupyter-notebook-on-spark.png "Ядра для Jupyter Notebook в Spark")
 
-    Дополнительные сведения о ядрах см. в статье [Ядра для записных книжек Jupyter с кластерами Apache Spark в HDInsight](apache-spark-jupyter-notebook-kernels.md).
+    Дополнительные сведения о ядрах см. в статье [использование Jupyter Notebook ядер с Apache Spark кластерами в HDInsight](apache-spark-jupyter-notebook-kernels.md).
 
    > [!NOTE]  
    > В этой статье мы используем ядро Spark (Scala), так как потоковая передача данных из Spark в базу данных SQL в настоящее время поддерживается только в Scala и Java. Несмотря на то что чтение и запись в SQL можно выполнить с помощью Python, для обеспечения согласованности в этой статье мы используем Scala для всех трех операций.
@@ -64,7 +64,7 @@ ms.locfileid: "96023982"
 
 В этом разделе вы выполняете операцию чтения данных из таблицы (например, **SalesLT.Address**), которая находится в базе данных AdventureWorks.
 
-1. В новой записной книжке Jupyter в ячейке кода вставьте следующий фрагмент и замените значения заполнителей значениями для базы данных.
+1. В новом Jupyter Notebook в ячейке кода вставьте приведенный ниже фрагмент и замените значения заполнителей значениями для базы данных.
 
     ```scala
     // Declare the values for your database
@@ -121,7 +121,7 @@ ms.locfileid: "96023982"
 
 В этом разделе мы используем пример CSV-файла, доступного в кластере, чтобы создать таблицу в базе данных и заполнить ее данными. Пример CSV-файла (**HVAC.csv**) содержится во всех кластерах HDInsight в папке `HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv`.
 
-1. В новой записной книжке Jupyter в ячейке кода вставьте следующий фрагмент и замените значения заполнителей значениями для базы данных.
+1. В новом Jupyter Notebook в ячейке кода вставьте приведенный ниже фрагмент и замените значения заполнителей значениями для базы данных.
 
     ```scala
     // Declare the values for your database
@@ -168,7 +168,7 @@ ms.locfileid: "96023982"
 
 1. Подключитесь к базе данных SQL Azure с помощью SSMS и убедитесь, что `dbo.hvactable` там отображается.
 
-    a. Запустите SSMS и подключитесь к базе данных SQL Azure, предоставив сведения о подключении, как показано на снимке экрана ниже.
+    а. Запустите SSMS и подключитесь к базе данных SQL Azure, предоставив сведения о подключении, как показано на снимке экрана ниже.
 
     ![Подключение к базе данных SQL с помощью SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS1")
 
@@ -192,7 +192,7 @@ ms.locfileid: "96023982"
     TRUNCATE TABLE [dbo].[hvactable]
     ```
 
-1. Создайте записную книжку Jupyter в кластере HDInsight Spark. Вставьте следующий фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**.
+1. Создайте новый Jupyter Notebook в кластере HDInsight Spark. Вставьте следующий фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**.
 
     ```scala
     import org.apache.spark.sql._
@@ -263,7 +263,7 @@ ms.locfileid: "96023982"
     SELECT COUNT(*) FROM hvactable
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage](apache-spark-use-with-data-lake-store.md)
 * [Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](apache-spark-load-data-run-query.md)

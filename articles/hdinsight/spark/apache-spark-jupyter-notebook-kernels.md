@@ -1,6 +1,6 @@
 ---
-title: Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight
-description: Сведения о ядрах PySpark, PySpark3 и Spark для записной книжки Jupyter, доступной с кластерами Spark в Azure HDInsight.
+title: Ядра для Jupyter Notebook в кластерах Spark в Azure HDInsight
+description: Сведения о ядрах PySpark, PySpark3 и Spark для Jupyter Notebook, доступных в кластерах Spark в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 8c3993d8208a9a9e2ab54be44d88de0b20a2e586
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1139ce2358d5e5b3b52376892524e7ee0dd5611
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084721"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822239"
 ---
-# <a name="kernels-for-jupyter-notebook-on-apache-spark-clusters-in-azure-hdinsight"></a>Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight
+# <a name="kernels-for-jupyter-notebook-on-apache-spark-clusters-in-azure-hdinsight"></a>Ядра для Jupyter Notebook в кластерах Apache Spark в Azure HDInsight
 
-Кластеры HDInsight Spark предоставляют ядра, которые можно использовать с записной книжкой Jupyter в [Apache Spark](./apache-spark-overview.md) для тестирования приложений. Ядра — это программа, которая выполняет и интерпретирует ваш код. Вот эти ядра:
+Кластеры HDInsight Spark предоставляют ядра, которые можно использовать с Jupyter Notebook на [Apache Spark](./apache-spark-overview.md) для тестирования приложений. Ядра — это программа, которая выполняет и интерпретирует ваш код. Вот эти ядра:
 
 - **PySpark** — для приложений, написанных на языке Python2.
 - **PySpark3** — для приложений, написанных на языке Python3.
@@ -29,30 +29,30 @@ ms.locfileid: "86084721"
 
 Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
-## <a name="create-a-jupyter-notebook-on-spark-hdinsight"></a>Создание записной книжки Jupyter в Spark HDInsight
+## <a name="create-a-jupyter-notebook-on-spark-hdinsight"></a>Создание Jupyter Notebook в Spark HDInsight
 
 1. В [портал Azure](https://portal.azure.com/)выберите свой кластер Spark.  Инструкции см. в разделе [Отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters). Откроется представление **Обзор** .
 
-2. В представлении " **Обзор** " в области **панели мониторинга кластера** выберите **Записная книжка Jupyter**. При появлении запроса введите учетные данные администратора для кластера.
+2. В представлении " **Обзор** " в поле **панели мониторинга кластера** выберите **Jupyter Notebook**. При появлении запроса введите учетные данные администратора для кластера.
 
-    ![Записная книжка Jupyter на Apache Spark](./media/apache-spark-jupyter-notebook-kernels/hdinsight-spark-open-jupyter-interactive-spark-sql-query.png "Записная книжка Jupyter в Spark")
+    ![Jupyter Notebook на Apache Spark](./media/apache-spark-jupyter-notebook-kernels/hdinsight-spark-open-jupyter-interactive-spark-sql-query.png "Jupyter Notebook в Spark")
   
    > [!NOTE]  
-   > Вы также можете получить доступ к записной книжке Jupyter в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
+   > Вы также можете подключиться к Jupyter Notebook в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
    >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
-3. Выберите **создать**, а затем выберите **Pyspark**, **PySpark3**или **Spark** , чтобы создать записную книжку. Для приложений Scala используйте ядро Spark, для приложений Python2 — ядро PySpark, а для приложений Python3 — ядро PySpark3.
+3. Выберите **создать**, а затем выберите **Pyspark**, **PySpark3** или **Spark** , чтобы создать записную книжку. Для приложений Scala используйте ядро Spark, для приложений Python2 — ядро PySpark, а для приложений Python3 — ядро PySpark3.
 
-    ![Ядра для записной книжки Jupyter в Spark](./media/apache-spark-jupyter-notebook-kernels/kernel-jupyter-notebook-on-spark.png "Ядра для записной книжки Jupyter в Spark")
+    ![Ядра для Jupyter Notebook в Spark](./media/apache-spark-jupyter-notebook-kernels/kernel-jupyter-notebook-on-spark.png "Ядра для Jupyter Notebook в Spark")
 
 4. Объект Notebook должен открыться с помощью выбранного ядра.
 
 ## <a name="benefits-of-using-the-kernels"></a>Преимущества использования ядер
 
-Ниже приведены некоторые преимущества использования новых ядер для записной книжки Jupyter в кластерах Spark HDInsight.
+Ниже приведены некоторые преимущества использования новых ядер с Jupyter Notebook в кластерах Spark HDInsight.
 
-- **Предустановленные контексты**. При использовании  **PySpark**, **PySpark3**или ядер **Spark** не нужно явно задавать контексты Spark и Hive перед началом работы с приложениями. Эти контексты доступны по умолчанию. а именно:
+- **Предустановленные контексты**. При использовании  **PySpark**, **PySpark3** или ядер **Spark** не нужно явно задавать контексты Spark и Hive перед началом работы с приложениями. Эти контексты доступны по умолчанию. а именно:
 
   - **sc** для контекста Spark;
   - **sqlContext** для контекста Hive.
@@ -78,7 +78,7 @@ ms.locfileid: "86084721"
    | sql |`%%sql -o <variable name>`<br> `SHOW TABLES` |Выполняет запрос Hive к sqlContext. Если передан параметр `-o` , результат запроса сохраняется в контексте Python %%local в качестве таблицы данных [Pandas](https://pandas.pydata.org/) . |
    | локальные |`%%local`<br>`a=1` |Весь код в последующих строках выполняется локально. Код должен быть допустимым кодом python2 независимо от того, какой ядро вы используете. Таким образом, даже если вы выбрали ядра **PySpark3** или **Spark** при создании записной книжки, при использовании `%%local` волшебия в ячейке эта ячейка должна содержать только допустимый код python2. |
    | журналы |`%%logs` |Выводит журналы для текущего сеанса Livy. |
-   | "Удалить" |`%%delete -f -s <session number>` |Удаляет указанный сеанс для текущей конечной точки Livy. Нельзя удалить сеанс, запущенный для самого ядра. |
+   | удалить |`%%delete -f -s <session number>` |Удаляет указанный сеанс для текущей конечной точки Livy. Нельзя удалить сеанс, запущенный для самого ядра. |
    | cleanup |`%%cleanup -f` |Удаляет все сеансы для текущей конечной точки Livy, включая сеанс этой записной книжки. Флаг -f является обязательным. |
 
    > [!NOTE]  
@@ -118,7 +118,7 @@ SELECT * FROM hivesampletable
 
 ## <a name="where-are-the-notebooks-stored"></a>Где хранятся записные книжки?
 
-Если кластер HDInsight использует службу хранилища Azure в качестве учетной записи хранения по умолчанию, записные книжки Jupyter сохраняются в папке **/HdiNotebooks** в учетной записи хранения.  Доступ к объектам Notebook, текстовым файлам и папкам, создаваемым в Jupyter, можно получить через учетную запись хранения.  Например, если вы используете Jupyter для создания папки **`myfolder`** и записной книжки **MyFolder/mynotebook. ipynb**, доступ к этой записной книжке можно получить в `/HdiNotebooks/myfolder/mynotebook.ipynb` учетной записи хранения.  Верно и обратное: если вы передаете объект Notebook непосредственно в свою учетную запись хранения в `/HdiNotebooks/mynotebook1.ipynb`, то этот объект также отображается в Jupyter.  Объекты Notebook хранятся в учетной записи хранения даже после удаления кластера.
+Если кластер использует службу хранилища Azure в качестве учетной записи хранения по умолчанию, записные книжки Jupyter сохраняются в учетной записи хранения в папке **/HdiNotebooks** .  Доступ к объектам Notebook, текстовым файлам и папкам, создаваемым в Jupyter, можно получить через учетную запись хранения.  Например, если вы используете Jupyter для создания папки **`myfolder`** и записной книжки **MyFolder/mynotebook. ipynb**, доступ к этой записной книжке можно получить в `/HdiNotebooks/myfolder/mynotebook.ipynb` учетной записи хранения.  Верно и обратное: если вы передаете объект Notebook непосредственно в свою учетную запись хранения в `/HdiNotebooks/mynotebook1.ipynb`, то этот объект также отображается в Jupyter.  Объекты Notebook хранятся в учетной записи хранения даже после удаления кластера.
 
 > [!NOTE]  
 > Для кластеров HDInsight, использующих Azure Data Lake Storage в качестве хранилища по умолчанию, записные книжки не сохраняются в связанном хранилище.
@@ -135,7 +135,7 @@ SELECT * FROM hivesampletable
 
 ## <a name="supported-browser"></a>Поддерживаемый браузер
 
-Записные книжки Jupyter, выполняемые в кластерах HDInsight Spark, поддерживаются только браузером Google Chrome.
+Записные книжки Jupyter в кластерах Spark HDInsight поддерживаются только в Google Chrome.
 
 ## <a name="suggestions"></a>Предложения
 

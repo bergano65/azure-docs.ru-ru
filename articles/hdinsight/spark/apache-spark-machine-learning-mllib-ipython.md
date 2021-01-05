@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020, devx-track-python
 ms.date: 04/27/2020
-ms.openlocfilehash: bd61c6812d794d30e28f087dabf58db51e9c3296
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a6407f7c3b1e8570cdc6b36dceec79fba58689c7
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89230421"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822188"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных
 
@@ -44,7 +44,7 @@ MLlib — это основная библиотека Spark, которая п�
 
 ## <a name="create-an-apache-spark-mllib-machine-learning-app"></a>Создание приложения машинного обучения Apache Spark MLlib
 
-1. Создайте записную книжку Jupyter, используя ядро PySpark. Инструкции см. в разделе [Создание файла записной книжки Jupyter](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook-file).
+1. Создайте записную книжку Jupyter Notebook с помощью ядра PySpark. Инструкции см. в разделе [Создание файла записной книжки Jupyter Notebook](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook-file).
 
 2. Импортируйте типы, необходимые для этого приложения. Скопируйте и вставьте следующий код в пустую ячейку, а затем нажмите клавиши **SHIFT + ВВОД**.
 
@@ -84,7 +84,7 @@ MLlib — это основная библиотека Spark, которая п�
     inspections.take(1)
     ```
 
-    Результат выглядит так:
+    Результат.
 
     ```
     [['413707',
@@ -121,7 +121,7 @@ MLlib — это основная библиотека Spark, которая п�
     df.registerTempTable('CountResults')
     ```
 
-    Четыре столбца, представляющие интерес в кадре данных, — это **идентификатор**, **имя**, **результаты**и **нарушения**.
+    Четыре столбца, представляющие интерес в кадре данных, — это **идентификатор**, **имя**, **результаты** и **нарушения**.
 
 4. Выполните следующий код, чтобы получить небольшую выборку данных.
 
@@ -129,7 +129,7 @@ MLlib — это основная библиотека Spark, которая п�
     df.show(5)
     ```
 
-    Результат выглядит так:
+    Результат.
 
     ```
     +------+--------------------+-------+--------------------+
@@ -153,7 +153,7 @@ MLlib — это основная библиотека Spark, которая п�
     df.select('results').distinct().show()
     ```
 
-    Результат выглядит так:
+    Результат.
 
     ```
     +--------------------+
@@ -174,9 +174,9 @@ MLlib — это основная библиотека Spark, которая п�
     SELECT COUNT(results) AS cnt, results FROM CountResults GROUP BY results
     ```
 
-    Волшебное слово `%%sql`, за которым следует `-o countResultsdf`, гарантирует, что вывод запроса сохраняется локально на сервере Jupyter (обычно это головной узел кластера). Выходные данные сохраняются в кадре данных [Pandas](https://pandas.pydata.org/) с именем **countResultsdf**. Дополнительные сведения о команде magic `%%sql`, а также других командах magic, доступных в ядре PySpark, приведены в статье [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic).
+    Волшебное слово `%%sql`, за которым следует `-o countResultsdf`, гарантирует, что вывод запроса сохраняется локально на сервере Jupyter (обычно это головной узел кластера). Выходные данные сохраняются в кадре данных [Pandas](https://pandas.pydata.org/) с именем **countResultsdf**. Дополнительные сведения о `%%sql` волшебе и других волшебных возможностях, доступных в ядре PySpark, см. в разделе [ядра, доступные в записных книжках Jupyter с Apache Spark кластерами HDInsight](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic).
 
-    Результат выглядит так:
+    Результат.
 
     ![Результат SQL-запроса](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-query-output.png "Результат SQL-запроса")
 
@@ -227,7 +227,7 @@ MLlib — это основная библиотека Spark, которая п�
     labeledData.take(1)
     ```
 
-    Результат выглядит так:
+    Результат.
 
     ```
     [Row(label=0.0, violations=u"41. PREMISES MAINTAINED FREE OF LITTER, UNNECESSARY ARTICLES, CLEANING  EQUIPMENT PROPERLY STORED - Comments: All parts of the food establishment and all parts of the property used in connection with the operation of the establishment shall be kept neat and clean and should not produce any offensive odors.  REMOVE MATTRESS FROM SMALL DUMPSTER. | 35. WALLS, CEILINGS, ATTACHED EQUIPMENT CONSTRUCTED PER CODE: GOOD REPAIR, SURFACES CLEAN AND DUST-LESS CLEANING METHODS - Comments: The walls and ceilings shall be in good repair and easily cleaned.  REPAIR MISALIGNED DOORS AND DOOR NEAR ELEVATOR.  DETAIL CLEAN BLACK MOLD LIKE SUBSTANCE FROM WALLS BY BOTH DISH MACHINES.  REPAIR OR REMOVE BASEBOARD UNDER DISH MACHINE (LEFT REAR KITCHEN). SEAL ALL GAPS.  REPLACE MILK CRATES USED IN WALK IN COOLERS AND STORAGE AREAS WITH PROPER SHELVING AT LEAST 6' OFF THE FLOOR.  | 38. VENTILATION: ROOMS AND EQUIPMENT VENTED AS REQUIRED: PLUMBING: INSTALLED AND MAINTAINED - Comments: The flow of air discharged from kitchen fans shall always be through a duct to a point above the roofline.  REPAIR BROKEN VENTILATION IN MEN'S AND WOMEN'S WASHROOMS NEXT TO DINING AREA. | 32. FOOD AND NON-FOOD CONTACT SURFACES PROPERLY DESIGNED, CONSTRUCTED AND MAINTAINED - Comments: All food and non-food contact equipment and utensils shall be smooth, easily cleanable, and durable, and shall be in good repair.  REPAIR DAMAGED PLUG ON LEFT SIDE OF 2 COMPARTMENT SINK.  REPAIR SELF CLOSER ON BOTTOM LEFT DOOR OF 4 DOOR PREP UNIT NEXT TO OFFICE.")]

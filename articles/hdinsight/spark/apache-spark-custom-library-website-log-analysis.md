@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 12/27/2019
-ms.openlocfilehash: 1094235f5bc5cc25cf6d8f3762dc242503952de6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61ec2db1799919eb395996b56d08b77e3be7ff5a
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86083803"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822375"
 ---
 # <a name="analyze-website-logs-using-a-custom-python-library-with-apache-spark-cluster-on-hdinsight"></a>Анализ журналов веб-сайтов с помощью пользовательской библиотеки Python и кластера Apache Spark в HDInsight
 
@@ -25,7 +25,7 @@ ms.locfileid: "86083803"
 
 ## <a name="save-raw-data-as-an-rdd"></a>Сохранение необработанных данных в формате RDD
 
-В этом разделе мы используем записную книжку [Jupyter](https://jupyter.org) , связанную с кластером Apache Spark в HDInsight, для выполнения заданий, которые обрабатывают необработанные демонстрационные данные и сохраняют их как таблицу Hive. В качестве демонстрационных данных выступает CSV-файл (hvac.csv), доступный на всех кластерах по умолчанию.
+В этом разделе мы используем записную книжку [Jupyter](https://jupyter.org) , связанную с кластером Apache Spark в HDInsight, для выполнения заданий, обрабатывающих необработанные образцы данных, и сохранения их в виде таблицы Hive. В качестве демонстрационных данных выступает CSV-файл (hvac.csv), доступный на всех кластерах по умолчанию.
 
 После сохранения данных в виде таблицы Apache Hive в следующем разделе мы будем подключаться к таблице Hive с помощью средств бизнес-аналитики, таких как Power BI и Tableau.
 
@@ -33,7 +33,7 @@ ms.locfileid: "86083803"
 
 1. Создайте новую записную книжку. Выберите **создать**, а затем **PySpark**.
 
-    ![Создание новой записной книжки Apache Jupyter](./media/apache-spark-custom-library-website-log-analysis/hdinsight-create-jupyter-notebook.png "Создание новой записной книжки Jupyter")
+    ![Создание нового Jupyter Notebook Apache](./media/apache-spark-custom-library-website-log-analysis/hdinsight-create-jupyter-notebook.png "Создание нового Jupyter Notebook")
 
 1. Будет создана и открыта записная книжка с именем Untitled.pynb. Выберите имя записной книжки вверху и введите понятное имя.
 

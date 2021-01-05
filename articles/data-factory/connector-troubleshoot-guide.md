@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 12/09/2020
+ms.date: 12/30/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: a7a81a742922d45be965c7f73e3cb910d0ef989a
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e6591762ed6a7e2b462a209730276f3198d86ae8
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109301"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821474"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок с соединителями Фабрики данных Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "97109301"
   
 ## <a name="azure-blob-storage"></a>хранилище BLOB-объектов Azure
 
-### <a name="error-code--azurebloboperationfailed"></a>Код ошибки:  AzureBlobOperationFailed
+### <a name="error-code-azurebloboperationfailed"></a>Код ошибки: Азуреблобоператионфаилед
 
 - **Сообщение**: `Blob operation Failed. ContainerName: %containerName;, path: %path;.`
 
@@ -33,24 +33,9 @@ ms.locfileid: "97109301"
 - **Рекомендация**.  Изучите подробные сведения об ошибке. См. справочный документ по большим двоичным объектам: https://docs.microsoft.com/rest/api/storageservices/blob-service-error-codes. Если вам нужна помощь, обратитесь в команду разработки службы хранилища.
 
 
-### <a name="error-code--azureblobservicenotreturnexpecteddatalength"></a>Код ошибки:  AzureBlobServiceNotReturnExpectedDataLength
-
-- **Сообщение**: `Error occurred when trying to fetch the blob '%name;'. This could be a transient issue and you may rerun the job. If it fails again continuously, contact customer support.`
-
-
-### <a name="error-code--azureblobnotsupportmultiplefilesintosingleblob"></a>Код ошибки:  AzureBlobNotSupportMultipleFilesIntoSingleBlob
-
-- **Сообщение**: `Transferring multiple files into a single Blob is not supported. Currently only single file source is supported.`
-
-
-### <a name="error-code--azurestorageoperationfailedconcurrentwrite"></a>Код ошибки:  AzureStorageOperationFailedConcurrentWrite
-
-- **Сообщение**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
-
-
 ### <a name="invalid-property-during-copy-activity"></a>Недопустимое свойство во время действия копирования
 
-- **Сообщение**:  `Copy activity <Activity Name> has an invalid "source" property. The source type is not compatible with the dataset <Dataset Name> and its linked service <Linked Service Name>. Please verify your input against.`
+- **Сообщение**: `Copy activity <Activity Name> has an invalid "source" property. The source type is not compatible with the dataset <Dataset Name> and its linked service <Linked Service Name>. Please verify your input against.`
 
 - **Причина**: тип, определенный в DataSet, не согласуется с типом источника или приемника, определенным в действии копирования.
 
@@ -79,7 +64,6 @@ ms.locfileid: "97109301"
 - **Причина.** Существуют две возможные причины.
 
     - Если вы используете инструкцию **Insert** в качестве поведения записи, эта ошибка означает, что в исходных данных есть строки или объекты с одинаковыми идентификаторами.
-
     - Если вы используете инструкцию **Upsert** в качестве поведения записи и задаете другой уникальный ключ для контейнера, эта ошибка означает, что в исходных данных есть строки или объекты с разными идентификаторами, но одинаковыми значениями уникального ключа.
 
 - **Решение**. 
@@ -100,9 +84,8 @@ ms.locfileid: "97109301"
 
 - **Решение**. Есть два решения.
 
-    1. **Увеличьте значение ЕЗ контейнера** в Cosmos DB. Это повысит производительность действия копирования, но потребует дополнительных затрат на Cosmos DB. 
-
-    2. Задайте меньшее значение **writeBatchSize** (например, 1000) и **parallelCopies** (например, 1). Это приведет к снижению производительности при копировании, но не потребует дополнительных затрат на Cosmos DB.
+    - **Увеличьте значение ЕЗ контейнера** в Cosmos DB. Это повысит производительность действия копирования, но потребует дополнительных затрат на Cosmos DB. 
+    - Задайте меньшее значение **writeBatchSize** (например, 1000) и **parallelCopies** (например, 1). Это приведет к снижению производительности при копировании, но не потребует дополнительных затрат на Cosmos DB.
 
 ### <a name="column-missing-in-column-mapping"></a>Столбец отсутствует в сопоставлении столбцов
 
@@ -130,70 +113,15 @@ ms.locfileid: "97109301"
 
 - **Решение**. В строке подключения MongoDB добавьте параметр **uuidRepresentation=standard**. Дополнительные сведения см. в разделе о [строке подключения MongoDB](connector-mongodb.md#linked-service-properties).
             
+## <a name="azure-cosmos-db-sql-api"></a>Azure Cosmos DB (SQL API)
 
-## <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage 2-го поколения
+### <a name="error-code--cosmosdbsqlapioperationfailed"></a>Код ошибки: Космосдбсклапиоператионфаилед
 
-### <a name="error-code--adlsgen2operationfailed"></a>Код ошибки:  AdlsGen2OperationFailed
+- **Сообщение.** `CosmosDbSqlApi operation Failed. ErrorMessage: %msg;.`
 
-- **Сообщение**: `ADLS Gen2 operation failed for: %adlsGen2Message;.%exceptionData;.`
+- **Причина**: ошибка при обращении к операции космосдбсклапи.
 
-- **Причина.** ADLS 2-го поколения выдает ошибку, указывающую на сбой операции.
-
-- **Рекомендация**.  Проверьте подробное сообщение об ошибке, выдаваемое ADLS 2-го поколения. Если она вызвана временным сбоем, повторите попытку. Если вам нужна дополнительная помощь, обратитесь в службу поддержки службы хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
-
-- **Причина.** Когда в сообщении об ошибке есть слово Forbidden, возможно, у субъекта-службы или управляемого удостоверения, которые вы используете, недостаточно разрешений на доступ к ADLS 2-го поколения.
-
-- **Рекомендация**.  См. справочный документ https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication.
-
-- **Причина.** Если в сообщении об ошибке есть слово InternalServerError, ошибка возвращается ADLS 2-го поколения.
-
-- **Рекомендация**.  Если ошибка вызвана временным сбоем, повторите попытку. Если проблема сохраняется, обратитесь в службу поддержки службы хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
-
-
-### <a name="error-code--adlsgen2invalidurl"></a>Код ошибки:  AdlsGen2InvalidUrl
-
-- **Сообщение**: `Invalid url '%url;' provided, expecting http[s]://<accountname>.dfs.core.windows.net.`
-
-
-### <a name="error-code--adlsgen2invalidfolderpath"></a>Код ошибки:  AdlsGen2InvalidFolderPath
-
-- **Сообщение**: `The folder path is not specified. Cannot locate the file '%name;' under the ADLS Gen2 account directly. Please specify the folder path instead.`
-
-
-### <a name="error-code--adlsgen2operationfailedconcurrentwrite"></a>Код ошибки:  AdlsGen2OperationFailedConcurrentWrite
-
-- **Сообщение**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
-
-
-### <a name="error-code-adlsgen2timeouterror"></a>Код ошибки: AdlsGen2TimeoutError
-
-- **Сообщение.** `Request to ADLS Gen2 account '%account;' met timeout error. It is mostly caused by the poor network between the Self-hosted IR machine and the ADLS Gen2 account. Check the network to resolve such error.`
-
-
-### <a name="request-to-adls-gen2-account-met-timeout-error"></a>Запрос на ADLS 2-го поколения учетной записи достигает ошибки времени ожидания
-
-- **Сообщение**: код ошибки = `UserErrorFailedBlobFSOperation` , сообщение об ошибке = `BlobFS operation failed for: A task was canceled` .
-
-- **Причина**. Эта неполадка вызвана ошибкой истечения времени ожидания приемника ADLS 2-го поколения, которая в основном происходит на автономном IR-компьютере.
-
-- **Рекомендация**. 
-
-    1. Поместите собственный IR-компьютер и целевую учетную запись ADLS 2-го поколения в том же регионе, если это возможно. Это может избежать ошибки произвольного времени ожидания и повысить производительность.
-
-    1. Проверьте наличие специальных сетевых параметров, таких как ExpressRoute, и убедитесь, что пропускная способность сети достаточна. Мы рекомендуем уменьшить значение параметра одновременных параллельных заданий, когда общая пропускная способность мала, с помощью которой можно избежать конкуренции за использование сетевых ресурсов в нескольких параллельных заданиях.
-
-    1. Используйте меньший размер блока для недвоичного копирования, чтобы устранить такую ошибку времени ожидания, если размер файла умеренный или маленький. См. Дополнительные сведения о [блоке размещения хранилища BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/put-block).
-
-       Чтобы указать размер пользовательского блока, можно изменить свойство в редакторе JSON:
-    ```
-    "sink": {
-        "type": "DelimitedTextSink",
-        "storeSettings": {
-            "type": "AzureBlobFSWriteSettings",
-            "blockSizeInMB": 8
-        }
-    }
-    ```
+- **Рекомендация**.  Изучите подробные сведения об ошибке. См. [справочный документ по CosmosDb](https://docs.microsoft.com/azure/cosmos-db/troubleshoot-dot-net-sdk). Если вам нужна помощь, обратитесь в службу CosmosDb.
 
 
 ## <a name="azure-data-lake-storage-gen1"></a>Хранилище Azure Data Lake Storage 1-го поколения
@@ -203,7 +131,7 @@ ms.locfileid: "97109301"
 - **Симптомы**. сбой действия копирования со следующей ошибкой: 
 
     ```
-    Message: Failure happened on 'Sink' side. ErrorCode=UserErrorFailedFileOperation,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Upload file failed at path STAGING/PLANT/INDIARENEWABLE/LiveData/2020/01/14\\20200114-0701-oem_gibtvl_mannur_data_10min.csv.,Source=Microsoft.DataTransfer.ClientLibrary,''Type=System.Net.WebException,Message=The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.,Source=System,''Type=System.Security.Authentication.AuthenticationException,Message=The remote certificate is invalid according to the validation procedure.,Source=System,'.
+    Message: ErrorCode = `UserErrorFailedFileOperation`, Error Message = `The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel`.
     ```
 
 - **Причина**: сбой проверки сертификата во время подтверждения TLS.
@@ -238,7 +166,62 @@ ms.locfileid: "97109301"
 - **Причина.** Когда сервер маркеров службы (STS), принадлежащий Azure Active Directory, недоступен, то есть слишком занят для обработки запросов, он возвращает ошибку HTTP 503. 
 
 - **Решение**. Повторите действие копирования через несколько минут.
+
+
+## <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage 2-го поколения
+
+### <a name="error-code-adlsgen2operationfailed"></a>Код ошибки: ADLSGen2OperationFailed
+
+- **Сообщение**: `ADLS Gen2 operation failed for: %adlsGen2Message;.%exceptionData;.`
+
+- **Причина.** ADLS 2-го поколения выдает ошибку, указывающую на сбой операции.
+
+- **Рекомендация**.  Проверьте подробное сообщение об ошибке, выдаваемое ADLS 2-го поколения. Если она вызвана временным сбоем, повторите попытку. Если вам нужна дополнительная помощь, обратитесь в службу поддержки службы хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
+
+- **Причина.** Когда в сообщении об ошибке есть слово Forbidden, возможно, у субъекта-службы или управляемого удостоверения, которые вы используете, недостаточно разрешений на доступ к ADLS 2-го поколения.
+
+- **Рекомендация**.  См. справочный документ https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication.
+
+- **Причина.** Если в сообщении об ошибке есть слово InternalServerError, ошибка возвращается ADLS 2-го поколения.
+
+- **Рекомендация**.  Если ошибка вызвана временным сбоем, повторите попытку. Если проблема сохраняется, обратитесь в службу поддержки службы хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
+
+### <a name="request-to-adls-gen2-account-met-timeout-error"></a>Запрос на ADLS 2-го поколения учетной записи достигает ошибки времени ожидания
+
+- **Сообщение**: код ошибки = `UserErrorFailedBlobFSOperation` , сообщение об ошибке = `BlobFS operation failed for: A task was canceled` .
+
+- **Причина**. Эта неполадка вызвана ошибкой истечения времени ожидания приемника ADLS 2-го поколения, которая в основном происходит на автономном IR-компьютере.
+
+- **Рекомендация**. 
+
+    - Поместите собственный IR-компьютер и целевую учетную запись ADLS 2-го поколения в том же регионе, если это возможно. Это может избежать ошибки произвольного времени ожидания и повысить производительность.
+
+    - Проверьте наличие специальных сетевых параметров, таких как ExpressRoute, и убедитесь, что пропускная способность сети достаточна. Мы рекомендуем уменьшить значение параметра одновременных параллельных заданий, когда общая пропускная способность мала, с помощью которой можно избежать конкуренции за использование сетевых ресурсов в нескольких параллельных заданиях.
+
+    - Используйте меньший размер блока для недвоичного копирования, чтобы устранить такую ошибку времени ожидания, если размер файла умеренный или маленький. См. [блок размещения хранилища BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/put-block).
+
+       Чтобы указать размер пользовательского блока, можно изменить свойство в редакторе JSON:
+        ```
+        "sink": {
+            "type": "DelimitedTextSink",
+            "storeSettings": {
+                "type": "AzureBlobFSWriteSettings",
+                "blockSizeInMB": 8
+            }
+        }
+        ```
+
                   
+## <a name="azure-file-storage"></a>Хранилище файлов Azure
+
+### <a name="error-code--azurefileoperationfailed"></a>Код ошибки: Азурефилеоператионфаилед
+
+- **Сообщение.** `Azure File operation Failed. Path: %path;. ErrorMessage: %msg;.`
+
+- **Причина**: ошибка при выполнении операции с хранилищем файлов Azure.
+
+- **Рекомендация**.  Изучите подробные сведения об ошибке. См. справочный документ по файлам Azure: https://docs.microsoft.com/rest/api/storageservices/file-service-error-codes . Если вам нужна помощь, обратитесь к группе по службе хранилища.
+
 
 ## <a name="azure-synapse-analyticsazure-sql-databasesql-server"></a>Azure синапсе Analytics/база данных SQL Azure/SQL Server
 
@@ -246,13 +229,29 @@ ms.locfileid: "97109301"
 
 - **Сообщение**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
 
+- **Причина**: Azure SQL: Если сообщение об ошибке содержит "склеррорнумбер = 47073", это означает, что доступ к общедоступной сети запрещен в параметре подключения.
+
+- **Рекомендация**. в брандмауэре SQL Azure задайте для параметра "запретить доступ к общедоступной сети" значение "нет". Дополнительные сведения см https://docs.microsoft.com/azure/azure-sql/database/connectivity-settings#deny-public-network-access . в статье.
+
+- **Причина**: Azure SQL: Если сообщение об ошибке содержит код ошибки SQL, например "склеррорнумбер = [ErrorCode]", см. Руководство по устранению неполадок SQL Azure.
+
+- **Рекомендация**: Дополнительные сведения см https://docs.microsoft.com/azure/azure-sql/database/troubleshoot-common-errors-issues . в статье.
+
+- **Причина**: Проверьте, включен ли порт 1433 в список разрешений брандмауэра.
+
+- **Рекомендация**: следуйте указаниям в этом справочном документе: https://docs.microsoft.com/sql/sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access#ports-used-by- .
+
 - **Причина.** Если в сообщении об ошибке есть слово SqlException, база данных SQL выдает ошибку, указывающую на сбой определенной операции.
 
 - **Рекомендация**: выполните поиск по коду ошибки SQL в этом справочном документе для получения дополнительных сведений: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors . Если вам нужна дополнительная помощь, обратитесь в службу поддержки Azure SQL.
 
+- **Причина**. Если это временная проблема (например, нестабильное сетевое подключение), добавьте повторную попытку в политике действий, чтобы устранить неполадки.
+
+- **Рекомендация**: используйте следующий справочный документ: https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities#activity-policy .
+
 - **Причина.** Если сообщение об ошибке содержит строку "Клиенту с IP-адресом "..." запрещен доступ к серверу" и вы пытаетесь подключиться к базе данных SQL Azure, обычно причиной является проблема с брандмауэром базы данных SQL Azure.
 
-- **Рекомендация**: в логической конфигурации брандмауэра SQL Server включите параметр "разрешить службам Azure и ресурсам доступ к этому серверу". Справочный документ: https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure.
+- **Рекомендация**.  В конфигурации брандмауэра Azure SQL Server включите параметр "Разрешить доступ к серверу службам и ресурсам Azure". Справочный документ: https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure.
 
 
 ### <a name="error-code--sqloperationfailed"></a>Код ошибки:  SqlOperationFailed
@@ -272,7 +271,6 @@ ms.locfileid: "97109301"
 - **Причина.** Если в сообщении об ошибке есть слово InvalidOperationException, обычно это вызвано недопустимыми входными данными.
 
 - **Рекомендация**.  Чтобы узнать, в какой строке возникает проблема, включите функцию отказоустойчивости для действия копирования, которая может перенаправлять проблемные строки в хранилище для дальнейшего изучения. Справочный документ: https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance.
-
 
 
 ### <a name="error-code--sqlunauthorizedaccess"></a>Код ошибки:  SqlUnauthorizedAccess
@@ -342,11 +340,6 @@ ms.locfileid: "97109301"
 - **Рекомендация**.  Проверьте столбец в запросе, структуру в наборе данных и сопоставления в действии.
 
 
-### <a name="error-code--sqlcolumnnamemismatchbycasesensitive"></a>Код ошибки:  SqlColumnNameMismatchByCaseSensitive
-
-- **Сообщение**: `Column '%column;' in DataSet '%dataSetName;' cannot be found in physical SQL Database. Column matching is case-sensitive. Column '%columnInTable;' appears similar. Check the DataSet(s) configuration to proceed further.`
-
-
 ### <a name="error-code--sqlbatchwritetimeout"></a>Код ошибки:  SqlBatchWriteTimeout
 
 - **Сообщение**: `Timeouts in SQL write operation.`
@@ -385,11 +378,6 @@ ms.locfileid: "97109301"
 - **Причина.** Соединение SQL закрывается базой данных SQL при большом количестве параллельных выполнений и разрыве соединения сервером.
 
 - **Рекомендация**.  Удаленный сервер закрыл соединение SQL. Повторная попытка. Если проблема повторяется, обратитесь в службу поддержки Azure SQL.
-
-
-### <a name="error-code--sqlcreatetablefailedunsupportedtype"></a>Код ошибки:  SqlCreateTableFailedUnsupportedType
-
-- **Сообщение**: `Type '%type;' in source side cannot be mapped to a type that supported by sink side(column name:'%name;') in autocreate table.`
 
 
 ### <a name="error-message-conversion-failed-when-converting-from-a-character-string-to-uniqueidentifier"></a>Сообщение об ошибке: Ошибка при преобразовании строки символов в тип uniqueidentifier
@@ -454,9 +442,9 @@ ms.locfileid: "97109301"
     - Time -> 12 байт
     - Tinyint -> 1 байт
 
-- **Решение**. Уменьшите ширину столбца, чтобы она не превышала 1 МБ.
-
-- Или используйте подход с массовыми вставками, отключив PolyBase.
+- **Решение**. 
+    - Уменьшите ширину столбца, чтобы она была меньше 1 МБ.
+    - Или используйте подход с массовыми вставками, отключив PolyBase.
 
 
 ### <a name="error-message-the-condition-specified-using-http-conditional-headers-is-not-met"></a>Сообщение об ошибке: Условие, указанное с помощью условных заголовков HTTP, не выполнено.
@@ -478,15 +466,15 @@ ms.locfileid: "97109301"
 
 - **Причина**. Основная причина проблемы в основном инициируется узким местом на стороне Azure SQL. Ниже приведены некоторые возможные причины.
 
-    1. Уровень базы данных Azure недостаточно высок.
+    - Уровень базы данных Azure недостаточно высок.
 
-    1. Использование DTU в базе данных Azure близко к 100%. Вы можете [отслеживать производительность](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) и обновлять уровень базы данных.
+    - Использование DTU в базе данных Azure близко к 100%. Вы можете [отслеживать производительность](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) и обновлять уровень базы данных.
 
-    1. Индексы заданы неправильно. Удалите все индексы перед загрузкой данных и создайте их повторно после завершения загрузки.
+    - Индексы заданы неправильно. Удалите все индексы перед загрузкой данных и создайте их повторно после завершения загрузки.
 
-    1. WriteBatchSize недостаточно велик, чтобы вместить размер строки схемы. Попытайтесь увеличить свойство для проблемы.
+    - WriteBatchSize недостаточно велик, чтобы вместить размер строки схемы. Попробуйте увеличить свойство проблемы.
 
-    1. Вместо использования массовых отступов используется хранимая процедура, которая, как ожидается, может ухудшить производительность. 
+    - Вместо использования массовых отступов используется хранимая процедура, которая, как ожидается, может ухудшить производительность. 
 
 - **Решение**. см. сведения о [производительности действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting) ТСГ.
 
@@ -497,7 +485,7 @@ ms.locfileid: "97109301"
 
 - **Причина**: используется Azure SQL S1, что приводит к ограничениям ввода-вывода в таком случае.
 
-- **Решение**. Обновите уровень производительности SQL Azure, чтобы устранить проблему. 
+- **Решение**. чтобы устранить проблему, обновите уровень производительности SQL Azure. 
 
 
 ### <a name="sql-table-cannot-be-found"></a>Не удается найти таблицу SQL 
@@ -509,7 +497,7 @@ ms.locfileid: "97109301"
 - **Решение**. Переключитесь на более привилегированную учетную запись SQL.
 
 
-### <a name="string-or-binary-data-would-be-truncated"></a>Строковые или двоичные данные будут обрезаны
+### <a name="error-message-string-or-binary-data-would-be-truncated"></a>Сообщение об ошибке: строка или двоичные данные будут усечены
 
 - **Симптомы**: при копировании данных в локальную таблицу или SQL Server Azure произошла ошибка: 
 
@@ -517,11 +505,36 @@ ms.locfileid: "97109301"
 
 - **Решение**. чтобы устранить проблему, выполните следующие действия:
 
-    1. Примените [отказоустойчивость](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance), особенно "redirectIncompatibleRowSettings", чтобы устранить неполадки в строках.
+    1. Примените [отказоустойчивость](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)приемника SQL, особенно "redirectIncompatibleRowSettings", чтобы устранить неполадки в строках.
 
-    1. Дважды проверьте перенаправленные данные с помощью длины столбца схемы таблицы SQL, чтобы узнать, какие столбцы необходимо обновить.
+        > [!NOTE]
+        > Обратите внимание, что отказоустойчивость может повлечь за собой дополнительное время выполнения, что может привести к более высокой стоимости.
 
-    1. Соответствующим образом обновите схему таблицы.
+    2. Дважды проверьте перенаправленные данные с помощью длины столбца схемы таблицы SQL, чтобы узнать, какие столбцы необходимо обновить.
+
+    3. Соответствующим образом обновите схему таблицы.
+
+
+## <a name="azure-table-storage"></a>Хранилище таблиц Azure
+
+### <a name="error-code--azuretableduplicatecolumnsfromsource"></a>Код ошибки: Азуретабледупликатеколумнсфромсаурце
+
+- **Сообщение.** `Duplicate columns with same name '%name;' are detected from source. This is NOT supported by Azure Table Storage sink`
+
+- **Причина**. это может быть распространено для SQL-запроса с присоединением или неструктурированными CSV-файлами
+
+- **Рекомендация**: дважды проверьте исходные столбцы и устраните соответствующие действия.
+
+
+## <a name="db2"></a>DB2
+
+### <a name="error-code--db2driverrunfailed"></a>Код ошибки: DB2DriverRunFailed
+
+- **Сообщение.** `Error thrown from driver. Sql code: '%code;'`
+
+- **Причина**: Если сообщение об ошибке содержит "SQLSTATE = 51002 SQLCODE =-805", обратитесь к подсказке в этом документе: https://docs.microsoft.com/azure/data-factory/connector-db2#linked-service-properties
+
+- **Рекомендация**: попытайтесь задать "нуллид" в свойстве "паккажеколлектион"
 
 
 ## <a name="delimited-text-format"></a>Формат текста с разделителями
@@ -537,7 +550,7 @@ ms.locfileid: "97109301"
 
 ### <a name="error-code--delimitedtextmorecolumnsthandefined"></a>Код ошибки:  DelimitedTextMoreColumnsThanDefined
 
-- **Сообщение**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %columnCount;.`
+- **Сообщение**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %expectedColumnCount;.`
 
 - **Причина**: счетчик столбцов проблемной строки больше, чем число столбцов в первой строке. Это может быть вызвано проблемой с данными или неправильными настройками разделителей столбцов или символов кавычек.
 
@@ -550,22 +563,6 @@ ms.locfileid: "97109301"
 - **Причина.** Если источником является папка, возможно, файлы в указанной папке имеют другую схему.
 
 - **Рекомендация**.  Убедитесь в том, что файлы в указанной папке имеют идентичную схему.
-
-
-### <a name="error-code--delimitedtextincorrectrowdelimiter"></a>Код ошибки:  DelimitedTextIncorrectRowDelimiter
-
-- **Сообщение**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
-
-
-### <a name="error-code--delimitedtexttoolargecolumncount"></a>Код ошибки:  DelimitedTextTooLargeColumnCount
-
-- **Сообщение**: `Column count reaches limitation when deserializing csv file. Maximum size is '%size;'. Check the column delimiter and row delimiter provided. (Column delimiter: '%columnDelimiter;', Row delimiter: '%rowDelimiter;')`
-
-
-### <a name="error-code--delimitedtextinvalidsettings"></a>Код ошибки:  DelimitedTextInvalidSettings
-
-- **Сообщение**: `%settingIssues;`
-
 
 
 ## <a name="dynamics-365common-data-servicedynamics-crm"></a>Dynamics 365, Common Data Service, Dynamics CRM
@@ -588,79 +585,87 @@ ms.locfileid: "97109301"
 - **Рекомендация**: вручную добавьте столбцы на вкладке "сопоставление".
 
 
+### <a name="error-code--dynamicsmissingtargetformultitargetlookupfield"></a>Код ошибки: Динамиксмиссингтаржетформултитаржетлукупфиелд
+
+- **Сообщение**: `Cannot find the target column for multi-target lookup field: '%fieldName;'.`
+
+- **Причина**: целевой столбец не существует в источнике или сопоставлении столбцов.
+
+- **Рекомендация**: 1. Убедитесь, что источник содержит целевой столбец. 2. Добавьте целевой столбец в сопоставление столбцов. Убедитесь, что столбец приемника имеет шаблон "{fieldName} @EntityReference ".
+
+
+### <a name="error-code--dynamicsinvalidtargetformultitargetlookupfield"></a>Код ошибки: Динамиксинвалидтаржетформултитаржетлукупфиелд
+
+- **Сообщение.** `The provided target: '%targetName;' is not a valid target of field: '%fieldName;'. Valid targets are: '%validTargetNames;"`
+
+- **Причина**: неправильное имя сущности указано в качестве целевой сущности для поля подстановки с несколькими целевыми адресами.
+
+- **Рекомендация**: Укажите допустимое имя сущности для поля поиска с несколькими целевыми именами.
+
+
+### <a name="error-code--dynamicsinvalidtypeformultitargetlookupfield"></a>Код ошибки: Динамиксинвалидтипеформултитаржетлукупфиелд
+
+- **Сообщение.** `The provided target type is not a valid string. Field: '%fieldName;'.`
+
+- **Причина**: значение в целевом столбце не является строкой
+
+- **Рекомендация**: Укажите допустимую строку в целевом столбце с несколькими целевыми столбцами поиска.
+
+
+### <a name="error-code--dynamicsfailedtorequetserver"></a>Код ошибки: Динамиксфаиледторекуетсервер
+
+- **Сообщение.** `The dynamics server or the network is experiencing issues. Check network connectivity or check dynamics server log for more details.`
+
+- **Причина**: сервер Dynamics находится в нестабильном или недоступном состоянии, или в сети возникли проблемы.
+
+- **Рекомендация**: Проверьте подключение к сети или проверьте журнал сервера Dynamics, чтобы получить дополнительные сведения. Обратитесь в службу поддержки Dynamics для получения дополнительной помощи.
+
+
 ## <a name="excel-format"></a>Формат Excel
 
 ### <a name="timeout-or-slow-performance-when-parsing-large-excel-file"></a>Время ожидания или снижение производительности при анализе большого файла Excel
 
 - **Симптомы**:
 
-    1. При создании набора данных Excel и импорте схемы из подключения или хранилища, предварительного просмотра данных, списка или обновления листов может возникнуть ошибка времени ожидания, если файл Excel имеет большой размер.
+    - При создании набора данных Excel и импорте схемы из подключения/хранилища, просмотра данных, списка или обновления листов может возникнуть ошибка времени ожидания, если файл Excel имеет большой размер.
 
-    1. При использовании действия копирования для копирования данных из большого файла Excel (>= 100 МБ) в другое хранилище данных может наблюдаться снижение производительности или проблем с производительностью.
+    - При использовании действия копирования для копирования данных из большого файла Excel (>= 100 МБ) в другое хранилище данных может наблюдаться снижение производительности или проблем с производительностью.
 
 - **Причина**. 
 
-    1. Для таких операций, как импорт схемы, просмотр данных и вывод списка листов в наборе данных Excel, время ожидания равно 100s и статично. Для большого файла Excel эти операции могут не завершаться в течение времени ожидания.
+    - Для таких операций, как импорт схемы, предварительный просмотр данных и вывод списка листов в наборе данных Excel, время ожидания равно 100 s и статическому. Для большого файла Excel эти операции могут не завершаться в течение времени ожидания.
 
-    2. Действие копирования ADF считывает весь файл Excel в память, а затем находит указанный лист и ячейки для чтения данных. Это поведение вызвано тем, что в основном ADF-файле пакета SDK используется.
+    - Действие копирования ADF считывает весь файл Excel в память, а затем находит указанный лист и ячейки для чтения данных. Это поведение вызвано тем, что в основном ADF-файле пакета SDK используется.
 
 - **Решение**. 
 
-    1. Для импорта схемы можно создать файл примера меньшего размера, который является подмножеством исходного файла, и выбрать «импортировать схему из образца файла» вместо «импортировать схему из подключения или хранилища».
+    - Для импорта схемы можно создать файл примера меньшего размера, который является подмножеством исходного файла, и выбрать «импортировать схему из образца файла» вместо «импортировать схему из подключения или хранилища».
 
-    2. Для листа списка в раскрывающемся списке лист можно щелкнуть "Изменить" и ввести вместо этого имя или индекс листа.
+    - Для листа списка в раскрывающемся списке лист можно щелкнуть "Изменить" и ввести вместо этого имя или индекс листа.
 
-    3. Чтобы скопировать большой файл Excel (>100 МБ) в другое хранилище, можно использовать источник Excel потока данных, который прочитает и улучшит потоковую передачу.
+    - Чтобы скопировать большой файл Excel (>100 МБ) в другое хранилище, можно использовать источник Excel потока данных, который прочитает и выполняет потоковую передачу.
+    
 
+## <a name="ftp"></a>FTP
 
-## <a name="hdinsight"></a>HDInsight
+### <a name="error-code--ftpfailedtoconnecttoftpserver"></a>Код ошибки: Фтпфаиледтоконнекттофтпсервер
 
-### <a name="ssl-error-when-adf-linked-service-using-hdinsight-esp-cluster"></a>Ошибка SSL при связанной службе ADF с помощью кластера HDInsight ESP
+- **Сообщение.** `Failed to connect to FTP server. Please make sure the provided server informantion is correct, and try again.`
 
-- **Сообщение**: `Failed to connect to HDInsight cluster: 'ERROR [HY000] [Microsoft][DriverSupport] (1100) SSL certificate verification failed because the certificate is missing or incorrect.`
+- **Причина**: неверный тип связанной службы может использоваться для FTP-сервера, например для подключения к FTP-серверу с помощью связанной службы SFTP.
 
-- **Причина**. скорее всего, эта неполадка связана с надежным хранилищем системы.
-
-- **Решение**. можно перейти по пути **Microsoft Integration RUNTIME\4.0\SHARED\ODBC Дриверс\микрософт Hive ODBC дривер\либ** и открыть DriverConfiguration64.exe, чтобы изменить этот параметр.
-
-    ![Снимите флажок использовать системное хранилище доверия](./media/connector-troubleshoot-guide/system-trust-store-setting.png)
+- **Рекомендация**: проверьте порт целевого сервера. По умолчанию протокол FTP использует порт 21.
 
 
-## <a name="json-format"></a>Формат JSON
+## <a name="http"></a>Http
 
-### <a name="error-code--jsoninvalidarraypathdefinition"></a>Код ошибки:  JsonInvalidArrayPathDefinition
+### <a name="error-code--httpfilefailedtoread"></a>Код ошибки: Хттпфилефаиледтореад
 
-- **Сообщение**: `Error occurred when deserializing source JSON data. Check whether the JsonPath in JsonNodeReference and JsonPathDefintion is valid.`
+- **Сообщение.** `Failed to read data from http server. Check the error from http server：%message;`
 
+- **Причина**: Эта ошибка возникает, когда фабрика данных Azure взаимодействуют с HTTP-сервером, но операция запроса HTTP завершается ошибкой.
 
-### <a name="error-code--jsonemptyjobjectdata"></a>Код ошибки:  JsonEmptyJObjectData
-
-- **Сообщение**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
-
-
-### <a name="error-code--jsonnullvalueinpathdefinition"></a>Код ошибки:  JsonNullValueInPathDefinition
-
-- **Сообщение**: `Null JSONPath detected in JsonPathDefinition.`
-
-
-### <a name="error-code--jsonunsupportedhierarchicalcomplexvalue"></a>Код ошибки:  JsonUnsupportedHierarchicalComplexValue
-
-- **Сообщение**: `The retrieved type of data %data; with value %value; is not supported yet. Please either remove the targeted column '%name;' or enable skip incompatible row to skip the issue rows.`
-
-
-### <a name="error-code--jsonconflictpartitiondiscoveryschema"></a>Код ошибки:  JsonConflictPartitionDiscoverySchema
-
-- **Сообщение**: `Conflicting partition column names detected.'%schema;', '%partitionDiscoverySchema;'`
-
-
-### <a name="error-code--jsoninvaliddataformat"></a>Код ошибки:  JsonInvalidDataFormat
-
-- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. Check if the data is in valid JSON object format.`
-
-
-### <a name="error-code--jsoninvaliddatamixedarrayandobject"></a>Код ошибки:  JsonInvalidDataMixedArrayAndObject
-
-- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
+- **Рекомендация**: Проверьте код состояния HTTP \ сообщение в сообщении об ошибке и устраните проблему с удаленным сервером.
 
 
 ## <a name="oracle"></a>Oracle;
@@ -676,6 +681,41 @@ ms.locfileid: "97109301"
     Выполните команду `select dump(<column name>)` , чтобы проверить, находится ли значение в Oracle в диапазоне ADF. 
 
     Если вы хотите узнать последовательность байтов в результатах, проверьте https://stackoverflow.com/questions/13568193/how-are-dates-stored-in-oracle .
+
+
+## <a name="orc-format"></a>Формат ORC
+
+### <a name="error-code--orcjavainvocationexception"></a>Код ошибки: Оркжаваинвокатионексцептион
+
+- **Сообщение**: `An error occurred when invoking java, message: %javaException;.`
+
+- **Причина.** Если в сообщении об ошибке есть строки "java.lang.OutOfMemory", "пространство кучи Java" и "doubleCapacity", обычно это ошибка управления памятью в старой версии среды выполнения интеграции.
+
+- **Рекомендация**. Если вы используете локально размещенную Integration Runtime, рекомендуем обновить ее до последней версии.
+
+- **Причина.** Если в сообщении об ошибке есть строка "java.lang.OutOfMemory", среда выполнения интеграции имеет недостаточно ресурсов для обработки файлов.
+
+- **Рекомендация**.  Ограничьте количество параллельных выполнений в среде выполнения интеграции. Для локальной среды выполнения интеграции увеличьте ресурсы компьютера. Объем его памяти должен быть не меньше 8 ГБ.
+
+- **Причина.** Если в сообщении об ошибке есть слово NullPointerReference, возможно, это временная ошибка.
+
+- **Рекомендация**: повторная попытка. Если проблема сохранится, обратитесь в службу поддержки.
+
+- **Причина**: Если сообщение об ошибке содержит "буффероверфловексцептион", возможно, это временная ошибка.
+
+- **Рекомендация**: повторная попытка. Если проблема сохранится, обратитесь в службу поддержки.
+
+- **Причина**: Если сообщение об ошибке содержит "Java. lang. класскастексцептион:орг. Apache. Hadoop. Hive. serde2. IO. хивечарвритабле не может быть приведен к org. Apache. Hadoop. IO. Text", это проблема преобразования типов в среде выполнения Java. Обычно это вызвано тем, что исходные данные не могут быть хорошо обработаны в среде выполнения Java.
+
+- **Рекомендация**: проблема с данными. Попробуйте использовать строку вместо char/varchar в данных формата ORC.
+
+### <a name="error-code--orcdatetimeexceedlimit"></a>Код ошибки: Оркдатетимиксцеедлимит
+
+- **Сообщение.** `The Ticks value '%ticks;' for the datetime column must be between valid datetime ticks range -621355968000000000 and 2534022144000000000.`
+
+- **Причина**: Если значение DateTime равно "0001-01-01 00:00:00", это может быть вызвано разницей в юлианском календаре и григорианском календаре. https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar#Difference_between_Julian_and_proleptic_Gregorian_calendar_dates.
+
+- **Рекомендация**: проверьте значение тактов и Избегайте использования значения datetime "0001-01-01 00:00:00".
 
 
 ## <a name="parquet-format"></a>Формат Parquet
@@ -828,14 +868,22 @@ ms.locfileid: "97109301"
 
 - **Решение**. 
 
-    1. Дважды проверьте наличие пробелов в имени столбца приемника.
+    - Дважды проверьте наличие пробелов в имени столбца приемника.
 
-    1. Дважды проверьте, используется ли в качестве имени столбца первая строка с пробелами.
+    - Дважды проверьте, используется ли в качестве имени столбца первая строка с пробелами.
 
-    1. Проверьте, поддерживается ли тип Оригиналтипе. Старайтесь не использовать эти специальные символы `,;{}()\n\t=` . 
+    - Проверьте, поддерживается ли тип Оригиналтипе. Старайтесь не использовать эти специальные символы `,;{}()\n\t=` . 
 
 
 ## <a name="rest"></a>REST
+
+### <a name="error-code--restsinkcallfailed"></a>Код ошибки: Рестсинккаллфаилед
+
+- **Сообщение.** `Rest Endpoint responded with Failure from server. Check the error from server:%message;`
+
+- **Причина**: Эта ошибка возникает, когда фабрика данных Azure заходит в конечную точку RESTful по протоколу HTTP и операция запроса завершается ошибкой.
+
+- **Рекомендация**: Проверьте код состояния HTTP \ сообщение в сообщении об ошибке и устраните проблему с удаленным сервером.
 
 ### <a name="unexpected-network-response-from-rest-connector"></a>Непредвиденный сетевой ответ от соединителя RESTFUL
 
@@ -861,75 +909,76 @@ ms.locfileid: "97109301"
 
 ## <a name="sftp"></a>SFTP
 
-### <a name="invalid-sftp-credential-provided-for-sshpublickey-authentication-type"></a>Для типа проверки подлинности "SSHPublicKey" указаны недопустимые учетные данные SFTP
+#### <a name="error-code--sftpoperationfail"></a>Код ошибки: Сфтпоператионфаил
 
-- **Симптомы**. используется проверка подлинности с открытым ключом SSH, если для типа проверки подлинности "SshPublicKey" предоставлены недопустимые учетные данные SFTP.
+- **Сообщение.** `Failed to '%operation;'. Check detailed error from SFTP.`
 
-- **Причина**. Эта ошибка может быть вызвана тремя возможными причинами.
+- **Причина**: ошибка при обращении к операции SFTP.
 
-    1. Содержимое закрытого ключа извлекается из AKV/SDK, но оно неправильно кодируется.
-
-    1. Выбран неправильный формат содержимого ключа.
-
-    1. Недопустимое содержимое учетных данных или закрытого ключа.
-
-- **Решение**. 
-
-    1. Для **причины 1**:
-
-       Если содержимое закрытого ключа относится к AKV, а исходный файл ключа может работать, если клиент загружает его непосредственно в связанную службу SFTP
-
-       https://docs.microsoft.com/azure/data-factory/connector-sftp#using-ssh-public-key-authenticationСодержимое privateKey — это содержимое закрытого ключа SSH в кодировке Base64.
-
-       Запишите **все содержимое исходного файла закрытого ключа** с помощью кодировки Base64 и сохраните закодированную строку в AKV. Исходный закрытый ключ — это файл, который может работать в связанной службе SFTP, если щелкнуть отправить из файла.
-
-       Ниже приведены некоторые примеры, используемые для создания строки.
-
-       - Использовать код C#:
-       ```
-       byte[] keyContentBytes = File.ReadAllBytes(Private Key Path);
-       string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
-       ```
-
-       - Использовать код Python:
-       ```
-       import base64
-       rfd = open(r'{Private Key Path}', 'rb')
-       keyContent = rfd.read()
-       rfd.close()
-       print base64.b64encode(Key Content)
-       ```
-
-       - Использование стороннего средства преобразования Base64
-
-         https://www.base64encode.org/Рекомендуется использовать такие средства, как.
-
-    1. Для **причины 2**:
-
-       Если используется закрытый ключ SSH в формате PKCS # 8
-
-       Формат PKCS # 8 закрытый ключ SSH (начинающийся с-----BEGIN ENCRYPTed закрытый ключ-----") сейчас не поддерживается для доступа к серверу SFTP в ADF. 
-
-       Выполните приведенные ниже команды, чтобы преобразовать ключ в традиционный формат ключей SSH (начинающийся с "-----BEGIN RSA закрытый ключ-----"):
-
-       ```
-       openssl pkcs8 -in pkcs8_format_key_file -out traditional_format_key_file
-       chmod 600 traditional_format_key_file
-       ssh-keygen -f traditional_format_key_file -p
-       ```
-    1. **Причина 3**:
-
-       Проверьте правильность файла ключа или пароля с помощью таких средств, как WinSCP.
+- **Рекомендация**: Проверьте подробную ошибку в SFTP.
 
 
-### <a name="incorrect-linked-service-type-is-used"></a>Используется неправильный тип связанной службы
+### <a name="error-code--sftprenameoperationfail"></a>Код ошибки: Сфтпренамеоператионфаил
 
-- **Симптомы**: не удается связаться с сервером FTP или SFTP.
+- **Сообщение.** `Failed to rename the temp file. Your SFTP server doesn't support renaming temp file, please set "useTempFileRename" as false in copy sink to disable uploading to temp file.`
 
-- **Причина**: для сервера FTP или SFTP используется неправильный тип связанной службы, например с помощью связанной службы FTP для подключения к серверу SFTP или в обратную связь.
+- **Причина**: сервер SFTP не поддерживает переименование временного файла.
 
-- **Решение**. Проверьте порт целевого сервера. По умолчанию протокол FTP использует порт 21, а SFTP использует порт 22.
+- **Рекомендация**: задайте для параметра "усетемпфилеренаме" значение false в приемнике копирования, чтобы отключить передачу во временный файл.
 
+
+### <a name="error-code--sftpinvalidsftpcredential"></a>Код ошибки: Сфтпинвалидсфтпкредентиал
+
+- **Сообщение.** `Invalid Sftp credential provided for '%type;' authentication type.`
+
+- **Причина**: содержимое закрытого ключа извлекается из AKV/SDK, но оно неправильно кодируется.
+
+- **Рекомендация**.  
+
+    Если содержимое закрытого ключа относится к AKV, а исходный файл ключа может работать, если клиент загружает его непосредственно в связанную службу SFTP
+
+    https://docs.microsoft.com/azure/data-factory/connector-sftp#using-ssh-public-key-authenticationСодержимое privateKey — это содержимое закрытого ключа SSH в кодировке Base64.
+
+    Запишите **все содержимое исходного файла закрытого ключа** с помощью кодировки Base64 и сохраните закодированную строку в AKV. Исходный закрытый ключ — это файл, который может работать в связанной службе SFTP, если щелкнуть отправить из файла.
+
+    Ниже приведены некоторые примеры, используемые для создания строки.
+
+    - Использовать код C#:
+    ```
+    byte[] keyContentBytes = File.ReadAllBytes(Private Key Path);
+    string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
+    ```
+
+    - Использовать код Python:
+    ```
+    import base64
+    rfd = open(r'{Private Key Path}', 'rb')
+    keyContent = rfd.read()
+    rfd.close()
+    print base64.b64encode(Key Content)
+    ```
+
+    - Использование стороннего средства преобразования Base64
+
+        https://www.base64encode.org/Рекомендуется использовать такие средства, как.
+
+- **Причина**: выбран неправильный формат содержимого ключа
+
+- **Рекомендация**.  
+
+    Формат PKCS # 8 закрытый ключ SSH (начинающийся с-----BEGIN ENCRYPTed закрытый ключ-----") сейчас не поддерживается для доступа к серверу SFTP в ADF. 
+
+    Выполните приведенные ниже команды, чтобы преобразовать ключ в традиционный формат ключей SSH (начинающийся с "-----BEGIN RSA закрытый ключ-----"):
+
+    ```
+    openssl pkcs8 -in pkcs8_format_key_file -out traditional_format_key_file
+    chmod 600 traditional_format_key_file
+    ssh-keygen -f traditional_format_key_file -p
+    ```
+
+- **Причина**: недопустимое содержимое учетных данных или закрытого ключа
+
+- **Рекомендация**: дважды проверьте правильность файла ключа или пароля с помощью таких средств, как WinSCP.
 
 ### <a name="sftp-copy-activity-failed"></a>Сбой действия SFTP Copy
 
@@ -940,15 +989,19 @@ ms.locfileid: "97109301"
 - **Решение**. Дважды проверьте, как набор данных настраивается путем сопоставления столбца целевого набора данных, чтобы подтвердить наличие такого столбца "аккмнгр".
 
 
-### <a name="sftp-server-connection-throttling"></a>Регулирование подключения SFTP к серверу
+### <a name="error-code--sftpfailedtoconnecttosftpserver"></a>Код ошибки: Сфтпфаиледтоконнекттосфтпсервер
 
-- **Симптомы**: ответ сервера не содержит идентификацию протокола SSH и не удалось выполнить копирование.
+- **Сообщение.** `Failed to connect to Sftp server '%server;'.`
 
-- **Причина**: ADF будет создавать несколько подключений для скачивания с SFTP Server параллельно, и иногда это приведет к регулированию сервера SFTP. В большинстве случаях при регулировании попаданий для разных серверов будет возвращена другая ошибка.
+- **Причина**: Если сообщение об ошибке содержит "время ожидания операции чтения сокета истекло после 30000 миллисекунд", одна из возможных причин заключается в том, что для SFTP-сервера используется неверный тип связанной службы, например использование связанной службы FTP для подключения к SFTP-серверу.
 
-- **Решение**. 
+- **Рекомендация**: проверьте порт целевого сервера. По умолчанию SFTP использует порт 22.
 
-    Укажите максимальное одновременное подключение к набору данных SFTP до 1 и повторите копирование. В случае успешного прохождения этой проблемы можно убедиться в том, что в этом заключается регулирование.
+- **Причина**: Если сообщение об ошибке содержит "ответ сервера не содержит идентификацию протокола SSH", одна из возможных причин заключается в том, что SFTP-сервер регулирует соединение. ADF создаст несколько подключений для скачивания с SFTP Server параллельно, и иногда это приведет к регулированию сервера SFTP. В большинстве случаях при регулировании попаданий для разных серверов будет возвращена другая ошибка.
+
+- **Рекомендация**.  
+
+    Укажите максимальное одновременное подключение к набору данных SFTP до 1 и повторно запустите копию. В случае успешного прохождения этой проблемы можно убедиться в том, что в этом заключается регулирование.
 
     Если вы хотите повысить пропускную способность, обратитесь к администратору SFTP, чтобы увеличить число одновременных подключений, или добавьте следующий IP-адрес в список разрешений:
 
@@ -958,13 +1011,53 @@ ms.locfileid: "97109301"
     - Если вы используете локальную среду IR, добавьте IP-адрес компьютера, который установил Шир, в список разрешений.
 
 
-### <a name="error-code-sftprenameoperationfail"></a>Код ошибки: Сфтпренамеоператионфаил
+## <a name="sharepoint-online-list"></a>Список SharePoint Online
 
-- **Симптомы**: конвейеру не удалось скопировать данные из большого двоичного объекта в SFTP со следующей ошибкой: `Operation on target Copy_5xe failed: Failure happened on 'Sink' side. ErrorCode=SftpRenameOperationFail,Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException` .
+### <a name="error-code--sharepointonlineauthfailed"></a>Код ошибки: Шарепоинтонлинеаусфаилед
 
-- **Причина**: для параметра усетемпфилеренаме было задано значение true при копировании данных. Это позволяет процессу использовать временные файлы. Ошибка будет активирована, если один или несколько временных файлов были удалены до копирования всех данных.
+- **Сообщение.** `The access token generated failed, status code: %code;, error message: %message;.`
 
-- **Решение**. Задайте для параметра Усетемпфиленаме значение false.
+- **Причина**: идентификатор субъекта-службы и ключ могут быть неправильно заданы.
+
+- **Рекомендация**. Проверьте зарегистрированное приложение (идентификатор субъекта-службы) и ключ, правильно ли он установлен.
+
+
+## <a name="xml-format"></a>Формат XML
+
+### <a name="error-code--xmlsinknotsupported"></a>Код ошибки: Ксмлсинкнотсуппортед
+
+- **Сообщение.** `Write data in xml format is not supported yet, please choose a different format!`
+
+- **Причина**: в действии копирования используется набор данных XML в качестве приемника данных
+
+- **Рекомендация**: используйте в качестве приемника копирования набор данных в другом формате.
+
+
+### <a name="error-code--xmlattributecolumnnameconflict"></a>Код ошибки: Ксмлаттрибутеколумннамеконфликт
+
+- **Сообщение.** `Column names %attrNames;' for attributes of element '%element;' conflict with that for corresponding child elements, and the attribute prefix used is '%prefix;'.`
+
+- **Причина**: используется префикс атрибута, который вызвал конфликт.
+
+- **Рекомендация**: задайте другое значение свойства "аттрибутепрефикс".
+
+
+### <a name="error-code--xmlvaluecolumnnameconflict"></a>Код ошибки: Ксмлвалуеколумннамеконфликт
+
+- **Сообщение.** `Column name for the value of element '%element;' is '%columnName;' and it conflicts with the child element having the same name.`
+
+- **Причина**: используется одно из имен дочерних элементов в качестве имени столбца для значения элемента.
+
+- **Рекомендация**: задайте другое значение свойства "valueColumn".
+
+
+### <a name="error-code--xmlinvalid"></a>Код ошибки: Ксмлинвалид
+
+- **Сообщение.** `Input XML file '%file;' is invalid with parsing error '%error;'.`
+
+- **Причина**: входной XML-файл имеет некорректный формат.
+
+- **Рекомендация**: исправьте XML-файл, чтобы сделать его правильным.
 
 
 ## <a name="general-copy-activity-error"></a>Общая ошибка действия копирования
@@ -987,24 +1080,23 @@ ms.locfileid: "97109301"
 - **Рекомендация**.  Проверьте набор данных приемника и исправьте путь, убрав подстановочные знаки.
 
 
-### <a name="error-code--mappinginvalidpropertywithemptyvalue"></a>Код ошибки:  MappingInvalidPropertyWithEmptyValue
+### <a name="fips-issue"></a>Выпуск FIPS
 
-- **Сообщение**: `One or more '%sourceOrSink;' in copy activity mapping doesn't point to any data. Choose one of the three properties 'name', 'path' and 'ordinal' to reference columns/fields.`
+- **Симптомы**. сбой действия копирования на компьютере, размещенном в автономном Integration Runtime с поддержкой FIPS, с сообщением об ошибке `This implementation is not part of the Windows Platform FIPS validated cryptographic algorithms.` . Это может произойти при копировании данных с помощью соединителей, таких как BLOB-объекты Azure, SFTP и т. д.
 
+- **Причина**: FIPS (федеральные стандарты обработки информации) определяет определенный набор алгоритмов шифрования, которые разрешено использовать. Когда режим FIPS включен на компьютере, некоторые криптографические классы, от которых зависит действие копирования, блокируются в некоторых сценариях.
 
-### <a name="error-code--mappinginvalidpropertywithnamepathandordinal"></a>Код ошибки:  MappingInvalidPropertyWithNamePathAndOrdinal
+- **Решение**. Вы можете узнать о текущей ситуации режима FIPS в Windows из [этой статьи](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/why-we-8217-re-not-recommending-8220-fips-mode-8221-anymore/ba-p/701037)и оценить, можно ли отключить FIPS на автономной Integration Runtime машине.
 
-- **Сообщение**: `Mixed properties are used to reference '%sourceOrSink;' columns/fields in copy activity mapping. Please only choose one of the three properties 'name', 'path' and 'ordinal'. The problematic mapping setting is 'name': '%name;', 'path': '%path;','ordinal': '%ordinal;'.`
+    С другой стороны, если вы хотите разрешить в фабрике данных Azure обход FIPS и выполнить действие с успехом, можно выполнить следующие действия:
 
+    1. Откройте папку, в которой установлена автономная Integration Runtime, обычно в разделе `C:\Program Files\Microsoft Integration Runtime\<IR version>\Shared` .
 
-### <a name="error-code--mappingduplicatedordinal"></a>Код ошибки:  MappingDuplicatedOrdinal
+    2. Откройте "diawp.exe.config", добавьте `<enforceFIPSPolicy enabled="false"/>` в `<runtime>` раздел, как в следующем разделе.
 
-- **Сообщение**: `Copy activity 'mappings' has duplicated ordinal value "%Ordinal;". Fix the setting in 'mappings'.`
+        ![Отключение FIPS](./media/connector-troubleshoot-guide/disable-fips-policy.png)
 
-
-### <a name="error-code--mappinginvalidordinalforsinkcolumn"></a>Код ошибки:  MappingInvalidOrdinalForSinkColumn
-
-- **Сообщение**: `Invalid 'ordinal' property for sink column under 'mappings' property. Ordinal: %Ordinal;.`
+    3. Перезапустите локальную Integration Runtimeную машину.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

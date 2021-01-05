@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 1dbf6478a62675c8b514298007a7663239d8f7cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65163225853037ac4cb97a02c0bdaf554b509fb1
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084648"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822205"
 ---
 # <a name="known-issues-for-apache-spark-cluster-on-hdinsight"></a>Известные проблемы в работе кластера Apache Spark в HDInsight
 
@@ -81,7 +81,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 ### <a name="notebooks-with-non-ascii-characters-in-filenames"></a>Записные книжки со знаками не из набора ASCII в именах файлов
 
-Не используйте в именах файлов записных книжек Jupyter символы не из набора ASCII. При попытке отправить через пользовательский интерфейс Jupyter файл, имя которого содержит символы не из набора ASCII, происходит сбой без сообщения об ошибке. Jupyter не позволяет отправить файл, но и не выдает явную ошибку.
+Не используйте символы, отличные от ASCII, в Jupyter Notebook именах файлов. При попытке отправить через пользовательский интерфейс Jupyter файл, имя которого содержит символы не из набора ASCII, происходит сбой без сообщения об ошибке. Jupyter не позволяет отправить файл, но и не выдает явную ошибку.
 
 ### <a name="error-while-loading-notebooks-of-larger-sizes"></a>Ошибка при загрузке записных книжек большого размера
 
@@ -100,15 +100,15 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 ### <a name="notebook-initial-startup-takes-longer-than-expected"></a>Начальная загрузка записной книжки загружается дольше ожидаемого
 
-Выполнение первой инструкции кода в записной книжке Jupyter с использованием волшебного слова Spark может занимать больше минуты.  
+Первая инструкция Code в Jupyter Notebook с помощью функции Spark Magic может занять больше минуты.  
 
 **Объяснение**
 
 Это происходит из-за выполнения первой ячейки кода. В фоновом режиме инициируется конфигурация сеанса и задается контекст Spark, SQL и Hive. После настройки этих контекстов выполняется первая инструкция, и из-за этого кажется, что она выполняется долго.
 
-### <a name="jupyter-notebook-timeout-in-creating-the-session"></a>Приостановка записной книжки Jupyter при создании сеанса
+### <a name="jupyter-notebook-timeout-in-creating-the-session"></a>Jupyter Notebook время ожидания при создании сеанса
 
-Если кластеру Spark не хватает ресурсов, при попытке создать сеанс работа ядер Spark и Pyspark в записной книжке Jupyter приостанавливается.
+Если в кластере Spark исчерпаны ресурсы, то при попытке создать сеанс в ядре Spark и PySpark в Jupyter Notebook будет превышено время ожидания.
 
 **Способы их устранения**
 
@@ -135,12 +135,12 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 * [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
 * [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](apache-spark-livy-rest-interface.md)
 
-### <a name="tools-and-extensions"></a>Средства и расширения
+### <a name="tools-and-extensions"></a>Инструменты и расширения
 
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
 * [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра, доступные для Jupyter Notebook в кластере Apache Spark для HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 
