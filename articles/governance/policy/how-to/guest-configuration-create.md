@@ -3,12 +3,12 @@ title: Создание политик гостевой конфигурации
 description: Узнайте, как создать политику гостевой конфигурации в службе "Политика Azure" для Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: d01f4fff28debc3fabcfb32b32b02c5029ce7323
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: 85ffda54d58db0544858ca8ab61335b61f18299e
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755979"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881792"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Создание политик гостевой конфигурации для Windows
 
@@ -138,9 +138,32 @@ class ResourceName : OMI_BaseResource
 };
 ```
 
+Если ресурс содержит обязательные свойства, они также должны возвращаться `Get-TargetResource` в параллельном режиме с `reasons` классом. Если `reasons` он не включен, служба включает поведение "Catch-All", которое сравнивает входные значения со значениями `Get-TargetResource` и значения, возвращаемые методом `Get-TargetResource` , и предоставляет подробное сравнение в виде `reasons` .
+
 ### <a name="configuration-requirements"></a>Требования настройки
 
 Имя настраиваемой конфигурации должно быть одинаковым везде. Имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле и имя назначения гостя в шаблоне Azure Resource Manager (шаблон ARM) должны быть одинаковыми.
+
+### <a name="policy-requirements"></a>Требования политики
+
+Раздел определения политики `metadata` должен включать два свойства службы настройки гостевой системы для автоматизации подготовки и создания отчетов о назначениях гостевой конфигурации. `category`Для свойства необходимо задать значение "Гостевая конфигурация", а раздел с именем `Guest Configuration` должен содержать сведения о назначении гостевой конфигурации. `New-GuestConfigurationPolicy`Командлет создает этот текст автоматически.
+См. пошаговые инструкции на этой странице.
+
+В следующем примере демонстрируется `metadata` раздел.
+
+```json
+    "metadata": {
+      "category": "Guest Configuration",
+      "guestConfiguration": {
+        "name": "test",
+        "version": "1.0.0",
+        "contentType": "Custom",
+        "contentUri": "CUSTOM-URI-HERE",
+        "contentHash": "CUSTOM-HASH-VALUE-HERE",
+        "configurationParameter": {}
+      }
+    },
+```
 
 ### <a name="scaffolding-a-guest-configuration-project"></a>Формирование шаблонов для проекта гостевой конфигурации
 

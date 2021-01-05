@@ -8,12 +8,12 @@ ms.date: 01/03/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 340455450cd6a18adfd8d0843fee423f82f10a45
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 153ffd699b22a6379758bf66b896a2b37a19fdf3
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858405"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883288"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure
 
@@ -22,7 +22,8 @@ ms.locfileid: "97858405"
 Если вы не знакомы с файловыми ресурсами Azure, рекомендуем ознакомиться с нашим [руководством по планированию](storage-files-planning.md) , прежде чем читать следующую серию статей.
 
 > [!NOTE]
-> Служба файлов Azure поддерживает проверку подлинности Kerberos с помощью AD DS Azure с шифрованием RC4-HMAC и AES 256. Служба файлов Azure поддерживает аутентификацию Azure AD DS с полной синхронизацией с Azure AD. Если вы включили синхронизацию с заданной областью в Azure AD DS что синхронизирует только ограниченный набор удостоверений из Azure AD, проверка подлинности и авторизация не поддерживается.
+> Служба файлов Azure поддерживает проверку подлинности Kerberos с помощью AD DS Azure только с RC4-HMAC. Шифрование AES Kerberos пока не поддерживается.
+> Служба файлов Azure поддерживает аутентификацию Azure AD DS с полной синхронизацией с Azure AD. Если вы включили синхронизацию с заданной областью в Azure AD DS что синхронизирует только ограниченный набор удостоверений из Azure AD, проверка подлинности и авторизация не поддерживается.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

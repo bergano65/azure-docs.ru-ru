@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein
 ms.date: 10/15/2020
-ms.openlocfilehash: fb4746972f78dc40a3ec264d2e1964e8d4e99b3d
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: e706f64a7caab6873a3eec86505eaee11374ae2c
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097598"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882324"
 ---
 # <a name="resource-limits-for-elastic-pools-using-the-vcore-purchasing-model"></a>Ограничения ресурсов для эластичных пулов с использованием модели приобретения Виртуальное ядро
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -126,7 +126,7 @@ ms.locfileid: "92097598"
 |Максимальное количество параллельных сеансов|30 000|30 000|30 000|30 000|30 000|30 000|30 000|
 |Максимальное/минимальное количество виртуальных ядер в эластичном пуле на базу данных|0, 0,25, 0,5, 1, 2|0, 0.25, 0.5, 1...4|0, 0.25, 0.5, 1...6|0, 0.25, 0.5, 1...8|0, 0.25, 0.5, 1...10|0, 0.25, 0.5, 1...12|0, 0.25, 0.5, 1...14|
 |Количество реплик|1|1|1|1|1|1|1|
-|Возможность развертывания Multi-AZ|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|
+|Возможность развертывания Multi-AZ|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|
 |Горизонтальное масштабирование для чтения|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|
 |Включенное хранилище резервных копий|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|
 
@@ -158,7 +158,7 @@ ms.locfileid: "92097598"
 |Максимальное количество параллельных сеансов|30 000|30 000|30 000|30 000|30 000|30 000|30 000|
 |Максимальное/минимальное количество виртуальных ядер в эластичном пуле на базу данных|0, 0.25, 0.5, 1...16|0, 0.25, 0.5, 1...18|0, 0.25, 0.5, 1...20|0, 0.25, 0.5, 1...20, 24|0, 0.25, 0.5, 1...20, 24, 32|0, 0.25, 0.5, 1...16, 24, 32, 40|0, 0.25, 0.5, 1...16, 24, 32, 40, 80|
 |Количество реплик|1|1|1|1|1|1|1|
-|Возможность развертывания Multi-AZ|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|
+|Возможность развертывания Multi-AZ|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Доступно в предварительной версии](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|
 |Горизонтальное масштабирование для чтения|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|Недоступно|
 |Включенное хранилище резервных копий|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|
 

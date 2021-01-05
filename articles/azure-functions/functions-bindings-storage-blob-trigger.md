@@ -6,18 +6,18 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: fd33ca4c5d637e31230d8c124fdb9ec7c71d2ba7
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 3213df378bc3b8403ebd11f899d722106de67a65
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094851"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882030"
 ---
 # <a name="azure-blob-storage-trigger-for-azure-functions"></a>Триггер хранилища BLOB-объектов Azure для функций Azure
 
 Триггер хранилища BLOB-объектов запускает функцию при обнаружении нового или обновленного большого двоичного объекта. Содержимое большого двоичного объекта предоставляется [функции в качестве входных данных](./functions-bindings-storage-blob-input.md).
 
-Для триггера хранилища BLOB-объектов Azure требуется учетная запись хранения общего назначения. Также поддерживаются учетные записи хранилища версии 2 с [иерархическими пространствами имен](../storage/blobs/data-lake-storage-namespace.md) . Чтобы использовать учетную запись только для больших двоичных объектов или если приложение имеет особые потребности, проверьте альтернативные варианты использования этого триггера.
+Для триггера хранилища BLOB-объектов Azure требуется учетная запись хранения общего назначения. Также поддерживаются учетные записи хранилища v2 с [иерархическими пространствами имен](../storage/blobs/data-lake-storage-namespace.md) . Чтобы использовать учетную запись только для больших двоичных объектов или если приложение имеет особые потребности, проверьте альтернативные варианты использования этого триггера.
 
 Сведения об установке и настройке см. в [этой обзорной статье](./functions-bindings-storage-blob.md).
 
@@ -114,6 +114,24 @@ public static void Run(CloudBlockBlob myBlob, string name, ILogger log)
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+Эта функция записывает журнал при добавлении или обновлении большого двоичного объекта в `myblob` контейнере.
+
+```java
+@FunctionName("blobprocessor")
+public void run(
+  @BlobTrigger(name = "file",
+               dataType = "binary",
+               path = "myblob/{name}",
+               connection = "MyStorageAccountAppSetting") byte[] content,
+  @BindingName("name") String filename,
+  final ExecutionContext context
+) {
+  context.getLogger().info("Name: " + filename + " Size: " + content.length + " bytes");
+}
+```
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера большого двоичного объекта в файле *function.json* и [коде JavaScript](functions-reference-node.md), который использует привязку. Функция делает запись в журнал при добавлении или обновлении большого двоичного объекта в контейнере `samples-workitems`.
@@ -146,6 +164,34 @@ module.exports = function(context) {
     context.log('Node.js Blob trigger function processed', context.bindings.myBlob);
     context.done();
 };
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показано, как создать функцию, которая выполняется при добавлении файла в `source` контейнер хранилища BLOB-объектов.
+
+Файл конфигурации функции (_function.json_) включает в себя привязку с параметром `type` и, присвойте параметру `blobTrigger` `direction` значение `in` .
+
+```json
+{
+  "bindings": [
+    {
+      "name": "InputBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "source/{name}",
+      "connection": "MyStorageAccountConnectionString"
+    }
+  ]
+}
+```
+
+Ниже приведен связанный код для файла _run.ps1_ .
+
+```powershell
+param([byte[]] $InputBlob, $TriggerMetadata)
+
+Write-Host "PowerShell Blob trigger: Name: $($TriggerMetadata.Name) Size: $($InputBlob.Length) bytes"
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -185,24 +231,6 @@ def main(myblob: func.InputStream):
     logging.info('Python Blob trigger function processed %s', myblob.name)
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
-Эта функция записывает журнал при добавлении или обновлении большого двоичного объекта в `myblob` контейнере.
-
-```java
-@FunctionName("blobprocessor")
-public void run(
-  @BlobTrigger(name = "file",
-               dataType = "binary",
-               path = "myblob/{name}",
-               connection = "MyStorageAccountAppSetting") byte[] content,
-  @BindingName("name") String filename,
-  final ExecutionContext context
-) {
-  context.getLogger().info("Name: " + filename + " Size: " + content.length + " bytes");
-}
-```
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
@@ -213,7 +241,7 @@ public void run(
 
 * [BlobTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobTriggerAttribute.cs)
 
-  Конструктор атрибута принимает строку пути, которая указывает на контейнер для просмотра, и при необходимости [шаблон имени большого двоичного объекта](#blob-name-patterns). Ниже приведен пример:
+  Конструктор атрибута принимает строку пути, которая указывает на контейнер для просмотра, и при необходимости [шаблон имени большого двоичного объекта](#blob-name-patterns). Приведем пример:
 
   ```csharp
   [FunctionName("ResizeImage")]
@@ -267,17 +295,21 @@ public void run(
 
 В скрипте C# атрибуты не поддерживаются.
 
+# <a name="java"></a>[Java](#tab/java)
+
+`@BlobTrigger`Атрибут используется для предоставления доступа к большому двоичному объекту, запускающему функцию. Дополнительные сведения см. в [примере триггера](#example) .
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В JavaScript атрибуты не поддерживаются.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
 # <a name="python"></a>[Python](#tab/python)
 
 В Python атрибуты не поддерживаются.
-
-# <a name="java"></a>[Java](#tab/java)
-
-`@BlobTrigger`Атрибут используется для предоставления доступа к большому двоичному объекту, запускающему функцию. Дополнительные сведения см. в [примере триггера](#example) .
 
 ---
 
@@ -305,17 +337,21 @@ public void run(
 
 [!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-trigger.md)]
 
+# <a name="java"></a>[Java](#tab/java)
+
+`@BlobTrigger`Атрибут используется для предоставления доступа к большому двоичному объекту, запускающему функцию. Дополнительные сведения см. в [примере триггера](#example) .
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к данным большого двоичного объекта с помощью `context.bindings.<NAME>` Where `<NAME>` совпадает со значением, определенным в *function.json*.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Получите доступ к данным большого двоичного объекта с помощью параметра, совпадающего с именем, назначенным параметром имени привязки в _function.js_ в файле.
+
 # <a name="python"></a>[Python](#tab/python)
 
-Доступ к данным большого двоичного объекта с помощью параметра, типизированного как [InputStream](/python/api/azure-functions/azure.functions.inputstream?view=azure-python). Дополнительные сведения см. в [примере триггера](#example) .
-
-# <a name="java"></a>[Java](#tab/java)
-
-`@BlobTrigger`Атрибут используется для предоставления доступа к большому двоичному объекту, запускающему функцию. Дополнительные сведения см. в [примере триггера](#example) .
+Доступ к данным большого двоичного объекта с помощью параметра, типизированного как [InputStream](/python/api/azure-functions/azure.functions.inputstream?view=azure-python&preserve-view=true). Дополнительные сведения см. в [примере триггера](#example) .
 
 ---
 
@@ -374,6 +410,10 @@ public void run(
 
 [!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-metadata.md)]
 
+# <a name="java"></a>[Java](#tab/java)
+
+Метаданные недоступны в Java.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
@@ -383,13 +423,13 @@ module.exports = function (context, myBlob) {
 };
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Метаданные доступны через `$TriggerMetadata` параметр.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Метаданные недоступны в Python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Метаданные недоступны в Java.
 
 ---
 
@@ -399,11 +439,11 @@ module.exports = function (context, myBlob) {
 
 Функции Azure сохраняют уведомления о получении BLOB-объектов в контейнере с именем *azure-webjobs-hosts* в учетной записи хранения Azure для приложения-функции (указывается с помощью параметра приложения `AzureWebJobsStorage`). Уведомление о получении большого двоичного объекта содержит следующую информацию:
 
-* Активируемая функция ("*&lt; имя приложения-функции>*. Функции. *&lt; имя функции>*", например:" MyFunctionApp. functions. CopyBlob ")
+* Активируемая функция ( `<FUNCTION_APP_NAME>.Functions.<FUNCTION_NAME>` например: `MyFunctionApp.Functions.CopyBlob` )
 * имя контейнера;
-* тип большого двоичного объекта (BlockBlob или PageBlob);
+* Тип большого двоичного объекта ( `BlockBlob` или `PageBlob` )
 * имя большого двоичного объекта;
-* ETag (идентификатор версии больших двоичных объектов, например 0x8D1DC6E70A277EF).
+* ETag (идентификатор версии большого двоичного объекта, например: `0x8D1DC6E70A277EF` )
 
 Чтобы выполнить принудительную повторную обработку большого двоичного объекта, удалите уведомление о получении этого большого двоичного объекта из контейнера *azure-webjobs-hosts* вручную. Хотя повторная обработка может не выполняться немедленно, она гарантированно будет выполняться в более поздний момент времени. Чтобы выполнить повторную обработку немедленно, можно обновить большой двоичный объект *сканинфо* в *Azure-веб-заданиях — hosts/блобсканинфо* . Все большие двоичные объекты с последним измененным штампом времени после `LatestScan` свойства будут просканированы снова.
 
@@ -413,11 +453,11 @@ module.exports = function (context, myBlob) {
 
 В случае сбоя после 5 попыток запуска Функции Azure добавляют сообщение в очередь службы хранилища с именем *webjobs-blobtrigger-poison*. Можно настроить максимальное количество попыток. Тот же параметр MaxDequeueCount используется для обработки подозрительных больших двоичных объектов и подозрительных сообщений очереди. Сообщением очереди для подозрительных больших двоичных объектов является объект JSON, содержащий следующие свойства:
 
-* FunctionId (в *&lt; имени приложения-функции формата>*. Функции. *&lt; имя функции>*)
-* BlobType (BlockBlob или PageBlob);
+* FunctionId (в формате `<FUNCTION_APP_NAME>.Functions.<FUNCTION_NAME>` )
+* BlobType ( `BlockBlob` или `PageBlob` )
 * ContainerName;
 * BlobName
-* ETag (идентификатор версии BLOB-объектов, например 0x8D1DC6E70A277EF)
+* ETag (идентификатор версии большого двоичного объекта, например: `0x8D1DC6E70A277EF` )
 
 ## <a name="concurrency-and-memory-usage"></a>Параллелизм и использование памяти
 

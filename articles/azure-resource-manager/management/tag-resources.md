@@ -2,14 +2,14 @@
 title: Разметка ресурсов, групп ресурсов и подписок для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
 ms.topic: conceptual
-ms.date: 12/03/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e47d3acf15ce5e4f5cb70444419b76beb21ae98b
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 3d1161eb99e1145c7a003326310db1922ec3d55c
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558153"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881754"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Использование тегов для Организации ресурсов Azure и иерархии управления
 
@@ -438,9 +438,12 @@ az tag delete --resource-id $resource
 az tag update --resource-id $group --operation Merge --tags "Cost Center"=Finance-1222 Location="West US"
 ```
 
-## <a name="templates"></a>шаблоны;
+## <a name="arm-templates"></a>Шаблоны ARM
 
-Вы можете помечать ресурсы, группы ресурсов и подписки во время развертывания с помощью шаблона диспетчер ресурсов.
+Вы можете помечать ресурсы, группы ресурсов и подписки во время развертывания с помощью шаблона Azure Resource Manager (шаблон ARM).
+
+> [!NOTE]
+> Теги, применяемые с помощью шаблона ARM, перезапишут все существующие теги.
 
 ### <a name="apply-values"></a>Применить значения
 
@@ -448,7 +451,7 @@ az tag update --resource-id $group --operation Merge --tags "Cost Center"=Financ
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "utcShort": {
@@ -487,7 +490,7 @@ az tag update --resource-id $group --operation Merge --tags "Cost Center"=Financ
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
@@ -525,7 +528,7 @@ az tag update --resource-id $group --operation Merge --tags "Cost Center"=Financ
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
@@ -558,7 +561,7 @@ az tag update --resource-id $group --operation Merge --tags "Cost Center"=Financ
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {

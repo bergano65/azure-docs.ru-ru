@@ -10,14 +10,14 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 12/21/2020
+ms.date: 1/4/2021
 ms.author: yohaddad
-ms.openlocfilehash: 5e61dcb5a329916ed2c95646282bbdccad3b5767
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: 429e343a61e61b01fa07c37a6c2b702f6ef633d1
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97708506"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882353"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK
 В данном разделе предоставляются новейшие сведения о последних выпусках гостевых ОС Azure для облачных служб. Эта информация поможет вам спланировать обновление до того, как гостевая ОС будет отключена. Если роли настроены на *автоматическое* обновление гостевой ОС, как описано в разделе [Параметры обновления гостевой ОС Azure][Azure Guest OS Update Settings], ознакомление с этой страницей необязательно.
@@ -187,7 +187,7 @@ ms.locfileid: "97708506"
 
 | Строка конфигурации | Дата выпуска | Дата отключения |
 | --- | --- | --- |
-|  WA-GUEST-OS-5.49 _202011-02  |  19 декабря 2020 г.  |  POST 5,51  | 
+|  WA-GUEST-OS-5.49 _202011-01  |  19 декабря 2020 г.  |  POST 5,51  | 
 |  WA-GUEST-OS-5.48 _202010-02  |  17 ноября 2020 г.  |  POST 5,50  | 
 |~~WA-GUEST-OS-5.47 _202009-01~~|  10 октября 2020 г.  |  19 декабря 2020 г.  | 
 |~~WA-GUEST-OS-5.46 _202008-02~~|  5 сентября 2020 г.  |  17 ноября 2020 г.  |  

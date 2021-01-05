@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 05/18/2020
+ms.date: 01/04/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c075e19422341ad7ccfd3ad951517876ab26a495
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 1b0771687aa7ccf9b749c107a6b1c507cb3ba08d
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96858422"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881945"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect выполняет следующие функции: Учетные записи и разрешения
 
@@ -44,7 +44,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 
 - **Учетная запись администратора предприятия AD DS**: используется, если нужно создать учетную запись соединителя Azure AD, описанную выше.
 
-- **Учетная запись глобального администратора Azure AD**: используется для создания учетной записи соединителя Azure AD и настройки Azure AD.
+- **Учетная запись глобального администратора Azure AD**: используется для создания учетной записи соединителя Azure AD и настройки Azure AD.  Учетные записи глобального администратора можно просмотреть на портале Azure.  См. раздел [Просмотр ролей](../../active-directory/roles/manage-roles-portal.md#view-all-roles).
 
 - **Учетная запись SQL SA** (необязательная): используется для создания базы данных ADSync при использовании полной версии SQL Server.  Этот сервер SQL Server может быть локальным или удаленным для установки Azure AD Connect.  Этой учетной записью может быть учетная запись администратора предприятия.  Внешнюю подготовку базы данных может выполнять администратор SQL, а установку — администратор Azure AD Connect с правами владельца базы данных.  Дополнительные сведения см. в статье [Установка Azure AD Connect с использованием делегированных разрешений администратора SQL](how-to-connect-install-sql-delegation.md).
 

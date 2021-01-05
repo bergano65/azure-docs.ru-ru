@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 72079cc399eea249bce4d285e2c3c4fbf9304708
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: 776db820ffb1a216c3f6f7e9c6d6b8d90913a063
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760611"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881469"
 ---
 # <a name="track-azure-databricks-ml-experiments-with-mlflow-and-azure-machine-learning-preview"></a>Следите за экспериментами Azure Databricks ML с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
@@ -38,6 +38,7 @@ ms.locfileid: "97760611"
     * Этот пакет автоматически переносится в пакет `azureml-core` [SDK для машинное обучение Azure Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), который обеспечивает подключение для млфлов к рабочей области.
 * [Рабочая область и кластер Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal).
 * [Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md).
+    * Узнайте, какие [разрешения доступа требуются для выполнения операций млфлов с рабочей областью](how-to-assign-roles.md#mlflow-operations).
 
 ## <a name="track-azure-databricks-runs"></a>Отслеживание выполнений Azure Databricks
 
@@ -72,7 +73,7 @@ ms.locfileid: "97760611"
 1. В области навигации слева выберите **рабочие области** . 
 1. Разверните раскрывающееся меню рабочие области и выберите **Импорт** .
 1. Перетащите или найдите записную книжку своего эксперимента, чтобы импортировать рабочую область ADB.
-1. Выберите **Импорт**. Записная книжка эксперимента откроется автоматически.
+1. Выберите **Импортировать**. Записная книжка эксперимента откроется автоматически.
 1. Под заголовком записной книжки в верхнем левом углу выберите кластер, который нужно подключить к записной книжке эксперимента. 
 
 ## <a name="connect-your-azure-databricks-and-azure-machine-learning-workspaces"></a>Связывание рабочих областей Azure Databricks и Машинного обучения Azure

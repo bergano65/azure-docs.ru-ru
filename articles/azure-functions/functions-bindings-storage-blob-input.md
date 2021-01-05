@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 1a46c272ee2f7aa2d6621e3dc2db81605ba0363f
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 6ac3a492c5544a4a782871ff50cda9a248fe50f4
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833118"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882387"
 ---
 # <a name="azure-blob-storage-input-binding-for-azure-functions"></a>Входная привязка хранилища BLOB-объектов Azure для функций Azure
 
@@ -85,117 +85,6 @@ public static void Run(string myQueueItem, string myInputBlob, out string myOutp
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-<!--Same example for input and output. -->
-
-В примере ниже показаны входная и выходная привязки BLOB-объектов в файле *function.json*, а также код [скрипта JavaScript](functions-reference-node.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект называется *{оригиналблобнаме}-Copy*.
-
-В файле *function.json* свойство метаданных `queueTrigger` используется для указания имени большого двоичного объекта в свойствах `path`:
-
-```json
-{
-  "bindings": [
-    {
-      "queueName": "myqueue-items",
-      "connection": "MyStorageConnectionAppSetting",
-      "name": "myQueueItem",
-      "type": "queueTrigger",
-      "direction": "in"
-    },
-    {
-      "name": "myInputBlob",
-      "type": "blob",
-      "path": "samples-workitems/{queueTrigger}",
-      "connection": "MyStorageConnectionAppSetting",
-      "direction": "in"
-    },
-    {
-      "name": "myOutputBlob",
-      "type": "blob",
-      "path": "samples-workitems/{queueTrigger}-Copy",
-      "connection": "MyStorageConnectionAppSetting",
-      "direction": "out"
-    }
-  ],
-  "disabled": false
-}
-```
-
-В разделе [Конфигурация](#configuration) описываются эти свойства.
-
-Ниже показан код JavaScript.
-
-```javascript
-module.exports = function(context) {
-    context.log('Node.js Queue trigger function processed', context.bindings.myQueueItem);
-    context.bindings.myOutputBlob = context.bindings.myInputBlob;
-    context.done();
-};
-```
-
-# <a name="python"></a>[Python](#tab/python)
-
-<!--Same example for input and output. -->
-
-В приведенном ниже примере показаны входная и выходная привязки больших двоичных объектов в файле *function.json* и [код Python](functions-reference-python.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект называется *{оригиналблобнаме}-Copy*.
-
-В файле *function.json* свойство метаданных `queueTrigger` используется для указания имени большого двоичного объекта в свойствах `path`:
-
-```json
-{
-  "bindings": [
-    {
-      "queueName": "myqueue-items",
-      "connection": "MyStorageConnectionAppSetting",
-      "name": "queuemsg",
-      "type": "queueTrigger",
-      "direction": "in"
-    },
-    {
-      "name": "inputblob",
-      "type": "blob",
-      "dataType": "binary",
-      "path": "samples-workitems/{queueTrigger}",
-      "connection": "MyStorageConnectionAppSetting",
-      "direction": "in"
-    },
-    {
-      "name": "$return",
-      "type": "blob",
-      "path": "samples-workitems/{queueTrigger}-Copy",
-      "connection": "MyStorageConnectionAppSetting",
-      "direction": "out"
-    }
-  ],
-  "disabled": false,
-  "scriptFile": "__init__.py"
-}
-```
-
-В разделе [Конфигурация](#configuration) описываются эти свойства.
-
-`dataType`Свойство определяет используемую привязку. Для поддержки различных стратегий привязки доступны следующие значения:
-
-| Значение привязки | По умолчанию | Описание | Пример |
-| --- | --- | --- | --- |
-| `undefined` | Да | Использует широкую привязку | `def main(input: func.InputStream)` |
-| `string` | N | Использует универсальную привязку и приводит тип входных данных к типу `string` | `def main(input: str)` |
-| `binary` | N | Использует универсальную привязку и приводит входной большой двоичный объект в качестве `bytes` объекта Python | `def main(input: bytes)` |
-
-
-Ниже приведен код Python.
-
-```python
-import logging
-import azure.functions as func
-
-
-def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.InputStream:
-    logging.info('Python Queue trigger function processed %s', inputblob.name)
-    return inputblob
-```
-
 # <a name="java"></a>[Java](#tab/java)
 
 Этот раздел содержит следующие примеры.
@@ -252,6 +141,145 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.Input
 
 В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@BlobInput` для параметров, значение которых будут поступать из большого двоичного объекта.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
 
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+<!--Same example for input and output. -->
+
+В примере ниже показаны входная и выходная привязки BLOB-объектов в файле *function.json*, а также код [скрипта JavaScript](functions-reference-node.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект называется *{оригиналблобнаме}-Copy*.
+
+В файле *function.json* свойство метаданных `queueTrigger` используется для указания имени большого двоичного объекта в свойствах `path`:
+
+```json
+{
+  "bindings": [
+    {
+      "queueName": "myqueue-items",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "myQueueItem",
+      "type": "queueTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "myInputBlob",
+      "type": "blob",
+      "path": "samples-workitems/{queueTrigger}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "myOutputBlob",
+      "type": "blob",
+      "path": "samples-workitems/{queueTrigger}-Copy",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
+```
+
+В разделе [Конфигурация](#configuration) описываются эти свойства.
+
+Ниже показан код JavaScript.
+
+```javascript
+module.exports = function(context) {
+    context.log('Node.js Queue trigger function processed', context.bindings.myQueueItem);
+    context.bindings.myOutputBlob = context.bindings.myInputBlob;
+    context.done();
+};
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показана входная привязка большого двоичного объекта, определенная в _function.jsдля_ файла, которая делает входящие данные большого двоичного объекта доступными для функции [PowerShell](functions-reference-powershell.md) .
+
+Ниже приведена конфигурация JSON.
+
+```json
+{
+  "bindings": [
+    {
+      "name": "InputBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "source/{name}",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
+```
+
+Вот код функции:
+
+```powershell
+# Input bindings are passed in via param block.
+param([byte[]] $InputBlob, $TriggerMetadata)
+
+Write-Host "PowerShell Blob trigger: Name: $($TriggerMetadata.Name) Size: $($InputBlob.Length) bytes"
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+<!--Same example for input and output. -->
+
+В приведенном ниже примере показаны входная и выходная привязки больших двоичных объектов в файле *function.json* и [код Python](functions-reference-python.md), который использует эти привязки. Эта функция копирует большой двоичный объект. Она активируется сообщением очереди, содержащим имя копируемого большого двоичного объекта. Новый большой двоичный объект называется *{оригиналблобнаме}-Copy*.
+
+В файле *function.json* свойство метаданных `queueTrigger` используется для указания имени большого двоичного объекта в свойствах `path`:
+
+```json
+{
+  "bindings": [
+    {
+      "queueName": "myqueue-items",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "queuemsg",
+      "type": "queueTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "inputblob",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "samples-workitems/{queueTrigger}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "$return",
+      "type": "blob",
+      "path": "samples-workitems/{queueTrigger}-Copy",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "out"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "__init__.py"
+}
+```
+
+В разделе [Конфигурация](#configuration) описываются эти свойства.
+
+`dataType`Свойство определяет используемую привязку. Для поддержки различных стратегий привязки доступны следующие значения:
+
+| Значение привязки | По умолчанию | Описание | Пример |
+| --- | --- | --- | --- |
+| `undefined` | Y | Использует широкую привязку | `def main(input: func.InputStream)` |
+| `string` | Нет | Использует универсальную привязку и приводит тип входных данных к типу `string` | `def main(input: str)` |
+| `binary` | Нет | Использует универсальную привязку и приводит входной большой двоичный объект в качестве `bytes` объекта Python | `def main(input: bytes)` |
+
+Ниже приведен код Python.
+
+```python
+import logging
+import azure.functions as func
+
+
+def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.InputStream:
+    logging.info('Python Queue trigger function processed %s', inputblob.name)
+    return inputblob
+```
+
 ---
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
@@ -293,17 +321,21 @@ public static void Run(
 
 В скрипте C# атрибуты не поддерживаются.
 
+# <a name="java"></a>[Java](#tab/java)
+
+`@BlobInput`Атрибут предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте для значение `dataType` `binary` . Дополнительные сведения см. в [примере входного данных](#example) .
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В JavaScript атрибуты не поддерживаются.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
 # <a name="python"></a>[Python](#tab/python)
 
 В Python атрибуты не поддерживаются.
-
-# <a name="java"></a>[Java](#tab/java)
-
-`@BlobInput`Атрибут предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте для значение `dataType` `binary` . Дополнительные сведения см. в [примере входного данных](#example) .
 
 ---
 
@@ -333,17 +365,21 @@ public static void Run(
 
 [!INCLUDE [functions-bindings-blob-storage-input-usage.md](../../includes/functions-bindings-blob-storage-input-usage.md)]
 
+# <a name="java"></a>[Java](#tab/java)
+
+`@BlobInput`Атрибут предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте для значение `dataType` `binary` . Дополнительные сведения см. в [примере входного данных](#example) .
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к данным большого двоичного объекта с помощью `context.bindings.<NAME>` Where `<NAME>` совпадает со значением, определенным в *function.json*.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Получите доступ к данным большого двоичного объекта с помощью параметра, совпадающего с именем, назначенным параметром имени привязки в _function.js_ в файле.
+
 # <a name="python"></a>[Python](#tab/python)
 
-Доступ к данным большого двоичного объекта с помощью параметра, типизированного как [InputStream](/python/api/azure-functions/azure.functions.inputstream?view=azure-python). Дополнительные сведения см. в [примере входного данных](#example) .
-
-# <a name="java"></a>[Java](#tab/java)
-
-`@BlobInput`Атрибут предоставляет доступ к большому двоичному объекту, вызвавшему функцию. Если используется массив байтов с атрибутом, задайте для значение `dataType` `binary` . Дополнительные сведения см. в [примере входного данных](#example) .
+Доступ к данным большого двоичного объекта с помощью параметра, типизированного как [InputStream](/python/api/azure-functions/azure.functions.inputstream?view=azure-python&preserve-view=true). Дополнительные сведения см. в [примере входного данных](#example) .
 
 ---
 

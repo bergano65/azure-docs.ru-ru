@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3ceead297ea726e256d806c08c22810b39296793
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 15a878eb863b71a4519e75def2598f013152dfb7
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917177"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881639"
 ---
 # <a name="how-to-use-azuresearchdocuments-in-a-c-net-application"></a>Использование Azure.Search.Docументс в приложении .NET на C#
 
@@ -31,7 +31,7 @@ ms.locfileid: "94917177"
 + Загрузка документов поиска в индекс и управление ими
 + Выполнение запросов без необходимости работы с подробными сведениями о HTTP и JSON
 
-Библиотека распространяется как единое [Azure.Search.Docпакет NuGet умент](https://www.nuget.org/packages/Azure.Search.Documents/), который включает все интерфейсы API, используемые для программного доступа к службе поиска.
+Библиотека распространяется как единое [Azure.Search.Docпакет NuGet ументс](https://www.nuget.org/packages/Azure.Search.Documents/), который включает все интерфейсы API, используемые для программного доступа к службе поиска.
 
 Клиентская библиотека определяет такие классы, как `SearchIndex`, `SearchField` и `SearchDocument`, а также такие операции, как `SearchIndexClient.CreateIndex` и `SearchClient.Search` в классах `SearchIndexClient` и `SearchClient`. Эти классы упорядочены в следующие подразделы:
 
@@ -56,7 +56,7 @@ Azure.Search.Docументс (версия 11) Целевая версия [ `20
 
 + Скачайте [пакетAzure.Search.Docументс](https://www.nuget.org/packages/Azure.Search.Documents) с помощью **средств**  >  **Диспетчер пакетов NuGet** Управление пакетами  >  **NuGet для решения** в Visual Studio. Найдите имя пакета `Azure.Search.Documents` .
 
-Пакет Azure SDK для .NET соответствует [.NET Standard 2,0](/dotnet/standard/net-standard#net-implementation-support), то есть .NET Framework 4.6.1 и .net Core 2,0 в качестве минимальных требований.
+Пакет SDK Azure для .NET соответствует [.NET Standard 2.0](/dotnet/standard/net-standard#net-implementation-support), что означает .NET Framework 4.6.1 и .NET Core 2.0 соответствуют минимальным требованиям.
 
 ## <a name="example-application"></a>Пример приложения
 
@@ -637,7 +637,7 @@ WriteDocuments(results);
 
 В этом разделе приводится заключение в пакет SDK для .NET, но здесь не стоит останавливаться. В следующем разделе предлагаются дополнительные ресурсы для изучения программирования с помощью Azure Когнитивный поиск.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Просмотрите справочную документацию по API для [Azure.Search.Docументс](/dotnet/api/azure.search.documents) и [REST API](/rest/api/searchservice/)
 

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70387717c15dade349a323e663ac0fd31935a15f
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: c48e23de6832999b262283c0bf6664b4dfe88ee7
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859884"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881571"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 
@@ -84,10 +84,11 @@ ms.locfileid: "96859884"
    ```powershell
    $Setting = $Template.CreateDirectorySetting()
    ```  
-4. Затем обновите значение правил использования:
+4. Затем обновите объект параметров, указав новое значение. В двух приведенных ниже примерах изменяется значение рекомендации по использованию и заключаются метки чувствительности. При необходимости задайте эти параметры или любой другой параметр в шаблоне.
   
    ```powershell
    $Setting["UsageGuidelinesUrl"] = "https://guideline.example.com"
+   $Setting["EnableMIPLabels"] = "True"
    ```  
 5. Затем примените параметр:
   
@@ -118,7 +119,7 @@ ms.locfileid: "96859884"
    ```powershell
     Name                          Value
     ----                          -----
-    EnableMIPLabels               false
+    EnableMIPLabels               True
     CustomBlockedWordsList
     EnableMSStandardBlockedWords  False
     ClassificationDescriptions
@@ -321,7 +322,7 @@ ms.locfileid: "96859884"
 ## <a name="cmdlet-syntax-reference"></a>Справочник по синтаксису командлетов
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/active-directory/install-adv2) (Командлеты Azure Active Directory).
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)

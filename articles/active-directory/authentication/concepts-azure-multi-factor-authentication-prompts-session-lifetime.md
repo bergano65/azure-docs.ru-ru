@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14a65b83195bff48934668ff029f925e13884bad
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 8789015c239aae58ec25f0f644d4c497da477c2b
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743706"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881248"
 ---
 # <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-ad-multi-factor-authentication"></a>Оптимизация запросов на повторное аутентификацию и изучение времени жизни сеанса для многофакторной идентификации Azure AD
 
@@ -108,7 +108,7 @@ Azure Active Directory (Azure AD) имеет несколько параметр
 1. Выберите **Корпоративная фирменная символика**, а затем для каждого языкового стандарта выберите **параметр Показывать, чтобы остаться в** системе.
 1. Выберите *Да*, а затем нажмите кнопку **сохранить**.
 
-Чтобы запомнить параметры многофакторной проверки подлинности, выполните следующие действия.
+Чтобы запомнить параметры многофакторной проверки подлинности на доверенных устройствах, выполните следующие действия.
 
 1. На портале Azure AD найдите и выберите *Azure Active Directory*.
 1. Выберите **Безопасность**, а затем **MFA**.

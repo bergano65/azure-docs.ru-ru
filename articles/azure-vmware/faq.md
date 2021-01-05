@@ -2,13 +2,13 @@
 title: Часто задаваемые вопросы
 description: Содержит ответы на некоторые распространенные вопросы о решении Azure VMware.
 ms.topic: conceptual
-ms.date: 12/22/2020
-ms.openlocfilehash: 941708003558dda601aa43459bc83133788687fd
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.date: 1/4/2020
+ms.openlocfilehash: d0228739a6ee4eac20d2fa04e47cf86b6fddb84e
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835199"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881231"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
@@ -201,7 +201,7 @@ Commvault, Veritas и Veeam расширили свои решения резе�
 
 #### <a name="could-i-use-hcx-through-public-internet-communications-as-a-workaround-for-the-non-supportability-of-hcx-when-using-vpn-s2s-with-vwan-for-on-premises-communications"></a>Можно ли использовать ХККС через общедоступную связь через Интернет в качестве обходного решения для неподдерживаемой ХККС при использовании VPN S2S с Вван для локальных подключений?
 
-В настоящее время единственным поддерживаемым методом для ХККС является ExpressRoute.
+В настоящее время единственным поддерживаемым методом для VMware ХККС является подключение ExpressRoute.
 
 ## <a name="accounts-and-privileges"></a>Учетные записи и привилегии
 

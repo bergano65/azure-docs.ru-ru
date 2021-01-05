@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: a093fe330ccbecc33cd8dac03d6425655e90366d
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: 085ba4d9d4e78acec4505ddb0e9e89d4e0b5c4a3
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760475"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881486"
 ---
 # <a name="train-and-track-ml-models-with-mlflow-and-azure-machine-learning-preview"></a>Обучение и отслеживание моделей машинного обучения с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
@@ -65,6 +65,7 @@ ms.locfileid: "97760475"
 * Установите пакет `azureml-mlflow`. 
     * Этот пакет автоматически переносится в пакет `azureml-core` [SDK для машинное обучение Azure Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), который обеспечивает подключение для млфлов к рабочей области.
 * [Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md).
+    * Узнайте, какие [разрешения доступа требуются для выполнения операций млфлов с рабочей областью](how-to-assign-roles.md#mlflow-operations).
 
 ## <a name="track-local-runs"></a>Отслеживание локальных выполнений
 

@@ -3,12 +3,12 @@ title: Устранение распространенных ошибок
 description: Узнайте, как устранять неполадки при создании определений политик, различных пакетах SDK и надстройки для Kubernetes.
 ms.date: 12/01/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: f3667988d527100507d308887338278e1200d454
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: b88d00575adb571c59b562d25067c4a1716fb50f
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511004"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882982"
 ---
 # <a name="troubleshoot-errors-using-azure-policy"></a>Устранение ошибок с помощью политики Azure
 
@@ -30,13 +30,13 @@ ms.locfileid: "96511004"
 
 Политика Azure использует [псевдонимы](../concepts/definition-structure.md#aliases) для соотнесения со свойствами Azure Resource Manager.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 В определении политики используется неправильный или несуществующий псевдоним.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
-Сначала убедитесь, что свойство диспетчер ресурсов имеет псевдоним. Используйте [расширение политики Azure для Visual Studio Code](../how-to/extension-for-vscode.md), [графа ресурсов Azure](../../resource-graph/samples/starter.md#distinct-alias-values)или пакета SDK, чтобы найти доступные псевдонимы. Если псевдоним для свойства диспетчер ресурсов не существует, создайте запрос в службу поддержки.
+Сначала убедитесь, что свойство диспетчер ресурсов имеет псевдоним. Используйте [расширение политики Azure для Visual Studio Code](../how-to/extension-for-vscode.md) или пакета SDK, чтобы найти доступные псевдонимы. Если псевдоним для свойства диспетчер ресурсов не существует, создайте запрос в службу поддержки.
 
 ### <a name="scenario-evaluation-details-not-up-to-date"></a>Сценарий: сведения об оценке не обновлены
 
@@ -44,11 +44,11 @@ ms.locfileid: "96511004"
 
 Ресурс находится в состоянии "не запущено" или сведения о соответствии не являются актуальными.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Применение новой политики или назначения инициативы занимает около 30 минут. Новые или обновленные ресурсы в области действия существующего назначения становятся доступными примерно через 15 минут позже. Стандартная проверка соответствия происходит каждые 24 часа. Дополнительные сведения см. в разделе [триггеры оценки](../how-to/get-compliance-data.md#evaluation-triggers).
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Сначала дождитесь необходимого времени для завершения оценки, и результаты обеспечения соответствия будут доступны в портал Azure или пакете SDK. Чтобы запустить новую проверку для оценки с Azure PowerShell или REST API, см. статью [Проверка оценки по требованию](../how-to/get-compliance-data.md#on-demand-evaluation-scan).
 
@@ -58,11 +58,11 @@ ms.locfileid: "96511004"
 
 Ресурс не находится в состоянии оценки ( _соответствует_ или _не соответствует требованиям_), ожидаемому для этого ресурса.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Ресурс не находится в правильной области действия для назначения политики, или определение политики не работает должным образом.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Выполните следующие действия, чтобы устранить неполадки определения политики.
 
@@ -86,11 +86,11 @@ ms.locfileid: "96511004"
 
 Ресурс, который должен обрабатываться политикой Azure, не содержит записей в [журнале действий Azure](../../../azure-monitor/platform/platform-logs-overview.md).
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Назначение политики настроено для [Енфорцементмоде](../concepts/assignment-structure.md#enforcement-mode) _отключено_. Если режим принудительного применения отключен, то этот результат политики не применяется, и в журнале действий нет записи.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Выполните следующие действия, чтобы устранить проблему принудительного применения назначения политики.
 
@@ -111,11 +111,11 @@ ms.locfileid: "96511004"
 
 Для создания или обновления ресурса отказано.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Назначение политики области, в которой новый или обновленный ресурс соответствует критериям определения политики с применением [запрета](../concepts/effects.md#deny) . Ресурсы собрания эти определения не могут быть созданы или обновлены.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Сообщение об ошибке из назначения «запретить политику» включает в себя определение политики и идентификаторы назначения политики. Если информация об ошибке в сообщении отсутствует, она также доступна в [журнале действий](../../../azure-monitor/platform/activity-log.md#view-the-activity-log). Используйте эти сведения для получения дополнительных сведений об ограничениях ресурсов и настройке свойств ресурсов в запросе в соответствии с допустимыми значениями.
 
@@ -127,11 +127,11 @@ ms.locfileid: "96511004"
 
 Политика Azure поддерживает несколько Azure Resource Manager функций и функций шаблона (шаблона ARM), которые доступны только в определении политики. Диспетчер ресурсов обрабатывает эти функции как часть развертывания, а не как часть определения политики.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Использование поддерживаемых функций, таких как `parameter()` или `resourceGroup()` , приводит к обработке результата функции во время развертывания, вместо того чтобы использовать функцию для определения политики и для обработки обработчика политики Azure.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Чтобы передать функцию через, чтобы она была частью определения политики, заэкранированайте всю строку с `[` таким образом, чтобы свойство было похоже на `[[resourceGroup().tags.myTag]` . Escape-символ заставляет диспетчер ресурсов считать значение строкой при обработке шаблона. Затем политика Azure помещает функцию в определение политики, что позволяет использовать ее динамически, как и ожидалось. Дополнительные сведения см. [в разделе синтаксис и выражения в шаблонах Azure Resource Manager](../../../azure-resource-manager/templates/template-expressions.md).
 
@@ -146,11 +146,11 @@ ms.locfileid: "96511004"
 - `!: event not found`
 - `Error: failed parsing --set data: key "<key>" has no value (cannot end with ,)`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Созданный пароль включает запятую ( `,` ), на которой Helm диаграмма.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 `,`При запуске `helm install azure-policy-addon` с помощью обратной косой черты () в качестве значения пароля используется escape-последовательность () `\` .
 
@@ -162,11 +162,11 @@ ms.locfileid: "96511004"
 
 - `Error: cannot re-use a name that is still in use`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Диаграмма Helm с именем `azure-policy-addon` уже установлена или частично установлена.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Следуйте указаниям, чтобы [удалить политику Azure для надстройки Kubernetes](../concepts/policy-for-kubernetes.md#remove-the-add-on), а затем повторите `helm install azure-policy-addon` команду.
 
@@ -176,11 +176,11 @@ ms.locfileid: "96511004"
 
 После назначения инициатив политики гостевой конфигурации для аудита параметров внутри компьютеров назначенные пользователю управляемые удостоверения, назначенные компьютеру, больше не назначаются. Назначается только управляемое системой удостоверение.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Определения политик, ранее использовавшиеся в настройках гостевой конфигурации DeployIfNotExists, гарантируют, что назначенное системой удостоверение назначено компьютеру, но также были удалены назначенные пользователю назначения удостоверений.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Определения, которые ранее вызывали эту неполадку, отображаются как \[ устаревшие \] и заменяются определениями политик, которые управляют необходимыми компонентами без удаления назначенного пользователем управляемого удостоверения. Требуется выполнить шаг вручную. Удалите все существующие назначения политик, помеченные как \[ устаревшие, \] и замените их обновленной инициативой и определениями политик, имена которых совпадают с именами исходных файлов.
 
@@ -199,11 +199,11 @@ ms.locfileid: "96511004"
 - `failed to fetch token, service not reachable`
 - `Error getting file "Get https://raw.githubusercontent.com/Azure/azure-policy/master/built-in-references/Kubernetes/container-allowed-images/template.yaml: dial tcp 151.101.228.133.443: connect: connection refused`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта проблема возникает, когда исходящий трафик кластера заблокирован.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Убедитесь, что домены и порты в следующих статьях открыты:
 
@@ -219,14 +219,14 @@ ms.locfileid: "96511004"
 - `azure.BearerAuthorizer#WithAuthorization: Failed to refresh the Token for request to https://gov-prod-policy-data.trafficmanager.net/checkDataPolicyCompliance?api-version=2019-01-01-preview: StatusCode=404`
 - `adal: Refresh request failed. Status Code = '404'. Response body: getting assigned identities for pod kube-system/azure-policy-8c785548f-r882p in CREATED state failed after 16 attempts, retry duration [5]s, error: <nil>`
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка возникает, если в кластере установлена _надстройка Add-Pod-Identity_ , а _KUBE-System_ не исключены в _AAD-Pod-Identity_.
 
 Модули управления " _AAD-Pod-Identity_ " с узлом компонента идентификации (NMI) изменяют узлы "Iptables" для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая настройка означает, что любой запрос, сделанный в конечной точке метаданных, перехватывается функцией NMI, даже если в Pod не используется _AAD-Pod-Identity_.
 **Азуреподидентитексцептион** CRD можно настроить для информирования _AAD-Pod_ о том, что любые запросы к конечной точке метаданных, создаваемые из Pod, которые соответствуют меткам, определенным в CRD, должны быть прокси без обработки в NMI.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Исключите системные модули с `kubernetes.azure.com/managedby: aks` меткой в пространстве имен _KUBE-System_ в _AAD-Pod-Identity_ , настроив **азуреподидентитексцептион** CRD.
 
@@ -266,7 +266,7 @@ The resource provider 'Microsoft.PolicyInsights' is not registered in subscripti
 https://aka.ms/policy-register-subscription for how to register subscriptions.
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```
 policyinsightsdataplane.BaseClient#CheckDataPolicyCompliance: Failure responding to request:
@@ -274,11 +274,11 @@ StatusCode=500 -- Original Error: autorest/azure: Service returned an error. Sta
 Code="InternalServerError" Message="Encountered an internal server error."
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 `Microsoft.PolicyInsights`Поставщик ресурсов не зарегистрирован и должен быть зарегистрирован для надстройки, чтобы получать определения политик и возвращать данные о соответствии.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Зарегистрируйте `Microsoft.PolicyInsights` поставщик ресурсов в подписке кластера. Инструкции см. [в разделе Регистрация поставщика ресурсов](../../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider).
 
@@ -292,11 +292,11 @@ Code="InternalServerError" Message="Encountered an internal server error."
 The subscription '{subId}' has been disabled for azure data-plane policy. Please contact support.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка означает, что подписка была определена как проблематичная, а флаг функции `Microsoft.PolicyInsights/DataPlaneBlocked` был добавлен для блокировки подписки.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 `azuredg@microsoft.com`Чтобы исследовать и устранить эту проблему, обратитесь к группе функций.
 

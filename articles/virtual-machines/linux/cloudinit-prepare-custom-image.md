@@ -7,12 +7,12 @@ ms.subservice: imaging
 ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: danis
-ms.openlocfilehash: 6785bb1f5ebde4f746dc8aa1ea9f586f406f8431
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3aed65b0319f9a80c5ebc45428ff0c380c33fc3d
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373680"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883271"
 ---
 # <a name="prepare-an-existing-linux-azure-vm-image-for-use-with-cloud-init"></a>Подготовка существующего образа виртуальной машины Azure Linux к использованию с cloud-init
 В этой статье показано, как выбрать и подготовить существующую виртуальную машину Azure к повторному развертыванию и применению cloud-init. Из полученного образа можно развернуть новую виртуальную машину или масштабируемый набор виртуальных машин. И то, и другое вы сможете дополнительно настроить во время развертывания с помощью cloud-init.  Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -26,7 +26,7 @@ ms.locfileid: "87373680"
 ```bash
 sudo yum makecache fast
 sudo yum install -y gdisk cloud-utils-growpart
-sudo yum install - y cloud-init 
+sudo yum install -y cloud-init 
 ```
 
 Обновите раздел `cloud_init_modules` в `/etc/cloud/cloud.cfg`, включив добавление следующих модулей:

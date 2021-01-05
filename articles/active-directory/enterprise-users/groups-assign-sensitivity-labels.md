@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b40171d87ccffa7c5c4fb72d2e79af015b1d16f
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: a78cf9b7d78078030ac0db8bd2f0fddb93a8dda4
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859969"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881402"
 ---
 # <a name="assign-sensitivity-labels-to-microsoft-365-groups-in-azure-active-directory"></a>Назначение меток чувствительности группам Microsoft 365 в Azure Active Directory
 
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) поддерживает применение 
     ```
 
     > [!NOTE]
-    > Если для этой Организации Azure AD не были созданы параметры группы, необходимо сначала создать параметры. Выполните действия, описанные в [Azure Active Directory командлетах для настройки параметров группы](../enterprise-users/groups-settings-cmdlets.md) , чтобы создать параметры группы для этой Организации Azure AD.
+    > Если для этой Организации Azure AD не были созданы параметры группы, вы получите ошибку в приведенном выше командлете, который считывает "не удается привязать аргумент к параметру" ID ", так как он имеет значение null". В этом случае необходимо сначала создать параметры. Выполните действия, описанные в [Azure Active Directory командлетах для настройки параметров группы](../enterprise-users/groups-settings-cmdlets.md) , чтобы создать параметры группы для этой Организации Azure AD.
 
 1. Затем отобразите текущие параметры группы.
 

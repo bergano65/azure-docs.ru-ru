@@ -3,12 +3,12 @@ title: Поддерживаемые типы ресурсов в службе р
 description: Поддерживаемые типы ресурсов в службе работоспособности ресурсов Azure
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 79f979b55366d29ca8cf22a1e65ebdcc557ef594
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 1b0958732a96786b2fb86b2b145f5cb8d36c0c5a
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899499"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883373"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.
@@ -168,6 +168,11 @@ ms.locfileid: "92899499"
 |Выполняемые проверки|
 |---|
 |<ul><li>Не ухудшается ли работоспособность Шлюза приложений?</li><li>Доступен ли Шлюз приложений?</li></ul>|
+
+## <a name="microsoftnetworkbastionhosts"></a>Microsoft. Network/бастионхостс
+|Выполняемые проверки|
+|---|
+|<ul><li>Работает ли узел бастиона?</li></ul>|
 
 ## <a name="microsoftnetworkconnections"></a>Microsoft.network/connections
 |Выполняемые проверки|

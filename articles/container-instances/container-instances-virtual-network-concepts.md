@@ -3,12 +3,12 @@ title: Сценарии использования виртуальной сет
 description: Сценарии, ресурсы и ограничения для развертывания групп контейнеров в виртуальной сети Azure.
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: 5e9c1d1606a9ad491ba7a7e623f1606717aa5b1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fb468a6a860bcc076043c30606922f43fbdb1ad
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89569175"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882438"
 ---
 # <a name="virtual-network-scenarios-and-resources"></a>Сценарии и ресурсы виртуальной сети
 
@@ -41,6 +41,7 @@ ms.locfileid: "89569175"
 * [Управляемое удостоверение](container-instances-managed-identity.md) нельзя использовать в группе контейнеров, развернутой в виртуальной сети.
 * Вы не можете включить [проверку актуальности](container-instances-liveness-probe.md) или [проверку готовности](container-instances-readiness-probe.md) в группе контейнеров, развернутой в виртуальной сети.
 * Из-за дополнительных сетевых ресурсов развертывания в виртуальной сети обычно выполняются медленнее, чем развертывание стандартного экземпляра контейнера.
+* Если вы подключаете группу контейнеров к учетной записи хранения Azure, необходимо добавить [конечную точку службы](../virtual-network/virtual-network-service-endpoints-overview.md) к этому ресурсу.
 
 [!INCLUDE [container-instances-restart-ip](../../includes/container-instances-restart-ip.md)]
 
@@ -74,7 +75,7 @@ ms.locfileid: "89569175"
 
 ![Группы контейнеров в виртуальной сети][aci-vnet-01]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Примеры развертывания с Azure CLI см. в статье [развертывание экземпляров контейнеров в виртуальной сети Azure](container-instances-vnet.md).
 * Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet

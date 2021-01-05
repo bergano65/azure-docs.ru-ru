@@ -4,12 +4,12 @@ description: Узнайте, как подключить том файлов Azu
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 5ca619ac3ae93ee238d019b64ecccc975b7c8e3b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: afebdcdc9d9c5852d7fe66ed06ac457c1dbb0afb
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746870"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881809"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Подключение общего файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure"
 
@@ -20,6 +20,9 @@ ms.locfileid: "92746870"
 >
 > Подключение файлового ресурса Azure к экземпляру контейнера аналогично [подключению DOCKER BIND](https://docs.docker.com/storage/bind-mounts/). Имейте в виду, что при подключении общей папки к каталогу контейнера, в котором находятся файлы или каталоги, эти файлы или каталоги закрываются подключением и недоступны во время выполнения контейнера.
 >
+
+> [!IMPORTANT]
+> При развертывании групп контейнеров в виртуальной сети Azure необходимо добавить [конечную точку службы](../virtual-network/virtual-network-service-endpoints-overview.md) в учетную запись хранения Azure.
 
 ## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
 
@@ -81,7 +84,7 @@ az container create \
     --azure-file-volume-mount-path /aci/logs/
 ```
 
-`--dns-name-label`Значение должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. Если при выполнении команды появится сообщение об ошибке **Метка DNS-имени** , обновите значение в предыдущей команде.
+`--dns-name-label`Значение должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. Если при выполнении команды появится сообщение об ошибке **Метка DNS-имени**, обновите значение в предыдущей команде.
 
 ## <a name="manage-files-in-mounted-volume"></a>Управление файлами в подключенном томе
 
@@ -235,7 +238,7 @@ az deployment group create --resource-group myResourceGroup --template-file depl
 
 Для подключения нескольких томов в экземпляре контейнера необходимо выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups), файла YAML или другого программного метода. Чтобы использовать шаблон или файл YAML, укажите сведения об общем ресурсе и определите тома, заполнив `volumes` массив в `properties` разделе файла. 
 
-Например, если вы создали две общие папки службы файлов Azure с именами *share1* и *share2* в учетной записи хранения *myStorageAccount* , `volumes` массив в шаблоне диспетчер ресурсов будет выглядеть следующим образом:
+Например, если вы создали две общие папки службы файлов Azure с именами *share1* и *share2* в учетной записи хранения *myStorageAccount*, `volumes` массив в шаблоне диспетчер ресурсов будет выглядеть следующим образом:
 
 ```JSON
 "volumes": [{
@@ -256,7 +259,7 @@ az deployment group create --resource-group myResourceGroup --template-file depl
 }]
 ```
 
-Затем для каждого контейнера в группе контейнеров, в которой нужно подключить тома, заполните массив `volumeMounts` в разделе `properties` определения контейнера. В результате этого, подключатся, например, тома *myvolume1* и *myvolume2* , определенные ранее.
+Затем для каждого контейнера в группе контейнеров, в которой нужно подключить тома, заполните массив `volumeMounts` в разделе `properties` определения контейнера. В результате этого, подключатся, например, тома *myvolume1* и *myvolume2*, определенные ранее.
 
 ```JSON
 "volumeMounts": [{

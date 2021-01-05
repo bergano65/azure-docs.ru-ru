@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: 0240510a2232bd12a94d5cdd59672270289e5e8f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 120a73c7bf2ea9ee61d1fe1aef9ffa39a3cb3f76
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011835"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882404"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight. Часто задаваемые вопросы
 
@@ -198,7 +198,7 @@ ktutil: q
 
 1. Отключите автоматическое выполнение с помощью следующей команды:
    
-   `/usr/local/vbin/azsecd config -s clamav -d Disabled`
+  `usr/local/bin/azsecd config -s clamav -d Disabled`азсекд перезагрузка службы sudo sudo 
    
 1. Добавьте задание cron, которое выполняет следующую команду в качестве привилегированной:
    

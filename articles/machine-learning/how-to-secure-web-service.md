@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 11/18/2020
+ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 86cd5a5cbbb17dc3d3e4d56e4267be2718f6081d
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 14e4fda6ef36dd8fc57529046473d8afa916ef2c
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830876"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880976"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинного обучения Azure.
 
@@ -168,7 +168,7 @@ aci_config = AciWebservice.deploy_configuration(
 
 ### <a name="update-a-microsoft-generated-certificate"></a>Обновление сертификата, созданного корпорацией Майкрософт
 
-Если сертификат изначально был создан корпорацией Майкрософт (при использовании *leaf_domain_label* для создания службы), используйте один из следующих примеров для обновления сертификата.
+Если сертификат изначально был создан корпорацией Майкрософт (при использовании *leaf_domain_label* для создания службы), **он будет автоматически продлен** при необходимости. Если вы хотите обновить сертификат вручную, используйте один из следующих примеров для обновления сертификата:
 
 > [!IMPORTANT]
 > * Если существующий сертификат по-прежнему действителен, используйте `renew=True` (пакет SDK) или `--ssl-renew` (CLI), чтобы принудительно обновить конфигурацию. Например, если существующий сертификат по-прежнему действителен в течение 10 дней и не используется `renew=True` , то сертификат может быть не продлен.

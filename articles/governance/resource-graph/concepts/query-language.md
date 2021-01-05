@@ -3,12 +3,12 @@ title: Основные сведения о языке запросов
 description: Описание таблиц Resource Graph и доступных типов данных, операторов и функций Kusto, которые можно использовать с Azure Resource Graph.
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 34aaaa60ed9d757cc1a63ffaebb2225900cff61f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3023991c76d94dc8aa87cfe950c18ab5d6a07ba9
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966689"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883067"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -123,7 +123,7 @@ Resources
 |KQL |Пример запроса Resource Graph |Примечания |
 |---|---|---|
 |[count](/azure/kusto/query/countoperator) |[Число хранилищ ключей](../samples/starter.md#count-keyvaults) | |
-|[distinct](/azure/kusto/query/distinctoperator) |[Отображение уникальных значений для конкретного псевдонима](../samples/starter.md#distinct-alias-values) | |
+|[distinct](/azure/kusto/query/distinctoperator) |[Отображение ресурсов, которые содержат хранилище](../samples/starter.md#show-storage) | |
 |[extend](/azure/kusto/query/extendoperator) |[Подсчет виртуальных машин по типу ОС](../samples/starter.md#count-os) | |
 |[join](/azure/kusto/query/joinoperator) |[Хранилище ключей с именем подписки](../samples/advanced.md#join) |Поддерживаемые разновидности оператора соединения: [innerunique](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). Не более 3 `join` в одном запросе. Пользовательские стратегии соединения, такие как широковещательное соединение, не допускаются. Сведения о том, какие таблицы могут использоваться `join` , см. в разделе [таблицы Graph ресурсов](#resource-graph-tables). |
 |[limit](/azure/kusto/query/limitoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `take` . Не работает с [Skip](./work-with-data.md#skipping-records). |
