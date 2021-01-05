@@ -7,17 +7,17 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 5930219486de8704c777496bcaf293411c5fb7b1
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 4ba19fdf700790d89fe04867985fb803c3b0a2fc
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673993"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760407"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>Общие сведения о триггере RabbitMQ для функций Azure
 
 > [!NOTE]
-> Привязки RabbitMQ полностью поддерживаются только в **Windows Premium и в выделенных** планах. Использование и Linux в настоящее время не поддерживаются.
+> Привязки RabbitMQ полностью поддерживаются только для планов уровня " **Премиум" и "выделен** ". Использование не поддерживается.
 
 Используйте триггер RabbitMQ для реагирования на сообщения из очереди RabbitMQ.
 
@@ -43,18 +43,23 @@ public static void RabbitMQTrigger_BasicDeliverEventArgs(
 В следующем примере показано, как прочитать сообщение в виде POCO.
 
 ```cs
-public class TestClass
+namespace Company.Function
 {
-    public string x { get; set; }
-}
+    public class TestClass
+    {
+        public string x { get; set; }
+    }
 
-[FunctionName("RabbitMQTriggerCSharp")]
-public static void RabbitMQTrigger_BasicDeliverEventArgs(
-    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] TestClass pocObj,
-    ILogger logger
-    )
-{
-    logger.LogInformation($"C# RabbitMQ queue trigger function processed message: {Encoding.UTF8.GetString(pocObj)}");
+    public class RabbitMQTriggerCSharp{
+        [FunctionName("RabbitMQTriggerCSharp")]
+        public static void RabbitMQTrigger_BasicDeliverEventArgs(
+            [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] TestClass pocObj,
+            ILogger logger
+            )
+        {
+            logger.LogInformation($"C# RabbitMQ queue trigger function processed message: {pocObj}");
+        }
+    }
 }
 ```
 
@@ -82,7 +87,7 @@ public static void RabbitMQTrigger_BasicDeliverEventArgs(
 
 Ниже приведен код скрипта C#.
 
-```csx
+```C#
 using System;
 
 public static void Run(string myQueueItem, ILogger log)
@@ -216,7 +221,7 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 |**усернамесеттинг**|**усернамесеттинг**|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя параметра приложения, содержащего имя пользователя для доступа к очереди. Пример: Усернамесеттинг: "% < Усернамефромсеттингс >%"|
 |**пассвордсеттинг**|**пассвордсеттинг**|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя параметра приложения, который содержит пароль для доступа к очереди. Пример: Пассвордсеттинг: "% < Пассвордфромсеттингс >%"|
 |**коннектионстрингсеттинг**|**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения очереди сообщений RabbitMQ. Обратите внимание, что если вы укажете строку подключения напрямую, а не через параметр приложения в local.settings.js, триггер не будет работать. (Пример: в *function.json*: коннектионстрингсеттинг: "раббитмкконнектион" <br> В *local.settings.js*: "раббитмкконнектион": "< актуалконнектионстринг >")|
-|**port**|**порт**.|(пропускается при использовании Коннектионстрингсеттинг) Возвращает или задает используемый порт. Значение по умолчанию — 0.|
+|**port**|**порт**.|(пропускается при использовании Коннектионстрингсеттинг) Возвращает или задает используемый порт. По умолчанию принимает значение 0, которое указывает на порт клиента rabbitmq по умолчанию: 5672.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -278,9 +283,9 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 |Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
 |prefetchCount|30|Возвращает или задает количество сообщений, которые получатель сообщения может одновременно запрашивать и кэшировать.|
-|queueName|н/д| Имя очереди, из которой должны быть получены сообщения.|
-|connectionString|н/д|Строка подключения очереди сообщений RabbitMQ. Обратите внимание, что строка подключения указывается непосредственно здесь, а не с помощью параметра приложения.|
-|порт|0|(пропускается при использовании Коннектионстрингсеттинг) Возвращает или задает используемый порт. Значение по умолчанию — 0.|
+|queueName|Недоступно| Имя очереди, из которой должны быть получены сообщения.|
+|connectionString|Недоступно|Строка подключения очереди сообщений RabbitMQ. Обратите внимание, что строка подключения указывается непосредственно здесь, а не с помощью параметра приложения.|
+|порт|0|(пропускается при использовании connectionString) Возвращает или задает используемый порт. По умолчанию принимает значение 0, которое указывает на порт клиента rabbitmq по умолчанию: 5672.|
 
 ## <a name="local-testing"></a>Локальное тестирование
 
@@ -305,9 +310,24 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 
 |Свойство  |По умолчанию | Описание |
 |---------|---------|---------|
-|hostName|н/д|(пропускается при использовании Коннектстрингсеттинг) <br>Имя узла очереди (например: 10.26.45.210)|
-|userName|н/д|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя для доступа к очереди |
-|password|н/д|(пропускается при использовании Коннектионстрингсеттинг) <br>Пароль для доступа к очереди|
+|hostName|Недоступно|(пропускается при использовании connectionString) <br>Имя узла очереди (например: 10.26.45.210)|
+|userName|Недоступно|(пропускается при использовании connectionString) <br>Имя для доступа к очереди |
+|password|Недоступно|(пропускается при использовании connectionString) <br>Пароль для доступа к очереди|
+
+
+## <a name="enable-runtime-scaling"></a>Включить масштабирование среды выполнения
+
+Чтобы триггер RabbitMQ можно было масштабировать до нескольких экземпляров, необходимо включить параметр **наблюдения за масштабом среды выполнения** . 
+
+На портале этот параметр можно найти в разделе   >  **Параметры среды выполнения функции** конфигурации для приложения функции.
+
+:::image type="content" source="media/functions-networking-options/virtual-network-trigger-toggle.png" alt-text="VNETToggle":::
+
+В интерфейсе командной строки можно включить **мониторинг масштабирования во время выполнения** с помощью следующей команды:
+
+```azurecli-interactive
+az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.functionsRuntimeScaleMonitoringEnabled=1 --resource-type Microsoft.Web/sites
+```
 
 ## <a name="monitoring-rabbitmq-endpoint"></a>Мониторинг конечной точки RabbitMQ
 Для мониторинга очередей и обмена для определенной конечной точки RabbitMQ:
@@ -315,6 +335,6 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 * Включение [подключаемого модуля управления RabbitMQ](https://www.rabbitmq.com/management.html)
 * Перейдите по http://{node-имя_узла}: 15672 и войдите в систему, используя имя пользователя и пароль.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Отправка сообщений RabbitMQ из функций Azure (Выходная привязка)](./functions-bindings-rabbitmq-output.md)

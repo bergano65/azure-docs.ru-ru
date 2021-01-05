@@ -9,18 +9,16 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 09/10/2020
-ms.openlocfilehash: 4998469fa353fef9e8a91d078349150d9f739ac2
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: b11b0b46e57247d09e576795079e20c679e519d5
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779419"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760118"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
 В этой статье вы узнаете о выпусках Машинное обучение Azure.  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) машинное обучение Azure.
-
-Ознакомьтесь со [списком известных проблем](resource-known-issues.md), чтобы получить сведения об известных ошибках и способах их устранения.
 
 ## <a name="2020-12-07"></a>2020-12-07
 
@@ -107,7 +105,7 @@ ms.locfileid: "96779419"
     + Улучшена документация по `OutputDatasetConfig.register_on_complete` для включения поведения того, что произойдет, если имя уже существует.
     + Указание входных и выходных имен набора данных, которые могут конфликтовать с общими переменными среды, теперь приведет к появлению предупреждения
     + Переназначенный `grant_workspace_access` параметр при регистрации хранилищ данных. Задайте для него `True` доступ к данным из виртуальной сети из машинное обучение Studio.
-      [Подробнее](./how-to-enable-studio-virtual-network.md)
+      [Дополнительные сведения](./how-to-enable-studio-virtual-network.md)
     + API связанной службы уточнен. Вместо предоставления идентификатора ресурса у нас есть 3 отдельных параметра sub_id, RG и Name, определенных в конфигурации.
     + Чтобы клиенты могли самостоятельно устранять проблемы с повреждением маркеров, включите синхронизацию маркеров рабочей области в качестве общедоступного метода.
     + Это изменение позволяет использовать пустую строку в качестве значения для script_param
@@ -496,7 +494,7 @@ ms.locfileid: "96779419"
     + Выводить предупреждение, если "azureml-Defaults" не включено как часть "PIP-dependency"
     + Улучшение подготовки к просмотру заметок.
     + Добавлена поддержка разрывов строк, заключенных в кавычки, при анализе файлов с разделителями в Пипелинеаутпутфиледатасет.
-    + Класс Пипелинедатасет является устаревшим. Для получения дополнительной информации см. https://aka.ms/dataset-deprecation. Сведения об использовании набора данных с конвейером см https://aka.ms/pipeline-with-dataset . в разделе.
+    + Класс Пипелинедатасет является устаревшим. Дополнительные сведения см. в разделе https://aka.ms/dataset-deprecation. Сведения об использовании набора данных с конвейером см https://aka.ms/pipeline-with-dataset . в разделе.
   + **azureml-pipeline-steps**
     + Обновление документации к azureml-конвейеру — шаги.
     +  Добавлена поддержка в Параллелрунконфиг `load_yaml()` для определения сред, встроенных с остальной частью конфигурации, или в отдельном файле.
@@ -1554,13 +1552,13 @@ ms.locfileid: "96779419"
   + **azureml-train-core**
     + Добавлена поддержка TensorFlow 2,0 в Оценщике TensorFlow.
   + **azureml-Training-аутомл**
-    + Создание объекта [эксперимента](/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример.
+    + Создание объекта [эксперимента](/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример
 
         ```py
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        Функция [Archive ()](/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример.
+        Функция [Archive ()](/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример
 
         ```py
         experiment1 = Experiment(workspace, "Active Experiment")
@@ -1569,7 +1567,7 @@ ms.locfileid: "96779419"
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример.
+        Список статических методов [()](/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример
 
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")

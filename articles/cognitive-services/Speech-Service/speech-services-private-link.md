@@ -1,69 +1,87 @@
 ---
-title: Использование речевых служб с частными конечными точками
+title: Использование частных конечных точек со службой речи
 titleSuffix: Azure Cognitive Services
-description: Практическое руководство. Использование речевых служб с частными конечными точками, предоставляемыми частной ссылкой Azure
+description: Узнайте, как использовать службу речи с частными конечными точками, предоставляемыми частной ссылкой Azure
 services: cognitive-services
 author: alexeyo26
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/04/2020
+ms.date: 12/15/2020
 ms.author: alexeyo
-ms.openlocfilehash: 01a0171ed2b660fbabebf4276a74f8a3ea631bde
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: f905582615b16780fae179ba6a21bd4343bd47f3
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516533"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755809"
 ---
-# <a name="using-speech-services-with-private-endpoints-provided-by-azure-private-link"></a>Использование речевых служб с частными конечными точками, предоставляемыми частной ссылкой Azure
+# <a name="use-speech-service-through-a-private-endpoint"></a>Использование голосовой службы через закрытую конечную точку
 
-[Частная ссылка Azure](../../private-link/private-link-overview.md) позволяет подключаться к различным службам PaaS в Azure с помощью [частной конечной точки](../../private-link/private-endpoint-overview.md). Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../../virtual-network/virtual-networks-overview.md) и подсети.
+[Частная ссылка Azure](../../private-link/private-link-overview.md) позволяет подключаться к службам в Azure с помощью [частной конечной точки](../../private-link/private-endpoint-overview.md).
+Частная конечная точка — это частный IP-адрес, доступный только в определенной [виртуальной сети](../../virtual-network/virtual-networks-overview.md) и подсети.
 
-В этой статье объясняется, как настроить и использовать закрытые ссылки и частные конечные точки с помощью служб распознавания речи Azure. 
+В этой статье объясняется, как настроить и использовать закрытые ссылки и частные конечные точки с помощью служб распознавания речи Azure.
 
 > [!NOTE]
-> В этой статье описываются особенности настройки и использования частной связи с помощью служб распознавания речи Azure. Прежде чем продолжить, ознакомьтесь со статьей общие сведения об [использовании виртуальных сетей с Cognitive Services](../cognitive-services-virtual-networks.md).
+> В этой статье описываются особенности настройки и использования частной связи с помощью служб распознавания речи Azure. Прежде чем продолжить, ознакомьтесь со сведениями о том, как [использовать виртуальные сети с Cognitive Services](../cognitive-services-virtual-networks.md).
 
-Для включения речевого ресурса в сценариях частной конечной точки необходимо выполнить следующие задачи:
-- [Создание пользовательского доменного имени ресурса речи](#create-custom-domain-name)
-- [Создание и настройка частных конечных точек](#enabling-private-endpoints)
-- [Настройка существующих приложений и решений](#using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled)
+Выполните следующие задачи, чтобы использовать службу распознавания речи с помощью частной конечной точки:
 
-Если позже вы решили удалить все частные конечные точки, но продолжать использовать ресурс, необходимые действия описаны в [этом разделе](#using-speech-resource-with-custom-domain-name-without-private-endpoints).
+1. [Создание пользовательского доменного имени ресурса речи](#create-a-custom-domain-name)
+2. [Создание и настройка частных конечных точек](#enable-private-endpoints)
+3. [Настройка существующих приложений и решений](#use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled)
 
-## <a name="create-custom-domain-name"></a>Создание имени пользовательского домена
+Чтобы удалить частные конечные точки позже, но по-прежнему использовать речевой ресурс, выполните задачи, приведенные в [этом разделе](#use-speech-resource-with-custom-domain-name-without-private-endpoints).
 
-Частные конечные точки нуждаются в использовании [Cognitive Services пользовательских поддоменных имен](../cognitive-services-custom-subdomains.md). Используйте приведенные ниже инструкции, чтобы создать его для своего речевого ресурса.
+## <a name="create-a-custom-domain-name"></a>Создание пользовательского доменного имени
 
-> [!WARNING]
-> В речевом ресурсе с включенным пользовательским именем домена используется другой способ взаимодействия со службами речи. Скорее всего, вам придется настроить код приложения как для [частных конечных точек](#using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) , так и для сценариев с [  поддержкой закрытых конечных точек](#using-speech-resource-with-custom-domain-name-without-private-endpoints) .
+Частным конечным точкам требуется [Cognitive Services имя пользовательского поддомена](../cognitive-services-custom-subdomains.md). Следуйте приведенным ниже инструкциям, чтобы создать его для своего речевого ресурса.
+
+> [!CAUTION]
+> В речевом ресурсе с включенным пользовательским именем домена используется другой способ взаимодействия со службой речи.
+> Вам, вероятно, придется настроить код приложения как для [частных конечных точек](#use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) , так и для сценариев с [  поддержкой закрытых конечных точек](#use-speech-resource-with-custom-domain-name-without-private-endpoints) .
 >
-> Операция включения пользовательского доменного имени [**необратима**](../cognitive-services-custom-subdomains.md#can-i-change-a-custom-domain-name). Единственный способ вернуться к [региональному имени](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) — создать новый речевой ресурс. 
+> При включении имени личного домена операция [**необратима**](../cognitive-services-custom-subdomains.md#can-i-change-a-custom-domain-name). Единственный способ вернуться к [региональному имени](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) — создать новый речевой ресурс.
 >
-> Особенно в случаях, когда у вашего речевого ресурса много связанных пользовательских моделей и проектов, созданных с помощью [Speech Studio](https://speech.microsoft.com/) , **настоятельно** рекомендуется выполнить настройку с помощью тестового ресурса, а затем изменить только ту, которая использовалась в рабочей среде.
+> Если у вашего речевого ресурса много связанных пользовательских моделей и проектов, созданных с помощью [Speech Studio](https://speech.microsoft.com/) , **настоятельно** рекомендуется выполнить настройку с помощью тестового ресурса, прежде чем изменять ресурс, используемый в рабочей среде.
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-- Перейдите по адресу [портал Azure](https://portal.azure.com/) и войдите в учетную запись Azure.
-- Выбор требуемого ресурса речи
-- Выбор *сети* (группа *управления ресурсами* ) 
-- На вкладке " *брандмауэры и виртуальные сети* " (по умолчанию) нажмите кнопку " **создать имя пользовательского домена** ".
-- Появится новая панель с инструкциями по созданию уникального пользовательского поддомена для ресурса.
-> [!WARNING]
-> После создания имени пользовательского домена его **нельзя** изменить. Дополнительные сведения см. в приведенном выше предупреждении.
-- После завершения операции может потребоваться выбрать *ключи и конечную точку* (группа *управления ресурсами* ) и проверить новое имя конечной точки ресурса в формате <p />`{your custom name}.cognitiveservices.azure.com`
+Чтобы создать пользовательское доменное имя с помощью портал Azure, выполните следующие действия.
+
+1. Перейдите по адресу [портал Azure](https://portal.azure.com/) и войдите в свою учетную запись Azure.
+1. Выберите необходимый речевой ресурс.
+1. В области навигации слева в группе **Управление ресурсами** щелкните **сеть**.
+1. На вкладке **брандмауэры и виртуальные сети** щелкните **создать имя пользовательского домена**. Появится новая правая панель с инструкциями по созданию уникального пользовательского поддомена для ресурса.
+1. На панели Создание имени пользовательского домена введите часть имени пользовательского домена. Ваш полный личный домен будет выглядеть следующим образом: `https://{your custom name}.cognitiveservices.azure.com` . 
+    **После создания пользовательского доменного имени его _нельзя_ изменить. Повторно прочтите предупреждение о предупреждении.** Введя имя личного домена, нажмите кнопку **сохранить**.
+1. После завершения операции в группе **Управление ресурсами** щелкните **ключи и конечная точка**. Подтвердите, что новое имя конечной точки ресурса будет запускаться таким образом:
+
+    `https://{your custom name}.cognitiveservices.azure.com`
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Для работы с этим разделом необходимо локально запустить PowerShell версии 7. x или более поздней версии с Azure PowerShellным модулем 5.1.0 или более поздней версией. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
+Чтобы создать пользовательское доменное имя с помощью PowerShell, убедитесь, что на компьютере установлена версия PowerShell 7. x или более поздняя версия с Azure PowerShellным модулем 5.1.0 или более поздней версии. чтобы просмотреть версии этих средств, выполните следующие действия.
 
-Прежде чем продолжить выполнение `Connect-AzAccount` , создайте подключение к Azure.
+1. В окне PowerShell введите:
 
-## <a name="verify-custom-domain-name-availability"></a>Проверка доступности имени пользовательского домена
+    `$PSVersionTable`
 
-Необходимо проверить, является ли личный домен, который вы хотите использовать, бесплатным. Мы будем использовать метод [проверки доступности домена](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) из Cognitive Services REST API. Ознакомьтесь с комментариями в блоке кода ниже, объясняя шаги.
+    Убедитесь, что значение PSVersion больше 7. x. Чтобы обновить PowerShell, следуйте инструкциям по [установке различных версий PowerShell](/powershell/scripting/install/installing-powershell) для обновления.
+
+1. В окне PowerShell введите:
+
+    `Get-Module -ListAvailable Az`
+
+    Если ничего не отображается или если Azure PowerShell версия модуля меньше 5.1.0, следуйте инструкциям по [установке Azure PowerShell модуля](/powershell/azure/install-Az-ps) для обновления.
+
+Прежде чем продолжить, выполните команду, `Connect-AzAccount` чтобы создать подключение к Azure.
+
+## <a name="verify-custom-domain-name-is-available"></a>Убедитесь, что пользовательское доменное имя доступно
+
+Необходимо проверить, доступен ли личный домен, который вы хотите использовать. Выполните следующие действия, чтобы убедиться, что домен доступен, с помощью операции [проверить доступность домена](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) в Cognitive Services REST API.
 
 > [!TIP]
 > Приведенный ниже код **не** будет работать в Azure Cloud Shell.
@@ -72,18 +90,16 @@ ms.locfileid: "97516533"
 $subId = "Your Azure subscription Id"
 $subdomainName = "custom domain name"
 
-# Select the Azure subscription containing Speech resource
-# If your Azure account has only one active subscription
-# you can skip this step
+# Select the Azure subscription that contains Speech resource.
+# You can skip this step if your Azure account has only one active subscription.
 Set-AzContext -SubscriptionId $subId
 
-# Preparing OAuth token which is used in request
-# to Cognitive Services REST API
+# Prepare OAuth token to use in request to Cognitive Services REST API.
 $Context = Get-AzContext
 $AccessToken = (Get-AzAccessToken -TenantId $Context.Tenant.Id).Token
 $token = ConvertTo-SecureString -String $AccessToken -AsPlainText -Force
 
-# Preparing and executing the request to Cognitive Services REST API
+# Prepare and send the request to Cognitive Services REST API.
 $uri = "https://management.azure.com/subscriptions/" + $subId + `
     "/providers/Microsoft.CognitiveServices/checkDomainAvailability?api-version=2017-04-18"
 $body = @{
@@ -94,40 +110,40 @@ $jsonBody = $body | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri $uri -ContentType "application/json" -Authentication Bearer `
     -Token $token -Body $jsonBody | Format-List
 ```
-Если требуемое имя доступно, вы получите ответ следующего вида:
+Если требуемое имя доступно, вы увидите ответ следующего вида:
 ```azurepowershell
 isSubdomainAvailable : True
 reason               :
 type                 :
 subdomainName        : my-custom-name
 ```
-Если имя уже используется, вы получите следующий ответ:
+Если имя уже используется, вы увидите следующий ответ:
 ```azurepowershell
 isSubdomainAvailable : False
 reason               : Sub domain name 'my-custom-name' is already used. Please pick a different name.
 type                 :
 subdomainName        : my-custom-name
 ```
-## <a name="enabling-custom-domain-name"></a>Включение пользовательского имени домена
+## <a name="create-your-custom-domain-name"></a>Создание пользовательского доменного имени
 
-Чтобы включить пользовательское доменное имя для выбранного ресурса речи, мы используем командлет [Set-азкогнитивесервицесаккаунт](/powershell/module/az.cognitiveservices/set-azcognitiveservicesaccount) . Ознакомьтесь с комментариями в блоке кода ниже, объясняя шаги.
+Чтобы включить пользовательское доменное имя для выбранного ресурса речи, мы используем командлет [Set-азкогнитивесервицесаккаунт](/powershell/module/az.cognitiveservices/set-azcognitiveservicesaccount) .
 
-> [!WARNING]
-> После успешного выполнения приведенного ниже кода будет создано пользовательское доменное имя для своего ресурса речи. Это имя **нельзя** изменить. Дополнительные сведения см. в приведенном выше предупреждении.
+> [!CAUTION]
+> После успешного выполнения приведенного ниже кода вы создадите пользовательское доменное имя для своего ресурса речи.
+> Это имя **нельзя** изменить. Дополнительные сведения см. в **предупреждении о предупреждениях** выше.
 
 ```azurepowershell
 $resourceGroup = "Resource group name where Speech resource is located"
 $speechResourceName = "Your Speech resource name"
 $subdomainName = "custom domain name"
 
-# Select the Azure subscription containing Speech resource
-# If your Azure account has only one active subscription
-# you can skip this step
+# Select the Azure subscription that contains Speech resource.
+# You can skip this step if your Azure account has only one active subscription.
 $subId = "Your Azure subscription Id"
 Set-AzContext -SubscriptionId $subId
 
-# Set the custom domain name to the selected resource
-# WARNING! THIS IS NOT REVERSIBLE!
+# Set the custom domain name to the selected resource.
+# CAUTION: THIS CANNOT BE CHANGED OR UNDONE!
 Set-AzCognitiveServicesAccount -ResourceGroupName $resourceGroup `
     -Name $speechResourceName -CustomSubdomainName $subdomainName
 ```
@@ -138,11 +154,11 @@ Set-AzCognitiveServicesAccount -ResourceGroupName $resourceGroup `
 
 - Для работы с этим разделом требуется последняя версия Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-## <a name="verify-custom-domain-name-availability"></a>Проверка доступности имени пользовательского домена
+## <a name="verify-the-custom-domain-name-is-available"></a>Убедитесь, что имя пользовательского домена доступно.
 
-Необходимо проверить, является ли личный домен, который вы хотите использовать, бесплатным. Мы будем использовать метод [проверки доступности домена](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) из Cognitive Services REST API. 
+Необходимо проверить, является ли личный домен, который вы хотите использовать, бесплатным. Мы будем использовать метод [проверки доступности домена](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) из Cognitive Services REST API.
 
-Скопируйте приведенный ниже блок кода, вставьте имя пользовательского домена и сохраните его в файл `subdomain.json` .
+Скопируйте приведенный ниже блок кода, вставьте предпочитаемое имя личного домена и сохраните его в файл `subdomain.json` .
 
 ```json
 {
@@ -156,7 +172,7 @@ Set-AzCognitiveServicesAccount -ResourceGroupName $resourceGroup `
 ```azurecli-interactive
 az rest --method post --url "https://management.azure.com/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.CognitiveServices/checkDomainAvailability?api-version=2017-04-18" --body @subdomain.json
 ```
-Если требуемое имя доступно, вы получите ответ следующего вида:
+Если требуемое имя доступно, вы увидите ответ следующего вида:
 ```azurecli
 {
   "isSubdomainAvailable": true,
@@ -166,7 +182,7 @@ az rest --method post --url "https://management.azure.com/subscriptions/xxxxxxxx
 }
 ```
 
-Если имя уже используется, вы получите следующий ответ:
+Если имя уже используется, вы увидите следующий ответ:
 ```azurecli
 {
   "isSubdomainAvailable": false,
@@ -175,7 +191,7 @@ az rest --method post --url "https://management.azure.com/subscriptions/xxxxxxxx
   "type": null
 }
 ```
-## <a name="enabling-custom-domain-name"></a>Включение пользовательского имени домена
+## <a name="enable-custom-domain-name"></a>Включить пользовательское доменное имя
 
 Чтобы включить пользовательское доменное имя для выбранного ресурса речи, мы используем команду [AZ cognitiveservices Account Update](/cli/azure/cognitiveservices/account#az_cognitiveservices_account_update) .
 
@@ -184,15 +200,17 @@ az rest --method post --url "https://management.azure.com/subscriptions/xxxxxxxx
 az account set --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 Задайте имя пользовательского домена для выбранного ресурса. Замените примеры значений параметров на фактические и выполните приведенную ниже команду.
-> [!WARNING]
-> После успешного выполнения приведенной ниже команды вы создадите пользовательское доменное имя для своего ресурса речи. Это имя **нельзя** изменить. Дополнительные сведения см. в приведенном выше предупреждении.
+
+> [!CAUTION]
+> После успешного выполнения приведенной ниже команды вы создадите пользовательское доменное имя для своего ресурса речи. Это имя **нельзя** изменить. Дополнительные сведения см. в предупреждении о предупреждениях выше.
+
 ```azurecli
 az cognitiveservices account update --name my-speech-resource-name --resource-group my-resource-group-name --custom-domain my-custom-name
 ```
 
 **_
 
-## <a name="enabling-private-endpoints"></a>Включение частных конечных точек
+## <a name="enable-private-endpoints"></a>Включить частные конечные точки
 
 Включите закрытую конечную точку с помощью портал Azure, Azure PowerShell или Azure CLI.
 
@@ -218,7 +236,7 @@ az cognitiveservices account update --name my-speech-resource-name --resource-gr
 
 `my-private-link-speech.cognitiveservices.azure.com`Для этого раздела мы будем использовать в качестве примера DNS-имя ресурса речи.
 
-Войдите в виртуальную машину, расположенную в виртуальной сети, к которой присоединена частная конечная точка. Откройте командную строку Windows или оболочку Bash, выполните команду "nslookup" и убедитесь, что имя личного домена ресурса успешно разрешается:
+Войдите в виртуальную машину, расположенную в виртуальной сети, к которой присоединена частная конечная точка. Откройте командную строку Windows или оболочку Bash, запустите `nslookup` и подтвердите успешное разрешение имени личного домена ресурса:
 ```dos
 C:\>nslookup my-private-link-speech.cognitiveservices.azure.com
 Server:  UnKnown
@@ -233,11 +251,11 @@ Aliases:  my-private-link-speech.cognitiveservices.azure.com
 
 #### <a name="optional-check-dns-resolution-from-other-networks"></a>(Необязательная проверка). Разрешение DNS из других сетей
 
-Эта проверка необходима, если вы планируете использовать свой речевой ресурс с поддержкой закрытой конечной точки в гибридном режиме, в котором включены *все сети* или *Выбранные сети и параметры доступа к частным конечным точкам* в разделе " *Сетевые подключения* " ресурса. Если планируется доступ к ресурсу только с помощью частной конечной точки, этот раздел можно пропустить.
+Эта проверка необходима, если вы планируете использовать ваш закрытый ресурс с поддержкой закрытых конечных точек в гибридном режиме, в котором вы включили параметр " *все сети* " или "выбранные сети" и "доступ к *частным конечным точкам* " в разделе " *Сетевые подключения* " ресурса. Если вы планируете доступ к ресурсу только с помощью частной конечной точки, этот раздел можно пропустить.
 
-`my-private-link-speech.cognitiveservices.azure.com`Для этого раздела мы будем использовать в качестве примера DNS-имя ресурса речи.
+`my-private-link-speech.cognitiveservices.azure.com`Для этого раздела мы используем в качестве примера DNS-имя для речевого ресурса.
 
-На любом компьютере, подключенном к сети, из которой вы разрешаете доступ к ресурсу открыть командную строку Windows или оболочку Bash, выполните команду nslookup и убедитесь, что имя личного домена ресурса успешно разрешается:
+На любом компьютере, подключенном к сети, из которой вы разрешаете доступ к ресурсу, откройте командную строку Windows или оболочку Bash, выполните `nslookup` команду и убедитесь, что она успешно разрешает имя личного домена ресурса:
 ```dos
 C:\>nslookup my-private-link-speech.cognitiveservices.azure.com
 Server:  UnKnown
@@ -251,18 +269,18 @@ Aliases:  my-private-link-speech.cognitiveservices.azure.com
           westeurope.prod.vnet.cog.trafficmanager.net
 ```
 
-Обратите внимание, что разрешенные IP-адреса указывают на конечную точку прокси виртуальной сети, которая используется для диспетчеризации сетевого трафика в закрытую конечную точку с включенным Cognitive Services ресурсом. Это поведение будет отличаться для ресурса с включенным именем личного домена, но *без* настроенных частных конечных точек. См. [Этот раздел](#dns-configuration).
+Обратите внимание, что разрешенный IP-адрес указывает на конечную точку прокси виртуальной сети, которая передает сетевой трафик в частную конечную точку для ресурса Cognitive Services. Поведение будет отличаться для ресурса с именем личного домена, но *без* закрытых конечных точек. Дополнительные сведения см. в [этом разделе](#dns-configuration) .
 
-## <a name="adjusting-existing-applications-and-solutions"></a>Настройка существующих приложений и решений 
+## <a name="adjust-existing-applications-and-solutions"></a>Настройка существующих приложений и решений
 
-Речевой ресурс с включенным пользовательским доменом использует другой способ взаимодействия со службами речи. Это справедливо для ресурса речи, поддерживающего пользовательский домен [, как с](#using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) закрытыми конечными точками, так и [без](#using-speech-resource-with-custom-domain-name-without-private-endpoints) них. В текущем разделе содержатся сведения, необходимые для обоих вариантов.
+Речевой ресурс с включенным пользовательским доменом использует другой способ взаимодействия со службами речи. Это справедливо для ресурса речи, поддерживающего пользовательский домен [, как с](#use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) закрытыми конечными точками, так и [без](#use-speech-resource-with-custom-domain-name-without-private-endpoints) них. В текущем разделе содержатся сведения, необходимые для обоих вариантов.
 
-### <a name="using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled"></a>Использование речевого ресурса с включенным пользовательским именем домена и частной конечной точкой
+### <a name="use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled"></a>Использование речевого ресурса с включенным доменным именем и частной конечной точкой
 
 В речевом ресурсе с включенным пользовательским именем домена и частной конечной точкой используется другой способ взаимодействия со службами речи. В этом разделе объясняется, как использовать такой ресурс с речевыми службами REST API и [речевым пакетом SDK](speech-sdk.md).
 
 > [!NOTE]
-> Обратите внимание, что речевой ресурс без закрытых конечных точек, но с включенным **пользовательским именем домена** также имеет особый способ взаимодействия со службами речи, но этот способ отличается от сценария для речевого ресурса с поддержкой частной конечной точки. Если у вас есть такой ресурс (скажем, у вас есть ресурс с частными конечными точками, но затем решили удалить их), ознакомьтесь с [разделом «корреспондент](#using-speech-resource-with-custom-domain-name-without-private-endpoints)».
+> Обратите внимание, что речевой ресурс без закрытых конечных точек, но с включенным **пользовательским именем домена** также имеет особый способ взаимодействия со службами речи, но этот способ отличается от сценария для речевого ресурса с поддержкой частной конечной точки. Если у вас есть такой ресурс (скажем, у вас есть ресурс с частными конечными точками, но затем решили удалить их), ознакомьтесь с [разделом «корреспондент](#use-speech-resource-with-custom-domain-name-without-private-endpoints)».
 
 #### <a name="speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-rest-api"></a>Речевой ресурс с пользовательским именем домена и частной конечной точкой. Использование с REST API
 
@@ -330,11 +348,11 @@ https://my-private-link-speech.cognitiveservices.azure.com/speechtotext/v3.0/tra
 
 Чтобы получить список голосов, поддерживаемых в регионе, один из них должен выполнить следующие две операции:
 
-- Получение маркера авторизации через
+- Получение токена авторизации:
 ```http
 https://westeurope.api.cognitive.microsoft.com/sts/v1.0/issuetoken
 ```
-- Использование полученного маркера получение списка голосов через
+- Используя маркер, получите список голосов:
 ```http
 https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list
 ```
@@ -413,7 +431,7 @@ https://my-private-link-speech.cognitiveservices.azure.com/voice/cognitiveservic
 - Определение URL-адреса конечной точки, используемого приложением
 - Измените URL-адрес конечной точки, как описано в предыдущем разделе, и создайте `SpeechConfig` экземпляр класса с использованием этого измененного URL-адреса явным образом.
 
-###### <a name="determining-application-endpoint-url"></a>Определение URL-адреса конечной точки приложения
+###### <a name="determine-application-endpoint-url"></a>Определение URL-адреса конечной точки приложения
 
 - [Включение ведения журнала для приложения](how-to-use-logging.md) и его запуск для создания журнала
 - В файле журнала найдите `SPEECH-ConnectionUrl` . Строка будет содержать `value` параметр, который, в свою очередь, будет содержать полный URL-адрес, используемый приложением.
@@ -426,7 +444,7 @@ https://my-private-link-speech.cognitiveservices.azure.com/voice/cognitiveservic
 ```
 wss://westeurope.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US
 ```
-###### <a name="creating-speechconfig-instance-using-full-endpoint-url"></a>Создание `SpeechConfig` экземпляра с использованием полного URL-адреса конечной точки
+###### <a name="create-speechconfig-instance-using-full-endpoint-url"></a>Создать `SpeechConfig` экземпляр с использованием полного URL-адреса конечной точки
 
 Измените конечную точку, определенную в предыдущем разделе, как описано в [общем принципе](#general-principle) .
 
@@ -464,7 +482,7 @@ SPXSpeechConfiguration *speechConfig = [[SPXSpeechConfiguration alloc] initWithE
 
 После такого изменения приложение должно работать с закрытыми речевыми ресурсами. Мы работаем над более простой поддержкой сценария частной конечной точки.
 
-### <a name="using-speech-resource-with-custom-domain-name-without-private-endpoints"></a>Использование речевого ресурса с именем пользовательского домена без закрытых конечных точек
+### <a name="use-speech-resource-with-custom-domain-name-without-private-endpoints"></a>Использование речевого ресурса с именем личного домена без закрытых конечных точек
 
 В этой статье мы указали несколько раз, что включение личного домена для речевого ресурса является **необратимым** , и такой ресурс будет использовать другой способ связи с голосовыми службами, сравнивая с обычными (то есть, использующими [региональные) именами конечных точек](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints).
 
@@ -529,7 +547,7 @@ var config = SpeechConfig.FromSubscription(subscriptionKey, azureRegion);
 - Запрос маркера авторизации через Cognitive Services REST API
 - Создание экземпляра `SpeechConfig` класса с использованием метода "from" маркера авторизации "/" с токеном авторизации " 
 
-###### <a name="requesting-authorization-token"></a>Запрос маркера авторизации
+###### <a name="request-authorization-token"></a>Маркер авторизации запроса
 
 Сведения о получении маркера с помощью REST API Cognitive Services см. в [этой статье](../authentication.md#authenticate-with-an-authentication-token) . 
 
@@ -540,7 +558,7 @@ https://my-private-link-speech.cognitiveservices.azure.com/sts/v1.0/issueToken
 > [!TIP]
 > Этот URL-адрес можно найти в разделе *ключи и конечная точка* (группа *управления ресурсами* ) вашего ресурса речи в портал Azure.
 
-###### <a name="creating-speechconfig-instance-using-authorization-token"></a>Создание `SpeechConfig` экземпляра с помощью токена авторизации
+###### <a name="create-speechconfig-instance-using-authorization-token"></a>Создание `SpeechConfig` экземпляра с помощью токена авторизации
 
 Необходимо создать экземпляр `SpeechConfig` класса с помощью маркера авторизации, полученного в предыдущем разделе. Предположим, что определены следующие переменные:
 

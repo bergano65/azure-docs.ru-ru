@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.openlocfilehash: 77a8321ba8bac0ecaf577bce6c3c05d10508128e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.custom: references_regions
+ms.openlocfilehash: bfdea5f2e2bd20a35ee948e99b3be9bf55038b13
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96020166"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760662"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API преобразования текста в речь.
 
@@ -34,7 +35,7 @@ REST API преобразования текста в речь поддержи�
 * Для вызова REST API преобразования текста в речь требуется заголовок авторизации. Это означает, что для доступа к службе необходимо выполнить обмен маркерами. Дополнительные сведения см. в разделе [Authenticate to the Speech API](#authentication) (Аутентификация в API речи).
 
 > [!TIP]
-> См. [документацию](../../azure-government/compare-azure-government-global-azure.md) по Azure для государственных организаций для государственных облаков (FairFax).
+> См. [документацию по Azure для государственных](/azure/azure-government/compare-azure-government-global-azure) организаций для государственных облаков (FairFax).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
@@ -44,7 +45,7 @@ REST API преобразования текста в речь поддержи�
 
 ### <a name="regions-and-endpoints"></a>Регионы и конечные точки
 
-| Region | Конечная точка |
+| Регион | Конечная точка |
 |--------|----------|
 | Восточная Австралия | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Южная Бразилия | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -65,6 +66,9 @@ REST API преобразования текста в речь поддержи�
 | Западная Европа | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | западная часть США | `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | западная часть США 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+
+> [!TIP]
+> [Голоса в предварительной версии](language-support.md#neural-voices-in-preview) доступны только в следующих трех регионах: Восточная часть США, Западная Европа и Юго-Восточная Азия.
 
 ### <a name="request-headers"></a>Заголовки запроса
 
@@ -98,46 +102,78 @@ Authorization: Bearer [Base64 access_token]
 
 ```json
 [
+  {
+    "Name": "Microsoft Server Speech Text to Speech Voice (ar-EG, Hoda)",
+    "DisplayName": "Hoda",
+    "LocalName": "هدى",
+    "ShortName": "ar-EG-Hoda",
+    "Gender": "Female",
+    "Locale": "ar-EG",
+    "SampleRateHertz": "16000",
+    "VoiceType": "Standard",
+    "Status": "GA"
+  },
+
+...
+      
     {
-        "Name": "Microsoft Server Speech Text to Speech Voice (ar-EG, Hoda)",
-        "ShortName": "ar-EG-Hoda",
-        "Gender": "Female",
-        "Locale": "ar-EG",
-        "SampleRateHertz": "16000",
-        "VoiceType": "Standard"
-    },
-    {
-        "Name": "Microsoft Server Speech Text to Speech Voice (ar-SA, Naayf)",
-        "ShortName": "ar-SA-Naayf",
-        "Gender": "Male",
-        "Locale": "ar-SA",
-        "SampleRateHertz": "16000",
-        "VoiceType": "Standard"
-    },
-    {
-        "Name": "Microsoft Server Speech Text to Speech Voice (bg-BG, Ivan)",
-        "ShortName": "bg-BG-Ivan",
-        "Gender": "Male",
-        "Locale": "bg-BG",
-        "SampleRateHertz": "16000",
-        "VoiceType": "Standard"
-    },
-    {
-        "Name": "Microsoft Server Speech Text to Speech Voice (ca-ES, HerenaRUS)",
-        "ShortName": "ca-ES-HerenaRUS",
-        "Gender": "Female",
-        "Locale": "ca-ES",
-        "SampleRateHertz": "16000",
-        "VoiceType": "Standard"
-    },
-    {
-        "Name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)",
-        "ShortName": "zh-CN-XiaoxiaoNeural",
-        "Gender": "Female",
-        "Locale": "zh-CN",
-        "SampleRateHertz": "24000",
-        "VoiceType": "Neural"
-    },
+    "Name": "Microsoft Server Speech Text to Speech Voice (en-US, AriaNeural)",
+    "DisplayName": "Aria",
+    "LocalName": "Aria",
+    "ShortName": "en-US-AriaNeural",
+    "Gender": "Female",
+    "Locale": "en-US",
+    "StyleList": [
+      "chat",
+      "customerservice",
+      "newscast-casual",
+      "newscast-formal",
+      "cheerful",
+      "empathetic"
+    ],
+    "SampleRateHertz": "24000",
+    "VoiceType": "Neural",
+    "Status": "GA"
+  },
+  
+  ...
+    
+     {
+    "Name": "Microsoft Server Speech Text to Speech Voice (ga-IE, OrlaNeural)",
+    "DisplayName": "Orla",
+    "LocalName": "Orla",
+    "ShortName": "ga-IE-OrlaNeural",
+    "Gender": "Female",
+    "Locale": "ga-IE",
+    "SampleRateHertz": "24000",
+    "VoiceType": "Neural",
+    "Status": "Preview"
+  },
+  
+  ...
+    
+   {
+    "Name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunxiNeural)",
+    "DisplayName": "Yunxi",
+    "LocalName": "云希",
+    "ShortName": "zh-CN-YunxiNeural",
+    "Gender": "Male",
+    "Locale": "zh-CN",
+    "StyleList": [
+      "Calm",
+      "Fearful",
+      "Cheerful",
+      "Disgruntled",
+      "Serious",
+      "Angry",
+      "Sad",
+      "Depressed",
+      "Embarrassed"
+    ],
+    "SampleRateHertz": "24000",
+    "VoiceType": "Neural",
+    "Status": "Preview"
+  },
 
     ...
 ]
@@ -208,23 +244,17 @@ audio-24khz-48kbitrate-mono-mp3     ogg-24khz-16bit-mono-opus
 ```http
 POST /cognitiveservices/v1 HTTP/1.1
 
-X-Microsoft-OutputFormat: raw-16khz-16bit-mono-pcm
+X-Microsoft-OutputFormat: raw-24khz-16bit-mono-pcm
 Content-Type: application/ssml+xml
 Host: westus.tts.speech.microsoft.com
 Content-Length: 225
 Authorization: Bearer [Base64 access_token]
 
 <speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female'
-    name='en-US-AriaRUS'>
+    name='en-US-AriaNeural'>
         Microsoft Speech Service Text-to-Speech API
 </voice></speak>
 ```
-
-Примеры для конкретного языка см. в наших кратких руководствах.
-
-* [.NET Core, C #](./get-started-text-to-speech.md?pivots=programming-language-csharp&tabs=dotnetcore)
-* [Python](./get-started-text-to-speech.md?pivots=programming-language-python)
-* [Node.js](./get-started-text-to-speech.md)
 
 ### <a name="http-status-codes"></a>Коды состояния HTTP
 
@@ -235,15 +265,14 @@ Authorization: Bearer [Base64 access_token]
 | 200 | OK | Запрос выполнен успешно; текст ответа представляет собой звуковой файл. |
 | 400 | Ошибка запроса | Обязательный параметр отсутствует, пустой или его значение равно нулю. Или переданное либо обязательному, либо необязательному параметру значение является недопустимым. Распространенной проблемой является слишком длинный заголовок. |
 | 401 | Не авторизовано | Запрос не авторизован. Убедитесь, что ваш ключ подписки или маркер являются допустимыми и находятся в правильных регионах. |
-| 413 | Размер запрашиваемой сущности слишком большой | Входные данные SSM превышают длину 1024 символа. |
 | 415 | Неподдерживаемый тип носителя | Возможно, указано неправильное значение `Content-Type` . `Content-Type` необходимо задать значение `application/ssml+xml` . |
 | 429 | Слишком много запросов | Вы превысили квоту или частоту запросов, разрешенных для вашей подписки. |
 | 502 | Недопустимый шлюз    | Проблема с сетью или сервером. Может также указывать на недопустимые заголовки. |
 
 Если состояние HTTP — `200 OK`, текст ответа содержит звуковой файл в затребованном формате. Этот файл можно воспроизводить при передаче, сохранении в буфер или сохранении в файл.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
-- [Асинхронное синтез для больших аудио-форм](./long-audio-api.md)
+- [Асинхронное синтез для больших аудио-форм](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
 - [Начало работы с набором средств "Пользовательский голос"](how-to-custom-voice.md)

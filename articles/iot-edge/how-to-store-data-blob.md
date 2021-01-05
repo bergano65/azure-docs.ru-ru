@@ -8,12 +8,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 22cef5919e597d4cd83ad80f5758a0427c52e2bb
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: e1031df9f305015048de7f708123a51875776e1b
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219740"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760594"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на пограничных устройствах с использованием хранилища BLOB-объектов Azure в IoT Edge
 
@@ -81,7 +81,7 @@ ms.locfileid: "92219740"
 | ----- | ----- | ---- |
 | уплоадон | true, false | По умолчанию задано значение `false` . Если вы хотите включить эту функцию, присвойте этому полю значение `true` . <br><br> Переменная среды: `deviceToCloudUploadProperties__uploadOn={false,true}` |
 | уплоадордер | Невестфирст, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. По умолчанию задано значение `OldestFirst` . Порядок определяется временем последнего изменения большого двоичного объекта. <br><br> Переменная среды: `deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
-| клаудсторажеконнектионстринг |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"` — Это строка подключения, которая позволяет указать учетную запись хранения, в которую будут передаваться данные. Укажите `Azure Storage Account Name` , `Azure Storage Account Key` , `End point suffix` . Добавьте соответствующие EndpointSuffix в Azure, куда будут отправляться данные. это зависит от глобальных Azure, государственных учреждений Azure и Microsoft Azure Stack. <br><br> Здесь можно указать строку подключения SAS службы хранилища Azure. Но это свойство необходимо обновлять по истечении срока его действия. <br><br> Переменная среды: `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
+| клаудсторажеконнектионстринг |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"` — Это строка подключения, которая позволяет указать учетную запись хранения, в которую будут передаваться данные. Укажите `Azure Storage Account Name` , `Azure Storage Account Key` , `End point suffix` . Добавьте соответствующие EndpointSuffix в Azure, куда будут отправляться данные. это зависит от глобальных Azure, государственных учреждений Azure и Microsoft Azure Stack. <br><br> Здесь можно указать строку подключения SAS службы хранилища Azure. Но это свойство необходимо обновлять по истечении срока его действия. Разрешения SAS могут включать создание доступа для контейнеров, а также создание, запись и Добавление доступа для больших двоичных объектов.  <br><br> Переменная среды: `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
 | сторажеконтаинерсфоруплоад | `"<source container name1>": {"target": "<target container name>"}`,<br><br> `"<source container name1>": {"target": "%h-%d-%m-%c"}`, <br><br> `"<source container name1>": {"target": "%d-%c"}` | Позволяет указать имена контейнеров, которые нужно передать в Azure. Этот модуль позволяет указать имена исходного и целевого контейнеров. Если не указать имя целевого контейнера, оно будет автоматически назначено имени контейнера `<IoTHubName>-<IotEdgeDeviceID>-<ModuleName>-<SourceContainerName>` . Вы можете создать строки шаблона для имени целевого контейнера, извлеките столбец возможные значения. <br>*% h — > имя центра Интернета вещей (3-50 символов). <br>*% d — > IoT Edge идентификатор устройства (от 1 до 129 символов). <br>*% m — > имя модуля (от 1 до 64 символов). <br>*% c-> имя исходного контейнера (от 3 до 63 символов). <br><br>Максимальный размер имени контейнера составляет 63 символов, при этом автоматически назначается имя целевого контейнера, если размер контейнера превышает 63 символов. Каждый раздел (IoTHubName, Иотеджедевицеид, ModuleName, Саурцеконтаинернаме) будет обрезан до 15 символов. <br><br> Переменная среды: `deviceToCloudUploadProperties__storageContainersForUpload__<sourceName>__target=<targetName>` |
 | делетеафтеруплоад | true, false | По умолчанию задано значение `false` . Если задано значение `true` , данные будут автоматически удалены при отправке в облачное хранилище. <br><br> **Внимание!** при использовании добавочных больших двоичных объектов этот параметр приведет к удалению дополнительных больших двоичных объектов из локального хранилища после успешной отправки, и все последующие операции с блоком добавления к этим BLOB-объектам завершатся ошибкой. Используйте этот параметр с осторожностью, не включайте его, если приложение выполняет частые операции добавления или не поддерживает непрерывные операции добавления.<br><br> Переменная среды: `deviceToCloudUploadProperties__deleteAfterUpload={false,true}` . |
 

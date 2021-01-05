@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: chenyl
-ms.openlocfilehash: 1d51f5e8d2fac1e2b180a608c840d0a322e76271
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 33df4410b9dd82fd0b1c732eb03ab5e0e77e9869
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92143245"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763121"
 ---
 # <a name="upstream-settings"></a>Параметры функции отправки данных в вышестоящий ресурс
 
@@ -53,16 +53,29 @@ http://host.com/chat/api/connections/connected
 http://host.com/chat/api/messages/broadcast
 ```
 
+### <a name="key-vault-secret-reference-in-url-template-settings"></a>Key Vault ссылка на секретный код в параметрах шаблона URL-адреса
+
+URL-адрес вышестоящего не является шифрованием неактивных данных. Если у вас есть конфиденциальная информация, рекомендуется использовать Key Vault, чтобы сохранить их там, где управление доступом обеспечивает лучшую страховку. По сути, можно включить управляемое удостоверение службы Azure SignalR, а затем предоставить разрешение на чтение для экземпляра Key Vault и использовать ссылку Key Vault вместо открытого текста в шаблоне вышестоящего URL-адреса.
+
+1. Добавьте удостоверение, назначенное системой, или пользовательское удостоверение. См. статью [Добавление управляемого удостоверения на портале Azure](./howto-use-managed-identity.md#add-a-system-assigned-identity) .
+
+2. Предоставьте секретное разрешение на чтение для управляемого удостоверения в политиках доступа в Key Vault. См. раздел [Назначение политики доступа Key Vault с помощью портал Azure](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
+
+3. Замените конфиденциальный текст синтаксисом `{@Microsoft.KeyVault(SecretUri=<secret-identity>)}` в шаблоне вышестоящего URL-адреса.
+
+> [!NOTE]
+> Содержимое секрета считывается только при изменении параметров восходящего потока или при изменении управляемого удостоверения. Прежде чем использовать ссылку на секрет Key Vault, убедитесь, что вы получили разрешение на чтение с помощью управляемого удостоверения.
+
 ### <a name="rule-settings"></a>Параметры правила
 
-Вы можете задать правила для *правил концентратора*, *правил категорий*и *правил событий* отдельно. Правило сопоставления поддерживает три формата. Возьмем в качестве примера правила событий.
+Вы можете задать правила для *правил концентратора*, *правил категорий* и *правил событий* отдельно. Правило сопоставления поддерживает три формата. Возьмем в качестве примера правила событий.
 - Используйте звездочку (*) для сопоставления любых событий.
 - Для объединения нескольких событий используйте запятую (,). Например, `connected, disconnected` соответствует подключенным и отключенным событиям.
 - Используйте полное имя события для сопоставления с событием. Например, `connected` соответствует подключенному событию.
 
 > [!NOTE]
-> Если вы используете функции Azure и [триггер SignalR](../azure-functions/functions-bindings-signalr-service-trigger.md), триггер SignalR будет предоставлять одну конечную точку в следующем формате: `https://<APP_NAME>.azurewebsites.net/runtime/webhooks/signalr?code=<API_KEY>` .
-> Можно просто настроить шаблон URL-адреса для этого URL-адреса.
+> Если вы используете функции Azure и [триггер SignalR](../azure-functions/functions-bindings-signalr-service-trigger.md), триггер SignalR будет предоставлять одну конечную точку в следующем формате: `<Function_App_URL>/runtime/webhooks/signalr?code=<API_KEY>` .
+> Можно просто настроить **Параметры шаблона URL-адреса** для этого URL-адреса и использовать **Параметры правил** по умолчанию. Дополнительные сведения о поиске и службах см. в разделе [Интеграция службы SignalR](../azure-functions/functions-bindings-signalr-service-trigger.md#signalr-service-integration) `<Function_App_URL>` `<API_KEY>` .
 
 ### <a name="authentication-settings"></a>Параметры проверки подлинности
 
@@ -80,9 +93,9 @@ http://host.com/chat/api/messages/broadcast
     :::image type="content" source="media/concept-upstream/upstream-portal.png" alt-text="Параметры функции отправки данных в вышестоящий ресурс":::
 
 3. Добавьте URL-адреса в **шаблон вышестоящего URL-адреса**. Затем параметры, такие как **правила центра** , будут показывать значение по умолчанию.
-4. Чтобы задать параметры для **правил концентратора**, **правил событий**, **правил категорий**и **вышестоящей проверки подлинности**, выберите значение **Правила концентратора**. Появится страница, позволяющая изменить параметры.
+4. Чтобы задать параметры для **правил концентратора**, **правил событий**, **правил категорий** и **вышестоящей проверки подлинности**, выберите значение **Правила концентратора**. Появится страница, позволяющая изменить параметры.
 
-    :::image type="content" source="media/concept-upstream/upstream-detail-portal.png" alt-text="Параметры функции отправки данных в вышестоящий ресурс":::
+    :::image type="content" source="media/concept-upstream/upstream-detail-portal.png" alt-text="Сведения о вышестоящем параметре":::
 
 5. Чтобы настроить **вышестоящий способ проверки подлинности**, сначала убедитесь, что вы включили управляемое удостоверение. Затем выберите **использовать управляемое удостоверение**. В соответствии с вашими потребностями можно выбрать любые параметры в разделе **идентификатор ресурса проверки подлинности**. Дополнительные сведения см. в статье [управляемые удостоверения для службы Azure SignalR](howto-use-managed-identity.md) .
 
@@ -115,7 +128,7 @@ http://host.com/chat/api/messages/broadcast
 
 ## <a name="serverless-protocols"></a>Бессерверные протоколы
 
-Служба Azure SignalR отправляет сообщения конечным точкам, которые следуют следующим протоколам.
+Служба Azure SignalR отправляет сообщения конечным точкам, которые следуют следующим протоколам. Вы можете использовать [привязку триггера службы SignalR](../azure-functions/functions-bindings-signalr-service-trigger.md) с приложение-функция, которая обрабатывает эти протоколы.
 
 ### <a name="method"></a>Метод
 
@@ -133,7 +146,7 @@ POST
 |X-АСРС-User-Claims |Группа утверждений клиентского соединения.|
 |X-АСРС-User-ID |Удостоверение пользователя клиента, который отправляет сообщение.|
 |X-АСРС-клиент-запрос |Запрос запроса, когда клиенты подключаются к службе.|
-|Аутентификация |Необязательный токен, когда вы используете `ManagedIdentity` . |
+|Проверка подлинности |Необязательный токен, когда вы используете `ManagedIdentity` . |
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -170,3 +183,5 @@ Hex_encoded(HMAC_SHA256(accessKey, connection-id))
 
 - [Управляемые удостоверения для службы Azure SignalR](howto-use-managed-identity.md)
 - [Azure Functions development and configuration with Azure SignalR Service](signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
+- [Обработку сообщений из службы SignalR (привязка триггера)](../azure-functions/functions-bindings-signalr-service-trigger.md)
+- [Пример привязки триггера службы SignalR](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BidirectionChat)

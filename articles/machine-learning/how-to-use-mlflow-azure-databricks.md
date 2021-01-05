@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: e72784dbdcf08d672a8498609ca3a5bbd11e632d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 72079cc399eea249bce4d285e2c3c4fbf9304708
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319022"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760611"
 ---
 # <a name="track-azure-databricks-ml-experiments-with-mlflow-and-azure-machine-learning-preview"></a>Следите за экспериментами Azure Databricks ML с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
@@ -43,7 +43,7 @@ ms.locfileid: "93319022"
 
 Отслеживание Млфлов с помощью Машинное обучение Azure позволяет хранить зарегистрированные метрики и артефакты из Azure Databricks выполняется как в: 
 
-* Создайте рабочую область Azure Databricks.
+* Рабочая область Azure Databricks.
 * Рабочая область службы "Машинное обучение Azure"
 
 После создания рабочей области и кластера Azure Databricks 
@@ -72,7 +72,7 @@ ms.locfileid: "93319022"
 1. В области навигации слева выберите **рабочие области** . 
 1. Разверните раскрывающееся меню рабочие области и выберите **Импорт** .
 1. Перетащите или найдите записную книжку своего эксперимента, чтобы импортировать рабочую область ADB.
-1. Выберите **Импортировать**. Записная книжка эксперимента откроется автоматически.
+1. Выберите **Импорт**. Записная книжка эксперимента откроется автоматически.
 1. Под заголовком записной книжки в верхнем левом углу выберите кластер, который нужно подключить к записной книжке эксперимента. 
 
 ## <a name="connect-your-azure-databricks-and-azure-machine-learning-workspaces"></a>Связывание рабочих областей Azure Databricks и Машинного обучения Azure
@@ -156,9 +156,9 @@ mlflow.log_metric('epoch_loss', loss.item())
 
 Сервер отслеживания внутреннего сервера по умолчанию является рабочей областью Azure Databricks; Если вы не решили [установить отслеживание млфлов только в рабочей области машинное обучение Azure](#set-mlflow-tracking-to-only-track-in-your-azure-machine-learning-workspace), сервер отслеживания внутреннего сервера является рабочей областью машинное обучение Azure.   
 
-* **Если Зарегистрированная модель с таким именем не существует** , метод регистрирует новую модель, создает версию 1 и возвращает объект моделверсион млфлов. 
+* **Если Зарегистрированная модель с таким именем не существует**, метод регистрирует новую модель, создает версию 1 и возвращает объект моделверсион млфлов. 
 
-* **Если Зарегистрированная модель с таким именем уже существует** , метод создает новую версию модели и возвращает объект Version. 
+* **Если Зарегистрированная модель с таким именем уже существует**, метод создает новую версию модели и возвращает объект Version. 
 
 ```python
 mlflow.spark.log_model(model, artifact_path = "model", 
@@ -180,8 +180,8 @@ mlflow.sklearn.log_model(model, artifact_path = "model",
 Вы можете использовать API [млфлов. azureml. deploy](https://www.mlflow.org/docs/latest/python_api/mlflow.azureml.html#mlflow.azureml.deploy) для развертывания модели в рабочей области машинное обучение Azure. Если вы зарегистрировали модель только в рабочей области Azure Databricks, как описано в разделе [Регистрация моделей с помощью млфлов](#register-models-with-mlflow) , укажите `model_name` параметр для регистрации модели в машинное обучение Azure рабочей области. 
 
 Azure Databricksные запуски можно развернуть в следующих конечных точках. 
-* [Экземпляр контейнера Azure](how-to-use-mlflow.md#deploy-to-aci)
-* [Служба Azure Kubernetes](how-to-use-mlflow.md#deploy-to-aks)
+* [Экземпляр контейнера Azure](how-to-deploy-models-with-mlflow.md#deploy-to-aci)
+* [Служба Azure Kubernetes](how-to-deploy-models-with-mlflow.md#deploy-to-aks)
 
 ### <a name="deploy-models-to-adb-endpoints-for-batch-scoring"></a>Развертывание моделей в конечных точках ADB для пакетной оценки 
 

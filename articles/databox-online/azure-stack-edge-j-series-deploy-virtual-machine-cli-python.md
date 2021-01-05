@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: alkohli
-ms.openlocfilehash: c12935a4b0b9cbbf088ba7b9c5ea804be0ce85a1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8ea0c27fdd64bae1e6fe9443df76c86e0eb89a75
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447368"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97762930"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>Развертывание виртуальных машин на устройстве GPU Azure Stack Edge Pro с помощью Azure CLI и Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "96447368"
 
 Выполнение рабочего процесса развертывания показано на схеме ниже.
 
-![Рабочий процесс развертывания виртуальной машины](media/azure-stack-edge-j-series-deploy-virtual-machine-powershell/vm-workflow_r.svg)
+![Рабочий процесс развертывания виртуальной машины](media/azure-stack-edge-gpu-deploy-virtual-machine-powershell/vm-workflow-r.svg)
 
 Общая сводка по рабочему процессу развертывания включает следующие шаги:
 
@@ -43,7 +43,7 @@ ms.locfileid: "96447368"
 10. Создание виртуальной сети
 11. Создание виртуальной сетевой карты с использованием идентификатора подсети виртуальной сети.
 
-Подробное описание схемы рабочего процесса см. в статье [Развертывание виртуальных машин на устройстве Azure Stack Edge Pro с помощью Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md). См. статью [Подключение к Azure Resource Manager на устройстве Azure Stack Edge](azure-stack-edge-j-series-connect-resource-manager.md).
+Подробное описание схемы рабочего процесса см. в статье [Развертывание виртуальных машин на устройстве Azure Stack Edge Pro с помощью Azure PowerShell](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md). См. статью [Подключение к Azure Resource Manager на устройстве Azure Stack Edge](azure-stack-edge-j-series-connect-resource-manager.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

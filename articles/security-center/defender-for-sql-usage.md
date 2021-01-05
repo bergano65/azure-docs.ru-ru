@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/30/2020
+ms.date: 12/23/2020
 ms.author: memildin
-ms.openlocfilehash: 07a94685fb3655aa5aa21a8658b9d975c764daff
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 3899b00038f3c12add4dbf49a7f05e07141d8606
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512284"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755860"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -108,7 +108,7 @@ ms.locfileid: "96512284"
     В каждом представлении проверки безопасности сортируются по **степени серьезности**. Щелкните определенную проверку безопасности, чтобы просмотреть область сведений с **описанием**, способ устранения **этой проблемы** и другие связанные сведения, такие как **влияние** или **тест производительности**.
 
 ## <a name="azure-defender-for-sql-alerts"></a>Оповещения Azure Defender для SQL
-Предупреждения создаются необычными и потенциально опасными попытками получить доступ к компьютерам SQL или использовать их. Эти события могут активировать предупреждения, показанные в [разделе оповещения для базы данных SQL и Azure синапсе Analytics на странице справки по оповещениям](alerts-reference.md#alerts-sql-db-and-warehouse).
+Предупреждения создаются необычными и потенциально опасными попытками получить доступ к компьютерам SQL или использовать их. Эти события могут активировать предупреждения, показанные на [странице справки по оповещениям](alerts-reference.md#alerts-sql-db-and-warehouse).
 
 ## <a name="explore-and-investigate-security-alerts"></a>Просмотр и исследование оповещений системы безопасности
 
@@ -124,11 +124,10 @@ ms.locfileid: "96512284"
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Связанные материалы см. в следующей статье:
+Связанные материалы см. в следующих статьях.
 
 - [Оповещения системы безопасности для базы данных SQL и Azure синапсе Analytics](alerts-reference.md#alerts-sql-db-and-warehouse)
 - [Настройка отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)
 - [Дополнительные сведения об Azure Sentinel](../sentinel/index.yml)
-- [Пакет безопасности данных центра безопасности Azure](../azure-sql/database/azure-defender-for-sql.md)

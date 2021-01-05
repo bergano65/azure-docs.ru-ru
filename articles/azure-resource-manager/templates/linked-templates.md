@@ -1,22 +1,22 @@
 ---
 title: Связывание шаблонов для развертывания
-description: Описывает, как использовать связанные шаблоны в шаблоне диспетчера ресурсов Azure для создания решения модульных шаблонов. Показывает, как передавать значения параметров, указывать файл параметров и динамически создаваемые URL-адреса.
+description: Описывает, как использовать связанные шаблоны в шаблоне Azure Resource Manager (шаблон ARM) для создания решения модульного шаблона. Показывает, как передавать значения параметров, указывать файл параметров и динамически создаваемые URL-адреса.
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 1e2ccc57b42f8072c9aa28612d534507b9a674ed
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: cac63ccdd13e245baf97695e9b138c29d3db4958
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852104"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760628"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
-Для развертывания сложных решений можно разбить шаблон на множество связанных шаблонов, а затем развернуть их вместе с помощью основного шаблона. Связанные шаблоны могут быть отдельными файлами или синтаксисом шаблонов, внедренными в основной шаблон. В этой статье используется термин **связанный шаблон** для ссылки на отдельный файл шаблона, на который есть ссылка через ссылку из основного шаблона. Он использует термин **вложенный шаблон** для ссылки на синтаксис внедренного шаблона в основном шаблоне.
+Для развертывания сложных решений можно разбить шаблон Azure Resource Manager (шаблон ARM) на множество связанных шаблонов, а затем развернуть их вместе с помощью основного шаблона. Связанные шаблоны могут быть отдельными файлами или синтаксисом шаблонов, внедренными в основной шаблон. В этой статье используется термин **связанный шаблон** для ссылки на отдельный файл шаблона, на который есть ссылка через ссылку из основного шаблона. Он использует термин **вложенный шаблон** для ссылки на синтаксис внедренного шаблона в основном шаблоне.
 
 Для небольших и средних решений отдельный шаблон проще в понимании и обслуживании. Все ресурсы и значения можно увидеть в отдельном файле. Для более сложных сценариев связанные шаблоны позволяют разбить решение на целевые компоненты. Эти шаблоны можно многократно использовать в других сценариях.
 
-Подробнее см. [Руководство. Создание связанных шаблонов Azure Resource Manager](./deployment-tutorial-linked-template.md).
+Руководство см. в разделе [учебник. Развертывание связанного шаблона](./deployment-tutorial-linked-template.md).
 
 > [!NOTE]
 > Для связанных или вложенных шаблонов можно задать только [добавочный](deployment-modes.md)режим развертывания. Однако основной шаблон можно развернуть в полном режиме. Если главный шаблон развертывается в режиме полного выполнения, а связанный или вложенный шаблон предназначен для одной и той же группы ресурсов, то ресурсы, развернутые в связанном или вложенном шаблоне, включаются в оценку развертывания полного режима. Объединенная коллекция ресурсов, развернутых в основном шаблоне, а также связанные или вложенные шаблоны, сравниваются с существующими ресурсами в группе ресурсов. Все ресурсы, не входящие в эту объединенную коллекцию, будут удалены.
@@ -26,7 +26,7 @@ ms.locfileid: "96852104"
 
 ## <a name="nested-template"></a>Вложенный шаблон
 
-Чтобы вложить шаблон, добавьте [ресурс развертывания](/azure/templates/microsoft.resources/deployments) в основной шаблон. В свойстве **шаблона** укажите синтаксис шаблона.
+Чтобы вложить шаблон, добавьте [ресурс развертывания](/azure/templates/microsoft.resources/deployments) в основной шаблон. В `template` свойстве укажите синтаксис шаблона.
 
 ```json
 {
@@ -162,7 +162,7 @@ ms.locfileid: "96852104"
 
 Значение изменяется в `exampleVar` зависимости от значения `scope` свойства в `expressionEvaluationOptions` . В следующей таблице показаны результаты для обеих областей.
 
-| `expressionEvaluationOptions` которых | Выходные данные |
+| `expressionEvaluationOptions` которых | Вывод |
 | ----- | ------ |
 | Внутреннее | из вложенного шаблона |
 | внешний (или по умолчанию) | из родительского шаблона |
@@ -283,7 +283,7 @@ ms.locfileid: "96852104"
 
 ## <a name="linked-template"></a>Связанный шаблон
 
-Чтобы связать шаблон, добавьте [ресурс развертывания](/azure/templates/microsoft.resources/deployments) в основной шаблон. В свойстве **templateLink** укажите универсальный код ресурса (URI) шаблона, который нужно включить. В следующем примере выполняется ссылка на шаблон, который находится в учетной записи хранения.
+Чтобы связать шаблон, добавьте [ресурс развертывания](/azure/templates/microsoft.resources/deployments) в основной шаблон. В `templateLink` свойстве укажите универсальный код ресурса (URI) шаблона для включения. В следующем примере выполняется ссылка на шаблон, который находится в учетной записи хранения.
 
 ```json
 {
@@ -310,9 +310,9 @@ ms.locfileid: "96852104"
 }
 ```
 
-При ссылке на связанный шаблон значение `uri` не может быть локальным файлом или файлом, доступным только в локальной сети. Azure Resource Manager должен иметь доступ к шаблону. Укажите значение URI, которое скачивается как **http** или **HTTPS**. 
+При ссылке на связанный шаблон значение `uri` не может быть локальным файлом или файлом, доступным только в локальной сети. Azure Resource Manager должен иметь доступ к шаблону. Укажите значение URI, которое скачивается как HTTP или HTTPS.
 
-Вы можете ссылаться на шаблоны с помощью параметров, включающих **http** или **HTTPS**. Например, распространенным шаблоном является использование `_artifactsLocation` параметра. Связанный шаблон можно задать с помощью выражения, например:
+Вы можете ссылаться на шаблоны с помощью параметров, включающих HTTP или HTTPS. Например, распространенным шаблоном является использование `_artifactsLocation` параметра. Связанный шаблон можно задать с помощью выражения, например:
 
 ```json
 "uri": "[concat(parameters('_artifactsLocation'), '/shared/os-disk-parts-md.json', parameters('_artifactsLocationSasToken'))]"
@@ -324,47 +324,49 @@ ms.locfileid: "96852104"
 
 ### <a name="parameters-for-linked-template"></a>Параметры для связанного шаблона
 
-Параметры для связанного шаблона можно указать во внешнем файле или в встроенном виде. При предоставлении файла внешнего параметра используйте свойство **parametersLink** :
+Параметры для связанного шаблона можно указать во внешнем файле или в встроенном виде. При предоставлении файла внешнего параметра используйте `parametersLink` свойство:
 
 ```json
 "resources": [
   {
-  "type": "Microsoft.Resources/deployments",
-  "apiVersion": "2019-10-01",
-  "name": "linkedTemplate",
-  "properties": {
-    "mode": "Incremental",
-    "templateLink": {
-      "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
-      "contentVersion":"1.0.0.0"
-    },
-    "parametersLink": {
-      "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.parameters.json",
-      "contentVersion":"1.0.0.0"
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2019-10-01",
+    "name": "linkedTemplate",
+    "properties": {
+      "mode": "Incremental",
+      "templateLink": {
+        "uri": "https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
+        "contentVersion": "1.0.0.0"
+      },
+      "parametersLink": {
+        "uri": "https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.parameters.json",
+        "contentVersion": "1.0.0.0"
+      }
     }
-  }
   }
 ]
 ```
 
-Чтобы передать значения параметров в строке, используйте свойство **Parameters** .
+Чтобы передать значения параметров в строке, используйте `parameters` свойство.
 
 ```json
 "resources": [
   {
-   "type": "Microsoft.Resources/deployments",
-   "apiVersion": "2019-10-01",
-   "name": "linkedTemplate",
-   "properties": {
-     "mode": "Incremental",
-     "templateLink": {
-      "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
-      "contentVersion":"1.0.0.0"
-     },
-     "parameters": {
-      "storageAccountName":{"value": "[parameters('storageAccountName')]"}
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2019-10-01",
+    "name": "linkedTemplate",
+    "properties": {
+      "mode": "Incremental",
+      "templateLink": {
+        "uri": "https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
+        "contentVersion": "1.0.0.0"
+      },
+      "parameters": {
+        "storageAccountName": {
+          "value": "[parameters('storageAccountName')]"
+        }
+      }
     }
-   }
   }
 ]
 ```
@@ -375,7 +377,7 @@ ms.locfileid: "96852104"
 
 Вместо поддержки связанных шаблонов на доступной конечной точке можно создать [шаблонную спецификацию](template-specs.md) , которая упаковывает основной шаблон и связанные с ним шаблоны в одну сущность, которую можно развернуть. Спецификация шаблона — это ресурс в подписке Azure. Это позволяет легко обеспечить безопасный общий доступ к шаблону для пользователей в вашей организации. Используйте управление доступом на основе ролей Azure (Azure RBAC), чтобы предоставить доступ к спецификации шаблона. Сейчас эта функция доступна в предварительной версии.
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения можно найти в разделе
 
 - [Учебник. Создание спецификации шаблона со связанными шаблонами](./template-specs-create-linked.md).
 - [Учебник. Развертывание спецификации шаблона в качестве связанного шаблона](./template-specs-deploy-linked-template.md).
@@ -394,7 +396,7 @@ ms.locfileid: "96852104"
 
 В предыдущих примерах были показаны жестко запрограммированные значения URL-адреса для ссылок на шаблоны. Этот подход может работать для простого шаблона, но он не подходит для большого набора модульных шаблонов. Вместо этого можно создать статическую переменную, которая содержит базовый URL-адрес для основного шаблона, а затем динамически создавать URL-адреса для связанных шаблонов на основе этого адреса. Преимущество такого подхода заключается в том, что вы можете легко перемещать или разветвление шаблона, так как необходимо изменить только статическую переменную в основном шаблоне. Основной шаблон передает правильные URI через разделенный шаблон.
 
-В следующем примере показано, как использовать базовый URL-адрес для создания двух URL-адресов для связанных шаблонов (**sharedTemplateUrl** и **vmTemplate**).
+В следующем примере показано, как использовать базовый URL-адрес для создания двух URL-адресов для связанных шаблонов ( `sharedTemplateUrl` и `vmTemplateUrl` ).
 
 ```json
 "variables": {
@@ -404,7 +406,7 @@ ms.locfileid: "96852104"
 }
 ```
 
-Вы также можете получить базовый URL-адрес текущего шаблона с помощью функции [deployment()](template-functions-deployment.md#deployment) , а затем использовать его для получения URL-адресов других шаблонов в том же расположении. Это полезно, если расположение шаблонов меняется или если вы не хотите указывать URL-адреса непосредственно в файле шаблона. Свойство templateLink возвращается только при подключении к удаленному шаблону по URL-адресу. Если вы используете локальный шаблон, свойство недоступно.
+Вы также можете получить базовый URL-адрес текущего шаблона с помощью функции [deployment()](template-functions-deployment.md#deployment) , а затем использовать его для получения URL-адресов других шаблонов в том же расположении. Это полезно, если расположение шаблонов меняется или если вы не хотите указывать URL-адреса непосредственно в файле шаблона. `templateLink`Свойство возвращается только при связывании с удаленным шаблоном с URL-адресом. Если вы используете локальный шаблон, свойство недоступно.
 
 ```json
 "variables": {
@@ -423,49 +425,49 @@ ms.locfileid: "96852104"
 
 ## <a name="using-copy"></a>Использование инструкции Copy
 
-Чтобы создать несколько экземпляров ресурса с вложенным шаблоном, добавьте элемент Copy на уровне ресурса **Microsoft. Resources/deployments** . Или, если область является внутренней, можно добавить копию внутри вложенного шаблона.
+Чтобы создать несколько экземпляров ресурса с вложенным шаблоном, добавьте `copy` элемент на уровне `Microsoft.Resources/deployments` ресурса. Или, если область имеет значение `inner` , можно добавить копию внутри вложенного шаблона.
 
-В следующем примере шаблона показано, как использовать Copy с вложенным шаблоном.
+В следующем примере шаблона показано, как использовать `copy` с вложенным шаблоном.
 
 ```json
 "resources": [
   {
-  "type": "Microsoft.Resources/deployments",
-  "apiVersion": "2019-10-01",
-  "name": "[concat('nestedTemplate', copyIndex())]",
-  // yes, copy works here
-  "copy":{
-    "name": "storagecopy",
-    "count": 2
-  },
-  "properties": {
-    "mode": "Incremental",
-    "expressionEvaluationOptions": {
-    "scope": "inner"
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2019-10-01",
+    "name": "[concat('nestedTemplate', copyIndex())]",
+    // yes, copy works here
+    "copy": {
+      "name": "storagecopy",
+      "count": 2
     },
-    "template": {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [
-      {
-      "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2019-04-01",
-      "name": "[concat(variables('storageName'), copyIndex())]",
-      "location": "West US",
-      "sku": {
-        "name": "Standard_LRS"
+    "properties": {
+      "mode": "Incremental",
+      "expressionEvaluationOptions": {
+        "scope": "inner"
       },
-      "kind": "StorageV2"
-      // Copy works here when scope is inner
-      // But, when scope is default or outer, you get an error
-      //"copy":{
-      //  "name": "storagecopy",
-      //  "count": 2
-      //}
+      "template": {
+        "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "resources": [
+          {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageName'), copyIndex())]",
+            "location": "West US",
+            "sku": {
+              "name": "Standard_LRS"
+            },
+            "kind": "StorageV2"
+            // Copy works here when scope is inner
+            // But, when scope is default or outer, you get an error
+            //"copy":{
+            //  "name": "storagecopy",
+            //  "count": 2
+            //}
+          }
+        ]
       }
-    ]
     }
-  }
   }
 ]
 ```
@@ -476,7 +478,7 @@ ms.locfileid: "96852104"
 
 При получении выходного свойства из связанного шаблона имя свойства не должно включать тире.
 
-В следующих примерах показано, как ссылаться на связанный шаблон и извлекать выходные значения. Связанный шаблон возвращает простое сообщение.  Сначала связанный шаблон:
+В следующих примерах показано, как ссылаться на связанный шаблон и извлекать выходные значения. Связанный шаблон возвращает простое сообщение. Сначала связанный шаблон:
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/linkedtemplates/helloworld.json":::
 
@@ -613,28 +615,28 @@ done
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-  "containerSasToken": { "type": "securestring" }
+    "containerSasToken": { "type": "securestring" }
   },
   "resources": [
-  {
-    "type": "Microsoft.Resources/deployments",
-    "apiVersion": "2019-10-01",
-    "name": "linkedTemplate",
-    "properties": {
-    "mode": "Incremental",
-    "templateLink": {
-      "uri": "[concat(uri(deployment().properties.templateLink.uri, 'helloworld.json'), parameters('containerSasToken'))]",
-      "contentVersion": "1.0.0.0"
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "linkedTemplate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(uri(deployment().properties.templateLink.uri, 'helloworld.json'), parameters('containerSasToken'))]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
     }
-    }
-  }
   ],
   "outputs": {
   }
 }
 ```
 
-В PowerShell получение маркера для контейнера и развертывание шаблонов выполняется с помощью следующих команд. Обратите внимание на то, что параметр **containerSasToken** определен в шаблоне. Это не параметр команды **New-AzResourceGroupDeployment**.
+В PowerShell получение маркера для контейнера и развертывание шаблонов выполняется с помощью следующих команд. Обратите внимание, что `containerSasToken` параметр определен в шаблоне. Он не является параметром в `New-AzResourceGroupDeployment` команде.
 
 ```azurepowershell-interactive
 Set-AzCurrentStorageAccount -ResourceGroupName ManageGroup -Name storagecontosotemplates
@@ -680,7 +682,7 @@ az deployment group create --resource-group ExampleGroup --template-uri $url?$to
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Подробнее см. [Руководство. Создание связанных шаблонов Azure Resource Manager](./deployment-tutorial-linked-template.md).
-* Сведения о том, как определить порядок развертывания ресурсов, см. в статье [Определение порядка развертывания ресурсов в шаблонах Azure Resource Manager](define-resource-dependency.md).
-* Сведения о том, как определить один ресурс и создать несколько экземпляров, см. в статье [Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager](copy-resources.md).
-* Действия по настройке шаблона в учетной записи хранения и созданию маркера SAS описаны в разделах [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](deploy-powershell.md) и [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](deploy-cli.md).
+* Чтобы пройти обучение, см. раздел [учебник. Развертывание связанного шаблона](./deployment-tutorial-linked-template.md).
+* Дополнительные сведения о том, как определить порядок развертывания ресурсов, см. в разделе [Определение заказа для развертывания ресурсов в шаблонах ARM](define-resource-dependency.md).
+* Чтобы узнать, как определить один ресурс, но создать несколько его экземпляров, см. статью [Итерация ресурсов в шаблонах ARM](copy-resources.md).
+* Инструкции по настройке шаблона в учетной записи хранения и формированию маркера SAS см. в статьях [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md) или [развертывание ресурсов с помощью шаблонов ARM и Azure CLI](deploy-cli.md).
