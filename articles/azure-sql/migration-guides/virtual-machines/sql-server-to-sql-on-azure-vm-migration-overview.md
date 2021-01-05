@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 4979902853602073e6230ef7387d6c6596fe77da
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: d08cb2761a8d8010c455ff959d6c247e8b64ef20
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325930"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746581"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Обзор миграции: SQL Server для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "96325930"
 
 Другие сценарии см. в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/). 
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Переход на [SQL Server на виртуальных машинах Azure](../../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) , если вы хотите использовать знакомую среду SQL Server с ЭЛЕМЕНТОМ управления ОС и хотите воспользоваться преимуществами предоставляемых облаком функций, таких как высокая доступность виртуальных машин, [Автоматическая архивация](../../virtual-machines/windows/automated-backup.md)и [Автоматическая установка исправлений](../../virtual-machines/windows/automated-patching.md). 
 
@@ -127,6 +127,20 @@ ms.locfileid: "96325930"
 
 При подготовке к переносу баз данных SQL Server в SQL Server на виртуальных машинах Azure следует учитывать поддерживаемые версии SQL Server. Список текущих поддерживаемых версий SQL Server на виртуальных машинах Azure см. на [SQL Server на виртуальных машинах Azure](../../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms).
 
+## <a name="migration-assets"></a>Ресурсы, посвященные миграции 
+
+Дополнительные сведения см. в следующих ресурсах, разработанных для реальных проектов по переходу на целый мир.
+
+|Ресурс  |Описание  |
+|---------|---------|
+|[Модель и средство оценки рабочей нагрузки данных](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Data%20Workload%20Assessment%20Model%20and%20Tool)| Это средство предоставляет предлагаемые "оптимальные" целевые платформы, готовность к переходу в облако и уровень исправления приложения/базы данных для конкретной рабочей нагрузки. Оно обеспечивает простое и быстрое вычисление и создание отчетов, которое помогает ускорить оценку больших объемов, предоставляя, автоматизируя и унифицируя процесс принятия решения относительно целевой платформы.|
+|[Автоматизация сбора данных PerfMon с помощью программы Logman](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Perfmon%20Data%20Collection%20Automation%20Using%20Logman)|Средство, собирающее данные, чтобы понять производительность базовых показателей, которая помогает в рекомендации целевого объекта миграции. Это средство, использующее logman.exe для создания команды, которая будет создавать, запускать, останавливаться и удалять счетчики производительности, заданные на удаленном SQL Server.|
+|[Развертывание SQL Server в Azure](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/SQL%20Server%20Deployment%20in%20Azure%20.pdf)|В этом техническом руководстве рассматриваются различные варианты переноса рабочих нагрузок SQL Server в Azure, включая сравнение функций, высокий уровень доступности и рекомендации по резервному копированию и хранению. |
+|[Локальная SQL Server виртуальной машине Azure](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/OnPremise%20SQL%20Server%20to%20Azure%20VM.pdf)|В этом техническом документе описаны действия по резервному копированию и восстановлению баз данных из локальной SQL Server для SQL Server на виртуальной машине Azure с помощью примеров сценариев.|
+|[Несколько-SQL-VM-VNet-ILB](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/ARM%20Templates/Multiple-SQL-VM-VNet-ILB)|В этом техническом документе описаны действия по настройке нескольких виртуальных машин Azure в SQL Server Always On конфигурации группы доступности.|
+|[Виртуальные машины Azure, поддерживающие SSD (цен. категория "Ультра") на регион](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Find%20Azure%20VMs%20supporting%20Ultra%20SSD)|Эти сценарии PowerShell предоставляют программный вариант для получения списка регионов, поддерживающих виртуальные машины Azure, поддерживающие Ultra SSDs.|
+
+Эти ресурсы были разработаны в рамках программы Data SQL Ninja, которая спонсируется группой разработчиков Azure Data Group. Основная часть программы Data SQL Ninja заключается в разрешении и ускорении сложной модернизации и реализация перехода на платформу данных Microsoft Azure. Если вы считаете, что ваша организация заинтересована в участии в программе Data SQL Ninja, обратитесь в службу поддержки своей учетной записи и попросите отправить заявку.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

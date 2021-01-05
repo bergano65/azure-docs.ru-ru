@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ef8ee7718aabb443fda6cd7b276ee53472261913
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 878e6f11645a6478c0d536e9d6d6dac4518c5349
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424544"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740969"
 ---
 # <a name="set-up-a-development-environment-with-azure-databricks-and-automl-in-azure-machine-learning"></a>Настройка среды разработки с помощью Azure Databricks и Аутомл в Машинное обучение Azure 
 
@@ -85,7 +85,7 @@ Azure Databricks интегрируется с Машинное обучение
    * Не выбирайте **Автоматическое присоединение ко всем кластерам**.
    * Выберите  **присоединить** рядом с именем кластера.
 
-1. Отслеживать ошибки до тех пор, пока состояние не изменится на " **подключено** ", что может занять несколько минут.  Если этот шаг завершается ошибкой:
+1. Отслеживать ошибки до тех пор, пока состояние не изменится на " **подключено**", что может занять несколько минут.  Если этот шаг завершается ошибкой:
 
    Попробуйте перезапустить кластер, выполнив следующие действия.
    1. В левой области щелкните **Кластеры**.
@@ -97,7 +97,7 @@ Azure Databricks интегрируется с Машинное обучение
   ![Пакет SDK Машинное обучение Azure для кирпичей](./media/how-to-configure-environment/amlsdk-withoutautoml.jpg) 
 
 ## <a name="add-the-azure-ml-sdk-with-automl-to-databricks"></a>Добавление пакета SDK машинного обучения Azure с Аутомл в кирпичи
-Если кластер был создан с Databricks Runtime 7,1 или более поздней версии ( *не* в машинном коде), выполните следующую команду в первой ячейке записной книжки, чтобы установить пакет SDK для AML.
+Если кластер был создан с Databricks Runtime 7,1 или более поздней версии (*не* в машинном коде), выполните следующую команду в первой ячейке записной книжки, чтобы установить пакет SDK для AML.
 
 ```
 %pip install --upgrade --force-reinstall -r https://aka.ms/automl_linux_requirements.txt
@@ -121,7 +121,45 @@ Azure Databricks интегрируется с Машинное обучение
 
 + Узнайте, как [создать конвейер с модулями обработки в качестве обучающего вычислений](how-to-create-your-first-pipeline.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="troubleshooting"></a>Устранение неполадок
+
+* **Сбой при установке пакетов**
+
+    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример
+    
+    ```python
+    psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
+    ```
+
+    Кроме того, можно использовать скрипты init, если возникают проблемы с установкой библиотек Python. Этот подход официально не поддерживается. Дополнительные сведения см. в разделе [сценарии инициализации с областью действия кластера](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
+
+* **Ошибка импорта: не удается импортировать `Timedelta` имя `pandas._libs.tslibs` из**: Если вы видите эту ошибку при использовании автоматического машинного обучения, выполните в записной книжке две следующие строки:
+    ```
+    %sh rm -rf /databricks/python/lib/python3.7/site-packages/pandas-0.23.4.dist-info /databricks/python/lib/python3.7/site-packages/pandas
+    %sh /databricks/python/bin/pip install pandas==0.23.4
+    ```
+
+* **Ошибка импорта: отсутствует модуль с именем "Pandas. Core. indexes"**: Если вы видите эту ошибку при использовании автоматического машинного обучения, выполните следующие действия.
+
+    1. Выполните следующую команду, чтобы установить два пакета в кластере Azure Databricks:
+    
+       ```bash
+       scikit-learn==0.19.1
+       pandas==0.22.0
+       ```
+    
+    1. Отсоедините и снова подключите кластер к записной книжке.
+    
+    Если эти действия не устранят проблему, попробуйте перезапустить кластер.
+
+* **Фаилтосендфеасер**. Если при `FailToSendFeather` чтении данных в кластере Azure Databricks возникает ошибка, см. следующие решения.
+    
+    * Обновите `azureml-sdk[automl]` пакет до последней версии.
+    * Добавьте `azureml-dataprep` версию 1.1.8 или более позднюю.
+    * Добавьте `pyarrow` версию 0,11 или более позднюю.
+  
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST.
 - См. [Справочник по машинное обучение Azure SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).

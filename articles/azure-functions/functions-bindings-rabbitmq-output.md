@@ -7,17 +7,17 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 8715fd3d71a5f65695b045f8a32a1b88bcfdd308
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: d9e575d68fe4fef607bdf443ece1ddd04f085533
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672548"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746462"
 ---
 # <a name="rabbitmq-output-binding-for-azure-functions-overview"></a>Обзор выходной привязки RabbitMQ для функций Azure
 
 > [!NOTE]
-> Привязки RabbitMQ полностью поддерживаются только в **Windows Premium и в выделенных** планах. Использование и Linux в настоящее время не поддерживаются.
+> Привязки RabbitMQ полностью поддерживаются только для планов уровня " **Премиум" и "выделен** ". Использование не поддерживается.
 
 Используйте выходную привязку RabbitMQ для отправки сообщений в очередь RabbitMQ.
 
@@ -31,7 +31,7 @@ ms.locfileid: "97672548"
 
 ```cs
 [FunctionName("RabbitMQOutput")]
-[return: RabbitMQ("outputQueue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")]
+[return: RabbitMQ(QueueName = "outputQueue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")]
 public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILogger log)
 {
     log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
@@ -44,34 +44,35 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 ```cs
 [FunctionName("RabbitMQOutput")]
 public static async Task Run(
-[RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "TriggerConnectionString")] string rabbitMQEvent,
-[RabbitMQ("destinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<string> outputEvents,
+[RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] string rabbitMQEvent,
+[RabbitMQ(QueueName = "destinationQueue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")]IAsyncCollector<string> outputEvents,
 ILogger log)
 {
-    // processing:
-    var myProcessedEvent = DoSomething(rabbitMQEvent);
-    
      // send the message
-    await outputEvents.AddAsync(JsonConvert.SerializeObject(myProcessedEvent));
+    await outputEvents.AddAsync(JsonConvert.SerializeObject(rabbitMQEvent));
 }
 ```
 
 В следующем примере показано, как отправить сообщения в виде POCO.
 
 ```cs
-public class TestClass
+namespace Company.Function
 {
-    public string x { get; set; }
-}
-
-[FunctionName("RabbitMQOutput")]
-public static async Task Run(
-[RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "TriggerConnectionString")] TestClass rabbitMQEvent,
-[RabbitMQ("destinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<TestClass> outputPocObj,
-ILogger log)
-{
-    // send the message
-    await outputPocObj.Add(rabbitMQEvent);
+    public class TestClass
+    {
+        public string x { get; set; }
+    }
+    public static class RabbitMQOutput{
+        [FunctionName("RabbitMQOutput")]
+        public static async Task Run(
+        [RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] TestClass rabbitMQEvent,
+        [RabbitMQ(QueueName = "destinationQueue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")]IAsyncCollector<TestClass> outputPocObj,
+        ILogger log)
+        {
+            // send the message
+            await outputPocObj.AddAsync(rabbitMQEvent);
+        }
+    }
 }
 ```
 
@@ -107,7 +108,7 @@ ILogger log)
 
 Ниже приведен код скрипта C#.
 
-```csx
+```C#
 using System;
 using Microsoft.Extensions.Logging;
 
@@ -193,12 +194,14 @@ module.exports = function (context, input) {
 }
 ```
 
+В *_\_ init_ \_ . Корректировка*:
+
 ```python
 import azure.functions as func
 
-def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
+def main(req: func.HttpRequest, outputMessage: func.Out[str]) -> func.HttpResponse:
     input_msg = req.params.get('message')
-    msg.set(input_msg)
+    outputMessage.set(input_msg)
     return 'OK'
 ```
 
@@ -273,7 +276,7 @@ ILogger log)
 |**userName**|**UserName**|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя параметра приложения, содержащего имя пользователя для доступа к очереди. Пример: Усернамесеттинг: "< Усернамефромсеттингс >"|
 |**password**|**Пароль**|(пропускается при использовании Коннектионстрингсеттинг) <br>Имя параметра приложения, который содержит пароль для доступа к очереди. Пример: Усернамесеттинг: "< Усернамефромсеттингс >"|
 |**коннектионстрингсеттинг**|**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения очереди сообщений RabbitMQ. Обратите внимание, что если вы укажете строку подключения напрямую, а не через параметр приложения в local.settings.js, триггер не будет работать. (Пример: в *function.json*: коннектионстрингсеттинг: "раббитмкконнектион" <br> В *local.settings.js*: "раббитмкконнектион": "< актуалконнектионстринг >")|
-|**port**|**порт**.|(пропускается при использовании Коннектионстрингсеттинг) Возвращает или задает используемый порт. Значение по умолчанию — 0.|
+|**port**|**порт**.|(пропускается при использовании Коннектионстрингсеттинг) Возвращает или задает используемый порт. По умолчанию принимает значение 0, которое указывает на порт клиента rabbitmq по умолчанию: 5672.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -321,6 +324,6 @@ ILogger log)
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции при создании сообщения RabbitMQ (триггер)](./functions-bindings-rabbitmq-trigger.md)

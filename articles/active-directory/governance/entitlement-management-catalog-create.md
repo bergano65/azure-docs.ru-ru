@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/18/2020
+ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf6e02ebad2ac5150be4775ad0ff6069fe3db89f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b87fdd7c73d089c46d456491c02d49cb6f8883d
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90980043"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97745969"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
@@ -69,7 +69,7 @@ ms.locfileid: "90980043"
 
 1. Щелкните **Добавить ресурсы**.
 
-1. Выберите тип ресурса: **группы и команды**, **приложения**или **сайты SharePoint**.
+1. Выберите тип ресурса: **группы и команды**, **приложения** или **сайты SharePoint**.
 
     Если вы не видите ресурс, который вы хотите добавить, или не можете добавить ресурс, убедитесь, что у вас есть необходимая роль каталога Azure AD и роль управления назначением. Может потребоваться, чтобы кто-то с необходимыми ролями добавит ресурс в каталог. Дополнительные сведения см. в разделе [Роли, требуемые для добавления ресурсов в каталог](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
@@ -150,7 +150,7 @@ ms.locfileid: "90980043"
 
 1. В меню слева щелкните **каталоги** , а затем откройте каталог, который нужно удалить.
 
-1. В разделе **Обзор**каталога щелкните **Удалить**.
+1. В разделе **Обзор** каталога щелкните **Удалить**.
 
 1. Щелкните **Да** в появившемся диалоговом окне.
 
@@ -158,6 +158,6 @@ ms.locfileid: "90980043"
 
 Также можно удалить каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [удаления акцесспаккажекаталог](/graph/api/accesspackagecatalog-delete?view=graph-rest-beta).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Делегирование управления доступом для доступа к диспетчерам пакетов](entitlement-management-delegate-managers.md)

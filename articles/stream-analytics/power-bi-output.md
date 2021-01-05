@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 29bd4dc5cabe8b29efe7b89395c5e7d36bd0347a
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: cc48d26c217f52dfa52ac6cd3d7f18a806c93927
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129785"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740986"
 ---
 # <a name="power-bi-output-from-azure-stream-analytics"></a>Power BI выходные данные Azure Stream Analytics
 
@@ -27,7 +27,7 @@ ms.locfileid: "93129785"
 | Имя свойства | Описание |
 | --- | --- |
 | Псевдоним выходных данных |Укажите понятное имя, которое используется в запросах для направления выходных данных запроса в эти выходные данные Power BI. |
-| Рабочая область группы |Чтобы иметь возможность обмениваться данными с другими пользователями Power BI, вы можете выбрать группы в своей учетной записи Power BI или щелкнуть **Моя рабочая область** , если не хотите записывать данные в группу. Для обновления существующей группы требуется повторно выполнить проверку подлинности в службе Power BI. |
+| Рабочая область группы |Чтобы иметь возможность обмениваться данными с другими пользователями Power BI, вы можете выбрать группы в своей учетной записи Power BI или щелкнуть **Моя рабочая область**, если не хотите записывать данные в группу. Для обновления существующей группы требуется повторно выполнить проверку подлинности в службе Power BI. |
 | Имя набора данных |Укажите имя набора данных, который будет использоваться для выходных данных Power BI. |
 | Имя таблицы |Имя таблицы в наборе выходных данных Power BI. Сейчас для вывода выходных данных из заданий Stream Analytics в Power BI можно использовать только одну таблицу в наборе данных. |
 | Авторизовать подключение | Чтобы продолжить настройку параметров вывода, необходима авторизация Power BI. После предоставления этим выходным данным доступа к панели мониторинга Power BI доступ можно отозвать, изменив пароль учетной записи пользователя, удалив выходные данные задания или удалив задание Stream Analytics. | 
@@ -80,9 +80,5 @@ Datetime | Строка | Строка |  Datetime | Строка
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в Power BI (Предварительная версия)](powerbi-output-managed-identity.md)
 * [Краткое руководство. по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics с помощью Azure CLI](quick-create-azure-cli.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics с помощью шаблона ARM](quick-create-azure-resource-manager.md)
-* [Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)
-* [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-visual-studio-code.md)

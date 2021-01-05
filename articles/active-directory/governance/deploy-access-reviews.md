@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 08/14/2020
+ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f3e825f908ffe475b05a5e6748d9505e7283b50
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: a2e670525840b801df874e3f8dcbdbadc0955a12
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362705"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746309"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Планирование развертывания Azure Active Directoryных проверок доступа
 
@@ -246,7 +246,7 @@ ms.locfileid: "92362705"
 | **Ресурсы для проверки**| Доступ к Microsoft Dynamics |
 | **Частота проверки**| Ежемесячно |
 | **Кто выполняет проверку**| Руководители программ Dynamics Business Group |
-| **Уведомление**| Электронная почта за 24 часа до проверки псевдонима Dynamics-Pms<p>Включение настраиваемого сообщения поощрение рецензентам для защиты своего приобретения |
+| **Уведомлений**| Электронная почта за 24 часа до проверки псевдонима Dynamics-Pms<p>Включение настраиваемого сообщения поощрение рецензентам для защиты своего приобретения |
 | **Сроки**| 48 часов от уведомления |
 |**Автоматические действия**| Удалите доступ из любой учетной записи, не имеющей интерактивного входа, в течение 90 дней, удалив пользователя из группы безопасности Dynamics-Access. <p>*Выполните действия, если они не были проверены на временной шкале.* |
 | **Ручные действия**| Рецензенты могут выполнить удаление утверждения перед автоматическим действием, если это необходимо. |
@@ -511,7 +511,7 @@ ms.locfileid: "92362705"
 
 Для более сложных запросов и анализа проверок доступа, а также для наблюдения за изменениями и завершением проверок рекомендуется экспортировать журналы аудита Azure AD в [log Analytics Azure](../reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account.md) или концентратор событий Azure. При хранении в Azure Log Analytics можно использовать [мощный язык аналитики](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md) и создавать собственные панели мониторинга.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о следующих связанных технологиях.
 

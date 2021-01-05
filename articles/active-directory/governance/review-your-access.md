@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/17/2020
+ms.date: 12/22/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 959837ff540fd95d186497858d7b9de1f8b1124d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3fef2f85ca7e7b4034c8582477796d49446ea44
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91274016"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746785"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам или приложениям в проверках доступа Azure AD
 
@@ -69,7 +69,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 1. Нажмите кнопку **Да** , чтобы запретить доступ, или кнопку **нет** , чтобы удалить доступ.
 
-1. При нажатии кнопки **Да**может потребоваться указать обоснование в поле **Причина** .
+1. При нажатии кнопки **Да** может потребоваться указать обоснование в поле **Причина** .
 
     ![Снимок экрана, на котором показана завершенная проверка доступа, запрашивающая необходимость доступа к группе с выбранным параметром "Да".](./media/review-your-access/perform-access-review-submit.png)
 
@@ -103,7 +103,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 4. Продолжить в разделе **выполнение проверки доступа**
 
-### <a name="email"></a>Email
+### <a name="email"></a>Адрес электронной почты
 
 >[!IMPORTANT]
 > При получении сообщения электронной почты могут воздержаться задержки, а в некоторых случаях это может занять до 24 часов. Добавьте azure-noreply@microsoft.com в список надежных получателей, чтобы убедиться, что получены все сообщения электронной почты.
@@ -150,7 +150,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 1. Выберите **Да** , чтобы запретить доступ, или выберите **нет** , чтобы удалить доступ.
 
-1. При нажатии кнопки **Да**может потребоваться указать обоснование в поле **Причина** .
+1. При нажатии кнопки **Да** может потребоваться указать обоснование в поле **Причина** .
 
     ![Завершенная проверка доступа с вопросом, нужен ли вам по-прежнему доступ к группе](./media/review-your-access/review-access-yes-preview.png)
 
@@ -163,6 +163,6 @@ Azure Active Directory (Azure AD) упрощает управление дост
     > [!NOTE]
     > Если вы указали, что вам больше не нужен доступ, вы не удалите их немедленно. Вы удаляете после завершения проверки или после того, как администратор останавливает проверку.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение проверки доступа для групп или приложений](complete-access-review.md)

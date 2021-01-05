@@ -7,17 +7,17 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: a38015d9f7560930d77d5d50ac70dca5bcdde6a6
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 2a480f25821f5022295b18ca24abfd2c0fb8a50c
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672514"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746530"
 ---
 # <a name="rabbitmq-bindings-for-azure-functions-overview"></a>Общие сведения о привязках RabbitMQ для функций Azure
 
 > [!NOTE]
-> Привязки RabbitMQ полностью поддерживаются только в **Windows Premium и в выделенных** планах. Использование и Linux в настоящее время не поддерживаются.
+> Привязки RabbitMQ полностью поддерживаются только для планов уровня " **Премиум" и "выделен** ". Использование не поддерживается.
 
 Функции Azure интегрируются с [RabbitMQ](https://www.rabbitmq.com/) через [триггеры и привязки](./functions-triggers-bindings.md). Расширение RabbitMQ для функций Azure позволяет отправлять и получать сообщения с помощью API RabbitMQ с функциями.
 
@@ -34,7 +34,7 @@ ms.locfileid: "97672514"
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Комментарии 
+| Язык                                        | Добавить по...                                   | Remarks
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 4. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure] " рекомендуется использовать с Visual Studio Code. |
@@ -50,7 +50,7 @@ ms.locfileid: "97672514"
 
 Расширения привязки RabbitMQ не поддерживаются для функций 1. x и 2. x. Используйте функции 3. x и более поздней версии.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции при создании сообщения RabbitMQ (триггер)](./functions-bindings-rabbitmq-trigger.md)
 - [Отправка сообщений RabbitMQ из функций Azure (Выходная привязка)](./functions-bindings-rabbitmq-output.md)
