@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: acb85a04b8a1ca491058702510079a36b93fc657
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 3d69b72012819e3d9099e447b9048fe07aea86d3
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151041"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858711"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure Functions development and configuration with Azure SignalR Service (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
 
@@ -43,17 +43,17 @@ ms.locfileid: "92151041"
 
 [Модель на основе класса](#class-based-model) в C# не требует *сигналрконнектионинфо* входной привязки и может значительно упростить добавление пользовательских утверждений. См. статью о процессе [согласования в модели на основе классов](#negotiate-experience-in-class-based-model) .
 
-Дополнительные сведения о создании функции Negotiate см. в [справочнике по входной привязке *сигналрконнектионинфо* ](../azure-functions/functions-bindings-signalr-service-input.md).
+Дополнительные сведения о создании функции Negotiate см. в [справочнике по входной привязке *сигналрконнектионинфо*](../azure-functions/functions-bindings-signalr-service-input.md).
 
 Дополнительные сведения о создании маркера с проверкой подлинности см. в разделе [использование проверки подлинности службы приложений](#using-app-service-authentication).
 
 ### <a name="handle-messages-sent-from-signalr-service"></a>Обработку сообщений, отправленных из службы SignalR
 
-Используйте привязку *триггера SignalR* для обработки сообщений, отправленных службой SignalR. Вы можете активировать, когда клиенты отправляют сообщения или клиенты могут подключиться или отключиться.
+Используйте привязку *триггера SignalR* для обработки сообщений, отправленных службой SignalR. Вы можете получать уведомления, когда клиенты отправляют сообщения или клиенты могут подключиться или отключиться.
 
-Дополнительные сведения см. в [справочнике по привязке *триггера SignalR* ](../azure-functions/functions-bindings-signalr-service-trigger.md).
+Дополнительные сведения см. в [справочнике по привязке *триггера SignalR*](../azure-functions/functions-bindings-signalr-service-trigger.md).
 
-Кроме того, необходимо настроить конечную точку функции в качестве вышестоящей, чтобы служба активировала функцию, в которой есть сообщение от клиента. Дополнительные сведения о настройке вышестоящей конфигурации см. в этом [документе](concept-upstream.md).
+Кроме того, необходимо настроить конечную точку функции в качестве вышестоящей, чтобы служба активировала функцию при наличии сообщения от клиента. Дополнительные сведения о настройке вышестоящей конфигурации см. в этом [документе](concept-upstream.md).
 
 ### <a name="sending-messages-and-managing-group-membership"></a>Отправка сообщений и управление членством в группах
 
@@ -61,7 +61,7 @@ ms.locfileid: "92151041"
 
 Пользователи могут быть добавлены в одну или несколько групп. Вы также можете использовать выходную привязку *SignalR* для добавления или удаления пользователей в группы.
 
-Дополнительные сведения см. в [справочнике по выходной привязке *SignalR* ](../azure-functions/functions-bindings-signalr-service-output.md).
+Дополнительные сведения см. в [справочнике по выходной привязке *SignalR*](../azure-functions/functions-bindings-signalr-service-output.md).
 
 ### <a name="signalr-hubs"></a>Концентраторы SignalR
 
@@ -111,7 +111,7 @@ public class SignalRTestHub : ServerlessHub
 
 ### <a name="define-hub-method"></a>Определение метода концентратора
 
-Все методы концентратора **должны** иметь аргумент, `InvocationContext` объявленный `[SignalRTrigger]` атрибутом, и использовать конструктор без параметров. Затем **имя метода** обрабатывается как **событие**параметра.
+Все методы концентратора **должны** иметь аргумент, `InvocationContext` объявленный `[SignalRTrigger]` атрибутом, и использовать конструктор без параметров. Затем **имя метода** обрабатывается как **событие** параметра.
 
 По умолчанию, `category=messages` за исключением имени метода является одно из следующих имен:
 

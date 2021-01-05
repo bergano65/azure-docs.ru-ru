@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 769dea079339af2c6307d9230e047a654dc3d5dd
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 82f6c5989149b50a1ef5e6c6fb5350d474476436
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95492216"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845480"
 ---
 # <a name="receipt-concepts"></a>Сведения о квитанциях
 
@@ -62,7 +62,7 @@ API получения также возвращает следующие све
 Чтобы испытать службу получения распознавателя форм, перейдите к средству "пример пользовательского интерфейса" в Интернете:
 
 > [!div class="nextstepaction"]
-> [Попробуйте предварительно создавать модели](https://fott-preview.azurewebsites.net/)
+> [Ознакомление с предварительно созданными моделями](https://fott-preview.azurewebsites.net/)
 
 ## <a name="input-requirements"></a>Требования к входным данным
 
@@ -456,12 +456,11 @@ API получения также возвращает следующие све
 
 Уведомления содержат полезные данные, которые можно использовать для анализа поведения потребителей и тенденций покупок.
 
-API прихода также включает [функцию обработки поступления аибуилдер](/ai-builder/prebuilt-receipt-processing).
+API прихода также включает [функцию обработки поступления в построителе искусственного интеллекта](/ai-builder/prebuilt-receipt-processing).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Заполните [Краткое руководство по клиентской библиотеке распознавателя форм](quickstarts/client-library.md) , чтобы начать писать приложение обработки чеков с распознавателем форм на любом языке.
-- Или следуйте инструкциям в [кратком руководстве по API для получения уведомлений](./quickstarts/python-receipts.md) для распознавания уведомлений с помощью REST API.
+- Заполните [Краткое руководство по распознаванию форм](quickstarts/client-library.md) , чтобы начать писать приложение обработки чеков с распознавателем форм на любом языке.
 
 ## <a name="see-also"></a>См. также
 

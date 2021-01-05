@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 7d07dda7741aa075b8d853a8d06d3d3218ca901a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: fafa4c1e8c12ce26a90cfdf9df940823abf5ff25
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94563823"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857449"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -102,7 +102,7 @@ ms.locfileid: "94563823"
 
 ## <a name="managing-a-compute-instance"></a>Управление вычислительным экземпляром
 
-В рабочей области в студии Машинного обучения Azure выберите **Вычисление** , а затем вверху выберите **Вычислительный экземпляр**.
+В рабочей области в студии Машинного обучения Azure выберите **Вычисление**, а затем вверху выберите **Вычислительный экземпляр**.
 
 ![Управление вычислительным экземпляром](./media/concept-compute-instance/manage-compute-instance.png)
 
@@ -130,7 +130,12 @@ ms.locfileid: "94563823"
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/действие*
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/перезагрузка/действие*
 
-### <a name="create-a-compute-instance"></a><a name="create"></a>Создание экземпляра вычислений
+Обратите внимание, что для создания вычислительного экземпляра пользователь должен иметь разрешения для следующих действий:
+* *Microsoft.MachineLearningServices/workspaces/computes/write*
+* *Microsoft. Мачинелеарнингсервицес/workspaces/Чекккомпутенамеаваилабилити/действие*
+
+
+### <a name="create-a-compute-instance"></a><a name="create"></a>Создание вычислительного экземпляра
 
 В рабочей области Машинное обучение Azure Studio [Создайте новый вычислительный экземпляр](how-to-create-attach-compute-studio.md#compute-instance) из раздела **вычислений** или **записных книжек** , когда будете готовы запустить одну из ваших записных книжек. 
 

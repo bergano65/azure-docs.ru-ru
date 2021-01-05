@@ -3,12 +3,12 @@ title: Мониторинг SQL Server баз данных на виртуаль
 description: В этой статье описывается, как управлять и отслеживать SQL Server базы данных, работающие на виртуальной машине Azure.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: b0df22002521c8148cac1200e79aeb0ae5a60546
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e37e6fc211b34b7e427b66db374a705faafd25f9
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021509"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858744"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Мониторинг резервных копий баз данных SQL Server и управление ими
 
@@ -20,7 +20,7 @@ ms.locfileid: "96021509"
 
 В Azure Backup отображаются все запланированные и выполняемые по запросу операции в разделе **задания резервного копирования** на портале, за исключением запланированных резервных копий журналов, так как они могут быть очень частыми. Задания, отображаемые на этом портале, включают обнаружение и регистрацию базы данных, настройку резервного копирования, а также операции резервного копирования и восстановления.
 
-![Портал заданий резервного копирования](./media/backup-azure-sql-database/jobs-list.png)
+![Портал заданий резервного копирования](./media/backup-azure-sql-database/sql-backup-jobs-list.png)
 
 Для получения дополнительных сведений о сценариях мониторинга перейдите к разделу [мониторинг в портал Azure](backup-azure-monitoring-built-in-monitor.md) и [мониторинг с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).  
 
@@ -36,13 +36,9 @@ ms.locfileid: "96021509"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. На панели мониторинга хранилища выберите **Предупреждения и события**.
+2. На панели мониторинга хранилища выберите **Оповещения резервного копирования**.
 
-   ![Выбор "Alerts and Events" (Оповещения и события)](./media/backup-azure-sql-database/vault-menu-alerts-events.png)
-
-3. В области **Предупреждения и события** выберите **Оповещения, связанные с архивацией**.
-
-   ![Выбор "Оповещения, связанные с архивацией"](./media/backup-azure-sql-database/backup-alerts-dashboard.png)
+   ![Выбор "Оповещения, связанные с архивацией"](./media/backup-azure-sql-database/sql-backup-alerts-list.png)
 
 ## <a name="stop-protection-for-a-sql-server-database"></a>Остановка защиты базы данных SQL Server
 
@@ -83,7 +79,7 @@ ms.locfileid: "96021509"
 >
 >Дополнительные сведения о параметре Delete Data см. в разделе часто задаваемые вопросы ниже:
 >
->- [Что произойдет с резервным копированием, если удалить базу данных из автозащищаемого экземпляра?](faq-backup-sql-server.md#if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups)
+>- [Что произойдет с резервным копированием, если удалить базу данных из автоматически защищенного экземпляра?](faq-backup-sql-server.md#if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups)
 >- [Что будет поведению при выполнении резервного копирования базы данных с автозащитой?](faq-backup-sql-server.md#if-i-change-the-name-of-the-database-after-it-has-been-protected-what-will-be-the-behavior)
 >
 >

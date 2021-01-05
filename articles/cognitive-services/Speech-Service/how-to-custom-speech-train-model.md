@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: 130cd643856b38471eac6d6869cdc1ed8b0bcd2e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 5a912790b4a7a86c44576b98ce7e95f44b810c9e
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499158"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857381"
 ---
 # <a name="train-and-deploy-a-custom-speech-model"></a>Обучение и развертывание модели Пользовательского распознавания речи
 
@@ -67,7 +67,7 @@ ms.locfileid: "96499158"
 
 ## <a name="view-logging-data"></a>Просмотр данных журнала
 
-Данные журнала доступны для скачивания в разделе **Endpoint**  >  **сведения о** конечной точке.
+Данные журнала доступны для экспорта, если вы перейдете на страницу конечной точки в разделе **развертывания**.
 > [!NOTE]
 >Данные журнала доступны в течение 30 дней в хранилище, принадлежащем корпорации Майкрософт. После этого оно будет удалено. Если учетная запись хранения, принадлежащая клиенту, связана с подпиской Cognitive Services, данные журнала не будут удалены автоматически.
 

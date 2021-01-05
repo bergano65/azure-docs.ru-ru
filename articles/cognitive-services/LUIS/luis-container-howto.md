@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: aahi
 keywords: локальная среда, Docker, контейнер
-ms.openlocfilehash: 778fe388ae3db68d836384299a8a1c7c06e31f41
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2bef6aa4e624386750a4c989d7e56cc1b22aaa5e
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96001815"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861999"
 ---
 # <a name="install-and-run-docker-containers-for-luis"></a>Установка и запуск контейнеров DOCKER для LUIS
 
@@ -39,7 +39,7 @@ ms.locfileid: "96001815"
 
 |Обязательно|Назначение|
 |--|--|
-|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
+|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
 |`Cognitive Services`Ресурс Azure и файл [упакованного приложения](luis-how-to-start-new-app.md) Luis |Для использования контейнера необходимо следующее:<br><br>* Ресурс Azure _Cognitive Services_ и соответствующий ключ выставления счетов URI конечной точки выставления счетов. Оба значения доступны на страницах обзора и ключей для ресурса и необходимы для запуска контейнера. <br>* Обученное или опубликованное приложение, упакованное в виде подключенных входных данных к контейнеру со связанным идентификатором приложения. Пакетный файл можно получить на портале LUIS или в API-интерфейсах разработки. Если вы получаете упакованное приложение LUIS из API- [интерфейсов разработки](#authoring-apis-for-package-file), вам также потребуется ваш _ключ разработки_.<br><br>Эти требования используются для передачи аргументов командной строки в следующие переменные:<br><br>**{AUTHORING_KEY}**: этот ключ используется для получения упакованного приложения из службы Luis в облаке и отправки журналов запросов обратно в облако. Формат — `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.<br><br>**{APP_ID}**: этот идентификатор используется для выбора приложения. Формат — `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.<br><br>**{API_KEY}**: этот ключ используется для запуска контейнера. Ключ конечной точки можно найти в двух местах: Первый — это портал Azure в списке ключей ресурса _Cognitive Services_ . а также на портале LUIS на странице параметров ключей и конечных точек. Не используйте ключ starter.<br><br>**{ENDPOINT_URI}**: конечная точка, указанная на странице обзора.<br><br>[Ключ разработки и ключ конечной точки](luis-limits.md#key-limits) служат для разных целей. Не используйте их как взаимозаменяемые. |
 
@@ -113,8 +113,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/language/luis:latest
 |Тип пакета|Запрос API конечной точки|Запрос доступности|Формат имени файла пакета|
 |--|--|--|--|
 |Версиями|GET, POST|Только контейнер|`{APP_ID}_v{APP_VERSION}.gz`|
-|Промежуточная|GET, POST|Azure и контейнер|`{APP_ID}_STAGING.gz`|
-|Производство|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
+|Поэтапное создание|GET, POST|Azure и контейнер|`{APP_ID}_STAGING.gz`|
+|Рабочая среда|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовывайте, не изменяйте, перезаписывают или распаковывает файлы пакетов LUIS.
@@ -171,7 +171,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Заполнитель | Значение |
+| Заместитель | Значение |
 |-------------|-------|
 | **{APP_ID}** | Идентификатор опубликованного приложения LUIS. |
 | **{SLOT_NAME}** | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>`PRODUCTION`<br/>`STAGING` |
@@ -190,7 +190,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Заполнитель | Значение |
+| Заместитель | Значение |
 |-------------|-------|
 | **{APP_ID}** | Идентификатор приложения обученного приложения LUIS. |
 | **{APP_VERSION}** | Версия приложения обученного LUIS приложения. |
@@ -374,10 +374,7 @@ curl -X GET \
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](luis-container-configuration.md).
 
-<!--blogs/samples/video courses -->
-[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
-
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этой статье описаны основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Интеллектуальной службы распознавания речи (LUIS). В разделе "Сводка" сделайте следующее.
 
@@ -390,7 +387,7 @@ curl -X GET \
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Проверьте настройки [контейнеров](luis-container-configuration.md) на наличие параметров конфигурации.
 * См. раздел [ограничения контейнера Luis](luis-container-limitations.md) для известных ограничений возможностей.

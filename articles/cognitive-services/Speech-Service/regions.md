@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
-ms.custom: seodec18
-ms.openlocfilehash: 7b872340c50c800ebe4d4d6c7ca56b3b327bf162
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.custom: seodec18,references_regions
+ms.openlocfilehash: f11ccafd58cc64e6186ef590bbbccbfab3335ea4
+ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95972659"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97854865"
 ---
 # <a name="speech-service-supported-regions"></a>Регионы, поддерживаемые речевыми службами
 
@@ -44,11 +44,13 @@ ms.locfileid: "95972659"
 
 Если используется [речевой пакет SDK](speech-sdk.md), регионы задаются с помощью **идентификатора региона** (например, в качестве параметра `SpeechConfig.FromSubscription` ). Убедитесь, что регион соответствует региону подписки.
 
+Если вы планируете обучить пользовательскую модель с помощью звуковых данных, используйте один из [регионов с выделенным оборудованием](custom-speech-overview.md#set-up-your-azure-account) для ускорения обучения. Можно использовать [REST API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription) для копирования полностью обученной модели в другой регион позже.
+
 ### <a name="intent-recognition"></a>Распознавание намерений
 
 Регионы, доступные для **распознавания намерений** через пакет средств разработки службы "Речь", перечислены ниже:
 
-| Глобальный регион | Region           | Идентификатор региона |
+| Глобальный регион | Регион           | Идентификатор региона |
 | ------------- | ---------------- | -------------------- |
 | Азия          | Восточная Азия        | `eastasia`           |
 | Азия          | Юго-Восточная Азия   | `southeastasia`      |
@@ -60,26 +62,30 @@ ms.locfileid: "95972659"
 | Северная Америка | Центрально-южная часть США | `southcentralus`     |
 | Северная Америка | центрально-западная часть США  | `westcentralus`      |
 | Северная Америка | западная часть США          | `westus`             |
-| Северная Америка | Западная часть США 2        | `westus2`            |
+| Северная Америка | Западная часть США 2        | `westus2`            |
 | Южная Америка | Brazil South     | `brazilsouth`        |
 
 Это подмножество поддерживаемых регионов для публикации [службы распознавания речи (LUIS)](../luis/luis-reference-regions.md).
 
 ### <a name="voice-assistants"></a>Голосовые помощники
 
-[Пакет SDK для распознавания речи](speech-sdk.md) поддерживает возможности **голосового помощника** в следующих регионах:
+[Пакет SDK для распознавания речи](speech-sdk.md) поддерживает возможности **голосового помощника** через [прямую речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/direct-line-speech) в следующих регионах:
 
-| Region         | Идентификатор региона |
-| -------------- | -------------------- |
-| западная часть США        | `westus`             |
-| западная часть США 2      | `westus2`            |
-| Восточная часть США        | `eastus`             |
-| восточная часть США 2      | `eastus2`            |
-| Западная Европа    | `westeurope`         |
-| Северная Европа   | `northeurope`        |
-| Юго-Восточная Азия | `southeastasia`      |
+| Глобальный регион | Регион           | Идентификатор региона    |
+| ------------- | ---------------- | -------------------- |
+| Северная Америка | западная часть США          | `westus`             |
+| Северная Америка | Западная часть США 2        | `westus2`            |
+| Северная Америка | Восточная часть США          | `eastus`             |
+| Северная Америка | восточная часть США 2        | `eastus2`            |
+| Северная Америка | центрально-западная часть США  | `westcentralus`      |
+| Северная Америка | Центрально-южная часть США | `southcentralus`     |
+| Европа        | Западная Европа      | `westeurope`         |
+| Европа        | Северная Европа     | `northeurope`        |
+| Азия          | Восточная Азия        | `eastasia`           |
+| Азия          | Юго-Восточная Азия   | `southeastasia`      |
+| Индия         | Центральная Индия    | `centralindia`       |
 
-### <a name="speaker-recognition"></a>Распознавание говорящего
+### <a name="speaker-recognition"></a>API Распознавания говорящего
 
 Распознавание говорящего в настоящее время доступно только в `westus` регионе.
 

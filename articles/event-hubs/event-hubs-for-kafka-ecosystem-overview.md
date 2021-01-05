@@ -3,12 +3,12 @@ title: Использование концентратора событий из
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 ms.topic: article
 ms.date: 09/25/2020
-ms.openlocfilehash: d9aa8af30d5ef5e1a985e4d73a9d4a8921ac7d45
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b0f0da76bba68f8a66695700d530e871cbd35e3c
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369596"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861338"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Концентраторы событий предоставляют конечную точку, совместимую с интерфейсами API Apache Kafka® производителя и потребителя, которые могут использоваться большинством существующих Apache Kafka клиентских приложений в качестве альтернативы запуску собственного кластера Apache Kafka. Концентраторы событий поддерживают клиентские API-интерфейсы производителя и потребителя Apache Kafka в версии 1,0 и более поздних.
@@ -81,7 +81,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 ```
 
 > [!IMPORTANT]
-> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в статье [Получение строки подключения Центров событий](event-hubs-get-connection-string.md). Пример конфигурации см. здесь: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
 
 > [!NOTE]
 > При использовании проверки подлинности SAS с клиентами Kafka установленные подключения не отключаются при повторном формировании ключа SAS. 
@@ -104,7 +104,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 Как упоминалось [выше](#is-apache-kafka-the-right-solution-for-your-workload), парк обмена сообщениями Azure предоставляет широкие возможности для разнообразных ситуаций обмена сообщениями, и хотя в настоящее время в службе поддержки концентраторов событий для Apache Kafka API не поддерживаются следующие функции, мы указывали, где и как будет доступна нужная возможность.
 
-### <a name="transactions"></a>Transactions
+### <a name="transactions"></a>Транзакции
 
 В [служебной шине Azure](../service-bus-messaging/service-bus-transactions.md) поддерживается устойчивая поддержка транзакций, которая позволяет получать и назначать сообщения и сеансы при отправке исходящих сообщений, полученных от обработки сообщений, к нескольким целевым сущностям при защите согласованности транзакций. Набор функций обеспечивает не только однократную обработку каждого сообщения в последовательности, но также позволяет избежать риска непреднамеренной повторной обработки тех же сообщений другим потребителем, так как это было бы в случае с Apache Kafka. Служебная шина является рекомендуемой службой для рабочих нагрузок транзакционных сообщений.
 
@@ -118,9 +118,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 ### <a name="log-compaction"></a>Сжатие журнала
 
-Apache Kafka сжатие журнала — это функция, которая позволяет выключать все, кроме последней записи всех ключей из секции, что фактически приводит Apache Kafka раздел в хранилище "ключ — значение", где Последнее добавленное значение переопределяет предыдущее. Шаблон хранилища "ключ-значение" даже с частыми обновлениями гораздо лучше поддерживается службами баз данных, такими как [Azure Cosmos DB](../cosmos-db/introduction.md).
-
-Функция сжатия журналов используется клиентскими средами Kafka Connect и Kafka Streams.
+Apache Kafka сжатие журнала — это функция, которая позволяет выключать все, кроме последней записи всех ключей из секции, что фактически приводит Apache Kafka раздел в хранилище "ключ — значение", где Последнее добавленное значение переопределяет предыдущее. Эта функция сейчас не реализована концентраторами событий Azure. Шаблон хранилища "ключ-значение" даже с частыми обновлениями гораздо лучше поддерживается службами баз данных, такими как [Azure Cosmos DB](../cosmos-db/introduction.md). Дополнительные сведения см. в разделе о [проекции журнала](event-hubs-federation-overview.md#log-projections) в руководстве по Федерации концентраторов событий. 
 
 ### <a name="kafka-streams"></a>потоки Kafka.
 
@@ -143,5 +141,5 @@ Apache Kafka сжатие журнала — это функция, котора
 
 Если вам необходимо использовать платформу Kafka Streams в Azure, [Apache Kafka в HDInsight](../hdinsight/kafka/apache-kafka-introduction.md) предоставит этот вариант. Apache Kafka в HDInsight предоставляет полный контроль над всеми аспектами настройки Apache Kafka, в то время как полная интеграция с различными аспектами платформы Azure — от сбоя или обновления домена до сетевой изоляции до наблюдения за интеграцией. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. См. сведения в [руководстве для разработчиков Apache Kafka по Центрам событий Azure](apache-kafka-developer-guide.md).

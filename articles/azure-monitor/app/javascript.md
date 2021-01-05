@@ -4,12 +4,12 @@ description: Получение количества просмотров стр
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0588a3eac4ced6cec1e7aea431c6555bbe8bff0a
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 6678c662c4646a8181b1617ccddf9b8718c957bf
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559885"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858558"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -132,7 +132,7 @@ appInsights.trackPageView();
 
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Отправка данных телеметрии в портал Azure
 
-По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. К ним относятся следующие.
+По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. приведенные ниже.
 
 - **Неперехваченные исключения** в приложении, включая сведения о
     - Трассировка стека
@@ -339,7 +339,7 @@ npm i --save @microsoft/applicationinsights-web-basic
 - Чтобы обеспечить лучшую сигнатуру API, некоторые вызовы API, такие как trackPageView и trackException, были обновлены. Запуск в Internet Explorer 8 и более ранних версиях браузера не поддерживается.
 - В связи с обновлением схемы данных в конверте телеметрии изменились имя и структура поля.
 - Перемещено `context.operation` в `context.telemetryTrace` . Некоторые поля были также изменены ( `operation.id`  -->  `telemetryTrace.traceID` ).
-  - Чтобы вручную обновить текущий идентификатор pageview (например, в приложениях SPA), используйте `appInsights.properties.context.telemetryTrace.traceID = Util.generateW3CId()` .
+  - Чтобы вручную обновить текущий идентификатор pageview (например, в приложениях SPA), используйте `appInsights.properties.context.telemetryTrace.traceID = Microsoft.ApplicationInsights.Telemetry.Util.generateW3CId()` .
     > [!NOTE]
     > Чтобы идентификатор трассировки был уникальным, где ранее использовался `Util.newId()` , теперь используйте `Util.generateW3CId()` . Как и в конечном итоге, это идентификатор операции.
 

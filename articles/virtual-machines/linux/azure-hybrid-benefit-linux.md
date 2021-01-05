@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: a153f832fdfc075cdde03241f7dae19faa2334ce
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: ba7081c877f3c3adae6e678280592c9445a95d1b
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631371"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858813"
 ---
 # <a name="how-azure-hybrid-benefit-applies-for-linux-virtual-machines"></a>Как Преимущество гибридного использования Azure применяется для виртуальных машин Linux
 
@@ -152,7 +152,7 @@ az vm get-instance-view -g MyResourceGroup -n MyVm
 
 В самой виртуальной машине можно запросить аттестацию метаданных в службе метаданных экземпляра Azure, чтобы определить значение виртуальной машины `licenseType` . `licenseType`Значение `RHEL_BYOS` или `SLES_BYOS` указывает, что для виртуальной машины включено преимущество. Дополнительные [сведения о аттестации метаданных](./instance-metadata-service.md#attested-data).
 
-## <a name="compliance"></a>Соответствие нормативным требованиям
+## <a name="compliance"></a>Соответствие требованиям
 
 ### <a name="red-hat"></a>Red Hat
 
@@ -172,7 +172,7 @@ az vm get-instance-view -g MyResourceGroup -n MyVm
 
 ### <a name="suse"></a>SUSE
 
-Чтобы использовать Преимущество гибридного использования Azure для виртуальных машин SLES, сначала необходимо зарегистрировать в [программе общедоступного облака SUSE](https://www.suse.com/media/guide/suse_public_cloud_service_provider_program_overview.pdf). После приобретения подписок SUSE необходимо зарегистрировать виртуальные машины, которые используют эти подписки, в источнике обновлений. Для этой регистрации используйте центр клиентов SUSE, сервер средства управления подписками или диспетчер SUSE.
+Чтобы использовать Преимущество гибридного использования Azure для виртуальных машин SLES, а также сведения о переходе с SLES PAYG на BYOS или переход с SLES BYOS на PAYG см. в статье [SUSE Linux Enterprise и преимущество гибридного использования Azure](https://www.suse.com/c/suse-linux-enterprise-and-azure-hybrid-benefit/). 
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 *Вопрос. можно ли использовать тип лицензии `RHEL_BYOS` с образом SLES или наоборот?*
@@ -210,6 +210,10 @@ az vm get-instance-view -g MyResourceGroup -n MyVm
 *Вопрос. можно ли использовать Преимущество гибридного использования Azure на виртуальной машине, развернутой для SQL Server в образах RHEL?*
 
 Ответ. нет, вы не можете. Не существует плана по поддержке этих виртуальных машин.
+
+*Вопрос. можно ли использовать Преимущество гибридного использования Azure в подписке на центр виртуальных данных RHEL?*
+
+Ответ. нет, вы не можете. В Azure не поддерживается постоянного тока, включая АХБ.  
  
 
 ## <a name="common-problems"></a>Распространенные проблемы
@@ -219,5 +223,5 @@ az vm get-instance-view -g MyResourceGroup -n MyVm
 | ----- | ---------- |
 | "Не удалось выполнить действие, так как наши записи показывают, что вы не включили облачный доступ Red Hat к вашей подписке Azure..." | Чтобы использовать преимущество с виртуальными машинами RHEL, необходимо сначала [зарегистрировать подписки Azure с помощью облачного доступа Red Hat](https://access.redhat.com/management/cloud).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Узнайте, как создавать и обновлять виртуальные машины, а также добавлять типы лицензий (RHEL_BYOS, SLES_BYOS) для Преимущество гибридного использования Azure с помощью Azure CLI](/cli/azure/vm?preserve-view=true&view=azure-cli-latest)

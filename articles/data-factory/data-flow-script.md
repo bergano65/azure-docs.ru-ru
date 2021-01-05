@@ -6,13 +6,13 @@ ms.author: nimoolen
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/03/2020
-ms.openlocfilehash: 69b2713e928707479945df0bb242ac2fbc001c32
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.date: 12/23/2020
+ms.openlocfilehash: 3f5a6171ba81b858d649f381ed316be0637a2571
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600665"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858660"
 ---
 # <a name="data-flow-script-dfs"></a>Сценарий потока данных (DFS)
 
@@ -245,6 +245,18 @@ derive(each(match(type=='string'), $$ = 'string'),
     each(match(type=='timestamp'), $$ = 'timestamp'),
     each(match(type=='boolean'), $$ = 'boolean'),
     each(match(type=='double'), $$ = 'double')) ~> DerivedColumn1
+```
+
+### <a name="fill-down"></a>Заполнение по направлению вниз
+Ниже показано, как реализовать общую проблему «заполнение» с наборами данных, если требуется заменить значения NULL значениями из предыдущего значения, отличного от NULL, в последовательности. Обратите внимание, что эта операция может отрицательно сказаться на производительности, поскольку необходимо создать искусственное окно во всем наборе данных со значением категории "фиктивный". Кроме того, необходимо выполнить сортировку по значению, чтобы создать правильную последовательность данных для поиска предыдущего значения, отличного от NULL. Следующий фрагмент кода создает искусственную категорию как "фиктивную" и сортирует ее по суррогатному ключу. Вы можете удалить суррогатный ключ и использовать собственный ключ сортировки, относящийся к данным. В этом фрагменте кода предполагается, что вы уже добавили Преобразование источника с именем ```source1```
+
+```
+source1 derive(dummy = 1) ~> DerivedColumn
+DerivedColumn keyGenerate(output(sk as long),
+    startAt: 1L) ~> SurrogateKey
+SurrogateKey window(over(dummy),
+    asc(sk, true),
+    Rating2 = coalesce(Rating, last(Rating, true()))) ~> Window1
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

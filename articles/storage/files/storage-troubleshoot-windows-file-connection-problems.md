@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: aef332e54fa650e1abbebe671560238d7eb318de
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f2d55d1fcc92abdc629581d6e4d277ec0294dce0
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492052"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858694"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Устранение неполадок службы файлов Azure в Windows (SMB)
 
@@ -141,7 +141,7 @@ TcpTestSucceeded : True
 <a id="error1816"></a>
 ## <a name="error-1816---not-enough-quota-is-available-to-process-this-command"></a>Ошибка 1816-недостаточно квоты для обработки этой команды
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Ошибка 1816 возникает при достижении верхнего предела параллельных открытых дескрипторов, разрешенных для файла или каталога в общем файловом ресурсе Azure. Дополнительные сведения см. в разделе [Целевые показатели масштабируемости службы файлов Azure](./storage-files-scale-targets.md#azure-files-scale-targets).
 
@@ -285,7 +285,7 @@ $leaseClient.Break() | Out-Null
 
 Если вы сопоставили файловый ресурс Azure от имени администратора с помощью команды net use, то может показаться, что он отсутствует.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 По умолчанию проводник не запускается от имени администратора. При выполнении команды net use из командной строки администрирования пользователь подключает сетевой диск от имени администратора. Подключенные диски ориентированы на пользователя. Если для их подключения использовалась одна учетная запись, а пользователь вошел в систему с помощью другой, то диски отображаться не будут.
 
@@ -295,7 +295,7 @@ $leaseClient.Break() | Out-Null
 <a id="netuse"></a>
 ## <a name="net-use-command-fails-if-the-storage-account-contains-a-forward-slash"></a>Если учетная запись хранения содержит косую черту (/), то выполнение команды net use завершается сбоем
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Команда net use интерпретирует косую черту (/) как параметр командной строки. Если имя учетной записи пользователя начинается с косой черты, то сопоставление диска завершится сбоем.
 
@@ -316,7 +316,7 @@ $leaseClient.Break() | Out-Null
 <a id="cannotaccess"></a>
 ## <a name="application-or-service-cannot-access-a-mounted-azure-files-drive"></a>Приложение или служба не может получить доступ к подключенному диску службы файлов Azure
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Диски подключаются для каждого пользователя. Если приложение или служба выполняется не под той учетной записью, к которой относится подключенный диск, то приложение не увидит этот диск.
 
@@ -340,7 +340,7 @@ $leaseClient.Break() | Out-Null
 
 Когда файл копируется по сети, он расшифровывается на исходном компьютере, передается в виде обычного текста и повторно шифруется в месте назначения. Тем не менее при попытке скопировать зашифрованный файл может появиться следующее сообщение об ошибке: "Вы копируете файл в место, которое не поддерживает шифрование".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта проблема может возникнуть при использовании шифрованной файловой системы (EFS). Файлы с шифрованием BitLocker нельзя копировать в службу файлов Azure. Однако эта служба не поддерживает шифрованную файловую систему (EFS) NTFS.
 
 ### <a name="workaround"></a>Обходной путь
@@ -357,7 +357,7 @@ $leaseClient.Break() | Out-Null
 
 ## <a name="slow-enumeration-of-files-and-folders"></a>Медленное перечисление файлов и папок
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема может возникнуть, если на клиентском компьютере для больших каталогов недостаточно кэша.
 
@@ -374,7 +374,7 @@ $leaseClient.Break() | Out-Null
 
 ## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-azure-ad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>Ошибка Ааддстенантнотфаунд при включении проверки подлинности Azure Active Directory службы домена (Azure AD DS) для файлов Azure "не удается нахождение активных клиентов с ИДЕНТИФИКАТОРом клиента AAD-клиент-ID"
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Ошибка Ааддстенантнотфаунд возникает при попытке [включить проверку подлинности Azure Active Directory доменных служб (azure AD DS) в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md) в учетной записи хранения, где [Служба домена Azure ad (Azure AD DS)](../../active-directory-domain-services/overview.md) не создана в клиенте Azure AD связанной подписки.  
 
@@ -406,6 +406,8 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 5. Чекксидхасаадусер: Убедитесь, что вошедший в систему пользователь AD синхронизирован с Azure AD. Если вы хотите узнать, синхронизирован ли конкретный пользователь AD с Azure AD, можно указать параметры-UserName и-domain во входных параметрах. 
 6. Чеккжеткерберостиккет: попытка получить билет Kerberos для подключения к учетной записи хранения. Если нет допустимого маркера Kerberos, выполните командлет klist Get CIFS/Storage-Account-Name. File. Core. Windows. NET и изучите код ошибки, чтобы вызвать ошибку получения билета.
 7. Чекксторажеаккаунтдомаинжоинед: Проверка включения проверки подлинности AD и заполнение свойств учетной записи AD. Если [это](./storage-files-identity-ad-ds-enable.md) не так, см. инструкции по включению AD DS проверки подлинности в службе файлов Azure. 
+8. Чеккусеррбакассигнмент: Проверьте, имеет ли пользователь AD правильное назначение роли RBAC, чтобы предоставить разрешение на уровне общего ресурса для доступа к службе "файлы Azure". Если это не так, см. [инструкции по настройке разрешения на уровне](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-assign-permissions) общего ресурса. (Поддерживается в версии Азфилешибрид v 0.2.3 +)
+9. Чеккусерфилеакцесс: Проверьте, имеет ли пользователь AD соответствующие разрешения на доступ к файлам и каталогам (ACL Windows) для пользователя Active Directory. Если это не так, см. [инструкции по настройке разрешения на уровне](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-configure-permissions) каталога и файлов. (Поддерживается в версии Азфилешибрид v 0.2.3 +)
 
 ## <a name="unable-to-configure-directoryfile-level-permissions-windows-acls-with-windows-file-explorer"></a>Не удается настроить разрешения на уровне каталога или файла (списки управления доступом Windows) с помощью проводника Windows
 

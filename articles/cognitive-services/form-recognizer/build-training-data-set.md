@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: pafarley
-ms.openlocfilehash: 513d98ae274c668197b066c742119055248f37f9
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 661b0bbf1aa389dc76567d95ad917548255a1b35
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911721"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845586"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Создание набора обучающих данных для пользовательской модели
 
@@ -72,11 +72,8 @@ ms.locfileid: "92911721"
 
 Теперь, когда вы узнали, как создать набор обучающих данных, выполните инструкции из краткого руководства по обучению настраиваемой модели распознавателя форм и начните использовать ее в своих формах.
 
-* [Обучение модели и извлечение данных из формы с помощью клиентской библиотеки](./quickstarts/client-library.md)
-* [Обучение модели и извлечение данных из формы с помощью функции перелистывания](./quickstarts/curl-train-extract.md)
-* [Обучение модели и извлечение данных из формы с помощью REST API и Python](./quickstarts/python-train-extract.md)
+* [Обучение модели и извлечение данных из формы с помощью клиентской библиотеки или REST API](./quickstarts/client-library.md)
 * [Обучение с метками с помощью образца средства создания меток](./quickstarts/label-tool.md)
-* [Обучение с использованием меток, REST API и Python](./quickstarts/python-labeled-data.md)
 
 ## <a name="see-also"></a>См. также
 

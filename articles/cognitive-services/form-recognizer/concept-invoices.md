@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 9a3a6bd6489baea90ed4143b42a09e7d697bbc50
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 7acfa9c2ffdd4cdd62e965041cdc42dc44d469c5
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602450"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845570"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Встроенная модель накладных форм распознавателя
 
@@ -34,7 +34,7 @@ API-интерфейс накладных извлекает ключевые п
 > [!div class="nextstepaction"]
 > [Ознакомление с предварительно созданными моделями](https://fott-preview.azurewebsites.net/)
 
-Вам потребуется подписка Azure ([создайте ее бесплатно](https://azure.microsoft.com/free/cognitive-services)) и [форму рекогнзиер](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer) конечную точку ресурса и ключ, чтобы испытать службу выставления счетов распознавания форм. 
+Вам потребуется подписка Azure ([создайте ее бесплатно](https://azure.microsoft.com/free/cognitive-services)) и конечную точку [ресурса распознавателя](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer) форм и ключ, чтобы испытать службу выставления счетов распознавания форм. 
 
 ![Пример проанализированного счета](./media/analyze-invoice.png)
 
@@ -74,7 +74,7 @@ API-интерфейс накладных извлекает ключевые п
 
 Служба накладных будет извлекать текст, таблицы и 26 полей счета. Ниже приведены поля, извлеченные из счета в ответе выходных данных JSON (в приведенных ниже выходных данных используется этот [пример счета](./media/sample-invoice.jpg)).  
 
-|Имя| Тип | Описание | Текстовый | Value (стандартизованные выходные данные) |
+|Имя| Тип | Описание | Текст | Value (стандартизованные выходные данные) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | строка | Клиент, которому выставляется счет | Корпорация Майкрософт |  |
 | CustomerId | строка | Идентификатор ссылки для клиента | CID-12345 |  |
@@ -107,8 +107,8 @@ API-интерфейс накладных извлекает ключевые п
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Попробуйте свои счета и примеры в [пользовательском интерфейсе примера распознавателя форм](https://fott-preview.azurewebsites.net/).
-- Заполните [Краткое руководство по клиентской библиотеке распознавателя форм](quickstarts/client-library.md) , чтобы приступить к написанию приложения обработки накладных с помощью распознавателя форм на любом языке.
-- Или воспользуйтесь кратким руководством по [извлечению данных счета](./quickstarts/python-invoices.md) , чтобы реализовать извлечение данных из счета с помощью Python и REST API.
+- Заполните [Краткое руководство по распознаванию форм](quickstarts/client-library.md) , чтобы приступить к написанию приложения обработки накладных с помощью распознавателя форм на любом языке.
+
 ## <a name="see-also"></a>См. также
 
 * [Что такое Распознаватель документов?](./overview.md)

@@ -2,17 +2,17 @@
 title: Использование Apache Kafka MirrorMaker в службе "Центры событий Azure" | Документация Майкрософт
 description: В этой статье описано, как с помощью Kafka MirrorMaker настроить зеркальное отображение кластера Kafka в службе "Центры событий Azure".
 ms.topic: how-to
-ms.date: 06/23/2020
-ms.openlocfilehash: f2e7ac6951c84adfd8fc313995724021640ee0ab
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.date: 01/04/2021
+ms.openlocfilehash: 654e9e19dfde0d0c58d00e41cf8ab0ba8e1484d7
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503205"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860997"
 ---
-# <a name="use-kafka-mirrormaker-with-event-hubs-for-apache-kafka"></a>Использование Apache Kafka MirrorMaker с Центрами событий
+# <a name="use-apache-kafka-mirrormaker-with-event-hubs"></a>Использование Apache Kafka MirrorMaker с концентраторами событий
 
-В этом руководстве показано, как создать зеркальную копию брокера Kafka в концентраторе событий с помощью Kafka MirrorMaker.
+В этом руководстве показано, как создать зеркальную копию брокера Kafka в концентратор событий Azure с помощью Kafka MirrorMaker. Если вы размещаете Apache Kafka в Kubernetes с помощью оператора КНКФ Стримзи, вы можете ознакомиться с руководством в [этой записи блога](https://strimzi.io/blog/2020/06/09/mirror-maker-2-eventhub/) , чтобы узнать, как настроить Kafka с помощью Стримзи и Mirror Maker 2. 
 
    ![Kafka MirrorMaker и Центры событий](./media/event-hubs-kafka-mirror-maker-tutorial/evnent-hubs-mirror-maker1.png)
 
@@ -20,7 +20,7 @@ ms.locfileid: "97503205"
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/mirror-maker).
 
 > [!NOTE]
-> Эта статья содержит ссылки на термин *список разрешений*— термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
+> Эта статья содержит ссылки на термин *список разрешений*. Корпорация Майкрософт больше не использует его. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
 
 В этом руководстве описано следующее:
 > [!div class="checklist"]
@@ -31,9 +31,11 @@ ms.locfileid: "97503205"
 > * Запуск Kafka MirrorMaker
 
 ## <a name="introduction"></a>Введение
-Одним из важных аспектов для современных облачных приложений является возможность обновления, улучшения и изменения инфраструктуры без прерывания работы службы. В этом руководстве показано, как концентратор событий и Kafka MirrorMaker могут интегрировать существующий конвейер Kafka в Azure, выполнив "зеркальное отображение" входного потока Kafka в службе концентраторов событий. 
+В этом руководстве показано, как концентратор событий и Kafka MirrorMaker могут интегрировать существующий конвейер Kafka в Azure, выполнив "зеркальное отображение" входного потока Kafka в службе концентраторов событий, что позволяет интегрировать Apache Kafka потоки с помощью нескольких [шаблонов Федерации](event-hubs-federation-overview.md). 
 
-Конечная точка Kafka Центров событий Azure позволяет подключаться к Центрам событий Azure с помощью протокола Kafka (т. е. клиентов Kafka). После внесения минимальных изменений в приложение Kafka вы сможете подключаться к Центрам событий Azure и пользоваться преимуществами экосистемы Azure. Концентраторы событий в настоящее время поддерживают Kafka версии 1,0 и более поздних версий.
+Конечная точка Kafka Центров событий Azure позволяет подключаться к Центрам событий Azure с помощью протокола Kafka (т. е. клиентов Kafka). После внесения минимальных изменений в приложение Kafka вы сможете подключаться к Центрам событий Azure и пользоваться преимуществами экосистемы Azure. Концентраторы событий в настоящее время поддерживают протокол Apache Kafka версии 1,0 и более поздних версий.
+
+Вы можете использовать Apache Kafka MirrorMaker 1 однонаправленно от Apache Kafka к концентраторам событий. MirrorMaker 2 можно использовать в обоих направлениях, но [ `MirrorCheckpointConnector` и `MirrorHeartbeatConnector` , которые настраиваются в MirrorMaker 2](https://cwiki.apache.org/confluence/display/KAFKA/KIP-382%3A+MirrorMaker+2.0) , должны быть настроены так, чтобы они указывали на Apache Kafka Broker, а не в концентраторы событий. В этом руководстве показано, как настроить MirrorMaker 1.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
