@@ -7,12 +7,12 @@ ms.topic: how-to
 author: iqshahmicrosoft
 ms.author: krsh
 ms.date: 10/19/2020
-ms.openlocfilehash: ead367568762d4b76de7164feb56b7a31cd53e0d
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e28942a77a1d695a17f3231901f337695e602c64
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129122"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825557"
 ---
 # <a name="how-to-generate-a-sas-uri-for-a-vm-image"></a>Создание URI SAS для образа виртуальной машины
 
@@ -34,12 +34,12 @@ ms.locfileid: "93129122"
 
 ### <a name="using-tool-1-azure-storage-explorer"></a>Использование средства 1: Обозреватель службы хранилища Azure
 
-1. Перейдите к своей **учетной записи хранения** .
-1. Откройте **Обозреватель службы хранилища** .
+1. Перейдите к своей **учетной записи хранения**.
+1. Откройте **Обозреватель службы хранилища**.
 
     :::image type="content" source="media/create-vm/storge-account-explorer.png" alt-text="Окно учетной записи хранения.":::
 
-3. В **контейнере** щелкните правой кнопкой мыши файл VHD и выберите **получить общий доступ к подписи** .
+3. В **контейнере** щелкните правой кнопкой мыши файл VHD и выберите **получить общий доступ к подписи**.
 4. В диалоговом окне **подпись общего доступа** заполните следующие поля:
 
     1. Время начала — дата начала срока действия разрешений на доступ к виртуальному жесткому диску. Укажите дату на день раньше текущей даты.
@@ -49,7 +49,7 @@ ms.locfileid: "93129122"
 
     ![Диалоговое окно подпись общего доступа.](media/vm/create-sas-uri-storage-explorer.png)
 
-5. Нажмите **Создать** , чтобы создать URI SAS для этого виртуального жесткого диска.
+5. Нажмите **Создать**, чтобы создать URI SAS для этого виртуального жесткого диска.
 6. Скопируйте URI и сохраните его в текстовом файле в надежном расположении. Этот URI SAS предоставляет доступ на уровне контейнера. Чтобы сделать его специфическим, измените текстовый файл, добавив имя виртуального жесткого диска.
 7. Вставьте имя виртуального жесткого диска в URI SAS после строки vhds (добавьте символ косой черты). В окончательном виде URI SAS должен выглядеть следующим образом:
 
@@ -62,7 +62,7 @@ ms.locfileid: "93129122"
 1. Скачайте и установите [Microsoft Azure CL](/cli/azure/install-azure-cli)I. Доступны версии для macOS, Windows и различных дистрибутивов Linux.
 2. Создайте файл PowerShell (с расширением PS1), скопируйте в него следующий код и сохраните его в локальной файловой системе.
 
-    ```JSON
+    ```azurecli-interactive
     az storage container generate-sas --connection-string ‘DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net’ --name <vhd-name> --permissions rl --start ‘<start-date>’ --expiry ‘<expiry-date>’
     ```
 
@@ -70,25 +70,26 @@ ms.locfileid: "93129122"
 
     - Account-Name — имя учетной записи хранения Azure.
     - ключ учетной записи — ключ учетной записи хранения Azure.
-    - VHD-Name — имя виртуального жесткого диска.
     - Начальная дата — дата начала разрешения для доступа к виртуальному жесткому диску. Укажите дату на день раньше текущей даты.
     - Дата окончания срока действия — срок действия разрешения для доступа к виртуальному жесткому диску. Укажите дату по меньшей мере через три недели после текущей даты.
 
     Ниже приведен пример правильных значений параметров (на момент написания статьи):
 
-    `az storage container generate-sas --connection-string ‘DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ON c+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net’ --name vhds -- permissions rl --start ‘2020-04-01T00:00:00Z’ --expiry ‘2021-04-01T00:00:00Z’`
+    ```azurecli-interactive
+    az storage container generate-sas --connection-string ‘DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ON c+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net’ --name vhds -- permissions rl --start ‘2020-04-01T00:00:00Z’ --expiry ‘2021-04-01T00:00:00Z’
+    ```
 
 1. Сохраните изменения.
 2. Запустите этот скрипт с правами администратора одним из следующих способов, чтобы создать строку подключения SAS для доступа на уровне контейнера.
 
-    - Запуск скрипта из консоли. В Windows щелкните скрипт правой кнопкой мыши и выберите пункт **Запустить от имени администратора** .
+    - Запуск скрипта из консоли. В Windows щелкните скрипт правой кнопкой мыши и выберите пункт **Запустить от имени администратора**.
     - Запуск скрипта из редактора скриптов PowerShell, например из [интегрированной среды сценариев Windows PowerShell](/powershell/scripting/components/ise/introducing-the-windows-powershell-ise). На этом экране показано создание строки подключения SAS в этом редакторе:
 
     [![Создание строки подключения SAS в редакторе PowerShell](media/vm/create-sas-uri-power-shell-ise.png)](media/vm/create-sas-uri-power-shell-ise.png#lightbox)
 
 6. Скопируйте строку подключения SAS и сохраните ее в текстовом файле в надежном расположении. Чтобы завершить создание URI SAS, в эту строку нужно добавить сведения о расположении виртуального жесткого диска.
 7. На портале Azure перейдите к хранилищу BLOB-объектов, которое содержит виртуальный жесткий диск, связанный с новым URI.
-8. Скопируйте URL-адрес конечной точки службы Себблоб:
+8. Скопируйте URL-адрес конечной точки службы больших двоичных объектов:
 
     ![Копирование URL-адреса конечной точки службы больших двоичных объектов.](media/vm/create-sas-uri-blob-endpoint.png)
 

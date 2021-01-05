@@ -3,15 +3,15 @@ title: Справочное руководство по функциям в вы
 description: Справочное руководство по функциям в выражениях для Azure Logic Apps и Power Automate
 services: logic-apps
 ms.suite: integration
-ms.reviewer: estfan, logicappspm
+ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: a4646263eeb93a33a03e32107b46bb6dc104ce06
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 5c03d9b64f957f6ef8450197477f185dc8d15b2d
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326307"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825861"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate
 
@@ -1678,7 +1678,7 @@ decodeUriComponent('<value>')
 В этом примере escape-символы в этой строке заменяются декодированными версиями:
 
 ```
-decodeUriComponent('http%3A%2F%2Fcontoso.com')
+decodeUriComponent('https%3A%2F%2Fcontoso.com')
 ```
 
 Возвращается такой результат: `"https://contoso.com"`
@@ -1753,7 +1753,7 @@ encodeUriComponent('<value>')
 encodeUriComponent('https://contoso.com')
 ```
 
-Возвращается такой результат: `"http%3A%2F%2Fcontoso.com"`
+Возвращается такой результат: `"https%3A%2F%2Fcontoso.com"`
 
 <a name="empty"></a>
 
@@ -4174,7 +4174,7 @@ triggerFormDataMultiValues('<key>')
 triggerFormDataMultiValues('feedUrl')
 ```
 
-Возвращается этот массив в качестве примера: `["http://feeds.reuters.com/reuters/topNews"]`
+Возвращается этот массив в качестве примера: `["https://feeds.a.dj.com/rss/RSSMarketsMain.xml"]`
 
 <a name="triggerFormDataValue"></a>
 
@@ -4205,7 +4205,7 @@ triggerFormDataValue('<key>')
 triggerFormDataValue('feedUrl')
 ```
 
-Возвращается эта строка в качестве примера: `"http://feeds.reuters.com/reuters/topNews"`
+Возвращается эта строка в качестве примера: `"https://feeds.a.dj.com/rss/RSSMarketsMain.xml"`
 
 <a name="triggerMultipartBody"></a>
 
@@ -4336,7 +4336,7 @@ uriComponent('<value>')
 uriComponent('https://contoso.com')
 ```
 
-Возвращается такой результат: `"http%3A%2F%2Fcontoso.com"`
+Возвращается такой результат: `"https%3A%2F%2Fcontoso.com"`
 
 <a name="uriComponentToBinary"></a>
 
@@ -4363,7 +4363,7 @@ uriComponentToBinary('<value>')
 В этом примере создается двоичная версия для этой строки с закодированным URI:
 
 ```
-uriComponentToBinary('http%3A%2F%2Fcontoso.com')
+uriComponentToBinary('https%3A%2F%2Fcontoso.com')
 ```
 
 Возвращается такой результат:
@@ -4398,7 +4398,7 @@ uriComponentToString('<value>')
 В этом примере создается декодированная версия строки с закодированным URI:
 
 ```
-uriComponentToString('http%3A%2F%2Fcontoso.com')
+uriComponentToString('https%3A%2F%2Fcontoso.com')
 ```
 
 Возвращается такой результат: `"https://contoso.com"`
@@ -4458,7 +4458,7 @@ uriPath('<uri>')
 В этом примере выполняется поиск значения `path` для этого URI:
 
 ```
-uriPath('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriPath('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 Возвращается такой результат: `"/catalog/shownew.htm"`
@@ -4488,7 +4488,7 @@ uriPathAndQuery('<uri>')
 В этом примере выполняется поиск значения `path` и `query` для этого URI:
 
 ```
-uriPathAndQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriPathAndQuery('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 Возвращается такой результат: `"/catalog/shownew.htm?date=today"`
@@ -4518,7 +4518,7 @@ uriPort('<uri>')
 В этом примере возвращается значение `port` для этого URI:
 
 ```
-uriPort('http://www.localhost:8080')
+uriPort('https://www.localhost:8080')
 ```
 
 Возвращается такой результат: `8080`
@@ -4548,7 +4548,7 @@ uriQuery('<uri>')
 В этом примере возвращается значение `query` для этого URI:
 
 ```
-uriQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriQuery('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 Возвращается такой результат: `"?date=today"`
@@ -4578,7 +4578,7 @@ uriScheme('<uri>')
 В этом примере возвращается значение `scheme` для этого URI:
 
 ```
-uriScheme('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriScheme('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 Возвращается такой результат: `"http"`
@@ -4918,16 +4918,16 @@ xpath('<xml>', '<xpath>')
 
 *Пример 8*
 
-В этом примере предположим, что имеется XML-строка, которая включает пространство имен XML-документа `xmlns="http://contoso.com"` :
+В этом примере предположим, что имеется XML-строка, которая включает пространство имен XML-документа `xmlns="https://contoso.com"` :
 
 ```xml
-<?xml version="1.0"?><file xmlns="http://contoso.com"><location>Paris</location></file>
+<?xml version="1.0"?><file xmlns="https://contoso.com"><location>Paris</location></file>
 ```
 
-Эти выражения используют либо выражение XPath, `/*[name()="file"]/*[name()="location"]` либо `/*[local-name()="file" and namespace-uri()="http://contoso.com"]/*[local-name()="location"]` , чтобы найти узлы, соответствующие `<location></location>` узлу. В этих примерах показан синтаксис, используемый в конструкторе приложений логики или в редакторе выражений:
+Эти выражения используют либо выражение XPath, `/*[name()="file"]/*[name()="location"]` либо `/*[local-name()="file" and namespace-uri()="https://contoso.com"]/*[local-name()="location"]` , чтобы найти узлы, соответствующие `<location></location>` узлу. В этих примерах показан синтаксис, используемый в конструкторе приложений логики или в редакторе выражений:
 
 * `xpath(xml(body('Http')), '/*[name()="file"]/*[name()="location"]')`
-* `xpath(xml(body('Http')), '/*[local-name()="file" and namespace-uri()="http://contoso.com"]/*[local-name()="location"]')`
+* `xpath(xml(body('Http')), '/*[local-name()="file" and namespace-uri()="https://contoso.com"]/*[local-name()="location"]')`
 
 Ниже приведен узел, соответствующий узлу `<location></location>`: 
 

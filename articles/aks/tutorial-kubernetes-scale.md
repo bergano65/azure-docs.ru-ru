@@ -4,13 +4,13 @@ description: В этом руководстве по Службе Azure Kubernet
 services: container-service
 ms.topic: tutorial
 ms.date: 09/30/2020
-ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: e700934a965f836456458cb33dc46125bef4ab72
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: mvc
+ms.openlocfilehash: 7f16ba3ffe6b6f96f17df540eb67e9cec0bfea8c
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747003"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825692"
 ---
 # <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство по Масштабирование приложений в Службе Azure Kubernetes (AKS)
 
@@ -45,7 +45,7 @@ azure-vote-back-2549686872-4d2r5   1/1       Running   0          31m
 azure-vote-front-848767080-tf34m   1/1       Running   0          31m
 ```
 
-Чтобы вручную изменить количество модулей pod в развертывании *azure-vote-front* , используйте команду [kubectl scale][kubectl-scale]. В следующем примере увеличивает число интерфейсных модулей pod до *5* .
+Чтобы вручную изменить количество модулей pod в развертывании *azure-vote-front*, используйте команду [kubectl scale][kubectl-scale]. В следующем примере увеличивает число интерфейсных модулей pod до *5*.
 
 ```console
 kubectl scale --replicas=5 deployment/azure-vote-front
@@ -74,7 +74,7 @@ az aks show --resource-group myResourceGroup --name myAKSCluster --query kuberne
 ```
 
 > [!NOTE]
-> Если версия кластера AKS предшествует *1.10* , сервер метрик не устанавливается автоматически. Манифесты установки сервера метрик доступны в качестве ресурса `components.yaml` в выпусках сервера метрик. Это означает, что их можно установить с помощью URL-адреса. Дополнительные сведения об этих определениях YAML см. в разделе файла сведений, посвященном [развертыванию][metrics-server-github].
+> Если версия кластера AKS предшествует *1.10*, сервер метрик не устанавливается автоматически. Манифесты установки сервера метрик доступны в качестве ресурса `components.yaml` в выпусках сервера метрик. Это означает, что их можно установить с помощью URL-адреса. Дополнительные сведения об этих определениях YAML см. в разделе файла сведений, посвященном [развертыванию][metrics-server-github].
 > 
 > Пример установки:
 > ```console
@@ -91,7 +91,7 @@ resources:
      cpu: 500m
 ```
 
-В следующем примере используется команда [kubectl autoscale][kubectl-autoscale] для автомасштабирования числа модулей pod в развертывании *azure-vote-front* . Если среднее использование ЦП всеми pod превышает 50% их запрошенного использования, инструмент автомасштабирования увеличивает количество pod максимум до *10* экземпляров. Затем для развертывания определяются как минимум *3*  экземпляра:
+В следующем примере используется команда [kubectl autoscale][kubectl-autoscale] для автомасштабирования числа модулей pod в развертывании *azure-vote-front*. Если среднее использование ЦП всеми pod превышает 50% их запрошенного использования, инструмент автомасштабирования увеличивает количество pod максимум до *10* экземпляров. Затем для развертывания определяются как минимум *3* экземпляра:
 
 ```console
 kubectl autoscale deployment azure-vote-front --cpu-percent=50 --min=3 --max=10

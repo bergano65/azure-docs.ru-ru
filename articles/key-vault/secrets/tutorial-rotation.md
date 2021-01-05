@@ -10,13 +10,13 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
-ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 0da0a56a64aa9b4500d36da2f6c86fc4c07f4c0f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 5e61510965693e123c724d7b40d2fa6071fdd94c
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92786060"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97824800"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с одним набором учетных данных для аутентификации
 
@@ -24,7 +24,8 @@ ms.locfileid: "92786060"
 
 В этом учебнике описано, как автоматизировать периодическую смену секретов для баз данных и служб, которые используют один набор учетных данных для аутентификации. В частности, в этом учебнике выполняется смена паролей SQL Server, хранящихся в Azure Key Vault. Для ротации используется функция, запускаемая уведомлением Сетки событий Azure:
 
-![Схема решения ротации](../media/rotate-1.png)
+
+:::image type="content" source="../media/rotate-1.png" alt-text="Схема решения ротации":::
 
 1. За 30 дней до истечения срока действия секрета Key Vault публикует в Сетке событий событие "Срок действия скоро истекает".
 1. Сетка событий проверяет подписки на события и с помощью HTTP-запроса методом POST вызывает конечную точку приложения-функции, подписанную на это событие.
@@ -42,19 +43,19 @@ ms.locfileid: "92786060"
 
 Если у вас нет существующего Key Vault и SQL Server, можно использовать предоставленную ниже ссылку на развертывание.
 
-[![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json)
+[![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmain%2FARM-Templates%2FInitial-Setup%2Fazuredeploy.json)
 
-1. Для параметра **Группа ресурсов** выберите **Создать** . Присвойте группе имя **akvrotation** .
+1. Для параметра **Группа ресурсов** выберите **Создать**. Присвойте группе имя **akvrotation**.
 1. В разделе **Sql Admin Login** (Имя входа администратора SQL) введите имя для входа администратора SQL. 
 1. Выберите **Review + create** (Просмотреть и создать).
 1. Нажмите кнопку **Создать**
 
-    ![Создание группы ресурсов](../media/rotate-2.png)
+:::image type="content" source="../media/rotate-2.png" alt-text="Создайте группу ресурсов":::.
 
 Теперь у вас есть Key Vault и экземпляр SQL Server. Вы можете проверить эту установку в Azure CLI, выполнив следующую команду:
 
 ```azurecli
-az resource list -o table
+az resource list -o table -g akvrotation
 ```
 
 Результат будет выглядеть примерно следующим образом:
@@ -62,9 +63,11 @@ az resource list -o table
 ```console
 Name                     ResourceGroup         Location    Type                               Status
 -----------------------  --------------------  ----------  ---------------------------------  --------
-akvrotation-kv          akvrotation      eastus      Microsoft.KeyVault/vaults
-akvrotation-sql         akvrotation      eastus      Microsoft.Sql/servers
-akvrotation-sql/master  akvrotation      eastus      Microsoft.Sql/servers/databases
+akvrotation-kv           akvrotation      eastus      Microsoft.KeyVault/vaults
+akvrotation-sql          akvrotation      eastus      Microsoft.Sql/servers
+akvrotation-sql/master   akvrotation      eastus      Microsoft.Sql/servers/databases
+akvrotation-sql2         akvrotation      eastus      Microsoft.Sql/servers
+akvrotation-sql2/master  akvrotation      eastus      Microsoft.Sql/servers/databases
 ```
 
 ## <a name="create-and-deploy-sql-server-password-rotation-function"></a>Создание и развертывание функции смены пароля SQL Server
@@ -78,27 +81,28 @@ akvrotation-sql/master  akvrotation      eastus      Microsoft.Sql/servers/datab
 - Приложение-функция с функциями смены пароля SQL с триггером события и триггером HTTP. 
 - Учетная запись хранения, которая нужна для управления триггерами приложения-функции.
 - Политика доступа для получения доступа к секретам в Key Vault с помощью удостоверения приложения-функции.
-- Подписка на событие Сетки событий **SecretNearExpiry** .
+- Подписка на событие Сетки событий **SecretNearExpiry**.
 
 1. Щелкните ссылку для развертывания шаблона в Azure: 
 
-   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json)
+   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmain%2FARM-Templates%2FFunction%2Fazuredeploy.json)
 
-1. В списке **Группа ресурсов** выберите **avkrotation** .
+1. В списке **Группа ресурсов** выберите **avkrotation**.
 1. В поле **Sql Server Name** (Имя SQL Server) введите имя SQL Server и пароль для смены.
 1. В поле **Имя Key Vault** введите имя хранилища ключей.
 1. В поле **Имя приложения-функции** введите имя приложения-функции.
 1. В поле **Secret Name** (Имя секрета) введите имя секрета, где будет храниться пароль.
-1. В поле **URL-адрес репозитория** введите расположение кода для функции на сайте GitHub ( **https://github.com/jlichwa/KeyVault-Rotation-SQLPassword-Csharp.git** ).
+1. В поле **URL-адрес репозитория** введите расположение кода для функции на сайте GitHub ( **https://github.com/Azure-Samples/KeyVault-Rotation-SQLPassword-Csharp.git** ).
 1. Выберите **Review + create** (Просмотреть и создать).
-1. Нажмите кнопку **создания** .
+1. Нажмите кнопку **создания**.
 
-   ![Выбор параметра Review+create (Просмотр и создание)](../media/rotate-3.png)
+:::image type="content" source="../media/rotate-3.png" alt-text="Выбор параметра Review+create (Просмотр и создание)":::
+  
 
 Выполнив описанные выше действия, вы создадите учетную запись хранения, ферму серверов и приложение-функцию. Вы можете проверить эту установку в Azure CLI, выполнив следующую команду:
 
 ```azurecli
-az resource list -o table
+az resource list -o table -g akvrotation
 ```
 
 Результат будет выглядеть примерно следующим образом:
@@ -187,10 +191,10 @@ public static class SimpleRotationEventHandler
         }
 }
 ```
-Полный пример кода можно найти на сайте [GitHub](https://github.com/jlichwa/KeyVault-Rotation-SQLPassword-Csharp).
+Полный пример кода можно найти на сайте [GitHub](https://github.com/Azure-Samples/KeyVault-Rotation-SQLPassword-Csharp).
 
 ## <a name="add-the-secret-to-key-vault"></a>Добавление секрета в хранилище ключей
-Настройте политику доступа, предоставив пользователям разрешение на *управление секретами* .
+Настройте политику доступа, предоставив пользователям разрешение на *управление секретами*.
 
 ```azurecli
 az keyvault set-policy --upn <email-address-of-user> --name akvrotation-kv --secret-permissions set delete get list
@@ -207,13 +211,13 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
 
 ## <a name="test-and-verify"></a>Тестирование и проверка
 
-Чтобы убедиться в ротации секрета, перейдите в раздел **Key Vault** > **Секреты** :
+Чтобы убедиться в ротации секрета, перейдите в раздел **Key Vault** > **Секреты**:
 
-![Переход к секретам](../media/rotate-8.png)
+:::image type="content" source="../media/rotate-8.png" alt-text="Переход к секретам":::
 
 Откройте секрет **sqlPassword** и просмотрите исходную и измененную версию.
 
-![Открытие секрета sqluser](../media/rotate-9.png)
+:::image type="content" source="../media/rotate-9.png" alt-text="Переход к секретам":::
 
 ### <a name="create-a-web-app"></a>Создание веб-приложения
 
@@ -225,15 +229,15 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
 
 1. Щелкните ссылку для развертывания шаблона в Azure: 
 
-   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-SQLPassword-Csharp-WebApp%2Fmaster%2Farm-templates%2FWeb-App%2Fazuredeploy.json)
+   [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-SQLPassword-Csharp-WebApp%2Fmain%2FARM-Templates%2FWeb-App%2Fazuredeploy.json)
 
-1. Выберите группу ресурсов **akvrotation** .
+1. Выберите группу ресурсов **akvrotation**.
 1. В поле **Sql Server Name** (Имя SQL Server) введите имя SQL Server и пароль для смены.
 1. В поле **Имя Key Vault** введите имя хранилища ключей.
 1. В поле **Secret Name** (Имя секрета) введите имя секрета, где будет храниться пароль.
-1. В поле **Repo Url** (URL-адрес репозитория) введите расположение кода для веб-приложения на сайте GitHub ( **https://github.com/jlichwa/KeyVault-Rotation-SQLPassword-Csharp-WebApp.git** ).
+1. В поле **Repo Url** (URL-адрес репозитория) введите расположение кода для веб-приложения на сайте GitHub ( **https://github.com/Azure-Samples/KeyVault-Rotation-SQLPassword-Csharp-WebApp.git** ).
 1. Выберите **Review + create** (Просмотреть и создать).
-1. Нажмите кнопку **создания** .
+1. Нажмите кнопку **создания**.
 
 
 ### <a name="open-the-web-app"></a>Открытие веб-приложения
@@ -242,7 +246,7 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
  
 https://akvrotation-app.azurewebsites.net/
 
-Когда приложение откроется в браузере, вы увидите **созданное секретное значение** и **подключенную базу данных** со значением *true* .
+Когда приложение откроется в браузере, вы увидите **созданное секретное значение** и **подключенную базу данных** со значением *true*.
 
 ## <a name="learn-more"></a>Дополнительные сведения
 

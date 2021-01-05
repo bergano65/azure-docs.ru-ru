@@ -3,12 +3,12 @@ title: Основные понятия — частные облака и кла
 description: Узнайте о ключевых возможностях решений Azure VMware, определяемых программными центрами обработки данных и кластерами vSphere.
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: af34bb0d83d9571ae91dce90cab198a61cfe82a1
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7f8508abed3446c58a683454bc49ec7dbb49d051
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967386"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825069"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Концепции частного облака и кластера решения VMware для Azure
 
@@ -48,18 +48,8 @@ ms.locfileid: "94967386"
 
 ## <a name="vmware-software-versions"></a>Версии программного обеспечения VMware
 
-Текущие версии программного обеспечения VMware, используемые в кластерах частных облачных решений Azure VMware:
+[!INCLUDE [vmware-software-versions](includes/vmware-software-versions.md)]
 
-| Программное обеспечение              |    Версия   |
-| :---                  |     :---:    |
-| ВКСА/vSphere/ESXi |    6,7 U3    | 
-| ESXi                  |    6,7 U3    | 
-| vSAN                  |    6,7 U3    |
-| НСКС-T                 |      2.5     |
-
-Для любого нового кластера в частном облаке версия программного обеспечения соответствует тому, что выполняется в данный момент. Для любого нового частного облака в подписке устанавливается последняя версия программного стека.
-
-Общие политики обновления и процессы для программного обеспечения платформы решений VMware для Azure, описанные в разделе [обновления и обновление частного облака](concepts-upgrades.md), можно найти в этой статье.
 
 ## <a name="host-maintenance-and-lifecycle-management"></a>Обслуживание узла и управление жизненным циклом
 
@@ -74,7 +64,7 @@ ms.locfileid: "94967386"
 
 Настройки частного облака vCenter и НСКС-T имеют расписание почасового резервного копирования.  Резервные копии хранятся в течение трех дней. Если необходимо выполнить восстановление из резервной копии, откройте [запрос в службу поддержки](https://rc.portal.azure.com/#create/Microsoft.Support) в портал Azure, чтобы запросить восстановление.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий шаг — изучение [сетей и концепций взаимодействия](concepts-networking.md).
 

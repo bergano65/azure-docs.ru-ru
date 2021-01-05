@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1627db2f1f19c393d4f40892ca65141f26424ac9
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c9f9cc53c62ed19fa5fbd1e78c840a8a34b6fb84
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656943"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97824645"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>Использование интерфейсов API и пакетов SDK для Azure Digital Twins
 
@@ -81,15 +81,9 @@ API-интерфейсы плоскости данных — это API-инте
 > [!NOTE]
 > Дополнительные сведения о разработке SDK см. в общих [принципах разработки для пакетов SDK для Azure](https://azure.github.io/azure-sdk/general_introduction.html) и конкретных [рекомендациях по проектированию .NET](https://azure.github.io/azure-sdk/dotnet_introduction.html).
 
-Чтобы использовать пакет SDK, включите в проект пакет NuGet **Azure. дигиталтвинс. Core** . Вам также потребуется последняя версия пакета **Azure. Identity** .
-
-* В Visual Studio можно добавлять пакеты с помощью диспетчера пакетов NuGet (доступ к которому осуществляется с помощью *средств > диспетчера пакетов nuget > управления пакетами NuGet для решения*). 
-* С помощью программы командной строки .NET можно запустить:
-
-    ```cmd/sh
-    dotnet add package Azure.DigitalTwins.Core --version 1.0.0-preview.3
-    dotnet add package Azure.identity
-    ```
+Чтобы использовать пакет SDK, включите в проект пакет NuGet **Azure. дигиталтвинс. Core** . Вам также потребуется последняя версия пакета **Azure. Identity** . В Visual Studio эти пакеты можно добавить с помощью диспетчера пакетов NuGet (доступ к которому осуществляется с помощью *средств > диспетчер пакетов nuget > управления пакетами NuGet для решения*). Кроме того, вы можете использовать средство командной строки .NET с командами, приведенными в следующих ссылках пакета NuGet, чтобы добавить их в проект:
+* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Это пакет для [пакета SDK Azure Digital Twins для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
+* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Эта библиотека предоставляет инструменты для проверки подлинности в Azure.
 
 Подробное пошаговое руководство по использованию API на практике см. в [*руководстве по созданию кода для клиентского приложения*](tutorial-code.md). 
 
