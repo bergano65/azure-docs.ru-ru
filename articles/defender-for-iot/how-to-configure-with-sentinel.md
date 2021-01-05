@@ -1,5 +1,5 @@
 ---
-title: Настройка Sentinel Azure для защитника для Интернета вещей (Предварительная версия)
+title: Настройка Sentinel Azure для защитника для Интернета вещей
 description: В этой статье объясняется, как настроить метку Azure для получения данных из вашего защитника для решения IoT.
 services: defender-for-iot
 ms.service: defender-for-iot
@@ -10,19 +10,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/16/2020
+ms.date: 12/28/2020
 ms.author: shhazam
-ms.openlocfilehash: c033f6fc6f3fc40005d98bd48832c15792d6f484
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: d4686f1d7192d1469e52e653185f1fc9389764de
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629091"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97832324"
 ---
-# <a name="connect-your-data-from-defender-for-iot-to-azure-sentinel-preview"></a>Подключение данных из защитника для Интернета вещей к Azure Sentinel (Предварительная версия)
-
-> [!IMPORTANT]
-> В настоящее время в общедоступной предварительной версии соединитель данных защитника для Интернета вещей находится в режиме " Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="connect-your-data-from-defender-for-iot-to-azure-sentinel"></a>Подключение данных из защитника к Azure для Интернета вещей с помощью Sentinel 
 
 Используйте соединитель защитник для IoT для потоковой передачи всех событий вашего защитника в Azure Sentinel. 
 

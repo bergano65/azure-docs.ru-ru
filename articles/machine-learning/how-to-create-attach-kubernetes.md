@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: e773c2db9c7849dd9680f8ae0c600405f422d7e1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6400d3f3c721619551ba3989a2e5799b72ff9f38
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463188"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831930"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
 
@@ -281,6 +281,78 @@ az ml computetarget attach aks -n myaks -i aksresourceid -g myresourcegroup -w m
 
 ---
 
+## <a name="create-or-attach-an-aks-cluster-with-tls-termination"></a>Создание или подключение кластера AKS с завершением TLS
+При [создании или присоединении кластера AKS](how-to-create-attach-kubernetes.md)можно включить завершение TLS с помощью объектов конфигурации **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** и **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** . Оба метода возвращают объект конфигурации, имеющий метод **enable_ssl** , и для включения TLS можно использовать метод **enable_ssl** .
+
+В следующем примере показано, как включить завершение TLS с автоматическим созданием и настройкой сертификата TLS с помощью сертификата Майкрософт.
+```python
+   from azureml.core.compute import AksCompute, ComputeTarget
+   
+   # Enable TLS termination when you create an AKS cluster by using provisioning_config object enable_ssl method
+
+   # Leaf domain label generates a name using the formula
+   # "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
+   # where "######" is a random series of characters
+   provisioning_config.enable_ssl(leaf_domain_label = "contoso")
+   
+   # Enable TLS termination when you attach an AKS cluster by using attach_config object enable_ssl method
+
+   # Leaf domain label generates a name using the formula
+   # "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
+   # where "######" is a random series of characters
+   attach_config.enable_ssl(leaf_domain_label = "contoso")
+
+
+```
+В следующем примере показано, как включить завершение TLS с пользовательским сертификатом и пользовательским именем домена. При использовании личного домена и сертификата необходимо обновить запись DNS, чтобы она указывала на IP-адрес конечной точки оценки, см. статью [обновление DNS](how-to-secure-web-service.md#update-your-dns) .
+
+```python
+   from azureml.core.compute import AksCompute, ComputeTarget
+
+   # Enable TLS termination with custom certificate and custom domain when creating an AKS cluster
+   
+   provisioning_config.enable_ssl(ssl_cert_pem_file="cert.pem",
+                                        ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+    
+   # Enable TLS termination with custom certificate and custom domain when attaching an AKS cluster
+
+   attach_config.enable_ssl(ssl_cert_pem_file="cert.pem",
+                                        ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+
+
+```
+>[!NOTE]
+> Дополнительные сведения о защите развертывания моделей в кластере AKS см. [в статье Использование TLS для защиты веб-службы с помощью машинное обучение Azure](how-to-secure-web-service.md)
+
+## <a name="create-or-attach-an-aks-cluster-to-use-internal-load-balancer-with-private-ip"></a>Создание или подключение кластера AKS для использования внутренних Load Balancer с частным IP-адресом
+При создании или присоединении кластера AKS можно настроить использование внутреннего Load Balancer в кластере. При внутреннем Load Balancer конечные точки оценки для развертываний в AKS будут использовать частный IP-адрес в виртуальной сети. В следующих фрагментах кода показано, как настроить внутреннее Load Balancer для кластера AKS.
+```python
+   
+   from azureml.core.compute.aks import AksUpdateConfiguration
+   from azureml.core.compute import AksCompute, ComputeTarget
+   
+   # When you create an AKS cluster, you can specify Internal Load Balancer to be created with provisioning_config object
+   provisioning_config = AksCompute.provisioning_configuration(load_balancer_type = 'InternalLoadBalancer')
+
+   # when you attach an AKS cluster, you can update the cluster to use internal load balancer after attach
+   aks_target = AksCompute(ws,"myaks")
+
+   # Change to the name of the subnet that contains AKS
+   subnet_name = "default"
+   # Update AKS configuration to use an internal load balancer
+   update_config = AksUpdateConfiguration(None, "InternalLoadBalancer", subnet_name)
+   aks_target.update(update_config)
+   # Wait for the operation to complete
+   aks_target.wait_for_completion(show_output = True)
+   
+   
+```
+>[!IMPORTANT]
+> Машинное обучение Azure не поддерживает завершение TLS с внутренними Load Balancer. Внутренний Load Balancer имеет частный IP-адрес, а частный IP-адрес может быть в другой сети, и сертификат может быть рекусед. 
+
+>[!NOTE]
+> Дополнительные сведения о том, как обеспечить безопасность окружения, см. в статье [защита машинное обучение Azure в окружении](how-to-secure-inferencing-vnet.md)
+
 ## <a name="detach-an-aks-cluster"></a>Отсоединение кластера AKS
 
 Чтобы отключить кластер из рабочей области, используйте один из следующих методов.
@@ -305,6 +377,52 @@ az ml computetarget detach -n myaks -g myresourcegroup -w myworkspace
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
 В Машинное обучение Azure Studio выберите __вычисления__, __кластеры вывода__ и кластер, который нужно удалить. Используйте ссылку __отсоединить__ , чтобы отсоединить кластер.
+
+---
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+### <a name="update-the-cluster"></a>Обновление кластера
+
+Обновления компонентов Машинное обучение Azure, установленных в кластере службы Azure Kubernetes, необходимо применять вручную. 
+
+Эти обновления можно применить, отсоединив кластер от рабочей области Машинное обучение Azure, а затем повторно присоединив кластер к рабочей области. Если в кластере включен протокол TLS, то при повторном присоединении кластера необходимо предоставить сертификат TLS/SSL и закрытый ключ. 
+
+```python
+compute_target = ComputeTarget(workspace=ws, name=clusterWorkspaceName)
+compute_target.detach()
+compute_target.wait_for_completion(show_output=True)
+
+attach_config = AksCompute.attach_configuration(resource_group=resourceGroup, cluster_name=kubernetesClusterName)
+
+## If SSL is enabled.
+attach_config.enable_ssl(
+    ssl_cert_pem_file="cert.pem",
+    ssl_key_pem_file="key.pem",
+    ssl_cname=sslCname)
+
+attach_config.validate_configuration()
+
+compute_target = ComputeTarget.attach(workspace=ws, name=args.clusterWorkspaceName, attach_configuration=attach_config)
+compute_target.wait_for_completion(show_output=True)
+```
+
+Если у вас больше нет сертификата TLS/SSL и закрытого ключа или вы используете сертификат, созданный Машинное обучение Azure, вы можете получить файлы до отключения кластера, подключившись к кластеру с помощью `kubectl` и извлекая секретный код `azuremlfessl` .
+
+```bash
+kubectl get secret/azuremlfessl -o yaml
+```
+
+>[!Note]
+>Kubernetes сохраняет секреты в формате в кодировке Base-64. Необходимо сначала декодировать компоненты и для этих секретов в Base-64, `cert.pem` `key.pem` прежде чем предоставлять их в `attach_config.enable_ssl` . 
+
+### <a name="webservice-failures"></a>Сбои WebService
+
+Многие сбои WebService в AKS можно отладить, подключившись к кластеру с помощью `kubectl` . Вы можете получить `kubeconfig.json` для кластера AKS, выполнив
+
+```azurecli-interactive
+az aks get-credentials -g <rg> -n <aks cluster name>
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

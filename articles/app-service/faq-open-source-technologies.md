@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 512776f2498a88f1fda9b5e7f0e2db0ddd32b955
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36dfbf0fda060a8f273fee64098d6234b575088c
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962334"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831845"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
@@ -169,9 +169,9 @@ The process cannot access the file because it is being used by another process.
 
 ## <a name="where-do-i-find-the-log-files-for-jetty"></a>Где найти файлы журналов для Jetty?
 
-Файл журнала для развертываний Microsoft Azure Marketplace и пользовательских развертываний расположен в папке D:\home\site\wwwroot\bin\jetty-distribution-9.1.2.v20140210\logs. Обратите внимание, что расположение папки зависит от используемой версии Jetty. Например, приведенный выше путь предназначен для Jetty версии 9.1.2. Найдите файл jetty_*ГГГГ_ММ_ДД*.stderrout.log.
+Файл журнала для развертываний Microsoft Azure Marketplace и пользовательских развертываний расположен в папке D:\home\site\wwwroot\bin\jetty-distribution-9.1.2.v20140210\logs. Обратите внимание, что расположение папки зависит от используемой версии Jetty. Например, приведенный выше путь предназначен для Jetty версии 9.1.2. Найдите файл jetty_ *ГГГГ_ММ_ДД*.stderrout.log.
 
-Файл журнала для развертываний из меню "Параметры приложения" портала находится в папке D:\home\LogFiles. Найдите jetty_*YYYY_MM_DD*. stderr. log
+Файл журнала для развертываний из меню "Параметры приложения" портала находится в папке D:\home\LogFiles. Найдите jetty_ *YYYY_MM_DD*. stderr. log
 
 ## <a name="can-i-send-email-from-my-azure-web-app"></a>Можно ли отправлять электронные сообщения из веб-приложения Azure?
 
@@ -181,24 +181,24 @@ The process cannot access the file because it is being used by another process.
 
 Если вы недавно перенесли свои ресурсы в Azure, WordPress может перенаправлять на старый URL-адрес домена. Это вызвано конфигурацией базы данных MySQL.
 
-WordPress Buddy+ — это расширение сайта Azure, с помощью которого можно обновить URL-адрес перенаправления непосредственно в базе данных. Дополнительные сведения об использовании WordPress Buddy+ см. в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
+WordPress Buddy+ — это расширение сайта Azure, с помощью которого можно обновить URL-адрес перенаправления непосредственно в базе данных. Дополнительные сведения об использовании WordPress Buddy+ см. в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
 
 Кроме того, если вы предпочитаете вручную обновить URL-адрес перенаправления с помощью SQL-запросов или PHPMyAdmin, см. запись блога [WordPress: Redirecting to wrong URL](/archive/blogs/azureossds/wordpress-redirecting-to-wrong-url) (WordPress: перенаправление на неправильный URL-адрес).
 
 ## <a name="how-do-i-change-my-wordpress-sign-in-password"></a>Как изменить пароль для входа в WordPress?
 
-Если вы забыли пароль для входа в WordPress, его можно обновить с помощью WordPress Buddy+. Чтобы сбросить пароль, установите расширение сайта Azure WordPress Buddy+, а затем выполните действия, описанные в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
+Если вы забыли пароль для входа в WordPress, его можно обновить с помощью WordPress Buddy+. Чтобы сбросить пароль, установите расширение сайта Azure WordPress Buddy+, а затем выполните действия, описанные в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
 
 ## <a name="i-cant-sign-in-to-wordpress-how-do-i-resolve-this"></a>Не удается войти в WordPress. Как решить эту проблему?
 
-Если вы не можете войти в WordPress после установки подключаемого модуля, возможно, вы установили не тот модуль. WordPress Buddy+ — это расширение сайта Azure, с помощью которого можно отключить подключаемые модули в WordPress. Дополнительные сведения см. в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
+Если вы не можете войти в WordPress после установки подключаемого модуля, возможно, вы установили не тот модуль. WordPress Buddy+ — это расширение сайта Azure, с помощью которого можно отключить подключаемые модули в WordPress. Дополнительные сведения см. в записи блога [WordPress tools and MySQL migration with WordPress Buddy+](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows) (Средства WordPress и перенос базы данных MySQL с помощью WordPress Buddy+).
 
 ## <a name="how-do-i-migrate-my-wordpress-database"></a>Как перенести базу данных WordPress?
 
 Базу данных MySQL, подключенную к веб-сайту WordPress, можно перенести несколькими способами:
 
 * с помощью [командной строки или PHPMyAdmin](/archive/blogs/azureossds/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service) (для разработчиков);
-* с помощью [WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) (остальные пользователи).
+* с помощью [WordPress Buddy+](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows) (остальные пользователи).
 
 ## <a name="how-do-i-help-make-wordpress-more-secure"></a>Как повысить уровень защиты WordPress?
 

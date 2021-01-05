@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 4f6d9f670a1b85e55ccc8f6cb18645b92927221a
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 132c21588df2f2180ddd973d208eb95ea6657e7d
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351645"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97832460"
 ---
 # <a name="azure-defender-for-iot-edge-security-module"></a>Модуль безопасности защитника Azure для IoT Edge
 
@@ -60,6 +60,6 @@ ms.locfileid: "96351645"
 
 - Развертывание [модуля безопасности для IOT Edge](how-to-deploy-edge.md)
 - Узнайте, как [настроить модуль безопасности](how-to-agent-configuration.md)
-- Проверка [предварительных требований для службы](service-prerequisites.md) IOT
+- Обзор защитника для [защитника IOT для горизонта IOT](resources-manage-proprietary-protocols.md)
 - Узнайте, как [включить защитник для службы IOT в центре Интернета вещей](quickstart-onboard-iot-hub.md)
 - Дополнительные сведения о службе из [защитника для Интернета вещей: вопросы и ответы](resources-frequently-asked-questions.md)

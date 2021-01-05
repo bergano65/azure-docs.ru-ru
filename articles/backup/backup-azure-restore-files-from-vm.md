@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как восста
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: 4d34fc48e5d16275d0225a1cef4b5fa63f0b66d6
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: b4bd64fb00c2f341e474ecb96738fab47d717474
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511660"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831675"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -118,6 +118,7 @@ Azure Backup предоставляет возможность восстано�
 | --------------- | ---- |
 | bash | 4 и выше |
 | python | 2.6.6 и выше  |
+| .NET | 4.6.2 и выше |
 | TLS | Должна поддерживаться версия 1.2  |
 
 ## <a name="step-4-access-requirements-to-successfully-run-the-script"></a>Шаг 4. требования к доступу для успешного выполнения скрипта

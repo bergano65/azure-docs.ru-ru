@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/10/2020
 ms.author: duau
-ms.openlocfilehash: cc844059d14a182db11e18f95e676b38762f6a0d
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: dab480012ced3a8fc50fd5f4295272c0eccc4307
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561653"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831862"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -134,7 +134,7 @@ ms.locfileid: "97561653"
 | **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Атланта, то есть, Чикаго, Далласе, Денвер, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, САР, Лас-деньги, Лондон, London2, Лос-Анджелес, Мельбурн, Майами, Монреаль, Нью-Йорк, Москва, Перт, Квебек, штат San Сан Антонио, Сиэтл, Silicon впадина, Сингапур, Сингапур 2, ставанжер, Стокгольм, Сидней, Sydney2, Токио, Tokyo2 |
 | **[MTN](https://www.mtnbusiness.co.za/en/Cloud-Solutions/Pages/microsoft-express-route.aspx)** |Поддерживается |Поддерживается |London |
 | **[Neutrona Networks](https://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживается |Поддерживается |Даллас, Лос-Анджелес, Майами, Сан-Паулу, Вашингтон (округ Колумбия) |
-| **[Next Generation Data](https://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Поддерживается |Поддерживается |Ньюпорт (Уэльс) |
+| **[Next Generation Data](https://vantage-dc-cardiff.co.uk/)** |Поддерживается |Поддерживается |Ньюпорт (Уэльс) |
 | **[NEXTDC](https://www.nextdc.com/services/axon-ethernet/microsoft-expressroute)** |Поддерживается |Поддерживается |Мельбурн, Перт, Сидней, Сидней 2 |
 | **[Нумерация](https://www.nos.pt/empresas/corporate/cloud/cloud/Pages/nos-cloud-connect.aspx)** |Поддерживается |Поддерживается |Амстердам 2 |
 | **[NTT Communications](https://www.ntt.com/en/services/network/virtual-private-network.html)** |Поддерживается |Поддерживается |Амстердам, Гонконг (САР), Лондон, Лос-Анджелес, Осака, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
@@ -147,7 +147,7 @@ ms.locfileid: "97561653"
 | **[Orixcom](https://www.orixcom.com/cloud-solutions/)** | Поддерживается | Поддерживается | Дубаи 2 |
 | **[PacketFabric](https://www.packetfabric.com/cloud-connectivity/microsoft-azure)** |Поддерживается |Поддерживается |Чикаго, Лас — деньги, полупроводниковый округ, Вашингтон (округ Колумбия) |
 | **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Поддерживается |Поддерживается |Чикаго, Гонконг, Гонконг 2, Лондон, Сингапур 2 |
-| **[ретелит](https://www.retelit.it/en/services/enterprises-and-public-sector/data-center-e-cloud/cloud-services/direct-cloud-4-azure-expressroute.aspx)** | Поддерживается | Поддерживается | Milan | 
+| **[ретелит](https://www.retelit.it/EN/Home.aspx)** | Поддерживается | Поддерживается | Milan | 
 | **[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)** |Поддерживается |Поддерживается |Сеул |
 | **[SES](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)** | Поддерживается |Поддерживается | London2, Вашингтон (округ Колумбия) |
 | **[SIFY](http://telecom.sify.com/azure-expressroute.html)** |Поддерживается |Поддерживается |Ченнаи, Мумбаи 2 |
