@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/27/2020
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: cc0dd5e76227c0814659b74afc2ac46c8ca4de73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a51cd242eb26709464aa502938cd04807aea721
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87102951"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97805655"
 ---
 ## <a name="common-scenarios"></a>Распространенные сценарии
 В следующих сценариях существенно повышается эффективность разбивки на пакеты.
@@ -47,7 +47,7 @@ ms.locfileid: "87102951"
     - Подготовлено МБ/с: 25
     - Макс. МБ/с: 170 
 - Диски данных с 2 P10 
-    - Подготовлено МБ/с: 25
+    - Подготовлено МБ/с: 100
     - Макс. МБ/с: 170
 
  Когда виртуальная машина загрузится, она извлечет данные с диска операционной системы. Так как диск ОС является частью виртуальной машины, на которой выполняется начало работы, диск ОС будет заполнен пакетами. Эти кредиты допускают запуск диска ОС в 170 МБ/с, как показано ниже:

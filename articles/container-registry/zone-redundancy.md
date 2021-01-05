@@ -3,12 +3,12 @@ title: Реестр, избыточный в зонах, для обеспече
 description: Сведения о включении избыточности зоны в реестре контейнеров Azure путем создания реестра контейнеров или репликации в зоне доступности Azure. Избыточность зоны — это функция уровня служб Premium.
 ms.topic: article
 ms.date: 12/11/2020
-ms.openlocfilehash: f94d5a8d61c42e8833e21f035303be173c81764d
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 1553beef47a3d493f066e47cd39751093d83fc24
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681816"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803516"
 ---
 # <a name="enable-zone-redundancy-in-azure-container-registry-for-resiliency-and-high-availability"></a>Включение избыточности зоны в реестре контейнеров Azure для обеспечения устойчивости и высокой доступности
 
@@ -25,7 +25,6 @@ ms.locfileid: "97681816"
 * Избыточность зоны не может быть отключена в регионе.
 * [Задачи записи контроля](container-registry-tasks-overview.md) доступа пока не поддерживают зоны доступности.
 * В настоящее время поддерживается с помощью шаблонов Azure Resource Manager или портал Azure. Поддержка Azure CLI будет включена в следующем выпуске.
-* В настоящее время при перемещении реестра контейнеров, избыточного в рамках зоны, в другую группу ресурсов параметр избыточности зоны отображается как `Disabled` .
 
 ## <a name="about-zone-redundancy"></a>Сведения о избыточности зоны
 
@@ -58,7 +57,7 @@ ms.locfileid: "97681816"
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-При необходимости выполните команду [AZ Group Create](/cli/az/group#az_group_create) , чтобы создать группу ресурсов для реестра в регионе, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure, например *eastus*.
+При необходимости выполните команду [AZ Group Create](/cli/azure/group) , чтобы создать группу ресурсов для реестра в регионе, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure, например *eastus*.
 
 ```azurecli
 az group create --name <resource-group-name> --location <location>
@@ -164,7 +163,7 @@ az group create --name <resource-group-name> --location <location>
   }
 ```
 
-Выполните следующую команду [AZ Deployment Group Create](/cli/az/deployment#az_group_deployment_create) , чтобы создать реестр с помощью предыдущего файла шаблона. Где указано, укажите:
+Выполните следующую команду [AZ Deployment Group Create](/cli/azure/deployment?view=azure-cli-latest) , чтобы создать реестр с помощью предыдущего файла шаблона. Где указано, укажите:
 
 * уникальное имя реестра или развертывание шаблона без параметров, а также создание уникального имени
 * расположение реплики, которая поддерживает зоны доступности, например *westus2*

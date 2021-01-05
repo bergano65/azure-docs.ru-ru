@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 1b17729437b238b98f60e2cd97664fa6aafcccd4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b3ba007f03b3aa4883d9455dc43b2bc19676da59
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462451"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803975"
 ---
 # <a name="how-to-certify-iot-plug-and-play-devices"></a>Сертификация устройств Plug and Play IoT
 
@@ -41,7 +41,7 @@ ms.locfileid: "96462451"
 - Подключается к центру Интернета вещей Azure с помощью [DPS](../iot-dps/about-iot-dps.md).
 - Реализация телеметрии, свойств или команд, следующих за соглашением Plug and Play IoT.
 - Опишите взаимодействие устройств с моделью [дтдл v2](https://aka.ms/dtdl) .
-- Опубликуйте модель и все необходимые интерфейсы в [репозитории общедоступной модели Azure IOT](https://devicemodels.azureiotsolutions.com/) .
+- Опубликуйте модель и все необходимые интерфейсы в репозитории общедоступной модели Azure IoT.
 - Отправьте идентификатор модели во время [регистрации DPS](./concepts-developer-guide-device.md#dps-payload) в полезных данных подготовки DPS.
 - Объявите идентификатор модели во время [подключения MQTT](./concepts-developer-guide-device.md#model-id-announcement).
 - Все модели устройств должны быть совместимы с [Azure IOT Central](../iot-central/core/overview-iot-central-developer.md).
@@ -174,7 +174,7 @@ az iot product test task create --type QueueTestRun --test-id d45d53d9-656d-4be7
 
 Чтобы использовать [портал сертификации](https://aka.ms/acdp), необходимо использовать Azure Active Directory из рабочего или учебного клиента.
 
-Чтобы опубликовать модели в хранилище общедоступных моделей Azure IoT, ваша учетная запись должна быть членом [Microsoft Partner Network](https://partner.microsoft.com). Система проверяет, что идентификатор Microsoft Partner Network существует и учетная запись полностью проверены перед публикацией в каталоге устройств.
+Чтобы опубликовать модели в [хранилище общедоступных моделей Azure IOT](https://github.com/Azure/iot-plugandplay-models), ваша учетная запись должна быть членом [Microsoft Partner Network](https://partner.microsoft.com). Система проверяет, что идентификатор Microsoft Partner Network существует и учетная запись полностью проверены перед публикацией в каталоге устройств.
 
 ### <a name="company-profile"></a>Профиль организации
 

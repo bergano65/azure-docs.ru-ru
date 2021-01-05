@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 12/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: aaaeb23ef24f0d8a0fa4b38139fed57cda6fa63d
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 93b6160b495b609e23e10b3f709d130792067423
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657045"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803788"
 ---
 # <a name="it-service-management-connector-overview"></a>Обзор Соединитель управления ИТ-услугами
 
@@ -43,13 +43,11 @@ ms.locfileid: "97657045"
 
 Вы можете начать использовать ITSMC, выполнив следующие действия.
 
-1. [Подключение продуктов и служб ITSM с помощью Соединитель управления ИТ-услугами.](./itsmc-connections.md)
-1. [Добавьте ITSMC.](/.itsmc-definition.md#add-it-service-management-connector)
-1. [Создайте подключение ITSM.](./itsmc-definition.md#create-an-itsm-connection)
-1. [Используйте соединение.](./itsmc-definition.md#use-itsmc)
+1. [Настройте среду ITSM, чтобы принимать оповещения из Azure.](./itsmc-connections.md)
+1. [Настройка решения Azure ITSM](./itsmc-definition.md#add-it-service-management-connector)
+1. [Настройте соединитель Azure ITSM для среды ITSM.](./itsmc-definition.md#create-an-itsm-connection)
+1. [Настройте группу действий, чтобы использовать соединитель ITSM.](./itsmc-definition.md#use-itsmc)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Добавление продуктов и служб ITSM в соединитель управления ИТ-услугами](./itsmc-connections.md) 
- [Добавить соединитель ITSM](./itsmc-definition.md) 
- [Устранение неполадок в соединитель ITSM](./itsmc-resync-servicenow.md)
+* [Устранение неполадок с соединителем ITSM](./itsmc-resync-servicenow.md)

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: bc6b7553d240de05404d24f828a5f7db14772f93
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 279a00a6146d756e6a518dbf86b88f471d170b3a
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657507"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97805669"
 ---
 ## <a name="what-is-a-replication-task"></a>Что такое задача репликации?
 
@@ -22,11 +22,11 @@ ms.locfileid: "97657507"
 
 Задачи репликации обычно не имеют состояния. Это означает, что они не имеют общего состояния или другие побочные эффекты в последовательных или параллельных выполнениях задачи. Это также справедливо для пакетной обработки и объединения цепочек, которые могут быть реализованы поверх существующего состояния потока. 
 
-Это делает задачи репликации отличными от статистических задач, которые обычно имеют состояние, а также представляют собой доменные платформы и службы аналитики, такие как [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-introduction.md).
+Это делает задачи репликации отличными от статистических задач, которые обычно имеют состояние, а также представляют собой доменные платформы и службы аналитики, такие как [Azure Stream Analytics](/azure/stream-analytics/stream-analytics-introduction).
 
 ## <a name="replication-applications-and-tasks-in-azure-functions"></a>Приложения и задачи репликации в функциях Azure
 
-В функциях Azure задача репликации реализуется с помощью [триггера](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings.md) , который получает одно или несколько входных сообщений из настроенного источника и [выходную привязку](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings.md#binding-direction) , которая перенаправляет сообщения, скопированные из источника в настроенный целевой объект. 
+В функциях Azure задача репликации реализуется с помощью [триггера](/azure/azure-functions/functions-triggers-bindings) , который получает одно или несколько входных сообщений из настроенного источника и [выходную привязку](/azure/azure-functions/functions-triggers-bindings#binding-direction) , которая перенаправляет сообщения, скопированные из источника в настроенный целевой объект. 
 
 | Триггер  | Выходные данные |
 |----------|--------|
@@ -57,17 +57,17 @@ ms.locfileid: "97657507"
 
 ### <a name="retry-policy"></a>Политика повтора
 
-Чтобы избежать потери данных во время события доступности с обеих сторон функции репликации, необходимо настроить политику повтора, чтобы она была надежной. Дополнительные сведения о настройке политики повторных попыток см. в [документации по функциям Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md) . 
+Чтобы избежать потери данных во время события доступности с обеих сторон функции репликации, необходимо настроить политику повтора, чтобы она была надежной. Дополнительные сведения о настройке политики повторных попыток см. в [документации по функциям Azure](/azure/azure-functions/functions-bindings-error-pages) . 
 
 Параметры политики, выбранные для проектов примера в примере [репозитория](https://github.com/Azure-Samples/azure-messaging-replication-dotnet) , настраивают стратегию экспоненциальной задержки с интервалами повтора от 5 секунд до 15 минут с бесконечными повторными попытками, чтобы избежать потери данных. 
 
-Для служебной шины ознакомьтесь с разделом ["использование поддержки повторов на основе устойчивости триггеров"](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md#using-retry-support-on-top-of-trigger-resilience) , чтобы понять взаимодействие триггеров и максимальное число доставок, определенное для очереди.
+Для служебной шины ознакомьтесь с разделом ["использование поддержки повторов на основе устойчивости триггеров"](/azure/azure-functions/functions-bindings-error-pages#using-retry-support-on-top-of-trigger-resilience) , чтобы понять взаимодействие триггеров и максимальное число доставок, определенное для очереди.
 
 ### <a name="setting-up-a-replication-application-host"></a>Настройка узла приложения репликации
 
 Приложение репликации — это узел выполнения для одной или нескольких задач репликации. 
 
-Это приложение функций Azure, которое настроено для запуска либо в плане потребления, либо (рекомендуется) для плана функций Azure Premium. Все приложения репликации должны выполняться с [управляемым удостоверением, назначенным системой или пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity.md). 
+Это приложение функций Azure, которое настроено для запуска либо в плане потребления, либо (рекомендуется) для плана функций Azure Premium. Все приложения репликации должны выполняться с [управляемым удостоверением, назначенным системой или пользователем](/azure/app-service/overview-managed-identity). 
 
 Связанные шаблоны Azure Resource Manager (ARM) создают и настраивают приложение репликации с помощью:
 
@@ -122,12 +122,12 @@ public static Task JobsTransfer(
 | Источник      | Назначение      | Точка входа 
 |-------------|-------------|------------------------------------------------------------------------
 | Концентратор событий   | Концентратор событий   | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToEventHub`
-| Концентратор событий   | Cлужебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
-| Cлужебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
-| Cлужебная шина | Cлужебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
+| Концентратор событий   | Служебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
+| Служебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
+| Служебная шина | Служебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
 
 
-### <a name="monitoring"></a>Наблюдение
+### <a name="monitoring"></a>Мониторинг
 
 Дополнительные сведения о мониторинге приложения репликации см. в [разделе "Мониторинг](https://docs.microsoft.com/azure/azure-functions/configure-monitoring) " в документации по функциям Azure.
 
@@ -137,7 +137,7 @@ public static Task JobsTransfer(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Развертывания функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-deployment-technologies.md)
-* [Диагностика функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-diagnostics.md)
-* [Параметры сети функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-networking-options.md)
-* [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview.md)
+* [Развертывания функций Azure](/azure/azure-functions/functions-deployment-technologies)
+* [Диагностика функций Azure](/azure/azure-functions/functions-diagnostics)
+* [Параметры сети функций Azure](/azure/azure-functions/functions-networking-options)
+* [Azure Application Insights](/azure/azure-monitor/app/app-insights-overview)

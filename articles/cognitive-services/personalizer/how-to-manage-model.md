@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: f82adad5273f1c5559cbeb1924f59e57c863f6b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48e954eab9da5dfc638f93a7c4e55c675c4f2ac9
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91303460"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797253"
 ---
 # <a name="how-to-manage-model-and-learning-settings"></a>Управление параметрами модели и обучения
 
@@ -53,6 +53,6 @@ ms.locfileid: "91303460"
 1. Выберите **модель и параметры обучения** в разделе **Управление ресурсами** .
 1. Для параметра **Импорт параметров обучения** нажмите кнопку **Экспорт параметров обучения** . `json`Файл будет сохранен на локальном компьютере.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Узнайте, как управлять политикой обучения](how-to-manage-model.md)
+[Анализ цикла обучения с помощью автономной оценки](how-to-offline-evaluation.md)

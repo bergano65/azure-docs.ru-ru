@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/20/2020
+ms.date: 12/28/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: d435ced4c8ec56fae5081ede367b593d2b66ef0f
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 8812ab091037bcb3144a7fed53a449c3f5de353a
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936545"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802513"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)
 
@@ -112,7 +112,7 @@ SAS учетной записи защищен с помощью ключа уч
 
 Клиентские приложения предоставляют URI SAS в хранилище Azure как часть запроса. Затем служба проверяет параметры SAS и подпись, чтобы убедиться, что она действительна. Если служба подтверждает эту подпись, выполнение запроса разрешается. В противном случае запрос отклоняется и происходит ошибка с кодом 403 (запрещено).
 
-Ниже приведен пример URI SAS службы, в котором показаны URI ресурса и токен SAS.
+Ниже приведен пример URI-кода SAS службы, в котором показаны URI ресурса и маркер SAS. Так как маркер SAS состоит из строки запроса URI, необходимо сначала указать URI ресурса, а затем — маркер SAS:
 
 ![Компоненты URI SAS службы](./media/storage-sas-overview/sas-storage-uri.png)
 

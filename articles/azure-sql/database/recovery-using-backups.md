@@ -12,17 +12,17 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein, danil
 ms.date: 11/13/2020
-ms.openlocfilehash: 138cd03989008aa4fbd7d6ca3e06aff94fa76e33
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: a70571dcf380fc2186565a40778991ac70a218d6
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989485"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797219"
 ---
 # <a name="recover-using-automated-database-backups---azure-sql-database--sql-managed-instance"></a>Восстановление с помощью автоматически создаваемых резервных копий базы данных SQL Azure & SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-Для восстановления базы данных доступны следующие параметры с помощью автоматически создаваемых [резервных копий базы данных](automated-backups-overview.md). Вы можете:
+Для восстановления базы данных доступны следующие параметры с помощью автоматически создаваемых [резервных копий базы данных](automated-backups-overview.md). Вы можете выполнить следующие действия:
 
 - Создайте новую базу данных на том же сервере, восстановленную до указанной точки во времени в течение срока хранения.
 - Создайте базу данных на том же сервере, восстановленную до времени удаления для удаленной базы данных.
@@ -95,7 +95,7 @@ ms.locfileid: "94989485"
   ![Снимок экрана параметров восстановления базы данных для управляемого экземпляра SQL.](./media/recovery-using-backups/pitr-backup-managed-instance-annotated.png)
 
 > [!TIP]
-> Сведения о программном восстановлении базы данных из резервной копии см. в разделе [программное выполнение восстановления с помощью автоматических резервных копий](recovery-using-backups.md)
+> Сведения о программном восстановлении базы данных из резервной копии см. в статье [программное восстановление с помощью автоматических резервных копий](recovery-using-backups.md)
 
 ## <a name="deleted-database-restore"></a>Восстановление удаленной базы данных
 

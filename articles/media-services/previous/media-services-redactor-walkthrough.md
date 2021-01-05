@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: ril
 ms.reviewer: juliako
-ms.openlocfilehash: 1a106874277f64a006584f9deb98fb9729263b1b
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 048635a33c3d84416dae00b731b386572aa3f89d
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040710"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802581"
 ---
 # <a name="redact-faces-with-azure-media-analytics-walkthrough"></a>Пошаговое руководство скрытия лиц с помощью аналитики мультимедиа Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "93040710"
 
 ## <a name="overview"></a>Обзор
 
-**Редактор мультимедиа Azure**  — это обработчик [медиа-аналитики Azure](./legacy-components.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом](https://azure.microsoft.com/blog/azure-media-redactor/) блоге.
+**Редактор мультимедиа Azure** — это обработчик [медиа-аналитики Azure](./legacy-components.md) с возможностью масштабируемого скрытия лиц в облаке. Функция скрытия лиц позволяет изменять видео, размывая изображения лиц выбранных пользователей. Вы можете использовать функцию скрытия лиц в ситуациях, требующих соблюдения общественной безопасности, а также при работе с новостями. Редактирование короткого материала с несколькими лицами вручную может занять несколько часов, тогда как при использовании функции скрытия лиц достаточно выполнить несколько простых действий. Дополнительные сведения см. в [этом](https://azure.microsoft.com/blog/azure-media-redactor/) блоге.
 
 Подробные сведения о **Azure Media Redactor** см. в разделе [Скрытие лиц с помощью медиа-аналитики Azure](media-services-face-redaction.md).
 
@@ -103,7 +103,7 @@ ms.locfileid: "93040710"
 
 4. Запустите AzureMediaRedactor.exe. 
 
-### <a name="use-the-tool"></a>Использование средства
+### <a name="use-the-tool"></a>Работа со средством
 
 1. Обработайте видео в учетной записи служб мультимедиа Azure с помощью Redactor MP в режиме анализа. 
 2. Скачайте первоначальный видеофайл и выходные данные задания Redaction - Analyze. 
@@ -133,6 +133,6 @@ ms.locfileid: "93040710"
 ## <a name="related-links"></a>Связанные ссылки
 [Общие сведения об аналитике служб мультимедиа Azure](./legacy-components.md)
 
-[Демонстрационные материалы для медиааналитики Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html)
+[Демонстрационные материалы для медиааналитики Azure](http://amslabs.azurewebsites.net/demos/Analytics.html)
 
 [Announcing Face Redaction for Azure Media Analytics](https://azure.microsoft.com/blog/azure-media-redactor/) (Анонс функции скрытия лиц с помощью медиа-аналитики Azure)

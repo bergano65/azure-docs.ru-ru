@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 6f2c15518a12a99ca1390284165ad2d48156e06a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 9a53eb1004d68045781903b71d02c3416f494be2
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968678"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803822"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -209,11 +209,11 @@ ms.locfileid: "94968678"
 
 - Если вы используете автоматизацию для инициализации виртуальных машин из образов RHEL BYOS, необходимо указать параметры плана, аналогичные показанным в примерах команд. Например, если вы используете terraform, вы предоставляете сведения о плане в [блоке плана](https://www.terraform.io/docs/providers/azurerm/r/virtual_machine.html#plan).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о облачном доступе к Red Hat доступны в [документации по Red Hat в общедоступном облаке](https://access.redhat.com/public-cloud) .
 - Пошаговые руководства и сведения о программе для доступа к облаку см. в [документации по облачному доступу для Red Hat](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/index).
 - Дополнительные сведения о инфраструктуре обновления Red Hat см. в статье [инфраструктура обновления Red Hat для Azure](./redhat-rhui.md).
 - Дополнительные сведения о всех образах Red Hat в Azure см. на [странице документации](./redhat-images.md).
 - Сведения о политиках поддержки Red Hat для всех версий RHEL см. на странице [жизненного цикла Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata) .
-- Дополнительную документацию по образам RHEL Gold см. в [документации по Red Hat](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-gold-image-azure).
+- Дополнительную документацию по образам RHEL Gold см. в [документации по Red Hat](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/cloud-access-gold-images_cloud-access#proc_using-gold-images-azure_cloud-access).

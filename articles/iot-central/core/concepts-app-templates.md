@@ -3,16 +3,16 @@ title: Что такое шаблоны приложений в Azure IoT Centra
 description: Шаблоны приложений IoT Central Azure позволяют переходить к разработке решений IoT.
 author: philmea
 ms.author: philmea
-ms.date: 10/25/2019
+ms.date: 12/19/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: dae2461336316defb6f2cfc63b775c67cf2196d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27f054cb085e5064ffed0e75b77d53a1406b566e
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91813072"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797134"
 ---
 # <a name="what-are-application-templates"></a>Что представляют собой шаблоны приложений?
 
@@ -57,6 +57,6 @@ IoT Central Azure — это независимая от отрасли плат
 
 Шаблоны связаны с конкретными версиями приложения IoT Central. Версию приложения можно найти на странице [сведения о приложении](./howto-get-app-info.md) по ссылке **Справка** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знакомы с IoT Central шаблонами приложений, приступайте [к созданию IOT Central приложения](quick-deploy-iot-central.md).

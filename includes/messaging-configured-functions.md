@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 5070d1dc19995b635ebff6b98fec07e2b7d9fc70
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 9cc19548f0b969421974afe3e274fc5334590cb0
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97663711"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97805591"
 ---
 Функции Azure позволяют создавать задачи репликации, предназначенные только для конфигурации и направленные на предварительно созданную точку входа. [Примеры репликации на основе конфигурации для службы "функции Azure](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config) " иллюстрируют использование [готовых вспомогательных](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/src/Azure.Messaging.Replication) функций в коде или старайтесь не обрабатывать код и просто использовать конфигурацию.
 
@@ -212,15 +212,15 @@ ms.locfileid: "97663711"
 | Источник      | Назначение      | Точка входа 
 |-------------|-------------|------------------------------------------------------------------------
 | Концентратор событий   | Концентратор событий   | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToEventHub`
-| Концентратор событий   | Cлужебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
-| Cлужебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
-| Cлужебная шина | Cлужебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
+| Концентратор событий   | Служебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
+| Служебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
+| Служебная шина | Служебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
 
 ### <a name="retry-policy"></a>Политика повтора
 
-Дополнительные сведения о настройке политики повторных попыток см. в [документации по функциям Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md) . Параметры политики, выбранные во всех проектах в этом репозитории, настраивают стратегию экспоненциальной задержки с интервалами повтора от 5 секунд до 5 минут с бесконечными повторными попытками, чтобы избежать потери данных.
+Дополнительные сведения о настройке политики повторных попыток см. в [документации по функциям Azure](/azure/azure-functions/functions-bindings-error-pages) . Параметры политики, выбранные во всех проектах в этом репозитории, настраивают стратегию экспоненциальной задержки с интервалами повтора от 5 секунд до 5 минут с бесконечными повторными попытками, чтобы избежать потери данных.
 
-Для служебной шины ознакомьтесь с разделом ["использование поддержки повторов на основе устойчивости триггеров"](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md#using-retry-support-on-top-of-trigger-resilience) , чтобы понять взаимодействие триггеров и максимальное число доставок, определенное для очереди.
+Для служебной шины ознакомьтесь с разделом ["использование поддержки повторов на основе устойчивости триггеров"](/azure/azure-functions/functions-bindings-error-pages#using-retry-support-on-top-of-trigger-resilience) , чтобы понять взаимодействие триггеров и максимальное число доставок, определенное для очереди.
 
 ### <a name="build-deploy-and-configure"></a>Сборка, развертывание и настройка
 

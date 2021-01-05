@@ -2,13 +2,13 @@
 title: Событие завершения удаления пула пакетной службы Azure
 description: Справочник по событию завершения удаления пула пакетной службы. Это событие создается при завершении операции удаления пула.
 ms.topic: reference
-ms.date: 04/20/2017
-ms.openlocfilehash: f00d32fd5e4eb49fddf4975a9b64ce792d0226dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/28/2020
+ms.openlocfilehash: be6411a150ae6be424c0621eed768157154c7408
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85962464"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803737"
 ---
 # <a name="pool-delete-complete-event"></a>Событие завершения удаления пула
 
@@ -18,9 +18,9 @@ ms.locfileid: "85962464"
 
 ```
 {
-    "id": "myPool1",
-    "startTime": "2016-09-09T22:13:48.579Z",
-    "endTime": "2016-09-09T22:14:08.836Z"
+   "id": "myPool1",
+   "startTime": "2016-09-09T22:13:48.579Z",
+   "endTime": "2016-09-09T22:14:08.836Z"
 }
 ```
 
@@ -31,4 +31,5 @@ ms.locfileid: "85962464"
 |`endTime`|Дата и время|Время, когда удаление пула было завершено.|
 
 ## <a name="remarks"></a>Remarks
+
 Дополнительные сведения о состояниях и кодах ошибок для операции изменения размера пула см. в статье [Удаление пула из учетной записи](/rest/api/batchservice/delete-a-pool-from-an-account).

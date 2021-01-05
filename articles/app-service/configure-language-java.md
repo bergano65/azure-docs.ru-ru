@@ -10,12 +10,13 @@ ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18, devx-track-java, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: aa3329c3d9e241fb8224ecc69199779d53027474
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+adobe-target: true
+ms.openlocfilehash: 0334e259f75440cae25f1e165c0621c85f7c7705
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183147"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804009"
 ---
 # <a name="configure-a-java-app-for-azure-app-service"></a>Настройка приложения Java для Службы приложений Azure
 
@@ -25,7 +26,7 @@ ms.locfileid: "96183147"
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
-[Подключаемый модуль веб-приложения Azure для Maven](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) можно использовать для развертывания файлов. War или. jar. Развертывание с популярным IDE также поддерживается с [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/) или [Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse).
+[Подключаемый модуль веб-приложения Azure для Maven](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md) можно использовать для развертывания файлов. War или. jar. Развертывание с популярным IDE также поддерживается с [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/) или [Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse).
 
 В противном случае метод развертывания будет зависеть от типа вашего архива.
 

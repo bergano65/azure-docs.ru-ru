@@ -4,14 +4,14 @@ description: В этой статье представлен обзор Феде
 ms.topic: article
 ms.date: 12/12/2020
 ms.author: spelluru
-ms.openlocfilehash: 02057d505308902d780e20e095bc248d1eaa1a74
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 7deb6fe04241225f1f97a204cc62b4aefad9f440
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657462"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804043"
 ---
-# <a name="multi-site-and-multi-region-federation"></a>Федерация с несколькими сайтами и несколькими регионами
+# <a name="multi-site-and-multi-region-federation"></a>Федерация для нескольких сайтов и нескольких регионов
 
 Для многих сложных решений требуется, чтобы одни и те же потоки событий были доступны для потребления в нескольких местах, или для них требуется собирать потоки событий в нескольких расположениях, а затем консолидировать их в определенное место для использования. Также часто возникает необходимость в обогащении или сокращении потоков событий или преобразований форматов событий, а также в одном регионе и решении.
 
@@ -148,9 +148,9 @@ Azure Stream Analytics [интегрируется с концентратора
 
 Для приложений репликации с отслеживанием состояния, которые должны рассматривать отношения между событиями, создавать составные события, расширять события или сокращать события, создавать агрегаты данных и преобразовывать полезные данные событий, [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) является наилучшим вариантом реализации.
 
-В Azure Stream Analytics вы [создаете задания](../stream-analytics/stream-analytics-quick-create-portal.md) , которые объединяют [входные](../stream-analytics/stream-analytics-add-inputs.md) и [выходные](../stream-analytics/stream-analytics-define-outputs.md) данные и интегрируют их из входных данных с помощью [запросов](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference.md) , которые возвращают результат, который затем становится доступным для выходных данных.
+В Azure Stream Analytics вы [создаете задания](../stream-analytics/stream-analytics-quick-create-portal.md) , которые объединяют [входные](../stream-analytics/stream-analytics-add-inputs.md) и [выходные](../stream-analytics/stream-analytics-define-outputs.md) данные и интегрируют их из входных данных с помощью [запросов](/stream-analytics-query/stream-analytics-query-language-reference) , которые возвращают результат, который затем становится доступным для выходных данных.
 
-Запросы основаны на [языке SQL-запросов](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference.md) и могут использоваться для простого фильтрования, сортировки, агрегирования и объединения данных потоковой передачи за определенный период времени. Этот язык SQL также можно расширить с помощью [JavaScript](../stream-analytics/stream-analytics-javascript-user-defined-functions.md) и [определяемых пользователем функций (UDF) C#](../stream-analytics/stream-analytics-edge-csharp-udf-methods.md). Вы можете легко настроить параметры упорядочивания и продолжительность временных окон при осуществлении операций агрегирования с помощью простых языковых конструкций и (или) конфигураций.
+Запросы основаны на [языке SQL-запросов](/stream-analytics-query/stream-analytics-query-language-reference) и могут использоваться для простого фильтрования, сортировки, агрегирования и объединения данных потоковой передачи за определенный период времени. Этот язык SQL также можно расширить с помощью [JavaScript](../stream-analytics/stream-analytics-javascript-user-defined-functions.md) и [определяемых пользователем функций (UDF) C#](../stream-analytics/stream-analytics-edge-csharp-udf-methods.md). Вы можете легко настроить параметры упорядочивания и продолжительность временных окон при осуществлении операций агрегирования с помощью простых языковых конструкций и (или) конфигураций.
 
 Каждое задание поддерживает один или несколько потоков вывода преобразованных данных. Вы можете также настроить действия по результатам анализа информации. Например, администратор может сделать следующее:
 

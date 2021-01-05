@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 12/18/2020
 ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8e9841c71a6f5bc2e12887f41c62b43a17203a6
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: a9e1ae369560fcf8357e6016e1f7e2e438edd8c9
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107590"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803227"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архив сведений о новых возможностях в Azure Active Directory
 
@@ -32,6 +32,192 @@ ms.locfileid: "97107590"
 - Нерекомендуемые функции.
 - Планы по изменениям.
 
+---
+## <a name="june-2020"></a>июнь 2020 г. 
+
+### <a name="user-risk-condition-in-conditional-access-policy"></a>Условие риска пользователя в политике условного доступа
+
+**Тип.** Планирование изменений.  
+**Категория службы:** Условный доступ  
+**Возможности продукта.** Безопасность и защита удостоверений.
+ 
+
+Поддержка пользовательских рисков в политике условного доступа Azure AD позволяет создавать несколько политик на основе рисков. Для разных пользователей и приложений могут потребоваться разные уровни риска для пользователей. В зависимости от рисков пользователей можно создавать политики для блокирования доступа, требовать многофакторную проверку подлинности, защищенную смену пароля или перенаправлять Microsoft Cloud App Security для принудительного применения политики сеанса, например для дополнительного аудита.
+
+Условие риска пользователя требует Azure AD Premium P2, так как в нем используется защита идентификации Azure, которая является предложением P2. Дополнительные сведения об условном доступе см. в [документации по условному доступу Azure AD](../conditional-access/index.yml).
+
+---
+
+### <a name="saml-sso-now-supports-apps-that-require-spnamequalifier-to-be-set-when-requested"></a>Единый вход SAML теперь поддерживает приложения, требующие установки Спнамекуалифиер при запросе
+
+**Тип.** Исправление.  
+**Категория службы:** Корпоративные приложения  
+**Возможности продукта.** Единый вход.
+ 
+Для некоторых приложений SAML требуется, чтобы Спнамекуалифиер возвращался в субъекте утверждения по запросу. Теперь Azure AD правильно реагирует на запрос Спнамекуалифиер в политике NameID запросов. Это также работает для входа, инициированного поставщиком услуг, и IdP выполняет процедуру входа.  Дополнительные сведения о протоколе SAML в Azure Active Directory см. в разделе [протокол SAML Single Sign-On](../develop/single-sign-on-saml-protocol.md).
+
+---
+
+### <a name="azure-ad-b2b-collaboration-supports-inviting-msa-and-google-users-in-azure-government-tenants"></a>Служба совместной работы Azure AD B2B поддерживает приглашение пользователей MSA и Google в клиентах Azure для государственных организаций.
+
+**Тип.** Новая функция.  
+**Категория службы.** B2B.  
+**Возможности продукта.** B2B и B2C.
+ 
+
+Клиенты Azure для государственных организаций, использующие функции совместной работы B2B, теперь могут приглашать пользователей с учетной записью Microsoft или Google. Чтобы узнать, может ли клиент использовать эти возможности, следуйте инструкциям на странице [как узнать, доступна ли служба совместной работы B2B в моем клиенте Azure для государственных организаций США?](../external-identities/current-limitations.md#how-can-i-tell-if-b2b-collaboration-is-available-in-my-azure-us-government-tenant)
+
+ 
+---
+ 
+### <a name="user-object-in-ms-graph-v1-now-includes-externaluserstate-and-externaluserstatechangeddatetime-properties"></a>Объект User в MS Graph v1 теперь включает свойства Екстерналусерстате и Екстерналусерстатечанжеддатетиме
+
+**Тип.** Новая функция.  
+**Категория службы.** B2B.  
+**Возможности продукта.** B2B и B2C.
+ 
+
+Свойства Екстерналусерстате и Екстерналусерстатечанжеддатетиме можно использовать для поиска приглашенных гостей B2B, которые еще не приняли приглашения, а также автоматизации сборки, например удаления пользователей, которые не приняли приглашения через некоторое количество дней. Теперь эти свойства доступны в MS Graph v1. Рекомендации по использованию этих свойств см. в разделе [тип ресурса пользователя](/graph/api/resources/user).
+ 
+---
+
+### <a name="manage-authentication-sessions-in-azure-ad-conditional-access-is-now-generally-available"></a>Управление сеансами аутентификации в условном доступе Azure AD теперь общедоступно
+
+**Тип.** Новая функция.  
+**Категория службы:** Условный доступ  
+**Возможности продукта.** Безопасность и защита удостоверений.
+ 
+Возможности управления сеансами проверки подлинности позволяют настроить, как часто пользователи должны предоставлять учетные данные для входа и должны ли они предоставлять учетные данные после закрытия и повторного открытия браузеров, чтобы обеспечить более высокую безопасность и гибкость в среде.
+ 
+Кроме того, управление сеансами проверки подлинности применяется только к первой факторной проверке подлинности при присоединении к Azure AD, присоединенной гибридной службе Azure AD и зарегистрированным устройствам Azure AD. Теперь управление сеансами проверки подлинности будет применяться и к MFA. Дополнительные сведения см. [в статье Настройка управления сеансами проверки подлинности с помощью условного доступа](../conditional-access/howto-conditional-access-session-lifetime.md).
+
+---
+
+### <a name="new-federated-apps-available-in-azure-ad-application-gallery---june-2020"></a>Новые Федеративные приложения, доступные в коллекции приложений Azure AD — Июнь 2020
+
+**Тип.** Новая функция.  
+**Категория службы:** Корпоративные приложения  
+**Возможности продукта.** Интеграция с решениями сторонних производителей.
+ 
+В июне 2020 мы добавили в коллекцию приложений следующие 29 новых приложений с поддержкой федерации:
+
+[Shopify Plus](../saas-apps/shopify-plus-tutorial.md), [екарда](../saas-apps/ekarda-tutorial.md), [маилгатес](../saas-apps/mailgates-tutorial.md), [буллсэйетдп](../saas-apps/bullseyetdp-tutorial.md), [ракета](../saas-apps/raketa-tutorial.md), [сегмент](../saas-apps/segment-tutorial.md), [аудитор искусственного интеллекта](https://www.mindbridge.ai/products/ai-auditor/), [побука Connect](https://app.pobu.ca/), [proto.IO](../saas-apps/proto.io-tutorial.md), [привратник](https://www.gatekeeperhq.com/), [планировщик концентратора](../saas-apps/hub-planner-tutorial.md), [ансира — панель элементов «переход на рынке](https://ansira.com/technology/channel-engagement)», [Автоматизация цифрового бизнеса в облаке](../saas-apps/ibm-digital-business-automation-on-cloud-tutorial.md), [Киси физическая безопасность](../saas-apps/kisi-physical-security-tutorial.md), [виевпоинтоне](https://team.viewpoint.com/), [интеллиженцебанк](../saas-apps/intelligencebank-tutorial.md), [Pymetrics](../saas-apps/pymetrics-tutorial.md), [ноль](https://www.teamzero.com/), [станция](https://instation.invillia.com/), [edX для интеграции SAML 2,0](../saas-apps/edx-for-business-saml-integration-tutorial.md), [mooc Office 365](https://mooc.office365-training.com/en/), SmartKargo, [PKIsigning Platform](https://platform.pkisigning.nl/), [SiteIntel](../saas-apps/siteintel-tutorial.md), [идентификатор поля](../saas-apps/field-id-tutorial.md), учебные программы [SAML](../saas-apps/curricula-saml-tutorial.md) [, Perforce](../saas-apps/smartkargo-tutorial.md) [Helix Core-Helix служба проверки подлинности](../saas-apps/perforce-helix-core-tutorial.md), [MyCompliance](https://cloud.metacompliance.com/)- [SSH](https://smallstep.com/sso-ssh/)  
+
+Документацию по всем приложениям можно также найти здесь https://aka.ms/AppsTutorial . Чтобы получить список приложений в коллекции приложений Azure AD, ознакомьтесь со сведениями в этой статье: https://aka.ms/AzureADAppRequest .
+
+---
+
+### <a name="api-connectors-for-external-identities-self-service-sign-up-are-now-in-public-preview"></a>Соединители API для внешних удостоверений самостоятельная регистрация в общедоступной предварительной версии
+
+**Тип.** Новая функция.  
+**Категория службы.** B2B.  
+**Возможности продукта.** B2B и B2C.
+ 
+Соединители API внешних удостоверений позволяют использовать веб-API для интеграции самостоятельной регистрации с внешними облачными системами. Это означает, что теперь вы можете вызывать веб-API как определенные шаги в потоке регистрации для активации настраиваемых рабочих процессов на основе облака. Например, соединители API можно использовать для:
+
+- Интеграция с настраиваемыми рабочими процессами утверждения.
+- Проверка идентификации
+- Проверка входных данных пользователя
+- Перезаписать атрибуты пользователя
+- Выполнение настраиваемой бизнес-логики
+
+Дополнительные сведения обо всех возможностях соединителей API см. в [статьях Использование соединителей API для настройки и расширения самостоятельной регистрации](../external-identities/api-connectors-overview.md)или [Настройка внешних удостоверений самостоятельная регистрация с помощью интеграции веб-API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/customize-external-identities-self-service-sign-up-with-web-api/ba-p/1257364#.XvNz2fImuQg.linkedin).
+ 
+---
+
+### <a name="provision-on-demand-and-get-users-into-your-apps-in-seconds"></a>Подготавливайте приложения по запросу и получайте пользователей в приложениях за считаные секунды
+
+**Тип.** Новая функция.  
+**Категория службы.** Подготовка приложений.  
+**Возможности продукта:** Управление жизненным циклом удостоверений
+ 
+Служба подготовки Azure AD в настоящее время работает на циклической основе. Служба выполняется каждые 40 мин. [Возможность подготовки по требованию](https://aka.ms/provisionondemand) позволяет выбрать пользователя и подготовить его в течение нескольких секунд. Эта возможность позволяет быстро устранять проблемы, связанные с подготовкой, без необходимости перезапуска, чтобы принудительно запустить цикл подготовки. 
+ 
+---
+
+### <a name="new-permission-for-using-azure-ad-entitlement-management-in-graph"></a>Новое разрешение для использования управления назначениями Azure AD в Graph
+
+**Тип.** Новая функция.  
+**Категория службы.** Другая.  
+**Возможности продукта:** Управление назначениями
+ 
+Новое делегированное разрешение Ентитлементманажемент. Read. все теперь доступно для использования с API управления назначением в бета-версии Microsoft Graph. Дополнительные сведения о доступных API см. в статье [Работа с API управления назначением Azure AD](/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta).
+
+---
+
+### <a name="identity-protection-apis-available-in-v10"></a>API-интерфейсы защиты идентификации, доступные в версии 1.0
+
+**Тип.** Новая функция.  
+**Категория службы:** Защита идентификации  
+**Возможности продукта.** Безопасность и защита удостоверений.
+ 
+Интерфейсы API Microsoft Graph Рискюсерс и Рискдетектионс теперь общедоступны. Теперь, когда они доступны в конечной точке версии 1.0, мы приглашаем вас использовать их в рабочей среде. Дополнительные сведения см. в документации по [Microsoft Graph](/graph/api/resources/identityprotectionroot).
+ 
+---
+
+### <a name="sensitivity-labels-to-apply-policies-to-microsoft-365-groups-is-now-generally-available"></a>Метки чувствительности к применению политик к Microsoft 365 группам теперь являются общедоступными
+
+**Тип.** Новая функция.  
+**Категория службы.** Управление группами.  
+**Возможности продукта.** Совместная работа.
+ 
+
+Теперь можно создавать метки чувствительности и использовать параметры меток для применения политик к Microsoft 365 группам, включая политику конфиденциальности (общедоступные или частные) и внешние пользователи. Можно создать метку с политикой конфиденциальности "частный", а для политики "внешний доступ пользователей" — запретить добавление гостевых пользователей. Когда пользователь применяет эту метку к группе, группа будет закрыта, а гостевые пользователи не смогут добавляться в эту группу. 
+
+Метки чувствительности важны для защиты критически важных для бизнеса данных и позволяют управлять группами в нужном масштабе в соответствии с требованиями и безопасным способом. Рекомендации по использованию меток конфиденциальности см. в разделе [Назначение меток чувствительности группам Microsoft 365 в Azure Active Directory (Предварительная версия)](../enterprise-users/groups-assign-sensitivity-labels.md).
+ 
+---
+
+### <a name="updates-to-support-for-microsoft-identity-manager-for-azure-ad-premium-customers"></a>Обновления для поддержки Microsoft Identity Manager для клиентов Azure AD Premium
+
+**Тип.** Измененная функция.  
+**Категория службы:** Microsoft Identity Manager  
+**Возможности продукта:** Управление жизненным циклом удостоверений
+ 
+Поддержка Azure теперь доступна для компонентов интеграции Azure AD Microsoft Identity Manager 2016 до окончания расширенной поддержки Microsoft Identity Manager 2016. Дополнительные сведения см. в статье [Поддержка обновлений для Azure AD Premium клиентов с помощью Microsoft Identity Manager](/microsoft-identity-manager/support-update-for-azure-active-directory-premium-customers).
+
+---
+
+### <a name="the-use-of-group-membership-conditions-in-sso-claims-configuration-is-increased"></a>Увеличивается использование условий членства в группах в конфигурации утверждений единого входа.
+
+**Тип.** Измененная функция.  
+**Категория службы:** Корпоративные приложения  
+**Возможности продукта.** Единый вход.
+ 
+Ранее количество групп, которые можно было использовать при условии изменения утверждений на основе членства в группе в пределах одной конфигурации приложения, было ограничено 10. Использование условий членства в группах в конфигурации утверждений SSO теперь увеличилось до 50 групп. Дополнительные сведения о настройке утверждений см. в статье [Настройка утверждений единого входа для корпоративных приложений](../develop/active-directory-saml-claims-customization.md#emitting-claims-based-on-conditions). 
+
+---
+
+### <a name="enabling-basic-formatting-on-the-sign-in-page-text-component-in-company-branding"></a>Включение базового форматирования для компонента текста страницы входа в фирменной символике компании.
+
+**Тип.** Измененная функция.  
+**Категория службы.** Проверки подлинности (имена входа).  
+**Возможности продукта:** Проверка подлинности пользователя
+ 
+Функция фирменной символики компании в процессе входа в Azure AD или Microsoft 365 была обновлена, чтобы позволить клиенту добавлять гиперссылки и простое форматирование, включая полужирный шрифт, подчеркивание и курсив. Рекомендации по использованию этой функции см. в статье [Добавление фирменной символики на страницу входа Azure Active Directory вашей организации](./customize-branding.md).
+
+---
+
+### <a name="provisioning-performance-improvements"></a>Повышение производительности при подготовке
+
+**Тип.** Измененная функция.  
+**Категория службы.** Подготовка приложений.  
+**Возможности продукта:** Управление жизненным циклом удостоверений
+ 
+Служба подготовки была обновлена, чтобы сократить время выполнения [добавочного цикла](../app-provisioning/how-provisioning-works.md#incremental-cycles) . Это означает, что пользователи и группы будут подготавливаться к приложениям быстрее, чем раньше. Все новые задания подготовки, созданные после 6/10/2020, будут автоматически использовать преимущества повышения производительности. Все приложения, настроенные для подготовки до 6/10/2020, потребуется перезапустить один раз после 6/10/2020, чтобы воспользоваться преимуществами повышения производительности. 
+
+---
+
+### <a name="announcing-the-deprecation-of-adal-and-ms-graph-parity"></a>Объявление о нерекомендуемой четности ADAL и MS Graph
+
+**Тип.** Прекращение поддержки.  
+**Категория службы:** недоступно  
+**Возможности продукта:** Управление жизненным циклом устройств
+
+Теперь, когда доступны библиотеки проверки подлинности Майкрософт (MSAL), мы больше не будем добавлять новые функции в библиотеки Azure Active Directory проверки подлинности (ADAL) и завершать исправления безопасности до 30 июня 2022. Дополнительные сведения о миграции в MSAL см. в статье [Миграция приложений в библиотеку проверки подлинности Майкрософт (MSAL)](../develop/msal-migration.md).
+
+Кроме того, мы завершили работу, чтобы сделать все функции Graph Azure AD доступными через MS Graph. Таким образом, API Graph Azure AD получат только исправления бугфикс и безопасности до 30 июня 2022 г. Дополнительные сведения см. [в статье обновление приложений для использования библиотеки проверки подлинности Майкрософт и Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363) .
+ 
 ---
 ## <a name="may-2020"></a>Май 2020 г.
 
@@ -127,7 +313,7 @@ ms.locfileid: "97107590"
 **Категория службы:** Подготовка облака Azure AD  
 **Возможности продукта:** Управление жизненным циклом удостоверений
  
-ИТ – администраторы могут начать использовать новую роль гибридного администратора в качестве наименее привилегированной роли для настройки подготовки облака Azure Адконнект. С этой новой ролью вам больше не нужно использовать роль глобального администратора для настройки и настройки подготовки облака. [Подробнее.](../roles/delegate-by-task.md#connect)
+ИТ – администраторы могут начать использовать новую роль гибридного администратора в качестве наименее привилегированной роли для настройки Azure AD Connect подготовки облака. С этой новой ролью вам больше не нужно использовать роль глобального администратора для настройки и настройки подготовки облака. [Подробнее](../roles/delegate-by-task.md#connect).
  
 ---
 
@@ -760,7 +946,7 @@ Azure Active Directory (Azure AD) теперь предоставляет сре
 **Категория службы.** Подготовка приложений.  
 **Возможности продукта:** Управление жизненным циклом удостоверений
  
-Служба подготовки Azure AD предоставляет широкий набор возможностей настройки. Клиенты должны иметь возможность сохранить конфигурацию, чтобы они могли ссылаться на них позже, или выполнить откат до известной работоспособной версии. Мы добавили возможность загрузки конфигурации подготовки в виде JSON-файла и передачи ее при необходимости. [Подробнее.](../app-provisioning/export-import-provisioning-configuration.md)
+Служба подготовки Azure AD предоставляет широкий набор возможностей настройки. Клиенты должны иметь возможность сохранить конфигурацию, чтобы они могли ссылаться на них позже, или выполнить откат до известной работоспособной версии. Мы добавили возможность загрузки конфигурации подготовки в виде JSON-файла и передачи ее при необходимости. [Подробнее](../app-provisioning/export-import-provisioning-configuration.md).
 
 ---
  
@@ -772,7 +958,7 @@ Azure Active Directory (Azure AD) теперь предоставляет сре
  
 Ранее в Microsoft Azure, обслуживаемом 21Vianet (Azure Китая 21Vianet), администраторы, использующие самостоятельный сброс пароля (SSPR) для сброса собственных паролей, требуют только одной "шлюза" (запроса) для подтверждения их личности. В общедоступных и других национальных облаках администраторы обычно должны использовать два шлюза для подтверждения их подлинности при использовании SSPR. Но так как мы не поддерживали SMS или телефонные звонки в Azure Китая 21Vianet, мы развернули администраторам один шлюз для сброса паролей.
 
-Мы создаем SSPRую четность функций между Azure Китая 21Vianet и общедоступным облаком. В дальнейшем администраторы должны использовать два шлюза при использовании SSPR. Будут поддерживаться SMS, телефонные звонки и уведомления и коды приложений для проверки подлинности. [Подробнее.](../authentication/concept-sspr-policy.md#administrator-reset-policy-differences)
+Мы создаем SSPRую четность функций между Azure Китая 21Vianet и общедоступным облаком. В дальнейшем администраторы должны использовать два шлюза при использовании SSPR. Будут поддерживаться SMS, телефонные звонки и уведомления и коды приложений для проверки подлинности. [Подробнее](../authentication/concept-sspr-policy.md#administrator-reset-policy-differences).
 
 ---
 
@@ -821,7 +1007,7 @@ Azure Active Directory (Azure AD) теперь предоставляет сре
  
 Мы планируем заменить текущий предварительный просмотр настраиваемых элементов управления на подход, обеспечивающий возможность проверки подлинности, предоставляемой партнером, для беспрепятственной работы с Azure Active Directory администратором и конечными пользователями. Сегодня партнерские решения MFA имеют следующие ограничения: они работают только после ввода пароля. они не служат в качестве MFA для поэтапной проверки подлинности в других ключевых сценариях. и не интегрируются с функциями управления учетными данными пользователя или администратора. Новая реализация позволит использовать предоставленные партнером факторы проверки подлинности вместе со встроенными факторами для ключевых сценариев, включая регистрацию, использование, утверждения MFA, пошаговую проверку подлинности, отчеты и ведение журнала. 
 
-Пользовательские элементы управления по прежнему будут поддерживаться в предварительной версии вместе с новой структурой, пока она не станет общедоступной. На этом этапе мы предоставим клиентам время перехода на новую архитектуру. Из-за ограничений текущего подхода мы не будем подключать новые поставщики до тех пор, пока не станет доступен новый проект. Мы тесно работаем с клиентами и поставщиками и будем связываться с временной шкалой по мере приближения. [Подробнее.](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/upcoming-changes-to-custom-controls/ba-p/1144696#)
+Пользовательские элементы управления по прежнему будут поддерживаться в предварительной версии вместе с новой структурой, пока она не станет общедоступной. На этом этапе мы предоставим клиентам время перехода на новую архитектуру. Из-за ограничений текущего подхода мы не будем подключать новые поставщики до тех пор, пока не станет доступен новый проект. Мы тесно работаем с клиентами и поставщиками и будем связываться с временной шкалой по мере приближения. [Подробнее](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/upcoming-changes-to-custom-controls/ba-p/1144696#).
 
 ---
 
@@ -980,7 +1166,7 @@ Azure Active Directory (Azure AD) теперь предоставляет сре
  
 В январе 2020 мы добавили следующие 33 новых приложений с поддержкой Федерации в коллекцию приложений: 
 
-[Жоса](../saas-apps/josa-tutorial.md), [высокореберное облако](../saas-apps/fastly-edge-cloud-tutorial.md), [terraform Enterprise](../saas-apps/terraform-enterprise-tutorial.md), [спинтр SSO](../saas-apps/spintr-sso-tutorial.md), [абибот нетлогистик](https://azuremarketplace.microsoft.com/marketplace/apps/aad.abibotnetlogistik), [скикикк](https://login.skykick.com/login?state=g6Fo2SBTd3M5Q0xBT0JMd3luS2JUTGlYN3pYTE1remJQZnR1c6N0aWTZIDhCSkwzYVQxX2ZMZjNUaWxNUHhCSXg2OHJzbllTcmYto2NpZNkgM0h6czk3ZlF6aFNJV1VNVWQzMmpHeFFDbDRIMkx5VEc&client=3Hzs97fQzhSIWUMUd32jGxQCl4H2LyTG&protocol=oauth2&audience=https://papi.skykick.com&response_type=code&redirect_uri=https://portal.skykick.com/callback&scope=openid%20profile%20offline_access), [с](../saas-apps/upshotly-tutorial.md)более ранними [, леавебот](https://leavebot.io/#home), [Camp](../saas-apps/datacamp-tutorial.md), [Трипактионс](../saas-apps/tripactions-tutorial.md), [смартворк](https://www.intumit.com/english/SmartWork.html), [Дотком-Monitor](../saas-apps/dotcom-monitor-tutorial.md), [ссожен — шлюз единого входа Azure AD для Oracle E-Business Suite-EBS, PeopleSoft и жде](../saas-apps/ssogen-tutorial.md), [размещенный MyCirqa единый вход](../saas-apps/hosted-mycirqa-sso-tutorial.md), [платформа управления свойствами Yuhu](../saas-apps/yuhu-property-management-platform-tutorial.md), [LumApps](https://sites.lumapps.com/login), [выпуск Enterprise](../saas-apps/upwork-enterprise-tutorial.md), [Talentsoft](../saas-apps/talentsoft-tutorial.md), [SmartDB для Microsoft Teams](http://teams.smartdb.jp/login/), [PressPage](../saas-apps/presspage-tutorial.md), [ContractSafe Saml2 SSO](../saas-apps/contractsafe-saml2-sso-tutorial.md), [Maxient выполнять управление программным обеспечением](../saas-apps/maxient-conduct-manager-software-tutorial.md), [Helpshift](../saas-apps/helpshift-tutorial.md), [PortalTalk 365](https://www.portaltalk.com/), [совещание](https://portal.coreview.com/), [squelch Cloud Office 365 Connector](https://laxmi.squelch.io/login), PingFlow [Аутентификация](https://app-staging.pingview.io/), [ PrinterLogic SaaS](../saas-apps/printerlogic-saas-tutorial.md), Taskize [Connect](../saas-apps/taskize-connect-tutorial.md), [Sandwai](https://app.sandwai.com/), [EZRentOut](../saas-apps/ezrentout-tutorial.md) [, AssetSonar, Akari](../saas-apps/assetsonar-tutorial.md) [Virtual Assistant](https://akari.io/akari-virtual-assistant/)
+[Жоса](../saas-apps/josa-tutorial.md), [высокореберное облако](../saas-apps/fastly-edge-cloud-tutorial.md), [terraform Enterprise](../saas-apps/terraform-enterprise-tutorial.md), [спинтр SSO](../saas-apps/spintr-sso-tutorial.md), [абибот нетлогистик](https://azuremarketplace.microsoft.com/marketplace/apps/aad.abibotnetlogistik), [скикикк](https://login.skykick.com/login?state=g6Fo2SBTd3M5Q0xBT0JMd3luS2JUTGlYN3pYTE1remJQZnR1c6N0aWTZIDhCSkwzYVQxX2ZMZjNUaWxNUHhCSXg2OHJzbllTcmYto2NpZNkgM0h6czk3ZlF6aFNJV1VNVWQzMmpHeFFDbDRIMkx5VEc&client=3Hzs97fQzhSIWUMUd32jGxQCl4H2LyTG&protocol=oauth2&audience=https://papi.skykick.com&response_type=code&redirect_uri=https://portal.skykick.com/callback&scope=openid%20profile%20offline_access), [с](../saas-apps/upshotly-tutorial.md)более ранними [, леавебот](https://appsource.microsoft.com/en-us/product/office/WA200001175), [Camp](../saas-apps/datacamp-tutorial.md), [Трипактионс](../saas-apps/tripactions-tutorial.md), [смартворк](https://www.intumit.com/english/SmartWork.html), [Дотком-Monitor](../saas-apps/dotcom-monitor-tutorial.md), [ссожен — шлюз единого входа Azure AD для Oracle E-Business Suite-EBS, PeopleSoft и жде](../saas-apps/ssogen-tutorial.md), [размещенный MyCirqa единый вход](../saas-apps/hosted-mycirqa-sso-tutorial.md), [платформа управления свойствами Yuhu](../saas-apps/yuhu-property-management-platform-tutorial.md), [LumApps](https://sites.lumapps.com/login), [выпуск Enterprise](../saas-apps/upwork-enterprise-tutorial.md), [Talentsoft](../saas-apps/talentsoft-tutorial.md), [SmartDB для Microsoft Teams](http://teams.smartdb.jp/login/), [PressPage](../saas-apps/presspage-tutorial.md), [ContractSafe Saml2 SSO](../saas-apps/contractsafe-saml2-sso-tutorial.md), [Maxient выполнять управление программным обеспечением](../saas-apps/maxient-conduct-manager-software-tutorial.md), [Helpshift](../saas-apps/helpshift-tutorial.md), [PortalTalk 365](https://www.portaltalk.com/), [совещание](https://portal.coreview.com/), [squelch Cloud Office 365 Connector](https://laxmi.squelch.io/login), PingFlow [Аутентификация](https://app-staging.pingview.io/), [ PrinterLogic SaaS](../saas-apps/printerlogic-saas-tutorial.md), Taskize [Connect](../saas-apps/taskize-connect-tutorial.md), [Sandwai](https://app.sandwai.com/), [EZRentOut](../saas-apps/ezrentout-tutorial.md) [, AssetSonar, Akari](../saas-apps/assetsonar-tutorial.md) [Virtual Assistant](https://akari.io/akari-virtual-assistant/)
 
 Дополнительные сведения об этих приложениях см. в статье [Интеграция приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md). Дополнительные сведения о том, как добавить приложение в коллекцию приложений Azure AD см. в [этой статье](../develop/v2-howto-app-gallery-listing.md).
 
@@ -1044,7 +1230,7 @@ Azure Active Directory (Azure AD) теперь предоставляет сре
 
 ---
 
-## <a name="november-2019"></a>Ноябрь 2019 г.
+## <a name="november-2019"></a>Ноябрь 2019 г.
 
 ### <a name="support-for-the-samesite-attribute-and-chrome-80"></a>Поддержка атрибута SameSite и Chrome 80
 
@@ -1968,7 +2154,7 @@ Azure AD для Microsoft ребр в iOS и Android теперь поддерж
 
 В июне 2019 года мы добавили в коллекцию приложений следующие 22 новых приложений с поддержкой федерации:
 
-[Azure AD SAML Toolkit](../saas-apps/saml-toolkit-tutorial.md), [Otsuka Shokai (大塚商会)](../saas-apps/otsuka-shokai-tutorial.md), [ANAQUA](../saas-apps/anaqua-tutorial.md), [Azure VPN Client](https://portal.azure.com/), [ExpenseIn](../saas-apps/expensein-tutorial.md), [Helper Helper](../saas-apps/helper-helper-tutorial.md), [Costpoint](../saas-apps/costpoint-tutorial.md), [GlobalOne](../saas-apps/globalone-tutorial.md), [Mercedes-Benz In-Car Office](https://me.secure.mercedes-benz.com/), [Skore](https://app.justskore.it/), [Oracle Cloud Infrastructure Console](../saas-apps/oracle-cloud-tutorial.md), [CyberArk SAML Authentication](../saas-apps/cyberark-saml-authentication-tutorial.md), [Scrible Edu](https://www.scrible.com/sign-in/#/create-account), [PandaDoc](../saas-apps/pandadoc-tutorial.md), [Perceptyx](https://apexdata.azurewebsites.net/docs.microsoft.com/azure/active-directory/saas-apps/perceptyx-tutorial), [Proptimise OS](https://proptimise.co.uk/software/), [Vtiger CRM (SAML)](../saas-apps/vtiger-crm-saml-tutorial.md), Oracle Access Manager for Oracle Retail Merchandising, Oracle Access Manager for Oracle E-Business Suite, Oracle IDCS for E-Business Suite, Oracle IDCS for PeopleSoft, Oracle IDCS for JD Edwards
+[Azure AD SAML Toolkit](../saas-apps/saml-toolkit-tutorial.md), [Otsuka Shokai (大塚商会)](../saas-apps/otsuka-shokai-tutorial.md), [ANAQUA](../saas-apps/anaqua-tutorial.md), [Azure VPN Client](https://portal.azure.com/), [ExpenseIn](../saas-apps/expensein-tutorial.md), [Helper Helper](../saas-apps/helper-helper-tutorial.md), [Costpoint](../saas-apps/costpoint-tutorial.md), [GlobalOne](../saas-apps/globalone-tutorial.md), [Mercedes-Benz In-Car Office](https://me.secure.mercedes-benz.com/), [Skore](https://app.justskore.it/), [Oracle Cloud Infrastructure Console](../saas-apps/oracle-cloud-tutorial.md), [CyberArk SAML Authentication](../saas-apps/cyberark-saml-authentication-tutorial.md), [Scrible Edu](https://www.scrible.com/sign-in/#/create-account), [PandaDoc](../saas-apps/pandadoc-tutorial.md), [Perceptyx](https://apexdata.azurewebsites.net/docs.microsoft.com/azure/active-directory/saas-apps/perceptyx-tutorial), [Proptimise OS](https://proptimise.co.uk/), [Vtiger CRM (SAML)](../saas-apps/vtiger-crm-saml-tutorial.md), Oracle Access Manager for Oracle Retail Merchandising, Oracle Access Manager for Oracle E-Business Suite, Oracle IDCS for E-Business Suite, Oracle IDCS for PeopleSoft, Oracle IDCS for JD Edwards
 
 Дополнительные сведения об этих приложениях см. в статье [Интеграция приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md). Дополнительные сведения о том, как добавить приложение в коллекцию приложений Azure AD см. в [этой статье](../develop/v2-howto-app-gallery-listing.md).
 

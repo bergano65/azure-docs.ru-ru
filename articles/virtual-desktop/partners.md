@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 7a1b178450a1aa06db07d7b1ef525f7f781db9ef
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: e116c590e07ffcdb1b7c8ae2e30b2e76bb909bff
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602824"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802717"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
@@ -62,7 +62,7 @@ Citrix расширяет ценность виртуальных рабочих
 Аутомаи позволяет использовать одни и те же сценарии для тестирования производительности, функционального тестирования, мониторинга производительности и даже автоматизации автоматизированных процессов на одной платформе.
 
 - [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B76N)обзорным решением.
-- [Перейдите на веб-сайт партнера](https://www.automai.com/wvd-testing-monitoring?hs_preview=EyZXkOWu-30742040580).
+- [Перейдите на веб-сайт партнера](https://www.automai.com/windows-virtual-desktop-performance-testing/).
 
 ## <a name="cloudhouse"></a>клаудхаусе
 

@@ -13,12 +13,12 @@ ms.author: wesmc
 ms.custom:
 - 'Role: Cloud Development'
 - devx-track-js
-ms.openlocfilehash: 1d6a51e2e9c052be0c59435b287c5fdde459f55d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c96f674b64401250d45542d0f59f13654cf37caa
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334197"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802530"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -97,7 +97,7 @@ ms.locfileid: "91334197"
 
 1. Скачайте ОС Raspbian.
 
-   a. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
+   a. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/software/) (ZIP-файл).
 
    b. Извлеките образ ОС Raspbian в папку на компьютере.
 
@@ -174,7 +174,7 @@ ms.locfileid: "91334197"
 
    **Пользователи Windows**
 
-   a. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
+   а. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
 
    b. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
@@ -257,7 +257,7 @@ ms.locfileid: "91334197"
 
 Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы запустили пример приложения для регистрации данных датчика и их отправки в центр Интернета вещей.
 
