@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: damendo
-ms.openlocfilehash: f27cb217b60c23f3cf89f48effb933837269000e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5342c4505bd300d1287acba246ca59610f2697bd
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94960331"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858643"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "94960331"
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное" |Нет|
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
 | ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Да|
-| Аутентификация | Несоответствие предварительного ключа | Да|
+| Проверка подлинности | Несоответствие предварительного ключа | Да|
 | PeerReachability | Одноранговый шлюз недоступен. | Да|
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Да|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Да|
@@ -208,7 +208,10 @@ Elapsed Time            330 sec
 |        12    ikeext               ike_sa_management_c3307  7857a320-42ee-6e90-d5d9-3f414e3ea2d3|
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="considerations"></a>Рекомендации 
+* Ошибка CLI. Если для выполнения команды используется Azure CLI, VPN-шлюз и учетная запись хранения должны находиться в одной группе ресурсов. Клиенты с ресурсами в разных группах ресурсов могут использовать PowerShell или портал Azure.  
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о диагностике проблемы со шлюзом или подключением к нему см. в статье о [диагностике проблем обмена данными между сетями](diagnose-communication-problem-between-networks.md).
 <!--Image references-->
