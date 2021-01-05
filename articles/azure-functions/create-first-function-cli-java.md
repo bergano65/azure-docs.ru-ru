@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: db24fa4721e2e502c5098b415c4cf06da80f697d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 504d3a834760605149c93c0beea84bbe1b59e263
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175684"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707560"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Краткое руководство. Создание функции Java в Azure из командной строки
 
@@ -73,7 +73,7 @@ ms.locfileid: "96175684"
     ---
 
     > [!IMPORTANT]
-    > + Используйте `-DjavaVersion=11`, чтобы функции выполнялись на Java 11. Дополнительные сведения см. в разделе [Версии Java](functions-reference-java.md#java-versions). 
+    > + Используйте `-DjavaVersion=11`, чтобы функции выполнялись на Java 11. Дополнительные сведения см. в разделе [Версии Java](functions-reference-java.md#java-versions). 
     > + Чтобы выполнить задания из этой статьи, переменной среды `JAVA_HOME` необходимо присвоить расположение установки правильной версии JDK.
 
 1. Maven запрашивает значения, которые позволят завершить создание проекта развертывания.   
@@ -146,7 +146,7 @@ ms.locfileid: "96175684"
     </pre>
     
     > [!NOTE]  
-    > Если результат HttpExample не похож на пример ниже, скорее всего, вы запустили хост-приложение из папки, отличной от корневой папки проекта. В этом случае остановите хост-приложение клавишами **CTRL**+**C**, перейдите в корневую папку проекта и снова выполните указанную выше команду.
+    > Если результат HttpExample не похож на пример выше, скорее всего, вы запустили основное приложение из папки, отличной от корневой папки проекта. В этом случае остановите хост-приложение клавишами **CTRL**+**C**, перейдите в корневую папку проекта и снова выполните указанную выше команду.
 
 1. Скопируйте URL-адрес функции `HttpExample` из этих выходных данных в браузер и добавьте строку запроса `?name=<YOUR_NAME>`, сформировав полный URL-адрес, например `http://localhost:7071/api/HttpExample?name=Functions`. В браузере должно отобразиться сообщение, например `Hello Functions`:
 

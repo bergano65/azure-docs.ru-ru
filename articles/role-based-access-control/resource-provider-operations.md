@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 12/16/2020
 ms.custom: generated
-ms.openlocfilehash: c9638ce3509ba181e9f716b3bb427128e50c80ac
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 9318ea9d811f2fd490ed6e796b9719c5c482d513
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652897"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707645"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -4651,13 +4651,13 @@ ms.locfileid: "97652897"
 > | Действие | Описание |
 > | --- | --- |
 > | Microsoft.PowerBIDedicated/register/action | Регистрация выделенного поставщика ресурсов Power BI. |
-> | Microsoft.PowerBIDedicated/capacities/read | Извлечение сведений об указанной выделенной емкости Power BI. |
-> | Microsoft.PowerBIDedicated/capacities/write | Создание или обновление указанной выделенной емкости Power BI. |
-> | Microsoft.PowerBIDedicated/capacities/delete | Удаление выделенной емкости Power BI. |
+> | Microsoft.PowerBIDedicated/capacities/read | Извлекает сведения об указанной емкости Power BI. |
+> | Microsoft.PowerBIDedicated/capacities/write | Создает или обновляет указанную емкость Power BI. |
+> | Microsoft.PowerBIDedicated/capacities/delete | Удаляет Power BI емкость. |
 > | Microsoft.PowerBIDedicated/capacities/suspend/action | Приостановка использования емкости. |
 > | Microsoft.PowerBIDedicated/capacities/resume/action | Возобновляет использование емкости. |
 > | Microsoft.PowerBIDedicated/capacities/skus/read | Получение доступных сведений о номере SKU для емкости. |
-> | Microsoft. Повербидедикатед/Locations/Чеккнамеаваилабилити/Action | Проверка того, что имя выделенной емкости Power BI является допустимым и не используется. |
+> | Microsoft. Повербидедикатед/Locations/Чеккнамеаваилабилити/Action | Проверяет, что заданное имя емкости Power BI является допустимым и не используется. |
 > | Microsoft.PowerBIDedicated/locations/operationresults/read | Получение сведений о результате указанной операции. |
 > | Microsoft.PowerBIDedicated/locations/operationstatuses/read | Извлечение сведений о состоянии указанной операции. |
 > | Microsoft.PowerBIDedicated/operations/read | Извлечение сведений об операциях. |
@@ -7539,7 +7539,7 @@ ms.locfileid: "97652897"
 > | Microsoft.OffAzure/VMwareSites/vcenters/read | Получает свойства VMware vCenter. |
 > | Microsoft.OffAzure/VMwareSites/vcenters/write | Создает или обновляет VMware vCenter. |
 
-## <a name="monitor"></a>Azure Monitor
+## <a name="monitor"></a>Монитор
 
 ### <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
@@ -9498,7 +9498,7 @@ ms.locfileid: "97652897"
 > | Microsoft.Intune/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | Microsoft.Intune/diagnosticsettingscategories/read | Чтение категорий параметра диагностики. |
 
-## <a name="other"></a>Другое
+## <a name="other"></a>Другие
 
 ### <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 

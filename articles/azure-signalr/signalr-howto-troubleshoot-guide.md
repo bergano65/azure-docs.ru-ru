@@ -1,17 +1,17 @@
 ---
 title: Руководство по устранению неполадок для Службы Azure SignalR
 description: Сведения об устранении распространенных неполадок
-author: YanJin
+author: yjin81
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 55ad9c90129a5d732f377ac1b6c905c14de319dc
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 505176758e1dbba1d6bf262554568edd8a197a4d
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607429"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707679"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Руководство по устранению неполадок службы Azure SignalR
 
@@ -63,6 +63,8 @@ services.MapAzureSignalR(GetType().FullName, options =>
             });
 ```
 
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="tls-12-required"></a>Требуется TLS 1,2
 
 ### <a name="possible-errors"></a>Возможные ошибки:
@@ -104,11 +106,15 @@ GlobalHost.TraceManager.Switch.Level = SourceLevels.Information;
 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 ```
 
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="400-bad-request-returned-for-client-requests"></a>400 для клиентских запросов возвращен неверный запрос
 
 ### <a name="root-cause"></a>Первопричина
 
 Проверьте, содержит ли ваш запрос клиента несколько `hub` строк запроса. `hub` сохраненный параметр запроса, и 400 выдаст исключение, если служба обнаружит `hub` в запросе более одного.
+
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="401-unauthorized-returned-for-client-requests"></a>401 Unauthorized returned for client requests (Возврат ошибки с кодом "401 — не санкционировано" для клиентских запросов)
 
@@ -128,6 +134,8 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 Установите [здесь](#restart_connection) , чтобы перезапустить клиентские подключения.
 
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="404-returned-for-client-requests"></a>404 returned for client requests (Возврат ошибки с кодом 404 для клиентских запросов)
 
 Для постоянного подключения SignalR сначала `/negotiate` необходимо установить службу Azure SignalR, а затем — реальное подключение к службе Azure SignalR.
@@ -138,9 +146,13 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 * Проверьте URL-адрес запроса при возникновении ошибки 404. Если URL-адрес предназначен для веб-приложения и аналогичен `{your_web_app}/hubs/{hubName}` , проверьте, имеет ли клиент `SkipNegotiation` `true` . При использовании Azure SignalR клиент получает URL-адрес перенаправления при первом согласовании с сервером приложений. Клиент **не** должен пропускать согласование при использовании Azure SignalR.
 * Еще один 404 может произойти, когда запрос на подключение обрабатывается более **5** секунд после `/negotiate` вызова. Проверьте метку времени запроса клиента и откройте сообщение о том, что в случае, если запрос к службе имеет слишком много откликов.
 
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="404-returned-for-aspnet-signalrs-reconnect-request"></a>404 возвращается для запроса на повторное подключение SignalR ASP.NET
 
 Для ASP.NET SignalR при [удалении клиентского соединения](#client_connection_drop)он повторно подключается в `connectionId` течение трех раз, прежде чем остановить подключение. `/reconnect` может помочь, если подключение отбрасывается из-за временных неполадок сети, которые `/reconnect` могут успешно восстановить постоянное подключение. В других случаях, например, подключение клиента отбрасывается из-за разрыва соединения с перенаправленным сервером, или служба SignalR имеет некоторые внутренние ошибки, такие как перезапуск экземпляра, отработка отказа или развертывание, поэтому соединение больше не существует, поэтому `/reconnect` возвращается `404` . Это ожидаемое поведение в `/reconnect` и после трех раз, когда повторная попытка подключения прекращается. Мы рекомендуем подать логику [перезапуска подключения](#restart_connection) при остановке соединения.
+
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="429-too-many-requests-returned-for-client-requests"></a>429 (слишком много запросов) возвращено для клиентских запросов
 
@@ -155,6 +167,8 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 ### <a name="too-many-negotiate-requests-at-the-same-time"></a>Слишком много запросов на согласование одновременно.
 
 Мы рекомендуем установить произвольную задержку перед повторной попыткой подключения. Дополнительные примеры см. [здесь](#restart_connection) .
+
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500 ошибка при согласовании: служба Azure SignalR еще не подключена, повторите попытку позже.
 
@@ -215,6 +229,8 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 <a name="client_connection_drop"></a>
 
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="client-connection-drops"></a>Разрывы соединения с клиентом
 
 Когда клиент подключается к Azure SignalR, постоянное подключение между клиентом и Azure SignalR иногда может быть удалено по разным причинам. В этом разделе описываются некоторые возможности, вызывающие такое удаление подключения, и приводятся некоторые рекомендации по определению основной причины.
@@ -240,6 +256,7 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 2. Проверьте журнал событий на стороне сервера приложений, чтобы узнать, не перезапущен ли сервер приложений.
 3. Создайте ошибку, предоставляющую время, и отправьте имя ресурса по адресу
 
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="client-connection-increases-constantly"></a>Подключение клиента постоянно увеличивается
 
@@ -263,7 +280,7 @@ ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 Убедитесь, что подключение закрыто. Вызов метода `HubConnection.DisposeAsync()` останавливает подключение вручную после его использования.
 
-Пример.
+Пример:
 
 ```C#
 var connection = new HubConnectionBuilder()
@@ -295,6 +312,8 @@ finally
 
 <a name="server_connection_drop"></a>
 
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="server-connection-drops"></a>Падения подключений к серверу
 
 Когда сервер приложений запускается, в фоновом режиме пакет SDK для Azure начинает инициировать подключения к удаленному серверу Azure SignalR. Как описано в статье [внутренние компоненты службы Azure SignalR](https://github.com/Azure/azure-signalr/blob/dev/docs/internal.md), Azure SignalR направляет входящие клиентские трафик на эти подключения к серверу. После удаления соединения с сервером все клиентские подключения, которые он обслуживает, будут закрыты.
@@ -320,6 +339,8 @@ finally
 1. Откройте журнал на стороне сервера приложений, чтобы проверить, не произошло ли что-либо непредвиденное
 2. Проверьте журнал событий на стороне сервера приложений, чтобы узнать, не перезапущен ли сервер приложений.
 3. Создайте ошибку, предоставляющую время, и отправьте имя ресурса по адресу
+
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="tips"></a>Советы
 
@@ -352,6 +373,8 @@ finally
     * [Клиент ASP.NET C#](https://github.com/Azure/azure-signalr/tree/dev/samples/AspNet.ChatSample/AspNet.ChatSample.CSharpClient/Program.cs#L78)
 
     * [Клиент ASP.NET JavaScript](https://github.com/Azure/azure-signalr/tree/dev/samples/AspNet.ChatSample/AspNet.ChatSample.JavaScriptClient/wwwroot/index.html#L71)
+
+[Возникли проблемы или отзывы об устранении неполадок? Сообщите нам об этом.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

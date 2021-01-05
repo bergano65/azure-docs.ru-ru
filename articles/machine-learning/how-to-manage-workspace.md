@@ -10,12 +10,12 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 4425fdf488665ad555c73c59682041cb23a9ca66
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3fca8e74112b90b3cac70adaa955bbf242999705
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447321"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739592"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Создание рабочих областей Машинное обучение Azure и управление ими 
 
@@ -32,7 +32,9 @@ ms.locfileid: "96447321"
 
 [!INCLUDE [register-namespace](../../includes/machine-learning-register-namespace.md)]
 
-## <a name="create-a-workspace"></a>Создание рабочей области
+По умолчанию при создании рабочей области также создается реестр контейнеров Azure (запись контроля доступа).  Так как запись контроля доступа в настоящее время не поддерживает символы Юникода в именах групп ресурсов, используйте группу ресурсов, которая не содержит этих символов.
+
+## <a name="create-a-workspace"></a>Создать рабочую область
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -155,6 +157,8 @@ ms.locfileid: "96447321"
  
 ---
 
+
+
 ### <a name="networking"></a>Сеть  
 
 > [!IMPORTANT]  
@@ -197,7 +201,7 @@ ms.locfileid: "96447321"
 
 Центр безопасности Azure обеспечивает унифицированное управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок. Вы должны разрешить центру безопасности Azure проверять ресурсы и следовать рекомендациям. Дополнительные сведения см. в статье  [сканирование образа реестра контейнеров Azure с помощью центра безопасности](../security-center/defender-for-container-registries-introduction.md) и [интеграции Azure Kubernetes Services с центром безопасности](../security-center/defender-for-kubernetes-introduction.md).
 
-### <a name="advanced"></a>Продвинутый уровень
+### <a name="advanced"></a>Дополнительно
 
 По умолчанию метаданные для рабочей области хранятся в экземпляре Azure Cosmos DB, который обслуживает Корпорация Майкрософт. Эти данные шифруются с помощью ключей, управляемых корпорацией Майкрософт.
 
@@ -368,6 +372,16 @@ ws.delete(delete_dependent_resources=False, no_wait=False)
 [!INCLUDE [aml-delete-resource-group](../../includes/aml-delete-resource-group.md)]
 
 ## <a name="troubleshooting"></a>Устранение неполадок
+
+* **Поддерживаемые браузеры в машинное обучение Azure Studio**. рекомендуется использовать наиболее актуальный браузер, совместимый с вашей операционной системой. Поддерживаются следующие браузеры:
+  * Microsoft ребро (новый Microsoft ребро, последняя версия. Не Microsoft ребра Legacy)
+  * Safari (последняя версия, только для Mac);
+  * Chrome (последняя версия);
+  * Firefox (последняя версия).
+
+* **Портал Azure**: 
+  * Если перейти непосредственно к рабочей области из ссылки на общий ресурс из пакета SDK или портал Azure, вы не сможете просмотреть стандартную страницу **обзора** со сведениями о подписке в расширении. В этом случае вы также не сможете переключиться на другую рабочую область. Чтобы просмотреть другую рабочую область, перейдите непосредственно в [машинное обучение Azure Studio](https://ml.azure.com) и найдите имя рабочей области.
+  * Все активы (наборы данных, эксперименты, расчеты и т. д.) доступны только в [машинное обучение Azure Studio](https://ml.azure.com). Они недоступны *из* портал Azure.
 
 ### <a name="resource-provider-errors"></a>Ошибки поставщика ресурсов
 

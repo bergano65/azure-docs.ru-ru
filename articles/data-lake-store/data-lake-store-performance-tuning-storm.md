@@ -1,17 +1,17 @@
 ---
 title: Настройка производительности — комплекс с Azure Data Lake Storage 1-го поколения
 description: Изучите факторы, которые следует учитывать при настройке производительности топологии в Azure, включая устранение распространенных проблем.
-author: stewu
+author: twooley
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
-ms.author: stewu
-ms.openlocfilehash: 68f30079d85e2064b92718c65b38dbb5069d810b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.author: twooley
+ms.openlocfilehash: 95619c75d332ec1bf68af97fc3dddbc67b6706ed
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92101653"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725043"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage 1-го поколения
 
@@ -126,7 +126,7 @@ ms.locfileid: "92101653"
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента.
 
-1. В **Ambari**  >  **Storm**  >  **файле config**Ambari  >  **с расширенным набором данных-Worker-log4j**измените значение ** &lt; корневого &gt; уровня = "info"** на ** &lt; root &gt; Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
+1. В   >    >  **файле config** Ambari  >  **с расширенным набором данных-Worker-log4j** измените значение **&lt; корневого &gt; уровня = "info"** на **&lt; root &gt; Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 1-го поколения.
 
 ## <a name="next-steps"></a>Дальнейшие действия

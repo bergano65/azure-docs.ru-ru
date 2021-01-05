@@ -6,12 +6,12 @@ author: su-jie
 ms.author: sujie
 ms.date: 11/10/2019
 ms.topic: how-to
-ms.openlocfilehash: 0122e67714efb201584a52f1cb763528dbb0b925
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bbd83fb3ef3225fc19c48bb4c5962d6559cf32f8
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903783"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708455"
 ---
 # <a name="test-stream-analytics-queries-locally-with-sample-data-using-visual-studio-code"></a>Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code
 
@@ -49,7 +49,7 @@ ms.locfileid: "90903783"
 
 3. Выберите **+ новый локальный вход**.
 
-    ![Добавление нового локального входа ASA в Visual Studio Code](./media/vscode-local-run/add-new-local-input.png)
+    ![Добавление нового локального ввода ASA в Visual Studio Code](./media/vscode-local-run/add-new-local-input.png)
 
 4. Введите тот же псевдоним ввода, который использовался в запросе.
 
@@ -79,7 +79,7 @@ ms.locfileid: "90903783"
 
 ![Просмотреть результат локального запуска](./media/vscode-local-run/run-locally-result.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Тестирование Azure Stream Analytics заданий локально с входными данными в режиме реального времени с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)
 

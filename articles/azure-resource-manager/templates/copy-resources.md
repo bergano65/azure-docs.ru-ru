@@ -2,13 +2,13 @@
 title: Развертывание нескольких экземпляров ресурсов
 description: Используйте операцию копирования и массивы в шаблоне Azure Resource Manager (шаблон ARM), чтобы развернуть тип ресурса много раз.
 ms.topic: conceptual
-ms.date: 12/17/2020
-ms.openlocfilehash: 7a894ee6a31a43dd8da3d84d88276824c6bbc9f7
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.date: 12/21/2020
+ms.openlocfilehash: c9bcb22ec53129520fd9574d0eb58b1e5777531e
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672837"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724499"
 ---
 # <a name="resource-iteration-in-arm-templates"></a>Итерация ресурсов в шаблонах ARM
 
@@ -97,7 +97,7 @@ ms.locfileid: "97672837"
 * storage1;
 * storage2.
 
-Для смещения значения индекса можно передать значение в `copyIndex()` функцию. Число итераций по-прежнему указывается в элементе Copy, но значение параметра `copyIndex` смещается на указанное значение. См. приведенный ниже пример.
+Чтобы сместить значение индекса, можно передать нужное значение в функцию `copyIndex()`. Число итераций по-прежнему указывается в элементе Copy, но значение параметра `copyIndex` смещается на указанное значение. См. приведенный ниже пример.
 
 ```json
 "name": "[concat('storage', copyIndex(1))]",
@@ -189,43 +189,6 @@ ms.locfileid: "97672837"
 
 `mode`Свойство также принимает значение **Parallel**, которое является значением по умолчанию.
 
-## <a name="depend-on-resources-in-a-loop"></a>Зависимость от ресурсов в цикле
-
-С помощью элемента `dependsOn` можно определить последовательность развертывания ресурсов. Чтобы развернуть ресурс, который зависит от коллекции ресурсов в цикле, укажите имя цикла копирования в элементе dependsOn. В следующем примере показано, как развернуть три учетные записи хранения перед развертыванием виртуальной машины. Полное определение виртуальной машины не показано. Обратите внимание, что для элемента copy задано имя `storagecopy` , а элемент dependsOn для виртуальной машины также имеет значение `storagecopy` .
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "resources": [
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2019-04-01",
-      "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
-      "location": "[resourceGroup().location]",
-      "sku": {
-        "name": "Standard_LRS"
-      },
-      "kind": "Storage",
-      "copy": {
-        "name": "storagecopy",
-        "count": 3
-      },
-      "properties": {}
-    },
-    {
-      "type": "Microsoft.Compute/virtualMachines",
-      "apiVersion": "2015-06-15",
-      "name": "[concat('VM', uniqueString(resourceGroup().id))]",
-      "dependsOn": ["storagecopy"],
-      ...
-    }
-  ],
-  "outputs": {}
-}
-```
-
 ## <a name="iteration-for-a-child-resource"></a>Итерация дочерних ресурсов
 
 Нельзя включить дочерний ресурс в цикл копирования. Чтобы создать несколько экземпляров ресурса, которые определяются как вложенные в другой ресурс, необходимо создать его как ресурс верхнего уровня. Вы можете определить связь с родительским ресурсом с помощью свойств type и name.
@@ -286,11 +249,10 @@ ms.locfileid: "97672837"
 |[Копирования хранилища](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copystorage.json) |Развертывает несколько учетных записей хранения с номером индекса в имени. |
 |[Последовательное копирование хранилища](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/serialcopystorage.json) |Последовательно развертывает несколько учетных записей хранения. Имя содержит номер индекса. |
 |[Копирования хранилища с массивом](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copystoragewitharray.json) |Развертывает несколько учетных записей хранения. Имя содержит значение из массива. |
-|[Развертывание виртуальной машины с переменным количеством дисков данных](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-windows-copy-datadisks) |Развертывает несколько дисков данных с виртуальной машиной. |
-|[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
+* Сведения о настройке зависимостей для ресурсов, создаваемых в цикле копирования, см. [в разделе Определение порядка развертывания ресурсов в шаблонах ARM](define-resource-dependency.md).
 * Чтобы пройти обучение, см. раздел [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов ARM](template-tutorial-create-multiple-instances.md).
 * Сведения о модуле Microsoft Learn, который охватывает копирование ресурсов, см. в статье [управление комплексными облачными развертываниями с помощью расширенных функций шаблонов ARM](/learn/modules/manage-deployments-advanced-arm-template-features/).
 * Другие способы использования элемента copy см. в следующих статьях:

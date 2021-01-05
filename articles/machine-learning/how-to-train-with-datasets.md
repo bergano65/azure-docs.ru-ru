@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: b6ec9d7035194efc471fc06befad9822c8684a5d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 8b95c5a45992c895713e0be056856172b14b830d
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685585"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740680"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 
@@ -220,6 +220,7 @@ print(os.listdir(mounted_path))
 print (mounted_path)
 ```
 
+
 ## <a name="directly-access-datasets-in-your-script"></a>Прямой доступ к наборам данных в скрипте
 
 Зарегистрированные наборы данных доступны как локально, так и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Чтобы получить доступ к зарегистрированному набору данных во всех экспериментах, используйте следующий код для доступа к рабочей области и зарегистрированному набору данных по имени. По умолчанию [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) метод в `Dataset` классе возвращает последнюю версию набора данных, зарегистрированную в рабочей области.
@@ -255,7 +256,34 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 ## <a name="notebook-examples"></a>Примеры записных книжек
 
 + В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
-+ См. статью как [параметизе наборы данных в конвейерах машинного обучения](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-dataset-and-pipelineparameter.ipynb).
++ См. статью как [параметризе наборы данных в конвейерах машинного обучения](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-dataset-and-pipelineparameter.ipynb).
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+* **Ошибка инициализации набора данных: время ожидания готовности точки подключения** истекло: 
+  * Если у вас нет исходящих правил [группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview) и используется `azureml-sdk>=1.12.0` , обновление `azureml-dataset-runtime` и его зависимости будут актуальными для конкретной дополнительной версии или если вы используете ее в запуске, воссоздайте среду, чтобы она могла установить последнее исправление с исправлением. 
+  * Если вы используете `azureml-sdk<1.12.0` , обновите до последней версии.
+  * Если у вас есть правила исходящего трафика NSG, убедитесь, что имеется правило исходящего трафика, разрешающее весь трафик для тега службы `AzureResourceMonitor` .
+
+### <a name="overloaded-azurefile-storage"></a>Перегруженное хранилище Азурефиле
+
+Если появляется сообщение об ошибке `Unable to upload project files to working directory in AzureFile because the storage is overloaded` , используйте следующие обходные пути.
+
+Если вы используете общую папку для других рабочих нагрузок, таких как передача данных, рекомендуется использовать большие двоичные объекты, чтобы файловый ресурс можно было использовать для отправки запусков. Вы также можете разделить рабочую нагрузку между двумя разными рабочими областями.
+
+### <a name="passing-data-as-input"></a>Передача данных в качестве входного
+
+*  **Типиррор: FileNotFound: отсутствует такой файл или каталог**: Эта ошибка возникает, если указанный путь к файлу не находится там, где расположен файл. Необходимо убедиться в том, что путь к файлу соответствует месту подключения набора данных к целевому объекту вычислений. Чтобы обеспечить детерминированное состояние, рекомендуется использовать абстрактный путь при подключении набора данных к целевому объекту вычислений. Например, в следующем примере выполняется подключение набора данных в корне файловой системы целевого объекта вычислений `/tmp` . 
+    
+    ```python
+    # Note the leading / in '/tmp/dataset'
+    script_params = {
+        '--data-folder': dset.as_named_input('dogscats_train').as_mount('/tmp/dataset'),
+    } 
+    ```
+
+    Если не указать начальную косую черту ("/"), необходимо добавить к рабочему каталогу префикс, например, в `/mnt/batch/.../tmp/dataset` целевом объекте вычислений, чтобы указать, где нужно подключить набор данных.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

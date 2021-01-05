@@ -1,7 +1,7 @@
 ---
-title: Локальное устранение неполадок развертывания веб-службы
+title: Устранение неполадок при развертывании локальной модели
 titleSuffix: Azure Machine Learning
-description: Узнайте, как обойти и устранить распространенные ошибки развертывания DOCKER Машинное обучение Azure локально.
+description: Используйте развертывание локальной модели в качестве первого шага при устранении ошибок развертывания модели.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.reviewer: luquinta
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 01a5f600acf9542c5adabcdf2523a42ca44233af
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: a879a81ae2bcb4e659c69a801f7c299c10ab3d77
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680507"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740646"
 ---
-# <a name="troubleshoot-model-deployment-locally"></a>Устранение неполадок развертывания моделей локально
+# <a name="troubleshooting-with-a-local-model-deployment"></a>Устранение неполадок при развертывании локальной модели
 
-Узнайте, как устранять неполадки и решать или обойти общие ошибки развертывания веб-службы DOCKER Машинное обучение Azure локально.
+Используйте развертывание локальной модели в качестве первого шага при устранении неполадок развертывания в службе "экземпляры контейнеров Azure" (ACI) или Azure Kubernetes Service (AKS).  Использование локальной веб-службы упрощает обнаружение и устранение распространенных ошибок развертывания веб-службы DOCKER Машинное обучение Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,8 +33,6 @@ ms.locfileid: "97680507"
     Чтобы проверить установку Docker, выполните команду `docker run hello-world` в терминале или командной строке. Сведения об установке Docker или устранении ошибок Docker см. в [документации Docker](https://docs.docker.com/).
 
 ## <a name="debug-locally"></a>Отладка в локальной среде
-
-Если при развертывании модели в ACI или AKS возникли проблемы, разверните ее как локальную веб-службу. Использование локальной веб-службы упрощает устранение неполадок.
 
 Пример [локального развертывания](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb) можно найти в репозитории  [мачинелеарнингнотебукс](https://github.com/Azure/MachineLearningNotebooks) , чтобы просмотреть пример готового к запуску примера.
 

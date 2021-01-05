@@ -5,17 +5,17 @@ author: memildin
 manager: rkarlin
 services: security-center
 ms.author: memildin
-ms.date: 09/22/2020
+ms.date: 12/22/2020
 ms.service: security-center
 ms.topic: how-to
-ms.openlocfilehash: d15d73b0f2b87b8e6f66c7bd4e7fb34f6b06e1a0
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: d5820af1efd91efd79fb2a860d6aad8d2eeed80d
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341929"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740884"
 ---
-# <a name="explore-and-manage-your-resources-with-asset-inventory-and-management-tools"></a>Исследование ресурсов и управление ими с помощью инвентаризации ресурсов и средств управления
+# <a name="explore-and-manage-your-resources-with-asset-inventory"></a>Просмотр ресурсов и управление ими с помощью инвентаризации активов
 
 Страница инвентаризации ресурсов в Центре безопасности Azure позволяет просматривать состояние безопасности всех ресурсов, подключенных к Центру безопасности. 
 
@@ -43,7 +43,7 @@ ms.locfileid: "92341929"
 |Состояние выпуска:|Общедоступная версия (GA)|
 |Цены|Free|
 |Требуемые роли и разрешения|все пользователи|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
 
 
@@ -63,9 +63,9 @@ ms.locfileid: "92341929"
 
     После применения фильтров сводные значения обновляются для связи с результатами запроса. 
 
-- **Параметры экспорта** — Инвентаризация предоставляет возможность экспортировать результаты выбранных параметров фильтра в CSV-файл. Кроме того, вы можете экспортировать сам запрос в обозреватель графа ресурсов Azure для дальнейшего уточнения, сохранения или изменения запроса ККЛ.
+- **Параметры экспорта** — Инвентаризация предоставляет возможность экспортировать результаты выбранных параметров фильтра в CSV-файл. Кроме того, вы можете экспортировать сам запрос в обозреватель графа ресурсов Azure, чтобы уточнить, сохранить или изменить запрос на языке запросов Kusto (ККЛ).
 
-    ![Параметры экспорта запасов](./media/asset-inventory/inventory-export-options.png)
+    :::image type="content" source="./media/asset-inventory/inventory-export-options.png" alt-text="Параметры экспорта запасов":::
 
     > [!TIP]
     > Документация по ККЛ предоставляет базу данных с некоторыми примерами данных, а также некоторые простые запросы, позволяющие получить «впечатление» для языка. [Дополнительные сведения см. в этом руководстве по ККЛ](/azure/data-explorer/kusto/query/tutorial?pivots=azuredataexplorer).
@@ -94,7 +94,7 @@ ms.locfileid: "92341929"
 
 1. Выберите соответствующие параметры в фильтрах, чтобы создать конкретный запрос, который необходимо выполнить.
 
-    :::image type="content" source="./media/asset-inventory/inventory-filters.png" alt-text="Фильтрация рабочих ресурсов, которые не отслеживаются" lightbox="./media/asset-inventory/inventory-filters.png":::
+    :::image type="content" source="./media/asset-inventory/inventory-filters.png" alt-text="Параметры фильтрации запасов" lightbox="./media/asset-inventory/inventory-filters.png":::
 
     По умолчанию ресурсы сортируются по количеству активных рекомендаций по безопасности.
 
@@ -114,16 +114,16 @@ ms.locfileid: "92341929"
 
     - **Off** — ресурсы, не защищенные планом защитника Azure. Вы можете щелкнуть правой кнопкой мыши любую из них и обновить их:
 
-        :::image type="content" source="./media/asset-inventory/upgrade-resource-inventory.png" alt-text="Фильтрация рабочих ресурсов, которые не отслеживаются" lightbox="./media/asset-inventory/upgrade-resource-inventory.png":::
+        :::image type="content" source="./media/asset-inventory/upgrade-resource-inventory.png" alt-text="Обновление ресурса до защитника Azure с помощью щелчка правой кнопкой мыши" lightbox="./media/asset-inventory/upgrade-resource-inventory.png":::
 
     - **В** ресурсах, защищенных планом защитника Azure;
     - **Частично** . Это относится к **подпискам** , в которых отключены некоторые планы защитника Azure. Например, в следующей подписке отключены пять планов защитника Azure. 
 
-        :::image type="content" source="./media/asset-inventory/pricing-tier-partial.png" alt-text="Фильтрация рабочих ресурсов, которые не отслеживаются":::
+        :::image type="content" source="./media/asset-inventory/pricing-tier-partial.png" alt-text="Подписка частично в защитнике Azure":::
 
 1. Чтобы проанализировать результаты запроса, выберите интересующие вас ресурсы.
 
-1. Чтобы просмотреть текущие выбранные параметры фильтра в виде запроса в обозревателе графа ресурсов, выберите **вид в обозревателе ресурсов**.
+1. Чтобы просмотреть текущие выбранные параметры фильтра в виде запроса в обозревателе графа ресурсов, выберите **открыть запрос**.
 
     ![Запрос на инвентаризацию в ARG](./media/asset-inventory/inventory-query-in-resource-graph-explorer.png)
 
@@ -138,9 +138,9 @@ ms.locfileid: "92341929"
 
 В представлении "Инвентаризация" перечислены ресурсы центра безопасности, подключенные с точки зрения Cloud Security Management (КСПМ). Фильтры не возвращают каждый ресурс в вашей среде; только те, у которых есть необработанные (или "активные") рекомендации. 
 
-Например, на следующем снимке экрана показан пользователь с доступом к подпискам 38, но в настоящее время есть рекомендации только по 10. Поэтому при фильтрации по **типу ресурса = подписки**в инвентаризации отображаются только 10 подписок с активными рекомендациями.
+Например, на следующем снимке экрана показан пользователь с доступом к подпискам 38, но в настоящее время есть рекомендации только по 10. Поэтому при фильтрации по **типу ресурса = подписки** в инвентаризации отображаются только 10 подписок с активными рекомендациями.
 
-:::image type="content" source="./media/asset-inventory/filtered-subscriptions-some.png" alt-text="Фильтрация рабочих ресурсов, которые не отслеживаются":::
+:::image type="content" source="./media/asset-inventory/filtered-subscriptions-some.png" alt-text="Не все возвращены, если нет активных рекомендаций":::
 
 ### <a name="why-do-some-of-my-resources-show-blank-values-in-the-azure-defender-or-agent-monitoring-columns"></a>Почему некоторые ресурсы показывают пустые значения в столбцах "защитник Azure" или "Мониторинг агента"?
 
@@ -148,9 +148,9 @@ ms.locfileid: "92341929"
 
 Если цены или мониторинг агентов не относятся к ресурсу, в этих столбцах инвентаризации ничего не отображается.
 
-:::image type="content" source="./media/asset-inventory/agent-pricing-blanks.png" alt-text="Фильтрация рабочих ресурсов, которые не отслеживаются":::
+:::image type="content" source="./media/asset-inventory/agent-pricing-blanks.png" alt-text="Некоторые ресурсы показывают пустые сведения в столбцах мониторинга агента или защитника Azure.":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описывается страница "Инвентаризация активов" центра безопасности Azure.
 

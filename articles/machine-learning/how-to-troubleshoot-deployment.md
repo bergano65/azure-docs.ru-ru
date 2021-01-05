@@ -1,7 +1,7 @@
 ---
-title: Устранение неполадок развертывания удаленной веб-службы
+title: Устранение неполадок при удаленном развертывании моделей
 titleSuffix: Azure Machine Learning
-description: Узнайте, как обойти и устранить распространенные ошибки развертывания DOCKER с помощью службы Kubernetes Azure и экземпляров контейнеров Azure.
+description: Узнайте, как обойти и устранить некоторые распространенные ошибки развертывания DOCKER с помощью службы Kubernetes Azure и экземпляров контейнеров Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.reviewer: jmartens
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: contperf-fy20q4, devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 92cd70e864ae0490ce3f9e7435d9518241f93c8e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 4224e301d6410fc97da1f98cd0dd9577c6341cd3
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031510"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740629"
 ---
-# <a name="troubleshoot-model-deployment"></a>Устранение неполадок при развертывании моделей
+# <a name="troubleshooting-remote-model-deployment"></a>Устранение неполадок при удаленном развертывании моделей 
 
-Узнайте, как устранять неполадки и устранять распространенные ошибки развертывания DOCKER с помощью экземпляров контейнеров Azure (ACI) и службы Kubernetes Azure (AKS), используя Машинное обучение Azure.
+Узнайте, как устранять неполадки и устранять распространенные ошибки, которые могут возникнуть при развертывании модели в службе "экземпляры контейнеров Azure" (ACI) и Azure Kubernetes Service (AKS) с помощью Машинное обучение Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -177,6 +177,16 @@ def run(input_data):
 Код состояния 504 указывает на истечение времени ожидания запроса. Время ожидания по умолчанию составляет 1 минуту.
 
 Вы можете увеличить время ожидания или попытаться ускорить службу, изменив файл score.py для удаления ненужных вызовов. Если проблема не исчезнет, используйте сведения из этой статьи для отладки файла score.py. Код может находиться в неотвечающем состоянии или в бесконечном цикле.
+
+## <a name="other-error-messages"></a>Другие сообщения об ошибках
+
+Выполните следующие действия для следующих ошибок:
+
+|Ошибка  | Решение  |
+|---------|---------|
+|Ошибка при создании образа при развертывании веб-службы     |  Добавьте "Пинакл = = 1.2.1" в качестве зависимости PIP к файлу Conda для конфигурации образа.       |
+|`['DaskOnBatch:context_managers.DaskOnBatch', 'setup.py']' died with <Signals.SIGKILL: 9>`     |   Измените номер SKU для виртуальных машин, используемых в развертывании, на один с большим объемом памяти. |
+|Сбой FPGA     |  Вы не сможете развернуть модели на FPGA до тех пор, пока не будет запрошена и одобрена квота FPGA. Чтобы запросить доступ, заполните форму запроса квоты: https://aka.ms/aml-real-time-ai       |
 
 ## <a name="advanced-debugging"></a>Расширенная отладка
 

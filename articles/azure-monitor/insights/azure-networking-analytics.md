@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: c304354f378708c43c25ef8b92b7b80b37ac03af
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 19370eee9d9fa524de9beeaa85a15521580bd8e6
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563115"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707696"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения для мониторинга сетей Azure в Azure Monitor
 
@@ -104,6 +104,21 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 
 [![Снимок экрана книги шлюза приложений](media/azure-networking-analytics/azure-appgw-workbook.png)](media/azure-networking-analytics/application-gateway-workbook.png#lightbox)
 
+### <a name="new-capabilities-with-azure-monitor-network-insights-workbook"></a>Новые возможности в книге Azure Monitor Network Insights
+
+> [!NOTE]
+> Нет дополнительных затрат, связанных с книгой Azure Monitor Insights. В Log Analytics рабочей области будет взиматься плата за использование.
+
+Книга Network Insights позволяет воспользоваться преимуществами новейших возможностей Azure Monitor и Log Analytics включая:
+
+* Централизованная консоль для мониторинга и устранения неполадок с данными [метрик](../insights/network-insights-overview.md#resource-health-and-metrics) и журналов.
+
+* Гибкое полотно для поддержки создания пользовательских полнофункциональных [визуализаций](../platform/workbooks-overview.md#visualizations).
+
+* Возможность использования и [совместного использования шаблонов книг](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) с более широкими сообществом.
+
+Дополнительные сведения о возможностях нового решения для книги извлечь [книги — обзор](../platform/workbooks-overview.md)
+
 ## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Миграция из решения аналитики шлюза Azure в Azure Monitor книги
 
 > [!NOTE]
@@ -119,21 +134,6 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 3. После того как вы сможете просмотреть все данные метрик и журналов, чтобы очистить решение аналитики шлюза Azure из рабочей области, можно удалить решение на странице ресурсов решения.
 
 [![Снимок экрана с параметром "Удалить" для решения "анализ шлюза приложений Azure".](media/azure-networking-analytics/azure-appgw-analytics-delete.png)](media/azure-networking-analytics/application-gateway-analytics-delete.png#lightbox)
-
-### <a name="new-capabilities-with-azure-monitor-network-insights-workbook"></a>Новые возможности в книге Azure Monitor Network Insights
-
-> [!NOTE]
-> Нет дополнительных затрат, связанных с книгой Azure Monitor Insights. В Log Analytics рабочей области будет взиматься плата за использование.
-
-Книга Network Insights позволяет воспользоваться преимуществами новейших возможностей Azure Monitor и Log Analytics включая:
-
-* Централизованная консоль для мониторинга и устранения неполадок с данными [метрик](../insights/network-insights-overview.md#resource-health-and-metrics) и журналов.
-
-* Гибкое полотно для поддержки создания пользовательских полнофункциональных [визуализаций](../platform/workbooks-overview.md#visualizations).
-
-* Возможность использования и [совместного использования шаблонов книг](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) с более широкими сообществом.
-
-Дополнительные сведения о возможностях нового решения для книги извлечь [книги — обзор](../platform/workbooks-overview.md)
 
 ## <a name="azure-network-security-group-analytics-solution-in-azure-monitor"></a>Решение "Аналитика групп безопасности сетей Azure" в Azure Monitor
 

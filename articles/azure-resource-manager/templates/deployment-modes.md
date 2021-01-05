@@ -3,12 +3,12 @@ title: Режимы развертывания
 description: В этой статье описывается, как с помощью Azure Resource Manager задать полный или пошаговый режим развертывания.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: bc499be4185905af7eaf71b3515895de9bee46d3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 45eee255cec06925095ed0696c669b5c205f8b56
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184048"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724414"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Режимы развертывания в Azure Resource Manager
 
@@ -33,7 +33,7 @@ ms.locfileid: "96184048"
 
 Существуют некоторые отличия в том, как типы ресурсов обрабатывают Удаление завершенного режима. Родительские ресурсы автоматически удаляются, если находятся не на шаблоне, который развертывается в полном режиме. Некоторые дочерние ресурсы не удаляются автоматически, если находятся вне шаблона. Однако эти дочерние ресурсы удаляются, если родительский ресурс удаляется.
 
-Например, если ваша группа ресурсов содержит зону DNS (тип ресурса Microsoft.Network/dnsZones) и запись CNAME (тип ресурса Microsoft.Network/dnsZones/CNAME), то зона DNS является родительским ресурсом для записи CNAME. Если вы используете полный режим во время развертывания и не включаете в вашем шаблоне зону DNS, то и зона DNS, и запись CNAME удаляться. Если вы включили зону DNS в шаблон, но не включили запись CNAME, CNAME не будет удалена.
+Например, если группа ресурсов содержит зону DNS ( `Microsoft.Network/dnsZones` тип ресурса) и запись CNAME ( `Microsoft.Network/dnsZones/CNAME` тип ресурса), то зона DNS является родительским ресурсом для записи CNAME. Если вы используете полный режим во время развертывания и не включаете в вашем шаблоне зону DNS, то и зона DNS, и запись CNAME удаляться. Если вы включили зону DNS в шаблон, но не включили запись CNAME, CNAME не будет удалена.
 
 Дополнительные сведения об удалении разных типов ресурсов см. в статье [Deletion of Azure resources for complete mode deployments](complete-mode-deletion.md) (Удаление ресурсов Azure для развертываний в полном режиме).
 
@@ -113,19 +113,19 @@ az deployment group create \
 ```json
 "resources": [
   {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2017-05-10",
-      "name": "linkedTemplate",
-      "properties": {
-          "mode": "Incremental",
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2017-05-10",
+    "name": "linkedTemplate",
+    "properties": {
+      "mode": "Incremental",
           <nested-template-or-external-template>
-      }
+    }
   }
 ]
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о создании шаблонов диспетчер ресурсов см. в разделе [Создание шаблонов Azure Resource Manager](template-syntax.md).
-* Сведения о развертывании ресурсов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](deploy-powershell.md).
+* Дополнительные сведения о создании шаблонов диспетчер ресурсов см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
+* Дополнительные сведения о развертывании ресурсов см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md).
 * Чтобы просмотреть операции для поставщика ресурсов, ознакомьтесь с [Azure REST API](/rest/api/).
