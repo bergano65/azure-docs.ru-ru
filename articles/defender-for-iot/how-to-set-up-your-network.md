@@ -4,15 +4,15 @@ description: Узнайте о архитектуре решения, подго
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 01/03/2021
+ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: b5cb7d0e421657b84c365d8dca536191cafd4e72
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 3e9380f067b091c4473b8c29bda3d31bb93cbc6d
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861967"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97843189"
 ---
 # <a name="about-azure-defender-for-iot-network-setup"></a>Сведения о службе "защитник Azure" для настройки сети IoT
 
@@ -54,7 +54,7 @@ ms.locfileid: "97861967"
 
 - Рабочая станция конфигурации.
 
-- SSL-сертификаты (необязательно, но рекомендуется).
+- SSL-сертификаты (необязательно).
 
 - Проверка подлинности SMTP (необязательно). Чтобы использовать SMTP-сервер с проверкой подлинности, подготовьте учетные данные, необходимые для сервера.
 
@@ -363,7 +363,7 @@ RSPAN: на основе Cisco Catalyst 2960 (24 порта).
 
 Эти модели были протестированы на совместимость. Другие поставщики и модели также могут быть совместимыми.
 
-| Образ — | Модель |
+| Изображение | Модель |
 | -- | -- |
 | :::image type="content" source="media/how-to-set-up-your-network/garland-p1gccas-v2.png" alt-text="Снимок экрана Гарланд P1GCCAS.":::  | Гарланд P1GCCAS  |
 | :::image type="content" source="media/how-to-set-up-your-network/ixia-tpa2-cu3-v2.png" alt-text="Снимок экрана ИКСИА TPA2-CU3.":::  | ИКСИА TPA2 — CU3  |
@@ -569,7 +569,7 @@ RSPAN: на основе Cisco Catalyst 2960 (24 порта).
     > [!NOTE]
     > Защитник для устройства IoT должен быть подключен к коммутатору более низкого уровня, который видит трафик между портами коммутатора.  
 
-2. Укажите приблизительное количество сетевых устройств, которые будут отслеживаться. Эти сведения понадобятся вам при подключении подписки к службе "защитник Azure для Интернета вещей". Во время процесса адаптации вам будет предложено ввести число устройств с шагом в 1000.
+2. Укажите приблизительное количество устройств в сетях (необязательно).
 
 3. Укажите список подсетей для рабочих сетей и описание (необязательно). 
 
