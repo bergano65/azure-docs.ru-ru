@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/13/2017
+ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: 1f9b9e91cda93a986fdaaf0f53d8987544e783a2
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d465106725e9b936172fb74e1cc265c14942f662
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966469"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898102"
 ---
 # <a name="read-nsg-flow-logs"></a>Чтение журналов потоков NSG
 
@@ -184,7 +184,7 @@ A","1497646742,10.0.0.4,168.62.32.14,44942,443,T,O,A","1497646742,10.0.0.4,52.24
 
 Этот сценарий является примером того, как прочитать записи в журналах потоков NSG, не анализируя весь журнал. Вы можете считывать новые записи в журнале по мере их записывания, используя идентификатор блока или отслеживая длину блоков, сохраненных в блочном BLOB-объекте. Это позволяет считывать только новые записи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 Для дополнительных сведений о способах просмотра журналов потоков NSG см. статьи [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana](network-watcher-nsg-grafana.md), и [Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md). Функция Azure с открытым исходным кодом для использования больших двоичных объектов, которые можно использовать непосредственно и передать различным потребителям log Analytics, находится здесь: [соединитель журналов потоков NSG для наблюдателя за сетями Azure](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector).

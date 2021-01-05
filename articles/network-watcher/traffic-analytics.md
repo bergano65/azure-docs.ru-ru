@@ -9,16 +9,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/15/2018
+ms.date: 01/04/2021
 ms.author: damendo
 ms.reviewer: vinigam
 ms.custom: references_regions
-ms.openlocfilehash: d259f3ab6434a75a641050acfaf3a3409e3555d9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8b1eedc47d2a89b9552c22b3ae770f655f926945
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492800"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898782"
 ---
 # <a name="traffic-analytics"></a>Аналитика трафика
 
@@ -89,7 +89,7 @@ ms.locfileid: "96492800"
       Северная часть ЮАР;  
       Центрально-южная часть США  
       Южная Индия  
-      Southeast Asia  
+      Юго-Восточная Азия  
       Северная Швейцария  
       Западная Швейцария  
       южная часть Соединенного Королевства  
@@ -131,7 +131,7 @@ ms.locfileid: "96492800"
       Восточная часть США 2 (EUAP)  
       Центральная Франция  
       Центрально-Западная Германия  
-      Japan East  
+      Восточная Япония  
       Республика Корея, центральный регион  
       Центрально-северная часть США  
       Северная Европа  
@@ -139,7 +139,7 @@ ms.locfileid: "96492800"
       Центрально-южная часть США  
    :::column-end:::
    :::column span="":::
-      Southeast Asia  
+      Юго-Восточная Азия  
       Северная Швейцария  
       Западная Швейцария  
       Центральная часть ОАЭ.  

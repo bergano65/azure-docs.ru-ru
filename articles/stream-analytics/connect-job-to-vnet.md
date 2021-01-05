@@ -6,14 +6,14 @@ ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/23/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: a2d26689a3036f05d7c8e7f417fbbb447402aedc
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: f140384ee2c78b38982c99dab5912bc451584a42
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97762866"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898153"
 ---
 # <a name="connect-stream-analytics-jobs-to-resources-in-an-azure-virtual-network-vnet"></a>Подключение заданий Stream Analytics к ресурсам в виртуальной сети Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "97762866"
 1. [Хранилище BLOB-объектов или Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/stream-analytics/blob-output-managed-identity) — может быть учетной записью хранения задания, входными потоками или выходными данными.
 2. [Концентраторы событий Azure](https://docs.microsoft.com/azure/stream-analytics/event-hubs-managed-identity) — могут быть входными потоками или выходными данными задания.
 
-Если заданиям необходимо подключиться к другим типам входных или выходных данных, единственным вариантом будет использование частных конечных точек в Stream Analytics кластерах.
+Если заданиям требуется подключаться к другим типам входных или выходных данных, можно сначала выполнить запись из Stream Analytics в список выходных данных концентраторов событий, а затем в любое целевое назначение с помощью функций Azure. Если вы хотите напрямую записывать данные из Stream Analytics в другие типы выходных данных, защищенные в виртуальной сети или брандмауэре, единственным вариантом является использование частных конечных точек в кластерах Stream Analytics.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

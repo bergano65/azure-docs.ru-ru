@@ -1,19 +1,19 @@
 ---
 title: Решение Azure VMware по Клаудсимпле — локальное подключение с помощью ExpressRoute
 description: В этой статье описывается, как запросить локальное подключение с помощью ExpressRoute из сети Клаудсимпле Region.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 0dd5ede110255b6e53bbc397e683e66b3beffc65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27d1d9e54838d9f45a28d634fa1c24fb8785aee1
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77019627"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899241"
 ---
 # <a name="connect-from-on-premises-to-cloudsimple-using-expressroute"></a>Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute
 

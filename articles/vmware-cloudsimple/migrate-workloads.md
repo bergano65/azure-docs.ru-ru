@@ -1,19 +1,19 @@
 ---
 title: Решение VMware для Azure от Клаудсимпле — перенос виртуальных машин рабочей нагрузки в частное облако
 description: В этой статье описывается, как перенести виртуальные машины из локального vCenter в Клаудсимпле частное облако vCenter.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/20/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 87b8a112a319519dbde977ee30136a884137212d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 851305775d14ed371440434b2fbe9334ec0a21b9
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77020001"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899326"
 ---
 # <a name="migrate-workload-vms-from-on-premises-vcenter-to-private-cloud-vcenter-environment"></a>Перенос виртуальных машин рабочей нагрузки из локальной среды vCenter в среду с виртуальной частной облаком
 

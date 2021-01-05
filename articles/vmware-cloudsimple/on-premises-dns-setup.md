@@ -1,19 +1,19 @@
 ---
 title: Решение VMware для Azure от Клаудсимпле — Настройка DNS для частного облака Клаудсимпле
 description: Описывается, как настроить разрешение имен DNS для доступа к vCenter Server в частном облаке Клаудсимпле с локальных рабочих станций.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 7a2b2344bbb110cd4b35cc1f6428f61e48552b01
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 63822050512421895b0cfed08fb141f77da20b03
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563013"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899258"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к службе v-Center для частного облака с локальных рабочих станций
 
@@ -46,7 +46,7 @@ ms.locfileid: "97563013"
 Например, для конфигурации сервера привязки по умолчанию измените файл/ЕТК/намед.конф на DNS-сервере и добавьте следующие сведения о зоне.
 
 > [!NOTE]
->Эта статья содержит ссылки на термин «ведомый» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
+>Эта статья содержит ссылки на термин slave (ведомый). Корпорация Майкрософт больше не использует его. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
 
 ```
 zone "az.cloudsimple.io"

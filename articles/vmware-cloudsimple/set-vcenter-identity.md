@@ -1,19 +1,19 @@
 ---
 title: Решение VMware для Azure от Клаудсимпле — Настройка источников удостоверений vCenter в частном облаке
 description: Описание настройки частного облака vCenter для проверки подлинности с помощью Active Directory для администраторов VMware для доступа к vCenter
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/15/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 60090dec56a177fac6ddad946d97142b484355af
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: a76fecb942c5c6da926e37149245e82dcbc4661b
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425741"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899156"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Настройка источников удостоверений vCenter для использования Active Directory
 
@@ -58,7 +58,7 @@ VMware vCenter поддерживает различные источники у
 |------------|-----------------|
 | **Имя** | Имя источника удостоверений. |
 | **Базовое DN для пользователей** | Базовое различающееся имя для пользователей. |
-| **Имя домена** | Полное доменное имя домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
+| **Доменное имя** | Полное доменное имя домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
 | **Псевдоним домена** | NetBIOS-имя домена. Если используются проверки подлинности SSPI, добавьте NetBIOS-имя домена Active Directory в качестве псевдонима источника удостоверений. |
 | **Базовое DN для групп** | Базовое различающееся имя для групп. |
 | **URL-адрес основного сервера** | Сервер LDAP основного контроллера домена для домена.<br><br>Используйте формат `ldap://hostname:port` или `ldaps://hostname:port` . Порт обычно 389 для подключений LDAP и 636 для подключений LDAPs. Для Active Directory развертываний нескольких контроллеров домена порт обычно 3268 для LDAP и 3269 для LDAPs.<br><br>Сертификат, устанавливающий отношение доверия для конечной точки LDAPs сервера Active Directory, необходим при использовании `ldaps://` в первичном или вторичном URL-адресе LDAP. |
@@ -115,7 +115,7 @@ Active Directory, выполняемые в Azure, похожи на Active Dire
 
 3. Выберите **домашняя > администрирование**.
 
-    ![Администрирование](media/OnPremAD01.png)
+    ![очередей и баз данных](media/OnPremAD01.png)
 
 4. Выберите **конфигурация > единого входа**.
 

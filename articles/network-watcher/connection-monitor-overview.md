@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/23/2020
+ms.date: 01/04/2021
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: c5c3f8dedad47a819ce3648a0b81ffa3e65a1a1e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 57228c6b7da04b139c7075c83e313b207907e214
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544893"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898017"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor"></a>Мониторинг сетевых подключений с помощью монитора подключений
 
@@ -271,12 +271,12 @@ ms.locfileid: "95544893"
 
 При использовании метрик задайте тип ресурса Microsoft. Network/Нетворкватчерс/Коннектионмониторс.
 
-| Metric | Отображаемое имя | Единицы | Тип агрегирования | Описание | Измерения |
+| Метрика | Отображаемое имя | Единицы | Тип агрегирования | Описание | Измерения |
 | --- | --- | --- | --- | --- | --- |
-| ProbesFailedPercent | Доля проб с ошибками, в процентах | Процент | Среднее | Сбой пробы мониторинга подключения. | Нет измерений |
+| ProbesFailedPercent | Доля проб с ошибками, в процентах | Процент | Среднее значение | Сбой пробы мониторинга подключения. | Нет измерений |
 | AverageRoundtripMs | Среднее Время приема-передачи (мс) | Миллисекунды | Среднее | Среднее время приема сетевого соединения для проверок мониторинга подключения, отправляемых между источником и назначением. |             Нет измерений |
-| Чекксфаиледперцент (Предварительная версия) | % Проверок с ошибками (Предварительная версия) | Процент | Среднее | Процент неудачных проверок для теста. | коннектионмониторресаурцеид <br>саурцеаддресс <br>SourceName <br>Значение sourceresourceid <br>Тип источника <br>Протокол <br>DestinationAddress <br>DestinationName <br>дестинатионресаурцеид <br>DestinationType <br>DestinationPort <br>тестграупнаме <br>тестконфигуратионнаме <br>Region |
-| Раундтриптимемс (Предварительная версия) | Время приема-передачи (МС) (Предварительная версия) | Миллисекунды | Среднее | RTT для проверок, отправленных между источником и назначением. Это значение не является средним. | коннектионмониторресаурцеид <br>саурцеаддресс <br>SourceName <br>Значение sourceresourceid <br>Тип источника <br>Протокол <br>DestinationAddress <br>DestinationName <br>дестинатионресаурцеид <br>DestinationType <br>DestinationPort <br>тестграупнаме <br>тестконфигуратионнаме <br>Region |
+| Чекксфаиледперцент (Предварительная версия) | % Проверок с ошибками (Предварительная версия) | Процент | Среднее значение | Процент неудачных проверок для теста. | коннектионмониторресаурцеид <br>саурцеаддресс <br>SourceName <br>Значение sourceresourceid <br>Тип источника <br>Протокол <br>DestinationAddress <br>DestinationName <br>дестинатионресаурцеид <br>DestinationType <br>DestinationPort <br>тестграупнаме <br>тестконфигуратионнаме <br>Регион |
+| Раундтриптимемс (Предварительная версия) | Время приема-передачи (МС) (Предварительная версия) | Миллисекунды | Среднее | RTT для проверок, отправленных между источником и назначением. Это значение не является средним. | коннектионмониторресаурцеид <br>саурцеаддресс <br>SourceName <br>Значение sourceresourceid <br>Тип источника <br>Протокол <br>DestinationAddress <br>DestinationName <br>дестинатионресаурцеид <br>DestinationType <br>DestinationPort <br>тестграупнаме <br>тестконфигуратионнаме <br>Регион |
 
 #### <a name="metric-based-alerts-for-connection-monitor"></a>Оповещения на основе метрик для монитора подключения
 

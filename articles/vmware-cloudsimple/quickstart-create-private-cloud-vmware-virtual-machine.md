@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Создание виртуальной машины Azure VMware в частном облаке — решение VMware для Azure от Клаудсимпле
 description: Узнайте, как создать виртуальную машину VMware в частном облаке Клаудсимпле. Доступ к порталу Клаудсимпле из портал Azure.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/16/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: fd67a5a7f1bf665333e06c66f73c7f18727a3e12
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: c741f01ccc3e34ec991aa77fc850fd9f60c4d8aa
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427773"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899292"
 ---
 # <a name="create-vmware-virtual-machines-on-your-private-cloud"></a>Создание виртуальных машин VMware в частном облаке
 
@@ -36,7 +36,7 @@ ms.locfileid: "92427773"
 
 Теперь можно запустить vCenter, чтобы настроить виртуальные машины и политики.
 
-Чтобы получить доступ к vCenter, запустите портал Клаудсимпле. На домашней странице в разделе **Общие задачи**щелкните **запустить клиент vSphere**.  Выберите частное облако и щелкните **запустить клиент vSphere** в частном облаке.
+Чтобы получить доступ к vCenter, запустите портал Клаудсимпле. На домашней странице в разделе **Общие задачи** щелкните **запустить клиент vSphere**.  Выберите частное облако и щелкните **запустить клиент vSphere** в частном облаке.
 
    ![Запуск клиента vSphere](media/launch-vcenter-from-cloudsimple-portal.png)
 
@@ -139,7 +139,7 @@ Linux предлагает различные пакеты для настрой
 5. При необходимости используйте ползунок, чтобы изменить время ожидания простоя.
 6. Введите локальный IP-адрес, для которого требуется назначить общедоступный IP-адрес.
 7. При необходимости введите соответствующее DNS-имя.
-8. Нажмите кнопку **Done**(Готово).
+8. Нажмите кнопку **Готово**.
 
     ![Общедоступный IP-адрес](media/quick-create-pc-public-ip.png)
 
@@ -200,7 +200,7 @@ netstat -an | grep 80
 python2.7 -m SimpleHTTPServer 80
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```
 python3 -m http.server 80

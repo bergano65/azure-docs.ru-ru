@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: conceptual
-ms.date: 10/09/2020
+ms.date: 01/03/2021
 ms.author: guybo
-ms.openlocfilehash: b27b7344d84ce1361d8294fa4f3490c50afbb4c3
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 9d278582840404702bfef3e5fc9af395f659d844
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489664"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898085"
 ---
 # <a name="endorsed-linux-distributions-on-azure"></a>Рекомендуемые дистрибутивы Linux в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "94489664"
 | --- | --- | --- | --- |
 | CentOS по мошенническому звуковому программному обеспечению |CentOS 6. x, 7. x, 8. x |CentOS 6,3: [скачивание LIS](https://www.microsoft.com/download/details.aspx?id=55106)<p>CentOS 6.4 и более поздних версий: в ядре |Пакет: в [репозитории](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) в разделе "WALinuxAgent" <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)<p> CoreOS теперь имеет [окончание жизни](https://coreos.com/os/eol/) от 26 мая 2020 г. |Больше не доступно | | |
-| Debian от Credativ |8.x, 9.x |В ядре |Пакет: в репозитории в разделе WAAgent  <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| Debian от Credativ |8. x, 9. x, 10. x |В ядре |Пакет: в репозитории в разделе WAAgent  <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 |Контейнер флаткар Linux от Кинволк| Профессиональная, стабильная, бета-версия| В ядре | WA-Linux-агент уже установлен в/УСР/шаре/ОЕМ/бин/ваажент |
 | Oracle Linux по Oracle |6.x, 7.x, 8.x |В ядре |Пакет: в репозитории в разделе WALinuxAgent  <br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | [Red Hat Enterprise Linux с помощью Red Hat](../workloads/redhat/overview.md) |6.x, 7.x, 8.x |В ядре |Пакет: в репозитории в разделе WALinuxAgent  <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |

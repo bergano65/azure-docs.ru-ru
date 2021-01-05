@@ -1,19 +1,19 @@
 ---
 title: Решение VMware для Azure от Клаудсимпле — служба
 description: Узнайте о службе Клаудсимпле, используя ее обзор. Создание службы позволяет покупать узлы, резервировать узлы и создавать частные облака.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/20/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: ec77209c0995bf5aec0957c8d4d2269f27d743bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f32197eda4fc7632e883fd21dd6e1caa0dbd24b
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88142134"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898748"
 ---
 # <a name="cloudsimple-service-overview"></a>Общие сведения о службе Клаудсимпле
 
@@ -23,6 +23,6 @@ ms.locfileid: "88142134"
 
 Для каждой службы Клаудсимпле требуется подсеть шлюза, которая является уникальной для региона, в котором она создана. Подсеть шлюза используется при создании пограничной сети и требует блока/28 CIDR.  Адресное пространство подсети шлюза должно быть уникальным. Она не должна перекрываться с сетью, которая взаимодействует с средой Клаудсимпле. Сети, взаимодействующие с Клаудсимпле, включают в себя локальные сети и виртуальную сеть Azure.  Подсеть шлюза невозможно удалить после ее создания.  Подсеть шлюза удаляется при удалении службы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [создать службу клаудсимпле в Azure](quickstart-create-cloudsimple-service.md).

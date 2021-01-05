@@ -1,19 +1,19 @@
 ---
 title: Решение Azure VMware от CloudSimple — перенос локальной сети уровня 2 в частное облако
 description: Описывает, как настроить VPN уровня 2 между NSX-T в частном облаке CloudSimple и локальным автономным пограничным клиентом NSX.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: f524bf6af66d44bc13b7c0957de7977968cbef28
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 06446b6c36e36466fe891d7327d8151603cdecd2
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427254"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899377"
 ---
 # <a name="migrate-workloads-using-layer-2-stretched-networks"></a>Перенос рабочих нагрузок с помощью растянутых сетей уровня 2
 

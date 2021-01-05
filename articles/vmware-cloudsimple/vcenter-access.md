@@ -1,19 +1,19 @@
 ---
 title: Решение VMware для Azure по Клаудсимпле-Access vSphere Client
 description: Описание доступа к vCenter вашего частного облака.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/30/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 18d9463bc512257034860e1188372879524924f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e62042a84f7ac2615762e3d9b036e4340bd8c73
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77022670"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899122"
 ---
 # <a name="access-your-private-cloud-vcenter-portal"></a>Доступ к порталу для работы с частным облаком vCenter
 
@@ -36,7 +36,7 @@ ms.locfileid: "77022670"
 
 Портал vCenter для частного облака можно запустить из портал Azure.
 
-1. Выберите элемент **Все службы**.
+1. Выбор пункта **Все службы**.
 
 2. Выполните поиск по запросу **Клаудсимпле Services**.
 
