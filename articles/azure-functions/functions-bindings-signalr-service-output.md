@@ -6,12 +6,12 @@ ms.topic: reference
 ms.custom: devx-track-csharp
 ms.date: 02/20/2020
 ms.author: cshoe
-ms.openlocfilehash: 8bb07e650c99f18cfecbc7b7674e0ca0e5a01dae
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 159df4c228f74bb605c745e899d99bfff2aa511b
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998912"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763291"
 ---
 # <a name="signalr-service-output-binding-for-azure-functions"></a>Выходная привязка службы SignalR для функций Azure
 
@@ -722,7 +722,7 @@ public SignalRGroupAction removeFromGroup(
 
 ---
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="signalrconnectioninfo"></a>SignalRConnectionInfo
 
@@ -751,6 +751,7 @@ public SignalRGroupAction removeFromGroup(
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
+- [Обработку сообщений из службы SignalR (привязка триггера)](./functions-bindings-signalr-service-trigger.md)
 - [Возврат URL-адреса конечной точки службы и маркера доступа (входная привязка)](./functions-bindings-signalr-service-input.md)

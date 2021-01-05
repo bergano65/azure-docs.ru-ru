@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: cfbbc1d218f590241fab804e389acd689c009dac
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 2be77a47c4b111dd2f25a8fc9ca35690d1b2d80c
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754017"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796760"
 ---
 # <a name="support-matrix-for-physical-server-assessment"></a>Матрица поддержки для оценки физических серверов 
 
@@ -67,7 +67,7 @@ chmod a+r /sys/class/dmi/id/product_uuid | Получение GUID BIOS
 **Устройство** | **Соединение**
 --- | ---
 **Устройство** | Входящие подключения через TCP-порт 3389, чтобы разрешить подключения к удаленному рабочему столу для устройства.<br/><br/> Входящие подключения через порт 44368 для удаленного доступа к приложению управления устройством с помощью URL-адреса: ``` https://<appliance-ip-or-name>:44368 ```<br/><br/> Исходящие подключения через порты 443 (HTTPS) для отправки метаданных обнаружения и производительности в службу "миграция Azure".
-**физические серверы;** | **Windows:** Входящее подключение через порт WinRM 5985 (HTTP) для извлечения метаданных конфигурации и производительности с серверов Windows. <br/><br/> **Linux:**  Входящие подключения через порт 22 (TCP) для извлечения метаданных конфигурации и производительности с серверов Linux. |
+**физические серверы;** | **Windows:** Входящее подключение через порт WinRM 5985 (HTTP) или 5986 (HTTPS) для извлечения метаданных конфигурации и производительности с серверов Windows. <br/><br/> **Linux:**  Входящие подключения через порт 22 (TCP) для извлечения метаданных конфигурации и производительности с серверов Linux. |
 
 ## <a name="agent-based-dependency-analysis-requirements"></a>Требования к анализу зависимостей на основе агента
 

@@ -6,16 +6,18 @@ ms.topic: reference
 ms.custom: devx-track-csharp
 ms.date: 05/11/2020
 ms.author: chenyl
-ms.openlocfilehash: e2651afbcdc3bae71bb531aa0e821f83264c295d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2482a26987ec142880acc51bf470d844655b6e3f
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212584"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763525"
 ---
 # <a name="signalr-service-trigger-binding-for-azure-functions"></a>Привязка триггера службы SignalR для функций Azure
 
 Используйте привязку триггера *SignalR* для реагирования на сообщения, отправленные из службы Azure SignalR. При запуске функции сообщения, передаваемые в функцию, анализируются как объект JSON.
+
+В режиме бессерверной службы SignalR служба SignalR использует [вышестоящий](../azure-signalr/concept-upstream.md) компонент для отправки сообщений от клиента к приложение-функция. И приложение-функция использует привязку триггера службы SignalR для обработки этих сообщений. Общая архитектура показана ниже: " :::image type="content" source="media/functions-bindings-signalr-service/signalr-trigger.png" alt-text="архитектура триггера SignalR"::: "
 
 Сведения об установке и настройке см. в [этой обзорной статье](functions-bindings-signalr-service.md).
 
@@ -163,7 +165,7 @@ def main(invocation) -> None:
 
 ---
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="signalrtrigger"></a>сигналртригжер
 
@@ -203,15 +205,22 @@ def main(invocation) -> None:
 
 ## <a name="using-parameternames"></a>Использование `ParameterNames`
 
-Свойство `ParameterNames` в `SignalRTrigger` позволяет привязывать аргументы сообщений вызова к параметрам функций. Это предоставляет более удобный способ доступа к аргументам `InvocationContext` .
+Свойство `ParameterNames` в `SignalRTrigger` позволяет привязывать аргументы сообщений вызова к параметрам функций. Заданное имя можно использовать как часть [выражений привязки](../azure-functions/functions-bindings-expressions-patterns.md) в другой привязке или в качестве параметров в коде. Это предоставляет более удобный способ доступа к аргументам `InvocationContext` .
 
-Предположим, у вас есть клиент SignalR для JavaScript, пытающийся вызвать метод `broadcast` в функции Azure с двумя аргументами.
+Предположим, у вас есть клиент SignalR для JavaScript, пытающийся вызвать метод `broadcast` в функции Azure с двумя аргументами `message1` : `message2` .
 
 ```javascript
 await connection.invoke("broadcast", message1, message2);
 ```
 
-Можно получить доступ к этим двум аргументам из параметра, а также назначить для них тип параметра с помощью `ParameterNames` .
+После установки заданное `parameterNames` имя будет соответствовать аргументам, отправляемым на стороне клиента. 
+
+```cs
+[SignalRTrigger(parameterNames: new string[] {"arg1, arg2"})]
+```
+
+Затем объект `arg1` будет содержать содержимое объекта `message1` и `arg2` будет содержать содержимое `message2` .
+
 
 ### <a name="remarks"></a>Remarks
 
@@ -219,20 +228,28 @@ await connection.invoke("broadcast", message1, message2);
 
 `ParameterNames` атрибут и `[SignalRParameter]` **не может** использоваться одновременно, или вы получите исключение.
 
-## <a name="send-messages-to-signalr-service-trigger-binding"></a>Отправка сообщений в привязку триггера службы SignalR
+## <a name="signalr-service-integration"></a>Интеграция службы SignalR
 
-Функция Azure создает URL-адрес для привязки триггера службы SignalR и имеет следующий формат:
+Службе SignalR требуется URL-адрес для доступа к приложение-функция при использовании привязки триггера службы SignalR. URL-адрес должен быть настроен в **параметрах вышестоящего** сервера на стороне службы SignalR. 
+
+:::image type="content" source="../azure-signalr/media/concept-upstream/upstream-portal.png" alt-text="Вышестоящий портал":::
+
+При использовании триггера службы SignalR URL-адрес может быть простым и отформатированным, как показано ниже.
 
 ```http
-https://<APP_NAME>.azurewebsites.net/runtime/webhooks/signalr?code=<API_KEY>
+<Function_App_URL>/runtime/webhooks/signalr?code=<API_KEY>
 ```
 
-Создается `API_KEY` функцией Azure. Вы можете получить `API_KEY` из портал Azure, так как вы используете привязку триггера службы SignalR.
+Его `Function_App_URL` можно найти на странице обзора приложение-функция, а `API_KEY` компонент — в функции Azure. Получить можно `API_KEY` `signalr_extension` в колонке **ключи приложения** приложение-функция.
 :::image type="content" source="media/functions-bindings-signalr-service/signalr-keys.png" alt-text="Ключ API":::
 
-Этот URL-адрес необходимо задать в `UrlTemplate` параметрах вышестоящей службы SignalR.
+Если вы хотите использовать более одного приложение-функция вместе с одной службой SignalR, то вышестоящий может также поддерживать сложные правила маршрутизации. Дополнительные сведения см. в [параметрах вышестоящего потока](../azure-signalr/concept-upstream.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="step-by-step-sample"></a>Пример пошагового шага
+
+Вы можете перейти к примеру в GitHub, чтобы развернуть комнату чата на приложение-функция с помощью привязки триггера службы SignalR и вышестоящей функции: [Пример двунаправленного разговора](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BidirectionChat)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Functions development and configuration with Azure SignalR Service](../azure-signalr/signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
-* [Пример привязки триггера службы SignalR](https://github.com/Azure/azure-functions-signalrservice-extension/tree/dev/samples/bidirectional-chat)
+* [Пример привязки триггера службы SignalR](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BidirectionChat)

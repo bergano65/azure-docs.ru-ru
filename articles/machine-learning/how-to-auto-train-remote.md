@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: how-to, automl
 ms.date: 03/09/2020
-ms.openlocfilehash: 65ce11581972c83b0294c0afcbe95e5a35ef2471
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: d6d21acc685ba840b585ada43e59230fdd73787f
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920582"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796386"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -159,7 +159,7 @@ automl_config = AutoMLConfig(task='classification',
 
 ```python
 from azureml.core.experiment import Experiment
-experiment = Experiment(ws, 'automl_remote')
+experiment = Experiment(ws, 'Tutorial-automl-remote')
 remote_run = experiment.submit(automl_config, show_output=True)
 ```
 
@@ -228,7 +228,7 @@ remote_run.get_portal_url()
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как настроить параметры автоматического обучения](how-to-configure-auto-train.md)
 * См. [практические руководства](how-to-machine-learning-interpretability-automl.md) по включению функций интерпретации модели в автоматизированных экспериментах ml.

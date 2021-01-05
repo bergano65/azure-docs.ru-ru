@@ -16,12 +16,12 @@ ms.date: 04/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31bdfc7e3eca2a2678b75b80973a1680448737d1
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 5394a2829af4b0cd7a1c817f6aad4ca5451cc4bc
+ms.sourcegitcommit: 00aa5afaa9fac91f1059cfed3d8dbc954caaabe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507682"
+ms.lasthandoff: 12/27/2020
+ms.locfileid: "97792438"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Azure Active Directory сквозной аутентификации: Краткое руководство
 
@@ -51,7 +51,7 @@ ms.locfileid: "97507682"
 
 ### <a name="in-your-on-premises-environment"></a>В локальной среде
 
-1. Укажите сервер под управлением Windows Server 2012 R2 или более поздней версии для запуска Azure AD Connect. [Включите протокол TLS 1.2 на сервере](./how-to-connect-install-prerequisites.md#enable-tls-12-for-azure-ad-connect), если еще не сделали это. Добавьте этот сервер в тот же лес AD, что и пользователей, пароли которых требуется проверить.
+1. Укажите сервер под управлением Windows Server 2012 R2 или более поздней версии для запуска Azure AD Connect. [Включите протокол TLS 1.2 на сервере](./how-to-connect-install-prerequisites.md#enable-tls-12-for-azure-ad-connect), если еще не сделали это. Добавьте этот сервер в тот же лес AD, что и пользователей, пароли которых требуется проверить. Следует отметить, что установка агента проверки подлинности Pass-Through в версиях Windows Server Core не поддерживается. 
 2. Установите [последнюю версию Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) на сервер, указанный на предыдущем шаге. Если вы уже используете Azure AD Connect, убедитесь, что установлена версия 1.1.750.0 или выше.
 
     >[!NOTE]

@@ -10,20 +10,15 @@ ms.author: copeters
 author: lostmygithubaccount
 ms.date: 06/25/2020
 ms.topic: conceptual
-ms.custom: how-to, data4ml
-ms.openlocfilehash: 1622f8ce988c5592ac96cec798617ca6ac37aa8d
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.custom: how-to, data4ml, contperf-fy21q2
+ms.openlocfilehash: 1bf7856e807b04e35d28a3e262ae89ea9c298f3c
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617176"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763597"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение смещения данных (Предварительная версия) в наборах
-
-
-> [!IMPORTANT]
-> В настоящее время обнаружение отклонения данных в наборах является общедоступной предварительной версией.
-> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Узнайте, как отслеживать смещение данных и задавать предупреждения при высоком смещении.  
 
@@ -33,10 +28,15 @@ ms.locfileid: "97617176"
 * **Отслеживайте новые данные** на предмет различий между базовым и целевым наборами данных.
 * **Функции профилирования в данных** для трассировки изменения статистических свойств с течением времени.
 * **Настройте оповещения о смещении данных** для раннего предупреждения о потенциальных проблемах. 
+* **[Создание новой версии набора данных] ("практические сведения о версии")** . Если вы определили, что данные слишком сильно смещены.
 
 Для создания монитора используется [набор данных машинного обучения Azure](how-to-create-register-datasets.md) . Набор данных должен включать столбец timestamp.
 
 Метрики смещения данных можно просмотреть с помощью пакета SDK для Python или в Машинное обучение Azure Studio.  Другие метрики и аналитические сведения доступны в ресурсе [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) , связанном с рабочей областью машинное обучение Azure.
+
+> [!IMPORTANT]
+> В настоящее время обнаружение отклонения данных в наборах является общедоступной предварительной версией.
+> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -92,15 +92,20 @@ ms.locfileid: "97617176"
 | *Application Insights*| Смещение выдает метрики Application Insights, принадлежащих рабочей области машинного обучения.
 | *Хранилище BLOB-объектов Azure*| Смещение выдает метрики в формате JSON в хранилище BLOB-объектов Azure.
 
-## <a name="how-dataset-monitors-data"></a>Как набор данных отслеживает данные
+### <a name="baseline-and-target-datasets"></a>Базовые и целевые наборы данных 
 
-Используйте Машинное обучение наборы данных для отслеживания смещения. Укажите базовый набор данных — обычно обучающий набор данных для модели. Целевой набор данных (обычно входные данные модели) сравнивается со временем для базового набора данных. Это сравнение означает, что в целевом наборе данных должен быть указан столбец timestamp.
+Вы отслеживаете наборы данных службы " [машинное обучение Azure](how-to-create-register-datasets.md) " для смещения. При создании монитора набора данных вы будете ссылаться на:
+* Базовый набор данных — обычно обучающий набор данных для модели.
+* Целевой набор данных — обычно входные данные модели сравниваются со временем в базовом наборе данных. Это сравнение означает, что в целевом наборе данных должен быть указан столбец timestamp.
+
+Монитор будет сравнивать базовые и целевые наборы данных.
 
 ## <a name="create-target-dataset"></a>Создать целевой набор данных
 
 Целевому набору данных требуется `timeseries` установить набор характеристик, указав столбец отметок времени из столбца в данных или виртуального столбца, производного от шаблона пути к файлам. Создайте набор данных с меткой времени с помощью [пакета SDK для Python](#sdk-dataset) или [машинное обучение Azure Studio](#studio-dataset). Необходимо указать столбец, представляющий метку времени, чтобы добавить признаки `timeseries` к набору данных. Если данные разделены на структуру папок со сведениями о времени, например "{гггг/мм/дд}", создайте виртуальный столбец с помощью параметра шаблона пути и задайте для него значение "метка времени секции", чтобы повысить важность функциональности временных рядов.
 
-### <a name="python-sdk"></a><a name="sdk-dataset"></a>Пакет SDK для Python
+# <a name="python"></a>[Python](#tab/python)
+<a name="sdk-dataset"></a>
 
 [`Dataset`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)Метод класса [`with_timestamp_columns()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) определяет столбец временной метки для набора данных.
 
@@ -129,9 +134,12 @@ dset = dset.with_timestamp_columns('date')
 dset = dset.register(ws, 'target')
 ```
 
-Полный пример использования `timeseries` наборов данных см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) или в [документации по пакету SDK для наборов данных](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
+> [!TIP]
+> Полный пример использования `timeseries` наборов данных см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) или в [документации по пакету SDK для наборов данных](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
 
-### <a name="azure-machine-learning-studio"></a><a name="studio-dataset"></a>Машинное обучение Azure Studio
+# <a name="studio"></a>[Студия](#tab/azure-studio)
+
+<a name="studio-dataset"></a>
 
 При создании набора данных с помощью Машинное обучение Azure Studio убедитесь, что путь к данным содержит сведения о метке времени, включает все вложенные папки с данными и задает формат раздела.
 
@@ -147,14 +155,14 @@ dset = dset.register(ws, 'target')
 
 :::image type="content" source="media/how-to-monitor-datasets/timeseries-partitiontimestamp.png" alt-text="Отметка времени секции":::
 
+---
 
-## <a name="create-dataset-monitors"></a>Создание мониторов набора данных
+## <a name="create-dataset-monitor"></a>Создать монитор набора данных
 
-Создание мониторов набора данных для обнаружения и оповещения о смещении данных в новом наборе данных.  Используйте либо [пакет SDK Python](#sdk-monitor) , либо [машинное обучение Azure Studio](#studio-monitor).
+Создание монитора набора данных для обнаружения и оповещения о смещении данных в новом наборе данных.  Используйте либо [пакет SDK Python](#sdk-monitor) , либо [машинное обучение Azure Studio](#studio-monitor).
 
-### <a name="python-sdk"></a><a name="sdk-monitor"></a>Пакет SDK для Python
-
-Подробные сведения см. в [справочной документации по пакету SDK для Python о смещении данных](/python/api/azureml-datadrift/azureml.datadrift) . 
+# <a name="python"></a>[Python](#tab/python)
+<a name="sdk-monitor"></a> Подробные сведения см. в [справочной документации по пакету SDK для Python о смещении данных](/python/api/azureml-datadrift/azureml.datadrift) . 
 
 В следующем примере показано, как создать монитор набора данных с помощью пакета SDK для Python.
 
@@ -202,9 +210,12 @@ monitor = monitor.disable_schedule()
 monitor = monitor.enable_schedule()
 ```
 
-Полный пример настройки `timeseries` набора данных и средства обнаружения смещения данных см. в нашем [примере записной книжки](https://aka.ms/datadrift-notebook).
+> [!TIP]
+> Полный пример настройки `timeseries` набора данных и средства обнаружения смещения данных см. в нашем [примере записной книжки](https://aka.ms/datadrift-notebook).
 
-### <a name="azure-machine-learning-studio"></a><a name="studio-monitor"></a> Машинное обучение Azure Studio
+
+# <a name="studio"></a>[Студия](#tab/azure-studio)
+<a name="studio-monitor"></a>
 
 1. Перейдите на [домашнюю страницу Studio](https://ml.azure.com).
 1. Выберите вкладку **наборы данных** слева. 
@@ -233,6 +244,8 @@ monitor = monitor.enable_schedule()
     | Пороговое значение | Пороговое значение смещения данных в процентах для предупреждений электронной почты. | Дополнительные оповещения и события можно задать во многих других метриках в связанном Application Insights ресурсе рабочей области. | Да |
 
 После завершения работы мастера в списке появится монитор результирующего набора данных. Выберите его, чтобы открыть страницу сведений этого монитора.
+
+---
 
 ## <a name="understand-data-drift-results"></a>Общие сведения о смещении данных
 
@@ -319,9 +332,50 @@ monitor = monitor.enable_schedule()
 
 ![Новая группа действий](./media/how-to-monitor-datasets/action-group.png)
 
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Ограничения и известные проблемы для мониторов смещения данных:
+
+* Диапазон времени при анализе исторических данных ограничен 31 интервалами в параметре частоты монитора. 
+* Ограничение функций 200, если не указан список функций (все используемые компоненты).
+* Размер вычислений должен быть достаточно большим, чтобы обрабатывать данные.
+* Убедитесь, что набор данных содержит данные в пределах начальной и конечной даты для данного монитора.
+* Мониторы наборов данных будут работать только на наборах данных, содержащих 50 строк или более.
+* Столбцы или функции в наборе данных классифицируются по категориям или числу в зависимости от условий, приведенных в следующей таблице. Если функция не соответствует этим условиям (например, столбец строкового типа с >100 уникальными значениями), то функция удаляется из алгоритма смещения данных, но по-прежнему выполняется в процессе профилирования. 
+
+    | Тип компонента | Тип данных | Условие | Ограничения | 
+    | ------------ | --------- | --------- | ----------- |
+    | категориальные; | String, bool, int, float | Число уникальных значений в компоненте меньше 100 и меньше 5% от количества строк. | Значение NULL считается собственной категорией. | 
+    | числовые; | int, float | Значения в функции имеют числовой тип данных и не соответствуют условию для функции категоризации. | Функция удалена, если >15% значений равны NULL. | 
+
+* Если вы создали монитор рассмещения данных, но не видите данные на странице " **мониторы набора данных** " в машинное обучение Azure Studio, попробуйте выполнить следующее.
+
+    1. Проверьте, выбран ли правильный диапазон дат в верхней части страницы.  
+    1. На вкладке **мониторы набора данных** щелкните ссылку эксперимента, чтобы проверить состояние выполнения.  Эта ссылка находится на правом краю таблицы.
+    1. Если запуск завершился успешно, проверьте журналы драйвера, чтобы узнать, сколько метрик было создано, или в случае наличия предупреждающих сообщений.  Если щелкнуть эксперимент, найдите журналы драйверов на вкладке **выходные данные и журналы** .
+
+* Если функция пакета SDK не `backfill()` создает ожидаемые выходные данные, это может быть вызвано проблемой проверки подлинности.  При создании вычислений для передачи этой функции не используйте `Run.get_context().experiment.workspace.compute_targets` .  Вместо этого используйте [сервицепринЦипалаусентикатион](/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication?preserve-view=true&view=azure-ml-py) , как показано ниже, чтобы создать вычисление, передаваемое в эту `backfill()` функцию: 
+
+  ```python
+   auth = ServicePrincipalAuthentication(
+          tenant_id=tenant_id,
+          service_principal_id=app_id,
+          service_principal_password=client_secret
+          )
+   ws = Workspace.get("xxx", auth=auth, subscription_id="xxx", resource_group"xxx")
+   compute = ws.compute_targets.get("xxx")
+   ```
+
+* Из сборщика данных модели для получения данных в учетной записи хранилища BLOB-объектов может потребоваться до 10 минут (но обычно меньше). В скрипте или записной книжке подождите 10 минут, чтобы убедиться, что указанные ниже ячейки будут выполняться.
+
+    ```python
+    import time
+    time.sleep(600)
+    ```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Перейдите в [машинное обучение Azure Studio](https://ml.azure.com) или в [записную книжку Python](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datadrift-tutorial/datadrift-tutorial.ipynb) , чтобы настроить монитор набора данных.
 * См. раздел Настройка смещения данных для [моделей, развернутых в службе Azure Kubernetes](./how-to-enable-data-collection.md).
-* Настройка мониторов смещения набора данных с помощью [сетки событий](how-to-use-event-grid.md). 
-* При возникновении проблем ознакомьтесь с общими [советами по устранению неполадок](resource-known-issues.md#data-drift) .
+* Настройка мониторов смещения набора данных с помощью [сетки событий](how-to-use-event-grid.md).

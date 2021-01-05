@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/17/2020
+ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: b3671a57b8371c47b1690b4bf6be008d695d1ca0
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: f5d6d6255b48192a5943159599531fac18ebeb26
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654750"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796998"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -111,7 +111,7 @@ ms.locfileid: "97654750"
 | Служба, компонент или функция | US Gov | China Gov |
 |------|:----:|:----:|
 |[JIT-доступ к виртуальной машине](security-center-just-in-time.md) (1)|✔|✔|
-|[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md) (1)|✔|-|
+|[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md) (1)|✔|✔|
 |[Адаптивные элементы управления приложениями](security-center-adaptive-application.md) (1)|✔|✔|
 |[Адаптивная защита сети](security-center-adaptive-network-hardening.md) (1)|-|-|
 |[Защита узлов Docker](harden-docker-hosts.md) (1)|✔|✔|
@@ -119,19 +119,19 @@ ms.locfileid: "97654750"
 |[Microsoft Defender для конечных точек](harden-docker-hosts.md) (1)|✔|-|
 |[Подключение учетной записи AWS](quickstart-onboard-aws.md) (1)|-|-|
 |[Подключение учетной записи GCP](quickstart-onboard-gcp.md) (1)|-|-|
-|[непрерывный экспорт.](continuous-export.md)|✔|✔|
+|[непрерывный экспорт.](continuous-export.md)|✔|✔ (2)|
 |[Автоматизация рабочих процессов](workflow-automation.md)|✔|✔|
 |[Правила исключения рекомендаций](exempt-resource.md)|-|-|
 |[Правила подавления оповещений](alerts-suppression-rules.md)|✔|✔|
 |[Отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)|✔|✔|
-|[Инвентаризация ресурсов](asset-inventory.md)|-|-|
+|[Инвентаризация ресурсов](asset-inventory.md)|✔|✔|
 |[Azure Defender для Службы приложений](defender-for-app-service-introduction.md)|-|-|
-|[Azure Defender для службы хранилища](defender-for-storage-introduction.md)|✔|-|
+|[Azure Defender для службы хранилища](defender-for-storage-introduction.md)|✔ (2)|-|
 |[Azure Defender для SQL](defender-for-sql-introduction.md)|✔|✔ (2)|
 |[Azure Defender для Key Vault](defender-for-key-vault-introduction.md)|-|-|
 |[Azure Defender для Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
 |[Azure Defender для DNS](defender-for-dns-introduction.md)|-|-|
-|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
+|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔ (2)|✔|
 |[Azure Defender для реестров контейнеров](defender-for-container-registries-introduction.md)|✔ (2)|-|
 |||
 

@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: 5e1f8a099256040e14db1cdab288551a228512cd
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: ee1c59c71834ab9d80f1ed66a002e211bdcacbbf
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655379"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796505"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -94,7 +94,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Полный список операций с хранилищем и секретами можно просмотреть здесь: [Справочник по операциям Key Vault](/rest/api/keyvault/#vault-operations)
 
-<a id="key-vault-access-policies"></a> Политики доступа к Key Vault предоставляют доступ отдельно к ключам, секретам и сертификатам.  Разрешения на доступ к ключам, секретам и сертификатам устанавливаются на уровне хранилища. 
+<a id="key-vault-access-policies"></a> Политики доступа Key Vault предоставляют разрешения отдельно для ключей, секретов и сертификатов.  Разрешения на доступ к ключам, секретам и сертификатам устанавливаются на уровне хранилища. 
 
 Дополнительные сведения об использовании политик доступа к хранилищу ключей см. [в разделе Назначение политики доступа Key Vault](assign-access-policy-portal.md) .
 
@@ -187,7 +187,7 @@ Azure Key Vault — это облачная служба, которая обе
 | Группа безопасности | [Участник Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-contributor) | Сертификаты: все операции <br> Ключи: все операции <br> Секреты: все операции | [Администратор Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-administrator-preview) |
 | Разработчики и&nbsp;операторы | Разрешение на развертывание Key Vault<br><br> **Примечание.** Это разрешение позволяет развернутым виртуальным машинам получать секреты из хранилища ключей. | None | None |
 | Аудиторы | None | Сертификаты: список <br> Ключи: перечисление<br>Секреты: перечисление<br><br> **Примечание.** Это разрешение позволяет аудиторам проверять атрибуты (теги, даты активации, даты истечения срока действия) ключей и секретов, которые не отправляются в журналы. | [Читатель Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview) |
-| Учетная запись хранения Azure | Нет | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user-preview) |
+| Учетная запись хранения Azure | None | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user-preview) |
 | Приложение | None | Секреты: Get, List <br> Сертификаты: Get, List | [Читатель Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview), [Key Vault пользователя секрета (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-secrets-user-preview) |
 
 Трем ролям группы требуется доступ к другим ресурсам вместе с разрешениями Key Vault. Для развертывания виртуальных машин (или компонента "веб-приложения" службы приложений Azure) разработчикам и операторам требуется развернуть доступ. Аудиторам требуется доступ на чтение к учетной записи хранения, где хранятся журналы Key Vault.

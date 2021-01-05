@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: ded2bc8a71bf564e31f40ca9f0d6c8049188768b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 610049ec14243abb296aef431eb37533c6169817
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95978375"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797066"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -149,7 +149,7 @@ $targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" 
 $targetVault.ID
 ```
 
-Или
+либо
 
 ```powershell
 $targetVaultID = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" -Name "testvault" | select -ExpandProperty ID
@@ -256,8 +256,10 @@ Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGro
 ```
 
 > [!NOTE]
-> Если вы используете облако Azure для государственных организаций, используйте значение `ff281ffe-705c-4f53-9f37-a40e6f2c68f3` параметра "перестройка **ServicePrincipalName** " в командлете [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) .
+> Если вы используете облако Azure для государственных организаций, используйте значение `ff281ffe-705c-4f53-9f37-a40e6f2c68f3` параметра "перестройка  " в командлете [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) .
 >
+
+Если вы хотите выборочно создать резервную копию нескольких дисков и исключить другие, как упоминалось в [этих сценариях](selective-disk-backup-restore.md#scenarios), можно настроить защиту и резервное копирование только соответствующих дисков, как описано [здесь](selective-disk-backup-restore.md#enable-backup-with-powershell).
 
 ## <a name="monitoring-a-backup-job"></a>Наблюдение за выполнением задания резервного копирования
 
@@ -338,6 +340,10 @@ $bkpPol.AzureBackupRGName="Contosto_"
 $bkpPol.AzureBackupRGNameSuffix="ForVMs"
 Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol
 ```
+
+### <a name="exclude-disks-for-a-protected-vm"></a>Исключение дисков для защищенной виртуальной машины
+
+Служба архивации виртуальных машин Azure позволяет выборочно исключать или включать диски, которые полезны в [этих сценариях](selective-disk-backup-restore.md#scenarios). Если виртуальная машина уже защищена с помощью резервного копирования виртуальных машин Azure и при этом выполняется резервное копирование всех дисков, можно изменить защиту, чтобы выборочно включить или исключить диски, как описано [здесь](selective-disk-backup-restore.md#modify-protection-for-already-backed-up-vms-with-powershell).
 
 ### <a name="trigger-a-backup"></a>Активация архивации
 
@@ -511,6 +517,13 @@ Wait-AzRecoveryServicesBackupJob -Job $restorejob -Timeout 43200
 $restorejob = Get-AzRecoveryServicesBackupJob -Job $restorejob -VaultId $targetVault.ID
 $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $targetVault.ID
 ```
+
+#### <a name="restore-selective-disks"></a>Восстановление выборочных дисков
+
+Пользователь может выборочно восстановить несколько дисков вместо полного резервного набора данных. Укажите необходимый диск LUN в качестве параметра, чтобы восстановить их только вместо всего набора, как описано [здесь](selective-disk-backup-restore.md#restore-selective-disks-with-powershell).
+
+> [!IMPORTANT]
+> Один из них должен выборочно выполнять резервное копирование дисков для выборочного восстановления дисков. Дополнительные сведения приведены [здесь](selective-disk-backup-restore.md#selective-disk-restore).
 
 Восстановив диски, перейдите к следующему разделу по созданию виртуальной машины.
 
@@ -880,6 +893,6 @@ Windows e3632984e51f496 V2VM_wus2_8287309959960546283_451516692429_cbd6061f7fc54
 Disable-AzRecoveryServicesBackupRPMountScript -RecoveryPoint $rp[0] -VaultId $targetVault.ID
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы предпочитаете использовать PowerShell для взаимодействия с ресурсами Azure, см. статью [Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell](backup-client-automation.md). Сведения об управлении резервными копиями DPM см. в статье [Развертывание службы архивации для DPM и управление ею](backup-dpm-automation.md).

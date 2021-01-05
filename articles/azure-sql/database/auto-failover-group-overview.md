@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
-ms.date: 11/16/2020
-ms.openlocfilehash: 0d2248b9c0a289f5e4f9f2f8e987365ab58c49c0
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.date: 12/26/2020
+ms.openlocfilehash: 91375f4460b55617ace0b18b60d59d961a762f4c
+ms.sourcegitcommit: 00aa5afaa9fac91f1059cfed3d8dbc954caaabe2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94988550"
+ms.lasthandoff: 12/27/2020
+ms.locfileid: "97792506"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -229,7 +229,7 @@ ms.locfileid: "94988550"
 
 ### <a name="creating-the-secondary-instance"></a>Создание экземпляра-получателя
 
-Чтобы обеспечить непрерванное подключение к основному SQL-Управляемый экземпляр после отработки отказа, первичный и вторичный экземпляры должны находиться в одной зоне DNS. Это гарантирует, что один и тот же сертификат с несколькими доменами (SAN) можно использовать для проверки подлинности клиентских подключений к одному из двух экземпляров в группе отработки отказа. Когда приложение будет готово к развертыванию в рабочей среде, создайте вторичный SQL-Управляемый экземпляр в другом регионе и убедитесь, что он использует зону DNS совместно с основным Управляемый экземпляром SQL. Это можно сделать, указав необязательный `DNS Zone Partner` параметр с помощью портал Azure, PowerShell или REST API.
+Чтобы обеспечить непрерванное подключение к основному SQL-Управляемый экземпляр после отработки отказа, первичный и вторичный экземпляры должны находиться в одной зоне DNS. Это гарантирует, что один и тот же сертификат с несколькими доменами (SAN) можно использовать для проверки подлинности клиентских подключений к одному из двух экземпляров в группе отработки отказа. Когда приложение будет готово к развертыванию в рабочей среде, создайте вторичный SQL-Управляемый экземпляр в другом регионе и убедитесь, что он использует зону DNS совместно с основным Управляемый экземпляром SQL. Это можно сделать, указав необязательный параметр во время создания. Если вы используете PowerShell или REST API, имя необязательного параметра имеет значение `DNS Zone Partner` , а имя соответствующего дополнительного поля в портал Azure является первичным управляемый экземпляр.
 
 > [!IMPORTANT]
 > Первый управляемый экземпляр, созданный в подсети, определяет зону DNS для всех последующих экземпляров в той же подсети. Это означает, что два экземпляра из одной подсети не могут принадлежать разным зонам DNS.
@@ -426,7 +426,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |
@@ -464,7 +464,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |

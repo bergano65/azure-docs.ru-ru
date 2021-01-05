@@ -11,12 +11,12 @@ ms.reviewer: peterlu
 ms.date: 12/10/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: eec53570c542ceb60c937072135fcb70b59e80a6
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: e3bf77406df302c4ba83cb7a8f1a30fba9f6339e
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631046"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97795943"
 ---
 # <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>Обучение моделей PyTorch в масштабе с помощью Машинное обучение Azure
 
@@ -206,7 +206,7 @@ src = ScriptRunConfig(source_directory=project_folder,
 [Объект Run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
 
 ```Python
-run = Experiment(ws, name='pytorch-birds').submit(src)
+run = Experiment(ws, name='Tutorial-pytorch-birds').submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
@@ -314,6 +314,10 @@ src = ScriptRunConfig(source_directory=project_folder,
 Если вы хотите использовать серверную часть глу для распределенного обучения, укажите `communication_backend='Gloo'` вместо этого. Для распределенного обучения ЦП рекомендуется использовать серверную часть глу.
 
 Полный учебник по запуску распределенной PyTorch в МАШИНном обучении Azure см. в разделе [Распределенная PyTorch с помощью дистрибутеддатапараллел](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/distributed-pytorch-with-nccl-gloo).
+
+### <a name="troubleshooting"></a>Устранение неполадок
+
+* **Работа хоровод** завершена: в большинстве случаев, если возникла ошибка "Абортедеррор: хоровод завершена", в одном из процессов, вызвавших хоровод, было выработано соответствующее исключение. Каждый ранг в задании MPI получает собственный выделенный файл журнала в Машинном обучении Azure. Эти журналы имеют имя `70_driver_logs`. В случае распределенного обучения к именам журналов добавляются в суффиксы `_rank`, чтобы облегчить различение журналов. Чтобы найти точную ошибку, которая привела к завершению работы хоровод, просмотрите все файлы журнала и найдите `Traceback` в конце файлов driver_log. Один из этих файлов предоставит фактическое базовое исключение. 
 
 ## <a name="export-to-onnx"></a>Экспорт в формат ONNX
 

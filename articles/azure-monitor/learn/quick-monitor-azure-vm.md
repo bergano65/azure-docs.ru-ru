@@ -7,12 +7,12 @@ ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 03/10/2020
-ms.openlocfilehash: ef0e3a451a5687278acaf1e857012027a5e657a3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: bf38291e26c46d26bbf8cb110d18e9526fb3f777
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186768"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797185"
 ---
 # <a name="quickstart-monitor-an-azure-virtual-machine-with-azure-monitor"></a>Мониторинг виртуальной машины Azure с помощью Azure Monitor.
 [Azure Monitor](../overview.md) начинает сбор данных из виртуальных машин Azure с момента их создания. В этом кратком руководстве описываются данные, которые автоматически собираются для каждой виртуальной машины Azure, и показано, как просматривать эти данные на портале Azure. Затем вы включите для виртуальной машины [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md), чтобы агенты на виртуальной машине могли получать и анализировать данные из гостевой операционной системы, в том числе сведения о процессах и зависимостях.
@@ -73,7 +73,7 @@ ms.locfileid: "96186768"
 
 ### <a name="data-collection-from-linux-vm"></a>Сбор данных из виртуальной машины Linux
 
-1. Выберите **Системный журнал**.  
+1. Выберите **Данные** и **Системный журнал**.
 
 2. Добавьте журнал событий, введя его имя.  Введите **Системный журнал** и щелкните знак "плюс" (**+**).  
 

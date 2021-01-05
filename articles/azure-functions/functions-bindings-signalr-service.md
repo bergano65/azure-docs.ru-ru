@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/28/2019
 ms.author: cshoe
-ms.openlocfilehash: 1446808b77e5eea78a9912db4c7a8e2dd783f33a
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 9e60fd9a20720d75f96a0b78ee783bd5509a8f90
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104382"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763495"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>Привязки службы SignalR для службы "Функции Azure"
 
@@ -18,6 +18,7 @@ ms.locfileid: "92104382"
 
 | Действие | Тип |
 |---------|---------|
+| Обработку сообщений от службы SignalR | [Привязка триггера](./functions-bindings-signalr-service-trigger.md) |
 | Возврат URL-адреса конечной точки службы и маркера доступа | [Входная привязка](./functions-bindings-signalr-service-input.md) |
 | Отправка сообщений службы SignalR |[Выходная привязка](./functions-bindings-signalr-service-output.md) |
 
@@ -27,7 +28,7 @@ ms.locfileid: "92104382"
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Комментарии 
+| Язык                                        | Добавить по...                                   | Remarks 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 3. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure] " рекомендуется использовать с Visual Studio Code. |
@@ -55,5 +56,6 @@ ms.locfileid: "92104382"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- [Обработку сообщений из службы SignalR (привязка триггера)](./functions-bindings-signalr-service-trigger.md)
 - [Возврат URL-адреса конечной точки службы и маркера доступа (входная привязка)](./functions-bindings-signalr-service-input.md)
 - [Отправка сообщений службы SignalR (Выходная привязка)](./functions-bindings-signalr-service-output.md)

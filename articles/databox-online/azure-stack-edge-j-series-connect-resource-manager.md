@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 048f2585d8e9ac1b10293083bda0900e7ce468bb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6bf0da8716233178889d47ec3d57e9b29bc2658f
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447604"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763223"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stack ребра Pro
 
@@ -34,7 +34,7 @@ Azure Resource Manager предоставляет последовательны
 
 В следующей таблице перечислены различные конечные точки, предоставляемые на устройстве, Поддерживаемые протоколы и порты для доступа к этим конечным точкам. На протяжении всей статьи вы найдете ссылки на эти конечные точки.
 
-| # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Назначение |
+| # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Используется для |
 | --- | --- | --- | --- | --- |
 | 1. | Azure Resource Manager | HTTPS | 443 | Подключение к Azure Resource Manager для автоматизации |
 | 2. | Служба маркеров безопасности | HTTPS | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
@@ -183,7 +183,7 @@ Azure Resource Manager предоставляет последовательны
 
 1. На клиенте будут установлены модули Azure PowerShell, которые будут работать с устройством.
 
-    a. Откройте сеанс PowerShell от имени администратора. Вам нужен доступ к коллекции PowerShell. 
+    а. Откройте сеанс PowerShell от имени администратора. Вам нужен доступ к коллекции PowerShell. 
 
 
     b. Чтобы установить необходимые модули Azure PowerShell из коллекция PowerShell, выполните следующую команду:
@@ -460,4 +460,4 @@ ExtendedProperties : {}
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание виртуальных машин на устройстве Azure Stack Edge Pro](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md)
+[Развертывание виртуальных машин на устройстве Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md)

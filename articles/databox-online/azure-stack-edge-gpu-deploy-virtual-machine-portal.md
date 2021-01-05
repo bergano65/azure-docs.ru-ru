@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/02/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro device so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 89ef196cb5a124b8b1100871c408400f3fceef5c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 04ba9777fe9e8470e6f02c83f3996d098023e05e
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96467167"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763461"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-the-azure-portal"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью портал Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "96467167"
     |---------|---------|
     |Имя виртуальной машины     |         |
     |Образ —     | Выберите из образов виртуальных машин, доступных на устройстве.        |
-    |Размер     | Выберите один из [поддерживаемых размеров виртуальных машин](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#supported-vm-sizes).        |
+    |Размер     | Выберите один из [поддерживаемых размеров виртуальных машин](azure-stack-edge-gpu-virtual-machine-sizes.md).        |
     |Имя пользователя     | Используйте имя пользователя по умолчанию *azureuser*.        |
     |Authentication type (Тип проверки подлинности)    | Выберите открытый ключ SSH или пароль, определенный пользователем.       |
     |Пароль     | Введите пароль для входа на виртуальную машину. Пароль должен иметь длину не менее 12 символов и соответствовать определенным [требованиям к сложности](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).        |

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 12/25/2020
 ms.author: memildin
-ms.openlocfilehash: c0952e0f267f9c2511a2e80fa7106958d8dd0ee5
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 115d89783a849a9c4c7adb2fceceaf8d1575c785
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791891"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97795994"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Рекомендации по безопасности в Центре безопасности Azure 
 В этом разделе объясняется, как просмотреть и изучить рекомендации в центре безопасности Azure, которые помогут защитить ресурсы Azure.
@@ -42,7 +42,11 @@ ms.locfileid: "92791891"
 
 1. В меню центра безопасности откройте страницу **рекомендации** , чтобы просмотреть рекомендации, применимые к вашей среде. Рекомендации группируются в средства управления безопасностью.
 
-      ![Рекомендации, сгруппированные по контролю безопасности](./media/security-center-recommendations/view-recommendations.png)
+    :::image type="content" source="./media/security-center-recommendations/view-recommendations.png" alt-text="Рекомендации, сгруппированные по контролю безопасности" lightbox="./media/security-center-recommendations/view-recommendations.png":::
+
+1. Чтобы найти рекомендации, связанные с типом ресурса, уровнем серьезности, средой или другими важными критериями, используйте необязательные фильтры, приведенные выше в списке рекомендаций.
+
+    :::image type="content" source="media/security-center-recommendations/recommendation-list-filters.png" alt-text="Фильтры для уточнения списка рекомендаций центра безопасности Azure":::
 
 1. Разверните элемент управления и выберите конкретную рекомендацию, чтобы просмотреть страницу сведений об рекомендации.
 
@@ -60,7 +64,7 @@ ms.locfileid: "92791891"
         - **Неработоспособные ресурсы** — ресурсы, на которые все еще влияют выявленная неполадка.
         - **Неприменимые ресурсы** — ресурсы, для которых рекомендация не может дать определенный ответ. Вкладка неприменима также включает причины для каждого ресурса. 
 
-            :::image type="content" source="./media/security-center-recommendations/recommendations-not-applicable-reasons.png" alt-text="Страница сведений об рекомендации.":::
+            :::image type="content" source="./media/security-center-recommendations/recommendations-not-applicable-reasons.png" alt-text="Неприменимые ресурсы по причинам.":::
     1. Кнопки действий для исправления рекомендации или запуска приложения логики.
 
 ## <a name="preview-recommendations"></a>Рекомендации по предварительной версии
@@ -71,7 +75,7 @@ ms.locfileid: "92791891"
 
 Пример рекомендации предварительной версии:
 
-:::image type="content" source="./media/secure-score-security-controls/example-of-preview-recommendation.png" alt-text="Страница сведений об рекомендации.":::
+:::image type="content" source="./media/secure-score-security-controls/example-of-preview-recommendation.png" alt-text="Рекомендация с отметкой предварительной версии":::
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

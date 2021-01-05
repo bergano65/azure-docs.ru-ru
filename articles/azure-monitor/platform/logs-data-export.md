@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 3b29245aed1b2c7767c340cbe8cd35dfa38610b9
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 8e310ea487818f6d82869fe1973c8e9ed0b04195
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656688"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797117"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
@@ -41,7 +41,7 @@ Log Analytics экспорт данных рабочей области непр
 - Рабочая область Log Analytics может находиться в любом регионе, за исключением следующих:
   - Северная Швейцария
   - Западная Швейцария
-  - Регионы Azure для государственных организаций
+  - регионы Azure для государственных организаций;
 - Целевая учетная запись хранения или концентратор событий должны находиться в том же регионе, что и Рабочая область Log Analytics.
 - Имена экспортируемых таблиц не могут содержать более 60 символов для учетной записи хранения и не более 47 символов в концентраторе событий. Таблицы с более длинными именами не будут экспортированы.
 
@@ -216,6 +216,186 @@ PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
   }
 }
 ```
+
+# <a name="template"></a>[Шаблон](#tab/json)
+
+Используйте следующую команду, чтобы создать правило экспорта данных для учетной записи хранения с помощью шаблона.
+
+```
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaceName": {
+            "defaultValue": "workspace-name",
+            "type": "String"
+        },
+        "workspaceLocation": {
+            "defaultValue": "workspace-region",
+            "type": "string"
+        },
+        "storageAccountRuleName": {
+            "defaultValue": "storage-account-rule-name",
+            "type": "string"
+        },
+        "storageAccountResourceId": {
+            "defaultValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resource-group-name/providers/Microsoft.Storage/storageAccounts/storage-account-name",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "microsoft.operationalinsights/workspaces",
+            "apiVersion": "2020-08-01",
+            "name": "[parameters('workspaceName')]",
+            "location": "[parameters('workspaceLocation')]",
+            "resources": [
+                {
+                  "type": "microsoft.operationalinsights/workspaces/dataexports",
+                  "apiVersion": "2020-08-01",
+                  "name": "[concat(parameters('workspaceName'), '/' , parameters('storageAccountRuleName'))]",
+                  "dependsOn": [
+                      "[resourceId('microsoft.operationalinsights/workspaces', parameters('workspaceName'))]"
+                  ],
+                  "properties": {
+                      "destination": {
+                          "resourceId": "[parameters('storageAccountResourceId')]"
+                      },
+                      "tableNames": [
+                          "Heartbeat",
+                          "InsightsMetrics",
+                          "VMConnection",
+                          "Usage"
+                      ],
+                      "enable": true
+                  }
+              }
+            ]
+        }
+    ]
+}
+```
+
+Используйте следующую команду, чтобы создать правило экспорта данных для концентратора событий с помощью шаблона. Для каждой таблицы создается отдельный концентратор событий.
+
+```
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaceName": {
+            "defaultValue": "workspace-name",
+            "type": "String"
+        },
+        "workspaceLocation": {
+            "defaultValue": "workspace-region",
+            "type": "string"
+        },
+        "eventhubRuleName": {
+            "defaultValue": "event-hub-rule-name",
+            "type": "string"
+        },
+        "namespacesResourceId": {
+            "defaultValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resource-group-name/providers/microsoft.eventhub/namespaces/namespaces-name",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "microsoft.operationalinsights/workspaces",
+            "apiVersion": "2020-08-01",
+            "name": "[parameters('workspaceName')]",
+            "location": "[parameters('workspaceLocation')]",
+            "resources": [
+              {
+                  "type": "microsoft.operationalinsights/workspaces/dataexports",
+                  "apiVersion": "2020-08-01",
+                  "name": "[concat(parameters('workspaceName'), '/', parameters('eventhubRuleName'))]",
+                  "dependsOn": [
+                      "[resourceId('microsoft.operationalinsights/workspaces', parameters('workspaceName'))]"
+                  ],
+                  "properties": {
+                      "destination": {
+                          "resourceId": "[parameters('namespacesResourceId')]"
+                      },
+                      "tableNames": [
+                          "Usage",
+                          "Heartbeat"
+                      ],
+                      "enable": true
+                  }
+              }
+            ]
+        }
+    ]
+}
+```
+
+Используйте следующую команду, чтобы создать правило экспорта данных для определенного концентратора событий с помощью шаблона. Все таблицы экспортируются в указанное имя концентратора событий.
+
+```
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaceName": {
+            "defaultValue": "workspace-name",
+            "type": "String"
+        },
+        "workspaceLocation": {
+            "defaultValue": "workspace-region",
+            "type": "string"
+        },
+        "eventhubRuleName": {
+            "defaultValue": "event-hub-rule-name",
+            "type": "string"
+        },
+        "namespacesResourceId": {
+            "defaultValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resource-group-name/providers/microsoft.eventhub/namespaces/namespaces-name",
+            "type": "String"
+        },
+        "eventhubName": {
+            "defaultValue": "event-hub-name",
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "microsoft.operationalinsights/workspaces",
+            "apiVersion": "2020-08-01",
+            "name": "[parameters('workspaceName')]",
+            "location": "[parameters('workspaceLocation')]",
+            "resources": [
+              {
+                  "type": "microsoft.operationalinsights/workspaces/dataexports",
+                  "apiVersion": "2020-08-01",
+                  "name": "[concat(parameters('workspaceName'), '/', parameters('eventhubRuleName'))]",
+                  "dependsOn": [
+                      "[resourceId('microsoft.operationalinsights/workspaces', parameters('workspaceName'))]"
+                  ],
+                  "properties": {
+                      "destination": {
+                          "resourceId": "[parameters('namespacesResourceId')]",
+                          "metaData": {
+                              "eventHubName": "[parameters('eventhubName')]"
+                          }
+                      },
+                      "tableNames": [
+                          "Usage",
+                          "Heartbeat"
+                      ],
+                      "enable": true
+                  }
+              }
+            ]
+        }
+    ]
+}
+```
+
 ---
 
 ## <a name="view-data-export-rule-configuration"></a>Просмотр конфигурации правила экспорта данных
@@ -243,6 +423,11 @@ az monitor log-analytics workspace data-export show --resource-group resourceGro
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports/<data-export-name>?api-version=2020-08-01
 ```
+
+# <a name="template"></a>[Шаблон](#tab/json)
+
+Недоступно
+
 ---
 
 ## <a name="disable-an-export-rule"></a>Отключение правила экспорта
@@ -265,7 +450,7 @@ az monitor log-analytics workspace data-export update --resource-group resourceG
 
 # <a name="rest"></a>[REST](#tab/rest)
 
-Используйте следующий запрос, чтобы отключить правило экспорта данных с помощью REST API. Запрос должен использовать авторизацию токена носителя.
+Можно отключить правила экспорта, чтобы вы могли отменить экспорт, когда не нужно хранить данные в течение определенного периода, например при выполнении тестирования. Используйте следующий запрос, чтобы отключить правило экспорта данных с помощью REST API. Запрос должен использовать авторизацию токена носителя.
 
 ```rest
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports/<data-export-name>?api-version=2020-08-01
@@ -285,6 +470,11 @@ Content-type: application/json
     }
 }
 ```
+
+# <a name="template"></a>[Шаблон](#tab/json)
+
+Можно отключить правила экспорта, чтобы вы могли отменить экспорт, когда не нужно хранить данные в течение определенного периода, например при выполнении тестирования. Задайте ```"enable": false``` в шаблоне значение, чтобы отключить экспорт данных.
+
 ---
 
 ## <a name="delete-an-export-rule"></a>Удаление правила экспорта
@@ -312,6 +502,11 @@ az monitor log-analytics workspace data-export delete --resource-group resourceG
 ```rest
 DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports/<data-export-name>?api-version=2020-08-01
 ```
+
+# <a name="template"></a>[Шаблон](#tab/json)
+
+Недоступно
+
 ---
 
 ## <a name="view-all-data-export-rules-in-a-workspace"></a>Просмотр всех правил экспорта данных в рабочей области
@@ -339,6 +534,11 @@ az monitor log-analytics workspace data-export list --resource-group resourceGro
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.operationalInsights/workspaces/<workspace-name>/dataexports?api-version=2020-08-01
 ```
+
+# <a name="template"></a>[Шаблон](#tab/json)
+
+Недоступно
+
 ---
 
 ## <a name="unsupported-tables"></a>Неподдерживаемые таблицы
@@ -506,7 +706,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | синапсербацевентс | |
 | Системный журнал | Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
 | ThreatIntelligenceIndicator | |
-| Update | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
+| Обновление | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
 | UpdateRunProgress | |
 | UpdateSummary | |
 | Использование | |

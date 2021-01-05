@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 03/26/2020
-ms.openlocfilehash: 119f1eaa838b404a3dbdc22f692f559816810dde
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 55221fa529688fbae1698a094ea31f6a3f765100
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578694"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796250"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Руководство по Обучение и развертывание моделей из интерфейса командной строки
 
@@ -307,10 +307,10 @@ data:
 Чтобы начать обучающий запуск на целевом объекте вычислений `cpu-cluster`, используйте следующую команду:
 
 ```azurecli-interactive
-az ml run submit-script -c mnist -e myexperiment --source-directory scripts -t runoutput.json
+az ml run submit-script -c mnist -e tutorial-cli --source-directory scripts -t runoutput.json
 ```
 
-Эта команда задает имя эксперимента (`myexperiment`). В эксперименте хранятся сведения об этом запуске в рабочей области.
+Эта команда задает имя эксперимента (`tutorial-cli`). В эксперименте хранятся сведения об этом запуске в рабочей области.
 
 Параметр `-c mnist` указывает файл `.azureml/mnist.runconfig`.
 
@@ -327,7 +327,7 @@ Accuracy is 0.9185
 
 Если изучить обучающий скрипт, вы заметите, что он также использует альфа-значение при сохранении обученной модели в `outputs/sklearn_mnist_model.pkl`.
 
-Модель была сохранена в каталоге `./outputs` в целевом объекте вычислений, где она была обучена. В этом примере используется экземпляр Вычислительной среды Машинного обучения Azure в облаке Azure. Процесс обучения автоматически отправляет содержимое каталога `./outputs` из целевого объекта вычислений, в котором выполняется обучение в рабочей области Машинного обучения Azure. Он хранится в составе эксперимента (`myexperiment` в этом примере).
+Модель была сохранена в каталоге `./outputs` в целевом объекте вычислений, где она была обучена. В этом примере используется экземпляр Вычислительной среды Машинного обучения Azure в облаке Azure. Процесс обучения автоматически отправляет содержимое каталога `./outputs` из целевого объекта вычислений, в котором выполняется обучение в рабочей области Машинного обучения Azure. Он хранится в составе эксперимента (`tutorial-cli` в этом примере).
 
 ## <a name="register-the-model"></a>Регистрация модели
 
@@ -345,13 +345,13 @@ az ml model register -n mymodel -f runoutput.json --asset-path "outputs/sklearn_
 {
   "createdTime": "2019-09-19T15:25:32.411572+00:00",
   "description": "",
-  "experimentName": "myexperiment",
+  "experimentName": "tutorial-cli",
   "framework": "Custom",
   "frameworkVersion": null,
   "id": "mymodel:1",
   "name": "mymodel",
   "properties": "",
-  "runId": "myexperiment_1568906070_5874522d",
+  "runId": "tutorial-cli_1568906070_5874522d",
   "tags": "",
   "version": 1
 }
