@@ -11,48 +11,58 @@ metadata:
   author: mlottner
   ms.author: mlottner
   ms.date: 09/07/2020
-  ms.openlocfilehash: 18f3f2f14d4e04c523a355f699eaf24b8c93bb81
-  ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+  ms.openlocfilehash: 00cef8a146a84c4261dde46785f2ea9bb1c03173
+  ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/15/2020
-  ms.locfileid: "92090018"
+  ms.lasthandoff: 12/31/2020
+  ms.locfileid: "97832341"
 landingContent:
-- title: Сведения об Azure Defender для Интернета вещей
+- title: Начало работы с Azure Defender для Интернета вещей
   linkLists:
   - linkListType: overview
     links:
     - text: Что собой представляет Azure Defender для Интернета вещей?
       url: overview.md
-    - text: Модуль безопасности для ОСРВ Azure
-      url: iot-security-azure-rtos.md
-    - text: Планирование реализации решения
-      url: service-prerequisites.md
-  - linkListType: architecture
-    links:
-    - text: Основные сведения об архитектуре Azure Defender для Интернета вещей
+    - text: Архитектура решения
       url: architecture.md
-    - text: Агенты Azure Defender для Интернета вещей
-      url: security-agent-architecture.md
+    - text: Обзор настройки
+      url: getting-started.md
+- title: Настройка и подключение — безагентное решение
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка сети
+      url: how-to-set-up-your-network.md
+    - text: Определение необходимых устройств
+      url: how-to-identify-required-appliances.md
+    - text: Установка ПО
+      url: how-to-install-software.md
+- title: Мониторинг сети — безагентное решение
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр подключенных устройств
+      url: how-to-work-with-the-sensor-device-map.md
+    - text: Просмотр данных инвентаризации устройств
+      url: how-to-investigate-sensor-detections-in-a-device-inventory.md
+    - text: Проверка оповещений
+      url: how-to-work-with-alerts-on-your-sensor.md
+    - text: Формирование отчета
+      url: how-to-generate-reports.md
+    - text: Выбор трафика для обнаружения
+      url: how-to-control-what-traffic-is-monitored.md
+    - text: Подключение к Azure Sentinel
+      url: how-to-configure-with-sentinel.md
+- title: Azure Defender для Интернета вещей — решение на основе агента
+  linkLists:
+  - linkListType: overview
+    links:
     - text: Модуль безопасности Edge
       url: security-edge-architecture.md
-- title: Подключение Azure Defender для Интернета вещей в Центре Интернета вещей
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Начало работы с Azure Defender для Интернета вещей
-      url: getting-started.md
-    - text: Центр Интернета вещей
-      url: iot-hub-integration.md
-    - text: Начало работы с модулем безопасности для ОСРВ Azure
-      url: concept-rtos-security-module.md
-    - text: Агенты безопасности
-      url: security-agents.md
-- title: Настройка решения
-  linkLists:
   - linkListType: quickstart
     links:
-    - text: Включение Azure Defender для Интернета вещей в Центре Интернета вещей
+    - text: Включение Центра Интернета вещей — решения на основе агентов
       url: quickstart-onboard-iot-hub.md
     - text: Настройка решения для безопасности Интернета вещей
       url: quickstart-configure-your-solution.md
@@ -64,40 +74,6 @@ landingContent:
       url: quickstart-create-custom-alerts.md
     - text: Анализ оповещений системы безопасности
       url: quickstart-investigate-security-alerts.md
-- title: Настройка решения
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Настройка модуля безопасности для ОСРВ Azure
-      url: how-to-azure-rtos-security-module.md
-    - text: Выбор агента
-      url: how-to-deploy-agent.md
-    - text: Развертывание агента безопасности Azure Defender для Интернета вещей на основе C# для Windows
-      url: how-to-deploy-windows-cs.md
-    - text: Развертывание агента безопасности Azure Defender для Интернета вещей на основе C# для Linux
-      url: how-to-deploy-linux-cs.md
-    - text: Развертывание агента безопасности Azure Defender для Интернета вещей на основе C для Linux
-      url: how-to-deploy-linux-c.md
-    - text: Развертывание модуля безопасности Edge
-      url: how-to-deploy-edge.md
-    - text: Настройка агентов безопасности
-      url: how-to-agent-configuration.md
-    - text: Отправка собственных сообщений безопасности
-      url: how-to-send-security-messages.md
-    - text: Доступ к необработанным данным безопасности
-      url: how-to-security-data-access.md
-    - text: Исследование устройства
-      url: how-to-investigate-device.md
-- title: Устранение неполадок в работе агента безопасности
-  linkLists:
-  - linkListType: tutorial
-    links:
-    - text: Инструкции по устранению неполадок с агентом безопасности (Linux)
-      url: troubleshoot-agent.md
-    - text: Основные сведения о файле LocalConfiguration.json — агент C
-      url: azure-iot-security-local-configuration-c.md
-    - text: Основные сведения о локальном файле конфигурации — агент C#
-      url: azure-iot-security-local-configuration-csharp.md
 - title: Ресурсы решения "Azure Defender для Интернета вещей"
   linkLists:
   - linkListType: video

@@ -54,6 +54,22 @@
           href: ../azure-functions/functions-bindings-signalr-service.md
         - name: Параметры функции отправки данных в вышестоящий ресурс
           href: concept-upstream.md
+    - name: Доступность
+      items:
+        - name: Корректное завершение работы сервера приложений
+          href: server-graceful-shutdown.md
+    - name: Безопасность
+      items:
+        - name: Авторизация
+          items:
+            - name: Авторизация доступа с помощью Azure Active Directory
+              href: authorize-access-azure-active-directory.md
+        - name: Проверка подлинности
+          items:
+            - name: Аутентификация из приложения
+              href: authenticate-application.md
+            - name: Аутентификация на основе управляемого удостоверения
+              href: authenticate-managed-identity.md
     - name: Высокий уровень доступности
       items:
         - name: Устойчивость и аварийное восстановление

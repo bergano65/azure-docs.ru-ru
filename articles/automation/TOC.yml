@@ -27,6 +27,8 @@
       href: learn/automation-tutorial-runbook-textual.md
     - name: Создание модуля runbook в Python
       href: learn/automation-tutorial-runbook-textual-python2.md
+    - name: "Создание runbook в Python\_3"
+      href: learn/automation-tutorial-runbook-textual-python-3.md
 - name: Основные понятия
   items:
     - name: Общие сведения о проверке подлинности учетной записи службы автоматизации
@@ -96,6 +98,8 @@
           href: shared-resources/variables.md
         - name: "Управление пакетами Python\_2"
           href: python-packages.md
+        - name: "Управление пакетами Python\_3"
+          href: python-3-packages.md
         - name: Устранение неполадок с общими ресурсами
           href: troubleshoot/shared-resources.md
     - name: Автоматизация процессов

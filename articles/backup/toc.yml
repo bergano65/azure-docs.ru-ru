@@ -94,6 +94,8 @@
       href: backup-architecture.md
     - name: Руководство и рекомендации
       href: guidance-best-practices.md
+    - name: Глоссарий терминов
+      href: azure-backup-glossary.md
 - name: Практические руководства
   items:
     - name: Хранилища
@@ -164,6 +166,8 @@
               href: backup-azure-manage-vms.md
             - name: Управление точками восстановления
               href: manage-recovery-points.md
+            - name: "Изменение политики резервного копирования с помощью Azure\_CLI"
+              href: modify-vm-policy-cli.md
     - name: "Резервное копирование базы данных SQL\_Server на виртуальной машине Azure"
       items:
         - name: Обзор

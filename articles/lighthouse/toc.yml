@@ -24,12 +24,15 @@
     - name: Предложения управляемых служб в Azure Marketplace
       displayName: 'azure marketplace, marketplace, managed service, private, plan'
       href: ./concepts/managed-services-offers.md
-    - name: Рекомендации по программе для поставщиков облачных решений
+    - name: Программа поставщиков облачных решений
       displayName: 'csp, aobo, partner'
       href: ./concepts/cloud-solution-provider.md
-    - name: Использование Azure Lighthouse в корпоративных сценариях
+    - name: Корпоративные сценарии
       displayName: 'corporation, IT, consolidate'
       href: ./concepts/enterprise.md
+    - name: Сценарии для независимых поставщиков программного обеспечения
+      displayName: 'independent, software, vendor, saas'
+      href: ./concepts/isv-scenarios.md
     - name: Azure Lighthouse и управляемые приложения Azure
       displayName: 'managed apps, ama'
       href: ./concepts/managed-applications.md

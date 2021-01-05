@@ -7,45 +7,13 @@
       href: overview.md
     - name: Новые возможности
       href: whats-new.md
-- name: Краткие руководства
+- name: Начало работы с Распознавателем документов
   expaned: true
   items:
-    - name: Использование клиентской библиотеки
+    - name: "Использование клиентской библиотеки или REST\_API"
       href: quickstarts/client-library.md
     - name: Использование примера средства создания меток
-      items:
-        - name: Обучение настраиваемой модели с помощью меток
-          href: quickstarts/label-tool.md
-    - name: Использование REST API
-      items:
-        - name: Обучение и использование настраиваемой модели без меток
-          items:
-            - name: cURL
-              href: quickstarts/curl-train-extract.md
-            - name: Python
-              href: quickstarts/python-train-extract.md
-        - name: Обучение и использование настраиваемой модели с помощью меток
-          items:
-            - name: Python
-              href: quickstarts/python-labeled-data.md
-        - name: Использование предварительно созданной модели для обработки товарных чеков
-          items:
-            - name: cURL
-              href: quickstarts/curl-receipts.md
-            - name: Python
-              href: quickstarts/python-receipts.md
-        - name: Использование предварительно созданной модели визитной карточки
-          items:
-            - name: Python
-              href: quickstarts/python-business-cards.md
-        - name: Использование предварительно созданной модели счета
-          items:
-            - name: Python
-              href: quickstarts/python-invoices.md
-        - name: Получение сведений о структуре текста
-          items:
-            - name: Python
-              href: quickstarts/python-layout.md
+      href: quickstarts/label-tool.md
 - name: Учебники
   items:
     - name: Использование Распознавателя документов со службой "Когнитивный поиск"
@@ -77,7 +45,8 @@
           href: form-recognizer-container-configuration.md
           displayName: 'docker, container, run, billing, apikey, logging'
         - name: Использование экземпляров контейнеров
-          href: deploy-form-recognizer-on-container-instances.md
+          maintainContext: true
+          href: ../containers/azure-container-instance-recipe.md
         - name: Документация по контейнерам Cognitive Services
           href: ../containers/index.yml
     - name: Резервное копирование и восстановление моделей

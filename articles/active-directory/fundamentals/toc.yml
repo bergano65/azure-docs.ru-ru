@@ -25,6 +25,28 @@
   items:
     - name: Безопасность
       items:
+        - name: Безопасный внешний доступ к ресурсам
+          items:
+            - name: Обзор безопасного внешнего доступа
+              href: secure-external-access-resources.md
+            - name: 1. Определение уровня безопасности
+              href: 1-secure-access-posture.md
+            - name: 2. Определение текущего состояния
+              href: 2-secure-access-current-state.md
+            - name: 3. Создание плана безопасности
+              href: 3-secure-access-plan.md
+            - name: 4. Безопасный доступ с помощью групп
+              href: 4-secure-access-groups.md
+            - name: 5. Безопасный доступ с помощью службы "Совместная работа B2B"
+              href: 5-secure-access-b2b.md
+            - name: 6. Безопасный доступ с помощью управления правами
+              href: 6-secure-access-entitlement-managment.md
+            - name: 7. Безопасный доступ с помощью условного доступа
+              href: 7-secure-access-conditional-access.md
+            - name: 8. Безопасный доступ с помощью меток конфиденциальности
+              href: 8-secure-access-sensitivity-labels.md
+            - name: '9. Безопасный доступ к Teams, SharePoint и OneDrive'
+              href: 9-secure-access-teams-sharepoint.md
         - name: Включение MFA
           href: concept-fundamentals-mfa-get-started.md
         - name: Параметры безопасности по умолчанию

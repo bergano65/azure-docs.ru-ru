@@ -95,6 +95,10 @@
           href: diagnostic-services.md
         - name: Потоковая передача журналов в реальном времени
           href: spring-cloud-howto-log-streaming.md
+        - name: Использование внутрипроцессного агента Java в Application Insights
+          href: spring-cloud-howto-application-insights.md
+        - name: Метрики автоматического выключения Resilience4J
+          href: spring-cloud-howto-circuit-breaker-metrics.md
     - name: Безопасность
       items:
         - name: 'Включение управляемого удостоверения, назначаемого системой'

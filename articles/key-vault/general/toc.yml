@@ -86,7 +86,7 @@
       href: overview-vnet-service-endpoints.md
 - name: Практические руководства
   items:
-    - name: Authenticate
+    - name: Проверка подлинности и авторизация
       items:
         - name: Проверка подлинности для использования Key Vault
           href: authentication.md
@@ -104,10 +104,6 @@
           href: rbac-migration.md
         - name: Устранение неполадок с доступом
           href: troubleshooting-access-issues.md
-    - name: Включение обратимого удаления и защиты от очистки
-      href: key-vault-recovery.md
-    - name: Включение ведения журналов
-      href: howto-logging.md
     - name: Разработка
       items:
         - name: Руководство разработчика хранилища ключей Azure
@@ -118,21 +114,31 @@
           href: vs-key-vault-add-connected-service.md
     - name: Мониторинг и управление
       items:
-        - name: Настройка мониторинга и оповещений для Azure Key Vault
+        - name: Уведомления Сетки событий
+          items:
+            - name: Получение уведомлений с помощью Logic Apps
+              href: event-grid-logicapps.md
+            - name: Получение уведомлений с помощью службы автоматизации Azure
+              href: event-grid-tutorial.md
+        - name: Включение ведения журналов
+          href: howto-logging.md
+        - name: Настройка мониторинга и оповещений для Azure Key Vault с помощью Azure Monitor
           href: alert.md
+        - name: Управление восстановлением с помощью обратимого удаления и защиты от очистки
+          href: key-vault-recovery.md
         - name: "Интеграция Azure Key\_Vault с Политикой Azure"
           href: azure-policy.md
-        - name: Получение уведомлений с помощью Сетки событий Azure и Logic Apps
-          href: event-grid-logicapps.md
-        - name: Получение уведомлений с помощью Сетки событий Azure и службы автоматизации Azure
-          href: event-grid-tutorial.md
         - name: Резервное копирование отдельных объектов Key Vault
           href: backup.md
     - name: Безопасность
       items:
-        - name: Интеграция со службой "Приватный канал Azure"
-          href: private-link-service.md
-        - name: "Доступ к Key Vault за брандмауэром\_—Azure Key Vault"
+        - name: Приватный канал Azure
+          items:
+            - name: Интеграция со службой "Приватный канал Azure"
+              href: private-link-service.md
+            - name: Диагностика проблем с конфигурацией Приватных каналов
+              href: private-link-diagnostics.md
+        - name: Доступ к Key Vault за брандмауэром
           href: access-behind-firewall.md
     - name: Перемещение хранилища ключей
       items:
@@ -142,10 +148,6 @@
           href: move-subscription.md
         - name: Перемещение хранилища ключей в другой регион
           href: move-region.md
-    - name: Сеть
-      items:
-        - name: Диагностика проблем с конфигурацией Приватных каналов
-          href: private-link-diagnostics.md
 - name: Справочник
   items:
     - name: Новые возможности

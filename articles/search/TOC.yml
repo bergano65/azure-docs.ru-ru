@@ -142,7 +142,7 @@
           items:
             - name: Добавление синонимов
               href: search-synonyms.md
-            - name: Пример синонимов
+            - name: Пример синонимов в C#
               href: search-synonyms-tutorial-sdk.md
         - name: Моделирование сложных типов данных
           href: search-howto-complex-data-types.md

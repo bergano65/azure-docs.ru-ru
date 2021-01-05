@@ -85,6 +85,8 @@
       href: ./how-to-ingest-data-event-hub.md
     - name: Подключение к Центру Интернета вещей
       href: ./how-to-ingest-data-iot-hub.md
+    - name: Мониторинг Аналитики временных рядов Azure
+      href: ./how-to-monitor-tsi.md
     - name: Управление ресурсами с помощью шаблонов
       href: time-series-insights-manage-resources-using-azure-resource-manager-template.md
     - name: Служба "Аналитика временных рядов" 2-го поколения
@@ -171,6 +173,8 @@
       items:
         - name: Пакет SDK для клиента JavaScript
           href: 'https://github.com/microsoft/tsiclient/blob/master/docs/API.md'
+    - name: Справочник по мониторингу данных
+      href: how-to-monitor-tsi-reference.md
     - name: Azure CLI
       href: /cli/azure/ext/timeseriesinsights/timeseriesinsights?view=azure-cli-latest
 - name: Ресурсы

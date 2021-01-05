@@ -30,16 +30,17 @@
           href: create-cluster.md
 - name: Учебники
   items:
-    - name: 1. Создание и администрирование задания
-      href: stream-analytics-manage-job.md
-    - name: 2. Запуск Функций Azure
+    - name: "Визуализация мошеннических вызовов в Power\_BI"
+      href: stream-analytics-real-time-fraud-detection.md
+    - name: Запуск Функций Azure
       href: stream-analytics-with-azure-functions.md
-    - name: 3. Развертывание с использованием CI/CD в Azure Pipelines
-      href: stream-analytics-tools-visual-studio-cicd-vsts.md
-    - name: 4. Выполнение определяемой пользователем функции C#
+    - name: Выполнение определяемой пользователем функции C#
       href: stream-analytics-edge-csharp-udf.md
-    - name: 5. Создание пользовательского десериализатора .NET
+    - name: Создание пользовательского десериализатора .NET
       href: custom-deserializer.md
+    - name: Создание задания IoT Edge
+      href: /azure/iot-edge/tutorial-deploy-stream-analytics?view=iotedge-2018-06
+      maintainContext: true
 - name: Примеры
   items:
     - name: Примеры кода
@@ -56,6 +57,8 @@
       href: develop-locally.md
     - name: Безопасность
       items:
+        - name: Подключение заданий к виртуальной сети Azure
+          href: connect-job-to-vnet.md
         - name: Элементы управления безопасностью службы "Политика Azure"
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
@@ -129,6 +132,8 @@
           href: repartition.md
         - name: Повышение пропускной способности для задания
           href: stream-analytics-scale-jobs.md
+    - name: IoT Edge
+      href: stream-analytics-edge.md
     - name: Состояния задания
       href: job-states.md
     - name: Оконные функции
@@ -181,35 +186,31 @@
           href: stream-analytics-job-reliability.md
         - name: Использование эталонных данных SQL
           href: sql-reference-data.md
-        - name: Аутентификация на основе управляемых удостоверений
-          items:
-            - name: "ADLS 1-го\_поколения"
-              href: stream-analytics-managed-identities-adls.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: Хранилище BLOB-объектов
-              href: blob-output-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: Центры событий
-              href: event-hubs-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: Power BI
-              href: powerbi-output-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: "Azure\_SQL и Azure Synapse"
-              href: sql-database-output-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
         - name: Шифрование данных
           href: data-protection.md
         - name: Геоизбыточность
           href: geo-redundancy.md
+    - name: Аутентификация на основе управляемых удостоверений
+      items:
+        - name: "ADLS 1-го\_поколения"
+          href: stream-analytics-managed-identities-adls.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: Хранилище BLOB-объектов
+          href: blob-output-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: Центры событий
+          href: event-hubs-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: Power BI
+          href: powerbi-output-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: "Azure\_SQL и Azure Synapse"
+          href: sql-database-output-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
     - name: Создание решений
       items:
         - name: Анализ тональности в Twitter
           href: stream-analytics-twitter-sentiment-analysis-trends.md
-        - name: Выявление мошенничества в реальном времени
-          href: stream-analytics-real-time-fraud-detection.md
-        - name: Выполнение заданий в IoT Edge
-          href: stream-analytics-edge.md
         - name: Выполнение заданий в Azure Stack
           href: on-azure-stack.md
         - name: 'Анализ данных датчиков, расположенных в пунктах сбора оплаты'
@@ -287,6 +288,8 @@
           href: debug-locally-using-job-diagram-vs-code.md
         - name: Обзор заданий
           href: visual-studio-code-explore-jobs.md
+        - name: Создание и отладка пользовательского десериализатора .NET
+          href: visual-studio-code-custom-deserializer.md
         - name: Поля JobConfig.json
           href: job-config-json.md
     - name: Диагностика

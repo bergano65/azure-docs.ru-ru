@@ -9,6 +9,8 @@
   items:
     - name: Создание веб-приложения
       href: quick-demo-map-app.md
+    - name: Создание приложения Android
+      href: quick-android-map.md
 - name: Учебники
   items:
     - name: Учебные материалы по веб-пакетам SDK
@@ -21,6 +23,10 @@
           href: tutorial-prioritized-routes.md
         - name: Создание указателя магазинов
           href: tutorial-create-store-locator.md
+    - name: Руководства по пакетам SDK для Android
+      items:
+        - name: Загрузка данных GeoJSON на карту
+          href: tutorial-load-geojson-file-android.md
     - name: Руководства по REST API
       items:
         - name: Создание схем помещений
@@ -238,16 +244,28 @@
           href: how-to-use-android-map-control-library.md
         - name: Изменение стиля карты
           href: set-android-map-styles.md
+        - name: Создание источника данных
+          href: create-data-source-android-sdk.md
         - name: Добавление слоя символов
           href: how-to-add-symbol-to-android-map.md
+        - name: Добавление слоя пузырьков
+          href: map-add-bubble-layer-android.md
         - name: Добавление фигур
           href: how-to-add-shapes-to-android-map.md
+        - name: Добавление слоя тепловой карты
+          href: map-add-heat-map-layer-android.md
+        - name: Добавление слоя линий
+          href: android-map-add-line-layer.md
         - name: Отображение сведений о компоненте
           href: display-feature-information-android.md
         - name: Добавление слоя фрагментов
           href: how-to-add-tile-layer-android-map.md
         - name: Отображение данных о трафике
           href: how-to-show-traffic-android.md
+        - name: Использование выражений на основе данных
+          href: data-driven-style-expressions-android-sdk.md
+        - name: Реагирование на события
+          href: android-map-events.md
     - name: "Использование Azure Maps в Power\_BI"
       items:
         - name: Начало работы

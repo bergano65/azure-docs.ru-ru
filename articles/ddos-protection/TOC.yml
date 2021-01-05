@@ -15,9 +15,11 @@
 - name: Учебники
   items:
     - name: Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии
-      href: telemetry-monitoring-alerting.md
-    - name: Настройка журналов потоков и отчетов об устранении рисков атак DDoS
-      href: reports-and-flow-logs.md
+      href: telemetry.md
+    - name: Просмотр и настройка журнала диагностики атак DDoS
+      href: diagnostic-logging.md
+    - name: Просмотр и настройка оповещений защиты от атак DDoS
+      href: alerts.md
 - name: Основные понятия
   items:
     - name: Типы атак

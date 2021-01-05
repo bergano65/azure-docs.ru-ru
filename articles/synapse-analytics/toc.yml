@@ -502,7 +502,7 @@
               items:
                 - name: Добавление задания Azure Stream Analytics
                   href: ./sql-data-warehouse/sql-data-warehouse-integrate-azure-stream-analytics.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-        - name: Средства для подключения к рабочим областям Synapse
+        - name: Подключение с помощью средств и приложений
           items:
             - name: Обзор
               href: sql/connect-overview.md
@@ -510,14 +510,20 @@
               href: sql/get-started-azure-data-studio.md
             - name: Строки подключения
               href: sql/connection-strings.md
-            - name: Отправка запросов с помощью sqlcmd
-              href: sql/get-started-connect-sqlcmd.md
             - name: Создание запросов с помощью SSMS
               href: sql/get-started-ssms.md
-            - name: Создание запросов с помощью Visual Studio
-              href: sql/get-started-visual-studio.md
             - name: Подключение к Power BI Desktop
               href: sql/get-started-power-bi-professional.md
+            - name: Создание запросов с помощью SSDT для Visual Studio
+              href: sql/get-started-visual-studio.md
+            - name: Создание запросов с помощью .NET Core
+              href: ../azure-sql/database/connect-query-dotnet-core.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Создание запросов с помощью Visual Studio .NET
+              href: ../azure-sql/database/connect-query-dotnet-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Создание запросов с помощью Python
+              href: ../azure-sql/database/connect-query-python.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Отправка запросов с помощью sqlcmd
+              href: sql/get-started-connect-sqlcmd.md
 - name: Apache Spark
   items:
     - name: Обзор
@@ -1107,6 +1113,10 @@
           href: ./machine-learning/tutorial-cognitive-services-anomaly.md
         - name: Настройка Cognitive Services для Azure Synapse
           href: ./machine-learning/tutorial-configure-cognitive-services-synapse.md
+- name: Практическое руководство
+  items:
+    - name: Планирование затрат и управление ими
+      href: plan-manage-costs.md
 - name: Справочник
   items:
     - name: Azure CLI

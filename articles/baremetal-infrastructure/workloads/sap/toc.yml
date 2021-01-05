@@ -1,0 +1,16 @@
+- name: Azure BareMetal Infrastructure
+  href: ../../index.yml
+- name: Обзор
+  items:
+    - name: Сведения о BareMetal Infrastructure
+      href: baremetal-overview-architecture.md
+    - name: Определение терминов
+      href: ../../know-baremetal-terms.md
+- name: Практические руководства
+  items:
+    - name: Управление единицами экземпляров BareMetal в Azure
+      href: baremetal-infrastructure-portal.md
+- name: Справочник
+  items:
+    - name: Типы рабочих нагрузок BareMetal
+      href: /azure/virtual-machines/workloads/sap/get-started?context=/azure/baremetal-infrastructure/context/context

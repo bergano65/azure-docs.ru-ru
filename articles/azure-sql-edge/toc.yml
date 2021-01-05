@@ -28,14 +28,6 @@
       href: tutorial-sync-data-factory.md
     - name: Синхронизация данных с помощью Синхронизации данных SQL
       href: tutorial-sync-data-sync.md
-    - name: Создание комплексного решения для Интернета вещей с помощью SQL для пограничных вычислений
-      items:
-        - name: Настройка ресурсов Azure
-          href: tutorial-deploy-azure-resources.md
-        - name: Настройка модулей IoT Edge
-          href: tutorial-set-up-iot-edge-modules.md
-        - name: Развертывание модели в SQL для пограничных вычислений
-          href: tutorial-run-ml-model-on-sql-edge.md
 - name: Основные понятия
   items:
     - name: Развертывание
@@ -138,6 +130,18 @@
       href: create-stream-analytics-job.md
     - name: Устранение неполадок развертывания
       href: troubleshoot.md
+- name: Примеры
+  items:
+    - name: Прогноз содержания кремнезема в железной руде
+      items:
+        - name: Настройка ресурсов Azure
+          href: tutorial-deploy-azure-resources.md
+        - name: Настройка модулей IoT Edge
+          href: tutorial-set-up-iot-edge-modules.md
+        - name: Развертывание модели в SQL для пограничных вычислений
+          href: tutorial-run-ml-model-on-sql-edge.md
+    - name: "Возобновляемая энергия\_— аналитика ветряных турбин"
+      href: tutorial-renewable-energy-demo.md
 - name: Справочник
   items:
     - name: Справочник по Transact-SQL (T-SQL)

@@ -42,8 +42,14 @@
       href: hpc-cache-mount.md
     - name: Управление кэшем
       href: hpc-cache-manage.md
-    - name: Настройка дополнительных параметров
-      href: configuration.md
+    - name: Использование необязательных параметров
+      items:
+        - name: Настройка дополнительных параметров
+          href: configuration.md
+        - name: Настройка политик доступа
+          href: access-policies.md
+        - name: Настройка служб каталогов
+          href: directory-services.md
 - name: Справочник
   items:
     - name: Azure CLI

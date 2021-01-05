@@ -13,7 +13,7 @@
       items:
         - name: Использование веб-портала
           href: getting-started-build-a-classifier.md
-        - name: Использование пакета SDK для Пользовательского визуального распознавания
+        - name: Использование пакета SDK или REST API для Пользовательского визуального распознавания
           href: quickstarts/image-classification.md
     - name: Создание средства обнаружения объектов
       items:
