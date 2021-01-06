@@ -75,7 +75,7 @@
         - name: 'Вопросы и ответы: хранилища Служб восстановления'
           href: backup-azure-backup-faq.md
         - name: Часто задаваемые вопросы о Центре резервного копирования
-          href: backup-center-faq.md
+          href: backup-center-faq.yml
         - name: 'Вопросы и ответы: резервное копирование виртуальных машин Azure'
           href: backup-azure-vm-backup-faq.md
         - name: 'Вопросы и ответы: агент Служб восстановления Microsoft Azure'

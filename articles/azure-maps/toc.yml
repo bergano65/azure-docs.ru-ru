@@ -306,6 +306,8 @@
       items:
         - name: Служба данных
           href: /rest/api/maps/data
+        - name: Служба высоты
+          href: /rest/api/maps/elevation
         - name: Служба геолокации
           href: /rest/api/maps/geolocation
         - name: Службы Mobility Services
