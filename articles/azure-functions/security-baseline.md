@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 86e13c0f57b30d2c53d9194e89ec89e7abdf1574
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 707c69efddeda364f0c62e9719ae1a6073dfe9ad
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187057"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935739"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Базовый план безопасности Azure для функций Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "96187057"
 
 - [Параметры сети для Функций Azure](./functions-networking-options.md)
 
-- [План функций Azure Premium](./functions-scale.md#premium-plan)
+- [План функций Azure Premium](./functions-premium-plan.md)
 
 - [Общие сведения о средах службы приложений](../app-service/environment/intro.md)
 
@@ -124,7 +124,7 @@ ms.locfileid: "96187057"
 
 - [Параметры сети для Функций Azure](./functions-networking-options.md)
 
-- [План функций Azure Premium](./functions-scale.md#premium-plan)
+- [План функций Azure Premium](./functions-premium-plan.md)
 
 - [Общие сведения о средах службы приложений](../app-service/environment/intro.md)
 
@@ -146,7 +146,7 @@ ms.locfileid: "96187057"
 
 - [Параметры сети для Функций Azure](./functions-networking-options.md)
 
-- [План функций Azure Premium](./functions-scale.md#premium-plan)
+- [План функций Azure Premium](./functions-premium-plan.md)
 
 - [Общие сведения о средах службы приложений](../app-service/environment/intro.md)
 
@@ -269,7 +269,7 @@ ms.locfileid: "96187057"
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Customer
+**Ответственность**. Customer
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -551,7 +551,7 @@ ms.locfileid: "96187057"
 
 - [Параметры сети для Функций Azure](./functions-networking-options.md)
 
-- [План функций Azure Premium](./functions-scale.md#premium-plan)
+- [План функций Azure Premium](./functions-premium-plan.md)
 
 - [Общие сведения о частной конечной точке](../private-link/private-endpoint-overview.md)
 
@@ -807,7 +807,7 @@ ms.locfileid: "96187057"
 
 - [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -827,7 +827,7 @@ ms.locfileid: "96187057"
 
 - [Параметры сети для Функций Azure](./functions-networking-options.md)
 
-- [План функций Azure Premium](./functions-scale.md#premium-plan)
+- [План функций Azure Premium](./functions-premium-plan.md)
 
 - [Рекомендации по работе с сетями в среде службы приложений](../app-service/environment/network-info.md)
 
@@ -1173,9 +1173,9 @@ ms.locfileid: "96187057"
 
 **Руководство**. соблюдение правил корпорации Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-- [Правила взаимодействия для выполнения тестов на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+- [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-- [Red Teaming в Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

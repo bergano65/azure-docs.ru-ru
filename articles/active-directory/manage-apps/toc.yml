@@ -28,7 +28,7 @@
       href: delete-application-portal.md
 - name: Учебники
   items:
-    - name: Список предварительно настроенных приложений
+    - name: Список руководств по интеграции приложений
       href: /azure/active-directory/saas-apps/
     - name: Добавление локального приложения с помощью прокси приложения
       href: application-proxy-add-on-premises-application.md

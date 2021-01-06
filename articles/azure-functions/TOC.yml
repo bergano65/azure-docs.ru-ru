@@ -417,6 +417,8 @@
           href: functions-recover-storage-account.md
         - name: Устранение неполадок с функциями Python
           href: recover-python-functions.md
+        - name: Масштабирование и производительность для функций Python
+          href: python-scale-performance-reference.md
 - name: Справочник
   items:
     - name: Справочники по API
@@ -446,7 +448,7 @@
             - name: Входные данные
               displayName: Blob storage
               href: functions-bindings-storage-blob-input.md
-            - name: Вывод
+            - name: Выходные данные
               displayName: Blob storage
               href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB

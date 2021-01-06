@@ -4,12 +4,12 @@ description: Узнайте, как подключить приложение ф
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 77cc87e44990f471ef38871c0225835660779a3c
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 24350eb07481db66907d199cd96f84a02cc98c9e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825757"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937286"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Настройка мониторинга для функций Azure
 
@@ -197,7 +197,7 @@ ms.locfileid: "97825757"
 
 _Эта функция доступна в виде предварительной версии._ 
 
-Чтобы лучше понять, какие решения выполняет контроллер масштабирования для приложения-функции, можно создать журналы порождаемого [контроллера масштабирования функций Azure](./functions-scale.md#runtime-scaling) либо Application Insights, либо в хранилище BLOB-объектов.
+Чтобы лучше понять, какие решения выполняет контроллер масштабирования для приложения-функции, можно создать журналы порождаемого [контроллера масштабирования функций Azure](./event-driven-scaling.md#runtime-scaling) либо Application Insights, либо в хранилище BLOB-объектов.
 
 Чтобы включить эту функцию, добавьте параметр приложения с именем `SCALE_CONTROLLER_LOGGING_ENABLED` в параметры приложения функции. Значение этого параметра должно иметь формат в `<DESTINATION>:<VERBOSITY>` зависимости от следующих значений:
 

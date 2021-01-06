@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 12/08/2020
-ms.openlocfilehash: cdaa054559be9db52eeef6f3aaa0f86ccf84206f
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.date: 01/09/2020
+ms.openlocfilehash: 1d2ba6dbbcc2b8674718912f00b1d1ec58e1c4c2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922940"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936096"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -308,12 +308,13 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 Наряду с подписанным URL-адресом (SAS) может потребоваться ограничить число клиентов, которые могут вызывать приложение логики. Например, если вы управляете конечной точкой запроса с помощью службы [управления API Azure](../api-management/api-management-key-concepts.md), вы можете ограничить приложение логики принимать запросы только от IP-адреса [создаваемого экземпляра службы управления API](../api-management/get-started-create-service-instance.md).
 
-> [!NOTE]
-> Независимо от указанных IP-адресов, можно по-прежнему запускать приложение логики с триггером на основе запросов с помощью [Logic Apps REST API: триггеры рабочего процесса — запрос на выполнение](/rest/api/logic/workflowtriggers/run) или с помощью управления API. Однако для этого потребуется [аутентификация](../active-directory/develop/authentication-vs-authorization.md) с помощью Azure REST API. Все события отобразятся в журнале аудита Azure. Убедитесь, что политики управления доступом настроены соответствующим образом.
+Независимо от указанных IP-адресов, можно по-прежнему запускать приложение логики с триггером на основе запросов с помощью [Logic Apps REST API: триггеры рабочего процесса — запрос на выполнение](/rest/api/logic/workflowtriggers/run) или с помощью управления API. Однако для этого потребуется [аутентификация](../active-directory/develop/authentication-vs-authorization.md) с помощью Azure REST API. Все события отобразятся в журнале аудита Azure. Убедитесь, что политики управления доступом настроены соответствующим образом.
 
 <a name="restrict-inbound-ip-portal"></a>
 
 #### <a name="restrict-inbound-ip-ranges-in-azure-portal"></a>Ограничение диапазонов входящих IP-адресов на портале Azure
+
+При использовании портала для ограничения входящих IP-адресов для приложения логики эти ограничения влияют на триггеры *и* действия, несмотря на описание на портале в разделе **Разрешенные входящие IP-адреса**. Чтобы настроить ограничения для триггеров отдельно от действий, используйте [ `accessControl` объект в шаблоне Azure Resource Manager приложения логики](#restrict-inbound-ip-template) или в [операции Logic Apps REST API: рабочий процесс-создать или обновить](/rest/api/logic/workflows/createorupdate).
 
 1. Откройте приложение логики в конструкторе приложений логики на [портале Azure](https://portal.azure.com).
 
@@ -1125,7 +1126,7 @@ Authorization: OAuth realm="Photos",
 
 * Чтобы запустить собственный код или выполнить преобразование XML, [Создайте и вызовите функцию Azure](../logic-apps/logic-apps-azure-functions.md), а не используйте [встроенные функции кода](../logic-apps/logic-apps-add-run-inline-code.md) или предоставьте [сборки для использования в качестве карт](../logic-apps/logic-apps-enterprise-integration-maps.md)соответственно. Кроме того, настройте среду внешнего размещения для приложения функции в соответствии с требованиями к изоляции.
 
-  Например, чтобы удовлетворить требования уровня влияния 5, создайте приложение-функцию с помощью [плана службы приложений](../azure-functions/functions-scale.md#app-service-plan) с использованием ценовой категории " [ **изолированный**](../app-service/overview-hosting-plans.md) " и [Среда службы приложений (ASE)](../app-service/environment/intro.md) , которая также использует ценовую категорию " **изолированная** ". В этой среде приложения-функции выполняются на выделенных виртуальных машинах Azure и выделенных виртуальных сетях Azure, которые обеспечивают изоляцию сети на основе изоляции вычислений для приложений и максимальных возможностей масштабирования. Дополнительные сведения см. в [статье Руководство по изоляции уровня влияния в Azure для государственных организаций: функции Azure](../azure-government/documentation-government-impact-level-5.md#azure-functions).
+  Например, чтобы удовлетворить требования уровня влияния 5, создайте приложение-функцию с помощью [плана службы приложений](../azure-functions/dedicated-plan.md) с использованием ценовой категории " [ **изолированный**](../app-service/overview-hosting-plans.md) " и [Среда службы приложений (ASE)](../app-service/environment/intro.md) , которая также использует ценовую категорию " **изолированная** ". В этой среде приложения-функции выполняются на выделенных виртуальных машинах Azure и выделенных виртуальных сетях Azure, которые обеспечивают изоляцию сети на основе изоляции вычислений для приложений и максимальных возможностей масштабирования. Дополнительные сведения см. в [статье Руководство по изоляции уровня влияния в Azure для государственных организаций: функции Azure](../azure-government/documentation-government-impact-level-5.md#azure-functions).
 
   Дополнительные сведения см. в следующих статьях:<p>
 

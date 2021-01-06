@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 59ba81944ecdf4f2b6322f4298e61df33f5b1da8
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 0c7910ac149c8de43eeac92913a0d314fcc1854e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289177"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934583"
 ---
 # <a name="assign-a-key-vault-access-policy"></a>Назначение политики доступа Key Vault
 
@@ -23,11 +23,11 @@ ms.locfileid: "93289177"
 
 [!INCLUDE [key-vault-access-policy-limits.md](../../../includes/key-vault-access-policy-limits.md)]
 
-Дополнительные сведения о создании групп в Azure Active Directory с помощью Azure CLI см. в разделе [AZ AD Group Create](/cli/azure/ad/group?view=azure-cli-latest#az-ad-group-create) и [AZ AD Member Add](/cli/azure/ad/group/member?view=azure-cli-latest#az-ad-group-member-add).
+Дополнительные сведения о создании групп в Azure Active Directory с помощью Azure CLI см. в разделе [AZ AD Group Create](/cli/azure/ad/group#az-ad-group-create) и [AZ AD Member Add](/cli/azure/ad/group/member#az-ad-group-member-add).
 
 ## <a name="configure-the-azure-cli-and-sign-in"></a>Настройка Azure CLI и вход
 
-1. Чтобы выполнить Azure CLIные команды локально, установите [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+1. Чтобы выполнить Azure CLIные команды локально, установите [Azure CLI](/cli/azure/install-azure-cli).
  
     Для выполнения команд непосредственно в облаке используйте [Azure Cloud Shell](../../cloud-shell/overview.md).
 
@@ -43,19 +43,19 @@ ms.locfileid: "93289177"
 
 Определите идентификатор объекта приложения, группы или пользователя, которому необходимо назначить политику доступа:
 
-- Приложения и другие субъекты-службы. для получения субъектов-служб используйте команду [AZ AD SP List](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-list) . Проверьте выходные данные команды, чтобы определить идентификатор объекта субъекта безопасности, которому необходимо назначить политику доступа.
+- Приложения и другие субъекты-службы. для получения субъектов-служб используйте команду [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list) . Проверьте выходные данные команды, чтобы определить идентификатор объекта субъекта безопасности, которому необходимо назначить политику доступа.
 
     ```azurecli-interactive
     az ad sp list --show-mine
     ```
 
-- Группы: используйте команду [AZ AD Group List](/cli/azure/ad/group?view=azure-cli-latest#az-ad-group-list) , чтобы отфильтровать результаты с помощью `--display-name` параметра:
+- Группы: используйте команду [AZ AD Group List](/cli/azure/ad/group#az-ad-group-list) , чтобы отфильтровать результаты с помощью `--display-name` параметра:
 
      ```azurecli-interactive
     az ad group list --display-name <search-string>
     ```
 
-- Пользователи: используйте команду [AZ AD user показ](/cli/azure/ad/user?view=azure-cli-latest#az-ad-user-show) , передав адрес электронной почты пользователя в `--id` параметре:
+- Пользователи: используйте команду [AZ AD user показ](/cli/azure/ad/user#az-ad-user-show) , передав адрес электронной почты пользователя в `--id` параметре:
 
     ```azurecli-interactive
     az ad user show --id <email-address-of-user>
@@ -63,7 +63,7 @@ ms.locfileid: "93289177"
 
 ## <a name="assign-the-access-policy"></a>Назначение политики доступа
     
-Чтобы назначить нужные разрешения, используйте команду [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) :
+Чтобы назначить нужные разрешения, используйте команду [AZ keyvault Set-Policy](/cli/azure/keyvault#az-keyvault-set-policy) :
 
 ```azurecli-interactive
 az keyvault set-policy --name myKeyVault --object-id <object-id> --secret-permissions <secret-permissions> --key-permissions <key-permissions> --certificate-permissions <certificate-permissions>
@@ -71,11 +71,10 @@ az keyvault set-policy --name myKeyVault --object-id <object-id> --secret-permis
 
 Замените `<object-id>` идентификатором объекта субъекта-службы.
 
-Необходимо включать только `--secret-permissions` , `--key-permissions` и `--certificate-permissions` при назначении разрешений для этих конкретных типов. Допустимые значения для параметров `<secret-permissions>` , `<key-permissions>` и `<certificate-permissions>` приведены в документации [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) .
+Необходимо включать только `--secret-permissions` , `--key-permissions` и `--certificate-permissions` при назначении разрешений для этих конкретных типов. Допустимые значения для параметров `<secret-permissions>` , `<key-permissions>` и `<certificate-permissions>` приведены в документации [AZ keyvault Set-Policy](/cli/azure/keyvault#az-keyvault-set-policy) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Key Vault security: Identity and access management](overview-security.md#identity-and-access-management) (Azure Key Vault security: управление удостоверениями и доступом)
+- [Azure Key Vault security: Identity and access management](security-overview.md#identity-management) (Azure Key Vault security: управление удостоверениями и доступом)
 - [Обеспечьте безопасность хранилища ключей](secure-your-key-vault.md).
 - [Руководство разработчика Azure Key Vault](developers-guide.md)
-- [Рекомендации по использованию Key Vault](best-practices.md)

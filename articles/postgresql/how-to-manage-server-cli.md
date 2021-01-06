@@ -3,15 +3,15 @@ title: Управление сервером-Azure CLI — база данных
 description: Узнайте, как управлять сервером базы данных Azure для PostgreSQL из Azure CLI.
 author: ajlam
 ms.author: andrela
-ms.service: mysql
+ms.service: postgresql
 ms.topic: how-to
 ms.date: 9/22/2020
-ms.openlocfilehash: d99634388b9c4db99c996cfccb9bb5f12682f217
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 2ea07e2bc12e6fc0d62abd462b8537c6a93689f9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490124"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935807"
 ---
 # <a name="manage-an-azure-database-for-postgresql-single-server-using-the-azure-cli"></a>Управление базой данных Azure для PostgreSQL на одном сервере с помощью Azure CLI
 
@@ -45,7 +45,7 @@ az account set --subscription <subscription id>
 az postgres server update --resource-group myresourcegroup --name mydemoserver --sku-name GP_Gen5_4 --storage-size 6144
 ```
 
-Ниже приведены подробные сведения об аргументах, приведенных выше:
+Здесь приведены подробные сведения о приведенных выше аргументах.
 
 **Параметр** | **Пример значения** | **Описание**
 ---|---|---

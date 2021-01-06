@@ -211,6 +211,8 @@
       href: /rest/api/securityinsights/
     - name: Схема нормализации сети
       href: normalization-schema.md
+    - name: Обогащение данных UEBA
+      href: ueba-enrichments.md
 - name: Ресурсы
   items:
     - name: Полезные ресурсы

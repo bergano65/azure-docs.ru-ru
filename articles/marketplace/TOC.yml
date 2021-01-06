@@ -205,8 +205,16 @@
           href: partner-center-portal/create-iot-edge-module-asset.md
     - name: Предложения управляемых служб
       items:
+        - name: Создание плана для предложения управляемой службы
+          href: plan-managed-service-offer.md
         - name: Создание предложения управляемой службы
-          href: partner-center-portal/create-new-managed-service-offer.md
+          href: create-managed-service-offer.md
+        - name: Настройка списка управляемых служб
+          href: create-managed-service-offer-listing.md
+        - name: Добавление предварительной версии аудитории
+          href: create-managed-service-offer-preview.md
+        - name: Создание планов
+          href: create-managed-service-offer-plans.md
     - name: Предложения приложений Power BI
       items:
         - name: "Планирование предложения приложения Power\_BI"

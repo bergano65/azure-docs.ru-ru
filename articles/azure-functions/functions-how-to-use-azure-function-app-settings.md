@@ -5,12 +5,12 @@ ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: f597e58c70d6ac9daff753f5c0a54199c2383c42
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 746a97ecd9b0bdd676e70cca38edc75905e3e4bd
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019517"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936946"
 ---
 # <a name="manage-your-function-app"></a>Управление приложением функции 
 
@@ -35,7 +35,7 @@ ms.locfileid: "96019517"
 
 Вы можете выбрать все необходимое для управления приложением-функцией на странице Обзор, в частности **[Параметры приложения](#settings)** и **[функции платформы](#platform-features)**.
 
-## <a name="application-settings"></a><a name="settings"></a>Параметры приложений
+## <a name="work-with-application-settings"></a><a name="settings"></a>Работа с параметрами приложения
 
 На вкладке **Параметры приложения** хранятся параметры, используемые приложением функции. Эти параметры хранятся в зашифрованном виде, поэтому необходимо выбрать параметр **Показать значения** , чтобы просмотреть значения на портале. Вы также можете получить доступ к параметрам приложения с помощью Azure CLI.
 
@@ -68,6 +68,56 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 [!INCLUDE [functions-environment-variables](../../includes/functions-environment-variables.md)]
 
 При разработке приложения-функции локально необходимо сохранить локальные копии этих значений в local.settings.jsв файле проекта. Дополнительные сведения см. в разделе [локальный файл параметров](functions-run-local.md#local-settings-file).
+
+## <a name="hosting-plan-type"></a>Тип плана размещения
+
+При создании приложения-функции также создается план размещения службы приложений, в котором выполняется приложение. План может иметь одно или несколько приложений-функций. Функциональные возможности, масштабирование и цены на функции зависят от типа плана. Дополнительные сведения см. на [странице с ценами на функции Azure](https://azure.microsoft.com/pricing/details/functions/).
+
+Вы можете определить тип плана, используемого приложением-функцией, из портал Azure или с помощью API-интерфейсов Azure CLI или Azure PowerShell. 
+
+Тип плана указывается в следующих значениях:
+
+| Тип плана | Портал | Azure CLI и PowerShell |
+| --- | --- | --- |
+| [Потребление](consumption-plan.md) | **Потребление** | `Dynamic` |
+| [Премиальный](functions-premium-plan.md) | **еластикпремиум** | `ElasticPremium` |
+| [Выделенная (служба приложений)](dedicated-plan.md) | Различные | Различные |
+
+# <a name="portal"></a>[Портал](#tab/portal)
+
+Чтобы определить тип плана, используемого приложением функции, см. раздел **план службы приложений** на вкладке **Обзор** приложения функции в [портал Azure](https://portal.azure.com). Чтобы просмотреть ценовую категорию, выберите имя **плана службы приложений**, а затем в области слева выберите **свойства** .
+
+![Просмотр плана масштабирования на портале](./media/functions-scale/function-app-overview-portal.png)
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
+
+Выполните следующую команду Azure CLI, чтобы получить тип плана размещения:
+
+```azurecli-interactive
+functionApp=<FUNCTION_APP_NAME>
+resourceGroup=FunctionMonitoringExamples
+appServicePlanId=$(az functionapp show --name $functionApp --resource-group $resourceGroup --query appServicePlanId --output tsv)
+az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output tsv
+
+```  
+
+В предыдущем примере замените `<RESOURCE_GROUP>` и `<FUNCTION_APP_NAME>` соответствующими именами группы ресурсов и приложения функции. 
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+Выполните следующую команду Azure PowerShell, чтобы получить тип плана размещения:
+
+```azurepowershell-interactive
+$FunctionApp = '<FUNCTION_APP_NAME>'
+$ResourceGroup = '<RESOURCE_GROUP>'
+
+$PlanID = (Get-AzFunctionApp -ResourceGroupName $ResourceGroup -Name $FunctionApp).AppServicePlan
+(Get-AzFunctionAppPlan -Name $PlanID -ResourceGroupName $ResourceGroup).SkuTier
+```
+В предыдущем примере замените `<RESOURCE_GROUP>` и `<FUNCTION_APP_NAME>` соответствующими именами группы ресурсов и приложения функции. 
+
+---
+
 
 ## <a name="platform-features"></a>Функции платформы
 
@@ -136,17 +186,17 @@ az functionapp cors add --name <FUNCTION_APP_NAME> \
 
 Используйте [`az functionapp cors show`](/cli/azure/functionapp/cors#az-functionapp-cors-show) команду для вывода списка текущих разрешенных источников.
 
-### <a name="authentication"></a><a name="auth"></a>Аутентификация
+### <a name="authentication"></a><a name="auth"></a>Проверка подлинности
 
 ![Настройка проверки подлинности для приложения-функции](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-authentication.png)
 
 Если функции используют триггер HTTP, можно настроить обязательную предварительную проверку подлинности для вызовов. Служба приложений поддерживает Azure Active Directory проверку подлинности и вход с помощью поставщиков социальных сетей, таких как Facebook, Microsoft и Twitter. Дополнительные сведения о настройке определенных поставщиков аутентификации см. в разделе [Проверка подлинности и авторизация в службе приложений Azure](../app-service/overview-authentication-authorization.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
 + [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)
 
-[Azure CLI]: /cli/azure/;
+[Azure CLI]: /cli/azure/
 [Портал Azure]: https://portal.azure.com

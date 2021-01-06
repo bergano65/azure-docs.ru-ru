@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: 647009854ef5a0c0811fc303914f724272f1a3f5
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: da04e7704274336f7f92237c1d7c30459caa7bc8
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486663"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936487"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Руководство по развертыванию платформы SAP BusinessObjects BI для Linux в Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "96486663"
 - База данных Azure для MySQL (версия: 8.0.15)
 - Соединитель с API MySQL C — либмисклклиент (версия: 6.1.11)
 
-| Файловая система        | Описание                                                                                                               | Размер (ГБ)             | Владелец  | Группа  | Память                    |
+| Файловая система        | Описание                                                                                                               | Размер (ГБ)             | Владелец  | Группа  | Служба хранилища                    |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------|-----------------------|--------|--------|----------------------------|
 | /usr/sap           | Файловая система для установки экземпляра SAP Боби, веб-приложения Tomcat по умолчанию и драйверов баз данных (при необходимости) | Рекомендации по выбору размера SAP | bl1adm | sapsys | Диск управляемого класса Premium — SSD |
 | /уср/сап/фрсинпут  | Каталог подключения предназначен для общих файлов на всех узлах Боби, которые будут использоваться в качестве каталога репозитория входного файла.  | Бизнес-потребности         | bl1adm | sapsys | Azure NetApp Files         |
@@ -98,7 +98,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 - Volume азусбоби-фрсинпут (nfs://10.31.2.4/azusbobi-frsinput)
 - Volume азусбоби-фрсаутпут (nfs://10.31.2.4/azusbobi-frsoutput)
 
-### <a name="important-considerations"></a>Важные замечания
+### <a name="important-considerations"></a>Важные аспекты
 
 При создании Azure NetApp Files для сервера репозитория файлов платформы SAP Боби необходимо учитывать следующее.
 
@@ -317,8 +317,9 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
    # auditbl1 is the database name of Audit database. You can provide the name you want for CMS database.
    CREATE SCHEMA `auditbl1` DEFAULT CHARACTER SET utf8;
-
-4. Create user account to connect to schema
+   ```
+   
+4. Создание учетной записи пользователя для подключения к схеме
 
    ```sql
    # Create a user that can connect from any host, use the '%' wildcard as a host part

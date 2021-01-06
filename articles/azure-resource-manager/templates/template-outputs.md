@@ -3,12 +3,12 @@ title: Выходные данные в шаблонах
 description: Описывает, как определить выходные значения в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 6a375dfbc767bcbbfd8ec6b7f8cb9e942e275582
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9e4ac134e9c1864bca8dd56c3a6e2311d0328d7d
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353533"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934736"
 ---
 # <a name="outputs-in-arm-templates"></a>Выходные данные в шаблонах ARM
 
@@ -47,7 +47,7 @@ ms.locfileid: "96353533"
 
 ## <a name="dynamic-number-of-outputs"></a>Динамическое число выходов
 
-В некоторых случаях неизвестно число экземпляров значения, которое необходимо вернуть при создании шаблона. Можно вернуть переменное число значений с помощью элемента **Copy** .
+В некоторых случаях неизвестно число экземпляров значения, которое необходимо вернуть при создании шаблона. Можно вернуть переменное число значений с помощью `copy` элемента.
 
 ```json
 "outputs": {
@@ -61,7 +61,7 @@ ms.locfileid: "96353533"
 }
 ```
 
-Дополнительные сведения см. [в разделе выходные данные итерации в шаблонах Azure Resource Manager](copy-outputs.md).
+Дополнительные сведения см. [в разделе итерация выходных данных в шаблонах ARM](copy-outputs.md).
 
 ## <a name="linked-templates"></a>Связанные шаблоны
 

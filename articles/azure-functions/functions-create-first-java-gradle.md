@@ -6,16 +6,16 @@ ms.custom: devx-track-java
 ms.author: karler
 ms.topic: how-to
 ms.date: 04/08/2020
-ms.openlocfilehash: 48a732e3935d78bdbf8b81fe989b59be1fbe2203
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c9ecb670cea022988efda8ec690c0724310cdb4b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020438"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934855"
 ---
 # <a name="use-java-and-gradle-to-create-and-publish-a-function-to-azure"></a>Использование Java и Gradle для создания и публикации функции в Azure
 
-В этой статье показано, как создать и опубликовать проект функции Java в службе "функции Azure" с помощью программы командной строки Gradle. После завершения этого руководства код функции будет выполняться в Azure в [бессерверном плане потребления](functions-scale.md#consumption-plan) с активацией по HTTP-запросу. 
+В этой статье показано, как создать и опубликовать проект функции Java в службе "функции Azure" с помощью программы командной строки Gradle. После завершения этого руководства код функции будет выполняться в Azure в [бессерверном плане потребления](consumption-plan.md) с активацией по HTTP-запросу. 
 
 > [!NOTE]
 > Если Gradle не является предпочтительным средством разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java, используя [Maven](./create-first-function-cli-java.md), [IntelliJ идею](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [VS Code](./create-first-function-vs-code-java.md).
@@ -175,5 +175,5 @@ Hello, AzureFunctions
 > [Добавления выходной привязки очереди службы хранилища Azure](functions-add-output-binding-storage-queue-java.md)
 
 
-[Azure CLI]: /cli/azure;
+[Azure CLI]: /cli/azure
 [Портал Azure]: https://portal.azure.com

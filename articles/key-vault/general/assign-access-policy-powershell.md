@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: fb28b4b678b37f69331b2ecff6272fd7aa64d191
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4cf0393cdb0aae1b352b81df4893f874f34970cc
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287627"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934543"
 ---
 # <a name="assign-a-key-vault-access-policy-using-azure-powershell"></a>Назначение политики доступа Key Vault с помощью Azure PowerShell
 
@@ -51,7 +51,7 @@ ms.locfileid: "93287627"
     Get-AzADServicePrincipal -SearchString <search-string>
     ```
 
-- Группы: используйте командлет [Get-азадграуп](/powershell/module/az.resources/get-azadgroup?view=azps-2.7.0) с `-SearchString` параметром, чтобы отфильтровать результаты по имени нужной группы:
+- Группы: используйте командлет [Get-азадграуп](/powershell/module/az.resources/get-azadgroup) с `-SearchString` параметром, чтобы отфильтровать результаты по имени нужной группы:
 
     ```azurepowershell-interactive
     Get-AzADGroup -SearchString <search-string>
@@ -79,7 +79,6 @@ Set-AzKeyVaultAccessPolicy -VaultName <key-vault-name> -ObjectId <Id> -Permissio
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Key Vault security: Identity and access management](overview-security.md#identity-and-access-management) (Azure Key Vault security: управление удостоверениями и доступом)
+- [Azure Key Vault security: Identity and access management](security-overview.md#identity-management) (Azure Key Vault security: управление удостоверениями и доступом)
 - [Обеспечьте безопасность хранилища ключей](secure-your-key-vault.md).
 - [Руководство разработчика Azure Key Vault](developers-guide.md)
-- [Рекомендации по использованию Key Vault](best-practices.md)

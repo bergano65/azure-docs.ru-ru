@@ -3,12 +3,12 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 4d56c5c3fd33d1cda05e23d5bc53e7540428671b
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 182df937ae5c0194aecfbe20b5962b44b363c708
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547854"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934482"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -78,7 +78,7 @@ ms.locfileid: "96547854"
 
 [!INCLUDE [automation-limits](../../../includes/azure-automation-service-limits.md)]
 
-## <a name="azure-app-configuration"></a>конфигурация приложения Azure;
+## <a name="azure-app-configuration"></a>Конфигурация приложений Azure
 
 [!INCLUDE [app-configuration-limits](../../../includes/app-configuration-limits.md)]
 
@@ -132,7 +132,7 @@ ms.locfileid: "96547854"
 
 [!INCLUDE [functions-limits](../../../includes/functions-limits.md)]
 
-Дополнительные сведения см. в разделе [функции сравнение планов размещения](../../azure-functions/functions-scale.md#hosting-plans-comparison).
+Дополнительные сведения см. в разделе [функции сравнение планов размещения](../../azure-functions/functions-scale.md).
 
 ## <a name="azure-kubernetes-service-limits"></a>Ограничения службы Kubernetes Azure
 
@@ -446,7 +446,7 @@ ms.locfileid: "96547854"
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

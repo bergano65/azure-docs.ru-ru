@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: be2fa0fa85da7c0f02567580c50968b7418e4cde
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: f7a0190d664e3330d2a6205014c00c61c1183dd3
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445189"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936249"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control-preview"></a>Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (Предварительная версия)
 
@@ -41,7 +41,7 @@ Azure RBAC позволяет пользователям управлять ра
 
 Дополнительные сведения о рекомендациях по управлению Azure Key Vault см. в следующих статьях:
 
-- [Рекомендации по использованию Key Vault](best-practices.md)
+- [Обзор системы безопасности Azure Key Vault](security-overview.md)
 - [Ограничения службы Azure Key Vault](service-limits.md)
 
 ## <a name="azure-built-in-roles-for-key-vault-data-plane-operations-preview"></a>Встроенные роли Azure для Key Vault операций с плоскостью данных (Предварительная версия)

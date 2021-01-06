@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 11/04/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: fd341a4f6e2402ce934bdffd4f024e0ef569eec1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9c3d9e647fc09946c1e7c1b8b2ebcbe310716ff2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340923"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935790"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -183,7 +183,7 @@ catch(MsalUiRequiredException)
 
 #### <a name="withparentactivityorwindow"></a>WithParentActivityOrWindow
 
-Пользовательский интерфейс важен, так как он является интерактивным. `AcquireTokenInteractive` имеет один конкретный необязательный параметр, который может указывать родительский пользовательский интерфейс для поддерживающих платформ. При использовании в классическом приложении `.WithParentActivityOrWindow` имеет другой тип, который зависит от платформы. Кроме того, можно опустить необязательный параметр родительского окна, чтобы создать окно, если вы не хотите управлять тем, где на экране появится диалоговое окно входа. Это применимо к приложениям, которые являются командной строкой и используются для передачи вызовов в любую другую серверную службу и не требуют каких бы то ни было окон для взаимодействия с пользователем.
+Пользовательский интерфейс важен, так как он является интерактивным. `AcquireTokenInteractive` имеет один конкретный необязательный параметр, который может указывать родительский пользовательский интерфейс для поддерживающих платформ. При использовании в классическом приложении `.WithParentActivityOrWindow` имеет другой тип, который зависит от платформы. Кроме того, можно опустить необязательный параметр родительского окна, чтобы создать окно, если вы не хотите управлять тем, где на экране появляется диалоговое окно входа. Это применимо к приложениям, которые являются командной строкой и используются для передачи вызовов в любую другую серверную службу и не требуют каких бы то ни было окон для взаимодействия с пользователем.
 
 ```csharp
 // net45
@@ -1180,7 +1180,7 @@ if not result:
 
 ### <a name="simple-token-cache-serialization-msal-only"></a>Простая сериализация кэша маркеров (только для MSAL)
 
-Ниже приведен пример основной реализации пользовательской сериализации кэша маркеров для классических приложений. Здесь в качестве кэша для маркеров пользователей применяется файл, расположенный в одной папке с приложением.
+Ниже приведен пример основной реализации пользовательской сериализации кэша маркеров для классических приложений. В этом случае кэш маркера пользователя находится в файле в той же папке, что и приложение, или, если приложение является [упакованным классом для настольных приложений](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes), в папке на пользователя в приложении. Полный код см. в следующем примере: [Active-Directory-DotNet-Desktop-мсграф-v2](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2).
 
 После сборки приложения вы можете включить сериализацию, вызвав ``TokenCacheHelper.EnableSerialization()`` и передав ему `UserTokenCache` приложения.
 
@@ -1199,15 +1199,27 @@ static class TokenCacheHelper
   {
    tokenCache.SetBeforeAccess(BeforeAccessNotification);
    tokenCache.SetAfterAccess(AfterAccessNotification);
+   try
+   {
+    // For packaged desktop apps (MSIX packages) the executing assembly folder is read-only. 
+    // In that case we need to use Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path + "\msalcache.bin" 
+    // which is a per-app read/write folder for packaged apps.
+    // See https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes
+    CacheFilePath = System.IO.Path.Combine(Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path, "msalcache.bin3");
+   }
+   catch (System.InvalidOperationException)
+   {
+    // Fall back for an un-packaged desktop app
+    CacheFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location + ".msalcache.bin";
+   }
   }
 
   /// <summary>
   /// Path to the token cache
   /// </summary>
-  public static readonly string CacheFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location + ".msalcache.bin3";
+  public static string CacheFilePath { get; private set; }
 
   private static readonly object FileLock = new object();
-
 
   private static void BeforeAccessNotification(TokenCacheNotificationArgs args)
   {

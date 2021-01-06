@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/05/2020
-ms.openlocfilehash: ca5f237585f74225a04091b5694dbfad12864332
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 555709776c88dd3003e400bbcefe2ec1cfa0f4af
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656042"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934175"
 ---
 # <a name="add-language-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Добавление языковых анализаторов в строковые поля в индексе Azure Когнитивный поиск
 
@@ -68,9 +68,9 @@ Azure Когнитивный поиск поддерживает анализа�
 ## <a name="language-analyzer-list"></a>Список анализаторов языка 
  Ниже приведен список поддерживаемых языков и названия анализаторов Lucene и Майкрософт.  
 
-| Язык | Название анализатора Майкрософт | Название анализатора Lucene |  |
-|--|--|--|--|
-| Арабский | ar.microsoft | ar.lucene |  |
+| Язык | Название анализатора Майкрософт | Название анализатора Lucene |
+|--|--|--|
+| Арабский | ar.microsoft | ar.lucene |
 | Армянский |  | hy.lucene |  |
 | Бенгальский | bn.microsoft |  |  |
 | Баскский |  | eu.lucene |  |

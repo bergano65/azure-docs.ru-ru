@@ -3,12 +3,12 @@ title: Переменные в шаблонах
 description: Описывает определение переменных в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 5d9b58d63e96656c45d3494d24099bbeadc46b11
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 7f782f9c7d3107472a74fcab73290c4cebf73693
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353465"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934668"
 ---
 # <a name="variables-in-arm-template"></a>Переменные в шаблоне ARM
 
@@ -28,7 +28,7 @@ ms.locfileid: "96353465"
 },
 ```
 
-Нельзя использовать функцию [Reference](template-functions-resource.md#reference) или любую из функций [List](template-functions-resource.md#list) в разделе Variables. Эти функции получают состояние среды выполнения ресурса и не могут быть выполнены до развертывания при разрешении переменных.
+Нельзя использовать функцию [Reference](template-functions-resource.md#reference) или любую из функций [List](template-functions-resource.md#list) в `variables` разделе. Эти функции получают состояние среды выполнения ресурса и не могут быть выполнены до развертывания при разрешении переменных.
 
 ## <a name="use-variable"></a>Использование переменной
 
@@ -63,7 +63,7 @@ ms.locfileid: "96353465"
 },
 ```
 
-В параметрах следует создать значение, указывающее, какие значения конфигурации будут использоваться.
+В `parameters` создается значение, указывающее, какие значения конфигурации следует использовать.
 
 ```json
 "parameters": {

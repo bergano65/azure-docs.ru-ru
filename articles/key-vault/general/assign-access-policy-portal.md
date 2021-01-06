@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 9277d100eb6744adfc20fbba9f96b822654e64a3
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 910b8dae10036cc2e396be13495fd28363dc971d
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287707"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934566"
 ---
 # <a name="assign-a-key-vault-access-policy-using-the-azure-portal"></a>Назначение политики доступа Key Vault с помощью портал Azure
 
@@ -29,11 +29,11 @@ ms.locfileid: "93287707"
 
 1.  В [портал Azure](https://portal.azure.com)перейдите к ресурсу Key Vault. 
 
-1.  В разделе **Параметры** выберите **политики доступа** , а затем щелкните **Добавить политику доступа**.
+1.  В разделе **Параметры** выберите **политики доступа**, а затем щелкните **Добавить политику доступа**.
 
     ![Щелкните политики доступа, выберите добавить назначение ролей.](../media/authentication/assign-policy-portal-01.png)
 
-1.  Выберите нужные разрешения в разделе **разрешения на сертификат** , **ключевые разрешения** и **секретные разрешения**. Можно также выбрать шаблон, содержащий сочетания общих разрешений:
+1.  Выберите нужные разрешения в разделе **разрешения на сертификат**, **ключевые разрешения** и **секретные разрешения**. Можно также выбрать шаблон, содержащий сочетания общих разрешений:
 
     ![Указание разрешений политики доступа](../media/authentication/assign-policy-portal-02.png)
 
@@ -47,14 +47,13 @@ ms.locfileid: "93287707"
 
     ![Добавление политики доступа с назначенным субъектом-службой](../media/authentication/assign-policy-portal-04.png)
 
-1. Вернитесь на страницу **политики доступа** , убедитесь, что политика доступа указана в разделе **текущие политики доступа** , а затем нажмите кнопку **сохранить**. Политики доступа применяются только после их сохранения.
+1. Вернитесь на страницу **политики доступа** , убедитесь, что политика доступа указана в разделе **текущие политики доступа**, а затем нажмите кнопку **сохранить**. Политики доступа применяются только после их сохранения.
 
     ![Сохранение изменений политики доступа](../media/authentication/assign-policy-portal-05.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Key Vault security: Identity and access management](overview-security.md#identity-and-access-management) (Azure Key Vault security: управление удостоверениями и доступом)
+- [Azure Key Vault security: Identity and access management](security-overview.md#identity-management) (Azure Key Vault security: управление удостоверениями и доступом)
 - [Обеспечьте безопасность хранилища ключей](secure-your-key-vault.md).
 - [Руководство разработчика Azure Key Vault](developers-guide.md)
-- [Рекомендации по использованию Key Vault](best-practices.md)

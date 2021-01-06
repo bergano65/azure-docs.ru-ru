@@ -4,16 +4,16 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: glenga
-ms.openlocfilehash: 2d66e7f497f85141de172c59b67676e1bb93955e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3c9679f3d66d58c7a6c847b54c84438c979ecd39
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021008"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936872"
 ---
 [Частная конечная точка Azure](../articles/private-link/private-endpoint-overview.md) — это сетевой интерфейс, который обеспечивает безопасное подключение к службе с помощью Приватного канала Azure.  Частная конечная точка использует частный IP-адрес из виртуальной сети, эффективно предоставляя доступ к службе из виртуальной сети.
 
-Вы можете использовать закрытую конечную точку для функций, размещенных в планах [службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan) уровня " [премиум](../articles/azure-functions/functions-premium-plan.md) " и "Услуга".
+Вы можете использовать закрытую конечную точку для функций, размещенных в планах [службы приложений](../articles/azure-functions/dedicated-plan.md) уровня " [премиум](../articles/azure-functions/functions-premium-plan.md) " и "Услуга".
 
 При создании входящего подключения к частной конечной точке для функций потребуется также запись DNS для разрешения частного адреса.  По умолчанию частная запись DNS будет создана при создании частной конечной точки с помощью портал Azure.
 

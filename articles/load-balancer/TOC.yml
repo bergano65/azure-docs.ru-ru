@@ -93,6 +93,8 @@
       href: manage.md
     - name: Масштабируемые наборы виртуальных машин
       items:
+        - name: 'Обновление или удаление существующих экземпляров Azure Load Balancer, используемых в масштабируемом наборе виртуальных машин'
+          href: update-load-balancer-with-vm-scale-set.md
         - name: "Использование с существующим решением Azure Load Balancer\_— портал"
           href: configure-vm-scale-set-portal.md
         - name: "Использование с существующим решением Azure Load Balancer\_— PowerShell"

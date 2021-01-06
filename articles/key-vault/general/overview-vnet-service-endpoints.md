@@ -1,5 +1,5 @@
 ---
-title: Конечные точки служб для виртуальной сети для Azure Key Vault — Azure Key Vault | Документация Майкрософт
+title: Конечные точки служб для виртуальной сети для Azure Key Vault
 description: Узнайте, как конечные точки службы виртуальной сети для Azure Key Vault позволяют ограничить доступ к указанной виртуальной сети, включая сценарии использования.
 services: key-vault
 author: amitbapat
@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 9cbce00e2c2743aec57cd857b6f38d20bce33698
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 9dcabe10822fd09c8f7a0da6259d81a089c1a042
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532913"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936300"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -35,28 +35,6 @@ ms.locfileid: "96532913"
 * Если вы хотите заблокировать доступ к хранилищу ключей, чтобы к нему могли подключаться только одно приложение или небольшой набор назначенных узлов.
 * Если у вас есть приложение, работающее в виртуальной сети Azure, для которой заблокирован любой исходящий и входящий трафик, но приложению требуется подключение к хранилищу ключей для получения секретов, сертификатов или криптографических ключей.
 
-## <a name="configure-key-vault-firewalls-and-virtual-networks"></a>Настройка брандмауэров и виртуальных сетей Key Vault
-
-Ниже приведены шаги, необходимые для настройки брандмауэров и виртуальных сетей. Эти шаги применимы к любому методу настройки: PowerShell, Azure CLI или портал Azure.
-
-1. Включите [ведение журнала Key Vault](logging.md), чтобы получить подробные журналы доступа. Это поможет анализировать ситуации, в которых правила брандмауэра и виртуальной сети препятствуют доступу к хранилищу ключей. (Этот шаг необязателен, но мы настоятельно рекомендуем его выполнить.)
-2. Включите **конечные точки службы для хранилища ключей** для всех целевых виртуальных сетей и подсетей.
-3. Установите правила брандмауэра и виртуальной сети для хранилища ключей таким образом, чтобы предоставить доступ к этому хранилищу ключей из определенных виртуальных сетей, подсетей и диапазонов IPv4-адресов.
-4. Если это хранилище ключей должно быть доступно доверенным службам Майкрософт, включите параметр, позволяющий **доверенным службам Azure** подключаться к Key Vault.
-
-Дополнительные сведения см. в статье [Настройка брандмауэров и виртуальных сетей Azure Key Vault](network-security.md).
-
-> [!IMPORTANT]
-> Когда правила брандмауэра начнут действовать, пользователи смогут выполнять запросы на операции [плоскости данных](secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают доступ их клиентским компьютерам.
-
-
-> [!NOTE]
-> Следует учитывать следующие ограничения конфигурации:
-> * Допускается не более 127 правил виртуальной сети и 127 правил IPv4. 
-> * Не поддерживаются малые диапазоны адресов с префиксом /31 или /32. Такие диапазоны следует настраивать в отдельных правилах для IP-адресов.
-> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. К частным сетям относятся адреса, начинающиеся с **10.** , **172.16-31** и **192.168.** 
-> * Сейчас поддерживаются только IPV4-адреса.
-
 ## <a name="trusted-services"></a>Доверенные службы
 
 Ниже приведен список **доверенных служб**, которые получают доступ к хранилищу ключей, если включен соответствующий параметр.
@@ -71,11 +49,11 @@ ms.locfileid: "96532913"
 |Exchange Online и SharePoint Online|Разрешение доступа к ключу клиента для функции шифрования службы хранилища Azure с использованием [ключа пользователя](/microsoft-365/compliance/customer-key-overview).|
 |Azure Information Protection|Разрешение доступа к ключу клиента для [Azure Information Protection.](/azure/information-protection/what-is-information-protection)|
 |Служба приложений Azure|[Развертывание сертификата веб-приложения Azure через Key Vault](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html)|
-|База данных SQL Azure|[Прозрачное шифрование данных с поддержкой создание собственных ключей для базы данных SQL Azure и Azure синапсе Analytics](../../azure-sql/database/transparent-data-encryption-byok-overview.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current).|
+|База данных SQL Azure|[Прозрачное шифрование данных с поддержкой создание собственных ключей для базы данных SQL Azure и Azure синапсе Analytics](../../azure-sql/database/transparent-data-encryption-byok-overview.md?view=sql-server-2017&preserve-view=true&viewFallbackFrom=azuresqldb-current).|
 |Хранилище Azure|[Шифрование службы хранилища использование ключей, управляемых клиентом, в Azure Key Vault](../../storage/common/customer-managed-keys-configure-key-vault.md).|
 |Хранилище озера данных Azure|[Шифрование данных в Azure Data Lake Storage](../../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
 |Azure Databricks|[Быстрая и простая служба аналитики на основе Apache Spark для совместной работы](/azure/databricks/scenarios/what-is-azure-databricks).|
-|Служба "Управление API" Azure|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../../api-management/api-management-howto-use-managed-service-identity.md#use-ssl-tls-certificate-from-azure-key-vault)|
+|Служба управления Azure API|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../../api-management/api-management-howto-use-managed-service-identity.md#use-ssl-tls-certificate-from-azure-key-vault)|
 |Фабрика данных Azure|[Выбор учетных данных хранилища данных в Key Vault из фабрики данных](https://go.microsoft.com/fwlink/?linkid=2109491)|
 |Центры событий Azure|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](../../event-hubs/configure-customer-managed-key.md)|
 |Azure Service Bus|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](../../service-bus-messaging/configure-customer-managed-key.md)|
@@ -87,5 +65,5 @@ ms.locfileid: "96532913"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Защита хранилища ключей](secure-your-key-vault.md)
-* [Настройка брандмауэров и виртуальных сетей Azure Key Vault](network-security.md)
+- Пошаговые инструкции см. в разделе [Настройка брандмауэров Azure Key Vault и виртуальных сетей](network-security.md) .
+- см. [Azure Key Vault Обзор безопасности](security-overview.md) .

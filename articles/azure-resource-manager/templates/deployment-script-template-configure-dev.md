@@ -1,26 +1,26 @@
 ---
 title: Настройка среды разработки для скриптов развертывания в шаблонах | Документация Майкрософт
-description: Настройка среды разработки для скриптов развертывания в Azure Resource Manager шаблонах.
+description: Настройка среды разработки для скриптов развертывания в шаблонах Azure Resource Manager (шаблоны ARM).
 services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: d12ec5e3fef45429741fff1665f435d68e6c83f6
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 13dc072e31f0d27768de8d9a62ea942d55460713
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734187"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936402"
 ---
-# <a name="configure-development-environment-for-deployment-scripts-in-templates"></a>Настройка среды разработки для скриптов развертывания в шаблонах
+# <a name="configure-development-environment-for-deployment-scripts-in-arm-templates"></a>Настройка среды разработки для скриптов развертывания в шаблонах ARM
 
 Узнайте, как создать среду разработки для разработки и тестирования скриптов развертывания с помощью образа скрипта развертывания. Вы можете создать [экземпляр контейнера Azure](../../container-instances/container-instances-overview.md) или использовать [DOCKER](https://docs.docker.com/get-docker/). В этой статье рассматриваются оба варианта.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас нет скрипта развертывания, можно создать файл **hello.ps1** со следующим содержимым:
+Если у вас нет скрипта развертывания, можно создать файл _hello.ps1_ со следующим содержимым:
 
 ```powershell
 param([string] $name)
@@ -39,11 +39,11 @@ $DeploymentScriptOutputs['text'] = $output
 
 ### <a name="create-an-azure-container-instance"></a>Создание экземпляра контейнера Azure
 
-Следующий шаблон ARM создает экземпляр контейнера и общую папку, а затем подключает общую папку к образу контейнера.
+Следующий шаблон Azure Resource Manager (шаблон ARM) создает экземпляр контейнера и файловый ресурс, а затем подключает общую папку к образу контейнера.
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "projectName": {
@@ -153,12 +153,13 @@ $DeploymentScriptOutputs['text'] = $output
   ]
 }
 ```
-Значение по умолчанию для пути подключения — **деплойментскрипт**.  Это путь в экземпляре контейнера, в котором он подключен к общему файловому ресурсу.
 
-Образ контейнера по умолчанию, указанный в шаблоне, — **MCR.Microsoft.com/azuredeploymentscripts-PowerShell:az4.3**.   См. список [поддерживаемых версий Azure PowerShell](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list). См. список [поддерживаемых версий Azure CLI](https://mcr.microsoft.com/v2/azure-cli/tags/list).
+По умолчанию для пути подключения используется значение `deploymentScript` . Это путь в экземпляре контейнера, в котором он подключен к общему файловому ресурсу.
+
+Образ контейнера по умолчанию, указанный в шаблоне, — `mcr.microsoft.com/azuredeploymentscripts-powershell:az4.3` . См. список [поддерживаемых версий Azure PowerShell](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list). См. список [поддерживаемых версий Azure CLI](https://mcr.microsoft.com/v2/azure-cli/tags/list).
 
   >[!IMPORTANT]
-  > Сценарий развертывания использует доступные образы CLI из Реестра контейнеров Майкрософт (MCR). Сертификация образа CLI для сценария развертывания занимает около одного месяца. Не используйте версии CLI, выпущенные менее 30 дней назад. Чтобы найти даты выпуска образов, ознакомьтесь с [заметками о выпуске Azure CLI](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true). Если используется неподдерживаемая версия, в сообщении об ошибке выводится список поддерживаемых версий.
+  > Скрипт развертывания использует доступные образы CLI из реестра контейнеров Майкрософт (мкр). Сертификация образа CLI для сценария развертывания занимает около одного месяца. Не используйте версии CLI, выпущенные менее 30 дней назад. Чтобы найти даты выпуска образов, ознакомьтесь с [заметками о выпуске Azure CLI](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true). Если используется неподдерживаемая версия, в сообщении об ошибке выводится список поддерживаемых версий.
 
 Шаблон приостанавливает экземпляр контейнера 1800 секунд. У вас 30 минут до того, как экземпляр контейнера перейдет в состояние терминала, и сеанс завершится.
 
@@ -196,7 +197,7 @@ Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fi
 
 1. В портал Azure откройте группу ресурсов, в которой развернут экземпляр контейнера, и учетную запись хранения.
 1. Откройте группу контейнеров. Имя группы контейнеров по умолчанию — это имя проекта с добавленным **CG** . Вы должны увидеть, что экземпляр контейнера находится в состоянии **выполняется** .
-1. В меню слева выберите **контейнеры** . Вы должны увидеть экземпляр контейнера.  Имя экземпляра контейнера — это имя проекта с добавленным **контейнером** .
+1. В меню слева выберите **контейнеры** . Вы должны увидеть экземпляр контейнера. Имя экземпляра контейнера — это имя проекта с добавленным **контейнером** .
 
     ![экземпляр контейнера подключения скрипта развертывания](./media/deployment-script-template-configure-dev/deployment-script-container-instance-connect.png)
 
@@ -248,7 +249,7 @@ Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fi
     docker run -v <host drive letter>:/<host directory name>:/data -it mcr.microsoft.com/azuredeploymentscripts-powershell:az4.3
     ```
 
-    Замените **&lt;host driver letter>** и **&lt;host directory name>** , указав существующую папку на общем диске.  Она будет сопоставлена с папкой **/data** в контейнере. Например, вот как можно указать для сопоставления папку D:\docker.
+    Замените **&lt;host driver letter>** и **&lt;host directory name>** , указав существующую папку на общем диске. Она будет сопоставлена с папкой _/data_ в контейнере. Например, для сопоставлений _д:\доккер_:
 
     ```command
     docker run -v d:/docker:/data -it mcr.microsoft.com/azuredeploymentscripts-powershell:az4.3
@@ -262,7 +263,7 @@ Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fi
     docker run -v d:/docker:/data -it mcr.microsoft.com/azure-cli:2.0.80
     ```
 
-1. На следующем снимке экрана показано, как запустить сценарий PowerShell, учитывая, что на общем диске имеется helloworld.ps1 файл.
+1. На следующем снимке экрана показано, как запустить сценарий PowerShell, учитывая, что на общем диске имеется _helloworld.ps1_ файл.
 
     ![Диск Docker сценария развертывания шаблона Resource Manager в командной строке](./media/deployment-script-template/resource-manager-deployment-script-docker-cmd.png)
 
@@ -273,4 +274,4 @@ Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fi
 В этой статье вы узнали, как использовать сценарии развертывания. Теперь вы можете изучить учебник по сценариям развертывания:
 
 > [!div class="nextstepaction"]
-> [Руководство. Использование сценариев развертывания в шаблонах Azure Resource Manager](./template-tutorial-deployment-script.md)
+> [Учебник. Использование скриптов развертывания в шаблонах ARM](./template-tutorial-deployment-script.md)

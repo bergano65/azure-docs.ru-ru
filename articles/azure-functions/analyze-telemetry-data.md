@@ -4,12 +4,12 @@ description: Узнайте, как просматривать и запраши
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 1d8d9cc9a7a4111e98b1d9141957769d6f157d45
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 14b6ed3964900e3395ca335c301dfd0285da46e7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027736"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937303"
 ---
 # <a name="analyze-azure-functions-telemetry-in-application-insights"></a>Анализ телеметрии функций Azure в Application Insights 
 
@@ -108,7 +108,7 @@ traces
 
 ## <a name="consumption-plan-specific-metrics"></a>Метрики, зависящие от плана потребления
 
-При выполнении в [плане потребления](functions-scale.md#consumption-plan) *стоимость* выполнения одной функции измеряется в *ГБ/с*. Затраты на выполнение рассчитываются путем объединения использования памяти с временем выполнения. Дополнительные сведения см. в разделе [Оценка затрат на план потребления](functions-consumption-costs.md).
+При выполнении в [плане потребления](consumption-plan.md) *стоимость* выполнения одной функции измеряется в *ГБ/с*. Затраты на выполнение рассчитываются путем объединения использования памяти с временем выполнения. Дополнительные сведения см. в разделе [Оценка затрат на план потребления](functions-consumption-costs.md).
 
 Следующие запросы телеметрии относятся к метрикам, влияющим на затраты на выполнение функций в плане потребления.
 

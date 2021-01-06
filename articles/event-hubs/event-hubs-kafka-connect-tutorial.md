@@ -2,21 +2,30 @@
 title: Интеграция Apache Kafka Connect с Центрами событий Azure | Документация Майкрософт
 description: В этой статье содержатся сведения о том, как использовать Kafka Connect с концентраторами событий Azure для Kafka.
 ms.topic: how-to
-ms.date: 06/23/2020
-ms.openlocfilehash: d37d2465d9389a0bcfaabdec32bad0c86846cfb2
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.date: 01/06/2021
+ms.openlocfilehash: f82dcdafa7921f4a994361371536b2f1ace7cbc5
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369545"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935161"
 ---
-# <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview"></a>Интеграция поддержки Apache Kafka Connect в Центрах событий Azure (предварительная версия)
-По мере увеличения бизнес-потребностей увеличиваются требования по приему из различных внешних источников и приемников. [Apache Kafka Connect](https://kafka.apache.org/documentation/#connect) предоставляет такую платформу для подключения, импорта и экспорта данных в любую внешнюю систему или из нее, например MySQL, HDFS и файловую систему, через кластер Kafka. В этом руководстве описано, как использовать Kafka Connect Framework с концентраторами событий.
+# <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs"></a>Интеграция поддержки Apache Kafka Connect в Центрах событий Azure
+[Apache Kafka Connect](https://kafka.apache.org/documentation/#connect) — это платформа для подключения и импорта и экспорта данных из любой внешней системы, такой как MySQL, HDFS и файловая система, через кластер Kafka. В этом руководстве описано, как использовать Kafka Connect Framework с концентраторами событий.
+
+> [!WARNING]
+> Использование инфраструктуры Apache Kafka Connect и ее соединителей **не подходит для поддержки продуктов с помощью Microsoft Azure**.
+>
+> Apache Kafka Connect предполагает, что его динамическая конфигурация должна храниться в сжатых разделах с неограниченным сроком хранения. Концентраторы событий Azure [не реализуют сжатие как функцию брокера](event-hubs-federation-overview.md#log-projections) и всегда накладывают ограничение на хранение на основе времени для сохраненных событий, от принципа, в котором концентраторы событий Azure являются механизмом потоковой передачи событий в реальном времени, а не долговременным хранилищем данных или конфигураций.
+>
+> В то время как проект Apache Kafka может быть удобным при смешении этих ролей, Azure считает, что такие сведения лучше управлять в надлежащей базе данных или хранилище конфигураций.
+>
+> Многие сценарии Apache Kafka подключения будут работать, но эти концептуальные различия между моделями хранения Apache Kafka и концентраторов событий Azure могут привести к тому, что некоторые конфигурации не будут работать должным образом. 
 
 В этом руководстве описывается интеграция Kafka Connect с концентратором событий и развертывание базовых соединителей Филестреамсаурце и Филестреамсинк. Эта функция в настоящее время находится на стадии предварительной версии. Хотя эти соединители не предназначены для использования в рабочей среде, они показывают комплексный сценарий Kafka Connect, в котором Центры событий Azure действуют в качестве брокера Kafka.
 
 > [!NOTE]
-> Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/connect).
+> Этот пример доступен на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/connect).
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -27,11 +36,11 @@ ms.locfileid: "92369545"
 > * Выполнение Kafka Connect
 > * Создание соединителей
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим пошаговым руководством выполните следующие предварительные требования:
 
 - Подписка Azure. Если ее нет, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/).
-- [Git](https://www.git-scm.com/downloads)
+- [Git](https://www.git-scm.com/downloads);
 - Linux/MacOS
 - Выпуск Kafka (версии 1.1.1, Scala версии 2.11) доступен на сайте [kafka.apache.org](https://kafka.apache.org/downloads#1.1.1)
 - Ознакомьтесь со статьей [Центры событий Azure для Apache Kafka (предварительная версия)](./event-hubs-for-kafka-ecosystem-overview.md).
@@ -92,7 +101,7 @@ plugin.path={KAFKA.DIRECTORY}/libs # path to the libs directory within the Kafka
 ```
 
 > [!IMPORTANT]
-> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в разделе [Получение строки подключения концентраторов событий](event-hubs-get-connection-string.md). Ниже приведен пример конфигурации. `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+> Замените `{YOUR.EVENTHUBS.CONNECTION.STRING}` строками подключения для вашего пространства имен Центров событий. Инструкции по получению строки подключения см. в статье [Получение строки подключения Центров событий](event-hubs-get-connection-string.md). Пример конфигурации см. здесь: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
 
 
 ## <a name="run-kafka-connect"></a>Выполнение Kafka Connect
@@ -154,7 +163,7 @@ plugin.path={KAFKA.DIRECTORY}/libs # path to the libs directory within the Kafka
 ### <a name="cleanup"></a>Очистка
 Kafka Connect создает разделы Центра событий для хранения конфигураций, смещений и состояния, которые сохраняются даже после завершения работы кластера Connect. Если этого не требуется, рекомендуется удалить эти разделы. Вы можете также удалить Центр событий `connect-quickstart`, который был создан при выполнении данного пошагового руководства.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о концентраторах событий для Kafka см. в следующих статьях:  
 

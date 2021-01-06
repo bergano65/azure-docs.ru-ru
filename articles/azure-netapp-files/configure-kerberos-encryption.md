@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 11/09/2020
 ms.author: b-juche
-ms.openlocfilehash: 1ffbcc24a2ee386be1a8ce50b55375d5bd458df1
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 69168060cbce4a904c53d7f79895e909c8c42e01
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410102"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935229"
 ---
 # <a name="configure-nfsv41-kerberos-encryption-for-azure-netapp-files"></a>Настройка шифрования Kerberos Нфсв 4.1 для Azure NetApp Files
 
@@ -172,6 +172,7 @@ Azure NetApp Files поддерживает шифрование клиенто�
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 
+* [Устранение проблем с Томом Нфсв 4.1 Kerberos](troubleshoot-nfsv41-kerberos-volumes.md)
 * [Часто задаваемые вопросы о Azure NetApp Files](azure-netapp-files-faqs.md)
 * [Создание тома NFS для Azure NetApp Files](azure-netapp-files-create-volumes.md)
 * [Создание подключения Active Directory](azure-netapp-files-create-volumes-smb.md#create-an-active-directory-connection)

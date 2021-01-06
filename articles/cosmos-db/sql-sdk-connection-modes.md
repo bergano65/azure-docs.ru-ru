@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: maquaran
 ms.custom: devx-track-dotnet, contperf-fy21q2
-ms.openlocfilehash: c30e97a4bff8fa845f6eb3c3092a00ee541e59f4
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: cf985999bac0cf45eec5d8f0f5f9e921b6f4591c
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032802"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934957"
 ---
 # <a name="azure-cosmos-db-sql-sdk-connectivity-modes"></a>Azure Cosmos DB режимы подключения пакета SDK SQL
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,9 +28,9 @@ ms.locfileid: "97032802"
       
     Режим шлюза поддерживается на всех платформах SDK. Если приложение работает в корпоративной сети с ограниченными ограничениями брандмауэра, лучшим выбором является режим шлюза, так как он использует стандартный HTTPS-порт и одну конечную точку DNS. Однако компромисс производительности заключается в том, что режим шлюза включает дополнительный прыжок по сети при каждом считывании или записи данных в Azure Cosmos DB. Также рекомендуется использовать режим подключения шлюза при запуске приложений в средах с ограниченным числом подключений к сокету.
 
-    При использовании пакета SDK в функциях Azure, особенно в [плане потребления](../azure-functions/functions-scale.md#consumption-plan), следует учитывать текущие [ограничения на подключения](../azure-functions/manage-connections.md).
+    При использовании пакета SDK в функциях Azure, особенно в [плане потребления](../azure-functions/consumption-plan.md), следует учитывать текущие [ограничения на подключения](../azure-functions/manage-connections.md).
 
-  * Прямой режим
+  * Режим прямого подключения
 
     Режим Direct поддерживает подключение по протоколу TCP и обеспечивает лучшую производительность, поскольку уменьшается число прыжков сети. Приложение подключается непосредственно к серверным репликам. В настоящее время режим Direct поддерживается только на платформах SDK .NET и Java.
      

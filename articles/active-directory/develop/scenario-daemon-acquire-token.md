@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c13b6ed991403e65c4c4d71c964f1f7f4d1ffe7b
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 9416005c708cafe5adbad2b09ce70c41fae66fd7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443319"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936028"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
 
@@ -57,7 +57,7 @@ final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default"
 
 > [!IMPORTANT]
 > Когда MSAL запрашивает маркер доступа для ресурса, который принимает маркер доступа версии 1,0, Azure AD анализирует нужную аудиторию из запрошенной области, принимая все до последней косой черты и используя ее в качестве идентификатора ресурса.
-> Таким образом, если, как и база данных SQL Azure ( **https: \/ /Database.Windows.NET** ), ресурс ожидает аудиторию, которая заканчивается косой чертой (для базы данных SQL Azure `https://database.windows.net/` ), необходимо запросить область действия `https://database.windows.net//.default` . (Обратите внимание на двойную косую черту.) См. также MSAL.NET проблема [#747: пропущена Конечная косая черта URL-адреса ресурса, что привело к сбою проверки подлинности SQL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
+> Таким образом, если, как и база данных SQL Azure (**https: \/ /Database.Windows.NET**), ресурс ожидает аудиторию, которая заканчивается косой чертой (для базы данных SQL Azure `https://database.windows.net/` ), необходимо запросить область действия `https://database.windows.net//.default` . (Обратите внимание на двойную косую черту.) См. также MSAL.NET проблема [#747: пропущена Конечная косая черта URL-адреса ресурса, что привело к сбою проверки подлинности SQL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="acquiretokenforclient-api"></a>API Аккуиретокенфорклиент
 
@@ -91,6 +91,10 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
     // Mitigation: Change the scope to be as expected.
 }
 ```
+
+### <a name="acquiretokenforclient-uses-the-application-token-cache"></a>Аккуиретокенфорклиент использует кэш маркеров приложений
+
+В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken *XX* используют кэш пользовательских маркеров.) Не вызывайте метод `AcquireTokenSilent` перед вызовом `AcquireTokenForClient` , так как `AcquireTokenSilent` использует кэш *пользовательских* маркеров. `AcquireTokenForClient` проверяет сам кэш маркера *приложения* и обновляет его.
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -200,10 +204,6 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 Дополнительные сведения см. в документации по протоколу: [платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2,0](v2-oauth2-client-creds-grant-flow.md).
 
-## <a name="application-token-cache"></a>Кэш маркеров приложений
-
-В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken *XX* используют кэш пользовательских маркеров.) Не вызывайте метод `AcquireTokenSilent` перед вызовом `AcquireTokenForClient` , так как `AcquireTokenSilent` использует кэш *пользовательских* маркеров. `AcquireTokenForClient` проверяет сам кэш маркера *приложения* и обновляет его.
-
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="did-you-use-the-resourcedefault-scope"></a>Вы использовали область ресурсов/. по умолчанию?
@@ -228,6 +228,12 @@ Content: {
   }
 }
 ```
+
+### <a name="are-you-calling-your-own-api"></a>Вы вызываете собственный API?
+
+Если вы вызываете собственный веб-API и не смогли добавить разрешение приложения в регистрацию приложения для приложения управляющей программы, вы предоставили роль приложения в веб-API?
+
+Дополнительные сведения см. в статьях [предоставление разрешений приложению (роли приложений)](scenario-protected-web-api-app-registration.md#exposing-application-permissions-app-roles) и, в частности, [обеспечение того, что Azure AD выдает маркеры для веб-API только для клиентов](scenario-protected-web-api-app-registration.md#ensuring-that-azure-ad-issues-tokens-for-your-web-api-to-only-allowed-clients).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

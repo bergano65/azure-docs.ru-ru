@@ -1,14 +1,14 @@
 ---
 title: Правила доступа брандмауэра
-description: Настройте правила для доступа к реестру контейнеров Azure из-за пределов брандмауэра, разрешив доступ к ("список разрешений") REST API и доменным именам конечных точек данных или диапазонам IP-адресов, зависящим от службы.
+description: Настройте правила для доступа к реестру контейнеров Azure из защищенного брандмауэра, разрешив доступ к REST API и доменным именам конечных точек данных или диапазонам IP-адресов, зависящим от службы.
 ms.topic: article
 ms.date: 05/18/2020
-ms.openlocfilehash: b9ecd5f802176cdc6881294f5dedefd3dd467244
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 548d64632c1d726111770dfb49f705d31f5ca714
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148509"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935994"
 ---
 # <a name="configure-rules-to-access-an-azure-container-registry-behind-a-firewall"></a>Настройка правил для доступа к реестру контейнеров Azure за брандмауэром
 

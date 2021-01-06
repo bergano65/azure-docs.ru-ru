@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e011417b936ed83b4658e6dad25bf8e8ee88aed
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: b5c960c7fbcc29d0aaea7511ba2187c916e84ab3
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96318283"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935246"
 ---
 # <a name="f5-big-ip-access-policy-manager-and-azure-active-directory-integration-for-secure-hybrid-access"></a>F5 крупный — диспетчер политики доступа к IP-адресу и интеграция Azure Active Directory для безопасного гибридного доступа
 
@@ -71,7 +71,7 @@ SHA решает эту слабую точку, позволяя организ
 |:------|:-----------|
 | 1. | Пользователь выбирает на портале значок приложения, разрешающий URL-адрес для SAML SP (BIG-IP). |
 | 2. | Параметр BIG-IP перенаправляет пользователя в SAML IDP (Azure AD) для предварительной проверки подлинности.|
-| 3. | Azure AD обрабатывает политики ЦС и [элементы управления сеансами](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-session) для авторизации|
+| 3. | Azure AD обрабатывает политики условного доступа и [элементы управления сеансами](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-session) для авторизации|
 | 4. | Пользователь перенаправляется на большой IP-адрес, представляющий утверждения SAML, выданные Azure AD. |
 | 5. | КРУПНЫЙ IP-адрес запрашивает дополнительные сведения о сеансе для включения [единого входа](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso) и [управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) в опубликованную службу. |
 | 6. | BIG-IP перенаправляет запрос клиента в серверную службу

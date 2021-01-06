@@ -5,12 +5,12 @@ author: eamono
 ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: eamono
-ms.openlocfilehash: 6034d1327d263eda49881af5eedf94ae06495128
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e01ffd8e17fda9113c7ec0fdb2c7f436b39c810
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83122278"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936912"
 ---
 # <a name="managing-hybrid-environments-with-powershell-in-azure-functions-and-app-service-hybrid-connections"></a>Управление гибридными средами с помощью PowerShell в функциях Azure и гибридные подключения службы приложений
 
@@ -72,11 +72,11 @@ cmd.exe /C $Cmd
 
     | Параметр      | Рекомендуемое значение  | Описание |
     | ------------ | ---------------- | ----------- |
-    | **[Учетная запись хранения](../storage/common/storage-account-create.md)** |  Глобально уникальное имя |  Создайте учетную запись хранения для использования приложением-функцией. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Можно также использовать существующую учетную запись при условии, что она соответствует [требованиям учетной записи хранилища](../azure-functions/functions-scale.md#storage-account-requirements). |
+    | **[Учетная запись хранения](../storage/common/storage-account-create.md)** |  Глобально уникальное имя |  Создайте учетную запись хранения для использования приложением-функцией. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Можно также использовать существующую учетную запись при условии, что она соответствует [требованиям учетной записи хранилища](../azure-functions/storage-considerations.md#storage-account-requirements). |
     |**Операционная система**| Предпочтительная операционная система | Операционная система предварительно выбирается с учетом выбранного стека среды выполнения, но при необходимости ее можно изменить. |
     | **[Тип плана](../azure-functions/functions-scale.md)** | **План службы приложений** | Выберите **план службы приложений**. Когда выполняется план службы приложений необходимо управлять [масштабированием приложения-функции](../azure-functions/functions-scale.md).  |
 
-    :::image type="content" source="./media/functions-hybrid-powershell/function-app-create-hosting.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/function-app-create-hosting.png" alt-text="Создание приложения-функции размещение." border="true":::
 
 1. Выберите **Далее: Мониторинг**. Введите следующие параметры на странице **Мониторинг**.
 
@@ -84,7 +84,7 @@ cmd.exe /C $Cmd
     | ------------ | ---------------- | ----------- |
     | **[Application Insights](../azure-functions/functions-monitoring.md)** | По умолчанию | Создает ресурс Application Insights с таким же *именем приложения* в ближайшем поддерживаемом регионе. Развернув этот параметр или выбрав **Создать новый**, можно изменить имя Application Insights или выбрать другое расположение в [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), где будут хранится данные. |
 
-    :::image type="content" source="./media/functions-hybrid-powershell/function-app-create-monitoring.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/function-app-create-monitoring.png" alt-text="Создайте функцию мониторинга приложений." border="true":::
 
 1. Выберите **Просмотр и создание** , чтобы просмотреть выбранные параметры конфигурации приложения.
 
@@ -101,15 +101,15 @@ cmd.exe /C $Cmd
 1. В разделе **Параметры** только что созданного приложения функции выберите **сеть**. 
 1. Выберите **Настройка конечных точек гибридных подключений**.
    
-    :::image type="content" source="./media/functions-hybrid-powershell/configure-hybrid-connection-endpoint.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/configure-hybrid-connection-endpoint.png" alt-text="Настройте конечные точки гибридного подключения." border="true":::
 
 1. Выберите **Добавить гибридное подключение**.
    
-    :::image type="content" source="./media/functions-hybrid-powershell/hybrid-connection-overview.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/hybrid-connection-overview.png" alt-text="Добавьте гибридное подключение." border="true":::
 
 1. Введите сведения о гибридном подключении, как показано сразу после следующего снимка экрана. Можно сделать так, чтобы параметр **узла конечной точки** совпадал с именем узла локального сервера, чтобы было проще запомнить сервер при выполнении удаленных команд. Порт совпадает с портом службы удаленного управления Windows по умолчанию, который был определен на сервере ранее.
   
-      :::image type="content" source="./media/functions-hybrid-powershell/add-hybrid-connection.png" alt-text="Создание приложения-функции — основы." border="true":::
+      :::image type="content" source="./media/functions-hybrid-powershell/add-hybrid-connection.png" alt-text="Добавление гибридного подключения." border="true":::
 
     | Параметр      | Рекомендуемое значение  |
     | ------------ | ---------------- |
@@ -118,7 +118,7 @@ cmd.exe /C $Cmd
     | **Порт конечной точки** | 5986 |
     | **Пространство имен servicebus** | Создать |
     | **Расположение** | Выберите доступное расположение |
-    | **Имя** | контосоповершеллхибрид | 
+    | **имя**; | контосоповершеллхибрид | 
 
 1. Нажмите кнопку **ОК** , чтобы создать гибридное подключение.
 
@@ -126,24 +126,24 @@ cmd.exe /C $Cmd
 
 1. Выберите **загрузить диспетчер подключений** , чтобы сохранить *MSI* файл на локальном компьютере.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/download-hybrid-connection-installer.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/download-hybrid-connection-installer.png" alt-text="Скачайте установщик." border="true":::
 
 1. Скопируйте *MSI* -файл с локального компьютера на локальный сервер.
 1. Запустите установщик Диспетчер гибридных подключений, чтобы установить службу на локальном сервере.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/hybrid-installation.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/hybrid-installation.png" alt-text="Установите гибридное подключение." border="true":::
 
 1. На портале откройте гибридное подключение, а затем скопируйте строку подключения шлюза в буфер обмена.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/copy-hybrid-connection.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/copy-hybrid-connection.png" alt-text="Скопируйте строку гибридного подключения." border="true":::
 
 1. Откройте пользовательский интерфейс Диспетчер гибридных подключений на локальном сервере.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/hybrid-connection-ui.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/hybrid-connection-ui.png" alt-text="Откройте пользовательский интерфейс гибридного подключения." border="true":::
 
 1. Нажмите клавишу **Ввод вручную** и вставьте строку подключения из буфера обмена.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/enter-manual-connection.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/enter-manual-connection.png" alt-text="Вставьте гибридное подключение." border="true":::
 
 1. Перезапустите Диспетчер гибридных подключений из PowerShell, если он не отображается как подключенный.
     ```powershell
@@ -155,26 +155,26 @@ cmd.exe /C $Cmd
 1. В разделе **Параметры** приложения функции выберите **Конфигурация**. 
 1. Выберите **+ создать параметр приложения**.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/select-configuration.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/select-configuration.png" alt-text="Настройте пароль для учетной записи администратора." border="true":::
 
-1. Присвойте параметру имя **контосаусерпассворд**и введите пароль. Щелкните **ОК**.
+1. Присвойте параметру имя **контосаусерпассворд** и введите пароль. Нажмите кнопку **ОК**.
 1. Выберите **сохранить** , чтобы сохранить пароль в приложении функции.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/save-administrator-password.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/save-administrator-password.png" alt-text="Сохраните пароль для учетной записи администратора." border="true":::
 
 ## <a name="create-a-function-http-trigger"></a>Создание триггера HTTP функции
 
 1. В приложении функции выберите **функции**, а затем щелкните **+ Добавить**.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/create-http-trigger-function.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/create-http-trigger-function.png" alt-text="Создайте новый триггер HTTP." border="true":::
 
 1. Выберите шаблон **триггера HTTP** .
 
-    :::image type="content" source="./media/functions-hybrid-powershell/select-http-trigger-template.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/select-http-trigger-template.png" alt-text="Выберите шаблон триггера HTTP." border="true":::
 
 1. Назовите новую функцию и выберите **создать функцию**.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/create-new-http-function.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/create-new-http-function.png" alt-text="Назовите и создайте новую функцию триггера HTTP." border="true":::
 
 ## <a name="test-the-function"></a>Проверка функции
 
@@ -215,11 +215,11 @@ cmd.exe /C $Cmd
 
 1. Щелкните **Сохранить**.
 
-    :::image type="content" source="./media/functions-hybrid-powershell/save-http-function.png" alt-text="Создание приложения-функции — основы." border="true":::
+    :::image type="content" source="./media/functions-hybrid-powershell/save-http-function.png" alt-text="Измените код PowerShell и сохраните функцию триггера HTTP." border="true":::
 
- 1. Выберите **тест**и нажмите кнопку **выполнить** , чтобы проверить функцию. Проверьте журналы, чтобы убедиться, что проверка прошла успешно.
+ 1. Выберите **тест** и нажмите кнопку **выполнить** , чтобы проверить функцию. Проверьте журналы, чтобы убедиться, что проверка прошла успешно.
 
-     :::image type="content" source="./media/functions-hybrid-powershell/test-function-hybrid.png" alt-text="Создание приложения-функции — основы." border="true":::
+     :::image type="content" source="./media/functions-hybrid-powershell/test-function-hybrid.png" alt-text="Проверка функции триггера HTTP." border="true":::
 
 ## <a name="managing-other-systems-on-premises"></a>Управление другими системами в локальной среде
 

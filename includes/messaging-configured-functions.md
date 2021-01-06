@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 9cc19548f0b969421974afe3e274fc5334590cb0
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: b487dcad83ccbc31adf2d7ec2dd77c490db2c68e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97805591"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935206"
 ---
 Функции Azure позволяют создавать задачи репликации, предназначенные только для конфигурации и направленные на предварительно созданную точку входа. [Примеры репликации на основе конфигурации для службы "функции Azure](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config) " иллюстрируют использование [готовых вспомогательных](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/src/Azure.Messaging.Replication) функций в коде или старайтесь не обрабатывать код и просто использовать конфигурацию.
 
@@ -166,7 +166,7 @@ ms.locfileid: "97805591"
             "direction": "out",
             "type": "serviceBus",
             "connection": "functionname-target-connection",
-            "eventHubName": "queue-b",
+            "queueName": "queue-b",
             "name": "output" 
         }
     ...
@@ -190,7 +190,7 @@ ms.locfileid: "97805591"
             "direction": "out",
             "type": "serviceBus",
             "connection": "functionname-target-connection",
-            "eventHubName": "queue-b",
+            "topicName": "topic-b",
             "name": "output" 
         }
     ...
@@ -212,9 +212,9 @@ ms.locfileid: "97805591"
 | Источник      | Назначение      | Точка входа 
 |-------------|-------------|------------------------------------------------------------------------
 | Концентратор событий   | Концентратор событий   | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToEventHub`
-| Концентратор событий   | Служебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
-| Служебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
-| Служебная шина | Служебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
+| Концентратор событий   | Cлужебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
+| Cлужебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
+| Cлужебная шина | Cлужебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
 
 ### <a name="retry-policy"></a>Политика повтора
 
