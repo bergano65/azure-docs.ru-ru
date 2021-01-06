@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 12/29/2020
-ms.openlocfilehash: 2668f969076fd2b9960995fec44350d61b405740
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.openlocfilehash: a6f4b0a503e942b79dff28212863831055892246
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809436"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916564"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
 
@@ -79,7 +79,7 @@ ms.locfileid: "97809436"
 
     ![Ссылка на пакетное тестирование](./media/luis-how-to-batch-test/batch-testing-link.png)
 
-3. Выберите **Импорт**. В открывшемся диалоговом окне выберите **выбрать файл** и укажите файл JSON с правильным форматом JSON, который содержит *не более 1 000* фразы продолжительностью для тестирования.
+3. Выберите **Импортировать**. В открывшемся диалоговом окне выберите **выбрать файл** и укажите файл JSON с правильным форматом JSON, который содержит *не более 1 000* фразы продолжительностью для тестирования.
 
     Ошибки импорта выводятся в красной строке уведомлений в верхней части браузера. Если при импорте возникают ошибки, набор данных не создается. Дополнительные сведения см. в разделе об [общих ошибках](#common-errors-importing-a-batch).
 
@@ -175,10 +175,10 @@ LUIS позволяет выполнять пакетный тест с помо
 Запустите пакетный тест с помощью идентификатора версии приложения или слота публикации. Отправьте запрос **POST** в один из следующих форматов конечной точки. Добавьте пакетный файл в текст запроса.
 
 Слот публикации
-* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0/apps/<YOUR-APP-ID>/slots/<YOUR-SLOT-NAME>/evaluations`
+* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0-preview/apps/<YOUR-APP-ID>/slots/<YOUR-SLOT-NAME>/evaluations`
 
 Идентификатор версии приложения
-* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0/apps/<YOUR-APP-ID>/versions/<YOUR-APP-VERSION-ID>/evaluations`
+* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0-preview/apps/<YOUR-APP-ID>/versions/<YOUR-APP-VERSION-ID>/evaluations`
 
 Эти конечные точки будут возвращать идентификатор операции, который будет использоваться для проверки состояния и получения результатов. 
 
@@ -188,20 +188,20 @@ LUIS позволяет выполнять пакетный тест с помо
 Используйте идентификатор операции из пакетного теста, который вы начали, чтобы получить его состояние из следующих форматов конечной точки: 
 
 Слот публикации
-* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0/apps/<YOUR-APP-ID>/slots/<YOUR-SLOT-ID>/evaluations/<YOUR-OPERATION-ID>/status`
+* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0-preview/apps/<YOUR-APP-ID>/slots/<YOUR-SLOT-ID>/evaluations/<YOUR-OPERATION-ID>/status`
 
 Идентификатор версии приложения
-* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0/apps/<YOUR-APP-ID>/versions/<YOUR-APP-VERSION-ID>/evaluations/<YOUR-OPERATION-ID>/status`
+* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0-preview/apps/<YOUR-APP-ID>/versions/<YOUR-APP-VERSION-ID>/evaluations/<YOUR-OPERATION-ID>/status`
 
 ### <a name="get-the-results-from-a-batch-test"></a>Получение результатов пакетного теста
 
 Чтобы получить результаты из следующих форматов конечной точки, используйте идентификатор операции из пакетного теста, который вы начали. 
 
 Слот публикации
-* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0/apps/<YOUR-APP-ID>/slots/<YOUR-SLOT-ID>/evaluations/<YOUR-OPERATION-ID>/result`
+* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0-preview/apps/<YOUR-APP-ID>/slots/<YOUR-SLOT-ID>/evaluations/<YOUR-OPERATION-ID>/result`
 
 Идентификатор версии приложения
-* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0/apps/<YOUR-APP-ID>/versions/<YOUR-APP-VERSION-ID>/evaluations/<YOUR-OPERATION-ID>/result`
+* `<YOUR-PREDICTION-ENDPOINT>/luis/prediction/v3.0-preview/apps/<YOUR-APP-ID>/versions/<YOUR-APP-VERSION-ID>/evaluations/<YOUR-OPERATION-ID>/result`
 
 
 ### <a name="batch-file-of-utterances"></a>Пакетный файл фразы продолжительностью
