@@ -2,13 +2,13 @@
 title: Записывать оповещения из Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается создание настраиваемых оповещений журнала для использования памяти и ЦП из Azure Monitor для контейнеров.
 ms.topic: conceptual
-ms.date: 01/07/2020
-ms.openlocfilehash: e9b0e01ca4c0ccb24d0d1b04a4d17ec06db253b6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.date: 01/05/2021
+ms.openlocfilehash: 131f5ebc0f72afce381b4b82d6fe50a5d5e37123
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966257"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901510"
 ---
 # <a name="how-to-create-log-alerts-from-azure-monitor-for-containers"></a>Создание предупреждений журнала из Azure Monitor для контейнеров
 
@@ -224,7 +224,7 @@ KubePodInventory
         KubePodInventory
         | where TimeGenerated < endDateTime
         | where TimeGenerated >= startDateTime
-        | summarize PodStatus=any(PodStatus) by TimeGenerated, PodUid, ClusterId
+        | summarize PodStatus=any(PodStatus) by TimeGenerated, PodUid, ClusterName
         | summarize TotalCount = count(),
                     PendingCount = sumif(1, PodStatus =~ 'Pending'),
                     RunningCount = sumif(1, PodStatus =~ 'Running'),
@@ -303,7 +303,7 @@ InsightsMetrics
 13. Выберите существующую **группу действий** или создайте новую. Этот шаг обеспечивает выполнение одних и тех же действий при каждом запуске оповещения. Настройте в зависимости от того, как ИТ или группа DevOps управляют инцидентами.
 14. Выберите **создать правило генерации оповещений** , чтобы завершить правило генерации оповещений. Оно начнет выполняться немедленно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите [примеры запросов журналов](container-insights-log-search.md#search-logs-to-analyze-data) , чтобы просмотреть предварительно определенные запросы и примеры для проверки или настройки предупреждений, визуализации или анализа кластеров.
 

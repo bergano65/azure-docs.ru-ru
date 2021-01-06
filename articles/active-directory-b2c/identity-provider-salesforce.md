@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/05/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 69c2bd96c7aa3bb3328784bb3b5027ade4902c43
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 129809a83bcebdcf80b05a7300dd9acf862e5886
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97669233"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900405"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-salesforce-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с помощью учетной записи SalesForce с помощью Azure Active Directory B2C
 
@@ -48,10 +48,12 @@ ms.locfileid: "97669233"
     1. **Имя API** 
     1. **Контактный адрес электронной** почты — Контактное письмо для Salesforce
 1. В разделе **API (включение параметров OAuth)** выберите **включить параметры OAuth** .
-1. В окне **URL-адрес обратного вызова** введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
-1. В **выбранных областях OAuth** выберите **доступ к основным сведениям (идентификатор, профиль, электронная почта, адрес, Телефон)** и **разрешите доступ к своему уникальному идентификатору (OpenID Connect)**.
-1. Выберите параметр **требовать секрет для потока веб-сервера**.
-1. Выберите **настроить маркер идентификации**, а затем выберите **включить стандартные утверждения**.
+    1. В окне **URL-адрес обратного вызова** введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами.
+    1. В **выбранных областях OAuth** выберите **доступ к основным сведениям (идентификатор, профиль, электронная почта, адрес, Телефон)** и **разрешите доступ к своему уникальному идентификатору (OpenID Connect)**.
+    1. Выберите параметр **требовать секрет для потока веб-сервера**.
+1. Выберите **Настройка токена идентификации** 
+    1. Задайте **срок действия маркера в течение** 5 минут.
+    1. Выберите **включить стандартные утверждения**.
 1. Выберите команду **Сохранить**.
 1. Скопируйте значения **ключа потребителя** и **секрета потребителя**. Оба они понадобятся для настройки Salesforce в качестве поставщика удостоверений в клиенте. **Секрет клиента** — это важные учетные данные безопасности.
 
@@ -63,10 +65,10 @@ ms.locfileid: "97669233"
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 1. Щелкните элемент **Поставщики удостоверений**, а затем выберите **Новый поставщик OpenID Connect**.
 1. Введите **Имя**. Например, введите *Salesforce*.
-1. В поле **URL-адрес метаданных** введите следующий URL-адрес, заменяющий `{org}` свою организацию Salesforce:
+1. В поле **URL-адрес метаданных** введите URL-адрес [документа конфигурации Salesforce OpenID Connect Connect](https://help.salesforce.com/articleView?id=remoteaccess_using_openid_discovery_endpoint.htm). Для песочницы login.salesforce.com заменяется на test.salesforce.com. Для сообщества login.salesforce.com заменяется URL-адресом сообщества, например username.force.com/.well-known/openid-configuration. URL-адрес должен быть HTTPS.
 
     ```
-    https://{org}.my.salesforce.com/.well-known/openid-configuration
+    https://login.salesforce.com/.well-known/openid-configuration
     ```
 
 1. В поле **Идентификатор клиента** введите ранее записанное значение идентификатора приложения.
@@ -80,7 +82,7 @@ ms.locfileid: "97669233"
     - **Display name**: *name*;
     - **Given name**: *given_name*;
     - **Surname**: *family_name*;
-    - **Адрес электронной почты**: *preferred_username*
+    - **Электронная почта**: *Электронная почта*
 
 1. Щелкните **Сохранить**.
 ::: zone-end
@@ -121,8 +123,7 @@ ms.locfileid: "97669233"
           <DisplayName>Salesforce</DisplayName>
           <Protocol Name="OpenIdConnect" />
           <Metadata>
-            <!-- Update the {org} below to your Salesforce organization -->
-            <Item Key="METADATA">https://{org}.my.salesforce.com/.well-known/openid-configuration</Item>
+            <Item Key="METADATA">https://login.salesforce.com/.well-known/openid-configuration</Item>
             <Item Key="response_types">code</Item>
             <Item Key="response_mode">form_post</Item>
             <Item Key="scope">openid id profile email</Item>
@@ -154,7 +155,7 @@ ms.locfileid: "97669233"
     </ClaimsProvider>
     ```
 
-4. Задание  URI метаданных `{org}` в Организации Salesforce.
+4. Для **метаданных** задается URL-адрес [документа конфигурации Salesforce OpenID Connect Connect](https://help.salesforce.com/articleView?id=remoteaccess_using_openid_discovery_endpoint.htm). Для песочницы login.salesforce.com заменяется на test.salesforce.com. Для сообщества login.salesforce.com заменяется URL-адресом сообщества, например username.force.com/.well-known/openid-configuration. URL-адрес должен быть HTTPS.
 5. Задайте для параметра **client_id** значение идентификатора приложения из регистрации приложения.
 6. Сохраните файл.
 
@@ -235,6 +236,6 @@ ms.locfileid: "97669233"
 
 ::: zone-end
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [передать токен Salesforce в приложение](idp-pass-through-user-flow.md).

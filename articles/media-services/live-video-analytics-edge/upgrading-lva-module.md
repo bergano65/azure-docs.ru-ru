@@ -5,12 +5,12 @@ author: naiteeks
 ms.topic: how-to
 ms.author: naiteeks
 ms.date: 12/14/2020
-ms.openlocfilehash: 7904269a8ca87d3d801c7ff78def1b60f242b9ab
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 9621f0a933c6102309286505f2c551c5256c5506
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97425996"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901561"
 ---
 # <a name="upgrading-live-video-analytics-on-iot-edge-from-10-to-20"></a>Обновление службы Live Video Analytics на IoT Edge с 1,0 по 2,0
 
@@ -19,7 +19,7 @@ ms.locfileid: "97425996"
 ## <a name="change-list"></a>Список изменений
 
 > [!div class="mx-tdCol4BreakAll"]
-> |Заголовок|Live Video Analytics 1,0|Live Video Analytics 2,0|Описание|
+> |Title|Live Video Analytics 1,0|Live Video Analytics 2,0|Описание|
 > |-------------|----------|---------|---------|
 > |Образ контейнера|mcr.microsoft.com/media/live-video-analytics:1.0.0|mcr.microsoft.com/media/live-video-analytics:2.0.0|Опубликованные образы DOCKER для Live Video Analytics на Azure IoT Edge|
 > |**Узлы Медиаграф** |    |   |   |
@@ -169,7 +169,7 @@ ms.locfileid: "97425996"
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/telemetry-schema/telegraf.png" alt-text="Классификация событий":::
 
-С помощью DOCKER можно легко создать образ Telegraf с пользовательской конфигурацией. Дополнительные сведения об этом см. на странице [мониторинг и ведение журнала](monitoring-logging.md#azure-monitor-collection-using-telegraf) .
+С помощью DOCKER можно легко создать образ Telegraf с пользовательской конфигурацией. Дополнительные сведения об этом см. на странице [мониторинг и ведение журнала](monitoring-logging.md#azure-monitor-collection-via-telegraf) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.date: 05/03/2020
 ms.author: kaib
 ms.custom: seodec18
-ms.openlocfilehash: 76aa18c9724d85b1dd3fb8de3d7d033d40ff95ce
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: ab83a3b11aebdc9fed450410aa1f9bee2d25c4bb
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400239"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900677"
 ---
 # <a name="resize-an-os-disk-that-has-a-gpt-partition"></a>Изменение размера диска ОС с разделом GPT
 
@@ -400,6 +400,8 @@ user@myvm:~#
 > Чтобы использовать ту же процедуру для изменения размера любого другого логического тома, измените имя LV на шаге 12.
 
 ### <a name="rhel-raw"></a>RHEL RAW
+>[!NOTE] 
+>Прежде чем увеличивать размер диска ОС, всегда сделайте снимок виртуальной машины.
 
 Чтобы увеличить размер диска операционной системы в необработанном разделе RHEL, выполните следующие действия.
 
@@ -410,111 +412,117 @@ user@myvm:~#
 После перезапуска виртуальной машины выполните следующие действия.
 
 1. Войдите на виртуальную машину с учетными данными **корневого**, используя следующую команду:
-
-   ```bash
-   [root@dd-rhel7vm ~]# sudo -i
+ 
+   ```
+   sudo su
    ```
 
-1. После перезапуска виртуальной машины выполните следующие действия.
+1. Установите пакет **gptfdisk**, который необходим для увеличения размера диска ОС.
 
-   - Установите пакет **Cloud-utils-гровпарт** , чтобы предоставить команду **гровпарт** , которая требуется для увеличения размера диска операционной системы и обработчика гдиск для разметки дисков GPT. Этот пакет предварительно устанавливается в большинстве образов Marketplace.
-
-   ```bash
-   [root@dd-rhel7vm ~]# yum install cloud-utils-growpart gdisk
+   ```
+   yum install gdisk -y
    ```
 
-1. Используйте команду **лсблк-f** , чтобы проверить раздел и тип файловой системы, в которых находится корневой **/** раздел ():
+1.  Чтобы просмотреть все доступные секторы на диске, выполните следующую команду:
+    ```
+    gdisk -l /dev/sda
+    ```
 
-   ```bash
-   [root@vm-dd-cent7 ~]# lsblk -f
-   NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
-   sda
-   ├─sda1  xfs          2a7bb59d-6a71-4841-a3c6-cba23413a5d2 /boot
-   ├─sda2  xfs          148be922-e3ec-43b5-8705-69786b522b05 /
-   ├─sda14
-   └─sda15 vfat         788D-DC65                            /boot/efi
-   sdb
-   └─sdb1  ext4         923f51ff-acbd-4b91-b01b-c56140920098 /mnt/resource
+1. Вы увидите сведения, уведомляющие о типе секции. Убедитесь, что это GPT. Определяет корневой раздел. Не изменяйте и не удаляйте загрузочный раздел (загрузочный раздел BIOS) и системный раздел ("системный раздел EFI").
+
+1. Используйте следующую команду, чтобы начать секционирование в первый раз. 
+    ```
+    gdisk /dev/sda
+    ```
+
+1. Теперь вы увидите сообщение с запросом следующей команды (команда:? для справки). 
+
+   ```
+   w
    ```
 
-1. Для проверки Начните с перечисления таблицы разделов на диске SDA с **гдиск**. В этом примере мы видим диск размером 48 ГБ с Секцией 2 в 29,0 гиб. Диск был увеличен с 30 ГБ до 48 ГБ в портал Azure.
+1. Появится предупреждение "предупреждение! Дополнительный заголовок помещается на диске слишком рано. Вы хотите устранить эту проблему? (Y/N): ". Необходимо нажать "Y"
 
-   ```bash
-   [root@vm-dd-cent7 ~]# gdisk -l /dev/sda
-   GPT fdisk (gdisk) version 0.8.10
-
-   Partition table scan:
-   MBR: protective
-   BSD: not present
-   APM: not present
-   GPT: present
-
-   Found valid GPT with protective MBR; using GPT.
-   Disk /dev/sda: 100663296 sectors, 48.0 GiB
-   Logical sector size: 512 bytes
-   Disk identifier (GUID): 78CDF84D-9C8E-4B9F-8978-8C496A1BEC83
-   Partition table holds up to 128 entries
-   First usable sector is 34, last usable sector is 62914526
-   Partitions will be aligned on 2048-sector boundaries
-   Total free space is 6076 sectors (3.0 MiB)
-
-   Number  Start (sector)    End (sector)  Size       Code  Name
-      1         1026048         2050047   500.0 MiB   0700
-      2         2050048        62912511   29.0 GiB    0700
-   14            2048           10239   4.0 MiB     EF02
-   15           10240         1024000   495.0 MiB   EF00  EFI System Partition
+   ```
+   Y
    ```
 
-1. Разверните раздел root, в данном случае sda2 с помощью команды **гровпарт** . С помощью этой команды можно развернуть раздел, чтобы использовать все смежные места на диске.
+1. Должно отобразиться сообщение о завершении окончательных проверок и запросе подтверждения. Нажмите "Y"
 
-   ```bash
-   [root@vm-dd-cent7 ~]# growpart /dev/sda 2
-   CHANGED: partition=2 start=2050048 old: size=60862464 end=62912512 new: size=98613214 end=100663262
+   ```
+   Y
    ```
 
-1. Теперь снова распечатайте новую таблицу разделов с помощью **гдиск** .  Обратите внимание, что Секция 2 расширилась до 47,0 гиб:
+1. Проверьте, правильно ли произошло все с помощью команды партпробе
 
-   ```bash
-   [root@vm-dd-cent7 ~]# gdisk -l /dev/sda
-   GPT fdisk (gdisk) version 0.8.10
-
-   Partition table scan:
-   MBR: protective
-   BSD: not present
-   APM: not present
-   GPT: present
-
-   Found valid GPT with protective MBR; using GPT.
-   Disk /dev/sda: 100663296 sectors, 48.0 GiB
-   Logical sector size: 512 bytes
-   Disk identifier (GUID): 78CDF84D-9C8E-4B9F-8978-8C496A1BEC83
-   Partition table holds up to 128 entries
-   First usable sector is 34, last usable sector is 100663262
-   Partitions will be aligned on 2048-sector boundaries
-   Total free space is 4062 sectors (2.0 MiB)
-
-   Number  Start (sector)    End (sector)  Size       Code  Name
-      1         1026048         2050047   500.0 MiB   0700
-      2         2050048       100663261   47.0 GiB    0700
-   14            2048           10239   4.0 MiB     EF02
-   15           10240         1024000   495.0 MiB   EF00  EFI System Partition
+   ```
+   partprobe
    ```
 
-1. Разверните файловую систему в разделе, используя **xfs_growfs**, которая подходит для стандартной системы RedHat, созданной Marketplace:
+1. Описанные выше шаги гарантируют, что дополнительный заголовок GPT помещается в конец. Следующим шагом является запуск процесса изменения размера с помощью средства гдиск. Используйте следующую команду.
 
-   ```bash
-   [root@vm-dd-cent7 ~]# xfs_growfs /
-   meta-data=/dev/sda2              isize=512    agcount=4, agsize=1901952 blks
-            =                       sectsz=4096  attr=2, projid32bit=1
-            =                       crc=1        finobt=0 spinodes=0
-   data     =                       bsize=4096   blocks=7607808, imaxpct=25
-            =                       sunit=0      swidth=0 blks
-   naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
-   log      =internal               bsize=4096   blocks=3714, version=2
-            =                       sectsz=4096  sunit=1 blks, lazy-count=1
-   realtime =none                   extsz=4096   blocks=0, rtextents=0
-   data blocks changed from 7607808 to 12326651
    ```
+   gdisk /dev/sda
+   ```
+1. Чтобы просмотреть список разделов, в меню Команда нажмите кнопку "p". Выявление корневого раздела (в шагах sda2 считается корневым разделом) и загрузочным разделом (в шагах sda3 считается загрузочным разделом). 
+
+   ```
+   p
+   ```
+    ![Корневой раздел и загрузочный раздел](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw1.png)
+
+1. Нажмите клавишу "d", чтобы удалить секцию и выбрать номер секции, назначенный для загрузки (в этом примере это "3")
+   ```
+   d
+   3
+   ```
+1. Нажмите клавишу "d", чтобы удалить секцию и выбрать номер секции, назначенный для загрузки (в этом примере — "2").
+   ```
+   d
+   2
+   ```
+    ![Удалить корневой раздел и загрузочный раздел](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw2.png)
+
+1. Чтобы повторно создать корневой раздел с увеличенным размером, нажмите "n", введите номер раздела, который вы ранее удалили для корневого ("2" в этом примере), и выберите первый сектор в качестве значения по умолчанию, последний сектор — "Последнее значение сектора — размер загрузочного сектора" ("4096" в этом случае) и шестнадцатеричный код как "8300".
+   ```
+   n
+   2
+   (Enter default)
+   (Calculateed value of Last sector value - 4096)
+   8300
+   ```
+1. Чтобы повторно создать загрузочный раздел, нажмите "n", введите номер раздела, который вы ранее удалили для загрузки ("3" для этого примера), и выберите первый сектор в качестве значения по умолчанию, последний сектор — "значение по умолчанию" и шестнадцатеричный код как "EF02"
+   ```
+   n
+   3
+   (Enter default)
+   (Enter default)
+   EF02
+   ```
+
+1. Запишите изменения с помощью команды "w" и нажмите клавишу "Y" для подтверждения
+   ```
+   w
+   Y
+   ```
+1. Выполните команду "партпробе", чтобы проверить стабильность диска
+   ```
+   partprobe
+   ```
+1. Перезагрузите виртуальную машину, и размер корневого раздела увеличится.
+   ```
+   reboot
+   ```
+
+   ![Новый корневой раздел и загрузочный раздел](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw3.png)
+
+1. Выполните команду xfs_growfs в разделе, чтобы изменить ее размер.
+   ```
+   xfs_growfs /dev/sda2
+   ```
+
+   ![XFS расширение FS](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw4.png)
+
 
 1. Убедитесь, что новый размер отражается с помощью команды **DF** :
 

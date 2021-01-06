@@ -3,15 +3,15 @@ title: Управление группами ресурсов — Azure CLI
 description: Используйте Azure CLI для управления группами ресурсов с помощью Azure Resource Manager. Показывает, как создавать, перечислять и удалять группы ресурсов.
 author: mumian
 ms.topic: conceptual
-ms.date: 09/01/2020
+ms.date: 01/05/2021
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4a9a4ed4ebba7f6f2470bb9e7000a899ebc26323
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: db4a938d2f773ed24d4c7a48d747dd5cc22c0bd2
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185816"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900286"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-cli"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure CLI
 
@@ -84,14 +84,14 @@ az group delete --name $resourceGroupName
 
 ## <a name="lock-resource-groups"></a>Заблокировать группы ресурсов
 
-Блокировка запрещает другим пользователям в организации случайно удалить или изменить критически важные ресурсы, такие как подписка Azure, Группа ресурсов или ресурс. 
+Блокировка запрещает другим пользователям в организации случайно удалить или изменить критически важные ресурсы, такие как подписка Azure, Группа ресурсов или ресурс.
 
 Следующий скрипт блокирует группу ресурсов, чтобы группу ресурсов нельзя было удалить.
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
-az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resourceGroupName  
+az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resourceGroupName
 ```
 
 Следующий скрипт получает все блокировки для группы ресурсов:
@@ -99,7 +99,7 @@ az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resou
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
-az lock list --resource-group $resourceGroupName  
+az lock list --resource-group $resourceGroupName
 ```
 
 Следующий скрипт удаляет блокировку:
@@ -125,13 +125,88 @@ az lock delete --name $lockName --resource-group $resourceGroupName
 - Автоматизируйте будущие развертывания решения, поскольку шаблон содержит всю полную инфраструктуру.
 - Познакомьтесь с синтаксисом шаблона, просмотрев нотация объектов JavaScript (JSON), который представляет ваше решение.
 
+Чтобы экспортировать все ресурсы в группе ресурсов, используйте команду [AZ Group Export](/cli/azure/group?view=azure-cli-latest#az_group_export&preserve-view=true) и укажите имя группы ресурсов.
+
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
-az group export --name $resourceGroupName  
+az group export --name $resourceGroupName
 ```
 
-Сценарий отображает шаблон на консоли.  Скопируйте код JSON и сохраните его как файл.
+Сценарий отображает шаблон на консоли. Скопируйте код JSON и сохраните его как файл.
+
+Вместо экспорта всех ресурсов в группе ресурсов можно выбрать ресурсы для экспорта.
+
+Чтобы экспортировать один ресурс, передайте этот идентификатор ресурса.
+
+```azurecli-interactive
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+echo "Enter the storage account name:" &&
+read storageAccountName &&
+storageAccount=$(az resource show --resource-group $resourceGroupName --name $storageAccountName --resource-type Microsoft.Storage/storageAccounts --query id --output tsv) &&
+az group export --resource-group $resourceGroupName --resource-ids $storageAccount
+```
+
+Чтобы экспортировать более одного ресурса, передайте идентификаторы ресурсов, разделенных пробелами. Чтобы экспортировать все ресурсы, не указывайте этот аргумент или укажите "*".
+
+```azurecli-interactive
+az group export --resource-group <resource-group-name> --resource-ids $storageAccount1 $storageAccount2
+```
+
+При экспорте шаблона можно указать, используются ли параметры в шаблоне. По умолчанию параметры для имен ресурсов включены, но не имеют значения по умолчанию. Необходимо передать это значение параметра во время развертывания.
+
+```json
+"parameters": {
+  "serverfarms_demoHostPlan_name": {
+    "type": "String"
+  },
+  "sites_webSite3bwt23ktvdo36_name": {
+    "type": "String"
+  }
+}
+```
+
+В ресурсе параметр используется для имени.
+
+```json
+"resources": [
+  {
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2016-09-01",
+    "name": "[parameters('serverfarms_demoHostPlan_name')]",
+    ...
+  }
+]
+```
+
+При использовании `--include-parameter-default-value` параметра при экспорте шаблона параметр шаблона включает значение по умолчанию, для которого задано текущее значение. Можно либо использовать это значение по умолчанию, либо перезаписать значение по умолчанию, передав другое значение.
+
+```json
+"parameters": {
+  "serverfarms_demoHostPlan_name": {
+    "defaultValue": "demoHostPlan",
+    "type": "String"
+  },
+  "sites_webSite3bwt23ktvdo36_name": {
+    "defaultValue": "webSite3bwt23ktvdo36",
+    "type": "String"
+  }
+}
+```
+
+При использовании `--skip-resource-name-params` параметра при экспорте шаблона параметры для имен ресурсов не включаются в шаблон. Вместо этого имя ресурса задается непосредственно в ресурсе с текущим значением. Невозможно настроить имя во время развертывания.
+
+```json
+"resources": [
+  {
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2016-09-01",
+    "name": "demoHostPlan",
+    ...
+  }
+]
+```
 
 Функция экспорта шаблона не поддерживает экспорт ресурсов фабрики данных Azure. Дополнительные сведения о том, как можно экспортировать ресурсы фабрики данных, см. в статье [копирование или клонирование фабрики данных в фабрике данных Azure](../../data-factory/copy-clone-data-factory.md).
 

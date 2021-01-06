@@ -3,12 +3,12 @@ title: Обновление кластера для использования �
 description: Узнайте, как преобразовать сертификат кластера Azure Service Fabric из объявлений на основе отпечатков в общие имена.
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: 013b8190390a4b05791b0a56072487f249956ec5
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: f719b1eb39da776827c6babec61e9e6701bb4602
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495204"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900796"
 ---
 # <a name="convert-cluster-certificates-from-thumbprint-based-declarations-to-common-names"></a>Преобразование сертификатов кластера из объявлений на основе отпечатков в общие имена
 
@@ -63,8 +63,11 @@ Service Fabric поддерживает объявление сертифика�
 #### <a name="valid-starting-states"></a>Допустимые начальные состояния
 
 - `Thumbprint: GoalCert, ThumbprintSecondary: None`
-- `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, где `GoalCert` имеет более позднюю `NotAfter` дату, чем `OldCert1`
-- `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, где `GoalCert` имеет более позднюю `NotAfter` дату, чем `OldCert1`
+- `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, где `GoalCert` имеет более позднюю `NotBefore` дату, чем `OldCert1`
+- `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, где `GoalCert` имеет более позднюю `NotBefore` дату, чем `OldCert1`
+
+> [!NOTE]
+> До версии 7.2.445 (7,2 CU4) Service Fabric выбрали сертификат с истекшим сроком действия (сертификат с самым крайним свойством «NotAfter»), поэтому для указанных выше состояний до 7,2 CU4 требуется, чтобы в Гоалцерт существовала более поздняя `NotAfter` Дата, чем `OldCert1`
 
 Если кластер не находится в одном из указанных ранее состояний, см. сведения о достижении этого состояния в разделе в конце этой статьи.
 
@@ -217,11 +220,14 @@ New-AzResourceGroupDeployment -ResourceGroupName $groupname -Verbose `
 
 | Начальное состояние | Обновление 1 | Обновление 2 |
 | :--- | :--- | :--- |
-| `Thumbprint: OldCert1, ThumbprintSecondary: None` и `GoalCert` имеет более позднюю `NotAfter` дату, чем `OldCert1` | `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert` | - |
-| `Thumbprint: OldCert1, ThumbprintSecondary: None` и `OldCert1` имеет более позднюю `NotAfter` дату, чем `GoalCert` | `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1` | `Thumbprint: GoalCert, ThumbprintSecondary: None` |
-| `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, где `OldCert1` имеет дату позже `NotAfter``GoalCert` | Обновить до `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
-| `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, где `OldCert1` имеет дату позже `NotAfter``GoalCert` | Обновить до `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
+| `Thumbprint: OldCert1, ThumbprintSecondary: None` и `GoalCert` имеет более позднюю `NotBefore` дату, чем `OldCert1` | `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert` | - |
+| `Thumbprint: OldCert1, ThumbprintSecondary: None` и `OldCert1` имеет более позднюю `NotBefore` дату, чем `GoalCert` | `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1` | `Thumbprint: GoalCert, ThumbprintSecondary: None` |
+| `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, где `OldCert1` имеет дату позже `NotBefore``GoalCert` | Обновить до `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
+| `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, где `OldCert1` имеет дату позже `NotBefore``GoalCert` | Обновить до `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
 | `Thumbprint: OldCert1, ThumbprintSecondary: OldCert2` | Удалите одно из `OldCert1` или `OldCert2` , чтобы получить состояние `Thumbprint: OldCertx, ThumbprintSecondary: None` | Продолжить с нового начального состояния |
+
+> [!NOTE]
+> Для кластера версии, более ранней, чем версия 7.2.445 (7,2 CU4), замените на `NotBefore` `NotAfter` в приведенных выше состояниях.
 
 Инструкции по выполнению любого из этих обновлений см. [в статье Управление сертификатами в кластере Azure Service Fabric](service-fabric-cluster-security-update-certs-azure.md).
 

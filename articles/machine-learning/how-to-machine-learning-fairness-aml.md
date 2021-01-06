@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 17b0564b4b73f5a5032343dcb78669cbf4cabd5a
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 057f965c67c25d486771a4c037e13153a7f2cf66
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516151"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901153"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Использование Машинное обучение Azure с пакетом с открытым исходным кодом Фаирлеарн для оценки распределения моделей машинного обучения (Предварительная версия)
 
@@ -46,7 +46,7 @@ pip install fairlearn==0.4.6
 
 В следующем примере показано, как использовать пакет равномерного распределения. Мы отправим аналитическую аналитику распределения модели в Машинное обучение Azure и видим панель мониторинга оценки равноправия в Машинное обучение Azure Studio.
 
-1. Обучение образца модели в записной книжке Jupyter. 
+1. Обучить образец модели в Jupyter Notebook. 
 
     Для набора данных используется известный набор данных для взрослых переписей, который мы получаем из Опенмл. Мы надеемся, что у нас есть проблема принятия решения по ссуде с меткой, которая указывает, оплачивается ли человек в прошлом займе. Мы обучить модель для прогнозирования того, что ранее незамеченные лица будут репай ссуду. Такую модель можно использовать для принятия решений о займах.
 
@@ -343,7 +343,7 @@ pip install fairlearn==0.4.6
 [![Панель мониторинга Фаирлеарн для сравнения моделей](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
     
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о равномерном использовании модели](concept-fairness-ml.md)
 

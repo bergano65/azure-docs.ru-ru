@@ -3,14 +3,14 @@ title: Отправка электронной почты из модуля Runb
 description: В этой статье описывается, как отправить электронную почту из runbook.
 services: automation
 ms.subservice: process-automation
-ms.date: 07/15/2019
+ms.date: 01/05/2021
 ms.topic: conceptual
-ms.openlocfilehash: a81ae680a5f04eca0a6cc01ee24b474cc5daabea
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 65fa226b368baa3b1d4f376600e610a518c48c02
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97005211"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900327"
 ---
 # <a name="send-an-email-from-a-runbook"></a>Отправка сообщения электронной почты из runbook
 
@@ -67,7 +67,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $VaultName -ServicePrincipalName $appID -P
 
 Чтобы использовать Azure Key Vault в runbook, импортируйте следующие модули в учетную запись службы автоматизации:
 
-* [Az.Profile](https://www.powershellgallery.com/packages/Az.Profile);
+* [Az.Accounts](https://www.powershellgallery.com/packages/Az.Accounts)
 * [Az.KeyVault](https://www.powershellgallery.com/packages/Az.KeyVault)
 
 Инструкции по этому процессу есть в статье [Импорт модулей Az](shared-resources/modules.md#import-az-modules).
@@ -142,7 +142,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $VaultName -ServicePrincipalName $appID -P
 
 1. Для этого выберите ненужный runbook в списке и щелкните **Удалить**.
 
-2. Удалите Key Vault с помощью командлета [Remove-AzKeyVault](/powershell/module/az.keyvault/remove-azkeyvault?view=azps-3.7.0).
+2. Удалите Key Vault с помощью командлета [Remove-AzKeyVault](/powershell/module/az.keyvault/remove-azkeyvault).
 
 ```azurepowershell-interactive
 $VaultName = "<your KeyVault name>"

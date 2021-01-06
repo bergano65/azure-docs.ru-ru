@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 11/25/2020
 ms.author: rolyon
-ms.openlocfilehash: c4082f7fc535807ec996034ba695549a51969a99
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 6eadba7d778a632896529f3c7c53886619d96444
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182416"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901476"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Добавление и удаление назначений ролей Azure с помощью Azure PowerShell
 
@@ -28,6 +28,7 @@ ms.locfileid: "96182416"
 
 - `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
 - [PowerShell в Azure Cloud Shell](../cloud-shell/overview.md) или [Azure PowerShell](/powershell/azure/install-az-ps)
+- Учетная запись, используемая для выполнения команды PowerShell, должна иметь `Directory.Read.All` разрешение Microsoft Graph.
 
 ## <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
 

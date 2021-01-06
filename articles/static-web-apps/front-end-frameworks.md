@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 07/18/2020
 ms.author: cshoe
-ms.openlocfilehash: 4b1bc58b6b4a87cd6e5e09e83020a38261b8746f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14564b0591ef0146131b3f9324556b613e25daac
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90905379"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901238"
 ---
 # <a name="configure-front-end-frameworks-and-libraries-with-azure-static-web-apps-preview"></a>Настройка интерфейсных платформ и библиотек с помощью предварительной версии статических веб-приложений Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "90905379"
 
 Цель столбцов таблицы объясняется следующими элементами:
 
-- **Расположение артефакта приложения**: содержит значение `app_artifact_location` , которое является [папкой для построенных версий файлов приложения](github-actions-workflow.md#build-and-deploy).
+- **Расположение выходных данных**: содержит значение `output_location` , которое является [папкой для построенных версий файлов приложения](github-actions-workflow.md#build-and-deploy).
 
 - **Настраиваемая команда сборки**: Если для платформы требуется команда, отличающаяся от `npm run build` или `npm run azure:build` , можно определить [пользовательскую команду сборки](github-actions-workflow.md#custom-build-commands).
 
@@ -62,6 +62,6 @@ ms.locfileid: "90905379"
 
 <sup>2</sup> неприменимо
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Конфигурация сборки и рабочего процесса](github-actions-workflow.md)

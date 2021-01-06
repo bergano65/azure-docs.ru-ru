@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34f82fc060586e2df5acefa6b0836171e558aa4a
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 536a9641b68ccd2510a7891b46483a322fb6ecb7
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97615773"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900932"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -36,9 +36,9 @@ ms.locfileid: "97615773"
 
 - [Требовать многофакторную проверку подлинности (многофакторная идентификация Azure AD)](../authentication/concept-mfa-howitworks.md)
 - [Требовать, чтобы устройство было помечено как соответствующее (Microsoft Intune)](/intune/protect/device-compliance-get-started)
-- [Требовать гибридное устройство, присоединенное к Azure AD](../devices/concept-azure-ad-join-hybrid.md)
+- [Требовать устройство с гибридным присоединением к Azure AD.](../devices/concept-azure-ad-join-hybrid.md)
 - [Требовать утвержденное клиентское приложение](app-based-conditional-access.md)
-- [Требование политики защиты приложений](app-protection-based-conditional-access.md)
+- [Требовать политику защиты приложений.](app-protection-based-conditional-access.md)
 - [Требовать смены пароля](#require-password-change)
 
 Когда Администраторы выбирают вариант объединения этих параметров, они могут выбрать следующие методы.
@@ -66,7 +66,7 @@ ms.locfileid: "97615773"
 
 При использовании [потока OAuth "код устройства](../develop/v2-oauth2-device-code.md)" требуется управление предоставлением управляемого устройства или условие состояния устройства не поддерживается. Это происходит потому, что устройство, выполняющее проверку подлинности, не может предоставить устройству состояние устройства, предоставляющего код, и состояние устройства в маркере блокируется на устройстве, выполняющем проверку подлинности. Используйте вместо него управление предоставлением многофакторной проверки подлинности.
 
-### <a name="require-approved-client-app"></a>Требование утвержденного клиентского приложения
+### <a name="require-approved-client-app"></a>Требовать утвержденное клиентское приложение.
 
 Организации могут потребовать, чтобы попытка доступа к выбранным облачным приложениям выполнялась из утвержденного клиентского приложения. Эти утвержденные клиентские приложения поддерживают [политики защиты приложений Intune](/intune/app-protection-policy) независимо от любого решения по управлению мобильными устройствами (MDM).
 
@@ -78,7 +78,7 @@ ms.locfileid: "97615773"
 - Microsoft Bookings
 - Кортана от Microsoft
 - Microsoft Dynamics 365
-- Microsoft Edge
+- Microsoft Edge;
 - Microsoft Excel
 - Microsoft Power Automate
 - Microsoft Invoicing.
@@ -102,6 +102,7 @@ ms.locfileid: "97615773"
 - Microsoft Word
 - Microsoft Yammer
 - Доска Майкрософт
+- Администратор Microsoft 365
 
 **Замечания**
 
@@ -114,7 +115,7 @@ ms.locfileid: "97615773"
 
 Примеры конфигурации см. в статье [как требовать утвержденные клиентские приложения для облачного доступа к приложениям с помощью условного доступа](app-based-conditional-access.md) .
 
-### <a name="require-app-protection-policy"></a>Требование политики защиты приложений
+### <a name="require-app-protection-policy"></a>Требовать политику защиты приложений.
 
 В политике условного доступа можно настроить для клиентского приложения [политику защиты приложений Intune](/intune/app-protection-policy) , чтобы доступ к выбранным облачным приложениям был доступен. 
 
@@ -123,7 +124,7 @@ ms.locfileid: "97615773"
 Этот параметр применяется к следующим клиентским приложениям.
 
 - Кортана от Microsoft
-- Microsoft Edge
+- Microsoft Edge;
 - Microsoft Excel
 - Microsoft Office
 - Microsoft OneDrive

@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: allensu
-ms.openlocfilehash: 2e5edb0ccf20ab0dba14864487f2b2ddef7d57e7
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: c074c29b7a37f49d5a4c7a5fab00b9a3e41c6893
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544213"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901544"
 ---
 # <a name="azure-private-link-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о частной ссылке Azure
 
@@ -43,8 +43,8 @@ ms.locfileid: "95544213"
 ### <a name="do-i-require-a-dedicated-subnet-for-private-endpoints"></a>Требуется ли выделенная подсеть для частных конечных точек? 
 Нет. Выделенная подсеть для частных конечных точек не требуется. Вы можете выбрать IP-адрес частной конечной точки из любой подсети в виртуальной сети, в которой развернута служба.  
  
-### <a name="can-private-endpoint-connect-to-private-link-service-across-azure-active-directory-tenants"></a>Может ли частная конечная точка подключаться к службе частной связи между клиентами Azure Active Directory? 
-Да. Частные конечные точки могут подключаться к службам Private Link или Azure PaaS между клиентами AD.  
+### <a name="can-a-private-endpoint-connect-to-private-link-services-across-azure-active-directory-tenants"></a>Может ли частная конечная точка подключаться к службам частной связи между клиентами Azure Active Directory? 
+Да. Частные конечные точки могут подключаться к службам Private Link или Azure PaaS через клиентов Azure Active Directory. Частные конечные точки, подключающиеся по клиентам, должны утверждать запрос вручную. 
  
 ### <a name="can-private-endpoint-connect-to-azure-paas-resources-across-azure-regions"></a>Может ли частная конечная точка подключаться к ресурсам Azure PaaS в регионах Azure?
 Да. Частные конечные точки могут подключаться к ресурсам Azure PaaS в регионах Azure.
@@ -70,7 +70,7 @@ ms.locfileid: "95544213"
 Вы можете контролировать экспозицию с помощью конфигурации видимости в службе частной связи. Видимость поддерживает три параметра:
 
 - **Нет** — подписки с доступом к Azure RBAC могут быть обнаружены только для тех подписок. 
-- **Restrictive** Для доступа к службе можно использовать только утвержденные подписки с доступом к Azure RBAC. 
+-  Для доступа к службе можно использовать только утвержденные подписки с доступом к Azure RBAC. 
 - **ALL — все** пользователи могут размещать службу. 
  
 ### <a name="can-i-create-a-private-link-service-with-basic-load-balancer"></a>Можно ли создать службу частной связи с базовой подсистемой балансировки нагрузки? 
@@ -82,6 +82,6 @@ ms.locfileid: "95544213"
 ### <a name="im-a-service-provider-using-azure-private-link-do-i-need-to-make-sure-all-my-customers-have-unique-ip-space-and-dont-overlap-with-my-ip-space"></a>Я являюсь поставщиком услуг, используя частную ссылку Azure. Нужно ли, чтобы все мои клиенты имели уникальные IP-пространство и не перекрывались с моим IP-адресом? 
 Нет. Частная ссылка Azure предоставляет эту функцию. Не обязательно включать в адресное пространство клиента неперекрывающиеся адресные пространства. 
 
-##  <a name="next-steps"></a>Следующие шаги
+##  <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [частной ссылке Azure](private-link-overview.md)

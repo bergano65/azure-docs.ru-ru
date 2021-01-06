@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 3518935991409d87917582558a34ad7c54841e23
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 5e6188ca2e8e0972e86bed578144a29a96570876
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173660"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901204"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>Рабочие процессы GitHub Actions для предварительной версии Статических веб-приложений Azure
 
@@ -63,7 +63,7 @@ jobs:
         ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
         app_location: '/' # App source code path
         api_location: 'api' # Api source code path - optional
-        app_artifact_location: 'dist' # Built app content directory - optional
+        output_location: 'dist' # Built app content directory - optional
         ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -132,7 +132,7 @@ with:
     ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
     app_location: '/' # App source code path
     api_location: 'api' # Api source code path - optional
-    app_artifact_location: 'dist' # Built app content directory - optional
+    output_location: 'dist' # Built app content directory - optional
     ###### End of Repository/Build Configurations ######
 ```
 
@@ -140,7 +140,7 @@ with:
 |---|---|---|
 | `app_location` | Расположение кода приложения.<br><br>Например, введите `/`, если исходный код приложения находится в корне репозитория, или `/app`, если код приложения находится в каталоге с именем `app`. | Да |
 | `api_location` | Расположение кода Функций Azure.<br><br>Например, введите `/api`, если код приложения находится в папке с именем `api`. Если в папке не обнаружено ни одного приложения Функций Azure, то в процессе сборки не произойдет сбой и в рабочем процессе предполагается, что API не нужен. | нет |
-| `app_artifact_location` | Расположение выходного каталога сборки относительно `app_location`.<br><br>Например, если исходный код приложения находится в `/app`, а сценарий сборки выводит файлы в папку `/app/build`, установите `build` в качестве значения `app_artifact_location`. | нет |
+| `output_location` | Расположение выходного каталога сборки относительно `app_location`.<br><br>Например, если исходный код приложения находится в `/app`, а сценарий сборки выводит файлы в папку `/app/build`, установите `build` в качестве значения `output_location`. | нет |
 
 Значения `repo_token`, `action` и `azure_static_web_apps_api_token`, настроенные с помощью Статических веб-приложений Azure, не должны изменяться вручную.
 
@@ -163,7 +163,7 @@ with:
 |---------------------|-------------|
 | `routes_location` | Определяет расположение каталога, в котором найден файл _routes.json_. Это расположение задается относительно корня репозитория. |
 
- Явное расположение файла _routes.json_ особенно важно, если шаг сборки внешней платформы не перемещает этот файл в `app_artifact_location` по умолчанию.
+ Явное расположение файла _routes.json_ особенно важно, если шаг сборки внешней платформы не перемещает этот файл в `output_location` по умолчанию.
 
 ## <a name="environment-variables"></a>Переменные среды
 
@@ -189,7 +189,7 @@ jobs:
           ###### Repository/Build Configurations
           app_location: "/"
           api_location: "api"
-          app_artifact_location: "public"
+          output_location: "public"
           ###### End of Repository/Build Configurations ######
         env: # Add environment variables here
           HUGO_VERSION: 0.58.0
