@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/21/2020
+ms.date: 01/05/2021
 ms.author: alkohli
-ms.openlocfilehash: f622d6e752b658172bce115cde4f30d555e2ed3a
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: d601c6191da9d555e54c1d58c122420510d288fc
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763858"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955558"
 ---
 # <a name="deploy-custom-script-extension-on-vms-running-on-your-azure-stack-edge-pro-device"></a>Развертывание расширения настраиваемых скриптов на виртуальных машинах, работающих на устройстве Azure Stack ребра Pro
 
@@ -35,8 +35,8 @@ ms.locfileid: "97763858"
 
 | Distribution | Версия |
 |---|---|
-| Windows Server 2019 | Базовая |
-| Windows Server 2016 | Базовая |
+| Windows Server 2019 | Основные сведения |
+| Windows Server 2016 | Основные сведения |
 
 #### <a name="supported-os-for-custom-script-extension-on-linux"></a>Поддерживаемая ОС для расширения пользовательских сценариев в Linux
 
@@ -45,7 +45,7 @@ ms.locfileid: "97763858"
 | Distribution | Версия |
 |---|---|
 | Linux: Ubuntu | 18.04 LTS |
-| Linux: Red Hat Enterprise Linux | 7.4 |
+| Linux: Red Hat Enterprise Linux | 7,4, 7,5, 7,7 |
 
 <!--### Script location
 

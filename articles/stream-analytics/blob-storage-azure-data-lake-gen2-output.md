@@ -7,16 +7,16 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: ba64f5972d77637ec830fe6b872af66363d6c1bd
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 708e6351350a1925d58cd4da6b71427a98633362
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740051"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954963"
 ---
 # <a name="blob-storage-and-azure-data-lake-gen2-output-from-azure-stream-analytics"></a>Хранилище BLOB-объектов и Azure Data Lake выходных данных Gen2 из Azure Stream Analytics
 
-Data Lake Storage 2-го поколения использует службу хранилища Azure в качестве основы для создания корпоративных хранилищ данных в Azure. Разработанное для обслуживания нескольких петабайт информации, поддержки пропускной способности сети на уровне нескольких сотен гигабит, Data Lake Storage 2-го поколения позволяет легко управлять большими объемами данных. Основной частью Data Lake Storage 2-го поколения является добавление иерархического пространства имен в хранилище BLOB-объектов.
+Data Lake Storage 2-го поколения использует службу хранилища Azure в качестве основы для создания корпоративных хранилищ данных в Azure. Разработанное с целью обработки нескольких петабайт информации и с поддержкой сотен гигабит пропускной способности хранилище Data Lake Storage 2-го поколения позволяет с легкостью управлять огромным количеством данных. Основная часть Data Lake Storage 2-го поколения — это добавление иерархического пространства имен в хранилище BLOB-объектов.
 
 Хранилище BLOB-объектов Azure предоставляет экономичное и масштабируемое решение для хранения в облаке больших объемов неструктурированных данных. Общие сведения о хранилище BLOB-объектов и его использовании см. в разделе [Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
 

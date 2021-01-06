@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: add763b713b93604e089d7aec586876fecd2887c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bd35d3288591a01c14e306960601eef6dea7e761
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95895644"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954147"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-the-azure-portal"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью портал Azure
 
@@ -36,6 +36,7 @@ ms.locfileid: "95895644"
     | ---                     | ---                         |
     | Версия IP-адреса              | Выберите IPv4                 |    
     | номер SKU                     | Выберите **Стандартный**         |
+    | Уровень (если он показан *)                  | Выберите **региональный**         |
     | Имя                    | Введите *мистандардзрпублиЦип*          |
     | Назначение IP-адресов   | Обратите внимание, что он будет заблокирован как "статический"                                        |
     | Время ожидания простоя (в минутах)  | Оставьте значение 4        |
@@ -46,6 +47,8 @@ ms.locfileid: "95895644"
     | Зона доступности       | Выберите зону, **избыточную в зоне** , или выберите конкретную (см. Примечание ниже). |
 
 Обратите внимание, что эти варианты допустимы только в регионах с [зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).  (Можно также выбрать конкретную зону в этих регионах, хотя она не будет устойчивой к зональные сбоям.)
+
+\* = Уровень относится к функциям [Load Balancer в разных регионах](https://docs.microsoft.com/azure/load-balancer/cross-region-overview) , в настоящее время в предварительной версии.
 
 # <a name="basic-sku"></a>[**SKU "Базовый"**](#tab/option-create-public-ip-basic)
 

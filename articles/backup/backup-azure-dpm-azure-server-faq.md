@@ -4,12 +4,12 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/05/2019
-ms.openlocfilehash: cd974181c78586f915dad6cc6ed39d9255a1456b
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 1663a842b7e00c611543451d4caef96b5b5a913f
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172584"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954997"
 ---
 # <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server и DPM — часто задаваемые вопросы
 
@@ -56,6 +56,10 @@ ms.locfileid: "92172584"
 
 - Если вы являетесь клиентом System Center, для защиты виртуальных машин VMware используйте System Center Data Protection Manager (DPM).
 - Если вы не пользуетесь System Center, виртуальные машины VMware можно защитить с помощью Azure Backup Server (с оплатой по мере использования).
+
+### <a name="can-i-restore-a-backup-of-a-hyper-v-or-vmware-vm-stored-in-azure-to-azure-as-an-azure-vm"></a>Можно ли восстановить резервную копию виртуальной машины Hyper-V или VMware, хранящейся в Azure, в Azure в качестве виртуальной машины Azure?
+
+Нет, в настоящее время это невозможно. Восстановление можно выполнить только на локальном узле.
 
 ## <a name="sharepoint"></a>SharePoint
 

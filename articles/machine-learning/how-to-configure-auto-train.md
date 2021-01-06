@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 60aab2c77a5ccf59e129b21deab34daf756b2e23
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: 054d18337e50a367cf1f6f004f4e1d1652c7751e
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827433"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954416"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -468,15 +468,17 @@ run = experiment.submit(automl_config, show_output=True)
   2. Введите `pip freeze` и найдите `tensorflow` , если он найден, указанная версия должна быть < 1,13
   3. Если указанная версия не является поддерживаемой, `pip uninstall tensorflow` в командной оболочке введите y в поле Подтверждение.
   
- * **Сбой выполнения с `jwt.exceptions.DecodeError`**: точный текст сообщения об ошибке: `jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode()` . 
- 
-    Рассмотрите возможность обновления до последней версии пакета SDK для Аутомл: `pip install -U azureml-sdk[automl]` . 
-    
-    Если это неприемлемо, проверьте версию Пижвт. Поддерживаемые версии < 2.0.0. Удалите Пижвт из среды, если версия >= 2.0.0. Вы можете проверить версию Пижвт, удалить и установить правильную версию следующим образом:
+ * **Сбой выполнения с `jwt.exceptions.DecodeError`**: точный текст сообщения об ошибке: `jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode()` .
+
+    Для версий <= 1.17.0 пакета SDK, установка может привести к неподдерживаемой версии Пижвт. Проверьте версию Пижвт в среде автоматизированного conda ml. Поддерживаемые версии < 2.0.0. Вы можете проверить версию Пижвт следующим образом:
     1. Запустите командную оболочку и активируйте среду conda, в которой установлены автоматические пакеты ml.
     2. Введите `pip freeze` и найдите `PyJWT` , если он найден, указанная версия должна быть < 2.0.0
-    3. Если указанная версия не является поддерживаемой, `pip uninstall PyJWT` в командной оболочке введите y в поле Подтверждение.
-    4. Установите с помощью `pip install 'PyJWT<2.0.0'` .
+
+    Если указанная версия не является поддерживаемой версией, выполните следующие действия.
+    1. Рассмотрите возможность обновления до последней версии пакета SDK для Аутомл: `pip install -U azureml-sdk[automl]` .
+    2. Если это неприемлемо, удалите Пижвт из среды и установите правильную версию следующим образом:
+        - `pip uninstall PyJWT` в командной оболочке и введите `y` для подтверждения.
+        - Установите с помощью `pip install 'PyJWT<2.0.0'` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

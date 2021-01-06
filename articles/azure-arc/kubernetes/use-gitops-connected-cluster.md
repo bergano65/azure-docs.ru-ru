@@ -1,5 +1,5 @@
 ---
-title: Развертывание конфигураций с помощью Гитопс в кластере Kubernetes с поддержкой ARC (Предварительная версия)
+title: Развертывание конфигураций с помощью GitOps в кластерах Kubernetes с поддержкой Arc (предварительная версия)
 services: azure-arc
 ms.service: azure-arc
 ms.date: 05/19/2020
@@ -8,14 +8,14 @@ author: mlearned
 ms.author: mlearned
 description: Использование Гитопс для настройки кластера Kubernetes с поддержкой Arc Azure (Предварительная версия)
 keywords: Гитопс, Kubernetes, K8s, Azure, Arc, служба Kubernetes Azure, AKS, контейнеры
-ms.openlocfilehash: 85771824a6cecd10346937220e400028a4570377
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 906021377cbfd6960769f98f9dbd15a5c430c71f
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653458"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955337"
 ---
-# <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Развертывание конфигураций с помощью Гитопс в кластере Kubernetes с поддержкой ARC (Предварительная версия)
+# <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Развертывание конфигураций с помощью GitOps в кластерах Kubernetes с поддержкой Arc (предварительная версия)
 
 Гитопс, так как он связан с Kubernetes, — это практика объявления требуемого состояния Kubernetes конфигурации (развертываний, пространств имен и т. д.) в репозитории Git, за которым следуют опрос и развертывание этих конфигураций в кластере с помощью оператора. В этом документе рассматривается настройка таких рабочих процессов в кластерах Kubernetes с поддержкой дуги Azure.
 
@@ -150,7 +150,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 `--helm-operator-chart-version` : *Необязательные* версии диаграммы для оператора Helm (если включено). Значение по умолчанию: "1.2.0".
 
-`--operator-namespace` : *Необязательное* имя для пространства имен оператора. По умолчанию: default
+`--operator-namespace` : *Необязательное* имя для пространства имен оператора. Значение по умолчанию: "default". Максимум 23 символа.
 
 `--operator-params` : *Необязательные* параметры для оператора. Должны быть заданы в одинарных кавычках. Например ```--operator-params='--git-readonly --git-path=releases --sync-garbage-collection' ```.
 
@@ -169,12 +169,6 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 | --git-email  | Электронная почта, используемая для фиксации Git. |
 
 * Если параметры'--git-user или --git-email не заданы (что означает, что Flux не должен записывать в репозиторий), то параметр --git-readonly будет автоматически установлен (если он еще не задан).
-
-* Если параметр enableHelmOperator имеет значение true, то длина строк operatorInstanceName и operatorNamespace не может превышать 47 символов.  Если не соблюдать это ограничение, возникнет следующая ошибка:
-
-   ```console
-   {"OperatorMessage":"Error: {failed to install chart from path [helm-operator] for release [<operatorInstanceName>-helm-<operatorNamespace>]: err [release name \"<operatorInstanceName>-helm-<operatorNamespace>\" exceeds max length of 53]} occurred while doing the operation : {Installing the operator} on the config","ClusterState":"Installing the operator"}
-   ```
 
 Дополнительные сведения см. в [документации по Flux](https://aka.ms/FluxcdReadme).
 
@@ -251,7 +245,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 ## <a name="apply-configuration-from-a-private-git-repository"></a>Применение конфигурации из закрытого репозитория Git
 
-Если вы используете частный репозиторий Git, необходимо настроить открытый ключ SSH в репозитории. Открытый ключ можно настроить либо в репозитории Git, либо на пользователя Git, который имеет доступ к репозиторию. Открытый ключ SSH будет либо предоставлен вами, либо Flux, который создает.
+Если вы используете частный репозиторий Git, необходимо настроить открытый ключ SSH в репозитории. Открытый ключ можно настроить в определенном репозитории Git или на пользователе Git, который имеет доступ к репозиторию. Открытый ключ SSH будет либо предоставлен вами, либо Flux, который создает.
 
 **Получение собственного открытого ключа**
 
@@ -260,7 +254,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 **Получение открытого ключа с помощью Azure CLI (полезно, если Flux создает ключи)**
 
 ```console
-$ az k8sconfiguration show --resource-group <resource group name> --cluster-name <connected cluster name> --name <configuration name> --query 'repositoryPublicKey'
+$ az k8sconfiguration show --resource-group <resource group name> --cluster-name <connected cluster name> --name <configuration name> --cluster-type connectedClusters --query 'repositoryPublicKey' 
 Command group 'k8sconfiguration' is in preview. It may be changed/removed in a future release.
 "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAREDACTED"
 ```

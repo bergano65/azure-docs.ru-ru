@@ -9,12 +9,12 @@ ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 2902274cfff11ac256459abd4fe0378146ee067b
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: dde2794e459e9375a231b7792bc1bd5ab21561bf
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280187"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955235"
 ---
 # <a name="create-azure-sql-managed-instance-using-kubernetes-tools"></a>Создание управляемого экземпляра SQL Azure с помощью средств Kubernetes
 
@@ -28,13 +28,13 @@ ms.locfileid: "93280187"
 
 [Установка средства kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Чтобы создать управляемый экземпляр SQL, необходимо создать секрет Kubernetes для безопасного хранения имени входа и пароля системного администратора, а также настраиваемого ресурса управляемого экземпляра SQL на основе определения настраиваемого ресурса склманажединстанце.
 
 ## <a name="create-a-yaml-file"></a>Создание файла YAML
 
-Файл [шаблона YAML](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/sqlmi.yaml) можно использовать в качестве отправной точки для создания собственного пользовательского файла управляемого экземпляра SQL YAML.  Скачайте этот файл на локальный компьютер и откройте его в текстовом редакторе.  Полезно использовать текстовый редактор, например [VS Code](https://code.visualstudio.com/download) , поддерживающий выделение синтаксиса и linting для файлов YAML.
+Файл [шаблона YAML](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/sqlmi.yaml) можно использовать в качестве отправной точки для создания собственного пользовательского файла управляемого экземпляра SQL YAML.  Скачайте этот файл на локальный компьютер и откройте его в текстовом редакторе.  Полезно использовать текстовый редактор, например [VS Code](https://code.visualstudio.com/download) , поддерживающий выделение синтаксиса и linting для файлов YAML.
 
 Это пример файла YAML:
 

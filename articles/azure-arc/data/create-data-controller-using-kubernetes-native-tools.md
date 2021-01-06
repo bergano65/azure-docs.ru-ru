@@ -9,18 +9,18 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 051a7f506d351a17764e38c760ffba06d224cc38
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: e8d00055d9a4d7355ccd8a33c8a9b811b852f5c8
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422575"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955286"
 ---
 # <a name="create-azure-arc-data-controller-using-kubernetes-tools"></a>Создание контроллера данных ARC в Azure с помощью средств Kubernetes
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ознакомьтесь с разделом [Создание контроллера данных ARC в Azure](create-data-controller.md) для получения общих сведений.
 
@@ -38,11 +38,9 @@ ms.locfileid: "93422575"
 ```console
 # Cleanup azure arc data service artifacts
 kubectl delete crd datacontrollers.arcdata.microsoft.com 
-kubectl delete sqlmanagedinstances.sql.arcdata.microsoft.com 
-kubectl delete postgresql-11s.arcdata.microsoft.com 
-kubectl delete postgresql-12s.arcdata.microsoft.com
-kubectl delete clusterroles azure-arc-data:cr-arc-metricsdc-reader
-kubectl delete clusterrolebindings azure-arc-data:crb-arc-metricsdc-reader
+kubectl delete crd sqlmanagedinstances.sql.arcdata.microsoft.com 
+kubectl delete crd postgresql-11s.arcdata.microsoft.com 
+kubectl delete crd postgresql-12s.arcdata.microsoft.com
 ```
 
 ## <a name="overview"></a>Обзор
@@ -59,7 +57,7 @@ kubectl delete clusterrolebindings azure-arc-data:crb-arc-metricsdc-reader
 Выполните следующую команду, чтобы создать пользовательские определения ресурсов.  **[Требуются разрешения администратора кластера Kubernetes]**
 
 ```console
-kubectl create -f https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/custom-resource-definitions.yaml
+kubectl create -f https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/custom-resource-definitions.yaml
 ```
 
 ## <a name="create-a-namespace-in-which-the-data-controller-will-be-created"></a>Создание пространства имен, в котором будет создан контроллер данных
@@ -79,7 +77,7 @@ kubectl create namespace arc
 Выполните следующую команду, чтобы создать службу начального загрузчика, учетную запись службы для службы начального загрузчика, а также привязку роли и роли для учетной записи службы начального загрузчика.
 
 ```console
-kubectl create --namespace arc -f https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/bootstrapper.yaml
+kubectl create --namespace arc -f https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/bootstrapper.yaml
 ```
 
 Убедитесь, что модуль загрузчика выполняется с помощью следующей команды.  Может потребоваться выполнить его несколько раз, пока состояние не изменится на `Running` .
@@ -102,7 +100,7 @@ containers:
       - env:
         - name: ACCEPT_EULA
           value: "Y"
-        #image: mcr.microsoft.com/arcdata/arc-bootstrapper:public-preview-oct-2020  <-- template value to change
+        #image: mcr.microsoft.com/arcdata/arc-bootstrapper:public-preview-dec-2020  <-- template value to change
         image: <your registry DNS name or IP address>/<your repo>/arc-bootstrapper:<your tag>
         imagePullPolicy: IfNotPresent
         name: bootstrapper
@@ -150,7 +148,7 @@ echo '<your string to encode here>' | base64
 # echo 'example' | base64
 ```
 
-После кодирования имени пользователя и пароля можно создать файл на основе [файла шаблона](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/controller-login-secret.yaml) и заменить значения username и Password собственными.
+После кодирования имени пользователя и пароля можно создать файл на основе [файла шаблона](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/controller-login-secret.yaml) и заменить значения username и Password собственными.
 
 Затем выполните следующую команду, чтобы создать секрет.
 
@@ -165,26 +163,26 @@ kubectl create --namespace arc -f C:\arc-data-services\controller-login-secret.y
 
 Теперь все готово для создания самого контроллера данных.
 
-Сначала создайте копию [файла шаблона](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/data-controller.yaml) на локальном компьютере, чтобы можно было изменить некоторые параметры.
+Сначала создайте копию [файла шаблона](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/data-controller.yaml) на локальном компьютере, чтобы можно было изменить некоторые параметры.
 
 При необходимости измените следующее:
 
 **Обязательно**
-- **Расположение** : измените это расположение Azure, где будут храниться _метаданные_ о контроллере данных.  Список доступных расположений Azure можно просмотреть в статье [Обзор создания контроллера данных](create-data-controller.md) .
-- **resourceGroup** — группа ресурсов Azure, в которой вы хотите создать ресурс контроллера данных azure в Azure Resource Manager.  Обычно эта группа ресурсов уже существует, но она не требуется до момента передачи данных в Azure.
+- **Расположение**: измените это расположение Azure, где будут храниться _метаданные_ о контроллере данных.  Список доступных расположений Azure можно просмотреть в статье [Обзор создания контроллера данных](create-data-controller.md) .
+- **resourceGroup**— группа ресурсов Azure, в которой вы хотите создать ресурс контроллера данных azure в Azure Resource Manager.  Обычно эта группа ресурсов уже существует, но она не требуется до момента передачи данных в Azure.
 - **Подписка**. идентификатор GUID подписки Azure для подписки, в которой вы хотите создать ресурсы Azure.
 
 **РЕКОМЕНДУЕТСЯ ДЛЯ ПРОСМОТРА И, ВОЗМОЖНО, ИЗМЕНЕНИЯ ЗНАЧЕНИЙ ПО УМОЛЧАНИЮ**
-- **хранилище.. className** : класс хранения, используемый для файлов данных и журналов контроллера данных.  Если вы не знаете доступных классов хранения в кластере Kubernetes, можно выполнить следующую команду: `kubectl get storageclass` .  По умолчанию `default` предполагается, что существует класс хранения с именем, а `default` не существует класс хранения, который _является_ значением по умолчанию.  Примечание. в качестве требуемого класса хранения можно задать два параметра className — один для данных и один для журналов.
+- **хранилище.. className**: класс хранения, используемый для файлов данных и журналов контроллера данных.  Если вы не знаете доступных классов хранения в кластере Kubernetes, можно выполнить следующую команду: `kubectl get storageclass` .  По умолчанию `default` предполагается, что существует класс хранения с именем, а `default` не существует класс хранения, который _является_ значением по умолчанию.  Примечание. в качестве требуемого класса хранения можно задать два параметра className — один для данных и один для журналов.
 - **serviceType**. Измените тип службы на, `NodePort` если не используется балансировщик нагрузки.  Примечание. необходимо изменить два параметра serviceType.
 
 **ИСПОЛЬЗУЕМЫХ**
 - **имя**. имя по умолчанию контроллера данных — `arc` , но при необходимости его можно изменить.
-- **DisplayName** : задает то же значение, что и атрибут Name в верхней части файла.
+- **DisplayName**: задает то же значение, что и атрибут Name в верхней части файла.
 - **Реестр**. Реестр контейнеров Майкрософт используется по умолчанию.  Если вы извлекаете образы из реестра контейнеров Майкрософт и отправляете [их в частный реестр контейнеров](offline-deployment.md), введите здесь IP-адрес или DNS-имя реестра.
-- **доккеррегистри** : секрет для извлечения образа, используемый для извлечения образов из закрытого реестра контейнеров, если это необходимо.
+- **доккеррегистри**: секрет для извлечения образа, используемый для извлечения образов из закрытого реестра контейнеров, если это необходимо.
 - **репозиторий**. репозиторий по умолчанию в реестре контейнеров Майкрософт — `arcdata` .  Если вы используете частный реестр контейнеров, введите путь к папке или репозиторию, содержащему образы контейнеров служб данных с поддержкой Azure arr.
-- **имажетаг** : в шаблоне используется новый тег последней версии, но его можно изменить, если вы хотите использовать более старую версию.
+- **имажетаг**: в шаблоне используется новый тег последней версии, но его можно изменить, если вы хотите использовать более старую версию.
 
 Пример завершенного файла YAML контроллера данных:
 ```yaml
@@ -200,7 +198,7 @@ spec:
     serviceAccount: sa-mssql-controller
   docker:
     imagePullPolicy: Always
-    imageTag: public-preview-oct-2020 
+    imageTag: public-preview-dec-2020 
     registry: mcr.microsoft.com
     repository: arcdata
   security:
@@ -280,7 +278,7 @@ kubectl describe po/<pod name> --namespace arc
 
 Если у вас возникли роняли с созданием, ознакомьтесь с [руководством по устранению неполадок](troubleshoot-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание управляемого экземпляра SQL с помощью собственных средств Kubernetes](./create-sql-managed-instance-using-kubernetes-native-tools.md)
 - [Создание группы PostgreSQL Scale Server с помощью Kubernetes-Native Tools](./create-postgresql-hyperscale-server-group-kubernetes-native-tools.md)

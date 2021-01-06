@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: f447c6028b1750aa96e531a97e7b0861f66a5749
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30852b6b3f9a4b490c4b58fe07f34ee49c60fa9f
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761674"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955252"
 ---
 # <a name="create-a-postgresql-hyperscale-server-group-using-kubernetes-tools"></a>Создание группы PostgreSQL Scale Server с помощью средств Kubernetes
 
@@ -34,7 +34,7 @@ ms.locfileid: "91761674"
 
 ## <a name="create-a-yaml-file"></a>Создание файла YAML
 
-Вы можете использовать файл [шаблона YAML](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/postsgresql.yaml) в качестве отправной точки для создания собственного пользовательского файла YAML PostgreSQL.  Скачайте этот файл на локальный компьютер и откройте его в текстовом редакторе.  Полезно использовать текстовый редактор, например [VS Code](https://code.visualstudio.com/download) , поддерживающий выделение синтаксиса и linting для файлов YAML.
+Вы можете использовать файл [шаблона YAML](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/postgresql.yaml) в качестве отправной точки для создания собственного пользовательского файла YAML PostgreSQL.  Скачайте этот файл на локальный компьютер и откройте его в текстовом редакторе.  Полезно использовать текстовый редактор, например [VS Code](https://code.visualstudio.com/download) , поддерживающий выделение синтаксиса и linting для файлов YAML.
 
 Это пример файла YAML:
 

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 12/29/2020
-ms.openlocfilehash: a6f4b0a503e942b79dff28212863831055892246
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 0834b8f00e4c414b3a36314b80f6c99fb8f2aea2
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916564"
+ms.locfileid: "97955218"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
 
@@ -168,7 +168,7 @@ ms.locfileid: "97916564"
 
 LUIS позволяет выполнять пакетный тест с помощью портала LUIS и REST API. Ниже перечислены конечные точки для REST API. Сведения о пакетном тестировании с помощью портала LUIS см. в разделе [учебник. наборы данных пакетного теста](luis-tutorial-batch-testing.md). Используйте полные URL-адреса, приведенные ниже, заменив значения заполнителей собственным ключом и конечной точкой LUIS прогнозирования. 
 
-Не забудьте добавить ключ LUIS в `Apim-Subscription-Id` заголовок и присвоить ему `Content-Type` значение `application/json` .
+Не забудьте добавить ключ LUIS в `Ocp-Apim-Subscription-Key` заголовок и присвоить ему `Content-Type` значение `application/json` .
 
 ### <a name="start-a-batch-test"></a>Запуск пакетного теста
 

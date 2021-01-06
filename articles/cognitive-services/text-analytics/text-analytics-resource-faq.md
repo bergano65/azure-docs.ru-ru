@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 02/13/2019
+ms.date: 01/05/2021
 ms.author: aahi
-ms.openlocfilehash: ffa70afa0edf29181bc622cbef6ff8716134b1f7
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 9a4e179767cc38169cd794f4cd629604bdcdaab0
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364944"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955048"
 ---
-# <a name="frequently-asked-questions-faq-about-the-text-analytics-cognitive-service"></a>Часто задаваемые вопросы об API анализа текста (Cognitive Service)
+# <a name="frequently-asked-questions-faq-about-the-text-analytics-api"></a>Часто задаваемые вопросы об API анализа текста
 
- Найдите ответы на часто задаваемые вопросы о понятиях, коде и сценариях, связанных с API анализа текста для служб Microsoft Cognitive Services в Azure.
+ Найдите ответы на часто задаваемые вопросы о концепциях, коде и сценариях, связанных с API анализа текста в Azure Cognitive Services.
 
 ## <a name="can-text-analytics-identify-sarcasm"></a>Умеет ли API анализа текста распознавать сарказм?
 
@@ -47,11 +47,21 @@ ms.locfileid: "94364944"
 
 Усовершенствования моделей и алгоритмов могут объявляться, если они существенные, или незаметно интегрироваться в службу, если изменения считаются незначительными. Вполне вероятно, что через некоторое время для одного и того же текста будут возвращаться другая оценка тональности или другой список ключевых фраз. Это вполне нормальный и ожидаемый результат для облачных ресурсов управляемого машинного обучения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="service-availability-and-redundancy"></a>Доступность и избыточность службы
+
+### <a name="is-text-analytics-service-zone-resilient"></a>Является ли зона службы Анализ текста устойчивой?
+
+Да. По умолчанию служба Анализ текста является отказоустойчивой по зонам.
+
+### <a name="how-do-i-configure-the-text-analytics-service-to-be-zone-resilient"></a>Разделы справки настроить службу Анализ текста для отказоустойчивости в зонах?
+
+Для обеспечения отказоустойчивости зоны не требуется настраивать клиент. Отказоустойчивость зоны для ресурсов Анализ текста доступна по умолчанию и управляется самой службой.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 У вас есть вопрос об отсутствующей функции или компоненте? Вы можете оставить запрос или участвовать в голосовании на [веб-сайте User Voice](https://cognitive.uservoice.com/forums/555922-text-analytics).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
- [StackOverflow: API анализа текста](https://stackoverflow.com/questions/tagged/text-analytics-api)   
- [StackOverflow: Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)
+ * [StackOverflow: API анализа текста](https://stackoverflow.com/questions/tagged/text-analytics-api)   
+ * [StackOverflow: Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)
