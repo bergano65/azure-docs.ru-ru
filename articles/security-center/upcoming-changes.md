@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/14/2020
+ms.date: 01/05/2021
 ms.author: memildin
-ms.openlocfilehash: 052758079d8d413f7b0fead2a5abf3b47b9a691e
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0656000a1d6449306e8afe538f846c55c79a31a2
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511337"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915292"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Важные предстоящие изменения в Центре безопасности Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "97511337"
 
 ### <a name="35-preview-recommendations-being-added-to-increase-coverage-of-azure-security-benchmark"></a>Добавлены 35 рекомендаций в предварительной версии, чтобы повысить охват тестов производительности системы безопасности Azure
 
-**Предполагаемая дата изменения:** Декабрь 2020 г.
+**Предполагаемая дата изменения:** январь 2021 года
 
 Тест производительности системы безопасности Azure — это руководства с рекомендациями по обеспечению безопасности и соответствия требованиям для Azure, подготовленные корпорацией Майкрософт на основе распространенных платформ соответствия. См. сведения о [Тесте производительности системы безопасности Azure](../security/benchmarks/introduction.md).
 
