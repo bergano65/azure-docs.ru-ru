@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 1ab382ec10d932b94961c73b7d7ac9082125a88c
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: e19277aa3639031371e0e8dd28f4dd849efd4597
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704526"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97933937"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Как создать хранилище ключей Azure и политику доступа к хранилищу с помощью шаблона диспетчер ресурсов
 
@@ -213,10 +213,10 @@ Write-Host "Press [ENTER] to continue..."
 
 - Ознакомьтесь с [обзором Azure Key Vault](../general/overview.md).
 - Дополнительные сведения о [Azure Resource Manager](../../azure-resource-manager/management/overview.md).
-- Ознакомьтесь [Azure Key Vault](../general/best-practices.md)рекомендациями.
+- [Обзор Azure Key Vault безопасности](security-overview.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md)
 - [Аутентификация в хранилище ключей](authentication.md)
-- [Azure Key Vaultное руководством разработчика](developers-guide.md)
+- [Руководство разработчика хранилища ключей Azure](developers-guide.md)

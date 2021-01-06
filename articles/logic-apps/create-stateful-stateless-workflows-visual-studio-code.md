@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: a74244cc45e1a3d2116f98ac73290d184f4affc0
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: be8d00d795c19399d494db21578e9a7ba8dd9711
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632066"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934022"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Создание рабочих процессов с отслеживанием состояния и без отслеживания состояния в Visual Studio Code с помощью расширения Azure Logic Apps (Предварительная версия)
 
@@ -627,7 +627,7 @@ ms.locfileid: "97632066"
    | Прерывание | ![Значок состояния действия "прервано"][aborted-icon] | Действие остановлено или не завершено из-за внешних проблем, например сбоя системы или подписки Azure. |
    | Отменено | ![Значок состояния действия "отменено"][cancelled-icon] | Действие было запущено, но получило запрос на отмену. |
    | Сбой | ![Значок состояния действия "сбой"][failed-icon] | Не удалось выполнить действие. |
-   | Выполнение | ![Значок состояния выполняемого действия][running-icon] | Действие выполняется в данный момент. |
+   | Запущен | ![Значок состояния выполняемого действия][running-icon] | Действие выполняется в данный момент. |
    | Пропущено | ![Значок состояния действия "пропущено"][skipped-icon] | Действие было пропущено, так как предыдущее действие завершилось с ошибкой. Действие имеет `runAfter` условие, которое требует, чтобы предыдущее действие было успешно завершено перед выполнением текущего действия. |
    | Выполнено | ![Значок состояния действия "выполнен"][succeeded-icon] | Действие было выполнено. |
    | Выполнен с повторными попытками | ![Значок состояния действия "выполнен с повторными попытками"][succeeded-with-retries-icon] | Действие было завершено, но только после одной или нескольких повторных попыток. Чтобы просмотреть журнал повторных попыток, в представлении сведения о журнале выполнения выберите это действие, чтобы можно было просмотреть входные и выходные данные. |
@@ -742,7 +742,7 @@ ms.locfileid: "97632066"
 
       ![Снимок экрана, на котором показана панель "Azure: Logic Apps (Предварительная версия)" и запрос на ввод имени нового создаваемого приложения логики.](./media/create-stateful-stateless-workflows-visual-studio-code/enter-logic-app-name.png)
 
-   1. Выберите план размещения для нового приложения логики: [**план службы приложений**](../azure-functions/functions-scale.md#app-service-plan) или [**Premium**](../azure-functions/functions-scale.md#premium-plan). В этом примере выбирается **план службы приложений**.
+   1. Выберите план размещения для нового приложения логики: [**план службы приложений**](../azure-functions/dedicated-plan.md) или [**Premium**](../azure-functions/functions-premium-plan.md). В этом примере выбирается **план службы приложений**.
 
       ![Снимок экрана, на котором показана панель "Azure: Logic Apps (Предварительная версия)" и запрос на выбор "план службы приложений" или "Премиум".](./media/create-stateful-stateless-workflows-visual-studio-code/select-hosting-plan.png)
 

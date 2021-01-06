@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 73a3be62e57991b63525372f008e15d8e4f36a74
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 1217ecba7a5fcb3c0fc95f505e7ca07fc76129b2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401735"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97930826"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Развертывание кластера Azure Service Fabric в Зоны доступности
 Зоны доступности в Azure — это высокодоступное предложение, защищающее приложения и данные от сбоев центров обработки данных. Зона доступности — это уникальное физическое расположение, оснащенное независимым питанием, охлаждением и сетью в регионе Azure.
@@ -35,7 +35,7 @@ Service Fabric поддерживает кластеры, охватывающи
 >[!NOTE]
 > Свойство одной группы размещения масштабируемого набора виртуальных машин должно иметь значение true, так как Service Fabric не поддерживает один масштабируемый набор виртуальных машин, охватывающий зоны.
 
- ![Архитектура зоны доступности Azure Service Fabric][sf-architecture]
+ ![Схема, на которой показана архитектура зоны доступности Azure Service Fabric.][sf-architecture]
 
 ## <a name="networking-requirements"></a>Требования к сети
 ### <a name="public-ip-and-load-balancer-resource"></a>Общедоступный IP-адрес и Load Balancer ресурс

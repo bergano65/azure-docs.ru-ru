@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.date: 08/12/2019
+ms.date: 12/18/2020
 ms.author: mbaldwin
-ms.openlocfilehash: eef4f6b8ee5821e54b5b7709eee7f8dad8749e63
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: d900659f3ca8a8688c1b1d3a66cd888f37521fc6
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94488542"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883390"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -23,7 +23,7 @@ ms.locfileid: "94488542"
 
 Регистрируемые в журналах сведения становятся доступны не позднее чем через 10 минут после выполнения операции с хранилищем ключей. В большинстве случаев это будет еще быстрее.  Способ управления журналами в своей учетной записи хранения вы выбираете сами.
 
-* Используйте стандартные методы контроля доступа, предоставляемые Azure, для защиты журналов путем ограничения доступа к ним.
+* В учетной записи хранения используйте стандартные методы контроля доступа, предоставляемые Azure, для защиты журналов путем ограничения доступа к ним.
 * Удаляйте журналы, которые больше не нужно хранить в учетной записи хранения.
 
 Общие сведения о Key Vault см. в статье [Что такое хранилище ключей Azure?](overview.md) Сведения о регионах доступности Key Vault можно узнать на [странице цен](https://azure.microsoft.com/pricing/details/key-vault/). Сведения об использовании Azure Monitor для Key Vault см. [здесь](../../azure-monitor/insights/key-vault-insights-overview.md).
@@ -73,7 +73,7 @@ ms.locfileid: "94488542"
 | **callerIpAddress** |IP-адрес клиента, выполнившего запрос. |
 | **correlationId** |Необязательный GUID, который клиент может передавать для сопоставления журналов на стороне клиента с журналами на стороне службы (хранилища ключей). |
 | **identity** |Удостоверение из маркера, предоставляемое в запросе к REST API. Обычно это "пользователь", "субъект-служба" или комбинация "пользователь + идентификатор приложения", как например при запросе из командлета Azure PowerShell. |
-| **properties** |Эта информация зависит от типа операции ( **operationName** ). В большинстве случаев это поле содержит сведения о клиенте (передаваемая клиентом строка useragent), точный URI запроса REST API и код состояния HTTP. Кроме того, когда результат запроса содержит объект (например, **KeyCreate** или **VaultGet** ), это поле содержит еще и URI ключа (в значении `id`), URI хранилища или URI секрета. |
+| **properties** |Эта информация зависит от типа операции (**operationName**). В большинстве случаев это поле содержит сведения о клиенте (передаваемая клиентом строка useragent), точный URI запроса REST API и код состояния HTTP. Кроме того, когда результат запроса содержит объект (например, **KeyCreate** или **VaultGet**), это поле содержит еще и URI ключа (в значении `id`), URI хранилища или URI секрета. |
 
 Значения поля **operationName** отображаются в формате *ObjectVerb*. Пример:
 
@@ -84,6 +84,8 @@ ms.locfileid: "94488542"
 В следующей таблице перечислены значения **operationName** и соответствующие команды REST API.
 
 ### <a name="operation-names-table"></a>Таблица имен операций
+
+# <a name="vault"></a>[Хранилище](#tab/Vault)
 
 | operationName | Команда REST API |
 | --- | --- |
@@ -97,6 +99,12 @@ ms.locfileid: "94488542"
 | **VaultRecover** |Восстановление удаленного хранилища|
 | **VaultGetDeleted** |[Получение данных об удаленном хранилище](/rest/api/keyvault/vaults/getdeleted) |
 | **VaultListDeleted** |[Вывод списка удаленных хранилищ](/rest/api/keyvault/vaults/listdeleted) |
+| **VaultAccessPolicyChangedEventGridNotification** | Опубликованное событие изменения политики доступа к хранилищу |
+
+# <a name="keys"></a>[Ключи](#tab/Keys)
+
+| operationName | Команда REST API |
+| --- | --- |
 | **KeyCreate** |[Создание ключа](/rest/api/keyvault/createkey) |
 | **KeyGet** |[Получение сведений о ключе](/rest/api/keyvault/getkey) |
 | **KeyImport** |[Импорт ключа в хранилище](/rest/api/keyvault/vaults) |
@@ -116,6 +124,32 @@ ms.locfileid: "94488542"
 | **KeyRecover** |[Восстановление ключа](/rest/api/keyvault/recoverdeletedkey) |
 | **KeyGetDeleted** |[Получение данных об удаленном ключе](/rest/api/keyvault/getdeletedkey) |
 | **KeyListDeleted** |[Вывод списка удаленных ключей в хранилище](/rest/api/keyvault/getdeletedkeys) |
+| **KeyNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия ключа |
+| **KeyExpiredEventGridNotification** |Опубликованное событие истечения срока действия ключа |
+
+# <a name="secrets"></a>[Секреты](#tab/Secrets)
+
+| operationName | Команда REST API |
+| --- | --- |
+| **SecretSet** |[Создание секрета](/rest/api/keyvault/updatecertificate) |
+| **SecretGet** |[Получение секрета](/rest/api/keyvault/getsecret) |
+| **SecretUpdate** |[Обновление секрета](/rest/api/keyvault/updatesecret) |
+| **SecretDelete** |[Удаление секрета](/rest/api/keyvault/deletesecret) |
+| **SecretList** |[Список секретов в хранилище](/rest/api/keyvault/getsecrets) |
+| **SecretListVersions** |[Список версий секрета](/rest/api/keyvault/getsecretversions) |
+| **SecretPurge** |[Очистка секрета](/rest/api/keyvault/purgedeletedsecret) |
+| **SecretBackup** |[Создание резервной копии для секрета](/rest/api/keyvault/backupsecret) |
+| **SecretRestore** |[Восстановление секрета](/rest/api/keyvault/restoresecret) |
+| **SecretRecover** |[Отмена удаления секрета](/rest/api/keyvault/recoverdeletedsecret) |
+| **SecretGetDeleted** |[Получение данных об удаленном секрете](/rest/api/keyvault/getdeletedsecret) |
+| **SecretListDeleted** |[Вывод списка удаленных секретов в хранилище](/rest/api/keyvault/getdeletedsecrets) |
+| **SecretNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия секрета |
+| **SecretExpiredEventGridNotification** |Опубликованное событие истечения срока действия секрета |
+
+# <a name="certificates"></a>[Сертификаты](#tab/Cerificates)
+
+| operationName | Команда REST API |
+| --- | --- |
 | **CertificateGet** |[Получение информации о сертификате](/rest/api/keyvault/getcertificate) |
 | **CertificateCreate** |[Создание сертификата](/rest/api/keyvault/createcertificate) |
 | **CertificateImport** |[Импорт сертификата в хранилище](/rest/api/keyvault/importcertificate) |
@@ -146,25 +180,9 @@ ms.locfileid: "94488542"
 | **CertificatePendingMerge** |Ожидание слияния сертификатов |
 | **CertificatePendingUpdate** |Ожидание обновления сертификата |
 | **CertificatePendingDelete** |Удаление ожидающего сертификата |
-| **SecretSet** |[Создание секрета](/rest/api/keyvault/updatecertificate) |
-| **SecretGet** |[Получение секрета](/rest/api/keyvault/getsecret) |
-| **SecretUpdate** |[Обновление секрета](/rest/api/keyvault/updatesecret) |
-| **SecretDelete** |[Удаление секрета](/rest/api/keyvault/deletesecret) |
-| **SecretList** |[Список секретов в хранилище](/rest/api/keyvault/getsecrets) |
-| **SecretListVersions** |[Список версий секрета](/rest/api/keyvault/getsecretversions) |
-| **SecretPurge** |[Очистка секрета](/rest/api/keyvault/purgedeletedsecret) |
-| **SecretBackup** |[Создание резервной копии для секрета](/rest/api/keyvault/backupsecret) |
-| **SecretRestore** |[Восстановление секрета](/rest/api/keyvault/restoresecret) |
-| **SecretRecover** |[Отмена удаления секрета](/rest/api/keyvault/recoverdeletedsecret) |
-| **SecretGetDeleted** |[Получение данных об удаленном секрете](/rest/api/keyvault/getdeletedsecret) |
-| **SecretListDeleted** |[Вывод списка удаленных секретов в хранилище](/rest/api/keyvault/getdeletedsecrets) |
-| **VaultAccessPolicyChangedEventGridNotification** | Опубликованное событие изменения политики доступа к хранилищу |
-| **SecretNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия секрета |
-| **SecretExpiredEventGridNotification** |Опубликованное событие истечения срока действия секрета |
-| **KeyNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия ключа |
-| **KeyExpiredEventGridNotification** |Опубликованное событие истечения срока действия ключа |
 | **CertificateNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия сертификата |
 | **CertificateExpiredEventGridNotification** |Опубликованное событие истечения срока действия сертификата |
+---
 
 ## <a name="use-azure-monitor-logs"></a>Использование журналов Azure Monitor
 
@@ -175,6 +193,7 @@ ms.locfileid: "94488542"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Включение ведения журнала Key Vault](howto-logging.md)
+- [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
 - Руководство по использованию Azure Key Vault в веб-приложении .NET см. в [этой статье](tutorial-net-create-vault-azure-web-app.md).
 - Справочные материалы по программированию см. в статье [Руководство разработчика хранилища ключей Azure](developers-guide.md).
 - Полный список командлетов Azure PowerShell 1.0 для хранилища ключей Azure см. в статье [Azure Key Vault cmdlets](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault) (Командлеты хранилища ключей Azure).

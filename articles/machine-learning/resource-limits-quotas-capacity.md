@@ -10,16 +10,16 @@ ms.topic: reference
 ms.service: machine-learning
 ms.subservice: core
 ms.date: 12/21/2020
-ms.openlocfilehash: 132c4b223b99f7110cd4553bb0dd93f1e58f4cdd
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: b675e72df4f128d0ce096b3ac398fab63c20557e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733389"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97930809"
 ---
 # <a name="service-limits-in-azure-machine-learning"></a>Ограничения службы в Машинное обучение Azure
 
-В этом разделе перечислены основные квоты и пороговые значения регулирования в Машинное обучение Azure.
+В этом разделе перечислены основные квоты и пороговые значения регулирования в Машинное обучение Azure. Чтобы узнать, как увеличить квоты ресурсов, см. раздел ["Управление и увеличение квот для ресурсов"](how-to-manage-quotas.md) .
 
 ## <a name="workspaces"></a>Рабочие области
 | Ограничение | Значение |
@@ -73,3 +73,5 @@ ms.locfileid: "97733389"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка среды Машинное обучение Azure](how-to-configure-environment.md)
+- Узнайте, как увеличить квоты ресурсов в статье ["Управление и увеличение квот для ресурсов"](how-to-manage-quotas.md).
+

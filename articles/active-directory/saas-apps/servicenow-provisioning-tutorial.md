@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 5894a57e6495ca02002c8f32b893e696c7f5679b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 5c21efc9cb082d915fd87e9ae01606fce18016bc
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350710"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897309"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Руководство по Настройка ServiceNow для автоматической подготовки пользователей
 
@@ -50,7 +50,7 @@ ms.locfileid: "96350710"
 
 1. Найдите имя экземпляра ServiceNow. Это имя экземпляра можно взять из URL-адреса, который используется для доступа к ServiceNow. В следующем примере имя экземпляра имеет значение dev35214.
 
-   ![Имя экземпляра ServiceNow](media/servicenow-provisioning-tutorial/servicenow_instance.png)
+   ![Имя экземпляра ServiceNow](media/servicenow-provisioning-tutorial/servicenow-instance.png)
 
 2. Получите учетные данные для администратора в ServiceNow. Перейдите к профилю пользователя в ServiceNow и убедитесь, что у этого пользователя есть роль администратора. 
 
@@ -94,7 +94,7 @@ ms.locfileid: "96350710"
 
 5. В разделе **Учетные данные администратора** введите учетные данные администратора ServiceNow и имя пользователя. Щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к ServiceNow. Если установить подключение не удалось, убедитесь, что у учетной записи ServiceNow есть разрешения администратора, и повторите попытку.
 
-    ![Снимок экрана: страница "Подготовка службы", где можно ввести учетные данные администратора.](./media/servicenow-provisioning-tutorial/provisioning.png)
+    ![Снимок экрана: страница "Подготовка службы", где можно ввести учетные данные администратора.](./media/servicenow-provisioning-tutorial/servicenow-provisioning.png)
 
 6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
@@ -142,11 +142,16 @@ ms.locfileid: "96350710"
   
   `Details: Your ServiceNow instance name appears to be invalid.  Please provide a current ServiceNow administrative user name and          password along with the name of a valid ServiceNow instance.`                                                              
 
-   Эта ошибка указывает на проблему с обменом данными с экземпляром ServiceNow. Убедитесь, что следующие параметры *отключены* в ServiceNow:
+   Эта ошибка указывает на проблему с обменом данными с экземпляром ServiceNow. 
+   
+   Если у вас возникают проблемы при тестировании подключения, попробуйте **отключить** следующие параметры в ServiceNow:
    
    1. Выберите **System Security** > **High security settings** > **Require basic authentication for incoming SCHEMA requests** (Безопасность системы > Параметры высокого уровня безопасности > Требовать базовую аутентификацию для входящих запросов SCHEMA).
    2. Выберите **System Properties** > **Web Services** > **Require basic authorization for incoming SOAP requests** (Свойства системы > Веб-службы > Требовать базовую авторизацию для входящих запросов SOAP).
 
+   ![Авторизация запроса SOAP](media/servicenow-provisioning-tutorial/servicenow-webservice.png)
+
+   Если этот поможет решить проблему, обратитесь в службу поддержки ServiceNow и попросите включить отладку SOAP для устранения неполадок. 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)

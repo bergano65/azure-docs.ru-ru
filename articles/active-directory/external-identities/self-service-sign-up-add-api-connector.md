@@ -11,19 +11,19 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f34ca47d5ff6c809eef40f89ee0049285cfd7d42
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: aa6726bb5c60dceab0a58632da99c04361183246
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355399"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932696"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Добавление соединителя API в поток пользователя
 
 Чтобы использовать [соединитель API](api-connectors-overview.md), сначала создайте соединитель API, а затем включите его в потоке пользователя.
 
 > [!IMPORTANT]
->**Начиная с 4 января 2021** г. Компания Google не [WebView поддержку входа в систему](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете Google Federation или самостоятельную регистрацию с помощью Gmail, необходимо [протестировать собственные бизнес-приложения для обеспечения совместимости](google-federation.md#deprecation-of-webview-sign-in-support).
+>**Начиная с 4 января 2021 г.** компания Google [прекращает поддержку входа через веб-представление](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете федерацию Google или самостоятельную регистрацию с помощью Gmail, вам нужно [проверить нативные бизнес-приложения на совместимость](google-federation.md#deprecation-of-webview-sign-in-support).
 
 ## <a name="create-an-api-connector"></a>Создание соединителя API
 
@@ -319,7 +319,7 @@ Content-type: application/json
 * **URL-адрес конечной точки** соединителя API указывает на правильную конечную точку API.
 * API явным образом проверяет значения NULL полученных утверждений.
 * API реагирует как можно быстрее, чтобы обеспечить работу пользователей в гибком виде.
-    * Если используется бессерверная функция или Масштабируемая веб-служба, используйте план размещения, который поддерживает API "спящий" или "тепло". Для функций Azure рекомендуется использовать [план Premium](../../azure-functions/functions-scale.md#premium-plan). 
+    * Если используется бессерверная функция или Масштабируемая веб-служба, используйте план размещения, который поддерживает API "спящий" или "тепло". Для функций Azure рекомендуется использовать [план Premium](../../azure-functions/functions-premium-plan.md). 
 
 
 ### <a name="use-logging"></a>Использовать ведение журнала

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 10/19/2020
 ms.author: maquaran
-ms.openlocfilehash: c47d18726d9581b1b03aa2e676a71d6ca1bc1b7d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: f753010eb994c9f3c286ad6eca6392ca7b643075
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93086472"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932917"
 ---
 # <a name="how-to-configure-logging-and-connectivity-with-the-azure-functions-trigger-for-cosmos-db"></a>Настройка ведения журнала и подключения с помощью триггера функций Azure для Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -53,7 +53,7 @@ traces
 
 ## <a name="configuring-the-connection-policy"></a>Настройка политики подключения
 
-Существует два режима подключения: режим прямого подключения и режим шлюза. Дополнительные сведения об этих режимах подключения см. в статье [режимы подключения](sql-sdk-connection-modes.md) . По умолчанию для установки всех подключений на триггере Функций Azure для Cosmos DB используется **шлюз** . Тем не менее, это может быть не лучшим вариантом для сценариев, ориентированных на производительность.
+Существует два режима подключения: режим прямого подключения и режим шлюза. Дополнительные сведения об этих режимах подключения см. в статье [режимы подключения](sql-sdk-connection-modes.md) . По умолчанию для установки всех подключений на триггере Функций Azure для Cosmos DB используется **шлюз**. Тем не менее, это может быть не лучшим вариантом для сценариев, ориентированных на производительность.
 
 ### <a name="changing-the-connection-mode-and-protocol"></a>Изменение режима и протокола подключения
 
@@ -82,7 +82,7 @@ traces
 ```
 
 > [!NOTE]
-> При работе с планом размещения и потребления в службе "Функции Azure" каждый экземпляр будет иметь ограничение объема подключения через сокет, который он может поддерживать. При работе с режимом прямого подключения или протоколом TCP создается больше подключений, которые могут достигать предела [плана потребления](../azure-functions/manage-connections.md#connection-limit), и в этом случае вы можете использовать режим шлюза или запустить службу "Функции Azure" в [режиме Службы приложений](../azure-functions/functions-scale.md#app-service-plan).
+> При размещении приложения-функции в плане потребления каждый экземпляр имеет ограничение на количество соединений сокета, которое он может поддерживать. При работе с прямым или TCP-режимом при проектировании создается больше подключений, что может привести к [ограничению плана потребления](../azure-functions/manage-connections.md#connection-limit). в этом случае можно либо использовать режим шлюза, либо разместить приложение-функцию в [плане Premium](../azure-functions/functions-premium-plan.md) или [выделенном (службе приложений) плане](../azure-functions/dedicated-plan.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e90adcb5312df6e1dfe6d4b58407edeb924a8809
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 6e561a0e05cf1a0870d85369867caba6c4d6bf12
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862445"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932424"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архив сведений о новых возможностях в Azure Active Directory
 
@@ -3733,7 +3733,7 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 
 **Тип:** новая возможность **Категория службы:** другое **Возможности продукта:** Каталог
 
-Новое пошаговое руководство по развертыванию Azure Active Directory, которое включает такие темы, как самостоятельный сброс пароля (SSPR), единый вход (SSO), условный доступ, прокси-сервер приложения, подготовка пользователей, службы федерации Active Directory для сквозной проверки подлинности и ADFS для синхронизации хэша паролей.
+Новые, пошаговые инструкции по развертыванию Azure Active Directory (Azure AD), включая самостоятельный сброс пароля (SSPR), единый вход, условный доступ, прокси приложения, подготовка пользователей, службы федерации Active Directory (AD FS) (ADFS) для сквозной проверки подлинности (PTA) и ADFS для синхронизации хэшей паролей (PHS).
 
 Чтобы просмотреть руководство по развертыванию, перейдите к репозиторию [Identity Deployment Guides](./active-directory-deployment-plans.md) в GitHub. Чтобы оставить отзыв о руководстве по развертыванию, используйте [форму обратной связи плана развертывания](https://aka.ms/deploymentplanfeedback). Если у вас возникли вопросы о руководствах по развертыванию, свяжитесь с нами на сайте [IDGitDeploy](mailto:idgitdeploy@microsoft.com).
 
