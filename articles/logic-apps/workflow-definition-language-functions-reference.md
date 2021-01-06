@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: 5c03d9b64f957f6ef8450197477f185dc8d15b2d
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: b15849fb8fbfed5d55b9c224f51634047b7c75b2
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825861"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914490"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate
 
@@ -2072,7 +2072,7 @@ formatNumber(1234567890, '0,0.00', 'is-is')
 Предположим, что нужно отформатировать число `17.35`. В этом примере число форматируется как строка "$17,35".
 
 ```
-formatNumber(17.36, 'C2')
+formatNumber(17.35, 'C2')
 ```
 
 *Пример 4*
@@ -2080,7 +2080,7 @@ formatNumber(17.36, 'C2')
 Предположим, что нужно отформатировать число `17.35`. В этом примере данное число форматируется как строка "17,35 кр".
 
 ```
-formatNumber(17.36, 'C2', 'is-is')
+formatNumber(17.35, 'C2', 'is-is')
 ```
 
 <a name="getFutureTime"></a>
@@ -2719,15 +2719,11 @@ lastIndexOf('<text>', '<searchText>')
 
 Если строка или подстрока пуста, происходит следующее поведение:
 
-* Если строковое значение пустое, `-1` то возвращается:
+* Если только строковое значение пусто, функция возвращает `-1` .
 
-* Если строки и значения подстроки пусты, `0` возвращается значение.
+* Если строки и значения подстроки пусты, функция возвращает значение `0` .
 
-* Если только значение подстроки пусто, возвращается большее из следующих двух значений:
-
-  * `0`
-
-  * Длина строки минус 1.
+* Если только значение подстроки пусто, функция возвращает длину строки минус 1.
 
 *Примеры*
 

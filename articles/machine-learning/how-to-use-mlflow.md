@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 085ba4d9d4e78acec4505ddb0e9e89d4e0b5c4a3
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: ed9d41a84e455241ed3cfc41b905a671f2a2d499
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881486"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97912960"
 ---
 # <a name="train-and-track-ml-models-with-mlflow-and-azure-machine-learning-preview"></a>Обучение и отслеживание моделей машинного обучения с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
@@ -211,7 +211,7 @@ run.get_metrics()
 
 Зарегистрируйте и отследите модели с помощью [реестра машинное обучение Azure Model](concept-model-management-and-deployment.md#register-package-and-deploy-models-from-anywhere) , который поддерживает реестр модели млфлов. Машинное обучение Azure модели согласовываются со схемой модели Млфлов, что упрощает экспорт и импорт этих моделей в разных рабочих процессах. Млфлов связанные метаданные, такие как, ID запуска, также помечаются зарегистрированной моделью для отслеживания. Пользователи могут отправлять обучающие запуски, регистрировать и развертывать модели, созданные при выполнении Млфлов. 
 
-Если вы хотите развернуть и зарегистрировать готовую к работе модель в течение одного шага, см. статью [развертывание и регистрация моделей млфлов](how-to-deploy-models-with-mlflow.md).
+Если вы хотите развернуть и зарегистрировать готовую к работе модель в течение одного шага, см. статью [развертывание и регистрация моделей млфлов](how-to-deploy-mlflow-models.md).
 
 Чтобы зарегистрировать и просмотреть модель из выполнения, выполните следующие действия.
 
@@ -260,7 +260,7 @@ run.get_metrics()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Развертывание моделей с помощью млфлов](how-to-deploy-models-with-mlflow.md).
+* [Развертывание моделей с помощью млфлов](how-to-deploy-mlflow-models.md).
 * Отслеживайте рабочие модели для выявления [смещения данных](./how-to-enable-data-collection.md).
 * [Track Azure Databricks выполняется с млфлов](how-to-use-mlflow-azure-databricks.md).
 * [Управляйте своими моделями](concept-model-management-and-deployment.md).

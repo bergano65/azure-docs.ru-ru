@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 4f9de2f956451cd6ab8bc8a7a0fc51903ec54694
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: d9b77def3ccefe3c866ccef78684d38da0b8a268
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97815919"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915153"
 ---
-# <a name="view-and-configure-ddos-protection-alerts"></a>Просмотр и Настройка оповещений защиты от атак DDoS
+# <a name="view-and-configure-ddos-protection-alerts"></a>Просмотр и настройка оповещений защиты от атак DDoS
 
 Защита от атак DDoS Azure (цен. категория "Стандартный") обеспечивает подробные сведения об атаках и визуализацию с помощью аналитики атак DDoS. Клиенты, защищающие виртуальные сети от атак DDoS, могут просматривать подробные сведения о трафике атаки и действиях, предпринятых для устранения атак, благодаря отчетам об устранении рисков атак и журналам потоков устранения рисков. Расширенные телеметрические данные предоставляются через Azure Monitor включая подробные метрики в течение от атак DDoS атаки. Предупреждения можно настроить для любой метрики Azure Monitor, предоставленной с помощью службы "Защита от атак DDoS". Ведение журнала может быть дополнительно интегрировано с [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (концентраторы событий Azure), OMS log Analytics и хранилищем Azure для расширенного анализа через интерфейс диагностики Azure Monitor.
 
@@ -34,7 +34,7 @@ ms.locfileid: "97815919"
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Перед выполнением действий, описанных в этом руководстве, необходимо сначала создать [план защиты Azure от атак DDoS Standard](manage-ddos-protection.md) , а для виртуальной сети должен быть включен стандарт защиты от атак DDoS.
-- Служба защиты от атак DDoS отслеживает общедоступные IP-адреса, которые назначаются ресурсам в виртуальной сети. При отсутствии в виртуальной сети ресурсов с общедоступными IP-адресами необходимо сначала создать ресурс с общедоступным IP-адресом. Вы можете отслеживать общедоступный IP-адрес всех ресурсов, развернутых с помощью диспетчер ресурсов (не классической), перечисленных в [виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (включая подсистемы балансировки нагрузки Azure, в которых внутренние виртуальные машины находятся в виртуальной сети), за исключением сред службы приложений Azure и VPN-шлюза Azure. Чтобы продолжить работу с этим руководством, можно быстро создать виртуальную машину [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).     
+- Служба защиты от атак DDoS отслеживает общедоступные IP-адреса, которые назначаются ресурсам в виртуальной сети. При отсутствии в виртуальной сети ресурсов с общедоступными IP-адресами необходимо сначала создать ресурс с общедоступным IP-адресом. Вы можете отслеживать общедоступный IP-адрес всех ресурсов, развернутых с помощью диспетчер ресурсов (не классической), перечисленных в [виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (включая подсистемы балансировки нагрузки Azure, в которых внутренние виртуальные машины находятся в виртуальной сети), за исключением сред службы приложений Azure. Чтобы продолжить работу с этим руководством, можно быстро создать виртуальную машину [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).     
 
 ## <a name="configure-alerts-through-azure-monitor"></a>Настройка оповещений с помощью Azure Monitor
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: a54404dafaf1093a2e2acbde88187739bd6c9f06
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: 86e4a111be7585373ecf4c2fe9508f2bfca7de16
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827416"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915085"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии
 
@@ -70,7 +70,7 @@ ms.locfileid: "97827416"
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Перед выполнением действий, описанных в этом руководстве, необходимо сначала создать [план защиты Azure от атак DDoS Standard](manage-ddos-protection.md) , а для виртуальной сети должен быть включен стандарт защиты от атак DDoS.
-- Служба защиты от атак DDoS отслеживает общедоступные IP-адреса, которые назначаются ресурсам в виртуальной сети. При отсутствии в виртуальной сети ресурсов с общедоступными IP-адресами необходимо сначала создать ресурс с общедоступным IP-адресом. Вы можете отслеживать общедоступный IP-адрес всех ресурсов, развернутых с помощью диспетчер ресурсов (не классической), перечисленных в [виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (включая подсистемы балансировки нагрузки Azure, в которых внутренние виртуальные машины находятся в виртуальной сети), за исключением сред службы приложений Azure и VPN-шлюза Azure. Чтобы продолжить работу с этим руководством, можно быстро создать виртуальную машину [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
+- Служба защиты от атак DDoS отслеживает общедоступные IP-адреса, которые назначаются ресурсам в виртуальной сети. При отсутствии в виртуальной сети ресурсов с общедоступными IP-адресами необходимо сначала создать ресурс с общедоступным IP-адресом. Вы можете отслеживать общедоступный IP-адрес всех ресурсов, развернутых с помощью диспетчер ресурсов (не классической), перечисленных в [виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (включая подсистемы балансировки нагрузки Azure, в которых внутренние виртуальные машины находятся в виртуальной сети), за исключением сред службы приложений Azure. Чтобы продолжить работу с этим руководством, можно быстро создать виртуальную машину [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
 
 ## <a name="view-ddos-protection-telemetry"></a>Просмотр данных телеметрии защиты от атак DDoS
 
@@ -111,4 +111,4 @@ ms.locfileid: "97827416"
 Чтобы узнать, как настроить отчеты по предотвращению атак и журналы потоков, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Просмотр и Настройка ведения журнала диагностики от атак DDoS](diagnostic-logging.md)
+> [Просмотр и настройка журнала диагностики атак DDoS](diagnostic-logging.md)

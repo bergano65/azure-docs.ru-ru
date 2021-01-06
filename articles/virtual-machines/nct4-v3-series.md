@@ -6,21 +6,18 @@ ms.subservice: sizes
 author: vikancha-MSFT
 ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 01/05/2021
 ms.author: vikancha
-ms.openlocfilehash: 2de6cceb1e3b85060a146b18a689b57573bc932e
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 6463e54fb7f0a2cc03ffa043c00048c1131899ce
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585434"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913436"
 ---
-# <a name="ncast4_v3-series-in-preview"></a>Серии NCasT4_v3 (Предварительная версия) 
+# <a name="ncast4_v3-series"></a>Серия NCasT4_v3 
 
 Виртуальные машины серии NCasT4_v3 на базе процессоров [NVIDIA Tesla T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) GPU и AMD ЕПИК 7V12 (Рим). Компоненты виртуальных машин до 4 видеопроцессоров NVIDIA T4 с 16 ГБ памяти каждый, до 64 процессоров AMD ЕПИК 7V12 (Рим) и 440 гиб системной памяти. Эти виртуальные машины идеально подходят для развертывания служб искусственного интеллекта, например для обработки запросов, созданных пользователем, в реальном времени, а также для интерактивных рабочих нагрузок графики и визуализации с помощью драйвера сетки NVIDIA и технологии виртуальных GPU. Стандартные расчетные рабочие нагрузки GPU, основанные на CUDA, Тенсоррт, Caffe, ONNX и других платформах или графических приложениях с ускорением GPU и DirectX, могут быть развернуты появился, с близкой точностью к пользователям, в серии NCasT4_v3.
-
-> [!NOTe]
-> [Отправьте запрос](https://aka.ms/NCT4v3Preview) на участие в программе предварительной версии.
 
 <br>
 

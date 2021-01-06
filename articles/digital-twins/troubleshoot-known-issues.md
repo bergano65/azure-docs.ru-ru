@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: d0c26255e6d9d35d51390ed2b432b9c5dc9ab2be
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: db29fbda404900c29f85fa876e9427994ee9a093
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862469"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915918"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -47,11 +47,11 @@ ms.locfileid: "97862469"
 
 ## <a name="issue-with-default-azure-credential-authentication-on-azureidentity-130"></a>Проблемы с проверкой подлинности Azure по умолчанию для Azure. Identity 1.3.0
 
-**Описание проблемы:** При написании кода проверки подлинности в приложениях Digital двойников с помощью версии **1.3.0** **библиотеки [Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true)** вы можете столкнуться с проблемами метода [дефаултазурекредентиал](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet?view=azure-dotnet&preserve-view=true) , который используется во многих примерах в этих документах. Это сообщение об ошибке "Azure. Identity. Аусентикатионфаиледексцептион: сбой проверки подлинности Шаредтокенкачекредентиал", когда код пытается выполнить аутентификацию.
+**Описание проблемы:** При написании кода проверки подлинности с помощью версии **1.3.0** **библиотеки [Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true)** некоторые пользователи столкнулись с проблемами в методе [дефаултазурекредентиал](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet?view=azure-dotnet&preserve-view=true) , который используется во многих примерах в этих документах цифровой двойников Azure. Это сообщение об ошибке "Azure. Identity. Аусентикатионфаиледексцептион: сбой проверки подлинности Шаредтокенкачекредентиал", когда код пытается выполнить аутентификацию.
 
 | Влияет ли это на меня? | Причина | Решение |
 | --- | --- | --- |
-| Дефаултазурекредентиал используется в большинстве примеров документации, включающих проверку подлинности. Если вы пишете код проверки подлинности с помощью Дефаултазурекредентиал и используете версию 1.3.0 `Azure.Identity` библиотеки, это, скорее всего, повлияет на вас. | Эта проблема возникает при использовании Дефаултазурекредентиал с версией **1.3.0** `Azure.Identity` библиотеки. | Чтобы устранить эту проблему, переключите приложение на использование [версии 1.2.2](https://www.nuget.org/packages/Azure.Identity/1.2.2) `Azure.Identity` . После изменения версии библиотеки проверка подлинности должна выполняться правильно. |
+| `DefaultAzureCredential` используется в большинстве примеров документации для этой службы, которая включает проверку подлинности. Если вы создаете код проверки подлинности с помощью `DefaultAzureCredential` с версией 1.3.0 `Azure.Identity` библиотеки и видите это сообщение об ошибке, это влияет на вас. | Это, вероятно, является следствием некоторых проблем с конфигурацией `Azure.Identity` . | Одна из стратегий решения этой проблемы заключается в исключении `SharedTokenCacheCredential` из учетных данных, как описано в этой [дефаултазурекредентиалной ошибке](https://github.com/Azure/azure-sdk/issues/1970) , которая в настоящее время открыта для `Azure.Identity` .<br>Другой вариант — изменить приложение для использования более ранней версии `Azure.Identity` , например [версии 1.2.3](https://www.nuget.org/packages/Azure.Identity/1.2.3). Это не влияет на работу с Azure Digital двойников. Таким же решением также является принятое решение. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

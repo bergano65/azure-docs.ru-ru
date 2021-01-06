@@ -17,12 +17,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e8268630b2c108dc95ded059ce41866a14fadd0e
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 3fe87f94ce05efa4a784ba7e3f65e53abb00fd05
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359257"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914252"
 ---
 # <a name="automate-management-with-the-sql-server-iaas-agent-extension"></a>Автоматизация управления с помощью расширения агента SQL Server IaaS
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "97359257"
 
 В этой статье приводятся общие сведения о расширении. Чтобы установить расширение IaaS SQL Server для SQL Server на виртуальных машинах Azure, изучите статьи для [автоматической установки](sql-agent-extension-automatic-registration-all-vms.md), [отдельных виртуальных машин](sql-agent-extension-manually-register-single-vm.md)или [виртуальных машин](sql-agent-extension-manually-register-vms-bulk.md). 
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Расширение агента SQL Server IaaS предоставляет ряд преимуществ для SQL Server на виртуальных машинах Azure. 
 
@@ -42,20 +42,21 @@ ms.locfileid: "97359257"
 
 - **Free**. расширение во всех трех режимах управляемости полностью бесплатное. Нет дополнительных затрат, связанных с расширением, или с изменением режимов управления. 
 
-- **Упрощенное управление лицензиями**. расширение упрощает управление лицензиями SQL Server и позволяет быстро выявление SQL Server виртуальных машин с преимущество гибридного использования Azure, включенными с помощью [портал Azure](manage-sql-vm-portal.md), Azure CLI или PowerShell: 
-
-   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-   ```azurecli-interactive
-   $vms = az sql vm list | ConvertFrom-Json
-   $vms | Where-Object {$_.sqlServerLicenseType -eq "AHUB"}
-   ```
+- **Упрощенное управление лицензиями**. расширение упрощает управление лицензиями SQL Server и позволяет быстро выявление SQL Server виртуальных машин с преимущество гибридного использования Azure, включенными с помощью [портал Azure](manage-sql-vm-portal.md), PowerShell или Azure CLI: 
 
    # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
    ```powershell-interactive
    Get-AzSqlVM | Where-Object {$_.LicenseType -eq 'AHUB'}
    ```
+
+   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+   ```azurecli-interactive
+   $ az sql vm list --query "[?sqlServerLicenseType=='AHUB']"
+   ```
+
+
 
    ---
 
@@ -71,7 +72,7 @@ ms.locfileid: "97359257"
 Эти преимущества приведены в следующей таблице. 
 
 
-| Функция | Описание |
+| Компонент | Описание |
 | --- | --- |
 | **Управление на портале** | Разблокирует [Управление на портале](manage-sql-vm-portal.md), чтобы вы могли просматривать все SQL Server виртуальные машины в одном месте, а также включать и отключать функции SQL непосредственно на портале. 
 | **Автоматическая архивация** |Автоматизирует планирование резервного копирования всех баз данных для экземпляра по умолчанию или [правильно установленного](frequently-asked-questions-faq.md#administration) именованного экземпляра SQL Server на виртуальной машине SQL Server. Дополнительные сведения см. в статье [Автоматическое резервное копирование для виртуальных машин SQL Server (Resource Manager)](automated-backup-sql-2014.md). |
@@ -130,7 +131,7 @@ ms.locfileid: "97359257"
 
 Чтобы проверить состояние расширения, используйте портал Azure или Azure PowerShell. 
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портал Azure;
 
 Убедитесь, что расширение установлено в портал Azure. 
 
@@ -239,7 +240,7 @@ ms.locfileid: "97359257"
 
 **Какова стоимость регистрации в расширении агента IaaS SQL или обновления до полного режима управления?**
 
-Отсутствует. Не взимается плата, связанная с регистрацией в расширении агента IaaS SQL, или с использованием любого из трех режимов управления. Управление виртуальной машиной SQL Server с помощью расширения полностью бесплатное. 
+Нет. Не взимается плата, связанная с регистрацией в расширении агента IaaS SQL, или с использованием любого из трех режимов управления. Управление виртуальной машиной SQL Server с помощью расширения полностью бесплатное. 
 
 **Как сказывается на производительности использование различных режимов управления?**
 

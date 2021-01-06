@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 91f15e32866cca008553286f7585247909d9a4ba
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5782765504eb1e0cb57558d3d4772d08de6b4d25
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002686"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913113"
 ---
 # <a name="detailed-troubleshooting-steps-for-remote-desktop-connection-issues-to-windows-vms-in-azure"></a>Подробное руководство по устранению неполадок с подключением к удаленному рабочему столу на виртуальной машине Windows в Azure
 В этой статье приводятся подробные инструкции по диагностике и устранению сложных ошибок удаленного рабочего стола для виртуальных машин Azure на базе Windows.
@@ -135,7 +135,7 @@ ms.locfileid: "96002686"
 
 Затем установите Azure PowerShell, если еще не сделали этого. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/).
 
-Затем откройте командную строку Azure PowerShell и перейдите из текущей папки в папку с файлом сценария **InstallWinRMCertAzureVM.ps1**. Для запуска сценария Azure PowerShell необходимо задать правильную политику выполнения. Выполните команду **Get-ExecutionPolicy**, чтобы определить текущий уровень политики. Инструкции по выбору подходящего уровня см. в описании команды [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-5.1).
+Затем откройте командную строку Azure PowerShell и перейдите из текущей папки в папку с файлом сценария **InstallWinRMCertAzureVM.ps1**. Для запуска сценария Azure PowerShell необходимо задать правильную политику выполнения. Выполните команду **Get-ExecutionPolicy**, чтобы определить текущий уровень политики. Инструкции по выбору подходящего уровня см. в описании команды [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-5.1&preserve-view=true).
 
 Затем введите имя своей подписки Azure, имя облачной службы и имя виртуальной машины (удалив знаки "<" и ">"). После этого выполните следующие команды.
 

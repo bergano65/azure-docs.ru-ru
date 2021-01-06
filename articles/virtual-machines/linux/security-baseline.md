@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 45a33981c51f5a2590843fafc1e54f54d2e567cf
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d8893daaf73a15cdc0baf8eeb339e794f6f1da64
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498478"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913453"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Linux
 
 Базовый план безопасности Azure для Виртуальные машины Linux содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../../security/benchmarks/security-baselines-overview.md).
 
@@ -250,7 +250,7 @@ ms.locfileid: "96498478"
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -602,7 +602,7 @@ ms.locfileid: "96498478"
 
 * [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
 
-* [Ведение журнала аналитики службы хранилища Azure](../../storage/common/storage-analytics-logging.md)
+* [Ведение журнала Аналитики Службы хранилища Azure](../../storage/common/storage-analytics-logging.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -900,7 +900,7 @@ ms.locfileid: "96498478"
 
 * [Сведения о создании шаблонов ARM](../windows/ps-template.md)
 
-* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
+* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910&preserve-view=true)
 
 **Мониторинг Центра безопасности Azure**: Да
 

@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 776db820ffb1a216c3f6f7e9c6d6b8d90913a063
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 9e0102cdb7e8494a8540b1970932f0d9f7f39fde
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881469"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97912923"
 ---
 # <a name="track-azure-databricks-ml-experiments-with-mlflow-and-azure-machine-learning-preview"></a>Следите за экспериментами Azure Databricks ML с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "97881469"
 
 [MLflow](https://www.mlflow.org) — это библиотека с открытым кодом для управления жизненным циклом экспериментов машинного обучения. Отслеживание Млфлов — это компонент Млфлов, который регистрирует и отслеживает метрики и артефакты обучающего запуска. Дополнительные сведения о [Azure Databricks и млфлов](/azure/databricks/applications/mlflow/). 
 
-См. раздел [мониторинг запусков экспериментов и создание конечных точек с помощью млфлов и машинное обучение Azure](how-to-use-mlflow.md) для дополнительных интеграции млфлов и функциональности машинное обучение Azure.
+Дополнительные сведения об интеграции функций Млфлов и Машинное обучение Azure см. [в статье мониторинг запуска экспериментов с помощью млфлов и машинное обучение Azure](how-to-use-mlflow.md) .
 
 >[!NOTE]
 > Как библиотека с открытым исходным кодом, Млфлов часто меняются. Таким образом, функции, предоставляемые через Машинное обучение Azure и интеграцию с Млфлов, следует рассматривать как предварительную версию, а не полностью поддерживать корпорацией Майкрософт.
@@ -181,8 +181,8 @@ mlflow.sklearn.log_model(model, artifact_path = "model",
 Вы можете использовать API [млфлов. azureml. deploy](https://www.mlflow.org/docs/latest/python_api/mlflow.azureml.html#mlflow.azureml.deploy) для развертывания модели в рабочей области машинное обучение Azure. Если вы зарегистрировали модель только в рабочей области Azure Databricks, как описано в разделе [Регистрация моделей с помощью млфлов](#register-models-with-mlflow) , укажите `model_name` параметр для регистрации модели в машинное обучение Azure рабочей области. 
 
 Azure Databricksные запуски можно развернуть в следующих конечных точках. 
-* [Экземпляр контейнера Azure](how-to-deploy-models-with-mlflow.md#deploy-to-aci)
-* [Служба Azure Kubernetes](how-to-deploy-models-with-mlflow.md#deploy-to-aks)
+* [Экземпляр контейнера Azure](how-to-deploy-mlflow-models.md#deploy-to-azure-container-instance-aci)
+* [Служба Azure Kubernetes](how-to-deploy-mlflow-models.md#deploy-to-azure-kubernetes-service-aks)
 
 ### <a name="deploy-models-to-adb-endpoints-for-batch-scoring"></a>Развертывание моделей в конечных точках ADB для пакетной оценки 
 
@@ -232,7 +232,7 @@ display(preds)
 В [млфлов машинное обучение Azure с записными книжками](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/track-and-monitor-experiments/using-mlflow) демонстрируются и развертываются концепции, представленные в этой статье.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
+* [Развертывание моделей млфлов в качестве веб-службы Azure](how-to-deploy-mlflow-models.md). 
 * [Управляйте своими моделями](concept-model-management-and-deployment.md).
-* [Следите за запуском экспериментов и создайте конечные точки с помощью млфлов и машинное обучение Azure](how-to-use-mlflow.md). 
+* [Следите за запуском экспериментов с помощью млфлов и машинное обучение Azure](how-to-use-mlflow.md). 
 * Дополнительные сведения о [Azure Databricks и млфлов](/azure/databricks/applications/mlflow/).

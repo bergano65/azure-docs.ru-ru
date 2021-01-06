@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/16/2020
+ms.date: 01/05/2020
 ms.author: b-juche
-ms.openlocfilehash: 1537a87999f9a8eecf83a2431b2f53d3ceaedacb
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 913d61c506505d18fff416291e7f3b718f1d92f3
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854705"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913504"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -137,6 +137,16 @@ Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы може
 Да, можно. Однако путь к файлу должен использоваться либо в другой подписке, либо в другом регионе.   
 
 Например, вы создаете том с именем `vol1` . Затем вы создаете другой том, который также вызывается `vol1` в другом пуле емкости, но в той же подписке и регионе. В этом случае использование одного и того же имени тома `vol1` приведет к ошибке. Чтобы использовать один и тот же путь к файлу, имя должно находиться в другом регионе или подписке.
+
+### <a name="when-i-try-to-access-nfs-volumes-through-a-windows-client-why-does-the-client-take-a-long-time-to-search-folders-and-subfolders"></a>Почему при попытке доступа к томам NFS через клиент Windows для поиска папок и вложенных папок клиент занимает много времени?
+
+Убедитесь, что `CaseSensitiveLookup` в клиенте Windows включен параметр для ускорения поиска папок и вложенных папок:
+
+1. Чтобы включить Касесенситивелукуп, используйте следующую команду PowerShell:   
+    `Set-NfsClientConfiguration -CaseSensitiveLookup 1`    
+2. Подключите том к серверу Windows Server.   
+    Пример   
+    `Mount -o rsize=1024 -o wsize=1024 -o mtype=hard \\10.x.x.x\testvol X:*`
 
 ## <a name="smb-faqs"></a>Часто задаваемые вопросы о SMB
 

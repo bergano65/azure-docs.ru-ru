@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: drewbat
-ms.openlocfilehash: 1c28b4e9821f31f927ef4f640aa664d330cf8792
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: fbe517c766b3835bf4265a1309b8737a25925b7c
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571000"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914966"
 ---
 # <a name="pull-settings-to-app-configuration-with-azure-pipelines"></a>Извлечение параметров в конфигурацию приложения с помощью Azure Pipelines
 
@@ -104,11 +104,14 @@ echo "$env:myBuildSetting"
 ```
 Значение будет напечатано на консоли.
 
+> [!NOTE]
+> Azure Key Vault ссылки в конфигурации приложения будут разрешены и установлены как [секретные переменные](/azure/devops/pipelines/process/variables#secret-variables). В конвейерах Azure секретные переменные скрыты из журнала. Они не передаются в задачи в виде переменных среды и вместо этого должны передаваться в качестве входных данных. 
+
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 При возникновении непредвиденной ошибки можно включить журналы отладки, задав для переменной конвейера `system.debug` значение `true` .
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>Вопросы и ответы
 
 **Разделы справки создать конфигурацию из нескольких ключей и меток?**
 

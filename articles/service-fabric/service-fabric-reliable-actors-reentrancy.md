@@ -4,12 +4,12 @@ description: Общие сведения о повторном входе для
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c2356db0eee82a133afad6aa95299ced0595db32
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 9578b676e46d21fe5d30de92ad59c852a8b05f70
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576066"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915884"
 ---
 # <a name="reliable-actors-reentrancy"></a>Повторный вход надежных субъектов
 Среда выполнения Reliable Actors по умолчанию разрешает повторный вход на основе логического контекста вызова. Это позволяет субъектам выполнять повторный вход, если они находятся в той же цепочке контекста вызова. Например, субъект A отправляет сообщение субъекту B, который отправляет сообщение субъекту C. В ходе обработки сообщения, если субъект C осуществит вызов субъекта A, сообщение будет означать повторный вход, поэтому будет разрешено. Любые другие сообщения, являющиеся частью другого контекста вызова, будут заблокированы на субъекте A до тех пор, пока он не завершит обработку.
@@ -101,4 +101,4 @@ static class Program
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше о возможностях повторного входа в [справочной документации по API субъектов](/previous-versions/azure/dn971626(v=azure.100)).
+* Дополнительные сведения о повторном входе см. в [справочной документации по API субъектов](/dotnet/api/microsoft.servicefabric.actors?view=azure-dotnet).

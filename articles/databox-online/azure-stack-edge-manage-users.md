@@ -1,23 +1,23 @@
 ---
-title: Azure Stack пограничных Pro Управление пользователями | Документация Майкрософт
+title: Azure Stack пограничной Pro FPGA Управление пользователями | Документация Майкрософт
 description: Описывает, как использовать портал Azure для управления пользователями на Azure Stack крае Pro.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 03/11/2019
+ms.date: 01/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 3fb82e95d9d7dcfdf59bd05f91beff8e1184955e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27ca190f3bad7f75175e5206d48e13dae1f5687e
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904389"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913354"
 ---
-# <a name="use-the-azure-portal-to-manage-users-on-your-azure-azure-stack-edge-pro"></a>Использование портал Azure для управления пользователями в Azure Azure Stack ребра Pro
+# <a name="use-the-azure-portal-to-manage-users-on-your-azure-stack-edge-pro-fpga"></a>Использование портал Azure для управления пользователями на Azure Stackном пограничном мобильном FPGA
 
-В этой статье описывается, как управлять пользователями на Azure Stack пограничным Pro. Вы можете управлять Azure Stack пограничным Pro через портал Azure или через локальный веб-интерфейс. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
+В этой статье описывается, как управлять пользователями на устройстве Azure Stack ребра Pro FPGA. Вы можете управлять Azure Stack пограничным Pro через портал Azure или через локальный веб-интерфейс. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -39,7 +39,7 @@ ms.locfileid: "90904389"
 
 Выполните на портале Azure шаги ниже, чтобы добавить пользователя.
 
-1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к **обзору > пользователей**. На панели команд выберите **+ Добавить пользователя** .
+1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к разделу **Пользователи**. На панели команд выберите **+ Добавить пользователя** .
 
     ![Добавление пользователя](media/azure-stack-edge-manage-users/add-user-1.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "90904389"
 Чтобы удалить пользователя, выполните следующие действия на портале Azure.
 
 
-1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к **обзору > пользователей**.
+1. В портал Azure перейдите к ресурсу Azure Stackного периметра и перейдите к разделу **Пользователи**.
 
     ![Выбор пользователя, которого нужно удалить](media/azure-stack-edge-manage-users/delete-user-1.png)
 

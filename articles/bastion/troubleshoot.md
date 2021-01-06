@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: troubleshooting
 ms.date: 10/16/2019
 ms.author: charwen
-ms.openlocfilehash: f3c142491363f30513877ae4368f291430aa3675
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4f5d4b7fed8f14f048794616ee272342d1e8343
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85831936"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915561"
 ---
 # <a name="troubleshoot-azure-bastion"></a>Устранение неполадок в службе "Бастион Azure"
 
@@ -81,7 +81,7 @@ The key's randomart image is:
 
 ## <a name="black-screen-in-the-azure-portal"></a><a name="blackscreen"></a>Черный экран в портал Azure
 
-**Вопрос.** При попытке подключения с помощью Azure бастиона появляется черный экран на портал Azure.
+**Вопрос.** Когда я пытаюсь подключиться с помощью Azure бастиона, я не могу Connnect на целевую виртуальную машину и получил черный экран в портал Azure.
 
 Ответ **.** Это происходит при возникновении проблемы с сетевым подключением между веб-браузером и Azure бастиона (ваш клиентский брандмауэр Интернета может блокировать трафик WebSocket или аналогичный), а также между бастиона Azure и целевой виртуальной машиной. В большинстве случаев NSG применяется либо к Азуребастионсубнет, либо к целевой подсети виртуальной машины, которая блокирует трафик RDP/SSH в виртуальной сети. Разрешите трафик WebSocket на клиентском брандмауэре Интернета и проверьте группы безопасности сети в подсети целевой виртуальной машины.
 

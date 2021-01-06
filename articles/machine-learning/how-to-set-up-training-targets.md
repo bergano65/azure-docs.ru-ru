@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: d8918181024715a57c6029d3ad0a36ea75140fcb
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: a3427be85314f06b5408c4450e0415768122879f
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739949"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913011"
 ---
 # <a name="configure-and-submit-training-runs"></a>Настройка и отправка запуска на выполнение обучения
 
@@ -204,6 +204,18 @@ run.wait_for_completion(show_output=True)
     ```
 
     На внутреннем уровне Машинное обучение Azure объединяет блоки с одинаковым именем метрики в непрерывный список.
+
+* **Сбой выполнения с `jwt.exceptions.DecodeError`**: точный текст сообщения об ошибке: `jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode()` . 
+    
+    Рассмотрите возможность обновления до последней версии azureml-Core: `pip install -U azureml-core` .
+    
+    Если вы используете эту ошибку для локальных запусков, проверьте версию Пижвт, установленную в вашей среде, в которой выполняются запуски. Поддерживаемые версии Пижвт < 2.0.0. Удалите Пижвт из среды, если версия >= 2.0.0. Вы можете проверить версию Пижвт, удалить и установить правильную версию следующим образом:
+    1. Запустите командную оболочку, активируйте среду conda, в которой установлено azureml-Core.
+    2. Введите `pip freeze` и найдите `PyJWT` , если он найден, указанная версия должна быть < 2.0.0
+    3. Если указанная версия не является поддерживаемой, `pip uninstall PyJWT` в командной оболочке введите y в поле Подтверждение.
+    4. Установка с помощью `pip install 'PyJWT<2.0.0'`
+    
+    Если вы отправляете созданную пользователем среду с помощью своего запуска, рассмотрите возможность использования в этой среде последней версии azureml-Core. Версии >= 1.18.0 из azureml-Core уже запин Пижвт < 2.0.0. Если необходимо использовать версию azureml-Core < 1.18.0 в отправляемой среде, убедитесь, что в зависимости PIP указано Пижвт < 2.0.0.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

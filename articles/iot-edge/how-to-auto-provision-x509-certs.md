@@ -9,12 +9,13 @@ ms.date: 04/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 761b031916dd9ead71f5be6a6887208a1f200f58
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 385a67e117bf0cf9508b81d014e3accac4725744
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966140"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914915"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-x509-certificates"></a>Создание и инициализация устройства IoT Edge с помощью сертификатов X. 509
 
@@ -87,7 +88,7 @@ Windows:
 
 1. В [портал Azure](https://portal.azure.com)перейдите к своему экземпляру службы подготовки устройств для центра Интернета вещей.
 
-1. В разделе **Параметры**выберите **Управление регистрациями**.
+1. В разделе **Параметры** выберите **Управление регистрациями**.
 
 1. Выберите **Добавить отдельную регистрацию** и выполните следующие действия для настройки регистрации.  
 
@@ -172,7 +173,7 @@ Windows:
 
 1. В [портал Azure](https://portal.azure.com)перейдите к своему экземпляру службы подготовки устройств для центра Интернета вещей.
 
-1. В разделе **Параметры**выберите **Управление регистрациями**.
+1. В разделе **Параметры** выберите **Управление регистрациями**.
 
 1. Щелкните **Добавить группу регистрации** , а затем выполните следующие действия, чтобы настроить регистрацию.
 

@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/30/2020
-ms.openlocfilehash: 5b39ccc365575853a4a74a471023989f34ebc577
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: e188c74c6eba5e4182f7b72277db8dd8e08db8d4
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97821491"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913943"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Как спланировать предложение SaaS для коммерческого рынка
 
@@ -156,7 +156,7 @@ ms.locfileid: "97821491"
 
 В следующем примере показан список предложений в портал Azure.
 
-![Показывает список предложений в портал Azure.](./media/example-managed-services.png)
+![Показывает список предложений в портал Azure.](./media/example-managed-service-azure-portal.png)
 
 **Описание вызова**
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 06d20dd47ceb71b51e226d662892eab06b072685
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 601f268f81c222ada5a4f99b05ae8ffcdfc13a23
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500943"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916292"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -66,7 +66,7 @@ ms.locfileid: "96500943"
     - Архитектура высокого уровня доступности и аварийного восстановления.
         - На основе RTO и RPO определите, как должна выглядеть архитектура высокого уровня доступности и аварийного восстановления.
         - Чтобы обеспечить высокий уровень доступности в пределах зоны, проверьте, что нужная СУБД должна предлагаться в Azure. Большинство пакетов СУБД предлагают синхронные методы синхронного горячего резервирования, которые мы рекомендуем использовать для рабочих систем. Также ознакомьтесь с документацией по SAP для разных баз данных, начиная с [рекомендаций по развертыванию СУБД Azure для рабочих нагрузок SAP](./dbms_guide_general.md) и связанных документов.
-           Использование отказоустойчивой кластеризации Windows Server с конфигурацией общих дисков для уровня СУБД, например, [описанного для SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-2017), не поддерживается. Вместо этого используйте такие решения, как:
+           Использование отказоустойчивой кластеризации Windows Server с конфигурацией общих дисков для уровня СУБД, например, [описанного для SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-2017&preserve-view=true), не поддерживается. Вместо этого используйте такие решения, как:
            - [SQL Server AlwaysOn](/previous-versions/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
            - [Oracle Data Guard](../oracle/configure-oracle-dataguard.md)
            - [Репликация системы HANA](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/en-US/b74e16a9e09541749a745f41246a065e.html)

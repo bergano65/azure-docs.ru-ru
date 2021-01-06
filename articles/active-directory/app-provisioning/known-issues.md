@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 12/14/2020
+ms.date: 01/05/2021
 ms.reviewer: arvinh
-ms.openlocfilehash: 78e9d7355b8c96295456f8aa9cb80b1d3bdd2fab
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: bde5cecc4052724f795cac03f6efceb3451ea2ee
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509552"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914354"
 ---
 # <a name="known-issues-application-provisioning"></a>Известные проблемы: Подготовка приложений
 Известные проблемы, с которыми следует помнить при работе с подготовкой приложений. Вы можете отправить отзыв о службе подготовки приложений в UserVoice. см. раздел [Azure AD Application подготавливать UserVoice](https://aka.ms/appprovisioningfeaturerequest). Мы внимательно отслеживаем UserVoice, чтобы мы могли улучшить службу. 
@@ -82,6 +82,10 @@ ms.locfileid: "97509552"
 **Изменения, не перемещаются из целевого приложения в Azure AD**
 
 Служба подготовки приложений не учитывает изменения, внесенные во внешние приложения. Поэтому для отката не выполняются никакие действия. Служба подготовки приложений зависит от изменений, внесенных в Azure AD. 
+
+**Переключение с "Синхронизация всех" на "назначено" не работает**
+
+После изменения области с "синхронизировать все" на "назначена синхронизация" необходимо также выполнить перезагрузку, чтобы убедиться, что изменение вступает в силу. Перезагрузку можно выполнить из пользовательского интерфейса.
 
 **Цикл подготовки продолжится до завершения**
 

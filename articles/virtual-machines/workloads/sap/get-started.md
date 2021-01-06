@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/04/2021
+ms.date: 01/05/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d56ed0cdae9046cb7d76f7d74545309ee6292ecd
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: f74e6435af9084b0c8f222c33dc922fe678bc4c7
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883101"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914525"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -83,6 +83,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 01/05/2021: изменение [масштаба SAP HANA с резервным узлом на виртуальных машинах Azure с помощью использовании в SLES](./sap-hana-scale-out-standby-netapp-files-suse.md) и [SAP HANA горизонтального масштабирования с резервным узлом на виртуальных машинах Azure с использовании в RHEL](./sap-hana-scale-out-standby-netapp-files-rhel.md), исходе рекомендуемой конфигурации, чтобы позволить агенту узла SAP управлять диапазоном локальных портов.  
 - 01/04/2021: добавьте новые регионы Azure, поддерживаемые ХЛИ, в [SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) .
 - 12/29/2020: Добавьте рекомендации по архитектуре для конкретных регионов Azure в [конфигурациях рабочих нагрузок SAP с зоны доступности Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ha-availability-zones)
 - 12/21/2020. Добавление новых сертификатов в номера SKU крупных экземпляров HANA в [доступных SKU для Хли](./hana-available-skus.md)

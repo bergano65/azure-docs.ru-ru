@@ -6,14 +6,14 @@ author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 12/10/2020
+ms.date: 01/05/2021
 ms.author: duau
-ms.openlocfilehash: dab480012ced3a8fc50fd5f4295272c0eccc4307
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: c68d9654c673b75742205853ec186caa5d6a3ce5
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831862"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916156"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -105,7 +105,7 @@ ms.locfileid: "97831862"
 | **du datamena** |Поддерживается |Поддерживается | Дубаи 2 |
 | **eir** |Поддерживается |Поддерживается |Дублин|
 | **[Epsilon Global Communications](https://www.epsilontel.com/solutions/direct-cloud-connect)** |Поддерживается |Поддерживается |Сингапур, Сингапур 2 |
-| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Поддерживается |Амстердам, Атланта, Берлин, Canberra2, Чикаго, Далласе, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, САР, Лондон, London2, Лос-Анджелес, Лос Angeles2, Мельбурн, Майами, Милан, Нью-Йорк, Осака, Париж, Сан--Паулу, Сиэтл, Токио, Торонто, Вашингтон, округ Колумбия, Сеул |
+| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Атланта, Берлин, Canberra2, Чикаго, Далласе, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, САР, Лондон, London2, Лос-Анджелес, Лос-Angeles2, Мельбурн, Майами, Милан, Нью-Йорк, Осака, Париж, Сан--Паулу, Сиэтл, Сеул, Майами, Вашингтон, округ Колумбия, Цюрих |
 | **Etisalat UAE** |Поддерживается |Поддерживается |Дубаи|
 | **[euNetworks](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон |
 | **[FarEasTone](https://www.fetnet.net/corporate/en/Enterprise.html)** |Поддерживается |Поддерживается |Тайбэй|

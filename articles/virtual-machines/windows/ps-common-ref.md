@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/01/2018
 ms.author: cynthn
-ms.openlocfilehash: 6f7f2adb5c3e154c3910ee1082e9afad70de9758
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3bf73e7c907c6d464fb6b6bfb3b507e6d12e0788
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010084"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914881"
 ---
 # <a name="common-powershell-commands-for-creating-and-managing-azure-virtual-machines"></a>Общие команды PowerShell для создания виртуальных машин Azure и управления ими
 
-В этой статье рассматриваются некоторые из команд Azure PowerShell, которые можно использовать для создания виртуальных машин в подписке Azure и управления ими.  Для получения более подробных сведений о параметрах и параметрах командной строки можно использовать команду **Get-Help** *command*.
+В этой статье рассматриваются некоторые из команд Azure PowerShell, которые можно использовать для создания виртуальных машин в подписке Azure и управления ими.  Для получения более подробных сведений о параметрах и параметрах командной строки можно использовать команду **Get-Help** .
 
  
 
@@ -40,7 +40,7 @@ ms.locfileid: "96010084"
 | Задача | Get-Help |
 | ---- | ------- |
 | Создание конфигурации виртуальной машины |$vm = [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig) -VMName $myVM -VMSize "Standard_D1_v1"<BR></BR><BR></BR>Конфигурация виртуальной машины используется для определения или обновления параметров виртуальной машины. Для инициализации конфигурации используется имя виртуальной машины и ее [размер](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). |
-| Добавление параметров конфигурации |$vm = [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem) -VM $vm -Windows -ComputerName $myVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate<BR></BR><BR></BR>Параметры операционной системы, в том числе [учетные данные](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1), добавляются в объект конфигурации, созданный ранее с помощью командлета New-AzVMConfig. |
+| Добавление параметров конфигурации |$vm = [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem) -VM $vm -Windows -ComputerName $myVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate<BR></BR><BR></BR>Параметры операционной системы, в том числе [учетные данные](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1&preserve-view=true), добавляются в объект конфигурации, созданный ранее с помощью командлета New-AzVMConfig. |
 | Добавление сетевого интерфейса |$vm = [Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface) -VM $vm -Id $nic.Id<BR></BR><BR></BR>У виртуальной машины должен быть [сетевой интерфейс](./quick-create-powershell.md?toc=/azure/virtual-machines/windows/toc.json) для обмена данными в виртуальной сети. Вы можете также использовать командлет [Get-AzNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface) для получения существующего объекта сетевого интерфейса. |
 | Указание образа платформы |$vm = [Set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage) -VM $vm -PublisherName "publisher_name" -Offer "publisher_offer" -Skus "product_sku" -Version "latest"<BR></BR><BR></BR>В объект конфигурации, созданный ранее с помощью командлета New-AzVMConfig, добавляется [информация об образе](cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Объект, возвращенный этой командой, используется только в том случае, если диск операционной системы настроен для использования образа платформы. |
 | Создание виртуальной машины |[New-AzVM](/powershell/module/az.compute/new-azvm) -ResourceGroupName $myResourceGroup -Location $location -VM $vm<BR></BR><BR></BR>Все ресурсы создаются в [группе ресурсов](../../azure-resource-manager/management/manage-resource-groups-powershell.md). Прежде чем выполнить эту команду, выполните командлеты New-AzVMConfig, Set-AzVMOperatingSystem, Set-AzVMSourceImage, Add-AzVMNetworkInterface и Set-AzVMOSDisk. |
@@ -63,5 +63,5 @@ ms.locfileid: "96010084"
 | Удаление виртуальной машины |[Remove-AzVM](/powershell/module/az.compute/remove-azvm) -ResourceGroupName $myResourceGroup -Name $myVM |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь с основными шагами по созданию виртуальной машины в разделе [Создание виртуальной машины Windows с помощью Resource Manager и PowerShell](./quick-create-powershell.md?toc=/azure/virtual-machines/windows/toc.json).

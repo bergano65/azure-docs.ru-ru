@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/10/2020
+ms.date: 01/05/2021
 ms.author: memildin
-ms.openlocfilehash: 283dbf152778b5ef58e298444058f619356ef241
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: 1e6b66fce6b22dfd12c162d469ce44137c94ab87
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97756115"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916377"
 ---
 # <a name="secure-score-in-azure-security-center"></a>Оценка безопасности в Центре безопасности Azure
 
@@ -72,7 +72,7 @@ ms.locfileid: "97756115"
 
 ### <a name="get-your-secure-score-from-the-rest-api"></a>Получение оценки безопасности из REST API
 
-Вы можете получить доступ к рейтингу через API оценки безопасности (сейчас в предварительной версии). Методы этого API позволяют гибко выполнять запросы к данным и создавать собственные механизмы создания отчетов об оценках безопасности за разные периоды. Например, можно использовать [API для оценки безопасности](/rest/api/securitycenter/securescores) , чтобы получить оценку для конкретной подписки. Кроме того, можно использовать [API управления оценками](/rest/api/securitycenter/securescorecontrols) безопасности для перечисления элементов управления безопасностью и текущей оценки подписок.
+Вы можете получить доступ к оценке через API оценки безопасности. Методы этого API позволяют гибко выполнять запросы к данным и создавать собственные механизмы создания отчетов об оценках безопасности за разные периоды. Например, можно использовать [API для оценки безопасности](/rest/api/securitycenter/securescores) , чтобы получить оценку для конкретной подписки. Кроме того, можно использовать [API управления оценками](/rest/api/securitycenter/securescorecontrols) безопасности для перечисления элементов управления безопасностью и текущей оценки подписок.
 
 ![Получение одной безопасной оценки через API](media/secure-score-security-controls/single-secure-score-via-api.png)
 
