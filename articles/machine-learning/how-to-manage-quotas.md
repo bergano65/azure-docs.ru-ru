@@ -11,12 +11,12 @@ ms.author: nigup
 ms.date: 12/1/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperf-fy20q4, contperf-fy21q2
-ms.openlocfilehash: 58dacc9e65da6502d083446cb7202c222cb7e795
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 1b43a1ceb1f9e098e4932b405553ae8f33e27262
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034043"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937354"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Управление и увеличение квот для ресурсов с помощью Машинное обучение Azure
 
@@ -29,7 +29,7 @@ Azure использует ограничения и квоты, чтобы пр
 > + Запрос на увеличение квоты.
 > + Частные конечные точки и квоты DNS.
 
-Наряду с управлением квотами вы можете научиться [планировать и управлять затратами на машинное обучение Azure](concept-plan-manage-cost.md).
+Наряду с управлением квотами вы можете научиться [планировать и управлять затратами на машинное обучение Azure](concept-plan-manage-cost.md) или узнать об [ограничениях службы в машинное обучение Azure](resource-limits-quotas-capacity.md).
 
 ## <a name="special-considerations"></a>Специальные рекомендации
 
@@ -53,7 +53,9 @@ Azure использует ограничения и квоты, чтобы пр
 + Хранилище Azure
 
 > [!IMPORTANT]
-> Границы могут измениться. Последние сведения см. в статье [Подписка Azure, ограничения службы, квоты и ограничения](../azure-resource-manager/management/azure-subscription-service-limits.md) для всех Azure.
+> Границы могут измениться. Последние сведения см. в статье  [ограничения службы в машинное обучение Azure](resource-limits-quotas-capacity.md).
+
+
 
 ### <a name="azure-machine-learning-assets"></a>Ресурсы Машинное обучение Azure
 Для каждой рабочей области применяются следующие ограничения на ресурсы. 
@@ -122,7 +124,7 @@ Azure использует ограничения и квоты, чтобы пр
 
 Дополнительные сведения см. в разделе [ограничения экземпляров контейнеров](../azure-resource-manager/management/azure-subscription-service-limits.md#container-instances-limits).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Служба хранилища
 В службе хранилища Azure предусмотрено ограничение в 250 учетных записей хранения на регион для каждой подписки. Это ограничение включает учетные записи хранения уровня "Стандартный" и "Премиум".
 
 Чтобы увеличить это ограничение, выполните запрос через [службу поддержки Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Команда разработчиков службы хранилища Azure просматривает ваш случай и может утвердить до 250 учетных записей хранения для региона.
@@ -194,7 +196,7 @@ Azure использует ограничения и квоты, чтобы пр
 
 1. [Создайте запрос в службу поддержки Azure](../azure-portal/supportability/how-to-create-azure-support-request.md#create-a-support-request) и выберите следующие параметры в разделе __Основные сведения__ .
 
-    | Поле | Выбранное |
+    | Поле | Выбор |
     | ----- | ----- |
     | Тип проблемы | **Технические требования** |
     | Служба | **Мои службы**. Выберите __машинное обучение__ в раскрывающемся списке. |
@@ -210,3 +212,4 @@ Azure использует ограничения и квоты, чтобы пр
 ## <a name="next-steps"></a>Дальнейшие действия
 
 + [Планирование и управление затратами для Машинное обучение Azure](concept-plan-manage-cost.md)
++ [Ограничения службы в Машинное обучение Azure](resource-limits-quotas-capacity.md)

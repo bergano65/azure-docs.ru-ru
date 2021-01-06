@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 1ea326cc4537176c0ddcff070f4dc3b3f77f4b58
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 0d7259972693b9ca12e0801007cbd3c0af45ca1c
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512041"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937337"
 ---
 # <a name="saas-fulfillment-apis-version-2-in-the-commercial-marketplace"></a>API-интерфейсы выполнения SaaS версии 2 в коммерческом магазине
 
@@ -151,7 +151,7 @@ URL-адрес целевой страницы должен быть устан�
 
 Подписка SaaS может быть отменена в любой момент жизненного цикла. После отмены подписка не может быть активирована повторно.
 
-## <a name="api-reference"></a>Справочник по интерфейсам API
+## <a name="api-reference"></a>Справочник по API
 
 В этом разделе документируется подписку SaaS и API операций.
 
@@ -828,7 +828,7 @@ Response body:
   "quantity": "20", // purchased amount of seats
   "action": "ChangePlan", // Can be ChangePlan, ChangeQuantity or Reinstate
   "timeStamp": "2018-12-01T00:00:00", // UTC
-  "status": "InProgress", // Possible values: NotStarted, InProgress, Failed, Succeed, Conflict (new quantity / plan is the same as existing)
+  "status": "InProgress", // Possible values: NotStarted, InProgress, Failed, Succeeded, Conflict (new quantity / plan is the same as existing)
   "errorStatusCode": "",
   "errorMessage": ""
 }
@@ -968,7 +968,7 @@ Response body:
 
 Варианты поддержки издателя см. [в разделе Поддержка программы коммерческого рынка в центре партнеров](../support.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные варианты предложений SaaS в коммерческом магазине см. в разделе [API-интерфейсы коммерческого рынка](marketplace-metering-service-apis.md) .
 
