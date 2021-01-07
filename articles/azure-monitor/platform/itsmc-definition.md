@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 072abffcc74b8b060d98c07d1f310413c7b323ef
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: fc0f148da518c718dafaab082f9598ccd4372a1f
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954946"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963816"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Подключение Azure к средствам ITSM с помощью Соединитель управления ИТ-услугами
 
@@ -140,15 +140,15 @@ ms.locfileid: "97954946"
             Пример:
             1) Предупреждение 1 с 3 элементами конфигурации: A, B, C — создаст 3 рабочих элемента.
             2) Предупреждение 2 с 1 элементом конфигурации: A — создаст 1 рабочий элемент.
-
-        * Если снять флажок **"создать отдельные рабочие элементы для каждого элемента конфигурации"** , соединитель ITSM создаст один рабочий элемент для каждого правила генерации оповещений и добавит к нему все затронутые элементы конфигурации. При закрытии предыдущего рабочего элемента будет создан новый рабочий элемент.
-        >[!NOTE]
+       >[!NOTE]
         > В этом случае некоторые из выданных предупреждений не будут создавать новые рабочие элементы в средстве ITSM.
 
-            For example:
-            1) Alert 1 with 3 Configuration Items: A, B, C - will create 1 work item.
-            2) Alert 2 for the same alert rule as phase 1 with 1 Configuration Item: D - will be merged to the work item in phase 1.
-            3) Alert 3 for a different alert rule with 1 Configuration Item: E - will create 1 work item.
+        * Если снять флажок **"создать отдельные рабочие элементы для каждого элемента конфигурации"** , соединитель ITSM создаст один рабочий элемент для каждого правила генерации оповещений и добавит к нему все затронутые элементы конфигурации. При закрытии предыдущего рабочего элемента будет создан новый рабочий элемент.
+
+            Пример:
+             1) Предупреждение 1 с 3 элементами конфигурации: A, B, C — создаст 1 рабочий элемент.
+             2) Предупреждение 2 для того же правила генерации оповещений, что и этап 1 с 1 элементом конфигурации: D — будет выполнено слияние с рабочим элементом на этапе 1.
+             3) Предупреждение 3. для другого правила генерации оповещений с 1 элементом конфигурации: E — создаст 1 рабочий элемент.
 
        ![Снимок экрана, на котором показано окно инцидента ITSM.](media/itsmc-overview/itsm-action-configuration.png)
 

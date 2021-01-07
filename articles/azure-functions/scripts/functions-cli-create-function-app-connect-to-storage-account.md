@@ -4,12 +4,12 @@ description: Пример скрипта Azure CLI для создания фу�
 ms.topic: sample
 ms.date: 04/20/2017
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: b95ec2da96e385ba4595a5552e64d6cc039c0e16
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 13120ad4478febf9281ff423a3a7a8f8f3b25845
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565336"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934413"
 ---
 # <a name="create-a-function-app-with-a-named-storage-account-connection"></a>Создание приложения-функции с именованным подключением учетной записи хранения 
 
@@ -37,7 +37,7 @@ ms.locfileid: "94565336"
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создайте группу ресурсов с расположением. |
 | [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создайте учетную запись хранения. |
-| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../functions-scale.md#consumption-plan). |
+| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../consumption-plan.md). |
 | [az storage account show-connection-string](/cli/azure/storage/account#az-storage-account-show-connection-string) | Получает строку подключения для учетной записи. |
 | [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) | Задает строку подключения в качестве параметра приложения в приложении-функции. |
 

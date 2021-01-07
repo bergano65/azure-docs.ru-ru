@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 11/04/2020
+ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 9c3d9e647fc09946c1e7c1b8b2ebcbe310716ff2
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: d5f5e1098b688fc307bae5ea3538c818cb529b0a
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935790"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97962403"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -949,7 +949,7 @@ if not result:
 
   ![Свойства DeviceCodeResult](https://user-images.githubusercontent.com/13203188/56024968-7af1b980-5d11-11e9-84c2-5be2ef306dc5.png)
 
-В следующем примере кода представлен наиболее актуальный вариант с объяснениями типов исключений, которые могут возникать, и их устранения.
+В следующем образце кода представлен краткий обзор большинства текущих случаев с объяснениями типов исключений, которые можно получить, и их устранение. Полностью функциональный пример кода см. в разделе [Active-Directory-команда dotnetcore-девицекодефлов-v2](https://github.com/azure-samples/active-directory-dotnetcore-devicecodeflow-v2) на сайте GitHub.
 
 ```csharp
 private const string ClientId = "<client_guid>";
@@ -981,7 +981,7 @@ static async Task<AuthenticationResult> GetATokenForGraph()
     }
 }
 
-private async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublicClientApplication pca)
+private static async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublicClientApplication pca)
 {
     try
     {
@@ -1005,6 +1005,7 @@ private async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublicClientA
         Console.WriteLine(result.Account.Username);
         return result;
     }
+
     // TODO: handle or throw all these exceptions depending on your app
     catch (MsalServiceException ex)
     {
@@ -1038,6 +1039,7 @@ private async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublicClientA
     }
 }
 ```
+
 # <a name="java"></a>[Java](#tab/java)
 
 Это фрагмент из [примеров разработки в MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/).

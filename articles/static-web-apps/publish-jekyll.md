@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: cshoe
-ms.openlocfilehash: e3bad12362358620d0f2dc105bb2820dfb691d00
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 673852f8f9aa81c838a7c1db68681bb9ee0b7e0b
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92000220"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862013"
 ---
 # <a name="tutorial-publish-a-jekyll-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Jekyll в службе "Статические веб-приложения Azure" — предварительный просмотр
 
@@ -104,7 +104,7 @@ ms.locfileid: "92000220"
 
 1. В поле _Имя_ введите имя приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`.
 
-1. В поле _Регион_выберите ближайший доступный регион.
+1. В поле _Регион_ выберите ближайший доступный регион.
 
 1. В поле _Номер SKU_ выберите **Бесплатный**.
 
@@ -118,7 +118,7 @@ ms.locfileid: "92000220"
 
 1. В поле _Ветвь_ выберите **главная**.
 
-    :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Заполненные сведениями поля":::
+    :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
 
 ### <a name="build"></a>Сборка
 
@@ -150,7 +150,7 @@ ms.locfileid: "92000220"
 
     ```yml
     - name: Set up Ruby
-      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      uses: ruby/setup-ruby@v1.59.1
       with:
         ruby-version: 2.6
     - name: Install dependencies
@@ -171,7 +171,7 @@ ms.locfileid: "92000220"
 
 1. В окне _Обзор_ портала Azure щелкните ссылку на _URL-адрес_, чтобы открыть развернутое приложение.
 
-   :::image type="content" source="./media/publish-jekyll/deployed-app.png" alt-text="Заполненные сведениями поля":::
+   :::image type="content" source="./media/publish-jekyll/deployed-app.png" alt-text="Развернутое приложение":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

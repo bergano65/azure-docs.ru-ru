@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: f2d55d1fcc92abdc629581d6e4d277ec0294dce0
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 8e657386c417ce3407aea9b3765419e1d2b70bb9
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858694"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97962454"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Устранение неполадок службы файлов Azure в Windows (SMB)
 
@@ -126,7 +126,7 @@ TcpTestSucceeded : True
 
 Системная ошибка 53 или 87 может произойти, если в клиенте включена аутентификация NTLMv1. Служба файлов Azure поддерживает только проверку подлинности NTLMv2. Протокол проверки подлинности NTLMv1 делает клиент менее безопасным, в результате чего взаимодействие со службой файлов Azure блокируется. 
 
-Чтобы определить, заключается ли причина ошибки в этом, убедитесь, что для следующего подраздела реестра задано значение 3:
+Чтобы определить, является ли причина ошибки, убедитесь, что в следующем подразделе реестра не указано значение меньше 3:
 
 **HKLM\SYSTEM\CurrentControlSet\Control\Lsa > LmCompatibilityLevel**
 

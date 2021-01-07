@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/25/2020
+ms.date: 01/06/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 1ebfa137357e60a1f462ef90c6430cbf0cb5b968
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: references_regions
+ms.openlocfilehash: 85d880966c4c3864206c7e92256eb8e705812f20
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746596"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97962182"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Обратимое удаление для контейнеров (Предварительная версия)
 
@@ -53,11 +53,9 @@ ms.locfileid: "92746596"
 
 Обратимое удаление контейнера доступно для следующих типов учетных записей хранения:
 
-- Учетные записи хранения общего назначения версии 2
+- Учетные записи хранения общего назначения версии 2 и v1
 - Блокировать учетные записи хранения BLOB-объектов
 - Учетные записи хранения BLOB-объектов
-
-Если ваша учетная запись хранения является учетной записью общего назначения v1, используйте портал Azure для обновления до учетной записи общего назначения версии 2. Дополнительные сведения об учетных записях хранения см. в статье [Общие сведения об учетной записи хранения](../common/storage-account-overview.md).
 
 Также поддерживаются учетные записи хранения с иерархическим пространством имен, разрешенным для использования с Azure Data Lake Storage 2-го поколения.
 

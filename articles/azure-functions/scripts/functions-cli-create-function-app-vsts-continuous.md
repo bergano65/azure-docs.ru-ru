@@ -4,16 +4,16 @@ description: Создание приложения-функции и разве�
 ms.date: 07/03/2018
 ms.topic: sample
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 25e0f43a851bbf7658847aa52cc9ee778941f718
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: f89da9fc146d753442f2a8c8aa38861e66c9a3d9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565217"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934384"
 ---
 # <a name="create-a-function-in-azure-that-is-deployed-from-azure-devops"></a>Создание в Azure приложения-функции, которое развертывается из Azure DevOps
 
-В этом разделе показано, как при помощи решения "Функции Azure" создать [бессерверное](https://azure.microsoft.com/solutions/serverless/) приложение-функцию с использованием [плана потребления](../functions-scale.md#consumption-plan). Приложение-функция, которое представляет собой контейнер для функций, непрерывно развертывается из репозитория Azure DevOps. 
+В этом разделе показано, как при помощи решения "Функции Azure" создать [бессерверное](https://azure.microsoft.com/solutions/serverless/) приложение-функцию с использованием [плана потребления](../consumption-plan.md). Приложение-функция, которое представляет собой контейнер для функций, непрерывно развертывается из репозитория Azure DevOps. 
 
 Для работы с этой статьей требуется:
 
@@ -42,7 +42,7 @@ ms.locfileid: "94565217"
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения, необходимую для приложения-функции. |
-| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../functions-scale.md#consumption-plan). |
+| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../consumption-plan.md). |
 | [az functionapp deployment source config](/cli/azure/functionapp/deployment/source#az-functionapp-deployment-source-config) | Связывает приложение-функцию с репозиторием Git или Mercurial. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

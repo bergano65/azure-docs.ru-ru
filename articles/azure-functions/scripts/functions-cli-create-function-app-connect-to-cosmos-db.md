@@ -4,12 +4,12 @@ description: Пример скрипта Azure CLI для создания фу�
 ms.topic: sample
 ms.date: 07/03/2018
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 760017439ddc65ee929db1612b34b093d8bed8a0
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 9ec4d3cb9d47608aa98075ba98aacfde51f341cd
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565422"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934430"
 ---
 # <a name="create-an-azure-function-that-connects-to-an-azure-cosmos-db"></a>Создание функции Azure, которая подключается к Azure Cosmos DB
 
@@ -37,7 +37,7 @@ ms.locfileid: "94565422"
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создайте группу ресурсов с расположением. |
 | [az storage accounts create](/cli/azure/storage/account#az-storage-account-create) | Создание учетной записи хранения |
-| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../functions-scale.md#consumption-plan). |
+| [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../consumption-plan.md). |
 | [az cosmosdb create](/cli/azure/cosmosdb#az-cosmosdb-create) | Создает базу данных Azure Cosmos DB. |
 | [az cosmosdb show](/cli/azure/cosmosdb#az-cosmosdb-show)| Возвращает подключение к учетной записи базы данных. |
 | [az cosmosdb list-keys](/cli/azure/cosmosdb#az-cosmosdb-list-keys)| Возвращает ключи для базы данных. |

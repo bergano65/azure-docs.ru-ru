@@ -5,12 +5,12 @@ ms.date: 12/2/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp, mvc, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
 zone_pivot_groups: programming-languages-set-functions-full
-ms.openlocfilehash: f270f74f97a9b9306d7b23dacec12c38f418dbd1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: fb85920b04e3cd457dc36d1ba1fd0f18dcd7abb6
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921828"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937065"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Создание функции на Linux с помощью пользовательского контейнера
 
@@ -20,7 +20,7 @@ ms.locfileid: "96921828"
 Благодаря [пользовательским обработчикам](functions-custom-handlers.md) Функции Azure поддерживают любой язык или среду выполнения. Для некоторых языков программирования, например языка R, используемого в этом учебнике, необходимо установить среду выполнения или дополнительные библиотеки в качестве зависимостей, требующие использования пользовательского контейнера.
 ::: zone-end
 
-Для развертывания кода функции в пользовательском контейнере Linux требуется размещение на основе [плана "Премиум"](functions-premium-plan.md#features) или [плана "Выделенный" (Служба приложений)](functions-scale.md#app-service-plan). Для выполнения этого руководства потребуются некоторые расходы на учетную запись Azure. Их можно будет сократить, [очистив ресурсы](#clean-up-resources) по завершении.
+Для развертывания кода функции в пользовательском контейнере Linux требуется размещение на основе [плана "Премиум"](functions-premium-plan.md) или [плана "Выделенный" (Служба приложений)](dedicated-plan.md). Для выполнения этого руководства потребуются некоторые расходы на учетную запись Azure. Их можно будет сократить, [очистив ресурсы](#clean-up-resources) по завершении.
 
 Вы также можете использовать контейнер Службы приложений Azure по умолчанию, как описано в статье [Краткое руководство. Создание функции, выполняемой в Linux, с помощью инструментов командной строки](./create-first-function-cli-csharp.md?pivots=programming-language-python). Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
 

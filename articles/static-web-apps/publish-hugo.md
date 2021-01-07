@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: 5f511a898b3b2964f954ba150b05f02486456dcf
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: e49a84f5ac507ac80481313c103701a88934083a
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171496"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900780"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Hugo в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -77,7 +77,7 @@ ms.locfileid: "92171496"
 
 Для подключения к Статическим веб-приложениям Azure требуется репозиторий на сайте GitHub. Ниже показано, как создать репозиторий для своего сайта.
 
-1. Создайте пустой репозиторий GitHub (не создавая файл сведений) со страницы [https://github.com/new](https://github.com/new) с именем **hugo-static-app** .
+1. Создайте пустой репозиторий GitHub (не создавая файл сведений) со страницы [https://github.com/new](https://github.com/new) с именем **hugo-static-app**.
 
 1. Добавьте репозиторий GitHub в локальный репозиторий в качестве удаленного. В следующей команде не забудьте добавить имя пользователя GitHub вместо заполнителя `<YOUR_USER_NAME>`.
 
@@ -98,34 +98,34 @@ ms.locfileid: "92171496"
 ### <a name="create-the-application"></a>Создание приложения
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
-1. Щелкните **Создать ресурс** .
-1. Выполните поиск по запросу **Статические веб-приложения** .
+1. Щелкните **Создать ресурс**.
+1. Выполните поиск по запросу **Статические веб-приложения**.
 1. Выберите **Статические веб-приложения (предварительная версия)** .
-1. Нажмите кнопку **Создать** .
+1. Нажмите кнопку **Создать**.
 
    :::image type="content" source="./media/publish-hugo/create-in-portal.png" alt-text="Создание ресурса Статические веб-приложения Azure на портале":::
 
 1. Для параметра **Подписка** подтвердите предложенный вариант или выберите другой из раскрывающегося списка.
 
-1. Для параметра _Группа ресурсов_ выберите **Создать** . В разделе _Новое имя группы ресурсов_ введите **hugo-static-app** и нажмите кнопку **ОК** .
+1. Для параметра _Группа ресурсов_ выберите **Создать**. В разделе _Новое имя группы ресурсов_ введите **hugo-static-app** и нажмите кнопку **ОК**.
 
 1. В поле **Имя** введите имя приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`.
 
 1. В поле _Регион_ выберите ближайший доступный регион.
 
-1. В поле _Номер SKU_ выберите **Бесплатный** .
+1. В поле _Номер SKU_ выберите **Бесплатный**.
 
-   :::image type="content" source="./media/publish-hugo/basic-app-details.png" alt-text="Создание ресурса Статические веб-приложения Azure на портале":::
+   :::image type="content" source="./media/publish-hugo/basic-app-details.png" alt-text="Заполненные сведениями поля":::
 
-1. Нажмите кнопку **Войти по учетным данным GitHub** .
+1. Нажмите кнопку **Войти по учетным данным GitHub**.
 
 1. В поле **Организация** выберите ту, в которой был создан репозиторий.
 
-1. Выберите **hugo-static-app** в качестве _репозитория_ .
+1. Выберите **hugo-static-app** в качестве _репозитория_.
 
-1. В поле _Ветвь_ выберите **главная** .
+1. В поле _Ветвь_ выберите **главная**.
 
-   :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Создание ресурса Статические веб-приложения Azure на портале":::
+   :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
 
 ### <a name="build"></a>Сборка
 
@@ -135,7 +135,7 @@ ms.locfileid: "92171496"
 
 1. В поле _App location_ (Расположение приложения) выберите значение **/** .
 
-1. В поле _App artifact location_ (Расположение артефакта приложения) задайте значение **общедоступное** .
+1. В поле _App artifact location_ (Расположение артефакта приложения) задайте значение **общедоступное**.
 
    Поле _API location_ (Расположения API) заполнять не требуется, так как вы в данный момент не развертываете API.
 
@@ -143,13 +143,13 @@ ms.locfileid: "92171496"
 
 1. Нажмите кнопку **Просмотр и создание** и убедитесь, что вы указали правильные сведения.
 
-1. Щелкните **Создать** , чтобы начать создание приложения службы "Статические веб-приложения Azure", а также подготовить действие GitHub к развертыванию.
+1. Щелкните **Создать**, чтобы начать создание приложения службы "Статические веб-приложения Azure", а также подготовить действие GitHub к развертыванию.
 
 1. Дождитесь завершения действия GitHub.
 
-1. На портале Azure в окне _Обзор_ для только что созданного ресурса "Статические веб-приложения Azure" щелкните ссылку на _URL-адрес_ , чтобы открыть развернутое приложение.
+1. На портале Azure в окне _Обзор_ для только что созданного ресурса "Статические веб-приложения Azure" щелкните ссылку на _URL-адрес_, чтобы открыть развернутое приложение.
 
-   :::image type="content" source="./media/publish-hugo/deployed-app.png" alt-text="Создание ресурса Статические веб-приложения Azure на портале":::
+   :::image type="content" source="./media/publish-hugo/deployed-app.png" alt-text="Развернутое приложение":::
 
 #### <a name="custom-hugo-version"></a>Пользовательская версия Hugo
 
@@ -176,7 +176,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "api" # Api source code path - optional
-          app_artifact_location: "public" # Built app content directory - optional
+          output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
           HUGO_VERSION: 0.58.0

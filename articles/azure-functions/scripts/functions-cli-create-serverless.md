@@ -6,16 +6,16 @@ ms.topic: sample
 ms.date: 07/03/2018
 ms.author: glenga
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: e5fa6b5a25b07585e3c0ea07fb4a361ab82a9815
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 3a52d7ea8c940a33f4fbd2b9ad69f4f889615e7f
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565109"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934345"
 ---
 # <a name="create-a-function-app-for-serverless-code-execution"></a>Создание приложения-функции для выполнения кода без сервера 
 
-При помощи этого примера скрипта в решении "Функции Azure" создается приложение-функция Azure, которое является контейнером для ваших функций. Приложение-функция создается с помощью [плана потребления](../functions-scale.md#consumption-plan), который идеально подходит для рабочих нагрузок, выполняемых на основе событий без использования сервера.
+При помощи этого примера скрипта в решении "Функции Azure" создается приложение-функция Azure, которое является контейнером для ваших функций. Приложение-функция создается с помощью [плана потребления](../consumption-plan.md), который идеально подходит для рабочих нагрузок, выполняемых на основе событий без использования сервера.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -25,7 +25,7 @@ ms.locfileid: "94565109"
 
 ## <a name="sample-script"></a>Пример скрипта
 
-Этот скрипт создает приложение-функцию Azure с помощью [плана потребления](../functions-scale.md#consumption-plan).
+Этот скрипт создает приложение-функцию Azure с помощью [плана потребления](../consumption-plan.md).
 
 [!code-azurecli-interactive[main](../../../cli_scripts/azure-functions/create-function-app-consumption/create-function-app-consumption.sh "Create an Azure Function on a Consumption plan")]
 

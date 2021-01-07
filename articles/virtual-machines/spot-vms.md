@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: b8e5c6b6b755134772cc8eaea3dab3af7f5346c9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e1666b7e74ceefd7e7e4fe6e499667b09efa0ac7
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963369"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963799"
 ---
 # <a name="use-spot-vms-in-azure"></a>Использование плашечных виртуальных машин в Azure
 
@@ -81,7 +81,7 @@ ms.locfileid: "91963369"
 
 **Таблица**:
 
-:::image type="content" source="./media/spot-table.png" alt-text="Снимок экрана параметров региона с разницей в ценах и процентах вытеснения в виде диаграммы.":::
+:::image type="content" source="./media/spot-table.png" alt-text="Снимок экрана параметров региона с разницей в ценах и ставках вытеснения в виде таблицы.":::
 
 
 
@@ -110,6 +110,11 @@ ms.locfileid: "91963369"
 **Вопрос.** Где можно задать вопрос?
 
 **Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](/answers/topics/azure-spot.html). 
+
+
+**Вопрос.** Как изменить максимальную цену для плашечной виртуальной машины?
+
+Ответ **.** Прежде чем можно будет изменить максимальную цену, необходимо освободить виртуальную машину. Затем можно изменить максимальную цену на портале в разделе **конфигурации** для виртуальной машины. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Используйте интерфейс [командной строки](./linux/spot-cli.md), [портал](spot-portal.md), [шаблон ARM](./linux/spot-template.md)или [PowerShell](./windows/spot-powershell.md) для развертывания плашечных виртуальных машин.

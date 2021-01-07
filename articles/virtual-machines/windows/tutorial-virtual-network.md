@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 08/04/2020
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 84da38fe71446c54f17c4d4329c7294c5e5176d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22993e8a1513ae34b3752ebd80c60761467f396e
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87800200"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97912671"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-windows-virtual-machines-with-azure-powershell"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Windows с помощью Azure PowerShell
 
@@ -127,7 +127,7 @@ $frontendNic = New-AzNetworkInterface `
   -PublicIpAddressId $pip.Id
 ```
 
-Настройте на виртуальной машине имя пользователя и пароль для учетной записи администратора с помощью командлета [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1). Эти учетные данные используются для подключения к виртуальной машине на дополнительных шагах:
+Настройте на виртуальной машине имя пользователя и пароль для учетной записи администратора с помощью командлета [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1&preserve-view=true). Эти учетные данные используются для подключения к виртуальной машине на дополнительных шагах:
 
 ```azurepowershell-interactive
 $cred = Get-Credential

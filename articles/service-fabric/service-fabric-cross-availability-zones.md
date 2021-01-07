@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 1217ecba7a5fcb3c0fc95f505e7ca07fc76129b2
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: f729c00d3b78631a32013ec9453302584cecbd16
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97930826"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97962437"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Развертывание кластера Azure Service Fabric в Зоны доступности
 Зоны доступности в Azure — это высокодоступное предложение, защищающее приложения и данные от сбоев центров обработки данных. Зона доступности — это уникальное физическое расположение, оснащенное независимым питанием, охлаждением и сетью в регионе Azure.
@@ -344,7 +344,7 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
 Чтобы включить зоны в масштабируемом наборе виртуальных машин, необходимо включить следующие три значения в ресурс масштабируемого набора виртуальных машин.
 
 * Первое значение — это свойство **Zones** , которое указывает зоны доступности, присутствующую в масштабируемом наборе виртуальных машин.
-* Вторым значением является свойство "singlePlacementGroup", которое должно иметь значение true.
+* Вторым значением является свойство "singlePlacementGroup", которое должно иметь значение true. **Масштабируемый набор, развернутый в 3 AZ, может масштабировать до 300 виртуальных машин, даже если "singlePlacementGroup = true".**
 * Третье значение — "zoneBalance" и является необязательным, что обеспечивает ограниченную балансировку зоны, если имеет значение true. Прочитайте о [зонебаланЦинг](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
 * Переопределения FaultDomain и UpgradeDomain не обязательно должны быть настроены.
 

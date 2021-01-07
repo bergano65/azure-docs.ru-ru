@@ -3,12 +3,12 @@ title: Примеры запросов Starter
 description: Составление простых запросов с помощью Azure Resource Graph, в том числе запросов о подсчете ресурсов, упорядочивании ресурсов или их фильтрации по определенному тегу.
 ms.date: 10/14/2020
 ms.topic: sample
-ms.openlocfilehash: 013e865f543f966d88132d2dc6aca6102d52d20c
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 287de47fff8c76bf05aeacd9ddfca0c48e55f5a0
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057116"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882931"
 ---
 # <a name="starter-resource-graph-query-samples"></a>Примеры запросов к Resource Graph для начинающих
 
@@ -27,8 +27,6 @@ ms.locfileid: "92057116"
 - [Подсчет ресурсов с IP-адресами, настроенными посредством подписки](#count-resources-by-ip)
 - [Вывод списка ресурсов с определенным значением тега](#list-tag)
 - [Вывод списка всех учетных записей хранения с определенным значением тега](#list-specific-tag)
-- [Отображение псевдонимов для ресурса виртуальной машины](#show-aliases)
-- [Отображение уникальных значений для конкретного псевдонима](#distinct-alias-values)
 - [Отображение несвязанных групп безопасности сети](#unassociated-nsgs)
 - [Получение сводки по сокращению затрат из Помощника по Azure](#advisor-savings)
 - [Число компьютеров в области применения политик гостевой конфигурации](#count-gcmachines)
@@ -462,72 +460,6 @@ Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Storage/storageAccou
 
 > [!NOTE]
 > В этом примере для сопоставления используется условный оператор `==` вместо `=~`. При использовании `==` учитывается регистр.
-
-## <a name="show-aliases-for-a-virtual-machine-resource"></a><a name="show-aliases"></a>Отображение псевдонимов для ресурса виртуальной машины
-
-[Псевдонимы Политики Azure](../../policy/concepts/definition-structure.md#aliases) используются Политикой Azure для управления соответствием ресурсов. Azure Resource Graph может возвращать _псевдонимы_ типа ресурса. Эти значения можно использовать для сравнения с текущим значением псевдонимов при создании пользовательского определения политики. Массив _псевдонимов_ не предоставляется по умолчанию в результатах запроса. Используйте `project aliases`, чтобы явным способом добавить его к результатам.
-
-```kusto
-Resources
-| where type =~ 'Microsoft.Compute/virtualMachines'
-| limit 1
-| project aliases
-```
-
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-```azurecli-interactive
-az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | limit 1 | project aliases"
-```
-
-# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
-
-```azurepowershell-interactive
-Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualMachines' | limit 1 | project aliases" | ConvertTo-Json
-```
-
-# <a name="portal"></a>[Портал](#tab/azure-portal)
-
-:::image type="icon" source="../media/resource-graph-small.png"::: Попробуйте выполнить следующий запрос в обозревателе Azure Resource Graph:
-
-- Портал Azure: <a href="https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%0D%0A%7C%20where%20type%20%3D~%20%27Microsoft.Compute%2FvirtualMachines%27%0D%0A%7C%20limit%201%0D%0A%7C%20project%20aliases" target="_blank">portal.azure.com<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- Портал Azure для государственных организаций: <a href="https://portal.azure.us/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%0D%0A%7C%20where%20type%20%3D~%20%27Microsoft.Compute%2FvirtualMachines%27%0D%0A%7C%20limit%201%0D%0A%7C%20project%20aliases" target="_blank">portal.azure.us<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- Портал Azure для Китая (21Vianet): <a href="https://portal.azure.cn/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%0D%0A%7C%20where%20type%20%3D~%20%27Microsoft.Compute%2FvirtualMachines%27%0D%0A%7C%20limit%201%0D%0A%7C%20project%20aliases" target="_blank">portal.azure.cn<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-
----
-
-## <a name="show-distinct-values-for-a-specific-alias"></a><a name="distinct-alias-values"></a>Отображение уникальных значений для конкретного псевдонима
-
-Отображение значения псевдонимов на один ресурс является полезным, но оно не показывает значение true при использовании Azure Resource Graph для запроса между подписками. В этом примере рассматриваются все значения конкретного псевдонима и возвращаются уникальные значения.
-
-```kusto
-Resources
-| where type=~'Microsoft.Compute/virtualMachines'
-| extend alias = aliases['Microsoft.Compute/virtualMachines/storageProfile.osDisk.managedDisk.storageAccountType']
-| distinct tostring(alias)
-```
-
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-```azurecli-interactive
-az graph query -q "Resources | where type=~'Microsoft.Compute/virtualMachines' | extend alias = aliases['Microsoft.Compute/virtualMachines/storageProfile.osDisk.managedDisk.storageAccountType'] | distinct tostring(alias)"
-```
-
-# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
-
-```azurepowershell-interactive
-Search-AzGraph -Query "Resources | where type=~'Microsoft.Compute/virtualMachines' | extend alias = aliases['Microsoft.Compute/virtualMachines/storageProfile.osDisk.managedDisk.storageAccountType'] | distinct tostring(alias)"
-```
-
-# <a name="portal"></a>[Портал](#tab/azure-portal)
-
-:::image type="icon" source="../media/resource-graph-small.png"::: Попробуйте выполнить следующий запрос в обозревателе Azure Resource Graph:
-
-- Портал Azure: <a href="https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%0D%0A%7C%20where%20type%3D~%27Microsoft.Compute%2FvirtualMachines%27%0D%0A%7C%20extend%20alias%20%3D%20aliases%5B%27Microsoft.Compute%2FvirtualMachines%2FstorageProfile.osDisk.managedDisk.storageAccountType%27%5D%0D%0A%7C%20distinct%20tostring%28alias%29" target="_blank">portal.azure.com<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- Портал Azure для государственных организаций: <a href="https://portal.azure.us/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%0D%0A%7C%20where%20type%3D~%27Microsoft.Compute%2FvirtualMachines%27%0D%0A%7C%20extend%20alias%20%3D%20aliases%5B%27Microsoft.Compute%2FvirtualMachines%2FstorageProfile.osDisk.managedDisk.storageAccountType%27%5D%0D%0A%7C%20distinct%20tostring%28alias%29" target="_blank">portal.azure.us<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- Портал Azure для Китая (21Vianet): <a href="https://portal.azure.cn/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%0D%0A%7C%20where%20type%3D~%27Microsoft.Compute%2FvirtualMachines%27%0D%0A%7C%20extend%20alias%20%3D%20aliases%5B%27Microsoft.Compute%2FvirtualMachines%2FstorageProfile.osDisk.managedDisk.storageAccountType%27%5D%0D%0A%7C%20distinct%20tostring%28alias%29" target="_blank">portal.azure.cn<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-
----
 
 ## <a name="show-unassociated-network-security-groups"></a><a name="unassociated-nsgs"></a>Отображение несвязанных групп безопасности сети
 
