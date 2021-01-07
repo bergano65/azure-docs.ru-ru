@@ -3,6 +3,8 @@
 - name: Обзор
   href: overview.md
   items:
+    - name: Новые возможности
+      href: release-notes.md
     - name: Архитектура решения
       href: architecture.md
 - name: Краткие руководства
