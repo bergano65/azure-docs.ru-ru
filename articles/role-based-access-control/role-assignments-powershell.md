@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 11/25/2020
 ms.author: rolyon
-ms.openlocfilehash: 6eadba7d778a632896529f3c7c53886619d96444
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 3bb09133ba6991554072b4bf68b5306c78f868a7
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901476"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964292"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Добавление и удаление назначений ролей Azure с помощью Azure PowerShell
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] В этой статье описывается назначение ролей с помощью Azure PowerShell.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] В этой статье описывается назначение ролей с помощью Azure PowerShell.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 

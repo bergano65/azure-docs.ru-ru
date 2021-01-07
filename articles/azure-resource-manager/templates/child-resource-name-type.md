@@ -3,12 +3,12 @@ title: Дочерние ресурсы в шаблонах
 description: Описывает, как задать имя и тип для дочерних ресурсов в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: 408914fd309676da36904a364f905a8ee809d648
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: a950d72751b829c0a2aa3ba5ca27316a0544d9cc
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934311"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963918"
 ---
 # <a name="set-name-and-type-for-child-resources"></a>Задать имя и тип для дочерних ресурсов
 
@@ -137,5 +137,4 @@ ms.locfileid: "97934311"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о создании шаблонов ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
-
 * Дополнительные сведения о формате имени ресурса при ссылке на ресурс см. в описании [функции Reference](template-functions-resource.md#reference).

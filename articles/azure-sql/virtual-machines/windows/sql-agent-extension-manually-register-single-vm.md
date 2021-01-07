@@ -15,12 +15,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurecli, devx-track-azurepowershell, contperf-fy21q2
-ms.openlocfilehash: e7a8f54abbadb63c870c4d92843699c67f59752c
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 393d0c69201f87ad7c96bd2f9a1f9f57df512e31
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505636"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964530"
 ---
 # <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>Регистрация SQL Server виртуальной машины с помощью расширения агента IaaS SQL
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "97505636"
 
 Чтобы зарегистрировать виртуальную машину SQL Server с расширением, вам потребуется: 
 
-- [Подписка Azure](https://azure.microsoft.com/free/)
+- [Подписка Azure](https://azure.microsoft.com/free/).
 - Модель ресурсов Azure — это [Виртуальная машина Windows Server 2008 (или более поздняя)](../../../virtual-machines/windows/quick-create-portal.md) с [SQL Server 2008 (или более поздней)](https://www.microsoft.com/sql-server/sql-server-downloads) , развернутая в общедоступном облаке или Azure для государственных организаций 
 - Последняя версия [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell (5,0 минимум)](/powershell/azure/install-az-ps). 
 
@@ -188,6 +188,9 @@ $sqlvm.SqlManagementType
 ## <a name="upgrade-to-full"></a>Обновить до полной версии  
 
 SQL Server виртуальные машины, которые зарегистрировали расширение в *упрощенном* режиме, могут выполнить обновление до _полной_ версии с помощью портал Azure, Azure CLI или Azure PowerShell. Виртуальные машины SQL Server в режиме _NoAgent_ можно обновить до _полного_ режима после обновления операционной системы до Windows 2008 R2 или выше. Переход на использование более ранней версии невозможен. вам потребуется [отменить регистрацию](#unregister-from-extension) SQL Server виртуальной машины из расширения агента IaaS SQL. При этом будет удален _ресурс_ **виртуальной машины SQL**, но не фактическая виртуальная машина. 
+
+> [!NOTE]
+> При обновлении режима управления для расширения SQL IaaS до полного перезапуска будет перезапущена служба SQL Server. В некоторых случаях перезагрузка может привести к тому, что имена субъектов-служб (SPN), связанные со службой SQL Server, будут изменены на неправильную учетную запись пользователя. При наличии проблем с подключением после обновления режима управления до полной [Отмените регистрацию и повторно зарегистрируйте имена участников-служб](/sql/database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections).
 
 
 ### <a name="azure-portal"></a>Портал Azure

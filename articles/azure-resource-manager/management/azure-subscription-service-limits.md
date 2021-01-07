@@ -3,12 +3,12 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 182df937ae5c0194aecfbe20b5962b44b363c708
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 20de08ee30deae74954f2857b4de756b8cf46f08
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934482"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964201"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -148,7 +148,7 @@ ms.locfileid: "97934482"
 
 ## <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
 
-### <a name="alerts"></a>Предупреждения
+### <a name="alerts"></a>видны узлы
 
 [!INCLUDE [monitoring-limits](../../../includes/azure-monitor-limits-alerts.md)]
 
@@ -175,6 +175,10 @@ ms.locfileid: "97934482"
 ## <a name="azure-policy-limits"></a>Ограничения политики Azure
 
 [!INCLUDE [policy-limits](../../../includes/azure-policy-limits.md)]
+
+## <a name="azure-role-based-access-control-limits"></a>Ограничения управления доступом на основе ролей в Azure
+
+[!INCLUDE [role-based-access-control-limits](../../../includes/role-based-access-control/limits.md)]
 
 ## <a name="azure-signalr-service-limits"></a>Ограничения службы Azure SignalR
 
@@ -339,10 +343,6 @@ ms.locfileid: "97934482"
 ## <a name="notification-hubs-limits"></a>Ограничения концентраторов уведомлений
 
 [!INCLUDE [notification-hub-limits](../../../includes/notification-hub-limits.md)]
-
-## <a name="azure-role-based-access-control-limits"></a>Ограничения управления доступом на основе ролей в Azure
-
-[!INCLUDE [role-based-access-control-limits](../../../includes/role-based-access-control-limits.md)]
 
 ## <a name="service-bus-limits"></a>Ограничения служебной шины
 

@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 12/09/2020
 ms.author: rolyon
-ms.openlocfilehash: 06a9a955e8a963f94b1885abf5a920cb96c01940
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: adb3691625d6cdde03c803480ae948bb1911cc7d
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007488"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964377"
 ---
-# <a name="list-azure-role-assignments-using-the-azure-portal"></a>Вывод списка назначений ролей Azure с помощью портал Azure
+# <a name="list-azure-role-assignments-using-the-azure-portal"></a>Вывод списка назначений ролей Azure с помощью портала Azure.
 
-[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] В этой статье описывается, как вывести список назначений ролей с помощью портал Azure.
+[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control/definition-list.md)] В этой статье описывается, как вывести список назначений ролей с помощью портал Azure.
 
 > [!NOTE]
 > Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
@@ -83,7 +83,7 @@ ms.locfileid: "97007488"
 
 1. Щелкните вкладку **Проверить доступ**.
 
-    ![Управление доступом к группе ресурсов — вкладка проверки доступа](./media/role-assignments-list-portal/rg-access-control-check-access.png)
+    ![Управление доступом к группе ресурсов — вкладка "Проверить доступ"](./media/role-assignments-list-portal/rg-access-control-check-access.png)
 
 1. В списке **найти** выберите пользователя, группу, субъект-службу или управляемое удостоверение, для которого требуется проверить доступ.
 
@@ -93,11 +93,11 @@ ms.locfileid: "97007488"
 
 1. Выберите субъект безопасности, чтобы открыть область **Назначения**.
 
-    На этой панели можно увидеть доступ для выбранного субъекта безопасности в этой области и унаследовать его в этой области. Назначения в дочерних областях не перечисляются. Вы увидите следующие назначения:
+    На этой панели вы можете просмотреть права доступа выбранного субъекта безопасности в этой области и унаследованные от этой области. Назначения в дочерних областях не указаны. Отобразятся следующие назначения:
 
-    - Назначения ролей добавлены с помощью Azure RBAC.
-    - Запрещает Добавление назначений с помощью схем Azure или управляемых приложений Azure.
-    - Классические администраторы служб или назначения Co-Administrator для классических развертываний. 
+    - Назначения ролей, добавленные с помощью Azure RBAC.
+    - Назначения запрета, добавленные с помощью Azure Blueprints или управляемых приложений Azure.
+    - Назначения классического администратора службы или соадминистратора для классических развертываний. 
 
     ![Область назначений](./media/shared/rg-check-access-assignments-user.png)
 

@@ -7,11 +7,11 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: 26efa840bacd3ee542816cf861cf2ef586b0582f
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 88fb9c823df6ae5df345911ccce1c579009fba02
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 01/07/2021
 ms.locfileid: "96780218"
 ---
 # <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
@@ -27,12 +27,11 @@ ms.locfileid: "96780218"
 ||[Azure Data Explorer](register-scan-azure-data-explorer.md)|Да| Да| Да| Да| Да| Да|
 ||[Azure Data Lake Storage 1-го поколения](register-scan-adls-gen1.md)|Да| Да| Да| Да| Да| Да|
 ||[Azure Data Lake Storage 2-го поколения](register-scan-adls-gen2.md)|Да| Да| Да| Да| Да| Да|
-||[База данных SQL Azure](register-scan-azure-sql-database.md)|Да| Да| Нет| Да| Да| Да|
-||[Управляемый экземпляр Базы данных SQL Azure](register-scan-azure-sql-database-managed-instance.md)|Да| Да| Нет| Да| Да| Да|
-||[Azure синапсе Analytics (ранее — хранилище данных SQL)](register-scan-azure-synapse-analytics.md)|Да| Да| Нет| Да| Да| Да|
-|База данных|[SQL Server](register-scan-on-premises-sql-server.md)|Да| Да| Нет| Да| Да| Да|
-||[Teradata (предварительная версия)](register-scan-teradata-source.md)|Да| Да| Нет| Нет| Нет| Да|
-|Power BI|[Power BI](register-scan-power-bi-tenant.md)|Да| Да| Нет| Нет| Нет| Да|
+||[База данных SQL Azure](register-scan-azure-sql-database.md)|Да| Да| нет| Да| Да| Да|
+||[Управляемый экземпляр Базы данных SQL Azure](register-scan-azure-sql-database-managed-instance.md)|Да| Да| нет| Да| Да| Да|
+||[Azure синапсе Analytics (ранее — хранилище данных SQL)](register-scan-azure-synapse-analytics.md)|Да| Да| нет| Да| Да| Да|
+|База данных|[SQL Server](register-scan-on-premises-sql-server.md)|Да| Да| нет| Да| Да| Да|
+|Power BI|[Power BI](register-scan-power-bi-tenant.md)|Да| Да| нет| нет| нет| Да|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

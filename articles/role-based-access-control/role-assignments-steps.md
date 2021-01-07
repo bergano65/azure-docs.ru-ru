@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
-ms.openlocfilehash: 56b6638462acaf43b6353787495e5b7993acb413
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 565b84603a14452dd2ec49f8cf61da128503bc03
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648282"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964258"
 ---
 # <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] В этой статье описываются общие действия по добавлению назначения ролей с помощью [портал Azure](role-assignments-portal.md), [Azure PowerShell](role-assignments-powershell.md), [Azure CLI](role-assignments-cli.md)или [REST API](role-assignments-rest.md).
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] В этой статье описываются общие действия по добавлению назначения ролей с помощью [портал Azure](role-assignments-portal.md), [Azure PowerShell](role-assignments-powershell.md), [Azure CLI](role-assignments-cli.md)или [REST API](role-assignments-rest.md).
 
 ## <a name="step-1-determine-who-needs-access"></a>Шаг 1. Определение пользователей, которым требуется доступ
 
