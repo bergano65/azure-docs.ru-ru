@@ -9,12 +9,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: sstein
 ms.date: 06/04/2020
-ms.openlocfilehash: cfcdd143a26d36ed3c4646122fce7c19c41976d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 44a37a912c5c7a882d21631b8ce2da2c7ba9c05e
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448848"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967707"
 ---
 # <a name="request-quota-increases-for-azure-sql-database-and-sql-managed-instance"></a>Увеличение квот запросов для базы данных SQL Azure и SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,15 +33,15 @@ ms.locfileid: "91448848"
 
     ![Создание нового запроса на поддержку](./media/quota-increase-request/new-support-request.png)
 
-1. В качестве **типа проблемы**выберите **пределы службы и подписки (квоты)**.
+1. В качестве **типа проблемы** выберите **пределы службы и подписки (квоты)**.
 
    ![Выбор типа проблемы](./media/quota-increase-request/select-quota-issue-type.png)
 
-1. В поле **Подписка**выберите подписку, для которой необходимо увеличить квоту.
+1. В поле **Подписка** выберите подписку, для которой необходимо увеличить квоту.
 
    ![Выберите подписку для повышения квоты](./media/quota-increase-request/select-subscription-support-request.png)
 
-1. В поле **тип квоты**выберите один из следующих типов квот:
+1. В поле **тип квоты** выберите один из следующих типов квот:
 
    - **База данных SQL** для квот эластичных баз данных и пулов.
    - **Управляемый экземпляр базы данных SQL** для управляемых экземпляров.
@@ -105,20 +105,22 @@ ms.locfileid: "91448848"
 
 1. В списке **выберите расположение** выберите используемый регион Azure. Квота для каждой подписки в каждом регионе.
 
-1. Введите **модель покупки**и **ожидаемые сведения о потреблении** .
+1. Введите **модель покупки** и **ожидаемые сведения о потреблении** .
 
    ![Доступ к региону запроса](./media/quota-increase-request/quota-request.png)
 
-### <a name="enable-m-series-access-to-a-region"></a><a id="mseries"></a> Включение доступа серии M к региону
+<!--
+### <a id="mseries"></a> Enable M-series access to a region
 
-Чтобы включить оборудование серии M для подписки и региона, необходимо открыть запрос на поддержку.
+To enable M-series hardware for a subscription and region, a support request must be opened.
 
-1. Выберите тип квоты **доступа к региону серии M** .
+1. Select the **M-series region access** quota type.
 
-1. В списке **выберите расположение** выберите используемый регион Azure. Квота для каждой подписки в каждом регионе.
+1. In the **Select a location** list, select the Azure region to use. The quota is per subscription in each region.
 
 
-   ![Запрос доступа к региону M-Series](./media/quota-increase-request/quota-m-series.png)
+   ![Request M-series region access](./media/quota-increase-request/quota-m-series.png)
+-->
 
 ## <a name="sql-managed-instance-quota-type"></a><a id="sqlmiquota"></a> Тип квоты SQL Управляемый экземпляр
 

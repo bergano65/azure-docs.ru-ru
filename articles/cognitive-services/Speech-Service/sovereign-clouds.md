@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.custom: references_regions
-ms.date: 12/26/2020
+ms.date: 01/07/2021
 ms.author: alexeyo
-ms.openlocfilehash: a1c3fcf868af76865eec9fa2be4f0fdb58074867
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 539ea6f80604eabdbbe56a3280cf5ddb367c0439
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964462"
+ms.locfileid: "97966789"
 ---
 # <a name="speech-services-in-sovereign-clouds"></a>Речевые службы в независимых облаках
 
@@ -41,15 +41,7 @@ ms.locfileid: "97964462"
   - Нейронный Voice
   - Custom Voice (Пользовательские голосовые модели)
 - **Поддерживаемые языки:**
-  - Арабский (AR-*)
-  - Китайский (zh-*)
-  - Английский (en-*)
-  - Французский (fr-*)
-  - Немецкий (de-*)
-  - Хинди (Hi-IN)
-  - Корейский (ko-KR)
-  - Русский (ru-RU)
-  - Испанский (ES-*)
+  - Список поддерживаемых языков см. [здесь](language-support.md) .
 
 ### <a name="endpoint-information"></a>Сведения о конечных точках
 

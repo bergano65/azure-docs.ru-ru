@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 1bbc3b3cd755aabd348a238ad65cda132b9a7547
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: c32f90221a73d04fd6c54c8332826232d0e6a6f3
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746615"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968540"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Использование Spark & средств Hive для Visual Studio Code
 
@@ -269,7 +269,7 @@ Spark & Hive Tools можно установить на платформах, 
 
 > [!NOTE]
 >
-> ["MS-python >= версия 2020.5.78807 не поддерживается в этом экстенте"](#issues-changed) , разрешена. Теперь можно использовать последнюю версию MS-Python.
+> ["MS-python >= версия 2020.5.78807 не поддерживается в этом расширении"](#issues-changed) , разрешена. Обновите **MS-Python** до **последней версии** .
 
 ## <a name="submit-pyspark-batch-job"></a>Отправка пакетного задания PySpark
 
@@ -353,7 +353,7 @@ Spark & Hive Tools можно установить на платформах, 
   
   **Текст запроса**
 
-  | name | description | type |
+  | name | description | тип |
   | --- | --- | --- |
   | файл | Файл, содержащий приложение для выполнения | Путь (обязательно) |
   | proxyUser | Пользователь, олицетворяемый при выполнении задания | Строка |
@@ -374,7 +374,7 @@ Spark & Hive Tools можно установить на платформах, 
 
   **Текст ответа** Созданный объект пакета.
 
-  | name | description | type |
+  | name | description | тип |
   | --- | ---| --- |
   | ID | Идентификатор сеанса | Int |
   | appId | Идентификатор приложения для этого сеанса | Строка |
@@ -491,7 +491,7 @@ Spark & Hive Tools можно установить на платформах, 
 
 ## <a name="issues-changed"></a>Измененные проблемы
 
-Для этой проблемы "MS-Python >= версия 2020.5.78807 не поддерживается в этом экстенте". Теперь можно использовать **последнюю версию MS-Python** .
+Для этой проблемы "MS-Python >= версия 2020.5.78807 не поддерживается в этом расширении", обновите **MS-Python** до **последней версии** сейчас.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

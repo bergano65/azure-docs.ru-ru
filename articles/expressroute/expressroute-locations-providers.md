@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 01/05/2021
 ms.author: duau
-ms.openlocfilehash: 09d5b76dac7daf621d5c21bd71f5b2bb037ffa4d
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: f808b12fdb33342d30f1a3ce5b6022bd068a7fa1
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913096"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968030"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -124,7 +124,7 @@ ms.locfileid: "97913096"
 | **Осло** | [DigiPlex Ulven](https://www.digiplex.com/locations/oslo-datacentre) | 1 | Восточная Норвегия; | 10G, 100G | Глобалконнект, Orange, Telenor, оператор Телиа |
 | **Париж** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | 1 | Центральная Франция | 10G, 100G | Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Equinix, в облаке, Interxion, Жагуар Network, оранжевый, Телиа, Zayo |
 | **Перт** | [NextDC P1](https://www.nextdc.com/data-centres/p1-perth-data-centre) | 2 | Недоступно | 10G | Megaport, NextDC |
-| **Phoenix** | [Еджеконнекс PHX01](https://www.edgeconnex.com/locations/north-america/phoenix-az/) | 1 | Недоступно | 10G | |
+| **Phoenix** | [Еджеконнекс PHX01](https://www.edgeconnex.com/locations/north-america/phoenix-az/) | 1 | Недоступно | 10G, 100G | |
 | **Квебек** | [Vantage](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | 1 | Восточная Канада | Недоступно | Bell Canada, Megaport |
 | **Куеретаро (Мексика)** | [Кио сети QR01](https://www.kionetworks.com/es-mx/) | 4 | Недоступно | 10G | Transtelco|
 | **куинци** | [Сабэй Datacenter — создание](https://sabeydatacenters.com/data-center-locations/central-washington-data-centers/quincy-data-center) | 1 | западная часть США 2 | 10G, 100G | | 

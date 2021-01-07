@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 12/30/2020
+ms.date: 01/07/2021
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: e6591762ed6a7e2b462a209730276f3198d86ae8
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: 68547b8fb673cd54b7c21963ede122553bbbc390
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97821474"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967129"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок с соединителями Фабрики данных Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "97821474"
 
 - **Решение**. В строке подключения MongoDB добавьте параметр **uuidRepresentation=standard**. Дополнительные сведения см. в разделе о [строке подключения MongoDB](connector-mongodb.md#linked-service-properties).
             
-## <a name="azure-cosmos-db-sql-api"></a>Azure Cosmos DB (SQL API)
+## <a name="azure-cosmos-db-sql-api"></a>Azure Cosmos DB (API SQL)
 
 ### <a name="error-code--cosmosdbsqlapioperationfailed"></a>Код ошибки: Космосдбсклапиоператионфаилед
 
@@ -458,34 +458,15 @@ ms.locfileid: "97821474"
 - **Причина**: ошибка при обращении к Azure синапсе Analytics при выполнении запросов к внешней таблице в службе хранилища Azure.
 
 - **Решение**. Выполните тот же запрос в SSMS и проверьте, отображается ли тот же результат. Если да, отправьте запрос в службу поддержки в Azure синапсе Analytics и укажите имя сервера и базы данных Azure синапсе Analytics для дальнейшего устранения неполадок.
-            
-
-### <a name="low-performance-when-load-data-into-azure-sql"></a>Низкая производительность при загрузке данных в SQL Azure
-
-- **Симптомы**. при копировании данных в в Azure SQL происходит снижение скорости работы.
-
-- **Причина**. Основная причина проблемы в основном инициируется узким местом на стороне Azure SQL. Ниже приведены некоторые возможные причины.
-
-    - Уровень базы данных Azure недостаточно высок.
-
-    - Использование DTU в базе данных Azure близко к 100%. Вы можете [отслеживать производительность](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) и обновлять уровень базы данных.
-
-    - Индексы заданы неправильно. Удалите все индексы перед загрузкой данных и создайте их повторно после завершения загрузки.
-
-    - WriteBatchSize недостаточно велик, чтобы вместить размер строки схемы. Попробуйте увеличить свойство проблемы.
-
-    - Вместо использования массовых отступов используется хранимая процедура, которая, как ожидается, может ухудшить производительность. 
-
-- **Решение**. см. сведения о [производительности действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting) ТСГ.
 
 
 ### <a name="performance-tier-is-low-and-leads-to-copy-failure"></a>Низкий уровень производительности, что приводит к сбою копирования
 
-- **Симптомы**: при копировании данных в SQL Azure произошло следующее сообщение об ошибке: `Database operation failed. Error message from database execution : ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.`
+- **Симптомы**: при копировании данных в базу данных SQL Azure произошло следующее сообщение об ошибке: `Database operation failed. Error message from database execution : ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.`
 
-- **Причина**: используется Azure SQL S1, что приводит к ограничениям ввода-вывода в таком случае.
+- **Причина**: используется база данных SQL Azure S1, а в таком случае — ограничения на ввод-вывод.
 
-- **Решение**. чтобы устранить проблему, обновите уровень производительности SQL Azure. 
+- **Решение**. чтобы устранить проблему, обновите уровень производительности базы данных SQL Azure. 
 
 
 ### <a name="sql-table-cannot-be-found"></a>Не удается найти таблицу SQL 
@@ -596,7 +577,7 @@ ms.locfileid: "97821474"
 
 ### <a name="error-code--dynamicsinvalidtargetformultitargetlookupfield"></a>Код ошибки: Динамиксинвалидтаржетформултитаржетлукупфиелд
 
-- **Сообщение.** `The provided target: '%targetName;' is not a valid target of field: '%fieldName;'. Valid targets are: '%validTargetNames;"`
+- **Сообщение**: `The provided target: '%targetName;' is not a valid target of field: '%fieldName;'. Valid targets are: '%validTargetNames;"`
 
 - **Причина**: неправильное имя сущности указано в качестве целевой сущности для поля подстановки с несколькими целевыми адресами.
 
@@ -619,38 +600,13 @@ ms.locfileid: "97821474"
 - **Причина**: сервер Dynamics находится в нестабильном или недоступном состоянии, или в сети возникли проблемы.
 
 - **Рекомендация**: Проверьте подключение к сети или проверьте журнал сервера Dynamics, чтобы получить дополнительные сведения. Обратитесь в службу поддержки Dynamics для получения дополнительной помощи.
-
-
-## <a name="excel-format"></a>Формат Excel
-
-### <a name="timeout-or-slow-performance-when-parsing-large-excel-file"></a>Время ожидания или снижение производительности при анализе большого файла Excel
-
-- **Симптомы**:
-
-    - При создании набора данных Excel и импорте схемы из подключения/хранилища, просмотра данных, списка или обновления листов может возникнуть ошибка времени ожидания, если файл Excel имеет большой размер.
-
-    - При использовании действия копирования для копирования данных из большого файла Excel (>= 100 МБ) в другое хранилище данных может наблюдаться снижение производительности или проблем с производительностью.
-
-- **Причина**. 
-
-    - Для таких операций, как импорт схемы, предварительный просмотр данных и вывод списка листов в наборе данных Excel, время ожидания равно 100 s и статическому. Для большого файла Excel эти операции могут не завершаться в течение времени ожидания.
-
-    - Действие копирования ADF считывает весь файл Excel в память, а затем находит указанный лист и ячейки для чтения данных. Это поведение вызвано тем, что в основном ADF-файле пакета SDK используется.
-
-- **Решение**. 
-
-    - Для импорта схемы можно создать файл примера меньшего размера, который является подмножеством исходного файла, и выбрать «импортировать схему из образца файла» вместо «импортировать схему из подключения или хранилища».
-
-    - Для листа списка в раскрывающемся списке лист можно щелкнуть "Изменить" и ввести вместо этого имя или индекс листа.
-
-    - Чтобы скопировать большой файл Excel (>100 МБ) в другое хранилище, можно использовать источник Excel потока данных, который прочитает и выполняет потоковую передачу.
     
 
 ## <a name="ftp"></a>FTP
 
 ### <a name="error-code--ftpfailedtoconnecttoftpserver"></a>Код ошибки: Фтпфаиледтоконнекттофтпсервер
 
-- **Сообщение.** `Failed to connect to FTP server. Please make sure the provided server informantion is correct, and try again.`
+- **Сообщение**: `Failed to connect to FTP server. Please make sure the provided server informantion is correct, and try again.`
 
 - **Причина**: неверный тип связанной службы может использоваться для FTP-сервера, например для подключения к FTP-серверу с помощью связанной службы SFTP.
 
@@ -672,7 +628,7 @@ ms.locfileid: "97821474"
 
 ### <a name="error-code-argumentoutofrangeexception"></a>Код ошибки: ArgumentOutOfRangeException
 
-- **Сообщение.** `Hour, Minute, and Second parameters describe an un-representable DateTime.`
+- **Сообщение**: `Hour, Minute, and Second parameters describe an un-representable DateTime.`
 
 - **Причина**. в ADF значения DateTime поддерживаются в диапазоне от 0001-01-01 00:00:00 до 9999-12-31 23:59:59. Однако Oracle поддерживает более широкий диапазон значений DateTime (например, BC век или min/sec>59), что приводит к сбою в ADF.
 

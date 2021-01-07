@@ -2,19 +2,21 @@
 title: Перенос конфигурации пула пакетной службы из облачных служб на виртуальные машины
 description: Узнайте, как обновить конфигурацию пула до последней и рекомендуемой конфигурации.
 ms.topic: how-to
-ms.date: 1/4/2021
-ms.openlocfilehash: 52e1762dc8e81b3eb7e1bce388d91dfd2c76191a
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 1/6/2021
+ms.openlocfilehash: b6f4184f7c4f133f74cb3157638b1621dad25fda
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937710"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97969033"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Перенос конфигурации пула пакетной службы из облачных служб на виртуальные машины
 
 Пулы пакетной службы можно создавать с помощью [cloudServiceConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#cloudserviceconfiguration) или [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#virtualmachineconfiguration). "virtualMachineConfiguration" — Рекомендуемая конфигурация, так как она поддерживает все возможности пакета. пулы "cloudServiceConfiguration" не поддерживают все функции, и новые функции не планируются.
 
-Если вы используете пулы "cloudServiceConfiguration", настоятельно рекомендуется перейти к использованию пулов "virtualMachineConfiguration". В этой статье описывается, как перейти к рекомендуемой конфигурации "virtualMachineConfiguration".
+Если вы используете пулы "cloudServiceConfiguration", настоятельно рекомендуется перейти к использованию пулов "virtualMachineConfiguration". Это позволит вам воспользоваться всеми возможностями пакетной службы, такими как расширенный [Выбор серии виртуальных машин](batch-pool-vm-sizes.md), виртуальных машин Linux, [контейнеров](batch-docker-container-workloads.md), [Azure Resource Manager виртуальных сетей](batch-virtual-network.md)и [шифрования дисков узла](disk-encryption.md).
+
+В этой статье описывается, как выполнить миграцию на "virtualMachineConfiguration".
 
 ## <a name="new-pools-are-required"></a>Требуются новые пулы
 
