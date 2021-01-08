@@ -2,24 +2,24 @@
 title: Анализ данных JSON и AVRO в Azure Stream Analytics
 description: В этой статье описывается, как работать со сложными типами данных, такими как массивы, данные в формате JSON и CSV.
 ms.service: stream-analytics
-author: mamccrea
-ms.author: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.topic: conceptual
 ms.date: 01/29/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 6c2eb4225cb014b3251d12470e4e9827150a5cf2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: f6cb131fb3ff3cab4122aac5e1c6960dee4f8421
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123359"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012246"
 ---
 # <a name="parse-json-and-avro-data-in-azure-stream-analytics"></a>Анализ данных JSON и AVRO в Azure Stream Analytics
 
 Azure Stream Analytics поддерживает обработку событий в форматах CSV, JSON и Avro. Данные JSON и Avro могут быть структурированными и содержать сложные типы, такие как вложенные объекты (записи) и массивы. 
 
 >[!NOTE]
->Файлы AVRO, созданные функцией записи концентратора событий, используют конкретный формат, который требует функцию *пользовательского десериализатора* . Дополнительные сведения см. в разделе [Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET](./custom-deserializer-examples.md).
+>Файлы AVRO, созданные функцией записи концентратора событий, используют конкретный формат, который требует функцию *пользовательского десериализатора*. Дополнительные сведения см. в разделе [Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET](./custom-deserializer-examples.md).
 >
 >Десериализация Stream Analytics AVRO не поддерживает тип Map. Stream Analytics не может считывать большие двоичные объекты записи EventHub, так как в записи EventHub используется Map.
 
@@ -91,7 +91,7 @@ FROM input
 
 Используйте функцию [GetRecordPropertyValue](/stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics), если имя свойства является переменной. Это позволяет создавать динамические запросы без заданных имен свойств.
 
-Например, представьте пример потока данных, который **нужно соединить с эталонными данными** , содержащими пороговые значения для каждого датчика устройства. Ниже приведен фрагмент кода с такими эталонными данными.
+Например, представьте пример потока данных, который **нужно соединить с эталонными данными**, содержащими пороговые значения для каждого датчика устройства. Ниже приведен фрагмент кода с такими эталонными данными.
 
 ```json
 {
@@ -121,7 +121,7 @@ WHERE
     GetRecordPropertyValue(input.SensorReadings, thresholds.SensorName) > thresholds.Value
 ```
 
-**GetRecordPropertyValue** выбирает свойство в *SensorReadings* , имя которого совпадает с именем свойства, поступающего от эталонных данных. Затем извлекается связанное значение из *SensorReadings* .
+**GetRecordPropertyValue** выбирает свойство в *SensorReadings*, имя которого совпадает с именем свойства, поступающего от эталонных данных. Затем извлекается связанное значение из *SensorReadings*.
 
 Результат:
 
@@ -179,7 +179,7 @@ SELECT DeviceID, PropertyValue AS Humidity INTO HumidityOutput FROM Stage0 WHERE
 |12345|{"key" : "value1"}|
 |54321|{"key" : "value2"}|
 
-Можно выполнить синтаксический анализ записи JSON в столбце *Данные* , написав простую определяемую пользователем функцию JavaScript.
+Можно выполнить синтаксический анализ записи JSON в столбце *Данные*, написав простую определяемую пользователем функцию JavaScript.
 
 ```javascript
 function parseJson(string) {
@@ -207,7 +207,7 @@ return JSON.parse(string);
 
 Тип данных "массив" представляет собой упорядоченную коллекцию значений. Ниже приведены типичные операции со значениями массивов. В этих примерах используются функции [GetArrayElement](/stream-analytics-query/getarrayelement-azure-stream-analytics), [GetArrayElements](/stream-analytics-query/getarrayelements-azure-stream-analytics), [GetArrayLength](/stream-analytics-query/getarraylength-azure-stream-analytics) и оператор [APPLY](/stream-analytics-query/apply-azure-stream-analytics).
 
-Ниже приведен пример одного события. `CustomSensor03` и `SensorMetadata` принадлежат к типу **array** :
+Ниже приведен пример одного события. `CustomSensor03` и `SensorMetadata` принадлежат к типу **array**:
 
 ```json
 {

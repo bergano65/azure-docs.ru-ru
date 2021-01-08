@@ -5,19 +5,19 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 11/28/2018
+ms.date: 01/07/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 7df96f34ee408c0a6d26b27adbac7351c9ab937f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84c8275b7a7257530a735e8612047ef42e2f8a7c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89393094"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011345"
 ---
 # <a name="reset-a-failed-expressroute-circuit"></a>Сброс канала ExpressRoute после сбоя
 
-Если операция на канале ExpressRoute не выполнена, канал может перейти в состояние сбоя. Эта статья поможет вам сбросить канал Azure ExpressRoute после сбоя.
+Если операция с каналом ExpressRoute не завершается успешно, канал может переключиться в состояние Failed. Эта статья поможет вам сбросить неисправный канал ExpressRoute Azure.
 
 [!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
@@ -50,6 +50,6 @@ ms.locfileid: "89393094"
 
 Теперь канал должен быть работоспособным. Откройте запрос в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), если канал по-прежнему находится в состоянии сбоя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Отправьте запрос в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , если у вас по-прежнему возникают проблемы.
+Если у вас по-прежнему возникают проблемы, откройте запрос в службу поддержки [Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) .

@@ -1,142 +1,149 @@
 ---
 title: Подключение ServiceNow с Соединитель управления ИТ-услугами
-description: В этой статье содержатся сведения о ServiceNow с Соединитель управления ИТ-услугами (ITSMC) в Azure Monitor для централизованного мониторинга рабочих элементов ITSM и управления ими.
+description: Узнайте, как подключиться к ServiceNow с помощью Соединитель управления ИТ-услугами (ITSMC) в Azure Monitor, чтобы централизованно отслеживать рабочие элементы ITSM и управлять ими.
 ms.subservice: logs
 ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 662c36e4f0082c376a6e250e9a0885f0cd225964
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 7d1b4b3542f6914d413a5e29e57baa15e7a53346
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97729723"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012790"
 ---
 # <a name="connect-servicenow-with-it-service-management-connector"></a>Подключение ServiceNow с Соединитель управления ИТ-услугами
 
-В этой статье содержатся сведения о настройке подключения между экземпляром ServiceNow и Соединитель управления ИТ-услугами (ITSMC) в Log Analytics для централизованного управления рабочими элементами.
-
-В разделах ниже приведены сведения о подключении экземпляра ServiceNow к ITSMC в Azure.
+В этой статье показано, как настроить подключение между экземпляром ServiceNow и Соединитель управления ИТ-услугами (ITSMC) в Log Analytics, чтобы можно было централизованно управлять рабочими элементами управления ИТ-службами (ITSM).
 
 ## <a name="prerequisites"></a>Предварительные требования
-Выполните указанные ниже предварительные требования.
-- ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](./itsmc-definition.md#add-it-service-management-connector) (Добавление решения "Соединитель управления ИТ-услугами").
-- Поддерживаемые версии ServiceNow: Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки, Geneva.
-- Сегодня оповещения, отправленные из Azure Monitor могут быть созданы в ServiceNow один из следующих элементов: события, инциденты или оповещения.
-> [!NOTE]
-> ITSMC поддерживает только официальное предложение SaaS из Service Now. Закрытые развертывания Service Now не поддерживаются. 
+Убедитесь, что выполнены следующие предварительные требования для подключения.
 
-**Администраторы ServiceNow должны выполнить в экземплярах ServiceNow следующие действия:**
-- Создать идентификатор и секрет клиента для продукта ServiceNow. Дополнительные сведения о том, как создать идентификатор и секрет клиента, см. в соответствующих разделах:
+### <a name="itsmc-installation"></a>Установка ITSMC
 
-    - [Настройка OAuth для Орландо](https://docs.servicenow.com/bundle/orlando-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии New York](https://docs.servicenow.com/bundle/newyork-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии Madrid](https://docs.servicenow.com/bundle/madrid-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии London](https://docs.servicenow.com/bundle/london-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии Kingston](https://docs.servicenow.com/bundle/kingston-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии Jakarta](https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии Istanbul](https://docs.servicenow.com/bundle/istanbul-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии Helsinki](https://docs.servicenow.com/bundle/helsinki-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
-    - [Настройка OAuth для версии Geneva](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/security/task/t_SettingUpOAuth.html)
-> [!NOTE]
-> В рамках определения процедуры "Настройка OAuth" мы рекомендуем сделать следующее.
->
-> 1) **Продлите срок действия токена обновления до 90 дней (7 776 000 секунд).** В рамках процедуры [Настройка OAuth](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_SettingUpOAuth.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696739125&sdata=Q7mF6Ej8MCupKaEJpabTM56EDZ1T8vFVyihhoM594aA%3D&reserved=0) на этапе 2 необходимо следующее. [Создание конечной точки, чтобы клиенты могли получить доступ к экземпляру](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.servicenow.com%2Fbundle%2Fnewyork-platform-administration%2Fpage%2Fadminister%2Fsecurity%2Ftask%2Ft_CreateEndpointforExternalClients.html&data=02%7C01%7CNoga.Lavi%40microsoft.com%7C2c6812e429a549e71cdd08d7d1b148d8%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637208431696749123&sdata=hoAJHJAFgUeszYCX1Q%2FXr4N%2FAKiFcm5WV7mwR2UqeWA%3D&reserved=0). После определения конечной точки в колонке ServiceNow выполните поиск строки System OAuth (OAuth системы), а затем выберите Application Registry (Реестр приложений). Выберите имя OAuth, которое было определено, и продлите срок в поле Refresh token Lifespan (Срок действия токена обновления) до 7 776 000 (90 дней в секундах).
-> В конце нажмите кнопку "Обновить".
-> 2) **Мы рекомендуем реализовать внутреннюю процедуру, обеспечивающую постоянную активность подключения:** нужно обновлять токен в соответствии со сроком существования токена обновления. Обязательно выполните следующие операции до ожидаемого срока действия токена обновления (рекомендуется делать это за несколько дней до истечения срока).
->
->     1. [Завершите процесс синхронизации вручную для конфигурации соединителя ITSM](./itsmc-resync-servicenow.md).
->     2. Отмените старый токен обновления, так как использовать старые ключи не рекомендуется из соображений безопасности. В колонке ServiceNow выполните поиск строки System OAuth (OAuth системы), а затем выберите Manage Tokens (Управление токенами). Выберите старый токен в списке по имени OAuth и дате окончания срока действия.
-> ![Отображение определения OAuth системы](media/itsmc-connections/snow-system-oauth.png)
->     3. Щелкните "Отменить доступ" и "Отменить".
-
-- Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. [Подробнее](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 ).
-> [!NOTE]
-> ITSMC поддерживает только официальное пользовательское приложение для интеграции с Microsoft Log Analytics, которое скачивается из магазина ServiceNow. ITSMC не поддерживают прием кода на стороне ServiceNow или приложение, которое не является частью официального решения ServiceNow. 
-- Создать роль пользователя для интеграции в установленном приложении для пользователя. Дополнительные сведения о создании роли пользователя для интеграции см. [здесь](#create-integration-user-role-in-servicenow-app).
-
-## <a name="connection-procedure"></a>**Процедура подключения**
-Используйте следующую процедуру, чтобы создать подключение ServiceNow:
-
-
-1. На портале Azure перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**
-
-2.  В области **Источники данных рабочей области** щелкните **Подключения ITSM**.
-    ![Новое подключение](media/itsmc-connections/add-new-itsm-connection.png)
-
-3. Вверху справа щелкните **Добавить**.
-
-4. Укажите сведения, которые перечислены в следующей таблице, а затем щелкните **OK**, чтобы создать подключение.
-
+Сведения об установке ITSMC см. [в разделе Добавление решения соединитель управления ИТ-услугами](./itsmc-definition.md#add-it-service-management-connector).
 
 > [!NOTE]
-> Все эти параметры являются обязательными.
+> ITSMC поддерживает только официальное предложение SaaS (программное обеспечение как услуга) из ServiceNow. Частные развертывания ServiceNow не поддерживаются.
 
-| **Поле** | **Описание** |
-| --- | --- |
-| **Имя соединения**   | Введите имя экземпляра ServiceNow, который вы хотите подключить к ITSMC.  В Log Analytics это имя вам потребуется позже при настройке рабочих элементов в ITSM или подробном анализе журналов. |
-| **Тип партнера**   | Выберите **ServiceNow**. |
-| **Имя пользователя**   | Введите имя пользователя для интеграции, которое вы создали в приложении ServiceNow для подключения к ITSMC. Дополнительные сведения: [Создание роли пользователя для интеграции в приложении ServiceNow](#create-integration-user-role-in-servicenow-app).|
-| **Пароль**   | Введите пароль, связанный с этим именем пользователя. **Примечание.** Имя пользователя и пароль будут использоваться только для создания маркеров аутентификации. Они не сохраняются в службе ITSMC.  |
-| **URL-адрес сервера**   | Введите URL-адрес экземпляра ServiceNow, который вы хотите подключить к ITSMC. URL-адрес должен указывать на поддерживаемую версию SaaS с суффиксом .servicenow.com.|
-| **Идентификатор клиента**   | Введите созданный ранее идентификатор клиента, который вы хотите использовать для проверки подлинности OAuth2.  Дополнительные сведения о создании идентификатора и секрета клиента см.   на странице [установки OAuth](https://wiki.servicenow.com/index.php?title=OAuth_Setup). |
-| **Секрет клиента**   | Введите секрет клиента, созданный для этого идентификатора.   |
-| **Область синхронизации данных**   | Выберите рабочие элементы ServiceNow, которые вы хотите синхронизировать с Azure Log Analytics через ITSMC.  Выбранные значения импортируются в службу Log Analytics.   **Параметры:**  инциденты и запросы на изменения.|
-| **Синхронизация данных** | Введите число прошедших дней, которые будут учитываться при синхронизации. **Максимальное ограничение:** 120 дней. |
-| **Создание нового элемента конфигурации в решении ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. После выбора этого параметра ITSM создаст необходимые элементы (если они еще не созданы) как элементы конфигурации в поддерживаемой системе ITSM. **Параметр по умолчанию**: отключено. |
+### <a name="oauth-setup"></a>Установка OAuth
 
-![Подключение к ServiceNow](media/itsmc-connections/itsm-connection-servicenow-connection-latest.png)
+Поддерживаемые версии ServiceNow включают в себя Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки и Geneva.
 
-**После успешного подключения и синхронизации:**
+Администраторы ServiceNow должны создать идентификатор клиента и секрет клиента для своего экземпляра ServiceNow. При необходимости ознакомьтесь со следующими сведениями.
 
-- Выбранные рабочие элементы из экземпляра ServiceNow будут импортированы в службу Azure **Log Analytics**. Вы можете просмотреть сводку по этим рабочим элементам с помощью плитки соединителя управления ИТ-службами.
+- [Настройка OAuth для Орландо](https://docs.servicenow.com/bundle/orlando-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии New York](https://docs.servicenow.com/bundle/newyork-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии Madrid](https://docs.servicenow.com/bundle/madrid-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии London](https://docs.servicenow.com/bundle/london-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии Kingston](https://docs.servicenow.com/bundle/kingston-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии Jakarta](https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии Istanbul](https://docs.servicenow.com/bundle/istanbul-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии Helsinki](https://docs.servicenow.com/bundle/helsinki-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
+- [Настройка OAuth для версии Geneva](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/security/task/t_SettingUpOAuth.html)
 
-- Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также из оповещений Azure в этом экземпляре ServiceNow.
+В рамках настройки OAuth рекомендуется:
+
+1. [Создайте конечную точку для доступа клиентов к экземпляру](https://docs.servicenow.com/bundle/newyork-platform-administration/page/administer/security/task/t_CreateEndpointforExternalClients.html).
+
+1. Обновите срок действия маркера обновления:
+
+   1. В области **ServiceNow** найдите **System OAuth** и выберите **реестр приложений**. 
+   1. Выберите имя определенного OAuth и измените срок **жизни маркера обновления** на **7 776 000 с** (90 дней). 
+   1. Выберите **Обновить**. 
+
+1. Установите внутреннюю процедуру, чтобы убедиться, что подключение остается активным. Несколько дней до ожидаемого срока действия маркера обновления. выполните следующие операции:
+
+   1. [Завершите процесс синхронизации вручную для конфигурации СОЕДИНИТЕЛЯ ITSM](./itsmc-resync-servicenow.md).
+
+   1. Отозвать старый маркер обновления. Мы не рекомендуем хранить старые ключи в целях безопасности. 
+   
+      1. В области **ServiceNow** найдите **System OAuth** и выберите **Управление токенами**. 
+      
+      1. Выберите Старый токен из списка в соответствии с именем OAuth и датой окончания срока действия.
+
+         ![Снимок экрана, на котором показан список маркеров для OAuth.](media/itsmc-connections/snow-system-oauth.png)
+      1. Выберите отменить **доступ**  >  **отозвать**.
+
+## <a name="install-the-user-app-and-create-the-user-role"></a>Установка пользовательского приложения и создание роли пользователя
+
+Используйте следующую процедуру, чтобы установить пользовательское приложение службы и создать для него роль пользователя "Интеграция". Эти учетные данные будут использоваться для создания подключения ServiceNow в Azure.
 
 > [!NOTE]
-> В ServiceNow имеется ограничение скорости для запросов в час. Чтобы настроить ограничение, используйте его, определив "ограничение скорости для входящих REST API" в экземпляре ServiceNow.
+> ITSMC поддерживает только официальное пользовательское приложение для интеграции с Microsoft Log Analytics, которое загружается из магазина ServiceNow. ITSMC не поддерживает прием кода на стороне ServiceNow или в любом приложении, которое не является частью официального решения ServiceNow. 
 
-## <a name="create-integration-user-role-in-servicenow-app"></a>Создание роли пользователя для интеграции в приложении ServiceNow
-
-Выполните следующие действия:
-
-1. Посетите [магазин ServiceNow](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1) и установите **приложение для пользователя для интеграции Microsoft OMS и ServiceNow** в экземпляр ServiceNow.
+1. Посетите [магазин servicenow](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1) и установите **пользовательское приложение для servicenow и ИНТЕГРАЦИЮ с Microsoft OMS** в экземпляр servicenow.
    
    >[!NOTE]
-   >В рамках перехода с Microsoft Operations Management Suite (OMS) на Azure Monitor набор OMS теперь называется Log Analytics.     
-2. После установки перейдите на левую панель навигации экземпляра ServiceNow, найдите и выберите интегратор Microsoft OMS.  
-3. Щелкните **Installation Checklist** (Контрольный список установки).
+   >В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor OMS теперь называется Log Analytics.     
+2. После установки перейдите на левую панель навигации экземпляра ServiceNow, а затем найдите и выберите **Microsoft OMS Integrator**.  
+3. Выберите **Контрольный список установки**.
 
-   Если роль пользователя еще не создана, вы увидите состояние **Не завершено**.
+   Состояние отображается как  **не завершено** , так как роль пользователя еще не создана.
 
-4. В текстовых полях рядом с разделом **Создание пользователя для интеграции** введите имя пользователя, который может подключиться к ITSMC в Azure.
+4. В текстовом поле рядом с полем **создать пользователя интеграции** введите имя пользователя, который может подключаться к ITSMC в Azure.
 5. Введите пароль для этого пользователя и нажмите кнопку **ОК**.  
 
-> [!NOTE]
-> Эти учетные данные потребуются для подключения к ServiceNow в Azure.
+Созданный пользователь отобразится с назначенными ролями по умолчанию:
 
-Отобразится созданный пользователь с назначенными по умолчанию ролями.
-
-**Роли по умолчанию:**
 - personalize_choices;
 - import_transformer;
--   x_mioms_microsoft.user;
--   itil;
--   template_editor;
--   view_changer.
+- x_mioms_microsoft.user;
+- itil;
+- template_editor;
+- view_changer.
 
-После успешного создания пользователя состояние **проверки контрольного списка установки** изменится на "Завершено" и будут выведены дополнительные сведения о созданной для приложения роли пользователя.
+После успешного создания пользователя состояние **Контрольный список установки** переместится на **завершенный** и отобразит список сведений о роли пользователя, созданной для приложения.
 
 > [!NOTE]
-> Соединитель ITSM могут отправлять инциденты ServiceNow. Для этого на экземпляре ServiceNow не нужно устанавливать модули. Если в экземпляре ServiceNow используется модуль EventManagement и вы хотите создать события или предупреждения в ServiceNow с помощью соединителя, добавьте следующие роли для пользователя интеграции:
+> ITSMC может отсылать инциденты в ServiceNow без каких бы то ни было других модулей, установленных в вашем экземпляре ServiceNow. Если вы используете модуль используется в своем экземпляре ServiceNow и хотите создавать события или оповещения в ServiceNow с помощью соединителя, добавьте следующие роли для пользователя интеграции:
 > 
->    - evt_mgmt_integration;
->    - evt_mgmt_operator.  
+> - evt_mgmt_integration;
+> - evt_mgmt_operator.  
 
+## <a name="create-a-connection"></a>Создание подключения
+Используйте следующую процедуру для создания подключения ServiceNow.
+
+> [!NOTE]
+> Оповещения, отправляемые из Azure Monitor, могут создавать один из следующих элементов в ServiceNow: события, инциденты или оповещения. 
+
+1. В портал Azure перейдите ко **всем ресурсам** и найдите **ServiceDesk (йоурворкспаценаме)**.
+
+2. В разделе **Источники данных рабочей области** выберите **ITSM Connections (подключения**).
+
+   ![Снимок экрана, на котором показан выбор источника данных.](media/itsmc-connections/add-new-itsm-connection.png)
+
+3. В верхней части правой панели выберите **Добавить**.
+
+4. Укажите сведения, как описано в следующей таблице, а затем нажмите кнопку **ОК**.
+
+   | **Поле** | **Описание** |
+   | --- | --- |
+   | **Имя соединения**   | Введите имя экземпляра ServiceNow, который вы хотите подключить с помощью ITSMC. Это имя используется позже в Log Analytics при настройке рабочих элементов ITSM и просмотре подробной аналитики. |
+   | **Тип партнера**   | Выберите **ServiceNow**. |
+   | **URL-адрес сервера**   | Введите URL-адрес экземпляра ServiceNow, который вы хотите подключить к ITSMC. URL-адрес должен указывать на поддерживаемую версию SaaS с суффиксом *. servicenow.com*.|
+   | **Имя пользователя**   | Введите имя пользователя интеграции, созданное в приложении ServiceNow, для поддержки подключения к ITSMC.|
+   | **Пароль**   | Введите пароль, связанный с этим именем пользователя. **Примечание**. имя пользователя и пароль используются только для создания маркеров проверки подлинности. Они хранятся не в любом месте службы ITSMC.  |
+   | **Идентификатор клиента**   | Введите идентификатор клиента, который вы хотите использовать для проверки подлинности OAuth2, созданной ранее. Дополнительные сведения о создании идентификатора клиента и секрета см. в разделе [Настройка OAuth](https://wiki.servicenow.com/index.php?title=OAuth_Setup). |
+   | **Секрет клиента**   | Введите секрет клиента, созданный для этого идентификатора.   |
+   | **Область синхронизации данных (в днях)** | Введите число за последние дней, из которых должны быть данные. Ограничение составляет 120 дней. |
+   | **Рабочие элементы для синхронизации**   | Выберите рабочие элементы ServiceNow, которые вы хотите синхронизировать с Log Analytics Azure, с помощью ITSMC. Выбранные значения импортируются в Log Analytics. Параметры — это инциденты и запросы на изменение.|
+   | **Создание нового элемента конфигурации в продукте ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. Если этот параметр выбран, ITSMC создает элементы конфигурации (если они отсутствуют) в поддерживаемой системе ITSM. Она отключена по умолчанию. |
+
+![Снимок экрана с окнами и параметрами для добавления подключения ServiceNow.](media/itsmc-connections/itsm-connection-servicenow-connection-latest.png)
+
+После успешного подключения и синхронизации:
+
+- Выбранные рабочие элементы из экземпляра ServiceNow импортируются в Log Analytics. Сводку этих рабочих элементов можно просмотреть на плитке **соединитель управления ИТ-услугами** .
+
+- Инциденты можно создавать на основе оповещений Log Analytics или записей журнала, а также из оповещений Azure в этом экземпляре ServiceNow.
+
+> [!NOTE]
+> Для ServiceNow предусмотрено ограничение скорости запросов в час. Чтобы настроить ограничение, определите **REST API ограничения скорости для входящего трафика** в экземпляре ServiceNow.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор соединитель ITSM](itsmc-overview.md)
 * [Создание рабочих элементов ITSM из оповещений Azure](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts)
-* [Устранение неполадок с соединителем ITSM](./itsmc-resync-servicenow.md)
+* [Устранение неполадок в соединитель ITSM](./itsmc-resync-servicenow.md)

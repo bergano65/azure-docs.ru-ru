@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/05/2020
 ms.author: kenwith
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: fe18513bbfc69fb63f8b1b248b7cf02ad55b467d
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 462f60bbae9fd7b61993a2ccccd40fa5ca4ccc28
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027379"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012973"
 ---
 # <a name="reference-for-writing-expressions-for-attribute-mappings-in-azure-ad"></a>Справочник по написанию выражений для сопоставления атрибутов в Azure AD
 
@@ -326,8 +326,8 @@ ms.locfileid: "97027379"
 | **версию** |Обязательно |attribute |Атрибут с несколькими значениями для поиска |
 | **index** |Обязательный |Целое число | Индексирование элемента в строке с несколькими значениями|
 
-**Например**
-`Item([proxyAddresses], 1)`
+**Пример:** 
+ `Item([proxyAddresses], 1)` Возвращает второй элемент в атрибуте с несколькими значениями.
 
 ---
 ### <a name="join"></a>Join
@@ -376,8 +376,8 @@ ms.locfileid: "97027379"
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
 | **source** |Обязательно |Строка |Как правило, имя атрибута. |
-| **start** |Обязательно |Целое число |Индекс положения начала подстроки в **исходной** строке. Первый символ в строке будет иметь индекс 1, второй символ — индекс 2 и т. д. |
-| **length** |Обязательно |Целое число |Длина подстроки. Длина подстроки. Если она превышает размер строки **source**, функция возвращает подстроку от индекса **start** до конца строки **source**. |
+| **start** |Обязательно |целочисленный |Индекс положения начала подстроки в **исходной** строке. Первый символ в строке будет иметь индекс 1, второй символ — индекс 2 и т. д. |
+| **length** |Обязательно |целочисленный |Длина подстроки. Длина подстроки. Если она превышает размер строки **source**, функция возвращает подстроку от индекса **start** до конца строки **source**. |
 
 ---
 ### <a name="normalizediacritics"></a>NormalizeDiacritics
@@ -735,7 +735,7 @@ Replace([mailNickname], , "[a-zA-Z_]*", , "", , )
 * **Входные данные** (userPrincipalName): " John.Doe@contoso.com "
 * **Выходные данные**: " John.Doe@contoso.com "
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](../app-provisioning/user-provisioning.md)
 * [Настройка сопоставлений атрибутов для подготовки пользователей](../app-provisioning/customize-application-attributes.md)
 * [Фильтры области для подготовки пользователей](define-conditional-rules-for-provisioning-user-accounts.md)

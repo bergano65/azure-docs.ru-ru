@@ -13,12 +13,12 @@ ms.date: 04/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: 1f4e1def81fc79ec159ce6be825793a9bd8d0ce7
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: b29d8007ba7c6fb41209ad4f792069667416616b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286957"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011549"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Манифест приложения Azure Active Directory
 
@@ -33,10 +33,10 @@ ms.locfileid: "93286957"
 
 Чтобы настроить манифест приложения, выполните следующее.
 
-1. Перейдите на [портал Azure](https://portal.azure.com). Найдите и выберите службу **Azure Active Directory**.
+1. Перейдите к <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Найдите и выберите службу **Azure Active Directory**.
 1. Щелкните **Регистрация приложений**.
 1. Выберите приложение, которое вам нужно настроить.
-1. На странице **Обзор** выберите раздел **Манифест**. Откроется веб-редактор манифеста, который позволяет изменить манифест, не покидая портал. Также здесь можно выбрать команду **Скачать** , чтобы изменить манифест локально и применить к приложению обновленную версию с помощью команды **Отправить**.
+1. На странице **Обзор** выберите раздел **Манифест**. Откроется веб-редактор манифеста, который позволяет изменить манифест, не покидая портал. Также здесь можно выбрать команду **Скачать**, чтобы изменить манифест локально и применить к приложению обновленную версию с помощью команды **Отправить**.
 
 ## <a name="manifest-reference"></a>Справка по манифесту
 

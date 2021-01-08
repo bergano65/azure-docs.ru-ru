@@ -161,6 +161,6 @@
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/machine-learning/'
+      href: 'https://azure.microsoft.com/pricing/details/machine-learning-studio/'
     - name: Пользовательские нейронные сети (Net#)
       href: azure-ml-netsharp-reference-guide.md

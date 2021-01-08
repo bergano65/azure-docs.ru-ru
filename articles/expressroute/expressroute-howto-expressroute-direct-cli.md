@@ -5,19 +5,28 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 09/28/2020
+ms.date: 12/14/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7931ad9e55d62d5fa2b1828d276e56f7c8cd02e1
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: aea51e56f2d96fa634b1ece2029c9ea5bf3f60fc
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286487"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011311"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
 ExpressRoute Direct дает возможность напрямую подключаться к глобальной сети Майкрософт через равноправные расположения, стратегически распределенные по всему миру. Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).
+
+## <a name="before-you-begin"></a>Перед началом
+
+Прежде чем использовать ExpressRoute Direct, сначала необходимо зарегистрировать подписку. Чтобы подписаться, отправьте электронное письмо на адрес <ExpressRouteDirect@microsoft.com>, указав идентификатор подписки и следующие сведения:
+
+* задачи, которые необходимо выполнять с помощью **ExpressRoute Direct**;
+* настройки местоположения — полный список всех расположений см. в разделе [Партнеры и одноранговые расположения ExpressRoute](expressroute-locations-providers.md);
+* временную шкалу для реализации;
+* другие вопросы.
 
 ## <a name="create-the-resource"></a><a name="resources"></a>Создание ресурса
 

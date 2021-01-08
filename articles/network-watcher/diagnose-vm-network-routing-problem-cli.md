@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: network-watcher
 ms.workload: infrastructure
-ms.date: 04/20/2018
+ms.date: 01/07/2021
 ms.author: damendo
 ms.custom: ''
-ms.openlocfilehash: 2d5f6f9cfaff722245f6105b5e86390b8aeb769f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 42174ce094242a6e7412deea0bf1f0eed0f3b6ea
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94539725"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013181"
 ---
 # <a name="diagnose-a-virtual-machine-network-routing-problem---azure-cli"></a>Диагностика проблем с маршрутизацией в сети виртуальной машины с помощью Azure CLI
 
@@ -32,7 +32,7 @@ ms.locfileid: "94539725"
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Для работы с этой статьей требуется версия 2,0 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена. 
+- Для работы с этой статьей требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена. 
 
 - Azure CLI команды в этой статье форматируются для выполнения в оболочке bash.
 
@@ -44,7 +44,7 @@ ms.locfileid: "94539725"
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`. В следующем примере создается виртуальная машина с именем *myVM* :
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`. В следующем примере создается виртуальная машина с именем *myVM*:
 
 ```azurecli-interactive
 az vm create \
@@ -101,7 +101,7 @@ az network watcher show-next-hop \
   --out table
 ```
 
-Возвращаемые выходные данные уведомляют о том **None** , что нет **NextHopType** и что **Раутетаблеид** также является **системным маршрутом**. Так мы узнаем, что, хотя есть допустимый системный маршрут к месту назначения, следующий прыжок для маршрутизации трафика в пункт назначения отсутствует.
+Возвращаемые выходные данные уведомляют о том  , что нет **NextHopType** и что **Раутетаблеид** также является **системным маршрутом**. Так мы узнаем, что, хотя есть допустимый системный маршрут к месту назначения, следующий прыжок для маршрутизации трафика в пункт назначения отсутствует.
 
 ## <a name="view-details-of-a-route"></a>Просмотр сведений о маршруте
 

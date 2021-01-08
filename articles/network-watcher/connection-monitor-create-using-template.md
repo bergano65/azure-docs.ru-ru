@@ -10,21 +10,21 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/23/2020
+ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: c3b228d2652d5f7dcf7c6596ee5425b3f5f9a4d8
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 46d569eae768178815a933d9a857e19bacdaaeb9
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544009"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013232"
 ---
 # <a name="create-a-connection-monitor-using-the-arm-template"></a>Создание монитора подключения с помощью шаблона ARM
 
 Узнайте, как создать монитор подключения для отслеживания взаимодействия между ресурсами с помощью ARMClient. Он поддерживает Гибридные развертывания в облаке Azure.
 
 
-## <a name="before-you-begin"></a>Подготовка к работе 
+## <a name="before-you-begin"></a>Перед началом 
 
 В мониторах подключений, создаваемых в мониторе подключения, можно добавить локальные компьютеры и виртуальные машины Azure в качестве источников. Эти мониторы соединений также могут отслеживать подключение к конечным точкам. Конечные точки могут находиться в Azure или на любом другом URL-адресе или IP.
 
@@ -399,7 +399,7 @@ armclient PUT $ARM/$SUB/$NW/connectionMonitors/$connectionMonitorName/?api-versi
 * Максимальное число источников и назначений на монитор подключения: 100
 * Максимальное число конфигураций тестов на монитор подключений: 20 через ARMClient
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как анализировать данные мониторинга и настраивать оповещения](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts) .
 * Узнайте [, как диагностировать проблемы в сети](./connection-monitor-overview.md#diagnose-issues-in-your-network)

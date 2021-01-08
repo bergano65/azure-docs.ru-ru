@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b4ac8f87e8e19d3487859849ba37272c501751d
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: e1b82dbe169e01b68e7d4b8a4c243cb72d3a3e8b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744386"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013011"
 ---
 # <a name="passwordless-authentication-options-for-azure-active-directory"></a>Параметры проверки подлинности с паролем для Azure Active Directory
 
@@ -140,6 +140,7 @@ FIDO (быстрое идентификация в сети) позволяет 
 | винксс | [https://passwordless.vincss.net](https://passwordless.vincss.net) |
 | KONA I | [https://konai.com/business/security/fido](https://konai.com/business/security/fido) |
 | ексцелсеку | [https://www.excelsecu.com/productdetail/esecufido2secu.html](https://www.excelsecu.com/productdetail/esecufido2secu.html) |
+| Токен2 Швейцарии | [https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key](https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key) |
 
 > [!NOTE]
 > Если вы приобретаете и планируете использовать ключи безопасности на основе NFC, вам потребуется поддерживаемый модуль чтения NFC для ключа безопасности. Модуль чтения NFC не является требованием или ограничением Azure. Чтобы получить список поддерживаемых NFC-сканеров, обратитесь к поставщику Вашего ключа безопасности на основе NFC.

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 4dca1fa0e823b482044d35f98412187af2fa72ed
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: f0620c4d373ee96c87b575ae7eb173b2f16eecb2
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507767"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013657"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Руководство по Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -374,7 +374,8 @@ ms.locfileid: "97507767"
    1. Для параметра "SSL включен" измените значение на `True`.
    1. Щелкните правой кнопкой мыши проект в Visual Studio, выберите **Свойства** и щелкните вкладку **Интернет**. В разделе **Серверы** измените **URL-адрес проекта** на **URL-адрес SSL**.
    1. Скопируйте URL-адрес SSL. На следующем шаге вы добавите этот URL-адрес в список URI перенаправления на портале регистрации.<br/><br/>![Свойства проекта](media/active-directory-develop-guidedsetup-aspnetwebapp-configure/vsprojectproperties.png)<br />
-1. Войдите на [портал Azure](https://portal.azure.com).
+   
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.

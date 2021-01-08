@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 30d646ff7d4f97289ff238211418ac57cd8167a4
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 7ca294d3d7764737d4e2be55aae25bc8ff08a8d1
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107691"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011532"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Веб-приложение, которое входит в систему пользователей: регистрация приложения
 
@@ -41,10 +41,10 @@ ms.locfileid: "97107691"
 > Используемый портал отличается в зависимости от того, выполняется ли ваше приложение в Microsoft Azure общедоступном облаке или в национальной или независимых облаке. Дополнительные сведения см. в статье [местные облака](./authentication-national-cloud.md#app-registration-endpoints).
 
 
-1. Войдите на [портал Azure](https://portal.azure.com). 
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. 
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
-1. В разделе **Управление** выберите **Регистрация приложений**  >  **Новая регистрация**.
+1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -76,7 +76,7 @@ ms.locfileid: "97107691"
     1. Введите **имя** приложения, например `java-webapp`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже. 
     1. Выберите **учетные записи в любом организационном каталоге и личных учетных записях Майкрософт (например, Skype, Xbox, Outlook.com)**.
     1. Выберите **зарегистрировать** , чтобы зарегистрировать приложение.
-1. В разделе **Управление** выберите **Проверка подлинности**  >  **Добавить платформу**.
+1. В разделе **Управление** выберите **Проверка подлинности** > **Добавить платформу**.
 1. Выберите **Интернет**.
 1. В поле **URI перенаправления** введите тот же узел и номер порта, а затем — `/msal4jsample/secure/aad` страницу входа. 
 1. Нажмите кнопку **Настроить**.

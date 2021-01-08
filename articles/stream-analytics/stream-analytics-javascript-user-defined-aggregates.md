@@ -3,17 +3,16 @@ title: Определяемые пользователем вычисления 
 description: В этой статье описывается, как выполнять расширенные запросы с помощью определяемых пользователем вычислений JavaScript в Azure Stream Analytics.
 author: rodrigoaatmicrosoft
 ms.author: rodrigoa
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
 ms.custom: devx-track-js
-ms.openlocfilehash: 8891bb5cd3b8bd8ae9e02c871d6d0ffe42078c0b
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e9695a268d1c6ec43a737afd36536e4ec2a41a41
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124770"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012484"
 ---
 # <a name="azure-stream-analytics-javascript-user-defined-aggregates"></a>Пользовательские статистические выражения JavaScript в Azure Stream Analytics
  
@@ -83,7 +82,7 @@ function main() {
 
 ### <a name="function-type"></a>Тип функции
 
-Для пользовательского статистического выражения должен быть указан тип функции **Javascript UDA** .
+Для пользовательского статистического выражения должен быть указан тип функции **Javascript UDA**.
 
 ### <a name="output-type"></a>Тип выходных данных
 
@@ -123,9 +122,9 @@ function main() {
 Теперь создадим пользовательское статистическое выражение JavaScript в существующем задании ASA, выполнив приведенные инструкции.
 
 1. Выполните вход на портал Azure и найдите задание Stream Analytics.
-1. Щелкните ссылку "Функции" в разделе **Топология задания** .
-1. Щелкните значок **Добавить** , чтобы добавить новую функцию.
-1. В представлении "Новая функция" выберите тип функции **JavaScript UDA** . В редакторе отобразится шаблон пользовательского статистического выражения по умолчанию.
+1. Щелкните ссылку "Функции" в разделе **Топология задания**.
+1. Щелкните значок **Добавить**, чтобы добавить новую функцию.
+1. В представлении "Новая функция" выберите тип функции **JavaScript UDA**. В редакторе отобразится шаблон пользовательского статистического выражения по умолчанию.
 1. Введите "TWA" в качестве псевдонима пользовательского статистического выражения и измените реализацию функции, как показано ниже.
 
     ```JavaScript
