@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/03/2020
-ms.openlocfilehash: 21ccbc83c80e1b659dd240973a609d624f270835
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: cb7a441a6d86cd64847300d1e597cf6f86067282
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028518"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740952"
 ---
 # <a name="quickstart-create-an-azure-sql-database-single-database"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure
 
@@ -141,7 +141,7 @@ az sql server firewall-rule create \
 ```
 
 
-## <a name="create-a-single-database"></a>Создание отдельной базы данных
+## <a name="create-a-single-database-with-azure-cli"></a>Создание отдельной базы данных с помощью Azure CLI
 
 Создайте базу данных с помощью команды [az sql db create](/cli/azure/sql/db). Следующий фрагмент кода создает базу данных:
 
@@ -230,7 +230,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 ```
 
 
-## <a name="create-a-single-database"></a>Создание отдельной базы данных
+## <a name="create-a-single-database-with-powershell"></a>Создание отдельной базы данных с помощью PowerShell
 
 Создайте отдельную базу данных с помощью командлета [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase).
 

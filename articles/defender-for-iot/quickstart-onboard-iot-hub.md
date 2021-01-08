@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/06/2020
 ms.author: mlottner
-ms.openlocfilehash: 786fcd1a0c6d7df2c38a086a830a63f7179d7d40
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: e3768ef233c60f1687bc804778c3dabf32666e1d
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352513"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835165"
 ---
 # <a name="quickstart-onboard-azure-defender-for-iot-service-in-iot-hub"></a>Краткое руководство. Включение службы Azure Defender для Интернета вещей в Центре Интернета вещей
 
@@ -33,7 +33,7 @@ ms.locfileid: "96352513"
   - По умолчанию служба Defender для Интернета вещей хранит в рабочей области Log Analytics сведения двух типов: **оповещения безопасности** и **рекомендации**.
   - Вы можете добавить хранение дополнительного типа сведений — **необработанных событий**. Обратите внимание, что хранение **необработанных событий** в Log Analytics приведет к дополнительными затратами.
 - Центр Интернета вещей (ценовая категория "Стандартный")
-- Соответствие всем [требованиям службы](service-prerequisites.md)
+- Выполните все [системные требования](quickstart-system-prerequisites.md).
 
 ## <a name="enable-defender-for-iot-on-your-iot-hub"></a>Включение службы Defender для Интернета вещей в Центре Интернета вещей
 

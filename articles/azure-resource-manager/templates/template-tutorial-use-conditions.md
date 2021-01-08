@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: f044863be7d0bfaaad57d3974a1d2856b27927ea
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: bc6dc5b385a39ddb1c4f1663649ea21e5ed14767
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589140"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97669318"
 ---
 # <a name="tutorial-use-condition-in-arm-templates"></a>Руководство по Использование условия в шаблонах ARM
 
@@ -34,6 +34,8 @@ ms.locfileid: "97589140"
 * [Условное развертывание ресурса в шаблоне ARM](/azure/architecture/building-blocks/extending-templates/conditional-deploy).
 * [Функция шаблона: If](./template-functions-logical.md#if).
 * [Функции сравнения для шаблонов ARM](./template-functions-comparison.md)
+
+Сведения о модулях Microsoft Learn с описанием условий см. в статье [Управление сложными облачными развертываниями с помощью расширенных функций шаблонов Resource Manager](/learn/modules/manage-deployments-advanced-arm-template-features/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 

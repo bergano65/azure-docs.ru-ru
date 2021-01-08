@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 3329d092e27e7d8885daa87650734cd8e84202c9
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: cf74b563352ccd0f62e583bccccd72078cbb2046
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313658"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673812"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Руководство по интеграции Azure Active Directory с Accredible
 
@@ -63,7 +63,7 @@ ms.locfileid: "92313658"
 
 4. В поле поиска введите **Accredible**, выберите **Accredible** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Accredible в списке результатов](common/search-new-app.png)
+    ![Accredible в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -148,7 +148,7 @@ ms.locfileid: "92313658"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
@@ -184,7 +184,7 @@ ms.locfileid: "92313658"
 
 ### <a name="create-accredible-test-user"></a>Создание тестового пользователя Accredible
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Accredible. Необходимо отправить код электронной почты пользователя в  [службу поддержки Accredible](mailto:support@accredible.com) для его проверки и отправки вам пригласительного письма для добавления пользователя на платформу Accredible.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Accredible. Необходимо отправить код электронной почты пользователя [группе поддержки Accredible](mailto:support@accredible.com), чтобы его проверили и отправили вам пригласительное письмо для добавления пользователя на платформу Accredible.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

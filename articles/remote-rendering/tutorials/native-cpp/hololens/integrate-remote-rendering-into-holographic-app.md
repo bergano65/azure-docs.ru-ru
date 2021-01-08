@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 05/04/2020
 ms.topic: tutorial
-ms.openlocfilehash: 56e889778e3b598dc4ded5f64eef20101c542b6a
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 44c80703466f91ccdfa33934efa0a05e699fd5de
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207518"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724397"
 ---
 # <a name="tutorial-integrate-remote-rendering-into-a-hololens-holographic-app"></a>Руководство по Интеграция Удаленной отрисовки в голографическом приложении HoloLens
 
@@ -30,7 +30,7 @@ ms.locfileid: "92207518"
 
 Для работы с этим руководством необходимо следующее:
 
-* Данные учетной записи (идентификатор и ключ учетной записи, идентификатор подписки). Если у вас нет учетной записи, [создайте ее](../../../how-tos/create-an-account.md).
+* Данные учетной записи (идентификатор, ключ и домен учетной записи, идентификатор подписки). Если у вас нет учетной записи, [создайте ее](../../../how-tos/create-an-account.md).
 * Windows SDK 10.0.18362.0 [(скачать)](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 * Последняя версия Visual Studio 2019 [(скачать)](https://visualstudio.microsoft.com/vs/older-downloads/).
 * [Средства Visual Studio для службы "Смешанная реальность"](/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
@@ -169,7 +169,8 @@ HolographicAppMain::HolographicAppMain(std::shared_ptr<DX::DeviceResources> cons
         RR::AzureFrontendAccountInfo init;
         init.AccountId = "00000000-0000-0000-0000-000000000000";
         init.AccountKey = "<account key>";
-        init.AccountDomain = "westus2.mixedreality.azure.com"; // <change to your region>
+        init.AccountDomain = "westus2.mixedreality.azure.com"; // <change to the region that the rendering session should be created in>
+        init.AccountAuthenticationDomain = "westus2.mixedreality.azure.com"; // <change to the region the account was created in>
         m_modelURI = "builtin://Engine";
         m_sessionOverride = ""; // If there is a valid session ID to re-use, put it here. Otherwise a new one is created
 
@@ -220,7 +221,7 @@ HolographicAppMain::HolographicAppMain(std::shared_ptr<DX::DeviceResources> cons
 
 Код вызывает функции элементов `SetNewSession` и `SetNewState`, реализацию которых мы рассмотрим в следующем абзаце вместе с остальной частью кода конечного автомата.
 
-Обратите внимание, что в примере жестко закодированы учетные данные. Поэтому их необходимо подставить ([идентификатор учетной записи, ключ учетной записи](../../../how-tos/create-an-account.md#retrieve-the-account-information) и [домен](../../../reference/regions.md)).
+Обратите внимание, что в примере жестко закодированы учетные данные. Поэтому их необходимо подставить ([идентификатор учетной записи, ключ учетной записи, домен учетной записи](../../../how-tos/create-an-account.md#retrieve-the-account-information) и [домен удаленной отрисовки](../../../reference/regions.md)).
 
 Инициализацию мы отменяем симметрично и делаем это в обратном порядке в конце тела деструктора.
 

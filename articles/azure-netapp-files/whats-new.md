@@ -12,18 +12,32 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 11/05/2020
+ms.date: 12/04/2020
 ms.author: b-juche
-ms.openlocfilehash: 3f13d997f73e9737b8770eec7e0742d50bf1abb8
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: bba3dce2a2a18888cb88f4cf8b33cd48d6a4cd69
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421708"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631165"
 ---
 # <a name="whats-new-in-azure-netapp-files"></a>Новые возможности Azure NetApp Files
 
 Azure NetApp Files регулярно обновляется. Эта статья содержит сводные сведения о новейших возможностях и улучшениях. 
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+* [Средство создания моментальных снимков, согласованных с приложениями Azure](azacsnap-introduction.md) (общедоступная предварительная версия)    
+
+    Средство создания моментальных снимков, согласованных с приложениями Azure, (AzAcSnap) — это программа командной строки, которая позволяет упростить защиту данных для сторонних баз данных (SAP HANA) в средах Linux (например, SUSE и RHEL).   
+
+    AzAcSnap использует функции моментального снимка тома и репликации в Azure NetApp Files и крупном экземпляре Azure. Он предоставляет следующие преимущества:
+
+    * защита данных, согласованная с приложениями; 
+    * управление каталогом баз данных; 
+    * *автоматизированная* защита тома; 
+    * клонирование томов хранилища; 
+    * поддержка аварийного восстановления. 
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 

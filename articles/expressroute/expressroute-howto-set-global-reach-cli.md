@@ -5,15 +5,15 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 12/12/2018
+ms.date: 01/07/2021
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 16a86982813b667ed5c761da27c8e9e5a43ab6cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27f16ac7d7d799c5467b11fd93352dc5fdef666c
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322501"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028069"
 ---
 # <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка Global Reach ExpressRoute с помощью Azure CLI
 
@@ -48,7 +48,7 @@ az account set --subscription <your subscription ID>
 
 ### <a name="identify-your-expressroute-circuits-for-configuration"></a>Определение каналов ExpressRoute для конфигурации
 
-Можно включить ExpressRoute Global Reach между любыми двумя каналами ExpressRoute, если они находятся в поддерживаемых странах и регионах и были созданы в различных расположениях пиринга. Если подписке принадлежат оба канала, вы можете выбрать канал для выполнения конфигурации, как описано далее в этой статье. Если два канала находятся в разных подписках Azure, вам необходимо будет выполнить авторизацию из одной подписки Azure и передать ключ авторизации при выполнении команды конфигурации в другой подписке Azure.
+Можно включить Global Reach ExpressRoute между любыми двумя каналами ExpressRoute. Эти цепи должны находиться в поддерживаемых странах и регионах и были созданы в разных расположениях пиринга. Если ваша подписка владеет обеими цепями, вы можете выбрать одну из них для запуска конфигурации. Однако если две цепи находятся в разных подписках Azure, необходимо создать ключ авторизации из одной из каналов. Используя ключ авторизации, созданный на основе первого канала, можно включить Global Reach во втором канале.
 
 ## <a name="enable-connectivity-between-your-on-premises-networks"></a>Настройка подключения между локальными сетями
 
@@ -58,7 +58,7 @@ az account set --subscription <your subscription ID>
 
   > /subscriptions/{идентификатор_вашей_подписки}/resourceGroups/{ваша_группа_ресурсов}/providers/Microsoft.Network/expressRouteCircuits/{имя_вашего_канала}
 
-* *префикс адреса* должен быть подсетью IPv4 "/29" (например, "10.0.0.0/29"). Мы используем IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Не следует использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
+* *префикс адреса* должен быть подсетью IPv4 "/29" (например, "10.0.0.0/29"). Мы используем IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Вы не можете использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
 
 Запустите следующую команду CLI для подключения двух каналов ExpressRoute.
 
@@ -94,7 +94,7 @@ az network express-route peering connection create -g <ResourceGroupName> --circ
 
 ## <a name="enable-connectivity-between-expressroute-circuits-in-different-azure-subscriptions"></a>Настройка подключения между каналами ExpressRoute в разных подписках Azure
 
-Если два канала находятся в разных подписках Azure, вам потребуется выполнить авторизацию. В следующей конфигурации вы создадите авторизацию в подписке канала 2 и передадите ключ авторизации в канал 1.
+Если два канала находятся в разных подписках Azure, вам потребуется выполнить авторизацию. В следующей конфигурации вы создаете авторизацию в подписке канала 2. Затем вы передаете ключ авторизации в цепь 1.
 
 1. Создайте ключ авторизации.
 
@@ -149,7 +149,7 @@ az network express-route peering connection delete -g <ResourceGroupName> --circ
 
 После завершения этой операции вы потеряете подключение к локальным сетям через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
 * [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)

@@ -5,18 +5,22 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 06/15/2020
-ms.openlocfilehash: fffe337a59ff343164a155fcd0f4d5616a32bf41
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 52f8aad0a429d3378d46265fab719b1cb9f07fd0
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334622"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813196"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности службы "Распознавание речи"
 
 Узнайте о новых возможностях службы. Это могут быть заметки о выпуске, видео, записи блогов и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="december-2020"></a>Декабрь 2020 г.
+
+* Все пользователи LUIS должны [перейти на ресурс authorint LUIS](luis-migration-authoring.md)
 
 ### <a name="june-2020"></a>Июнь 2020 г.
 

@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: quickstart
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: d84f500560031322cff32005b537037dc897919e
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: e29a692e3fdad1bea7132b3bed50444c7398ba46
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94516770"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936317"
 ---
 # <a name="quickstart-create-a-key-vault-using-the-azure-cli"></a>Краткое руководство. Создание хранилища ключей с помощью Azure CLI
 
@@ -72,5 +72,6 @@ az group delete --name myResourceGroup
 С помощью этого краткого руководства вы создали Key Vault и удалили его. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
 - [Обзор Azure Key Vault](overview.md)
-- Справочник по [командам az keyvault для Azure CLI](/cli/azure/keyvault?view=azure-cli-latest)
-- [Рекомендации по Azure Key Vault](best-practices.md)
+- Статья [Обзор системы безопасности Azure Key Vault](security-overview.md)
+- Справочник по [командам az keyvault для Azure CLI](/cli/azure/keyvault)
+

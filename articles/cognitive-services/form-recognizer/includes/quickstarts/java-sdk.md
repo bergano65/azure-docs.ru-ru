@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: d53863ccf71970cca3900707c844a2e5add050fa
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 6768f46f39920c975e7eccef72563fc0bb7e5180
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356517"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808595"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
@@ -58,7 +58,7 @@ gradle init --type basic
 
 В файле проекта *build.gradle.kts* включите клиентскую библиотеку в качестве оператора `implementation` наряду с требуемыми подключаемыми модулями и параметрами.
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 ```kotlin
 plugins {
     java
@@ -74,6 +74,10 @@ dependencies {
     implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.0.0")
 }
 ```
+
+> [!NOTE]
+> В пакете SDK 3.0.0 Распознавателя документов используется API версии 2.0.
+
 #### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
 ```kotlin
 plugins {
@@ -90,6 +94,10 @@ dependencies {
     implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.1.0-beta.1")
 }
 ```
+
+> [!NOTE]
+> В пакете SDK 3.1.0 Распознавателя документов используется API предварительной версии 2.1.
+
 ---
 
 ### <a name="create-a-java-file"></a>Создание файла Java
@@ -120,15 +128,17 @@ mkdir -p src/main/java
 
 В методе **main** приложения добавьте вызовы методов, используемых в этом кратком руководстве. Они будут определены позже. Также потребуется добавить URL-адреса данных для обучения и тестирования.
 
-* Чтобы получить подписанный URL-адрес данных для обучения пользовательской модели, откройте Обозреватель службы хранилища Microsoft Azure, щелкните контейнер правой кнопкой мыши и выберите **Получить подписанный URL-адрес**. Убедитесь, что разрешение на **чтение** и разрешение **списка** установлены и нажмите кнопку **Создать**. Затем скопируйте значение в разделе **URL-адрес**. Оно должно быть в таком формате: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
+* [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
+  
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="Получение подписанного URL-адреса":::
 * Получить URL-адрес формы для тестирования (отдельного документа в хранилище больших двоичных объектов) можно с помощью описанных выше действий. Также можно взять URL-адрес документа, расположенного в другом месте.
 * С помощью описанного выше метода также получите URL-адрес изображения квитанции.
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_mainvars)]
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_maincalls)]
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_mainvars)]
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_maincalls)]
@@ -165,14 +175,14 @@ mkdir -p src/main/java
 
 Эти фрагменты кода показывают, как выполнить следующие действия с помощью клиентской библиотеки Распознавателя документов для Java:
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 * [аутентификация клиента](#authenticate-the-client);
 * [распознавание содержимого формы](#recognize-form-content);
 * [распознавание квитанций](#recognize-receipts);
 * [обучение пользовательской модели](#train-a-custom-model);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 * [аутентификация клиента](#authenticate-the-client);
 * [распознавание содержимого формы](#recognize-form-content);
 * [распознавание квитанций](#recognize-receipts);
@@ -259,11 +269,14 @@ Quantity: null, confidence: 0.927s]
 Total Price: null, confidence: 0.93
 ```
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
-
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
-
 ## <a name="recognize-business-cards"></a>Распознавание визитных карточек
+
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Эта функция недоступна в выбранной версии API.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в Великобритании визитные карточки и извлекать из них содержимое стандартных полей.
 
@@ -278,7 +291,16 @@ Total Price: null, confidence: 0.93
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_print)]
 
+---
+
 ## <a name="recognize-invoices"></a>Распознавание счетов
+
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Эта функция недоступна в выбранной версии API.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать счета на продажу и извлекать из них содержимое стандартных полей.
 

@@ -1,18 +1,18 @@
 ---
 title: Регистрация и сканирование Базы данных SQL Azure
 description: Сведения о том, как сканировать Базу данных SQL Azure.
-author: hophan
+author: hophanms
 ms.author: hophan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: 1fbeedd8643a777b29ebe4993eed7b664240621c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 15708e35fa27bb4a1f72368df6f49ff747eb799b
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920283"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739796"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Регистрация и сканирование Базы данных SQL Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "96920283"
 
 ### <a name="known-limitations"></a>Известные ограничения
 
-Azure Purview не поддерживает сканирование [представлений](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15) в Базе данных SQL Azure. 
+Azure Purview не поддерживает сканирование [представлений](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15&preserve-view=true) в Базе данных SQL Azure. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -89,7 +89,7 @@ Azure Purview не поддерживает сканирование [предс
 Субъект-служба или управляемое удостоверение должны иметь разрешение на получение метаданных для базы данных, схем и таблиц. Кроме того, требуется возможность запрашивать из таблиц примеры для классификации.
 
 - [Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure)
-- Если вы предпочитаете использовать управляемое удостоверение, для этой цели учетная запись Purview имеет собственное управляемое удостоверение, которое по сути является именем Purview, указанным при создании ресурса. Вы должны создать пользователя Azure AD в Базе данных SQL Azure, указав для его точное значение управляемого удостоверения Purview или собственный субъект-службу, по инструкциям из раздела [Создание пользователя субъекта-службы в службе "База данных SQL Azure"](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-service-principal-tutorial#create-the-service-principal-user-in-azure-sql-database). Этому удостоверению следует назначить разрешение `db_owner` (**рекомендуется**). Пример синтаксиса SQL для создания пользователя и предоставления разрешений:
+- Если вы предпочитаете использовать управляемое удостоверение, для этой цели учетная запись Purview имеет собственное управляемое удостоверение, которое по сути является именем Purview, указанным при создании ресурса. Вы должны создать пользователя Azure AD в Базе данных SQL Azure, указав для его точное значение управляемого удостоверения Purview или собственный субъект-службу, по инструкциям из раздела [Создание пользователя субъекта-службы в службе "База данных SQL Azure"](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-service-principal-tutorial#create-the-service-principal-user-in-azure-sql-database). Вам нужно назначить удостоверению соответствующие разрешения (например, `db_owner` или `db_datareader`). Пример синтаксиса SQL для создания пользователя и предоставления разрешений:
 
     ```sql
     CREATE USER [Username] FROM EXTERNAL PROVIDER
@@ -100,7 +100,7 @@ Azure Purview не поддерживает сканирование [предс
     ```
 
     > [!Note]
-    > В качестве `Username` можно использовать собственный субъект-службу или управляемое удостоверение Purview.
+    > В качестве `Username` можно использовать собственный субъект-службу или управляемое удостоверение Purview. Ознакомиться с ролями фиксированной базы данных и их возможностями можно [здесь](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15&preserve-view=true#fixed-database-roles).
     
 ##### <a name="add-service-principal-to-key-vault-and-purviews-credential"></a>Добавление субъекта-службы в хранилище ключей и учетные данные Purview
 

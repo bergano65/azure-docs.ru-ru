@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/04/2020
+ms.date: 12/21/2020
 ms.author: jeedes
-ms.openlocfilehash: e0cabcbaaf8e84ac1bdfd13c0ef4ab14f326fcf7
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d7cafdcbbf44f3f501d54c13d1b4549c446ed8c8
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182295"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724006"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство. Интеграция Azure Active Directory с Citrix ShareFile
 
@@ -51,7 +51,7 @@ ms.locfileid: "96182295"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Citrix ShareFile**.
 1. Выберите **Citrix ShareFile** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-sso"></a>Настройка и проверка единого входа Azure AD
+## <a name="configure-and-test-azure-ad-sso-for-citrix-sharefile"></a>Настройка и проверка единого входа Azure AD для Citrix ShareFile
 
 В этом разделе описана настройка и проверка единого входа Azure AD в Citrix ShareFile с использованием тестового пользователя **Britta Simon**.
 Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Citrix ShareFile.
@@ -60,10 +60,10 @@ ms.locfileid: "96182295"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     
-    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 2. **[Настройка единого входа в Citrix ShareFile](#configure-citrix-sharefile-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    * **[Создание тестового пользователя Citrix ShareFile](#create-citrix-sharefile-test-user)** требуется для того, чтобы в Citrix ShareFile существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+    1. **[Создание тестового пользователя Citrix ShareFile](#create-citrix-sharefile-test-user)** требуется для того, чтобы в Citrix ShareFile существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
 3. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -131,7 +131,15 @@ ms.locfileid: "96182295"
 
 ## <a name="configure-citrix-sharefile-sso"></a>Настройка единого входа в Citrix ShareFile
 
-1. В другом окне браузера под учетной записью администратора войдите на сайт **Citrix ShareFile** своей организации.
+1. Для автоматизации настройки в **Citrix ShareFile** необходимо установить **расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. Чтобы перейти к приложению Citrix ShareFile после добавления расширения в браузер, щелкните **Настройка Citrix ShareFile**. После этого укажите учетные данные администратора для входа в Citrix ShareFile. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если вы хотите настроить Citrix ShareFile вручную, в другом окне браузера войдите на свой корпоративный сайт Citrix ShareFile с правами администратора.
 
 1. В разделе **Панель мониторинга** щелкните пункт **Параметры** и выберите элемент **Параметры администрирования**
 
@@ -184,13 +192,13 @@ ms.locfileid: "96182295"
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов.
 
-1. Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Citrix ShareFile, где можно инициировать поток входа. 
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Citrix ShareFile, где можно инициировать поток входа.
 
-2. Перейдите по URL-адресу для входа в Citrix ShareFile и инициируйте поток входа.
+* Перейдите по URL-адресу для входа в Citrix ShareFile и инициируйте поток входа.
 
-3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Citrix ShareFile на Панели доступа, вы перейдете по URL-адресу для входа вCitrix ShareFile. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Citrix ShareFile на портале "Мои приложения", вы перейдете по URL-адресу для входа в Citrix ShareFile. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

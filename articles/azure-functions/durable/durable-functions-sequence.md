@@ -5,16 +5,16 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/29/2019
 ms.author: azfuncdf
-ms.openlocfilehash: b117fca23b26919f3c404dd32ba64c0c89d66ae7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8223b1273c2a487e15e3c10d7c6852a119e4cdc
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87033570"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028256"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
 
-Цепочкой функций называют схему выполнения последовательности функций в определенном порядке. Часто требуется передать выходные данные одной функции во входные данные другой. В этой статье описываются цепочки последовательности, создаваемой по завершении "Краткого руководства по Устойчивым функциям" (для [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md)). Дополнительные сведения об Устойчивых функций см. в статье, посвященной [обзору Устойчивых функций](durable-functions-overview.md).
+Цепочкой функций называют схему выполнения последовательности функций в определенном порядке. Часто требуется передать выходные данные одной функции во входные данные другой. В этой статье описывается последовательность цепочек, создаваемая при завершении краткого руководства по устойчивые функции ([C#](durable-functions-create-first-csharp.md),  [JavaScript](quickstart-js-vscode.md)или [Python](quickstart-python-vscode.md)). Дополнительные сведения об Устойчивых функций см. в статье, посвященной [обзору Устойчивых функций](durable-functions-overview.md).
 
 [!INCLUDE [durable-functions-prerequisites](../../../includes/durable-functions-prerequisites.md)]
 
@@ -24,7 +24,7 @@ ms.locfileid: "87033570"
 
 * `E1_HelloSequence`: [Функция Orchestrator](durable-functions-bindings.md#orchestration-trigger) , которая вызывает `E1_SayHello` несколько раз в последовательности. При этом сохраняются выходные данные каждого вызова `E1_SayHello` и записываются результаты.
 * `E1_SayHello`: [Функция действия](durable-functions-bindings.md#activity-trigger) , которая добавляет строку в начало строки с "Hello".
-* `HttpStart`: Функция, активируемая по протоколу HTTP, которая запускает экземпляр Orchestrator.
+* `HttpStart`: Функция [долговременной клиент](durable-functions-bindings.md#orchestration-client) , активируемая по протоколу HTTP, которая запускает экземпляр Orchestrator.
 
 ### <a name="e1_hellosequence-orchestrator-function"></a>E1_HelloSequence Orchestrator, функция
 
@@ -39,7 +39,7 @@ ms.locfileid: "87033570"
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 > [!NOTE]
-> Устойчивые функции JavaScript доступны только для среды выполнения функций 2,0.
+> Устойчивые функции JavaScript доступны только для среды выполнения функций 3,0.
 
 #### <a name="functionjson"></a>function.json
 
@@ -54,17 +54,47 @@ ms.locfileid: "87033570"
 
 #### <a name="indexjs"></a>Файл index.js
 
-Ниже приведена функция.
+Ниже приведена функция Orchestrator.
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/index.js)]
 
-Все функции оркестрации JavaScript должны включать [ `durable-functions` модуль](https://www.npmjs.com/package/durable-functions). Это библиотека, позволяющая писать Устойчивые функции JavaScript. Есть три существенных различия между функциями оркестратора и другими функциями JavaScript:
+Все функции оркестрации JavaScript должны включать [ `durable-functions` модуль](https://www.npmjs.com/package/durable-functions). Это библиотека, позволяющая писать Устойчивые функции JavaScript. Существует три существенных различия между функцией Orchestrator и другими функциями JavaScript:
 
-1. Функция является [функцией генератора.](/scripting/javascript/advanced/iterators-and-generators-javascript)
+1. Функция Orchestrator является [функцией генератора](/scripting/javascript/advanced/iterators-and-generators-javascript).
 2. Эта функция упаковывается в вызов к методу `orchestrator` модуля `durable-functions` (в нашем примере это `df`).
 3. Функции должны быть синхронными. Так как метод orchestrator обрабатывает вызов аргумента context.done, функция должна возвращать значение.
 
 `context`Объект содержит `df` объект контекста устойчивого оркестрации, который позволяет вызывать другие функции *действий* и передавать входные параметры с помощью `callActivity` метода. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Возвращаемое значение каждого вызова добавляется в `outputs` массив, который возвращается в конце функции.
+
+# <a name="python"></a>[Python](#tab/python)
+
+> [!NOTE]
+> Устойчивые функции Python доступны только для среды выполнения функций 3,0.
+
+
+#### <a name="functionjson"></a>function.json
+
+Если вы используете для разработки Visual Studio Code или портал Azure, файл *function.json* с указанным здесь содержимым позволит создать функцию оркестратора. Для большинства функций оркестратора файл *function.json* будет выглядеть почти так же.
+
+[!code-json[Main](~/samples-durable-functions-python/samples/function_chaining/E1_HelloSequence/function.json)]
+
+Самое важное здесь — это тип привязки `orchestrationTrigger`. Во всех функциях оркестратора должен использоваться такой тип триггера.
+
+> [!WARNING]
+> Чтобы не нарушать требование "без ввода и вывода", применяемое к функциям оркестратора, не используйте никакие привязки входных или выходных данных совместно с триггером привязки `orchestrationTrigger`.  Если вам нужны входные или выходные привязки, используйте их в контексте функций `activityTrigger`, которые вызываются оркестратором. Дополнительные сведения см. в статье [ограничения кода функции Orchestrator](durable-functions-code-constraints.md) .
+
+#### <a name="__init__py"></a>\_\_init\_\_.py
+
+Ниже приведена функция Orchestrator.
+
+[!code-python[Main](~/samples-durable-functions-python/samples/function_chaining/E1_HelloSequence/\_\_init\_\_.py)]
+
+Все функции оркестрации в Python должны включать [ `durable-functions` пакет](https://pypi.org/project/azure-functions-durable). Это библиотека, которая позволяет писать Устойчивые функции в Python. Между функцией Orchestrator и другими функциями Python существует два существенных отличия:
+
+1. Функция Orchestrator является [функцией генератора](https://wiki.python.org/moin/Generators).
+2. _Файл_ должен зарегистрировать функцию Orchestrator в качестве Orchestrator, указывая `main = df.Orchestrator.create(<orchestrator function name>)` в конце файла. Это помогает отличать его от других, вспомогательных функций, объявленных в файле.
+
+`context`Объект позволяет вызывать другие функции *действий* и передавать входные параметры с помощью `call_activity` метода. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Возвращаемое значение каждого вызова возвращается в конце функции.
 
 ---
 
@@ -91,7 +121,7 @@ ms.locfileid: "87033570"
 [!code-json[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/function.json)]
 
 > [!NOTE]
-> Для любой функции, которую вызывает функция оркестратора, должна использоваться привязка `activityTrigger`.
+> Все функции действий, вызываемые функцией оркестрации, должны использовать `activityTrigger` привязку.
 
 Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
 
@@ -99,7 +129,26 @@ ms.locfileid: "87033570"
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/index.js)]
 
-В отличие от функции оркестратора JavaScript, функция действия не требует дополнительной настройки. Входные данные, которые ей передает функция оркестратора, размещаются в объекте `context.bindings` под именем привязки `activityTrigger` (в нашем примере это `context.bindings.name`). Имя привязки можно задать в качестве параметра экспортируемой функции и обращаться к нему напрямую, как показано в этом примере кода.
+В отличие от функции оркестрации функция действия не требует специальной настройки. Входные данные, которые ей передает функция оркестратора, размещаются в объекте `context.bindings` под именем привязки `activityTrigger` (в нашем примере это `context.bindings.name`). Имя привязки можно задать в качестве параметра экспортируемой функции и обращаться к нему напрямую, как показано в этом примере кода.
+
+# <a name="python"></a>[Python](#tab/python)
+
+#### <a name="e1_sayhellofunctionjson"></a>E1_SayHello и function.jsна
+
+Файл *Function.json* для функции действия `E1_SayHello` будет таким же, как и для `E1_HelloSequence`, с одним исключением: в нем используется тип привязки `activityTrigger` вместо `orchestrationTrigger`.
+
+[!code-json[Main](~/samples-durable-functions-python/samples/function_chaining/E1_SayHello/function.json)]
+
+> [!NOTE]
+> Все функции действий, вызываемые функцией оркестрации, должны использовать `activityTrigger` привязку.
+
+Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
+
+#### <a name="e1_sayhello__init__py"></a>E1_SayHello/ \_ \_ init \_ \_ . Корректировка
+
+[!code-python[Main](~/samples-durable-functions-python/samples/function_chaining/E1_SayHello/\_\_init\_\_.py)]
+
+В отличие от функции Orchestrator, функции действия не требуется специальной настройки. Входные данные, передаваемые ей функцией Orchestrator, напрямую доступны в качестве параметра функции.
 
 ---
 
@@ -126,6 +175,20 @@ ms.locfileid: "87033570"
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
 
 Используйте `df.getClient` для получения `DurableOrchestrationClient` объекта. Для начала оркестрации используется клиент. Он также может помочь вернуть ответ HTTP, содержащий URL-адреса для проверки состояния нового оркестрации.
+
+# <a name="python"></a>[Python](#tab/python)
+
+#### <a name="httpstartfunctionjson"></a>HttpStart/function.jsна
+
+[!code-json[Main](~/samples-durable-functions-python/samples/function_chaining/HttpStart/function.json)]
+
+Для взаимодействия с оркестрации функция должна включать `durableClient` входную привязку.
+
+#### <a name="httpstart__init__py"></a>HttpStart/ \_ \_ init \_ \_ . Корректировка
+
+[!code-python[Main](~/samples-durable-functions-python/samples/function_chaining/HttpStart/\_\_init\_\_.py)]
+
+Используйте `DurableOrchestrationClient` конструктор для получения клиента устойчивые функции. Для начала оркестрации используется клиент. Он также может помочь вернуть ответ HTTP, содержащий URL-адреса для проверки состояния нового оркестрации.
 
 ---
 

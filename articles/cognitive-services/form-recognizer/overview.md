@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: автоматическая обработка данных, обработка документов, автоматическая запись данных, обработка форм
-ms.openlocfilehash: 39243f4428d055ee5d4491c3e87b4b91213f63f1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ed940622f72271ef3e606c5068babcb6366c31b6
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353686"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845521"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -108,23 +108,21 @@ ms.locfileid: "96353686"
 
 Воспользуйтесь [примером Распознавателя документов](https://fott.azurewebsites.net/) или выполните инструкции из соответствующего краткого руководства, чтобы приступить к извлечению данных из форм. При изучении технологии мы рекомендуем использовать бесплатную версию службы. Имейте в виду, что количество бесплатных страниц ограничено до 500 страниц в месяц.
 
-* [Краткие руководства по клиентской библиотеке](./quickstarts/client-library.md) (все языки, разные сценарии)
+* [Краткое руководство по клиентской библиотеке и REST API](./quickstarts/client-library.md) (все языки, разные сценарии)
 * Краткие руководства по веб-интерфейсу
   * [Обучение с использованием меток — пример средства создания меток](quickstarts/label-tool.md)
-* Краткие руководства по REST
+* Примеры REST (GitHub)
  * Извлечение текста, отметок выбора и структуры таблицы из документов
-    * [Извлечение данных макета — Python](quickstarts/python-layout.md)
+    * [Извлечение данных макета — Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-layout.md)
   * Обучение пользовательских моделей и извлечение данных форм
-    * [Обучение без использования меток — cURL](quickstarts/curl-train-extract.md)
-    * [Обучение без использования меток — Python](quickstarts/python-train-extract.md)
-    * [Обучение с использованием меток — Python](quickstarts/python-labeled-data.md)
+    * [Обучение без использования меток — Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-train-extract.md)
+    * [Обучение с использованием меток — Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md)
   * Извлечение данных из счетов
-    * [Извлечение данных счета: Python](quickstarts/python-invoices.md)
+    * [Извлечение данных счета: Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-invoices.md)
   * Извлечение данных из товарных чеков
-    * [Извлечение данных товарного чека — cURL](quickstarts/curl-receipts.md)
-    * [Извлечение данных товарного чека — Python](quickstarts/python-receipts.md)
+    * [Извлечение данных товарного чека — Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-receipts.md)
   * Извлечение данных из визитных карточек
-    * [Извлечение данных визитной карточки — Python](quickstarts/python-business-cards.md)
+    * [Извлечение данных визитной карточки — Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-business-cards.md)
 
 ### <a name="review-the-rest-apis"></a>Ознакомьтесь с интерфейсами REST API.
 
@@ -162,4 +160,4 @@ ms.locfileid: "96353686"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Завершите работу с [кратким руководством по клиентской библиотеке](quickstarts/client-library.md), чтобы приступить к созданию приложения для обработки форм с помощью Распознавателя документов на любом языке.
+Изучите [краткое руководство](quickstarts/client-library.md), чтобы приступить к созданию приложения для обработки форм с помощью Распознавателя документов на любом языке.

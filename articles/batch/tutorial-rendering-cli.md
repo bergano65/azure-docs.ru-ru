@@ -1,34 +1,34 @@
 ---
 title: Руководство. Отрисовка сцены в облаке
-description: Руководство. Отрисовка сцены Autodesk 3ds Max с Arnold с помощью пакетной службы рендеринга и интерфейса командной строки Azure
+description: Сведения о том, как отрисовать сцену Autodesk 3ds Max с Arnold с помощью пакетной службы рендеринга и интерфейса командной строки Azure.
 ms.topic: tutorial
-ms.date: 03/05/2020
+ms.date: 12/30/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: e0858e838ba73862ef7f15040915c5f5cd3c751b
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 3518e074589284e6d6cd7432dc77ba8bdd457045
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106348"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827535"
 ---
-# <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство по Отрисовка сцены с помощью пакетной службы Azure 
+# <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство по Отрисовка сцены с помощью пакетной службы Azure
 
 Пакетная служба Azure предоставляет возможности рендеринга в масштабах облака с оплатой по мере использования. Пакетная служба рендеринга поддерживает такие приложения для рендеринга, как Autodesk Maya, 3ds Max, Arnold и V-Ray. В этом руководстве показаны шаги по отрисовке небольшой сцены с помощью пакетной службы и интерфейса командной строки Azure. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Отправка данных в хранилище Azure.
-> * Создание пула пакетной службы для рендеринга.
-> * Отрисовка однокадровой сцены
-> * Масштабирование пула и отрисовка сцены с несколькими кадрами.
-> * Скачивание выводимых данных.
+> - Отправка данных в хранилище Azure.
+> - Создание пула пакетной службы для рендеринга.
+> - Отрисовка однокадровой сцены
+> - Масштабирование пула и отрисовка сцены с несколькими кадрами.
+> - Скачивание выводимых данных.
 
 В этом руководстве вы выполните рендеринг сцены 3ds Max с помощью пакетной службы Azure и отрисовщика трассировки лучей [Arnold](https://www.autodesk.com/products/arnold/overview). Пул пакетной службы использует образ Azure Marketplace с предварительно установленными графиками и визуализацией приложений, предоставляющие лицензирование с оплатой по мере использования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
- - Вам потребуется подписка с оплатой по мере использования или другой вариант приобретения Azure для использования приложениями для рендеринга в пакетной службе Azure по принципу оплаты по мере использования. **Лицензирование с оплатой за использование не поддерживается, если использовать бесплатное предложение Azure, которое предоставляет денежной кредит.**
+- Вам потребуется подписка с оплатой по мере использования или другой вариант приобретения Azure для использования приложениями для рендеринга в пакетной службе Azure по принципу оплаты по мере использования. **Лицензирование с оплатой за использование не поддерживается, если использовать бесплатное предложение Azure, которое предоставляет денежной кредит.**
 
- - Примеры сцены 3ds Max и скрипта Bash, а также файлы конфигурации JSON для этого руководства находятся на сайте [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene). Сцена 3ds Max получена из [примера файлов Autodesk 3ds Max](https://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Примеры файлов Autodesk 3ds Max доступны в соответствии с лицензией Creative Commons Attribution-NonCommercial-Share Alike. Copyright &copy; Autodesk, Inc.)
+- Примеры сцены 3ds Max и скрипта Bash, а также файлы конфигурации JSON для этого руководства находятся на сайте [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene). Сцена 3ds Max получена из [примера файлов Autodesk 3ds Max](https://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Примеры файлов Autodesk 3ds Max доступны в соответствии с лицензией Creative Commons Attribution-NonCommercial-Share Alike. Copyright &copy; Autodesk, Inc.)
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
@@ -36,13 +36,14 @@ ms.locfileid: "97106348"
 
 > [!TIP]
 > Вы можете просмотреть [шаблоны заданий Arnold](https://github.com/Azure/batch-extension-templates/tree/master/templates/arnold/render-windows-frames) в репозитории шаблонов расширений для пакетной службы Azure на GitHub.
+
 ## <a name="create-a-batch-account"></a>Создание учетной записи Пакетной службы
 
-Создайте в своей подписке группу ресурсов, учетную запись пакетной службы и связанную учетную запись хранения. 
+Создайте в своей подписке группу ресурсов, учетную запись пакетной службы и связанную учетную запись хранения.
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus2*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create \
     --name myResourceGroup \
     --location eastus2
@@ -57,9 +58,10 @@ az storage account create \
     --location eastus2 \
     --sku Standard_LRS
 ```
+
 Создайте учетную запись пакетной службы с помощью команды [az batch account create](/cli/azure/batch/account#az-batch-account-create). В следующем примере создается учетная запись пакетной службы с именем *mybatchaccount* в группе ресурсов *myResourceGroup*. Она связывается с созданной учетной записью хранения.  
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch account create \
     --name mybatchaccount \
     --storage-account mystorageaccount \
@@ -69,12 +71,13 @@ az batch account create \
 
 Для создания пулов вычислений и заданий, а также управления ими необходимо выполнить проверку подлинности с помощью пакетной службы. Войдите в учетную запись с помощью команды [az batch account login](/cli/azure/batch/account#az-batch-account-login). После входа ваши команды `az batch` используют контекст учетной записи. В следующем примере используется проверка подлинности с общим ключом на основе имени и ключа учетной записи пакетной службы. Пакетная служба Azure также поддерживает проверку подлинности отдельных пользователей или приложений с помощью [Azure Active Directory](batch-aad-auth.md).
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch account login \
     --name mybatchaccount \
     --resource-group myResourceGroup \
     --shared-key-auth
 ```
+
 ## <a name="upload-a-scene-to-storage"></a>Передача сцены в хранилище
 
 Чтобы отправить входную сцену в хранилище, сначала нужно получить доступ к учетной записи хранения и создать контейнер назначения для больших двоичных объектов. Чтобы получить доступ к учетной записи хранения Azure, экспортируйте переменные среды `AZURE_STORAGE_KEY` и `AZURE_STORAGE_ACCOUNT`. Первая команда оболочки Bash получает ключ с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#az-storage-account-keys-list). После установки переменных среды ваши команды хранилища используют контекст учетной записи.
@@ -135,16 +138,18 @@ az storage blob upload-batch \
   "enableInterNodeCommunication": false 
 }
 ```
-Пакетная служба Azure поддерживает выделенные узлы и узлы [с низким приоритетом](batch-low-pri-vms.md). Вы можете использовать их в своих пулах. Выделенные узлы зарезервированы для пула. Низкоприоритетные узлы предлагаются по сниженной цене с учетом избыточных ресурсов виртуальной машины в Azure. Эти узлы становятся недоступны, если в Azure недостаточно ресурсов. 
+
+Пакетная служба Azure поддерживает выделенные узлы и узлы [с низким приоритетом](batch-low-pri-vms.md). Вы можете использовать их в своих пулах. Выделенные узлы зарезервированы для пула. Низкоприоритетные узлы предлагаются по сниженной цене с учетом избыточных ресурсов виртуальной машины в Azure. Эти узлы становятся недоступны, если в Azure недостаточно ресурсов.
 
 Указанный пул содержит один низкоприоритетный узел с образом Windows Server с программным обеспечением для пакетной службы рендеринга. Этот пул лицензирован для отрисовки с помощью 3ds Max и Arnold. Позже вы измените размер пула для большего количества узлов.
 
-Создайте пул, передав JSON-файл команде `az batch pool create`:
+Если вы еще не вошли в учетную запись пакетной службы, воспользуйтесь командой [az batch account login](/cli/azure/batch/account#az-batch-account-login). Затем создайте пул, передав JSON-файл команде `az batch pool create`:
 
 ```azurecli-interactive
 az batch pool create \
     --json-file mypool.json
-``` 
+```
+
 На подготовку пула может потребоваться несколько минут. Чтобы увидеть состояние пула, выполните команду [az batch pool show](/cli/azure/batch/pool#az-batch-pool-show). С помощью следующей команды можно получить сведения о состоянии распределения пула:
 
 ```azurecli-interactive
@@ -157,7 +162,7 @@ az batch pool show \
 
 ## <a name="create-a-blob-container-for-output"></a>Создание контейнера больших двоичных объектов для выходных данных
 
-В примерах этого руководства каждая задача в задании рендеринга создает выходной файл. Перед планированием задания создайте в учетной записи хранения контейнер больших двоичных объектов в качестве места назначения для выходных файлов. В следующем примере с помощью команды [az storage container create](/cli/azure/storage/container#az-storage-container-create) создается контейнер *job-myrenderjob* с открытым доступом на чтение. 
+В примерах этого руководства каждая задача в задании рендеринга создает выходной файл. Перед планированием задания создайте в учетной записи хранения контейнер больших двоичных объектов в качестве места назначения для выходных файлов. В следующем примере с помощью команды [az storage container create](/cli/azure/storage/container#az-storage-container-create) создается контейнер *job-myrenderjob* с открытым доступом на чтение.
 
 ```azurecli-interactive
 az storage container create \
@@ -165,21 +170,19 @@ az storage container create \
     --name job-myrenderjob
 ```
 
-Для записи выходных файлов в контейнер пакетной службе требуется токен подписанного URL-адреса (SAS). Создайте токен с помощью команды [az storage account-sas](/cli/azure/storage/account#az-storage-account-generate-sas). В этом примере создается токен для записи в любой контейнер больших двоичных объектов в учетной записи. Срок действия токена истекает 15 ноября 2020 года.
+Для записи выходных файлов в контейнер пакетной службе требуется токен подписанного URL-адреса (SAS). Создайте токен с помощью команды [az storage account-sas](/cli/azure/storage/account#az-storage-account-generate-sas). В этом примере создается токен для записи в любой контейнер больших двоичных объектов в учетной записи. Срок действия токена истекает 15 ноября 2021 года:
 
 ```azurecli-interactive
 az storage account generate-sas \
     --permissions w \
     --resource-types co \
     --services b \
-    --expiry 2020-11-15
+    --expiry 2021-11-15
 ```
 
 Обратите внимание на токен, возвращенный следующей командой: Он понадобится вам позже.
 
-```
-se=2020-11-15&sp=rw&sv=2019-09-24&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
+`se=2021-11-15&sp=rw&sv=2019-09-24&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
 ## <a name="render-a-single-frame-scene"></a>Отрисовка однокадровой сцены
 
@@ -202,11 +205,7 @@ az batch job create \
 Измените элементы `blobSource` и `containerURL` в файле JSON так, чтобы они включали имя вашей учетной записи хранения и токен SAS. 
 
 > [!TIP]
-> `containerURL` заканчивается токеном SAS и аналогичен следующему:
-> 
-> ```
-> https://mystorageaccount.blob.core.windows.net/job-myrenderjob/$TaskOutput?se=2018-11-15&sp=rw&sv=2017-04-17&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-> ```
+> `containerURL` заканчивается токеном SAS и аналогичен следующему: `https://mystorageaccount.blob.core.windows.net/job-myrenderjob/$TaskOutput?se=2018-11-15&sp=rw&sv=2017-04-17&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
 ```json
 {
@@ -250,7 +249,6 @@ az batch task create \
 
 Пакетная служба Azure планирует задачу. Она запускается, как только узел в пуле станет доступен.
 
-
 ### <a name="view-task-output"></a>Просмотр выходных данных задачи
 
 На запуск задания может потребоваться несколько минут. С помощью команды [az batch task show](/cli/azure/batch/task#az-batch-task-show) можно просмотреть сведения о задаче.
@@ -274,7 +272,6 @@ az storage blob download \
 Откройте файл *dragon.jpg* на компьютере. Отрисованное изображение должно выглядеть примерно так:
 
 ![Отрисованный кадр с драконом 1](./media/tutorial-rendering-cli/dragon-frame.png) 
-
 
 ## <a name="scale-the-pool"></a>Масштабирование пула
 
@@ -313,7 +310,7 @@ az batch task show \
     --job-id myrenderjob \
     --task-id mymultitask1
 ```
- 
+
 Задачи создают выходные файлы *dragon0002.jpg* - *dragon0007.jpg* на вычислительных узлах и передают их в контейнер *job-myrenderjob* в вашей учетной записи хранения. Чтобы просмотреть выходные данные, скачайте файлы в папку на локальном компьютере с помощью команды [az storage blob download-batch](/cli/azure/storage/blob). Пример:
 
 ```azurecli-interactive
@@ -326,12 +323,11 @@ az storage blob download-batch \
 
 ![Отрисованный кадр с драконом 6](./media/tutorial-rendering-cli/dragon-frame6.png) 
 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Вы можете удалить ставшие ненужными группу ресурсов, учетную запись пакетной службы, пулы и все связанные с ними ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete). Удалите ресурсы следующим образом:
 
-```azurecli-interactive 
+```azurecli-interactive
 az group delete --name myResourceGroup
 ```
 
@@ -340,11 +336,11 @@ az group delete --name myResourceGroup
 Из этого руководства вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Отправка сцен в хранилище Azure.
-> * Создание пула пакетной службы для рендеринга.
-> * Отрисовка однокадровой сцены с помощью Arnold.
-> * Масштабирование пула и отрисовка сцены с несколькими кадрами.
-> * Скачивание выводимых данных.
+> - Отправка сцен в хранилище Azure.
+> - Создание пула пакетной службы для рендеринга.
+> - Отрисовка однокадровой сцены с помощью Arnold.
+> - Масштабирование пула и отрисовка сцены с несколькими кадрами.
+> - Скачивание выводимых данных.
 
 Дополнительные сведения о рендеринге облачных вычислений см. в документации о возможностях рендеринга в пакетной службе.
 

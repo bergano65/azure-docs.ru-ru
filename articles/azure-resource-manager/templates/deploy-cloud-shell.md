@@ -1,18 +1,18 @@
 ---
 title: Развертывание шаблонов с помощью Cloud Shell
-description: Используйте Azure Resource Manager и Cloud Shell для развертывания ресурсов в Azure. Ресурсы определяются в шаблоне Azure Resource Manager.
+description: Используйте Azure Resource Manager и Azure Cloud Shell для развертывания ресурсов в Azure. Ресурсы определяются в шаблоне Azure Resource Manager (шаблон ARM).
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: d0b519955cb877f5fb9640cc0cf95a898e1743ef
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: c67251a33b6197603be27086bcc6cd047e0c414b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92681635"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028613"
 ---
-# <a name="deploy-arm-templates-from-cloud-shell"></a>Развертывание шаблонов ARM из Cloud Shell
+# <a name="deploy-arm-templates-from-azure-cloud-shell"></a>Развертывание шаблонов ARM из Azure Cloud Shell
 
-Для развертывания шаблона Azure Resource Manager (шаблон ARM) можно использовать [Cloud Shell](../../cloud-shell/overview.md) . Можно развернуть либо шаблон ARM, который хранится удаленно, либо шаблон ARM, хранящийся в локальной учетной записи хранения для Cloud Shell.
+Для развертывания шаблона Azure Resource Manager (шаблон ARM) можно использовать [Azure Cloud Shell](../../cloud-shell/overview.md) . Можно развернуть либо шаблон ARM, который хранится удаленно, либо шаблон ARM, хранящийся в локальной учетной записи хранения для Cloud Shell.
 
 Можно выполнить развертывание в любой области. В этой статье описывается развертывание в группе ресурсов.
 
@@ -22,7 +22,7 @@ ms.locfileid: "92681635"
 
 1. Откройте запрос Cloud Shell.
 
-   :::image type="content" source="./media/deploy-cloud-shell/open-cloud-shell.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/open-cloud-shell.png" alt-text="Открыть Cloud Shell":::
 
 1. Чтобы развернуть шаблон, используйте следующие команды:
 
@@ -62,31 +62,31 @@ ms.locfileid: "92681635"
 
 1. Выберите учетную запись хранения для Cloud Shell.
 
-   :::image type="content" source="./media/deploy-cloud-shell/cloud-shell-storage.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/cloud-shell-storage.png" alt-text="Выбор учетной записи хранения":::
 
-1. Выберите **файловые ресурсы** .
+1. Выберите **файловые ресурсы**.
 
-   :::image type="content" source="./media/deploy-cloud-shell/files-shares.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/files-shares.png" alt-text="Выбор общих файловых ресурсов":::
 
 1. Выберите общую папку по умолчанию для Cloud Shell. Файловый ресурс имеет формат имени `cs-<user>-<domain>-com-<uniqueGuid>` .
 
-   :::image type="content" source="./media/deploy-cloud-shell/select-file-share.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/select-file-share.png" alt-text="Общая папка по умолчанию":::
 
 1. Добавьте новый каталог для хранения шаблонов. Выберите этот каталог.
 
-   :::image type="content" source="./media/deploy-cloud-shell/add-directory.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/add-directory.png" alt-text="Добавление каталога":::
 
-1. Щелкните **Отправить** .
+1. Щелкните **Отправить**.
 
-   :::image type="content" source="./media/deploy-cloud-shell/upload-template.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/upload-template.png" alt-text="Отправить шаблон":::
 
 1. Найдите и отправьте свой шаблон.
 
-   :::image type="content" source="./media/deploy-cloud-shell/select-template.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/select-template.png" alt-text="Выбор шаблона":::
 
 1. Откройте запрос Cloud Shell.
 
-   :::image type="content" source="./media/deploy-cloud-shell/open-cloud-shell.png" alt-text="Открытие Cloud Shell":::
+   :::image type="content" source="./media/deploy-cloud-shell/open-cloud-shell.png" alt-text="Открыть Cloud Shell":::
 
 1. Перейдите в каталог **clouddrive** . Перейдите к каталогу, который вы добавили для хранения шаблонов.
 

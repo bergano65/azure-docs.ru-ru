@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: scottnap
 Customer intent: As someone with a networking background, I want to learn about Network Virtual Appliances in the Virtual WAN hub.
-ms.openlocfilehash: 1e4b8a2d801d7d7eccfaf558c3926ead1ab0a953
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 365ed60e73be9bb2098022fa767f4ae54b93c37c
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313779"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028086"
 ---
 # <a name="about-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Сведения о сетевом виртуальном устройстве в виртуальном концентраторе глобальной сети Azure (Предварительная версия)
 
 Виртуальная глобальная сеть Azure работала с сетевыми партнерами для создания автоматизации, которая позволяет легко подключать свое клиентское оборудование (CPE) к VPN-шлюзу Azure в виртуальном концентраторе. Azure работает с выбранными сетевыми партнерами, чтобы клиенты могли развертывать сетевые виртуальные устройства сторонних производителей (NVA) непосредственно в виртуальном концентраторе. Это позволяет клиентам, желающим подключить свое АБОНЕНТское лицо к одной и той же торговой марке, NVA в виртуальном концентраторе, чтобы они могли воспользоваться преимуществами комплексных возможностей SD-WAN.
 
-Barracuda Networks — это первый партнер, предоставляющий предложение NVA, которое можно развернуть непосредственно в виртуальном концентраторе глобальной сети с помощью соответствующего продукта [Barracuda КЛАУДЖЕН WAN](https://www.barracuda.com/products/cloudgenwan) . Azure работает с более партнером, поэтому вы должны увидеть другие предложения.
+Barracuda сети и Cisco Systems являются первыми партнерами по предоставлению NVA, который можно развернуть непосредственно в виртуальном концентраторе глобальной сети.  Документацию по продукту [Barracuda КЛАУДЖЕН WAN](https://www.barracuda.com/products/cloudgenwan) и [Cisco Cloud для нескольких облаков](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) см. здесь. Azure работает с дополнительными партнерами, поэтому вы должны увидеть другие предложения.
 
 > [!NOTE]
 > Только предложения NVA, доступные для развертывания в виртуальном концентраторе глобальной сети, можно развернуть в виртуальном концентраторе глобальной сети. Они не могут быть развернуты в произвольной виртуальной сети в Azure.
@@ -50,7 +50,7 @@ NVA, доступные для развертывания непосредств
 * **Группа ресурсов клиента** — это будет содержать заполнитель приложения для управляемого приложения. Партнеры могут использовать его для предоставления любых свойств клиентов, которые они выбирают здесь.
 * **Управляемая группа ресурсов** . клиенты не могут настраивать или изменять ресурсы в этой группе ресурсов напрямую, так как это управляется издателем управляемого приложения. Эта группа ресурсов будет содержать ресурс **нетворквиртуалапплианцес** .
 
-:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Общие сведения о процессе":::
+:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Группы ресурсов управляемых приложений":::
 
 ### <a name="nva-infrastructure-units"></a><a name="units"></a>Единицы инфраструктуры NVA
 
@@ -82,7 +82,7 @@ NVA в виртуальном концентраторе доступна для
 | Южная Америка | Южная Бразилия |
 | Европа | Западная Европа, южная часть Соединенного Королевства|
 |  Ближний Восток | Северная часть ОАЭ; |
-| Азия | Japan East |
+| Азия | Восточная Япония |
 | Австралия | Восточная Австралия |
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
@@ -93,11 +93,11 @@ NVA в виртуальном концентраторе доступна для
 
 ### <a name="can-i-deploy-any-nva-from-azure-marketplace-into-the-virtual-wan-hub"></a>Можно ли развернуть любой NVA из Azure Marketplace в виртуальном концентраторе глобальной сети?
 
-Нет. В настоящее время для развертывания в виртуальном концентраторе глобальной сети доступна только [Barracuda КЛАУДЖЕН WAN](https://aka.ms/BarracudaMarketPlaceOffer) .
+В настоящее время для развертывания в виртуальном концентраторе глобальной сети можно развернуть только [Barracuda КЛАУДЖЕН WAN](https://aka.ms/BarracudaMarketPlaceOffer) и [Приложение Cisco Cloud вван](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cisco.cisco_cloud_vwan_app?tab=Overview) .
 
 ### <a name="what-is-the-cost-of-the-nva"></a>Какова стоимость NVA?
 
-Необходимо приобрести лицензию для Barracuda Клауджен WAN NVA из Barracuda. Дополнительные сведения о лицензировании см. на [странице Barracuda WAN клауджен](https://www.barracuda.com/products/cloudgenwan). Кроме того, вам будет взиматься плата за использование единиц инфраструктуры NVA, которые вы используете, и любых других используемых ресурсов. Дополнительные сведения см. в статье [Основные понятия ценообразования](pricing-concepts.md).
+Необходимо приобрести лицензию для NVA от поставщика NVA.  Сведения о лицензии Barracuda Клауджен WAN NVA from Barracuda см. на [странице Barracuda WAN](https://www.barracuda.com/products/cloudgenwan). В настоящее время Cisco предлагает только модель лицензирования BYOL (с собственным лицензированием), которая должна быть приобретена непосредственно компанией Cisco. Кроме того, вам будет взиматься плата за использование единиц инфраструктуры NVA, которые вы используете, и любых других используемых ресурсов. Дополнительные сведения см. в статье [Основные понятия ценообразования](pricing-concepts.md).
 
 ### <a name="can-i-deploy-an-nva-to-a-basic-hub"></a>Можно ли развернуть NVA на базовом концентраторе?
 
@@ -109,12 +109,12 @@ NVA в виртуальном концентраторе доступна для
 
 ### <a name="can-i-connect-any-cpe-device-in-my-branch-office-to-barracuda-cloudgen-wan-nva-in-the-hub"></a>Можно ли подключить любое устройство CPE в филиале, чтобы Barracuda Клауджен WAN NVA в концентраторе?
 
-Нет. Barracuda Клауджен WAN совместима только с устройствами с Barracuda CPE. Дополнительные сведения о требованиях к глобальной сети Клауджен см. в разделе [Barracuda КЛАУДЖЕН WAN Page](https://www.barracuda.com/products/cloudgenwan).
+Нет. Barracuda Клауджен WAN совместима только с устройствами с Barracuda CPE. Дополнительные сведения о требованиях к глобальной сети Клауджен см. в разделе [Barracuda КЛАУДЖЕН WAN Page](https://www.barracuda.com/products/cloudgenwan). Для Cisco существует несколько устройств с SD-WAN, которые являются совместимыми. Дополнительные сведения о совместимости КПЕС см. в статье [Cloud документации по для нескольких облаков](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) .
 
 ### <a name="what-routing-scenarios-are-supported-with-nva-in-the-hub"></a>Какие сценарии маршрутизации поддерживаются с NVA в центре?
 
 Все сценарии маршрутизации, поддерживаемые виртуальной глобальной сетью, поддерживаются с NVA в концентраторе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о виртуальной глобальной сети см. в статье [Обзор виртуальной глобальной сети](virtual-wan-about.md) .

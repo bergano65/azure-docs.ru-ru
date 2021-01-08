@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: contperf-fy21q1
 ms.topic: overview
 ms.date: 09/21/2020
-ms.openlocfilehash: 176b89c9fc80b198a8a639afdd14185ab0008aed
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: e75661b54ce9a74013938d11ca7f13d9c3698c76
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029446"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822052"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
@@ -32,7 +32,7 @@ Spark предоставляет примитивы для кластерных 
 | Компонент | Описание |
 | --- | --- |
 | Простота создания |Создание кластера Spark в HDInsight с помощью портала Azure, Azure PowerShell или пакета SDK для HDInsight .NET занимает всего несколько минут. См. инструкции по [началу работы с кластером Apache Spark в HDInsight](apache-spark-jupyter-spark-sql-use-portal.md). |
-| Простота использования |Кластер Spark в HDInsight включает записные книжки Jupyter и Apache Zeppelin. Их можно использовать для интерактивной обработки и визуализации данных. См. статью [Use Apache Zeppelin notebooks with Apache Spark cluster on Azure HDInsight](apache-spark-zeppelin-notebook.md) (Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight) и [Руководство по загрузке данных и выполнению запросов в кластере Apache Spark в Azure HDInsight](apache-spark-load-data-run-query.md).|
+| Простота использования |Кластер Spark в HDInsight включает записные книжки Jupyter Notebook и Apache Zeppelin Notebook. Их можно использовать для интерактивной обработки и визуализации данных. См. статью [Use Apache Zeppelin notebooks with Apache Spark cluster on Azure HDInsight](apache-spark-zeppelin-notebook.md) (Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight) и [Руководство по загрузке данных и выполнению запросов в кластере Apache Spark в Azure HDInsight](apache-spark-load-data-run-query.md).|
 | Интерфейсы REST API |Кластеры Spark в HDInsight включают [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), сервер заданий Spark на основе REST API, который позволяет удаленно отправлять и отслеживать задания. См. руководство по [удаленной отправке заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).|
 | Поддержка для службы хранилища Azure | Кластеры Spark в HDInsight могут использовать Azure Data Lake Storage 1-го или 2-го поколения как основное или дополнительное хранилище. Дополнительные сведения об Azure Data Lake Storage 1-го поколения см. в [этой статье](../../data-lake-store/data-lake-store-overview.md). Дополнительные сведения о Data Lake Storage 2-го поколения см. в [этой статье](../../storage/blobs/data-lake-storage-introduction.md).|
 | Интеграция со службами Azure |Кластер Spark в HDInsight поставляется с соединителем для Центров событий Azure. Вы можете создавать приложения потоковой передачи с помощью Центров событий. Можно также использовать платформу Apache Kafka, которая уже доступна в составе Spark. |

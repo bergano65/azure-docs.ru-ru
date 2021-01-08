@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc,seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 4eb10298ac683c991835f86582d82fb952b314b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f56bb5e3ed8c953b67f1e88fc16846accaed995
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82195117"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821287"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство по Анализ данных Apache Spark с использованием Power BI в HDInsight
 
@@ -37,7 +37,7 @@ ms.locfileid: "82195117"
 
 [Записная книжка Jupyter Notebook](https://jupyter.org/), созданная при работе с [предыдущим руководством](apache-spark-load-data-run-query.md), содержит код для создания таблицы `hvac`. Эта таблица основана на CSV-файле, доступном во всех кластерах HDInsight Spark в `\HdiSamples\HdiSamples\SensorSampleData\hvac\hvac.csv`. Ниже описана процедура проверки данных.
 
-1. В записной книжке Jupyter вставьте приведенный ниже пример кода и нажмите клавиши **SHIFT + ВВОД**. Этот код предназначен для проверки наличия таблиц.
+1. В записной книжке Jupyter Notebook вставьте приведенный ниже пример кода и нажмите клавиши **SHIFT+ВВОД**. Этот код предназначен для проверки наличия таблиц.
 
     ```PySpark
     %%sql
@@ -125,7 +125,7 @@ ms.locfileid: "82195117"
 
 1. Откройте Power BI Desktop.
 
-1. На вкладке **Главная**нажмите кнопку **Опубликовать**.
+1. На вкладке **Главная** нажмите кнопку **Опубликовать**.
 
     ![Publish from Power BI Desktop](./media/apache-spark-use-bi-tools/apache-spark-bi-publish.png "Публикация из Power BI Desktop") (Публикация из Power BI Desktop)
 

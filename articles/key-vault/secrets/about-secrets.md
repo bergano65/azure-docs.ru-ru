@@ -1,6 +1,6 @@
 ---
 title: Сведения о секретах Azure Key Vault — Azure Key Vault
-description: В этой статье приведены общие сведения об интерфейсе Azure Key Vault REST и подробные сведения о секретах.
+description: Общие сведения о секретах Azure Key Vault.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,16 +10,16 @@ ms.subservice: secrets
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7aa2feba5a2b2fa47bbb0c055a2f556b8997ab34
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4ded48fe8f04d2cdba40650974fd5002d659e381
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82930477"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705274"
 ---
 # <a name="about-azure-key-vault-secrets"></a>Сведения о секретах Azure Key Vault
 
-Key Vault обеспечивает безопасное хранение секретов, таких как пароли и строки подключения к базам данных.
+[Key Vault](../general/overview.md) обеспечивает безопасное хранение общих секретов, таких как пароли и строки подключения к базам данных.
 
 С точки зрения разработчика API-интерфейсы Key Vault принимают и возвращают значения секретов в виде строк. На внутреннем уровне Key Vault хранит секреты и управляет ими в виде последовательности октетов (8 бит) максимальным объемом 25 килобайтов каждый. Служба Key Vault не предоставляет никакой семантики для секретов. Она просто принимает данные, шифрует и сохраняет их, возвращая идентификатор секрета — "id". Идентификатор может использоваться, чтобы получить секрет позже.  
 
@@ -43,6 +43,8 @@ Key Vault также поддерживает поле contentType для сек
 
 - *Создано*. Необязательное значение в формате IntDate. Атрибут created указывает, когда была создана эта версия секрета. Это значение равно NULL для секретов, созданных перед добавлением данного атрибута. Нужно указать число, содержащее значение IntDate.  
 - *Обновлено*. Необязательное значение в формате IntDate. Атрибут updated указывает, когда была обновлена эта версия секрета. Это значение равно NULL для секретов, которые в последний раз обновлялись перед добавлением данного атрибута. Нужно указать число, содержащее значение IntDate.
+
+Сведения об общих атрибутах для каждого типа объектов хранилища ключей см. в статье [Общие сведения о ключах, секретах и сертификатах Azure Key Vault](../general/about-keys-secrets-certificates.md).
 
 ### <a name="date-time-controlled-operations"></a>Операции, зависящие от даты и времени
 
@@ -68,6 +70,12 @@ Key Vault также поддерживает поле contentType для сек
 
 Дополнительные сведения о работе с секретами см. в [справочнике по работе с Azure Key Vault с помощью REST API](/rest/api/keyvault). Сведения об установке разрешений см. в статьях [Vaults — Create Or Update](/rest/api/keyvault/vaults/createorupdate) (Хранилища. Создание или обновление) и [Vaults — Update Access Policy](/rest/api/keyvault/vaults/updateaccesspolicy) (Хранилища. Обновление политики доступа). 
 
+Руководства по управлению доступом в Key Vault:
+- [Назначение политики доступа Key Vault с помощью CLI](../general/assign-access-policy-cli.md)
+- [Назначение политики доступа Key Vault с помощью PowerShell](../general/assign-access-policy-powershell.md)
+- [Назначение политики доступа Key Vault с помощью портала Azure](../general/assign-access-policy-portal.md)
+- [Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (предварительная версия)](../general/rbac-guide.md)
+
 ## <a name="secret-tags"></a>Теги секретов  
 В форме тегов можно указать дополнительные метаданные для конкретного приложения. Key Vault поддерживает до 15 тегов, каждый из которых может иметь имя и значение длиной 256 знаков.  
 
@@ -76,14 +84,17 @@ Key Vault также поддерживает поле contentType для сек
 
 ## <a name="azure-storage-account-key-management"></a>Управление ключами учетных записей хранения Azure
 
-Key Vault может управлять ключами учетных записей хранения Azure:
+Key Vault может управлять ключами [учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-account-overview):
 
 - На внутреннем уровне Key Vault может выводить список ключей (синхронизировать их) с помощью учетной записи хранения Azure. 
 - Key Vault периодически повторно создает (сменяет) ключи.
 - Значения ключей никогда не возвращаются в ответе вызывающему объекту.
 - Azure Key Vault управляет ключами как учетных записей хранения, так и классических учетных записей хранения.
 
-Дополнительные сведения см. в статье [Manage storage account keys with Key Vault and the Azure CLI](../secrets/overview-storage-keys.md) (Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI).
+Дополнительные сведения можно найти в разделе
+- [Ключи доступа к учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
+- [Управление ключами учетных записей хранения в Azure Key Vault](../secrets/overview-storage-keys.md)
+
 
 ## <a name="storage-account-access-control"></a>Управление доступом к учетной записи хранения
 
@@ -109,11 +120,18 @@ Key Vault может управлять ключами учетных запис
 
 Дополнительные сведения о работе с сертификатами см. в статье [Azure Key Vault REST API reference](/rest/api/keyvault) (Справочник по REST API для Azure Key Vault). Сведения об установке разрешений см. в статьях [Vaults — Create Or Update](/rest/api/keyvault/vaults/createorupdate) (Хранилища. Создание или обновление) и [Vaults — Update Access Policy](/rest/api/keyvault/vaults/updateaccesspolicy) (Хранилища. Обновление политики доступа).
 
+Руководства по управлению доступом в Key Vault:
+- [Назначение политики доступа Key Vault с помощью CLI](../general/assign-access-policy-cli.md)
+- [Назначение политики доступа Key Vault с помощью PowerShell](../general/assign-access-policy-powershell.md)
+- [Назначение политики доступа Key Vault с помощью портала Azure](../general/assign-access-policy-portal.md)
+- [Предоставление доступа к ключам, сертификатам и секретам Key Vault с помощью управления доступом на основе ролей Azure (предварительная версия)](../general/rbac-guide.md)
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сведения о Key Vault](../general/overview.md)
 - [Сведения о ключах, секретах и сертификатах](../general/about-keys-secrets-certificates.md)
 - [Сведения о ключах](../keys/about-keys.md)
 - [Сведения о сертификатах](../certificates/about-certificates.md)
-- [Аутентификация, запросы и ответы](../general/authentication-requests-and-responses.md)
+- [Безопасный доступ к хранилищу ключей](../general/secure-your-key-vault.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)

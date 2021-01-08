@@ -9,29 +9,46 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: 6037deb484ca966ab3a54cc60b0d53ac8299d500
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: ef2c69409ce3f479338ffc9d418b3469f197ad30
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590007"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679396"
 ---
-# <a name="tutorial---migrate-a-web-app-from-bing-maps"></a>Руководство по переносу веб-приложения из Карт Bing
+# <a name="tutorial-migrate-a-web-app-from-bing-maps"></a>Руководство по Перенос веб-приложения из Карт Bing
 
-Веб-приложения, использующие Карты Bing, часто используют пакет SDK Карт Bing версии 8 для JavaScript. Подходящий пакет SDK на основе Azure для переноса — веб-пакет SDK для Azure Maps. Веб-пакет SDK Azure Maps позволяет настраивать интерактивные карты, используя собственные изображения и содержимое для отображения в веб-приложениях или мобильных приложениях. Этот элемент управления использует WebGL, позволяя вам отображать большие наборы данных с высокой производительностью. Вы можете выполнять разработку с помощью пакета SDK, используя JavaScript или TypeScript.
+Веб-приложения, использующие Карты Bing, часто используют пакет SDK Карт Bing версии 8 для JavaScript. Подходящий пакет SDK на основе Azure для переноса — веб-пакет SDK для Azure Maps. Веб-пакет SDK Azure Maps позволяет настраивать интерактивные карты, используя собственные изображения и содержимое для отображения в веб-приложениях или мобильных приложениях. Этот элемент управления использует WebGL, позволяя вам отображать большие наборы данных с высокой производительностью. Вы можете выполнять разработку с помощью пакета SDK, используя JavaScript или TypeScript. В этом учебнике рассматривается следующее.
+
+> [!div class="checklist"]
+> * Загрузка карты
+> * локализация карты;
+> * добавление канцелярских кнопок, ломаных линий и многоугольников.
+> * отображение сведений во всплывающем окне или окне сведений;
+> * загрузка и отображение данных KML и GeoJSON;
+> * кластерные канцелярские кнопки;
+> * Наложение слоя фрагментов
+> * Отображение данных о трафике
+> * Добавление наземного наложения
 
 При переносе имеющегося веб-приложения проверьте, использует ли оно библиотеку элементов управления картой с открытым кодом, например Cesium, Leaflet или OpenLayers. Если это так, и вы предпочитаете использовать эту библиотеку в дальнейшем, можно подключить ее к службе фрагментов карт Azure Maps ([фрагменты дорожных карт](/rest/api/maps/render/getmaptile) \| [фрагменты спутниковых карт](/rest/api/maps/render/getmapimagerytile)). По ссылкам ниже приведены сведения об использовании Azure Maps в некоторых часто используемых библиотеках элементов управления картой с открытым кодом.
 
--   Cesium — элемент управления трехмерными картами для Интернета. [Пример кода](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20Cesium%20JS) \| [документация](https://cesiumjs.org/)
--   Leaflet — упрощенный элемент управления двухмерными картами для Интернета. [Пример кода](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Azure%20Maps%20Raster%20Tiles%20in%20Leaflet%20JS) \| [документация](https://leafletjs.com/)
--   OpenLayers — элемент управления двухмерными картами для Интернета, который поддерживает проекции. [Пример кода](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20OpenLayers) \| [документация](https://openlayers.org/)
+* Cesium — элемент управления трехмерными картами для Интернета. [Пример кода](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20Cesium%20JS) \| [документация](https://cesiumjs.org/)
+* Leaflet — упрощенный элемент управления двухмерными картами для Интернета. [Пример кода](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Azure%20Maps%20Raster%20Tiles%20in%20Leaflet%20JS) \| [документация](https://leafletjs.com/)
+* OpenLayers — элемент управления двухмерными картами для Интернета, который поддерживает проекции. [Пример кода](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20OpenLayers) \| [документация](https://openlayers.org/)
 
 Для разработки с использованием платформы JavaScript может оказаться полезным один из следующих проектов с открытым исходным кодом:
 
-- [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps) — это программа-оболочка Angular 10 для Azure Maps.
-- [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components) — компонент Azure Maps Blazor.
-- [Компонент React Azure Maps](https://github.com/WiredSolutions/react-azure-maps) — программа-оболочка React для управления Azure Maps.
-- [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps) — компонент Azure Maps для приложения Vue.
+* [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps) — это программа-оболочка Angular 10 для Azure Maps.
+* [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components) — компонент Azure Maps Blazor.
+* [Компонент React Azure Maps](https://github.com/WiredSolutions/react-azure-maps) — программа-оболочка React для управления Azure Maps.
+* [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps) — компонент Azure Maps для приложения Vue.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+1. Войдите на [портал Azure](https://portal.azure.com). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+2. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account)
+3. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 ## <a name="key-features-support"></a>Поддержка основных функций
 
@@ -68,24 +85,24 @@ Azure Maps также содержит множество дополнитель
 
 Ниже приведены некоторые ключевые различия между веб-пакетами SDK для Карт Bing и Azure Maps, о которых следует знать.
 
--   Помимо предоставления размещенной конечной точки для доступа к веб-пакету SDК Azure Maps, можно также при необходимости использовать пакет NPM для внедрения веб-пакета SDK в приложения. Дополнительные сведения см. в [документации](./how-to-use-map-control.md). Этот пакет также включает определения TypeScript.
--   Пакет SDK для Карт Bing предоставляется в двух размещенных ветвях: ветвь выпусков и экспериментальная ветвь. Когда ведется разработка новых компонентов в экспериментальной ветви может выходить до нескольких обновлений в день. В Azure Maps размещается только ветвь выпусков, а экспериментальные функции создаются в виде пользовательских модулей в проекте примеров кода Azure Maps с открытым кодом. Карты Bing, используемые для зафиксированной ветви, также обновляются реже, что уменьшает риск критических изменений в связи с выпуском. В Azure Maps можно использовать модуль NPM и указать выпуск с любым предыдущим дополнительным номером версии.
+* Помимо предоставления размещенной конечной точки для доступа к веб-пакету SDК Azure Maps, можно также при необходимости использовать пакет NPM для внедрения веб-пакета SDK в приложения. Дополнительные сведения см. в [документации](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control). Этот пакет также включает определения TypeScript.
+* Пакет SDK для Карт Bing предоставляется в двух размещенных ветвях: ветвь выпусков и экспериментальная ветвь. Когда ведется разработка новых компонентов в экспериментальной ветви может выходить до нескольких обновлений в день. В Azure Maps размещается только ветвь выпусков, а экспериментальные функции создаются в виде пользовательских модулей в проекте примеров кода Azure Maps с открытым кодом. Карты Bing, используемые для зафиксированной ветви, также обновляются реже, что уменьшает риск критических изменений в связи с выпуском. В Azure Maps можно использовать модуль NPM и указать выпуск с любым предыдущим дополнительным номером версии.
 
 > [!TIP]
 > Azure Maps публикует минифицированные и не минифицированные версии пакета SDK. Простое удалите `.min` из имен файлов. Не минифицированная версия полезна при отладке проблем, но в рабочей среде обязательно используйте минифицированную версию, преимуществом которой является меньший размер файла.
 
--   После создания экземпляра класса Map в Azure Maps код должен ждать запуска для карты события `ready` или `load`, прежде чем взаимодействовать с ней. Эти события подтверждают, что все ресурсы карты загружены и готовы к доступу.
--   Обе платформы используют аналогичную систему фрагментов для базовых карт, однако фрагменты в Картах Bing имеют размер 256 пикселей, а фрагменты в Azure Maps — 512. Таким образом, чтобы получить тот же вид карты в Azure Maps, что и в Картах Bing, от уровня масштабирования, используемого в Картах Bing, в Azure Maps следует вычесть единицу.
--   В Картах Bing координаты используются в формате `latitude, longitude`, а в Azure Maps — в формате `longitude, latitude`. Этот формат соответствует стандартным координатам `[x, y]`, которые используются большинством ГИС-платформ.
+* После создания экземпляра класса Map в Azure Maps код должен ждать запуска для карты события `ready` или `load`, прежде чем взаимодействовать с ней. Эти события подтверждают, что все ресурсы карты загружены и готовы к доступу.
+* Обе платформы используют аналогичную систему фрагментов для базовых карт, однако фрагменты в Картах Bing имеют размер 256 пикселей, а фрагменты в Azure Maps — 512. Таким образом, чтобы получить тот же вид карты в Azure Maps, что и в Картах Bing, от уровня масштабирования, используемого в Картах Bing, в Azure Maps следует вычесть единицу.
+* В Картах Bing координаты используются в формате `latitude, longitude`, а в Azure Maps — в формате `longitude, latitude`. Этот формат соответствует стандартным координатам `[x, y]`, которые используются большинством ГИС-платформ.
 
--   Фигуры в веб-пакете SDK для Azure Maps основаны на схеме GeoJSON. Вспомогательные классы предоставляются с помощью пространства имен [atlas.data](/javascript/api/azure-maps-control/atlas.data). Существует также класс [atlas.Shape](/javascript/api/azure-maps-control/atlas.shape), который можно использовать для упаковки объектов GeoJSON и упрощения их обновления и поддержки с использованием привязок данных.
--   Координаты в Azure Maps определяются как объекты положения, которые можно указать как простой массив чисел в формате `[longitude, latitude]` или `new atlas.data.Position(longitude, latitude)`.
+* Фигуры в веб-пакете SDK для Azure Maps основаны на схеме GeoJSON. Вспомогательные классы предоставляются с помощью пространства имен [atlas.data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data). Существует также класс [atlas.Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape), который можно использовать для упаковки объектов GeoJSON и упрощения их обновления и поддержки с использованием привязок данных.
+* Координаты в Azure Maps определяются как объекты положения, которые можно указать как простой массив чисел в формате `[longitude, latitude]` или `new atlas.data.Position(longitude, latitude)`.
 
 > [!TIP]
 > Класс Position содержит статическую вспомогательную функцию для импорта координат в формате `latitude, longitude`. В коде Карт Bing функцию [atlas.data.Position.fromLatLng](/javascript/api/azure-maps-control/atlas.data.position) зачастую можно заменить функцией `new Microsoft.Maps.Location`.
 
--   Вместо того чтобы указывать сведения о стилях для каждой фигуры, добавляемой на карту, Azure Maps отделяет стили от данных. Данные хранятся в источниках данных и подключены к слоям подготовки к просмотру, которые код Azure Maps использует для визуализации данных. Такой подход обеспечивает повышение производительности. Кроме того, многие слои поддерживают управляемый данными стиль, где бизнес-логика может быть добавлена к параметрам стиля слоя, которые изменят способ отображения отдельных фигур в слое на основе свойств, определенных в фигуре.
--   Azure Maps предоставляет целый ряд полезных пространственных математических функций в пространстве имен `atlas.math`, но они отличаются от тех, которые входят в модуль пространственных математических вычислений в Картах Bing. Основное отличие заключается в том, что Azure Maps не предоставляет встроенные функции для бинарных операций, например объединения и пересечения множеств, однако поскольку в основе Azure Maps лежит открытый стандарт GeoJSON, для этих служб доступно множество библиотек с открытым кодом. Одно из популярных средств, которое хорошо работает с Azure Maps и предоставляет массу возможностей для пространственных математических вычислений, — [turf js](http://turfjs.org/).
+* Вместо того чтобы указывать сведения о стилях для каждой фигуры, добавляемой на карту, Azure Maps отделяет стили от данных. Данные хранятся в источниках данных и подключены к слоям подготовки к просмотру, которые код Azure Maps использует для визуализации данных. Такой подход обеспечивает повышение производительности. Кроме того, многие слои поддерживают управляемый данными стиль, где бизнес-логика может быть добавлена к параметрам стиля слоя, которые изменят способ отображения отдельных фигур в слое на основе свойств, определенных в фигуре.
+* Azure Maps предоставляет целый ряд полезных пространственных математических функций в пространстве имен `atlas.math`, но они отличаются от тех, которые входят в модуль пространственных математических вычислений в Картах Bing. Основное отличие заключается в том, что Azure Maps не предоставляет встроенные функции для бинарных операций, например объединения и пересечения множеств, однако поскольку в основе Azure Maps лежит открытый стандарт GeoJSON, для этих служб доступно множество библиотек с открытым кодом. Одно из популярных средств, которое хорошо работает с Azure Maps и предоставляет массу возможностей для пространственных математических вычислений, — [turf js](http://turfjs.org/).
 
 Подробный список терминологии, связанной с Azure Maps, см. также в [глоссарии Azure Maps](./glossary.md).
 
@@ -95,41 +112,40 @@ Azure Maps также содержит множество дополнитель
 
 **Разделы**
 
-- [Загрузка карты](#load-a-map)
-- [Локализация карты](#localizing-the-map)
-- [Настройка представления карты](#setting-the-map-view)
-- [Добавление вешки](#adding-a-pushpin)
-- [Добавление пользовательской вешки](#adding-a-custom-pushpin)
-- [Добавление ломаной линии](#adding-a-polyline)
-- [Добавление многоугольника](#adding-a-polygon)
-- [Отображение информационного поля](#display-an-infobox)
-- [Кластеризация вешек](#pushpin-clustering)
-- [Добавление тепловой карты](#add-a-heat-map)
-- [Наложение слоя фрагментов](#overlay-a-tile-layer)
-- [Отображение данных о трафике](#show-traffic-data)
-- [Добавление наземного наложения](#add-a-ground-overlay)
-- [Добавление данных KML на карту](#add-kml-data-to-the-map)
-- [Добавление инструментов рисования](#add-drawing-tools)
-
+* [Загрузка карты](#load-a-map)
+* [Локализация карты](#localizing-the-map)
+* [Настройка представления карты](#setting-the-map-view)
+* [Добавление вешки](#adding-a-pushpin)
+* [Добавление пользовательской вешки](#adding-a-custom-pushpin)
+* [Добавление ломаной линии](#adding-a-polyline)
+* [Добавление многоугольника](#adding-a-polygon)
+* [Отображение информационного поля](#display-an-infobox)
+* [Кластеризация вешек](#pushpin-clustering)
+* [Добавление тепловой карты](#add-a-heat-map)
+* [Наложение слоя фрагментов](#overlay-a-tile-layer)
+* [Отображение данных о трафике](#show-traffic-data)
+* [Добавление наземного наложения](#add-a-ground-overlay)
+* [Добавление данных KML на карту](#add-kml-data-to-the-map)
+* [Добавление инструментов рисования](#add-drawing-tools)
 
 ### <a name="load-a-map"></a>Загрузка карты
 
 Для загрузки карты в обоих пакетах SDK необходимо выполнить один и тот же набор действий.
 
--   Добавьте ссылку на пакет SDK для карт.
--   Добавьте в текст страницы тег `div`. Он будет служить заполнителем для карты.
--   Создайте функцию JavaScript, которая вызывается после загрузки страницы.
--   Создайте экземпляр соответствующего класса Map.
+* Добавьте ссылку на пакет SDK для карт.
+* Добавьте в текст страницы тег `div`. Он будет служить заполнителем для карты.
+* Создайте функцию JavaScript, которая вызывается после загрузки страницы.
+* Создайте экземпляр соответствующего класса Map.
 
 **Некоторые ключевые отличия**
 
--   В Картах Bing необходимо указать ключ учетной записи в ссылке на скрипт API или в качестве параметра карты. Учетные данные проверки подлинности для Azure Maps указываются в качестве параметров класса Map. Это может быть ключ подписки или сведения Azure Active Directory.
--   Карты Bing принимают функцию обратного вызова в ссылке на скрипт API, которая используется для вызова функции инициализации для загрузки карты. При работе с Azure Maps следует использовать событие OnLoad страницы.
--   При использовании идентификатора для ссылки на элемент `div`, в котором карта будет преобразована для просмотра, в Картах Bing используется селектор HTML (т. е. `#myMap`), а в Azure Maps — только значение идентификатора (т. е. `myMap`).
--   Координаты в Azure Maps определяются как объекты положения, которые можно указать как простой массив чисел в формате `[longitude, latitude]`.
--   Уровень масштаба в Azure Maps на один уровень меньше, чем в примере Карт Bing, из-за разницы в размерах системы фрагментов между платформами.
--   По умолчанию Azure Maps не добавляет на холст карты элементы управления навигацией, такие как кнопки масштабирования и кнопки стилей карт. Однако есть элементы управления для добавления средств выбора стиля карт, кнопок масштабирования, компаса или поворота, а также средства управления наклоном.
--   Обработчик событий добавляется в Azure Maps для отслеживания события `ready` экземпляра карты. Он сработает, когда на карте закончится загрузка контекста WebGL и всех необходимых ресурсов. В этот обработчик событий можно добавить любой код заключительной загрузки.
+* В Картах Bing необходимо указать ключ учетной записи в ссылке на скрипт API или в качестве параметра карты. Учетные данные проверки подлинности для Azure Maps указываются в качестве параметров класса Map. Это может быть ключ подписки или сведения Azure Active Directory.
+* Карты Bing принимают функцию обратного вызова в ссылке на скрипт API, которая используется для вызова функции инициализации для загрузки карты. При работе с Azure Maps следует использовать событие OnLoad страницы.
+* При использовании идентификатора для ссылки на элемент `div`, в котором карта будет преобразована для просмотра, в Картах Bing используется селектор HTML (т. е. `#myMap`), а в Azure Maps — только значение идентификатора (т. е. `myMap`).
+* Координаты в Azure Maps определяются как объекты положения, которые можно указать как простой массив чисел в формате `[longitude, latitude]`.
+* Уровень масштаба в Azure Maps на один уровень меньше, чем в примере Карт Bing, из-за разницы в размерах системы фрагментов между платформами.
+* По умолчанию Azure Maps не добавляет на холст карты элементы управления навигацией, такие как кнопки масштабирования и кнопки стилей карт. Однако есть элементы управления для добавления средств выбора стиля карт, кнопок масштабирования, компаса или поворота, а также средства управления наклоном.
+* Обработчик событий добавляется в Azure Maps для отслеживания события `ready` экземпляра карты. Он сработает, когда на карте закончится загрузка контекста WebGL и всех необходимых ресурсов. В этот обработчик событий можно добавить любой код заключительной загрузки.
 
 В приведенных ниже примерах показано, как загрузить базовую карту, которая выравнивается по центру Нью-Йорка в точке координат (долгота: −-73,985; широта: 40,747) и находится на уровне масштабирования 12 в Картах Bing.
 
@@ -152,7 +168,7 @@ Azure Maps также содержит множество дополнитель
         function initMap() {
             map = new Microsoft.Maps.Map('#myMap', {
                 credentials: '<Your Bing Maps Key>',
-          center: new Microsoft.Maps.Location(40.747, -73.985),
+                center: new Microsoft.Maps.Location(40.747, -73.985),
                 zoom: 12
             });
         }
@@ -169,9 +185,7 @@ Azure Maps также содержит множество дополнитель
 
 При выполнении этого кода в браузере отобразится показанная ниже карта:
 
-<center>
-
-![Карта в службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-load-map.jpg)</center>
+![Карта в службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-load-map.jpg)
 
 **После: Azure Maps**
 
@@ -209,10 +223,10 @@ Azure Maps также содержит множество дополнитель
             map.events.add('ready', function () {
                 //Add zoom and map style controls to top right of map.
                 map.controls.add([
-                    new atlas.control.StyleControl(),
-                    new atlas.control.ZoomControl()
-                ], {
-                    position: 'top-right'
+                        new atlas.control.StyleControl(),
+                        new atlas.control.ZoomControl()
+                    ], {
+                        position: 'top-right'
                 });
             });
         }
@@ -226,18 +240,16 @@ Azure Maps также содержит множество дополнитель
 
 При выполнении этого кода в браузере отобразится показанная ниже карта:
 
-<center>
+![Карта в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-load-map.jpg)
 
-![Карта в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-load-map.jpg)</center>
-
-Подробную документацию по настройке и использованию элементов управления картой Azure Maps в веб-приложении см. [здесь](./how-to-use-map-control.md).
+Подробную документацию по настройке и использованию элементов управления картой Azure Maps в веб-приложении см. [здесь](how-to-use-map-control.md).
 
 > [!TIP]
 > Azure Maps публикует минифицированные и не минифицированные версии пакета SDK. Удалите `.min` из имен файлов. Не минифицированная версия полезна при отладке проблем, но в рабочей среде обязательно используйте минифицированную версию, преимуществом которой является меньший размер файла.
 
 **Дополнительные ресурсы**
 
--   Azure Maps также предоставляет элементы управления навигацией для поворота и наклона представления карты, как описано [здесь](./map-add-controls.md).
+* Azure Maps также предоставляет элементы управления навигацией для поворота и наклона представления карты, как описано [здесь](map-add-controls.md).
 
 ### <a name="localizing-the-map"></a>Локализация карты
 
@@ -253,13 +265,11 @@ Azure Maps также содержит множество дополнитель
 
 Ниже приведен пример использования Карт Bing для языка "fr-FR".
 
-<center>
-
-![Карта в локализованной службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)</center>
+![Карта в локализованной службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)
 
 **После: Azure Maps**
 
-Azure Maps предоставляет только возможность настройки языка и регионального представления карты. Возможности не ограничиваются с помощью параметра, определяющего рынок. Настроить язык и региональное представление карты можно двумя разными способами. Первый вариант — добавить эту информацию в глобальное пространство имен `atlas`. Это приведет к тому, что все экземпляры элементов управления картой в вашем приложении будут по умолчанию использовать эти параметры. В приведенном ниже примере кода устанавливается французский язык (fr-FR) и региональное представление со значением `"auto"`.
+Azure Maps предоставляет только возможность настройки языка и регионального представления карты. Возможности не ограничиваются с помощью параметра, определяющего рынок. Настроить язык и региональное представление карты можно двумя разными способами. Первый вариант — добавить эту информацию в глобальное пространство имен `atlas`. Это приведет к тому, что все экземпляры элементов управления картой в вашем приложении будут по умолчанию использовать эти параметры. В приведенном ниже примере кода устанавливается французский язык (fr-FR) и региональное представление со значением `"Auto"`.
 
 ```javascript
 atlas.setLanguage('fr-FR');
@@ -285,9 +295,7 @@ map = new atlas.Map('myMap', {
 
 Ниже приведен пример Azure Maps с установленным языком fr и регионом пользователя fr-FR.
 
-<center>
-
-![Локализованная карта Azure Maps](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)</center>
+![Локализованная карта Azure Maps](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)
 
 ### <a name="setting-the-map-view"></a>Настройка представления карты
 
@@ -308,9 +316,7 @@ map.setView({
 });
 ```
 
-<center>
-
-![Карты Bing с заданным представлением карты](media/migrate-bing-maps-web-app/bing-maps-set-map-view.jpg)</center>
+![Карты Bing с заданным представлением карты](media/migrate-bing-maps-web-app/bing-maps-set-map-view.jpg)
 
 **После: Azure Maps**
 
@@ -327,9 +333,7 @@ map.setStyle({
 });
 ```
 
-<center>
-
-![Azure Maps с заданным представлением карты](media/migrate-bing-maps-web-app/azure-maps-set-map-view.jpg)</center>
+![Azure Maps с заданным представлением карты](media/migrate-bing-maps-web-app/azure-maps-set-map-view.jpg)
 
 **Дополнительные ресурсы**
 
@@ -340,9 +344,9 @@ map.setStyle({
 
 В Azure Maps данные точек можно визуализировать на карте несколькими способами.
 
--   Метки HTML — отрисовывают точки с помощью традиционных элементов DOM. Метки HTML поддерживают перетаскивание.
--   Слой символов — отрисовывает точки со значками или текстом в контексте WebGL.
--   Пузырьковый слой — отрисовывает точки в виде окружностей на карте. Радиусы окружностей можно масштабировать на основе свойств данных.
+* Метки HTML — отрисовывают точки с помощью традиционных элементов DOM. Метки HTML поддерживают перетаскивание.
+* Слой символов — отрисовывает точки со значками или текстом в контексте WebGL.
+* Пузырьковый слой — отрисовывает точки в виде окружностей на карте. Радиусы окружностей можно масштабировать на основе свойств данных.
 
 Слои символов и пузырьков отображаются в контексте WebGL и могут визуализировать очень большие наборы точек на карте. Данные для этих слоев должны храниться в источнике данных. Источники данных и слои отрисовки необходимо добавлять на карту после запуска события `ready`. Метки HTML отображаются как элементы модели DOM на странице и не используют источник данных. Чем больше элементов DOM содержит страница, тем медленнее она будет обрабатываться. При отрисовке более чем нескольких сотен точек на карте рекомендуется использовать один из слоев отрисовки.
 
@@ -374,9 +378,7 @@ var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(51.5, -0.2)
 map.entities.add(pushpin);
 ```
 
-<center>
-
-![Добавление вешки в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-add-pushpin.jpg)</center>
+![Добавление вешки в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-add-pushpin.jpg)
 
 **После: использование меток HTML в Azure Maps**
 
@@ -390,9 +392,7 @@ map.markers.add(new atlas.HtmlMarker({
 }));
 ```
 
-<center>
-
-![Azure Maps с добавленной меткой](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)</center>
+![Azure Maps с добавленной меткой](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)
 
 **После: использование слоя символов в Azure Maps**
 
@@ -456,9 +456,7 @@ map.markers.add(new atlas.HtmlMarker({
 </html>
 ```
 
-<center>
-
-![Azure Maps с добавленным слоем символов](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)</center>
+![Azure Maps с добавленным слоем символов](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)
 
 **Дополнительные ресурсы**
 
@@ -481,7 +479,6 @@ map.markers.add(new atlas.HtmlMarker({
 |:-----------------------------------------------------------------------:|
 | yellow-pushpin.png                                                        |
 
-
 **До: Карты Bing**
 
 В Картах Bing пользовательский маркер создается путем передачи URL-адреса изображения в параметры `icon` вешки. Параметр `anchor` используется, чтобы сопоставить точку изображения вешки с координатами на карте. Значение привязки в Картах Bing относительно левого верхнего угла изображения.
@@ -497,9 +494,7 @@ layer.add(pushpin);
 map.layers.insert(layer);
 ```
 
-<center>
-
-![Карты Bing с добавленной пользовательский вешкой](media/migrate-bing-maps-web-app/bing-maps-add-custom-pushpin.jpg)</center>
+![Карты Bing с добавленной пользовательский вешкой](media/migrate-bing-maps-web-app/bing-maps-add-custom-pushpin.jpg)
 
 **После: использование меток HTML в Azure Maps**
 
@@ -517,9 +512,7 @@ map.markers.add(new atlas.HtmlMarker({
 }));
 ```
 
-<center>
-
-![Azure Maps с добавленной пользовательской меткой](media/migrate-bing-maps-web-app/azure-maps-add-custom-marker.jpg)</center>
+![Azure Maps с добавленной пользовательской меткой](media/migrate-bing-maps-web-app/azure-maps-add-custom-marker.jpg)
 
 **После: использование слоя символов в Azure Maps**
 
@@ -584,9 +577,7 @@ map.markers.add(new atlas.HtmlMarker({
 </html>
 ```
 
-<center>
-
-![Карты Bing с добавленным пользовательским слоем символов](media/migrate-bing-maps-web-app/azure-maps-add-custom-symbol-layer.jpg)</center>
+![Карты Bing с добавленным пользовательским слоем символов](media/migrate-bing-maps-web-app/azure-maps-add-custom-symbol-layer.jpg)
 
 > [!TIP]
 > Чтобы создать расширенную пользовательскую отрисовку точек, используйте одновременно несколько слоев отрисовки. Например, если требуется несколько вешек с одинаковым значком на разных цветных окружностях, вместо того чтобы создавать множество изображений для каждого цвета, наложите слой символов поверх слоя пузырьков таким образом, чтобы эти слои ссылались на один и тот же источник данных. Это будет намного эффективнее, чем создавать и сохранять на карте множество различных изображений.
@@ -631,9 +622,7 @@ layer.add(polyline);
 map.layers.insert(layer);
 ```
 
-<center>
-
-![Ломаная линия в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-line.jpg)</center>
+![Ломаная линия в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-line.jpg)
 
 **После: Azure Maps**
 
@@ -662,9 +651,7 @@ map.layers.add(new atlas.layer.LineLayer(datasource, null, {
 }));
 ```
 
-<center>
-
-![Линия Azure Maps](media/migrate-bing-maps-web-app/azure-maps-line.jpg)</center>
+![Линия Azure Maps](media/migrate-bing-maps-web-app/azure-maps-line.jpg)
 
 **Дополнительные ресурсы**
 
@@ -702,9 +689,7 @@ layer.add(polygon);
 map.layers.insert(layer);
 ```
 
-<center>
-
-![Многоугольник в Картах Bing](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)</center>
+![Многоугольник в Картах Bing](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)
 
 **После: Azure Maps**
 
@@ -738,9 +723,7 @@ map.layers.add(new atlas.layer.LineLayer(datasource, null, {
 }));
 ```
 
-<center>
-
-![Многоугольник в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)</center>
+![Многоугольник в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)
 
 **Дополнительные ресурсы**
 
@@ -780,9 +763,7 @@ Microsoft.Maps.Events.addHandler(pushpin, 'click', function () {
 });
 ```
 
-<center>
-
-![Информационное поле в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-infobox.jpg)</center>
+![Информационное поле в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-infobox.jpg)
 
 **После: Azure Maps**
 
@@ -811,9 +792,7 @@ map.events.add('click', marker, function () {
 });
 ```
 
-<center>
-
-![Всплывающее окно в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-popup.jpg)</center>
+![Всплывающее окно в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-popup.jpg)
 
 > [!NOTE]
 > Чтобы сделать то же самое со слоем символов, пузырьков, линией или слоем многоугольников, передайте слой в код события карт вместо метки.
@@ -883,7 +862,7 @@ map.events.add('click', marker, function () {
             var clusterSize = cluster.containedPushpins.length;
 
             var radius = 20;    //Default radius to 20 pixels.
-            var fillColor = 'lime';   //Default to lime green.
+            var fillColor = 'lime';     //Default to lime green.
 
             if (clusterSize >= 750) {
                 radius = 40;   //If point_count >= 750, radius is 40 pixels.
@@ -917,18 +896,16 @@ map.events.add('click', marker, function () {
 </html>
 ```
 
-<center>
-
-![Кластеризация Карт Bing](media/migrate-bing-maps-web-app/bing-maps-clustering.jpg)</center>
+![Кластеризация Карт Bing](media/migrate-bing-maps-web-app/bing-maps-clustering.jpg)
 
 **После: Azure Maps**
 
 В Azure Maps добавление данных и управление ими осуществляется с помощью источника данных. Слои подключаются к источникам данных и визуализируют данные в них. Класс `DataSource` в Azure Maps предоставляет несколько параметров кластеризации.
 
--   `cluster` — указывает источнику данных выполнить кластеризацию данных точек. 
--   `clusterRadius` — радиус в пикселях, используемый для кластеризации точек.
--   `clusterMaxZoom` — максимальный уровень масштаба, в котором происходит кластеризация. При дополнительном увеличении все точки отрисовываются как символы.
--   `clusterProperties` — определяет пользовательские свойства, которые рассчитываются с помощью выражений для всех точек в каждом кластере и добавляются в свойства каждой точки кластера.
+* `cluster` — указывает источнику данных выполнить кластеризацию данных точек. 
+* `clusterRadius` — радиус в пикселях, используемый для кластеризации точек.
+* `clusterMaxZoom` — максимальный уровень масштаба, в котором происходит кластеризация. При дополнительном увеличении все точки отрисовываются как символы.
+* `clusterProperties` — определяет пользовательские свойства, которые рассчитываются с помощью выражений для всех точек в каждом кластере и добавляются в свойства каждой точки кластера.
 
 Если кластеризация включена, источник данных будет отсылать кластеризованные и некластеризованные точки данных слоям для отрисовки. Источник данных способен выполнять кластеризацию сотен тысяч точек данных. Кластеризованная точка данных имеет следующие свойства.
 
@@ -1045,9 +1022,7 @@ map.events.add('click', marker, function () {
 </html>
 ```
 
-<center>
-
-![Кластеризация в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-clustering.jpg)</center>
+![Кластеризация в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-clustering.jpg)
 
 **Дополнительные ресурсы**
 
@@ -1113,9 +1088,7 @@ map.events.add('click', marker, function () {
 </html>
 ```
 
-<center>
-
-![Тепловая карта Карт Bing](media/migrate-bing-maps-web-app/bing-maps-heatmap.jpg)</center>
+![Тепловая карта Карт Bing](media/migrate-bing-maps-web-app/bing-maps-heatmap.jpg)
 
 **После: Azure Maps**
 
@@ -1177,9 +1150,7 @@ map.events.add('click', marker, function () {
 </html>
 ```
 
-<center>
-
-![Тепловая карта Azure Maps](media/migrate-bing-maps-web-app/azure-maps-heatmap.jpg)</center>
+![Тепловая карта Azure Maps](media/migrate-bing-maps-web-app/azure-maps-heatmap.jpg)
 
 **Дополнительные ресурсы**
 
@@ -1207,9 +1178,7 @@ var weatherTileLayer = new Microsoft.Maps.TileLayer({
 map.layers.insert(weatherTileLayer);
 ```
 
-<center>
-
-![Взвешенная тепловая карта в службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-weighted-heatmap.jpg)</center>
+![Взвешенная тепловая карта в службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-weighted-heatmap.jpg)
 
 **После: Azure Maps**
 
@@ -1217,7 +1186,7 @@ map.layers.insert(weatherTileLayer);
 
 > [!TIP]
 > В Azure Maps слои можно легко отобразить под другими слоями, в том числе под базовыми слоями карт. Часто желательно отображать слои фрагментов под метками карты, чтобы их можно было легко читать. Функция `map.layers.add` принимает второй параметр — идентификатор второго слоя, в который следует вставить новый слой. Чтобы вставить слой фрагментов под метками карты, можно использовать следующий код:
-> 
+>
 > `map.layers.add(myTileLayer, "labels");`
 
 ```javascript
@@ -1229,9 +1198,7 @@ map.layers.add(new atlas.layer.TileLayer({
 }), 'labels');
 ```
 
-<center>
-
-![Взвешенная тепловая карта Azure Maps](media/migrate-bing-maps-web-app/azure-maps-weighted-heatmap.jpg)</center>
+![Взвешенная тепловая карта Azure Maps](media/migrate-bing-maps-web-app/azure-maps-weighted-heatmap.jpg)
 
 > [!TIP]
 > Запросы на фрагмент можно записать с помощью параметра `transformRequest` карты. Это позволит при необходимости изменить или добавить заголовки в запрос.
@@ -1257,9 +1224,7 @@ Microsoft.Maps.loadModule('Microsoft.Maps.Traffic', function () {
 });
 ```
 
-<center>
-
-![Дорожное движение в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-traffic.jpg)</center>
+![Дорожное движение в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-traffic.jpg)
 
 **После: Azure Maps**
 
@@ -1272,15 +1237,11 @@ map.setTraffic({
 });
 ```
 
-<center>
-
-![Данные дорожного движения в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-traffic.jpg)</center>
+![Данные дорожного движения в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-traffic.jpg)
 
 Если щелкнуть один из значков дорожного движения в Azure Maps, во всплывающем окне отобразятся дополнительные сведения.
 
-<center>
-
-![Всплывающее окно с данными о дорожном движении в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-traffic-popup.jpg)</center>
+![Всплывающее окно с данными о дорожном движении в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-traffic-popup.jpg)
 
 **Дополнительные ресурсы**
 
@@ -1335,9 +1296,7 @@ map.setTraffic({
 
 При выполнении этого кода в браузере отобразится показанная ниже карта:
 
-<center>
-
-![Наземное наложение в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-ground-overlay.jpg)</center>
+![Наземное наложение в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-ground-overlay.jpg)
 
 **После: Azure Maps**
 
@@ -1398,9 +1357,7 @@ map.setTraffic({
 </html>
 ```
 
-<center>
-
-![Наземное наложение в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-ground-overlay.jpg)</center>
+![Наземное наложение в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-ground-overlay.jpg)
 
 **Дополнительные ресурсы**
 
@@ -1433,7 +1390,7 @@ Azure Maps и Карты Bing позволяют импортировать и �
                 center: new Microsoft.Maps.Location(40.747, -73.985),
                 zoom: 12
             });
-
+                
             Microsoft.Maps.loadModule('Microsoft.Maps.GeoXml', function () {
                 var callback = function (dataset) {
                     if (dataset.shapes) {
@@ -1461,9 +1418,7 @@ Azure Maps и Карты Bing позволяют импортировать и �
 </html>
 ```
 
-<center>
-
-![KML в службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-kml.jpg)</center>
+![KML в службе "Карты Bing"](media/migrate-bing-maps-web-app/bing-maps-kml.jpg)
 
 **После: Azure Maps**
 
@@ -1558,9 +1513,7 @@ Azure Maps и Карты Bing позволяют импортировать и �
 </html>
 ```
 
-<center>
-
-![KML в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-kml.jpg)</center>
+![KML в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-kml.jpg)
 
 **Дополнительные ресурсы**
 
@@ -1617,9 +1570,7 @@ Azure Maps и Карты Bing позволяют импортировать и �
 
 ```
 
-<center>
-
-![Средства рисования в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-drawing-tools.jpg)</center>
+![Средства рисования в Картах Bing](media/migrate-bing-maps-web-app/bing-maps-drawing-tools.jpg)
 
 **После: Azure Maps**
 
@@ -1649,8 +1600,8 @@ Azure Maps и Карты Bing позволяют импортировать и �
             //Initialize a map instance.
             map = new atlas.Map('myMap', {
                 view: 'Auto',
-                
-                //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+
+                //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.                
                 authOptions: {
                     authType: 'subscriptionKey',
                     subscriptionKey: '<Your Azure Maps Key>'
@@ -1674,9 +1625,7 @@ Azure Maps и Карты Bing позволяют импортировать и �
 </html>
 ```
 
-<center>
-
-![Средства рисования в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-drawing-tools.jpg)</center>
+![Средства рисования в Azure Maps](media/migrate-bing-maps-web-app/azure-maps-drawing-tools.jpg)
 
 > [!TIP]
 > В слоях Azure Maps средства рисования позволяют рисовать фигуры несколькими способами. Например, пользователь может нарисовать многоугольник, щелкая каждую точку, или перетащить указатель мыши, удерживая нажатой ее левую кнопку, чтобы начертить путь. Это можно изменить с помощью параметра `interactionType` класса `DrawingManager`.
@@ -1686,7 +1635,7 @@ Azure Maps и Карты Bing позволяют импортировать и �
 -   [Документация](./set-drawing-options.md)
 -   [Примеры кода](https://azuremapscodesamples.azurewebsites.net/#Drawing-Tools-Module)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="additional-resources"></a>Дополнительные ресурсы
 
 Ознакомьтесь с [модулями веб-пакета SDK Azure Maps с открытым кодом](open-source-projects.md#open-web-sdk-modules). Эти модули полностью настраиваются и предоставляют массу дополнительных функциональных возможностей.
 
@@ -1733,3 +1682,14 @@ Azure Maps и Карты Bing позволяют импортировать и �
 
 > [!div class="nextstepaction"]
 > [Справочная документация по API службы веб-пакета SDK Azure Maps](/javascript/api/azure-maps-control/)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов для очистки.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Узнайте больше о переходе из Карт Bing на Azure Maps.
+
+> [!div class="nextstepaction"]
+> [Перенос веб-службы](migrate-from-bing-maps-web-services.md)

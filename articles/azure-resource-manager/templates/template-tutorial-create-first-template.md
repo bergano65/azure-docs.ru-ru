@@ -2,16 +2,16 @@
 title: Учебник. Создание шаблона и его развертывание
 description: Создайте свой первый шаблон Azure Resource Manager (шаблон ARM). В этом учебнике вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-ms.date: 09/28/2020
+ms.date: 12/17/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 191eacbc9cc66ccfb9b378cb5e8a90b4e0fb20e6
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 001a20c38a82d053ae22a2614a32f0be9d8aabce
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107029"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656994"
 ---
 # <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Руководство по Создание и развертывание шаблона ARM
 
@@ -19,7 +19,7 @@ ms.locfileid: "97107029"
 
 Этот учебник первый в серии. Работая с этой серией, вы будете пошагово изменять исходный шаблон, пока не изучите основные компоненты шаблона Resource Manager. Эти элементы являются стандартными блоками для более сложных шаблонов. Мы надеемся, что в конце серии вы сможете уверенно создавать собственные шаблоны и будете готовы к автоматизации развертываний с помощью шаблонов.
 
-Если вы хотите узнать о преимуществах использования шаблонов и о том, почему следует автоматизировать развертывание с их помощью, ознакомьтесь с [общими сведениями о шаблонах ARM](overview.md).
+Если вы хотите узнать о преимуществах использования шаблонов и о том, почему следует автоматизировать развертывание с их помощью, ознакомьтесь с [общими сведениями о шаблонах ARM](overview.md). Чтобы узнать больше о шаблонах Resource Manager из модулей Microsoft Learn, см. статью [Развертывание ресурсов и управление ими в Azure с помощью шаблонов Resoure Manager](/learn/paths/deploy-manage-resource-manager-templates/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 

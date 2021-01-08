@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 12b49bf81328cc405337b682241aef2cd965c3de
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9762ca79f73b3333045d1c11376ab315aac2d55e
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356551"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808663"
 ---
 > [!IMPORTANT]
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. См. справочную документацию ниже. 
@@ -36,17 +36,23 @@ ms.locfileid: "96356551"
 
 После установки Python можно установить последнюю версию клиентской библиотеки Распознавателя документов с помощью приведенной ниже команды.
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 
 ```console
 pip install azure-ai-formrecognizer
 ```
 
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+> [!NOTE]
+> В Распознавателе документов последней версии используется API версии 2.0.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 ```console
 pip install azure-ai-formrecognizer --pre
 ```
+
+> [!NOTE]
+> В предварительной версии пакета SDK Распознавателя документов используется API предварительной версии 2.1.
 
 ---
 
@@ -91,7 +97,7 @@ pip install azure-ai-formrecognizer --pre
 
 Эти фрагменты кода показывают, как выполнить следующие действия с помощью клиентской библиотеки Распознавателя документов для Python:
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 
 * [аутентификация клиента](#authenticate-the-client);
 * [распознавание содержимого формы](#recognize-form-content);
@@ -100,7 +106,7 @@ pip install azure-ai-formrecognizer --pre
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
 
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 * [аутентификация клиента](#authenticate-the-client);
 * [распознавание содержимого формы](#recognize-form-content);
@@ -123,7 +129,9 @@ pip install azure-ai-formrecognizer --pre
 ## <a name="get-assets-for-testing"></a>Получение ресурсов для тестирования
 
 Потребуется добавить URL-адреса данных для обучения и тестирования.
-* Чтобы получить подписанный URL-адрес данных для обучения пользовательской модели, откройте Обозреватель службы хранилища Microsoft Azure, щелкните контейнер правой кнопкой мыши и выберите **Получить подписанный URL-адрес**. Убедитесь, что разрешение на **чтение** и разрешение **списка** установлены и нажмите кнопку **Создать**. Затем скопируйте значение в разделе **URL-адрес**. Оно должно быть в таком формате: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
+* [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
+  
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="Получение подписанного URL-адреса":::
 * Используйте пример формы и изображения квитанций, включенные в приведенные ниже примеры. Вы можете также скачать их с [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms) или выполнить описанные выше действия, чтобы получить URL-адрес SAS для отдельного документа в хранилище BLOB-объектов. 
 
 > [!NOTE]
@@ -194,11 +202,15 @@ Tax: 104.4 has confidence 0.713
 Total: 1203.39 has confidence 0.774
 ```
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
-
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
 
 ## <a name="recognize-business-cards"></a>Распознавание визитных карточек
+
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Эта функция недоступна в выбранной версии API.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в Великобритании визитные карточки и извлекать из них содержимое стандартных полей. Для распознавания визитных карточек по URL-адресу воспользуйтесь методом `begin_recognize_business_cards_from_url`. 
 
@@ -207,7 +219,16 @@ Total: 1203.39 has confidence 0.774
 > [!TIP]
 > Кроме того, можно распознавать изображения визитных карточек в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python), например о `begin_recognize_business_cards`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
 
+---
+
 ## <a name="recognize-invoices"></a>Распознавание счетов
+
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Эта функция недоступна в выбранной версии API.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать счета на продажу и извлекать из них содержимое стандартных полей. Для распознавания счетов по URL-адресу воспользуйтесь методом `begin_recognize_invoices_from_url`. 
 

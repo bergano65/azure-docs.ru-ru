@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/11/2020
+ms.date: 12/29/2020
 ms.author: jeedes
-ms.openlocfilehash: 3a53a5b7e60ef214a3db58d9e280e9dee8fec609
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 11aac69816714611c168cd05c2828dd1ae85786e
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355925"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813655"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-clientvpn"></a>Руководство по интеграции единого входа Azure Active Directory с AWS ClientVPN
 
@@ -89,7 +89,7 @@ ms.locfileid: "97355925"
     |
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов AWS ClientVPN](https://aws.amazon.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера.  Замените их фактическими значениями URL-адреса входа и URL-адреса ответа.  URL-адрес входа и URL-адрес ответа могут иметь одно значение (http://127.0.0.1:35001).  Ознакомьтесь с [документацией по AWS Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html#ad).   Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure. Для устранения любых проблем с конфигурацией обратитесь в [службу поддержки AWS ClientVPN](https://aws.amazon.com/contact-us/). 
 
 1. В службе Azure Active Directory перейдите к параметру **Регистрация приложений**, а затем выберите **Все приложения**.
 

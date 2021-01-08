@@ -3,12 +3,12 @@ title: Общие сведения об Azure Arc
 description: Узнайте о том, что такое служба Azure Arc и как она помогает клиентам обеспечить управление гибридными ресурсами и их администрирование с помощью других служб и функций Azure.
 ms.date: 09/23/2020
 ms.topic: overview
-ms.openlocfilehash: 8e48378e5032768b3f56a5d99c1189e282ff37f8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8f39dff16037b5f52a050b7d07193b0ad7cab93d
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91714158"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672692"
 ---
 # <a name="azure-arc-overview"></a>Общие сведения об Azure Arc
 
@@ -50,7 +50,7 @@ ms.locfileid: "91714158"
 
 ### <a name="arc-enabled-servers"></a>Серверы с поддержкой Arc
 
-Функциональность уровня управления Azure Arc предлагается бесплатно.Сюда относится следующие действия:
+Функциональность уровня управления Azure Arc предлагается бесплатно. В том числе:
 
 * организация ресурсов с использованием групп управления и тегов Azure;
 
@@ -60,7 +60,7 @@ ms.locfileid: "91714158"
 
 * обслуживание сред и автоматизация с помощью шаблонов и расширений;
 
-* управление обновлениями.
+* Управление обновлениями
 
 Плата за все службы Azure, используемые на серверах с поддержкой Arc, например за Центр безопасности Azure или Azure Monitor, будет взиматься согласно установленным для них ценам. Дополнительные сведения см. на странице [Цены Azure](https://azure.microsoft.com/pricing/).
 
@@ -79,3 +79,5 @@ ms.locfileid: "91714158"
 * Дополнительные сведения о Kubernetes с поддержкой Arc см. в следующем [обзоре](./kubernetes/overview.md).
 
 * Дополнительные сведения о службах данных с поддержкой Arc см. в следующем [обзоре](https://azure.microsoft.com/services/azure-arc/hybrid-data-services/).
+
+* Ознакомьтесь со службами с поддержкой Arc из статьи [о начальном подтверждении концепции](https://azurearcjumpstart.io/azure_arc_jumpstart/).

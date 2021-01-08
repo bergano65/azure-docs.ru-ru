@@ -3,22 +3,36 @@ title: Руководство по переходу с Карт Bing на Azure 
 description: Учебник по переходу с Карт Bing на Microsoft Azure Maps. Это руководство содержит инструкции по переходу на API-интерфейсы и пакеты средств разработки Azure Maps.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 9/10/2020
+ms.date: 12/17/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 0045520849ea20d3e53a30101e6db0f5d495ab15
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 52768874ef27bf87846d4abbd68e9e8c1972f996
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897013"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679442"
 ---
-# <a name="tutorial---migrate-from-bing-maps-to-azure-maps"></a>Руководство по переходу с Карт Bing на Azure Maps
+# <a name="tutorial-migrate-from-bing-maps-to-azure-maps"></a>Руководство по Переход с Карт Bing на Azure Maps
 
-В этом руководстве содержатся сведения о переносе веб-приложений, мобильных и серверных программ c Карт Bing на платформу Microsoft Azure Maps. Руководство предоставляет примеры кода для сравнения, а также предложения и рекомендации по переходу на Azure Maps.
+В этом руководстве содержатся сведения о переносе веб-приложений, мобильных и серверных программ c Карт Bing на платформу Microsoft Azure Maps. Руководство предоставляет примеры кода для сравнения, а также предложения и рекомендации по переходу на Azure Maps. 
+
+В этом учебнике вы узнаете следующее:
+
+> [!div class="checklist"]
+> * о сходстве и различиях между эквивалентными функциями Карт Bing и Azure Maps;
+> * какие различия в лицензировании нужно учесть;
+> * как спланировать миграцию;
+> * где найти технические ресурсы и поддержку.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+1. Войдите на [портал Azure](https://portal.azure.com). Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+2. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account)
+3. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 ## <a name="azure-maps-platform-overview"></a>Обзор платформы Azure Maps
 
@@ -39,7 +53,7 @@ ms.locfileid: "92897013"
 | Автозаполнение                           | ✓                  |
 | Маршруты (в том числе для грузовика)          | ✓                  |
 | Матрица расстояний                       | ✓                  |
-| Повышение прав                            | Запланировано            |
+| Повышение прав                            | ✓ (предварительная версия)        |
 | Снимки — статическая карта                  | ✓                  |
 | Метаданные снимков                      | ✓                  |
 | Вычисление изохрон                            | ✓                  |
@@ -54,17 +68,17 @@ ms.locfileid: "92897013"
 | Дорожные происшествия                     | ✓                  |
 | Карты, управляемые конфигурацией             | Недоступно                |
 
-Служба "Карты Bing" использует базовую проверку подлинности на основе ключа. Azure Maps поддерживает не только базовую проверку подлинности на основе ключа, но и проверку подлинности Azure Active Directory с высоким уровнем безопасности.
+Служба "Карты Bing" использует базовую проверку подлинности на основе ключа. Azure Maps поддерживает не только базовую аутентификацию на основе ключа, но и аутентификацию Azure Active Directory с высоким уровнем безопасности.
 
 ## <a name="licensing-considerations"></a>Вопросы лицензирования
 
 При переходе на Azure Maps с Карт Bing следует учитывать следующие аспекты лицензирования.
 
--   Azure Maps взимает плату за использование интерактивных карт в зависимости от числа загруженных плиток карты, тогда как в Картах Bing оплачивается каждая загрузка элемента управления картой (сеансы). В Azure Maps плитки карт автоматически кэшируются, что позволяет снизить затраты разработчика. Одна транзакция Azure Maps создается для каждых 15 загруженных плиток карт. В пакетах средств разработки для интерактивного использования Azure Maps используются плитки размером 512 пикселей. Это дает в среднем не более одной транзакции на каждое представление страницы.
+* Azure Maps взимает плату за использование интерактивных карт в зависимости от числа загруженных плиток карты, тогда как в Картах Bing оплачивается каждая загрузка элемента управления картой (сеансы). Чтобы снизить затраты для разработчиков, Azure Maps автоматически кэширует фрагменты карт. Одна транзакция Azure Maps создается для каждых 15 загруженных плиток карт. В пакетах средств разработки для интерактивного использования Azure Maps используются плитки размером 512 пикселей. Это дает в среднем не более одной транзакции на каждое представление страницы.
 
--   Azure Maps позволяет хранить в Azure данные для этой платформы. Также их можно кэшировать в любом расположении на срок до шести месяцев согласно [условиям использования](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31).
+* Azure Maps позволяет хранить в Azure данные для этой платформы. Также их можно кэшировать в любом расположении на срок до шести месяцев согласно [условиям использования](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31).
 
-Ниже перечислены некоторые связанные с лицензированием ресурсы с информацией об Azure Maps.
+Ниже приведены некоторые связанные с лицензированием ресурсы с информацией об Azure Maps:
 
 -   [Цены на Azure Maps](https://azure.microsoft.com/pricing/details/azure-maps/)
 -   [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/?service=azure-maps).
@@ -73,7 +87,7 @@ ms.locfileid: "92897013"
 
 ## <a name="suggested-migration-plan"></a>Предлагаемый план миграции
 
-Далее описан обобщенный план миграции.
+Ниже приведен пример плана миграции высокого уровня.
 
 1.  Составьте список пакетов SDK и служб Карт Bing, которые используются в приложении, и убедитесь, что Azure Maps предоставляет пакеты SDK и службы с аналогичными возможностями.
 2.  Создайте подписку Azure (если у вас ее еще нет) на странице <https://azure.com>.
@@ -88,28 +102,28 @@ ms.locfileid: "92897013"
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 2. Войдите на [портал Azure](https://portal.azure.com/).
-3. Создайте [учетную запись службы Azure Maps](./how-to-manage-account-keys.md). 
+3. Создайте [учетную запись службы Azure Maps](./how-to-manage-account-keys.md).
 4. [Получите ключ подписки Azure Maps](./how-to-manage-authentication.md#view-authentication-details) или настройте проверку подлинности Azure Active Directory для повышения уровня безопасности.
 
 ## <a name="azure-maps-technical-resources"></a>Технические ресурсы по Azure Maps
 
 Ниже приведен список полезных технических ресурсов для Azure Maps.
 
--   Общие сведения: https://azure.com/maps
--   Документация: <https://aka.ms/AzureMapsDocs>
--   Примеры кода для веб-пакетов SDK: <https://aka.ms/AzureMapsSamples>
--   Форумы разработчиков: <https://aka.ms/AzureMapsForums>
--   Видео: <https://aka.ms/AzureMapsVideos>
--   Блог: <https://aka.ms/AzureMapsBlog>
--   Отзывы об Azure Maps (UserVoice): <https://aka.ms/AzureMapsFeedback>
+* Общие сведения: <https://azure.com/maps>
+* Документация: <https://aka.ms/AzureMapsDocs>
+* Примеры кода для веб-пакетов SDK: <https://aka.ms/AzureMapsSamples>
+* Форумы разработчиков: <https://aka.ms/AzureMapsForums>
+* Видео: <https://aka.ms/AzureMapsVideos>
+* Блог: <https://aka.ms/AzureMapsBlog>
+* Отзывы об Azure Maps (UserVoice): <https://aka.ms/AzureMapsFeedback>
 
 ## <a name="migration-support"></a>Поддержка миграции
 
 Разработчики могут получить поддержку по миграции на [форумах](/answers/topics/azure-maps.html) или через любой из многих каналов поддержки Azure: <https://azure.microsoft.com/support/options/>
 
-## <a name="new-terminology"></a>Новые термины 
+## <a name="new-terminology"></a>Новые термины
 
-Ниже приведен список стандартных терминов службы "Карты Bing", которые известны в Azure Maps под другими терминами.
+Ниже приведен список стандартных терминов Карт Bing и соответствующих им терминов Azure Maps.
 
 | Термин службы "Карты Bing"                    | Термин службы Azure Maps                                                |
 |-----------------------------------|----------------------------------------------------------------|
@@ -128,12 +142,13 @@ ms.locfileid: "92897013"
 | Панель переходов                    | Средство выбора стиля карт, управление масштабом, управление наклоном, компас |
 | Вешка                           | Слой пузырьков, слой символов или метка HTML                      |
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов, требующих очистки.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как перенести приложение Карт Bing, изучив следующие статьи:
 
 > [!div class="nextstepaction"]
 > [Перенос веб-приложения](migrate-from-bing-maps-web-app.md)
-
-> [!div class="nextstepaction"]
-> [Перенос веб-службы](migrate-from-bing-maps-web-services.md)

@@ -11,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops, devx-track-js
-ms.openlocfilehash: 6bc6776df889c5c8ccc6acfe5764549ccf7354a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d26da693d83fd680c644849d581ea35ca7b49af
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320206"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739711"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Azure DevOps Services и Azure Pipelines
 
@@ -118,7 +118,7 @@ https://github.com/azure-devops/fabrikam-node
 
     ![VMresource_view](media/tutorial-deploy-vms-azure-pipelines/vm-resourceview.png)
 
-9. Вы можете добавить в виртуальную машину теги, включив их в интерактивный скрипт PS для регистрации или добавляя и удаляя их в представлении ресурсов, щелкнув три точки в конце строки для любого ресурса виртуальной машины.
+9. Вы можете добавить в виртуальную машину теги, включив их в интерактивный скрипт PowerShell для регистрации или добавляя и удаляя их в представлении ресурсов, щелкнув три точки в конце строки для любого ресурса виртуальной машины.
 
    Назначенные теги позволяют ограничить развертывание конкретными виртуальными машинами при использовании этой среды в задании развертывания. Длина тегов не может превышать 256 символов, но ограничений на количество используемых тегов нет.
 
@@ -202,7 +202,7 @@ jobs:
 
 - Изучите работу конвейера. Убедитесь, что все стандартные входные данные подходят для вашего кода.
 
-- Щелкните **Save and run** (Сохранить и запустить), затем выберите **Commit directly to the master branch** (Зафиксировать непосредственно в главной ветви) и снова щелкните **Save and run** (Сохранить и запустить).
+- Щелкните **Save and run** (Сохранить и запустить), затем выберите **Commit directly to the main branch** (Зафиксировать непосредственно в главной ветви) и снова щелкните **Save and run** (Сохранить и запустить).
 
 - Будет выполнен новый запуск. Дождитесь, пока он завершится.
 

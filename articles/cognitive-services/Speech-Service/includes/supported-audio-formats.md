@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/16/2020
 ms.author: trbye
-ms.openlocfilehash: 2aec3cc96e123da57166f1c304254d520a96e156
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27a416db3b27ac25ba7a3b1712c76cd1c8fb632e
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81400503"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821542"
 ---
-По умолчанию используется формат потоковой передачи звука WAV (16 кГц или 8 кГц, 16-бит, моно PCM). За пределами WAV/PCM также поддерживаются перечисленные ниже сжатые форматы входных данных. [Для включения перечисленных ниже форматов требуется дополнительная настройка](../how-to-use-codec-compressed-audio-input-streams.md).
+По умолчанию используется формат потоковой передачи звука WAV (16 или 8 кГц, 16 бит, моно PCM). Помимо WAV/PCM, GStreamer также поддерживает перечисленные ниже сжатые форматы входных данных.
 
 - MP3
 - OPUS/OGG

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 200d23f390c9c22af90099e1e136c832287aa10d
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: d8a7bb620b7fcc9c878986d3575e22bb6f0f77bc
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207535"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724134"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>Руководство по Защита службы "Удаленная отрисовка Azure" и хранилища моделей
 
@@ -255,6 +255,14 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
             get => azureRemoteRenderingAccountID.Trim();
             set => azureRemoteRenderingAccountID = value;
         }
+    
+        [SerializeField]
+        private string azureRemoteRenderingAccountAuthenticationDomain;
+        public string AzureRemoteRenderingAccountAuthenticationDomain
+        {
+            get => azureRemoteRenderingAccountAuthenticationDomain.Trim();
+            set => azureRemoteRenderingAccountAuthenticationDomain = value;
+        }
 
         public override event Action<string> AuthenticationInstructions;
 
@@ -262,7 +270,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 
         string redirect_uri = "https://login.microsoftonline.com/common/oauth2/nativeclient";
 
-        string[] scopes => new string[] { "https://sts.mixedreality.azure.com/mixedreality.signin" };
+        string[] scopes => new string[] { "https://sts." + AzureRemoteRenderingAccountAuthenticationDomain + "/mixedreality.signin" };
 
         public void OnEnable()
         {
@@ -279,7 +287,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 
                 var AD_Token = result.AccessToken;
 
-                return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
+                return await Task.FromResult(new AzureFrontendAccountInfo(AzureRemoteRenderingAccountAuthenticationDomain, AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
             }
             else
             {
@@ -369,7 +377,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
 ```
 
-Здесь мы создаем объект **AzureFrontendAccountInfo**, используя домен и идентификатор учетной записи, а также маркер доступа. Этот маркер затем используется службой "Удаленная отрисовка Azure" для запроса, создания и объединения сеансов удаленной отрисовки при условии, что пользователь авторизован в соответствии с разрешениями на основе ролей, настроенными ранее.
+Здесь мы создаем объект **AzureFrontendAccountInfo**, используя домен и идентификатор учетной записи, домен аутентификации учетной записи, а также маркер доступа. Этот маркер затем используется службой "Удаленная отрисовка Azure" для запроса, создания и объединения сеансов удаленной отрисовки при условии, что пользователь авторизован в соответствии с разрешениями на основе ролей, настроенными ранее.
 
 После этих изменений текущее состояние приложения и его доступ к ресурсам Azure выглядят следующим образом:
 
@@ -391,6 +399,7 @@ return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRe
     * **Active Directory Application Client ID** (Идентификатор клиента приложения Active Directory) — это *идентификатор приложения (клиента)* , указанный при регистрации приложения AAD (см. изображение ниже).
     * **Azure Tenant ID** (Идентификатор арендатора Azure) — это *идентификатор каталога (арендатора)* , указанный при регистрации приложения AAD (см. изображение ниже).
     * **Azure Remote Rendering Account ID** (Идентификатор учетной записи Удаленной отрисовки Azure) — это тот же **идентификатор учетной записи**, который вы использовали для **RemoteRenderingCoordinator**.
+    * **Домен аутентификации учетной записи** — это тот же **домен**, который вы использовали в **RemoteRenderingCoordinator**.
 
     ![Снимок экрана: выделенные ИД приложения (клиента) и ИД каталога (клиента).](./media/app-overview-data.png)
 

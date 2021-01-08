@@ -10,19 +10,17 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: f22213bf192b12e046bab12346e5d5d83fb36b96
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: baaf907d2fafe23805e6b49582ecc7592ee05e0b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364281"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028239"
 ---
 # <a name="translator-v2-to-v3-migration"></a>Миграция с версии 2 на v3
 
 > [!NOTE]
-> Версия 2 устарела до 30 апреля 2018 г. Перенесите приложения на версию 3, чтобы воспользоваться преимуществами новых функций, доступных исключительно в версии 3.
-> 
-> Центр Microsoft Translator будет снят с учета 17 мая 2019. [Просмотр важных сведений о миграции и дат](https://www.microsoft.com/translator/business/hub/).  
+> Версия 2 устарела до 30 апреля 2018 г. Перенесите приложения на версию 3, чтобы воспользоваться преимуществами новых функций, доступных исключительно в версии 3. Версия 2 будет снята с учета 24 мая 2021. 
 
 Группа разработчиков Microsoft Translator выпустила версию 3 (v3) переводчика. Этот выпуск включает новые возможности и новый формат отправки данных в службу Microsoft Translator и получения их из нее. Кроме того, в этом выпуске исключены некоторые устаревшие методы. В этом документе содержатся сведения об изменении конфигурации приложений с целью реализации поддержки версии 3. 
 
@@ -118,8 +116,8 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 | Версия | Конечная точка | Соответствие требованиям процессора GDPR | Использование Translator Hub | Использование Пользовательского переводчика (предварительная версия) |
 | :------ | :------- | :------------------------ | :----------------- | :------------------------------ |
-|Переводчик версии 2|    api.microsofttranslator.com|    Нет    |Да    |Нет|
-|Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    Нет|    Да|
+|Переводчик версии 2|    api.microsofttranslator.com|    нет    |Да    |нет|
+|Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    нет|    Да|
 
 **Translator версии 3**
 * Является общедоступным и полностью поддерживается.
@@ -137,13 +135,13 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 Ни одна из версий транслятора не создает запись переводов. Ваши переводы никогда не передаются третьим лицам. Дополнительные сведения см. на веб-странице Translator [об отсутствии отслеживания](https://www.aka.ms/NoTrace).
 
-## <a name="links"></a>Создание ссылок
+## <a name="links"></a>Ссылки
 
 * [Политика конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement)
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)
 * [Условия служб Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [API перевода текстов версии 3.0](reference/v3-0-reference.md)

@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 85080c018749f9aab716eff0a4527363da987007
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 53e6d6e67a90cd1f39aed7f9cd7c2368282b2d1f
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620483"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916598"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -118,7 +118,7 @@ ms.locfileid: "96620483"
 + __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Обзор изоляции и конфиденциальности в виртуальной сети](how-to-network-security-overview.md).
 + __Azure Pipelines__. Дополнительные сведения см. в статье [Train and deploy machine learning models](/azure/devops/pipelines/targets/azure-machine-learning) (Обучение и развертывание моделей машинного обучения).
 + __Журналы репозитория Git__. Дополнительные сведения см. в статье [Git integration for Azure Machine Learning](concept-train-model-git-integration.md) (Интеграция с Git для Машинного обучения Azure).
-+ __MLflow__ Дополнительные сведения см. в статье [Track metrics and deploy models with MLflow and Azure Machine Learning (preview)](how-to-use-mlflow.md) (Отслеживание метрик и развертывание моделей с помощью MLflow и Машинного обучения Azure (предварительная версия)). 
++ __MLflow__ Дополнительные сведения см. в статье [Отслеживание метрик и обучение моделей машинного обучения с помощью MLflow и Машинного обучения Azure (предварительная версия)](how-to-use-mlflow.md) и [Развертывание моделей Mlflow в качестве веб-служб](how-to-deploy-mlflow-models.md). 
 + __Kubeflow__. Дополнительные сведения см. в на странице [Kubeflow в Azure](https://www.kubeflow.org/docs/azure/).
 
 ### <a name="secure-communications"></a>Безопасное соединение

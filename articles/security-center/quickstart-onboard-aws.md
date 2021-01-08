@@ -3,16 +3,16 @@ title: Подключение учетной записи AWS к Центру б
 description: Мониторинг ресурсов AWS в Центре безопасности Azure
 author: memildin
 ms.author: memildin
-ms.date: 9/22/2020
+ms.date: 12/29/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 23609613cace2f9be90ad5c88d4d51bb1c2f1a9b
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 4c919115efb39a8e8c008eab69dc087792f7b105
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573516"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814318"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Подключение учетных записей AWS к Центру безопасности Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "96573516"
 |----|:----|
 |Состояние выпуска:|Предварительный просмотр<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
-|Требуемые роли и разрешения|**Владелец** или **Участник** в соответствующей подписке Azure|
+|Требуемые роли и разрешения|**Владелец** в соответствующей подписке Azure.<br>**Участник** также может подключить учетную запись AWS, если владелец предоставляет сведения о субъекте-службе.|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
 
