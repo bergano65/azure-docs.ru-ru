@@ -12,18 +12,18 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: e88a721d500ea1c17c768e9f28835248711bd361
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 10b61dd4b6cc3a99b8eecf86cb5ba7e718d64743
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584448"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015119"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений
 
 С помощью Azure Active Directory (Azure AD) вы можете настроить тип утверждения для утверждения роли в токене ответа, который вы получаете после авторизации приложения.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure AD с настроенным каталогом.
 - Подписка с поддержкой единого входа (SSO). Настроенный единый вход в приложении.
@@ -34,7 +34,7 @@ ms.locfileid: "97584448"
 
 ## <a name="create-roles-for-an-application"></a>Создание ролей для приложения
 
-1. На [портале Azure](https://portal.azure.com) в области слева щелкните значок **Azure Active Directory**.
+1. В <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span></a>на левой панели щелкните значок **Azure Active Directory** .
 
     ![Значок Azure Active Directory][1]
 
@@ -167,7 +167,7 @@ ms.locfileid: "97584448"
 
     1. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    1. Нажмите **Сохранить**.
+    1. Щелкните **Сохранить**.
 
 10. Чтобы протестировать в вашем приложении единый вход, инициированный поставщиком удостоверений, войдите в [панель доступа](https://myapps.microsoft.com) и выберите плитку приложения. Должен отобразиться токен SAML с полным списком ролей, назначенных пользователю, и с указанным вами именем утверждения.
 

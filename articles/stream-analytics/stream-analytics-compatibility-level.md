@@ -1,17 +1,17 @@
 ---
 title: Уровни совместимости Azure Stream Analytics
 description: Узнайте, как установить уровень совместимости для задания Azure Stream Analytics и основные изменения в последнем уровне совместимости.
-author: mamccrea
-ms.author: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 11014c5a5c5cd0cabae1b62083bd5e662be2c6b7
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 8105988cd2036f44d214befad3365cf9ee96ee0d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348939"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015986"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Уровень совместимости заданий Azure Stream Analytics
 

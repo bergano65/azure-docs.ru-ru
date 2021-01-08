@@ -1,18 +1,17 @@
 ---
 title: Использование интерфейсов API RESTFUL для непрерывной интеграции и воспроизведения Azure Stream Analytics на IoT Edge
 description: Сведения о реализации конвейера непрерывной интеграции и развертывании для Azure Stream Analytics с использованием REST API.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: su-jie
+ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/04/2018
-ms.openlocfilehash: a7e56758a1a76933d6bb18883aa15ce33ce2e89e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 3c3f776ad0996fa0b7422f0fca2d899a35e853d1
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130924"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016139"
 ---
 # <a name="implement-cicd-for-stream-analytics-on-iot-edge-using-apis"></a>Реализация CI/CD для Stream Analytics на IoT Edge с использованием API
 
@@ -59,7 +58,7 @@ echo $response
 |------|-----------|
 |ОТПРАВКА|`https://management.azure.com/subscriptions/{\**subscription-id**}/resourcegroups/{**resource-group-name**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**job-name**}?api-version=2017-04-01-preview`|
  
-Пример использования команды **curl** :
+Пример использования команды **curl**:
 
 ```curl
 curl -u { <username:password> } -H "Content-Type: application/json" -X { <method> } -d "{ <request body> }" https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/Microsoft.StreamAnalytics/streamingjobs/{jobname}?api-version=2017-04-01-preview  
@@ -148,7 +147,7 @@ curl -u { <username:password> } -H "Content-Type: application/json" -X { <method
 
 Эта асинхронная операция возвращает состояние 202 до того, как задание будет успешно опубликовано. Заголовок ответа расположения содержит универсальный код ресурса (URI), который используется для получения состояния процесса. Во время выполнения процесса вызов универсального кода ресурса (URI) в заголовке расположения возвращает состояние 202. После того как процесс завершится, универсальный код ресурса (URI) возвращает состояние 200. 
 
-Пример вызова публикации пакета Edge с помощью команды **curl** : 
+Пример вызова публикации пакета Edge с помощью команды **curl**: 
 
 ```bash
 curl -d -X POST https://management.azure.com/subscriptions/{subscriptionid}/resourceGroups/{resourcegroupname}/providers/Microsoft.StreamAnalytics/streamingjobs/{jobname}/publishedgepackage?api-version=2017-04-01-preview
@@ -163,7 +162,7 @@ https://management.azure.com/subscriptions/{**subscriptionid**}/resourcegroups/{
 ```
 Подождите одну-две минуты, прежде чем запускать следующую команду, чтобы выполнить вызов API с помощью URL-адреса, который вы взяли из заголовка ответа. Повторите запрос, если не удалось получить ответ 200.
  
-Пример вызова API с возвращаемым URL-адресом с помощью команды **curl** :
+Пример вызова API с возвращаемым URL-адресом с помощью команды **curl**:
 
 ```bash
 curl -d –X GET https://management.azure.com/subscriptions/{subscriptionid}/resourceGroups/{resourcegroupname}/providers/Microsoft.StreamAnalytics/streamingjobs/{resourcename}/publishedgepackage?api-version=2017-04-01-preview 

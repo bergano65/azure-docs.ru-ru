@@ -3,17 +3,16 @@ title: Мониторинг заданий Azure Stream Analytics и управ�
 description: В этой статье объясняется, как с помощью программных средств отслеживать задания Stream Analytics, созданные с помощью REST API, пакета SDK для Azure или PowerShell.
 author: jseb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 04/20/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9c746e409964b4625a4c9921d9f02ca0c9730a35
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: dda1b6b652870440e7228e6640bb555f4c2e4a63
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123452"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015082"
 ---
 # <a name="programmatically-create-a-stream-analytics-job-monitor"></a>Создание монитора заданий Stream Analytics программным способом
 

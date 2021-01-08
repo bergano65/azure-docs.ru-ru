@@ -1,17 +1,17 @@
 ---
 title: Коды внешних ошибок — Azure Stream Analytics
 description: Устранить неполадки в работе Azure Stream Analytics помогут коды внешних ошибок.
-ms.author: mamccrea
-author: mamccrea
+ms.author: sidram
+author: sidramadoss
 ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.service: stream-analytics
-ms.openlocfilehash: 61d6556467bc6f1494e11ce3a01bf5266b740f3f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 9f55a715b11b126ea340e665e008d7245e578190
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305783"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016394"
 ---
 # <a name="azure-stream-analytics-external-error-codes"></a>Коды внешних ошибок в Azure Stream Analytics
 
@@ -85,11 +85,11 @@ ms.locfileid: "93305783"
 
 ## <a name="sqldwoutputinitializationerror"></a>SQLDWOutputInitializationError
 
-* **Причина** : при инициализации выделенных выходных данных пула SQL произошла ошибка.
+* **Причина**: при инициализации выделенных выходных данных пула SQL произошла ошибка.
 
 ## <a name="sqldwoutputwriteerror"></a>SQLDWOutputWriteError
 
-* **Причина** : при записи выходных данных в выделенный пул SQL произошла ошибка.
+* **Причина**: при записи выходных данных в выделенный пул SQL произошла ошибка.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

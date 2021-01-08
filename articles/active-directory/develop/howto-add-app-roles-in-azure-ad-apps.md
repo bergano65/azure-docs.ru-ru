@@ -13,12 +13,12 @@ ms.date: 11/13/2020
 ms.author: kkrishna
 ms.reviewer: marsma, kkrishna, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: bae8f0955ef45e21d38797789bdea4f62bf5ea28
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: b2ac90334ade52d68c775d9db5a84545774f3844
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614937"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013708"
 ---
 # <a name="how-to-add-app-roles-to-your-application-and-receive-them-in-the-token"></a>Как добавить роли приложения в приложение и получить их в токене
 
@@ -49,7 +49,7 @@ ms.locfileid: "97614937"
 
 Чтобы создать роль приложения с помощью пользовательского интерфейса портал Azure, выполните следующие действия.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Выберите фильтр **каталог и подписка** в верхнем меню, а затем выберите клиент Azure Active Directory, содержащий регистрацию приложения, в которую нужно добавить роль приложения.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**, а затем выберите приложение, в котором нужно определить роли приложения.
@@ -74,7 +74,7 @@ ms.locfileid: "97614937"
 
 Чтобы добавить роли путем непосредственного редактирования манифеста:
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Выберите фильтр **каталог и подписка** в верхнем меню, а затем выберите клиент Azure Active Directory, содержащий регистрацию приложения, в которую нужно добавить роль приложения.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**, а затем выберите приложение, в котором нужно определить роли приложения.
@@ -136,7 +136,7 @@ ms.locfileid: "97614937"
 
 Чтобы назначить пользователей и группы ролям с помощью портал Azure:
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. В **Azure Active Directory** выберите **корпоративные приложения** в меню навигации слева.
 1. Щелкните **Все приложения**, чтобы просмотреть полный список приложений. Если приложение не отображается в списке, используйте фильтры в верхней части списка **все приложения** , чтобы ограничить список, или прокрутите список вниз, чтобы выбрать приложение.
 1. Выберите приложение, в котором для ролей необходимо назначить пользователей или группы безопасности.
@@ -158,7 +158,7 @@ ms.locfileid: "97614937"
 
 Чтобы назначить роли приложения для приложения с помощью портал Azure:
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. В **Azure Active Directory** в меню навигации слева выберите **Регистрация приложений** .
 1. Щелкните **Все приложения**, чтобы просмотреть полный список приложений. Если приложение не отображается в списке, используйте фильтры в верхней части списка **все приложения** , чтобы ограничить список, или прокрутите список вниз, чтобы выбрать приложение.
 1. Выберите приложение, которому требуется назначить роль приложения.

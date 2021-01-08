@@ -1,18 +1,17 @@
 ---
 title: Разделы служебной шины, выводимые из Azure Stream Analytics
 description: В этой статье описываются разделы служебной шины в качестве выходных данных для Azure Stream Analytics.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: c578febf088148e9e0496d87b715c953c5bd9d36
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 584d73acf36d22f59fbbcb6dff8b2f53cbc7437d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348378"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014184"
 ---
 # <a name="service-bus-topics-output-from-azure-stream-analytics"></a>Разделы служебной шины, выводимые из Azure Stream Analytics
 
@@ -45,7 +44,7 @@ ms.locfileid: "93348378"
 
 ## <a name="custom-metadata-properties-for-output"></a>Свойства пользовательских метаданных для выходных данных
 
-Столбцы запросов можно прикреплять к исходящим сообщениям как пользовательские свойства. Эти столбцы не переходят в полезные данные. Свойства представлены в виде словаря в выходном сообщении. *Ключ*  — это имя столбца, а *значение*  — это значение столбца в словаре свойств. Поддерживаются все типы данных Stream Analytics, кроме записи и массива.
+Столбцы запросов можно прикреплять к исходящим сообщениям как пользовательские свойства. Эти столбцы не переходят в полезные данные. Свойства представлены в виде словаря в выходном сообщении. *Ключ* — это имя столбца, а *значение* — это значение столбца в словаре свойств. Поддерживаются все типы данных Stream Analytics, кроме записи и массива.
 
 В следующем примере поля `DeviceId` и `DeviceStatus` добавляются в метаданные.
 

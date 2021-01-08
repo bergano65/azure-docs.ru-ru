@@ -5,18 +5,27 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 09/28/2020
+ms.date: 12/14/2020
 ms.author: duau
-ms.openlocfilehash: a450c4057b4639206fd1db4b7f44d27c69441f7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 964af92006aad7b5ce8bdf25a332cbcf9c7ef144
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569845"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014524"
 ---
 # <a name="how-to-configure-expressroute-direct"></a>Настройка Direct для ExpressRoute
 
 ExpressRoute Direct дает возможность напрямую подключаться к глобальной сети Майкрософт через равноправные расположения, стратегически распределенные по всему миру. См. дополнительные сведения об [ExpressRoute Direct](expressroute-erdirect-about.md).
+
+## <a name="before-you-begin"></a>Перед началом
+
+Прежде чем использовать ExpressRoute Direct, сначала необходимо зарегистрировать подписку. Чтобы подписаться, отправьте электронное письмо на адрес <ExpressRouteDirect@microsoft.com>, указав идентификатор подписки и следующие сведения:
+
+* задачи, которые необходимо выполнять с помощью **ExpressRoute Direct**;
+* настройки местоположения — полный список всех расположений см. в разделе [Партнеры и одноранговые расположения ExpressRoute](expressroute-locations-providers.md);
+* временную шкалу для реализации;
+* другие вопросы.
 
 ## <a name="create-the-resource"></a><a name="resources"></a>Создание ресурса
 
@@ -288,6 +297,6 @@ ExpressRoute Direct дает возможность напрямую подкл�
   GatewayManagerEtag     
   ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании ExpressRoute Direct см. в [обзоре](expressroute-erdirect-about.md).

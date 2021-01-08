@@ -12,12 +12,12 @@ ms.date: 1/05/2021
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 4674fe41a0e3d63ef0cadc6ad55eca02fc69618e
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: fd3e4a4442f7da89ffee1557e7d908db805931ed
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935909"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014878"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Как предоставить приложению необязательные утверждения
 
@@ -136,7 +136,7 @@ ms.locfileid: "97935909"
 
 Настроить необязательные утверждения для приложения можно с помощью пользовательского интерфейса или манифеста приложения.
 
-1. Перейдите на [портал Azure](https://portal.azure.com). 
+1. Перейдите к <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. 
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**.
 1. Выберите в списке приложение, для которого нужно настроить необязательные утверждения.
@@ -245,7 +245,7 @@ ms.locfileid: "97935909"
 
 **Настройка необязательных утверждений групп с помощью пользовательского интерфейса**
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**.
@@ -258,7 +258,7 @@ ms.locfileid: "97935909"
 
 **Настройка необязательных утверждений групп с помощью манифеста приложения.**
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 1. Найдите и выберите **Azure Active Directory**.
 1. Выберите в списке приложение, для которого нужно настроить необязательные утверждения.
@@ -389,7 +389,7 @@ ms.locfileid: "97935909"
 
 **Настройка с помощью пользовательского интерфейса.**
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 
 1. Найдите и выберите **Azure Active Directory**.
@@ -412,7 +412,7 @@ ms.locfileid: "97935909"
 
 **Настройка с помощью манифеста.**
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 1. Найдите и выберите **Azure Active Directory**.
 1. Найдите в списке приложение, для которого нужно настроить необязательные утверждения, и выберите его.

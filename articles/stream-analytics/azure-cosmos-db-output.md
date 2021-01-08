@@ -1,18 +1,17 @@
 ---
 title: Azure Cosmos DB выходные данные Azure Stream Analytics
 description: В этой статье описывается, как выводить данные из Azure Stream Analytics в Azure Cosmos DB.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: a086d9fe150766c6b31210f29bf802a75e0ee4ec
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 9382ac8dc71d1ccb3a85dc0a7a027c8e99296cc6
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491738"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016583"
 ---
 # <a name="azure-cosmos-db-output-from-azure-stream-analytics"></a>Azure Cosmos DB выходные данные Azure Stream Analytics
 
@@ -34,7 +33,7 @@ ms.locfileid: "94491738"
 | Идентификатор учетной записи | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB. |
 | Ключ учетной записи | Общедоступный ключ доступа к учетной записи Azure Cosmos DB. |
 | База данных | Имя базы данных Azure Cosmos DB. |
-| Имя контейнера | Имя используемого контейнера, который должен существовать в Cosmos DB. Пример  <br /><ul><li> _MyContainer_ : Контейнер с именем "MyContainer" должен существовать.</li>|
+| Имя контейнера | Имя используемого контейнера, который должен существовать в Cosmos DB. Пример  <br /><ul><li> _MyContainer_: Контейнер с именем "MyContainer" должен существовать.</li>|
 | Идентификатор документа |Необязательный параметр. Имя поля в выходных событиях, используемое для указания первичного ключа, на котором основываются операции вставки или обновления.
 
 ## <a name="partitioning"></a>Секционирование

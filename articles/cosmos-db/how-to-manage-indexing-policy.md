@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 11/02/2020
 ms.author: tisande
 ms.custom: devx-track-python, devx-track-js, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: cd51210a64223fab5d2d48a91bd3d0a6521a9627
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 8d52f8c59e83a4aae8724100770965f756a439fb
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341320"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015697"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-В Azure Cosmos DB данные индексируются с помощью приведенных ниже [политик индексирования](index-policy.md), определенных для каждого контейнера. Политика индексирования по умолчанию, задаваемая для только что созданных контейнеров, применяет диапазонные индексы для любых строк или чисел. Эту политику можно переопределить собственной политикой индексирования.
+В Azure Cosmos DB данные индексируются в соответствии с [политиками индексации](index-policy.md) , определенными для каждого контейнера. Политика индексирования по умолчанию, задаваемая для только что созданных контейнеров, применяет диапазонные индексы для любых строк или чисел. Эту политику можно переопределить собственной политикой индексирования.
 
 > [!NOTE]
 > Метод обновления политик индексации, описанный в этой статье, применим только к API-интерфейсу SQL (Core) Azure Cosmos DB. Сведения об индексировании в [API Azure Cosmos DB для MongoDB](mongodb-indexing.md) и [дополнительного индексирования в Azure Cosmos DB API Cassandra.](cassandra-secondary-index.md)
@@ -27,7 +27,7 @@ ms.locfileid: "93341320"
 
 Ниже приведены некоторые примеры политик индексации, которые отображаются в [формате JSON](index-policy.md#include-exclude-paths), то есть о том, как они представлены в портал Azure. Значения параметров можно задать с помощью Azure CLI или любого пакета SDK.
 
-### <a name="opt-out-policy-to-selectively-exclude-some-property-paths"></a>Политика отказа для выборочного исключения некоторых путей к свойствам
+### <a name="opt-out-policy-to-selectively-exclude-some-property-paths"></a><a id="range-index"></a>Политика отказа для выборочного исключения некоторых путей к свойствам
 
 ```json
     {
@@ -146,7 +146,7 @@ ms.locfileid: "93341320"
 > [!NOTE]
 > Обычно рекомендуется использовать политику индексирования **отказа** , чтобы Azure Cosmos DB заранее индексировать любое новое свойство, которое может быть добавлено в модель данных.
 
-### <a name="using-a-spatial-index-on-a-specific-property-path-only"></a>Использование пространственного индекса только для определенного пути к свойству
+### <a name="using-a-spatial-index-on-a-specific-property-path-only"></a><a id="spatial-index"></a>Использование пространственного индекса только для определенного пути к свойству
 
 ```json
 {
@@ -176,7 +176,7 @@ ms.locfileid: "93341320"
 }
 ```
 
-## <a name="composite-indexing-policy-examples"></a>Примеры политик составного индексирования
+## <a name="composite-indexing-policy-examples"></a><a id="composite-index"></a>Примеры политик составного индексирования
 
 Кроме добавления и удаления путей отдельных свойств, вы также можете указать составной индекс. Если вы хотите выполнить запрос, который содержит предложение `ORDER BY` для нескольких свойств, эти свойства должны содержать [составной индекс](index-policy.md#composite-indexes) Кроме того, составные индексы будут иметь преимущество в производительности для запросов, имеющих несколько фильтров или как фильтр, так и предложение ORDER BY.
 
@@ -759,7 +759,7 @@ container_client.read(populate_quota_info = True,
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 
