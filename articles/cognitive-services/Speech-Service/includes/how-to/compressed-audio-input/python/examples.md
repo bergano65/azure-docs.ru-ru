@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
 ms.author: amishu
-ms.openlocfilehash: 3000709f19b53eb6e79b4dae0559040ca025c9e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 58d547995d39505da18a6bca1a6c3925b95252a6
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87282754"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978810"
 ---
-Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи, создайте `PullAudioInputStream` или `PushAudioInputStream` . Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
+Чтобы настроить речевой пакет SDK для приема сжатого звукового ввода, создайте `PullAudioInputStream` или `PushAudioInputStream` . Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
 
 Предположим, что ваш вариант использования предназначен для использования в `PullStream` качестве `MP3` файла. Код может выглядеть следующим образом:
 

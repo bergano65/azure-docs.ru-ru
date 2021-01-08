@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
 ms.author: trbye
-ms.openlocfilehash: caada98d3a2bcc4acb566cb02065c6451c233066
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9b980dcbe42694137c7b29ee3bddaa7802db3da
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86544944"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978814"
 ---
-Чтобы выполнить потоковую передачу в сжатом аудио формате в службу распознавания речи, создайте `PullAudioInputStream` или `PushAudioInputStream` . Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
+Чтобы настроить речевой пакет SDK для приема сжатого аудио-сигнала, создайте `PullAudioInputStream` или `PushAudioInputStream` . Затем создайте объект `AudioConfig` из экземпляра класса Stream, указав формат сжатия потока.
 
 Предположим, что у вас есть класс входного потока `pullStream` с именем и используется опус/OGG. Код может выглядеть следующим образом:
 
