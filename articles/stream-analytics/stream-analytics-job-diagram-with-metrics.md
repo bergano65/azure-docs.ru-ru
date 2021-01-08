@@ -3,16 +3,15 @@ title: Отладка на основе данных в Azure Stream Analytics
 description: В этой статье описывается устранение неполадок в задании Azure Stream Analytics с помощью метрик и схемы заданий на портале Azure.
 author: jseb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/01/2017
-ms.openlocfilehash: e4ee868125ee30d40ef0d9ca5a42881ad003e9a8
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 6d20454515088ccca87665d9b3b27c0d82c3cdf9
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123988"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020406"
 ---
 # <a name="data-driven-debugging-by-using-the-job-diagram"></a>Отладка на основе данных с помощью схемы заданий
 
@@ -20,7 +19,7 @@ ms.locfileid: "93123988"
 
 ## <a name="using-the-job-diagram"></a>Использование схемы заданий
 
-На портале Azure в задании Stream Analytics в разделе **Поддержка и устранение неполадок** выберите **Схема заданий** :
+На портале Azure в задании Stream Analytics в разделе **Поддержка и устранение неполадок** выберите **Схема заданий**:
 
 ![Схема заданий с метриками — расположение](./media/stream-analytics-job-diagram-with-metrics/stream-analytics-job-diagram-with-metrics-portal-1.png)
 

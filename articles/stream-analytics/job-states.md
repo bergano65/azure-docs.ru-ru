@@ -1,18 +1,17 @@
 ---
 title: Состояние задания Azure Stream Analytics
 description: В этой статье описываются четыре разных состояния задания Stream Analytics. Запуск, остановка, понижение уровня работоспособности и сбой.
-author: sidram
+author: sidramadoss
 ms.author: sidram
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: 008493c6eb8840752be3815d30a5df5bad42aff2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: dd298fae148b9e1e51072e98a4e0e5ece10967f3
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023863"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020457"
 ---
 # <a name="azure-stream-analytics-job-states"></a>Состояние задания Azure Stream Analytics
 
@@ -25,7 +24,7 @@ ms.locfileid: "96023863"
 | **Деградация** | Возможны временные проблемы с входными и выходными подключениями. Эти ошибки называются временными ошибками, которые могут привести к снижению состояния работы. Stream Analytics немедленно попытается восстановиться после таких ошибок и вернуться в состояние "Выполнение" (в течение нескольких минут). Эти ошибки могут возникать из-за проблем с сетью, доступности других ресурсов Azure, ошибок десериализации и т. д. Производительность задания может быть снижена, если задание находится в состоянии деградации.| Чтобы получить дополнительные сведения о причине возникновения временных ошибок, см. раздел о [журналах действий и диагностики](./stream-analytics-job-diagnostic-logs.md#debugging-using-activity-logs). В некоторых случаях, например ошибок десериализации, рекомендуется предпринимать корректирующее действие, чтобы убедиться, что события находятся в правильном формате. Если задание продолжает достигать максимального использования ресурса, попробуйте увеличить количество единиц хранения или выполните [параллелизацию задания](./stream-analytics-parallelization.md). В других случаях, где вы не можете применить какие-либо действия, Stream Analytics попытается восстановить состояние *Выполнение*. <br> Вы можете использовать метрику [задержки водяного знака](./stream-analytics-set-up-alerts.md#scenarios-to-monitor) , чтобы понять, влияют ли эти временные ошибки на производительность задания.|
 | **Сбой** | Ваше задание с обнаруженной критической ошибкой приводит к состоянию сбоя. События не считываются и не обрабатываются. Ошибки среды выполнения являются распространенной причиной заданий, которые завершаются состоянием сбоя. | Вы можете настроить оповещения, изучив [этот раздел](./stream-analytics-set-up-alerts.md#set-up-alerts-in-the-azure-portal), чтобы получать уведомления при поступлении задания в состояние "Сбой". <br> <br>Вы можете выполнять отладку с помощью [журналов действий и ресурсов](./stream-analytics-job-diagnostic-logs.md#debugging-using-activity-logs) для обнаружения основной причины и устранения проблемы.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка оповещений для заданий Azure Stream Analytics](stream-analytics-set-up-alerts.md)
 * [Метрики, доступные в Stream Analytics](./stream-analytics-monitoring.md#metrics-available-for-stream-analytics)
 * [Устранение неполадок с помощью журналов действий и ресурсов](./stream-analytics-job-diagnostic-logs.md)

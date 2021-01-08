@@ -1,19 +1,18 @@
 ---
 title: Устранение неполадок с выходными данными в Azure Stream Analytics
 description: В этой статье описаны методы устранения неполадок с выходными подключениями в заданиях Azure Stream Analytics.
-author: sidram
+author: sidramadoss
 ms.author: sidram
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 10/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6942fd68625fd8eac18ea899330fd99f31f771f7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 02a3a7ad73bf0434a215c5ab7a6e89c299e9518b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019843"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019862"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
 

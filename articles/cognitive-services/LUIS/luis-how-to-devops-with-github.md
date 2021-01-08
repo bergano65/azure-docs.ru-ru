@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/5/2020
 ms.author: anwigley
-ms.openlocfilehash: b733e90b69be4e2bd458be5486564747ed4cca78
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 448b3d93ed58e4cfc73da576f0c5871600400ac6
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018877"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019845"
 ---
 # <a name="apply-devops-to-luis-app-development-using-github-actions"></a>Применение DevOps при разработке приложений LUIS с помощью GitHub Actions
 
@@ -29,7 +29,7 @@ ms.locfileid: "95018877"
 * **Клонирование репозитория шаблонов** . Копирование шаблона в собственный репозиторий GitHub.
 * **Настройка ресурсов Luis** . Создайте [ресурсы для создания и прогнозирования Luis в Azure](./luis-how-to-azure-subscription.md) , которые будут использоваться рабочими процессами непрерывной интеграции.
 * **Настройка рабочих процессов CI/CD** . Настройте параметры для рабочих процессов CI/CD и сохраните их в [тайнах GitHub](https://help.github.com/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
-* **Пошаговое руководство по [«внутреннему циклу разработки»](https://mitchdenny.com/the-inner-loop/)** — разработчик вносит обновления в пример приложения Luis при работе в ветви разработки, проверяет обновления и создает запрос на вытягивание, чтобы предложить изменения и найти утверждение проверки.
+* **Пошаговое руководство по [«внутреннему циклу разработки»](/dotnet/architecture/containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow)** — разработчик вносит обновления в пример приложения Luis при работе в ветви разработки, проверяет обновления и создает запрос на вытягивание, чтобы предложить изменения и найти утверждение проверки.
 * **Выполнение рабочих процессов CI/CD** . выполнение [рабочих процессов непрерывной интеграции для создания и тестирования приложения Luis](luis-concept-devops-automation.md) с помощью действий GitHub.
 * **Выполнение автоматического тестирования** . выполните [автоматическое пакетное тестирование для приложения Luis](luis-concept-devops-testing.md) , чтобы оценить качество приложения.
 * **Разверните приложение Luis** — выполните [Задание непрерывной поставки (CD)](luis-concept-devops-automation.md#continuous-delivery-cd) , чтобы опубликовать приложение Luis.

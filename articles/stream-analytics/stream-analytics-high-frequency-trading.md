@@ -1,19 +1,18 @@
 ---
 title: Торговля с высокой частотой с помощью Azure Stream Analytics
 description: Обучение и оценка модели линейной регрессии в задании Stream Analytics
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/07/2018
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: e5d346a6f412b5764400a42e2bebbafec610009b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f8f7744e07abb56d825ce44d5bb30190e7e87c4
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89015430"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020423"
 ---
 # <a name="high-frequency-trading-simulation-with-stream-analytics"></a>Моделирование высокочастотного трейдинга с помощью Stream Analytics
 Совместное использование языка SQL, пользовательских функций и пользовательских агрегатных функций в Azure Stream Analytics позволяет пользователям выполнять расширенную аналитику. Расширенная аналитика может включать обучающие онлайн-сценарии машинного обучения и оценки, а также моделирование процесса с отслеживанием состояния. В этой статье описывается, как работать с линейной регрессией в задании Azure Stream Analytics, которое выполняет непрерывное обучение и оценку в сценарии с высокочастным трейдингом.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/09/2020
 ms.author: kaprochi
-ms.openlocfilehash: 7e27c3dd6e70d9a532c326d8187d82e14bf7ddda
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: d37fca06a3d2eafa0af9e31c3a30ac66be5404f0
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591622"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020610"
 ---
 # <a name="cicd-for-custom-speech"></a>CI/CD для набора средств "Пользовательское распознавание речи"
 
@@ -83,7 +83,7 @@ ms.locfileid: "97591622"
 [Репозиторий шаблонов DevOps речи](https://github.com/Azure-Samples/Speech-Service-DevOps-Template) предоставляет инфраструктуру и подробные рекомендации по следующим вопросам.
 
 - Скопируйте репозиторий шаблонов в учетную запись GitHub, а затем создайте ресурсы Azure и [субъект-службу](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) для рабочих процессов CI/CD действий GitHub.
-- Пошаговое руководство по «[внутреннему циклу разработки](https://mitchdenny.com/the-inner-loop/)». Обновление обучающих и проверочных данных из ветви компонентов, проверка изменений с помощью временной модели разработки и создание запроса на вытягивание для предложения и просмотра изменений.
+- Пошаговое руководство по «[внутреннему циклу разработки](/dotnet/architecture/containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow)». Обновление обучающих и проверочных данных из ветви компонентов, проверка изменений с помощью временной модели разработки и создание запроса на вытягивание для предложения и просмотра изменений.
 - При обновлении обучающих данных в запросе на включение внесенных изменений в *Main* обучить модели с помощью рабочего процесса элемента конфигурации "действия GitHub".
 - Выполните автоматическую проверку точности, чтобы установить [частоту погрешности слов](how-to-custom-speech-evaluate-data.md#evaluate-custom-speech-accuracy) в модели (WER). Сохраните результаты теста в большом двоичном объекте Azure.
 - Выполните рабочий процесс CD, чтобы создать конечную точку после улучшения WER.

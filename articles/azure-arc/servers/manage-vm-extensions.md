@@ -1,16 +1,16 @@
 ---
 title: Управление расширениями виртуальных машин с помощью серверов с поддержкой дуги Azure
 description: Серверы с поддержкой Arc Azure могут управлять развертыванием расширений виртуальных машин, которые обеспечивают настройку и задачи автоматизации после развертывания с помощью виртуальных машин, не относящихся к Azure.
-ms.date: 12/14/2020
+ms.date: 01/07/2021
 ms.topic: conceptual
-ms.openlocfilehash: 55e21f9c6bcd2dfe5f995093034773f2a87d9b03
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 5430b1c1318747cccfb95f031700fddaad716284
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504514"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020627"
 ---
-# <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Управление расширениями виртуальных машин с помощью серверов с поддержкой дуги Azure
+# <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Управление расширениями виртуальных машин с помощью серверов с поддержкой Azure Arc
 
 Расширения виртуальных машин — это небольшие приложения, которые обеспечивают настройку и задачи автоматизации, выполняемые после развертывания на виртуальных машинах Azure. Например, если для виртуальной машины требуется установка программного обеспечения, антивирусная защита или запуск скрипта, можно использовать расширение виртуальной машины.
 
@@ -39,24 +39,35 @@ ms.locfileid: "97504514"
 
 Функциональность расширения виртуальной машины доступна только в списке [поддерживаемых регионов](overview.md#supported-regions). Убедитесь, что ваш компьютер подключен в одном из этих регионов.
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>Модули
 
 В этом выпуске поддерживаются следующие расширения виртуальных машин на компьютерах Windows и Linux.
 
-|Расширение |ОС |Издатель |Дополнительные сведения |
-|----------|---|----------|-----------------------|
-|CustomScriptExtension |Windows |Microsoft.Compute; |[Расширение пользовательских сценариев Windows](../../virtual-machines/extensions/custom-script-windows.md)|
-|DSC |Windows |Microsoft. PowerShell|[Расширение DSC Windows PowerShell](../../virtual-machines/extensions/dsc-windows.md)|
-|Агент Log Analytics |Windows |Microsoft.EnterpriseCloud.Monitoring |[Расширение виртуальной машины Log Analytics для Windows](../../virtual-machines/extensions/oms-windows.md)|
-|Microsoft Dependency Agent | Windows |Microsoft.Compute; | [Расширение виртуальной машины агента зависимостей для Windows](../../virtual-machines/extensions/agent-dependency-windows.md)|
-|Key Vault | Windows | Microsoft.Compute; | [Расширение виртуальной машины Key Vault для Windows](../../virtual-machines/extensions/key-vault-windows.md) |
-|CustomScript|Linux |Microsoft. Azure. extension |[Расширение пользовательских сценариев Linux версии 2](../../virtual-machines/extensions/custom-script-linux.md) |
-|DSC |Linux |Microsoft.OSTCExtensions |[Расширение PowerShell DSC для Linux](../../virtual-machines/extensions/dsc-linux.md) |
-|Агент Log Analytics |Linux |Microsoft.EnterpriseCloud.Monitoring |[Расширение виртуальной машины Log Analytics для Linux](../../virtual-machines/extensions/oms-linux.md) |
-|Microsoft Dependency Agent | Linux |Microsoft.Compute; | [Расширение виртуальной машины агента зависимостей для Linux](../../virtual-machines/extensions/agent-dependency-linux.md) |
-|Key Vault | Linux | Microsoft.Compute; | [Расширение виртуальной машины Key Vault для Linux](../../virtual-machines/extensions/key-vault-linux.md) |
-
 Сведения о пакете агента подключенного компьютера Azure и сведения о компоненте агента расширения см. в разделе [Обзор агентов](agent-overview.md#agent-component-details).
+
+### <a name="windows-extensions"></a>Расширения Windows
+
+|Расширение |Publisher |Тип |Дополнительные сведения |
+|----------|----------|-----|-----------------------|
+|Средство проверки уязвимостей, интегрированное с защитником Azure |Qualys |Виндовсажент. Азуресекуритицентер |[Решение для оценки уязвимости в интегрированной службе "защитник Azure" для Azure и гибридных компьютеров](../../security-center/deploy-vulnerability-assessment-vm.md)|
+|Расширение пользовательских сценариев |Microsoft.Compute; | CustomScriptExtension |[Расширение пользовательских сценариев Windows](../../virtual-machines/extensions/custom-script-windows.md)|
+|PowerShell DSC |Microsoft. PowerShell |DSC |[Расширение DSC Windows PowerShell](../../virtual-machines/extensions/dsc-windows.md)|
+|Агент Log Analytics |Microsoft.EnterpriseCloud.Monitoring |MicrosoftMonitoringAgent |[Расширение виртуальной машины Log Analytics для Windows](../../virtual-machines/extensions/oms-windows.md)|
+|Azure Monitor для виртуальных машин (аналитика) |Microsoft.Azure.Monitoring.DependencyAgent |депенденциажентвиндовс | [Расширение виртуальной машины агента зависимостей для Windows](../../virtual-machines/extensions/agent-dependency-windows.md)|
+|Azure Key Vault синхронизации сертификатов | Microsoft. Azure. key. Vault |KeyVaultForWindows | [Расширение виртуальной машины Key Vault для Windows](../../virtual-machines/extensions/key-vault-windows.md) |
+|Агент Azure Monitor |Microsoft. Azure. Monitor |азуремониторвиндовсажент |[Установка агента Azure Monitor (Предварительная версия)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
+
+### <a name="linux-extensions"></a>Расширения Linux
+
+|Расширение |Publisher |Тип |Дополнительные сведения |
+|----------|----------|-----|-----------------------|
+|Средство проверки уязвимостей, интегрированное с защитником Azure |Qualys |Линуксажент. Азуресекуритицентер |[Решение для оценки уязвимости в интегрированной службе "защитник Azure" для Azure и гибридных компьютеров](../../security-center/deploy-vulnerability-assessment-vm.md)|
+|Расширение пользовательских сценариев |Microsoft. Azure. Extensions |CustomScript |[Расширение пользовательских сценариев Linux версии 2](../../virtual-machines/extensions/custom-script-linux.md) |
+|PowerShell DSC |Microsoft.OSTCExtensions |дскфорлинукс |[Расширение PowerShell DSC для Linux](../../virtual-machines/extensions/dsc-linux.md) |
+|Агент Log Analytics |Microsoft.EnterpriseCloud.Monitoring |OmsAgentForLinux |[Расширение виртуальной машины Log Analytics для Linux](../../virtual-machines/extensions/oms-linux.md) |
+|Azure Monitor для виртуальных машин (аналитика) |Microsoft.Azure.Monitoring.DependencyAgent |DependencyAgentLinux |[Расширение виртуальной машины агента зависимостей для Linux](../../virtual-machines/extensions/agent-dependency-linux.md) |
+|Azure Key Vault синхронизации сертификатов | Microsoft. Azure. key. Vault |KeyVaultForLinux | [Расширение виртуальной машины Key Vault для Linux](../../virtual-machines/extensions/key-vault-linux.md) |
+|Агент Azure Monitor |Microsoft. Azure. Monitor |азуремониторлинуксажент |[Установка агента Azure Monitor (Предварительная версия)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -11,19 +11,19 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/10/2019
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 959062d493d9eb47204be2488f216b70804b3605
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: e7585880b98f62f819ff344c82846c2cfb1fd620
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965771"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019828"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](./network-watcher-monitoring-overview.md) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-is-network-watcher"></a>Что такое Наблюдатель за сетями?
 Наблюдатель за сетями предназначен для отслеживания и восстановления работоспособности сети компонентов IaaS (инфраструктура как услуга), включая виртуальные машины, виртуальные сети, шлюзы приложений, подсистемы балансировки нагрузки и другие ресурсы в виртуальной сети Azure. Это решение не является решением для мониторинга инфраструктуры PaaS (платформа как услуга) или получения веб-или мобильной аналитики.

@@ -2,18 +2,18 @@
 title: Анализ тональности в Twitter в режиме реального времени с помощью Azure Stream Analytics
 description: В этой статье объясняется, как с помощью Stream Analytics анализировать тональность данных Twitter в режиме реального времени. Пошаговое руководство с шагами от создания событий до отображения данных на динамической панели мониторинга.
 services: stream-analytics
-author: mamccrea
-ms.author: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 02/10/2020
-ms.openlocfilehash: 0941e3d5141b5b8841f5d37e3db0d0b1b1474547
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3b321e318621c5687a2e3e5f0649985210a2d16c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019826"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019879"
 ---
 # <a name="real-time-twitter-sentiment-analysis-in-azure-stream-analytics"></a>Анализ тональности в Twitter в режиме реального времени в Azure Stream Analytics
 

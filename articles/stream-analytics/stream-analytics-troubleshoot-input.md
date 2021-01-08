@@ -1,19 +1,18 @@
 ---
 title: Устранение неполадок с входными подключениями для Azure Stream Analytics
 description: В этой статье описаны методы устранения неполадок с входными подключениями в заданиях Azure Stream Analytics.
-author: sidram
+author: sidramadoss
 ms.author: sidram
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 05/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 760c98ce9464e4d40f01256a973e07d9084c6dfe
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2d7171c9ec1e60447fb3342caa72098fb2eb9337
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123291"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019913"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
 
@@ -75,13 +74,13 @@ AzureStreamAnalytics_c4b65e4a-f572-4cfc-b4e2-cf237f43c6f0_1.
 
 2. Найдите концентратор событий.
 
-3. Выберите **Центры событий** под заголовком **Сущности** .
+3. Выберите **Центры событий** под заголовком **Сущности**.
 
 4. Выберите имя концентратора событий.
 
-5. На странице **Экземпляр Центров событий** под заголовком **Сущности** установите флажок **Группы потребителей** . Указана группа потребителей с именем **$Default** .
+5. На странице **Экземпляр Центров событий** под заголовком **Сущности** установите флажок **Группы потребителей**. Указана группа потребителей с именем **$Default**.
 
-6. Выберите **+Группа потребителей** , чтобы добавить новую группу потребителей. 
+6. Выберите **+Группа потребителей**, чтобы добавить новую группу потребителей. 
 
    ![Добавление группы потребителей в Центры событий](media/stream-analytics-event-hub-consumer-groups/new-eh-consumer-group.png)
 

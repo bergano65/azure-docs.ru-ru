@@ -3,16 +3,15 @@ title: Единицы потоковой передачи в Azure Stream Analyt
 description: В этой статье описывается настройка единиц потоковой передачи и другие факторы, влияющие на производительность в Azure Stream Analytics.
 author: JSeb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/28/2020
-ms.openlocfilehash: 38f649fbff9ea2c1182adb613b9302768708a4c4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a5a0e6feba966d2d10c5cd36432c3d5db172a795
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019877"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020015"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>Обзор и настройка единиц потоковой передачи
 
@@ -145,7 +144,7 @@ ms.locfileid: "96019877"
 ### <a name="use-of-udf-functions"></a>Использование определяемых пользователем функций
 При добавлении определяемой пользователем функции Azure Stream Analytics загружает в память среду выполнения JavaScript. Это влияет на процент единиц потоковой передачи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Leverage query parallelization in Azure Stream Analytics](stream-analytics-parallelization.md) (Использование параллелизации запросов в Azure Stream Analytics)
 * [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности](stream-analytics-scale-jobs.md)
 

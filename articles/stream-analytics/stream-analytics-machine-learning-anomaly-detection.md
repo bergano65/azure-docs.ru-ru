@@ -1,18 +1,17 @@
 ---
 title: Обнаружение аномалий в Azure Stream Analytics
 description: В этой статье объясняется, как обнаруживать аномалии с помощью Azure Stream Analytics в сочетании со службой "Машинное обучение Azure".
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: krishna0815
+ms.author: krishmam
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/21/2019
-ms.openlocfilehash: c57a3920dac3e18e248109fafdf61fdfa871c54d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c7cb8e40bc9a8f6664d8286ad368e2613495878b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023403"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020304"
 ---
 # <a name="anomaly-detection-in-azure-stream-analytics"></a>Обнаружение аномалий в Azure Stream Analytics
 
@@ -119,7 +118,7 @@ FROM AnomalyDetectionStep
 * **Загрузка событий** — чем больше **нагрузка на событие**, тем больший объем работы, выполняемый моделями, который влияет на потребление ресурсов ЦП. Задание можно масштабировать, делая его непараллельным, предполагая, что бизнес-логика использует больше входных секций.
 * Секционирование на уровне **функций**  -  **Секционирование на уровне функций** осуществляется с помощью ```PARTITION BY``` вызова функции обнаружения аномалий. Этот тип секционирования добавляет дополнительную нагрузку, так как состояние должно поддерживаться для нескольких моделей одновременно. Секционирование на уровне функций используется в таких сценариях, как секционирование на уровне устройства.
 
-### <a name="relationship"></a>Связь
+### <a name="relationship"></a>Relationship
 Размер журнала, длительность окна и общая нагрузка события связаны следующим образом:
 
 Виндовдуратион (в мс) = 1000 * Хисторисизе/(всего входных событий в секунду/число входных секций)

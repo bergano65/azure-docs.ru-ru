@@ -1,17 +1,17 @@
 ---
 title: Ошибки данных журнала Azure Stream Analyticsных ресурсов
 description: В этой статье описываются различные ошибки входных и выходных данных, которые могут возникать при использовании Azure Stream Analytics.
-author: mamccrea
-ms.author: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 08/07/2020
-ms.openlocfilehash: 416e6cb29ab2816d53cb837f72233a9fe098f659
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2ca289cd52b9a406e486ee9c186be683e71f02d0
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011427"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020117"
 ---
 # <a name="azure-stream-analytics-data-errors"></a>Ошибки данных в Azure Stream Analytics
 
@@ -291,7 +291,7 @@ Azure Stream Analytics могут выявление ошибок выходны
 "BriefMessage": "Column 'devicePartitionKey' is being mapped to multiple columns."
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок Azure Stream Analytics с помощью журналов диагностики](stream-analytics-job-diagnostic-logs.md)
 

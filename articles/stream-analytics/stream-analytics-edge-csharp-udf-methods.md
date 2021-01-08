@@ -1,18 +1,18 @@
 ---
 title: Разработка функций .NET Standard для Azure Stream Analyticsных заданий (Предварительная версия)
 description: Сведения о написании определяемых пользователем функций C# для Stream Analyticsных заданий.
-author: mamccrea
-ms.author: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/10/2020
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 9cf929a3a6f5b3752b030f449b3b24b2bdc941a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 52fa6f05db5452a2e7b8ec4f93d65525873c8c7e
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90907221"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020576"
 ---
 # <a name="develop-net-standard-user-defined-functions-for-azure-stream-analytics-jobs-preview"></a>Разработка .NET Standard определяемых пользователем функций для Azure Stream Analytics заданий (Предварительная версия)
 
@@ -39,11 +39,11 @@ Azure Stream Analytics предлагает язык запросов, анал�
 |**Тип Azure Stream Analytics** |**Тип C#** |
 |---------|---------|
 |BIGINT | long |
-|FLOAT | double |
+|плавающее | double |
 |nvarchar(max) | строка |
 |DATETIME | Дата и время |
-|Record | Dictionary\<string, object> |
-|Массив | Object [] |
+|Записей | Dictionary\<string, object> |
+|Array | Object [] |
 
 То же самое справедливо и при необходимости маршалирования данных из C# в Azure Stream Analytics, что происходит с выходным значением определяемой пользователем функции. В следующей таблице показано, какие типы поддерживаются:
 
@@ -53,10 +53,10 @@ Azure Stream Analytics предлагает язык запросов, анал�
 |double  |  FLOAT   |
 |строка  |  nvarchar(max)   |
 |Дата и время  |  dateTime   |
-|struct  |  Record   |
-|object  |  Record   |
-|Object []  |  Массив   |
-|Dictionary\<string, object>  |  Record   |
+|struct  |  Записей   |
+|object  |  Записей   |
+|Object []  |  Array   |
+|Dictionary\<string, object>  |  Записей   |
 
 ## <a name="develop-a-udf-in-visual-studio-code"></a>Разработка определяемой пользователем функции в Visual Studio Code
 
@@ -110,21 +110,21 @@ namespace CSharpUDFProject
 
 1. Щелкните правой кнопкой мыши папку **функции** и выберите команду **Добавить элемент**.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-add-function.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-add-function.png" alt-text="Добавить новую функцию в Azure Stream Analytics проект":::
 
 2. Добавьте функцию C# **скуарефунктион** в проект Azure Stream Analytics.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-add-function-2.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-add-function-2.png" alt-text="Выбор функции CSharp из Stream Analytics проекта в VS Code":::
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-add-function-name.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-add-function-name.png" alt-text="Введите имя функции CSharp в VS Code":::
 
 3. В конфигурации функции C# выберите **выбрать библиотеку путь к проекту** , чтобы выбрать проект C# из раскрывающегося списка, и выберите **Build Project (собрать проект** ), чтобы построить проект. Затем выберите **выбрать класс** и **выберите метод** , чтобы выбрать связанный класс и имя метода из раскрывающегося списка. Для ссылки на методы, типы и функции в Stream Analytics запросе классы должны быть определены как *открытые* , а объекты должны быть определены как *статические открытые*.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-choose-project.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-choose-project.png" alt-text="VS Code конфигурации Stream Analytics с резкими функциями":::
 
     Если вы хотите использовать определяемую пользователем функцию C# из библиотеки DLL, выберите выбрать **путь к библиотеке DLL** , чтобы выбрать библиотеку DLL. Затем выберите **выбрать класс** и **выберите метод** , чтобы выбрать связанный класс и имя метода из раскрывающегося списка.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-choose-dll.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-choose-dll.png" alt-text="Настройка функции C# Stream Analytics":::
 
 4. Вызовите определяемую пользователем функцию в Azure Stream Analytics запросе.
 
@@ -136,7 +136,7 @@ namespace CSharpUDFProject
 
 5. Перед отправкой задания в Azure настройте путь к пакету в файле конфигурации задания, `JobConfig.json` **кустомкодестораже** разделе. Используйте **SELECT из подписки** в CodeLens, чтобы выбрать подписку и выбрать учетную запись хранения и имя контейнера из раскрывающегося списка. Оставьте **путь** по умолчанию. Этот шаг не требуется для локального тестирования.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-configure-storage-account.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/visual-studio-code-csharp-udf-configure-storage-account.png" alt-text="Выбор пути к библиотеке":::
 
 ## <a name="develop-a-udf-in-visual-studio"></a>Разработка определяемой пользователем функции в Visual Studio
 
@@ -166,37 +166,39 @@ namespace CSharpUDFProject
 
 В этом примере **удфтест** является проектом библиотеки классов C#, а **асаудфдемо** — проектом Azure Stream Analytics, который будет ссылаться на **удфтест**.
 
-:::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-demo.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+:::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-demo.png" alt-text="Проект IoT Edge в Azure Stream Analytics в Visual Studio":::
 
 1. Создайте проект на C#, который позволит добавить ссылку на пользовательскую функцию C# из запроса Azure Stream Analytics.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-build-project.png" alt-text="Azure Stream Analytics проект в Visual Studio Code" и выберите "Добавить ссылку".
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-build-project.png" alt-text="Создание проекта IoT Edge в Azure Stream Analytics в Visual Studio":::
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-reference.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+2. Добавьте ссылку на проект C# в проекте ASA. Щелкните правой кнопкой мыши узел "Ссылки" и выберите "Добавить ссылку".
+
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-reference.png" alt-text="Добавление ссылки на проект C# в Visual Studio":::
 
 3. Выберите имя проекта C# в списке.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-choose-project-name.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-choose-project-name.png" alt-text="Выбор имени проекта C# в списке ссылок":::
 
 4. В списке **Ссылки** в **обозревателе решений** должен отобразиться проект **UDFTest**.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-added-reference.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-added-reference.png" alt-text="Просмотр ссылки на пользовательскую функцию в обозревателе решений":::
 
 5. Щелкните правой кнопкой мыши папку **Функции** и выберите **Новый элемент**.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-csharp-function.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-csharp-function.png" alt-text="Добавление нового элемента в функции в решении Edge в Azure Stream Analytics":::
 
 6. Добавьте функцию C# **SquareFunction.json** в проект Azure Stream Analytics.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-csharp-function-2.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-csharp-function-2.png" alt-text="Выбор функции C# в списке элементов Edge в Stream Analytics в Visual Studio":::
 
 7. Дважды щелкните функцию в **обозревателе решений**, чтобы открыть диалоговое окно настройки.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-csharp-function-config.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-csharp-function-config.png" alt-text="Настройка функции C# в Visual Studio":::
 
 8. В окне настройки функции C# выберите **Загрузить из ссылки на проект ASA** и щелкните имена связанных сборки, класса и метода в раскрывающемся списке. Для ссылки на методы, типы и функции в Stream Analytics запросе классы должны быть определены как *открытые* , а объекты должны быть определены как *статические открытые*.
 
-   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-asa-csharp-function-config.png" alt-text="Azure Stream Analytics проект в Visual Studio Code":::
+   :::image type="content" source="media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-asa-csharp-function-config.png" alt-text="Настройка функции «Stream Analytics с резкими функциями в Visual Studio»":::
 
 ## <a name="existing-packages"></a>Существующие пакеты
 
@@ -221,7 +223,7 @@ namespace CSharpUDFProject
 
 ## <a name="user-logging"></a>Ведение журнала пользователя
 
-Механизм ведения журнала позволяет собирать пользовательские данные во время выполнения задания. Данные журнала можно использовать для отладки или оценки правильности пользовательского кода в режиме реального времени.
+Механизм ведения журнала позволяет собирать определенные сведения во время выполнения задания. Данные журнала можно использовать для отладки или оценки правильности пользовательского кода в реальном времени.
 
 `StreamingContext`Класс позволяет публиковать диагностические данные с помощью `StreamingDiagnostics.WriteError` функции. В приведенном ниже коде показан интерфейс, предоставляемый Azure Stream Analytics.
 
@@ -255,7 +257,7 @@ public static long MyUdfMethod(long data, StreamingContext context)
 SELECT udf.MyUdfMethod(input.value) as udfValue FROM input
 ```
 
-Доступ к сообщениям журнала можно получить через [журналы диагностики](data-errors.md).
+Доступ к сообщениям журнала можно получить с помощью [журналов диагностики](data-errors.md).
 
 ## <a name="limitations"></a>Ограничения
 
@@ -271,7 +273,7 @@ SELECT udf.MyUdfMethod(input.value) as udfValue FROM input
 
 * Пользовательский код пользовательского кода не поддерживает пустые папки. Не добавляйте пустые папки в вспомогательные файлы проекта.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство. Написание определяемой пользователем функции C# для задания Azure Stream Analytics (Предварительная версия)](stream-analytics-edge-csharp-udf.md)
 * [Руководство. Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
