@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: private-link
 ms.topic: tutorial
 ms.date: 9/25/2020
-ms.openlocfilehash: c9866ac2c14e4deb29326ffdd1a93a7d8eae1ea3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 477856bd5772cdc0a9ec00d81adf9c50847afdd0
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484810"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631955"
 ---
 # <a name="tutorial-connect-to-an-azure-cosmos-account-using-an-azure-private-endpoint"></a>Руководство по подключению к учетной записи Azure Cosmos с помощью частной конечной точки Azure
 
@@ -208,13 +208,9 @@ ms.locfileid: "96484810"
 
 5. Щелкните **ОК**.
 
-10. В разделе **Параметры** учетной записи Cosmos DB выберите параметр **Ключи**.
+6. В разделе **Параметры** учетной записи Cosmos DB выберите параметр **Ключи**.
 
-11. Выберите **myResourceGroup**.
-
-12. Выберите учетную запись хранения, созданную на предыдущих шагах.
-
-14. Скопируйте значение **ОСНОВНАЯ СТРОКА ПОДКЛЮЧЕНИЯ**.
+7. Скопируйте значение **ОСНОВНАЯ СТРОКА ПОДКЛЮЧЕНИЯ**.
 
 ## <a name="test-connectivity-to-private-endpoint"></a>Проверка подключения к частной конечной точке
 
@@ -234,7 +230,7 @@ ms.locfileid: "96484810"
 
 7. После подключения откройте на сервере Windows PowerShell.
 
-8. Введите `nslookup <storage-account-name>.documents.azure.com`. Замените **\<storage-account-name>** именем учетной записи хранения, созданной на предыдущих шагах. 
+8. Введите `nslookup <cosmosdb-account-name>.documents.azure.com`. Замените **\<cosmosdb-account-name>** именем учетной записи Cosmos DB, созданной на предыдущих шагах. 
 
     ```powershell
     Server:  UnKnown

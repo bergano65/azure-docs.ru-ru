@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/03/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3d7e6357fd8f1091509cbf27875c028d3af310cb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 904c00c26171854a32234d7b6ba5cac81ac43e5c
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445923"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936674"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-the-azure-portal"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure
 
@@ -86,4 +86,4 @@ Azure Key Vault — это облачная служба, которая пре�
 - [Использование Key Vault для веб-приложения Службы приложений](../general/tutorial-net-create-vault-azure-web-app.md)
 - [Использование Key Vault для приложения, развернутого на виртуальной машине](../general/tutorial-net-virtual-machine.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
-- [Рекомендации по Azure Key Vault](../general/best-practices.md)
+- Статья [Обзор системы безопасности Key Vault](../general/security-overview.md)

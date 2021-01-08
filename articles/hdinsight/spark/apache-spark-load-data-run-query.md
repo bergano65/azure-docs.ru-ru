@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc
 ms.date: 02/12/2020
-ms.openlocfilehash: 5eb6788a558e4429296731f1693edd18bf92f98f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85c4298c0c83480c244cc12238c21160a4a4282e
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77198894"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822120"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Руководство по Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight
 
@@ -49,7 +49,7 @@ Jupyter Notebook — это интерактивная среда Notebook, ко
 
 ![Моментальный снимок данных для интерактивного SQL-запроса Spark](./media/apache-spark-load-data-run-query/hdinsight-spark-sample-data-interactive-spark-sql-query.png "Моментальный снимок данных для интерактивного SQL-запроса Spark")
 
-1. Вставьте следующий код в пустую ячейку записной книжки Jupyter и нажмите **SHIFT+ВВОД** для выполнения кода. Код импортирует типы, необходимые для этого сценария:
+1. Вставьте следующий код в пустую ячейку записной книжки Jupyter Notebook и нажмите **SHIFT+ВВОД** для выполнения кода. Код импортирует типы, необходимые для этого сценария:
 
     ```python
     from pyspark.sql import *

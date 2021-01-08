@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/25/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 8205ecab3abfc7a944c12db1aca2bf594f6cd98f
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ab335c8cc682f6b33dcb30509d682186a178c676
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349458"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861060"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "96349458"
 
 ## <a name="wire-protocol-compatibility"></a>Совместимость с сетевыми протоколами
 
-Azure Cosmos DB реализует протокол проводной сети для MongoDB. Эта реализация обеспечивает прозрачную совместимость с собственными клиентскими пакетами SDK, драйверами и инструментами для MongoDB. В Azure Cosmos DB размещено ядро СУБД MongoDB. Сведения о функциях, поддерживаемых MongoDB, можно найти здесь: 
+Azure Cosmos DB реализует протокол проводной сети для MongoDB. Эта реализация обеспечивает прозрачную совместимость с собственными клиентскими пакетами SDK, драйверами и инструментами для MongoDB. В Azure Cosmos DB не размещено ядро СУБД MongoDB. Сведения о функциях, поддерживаемых MongoDB, можно найти здесь: 
 - [API Azure Cosmos DB для ядра MongoDB (версии 3.6)](mongodb-feature-support-36.md)
 - [API Azure Cosmos DB для ядра MongoDB (версии 3.2)](mongodb-feature-support.md)
 

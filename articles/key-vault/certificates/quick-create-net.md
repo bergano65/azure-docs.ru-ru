@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 700efe8e251af3f124e087e2a2d170db262aec08
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 4dd216f4018feca8c3461104a5beb220d90fd743
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826105"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932849"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-net-sdk-v4"></a>Краткое руководство. Использование клиентской библиотеки сертификатов Azure Key Vault для .NET (пакет SDK версии 4)
 
@@ -108,7 +108,7 @@ set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
 ```powershell
-$Env:KEY_VAULT_NAME=<your-key-vault-name>
+$Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 
 macOS или Linux
@@ -254,4 +254,4 @@ Purging your certificate from mykeyvault ... done
 - См. [Руководство по доступу к Key Vault из приложения службы приложений](../general/tutorial-net-create-vault-azure-web-app.md)
 - См. [Руководство по доступу к Key Vault из виртуальной машины](../general/tutorial-net-virtual-machine.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
-- [Рекомендации по Azure Key Vault](../general/best-practices.md)
+- Статья [Обзор системы безопасности Key Vault](../general/security-overview.md)

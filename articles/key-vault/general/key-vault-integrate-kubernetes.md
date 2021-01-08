@@ -7,12 +7,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: c628ba780ae64fceb32322fdb2004d69e2ebf24b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2645842130b83fe7b4cfb33b9389b19a1306506d
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452750"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97756030"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Руководство по настройке и запуску поставщика Azure Key Vault для драйвера CSI хранилища секретов в Kubernetes
 
@@ -81,7 +81,7 @@ az ad sp create-for-rbac --name contosoServicePrincipal --skip-assignment
     ```azurecli
     az aks upgrade --kubernetes-version 1.16.9 --name contosoAKSCluster --resource-group contosoResourceGroup
     ```
-1. Отобразите метаданные созданного кластера AKS с помощью приведенной ниже команды. Скопируйте значения **principalId**, **clientId**, **subscriptionId** и **nodeResourceGroup** для последующего использования. Если кластер ASK не был создан с включенными управляемыми удостоверениями, **principalId** и **clientId** будут иметь значение NULL. 
+1. Отобразите метаданные созданного кластера AKS с помощью приведенной ниже команды. Скопируйте значения **principalId**, **clientId**, **subscriptionId** и **nodeResourceGroup** для последующего использования. Если кластер AKS не был создан с включенными управляемыми удостоверениями, **principalId** и **clientId** будут иметь значение NULL. 
 
     ```azurecli
     az aks show --name contosoAKSCluster --resource-group contosoResourceGroup

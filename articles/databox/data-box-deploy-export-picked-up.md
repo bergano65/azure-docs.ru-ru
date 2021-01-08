@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 12/11/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: 1035f7fb34ed5b2b11e3ef472ccda7cccc30f652
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 4b5bbe19ddeda7c6b313186b7e24532a294f7253
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359036"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680839"
 ---
-# <a name="tutorial-return-azure-data-box-preview"></a>Руководство по Возврат Azure Data Box (предварительная версия)
+# <a name="tutorial-return-azure-data-box"></a>Руководство по Возврат Azure Data Box
 
 В этом учебнике описывается, как вернуть устройство Azure Data Box и как стираются данные после получения устройства в центре обработки данных Azure.
 
@@ -27,8 +27,6 @@ ms.locfileid: "97359036"
 > * Подготовка к отправке
 > * Отправка Data Box в Майкрософт
 > * Стирание данных из Data Box
-
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 

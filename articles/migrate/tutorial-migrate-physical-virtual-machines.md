@@ -5,14 +5,14 @@ author: rahulg1190
 ms.author: rahugup
 ms.manager: bsiva
 ms.topic: tutorial
-ms.date: 04/15/2020
+ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: af1c321e5c537fbd3af770cb392c538e6056e075
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: bd560a6ef4a3b4ab5eb4632e7741c764f6e314e1
+ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752878"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97854933"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Перенос компьютеров в качестве физических серверов в Azure
 
@@ -109,7 +109,7 @@ ms.locfileid: "96752878"
 - Вам нужно подготовить компьютер для размещения модуля репликации. [Просмотрите требования](migrate-replication-appliance.md#appliance-requirements) к компьютеру.
 - Модуль репликации использует MySQL. Проверьте [параметры](migrate-replication-appliance.md#mysql-installation) для установки MySQL в модуле.
 - Проверьте URL-адреса Azure, к которым модуль репликации будет обращаться в [общедоступных](migrate-replication-appliance.md#url-access) облаках и облаках [для государственных организаций](migrate-replication-appliance.md#azure-government-url-access).
-- Просмотрите требования относительно доступа к [порту] (migrate-replication-appliance.md#port-access) для модуля репликации.
+- Проверьте требования к доступу к [портам](migrate-replication-appliance.md#port-access) для устройства репликации.
 
 > [!NOTE]
 > Устройство репликации не следует устанавливать на исходном компьютере, который необходимо реплицировать, или на устройстве обнаружения и оценки службы "Миграция Azure", которое вы могли установить ранее.

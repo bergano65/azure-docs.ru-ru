@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 1b23fa9f9cbf7b385a04835149b5d53cc42351eb
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: db6bb5c204bfe79b9d7470f651081aa4f4dcf2ed
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825894"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932713"
 ---
 # <a name="quickstart-azure-key-vault-key-client-library-for-javascript-version-4"></a>Краткое руководство. Использование клиентской библиотеки ключей Azure Key Vault для JavaScript (версия 4)
 
@@ -91,7 +91,7 @@ set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
 ```powershell
-$Env:KEY_VAULT_NAME=<your-key-vault-name>
+$Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 
 macOS или Linux
@@ -274,4 +274,4 @@ Purging your key from <your-unique-keyvault-name> ... done.
 - [Обзор ключей Azure Key Vault](about-keys.md)
 - [Безопасный доступ к хранилищу ключей](../general/secure-your-key-vault.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
-- [Рекомендации по Azure Key Vault](../general/best-practices.md)
+- Статья [Обзор системы безопасности Key Vault](../general/security-overview.md)

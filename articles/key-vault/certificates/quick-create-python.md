@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d9fdfc89c8c02749fdf677ad119f1eed5a4b1fa2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 6ae20c55a16b12f7543af3f08d96400a8e5f20c9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185187"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934923"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки сертификатов Azure Key Vault для Python
 
@@ -86,7 +86,7 @@ set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
 ```powershell
-$Env:KEY_VAULT_NAME=<your-key-vault-name>
+$Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 
 macOS или Linux
@@ -215,5 +215,5 @@ az group delete --resource-group KeyVault-PythonQS-rg
 - [Обзор хранилища ключей Azure](../general/overview.md)
 - [Безопасный доступ к хранилищу ключей](../general/secure-your-key-vault.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
-- [Рекомендации по использованию Key Vault](../general/best-practices.md)
+- [Обзор системы безопасности Key Vault](../general/security-overview.md)
 - [Проверка подлинности с помощью Key Vault](../general/authentication.md)

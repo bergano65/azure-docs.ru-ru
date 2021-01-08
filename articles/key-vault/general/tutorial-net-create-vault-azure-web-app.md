@@ -10,22 +10,27 @@ ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 6bb1aafd942046faa77072d99af043ebd43b4a8a
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 2504efcbd79ab0e43f958b86564709b6ac6295a6
+ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589973"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733062"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-in-net"></a>Руководство. Использование управляемого удостоверения для подключения Key Vault к веб-приложению Azure (.NET)
 
 [Azure Key Vault](./overview.md) предоставляет способ хранения учетных данных и других секретов с высоким уровнем безопасности. Но для получения этих секретов в коде нужно проходить проверку подлинности в Key Vault. [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md) помогают решить эту задачу, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Вы можете использовать это удостоверение для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, включая Key Vault, не отображая учетные данные в коде.
 
-При работе с этим руководством вы примените управляемое удостоверение для проверки подлинности веб-приложения Azure в Azure Key Vault. Вы будете использовать [клиентскую библиотеку секретов Azure Key Vault для .NET](/dotnet/api/overview/azure/key-vault) и [Azure CLI](/cli/azure/get-started-with-azure-cli). Те же базовые принципы применяются и для других языков разработки, а также при использовании Azure PowerShell и портала Azure.
+С помощью этого учебника вы создадите и развернете веб-приложение Azure в [Службе приложений Azure](https://docs.microsoft.com/azure/app-service/overview). Управляемое удостоверение позволит вам выполнить аутентификацию веб-приложения Azure с помощью хранилища ключей Azure. Кроме того, вы воспользуетесь [клиентской библиотекой секретов Azure Key Vault для .NET](/dotnet/api/overview/azure/key-vault) и [Azure CLI](/cli/azure/get-started-with-azure-cli). Те же базовые принципы применяются и для других языков разработки, а также при использовании Azure PowerShell и портала Azure.
+
+Дополнительные сведения о веб-приложениях Службы приложений Azure и развертывании, представленном в этом учебнике, см. в следующих статьях:
+- [Обзор Службы приложений Azure](https://docs.microsoft.com/azure/app-service/overview)
+- [Создание веб-приложения ASP.NET Core в Службе приложений Azure](https://docs.microsoft.com/azure/app-service/quickstart-dotnetcore)
+- [Развертывание локального репозитория Git в Службе приложений Azure](https://docs.microsoft.com/azure/app-service/deploy-local-git)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством вам понадобится:
+Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Подписка Azure. [Создайте ее бесплатно.](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 * [Пакет SDK для .NET Core 3.1 или более поздней версии](https://dotnet.microsoft.com/download/dotnet-core/3.1).
@@ -33,6 +38,8 @@ ms.locfileid: "97589973"
 * [Интерфейс командной строки Azure](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/).
 * [Azure Key Vault.](./overview.md) Хранилище ключей можно создать с помощью [портала Azure](quick-create-portal.md), [Azure CLI](quick-create-cli.md) или [Azure PowerShell](quick-create-powershell.md).
 * [Секрет](../secrets/about-secrets.md) Key Vault. Вы можете создать секрет с помощью [портала Azure](../secrets/quick-create-portal.md), [PowerShell](../secrets/quick-create-powershell.md) или [Azure CLI](../secrets/quick-create-cli.md).
+
+Если ваше веб-приложение уже развернуто в Службе приложений Azure, вы можете перейти к разделам [Настройка доступа веб-приложения к хранилищу ключей](#create-and-assign-a-managed-identity) и [Изменение кода веб-приложения](#modify-the-app-to-access-your-key-vault).
 
 ## <a name="create-a-net-core-app"></a>Создание приложения .NET Core
 На этом шаге вы настроите локальный проект .NET Core.
@@ -59,6 +66,8 @@ dotnet run
 В веб-браузере перейдите к приложению по адресу `http://localhost:5000`.
 
 На странице отобразится сообщение "Hello World!" из примера приложения.
+
+Дополнительные сведения о создании веб-приложений для Azure см. в статье [Создание веб-приложения ASP.NET Core в Службе приложений Azure](https://docs.microsoft.com/azure/app-service/quickstart-dotnetcore).
 
 ## <a name="deploy-the-app-to-azure"></a>Развертывание приложения в Azure
 
@@ -218,6 +227,8 @@ http://<your-webapp-name>.azurewebsites.net
 ```
 
 На странице отобразится сообщение "Hello World!" которое вы уже видели на странице `http://localhost:5000`.
+
+Дополнительные сведения о развертывании веб-приложения с помощью Git см. в статье [Локальное развертывание Git в Службе приложений Azure](https://docs.microsoft.com/azure/app-service/deploy-local-git).
  
 ## <a name="configure-the-web-app-to-connect-to-key-vault"></a>Настройка подключения к Key Vault в веб-приложении
 

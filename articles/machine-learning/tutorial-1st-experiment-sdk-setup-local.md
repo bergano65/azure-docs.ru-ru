@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 05ac0f78345e1c1d7643f24410d53b209ab7c375
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 62a1f43fb73f0eda77ebb8f62f64c95ff4ad37a1
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574162"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734204"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Руководство по началу работы с Машинным обучением Azure в среде разработки (часть 1 из 4)
 
@@ -65,6 +65,9 @@ tutorial
 
 - `tutorial`: каталог верхнего уровня проекта.
 - `.azureml`: скрытый подкаталог для хранения файлов конфигурации Машинного обучения Azure.
+
+> [!TIP]
+> Если вы работаете с компьютером Mac, в окне поиска используйте клавиши **CMD+SHIFT+.** для переключения возможности просмотра и создания каталогов, начинающихся с точки.  Или используйте командный терминал для создания каталога.
 
 
 > [!div class="nextstepaction"]

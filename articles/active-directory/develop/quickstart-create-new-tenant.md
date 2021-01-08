@@ -13,12 +13,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 60d789c4297c400b812cd6c5c19c8c6148cb347d
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: f43cb80a148f5dadb409f506f237cb1210a2000a
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91575985"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934005"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -55,7 +55,7 @@ ms.locfileid: "91575985"
 > [!TIP]
 > Чтобы найти идентификатор клиента, вы можете сделать следующее:
 > * Наведите указатель мыши на имя вашей учетной записи, чтобы получить данные об идентификаторе каталога или клиента.
-> * Выберите **Azure Active Directory > Свойства > Идентификатор каталога** на портале Azure.
+> * Найдите и выберите **Azure Active Directory > Свойства > Идентификатор клиента** на портале Azure.
 
 Если у вас нет клиента, связанного с учетной записью, GUID отобразится под именем учетной записи. Но вы не сможете регистрировать приложения, пока не выполните действия из следующего раздела.
 

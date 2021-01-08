@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 97d95f9993f85a51ac7baa69ebb331f6c8588c18
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: acc1660be99b3b7cc9a3c7414c47f9f6e159b559
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318722"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674123"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-frankly"></a>Руководство. Интеграция Azure Active Directory с &frankly
 
@@ -63,7 +63,7 @@ ms.locfileid: "92318722"
 
 4. В поле поиска введите **&frankly**, выберите **&frankly** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![&frankly в списке результатов](common/search-new-app.png)
+    ![&frankly в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -99,7 +99,7 @@ ms.locfileid: "92318722"
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Снимок экрана: раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить".](common/idp-intiated.png)
+    ![Снимок экрана, на котором показан раздел "Базовая конфигурация SAML", где можно ввести идентификатор, URL-адрес ответа и нажать кнопку "Сохранить"](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://andfrankly.com/saml/simplesaml/www/module.php/saml/sp/metadata.php/<tenant id>`.
 
@@ -107,7 +107,7 @@ ms.locfileid: "92318722"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![Снимок экрана: параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа.](common/metadata-upload-additional-signon.png)
+    ![Снимок экрана, на котором показан параметр "Задать дополнительные URL-адреса" и поле для ввода URL-адреса входа](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://andfrankly.com/saml/okta/?saml_sso=<tenant id>`.
 
@@ -145,7 +145,7 @@ ms.locfileid: "92318722"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
@@ -181,7 +181,7 @@ ms.locfileid: "92318722"
 
 ### <a name="create-frankly-test-user"></a>Создание тестового пользователя в &frankly
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении &frankly. Чтобы добавить пользователей на платформе &frankly, обратитесь к  [группе поддержки &frankly](mailto:help@andfrankly.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении &frankly. Чтобы добавить пользователей на платформе &frankly, обратитесь к [группе поддержки &frankly](mailto:help@andfrankly.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

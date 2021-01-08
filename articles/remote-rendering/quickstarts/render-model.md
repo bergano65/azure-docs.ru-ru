@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: 74bad563de60abc0c1eb7623a81c83fea03f5ee6
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 6258365ab00ab538f3f3502682078d29a391578c
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207229"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724940"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Краткое руководство. Отрисовка модели с помощью Unity
 
@@ -74,8 +74,8 @@ git clone https://github.com/Azure/azure-remote-rendering
 ![Сведения об учетной записи ARR](./media/arr-sample-account-info.png)
 
 > [!IMPORTANT]
-> На портале Azure домен вашей учетной записи отображается только как *mixedreality.azure.com*. Этого недостаточно для успешного подключения.
 > Задайте для параметра **AccountDomain** значение `<region>.mixedreality.azure.com`, где `<region>` — [это один из доступных ближайших регионов](../reference/regions.md).
+> Задайте для **AccountAuthenticationDomain** значение [домена учетной записи](../how-tos/create-an-account.md#retrieve-the-account-information), как оно отображается на портале Azure.
 
 Позже мы развернем этот проект в HoloLens и подключим к службе "Удаленная отрисовка" с этого устройства. Так как у нас нет простого способа ввода учетных данных на устройстве, пример для быстрого запуска **сохранит учетные данные в сцене Unity**.
 
@@ -92,9 +92,7 @@ git clone https://github.com/Azure/azure-remote-rendering
 
 ## <a name="inspecting-the-scene"></a>Проверка сцены
 
-После запуска подключения удаленной отрисовки панель Inspector (Инспектор) обновляется с учетом дополнительных сведений о состоянии:
-
-![Воспроизведение примера Unity](./media/arr-sample-configure-session-running.png)
+После запуска подключения удаленной отрисовки панель Inspector (Инспектор) обновляется с учетом дополнительных сведений о состоянии: ![Воспроизведение примера Unity](./media/arr-sample-configure-session-running.png)
 
 Теперь можно изучить график сцены, выбрав новый узел и щелкнув **Show children** (Показать дочерние элементы) в окне инспектора.
 

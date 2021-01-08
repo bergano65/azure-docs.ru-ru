@@ -10,16 +10,18 @@ ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: sudbalas
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d1b1c27fe0136220d5a1851af4a5c24102a37da1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3639237a0dc34c521fd3fa52631fdb19c26ec284
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015559"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936351"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Настройка брандмауэров и виртуальных сетей Azure Key Vault
 
 В этой статье содержатся рекомендации по настройке брандмауэра Azure Key Vault. В этом документе подробно рассматриваются различные конфигурации брандмауэра Key Vault и предоставляются пошаговые инструкции по настройке Azure Key Vault для работы с другими приложениями и службами Azure.
+
+Дополнительные сведения см. в статье [Конечные точки служб для виртуальной сети для Azure Key Vault](overview-vnet-service-endpoints.md).
 
 ## <a name="firewall-settings"></a>Параметры брандмауэра
 
@@ -167,10 +169,10 @@ ms.locfileid: "96015559"
 
 ## <a name="references"></a>Ссылки
 * Справочник по шаблонам ARM: [Справочник по шаблону ARM Azure Key Vault](/azure/templates/Microsoft.KeyVault/vaults).
-* Команда Azure CLI: [az keyvault network-rule](/cli/azure/keyvault/network-rule?view=azure-cli-latest).
+* Команда Azure CLI: [az keyvault network-rule](/cli/azure/keyvault/network-rule).
 * Командлеты Azure PowerShell: [Get-AzKeyVault](/powershell/module/az.keyvault/get-azkeyvault), [Add-AzKeyVaultNetworkRule](/powershell/module/az.KeyVault/Add-azKeyVaultNetworkRule), [Remove-AzKeyVaultNetworkRule](/powershell/module/az.KeyVault/Remove-azKeyVaultNetworkRule), [Update-AzKeyVaultNetworkRuleSet](/powershell/module/az.KeyVault/Update-azKeyVaultNetworkRuleSet).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Конечные точки служб для виртуальной сети для Key Vault](overview-vnet-service-endpoints.md)
-* [Защита хранилища ключей](secure-your-key-vault.md)
+* [Обзор системы безопасности Azure Key Vault](security-overview.md)

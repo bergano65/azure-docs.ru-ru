@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d3d5fd34ee6c1d73429af63693094acdaed6c9d2
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 7d1e4018382d26e4df289838ffbb03f1c87505e6
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784615"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935025"
 ---
 # <a name="quickstart-azure-key-vault-keys-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки ключей Azure Key Vault для Python
 
@@ -86,7 +86,7 @@ set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
 ```powershell
-$Env:KEY_VAULT_NAME=<your-key-vault-name>
+$Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 
 macOS или Linux
@@ -98,7 +98,7 @@ export KEY_VAULT_NAME=<your-key-vault-name>
 
 Клиентская библиотека ключей Azure Key Vault для Python позволяет управлять криптографическими ключами. В приведенном ниже примере кода показано, как создать клиент, а также как задать, извлечь и удалить ключ.
 
-Создайте файл с именем *kv_keys.py* , который содержит этот код.
+Создайте файл с именем *kv_keys.py*, который содержит этот код.
 
 ```python
 import os
@@ -134,7 +134,7 @@ print(" done.")
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-Убедитесь, что код из предыдущего раздела находится в файле с именем *kv_keys.py* . Затем выполните следующую команду, чтобы запустить код:
+Убедитесь, что код из предыдущего раздела находится в файле с именем *kv_keys.py*. Затем выполните следующую команду, чтобы запустить код:
 
 ```terminal
 python kv_keys.py
@@ -211,5 +211,5 @@ az group delete --resource-group KeyVault-PythonQS-rg
 - [Обзор хранилища ключей Azure](../general/overview.md)
 - [Безопасный доступ к хранилищу ключей](../general/secure-your-key-vault.md)
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
-- [Рекомендации по использованию Key Vault](../general/best-practices.md)
+- [Обзор системы безопасности Key Vault](../general/security-overview.md)
 - [Проверка подлинности с помощью Key Vault](../general/authentication.md)

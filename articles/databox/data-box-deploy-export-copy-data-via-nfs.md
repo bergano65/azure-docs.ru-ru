@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 10/01/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: bd8e6d4175c57bd31c3fd83bf6f9669d2b65ffb2
-ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
+ms.openlocfilehash: 64bb5e94c4b18626d1f85d7e61252aae74202eb9
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91660855"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680618"
 ---
-# <a name="tutorial-copy-data-from-azure-data-box-via-nfs-preview"></a>Руководство по Копирование данных из Azure Data Box через NFS (предварительная версия)
+# <a name="tutorial-copy-data-from-azure-data-box-via-nfs"></a>Руководство по Копирование данных из Azure Data Box через NFS
 
 В этом учебнике объясняется, как подключиться к локальному веб-интерфейсу Data Box и скопировать данные с такого устройства на локальный сервер данных через NFS. Данные на Data Box экспортируются из вашей учетной записи службы хранилища Azure.
 
@@ -26,8 +26,6 @@ ms.locfileid: "91660855"
 > * Предварительные требования
 > * подключение к Data Box;
 > * Копирование данных из Data Box
-
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -79,11 +77,11 @@ ms.locfileid: "91660855"
 
 [!INCLUDE [data-box-export-review-logs](../../includes/data-box-export-review-logs.md)]
 
- Теперь вы можете начать копирование данных. Если у вас главный компьютер с ОС Linux, используйте программу копирования, аналогичную Robocopy. Вот некоторые программы, доступные в ОС Linux: [rsync](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/), [Ultracopier](https://ultracopier.first-world.info/).  
+ Теперь вы можете начать копирование данных. Если у вас главный компьютер с ОС Linux, используйте программу копирования, аналогичную Robocopy. Вот некоторые альтернативы, доступные в Linux: [`rsync`](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/) или [Ultracopier](https://ultracopier.first-world.info/).  
 
 Команда `cp` — один из лучших способов копировать каталоги. Дополнительные сведения об использовании команды см. на [страницах руководства команды cp](http://man7.org/linux/man-pages/man1/cp.1.html).
 
-При копировании при помощи rsync с использованием нескольких потоков следуйте указанным ниже рекомендациям.
+При копировании при помощи `rsync` с использованием нескольких потоков следуйте следующим рекомендациям:
 
 * Установите пакет **CIFS Utils** или **NFS Utils** (в зависимости от того, какая файловая система используется в клиенте с ОС Linux).
 
@@ -91,7 +89,7 @@ ms.locfileid: "91660855"
 
     `sudo apt-get install nfs-utils`
 
-* Установите программу **Rsync** и **Parallel** (в зависимости от версии используемого дистрибутива ОС Linux).
+* Установите программу `rsync` и **Parallel** (в зависимости от версии используемого дистрибутива ОС Linux).
 
     `sudo apt-get install rsync`
    

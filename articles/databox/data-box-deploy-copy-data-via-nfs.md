@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 09/29/2020
 ms.author: alkohli
-ms.openlocfilehash: bbebe3b3f63e6ccbb5f351abfc9ba3b846ca6fbe
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: d53a619dc6ca5fb0f43f6097664f50bf22943928
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337667"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678881"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-nfs"></a>Руководство по Копирование данных в Azure Data Box через NFS
 
@@ -98,11 +98,11 @@ ms.locfileid: "94337667"
 > [!IMPORTANT]
 > Обязательно сохраняйте копию исходных данных, пока не убедитесь, что служба Data Box перенесла ваши данные в службу хранилища Azure
 
-Если у вас главный компьютер с ОС Linux, используйте программу копирования, аналогичную Robocopy. Вот некоторые программы, доступные в ОС Linux: [rsync](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/), [Ultracopier](https://ultracopier.first-world.info/).  
+Если у вас главный компьютер с ОС Linux, используйте программу копирования, аналогичную Robocopy. Вот некоторые альтернативы, доступные в Linux: [`rsync`](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/) или [Ultracopier](https://ultracopier.first-world.info/).  
 
 Команда `cp` — один из лучших способов копировать каталоги. Дополнительные сведения об использовании команды см. на [страницах руководства команды cp](http://man7.org/linux/man-pages/man1/cp.1.html).
 
-При копировании при помощи rsync с использованием нескольких потоков следуйте указанным ниже рекомендациям.
+При копировании при помощи `rsync` с использованием нескольких потоков следуйте следующим рекомендациям:
 
 * Установите пакет **CIFS Utils** или **NFS Utils** (в зависимости от того, какая файловая система используется в клиенте с ОС Linux).
 
@@ -110,7 +110,7 @@ ms.locfileid: "94337667"
 
     `sudo apt-get install nfs-utils`
 
-* Установите программу **Rsync** и **Parallel** (в зависимости от версии используемого дистрибутива ОС Linux).
+* Установите программу `rsync` и **Parallel** (в зависимости от версии используемого дистрибутива ОС Linux).
 
     `sudo apt-get install rsync`
    

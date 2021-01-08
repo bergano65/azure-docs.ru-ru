@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/22/2020
+ms.date: 12/16/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Mini R device so I can use it to transfer data to Azure.
-ms.openlocfilehash: 54ac683dcc2b124c4a6410b2e8449fa7e969ce8c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6d41c186a5d239ad7228c37902f5691085e43dbf
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464911"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631250"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-mini-r"></a>Руководство по подготовке к развертыванию Azure Stack Edge Mini R
 
@@ -40,7 +40,7 @@ ms.locfileid: "96464911"
 |  | |
 |**Учебники по развертыванию** |Эти учебники необходимы для развертывания устройства Azure Stack Edge Mini R в рабочей среде. |
 |**[1. Подготовка портала Azure для устройства](azure-stack-edge-mini-r-deploy-prep.md)** |Создайте и настройте ресурсы Azure Stack Edge, прежде чем устанавливать физическое устройство. |
-|**[2. Установка устройства](azure-stack-edge-mini-r-deploy-install.md)**|Распакуйте, установите в стойку физическое устройство и подключите к нему кабель.  |
+|**[2. Установка устройства](azure-stack-edge-mini-r-deploy-install.md)**|Осмотрите физическое устройство и подключите к нему кабели.  |
 |**[3. Подключение к устройству](azure-stack-edge-mini-r-deploy-connect.md)** |После установки устройства подключитесь к локальному пользовательскому веб-интерфейсу устройства.  |
 |**[4. Настройка параметров сети](azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy.md)** |Настройте сеть, включая параметры вычислительной сети и веб-прокси для вашего устройства.   |
 |**[5. Настройка параметров устройства](azure-stack-edge-mini-r-deploy-set-up-device-update-time.md)** |Назначьте имя устройства и домен DNS, настройте сервер обновлений и время устройства. |

@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 78b42a8ad3685d07b61c4faca384c7ee8f5a5f94
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 8e4e64cd872794354479c29d4aaa000cee45c5a3
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616394"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901221"
 ---
 # <a name="troubleshooting-azure-key-vault-access-policy-issues"></a>Устранение проблем с политикой доступа к хранилищу ключей Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "97616394"
 ### <a name="i-am-not-able-to-modify-access-policy-how-can-it-be-enabled"></a>Я не могу изменить политику доступа. Как ее включить?
 Для изменения политики доступа пользователю нужны достаточные разрешения AAD. В этом случае пользователю потребуется роль участника более высокого уровня.
 
-### <a name="i-am-seeing-unkwown-policy-error-what-does-that-mean"></a>Отображается ошибка "Неизвестная политика". Что это значит?
+### <a name="i-am-seeing-unknown-policy-error-what-does-that-mean"></a>Отображается ошибка "Неизвестная политика". Что это значит?
 Политика доступа в разделе "Неизвестные" может отображаться по двум причинам:
 * Возможно, был пользователь с правом доступа, но по какой-то причине этот пользователь больше не существует.
 * Политика доступа была добавлена для идентификатора объекта приложения, а не субъекта-службы, и с помощью PowerShell.

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 92a878c60ba2a7c08a17ce2833132b389ef49435
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 9b6fcec6f564e944f0e73d151b61d46af4b4cc03
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318747"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673143"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-anaplan"></a>Руководство. Интеграция Azure Active Directory с Anaplan
 
@@ -63,7 +63,7 @@ ms.locfileid: "92318747"
 
 4. В поле поиска введите **Anaplan**, выберите **Anaplan** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Anaplan в списке результатов](common/search-new-app.png)
+    ![Anaplan в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -143,7 +143,7 @@ ms.locfileid: "92318747"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
@@ -179,7 +179,7 @@ ms.locfileid: "92318747"
 
 ### <a name="create-anaplan-test-user"></a>Создание тестового пользователя Anaplan
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Anaplan. Обратитесь в  [службу поддержки Anaplan](mailto:support@anaplan.com), чтобы добавить пользователей на платформу Anaplan. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Anaplan. Обратитесь к [группе поддержки Anaplan](mailto:support@anaplan.com), чтобы добавить пользователей на платформу Anaplan. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

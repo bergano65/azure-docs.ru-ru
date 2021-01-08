@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 09/02/2020
+ms.date: 12/21/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Azure Stack Edge Pro in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: 52f0bcbb332b5d5e47440accff9d9895dcef7056
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 830e0a8733d3f5a49cede09b331dc0298ee1ce4d
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449369"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734724"
 ---
 # <a name="tutorial-install-azure-stack-edge-pro-with-gpu"></a>Руководство по Установка Azure Stack Edge Pro с GPU
 
@@ -166,7 +166,7 @@ ms.locfileid: "96449369"
 - как минимум один сетевой кабель 1 GbE RJ-45 для подключения к интерфейсу управления (на устройстве есть два сетевых интерфейса 1 GbE: для управления и для данных);
 - один трансивер SFP 25 GbE + медный кабель для настройки каждого сетевого интерфейса данных (хотя бы один сетевой интерфейс данных — PORT 2, PORT 3, PORT 4, PORT 5 или PORT 6 — должен быть подключен к Интернету (через подключение к Azure));  
 - доступ к двум блокам распределения питания (БРП) (рекомендуется).
-- Как минимум один сетевой коммутатор 1-GbE для подключения сетевого интерфейса 1-GbE к Интернету для передачи данных. Локальный веб-интерфейс будет недоступен, если подключенный коммутатор не будет по крайней мере 1-GbE. Если для данных используется интерфейс 25/10 GbE, потребуется коммутатор 25 GbE или 10 GbE. 
+- Как минимум один сетевой коммутатор 1-GbE для подключения сетевого интерфейса 1-GbE к Интернету для передачи данных. Локальный веб-интерфейс будет недоступен, если подключенный коммутатор не имеет скорость по крайней мере 1-GbE. Если для данных используется интерфейс 25/10 GbE, потребуется коммутатор 25 GbE или 10 GbE.
 
 > [!NOTE]
 > - Если вы подключаете только один сетевой интерфейс данных, для отправки данных в Azure рекомендуем использовать сетевой интерфейс 25/10 GbE, например PORT 3, PORT 4, PORT 5 или PORT 6. 
@@ -188,12 +188,12 @@ ms.locfileid: "96449369"
 
 - На задней панели установлены две сетевые карты с общим количеством портов, равным шести:
 
-    - **Пользовательский адаптер Microsoft QLogic Cavium 25G NDC** — порт 1 через порт 4.
+    - **Пользовательский адаптер Microsoft `Qlogic` c Cavium 25G NDC** — порт 1 через порт 4.
     - **Канальный сетевой адаптер Mellanox ConnectX-4 с двумя портами 25G** — порт 5 и 6.
 
 Полный список поддерживаемых кабелей, коммутаторов и приемопередатчиков для этих сетевых карт см. на следующих страницах.
 
-- [Таблица взаимодействия адаптера QLogic Cavium 25G NDC](https://www.marvell.com/documents/xalflardzafh32cfvi0z/).
+- [Таблица взаимодействия адаптера `Qlogic` Cavium 25G NDC.](https://www.marvell.com/documents/xalflardzafh32cfvi0z/)
 - [Продукты, совместимые с канальным сетевым адаптером Mellanox ConnectX-4 с двумя портами 25G](https://docs.mellanox.com/display/ConnectX4LxFirmwarev14271016/Firmware+Compatible+Products)  
 
  
@@ -201,15 +201,15 @@ ms.locfileid: "96449369"
 
 1. Идентифицируйте порты на задней панели устройства. Возможно вы получили одно из следующих устройств с завода в зависимости от числа процессоров GPU на устройстве.
 
-    - Устройство с двумя отсеками PCI и одним GPU
+    - Устройство с двумя слотами PCI и одним GPU
 
         ![Задняя панель подключенного устройства](./media/azure-stack-edge-gpu-deploy-install/ase-two-pci-slots.png)
 
-    - Устройство с тремя отсеками PCI и одним GPU
+    - Устройство с тремя слотами PCI и одним GPU
 
         ![Задняя панель подключенного устройства 2](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-one-gpu.png)
 
-    - Устройство с тремя отсеками PCI и двумя GPU
+    - Устройство с тремя слотами PCI и двумя GPU
 
         ![Задняя панель подключенного устройства 3](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-two-gpu.png)
 

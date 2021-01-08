@@ -3,14 +3,14 @@ title: Создание устойчивой функции в Azure с помо
 description: Создание и публикация устойчивой функции Azure на Python с помощью Visual Studio Code.
 author: anthonychu
 ms.topic: quickstart
-ms.date: 04/04/2020
+ms.date: 12/23/2020
 ms.reviewer: azfuncdf, antchu
-ms.openlocfilehash: 5d624027259212d804ced26a6daaffb853984a98
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0cc321563de645aeb1d204b67b0ab72053d79c7e
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012635"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763563"
 ---
 # <a name="create-your-first-durable-function-in-python"></a>Создание устойчивой функции в Python
 
@@ -40,7 +40,7 @@ ms.locfileid: "96012635"
 
 В этом разделе вы используете Visual Studio Code. чтобы создать локальный проект Функций Azure. 
 
-1. В Visual Studio Code нажмите клавишу F1 (или CTRL/CMD+SHIFT+P), чтобы открыть палитру команд. В палитре команд найдите и щелкните `Azure Functions: Create New Project...`.
+1. В Visual Studio Code нажмите клавишу F1 (или <kbd>CTRL/CMD+SHIFT+P</kbd>), чтобы открыть палитру команд. В палитре команд найдите и щелкните `Azure Functions: Create New Project...`.
 
     ![Создание функции](media/quickstart-python-vscode/functions-create-project.png)
 
@@ -60,18 +60,33 @@ ms.locfileid: "96012635"
 
 В корневой папке также создается файл requirements.txt. В нем указаны пакеты Python, необходимые для запуска приложения-функции.
 
+## <a name="update-azure-functions-extension-bundles-version"></a>Обновление версии пакетов расширений для Функций Azure
+
+Функции Azure Python требуют версию 2.x для [пакетов расширений Функций Azure](../functions-bindings-register.md#access-extensions-in-non-net-languages). Пакеты расширений настраиваются в файле *host.json*.
+
+1. Откройте файл *host.json* в проекте. Обновите версию пакета расширений `version` до `[2.*, 3.0.0)`. Задает число из диапазона версий, равное или больше 2.0 и меньше 3.0.
+
+    ```json
+    "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[2.*, 3.0.0)"
+    }
+    ```
+
+1. VS Code необходимо перезагрузить, прежде чем будет отображена обновленная версия пакета расширений. В палитре команд найдите команду *Разработчик: Перезагрузить окно* и выполните ее.
+
 ## <a name="install-azure-functions-durable-from-pypi"></a>Установка azure-functions-durable из PyPI
 
 При создании проекта расширение "Функции Azure" для VS Code автоматически создало виртуальную среду с выбранной версией Python. Вам необходимо активировать виртуальную среду в терминале и установить ряд зависимостей, которые требуются для Функций Azure и Устойчивых функций.
 
-1. Откройте `requirements.txt` в редакторе и измените его содержимое следующим образом:
+1. Откройте файл *requirements.txt* в редакторе и измените его содержимое на следующее:
 
     ```
     azure-functions
-    azure-functions-durable>=1.0.0b6
+    azure-functions-durable>=1.0.0b12
     ```
 
-1. Откройте встроенный терминал редактора в текущей папке (`` Ctrl-Shift-` ``).
+1. Откройте встроенный терминал редактора в текущей папке (<kbd>CTRL+SHIFT+`</kbd>).
 
 1. Во встроенном терминале активируйте виртуальную среду в текущей папке.
 
@@ -203,7 +218,7 @@ ms.locfileid: "96012635"
     }
     ```
 
-1. В VS Code нажмите клавиши **Shift + F5**, чтобы остановить отладку.
+1. В VS Code нажмите клавиши <kbd>SHIFT+F5</kbd>, чтобы остановить отладку.
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
 

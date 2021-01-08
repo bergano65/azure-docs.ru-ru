@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: b8b6383c7808fd6c298d7776fc10572631bc6ddc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f6725045064b74079e00ca5bbe1d560f3b19f3ff
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006223"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937135"
 ---
 # <a name="tutorial-configure-zscaler-one-for-automatic-user-provisioning"></a>Руководство по настройке Zscaler One для автоматической подготовки пользователей
 
@@ -77,6 +77,9 @@ ms.locfileid: "96006223"
 
 > [!TIP]
 > Для Zscaler One также можно включить единый вход на основе SAML. Выполните инструкции из статьи о [настройке единого входа в Zscaler One](zscaler-One-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
+
+> [!NOTE]
+> При подготовке или отмене подготовки пользователей и групп рекомендуется периодически перезапускать подготовку, чтобы членство в группах правильно обновлялось. При перезапуске служба повторно оценит все группы и обновит членство.  
 
 ### <a name="configure-automatic-user-provisioning-for-zscaler-one-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Zscaler One в Azure AD
 

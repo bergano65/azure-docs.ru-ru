@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/29/2020
+ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: a960bb3590138ca5efa5146988240db1707a3cf0
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c26224f388c09ec758373c877004f5485bb420df
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182127"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725090"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-terraform-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Terraform Cloud
 
@@ -76,7 +76,7 @@ ms.locfileid: "96182127"
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
+1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://app.terraform.io/sso/saml/samlconf-<ID>/metadata`.
 
@@ -116,7 +116,15 @@ ms.locfileid: "96182127"
 
 ## <a name="configure-terraform-cloud-sso"></a>Настройка единого входа Terraform Cloud
 
-1. В другом окне веб-браузера войдите на веб-сайт Terraform Cloud с правами администратора.
+1. Для автоматизации настройки в Terraform Cloud необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. После добавления расширения в браузере щелкните **Настроить Terraform Cloud**, чтобы перейти к приложению Terraform Cloud. После этого укажите учетные данные администратора для входа в Terraform Cloud. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–5.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если вы хотите настроить Terraform Cloud вручную, в другом окне браузера войдите на свой корпоративный сайт Terraform Cloud с правами администратора.
 
 2. Последовательно выберите **Settings > SSO > Edit Settings** (Параметры > Единый вход > Изменить параметры).
 

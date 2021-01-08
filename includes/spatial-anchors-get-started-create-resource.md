@@ -4,12 +4,12 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 11/20/2020
 ms.author: parkerra
-ms.openlocfilehash: 131b21ea7bc47df9654dd7c163eb22adb68e6678
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 596b73f8fb205b6a5681fecf3d00fd2a67c1f59f
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185427"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97628744"
 ---
 ## <a name="create-a-spatial-anchors-resource"></a>Создание ресурса Пространственных привязок
 
@@ -27,23 +27,23 @@ ms.locfileid: "96185427"
 
 В области **Учетная запись Пространственных привязок** выполните следующие действия.
 
-* Введите уникальное имя ресурса, используя обычные буквенно-цифровые символы.  
-* Выберите подписку, к которой нужно присоединить ресурс.  
-* Создайте группу ресурсов, нажав **Создать**. Назовите ее **myResourceGroup** и нажмите **ОК**.  
+* Введите уникальное имя ресурса, используя обычные буквенно-цифровые символы.
+* Выберите подписку, к которой нужно присоединить ресурс.
+* Создайте группу ресурсов, нажав **Создать**. Назовите ее **myResourceGroup** и нажмите **ОК**.
 
   [!INCLUDE [resource group intro text](resource-group.md)]
-  
-* Выберите расположение (регион), в котором будет размещен ресурс.  
+
+* Выберите расположение (регион), в котором будет размещен ресурс.
 * Выберите **Создать**, чтобы начать создание ресурса.
 
 ![Снимок экрана: область Пространственных привязок для создания ресурса.](./media/spatial-anchors-get-started-create-resource/create-resource-form.png)
 
-После создания ресурса на портале Azure отобразится оповещение о завершении развертывания. 
-   
+После создания ресурса на портале Azure отобразится оповещение о завершении развертывания.
+
 ![Снимок экрана, показывающий, что развертывание ресурса завершено.](./media/spatial-anchors-get-started-create-resource/deployment-complete.png)
 
-Выберите **Перейти к ресурсу**. Теперь можно просмотреть свойства ресурса. 
-   
+Выберите **Перейти к ресурсу**. Теперь можно просмотреть свойства ресурса.
+
 Скопируйте значение **идентификатора учетной записи** ресурса в текстовый редактор для дальнейшего использования.
 
 ![Снимок экрана: область свойств ресурса](./media/spatial-anchors-get-started-create-resource/view-resource-properties.png)
@@ -121,6 +121,80 @@ ms.locfileid: "96185427"
 
 ```azurecli
 az spatial-anchors-account delete --resource-group myResourceGroup --name MySpatialAnchorsQuickStart
+```
+
+### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+Сначала подготовьте среду для Azure PowerShell:
+
+[!INCLUDE [azure-powershell-requirements-no-header.md](azure-powershell-requirements-no-header.md)]
+
+> [!IMPORTANT]
+> Так как модуль **Az.MixedReality** в PowerShell предоставляется в предварительной версии, его нужно установить отдельно с помощью командлета `Install-Module`. Как только этот модуль PowerShell станет общедоступным, он будет включен в один из будущих выпусков модуля Az PowerShell и по умолчанию встроен в Azure Cloud Shell.
+
+```azurepowershell-interactive
+Install-Module -Name Az.MixedReality
+```
+
+1. После входа воспользуйтесь командлетом [Set-AzContext](/powershell/module/az.accounts/set-azcontext), чтобы выбрать подписку, в которой нужно задать учетную запись пространственных привязок:
+
+   ```azurepowershell-interactive
+   Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
+   ```
+
+1. Выполните командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup), чтобы создать группу ресурсов, или воспользуйтесь существующей группой ресурсов:
+
+   ```azurepowershell-interactive
+   New-AzResourceGroup -Name myResourceGroup -Location eastus2
+   ```
+
+   [!INCLUDE [resource group intro text](resource-group.md)]
+
+   Вы можете просмотреть текущие учетные записи пространственных привязок для группы ресурсов с помощью командлета [Get-AzSpatialAnchorsAccount](/powershell/module/az.mixedreality/get-azspatialanchorsaccount):
+
+   ```azurepowershell-interactive
+   Get-AzSpatialAnchorsAccount -ResourceGroup myResourceGroup
+   ```
+
+   Вы также можете просмотреть учетные записи пространственных привязок для своей подписки:
+
+   ```azurepowershell-interactive
+   Get-AzSpatialAnchorsAccount
+   ```
+
+1. Запустите командлет [New-AzSpatialAnchorsAccount](/powershell/module/az.mixedreality/new-azspatialanchorsaccount), чтобы создать собственную учетную запись пространственных привязок:
+
+   ```azurepowershell-interactive
+   New-AzSpatialAnchorsAccount -ResourceGroup myResourceGroup -Name MySpatialAnchorsQuickStart -Location eastus2
+   ```
+
+1. Просмотрите свойства ресурса с помощью командлета [Get-AzSpatialAnchorsAccount](/powershell/module/az.mixedreality/get-azspatialanchorsaccount):
+
+   ```azurepowershell-interactive
+   Get-AzSpatialAnchorsAccount -ResourceGroup myResourceGroup -Name MySpatialAnchorsQuickStart
+   ```
+
+   Скопируйте значение **accountId** свойства и значение **accountDomain** свойства в текстовый редактор (они понадобятся позже).
+
+1. Выполните командлет [Get-AzSpatialAnchorsAccountKey](/powershell/module/az.mixedreality/get-azspatialanchorsaccountkey), чтобы получить первичный и вторичный ключи.
+
+   ```azurepowershell-interactive
+   Get-AzSpatialAnchorsAccountKey -ResourceGroup myResourceGroup -Name MySpatialAnchorsQuickStart
+   ```
+
+   Скопируйте значения ключей в текстовый редактор (они понадобятся позже).
+
+   Если необходимо повторно создать ключи, используйте командлет [New-AzSpatialAnchorsAccountKey](/powershell/module/az.mixedreality/new-azspatialanchorsaccountkey):
+
+   ```azurepowershell-interactive
+   New-AzSpatialAnchorsAccountKey -ResourceGroupName myResourceGroup -Name MySpatialAnchorsQuickStart -Primary
+   New-AzSpatialAnchorsAccountKey -ResourceGroupName myResourceGroup -Name MySpatialAnchorsQuickStart -Secondary
+   ```
+
+Удалить учетную запись можно с помощью командлета [Remove-AzSpatialAnchorsAccount](/powershell/module/az.mixedreality/remove-azspatialanchorsaccount):
+
+```azurepowershell-interactive
+Remove-AzSpatialAnchorsAccount -ResourceGroup myResourceGroup -Name MySpatialAnchorsQuickStart
 ```
 
 ---

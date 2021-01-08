@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 968ca6fa293e7bcc01bae6f48164c48c19b8267b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: db3eaef240e1f76e4c61a454e104336806666a7c
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501679"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803907"
 ---
 # <a name="understand-roles-in-azure-active-directory"></a>Общие сведения о ролях в Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "96501679"
 
 ## <a name="why-some-azure-ad-roles-are-for-other-services"></a>Почему некоторые роли Azure AD предназначены для других служб
 
-Microsoft 365 использует несколько систем управления доступом на основе ролей, которые были созданы независимо друг от друга и которые имеют собственные порталы. Чтобы вам было удобно управлять всеми удостоверениями Microsoft 365 с помощью единого портала Azure AD, мы добавили специальные встроенные роли, каждая из которых предоставляет административный доступ к определенной службе Microsoft 365. Например, так организована роль администратора Exchange в Azure AD. Эта роль эквивалентна [группе ролей "Управление организацией"](/exchange/organization-management-exchange-2013-help) в системе управления доступом на основе ролей для Exchange и позволяет управлять всеми аспектами Exchange. Мы также добавили роли администратора для Intune, Teams, SharePoint и т. д. Роли для конкретных серверов — это отдельная категория встроенных ролей Azure AD, которые мы рассмотрим в следующем разделе.
+Microsoft 365 использует несколько систем управления доступом на основе ролей, которые были созданы независимо друг от друга и которые имеют собственные порталы. Чтобы вам было удобно управлять всеми удостоверениями Microsoft 365 с помощью единого портала Azure AD, мы добавили специальные встроенные роли, каждая из которых предоставляет административный доступ к определенной службе Microsoft 365. Например, так организована роль администратора Exchange в Azure AD. Эта роль эквивалентна [группе ролей "Управление организацией"](/exchange/organization-management-exchange-2013-help) в системе управления доступом на основе ролей для Exchange и позволяет управлять всеми аспектами Exchange. Мы также добавили роли администратора для Intune, Teams, SharePoint и т. д. Роли для конкретных служб — это отдельная категория встроенных ролей Azure AD, которые мы рассмотрим в следующем разделе.
 
 ## <a name="categories-of-azure-ad-roles"></a>Категории ролей Azure AD
 

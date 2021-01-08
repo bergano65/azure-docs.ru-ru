@@ -10,12 +10,12 @@ ms.subservice: keys
 ms.topic: tutorial
 ms.date: 05/29/2020
 ms.author: ambapat
-ms.openlocfilehash: 99339914b66dc40f686cc46cacbcea15438c9004
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 7fa8590b4fb148b2a8969c4f474f6627cea263df
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413349"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935331"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault"></a>Импорт защищенных модулем HSM ключей в Key Vault
 
@@ -44,5 +44,5 @@ ms.locfileid: "94413349"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Следуйте [рекомендациям Key Vault](../general/best-practices.md) для обеспечения безопасности, устойчивости и мониторинга ключей.
+* Ознакомьтесь с [общими сведениями о безопасности в Key Vault](../general/security-overview.md). Они помогут обеспечить безопасность, устойчивость и мониторинг ключей.
 * Полное описание нового метода BYOK см. в [спецификации BYOK](./byok-specification.md).

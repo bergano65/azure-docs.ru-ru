@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: quickstart
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: f5cf432e3824ca0bb441a458a08fc7353291cf1f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: be8123d3c8a4acc684610aeaa9ee263c5defa17d
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96490063"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813621"
 ---
 # <a name="auto-provisioning-agents-and-extensions-from-azure-security-center"></a>Автоматическая подготовка агентов и расширений из Центра безопасности Azure
 
@@ -30,6 +30,17 @@ ms.locfileid: "96490063"
 > По мере увеличения объема Центра безопасности увеличивается число типов ресурсов, которые можно отслеживать. Число расширений также увеличивается. Средства автоматической подготовки расширены. Теперь они поддерживают дополнительные типы ресурсов, используя возможности Политики Azure.
 
 :::image type="content" source="./media/security-center-enable-data-collection/auto-provisioning-options.png" alt-text="Страница параметров автоматической подготовки Центра безопасности":::
+
+
+## <a name="availability"></a>Доступность
+
+| Аспект                  | Сведения                                                                                                                                                                                                                      |
+|-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Состояние выпуска:          | **Компонент**. Автоматическая подготовка уже общедоступна.<br>**Агент и расширения**: агент Log Analytics для виртуальных машин Azure общедоступен, агент зависимостей Майкрософт находится на этапе предварительной версии, надстройка политики для Kubernetes общедоступна.                |
+| Цены                | Free                                                                                                                                                                                                                         |
+| Поддерживаемые назначения: | ![Да](./media/icons/yes-icon.png) Компьютеры Azure<br>![Нет](./media/icons/no-icon.png) Компьютер Azure Arc<br>![Нет](./media/icons/no-icon.png) Узлы Kubernetes<br>![нет](./media/icons/no-icon.png) Масштабируемые наборы виртуальных машин Microsoft Azure |
+| Облако.                 | ![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov, China Gov, другие правительственные облака                                                                                                      |
+|                         |                                                                                                                                                                                                                              |
 
 
 ## <a name="why-use-auto-provisioning"></a>Преимущества автоматической подготовки

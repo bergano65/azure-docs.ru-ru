@@ -8,12 +8,12 @@ ms.topic: overview
 author: peterclu
 ms.author: peterlu
 ms.date: 08/24/2020
-ms.openlocfilehash: 018a0e3a244d1f0e36ce638d646ab05861c10e38
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: f59ed16f98a22f77b2e67ec2bf829f58dccef611
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565914"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740510"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>Что такое студия Машинного обучения Azure
 
@@ -25,6 +25,11 @@ ms.locfileid: "94565914"
 > - [Управление активами и ресурсами](#manage-assets-and-resources) в студии.
 > - Различия между [студией Машинного обучение Azure и Студией машинного обучения (классической)](#ml-studio-classic-vs-azure-machine-learning-studio).
 
+Мы советуем использовать самые последние браузеры, совместимые с вашей с операционной системой. Поддерживаются следующие браузеры:
+  * Microsoft Edge (новый Microsoft Edge последней версии, а не устаревшая версия Microsoft Edge);
+  * Safari (последняя версия, только для Mac);
+  * Chrome (последняя версия);
+  * Firefox (последняя версия).
 
 ## <a name="author-machine-learning-projects"></a>Разработка проектов машинного обучения
 
@@ -33,6 +38,8 @@ ms.locfileid: "94565914"
 + **Заметки**
 
   Пишите и запускайте собственный код на управляемых [серверах Jupyter Notebook](how-to-run-jupyter-notebooks.md), которые непосредственно интегрированы в студию. 
+
+:::image type="content" source="media/overview-what-is-azure-ml-studio/notebooks.gif" alt-text="Снимок экрана: запись и выполнение кода в записной книжке":::
 
 + **Конструктор Машинного обучения Azure**
 
@@ -94,6 +101,9 @@ ms.locfileid: "94565914"
 | Обнаружение смещения данных | Не поддерживается | [Поддерживается](how-to-monitor-datasets.md) |
 | Проект маркировки данных | Не поддерживается | [Поддерживается](how-to-create-labeling-projects.md) |
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+* **Отсутствующие элементы пользовательского интерфейса в студии** — управление доступом на основе ролей Azure можно использовать для ограничения действий, которые доступны для выполнения с Машинным обучением Azure. Эти ограничения могут препятствовать отображению элементов пользовательского интерфейса в Студии машинного обучения Azure. Например, при назначении роли, которая не может создать вычислительный экземпляр, вариант создания вычислительного экземпляра не будет отображаться в студии. Дополнительные сведения см. в статье [Управление доступом к рабочей области Машинного обучения Azure](how-to-assign-roles.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

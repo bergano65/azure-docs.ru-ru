@@ -4,12 +4,12 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 11/20/2020
 ms.author: parkerra
-ms.openlocfilehash: d969b1639dbb39b920c985964abe1239f068d740
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 81d2804d99896200ea6f68592ea168112e172c20
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185443"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97762622"
 ---
 Выберите **Build** (Сборка). На открывшейся панели выберите папку, в которую будет экспортирован проект Xcode.
 
@@ -30,9 +30,9 @@ open ./Unity-iPhone.xcodeproj
 
 Выберите корневой узел **Unity iPhone**, чтобы просмотреть параметры проекта, а затем — вкладку **General** (Общие).
 
-В разделе **Signing** (Подпись) убедитесь, что установлен флажок **Automatically manage signing** (Автоматическое управление подписями). Если это не так, установите его и в открывшемся диалоговом окне выберите **Enable Automatic** (Включить автоматическое), чтобы сбросить параметры сборки.
+В разделе **Deployment Info** (Сведения о развертывании) убедитесь, что для цели развертывания установлено значение **iOS 11.0**.
 
-В разделе **Deployment Info** (Сведения о развертывании) убедитесь, что для параметра **Deployment Target** (Цель развертывания) установлено значение **11.0**.
+Откройте вкладку **Signing & Capabilities** (Подпись и возможности) убедитесь, что установлен флажок **Automatically manage signing** (Автоматическое управление подписями). Если это не так, установите его и в открывшемся диалоговом окне выберите **Enable Automatic** (Включить автоматическое), чтобы сбросить параметры сборки.
 
 ## <a name="deploy-the-app-to-your-ios-device"></a>Развертывание приложения на устройстве iOS
 

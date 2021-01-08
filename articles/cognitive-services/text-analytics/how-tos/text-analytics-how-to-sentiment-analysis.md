@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 12/04/2020
 ms.author: aahi
-ms.openlocfilehash: 4f5c47000355a004f8d76d8b740b705618748380
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 6ea7b992a682537471ce0e78385b37674199d687
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505228"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673059"
 ---
 # <a name="how-to-sentiment-analysis-and-opinion-mining"></a>Практическое руководство. Анализ тональности и интеллектуальный анализ мнений
 
@@ -24,8 +24,6 @@ ms.locfileid: "97505228"
 Модели ИИ для этого API предоставляются службой, вам нужно лишь отправить содержимое для анализа.
 
 ## <a name="sentiment-analysis-versions-and-features"></a>Версии и компоненты анализа тональности
-
-[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
 | Компонент                                   | Анализ тональности версии 3 | Анализ тональности версии 3.1 (предварительная версия) |
 |-------------------------------------------|-----------------------|-----------------------------------|
@@ -47,7 +45,7 @@ ms.locfileid: "97505228"
 | В документе есть по меньшей мере одно предложение `negative` и одно предложение `positive`.    | `mixed`                 |
 | Все предложения в документе оценены как `neutral`.                                                  | `neutral`               |
 
-Оценки достоверности колеблются в диапазоне от 1 до 0. Оценки, близкие к 1, указывают на более высокую достоверность в классификации метки, а более низкие оценки указывают на более низкую достоверность. Для каждого документа или предложения прогнозируемые оценки, связанные с метками (positive, negative и neutral), в сумме составляют 1.
+Оценки достоверности колеблются в диапазоне от 1 до 0. Оценки, близкие к 1, указывают на более высокую достоверность в классификации метки, а более низкие оценки указывают на более низкую достоверность. Для каждого документа или предложения прогнозируемые оценки, связанные с метками (positive, negative и neutral), в сумме составляют 1. Дополнительные сведения см. в [заметке о прозрачности Анализа текста](/legal/cognitive-services/text-analytics/transparency-note?context=/azure/cognitive-services/text-analytics/context/context). 
 
 ## <a name="opinion-mining"></a>Интеллектуальный анализ мнений
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 1f3de29e5f046da56638876a35ca983792a4ce6c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: d2e7935de23dcbdccfa6f4efa602dbab42931075
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319128"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673860"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-360-online"></a>Руководство по интеграции Azure Active Directory с 360 Online
 
@@ -63,7 +63,7 @@ ms.locfileid: "92319128"
 
 4. В поле поиска введите **360 Online**, выберите **360 Online** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![360 Online в списке результатов](common/search-new-app.png)
+    ![360 Online в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -141,7 +141,7 @@ ms.locfileid: "92319128"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
@@ -177,7 +177,7 @@ ms.locfileid: "92319128"
 
 ### <a name="create-360-online-test-user"></a>Создание тестового пользователя 360 Online
 
-В этом разделе мы создадим пользователя Britta Simon в приложении 360 Online. Обратитесь к  [группе поддержки](mailto:360online@software-innovation.com) 360 Online, чтобы добавить пользователей на платформу 360 Online. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе мы создадим пользователя Britta Simon в приложении 360 Online. Обратитесь к [группе поддержки](mailto:360online@software-innovation.com) 360 Online, чтобы добавить пользователей на платформу 360 Online. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

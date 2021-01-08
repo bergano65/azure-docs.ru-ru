@@ -2,13 +2,13 @@
 title: Чтение собранных данных в службе "Центры событий Azure" из приложения Python (последняя версия)
 description: В этой статье показано, как написать код Python для сбора данных, отправляемых в концентратор событий и считывания собранных данных о событиях из учетной записи хранения Azure.
 ms.topic: quickstart
-ms.date: 06/23/2020
-ms.openlocfilehash: f513b35e300141f16ee4c4880bc54aaf37945d65
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.date: 01/04/2021
+ms.openlocfilehash: acc2ce04add5fd837e9edc789e9616a9f04fb4b9
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109918"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883203"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub"></a>Запись данных Центров событий в службу хранилища Azure и их чтение с помощью Python (azure-eventhub)
 
@@ -27,7 +27,11 @@ ms.locfileid: "97109918"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Python 2.7, и 3.5 или более поздней версии, с установленным и обновленным PIP.  
+- Должны быть установлены Python, PIP и следующие пакеты. Для тестирования кода из этой статьи использовались такие версии: 
+    - Python 3.7
+    - azure-eventhub 5.2.0;
+    - azure-storage-blob 12.6.0;
+    - avro-python3 1.10.1.
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.  
 - Активное пространство имен Центров событий и концентратор событий.
 Выполните действия в статье [Краткое руководство. Создание концентратора событий с помощью портала Azure](event-hubs-create.md). Запишите имя пространства имен Центров событий, имя концентратора событий и первичный ключ доступа для пространства имен. Чтобы получить ключ доступа см. раздел [Get connection string from the portal](event-hubs-get-connection-string.md#get-connection-string-from-the-portal) (Получение строки подключения на портале). По умолчанию для ключа используется имя *RootManageSharedAccessKey*. Для этого краткого руководства нужен только первичный ключ. Вам не нужна строка подключения.  
@@ -155,6 +159,13 @@ ms.locfileid: "97109918"
    pip install azure-eventhub
    pip install avro-python3
    ```
+
+    > [!NOTE]
+    > Для тестирования кода из этой статьи использовались такие версии: 
+    > - Python 3.7
+    > - azure-eventhub 5.2.0;
+    > - azure-storage-blob 12.6.0;
+    > - avro-python3 1.10.1.
 2. Замените вашу папку на папку, в которой были сохранены скрипты *sender.py* и *capturereader.py*, и выполните следующую команду.
    
    ```

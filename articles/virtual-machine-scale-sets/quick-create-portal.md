@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 06/30/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 33f7f407c1df45131b0ebb5b14e8fcad2626bffd
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8243619bc7a32c5fa86b6e108d954674b54394e5
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87077556"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913738"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-in-the-azure-portal"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин на портале Azure
 
@@ -60,13 +60,12 @@ ms.locfileid: "87077556"
 1. На вкладке **Основные сведения** в разделе **Сведения о проекте** убедитесь, что выбрана правильная подписка, и при необходимости щелкните **Создать** для группы ресурсов. Введите *myVMSSResourceGroup* в качестве имени и нажмите кнопку **ОК**. 
 1. Введите *myScaleSet* в качестве имени для масштабируемого набора.
 1. В поле **Регион** выберите ближайший регион.
-1. Оставьте для параметра **Режим оркестрации** значение по умолчанию **Виртуальные машины в масштабируемом наборе**.
 1. Выберите образ Marketplace в качестве **образа**. В этом примере мы выбрали *сервер Ubuntu 18.04 LTS*.
 1. Введите нужное имя пользователя и выберите тип аутентификации.
    - **Пароль** должен содержать от 12 до 123 знаков и включать по меньшей мере три из следующих знаков: одна строчная буква, одна прописная буква, одна цифра и один специальный знак. Дополнительные сведения см. в разделе [Какие требования к имени пользователя при создании виртуальной машины?](../virtual-machines/windows/faq.md#what-are-the-username-requirements-when-creating-a-vm).
    - При выборе образа диска ОС Linux можно вместо него выбрать **открытый ключ SSH**. Только укажите свой открытый ключ, например *~/.ssh/id_rsa.pub*. Для [создания и использования ключей SSH](../virtual-machines/linux/mac-create-ssh-keys.md) можно применять Azure Cloud Shell на портале.
    
-    ![создавать масштабируемый набор виртуальных машин;](./media/virtual-machine-scale-sets-create-portal/quick-create-scaleset.png)
+    :::image type="content" source="./media/virtual-machine-scale-sets-create-portal/quick-create-scale-set.png" alt-text="Снимок экрана: параметры для создания масштабируемых наборов на портале Azure.":::
 
 1. Нажимайте кнопку **Далее**, чтобы переходить на другие страницы. 
 1. Оставьте значения по умолчанию для страниц **Экземпляр** и **Диски**.

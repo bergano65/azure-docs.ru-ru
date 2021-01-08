@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 12/03/2020
 ms.author: justinha
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 99a207810f51949b0da0e78b1cb0e0a7f8bc95e3
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 765aa10e57c472d7a1af0952364783bb1d711078
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027345"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861509"
 ---
 # <a name="what-is-azure-active-directory-domain-services"></a>Что такое "Доменные службы Azure Active Directory"?
 
@@ -41,7 +41,7 @@ Azure AD DS интегрируется с существующим клиент
 
 ![Синхронизация между доменными службами Azure AD с Azure AD и локальными доменными службами AD DS с помощью AD Connect](./media/active-directory-domain-services-design-guide/sync-topology.png)
 
-Azure AD DS реплицирует сведения об удостоверениях из AAD, а значит нормально работает с полностью облачными клиентами Azure AD или клиентами, синхронизируемыми с локальной средой AD DS. Набор функций Azure AD DS в обоих средах идентичен.
+Azure AD DS реплицирует сведения об удостоверениях из Azure AD, а значит работает с полностью облачными клиентами Azure AD или клиентами, синхронизируемыми с локальной средой AD DS. Набор функций Azure AD DS в обоих средах идентичен.
 
 * Если у вас уже есть локальная среда AD DS, вы можете синхронизировать данные об учетных записях пользователей для достижения единообразия. Дополнительные сведения см. в разделе [Синхронизация объектов и учетных данных в управляемом домене][synchronization].
 * Для полностью облачных сред можно применить централизованные службы идентификации Azure AD DS без традиционной локальной среды AD DS.

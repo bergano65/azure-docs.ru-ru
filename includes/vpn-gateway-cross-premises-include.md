@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 05/16/2018
+ms.date: 12/17/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 8c82e3d2c978a7980d02bc686346acdcb21dd591
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b283add6cff1400cc3141f4fba3f0f3939ee34aa
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "66425744"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97664983"
 ---
 |  | **Точка-сеть** | **Подключение "сеть — сеть"** . | **ExpressRoute** |
 | --- | --- | --- | --- |
@@ -22,7 +22,7 @@ ms.locfileid: "66425744"
 | **Поддерживаемые протоколы** |SSTP, OpenVPN и IPsec |IPsec |Прямое подключение через виртуальные сети, технологии виртуальных частных сетей NSP (MPLS, VPLS) |
 | **Маршрутизация** |На основе маршрутов (динамическая) |Мы поддерживаем маршрутизацию на основе политик (PolicyBased, статическая маршрутизация) и маршрутов (RouteBased, VPN с динамической маршрутизацией). |BGP |
 | **Устойчивость подключения** |Активное-пассивное |"Активный — пассивный" или "активный —активный" |Активное-активное |
-| **Типичный случай использования** |Создание прототипов, сценарии разработки, тестирования и лабораторного использования для облачных служб и виртуальных машин |Сценарии разработки, тестирования и лабораторного использования, а также маломасштабные рабочие нагрузки для облачных служб и виртуальных машин |Доступ ко всем службам Azure (проверенный список), критически важные рабочие нагрузки и рабочие нагрузки корпоративного уровня, архивация, большие данные, Azure в качестве сайта аварийного восстановления |
+| **Типичный случай использования** |Безопасный доступ к виртуальным сетям Azure для удаленных пользователей |Сценарии разработки, тестирования и лабораторного использования, а также рабочие нагрузки небольшого и среднего масштаба для облачных служб и виртуальных машин |Доступ ко всем службам Azure (проверенный список), критически важные рабочие нагрузки и рабочие нагрузки корпоративного уровня, архивация, большие данные, Azure в качестве сайта аварийного восстановления |
 | **Соглашение об уровне обслуживания** |[Соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/) |[Соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/) |[Соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/) |
 | **Цены** |[Цены](https://azure.microsoft.com/pricing/details/vpn-gateway/) |[Цены](https://azure.microsoft.com/pricing/details/vpn-gateway/) |[Цены](https://azure.microsoft.com/pricing/details/expressroute/) |
 | **Техническая документация** |[Документация по VPN-шлюзу](https://azure.microsoft.com/documentation/services/vpn-gateway/) |[Документация по VPN-шлюзу](https://azure.microsoft.com/documentation/services/vpn-gateway/) |[Документация по ExpressRoute](https://azure.microsoft.com/documentation/services/expressroute/) |

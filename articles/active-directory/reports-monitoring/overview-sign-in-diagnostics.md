@@ -17,12 +17,12 @@ ms.date: 12/15/2020
 ms.author: markvi
 ms.reviewer: tspring
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6aedf41fbf1ed0d70467a2efe97431fdecaa4fa
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: e85de1edd94a0430a4b28b332d9e43b967afba76
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585930"
+ms.locfileid: "97608924"
 ---
 # <a name="what-is-sign-in-diagnostic-in-azure-ad"></a>Что такое диагностика входа в Azure AD?
 
@@ -37,7 +37,7 @@ Azure AD предоставляет гибкую модель безопасно
 
 Диагностика входа доступна во всех выпусках Azure AD.<br> Чтобы использовать ее, вы должны быть глобальным администратором в Azure AD.
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 В Azure AD ответ на попытку входа зависит от того, **кто** вы и **как** именно вы обращаетесь к арендатору. Например, администратор может настроить конфигурацию арендатора, выполнив вход из корпоративной сети. Но даже при использовании одной и той же учетной записи вы можете быть заблокированы, если вход выполняется из ненадежной сети.
  

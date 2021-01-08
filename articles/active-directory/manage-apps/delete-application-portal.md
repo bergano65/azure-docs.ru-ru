@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 07/01/2020
+ms.date: 12/28/2020
 ms.author: kenwith
-ms.openlocfilehash: 677c9c0123c174fdf2cf8e94f9c8110656d21306
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e2b8bd47f7d124562a38413d36b849d1f7efacee
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649404"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802768"
 ---
 # <a name="quickstart-delete-an-application-from-your-azure-active-directory-azure-ad-tenant"></a>Краткое руководство. Удаление приложения из арендатора Azure Active Directory (Azure AD)
 
@@ -53,6 +53,6 @@ ms.locfileid: "94649404"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы завершили работу с серией кратких руководств! Далее мы рекомендуем вам изучить рекомендации по управлению приложениями.
+Вы завершили работу с серией кратких руководств! Дополнительные сведения о едином входе см. в [этой статье](what-is-single-sign-on.md). Или изучите рекомендации по управлению приложениями.
 > [!div class="nextstepaction"]
 > [Рекомендации по управлению приложениями](application-management-fundamentals.md)

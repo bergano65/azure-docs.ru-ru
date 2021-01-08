@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
 zone_pivot_groups: non-azure-machines
-ms.openlocfilehash: 572c657dd44db73b1401c72f0750fe8e000985ac
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 8d0d4726763e36bd889c2f564d116d454b2f62b9
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734360"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740612"
 ---
 # <a name="connect-your-non-azure-machines-to-security-center"></a>Подключение компьютеров, не связанных с Azure, к Центру безопасности
 
@@ -139,4 +139,4 @@ ms.locfileid: "94734360"
 
 На этой странице показано, как добавить компьютеры, не связанные с Azure, в Центр безопасности Azure. Чтобы отслеживать их состояние, используйте средства инвентаризации, как описано на следующей странице:
 
-- [Исследование ресурсов и управление ими с помощью инвентаризации ресурсов и средств управления](asset-inventory.md)
+- [Изучение ресурсов и управление ими с помощью инвентаризации активов](asset-inventory.md)

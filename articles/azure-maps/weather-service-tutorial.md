@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 6d2ede8ab49b22a22d8959ce296182a2210640d0
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 259db10aa8f5cd2b711eca001bc6d48057d5280d
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905474"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683204"
 ---
 # <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Руководство по Объединение данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python)
 
@@ -48,7 +48,7 @@ ms.locfileid: "96905474"
 Ознакомьтесь с работой записных книжек Azure и узнайте, как их запускать, по инструкциям из [этой статьи](./tutorial-ev-routing.md#create-an-azure-notebooks-project).
 
 > [!Note]
-> Файл записной книжки Jupyter для этого проекта можно скачать из [репозитория записной книжки Jupyter для Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook/tree/master/AzureMapsJupyterSamples/Tutorials/Analyze%20Weather%20Data).
+> Файл записной книжки Jupyter для этого проекта можно скачать из [репозитория записной книжки Jupyter Notebook для Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook/tree/master/AzureMapsJupyterSamples/Tutorials/Analyze%20Weather%20Data).
 
 ## <a name="load-the-required-modules-and-frameworks"></a>Загрузка необходимых модулей и платформ
 

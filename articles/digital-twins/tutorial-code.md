@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/02/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 3225fff1c82822dee990804f934ada86068841e8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 96533c1742e8ad5fde9796ea2073f6e402ac8dcf
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011308"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862368"
 ---
 # <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Руководство по Написание кода с помощью API Azure Digital Twins
 
@@ -57,9 +57,12 @@ dotnet new console
 
 Оставьте окно командной строки открытым, так как вы будете продолжать использовать его на протяжении всей работы с учебником.
 
-Затем **добавьте в проект две зависимости**, которые понадобятся для работы с Azure Digital Twins. По приведенным ниже ссылкам можно перейти к пакетам в NuGet, в котором находятся команды консоли (в том числе для .NET CLI), и добавить в проект последнюю версию каждой из них.
-* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Это пакет для [пакета SDK Azure Digital Twins для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
-* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Эта библиотека предоставляет инструменты для проверки подлинности в Azure.
+Затем **добавьте в проект две зависимости**, которые понадобятся для работы с Azure Digital Twins. По приведенным ниже ссылкам можно перейти к пакетам в NuGet, в котором находятся команды консоли (в том числе для .NET CLI), и добавить в проект версию каждой из них.
+* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Это пакет для [пакета SDK Azure Digital Twins для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). Добавьте последнюю версию.
+* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Эта библиотека предоставляет инструменты для проверки подлинности в Azure. Добавьте версию 1.2.2.
+
+>[!NOTE]
+> В настоящее время существует [известная проблема](troubleshoot-known-issues.md#issue-with-default-azure-credential-authentication-on-azureidentity-130), которая влияет на возможность использования Azure.Identity версии 1.3.0 при работе с этим учебником. Используйте версию 1.2.2, пока проблема не будет решена.
 
 ## <a name="get-started-with-project-code"></a>Начало создания кода проекта
 

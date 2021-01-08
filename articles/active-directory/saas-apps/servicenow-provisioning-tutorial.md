@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 5c21efc9cb082d915fd87e9ae01606fce18016bc
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 71f4cfa9e7b69e51bafa5364f857f8ab689f2ad0
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97897309"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955473"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Руководство по Настройка ServiceNow для автоматической подготовки пользователей
 
@@ -152,6 +152,11 @@ ms.locfileid: "97897309"
    ![Авторизация запроса SOAP](media/servicenow-provisioning-tutorial/servicenow-webservice.png)
 
    Если этот поможет решить проблему, обратитесь в службу поддержки ServiceNow и попросите включить отладку SOAP для устранения неполадок. 
+
+* **Диапазоны IP-адресов** 
+
+   Сейчас служба подготовки Azure AD работает в конкретных диапазонах IP-адресов. Поэтому при необходимости вы можете ограничить другие диапазоны IP-адресов и добавить эти конкретные диапазоны IP-адресов в список разрешений вашего приложения, чтобы разрешить поток трафика из службы подготовки Azure AD в ваше приложение (см. раздел [Диапазоны IP-адресов](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#ip-ranges)).
+
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 704449a9d70a38f9a05a68df290a4c0d0e6aeb54
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 2aaa301a95f3f07ca81d20daba3ef28b812da0e6
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318909"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672413"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-alcumus-info-exchange"></a>Учебник. Интеграция Azure Active Directory с Alcumus Info Exchange
 
@@ -63,7 +63,7 @@ ms.locfileid: "92318909"
 
 4. Чтобы добавить это приложение, в поле поиска введите **Alcumus Info Exchange**, выберите **Alcumus Info Exchange** на панели результатов и нажмите кнопку **Добавить**.
 
-     ![Alcumus Info Exchange в списке результатов](common/search-new-app.png)
+    ![Alcumus Info Exchange в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -143,7 +143,7 @@ ms.locfileid: "92318909"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
@@ -179,7 +179,7 @@ ms.locfileid: "92318909"
 
 ### <a name="create-alcumus-info-exchange-test-user"></a>Создание тестового пользователя Alcumus Info Exchange
 
-В рамках этого раздела вы создадите пользователя Britta Simon в приложении Alcumus Info Exchange. Обратитесь в  [службу технической поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com), чтобы добавить пользователей на платформу Alcumus Info Exchange. Перед использованием единого входа необходимо создать и активировать пользователей.
+В рамках этого раздела вы создадите пользователя Britta Simon в приложении Alcumus Info Exchange. Обратитесь к [группе технической поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com), чтобы добавить пользователей на платформу Alcumus Info Exchange. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

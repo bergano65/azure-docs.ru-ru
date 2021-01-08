@@ -3,23 +3,23 @@ title: Кнопка "Развертывание в Azure"
 description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: 65891cace1cb17614abbfe091e1592d6f13feff4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: abe59f377474540e9209691df8b1d1a7b806c26d
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185731"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028749"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
-В этой статье описывается, как использовать кнопку **развертывание в Azure** для развертывания шаблонов из репозитория GitHub. Вы можете добавить кнопку непосредственно в файл README.md в репозитории GitHub. Или можно добавить кнопку на веб-страницу, которая ссылается на репозиторий.
+В этой статье описывается, как использовать кнопку **развертывание в Azure** для развертывания шаблонов из репозитория GitHub. Вы можете добавить кнопку непосредственно в файл _readme.md_ в репозитории GitHub. Или можно добавить кнопку на веб-страницу, которая ссылается на репозиторий.
 
 Область развертывания определяется схемой шаблона. Дополнительные сведения см. в разделе:
 
-* [группы ресурсов](deploy-to-resource-group.md)
-* [оформления](deploy-to-subscription.md)
-* [группы управления](deploy-to-management-group.md)
-* [клиентов](deploy-to-tenant.md)
+- [группы ресурсов](deploy-to-resource-group.md)
+- [оформления](deploy-to-subscription.md)
+- [группы управления](deploy-to-management-group.md)
+- [клиентов](deploy-to-tenant.md)
 
 ## <a name="use-common-image"></a>Использовать общий образ
 
@@ -78,7 +78,7 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 
 Как правило, шаблон размещается в общедоступном репозитории. При использовании частного репозитория необходимо включить маркер для доступа к необработанному содержимому шаблона. Токен, созданный GitHub, действителен в течение короткого времени. Часто приходится обновлять ссылку.
 
-Если вы используете [Git с Azure Repos](/azure/devops/repos/git/) вместо репозитория GitHub, вы по-прежнему можете использовать кнопку Развертывание в Azure. Убедитесь, что репозиторий является общедоступным. Используйте [операцию Items](/rest/api/azure/devops/git/items/get) для получения шаблона. Ваш запрос должен иметь следующий формат:
+Если вы используете [Git с Azure Repos](/azure/devops/repos/git/) вместо репозитория GitHub, вы по-прежнему можете использовать кнопку **развертывание в Azure** . Убедитесь, что репозиторий является общедоступным. Используйте [операцию Items](/rest/api/azure/devops/git/items/get) для получения шаблона. Ваш запрос должен иметь следующий формат:
 
 ```http
 https://dev.azure.com/{organization-name}/{project-name}/_apis/git/repositories/{repository-name}/items?scopePath={url-encoded-path}&api-version=6.0
@@ -90,7 +90,7 @@ https://dev.azure.com/{organization-name}/{project-name}/_apis/git/repositories/
 
 Наконец, разместите ссылку и изображение вместе.
 
-Чтобы добавить кнопку с Markdown в файл README.md в репозитории GitHub или на веб-странице, используйте:
+Чтобы добавить кнопку с Markdown в файл _readme.md_ в репозитории GitHub или на веб-странице, используйте:
 
 ```markdown
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
@@ -122,4 +122,4 @@ https://dev.azure.com/{organization-name}/{project-name}/_apis/git/repositories/
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о шаблонах см. [в разделе Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
+- Дополнительные сведения о шаблонах см. в статье [Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

@@ -8,16 +8,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 1b50fbfa0ec4116f7d0b5988e5be70d0db086732
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 74f9ed5913ca089e12d5958fe96eeb1552c9137a
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95095078"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97745750"
 ---
 [Справочная документация](/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.CognitiveServices/) | [Примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices/tests)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="c-prerequisites"></a>Предварительные требования C#
 
 * Действующая подписка Azure ([создайте бесплатную учетную запись](https://azure.microsoft.com/free/)).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
@@ -86,6 +86,10 @@ dotnet add package Microsoft.Azure.Management.ResourceManager.Fluent
 
 ## <a name="create-a-cognitive-services-resource"></a>Создание ресурса Cognitive Services
 
+Чтобы создать ресурс Cognitive Services и подписаться на него, используйте метод **Create**. Этот метод добавляет новый оплачиваемый ресурс в передаваемую группу ресурсов. При создании ресурса необходимо знать, какой вид службы вы хотите использовать, а также выбрать ценовую категорию (или номер SKU) и расположение Azure. Следующий метод использует все эти аргументы и создает ресурс.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/azure_management_service/create_delete_resource.cs?name=snippet_create)]
+
 ### <a name="choose-a-service-and-pricing-tier"></a>Выбор службы и ценовой категории
 
 При создании ресурса необходимо знать, какой вид службы вы хотите использовать, а также выбрать [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/) (или номер SKU). Вы будете использовать эту и другую информацию в качестве параметров при создании ресурса. Чтобы получить список доступных видов служб Cognitive Service, вызовите в скрипте следующий метод:
@@ -95,12 +99,6 @@ dotnet add package Microsoft.Azure.Management.ResourceManager.Fluent
 [!INCLUDE [cognitive-services-subscription-types](../../../../includes/cognitive-services-subscription-types.md)]
 
 [!INCLUDE [SKUs and pricing](./sku-pricing.md)]
-
-## <a name="create-a-cognitive-services-resource"></a>Создание ресурса Cognitive Services
-
-Чтобы создать ресурс Cognitive Services и подписаться на него, используйте метод **Create**. Этот метод добавляет новый оплачиваемый ресурс в передаваемую группу ресурсов. При создании ресурса необходимо знать, какой вид службы вы хотите использовать, а также выбрать ценовую категорию (или номер SKU) и расположение Azure. Следующий метод использует все эти аргументы и создает ресурс.
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/azure_management_service/create_delete_resource.cs?name=snippet_create)]
 
 ## <a name="view-your-resources"></a>Просмотр ресурсов
 

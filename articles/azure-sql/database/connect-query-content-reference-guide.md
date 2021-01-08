@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: e25469e23358ade32e050bed0818338dc290e71f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7dccce597dcfbcedd5083befafa79b8ba6f3adac
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451386"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693478"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-connect-and-query-articles"></a>Статьи о подключении и создании запросов к Базам данных SQL Azure и Управляемым экземплярам SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -42,6 +42,29 @@ ms.locfileid: "96451386"
 |[Ruby](connect-query-ruby.md)|В этом кратком руководстве показано, как использовать Ruby для создания программы, которая подключается к базе данных, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[R](connect-query-r.md)|В этом кратком руководстве показано, как использовать R и Службы машинного обучения в Базе данных SQL Azure, чтобы создать программу для подключения к базе данных в службе "База данных SQL Azure", а затем с помощью инструкций Transact-SQL выполнять запросы данных.|
 |||
+
+## <a name="get-server-connection-information"></a>Получение сведений о подключении к серверу
+
+Получите сведения, необходимые для подключения к базе данных в составе Базы данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
+
+1. Войдите на [портал Azure](https://portal.azure.com/).
+
+2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+
+3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для базы данных в службе "База данных SQL Azure" или полное имя сервера (либо IP-адрес) рядом с полем **Узел** для Управляемого экземпляра SQL Azure или SQL Server на виртуальной машине Azure. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**.
+
+> [!NOTE]
+> Сведения о подключении SQL Server на виртуальной машине Azure см. в [этом разделе](../virtual-machines/windows/sql-vm-create-portal-quickstart.md#connect-to-sql-server).
+
+## <a name="get-adonet-connection-information-optional---sql-database-only"></a>Получение сведений о подключении к ADO.NET (необязательно — только для Базы данных SQL)
+
+1. Перейдите к колонке базы данных на портале Azure и в разделе **Параметры** выберите **Строки подключений**.
+
+2. Просмотрите полную строку подключения **ADO.NET**.
+
+    ![Строка подключения по протоколу ADO.NET](./media/connect-query-dotnet-core/adonet-connection-string2.png)
+
+3. Скопируйте строку подключения **ADO.NET**, если вы планируете использовать ее.
 
 ## <a name="tls-considerations-for-database-connectivity"></a>Рекомендации по использованию протокола TLS для подключения к базе данных
 

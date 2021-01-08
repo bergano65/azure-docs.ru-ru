@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6eff662ac0140e7a64cc3bab28856178708cb9b2
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: edb1d419900147b586ba1ff257d4307b237be537
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400681"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746734"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Управление доступом к учетной записи хранения в бессерверном пуле SQL в Azure Synapse Analytics
 
@@ -89,9 +89,67 @@ ms.locfileid: "97400681"
 
 \* Маркер SAS и удостоверение Azure AD можно использовать для доступа к хранилищу, не защищенному брандмауэром.
 
-> [!IMPORTANT]
-> Для обращения к хранилищу, защищенному с помощью брандмауэра, можно использовать только управляемое удостоверение. Необходимо [разрешить доверенные службы Майкрософт](../../storage/common/storage-network-security.md#trusted-microsoft-services) и явно [назначить роли Azure](../../storage/common/storage-auth-aad.md#assign-azure-roles-for-access-rights) [назначаемому системой управляемому удостоверению](../../active-directory/managed-identities-azure-resources/overview.md) для этого экземпляра ресурса. В таком случае область доступа для этого экземпляра соответствует роли Azure, назначенной управляемому удостоверению.
->
+
+### <a name="querying-firewall-protected-storage"></a>Запросы к хранилищу, защищенному брандмауэром
+
+Для обращения к хранилищу, защищенному брандмауэром, можно использовать **удостоверение пользователя** или **управляемое удостоверение**.
+
+#### <a name="user-identity"></a>Удостоверение пользователя
+
+Чтобы обратиться к хранилищу, защищенному брандмауэром, с помощью удостоверения пользователя, можно использовать модуль Az.Storage в PowerShell.
+#### <a name="configuration-via-powershell"></a>Настройка через PowerShell
+
+Выполните описанные ниже действия, чтобы настроить брандмауэр учетной записи хранения и добавить исключение для рабочей области Synapse.
+
+1. Откройте или [установите PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1&preserve-view=true ).
+2. Установите обновленный модуль Az. Storage: 
+    ```powershell
+    Install-Module -Name Az.Storage -RequiredVersion 3.0.1-preview -AllowPrerelease
+    ```
+    > [!IMPORTANT]
+    > Убедитесь, что используется версия 3.0.1 или более поздняя. Чтобы проверить версию Az.Storage, выполните следующую команду:  
+    > ```powershell 
+    > Get-Module -ListAvailable -Name  Az.Storage | select Version
+    > ```
+    > 
+
+3. Подключитесь к своему клиенту Azure: 
+    ```powershell
+    Connect-AzAccount
+    ```
+4. Определите переменные в PowerShell: 
+    - Имя группы ресурсов можно найти на портале Azure в общих сведениях о рабочей области Synapse.
+    - Имя учетной записи — это имя учетной записи хранения, защищенной правилами брандмауэра.
+    - Идентификатор клиента можно найти на портале Azure в разделе информации о клиенте Azure Active Directory.
+    - Идентификатор ресурса можно найти на портале Azure в общих сведениях о рабочей области Synapse.
+
+    ```powershell
+        $resourceGroupName = "<resource group name>"
+        $accountName = "<storage account name>"
+        $tenantId = "<tenant id>"
+        $resourceId = "<Synapse workspace resource id>"
+    ```
+    > [!IMPORTANT]
+    > Идентификатор ресурса должен соответствовать шаблону ниже.
+    >
+    > Значение **resourcegroups** обязательно нужно указывать в нижнем регистре.
+    > Пример идентификатора ресурса: 
+    > ```
+    > /subscriptions/{subscription-id}/resourcegroups/{resource-group}/providers/Microsoft.Synapse/workspaces/{name-of-workspace}
+    > ```
+    > 
+5. Добавьте правило сети хранения: 
+    ```powershell
+        Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $accountName -TenantId $tenantId -ResourceId $resourceId
+    ```
+6. Убедитесь, что правило было применено в учетной записи хранения: 
+    ```powershell
+        $rule = Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName -Name $accountName
+        $rule.ResourceAccessRules
+    ```
+
+#### <a name="managed-identity"></a>Управляемое удостоверение
+Необходимо [разрешить доверенные службы Майкрософт](../../storage/common/storage-network-security.md#trusted-microsoft-services) и явно [назначить роли Azure](../../storage/common/storage-auth-aad.md#assign-azure-roles-for-access-rights) [назначаемому системой управляемому удостоверению](../../active-directory/managed-identities-azure-resources/overview.md) для этого экземпляра ресурса. В таком случае область доступа для этого экземпляра соответствует роли Azure, назначенной управляемому удостоверению.
 
 ## <a name="credentials"></a>Учетные данные
 

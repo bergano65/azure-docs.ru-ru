@@ -8,17 +8,17 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 12/14/2020
+ms.date: 12/16/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ec7b951581efd0a25b44d298b1f1bfb997167d88
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7eda805a5fdf24a7a55b9296a0f0a1c9a5bfc576
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589106"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683499"
 ---
-# <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate"></a>Руководство. Использование скриптов развертывания для создания самозаверяющего сертификата
+# <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate"></a>Руководство по Использование скриптов развертывания для создания самозаверяющего сертификата
 
 Сведения о том, как использовать скрипты развертывания в шаблонах Azure Resource Manager. Скрипты развертывания позволяют выполнять настраиваемые действия, которые не могут быть выполнены с помощью шаблонов ARM. Например, создание самозаверяющего сертификата. Работая с этим учебником, вы создадите шаблон для развертывания хранилища ключей Azure, а затем используете ресурс `Microsoft.Resources/deploymentScripts` в том же шаблоне для создания сертификата и добавите сертификат в хранилище ключей. См. сведения об [использовании скриптов развертывания в шаблонах ARM](./deployment-script-template.md).
 
@@ -34,13 +34,15 @@ ms.locfileid: "97589106"
 > * Отладка невыполненного скрипта.
 > * Очистка ресурсов
 
+Сведения о модулях Microsoft Learn с описанием скриптов развертывания см. в статье [Расширение шаблонов Resource Manager с помощью скриптов развертывания](/learn/modules/extend-resource-manager-template-deployment-scripts/).
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
 * **[Visual Studio Code](https://code.visualstudio.com/) с расширением средств диспетчера ресурсов**. См. [Краткое руководство. Создание шаблонов ARM с помощью Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
 
-* **Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки**. Это удостоверение используется для выполнения скриптов развертывания. Сведения о его создании см. в [этом разделе](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
+* **Управляемое удостоверение, назначаемое пользователем.** Это удостоверение используется для выполнения в скрипте действий, связанных с Azure. Сведения о его создании см. в [этом разделе](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
 
   ```json
   /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<IdentityID>
@@ -253,7 +255,7 @@ ms.locfileid: "97589106"
 
     Ресурс `deploymentScripts` зависит от ресурса хранилища ключей и ресурса назначения роли. Он имеет следующие свойства:
 
-    * `identity`. Скрипт развертывания использует назначаемое пользователем управляемое удостоверение для выполнения скриптов.
+    * `identity`. Скрипт развертывания использует назначаемое пользователем управляемое удостоверение для выполнения операций в скрипте.
     * `kind`. Укажите тип скрипта. В настоящее время поддерживаются только скрипты PowerShell.
     * `forceUpdateTag`. Определите, следует ли выполнять скрипт развертывания, даже если источник скрипта не изменился. Может иметь значение текущей метки времени или GUID. Дополнительные сведения о выполнении скрипта несколько раз см. [здесь](./deployment-script-template.md#run-script-more-than-once).
     * `azPowerShellVersion`. Укажите используемую версию модуля Azure PowerShell. В настоящее время скрипт развертывания поддерживает версии 2.7.0, 2.8.0 и 3.0.0.
@@ -288,7 +290,7 @@ ms.locfileid: "97589106"
 
     ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана.  Выберите файл, сохраненный ранее. После отправки вы можете с помощью команд `ls` и `cat` проверить, успешно отправлен ли файл.
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана.  Выберите файл, сохраненный ранее. После отправки вы можете использовать команды `ls` и `cat`, чтобы проверить отправку файла.
 
 1. а затем выполните следующий сценарий PowerShell для его развертывания.
 

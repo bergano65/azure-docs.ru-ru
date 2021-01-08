@@ -10,14 +10,14 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 10/30/2020
+ms.date: 01/06/2021
 ms.author: juliako
-ms.openlocfilehash: 81e52d4a6827492931179055d040b541d51228eb
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 3552d55d995608dd0d471c84cd5e9f9988ebe2c0
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916666"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028647"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -44,12 +44,15 @@ ms.locfileid: "97916666"
 
 ### <a name="planned-video-indexer-website-authenticatication-changes"></a>Изменение аусентикатикатион веб-сайта запланированного видео
 
-Начиная с 1 января 2021 вы больше не сможете зарегистрироваться и войти на веб-сайт [индексатора видео](https://www.videoindexer.ai/) (ознакомительная версия) с помощью Facebook или LinkedIn.
+Начиная с 1 марта 2021 вы больше не сможете зарегистрироваться и войти на веб-сайт [индексатора видео](https://www.videoindexer.ai/) с помощью Facebook или LinkedIn.
 
 Вы сможете зарегистрироваться и войти с помощью одного из следующих поставщиков: Azure AD, Microsoft и Google.
 
 > [!NOTE]
-> Рекомендуется экспортировать содержимое до 1 января 2021, так как учетные записи, подключенные к LinkedIn и Facebook, будут удалены, а содержимое станет недоступным.
+> Учетные записи индексатора видео, подключенные к LinkedIn и Facebook, будут недоступны после 1 марта 2021. 
+> 
+> Вы должны [присоединиться](invite-users.md) к учетной записи индексатора видео в Azure AD, Microsoft или Google, чтобы у вас по-прежнему был доступ.<br/>
+> Кроме того, можно создать платную учетную запись и перенести данные.
 
 ## <a name="august-2020"></a>Август 2020 г.
 
@@ -83,7 +86,7 @@ ms.locfileid: "97916666"
 
 Боковая панель также используется для пользовательских настроек и справки.
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="search-by-topics"></a>Поиск по темам
 
@@ -95,7 +98,7 @@ ms.locfileid: "97916666"
 
 Средство создания тегов меток Обновлено и теперь содержит больше визуальных меток, которые можно определить.
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="video-indexer-deployed-in-the-east-us"></a>Индексатор видео, развернутый в восточной части США
 

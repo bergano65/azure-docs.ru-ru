@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f47ee36c0e7806afc10f8f0907825378c2d24410
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: c801a276f3a116f00b34d750ca8bfec7e56d377b
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505551"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680744"
 ---
 # <a name="calling-client-library-overview"></a>Общие сведения о клиентской библиотеке для вызовов
 
@@ -58,13 +58,13 @@ ms.locfileid: "97505551"
 |                   | Возможность отключиться от группового вызова в качестве участника ТСОП                                                                    | ✔️   | ✔️            | ✔️   
 | Общие сведения           | Проверьте микрофон, динамик и камеру с помощью службы проверки звука (доступна по вызову 8:echo123)                   |  ✔️  | ✔️            | ✔️   
 
-## <a name="calling-client-library-browser-support"></a>Поддержка браузера клиентской библиотеки для вызовов
+## <a name="javascript-calling-client-library-support-by-os-and-browser"></a>Поддержка клиентской библиотеки вызовов JavaScript для ОС и браузера
 
 В следующей таблице представлен набор поддерживаемых браузеров и доступных в настоящее время версий.
 
-|                                  | Windows          | MacOS          | Ubuntu | Linux  | Android | iOS    |
-| -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ |
-| **Клиентская библиотека для вызовов** | Chrome*, новый Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
+|                                  | Windows          | MacOS          | Ubuntu | Linux  | Android | iOS    | ОС iPad|
+| -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ | -------|
+| **Клиентская библиотека для вызовов** | Chrome*, новый Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** | Safari** |
 
 
 * Обратите внимание, что для Chrome кроме двух предыдущих выпусков поддерживается также последняя версия.<br/>

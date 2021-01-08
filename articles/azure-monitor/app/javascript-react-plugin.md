@@ -6,12 +6,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 3348654a83b6d0930d10e1f58e07455623b5861d
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 4c6d8fabbd236a2653fff8168ad73c0b45f09d64
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94981091"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98027848"
 ---
 # <a name="react-plugin-for-application-insights-javascript-sdk"></a>Подключаемый модуль реагирования для Application Insights SDK JavaScript
 
@@ -69,7 +69,10 @@ class MyComponent extends React.Component {
     ...
 }
 
-export default withAITracking(reactPlugin, appInsights, MyComponent);
+// withAITracking takes 4 parameters ( reactPlugin, Component, ComponentName, className) 
+// the first two are required and the other two are optional.
+
+export default withAITracking(reactPlugin, MyComponent);
 ```
 
 ## <a name="configuration"></a>Параметр Configuration
@@ -220,7 +223,7 @@ const App = () => {
 
 Ознакомьтесь с [демонстрацией Application Insights реагировать](https://github.com/Azure-Samples/application-insights-react-demo).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о пакете SDK для JavaScript см. в [документации по Application Insights JavaScript SDK](javascript.md).
 - Дополнительные сведения о языке запросов Kusto и запросе данных в Log Analytics см. в разделе [Общие сведения о запросе журнала](../../azure-monitor/log-query/log-query-overview.md).

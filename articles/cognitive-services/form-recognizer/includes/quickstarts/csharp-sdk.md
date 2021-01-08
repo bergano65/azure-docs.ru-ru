@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: d7577668d87ecaf2d769136d64990f95fc212fe6
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 4b44a8375bc13709959e2401f9d772fdeab00f52
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356534"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808612"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
@@ -58,17 +58,24 @@ Build succeeded.
 
 В каталоге приложения установите клиентскую библиотеку Распознавателя документов для .NET с помощью следующей команды:
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 
 ```console
 dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 ```
 
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+> [!NOTE]
+> В пакете SDK 3.0.0 Распознавателя документов используется API версии 2.0.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 ```console
 dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 ```
+
+> [!NOTE]
+> В пакете SDK 3.1.0 Распознавателя документов используется API предварительной версии 2.1.
+
 ---
 
 > [!TIP]
@@ -89,9 +96,9 @@ dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 
 В методе **Main** приложения добавьте вызов асинхронных задач, используемых в этом руководстве. Вы реализуете их позже.
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_main)]
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_main)]
 
 ---
@@ -127,7 +134,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 
 Эти фрагменты кода показывают, как выполнить следующие действия с помощью клиентской библиотеки Распознавателя документов для .NET:
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 
 * [аутентификация клиента](#authenticate-the-client);
 * [распознавание содержимого формы](#recognize-form-content);
@@ -136,7 +143,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
 
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 * [аутентификация клиента](#authenticate-the-client);
 * [распознавание содержимого формы](#recognize-form-content);
@@ -168,13 +175,15 @@ dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 
 Также потребуется добавить URL-адреса данных для обучения и тестирования. Добавьте их в корень класса **Program**.
 
-* Чтобы получить подписанный URL-адрес данных для обучения пользовательской модели, откройте Обозреватель службы хранилища Microsoft Azure, щелкните контейнер правой кнопкой мыши и выберите **Получить подписанный URL-адрес**. Убедитесь, что разрешение на **чтение** и разрешение **списка** установлены и нажмите кнопку **Создать**. Затем скопируйте значение в разделе **URL-адрес**. Оно должно быть в таком формате: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
-* Чтобы получить URL-адрес SAS отдельного документа в хранилище больших двоичных объектов, выполните описанные выше действия.
+* [!INCLUDE [get SAS URL](../sas-instructions.md)]
+
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="Получение подписанного URL-адреса":::
+* Чтобы получить подписанный URL-адрес отдельного документа в контейнере Хранилища BLOB-объектов, повторите описанные выше действия. Также сохраните его во временном расположении.
 * Наконец, сохраните URL-адрес примеров изображений квитанции, приведенных ниже (также доступны на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms)). 
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_urls)]
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_urls)]
 
 ---
@@ -289,11 +298,15 @@ Item:
 Total: '1203.39', with confidence '0.774'
 ```
 
-#### <a name="version-30"></a>[Версия 3.0](#tab/ga)
-
-#### <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/preview)
-
 ## <a name="recognize-business-cards"></a>Распознавание визитных карточек
+
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Эта функция недоступна в выбранной версии API.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
+
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в Великобритании визитные карточки и извлекать из них содержимое стандартных полей.
 
@@ -308,7 +321,16 @@ Total: '1203.39', with confidence '0.774'
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_print)]
 
+---
+
 ## <a name="recognize-invoices"></a>Распознавание счетов
+
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Эта функция недоступна в выбранной версии API.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать счета на продажу и извлекать из них содержимое стандартных полей.
 

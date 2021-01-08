@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: ac6981d998f25b8df7cea553fe152d68cd43fee5
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: cc88712dd686983baed858de47e11dfa44e85350
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181430"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955524"
 ---
 # <a name="tutorial-configure-snowflake-for-automatic-user-provisioning"></a>Руководство по настройке Snowflake для автоматической подготовки пользователей
 
@@ -159,6 +159,12 @@ ms.locfileid: "96181430"
 ## <a name="connector-limitations"></a>Ограничения соединителя
 
 * Срок действия токенов SCIM, созданных Snowflake, истекает через 6 месяцев. Учтите, что их необходимо обновить до истечения срока действия, чтобы синхронизация подготовки продолжала работать. 
+
+## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
+
+* **Диапазоны IP-адресов** 
+
+   Сейчас служба подготовки Azure AD работает в конкретных диапазонах IP-адресов. Поэтому при необходимости вы можете ограничить другие диапазоны IP-адресов и добавить эти конкретные диапазоны IP-адресов в список разрешений вашего приложения, чтобы разрешить поток трафика из службы подготовки Azure AD в ваше приложение (см. раздел [Диапазоны IP-адресов](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#ip-ranges)).
 
 ## <a name="change-log"></a>Журнал изменений
 

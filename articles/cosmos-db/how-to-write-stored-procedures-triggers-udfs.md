@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 7938920459654bd59620ad0992f3a13db85ff4fb
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 7600d8aa2f78e06ea4046273635fdbba18042010
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019027"
+ms.locfileid: "98028868"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -284,7 +284,7 @@ function async_sample() {
 
 ## <a name="how-to-write-triggers"></a><a id="triggers"></a>Как записать триггеры
 
-Azure Cosmos DB поддерживает триггеры предварительного и последующего выполнения. Перед изменением элемента базы данных и после изменения элемента базы данных выполняются предварительные триггеры. Триггеры не являются автоматическими. Они должны быть указаны для каждой операции базы данных в том месте, где они должны быть выполнены.
+Azure Cosmos DB поддерживает триггеры предварительного и последующего выполнения. Триггеры предварительного выполнения выполняются до изменения элемента базы данных, а триггеры последующего — после изменения элемента базы данных. Триггеры не выполняются автоматически, они должны быть указаны для каждой операции базы данных, в которой их необходимо выполнить. После определения триггера необходимо [зарегистрировать и вызвать предварительный триггер](how-to-use-stored-procedures-triggers-udfs.md#pre-triggers) с помощью Azure Cosmos DB пакетов SDK.
 
 ### <a name="pre-triggers"></a><a id="pre-triggers"></a>Предварительные триггеры
 

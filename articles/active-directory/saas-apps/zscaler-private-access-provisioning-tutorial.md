@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: da3ad4f70e0cc41fe95327eb74093c1471c877bd
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 14708ddcc5c0e06ee58f5e9db5945c4e9f1a1d08
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351577"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937150"
 ---
 # <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Zscaler Private Access (ZPA)
 
@@ -115,6 +115,9 @@ ms.locfileid: "96351577"
 
 > [!TIP]
 > Вы также можете настроить для Zscaler Private Access (ZPA) единый вход на основе SAML, используя инструкции из [руководства по единому входу для Zscaler Private Access (ZPA)](./zscalerprivateaccess-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности хорошо дополняют друг друга.
+
+> [!NOTE]
+> При подготовке или отмене подготовки пользователей и групп рекомендуется периодически перезапускать подготовку, чтобы членство в группах правильно обновлялось. При перезапуске служба повторно оценит все группы и обновит членство.  
 
 > [!NOTE]
 > Дополнительные сведения о конечной точке SCIM для Zscaler Private Access см. [здесь](https://www.zscaler.com/partners/microsoft).

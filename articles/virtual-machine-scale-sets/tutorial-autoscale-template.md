@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 03/27/2018
 ms.reviewer: avverma
 ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: 7e727d06670c9d07ec1aa18b92504433f6c519d6
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 88cec878ca5d3ccab3a232888ff3a3c0b0faa1db
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94518300"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705257"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-an-azure-template"></a>Руководство по Автомасштабирование масштабируемого набора виртуальных машин с помощью шаблона Azure
 При создании масштабируемого набора вы определяете количество экземпляров виртуальных машин для запуска. По мере изменения потребностей приложения можно автоматически увеличивать или уменьшать это количество. Возможность автоматического масштабирования позволяет удовлетворить пользовательский спрос или среагировать на изменения производительности приложения на протяжении его жизненного цикла. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -143,10 +143,10 @@ ms.locfileid: "94518300"
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте масштабируемый набор виртуальных машин с помощью команды [az group deployment create](/cli/azure/group/deployment). При появлении запроса укажите имя пользователя, например *azureuser*, и пароль, используемые в качестве учетных данных для каждого экземпляра виртуальной машины.
+Создайте масштабируемый набор виртуальных машин с помощью команды [az deployment group create](/cli/azure/deployment/group). При появлении запроса укажите имя пользователя, например *azureuser*, и пароль, используемые в качестве учетных данных для каждого экземпляра виртуальной машины.
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group myResourceGroup \
   --template-uri https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/scale_sets/autoscale.json
 ```

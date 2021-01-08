@@ -8,12 +8,12 @@ ms.date: 10/16/2020
 ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.openlocfilehash: feabac62564729338e41bf30eaf8d9f5a6317126
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 56505c95e65911cafbaaa403cd09332695439d97
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149012"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825663"
 ---
 # <a name="quickstart-create-an-azure-app-configuration-store-by-using-an-arm-template"></a>Краткое руководство. Создание хранилища Конфигурации приложений Azure с помощью шаблона ARM
 
@@ -25,7 +25,7 @@ ms.locfileid: "92149012"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure** . Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-app-configuration-store-kv%2Fazuredeploy.json)
 
@@ -46,10 +46,10 @@ ms.locfileid: "92149012"
 
 В шаблоне определено два ресурса Azure:
 
-- [Microsoft.AppConfiguration/configurationStores](/azure/templates/microsoft.appconfiguration/2020-06-01/configurationstores): создает хранилище службы "Конфигурация приложений".
-- Microsoft.AppConfiguration/configurationStores/keyValues: создание пары "ключ-значение" в хранилище Конфигурации приложений.
+- [Microsoft.AppConfiguration/configurationStores](/azure/templates/microsoft.appconfiguration/2020-07-01-preview/configurationstores): создает хранилище службы "Конфигурация приложений".
+- [Microsoft.AppConfiguration/configurationStores/keyValues](/azure/templates/microsoft.appconfiguration/2020-07-01-preview/configurationstores/keyvalues): создание пары "ключ-значение" в хранилище Конфигурации приложений.
 
-> [!NOTE]
+> [!TIP]
 > Имя ресурса `keyValues` представляет собой сочетание ключа и метки. Ключ и метка соединяются разделителем `$`. Метку использовать необязательно. В приведенном выше примере ресурс `keyValues` с именем `myKey` создает пару "ключ-значение" без метки.
 >
 > Кодирование с помощью знака процента, также называемое кодированием URL-адреса, позволяет использовать в ключах или метках символы, недопустимые в именах ресурсов шаблона Resource Manager. `%` не является допустимым символом, поэтому вместо него используется `~`. Чтобы правильно закодировать имя, выполните указанные ниже действия.
@@ -59,6 +59,13 @@ ms.locfileid: "92149012"
 > 3. Замените `%` на `~`:
 >
 > Например, чтобы создать пару "ключ-значение" с именем ключа `AppName:DbEndpoint` и именем метки `Test`, у ресурса должно быть имя `AppName~3ADbEndpoint$Test`.
+
+> [!NOTE]
+> Конфигурация приложения обеспечивает доступ к данным "ключ — значение" по [приватному каналу](concept-private-endpoint.md) из виртуальной сети. По умолчанию, если эта функция включена,все запросы на данные Конфигурации приложения через общедоступную сеть отклоняются. Так как шаблон Resource Manager выполняется за пределами виртуальной сети, доступ к данным из шаблона Resource Manager не разрешен. Чтобы разрешить доступ к данным из шаблона Resource Manager при использовании приватного канала, можно включить доступ к общедоступной сети с помощью следующей команды Azure CLI. Важно учитывать то, какое влияние оказывает включение доступа к общедоступной сети в этом сценарии на безопасность.
+>
+> ```azurecli-interactive
+> az appconfig update -g MyResourceGroup -n MyAppConfiguration --enable-public-network true
+> ```
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
@@ -84,9 +91,9 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 ## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. В поле поиска портала Azure введите **Конфигурация приложений** . Выберите **Конфигурация приложений** в списке.
+1. В поле поиска портала Azure введите **Конфигурация приложений**. Выберите **Конфигурация приложений** в списке.
 1. Выберите созданный ресурс Конфигурации приложений.
-1. В разделе **Операции** щелкните **Обозреватель конфигураций** .
+1. В разделе **Операции** щелкните **Обозреватель конфигураций**.
 1. Убедитесь, что существует две пары "ключ-значение".
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

@@ -9,12 +9,12 @@ ms.subservice: template
 ms.date: 03/27/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 2d748f787b40bb26e9faebb028d71c6c3e30ee55
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: d5eba5486e7d26e62379e0112cd4b95322e6dae1
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94516566"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705240"
 ---
 # <a name="tutorial-install-applications-in-virtual-machine-scale-sets-with-an-azure-template"></a>Руководство по Установка приложений в масштабируемых наборах виртуальных машин с помощью шаблона Azure
 Для запуска приложений в экземплярах виртуальных машин в масштабируемом наборе необходимо сначала установить компоненты и необходимые файлы этих приложений. Из предыдущего руководства вы узнали, как создать и использовать настраиваемый образ виртуальной машины для развертывания экземпляров виртуальных машин. Этот настраиваемый образ включал ручную установку и конфигурацию приложения. Также можно автоматизировать установку приложений в масштабируемом наборе после развертывания каждого экземпляра виртуальной машины или обновить приложение, которое уже выполняется в масштабируемом наборе. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -76,10 +76,10 @@ ms.locfileid: "94516566"
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте масштабируемый набор виртуальных машин с помощью команды [az group deployment create](/cli/azure/group/deployment). При появлении запроса укажите имя пользователя и пароль, используемые в качестве учетных данных для каждого экземпляра виртуальной машины:
+Создайте масштабируемый набор виртуальных машин с помощью команды [az deployment group create](/cli/azure/deployment/group). При появлении запроса укажите имя пользователя и пароль, используемые в качестве учетных данных для каждого экземпляра виртуальной машины:
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group myResourceGroup \
   --template-uri https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/scale_sets/azuredeploy.json
 ```
@@ -134,10 +134,10 @@ az network public-ip show \
 }
 ```
 
-Примените конфигурацию расширения настраиваемых скриптов к экземплярам виртуальных машин в своем масштабируемом наборе. Для этого выполните команду [az group deployment create](/cli/azure/group/deployment). Этот шаблон *azuredeployv2.json* используется для применения обновленной версии приложения. На практике вы вносите изменения в существующий шаблон *azuredeploy.json*, чтобы он ссылался на обновленный скрипт установки, как показано в предыдущем разделе. При появлении запроса введите имя пользователя и пароль, которые использовались при создании масштабируемого набора:
+Примените конфигурацию расширения настраиваемых скриптов к экземплярам виртуальных машин в своем масштабируемом наборе. Для этого выполните команду [az deployment group create](/cli/azure/deployment/group). Этот шаблон *azuredeployv2.json* используется для применения обновленной версии приложения. На практике вы вносите изменения в существующий шаблон *azuredeploy.json*, чтобы он ссылался на обновленный скрипт установки, как показано в предыдущем разделе. При появлении запроса введите имя пользователя и пароль, которые использовались при создании масштабируемого набора:
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group myResourceGroup \
   --template-uri https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/scale_sets/azuredeploy_v2.json
 ```

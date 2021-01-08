@@ -6,18 +6,21 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: dff98a5c54d2fee350e2b35dc00148c19ea233b8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 15a77835e3e618c17b9839aa5a010cd4d29cebe1
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94956506"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653118"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Добавление TLS/SSL-сертификата в Службу приложений Azure
 
 [Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этой статье показано, как создать, передать или импортировать закрытый или общедоступный сертификат в Службу приложений. 
 
 После добавления сертификата в приложение Службы приложений или [приложение-функцию](../azure-functions/index.yml) с его помощью можно [защитить настраиваемое DNS-имя](configure-ssl-bindings.md) или [использовать его в коде приложения](configure-ssl-certificate-in-code.md).
+
+> [!NOTE]
+> Сертификат, переданный в приложение, хранится в единице развертывания, привязанной к сочетанию группы ресурсов и региона приложения (внутренне называется *веб-пространством*). Это сделает сертификат доступным другим приложениям в том же сочетании группы ресурсов и региона. 
 
 В следующей таблице перечислены варианты добавления сертификатов в Службу приложений.
 

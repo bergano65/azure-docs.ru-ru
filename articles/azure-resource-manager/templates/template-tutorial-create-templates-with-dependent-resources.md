@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d1e5848e568f42fb8a77c65c775962f27a5a03df
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: a77f64e51a26e1f916f9f96704c55412a870a509
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588042"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673942"
 ---
 # <a name="tutorial-create-arm-templates-with-dependent-resources"></a>Руководство по созданию шаблонов Resource Manager с зависимыми ресурсами
 
@@ -28,6 +28,8 @@ ms.locfileid: "97588042"
 > * Развертывание шаблона
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+
+Сведения о модулях Microsoft Learn с описанием зависимостей ресурсов см. в статье [Управление сложными облачными развертываниями с помощью расширенных функций шаблонов Resource Manager](/learn/modules/manage-deployments-advanced-arm-template-features/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

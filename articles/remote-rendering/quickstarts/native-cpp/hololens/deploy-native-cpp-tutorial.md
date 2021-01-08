@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/08/2020
 ms.topic: quickstart
-ms.openlocfilehash: 4513a1997dc2955e1c5488a4a3740afa88f51623
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: d35d6e75b45c2ea263c2e986c5fc6f414cad16e4
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207280"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724975"
 ---
 # <a name="quickstart-deploy-native-c-sample-to-hololens"></a>Краткое руководство. Развертывание примера в машинном коде C++ в HoloLens
 
@@ -39,7 +39,7 @@ ms.locfileid: "92207280"
 
 ## <a name="clone-the-arr-samples-repository"></a>Клонирование репозитория примеров ARR
 
-В качестве первого шага мы клонируем репозиторий Git, который содержит общедоступные примеры для службы "Удаленная отрисовка Azure". Откройте командную строку (введите `cmd` в меню "Пуск" в Windows) и перейдите в каталог, в котором вы хотите сохранить пример проекта ARR.
+В качестве первого шага мы клонируем репозиторий Git, который содержит глобальные примеры для службы "Удаленная отрисовка Azure". Откройте командную строку (введите `cmd` в меню "Пуск" в Windows) и перейдите в каталог, в котором вы хотите сохранить пример проекта ARR.
 
 Выполните следующие команды:
 
@@ -70,7 +70,8 @@ git clone https://github.com/Azure/azure-remote-rendering
     RR::AzureFrontendAccountInfo init;
     init.AccountId = "00000000-0000-0000-0000-000000000000";
     init.AccountKey = "<account key>";
-    init.AccountDomain = "westus2.mixedreality.azure.com"; // <change to your region>
+    init.AccountDomain = "westus2.mixedreality.azure.com"; // <change to the region that the rendering session should be created in>
+    init.AccountAuthenticationDomain = "westus2.mixedreality.azure.com"; // <change to the region the account was created in>
     m_modelURI = "builtin://Engine";
     m_sessionOverride = ""; // If there is a valid session ID to re-use, put it here. Otherwise a new one is created
     m_frontEnd = RR::ApiHandle(RR::AzureFrontend(init));
@@ -78,8 +79,8 @@ git clone https://github.com/Azure/azure-remote-rendering
 ```
 
 В частности, измените следующие значения:
-* `init.AccountId` и `init.AccountKey` должны содержать данные для вашей учетной записи. См. раздел [Извлечение сведений об учетной записи](../../../how-tos/create-an-account.md#retrieve-the-account-information).
-* Часть строки `init.AccountDomain`, которая содержит значение региона, с регионом, отличным от `westus2`, например `"westeurope.mixedreality.azure.com"`.
+* `init.AccountId`, `init.AccountKey` и `init.AccountAuthenticationDomain` должны содержать данные для вашей учетной записи. См. раздел [Извлечение сведений об учетной записи](../../../how-tos/create-an-account.md#retrieve-the-account-information).
+* Укажите, где следует создать сеанс удаленной подготовки к отрисовке, изменив указывающую на регион часть в строке `init.AccountDomain` на регионы, отличные от `westus2`, например `"westeurope.mixedreality.azure.com"`.
 * Кроме того, вместо `m_sessionOverride` можно указать существующий идентификатор сеанса. Сеансы можно создавать за пределами этого примера, например с помощью [скрипта PowerShell](../../../samples/powershell-example-scripts.md#script-renderingsessionps1) или напрямую через [REST API сеанса](../../../how-tos/session-rest-api.md#create-a-session).
 Мы рекомендуем создавать сеанс за пределами примера, если его нужно выполнять несколько раз. Если сеанс не передается, этот пример будет создавать новый сеанс при каждом запуске, что может занять несколько минут.
 

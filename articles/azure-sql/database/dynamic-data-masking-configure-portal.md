@@ -11,12 +11,12 @@ author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 04/28/2020
-ms.openlocfilehash: 3f8c296860fc36772a85039e27c86a72614c2a50
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e551925bbd1426256a81ac2ca3f245af7697245b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791058"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028018"
 ---
 # <a name="get-started-with-sql-database-dynamic-data-masking-with-the-azure-portal"></a>Приступая к работе с динамическим маскированием данных в базе данных SQL на портале Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "92791058"
 В этой статье показано, как реализовать [динамическое маскирование данных](dynamic-data-masking-overview.md) с помощью портала Azure. Динамическое маскирование данных можно также реализовать с помощью [командлетов для Базы данных SQL Azure](/powershell/module/az.sql/) или [REST API](/rest/api/sql/).
 
 > [!NOTE]
-> Эта функция не может быть задана с помощью портала для Azure синапсе (используйте PowerShell или REST API) или SQL Управляемый экземпляр. Дополнительные сведения см. в разделе [Dynamic Data Masking](/sql/relational-databases/security/dynamic-data-masking).
+> Эта функция не может быть задана с помощью портала для Управляемый экземпляр SQL (используйте PowerShell или REST API). Дополнительные сведения см. в разделе [Dynamic Data Masking](/sql/relational-databases/security/dynamic-data-masking).
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-the-azure-portal"></a>Настройка динамического маскирования данных для базы данных с помощью портала Azure
 
@@ -38,11 +38,11 @@ ms.locfileid: "92791058"
 
     ![Снимок экрана, на котором показана страница конфигурации динамическое маскирование данных.](./media/dynamic-data-masking-configure-portal/5_ddm_recommendations.png)
 
-5. Чтобы добавить маску для какого-либо столбца базы данных, на странице настройки **Динамическое маскирование данных** вверху щелкните **Добавить маску** , чтобы открыть страницу настройки **Добавление правила маскирования** .
+5. Чтобы добавить маску для какого-либо столбца базы данных, на странице настройки **Динамическое маскирование данных** вверху щелкните **Добавить маску**, чтобы открыть страницу настройки **Добавление правила маскирования**.
 
     ![Снимок экрана, на котором показана страница "Добавление конфигурации правила маскирования".](./media/dynamic-data-masking-configure-portal/6_ddm_add_mask.png)
 
-6. Выберите значение **Схема** , **Таблица** и **Столбец** , чтобы определить поля, которые будут замаскированы.
+6. Выберите значение **Схема**, **Таблица** и **Столбец**, чтобы определить поля, которые будут замаскированы.
 7. **Выберите способ маскирования** из списка категорий маскирования конфиденциальных данных.
 
     ![Снимок экрана, на котором показаны категории конфиденциальных масок данных в разделе "Выбор способа маскирования".](./media/dynamic-data-masking-configure-portal/7_ddm_mask_field_format.png)
