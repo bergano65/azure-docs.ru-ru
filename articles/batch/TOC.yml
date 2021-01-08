@@ -137,6 +137,8 @@
           href: batch-automatic-scaling.md
         - name: Выбор размера виртуальной машины для вычислительных узлов
           href: batch-pool-vm-sizes.md
+        - name: Перемещение из облачной службы в пулы виртуальных машин
+          href: batch-pool-cloud-service-to-virtual-machine-configuration.md
         - name: Настройка доступа к вычислительным узлам
           href: pool-endpoint-configuration.md
         - name: Создание пула с использованием службы "Общая коллекция образов"

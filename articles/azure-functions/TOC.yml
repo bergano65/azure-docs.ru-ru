@@ -141,8 +141,16 @@
     - name: Сравнение версий среды выполнения
       href: functions-versions.md
       displayName: 'migrate, migration, v3'
-    - name: План "Премиум"
-      href: functions-premium-plan.md
+    - name: Размещение и масштабирование
+      items:
+        - name: План потребления
+          href: consumption-plan.md
+        - name: План "Премиум"
+          href: functions-premium-plan.md
+        - name: План ценовой категории "Выделенный"
+          href: dedicated-plan.md
+        - name: Масштабирование при определенном событии
+          href: event-driven-scaling.md
     - name: Развернутые приложения
       href: functions-deployment-technologies.md
     - name: События и обмен сообщениями
@@ -261,6 +269,8 @@
                   href: create-function-app-linux-app-service-plan.md
                 - name: План "Потребление Linux"
                   href: create-first-function-cli-python.md
+                - name: План "Премиум"
+                  href: create-premium-plan-function-app-portal.md
                 - name: Начальный набор Microsoft Azure для учащихся
                   href: functions-create-student-starter.md
             - name: Триггер Azure Cosmos DB

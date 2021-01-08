@@ -199,9 +199,9 @@
           href: event-hubs-kafka-spark-tutorial.md
         - name: Подключение Apache Flink к концентратору событий
           href: event-hubs-kafka-flink-tutorial.md
-        - name: Интеграция Apache Kafka Connect с концентратором (предварительная версия)
+        - name: Интеграция Apache Kafka Connect
           href: event-hubs-kafka-connect-tutorial.md
-        - name: Интеграция Apache Kafka Connect (предварительная версия) с Debezium
+        - name: Интеграция Apache Kafka Connect с Debezium
           href: event-hubs-kafka-connect-debezium.md
         - name: Подключение Akka Streams к концентратору событий
           href: event-hubs-kafka-akka-streams-tutorial.md

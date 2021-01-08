@@ -123,6 +123,8 @@
           href: troubleshoot-cross-region-replication.md
         - name: Устранение неполадок с томами с двумя протоколами
           href: troubleshoot-dual-protocol-volumes.md
+        - name: Устранение неполадок с томами Kerberos NFSv4.1
+          href: troubleshoot-nfsv41-kerberos-volumes.md
         - name: Устранение неполадок с политиками моментальных снимков
           href: troubleshoot-snapshot-policies.md
         - name: Устранение неполадок с поставщиком ресурсов

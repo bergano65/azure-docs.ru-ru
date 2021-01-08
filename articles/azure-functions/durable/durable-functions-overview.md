@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 12/23/2020
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 3725970c982c2d060685bf0b99d12a8fc998f20a
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 2079a3a7c9ce6817186e743bb09d31facdecf0e7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763580"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97931727"
 ---
 # <a name="what-are-durable-functions"></a>Что такое Устойчивые функции?
 
@@ -697,7 +697,7 @@ module.exports = async function (context) {
 
 ## <a name="billing"></a>Выставление счетов
 
-Счета за устойчивые функции выставляются так же, как и за Функции Azure. Дополнительные сведения см. на странице [цен на Функции Azure](https://azure.microsoft.com/pricing/details/functions/). При выполнении функций оркестратора в рамках [плана потребления](../functions-scale.md#consumption-plan) Функций Azure необходимо учитывать некоторые особенности при выставлении счетов. Дополнительные сведения об этом см. в статье [Durable Functions Billing](durable-functions-billing.md) (Выставление счетов за Устойчивые функции).
+Счета за устойчивые функции выставляются так же, как и за Функции Azure. Дополнительные сведения см. на странице [цен на Функции Azure](https://azure.microsoft.com/pricing/details/functions/). При выполнении функций оркестратора в рамках [плана потребления](../consumption-plan.md) Функций Azure необходимо учитывать некоторые особенности при выставлении счетов. Дополнительные сведения об этом см. в статье [Durable Functions Billing](durable-functions-billing.md) (Выставление счетов за Устойчивые функции).
 
 ## <a name="jump-right-in"></a>Приступайте к работе
 

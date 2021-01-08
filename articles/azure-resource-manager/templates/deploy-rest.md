@@ -3,12 +3,12 @@ title: Развертывание ресурсов с помощью REST API и
 description: Сведения о том, как применить Azure Resource Manager и REST API Resource Manager для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: d1c8a365153007d3337d922bc163ba3767eeddc9
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 77192aff9ed4fe33269b5e11891c30e15bc312dd
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675404"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028970"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-resource-manager-rest-api"></a>Развертывание ресурсов с помощью шаблонов ARM и Azure Resource Manager REST API
 
@@ -20,13 +20,13 @@ ms.locfileid: "92675404"
 
 Вы можете выбрать для развертывания группу ресурсов, подписку Azure, группу управления или клиент. В зависимости от области развертывания используются разные команды.
 
-* Чтобы выполнить развертывание в **группе ресурсов** , используйте инструкции из статьи [Развертывания: создание](/rest/api/resources/deployments/createorupdate). Назначение для такого запроса:
+- Чтобы выполнить развертывание в **группе ресурсов**, используйте инструкции из статьи [Развертывания: создание](/rest/api/resources/deployments/createorupdate). Назначение для такого запроса:
 
   ```HTTP
   PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
   ```
 
-* Чтобы выполнить развертывание в **подписке** , используйте инструкции из статьи [Развертывания: создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope). Назначение для такого запроса:
+- Чтобы выполнить развертывание в **подписке**, используйте инструкции из статьи [Развертывания: создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope). Назначение для такого запроса:
 
   ```HTTP
   PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
@@ -34,7 +34,7 @@ ms.locfileid: "92675404"
 
   Дополнительные сведения о развертываниях на уровне подписки см. в статье [Создание групп ресурсов и ресурсов на уровне подписки](deploy-to-subscription.md).
 
-* Чтобы выполнить развертывание в **группе управления** , используйте инструкции из статьи [Развертывания: создание в области группы управления](/rest/api/resources/deployments/createorupdateatmanagementgroupscope). Назначение для такого запроса:
+- Чтобы выполнить развертывание в **группе управления**, используйте инструкции из статьи [Развертывания: создание в области группы управления](/rest/api/resources/deployments/createorupdateatmanagementgroupscope). Назначение для такого запроса:
 
   ```HTTP
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
@@ -42,7 +42,7 @@ ms.locfileid: "92675404"
 
   Дополнительные сведения о развертываниях на уровне групп управления см. в статье [Создание ресурсов на уровне группы управления](deploy-to-management-group.md).
 
-* Чтобы выполнить развертывание в **клиенте** , используйте инструкции из статьи [Развертывания: создание или обновление в области клиента](/rest/api/resources/deployments/createorupdateattenantscope). Назначение для такого запроса:
+- Чтобы выполнить развертывание в **клиенте**, используйте инструкции из статьи [Развертывания: создание или обновление в области клиента](/rest/api/resources/deployments/createorupdateattenantscope). Назначение для такого запроса:
 
   ```HTTP
   PUT https://management.azure.com/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
@@ -83,7 +83,7 @@ ms.locfileid: "92675404"
 
    В тексте запроса укажите ссылку на шаблон и файл параметров. Дополнительные сведения о файле параметров см. в статье [Создание файла параметров Resource Manager](parameter-files.md).
 
-   Обратите внимание, что для параметра **mode** выбрано значение **Incremental** . Чтобы выполнить полное развертывание, установите для параметра **mode** значение **Complete** . Будьте внимательны при использовании полного режима, так как вы можете случайно удалить ресурсы, которые находятся не в шаблоне.
+   Обратите внимание, что `mode` задано **добавочное**. Чтобы выполнить полное развертывание, установите для параметра значение `mode` **завершено**. Будьте внимательны при использовании полного режима, так как вы можете случайно удалить ресурсы, которые находятся не в шаблоне.
 
    ```json
    {
@@ -122,9 +122,9 @@ ms.locfileid: "92675404"
    }
    ```
 
-    Можно настроить учетную запись хранения для использования маркера подписанного URL-адреса (SAS). Дополнительные сведения см. в статье [Делегирование доступа с помощью подписанного URL-адреса](/rest/api/storageservices/delegating-access-with-a-shared-access-signature).
+    Можно настроить учетную запись хранения для использования маркера подписанного URL-адреса (SAS). Дополнительные сведения см. [в разделе Делегирование доступа с помощью подписанного URL-доступа](/rest/api/storageservices/delegate-access-with-shared-access-signature).
 
-    Если требуется предоставить конфиденциальное значение для параметра (например, пароль), добавьте это значение в хранилище ключей. Получите хранилище ключей во время развертывания, как показано в предыдущем примере. Дополнительные сведения см. в статье [Передача безопасных значений в процессе развертывания](key-vault-parameter.md).
+    Если требуется предоставить конфиденциальное значение для параметра (например, пароль), добавьте это значение в хранилище ключей. Получите хранилище ключей во время развертывания, как показано в предыдущем примере. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](key-vault-parameter.md).
 
 1. Вместо создания ссылки на файлы для шаблона и параметров их можно включить в тексте запроса. В следующем примере приведен текст запроса, в котором напрямую указаны шаблон и параметр.
 
@@ -217,4 +217,3 @@ ms.locfileid: "92675404"
 - Сведения о том, как указать способ обработки ресурсов, которые существуют в группе ресурсов, но не определены в шаблоне, см. в [описании режимов развертывания с помощью Azure Resource Manager](deployment-modes.md).
 - Сведения об обработке асинхронных операций REST см. в статье [Track asynchronous Azure operations](../management/async-operations.md) (Отслеживание асинхронных операций Azure).
 - Дополнительные сведения о шаблонах см. в статье [Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
-

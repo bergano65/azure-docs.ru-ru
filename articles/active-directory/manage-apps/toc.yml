@@ -37,16 +37,12 @@
     - name: Примеры Azure PowerShell для прокси приложения
       href: application-proxy-powershell-samples.md
 - name: Основные понятия
-  expanded: false
+  expanded: true
   items:
     - name: Рекомендации по управлению приложениями
       href: application-management-fundamentals.md
     - name: Общие сценарии управления приложениями
       href: common-scenarios.md
-    - name: Просмотр приложений в клиенте
-      href: application-types.md
-    - name: Назначение пользователей приложениям
-      href: ways-users-get-assigned-to-applications.md
     - name: Планирование интеграции облачных приложений
       items:
         - name: Начало работы с интеграцией приложений
@@ -286,6 +282,10 @@
       href: application-proxy-faq.md
     - name: Журнал версий прокси приложения
       href: application-proxy-release-version-history.md
+    - name: 'Причины, по которым приложения отображаются в разделе корпоративных приложений'
+      href: application-types.md
+    - name: 'Причины, по которым пользователи назначаются приложению'
+      href: ways-users-get-assigned-to-applications.md
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки для разработчиков

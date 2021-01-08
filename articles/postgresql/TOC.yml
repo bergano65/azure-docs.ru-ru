@@ -14,7 +14,7 @@
   items:
     - name: Развертывание баз данных
       items:
-        - name: Github Actions
+        - name: Действия GitHub
           href: how-to-deploy-github-action.md
     - name: Миграция
       items:
@@ -640,6 +640,8 @@
           href: howto-hyperscale-create-users.md
         - name: Распределенные данные
           items:
+            - name: Определение размера таблицы
+              href: howto-hyperscale-table-size.md
             - name: Распространение и изменение таблиц
               href: howto-hyperscale-modify-distributed-tables.md
         - name: Высокий уровень доступности
@@ -657,6 +659,8 @@
             - name: Устранение ошибок подключения
               href: howto-hyperscale-troubleshoot-common-connection-issues.md
               displayName: 'connection errors, hyperscale'
+            - name: Полезные диагностические запросы
+              href: howto-hyperscale-useful-diagnostic-queries.md
 - name: Справочник
   items:
     - name: Azure CLI

@@ -14,6 +14,8 @@
   items:
     - name: Создание Выделенного устройства HSM Azure с помощью Azure PowerShell
       href: quickstart-create-hsm-powershell.md
+    - name: "Создание Выделенного устройства HSM Azure с помощью Azure\_CLI"
+      href: quickstart-hsm-azure-cli.md
 - name: Основные понятия
   items:
     - name: Высокий уровень доступности

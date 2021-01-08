@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 895b8441f340d085932cade513c9f8929491b374
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: b7980bfc58ed696a74d3da259e23fb7e428621a9
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904267"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028919"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "96904267"
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault)<br>[Краткое руководство](quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/)|[Ссылки](/azure/templates/microsoft.keyvault/vaults)|[Ссылки](/dotnet/api/microsoft.azure.management.keyvault)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Ссылки](/java/api/com.microsoft.azure.management.keyvault)|[Ссылки](/javascript/api/@azure/arm-keyvault)|
+|[Ссылки](/cli/azure/keyvault)<br>[Краткое руководство](quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/)|[Ссылки](/azure/templates/microsoft.keyvault/vaults)|[Ссылки](/dotnet/api/microsoft.azure.management.keyvault)<br>[Краткое руководство](https://docs.microsoft.com/azure/key-vault/general/vault-create-template)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Ссылки](/java/api/com.microsoft.azure.management.keyvault)|[Ссылки](/javascript/api/@azure/arm-keyvault)|
 
 См. раздел [клиентские библиотеки](client-libraries.md) для пакетов установки и исходный код.
 
@@ -68,9 +68,13 @@ Key Vault использует проверку подлинности Azure AD,
 Дополнительные сведения о либарари Azure Identity Client см. в следующих статьях:
 
 ### <a name="azure-identity-client-libraries"></a>Клиентские библиотеки Azure Identity
+
 | .NET | Python | Java | JavaScript |
 |--|--|--|--|
 |[Пакет SDK для Azure Identity .NET](/dotnet/api/overview/azure/identity-readme)|[Пакет SDK для удостоверений Azure Python](/python/api/overview/azure/identity-readme)|[Пакет SDK для Azure Identity Java](/java/api/overview/azure/identity-readme)|[Azure Identity SDK JavaScript](/javascript/api/overview/azure/identity-readme)|     
+
+>[!Note]
+> [Библиотека проверки подлинности приложения](https://docs.microsoft.com/dotnet/api/overview/azure/service-to-service-authentication) , которая была рекомендована для Key Vault пакета SDK для .NET версии 3, которая в настоящее время прекращена. Следуйте указаниям в [статье AppAuthentication to Azure. Руководство по миграции удостоверений](https://docs.microsoft.com/dotnet/api/overview/azure/app-auth-migration) для миграции на Key Vault пакет SDK для .NET версии 4.
 
 Руководства по проверке подлинности в Key Vault в приложениях см. в следующих статьях:
 - [Проверка подлинности Key Vault в приложении, размещенном на виртуальной машине в .NET](./tutorial-net-virtual-machine.md)
@@ -86,14 +90,14 @@ Key Vault использует проверку подлинности Azure AD,
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault/key)<br>[Краткое руководство](../keys/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault/)<br>[Краткое руководство](../keys/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#key-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.keys)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Краткое руководство](../keys/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-keys/)|
+|[Ссылки](/cli/azure/keyvault/key)<br>[Краткое руководство](../keys/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault/)<br>[Краткое руководство](../keys/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#key-operations)|[Ссылки](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/keys)<br>[Краткое руководство](../keys/quick-create-template.md)|[Ссылки](/dotnet/api/azure.security.keyvault.keys)<br>[Краткое руководство](../keys/quick-create-net.md)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Краткое руководство](../keys/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)<br>[Краткое руководство](../keys/quick-create-java.md)|[Ссылки](/javascript/api/@azure/keyvault-keys/)<br>[Краткое руководство](../keys/quick-create-node.md)|
 
 **Интерфейсы API и пакеты SDK для сертификатов**
 
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)|
+|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)<br>[Краткое руководство](../certificates/quick-create-net.md)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)<br>[Краткое руководство](../certificates/quick-create-java.md)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)<br>[Краткое руководство](../certificates/quick-create-node.md)|
 
 **Секреты API и пакеты SDK**
 
@@ -119,7 +123,7 @@ Key Vault использует проверку подлинности Azure AD,
 - [Доступ к хранилищу ключей под защитой брандмауэра](access-behind-firewall.md). Для доступа к хранилищу ключей необходимо, чтобы клиентское приложение имело доступ к нескольким конечным точкам, требуемым для различных функций.
 - Сведения о развертывании сертификатов на виртуальных машинах из Key Vault — [Windows](../../virtual-machines/extensions/key-vault-windows.md), [Linux](../../virtual-machines/extensions/key-vault-linux.md) — облачное приложение, работающее на виртуальной машине в Azure, нуждается в сертификате. Как получить этот сертификат для виртуальной машины?
 - [Развертывание сертификата веб-приложения Azure через Key Vault](../../app-service/configure-ssl-certificate.md#import-a-certificate-from-key-vault)
-- Назначение политики доступа (портал[CLI](assign-access-policy-cli.md)  |  [PowerShell](assign-access-policy-powershell.md)  |  [Portal](assign-access-policy-portal.md)). 
+- Назначение политики доступа (портал[CLI](assign-access-policy-cli.md)  |  [PowerShell](assign-access-policy-powershell.md)  |  [](assign-access-policy-portal.md)). 
 - В разделе [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](./key-vault-recovery.md) описывается использование и жизненный цикл хранилища ключей, а также различных объектов хранилища ключей с возможностью обратимого удаления.
 - [Передача безопасных значений (например, паролей) во время развертывания](../../azure-resource-manager/templates/key-vault-parameter.md) — Если в процессе развертывания в качестве параметра необходимо передать безопасное значение (например, пароль), его можно сохранить как секретный код в хранилище ключей Azure и вставить ссылку на это значение в другие шаблоны Resource Manager.
 
