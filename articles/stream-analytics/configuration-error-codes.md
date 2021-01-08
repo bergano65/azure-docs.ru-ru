@@ -1,17 +1,17 @@
 ---
 title: Коды ошибок конфигурации — Azure Stream Analytics
 description: Устранение неполадок с Azure Stream Analytics, используя коды ошибок конфигурации.
-ms.author: mamccrea
-author: mamccrea
+ms.author: sidram
+author: sidramadoss
 ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.service: stream-analytics
-ms.openlocfilehash: 80179506c133de92b56d476c9aa99d55c3e3bbd9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 6137ceeb0d86b1531adab910175ddbc4722ef858
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305801"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019522"
 ---
 # <a name="azure-stream-analytics-configuration-error-codes"></a>Коды ошибок данных в Azure Stream Analytics
 
@@ -94,7 +94,7 @@ ms.locfileid: "93305801"
 ## <a name="sqldwoutputinvalidserviceedition"></a>SQLDWOutputInvalidServiceEdition
 
 * **Причина.** База данных SQL не поддерживается.
-* **Рекомендация** : используйте выделенный пул SQL.
+* **Рекомендация**: используйте выделенный пул SQL.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 09/29/2020
+ms.date: 12/14/2020
 ms.author: duau
-ms.openlocfilehash: 56638f14565f76b0a2fc252b81dba3dae9e53dd8
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: acbd5c3aa88c2c8c14407ebda0c42d228aa6c9e3
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289445"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018944"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Создание ExpressRoute Direct с помощью портал Azure
 
@@ -21,7 +21,14 @@ ms.locfileid: "93289445"
 
 ## <a name="before-you-begin"></a><a name="before"></a>Перед началом
 
-Убедитесь, что поставщик ресурсов **Microsoft. Network** зарегистрирован в вашей подписке. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов.
+Прежде чем использовать ExpressRoute Direct, сначала необходимо зарегистрировать подписку. Чтобы подписаться, отправьте электронное письмо на адрес <ExpressRouteDirect@microsoft.com>, указав идентификатор подписки и следующие сведения:
+
+* задачи, которые необходимо выполнять с помощью **ExpressRoute Direct**;
+* настройки местоположения — полный список всех расположений см. в разделе [Партнеры и одноранговые расположения ExpressRoute](expressroute-locations-providers.md);
+* временную шкалу для реализации;
+* другие вопросы.
+
+После регистрации убедитесь, что поставщик ресурсов **Microsoft. Network** зарегистрирован в вашей подписке. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов.
 
 1. Получите доступ к параметрам подписки, как описано в разделе [поставщики и типы ресурсов Azure](../azure-resource-manager/management/resource-providers-and-types.md).
 1. В подписке для **поставщиков ресурсов** убедитесь, что поставщик **Microsoft. Network** отображает **зарегистрированное** состояние. Если поставщик ресурсов Microsoft. Network отсутствует в списке зарегистрированных поставщиков, добавьте его.
@@ -30,7 +37,7 @@ ms.locfileid: "93289445"
 
 1. В меню [портал Azure](https://portal.azure.com) или на **домашней** странице выберите **создать ресурс**.
 
-1. На **новой** странице в **поле _Поиск в Marketplace_*_ введите _* ExpressRoute Direct** , а затем нажмите клавишу **Ввод** , чтобы получить результаты поиска.
+1. На **новой** странице в **поле _Поиск в Marketplace_*_ введите _* ExpressRoute Direct**, а затем нажмите клавишу **Ввод** , чтобы получить результаты поиска.
 
 1. В результатах выберите **ExpressRoute Direct**.
 
@@ -43,7 +50,7 @@ ms.locfileid: "93289445"
     * **Подписка**. Подписка Azure, которую вы хотите использовать для создания нового канала ExpressRoute Direct. Ресурс ExpressRoute Direct и каналы ExpressRoute должны находиться в одной подписке.
     * **Группа ресурсов**. Группа ресурсов Azure, в которой будет создан новый прямой ресурс ExpressRoute. Создайте группу ресурсов, если у вас нет существующей группы ресурсов.
     * **Регион**. Общедоступный регион Azure, в котором будет создан ресурс.
-    * **Имя** : имя нового прямого ресурса ExpressRoute.
+    * **Имя**: имя нового прямого ресурса ExpressRoute.
 
 1. Затем заполните поля на странице **Конфигурация** .
 
@@ -77,7 +84,7 @@ ms.locfileid: "93289445"
 
     :::image type="content" source="./media/how-to-expressroute-direct-portal/link.png" alt-text="Link 1" lightbox="./media/how-to-expressroute-direct-portal/link-expand.png":::
 
-1. Переключите параметр **состояния администратора** в значение **включено** , а затем нажмите кнопку **сохранить**.
+1. Переключите параметр **состояния администратора** в значение **включено**, а затем нажмите кнопку **сохранить**.
 
     :::image type="content" source="./media/how-to-expressroute-direct-portal/state.png" alt-text="Состояние администратора":::
 
@@ -99,7 +106,7 @@ ms.locfileid: "93289445"
 
 Следующие шаги помогут создать канал ExpressRoute из потока операций ExpressRoute Direct. Если вы бы хотели, вы также можете создать канал с помощью потока операций по стандартному каналу, хотя в этом случае нет никаких преимуществ использования обычных действий потока операций для этой конфигурации. См. раздел [Создание и изменение канала ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md).
 
-1. В разделе **Параметры** прямого подключения к ExpressRoute выберите **каналы** , а затем щелкните **+ добавить**. 
+1. В разделе **Параметры** прямого подключения к ExpressRoute выберите **каналы**, а затем щелкните **+ добавить**. 
 
     :::image type="content" source="./media/how-to-expressroute-direct-portal/add.png" alt-text="На снимке экрана показаны параметры ExpressRoute с выбранными каналами и добавлены выделенными." lightbox="./media/how-to-expressroute-direct-portal/add-expand.png":::
 

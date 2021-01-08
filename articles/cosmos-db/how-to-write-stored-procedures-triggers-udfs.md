@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 18cedad34a6ca7d9a0ba18cd01c082f2878380a8
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 7938920459654bd59620ad0992f3a13db85ff4fb
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339824"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019027"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Azure Cosmos DB обеспечивает встроенное в язык транзакционное выполнение JavaScript, которое позволяет писать **хранимые процедуры** , **триггеры** и **определяемые пользователем функции**. При использовании API SQL в Azure Cosmos DB можно определить хранимые процедуры, триггеры и определяемые пользователем функции на языке JavaScript. Вы можете написать свою логику на JavaScript и выполнить ее в ядре СУБД. Вы можете создавать и выполнять триггеры, хранимые процедуры и определяемые пользователем функции с помощью [портала Azure](https://portal.azure.com/), [API запросов с интегрированным языком JavaScript в Azure Cosmos DB](javascript-query-api.md) и [клиентских пакетов SDK API SQL в Cosmos DB](sql-api-dotnet-samples.md). 
+Azure Cosmos DB обеспечивает встроенное в язык транзакционное выполнение JavaScript, которое позволяет писать **хранимые процедуры**, **триггеры** и **определяемые пользователем функции**. При использовании API SQL в Azure Cosmos DB можно определить хранимые процедуры, триггеры и определяемые пользователем функции на языке JavaScript. Вы можете написать свою логику на JavaScript и выполнить ее в ядре СУБД. Вы можете создавать и выполнять триггеры, хранимые процедуры и определяемые пользователем функции с помощью [портала Azure](https://portal.azure.com/), [API запросов с интегрированным языком JavaScript в Azure Cosmos DB](javascript-query-api.md) и [клиентских пакетов SDK API SQL в Cosmos DB](sql-api-dotnet-samples.md). 
 
 Чтобы вызвать хранимую процедуру, триггер и определяемую пользователем функцию, вам необходимо зарегистрировать ее. Дополнительные сведения см. в статье о том, как [зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-use-stored-procedures-triggers-udfs.md).
 
@@ -284,7 +284,7 @@ function async_sample() {
 
 ## <a name="how-to-write-triggers"></a><a id="triggers"></a>Как записать триггеры
 
-Azure Cosmos DB поддерживает триггеры предварительного и последующего выполнения. Триггеры предварительного выполнения выполняются до изменения элемента базы данных, а триггеры последующего — после изменения элемента базы данных.
+Azure Cosmos DB поддерживает триггеры предварительного и последующего выполнения. Перед изменением элемента базы данных и после изменения элемента базы данных выполняются предварительные триггеры. Триггеры не являются автоматическими. Они должны быть указаны для каждой операции базы данных в том месте, где они должны быть выполнены.
 
 ### <a name="pre-triggers"></a><a id="pre-triggers"></a>Предварительные триггеры
 
@@ -388,7 +388,7 @@ function tax(income) {
 
 Примеры регистрации и использования определяемой пользователем функции см. в разделе о [работе с такой функцией](how-to-use-stored-procedures-triggers-udfs.md#udfs).
 
-## <a name="logging"></a>Logging 
+## <a name="logging"></a>Ведение журнала 
 
 При использовании хранимой процедуры, триггеров или определяемых пользователем функций можно регистрировать шаги с помощью `console.log()` команды. Эта команда повлияет на строку для отладки, если `EnableScriptLogging` для задано значение true, как показано в следующем примере:
 
@@ -399,7 +399,7 @@ new RequestOptions { EnableScriptLogging = true } );
 Console.WriteLine(response.ScriptLog);
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как записать или использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 

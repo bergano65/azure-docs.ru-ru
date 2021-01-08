@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/22/2017
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 9014f24918013872ce102d094f62fd5703594ddc
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a5db1ac9c70429d4b6a0b690de1b29c3656b3cc8
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961879"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016717"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
 
@@ -87,9 +87,9 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | PlannedMaintenance |  Выполняется обслуживание экземпляра шлюза.  |Нет|
 | UserDrivenUpdate | Идет обновление, инициированное пользователем. Это может быть операция изменения размера. | Нет |
 | VipUnResponsive | Не удается связаться с первичным экземпляром шлюза. Это происходит при сбое пробы работоспособности. | Нет |
-| PlatformInActive | Существует проблема с платформой. | Нет|
-| ServiceNotRunning | Базовая служба не выполняется. | Нет|
-| NoConnectionsFoundForGateway | У шлюза нет подключений. Это всего лишь предупреждение.| Нет|
+| PlatformInActive | Существует проблема с платформой. | нет|
+| ServiceNotRunning | Базовая служба не выполняется. | нет|
+| NoConnectionsFoundForGateway | У шлюза нет подключений. Это всего лишь предупреждение.| нет|
 | ConnectionsNotConnected | Ни одно из подключений не установлено. Это всего лишь предупреждение.| Да|
 | GatewayCPUUsageExceeded | Текущее использование ЦП шлюза превышает 95 %. | Да |
 
@@ -101,9 +101,9 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | GatewayNotFound | Не удается найти шлюз или шлюз не подготовлен. |Нет|
 | PlannedMaintenance | Выполняется обслуживание экземпляра шлюза.  |Нет|
 | UserDrivenUpdate | Идет обновление, инициированное пользователем. Это может быть операция изменения размера.  | Нет |
-| VipUnResponsive | Не удается связаться с первичным экземпляром шлюза. Это происходит при сбое пробы работоспособности. | Нет |
-| ConnectionEntityNotFound | Отсутствует конфигурация подключения. | Нет |
-| ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное". |Нет|
+| VipUnResponsive | Не удается связаться с первичным экземпляром шлюза. Это происходит при сбое пробы работоспособности. | нет |
+| ConnectionEntityNotFound | Отсутствует конфигурация подключения. | нет |
+| ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное". |нет|
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
 | ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Да|
 | Аутентификация | Несоответствие предварительного ключа. | Да|

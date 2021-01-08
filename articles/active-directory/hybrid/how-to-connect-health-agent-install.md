@@ -3,7 +3,7 @@ title: Установите агенты работоспособности Conn
 description: В этой статье Azure AD Connect Health описывается установка агента для службы федерации Active Directory (AD FS) (AD FS) и для синхронизации.
 services: active-directory
 documentationcenter: ''
-author: zhiweiwangmsft
+author: billmath
 manager: daveba
 editor: curtand
 ms.assetid: 1cc8ae90-607d-4925-9c30-6770a4bd1b4e
@@ -17,12 +17,12 @@ ms.topic: how-to
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ff6f96c62936d8bf66b908060b91f8cad7989763
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 57362aa84886d7b7d764617ce5a43ca2393bed52
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97962601"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018247"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 

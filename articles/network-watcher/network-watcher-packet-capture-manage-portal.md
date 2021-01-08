@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/10/2018
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 099ead37b8d6b46b767ef59ff24a7e7ff9dc9e3c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d4112bd1d632ec21e2d8cb565027277eeb85452d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966451"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018265"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-portal"></a>Управление записью пакетов с помощью Наблюдателя за сетями Azure на портале Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "94966451"
 
 В этой статье описано, как запустить, остановить, скачать и удалить запись пакетов. 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для записи пакетов требуется следующее исходящее подключение TCP:
 - к выбранной учетной записи хранения через порт 443
@@ -100,7 +100,7 @@ https://{storageAccountName}.blob.core.windows.net/network-watcher-logs/subscrip
 
 Если при создании записи был выбран вариант **Файл**, можно просмотреть или скачать этот файл из папки, настроенной на виртуальной машине.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 - Чтобы определить, разрешен ли определенный входящий или исходящий трафик на виртуальной машине, см. статью о [диагностике проблем фильтрации трафика виртуальной машины](diagnose-vm-network-traffic-filtering-problem.md).

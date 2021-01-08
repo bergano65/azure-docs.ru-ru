@@ -3,16 +3,15 @@ title: Вертикальное и горизонтальное масштаби
 description: В этой статье объясняется, как масштабировать задание Stream Analytics с помощью секционирования входных данных, настройки запроса и определения единиц потоковой передачи.
 author: JSeb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/22/2017
-ms.openlocfilehash: c12c4b9f4a3757a3974e4aff7699d0265bfd7840
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e3d4fd6b6b83681284278d10409a1c16394db31f
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124379"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018689"
 ---
 # <a name="scale-an-azure-stream-analytics-job-to-increase-throughput"></a>Масштабирование задания Azure Stream Analytics для повышения пропускной способности базы данных
 В этой статье описано, как настроить запрос Stream Analytics для увеличения пропускной способности заданий Streaming Analytics. Руководство ниже можно использовать для масштабирования заданий, чтобы обрабатывать большую нагрузку и использовать больше ресурсов системы (таких как пропускная способность, ресурсы ЦП, память).

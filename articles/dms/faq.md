@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: bf6e61ef3dfb1c50166cf17168b4deeb21e958d7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 200753c6458698d515b02252933e4fdf6d88df55
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94962915"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019097"
 ---
 # <a name="faq-about-using-azure-database-migration-service"></a>Часто задаваемые вопросы об использовании Azure Database Migration Service
 
@@ -50,6 +50,9 @@ Azure Database Migration Service является предпочтительны
 
 **Формате. Как Azure Database Migration Service сравнить с предложением службы "миграция Azure"?**
 Служба "миграция Azure" помогает выполнить миграцию локальных виртуальных машин в Azure IaaS. Оценивается пригодность для миграции, показатели производительности, на основе которых определяется требуемый размер, и расходы на работу локальных виртуальных машин в Azure. Служба "Миграция Azure" подходит для переноса рабочих нагрузок на локальных виртуальных машинах на виртуальные машины IaaS Azure методом lift-and-shift. Однако, в отличие от Azure Database Migration Service, служба "миграция Azure" не является специализированным предложением службы переноса баз данных для платформ реляционных баз данных PaaS Azure, таких как база данных SQL Azure или Azure SQL Управляемый экземпляр.
+
+**Формате. Database Migration Service ли хранить данные клиента?**
+Нет. Database Migration Service не хранит данные клиента.
 
 ## <a name="setup"></a>Настройка
 
@@ -117,6 +120,6 @@ Azure Database Migration Service является предпочтительны
 * используйте ценовую категорию общего назначения с несколькими ЦП при создании экземпляра службы, чтобы обеспечить параллелизацию и ускоренную передачу данных благодаря использованию нескольких ЦП;
 * временно увеличьте масштаб целевого экземпляра Базы данных SQL Azure до SKU уровня "Премиум" во время операции переноса данных, чтобы уменьшить регулирование количества запросов базы данных SQL Azure, которое может повлиять на действия передачи данных при использовании номеров SKU низкого уровня.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о службе Azure Database Migration Service и доступности по регионам см. в статье [Что такое Azure Database Migration Service](dms-overview.md).

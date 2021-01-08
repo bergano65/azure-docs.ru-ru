@@ -3,7 +3,7 @@ title: Операции Azure Active Directory Connect Health
 description: В этой статье описаны дополнительные операции, которые можно выполнить после развертывания Azure AD Connect Health.
 services: active-directory
 documentationcenter: ''
-author: zhiweiwangmsft
+author: billmath
 manager: daveba
 ms.assetid: 86cc3840-60fb-43f9-8b2a-8598a9df5c94
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91b7bd6d05ee0b992ee166b9acb13aff2e605a2c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 99ad0963677b9ef536deacc2122130186afe0726
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961011"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016972"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -136,7 +136,7 @@ Azure AD Connect Health поддерживает управление досту
 2. Выберите **Добавить**.
 3. В области **Выбор роли** выберите роль (например, **Владелец**).<br>
    ![Снимок экрана Azure AD Connect Health и меню настройки Azure RBAC](./media/how-to-connect-health-operations/RBAC_add.png)
-4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Щелкните **Выбрать**.
+4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Нажмите кнопку **Выбрать**.
    ![Снимок экрана Azure AD Connect Health и списка ролей Azure](./media/how-to-connect-health-operations/RBAC_select_users.png)
 5. Нажмите кнопку **ОК**.<br>
 6. После назначения ролей пользователи и группы отобразятся в списке.<br>
@@ -166,7 +166,7 @@ Azure AD Connect Health поддерживает управление досту
 
 [//]: # (Конец раздела RBAC)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Azure AD Connect Health](./whatis-azure-ad-connect.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)

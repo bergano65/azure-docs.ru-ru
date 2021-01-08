@@ -5,12 +5,12 @@ ms.assetid: 96cf87b9-8db6-41a8-863a-abb828e3d06d
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: e37a14b2634395d7f31565d6d5a6f6ec96a4a2f1
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 5c9612547fcfed8e583f5b2fbcfe0bddd5dc412c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954535"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019114"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Создание первой функции на портале Azure
 
@@ -61,13 +61,13 @@ ms.locfileid: "97954535"
 
     ![Копирование URL-адреса функции с портала Azure](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
 
-1. Вставьте URL-адрес функции в адресную строку браузера. Добавьте значение строки запроса `&name=<your_name>` в конец этого URL-адреса и нажмите клавишу Enter, чтобы выполнить этот запрос. 
+1. Вставьте URL-адрес функции в адресную строку браузера. Добавьте значение строки запроса `?name=<your_name>` в конец этого URL-адреса и нажмите клавишу Enter, чтобы выполнить этот запрос. 
 
     Следующий пример демонстрирует ответ в браузере:
 
     ![Ответ функции в браузере.](./media/functions-create-first-azure-function/function-app-browser-testing.png)
 
-    URL-адрес запроса включает ключ, который по умолчанию необходим для доступа к функции по протоколу HTTP.
+    Если URL-адрес запроса содержит [ключ доступа](functions-bindings-http-webhook-trigger.md#authorization-keys) ( `?code=...` ), это означает, что при создании функции вы выбираете **функцию** , а не **Анонимный** уровень доступа. В этом случае вместо этого следует добавить `&name=<your_name>` .
 
 1. При выполнении функции сведения о трассировке записываются в журналы. Чтобы просмотреть выходные данные трассировки, вернитесь на страницу **Code + Test** (Код + Тест) на портале и разверните список **Журналы** в нижней части страницы.
 

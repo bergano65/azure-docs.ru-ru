@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 7fa13a328a55b0e9eaa546e70bf0711f4f011cf1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 10fb55cc133d5d6b39ca2809474ff20dfe500708
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173436"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017805"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Использование Microsoft Authenticator или Корпоративный портал Intune в приложениях Xamarin
 
@@ -171,7 +171,7 @@ MSAL использует, `–canOpenURL:` чтобы проверить, ус�
 $"msauth.{BundleId}://auth"
 ```
 
-Пример:
+Приведем пример:
 
 ```csharp
 public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth";
@@ -183,7 +183,7 @@ public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth";
 
 **Создание URI перенаправления:**
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Выберите **Azure Active Directory**  >  **Регистрация приложений** > зарегистрированное приложение
 1. Выбор **проверки подлинности**  >  **Добавление платформы**  >  **iOS/macOS**
 1. Введите идентификатор пакета и нажмите кнопку **настроить**.
@@ -315,7 +315,7 @@ msauth://com.microsoft.xforms.testApp/hgbUYHVBYUTvuvT&Y6tr554365466=
 
 Например, если у вас есть URI перенаправления для `msauth://com.microsoft.xforms.testApp/hgbUYHVBYUTvuvT&Y6tr554365466=` , манифест должен выглядеть как следующий фрагмент кода XML.
 
-Требуется прямая косая черта ( `/` ) перед сигнатурой в `android:path` значении. **required**
+Требуется прямая косая черта ( `/` ) перед сигнатурой в `android:path` значении. 
 
 ```xml
 <!-- NOTE the SLASH (required) that prefixes the signature value in the path attribute.
