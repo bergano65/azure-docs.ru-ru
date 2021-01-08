@@ -7,12 +7,12 @@ ms.topic: how-to
 author: github-2407
 ms.author: krsh
 ms.date: 10/15/2020
-ms.openlocfilehash: 36eebb218ed2b2d9a48cf7d970896115af5cf6f8
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: a9698981b1a658664bfc14886628bbfd0a4a64d2
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424862"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976934"
 ---
 # <a name="test-a-virtual-machine-image"></a>Тестирование образа виртуальной машины
 
@@ -36,141 +36,141 @@ ms.locfileid: "92424862"
 3. На домашней странице выберите **создать ресурс**, выполните поиск по запросу "развертывание шаблона" и выберите **создать**.
 4. Выберите **Создать собственный шаблон в редакторе**.
 
-    :::image type="content" source="media/vm/template-deployment.png" alt-text="Отображает выбор шаблона.&quot;:::
+    :::image type="content" source="media/vm/template-deployment.png" alt-text="Отображает выбор шаблона.":::
 
 5. Вставьте следующий шаблон JSON в редактор и нажмите кнопку **сохранить**.
 
 ```JSON
 {
-    &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#&quot;,
-    &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
-    &quot;parameters&quot;: {
-        &quot;userStorageAccountName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "userStorageAccountName": {
+            "type": "String"
         },
-        &quot;userStorageContainerName&quot;: {
-            &quot;defaultValue&quot;: &quot;vhds&quot;,
-            &quot;type&quot;: &quot;String&quot;
+        "userStorageContainerName": {
+            "defaultValue": "vhds",
+            "type": "String"
         },
-        &quot;dnsNameForPublicIP&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "dnsNameForPublicIP": {
+            "type": "String"
         },
-        &quot;adminUserName&quot;: {
-            &quot;defaultValue&quot;: &quot;isv&quot;,
-            &quot;type&quot;: &quot;String&quot;
+        "adminUserName": {
+            "defaultValue": "isv",
+            "type": "String"
         },
-        &quot;adminPassword&quot;: {
-            &quot;defaultValue&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;SecureString&quot;
+        "adminPassword": {
+            "defaultValue": "",
+            "type": "SecureString"
         },
-        &quot;osType&quot;: {
-            &quot;defaultValue&quot;: &quot;windows&quot;,
-            &quot;allowedValues&quot;: [
-                &quot;windows&quot;,
-                &quot;linux&quot;
+        "osType": {
+            "defaultValue": "windows",
+            "allowedValues": [
+                "windows",
+                "linux"
             ],
-            &quot;type&quot;: &quot;String&quot;
+            "type": "String"
         },
-        &quot;subscriptionId&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "subscriptionId": {
+            "type": "String"
         },
-        &quot;location&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "location": {
+            "type": "String"
         },
-        &quot;vmSize&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "vmSize": {
+            "type": "String"
         },
-        &quot;publicIPAddressName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "publicIPAddressName": {
+            "type": "String"
         },
-        &quot;vmName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "vmName": {
+            "type": "String"
         },
-        &quot;virtualNetworkName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "virtualNetworkName": {
+            "type": "String"
         },
-        &quot;nicName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
+        "nicName": {
+            "type": "String"
         },
-        &quot;vhdUrl&quot;: {
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;metadata&quot;: {
-                &quot;description&quot;: &quot;VHD Url...&quot;
+        "vhdUrl": {
+            "type": "String",
+            "metadata": {
+                "description": "VHD Url..."
             }
         }
     },
-    &quot;variables&quot;: {
-        &quot;addressPrefix&quot;: &quot;10.0.0.0/16&quot;,
-        &quot;subnet1Name&quot;: &quot;Subnet-1&quot;,
-        &quot;subnet2Name&quot;: &quot;Subnet-2&quot;,
-        &quot;subnet1Prefix&quot;: &quot;10.0.0.0/24&quot;,
-        &quot;subnet2Prefix&quot;: &quot;10.0.1.0/24&quot;,
-        &quot;publicIPAddressType&quot;: &quot;Dynamic&quot;,
-        &quot;vnetID&quot;: &quot;[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]&quot;,
-        &quot;subnet1Ref&quot;: &quot;[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]&quot;,
-        &quot;hostDNSNameScriptArgument&quot;: &quot;[concat(parameters('dnsNameForPublicIP'),'.',parameters('location'),'.cloudapp.azure.com')]&quot;,
-        &quot;osDiskVhdName&quot;: &quot;[concat('http://',parameters('userStorageAccountName'),'.blob.core.windows.net/',parameters('userStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]&quot;
+    "variables": {
+        "addressPrefix": "10.0.0.0/16",
+        "subnet1Name": "Subnet-1",
+        "subnet2Name": "Subnet-2",
+        "subnet1Prefix": "10.0.0.0/24",
+        "subnet2Prefix": "10.0.1.0/24",
+        "publicIPAddressType": "Dynamic",
+        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
+        "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]",
+        "hostDNSNameScriptArgument": "[concat(parameters('dnsNameForPublicIP'),'.',parameters('location'),'.cloudapp.azure.com')]",
+        "osDiskVhdName": "[concat('http://',parameters('userStorageAccountName'),'.blob.core.windows.net/',parameters('userStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]"
     },
-    &quot;resources&quot;: [
+    "resources": [
         {
-            &quot;type&quot;: &quot;Microsoft.Network/publicIPAddresses&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('publicIPAddressName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;publicIPAllocationMethod&quot;: &quot;[variables('publicIPAddressType')]&quot;,
-                &quot;dnsSettings&quot;: {
-                    &quot;domainNameLabel&quot;: &quot;[parameters('dnsNameForPublicIP')]&quot;
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2015-06-15",
+            "name": "[parameters('publicIPAddressName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('dnsNameForPublicIP')]"
                 }
             }
         },
         {
-            &quot;type&quot;: &quot;Microsoft.Network/virtualNetworks&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('virtualNetworkName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;addressSpace&quot;: {
-                    &quot;addressPrefixes&quot;: [
-                        &quot;[variables('addressPrefix')]&quot;
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2015-06-15",
+            "name": "[parameters('virtualNetworkName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[variables('addressPrefix')]"
                     ]
                 },
-                &quot;subnets&quot;: [
+                "subnets": [
                     {
-                        &quot;name&quot;: &quot;[variables('subnet1Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet1Prefix')]&quot;
+                        "name": "[variables('subnet1Name')]",
+                        "properties": {
+                            "addressPrefix": "[variables('subnet1Prefix')]"
                         }
                     },
                     {
-                        &quot;name&quot;: &quot;[variables('subnet2Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet2Prefix')]&quot;
+                        "name": "[variables('subnet2Name')]",
+                        "properties": {
+                            "addressPrefix": "[variables('subnet2Prefix')]"
                         }
                     }
                 ]
             }
         },
         {
-            &quot;type&quot;: &quot;Microsoft.Network/networkInterfaces&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('nicName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]&quot;,
-                &quot;[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]&quot;
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2015-06-15",
+            "name": "[parameters('nicName')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]",
+                "[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
             ],
-            &quot;properties&quot;: {
-                &quot;ipConfigurations&quot;: [
+            "properties": {
+                "ipConfigurations": [
                     {
-                        &quot;name&quot;: &quot;ipconfig1&quot;,
-                        &quot;properties&quot;: {
-                            &quot;privateIPAllocationMethod&quot;: &quot;Dynamic&quot;,
-                            &quot;publicIPAddress&quot;: {
-                                &quot;id&quot;: &quot;[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]&quot;
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]"
                             },
-                            &quot;subnet&quot;: {
-                                &quot;id&quot;: &quot;[variables('subnet1Ref')]&quot;
+                            "subnet": {
+                                "id": "[variables('subnet1Ref')]"
                             }
                         }
                     }
@@ -178,64 +178,42 @@ ms.locfileid: "92424862"
             }
         },
         {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('vmName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/networkInterfaces/', parameters('nicName'))]&quot;
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2015-06-15",
+            "name": "[parameters('vmName')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('nicName'))]"
             ],
-            &quot;properties&quot;: {
-                &quot;hardwareProfile&quot;: {
-                    &quot;vmSize&quot;: &quot;[parameters('vmSize')]&quot;
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
                 },
-                &quot;osProfile&quot;: {
-                    &quot;computername&quot;: &quot;[parameters('vmName')]&quot;,
-                    &quot;adminUsername&quot;: &quot;[parameters('adminUsername')]&quot;,
-                    &quot;adminPassword&quot;: &quot;[parameters('adminPassword')]&quot;
+                "osProfile": {
+                    "computername": "[parameters('vmName')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]"
                 },
-                &quot;storageProfile&quot;: {
-                    &quot;osDisk&quot;: {
-                        &quot;name&quot;: &quot;[concat(parameters('vmName'),'-osDisk')]&quot;,
-                        &quot;osType&quot;: &quot;[parameters('osType')]&quot;,
-                        &quot;caching&quot;: &quot;ReadWrite&quot;,
-                        &quot;image&quot;: {
-                            &quot;uri&quot;: &quot;[parameters('vhdUrl')]&quot;
+                "storageProfile": {
+                    "osDisk": {
+                        "name": "[concat(parameters('vmName'),'-osDisk')]",
+                        "osType": "[parameters('osType')]",
+                        "caching": "ReadWrite",
+                        "image": {
+                            "uri": "[parameters('vhdUrl')]"
                         },
-                        &quot;vhd&quot;: {
-                            &quot;uri&quot;: &quot;[variables('osDiskVhdName')]&quot;
+                        "vhd": {
+                            "uri": "[variables('osDiskVhdName')]"
                         },
-                        &quot;createOption&quot;: &quot;FromImage&quot;
+                        "createOption": "FromImage"
                     }
                 },
-                &quot;networkProfile&quot;: {
-                    &quot;networkInterfaces&quot;: [
+                "networkProfile": {
+                    "networkInterfaces": [
                         {
-                            &quot;id&quot;: &quot;[resourceId('Microsoft.Network/networkInterfaces',parameters('nicName'))]&quot;
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('nicName'))]"
                         }
                     ]
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines/extensions&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[concat(parameters('vmName'),'/WinRMCustomScriptExtension')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;publisher&quot;: &quot;Microsoft.Compute&quot;,
-                &quot;type&quot;: &quot;CustomScriptExtension&quot;,
-                &quot;typeHandlerVersion&quot;: &quot;1.4&quot;,
-                &quot;settings&quot;: {
-                    &quot;fileUris&quot;: [
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/ConfigureWinRM.ps1&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/makecert.exe&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/winrmconf.cmd&quot;
-                    ],
-                    &quot;commandToExecute&quot;: &quot;[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]&quot;
                 }
             }
         }
@@ -266,7 +244,7 @@ ms.locfileid: "92424862"
 
 7. После ввода этих значений выберите **Покупка**.
 
-Azure начнет развертывание. Будет создана виртуальная машина с указанным неуправляемым VHD в определенном пути к учетной записи хранения. На портале Azure можно отслеживать ход выполнения, щелкнув **Виртуальные машины** в левой части. При создании виртуальной машины состояние &quot;Запускается" изменится на "Выполняется".
+Azure начнет развертывание. Будет создана виртуальная машина с указанным неуправляемым VHD в определенном пути к учетной записи хранения. На портале Azure можно отслеживать ход выполнения, щелкнув **Виртуальные машины** в левой части. При создании виртуальной машины состояние "Запускается" изменится на "Выполняется".
 
 #### <a name="for-generation-2-vm-deployment-use-this-template"></a>Для развертывания виртуальных машин поколения 2 Используйте следующий шаблон:
 
@@ -578,475 +556,15 @@ New-AzResourceGroupDeployment -Name "dplisvvm$postfix" -ResourceGroupName "$rgNa
 #### <a name="connect-the-certification-tool-to-a-vm-image"></a>Подключение средства сертификации к образу виртуальной машины
 
 1. Выберите режим SSH Authentication (Аутентификация по SSH): Аутентификация по паролю или по файлу ключа.
-2. Если используется проверка подлинности на основе пароля, введите значения для **DNS-имени виртуальной машины**, **имени пользователя**и **пароля**. Вы также можете изменить указанный по умолчанию SSH Port (Порт SSH).
+2. Если используется проверка подлинности на основе пароля, введите значения для **DNS-имени виртуальной машины**, **имени пользователя** и **пароля**. Вы также можете изменить указанный по умолчанию SSH Port (Порт SSH).
 
-    :::image type="content" source="media/vm/azure-vm-cert-2.png" alt-text="Отображает выбор шаблона.&quot;:::
-
-5. Вставьте следующий шаблон JSON в редактор и нажмите кнопку **сохранить**.
-
-```JSON
-{
-    &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#&quot;,
-    &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
-    &quot;parameters&quot;: {
-        &quot;userStorageAccountName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;userStorageContainerName&quot;: {
-            &quot;defaultValue&quot;: &quot;vhds&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;dnsNameForPublicIP&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminUserName&quot;: {
-            &quot;defaultValue&quot;: &quot;isv&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminPassword&quot;: {
-            &quot;defaultValue&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;SecureString&quot;
-        },
-        &quot;osType&quot;: {
-            &quot;defaultValue&quot;: &quot;windows&quot;,
-            &quot;allowedValues&quot;: [
-                &quot;windows&quot;,
-                &quot;linux&quot;
-            ],
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;subscriptionId&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;location&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmSize&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;publicIPAddressName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;virtualNetworkName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;nicName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vhdUrl&quot;: {
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;metadata&quot;: {
-                &quot;description&quot;: &quot;VHD Url...&quot;
-            }
-        }
-    },
-    &quot;variables&quot;: {
-        &quot;addressPrefix&quot;: &quot;10.0.0.0/16&quot;,
-        &quot;subnet1Name&quot;: &quot;Subnet-1&quot;,
-        &quot;subnet2Name&quot;: &quot;Subnet-2&quot;,
-        &quot;subnet1Prefix&quot;: &quot;10.0.0.0/24&quot;,
-        &quot;subnet2Prefix&quot;: &quot;10.0.1.0/24&quot;,
-        &quot;publicIPAddressType&quot;: &quot;Dynamic&quot;,
-        &quot;vnetID&quot;: &quot;[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]&quot;,
-        &quot;subnet1Ref&quot;: &quot;[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]&quot;,
-        &quot;hostDNSNameScriptArgument&quot;: &quot;[concat(parameters('dnsNameForPublicIP'),'.',parameters('location'),'.cloudapp.azure.com')]&quot;,
-        &quot;osDiskVhdName&quot;: &quot;[concat('http://',parameters('userStorageAccountName'),'.blob.core.windows.net/',parameters('userStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]&quot;
-    },
-    &quot;resources&quot;: [
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/publicIPAddresses&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('publicIPAddressName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;publicIPAllocationMethod&quot;: &quot;[variables('publicIPAddressType')]&quot;,
-                &quot;dnsSettings&quot;: {
-                    &quot;domainNameLabel&quot;: &quot;[parameters('dnsNameForPublicIP')]&quot;
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/virtualNetworks&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('virtualNetworkName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;addressSpace&quot;: {
-                    &quot;addressPrefixes&quot;: [
-                        &quot;[variables('addressPrefix')]&quot;
-                    ]
-                },
-                &quot;subnets&quot;: [
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet1Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet1Prefix')]&quot;
-                        }
-                    },
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet2Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet2Prefix')]&quot;
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/networkInterfaces&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('nicName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]&quot;,
-                &quot;[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;ipConfigurations&quot;: [
-                    {
-                        &quot;name&quot;: &quot;ipconfig1&quot;,
-                        &quot;properties&quot;: {
-                            &quot;privateIPAllocationMethod&quot;: &quot;Dynamic&quot;,
-                            &quot;publicIPAddress&quot;: {
-                                &quot;id&quot;: &quot;[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]&quot;
-                            },
-                            &quot;subnet&quot;: {
-                                &quot;id&quot;: &quot;[variables('subnet1Ref')]&quot;
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('vmName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/networkInterfaces/', parameters('nicName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;hardwareProfile&quot;: {
-                    &quot;vmSize&quot;: &quot;[parameters('vmSize')]&quot;
-                },
-                &quot;osProfile&quot;: {
-                    &quot;computername&quot;: &quot;[parameters('vmName')]&quot;,
-                    &quot;adminUsername&quot;: &quot;[parameters('adminUsername')]&quot;,
-                    &quot;adminPassword&quot;: &quot;[parameters('adminPassword')]&quot;
-                },
-                &quot;storageProfile&quot;: {
-                    &quot;osDisk&quot;: {
-                        &quot;name&quot;: &quot;[concat(parameters('vmName'),'-osDisk')]&quot;,
-                        &quot;osType&quot;: &quot;[parameters('osType')]&quot;,
-                        &quot;caching&quot;: &quot;ReadWrite&quot;,
-                        &quot;image&quot;: {
-                            &quot;uri&quot;: &quot;[parameters('vhdUrl')]&quot;
-                        },
-                        &quot;vhd&quot;: {
-                            &quot;uri&quot;: &quot;[variables('osDiskVhdName')]&quot;
-                        },
-                        &quot;createOption&quot;: &quot;FromImage&quot;
-                    }
-                },
-                &quot;networkProfile&quot;: {
-                    &quot;networkInterfaces&quot;: [
-                        {
-                            &quot;id&quot;: &quot;[resourceId('Microsoft.Network/networkInterfaces',parameters('nicName'))]&quot;
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines/extensions&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[concat(parameters('vmName'),'/WinRMCustomScriptExtension')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;publisher&quot;: &quot;Microsoft.Compute&quot;,
-                &quot;type&quot;: &quot;CustomScriptExtension&quot;,
-                &quot;typeHandlerVersion&quot;: &quot;1.4&quot;,
-                &quot;settings&quot;: {
-                    &quot;fileUris&quot;: [
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/ConfigureWinRM.ps1&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/makecert.exe&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/winrmconf.cmd&quot;
-                    ],
-                    &quot;commandToExecute&quot;: &quot;[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]&quot;
-                }
-            }
-        }
-    ]
-}
-```
-
-<br>
-
-6. Укажите значения параметров на страницах свойств Настраиваемое развертывание.
-
-    | ResourceGroupName | Имя существующей группы ресурсов Azure. Обычно используется та же группа репликации, что и для хранилища ключей. |
-    | --- | --- |
-    | TemplateFile | Полный путь к файлу VHDtoImage.json. |
-    | userStorageAccountName | Имя учетной записи хранения. |
-    | dnsNameForPublicIP | DNS-имя общедоступного IP-адреса в нижнем регистре. |
-    | subscriptionId | Идентификатор подписки Azure. |
-    | Расположение | Стандартное географическое расположение Azure для группы ресурсов. |
-    | vmName | Имя виртуальной машины. |
-    | vhdUrl | Веб-адрес виртуального жесткого диска. |
-    | vmSize | Размер экземпляра виртуальной машины. |
-    | publicIPAddressName | Имя общедоступного IP-адреса. |
-    | virtualNetworkName | Имя виртуальной сети. |
-    | nicName | Имя сетевого адаптера для виртуальной сети. |
-    | adminUserName | Имя пользователя учетной записи администратора. |
-    | adminPassword | Пароль администратора. |
-
-
-7. После ввода этих значений выберите **Покупка**.
-
-Azure начнет развертывание. Будет создана виртуальная машина с указанным неуправляемым VHD в определенном пути к учетной записи хранения. На портале Azure можно отслеживать ход выполнения, щелкнув **Виртуальные машины** в левой части. При создании виртуальной машины состояние &quot;Запускается":::
+    :::image type="content" source="media/vm/azure-vm-cert-2.png" alt-text="Отображает выбор сведений о тесте виртуальной машины.":::
 
 3. При использовании проверки подлинности на основе файла ключа введите значения DNS-имени, имени пользователя и расположение закрытого ключа. Также можно предоставить значение Passphrase (Парольная фраза) или изменить указанный по умолчанию SSH Port (Порт SSH).
 4. Введите полное доменное имя виртуальной машины (например, MyVMName.ClOudapp.net).
 5. Введите **имя пользователя** и **пароль**.
 
-    :::image type="content" source="media/vm/azure-vm-cert-4.png" alt-text="Отображает выбор шаблона.&quot;:::
-
-5. Вставьте следующий шаблон JSON в редактор и нажмите кнопку **сохранить**.
-
-```JSON
-{
-    &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#&quot;,
-    &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
-    &quot;parameters&quot;: {
-        &quot;userStorageAccountName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;userStorageContainerName&quot;: {
-            &quot;defaultValue&quot;: &quot;vhds&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;dnsNameForPublicIP&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminUserName&quot;: {
-            &quot;defaultValue&quot;: &quot;isv&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminPassword&quot;: {
-            &quot;defaultValue&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;SecureString&quot;
-        },
-        &quot;osType&quot;: {
-            &quot;defaultValue&quot;: &quot;windows&quot;,
-            &quot;allowedValues&quot;: [
-                &quot;windows&quot;,
-                &quot;linux&quot;
-            ],
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;subscriptionId&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;location&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmSize&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;publicIPAddressName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;virtualNetworkName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;nicName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vhdUrl&quot;: {
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;metadata&quot;: {
-                &quot;description&quot;: &quot;VHD Url...&quot;
-            }
-        }
-    },
-    &quot;variables&quot;: {
-        &quot;addressPrefix&quot;: &quot;10.0.0.0/16&quot;,
-        &quot;subnet1Name&quot;: &quot;Subnet-1&quot;,
-        &quot;subnet2Name&quot;: &quot;Subnet-2&quot;,
-        &quot;subnet1Prefix&quot;: &quot;10.0.0.0/24&quot;,
-        &quot;subnet2Prefix&quot;: &quot;10.0.1.0/24&quot;,
-        &quot;publicIPAddressType&quot;: &quot;Dynamic&quot;,
-        &quot;vnetID&quot;: &quot;[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]&quot;,
-        &quot;subnet1Ref&quot;: &quot;[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]&quot;,
-        &quot;hostDNSNameScriptArgument&quot;: &quot;[concat(parameters('dnsNameForPublicIP'),'.',parameters('location'),'.cloudapp.azure.com')]&quot;,
-        &quot;osDiskVhdName&quot;: &quot;[concat('http://',parameters('userStorageAccountName'),'.blob.core.windows.net/',parameters('userStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]&quot;
-    },
-    &quot;resources&quot;: [
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/publicIPAddresses&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('publicIPAddressName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;publicIPAllocationMethod&quot;: &quot;[variables('publicIPAddressType')]&quot;,
-                &quot;dnsSettings&quot;: {
-                    &quot;domainNameLabel&quot;: &quot;[parameters('dnsNameForPublicIP')]&quot;
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/virtualNetworks&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('virtualNetworkName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;addressSpace&quot;: {
-                    &quot;addressPrefixes&quot;: [
-                        &quot;[variables('addressPrefix')]&quot;
-                    ]
-                },
-                &quot;subnets&quot;: [
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet1Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet1Prefix')]&quot;
-                        }
-                    },
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet2Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet2Prefix')]&quot;
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/networkInterfaces&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('nicName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]&quot;,
-                &quot;[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;ipConfigurations&quot;: [
-                    {
-                        &quot;name&quot;: &quot;ipconfig1&quot;,
-                        &quot;properties&quot;: {
-                            &quot;privateIPAllocationMethod&quot;: &quot;Dynamic&quot;,
-                            &quot;publicIPAddress&quot;: {
-                                &quot;id&quot;: &quot;[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]&quot;
-                            },
-                            &quot;subnet&quot;: {
-                                &quot;id&quot;: &quot;[variables('subnet1Ref')]&quot;
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('vmName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/networkInterfaces/', parameters('nicName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;hardwareProfile&quot;: {
-                    &quot;vmSize&quot;: &quot;[parameters('vmSize')]&quot;
-                },
-                &quot;osProfile&quot;: {
-                    &quot;computername&quot;: &quot;[parameters('vmName')]&quot;,
-                    &quot;adminUsername&quot;: &quot;[parameters('adminUsername')]&quot;,
-                    &quot;adminPassword&quot;: &quot;[parameters('adminPassword')]&quot;
-                },
-                &quot;storageProfile&quot;: {
-                    &quot;osDisk&quot;: {
-                        &quot;name&quot;: &quot;[concat(parameters('vmName'),'-osDisk')]&quot;,
-                        &quot;osType&quot;: &quot;[parameters('osType')]&quot;,
-                        &quot;caching&quot;: &quot;ReadWrite&quot;,
-                        &quot;image&quot;: {
-                            &quot;uri&quot;: &quot;[parameters('vhdUrl')]&quot;
-                        },
-                        &quot;vhd&quot;: {
-                            &quot;uri&quot;: &quot;[variables('osDiskVhdName')]&quot;
-                        },
-                        &quot;createOption&quot;: &quot;FromImage&quot;
-                    }
-                },
-                &quot;networkProfile&quot;: {
-                    &quot;networkInterfaces&quot;: [
-                        {
-                            &quot;id&quot;: &quot;[resourceId('Microsoft.Network/networkInterfaces',parameters('nicName'))]&quot;
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines/extensions&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[concat(parameters('vmName'),'/WinRMCustomScriptExtension')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;publisher&quot;: &quot;Microsoft.Compute&quot;,
-                &quot;type&quot;: &quot;CustomScriptExtension&quot;,
-                &quot;typeHandlerVersion&quot;: &quot;1.4&quot;,
-                &quot;settings&quot;: {
-                    &quot;fileUris&quot;: [
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/ConfigureWinRM.ps1&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/makecert.exe&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/winrmconf.cmd&quot;
-                    ],
-                    &quot;commandToExecute&quot;: &quot;[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]&quot;
-                }
-            }
-        }
-    ]
-}
-```
-
-<br>
-
-6. Укажите значения параметров на страницах свойств Настраиваемое развертывание.
-
-    | ResourceGroupName | Имя существующей группы ресурсов Azure. Обычно используется та же группа репликации, что и для хранилища ключей. |
-    | --- | --- |
-    | TemplateFile | Полный путь к файлу VHDtoImage.json. |
-    | userStorageAccountName | Имя учетной записи хранения. |
-    | dnsNameForPublicIP | DNS-имя общедоступного IP-адреса в нижнем регистре. |
-    | subscriptionId | Идентификатор подписки Azure. |
-    | Расположение | Стандартное географическое расположение Azure для группы ресурсов. |
-    | vmName | Имя виртуальной машины. |
-    | vhdUrl | Веб-адрес виртуального жесткого диска. |
-    | vmSize | Размер экземпляра виртуальной машины. |
-    | publicIPAddressName | Имя общедоступного IP-адреса. |
-    | virtualNetworkName | Имя виртуальной сети. |
-    | nicName | Имя сетевого адаптера для виртуальной сети. |
-    | adminUserName | Имя пользователя учетной записи администратора. |
-    | adminPassword | Пароль администратора. |
-
-
-7. После ввода этих значений выберите **Покупка**.
-
-Azure начнет развертывание. Будет создана виртуальная машина с указанным неуправляемым VHD в определенном пути к учетной записи хранения. На портале Azure можно отслеживать ход выполнения, щелкнув **Виртуальные машины** в левой части. При создании виртуальной машины состояние &quot;Запускается":::
+    :::image type="content" source="media/vm/azure-vm-cert-4.png" alt-text="Отображает выбор имени пользователя и пароля виртуальной машины.":::
 
 6. Выберите **Далее**.
 
@@ -1167,471 +685,11 @@ $Content = $res | ConvertFrom-Json
 
 **С помощью ключа SSH**:
 
- :::image type="content" source="media/vm/call-api-with-ssh-key.png" alt-text="Отображает выбор шаблона.&quot;:::
-
-5. Вставьте следующий шаблон JSON в редактор и нажмите кнопку **сохранить**.
-
-```JSON
-{
-    &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#&quot;,
-    &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
-    &quot;parameters&quot;: {
-        &quot;userStorageAccountName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;userStorageContainerName&quot;: {
-            &quot;defaultValue&quot;: &quot;vhds&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;dnsNameForPublicIP&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminUserName&quot;: {
-            &quot;defaultValue&quot;: &quot;isv&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminPassword&quot;: {
-            &quot;defaultValue&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;SecureString&quot;
-        },
-        &quot;osType&quot;: {
-            &quot;defaultValue&quot;: &quot;windows&quot;,
-            &quot;allowedValues&quot;: [
-                &quot;windows&quot;,
-                &quot;linux&quot;
-            ],
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;subscriptionId&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;location&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmSize&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;publicIPAddressName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;virtualNetworkName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;nicName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vhdUrl&quot;: {
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;metadata&quot;: {
-                &quot;description&quot;: &quot;VHD Url...&quot;
-            }
-        }
-    },
-    &quot;variables&quot;: {
-        &quot;addressPrefix&quot;: &quot;10.0.0.0/16&quot;,
-        &quot;subnet1Name&quot;: &quot;Subnet-1&quot;,
-        &quot;subnet2Name&quot;: &quot;Subnet-2&quot;,
-        &quot;subnet1Prefix&quot;: &quot;10.0.0.0/24&quot;,
-        &quot;subnet2Prefix&quot;: &quot;10.0.1.0/24&quot;,
-        &quot;publicIPAddressType&quot;: &quot;Dynamic&quot;,
-        &quot;vnetID&quot;: &quot;[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]&quot;,
-        &quot;subnet1Ref&quot;: &quot;[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]&quot;,
-        &quot;hostDNSNameScriptArgument&quot;: &quot;[concat(parameters('dnsNameForPublicIP'),'.',parameters('location'),'.cloudapp.azure.com')]&quot;,
-        &quot;osDiskVhdName&quot;: &quot;[concat('http://',parameters('userStorageAccountName'),'.blob.core.windows.net/',parameters('userStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]&quot;
-    },
-    &quot;resources&quot;: [
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/publicIPAddresses&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('publicIPAddressName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;publicIPAllocationMethod&quot;: &quot;[variables('publicIPAddressType')]&quot;,
-                &quot;dnsSettings&quot;: {
-                    &quot;domainNameLabel&quot;: &quot;[parameters('dnsNameForPublicIP')]&quot;
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/virtualNetworks&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('virtualNetworkName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;addressSpace&quot;: {
-                    &quot;addressPrefixes&quot;: [
-                        &quot;[variables('addressPrefix')]&quot;
-                    ]
-                },
-                &quot;subnets&quot;: [
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet1Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet1Prefix')]&quot;
-                        }
-                    },
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet2Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet2Prefix')]&quot;
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/networkInterfaces&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('nicName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]&quot;,
-                &quot;[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;ipConfigurations&quot;: [
-                    {
-                        &quot;name&quot;: &quot;ipconfig1&quot;,
-                        &quot;properties&quot;: {
-                            &quot;privateIPAllocationMethod&quot;: &quot;Dynamic&quot;,
-                            &quot;publicIPAddress&quot;: {
-                                &quot;id&quot;: &quot;[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]&quot;
-                            },
-                            &quot;subnet&quot;: {
-                                &quot;id&quot;: &quot;[variables('subnet1Ref')]&quot;
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('vmName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/networkInterfaces/', parameters('nicName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;hardwareProfile&quot;: {
-                    &quot;vmSize&quot;: &quot;[parameters('vmSize')]&quot;
-                },
-                &quot;osProfile&quot;: {
-                    &quot;computername&quot;: &quot;[parameters('vmName')]&quot;,
-                    &quot;adminUsername&quot;: &quot;[parameters('adminUsername')]&quot;,
-                    &quot;adminPassword&quot;: &quot;[parameters('adminPassword')]&quot;
-                },
-                &quot;storageProfile&quot;: {
-                    &quot;osDisk&quot;: {
-                        &quot;name&quot;: &quot;[concat(parameters('vmName'),'-osDisk')]&quot;,
-                        &quot;osType&quot;: &quot;[parameters('osType')]&quot;,
-                        &quot;caching&quot;: &quot;ReadWrite&quot;,
-                        &quot;image&quot;: {
-                            &quot;uri&quot;: &quot;[parameters('vhdUrl')]&quot;
-                        },
-                        &quot;vhd&quot;: {
-                            &quot;uri&quot;: &quot;[variables('osDiskVhdName')]&quot;
-                        },
-                        &quot;createOption&quot;: &quot;FromImage&quot;
-                    }
-                },
-                &quot;networkProfile&quot;: {
-                    &quot;networkInterfaces&quot;: [
-                        {
-                            &quot;id&quot;: &quot;[resourceId('Microsoft.Network/networkInterfaces',parameters('nicName'))]&quot;
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines/extensions&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[concat(parameters('vmName'),'/WinRMCustomScriptExtension')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;publisher&quot;: &quot;Microsoft.Compute&quot;,
-                &quot;type&quot;: &quot;CustomScriptExtension&quot;,
-                &quot;typeHandlerVersion&quot;: &quot;1.4&quot;,
-                &quot;settings&quot;: {
-                    &quot;fileUris&quot;: [
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/ConfigureWinRM.ps1&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/makecert.exe&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/winrmconf.cmd&quot;
-                    ],
-                    &quot;commandToExecute&quot;: &quot;[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]&quot;
-                }
-            }
-        }
-    ]
-}
-```
-
-<br>
-
-6. Укажите значения параметров на страницах свойств Настраиваемое развертывание.
-
-    | ResourceGroupName | Имя существующей группы ресурсов Azure. Обычно используется та же группа репликации, что и для хранилища ключей. |
-    | --- | --- |
-    | TemplateFile | Полный путь к файлу VHDtoImage.json. |
-    | userStorageAccountName | Имя учетной записи хранения. |
-    | dnsNameForPublicIP | DNS-имя общедоступного IP-адреса в нижнем регистре. |
-    | subscriptionId | Идентификатор подписки Azure. |
-    | Расположение | Стандартное географическое расположение Azure для группы ресурсов. |
-    | vmName | Имя виртуальной машины. |
-    | vhdUrl | Веб-адрес виртуального жесткого диска. |
-    | vmSize | Размер экземпляра виртуальной машины. |
-    | publicIPAddressName | Имя общедоступного IP-адреса. |
-    | virtualNetworkName | Имя виртуальной сети. |
-    | nicName | Имя сетевого адаптера для виртуальной сети. |
-    | adminUserName | Имя пользователя учетной записи администратора. |
-    | adminPassword | Пароль администратора. |
-
-
-7. После ввода этих значений выберите **Покупка**.
-
-Azure начнет развертывание. Будет создана виртуальная машина с указанным неуправляемым VHD в определенном пути к учетной записи хранения. На портале Azure можно отслеживать ход выполнения, щелкнув **Виртуальные машины** в левой части. При создании виртуальной машины состояние &quot;Запускается":::
+ :::image type="content" source="media/vm/call-api-with-ssh-key.png" alt-text="Вызов API в PowerShell с помощью ключа SSH.":::
 
 **С паролем**:
 
- :::image type="content" source="media/vm/call-api-with-password.png" alt-text="Отображает выбор шаблона.&quot;:::
-
-5. Вставьте следующий шаблон JSON в редактор и нажмите кнопку **сохранить**.
-
-```JSON
-{
-    &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#&quot;,
-    &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
-    &quot;parameters&quot;: {
-        &quot;userStorageAccountName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;userStorageContainerName&quot;: {
-            &quot;defaultValue&quot;: &quot;vhds&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;dnsNameForPublicIP&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminUserName&quot;: {
-            &quot;defaultValue&quot;: &quot;isv&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminPassword&quot;: {
-            &quot;defaultValue&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;SecureString&quot;
-        },
-        &quot;osType&quot;: {
-            &quot;defaultValue&quot;: &quot;windows&quot;,
-            &quot;allowedValues&quot;: [
-                &quot;windows&quot;,
-                &quot;linux&quot;
-            ],
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;subscriptionId&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;location&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmSize&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;publicIPAddressName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;virtualNetworkName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;nicName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vhdUrl&quot;: {
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;metadata&quot;: {
-                &quot;description&quot;: &quot;VHD Url...&quot;
-            }
-        }
-    },
-    &quot;variables&quot;: {
-        &quot;addressPrefix&quot;: &quot;10.0.0.0/16&quot;,
-        &quot;subnet1Name&quot;: &quot;Subnet-1&quot;,
-        &quot;subnet2Name&quot;: &quot;Subnet-2&quot;,
-        &quot;subnet1Prefix&quot;: &quot;10.0.0.0/24&quot;,
-        &quot;subnet2Prefix&quot;: &quot;10.0.1.0/24&quot;,
-        &quot;publicIPAddressType&quot;: &quot;Dynamic&quot;,
-        &quot;vnetID&quot;: &quot;[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]&quot;,
-        &quot;subnet1Ref&quot;: &quot;[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]&quot;,
-        &quot;hostDNSNameScriptArgument&quot;: &quot;[concat(parameters('dnsNameForPublicIP'),'.',parameters('location'),'.cloudapp.azure.com')]&quot;,
-        &quot;osDiskVhdName&quot;: &quot;[concat('http://',parameters('userStorageAccountName'),'.blob.core.windows.net/',parameters('userStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]&quot;
-    },
-    &quot;resources&quot;: [
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/publicIPAddresses&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('publicIPAddressName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;publicIPAllocationMethod&quot;: &quot;[variables('publicIPAddressType')]&quot;,
-                &quot;dnsSettings&quot;: {
-                    &quot;domainNameLabel&quot;: &quot;[parameters('dnsNameForPublicIP')]&quot;
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/virtualNetworks&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('virtualNetworkName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;addressSpace&quot;: {
-                    &quot;addressPrefixes&quot;: [
-                        &quot;[variables('addressPrefix')]&quot;
-                    ]
-                },
-                &quot;subnets&quot;: [
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet1Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet1Prefix')]&quot;
-                        }
-                    },
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet2Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet2Prefix')]&quot;
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/networkInterfaces&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('nicName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]&quot;,
-                &quot;[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;ipConfigurations&quot;: [
-                    {
-                        &quot;name&quot;: &quot;ipconfig1&quot;,
-                        &quot;properties&quot;: {
-                            &quot;privateIPAllocationMethod&quot;: &quot;Dynamic&quot;,
-                            &quot;publicIPAddress&quot;: {
-                                &quot;id&quot;: &quot;[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]&quot;
-                            },
-                            &quot;subnet&quot;: {
-                                &quot;id&quot;: &quot;[variables('subnet1Ref')]&quot;
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('vmName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/networkInterfaces/', parameters('nicName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;hardwareProfile&quot;: {
-                    &quot;vmSize&quot;: &quot;[parameters('vmSize')]&quot;
-                },
-                &quot;osProfile&quot;: {
-                    &quot;computername&quot;: &quot;[parameters('vmName')]&quot;,
-                    &quot;adminUsername&quot;: &quot;[parameters('adminUsername')]&quot;,
-                    &quot;adminPassword&quot;: &quot;[parameters('adminPassword')]&quot;
-                },
-                &quot;storageProfile&quot;: {
-                    &quot;osDisk&quot;: {
-                        &quot;name&quot;: &quot;[concat(parameters('vmName'),'-osDisk')]&quot;,
-                        &quot;osType&quot;: &quot;[parameters('osType')]&quot;,
-                        &quot;caching&quot;: &quot;ReadWrite&quot;,
-                        &quot;image&quot;: {
-                            &quot;uri&quot;: &quot;[parameters('vhdUrl')]&quot;
-                        },
-                        &quot;vhd&quot;: {
-                            &quot;uri&quot;: &quot;[variables('osDiskVhdName')]&quot;
-                        },
-                        &quot;createOption&quot;: &quot;FromImage&quot;
-                    }
-                },
-                &quot;networkProfile&quot;: {
-                    &quot;networkInterfaces&quot;: [
-                        {
-                            &quot;id&quot;: &quot;[resourceId('Microsoft.Network/networkInterfaces',parameters('nicName'))]&quot;
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines/extensions&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[concat(parameters('vmName'),'/WinRMCustomScriptExtension')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;publisher&quot;: &quot;Microsoft.Compute&quot;,
-                &quot;type&quot;: &quot;CustomScriptExtension&quot;,
-                &quot;typeHandlerVersion&quot;: &quot;1.4&quot;,
-                &quot;settings&quot;: {
-                    &quot;fileUris&quot;: [
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/ConfigureWinRM.ps1&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/makecert.exe&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/winrmconf.cmd&quot;
-                    ],
-                    &quot;commandToExecute&quot;: &quot;[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]&quot;
-                }
-            }
-        }
-    ]
-}
-```
-
-<br>
-
-6. Укажите значения параметров на страницах свойств Настраиваемое развертывание.
-
-    | ResourceGroupName | Имя существующей группы ресурсов Azure. Обычно используется та же группа репликации, что и для хранилища ключей. |
-    | --- | --- |
-    | TemplateFile | Полный путь к файлу VHDtoImage.json. |
-    | userStorageAccountName | Имя учетной записи хранения. |
-    | dnsNameForPublicIP | DNS-имя общедоступного IP-адреса в нижнем регистре. |
-    | subscriptionId | Идентификатор подписки Azure. |
-    | Расположение | Стандартное географическое расположение Azure для группы ресурсов. |
-    | vmName | Имя виртуальной машины. |
-    | vhdUrl | Веб-адрес виртуального жесткого диска. |
-    | vmSize | Размер экземпляра виртуальной машины. |
-    | publicIPAddressName | Имя общедоступного IP-адреса. |
-    | virtualNetworkName | Имя виртуальной сети. |
-    | nicName | Имя сетевого адаптера для виртуальной сети. |
-    | adminUserName | Имя пользователя учетной записи администратора. |
-    | adminPassword | Пароль администратора. |
-
-
-7. После ввода этих значений выберите **Покупка**.
-
-Azure начнет развертывание. Будет создана виртуальная машина с указанным неуправляемым VHD в определенном пути к учетной записи хранения. На портале Azure можно отслеживать ход выполнения, щелкнув **Виртуальные машины** в левой части. При создании виртуальной машины состояние &quot;Запускается":::
+ :::image type="content" source="media/vm/call-api-with-password.png" alt-text="Вызов API в PowerShell с паролем.":::
 
 <br>Выполнив предыдущий пример, вы получите ответ в формате JSON, анализ которого даст вам следующие сведения.
 
@@ -1654,237 +712,7 @@ For ($i = 0; $i -lt $actualresult.Tests.Length; $i++) {
 
 <br>На этом экране отображаются `$res.Content` подробные сведения о результатах теста в формате JSON:
 
- :::image type="content" source="media/vm/test-results-json-format.png" alt-text="Отображает выбор шаблона.&quot;:::
-
-5. Вставьте следующий шаблон JSON в редактор и нажмите кнопку **сохранить**.
-
-```JSON
-{
-    &quot;$schema&quot;: &quot;https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#&quot;,
-    &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
-    &quot;parameters&quot;: {
-        &quot;userStorageAccountName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;userStorageContainerName&quot;: {
-            &quot;defaultValue&quot;: &quot;vhds&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;dnsNameForPublicIP&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminUserName&quot;: {
-            &quot;defaultValue&quot;: &quot;isv&quot;,
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;adminPassword&quot;: {
-            &quot;defaultValue&quot;: &quot;&quot;,
-            &quot;type&quot;: &quot;SecureString&quot;
-        },
-        &quot;osType&quot;: {
-            &quot;defaultValue&quot;: &quot;windows&quot;,
-            &quot;allowedValues&quot;: [
-                &quot;windows&quot;,
-                &quot;linux&quot;
-            ],
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;subscriptionId&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;location&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmSize&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;publicIPAddressName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vmName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;virtualNetworkName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;nicName&quot;: {
-            &quot;type&quot;: &quot;String&quot;
-        },
-        &quot;vhdUrl&quot;: {
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;metadata&quot;: {
-                &quot;description&quot;: &quot;VHD Url...&quot;
-            }
-        }
-    },
-    &quot;variables&quot;: {
-        &quot;addressPrefix&quot;: &quot;10.0.0.0/16&quot;,
-        &quot;subnet1Name&quot;: &quot;Subnet-1&quot;,
-        &quot;subnet2Name&quot;: &quot;Subnet-2&quot;,
-        &quot;subnet1Prefix&quot;: &quot;10.0.0.0/24&quot;,
-        &quot;subnet2Prefix&quot;: &quot;10.0.1.0/24&quot;,
-        &quot;publicIPAddressType&quot;: &quot;Dynamic&quot;,
-        &quot;vnetID&quot;: &quot;[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]&quot;,
-        &quot;subnet1Ref&quot;: &quot;[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]&quot;,
-        &quot;hostDNSNameScriptArgument&quot;: &quot;[concat(parameters('dnsNameForPublicIP'),'.',parameters('location'),'.cloudapp.azure.com')]&quot;,
-        &quot;osDiskVhdName&quot;: &quot;[concat('http://',parameters('userStorageAccountName'),'.blob.core.windows.net/',parameters('userStorageContainerName'),'/',parameters('vmName'),'osDisk.vhd')]&quot;
-    },
-    &quot;resources&quot;: [
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/publicIPAddresses&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('publicIPAddressName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;publicIPAllocationMethod&quot;: &quot;[variables('publicIPAddressType')]&quot;,
-                &quot;dnsSettings&quot;: {
-                    &quot;domainNameLabel&quot;: &quot;[parameters('dnsNameForPublicIP')]&quot;
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/virtualNetworks&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('virtualNetworkName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;properties&quot;: {
-                &quot;addressSpace&quot;: {
-                    &quot;addressPrefixes&quot;: [
-                        &quot;[variables('addressPrefix')]&quot;
-                    ]
-                },
-                &quot;subnets&quot;: [
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet1Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet1Prefix')]&quot;
-                        }
-                    },
-                    {
-                        &quot;name&quot;: &quot;[variables('subnet2Name')]&quot;,
-                        &quot;properties&quot;: {
-                            &quot;addressPrefix&quot;: &quot;[variables('subnet2Prefix')]&quot;
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Network/networkInterfaces&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('nicName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]&quot;,
-                &quot;[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;ipConfigurations&quot;: [
-                    {
-                        &quot;name&quot;: &quot;ipconfig1&quot;,
-                        &quot;properties&quot;: {
-                            &quot;privateIPAllocationMethod&quot;: &quot;Dynamic&quot;,
-                            &quot;publicIPAddress&quot;: {
-                                &quot;id&quot;: &quot;[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]&quot;
-                            },
-                            &quot;subnet&quot;: {
-                                &quot;id&quot;: &quot;[variables('subnet1Ref')]&quot;
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[parameters('vmName')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Network/networkInterfaces/', parameters('nicName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;hardwareProfile&quot;: {
-                    &quot;vmSize&quot;: &quot;[parameters('vmSize')]&quot;
-                },
-                &quot;osProfile&quot;: {
-                    &quot;computername&quot;: &quot;[parameters('vmName')]&quot;,
-                    &quot;adminUsername&quot;: &quot;[parameters('adminUsername')]&quot;,
-                    &quot;adminPassword&quot;: &quot;[parameters('adminPassword')]&quot;
-                },
-                &quot;storageProfile&quot;: {
-                    &quot;osDisk&quot;: {
-                        &quot;name&quot;: &quot;[concat(parameters('vmName'),'-osDisk')]&quot;,
-                        &quot;osType&quot;: &quot;[parameters('osType')]&quot;,
-                        &quot;caching&quot;: &quot;ReadWrite&quot;,
-                        &quot;image&quot;: {
-                            &quot;uri&quot;: &quot;[parameters('vhdUrl')]&quot;
-                        },
-                        &quot;vhd&quot;: {
-                            &quot;uri&quot;: &quot;[variables('osDiskVhdName')]&quot;
-                        },
-                        &quot;createOption&quot;: &quot;FromImage&quot;
-                    }
-                },
-                &quot;networkProfile&quot;: {
-                    &quot;networkInterfaces&quot;: [
-                        {
-                            &quot;id&quot;: &quot;[resourceId('Microsoft.Network/networkInterfaces',parameters('nicName'))]&quot;
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            &quot;type&quot;: &quot;Microsoft.Compute/virtualMachines/extensions&quot;,
-            &quot;apiVersion&quot;: &quot;2015-06-15&quot;,
-            &quot;name&quot;: &quot;[concat(parameters('vmName'),'/WinRMCustomScriptExtension')]&quot;,
-            &quot;location&quot;: &quot;[parameters('location')]&quot;,
-            &quot;dependsOn&quot;: [
-                &quot;[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]&quot;
-            ],
-            &quot;properties&quot;: {
-                &quot;publisher&quot;: &quot;Microsoft.Compute&quot;,
-                &quot;type&quot;: &quot;CustomScriptExtension&quot;,
-                &quot;typeHandlerVersion&quot;: &quot;1.4&quot;,
-                &quot;settings&quot;: {
-                    &quot;fileUris&quot;: [
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/ConfigureWinRM.ps1&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/makecert.exe&quot;,
-                        &quot;https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-winrm-windows/winrmconf.cmd&quot;
-                    ],
-                    &quot;commandToExecute&quot;: &quot;[concat('powershell -ExecutionPolicy Unrestricted -file ConfigureWinRM.ps1 ',variables('hostDNSNameScriptArgument'))]&quot;
-                }
-            }
-        }
-    ]
-}
-```
-
-<br>
-
-6. Укажите значения параметров на страницах свойств Настраиваемое развертывание.
-
-    | ResourceGroupName | Имя существующей группы ресурсов Azure. Обычно используется та же группа репликации, что и для хранилища ключей. |
-    | --- | --- |
-    | TemplateFile | Полный путь к файлу VHDtoImage.json. |
-    | userStorageAccountName | Имя учетной записи хранения. |
-    | dnsNameForPublicIP | DNS-имя общедоступного IP-адреса в нижнем регистре. |
-    | subscriptionId | Идентификатор подписки Azure. |
-    | Расположение | Стандартное географическое расположение Azure для группы ресурсов. |
-    | vmName | Имя виртуальной машины. |
-    | vhdUrl | Веб-адрес виртуального жесткого диска. |
-    | vmSize | Размер экземпляра виртуальной машины. |
-    | publicIPAddressName | Имя общедоступного IP-адреса. |
-    | virtualNetworkName | Имя виртуальной сети. |
-    | nicName | Имя сетевого адаптера для виртуальной сети. |
-    | adminUserName | Имя пользователя учетной записи администратора. |
-    | adminPassword | Пароль администратора. |
-
-
-7. После ввода этих значений выберите **Покупка**.
-
-Azure начнет развертывание. Будет создана виртуальная машина с указанным неуправляемым VHD в определенном пути к учетной записи хранения. На портале Azure можно отслеживать ход выполнения, щелкнув **Виртуальные машины** в левой части. При создании виртуальной машины состояние &quot;Запускается":::
+ :::image type="content" source="media/vm/test-results-json-format.png" alt-text="Подробные сведения о результатах теста в формате JSON.":::
 
 <br>Ниже приведен пример результатов теста, просматриваемых в интерактивном средстве просмотра JSON (например, [Code беаутифи](https://codebeautify.org/jsonviewer) или [JSON Viewer](https://jsonformatter.org/json-viewer)).
 

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 22d0c59110ba033232fbdf41062b49e9a146ca6f
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: c33b3e5fee19edc5d4ac85284e507b53e96234a0
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955106"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977019"
 ---
 # <a name="about-defender-for-iot-console-users"></a>О защитнике для пользователей консоли IoT
 
@@ -223,8 +223,6 @@ ms.locfileid: "97955106"
     > Не изменяйте файл восстановления пароля. Это подписанный файл, который не будет работать в случае его изменения.
 
 1. На экране **восстановления пароля** выберите **Отправить**. Откроется окно **"передача файла восстановления пароля"** .
-
-   :::image type="content" source="media/password-recovery-images/upload.png" alt-text="Передайте файл восстановления, чтобы получить новый пароль.":::
 
 1. Нажмите кнопку **Обзор** , чтобы найти `password_recovery.zip` файл, или перетащите его `password_recovery.zip` в окно.
 

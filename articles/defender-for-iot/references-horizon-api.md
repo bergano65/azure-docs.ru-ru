@@ -4,15 +4,15 @@ description: В этом руководством описываются час�
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 11/19/2020
+ms.date: 1/7/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 3266517b9ddc8fc7ac7b06a137286c05ea9a28fa
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 6d2e3fccd6a61fe129050faa29cb7bb77674ccfe
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97841759"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976919"
 ---
 # <a name="horizon-api"></a>API горизонта 
 
@@ -24,7 +24,7 @@ ms.locfileid: "97841759"
 
 - Чтобы получить доступ к пакету SDK для среды разработки горизонта (node), обратитесь к своему представителя Циберкс.
 - Для получения сведений о поддержке и устранении неполадок обратитесь к <support@cyberx-labs.com> .
-- Чтобы получить доступ к руководству пользователя Циберкс из консоли Циберкс, выберите :::image type="icon" source="media/references-horizon-api//image3.png"::: , а затем щелкните **загрузить пользовательское Guide**.
+- Чтобы получить доступ к руководству пользователя Циберкс из консоли Циберкс, выберите :::image type="icon" source="media/references-horizon-api/profile-icon.png"::: , а затем щелкните **загрузить пользовательское Guide**.
 
 ## `horizon::protocol::BaseParser`
 

@@ -16,12 +16,12 @@ ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74bc659c11c4f43ab3cf85cdc53f704cd07a1cde
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 25d4152783129fa1c5950d6cf6287332bf90d32a
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96172373"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976883"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
 Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты можно использовать с помощью [расширений](/graph/extensibility-overview
@@ -46,7 +46,7 @@ ms.locfileid: "96172373"
 
 
 >[!NOTE]
-> Azure AD Connect поддерживает синхронизацию многозначных атрибутов Active Directory с Azure AD в качестве многозначных расширений каталогов. Но в настоящее время не существует способа извлечения и использования данных, отправленных в атрибуты многозначных расширений каталогов.
+> После Azure AD Connect синхронизации многозначного Active Directory атрибута в Azure AD в качестве расширения атрибута с несколькими значениями можно включить атрибут в утверждение SAML. Однако невозможно использовать эти данные через вызов API.
 
 Список атрибутов считывается из кэша схемы, созданного во время установки Azure AD Connect. Если в схему Active Directory добавлены дополнительные атрибуты, они будут отображаться только после [обновления схемы](how-to-connect-installation-wizard.md#refresh-directory-schema).
 

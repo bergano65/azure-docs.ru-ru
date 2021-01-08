@@ -10,12 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/25/2019
-ms.openlocfilehash: 3c966f0efc51a3b2fa8908e060b4031ae1ad1e50
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1b10146e59cefb17ff267eb0b470dd83004a7c2a
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500025"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976577"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Выражения и функции в фабрике данных Azure
 
@@ -965,7 +965,7 @@ convertTimeZone('2018-01-01T08:00:00.0000000Z', 'UTC', 'Pacific Standard Time')
 В этом примере часовой пояс преобразуется в указанный часовой пояс и формат:
 
 ```
-convertTimeZone('2018-01-01T80:00:00.0000000Z', 'UTC', 'Pacific Standard Time', 'D')
+convertTimeZone('2018-01-01T08:00:00.0000000Z', 'UTC', 'Pacific Standard Time', 'D')
 ```
 
 Возвращается такой результат: `"Monday, January 1, 2018"`

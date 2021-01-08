@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 08/24/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: beb38be985457ea36b2cea9a6dc337ba305d503f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 4237aba81a01423a3356a30879fbd27450c876bd
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97108507"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976509"
 ---
 # <a name="page-layout-versions"></a>Версии макета страницы
 
@@ -51,7 +51,7 @@ ms.locfileid: "97108507"
 - Теперь фокус помещается в поле Password (пароль) после проверки адреса электронной почты.
 - Удаляется `autofocus` из элемента управления CheckBox. 
 - Добавлена поддержка элемента управления отображением для проверки номера телефона.
-- Теперь можно добавить `data-preload="true"` атрибут [в теги HTML] (Настройка-UI-with-HTML. md # рекомендации — для
+- Теперь можно добавить `data-preload="true"` атрибут [в теги HTML](customize-ui-with-html.md#guidelines-for-using-custom-page-content) .
   - Загружать связанные CSS-файлы одновременно с шаблоном HTML, чтобы не мерцать между загрузкой файлов.
   - Управление порядком `script` выборки и выполнения тегов перед нагрузкой страницы.
 - Поле "адрес электронной почты `type=email` " теперь, и на мобильных клавиатурах будут предоставлены правильные предложения.

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d634978333e2b833324228fb0908cfba61a786d
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 0d04f2d1717e1d95f8bcafb8f72f2b0a2f83a248
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96919746"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976832"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -307,7 +307,7 @@ ms.locfileid: "96919746"
 
 Пользователи с этой ролью могут отслеживать уведомления и обновления работоспособности рекомендаций в [центре сообщений](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации по настроенным службам, таким как Exchange, Intune и Microsoft Teams. Читатели центра сообщений получают еженедельные дайджесты сообщений электронной почты, обновления и могут обмениваться сообщениями центра сообщений в Microsoft 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
-### <a name="modern-commerce-user"></a>[Современный пользователь Commerce](#modern-commerce-user-permissions)
+### <a name="modern-commerce-user"></a>[Пользователь современной коммерческой платформы](#modern-commerce-user-permissions)
 
 Не используйте. Эта роль автоматически назначается коммерческой платформой и не предназначена для любого другого использования. Этот процесс описан ниже.
 
@@ -481,7 +481,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью соответствующих средств для пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать сведения об определенном пользователе только при его вызове. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
 
-### <a name="teams-devices-administrator"></a>[Администраторы устройств групп](#teams-devices-administrator-permissions)
+### <a name="teams-devices-administrator"></a>[Администраторы устройств Teams](#teams-devices-administrator-permissions)
 
 Пользователи с этой ролью могут управлять [устройствами, сертифицированными группами](https://www.microsoft.com/microsoft-365/microsoft-teams/across-devices/devices) , из центра администрирования команд. Эта роль позволяет просматривать все устройства на одном взгляде с возможностью поиска и фильтрации устройств. Пользователь может проверить сведения о каждом устройстве, включая учетную запись входа, Марка и модель устройства. Пользователь может изменить параметры на устройстве и обновить версии программного обеспечения. Эта роль не предоставляет разрешения на проверку активности команд и качество вызова для устройства. 
 
@@ -1434,6 +1434,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
+| Microsoft. Directory/Applications/appRoles/Update | Управление ролями приложений и запрос делегированных разрешений для приложений. |
+| microsoft.directory/applications/audience/update | Обновите аудиторию для всех типов приложений. |
+| microsoft.directory/applications/authentication/update | Обновление проверки подлинности для всех типов приложений. |
+| microsoft.directory/applications/basic/update | Обновление основных свойств для всех типов приложений. |
+| microsoft.directory/applications/credentials/update | Обновите учетные данные для всех типов приложений. |
+| microsoft.directory/applications/owners/update | Обновление владельцев для всех типов приложений. |
+| microsoft.directory/applications/permissions/update | Обновление предоставленных разрешений и необходимых разрешений для всех типов приложений. |
+| microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | microsoft.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
@@ -1467,6 +1475,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
+| Microsoft. Directory/Applications/appRoles/Update | Управление ролями приложений и запрос делегированных разрешений для приложений. |
+| microsoft.directory/applications/audience/update | Обновите аудиторию для всех типов приложений. |
+| microsoft.directory/applications/authentication/update | Обновление проверки подлинности для всех типов приложений. |
+| microsoft.directory/applications/basic/update | Обновление основных свойств для всех типов приложений. |
+| microsoft.directory/applications/credentials/update | Обновите учетные данные для всех типов приложений. |
+| microsoft.directory/applications/owners/update | Обновление владельцев для всех типов приложений. |
+| microsoft.directory/applications/permissions/update | Обновление предоставленных разрешений и необходимых разрешений для всех типов приложений. |
+| microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | microsoft.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
@@ -1944,7 +1960,7 @@ Device Users (Пользователи устройства) | Не рекоме
 Администратор службы Lync | администратор Skype для бизнеса; | 75941009-915a-4869-abe7-691bff18279e
 Читатель конфиденциальности данных Центра сообщений | Читатель конфиденциальности данных Центра сообщений | ac16e43d-7b2d-40e0-ac05-243ff356ab5b
 Читатель Центра сообщений | Читатель центра сообщений | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b
-Современный пользователь Commerce | Современный пользователь Commerce | d24aef57-1500-4070-84db-2666f29cf966
+Пользователь современной коммерческой платформы | Пользователь современной коммерческой платформы | d24aef57-1500-4070-84db-2666f29cf966
 Администратор сети | Администратор сети | d37c8bed-0711-4417-ba38-b4abe66ce4c2
 Администратор приложений Office | Администратор приложений Office | 2b745bdf-0803-4d80-aa65-822c4493daac
 Служба поддержка партнеров уровня 1 | Не отображается, так как не должно использоваться. | 4ba39ca4-527c-499a-b93d-d9b492c50246
@@ -1967,7 +1983,7 @@ Device Users (Пользователи устройства) | Не рекоме
 Администратор связи Teams | Администратор связи Teams | baf37b3a-610e-45da-9e62-d9d1e5e8914b
 Инженер службы поддержки связи Teams | Инженер службы поддержки связи Teams | f70938a0-fc10-4177-9e90-2178f8765737
 Специалист службы поддержки связи Teams | Специалист службы поддержки связи Teams | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
-Администраторы устройств групп | Администраторы устройств групп | 3d762c5a-1b6c-493f-843e-55a3b42923d4
+Администраторы устройств Teams | Администраторы устройств Teams | 3d762c5a-1b6c-493f-843e-55a3b42923d4
 Администратор службы Teams | Администратор службы Teams | 69091246-20e8-4a56-aa4d-066075b2a7a8
 Пользователь | Не отображается, так как не может использоваться. | a0b1b346-4d3e-4e8b-98f8-753987be4970
 Администратор учетных записей | Администратор пользователей | fe930be7-5e62-47db-91af-98c3a49a38b1

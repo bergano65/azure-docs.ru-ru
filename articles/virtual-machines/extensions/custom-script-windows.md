@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/31/2020
 ms.author: robreed
-ms.openlocfilehash: aa95d6792f2f5754a237c7bf5e90a11e2e011ede
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: b0502fb05043a54d81d768a7809d19b108cc6248
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861787"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976849"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -50,6 +50,8 @@ ms.locfileid: "97861787"
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
 Чтобы скачать скрипт из внешнего источника, например с сайта GitHub или из службы хранилища Azure, откройте дополнительные порты брандмауэра или группы безопасности сети. Например, если скрипт находится в службе хранилища Azure, вы можете разрешить доступ с помощью тегов службы Azure NSG для [хранилища](../../virtual-network/network-security-groups-overview.md#service-tags).
+
+Обратите внимание, что у расширения CustomScript нет способа обойти проверку сертификата. Поэтому при скачивании из защищенного расположения с помощью например. самозаверяющий сертификат, возможно, в итоге возникнут такие ошибки, как *"удаленный сертификат является недопустимым в соответствии с процедурой проверки"*. Убедитесь, что сертификат правильно установлен в хранилище *"Доверенные корневые центры сертификации"* на виртуальной машине.
 
 Если скрипт расположен на локальном сервере, вам по-прежнему может потребоваться открыть дополнительные порты брандмауэра и группы безопасности сети.
 

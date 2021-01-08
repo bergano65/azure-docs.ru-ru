@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: b53c0002af3680567aabf0955f6bb4e0d99c2ab1
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 3ff8406a3634fa946ab8ce7aca694bbc57d556a5
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093440"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976407"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -119,10 +119,7 @@ ms.locfileid: "97093440"
 
 ![Асинхронная репликация на основе инфраструктуры](media/operator-best-practices-bc-dr/aks-infra-based-async-repl.png)
 
-Если вы используете управляемые диски Azure, вы можете выбрать решения для репликации и аварийного восстановления, такие как:
-
-* [Велеро в Azure](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/master/README.md)
-* [Azure Backup](../backup/backup-overview.md)
+При использовании управляемых дисков Azure существует несколько параметров, которые можно использовать для управления репликацией и аварийным восстановлением. [Велеро в Azure][velero] и [Кастен][kasten] являются резервными копиями собственных решений для Kubernetes, но не поддерживаются.
 
 ### <a name="application-based-asynchronous-replication"></a>асинхронная репликация на основе приложений;
 
@@ -140,3 +137,6 @@ ms.locfileid: "97093440"
 <!-- INTERNAL LINKS -->
 [aks-best-practices-scheduler]: operator-best-practices-scheduler.md
 [aks-best-practices-cluster-isolation]: operator-best-practices-cluster-isolation.md
+
+[velero]: https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/master/README.md
+[kasten]: https://www.kasten.io/
