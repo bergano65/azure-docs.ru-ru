@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 09/13/2020
-ms.openlocfilehash: 805bc2aecda37599234c81dd928868d8c14aea4e
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 242ff1d7c16ca952b19f44fb139f8fae7562524a
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091995"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98048323"
 ---
 # <a name="train-machine-learning-models"></a>Обучение моделей машинного обучения
 Apache Spark в Azure синапсе Analytics обеспечивает машинное обучение с большими данными, предоставляя возможность получения ценных сведений из больших объемов структурированных, неструктурированных и быстро перемещаемых данных. Существует несколько вариантов обучения моделей машинного обучения с помощью Azure Spark в Azure синапсе Analytics: Apache Spark MLlib, Машинное обучение Azure и различные библиотеки с открытым исходным кодом. 
@@ -58,6 +58,6 @@ MMLSpark предоставляет слой поверх низкоуровне
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлен обзор различных вариантов обучения моделей машинного обучения в пулах Apache Spark в Azure синапсе Analytics. Дополнительные сведения об обучении модели см. в следующем руководстве:
 
-- Запуск автоматизированных экспериментов ML с помощью Машинное обучение Azure и Azure синапсе Analytics. [руководство по автоматизированному созданию машинного обучения](./spark/../apache-spark-autoscale.md) 
-- Запуск экспериментов SparkML: [руководство по Apache SparkML](../spark/apache-spark-azure-machine-learning-tutorial.md)
+- Запуск автоматизированных экспериментов ML с помощью Машинное обучение Azure и Azure синапсе Analytics. [руководство по автоматизированному созданию машинного обучения](../spark/apache-spark-azure-machine-learning-tutorial.md) 
+- Запуск экспериментов SparkML: [руководство по Apache SparkML](../spark/apache-spark-machine-learning-mllib-notebook.md)
 - Просмотр библиотек по умолчанию: [Среда выполнения Azure синапсе Analytics](../spark/apache-spark-version-support.md)

@@ -7,12 +7,12 @@ ms.service: firewall-manager
 ms.topic: tutorial
 ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: 3d4d1e65c2200aee178abefb46d3e330acbd3108
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5d662efc927235711c4dd5e8a424d8775279c30b
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023692"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98048051"
 ---
 # <a name="tutorial-secure-your-hub-virtual-network-using-azure-firewall-manager"></a>Руководство по защите центральной виртуальной сети с помощью Диспетчера брандмауэра Azure
 
@@ -107,7 +107,7 @@ ms.locfileid: "96023692"
 ## <a name="create-the-firewall-hub-virtual-network"></a>Создание центральной виртуальной сети с брандмауэром
 
 > [!NOTE]
-> Размер подсети AzureFirewallSubnet равен /26. Дополнительные сведения о размере подсети см. в статье с [часто задаваемыми вопросами о Брандмауэре Azure](../firewall/firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
+> Размер подсети AzureFirewallSubnet равен /26. Дополнительные сведения о размере подсети см. в статье с [часто задаваемыми вопросами о Брандмауэре Azure](../firewall/firewall-faq.yml#why-does-azure-firewall-need-a--26-subnet-size).
 
 1. На домашней странице портала Azure выберите **Создать ресурс**.
 2. В разделе **Сеть** выберите **Виртуальная сеть**.

@@ -2,20 +2,20 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 11/20/2020
+ms.date: 01/08/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 70cc6ac9bf7a5f5e16b6f5a073d738ba45f1d1cf
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: e080ce8c040761de0103da8c22ef7f6ca2b4fdf4
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984732"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98048665"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Для учетных записей Cognitive Services следует включить шифрование данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2bdd0062-9d75-436e-89df-487dd8e4b3c7) |Эта политика проверяет учетные записи Cognitive Services, которые не используют шифрование данных. Для каждой учетной записи Cognitive Services с хранилищем следует включить шифрование данных с помощью ключа, управляемого клиентом или корпорацией Майкрософт. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cognitive%20Services/CognitiveServices_Encryption_Audit.json) |
-|[Для учетных записей Cognitive Services следует включить шифрование данных с помощью ключа, управляемого клиентом](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F67121cc7-ff39-4ab8-b7e3-95b84dab487d) |Ключи, управляемые клиентом, обеспечивают улучшенную защиту данных, позволяя вам управлять своими ключами шифрования для данных, хранящихся в Cognitive Services. Это часто необходимо для удовлетворения требований по обеспечению соответствия. |Audit, Deny, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cognitive%20Services/CognitiveServices_CustomerManagedKey_Audit.json) |
+|[Учетные записи Cognitive Services должны включать шифрование данных с помощью ключа, управляемого клиентом (CMK)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F67121cc7-ff39-4ab8-b7e3-95b84dab487d) |Ключи, управляемые клиентом (CMK), обычно необходимы для соблюдения стандартов соответствия нормативным требованиям. Ключей CMK позволяют шифровать данные, хранящиеся в Cognitive Services, с помощью Azure Key Vault ключа, созданного и принадлежащего пользователю. Вы полностью контролируете жизненный цикл ключа, включая его смену и управление им. Дополнительные сведения о шифровании CMK см. в статье [https://aka.ms/cosmosdb-cmk](https://aka.ms/cosmosdb-cmk) . |Audit, Deny, Disabled |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cognitive%20Services/CognitiveServices_CustomerManagedKey_Audit.json) |
 |[Для учетных записей Cognitive Services следует ограничить доступ к сети](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F037eea7a-bd0a-46c5-9a66-03aea78705d3) |Для учетных записей Cognitive Services следует ограничить доступ к сети. Настройте правила сети так, чтобы учетная запись Cognitive Services была доступна для приложений только из разрешенных сетей. Чтобы разрешить подключения от конкретных локальных клиентов и интернет-клиентов, вы можете открыть доступ для трафика из конкретных виртуальных сетей Azure или определенных диапазонов общедоступных IP-адресов. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cognitive%20Services/CognitiveServices_NetworkAcls_Audit.json) |
 |[Учетные записи Cognitive Services должны использовать хранилище, принадлежащее клиенту](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F46aa9b05-0e60-4eae-a88b-1e9d374fa515) |Эта политика проверяет учетные записи Cognitive Services, которые не используют хранилище, принадлежащее клиенту. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cognitive%20Services/CognitiveServices_UserOwnedStorage_Audit.json) |
 |[Учетные записи Cognitive Services должны использовать хранилище, принадлежащее клиенту, или шифрование данных.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F11566b39-f7f7-4b82-ab06-68d8700eb0a4) |Эта политика проверяет учетные записи Cognitive Services, которые не используют ни хранилище, принадлежащее клиенту, ни шифрование данных. Каждая учетная запись Cognitive Services с хранилищем должна использовать хранилище, принадлежащее клиенту, или шифрование данных. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cognitive%20Services/CognitiveServices_BYOX_Audit.json) |

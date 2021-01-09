@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 08/07/2020
 ms.author: irenehua
-ms.openlocfilehash: 59bf5eb22289238633b1f07c29a878bd0a9ae620
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 1b7bdbdb9e1d642f2ef4a715d4993e4f449ccd0a
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696172"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050703"
 ---
 # <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — не требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](./skus.md#skus).
@@ -102,10 +102,6 @@ ms.locfileid: "94696172"
 
 Да, переносит трафик. Если вы хотите перенести трафик лично, используйте [этот сценарий](https://www.powershellgallery.com/packages/AzureILBUpgrade/1.0) , который не перемещает виртуальные машины.
 
-### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>При использовании этого сценария возникли проблемы. Как получить помощь?
-  
-Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

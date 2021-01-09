@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 0a38f9b8135fed08a95df68f108e44c34fec6325
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: dfea6d531dfb87a5344c5d8e53570b6e1ae8e598
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955333"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049326"
 ---
 # <a name="understand-twin-models-in-azure-digital-twins"></a>Общие сведения о моделях двойника в Azure Digital двойников
 
@@ -88,53 +88,7 @@ Azure Digital двойников также не наблюдает за `writab
  
 Учтите, что планеты также могут взаимодействовать с **лунами** , которые являются их вспомогательными, и могут содержать **кратерс**. В приведенном ниже примере `Planet` модель выражает соединения с другими сущностями, ссылаясь на две внешние модели — `Moon` и `Crater` . Эти модели также определяются в приведенном ниже примере кода, но хранятся очень просто, поэтому не следует полагаться на основной `Planet` пример.
 
-```json
-[
-  {
-    "@id": "dtmi:com:contoso:Planet;1",
-    "@type": "Interface",
-    "@context": "dtmi:dtdl:context;2",
-    "displayName": "Planet",
-    "contents": [
-      {
-        "@type": "Property",
-        "name": "name",
-        "schema": "string"
-      },
-      {
-        "@type": "Property",
-        "name": "mass",
-        "schema": "double"
-      },
-      {
-        "@type": "Telemetry",
-        "name": "Temperature",
-        "schema": "double"
-      },
-      {
-        "@type": "Relationship",
-        "name": "satellites",
-        "target": "dtmi:com:contoso:Moon;1"
-      },
-      {
-        "@type": "Component",
-        "name": "deepestCrater",
-        "schema": "dtmi:com:contoso:Crater;1"
-      }
-    ]
-  },
-  {
-    "@id": "dtmi:com:contoso:Crater;1",
-    "@type": "Interface",
-    "@context": "dtmi:dtdl:context;2"
-  },
-  {
-    "@id": "dtmi:com:contoso:Moon;1",
-    "@type": "Interface",
-    "@context": "dtmi:dtdl:context;2"
-  }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/Planet-Crater-Moon.json":::
 
 Поля модели:
 
@@ -166,57 +120,7 @@ Azure Digital двойников также не наблюдает за `writab
 
 В следующем примере демонстрируется повторная модель *планеты* из предыдущего примера дтдл в качестве подтипа более крупной модели *целестиалбоди* . Сначала определяется "родительская" модель, а затем "дочерняя" модель строится на ней с помощью поля `extends` .
 
-```json
-[
-  {
-    "@id": "dtmi:com:contoso:CelestialBody;1",
-    "@type": "Interface",
-    "@context": "dtmi:dtdl:context;2",
-    "displayName": "Celestial body",
-    "contents": [
-      {
-        "@type": "Property",
-        "name": "name",
-        "schema": "string"
-      },
-      {
-        "@type": "Property",
-        "name": "mass",
-        "schema": "double"
-      },
-      {
-        "@type": "Telemetry",
-        "name": "temperature",
-        "schema": "double"
-      }
-    ]
-  },
-  {
-    "@id": "dtmi:com:contoso:Planet;1",
-    "@type": "Interface",
-    "@context": "dtmi:dtdl:context;2",
-    "displayName": "Planet",
-    "extends": "dtmi:com:contoso:CelestialBody;1",
-    "contents": [
-      {
-        "@type": "Relationship",
-        "name": "satellites",
-        "target": "dtmi:com:contoso:Moon;1"
-      },
-      {
-        "@type": "Component",
-        "name": "deepestCrater",
-        "schema": "dtmi:com:contoso:Crater;1"
-      }
-    ]
-  },
-  {
-    "@id": "dtmi:com:contoso:Crater;1",
-    "@type": "Interface",
-    "@context": "dtmi:dtdl:context;2"
-  }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/CelestialBody-Planet-Crater.json":::
 
 В этом примере *целестиалбоди* вносит имя, масса и температуру в *планеты*. `extends`Раздел представляет собой имя интерфейса или массив имен интерфейсов (что позволяет расширять интерфейс наследовать от нескольких родительских моделей при необходимости).
 
@@ -244,7 +148,7 @@ Azure Digital двойников также не наблюдает за `writab
 
 Дополнительные сведения об этих процессах см. в разделе Практические руководства. [*Интеграция моделей, стандартных для отрасли*](how-to-integrate-models.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. раздел Управление моделями с помощью API-интерфейсов Дигиталтвинмоделс:
 * [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md).

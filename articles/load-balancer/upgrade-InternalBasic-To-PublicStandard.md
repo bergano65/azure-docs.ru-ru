@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: d1c69f528328d5ff983c7de9d7fad052a7c41285
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3394754f2829018f7862b3775f8ab2cb2d07d005
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009302"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051366"
 ---
 # <a name="upgrade-azure-internal-load-balancer---outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](./skus.md#skus). Так как стандартный внутренний Load Balancer не предоставляет исходящего подключения, мы предоставляем решение для создания стандартного общедоступного Load Balancer.
@@ -130,10 +130,6 @@ ms.locfileid: "96009302"
 
 Нет. Сценарий Azure PowerShell только переносит конфигурацию. Фактический перенос трафика несет ответственность за ваш контроль.
 
-### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>При использовании этого сценария возникли проблемы. Как получить помощь?
-  
-Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

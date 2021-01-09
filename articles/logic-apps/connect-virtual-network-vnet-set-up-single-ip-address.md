@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: 9ee804f7bed01ca0c7f365a04e6108afd9598157
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40f4845ecc21d05ca5e8394dccba080f8a1f8936
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87066391"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049717"
 ---
 # <a name="set-up-a-single-ip-address-for-one-or-more-integration-service-environments-in-azure-logic-apps"></a>Настройте один IP-адрес для одной или нескольких сред службы интеграции в Azure Logic Apps
 
@@ -19,7 +19,7 @@ ms.locfileid: "87066391"
 
 В этом разделе показано, как маршрутизировать исходящий трафик через брандмауэр Azure, но вы можете применить аналогичные концепции к сетевому виртуальному устройству, такому как сторонний брандмауэр из Azure Marketplace. Хотя в этом разделе основное внимание уделяется установке нескольких экземпляров ISE, этот подход можно также использовать для одной интегрированной среды сценариев, если в сценарии требуется ограничить количество IP-адресов, которым требуется доступ. Оцените оправданность дополнительных затрат на брандмауэр или сетевой виртуальный модуль для вашего сценария. Дополнительные сведения о [ценах на брандмауэр Azure](https://azure.microsoft.com/pricing/details/azure-firewall/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Брандмауэр Azure, работающий в той же виртуальной сети, что и интегрированная среда сценариев. Если у вас нет брандмауэра, сначала [добавьте подсеть](../virtual-network/virtual-network-manage-subnet.md#add-a-subnet) с именем `AzureFirewallSubnet` в виртуальную сеть. Затем можно [создать и развернуть брандмауэр](../firewall/tutorial-firewall-deploy-portal.md#deploy-the-firewall) в виртуальной сети.
 
@@ -76,7 +76,7 @@ ms.locfileid: "87066391"
    | Свойство | Значение | Описание |
    |----------|-------|-------------|
    | **Имя** | <*сеть-Rule-Collection-Name*> | Имя коллекции правил сети |
-   | **Приоритет** | <*уровень приоритета*> | Порядок приоритета, используемый для запуска коллекции правил. Дополнительные сведения см. в статье [что такое основные понятия брандмауэра Azure](../firewall/firewall-faq.md#what-are-some-azure-firewall-concepts)? |
+   | **Приоритет** | <*уровень приоритета*> | Порядок приоритета, используемый для запуска коллекции правил. Дополнительные сведения см. в статье [что такое основные понятия брандмауэра Azure](../firewall/firewall-faq.yml#what-are-some-azure-firewall-concepts)? |
    | **Действие** | **Разрешить** | Тип действия, выполняемого для этого правила |
    |||
 
@@ -95,7 +95,7 @@ ms.locfileid: "87066391"
 
    * [Настройка правила сети](../firewall/tutorial-firewall-deploy-portal.md#configure-a-network-rule)
    * [Логика обработки правил Брандмауэра Azure](../firewall/rule-processing.md#network-rules-and-applications-rules)
-   * [Часто задаваемые вопросы о службе "Брандмауэр Azure"](../firewall/firewall-faq.md)
+   * [Часто задаваемые вопросы о службе "Брандмауэр Azure"](../firewall/firewall-faq.yml)
    * [Azure PowerShell: New-Азфиреваллнетворкруле](/powershell/module/az.network/new-azfirewallnetworkrule)
    * [Azure CLI: az Network Firewall Network — Rule](/cli/azure/ext/azure-firewall/network/firewall/network-rule?view=azure-cli-latest#ext-azure-firewall-az-network-firewall-network-rule-create)
 

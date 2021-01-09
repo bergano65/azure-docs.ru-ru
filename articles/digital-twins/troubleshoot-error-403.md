@@ -6,12 +6,12 @@ author: baanders
 ms.author: baanders
 ms.topic: troubleshooting
 ms.date: 7/20/2020
-ms.openlocfilehash: aeae1f1a99d1fa574df8202efd2405232855628b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 1517c066fe20d478094f57d85d6e27f355a93601
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091809"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049819"
 ---
 # <a name="service-request-failed-status-403-forbidden"></a>Сбой запроса на обслуживание. Состояние: 403 (запрещено)
 
@@ -44,7 +44,7 @@ ms.locfileid: "93091809"
 Обратите внимание, что эта роль отличается от...
 * Первое имя для этой роли в предварительной версии, *владелец Azure Digital двойников (Предварительная версия)* (роль совпадает, но имя изменилось)
 * роль *владельца* для всей подписки Azure. *Владелец данных Azure Digital двойников* — это роль в Azure Digital двойников, которая ограничивается этим индивидуальным экземпляром Azure Digital двойников.
-* роль *владельца* в Azure Digital двойников. Это две отдельные роли управления цифровыми двойников Azure, а *владелец данных Azure Digital двойников* — роль, которую следует использовать для управления во время предварительной версии.
+* роль *владельца* в Azure Digital двойников. Это две отдельные роли управления цифровыми двойников Azure, а *владелец данных Azure Digital двойников* — роль, которую следует использовать для управления.
 
 #### <a name="check-current-setup"></a>Проверка текущей установки
 

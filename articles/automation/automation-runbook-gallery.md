@@ -3,21 +3,21 @@ title: Использование модулей runbook и модулей сл�
 description: В этой статье рассказывается, как использовать модули runbook и модули, разработанные Майкрософт и сообществом, в коллекции PowerShell.
 services: automation
 ms.subservice: process-automation
-ms.date: 12/17/2020
+ms.date: 01/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 26dfedf1961cf39645c3bcf3ce5fa2db6c14119e
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 590220782a7f43e785cc7885e68eefa99afb7d1d
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97682765"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049122"
 ---
 # <a name="use-runbooks-and-modules-in-powershell-gallery"></a>Поиск последовательностей runbook и модулей в коллекции PowerShell
 
 Вы можете не создавать собственные модули Runbook и другие модули в службе автоматизации Azure, а воспользоваться сценариями, уже созданными корпорацией Майкрософт и сообществом. Runbook и модули PowerShell можно получить из коллекция PowerShell и [модулей](#modules-in-powershell-gallery) [Runbook Python](#use-python-runbooks) в Организации Azure Automation GitHub. Вы также можете поделиться с сообществом [скриптами, которые вы разработали](#add-a-powershell-runbook-to-the-gallery).
 
 > [!NOTE]
-> В центре сценариев TechNet будет снято снятие с учета. Все модули Runbook из центра сценариев в коллекции Runbook были перемещены в нашу [организацию GitHub нашей службы автоматизации](https://github.com/azureautomation).
+> В центре сценариев TechNet будет снято снятие с учета. Все модули Runbook из центра сценариев в коллекции Runbook были перемещены в нашу [организацию GitHub службы автоматизации](https://github.com/azureautomation) . Дополнительные сведения см. [здесь](https://techcommunity.microsoft.com/t5/azure-governance-and-management/azure-automation-runbooks-moving-to-github/ba-p/2039337).
 
 ## <a name="runbooks-in-powershell-gallery"></a>Модули runbook в коллекции PowerShell
 

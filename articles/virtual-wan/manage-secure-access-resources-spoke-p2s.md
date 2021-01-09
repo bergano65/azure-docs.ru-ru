@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 12/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: b0937bbd72460b1d46ce0394af1933e858424966
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: c2efd9ac137c226c1d3a77e2cb6ebe17d75cb496
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360328"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051536"
 ---
 # <a name="manage-secure-access-to-resources-in-spoke-vnets-for-user-vpn-clients"></a>Управление безопасным доступом к ресурсам в лучевой виртуальных сетей для VPN-клиентов пользователей
 
@@ -23,7 +23,7 @@ ms.locfileid: "97360328"
 
 :::image type="content" source="./media/manage-secure-access-resources-spoke-p2s/diagram.png" alt-text="Схема: защищенный виртуальный концентратор" :::
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [Prerequisites](../../includes/virtual-wan-before-include.md)]
 
@@ -129,7 +129,7 @@ ms.locfileid: "97360328"
 1. В разделе **Параметры** выберите пункт **Конфигурация безопасности**.
 1. В разделе **Частный трафик** выберите **Брандмауэр Azure**.
 1. Убедитесь, что подключение к виртуальной сети и частный трафик подключения филиала защищены брандмауэром Azure.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ## <a name="validate"></a><a name="validate"></a>Проверить
 
@@ -147,4 +147,4 @@ ms.locfileid: "97360328"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Виртуальной глобальной сети см. в статье [Часто задаваемые вопросы по виртуальным глобальным сетям (предварительная версия)](virtual-wan-faq.md).
-* Дополнительные сведения о брандмауэре Azure см. в разделе [часто задаваемые вопросы о брандмауэре Azure](../firewall/firewall-faq.md).
+* Дополнительные сведения о брандмауэре Azure см. в разделе [часто задаваемые вопросы о брандмауэре Azure](../firewall/firewall-faq.yml).

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 6559de2b94879ac8643f4945fd5adcf4fc7e1045
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: aa3466456b99664b1b39bd415680a6a291f85acd
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350829"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049292"
 ---
 # <a name="route-events-within-and-outside-of-azure-digital-twins"></a>Маршрутизация событий внутри и за пределами Azure Digital двойников
 
@@ -53,7 +53,7 @@ Azure Digital двойников использует **маршруты соб�
 Чтобы определить маршрут события, разработчики сначала должны определить конечные точки. **Конечная точка** — это назначение за пределами цифрового двойников Azure, которое поддерживает подключение маршрута. В число поддерживаемых назначений входят следующие:
 * Пользовательские разделы сетки событий
 * Концентратор событий
-* Cлужебная шина
+* Служебная шина
 
 Чтобы создать конечную точку, можно использовать [**API-интерфейсы плоскости управления**](how-to-manage-routes-apis-cli.md#create-an-endpoint-for-azure-digital-twins)цифровыми двойников Azure, [**команды интерфейса командной строки**](how-to-manage-routes-apis-cli.md#manage-endpoints-and-routes-with-cli)или [**портал Azure**](how-to-manage-routes-portal.md#create-an-endpoint-for-azure-digital-twins). 
 
@@ -75,11 +75,7 @@ Azure Digital двойников использует **маршруты соб�
 
 Ниже приведен пример создания маршрута события в клиентском приложении с помощью `CreateOrReplaceEventRouteAsync` вызова [.NET (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true) : 
 
-```csharp
-string eventFilter = "$eventType = 'DigitalTwinTelemetryMessages' or $eventType = 'DigitalTwinLifecycleNotification'";
-var er = new DigitalTwinsEventRoute("endpointName", eventFilter);
-await client.CreateOrReplaceEventRouteAsync("routeName", er);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/eventRoute_operations.cs" id="CreateEventRoute":::
 
 1. Сначала `DigitalTwinsEventRoute` создается объект, а конструктор принимает имя конечной точки. Это `endpointName` поле определяет конечную точку, например концентратор событий, службу "Сетка событий" или служебную шину. Эти конечные точки должны быть созданы в подписке и подключены к Azure Digital двойников с помощью API-интерфейсов плоскости управления перед выполнением этого вызова регистрации.
 

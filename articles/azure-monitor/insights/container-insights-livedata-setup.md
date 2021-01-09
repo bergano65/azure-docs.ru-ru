@@ -2,14 +2,14 @@
 title: Настройка Azure Monitor для динамических данных контейнеров (Предварительная версия) | Документация Майкрософт
 description: В этой статье описывается, как настроить представление журналов контейнеров (stdout/stderr) и событий в режиме реального времени без использования kubectl с Azure Monitor для контейнеров.
 ms.topic: conceptual
-ms.date: 02/14/2019
+ms.date: 01/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: 62bc7613995296504dfba551cdb631ac3386aa75
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: d5b978e7138e10ed88f5748b84ff62ddd22bebec
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830791"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050788"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>Настройка функции "Интерактивные данные (Предварительная версия)"
 
@@ -29,8 +29,6 @@ ms.locfileid: "97830791"
 - Kubernetes управления доступом на основе ролей (Kubernetes RBAC) с включенным кластером AKS
 - Azure Active Directory интегрированный кластер AKS.
 
->[!NOTE]
->Кластеры AKS, включенные в качестве [частных кластеров](https://azure.microsoft.com/updates/aks-private-cluster/) , не поддерживаются этой функцией. Эта функция зависит от прямого доступа к API Kubernetes через прокси-сервер из браузера. Включение сетевой безопасности для блокировки интерфейса API Kubernetes от этого прокси-сервера приведет к блокировке этого трафика.
 
 ## <a name="authentication-model"></a>Модель проверки подлинности
 

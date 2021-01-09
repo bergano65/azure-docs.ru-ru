@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3a11cd9f3208c97748ab16c636aedd9a443c5b9f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: d84acc5501b3d40f6db85d0ee6ee369aec5a6aa4
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93093169"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051111"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Интеграция Azure Digital двойников со службой Azure SignalR
 
@@ -20,7 +20,7 @@ ms.locfileid: "93093169"
 
 Решение, описанное в этой статье, позволит отправлять данные телеметрии Digital двойника подключенным клиентам, таким как одна веб-страница или мобильное приложение. В результате клиенты обновляются с учетом метрик реального времени и состояния с устройств Интернета вещей без необходимости опрашивать сервер или отправлять новые HTTP-запросы на обновление.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Ниже приведены предварительные требования, которые необходимо выполнить перед продолжением.
 
@@ -68,66 +68,8 @@ ms.locfileid: "93093169"
 1. Создайте новый яркий класс C# с именем **SignalRFunctions.CS** в проекте *самплефунктионсапп* .
 
 1. Замените содержимое файла класса следующим кодом:
-
-    ```C#
-    using System;
-    using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.Azure.EventGrid.Models;
-    using Microsoft.Azure.WebJobs;
-    using Microsoft.Azure.WebJobs.Extensions.Http;
-    using Microsoft.Azure.WebJobs.Extensions.EventGrid;
-    using Microsoft.Azure.WebJobs.Extensions.SignalRService;
-    using Microsoft.Extensions.Logging;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
-    using System.Collections.Generic;
     
-    namespace SampleFunctionsApp
-    {
-        public static class SignalRFunctions
-        {
-            public static double temperature;
-    
-            [FunctionName("negotiate")]
-            public static SignalRConnectionInfo GetSignalRInfo(
-                [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
-                [SignalRConnectionInfo(HubName = "dttelemetry")] SignalRConnectionInfo connectionInfo)
-            {
-                return connectionInfo;
-            }
-    
-            [FunctionName("broadcast")]
-            public static Task SendMessage(
-                [EventGridTrigger] EventGridEvent eventGridEvent,
-                [SignalR(HubName = "dttelemetry")] IAsyncCollector<SignalRMessage> signalRMessages,
-                ILogger log)
-            {
-                JObject eventGridData = (JObject)JsonConvert.DeserializeObject(eventGridEvent.Data.ToString());
-    
-                log.LogInformation($"Event grid message: {eventGridData}");
-    
-                var patch = (JObject)eventGridData["data"]["patch"][0];
-                if (patch["path"].ToString().Contains("/Temperature"))
-                {
-                    temperature = Math.Round(patch["value"].ToObject<double>(), 2);
-                }
-    
-                var message = new Dictionary<object, object>
-                {
-                    { "temperatureInFahrenheit", temperature},
-                };
-        
-                return signalRMessages.AddAsync(
-                    new SignalRMessage
-                    {
-                        Target = "newMessage",
-                        Arguments = new[] { message }
-                    });
-            }
-        }
-    }
-    ```
+    :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/signalRFunction.cs":::
 
 1. В окне *консоли диспетчера пакетов* Visual Studio или в любом окне командной строки на компьютере в папке *Azure_Digital_Twins_end_to_end_samples \адтсамплеапп\самплефунктионсапп* выполните следующую команду, чтобы установить `SignalRService` пакет NuGet в проект:
     ```cmd
@@ -141,7 +83,7 @@ ms.locfileid: "93093169"
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/functions-negotiate.png" alt-text="Портал Azure представление приложения функции, в меню которого выделено &quot;функции&quot;. Список функций отображается на странице, и функция &quot;Negotiate&quot; также выделяется.":::
 
-    Нажмите *получить URL-адрес функции* и скопируйте значение **до _/API_ (не включайте последние _/неготиате?_ )**. Он будет использоваться позже.
+    Нажмите *получить URL-адрес функции* и скопируйте значение **до _/API_ (не включайте последние _/неготиате?_)**. Он будет использоваться позже.
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/get-function-url.png" alt-text="Портал Azure представление функции &quot;Negotiate&quot;. Кнопка &quot;получить URL-адрес функции&quot; выделена и часть URL-адреса с начала до &quot;/API&quot;":::
 
@@ -166,10 +108,10 @@ ms.locfileid: "93093169"
 :::image type="content" source="media/how-to-integrate-azure-signalr/event-subscription-1b.png" alt-text="Портал Azure: подписка на события Сетки событий":::
 
 На странице *Создание подписки на событие* заполните поля следующим образом (поля, заполненные по умолчанию, не указываются):
-* *СВЕДЕНИЯ О ПОДПИСКЕ НА СОБЫТИЯ* > **Имя** : укажите имя для подписки на события.
-* *СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ* > **Тип конечной точки** : выберите в меню пункт *Функция Azure*.
-* *СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ* > **Конечная точка** : нажмите ссылку *Выбор конечной точки*. Откроется окно *Выбор функции Azure* :
-    - Заполните **подписку** , **группу ресурсов** , **приложение-функцию** и **функцию** ( *вещание* ). После выбора подписки некоторые из этих полей могут быть заполнены автоматически.
+* *СВЕДЕНИЯ О ПОДПИСКЕ НА СОБЫТИЯ* > **Имя**: укажите имя для подписки на события.
+* *СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ* > **Тип конечной точки**: выберите в меню пункт *Функция Azure*.
+* *СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ* > **Конечная точка**: нажмите ссылку *Выбор конечной точки*. Откроется окно *Выбор функции Azure*:
+    - Заполните **подписку**, **группу ресурсов**, **приложение-функцию** и **функцию** (*вещание*). После выбора подписки некоторые из этих полей могут быть заполнены автоматически.
     - Нажмите кнопку **Подтвердить выбор**.
 
 :::image type="content" source="media/how-to-integrate-azure-signalr/create-event-subscription.png" alt-text="Портал Azure представление о создании подписки на события. Поля, указанные выше, заполнены, а кнопки &quot;подтвердить выделение&quot; и &quot;создать&quot; выделены.":::
@@ -218,7 +160,7 @@ ms.locfileid: "93093169"
 
 ### <a name="see-the-results"></a>Просмотр результатов
 
-Чтобы увидеть результаты в действии, запустите **Пример веб-приложения "Интеграция SignalR** ". Это можно сделать в любом окне консоли в расположении *Azure_Digital_Twins_SignalR_integration_web_app_sample \срк* , выполнив следующую команду:
+Чтобы увидеть результаты в действии, запустите **Пример веб-приложения "Интеграция SignalR**". Это можно сделать в любом окне консоли в расположении *Azure_Digital_Twins_SignalR_integration_web_app_sample \срк* , выполнив следующую команду:
 
 ```cmd
 npm start
@@ -246,7 +188,7 @@ npm start
 az group delete --name <your-resource-group>
 ```
 
-Наконец, удалите образцы папок проекта, скачанные на локальный компьютер ( *Azure_Digital_Twins_end_to_end_samples.zip* и *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip* ).
+Наконец, удалите образцы папок проекта, скачанные на локальный компьютер (*Azure_Digital_Twins_end_to_end_samples.zip* и *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

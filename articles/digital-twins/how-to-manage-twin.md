@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 558e03e698d184aa9b5914f7d494ea61b5a6b18e
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 6d9df48839505714deead567b3d342febdb41c90
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616938"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051774"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
@@ -23,7 +23,7 @@ ms.locfileid: "97616938"
 > [!TIP]
 > Все функции пакета SDK имеют синхронные и асинхронные версии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
@@ -35,9 +35,7 @@ ms.locfileid: "97616938"
 
 Чтобы создать двойника, используйте `CreateOrReplaceDigitalTwinAsync()` метод в клиенте службы следующим образом:
 
-```csharp
-await client.CreateOrReplaceDigitalTwinAsync<BasicDigitalTwin>("myTwinId", initData);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="CreateTwinCall":::
 
 Чтобы создать цифровой двойника, необходимо предоставить:
 * Требуемый идентификатор для цифрового двойника
@@ -65,28 +63,16 @@ API создания двойника принимает объект, кото�
 
 Без использования каких-либо настраиваемых вспомогательных классов можно представить свойства двойника в `Dictionary<string, object>` , где `string` — это имя свойства, а `object` — объект, представляющий свойство и его значение.
 
-[!INCLUDE [Azure Digital Twins code: create twin](../../includes/digital-twins-code-create-twin.md)]
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="CreateTwin_noHelper":::
 
 #### <a name="create-twins-with-the-helper-class"></a>Создание двойников с помощью вспомогательного класса
 
 Вспомогательный класс служб `BasicDigitalTwin` позволяет хранить поля свойств непосредственно в объекте "двойника". Вы по-прежнему можете создать список свойств с помощью `Dictionary<string, object>` , который затем можно добавить в объект двойника в качестве `CustomProperties` непосредственного объекта.
 
-```csharp
-BasicDigitalTwin twin = new BasicDigitalTwin();
-twin.Metadata = new DigitalTwinMetadata();
-twin.Metadata.ModelId = "dtmi:example:Room;1";
-// Initialize properties
-Dictionary<string, object> props = new Dictionary<string, object>();
-props.Add("Temperature", 25.0);
-props.Add("Humidity", 50.0);
-twin.Contents = props;
-
-client.CreateOrReplaceDigitalTwinAsync<BasicDigitalTwin>("myRoomId", twin);
-Console.WriteLine("The twin is created successfully");
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="CreateTwin_withHelper":::
 
 >[!NOTE]
-> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Пример.
+> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Например:
 >
 >```csharp
 >twin.Id = "myRoomId";
@@ -96,20 +82,12 @@ Console.WriteLine("The twin is created successfully");
 
 Вы можете получить доступ к сведениям о любом цифровом двойника, вызвав `GetDigitalTwin()` метод следующим образом:
 
-```csharp
-object result = await client.GetDigitalTwin(id);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="GetTwinCall":::
+
 Этот вызов возвращает двойника данные в виде строго типизированного типа объекта, такого как `BasicDigitalTwin` . `BasicDigitalTwin` — Это вспомогательный класс сериализации, входящий в состав пакета SDK, который будет возвращать основные метаданные и свойства двойника в предварительно проанализированной форме. Ниже приведен пример использования этого параметра для просмотра сведений о двойника:
 
-```csharp
-Response<BasicDigitalTwin> twin = client.GetDigitalTwin("myRoomId");
-Console.WriteLine($"Model id: {twin.Metadata.ModelId}");
-foreach (string prop in twin.Contents.Keys)
-{
-  if (twin.Contents.TryGetValue(prop, out object value))
-  Console.WriteLine($"Property '{prop}': {value}");
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="GetTwin":::
+
 При получении двойника с помощью метода возвращаются только те свойства, которые были установлены хотя бы один раз `GetDigitalTwin()` .
 
 >[!TIP]
@@ -119,27 +97,8 @@ foreach (string prop in twin.Contents.Keys)
 
 Рассмотрим следующую модель (написанную на [языке определения цифровых двойников (дтдл)](https://github.com/Azure/opendigitaltwins-dtdl/tree/master/DTDL)), которая определяет *Луна*:
 
-```json
-{
-    "@id": "dtmi:example:Moon;1",
-    "@type": "Interface",
-    "@context": "dtmi:dtdl:context;2",
-    "contents": [
-        {
-            "@type": "Property",
-            "name": "radius",
-            "schema": "double",
-            "writable": true
-        },
-        {
-            "@type": "Property",
-            "name": "mass",
-            "schema": "double",
-            "writable": true
-        }
-    ]
-}
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/Moon.json":::
+
 Результат вызова `object result = await client.GetDigitalTwinAsync("my-moon");` для типа *Луны* двойника может выглядеть следующим образом:
 
 ```json
@@ -171,7 +130,7 @@ foreach (string prop in twin.Contents.Keys)
 Определенные свойства цифровых двойника возвращаются в виде свойств верхнего уровня в цифровом двойника. Метаданные или системные сведения, не входящие в определение ДТДЛ, возвращаются с `$` префиксом. Свойства метаданных включают:
 * Идентификатор цифрового двойника в этом экземпляре Azure Digital двойников, например `$dtId` .
 * `$etag`— стандартное поле HTTP, назначенное веб-сервером.
-* Другие свойства в `$metadata` разделе. К ним относятся следующие.
+* Другие свойства в `$metadata` разделе. К ним относятся следующие:
     - ДТМИ модели цифрового двойника.
     - Состояние синхронизации для каждого записываемого свойства. Это наиболее полезно для устройств, где служба и устройство могут иметь состояние рассогласования (например, если устройство находится в автономном режиме). В настоящее время это свойство применяется только к физическим устройствам, подключенным к центру Интернета вещей. С данными в разделе метаданных можно понять полное состояние свойства, а также отметку времени последнего изменения. Дополнительные сведения о состоянии синхронизации см. в [этом руководстве центра Интернета вещей](../iot-hub/tutorial-device-twins.md) по синхронизации состояния устройства.
     - Зависящие от службы метаданные, например из центра Интернета вещей или Azure Digital двойников. 
@@ -184,18 +143,13 @@ foreach (string prop in twin.Contents.Keys)
 
 Ниже приведен основной текст запроса, который вернет список всех цифровых двойников в экземпляре:
 
-```sql
-SELECT *
-FROM DIGITALTWINS
-``` 
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="GetAllTwins":::
 
 ## <a name="update-a-digital-twin"></a>Обновление цифрового двойника
 
 Чтобы обновить свойства цифрового двойника, необходимо записать сведения, которые необходимо заменить в формате [исправления JSON](http://jsonpatch.com/) . Таким образом можно заменить несколько свойств одновременно. Затем вы передаете документ исправления JSON в `UpdateDigitalTwin()` метод:
 
-```csharp
-await client.UpdateDigitalTwin(id, patch);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="UpdateTwinCall":::
 
 Вызов Patch может обновлять столько свойств одного двойника, сколько необходимо (даже все они). Если необходимо обновить свойства в нескольких двойников, потребуется отдельный вызов Update для каждого двойника.
 
@@ -204,27 +158,11 @@ await client.UpdateDigitalTwin(id, patch);
 
 Ниже приведен пример кода исправления JSON. Этот документ заменяет значения свойств *масса* и *радиус* цифрового двойника, к которому он применяется.
 
-```json
-[
-  {
-    "op": "replace",
-    "path": "/mass",
-    "value": 0.0799
-  },
-  {
-    "op": "replace",
-    "path": "/radius",
-    "value": 0.800
-  }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/patch.json":::
+
 Вы можете создавать исправления с помощью `JsonPatchDocument` в [пакете SDK](how-to-use-apis-sdks.md). Ниже приведен пример.
 
-```csharp
-var updateTwinData = new JsonPatchDocument();
-updateTwinData.AppendAddOp("/Temperature", temperature.Value<double>());
-await client.UpdateDigitalTwinAsync(twin_Id, updateTwinData);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="UpdateTwin":::
 
 ### <a name="update-properties-in-digital-twin-components"></a>Обновление свойств в компонентах Digital двойника
 
@@ -232,15 +170,7 @@ await client.UpdateDigitalTwinAsync(twin_Id, updateTwinData);
 
 Чтобы исправить свойства в компонентах Digital двойника, можно использовать синтаксис пути в исправлении JSON:
 
-```json
-[
-  {
-    "op": "replace",
-    "path": "/mycomponentname/mass",
-    "value": 0.0799
-  }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/patch-component.json":::
 
 ### <a name="update-a-digital-twins-model"></a>Обновление модели цифрового двойника
 
@@ -248,15 +178,7 @@ await client.UpdateDigitalTwinAsync(twin_Id, updateTwinData);
 
 Например, рассмотрим следующий документ с исправлением JSON, который заменяет поле метаданных Digital двойника `$model` :
 
-```json
-[
-  {
-    "op": "replace",
-    "path": "/$metadata/$model",
-    "value": "dtmi:example:foo;1"
-  }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/patch-model-1.json":::
 
 Эта операция будет выполнена только в том случае, если двойника, измененный исправлением, соответствует новой модели. 
 
@@ -267,20 +189,7 @@ await client.UpdateDigitalTwinAsync(twin_Id, updateTwinData);
 
 Исправление для этой ситуации должно обновить свойство двойника и Model, следующим образом:
 
-```json
-[
-  {
-    "op": "replace",
-    "path": "/$metadata/$model",
-    "value": "dtmi:example:foo_new;1"
-  },
-  {
-    "op": "add",
-    "path": "/temperature",
-    "value": 60
-  }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/patch-model-2.json":::
 
 ### <a name="handle-conflicting-update-calls"></a>Обработку конфликтующих вызовов обновления
 
@@ -301,65 +210,11 @@ Azure Digital двойников гарантирует, что все вход�
 
 Ниже приведен пример кода для удаления двойников и их связей:
 
-```csharp
-static async Task DeleteTwin(string id)
-{
-    await FindAndDeleteOutgoingRelationshipsAsync(id);
-    await FindAndDeleteIncomingRelationshipsAsync(id);
-    try
-    {
-        await client.DeleteDigitalTwin(id);
-    } catch (RequestFailedException exc)
-    {
-        Console.WriteLine($"*** Error:{exc.Error}/{exc.Message}");
-    }
-}
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="DeleteTwin":::
 
-public async Task FindAndDeleteOutgoingRelationshipsAsync(string dtId)
-{
-    // Find the relationships for the twin
-
-    try
-    {
-        // GetRelationshipsAsync will throw an error if a problem occurs
-        AsyncPageable<BasicRelationship> rels = client.GetRelationshipsAsync<BasicRelationship>(dtId);
-
-        await foreach (BasicRelationship rel in rels)
-        {
-            await client.DeleteRelationshipAsync(dtId, rel.Id).ConfigureAwait(false);
-            Log.Ok($"Deleted relationship {rel.Id} from {dtId}");
-        }
-    }
-    catch (RequestFailedException ex)
-    {
-        Log.Error($"**_ Error {ex.Status}/{ex.ErrorCode} retrieving or deleting relationships for {dtId} due to {ex.Message}");
-    }
-}
-
-async Task FindAndDeleteIncomingRelationshipsAsync(string dtId)
-{
-    // Find the relationships for the twin
-
-    try
-    {
-        // GetRelationshipsAsync will throw an error if a problem occurs
-        AsyncPageable<IncomingRelationship> incomingRels = client.GetIncomingRelationshipsAsync(dtId);
-
-        await foreach (IncomingRelationship incomingRel in incomingRels)
-        {
-            await client.DeleteRelationshipAsync(incomingRel.SourceId, incomingRel.RelationshipId).ConfigureAwait(false);
-            Log.Ok($"Deleted incoming relationship {incomingRel.RelationshipId} from {dtId}");
-        }
-    }
-    catch (RequestFailedException ex)
-    {
-        Log.Error($"_*_ Error {ex.Status}/{ex.ErrorCode} retrieving or deleting incoming relationships for {dtId} due to {ex.Message}");
-    }
-}
-```
 ### <a name="delete-all-digital-twins"></a>Удалить все цифровые двойников
 
-Пример того, как удалить все двойников одновременно, можно скачать с помощью примера приложения, используемого в [_Tutorial. Изучите основные сведения с примером клиентского приложения *](tutorial-command-line-app.md). Файл *CommandLoop.CS* делает это в `CommandDeleteAllTwins()` функции.
+Пример того, как удалить все двойников одновременно, можно скачать с помощью примера приложения, используемого в [*учебнике. Изучите основные сведения с примером клиентского приложения*](tutorial-command-line-app.md). Файл *CommandLoop.CS* делает это в `CommandDeleteAllTwins()` функции.
 
 ## <a name="runnable-digital-twin-code-sample"></a>Пример готового кода Digital двойника
 
@@ -372,11 +227,9 @@ async Task FindAndDeleteIncomingRelationshipsAsync(string dtId)
 Перед запуском образца выполните следующие действия.
 1. Скачайте файл модели, поместите его в свой проект и замените `<path-to>` заполнитель в приведенном ниже коде, чтобы сообщить программе, где его найти.
 2. Замените заполнитель `<your-instance-hostname>` именем узла своего экземпляра цифрового двойников Azure.
-3. Добавьте эти пакеты в проект:
-    ```cmd/sh
-    dotnet add package Azure.DigitalTwins.Core --version 1.0.0-preview.3
-    dotnet add package Azure.identity
-    ```
+3. Добавьте в проект две зависимости, которые понадобятся для работы с Azure Digital двойников. По приведенным ниже ссылкам можно перейти к пакетам в NuGet, в котором находятся команды консоли (в том числе для .NET CLI), и добавить в проект последнюю версию каждой из них.
+    * [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Это пакет для [пакета SDK Azure Digital Twins для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true).
+    * [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Эта библиотека предоставляет инструменты для проверки подлинности в Azure.
 
 Кроме того, необходимо настроить локальные учетные данные, если вы хотите выполнить пример напрямую. В следующем разделе приведено пошаговое руководство.
 [!INCLUDE [Azure Digital Twins: local credentials prereq (outer)](../../includes/digital-twins-local-credentials-outer.md)]
@@ -385,157 +238,13 @@ async Task FindAndDeleteIncomingRelationshipsAsync(string dtId)
 
 После выполнения описанных выше действий можно запустить следующий пример кода.
 
-```csharp
-using System;
-using Azure.DigitalTwins.Core;
-using Azure.Identity;
-using System.Threading.Tasks;
-using System.IO;
-using System.Collections.Generic;
-using Azure;
-using Azure.DigitalTwins.Core.Serialization;
-using System.Text.Json;
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs":::
 
-namespace minimal
-{
-    class Program
-    {
-
-        public static async Task Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-
-            //Create the Azure Digital Twins client for API calls
-            string adtInstanceUrl = "https://<your-instance-hostname>";
-            var credentials = new DefaultAzureCredential();
-            DigitalTwinsClient client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credentials);
-            Console.WriteLine($"Service client created – ready to go");
-            Console.WriteLine();
-
-            //Upload models
-            Console.WriteLine($"Upload a model");
-            Console.WriteLine();
-            string dtdl = File.ReadAllText("<path-to>/Room.json");
-            var typeList = new List<string>();
-            typeList.Add(dtdl);
-            // Upload the model to the service
-            await client.CreateModelsAsync(typeList);
-
-            //Create new digital twin
-            BasicDigitalTwin twin = new BasicDigitalTwin();
-            string twin_Id = "myRoomId";
-            twin.Metadata = new DigitalTwinMetadata();
-            twin.Metadata.ModelId = "dtmi:example:Room;1";
-            // Initialize properties
-            Dictionary<string, object> props = new Dictionary<string, object>();
-            props.Add("Temperature", 35.0);
-            props.Add("Humidity", 55.0);
-            twin.Contents = props;
-            await client.CreateOrReplaceDigitalTwinAsync<BasicDigitalTwin>(twin_Id, twin);
-            Console.WriteLine("Twin created successfully");
-            Console.WriteLine();
-
-            //Print twin
-            Console.WriteLine("--- Printing twin details:");
-            twin = FetchAndPrintTwin(twin_Id, client);
-            Console.WriteLine("--------");
-            Console.WriteLine();
-
-            //Update twin data
-            var updateTwinData = new JsonPatchDocument();
-            updateTwinData.AppendAdd("/Temperature", 25.0);
-            await client.UpdateDigitalTwinAsync(twin_Id, updateTwinData);
-            Console.WriteLine("Twin properties updated");
-            Console.WriteLine();
-
-            //Print twin again
-            Console.WriteLine("--- Printing twin details (after update):");
-            FetchAndPrintTwin(twin_Id, client);
-            Console.WriteLine("--------");
-            Console.WriteLine();
-
-            //Delete twin
-            await DeleteTwin(client, twin_Id);
-        }
-
-        private static BasicDigitalTwin FetchAndPrintTwin(string twin_Id, DigitalTwinsClient client)
-        {
-            BasicDigitalTwin twin;
-            Response<BasicDigitalTwin> twin = client.GetDigitalTwin(twin_Id);
-            Console.WriteLine($"Model id: {twin.Metadata.ModelId}");
-            foreach (string prop in twin.Contents.Keys)
-            {
-                if (twin.Contents.TryGetValue(prop, out object value))
-                    Console.WriteLine($"Property '{prop}': {value}");
-            }
-
-            return twin;
-        }
-        private static async Task DeleteTwin(DigitalTwinsClient client, string id)
-        {
-            await FindAndDeleteOutgoingRelationshipsAsync(client, id);
-            await FindAndDeleteIncomingRelationshipsAsync(client, id);
-            try
-            {
-                await client.DeleteDigitalTwinAsync(id);
-                Console.WriteLine("Twin deleted successfully");
-            }
-            catch (RequestFailedException exc)
-            {
-                Console.WriteLine($"*** Error:{exc.Message}");
-            }
-        }
-
-        private static async Task FindAndDeleteOutgoingRelationshipsAsync(DigitalTwinsClient client, string dtId)
-        {
-            // Find the relationships for the twin
-
-            try
-            {
-                // GetRelationshipsAsync will throw an error if a problem occurs
-                AsyncPageable<BasicRelationship> rels = client.GetRelationshipsAsync<BasicRelationship>(dtId);
-
-                await foreach (BasicRelationship rel in rels)
-                {
-                    await client.DeleteRelationshipAsync(dtId, rel.Id).ConfigureAwait(false);
-                    Console.WriteLine($"Deleted relationship {rel.Id} from {dtId}");
-                }
-            }
-            catch (RequestFailedException ex)
-            {
-                Console.WriteLine($"**_ Error {ex.Status}/{ex.ErrorCode} retrieving or deleting relationships for {dtId} due to {ex.Message}");
-            }
-        }
-
-       private static async Task FindAndDeleteIncomingRelationshipsAsync(DigitalTwinsClient client, string dtId)
-        {
-            // Find the relationships for the twin
-
-            try
-            {
-                // GetRelationshipsAsync will throw an error if a problem occurs
-                AsyncPageable<IncomingRelationship> incomingRels = client.GetIncomingRelationshipsAsync(dtId);
-
-                await foreach (IncomingRelationship incomingRel in incomingRels)
-                {
-                    await client.DeleteRelationshipAsync(incomingRel.SourceId, incomingRel.RelationshipId).ConfigureAwait(false);
-                    Console.WriteLine($"Deleted incoming relationship {incomingRel.RelationshipId} from {dtId}");
-                }
-            }
-            catch (RequestFailedException ex)
-            {
-                Console.WriteLine($"_*_ Error {ex.Status}/{ex.ErrorCode} retrieving or deleting incoming relationships for {dtId} due to {ex.Message}");
-            }
-        }
-
-    }
-}
-
-```
 Ниже приведены выходные данные консоли для приведенной выше программы. 
 
 :::image type="content" source="./media/how-to-manage-twin/console-output-manage-twins.png" alt-text="Вывод на консоль, показывающий, что двойника создан, обновлен и удален." lightbox="./media/how-to-manage-twin/console-output-manage-twins.png":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как создавать и администрировать связи между цифровым двойников: _ [ *руководства: Управление диаграммой двойника с помощью связей* .](how-to-manage-graph.md)
+Узнайте, как создавать связи между цифровым двойников и управлять ими:
+* [*Руководство. Управление графом двойника с помощью связей*](how-to-manage-graph.md)
