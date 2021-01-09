@@ -110,7 +110,7 @@
 - name: Ресурсы
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ
-      href: firewall-faq.md
+      href: firewall-faq.yml
     - name: Создание шаблонов
       href: ../azure-resource-manager/templates/template-syntax.md
     - name: Стратегия развития Azure
