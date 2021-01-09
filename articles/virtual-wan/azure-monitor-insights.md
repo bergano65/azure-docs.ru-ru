@@ -7,24 +7,24 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 052fd0ea7619d566e78806580ee7b39e49cc85d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d14ae86d41caec3c1bd897c2c81bee748dcc312c
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448612"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050890"
 ---
-# <a name="azure-monitor-insights-for-virtual-wan-preview"></a>Azure Monitor аналитических сведений для виртуальной глобальной сети (Предварительная версия)
+# <a name="azure-monitor-insights-for-virtual-wan"></a>Azure Monitor аналитику для виртуальной глобальной сети
 
 [Azure Monitor аналитика](../azure-monitor/insights/network-insights-overview.md) для виртуальной глобальной сети Azure дает пользователям и операторам возможность просматривать состояние и состояние виртуальной глобальной сети, представленную с помощью автообнаруженной схемы топологическом. Состояние ресурса и наложение состояний на карте позволяют просмотреть моментальный снимок общей работоспособности виртуальной глобальной сети. Вы можете перемещаться по ресурсам на карте через один щелчок на страницах настройки ресурсов на портале виртуальной глобальной сети.
 
 Метрики уровня ресурсов виртуальной глобальной сети собираются и представляются с помощью предварительно упакованной книги метрик виртуальной глобальной сети. В книге отображаются метрики на уровне виртуальной глобальной сети, концентратора, шлюза и подключения. В этой статье описано, как с помощью Azure Monitor Insights для виртуальной глобальной сети просматривать топологию виртуальной глобальной сети и метрики в одном месте.
 
 > [!NOTE]
-> Выполняется развертывание пункта меню **Insights** на виртуальном портале глобальной сети. Во время развертывания этого меню можно получить доступ к книге топология и метрики виртуальной глобальной сети с помощью Azure Monitor для сетей. Дополнительные сведения см. в разделе [Azure Monitor for Networks](../azure-monitor/insights/network-insights-overview.md). 
+> Пункт меню **Insights** находится на портале ВИРТУАЛЬНОЙ глобальной сети в разделе **мониторинг**. Вы также можете получить доступ к книге топология и метрики виртуальной глобальной сети с помощью Azure Monitor для сетей. Дополнительные сведения см. в разделе [Azure Monitor for Networks](../azure-monitor/insights/network-insights-overview.md). 
 >
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Чтобы выполнить действия, описанные в этой статье, необходимо иметь виртуальную сеть WAN с одним или несколькими концентраторами. Чтобы создать виртуальную глобальную сеть и концентратор, выполните действия, описанные в следующих статьях:
 
@@ -45,7 +45,7 @@ ms.locfileid: "91448612"
 
 **Рис. 2. представление Insights**
 
-:::image type="content" source="./media/azure-monitor-insights/insights-view.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/insights-view.png":::
+:::image type="content" source="./media/azure-monitor-insights/insights-view.png" alt-text="Снимок экрана, на котором показано представление Insights." lightbox="./media/azure-monitor-insights/insights-view.png":::
 
 ## <a name="dependency-view"></a><a name="dependency"></a>Представление зависимостей
 
@@ -53,7 +53,7 @@ ms.locfileid: "91448612"
 
 **Рис. 3. представление зависимостей ВВАН**
 
-:::image type="content" source="./media/azure-monitor-insights/dependency-map.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/dependency-map.png":::
+:::image type="content" source="./media/azure-monitor-insights/dependency-map.png" alt-text="Снимок экрана, показывающий представление зависимостей." lightbox="./media/azure-monitor-insights/dependency-map.png":::
 
 На карте представления **зависимостей** в качестве подключенного графа отображаются следующие ресурсы:
 
@@ -69,13 +69,13 @@ ms.locfileid: "91448612"
 
 **Рис. 4. Переход к информации, относящейся к ресурсам**
 
-:::image type="content" source="./media/azure-monitor-insights/resource-information.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия).":::
+:::image type="content" source="./media/azure-monitor-insights/resource-information.png" alt-text="Снимок экрана, показывающий, как переходить к сведениям о ресурсах.":::
 
 Панель поиска и фильтра в представлении **зависимостей** предоставляет простой способ поиска в графе. Различные фильтры позволяют упростить поиск до определенного пути и состояния.
 
 **Рис. 5. Поиск и фильтрация**
 
-:::image type="content" source="./media/azure-monitor-insights/search-filter.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/search-filter.png":::
+:::image type="content" source="./media/azure-monitor-insights/search-filter.png" alt-text="Снимок экрана, на котором показаны панель поиска и фильтр." lightbox="./media/azure-monitor-insights/search-filter.png":::
 
 ## <a name="detailed-metrics"></a><a name="detailed"></a>Подробные метрики
 
@@ -83,9 +83,9 @@ ms.locfileid: "91448612"
 
 **Рис. 6. панель мониторинга с подробными метриками**
 
-:::image type="content" source="./media/azure-monitor-insights/detailed-metrics.png" alt-text="Снимок экрана, на котором показано представление Insights (Предварительная версия)." lightbox="./media/azure-monitor-insights/detailed-metrics.png":::
+:::image type="content" source="./media/azure-monitor-insights/detailed-metrics.png" alt-text="Снимок экрана, на котором показана подробная панель мониторинга метрик." lightbox="./media/azure-monitor-insights/detailed-metrics.png":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. [в разделе метрики в Azure Monitor](../azure-monitor/platform/data-platform-metrics.md).
 * Полное описание всех метрик виртуальной глобальной сети см. в разделе [журналы и метрики ВИРТУАЛЬНОЙ глобальной](logs-metrics.md)сети.
