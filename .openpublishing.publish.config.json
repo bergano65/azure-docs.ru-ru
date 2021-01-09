@@ -32,9 +32,7 @@
   "notification_subscribers": [
     "azure-docs-publish@microsoft.com"
   ],
-  "sync_notification_subscribers": [
-    "ceicnotifications@microsoft.com"
-  ],
+  "sync_notification_subscribers": [],
   "branches_to_filter": [
     "master",
     "master-sync-work",
