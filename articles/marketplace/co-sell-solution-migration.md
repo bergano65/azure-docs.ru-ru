@@ -7,12 +7,12 @@ ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.date: 12/07/2020
-ms.openlocfilehash: 6ad58283ad9078088f241a67426657eb7a538e10
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 0114c75d99d79041631e5078deb33f77863dc35a
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96781136"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043784"
 ---
 # <a name="migration-of-co-sell-solutions-from-ocp-gtm-to-the-commercial-marketplace"></a>Перенос решений для совместной продажи из OCP GTM в коммерческий рынок
 
@@ -136,7 +136,7 @@ ms.locfileid: "96781136"
 
     :::image type="content" source="media/co-sell-migrate/offer-setup.png" alt-text="В центре партнеров доступны вкладки Обзор установки предложения.":::
 
-3. Некоторые сведения о продавцах Майкрософт были скопированы из решения OCP GTM. Заполните остальные требуемые сведения на вкладке **Совместная продажа с Майкрософт** , чтобы обеспечить готовность предложения к совместной продаже. По завершении выберите **проверить и опубликовать**.
+3. Некоторые сведения о продавцах Майкрософт были скопированы из решения OCP GTM. Заполните остальные требуемые сведения на вкладке **Совместная продажа с Майкрософт** , чтобы обеспечить готовность предложения к совместной продаже. По завершении выберите **проверить и опубликовать**. Дополнительные сведения см. [в статье отправка материалов для совместной продажи в центре партнеров](marketplace-co-sell.md#how-to-submit-co-sell-materials-in-partner-center).
 
     :::image type="content" source="media/co-sell-migrate/co-sell-page.png" alt-text="Вкладка предложение совместной продажи в центре партнеров.":::
 
@@ -154,4 +154,6 @@ ms.locfileid: "96781136"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Перепродажа через партнеров CSP](cloud-solution-providers.md)
+- [Как отправлять материалы для совместной продажи в центре партнеров](marketplace-co-sell.md#how-to-submit-co-sell-materials-in-partner-center)
 - Просмотреть эти [вопросы и ответы](https://partner.microsoft.com/resources/detail/co-sell-requirements-publish-commercial-marketplace-faq-pdf) (PDF)
+

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 26302fa67394e6c3122b159866c3814fb5677ba6
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 8e82f8974b53224b3e471d1628a1ca5819ce2955
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92494983"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044498"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-cli"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (CLI)
 
@@ -35,12 +35,12 @@ ms.locfileid: "92494983"
 ## <a name="create-the-azure-digital-twins-instance"></a>Создание экземпляра Digital двойников для Azure
 
 В этом разделе вы **создадите новый экземпляр Azure Digital двойников** с помощью команды Cloud Shell. Необходимо указать:
-* Группа ресурсов для развертывания. Если у вас еще нет имеющейся группы ресурсов, вы можете создать ее сейчас с помощью следующей команды:
+* Группа ресурсов, в которой будет развернут экземпляр. Если у вас еще нет имеющейся группы ресурсов, вы можете создать ее сейчас с помощью следующей команды:
     ```azurecli-interactive
     az group create --location <region> --name <name-for-your-resource-group>
     ```
 * Регион для развертывания. Чтобы узнать, какие регионы поддерживают Azure Digital двойников, посетите страницу [*продукты Azure, доступные по регионам*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
-* Имя экземпляра. Имя нового экземпляра должно быть уникальным в пределах региона для вашей подписки (это означает, что если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется выбранное имя, вам будет предложено выбрать другое имя).
+* Имя экземпляра. Если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется указанное имя, вам будет предложено выбрать другое имя.
 
 Используйте следующие значения в следующей команде, чтобы создать экземпляр:
 
@@ -54,7 +54,7 @@ az dt create --dt-name <name-for-your-Azure-Digital-Twins-instance> -g <your-res
 
 :::image type="content" source="media/how-to-set-up-instance/cloud-shell/create-instance.png" alt-text="командное окно с успешным созданием группы ресурсов и экземпляра Azure Digital двойников":::
 
-Обратите внимание на имя *узла*, *имени*и группы Azure Digital *двойников из выходных* данных. Это все важные значения, которые могут потребоваться при продолжении работы с вашим экземпляром Azure Digital двойников для настройки проверки подлинности и связанных ресурсов Azure. Если другие пользователи будут программироваться на экземпляре, вы должны использовать эти значения совместно с ними.
+Обратите внимание на имя **узла**, **имени** и группы Azure Digital **двойников из выходных** данных. Это все важные значения, которые могут потребоваться при продолжении работы с вашим экземпляром Azure Digital двойников для настройки проверки подлинности и связанных ресурсов Azure. Если другие пользователи будут программироваться на экземпляре, вы должны использовать эти значения совместно с ними.
 
 > [!TIP]
 > Эти свойства и все свойства экземпляра можно просмотреть в любое время, запустив `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
@@ -78,9 +78,9 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 >
 > Назначьте роль с помощью *идентификатора объекта* пользователя. Это может произойти для пользователей в личных [учетных записях Майкрософт (MSAS)](https://account.microsoft.com/account). 
 >
-> Используйте [страницу портал Azure Azure Active Directory пользователей](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) , чтобы выбрать учетную запись пользователя и открыть сведения о ней. Скопируйте *ObjectID*пользователя:
+> Используйте [страницу портал Azure Azure Active Directory пользователей](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) , чтобы выбрать учетную запись пользователя и открыть сведения о ней. Скопируйте *ObjectID* пользователя:
 >
-> :::image type="content" source="media/includes/user-id.png" alt-text="командное окно с успешным созданием группы ресурсов и экземпляра Azure Digital двойников" lightbox="media/includes/user-id.png":::
+> :::image type="content" source="media/includes/user-id.png" alt-text="Представление страницы пользователя в портал Azure выделение идентификатора GUID в поле &quot;идентификатор объекта&quot;" lightbox="media/includes/user-id.png":::
 >
 > Затем повторите команду списка назначений ролей, используя *идентификатор объекта* пользователя для приведенного `assignee` выше параметра.
 

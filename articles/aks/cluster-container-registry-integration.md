@@ -4,13 +4,13 @@ description: Узнайте, как интегрировать службу Kube
 services: container-service
 manager: gwallace
 ms.topic: article
-ms.date: 02/25/2020
-ms.openlocfilehash: 4338f4ce1fe60a3a9002be93feab134dd2601720
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/08/2021
+ms.openlocfilehash: 4157195260e5c685faaddeaca87db81d199ffb23
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87406509"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043852"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -18,7 +18,10 @@ ms.locfileid: "87406509"
 
 Вы можете настроить AKS для интеграции записей контроля доступа в нескольких простых командах с Azure CLI. Эта интеграция назначает роль Акрпулл субъекту-службе, связанному с кластером AKS.
 
-## <a name="before-you-begin"></a>Перед началом
+> [!NOTE]
+> В этой статье описывается автоматическая проверка подлинности между AKS и записью контроля доступа. Если необходимо извлечь образ из закрытого внешнего реестра, используйте [секрет для извлечения образа][Image Pull Secret].
+
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для этих примеров требуются:
 
@@ -75,7 +78,7 @@ az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-name>
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
@@ -152,3 +155,4 @@ nginx0-deployment-669dfc4d4b-xdpd6   1/1     Running   0          20s
 
 <!-- LINKS - external -->
 [AKS AKS CLI]: /cli/azure/aks?view=azure-cli-latest#az-aks-create
+[Image Pull secret]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/

@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/18/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 0fa3492555b2870ae7b95abec08bbd3280cdc985
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 8ffbe5debaa980385a2c6dc0078de5f1cc2e9bde
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705070"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045518"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "97705070"
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
 
-При использовании брандмауэра Azure используйте __Преобразование сетевых адресов назначения (ДНАТ)__ для создания правил NAT для входящего трафика. Для исходящего трафика создайте правила __сети__ или __приложения__ . Эти коллекции правил более подробно описаны в разделе [что такое некоторые понятия брандмауэра Azure](../firewall/firewall-faq.md#what-are-some-azure-firewall-concepts).
+При использовании брандмауэра Azure используйте __Преобразование сетевых адресов назначения (ДНАТ)__ для создания правил NAT для входящего трафика. Для исходящего трафика создайте правила __сети__ или __приложения__ . Эти коллекции правил более подробно описаны в разделе [что такое некоторые понятия брандмауэра Azure](../firewall/firewall-faq.yml#what-are-some-azure-firewall-concepts).
 
 ### <a name="inbound-configuration"></a>Конфигурация входящего трафика
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: bf7b829d70af27850affe619d47ed4a4f5ec1bea
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 2502fdd14acae206b8440fe602639aa49be55f4e
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93279904"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045926"
 ---
 # <a name="write-client-app-authentication-code"></a>Запись кода проверки подлинности клиентского приложения
 
@@ -22,7 +22,7 @@ Azure Digital двойников выполняет проверку подли�
 
 В этой статье описывается, как получить учетные данные с помощью `Azure.Identity` клиентской библиотеки. Хотя в этой статье показаны примеры кода для [пакета SDK для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), можно использовать версию независимо от того, `Azure.Identity` какой пакет SDK вы используете (Дополнительные сведения см. в разделе с [*инструкциями по использованию интерфейсов API цифровых двойников и пакетов SDK*](how-to-use-apis-sdks.md)для Azure Digital двойников).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Сначала выполните действия по настройке, описанные в разделе [*инструкции. Настройка экземпляра и аутентификации*](how-to-set-up-instance-portal.md). Это обеспечит наличие экземпляра цифрового двойников Azure и наличие у пользователя разрешений на доступ. После этого программа установки будет готова к написанию кода клиентского приложения.
 
@@ -53,10 +53,7 @@ Azure Digital двойников выполняет проверку подли�
 
 Кроме того, в код проекта необходимо добавить следующие операторы using:
 
-```csharp
-using Azure.Identity;
-using Azure.DigitalTwins.Core;
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="Azure_Digital_Twins_dependencies":::
 
 Затем добавьте код для получения учетных данных с помощью одного из методов в `Azure.Identity` .
 
@@ -68,23 +65,7 @@ using Azure.DigitalTwins.Core;
 
 Ниже приведен пример кода для добавления в `DefaultAzureCredential` проект.
 
-```csharp
-// The URL of your instance, starting with the protocol (https://)
-private static string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-URL>";
-
-//...
-
-DigitalTwinsClient client;
-try
-{
-    var credential = new DefaultAzureCredential();
-    client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
-} catch(Exception e)
-{
-    Console.WriteLine($"Authentication or client creation error: {e.Message}");
-    Environment.Exit(0);
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="DefaultAzureCredential_full":::
 
 #### <a name="set-up-local-azure-credentials"></a>Настройка локальных учетных данных Azure
 
@@ -100,45 +81,20 @@ try
 
 В функции Azure можно использовать учетные данные управляемого удостоверения следующим образом:
 
-```csharp
-ManagedIdentityCredential cred = new ManagedIdentityCredential(adtAppId);
-DigitalTwinsClientOptions opts = 
-    new DigitalTwinsClientOptions { Transport = new HttpClientTransport(httpClient) });
-client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="ManagedIdentityCredential":::
 
 ### <a name="interactivebrowsercredential-method"></a>Метод Интерактивебровсеркредентиал
 
 Метод [интерактивебровсеркредентиал](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet) предназначен для интерактивных приложений и позволяет открыть веб-браузер для проверки подлинности. Это можно использовать вместо `DefaultAzureCredential` в тех случаях, когда требуется Интерактивная проверка подлинности.
 
 Чтобы использовать интерактивные учетные данные браузера, потребуется **Регистрация приложения** , имеющего разрешения на доступ к API-интерфейсам цифрового двойников Azure. Инструкции по настройке регистрации приложения см. в разделе [*инструкции. Создание регистрации приложения*](how-to-create-app-registration.md). После настройки регистрации приложения вам потребуется...
-* *идентификатор приложения (клиента)* регистрации приложения ( [инструкции для поиска](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
-* *идентификатор каталога (клиента)* регистрации приложения ( [инструкции для поиска](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
+* *идентификатор приложения (клиента)* регистрации приложения ([инструкции для поиска](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
+* *идентификатор каталога (клиента)* регистрации приложения ([инструкции для поиска](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
 * URL-адрес экземпляра Azure Digital двойников ([инструкции для поиска](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values))
 
 Ниже приведен пример кода для создания клиента пакета SDK с проверкой подлинности с помощью `InteractiveBrowserCredential` .
 
-```csharp
-// Your client / app registration ID
-private static string clientId = "<your-client-ID>"; 
-// Your tenant / directory ID
-private static string tenantId = "<your-tenant-ID>";
-// The URL of your instance, starting with the protocol (https://)
-private static string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-URL>";
-
-//...
-
-DigitalTwinsClient client;
-try
-{
-    var credential = new InteractiveBrowserCredential(tenantId, clientId);
-    client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
-} catch(Exception e)
-{
-    Console.WriteLine($"Authentication or client creation error: {e.Message}");
-    Environment.Exit(0);
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="InteractiveBrowserCredential":::
 
 >[!NOTE]
 > Хотя идентификатор клиента, идентификатор клиента и URL-адрес экземпляра можно разместить непосредственно в коде, как показано выше, рекомендуется заставить код получать эти значения из файла конфигурации или переменной среды.

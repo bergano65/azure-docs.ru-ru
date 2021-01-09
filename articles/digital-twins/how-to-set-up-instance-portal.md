@@ -8,12 +8,12 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 90a425fe64424c946a02f3c113889b62b58fbeb4
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: aa6429e27faf92f047c580986d5b434c9a418730
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032326"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044379"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -44,7 +44,7 @@ ms.locfileid: "97032326"
 * **Подписка**. Подписка Azure, которую вы используете.
   - **Группа ресурсов**. Группа ресурсов, в которой будет развернут экземпляр. Если у вас еще нет имеющейся группы ресурсов, можно создать ее здесь, выбрав ссылку *создать* и введя имя новой группы ресурсов.
 * **Расположение**: регион с поддержкой цифровых двойников Azure для развертывания. Дополнительные сведения о языковой поддержке см. в [*подразделах продукты Azure, доступные по регионам (Azure Digital двойников)*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
-* **Имя ресурса**: имя вашего экземпляра Digital двойников для Azure. Имя нового экземпляра должно быть уникальным в пределах региона для вашей подписки (это означает, что если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется выбранное имя, вам будет предложено выбрать другое имя).
+* **Имя ресурса**: имя вашего экземпляра Digital двойников для Azure. Если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется указанное имя, вам будет предложено выбрать другое имя.
 
 :::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins-2.png" alt-text="Заполнение описанных значений для создания ресурса цифрового двойников Azure":::
 

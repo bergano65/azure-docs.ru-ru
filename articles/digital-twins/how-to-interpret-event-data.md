@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 22bedcf7921e3c8d4f2566a70515eef3e3b136b6
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: a0f2b971eae5d37e8fb0771e213075289af6c519
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461028"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045263"
 ---
 # <a name="understand-event-data"></a>Общие сведения о событиях
 
@@ -103,7 +103,7 @@ ms.locfileid: "92461028"
 
 Ниже приведены поля в тексте уведомления о жизненном цикле.
 
-| name | Значение |
+| Название | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события. |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET* |
@@ -189,7 +189,7 @@ ms.locfileid: "92461028"
 
 Ниже приведены поля в тексте уведомления об изменении ребра.
 
-| name    | Значение |
+| Название    | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя экземпляра Azure Digital двойников, например *mydigitaltwins.westus2.azuredigitaltwins.NET* |
@@ -245,7 +245,7 @@ ms.locfileid: "92461028"
 
 Ниже приведены поля в тексте уведомления об изменении цифрового двойника.
 
-| name    | Значение |
+| Название    | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id` уникален для каждого отдельного события |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET*
@@ -262,20 +262,7 @@ ms.locfileid: "92461028"
 
 Например, предположим, что цифровое двойника было обновлено с помощью следующего исправления.
 
-```json
-[
-    {
-        "op": "replace",
-        "value": 40,
-        "path": "/Temperature"
-    },
-    {
-        "op": "add",
-        "value": 30,
-        "path": "/comp1/prop1"
-    }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/patch-component-2.json":::
 
 Соответствующее уведомление (если служба, синхронно выполняемая службой, например Azure Digital двойников, которая обновляет цифровой двойника), будет иметь следующий текст:
 

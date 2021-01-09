@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c2620b52c426871b0ec85e3db237be2d373d42f1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9a1a55bdf21b74116450ca32f66d891f1aa206d3
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458692"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045416"
 ---
 # <a name="add-tags-to-digital-twins"></a>Добавление тегов в цифровые двойников 
 
@@ -32,23 +32,7 @@ ms.locfileid: "96458692"
 
 Ниже приведен фрагмент модели двойника, реализующей тег маркера в качестве свойства:
 
-```json
-{
-  "@type": "Property",
-  "name": "tags",
-  "schema": {
-    "@type": "Map",
-    "mapKey": {
-      "name": "tagName",
-      "schema": "string"
-    },
-    "mapValue": {
-      "name": "tagValue",
-      "schema": "boolean"
-    }
-  }
-}
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/tags.json" range="2-16":::
 
 ### <a name="add-marker-tags-to-digital-twins"></a>Добавление тегов маркеров в цифровые двойников
 
@@ -56,11 +40,7 @@ ms.locfileid: "96458692"
 
 Ниже приведен пример, который заполняет маркер `tags` для трех двойников:
 
-```csharp
-entity-01: "tags": { "red": true, "round": true } 
-entity-02: "tags": { "blue": true, "round": true } 
-entity-03: "tags": { "red": true, "large": true } 
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="TagPropertiesMarker":::
 
 ### <a name="query-with-marker-tags"></a>Запрос с тегами маркеров
 
@@ -68,15 +48,11 @@ entity-03: "tags": { "red": true, "large": true }
 
 Ниже приведен запрос для получения всех двойников, помеченных как "Red": 
 
-```sql
-SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerTags1":::
 
 Можно также комбинировать теги для более сложных запросов. Ниже приведен запрос для получения всех двойников, которые округляются, а не красного цвета. 
 
-```sql
-SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND is_defined(tags.round) 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerTags2":::
 
 ## <a name="value-tags"></a>Теги значений 
 
@@ -88,23 +64,7 @@ SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND is_defined(tags.ro
 
 Ниже приведен фрагмент модели двойника, реализующей тег value в качестве свойства:
 
-```json
-{
-  "@type": "Property",
-  "name": "tags",
-  "schema": {
-    "@type": "Map",
-    "mapKey": {
-      "name": "tagName",
-      "schema": "string"
-    },
-    "mapValue": {
-      "name": "tagValue",
-      "schema": "string"
-    }
-  }
-} 
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/tags.json" range="17-31":::
 
 ### <a name="add-value-tags-to-digital-twins"></a>Добавление тегов значений в Digital двойников
 
@@ -112,11 +72,7 @@ SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND is_defined(tags.ro
 
 Ниже приведен пример, который заполняет значение `tags` для трех двойников:
 
-```csharp
-entity-01: "tags": { "red": "", "size": "large" } 
-entity-02: "tags": { "purple": "", "size": "small" } 
-entity-03: "tags": { "red": "", "size": "small" } 
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="TagPropertiesValue":::
 
 Обратите внимание, что `red` и `purple` используются в качестве тегов маркера в этом примере.
 
@@ -124,17 +80,13 @@ entity-03: "tags": { "red": "", "size": "small" }
 
 Как и в случае с тегами маркера, можно использовать теги значений для фильтрации двойников в запросах. Можно также использовать теги значений и теги меток вместе.
 
-В приведенном выше примере используется `red` как тег маркера. Ниже приведен запрос для получения всех двойников, помеченных как "Red": 
+В приведенном выше примере используется `red` как тег маркера. Помните, что это запрос для получения всех двойников, помеченных как "Red": 
 
-```sql
-SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerTags1":::
 
 Ниже приведен запрос для получения всех мелких сущностей (тег значения), а не красного: 
 
-```sql
-SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND tags.size = 'small' 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerValueTags":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

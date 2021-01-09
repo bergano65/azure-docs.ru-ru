@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5806ea094abd3431cd7e22064c6acd8ad150726a
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 1667c21b9a35b8e93feffb8cf1b37d4409da73c3
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495024"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044312"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -20,7 +20,7 @@ ms.locfileid: "92495024"
 
 В этой статье описаны действия по **настройке нового экземпляра Azure Digital двойников**, включая создание экземпляра и настройку проверки подлинности. По завершении работы с этой статьей у вас будет готовый экземпляр Azure Digital двойников для начала программирования.
 
-Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания** ](/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. 
+Эта версия этой статьи завершает эти действия, запуская [пример **скрипта автоматического развертывания**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/) , который упрощает процесс. 
 * Для просмотра действий CLI вручную, выполняемых сценарием в фоновом режиме, см. версию CLI этой статьи: [*инструкции по настройке экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md).
 * Чтобы просмотреть действия вручную в соответствии с портал Azure, см. версию портала этой статьи: инструкции по [*настройке экземпляра и проверки подлинности (портал)*](how-to-set-up-instance-portal.md).
 
@@ -33,7 +33,7 @@ ms.locfileid: "92495024"
 
 При этом пример проекта будет скачан на компьютер как _**Azure_Digital_Twins_end_to_end_samples.zip**_. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
 
-В распакованной папке скрипт развертывания находится в каталоге _Azure_Digital_Twins_end_to_end_samples > скрипты > **deploy.ps1** _.
+В распакованной папке скрипт развертывания находится в каталоге _Azure_Digital_Twins_end_to_end_samples > скрипты > **deploy.ps1**_.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -50,15 +50,13 @@ ms.locfileid: "92495024"
  
 2. На панели значков Cloud Shell убедитесь, что Cloud Shell настроена для запуска версии PowerShell.
 
-    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-powershell.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-powershell.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell":::
 
-1. Выберите значок &quot;Отправить/скачать файлы" и нажмите кнопку "Отправить".
+1. Выберите значок "Отправить/скачать файлы" и нажмите кнопку "Отправить".
 
-    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, показывающее значок отправки":::
 
-1. Выберите значок &quot;Отправить/скачать файлы":::
-
-    Перейдите в файл _**deploy.ps1**_ на компьютере (в _Azure_Digital_Twins_end_to_end_samples > сценарии > **deploy.ps1** _) и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
+    Перейдите в файл _**deploy.ps1**_ на компьютере (в _Azure_Digital_Twins_end_to_end_samples > сценарии > **deploy.ps1**_) и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
 
 4. Запустите сценарий, отправив `./deploy.ps1` команду в окне Cloud Shell. Вы можете скопировать приведенную ниже команду (Напомним, что для вставки в Cloud Shell можно использовать **сочетание клавиш CTRL + SHIFT + v** в Windows и Linux или **CMD + SHIFT + v** в macOS. Вы также можете использовать контекстное меню.
 
@@ -72,13 +70,11 @@ ms.locfileid: "92495024"
     * Для экземпляра: *идентификатор подписки* Azure для использования.
     * Для экземпляра: *Расположение* , в котором вы хотите развернуть экземпляр. Чтобы узнать, какие регионы поддерживают Azure Digital двойников, посетите страницу [*продукты Azure, доступные по регионам*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
     * Для экземпляра: имя *группы ресурсов* . Вы можете использовать существующую группу ресурсов или ввести новое имя, чтобы создать его.
-    * Для экземпляра: *имя* вашего экземпляра Digital двойников для Azure. Имя нового экземпляра должно быть уникальным в пределах региона для вашей подписки (это означает, что если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется выбранное имя, вам будет предложено выбрать другое имя).
+    * Для экземпляра: *имя* вашего экземпляра Digital двойников для Azure. Если в вашей подписке есть другой экземпляр Azure Digital двойников в регионе, где уже используется указанное имя, вам будет предложено выбрать другое имя.
 
 Ниже приведен фрагмент журнала вывода из скрипта:
 
-:::image type="content" source="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
-
-1. Выберите значок &quot;Отправить/скачать файлы" lightbox="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png":::
+:::image type="content" source="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png" alt-text="Cloud Shell окно, показывающее журнал входных и выходных данных при выполнении скрипта развертывания" lightbox="media/how-to-set-up-instance/cloud-shell/deployment-script-output.png":::
 
 Если сценарий завершается успешно, окончательная печать будет говорить `Deployment completed successfully` . В противном случае выполняйте сообщение об ошибке и повторно запустите скрипт. Он обходит уже выполненные действия и снова запросит входные данные в том месте, где вы остановились.
 
@@ -90,7 +86,7 @@ ms.locfileid: "92495024"
 >
 >Вы можете проверить назначение ролей в разделе [*Проверка назначения роли пользователя*](#verify-user-role-assignment) далее в этой статье. при необходимости настройте назначение ролей вручную с помощью [портал Azure](how-to-set-up-instance-portal.md#set-up-user-access-permissions) или [CLI](how-to-set-up-instance-cli.md#set-up-user-access-permissions).
 >
->Дополнительные сведения об этой неполадке см. [*в разделе Устранение неполадок: известные проблемы в Azure Digital двойников*](troubleshoot-known-issues.md#missing-role-assignment-after-scripted-setup).
+>Дополнительные сведения об этой проблеме см. в статье [*Устранение неполадок: известные проблемы в Azure Digital Twins*](troubleshoot-known-issues.md#missing-role-assignment-after-scripted-setup).
 
 ## <a name="verify-success-and-collect-important-values"></a>Проверка успешности и получение важных значений
 
@@ -108,11 +104,9 @@ ms.locfileid: "92495024"
 
 ### <a name="collect-instance-values"></a>Получение значений экземпляров
 
-Выберите имя своего экземпляра на [странице Azure Digital двойников](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances) , чтобы открыть страницу *обзора* экземпляра. Запомните его *имя*, *группу ресурсов*и *имя узла*. Эти данные могут потребоваться позже для обнаружения экземпляра и подключения к нему.
+Выберите имя своего экземпляра на [странице Azure Digital двойников](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances) , чтобы открыть страницу *обзора* экземпляра. Запомните его *имя*, *группу ресурсов* и *имя узла*. Эти данные могут потребоваться позже для обнаружения экземпляра и подключения к нему.
 
-:::image type="content" source="media/how-to-set-up-instance/portal/instance-important-values.png" alt-text="Окно Cloud Shell, в котором отображается выбор версии PowerShell&quot;:::
-
-1. Выберите значок &quot;Отправить/скачать файлы":::
+:::image type="content" source="media/how-to-set-up-instance/portal/instance-important-values.png" alt-text="Выделение важных значений на странице обзора экземпляра":::
 
 ### <a name="verify-user-role-assignment"></a>Проверка назначения роли пользователя
 
