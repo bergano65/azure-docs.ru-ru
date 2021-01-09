@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: bf6ebd01a18a0ebf0ab5dd7d7ac3aa34256b4696
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 0b32efe3738dedbe8178889b3e9008964d485b00
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936810"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034923"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "97936810"
 
 | Начало работы | Основные понятия| Направляемое обучение |
 | -- | -- | -- | 
-| <ul><li>[ ФункцияNode.js с использованием Visual Studio Code](./create-first-function-vs-code-node.md)</li><li>[Node.js функции с помощью терминала/командной строки](./create-first-function-cli-java.md)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
+| <ul><li>[ ФункцияNode.js с использованием Visual Studio Code](./create-first-function-vs-code-node.md)</li><li>[Node.js функции с помощью терминала/командной строки](./create-first-function-cli-node.md)</li></ul> | <ul><li>[Руководство для разработчиков](functions-reference.md)</li><li>[Сравнение вариантов размещения](functions-scale.md)</li><li>[Функции TypeScript](#typescript)</li><li>[&nbsp;Вопросы производительности](functions-best-practices.md)</li></ul> | <ul><li>[Создание бессерверных приложений.](/learn/paths/create-serverless-applications/)</li><li>[Рефакторинг интерфейсов API Node.js и Express для бессерверных интерфейсов API](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
 
 ## <a name="javascript-function-basics"></a>Основы функций JavaScript
 
@@ -507,7 +507,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 | Версия службы "Функции" | Версия узла (Windows) | Версия узла (Linux) |
 |---|---| --- |
-| 1.x | 6.11.2 (заблокировано средой выполнения) | Недоступно |
+| 1.x | 6.11.2 (заблокировано средой выполнения) | н/д |
 | 2.x  | `~8`<br/>`~10` такую<br/>`~12` | `node|8`<br/>`node|10` такую  |
 | 3.x | `~10`<br/>`~12` такую<br/>`~14` (предварительная версия)  | `node|10`<br/>`node|12` такую<br/>`node|14` (предварительная версия) |
 

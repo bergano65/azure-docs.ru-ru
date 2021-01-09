@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: b15849fb8fbfed5d55b9c224f51634047b7c75b2
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 222f6ebacb6139ca26a6f1cdd0f896270c9b2fc2
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914490"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034301"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate
 
@@ -1701,7 +1701,7 @@ div(<dividend>, <divisor>)
 
 | Возвращаемое значение | Тип | Описание |
 | ------------ | ---- | ----------- |
-| <*результат деления*> | Целое число и число с плавающей запятой | Результат деления первого числа на второе число. Если делимое значение или делитель имеет тип float, результат имеет тип float. <p><p>**Примечание**. чтобы преобразовать результат с плавающей запятой в целое число, попробуйте [создать и вызвать функцию Azure](../logic-apps/logic-apps-azure-functions.md) из приложения логики. |
+| <*результат деления*> | Целое число и число с плавающей запятой | Результат деления первого числа на второе число. Если делимое значение или делитель имеет тип float, результат имеет тип float. <p><p>**Примечание**. чтобы преобразовать результат с плавающей запятой в целое число, попробуйте [создать и вызвать функцию в Azure](../logic-apps/logic-apps-azure-functions.md) из приложения логики. |
 ||||
 
 *Пример 1*

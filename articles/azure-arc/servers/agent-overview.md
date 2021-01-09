@@ -1,14 +1,14 @@
 ---
 title: Общие сведения об агенте Connected Machine для Windows
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
-ms.date: 12/21/2020
+ms.date: 01/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: bff76cbaa678ed82538eb6d75633aa94cdce30bf
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 86d524665b70725108324b1d88521a4c3cb8ff05
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97723275"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033971"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "97723275"
 - Amazon Linux 2 (x64)
 
 > [!WARNING]
-> Имя узла или компьютера Linux не может использовать одно из зарезервированных слов или товарных знаков в имени. в противном случае попытка регистрации подключенного компьютера в Azure завершится ошибкой. Список зарезервированных слов см. в разделе [Устранение ошибок зарезервированных имен ресурсов](../../azure-resource-manager/templates/error-reserved-resource-name.md) .
+> В имени узла Linux или компьютера Windows нельзя использовать зарезервированные слова или товарные знаки. В противном случае, при попытке зарегистрировать подключенный компьютер в Azure произойдет ошибка. Список зарезервированных слов см. в статье [Ошибки имен зарезервированных ресурсов](../../azure-resource-manager/templates/error-reserved-resource-name.md).
 
 ### <a name="required-permissions"></a>Необходимые разрешения
 
@@ -68,6 +68,8 @@ ms.locfileid: "97723275"
 ### <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и служб Azure
 
 Перед настройкой компьютеров с серверами с поддержкой Arc Azure проверьте Azure Resource Manager [ограничения подписки](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) и [ограничения группы ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) , чтобы спланировать число подключенных компьютеров.
+
+Серверы с поддержкой Arc Azure поддерживают до 5 000 экземпляров компьютеров в группе ресурсов.
 
 ### <a name="transport-layer-security-12-protocol"></a>Протокол безопасности транспортного уровня 1,2
 
@@ -105,7 +107,7 @@ URL-адреса:
 |`dc.services.visualstudio.com`|Application Insights|
 |`*.guestconfiguration.azure.com` |Гостевая конфигурация|
 |`*.his.arc.azure.com`|Служба гибридной идентификации|
-|`www.office.com`|Office 365|
+|`www.office.com`|Office 365|
 
 Для предварительных версий агентов (версии 0,11 и ниже) также требуется доступ к следующим URL-адресам:
 

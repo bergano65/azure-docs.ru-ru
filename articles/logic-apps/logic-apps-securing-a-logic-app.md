@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: 1d2ba6dbbcc2b8674718912f00b1d1ec58e1c4c2
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 5ad01e31cb9af18fa018d99424b25dee338981d7
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936096"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034515"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -1083,7 +1083,7 @@ Authorization: OAuth realm="Photos",
 
 1. Прежде чем приложение логики сможет использовать управляемое удостоверение, выполните действия, описанные в разделе [Проверка подлинности доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps](../logic-apps/create-managed-service-identity.md). Это действия позволяют включить управляемое удостоверение в приложении логики и настроить доступ этого удостоверения к целевому ресурсу Azure.
 
-1. Прежде чем функция Azure сможет использовать управляемое удостоверение, необходимо [включить проверку подлинности для функций Azure](../logic-apps/logic-apps-azure-functions.md#enable-authentication-for-azure-functions).
+1. Прежде чем функция Azure сможет использовать управляемое удостоверение, необходимо [включить проверку подлинности для функций Azure](../logic-apps/logic-apps-azure-functions.md#enable-authentication-for-functions).
 
 1. В триггере или действии, где вы хотите использовать управляемое удостоверение, укажите следующие значения свойств.
 

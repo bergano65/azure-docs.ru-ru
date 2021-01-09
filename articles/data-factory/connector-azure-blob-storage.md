@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/08/2020
-ms.openlocfilehash: 327ab63a048e08328cd5b1334b0a697a61ced6c8
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 85600bbee15dadcce7315300ffde481cbfc2e255
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346339"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034719"
 ---
 # <a name="copy-and-transform-data-in-azure-blob-storage-by-using-azure-data-factory"></a>Копирование данных в хранилище больших двоичных объектов Azure и обратно с помощью фабрики данных Azure
 
@@ -433,6 +433,9 @@ ms.locfileid: "97346339"
     }
 ]
 ```
+
+> [!NOTE]
+> `$logs`Контейнер, который автоматически создается при включении аналитика службы хранилища для учетной записи хранения, не отображается при выполнении операции перечисления контейнеров через пользовательский интерфейс фабрики данных. Необходимо указать путь к файлу непосредственно для фабрики данных, чтобы использовать файлы из `$logs` контейнера.
 
 ### <a name="blob-storage-as-a-sink-type"></a>Хранилище BLOB-объектов в качестве типа приемника
 

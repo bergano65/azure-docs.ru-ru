@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: ec857db64529a27db7412c61f8f09c66f8a76363
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 4af29df27a109a9e1e26a720c190ab9d119fc4d1
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098241"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033801"
 ---
 # <a name="azure-table-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища таблиц Azure для функций Azure
 
@@ -101,112 +101,6 @@ public class Person
 
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-В следующем примере показана выходная привязка таблицы в файле *function.json* и функции [JavaScript](functions-reference-node.md), которая использует привязку. Эта функция записывает несколько сущностей в таблице.
-
-Ниже показан файл *function.json*.
-
-```json
-{
-  "bindings": [
-    {
-      "name": "input",
-      "type": "manualTrigger",
-      "direction": "in"
-    },
-    {
-      "tableName": "Person",
-      "connection": "MyStorageConnectionAppSetting",
-      "name": "tableBinding",
-      "type": "table",
-      "direction": "out"
-    }
-  ],
-  "disabled": false
-}
-```
-
-В разделе [Конфигурация](#configuration) описываются эти свойства.
-
-Ниже показан код JavaScript.
-
-```javascript
-module.exports = function (context) {
-
-    context.bindings.tableBinding = [];
-
-    for (var i = 1; i < 10; i++) {
-        context.bindings.tableBinding.push({
-            PartitionKey: "Test",
-            RowKey: i.toString(),
-            Name: "Name " + i
-        });
-    }
-
-    context.done();
-};
-```
-
-# <a name="python"></a>[Python](#tab/python)
-
-В следующем примере показано, как использовать выходную привязку хранилища таблиц. `table`Привязка настраивается в *function.jsв* , присваивая значения `name` , `tableName` , `partitionKey` и `connection` :
-
-```json
-{
-  "scriptFile": "__init__.py",
-  "bindings": [
-    {
-      "name": "message",
-      "type": "table",
-      "tableName": "messages",
-      "partitionKey": "message",
-      "connection": "AzureWebJobsStorage",
-      "direction": "out"
-    },
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "$return"
-    }
-  ]
-}
-```
-
-Следующая функция создает уникальный УУИ для `rowKey` значения и сохраняет сообщение в хранилище таблиц.
-
-```python
-import logging
-import uuid
-import json
-
-import azure.functions as func
-
-def main(req: func.HttpRequest, message: func.Out[str]) -> func.HttpResponse:
-
-    rowKey = str(uuid.uuid4())
-
-    data = {
-        "Name": "Output binding message",
-        "PartitionKey": "message",
-        "RowKey": rowKey
-    }
-
-    message.set(json.dumps(data))
-
-    return func.HttpResponse(f"Message created with the rowKey: {rowKey}")
-```
-
 # <a name="java"></a>[Java](#tab/java)
 
 В следующем примере показана функция Java, использующая триггер HTTP для записи одной строки таблицы.
@@ -284,6 +178,152 @@ public class AddPersons {
 }
 ```
 
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В следующем примере показана выходная привязка таблицы в файле *function.json* и функции [JavaScript](functions-reference-node.md), которая использует привязку. Эта функция записывает несколько сущностей в таблице.
+
+Ниже показан файл *function.json*.
+
+```json
+{
+  "bindings": [
+    {
+      "name": "input",
+      "type": "manualTrigger",
+      "direction": "in"
+    },
+    {
+      "tableName": "Person",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "tableBinding",
+      "type": "table",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
+```
+
+В разделе [Конфигурация](#configuration) описываются эти свойства.
+
+Ниже показан код JavaScript.
+
+```javascript
+module.exports = function (context) {
+
+    context.bindings.tableBinding = [];
+
+    for (var i = 1; i < 10; i++) {
+        context.bindings.tableBinding.push({
+            PartitionKey: "Test",
+            RowKey: i.toString(),
+            Name: "Name " + i
+        });
+    }
+
+    context.done();
+};
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показано, как записать несколько сущностей в таблицу из функции.
+
+Привязка конфигурации в _function.js_:
+
+```json
+{
+  "bindings": [
+    {
+      "name": "InputData",
+      "type": "manualTrigger",
+      "direction": "in"
+    },
+    {
+      "tableName": "Person",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "TableBinding",
+      "type": "table",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
+```
+
+Код PowerShell в _run.ps1_:
+
+```powershell
+param($InputData, $TriggerMetadata)
+  
+foreach ($i in 1..10) {
+    Push-OutputBinding -Name TableBinding -Value @{
+        PartitionKey = 'Test'
+        RowKey = "$i"
+        Name = "Name $i"
+    }
+}
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+В следующем примере показано, как использовать выходную привязку хранилища таблиц. `table`Привязка настраивается в *function.jsв* , присваивая значения `name` , `tableName` , `partitionKey` и `connection` :
+
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "message",
+      "type": "table",
+      "tableName": "messages",
+      "partitionKey": "message",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
+```
+
+Следующая функция создает уникальный УУИ для `rowKey` значения и сохраняет сообщение в хранилище таблиц.
+
+```python
+import logging
+import uuid
+import json
+
+import azure.functions as func
+
+def main(req: func.HttpRequest, message: func.Out[str]) -> func.HttpResponse:
+
+    rowKey = str(uuid.uuid4())
+
+    data = {
+        "Name": "Output binding message",
+        "PartitionKey": "message",
+        "RowKey": rowKey
+    }
+
+    message.set(json.dumps(data))
+
+    return func.HttpResponse(f"Message created with the rowKey: {rowKey}")
+```
+
 ---
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
@@ -326,19 +366,23 @@ public static MyPoco TableOutput(
 
 В скрипте C# атрибуты не поддерживаются.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-В JavaScript атрибуты не поддерживаются.
-
-# <a name="python"></a>[Python](#tab/python)
-
-В Python атрибуты не поддерживаются.
-
 # <a name="java"></a>[Java](#tab/java)
 
 В [библиотеке времени выполнения функций Java](/java/api/overview/azure/functions/runtime)используйте аннотацию [таблеаутпут](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/TableOutput.java/) в параметрах для записи значений в хранилище таблиц.
 
 [Дополнительные сведения](#example)см. в примере.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В JavaScript атрибуты не поддерживаются.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
+# <a name="python"></a>[Python](#tab/python)
+
+В Python атрибуты не поддерживаются.
 
 ---
 
@@ -372,9 +416,21 @@ public static MyPoco TableOutput(
 
 Кроме того, можно использовать `CloudTable` параметр метода для записи в таблицу с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](./functions-bindings-storage-table.md#azure-storage-sdk-version-in-functions-1x).
 
+# <a name="java"></a>[Java](#tab/java)
+
+Существует два варианта вывода строки хранилища таблицы из функции с помощью аннотации [таблесторажеаутпут](/java/api/com.microsoft.azure.functions.annotation.tableoutput?view=azure-java-stablet&preserve-view=true) :
+
+- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как строка хранилища таблицы.
+
+- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) , где `T` включает `PartitionKey` Свойства и `RowKey` . Эти свойства часто сопровождаются реализацией `ITableEntity` или наследованием `TableEntity` .
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к выходному событию с помощью `context.bindings.<name>`, где `<name>` — это значение, указанное в свойстве `name` файла *function.json*.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Для записи данных в таблицу используйте `Push-OutputBinding` командлет, присвойте `-Name TableBinding` параметру и `-Value` параметру значение, равное строке данных. Дополнительные сведения см. в [примере PowerShell](#example) .
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -383,14 +439,6 @@ public static MyPoco TableOutput(
 - **Возвращаемое значение** — задайте для свойства `name` в файле *function.json* значение `$return`. В этой конфигурации возвращаемое значение функции сохраняется как строка хранилища таблицы.
 
 - **Императив** — передайте значение методу [set](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true#set-val--t-----none) параметра, объявленного с типом [Out](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true). Значение, переданное `set`, сохраняется как сообщение концентратора событий.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Существует два варианта вывода строки хранилища таблицы из функции с помощью аннотации [таблесторажеаутпут](/java/api/com.microsoft.azure.functions.annotation.tableoutput?view=azure-java-stablet&preserve-view=true) :
-
-- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как строка хранилища таблицы.
-
-- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) , где `T` включает `PartitionKey` Свойства и `RowKey` . Эти свойства часто сопровождаются реализацией `ITableEntity` или наследованием `TableEntity` .
 
 ---
 

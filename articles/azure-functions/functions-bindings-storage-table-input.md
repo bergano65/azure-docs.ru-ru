@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 20dc6cde9cce6a9d57047940a38adb5cf004ae6a
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 4fc2426189384856d2d2e95887cdabd2f9e9ebea
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347682"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033784"
 ---
 # <a name="azure-table-storage-input-bindings-for-azure-functions"></a>Входные привязки хранилища таблиц Azure для функций Azure
 
@@ -296,97 +296,6 @@ public class Person : TableEntity
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-В следующем примере показана входная привязка таблицы в файле *function.json* и [код JavaScript](functions-reference-node.md), который использует привязку. Функция использует триггер очереди для чтения одной строки таблицы. 
-
-Файл *function.json* определяет `partitionKey` и `rowKey`. Значение `rowKey` "{queueTrigger}" указывает, что ключ строки получен из строки сообщения очереди.
-
-```json
-{
-  "bindings": [
-    {
-      "queueName": "myqueue-items",
-      "connection": "MyStorageConnectionAppSetting",
-      "name": "myQueueItem",
-      "type": "queueTrigger",
-      "direction": "in"
-    },
-    {
-      "name": "personEntity",
-      "type": "table",
-      "tableName": "Person",
-      "partitionKey": "Test",
-      "rowKey": "{queueTrigger}",
-      "connection": "MyStorageConnectionAppSetting",
-      "direction": "in"
-    }
-  ],
-  "disabled": false
-}
-```
-
-В разделе [Конфигурация](#configuration) описываются эти свойства.
-
-Ниже показан код JavaScript.
-
-```javascript
-module.exports = function (context, myQueueItem) {
-    context.log('Node.js queue trigger function processed work item', myQueueItem);
-    context.log('Person entity name: ' + context.bindings.personEntity.Name);
-    context.done();
-};
-```
-
-# <a name="python"></a>[Python](#tab/python)
-
-Одна строка таблицы 
-
-```json
-{
-  "scriptFile": "__init__.py",
-  "bindings": [
-    {
-      "name": "messageJSON",
-      "type": "table",
-      "tableName": "messages",
-      "partitionKey": "message",
-      "rowKey": "{id}",
-      "connection": "AzureWebJobsStorage",
-      "direction": "in"
-    },
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ],
-      "route": "messages/{id}"
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "$return"
-    }
-  ],
-  "disabled": false
-}
-```
-
-```python
-import json
-
-import azure.functions as func
-
-def main(req: func.HttpRequest, messageJSON) -> func.HttpResponse:
-
-    message = json.loads(messageJSON)
-    return func.HttpResponse(f"Table row: {messageJSON}")
-```
-
 # <a name="java"></a>[Java](#tab/java)
 
 В следующем примере показана функция, активируемая HTTP, которая возвращает список объектов Person, которые находятся в указанном разделе в хранилище таблиц. В этом примере ключ секции извлекается из маршрута HTTP, а tableName и Connection — из параметров функции. 
@@ -440,7 +349,7 @@ public HttpResponseMessage get(
 }
 ```
 
-В следующих примерах фильтр используется для запроса лиц с указанным именем в таблице Azure и ограничивает количество возможных совпадений до 10 результатов.
+В следующем примере фильтр используется для запроса лиц с указанным именем в таблице Azure и ограничивает количество возможных совпадений до 10 результатов.
 
 ```java
 @FunctionName("getPersonsByName")
@@ -454,6 +363,143 @@ public Person[] get(
 
     return persons;
 }
+```
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+В следующем примере показана входная привязка таблицы в файле *function.json* и [код JavaScript](functions-reference-node.md), который использует привязку. Функция использует триггер очереди для чтения одной строки таблицы. 
+
+Файл *function.json* определяет `partitionKey` и `rowKey`. Значение `rowKey` "{queueTrigger}" указывает, что ключ строки получен из строки сообщения очереди.
+
+```json
+{
+  "bindings": [
+    {
+      "queueName": "myqueue-items",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "myQueueItem",
+      "type": "queueTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "personEntity",
+      "type": "table",
+      "tableName": "Person",
+      "partitionKey": "Test",
+      "rowKey": "{queueTrigger}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+В разделе [Конфигурация](#configuration) описываются эти свойства.
+
+Ниже показан код JavaScript.
+
+```javascript
+module.exports = function (context, myQueueItem) {
+    context.log('Node.js queue trigger function processed work item', myQueueItem);
+    context.log('Person entity name: ' + context.bindings.personEntity.Name);
+    context.done();
+};
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Следующая функция использует триггер очереди для чтения одной строки таблицы в качестве входных данных для функции.
+
+В этом примере конфигурация привязки указывает явное значение для таблицы `partitionKey` и использует выражение для передачи в `rowKey` . `rowKey`Выражение, `{queueTrigger}` указывает, что ключ строки поступает из строки сообщения очереди.
+
+Привязка конфигурации в _function.js_:
+
+```json
+{
+  "bindings": [
+    {
+      "queueName": "myqueue-items",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "MyQueueItem",
+      "type": "queueTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "PersonEntity",
+      "type": "table",
+      "tableName": "Person",
+      "partitionKey": "Test",
+      "rowKey": "{queueTrigger}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+Код PowerShell в _run.ps1_:
+
+```powershell
+param($MyQueueItem, $PersonEntity, $TriggerMetadata)
+Write-Host "PowerShell queue trigger function processed work item: $MyQueueItem"
+Write-Host "Person entity name: $($PersonEntity.Name)"
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+Следующая функция использует триггер очереди для чтения одной строки таблицы в качестве входных данных для функции.
+
+В этом примере конфигурация привязки указывает явное значение для таблицы `partitionKey` и использует выражение для передачи в `rowKey` . `rowKey`Выражение `{id}` указывает, что ключ строки поступает из строки сообщения очереди.
+
+Привязка конфигурации в _function.js_ файла:
+
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "messageJSON",
+      "type": "table",
+      "tableName": "messages",
+      "partitionKey": "message",
+      "rowKey": "{id}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "messages/{id}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ],
+  "disabled": false
+}
+```
+
+Код Python в файле *\_ \_ init \_ \_ . корректировки* :
+
+```python
+import json
+
+import azure.functions as func
+
+def main(req: func.HttpRequest, messageJSON) -> func.HttpResponse:
+
+    message = json.loads(messageJSON)
+    return func.HttpResponse(f"Table row: {messageJSON}")
 ```
 
 ---
@@ -522,17 +568,21 @@ public Person[] get(
 
 В скрипте C# атрибуты не поддерживаются.
 
+# <a name="java"></a>[Java](#tab/java)
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@TableInput` для параметров, значения которых будут поступать из Хранилища таблиц.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В JavaScript атрибуты не поддерживаются.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
 # <a name="python"></a>[Python](#tab/python)
 
 В Python атрибуты не поддерживаются.
-
-# <a name="java"></a>[Java](#tab/java)
-
-В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@TableInput` для параметров, значения которых будут поступать из Хранилища таблиц.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
 
 ---
 
@@ -582,17 +632,21 @@ public Person[] get(
   > [!NOTE]
   > `IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является [использование параметра метода CloudTable paramName](https://stackoverflow.com/questions/48922485/binding-to-table-storage-in-v2-azure-functions-using-cloudtable) для чтения таблицы с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](./functions-bindings-storage-table.md#azure-storage-sdk-version-in-functions-1x).
 
+# <a name="java"></a>[Java](#tab/java)
+
+Атрибут [таблеинпут](/java/api/com.microsoft.azure.functions.annotation.tableinput) предоставляет доступ к строке таблицы, которая активировала функцию.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Укажите свойства `filter` и `take`. Не определяйте свойства `partitionKey` и `rowKey`. Получите доступ к сущности (или сущностям) входной таблицы, используя `context.bindings.<BINDING_NAME>`. Десериализированный объект имеет свойства `RowKey` и `PartitionKey`.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Данные передаются в входной параметр, как указано `name` ключом в *function.js* в файле. Указание `partitionKey` и `rowKey` позволяет выполнять фильтрацию по конкретным записям. Дополнительные сведения см. в [примере PowerShell](#example) .
+
 # <a name="python"></a>[Python](#tab/python)
 
 Табличные данные передаются в функцию в виде строки JSON. Отмените сериализацию сообщения, вызвав, `json.loads` как показано во входном [примере](#example).
-
-# <a name="java"></a>[Java](#tab/java)
-
-Атрибут [таблеинпут](/java/api/com.microsoft.azure.functions.annotation.tableinput) предоставляет доступ к строке таблицы, которая активировала функцию.
 
 ---
 

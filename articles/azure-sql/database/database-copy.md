@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: ''
 ms.date: 10/30/2020
-ms.openlocfilehash: 53e62d790514bd3fb5bef93788fa78944db28c2c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 7f053b1984a2d838deb14bacd10cdc071e19d8a1
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127745"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035144"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных в базе данных SQL Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "93127745"
 
 ## <a name="copy-using-the-azure-portal"></a>Копирование с помощью портала Azure
 
-Чтобы скопировать базу данных с помощью портала Azure, откройте страницу базы данных и щелкните **Копировать** .
+Чтобы скопировать базу данных с помощью портала Azure, откройте страницу базы данных и щелкните **Копировать**.
 
    ![Копирование базы данных](./media/database-copy/database-copy.png)
 
@@ -135,6 +135,46 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 Вы можете выполнить действия, описанные в разделе [копирование базы данных SQL в другой сервер](#copy-to-a-different-server) , чтобы скопировать базу данных на сервер в другой подписке с помощью T-SQL. Убедитесь, что используется имя входа с тем же именем и паролем, что и у владельца базы данных-источника. Кроме того, имя входа должно быть членом `dbmanager` роли или администратора сервера на исходном и целевом серверах.
 
+```sql
+Step# 1
+Create login and user in the master database of the source server.
+
+CREATE LOGIN loginname WITH PASSWORD = 'xxxxxxxxx'
+GO
+CREATE USER [loginname] FOR LOGIN [loginname] WITH DEFAULT_SCHEMA=[dbo]
+GO
+
+Step# 2
+Create the user in the source database and grant dbowner permission to the database.
+
+CREATE USER [loginname] FOR LOGIN [loginname] WITH DEFAULT_SCHEMA=[dbo]
+GO
+exec sp_addrolemember 'db_owner','loginname'
+GO
+
+Step# 3
+Capture the SID of the user “loginname” from master database
+
+SELECT [sid] FROM sysusers WHERE [name] = 'loginname'
+
+Step# 4
+Connect to Destination server.
+Create login and user in the master database, same as of the source server.
+
+CREATE LOGIN loginname WITH PASSWORD = 'xxxxxxxxx', SID = [SID of loginname login on source server]
+GO
+CREATE USER [loginname] FOR LOGIN [loginname] WITH DEFAULT_SCHEMA=[dbo]
+GO
+exec sp_addrolemember 'dbmanager','loginname'
+GO
+
+Step# 5
+Execute the copy of database script from the destination server using the credentials created
+
+CREATE DATABASE new_database_name
+AS COPY OF source_server_name.source_database_name
+```
+
 > [!NOTE]
 > [Портал Azure](https://portal.azure.com), PowerShell и Azure CLI не поддерживают копирование базы данных в другую подписку.
 
@@ -143,10 +183,10 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 ## <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 
-Отслеживайте процесс копирования, запрашивая представления [sys. databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys.dm_database_copies](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys. databases для новой базы данных задается значение **копирование** .
+Отслеживайте процесс копирования, запрашивая представления [sys. databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys.dm_database_copies](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys. databases для новой базы данных задается значение **копирование**.
 
-* В случае сбоя копирования в столбце **state_desc** представления sys. databases для новой базы данных устанавливается значение **SUSPECT** . Выполните инструкцию DROP для новой базы данных и повторите попытку позднее.
-* Если копирование выполняется, столбец **state_desc** в представлении sys. databases для новой базы данных устанавливается в состояние «в **сети** ». Это означает, что копирование завершено и новая база данных является обычной базой данных, которую можно изменять независимо от исходной.
+* В случае сбоя копирования в столбце **state_desc** представления sys. databases для новой базы данных устанавливается значение **SUSPECT**. Выполните инструкцию DROP для новой базы данных и повторите попытку позднее.
+* Если копирование выполняется, столбец **state_desc** в представлении sys. databases для новой базы данных устанавливается в состояние «в **сети**». Это означает, что копирование завершено и новая база данных является обычной базой данных, которую можно изменять независимо от исходной.
 
 > [!NOTE]
 > Чтобы отменить копирование до его завершения, выполните в новой базе данных инструкцию [DROP DATABASE](/sql/t-sql/statements/drop-database-transact-sql).
@@ -192,7 +232,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 При копировании базы данных в базе данных SQL Azure могут возникнуть следующие ошибки. Дополнительные сведения см. в статье [Копирование базы данных SQL Azure](database-copy.md).
 
-| Код ошибки | Уровень серьезности | Описание |
+| Код ошибки | Статус | Описание |
 | ---:| ---:|:--- |
 | 40635 |16 |Клиент с IP-адресом %.&#x2a;ls временно отключен. |
 | 40637 |16 |Возможность создания копии базы данных в настоящее время отключена. |

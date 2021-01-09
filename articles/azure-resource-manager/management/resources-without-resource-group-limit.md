@@ -2,20 +2,19 @@
 title: Ресурсы без ограничения числа 800
 description: Список типов ресурсов Azure, которые могут иметь более 800 экземпляров в группе ресурсов.
 ms.topic: conceptual
-ms.date: 10/28/2020
-ms.openlocfilehash: c2d5797a7ec354f41d510ec6e884968bf9dbdbcd
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.date: 01/08/2021
+ms.openlocfilehash: 6a63fd7e41c03b542f4a43b483243702c5be5f14
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672370"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034940"
 ---
 # <a name="resources-not-limited-to-800-instances-per-resource-group"></a>Ресурсы, не ограниченные 800 экземплярами на группу ресурсов
 
 По умолчанию в каждой группе ресурсов можно развернуть до 800 экземпляров типа ресурса. Однако некоторые типы ресурсов исключены из пределов числа экземпляров 800. В этой статье перечислены типы ресурсов Azure, которые могут содержать более 800 экземпляров в группе ресурсов. Все остальные типы ресурсов ограничены 800 экземплярами.
 
 Для некоторых типов ресурсов необходимо обратиться в службу поддержки, чтобы снять ограничение на число экземпляров 800. Эти типы ресурсов указаны в этой статье.
-
 
 ## <a name="microsoftautomation"></a>Microsoft.Automation
 
@@ -105,6 +104,11 @@ ms.locfileid: "97672370"
 * software
 * софтвареупдатепрофиле
 * софтвареупдатес
+
+## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
+
+* Компьютеры — поддерживает до 5 000 экземпляров
+* расширения. поддерживает неограниченное число экземпляров расширений ВМ
 
 ## <a name="microsoftinsights"></a>microsoft.insights
 
@@ -211,6 +215,6 @@ ms.locfileid: "97672370"
 * apiManagementAccounts/apis
 * sites
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полный список квот и ограничений см. в статье [Подписка Azure, границы, квоты и ограничения службы](azure-subscription-service-limits.md).

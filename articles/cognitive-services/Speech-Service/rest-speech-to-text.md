@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c746666d58e21c2705a2ef1d6a17d0d1196f7590
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 1577d63822bdb21eff7fcbb3e1343243a3004409
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504480"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033648"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API преобразования речи в текст;
 
@@ -61,7 +61,7 @@ REST API v 3.0 включает такие функции, как:
 Если отправка длинного звука является обязательным требованием для вашего приложения, рассмотрите возможность использования [речевого пакета SDK](speech-sdk.md) или преобразования [речи в текст REST API v 3.0](#speech-to-text-rest-api-v30).
 
 > [!TIP]
-> См. [документацию](../../azure-government/compare-azure-government-global-azure.md) по Azure для государственных организаций для государственных облаков (FairFax).
+> Ознакомьтесь с [этой статьей](sovereign-clouds.md) для конечных точек Azure для государственных организаций и Azure для Китая.
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
@@ -235,7 +235,7 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 Поле `RecognitionStatus` может содержать следующие значения:
 
-| Status | Описание |
+| Состояние | Описание |
 |--------|-------------|
 | `Success` | Речь распознана, и присутствует поле `DisplayText`. |
 | `NoMatch` | В аудиопотоке был обнаружена речь, но не были сопоставлены слова в целевом языке. Обычно означает, что язык распознавания — это не тот язык, на котором разговаривает пользователь. |
@@ -337,7 +337,7 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание бесплатной учетной записи Azure](https://azure.microsoft.com/free/cognitive-services/)
+- [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
 - [Настройка акустических моделей](./how-to-custom-speech-train-model.md)
 - [Настройка языковых моделей](./how-to-custom-speech-train-model.md)
 - [Знакомство с пакетной обработкой пакетов](batch-transcription.md)

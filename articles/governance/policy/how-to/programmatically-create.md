@@ -3,12 +3,12 @@ title: Программное создание политик
 description: В статье описано, как программно создавать политики для службы "Политика Azure" и управлять ими с помощью Azure CLI, Azure PowerShell и REST API.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 86c1b60608780cba4d8ae27e3c82ace458f09a26
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 4c3a503e8d48573441093879511490608437b1e1
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920021"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033869"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 
@@ -95,7 +95,7 @@ ms.locfileid: "94920021"
    - Подписка — `/subscriptions/{subId}`
    - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
-Дополнительные сведения об управлении политиками ресурсов с помощью модуля диспетчер ресурсов PowerShell см. в разделе [AZ. Resources](/powershell/module/az.resources/#policies).
+Дополнительные сведения об управлении политиками ресурсов с помощью модуля диспетчер ресурсов PowerShell см. в разделе [AZ. Resources](/powershell/module/az.resources/#policy).
 
 ### <a name="create-and-assign-a-policy-definition-using-armclient"></a>Создание и назначение определения политики с помощью ARMClient
 
@@ -242,7 +242,7 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
 
 - [Ресурсы REST API Azure](/rest/api/resources/)
-- [Модули Azure PowerShell](/powershell/module/az.resources/#policies).
+- [Модули Azure PowerShell](/powershell/module/az.resources/#policy).
 - [Команды Azure CLI для роботы с политикой](/cli/azure/policy)
 - [Справочник по REST API для поставщика ресурсов Azure Policy Insights](/rest/api/policy-insights)
 - [Организация ресурсов с помощью групп управления Azure.](../../management-groups/overview.md)

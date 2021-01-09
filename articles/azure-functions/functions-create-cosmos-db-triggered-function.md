@@ -5,12 +5,12 @@ ms.assetid: bc497d71-75e7-47b1-babd-a060a664adca
 ms.topic: how-to
 ms.date: 04/28/2020
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 907836b0e45ccc9e9481e605b1ebf4180f7650d6
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 621773a84db99dbacfaa163f77189974ba102163
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182586"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034821"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Создание функции, активируемой с помощью Azure Cosmos DB
 
@@ -28,6 +28,7 @@ ms.locfileid: "96182586"
 > [!INCLUDE [SQL API support only](../../includes/functions-cosmosdb-sqlapi-note.md)]
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
+
 Войдите на [портал Azure](https://portal.azure.com/) с помощью своей учетной записи Azure.
 
 ## <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
@@ -36,7 +37,7 @@ ms.locfileid: "96182586"
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
-## <a name="create-an-azure-function-app"></a>Создание приложения-функции Azure
+## <a name="create-a-function-app-in-azure"></a>Создание приложения-функции в Azure
 
 [!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 

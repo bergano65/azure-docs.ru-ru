@@ -5,14 +5,14 @@ author: SnehaGunda
 services: cosmos-db
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 10/28/2020
+ms.date: 01/06/2021
 ms.author: sngun
-ms.openlocfilehash: 18850fafd1f6cb084c9e5fdb9a24e9c4fd8bb4cc
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 8df8305a5b50567c2f355721212a7c0feebd81d4
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097572"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033750"
 ---
 # <a name="monitor-azure-cosmos-db-data-by-using-diagnostic-settings-in-azure"></a>Мониторинг Azure Cosmos DB данных с помощью параметров диагностики в Azure
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -27,47 +27,53 @@ ms.locfileid: "93097572"
 
 1. В области **параметры диагностики** заполните форму следующими сведениями: 
 
-    * **Имя** . Введите имя для создаваемых журналов.
+    * **Имя**. Введите имя для создаваемых журналов.
 
-    * Вы можете хранить журналы для **архивации в учетную запись хранения** , передавать их в **концентратор событий** или **передавать log Analytics**
+    * Вы можете хранить журналы для **архивации в учетную запись хранения**, передавать их в **концентратор событий** или **передавать log Analytics**
 
 1. При создании параметра диагностики указывается, какую категорию журналов следует собираются. Ниже перечислены категории журналов, поддерживаемые Azure Cosmos DB, а также примеры журналов, собранные ими.
 
- * **DataPlaneRequests** . Выберите этот параметр, чтобы регистрировать запросы серверной части для всех API-интерфейсов, в том числе учетные записи SQL, Graph, MongoDB, Cassandra и API таблиц в Azure Cosmos DB. Ключевые свойства для заметок: `Requestcharge` , `statusCode` , `clientIPaddress` , `partitionID` , `resourceTokenPermissionId` и `resourceTokenPermissionMode` .
+ * **DataPlaneRequests**. Выберите этот параметр, чтобы регистрировать запросы серверной части для всех API-интерфейсов, в том числе учетные записи SQL, Graph, MongoDB, Cassandra и API таблиц в Azure Cosmos DB. Ключевые свойства для заметок: `Requestcharge` , `statusCode` , `clientIPaddress` , `partitionID` , `resourceTokenPermissionId` и `resourceTokenPermissionMode` .
 
     ```json
     { "time": "2019-04-23T23:12:52.3814846Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "DataPlaneRequests", "operationName": "ReadFeed", "properties": {"activityId": "66a0c647-af38-4b8d-a92a-c48a805d6460","requestResourceType": "Database","requestResourceId": "","collectionRid": "","statusCode": "200","duration": "0","userAgent": "Microsoft.Azure.Documents.Common/2.2.0.0","clientIpAddress": "10.0.0.24","requestCharge": "1.000000","requestLength": "0","responseLength": "372", "resourceTokenPermissionId": "perm-prescriber-app","resourceTokenPermissionMode": "all", "resourceTokenUserRid": "","region": "East US","partitionId": "062abe3e-de63-4aa5-b9de-4a77119c59f8","keyType": "PrimaryReadOnlyMasterKey","databaseName": "","collectionName": ""}}
     ```
 
-* **MongoRequests** . Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для MongoDB. Этот тип журнала недоступен для других учетных записей API. Ключевые свойства для заметок: `Requestcharge` , `opCode` . При включении MongoRequests в журналах диагностики обязательно отключите DataPlaneRequests. Вы увидите по одному журналу для каждого запроса, сделанного в API.
+* **MongoRequests**. Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для MongoDB. Этот тип журнала недоступен для других учетных записей API. Ключевые свойства для заметок: `Requestcharge` , `opCode` . При включении MongoRequests в журналах диагностики обязательно отключите DataPlaneRequests. Вы увидите по одному журналу для каждого запроса, сделанного в API.
 
     ```json
     { "time": "2019-04-10T15:10:46.7820998Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "MongoRequests", "operationName": "ping", "properties": {"activityId": "823cae64-0000-0000-0000-000000000000","opCode": "MongoOpCode_OP_QUERY","errorCode": "0","duration": "0","requestCharge": "0.000000","databaseName": "admin","collectionName": "$cmd","retryCount": "0"}}
     ```
 
-* **Кассандрарекуестс** . Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для Cassandra. Этот тип журнала недоступен для других учетных записей API. Ключевые свойства для примечания: `operationName` , `requestCharge` , `piiCommandText` . При включении Кассандрарекуестс в журналах диагностики обязательно отключите DataPlaneRequests. Вы увидите по одному журналу для каждого запроса, сделанного в API.
+* **Кассандрарекуестс**. Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для Cassandra. Этот тип журнала недоступен для других учетных записей API. Ключевые свойства для примечания: `operationName` , `requestCharge` , `piiCommandText` . При включении Кассандрарекуестс в журналах диагностики обязательно отключите DataPlaneRequests. Вы увидите по одному журналу для каждого запроса, сделанного в API.
 
    ```json
    { "time": "2020-03-30T23:55:10.9579593Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "CassandraRequests", "operationName": "QuerySelect", "properties": {"activityId": "6b33771c-baec-408a-b305-3127c17465b6","opCode": "<empty>","errorCode": "-1","duration": "0.311900","requestCharge": "1.589237","databaseName": "system","collectionName": "local","retryCount": "<empty>","authorizationTokenType": "PrimaryMasterKey","address": "104.42.195.92","piiCommandText": "{"request":"SELECT key from system.local"}","userAgent": """"}}
    ```
 
-* **Куерирунтиместатистикс** : Выберите этот параметр, чтобы регистрировать выполненный текст запроса. Этот тип журнала доступен только для учетных записей API SQL.
+* **Гремлинрекуестс**. Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для Gremlin. Этот тип журнала недоступен для других учетных записей API. Ключевые свойства для примечания: `operationName` и `requestCharge` . При включении Гремлинрекуестс в журналах диагностики обязательно отключите DataPlaneRequests. Вы увидите по одному журналу для каждого запроса, сделанного в API.
+
+  ```json
+  { "time": "2021-01-06T19:36:58.2554534Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "GremlinRequests", "operationName": "eval", "properties": {"activityId": "b16bd876-0e5c-4448-90d1-7f3134c6b5ff", "errorCode": "200", "duration": "9.6036", "requestCharge": "9.059999999999999", "databaseName": "GraphDemoDatabase", "collectionName": "GraphDemoContainer", "authorizationTokenType": "PrimaryMasterKey", "address": "98.225.2.189", "estimatedDelayFromRateLimitingInMilliseconds": "0", "retriedDueToRateLimiting": "False", "region": "Australia East", "requestLength": "266", "responseLength": "364", "userAgent": "<empty>"}}
+  ```
+
+* **Куерирунтиместатистикс**: Выберите этот параметр, чтобы регистрировать выполненный текст запроса. Этот тип журнала доступен только для учетных записей API SQL.
 
     ```json
     { "time": "2019-04-14T19:08:11.6353239Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "QueryRuntimeStatistics", "properties": {"activityId": "278b0661-7452-4df3-b992-8aa0864142cf","databasename": "Tasks","collectionname": "Items","partitionkeyrangeid": "0","querytext": "{"query":"SELECT *\nFROM c\nWHERE (c.p1__10 != true)","parameters":[]}"}}
     ```
 
-* **Партитионкэйстатистикс** : Выберите этот параметр, чтобы регистрировать статистику ключей секций. В настоящее время он представлен с размером хранилища (КБ) ключей разделов. См. раздел [Устранение неполадок с помощью диагностических запросов Azure](#diagnostic-queries) этой статьи. Например, запросы, использующие "Партитионкэйстатистикс". Журнал создается для первых трех ключей разделов, которые занимают большую часть хранилища данных. Этот журнал содержит такие данные, как идентификатор подписки, имя региона, имя базы данных, имя коллекции, ключ секции и размер хранилища в КБ.
+* **Партитионкэйстатистикс**: Выберите этот параметр, чтобы регистрировать статистику ключей секций. В настоящее время он представлен с размером хранилища (КБ) ключей разделов. См. раздел [Устранение неполадок с помощью диагностических запросов Azure](#diagnostic-queries) этой статьи. Например, запросы, использующие "Партитионкэйстатистикс". Журнал создается для первых трех ключей разделов, которые занимают большую часть хранилища данных. Этот журнал содержит такие данные, как идентификатор подписки, имя региона, имя базы данных, имя коллекции, ключ секции и размер хранилища в КБ.
 
     ```json
     { "time": "2019-10-11T02:33:24.2018744Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "PartitionKeyStatistics", "properties": {"subscriptionId": "<your_subscription_ID>","regionName": "West US 2","databaseName": "KustoQueryResults","collectionname": "CapacityMetrics","partitionkey": "["CapacityMetricsPartition.136"]","sizeKb": "2048270"}}
     ```
 
-* **Партитионкэйруконсумптион** . Этот журнал содержит сводные данные о потреблении ключей секций за секунду. В настоящее время Azure Cosmos DB сообщает ключи секций только для учетных записей API SQL и для операций чтения, записи и хранимых процедур. другие API-интерфейсы и типы операций не поддерживаются. Для других API ключевой столбец секции в таблице журнала диагностики будет пустым. Этот журнал содержит такие данные, как идентификатор подписки, имя региона, имя базы данных, имя коллекции, ключ секции, тип операции и плата за запрос. См. раздел [Устранение неполадок с помощью диагностических запросов Azure](#diagnostic-queries) этой статьи. Например, запросы, использующие "Партитионкэйруконсумптион". 
+* **Партитионкэйруконсумптион**. Этот журнал содержит сводные данные о потреблении ключей секций за секунду. В настоящее время Azure Cosmos DB сообщает ключи секций только для учетных записей API SQL и для операций чтения, записи и хранимых процедур. другие API-интерфейсы и типы операций не поддерживаются. Для других API ключевой столбец секции в таблице журнала диагностики будет пустым. Этот журнал содержит такие данные, как идентификатор подписки, имя региона, имя базы данных, имя коллекции, ключ секции, тип операции и плата за запрос. См. раздел [Устранение неполадок с помощью диагностических запросов Azure](#diagnostic-queries) этой статьи. Например, запросы, использующие "Партитионкэйруконсумптион". 
 
-* **Контролпланерекуестс** . Этот журнал содержит сведения о операциях плоскости управления, таких как создание учетной записи, добавление или удаление региона, обновление параметров репликации учетных записей и т. д. Этот тип журнала доступен для всех типов API, включающих SQL (Core), MongoDB, Gremlin, Cassandra, API таблиц.
+* **Контролпланерекуестс**. Этот журнал содержит сведения о операциях плоскости управления, таких как создание учетной записи, добавление или удаление региона, обновление параметров репликации учетных записей и т. д. Этот тип журнала доступен для всех типов API, включающих SQL (Core), MongoDB, Gremlin, Cassandra, API таблиц.
 
-* **Запросы** . Выберите этот параметр, чтобы получать данные метрик из Azure Cosmos DB в целевые объекты в параметре диагностики. Это те же данные, собираемые автоматически в метриках Azure. Собирайте данные метрик с помощью журналов ресурсов для одновременного анализа обоих видов данных и отправки данных метрик за пределы Azure Monitor.
+* **Запросы**. Выберите этот параметр, чтобы получать данные метрик из Azure Cosmos DB в целевые объекты в параметре диагностики. Это те же данные, собираемые автоматически в метриках Azure. Собирайте данные метрик с помощью журналов ресурсов для одновременного анализа обоих видов данных и отправки данных метрик за пределы Azure Monitor.
 
 Подробные сведения о создании параметров диагностики с помощью портал Azure, интерфейса командной строки или PowerShell см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../azure-monitor/platform/diagnostic-settings.md) .
 
@@ -132,7 +138,7 @@ ms.locfileid: "93097572"
    | summarize max(responseLength_s), max(requestLength_s), max(requestCharge_s), count = count() by OperationName, requestResourceType_s, userAgent_s, collectionRid_s, bin(TimeGenerated, 1h)
    ```
 
-1. Как получить все запросы, которые потребляют больше 100 единиц запросов в секунду, с данными из **DataPlaneRequests** и **куерирунтиместатистикс** .
+1. Как получить все запросы, которые потребляют больше 100 единиц запросов в секунду, с данными из **DataPlaneRequests** и **куерирунтиместатистикс**.
 
    ```Kusto
    AzureDiagnostics

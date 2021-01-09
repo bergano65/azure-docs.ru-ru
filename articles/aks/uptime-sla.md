@@ -3,14 +3,14 @@ title: Служба Azure Kubernetes (AKS) с Соглашением об уро
 description: Сведения о варианте Соглашения об уровне обслуживания с гарантией времени доступности для сервера API Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: conceptual
-ms.date: 06/24/2020
+ms.date: 01/08/2021
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: d9d22b54ef2534cf0adb205175fdc3f1c57205fb
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 95728ca14b96adf7396ca13888107477d953b2a9
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607345"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033342"
 ---
 # <a name="azure-kubernetes-service-aks-uptime-sla"></a>Соглашение об уровне обслуживания с гарантией времени доступности для Службы Azure Kubernetes (AKS)
 
@@ -26,7 +26,7 @@ ms.locfileid: "97607345"
 ## <a name="region-availability"></a>Доступность по регионам
 
 * Соглашение об уровне обслуживания доступности доступно в общедоступных регионах и регионах Azure для государственных организаций, где [поддерживается AKS](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
-* Соглашение об уровне обслуживания доступности доступно для [частных кластеров AKS][private-clusters] во всех регионах, где поддерживается AKS.
+* Соглашение об уровне обслуживания доступности доступно для [частных кластеров AKS][private-clusters] во всех общедоступных регионах, где поддерживается AKS.
 
 ## <a name="sla-terms-and-conditions"></a>Условия Соглашения об уровне обслуживания
 

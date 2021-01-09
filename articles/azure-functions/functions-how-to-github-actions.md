@@ -6,18 +6,18 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: 0018b7bafa8ff2ecd328a150df752082c85484e2
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: bc80a4f5c6c2919f0cb3faa15958fb75eed70270
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608516"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035229"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
-Используйте [действия GitHub](https://github.com/features/actions) , чтобы определить рабочий процесс для автоматической сборки и развертывания кода в приложении-функции Azure. 
+Используйте [действия GitHub](https://github.com/features/actions) , чтобы определить рабочий процесс для автоматической сборки и развертывания кода в приложении-функции в функциях Azure. 
 
-В действиях GitHub [Рабочий процесс](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) — это автоматизированный процесс, который определяется в репозитории GitHub. Этот процесс говорит GitHub о том, как создать и развернуть проект приложения функций на GitHub. 
+В действиях GitHub [Рабочий процесс](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) — это автоматизированный процесс, который определяется в репозитории GitHub. Этот процесс говорит GitHub о том, как создать и развернуть проект приложения функции на GitHub. 
 
 Рабочий процесс определяется файлом YAML (.yml) по пути `/.github/workflows/` в вашем репозитории. Это определение содержит разные шаги и параметры рабочего процесса. 
 
@@ -187,6 +187,7 @@ Python использует `actions/setup-python` действие.
 ---
 
 ## <a name="deploy-the-function-app"></a>Развертывание приложения-функции
+
 Используйте `Azure/functions-action` действие для развертывания кода в приложении-функции. Это действие имеет три параметра:
 
 |Параметр |Объяснение  |
@@ -202,7 +203,7 @@ Python использует `actions/setup-python` действие.
 Настройте рабочий процесс .NET для Linux, использующий профиль публикации.
 
 ```yaml
-name: Deploy DotNet project to Azure function app with a Linux environment
+name: Deploy DotNet project to function app with a Linux environment
 
 on:
   [push]
@@ -241,7 +242,7 @@ jobs:
 Настройка рабочего процесса .NET Windows, использующего профиль публикации.
 
 ```yaml
-name: Deploy DotNet project to Azure function app with a Windows environment
+name: Deploy DotNet project to function app with a Windows environment
 
 on:
   [push]
@@ -283,7 +284,7 @@ jobs:
 Настройте рабочий процесс Java Linux, использующий профиль публикации.
 
 ```yaml
-name: Deploy Java project to Azure Function App
+name: Deploy Java project to function app
 
 on:
   [push]
@@ -325,7 +326,7 @@ jobs:
 Настройка рабочего процесса Java для Windows, использующего профиль публикации.
 
 ```yaml
-name: Deploy Java project to Azure Function App
+name: Deploy Java project to function app
 
 on:
   [push]
@@ -369,7 +370,7 @@ jobs:
 Настройте рабочий процесс Node.JS Linux, использующий профиль публикации.
 
 ```yaml
-name: Deploy Node.js project to Azure Function App
+name: Deploy Node.js project to function app
 
 on:
   [push]
@@ -411,7 +412,7 @@ jobs:
 Настройка Node.JS рабочего процесса Windows, использующего профиль публикации.
 
 ```yaml
-name: Deploy Node.js project to Azure Function App
+name: Deploy Node.js project to function app
 
 on:
   [push]
@@ -455,7 +456,7 @@ jobs:
 Настройка рабочего процесса Python Linux, использующего профиль публикации.
 
 ```yaml
-name: Deploy Python project to Azure Function App
+name: Deploy Python project to function app
 
 on:
   [push]
