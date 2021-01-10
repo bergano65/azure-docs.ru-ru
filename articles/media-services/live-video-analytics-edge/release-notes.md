@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 2800d41340e45867ea4126733cdb5968cf8b91c5
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 7761fee8f23b5be259f9a5c278f761fa4ce92fbf
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400851"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059982"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -33,7 +33,7 @@ ms.locfileid: "97400851"
 * Добавлена поддержка использования нескольких процессоров расширений HTTP и процессора расширений gRPC на топологию графа.
 * Добавлена поддержка управления дисковым пространством для узлов приемника.
 * `MediaGraphGrpcExtension` Теперь узел поддерживает свойство [екстенсионконфигуратион](grpc-extension-protocol.md) для использования нескольких моделей AI на одном сервере gRPC.
-* Добавлена поддержка сбора метрик модуля Live Video Analytics в [формате Prometheus](https://prometheus.io/docs/practices/naming/) . 
+* Добавлена поддержка сбора метрик модуля Live Video Analytics в [формате Prometheus](https://prometheus.io/docs/practices/naming/). Узнайте больше о том, как [получать метрики и просматривать их в Azure Monitor.](monitoring-logging.md#azure-monitor-collection-via-telegraf) 
 * Обработчик фильтра частоты кадров **устарел**.  
     * Управление частотой кадров теперь доступно в самих узлах процессора расширения графа.
 

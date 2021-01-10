@@ -6,18 +6,15 @@ ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/08/2021
-ms.openlocfilehash: d39bc35d1edcbcfef4c7774259112ec5144efa15
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 0c75f9938b3bc4fa8a2e650f77a3708e91180fea
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044362"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059227"
 ---
 # <a name="azure-cosmos-db-serverless-preview"></a>Бессерверные Azure Cosmos DB (Предварительная версия)
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
-
-> [!IMPORTANT]
-> В настоящее время на сервере Azure Cosmos DB не работает Предварительная версия. Эта предварительная версия предоставляется без Соглашение об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Azure Cosmos DB бессерверных операций позволяет использовать учетную запись Azure Cosmos в расчете на основе потребления, когда вы платите только за единицы запросов, потребляемые операциями базы данных, и объемом хранилища, потребляемым данными. Бессерверные контейнеры могут обслуживать тысячи запросов в секунду без минимальной оплаты и не требует планирования емкости.
 

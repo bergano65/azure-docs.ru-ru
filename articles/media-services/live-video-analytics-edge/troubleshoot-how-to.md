@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 12/04/2020
-ms.openlocfilehash: 31cf89cb66dfbc404d65f8fc09b96c03e1be2f8f
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: d49f048df7a624dc490acf7cb4c8e5f33aa5f1c6
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401319"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060237"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Устранение неполадок в Live Video Analytics на IoT Edge
 
@@ -65,6 +65,8 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
     * 406 — устройство IoT Edge работает в автономном режиме или не отправляет отчеты о состоянии.
     * 500 — в среде выполнения IoT Edge произошла ошибка.
 
+    > [!TIP]
+    > При возникновении проблем с Azure IoT Edgeными модулями в среде используйте **[Azure IOT Edge Стандартные диагностические действия](https://docs.microsoft.com/azure/iot-edge/troubleshoot?view=iotedge-2018-06&preserve-view=true)** в качестве руководств по устранению неполадок и диагностике.
 ### <a name="post-deployment-direct-method-error-code"></a>После развертывания: код ошибки прямого метода
 1. Если вы получаете состояние `501 code` , убедитесь, что имя прямого метода является точным. Если имя метода и полезные данные запроса являются точными, необходимо получить результаты вместе с кодом успешного выполнения = 200. 
 1. Если полезные данные запроса неточны, вы получите состояние `400 code` и полезные данные ответа, которые указывают код ошибки и сообщение, которое должно помочь при диагностике проблемы с помощью вызова прямого метода.
@@ -93,6 +95,8 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 * [Интерактивная аналитика видео или любой другой настраиваемый модуль IOT EDGE не может отправить сообщение в концентратор ребра с ошибкой 404](../../iot-edge/troubleshoot-common-errors.md#iot-edge-module-fails-to-send-a-message-to-edgehub-with-404-error).
 * [Модуль IOT Edge развертывается успешно, а затем исчезает с устройства](../../iot-edge/troubleshoot-common-errors.md#iot-edge-module-deploys-successfully-then-disappears-from-device).
 
+    > [!TIP]
+    > При возникновении проблем с Azure IoT Edgeными модулями в среде используйте **[Azure IOT Edge Стандартные диагностические действия](https://docs.microsoft.com/azure/iot-edge/troubleshoot?view=iotedge-2018-06&preserve-view=true)** в качестве руководств по устранению неполадок и диагностике.
 ### <a name="live-video-analytics-working-with-external-modules"></a>Интерактивная аналитика видео работает с внешними модулями
 
 Интерактивная аналитика видео с помощью обработчиков расширения Media Graph может расширить граф мультимедиа для отправки и получения данных из других модулей IoT Edge с помощью протоколов HTTP или gRPC. В качестве [конкретного примера](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/httpExtension)этот граф мультимедиа может отправлять видеоматериалы в виде изображений во внешний модуль вывода, например Йоло v3, и получать результаты анализа на основе JSON с помощью протокола HTTP. В такой топологии назначением для событий является преимущественно центр Интернета вещей. В ситуациях, когда вы не видите события вывода в концентраторе, проверьте следующее:
@@ -207,12 +211,12 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
     > [!NOTE] 
     > Эта команда привязывает папки журналов между граничным устройством и контейнером. Чтобы сохранить журналы в другом расположении, используйте следующую команду, заменив **$LOG _LOCATION_ON_EDGE_DEVICE** на расположение, которое вы хотите использовать. `/var/$LOG_LOCATION_ON_EDGE_DEVICE:/var/lib/azuremediaservices/logs`
 
-1. Выберите **Обновить**.
+1. Нажмите кнопку **Обновить**.
 1. Выберите **Review + Create** (Просмотреть и создать). Сообщение об успешной проверке публикуется под зеленым баннером.
 1. Нажмите кнопку **создания**.
 1. Обновите **двойника удостоверений модуля** , чтобы он указывал на параметр дебуглогсдиректори, указывающий на каталог, в котором собираются журналы.
 
-    а. В таблице **модули** выберите **лваедже**.  
+    a. В таблице **модули** выберите **лваедже**.  
     b. В верхней части панели выберите **модуль удостоверение двойника**. Откроется Редактируемая панель.  
     c. В разделе **требуемый ключ** добавьте следующую пару "ключ-значение":  
     `"DebugLogsDirectory": "/var/lib/azuremediaservices/logs"`

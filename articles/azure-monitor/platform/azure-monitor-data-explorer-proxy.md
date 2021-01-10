@@ -1,18 +1,18 @@
 ---
 title: Запрос перекрестных ресурсов Azure обозреватель данных с помощью Azure Monitor
 description: Используйте Azure Monitor для выполнения межплатформенных запросов между обозреватель данных Azure, рабочими областями Log Analytics и классическими Application Insights приложениями в Azure Monitor.
-author: orens
+author: osalzberg
 ms.author: bwren
 ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 12/02/2020
-ms.openlocfilehash: cb586d15e762f88620fe0c91152af41b3f607d74
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 1a35b80ceec12b378a01555f42b7a0500b8f6229
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674435"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060458"
 ---
 # <a name="cross-resource-query-azure-data-explorer-by-using-azure-monitor"></a>Запрос перекрестных ресурсов Azure обозреватель данных с помощью Azure Monitor
 Azure Monitor поддерживает запросы между службами между обозреватель данныхами Azure, [Application Insights](/azure/azure-monitor/app/app-insights-overview)и [log Analytics](/azure/azure-monitor/platform/data-platform-logs). Затем можно выполнить запрос к кластеру Azure обозреватель данных с помощью средств Log Analytics/Application Insights и обратиться к нему в запросах между службами. В этой статье показано, как выполнить запрос между службами.
@@ -22,7 +22,7 @@ Azure Monitor поддерживает запросы между службам�
 :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-monitor-data-explorer-flow.png" alt-text="Схема, показывающая последовательность запросов между пользователем, Azure Monitor, прокси-сервером и обозреватель данных Azure.":::
 
 >[!NOTE]
-> Azure Monitor запрос между службами находится в закрытой предварительной версии. Алловлистинг является обязательным. Свяжитесь с [группой обслуживания](mailto:ADXProxy@microsoft.com) с любыми вопросами.
+> Azure Monitor запрос между службами находится в общедоступной предварительной версии. Свяжитесь с [группой обслуживания](mailto:ADXProxy@microsoft.com) с любыми вопросами.
 
 ## <a name="cross-query-your-log-analytics-or-application-insights-resources-and-azure-data-explorer"></a>Перекрестное выполнение запросов к Log Analytics или Application Insights ресурсам и обозреватель данных Azure
 

@@ -1,5 +1,5 @@
 ---
-title: Защита внешнего доступа к ресурсам в Azure Active Directory
+title: Защита внешней совместной работы в Azure Active Directory
 description: Рекомендации для архитекторов и ИТ-администраторов по защите внешнего доступа к внутренним ресурсам
 services: active-directory
 author: BarbaraSelden
@@ -13,14 +13,14 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39300c887245a99dce2913661f6492c85a1e6722
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 7f09d2050617cbda539eee9fcda1ecfb204a015a
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97744092"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059285"
 ---
-# <a name="securing-external-access-to-resources"></a>Защита внешнего доступа к ресурсам
+# <a name="securing-external-collaboration-in-azure-active-directory-and-microsoft-365"></a>Обеспечение безопасности внешней совместной работы в Azure Active Directory и Microsoft 365
 
 Безопасная совместная работа с внешними партнерами гарантирует, что у правых внешних партнеров будет соответствующий доступ к внутренним ресурсам в течение продолжительного периода времени. Благодаря глобальному подходу к управлению можно снизить риски безопасности, обеспечить соответствие требованиям и убедиться, что у вас есть доступ.
 
@@ -43,7 +43,7 @@ ms.locfileid: "97744092"
 См. следующие статьи о защите внешнего доступа к ресурсам. Мы рекомендуем выполнить действия в указанном порядке.
 
 
-1. [Определение требуемой системы безопасности для внешнего доступа](1-secure-access-posture.md)
+1. [Определение уровня безопасности для внешнего доступа](1-secure-access-posture.md)
 
 2. [Обнаружение текущего состояния](2-secure-access-current-state.md)
 

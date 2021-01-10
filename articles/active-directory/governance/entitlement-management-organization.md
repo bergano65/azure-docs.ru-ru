@@ -16,12 +16,12 @@ ms.date: 12/11/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6299f9ad660252ae39903401672d493b1c1ad52c
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 8f08c25749bbd21e3624dee898d9a8c97fd74164
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347495"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059387"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Добавление подключенной Организации в управление назначением Azure AD
 
@@ -48,7 +48,7 @@ ms.locfileid: "97347495"
 
 Способ проверки подлинности пользователей в каталоге или домене Azure AD зависит от типа аутентификации. Типы проверки подлинности для подключенных организаций:
 
-- Azure AD
+- Azure AD
 - [Прямая федерация](../external-identities/direct-federation.md)
 - [Одноразовый пароль](../external-identities/one-time-passcode.md) (домен)
 
@@ -135,8 +135,6 @@ ms.locfileid: "97347495"
 1. В левой области выберите **подключенные Организации**, а затем выберите подключенную организацию, чтобы открыть ее.
 
 1. В области Обзор подключенной организации выберите **Удалить** , чтобы удалить его.
-
-    В настоящее время подключенную организацию можно удалить, только если нет подключенных пользователей.
 
     ![Кнопка удаления подключенной Организации](./media/entitlement-management-organization/organization-delete.png)
 

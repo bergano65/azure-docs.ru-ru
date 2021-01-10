@@ -4,17 +4,17 @@ description: Узнайте, как скопировать большой дво
 services: storage
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 09/10/2020
+ms.date: 01/08/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 2c474ed4d4158356075f861c3c0d5ace69173255
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28b23555f97e58dde038c5e3e12a4b741b81776d
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90014656"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059047"
 ---
 # <a name="copy-a-blob-with-azure-storage-client-libraries"></a>Копирование большого двоичного объекта с помощью клиентских библиотек службы хранилища Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "90014656"
 
 ## <a name="copy-a-blob"></a>Копирование большого двоичного объекта
 
-# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET (версии 12)](#tab/dotnet)
 
 Чтобы скопировать большой двоичный объект, вызовите один из следующих методов:
 
@@ -55,7 +55,7 @@ ms.locfileid: "90014656"
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CopyBlob.cs" id="Snippet_CopyBlob":::
 
-# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET (версии 11)](#tab/dotnet11)
 
 Чтобы скопировать большой двоичный объект, вызовите один из следующих методов:
 
@@ -137,7 +137,7 @@ private static async Task CopyBlockBlobAsync(CloudBlobContainer container)
 
 Прерывание операции копирования приводит к получению целевого большого двоичного объекта нулевой длины. Однако метаданные для целевого BLOB-объекта будут иметь новые значения, скопированные из исходного большого двоичного объекта или явно заданы во время операции копирования. Для сохранения исходных метаданных перед копированием Создайте моментальный снимок целевого большого двоичного объекта перед вызовом одного из методов копирования.
 
-# <a name="net-v12"></a>[Платформа .NET версии 12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET (версии 12)](#tab/dotnet)
 
 Проверьте свойство [блобпропертиес. копистатус](/dotnet/api/azure.storage.blobs.models.blobproperties.copystatus) в целевом большом двоичном объекте, чтобы получить состояние операции копирования. После завершения копирования конечный BLOB-объект будет зафиксирован.
 
@@ -147,7 +147,7 @@ private static async Task CopyBlockBlobAsync(CloudBlobContainer container)
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CopyBlob.cs" id="Snippet_StopBlobCopy":::
 
-# <a name="net-v11"></a>[Версии 11 .NET](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET (версии 11)](#tab/dotnet11)
 
 Проверьте свойство [копистате. status](/dotnet/api/microsoft.azure.storage.blob.copystate.status) в целевом большом двоичном объекте, чтобы получить состояние операции копирования. После завершения копирования конечный BLOB-объект будет зафиксирован.
 
@@ -188,7 +188,7 @@ if (destBlob.CopyState.Status == CopyStatus.Pending)
  - [SDK Azure для Python](https://github.com/azure/azure-sdk-for-python)
  - [Пакет Azure SDK для JavaScript](https://github.com/azure/azure-sdk-for-js)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих разделах содержатся сведения о копировании больших двоичных объектов и прерывании текущих операций копирования с помощью интерфейсов API службы Azure.
 
