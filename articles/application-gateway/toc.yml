@@ -109,7 +109,7 @@
     - name: Основные сведения о ценах
       href: understanding-pricing.md
     - name: ВОПРОСЫ И ОТВЕТЫ
-      href: application-gateway-faq.md
+      href: application-gateway-faq.yml
 - name: Практические руководства
   items:
     - name: Размещение одного веб-сайта
