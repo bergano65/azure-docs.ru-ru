@@ -4,13 +4,13 @@ description: Эта статья регулярно обновляется по�
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 06/15/2020
-ms.openlocfilehash: 52f8aad0a429d3378d46265fab719b1cb9f07fd0
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.date: 01/05/2021
+ms.openlocfilehash: 4591bc26c848032d1c0f8b96720c4ec66b9b064d
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813196"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916360"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности службы "Распознавание речи"
 
@@ -20,7 +20,8 @@ ms.locfileid: "97813196"
 
 ### <a name="december-2020"></a>Декабрь 2020 г.
 
-* Все пользователи LUIS должны [перейти на ресурс authorint LUIS](luis-migration-authoring.md)
+* Все пользователи LUIS должны [перейти на ресурс LUIS для разработки](luis-migration-authoring.md).
+* Новые [конечные точки оценки](luis-how-to-batch-test.md#batch-testing-using-the-rest-api), которые позволяют отправлять пакетные тесты с помощью REST API и получать результаты точности для намерений и сущностей. Они доступны для конечной точки LUIS версии 3.0-preview.
 
 ### <a name="june-2020"></a>Июнь 2020 г.
 

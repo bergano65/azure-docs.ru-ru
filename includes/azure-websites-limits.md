@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: jroth
-ms.openlocfilehash: 6265a7cde8e276570409238cadfd5ebc777b4527
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 71782661fd960cae3248005a8b90944eff9bef45
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97531947"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98024290"
 ---
 | Ресурс | Бесплатный | Совмещаемая блокировка | Basic | Standard | Премиум (версия 1–3) | Isolated </th> |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -31,6 +31,7 @@ ms.locfileid: "97531947"
 | личных доменов [Поддержка SSL](../articles/app-service/configure-ssl-certificate.md) |Не поддерживается, по умолчанию доступен шаблон сертификата для \*.azurewebsites.net|Не поддерживается, по умолчанию доступен шаблон сертификата для \*.azurewebsites.net|Неограниченное количество подключений SSL на основе SNI |Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP |Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP | Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP|
 | Гибридные подключения | | | 5 на план | 25 на план | 200 на приложение | 200 на приложение |
 | [Интеграция с виртуальной сетью](../articles/app-service/web-sites-integrate-with-vnet.md) | | |   |  X |  X  |  X  |
+| [Частные конечные точки](../articles/app-service/networking/private-endpoint.md) | | |   |   |  100 на каждое приложение  |    |
 | Интегрированная подсистема балансировки нагрузки | |X |X |X |X |X<sup>10</sup> |
 | [Ограничения доступа](../articles/app-service/networking-features.md#access-restrictions) | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение | 512 правил на приложение |
 | [AlwaysOn](../articles/app-service/configure-common.md) | | |X |X |X |X |

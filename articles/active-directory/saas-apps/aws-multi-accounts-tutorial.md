@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 12/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 7e71058e1899cf83e712025b534e51a1be1f6bdb
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: e6b4175f4f47c9dd378bec84da2575c079a2079f
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591792"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014440"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws-legacy-tutorial"></a>Руководство по Интеграция Azure Active Directory с Amazon Web Services (AWS) (устаревший учебник)
 
@@ -89,11 +89,11 @@ ms.locfileid: "97591792"
 
 Чтобы настроить и проверить единый вход Azure AD в Amazon Web Services, выполните следующие действия:
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Amazon Web Services (AWS)](#configure-amazon-web-services-aws-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Amazon Web Services (AWS)](#configure-amazon-web-services-aws-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
+### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Amazon Web Services (AWS).
 
@@ -107,7 +107,7 @@ ms.locfileid: "97591792"
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+3. На странице **Настройка единого входа с помощью SAML** щелкните значок **карандаша**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
@@ -143,11 +143,14 @@ ms.locfileid: "97591792"
 
     ж. Выберите команду **Сохранить**.
 
+    >[!NOTE]
+    >Дополнительные сведения о ролях в Azure AD см. [здесь](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui).
+
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML метаданных федерации** и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-### <a name="configure-amazon-web-services-aws-single-sign-on"></a>Настройка единого входа в Amazon Web Services (AWS)
+### <a name="configure-amazon-web-services-aws-sso"></a>Настройка единого входа для Amazon Web Services (AWS)
 
 1. В другом окне браузера войдите на сайт Amazon Web Services компании в качестве администратора.
 
@@ -231,7 +234,7 @@ ms.locfileid: "97591792"
 
     ![Снимок экрана: отображение идентификатора учетной записи в окне AWS.](./media/aws-multi-accounts-tutorial/aws-accountid.png)
 
-1. Войдите на [портал Azure](https://portal.azure.com/) и перейдите в раздел **Группы**.
+1. Войдите на портал Azure и перейдите в раздел **Группы**.
 
 1. Создайте новые группы с тем же именем, что и у созданных ранее ролей IAM, и запишите **идентификаторы объектов** этих новых групп.
 
@@ -347,11 +350,11 @@ ms.locfileid: "97591792"
     > [!Note]
     > Обратите внимание, что вам необходимо обновить сеанс на портале Azure, чтобы увидеть новые роли.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-sso"></a>Проверка единого входа
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе объясняется, как проверить конфигурацию единого входа Azure AD с помощью портала "Мои приложения".
 
-Щелкнув плитку Amazon Web Services на панели доступа, вы перейдете на страницу приложения Amazon Web Services с возможностью выбрать роль.
+Щелкнув плитку Amazon Web Services на портале "Мои приложения", вы перейдете на страницу приложения Amazon Web Services с возможностью выбрать роль.
 
 ![Проверка единого входа 1](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-test-screen.png)
 
@@ -359,7 +362,7 @@ ms.locfileid: "97591792"
 
 ![Проверка единого входа 2](./media/aws-multi-accounts-tutorial/tutorial-amazonwebservices-test-saml.png)
 
-См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
+Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

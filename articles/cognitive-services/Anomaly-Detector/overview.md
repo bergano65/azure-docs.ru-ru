@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: overview
-ms.date: 11/23/2020
+ms.date: 01/05/2021
 ms.author: mbullwin
 keywords: Обнаружение аномалий, машинное обучение, алгоритмы
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: d8698a17db8be6a3d5b26d764ef86702320ebfa4
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 425c6cab4a4a5e1329e2d38f49c5058ec8ffc5b9
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705087"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901374"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Общие сведения об API Детектора аномалий
 
@@ -83,8 +83,17 @@ API Детектор аномалий - это веб-сервис RESTful, по
 
 Дополнительные сведения об алгоритмах SR-CNN, разработанных корпорацией Майкрософт, см. в статье [Time-Series Anomaly Detection Service at Microsoft](https://arxiv.org/abs/1906.03821) (Служба Детектора аномалий временных рядов в корпорации Майкрософт) (принятая KDD 2019).
 
-
 > [!VIDEO https://www.youtube.com/embed/ERTaAnwCarM]
+
+## <a name="service-availability-and-redundancy"></a>Доступность и избыточность службы
+
+### <a name="is-the-anomaly-detector-service-zone-resilient"></a>Устойчива ли зона службы "Детектор аномалий"?
+
+Да. Для службы "Детектор аномалий" по умолчанию обеспечивается устойчивость зоны.
+
+### <a name="how-do-i-configure-the-anomaly-detector-service-to-be-zone-resilient"></a>Как настроить службу "Детектор аномалий" для устойчивости зоны?
+
+Чтобы включить устойчивость зоны, настройка со стороны клиента не требуется. Устойчивость зоны для ресурсов Детектора аномалий доступна по умолчанию и управляется самой службой.
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>Развертывание в локальной среде с помощью контейнеров Docker
 

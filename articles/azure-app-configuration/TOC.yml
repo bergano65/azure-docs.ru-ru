@@ -54,7 +54,7 @@
           href: enable-dynamic-configuration-java-spring-app.md
     - name: Использование флагов компонентов
       items:
-        - name: .NET Core
+        - name: ASP.NET Core
           href: use-feature-flags-dotnet-core.md
         - name: Spring Boot
           href: use-feature-flags-spring-boot.md
@@ -110,7 +110,7 @@
           href: concept-disaster-recovery.md
 - name: Практические руководства
   items:
-    - name: Включение функции для процента пользователей
+    - name: Использование условных флагов функций
       href: howto-feature-filters-aspnet-core.md
     - name: Включение функции для указанных пользователей или групп
       href: howto-targetingfilter-aspnet-core.md

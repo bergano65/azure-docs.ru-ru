@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по использованию клиентской библиотеки сертификатов Azure Key Vault для Java
-description: Краткое описание использования клиентской библиотеки сертификатов Azure Key Vault для Java
+title: Краткое руководство. Клиентская библиотека сертификатов Azure Key Vault для Java
+description: Сведения о клиентской библиотеке сертификатов Azure Key Vault для Java с инструкциями по ее использованию.
 author: msmbaldwin
 ms.custom: devx-track-java, devx-track-azurecli
 ms.author: mbaldwin
@@ -8,14 +8,14 @@ ms.date: 12/18/2020
 ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
-ms.openlocfilehash: 1890c2a3d4043d43dd890f06942dbe704e3f7689
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: 99b8c63060cebeffea0f3473e03b5f49a415230b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733494"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936045"
 ---
-# <a name="quickstart-azure-key-vault-certificate-client-library-for-java"></a>Краткое руководство. Использование клиентской библиотеки сертификатов Azure Key Vault для Java
+# <a name="quickstart-azure-key-vault-certificate-client-library-for-java-certificates"></a>Краткое руководство. Клиентская библиотека сертификатов Azure Key Vault для Java (сертификаты)
 Приступите к работе с клиентской библиотекой сертификатов Azure Key Vault для Java. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните описанные ниже шаги.
 
 Дополнительные ресурсы:
@@ -126,7 +126,7 @@ set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
 ```powershell
-$Env:KEY_VAULT_NAME=<your-key-vault-name>
+$Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 
 macOS или Linux

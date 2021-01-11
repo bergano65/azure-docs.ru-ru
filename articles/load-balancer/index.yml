@@ -11,12 +11,12 @@ metadata:
   author: asudbring
   ms.author: allensu
   ms.date: 05/07/2020
-  ms.openlocfilehash: 87f9328745484d3f9643e3fd297fd2bf07b00a43
-  ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+  ms.openlocfilehash: de8b6cba87d0297841f4e6236ee69d4f6a856eb4
+  ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/17/2020
-  ms.locfileid: "94695577"
+  ms.lasthandoff: 01/08/2021
+  ms.locfileid: "98027882"
 landingContent:
 - title: Основные сведения о Load Balancer
   linkLists:
@@ -96,6 +96,10 @@ landingContent:
       url: load-balancer-common-deployment-errors.md
     - text: Устранение распространенных проблем с исходящим подключением
       url: troubleshoot-outbound-connection.md
+    - text: Проблемы с состоянием пробы работоспособности
+      url: load-balancer-troubleshoot-health-probe-status.md
+    - text: Трафик серверного пула (виртуальной машины)
+      url: load-balancer-troubleshoot-backend-traffic.md
   - linkListType: video
     links:
     - text: Создание и мониторинг высокодоступных приложений с помощью Azure Load Balancer

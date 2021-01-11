@@ -13,12 +13,12 @@ ms.date: 11/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: marsma, aragra, lenalepa, sureshja
-ms.openlocfilehash: edfed8ca361d456e622096e23079d5887f96ab30
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 033d5cfa5dbe5e0010bc1182f54643ec04db3ce3
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452989"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017618"
 ---
 # <a name="how-to-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Удаление приложения, зарегистрированного с помощью платформы удостоверений Майкрософт
 
@@ -39,7 +39,7 @@ ms.locfileid: "96452989"
 
 Чтобы удалить приложение, вы должны быть указаны как владелец приложения или иметь права администратора.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a> с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений**. Найдите и выберите приложение, которое нужно настроить. После выбора приложения появится страница **Обзор** приложения.
 1. На странице **Обзор** выберите **Удалить**.

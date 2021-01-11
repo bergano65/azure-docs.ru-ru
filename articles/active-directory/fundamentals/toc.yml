@@ -25,7 +25,7 @@
   items:
     - name: Безопасность
       items:
-        - name: Безопасный внешний доступ к ресурсам
+        - name: Безопасное внешнее взаимодействие
           items:
             - name: Обзор безопасного внешнего доступа
               href: secure-external-access-resources.md
@@ -47,6 +47,8 @@
               href: 8-secure-access-sensitivity-labels.md
             - name: '9. Безопасный доступ к Teams, SharePoint и OneDrive'
               href: 9-secure-access-teams-sharepoint.md
+        - name: Защита Microsoft 365 от локальных атак
+          href: protect-m365-from-on-premises-attacks.md
         - name: Включение MFA
           href: concept-fundamentals-mfa-get-started.md
         - name: Параметры безопасности по умолчанию

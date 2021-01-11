@@ -146,11 +146,15 @@
       items:
         - name: Устранение неполадок Azure Load Balancer
           href: load-balancer-troubleshoot.md
-        - name: Устранение стандартных ошибок развертывания
+        - name: Состояние пробы работоспособности
+          href: load-balancer-troubleshoot-health-probe-status.md
+        - name: Трафик серверного пула (виртуальной машины)
+          href: load-balancer-troubleshoot-backend-traffic.md
+        - name: Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager
           href: load-balancer-common-deployment-errors.md
-        - name: Устранение распространенных неполадок с исходящим подключением
+        - name: Распространенные проблемы с исходящим подключением
           href: troubleshoot-outbound-connection.md
-        - name: Устранение неполадок с работоспособностью ресурсов и доступностью входящего трафика
+        - name: Проблемы с работоспособностью ресурсов и доступностью входящего трафика
           href: troubleshoot-rhc.md
 - name: Справочник
   items:
