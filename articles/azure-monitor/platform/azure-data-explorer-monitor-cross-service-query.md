@@ -1,18 +1,18 @@
 ---
 title: Межсервисный запрос между Azure Monitor и обозреватель данных Azure (Предварительная версия)
 description: Запросите данные Azure обозреватель данных с помощью средств Log Analytics Azure, наоборот, чтобы присоединить и проанализировать все данные в одном месте.
-author: orens
+author: osalzberg
 ms.author: bwren
 ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: 0af9111223bb16f1c5843223e7fe1661ce99c623
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 5aadd9d96f538f92e1b9e0100b2c1055ee0b0633
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96749252"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065275"
 ---
 # <a name="cross-service-query---azure-monitor-and-azure-data-explorer-preview"></a>Кросс-Сервисный запрос — Azure Monitor и Azure обозреватель данных (Предварительная версия)
 Создавайте запросы между службами между [Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/), [Application Insights](/azure/azure-monitor/app/app-insights-overview)и [log Analytics](/azure/azure-monitor/platform/data-platform-logs).

@@ -12,12 +12,13 @@ ms.date: 12/18/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.openlocfilehash: 41ea41b4d7c181dad9246653a68c329387ac5381
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: ffd9b415d3b2a8e1aa716caa0e8289c6ae127b71
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80884687"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065088"
 ---
 # <a name="microsoft-identity-platform-authentication-protocols"></a>Протоколы проверки подлинности платформы Microsoft Identity
 
@@ -33,7 +34,7 @@ ms.locfileid: "80884687"
 * [Служба обслуживания вызовов с помощью потока On-Behalf-Of](v2-oauth2-on-behalf-of-flow.md) — сведения об использовании потока On-Behalf-Of OAuth 2.0 для вызовов между службами.
 * [Справочник по протоколу SAML](active-directory-saml-protocol-reference.md) . сведения об одном Sign-On и профили SAML единого выхода для платформы Microsoft Identity.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Общие сведения о платформе удостоверений Майкрософт](v2-overview.md)
 * [Примеры кода Active Directory](sample-v2-code.md)

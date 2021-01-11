@@ -13,14 +13,14 @@ ms.date: 06/05/2020
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev devx-track-js
-ms.openlocfilehash: ef1c0003978251dd2637915e56dc396e85f4438f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 53294a30b38bed7ab7516443277cac24e4fef4c1
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107878"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063728"
 ---
-# <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для JavaScript для работы с Azure AD B2C
+# <a name="use-the-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для JavaScript для работы с Azure AD B2C
 
 [Библиотека проверки подлинности Microsoft для JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) позволяет разработчикам JavaScript проверять подлинность пользователей с помощью социальных сетей и местных удостоверений с помощью [Azure Active Directory B2C](../../active-directory-b2c/overview.md) (Azure AD B2C).
 
@@ -32,7 +32,7 @@ ms.locfileid: "97107878"
 - Поддержка входа в одностраничное приложение (SPA) *и вызов* защищенного веб-API
 - Включить поддержку сброса паролей
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Создайте [клиент Azure AD B2C](../../active-directory-b2c/tutorial-create-tenant.md), если вы этого еще не сделали.
 
@@ -216,5 +216,5 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 Дополнительные сведения об этих Azure AD B2C концепциях:
 
 - [Потоки пользователей](../../active-directory-b2c/tutorial-create-user-flows.md)
-- [Настраиваемые политики](../../active-directory-b2c/custom-policy-get-started.md)
+- [Пользовательские политики](../../active-directory-b2c/custom-policy-get-started.md)
 - [Настройка UX](../../active-directory-b2c/configure-user-input.md)

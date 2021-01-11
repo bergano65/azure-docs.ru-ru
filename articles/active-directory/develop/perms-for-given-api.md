@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
-ms.openlocfilehash: 7b70460af8126199b19c18118897c93f0477791c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 1e1b4a0b1279130250938b900b47a98cf52f7bb6
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442209"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064442"
 ---
 # <a name="how-to-select-permissions-for-a-given-api"></a>Выбор разрешений для заданного API
 
@@ -26,6 +27,6 @@ ms.locfileid: "89442209"
 - Пошаговые инструкции по [настройке запросов разрешений для клиентского приложения](./quickstart-configure-app-access-web-apis.md)
 - Вы можете ознакомиться с более подробными сведениями о том, как приложения-ресурсы предоставляют [области](./developer-glossary.md#scopes) и [роли приложения](./developer-glossary.md#roles) клиентским приложениям, которые на портале Azure называются делегированными разрешениями и разрешениями приложения, соответственно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

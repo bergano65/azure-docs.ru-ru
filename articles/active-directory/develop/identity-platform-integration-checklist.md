@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 47c3c091e767cac63bb814469397ef1a0aeca3a4
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 011acdf98c8430bfb7ba1b02ec24a170f829e48f
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516491"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063796"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и советы по платформе удостоверений Майкрософт
 
@@ -30,7 +30,7 @@ ms.locfileid: "97516491"
 > [!TIP]
 > *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую [регистрацию приложения](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **помощника по интеграции** , чтобы начать работу с помощником.
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 ![CheckBox ](./media/active-directory-integration-checklist/checkbox-two.svg) Прочтите и изучите [политики платформы Майкрософт](/legal/microsoft-identity-platform/terms-of-use). Убедитесь, что ваше приложение соответствует условиям, которые были разработаны для защиты пользователей и платформы.
 
@@ -38,7 +38,7 @@ ms.locfileid: "97516491"
 
 ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Убедитесь, что сведения, связанные с учетной записью, используемой для регистрации и управления приложениями, обновлены.
 
-## <a name="branding"></a>Торговая марка
+## <a name="branding"></a>Фирменная символика
 
 ![](./media/active-directory-integration-checklist/checkbox-two.svg)должен соответствовать [рекомендациям по фирменной символике для приложений](howto-add-branding-in-azure-ad-apps.md).
 

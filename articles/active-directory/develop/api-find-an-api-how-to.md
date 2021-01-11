@@ -10,12 +10,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
-ms.openlocfilehash: 8c3d79211ce594ec4c175aa6f6b5f8df3a7c4ba8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4a108f8f5c5b333a9fc7e6eabbfa516b6578ca76
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88115549"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063830"
 ---
 # <a name="how-to-find-a-specific-api-needed-for-a-custom-developed-application"></a>Как найти интерфейс API, необходимый для пользовательского приложения
 
@@ -29,6 +30,6 @@ ms.locfileid: "88115549"
 
 При добавлении разрешений во время регистрации вашего приложения можно **добавить доступ к API** к предоставляемым веб-API. Чтобы получить доступ к веб-API, выполните действия, описанные в разделе [Настройка клиентского приложения для доступа к веб-API](quickstart-configure-app-access-web-apis.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о манифесте приложения Azure Active Directory](./reference-app-manifest.md)

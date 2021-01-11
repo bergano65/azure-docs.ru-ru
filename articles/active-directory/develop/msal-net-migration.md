@@ -1,7 +1,7 @@
 ---
 title: Переход на MSAL.NET
 titleSuffix: Microsoft identity platform
-description: Из этой статьи вы узнаете о различиях между библиотекой аутентификации Майкрософт для .NET (MSAL.NET) и библиотекой аутентификации Azure AD для .NET (ADAL.NET), а также о переходе на MSAL.NET.
+description: Сведения о различиях между библиотекой проверки подлинности Microsoft для .NET (MSAL.NET) и библиотекой аутентификация Azure AD для .NET (ADAL.NET) и о переходе на MSAL.NET.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,16 +13,16 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 21f29135cc3b94e5b8c2dfc99b0f7be26b37d123
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c6049bf55e379a2629e8cd4ef1427f91fc31d2cd
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995205"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063609"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
-Как MSAL.NET, так и ADAL.NET используются для аутентификации сущностей Azure AD и маркеров запроса из Azure AD. До настоящего времени большинство разработчиков использовали для аутентификации удостоверений Azure AD (рабочих и учебных учетных записей) платформу Azure AD для разработчиков (версия 1.0), запрашивая маркеры через библиотеку аутентификации Azure AD (ADAL). Использование MSAL:
+Как библиотека проверки подлинности Microsoft для .NET (MSAL.NET), так и библиотека аутентификация Azure AD для .NET (ADAL.NET) используются для проверки подлинности сущностей Azure AD и маркеров запросов из Azure AD. До настоящего времени большинство разработчиков использовали для аутентификации удостоверений Azure AD (рабочих и учебных учетных записей) платформу Azure AD для разработчиков (версия 1.0), запрашивая маркеры через библиотеку аутентификации Azure AD (ADAL). Использование MSAL:
 
 - Вы можете проверить подлинность более широкого набора удостоверений Майкрософт (удостоверений Azure AD и учетных записей Майкрософт, а также социальных и локальных учетных записей с помощью Azure AD B2C), так как в нем используется конечная точка платформы Microsoft Identity.
 - пользователи получат лучшие возможности единого входа.
@@ -120,7 +120,7 @@ MSAL.NET и конечная точка версии 2.0 пока поддер�
 
 Предоставить | ADAL.NET | MSAL.NET
 ----- |----- | -----
-Интерактивно | [Интерактивная аутентификация](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-interactively---Public-client-application-flows) | [Получение маркеров в интерактивном режиме через MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively)
+Interactive (Интерактивные) | [Интерактивная аутентификация](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-interactively---Public-client-application-flows) | [Получение маркеров в интерактивном режиме через MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively)
 Встроенная проверка подлинности Windows | [Встроенная аутентификация Windows (Kerberos)](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/AcquireTokenSilentAsync-using-Integrated-authentication-on-Windows-(Kerberos)) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication)
 Имя пользователя и пароль | [Получение маркеров с использованием имени пользователя и пароля](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-with-username-and-password)| [Аутентификация по имени пользователя и паролю](msal-authentication-flows.md#usernamepassword)
 Поток кода устройства | [Профиль устройства для устройств без веб-браузеров](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Device-profile-for-devices-without-web-browsers) | [Поток кода устройства](msal-authentication-flows.md#device-code)
@@ -264,6 +264,6 @@ AuthenticationResult result = await appRt.AcquireTokenByRefreshToken(null, rt)
 
 Этот метод можно использовать в разных процессах интеграции, если у вас есть готовый маркер обновления.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об областях можно найти в статье [Permissions and consent in the Microsoft identity platform endpoint](v2-permissions-and-consent.md) (Разрешения и согласие для конечной точки платформы удостоверений Майкрософт).

@@ -10,12 +10,12 @@ ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 11/25/2020
-ms.openlocfilehash: 846c5519dced06ed16f5a0d12b0bb25443961f93
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: b917e3fc93c59de85c5236c18e31d7bbc9d891f0
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753915"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065479"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer"></a>Исключения и коды ошибок для конструктора
 
@@ -1532,3 +1532,8 @@ For general information about how the Matchbox recommendation algorithm works, a
 |Library exception (Исключение библиотеки).|
 |Library exception: {exception} (Исключение библиотеки {exception}).|
 |Unknown library exception: {exception} (Неизвестное исключение библиотеки: {exception}). {customer_support_guidance}.|
+
+
+## <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
+
+Выполните поиск **в azureml_main** в **70_Driver_logs** **модуля выполнение скрипта Python** , чтобы узнать, какая строка произошла ошибка. Например, "File"/tmp/tmp01_ID/user_script. Корректировка ", строка 17, в azureml_main" указывает, что эта ошибка произошла в 17-х строке скрипта Python.

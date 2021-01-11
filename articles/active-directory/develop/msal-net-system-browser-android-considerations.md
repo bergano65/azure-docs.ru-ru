@@ -1,7 +1,7 @@
 ---
 title: Рекомендации по браузеру системы Xamarin Android (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
-description: Сведения об использовании системных браузеров Xamarin Android с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
+description: Сведения об использовании системных браузеров в Xamarin Android с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -13,16 +13,16 @@ ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 8f755b42249a88a2d37117003d561f79aea6b170
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4230a194fb18587a209c100a39b0924e6170502d
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88165997"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063473"
 ---
 #  <a name="xamarin-android-system-browser-considerations-for-using-msalnet"></a>Рекомендации по использованию MSAL.NET в браузере системы Xamarin Android
 
-В этой статье рассматриваются вопросы, которые следует учитывать при использовании системного браузера в Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
+В этой статье рассматриваются вопросы, которые следует учитывать при использовании системного браузера в Xamarin Android с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 
 Начиная с MSAL.NET 2.4.0 Preview, MSAL.NET поддерживает браузеры, отличные от Chrome. Для проверки подлинности на устройстве Android больше не требуется устанавливать Chrome.
 
@@ -45,7 +45,7 @@ ms.locfileid: "88165997"
 | Устройство | Браузер     |  Результат  | 
 | ------------- |:-------------:|:-----:|
 | Huawei/один + | Chrome\* | Успех|
-| Huawei/один + | Пограничный случай\* | Успех|
+| Huawei/один + | Угловой\* | Успех|
 | Huawei/один + | Firefox\* | Успех|
 | Huawei/один + | Дивный\* | Успех|
 | Один + | екосиа\* | Успех|
@@ -71,5 +71,5 @@ ms.locfileid: "88165997"
   - **Проблема с корневым каталогом**: браузер, поддерживающий пользовательские вкладки, не включен на устройстве. Проверка подлинности запущена в браузере, который не смог пройти проверку подлинности. 
   - **Устранение**. Попросите пользователя включить браузер на своем устройстве. Рекомендуется браузер, поддерживающий пользовательские вкладки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения и примеры кода см. [в разделе Выбор между встроенным веб-браузером и системным браузером Xamarin Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) и [встроенным и системным веб-интерфейсом](msal-net-web-browsers.md#embedded-vs-system-web-ui).  

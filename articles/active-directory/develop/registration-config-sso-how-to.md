@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
-ms.openlocfilehash: 465adbb71abaa45160399ecba2ebfb692a8307c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 62f4f629e44d317d36e182adb48f8f00b9f1c2b3
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88120683"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063065"
 ---
 # <a name="how-to-configure-single-sign-on-for-an-application"></a>Настройка единого входа для приложения
 
@@ -30,7 +31,7 @@ ms.locfileid: "88120683"
 
 Для iOS см. раздел [Включение единого входа для нескольких приложений в iOS](../azuread-dev/howto-v1-enable-sso-ios.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Единый вход Azure AD](../manage-apps/what-is-single-sign-on.md)<br>
 

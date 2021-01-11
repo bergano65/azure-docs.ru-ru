@@ -11,12 +11,13 @@ ms.topic: conceptual
 ms.date: 10/23/2020
 ms.author: ryanwi
 ms.custom: aaddev, seoapril2019
-ms.openlocfilehash: 41dd1ae62e67fe7a23ad62927e1a67989d684bdb
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5dec4958c3a1d955d8f8c1dce90e27696fbebfe5
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516482"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063354"
 ---
 # <a name="how-to-change-the-token-lifetime-defaults-for-a-custom-developed-application"></a>Как изменить стандартное время существования токена для специально разработанного приложения
 
@@ -39,7 +40,7 @@ $sp = Get-AzureADServicePrincipal -Filter "DisplayName eq '<service principal di
 Add-AzureADServicePrincipalPolicy -Id $sp.ObjectId -RefObjectId $policy.Id
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. в разделе [Настройка времени существования маркеров в Azure AD](./active-directory-configurable-token-lifetimes.md) чтобы узнать, как настроить время существования маркера, выданного Azure AD, включая то, как задать время существования маркеров для всех приложений в вашей организации, для многопользовательского приложения или для конкретной службы. 
 * [Справочник по маркерам Azure AD](./id-tokens.md)

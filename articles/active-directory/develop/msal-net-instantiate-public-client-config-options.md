@@ -13,16 +13,16 @@ ms.date: 04/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 349ec8c99bc9e6768e5ec2ded346893da95c1636
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e2ffebf0b414d4b59178fe04fb109530365786b
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88166150"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064714"
 ---
 # <a name="instantiate-a-public-client-application-with-configuration-options-using-msalnet"></a>Создание экземпляра общедоступного клиентского приложения с параметрами конфигурации с помощью MSAL.NET
 
-В этой статье описывается создание экземпляра [общедоступного клиентского приложения](msal-client-applications.md) с помощью библиотеки проверки подлинности Майкрософт для .net (MSAL.NET).  Экземпляр приложения создается с параметрами конфигурации, определенными в файле параметров.
+В этой статье описывается создание экземпляра [общедоступного клиентского приложения](msal-client-applications.md) с помощью библиотеки проверки подлинности Microsoft для .net (MSAL.NET).  Экземпляр приложения создается с параметрами конфигурации, определенными в файле параметров.
 
 Перед инициализацией приложения необходимо сначала [зарегистрировать](quickstart-register-app.md) его, чтобы приложение можно было интегрировать с платформой Microsoft Identity. После регистрации может потребоваться следующая информация (которую можно найти в портал Azure):
 

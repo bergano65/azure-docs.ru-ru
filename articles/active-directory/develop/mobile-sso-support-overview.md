@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: nichola
-ms.openlocfilehash: 59924c1f876d08aa504f19c5d6c86dca32fbd1e2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9c53ea5bad88eb79940274c409218045c06d7981
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173470"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064974"
 ---
 # <a name="support-single-sign-on-and-app-protection-policies-in-mobile-apps-you-develop"></a>Поддержка единого входа и политик защиты приложений в мобильных приложениях, которые вы разрабатываете
 
@@ -36,7 +36,7 @@ ms.locfileid: "96173470"
 
 Мы рекомендуем использовать следующие преимущества единого входа в приложение.
 
-### <a name="use-microsoft-authentication-library-msal"></a>Использование библиотеки проверки подлинности Майкрософт (MSAL)
+### <a name="use-the-microsoft-authentication-library-msal"></a>Использование библиотеки проверки подлинности Майкрософт (MSAL)
 
 Лучшим выбором для реализации единого входа в приложении является использование [библиотеки проверки подлинности Майкрософт (MSAL)](msal-overview.md). С помощью MSAL вы можете добавить в приложение проверку подлинности с помощью минимального кода и вызовов API, получить все функции [платформы Microsoft Identity](./index.yml), а также разрешить корпорации Майкрософт выполнять обслуживание решения безопасной проверки подлинности. По умолчанию MSAL добавляет поддержку единого входа для приложения. Кроме того, использование MSAL является обязательным, если вы планируете реализовать политики защиты приложений.
 

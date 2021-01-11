@@ -13,16 +13,16 @@ ms.date: 9/18/2019
 ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
-ms.openlocfilehash: 1c4f47fd771cfb92b3896963c96b39d9eb7d97b8
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ad43d380bde1bae0e389fa58e3d916c2c3250be7
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344884"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064938"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
 
-Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений аутентифицировать пользователей с помощью удостоверений социальных сетей и локальных удостоверений, используя [Azure Active Directory B2C (Azure AD B2C)](../../active-directory-b2c/index.yml). Azure AD B2C — это служба управления удостоверениями. Используйте его для настройки и управления регистрацией клиентов, входом в систему и управлением их профилями при использовании ваших приложений.
+Библиотека проверки подлинности Майкрософт (MSAL) позволяет разработчикам приложений выполнять проверку подлинности пользователей с помощью социальных сетей и локальных удостоверений, используя [Azure Active Directory B2C (Azure AD B2C)](../../active-directory-b2c/index.yml). Azure AD B2C — это служба управления удостоверениями. Используйте его для настройки и управления регистрацией клиентов, входом в систему и управлением их профилями при использовании ваших приложений.
 
 ## <a name="configure-known-authorities-and-redirect-uri"></a>Настройка известных центров и URI перенаправления
 
@@ -139,7 +139,7 @@ pca.acquireTokenSilentAsync(parameters);
 
 ## <a name="specify-a-policy"></a>Укажите политику
 
-Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания `fromAuthority` предложения при создании `acquireToken` или настройке `acquireTokenSilent` параметров.  Например:
+Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания `fromAuthority` предложения при создании `acquireToken` или настройке `acquireTokenSilent` параметров.  Пример:
 
 ```java
 AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()

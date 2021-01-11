@@ -8,15 +8,15 @@ ms.author: keli19
 ms.reviewer: peterlu
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 11/25/2020
+ms.date: 01/11/2021
 ms.topic: conceptual
 ms.custom: designer
-ms.openlocfilehash: 29d83f4acddfce6294457f87519d62e35f52bf15
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: b940f5c9bd14bcec404827daaef666da802d969b
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709424"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065258"
 ---
 # <a name="enable-logging-in-azure-machine-learning-designer-pipelines"></a>Включение ведения журнала в конвейерах конструктора Машинное обучение Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "97709424"
 
 ## <a name="enable-logging-with-execute-python-script"></a>Включение ведения журнала с помощью скрипта Python
 
-Используйте модуль __выполнение скрипта Python__ , чтобы включить ведение журнала в конвейерах конструктора. Хотя вы можете записать любое значение с помощью этого рабочего процесса, особенно полезно записывать метрики из модуля " __Анализ модели__ " для мониторинга производительности модели во время выполнения.
+Используйте модуль [выполнение скрипта Python](./algorithm-module-reference/execute-python-script.md) , чтобы включить ведение журнала в конвейерах конструктора. Хотя вы можете записать любое значение с помощью этого рабочего процесса, особенно полезно записывать метрики из модуля " __Анализ модели__ " для мониторинга производительности модели во время выполнения.
 
 В следующем примере показано, как заносить в журнал среднюю квадратную ошибку двух обученных моделей с помощью модулей «оценка модели» и «выполнение скриптов Python».
 
@@ -53,7 +53,7 @@ ms.locfileid: "97709424"
         
         # Log left output port result of Evaluate Model. This also works when evaluate only 1 model.
         parent_run.log(name='Mean_Absolute_Error (left port)', value=dataframe1['Mean_Absolute_Error'][0])
-        # Log right output port result of Evaluate Model.
+        # Log right output port result of Evaluate Model. The following line should be deleted if you only connect one Score Module to the` left port of Evaluate Model module.
         parent_run.log(name='Mean_Absolute_Error (right port)', value=dataframe1['Mean_Absolute_Error'][1])
 
         return dataframe1,
@@ -81,3 +81,4 @@ ms.locfileid: "97709424"
 
 * Сведения об устранении неполадок конвейеров конструктора см. в разделе [отладка & устранение неполадок конвейеров машинного обучения](how-to-debug-pipelines.md#azure-machine-learning-designer).
 * Узнайте, как использовать пакет SDK для Python для записи метрик в процесс создания пакета SDK. см. раздел [Включение ведения журнала в Azure ML Training](how-to-track-experiments.md).
+* Сведения об использовании [сценария выполнения Python](./algorithm-module-reference/execute-python-script.md) в конструкторе.

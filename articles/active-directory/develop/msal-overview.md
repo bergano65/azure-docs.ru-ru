@@ -13,14 +13,14 @@ ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 8fbcacf4e3c26f117be4ab5b64b35f670435e6b6
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 2b6266f308fce75f136aa4a2482c5b1be6eedb8e
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92092755"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063371"
 ---
-# <a name="overview-of-microsoft-authentication-library-msal"></a>Обзор библиотеки аутентификации Майкрософт (MSAL)
+# <a name="overview-of-the-microsoft-authentication-library-msal"></a>Общие сведения о библиотеке проверки подлинности Майкрософт (MSAL)
 Библиотека проверки подлинности Майкрософт (MSAL) позволяет разработчикам получать [маркеры](developer-glossary.md#security-token) от конечной точки платформы Microsoft Identity для проверки подлинности пользователей и доступа к защищенным веб-API. Он может использоваться для обеспечения безопасного доступа к Microsoft Graph, другим API-интерфейсам Майкрософт, веб-API сторонних производителей или к собственному веб-API. MSAL поддерживает множество различных архитектур приложений и платформ, в том числе .NET, JavaScript, Java, Python, Android и iOS.
 
 MSAL предоставляет множество способов для получения маркеров с использованием согласованного API для нескольких платформ. Использование MSAL обеспечивает следующие преимущества:

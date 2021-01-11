@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: victorh
-ms.openlocfilehash: 9d2fba48762e11a92f6f3925c969b01aebbe3630
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: e18267d5a810826e41e05eb3dde3cd82a8eb9197
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347597"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065326"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
 
@@ -222,7 +222,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |серверраутед| Внутренний сервер, на который шлюз приложений направляет запрос.|
 |serverStatus| Код состояния HTTP внутреннего сервера.|
 |серверреспонселатенци| Задержка ответа от внутреннего сервера.|
-|узел| Адрес, указанный в заголовке узла запроса. Если перезаписано, это поле содержит обновленное имя узла.|
+|узел| Адрес, указанный в заголовке узла запроса. Если переписать с помощью перезаписи заголовка, это поле содержит обновленное имя узла|
 |оригиналрекуестуривисаргс| Это поле содержит исходный URL-адрес запроса |
 |requestUri| Это поле содержит URL-адрес после операции перезаписи в шлюзе приложений |
 |оригиналхост| Это поле содержит исходное имя узла запроса

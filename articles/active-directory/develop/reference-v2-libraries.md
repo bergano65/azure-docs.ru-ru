@@ -12,12 +12,12 @@ ms.date: 07/25/2019
 ms.author: negoe
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: ebe36c6f4b8b010d2b53bf4153f1476183eb8a4a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a7792e989444c87ba80088f8a850cacb4aa0dc3c
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651266"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064578"
 ---
 # <a name="microsoft-identity-platform-authentication-libraries"></a>Библиотеки проверки подлинности платформы Microsoft Identity
 
@@ -48,7 +48,7 @@ ms.locfileid: "94651266"
 
 Используйте библиотеки проверки подлинности клиента, чтобы получить маркер для вызова защищенного веб-API.
 
-| Платформа | Библиотека | Скачивание | Исходный код | Образец | Справочник | Основная документация | Схема действий |
+| Платформа | Библиотека | Скачать | Исходный код | Образец | Справочник | Основная документация | Схема действий |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | ![JavaScript](media/sample-v2-code/logo_js.png) | MSAL.js  | [NPM](https://www.npmjs.com/package/msal) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/README.md) |  [Одностраничное приложение](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) | [Ссылки](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-core/) | [Основные документы](msal-overview.md)| [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
 ![Angular](media/sample-v2-code/logo_angular.png) | MSALный угловой | [NPM](https://www.npmjs.com/package/@azure/msal-angular) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) | [Угловой SPA](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) | [Ссылки](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-angular/) | [Основные документы](msal-overview.md) | [Схема действий](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
@@ -63,7 +63,7 @@ ms.locfileid: "94651266"
 
 Используйте библиотеки по промежуточного слоя для защиты веб-приложений и веб-API. Веб-приложения или веб-API, написанные с помощью ASP.NET или ASP.NET Core, используют библиотеки по промежуточного слоя.
 
-| Платформа | Библиотека | Скачивание | Исходный код | Образец | Справочник
+| Платформа | Библиотека | Скачать | Исходный код | Образец | Справочник
 | --- | --- | --- | --- | --- | --- |
 | ![.NET](media/sample-v2-code/logo_NET.png) ![.NET Core](media/sample-v2-code/logo_NETcore.png) | Безопасность ASP.NET |[NuGet](https://www.nuget.org/packages/Microsoft.AspNet.Mvc/) |[GitHub](https://github.com/aspnet/AspNetCore) |[Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочник по API для ASP.NET](/dotnet/api/?view=aspnetcore-2.0&preserve-view=true) |
 | ![.NET](media/sample-v2-code/logo_NET.png)| Расширения модели идентификации для .NET| |[GitHub](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | [Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Ссылки](/dotnet/api/overview/azure/activedirectory/client?view=azure-dotnet&preserve-view=true) |
@@ -80,7 +80,7 @@ ms.locfileid: "94651266"
 | Swift <br> Objective-C |            |            | [MSAL для iOS и MacOS](msal-overview.md) | [MSAL для iOS и MacOS](msal-overview.md) |            |
 | ![Java](media/sample-v2-code/logo_java.png) Java | msal4j | msal4j | msal4j | | MSAL Android |
 | ![Python](media/sample-v2-code/logo_python.png) Python | MSAL Python | MSAL Python | MSAL Python |
-| ![Node.Js](media/sample-v2-code/logo_nodejs.png) Node.JS | Паспорт. Node | Паспорт. Node | Паспорт. Node |
+| ![Node.js](media/sample-v2-code/logo_nodejs.png) Node.js | Паспорт. Node | Паспорт. Node | Паспорт. Node |
 
 См. также [сценарии поддерживаемых платформ и языков](authentication-flows-app-scenarios.md#scenarios-and-supported-platforms-and-languages)
 
@@ -105,7 +105,7 @@ ms.locfileid: "94651266"
 * Отправьте [запрос функции](https://feedback.azure.com/forums/169401-azure-active-directory) для дополнительных функций, которые вы хотите увидеть в протоколе.
 * [Создайте запрос в службу поддержки](../../azure-portal/supportability/how-to-create-azure-support-request.md) , если вы нашли ошибку, когда конечная точка платформы Microsoft Identity не соответствует требованиям OAuth 2,0 или openid connect Connect 1,0.
 
-## <a name="related-content"></a>См. также
+## <a name="related-content"></a>Связанное содержимое
 
 Дополнительные сведения о конечной точке платформы идентификации Майкрософт см. в [статье Обзор платформы идентификации Майкрософт][AAD-App-Model-V2-Overview].
 

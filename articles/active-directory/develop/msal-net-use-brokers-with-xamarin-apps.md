@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 10fb55cc133d5d6b39ca2809474ff20dfe500708
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 73fbda9a3356e2877617391430a7f2b555b1a0e5
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017805"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063490"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Использование Microsoft Authenticator или Корпоративный портал Intune в приложениях Xamarin
 
@@ -171,7 +171,7 @@ MSAL использует, `–canOpenURL:` чтобы проверить, ус�
 $"msauth.{BundleId}://auth"
 ```
 
-Приведем пример:
+Ниже приведен пример:
 
 ```csharp
 public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth";
@@ -183,7 +183,7 @@ public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth";
 
 **Создание URI перенаправления:**
 
-1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Выберите **Azure Active Directory**  >  **Регистрация приложений** > зарегистрированное приложение
 1. Выбор **проверки подлинности**  >  **Добавление платформы**  >  **iOS/macOS**
 1. Введите идентификатор пакета и нажмите кнопку **настроить**.

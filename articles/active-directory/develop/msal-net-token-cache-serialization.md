@@ -1,7 +1,7 @@
 ---
 title: Сериализация кэша маркеров (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
-description: Из этой статьи вы узнаете о сериализации и клиентской сериализации для кэша маркеров с помощью библиотеки аутентификации Майкрософт для .NET (MSAL.NET).
+description: Сведения о сериализации и сериализации клиентов кэша маркеров с помощью библиотеки проверки подлинности Microsoft для .NET (MSAL.NET).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,15 +13,15 @@ ms.date: 09/16/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 4a0d5af8faafac8b733bd2daa9655e663da6fe71
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 7e80123f21efded92ab6d59d550965ca72427b1c
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873529"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064663"
 ---
 # <a name="token-cache-serialization-in-msalnet"></a>Сериализация кэша маркеров в MSAL.NET
-Библиотека аутентификации Майкрософт (MSAL) кэширует каждый [полученный маркер](msal-acquire-cache-tokens.md).  В коде приложения следует сначала попытаться получить маркер из кэша, а лишь затем использовать для этого другие средства.  В этой статье рассматриваются стандартная и пользовательская сериализации для кэша маркеров в MSAL.NET.
+После получения [маркера](msal-acquire-cache-tokens.md)он кэшируется библиотекой проверки подлинности Майкрософт (MSAL).  В коде приложения следует сначала попытаться получить маркер из кэша, а лишь затем использовать для этого другие средства.  В этой статье рассматриваются стандартная и пользовательская сериализации для кэша маркеров в MSAL.NET.
 
 Эта статья предназначена для MSAL.NET версии 3.x. Если вас интересует MSAL.NET 2.x, перейдите к статье [о сериализации кэша маркеров в MSAL.NET 2.x](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Token-cache-serialization-2x).
 
@@ -327,7 +327,7 @@ services.AddDistributedSqlServerCache(options =>
 
 Их использование описывается в руководстве по [веб-приложению ASP.NET Core](/aspnet/core/tutorials/first-mvc-app/) в [кэше маркеров этапа 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Приведенные ниже примеры демонстрируют сериализацию кэша маркеров.
 

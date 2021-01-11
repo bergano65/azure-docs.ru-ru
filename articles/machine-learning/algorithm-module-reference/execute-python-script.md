@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
-ms.date: 12/02/2020
-ms.openlocfilehash: d1e4ffa525c5628d0b6c9a3ca67f3e069c44e823
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.date: 01/02/2021
+ms.openlocfilehash: 7b5bc77375d684340116a21b7f95cf576d99dad2
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679198"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065360"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -60,7 +60,7 @@ if spec is None:
 > [!WARNING]
 > Модуль скрипта Python екскуте не поддерживает установку пакетов, зависящих от дополнительных собственных библиотек, с помощью команды вроде "apt-get", например Java, PyODBC и т. д. Это происходит потому, что этот модуль выполняется в простой среде с предварительно установленным Python и с разрешениями, не являющимися администраторами.  
 
-## <a name="access-to-registered-datasets"></a>Доступ к зарегистрированным наборам данных
+## <a name="access-to-current-workspace-and-registered-datasets"></a>Доступ к текущей рабочей области и зарегистрированным наборам данных
 
 Чтобы получить доступ к [зарегистрированным наборам данных](../how-to-create-register-datasets.md) в рабочей области, можно обратиться к следующему примеру кода:
 
@@ -71,8 +71,10 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     print(f'Input pandas.DataFrame #1: {dataframe1}')
     from azureml.core import Run
     run = Run.get_context(allow_offline=True)
+    #access to current workspace
     ws = run.experiment.workspace
 
+    #access to registered dataset of current workspace
     from azureml.core import Dataset
     dataset = Dataset.get_by_name(ws, name='test-register-tabular-in-designer')
     dataframe1 = dataset.to_pandas_dataframe()
@@ -219,7 +221,9 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 6. Отправьте конвейер.
 
-    Все данные и код загружаются в виртуальную машину и выполняются с помощью указанной среды Python.
+    Если модуль завершен, проверьте выходные данные, если они ожидались.
+
+    Если произошел сбой модуля, необходимо выполнить некоторые действия по устранению неполадок. Выберите модуль и откройте **выходные данные и журналы** на правой панели. Откройте **70_driver_log.txt** и выполните поиск **в azureml_main**, после чего можно найти строку, вызвавшую ошибку. Например, "File"/tmp/tmp01_ID/user_script. Корректировка ", строка 17, в azureml_main" указывает, что эта ошибка произошла в 17-х строке скрипта Python.
 
 ## <a name="results"></a>Результаты
 

@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 2d7c732771749c0c0372c5433b76c3e30469e2b0
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: eacdf0cf80414c44aaccf6925e466b914c66da03
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968421"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065309"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Подключение Azure к средствам ITSM с помощью Соединитель управления ИТ-услугами
 
@@ -43,7 +43,7 @@ ms.locfileid: "97968421"
    >[!NOTE]
    >В рамках текущего перехода с Microsoft Operations Management Suite (OMS) на Azure Monitor рабочие области OMS теперь называются *рабочими областями log Analytics*.
 
-5. Нажмите кнопку **ОК**.
+5. Щелкните **ОК**.
 
 При развертывании ресурса ITSMC в правом верхнем углу окна появляется уведомление.
 
@@ -64,7 +64,7 @@ ms.locfileid: "97968421"
 
 1. Во **всех ресурсах** найдите **ServiceDesk (*имя рабочей области*)**:
 
-   ![Снимок экрана, на котором показаны последние ресурсы в портал Azure.](media/itsmc-overview/itsm-connections.png)
+   ![Снимок экрана, на котором показаны последние ресурсы в портал Azure.](media/itsmc-definition/create-new-connection-from-resource.png)
 
 1. В разделе **Источники данных рабочей области** на левой панели выберите **подключения ITSM**:
 
@@ -158,7 +158,7 @@ ms.locfileid: "97968421"
         * При выборе варианта **"создать отдельные рабочие элементы для каждого элемента конфигурации"** в выборе переключателей каждый элемент конфигурации в каждом предупреждении создаст новый рабочий элемент. В системе ITSM может быть несколько рабочих элементов для одного элемента конфигурации. Это будет аналогично установке флажка в разделе инцидент/оповещение.
     ![Снимок экрана, на котором показано окно события ITSM.](media/itsmc-overview/itsm-action-configuration-event.png)
 
-10. Нажмите кнопку **ОК**.
+10. Щелкните **ОК**.
 
 При создании или изменении правила генерации оповещений Azure используйте группу действий с действием ITSM. При срабатывании оповещения рабочий элемент создается или обновляется в средстве ITSM.
 

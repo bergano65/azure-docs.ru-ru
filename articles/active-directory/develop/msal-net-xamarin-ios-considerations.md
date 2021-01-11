@@ -1,7 +1,7 @@
 ---
 title: Замечания по Xamarin iOS (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
-description: Сведения о вопросах использования Xamarin iOS с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
+description: Сведения о вопросах использования Xamarin iOS в библиотеке проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.date: 09/09/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 70ab4a151fe73b59663fd8fa16170b2e507c2511
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62eb4ab9eb6e4b0e7be0f7aadae1173950d21615
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91258065"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064493"
 ---
 # <a name="considerations-for-using-xamarin-ios-with-msalnet"></a>Рекомендации по использованию Xamarin iOS с MSAL.NET
 
@@ -32,7 +32,7 @@ ms.locfileid: "91258065"
 
 ## <a name="implement-openurl"></a>Реализация OpenUrl
 
-Переопределите `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызовите `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs` . Пример:
+Переопределите `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызовите `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs` . Ниже приведен пример:
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -96,7 +96,7 @@ var builder = PublicClientApplicationBuilder
 
 Приложение может использовать Microsoft Authenticator в качестве брокера для включения:
 
-- **Единый**вход. при включении единого входа пользователям не нужно входить в каждое приложение.
+- **Единый** вход. при включении единого входа пользователям не нужно входить в каждое приложение.
 - **Идентификация устройства**: используйте идентификацию устройства для проверки подлинности при доступе к сертификату устройства. Этот сертификат создается на устройстве при его присоединении к рабочей области. Приложение будет готово, если администраторы клиента включают условный доступ, связанный с устройствами.
 - **Проверка идентификации приложения**. когда приложение вызывает брокер, ему передается URL-адрес перенаправления. Брокер проверяет URL-адрес перенаправления.
 
@@ -147,7 +147,7 @@ var builder = PublicClientApplicationBuilder
 
 Если у вас есть вопросы или вы хотите сообщить о проблемах, обнаруженных в MSAL.NET, откройте ошибку в репозитории [AzureAD/Microsoft-Authentication-Library-for-DotNet](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues) на сайте GitHub.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о свойствах для Xamarin iOS см. в разделе [рекомендации для iOS](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/master/1-Basic#ios-specific-considerations) в следующем примере файла readme.md:
 

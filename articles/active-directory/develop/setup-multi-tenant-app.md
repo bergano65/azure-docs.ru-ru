@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
-ms.openlocfilehash: d865ac8bae475365dbfc6c8bad990a1acc7998f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: a075cfa921a17d47cbef84f1e7e8ec8e306c38d5
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88116756"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063031"
 ---
 # <a name="how-to-configure-a-new-multi-tenant-application"></a>Настройка нового мультитенантного приложения
 
@@ -27,5 +28,5 @@ ms.locfileid: "88116756"
 - Ознакомьтесь с пошаговым руководством по [использованию платформы согласия Azure AD для реализации согласия](./quickstart-register-app.md), необходимого для мультитенантных приложений.
 - Узнайте подробнее [о процедуре настройки и кодирования мультитенантного приложения](./howto-convert-app-to-be-multi-tenant.md), включая регистрацию, использование простой конечной точки, предоставление согласия пользователя и администратора, реализацию более сложных многоуровневых сценариев.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

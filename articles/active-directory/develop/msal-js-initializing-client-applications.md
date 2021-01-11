@@ -13,12 +13,12 @@ ms.date: 07/17/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 6b5093c5a1a45aed3493fabd7a362b0579998171
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: e12beafc81cbc41ea070fbdda1d68990f6f3fcda
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96343592"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063694"
 ---
 # <a name="initialize-client-applications-using-msaljs"></a>Инициализация клиентских приложений с помощью MSAL.js
 
@@ -28,7 +28,7 @@ ms.locfileid: "96343592"
 
 Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. [в разделе общедоступные и конфиденциальные клиентские приложения в MSAL](msal-client-applications.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед инициализацией приложения сначала необходимо [зарегистрировать его в портал Azure](scenario-spa-app-registration.md), установив отношения доверия между приложением и платформой Microsoft Identity.
 
