@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 01/07/2021
 ms.author: alexeyo
-ms.openlocfilehash: 539ea6f80604eabdbbe56a3280cf5ddb367c0439
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: f30b1f0f14bba54b8b4fcd7c5190f3c533f199a6
+ms.sourcegitcommit: 63caac7871df9d999ca5a5f1b8c036ae7014231c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97966789"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98061758"
 ---
 # <a name="speech-services-in-sovereign-clouds"></a>Речевые службы в независимых облаках
 
@@ -36,9 +36,10 @@ ms.locfileid: "97966789"
     - Пользовательское распознавание речи (акустическая модель (AM) и модель языка (LM))
       - [Speech Studio](https://speech.azure.us/)
   - Преобразование текста в речь
+    - Стандартный Voice
+    - Нейронный Voice
   - Переводчик речи
 - **Неподдерживаемые функции:**
-  - Нейронный Voice
   - Custom Voice (Пользовательские голосовые модели)
 - **Поддерживаемые языки:**
   - Список поддерживаемых языков см. [здесь](language-support.md) .
@@ -105,20 +106,13 @@ spx recognize --host "usGovHost" --file myaudio.wav
     - Пользовательское распознавание речи (акустическая модель (AM) и модель языка (LM))
       - [Speech Studio](https://speech.azure.cn/)
   - Преобразование текста в речь
+    - Стандартный Voice
+    - Нейронный Voice
   - Переводчик речи
 - **Неподдерживаемые функции:**
-  - Нейронный Voice
   - Custom Voice (Пользовательские голосовые модели)
 - **Поддерживаемые языки:**
-  - Арабский (AR-*)
-  - Китайский (zh-*)
-  - Английский (en-*)
-  - Французский (fr-*)
-  - Немецкий (de-*)
-  - Хинди (Hi-IN)
-  - Корейский (ko-KR)
-  - Русский (ru-RU)
-  - Испанский (ES-*)
+  - Список поддерживаемых языков см. [здесь](language-support.md) .
 
 ### <a name="endpoint-information"></a>Сведения о конечных точках
 
